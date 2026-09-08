@@ -1,0 +1,843 @@
+{
+ "BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity": {
+  "leaf": "ChapterBaryonAsymmetry",
+  "name": "BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity",
+  "short": "matter_satisfies_continuity",
+  "tags": [
+   "timepiece",
+   "qym",
+   "baryon-asymmetry",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBaryonAsymmetry.lean#L67-L81",
+  "title": "The matter law satisfies the FRW continuity equation with `w = 0`: `a · ρ_m'(a) + 3·(1 + 0)·ρ_m(a) = 0` for `a > 0`",
+  "nl": "The matter law satisfies the FRW continuity equation with `w = 0`:\n`a · ρ_m'(a) + 3·(1 + 0)·ρ_m(a) = 0` for `a > 0`. This fixes the dilution\nexponent `3`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity` (module `BookProof.BaryonAsymmetry`), line-linked source: `ChapterBaryonAsymmetry.lean` lines 67–81."
+ },
+ "BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity": {
+  "leaf": "ChapterBaryonAsymmetry",
+  "name": "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity",
+  "short": "radiation_satisfies_continuity",
+  "tags": [
+   "timepiece",
+   "qym",
+   "baryon-asymmetry",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBaryonAsymmetry.lean#L83-L97",
+  "title": "The radiation law satisfies the FRW continuity equation with `w = 1/3`: `a · ρ_r'(a) + 3·(1 + 1/3)·ρ_r(a) = 0` for `a > 0`",
+  "nl": "The radiation law satisfies the FRW continuity equation with `w = 1/3`:\n`a · ρ_r'(a) + 3·(1 + 1/3)·ρ_r(a) = 0` for `a > 0`. This fixes the dilution\nexponent `4`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity` (module `BookProof.BaryonAsymmetry`), line-linked source: `ChapterBaryonAsymmetry.lean` lines 83–97."
+ },
+ "BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq": {
+  "leaf": "ChapterBaryonAsymmetry",
+  "name": "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq",
+  "short": "matterRadiationRatio_eq",
+  "tags": [
+   "timepiece",
+   "qym",
+   "baryon-asymmetry",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBaryonAsymmetry.lean#L99-L106",
+  "title": "The book's \"proportional to the scale of the Universe\".** For a positive scale factor and nonzero present-day radiation density, the matter-to-radiation ratio equals `(ρ_{m,0}/ρ_{r,0}) · a",
+  "nl": "**The book's \"proportional to the scale of the Universe\".** For a positive\nscale factor and nonzero present-day radiation density, the matter-to-radiation\nratio equals `(ρ_{m,0}/ρ_{r,0}) · a`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq` (module `BookProof.BaryonAsymmetry`), line-linked source: `ChapterBaryonAsymmetry.lean` lines 99–106."
+ },
+ "BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn": {
+  "leaf": "ChapterBaryonAsymmetry",
+  "name": "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn",
+  "short": "matterRadiationRatio_strictMonoOn",
+  "tags": [
+   "timepiece",
+   "qym",
+   "baryon-asymmetry",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBaryonAsymmetry.lean#L108-L117",
+  "title": "The matter-to-radiation ratio is strictly increasing in the scale factor (for positive present-day densities): expansion monotonically favours matter",
+  "nl": "The matter-to-radiation ratio is strictly increasing in the scale factor\n(for positive present-day densities): expansion monotonically favours matter.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn` (module `BookProof.BaryonAsymmetry`), line-linked source: `ChapterBaryonAsymmetry.lean` lines 108–117."
+ },
+ "BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop": {
+  "leaf": "ChapterBaryonAsymmetry",
+  "name": "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_tendsto_atTop",
+  "short": "matterRadiationRatio_tendsto_atTop",
+  "tags": [
+   "timepiece",
+   "qym",
+   "baryon-asymmetry",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBaryonAsymmetry.lean#L119-L128",
+  "title": "The book's \"amplified by the expansion of the Universe\".** As the scale factor grows, the matter-to-radiation energy ratio tends to `+∞`",
+  "nl": "**The book's \"amplified by the expansion of the Universe\".** As the scale\nfactor grows, the matter-to-radiation energy ratio tends to `+∞`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_tendsto_atTop` (module `BookProof.BaryonAsymmetry`), line-linked source: `ChapterBaryonAsymmetry.lean` lines 119–128."
+ },
+ "BookProof_MajoranaClifford_Qform_apply": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.Qform_apply",
+  "short": "Qform_apply",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L77-L78",
+  "title": "The Lean 4 theorem `Qform_apply` in the `ChapterMajoranaClifford` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `Qform_apply` in the `ChapterMajoranaClifford` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.Qform_apply` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 77–78."
+ },
+ "BookProof_MajoranaClifford_polar_Qform": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.polar_Qform",
+  "short": "polar_Qform",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L80-L83",
+  "title": "The Lean 4 theorem `polar_Qform` in the `ChapterMajoranaClifford` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `polar_Qform` in the `ChapterMajoranaClifford` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.polar_Qform` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 80–83."
+ },
+ "BookProof_MajoranaClifford_a_add": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_add",
+  "short": "a_add",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L89-L90",
+  "title": "The Lean 4 theorem `a_add` in the `ChapterMajoranaClifford` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `a_add` in the `ChapterMajoranaClifford` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_add` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 89–90."
+ },
+ "BookProof_MajoranaClifford_a_smul": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_smul",
+  "short": "a_smul",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L92-L93",
+  "title": "The Lean 4 theorem `a_smul` in the `ChapterMajoranaClifford` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `a_smul` in the `ChapterMajoranaClifford` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_smul` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 92–93."
+ },
+ "BookProof_MajoranaClifford_a_zero": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_zero",
+  "short": "a_zero",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L95-L95",
+  "title": "The Lean 4 theorem `a_zero` in the `ChapterMajoranaClifford` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `a_zero` in the `ChapterMajoranaClifford` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_zero` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 95–95."
+ },
+ "BookProof_MajoranaClifford_a_sq": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_sq",
+  "short": "a_sq",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L97-L101",
+  "title": "The Clifford relation** `a(v)² = ⟪v,v⟫·1`: the defining relation of the book's `C(V)`",
+  "nl": "**The Clifford relation** `a(v)² = ⟪v,v⟫·1`: the defining relation of the\nbook's `C(V)`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_sq` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 97–101."
+ },
+ "BookProof_MajoranaClifford_car": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.car",
+  "short": "car",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L103-L109",
+  "title": "The canonical anticommutation relation (CAR)** `{a(v), a(w)} = a(v)·a(w) + a(w)·a(v) = 2⟪v,w⟫·1`, the polarization of the Clifford relation",
+  "nl": "**The canonical anticommutation relation (CAR)**\n`{a(v), a(w)} = a(v)·a(w) + a(w)·a(v) = 2⟪v,w⟫·1`, the polarization of the\nClifford relation.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.car` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 103–109."
+ },
+ "BookProof_MajoranaClifford_a_anticomm_of_orthogonal": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_anticomm_of_orthogonal",
+  "short": "a_anticomm_of_orthogonal",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L111-L114",
+  "title": "Orthogonal directions produce **anticommuting** field operators",
+  "nl": "Orthogonal directions produce **anticommuting** field operators.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_anticomm_of_orthogonal` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 111–114."
+ },
+ "BookProof_MajoranaClifford_a_selfAdjoint": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_selfAdjoint",
+  "short": "a_selfAdjoint",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L116-L121",
+  "title": "Self-adjointness of the field operator** (the book's `a*(v) = a(v)`): `a(v)` is fixed by the canonical involution `*` of `C(V)`, realized as `CliffordAlgebra.reverse`",
+  "nl": "**Self-adjointness of the field operator** (the book's `a*(v) = a(v)`):\n`a(v)` is fixed by the canonical involution `*` of `C(V)`, realized as\n`CliffordAlgebra.reverse`.  Physically, `a(v)` represents *a particle which is\nits own antiparticle* — a Majorana fermion.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_selfAdjoint` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 116–121."
+ },
+ "BookProof_MajoranaClifford_reverse_antihom": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.reverse_antihom",
+  "short": "reverse_antihom",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L123-L127",
+  "title": "The canonical involution `*` is an **anti-automorphism**: `(x·y)* = y*·x*`",
+  "nl": "The canonical involution `*` is an **anti-automorphism**:\n`(x·y)* = y*·x*`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.reverse_antihom` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 123–127."
+ },
+ "BookProof_MajoranaClifford_reverse_involutive": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.reverse_involutive",
+  "short": "reverse_involutive",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L129-L133",
+  "title": "The canonical involution `*` is **of order two** (`** = id`), hence a genuine involution",
+  "nl": "The canonical involution `*` is **of order two** (`** = id`), hence a genuine\ninvolution.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.reverse_involutive` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 129–133."
+ },
+ "BookProof_MajoranaClifford_a_map_selfAdjoint": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_map_selfAdjoint",
+  "short": "a_map_selfAdjoint",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L135-L141",
+  "title": "Symmetries act as real representations preserving self-adjointness.** For *any* real linear operator `T : V → V`, the transformed field operator `a(T v)` is again self-adjoint, so the map",
+  "nl": "**Symmetries act as real representations preserving self-adjointness.**  For\n*any* real linear operator `T : V → V`, the transformed field operator `a(T v)`\nis again self-adjoint, so the map `a(v) → a(T v)` preserves the\nself-adjointness condition (the book's statement that the symmetry group acts by\nreal representations, `a(v) → a(T v)` with `T` a real operator).\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_map_selfAdjoint` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 135–141."
+ },
+ "BookProof_MajoranaClifford_a_anticomm_skew": {
+  "leaf": "ChapterMajoranaClifford",
+  "name": "BookProof.MajoranaClifford.a_anticomm_skew",
+  "short": "a_anticomm_skew",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "clifford-algebra"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaClifford.lean#L143-L155",
+  "title": "Creation/annihilation directions anticommute.** Given a skew-symmetric operator `J` (the book's complex structure with `⟪J v, w⟫ = -⟪v, J w⟫`; e.g",
+  "nl": "**Creation/annihilation directions anticommute.**  Given a skew-symmetric\noperator `J` (the book's complex structure with `⟪J v, w⟫ = -⟪v, J w⟫`; e.g.\n`J² = -1`), each vector `v` is orthogonal to `J v`, hence the corresponding field\noperators anticommute: `{a(v), a(J v)} = 0`.  This is the real shadow of the\ncanonical anticommutation between the annihilation operator `a(v + iJv)` and the\ncreation operator `a(v − iJv)`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.MajoranaClifford.a_anticomm_skew` (module `BookProof.MajoranaClifford`), line-linked source: `ChapterMajoranaClifford.lean` lines 143–155."
+ },
+ "BookProof_ChapterMajoranaProp61_gsq_Hsq_comm": {
+  "leaf": "ChapterMajoranaProp61",
+  "name": "BookProof.ChapterMajoranaProp61.gsq_Hsq_comm",
+  "short": "gsq_Hsq_comm",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp61.lean#L50-L61",
+  "title": "The Lean 4 theorem `gsq_Hsq_comm` in the `ChapterMajoranaProp61` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `gsq_Hsq_comm` in the `ChapterMajoranaProp61` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp61.gsq_Hsq_comm` (module `BookProof.MajoranaProp61`), line-linked source: `ChapterMajoranaProp61.lean` lines 50–61."
+ },
+ "BookProof_ChapterMajoranaProp61_prop61_star_mul_self": {
+  "leaf": "ChapterMajoranaProp61",
+  "name": "BookProof.ChapterMajoranaProp61.prop61_star_mul_self",
+  "short": "prop61_star_mul_self",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp61.lean#L87-L121",
+  "title": "Proposition 61, `(U')† U' = 1`.",
+  "nl": "**Proposition 61, `(U')† U' = 1`.**\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp61.prop61_star_mul_self` (module `BookProof.MajoranaProp61`), line-linked source: `ChapterMajoranaProp61.lean` lines 87–121."
+ },
+ "BookProof_ChapterMajoranaProp61_prop61_mul_star_self": {
+  "leaf": "ChapterMajoranaProp61",
+  "name": "BookProof.ChapterMajoranaProp61.prop61_mul_star_self",
+  "short": "prop61_mul_star_self",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp61.lean#L123-L147",
+  "title": "Proposition 61, `U' (U')† = 1`.",
+  "nl": "**Proposition 61, `U' (U')† = 1`.**\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp61.prop61_mul_star_self` (module `BookProof.MajoranaProp61`), line-linked source: `ChapterMajoranaProp61.lean` lines 123–147."
+ },
+ "BookProof_ChapterMajoranaProp61_prop61_isUnit": {
+  "leaf": "ChapterMajoranaProp61",
+  "name": "BookProof.ChapterMajoranaProp61.prop61_isUnit",
+  "short": "prop61_isUnit",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp61.lean#L149-L158",
+  "title": "Proposition 61 (headline).** The boost intertwiner `U'` is unitary: it has the two-sided inverse `(U')†`",
+  "nl": "**Proposition 61 (headline).**  The boost intertwiner `U'` is unitary: it has the\ntwo-sided inverse `(U')†`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp61.prop61_isUnit` (module `BookProof.MajoranaProp61`), line-linked source: `ChapterMajoranaProp61.lean` lines 149–158."
+ },
+ "BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary",
+  "short": "isNote4Unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L0-L0",
+  "title": "The Lean 4 theorem `isNote4Unitary` in the `ChapterMajoranaProp76` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `isNote4Unitary` in the `ChapterMajoranaProp76` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 0–0."
+ },
+ "BookProof_ChapterMajoranaProp76_note4_comp": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.note4_comp",
+  "short": "note4_comp",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L71-L79",
+  "title": "Composition of Note-4 unitaries is a Note-4 unitary.** Surjectivity composes, and the diagonal-inner-preservation chains `⟪g (f x), g (f x)⟫ = ⟪f x, f x⟫ = ⟪x, x⟫`",
+  "nl": "**Composition of Note-4 unitaries is a Note-4 unitary.**  Surjectivity\ncomposes, and the diagonal-inner-preservation chains\n`⟪g (f x), g (f x)⟫ = ⟪f x, f x⟫ = ⟪x, x⟫`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.note4_comp` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 71–79."
+ },
+ "BookProof_ChapterMajoranaProp76_note4_conj": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.note4_conj",
+  "short": "note4_conj",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L81-L91",
+  "title": "Conjugation preserves Note-4 unitarity.** If `V : H → H` is a Note-4 unitary and `Θ : H ≃ₗᵢ[𝕜] K` is a linear isometry equivalence, then the conjugate `Θ ∘ V ∘ Θ⁻¹ : K → K` is a Note-4 uni",
+  "nl": "**Conjugation preserves Note-4 unitarity.**  If `V : H → H` is a Note-4\nunitary and `Θ : H ≃ₗᵢ[𝕜] K` is a linear isometry equivalence, then the conjugate\n`Θ ∘ V ∘ Θ⁻¹ : K → K` is a Note-4 unitary.  This is Proposition 76's \"same\nconjugation reason\": it is a composition of the unitaries `Θ⁻¹`, `V`, `Θ`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.note4_conj` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 81–91."
+ },
+ "BookProof_ChapterMajoranaProp76_energyTransform_unitary": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.energyTransform_unitary",
+  "short": "energyTransform_unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L107-L112",
+  "title": "Proposition 76 (energy transform is unitary).** For any Note-4 unitary `V` (the time-Fourier transform `𝓕_P(−p⁰)`) and any linear isometry equivalence `Θ`, the energy transform `𝓔 = Θ ∘ V",
+  "nl": "**Proposition 76 (energy transform is unitary).**  For any Note-4 unitary\n`V` (the time-Fourier transform `𝓕_P(−p⁰)`) and any linear isometry equivalence\n`Θ`, the energy transform `𝓔 = Θ ∘ V ∘ Θ⁻¹` is a Note-4 unitary.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.energyTransform_unitary` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 107–112."
+ },
+ "BookProof_ChapterMajoranaProp76_energyMomentum_unitary": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.energyMomentum_unitary",
+  "short": "energyMomentum_unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L114-L121",
+  "title": "Proposition 76 (energy–momentum transform is unitary).** Composing the energy transform `𝓔` with the (unitary) Majorana–Fourier transform `𝓕_M` (any Note-4 unitary `FM : K → K`) yields the",
+  "nl": "**Proposition 76 (energy–momentum transform is unitary).**  Composing the\nenergy transform `𝓔` with the (unitary) Majorana–Fourier transform `𝓕_M`\n(any Note-4 unitary `FM : K → K`) yields the unitary energy–momentum transform\n`𝓔 ∘ 𝓕_M`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.energyMomentum_unitary` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 114–121."
+ },
+ "BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary",
+  "short": "fourierTransform_isNote4Unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L133-L138",
+  "title": "The Pauli–Fourier transform `𝓕_P` is a Note-4 unitary on `L²`.** This is Plancherel's theorem: Mathlib's `Lp.fourierTransformₗᵢ` is a `≃ₗᵢ[ℂ]`, hence a Note-4 unitary",
+  "nl": "**The Pauli–Fourier transform `𝓕_P` is a Note-4 unitary on `L²`.**  This is\nPlancherel's theorem: Mathlib's `Lp.fourierTransformₗᵢ` is a `≃ₗᵢ[ℂ]`, hence a\nNote-4 unitary.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 133–138."
+ },
+ "BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary": {
+  "leaf": "ChapterMajoranaProp76",
+  "name": "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary",
+  "short": "energyTransform_fourier_unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "majorana",
+   "particle-physics"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMajoranaProp76.lean#L140-L146",
+  "title": "The concrete energy transform on `L²` is a Note-4 unitary.** Conjugating the `L²`-Fourier transform by any linear isometry equivalence `Θ` yields a Note-4 unitary — the honest realization",
+  "nl": "**The concrete energy transform on `L²` is a Note-4 unitary.**  Conjugating\nthe `L²`-Fourier transform by any linear isometry equivalence `Θ` yields a Note-4\nunitary — the honest realization of `𝓔` in the Mathlib `L²` model.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary` (module `BookProof.MajoranaProp76`), line-linked source: `ChapterMajoranaProp76.lean` lines 140–146."
+ },
+ "BookProof_ChapterParityMajoranaQuant_iJ_herm": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.iJ_herm",
+  "short": "iJ_herm",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L75-L78",
+  "title": "`iJ` is Hermitian: `(iJ)ᴴ = iJ`, using skew-adjointness `Jᴴ = -J` and `conj i = -i`",
+  "nl": "`iJ` is Hermitian: `(iJ)ᴴ = iJ`, using skew-adjointness `Jᴴ = -J` and `conj i = -i`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.iJ_herm` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 75–78."
+ },
+ "BookProof_ChapterParityMajoranaQuant_iJ_sq": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.iJ_sq",
+  "short": "iJ_sq",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L80-L83",
+  "title": "`iJ` is an involution: `(iJ)² = 1`, using `J² = -1`",
+  "nl": "`iJ` is an involution: `(iJ)² = 1`, using `J² = -1`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.iJ_sq` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 80–83."
+ },
+ "BookProof_ChapterParityMajoranaQuant_proj_add": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.proj_add",
+  "short": "proj_add",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L85-L90",
+  "title": "The field split `a(v) = a(v+iJv) + a(v−iJv)`: the two projections sum to the identity",
+  "nl": "The field split `a(v) = a(v+iJv) + a(v−iJv)`: the two projections sum to the identity.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.proj_add` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 85–90."
+ },
+ "BookProof_ChapterParityMajoranaQuant_annihProj_idem": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.annihProj_idem",
+  "short": "annihProj_idem",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L92-L101",
+  "title": "The annihilation projection is idempotent",
+  "nl": "The annihilation projection is idempotent.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.annihProj_idem` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 92–101."
+ },
+ "BookProof_ChapterParityMajoranaQuant_creatProj_idem": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.creatProj_idem",
+  "short": "creatProj_idem",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L103-L112",
+  "title": "The creation projection is idempotent",
+  "nl": "The creation projection is idempotent.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.creatProj_idem` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 103–112."
+ },
+ "BookProof_ChapterParityMajoranaQuant_annih_creat_zero": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.annih_creat_zero",
+  "short": "annih_creat_zero",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L114-L121",
+  "title": "The two projections are complementary: `annihProj · creatProj = 0`",
+  "nl": "The two projections are complementary: `annihProj · creatProj = 0`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.annih_creat_zero` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 114–121."
+ },
+ "BookProof_ChapterParityMajoranaQuant_creat_annih_zero": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.creat_annih_zero",
+  "short": "creat_annih_zero",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L123-L130",
+  "title": "The two projections are complementary: `creatProj · annihProj = 0`",
+  "nl": "The two projections are complementary: `creatProj · annihProj = 0`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.creat_annih_zero` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 123–130."
+ },
+ "BookProof_ChapterParityMajoranaQuant_annihProj_herm": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.annihProj_herm",
+  "short": "annihProj_herm",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L132-L136",
+  "title": "The annihilation projection is Hermitian (an orthogonal projection)",
+  "nl": "The annihilation projection is Hermitian (an orthogonal projection).\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.annihProj_herm` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 132–136."
+ },
+ "BookProof_ChapterParityMajoranaQuant_creatProj_herm": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.creatProj_herm",
+  "short": "creatProj_herm",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L138-L142",
+  "title": "The creation projection is Hermitian (an orthogonal projection)",
+  "nl": "The creation projection is Hermitian (an orthogonal projection).\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.creatProj_herm` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 138–142."
+ },
+ "BookProof_ChapterParityMajoranaQuant_J_unitary": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.J_unitary",
+  "short": "J_unitary",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L144-L148",
+  "title": "A compatible complex structure is **unitary**: `Jᴴ · J = 1`",
+  "nl": "A compatible complex structure is **unitary**: `Jᴴ · J = 1`.  On a real inner-product\nspace, a skew-symmetric `J` with `J² = -1` is orthogonal, so it preserves the metric — the\ncompatibility of the metric, the complex structure and the symplectic form `⟨v,Jw⟩`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.J_unitary` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 144–148."
+ },
+ "BookProof_ChapterParityMajoranaQuant_J_unitary'": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.J_unitary'",
+  "short": "J_unitary'",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L150-L152",
+  "title": "A compatible complex structure is unitary on the other side too: `J · Jᴴ = 1`",
+  "nl": "A compatible complex structure is unitary on the other side too: `J · Jᴴ = 1`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.J_unitary'` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 150–152."
+ },
+ "BookProof_ChapterParityMajoranaQuant_J_annih": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.J_annih",
+  "short": "J_annih",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L154-L162",
+  "title": "The annihilation combinations lie in the `−i`-eigenspace of `J`: `J · annihProj = (−i)·annihProj`",
+  "nl": "The annihilation combinations lie in the `−i`-eigenspace of `J`:\n`J · annihProj = (−i)·annihProj`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.J_annih` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 154–162."
+ },
+ "BookProof_ChapterParityMajoranaQuant_J_creat": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.J_creat",
+  "short": "J_creat",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L164-L172",
+  "title": "The creation combinations lie in the `+i`-eigenspace of `J`: `J · creatProj = i·creatProj`",
+  "nl": "The creation combinations lie in the `+i`-eigenspace of `J`:\n`J · creatProj = i·creatProj`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.J_creat` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 164–172."
+ },
+ "BookProof_ChapterParityMajoranaQuant_stdJ_sq": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.stdJ_sq",
+  "short": "stdJ_sq",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L182-L185",
+  "title": "The standard symplectic unit squares to `-1`",
+  "nl": "The standard symplectic unit squares to `-1`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.stdJ_sq` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 182–185."
+ },
+ "BookProof_ChapterParityMajoranaQuant_stdJ_skew": {
+  "leaf": "ChapterParityMajoranaQuant",
+  "name": "BookProof.ChapterParityMajoranaQuant.stdJ_skew",
+  "short": "stdJ_skew",
+  "tags": [
+   "timepiece",
+   "qym",
+   "parity",
+   "majorana",
+   "quantization"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean#L187-L190",
+  "title": "The standard symplectic unit is skew-adjoint `stdJᴴ = -stdJ` (real skew-symmetric)",
+  "nl": "The standard symplectic unit is skew-adjoint `stdJᴴ = -stdJ` (real skew-symmetric).\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterParityMajoranaQuant.stdJ_skew` (module `BookProof.ParityMajoranaQuant`), line-linked source: `ChapterParityMajoranaQuant.lean` lines 187–190."
+ },
+ "BookProof_YangMillsBianchi_fieldStrength_antisymm": {
+  "leaf": "ChapterYangMillsBianchi",
+  "name": "BookProof.YangMillsBianchi.fieldStrength_antisymm",
+  "short": "fieldStrength_antisymm",
+  "tags": [
+   "timepiece",
+   "qym",
+   "yang-mills",
+   "bianchi-identity"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsBianchi.lean#L60-L64",
+  "title": "The field strength is antisymmetric: `F_{j k} = - F_{k j}`",
+  "nl": "The field strength is antisymmetric: `F_{j k} = - F_{k j}`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsBianchi.fieldStrength_antisymm` (module `BookProof.YangMillsBianchi`), line-linked source: `ChapterYangMillsBianchi.lean` lines 60–64."
+ },
+ "BookProof_YangMillsBianchi_bianchi_cyclic": {
+  "leaf": "ChapterYangMillsBianchi",
+  "name": "BookProof.YangMillsBianchi.bianchi_cyclic",
+  "short": "bianchi_cyclic",
+  "tags": [
+   "timepiece",
+   "qym",
+   "yang-mills",
+   "bianchi-identity"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsBianchi.lean#L66-L70",
+  "title": "The cyclic Jacobi identity for the double commutators of the covariant derivatives (the source of the Bianchi identity)",
+  "nl": "The cyclic Jacobi identity for the double commutators of the covariant\nderivatives (the source of the Bianchi identity).\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsBianchi.bianchi_cyclic` (module `BookProof.YangMillsBianchi`), line-linked source: `ChapterYangMillsBianchi.lean` lines 66–70."
+ },
+ "BookProof_YangMillsBianchi_bianchi": {
+  "leaf": "ChapterYangMillsBianchi",
+  "name": "BookProof.YangMillsBianchi.bianchi",
+  "short": "bianchi",
+  "tags": [
+   "timepiece",
+   "qym",
+   "yang-mills",
+   "bianchi-identity"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsBianchi.lean#L75-L79",
+  "title": "The Lean 4 theorem `bianchi` in the `ChapterYangMillsBianchi` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `bianchi` in the `ChapterYangMillsBianchi` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsBianchi.bianchi` (module `BookProof.YangMillsBianchi`), line-linked source: `ChapterYangMillsBianchi.lean` lines 75–79."
+ },
+ "BookProof_YangMillsBianchi_bianchi_fieldStrength": {
+  "leaf": "ChapterYangMillsBianchi",
+  "name": "BookProof.YangMillsBianchi.bianchi_fieldStrength",
+  "short": "bianchi_fieldStrength",
+  "tags": [
+   "timepiece",
+   "qym",
+   "yang-mills",
+   "bianchi-identity"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsBianchi.lean#L81-L85",
+  "title": "The Bianchi identity written with the field strength, `ε_{i j k} [D_i, F_{j k}] = 0`",
+  "nl": "The Bianchi identity written with the field strength,\n`ε_{i j k} [D_i, F_{j k}] = 0`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsBianchi.bianchi_fieldStrength` (module `BookProof.YangMillsBianchi`), line-linked source: `ChapterYangMillsBianchi.lean` lines 81–85."
+ },
+ "BookProof_YangMillsSU3_structureConstant_formula": {
+  "leaf": "ChapterYangMillsSU3",
+  "name": "BookProof.YangMillsSU3.structureConstant_formula",
+  "short": "structureConstant_formula",
+  "tags": [
+   "timepiece",
+   "qym",
+   "su3",
+   "structure-constants"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsSU3.lean#L65-L72",
+  "title": "The Lean 4 theorem `structureConstant_formula` in the `ChapterYangMillsSU3` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `structureConstant_formula` in the `ChapterYangMillsSU3` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsSU3.structureConstant_formula` (module `BookProof.YangMillsSU3`), line-linked source: `ChapterYangMillsSU3.lean` lines 65–72."
+ },
+ "BookProof_YangMillsSU3_structureConstant_antisymm_swap": {
+  "leaf": "ChapterYangMillsSU3",
+  "name": "BookProof.YangMillsSU3.structureConstant_antisymm_swap",
+  "short": "structureConstant_antisymm_swap",
+  "tags": [
+   "timepiece",
+   "qym",
+   "su3",
+   "structure-constants"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsSU3.lean#L77-L84",
+  "title": "The Lean 4 theorem `structureConstant_antisymm_swap` in the `ChapterYangMillsSU3` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `structureConstant_antisymm_swap` in the `ChapterYangMillsSU3` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsSU3.structureConstant_antisymm_swap` (module `BookProof.YangMillsSU3`), line-linked source: `ChapterYangMillsSU3.lean` lines 77–84."
+ },
+ "BookProof_YangMillsSU3_structureConstant_antisymm_rotate": {
+  "leaf": "ChapterYangMillsSU3",
+  "name": "BookProof.YangMillsSU3.structureConstant_antisymm_rotate",
+  "short": "structureConstant_antisymm_rotate",
+  "tags": [
+   "timepiece",
+   "qym",
+   "su3",
+   "structure-constants"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsSU3.lean#L90-L101",
+  "title": "The Lean 4 theorem `structureConstant_antisymm_rotate` in the `ChapterYangMillsSU3` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `structureConstant_antisymm_rotate` in the `ChapterYangMillsSU3` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsSU3.structureConstant_antisymm_rotate` (module `BookProof.YangMillsSU3`), line-linked source: `ChapterYangMillsSU3.lean` lines 90–101."
+ },
+ "BookProof_YangMillsSU3_structureConstant_totally_antisymmetric": {
+  "leaf": "ChapterYangMillsSU3",
+  "name": "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric",
+  "short": "structureConstant_totally_antisymmetric",
+  "tags": [
+   "timepiece",
+   "qym",
+   "su3",
+   "structure-constants"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsSU3.lean#L103-L108",
+  "title": "Total antisymmetry** of the structure constants: swapping the first two or the last two indices flips the sign",
+  "nl": "**Total antisymmetry** of the structure constants: swapping the first two\nor the last two indices flips the sign.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsSU3.structureConstant_totally_antisymmetric` (module `BookProof.YangMillsSU3`), line-linked source: `ChapterYangMillsSU3.lean` lines 103–108."
+ },
+ "BookProof_YangMillsSU3_structureConstant_jacobi": {
+  "leaf": "ChapterYangMillsSU3",
+  "name": "BookProof.YangMillsSU3.structureConstant_jacobi",
+  "short": "structureConstant_jacobi",
+  "tags": [
+   "timepiece",
+   "qym",
+   "su3",
+   "structure-constants"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsSU3.lean#L116-L159",
+  "title": "The Lean 4 theorem `structureConstant_jacobi` in the `ChapterYangMillsSU3` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `structureConstant_jacobi` in the `ChapterYangMillsSU3` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.YangMillsSU3.structureConstant_jacobi` (module `BookProof.YangMillsSU3`), line-linked source: `ChapterYangMillsSU3.lean` lines 116–159."
+ },
+ "BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.norm_pow_le_of_le",
+  "short": "norm_pow_le_of_le",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L54-L63",
+  "title": "The Lean 4 theorem `norm_pow_le_of_le` in the `ChapterSirkGroupTransfer` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `norm_pow_le_of_le` in the `ChapterSirkGroupTransfer` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.norm_pow_le_of_le` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 54–63."
+ },
+ "BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.norm_pow_sub_pow_le",
+  "short": "norm_pow_sub_pow_le",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L65-L91",
+  "title": "The telescoping estimate.** `Aⁿ − Bⁿ = A(Aⁿ⁻¹ − Bⁿ⁻¹) + (A − B)Bⁿ⁻¹` iterated: on the ball of radius `M` the `n`-th power map is Lipschitz with constant `n M^{n−1}`",
+  "nl": "**The telescoping estimate.**  `Aⁿ − Bⁿ = A(Aⁿ⁻¹ − Bⁿ⁻¹) + (A − B)Bⁿ⁻¹`\niterated: on the ball of radius `M` the `n`-th power map is Lipschitz with\nconstant `n M^{n−1}`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.norm_pow_sub_pow_le` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 65–91."
+ },
+ "BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le",
+  "short": "norm_exp_sub_exp_le",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L95-L146",
+  "title": "`‖exp a − exp b‖ ≤ ‖a − b‖ e^{M}`** for `‖a‖, ‖b‖ ≤ M`: summing the telescoping estimate against the exponential series",
+  "nl": "**`‖exp a − exp b‖ ≤ ‖a − b‖ e^{M}`** for `‖a‖, ‖b‖ ≤ M`: summing the\ntelescoping estimate against the exponential series.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 95–146."
+ },
+ "BookProof_ChapterSirkGroupTransfer_groupFlow_zero": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.groupFlow_zero",
+  "short": "groupFlow_zero",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L153-L155",
+  "title": "The Lean 4 theorem `groupFlow_zero` in the `ChapterSirkGroupTransfer` chapter of the timepiece formalization",
+  "nl": "The Lean 4 theorem `groupFlow_zero` in the `ChapterSirkGroupTransfer` chapter of the timepiece formalization.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.groupFlow_zero` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 153–155."
+ },
+ "BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le",
+  "short": "norm_groupFlow_sub_le",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L157-L176",
+  "title": "The unitary-group transfer for bounded generators (§12.2 Gap 3, the bounded half).** Two bounded generators of norm at most `M` produce propagators that differ by at most `|t| ‖a − b‖ e^{|",
+  "nl": "**The unitary-group transfer for bounded generators (§12.2 Gap 3, the\nbounded half).**  Two bounded generators of norm at most `M` produce propagators\nthat differ by at most `|t| ‖a − b‖ e^{|t| M}` at time `t`.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 157–176."
+ },
+ "BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval": {
+  "leaf": "ChapterSirkGroupTransfer",
+  "name": "BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval",
+  "short": "groupFlow_transfer_uniform_on_interval",
+  "tags": [
+   "timepiece",
+   "sirk",
+   "one-parameter-groups",
+   "transfer"
+  ],
+  "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkGroupTransfer.lean#L178-L187",
+  "title": "Uniformity on compact time intervals.** On `[−T, T]` the two propagators differ by at most `T ‖a − b‖ e^{T M}`, a bound independent of `t`: generator convergence in norm gives convergence",
+  "nl": "**Uniformity on compact time intervals.**  On `[−T, T]` the two propagators\ndiffer by at most `T ‖a − b‖ e^{T M}`, a bound independent of `t`: generator\nconvergence in norm gives convergence of the flows uniformly in time on every\nbounded interval.\n\n\n\n**Formalization Note.** Lean 4 identifier: `BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval` (module `BookProof.SirkGroupTransfer`), line-linked source: `ChapterSirkGroupTransfer.lean` lines 178–187."
+ }
+}

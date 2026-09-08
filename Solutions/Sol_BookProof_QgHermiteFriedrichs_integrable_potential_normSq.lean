@@ -1,0 +1,69 @@
+-- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.integrable_potential_normSq
+import Mathlib
+import Definitions.Def_ChapterQgHermiteFriedrichs
+open BookProof.QgHermiteFriedrichs
+
+
+
+
+
+
+
+
+open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
+
+noncomputable section
+
+variable {d : ℕ}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable (W : Vd d → ℝ)
+
+set_option maxHeartbeats 1000000 in
+theorem solution (hWc : Continuous W) (hWb : ExpBounded W)
+    (p : MvPolynomial (Fin d) ℂ) :
+    Integrable (fun x : Vd d => W x * ‖pgFun p x‖ ^ 2) (volume : Measure (Vd d)) := by
+
+  have hu : MemLp (fun x : Vd d => ‖pgFun p x‖) 2 (volume : Measure (Vd d)) :=
+    (memLp_pgFun p).norm
+  have hv : MemLp (fun x : Vd d => W x * ‖pgFun p x‖) 2 (volume : Measure (Vd d)) := by
+    refine (memLp_mul_pgFun_of_expBounded hWc hWb p).of_le
+      ((hWc.mul ((continuous_pgFun p).norm)).aestronglyMeasurable)
+      (Filter.Eventually.of_forall fun x => ?_)
+    rw [Real.norm_eq_abs, abs_mul, norm_mul, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_nonneg (norm_nonneg (pgFun p x))]
+  have hmul := hv.integrable_mul hu
+  refine hmul.congr (Filter.Eventually.of_forall fun x => ?_)
+  simp only [Pi.mul_apply]
+  ring

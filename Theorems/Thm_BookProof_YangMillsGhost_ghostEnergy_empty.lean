@@ -1,0 +1,28 @@
+-- Generated from ChapterYangMillsGhostSector.lean — theorem BookProof.YangMillsGhost.ghostEnergy_empty
+import Mathlib
+import Definitions.Def_ChapterYangMillsGhostSector
+open BookProof.YangMillsGhost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+noncomputable section
+
+open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
+open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
+open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
+open BookProof.ChapterStoneResolvent
+
+variable {K : ℕ}
+
+theorem BookProof.YangMillsGhost.ghostEnergy_empty (ω : Fin K → ℝ) : ghostEnergy ω (∅ : GConf K) = 0 := by sorry

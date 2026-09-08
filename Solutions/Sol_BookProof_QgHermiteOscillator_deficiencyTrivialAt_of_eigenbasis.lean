@@ -1,0 +1,50 @@
+-- Generated from ChapterQgHermiteOscillatorEsa.lean — solution of BookProof.QgHermiteOscillator.deficiencyTrivialAt_of_eigenbasis
+import Mathlib
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Theorems.Thm_BookProof_QgHermiteOscillator_eq_zero_of_inner_basis_eq_zero
+open BookProof.QgHermiteOscillator
+
+
+
+
+
+
+
+
+
+
+
+
+open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+noncomputable section
+
+
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (T : D →ₗ[ℂ] F) (b : HilbertBasis ι ℂ F)
+    (lam : ι → ℝ) (hmem : ∀ i, (b i : F) ∈ D)
+    (heig : ∀ i, T ⟨b i, hmem i⟩ = ((lam i : ℝ) : ℂ) • (b i : F))
+    {z : ℂ} (hz : z.im ≠ 0) : DeficiencyTrivialAt D T z := by
+
+  intro w hw
+  refine eq_zero_of_inner_basis_eq_zero b fun i => ?_
+  have key := hw ⟨b i, hmem i⟩
+  rw [heig i, inner_smul_left] at key
+  have hconj : (starRingEnd ℂ) ((lam i : ℝ) : ℂ) = ((lam i : ℝ) : ℂ) := Complex.conj_ofReal _
+  rw [hconj] at key
+  have hne : ((lam i : ℝ) : ℂ) - z ≠ 0 := by
+    intro h
+    apply hz
+    have := congrArg Complex.im h
+    simpa [sub_eq_zero] using this.symm
+  have : (((lam i : ℝ) : ℂ) - z) * (inner ℂ (b i) w : ℂ) = 0 := by
+    rw [sub_mul]
+    simpa using sub_eq_zero.mpr key
+  exact (mul_eq_zero.mp this).resolve_left hne

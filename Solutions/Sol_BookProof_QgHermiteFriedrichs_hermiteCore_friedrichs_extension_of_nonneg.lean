@@ -1,0 +1,62 @@
+-- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.hermiteCore_friedrichs_extension_of_nonneg
+import Mathlib
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_quadForm_nonneg
+open BookProof.QgHermiteFriedrichs
+
+
+
+
+
+
+
+
+open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
+
+noncomputable section
+
+variable {d : ℕ}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable (W : Vd d → ℝ)
+
+set_option maxHeartbeats 1000000 in
+theorem solution (hWc : Continuous W) (hWb : ExpBounded W)
+    (hW0 : ∀ x, 0 ≤ W x) :
+    ∃ (Dom : Submodule ℂ (L2d d)) (A : Dom →ₗ[ℂ] L2d d),
+      IsPositiveSelfAdjointExtension (hamCore W hWc hWb) A :=
+  friedrichs_extension_exists
+      ⟨_, hamCore W hWc hWb, hamCore_symmetricOn W hWc hWb,
+        hamCore_quadForm_nonneg W hWc hWb hW0⟩ polyGaussCore_dense

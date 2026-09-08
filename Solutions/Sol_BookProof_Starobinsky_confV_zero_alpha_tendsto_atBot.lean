@@ -1,0 +1,34 @@
+-- Generated from ChapterStarobinskyPotential.lean — solution of BookProof.Starobinsky.confV_zero_alpha_tendsto_atBot
+import Mathlib
+import Definitions.Def_ChapterStarobinskyPotential
+open BookProof.Starobinsky
+
+
+
+
+
+
+
+
+
+
+
+
+open Filter Topology
+
+
+open BookProof.FarisLavine BookProof.NavierStokesFlow
+open BookProof.QuantumGravityDensitized BookProof.StoneBridge
+open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+
+noncomputable section
+
+set_option maxHeartbeats 1000000 in
+theorem solution {M : ℝ} (hM : M ≠ 0) :
+    Tendsto (fun Rc => confV M 0 Rc) atTop atBot := by
+
+  have hpos : 0 < M ^ 2 / 2 := by positivity
+  have h : Tendsto (fun Rc : ℝ => -(M ^ 2 / 2) * Rc) atTop atBot :=
+    Filter.Tendsto.const_mul_atTop_of_neg (by linarith : -(M ^ 2 / 2) < 0) tendsto_id
+  refine h.congr fun Rc => ?_
+  simp [confV]

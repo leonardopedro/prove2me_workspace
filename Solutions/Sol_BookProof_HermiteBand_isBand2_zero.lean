@@ -1,0 +1,52 @@
+-- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.isBand2_zero
+import Mathlib
+import Definitions.Def_ChapterHermiteBandCalculus
+open BookProof.HermiteBand
+
+
+
+
+
+
+
+
+noncomputable section
+
+open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
+
+set_option maxHeartbeats 1000000 in
+theorem solution : IsBand2 (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) := by
+
+  refine ⟨0, 0, le_refl 0, fun α => ⟨0, ?_, ?_, ?_, ?_⟩⟩
+  · simp [hcomb]
+  · simp
+  · simp
+  · simp

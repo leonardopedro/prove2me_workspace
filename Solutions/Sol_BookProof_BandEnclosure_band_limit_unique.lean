@@ -1,0 +1,40 @@
+-- Generated from ChapterBandEnclosure.lean — solution of BookProof.BandEnclosure.band_limit_unique
+import Mathlib
+import Definitions.Def_ChapterBandEnclosure
+open BookProof.BandEnclosure
+
+
+
+
+
+
+
+
+
+
+
+noncomputable section
+
+open Filter Topology
+
+
+open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
+open BookProof.ChapterH6 BookProof.ChapterH8
+
+set_option maxHeartbeats 1000000 in
+theorem solution {lo hi : ℕ → ℝ} {lam lam' : ℝ}
+    (h : ∀ m, lam ∈ Set.Icc (lo m) (hi m)) (h' : ∀ m, lam' ∈ Set.Icc (lo m) (hi m))
+    (hwidth : Tendsto (fun m => hi m - lo m) atTop (𝓝 0)) :
+    lam = lam' := by
+
+  have habs : ∀ m, |lam - lam'| ≤ hi m - lo m := by
+    intro m
+    rw [abs_sub_le_iff]
+    exact ⟨by linarith [(h m).2, (h' m).1], by linarith [(h' m).2, (h m).1]⟩
+  have hle : |lam - lam'| ≤ 0 :=
+    ge_of_tendsto hwidth (Filter.Eventually.of_forall habs)
+  have : lam - lam' = 0 := by
+    have := abs_nonneg (lam - lam')
+    have h0 : |lam - lam'| = 0 := le_antisymm hle this
+    exact abs_eq_zero.mp h0
+  linarith

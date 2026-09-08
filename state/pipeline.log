@@ -1,0 +1,1738 @@
+08:00:01 processing def:timepiece_corrector (attempt 1)
+08:00:05 def:timepiece_corrector: FAIL (submit-definition rejected: {"job_id": "ccd5ea8c-87c3-4de9-8bc0-d2c6b4ae0318", "definition_name": "timepiece_corrector", "status": "PENDING", "message)
+08:00:05 processing thm:zeta_symm (attempt 1)
+08:01:00 thm:zeta_symm: DONE
+08:01:00 processing thm:X_p_zero (attempt 1)
+08:01:46 thm:X_p_zero: DONE
+08:01:46 processing thm:X_mult_zero (attempt 1)
+08:24:57 processing def:timepiece_corrector (attempt 2)
+08:25:02 def:timepiece_corrector: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"timepiece_corrector\" already exists"})
+08:25:02 processing thm:norm_X_mult_list_eq_one (attempt 1)
+08:25:31 thm:norm_X_mult_list_eq_one: DONE
+08:25:31 processing thm:norm_X_mult_eq_one (attempt 1)
+08:26:09 thm:norm_X_mult_eq_one: DONE
+08:26:09 processing thm:euler_partial_product_nonvanishing (attempt 1)
+08:26:39 thm:euler_partial_product_nonvanishing: DONE
+08:26:39 processing thm:S_recip_random_zero (attempt 1)
+08:27:08 thm:S_recip_random_zero: DONE
+08:27:08 processing thm:bohr_cahen_algebraic_tail_bound (attempt 1)
+08:27:46 thm:bohr_cahen_algebraic_tail_bound: DONE
+08:27:46 processing sol:zeta_symm (attempt 1)
+08:28:54 sol:zeta_symm: DONE
+08:28:54 processing sol:X_p_zero (attempt 1)
+08:30:54 sol:X_p_zero: DONE
+08:30:54 processing sol:X_mult_zero (attempt 1)
+08:32:23 sol:X_mult_zero: DONE
+08:32:23 processing sol:norm_X_mult_list_eq_one (attempt 1)
+08:34:03 sol:norm_X_mult_list_eq_one: DONE
+08:34:03 processing sol:norm_X_mult_eq_one (attempt 1)
+08:36:03 sol:norm_X_mult_eq_one: DONE
+08:36:03 processing sol:euler_partial_product_nonvanishing (attempt 1)
+08:37:33 sol:euler_partial_product_nonvanishing: DONE
+08:37:33 processing sol:S_recip_random_zero (attempt 1)
+08:39:02 sol:S_recip_random_zero: DONE
+08:39:02 processing sol:bohr_cahen_algebraic_tail_bound (attempt 1)
+08:41:37 sol:bohr_cahen_algebraic_tail_bound: DONE
+08:41:37 summary: 16 done, 1 pending, 0 failed
+08:43:23 processing def:timepiece_corrector (attempt 3)
+08:43:27 def:timepiece_corrector: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"timepiece_corrector\" already exists"})
+08:43:27 summary: 16 done, 1 pending, 0 failed
+08:44:17 summary: 17 done, 0 pending, 0 failed
+09:30:58 summary: 17 done, 0 pending, 0 failed
+09:32:04 summary: 17 done, 0 pending, 0 failed
+16:17:00 processing def:ChapterBRSTNilpotent (attempt 1)
+16:17:08 def:ChapterBRSTNilpotent: DONE
+16:17:08 processing def:ChapterGaugeFixing (attempt 1)
+16:17:34 def:ChapterGaugeFixing: DONE
+16:17:34 processing def:ChapterGhostField (attempt 1)
+16:18:02 def:ChapterGhostField: DONE
+16:18:02 processing def:ChapterMassGap (attempt 1)
+16:18:28 def:ChapterMassGap: DONE
+16:18:28 processing def:ChapterNavierStokes (attempt 1)
+16:18:54 def:ChapterNavierStokes: DONE
+16:18:54 processing def:ChapterSirkFinitePrecision (attempt 1)
+16:19:24 def:ChapterSirkFinitePrecision: DONE
+16:19:24 processing def:ChapterYangMillsFieldStrength (attempt 1)
+16:19:54 def:ChapterYangMillsFieldStrength: DONE
+16:19:54 processing thm:BookProof_BRSTNilpotent_chi_cyc3 (attempt 1)
+16:20:45 thm:BookProof_BRSTNilpotent_chi_cyc3: DONE
+16:20:45 processing thm:BookProof_BRSTNilpotent_chi_swap4 (attempt 1)
+16:21:28 thm:BookProof_BRSTNilpotent_chi_swap4: DONE
+16:21:28 processing thm:BookProof_GaugeFixing_L_gf_invariant (attempt 1)
+16:22:17 thm:BookProof_GaugeFixing_L_gf_invariant: DONE
+16:22:17 processing thm:BookProof_GaugeFixing_Pm_mul_Vm (attempt 1)
+16:23:04 thm:BookProof_GaugeFixing_Pm_mul_Vm: DONE
+16:23:04 processing thm:BookProof_GaugeFixing_Pm_ne_zero (attempt 1)
+16:23:38 thm:BookProof_GaugeFixing_Pm_ne_zero: DONE
+16:23:38 processing thm:BookProof_GaugeFixing_Qm_ne_zero (attempt 1)
+16:24:16 thm:BookProof_GaugeFixing_Qm_ne_zero: DONE
+16:24:16 processing thm:BookProof_GaugeFixing_addDeg_fst (attempt 1)
+16:24:50 thm:BookProof_GaugeFixing_addDeg_fst: DONE
+16:24:50 processing thm:BookProof_GaugeFixing_addDeg_snd (attempt 1)
+16:25:38 thm:BookProof_GaugeFixing_addDeg_snd: DONE
+16:25:38 processing thm:BookProof_GaugeFixing_int_L_gf_eq_zero (attempt 1)
+16:26:16 thm:BookProof_GaugeFixing_int_L_gf_eq_zero: DONE
+16:26:16 processing thm:BookProof_GaugeFixing_matrixModelIntegral_ne_zero (attempt 1)
+16:26:50 thm:BookProof_GaugeFixing_matrixModelIntegral_ne_zero: DONE
+16:26:50 processing thm:BookProof_GaugeFixing_matrixModel_B_ne_zero (attempt 1)
+16:27:24 thm:BookProof_GaugeFixing_matrixModel_B_ne_zero: DONE
+16:27:24 processing thm:BookProof_GaugeFixing_s_B_eq_zero (attempt 1)
+16:28:07 thm:BookProof_GaugeFixing_s_B_eq_zero: DONE
+16:28:07 processing thm:BookProof_GaugeFixing_s_c_eq_zero (attempt 1)
+16:28:46 thm:BookProof_GaugeFixing_s_c_eq_zero: DONE
+16:28:46 processing thm:BookProof_GaugeFixing_s_d_phi (attempt 1)
+16:29:24 thm:BookProof_GaugeFixing_s_d_phi: DONE
+16:29:24 processing thm:BookProof_GhostField_brst_charge_nilpotent (attempt 1)
+16:30:08 thm:BookProof_GhostField_brst_charge_nilpotent: DONE
+16:30:08 processing thm:BookProof_GhostField_car (attempt 1)
+16:30:52 thm:BookProof_GhostField_car: DONE
+16:30:52 processing thm:BookProof_GhostField_numberOp_add_hole (attempt 1)
+16:31:27 thm:BookProof_GhostField_numberOp_add_hole: DONE
+16:31:27 processing thm:BookProof_GhostField_numberOp_eq (attempt 1)
+16:32:01 thm:BookProof_GhostField_numberOp_eq: DONE
+16:32:01 processing thm:BookProof_GhostField_numberOp_idempotent (attempt 1)
+16:32:35 thm:BookProof_GhostField_numberOp_idempotent: DONE
+16:32:35 processing thm:BookProof_GhostField_numberOp_selfAdjoint (attempt 1)
+16:33:08 thm:BookProof_GhostField_numberOp_selfAdjoint: DONE
+16:33:08 processing thm:BookProof_GhostField_psiDag_eq_conjTranspose (attempt 1)
+16:33:43 thm:BookProof_GhostField_psiDag_eq_conjTranspose: DONE
+16:33:43 processing thm:BookProof_GhostField_psiDag_sq (attempt 1)
+16:34:25 thm:BookProof_GhostField_psiDag_sq: DONE
+16:34:25 processing thm:BookProof_GhostField_psi_sq (attempt 1)
+16:35:03 thm:BookProof_GhostField_psi_sq: DONE
+16:35:03 processing thm:BookProof_MassGap_exp_conj_eq_self (attempt 1)
+16:35:46 thm:BookProof_MassGap_exp_conj_eq_self: DONE
+16:35:46 processing thm:BookProof_MassGap_massGap_shifted_gapless (attempt 1)
+16:36:34 thm:BookProof_MassGap_massGap_shifted_gapless: DONE
+16:36:34 processing thm:BookProof_MassGap_shiftedSpectrum_excited (attempt 1)
+16:37:08 thm:BookProof_MassGap_shiftedSpectrum_excited: DONE
+16:37:08 processing thm:BookProof_MassGap_shiftedSpectrum_vacuum (attempt 1)
+16:37:55 thm:BookProof_MassGap_shiftedSpectrum_vacuum: DONE
+16:37:55 processing thm:BookProof_NavierStokes_ghostAnnih_sq (attempt 1)
+16:38:29 thm:BookProof_NavierStokes_ghostAnnih_sq: DONE
+16:38:29 processing thm:BookProof_NavierStokes_ghostCreate_eq (attempt 1)
+16:39:03 thm:BookProof_NavierStokes_ghostCreate_eq: DONE
+16:39:03 processing thm:BookProof_NavierStokes_ghostCreate_eq_conjTranspose (attempt 1)
+16:41:03 thm:BookProof_NavierStokes_ghostCreate_eq_conjTranspose: DONE
+16:41:03 processing thm:BookProof_SirkFinitePrecision_CertInterval_abs_le_of_isotone (attempt 1)
+16:41:54 thm:BookProof_SirkFinitePrecision_CertInterval_abs_le_of_isotone: DONE
+16:41:54 processing thm:BookProof_SirkFinitePrecision_CertInterval_dist_le_width (attempt 1)
+16:42:36 thm:BookProof_SirkFinitePrecision_CertInterval_dist_le_width: DONE
+16:42:36 processing thm:BookProof_SirkFinitePrecision_CertInterval_le_sup_bound_of_isotone (attempt 1)
+16:43:19 thm:BookProof_SirkFinitePrecision_CertInterval_le_sup_bound_of_isotone: DONE
+16:43:19 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_add (attempt 1)
+16:43:53 thm:BookProof_SirkFinitePrecision_CertInterval_mem_add: DONE
+16:43:53 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_const (attempt 1)
+16:44:28 thm:BookProof_SirkFinitePrecision_CertInterval_mem_const: DONE
+16:44:28 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_mul (attempt 1)
+16:45:02 thm:BookProof_SirkFinitePrecision_CertInterval_mem_mul: DONE
+16:45:02 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_neg (attempt 1)
+16:45:44 thm:BookProof_SirkFinitePrecision_CertInterval_mem_neg: DONE
+16:45:44 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_ofRounded (attempt 1)
+16:47:01 thm:BookProof_SirkFinitePrecision_CertInterval_mem_ofRounded: DONE
+16:47:01 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_sub (attempt 1)
+16:48:01 thm:BookProof_SirkFinitePrecision_CertInterval_mem_sub: DONE
+16:48:01 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_widen (attempt 1)
+16:48:35 thm:BookProof_SirkFinitePrecision_CertInterval_mem_widen: DONE
+16:48:35 processing thm:BookProof_SirkFinitePrecision_ground_ge_of_no_eigenvalue_below (attempt 1)
+16:49:08 thm:BookProof_SirkFinitePrecision_ground_ge_of_no_eigenvalue_below: DONE
+16:49:08 processing thm:BookProof_SirkFinitePrecision_hasRealEigenvalue_eigenvalues (attempt 1)
+16:49:42 thm:BookProof_SirkFinitePrecision_hasRealEigenvalue_eigenvalues: DONE
+16:49:42 processing thm:BookProof_SirkFinitePrecision_norm_sq_eq_sum_repr (attempt 1)
+16:50:25 thm:BookProof_SirkFinitePrecision_norm_sq_eq_sum_repr: DONE
+16:50:25 processing thm:BookProof_SirkFinitePrecision_observable_propagation (attempt 1)
+16:50:59 thm:BookProof_SirkFinitePrecision_observable_propagation: DONE
+16:50:59 processing thm:BookProof_SirkFinitePrecision_repr_apply_of_symmetric (attempt 1)
+16:51:33 thm:BookProof_SirkFinitePrecision_repr_apply_of_symmetric: DONE
+16:51:33 processing thm:BookProof_YangMillsFieldStrength_Fbook_antisymm (attempt 1)
+16:52:15 thm:BookProof_YangMillsFieldStrength_Fbook_antisymm: DONE
+16:52:15 processing thm:BookProof_YangMillsFieldStrength_fieldStrengthMul_antisymm (attempt 1)
+16:52:49 thm:BookProof_YangMillsFieldStrength_fieldStrengthMul_antisymm: DONE
+16:52:49 processing thm:BookProof_YangMillsFieldStrength_fieldStrengthMul_eq_Fbook (attempt 1)
+16:53:23 thm:BookProof_YangMillsFieldStrength_fieldStrengthMul_eq_Fbook: DONE
+16:53:23 processing thm:BookProof_YangMillsFieldStrength_nonabelian_fieldStrength (attempt 1)
+16:54:19 thm:BookProof_YangMillsFieldStrength_nonabelian_fieldStrength: DONE
+16:54:19 processing thm:BookProof_BRSTNilpotent_contracted_terms_zero (attempt 1)
+16:54:58 thm:BookProof_BRSTNilpotent_contracted_terms_zero: DONE
+16:54:58 processing thm:BookProof_BRSTNilpotent_quartic_term_zero (attempt 1)
+16:55:37 thm:BookProof_BRSTNilpotent_quartic_term_zero: DONE
+16:55:37 processing thm:BookProof_GaugeFixing_matrixModel_Psi (attempt 1)
+16:56:15 thm:BookProof_GaugeFixing_matrixModel_Psi: DONE
+16:56:15 processing thm:BookProof_GaugeFixing_matrixModel_c_ne_zero (attempt 1)
+16:56:54 thm:BookProof_GaugeFixing_matrixModel_c_ne_zero: DONE
+16:56:54 processing thm:BookProof_GaugeFixing_s_gaugeField (attempt 1)
+16:57:32 thm:BookProof_GaugeFixing_s_gaugeField: DONE
+16:57:32 processing thm:BookProof_GhostField_brst_charge_nilpotent_ghost (attempt 1)
+16:58:11 thm:BookProof_GhostField_brst_charge_nilpotent_ghost: DONE
+16:58:11 processing thm:BookProof_MassGap_heisenberg_number_shift_invariant (attempt 1)
+16:58:50 thm:BookProof_MassGap_heisenberg_number_shift_invariant: DONE
+16:58:50 processing thm:BookProof_NavierStokes_ghostAnticomm_annih (attempt 1)
+16:59:44 thm:BookProof_NavierStokes_ghostAnticomm_annih: DONE
+16:59:44 processing thm:BookProof_NavierStokes_ghostCreate_sq (attempt 1)
+17:00:39 thm:BookProof_NavierStokes_ghostCreate_sq: DONE
+17:00:39 processing thm:BookProof_NavierStokes_ghostNumber_eq (attempt 1)
+17:01:16 thm:BookProof_NavierStokes_ghostNumber_eq: DONE
+17:01:16 processing thm:BookProof_NavierStokes_ghost_CAR (attempt 1)
+17:01:49 thm:BookProof_NavierStokes_ghost_CAR: DONE
+17:01:49 processing thm:BookProof_NavierStokes_ghost_annih_create_eq (attempt 1)
+17:02:23 thm:BookProof_NavierStokes_ghost_annih_create_eq: DONE
+17:02:23 processing thm:BookProof_SirkFinitePrecision_CertInterval_mem_evalHorner (attempt 1)
+17:03:06 thm:BookProof_SirkFinitePrecision_CertInterval_mem_evalHorner: DONE
+17:03:06 processing thm:BookProof_SirkFinitePrecision_index_nonempty (attempt 1)
+17:03:40 thm:BookProof_SirkFinitePrecision_index_nonempty: DONE
+17:03:40 processing thm:BookProof_SirkFinitePrecision_observable_propagation_band (attempt 1)
+17:04:15 thm:BookProof_SirkFinitePrecision_observable_propagation_band: DONE
+17:04:15 processing thm:BookProof_SirkFinitePrecision_norm_apply_sq_eq_sum_eigenvalues (attempt 1)
+17:04:53 thm:BookProof_SirkFinitePrecision_norm_apply_sq_eq_sum_eigenvalues: DONE
+17:04:53 processing thm:BookProof_SirkFinitePrecision_rayleigh_eq_sum_eigenvalues (attempt 1)
+17:05:42 thm:BookProof_SirkFinitePrecision_rayleigh_eq_sum_eigenvalues: DONE
+17:05:42 processing thm:BookProof_YangMillsFieldStrength_commutator_eq_coupling (attempt 1)
+17:06:16 thm:BookProof_YangMillsFieldStrength_commutator_eq_coupling: DONE
+17:06:16 processing thm:BookProof_BRSTNilpotent_brst_charge_nilpotent (attempt 1)
+17:06:51 thm:BookProof_BRSTNilpotent_brst_charge_nilpotent: DONE
+17:06:51 processing thm:BookProof_GaugeFixing_matrixModel_Psi_ne_zero (attempt 1)
+17:07:26 thm:BookProof_GaugeFixing_matrixModel_Psi_ne_zero: DONE
+17:07:26 processing thm:BookProof_GaugeFixing_matrixModel_s_Psi (attempt 1)
+17:08:00 thm:BookProof_GaugeFixing_matrixModel_s_Psi: DONE
+17:08:00 processing thm:BookProof_GaugeFixing_L_gf_evaluation (attempt 1)
+17:08:35 thm:BookProof_GaugeFixing_L_gf_evaluation: DONE
+17:08:35 processing thm:BookProof_NavierStokes_ghostAnticomm_create (attempt 1)
+17:09:08 thm:BookProof_NavierStokes_ghostAnticomm_create: DONE
+17:09:08 processing thm:BookProof_NavierStokes_ghostNumber_hermitian (attempt 1)
+17:09:43 thm:BookProof_NavierStokes_ghostNumber_hermitian: DONE
+17:09:43 processing thm:BookProof_NavierStokes_ghostNumber_idem (attempt 1)
+17:10:18 thm:BookProof_NavierStokes_ghostNumber_idem: DONE
+17:10:18 processing thm:BookProof_NavierStokes_ghostNumber_resolution (attempt 1)
+17:11:04 thm:BookProof_NavierStokes_ghostNumber_resolution: DONE
+17:11:04 processing thm:BookProof_SirkFinitePrecision_CertInterval_abs_polyEval_le_of_mem (attempt 1)
+17:11:46 thm:BookProof_SirkFinitePrecision_CertInterval_abs_polyEval_le_of_mem: DONE
+17:11:46 processing thm:BookProof_SirkFinitePrecision_CertInterval_polyEval_le_of_mem (attempt 1)
+17:12:26 thm:BookProof_SirkFinitePrecision_CertInterval_polyEval_le_of_mem: DONE
+17:12:26 processing thm:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual (attempt 1)
+17:13:00 thm:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual: DONE
+17:13:00 processing thm:BookProof_SirkFinitePrecision_ground_le_rayleigh (attempt 1)
+17:13:36 thm:BookProof_SirkFinitePrecision_ground_le_rayleigh: DONE
+17:13:36 processing thm:BookProof_SirkFinitePrecision_temple_lower_bound (attempt 1)
+17:14:09 thm:BookProof_SirkFinitePrecision_temple_lower_bound: DONE
+17:14:09 processing thm:BookProof_GaugeFixing_matrixModel_s_Psi_ne_zero (attempt 1)
+17:14:44 thm:BookProof_GaugeFixing_matrixModel_s_Psi_ne_zero: DONE
+17:14:44 processing thm:BookProof_GaugeFixing_int_L_gf_evaluated (attempt 1)
+17:15:18 thm:BookProof_GaugeFixing_int_L_gf_evaluated: DONE
+17:15:18 processing thm:BookProof_SirkFinitePrecision_backward_error_weyl (attempt 1)
+17:15:57 thm:BookProof_SirkFinitePrecision_backward_error_weyl: DONE
+17:15:57 processing thm:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual_unit (attempt 1)
+17:16:36 thm:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual_unit: DONE
+17:16:36 processing thm:BookProof_SirkFinitePrecision_backward_error_weyl_symm (attempt 1)
+17:17:10 thm:BookProof_SirkFinitePrecision_backward_error_weyl_symm: DONE
+17:17:10 processing sol:BookProof_BRSTNilpotent_chi_cyc3 (attempt 1)
+17:18:19 sol:BookProof_BRSTNilpotent_chi_cyc3: DONE
+17:18:19 processing sol:BookProof_BRSTNilpotent_chi_swap4 (attempt 1)
+17:19:28 sol:BookProof_BRSTNilpotent_chi_swap4: DONE
+17:19:28 processing sol:BookProof_GaugeFixing_L_gf_invariant (attempt 1)
+17:20:58 sol:BookProof_GaugeFixing_L_gf_invariant: DONE
+17:20:58 processing sol:BookProof_GaugeFixing_Pm_mul_Vm (attempt 1)
+17:22:28 sol:BookProof_GaugeFixing_Pm_mul_Vm: DONE
+17:22:28 processing sol:BookProof_GaugeFixing_Pm_ne_zero (attempt 1)
+17:23:59 sol:BookProof_GaugeFixing_Pm_ne_zero: DONE
+17:23:59 processing sol:BookProof_GaugeFixing_Qm_ne_zero (attempt 1)
+17:25:20 sol:BookProof_GaugeFixing_Qm_ne_zero: DONE
+17:25:20 processing sol:BookProof_GaugeFixing_addDeg_fst (attempt 1)
+17:26:40 sol:BookProof_GaugeFixing_addDeg_fst: DONE
+17:26:40 processing sol:BookProof_GaugeFixing_addDeg_snd (attempt 1)
+17:27:38 sol:BookProof_GaugeFixing_addDeg_snd: DONE
+17:27:38 processing sol:BookProof_GaugeFixing_int_L_gf_eq_zero (attempt 1)
+17:29:09 sol:BookProof_GaugeFixing_int_L_gf_eq_zero: DONE
+17:29:09 processing sol:BookProof_GaugeFixing_matrixModelIntegral_ne_zero (attempt 1)
+17:30:18 sol:BookProof_GaugeFixing_matrixModelIntegral_ne_zero: DONE
+17:30:18 processing sol:BookProof_GaugeFixing_matrixModel_B_ne_zero (attempt 1)
+17:31:38 sol:BookProof_GaugeFixing_matrixModel_B_ne_zero: DONE
+17:31:38 processing sol:BookProof_GaugeFixing_s_B_eq_zero (attempt 1)
+17:33:20 sol:BookProof_GaugeFixing_s_B_eq_zero: DONE
+17:33:20 processing sol:BookProof_GaugeFixing_s_c_eq_zero (attempt 1)
+17:34:51 sol:BookProof_GaugeFixing_s_c_eq_zero: DONE
+17:34:51 processing sol:BookProof_GaugeFixing_s_d_phi (attempt 1)
+17:36:00 sol:BookProof_GaugeFixing_s_d_phi: DONE
+17:36:00 processing sol:BookProof_GhostField_brst_charge_nilpotent (attempt 1)
+17:37:10 sol:BookProof_GhostField_brst_charge_nilpotent: DONE
+17:37:10 processing sol:BookProof_GhostField_car (attempt 1)
+17:38:19 sol:BookProof_GhostField_car: DONE
+17:38:19 processing sol:BookProof_GhostField_numberOp_add_hole (attempt 1)
+17:40:01 sol:BookProof_GhostField_numberOp_add_hole: DONE
+17:40:01 processing sol:BookProof_GhostField_numberOp_eq (attempt 1)
+17:41:42 sol:BookProof_GhostField_numberOp_eq: DONE
+17:41:42 processing sol:BookProof_GhostField_numberOp_idempotent (attempt 1)
+17:43:18 sol:BookProof_GhostField_numberOp_idempotent: DONE
+17:43:18 processing sol:BookProof_GhostField_numberOp_selfAdjoint (attempt 1)
+17:45:00 sol:BookProof_GhostField_numberOp_selfAdjoint: DONE
+17:45:00 processing sol:BookProof_GhostField_psiDag_eq_conjTranspose (attempt 1)
+17:46:21 sol:BookProof_GhostField_psiDag_eq_conjTranspose: DONE
+17:46:21 processing sol:BookProof_GhostField_psiDag_sq (attempt 1)
+17:48:09 sol:BookProof_GhostField_psiDag_sq: DONE
+17:48:09 processing sol:BookProof_GhostField_psi_sq (attempt 1)
+17:49:22 sol:BookProof_GhostField_psi_sq: DONE
+17:49:22 processing sol:BookProof_MassGap_exp_conj_eq_self (attempt 1)
+17:51:15 sol:BookProof_MassGap_exp_conj_eq_self: DONE
+17:51:15 processing sol:BookProof_MassGap_massGap_shifted_gapless (attempt 1)
+17:52:51 sol:BookProof_MassGap_massGap_shifted_gapless: DONE
+17:52:51 processing sol:BookProof_MassGap_shiftedSpectrum_excited (attempt 1)
+17:54:11 sol:BookProof_MassGap_shiftedSpectrum_excited: DONE
+17:54:11 processing sol:BookProof_MassGap_shiftedSpectrum_vacuum (attempt 1)
+17:55:32 sol:BookProof_MassGap_shiftedSpectrum_vacuum: DONE
+17:55:32 processing sol:BookProof_NavierStokes_ghostAnnih_sq (attempt 1)
+17:57:14 sol:BookProof_NavierStokes_ghostAnnih_sq: DONE
+17:57:14 processing sol:BookProof_NavierStokes_ghostCreate_eq (attempt 1)
+17:58:44 sol:BookProof_NavierStokes_ghostCreate_eq: DONE
+17:58:44 processing sol:BookProof_NavierStokes_ghostCreate_eq_conjTranspose (attempt 1)
+18:00:04 sol:BookProof_NavierStokes_ghostCreate_eq_conjTranspose: DONE
+18:00:04 processing sol:BookProof_SirkFinitePrecision_CertInterval_abs_le_of_isotone (attempt 1)
+18:01:47 sol:BookProof_SirkFinitePrecision_CertInterval_abs_le_of_isotone: DONE
+18:01:47 processing sol:BookProof_SirkFinitePrecision_CertInterval_dist_le_width (attempt 1)
+18:04:33 sol:BookProof_SirkFinitePrecision_CertInterval_dist_le_width: DONE
+18:04:33 processing sol:BookProof_SirkFinitePrecision_CertInterval_le_sup_bound_of_isotone (attempt 1)
+18:06:26 sol:BookProof_SirkFinitePrecision_CertInterval_le_sup_bound_of_isotone: DONE
+18:06:26 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_add (attempt 1)
+18:07:48 sol:BookProof_SirkFinitePrecision_CertInterval_mem_add: DONE
+18:07:48 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_const (attempt 1)
+18:08:58 sol:BookProof_SirkFinitePrecision_CertInterval_mem_const: DONE
+18:08:58 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_mul (attempt 1)
+18:10:40 sol:BookProof_SirkFinitePrecision_CertInterval_mem_mul: DONE
+18:10:40 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_neg (attempt 1)
+18:12:22 sol:BookProof_SirkFinitePrecision_CertInterval_mem_neg: DONE
+18:12:22 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_ofRounded (attempt 1)
+18:13:31 sol:BookProof_SirkFinitePrecision_CertInterval_mem_ofRounded: DONE
+18:13:31 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_sub (attempt 1)
+18:14:40 sol:BookProof_SirkFinitePrecision_CertInterval_mem_sub: DONE
+18:14:40 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_widen (attempt 1)
+18:16:32 sol:BookProof_SirkFinitePrecision_CertInterval_mem_widen: DONE
+18:16:32 processing sol:BookProof_SirkFinitePrecision_ground_ge_of_no_eigenvalue_below (attempt 1)
+18:18:13 sol:BookProof_SirkFinitePrecision_ground_ge_of_no_eigenvalue_below: DONE
+18:18:13 processing sol:BookProof_SirkFinitePrecision_hasRealEigenvalue_eigenvalues (attempt 1)
+18:19:22 sol:BookProof_SirkFinitePrecision_hasRealEigenvalue_eigenvalues: DONE
+18:19:22 processing sol:BookProof_SirkFinitePrecision_norm_sq_eq_sum_repr (attempt 1)
+18:21:04 sol:BookProof_SirkFinitePrecision_norm_sq_eq_sum_repr: DONE
+18:21:04 processing sol:BookProof_SirkFinitePrecision_observable_propagation (attempt 1)
+18:22:36 sol:BookProof_SirkFinitePrecision_observable_propagation: DONE
+18:22:36 processing sol:BookProof_SirkFinitePrecision_repr_apply_of_symmetric (attempt 1)
+18:24:08 sol:BookProof_SirkFinitePrecision_repr_apply_of_symmetric: DONE
+18:24:08 processing sol:BookProof_YangMillsFieldStrength_Fbook_antisymm (attempt 1)
+18:26:02 sol:BookProof_YangMillsFieldStrength_Fbook_antisymm: DONE
+18:26:02 processing sol:BookProof_YangMillsFieldStrength_fieldStrengthMul_antisymm (attempt 1)
+18:27:11 sol:BookProof_YangMillsFieldStrength_fieldStrengthMul_antisymm: DONE
+18:27:11 processing sol:BookProof_YangMillsFieldStrength_fieldStrengthMul_eq_Fbook (attempt 1)
+18:28:42 sol:BookProof_YangMillsFieldStrength_fieldStrengthMul_eq_Fbook: DONE
+18:28:42 processing sol:BookProof_YangMillsFieldStrength_nonabelian_fieldStrength (attempt 1)
+18:30:03 sol:BookProof_YangMillsFieldStrength_nonabelian_fieldStrength: DONE
+18:30:03 processing sol:BookProof_BRSTNilpotent_contracted_terms_zero (attempt 1)
+18:31:59 sol:BookProof_BRSTNilpotent_contracted_terms_zero: DONE
+18:31:59 processing sol:BookProof_BRSTNilpotent_quartic_term_zero (attempt 1)
+18:33:33 sol:BookProof_BRSTNilpotent_quartic_term_zero: DONE
+18:33:33 processing sol:BookProof_GaugeFixing_matrixModel_Psi (attempt 1)
+18:34:54 sol:BookProof_GaugeFixing_matrixModel_Psi: DONE
+18:34:54 processing sol:BookProof_GaugeFixing_matrixModel_c_ne_zero (attempt 1)
+18:36:36 sol:BookProof_GaugeFixing_matrixModel_c_ne_zero: DONE
+18:36:36 processing sol:BookProof_GaugeFixing_s_gaugeField (attempt 1)
+18:37:58 sol:BookProof_GaugeFixing_s_gaugeField: DONE
+18:37:58 processing sol:BookProof_GhostField_brst_charge_nilpotent_ghost (attempt 1)
+18:39:40 sol:BookProof_GhostField_brst_charge_nilpotent_ghost: DONE
+18:39:40 processing sol:BookProof_MassGap_heisenberg_number_shift_invariant (attempt 1)
+18:41:21 sol:BookProof_MassGap_heisenberg_number_shift_invariant: DONE
+18:41:21 processing sol:BookProof_NavierStokes_ghostAnticomm_annih (attempt 1)
+18:43:02 sol:BookProof_NavierStokes_ghostAnticomm_annih: DONE
+18:43:02 processing sol:BookProof_NavierStokes_ghostCreate_sq (attempt 1)
+18:44:43 sol:BookProof_NavierStokes_ghostCreate_sq: DONE
+18:44:43 processing sol:BookProof_NavierStokes_ghostNumber_eq (attempt 1)
+18:46:14 sol:BookProof_NavierStokes_ghostNumber_eq: DONE
+18:46:14 processing sol:BookProof_NavierStokes_ghost_CAR (attempt 1)
+18:47:55 sol:BookProof_NavierStokes_ghost_CAR: DONE
+18:47:55 processing sol:BookProof_NavierStokes_ghost_annih_create_eq (attempt 1)
+18:49:15 sol:BookProof_NavierStokes_ghost_annih_create_eq: DONE
+18:49:15 processing sol:BookProof_SirkFinitePrecision_CertInterval_mem_evalHorner (attempt 1)
+18:51:08 sol:BookProof_SirkFinitePrecision_CertInterval_mem_evalHorner: DONE
+18:51:08 processing sol:BookProof_SirkFinitePrecision_index_nonempty (attempt 1)
+18:52:39 sol:BookProof_SirkFinitePrecision_index_nonempty: DONE
+18:52:39 processing sol:BookProof_SirkFinitePrecision_observable_propagation_band (attempt 1)
+18:53:59 sol:BookProof_SirkFinitePrecision_observable_propagation_band: DONE
+18:53:59 processing sol:BookProof_SirkFinitePrecision_norm_apply_sq_eq_sum_eigenvalues (attempt 1)
+18:55:19 sol:BookProof_SirkFinitePrecision_norm_apply_sq_eq_sum_eigenvalues: DONE
+18:55:19 processing sol:BookProof_SirkFinitePrecision_rayleigh_eq_sum_eigenvalues (attempt 1)
+18:56:49 sol:BookProof_SirkFinitePrecision_rayleigh_eq_sum_eigenvalues: DONE
+18:56:49 processing sol:BookProof_YangMillsFieldStrength_commutator_eq_coupling (attempt 1)
+18:58:31 sol:BookProof_YangMillsFieldStrength_commutator_eq_coupling: DONE
+18:58:31 processing sol:BookProof_BRSTNilpotent_brst_charge_nilpotent (attempt 1)
+19:00:25 sol:BookProof_BRSTNilpotent_brst_charge_nilpotent: DONE
+19:00:25 processing sol:BookProof_GaugeFixing_matrixModel_Psi_ne_zero (attempt 1)
+19:02:22 sol:BookProof_GaugeFixing_matrixModel_Psi_ne_zero: DONE
+19:02:22 processing sol:BookProof_GaugeFixing_matrixModel_s_Psi (attempt 1)
+19:04:04 sol:BookProof_GaugeFixing_matrixModel_s_Psi: DONE
+19:04:04 processing sol:BookProof_GaugeFixing_L_gf_evaluation (attempt 1)
+19:06:00 sol:BookProof_GaugeFixing_L_gf_evaluation: DONE
+19:06:00 processing sol:BookProof_NavierStokes_ghostAnticomm_create (attempt 1)
+19:07:33 sol:BookProof_NavierStokes_ghostAnticomm_create: DONE
+19:07:33 processing sol:BookProof_NavierStokes_ghostNumber_hermitian (attempt 1)
+19:09:14 sol:BookProof_NavierStokes_ghostNumber_hermitian: DONE
+19:09:14 processing sol:BookProof_NavierStokes_ghostNumber_idem (attempt 1)
+19:10:59 sol:BookProof_NavierStokes_ghostNumber_idem: DONE
+19:10:59 processing sol:BookProof_NavierStokes_ghostNumber_resolution (attempt 1)
+19:12:43 sol:BookProof_NavierStokes_ghostNumber_resolution: DONE
+19:12:43 processing sol:BookProof_SirkFinitePrecision_CertInterval_abs_polyEval_le_of_mem (attempt 1)
+19:14:47 sol:BookProof_SirkFinitePrecision_CertInterval_abs_polyEval_le_of_mem: DONE
+19:14:47 processing sol:BookProof_SirkFinitePrecision_CertInterval_polyEval_le_of_mem (attempt 1)
+19:16:09 sol:BookProof_SirkFinitePrecision_CertInterval_polyEval_le_of_mem: DONE
+19:16:09 processing sol:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual (attempt 1)
+19:18:02 sol:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual: DONE
+19:18:02 processing sol:BookProof_SirkFinitePrecision_ground_le_rayleigh (attempt 1)
+19:19:56 sol:BookProof_SirkFinitePrecision_ground_le_rayleigh: DONE
+19:19:56 processing sol:BookProof_SirkFinitePrecision_temple_lower_bound (attempt 1)
+19:21:53 sol:BookProof_SirkFinitePrecision_temple_lower_bound: DONE
+19:21:53 processing sol:BookProof_GaugeFixing_matrixModel_s_Psi_ne_zero (attempt 1)
+19:23:24 sol:BookProof_GaugeFixing_matrixModel_s_Psi_ne_zero: DONE
+19:23:24 processing sol:BookProof_GaugeFixing_int_L_gf_evaluated (attempt 1)
+19:25:16 sol:BookProof_GaugeFixing_int_L_gf_evaluated: DONE
+19:25:16 processing sol:BookProof_SirkFinitePrecision_backward_error_weyl (attempt 1)
+19:26:37 sol:BookProof_SirkFinitePrecision_backward_error_weyl: DONE
+19:26:37 processing sol:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual_unit (attempt 1)
+19:28:09 sol:BookProof_SirkFinitePrecision_exists_eigenvalue_dist_le_residual_unit: DONE
+19:28:09 processing sol:BookProof_SirkFinitePrecision_backward_error_weyl_symm (attempt 1)
+19:30:12 sol:BookProof_SirkFinitePrecision_backward_error_weyl_symm: DONE
+19:30:12 summary: 196 done, 0 pending, 0 failed
+03:38:40 processing def:ChapterBaryonAsymmetry (attempt 1)
+03:39:06 def:ChapterBaryonAsymmetry: DONE
+03:39:06 processing def:ChapterMajoranaClifford (attempt 1)
+03:39:13 processing def:ChapterMajoranaClifford (attempt 1)
+03:39:26 processing def:ChapterMajoranaClifford (attempt 1)
+03:39:31 def:ChapterMajoranaClifford: DONE
+03:39:31 processing def:ChapterMajoranaProp61 (attempt 1)
+03:39:35 processing def:ChapterMajoranaProp61 (attempt 1)
+03:39:38 def:ChapterMajoranaClifford: FAIL (publish FAILED: A theorem or definition with name "ChapterMajoranaClifford" already exists)
+03:39:38 processing def:ChapterMajoranaProp61 (attempt 1)
+03:39:43 def:ChapterMajoranaClifford: DONE
+03:39:43 processing def:ChapterMajoranaProp61 (attempt 1)
+03:39:48 processing def:ChapterMajoranaClifford (attempt 2)
+03:39:51 def:ChapterMajoranaProp61: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterMajoranaProp61\" already exists"})
+03:39:51 processing def:ChapterMajoranaProp76 (attempt 1)
+03:39:56 def:ChapterMajoranaProp61: DONE
+03:39:56 processing def:ChapterMajoranaProp76 (attempt 1)
+03:40:00 processing def:ChapterMajoranaProp61 (attempt 2)
+03:40:01 def:ChapterMajoranaProp61: FAIL (publish FAILED: A theorem or definition with name "ChapterMajoranaProp61" already exists)
+03:40:01 processing def:ChapterMajoranaProp76 (attempt 1)
+03:40:04 def:ChapterMajoranaProp61: FAIL (publish FAILED: A theorem or definition with name "ChapterMajoranaProp61" already exists)
+03:40:04 processing def:ChapterMajoranaProp76 (attempt 1)
+03:40:05 def:ChapterMajoranaClifford: DONE
+03:40:05 processing def:ChapterMajoranaProp61 (attempt 1)
+03:40:09 def:ChapterMajoranaProp61: DONE
+03:40:09 processing def:ChapterMajoranaProp76 (attempt 1)
+03:40:11 def:ChapterMajoranaProp76: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterMajoranaProp76\" already exists"})
+03:40:11 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:13 def:ChapterMajoranaProp76: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterMajoranaProp76\" already exists"})
+03:40:13 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:16 def:ChapterMajoranaProp76: DONE
+03:40:16 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:18 def:ChapterMajoranaProp76: DONE
+03:40:18 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:21 def:ChapterMajoranaProp76: FAIL (publish FAILED: A theorem or definition with name "ChapterMajoranaProp76" already exists)
+03:40:21 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:25 def:ChapterMajoranaProp61: DONE
+03:40:25 processing def:ChapterMajoranaProp76 (attempt 1)
+03:40:32 def:ChapterMajoranaProp76: DONE
+03:40:32 processing def:ChapterParityMajoranaQuant (attempt 1)
+03:40:37 def:ChapterParityMajoranaQuant: DONE
+03:40:37 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:40:39 def:ChapterParityMajoranaQuant: DONE
+03:40:39 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:40:43 def:ChapterParityMajoranaQuant: FAIL (publish FAILED: A theorem or definition with name "ChapterParityMajoranaQuant" already exists)
+03:40:43 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:40:45 def:ChapterParityMajoranaQuant: FAIL (publish FAILED: A theorem or definition with name "ChapterParityMajoranaQuant" already exists)
+03:40:45 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:40:46 def:ChapterParityMajoranaQuant: FAIL (publish FAILED: A theorem or definition with name "ChapterParityMajoranaQuant" already exists)
+03:40:46 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:40:47 def:ChapterParityMajoranaQuant: FAIL (publish FAILED: A theorem or definition with name "ChapterParityMajoranaQuant" already exists)
+03:40:47 processing def:ChapterSirkGroupTransfer (attempt 1)
+03:41:04 def:ChapterSirkGroupTransfer: DONE
+03:41:04 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:05 def:ChapterSirkGroupTransfer: FAIL (publish FAILED: A theorem or definition with name "ChapterSirkGroupTransfer" already exists)
+03:41:05 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:08 def:ChapterSirkGroupTransfer: FAIL (publish FAILED: A theorem or definition with name "ChapterSirkGroupTransfer" already exists)
+03:41:08 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:12 def:ChapterSirkGroupTransfer: FAIL (publish FAILED: A theorem or definition with name "ChapterSirkGroupTransfer" already exists)
+03:41:12 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:13 def:ChapterSirkGroupTransfer: FAIL (publish FAILED: A theorem or definition with name "ChapterSirkGroupTransfer" already exists)
+03:41:13 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:13 def:ChapterSirkGroupTransfer: FAIL (publish FAILED: A theorem or definition with name "ChapterSirkGroupTransfer" already exists)
+03:41:13 processing def:ChapterYangMillsBianchi (attempt 1)
+03:41:22 def:ChapterYangMillsBianchi: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterYangMillsBianchi\" already exists"})
+03:41:22 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:23 def:ChapterYangMillsBianchi: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterYangMillsBianchi\" already exists"})
+03:41:23 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:29 def:ChapterYangMillsBianchi: DONE
+03:41:29 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:30 def:ChapterYangMillsBianchi: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsBianchi" already exists)
+03:41:30 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:33 def:ChapterYangMillsBianchi: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsBianchi" already exists)
+03:41:33 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:38 def:ChapterYangMillsBianchi: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsBianchi" already exists)
+03:41:38 processing def:ChapterYangMillsSU3 (attempt 1)
+03:41:42 def:ChapterYangMillsSU3: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterYangMillsSU3\" already exists"})
+03:41:42 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:41:45 def:ChapterYangMillsSU3: DONE
+03:41:45 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:41:47 def:ChapterYangMillsSU3: DONE
+03:41:47 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:41:48 def:ChapterYangMillsSU3: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsSU3" already exists)
+03:41:48 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:41:55 def:ChapterYangMillsSU3: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsSU3" already exists)
+03:41:55 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:41:57 def:ChapterYangMillsSU3: FAIL (publish FAILED: A theorem or definition with name "ChapterYangMillsSU3" already exists)
+03:41:57 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+03:42:23 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: DONE
+03:42:23 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:42:28 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq" already exists)
+03:42:28 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:42:31 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq" already exists)
+03:42:31 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:42:35 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq" already exists)
+03:42:35 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:42:38 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq" already exists)
+03:42:38 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:42:56 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq" already exists)
+03:42:56 processing thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+03:43:01 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: DONE
+03:43:01 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:02 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: REUSING existing BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity (Open) ed34ecf0-b9b0-40ff-81ee-051adcf11a59
+03:43:02 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: DONE
+03:43:02 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:04 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity" already exists)
+03:43:04 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:05 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity" already exists)
+03:43:05 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:08 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity" already exists)
+03:43:08 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:12 thm:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity" already exists)
+03:43:12 processing thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+03:43:34 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: DONE
+03:43:34 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:43:36 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity" already exists)
+03:43:36 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:43:37 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity" already exists)
+03:43:37 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:43:37 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:43:37 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:43:41 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:43:41 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:43:41 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:43:41 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:43:41 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:43:41 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:43:45 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:43:45 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:43:45 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:43:45 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:43:45 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:43:45 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:43:48 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity" already exists)
+03:43:48 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:43:48 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity" already exists)
+03:43:48 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:43:48 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:43:48 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:43:49 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:43:49 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:43:53 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:43:53 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:43:53 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:43:53 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:43:56 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:43:56 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:43:57 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:43:57 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:43:59 thm:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.radiation_satisfies_continuity" already exists)
+03:43:59 processing thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+03:44:00 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:44:00 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:44:01 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:44:01 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:44:03 thm:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_gsq_Hsq_comm.lean)
+03:44:03 processing thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+03:44:07 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self.lean)
+03:44:07 processing thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+03:44:10 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self.lean)
+03:44:10 processing thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+03:44:28 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary" already exists)
+03:44:28 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:44:32 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: DONE
+03:44:32 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:44:34 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary" already exists)
+03:44:34 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:44:40 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary" already exists)
+03:44:40 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:44:43 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary" already exists)
+03:44:43 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:45:00 thm:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary" already exists)
+03:45:00 processing thm:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+03:45:01 thm:BookProof_ChapterMajoranaProp76_note4_comp: DONE
+03:45:01 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:07 thm:BookProof_ChapterMajoranaProp76_note4_comp: REUSING existing BookProof.ChapterMajoranaProp76.note4_comp (Open) 32995b2f-d63a-4386-8931-e2e2407f4dfc
+03:45:07 thm:BookProof_ChapterMajoranaProp76_note4_comp: DONE
+03:45:07 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:14 thm:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_comp" already exists)
+03:45:14 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:14 thm:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_comp" already exists)
+03:45:14 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:22 thm:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (FileNotFoundError: [Errno 2] No such file or directory: '/home/leo/prove2me_workspace/state/pipeline.json.tmp' -> '/home/leo/prove2me_workspace/state/)
+03:45:22 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:45:25 thm:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_comp" already exists)
+03:45:25 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:33 thm:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_comp" already exists)
+03:45:33 processing thm:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+03:45:40 thm:BookProof_ChapterParityMajoranaQuant_J_annih: REUSING existing BookProof.ChapterParityMajoranaQuant.J_annih (Open) 19c21155-3347-4f32-b438-a1807e75dbe9
+03:45:40 thm:BookProof_ChapterParityMajoranaQuant_J_annih: DONE
+03:45:40 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:45:43 thm:BookProof_ChapterParityMajoranaQuant_J_annih: DONE
+03:45:43 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:45:49 thm:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_annih" already exists)
+03:45:49 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:46:05 thm:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_annih" already exists)
+03:46:05 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:46:41 thm:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_annih" already exists)
+03:46:41 processing thm:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+03:46:55 thm:BookProof_ChapterParityMajoranaQuant_J_creat: DONE
+03:46:55 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:00 thm:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_creat" already exists)
+03:47:00 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:05 thm:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_creat" already exists)
+03:47:05 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:24 thm:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_creat" already exists)
+03:47:24 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:27 thm:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_creat" already exists)
+03:47:27 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:29 thm:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_creat" already exists)
+03:47:29 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+03:47:37 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_unitary" already exists)
+03:47:37 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:39 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: DONE
+03:47:39 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:44 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ChapterParityMajoranaQuant.J_unitary\" already exists"], "me)
+03:47:44 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:48 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ChapterParityMajoranaQuant.J_unitary\" already exists"], "me)
+03:47:48 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:49 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:47:49 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:47:50 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ChapterParityMajoranaQuant.J_unitary\" already exists"], "me)
+03:47:50 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:51 thm:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.J_unitary" already exists)
+03:47:51 processing thm:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+03:47:51 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:47:51 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:47:57 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:47:57 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:48:00 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:48:00 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:48:03 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:48:03 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:48:04 thm:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+03:48:04 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+03:48:27 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: DONE
+03:48:27 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:48:30 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_herm" already exists)
+03:48:30 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:48:35 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_herm" already exists)
+03:48:35 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:48:38 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_herm" already exists)
+03:48:38 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:48:41 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_herm" already exists)
+03:48:41 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:48:42 thm:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_herm" already exists)
+03:48:42 processing thm:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+03:49:05 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: DONE
+03:49:05 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:08 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_sq" already exists)
+03:49:08 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:20 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_sq" already exists)
+03:49:20 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:20 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_sq" already exists)
+03:49:20 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:21 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_sq" already exists)
+03:49:21 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:33 thm:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.iJ_sq" already exists)
+03:49:33 processing thm:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+03:49:39 thm:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.proj_add" already exists)
+03:49:39 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:49:42 thm:BookProof_ChapterParityMajoranaQuant_proj_add: DONE
+03:49:42 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:49:44 thm:BookProof_ChapterParityMajoranaQuant_proj_add: DONE
+03:49:44 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:49:56 thm:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.proj_add" already exists)
+03:49:56 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:49:57 thm:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.proj_add" already exists)
+03:49:57 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:50:05 thm:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.proj_add" already exists)
+03:50:05 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+03:50:12 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: REUSING existing BookProof.ChapterParityMajoranaQuant.stdJ_skew (Open) 05231cb7-bb4d-438e-b440-923e341513fa
+03:50:12 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: DONE
+03:50:12 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:14 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: DONE
+03:50:14 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:18 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_skew" already exists)
+03:50:18 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:19 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_skew" already exists)
+03:50:19 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:38 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_skew" already exists)
+03:50:38 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:45 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_sq" already exists)
+03:50:45 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:48 thm:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_skew" already exists)
+03:50:48 processing thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+03:50:48 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:50:48 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:50:50 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+03:50:50 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:51 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+03:50:51 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:52 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:50:52 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:50:53 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_sq" already exists)
+03:50:53 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:54 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:50:54 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:50:55 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:50:55 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:50:56 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: REUSING existing BookProof.ChapterParityMajoranaQuant.stdJ_sq (Open) c8ea5e34-73a1-4f5d-97dc-cc5a2b6540d4
+03:50:56 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+03:50:56 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:56 thm:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.stdJ_sq" already exists)
+03:50:56 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+03:50:57 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:50:57 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:50:58 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:50:58 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:50:59 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:50:59 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:51:01 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:51:01 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:51:01 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_groupFlow_zero.lean)
+03:51:01 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+03:51:02 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:51:02 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:51:05 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:51:05 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:51:06 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le.lean)
+03:51:06 processing thm:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+03:51:27 thm:BookProof_MajoranaClifford_Qform_apply: DONE
+03:51:27 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:51:35 thm:BookProof_MajoranaClifford_Qform_apply: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.Qform_apply" already exists)
+03:51:35 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:51:47 thm:BookProof_MajoranaClifford_Qform_apply: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.Qform_apply" already exists)
+03:51:47 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:51:47 thm:BookProof_MajoranaClifford_Qform_apply: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.Qform_apply" already exists)
+03:51:47 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:51:58 thm:BookProof_MajoranaClifford_Qform_apply: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.Qform_apply" already exists)
+03:51:58 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:52:04 thm:BookProof_MajoranaClifford_a_add: DONE
+03:52:04 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:05 thm:BookProof_MajoranaClifford_a_add: REUSING existing BookProof.MajoranaClifford.a_add (Open) 7bdf80b5-4c4a-4aa3-9f51-45b438c7e3c7
+03:52:05 thm:BookProof_MajoranaClifford_a_add: DONE
+03:52:05 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:09 thm:BookProof_MajoranaClifford_Qform_apply: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.Qform_apply" already exists)
+03:52:09 processing thm:BookProof_MajoranaClifford_a_add (attempt 1)
+03:52:12 thm:BookProof_MajoranaClifford_a_add: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_add" already exists)
+03:52:12 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:16 thm:BookProof_MajoranaClifford_a_add: REUSING existing BookProof.MajoranaClifford.a_add (Open) 7bdf80b5-4c4a-4aa3-9f51-45b438c7e3c7
+03:52:16 thm:BookProof_MajoranaClifford_a_add: DONE
+03:52:16 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:19 thm:BookProof_MajoranaClifford_a_add: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_add" already exists)
+03:52:19 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:21 thm:BookProof_MajoranaClifford_a_add: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_add" already exists)
+03:52:21 processing thm:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+03:52:38 thm:BookProof_MajoranaClifford_a_selfAdjoint: DONE
+03:52:38 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:52:39 thm:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_selfAdjoint" already exists)
+03:52:39 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:52:45 thm:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_selfAdjoint" already exists)
+03:52:45 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:52:50 thm:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_selfAdjoint" already exists)
+03:52:50 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:52:53 thm:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_selfAdjoint" already exists)
+03:52:53 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:52:56 thm:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_selfAdjoint" already exists)
+03:52:56 processing thm:BookProof_MajoranaClifford_a_smul (attempt 1)
+03:53:13 thm:BookProof_MajoranaClifford_a_smul: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_smul" already exists)
+03:53:13 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:15 thm:BookProof_MajoranaClifford_a_smul: DONE
+03:53:15 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:19 thm:BookProof_MajoranaClifford_a_smul: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_smul" already exists)
+03:53:19 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:24 thm:BookProof_MajoranaClifford_a_smul: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_smul" already exists)
+03:53:24 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:27 thm:BookProof_MajoranaClifford_a_smul: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_smul" already exists)
+03:53:27 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:30 thm:BookProof_MajoranaClifford_a_smul: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_smul" already exists)
+03:53:30 processing thm:BookProof_MajoranaClifford_a_zero (attempt 1)
+03:53:43 thm:BookProof_MajoranaClifford_a_zero: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_zero" already exists)
+03:53:43 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:53:46 thm:BookProof_MajoranaClifford_a_zero: DONE
+03:53:46 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:53:49 thm:BookProof_MajoranaClifford_a_zero: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_zero" already exists)
+03:53:49 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:53:58 thm:BookProof_MajoranaClifford_a_zero: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_zero" already exists)
+03:53:58 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:54:02 thm:BookProof_MajoranaClifford_a_zero: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_zero" already exists)
+03:54:02 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:54:06 thm:BookProof_MajoranaClifford_a_zero: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_zero" already exists)
+03:54:06 processing thm:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+03:54:17 thm:BookProof_MajoranaClifford_polar_Qform: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.polar_Qform" already exists)
+03:54:17 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:20 thm:BookProof_MajoranaClifford_polar_Qform: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.polar_Qform" already exists)
+03:54:20 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:24 thm:BookProof_MajoranaClifford_polar_Qform: DONE
+03:54:24 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:32 thm:BookProof_MajoranaClifford_polar_Qform: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.polar_Qform" already exists)
+03:54:32 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:35 thm:BookProof_MajoranaClifford_polar_Qform: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.polar_Qform" already exists)
+03:54:35 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:39 thm:BookProof_MajoranaClifford_polar_Qform: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.polar_Qform" already exists)
+03:54:39 processing thm:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+03:54:50 thm:BookProof_MajoranaClifford_reverse_antihom: DONE
+03:54:50 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:54:54 thm:BookProof_MajoranaClifford_reverse_antihom: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_antihom" already exists)
+03:54:54 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:54:57 thm:BookProof_MajoranaClifford_reverse_antihom: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_antihom" already exists)
+03:54:57 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:55:05 thm:BookProof_MajoranaClifford_reverse_antihom: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_antihom" already exists)
+03:55:05 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:55:09 thm:BookProof_MajoranaClifford_reverse_antihom: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_antihom" already exists)
+03:55:09 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:55:21 thm:BookProof_MajoranaClifford_reverse_antihom: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_antihom" already exists)
+03:55:21 processing thm:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+03:55:32 thm:BookProof_MajoranaClifford_reverse_involutive: DONE
+03:55:32 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:55:32 thm:BookProof_MajoranaClifford_reverse_involutive: DONE
+03:55:32 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:55:35 thm:BookProof_MajoranaClifford_reverse_involutive: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_involutive" already exists)
+03:55:35 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:55:48 thm:BookProof_MajoranaClifford_reverse_involutive: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_involutive" already exists)
+03:55:48 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:55:55 thm:BookProof_MajoranaClifford_reverse_involutive: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_involutive" already exists)
+03:55:55 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:56:07 thm:BookProof_MajoranaClifford_reverse_involutive: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.reverse_involutive" already exists)
+03:56:07 processing thm:BookProof_YangMillsBianchi_bianchi (attempt 1)
+03:56:14 thm:BookProof_YangMillsBianchi_bianchi: REUSING existing BookProof.YangMillsBianchi.bianchi (Open) b48de2ae-fab4-4495-8fa9-c49c4a448e50
+03:56:14 thm:BookProof_YangMillsBianchi_bianchi: DONE
+03:56:14 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:19 thm:BookProof_YangMillsBianchi_bianchi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi" already exists)
+03:56:19 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:19 thm:BookProof_YangMillsBianchi_bianchi: DONE
+03:56:19 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:22 thm:BookProof_YangMillsBianchi_bianchi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi" already exists)
+03:56:22 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:29 thm:BookProof_YangMillsBianchi_bianchi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi" already exists)
+03:56:29 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:37 thm:BookProof_YangMillsBianchi_bianchi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi" already exists)
+03:56:37 processing thm:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+03:56:44 thm:BookProof_YangMillsBianchi_bianchi_cyclic: REUSING existing BookProof.YangMillsBianchi.bianchi_cyclic (Open) 857cbf1b-b175-4d8e-8dd2-bbcd556f1877
+03:56:44 thm:BookProof_YangMillsBianchi_bianchi_cyclic: DONE
+03:56:44 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:56:47 thm:BookProof_YangMillsBianchi_bianchi_cyclic: DONE
+03:56:47 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:56:53 thm:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_cyclic" already exists)
+03:56:53 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:56:54 thm:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_cyclic" already exists)
+03:56:54 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:57:02 thm:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_cyclic" already exists)
+03:57:02 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:57:04 thm:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_cyclic" already exists)
+03:57:04 processing thm:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+03:57:18 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.fieldStrength_antisymm" already exists)
+03:57:18 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:57:21 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: DONE
+03:57:21 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:57:26 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.fieldStrength_antisymm" already exists)
+03:57:26 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:57:36 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.fieldStrength_antisymm" already exists)
+03:57:36 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:57:44 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.fieldStrength_antisymm" already exists)
+03:57:44 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:57:55 thm:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.fieldStrength_antisymm" already exists)
+03:57:55 processing thm:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+03:58:02 thm:BookProof_YangMillsSU3_structureConstant_formula: REUSING existing BookProof.YangMillsSU3.structureConstant_formula (Open) 8408375f-dcdf-424c-ae96-42d43bab9cda
+03:58:02 thm:BookProof_YangMillsSU3_structureConstant_formula: DONE
+03:58:02 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:05 thm:BookProof_YangMillsSU3_structureConstant_formula: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_formula" already exists)
+03:58:05 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:06 thm:BookProof_YangMillsSU3_structureConstant_formula: DONE
+03:58:06 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:17 thm:BookProof_YangMillsSU3_structureConstant_formula: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_formula" already exists)
+03:58:17 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:27 thm:BookProof_YangMillsSU3_structureConstant_formula: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_formula" already exists)
+03:58:27 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:34 thm:BookProof_YangMillsSU3_structureConstant_formula: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_formula" already exists)
+03:58:34 processing thm:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+03:58:35 thm:BookProof_YangMillsSU3_structureConstant_jacobi: DONE
+03:58:35 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:58:40 thm:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_jacobi" already exists)
+03:58:40 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:58:44 thm:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.YangMillsSU3.structureConstant_jacobi\" already exists"], "m)
+03:58:44 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:58:50 thm:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_jacobi" already exists)
+03:58:50 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:58:51 thm:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_jacobi" already exists)
+03:58:51 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:58:55 thm:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.YangMillsSU3.structureConstant_jacobi\" already exists"], "m)
+03:58:55 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+03:59:13 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: DONE
+03:59:13 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:22 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn" already exists)
+03:59:22 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:26 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn" already exists)
+03:59:26 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:34 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn" already exists)
+03:59:34 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:35 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn" already exists)
+03:59:35 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:38 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_strictMonoOn" already exists)
+03:59:38 processing thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+03:59:50 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+03:59:50 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+03:59:51 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_tendsto_atTop" already exists)
+03:59:51 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+03:59:51 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+03:59:51 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+03:59:55 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+03:59:55 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:00:01 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_tendsto_atTop" already exists)
+04:00:01 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:00:10 thm:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (publish FAILED: A theorem with name "BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_tendsto_atTop" already exists)
+04:00:10 processing thm:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:00:43 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp61.prop61_isUnit" already exists)
+04:00:43 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:00:44 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: DONE
+04:00:44 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:00:50 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp61.prop61_isUnit" already exists)
+04:00:50 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:00:51 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp61.prop61_isUnit" already exists)
+04:00:51 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:00:55 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp61.prop61_isUnit" already exists)
+04:00:55 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:01:12 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp61.prop61_isUnit" already exists)
+04:01:12 processing thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:01:18 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: DONE
+04:01:18 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:20 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: REUSING existing BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary (Open) 2cdf5458-531e-46ef-a4e3-e76ff33a66c8
+04:01:20 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: DONE
+04:01:20 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:24 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary" already exists)
+04:01:24 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:27 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary" already exists)
+04:01:27 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:37 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary" already exists)
+04:01:37 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:43 thm:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary" already exists)
+04:01:43 processing thm:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:01:49 thm:BookProof_ChapterMajoranaProp76_note4_conj: DONE
+04:01:49 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:01:51 thm:BookProof_ChapterMajoranaProp76_note4_conj: REUSING existing BookProof.ChapterMajoranaProp76.note4_conj (Open) 1d96d635-0969-4ced-9029-f3cf12ca18fd
+04:01:51 thm:BookProof_ChapterMajoranaProp76_note4_conj: DONE
+04:01:51 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:01:51 thm:BookProof_ChapterMajoranaProp76_note4_conj: DONE
+04:01:51 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:01:57 thm:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_conj" already exists)
+04:01:57 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:02:02 thm:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_conj" already exists)
+04:02:02 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:02:09 thm:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.note4_conj" already exists)
+04:02:09 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:02:27 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: DONE
+04:02:27 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:02:27 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_herm" already exists)
+04:02:27 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:02:33 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_herm" already exists)
+04:02:33 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:02:39 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_herm" already exists)
+04:02:39 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:02:42 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_herm" already exists)
+04:02:42 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:02:44 thm:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_herm" already exists)
+04:02:44 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:03:02 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: DONE
+04:03:02 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:10 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_herm" already exists)
+04:03:10 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:21 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_herm" already exists)
+04:03:21 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:23 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_herm" already exists)
+04:03:23 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:24 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_herm" already exists)
+04:03:24 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:28 thm:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_herm" already exists)
+04:03:28 processing thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:03:36 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: DONE
+04:03:36 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:03:38 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: DONE
+04:03:38 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:03:38 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: REUSING existing BookProof.ChapterParityMajoranaQuant.annihProj_idem (Open) cb782c85-be5e-4b02-a422-374279930782
+04:03:38 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: DONE
+04:03:38 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:03:43 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_idem" already exists)
+04:03:43 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:03:54 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_idem" already exists)
+04:03:54 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:03:58 thm:BookProof_ChapterParityMajoranaQuant_annihProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annihProj_idem" already exists)
+04:03:58 processing thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:04:16 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: DONE
+04:04:16 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:04:20 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annih_creat_zero" already exists)
+04:04:20 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:04:29 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annih_creat_zero" already exists)
+04:04:29 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:04:31 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annih_creat_zero" already exists)
+04:04:31 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:04:32 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annih_creat_zero" already exists)
+04:04:32 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:04:44 thm:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.annih_creat_zero" already exists)
+04:04:44 processing thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:05:07 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: DONE
+04:05:07 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:11 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_idem" already exists)
+04:05:11 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:14 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_idem" already exists)
+04:05:14 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:28 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_idem" already exists)
+04:05:28 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:32 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_idem" already exists)
+04:05:32 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:46 thm:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creatProj_idem" already exists)
+04:05:46 processing thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:05:48 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: DONE
+04:05:48 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:05:52 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:05:52 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:05:53 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creat_annih_zero" already exists)
+04:05:53 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:05:54 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: REUSING existing BookProof.ChapterParityMajoranaQuant.creat_annih_zero (Open) 85b1fc04-2b8b-4f72-b94d-3e9ef78edb2f
+04:05:54 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: DONE
+04:05:54 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:05:56 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:05:56 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:05:57 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:05:57 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:06:04 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creat_annih_zero" already exists)
+04:06:04 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:06:07 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:06:07 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:06:10 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creat_annih_zero" already exists)
+04:06:10 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:06:13 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:06:13 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:06:22 thm:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (publish FAILED: A theorem with name "BookProof.ChapterParityMajoranaQuant.creat_annih_zero" already exists)
+04:06:22 processing thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:06:25 thm:BookProof_MajoranaClifford_a_sq: DONE
+04:06:25 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:06:25 thm:BookProof_MajoranaClifford_a_sq: DONE
+04:06:25 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:06:25 thm:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (cannot split formal_statement from /home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le.lean)
+04:06:25 processing thm:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:06:31 thm:BookProof_MajoranaClifford_a_sq: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_sq" already exists)
+04:06:31 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:06:32 thm:BookProof_MajoranaClifford_a_sq: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_sq" already exists)
+04:06:32 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:06:36 thm:BookProof_MajoranaClifford_a_sq: REUSING existing BookProof.MajoranaClifford.a_sq (Open) 8084e7fd-fa6f-47b4-8190-e48b6e121b33
+04:06:36 thm:BookProof_MajoranaClifford_a_sq: DONE
+04:06:36 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:06:40 thm:BookProof_MajoranaClifford_a_sq: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_sq" already exists)
+04:06:40 processing thm:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:07:02 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_map_selfAdjoint" already exists)
+04:07:02 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:02 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_map_selfAdjoint" already exists)
+04:07:02 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:06 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: DONE
+04:07:06 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:15 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_map_selfAdjoint" already exists)
+04:07:15 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:18 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_map_selfAdjoint" already exists)
+04:07:18 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:22 thm:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_map_selfAdjoint" already exists)
+04:07:22 processing thm:BookProof_MajoranaClifford_car (attempt 1)
+04:07:37 thm:BookProof_MajoranaClifford_car: DONE
+04:07:37 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:07:38 thm:BookProof_MajoranaClifford_car: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.car" already exists)
+04:07:38 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:07:48 thm:BookProof_MajoranaClifford_car: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.car" already exists)
+04:07:48 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:07:48 thm:BookProof_MajoranaClifford_car: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.car" already exists)
+04:07:48 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:07:52 thm:BookProof_MajoranaClifford_car: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.car" already exists)
+04:07:52 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:08:04 thm:BookProof_MajoranaClifford_car: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.car" already exists)
+04:08:04 processing thm:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:08:11 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: REUSING existing BookProof.YangMillsBianchi.bianchi_fieldStrength (Open) a9b6b934-c7a9-4f7a-9031-95120af1a2c2
+04:08:11 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: DONE
+04:08:11 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:11 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: DONE
+04:08:11 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:12 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_fieldStrength" already exists)
+04:08:12 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:26 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_fieldStrength" already exists)
+04:08:26 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:35 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_fieldStrength" already exists)
+04:08:35 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:45 thm:BookProof_YangMillsBianchi_bianchi_fieldStrength: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsBianchi.bianchi_fieldStrength" already exists)
+04:08:45 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:08:46 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_rotate" already exists)
+04:08:46 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:08:46 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: DONE
+04:08:46 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:08:54 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: REUSING existing BookProof.YangMillsSU3.structureConstant_antisymm_rotate (Open) 9830ddf2-a286-4039-8297-4d4ca813f441
+04:08:54 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: DONE
+04:08:54 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:09:04 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_rotate" already exists)
+04:09:04 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:09:08 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_rotate" already exists)
+04:09:08 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:09:09 thm:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_rotate" already exists)
+04:09:09 processing thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:09:23 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: DONE
+04:09:23 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:23 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_swap" already exists)
+04:09:23 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:28 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_swap" already exists)
+04:09:28 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:38 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_swap" already exists)
+04:09:38 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:42 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_swap" already exists)
+04:09:42 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:43 thm:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_antisymm_swap" already exists)
+04:09:43 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:09:54 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: DONE
+04:09:54 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:09:56 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: DONE
+04:09:56 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:09:56 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_unitary" already exists)
+04:09:56 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:09:57 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: DONE
+04:09:57 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:10:01 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_unitary" already exists)
+04:10:01 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:10:11 thm:BookProof_ChapterMajoranaProp76_energyTransform_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_unitary" already exists)
+04:10:11 processing thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:10:35 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: DONE
+04:10:35 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:10:41 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le" already exists)
+04:10:41 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:10:52 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le" already exists)
+04:10:52 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:11:02 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le" already exists)
+04:11:02 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:11:09 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: DONE
+04:11:09 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:12 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: REUSING existing BookProof.MajoranaClifford.a_anticomm_of_orthogonal (Open) c2c34aa6-a9c1-4b1a-8bab-b5b58ca1db3f
+04:11:12 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: DONE
+04:11:12 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:12 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le" already exists)
+04:11:12 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:11:15 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_of_orthogonal" already exists)
+04:11:15 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:25 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: REUSING existing BookProof.MajoranaClifford.a_anticomm_of_orthogonal (Open) c2c34aa6-a9c1-4b1a-8bab-b5b58ca1db3f
+04:11:25 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: DONE
+04:11:25 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:27 thm:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le" already exists)
+04:11:27 processing thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:11:29 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_of_orthogonal" already exists)
+04:11:29 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:34 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: REUSING existing BookProof.MajoranaClifford.a_anticomm_of_orthogonal (Open) c2c34aa6-a9c1-4b1a-8bab-b5b58ca1db3f
+04:11:34 thm:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: DONE
+04:11:34 processing thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:11:51 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric" already exists)
+04:11:51 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:11:57 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: DONE
+04:11:57 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:12:02 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric" already exists)
+04:12:02 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:12:11 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric" already exists)
+04:12:11 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:12:11 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric" already exists)
+04:12:11 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:12:16 thm:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric: FAIL (publish FAILED: A theorem with name "BookProof.YangMillsSU3.structureConstant_totally_antisymmetric" already exists)
+04:12:16 processing thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary (attempt 1)
+04:12:32 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: DONE
+04:12:32 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:12:34 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: DONE
+04:12:34 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:12:37 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyMomentum_unitary" already exists)
+04:12:37 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:12:39 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyMomentum_unitary" already exists)
+04:12:39 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:12:39 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyMomentum_unitary" already exists)
+04:12:39 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:12:56 thm:BookProof_ChapterMajoranaProp76_energyMomentum_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyMomentum_unitary" already exists)
+04:12:56 processing thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary (attempt 1)
+04:13:11 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: DONE
+04:13:11 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:14 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary" already exists)
+04:13:14 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:19 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary" already exists)
+04:13:19 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:29 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary" already exists)
+04:13:29 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:29 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary" already exists)
+04:13:29 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:45 thm:BookProof_ChapterMajoranaProp76_energyTransform_fourier_unitary: FAIL (publish FAILED: A theorem with name "BookProof.ChapterMajoranaProp76.energyTransform_fourier_unitary" already exists)
+04:13:45 processing thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le (attempt 1)
+04:13:48 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: DONE
+04:13:48 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:13:52 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: REUSING existing BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le (Open) 86210964-62f0-4b3f-9b51-33473e7d48b1
+04:13:52 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: DONE
+04:13:52 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:13:56 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le" already exists)
+04:13:56 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:13:59 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le" already exists)
+04:13:59 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:14:08 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le" already exists)
+04:14:08 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:14:08 thm:BookProof_ChapterSirkGroupTransfer_norm_groupFlow_sub_le: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le" already exists)
+04:14:08 processing thm:BookProof_MajoranaClifford_a_anticomm_skew (attempt 1)
+04:14:16 thm:BookProof_MajoranaClifford_a_anticomm_skew: FAIL (FileNotFoundError: [Errno 2] No such file or directory: '/home/leo/prove2me_workspace/state/pipeline.json.tmp' -> '/home/leo/prove2me_workspace/state/)
+04:14:16 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:22 thm:BookProof_MajoranaClifford_a_anticomm_skew: DONE
+04:14:22 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:25 thm:BookProof_MajoranaClifford_a_anticomm_skew: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_skew" already exists)
+04:14:25 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:38 thm:BookProof_MajoranaClifford_a_anticomm_skew: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_skew" already exists)
+04:14:38 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:41 thm:BookProof_MajoranaClifford_a_anticomm_skew: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_skew" already exists)
+04:14:41 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:46 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval" already exists)
+04:14:46 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:46 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (theorem not published yet)
+04:14:46 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:14:49 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: DONE
+04:14:49 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:49 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:14:49 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:14:49 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:14:49 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:14:49 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:14:49 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:14:49 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (theorem not published yet)
+04:14:49 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:14:50 thm:BookProof_MajoranaClifford_a_anticomm_skew: FAIL (publish FAILED: A theorem with name "BookProof.MajoranaClifford.a_anticomm_skew" already exists)
+04:14:50 processing thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval (attempt 1)
+04:14:51 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: REUSING existing BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval (Open) 9e6f40c3-b2be-4eaf-80fa-8c1ebafefbf9
+04:14:51 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: DONE
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:14:51 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: DONE
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:14:51 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:14:51 sol:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (theorem not published yet)
+04:14:51 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:14:54 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary.lean:5:5: error: u)
+04:14:54 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:14:54 sol:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (theorem not published yet)
+04:14:54 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:14:54 sol:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (theorem not published yet)
+04:14:54 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:14:58 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: REUSING existing BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval (Open) 9e6f40c3-b2be-4eaf-80fa-8c1ebafefbf9
+04:14:58 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: DONE
+04:14:58 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:59 thm:BookProof_ChapterSirkGroupTransfer_groupFlow_transfer_uniform_on_interval: FAIL (publish FAILED: A theorem with name "BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval" already exists)
+04:14:59 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq (attempt 1)
+04:14:59 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: FAIL (theorem not published yet)
+04:14:59 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:16:16 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_eq: DONE
+04:16:16 processing sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity (attempt 1)
+04:16:16 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:16:16 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:16:16 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:16:16 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:16:16 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:16:16 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:16:16 sol:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:16:16 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (theorem not published yet)
+04:16:16 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:16:26 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: DONE
+04:16:26 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:16:28 sol:BookProof_ChapterMajoranaProp76_note4_comp: DONE
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:16:28 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (theorem not published yet)
+04:16:28 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:17:13 sol:BookProof_ChapterParityMajoranaQuant_J_annih: DONE
+04:17:13 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:17:13 sol:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (theorem not published yet)
+04:17:13 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:17:21 sol:BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity: DONE
+04:17:21 processing sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity (attempt 1)
+04:17:21 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:17:21 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:17:21 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:17:21 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:17:21 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:17:21 sol:BookProof_ChapterMajoranaProp76_note4_comp: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_J_annih: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:17:21 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (theorem not published yet)
+04:17:21 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:17:26 sol:BookProof_ChapterParityMajoranaQuant_J_creat: DONE
+04:17:26 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:17:26 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (theorem not published yet)
+04:17:26 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:17:26 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:17:26 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:17:36 sol:BookProof_ChapterParityMajoranaQuant_proj_add: DONE
+04:17:36 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:17:36 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (theorem not published yet)
+04:17:36 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:17:36 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (theorem not published yet)
+04:17:36 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:17:36 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:17:36 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:17:36 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:17:36 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:17:36 sol:BookProof_MajoranaClifford_Qform_apply: FAIL (theorem not published yet)
+04:17:36 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:17:55 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+04:17:55 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:17:55 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:17:55 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:17:55 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:17:55 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:17:55 sol:BookProof_MajoranaClifford_Qform_apply: FAIL (theorem not published yet)
+04:17:55 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:18:04 sol:BookProof_ChapterBaryonAsymmetry_radiation_satisfies_continuity: DONE
+04:18:04 processing sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm (attempt 1)
+04:18:04 sol:BookProof_ChapterMajoranaProp61_gsq_Hsq_comm: FAIL (theorem not published yet)
+04:18:04 processing sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self (attempt 1)
+04:18:04 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self: FAIL (theorem not published yet)
+04:18:04 processing sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self (attempt 1)
+04:18:04 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self: FAIL (theorem not published yet)
+04:18:04 processing sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary (attempt 1)
+04:18:04 sol:BookProof_ChapterMajoranaProp76_LinearIsometryEquiv_isNote4Unitary: FAIL (theorem not published yet)
+04:18:04 processing sol:BookProof_ChapterMajoranaProp76_note4_comp (attempt 1)
+04:18:43 sol:BookProof_MajoranaClifford_a_add: DONE
+04:18:43 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:18:43 sol:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (theorem not published yet)
+04:18:43 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:19:13 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: DONE
+04:19:13 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:19:13 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:19:13 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:19:13 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (theorem not published yet)
+04:19:13 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:19:13 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (theorem not published yet)
+04:19:13 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:19:21 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+04:19:21 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:19:21 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:19:21 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_Qform_apply: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_a_add: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_a_smul: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_a_zero: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:19:21 sol:BookProof_MajoranaClifford_polar_Qform: FAIL (theorem not published yet)
+04:19:21 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:19:23 sol:BookProof_ChapterMajoranaProp76_note4_comp: DONE
+04:19:23 processing sol:BookProof_ChapterParityMajoranaQuant_J_annih (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_a_add: DONE
+04:19:24 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_a_smul: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_a_zero: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_polar_Qform: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_reverse_antihom: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:19:24 sol:BookProof_MajoranaClifford_reverse_involutive: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:19:24 sol:BookProof_YangMillsBianchi_bianchi: FAIL (theorem not published yet)
+04:19:24 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:19:37 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: DONE
+04:19:37 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:19:51 sol:BookProof_MajoranaClifford_a_smul: DONE
+04:19:51 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:19:51 sol:BookProof_MajoranaClifford_a_zero: FAIL (theorem not published yet)
+04:19:51 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:20:52 sol:BookProof_ChapterParityMajoranaQuant_proj_add: DONE
+04:20:52 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:20:52 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: FAIL (theorem not published yet)
+04:20:52 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:21:01 sol:BookProof_MajoranaClifford_reverse_antihom: DONE
+04:21:01 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_J_annih: DONE
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_J_creat (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_J_creat: FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_J_unitary: FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_J_unitary' (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_J_unitary': FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_herm (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_iJ_herm: FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_iJ_sq (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:21:03 sol:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (theorem not published yet)
+04:21:03 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:21:04 sol:BookProof_YangMillsBianchi_bianchi_cyclic: DONE
+04:21:04 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:21:04 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (theorem not published yet)
+04:21:04 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:21:04 sol:BookProof_YangMillsSU3_structureConstant_formula: FAIL (theorem not published yet)
+04:21:04 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:21:04 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (theorem not published yet)
+04:21:04 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:21:04 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (theorem not published yet)
+04:21:04 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:21:27 sol:BookProof_ChapterParityMajoranaQuant_iJ_sq: DONE
+04:21:27 processing sol:BookProof_ChapterParityMajoranaQuant_proj_add (attempt 1)
+04:21:27 sol:BookProof_ChapterParityMajoranaQuant_proj_add: FAIL (theorem not published yet)
+04:21:27 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew (attempt 1)
+04:21:41 sol:BookProof_MajoranaClifford_polar_Qform: DONE
+04:21:41 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:21:41 sol:BookProof_MajoranaClifford_reverse_antihom: FAIL (theorem not published yet)
+04:21:41 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:21:41 sol:BookProof_MajoranaClifford_reverse_involutive: FAIL (theorem not published yet)
+04:21:41 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:21:41 sol:BookProof_YangMillsBianchi_bianchi: FAIL (theorem not published yet)
+04:21:41 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:21:41 sol:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (theorem not published yet)
+04:21:41 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:21:41 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (theorem not published yet)
+04:21:41 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:22:10 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: DONE
+04:22:11 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:22:11 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (theorem not published yet)
+04:22:11 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:22:11 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:22:11 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:22:11 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:22:11 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:22:21 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: DONE
+04:22:21 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:22:21 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:22:21 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_Qform_apply: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_a_add: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_a_smul: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_a_zero: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_polar_Qform: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:22:21 sol:BookProof_MajoranaClifford_reverse_antihom: FAIL (theorem not published yet)
+04:22:21 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:22:29 sol:BookProof_MajoranaClifford_reverse_involutive: DONE
+04:22:29 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:22:49 sol:BookProof_YangMillsSU3_structureConstant_formula: DONE
+04:22:49 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:22:53 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_YangMillsSU3_structureConstant_jacobi.lean:48:8: error: `simp` made no prog)
+04:22:53 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:22:53 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+04:22:53 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:22:53 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:22:53 sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:22:53 sol:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:22:53 sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:22:53 sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:22:53 sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:22:53 sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:22:53 sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (theorem not published yet)
+04:22:53 processing sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:22:56 sol:BookProof_ChapterParityMajoranaQuant_stdJ_skew: DONE
+04:22:56 processing sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq (attempt 1)
+04:22:56 sol:BookProof_ChapterParityMajoranaQuant_stdJ_sq: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero (attempt 1)
+04:22:56 sol:BookProof_ChapterSirkGroupTransfer_groupFlow_zero: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le (attempt 1)
+04:22:56 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_Qform_apply (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_Qform_apply: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_a_add: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_a_selfAdjoint: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_a_smul: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_a_zero: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_polar_Qform: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_reverse_antihom: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:22:56 sol:BookProof_MajoranaClifford_reverse_involutive: FAIL (theorem not published yet)
+04:22:56 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:23:39 sol:BookProof_MajoranaClifford_Qform_apply: DONE
+04:23:39 processing sol:BookProof_MajoranaClifford_a_add (attempt 1)
+04:23:50 sol:BookProof_MajoranaClifford_reverse_involutive: DONE
+04:23:50 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:23:50 sol:BookProof_YangMillsBianchi_bianchi: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:23:50 sol:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:23:50 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:23:50 sol:BookProof_YangMillsSU3_structureConstant_formula: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:23:50 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:23:50 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:23:50 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:23:50 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (theorem not published yet)
+04:23:50 processing sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:23:59 sol:BookProof_YangMillsBianchi_bianchi: DONE
+04:23:59 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:23:59 sol:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (theorem not published yet)
+04:23:59 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:23:59 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (theorem not published yet)
+04:23:59 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:23:59 sol:BookProof_YangMillsSU3_structureConstant_formula: FAIL (theorem not published yet)
+04:23:59 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:23:59 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (theorem not published yet)
+04:23:59 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:23:59 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (theorem not published yet)
+04:23:59 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:24:22 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: DONE
+04:24:22 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:24:22 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (theorem not published yet)
+04:24:22 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:24:22 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (theorem not published yet)
+04:24:22 processing sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:24:22 sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (theorem not published yet)
+04:24:22 processing sol:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:24:36 sol:BookProof_YangMillsBianchi_bianchi: DONE
+04:24:36 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:24:44 sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: DONE
+04:24:44 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:24:44 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:24:44 sol:BookProof_MajoranaClifford_a_sq: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:24:44 sol:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_MajoranaClifford_car (attempt 1)
+04:24:44 sol:BookProof_MajoranaClifford_car: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:24:44 sol:BookProof_YangMillsBianchi_bianchi_fieldStrength: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:24:44 sol:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:24:44 sol:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (theorem not published yet)
+04:24:44 processing sol:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:24:51 sol:BookProof_MajoranaClifford_a_add: DONE
+04:24:51 processing sol:BookProof_MajoranaClifford_a_selfAdjoint (attempt 1)
+04:25:10 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+04:25:10 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:25:10 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (theorem not published yet)
+04:25:10 processing sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:25:10 sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (theorem not published yet)
+04:25:10 processing sol:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:25:44 sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: DONE
+04:25:44 processing sol:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:25:44 sol:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:25:44 sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:25:44 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (theorem not published yet)
+04:25:44 processing sol:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:25:47 sol:BookProof_MajoranaClifford_a_sq: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_MajoranaClifford_a_sq.lean:22:97: error: unsolved goals
+V : Type u_1
+inst✝¹)
+04:25:47 processing sol:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:25:47 sol:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (theorem not published yet)
+04:25:47 processing sol:BookProof_MajoranaClifford_car (attempt 1)
+04:26:12 sol:BookProof_ChapterMajoranaProp76_note4_conj: DONE
+04:26:12 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:26:12 sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (theorem not published yet)
+04:26:12 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:26:15 sol:BookProof_YangMillsBianchi_bianchi_cyclic: DONE
+04:26:15 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:26:23 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_YangMillsBianchi_fieldStrength_antisymm.lean:26:9: error(lean.synthInstance)
+04:26:23 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:26:23 sol:BookProof_ChapterMajoranaProp76_energyTransform_unitary: DONE
+04:26:23 processing sol:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le (attempt 1)
+04:26:30 sol:BookProof_MajoranaClifford_a_selfAdjoint: DONE
+04:26:30 processing sol:BookProof_MajoranaClifford_a_smul (attempt 1)
+04:26:30 sol:BookProof_MajoranaClifford_a_smul: FAIL (theorem not published yet)
+04:26:30 processing sol:BookProof_MajoranaClifford_a_zero (attempt 1)
+04:26:59 sol:BookProof_ChapterMajoranaProp76_note4_conj: DONE
+04:26:59 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:26:59 sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm: FAIL (theorem not published yet)
+04:26:59 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm (attempt 1)
+04:26:59 sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm: FAIL (theorem not published yet)
+04:26:59 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:27:05 sol:BookProof_ChapterSirkGroupTransfer_norm_exp_sub_exp_le: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_ChapterSirkGroupTransfer_norm_pow_le_of_le. No such theorem exists in this Lean environment (ma)
+04:27:05 processing sol:BookProof_MajoranaClifford_a_anticomm_of_orthogonal (attempt 1)
+04:27:16 sol:BookProof_MajoranaClifford_car: DONE
+04:27:16 processing sol:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:27:41 sol:BookProof_MajoranaClifford_a_zero: DONE
+04:27:41 processing sol:BookProof_MajoranaClifford_polar_Qform (attempt 1)
+04:27:41 sol:BookProof_MajoranaClifford_polar_Qform: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_MajoranaClifford_reverse_antihom (attempt 1)
+04:27:41 sol:BookProof_MajoranaClifford_reverse_antihom: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_MajoranaClifford_reverse_involutive (attempt 1)
+04:27:41 sol:BookProof_MajoranaClifford_reverse_involutive: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_YangMillsBianchi_bianchi (attempt 1)
+04:27:41 sol:BookProof_YangMillsBianchi_bianchi: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_YangMillsBianchi_bianchi_cyclic (attempt 1)
+04:27:41 sol:BookProof_YangMillsBianchi_bianchi_cyclic: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_YangMillsBianchi_fieldStrength_antisymm (attempt 1)
+04:27:41 sol:BookProof_YangMillsBianchi_fieldStrength_antisymm: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_YangMillsSU3_structureConstant_formula (attempt 1)
+04:27:41 sol:BookProof_YangMillsSU3_structureConstant_formula: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:27:41 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:27:41 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (theorem not published yet)
+04:27:41 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:27:56 sol:BookProof_ChapterParityMajoranaQuant_creatProj_herm: DONE
+04:27:56 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem (attempt 1)
+04:28:07 sol:BookProof_YangMillsSU3_structureConstant_formula: DONE
+04:28:07 processing sol:BookProof_YangMillsSU3_structureConstant_jacobi (attempt 1)
+04:28:07 sol:BookProof_YangMillsSU3_structureConstant_jacobi: FAIL (theorem not published yet)
+04:28:07 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn (attempt 1)
+04:28:07 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_strictMonoOn: FAIL (theorem not published yet)
+04:28:07 processing sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop (attempt 1)
+04:28:07 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: FAIL (theorem not published yet)
+04:28:07 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)
+04:28:07 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit: FAIL (theorem not published yet)
+04:28:07 processing sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary (attempt 1)
+04:28:11 sol:BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_ChapterMajoranaProp76_fourierTransform_isNote4Unitary.lean:2:0: error: obje)
+04:28:11 processing sol:BookProof_ChapterMajoranaProp76_note4_conj (attempt 1)
+04:28:15 sol:BookProof_ChapterMajoranaProp76_note4_conj: FAIL (local compile failed: /home/leo/prove2me_workspace/Solutions/Sol_BookProof_ChapterMajoranaProp76_note4_conj.lean:2:0: error: object file '/home/leo/pr)
+04:28:15 processing sol:BookProof_ChapterParityMajoranaQuant_annihProj_herm (attempt 1)
+04:28:22 sol:BookProof_ChapterParityMajoranaQuant_annihProj_idem: DONE
+04:28:22 processing sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero (attempt 1)
+04:28:22 sol:BookProof_ChapterParityMajoranaQuant_annih_creat_zero: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem (attempt 1)
+04:28:22 sol:BookProof_ChapterParityMajoranaQuant_creatProj_idem: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero (attempt 1)
+04:28:22 sol:BookProof_ChapterParityMajoranaQuant_creat_annih_zero: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le (attempt 1)
+04:28:22 sol:BookProof_ChapterSirkGroupTransfer_norm_pow_sub_pow_le: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_MajoranaClifford_a_sq (attempt 1)
+04:28:22 sol:BookProof_MajoranaClifford_a_sq: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_MajoranaClifford_a_map_selfAdjoint (attempt 1)
+04:28:22 sol:BookProof_MajoranaClifford_a_map_selfAdjoint: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_MajoranaClifford_car (attempt 1)
+04:28:22 sol:BookProof_MajoranaClifford_car: FAIL (theorem not published yet)
+04:28:22 processing sol:BookProof_YangMillsBianchi_bianchi_fieldStrength (attempt 1)
+04:28:37 sol:BookProof_MajoranaClifford_a_anticomm_of_orthogonal: DONE
+04:28:37 processing sol:BookProof_YangMillsSU3_structureConstant_totally_antisymmetric (attempt 1)
+04:28:47 sol:BookProof_YangMillsBianchi_bianchi_fieldStrength: DONE
+04:28:47 processing sol:BookProof_YangMillsSU3_structureConstant_antisymm_rotate (attempt 1)
+04:28:47 sol:BookProof_YangMillsSU3_structureConstant_antisymm_rotate: FAIL (theorem not published yet)
+04:28:47 processing sol:BookProof_YangMillsSU3_structureConstant_antisymm_swap (attempt 1)
+04:28:47 sol:BookProof_YangMillsSU3_structureConstant_antisymm_swap: FAIL (theorem not published yet)
+04:28:47 processing sol:BookProof_ChapterMajoranaProp76_energyTransform_unitary (attempt 1)
+04:29:10 sol:BookProof_ChapterBaryonAsymmetry_matterRadiationRatio_tendsto_atTop: DONE
+04:29:10 processing sol:BookProof_ChapterMajoranaProp61_prop61_isUnit (attempt 1)

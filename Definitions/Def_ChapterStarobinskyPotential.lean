@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
 
 import Mathlib
 
@@ -57,6 +59,7 @@ are the mathematics of the derivation, not the symbolic-algebra program that pro
 -/
 
 open Filter Topology
+open BookProof.FarisLavine BookProof.QuantumGravityDensitized
 
 namespace BookProof.Starobinsky
 

@@ -1,5 +1,7 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.commutator_coord_mom
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
+import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 

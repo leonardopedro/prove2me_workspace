@@ -46,7 +46,7 @@ section Multiplication
 open scoped ENNReal
 
 /-- The Hilbert space `ℓ²(ℕ)`. -/
-abbrev L2Nat := lp (fun _ : ℕ => ℂ) 2
+noncomputable abbrev L2Nat := lp (fun _ : ℕ => ℂ) 2
 
 /-- Coefficientwise multiplication by a real symbol. -/
 def mulSymbolFun (s : ℕ → ℝ) (f : ℕ → ℂ) : ℕ → ℂ := fun n => (s n : ℂ) * f n
@@ -89,7 +89,10 @@ noncomputable def mulSymbolOp (lam s : ℕ → ℝ) (hs : ∀ n, |s n| ≤ |lam 
     refine memLpTwo_of_norm_le f.2 fun n => ?_
     simp only [mulSymbolFun, norm_mul, Complex.norm_real, Real.norm_eq_abs]
     exact mul_le_mul_of_nonneg_right (hs n) (norm_nonneg _)⟩
-  map_add' f g := by ext n; simp [mulSymbolFun]; ring
+  map_add' f g := by
+    ext n
+    simp only [Submodule.coe_add, lp.coeFn_add, mulSymbolFun, Pi.add_apply]
+    ring
   map_smul' c f := by ext n; simp [mulSymbolFun]; ring
 
 

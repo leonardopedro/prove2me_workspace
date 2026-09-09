@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFriedrichsExtension
+import Mathlib
 
 import Mathlib
 
@@ -43,6 +44,8 @@ out of scope.
 namespace BookProof.YangMillsHermite
 
 open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs
+open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert
 
 noncomputable section
 
@@ -295,5 +298,14 @@ end YangMills
 
 
 end
+
+namespace RealCoeff
+end RealCoeff
+
+namespace PolySym
+end PolySym
+
+namespace PolyAdj
+end PolyAdj
 
 end BookProof.YangMillsHermite

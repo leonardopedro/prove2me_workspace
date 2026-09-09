@@ -52,7 +52,14 @@ variable {d : ℕ}
 
 /-! ## Fubini in the coordinates -/
 
-
+/-- **Fubini in the coordinates of `ℝᵈ`**: the integral of a product of functions
+of the separate coordinates is the product of the one-dimensional integrals. -/
+theorem integral_prod_coord (f : Fin d → ℝ → ℂ) :
+    ∫ x : Vd d, ∏ i, f i (x i) = ∏ i, ∫ t : ℝ, f i t := by
+  rw [← ((PiLp.volume_preserving_toLp (Fin d)).integral_comp
+      (MeasurableEquiv.toLp 2 (Fin d → ℝ)).measurableEmbedding
+      (fun x : Vd d => ∏ i, f i (x i)))]
+  exact MeasureTheory.integral_fintype_prod_eq_prod (fun i => f i)
 
 /-- Each coordinate is dominated by the norm. -/
 theorem coord_abs_le_norm (x : Vd d) (i : Fin d) : |x i| ≤ ‖x‖ := by
@@ -156,7 +163,7 @@ theorem continuous_polyEval (p : MvPolynomial (Fin d) ℂ) :
     Continuous (fun x : Vd d => MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p) := by
   induction p using MvPolynomial.induction_on with
   | C a => simpa using continuous_const
-  | add p q hp hq => simpa using hp.add hq
+  | add p q hp hq => exact (hp.add hq).congr fun x => by rw [Pi.add_apply, MvPolynomial.eval_add]
   | mul_X p i hp =>
       simp only [map_mul, MvPolynomial.eval_X]
       exact hp.mul (by fun_prop)
@@ -276,6 +283,8 @@ theorem mvpoly_eq_zero_of_eval_real : ∀ {n : ℕ} {p : MvPolynomial (Fin n) �
 /-- **The Gauss–polynomial map is injective**: distinct polynomials give distinct
 elements of `L²(ℝᵈ)`.  Equivalently the monomials times the Gaussian are linearly
 independent. -/
+theorem pgMap_apply (p : MvPolynomial (Fin d) ℂ) : pgMap p = pgLp p := rfl
+
 theorem pgMap_injective : Function.Injective (pgMap (d := d)) := by
   rw [injective_iff_map_eq_zero]
   intro p hp
@@ -474,6 +483,10 @@ theorem integral_fourier_mul_comm {f g : Vd d → ℂ} (hf : Integrable f) (hg :
     (V := Vd d) (W := Vd d) (E := ℂ) (F := ℂ) (G := ℂ) (μ := volume) (ν := volume)
     (L := innerₗ (Vd d)) (e := Real.fourierChar) (f := f) (g := g)
     (ContinuousLinearMap.mul ℂ ℂ) Real.continuous_fourierChar hcont hf hg
+  show (∫ (xi : Vd d), VectorFourier.fourierIntegral Real.fourierChar volume
+      (innerₗ (Vd d)) f xi * g xi)
+      = (∫ (x : Vd d), f x *
+          VectorFourier.fourierIntegral Real.fourierChar volume (innerₗ (Vd d)) g x)
   simpa [hflip, ContinuousLinearMap.mul_apply'] using h
 
 /-- An integrable function on `ℝᵈ` whose Fourier transform vanishes identically is
@@ -496,7 +509,8 @@ theorem ae_eq_zero_of_fourier_eq_zero {v : Vd d → ℂ} (hv : Integrable v)
   rw [hzero] at hkey
   have hrw : ∫ x : Vd d, g x • v x = ∫ x : Vd d, v x * (psi : Vd d → ℂ) x := by
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp [hpsi, Complex.real_smul]
+    have hcoe : (psi : Vd d → ℂ) x = ((g x : ℝ) : ℂ) := rfl
+    simp only [Complex.real_smul, hcoe]
     ring
   rw [hrw, ← hkey]
 
@@ -582,6 +596,21 @@ proved here by reducing to the one-dimensional identity `gint_ibp` of
 /-- The Gaussian weight `e^{-‖x‖²/2} = (e^{-‖x‖²/4})²`. -/
 def gaussWD (x : Vd d) : ℝ := Real.exp (-‖x‖ ^ 2 / 2)
 
+/-- The squared norm is the sum of the squared coordinates. -/
+theorem norm_sq_eq_sum (x : Vd d) : ‖x‖ ^ 2 = ∑ i, (x i) ^ 2 := by
+  rw [EuclideanSpace.norm_eq, Real.sq_sqrt (Finset.sum_nonneg fun i _ => by positivity)]
+  exact Finset.sum_congr rfl fun i _ => by rw [Real.norm_eq_abs, sq_abs]
+
+theorem gaussWD_eq_sq (x : Vd d) : gaussWD x = gaussD x * gaussD x := by
+  rw [gaussWD, gaussD, ← Real.exp_add]
+  ring_nf
+
+theorem gaussWD_eq_prod (x : Vd d) : gaussWD x = ∏ i, Real.exp (-(x i) ^ 2 / 2) := by
+  rw [gaussWD, norm_sq_eq_sum, ← Real.exp_sum]
+  congr 1
+  rw [neg_div, Finset.sum_div, ← Finset.sum_neg_distrib]
+  exact Finset.sum_congr rfl fun i _ => by ring
+
 
 
 
@@ -605,6 +634,118 @@ def gaussInt (r : MvPolynomial (Fin d) ℂ) : ℂ :=
 
 /-- The one-dimensional Gaussian moments `M k = ∫ tᵏ e^{-t²/2} dt`. -/
 def gaussMoment (k : ℕ) : ℝ := gint ((Polynomial.X : Polynomial ℝ) ^ k)
+
+theorem gwFun_eq (r : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r * (gaussWD x : ℂ) = pgFun r x * pgFun 1 x := by
+  simp only [pgFun, gaussWD_eq_sq, map_one]
+  push_cast
+  ring
+
+theorem integrable_gwFun (r : MvPolynomial (Fin d) ℂ) :
+    Integrable (fun x : Vd d =>
+      MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r * (gaussWD x : ℂ)) := by
+  refine (integrable_mul_of_memLp_two (memLp_pgFun r) (memLp_pgFun 1)).congr
+    (Filter.Eventually.of_forall fun x => ?_)
+  simpa using (gwFun_eq r x).symm
+
+theorem gaussInt_add (r s : MvPolynomial (Fin d) ℂ) :
+    gaussInt (r + s) = gaussInt r + gaussInt s := by
+  rw [gaussInt, gaussInt, gaussInt, ← integral_add (integrable_gwFun r) (integrable_gwFun s)]
+  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+  simp [add_mul]
+
+theorem gaussInt_smul (c : ℂ) (r : MvPolynomial (Fin d) ℂ) :
+    gaussInt (c • r) = c * gaussInt r := by
+  rw [gaussInt, gaussInt, ← integral_const_mul]
+  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+  simp [mul_assoc]
+
+theorem gaussInt_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
+    gaussInt (∑ v ∈ s, f v) = ∑ v ∈ s, gaussInt (f v) := by
+  classical
+  induction s using Finset.induction with
+  | empty => simp [gaussInt]
+  | insert v s hv ih =>
+      rw [Finset.sum_insert hv, Finset.sum_insert hv, gaussInt_add, ih]
+
+/-- **The moment recurrence** `M_{k+1} = k · M_{k-1}`, one-dimensional integration
+by parts against the Gaussian (`BookProof.HermiteCore.gint_ibp`).  For `k = 0` it
+reads `M₁ = 0`. -/
+theorem gaussMoment_succ (k : ℕ) : gaussMoment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by
+  have h := gint_ibp ((Polynomial.X : Polynomial ℝ) ^ k) 1
+  rw [Polynomial.derivative_X_pow, mul_one, Polynomial.derivative_one, sub_zero, mul_one] at h
+  rw [gint_C_mul] at h
+  rw [gaussMoment, gaussMoment, h, pow_succ]
+
+/-- The Gaussian integral of a monomial factorizes into one-dimensional moments. -/
+theorem gaussInt_monomial (a : Fin d →₀ ℕ) :
+    gaussInt (monomial a (1 : ℂ)) = ∏ i, ((gaussMoment (a i) : ℝ) : ℂ) := by
+  have hpt : ∀ x : Vd d,
+      MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (monomial a (1 : ℂ)) * (gaussWD x : ℂ)
+        = ∏ i, (((x i) ^ (a i) * Real.exp (-(x i) ^ 2 / 2) : ℝ) : ℂ) := by
+    intro x
+    rw [MvPolynomial.eval_monomial, one_mul, gaussWD_eq_prod,
+      Finsupp.prod_of_support_subset a (Finset.subset_univ _) _ (fun i _ => by simp)]
+    push_cast
+    rw [← Finset.prod_mul_distrib]
+  rw [gaussInt]
+  simp_rw [hpt]
+  rw [integral_prod_coord (fun i t => (((t ^ (a i) * Real.exp (-t ^ 2 / 2) : ℝ)) : ℂ))]
+  refine Finset.prod_congr rfl fun i _ => ?_
+  rw [gaussMoment, gint]
+  rw [← integral_complex_ofReal]
+  refine integral_congr_ae (Filter.Eventually.of_forall fun t => ?_)
+  norm_cast
+  simp [gaussW]
+
+/-- **Gaussian integration by parts in `d` dimensions**:
+`∫ (∂ⱼ r) e^{-‖x‖²/2} = ∫ xⱼ r e^{-‖x‖²/2}`. -/
+theorem gaussInt_pderiv (j : Fin d) (r : MvPolynomial (Fin d) ℂ) :
+    gaussInt (pderiv j r) = gaussInt (X j * r) := by
+  classical
+  have hmono : ∀ a : Fin d →₀ ℕ,
+      gaussInt (pderiv j (monomial a (1 : ℂ))) = gaussInt (X j * monomial a (1 : ℂ)) := by
+    intro a
+    have hL : pderiv j (monomial a (1 : ℂ))
+        = ((a j : ℂ)) • monomial (a - Finsupp.single j 1) 1 := by
+      rw [MvPolynomial.pderiv_monomial, one_mul]
+      rw [MvPolynomial.smul_monomial, smul_eq_mul, mul_one]
+    have hR : (X j : MvPolynomial (Fin d) ℂ) * monomial a 1
+        = monomial (a + Finsupp.single j 1) 1 := by
+      rw [X, monomial_mul]
+      simp [add_comm]
+    rw [hL, hR, gaussInt_smul, gaussInt_monomial, gaussInt_monomial]
+    have hsplit : ∀ b : Fin d →₀ ℕ, ∏ i, ((gaussMoment (b i) : ℝ) : ℂ)
+        = ((gaussMoment (b j) : ℝ) : ℂ)
+          * ∏ i ∈ Finset.univ.erase j, ((gaussMoment (b i) : ℝ) : ℂ) := by
+      intro b
+      rw [← Finset.mul_prod_erase _ _ (Finset.mem_univ j)]
+    have hprod_eq : ∏ i ∈ Finset.univ.erase j,
+          ((gaussMoment ((a - Finsupp.single j 1 : Fin d →₀ ℕ) i) : ℝ) : ℂ)
+        = ∏ i ∈ Finset.univ.erase j,
+          ((gaussMoment ((a + Finsupp.single j 1 : Fin d →₀ ℕ) i) : ℝ) : ℂ) := by
+      refine Finset.prod_congr rfl fun i hi => ?_
+      have hij : i ≠ j := Finset.ne_of_mem_erase hi
+      have h1 : ((a - Finsupp.single j 1 : Fin d →₀ ℕ) i) = a i := by
+        simp [Finsupp.tsub_apply, hij]
+      have h2 : ((a + Finsupp.single j 1 : Fin d →₀ ℕ) i) = a i := by
+        simp [hij]
+      rw [h1, h2]
+    rw [hsplit (a - Finsupp.single j 1), hsplit (a + Finsupp.single j 1), hprod_eq]
+    have hj1 : ((a - Finsupp.single j 1 : Fin d →₀ ℕ) j) = a j - 1 := by
+      simp [Finsupp.tsub_apply]
+    have hj2 : ((a + Finsupp.single j 1 : Fin d →₀ ℕ) j) = a j + 1 := by simp
+    rw [hj1, hj2, gaussMoment_succ]
+    push_cast
+    ring
+  have hsum : r = ∑ v ∈ r.support, (MvPolynomial.coeff v r) • monomial v (1 : ℂ) := by
+    nth_rewrite 1 [← MvPolynomial.support_sum_monomial_coeff r]
+    exact Finset.sum_congr rfl fun v _ => by
+      rw [MvPolynomial.smul_monomial, smul_eq_mul, mul_one]
+  rw [hsum]
+  rw [map_sum, Finset.mul_sum, gaussInt_sum, gaussInt_sum]
+  refine Finset.sum_congr rfl fun v _ => ?_
+  rw [Derivation.map_smul, gaussInt_smul, mul_smul_comm, gaussInt_smul, hmono v]
 
 
 
@@ -671,6 +812,13 @@ def coreBasis (e : ℕ ≃ (Fin d →₀ ℕ)) : HilbertBasis ℕ ℂ (L2d d) :=
       rw [Submodule.dense_iff_topologicalClosure_eq_top] at hd
       rw [hd])
 
+/-- The span of the basis vectors — the *finite-mode domain* of the abstract
+theorems — is exactly the Gauss–polynomial core. -/
+theorem span_range_coreBasis (e : ℕ ≃ (Fin d →₀ ℕ)) :
+    Submodule.span ℂ (Set.range (coreBasis (d := d) e)) = polyGaussCore (d := d) := by
+  rw [coreBasis, HilbertBasis.coe_mk, InnerProductSpace.span_gramSchmidtNormed_range,
+    InnerProductSpace.span_gramSchmidt, span_coreFamily]
+
 
 
 
@@ -703,6 +851,122 @@ def hermiteFactor (i : Fin d) (n : ℕ) : MvPolynomial (Fin d) ℂ :=
 
 /-- The **product Hermite polynomial** `∏ᵢ He_{αᵢ}(xᵢ)`. -/
 def hermiteMv (a : Fin d →₀ ℕ) : MvPolynomial (Fin d) ℂ := ∏ i, hermiteFactor i (a i)
+
+/-- The derivative of the probabilists' Hermite polynomial, over `ℤ`. -/
+theorem derivative_hermiteZ (n : ℕ) :
+    Polynomial.derivative (Polynomial.hermite (n + 1))
+      = Polynomial.C ((n : ℤ) + 1) * Polynomial.hermite n := by
+  induction n with
+  | zero => simp [Polynomial.hermite_zero]
+  | succ n ih =>
+    have key : Polynomial.derivative (Polynomial.hermite (n + 1 + 1))
+        = Polynomial.hermite (n + 1) + Polynomial.C ((n : ℤ) + 1)
+          * (Polynomial.X * Polynomial.hermite n
+              - Polynomial.derivative (Polynomial.hermite n)) := by
+      rw [Polynomial.hermite_succ (n + 1), Polynomial.derivative_sub,
+        Polynomial.derivative_mul, Polynomial.derivative_X, ih, Polynomial.derivative_C_mul]
+      ring
+    have hC : (Polynomial.C (((n : ℕ) + 1 : ℕ) + 1 : ℤ) : Polynomial ℤ)
+        = Polynomial.C ((n : ℤ) + 1) + 1 := by
+      push_cast
+      rw [show ((n : ℤ) + 1 + 1) = ((n : ℤ) + 1) + 1 from rfl, Polynomial.C_add, Polynomial.C_1]
+    rw [key, ← Polynomial.hermite_succ n, hC, add_mul, one_mul, add_comm]
+
+/-- The **three-term recurrence** `X · He_n = He_{n+1} + n · He_{n-1}`, over `ℤ`. -/
+theorem hermiteZ_X_mul (n : ℕ) :
+    (Polynomial.X : Polynomial ℤ) * Polynomial.hermite n
+      = Polynomial.hermite (n + 1) + (n : ℤ) • Polynomial.hermite (n - 1) := by
+  cases n with
+  | zero => simp [Polynomial.hermite_succ, Polynomial.hermite_zero]
+  | succ m =>
+    rw [Polynomial.hermite_succ (m + 1), derivative_hermiteZ m]
+    simp [Polynomial.smul_eq_C_mul]
+
+theorem hermiteCx_zero : hermiteCx 0 = 1 := by
+  simp [hermiteCx, Polynomial.hermite_zero]
+
+theorem hermiteCx_X_mul (n : ℕ) :
+    (Polynomial.X : Polynomial ℂ) * hermiteCx n
+      = hermiteCx (n + 1) + (n : ℂ) • hermiteCx (n - 1) := by
+  have h := congrArg (Polynomial.map (Int.castRingHom ℂ)) (hermiteZ_X_mul n)
+  simpa [hermiteCx, Polynomial.smul_eq_C_mul, Polynomial.map_mul, Polynomial.map_add] using h
+
+theorem hermiteFactor_zero (i : Fin d) : hermiteFactor i 0 = 1 := by
+  simp [hermiteFactor, hermiteCx_zero]
+
+theorem hermiteFactor_X_mul (i : Fin d) (n : ℕ) :
+    X i * hermiteFactor i n = hermiteFactor i (n + 1) + (n : ℂ) • hermiteFactor i (n - 1) := by
+  have h := congrArg (Polynomial.aeval (X i : MvPolynomial (Fin d) ℂ)) (hermiteCx_X_mul n)
+  simpa [hermiteFactor, map_add, map_smul] using h
+
+theorem hermiteMv_zero : hermiteMv (0 : Fin d →₀ ℕ) = 1 := by
+  simp [hermiteMv, hermiteFactor_zero]
+
+theorem hermiteMv_erase (i : Fin d) (a : Fin d →₀ ℕ) :
+    hermiteMv a = hermiteFactor i (a i) * ∏ j ∈ Finset.univ.erase i, hermiteFactor j (a j) := by
+  rw [hermiteMv, ← Finset.mul_prod_erase _ _ (Finset.mem_univ i)]
+
+/-- **The three-term recurrence in `d` variables**: multiplying a product Hermite
+polynomial by a coordinate stays inside the family. -/
+theorem hermiteMv_X_mul (i : Fin d) (a : Fin d →₀ ℕ) :
+    X i * hermiteMv a
+      = hermiteMv (a + Finsupp.single i 1) + ((a i : ℂ)) • hermiteMv (a - Finsupp.single i 1) := by
+  classical
+  have hrest : ∀ b : Fin d →₀ ℕ, (∀ j : Fin d, j ≠ i → b j = a j) →
+      ∏ j ∈ Finset.univ.erase i, hermiteFactor j (b j)
+        = ∏ j ∈ Finset.univ.erase i, hermiteFactor j (a j) := by
+    intro b hb
+    exact Finset.prod_congr rfl fun j hj => by rw [hb j (Finset.ne_of_mem_erase hj)]
+  have hadd : ∀ j : Fin d, j ≠ i → (a + Finsupp.single i 1 : Fin d →₀ ℕ) j = a j := by
+    intro j hj; simp [hj]
+  have hsub : ∀ j : Fin d, j ≠ i → (a - Finsupp.single i 1 : Fin d →₀ ℕ) j = a j := by
+    intro j hj; simp [Finsupp.tsub_apply, hj]
+  have hai : (a + Finsupp.single i 1 : Fin d →₀ ℕ) i = a i + 1 := by simp
+  have hsi : (a - Finsupp.single i 1 : Fin d →₀ ℕ) i = a i - 1 := by simp [Finsupp.tsub_apply]
+  rw [hermiteMv_erase i a, hermiteMv_erase i (a + Finsupp.single i 1),
+    hermiteMv_erase i (a - Finsupp.single i 1), hrest _ hadd, hrest _ hsub, hai, hsi,
+    ← mul_assoc, hermiteFactor_X_mul i (a i)]
+  rw [add_mul, smul_mul_assoc]
+
+/-- The span of the product Hermite polynomials is stable under multiplication by
+each coordinate. -/
+theorem mul_X_mem_span_hermiteMv (i : Fin d) {p : MvPolynomial (Fin d) ℂ}
+    (hp : p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d)))) :
+    X i * p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d))) := by
+  induction hp using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨a, rfl⟩ := hx
+    rw [hermiteMv_X_mul]
+    exact add_mem (Submodule.subset_span ⟨_, rfl⟩)
+      (Submodule.smul_mem _ _ (Submodule.subset_span ⟨_, rfl⟩))
+  | zero => simp
+  | add x y _ _ hx hy => rw [mul_add]; exact add_mem hx hy
+  | smul c x _ hx => rw [mul_smul_comm]; exact Submodule.smul_mem _ _ hx
+
+/-- **The product Hermite polynomials span all polynomials.** -/
+theorem span_hermiteMv :
+    Submodule.span ℂ (Set.range (hermiteMv (d := d))) = ⊤ := by
+  rw [eq_top_iff]
+  rintro p -
+  induction p using MvPolynomial.induction_on with
+  | C a =>
+    have h : (C a : MvPolynomial (Fin d) ℂ) = a • hermiteMv (0 : Fin d →₀ ℕ) := by
+      rw [hermiteMv_zero, MvPolynomial.smul_eq_C_mul, mul_one]
+    rw [h]
+    exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨0, rfl⟩)
+  | add p q hp hq => exact add_mem hp hq
+  | mul_X p i hp => rw [mul_comm]; exact mul_X_mem_span_hermiteMv i hp
+
+/-- **The Gauss–polynomial core is exactly the span of the product Hermite
+functions** `∏ᵢ He_{αᵢ}(xᵢ) · e^{-‖x‖²/4}` — the `d`-dimensional Hermite core. -/
+theorem polyGaussCore_eq_hermiteSpan :
+    polyGaussCore (d := d)
+      = Submodule.span ℂ (Set.range fun a : Fin d →₀ ℕ => pgLp (hermiteMv a)) := by
+  have hrange : (Set.range fun a : Fin d →₀ ℕ => pgLp (hermiteMv a))
+      = (pgMap (d := d)) '' (Set.range (hermiteMv (d := d))) := by
+    rw [← Set.range_comp]
+    rfl
+  rw [hrange, ← Submodule.map_span, span_hermiteMv, Submodule.map_top, polyGaussCore]
 
 
 

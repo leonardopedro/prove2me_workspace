@@ -1,4 +1,8 @@
 import Mathlib
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesFlow
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.NavierStokesFlow
 
 /-!
 # Essential self-adjointness from a complete flow, on a genuinely dense domain
@@ -102,11 +106,18 @@ def lpFiniteModes (ι : Type*) : Submodule ℂ (lp (fun _ : ι => ℂ) 2) where
     simp only [Function.mem_support, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul] at hk
     exact fun hzero => hk (by rw [hzero, mul_zero])
 
+theorem mem_lpFiniteModes {f : lp (fun _ : ι => ℂ) 2} :
+    f ∈ lpFiniteModes ι ↔ (Function.support ((f : ι → ℂ))).Finite := Iff.rfl
 
-
-
-
-
+/-- Each canonical basis state `e_k` has finite support. -/
+theorem lpSingle_mem_lpFiniteModes [DecidableEq ι] (k : ι) (c : ℂ) :
+    lp.single 2 k c ∈ lpFiniteModes ι := by
+  refine Set.Finite.subset (Set.finite_singleton k) ?_
+  intro j hj
+  simp only [Function.mem_support] at hj
+  by_contra hne
+  have hjk : j ≠ k := by simpa using hne
+  exact hj (by simp [lp.single_apply, Pi.single_eq_of_ne hjk])
 
 end LpFiniteModes
 
@@ -124,6 +135,41 @@ section InfiniteLattice
 
 /-- The finitely supported modes of the lattice Hilbert space `ℓ²(ℤ)`. -/
 abbrev finiteModes : Submodule ℂ L2Z := lpFiniteModes ℤ
+
+variable {ι : Type*}
+
+/-- **The finite-mode domain is dense**: every `ℓ²` state is the limit of its
+finite truncations. -/
+theorem lpFiniteModes_dense :
+    Dense ((lpFiniteModes ι : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) :
+      Set (lp (fun _ : ι => ℂ) 2)) := by
+  classical
+  intro f
+  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) f) ?_
+  filter_upwards with S
+  exact Submodule.sum_mem _ fun k _ => lpSingle_mem_lpFiniteModes k _
+
+/-- The lattice finite-mode domain is dense. -/
+theorem finiteModes_dense : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=
+  lpFiniteModes_dense
+
+/-- The lattice translation preserves the finite-mode domain. -/
+theorem shiftOp_mem_finiteModes (m : ℤ) {f : L2Z} (hf : f ∈ finiteModes) :
+    shiftOp m f ∈ finiteModes := by
+  rw [mem_lpFiniteModes] at hf ⊢
+  refine Set.Finite.subset (hf.image fun k => k - m) ?_
+  intro k hk
+  simp only [Function.mem_support, shiftOp_apply] at hk
+  exact ⟨k + m, hk, by ring⟩
+
+/-- Multiplication by a bounded velocity field preserves the finite-mode
+domain. -/
+theorem velocityOp_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
+    velocityOp v f ∈ finiteModes := by
+  rw [mem_lpFiniteModes] at hf ⊢
+  refine hf.subset fun k hk => ?_
+  simp only [Function.mem_support, velocityOp_apply] at hk
+  exact fun hzero => hk (by rw [hzero, mul_zero])
 
 
 

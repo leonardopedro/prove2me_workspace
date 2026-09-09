@@ -1,5 +1,6 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.mulOp_polySym
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_mul
 open BookProof.YangMillsHermite

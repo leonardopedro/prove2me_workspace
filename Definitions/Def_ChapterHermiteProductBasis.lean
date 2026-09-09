@@ -172,6 +172,10 @@ theorem span_hermiteMvLp :
     rw [pgLp_hermiteMv_eq a]
     exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨a, rfl⟩)
 
+theorem hermiteMvLp_mem_core (a : Fin d →₀ ℕ) : hermiteMvLp a ∈ polyGaussCore (d := d) := by
+  rw [← span_hermiteMvLp]
+  exact Submodule.subset_span ⟨a, rfl⟩
+
 /-- **The product Hermite functions form a Hilbert basis of `L²(ℝᵈ)`**, indexed by the
 multi-indices. -/
 def hermiteMvBasis : HilbertBasis (Fin d →₀ ℕ) ℂ (L2d d) :=

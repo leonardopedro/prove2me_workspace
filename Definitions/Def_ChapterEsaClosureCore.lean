@@ -1,4 +1,6 @@
-import BookProof.Prelude
+import Mathlib
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
 
 /-!
 # Essential self-adjointness selects a **unique** self-adjoint operator
@@ -57,7 +59,8 @@ open Filter Topology
 
 namespace BookProof.EsaClosure
 
-open BookProof.FarisLavine BookProof.HashimotoShiftInvert
+open BookProof.FarisLavine (EssentiallySelfAdjointOn SymmetricOn)
+open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

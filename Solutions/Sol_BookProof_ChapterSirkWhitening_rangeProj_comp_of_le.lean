@@ -1,5 +1,6 @@
 -- Generated from ChapterSirkWhitening.lean — solution of BookProof.ChapterSirkWhitening.rangeProj_comp_of_le
 import Mathlib
+import Theorems.Thm_BookProof_ChapterSirkWhitening_rangeProj_apply
 import Definitions.Def_ChapterSirkWhitening
 import Theorems.Thm_BookProof_ChapterSirkWhitening_rangeProj_comp_embedding
 open BookProof.ChapterSirkWhitening

@@ -425,15 +425,21 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
         pos = d.e
     parts.append(bt.slice(pos, len(bt.text.encode("utf-8"))))
     text = "".join(parts)
-    # Strip BookProof.* imports and opens — def bundles only need Mathlib.
-    # Cross-chapter dependencies are resolved by the platform's Definitions.
+    # Strip BookProof.* imports — cross-chapter deps become upstream Def
+    # imports below.  KEEP `open BookProof.*` lines: the namespaces are
+    # declared by the upstream Def bundles, and bundle bodies reference the
+    # opened identifiers unqualified.
     text = re.sub(r"^import BookProof\.[^\n]*\n", "", text, flags=re.M)
-    text = re.sub(r"^open BookProof\.[^\n]*\n", "", text, flags=re.M)
-    # Add upstream Def imports for BookProof.ChapterX imports
+    # Add upstream Def imports for BookProof.ChapterX imports.
     src_text = bt.text
     upstream = upstream_def_imports(src_text, leaf)
+    # Always emit `import Mathlib` + upstream imports at the top: the source may
+    # import only `BookProof.Prelude` (which itself imports Mathlib), so after
+    # stripping BookProof.* imports the bundle would have NO imports at all.
+    head = ["import Mathlib"]
     if upstream:
-        text = "\n".join(upstream) + "\n\n" + text
+        head = upstream + head
+    text = "\n".join(head) + "\n\n" + text
     return text
 
 
@@ -445,7 +451,9 @@ def module_doc(bt):
 
 
 def main():
-    only = sys.argv[1:] or WAVE
+    args = [a for a in sys.argv[1:]]
+    defs_only = "--defs-only" in args
+    only = [a for a in args if not a.startswith("--")] or WAVE
     graph = load_graph()
     manifest = []
     for leaf in only:
@@ -461,6 +469,8 @@ def main():
             with open(f"{OUT_DEF}/Def_{leaf}.lean", "w", encoding="utf-8") as f:
                 f.write(body)
             print(f"   -> Definitions/Def_{leaf}.lean")
+        if defs_only:
+            continue
         for node in sorted(nodes, key=lambda x: x.s):
             slug = node.uname.replace(".", "_")
             with open(f"{OUT_THM}/Thm_{slug}.lean", "w", encoding="utf-8") as f:
@@ -471,9 +481,10 @@ def main():
                              "slug": slug, "plen": node.plen,
                              "ns": node.parent_ns()})
             print(f"   -> node {node.uname} (plen {node.plen})")
-    with open(f"{WS}/state/wave_manifest.json", "w") as f:
-        json.dump(manifest, f, indent=1)
-    print(f"\nmanifest: {len(manifest)} nodes")
+    if not defs_only:
+        with open(f"{WS}/state/wave_manifest.json", "w") as f:
+            json.dump(manifest, f, indent=1)
+        print(f"\nmanifest: {len(manifest)} nodes")
 
 
 if __name__ == "__main__":

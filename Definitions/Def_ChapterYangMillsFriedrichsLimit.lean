@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterH5
 
 import Mathlib
 
@@ -42,6 +43,8 @@ Krylov limit an operator limit.
 -/
 
 namespace BookProof.YangMillsFriedrichsLimit
+
+open BookProof.ChapterH5
 
 
 /-! ## Part C — the Friedrichs hypothesis discharged for bounded operators -/

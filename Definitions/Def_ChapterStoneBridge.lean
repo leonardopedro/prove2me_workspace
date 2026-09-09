@@ -1,4 +1,6 @@
-import Definitions.Def_ChapterEsaClosure
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterStoneResolvent
 
 import Mathlib
 
@@ -37,6 +39,7 @@ Everything is `sorry`-free and `axiom`-free.
 
 open Filter Topology
 open scoped InnerProductSpace
+open BookProof.EsaClosure BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
 namespace BookProof.StoneBridge
 

@@ -1,6 +1,10 @@
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 
 import Mathlib
 
@@ -56,6 +60,10 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.HermiteRelative
 
 open MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.FarisLavine
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HyperbolicQuadratic
 
 noncomputable section
 

@@ -3,6 +3,7 @@ import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterH7
 import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterH9
+import Mathlib
 
 import Mathlib
 
@@ -65,6 +66,7 @@ open Filter Topology
 
 namespace BookProof.ChapterSirkEndToEnd
 
+open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH8 BookProof.ChapterH9
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

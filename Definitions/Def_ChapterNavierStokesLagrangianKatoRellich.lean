@@ -1,6 +1,10 @@
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
-import Definitions.Def_ChapterEsaClosure
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterEsaClosureCore
+import Mathlib
 
 import Mathlib
 
@@ -106,7 +110,8 @@ namespace BookProof.NavierStokesFlow
 
 namespace LagrangianKatoRellich
 
-open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open FullEsa LagrangianEsa BookProof.FarisLavine
+open BookProof.EsaClosure
 
 /-! ## The split into second-order and low-order parts -/
 

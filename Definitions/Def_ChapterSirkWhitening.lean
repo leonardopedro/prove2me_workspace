@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterH4
+import Mathlib
 
 import Mathlib
 
@@ -40,6 +41,7 @@ noncomputable section
 
 namespace BookProof.ChapterSirkWhitening
 
+open BookProof.ChapterH4
 
 variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

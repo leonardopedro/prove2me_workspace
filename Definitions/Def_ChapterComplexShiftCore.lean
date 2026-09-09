@@ -1,4 +1,5 @@
 import Mathlib
+import Definitions.Def_ChapterFarisLavineCore
 
 /-!
 # The non-real shift `γ − A` of a symmetric operator
@@ -16,11 +17,9 @@ bound do not have to build the whole SIRK/Hashimoto development.
 
 namespace BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+open BookProof.FarisLavine
 
-/-- `T` is symmetric (Hermitian) on the domain `D`: `⟪T x, y⟫ = ⟪x, T y⟫`. -/
-def SymmetricOn (D : Submodule ℂ F) (T : D →ₗ[ℂ] F) : Prop :=
-  ∀ x y : D, (inner ℂ (T x) (y : F) : ℂ) = inner ℂ (x : F) (T y)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 theorem inner_im_swap (a b : F) : (inner ℂ b a : ℂ).im = -(inner ℂ a b : ℂ).im := by
   rw [← inner_conj_symm (𝕜 := ℂ) a b, Complex.conj_im, neg_neg]

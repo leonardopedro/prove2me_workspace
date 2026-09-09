@@ -1,5 +1,6 @@
 import Mathlib
-import BookProof.ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDeficiency
 
 /-!
 # The Ikebe–Kato input in the momentum representation
@@ -67,7 +68,7 @@ open LpNat FarisLavine
 variable {ι : Type*}
 
 /-- The Hilbert space `ℓ²(ι)` of the momentum representation. -/
-abbrev L2I (ι : Type*) := lp (fun _ : ι => ℂ) 2
+noncomputable abbrev L2I (ι : Type*) := lp (fun _ : ι => ℂ) 2
 
 /-! ## Square summability helpers -/
 
@@ -124,7 +125,19 @@ noncomputable def diagMax (c : ι → ℝ) : maxDom c →ₗ[ℂ] L2I ι where
     simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply, Submodule.coe_smul]
     ring
 
+@[simp] theorem diagMax_coe (c : ι → ℝ) (f : maxDom c) (k : ι) :
+    ((diagMax c f : L2I ι) : ι → ℂ) k = (c k : ℂ) * ((f : L2I ι) : ι → ℂ) k := rfl
 
+/-- A finitely supported function lies in `ℓ²`. -/
+theorem memLpTwo_of_finite_support {g : ι → ℂ} (h : (Function.support g).Finite) :
+    Memℓp g 2 := by
+  classical
+  refine memLpTwo_of_summable_normSq (summable_of_ne_finset_zero (s := h.toFinset) ?_)
+  intro k hk
+  have : g k = 0 := by
+    by_contra hne
+    exact hk (h.mem_toFinset.mpr hne)
+  simp [this]
 
 /-! ## Symmetry and positivity -/
 
@@ -141,6 +154,15 @@ noncomputable def diagMax (c : ι → ℝ) : maxDom c →ₗ[ℂ] L2I ι where
 
 
 /-! ## The finite-mode core -/
+
+/-- Finitely supported states lie in every maximal domain. -/
+theorem finiteModes_le_maxDom (c : ι → ℝ) : lpFiniteModes ι ≤ maxDom c := by
+  intro f hf
+  refine memLpTwo_of_finite_support (Set.Finite.subset (mem_lpFiniteModes.mp hf) ?_)
+  intro k hk
+  simp only [Function.mem_support] at hk ⊢
+  intro h0
+  exact hk (by rw [h0, mul_zero])
 
 
 

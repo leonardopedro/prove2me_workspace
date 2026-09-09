@@ -1,4 +1,6 @@
 import Mathlib
+import Definitions.Def_ChapterUnitaryTransport
+open BookProof.ChapterUnitaryTransport
 
 /-!
 # The general Stone theorem, part I: resolvents of an unbounded self-adjoint operator
@@ -75,7 +77,8 @@ theorem op_eq_of_inner {phi eta : H} (hphi : phi ∈ T.domain)
       rw [inner_sub_right, ← h1, h2]
       simp
     rwa [inner_eq_zero_symm] at h3
-  have h0 := T.denseDomain.eq_zero_of_inner_left (x := eta - T.op ⟨phi, hphi⟩) key
+  have h0 := T.denseDomain.eq_zero_of_inner_left (𝕜 := ℂ)
+    (x := eta - T.op ⟨phi, hphi⟩) (fun v hv => key ⟨v, hv⟩)
   exact (sub_eq_zero.mp h0).symm
 
 /-- A self-adjoint operator is **closed**: its graph is closed. -/
@@ -264,6 +267,17 @@ theorem shift_res {l : ℝ} (hl : l ≠ 0) (y : H) : T.shift l (T.res l y) = y :
   rw [res, dif_neg hl]
   exact (T.shiftEquiv hl).apply_symm_apply y
 
+theorem res_shift {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
+  rw [res, dif_neg hl]
+  exact (T.shiftEquiv hl).symm_apply_apply x
+
+/-- The defining property of the resolvent: `A (A - il)⁻¹ y = y + il (A - il)⁻¹ y`. -/
+theorem op_res {l : ℝ} (hl : l ≠ 0) (y : H) :
+    T.op (T.res l y) = y + ((l : ℂ) * Complex.I) • ((T.res l y : T.domain) : H) := by
+  have h := T.shift_res hl y
+  rw [shift_apply] at h
+  exact sub_eq_iff_eq_add.mp h
+
 
 
 
@@ -281,18 +295,87 @@ theorem norm_res_le (l : ℝ) (y : H) : ‖(T.res l y : H)‖ ≤ (1 / |l|) * �
 noncomputable def resCLM (l : ℝ) : H →L[ℂ] H :=
   LinearMap.mkContinuous (T.domain.subtype ∘ₗ T.res l) (1 / |l|) (T.norm_res_le l)
 
+@[simp] theorem resCLM_apply (l : ℝ) (y : H) : T.resCLM l y = (T.res l y : H) := rfl
 
+theorem resCLM_mem (l : ℝ) (y : H) : T.resCLM l y ∈ T.domain := (T.res l y).2
 
+theorem norm_resCLM_apply_le (l : ℝ) (y : H) : ‖T.resCLM l y‖ ≤ (1 / |l|) * ‖y‖ :=
+  T.norm_res_le l y
 
+/-- On the domain, the resolvent commutes with the operator. -/
+theorem res_op {l : ℝ} (hl : l ≠ 0) (x : T.domain) :
+    ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) := by
+  set w : T.domain := T.res l (x : H) with hw
+  have hAw : T.op w = (x : H) + ((l : ℂ) * Complex.I) • (w : H) := T.op_res hl (x : H)
+  have hmem : T.op w ∈ T.domain := by
+    rw [hAw]
+    exact T.domain.add_mem x.2 (T.domain.smul_mem _ w.2)
+  have hsub : (⟨T.op w, hmem⟩ : T.domain) = x + ((l : ℂ) * Complex.I) • w := by
+    apply Subtype.ext
+    simpa using hAw
+  have hshift : T.shift l ⟨T.op w, hmem⟩ = T.op x := by
+    rw [shift_apply, hsub, map_add, map_smul]
+    simp only [Submodule.coe_add, Submodule.coe_smul]
+    rw [hAw]
+    module
+  have := T.res_shift hl ⟨T.op w, hmem⟩
+  rw [hshift] at this
+  rw [this]
 
+/-- The adjoint relation `((A - il)⁻¹)^* = (A + il)⁻¹`. -/
+theorem inner_res {l : ℝ} (hl : l ≠ 0) (y z : H) :
+    ⟪((T.res l y : T.domain) : H), z⟫_ℂ = ⟪y, ((T.res (-l) z : T.domain) : H)⟫_ℂ := by
+  have hl' : -l ≠ 0 := neg_ne_zero.mpr hl
+  set u : T.domain := T.res l y with hu
+  set v : T.domain := T.res (-l) z with hv
+  have hy : T.op u - ((l : ℂ) * Complex.I) • (u : H) = y := by
+    have := T.shift_res hl y
+    rwa [shift_apply] at this
+  have hz : T.op v - (((-l : ℝ) : ℂ) * Complex.I) • (v : H) = z := by
+    have := T.shift_res hl' z
+    rwa [shift_apply] at this
+  have hz' : T.op v + ((l : ℂ) * Complex.I) • (v : H) = z := by
+    rw [← hz]; push_cast; module
+  have hsym := T.symmetric u v
+  rw [← hy, ← hz']
+  rw [inner_add_right, inner_sub_left, inner_smul_left, inner_smul_right, hsym]
+  simp [Complex.conj_I]
 
-
-
-
-
-
-
+/-- Resolvents at different parameters commute. -/
+theorem res_comm {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0) (y : H) :
+    ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H)
+      = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H) := by
+  set a : T.domain := T.res l ((T.res m y : T.domain) : H) with ha
+  set b : T.domain := T.res m ((T.res l y : T.domain) : H) with hb
+  have h1 : T.op a = ((T.res l y : T.domain) : H) + ((m : ℂ) * Complex.I) • (a : H) := by
+    have hcomm := T.res_op hl (T.res m y)
+    have hAres : T.op (T.res m y) = y + ((m : ℂ) * Complex.I) • ((T.res m y : T.domain) : H) :=
+      T.op_res hm y
+    rw [hAres] at hcomm
+    rw [map_add, map_smul] at hcomm
+    simp only [Submodule.coe_add, Submodule.coe_smul] at hcomm
+    rw [← hcomm, ← ha]
+  have h2 : T.op b = ((T.res l y : T.domain) : H) + ((m : ℂ) * Complex.I) • (b : H) :=
+    T.op_res hm _
+  have hd : T.shift m (a - b) = 0 := by
+    rw [map_sub, shift_apply, shift_apply, h1, h2]
+    module
+  have hzero : a - b = 0 := T.shift_injective hm (by simpa using hd)
+  have hab : a = b := sub_eq_zero.mp hzero
+  rw [hab]
 
 end UnboundedSelfAdjoint
 
 end BookProof.ChapterStoneResolvent
+
+
+
+
+
+
+
+
+
+
+
+

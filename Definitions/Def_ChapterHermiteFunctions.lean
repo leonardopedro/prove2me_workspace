@@ -91,14 +91,21 @@ theorem continuous_gaussH : Continuous gaussH := by
 
 
 theorem gaussH_sq (x : ℝ) : gaussH x * gaussH x = gaussW x := by
-  rw [gaussH, gaussW, ← Real.exp_add]; ring_nf
+  rw [gaussH, gaussW, ← Real.exp_add]
+  congr 1
+  ring
 
 theorem hasDerivAt_gaussW (x : ℝ) : HasDerivAt gaussW (-x * gaussW x) x := by
   have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-x) x := by
     have h0 := ((hasDerivAt_pow 2 x).neg).div_const 2
     convert h0 using 1
-    ring
-  simpa [gaussW, mul_comm] using h.exp
+    · rfl
+    · rfl
+    · rfl
+    · ring
+  simp only [gaussW]
+  rw [mul_comm (-x) (Real.exp (-x ^ 2 / 2))]
+  exact h.exp
 
 
 
@@ -139,7 +146,13 @@ theorem integrable_pow_mul_exp_neg (k : ℕ) {b : ℝ} (hb : 0 < b) :
 theorem integrable_poly_mul_exp_neg (p : Polynomial ℝ) {b : ℝ} (hb : 0 < b) :
     Integrable (fun x : ℝ => p.eval x * Real.exp (-b * x ^ 2)) := by
   induction p using Polynomial.induction_on' with
-  | add p q hp hq => simpa [add_mul] using hp.add hq
+  | add p q hp hq =>
+      refine (hp.add hq).congr (Filter.Eventually.of_forall fun x => ?_)
+      show ((fun x : ℝ => eval x p * Real.exp (-b * x ^ 2)) x
+        + (fun x : ℝ => eval x q * Real.exp (-b * x ^ 2)) x)
+        = (fun x : ℝ => eval x (p + q) * Real.exp (-b * x ^ 2)) x
+      simp only [Polynomial.eval_add]
+      rw [add_mul]
   | monomial k a =>
       simpa [Polynomial.eval_monomial, mul_assoc] using
         (integrable_pow_mul_exp_neg k hb).const_mul a
@@ -191,7 +204,10 @@ theorem gint_ibp (p q : Polynomial ℝ) :
     intro x
     have h := (q.hasDerivAt x).mul (hasDerivAt_gaussW x)
     convert h using 1
-    ring
+    · rfl
+    · rfl
+    · rfl
+    · ring
   have hiuv' : Integrable ((fun y : ℝ => p.eval y) *
       (fun y : ℝ => ((derivative q).eval y - y * q.eval y) * gaussW y)) := by
     refine (integrable_poly_mul_gaussW (p * (derivative q - X * q))).congr
@@ -208,7 +224,8 @@ theorem gint_ibp (p q : Polynomial ℝ) :
     refine (integrable_poly_mul_gaussW (p * q)).congr (Filter.Eventually.of_forall fun x => ?_)
     simp only [Pi.mul_apply, Polynomial.eval_mul]
     ring
-  have key := integral_mul_deriv_eq_deriv_mul_of_integrable hu hv hiuv' hiu'v hiuv
+  have key := integral_mul_deriv_eq_deriv_mul_of_integrable (fun x _ => hu x)
+    (fun x _ => hv x) hiuv' hiu'v hiuv
   have hL : ∫ x : ℝ, p.eval x * (((derivative q).eval x - x * q.eval x) * gaussW x)
       = - gint (p * (X * q - derivative q)) := by
     rw [gint, ← integral_neg]
@@ -421,7 +438,9 @@ theorem integral_fourier_mul_comm {f g : ℝ → ℂ} (hf : Integrable f) (hg : 
     (V := ℝ) (W := ℝ) (E := ℂ) (F := ℂ) (G := ℂ) (μ := volume) (ν := volume)
     (L := innerₗ ℝ) (e := Real.fourierChar) (f := f) (g := g)
     (ContinuousLinearMap.mul ℂ ℂ) Real.continuous_fourierChar (by fun_prop) hf hg
-  simpa [hflip, ContinuousLinearMap.mul_apply'] using h
+  show (∫ (xi : ℝ), VectorFourier.fourierIntegral Real.fourierChar volume (innerₗ ℝ) f xi * g xi)
+      = (∫ (x : ℝ), f x * VectorFourier.fourierIntegral Real.fourierChar volume (innerₗ ℝ) g x)
+  simpa only [hflip, ContinuousLinearMap.mul_apply'] using h
 
 /-- **Fourier uniqueness**: an integrable function whose Fourier transform
 vanishes identically is zero almost everywhere. -/
@@ -443,7 +462,8 @@ theorem ae_eq_zero_of_fourier_eq_zero {v : ℝ → ℂ} (hv : Integrable v)
   rw [hzero] at hkey
   have hrw : ∫ x : ℝ, g x • v x = ∫ x : ℝ, v x * (psi : ℝ → ℂ) x := by
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp [hpsi, Complex.real_smul]
+    have hcoe : (psi : ℝ → ℂ) x = (g x : ℝ) := rfl
+    simp only [Complex.real_smul, hcoe]
     ring
   rw [hrw, ← hkey]
 

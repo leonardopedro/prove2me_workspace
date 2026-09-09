@@ -1,4 +1,5 @@
 import Mathlib
+import Definitions.Def_ChapterNavierStokesEsa
 
 /-!
 # Symmetry and density are not enough: an operator whose adjoint has deficiency
@@ -41,7 +42,7 @@ namespace BookProof.NavierStokesFlow
 namespace LpNat
 
 /-- The Hilbert space `ℓ²(ℕ)`. -/
-abbrev L2N := lp (fun _ : ℕ => ℂ) 2
+noncomputable abbrev L2N := lp (fun _ : ℕ => ℂ) 2
 
 /-- Square-summability of the moduli is membership in `ℓ²`. -/
 theorem memLpTwo_of_summable_normSq {ι : Type*} {g : ι → ℂ}
@@ -75,6 +76,19 @@ theorem mem_lpFiniteModes_of_tail_zero {f : L2N} {N : ℕ}
 
 /-! ## Inner products against a finitely supported state -/
 
+/-- Against a state vanishing from `N` on, the `ℓ²` inner product is a finite
+sum. -/
+theorem inner_eq_sum_range {f g : L2N} {N : ℕ} (hf : ∀ n, N ≤ n → (f : ℕ → ℂ) n = 0) :
+    (inner ℂ f g : ℂ)
+      = ∑ n ∈ Finset.range N, starRingEnd ℂ ((f : ℕ → ℂ) n) * (g : ℕ → ℂ) n := by
+  have h0 : ∀ n ∉ Finset.range N, ((g : ℕ → ℂ) n) * starRingEnd ℂ ((f : ℕ → ℂ) n) = 0 := by
+    intro n hn
+    rw [hf n (by simpa using hn)]
+    simp
+  rw [lp.inner_eq_tsum]
+  simp only [RCLike.inner_apply]
+  rw [tsum_eq_sum h0]
+  exact Finset.sum_congr rfl fun n _ => mul_comm _ _
 
 end LpNat
 
@@ -132,10 +146,54 @@ noncomputable def jacobiOp : lpFiniteModes ℕ →ₗ[ℂ] lpFiniteModes ℕ whe
       exact mem_lpFiniteModes_of_tail_zero (N := N + 1) (jacobiFun_tail_zero hN)⟩
   map_add' f g := by
     ext n
-    simpa using jacobiFun_add ((f : L2N) : ℕ → ℂ) ((g : L2N) : ℕ → ℂ) n
+    simp only [lp.coeFn_add, Pi.add_apply, Submodule.coe_add]
+    exact jacobiFun_add ((f : L2N) : ℕ → ℂ) ((g : L2N) : ℕ → ℂ) n
   map_smul' c f := by
     ext n
     simpa using jacobiFun_smul c ((f : L2N) : ℕ → ℂ) n
+
+@[simp] theorem jacobiOp_coe (f : lpFiniteModes ℕ) :
+    (((jacobiOp f : lpFiniteModes ℕ) : L2N) : ℕ → ℂ) = jacobiFun ((f : L2N) : ℕ → ℂ) := rfl
+
+/-- The telescoping boundary term for the tridiagonal operator. -/
+theorem jacobi_wronskian (x y : ℕ → ℂ) (N : ℕ) :
+    ∑ n ∈ Finset.range (N + 1),
+        (starRingEnd ℂ (jacobiFun x n) * y n - starRingEnd ℂ (x n) * jacobiFun y n)
+      = (jacobiWeight N : ℂ) *
+          (starRingEnd ℂ (x (N + 1)) * y N - starRingEnd ℂ (x N) * y (N + 1)) := by
+  induction N with
+  | zero =>
+    simp [jacobiFun, Complex.conj_ofReal]
+    ring
+  | succ N ih =>
+    rw [Finset.sum_range_succ, ih]
+    simp only [jacobiFun, map_add, map_mul, Complex.conj_ofReal]
+    ring
+
+/-! ## Symmetry of the operator -/
+
+/-- **The operator is symmetric on its domain.** -/
+theorem jacobiOp_symmetric (x y : lpFiniteModes ℕ) :
+    (inner ℂ ((jacobiOp x : lpFiniteModes ℕ) : L2N) ((y : lpFiniteModes ℕ) : L2N) : ℂ)
+      = inner ℂ ((x : lpFiniteModes ℕ) : L2N) ((jacobiOp y : lpFiniteModes ℕ) : L2N) := by
+  obtain ⟨Nx, hNx⟩ := exists_tail_zero x.2
+  obtain ⟨Ny, hNy⟩ := exists_tail_zero y.2
+  set N := max Nx Ny with hN
+  have hx : ∀ n, N ≤ n → ((x : L2N) : ℕ → ℂ) n = 0 :=
+    fun n hn => hNx n (le_trans (le_max_left _ _) hn)
+  have hy : ∀ n, N ≤ n → ((y : L2N) : ℕ → ℂ) n = 0 :=
+    fun n hn => hNy n (le_trans (le_max_right _ _) hn)
+  have hlhs := inner_eq_sum_range (f := ((jacobiOp x : lpFiniteModes ℕ) : L2N))
+    (g := ((y : lpFiniteModes ℕ) : L2N)) (N := N + 1)
+    (by simpa using jacobiFun_tail_zero hx)
+  have hrhs := inner_eq_sum_range (f := ((x : lpFiniteModes ℕ) : L2N))
+    (g := ((jacobiOp y : lpFiniteModes ℕ) : L2N)) (N := N + 1)
+    (fun n hn => hx n (by omega))
+  rw [hlhs, hrhs, ← sub_eq_zero, ← Finset.sum_sub_distrib]
+  simp only [jacobiOp_coe]
+  rw [jacobi_wronskian]
+  rw [hx N le_rfl, hx (N + 1) (by omega), hy N le_rfl, hy (N + 1) (by omega)]
+  simp
 
 
 
@@ -218,6 +276,9 @@ noncomputable def diagOp (c : ℕ → ℝ) : lpFiniteModes ℕ →ₗ[ℂ] lpFin
     simp only [diagFun, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply,
       Submodule.coe_smul]
     ring
+
+@[simp] theorem diagOp_coe (c : ℕ → ℝ) (f : lpFiniteModes ℕ) :
+    (((diagOp c f : lpFiniteModes ℕ) : L2N) : ℕ → ℂ) = diagFun c ((f : L2N) : ℕ → ℂ) := rfl
 
 
 

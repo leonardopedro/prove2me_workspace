@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterH9
 
 import Mathlib
@@ -85,6 +86,8 @@ Hashimoto-limit identification is recorded as a conjecture.
 
 namespace BookProof.YangMillsFriedrichs
 
+open BookProof.FarisLavine
+
 
 /-! ## Part B (general theory) — the form of a positive symmetric operator
 
@@ -152,6 +155,70 @@ noncomputable def weylOpDom {n m : ℕ} (pi : Fin n → D →ₗ[ℂ] D) (Bf : F
 noncomputable def weylOp {n m : ℕ} (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
     D →ₗ[ℂ] F :=
   D.subtype.comp (weylOpDom pi Bf)
+
+theorem weylOp_apply {n m : ℕ} (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) (x : D) :
+    weylOp pi Bf x
+      = ((1 / 2 : ℝ) : ℂ)
+        • ((∑ i, ((pi i (pi i x) : D) : F)) + ∑ a, ((Bf a (Bf a x) : D) : F)) := by
+  simp [weylOp, weylOpDom]
+
+/-- The square of a symmetric operator has quadratic form `‖π x‖²`. -/
+theorem inner_sq_eq_normSq {T : D →ₗ[ℂ] D}
+    (hT : SymmetricOn D (D.subtype.comp T)) (x : D) :
+    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by
+  have h := hT x (T x)
+  simp only [LinearMap.comp_apply, Submodule.subtype_apply] at h
+  rw [← h]
+  simp
+
+/-- **The Weyl-gauge Hamiltonian is symmetric on its domain.** -/
+theorem weylOpDom_symmetricOn {n m : ℕ} {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
+    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
+    SymmetricOn D (weylOp pi Bf) := by
+  intro x y
+  have hsq : ∀ (T : D →ₗ[ℂ] D), SymmetricOn D (D.subtype.comp T) →
+      (inner ℂ ((T (T x) : D) : F) ((y : D) : F) : ℂ)
+        = inner ℂ ((x : D) : F) ((T (T y) : D) : F) := by
+    intro T hT
+    have h1 := hT (T x) y
+    have h2 := hT x (T y)
+    simp only [LinearMap.comp_apply, Submodule.subtype_apply] at h1 h2
+    rw [h1, h2]
+  rw [weylOp_apply, weylOp_apply, inner_smul_left, inner_smul_right, inner_add_left,
+    inner_add_right, sum_inner, sum_inner, inner_sum, inner_sum]
+  have hpisum : ∀ i : Fin n, (inner ℂ ((pi i (pi i x) : D) : F) ((y : D) : F) : ℂ)
+      = inner ℂ ((x : D) : F) ((pi i (pi i y) : D) : F) := fun i => hsq (pi i) (hpi i)
+  have hBsum : ∀ a : Fin m, (inner ℂ ((Bf a (Bf a x) : D) : F) ((y : D) : F) : ℂ)
+      = inner ℂ ((x : D) : F) ((Bf a (Bf a y) : D) : F) := fun a => hsq (Bf a) (hB a)
+  rw [Finset.sum_congr rfl fun i _ => hpisum i, Finset.sum_congr rfl fun a _ => hBsum a,
+    Complex.conj_ofReal]
+
+/-- **The quadratic form of the Weyl-gauge Hamiltonian is a sum of squares**:
+`q(x) = ½ Σ ‖πᵢ x‖² + ½ Σ ‖Bₐ x‖²`. -/
+theorem weylOpDom_quadForm {n m : ℕ} {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
+    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
+    quadForm (weylOp pi Bf) x
+      = 1 / 2 * (∑ i, ‖((pi i x : D) : F)‖ ^ 2) + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := by
+  have hinner : (inner ℂ ((x : D) : F) (weylOp pi Bf x) : ℂ)
+      = (((1 / 2 * (∑ i, ‖((pi i x : D) : F)‖ ^ 2)
+          + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 : ℝ)) : ℂ) := by
+    rw [weylOp_apply, inner_smul_right, inner_add_right, inner_sum, inner_sum,
+      Finset.sum_congr rfl fun i _ => inner_sq_eq_normSq (hpi i) x,
+      Finset.sum_congr rfl fun a _ => inner_sq_eq_normSq (hB a) x]
+    push_cast
+    ring
+  rw [quadForm, hinner, Complex.ofReal_re]
+
+/-- **The Weyl-gauge Hamiltonian is semi-bounded** (positive): the hypothesis of
+the Friedrichs extension theorem. -/
+theorem weylOpDom_quadForm_nonneg {n m : ℕ} {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
+    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
+    0 ≤ quadForm (weylOp pi Bf) x := by
+  rw [weylOpDom_quadForm hpi hB x]
+  positivity
 
 
 

@@ -103,10 +103,12 @@ def topological_def_order(defs):
             if dep in defs:
                 visit(dep)
         order.append(name)
-    
+
     for name in defs:
         visit(name)
-    return list(reversed(order))
+    # Dependencies are appended before their dependents (`visit` recurses into
+    # deps first), so `order` is already deps-first — do NOT reverse.
+    return order
 
 
 WAVE_DEF_ORDER = topological_def_order(WAVE_DEFS)

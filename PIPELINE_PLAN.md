@@ -22,7 +22,25 @@ nodes. This unlocks everything the earlier waves deferred.
 **Status (2026-09-10):**
 
 - Compile gate: **70 / 70 bundles OK, 0 FAIL** (`state/compile_check.log`).
-- Publish order = file order of `debug/upstream_list.txt` (70 chapters, deps first).
+- `pipeline/wave_upload.json` **EXTENDED + COMMITTED** (see §5b table + the fix list
+  in §5a): **79 defs** (the 66 upstream closure + SirkPerSystem aggregation bundle +
+  4 deferred chapters), **151 thms**, **151 sol_order**. Extender script:
+  `debug/extend_wave.py`.
+- **Upload RUNNING since 2026-09-10 00:15** via the resilient wrapper
+  (`./start_upload.sh status`; log `state/pipeline.log`). Progress snapshot at the
+  time of writing: **~50/54 defs done, 0 failed**, then 151 thms + 151 sols. Per-item
+  job polls can idle up to `JOB_TIMEOUT=900s` on big bundles (StoneUnitary etc.) —
+  that is NORMAL, not a hang.
+- **`topological_def_order` BUG FIXED (commit `d6b8c52`)**: the function returned
+  `list(reversed(order))`, which made `WAVE_DEF_ORDER` **dependents-first**
+  (287 ordering violations with the 70-def wave — e.g. SirkPerSystem would publish
+  before H4/FarisLavineCore and its platform compile gate would fail). Removed the
+  reversal; order is now deps-first (verified: 0 violations; SirkPerSystem is last,
+  pos 78). **Do not re-add the `reversed()`** when editing this function.
+- Git: `f1905e8` (gate green 70/70 + wave spec + debug tooling + legacy) and
+  `d6b8c52` (uploader topo-order fix) are **pushed to the fork only** (`leonardopedro`).
+  Uncommitted by design: `state/pipeline.json` (append-only runtime state), the 231
+  Solutions + 237 Theorems future-wave stubs.
 - The 4 deferred chapters' thm/sol stubs ALREADY exist in `Theorems/`+`Solutions/`
   (14 SirkEndToEnd + 14 SirkWhitening + 7 SirkPerSystem + 47 YangMillsHermite) and
   import `Definitions.Def_<chapter>` — they compile only after the def bundle is
@@ -31,25 +49,26 @@ nodes. This unlocks everything the earlier waves deferred.
   upstream **node** theorems (not in this wave's thm/sol) via the generator's
   cross-chapter dependency gap (§8); their thm stubs still publish as Open and
   the sols are a follow-up (add the upstream helper thm/sol nodes, or embed the
-  helpers in the upstream def bundles).
+  helpers in the upstream def bundles). 6 helper Thm stubs were created for the
+  follow-up: `Thm_BookProof_ChapterH6_sirk_error_decay_exponential`,
+  `Thm_BookProof_ChapterH6_sirk_error_tendsto_zero`,
+  `Thm_BookProof_ChapterH8_compress_rational_transfer`,
+  `Thm_BookProof_ChapterH9_numRange_compress_subset`,
+  `Thm_BookProof_ChapterH9_numRange_subset_closedBall`,
+  `Thm_BookProof_NavierStokesFlow_NSHashimoto_ns_hashimoto_selects`.
 
 **Execution order:**
 
-1. Fix the 29 failing def bundles (§5 attack order). Gate must be fully green first —
-   the uploader's per-item compile gate burns attempts (cap 5 → permanent `failed`).
-2. Mark the 57 SirkFinitePrecision orphans + 5 stale def-entries done in
-   `state/pipeline.json` (their platform nodes are already Proved; def id
+1. ~~Fix the 29 failing def bundles (§5 attack order)~~ **DONE — gate 70/70.**
+2. ~~Mark the 57 SirkFinitePrecision orphans + 5 stale def-entries done in
+   `state/pipeline.json`~~ **DONE** (their platform nodes are already Proved; def id
    `9d97fdc1-ddf5-49ea-900f-85f1e8af95f1`). Append-only — never delete state.
-3. Extend `pipeline/wave_upload.json`: add the 66 upstream defs (+ the SirkPerSystem
-   aggregation bundle) to `defs` in dependency order, same entry schema as existing
-   entries (`definition_name`, `namespace`, `file`, `title`, `nl`, `source`, `tags`;
-   source = timepiece GitHub blob URL). Then re-add the 4 deferred chapters to `defs`
-   + their thm/sol slugs (`BookProof_Chapter<Name>_<thmname>`) to `thms`/`sol_order`.
-   `upload_pipeline.py` computes def publish order automatically from the
-   `import Definitions.Def_*` lines (`topological_def_order`) — just extend the JSON.
-4. Local gate: every touched Definitions/Theorems/Solutions module builds; every Sol
-   file sorry-free. Then `./start_upload.sh start` and monitor to completion.
-5. Update §1 counts; commit; push to the fork only (§9).
+3. ~~Extend `pipeline/wave_upload.json`~~ **DONE (79 defs / 151 thms / 151 sols).**
+4. Local gate green, upload restarted → **IN PROGRESS** — monitor
+   `./start_upload.sh status` to completion; watch for per-item `failed` (expect the
+   15 deferred sols to fail gracefully — thm stubs stay Open).
+5. ~~Update §1 counts; commit; push to the fork only~~ **DONE (`f1905e8`, `d6b8c52`).**
+   Re-commit when the upload completes (§1 counts + any failure follow-ups).
 
 ### 5a. Remaining failure roots (attack order)
 
@@ -187,7 +206,10 @@ The platform compiles each **def bundle** (`Definitions/Def_ChapterX.lean`) with
 - Ordered plan = `LEGACY_ORDER` (17-item pilot) + `WAVE_ORDER` from
   `pipeline/wave_upload.json`: `def:<chapter>` first, then `thm:<slug>` / `sol:<slug>`
   in topological order. Def publish order is auto-computed from
-  `import Definitions.Def_*` lines.
+  `import Definitions.Def_*` lines. **`topological_def_order` was fixed (commit
+  `d6b8c52`)**: it previously returned `list(reversed(order))` (dependents-first —
+  platform compile gate would fail on every dependent bundle). Order is now
+  deps-first; keep it that way.
 - State: `state/pipeline.json`, saved atomically after every item; **append-only** —
   never reset history, keep dedupe/reuse records.
 - Exit codes: **1 while work remains** (wrapper restarts), **0 when done**. After
@@ -224,7 +246,7 @@ multi-user.target; logs `state/pipeline.log` + `state/service.log`).
 
 ---
 
-## 4. Current platform & workspace state (verified 2026-09-09 late)
+## 4. Current platform & workspace state (verified 2026-09-09 late; superseded for the wave by §1 Status)
 
 **Published on the platform:**
 
@@ -233,28 +255,33 @@ multi-user.target; logs `state/pipeline.log` + `state/service.log`).
   MajoranaClifford, MajoranaProp61, MajoranaProp76, ParityMajoranaQuant,
   SirkGroupTransfer, YangMillsBianchi, YangMillsSU3, SirkDiffusiveDecay,
   SirkFinitePrecision.
-- **147 wave items done** (9 defs + 69 thms + 69 sols from the published wave).
+- **147 wave items done** (9 defs + 69 thms + 69 sols from the published wave);
+  the §1 wave adds 70 defs + 82 thm/sol slugs on top.
 - All SirkFinitePrecision thm nodes are **Proved** on the platform → the 57 pending
-  `BookProof_SirkFinitePrecision_*` state entries are true ORPHANS to mark done.
-- **Uploader NOT running** (wrapper exited rc=0 as designed).
+  `BookProof_SirkFinitePrecision_*` state entries are true ORPHANS to mark done
+  (marked done 2026-09-10).
+- **Uploader RUNNING** since 2026-09-10 00:15 (§1 Status for progress).
 
 **Workspace:**
 
-- `pipeline/wave_upload.json` — current wave spec (the 147 done items); needs the
-  70-chapter extension (§1 step 3). Pre-extension backup:
+- `pipeline/wave_upload.json` — current wave spec; **EXTENDED 2026-09-10 to 79 defs /
+  151 thms / 151 sols** (see §1 Status). Pre-extension backup:
   `pipeline/wave_upload.json.full.bak`.
-- `state/pipeline.json` — has stale pending/failed entries (orphans + pre-regen
-  failures); handle per §1 step 2.
+- `state/pipeline.json` — append-only upload state, updated live by the running
+  uploader (contains the done-marked orphans + 74 pending deferred items).
 - `debug/compile_check.sh [LIST]` — the compile gate (per-module
   `lake build Definitions.Def_<X>`; NOT `lake build Definitions`, which drags in the
   `BookProof` lib and fails on 2 unrelated source files). Writes
   `state/compile_check.log` + `state/compile_failures.txt`.
 - `debug/upstream_list.txt` — 70-chapter dependency-sorted publish list.
+- `debug/extend_wave.py` — the wave-extension script used to build the extended
+  `wave_upload.json` (defs + deferred thm/sol slugs).
 - `state/defs_snapshot_0909/` — pre-edit copies of the 24 untracked def files
   (durable restore point).
 - `scripts/wave_generate.py` — the ORIGINAL generator; emits correct
-  `import Definitions.Def_*` lines. Has uncommitted edits + modified
-  `state/wave_manifest.json` — review before committing.
+  `import Definitions.Def_*` lines. Committed with the `--defs-only` + always-`import
+  Mathlib` edits (2026-09-10); `state/wave_manifest.json` reflects the 4 deferred
+  chapters' nodes.
 - `debug/regen_defs.py` — skeleton-inlining regen script; kept as reference only
   (inlining approach abandoned). Its remaining known bug: sub-namespace transitions
   (`namespace SignedShift` inside `NavierStokesFlow`) get dropped — fix in a debug
@@ -267,8 +294,23 @@ multi-user.target; logs `state/pipeline.log` + `state/service.log`).
 ## 5. Machine & environment facts (NixOS)
 
 - Users: `leo` (human) and `oseditor` (agent). Agent may run anything as leo:
-  `sudo -n -u leo <cmd>`; `sudo systemctl start|stop upload-timepiece` and
-  `sudo /usr/local/bin/nixos-update` are NOPASSWD.
+  `sudo -n -u leo <cmd>`.
+- **Resilience layering for the upload (current setup, 2026-09-10):**
+  - Shell logout / terminal close / tool-run process-group kill / process crash →
+    the **setsid + nohup + disown + while-loop** wrapper in `start_upload.sh` (PID in
+    `/tmp/upload_pipeline.pid`; logs `state/upload.log` + `state/pipeline.log`). The
+    wrapper re-executes the pipeline on non-zero exit (rc=1 while work remains,
+    rc=0 when done).
+  - Machine **reboot** → the **systemd unit `upload-timepiece`** is `enabled`
+    (WantedBy=multi-user.target, Restart=on-failure, RestartSec=30s; ExecStart runs
+    `pipeline/upload_pipeline.py`; logs `state/service.log`). `local_compile`
+    hardcodes the elan v4.33.1 lake path and reads `credentials.json` from the
+    workspace, so the unit's minimal PATH is fine.
+  - **Note: `sudo systemctl … upload-timepiece` is NOT NOPASSWD anymore.** leo's
+    sudoers only grants NOPASSWD to `nixos-rebuild` and `remote-access-toggle`
+    (verified 2026-09-10); starting/stopping the service needs leo's password
+    interactively. The enabled unit is what survives a reboot; for everything short
+    of a reboot the wrapper is sufficient.
 - Workspace (canonical): `/home/leo/prove2me_workspace`. Contains `credentials.json`
   (**the API key**; gitignored; expires **2026-10-06**; re-mint via website or
   `POST /login` + `POST /agent/api-key`).

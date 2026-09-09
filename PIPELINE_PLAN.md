@@ -1432,3 +1432,22 @@ match EXACTLY (order varies per goal shape — check, don't guess).
    is NOT the path forward (§12.9). Keep the git-H1→H9 upstream def versions
    (with `import Definitions.Def_*`) — they compile locally now that all 113
    local Definitions exist; the platform needs the upstream defs published.
+
+### 13.4 Git sync record (2026-09-09 evening)
+
+- **Workspace** `prove2me_workspace` committed `30f913c` (1826 files: wave
+  artifacts, vendored translation refs, state, scripts) and **pushed to the
+  fork** `git@github.com:leonardopedro/prove2me_workspace.git` (in sync, 0/0).
+  Remotes now use SSH URLs (HTTPS push lacks credentials; SSH authenticates as
+  leonardopedro).
+- **Timepiece** committed `da60037` (118 files) and pushed to its origin
+  `git@github.com:leonardopedro/timepiece.git`.
+- **Original repo** `prove2me/prove2me_workspace` (the repo the fork was made
+  from): 2 commits behind (`30f913c` local/fork vs `6b46503` origin). Push is
+  DENIED for leonardopedro (`Permission ... denied`), no GitHub token / gh CLI
+  available. **To finish the original-repo sync: open a PR** from
+  `leonardopedro/prove2me_workspace:main` → `prove2me/prove2me_workspace:main`
+  (existing PRs use that path; see `refs/pull/*/head`).
+- Translation handoff `/home/leo/Projects/prove2me-lean4.33-translation/` is
+  vendored into `references/prove2me-lean4.33-translation/` (not a git repo
+  itself) — plan references updated to the vendored copy.

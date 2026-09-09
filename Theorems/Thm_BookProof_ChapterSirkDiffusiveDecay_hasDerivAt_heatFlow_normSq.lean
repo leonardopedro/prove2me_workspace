@@ -1,0 +1,26 @@
+-- Generated from ChapterSirkDiffusiveDecay.lean — theorem BookProof.ChapterSirkDiffusiveDecay.hasDerivAt_heatFlow_normSq
+import Mathlib
+import Definitions.Def_ChapterSirkDiffusiveDecay
+open BookProof.ChapterSirkDiffusiveDecay
+
+
+
+
+
+
+
+
+
+noncomputable section
+
+
+open BookProof.ChapterH4
+open Filter Topology NormedSpace
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+theorem BookProof.ChapterSirkDiffusiveDecay.hasDerivAt_heatFlow_normSq (A : E →L[ℂ] E) (v : E) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => ‖heatFlow A s v‖ ^ 2)
+      (-2 * (inner ℂ (heatFlow A t v) (A (heatFlow A t v)) : ℂ).re) t := by sorry

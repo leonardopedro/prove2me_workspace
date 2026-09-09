@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFullQuadraticEsa
 
 import Mathlib
 

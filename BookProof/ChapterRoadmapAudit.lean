@@ -1,0 +1,3263 @@
+/-
+Copyright (c) 2026. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Aristotle
+-/
+import BookProof.ChapterSchrodingerCutoffEsa
+import BookProof.ChapterWallEsaSemibounded
+import BookProof.ChapterExpPotentialEsa
+import BookProof.ChapterH4
+import BookProof.ChapterSirkEndToEnd
+import BookProof.ChapterSirkMultiShift
+import BookProof.ChapterSirkRestart
+import BookProof.ChapterSirkWhitening
+import BookProof.ChapterSirkSpectralGeometry
+import BookProof.ChapterSirkPerSystem
+import BookProof.ChapterSirkPerSystemFlowBound
+import BookProof.ChapterSirkFinitePrecision
+import BookProof.ChapterSirkCertifiedGap
+import BookProof.ChapterSirkCertificateReader
+import BookProof.ChapterSirkGapTable
+import BookProof.ChapterSpectralGapStability
+import BookProof.ChapterFockOneParticleGap
+import BookProof.ChapterBandEnclosure
+import BookProof.ChapterRitzCertificate
+import BookProof.ChapterFockNumberPreservingGap
+import BookProof.ChapterFockInteractionStability
+import BookProof.ChapterTempleSeparationNecessary
+import BookProof.ChapterFockPairPerturbation
+import BookProof.ChapterFockCubicUnbounded
+import BookProof.ChapterFockCubicQuarticStability
+import BookProof.ChapterScalaronFockGapChain
+import BookProof.ChapterFockDiagonalGapChain
+import BookProof.ChapterFriedrichsFormGap
+import BookProof.ChapterSirkTruncation
+import BookProof.ChapterSirkGroupTransfer
+import BookProof.ChapterSirkTrotterKato
+import BookProof.ChapterSirkTrotterKatoGalerkin
+import BookProof.ChapterSirkLagrangianCanonical
+import BookProof.ChapterSirkRitzSpectrum
+import BookProof.ChapterSirkRitzMinMax
+import BookProof.ChapterSirkRitzPerturbation
+import BookProof.ChapterSirkDiffusiveDecay
+import BookProof.ChapterQgHermiteCore
+import BookProof.ChapterFriedrichsCanonical
+import BookProof.ChapterQgHermiteFriedrichs
+import BookProof.ChapterQgHermiteOscillatorEsa
+import BookProof.ChapterScalaronHermiteEsa
+import BookProof.ChapterHermiteExpWall
+import BookProof.ChapterHermiteQuadraticEsa
+import BookProof.ChapterQgOneParticleCcEsa
+import BookProof.ChapterWeakSecondDerivative
+import BookProof.ChapterScalaronWallEsa
+import BookProof.ChapterScalaronEdge
+import BookProof.ChapterVielbeinFiberFock
+import BookProof.ChapterQedFockGapChain
+import BookProof.ChapterNavierStokesFiberGap
+import BookProof.ChapterGaussCoordCombo
+import BookProof.ChapterSqueezedGaussStates
+import BookProof.ChapterQgPhysicalSectorIdentity
+import BookProof.ChapterQgCouplingDGammaSum
+import BookProof.ChapterConformalSignFlip
+import BookProof.ChapterDirectSumEdge
+import BookProof.ChapterQgMultiHalfDensity
+import BookProof.ChapterYangMillsAbelianNoGap
+import BookProof.ChapterQuantumGravityFock
+import BookProof.ChapterQgBrstCompleted
+import BookProof.ChapterBrstTruncationLeakage
+import BookProof.ChapterCarlemanUnboundedHop
+import BookProof.ChapterBrstUnboundedLeakage
+import BookProof.ChapterBrstReducedTransfer
+import BookProof.ChapterQuantumGravity3DGauge
+import BookProof.ChapterQg3DGaugeEsa
+import BookProof.ChapterQuantumGravityBrstCharge
+import BookProof.ChapterNavierStokesGaugeY2
+import BookProof.ChapterNavierStokesBilinearEsa
+import BookProof.ChapterNavierStokesAffineFiberEsa
+import BookProof.ChapterNavierStokesAffineBlockEsa
+import BookProof.ChapterNavierStokesSignFlip
+import BookProof.ChapterNavierStokesSignedShift
+import BookProof.ChapterDirectSumEsa
+import BookProof.ChapterNavierStokesCarleman
+import BookProof.ChapterSoftmaxTemperatureMonotone
+import BookProof.ChapterAttentionResponse
+import BookProof.ChapterAttentionCapacity
+import BookProof.ChapterNavierStokesThreeComponent
+import BookProof.ChapterNavierStokesCanonicalVector
+import BookProof.ChapterHermiteProductBasis
+import BookProof.ChapterNavierStokesDifferentialL2
+import BookProof.ChapterEsaClosure
+import BookProof.ChapterNavierStokesHashimoto
+import BookProof.ChapterNavierStokesLagrangianKatoRellich
+import BookProof.ChapterStoneFlows
+import BookProof.ChapterHyperbolicQuadraticEsa
+import BookProof.ChapterHermiteRelativeBound
+import BookProof.ChapterQuadraticRotationEsa
+import BookProof.ChapterQuadraticRotationPerturbed
+import BookProof.ChapterShiftedHermiteCore
+import BookProof.ChapterShiftedQuadraticEsa
+import BookProof.ChapterShiftedQuadraticMatrixEsa
+import BookProof.ChapterStoneEigenflow
+import BookProof.ChapterShiftedQuadraticDegenerate
+import BookProof.ChapterFourierMultiplierEsa
+import BookProof.ChapterMixedLinearEsa
+import BookProof.ChapterQuadratureEsa
+import BookProof.ChapterHermiteCarlemanEsa
+import BookProof.ChapterCarlemanTwoStep
+import BookProof.ChapterCarlemanGeneralHop
+import BookProof.ChapterNavierStokesDiffHashimoto
+import BookProof.ChapterNavierStokesDiffFarisLavine
+import BookProof.ChapterScalaronDensitizedTransfer
+import BookProof.ChapterStarobinskyPotential
+import BookProof.ChapterScalaronCoreEsa
+import BookProof.ChapterScalaronFockEsa
+import BookProof.ChapterModeQuadraticEsa
+import BookProof.ChapterCarlemanSimplex
+import BookProof.ChapterFullQuadraticEsa
+import BookProof.ChapterOperatorSeriesEsa
+import BookProof.ChapterFockQuadraticEsa
+import BookProof.ChapterFockDifferingBasesEsa
+import BookProof.ChapterUnboundedSpectralModel
+import BookProof.ChapterNavierStokesLagrangianCanonical
+import BookProof.ChapterGaugeFixing
+import BookProof.ChapterQuantumGravityDensitized
+import BookProof.ChapterQuantumGravityHalfDensity
+import BookProof.ChapterYangMillsFriedrichs
+import BookProof.ChapterYangMillsFriedrichsLimit
+import BookProof.ChapterHermiteGalerkinFriedrichs
+import BookProof.ChapterHashimotoShiftInvert
+import BookProof.ChapterHashimotoComplexShifts
+import BookProof.ChapterFriedrichsExtension
+import BookProof.ChapterHermiteProductCore
+import BookProof.ChapterYangMillsHermite
+import BookProof.ChapterFockSecondQuantization
+import BookProof.ChapterFermionFock
+import BookProof.ChapterGradedFock
+import BookProof.ChapterGradedFriedrichs
+import BookProof.ChapterGradedHashimoto
+import BookProof.ChapterKrylovShiftSpan
+import BookProof.ChapterSirkGramWhitening
+import BookProof.ChapterSirkGramCutoff
+import BookProof.ChapterWaveUnboundedPotential
+import BookProof.ChapterHarmonicOscillatorEsa
+import BookProof.ChapterF4
+import BookProof.ChapterHolomorphic
+import BookProof.ChapterB4
+import BookProof.ChapterMajoranaFourier
+import BookProof.ChapterFreeFieldBornFiberSpectrum
+import BookProof.ChapterFreeFieldBornSignOrientationKernel
+import BookProof.ChapterA3x
+import BookProof.ChapterBoseEinstein
+import BookProof.ChapterThermalMaxEntropy
+import BookProof.ChapterLinftyMultiplication
+import BookProof.ChapterSoftmaxJacobian
+import BookProof.ChapterAttentionOutput
+import BookProof.ChapterAttentionMasking
+import BookProof.ChapterCoherentDynamics
+import BookProof.ChapterCoherentThermalFidelity
+import BookProof.ChapterSolovayTailDimension
+import BookProof.ChapterSolovaySeparableExistence
+import BookProof.ChapterSolovayHilbertTensor
+import BookProof.ChapterAbelianAtomicCondensation
+import BookProof.ChapterLinftyMaximalAbelian
+import BookProof.ChapterTensorCompleteness
+import BookProof.ChapterAbelianGelfandModel
+import BookProof.ChapterSpectralMultiplication
+import BookProof.ChapterSpectralCommutant
+import BookProof.ChapterCyclicDecomposition
+import BookProof.ChapterCyclicDirectSum
+import BookProof.ChapterSpectralDirectSum
+import BookProof.ChapterAbelianCyclicModel
+import BookProof.ChapterAbelianCyclicCommutant
+import BookProof.ChapterAbelianDirectSum
+import BookProof.ChapterMeasureAtomicDiffuse
+import BookProof.ChapterDiffuseCdfModel
+import BookProof.ChapterDiffuseUnitaryModel
+import BookProof.ChapterAtomicDiagonalModel
+import BookProof.ChapterWeakValue
+import BookProof.ChapterContinuityUnitary
+import BookProof.ChapterContinuityUnitaryInfinite
+import BookProof.ChapterBornMeasure
+import BookProof.ChapterUnboundedPosition
+import BookProof.ChapterUnitaryTransport
+import BookProof.ChapterLpRestrictSplit
+import BookProof.ChapterLpScaleMeasure
+import BookProof.ChapterAbelianClassificationList
+import BookProof.ChapterStandardBorelClassification
+import BookProof.ChapterSeparableSpectrum
+import BookProof.ChapterSeparableL2Model
+import BookProof.ChapterAttentionFactorization
+import BookProof.ChapterRotaryPosition
+import BookProof.ChapterAttentionRetrieval
+import BookProof.ChapterAttentionEquivariance
+import BookProof.ChapterAttentionMixture
+import BookProof.ChapterCrossEntropyGradient
+import BookProof.ChapterAttentionCollision
+import BookProof.ChapterAttentionConcentration
+import BookProof.ChapterAttentionMarkov
+import BookProof.ChapterScaledDotProduct
+import BookProof.ChapterAttentionOutputVariance
+import BookProof.ChapterAttentionLowRank
+import BookProof.ChapterLayerNorm
+import BookProof.ChapterSinusoidalPosition
+import BookProof.ChapterAttentionMixing
+import BookProof.ChapterAttentionTemperature
+import BookProof.ChapterAttentionSink
+import BookProof.ChapterAttentionCoarseGrain
+import BookProof.ChapterAttentionQKCircuit
+import BookProof.ChapterResidualStream
+import BookProof.ChapterAttentionFreeEnergy
+import BookProof.ChapterAttentionSparse
+import BookProof.ChapterAttentionOVCircuit
+import BookProof.ChapterAttentionSaturation
+import BookProof.ChapterAttentionPrior
+import BookProof.ChapterAttentionStreaming
+import BookProof.ChapterAttentionLocality
+import BookProof.ChapterAttentionCalibration
+import BookProof.ChapterAttentionTopK
+import BookProof.ChapterCayleyTransform
+import BookProof.ChapterCayleyInverse
+import BookProof.ChapterCayleySpectralModel
+import BookProof.ChapterQgDerivativeRealization
+import BookProof.ChapterSirkBandLedger
+import BookProof.ChapterTruncationGapLift
+import BookProof.ChapterSchurGershgorinGap
+import BookProof.ChapterWallDeficiencyObstruction
+import BookProof.ChapterLimitCircleExample
+import BookProof.ChapterConformalFiberDeficiency
+import BookProof.ChapterBddBelowWallEsa
+import BookProof.ChapterBddBelowFiberSumEsa
+import BookProof.ChapterHalfLineLimitCircle
+import BookProof.ChapterQgOuterFockEsa
+import BookProof.ChapterQgOuterFockFarisLavine
+import BookProof.ChapterQgOuterFockEllipticFL
+import BookProof.ChapterHermiteLadderShift
+import BookProof.ChapterGaussCoreQuadBounds
+import BookProof.ChapterSqSumFarisLavine
+import BookProof.ChapterQgOuterFockCoreFL
+import BookProof.ChapterQgOuterFockFullFL
+import BookProof.ChapterQgOuterFockInteractionFL
+import BookProof.ChapterScalaronFiberFL
+import BookProof.ChapterScalaronOuterFockFL
+import BookProof.ChapterQgVielbeinModeInstance
+import BookProof.ChapterQgContinuumModeInstance
+import BookProof.ChapterQgBrstDerivativeGauge
+import BookProof.ChapterQgOuterFockFlow
+import BookProof.ChapterQgOuterFockOneParticle
+import BookProof.ChapterQgTruncationResolvent
+import BookProof.ChapterQgTimeStepping
+import BookProof.ChapterSirkSingleTimeShift
+import BookProof.ChapterQgManifoldModeInstance
+import BookProof.ChapterQgTimeIndependentFlow
+import BookProof.ChapterFiniteSectionSingleTime
+import BookProof.ChapterNsTimeIndependentFlow
+import BookProof.ChapterQymTimeIndependentFlow
+import BookProof.ChapterSqSumOuterFamily
+import BookProof.ChapterNsOuterFockFarisLavine
+
+/-!
+# Roadmap headline certificate
+
+This module turns the roadmap's final prose-only hygiene audit into a checked
+Lean artifact.  The aggregate theorem below simultaneously exposes three
+representative mathematical headlines from independent work packages:
+
+* the two-dimensional pure-state obstruction from the Gleason chapter;
+* the Cauchy–Riemann characterization of holomorphicity on open sets;
+* unitarity of the concrete Majorana–Fourier boost block.
+
+The imported Count-Sketch, Misra–Gries, and SIRK headlines are also checked in
+this module by the `#print axioms` commands at the end.
+-/
+
+namespace BookProof.ChapterRoadmapAudit
+
+open Matrix
+
+/-
+A single kernel-checked certificate collecting representative headline
+results whose final roadmap audit had previously only been recorded in prose.
+-/
+theorem roadmap_headline_certificate :
+    (¬ ∃ ρ, BookProof.ChapterB4.IsPureState ρ ∧
+      Matrix.trace (ρ * BookProof.ChapterB4.P1) = 1 / 2 ∧
+      Matrix.trace (ρ * BookProof.ChapterB4.P2) = 1 / 2) ∧
+    (∀ (f : ℂ → ℂ) (s : Set ℂ), IsOpen s →
+      (∀ z ∈ s, DifferentiableAt ℝ f z) →
+      ((∀ z ∈ s, fderiv ℝ f z Complex.I =
+          Complex.I • fderiv ℝ f z 1) ↔ AnalyticOn ℂ f s)) ∧
+    (∀ (m q : ℝ), 0 ≤ m → 0 < q →
+      ∀ n : Fin 3 → ℝ, (∑ i, (n i) ^ 2) = 1 →
+      (BookProof.ChapterMajoranaFourier.boostBlock
+          (BookProof.ChapterMajoranaFourier.boostC m q)
+          (BookProof.ChapterMajoranaFourier.boostS m q)
+          (BookProof.ChapterMajoranaFourier.Aop n))ᴴ *
+        BookProof.ChapterMajoranaFourier.boostBlock
+          (BookProof.ChapterMajoranaFourier.boostC m q)
+          (BookProof.ChapterMajoranaFourier.boostS m q)
+          (BookProof.ChapterMajoranaFourier.Aop n) = 1) := by
+  refine ⟨BookProof.ChapterB4.no_pure_state_satisfies_both, ?_, ?_⟩
+  · exact fun _ _ hs hf ↦
+      BookProof.ChapterHolomorphic.cauchyRiemann_iff_analyticOn hs hf
+  · exact fun m q hm hq n hn ↦
+      BookProof.ChapterMajoranaFourier.majoranaFourier_boostBlock_unitary
+        m q hm hq n hn
+
+/-
+A second checked certificate covers the final finite Born-fiber and sign-gauge
+integration wave.  It records both the complete spectrum of possible fiber
+cardinalities and the index-two parity law for the orientation character.
+-/
+theorem roadmap_finite_born_certificate :
+    (∀ (n c : ℕ),
+      (∃ p : ↥(stdSimplex ℝ (Fin n)),
+          Nat.card ↥(BookProof.ChapterFreeFieldBornQuotient.bornMapSphere n ⁻¹' {p}) = c) ↔
+        ∃ k, 1 ≤ k ∧ k ≤ n ∧ c = 2 ^ k) ∧
+    (∀ (n : ℕ) (b₁ b₂ : Fin n → Bool),
+      BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix
+          (fun k => xor (b₁ k) (b₂ k)) ∈
+          Matrix.specialOrthogonalGroup (Fin n) ℝ ↔
+        (BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix b₁ ∈
+            Matrix.specialOrthogonalGroup (Fin n) ℝ ↔
+         BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix b₂ ∈
+            Matrix.specialOrthogonalGroup (Fin n) ℝ)) := by
+  constructor
+  · intro n c
+    exact BookProof.ChapterFreeFieldBornFiberSpectrum.bornFiber_card_achievable_iff
+  · intro n b₁ b₂
+    exact
+      BookProof.ChapterFreeFieldBornSignOrientationKernel.orientationPreserving_xor_iff
+        b₁ b₂
+
+#print axioms roadmap_headline_certificate
+#print axioms roadmap_finite_born_certificate
+#print axioms BookProof.ChapterH4.sirk_error_bound
+#print axioms BookProof.ChapterF4.misraGries_bound
+#print axioms BookProof.ChapterF4.countsketch_unbiased
+#print axioms BookProof.ChapterF4.countSketch_unbiased
+#print axioms BookProof.ChapterA3x.tensorCube_complete_reducibility
+#print axioms BookProof.ChapterBoseEinstein.thermalProb_boseEinstein
+#print axioms BookProof.ChapterBoseEinstein.thermalTemperature_boseEinstein_eq_coth
+#print axioms BookProof.ChapterThermalMaxEntropy.shannonEntropy_le_thermalEntropy
+#print axioms BookProof.ChapterLinftyMultiplication.vonNeumann_abelian_class_Linfty
+#print axioms BookProof.ChapterSoftmaxJacobian.hasDerivAt_scoreSoftmax_score
+#print axioms BookProof.ChapterSoftmaxJacobian.softmaxJacobian_quadratic_form
+#print axioms BookProof.ChapterAttentionOutput.tendsto_headOutput
+#print axioms BookProof.ChapterAttentionMasking.maskedSoftmax_eq_conditional
+#print axioms BookProof.ChapterCoherentDynamics.bornWeightC_isometry
+#print axioms BookProof.ChapterCoherentDynamics.bornWeightC_translation_invariant
+#print axioms BookProof.ChapterAttentionFactorization.prodSoftmax_eq_mul
+#print axioms BookProof.ChapterAttentionFactorization.shannonEntropy_prodSoftmax
+#print axioms BookProof.ChapterRotaryPosition.inner_rotaryEncode
+#print axioms BookProof.ChapterRotaryPosition.bornWeightC_rotaryEncode_shift
+#print axioms BookProof.ChapterAttentionRetrieval.norm_headOutput_sub_le_of_margin
+#print axioms BookProof.ChapterAttentionRetrieval.scoreSoftmax_ge_inv_of_margin
+#print axioms BookProof.ChapterAttentionEquivariance.headOutput_perm
+#print axioms BookProof.ChapterAttentionMixture.multiHead_output_eq_mean
+#print axioms BookProof.ChapterAttentionMixture.le_shannonEntropy_mixture
+#print axioms BookProof.ChapterCrossEntropyGradient.hasDerivAt_crossEntropyLoss_score
+#print axioms BookProof.ChapterAttentionCollision.renyi2_le_shannonEntropy
+#print axioms BookProof.ChapterAttentionCollision.effectiveSupport_scoreSoftmax_mem_Icc
+#print axioms BookProof.ChapterAttentionConcentration.neg_log_le_shannonEntropy
+#print axioms BookProof.ChapterAttentionConcentration.card_filter_le_inv
+#print axioms BookProof.ChapterAttentionMarkov.l1dist_push_attentionMatrix_le
+#print axioms BookProof.ChapterAttentionMarkov.push_compose
+#print axioms BookProof.ChapterScaledDotProduct.rademacherMean_dot_sq
+#print axioms BookProof.ChapterScaledDotProduct.rademacherMean_scaledDot_sq_of_unit_entries
+#print axioms BookProof.ChapterAttentionOutputVariance.sum_dist_sq_eq
+#print axioms BookProof.ChapterAttentionOutputVariance.observableExpectation_minimizes
+#print axioms BookProof.ChapterAttentionLowRank.rank_scoreMatrix_le
+#print axioms BookProof.ChapterAttentionLowRank.not_exists_scoreMatrix_one
+#print axioms BookProof.ChapterLayerNorm.sum_sq_layerNorm
+#print axioms BookProof.ChapterLayerNorm.scoreSoftmax_layerNorm_ge
+#print axioms BookProof.ChapterSinusoidalPosition.peInner_eq_sum_cos
+#print axioms BookProof.ChapterSinusoidalPosition.scoreSoftmax_sinusoidal_shift
+#print axioms BookProof.ChapterAttentionMixing.l1dist_pushIter_le
+#print axioms BookProof.ChapterAttentionMixing.tendsto_l1dist_pushIter_attentionMatrix
+
+#print axioms BookProof.ChapterAttentionTemperature.scoreSoftmax_monotone_of_isMax
+#print axioms BookProof.ChapterAttentionTemperature.log_card_sub_le_shannonEntropy
+#print axioms BookProof.ChapterAttentionSink.scoreSoftmax_sink_succ
+#print axioms BookProof.ChapterAttentionSink.shannonEntropy_sink
+#print axioms BookProof.ChapterAttentionCoarseGrain.observableExpectation_merge
+#print axioms BookProof.ChapterAttentionCoarseGrain.shannonEntropy_mergeWeights_le
+#print axioms BookProof.ChapterAttentionQKCircuit.qkScore_gauge
+#print axioms BookProof.ChapterAttentionQKCircuit.rank_qkMatrix_le
+#print axioms BookProof.ChapterResidualStream.residual_injective
+#print axioms BookProof.ChapterResidualStream.norm_iterate_residual_sub_le
+
+#print axioms BookProof.ChapterAttentionFreeEnergy.abs_logPartition_div_sub_le
+#print axioms BookProof.ChapterAttentionFreeEnergy.sub_meanScore_le
+#print axioms BookProof.ChapterAttentionFreeEnergy.tendsto_meanScore_atTop
+#print axioms BookProof.ChapterAttentionSparse.l1dist_maskedSoftmax_eq
+#print axioms BookProof.ChapterAttentionSparse.norm_headOutput_masked_sub_le
+#print axioms BookProof.ChapterAttentionOVCircuit.ovOutput_eq_headOutput
+#print axioms BookProof.ChapterAttentionOVCircuit.rank_ovMatrix_le
+#print axioms BookProof.ChapterAttentionSaturation.sum_abs_softmaxJacobian_row
+#print axioms BookProof.ChapterAttentionSaturation.sum_abs_softmaxJacobian_le_of_confident
+#print axioms BookProof.ChapterAttentionPrior.priorSoftmax_eq_posterior
+#print axioms BookProof.ChapterAttentionPrior.priorSoftmax_odds
+#print axioms BookProof.ChapterAttentionPrior.priorSoftmax_eq_scoreSoftmax_bias
+
+#print axioms BookProof.ChapterAttentionStreaming.scoreSoftmax_snoc_castSucc
+#print axioms BookProof.ChapterAttentionStreaming.headOutput_snoc
+#print axioms BookProof.ChapterAttentionLocality.scoreSoftmax_alibi_le
+#print axioms BookProof.ChapterAttentionLocality.norm_headOutput_window_sub_le
+#print axioms BookProof.ChapterAttentionCalibration.attentionEntropy_strictAntiOn
+#print axioms BookProof.ChapterAttentionCalibration.existsUnique_beta_attentionEntropy_eq
+#print axioms BookProof.ChapterAttentionTopK.sum_le_sum_of_isTop
+#print axioms BookProof.ChapterAttentionTopK.l1dist_maskedSoftmax_le_of_isTop
+
+#print axioms BookProof.ChapterCoherentThermalFidelity.coherentThermalFidelity_eq
+#print axioms BookProof.ChapterCoherentThermalFidelity.coherentThermalFidelity_vacuum_eq_fidelityC
+#print axioms BookProof.ChapterCoherentThermalFidelity.coherentThermalFidelity_width_eq
+open BookProof.ChapterCoherentThermalFidelity in
+#print axioms thermalTemperature_eq_fidelity_width_sub_coherent_half
+#print axioms BookProof.ChapterCoherentThermalFidelity.dtOverlap_coherentParameter
+
+#print axioms BookProof.ChapterSolovayTailDimension.substrateBasisVector_orthonormal
+#print axioms BookProof.ChapterSolovayTailDimension.tail_infinite_dimensional
+#print axioms BookProof.ChapterSolovaySeparableExistence.joint_prob_has_wavefunction
+open BookProof.ChapterSolovaySeparableExistence in
+#print axioms exists_separable_prob_with_arbitrary_finite_law
+open BookProof.ChapterSolovaySeparableExistence in
+#print axioms exists_separable_prob_with_arbitrary_finite_law_substrate
+#print axioms BookProof.ChapterSolovaySeparableExistence.prod_disintegration
+
+#print axioms BookProof.ChapterSolovayHilbertTensor.measurePreserving_prodProdProdComm
+#print axioms BookProof.ChapterSolovayHilbertTensor.solovayTensorEquiv_map
+#print axioms BookProof.ChapterSolovayHilbertTensor.inner_tensorLp
+
+#print axioms BookProof.ChapterAbelianAtomicCondensation.commutes_atomProj_iff
+#print axioms BookProof.ChapterAbelianAtomicCondensation.atomic_abelian_maximal_eq_diagonal
+#print axioms BookProof.ChapterAbelianAtomicCondensation.atomic_measure_index_dichotomy
+
+#print axioms BookProof.ChapterLinftyMaximalAbelian.symbol_ae_norm_le
+#print axioms BookProof.ChapterLinftyMaximalAbelian.commutant_eq_multOp
+#print axioms BookProof.ChapterLinftyMaximalAbelian.multOp_algebra_maximal_abelian
+#print axioms BookProof.ChapterLinftyMaximalAbelian.unitInterval_multOp_maximal_abelian
+
+#print axioms BookProof.ChapterTensorCompleteness.indicator_mem_tensorSpan
+#print axioms BookProof.ChapterTensorCompleteness.tensorSpan_eq_top
+#print axioms BookProof.ChapterTensorCompleteness.pureTensors_dense
+#print axioms BookProof.ChapterTensorCompleteness.exists_tensor_approx
+#print axioms BookProof.ChapterTensorCompleteness.inner_tensorOf
+#print axioms BookProof.ChapterTensorCompleteness.orthonormal_tensorOf
+#print axioms BookProof.ChapterTensorCompleteness.tensorFamily_span_eq_top
+#print axioms BookProof.ChapterTensorCompleteness.tensorHilbertBasis_repr_apply
+#print axioms BookProof.ChapterTensorCompleteness.hasSum_tensorHilbertBasis
+#print axioms BookProof.ChapterTensorCompleteness.hasSum_sq_norm_inner_tensorHilbertBasis
+
+#print axioms BookProof.ChapterAbelianGelfandModel.integral_rieszStateMeasure
+#print axioms BookProof.ChapterAbelianGelfandModel.isProbabilityMeasure_rieszStateMeasure
+#print axioms BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state
+#print axioms BookProof.ChapterAbelianGelfandModel.mulRepHom_injective
+#print axioms BookProof.ChapterAbelianGelfandModel.inner_oneVec_mulRep
+#print axioms BookProof.ChapterAbelianGelfandModel.norm_oneVec
+#print axioms BookProof.ChapterAbelianGelfandModel.state_is_vector_state_of_multiplication
+
+#print axioms BookProof.ChapterSpectralMultiplication.vectorState_star_mul_self
+#print axioms BookProof.ChapterSpectralMultiplication.integral_spectralMeasure
+#print axioms BookProof.ChapterSpectralMultiplication.norm_cfcHom_apply
+#print axioms BookProof.ChapterSpectralMultiplication.spectralUnitary_toLp
+#print axioms BookProof.ChapterSpectralMultiplication.spectralUnitary_intertwines_cfc
+#print axioms BookProof.ChapterSpectralMultiplication.spectralUnitary_intertwines
+#print axioms BookProof.ChapterSpectralMultiplication.spectral_multiplication_model
+
+#print axioms BookProof.ChapterSpectralCommutant.centralizer_multAlgebra
+#print axioms BookProof.ChapterSpectralCommutant.bicommutant_multAlgebra
+#print axioms BookProof.ChapterSpectralCommutant.contCommutant_eq_multOp
+#print axioms BookProof.ChapterSpectralCommutant.centralizer_cfcSet
+#print axioms BookProof.ChapterSpectralCommutant.centralizer_multModel
+#print axioms BookProof.ChapterSpectralCommutant.bicommutant_cfcSet
+#print axioms BookProof.ChapterSpectralCommutant.commutant_cfcSet_isCommutative
+
+#print axioms BookProof.ChapterCyclicDecomposition.invariant_cyclicSubspace
+#print axioms BookProof.ChapterCyclicDecomposition.invariant_orthogonal
+#print axioms BookProof.ChapterCyclicDecomposition.cyclicSubspace_le_orthogonal
+#print axioms BookProof.ChapterCyclicDecomposition.exists_cyclic_decomposition
+
+#print axioms BookProof.ChapterCyclicDirectSum.orthogonalFamily_cyclicSubspace
+#print axioms BookProof.ChapterCyclicDirectSum.isHilbertSum_cyclicSubspace
+#print axioms BookProof.ChapterCyclicDirectSum.exists_isHilbertSum_cyclicSubspace
+#print axioms BookProof.ChapterCyclicDirectSum.commute_starProjection_cfcHom
+#print axioms BookProof.ChapterCyclicDirectSum.starProjection_cyclicSubspace_commutes
+#print axioms BookProof.ChapterCyclicDirectSum.hasSum_starProjection_cyclicSubspace
+
+#print axioms BookProof.ChapterSpectralDirectSum.denseRange_cfcVecTo
+#print axioms BookProof.ChapterSpectralDirectSum.range_cyclicEmbedding
+#print axioms BookProof.ChapterSpectralDirectSum.cyclicEmbedding_intertwines_cfc
+#print axioms BookProof.ChapterSpectralDirectSum.cyclicEmbedding_intertwines
+#print axioms BookProof.ChapterSpectralDirectSum.orthogonalFamily_cyclicEmbedding
+#print axioms BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general
+#print axioms BookProof.ChapterSpectralDirectSum.countable_orthogonalCyclicFamily
+#print axioms BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable
+
+#print axioms BookProof.ChapterAbelianCyclicModel.repState_star_mul_self
+#print axioms BookProof.ChapterAbelianCyclicModel.integral_repMeasure
+#print axioms BookProof.ChapterAbelianCyclicModel.norm_rep_apply
+#print axioms BookProof.ChapterAbelianCyclicModel.cyclicRepUnitary_toLp
+#print axioms BookProof.ChapterAbelianCyclicModel.cyclicRepUnitary_intertwines
+#print axioms BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model
+#print axioms BookProof.ChapterAbelianCyclicModel.abelian_algebra_multiplication_model
+
+#print axioms BookProof.ChapterAbelianCyclicCommutant.centralizer_repSet
+#print axioms BookProof.ChapterAbelianCyclicCommutant.centralizer_multModelRep
+#print axioms BookProof.ChapterAbelianCyclicCommutant.bicommutant_repSet
+#print axioms BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative
+#print axioms BookProof.ChapterAbelianCyclicCommutant.abelian_algebra_maximal_abelian_of_cyclic
+
+#print axioms BookProof.ChapterAbelianDirectSum.repInvariant_orthogonal
+#print axioms BookProof.ChapterAbelianDirectSum.exists_rep_cyclic_decomposition
+#print axioms BookProof.ChapterAbelianDirectSum.exists_isHilbertSum_repCyclicSubspace
+#print axioms BookProof.ChapterAbelianDirectSum.starProjection_commutes_rep
+#print axioms BookProof.ChapterAbelianDirectSum.range_repEmbedding
+#print axioms BookProof.ChapterAbelianDirectSum.repEmbedding_intertwines
+#print axioms BookProof.ChapterAbelianDirectSum.abelian_multiplication_model_general
+#print axioms BookProof.ChapterAbelianDirectSum.abelian_multiplication_model_separable
+#print axioms BookProof.ChapterAbelianDirectSum.abelian_algebra_multiplication_model_general
+
+#print axioms BookProof.ChapterMeasureAtomicDiffuse.countable_atomSet
+#print axioms BookProof.ChapterMeasureAtomicDiffuse.restrict_atomSet_add_restrict_compl
+#print axioms BookProof.ChapterMeasureAtomicDiffuse.restrict_atomSet_eq_sum_dirac
+#print axioms BookProof.ChapterMeasureAtomicDiffuse.exists_atomic_diffuse_decomposition
+#print axioms BookProof.ChapterMeasureAtomicDiffuse.abelian_multiplication_model_atomic_diffuse
+
+#print axioms BookProof.ChapterDiffuseCdfModel.continuous_cdf_of_noAtoms
+#print axioms BookProof.ChapterDiffuseCdfModel.exists_cdf_eq
+#print axioms BookProof.ChapterDiffuseCdfModel.measure_cdf_le
+#print axioms BookProof.ChapterDiffuseCdfModel.map_cdf_eq_volume_Icc
+
+#print axioms BookProof.ChapterDiffuseUnitaryModel.measurePreserving_cdf
+#print axioms BookProof.ChapterDiffuseUnitaryModel.measureDense_cdfAlgebra
+#print axioms BookProof.ChapterDiffuseUnitaryModel.cdfRange_eq_top
+#print axioms BookProof.ChapterDiffuseUnitaryModel.cdfUnitary_intertwines
+#print axioms BookProof.ChapterDiffuseUnitaryModel.diffuse_multiplication_model_uniform
+
+#print axioms BookProof.ChapterAtomicDiagonalModel.orthonormal_atomVec
+#print axioms BookProof.ChapterAtomicDiagonalModel.atomBasis
+#print axioms BookProof.ChapterAtomicDiagonalModel.multOp_atomVec
+#print axioms BookProof.ChapterAtomicDiagonalModel.atomic_multiplication_model_diagonal
+
+#print axioms BookProof.ChapterLpRestrictSplit.restrictEmbed_add_restrictEmbed_compl
+#print axioms BookProof.ChapterLpRestrictSplit.isHilbertSum_splitEmbed
+#print axioms BookProof.ChapterLpRestrictSplit.restrictEmbed_intertwines
+
+#print axioms BookProof.ChapterLpScaleMeasure.scaleUnitary_intertwines
+#print axioms BookProof.ChapterLpScaleMeasure.normalized_multiplication_model
+
+#print axioms BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model
+#print axioms BookProof.ChapterAbelianClassificationList.abelian_summand_standard_model
+#print axioms BookProof.ChapterAbelianClassificationList.vonNeumann_abelian_classification_list
+
+#print axioms BookProof.ChapterStandardBorelClassification.transportUnitary_intertwines
+#print axioms BookProof.ChapterStandardBorelClassification.purelyAtomic_of_countable
+open BookProof.ChapterStandardBorelClassification in
+#print axioms standardBorel_multiplication_model_transport
+#print axioms BookProof.ChapterStandardBorelClassification.standardBorel_classification_list
+#print axioms BookProof.ChapterStandardBorelClassification.abelian_multiplication_model_classified
+open BookProof.ChapterStandardBorelClassification in
+#print axioms spectral_multiplication_model_classified
+
+#print axioms BookProof.ChapterSeparableSpectrum.metrizableSpace_of_separable_continuousMap
+#print axioms BookProof.ChapterSeparableSpectrum.metrizableSpace_iff_separableSpace_continuousMap
+#print axioms BookProof.ChapterSeparableSpectrum.metrizableSpace_characterSpace
+open BookProof.ChapterSeparableSpectrum in
+#print axioms abelian_multiplication_model_classified_separable
+open BookProof.ChapterSeparableSpectrum in
+#print axioms abelian_algebra_multiplication_model_classified
+
+#print axioms BookProof.ChapterSeparableL2Model.exists_countable_dense_continuous
+open BookProof.ChapterSeparableL2Model in
+#print axioms separable_Lp_realizes_standard_type
+open BookProof.ChapterSeparableL2Model in
+#print axioms abelian_multiplication_model_classified_separable_hilbert
+open BookProof.ChapterSeparableL2Model in
+#print axioms abelian_algebra_multiplication_model_classified_separable_hilbert
+
+#print axioms BookProof.ChapterWeakValue.weakValue_wellDefined
+#print axioms BookProof.ChapterWeakValue.weakValue_unique
+#print axioms BookProof.ChapterWeakValue.weakValue_diag
+#print axioms BookProof.ChapterWeakValue.weakValue_diag_isReal
+#print axioms BookProof.ChapterWeakValue.weakValue_linear
+#print axioms BookProof.ChapterWeakValue.weakValue_proj_sum
+#print axioms BookProof.ChapterWeakValue.jointProb_eq_normSq_weakNumerator
+#print axioms BookProof.ChapterWeakValue.condProb_eq_weakNumerator_ratio
+#print axioms BookProof.ChapterWeakValue.dslit_weakValue
+
+#print axioms BookProof.ChapterContinuityUnitary.momentum_hermitian
+#print axioms BookProof.ChapterContinuityUnitary.continuityHamiltonian_hermitian
+#print axioms BookProof.ChapterContinuityUnitary.momentum_mul_velocityOp_not_hermitian
+#print axioms BookProof.ChapterContinuityUnitary.continuityUnitary_unitary
+#print axioms BookProof.ChapterContinuityUnitary.continuityUnitary_add
+#print axioms BookProof.ChapterContinuityUnitary.bornRecover_univ
+#print axioms BookProof.ChapterContinuityUnitary.condProb_of_continuity
+#print axioms BookProof.ChapterContinuityUnitary.tensorIsom_tmul
+#print axioms BookProof.ChapterContinuityUnitary.bornRecover_product_state
+
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.momentum_isSelfAdjoint
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.continuityHamiltonian_isSelfAdjoint
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_unitary
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.bornRecover_tsum_univ
+#print axioms BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite
+
+#print axioms BookProof.ChapterBornMeasure.lintegral_bornDensity
+#print axioms BookProof.ChapterBornMeasure.isProbabilityMeasure_bornMeasure
+#print axioms BookProof.ChapterBornMeasure.bornMeasure_absolutelyContinuous
+#print axioms BookProof.ChapterBornMeasure.bornMeasure_iUnion
+#print axioms BookProof.ChapterBornMeasure.condProb_of_bounded_dynamics
+
+#print axioms BookProof.ChapterUnboundedPosition.mulOp_symmetric
+#print axioms BookProof.ChapterUnboundedPosition.mulDomain_dense
+#print axioms BookProof.ChapterUnboundedPosition.position_unbounded
+#print axioms BookProof.ChapterUnboundedPosition.position_not_boundedOperator
+#print axioms BookProof.ChapterUnboundedPosition.adjointDomain_eq_mulDomain
+#print axioms BookProof.ChapterUnboundedPosition.adjoint_eq_mulOp
+#print axioms BookProof.ChapterUnboundedPosition.phaseUnitary_add
+#print axioms BookProof.ChapterUnboundedPosition.tendsto_phaseUnitary
+#print axioms BookProof.ChapterUnboundedPosition.tendsto_slope_phaseUnitary
+
+#print axioms BookProof.ChapterUnitaryTransport.transportDomain_dense
+#print axioms BookProof.ChapterUnitaryTransport.transportOp_symmetric
+#print axioms BookProof.ChapterUnitaryTransport.transport_adjointDomain
+#print axioms BookProof.ChapterUnitaryTransport.transport_isSelfAdjointOn
+#print axioms BookProof.ChapterUnitaryTransport.tendsto_transportUnitary
+#print axioms BookProof.ChapterUnitaryTransport.tendsto_slope_transportUnitary
+#print axioms BookProof.ChapterUnitaryTransport.transported_position_isSelfAdjointOn
+#print axioms BookProof.ChapterUnitaryTransport.tendsto_slope_transported_position
+
+#print axioms BookProof.NavierStokesGaugeY2.uField2_pderiv_y
+#print axioms BookProof.NavierStokesGaugeY2.uField2_pderiv_y_twice
+#print axioms BookProof.NavierStokesGaugeY2.genY2_leibniz
+#print axioms BookProof.NavierStokesGaugeY2.genY2_uField2
+#print axioms BookProof.NavierStokesGaugeY2.genY2_uDField
+#print axioms BookProof.NavierStokesGaugeY2.genY_uField2_ne_zero
+#print axioms BookProof.NavierStokesGaugeY2.genY2_uField_ne_zero
+#print axioms BookProof.NavierStokesGaugeY2.genY2_uField2_perturbed_ne_zero
+#print axioms BookProof.NavierStokesGaugeY2.genY2_genY2_commute
+#print axioms BookProof.NavierStokesGaugeY2.genX_genY2_commute
+#print axioms BookProof.NavierStokesGaugeY2.genY_genY2_not_commute
+#print axioms BookProof.NavierStokesGaugeY2.genY2_nsSymbol2
+#print axioms BookProof.NavierStokesGaugeY2.genX_nsSymbol2
+#print axioms BookProof.NavierStokesGaugeY2.setYZero_nsSymbol2
+
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilFun_embFun
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.hasSum_inner_blocks
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.blockVec_bilH
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.deficiencyTrivialAt_bilH
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilH_ne_zero
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilH_domain_dense
+#print axioms BookProof.NavierStokesFlow.BilinearEsa.bilH_not_bounded
+
+#print axioms BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_relative_bound
+#print axioms BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_commForm_bound
+#print axioms BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_coord_succ
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_coord_succ_succ
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_ne_zero_of_pos_shear
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_not_bounded
+#print axioms BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense
+
+#print axioms BookProof.NavierStokesFlow.AffineBlock.affFun_embFun
+#print axioms BookProof.NavierStokesFlow.AffineBlock.blockVec_affBlockH
+#print axioms BookProof.NavierStokesFlow.AffineBlock.affBlockH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.AffineBlock.deficiencyTrivialAt_affBlockH
+#print axioms BookProof.NavierStokesFlow.AffineBlock.affBlockH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.AffineBlock.affBlockH_domain_dense
+#print axioms BookProof.NavierStokesFlow.AffineBlock.affBlockH_not_bounded
+
+#print axioms BookProof.NavierStokesFlow.SignFlip.essentiallySelfAdjointOn_of_intertwine
+#print axioms BookProof.NavierStokesFlow.SignFlip.shiftH_flip
+#print axioms BookProof.NavierStokesFlow.SignFlip.saffH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.SignFlip.saffH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.SignFlip.saffH_ne_zero_of_shear
+#print axioms BookProof.NavierStokesFlow.SignFlip.sblockH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.SignFlip.sblockH_domain_dense
+
+#print axioms BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_relative_bound
+#print axioms BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_commForm_bound
+#print axioms BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.SignedShift.listH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.SignedShift.listH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.SignedShift.gaffH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.SignedShift.gaffH_essentiallySelfAdjointOn_core
+
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_coord_pair
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_coord_rot
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_coord_shear
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_coord_diag
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_ne_zero_of_strain
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_ne_zero_of_vorticity
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_not_bounded
+#print axioms BookProof.NavierStokesFlow.ThreeComponent.velH_domain_dense
+
+-- `CONSOLIDATED_PLAN.md` §9 item 4: the canonical (ladder / differential) realization
+-- of the full quadratic Navier-Stokes symbol at one fiber.
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.comm_ann_cre
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.comm_mom_pos
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.comm_mom_pos_of_ne
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.canFun_eq_ladFun
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.canH_eq_velH
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.canH_not_bounded
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.canH_domain_dense
+#print axioms BookProof.NavierStokesFlow.CanonicalVector.nsQuadraticH_essentiallySelfAdjointOn_core
+
+-- `CONSOLIDATED_PLAN.md` §9 item 4, differential realization: the product Hermite
+-- orthonormal basis of `L²(ℝᵈ)` and the transport of the canonical picture to
+-- `L²(du₁du₂du₃)`, where `πᵢ` is a genuine derivative and `uᵢ` a genuine
+-- multiplication operator.
+#print axioms BookProof.HermiteProductBasis.orthonormal_hermiteMvLp
+#print axioms BookProof.HermiteProductBasis.span_hermiteMvLp
+#print axioms BookProof.HermiteProductBasis.crePoly_hermiteMvLp
+#print axioms BookProof.HermiteProductBasis.annPoly_hermiteMvLp
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_pgFun_sec
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.momOp_apply_eq_differential
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.comm_momOp_posOp
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.intertwine_ann
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.intertwined_canH
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_essentiallySelfAdjointOn_core
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_not_bounded
+#print axioms BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_domain_dense
+#print axioms
+  BookProof.NavierStokesFlow.DifferentialL2.nsQuadraticDiffH_essentiallySelfAdjointOn_core
+
+-- `CONSOLIDATED_PLAN.md` §9 item 8: essential self-adjointness selects a unique
+-- self-adjoint operator (the closure), and the Hashimoto/SIRK shift-invert limit
+-- computes with it -- instantiated for the Navier-Stokes fiber generator.
+#print axioms BookProof.EsaClosure.clGraph_inner
+#print axioms BookProof.EsaClosure.clExt_symmetricOn
+#print axioms BookProof.EsaClosure.clExt_extends
+#print axioms BookProof.EsaClosure.clExt_selfAdjointCriterion
+#print axioms BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa
+#print axioms BookProof.EsaClosure.selfAdjointExtension_eq_adjoint
+#print axioms BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa
+#print axioms BookProof.EsaClosure.positiveExtension_eq_closure_of_esa
+#print axioms BookProof.EsaClosure.norm_add_I_eq_norm_sub_I
+#print axioms BookProof.EsaClosure.exists_cayley_unitary
+#print axioms BookProof.EsaClosure.exists_selfAdjointExtension_and_cayley_of_esa
+#print axioms BookProof.EsaClosure.hashimoto_multishift_selects_esa
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.velCore_symmetricOn
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.velCore_esa
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.ns_selfAdjoint_extension
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.ns_selfAdjoint_extension_unique
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.ns_hashimoto_selects
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.ns_shiftInvert_selects
+#print axioms BookProof.NavierStokesFlow.NSHashimoto.exists_velHilbertBasis
+
+#print axioms BookProof.GaugeFixing.s_c_eq_zero
+#print axioms BookProof.GaugeFixing.s_B_eq_zero
+#print axioms BookProof.GaugeFixing.s_gaugeField
+#print axioms BookProof.GaugeFixing.L_gf_evaluation
+#print axioms BookProof.GaugeFixing.L_gf_invariant
+#print axioms BookProof.GaugeFixing.int_L_gf_eq_zero
+#print axioms BookProof.GaugeFixing.int_L_gf_evaluated
+#print axioms BookProof.GaugeFixing.matrixModel_c_ne_zero
+#print axioms BookProof.GaugeFixing.matrixModel_B_ne_zero
+#print axioms BookProof.GaugeFixing.matrixModel_Psi_ne_zero
+#print axioms BookProof.GaugeFixing.matrixModel_s_Psi_ne_zero
+#print axioms BookProof.GaugeFixing.matrixModelIntegral_ne_zero
+
+-- QG-3.2(a), the operator (nested-Fock / Faris–Lavine) half: the lifted quadratic
+-- coupling (a sum of different one-particle Hamiltonians between creation and
+-- annihilation operators on the outer Fock space) is essentially self-adjoint on
+-- the finite-mode core for every weighted-ℓ¹-summable amplitude family.
+#print axioms BookProof.QgPhysicalSectorIdentity.coupling_essentiallySelfAdjointOn_core
+#print axioms BookProof.QgPhysicalSectorIdentity.deg_pair_le_two
+#print axioms BookProof.QgPhysicalSectorIdentity.coupling_weighted_summable
+
+#print axioms BookProof.QuantumGravityDensitized.inv_eq_four_mul_deriv_densY_sq
+#print axioms BookProof.QuantumGravityDensitized.kinetic_absorption
+#print axioms BookProof.QuantumGravityDensitized.conformal_absorption
+#print axioms BookProof.QuantumGravityDensitized.densTetrad_det
+#print axioms BookProof.QuantumGravityDensitized.densTetrad_recover
+#print axioms BookProof.QuantumGravityDensitized.tendsto_inv_det_atTop
+#print axioms BookProof.QuantumGravityDensitized.tendsto_densY_zero
+#print axioms BookProof.QuantumGravityDensitized.qgSymbol_eq_metric_form
+#print axioms BookProof.QuantumGravityDensitized.qgMetric_det_ne_zero
+#print axioms BookProof.QuantumGravityDensitized.qgSymbol_indefinite
+#print axioms BookProof.QuantumGravityDensitized.christoffel_eq_zero_of_const
+#print axioms BookProof.QuantumGravityDensitized.qgMetric_christoffel_zero
+#print axioms BookProof.QuantumGravityDensitized.qgFullSymbol_scaling
+#print axioms BookProof.QuantumGravityDensitized.qgModeHamiltonian_essentiallySelfAdjoint
+#print axioms BookProof.QuantumGravityDensitized.qgModeHamiltonian_deficiencyTrivialAt
+#print axioms BookProof.QuantumGravityDensitized.qgModeHamiltonian_not_bounded
+#print axioms BookProof.QuantumGravityDensitized.strichartz_esa_of_finiteSpeed
+#print axioms BookProof.QuantumGravityDensitized.strichartz_finiteSpeed_satisfiable
+#print axioms BookProof.QuantumGravityDensitized.qg_esa_of_farisLavine
+#print axioms BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer
+
+#print axioms BookProof.QuantumGravityHalfDensity.qgSrcMeasure_density_eq_halfDensity_sq
+#print axioms BookProof.QuantumGravityHalfDensity.measurePreserving_qgSquare
+#print axioms BookProof.QuantumGravityHalfDensity.measurePreserving_qgSqrt
+#print axioms BookProof.QuantumGravityHalfDensity.halfDensityUnitary_apply
+#print axioms BookProof.QuantumGravityHalfDensity.halfDensityUnitary_symm_apply
+#print axioms BookProof.QuantumGravityHalfDensity.exists_halfDensity_unitary
+#print axioms BookProof.QuantumGravityHalfDensity.qg_halfDensity_transfer
+
+#print axioms BookProof.YangMillsFriedrichs.formNormSq_ge_normSq
+#print axioms BookProof.YangMillsFriedrichs.re_formInner_sq_le
+#print axioms BookProof.YangMillsFriedrichs.form_closable
+#print axioms BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn
+#print axioms BookProof.YangMillsFriedrichs.weylOpDom_quadForm
+#print axioms BookProof.YangMillsFriedrichs.weylOpDom_quadForm_nonneg
+#print axioms BookProof.YangMillsFriedrichs.weylForm_closable
+#print axioms BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded
+#print axioms BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable
+#print axioms BookProof.YangMillsFriedrichs.weyl_friedrichs_extension
+#print axioms BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_antitone
+#print axioms BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_tendsto_zero
+
+#print axioms BookProof.YangMillsFriedrichsLimit.symmetricOn_top_of_dense
+#print axioms BookProof.YangMillsFriedrichsLimit.quadForm_top_nonneg_of_dense
+#print axioms BookProof.YangMillsFriedrichsLimit.friedrichs_of_bounded
+#print axioms BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_nontrivial_example
+#print axioms BookProof.YangMillsFriedrichsLimit.not_mem_span_of_repr_ne_zero
+#print axioms BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_proper_domain_example
+#print axioms BookProof.YangMillsFriedrichsLimit.krylov_starProjection_tendsto
+#print axioms BookProof.YangMillsFriedrichsLimit.sirk_compression_tendsto
+#print axioms BookProof.YangMillsFriedrichsLimit.sirk_limit_unique
+#print axioms BookProof.YangMillsFriedrichsLimit.sirk_limit_eq_positive_selfadjoint_extension
+#print axioms BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded
+
+#print axioms BookProof.HermiteGalerkin.starProjection_tendsto_of_monotone_dense
+#print axioms BookProof.HermiteGalerkin.compression_tendsto_of_starProjection_tendsto
+#print axioms BookProof.HermiteGalerkin.exists_mem_galerkinSpan
+#print axioms BookProof.HermiteGalerkin.galerkinProj_tendsto
+#print axioms BookProof.HermiteGalerkin.galerkinCompression_tendsto
+#print axioms BookProof.HermiteGalerkin.inner_galerkinCompression
+#print axioms BookProof.HermiteGalerkin.ritzInf_antitone
+#print axioms BookProof.HermiteGalerkin.ritzInf_tendsto_domainInf
+#print axioms BookProof.HermiteGalerkin.ritzInf_extension_le
+#print axioms BookProof.HermiteGalerkin.norm_sub_smul_ge
+#print axioms BookProof.HermiteGalerkin.norm_resolvent_apply_le
+#print axioms BookProof.HermiteGalerkin.resolvent_tendsto_of_strong_tendsto
+#print axioms BookProof.HermiteGalerkin.isSelfAdjoint_galerkinCompression
+#print axioms BookProof.HermiteGalerkin.galerkinResolvent_tendsto
+#print axioms BookProof.HermiteGalerkin.positive_selfadjoint_extension_unique
+#print axioms BookProof.HermiteGalerkin.hermiteGalerkin_selects_friedrichs
+#print axioms BookProof.HermiteGalerkin.finiteModeRestrict_selects_operator
+#print axioms BookProof.HermiteGalerkin.finiteModeDomain_ne_top
+
+#print axioms BookProof.HashimotoShiftInvert.norm_shiftMap_ge
+#print axioms BookProof.HashimotoShiftInvert.shiftMap_injective
+#print axioms BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion
+#print axioms BookProof.HashimotoShiftInvert.shiftRange_isClosed
+#print axioms BookProof.HashimotoShiftInvert.shiftRange_orthogonal_eq_bot
+#print axioms BookProof.HashimotoShiftInvert.shiftMap_surjective
+#print axioms BookProof.HashimotoShiftInvert.exists_isShiftInvert
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvert.opNorm_le
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvert.isSelfAdjoint
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvert.inner_nonneg
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvert.dom_eq_range
+#print axioms BookProof.HashimotoShiftInvert.shiftInvert_determines
+#print axioms BookProof.HashimotoShiftInvert.isShiftInvert_unique
+#print axioms BookProof.HashimotoShiftInvert.isShiftInvert_invShiftOperator
+#print axioms BookProof.HashimotoShiftInvert.invShiftOperator_isPositiveSelfAdjointExtension
+#print axioms BookProof.HashimotoShiftInvert.galerkinCompression_shiftInvert_tendsto
+#print axioms BookProof.HashimotoShiftInvert.galerkinResolvent_shiftInvert_tendsto
+#print axioms BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_selects_friedrichs
+#print axioms BookProof.HashimotoShiftInvert.ell2ExampleMatrix_unbounded
+#print axioms BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example
+
+#print axioms BookProof.HashimotoShiftInvert.norm_cshiftMap_ge
+#print axioms BookProof.HashimotoShiftInvert.cshiftMap_injective
+#print axioms BookProof.HashimotoShiftInvert.cshiftRange_isClosed
+#print axioms BookProof.HashimotoShiftInvert.cshiftRange_orthogonal_eq_bot
+#print axioms BookProof.HashimotoShiftInvert.cshiftMap_surjective
+#print axioms BookProof.HashimotoShiftInvert.exists_isShiftInvertC
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvertC.opNorm_le
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvertC.inner_adjoint
+#print axioms BookProof.HashimotoShiftInvert.IsShiftInvertC.dom_eq_range
+#print axioms BookProof.HashimotoShiftInvert.shiftInvertC_determines
+#print axioms BookProof.HashimotoShiftInvert.isShiftInvertC_unique
+#print axioms BookProof.HashimotoShiftInvert.isShiftInvertC_neg_of_isShiftInvert
+#print axioms BookProof.HashimotoShiftInvert.shiftInvertC_resolvent_identity
+#print axioms BookProof.HashimotoShiftInvert.shiftInvertC_commute
+#print axioms BookProof.HashimotoShiftInvert.shiftInvertC_comp_one_sub
+#print axioms BookProof.HashimotoShiftInvert.sirkDen_rkVec
+#print axioms BookProof.HashimotoShiftInvert.rkCompression_tendsto
+#print axioms BookProof.HashimotoShiftInvert.hashimoto_multishift_selects_friedrichs
+#print axioms BookProof.HashimotoShiftInvert.ell2Resolvent_isShiftInvertC
+#print axioms BookProof.HashimotoShiftInvert.hashimoto_multishift_unbounded_example
+
+#print axioms BookProof.FriedrichsExtension.FormDom.norm_toAmbient_le
+#print axioms BookProof.FriedrichsExtension.FormDom.formExt_coe
+#print axioms BookProof.FriedrichsExtension.FormDom.inner_coe_eq
+#print axioms BookProof.FriedrichsExtension.FormDom.formExt_injective
+#print axioms BookProof.FriedrichsExtension.FormDom.formRiesz_spec
+#print axioms BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint
+#print axioms BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos
+#print axioms BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective
+#print axioms BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift
+#print axioms BookProof.FriedrichsExtension.friedrichs_extension_exists
+#print axioms BookProof.FriedrichsExtension.friedrichs_hypothesis_holds
+#print axioms BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional
+#print axioms BookProof.FriedrichsExtension.friedrichs_extension_of_semibounded_below
+#print axioms BookProof.FriedrichsExtension.friedrichs_hashimoto_selects
+#print axioms BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs
+#print axioms BookProof.FriedrichsExtension.unbounded_friedrichs_example
+
+#print axioms BookProof.StrichartzWave.potentialOp_symmetric
+#print axioms BookProof.StrichartzWave.potentialOp_deficiencyTrivial
+#print axioms BookProof.StrichartzWave.potentialOp_essentiallySelfAdjoint
+#print axioms BookProof.StrichartzWave.polynomialPotential_essentiallySelfAdjoint
+#print axioms BookProof.StrichartzWave.wave_add_potentialOp_symmetric
+#print axioms BookProof.StrichartzWave.multiplierOp_symmetric
+#print axioms BookProof.StrichartzWave.multiplierOp_deficiencyTrivial
+#print axioms BookProof.StrichartzWave.multiplierOp_essentiallySelfAdjoint
+#print axioms BookProof.StrichartzWave.constCoeffOp_eq_multiplierOp
+#print axioms BookProof.StrichartzWave.polyharmonic_multiplier_essentiallySelfAdjoint
+#print axioms BookProof.StrichartzWave.opL2_potentialOp_eq_mulL2
+#print axioms BookProof.StrichartzWave.wave_add_boundedPotentialOp_essentiallySelfAdjoint
+#print axioms BookProof.StrichartzWave.wave_add_truncatedPotential_essentiallySelfAdjoint
+
+#print axioms BookProof.HarmonicOscillator.hermiteC_oscillator
+#print axioms BookProof.HarmonicOscillator.harmonicOscOp_hermiteLp
+#print axioms BookProof.HarmonicOscillator.harmonicOscOp_apply_eq_differential
+#print axioms BookProof.HarmonicOscillator.harmonicOsc_symmetric
+#print axioms BookProof.HarmonicOscillator.harmonicOsc_essentiallySelfAdjoint
+#print axioms BookProof.HarmonicOscillator.harmonicOsc_not_bounded
+
+-- `PLAN_LEAN_SPECIALIST_QYM_FLOW.md` Part F: the field-space (Gauss–polynomial /
+-- product Hermite) realization of the Weyl-gauge Yang–Mills Hamiltonian.
+#print axioms BookProof.HermiteProductCore.pgMap_injective
+#print axioms BookProof.HermiteProductCore.polyGaussCore_dense
+#print axioms BookProof.HermiteProductCore.gaussInt_pderiv
+#print axioms BookProof.HermiteProductCore.span_range_coreBasis
+#print axioms BookProof.HermiteProductCore.polyGaussCore_eq_hermiteSpan
+#print axioms BookProof.YangMillsHermite.momOp_polySym
+#print axioms BookProof.YangMillsHermite.commutator_coord_mom
+#print axioms BookProof.YangMillsHermite.weylProd_polySym
+#print axioms BookProof.YangMillsHermite.realCoeff_magPoly
+#print axioms BookProof.YangMillsHermite.ymHamiltonian_symmetricOn
+#print axioms BookProof.YangMillsHermite.ymHamiltonian_quadForm_nonneg
+#print axioms BookProof.YangMillsHermite.ym_hermite_friedrichs_extension
+#print axioms BookProof.YangMillsHermite.ym_hermite_hashimoto_selects
+
+-- `PLAN_LEAN_SPECIALIST_QYM_FLOW.md` Part F.11: the second quantization of the
+-- field-space Yang–Mills Hamiltonian on the finite-occupation states over the core.
+#print axioms BookProof.FockSecondQuantization.ccr_annA_creA
+#print axioms BookProof.FockSecondQuantization.inner_creA_left
+#print axioms BookProof.FockSecondQuantization.dGamma_one_particle
+#print axioms BookProof.FockSecondQuantization.dGammaOp_symmetricOn
+#print axioms BookProof.FockSecondQuantization.dGammaOp_quadForm_nonneg
+#print axioms BookProof.FockSecondQuantization.dGamma_friedrichs_extension
+#print axioms BookProof.FockSecondQuantization.secondQuantization_friedrichs
+#print axioms BookProof.FockSecondQuantization.ym_fock_friedrichs_extension
+#print axioms BookProof.FockSecondQuantization.finiteModeDomain_fockBasisN
+#print axioms BookProof.FockSecondQuantization.dGamma_hashimoto_selects
+#print axioms BookProof.FockSecondQuantization.secondQuantization_hashimoto_selects
+#print axioms BookProof.FockSecondQuantization.ym_fock_hashimoto_selects
+
+-- `CONSOLIDATED_PLAN.md` §9 item 9: the Lagrangian (parcel) route.  Kato–Rellich
+-- control of the first-order drift by the positive second-order part obtained
+-- from the change of variables, and the Hashimoto/SIRK selection on the
+-- Lagrangian side.
+#print axioms BookProof.KatoRellich.norm_le_of_relBound
+#print axioms BookProof.KatoRellich.dense_range_add_relBounded
+#print axioms BookProof.KatoRellich.essentiallySelfAdjointOn_add_relBounded
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_P_sq_le
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_P_le
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.lowOrder_relBound
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.hFull_essentiallySelfAdjointOn
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.hFull_hasZeroDeficiencyOn
+#print axioms
+  BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_of_lagrangian_katoRellich
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_selfAdjoint_extension
+#print axioms
+  BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_selfAdjoint_extension_unique
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_hashimoto_selects
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_shiftInvert_selects
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_drift_not_bounded
+#print axioms
+  BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hFull_essentiallySelfAdjointOn
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_selects
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_sum_P_le
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.drift_dominated_of_drive_eq_P
+#print axioms
+  BookProof.NavierStokesFlow.LagrangianKatoRellich.hFull_hasZeroDeficiencyOn_of_drive_eq_P
+#print axioms BookProof.NavierStokesFlow.LagrangianKatoRellich.jacobiLag_secondOrder_eq_zero
+#print axioms
+  BookProof.NavierStokesFlow.LagrangianKatoRellich.jacobiLag_drift_not_relativelyBounded
+
+-- from the Stone bridge and the concrete flows (2026-08-20i): the packaging of a
+-- selected self-adjoint extension into the bundled UnboundedSelfAdjoint
+-- structure, and the complete unitary flows of the Eulerian NS, Lagrangian NS
+-- and QYM Hamiltonians.
+#print axioms BookProof.StoneBridge.dense_domain_of_isSelfAdjointExtension
+#print axioms BookProof.StoneBridge.isSelfAdjointOn_of_isSelfAdjointExtension
+#print axioms BookProof.StoneBridge.isStoneFlow_stoneU
+#print axioms BookProof.StoneBridge.exists_stone_flow_of_selfAdjointExtension
+#print axioms BookProof.StoneBridge.exists_stone_flow_of_positive
+#print axioms BookProof.StoneBridge.exists_stone_flow_of_esa
+#print axioms BookProof.StoneFlows.ns_stone_flow
+#print axioms BookProof.StoneFlows.lagrangian_stone_flow
+#print axioms BookProof.StoneFlows.diagKR_stone_flow
+#print axioms BookProof.StoneFlows.ym_fock_stone_flow
+
+-- `CONSOLIDATED_PLAN.md` §9 item 11 ("the Lagrangian / Eulerian parity closure"):
+-- the canonical (ladder) realization of the Lagrangian second-order part on the
+-- trajectory-space Hermite basis, its essential self-adjointness, the essential
+-- self-adjointness of the full transformed Hamiltonian and its complete flow.
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.inner_ann_cre
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagT_hasZeroDeficiencyOn
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagT_not_bounded
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_esa
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn
+#print axioms BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow
+
+-- Backlog item A1 (`CONSOLIDATED_PLAN.md` §9.5, `STRICHARTZ_WAVE_ESA.md`): the
+-- hyperbolic operator with an indefinite quadratic potential.  `H_c = ∑ᵢ cᵢ(−∂ᵢ² + xᵢ²/4)`
+-- is symmetric and essentially self-adjoint on the Hermite core of `L²(ℝᵈ)` for every
+-- real weight vector `c`, and for the Minkowski weights it is `□ + V` with
+-- `V(t,x) = (t² − ‖x‖²)/4`.
+#print axioms BookProof.HyperbolicQuadratic.symmetricOn_of_diagonal
+#print axioms BookProof.HyperbolicQuadratic.deficiencyTrivialAt_of_diagonal
+#print axioms BookProof.HyperbolicQuadratic.oscPoly_hermiteMv
+#print axioms BookProof.HyperbolicQuadratic.quadOp_hermiteMvLp
+#print axioms BookProof.HyperbolicQuadratic.quadOp_symmetric
+#print axioms BookProof.HyperbolicQuadratic.quadOp_essentiallySelfAdjoint
+#print axioms BookProof.HyperbolicQuadratic.quadOp_not_bounded
+#print axioms BookProof.HyperbolicQuadratic.quadPoly_apply_eq_differential
+#print axioms BookProof.HyperbolicQuadratic.wave_indefiniteQuadratic_essentiallySelfAdjoint
+#print axioms BookProof.HyperbolicQuadratic.minkowski_apply_eq_differential
+#print axioms BookProof.HyperbolicQuadratic.quadOp_add_boundedPotential_essentiallySelfAdjoint
+#print axioms BookProof.HyperbolicQuadratic.quadOp_add_realBoundedPotential_essentiallySelfAdjoint
+#print axioms BookProof.HermiteRelative.posL_symmetric
+#print axioms BookProof.HermiteRelative.momL_symmetric
+#print axioms BookProof.HermiteRelative.re_inner_oscL_eq
+#print axioms BookProof.HermiteRelative.norm_posL_le
+#print axioms BookProof.HermiteRelative.norm_momL_le
+#print axioms BookProof.HermiteRelative.quadOp_add_firstOrder_essentiallySelfAdjoint
+#print axioms BookProof.HermiteRelative.hermiteMvBasis_repr_quadOp
+#print axioms BookProof.HermiteRelative.foOp_linear_apply_eq_mul
+#print axioms BookProof.HermiteRelative.harmonicOsc_add_linearPotential_essentiallySelfAdjoint
+
+-- Backlog item A1, continued: the *general* (non-diagonal) quadratic Hamiltonian.  For
+-- every real symmetric matrix `A`, `H_A = ∑_{k,l} A_{kl}(π_k π_l + x_k x_l/4)` is
+-- symmetric and essentially self-adjoint on the same Hermite core, by the orthogonal
+-- change of coordinates that diagonalizes `A`.
+#print axioms BookProof.QuadraticRotation.pderiv_rotPoly
+#print axioms BookProof.QuadraticRotation.rotPoly_mulXPoly
+#print axioms BookProof.QuadraticRotation.rotPoly_momPoly
+#print axioms BookProof.QuadraticRotation.quadPolyMat_rotPoly
+#print axioms BookProof.QuadraticRotation.quadPolyMat_diagonal
+#print axioms BookProof.QuadraticRotation.gaussInt_rotPoly
+#print axioms BookProof.QuadraticRotation.inner_pgLp_rotPoly
+#print axioms BookProof.QuadraticRotation.orthonormal_rotHermiteLp
+#print axioms BookProof.QuadraticRotation.span_rotHermiteLp
+#print axioms BookProof.QuadraticRotation.quadOpMat_rotHermiteLp
+#print axioms BookProof.QuadraticRotation.exists_rotConj
+#print axioms BookProof.QuadraticRotation.quadOpMat_symmetric
+#print axioms BookProof.QuadraticRotation.quadOpMat_essentiallySelfAdjoint
+#print axioms BookProof.QuadraticRotation.wave_rotated_essentiallySelfAdjoint
+#print axioms BookProof.QuadraticRotation.quadOpMat_not_bounded
+#print axioms BookProof.QuadraticRotationPerturbed.rotHermiteBasis_apply
+#print axioms BookProof.QuadraticRotationPerturbed.rotU_hermiteMvLp
+#print axioms BookProof.QuadraticRotationPerturbed.rotU_pgLp
+#print axioms BookProof.QuadraticRotationPerturbed.rotPoly_foPoly
+#print axioms BookProof.QuadraticRotationPerturbed.rotVec_transpose
+#print axioms BookProof.QuadraticRotationPerturbed.rotU_intertwine
+#print axioms BookProof.QuadraticRotationPerturbed.exists_lower_bound_eigenvalues
+#print axioms BookProof.QuadraticRotationPerturbed.quadOpMat_add_firstOrder_symmetric
+#print axioms BookProof.QuadraticRotationPerturbed.quadOpMat_add_firstOrder_essentiallySelfAdjoint
+#print axioms
+  BookProof.QuadraticRotationPerturbed.anisotropicOsc_add_linearPotential_essentiallySelfAdjoint
+
+-- `ChapterShiftedHermiteCore`: the translated, modulated Gauss–polynomial core
+-- `D_{a,k} = { p(x − a) e^{−‖x − a‖²/4} e^{i⟨k, x⟩} }` of `L²(ℝᵈ)`.  Translation and
+-- modulation are unitary substitutions, so the core is dense, the recentred Hermite
+-- family is orthonormal and total in it, and the canonical pair acts on polynomials by
+-- `mulXTPoly = mulXPoly i + aᵢ`, `momTPoly = momPoly i + kᵢ`.
+#print axioms BookProof.ShiftedHermiteCore.norm_phaseFun
+#print axioms BookProof.ShiftedHermiteCore.conj_mul_phaseFun
+#print axioms BookProof.ShiftedHermiteCore.memLp_pgFunT
+#print axioms BookProof.ShiftedHermiteCore.inner_pgLpT
+#print axioms BookProof.ShiftedHermiteCore.pgMapT_injective
+#print axioms BookProof.ShiftedHermiteCore.polyGaussCoreT_dense
+#print axioms BookProof.ShiftedHermiteCore.orthonormal_hermiteTLp
+#print axioms BookProof.ShiftedHermiteCore.span_hermiteTLp
+#print axioms BookProof.ShiftedHermiteCore.hermiteTLp_total
+#print axioms BookProof.ShiftedHermiteCore.coreOpT_coe
+#print axioms BookProof.ShiftedHermiteCore.hasDerivAt_pgFunT_sec
+#print axioms BookProof.ShiftedHermiteCore.pgFunT_mulXTPoly
+#print axioms BookProof.ShiftedHermiteCore.pgFunT_momTPoly
+-- `ChapterShiftedQuadraticEsa`: the indefinite inhomogeneous quadratic Hamiltonian
+-- `H = ∑ᵢ (cᵢ(πᵢ² + xᵢ²/4) + bᵢ xᵢ + b'ᵢ πᵢ)` with weights `cᵢ ≠ 0` of arbitrary sign.
+-- Completing the square in both position and momentum makes `H` diagonal in the
+-- Hermite basis recentred at `aᵢ = −2bᵢ/cᵢ` and boosted to `kᵢ = −b'ᵢ/(2cᵢ)`, hence
+-- symmetric and essentially self-adjoint there, with the pointwise identification of
+-- the differential expression; the Minkowski weights give `□ + V` plus an arbitrary
+-- constant external field and boost.
+#print axioms BookProof.ShiftedQuadratic.shiftedHPoly_term
+#print axioms BookProof.ShiftedQuadratic.shiftedHPoly_eq_quadPoly
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_hermiteTLp
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_symmetric
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_deficiencyTrivialAt
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_essentiallySelfAdjoint
+#print axioms BookProof.ShiftedQuadratic.shiftedCore_dense
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_stone_flow
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_not_bounded
+#print axioms BookProof.ShiftedQuadratic.pgFunT_momTPoly_sq
+#print axioms BookProof.ShiftedQuadratic.shiftedHPoly_apply_eq_differential
+#print axioms BookProof.ShiftedQuadratic.shiftedHOp_coe_eq_pgLpT
+#print axioms
+  BookProof.ShiftedQuadratic.wave_indefiniteQuadratic_linear_essentiallySelfAdjoint
+
+-- `ChapterShiftedQuadraticMatrixEsa`: the indefinite inhomogeneous quadratic Hamiltonian
+-- **with cross terms**.  For every real symmetric *invertible* matrix `A` of arbitrary
+-- signature and arbitrary real `b, b'`, `H_A + ∑ᵢ (bᵢxᵢ + b'ᵢπᵢ)` is symmetric and
+-- essentially self-adjoint on the translated, modulated core with `a = −2A⁻¹b` and
+-- `k = −A⁻¹b'/2`: completing the square in matrix form leaves `H_A` plus a constant, and
+-- `H_A` is diagonal on the *rotated* Hermite polynomials, so the translated, modulated,
+-- rotated Hermite functions are an orthonormal total family of eigenvectors.
+#print axioms BookProof.ShiftedQuadraticMatrix.quadTermT_apply
+#print axioms BookProof.ShiftedQuadraticMatrix.quadPolyMatT_apply_expand
+#print axioms BookProof.ShiftedQuadraticMatrix.foTPoly_apply_expand
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatPoly_eq_quadPolyMat
+#print axioms BookProof.ShiftedQuadraticMatrix.orthonormal_hermiteTRLp
+#print axioms BookProof.ShiftedQuadraticMatrix.span_hermiteTRLp
+#print axioms BookProof.ShiftedQuadraticMatrix.hermiteTRLp_total
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_hermiteTRLp
+#print axioms BookProof.ShiftedQuadraticMatrix.mulVec_matShiftVec
+#print axioms BookProof.ShiftedQuadraticMatrix.mulVec_matBoostVec
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_symmetric
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_essentiallySelfAdjoint
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_not_bounded
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatCore_dense
+#print axioms BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_stone_flow
+#print axioms BookProof.ShiftedQuadraticMatrix.rotConj_det
+#print axioms BookProof.ShiftedQuadraticMatrix.wave_rotated_linear_essentiallySelfAdjoint
+
+-- `ChapterStoneEigenflow`: explicit dynamics.  A self-adjoint extension keeps the
+-- eigenvectors of the core operator, and *any* Stone flow of a self-adjoint operator acts
+-- on an eigenvector by the phase `e^{−iλt}`; consequently a symmetric, essentially
+-- self-adjoint core operator with a family of eigenvectors generates a flow which is
+-- diagonal on that family.
+#print axioms BookProof.StoneEigenflow.isSelfAdjointExtension_eigenvector
+#print axioms BookProof.StoneEigenflow.stoneFlow_apply_eigenvector
+#print axioms BookProof.StoneEigenflow.stoneFlow_apply_core_eigenvector
+#print axioms BookProof.StoneEigenflow.exists_diagonal_stone_flow
+
+-- `ChapterShiftedQuadraticDegenerate`: the singular case.  The classical equilibrium
+-- equation `A a = w` is solvable exactly when `w ⊥ ker A`, and under that condition the
+-- inhomogeneous quadratic Hamiltonian of an *arbitrary* real symmetric `A` — invertible
+-- or singular, of arbitrary signature — is symmetric and essentially self-adjoint on the
+-- translated, modulated core, generates a complete unitary flow, and that flow acts on
+-- the Hermite eigenbasis by an explicit phase.
+#print axioms BookProof.ShiftedQuadraticDegenerate.equilibrium_orthogonal_to_kernel
+#print axioms BookProof.ShiftedQuadraticDegenerate.exists_equilibrium
+#print axioms BookProof.ShiftedQuadraticDegenerate.exists_equilibrium_iff
+#print axioms BookProof.ShiftedQuadraticDegenerate.shiftedHMatOp_symmetric_of_equilibrium
+#print axioms
+  BookProof.ShiftedQuadraticDegenerate.shiftedHMatOp_essentiallySelfAdjoint_of_equilibrium
+#print axioms BookProof.ShiftedQuadraticDegenerate.exists_shiftedHMat_esa_of_kernel_orthogonal
+#print axioms BookProof.ShiftedQuadraticDegenerate.diagonal_degenerate_essentiallySelfAdjoint
+#print axioms BookProof.ShiftedQuadraticDegenerate.exists_shiftedHMat_diagonal_flow
+#print axioms BookProof.ShiftedQuadraticDegenerate.exists_shiftedH_diagonal_flow
+
+-- `ChapterFourierMultiplierEsa`: the Plancherel argument as an instrument.  Any Fourier
+-- multiplier with a real, smooth symbol is symmetric and essentially self-adjoint on the
+-- Schwartz core of `L²(V)`; in particular the momentum family `∑ᵢ cᵢ(−i∂_{wᵢ})` and the
+-- full constant-coefficient operator `∑ᵢ cᵢ∂_{wᵢ}² + ∑ᵢ aᵢ(−i∂_{wᵢ}) + κ` are.
+#print axioms BookProof.FourierMultiplierEsa.symmetricOn_of_real_symbol
+#print axioms BookProof.FourierMultiplierEsa.deficiencyTrivialAt_of_real_symbol
+#print axioms BookProof.FourierMultiplierEsa.essentiallySelfAdjointOn_of_real_symbol
+#print axioms BookProof.FourierMultiplierEsa.fourier_firstOrderOp_apply
+#print axioms BookProof.FourierMultiplierEsa.firstOrderOp_symmetric
+#print axioms BookProof.FourierMultiplierEsa.firstOrderOp_essentiallySelfAdjoint
+#print axioms BookProof.FourierMultiplierEsa.momentumOp_essentiallySelfAdjoint
+#print axioms BookProof.FourierMultiplierEsa.mixedOp_symmetric
+#print axioms BookProof.FourierMultiplierEsa.mixedOp_essentiallySelfAdjoint
+
+-- `ChapterMixedLinearEsa`: the mixed first-order operator `⟪x, b⟫ − i ∂_m`.  The position
+-- operator is essentially self-adjoint by a compactly supported division argument, compactly
+-- supported test functions detect the deficiency spaces of the momentum operator (a cut-off
+-- plus dominated convergence argument), and the quadratic gauge `e^{iθ}`,
+-- `θ(x) = −⟪x,b⟫⟪x,m⟫/‖m‖² + ⟪b,m⟫⟪x,m⟫²/(2‖m‖⁴)`, intertwines the two.
+#print axioms BookProof.MixedLinearEsa.posOp_symmetric
+#print axioms BookProof.MixedLinearEsa.posOp_essentiallySelfAdjoint
+#print axioms BookProof.MixedLinearEsa.momentum_test_compactSupport_extend
+#print axioms BookProof.MixedLinearEsa.momentumOp_eq_zero_of_compactSupport_test
+#print axioms BookProof.MixedLinearEsa.mixedLinearOp_gauge
+#print axioms BookProof.MixedLinearEsa.mixedLinearOp_symmetric
+#print axioms BookProof.MixedLinearEsa.mixedLinearOp_essentiallySelfAdjoint
+#print axioms BookProof.MixedLinearEsa.polyPotential_add_momentum_essentiallySelfAdjoint
+
+-- `ChapterUnboundedSpectralModel`: the spectral theorem in multiplication form for an
+-- *unbounded* self-adjoint operator.  The resolvent `R = (A − i)⁻¹` is a bounded normal
+-- operator, injective, with range exactly the domain of `A`; the bounded multiplication
+-- model of `ChapterSpectralDirectSum` therefore applies to `R`, the representing measure
+-- is carried by the Cayley circle `|z|² = Im z` and gives no mass to `z = 0`, and `A` is
+-- multiplication by the real function `Re z/|z|²`.
+#print axioms BookProof.UnboundedSpectralModel.resOp_injective
+#print axioms BookProof.UnboundedSpectralModel.exists_resOp_eq
+#print axioms BookProof.UnboundedSpectralModel.adjoint_resCLM
+#print axioms BookProof.UnboundedSpectralModel.isStarNormal_resOp
+#print axioms BookProof.UnboundedSpectralModel.model_apply
+#print axioms BookProof.UnboundedSpectralModel.model_ae_circle
+#print axioms BookProof.UnboundedSpectralModel.model_ae_ne_zero
+#print axioms BookProof.UnboundedSpectralModel.model_ae_real_multiplier
+#print axioms BookProof.UnboundedSpectralModel.unbounded_multiplication_model_cyclic
+#print axioms BookProof.UnboundedSpectralModel.unbounded_multiplication_model_general
+#print axioms BookProof.UnboundedSpectralModel.unbounded_multiplication_model_separable
+
+-- `ChapterQuadratureEsa`: the quadrature `∑ᵢ (bᵢxᵢ + b'ᵢπᵢ)` on the Gauss–polynomial
+-- (product Hermite) core.  A moment lemma with no `L²` hypothesis makes the deficiency
+-- equation of the purely positional quadrature solvable on that core; the diagonal phase
+-- unitary `ψ_α ↦ ζ^α ψ_α` of the product Hermite basis is the metaplectic rotation, and it
+-- carries the positional quadrature `∑ᵢ|wᵢ|xᵢ` onto the general one, `wᵢ = bᵢ + ib'ᵢ/2`.
+#print axioms BookProof.QuadratureEsa.ae_eq_zero_of_moments'
+#print axioms BookProof.QuadratureEsa.foOp_pos_essentiallySelfAdjoint
+#print axioms BookProof.QuadratureEsa.phaseU_hermiteMvLp
+#print axioms BookProof.QuadratureEsa.foOp_hermiteCore
+#print axioms BookProof.QuadratureEsa.phaseU_foOp_hermiteCore
+#print axioms BookProof.QuadratureEsa.foOp_essentiallySelfAdjoint
+#print axioms BookProof.QuadratureEsa.foOp_stone_flow
+
+-- `ChapterHermiteCarlemanEsa`: the Carleman criterion on the multi-index lattice of the
+-- product Hermite basis, and the inhomogeneous diagonal quadratic Hamiltonian with an
+-- arbitrary first-order term on the plain Gauss–polynomial core.  The imaginary part of
+-- the coefficient recursion, summed over a cube of multi-indices, telescopes to the flux
+-- through the boundary faces (`flux_identity`), which is at most `√(N+1)` times the
+-- `ℓ²`-mass of those faces (`flux_bound`); the faces are disjoint, so that mass is
+-- summable, while `∑ 1/√(N+1)` diverges.
+#print axioms BookProof.HermiteCarleman.flux_identity
+#print axioms BookProof.HermiteCarleman.flux_bound
+#print axioms BookProof.HermiteCarleman.ladder_eq_zero
+#print axioms BookProof.HermiteCarleman.mixOp_hermiteCore
+#print axioms BookProof.HermiteCarleman.mixOp_symmetric
+#print axioms BookProof.HermiteCarleman.mixOp_deficiencyTrivialAt
+#print axioms BookProof.HermiteCarleman.mixOp_essentiallySelfAdjoint
+#print axioms BookProof.HermiteCarleman.mixOp_stone_flow
+#print axioms BookProof.HermiteCarleman.wave_indefiniteQuadratic_firstOrder_essentiallySelfAdjoint
+
+-- `ChapterCarlemanTwoStep`: the same flux argument for a recursion whose hops move a
+-- single excitation number by one **or two**, with amplitudes `O(N)`.  Faces of thickness
+-- two are no longer disjoint, so Bessel's inequality is used with a multiplicity bound
+-- (`sum_range_of_multiplicity`, `faceK_multiplicity`), and the divergence is
+-- `∑ 1/(N+1) = ∞`.
+#print axioms BookProof.CarlemanTwoStep.sum_cube_hop_im
+#print axioms BookProof.CarlemanTwoStep.flux_identity2
+#print axioms BookProof.CarlemanTwoStep.flux_boundG
+#print axioms BookProof.CarlemanTwoStep.sum_range_of_multiplicity
+#print axioms BookProof.CarlemanTwoStep.ladder2_eq_zero
+
+-- `ChapterModeQuadraticEsa`: the general **mode-diagonal** real quadratic Hamiltonian
+-- `∑ᵢ (pᵢπᵢ² + qᵢxᵢ² + sᵢ·½(xᵢπᵢ + πᵢxᵢ)) + ∑ᵢ (bᵢxᵢ + b'ᵢπᵢ)`, for arbitrary real
+-- coefficients, is essentially self-adjoint on the plain Gauss–polynomial core, and
+-- generates a complete unitary flow.  In particular the generator of dilations does.
+#print axioms BookProof.ModeQuadratic.lop_lop_hermiteMv
+#print axioms BookProof.ModeQuadratic.mqQuadPoly_hermiteMv
+#print axioms BookProof.ModeQuadratic.mqOp_hermiteCore
+#print axioms BookProof.ModeQuadratic.mqOp_symmetric
+#print axioms BookProof.ModeQuadratic.mqOp_deficiencyTrivialAt
+#print axioms BookProof.ModeQuadratic.mqOp_essentiallySelfAdjoint
+#print axioms BookProof.ModeQuadratic.mqOp_stone_flow
+#print axioms BookProof.ModeQuadratic.dilation_essentiallySelfAdjoint
+#print axioms BookProof.ModeQuadratic.dilation_stone_flow
+
+-- `ChapterCarlemanSimplex`: the Carleman flux argument rerun on the **simplex** shells
+-- `{α : |α| ≤ N}` of the multi-index lattice.  This grading by total degree is the one
+-- adapted to a general quadratic ladder: the degree-preserving mode-exchange hops
+-- `α ↦ α − eⱼ + eᵢ` carry no flux at all when their amplitude matrix is Hermitian
+-- (`sum_mterm_im`), while the degree-changing pair hops `α ↦ α ± (eᵢ + eⱼ)` leak only
+-- through a boundary shell of thickness two, of controlled multiplicity.
+#print axioms BookProof.CarlemanSimplex.sum_simplex_hop_im
+#print axioms BookProof.CarlemanSimplex.sum_mterm_im
+#print axioms BookProof.CarlemanSimplex.flux_identityQ
+#print axioms BookProof.CarlemanSimplex.flux_bound_on
+#print axioms BookProof.CarlemanSimplex.sBd_multiplicity
+#print axioms BookProof.CarlemanSimplex.ladderQ_eq_zero
+
+-- `ChapterFullQuadraticEsa`: the **general** real quadratic-plus-linear Hamiltonian
+-- `∑_{i,j} (Pᵢⱼπᵢπⱼ + Qᵢⱼxᵢxⱼ + Sᵢⱼ·½(xᵢπⱼ + πⱼxᵢ)) + ∑ᵢ (bᵢxᵢ + b'ᵢπᵢ)`, for arbitrary
+-- real matrices `P, Q, S` and vectors `b, b'` — distinct modes coupled arbitrarily — is
+-- essentially self-adjoint on the plain Gauss–polynomial core and generates a complete
+-- unitary flow.  In particular the purely off-diagonal cross term does.
+#print axioms BookProof.FullQuadratic.lop_lop_hermiteMv_gen
+#print axioms BookProof.FullQuadratic.weyl_hermiteMv_gen
+#print axioms BookProof.FullQuadratic.fqExch_hermitian
+#print axioms BookProof.FullQuadratic.fqQuadPoly_hermiteMv
+#print axioms BookProof.FullQuadratic.fqOp_hermiteCore
+#print axioms BookProof.FullQuadratic.fqOp_symmetric
+#print axioms BookProof.FullQuadratic.fqOp_deficiencyTrivialAt
+#print axioms BookProof.FullQuadratic.fqOp_essentiallySelfAdjoint
+#print axioms BookProof.FullQuadratic.fqOp_stone_flow
+#print axioms BookProof.FullQuadratic.crossTerm_essentiallySelfAdjoint
+#print axioms BookProof.FullQuadratic.crossTerm_stone_flow
+#print axioms BookProof.FullQuadratic.fqQuadPoly_rotMat
+#print axioms BookProof.FullQuadratic.angularMomentum_essentiallySelfAdjoint
+#print axioms BookProof.FullQuadratic.angularMomentum_stone_flow
+
+
+-- `ChapterOperatorSeriesEsa`: the Faris–Lavine bounds — a relative bound `‖Hx‖ ≤ A‖Nx‖`
+-- and a commutator-form bound `|⟪x, i[H, N]x⟫| ≤ B⟪x, Nx⟫` — are additive, and survive an
+-- **infinite sum** of operators as soon as the two families of constants are summable.
+#print axioms BookProof.OperatorSeries.commForm_eq_neg_two_im
+#print axioms BookProof.OperatorSeries.seriesOp_symmetricOn
+#print axioms BookProof.OperatorSeries.seriesOp_norm_le
+#print axioms BookProof.OperatorSeries.seriesOp_commForm_le
+#print axioms BookProof.OperatorSeries.essentiallySelfAdjointOn_finiteModes_of_bounds
+#print axioms BookProof.OperatorSeries.essentiallySelfAdjointOn_finiteModes_of_series
+
+-- `ChapterFockQuadraticEsa`: the general quadratic boson Hamiltonian with **infinitely
+-- many modes**.  On the Fock space `ℓ²(ι →₀ ℕ)` of occupation-number configurations, with
+-- an arbitrary mode set `ι`, an arbitrary non-negative and possibly unbounded dispersion
+-- `ω`, and an arbitrary family of quadratic monomials `a^{†Pₖ}a^{Qₖ}` (`|Pₖ| + |Qₖ| ≤ 2`)
+-- with couplings `gₖ` subject only to `∑ₖ ‖gₖ‖(ω(Pₖ) + ω(Qₖ) + 2) < ∞`, the Hamiltonian
+-- is essentially self-adjoint on the finite-particle core.  Bogoliubov pair creation is
+-- the special case `Pₖ = eₘₖ + eₙₖ`, `Qₖ = 0`.
+#print axioms BookProof.FockQuadratic.amp_symm
+#print axioms BookProof.FockQuadratic.hopOp_norm_le
+#print axioms BookProof.FockQuadratic.hopOp_pairing
+#print axioms BookProof.FockQuadratic.pairOp_symmetricOn
+#print axioms BookProof.FockQuadratic.pairOp_norm_le
+#print axioms BookProof.FockQuadratic.pairOp_commForm_le
+#print axioms BookProof.FockQuadratic.freeOp_symmetricOn
+#print axioms BookProof.FockQuadratic.freeOp_commForm
+#print axioms BookProof.FockQuadratic.fockH_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockQuadratic.bogoliubov_essentiallySelfAdjointOn_core
+
+-- `ChapterDirectSumEsa`: essential self-adjointness **glues along an orthogonal direct
+-- sum**.  Testing the deficiency identity against single-fibre states shows that every
+-- coordinate of a deficiency vector of `⊕ᵢ Hᵢ` is a deficiency vector of the fibre
+-- operator `Hᵢ`, so fibrewise triviality gives triviality; the glued core is dense as soon
+-- as every fibre core is.  Applied to the parcel sectors of the continuum Navier–Stokes
+-- Fock space `⊕ₙ L²(ℝⁿ)`, this gives the second-quantized Hamiltonian
+-- `ĥ = ∫ w(ξ)a†(ξ)a(ξ)dξ` on the Fock space itself, for an arbitrary measurable field `w`,
+-- and — through the Stone bridge — its complete unitary flow `e^{−itĥ}`.
+#print axioms BookProof.DirectSumEsa.dsOp_single
+#print axioms BookProof.DirectSumEsa.dsOp_symmetricOn
+#print axioms BookProof.DirectSumEsa.dsOp_deficiencyTrivialAt
+#print axioms BookProof.DirectSumEsa.dsOp_essentiallySelfAdjointOn
+#print axioms BookProof.DirectSumEsa.dsOpD_hasZeroDeficiencyOn
+#print axioms BookProof.DirectSumEsa.dsOpD_isSymmetricDom
+#print axioms BookProof.DirectSumEsa.dsCore_dense
+#print axioms BookProof.DirectSumEsa.fockCore_dense
+#print axioms BookProof.DirectSumEsa.fockH_isSymmetricDom
+#print axioms BookProof.DirectSumEsa.fockH_hasZeroDeficiencyOn
+#print axioms BookProof.DirectSumEsa.essentiallySelfAdjointOn_of_hasZeroDeficiencyOn
+#print axioms BookProof.DirectSumEsa.dsOpD_stone_flow
+#print axioms BookProof.DirectSumEsa.fockH_essentiallySelfAdjointOn
+#print axioms BookProof.DirectSumEsa.fockH_stone_flow
+
+-- `ChapterCarlemanGeneralHop`: the Carleman flux argument for a hop of the completely
+-- general shape `α ↦ α + p − m`, the one a quadratic Hamiltonian coupling two *distinct*
+-- modes produces (`α ↦ α ± (eᵢ + eⱼ)` and the non-monotone `α ↦ α ± (eᵢ − eⱼ)`).  The
+-- imaginary part of the flux is carried by two boundary layers, the outgoing `A \ B` and the
+-- incoming `B \ A`; both have bounded multiplicity, so Bessel's inequality controls them and
+-- the divergence `∑ 1/(N+1) = ∞` again forces a square-summable solution to vanish.
+#print axioms BookProof.CarlemanGeneralHop.hshift_hshift
+#print axioms BookProof.CarlemanGeneralHop.sum_ltG
+#print axioms BookProof.CarlemanGeneralHop.sum_hop_im
+#print axioms BookProof.CarlemanGeneralHop.flux_bound_gen
+#print axioms BookProof.CarlemanGeneralHop.flux_identityH
+#print axioms BookProof.CarlemanGeneralHop.ladderH_eq_zero
+
+-- `ChapterNavierStokesDiffHashimoto`: the Hashimoto/SIRK selection theorem on the
+-- *differential* realization of the Navier–Stokes fiber generator.  The Weyl-ordered
+-- polynomial operator `∑ᵢ ½(πᵢVᵢ + Vᵢπᵢ)` is Gauss symmetric, so the differential operator is
+-- symmetric on the Gauss–polynomial core of `L²(du₁du₂du₃)`; with the essential
+-- self-adjointness of `ChapterNavierStokesDifferentialL2` its closure is the unique
+-- self-adjoint extension, and for an arbitrary sequence of non-real shifts the SIRK
+-- resolvents exist, are bounded by `1/|Im γⱼ|`, share the domain of the generator, satisfy
+-- the resolvent identity and the Hashimoto–Nodera relation, have strongly convergent
+-- Galerkin truncations, and each determines the generator completely.
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffPoly_polySym
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_eq_coreOp
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_hashimoto_selects
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_shiftInvert_selects
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.nsQuadraticDiffH_hashimoto_selects
+#print axioms BookProof.NavierStokesFlow.DiffHashimoto.exists_l2dHilbertBasisNat
+
+-- `ChapterStarobinskyPotential`: the `R + αR²` potentials and the flow of the regularized
+-- conformal mode.  `f(R) = (M²/2)ψR − U(ψ)` is the ghost-free scalar–tensor form; the
+-- Einstein-frame scalaron potential is a square, hence non-negative, vanishing at the
+-- Minkowski vacuum, with the inflationary plateau `M⁴/(16α)` at `φ → +∞` and an exponential
+-- wall at `φ → −∞`; completing the square shows the conformal-mode potential is bounded below
+-- by `−M⁴/(16α)` precisely when `α > 0` (and unbounded below at `α = 0`, which is pure
+-- general relativity).  At the mode level the resulting Hamiltonian is symmetric and
+-- essentially self-adjoint on a dense maximal domain, so the Stone bridge gives it a complete
+-- unitary flow.
+#print axioms BookProof.Starobinsky.fR_eq_scalarTensor
+#print axioms BookProof.Starobinsky.starobinskyV_nonneg
+#print axioms BookProof.Starobinsky.starobinskyV_zero
+#print axioms BookProof.Starobinsky.starobinskyV_tendsto_plateau
+#print axioms BookProof.Starobinsky.starobinskyV_tendsto_atBot_atTop
+#print axioms BookProof.Starobinsky.confV_completed_square
+#print axioms BookProof.Starobinsky.confV_ge
+#print axioms BookProof.Starobinsky.confV_bddBelow
+#print axioms BookProof.Starobinsky.confV_zero_alpha_tendsto_atBot
+#print axioms BookProof.Starobinsky.mulSymbolDomain_dense
+#print axioms BookProof.Starobinsky.qgR2Mode_potential_ge
+#print axioms BookProof.Starobinsky.qgR2Mode_esa
+#print axioms BookProof.Starobinsky.qgR2Mode_deficiencyTrivialAt
+#print axioms BookProof.Starobinsky.qgR2_stone_flow
+
+-- `ChapterScalaronCoreEsa`: the scalaron sector with its exponential wall.  The compactly
+-- supported smooth core of `L²` is dense (`ccDomain_dense`), and on it multiplication by an
+-- *arbitrary smooth* real potential is symmetric with trivial deficiency at every non-real
+-- point, hence essentially self-adjoint — no temperate growth, no boundedness and no
+-- semiboundedness hypothesis.  The Einstein-frame scalaron potential is smooth but provably
+-- *not* of temperate growth, so this is exactly the generality it needs; the full gauge-fixed
+-- `R + αR²` potential (conformal parabola plus scalaron) is likewise essentially self-adjoint
+-- and bounded below by `−M⁴/(16α)`.  `□ + V` is a symmetric operator on that dense core and
+-- each of its localizations is essentially self-adjoint on the Schwartz core.  At the mode
+-- level the Hamiltonian including the scalaron potential is essentially self-adjoint on its
+-- dense maximal domain and carries a complete unitary flow.
+#print axioms BookProof.ScalaronEsa.ccDomain_dense
+#print axioms BookProof.ScalaronEsa.smoothPotential_symmetric
+#print axioms BookProof.ScalaronEsa.smoothPotential_deficiencyTrivial
+#print axioms BookProof.ScalaronEsa.smoothPotential_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronEsa.contDiff_starobinskyV
+#print axioms BookProof.ScalaronEsa.starobinskyV_not_hasTemperateGrowth
+#print axioms BookProof.ScalaronEsa.starobinskyV_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronEsa.scalaronFullPotential_ge
+#print axioms BookProof.ScalaronEsa.scalaronFullPotential_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronEsa.wave_add_scalaron_symmetric
+#print axioms BookProof.ScalaronEsa.wave_add_smoothTruncatedPotential_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronEsa.wave_add_scalaronTruncated_esa
+#print axioms BookProof.ScalaronEsa.wave_add_smoothPotential_esa_of_finiteSpeed
+#print axioms BookProof.ScalaronEsa.wave_add_scalaron_esa_of_finiteSpeed
+#print axioms BookProof.ScalaronEsa.qgScalaronMode_potential_ge
+#print axioms BookProof.ScalaronEsa.qgScalaronMode_esa
+#print axioms BookProof.ScalaronEsa.qgScalaron_stone_flow
+
+-- `ChapterScalaronFockEsa`: from one particle to the **nested Fock space**.  The sector cores
+-- glue to a dense core of `⊕ₙ L²(Eₙ)`; the sector-wise multiplication operator by an arbitrary
+-- family of smooth potentials is symmetric, has trivial deficiency at every non-real point,
+-- is essentially self-adjoint and generates the unitary group.  Applied to the gauge-fixed
+-- `R + αR²` many-body potential `∑ⱼ (V₃(R_c ⱼ) + V(φ ⱼ))` — smooth, bounded below by
+-- `−n·M⁴/(16α)`, and at `n = 1` the one-particle potential of `ChapterScalaronCoreEsa` — this
+-- gives essential self-adjointness and the unitary group `e^{−itH}` of the scalaron
+-- Hamiltonian on the whole finite-particle Fock space, and likewise in the mode realisation.
+#print axioms BookProof.ScalaronFock.nestedCore_dense
+#print axioms BookProof.ScalaronFock.fockSmoothPotential_symmetric
+#print axioms BookProof.ScalaronFock.fockSmoothPotential_deficiencyTrivialAt
+#print axioms BookProof.ScalaronFock.fockSmoothPotential_esa
+#print axioms BookProof.ScalaronFock.fockSmoothPotential_stone_flow
+#print axioms BookProof.ScalaronFock.qgManyPotential_apply
+#print axioms BookProof.ScalaronFock.qgManyPotential_one
+#print axioms BookProof.ScalaronFock.contDiff_qgManyPotential
+#print axioms BookProof.ScalaronFock.qgManyPotential_ge
+#print axioms BookProof.ScalaronFock.qgManyPotential_esa
+#print axioms BookProof.ScalaronFock.qgFockCore_dense
+#print axioms BookProof.ScalaronFock.qgScalaronFock_symmetric
+#print axioms BookProof.ScalaronFock.qgScalaronFock_deficiencyTrivialAt
+#print axioms BookProof.ScalaronFock.qgScalaronFock_esa
+#print axioms BookProof.ScalaronFock.qgScalaronFock_stone_flow
+#print axioms BookProof.ScalaronFock.modeFockCore_dense
+#print axioms BookProof.ScalaronFock.qgScalaronModeFock_symmetric
+#print axioms BookProof.ScalaronFock.qgScalaronModeFock_deficiencyTrivialAt
+#print axioms BookProof.ScalaronFock.qgScalaronModeFock_esa
+#print axioms BookProof.ScalaronFock.qgScalaronModeFock_stone_flow
+#print axioms BookProof.ScalaronFock.qgScalaronModeFock_potential_ge
+
+-- `ChapterNavierStokesDiffFarisLavine`: the two Faris–Lavine inequalities for the Navier–Stokes
+-- quadratic symbol as an actual differential operator on `L²(du₁du₂du₃)` (plan item A4).  The
+-- comparison operator is the differential harmonic oscillator
+-- `nsDiffN μ = 2μ ∑ᵢ (πᵢ² + uᵢ²/4) + 1`, identified with the transported number operator by the
+-- polynomial identity `πᵢ² + uᵢ²/4 = aᵢ†aᵢ + ½` (`oscOp_eq_number`); the Gauss–polynomial core
+-- *is* the transported finite-mode core (`embedCore_surjective`).  On that core the relative
+-- bound `‖Hf‖² ≤ a‖Nf‖² + b‖f‖²` and the form-commutator bound `|⟪f, i[H,N]f⟫| ≤ c⟪f, Nf⟫` hold,
+-- and the same pair on the maximal domain of `N` in `L²(ℝ³)` yields essential self-adjointness
+-- of the differentially written symbol directly from the Faris–Lavine criterion — the
+-- alternative route to `ChapterNavierStokesDifferentialL2.nsDiffH_essentiallySelfAdjointOn_core`.
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.velNcore_eq_diagMax
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.oscPoly_eq
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.oscOp_eq_number
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_eq_ladder
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.intertwined_nsDiffN
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.embedCore_surjective
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_symmetricOn
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_quadForm_ge_norm_sq
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_relative_bound
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_commForm_bound
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_symmetricOn
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_quadForm_nonneg
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_add_one_surjective
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_core_approx
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_relative_bound
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_commForm_bound
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_restrict
+#print axioms BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_esa_of_farisLavine
+
+-- `ChapterScalaronDensitizedTransfer`: step 2 of plan item A5 — the conformal-mode potential
+-- after the densitized change of variables `e = y²`.  `densConfV M α y = V₃(y²)` is the
+-- pullback of the conformal-mode potential along `y = √e`; it is still bounded below by
+-- `−M⁴/(16α)` (`densConfV_ge`), and still unbounded below at `α = 0`
+-- (`densConfV_zero_alpha_tendsto_atBot`), so the bound is bought by `αR²` and not by the
+-- densitization.  The half-density unitary of `ChapterQuantumGravityHalfDensity` carries the
+-- bounded-energy core of `L²((0,∞), de)` onto that of `L²((0,∞), 2y dy)` and intertwines the
+-- two multiplication Hamiltonians, so vanishing adjoint deficiency transfers along it
+-- (`physConf_hasZeroDeficiencyOn_transfer`), with the Stone flows on both sides.  At the
+-- operator level, a pointwise lower bound on the multiplier is semiboundedness of the
+-- operator (`multOp_quadForm_eq`, `multOp_quadForm_ge`, `densConfOp_quadForm_ge`).
+#print axioms BookProof.ScalaronDensitized.densConfV_comp_densY
+#print axioms BookProof.ScalaronDensitized.densConfV_ge
+#print axioms BookProof.ScalaronDensitized.densConfV_bddBelow
+#print axioms BookProof.ScalaronDensitized.densConfV_zero_alpha_tendsto_atBot
+#print axioms BookProof.ScalaronDensitized.physConfCore_dense
+#print axioms BookProof.ScalaronDensitized.densConfCore_dense
+#print axioms BookProof.ScalaronDensitized.physConfOp_symmetricOn
+#print axioms BookProof.ScalaronDensitized.densConfOp_symmetricOn
+#print axioms BookProof.ScalaronDensitized.halfDensityUnitary_mem_densConfCore
+#print axioms BookProof.ScalaronDensitized.halfDensityUnitary_densConfCore_surjective
+#print axioms BookProof.ScalaronDensitized.halfDensityUnitary_intertwines
+#print axioms BookProof.ScalaronDensitized.densConf_hasZeroDeficiencyOn
+#print axioms BookProof.ScalaronDensitized.physConf_hasZeroDeficiencyOn_transfer
+#print axioms BookProof.ScalaronDensitized.physConf_esa
+#print axioms BookProof.ScalaronDensitized.densConf_esa
+#print axioms BookProof.ScalaronDensitized.integral_norm_sq_eq_norm_sq
+#print axioms BookProof.ScalaronDensitized.multOp_quadForm_eq
+#print axioms BookProof.ScalaronDensitized.multOp_quadForm_ge
+#print axioms BookProof.ScalaronDensitized.densConfOp_quadForm_ge
+#print axioms BookProof.ScalaronDensitized.physConfOp_quadForm_ge
+#print axioms BookProof.ScalaronDensitized.densConf_stone_flow
+#print axioms BookProof.ScalaronDensitized.physConf_stone_flow
+
+-- `ChapterSirkEndToEnd`: the end-to-end SIRK reliability assembly (plan §12 Gap 1).
+-- `sirk_error_bound_at` is the pointwise-transfer strengthening of `ChapterH4.sirk_error_bound`
+-- that makes the composition possible; `sirk_end_to_end` then has no transfer hypothesis left,
+-- discharging it from the isometry, the Krylov invariance and the invertible denominator via
+-- `ChapterH8.compress_rational_transfer`.  `crouzeix_domain_transfer` shows one convex domain
+-- serves both Crouzeix bounds; `sirk_flow_error_tendsto_zero` and
+-- `sirk_flow_error_uniform_in_time` are the convergence conclusions (§12 Gap 3, bound half);
+-- `sirkReconstruction_isIdempotent`/`_isSelfAdjoint` identify reconstruction with the
+-- orthogonal projection onto the retained subspace (§12 Gap 4a).
+#print axioms BookProof.ChapterSirkEndToEnd.sirkApprox_id
+#print axioms BookProof.ChapterSirkEndToEnd.sirkReconstruction_isIdempotent
+#print axioms BookProof.ChapterSirkEndToEnd.sirkReconstruction_isSelfAdjoint
+#print axioms BookProof.ChapterSirkEndToEnd.norm_sirkApprox_apply_le
+#print axioms BookProof.ChapterSirkEndToEnd.norm_sirkApprox_apply_le_of_isometry
+#print axioms BookProof.ChapterSirkEndToEnd.sirk_error_bound_at
+#print axioms BookProof.ChapterSirkEndToEnd.crouzeix_domain_transfer
+#print axioms BookProof.ChapterSirkEndToEnd.crouzeix_domain_uniform
+#print axioms BookProof.ChapterSirkEndToEnd.sirk_end_to_end
+#print axioms BookProof.ChapterSirkEndToEnd.tendsto_zero_of_le_sirkBound
+#print axioms BookProof.ChapterSirkEndToEnd.sirk_flow_error_tendsto_zero
+#print axioms BookProof.ChapterSirkEndToEnd.sirk_flow_error_uniform_in_time
+#print axioms BookProof.ChapterSirkEndToEnd.sirk_end_to_end_satisfiable
+
+-- `ChapterSirkMultiShift`: the multi-shift forward-sequence span identity (plan §12 Gap 4b),
+-- with the general triangular criterion behind it and the shift-schedule independence of the
+-- compressed subspace.
+#print axioms BookProof.ChapterSirkMultiShift.triangularSpan_eq_krylovSpan
+#print axioms BookProof.ChapterSirkMultiShift.multiShiftSeq_sub_pow_mem
+#print axioms BookProof.ChapterSirkMultiShift.krylov_multiShift_eq_standard
+#print axioms BookProof.ChapterSirkMultiShift.krylov_multiShift_span_eq_of_shifts
+#print axioms BookProof.ChapterSirkMultiShift.multiShiftSeq_const
+
+-- `ChapterSirkRestart`: the restart cycle and its accumulated error (plan §12 Gap 4a).
+#print axioms BookProof.ChapterSirkRestart.norm_pow_apply_le_of_contraction
+#print axioms BookProof.ChapterSirkRestart.restart_error_accumulation
+#print axioms BookProof.ChapterSirkRestart.restart_error_accumulation_sirk
+#print axioms BookProof.ChapterSirkRestart.restart_error_tendsto_zero
+#print axioms BookProof.ChapterSirkRestart.comp_pow_of_comm
+#print axioms BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact
+#print axioms BookProof.ChapterSirkRestart.brst_leakage_bound
+
+-- `ChapterSirkWhitening`: the reduced operator depends only on the retained subspace
+-- (plan §12 Gap 4c) — same range projection, unitary change of whitening, conjugate
+-- compressions, and an identical reconstructed operator on the ambient space.
+#print axioms BookProof.ChapterSirkWhitening.rangeProj_adjoint
+#print axioms BookProof.ChapterSirkWhitening.rangeProj_isSelfAdjoint
+#print axioms BookProof.ChapterSirkWhitening.rangeProj_comp_self
+#print axioms BookProof.ChapterSirkWhitening.rangeProj_eq_of_range_eq
+#print axioms BookProof.ChapterSirkWhitening.adjoint_comp_rangeProj
+#print axioms BookProof.ChapterSirkWhitening.whiteningEquiv_isometry
+#print axioms BookProof.ChapterSirkWhitening.whiteningEquiv_left_inverse
+#print axioms BookProof.ChapterSirkWhitening.compress_conj_whitening
+#print axioms BookProof.ChapterSirkWhitening.compress_reconstruct_eq
+#print axioms BookProof.ChapterSirkWhitening.sirkApprox_eq_of_range_eq
+
+-- `ChapterSirkSpectralGeometry`: the Crouzeix domain of the shift-invert (plan §12 Gap 2,
+-- abstract half) — a real segment in the positive/Friedrichs regime, a disc at a non-real
+-- shift, inherited by every Krylov compression, and the end-to-end bound in domain form.
+#print axioms BookProof.ChapterSirkSpectralGeometry.convex_realSegment
+#print axioms BookProof.ChapterSirkSpectralGeometry.realSegment_subset_closedBall
+#print axioms BookProof.ChapterSirkSpectralGeometry.numRange_subset_realSegment_of_shiftInvert
+#print axioms BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvert
+#print axioms BookProof.ChapterSirkSpectralGeometry.numRange_subset_closedBall_of_shiftInvertC
+#print axioms BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvertC
+#print axioms BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain
+#print axioms BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_convexHull
+#print axioms BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvert
+#print axioms BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvertC
+
+-- `ChapterSirkPerSystem`: the same domain, instantiated for each physical Hamiltonian
+-- (plan §12 Gap 2, concrete half), including the new QG shift-invert.
+#print axioms BookProof.ChapterSirkPerSystem.ym_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkPerSystem.ns_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkPerSystem.nsDiff_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkPerSystem.lagrangian_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkPerSystem.diagKR_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkPerSystem.qgR2_shiftInvert_selects
+#print axioms BookProof.ChapterSirkPerSystem.qgR2_sirk_crouzeix_domain
+
+-- `ChapterSirkTruncation`: the rank-truncated Gram case (plan §12 Gap 4c, remaining half).
+#print axioms BookProof.ChapterSirkTruncation.compress_comp
+#print axioms BookProof.ChapterSirkTruncation.isometry_comp
+#print axioms BookProof.ChapterSirkTruncation.sirk_error_bound_at_leaky
+#print axioms BookProof.ChapterSirkTruncation.transfer_defect_le_of_leakage
+#print axioms BookProof.ChapterSirkTruncation.adjoint_reconstruction_eq
+#print axioms BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated
+#print axioms BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated_of_exact
+
+-- `ChapterSirkGroupTransfer`: the unitary-group transfer for bounded generators
+-- (plan §12 Gap 3, the bounded half).
+#print axioms BookProof.ChapterSirkGroupTransfer.norm_pow_le_of_le
+#print axioms BookProof.ChapterSirkGroupTransfer.norm_pow_sub_pow_le
+#print axioms BookProof.ChapterSirkGroupTransfer.norm_exp_sub_exp_le
+#print axioms BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le
+#print axioms BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval
+
+-- `ChapterSirkTrotterKato`: the Trotter–Kato transfer for unbounded self-adjoint
+-- generators (plan §12 Gap 3, the unbounded half).
+#print axioms BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub
+#print axioms BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub_apply
+#print axioms BookProof.ChapterSirkTrotterKato.resolvent_commutator_eq
+#print axioms BookProof.ChapterSirkTrotterKato.hasDerivAt_duhamel
+#print axioms BookProof.ChapterSirkTrotterKato.norm_res_stoneU_sub_stoneU_res_le
+#print axioms BookProof.ChapterSirkTrotterKato.tendsto_uniformly_on_isCompact_of_tendsto
+#print axioms BookProof.ChapterSirkTrotterKato.exists_res_domain_approx
+#print axioms BookProof.ChapterSirkTrotterKato.trotterKato_uniform_of_mem_range
+#print axioms BookProof.ChapterSirkTrotterKato.trotterKato_uniform_on_interval
+#print axioms BookProof.ChapterSirkTrotterKato.trotterKato_tendsto
+#print axioms BookProof.ChapterSirkTrotterKato.trotterKato_tendstoUniformlyOn
+
+-- `ChapterSirkTrotterKatoGalerkin`: the Galerkin instance of the transfer.
+#print axioms BookProof.ChapterSirkTrotterKato.resCLM_ofBounded
+#print axioms BookProof.ChapterSirkTrotterKato.strongResolventConvergence_ofBounded
+#print axioms BookProof.ChapterSirkTrotterKato.flow_transfer_of_strong_tendsto
+#print axioms BookProof.ChapterSirkTrotterKato.flow_tendsto_of_strong_tendsto
+#print axioms BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer
+#print axioms BookProof.ChapterSirkTrotterKato.galerkin_flow_tendsto
+
+-- `ChapterSirkLagrangianCanonical`: the canonical (ladder) and Fock/momentum Lagrangian
+-- realizations acquire their Hashimoto/SIRK selection (plan §12 Gap 2, NS Lagrangian).
+#print axioms BookProof.ChapterSirkLagrangianCanonical.lagCan_hashimoto_selects
+#print axioms BookProof.ChapterSirkLagrangianCanonical.lagCan_shiftInvert_selects
+#print axioms BookProof.ChapterSirkLagrangianCanonical.lagCan_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkLagrangianCanonical.fockLag_esa
+#print axioms BookProof.ChapterSirkLagrangianCanonical.fockLag_hashimoto_selects
+#print axioms BookProof.ChapterSirkLagrangianCanonical.fockLag_shiftInvert_selects
+#print axioms BookProof.ChapterSirkLagrangianCanonical.fockLag_sirk_crouzeix_domain
+#print axioms BookProof.ChapterSirkLagrangianCanonical.fockLag_stone_flow
+
+-- `ChapterSirkRitzSpectrum`: the Ritz values converge to the bottom of the spectrum of the
+-- selected extension (plan §12 Gap 2, QYM).
+#print axioms BookProof.ChapterSirkRitzSpectrum.le_rayleigh_iff_le_spectrum
+#print axioms BookProof.ChapterSirkRitzSpectrum.spectrum_real_nonempty
+#print axioms BookProof.ChapterSirkRitzSpectrum.spectrum_real_bddBelow
+#print axioms BookProof.ChapterSirkRitzSpectrum.sInf_spectrum_eq_rayleighInf
+#print axioms BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_eq_rayleighInf
+#print axioms BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum
+#print axioms BookProof.ChapterSirkRitzSpectrum.galerkin_ritz_tendsto_sInf_spectrum_of_selected
+
+-- `ChapterSirkDiffusiveDecay`: the laminar decay rate, and its preservation under the SIRK
+-- reduction (plan §12 Gap 2, NS Lagrangian).
+#print axioms BookProof.ChapterSirkDiffusiveDecay.hasDerivAt_heatFlow_apply
+#print axioms BookProof.ChapterSirkDiffusiveDecay.hasDerivAt_heatFlow_normSq
+#print axioms BookProof.ChapterSirkDiffusiveDecay.isCoercive_add_algebraMap
+#print axioms BookProof.ChapterSirkDiffusiveDecay.norm_heatFlow_apply_le
+#print axioms BookProof.ChapterSirkDiffusiveDecay.norm_heatFlow_le
+#print axioms BookProof.ChapterSirkDiffusiveDecay.isCoercive_compress
+#print axioms BookProof.ChapterSirkDiffusiveDecay.norm_heatFlow_compress_apply_le
+
+-- `ChapterQgHermiteCore`: the one-particle Hamiltonian of the gauge-fixed `R + αR²` model
+-- is well defined on the Gauss–polynomial (Hermite) core (plan §10.6.1, target 1).
+#print axioms BookProof.QgHermiteCore.exp_abs_le_const_mul_exp_sq
+#print axioms BookProof.QgHermiteCore.exp_abs_mul_gaussH_le
+#print axioms BookProof.QgHermiteCore.tendsto_exp_abs_mul_gaussH_atTop
+#print axioms BookProof.QgHermiteCore.expBounded_poly
+#print axioms BookProof.QgHermiteCore.expBounded_starobinskyV
+#print axioms BookProof.QgHermiteCore.memLp_gaussPoly
+#print axioms BookProof.QgHermiteCore.memLp_mul_gaussPoly_of_expBounded
+#print axioms BookProof.QgHermiteCore.memLp_starobinskyV_mul_gaussPoly
+#print axioms BookProof.QgHermiteCore.memLp_scalaronFull1D_mul_gaussPoly
+#print axioms BookProof.QgHermiteCore.hasDerivAt_gaussPoly
+#print axioms BookProof.QgHermiteCore.deriv2_gaussPoly
+#print axioms BookProof.QgHermiteCore.memLp_hamiltonian_gaussPoly
+#print axioms BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly
+#print axioms BookProof.QgHermiteCore.integral_gaussPoly_mul
+#print axioms BookProof.QgHermiteCore.gint_gaussPolyDeriv_antisymm
+#print axioms BookProof.QgHermiteCore.gint_gaussPolyDeriv_two_symm
+#print axioms BookProof.QgHermiteCore.integral_kinetic_symm
+#print axioms BookProof.QgHermiteCore.integral_hamiltonian_symm
+#print axioms BookProof.QgHermiteCore.integral_scalaronHamiltonian_symm
+#print axioms BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval
+#print axioms BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded
+#print axioms BookProof.QgHermiteCore.memLp_scalaronSectorPotential_mul_pgFun
+
+-- `ChapterQgHermiteFriedrichs`: the one-particle Hamiltonian `−Δ + W` on the
+-- Gauss–polynomial (Hermite) core is symmetric and semibounded, hence has a canonical
+-- Friedrichs realization (plan §10.6.1, towards target 4).
+#print axioms BookProof.QgHermiteFriedrichs.cpoly_kinPoly
+#print axioms BookProof.QgHermiteFriedrichs.gaussInt_coreD
+#print axioms BookProof.QgHermiteFriedrichs.gaussInt_kinPoly
+#print axioms BookProof.QgHermiteFriedrichs.hamCore_pgLp
+#print axioms BookProof.QgHermiteFriedrichs.hamCore_symmetricOn
+#print axioms BookProof.QgHermiteFriedrichs.re_gaussInt_kinPoly_self
+#print axioms BookProof.QgHermiteFriedrichs.hamCore_quadForm_ge
+#print axioms BookProof.QgHermiteFriedrichs.hamCore_quadForm_nonneg
+#print axioms BookProof.QgHermiteFriedrichs.hermiteCore_friedrichs_extension
+#print axioms BookProof.QgHermiteFriedrichs.hermiteCore_friedrichs_extension_of_nonneg
+#print axioms BookProof.QgHermiteFriedrichs.qgOneParticleHermite_friedrichs
+#print axioms BookProof.QgHermiteFriedrichs.qgOneParticleSector_friedrichs
+#print axioms BookProof.QgHermiteFriedrichs.hasDerivAt_pgFun_coord
+
+-- `ChapterQgHermiteOscillatorEsa`: essential self-adjointness on the Gauss–polynomial core
+-- for the harmonic potential, and for bounded perturbations of it (plan §10.6.1, target 4
+-- for the parabolic potential).
+#print axioms BookProof.QgHermiteOscillator.deficiencyTrivialAt_of_eigenbasis
+#print axioms BookProof.QgHermiteOscillator.essentiallySelfAdjointOn_of_eigenbasis
+#print axioms BookProof.QgHermiteOscillator.potLp_harmW
+#print axioms BookProof.QgHermiteOscillator.coreD_sq_add_harm
+#print axioms BookProof.QgHermiteOscillator.kinPoly_add_harmPoly
+#print axioms BookProof.QgHermiteOscillator.crePoly_annPoly_hermiteMv
+#print axioms BookProof.QgHermiteOscillator.harmCore_hermiteMvLp
+#print axioms BookProof.QgHermiteOscillator.harmonicCore_essentiallySelfAdjoint
+#print axioms BookProof.QgHermiteOscillator.harmonicCore_stone_flow
+#print axioms BookProof.QgHermiteOscillator.norm_potLp_le
+#print axioms BookProof.QgHermiteOscillator.hamCore_add_potential
+#print axioms BookProof.QgHermiteOscillator.harmonic_add_bounded_essentiallySelfAdjoint
+
+-- `ChapterScalaronHermiteEsa`: essential self-adjointness on the Gauss–polynomial core for
+-- an exponentially growing potential — the scalaron potential and the full `(R_c, φ)`
+-- sector potential (plan §10.6.1, target 4 for the scalaron potential term).
+#print axioms BookProof.ScalaronHermiteEsa.gaussExpDecay_of_memLp_mul
+#print axioms BookProof.ScalaronHermiteEsa.integrable_pgFun_mul_of_gaussExpDecay
+#print axioms BookProof.ScalaronHermiteEsa.fourier_gaussD_mul_eq_zero_of_gaussExpDecay
+#print axioms BookProof.ScalaronHermiteEsa.ae_eq_zero_of_moments_of_gaussExpDecay
+#print axioms BookProof.ScalaronHermiteEsa.gaussExpDecay_potential_sub
+#print axioms BookProof.ScalaronHermiteEsa.moments_of_deficiency
+#print axioms BookProof.ScalaronHermiteEsa.potCore_deficiencyTrivialAt
+#print axioms BookProof.ScalaronHermiteEsa.potCore_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronHermiteEsa.scalaronPot_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronHermiteEsa.potCore_stone_flow
+#print axioms BookProof.ScalaronHermiteEsa.scalaronPot_stone_flow
+#print axioms BookProof.ScalaronHermiteEsa.scalaronSector_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronHermiteEsa.scalaronSector_stone_flow
+
+-- `ChapterHermiteExpWall`: the exponential wall is *not* a relatively bounded perturbation
+-- on the Gauss–polynomial core, neither of the kinetic term nor of the conformal-mode
+-- oscillator (plan §10.6.1, target 2, restated and refuted).
+#print axioms BookProof.HermiteExpWall.gaussMoment_tilt_ge
+#print axioms BookProof.HermiteExpWall.gaussMoment_shift_eight
+#print axioms BookProof.HermiteExpWall.quadForm_scalaron_ge
+#print axioms BookProof.HermiteExpWall.l2_scalaron_ge
+#print axioms BookProof.HermiteExpWall.neg_deriv2_psi
+#print axioms BookProof.HermiteExpWall.osc_psi
+#print axioms BookProof.HermiteExpWall.l2_kin_le
+#print axioms BookProof.HermiteExpWall.l2_osc_le
+#print axioms BookProof.HermiteExpWall.not_relatively_bounded_of_cubic
+#print axioms BookProof.HermiteExpWall.scalaronV_not_kinetic_relativelyBounded
+#print axioms BookProof.HermiteExpWall.scalaronV_not_oscillator_relativelyBounded
+
+-- `ChapterHermiteQuadraticEsa`: the positive counterpart — the harmonic potential is
+-- relatively bounded with constant `1` against `−Δ + ‖x‖²/4`, so every continuous potential
+-- dominated by `a‖x‖²/4 + b` with `a < 1` keeps the Gauss–polynomial core a core, with the
+-- conformal-mode instance for `0 < α < 1/2` (plan §10.6.1, target 4, unbounded half).
+#print axioms BookProof.HermiteQuadraticEsa.gaussInt_anticommutator
+#print axioms BookProof.HermiteQuadraticEsa.two_re_inner_kin_harm_ge
+#print axioms BookProof.HermiteQuadraticEsa.norm_sq_harmPoly_mul_le
+#print axioms BookProof.HermiteQuadraticEsa.norm_harmPoly_mul_le
+#print axioms BookProof.HermiteQuadraticEsa.norm_potLp_le_of_le_harm
+#print axioms BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_stone_flow
+#print axioms BookProof.HermiteQuadraticEsa.quadraticGrowth_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.scaledHarmonic_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.confV_stone_flow
+#print axioms BookProof.HermiteQuadraticEsa.expBounded_of_growth_bound
+#print axioms BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le
+#print axioms BookProof.HermiteQuadraticEsa.sectorQuad_essentiallySelfAdjoint
+#print axioms BookProof.HermiteQuadraticEsa.sectorQuad_stone_flow
+#print axioms BookProof.HermiteQuadraticEsa.tendsto_starobinskyV_div_sq
+#print axioms BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint
+
+-- `ChapterFriedrichsCanonical`: the Friedrichs extension as a named operator, and its
+-- canonicity — it dominates every symmetric extension whose domain lies in the form
+-- domain, hence is the unique self-adjoint extension with that property; with the QG
+-- scalaron instance (plan §10.6.1 / §11.4).
+#print axioms BookProof.FriedrichsCanonical.dom_le_formDomain
+#print axioms BookProof.FriedrichsCanonical.friedrichsDomain_le_formDomain
+#print axioms BookProof.FriedrichsCanonical.friedrichsOp_resolvent
+#print axioms BookProof.FriedrichsCanonical.friedrichsOp_isPositiveSelfAdjointExtension
+#print axioms BookProof.FriedrichsCanonical.eq_zero_of_inner_coe_eq_zero
+#print axioms BookProof.FriedrichsCanonical.friedrichs_canonical
+#print axioms BookProof.FriedrichsCanonical.friedrichs_unique_selfAdjoint
+#print axioms BookProof.FriedrichsCanonical.qgOneParticleHermite_friedrichs_canonical
+#print axioms BookProof.FriedrichsCanonical.qgOneParticleHermite_friedrichs_unique
+#print axioms BookProof.FriedrichsCanonical.isSemibounded_of_isPositive_shift
+#print axioms BookProof.FriedrichsCanonical.isPositive_shift_of_isSemibounded
+open BookProof.FriedrichsCanonical in
+#print axioms semiboundedFriedrichsOp_isSemiboundedSelfAdjointExtension
+#print axioms BookProof.FriedrichsCanonical.semibounded_friedrichs_unique
+#print axioms BookProof.FriedrichsCanonical.qgOneParticleSector_friedrichs_canonical
+#print axioms BookProof.FriedrichsCanonical.qgOneParticleSector_friedrichs_unique
+#print axioms BookProof.FriedrichsCanonical.unbounded_friedrichs_canonical_example
+
+-- `ChapterFermionFock`: the fermionic (CAR) half of the graded second quantization —
+-- Jordan-Wigner signs, the four canonical anticommutation relations, the adjoint pairing,
+-- the second quantization dGamma^a with its Friedrichs extension and Hashimoto/SIRK
+-- selection, the fermion-number parity, and the realization of the abstract BRST ghost
+-- relations (plan §10.6.2 item 3).
+#print axioms BookProof.FermionFock.car_annF_creF_self
+#print axioms BookProof.FermionFock.car_creF_creF
+#print axioms BookProof.FermionFock.creF_creF_self
+#print axioms BookProof.FermionFock.car_annF_annF
+#print axioms BookProof.FermionFock.car_annF_creF_of_ne
+#print axioms BookProof.FermionFock.inner_creF_left
+#print axioms BookProof.FermionFock.dGammaF_one_particle
+#print axioms BookProof.FermionFock.dGammaOpF_symmetricOn
+#print axioms BookProof.FermionFock.dGammaOpF_quadForm_nonneg
+#print axioms BookProof.FermionFock.dGammaF_friedrichs_extension
+#print axioms BookProof.FermionFock.secondQuantizationF_friedrichs
+#print axioms BookProof.FermionFock.dGammaF_hashimoto_selects
+#print axioms BookProof.FermionFock.secondQuantizationF_hashimoto_selects
+#print axioms BookProof.FermionFock.parityF_involutive
+#print axioms BookProof.FermionFock.parityF_creF
+#print axioms BookProof.FermionFock.parityF_annF
+#print axioms BookProof.FermionFock.ghostCAR_creF_annF
+#print axioms BookProof.FermionFock.brst_charge_nilpotent_fermiFock
+
+-- `ChapterGradedFock`: the graded Fock space Gamma^s (x) Gamma^a, the lifts of the
+-- operators of the two tensor factors, the single unified graded canonical relation
+-- (the book's Koszul-sign formula) and the Z2 grading (plan §10.6.2 item 3).
+#print axioms BookProof.GradedFock.liftFst_liftSnd_comm
+#print axioms BookProof.GradedFock.super_canonical
+#print axioms BookProof.GradedFock.super_canonical_cre
+#print axioms BookProof.GradedFock.super_canonical_ann
+#print axioms BookProof.GradedFock.gradeOp_involutive
+#print axioms BookProof.GradedFock.gradeOp_bcre
+#print axioms BookProof.GradedFock.gradeOp_fcre
+#print axioms BookProof.GradedFock.even_add_odd
+#print axioms BookProof.GradedFock.gradeOp_evenPart
+#print axioms BookProof.GradedFock.gradeOp_oddPart
+
+-- `ChapterFockSecondQuantization`: the off-diagonal bosonic canonical commutation
+-- relations added for the graded superalgebra.
+#print axioms BookProof.FockSecondQuantization.ccr_annA_creA_of_ne
+#print axioms BookProof.FockSecondQuantization.ccr_annA_annA
+#print axioms BookProof.FockSecondQuantization.ccr_creA_creA
+
+-- `ChapterGradedFriedrichs`: the analytic half of the graded second quantization —
+-- the generic transport of the finitely supported model into l^2, the slice calculus
+-- of the tensor product, the inheritance of symmetry and positivity by the one-factor
+-- lifts, and the Friedrichs extension of dGamma^s(A) (x) 1 + 1 (x) dGamma^a(B).
+#print axioms BookProof.GradedFriedrichs.ainner_eq_sum
+#print axioms BookProof.GradedFriedrichs.algEquivL2
+#print axioms BookProof.GradedFriedrichs.opOfAlg_symmetricOn
+#print axioms BookProof.GradedFriedrichs.opOfAlg_quadForm_nonneg
+#print axioms BookProof.GradedFriedrichs.algOp_friedrichs_extension
+#print axioms BookProof.GradedFriedrichs.sliceFst_apply
+#print axioms BookProof.GradedFriedrichs.sliceSnd_apply
+#print axioms BookProof.GradedFriedrichs.sliceFst_liftFst
+#print axioms BookProof.GradedFriedrichs.sliceSnd_liftSnd
+#print axioms BookProof.GradedFriedrichs.ainner_eq_sum_sliceFst
+#print axioms BookProof.GradedFriedrichs.ainner_eq_sum_sliceSnd
+#print axioms BookProof.GradedFriedrichs.isSymAlg_liftFst
+#print axioms BookProof.GradedFriedrichs.isPosAlg_liftFst
+#print axioms BookProof.GradedFriedrichs.isSymAlg_liftSnd
+#print axioms BookProof.GradedFriedrichs.isPosAlg_liftSnd
+#print axioms BookProof.GradedFriedrichs.gradedHamiltonian_symmetricOn
+#print axioms BookProof.GradedFriedrichs.gradedHamiltonian_quadForm_nonneg
+#print axioms BookProof.GradedFriedrichs.gradedHamiltonian_friedrichs_extension
+#print axioms BookProof.GradedFriedrichs.gradedSecondQuantization_friedrichs
+#print axioms BookProof.GradedFriedrichs.gradedNumber_one_particle
+#print axioms BookProof.GradedFriedrichs.gradedNumber_friedrichs_extension
+
+-- `ChapterGradedHashimoto`: the graded Hamiltonian is an even operator (it commutes
+-- with the Z2 grading (-1)^{N_f}, so it preserves the even and odd subspaces), and the
+-- Hashimoto/SIRK shift-invert limit selects its Friedrichs extension, with the concrete
+-- instance of the total number operator N_b (x) 1 + 1 (x) N_f.
+#print axioms BookProof.GradedHashimoto.gradedHamiltonianAlg_otimes
+#print axioms BookProof.GradedHashimoto.parityF_creVecF
+#print axioms BookProof.GradedHashimoto.parityF_dGammaF
+#print axioms BookProof.GradedHashimoto.gradeOp_gradedHamiltonianAlg
+#print axioms BookProof.GradedHashimoto.gradedHamiltonianAlg_evenPart
+#print axioms BookProof.GradedHashimoto.gradedHamiltonianAlg_oddPart
+#print axioms BookProof.GradedHashimoto.gradedHamiltonianB_symmetricOn
+#print axioms BookProof.GradedHashimoto.gradedHamiltonianB_quadForm_nonneg
+#print axioms BookProof.GradedHashimoto.graded_hashimoto_selects
+#print axioms BookProof.GradedHashimoto.gradedSecondQuantization_hashimoto_selects
+#print axioms BookProof.GradedHashimoto.gradedNumber_hashimoto_selects
+#print axioms BookProof.GradedHashimoto.graded_stone_flow
+#print axioms BookProof.GradedHashimoto.gradedNumber_stone_flow
+
+-- `ChapterKrylovShiftSpan`: the multi-shift (rational) Krylov spaces used by the
+-- SIRK/Hashimoto solver coincide with the plain Krylov space: the shifted forward
+-- sequence spans it for any shift sequence, and the resolvent (rational) Krylov space
+-- is its image under the product of all the resolvents.
+#print axioms BookProof.KrylovShiftSpan.forwardProd_mem_krylovSpan
+#print axioms BookProof.KrylovShiftSpan.pow_mem_forwardSpan
+#print axioms BookProof.KrylovShiftSpan.forwardSpan_eq_krylovSpan
+#print axioms BookProof.KrylovShiftSpan.forwardSpan_eq_forwardSpan
+#print axioms BookProof.KrylovShiftSpan.commute_resolvent_shiftOp
+#print axioms BookProof.KrylovShiftSpan.commute_resolvent
+#print axioms BookProof.KrylovShiftSpan.forwardProd_eq_tailProd_mul
+#print axioms BookProof.KrylovShiftSpan.resProd_mul_tailProd
+#print axioms BookProof.KrylovShiftSpan.tailProd_eq_forwardProd_rev
+#print axioms BookProof.KrylovShiftSpan.tailSpan_eq_krylovSpan
+#print axioms BookProof.KrylovShiftSpan.resolventSpan_eq_map_krylovSpan
+#print axioms BookProof.KrylovShiftSpan.forwardProd_mul_resProd
+#print axioms BookProof.KrylovShiftSpan.krylovSpan_eq_map_resolventSpan
+#print axioms BookProof.KrylovShiftSpan.resolventSpan_eq_span_resVec
+#print axioms BookProof.KrylovShiftSpan.resProd_of_perm
+#print axioms BookProof.KrylovShiftSpan.resolventSpan_of_perm
+
+-- `ChapterSirkGramWhitening`: the Gram whitening the solver performs really is an
+-- orthonormalization of the retained Krylov subspace — the synthesis map, the Gram
+-- operator/matrix, `T∗GT = 1` implies `V∗V = 1`, and such a `T` exists.
+#print axioms BookProof.ChapterSirkGramWhitening.range_synthesis
+#print axioms BookProof.ChapterSirkGramWhitening.synthesis_adjoint_eq
+#print axioms BookProof.ChapterSirkGramWhitening.synthesis_injective_of_linearIndependent
+#print axioms BookProof.ChapterSirkGramWhitening.gramOp_apply
+#print axioms BookProof.ChapterSirkGramWhitening.inner_gramOp
+#print axioms BookProof.ChapterSirkGramWhitening.gramOp_isSelfAdjoint
+#print axioms BookProof.ChapterSirkGramWhitening.gramOp_nonneg
+#print axioms BookProof.ChapterSirkGramWhitening.whitened_adjoint_comp_self
+#print axioms BookProof.ChapterSirkGramWhitening.norm_whitened_apply
+#print axioms BookProof.ChapterSirkGramWhitening.range_whitened
+#print axioms BookProof.ChapterSirkGramWhitening.onbEmbedding_isometry
+#print axioms BookProof.ChapterSirkGramWhitening.range_onbEmbedding
+#print axioms BookProof.ChapterSirkGramWhitening.exists_isometry_range_eq_span
+#print axioms BookProof.ChapterSirkGramWhitening.exists_isometry_fin_range_eq_span
+#print axioms BookProof.ChapterSirkGramWhitening.exists_isWhitening
+#print axioms BookProof.ChapterSirkGramWhitening.exists_whitened_isometry_onto_span
+#print axioms BookProof.ChapterSirkGramWhitening.sirkApprox_gram_whitening_eq
+#print axioms BookProof.ChapterSirkGramWhitening.compress_gram_whitening_conj
+#print axioms BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose
+#print axioms BookProof.ChapterSirkGramWhitening.gramOp_eq_toEuclideanCLM
+#print axioms BookProof.ChapterSirkGramWhitening.isWhitening_of_matrix
+#print axioms BookProof.ChapterSirkGramWhitening.isWhitening_one_of_orthonormal
+#print axioms BookProof.ChapterSirkGramWhitening.sum_norm_coord_le
+#print axioms BookProof.ChapterSirkGramWhitening.norm_defect_synthesis_le
+#print axioms BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram
+
+-- `ChapterSirkGramCutoff`: the numerical cutoff on the Gram eigenvalues bounds the
+-- truncation defect (`δ ≤ √tol`), and the inverse-square-root embedding the solver
+-- builds from the retained eigenpairs is an isometric embedding of the retained subspace.
+#print axioms BookProof.ChapterSirkGramCutoff.norm_sq_sum_orthogonal
+#print axioms BookProof.ChapterSirkGramCutoff.exists_gramEigen
+#print axioms BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen
+#print axioms BookProof.ChapterSirkGramCutoff.norm_sq_synthesis_gramEigen
+#print axioms BookProof.ChapterSirkGramCutoff.gramEigen_nonneg
+#print axioms BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range
+#print axioms BookProof.ChapterSirkGramCutoff.synthesis_eq_sum_gramEigen
+#print axioms BookProof.ChapterSirkGramCutoff.dist_synthesis_retained_le
+#print axioms BookProof.ChapterSirkGramCutoff.synthesis_single
+#print axioms BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff
+#print axioms BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff
+#print axioms BookProof.ChapterSirkGramCutoff.retainedVec_orthonormal
+#print axioms BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal
+#print axioms BookProof.ChapterSirkGramCutoff.retainedEmbedding_isometry
+#print axioms BookProof.ChapterSirkGramCutoff.range_retainedEmbedding
+#print axioms BookProof.ChapterSirkGramCutoff.mem_range_retainedEmbedding
+#print axioms BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff_retained
+
+-- Wave (2026-08-24, gate re-run): the four modules that had never been in a build target.
+-- `ChapterNavierStokesCarleman`: Carleman's criterion for a Jacobi operator on `ℓ²(ℕ)` and
+-- the half-line realization of the full Navier–Stokes Hamiltonian.
+#print axioms BookProof.NavierStokesFlow.Carleman.tridiagOp_isSymmetricDom
+#print axioms BookProof.NavierStokesFlow.Carleman.tridiag_wronskian
+#print axioms BookProof.NavierStokesFlow.Carleman.wron_eq_sum
+#print axioms BookProof.NavierStokesFlow.Carleman.sum_normSq_le
+#print axioms BookProof.NavierStokesFlow.Carleman.tridiag_hasZeroDeficiencyOn_of_carleman
+#print axioms BookProof.NavierStokesFlow.Carleman.weyl_momOp_diagOp
+#print axioms BookProof.NavierStokesFlow.Carleman.halfLineFullData_hamiltonian
+#print axioms BookProof.NavierStokesFlow.Carleman.halfLineFull_hasZeroDeficiencyOn
+#print axioms BookProof.NavierStokesFlow.Carleman.linearFull_hasZeroDeficiencyOn
+#print axioms BookProof.NavierStokesFlow.Carleman.linearFull_not_bounded
+
+-- The three attention-layer modules of the same wave.
+#print axioms BookProof.ChapterSoftmaxTemperatureMonotone.scoreSoftmax_monotone_of_max
+#print axioms BookProof.ChapterSoftmaxTemperatureMonotone.scoreSoftmax_antitone_of_min
+#print axioms BookProof.ChapterAttentionResponse.deriv_headOutput
+#print axioms BookProof.ChapterAttentionResponse.norm_headOutput_sub_le_temperature
+#print axioms BookProof.ChapterAttentionCapacity.exists_beta_forall_retrieval
+
+-- The Cayley-transform wave (plan §9 backlog item 3): the unbounded self-adjoint layer is
+-- encoded by a unitary, and back.
+#print axioms BookProof.ChapterCayleyTransform.norm_shift_one_eq_norm_shift_neg_one
+#print axioms BookProof.ChapterCayleyTransform.cayleyMap_shift
+#print axioms BookProof.ChapterCayleyTransform.norm_cayleyMap
+#print axioms BookProof.ChapterCayleyTransform.cayleyMap_surjective
+#print axioms BookProof.ChapterCayleyTransform.cayley_shift
+#print axioms BookProof.ChapterCayleyTransform.sub_cayley_shift
+#print axioms BookProof.ChapterCayleyTransform.add_cayley_shift
+#print axioms BookProof.ChapterCayleyTransform.one_sub_cayley_injective
+#print axioms BookProof.ChapterCayleyTransform.cayley_apply_ne_self
+#print axioms BookProof.ChapterCayleyTransform.range_one_sub_cayley
+#print axioms BookProof.ChapterCayleyTransform.denseRange_one_sub_cayley
+#print axioms BookProof.ChapterCayleyTransform.op_eq_cayley
+#print axioms BookProof.ChapterCayleyTransform.coe_eq_cayley
+#print axioms BookProof.ChapterCayleyInverse.isSelfAdjointOn_of_surjective
+#print axioms BookProof.ChapterCayleyInverse.invCayleyOp_symmetric
+#print axioms BookProof.ChapterCayleyInverse.invCayleyOp_add_i
+#print axioms BookProof.ChapterCayleyInverse.invCayleyOp_sub_i
+#print axioms BookProof.ChapterCayleyInverse.invCayleyOp_isSelfAdjointOn
+#print axioms BookProof.ChapterCayleyInverse.cayley_ofUnitary
+#print axioms BookProof.ChapterCayleyInverse.invCayleyDomain_cayley
+#print axioms BookProof.ChapterCayleyInverse.invCayleyOp_cayley
+
+#print axioms BookProof.ChapterCayleySpectralModel.res_neg_one_eq_cayley
+#print axioms BookProof.ChapterCayleySpectralModel.res_one_eq_cayley
+#print axioms BookProof.ChapterCayleySpectralModel.isStarNormal_cayleyCLM
+#print axioms BookProof.ChapterCayleySpectralModel.cfcHom_resSymbol
+#print axioms BookProof.ChapterCayleySpectralModel.cfcHom_opSymbol
+#print axioms BookProof.ChapterCayleySpectralModel.spectralUnitary_resSymbol
+#print axioms BookProof.ChapterCayleySpectralModel.spectralUnitary_opSymbol
+#print axioms BookProof.ChapterCayleySpectralModel.unbounded_spectral_multiplication_model
+
+-- The BRST truncation-leakage wave (plan §12.2 Gap 5): the leakage of the truncated flow
+-- out of the physical subspace, quantified by the discarded block of the Hamiltonian.
+#print axioms BookProof.BrstLeakage.flow_mem_unitary
+#print axioms BookProof.BrstLeakage.norm_unitary_apply
+#print axioms BookProof.BrstLeakage.norm_flow_apply
+#print axioms BookProof.BrstLeakage.omega_flow_apply
+#print axioms BookProof.BrstLeakage.norm_omega_flow_eq
+#print axioms BookProof.BrstLeakage.flow_mem_ker_omega
+#print axioms BookProof.BrstLeakage.hasDerivAt_duhamel
+#print axioms BookProof.BrstLeakage.norm_flow_sub_flow_apply_le
+#print axioms BookProof.BrstLeakage.norm_flow_sub_flow_apply_le'
+#print axioms BookProof.BrstLeakage.flow_neg_gen
+#print axioms BookProof.BrstLeakage.norm_flow_sub_flow_apply_le_abs
+#print axioms BookProof.BrstLeakage.norm_flow_sub_flow_le
+#print axioms BookProof.BrstLeakage.leakage_le
+#print axioms BookProof.BrstLeakage.leakage_le_of_physical
+#print axioms BookProof.BrstLeakage.leakage_le_abs
+#print axioms BookProof.BrstLeakage.truncGen_isSelfAdjoint
+#print axioms BookProof.BrstLeakage.flow_truncGen_mem
+#print axioms BookProof.BrstLeakage.truncation_leakage_le
+#print axioms BookProof.BrstLeakage.truncation_leakage_le_abs
+#print axioms BookProof.BrstLeakage.truncation_leakage_le_of_physical
+#print axioms BookProof.BrstLeakage.norm_leakageIter
+#print axioms BookProof.BrstLeakage.leakage_iterate_le
+#print axioms BookProof.BrstLeakage.norm_flow_sub_flow_le_cycle
+#print axioms BookProof.BrstLeakage.brst_leakage_bound_of_generator
+
+-- The unbounded-hop Carleman wave (plan §10.6.1 target 3): the flux criterion for
+-- infinite-range Hermitian kernels on `ℓ²(ℕ)`, and a genuinely infinite-range instance.
+#print axioms BookProof.CarlemanUnboundedHop.flux_identity
+#print axioms BookProof.CarlemanUnboundedHop.eq_zero_of_flux_small
+#print axioms BookProof.CarlemanUnboundedHop.Theta_antitone
+#print axioms BookProof.CarlemanUnboundedHop.two_norm_flux_le
+#print axioms BookProof.CarlemanUnboundedHop.summable_cutMass
+#print axioms BookProof.CarlemanUnboundedHop.exists_mul_lt_of_not_summable_inv
+#print axioms BookProof.CarlemanUnboundedHop.ladder_eq_zero_of_carleman
+#print axioms BookProof.CarlemanUnboundedHop.memℓp_kernelFun
+#print axioms BookProof.CarlemanUnboundedHop.kernelOp_symmetric
+#print axioms BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency
+#print axioms BookProof.CarlemanUnboundedHop.kernelOp_deficiencyTrivialAt
+#print axioms BookProof.CarlemanUnboundedHop.kernelOp_essentiallySelfAdjoint
+#print axioms BookProof.CarlemanUnboundedHop.kernelOp_stone_flow
+#print axioms BookProof.CarlemanUnboundedHop.geoHop_isL2Kernel
+#print axioms BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint
+#print axioms BookProof.CarlemanUnboundedHop.geoHop_stone_flow
+
+-- The unbounded-generator BRST leakage wave (plan §12.2 Gap 5, unbounded half): the Duhamel
+-- estimate against the Stone group of an unbounded self-adjoint operator, and the leakage of
+-- the finite-dimensional compression `P T P`.
+#print axioms BookProof.BrstUnboundedLeakage.hasDerivAt_isometry_apply
+#print axioms BookProof.BrstUnboundedLeakage.hasDerivAt_flow
+#print axioms BookProof.BrstUnboundedLeakage.flow_apply_flow
+#print axioms BookProof.BrstUnboundedLeakage.hasDerivAt_duhamel_stone
+#print axioms BookProof.BrstUnboundedLeakage.norm_flow_sub_stoneU_le
+#print axioms BookProof.BrstUnboundedLeakage.norm_omega_stoneU_eq
+#print axioms BookProof.BrstUnboundedLeakage.leakage_le
+#print axioms BookProof.BrstUnboundedLeakage.leakage_le_of_physical
+#print axioms BookProof.BrstUnboundedLeakage.truncGen_isSelfAdjoint
+#print axioms BookProof.BrstUnboundedLeakage.flow_mem_of_proj
+#print axioms BookProof.BrstUnboundedLeakage.flow_truncGen_mem
+#print axioms BookProof.BrstUnboundedLeakage.defect_eq_truncDefect
+#print axioms BookProof.BrstUnboundedLeakage.norm_flow_truncGen_sub_stoneU_le
+#print axioms BookProof.BrstUnboundedLeakage.truncation_leakage_le
+#print axioms BookProof.BrstUnboundedLeakage.truncation_leakage_le_of_physical
+#print axioms BookProof.BrstUnboundedLeakage.restartGen_isSelfAdjoint
+#print axioms BookProof.BrstUnboundedLeakage.norm_restartIter
+#print axioms BookProof.BrstUnboundedLeakage.restart_leakage_le
+-- The BRST-reduced transfer wave (plan §10.6.2 item 4): the physical subspace and the exact
+-- states are invariant under anything commuting with the BRST charge, so the unitary group
+-- descends to BRST cohomology as a norm-preserving one-parameter group of automorphisms.
+#print axioms BookProof.BrstReducedTransfer.exactStates_le_physicalStates
+#print axioms BookProof.BrstReducedTransfer.physicalStates_invariant
+#print axioms BookProof.BrstReducedTransfer.exactStates_invariant
+#print axioms BookProof.BrstReducedTransfer.transfer_zero
+#print axioms BookProof.BrstReducedTransfer.transfer_comp
+#print axioms BookProof.BrstReducedTransfer.transfer_bijective
+#print axioms BookProof.BrstReducedTransfer.infDist_exactStates_eq
+#print axioms BookProof.BrstReducedTransfer.stoneU_mem_physicalStates
+#print axioms BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates
+#print axioms BookProof.BrstReducedTransfer.stoneTransfer_comp
+#print axioms BookProof.BrstReducedTransfer.stoneTransfer_bijective
+#print axioms BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq
+
+-- The concrete 3D gauge-fixed *gravity* field-space wave (plan §10.6.2 item 4, QG Part F):
+-- the densitized-tetrad Hamiltonian on the Gauss–polynomial core of `L²(ℝ⁸⁴)`, and the BRST
+-- charge with `ℤ₂¹⁹` ghosts on the graded space `ℂ[x₀,…,x₈₃] ⊗ Λ(ℂ¹⁹)`.
+#print axioms BookProof.QuantumGravity3DGauge.qg3DDensity_densitized
+#print axioms BookProof.QuantumGravity3DGauge.qgCCR
+#print axioms BookProof.QuantumGravity3DGauge.qgKappa_indefinite
+#print axioms BookProof.QuantumGravity3DGauge.qg3D_symmetricOn
+#print axioms BookProof.QuantumGravity3DGauge.qg3D_quadForm
+#print axioms BookProof.QuantumGravity3DGauge.qg3DElliptic_friedrichs_extension
+#print axioms BookProof.QuantumGravity3DGauge.qg3DElliptic_hashimoto_selects
+-- `ChapterQg3DGaugeEsa` (plan §10.2b): the same field-space Hamiltonian is quadratic in
+-- the canonical pair, hence essentially self-adjoint on the Gauss–polynomial core for every
+-- real signature — the physical hyperbolic one included — with its Stone flow.
+#print axioms BookProof.Qg3DGaugeEsa.sum_torsionVec_X
+#print axioms BookProof.Qg3DGaugeEsa.qgFqQ_quadratic_eq
+#print axioms BookProof.Qg3DGaugeEsa.qgSignedPoly_eq_fqPoly
+#print axioms BookProof.Qg3DGaugeEsa.qgSigned_eq_fqOp
+#print axioms BookProof.Qg3DGaugeEsa.qgSigned_essentiallySelfAdjointOn_core
+#print axioms BookProof.Qg3DGaugeEsa.qg3D_essentiallySelfAdjointOn_core
+#print axioms BookProof.Qg3DGaugeEsa.qg3D_stone_flow
+#print axioms BookProof.Qg3DGaugeEsa.qg3DElliptic_essentiallySelfAdjointOn_core
+#print axioms BookProof.QuantumGravityBrstCharge.glin_sq
+#print axioms BookProof.QuantumGravityBrstCharge.glin_mul_Q_add_Q_mul_glin
+#print axioms BookProof.QuantumGravityBrstCharge.brst_full_nilpotent
+#print axioms BookProof.QuantumGravityBrstCharge.brst_abelian_nilpotent
+#print axioms BookProof.QuantumGravityBrstCharge.elemGen_bracket
+#print axioms BookProof.QuantumGravityBrstCharge.linGen_bracket
+#print axioms BookProof.QuantumGravityBrstCharge.ghost_car
+#print axioms BookProof.QuantumGravityBrstCharge.bosOp_ghostOp_comm
+#print axioms BookProof.QuantumGravityBrstCharge.qgGhostCar
+#print axioms BookProof.QuantumGravityBrstCharge.qgBRST_nilpotent
+#print axioms BookProof.QuantumGravityBrstCharge.qgBRST_abelian_nilpotent
+#print axioms BookProof.QuantumGravityBrstCharge.affMat_non_abelian
+#print axioms BookProof.QuantumGravityBrstCharge.affMat_close
+#print axioms BookProof.QuantumGravityBrstCharge.affF_jacobi
+#print axioms BookProof.QuantumGravityBrstCharge.affBRST_nilpotent
+
+-- `ChapterQgOneParticleCcEsa` (plan §10.6.1 / §10.6.2 item 2): the same `R + αR²` class on
+-- the *compactly supported smooth* core `C_c^∞`, obtained from the Hermite-core theorem by a
+-- graph-norm cut-off transfer, together with the conformal mode, the reduced sector, the
+-- `n`-particle sector and the finite-particle Fock space.
+#print axioms BookProof.QgOneParticleCc.deficiencyTrivialAt_of_graphApprox
+#print axioms BookProof.QgOneParticleCc.essentiallySelfAdjointOn_of_graphApprox
+#print axioms BookProof.QgOneParticleCc.ccHam_symmetricOn
+#print axioms BookProof.QgOneParticleCc.exists_cc_graph_approx
+#print axioms BookProof.QgOneParticleCc.ccHam_essentiallySelfAdjoint_of_core
+#print axioms BookProof.QgOneParticleCc.qgOneParticleCc_esa
+#print axioms BookProof.QgOneParticleCc.qgOneParticleCc_stone_flow
+#print axioms BookProof.QgOneParticleCc.confVCc_esa
+#print axioms BookProof.QgOneParticleCc.confVCc_stone_flow
+#print axioms BookProof.QgOneParticleCc.sectorQuadCc_esa
+#print axioms BookProof.QgOneParticleCc.sectorQuadCc_stone_flow
+#print axioms BookProof.QgOneParticleCc.sum_harmW_partLM
+#print axioms BookProof.QgOneParticleCc.qgNParticleCc_esa
+#print axioms BookProof.QgOneParticleCc.qgFockCc_esa
+#print axioms BookProof.QgOneParticleCc.qgFockCc_stone_flow
+
+-- `ChapterQuantumGravityFock` (plan §10.6.2 item 3, QG Part E): the graded Fock space
+-- `Γˢ ⊗ Γᵃ` of the book's gravity Hilbert space — the fermionic (ghost) CAR half, the `ℤ₂`
+-- grading and superbracket, the graded state space with its canonical relations, and the
+-- essential self-adjointness (plus unitary group) of the graded Fock Hamiltonian.
+#print axioms BookProof.QuantumGravityFock.qgCCR_bose
+#print axioms BookProof.QuantumGravityFock.fermAnn_apply
+#print axioms BookProof.QuantumGravityFock.fermCre_apply
+#print axioms BookProof.QuantumGravityFock.car_fermAnn_fermCre
+#print axioms BookProof.QuantumGravityFock.car_fermAnn_fermCre_of_ne
+#print axioms BookProof.QuantumGravityFock.car_fermAnn_fermAnn
+#print axioms BookProof.QuantumGravityFock.car_fermCre_fermCre
+#print axioms BookProof.QuantumGravityFock.fermAnn_comp_self
+#print axioms BookProof.QuantumGravityFock.fermCre_comp_self
+#print axioms BookProof.QuantumGravityFock.inner_fermCre_left
+#print axioms BookProof.QuantumGravityFock.fermGrade_involutive
+#print axioms BookProof.QuantumGravityFock.fermGrade_fermAnn
+#print axioms BookProof.QuantumGravityFock.fermGrade_fermCre
+#print axioms BookProof.QuantumGravityFock.superBracket_fermAnn_fermCre
+#print axioms BookProof.QuantumGravityFock.superBracket_bosOp_ghostOp
+#print axioms BookProof.QuantumGravityFock.bosOp_ghostOp_comm
+#print axioms BookProof.QuantumGravityFock.qgCCR
+#print axioms BookProof.QuantumGravityFock.qgGhostCar
+#print axioms BookProof.QuantumGravityFock.qgGhostCar_book
+#print axioms BookProof.QuantumGravityFock.qgGrade_involutive
+#print axioms BookProof.QuantumGravityFock.bosOp_even
+#print axioms BookProof.QuantumGravityFock.ghostOp_odd_ann
+#print axioms BookProof.QuantumGravityFock.ghostOp_odd_cre
+#print axioms BookProof.QuantumGravityFock.qgGradedFock_esa
+#print axioms BookProof.QuantumGravityFock.qgGradedFock_stone_flow
+#print axioms BookProof.QuantumGravityFock.qgGradedFock_not_bounded
+#print axioms BookProof.QuantumGravityFock.qgDGamma_esa
+#print axioms BookProof.QuantumGravityFock.qgTwoLevel_esa
+#print axioms BookProof.QuantumGravityFock.qgFock_hashimoto_selects
+
+-- `ChapterQgBrstCompleted` (plan §10.6.2 item 4, the remaining join): the bounded nilpotent
+-- BRST charge on the *completed* graded Hilbert space `ℓ²(GradedIdx)`, an explicit commuting
+-- unitary group, and the resulting BRST-reduced transfer.
+#print axioms BookProof.QgBrstCompleted.tsum_sq_weighted_le
+#print axioms BookProof.QgBrstCompleted.wshift_norm_le
+#print axioms BookProof.QgBrstCompleted.wshift_norm_eq
+#print axioms BookProof.QgBrstCompleted.brstTerm_norm_le
+#print axioms BookProof.QgBrstCompleted.brstTerm_comp_self
+#print axioms BookProof.QgBrstCompleted.brstTerm_anticomm
+#print axioms BookProof.QgBrstCompleted.qgBrstCharge_nilpotent
+#print axioms BookProof.QgBrstCompleted.qgBrstCharge_ne_zero
+#print axioms BookProof.QgBrstCompleted.qgPhase_zero
+#print axioms BookProof.QgBrstCompleted.qgPhase_group
+#print axioms BookProof.QgBrstCompleted.qgPhase_isometry
+#print axioms BookProof.QgBrstCompleted.qgPhase_single
+#print axioms BookProof.QgBrstCompleted.qgPhase_comm_brst
+#print axioms BookProof.QgBrstCompleted.qgBrstCharge_one_ghost_zero
+#print axioms BookProof.QgBrstCompleted.qgPhaseFull_isometry
+#print axioms BookProof.QgBrstCompleted.qgPhaseFull_not_comm_brst
+#print axioms BookProof.QgBrstCompleted.qgExact_le_physical
+#print axioms BookProof.QgBrstCompleted.qgPhase_mem_physicalStates
+#print axioms BookProof.QgBrstCompleted.qgPhase_mem_exactStates
+#print axioms BookProof.QgBrstCompleted.qgBrstTransfer_zero
+#print axioms BookProof.QgBrstCompleted.qgBrstTransfer_comp
+#print axioms BookProof.QgBrstCompleted.qgBrstTransfer_bijective
+#print axioms BookProof.QgBrstCompleted.qgBrstTransfer_infDist
+
+-- `ChapterWeakSecondDerivative` (plan §10.6.1 / §10.6.2 item 2, the analytic input): the
+-- one-dimensional distributional regularity toolkit — du Bois-Reymond, integration by parts
+-- against the primitive of a locally integrable function, and the upgrade of an `L¹_loc`
+-- weak solution of `u'' = c·u` to a genuine `C²` solution.
+#print axioms BookProof.WeakSecondDeriv.exists_antideriv
+#print axioms BookProof.WeakSecondDeriv.ae_eq_const_of_integral_deriv_smul_eq_zero
+#print axioms BookProof.WeakSecondDeriv.ae_eq_affine_of_integral_deriv2_smul_eq_zero
+#print axioms BookProof.WeakSecondDeriv.integral_deriv_mul_indefiniteIntegral
+#print axioms BookProof.WeakSecondDeriv.integral_deriv2_mul_doubleAntideriv
+#print axioms BookProof.WeakSecondDeriv.exists_ae_eq_doubleAntideriv_add_affine
+#print axioms BookProof.WeakSecondDeriv.exists_deriv2_of_weak_eq
+
+-- `ChapterScalaronWallEsa` (plan §10.6.1 / §10.6.2 item 2, the last open piece): the
+-- non-perturbative route to the exponentially growing scalaron wall.  `−d²/dx² + V` is
+-- essentially self-adjoint on the compactly supported smooth core of `L²(ℝ)` for every
+-- smooth `V ≥ 0`, because a deficiency vector's modulus square is convex, non-negative and
+-- integrable, hence zero.
+#print axioms BookProof.ScalaronWallEsa.eq_zero_of_convexOn_nonneg_integrable
+#print axioms BookProof.ScalaronWallEsa.ode_solution_eq_zero
+#print axioms BookProof.ScalaronWallEsa.wallHam_symmetricOn
+#print axioms BookProof.ScalaronWallEsa.wallHam_weak_eq
+#print axioms BookProof.ScalaronWallEsa.wallHam_deficiencyTrivialAt
+#print axioms BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint
+#print axioms BookProof.ScalaronWallEsa.starobinskyWall_esa
+#print axioms BookProof.ScalaronWallEsa.starobinskyWall_stone_flow
+
+-- `ChapterSirkPerSystemFlowBound` (plan §12.4): the per-system end-to-end flow bound —
+-- the assembly of `ChapterSirkEndToEnd` evaluated on the Crouzeix domain that
+-- `ChapterSirkPerSystem` fixes for each physical shift-invert, with the two adjoint side
+-- conditions derived from isometry alone and the order-`m` data bundled.  Crouzeix's
+-- inequality and the `e^{−hm}` deformation stay named hypotheses (fields `cxX`, `cxB`).
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.adjoint_comp_self_of_isometry
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.norm_adjoint_apply_le_of_isometry
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.sirk_scheme_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.sirk_scheme_tendsto
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.isSirkScheme_trivial
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.ym_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.ym_sirk_flow_error_tendsto_zero
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.ns_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.nsDiff_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.lagrangian_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.diagKR_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.qgR2_sirk_flow_error_bound
+#print axioms BookProof.ChapterSirkPerSystemFlowBound.qgR2_sirk_flow_error_tendsto_zero
+
+-- `ChapterSchrodingerCutoffEsa` (the Simader–Faris–Lavine cutoff / commutator energy
+-- method in one dimension): the smooth rescaled cutoff with `|χ_R'| ≤ C/R`, the operator
+-- `-f'' + V f` on the compactly supported twice-differentiable core and its symmetry, the
+-- cutoff energy estimate in both its core and its `Re z + 1 ≤ V` forms, the `R → ∞` limit,
+-- and the applications to `V(x) = eˣ + e⁻ˣ` and to the free Laplacian.
+#print axioms BookProof.SchrodingerCutoff.integral_deriv_eq_zero_of_hasCompactSupport
+#print axioms BookProof.SchrodingerCutoff.exists_scaled_cutoff
+#print axioms BookProof.SchrodingerCutoff.schrodingerOp_symmetric
+#print axioms BookProof.SchrodingerCutoff.cutoff_energy_core
+#print axioms BookProof.SchrodingerCutoff.cutoff_energy_estimate
+#print axioms BookProof.SchrodingerCutoff.l2_classical_solution_eq_zero
+#print axioms BookProof.SchrodingerCutoff.l2_classical_solution_eq_zero_of_nonneg
+#print axioms BookProof.SchrodingerCutoff.laplacian_deficiency_trivial
+#print axioms BookProof.SchrodingerCutoff.laplacian_deficiency_trivial_I
+#print axioms BookProof.SchrodingerCutoff.laplacian_deficiency_trivial_negI
+#print axioms BookProof.SchrodingerCutoff.schrodinger_exp_deficiency_trivial
+#print axioms BookProof.SchrodingerCutoff.schrodinger_exp_deficiency_trivial_I
+#print axioms BookProof.SchrodingerCutoff.schrodinger_exp_deficiency_trivial_negI
+
+-- `ChapterWallEsaSemibounded` (plan §9 item 1, the packaging lemma): the Green identity on
+-- the compactly supported smooth core, and the semiboundedness of the quadratic form of
+-- `−d²/dx² + V` when `V` is bounded below.
+#print axioms BookProof.WallEsaSemibounded.integral_conj_neg_deriv2_mul
+#print axioms BookProof.WallEsaSemibounded.kinCcR_quadratic_form
+#print axioms BookProof.WallEsaSemibounded.opCc_quadratic_form
+#print axioms BookProof.WallEsaSemibounded.ccEquiv_norm_sq
+#print axioms BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded
+#print axioms BookProof.WallEsaSemibounded.wallHam_nonneg_form
+
+-- `ChapterExpPotentialEsa`: essential self-adjointness of `−d²/dx² + (eˣ + e⁻ˣ)` on the
+-- compactly supported smooth core, its unitary flow, the `cosh` restatement, and the
+-- non-negativity of its quadratic form.
+#print axioms BookProof.ExpPotentialEsa.expPotential_esa
+#print axioms BookProof.ExpPotentialEsa.expPotential_stone_flow
+#print axioms BookProof.ExpPotentialEsa.coshPotential_esa
+#print axioms BookProof.ExpPotentialEsa.expPotential_semibounded
+
+-- `ChapterSirkFinitePrecision` (plan §13.3, T1–T5): the finite-precision certificate
+-- layer — the a-posteriori Rayleigh–Ritz residual bound, the eigendecomposition backward
+-- error with Weyl, Temple's inequality, the observable propagation and the verified
+-- interval core.
+#print axioms BookProof.SirkFinitePrecision.exists_eigenvalue_dist_le_residual
+#print axioms BookProof.SirkFinitePrecision.backward_error_weyl
+#print axioms BookProof.SirkFinitePrecision.backward_error_weyl_symm
+#print axioms BookProof.SirkFinitePrecision.ground_le_rayleigh
+#print axioms BookProof.SirkFinitePrecision.temple_lower_bound
+#print axioms BookProof.SirkFinitePrecision.ground_ge_of_no_eigenvalue_below
+#print axioms BookProof.SirkFinitePrecision.observable_propagation
+#print axioms BookProof.SirkFinitePrecision.observable_propagation_band
+#print axioms BookProof.SirkFinitePrecision.CertInterval.mem_mul
+#print axioms BookProof.SirkFinitePrecision.CertInterval.mem_widen
+#print axioms BookProof.SirkFinitePrecision.CertInterval.mem_ofRounded
+#print axioms BookProof.SirkFinitePrecision.CertInterval.dist_le_width
+#print axioms BookProof.SirkFinitePrecision.CertInterval.mem_evalHorner
+#print axioms BookProof.SirkFinitePrecision.CertInterval.abs_polyEval_le_of_mem
+
+-- `ChapterSirkCertifiedGap` (plan §13.3, T6/T7 and the nested-selection lemma): the exact
+-- parity split, the sector ground energy, the certified-gap theorem and the stopping rule,
+-- all about the *truncated* Hamiltonian.
+#print axioms BookProof.SirkCertifiedGap.paritySector_invariant
+#print axioms BookProof.SirkCertifiedGap.sectorRestrict_isSymmetric
+#print axioms BookProof.SirkCertifiedGap.sectorGround_le_rayleigh
+#print axioms BookProof.SirkCertifiedGap.sectorGround_eq_inf_eigenvalues
+#print axioms BookProof.SirkCertifiedGap.sectorGround_ge_temple
+#print axioms BookProof.SirkCertifiedGap.certified_parity_gap
+#print axioms BookProof.SirkCertifiedGap.certified_parity_gap_pos
+#print axioms BookProof.SirkCertifiedGap.certified_parity_gap_strong_coupling
+#print axioms BookProof.SirkCertifiedGap.rayleigh_odd_ge_of_certified
+#print axioms BookProof.SirkCertifiedGap.resolvent_commutes_parity
+#print axioms BookProof.SirkCertifiedGap.resolvent_mapsTo_paritySector
+#print axioms BookProof.SirkCertifiedGap.certifiedGap_tendsto
+#print axioms BookProof.SirkCertifiedGap.certifiedGap_eventually_pos
+#print axioms BookProof.SirkCertifiedGap.certifiedGap_sound
+#print axioms BookProof.SirkCertifiedGap.gap_ge_of_certificate
+#print axioms BookProof.SirkCertifiedGap.qcdG2M4_certified_gap
+
+-- `ChapterSirkCertificateReader` (plan §13.7, T8): the instantiation seam — exact decimal
+-- parsing of the emitted NDJSON certificate and T6 consumed through it.
+#print axioms BookProof.SirkCertificateReader.parseDec_example
+#print axioms BookProof.SirkCertificateReader.parseDec_reject
+#print axioms BookProof.SirkCertificateReader.toGapCertificate_lower
+#print axioms BookProof.SirkCertificateReader.gap_ge_of_ndjson
+#print axioms BookProof.SirkCertificateReader.gap_pos_of_ndjson
+#print axioms BookProof.SirkCertificateReader.formatExample_parse
+#print axioms BookProof.SirkCertificateReader.formatExample_lower
+#print axioms BookProof.SirkCertificateReader.formatExample_certified_gap
+
+-- `ChapterSirkGapTable` (plan §13.7, T11/T12): the two-sided certified enclosure, the
+-- per-coupling table with its strong-coupling consistency check, and the Richardson
+-- extrapolation with its error propagation.
+#print axioms BookProof.SirkGapTable.gap_le_of_certificate
+#print axioms BookProof.SirkGapTable.certified_gap_mem_interval
+#print axioms BookProof.SirkGapTable.certified_gap_table
+#print axioms BookProof.SirkGapTable.certified_gap_table_interval
+#print axioms BookProof.SirkGapTable.strongCoupling_lt
+#print axioms BookProof.SirkGapTable.strongCoupling_mem_of_certificate
+#print axioms BookProof.SirkGapTable.qcdG2M4Row_lo
+#print axioms BookProof.SirkGapTable.qcdG2M4_strongCoupling_consistent
+#print axioms BookProof.SirkGapTable.richardson_exact
+#print axioms BookProof.SirkGapTable.richardson_error
+#print axioms BookProof.SirkGapTable.richardson_qym_g4
+
+-- `ChapterSpectralGapStability` (plan §13.7, the abstract core of the continuum leg): a
+-- quantitative spectral gap degrades by at most the perturbation, survives an
+-- operator-norm limit, and keeps the point out of the spectrum of a bounded self-adjoint
+-- operator.
+#print axioms BookProof.SpectralGapStability.gapAt_perturb
+#print axioms BookProof.SpectralGapStability.gapAt_of_tendsto
+#print axioms BookProof.SpectralGapStability.notMem_spectrum_of_gapAt
+#print axioms BookProof.SpectralGapStability.exists_gapAt_of_notMem_spectrum
+#print axioms BookProof.SpectralGapStability.notMem_spectrum_of_uniform_gap
+#print axioms BookProof.SpectralGapStability.spectrum_disjoint_of_uniform_window
+
+-- `ChapterFockOneParticleGap` (plan, top work package): the one-particle positive
+-- spectral-edge enclosure and its free `dGamma` lift.  Diagonal second quantization,
+-- vacuum energy zero, the number-operator shift, the Fock gap from `h₊ ≥ μI`, the
+-- nested-band limit, and the composition (conditional on the enclosure hypothesis).
+#print axioms BookProof.FockOneParticleGap.dGamma_diagCol_single
+#print axioms BookProof.FockOneParticleGap.dGamma_diagCol_apply
+#print axioms BookProof.FockOneParticleGap.dGamma_diagCol_vac
+#print axioms BookProof.FockOneParticleGap.numberOp_vac
+#print axioms BookProof.FockOneParticleGap.dGamma_diagCol_one_particle
+#print axioms BookProof.FockOneParticleGap.dGamma_diagCol_shift
+#print axioms BookProof.FockOneParticleGap.fock_gap_quadForm
+#print axioms BookProof.FockOneParticleGap.fock_gap_of_one_particle_gap
+#print axioms BookProof.FockOneParticleGap.fock_energy_one_particle
+#print axioms BookProof.FockOneParticleGap.sInf_nonvacuumEnergies
+#print axioms BookProof.FockOneParticleGap.one_particle_edge_ge_of_parity_certificate
+#print axioms BookProof.FockOneParticleGap.band_endpoints_tendsto
+#print axioms BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands
+#print axioms BookProof.FockOneParticleGap.qcdG2M4_fock_gap_of_one_particle_enclosure
+#print axioms BookProof.FockOneParticleGap.le_eigenvalue_of_le_spectrum
+#print axioms BookProof.FockOneParticleGap.fock_gap_of_operator_spectral_edge
+#print axioms BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands_operator
+
+-- `ChapterFriedrichsFormGap` and `ChapterBandEnclosure` (plan, top work package): the
+-- band-enclosure hypothesis is no longer assumed.  Nested bands plus convergence of the
+-- approximants give the enclosure; the Hashimoto/Galerkin Ritz theorems supply the
+-- convergence, for the bounded selected operator (spectral edge) and for the unbounded
+-- Friedrichs extension (energy form).
+#print axioms BookProof.FriedrichsFormGap.formSpace_norm_bound
+#print axioms BookProof.FriedrichsFormGap.friedrichs_quadForm_lower_bound
+#print axioms BookProof.FriedrichsFormGap.friedrichs_extension_form_gap
+#print axioms BookProof.BandEnclosure.nestedBands_le
+#print axioms BookProof.BandEnclosure.band_enclosure_of_nested
+#print axioms BookProof.BandEnclosure.band_limit_unique
+#print axioms BookProof.BandEnclosure.band_enclosure_endpoints_tendsto
+#print axioms BookProof.BandEnclosure.sirk_nestedBands
+#print axioms BookProof.BandEnclosure.sirk_band_widths_tendsto_zero
+#print axioms BookProof.BandEnclosure.sirk_band_enclosure
+#print axioms BookProof.BandEnclosure.ritz_band_enclosure_of_nested
+#print axioms BookProof.BandEnclosure.fock_mass_gap_of_nested_ritz_bands
+#print axioms BookProof.BandEnclosure.quadForm_ge_of_le_ritzInf
+#print axioms BookProof.BandEnclosure.friedrichs_form_gap_of_nested_ritz_bands
+#print axioms BookProof.BandEnclosure.shiftInvert_band_enclosure
+#print axioms BookProof.BandEnclosure.shiftInvert_widths_tendsto_zero
+
+-- `ChapterRitzCertificate` (plan, top work package): the per-order finite certificate is
+-- no longer an input.  Temple's inequality turns the finite Rayleigh quotient and residual
+-- into a two-sided enclosure of the spectral edge of the infinite operator, and the running
+-- intersection makes any family of emitted bands nested.
+#print axioms BookProof.RitzCertificate.norm_apply_sq
+#print axioms BookProof.RitzCertificate.re_inner_factor
+#print axioms BookProof.RitzCertificate.factor_nonneg
+#print axioms BookProof.RitzCertificate.factor_nonneg_of_separation
+#print axioms BookProof.RitzCertificate.temple_lower_bound
+#print axioms BookProof.RitzCertificate.sInf_spectrum_le_rayleigh
+#print axioms BookProof.RitzCertificate.temple_band_mem
+#print axioms BookProof.RitzCertificate.temple_width_tendsto_zero
+#print axioms BookProof.RitzCertificate.runBands_nested
+#print axioms BookProof.RitzCertificate.mem_runBand
+#print axioms BookProof.RitzCertificate.runBand_widths_tendsto_zero
+#print axioms BookProof.RitzCertificate.nested_certificate_of_bands
+#print axioms BookProof.RitzCertificate.temple_nested_certificate
+#print axioms BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates
+
+-- `ChapterFockNumberPreservingGap` (plan, top work package): the `dΓ` lift no longer needs
+-- the one-particle Hamiltonian to be diagonal, only number preserving with a one-particle
+-- gap `h − μ ≥ 0`.
+#print axioms BookProof.FockNumberPreservingGap.dGamma_shiftCol
+#print axioms BookProof.FockNumberPreservingGap.dGamma_vac
+#print axioms BookProof.FockNumberPreservingGap.number_quadForm_ge
+#print axioms BookProof.FockNumberPreservingGap.fock_gap_of_number_preserving
+#print axioms BookProof.FockNumberPreservingGap.fock_gap_of_number_preserving_op
+#print axioms BookProof.FockNumberPreservingGap.isPosCol_shiftCol_diagCol
+#print axioms BookProof.FockNumberPreservingGap.fock_gap_of_one_particle_form_gap
+
+-- `ChapterFockInteractionStability` (plan, top work package): the number-preservation
+-- hypothesis replaced by a quantitative one — a gap `μ` survives any perturbation whose
+-- form is dominated by `a q + b‖·‖²` (`a ≤ 1`), leaving gap `(1 − a)μ − b`; in particular
+-- `dΓ(h) + V` keeps gap `μ − ‖V‖` for an arbitrary bounded `V`, pair creation included.
+#print axioms BookProof.FockInteractionStability.gap_persists_of_relative_form_bound
+#print axioms BookProof.FockInteractionStability.gap_persists_of_bounded_form
+#print axioms BookProof.FockInteractionStability.gap_persists_pos
+#print axioms BookProof.FockInteractionStability.interaction_form_bound
+#print axioms BookProof.FockInteractionStability.fock_gap_of_bounded_interaction
+#print axioms BookProof.FockInteractionStability.fock_gap_of_one_particle_form_gap_interaction
+
+-- `ChapterTempleSeparationNecessary` (plan, top work package): the spectral-separation input
+-- of Temple's inequality is a genuine side condition — an exact eigenvector (zero residual)
+-- says nothing at all about how far below the spectrum extends.
+#print axioms BookProof.TempleSeparationNecessary.isSelfAdjoint_witness
+#print axioms BookProof.TempleSeparationNecessary.rayleigh_witness
+#print axioms BookProof.TempleSeparationNecessary.resid_witness
+#print axioms BookProof.TempleSeparationNecessary.neg_mem_spectrum_witness
+#print axioms BookProof.TempleSeparationNecessary.separation_necessary
+
+-- `ChapterFockPairPerturbation` (plan, top work package): the next degree of perturbation —
+-- the quadratic, pair-creating field term `P(f,g) = a†(f)a†(g) + a(g)a(f)`.  The canonical
+-- commutation relation gives the exact identity `‖a†(g)u‖² = ‖a(g)u‖² + ‖g‖²‖u‖²`, hence the
+-- `(N+1)^{1/2}` estimate a quadratic term needs; the pair form is then dominated by the free
+-- form with *no* additive remainder on the vacuum-orthogonal sector, and the gap `μ` degrades
+-- only to `μ − 2√2‖f‖‖g‖`.  `pairVec_vac` and `pairVec_unbounded` record that the term really
+-- changes the particle number by two and really is unbounded.  Cubic and quartic Yang–Mills
+-- terms remain outside this chapter.
+#print axioms BookProof.FockPairPerturbation.annVec_creVec
+#print axioms BookProof.FockPairPerturbation.norm_creVec_sq
+#print axioms BookProof.FockPairPerturbation.norm_creVec_le
+#print axioms BookProof.FockPairPerturbation.abs_re_inner_pairVec_le
+#print axioms BookProof.FockPairPerturbation.pairVec_relative_form_bound
+#print axioms BookProof.FockPairPerturbation.fock_gap_of_pair_perturbation
+#print axioms BookProof.FockPairPerturbation.fock_gap_of_pair_perturbation_pos
+#print axioms BookProof.FockPairPerturbation.fock_gap_of_one_particle_form_gap_pair
+#print axioms BookProof.FockPairPerturbation.pairVec_vac
+#print axioms BookProof.FockPairPerturbation.pairVec_unbounded
+#print axioms BookProof.FockPairPerturbation.ym_fock_gap_of_pair_perturbation
+
+-- `ChapterFockCubicUnbounded` (plan, top work package): the boundary of the
+-- form-domination route.  Degrees one and two are covered by
+-- `ChapterFockFieldPerturbation` and `ChapterFockPairPerturbation`; degree three is not,
+-- and this chapter proves that it *cannot* be.  On the explicit two-term trial states
+-- `|n⟩ + c|n+3⟩` the number form, the norm and the cubic form are computed exactly, and the
+-- cubic form grows like `n^{3/2}` while the number form grows only like `n`.  Hence no
+-- relative form bound `a·⟪u,Nu⟫ + b‖u‖²` can dominate the cubic form
+-- (`cubic_no_relative_form_bound`), and `dΓ(N) + lam·C_k` is unbounded below on the
+-- vacuum-orthogonal sector at every coupling strength `lam > 0`
+-- (`fock_gap_fails_for_cubic`).  The complementary `trial_cubic_quartic_bounded_below`
+-- shows that adding the normal-ordered quartic term `Q_k = (a_k†)²(a_k)²` restores a lower
+-- bound `-(lam⁴/4 + 2lam²)‖u‖²` along that same family, so the divergence is a property of
+-- a *bare* cubic term.  `cubeA` is a single-mode cubic term, not the physical Yang–Mills
+-- cubic vertex, and no mass gap of the physical Hamiltonian is claimed.
+#print axioms BookProof.FockCubicUnbounded.confNumber_confAt
+#print axioms BookProof.FockCubicUnbounded.cubeA_coord
+#print axioms BookProof.FockCubicUnbounded.trial_norm_sq
+#print axioms BookProof.FockCubicUnbounded.trial_numberQuad
+#print axioms BookProof.FockCubicUnbounded.trial_cubic_form
+#print axioms BookProof.FockCubicUnbounded.cubic_no_relative_form_bound
+#print axioms BookProof.FockCubicUnbounded.fock_gap_fails_for_cubic
+#print axioms BookProof.FockCubicUnbounded.quartA_single_confAt
+#print axioms BookProof.FockCubicUnbounded.trial_quartic_form
+#print axioms BookProof.FockCubicUnbounded.trial_cubic_quartic_bounded_below
+
+-- `ChapterFockCubicQuarticStability` (plan, top work package, next step 2): the same
+-- cubic/quartic pair, now on *arbitrary* finite states rather than the two-term trial
+-- family.  `quart_form_eq` and `cubic_form_eq` turn the two interaction forms into the
+-- norms `‖a_k²u‖²` and `2Re⟪a_k²u, a_k†u⟫`, `norm_creA_sq` is the single-mode canonical
+-- commutation relation and `sq_norm_annA_le_mul` the Cauchy–Schwarz bound that forces a
+-- large mode occupation to carry a large quartic form.  Together they give
+-- `mode_cubic_quartic_bounded_below` and `numberForm_cubic_quartic_bounded_below`, the
+-- uniform lower bound `-(2lam² + (2lam² + ½ − mu)²/2)‖u‖²` for `mu⟪u,Nu⟫ + lam·C_k + Q_k`,
+-- its `mu = 1` corollary, the multi-mode sums
+-- `multiMode_cubic_quartic_bounded_below` / `dGamma_multiMode_cubic_quartic_bounded_below`
+-- (one copy of the free form pays for every mode of a finite set, the constant growing
+-- linearly in its cardinality) and the one-particle-gap version
+-- `dGamma_cubic_quartic_bounded_below`.  This is semiboundedness, not a gap.
+#print axioms BookProof.FockCubicQuarticStability.quart_form_eq
+#print axioms BookProof.FockCubicQuarticStability.cubic_form_eq
+#print axioms BookProof.FockCubicQuarticStability.norm_creA_sq
+#print axioms BookProof.FockCubicQuarticStability.sq_norm_annA_le_mul
+#print axioms BookProof.FockCubicQuarticStability.mode_cubic_quartic_bounded_below
+#print axioms BookProof.FockCubicQuarticStability.numberForm_cubic_quartic_bounded_below
+#print axioms BookProof.FockCubicQuarticStability.multiMode_cubic_quartic_bounded_below
+#print axioms BookProof.FockCubicQuarticStability.trial_cubic_quartic_bounded_below_general
+#print axioms BookProof.FockCubicQuarticStability.dGamma_cubic_quartic_bounded_below
+#print axioms BookProof.FockCubicQuarticStability.dGamma_multiMode_cubic_quartic_bounded_below
+
+-- `ChapterScalaronFockGapChain` (plan, top work package, next step 3): the abstract gap
+-- chain instantiated for a sector with constant one-particle energy `m`, and then at the
+-- Starobinsky scalaron mass `scalaronMass α = 1/√(12α)` on the Hermite basis of `L²(ℝ)`.
+-- `constOnePart_quadForm` makes the one-particle form gap an identity, so
+-- `const_fock_gap`, `const_fock_mass_gap`, `const_fock_gap_of_field_perturbation` and
+-- `const_fock_cubic_quartic_bounded_below` — and their scalaron instances — need no
+-- certificate, no Ritz data and no form-gap hypothesis.  Unconditional here is the *lift*:
+-- that the `R²` sector's one-particle operator is this constant is a modelling statement,
+-- and nothing about Yang–Mills is claimed.
+#print axioms BookProof.ScalaronFockGapChain.constOnePart_quadForm
+#print axioms BookProof.ScalaronFockGapChain.constOnePart_symmetricOn
+#print axioms BookProof.ScalaronFockGapChain.const_fock_gap
+#print axioms BookProof.ScalaronFockGapChain.const_isPosCol_shiftCol
+#print axioms BookProof.ScalaronFockGapChain.const_fock_mass_gap
+#print axioms BookProof.ScalaronFockGapChain.const_fock_gap_of_field_perturbation
+#print axioms BookProof.ScalaronFockGapChain.const_fock_cubic_quartic_bounded_below
+#print axioms BookProof.ScalaronFockGapChain.scalaronMass_pos
+#print axioms BookProof.ScalaronFockGapChain.scalaron_fock_mass_gap
+#print axioms BookProof.ScalaronFockGapChain.scalaron_fock_gap_of_field_perturbation
+#print axioms BookProof.ScalaronFockGapChain.scalaron_fock_cubic_quartic_bounded_below
+
+-- `ChapterFockDiagonalGapChain` (plan, top work package, next step 3): the chain for a
+-- *diagonal* one-particle energy `e_k ↦ ω_k e_k`, the shape of the free sectors.
+-- `diagOnePart_quadForm_ge` *proves* the one-particle form gap from `ω_k ≥ m`, so
+-- `diag_fock_gap`, `diag_fock_mass_gap`, `diag_fock_gap_of_field_perturbation` and
+-- `diag_fock_cubic_quartic_bounded_below` carry no certificate hypothesis;
+-- `freeField_fock_mass_gap` is the free massive instance at the relativistic dispersion
+-- `√(p² + m²)`.  Massless dispersion gives `m = 0`: positivity, no gap.
+#print axioms BookProof.FockDiagonalGapChain.diagOnePart_inner
+#print axioms BookProof.FockDiagonalGapChain.norm_sq_eq_sum
+#print axioms BookProof.FockDiagonalGapChain.diagOnePart_symmetricOn
+#print axioms BookProof.FockDiagonalGapChain.diagOnePart_quadForm_ge
+#print axioms BookProof.FockDiagonalGapChain.diag_fock_gap
+#print axioms BookProof.FockDiagonalGapChain.diag_isPosCol_shiftCol
+#print axioms BookProof.FockDiagonalGapChain.diag_fock_mass_gap
+#print axioms BookProof.FockDiagonalGapChain.diag_fock_gap_of_field_perturbation
+#print axioms BookProof.FockDiagonalGapChain.diag_fock_cubic_quartic_bounded_below
+#print axioms BookProof.FockDiagonalGapChain.freeDispersion_ge
+#print axioms BookProof.FockDiagonalGapChain.freeField_fock_mass_gap
+
+-- `ChapterScalaronEdge` (plan §state 29, item 4): the strict one-particle edge of the
+-- Starobinsky fiber.  The plateau of `V(φ) = (M⁴/16α)(1 − e^{−√(2/3)φ/M})²` is `M⁴/(16α)`,
+-- so for `0 < c < edgeShelf = M⁴/(32α)` the classically allowed region is the explicit
+-- bounded window `[−A, B]`; the one-dimensional sup bound `‖f(x)‖² ≤ δ‖f‖² + δ⁻¹‖f'‖²`
+-- then confines the core and yields the strict form gap `E₀ = min(1/(4(A+B)²), c/2) > 0`,
+-- which `scalaronEdge_friedrichs_gap` transfers to the Friedrichs extension.
+#print axioms BookProof.ScalaronEdge.starobinskyEdgeHam_symmetricOn
+#print axioms BookProof.ScalaronEdge.starobinskyV_lt_shelf_bounded
+#print axioms BookProof.ScalaronEdge.edge_normSq_hasDerivAt
+#print axioms BookProof.ScalaronEdge.edge_re_mul_le
+#print axioms BookProof.ScalaronEdge.edge_sup_sq_le
+#print axioms BookProof.ScalaronEdge.edge_energy_bound
+#print axioms BookProof.ScalaronEdge.starobinskyEdge_inner_eq
+#print axioms BookProof.ScalaronEdge.starobinskyEdge_quadForm_eq
+#print axioms BookProof.ScalaronEdge.starobinskyEdge_form_gap
+#print axioms BookProof.ScalaronEdge.starobinskyEdge_quadForm
+#print axioms BookProof.ScalaronEdge.scalaronEdge_friedrichs_gap
+
+-- `ChapterVielbeinFiberFock` (plan §state 28j next steps, item 4(a)): the explicit
+-- fibrewise reassembly of the vielbein/TEGR model — `d` harmonic shear fibers plus one
+-- Starobinsky scalaron fiber per quantum — on the nested Fock space `⊕ₙ L²(ℝ^(n×(d+1)))`,
+-- as thin glue over the generic instrument `fockSmoothPotential_esa`.
+#print axioms BookProof.VielbeinFock.inner_vielbeinDir
+#print axioms BookProof.VielbeinFock.vielbeinManyPotential_apply
+#print axioms BookProof.VielbeinFock.vielbeinManyPotential_scalaron_fiber
+#print axioms BookProof.VielbeinFock.contDiff_vielbeinManyPotential
+#print axioms BookProof.VielbeinFock.vielbeinManyPotential_nonneg
+#print axioms BookProof.VielbeinFock.vielbeinManyPotential_esa
+#print axioms BookProof.VielbeinFock.vielbeinFockCore_dense
+#print axioms BookProof.VielbeinFock.vielbeinFock_symmetric
+#print axioms BookProof.VielbeinFock.vielbeinFock_deficiencyTrivialAt
+#print axioms BookProof.VielbeinFock.vielbeinFock_esa
+#print axioms BookProof.VielbeinFock.vielbeinFock_stone_flow
+#print axioms BookProof.VielbeinFock.vielbeinFock_potential_ge
+
+-- `ChapterQedFockGapChain` (plan §state 28j next steps, item 2): the QED instantiation of
+-- the diagonal gap chain.  The free photon energy `ω_k = |p_k|` gives positivity at `m = 0`
+-- and no gap — `photon_no_one_particle_gap` proves the obstruction for an
+-- infrared-accumulating momentum assignment — while an infrared regulator `μ > 0` or a
+-- massive (Proca) dispersion restores the nested-Fock mass gap.
+#print axioms BookProof.QedFockGapChain.diagOnePart_quadForm_basis
+#print axioms BookProof.QedFockGapChain.diagOnePart_no_form_gap
+#print axioms BookProof.QedFockGapChain.photonDispersion_nonneg
+#print axioms BookProof.QedFockGapChain.photon_fock_positivity
+#print axioms BookProof.QedFockGapChain.photon_no_one_particle_gap
+#print axioms BookProof.QedFockGapChain.irPhotonDispersion_ge
+#print axioms BookProof.QedFockGapChain.irPhoton_fock_mass_gap
+#print axioms BookProof.QedFockGapChain.proca_fock_mass_gap
+
+-- `ChapterNavierStokesFiberGap` (plan §state 28j next steps, item 3): what the
+-- Navier–Stokes Eulerian fiber can certify.  The fiber Hamiltonian is first order, so its
+-- quadratic form vanishes at every Hermite basis state and it has no one-particle form gap
+-- (`nsFiber_no_form_gap`); the Faris–Lavine comparison operator does carry a Friedrichs
+-- form gap (`nsComparison_friedrichs_gap`).
+#print axioms BookProof.NavierStokesFlow.FiberGap.cFun_coreState_self
+#print axioms BookProof.NavierStokesFlow.FiberGap.aFun_coreState_self
+#print axioms BookProof.NavierStokesFlow.FiberGap.ladFun_coreState_self
+#print axioms BookProof.NavierStokesFlow.FiberGap.canH_coreState_self
+#print axioms BookProof.NavierStokesFlow.FiberGap.nsFiber_quadForm_coreState
+#print axioms BookProof.NavierStokesFlow.FiberGap.norm_coreState
+#print axioms BookProof.NavierStokesFlow.FiberGap.nsFiber_no_form_gap
+#print axioms BookProof.NavierStokesFlow.FiberGap.nsComparison_friedrichs_gap
+
+-- `ChapterGaussCoordCombo`, `ChapterSqueezedGaussStates` and `ChapterYangMillsAbelianNoGap`
+-- (plan §state 28j next steps, item 1): the one-coordinate Hermite calculus on the
+-- Gauss-polynomial core, the truncated squeezed states built from it, and the resulting
+-- negative answer for the abelian one-particle form gap.
+#print axioms BookProof.GaussCoordCombo.gaussInt_hermiteFactor_mul
+#print axioms BookProof.GaussCoordCombo.gaussInt_coordCombo_sq
+#print axioms BookProof.GaussCoordCombo.gaussInt_prod_coordFactor
+#print axioms BookProof.SqueezedGaussStates.op_squeezeState
+#print axioms BookProof.SqueezedGaussStates.Usum_identity
+#print axioms BookProof.SqueezedGaussStates.coordComboSum_opCoef_le
+#print axioms BookProof.SqueezedGaussStates.exists_position_small
+#print axioms BookProof.SqueezedGaussStates.exists_momentum_small
+#print axioms BookProof.YangMillsAbelianNoGap.magPoly_abelian
+#print axioms BookProof.YangMillsAbelianNoGap.norm_op_bigP_le
+#print axioms BookProof.YangMillsAbelianNoGap.exists_core_state_small_energy
+#print axioms BookProof.YangMillsAbelianNoGap.ym_abelian_no_one_particle_form_gap
+
+-- `ChapterQgPhysicalSectorIdentity` (plan QG-3.2(a) attempt): the NS
+-- derivative-variable fixing mechanism — the v-coupling vanishes on the
+-- constraint surface `v = dφ`, the gauge-fixing Lagrangian reduces to the
+-- ghost term, the promoted variable is a BRST doublet, and the fixing
+-- integrates to zero on physical observables.  The concrete QG identity
+-- (the 64 `idxDE` coordinates realizing the actual tetrad derivatives) stays
+-- a named hypothesis with citation, never an axiom.
+#print axioms BookProof.QgPhysicalSectorIdentity.s_gaugeField_eq_c
+#print axioms BookProof.QgPhysicalSectorIdentity.lagrange_term_zero_of_fixing
+#print axioms BookProof.QgPhysicalSectorIdentity.L_gf_constraint_surface
+#print axioms BookProof.QgPhysicalSectorIdentity.int_L_gf_eq_zero_physical
+
+-- `ChapterQgCouplingDGammaSum` (plan QG-3.2-exec (i), the operator track): the
+-- lifted coupling `H_coup = Σ_ℓ dΓ(h_ℓ)` with the `h_ℓ` diagonalizable each in
+-- its own basis.  Second quantization is additive in the one-particle datum, so
+-- the coupling is a single `dΓ` — the common-alphabet weighted-`ℓ¹` gate is not
+-- needed.  Hermiticity and positivity pass to the sum, so the Friedrichs
+-- extension is unconditional; the relative form bound and the additivity of the
+-- commutator form are proved; and the coupling is essentially self-adjoint on
+-- the finite-occupation core whenever the *total* one-particle operator is
+-- diagonal in the working basis with non-negative eigenvalues.
+#print axioms BookProof.QgCouplingDGammaSum.dGammaOp_finsetSum_col_eq
+#print axioms BookProof.QgCouplingDGammaSum.coupling_friedrichs
+#print axioms BookProof.QgCouplingDGammaSum.coupling_quadForm_le
+#print axioms BookProof.QgCouplingDGammaSum.commForm_finsetSum
+#print axioms BookProof.QgCouplingDGammaSum.dGammaOp_diagCol_eq
+#print axioms BookProof.QgCouplingDGammaSum.coupling_esa_dGamma
+#print axioms BookProof.QgCouplingDGammaSum.coupling_sum_friedrichs
+#print axioms BookProof.QgCouplingDGammaSum.comparison_friedrichs
+#print axioms BookProof.QgCouplingDGammaSum.coupling_quadForm_le_comparison
+#print axioms BookProof.QgCouplingDGammaSum.numberOp_essentiallySelfAdjoint
+
+-- `ChapterConformalSignFlip` (plan QG-2 / 29f Case B): the sign bookkeeping of
+-- the densitized conformal direction.  `H ↦ −H` reflects the spectral
+-- parameter, so essential self-adjointness is invariant under the global sign
+-- flip and the wrong-sign-kinetic fiber `−K + V` is ESA iff the
+-- positive-kinetic `K − V` is; a real shift only translates the deficiency
+-- parameter.  This makes the plan's Case-B reduction rigorous; it does not
+-- decide the remaining analytic (limit-circle) question.
+#print axioms BookProof.ConformalSignFlip.deficiencyTrivialAt_neg
+#print axioms BookProof.ConformalSignFlip.essentiallySelfAdjointOn_neg_iff
+#print axioms BookProof.ConformalSignFlip.wrongSignKinetic_esa_iff
+#print axioms BookProof.ConformalSignFlip.deficiencyTrivialAt_add_real
+#print axioms BookProof.ConformalSignFlip.symmetricOn_neg
+#print axioms BookProof.ConformalSignFlip.symmetricOn_add_real
+
+-- `ChapterDirectSumEdge` (plan QG-3.4, derived case): fibre edges glue to their
+-- infimum.  On the algebraic direct sum of the fibre cores the squared norm and
+-- the energy are finite sums over the support, so a common lower bound `ν` of
+-- the fibre form bounds is an edge of the glued operator — strict when `ν > 0`.
+-- This is only the derived half of QG-3.4: it says nothing about the fibre
+-- edges themselves, and a strict edge on a core is not a spectral gap.
+#print axioms BookProof.DirectSumEdge.norm_sq_dsCore_eq_sum
+#print axioms BookProof.DirectSumEdge.quadForm_dsOp_eq_sum
+#print axioms BookProof.DirectSumEdge.dsOp_edge_of_fibre_edges
+#print axioms BookProof.DirectSumEdge.dsOp_edge_of_fibre_edges_le
+#print axioms BookProof.DirectSumEdge.dsOp_edge_pos
+
+-- `ChapterQgMultiHalfDensity` (plan QG-1): the multi-dimensional half-density
+-- unitary of the densitized change of variables, and the transfer it enables.
+-- General: a pair of mutually a.e.-inverse measure-preserving maps induces a
+-- unitary of the `L²` spaces which carries bounded-energy cores onto each other
+-- and intertwines the multiplication operators.  Concrete: `(y, ξ) ↦ (y², ξ)` on
+-- the field space, i.e. the conformal coordinate densitized and every other
+-- direction untouched.
+#print axioms BookProof.QgMultiHalfDensity.mpUnitary_apply
+#print axioms BookProof.QgMultiHalfDensity.mpUnitary_boundedEnergyCore_surjective
+#print axioms BookProof.QgMultiHalfDensity.mpUnitary_intertwines_multOp
+#print axioms BookProof.QgMultiHalfDensity.mpUnitary_hasZeroDeficiencyOn_transfer
+#print axioms BookProof.QgMultiHalfDensity.measurePreserving_qgProdSquare
+#print axioms BookProof.QgMultiHalfDensity.multiHalfDensityUnitary_apply
+#print axioms BookProof.QgMultiHalfDensity.multiHalfDensityUnitary_intertwines_multOp
+#print axioms BookProof.QgMultiHalfDensity.multi_hasZeroDeficiencyOn_transfer
+#print axioms BookProof.QgMultiHalfDensity.multi_physical_hasZeroDeficiencyOn
+#print axioms BookProof.QgMultiHalfDensity.exists_field_halfDensity_unitary
+
+-- `ChapterSirkRitzMinMax` (plan §12 Gap 2, QYM): the higher Rayleigh–Ritz levels
+-- and the Ritz gap.  The Courant–Fischer min–max levels of a bounded operator,
+-- the levels computed inside a Galerkin truncation, the variational principle in
+-- the direction the algorithm certifies, the identification of level zero with
+-- the bottom of the spectrum, and the convergence of the truncated levels — hence
+-- of the computed gap — to the min–max levels.  Nothing here claims that a level
+-- with `k ≥ 1` is an eigenvalue.
+#print axioms BookProof.RitzMinMax.rayleighSup_le_norm
+#print axioms BookProof.RitzMinMax.rayleighSup_mono
+#print axioms BookProof.RitzMinMax.minmaxLevel_le_minmaxLevelIn
+#print axioms BookProof.RitzMinMax.minmaxLevel_mono
+#print axioms BookProof.RitzMinMax.minmaxLevel_zero_eq_rayleighInf
+#print axioms BookProof.RitzMinMax.minmaxLevel_zero_eq_sInf_spectrum
+#print axioms BookProof.RitzMinMax.finrank_galerkinSpan
+#print axioms BookProof.RitzMinMax.exists_uniform_proj_bound
+#print axioms BookProof.RitzMinMax.exists_galerkin_approx_subspace
+#print axioms BookProof.RitzMinMax.galerkin_minmaxLevel_tendsto
+#print axioms BookProof.RitzMinMax.galerkin_gap_tendsto
+#print axioms BookProof.RitzMinMax.galerkin_gap_eventually_pos
+
+-- `ChapterSirkRitzPerturbation` (plan §12 Gap 2, §13): the stability of the min–max
+-- levels.  The Rayleigh quotients, the numerical-range suprema, the Courant–Fischer
+-- levels and the Ritz levels of a truncation are all 1-Lipschitz in the operator norm;
+-- the gap is 2-Lipschitz and survives a perturbation of less than half its size; a real
+-- shift shifts the levels and leaves the gap invariant; and the Galerkin gaps of a model
+-- operator converge to a limit within `2ε` of the true gap.
+#print axioms BookProof.RitzPerturbation.abs_rayleighVal_sub_le_dist
+#print axioms BookProof.RitzPerturbation.abs_rayleighSup_sub_le_dist
+#print axioms BookProof.RitzPerturbation.abs_minmaxLevel_sub_le_dist
+#print axioms BookProof.RitzPerturbation.abs_minmaxLevelIn_sub_le_dist
+#print axioms BookProof.RitzPerturbation.minmaxLevel_le_minmaxLevelIn_add
+#print axioms BookProof.RitzPerturbation.minmaxLevel_mono_form
+#print axioms BookProof.RitzPerturbation.minmaxLevel_le_norm
+#print axioms BookProof.RitzPerturbation.neg_norm_le_minmaxLevel
+#print axioms BookProof.RitzPerturbation.minmaxLevel_shiftOp
+#print axioms BookProof.RitzPerturbation.minmaxGap_shiftOp
+#print axioms BookProof.RitzPerturbation.minmaxGap_nonneg
+#print axioms BookProof.RitzPerturbation.abs_minmaxGap_sub_le
+#print axioms BookProof.RitzPerturbation.minmaxGap_ge_of_dist_le
+#print axioms BookProof.RitzPerturbation.minmaxGap_pos_of_dist_lt
+#print axioms BookProof.RitzPerturbation.minmaxLevel_tendsto_of_tendsto
+#print axioms BookProof.RitzPerturbation.minmaxGap_tendsto_of_tendsto
+#print axioms BookProof.RitzPerturbation.galerkin_model_gap_tendsto
+#print axioms BookProof.RitzPerturbation.galerkin_model_gap_eventually_pos
+#print axioms BookProof.RitzPerturbation.abs_sInf_spectrum_sub_le_dist
+
+-- `ChapterQgDerivativeRealization` (plan QG-3.2-exec (ii)): the concrete 84-dimensional
+-- derivative-variable fixing `E = ∂e`.  The 1-jet realization of the coordinate space, the
+-- concrete gauge field `v − dφ` and its zero locus, the reduction of the tetrad–torsion cross
+-- coupling to field values on that locus, and the concrete gauge-fixing system (with the honest
+-- exterior derivative) through which the abstract theorems of `ChapterQgPhysicalSectorIdentity`
+-- run with their hypothesis discharged.
+#print axioms BookProof.QgDerivativeRealization.configPoint_idxDE
+#print axioms BookProof.QgDerivativeRealization.idx_cases
+#print axioms BookProof.QgDerivativeRealization.jetDeriv_fixed
+#print axioms BookProof.QgDerivativeRealization.fixed_iff
+#print axioms BookProof.QgDerivativeRealization.exists_not_fixed
+#print axioms BookProof.QgDerivativeRealization.configPoint_eq_jetPoint_of_fixed
+#print axioms BookProof.QgDerivativeRealization.eval_torsionPoly_jetPoint
+#print axioms BookProof.QgDerivativeRealization.eval_crossCouplingPoly_jetPoint
+#print axioms BookProof.QgDerivativeRealization.eval_eq_of_fixed_of_comp_eq
+#print axioms BookProof.QgDerivativeRealization.crossCoupling_eq_of_fixed
+#print axioms BookProof.QgDerivativeRealization.couplingValue_ne_zero
+#print axioms BookProof.QgDerivativeRealization.qgFixing_gaugeField
+#print axioms BookProof.QgDerivativeRealization.qgFixing_gaugeField_eq_zero_iff
+#print axioms BookProof.QgDerivativeRealization.qgFixing_gaugeField_ne_zero_of_not_fixed
+#print axioms BookProof.QgDerivativeRealization.qgFixing_B_ne_zero
+#print axioms BookProof.QgDerivativeRealization.qgSystemOf_gaugeField_eq_zero
+#print axioms BookProof.QgDerivativeRealization.qgFixing_lagrange_term_zero
+#print axioms BookProof.QgDerivativeRealization.qgFixing_L_gf_constraint_surface
+
+-- `ChapterSirkBandLedger` (plan QYM-1 task 1): the emitted bands are nested-compatible
+-- enclosures.  The exact-decimal band ledger and its reader, the decidable compatibility
+-- check (same operator, orders in sequence, mesh refinement, each band an enclosure), the
+-- nesting theorem, what a finite ledger cannot certify (width collapse), and the two
+-- compositions with `ChapterBandEnclosure`.
+#print axioms BookProof.SirkBandLedger.Decimal.leB_iff
+#print axioms BookProof.SirkBandLedger.ledgerWf_sameOp
+#print axioms BookProof.SirkBandLedger.ledgerWf_order
+#print axioms BookProof.SirkBandLedger.ledgerWf_step
+#print axioms BookProof.SirkBandLedger.loQ_monotone
+#print axioms BookProof.SirkBandLedger.hiQ_antitone
+#print axioms BookProof.SirkBandLedger.nestedBands_of_wf
+#print axioms BookProof.SirkBandLedger.ledgerLo_le_ledgerHi
+#print axioms BookProof.SirkBandLedger.ledger_width_eventually_const
+#print axioms BookProof.SirkBandLedger.ledger_width_tendsto_zero_iff
+#print axioms BookProof.SirkBandLedger.ritz_band_enclosure_of_ledger
+#print axioms BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger
+#print axioms BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger_lo_zero
+#print axioms BookProof.SirkBandLedger.formatExampleLedger_parse
+#print axioms BookProof.SirkBandLedger.formatExampleLedger_wf
+#print axioms BookProof.SirkBandLedger.formatExampleLedger_nested
+
+-- `ChapterTruncationGapLift` (plan QYM-1 task 2): the truncated → infinite lift.
+#print axioms BookProof.TruncationGapLift.galerkinSpan_sup_tailSpan
+#print axioms BookProof.TruncationGapLift.inner_eq_zero_of_mem_galerkin_tail
+#print axioms BookProof.TruncationGapLift.norm_add_sq_of_galerkin_tail
+#print axioms BookProof.TruncationGapLift.exists_galerkin_tail_decomp
+#print axioms BookProof.TruncationGapLift.quadForm_add_of_symmetricOn
+#print axioms BookProof.TruncationGapLift.gap_of_uniform_truncated_gap
+#print axioms BookProof.TruncationGapLift.gap_of_level_gap_and_tail
+#print axioms BookProof.TruncationGapLift.gap_of_level_gap_and_tail_decoupled
+#print axioms BookProof.TruncationGapLift.quadForm_ge_of_le_ritzInf_on
+#print axioms BookProof.TruncationGapLift.gap_of_le_ritzInf_and_tail
+#print axioms BookProof.TruncationGapLift.ym_fock_gap_of_truncated_gap_and_tail
+#print axioms BookProof.TruncationGapLift.ym_fock_mass_gap_of_truncated_gap_and_tail
+#print axioms BookProof.TruncationGapLift.ym_fock_gap_of_band_and_tail
+
+-- `ChapterSchurGershgorinGap` (plan QYM-1 task 3): the tail and coupling inputs of the lift,
+-- proved from the recorded matrix elements (Gershgorin dominance and the Schur test).
+#print axioms BookProof.SchurGershgorin.entry_conj
+#print axioms BookProof.SchurGershgorin.norm_entry_symm
+#print axioms BookProof.SchurGershgorin.exists_repr_of_mem_span_image
+#print axioms BookProof.SchurGershgorin.norm_sq_sum
+#print axioms BookProof.SchurGershgorin.inner_sum_apply_sum
+#print axioms BookProof.SchurGershgorin.quadForm_sum
+#print axioms BookProof.SchurGershgorin.sum_off_diag_comm
+#print axioms BookProof.SchurGershgorin.quadForm_sum_ge
+#print axioms BookProof.SchurGershgorin.quadForm_ge_of_gershgorin_on
+#print axioms BookProof.SchurGershgorin.quadForm_ge_of_gershgorin
+#print axioms BookProof.SchurGershgorin.tail_coercive_of_gershgorin
+#print axioms BookProof.SchurGershgorin.abs_inner_block_le
+#print axioms BookProof.SchurGershgorin.coupling_bound_of_schur
+#print axioms BookProof.SchurGershgorin.gap_of_level_gap_and_matrix_bounds
+#print axioms BookProof.SchurGershgorin.strict_pos_of_matrix_bounds
+#print axioms BookProof.SchurGershgorin.ym_fock_gap_of_truncated_gap_and_matrix_bounds
+#print axioms BookProof.SchurGershgorin.ym_fock_mass_gap_of_truncated_gap_and_matrix_bounds
+
+-- `ChapterWallDeficiencyObstruction` (plan QG-2, "Case B"): the deficiency space of
+-- `−d²/dx² + V` on the compactly supported smooth core *is* its space of `L²` classical
+-- solutions, in both directions, with a worked non-vacuous instance.
+#print axioms BookProof.WallDeficiencyObstruction.integral_conj_deriv2_mul
+#print axioms BookProof.WallDeficiencyObstruction.inner_eq_of_ode
+#print axioms BookProof.WallDeficiencyObstruction.not_deficiencyTrivialAt_of_l2_solution
+#print axioms BookProof.WallDeficiencyObstruction.deficiencyTrivialAt_iff_no_l2_solution
+#print axioms BookProof.WallDeficiencyObstruction.isL2Ode_conj
+#print axioms BookProof.WallDeficiencyObstruction.deficiencyTrivialAt_conj_iff
+#print axioms BookProof.WallDeficiencyObstruction.not_essentiallySelfAdjointOn_of_l2_solution
+#print axioms BookProof.WallDeficiencyObstruction.no_l2_solution_of_nonneg
+#print axioms BookProof.WallDeficiencyObstruction.gaussianState_isL2Ode
+#print axioms BookProof.WallDeficiencyObstruction.not_deficiencyTrivialAt_harmonicShifted_zero
+
+-- `ChapterLimitCircleExample` (plan QG-2 sign warning, Case B): an explicit smooth real
+-- potential, with an explicit square-integrable solution at `z = i`, for which essential
+-- self-adjointness on the compactly supported smooth core fails.
+#print axioms BookProof.LimitCircleExample.lcSol_isL2Ode
+#print axioms BookProof.LimitCircleExample.lcV_not_deficiencyTrivialAt_I
+#print axioms BookProof.LimitCircleExample.lcV_not_deficiencyTrivialAt_negI
+#print axioms BookProof.LimitCircleExample.lcV_not_essentiallySelfAdjoint
+#print axioms BookProof.LimitCircleExample.exists_smooth_potential_not_essentiallySelfAdjoint
+
+-- `ChapterConformalFiberDeficiency` (plan QG-2, Case B — the conformal fiber): an explicit
+-- non-negative exponential wall whose wrong-sign (conformal) fiber, in rescaled standard
+-- form, has a square-integrable classical solution at `z = i`, so essential self-adjointness
+-- on the compactly supported smooth core fails.
+#print axioms BookProof.ConformalFiberDeficiency.cfSol_isL2Ode
+#print axioms BookProof.ConformalFiberDeficiency.cfV_not_deficiencyTrivialAt_I
+#print axioms BookProof.ConformalFiberDeficiency.cfV_not_deficiencyTrivialAt_negI
+#print axioms BookProof.ConformalFiberDeficiency.cfV_not_essentiallySelfAdjoint
+#print axioms BookProof.ConformalFiberDeficiency.cfV_tendsto_atBot
+#print axioms BookProof.ConformalFiberDeficiency.cfV_tendsto_atTop
+#print axioms BookProof.ConformalFiberDeficiency.cfWall_nonneg
+#print axioms BookProof.ConformalFiberDeficiency.cfWall_tendsto_atBot
+#print axioms BookProof.ConformalFiberDeficiency.cfWall_tendsto_atTop
+#print axioms
+  BookProof.ConformalFiberDeficiency.exists_wall_potential_wrongSign_not_essentiallySelfAdjoint
+
+-- `ChapterBddBelowWallEsa` (plan QG-2, Case A — the one-dimensional input): `-d²/dx² + V` is
+-- essentially self-adjoint on the compactly supported smooth core of `L²(ℝ)` for every smooth
+-- potential `V` bounded below, proved by a cutoff energy estimate rather than convexity.
+#print axioms BookProof.BddBelowWallEsa.ode_solution_eq_zero_of_bddBelow
+#print axioms BookProof.BddBelowWallEsa.wallHam_deficiencyTrivialAt_of_bddBelow
+#print axioms BookProof.BddBelowWallEsa.wallHam_essentiallySelfAdjoint_of_bddBelow
+#print axioms BookProof.BddBelowWallEsa.wallHam_essentiallySelfAdjoint_of_bddBelow'
+#print axioms BookProof.BddBelowWallEsa.wallHam_essentiallySelfAdjoint_of_nonneg
+
+-- `ChapterBddBelowFiberSumEsa` (plan QG-2, Case A — the composed operator): the orthogonal
+-- direct sum `⊕ᵢ (−d²/dxᵢ² + Vᵢ)` of bounded-below fibres is essentially self-adjoint on the
+-- glued core, generates a unitary flow, and (under a uniform lower bound) has a form bound.
+#print axioms BookProof.BddBelowFiberSumEsa.fiberCore_dense
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow'
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_nonneg
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_stone_flow
+#print axioms BookProof.BddBelowFiberSumEsa.dsOp_semibounded
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_semibounded
+#print axioms BookProof.BddBelowFiberSumEsa.fiberSumHam_nonneg_form
+#print axioms BookProof.BddBelowFiberSumEsa.qgFiberSum_esa
+#print axioms BookProof.BddBelowFiberSumEsa.qgFiberSum_nonneg_form
+
+-- `ChapterHalfLineLimitCircle` (plan QG-2 / 29f Case B — the endpoint): the free half-line
+-- kinetic operator is not essentially self-adjoint, and neither is its sign flip.
+#print axioms BookProof.HalfLineLimitCircle.hlKin_not_deficiencyTrivialAt_I
+#print axioms BookProof.HalfLineLimitCircle.hlKin_not_essentiallySelfAdjointOn
+#print axioms BookProof.HalfLineLimitCircle.hlKin_neg_not_essentiallySelfAdjointOn
+#print axioms BookProof.HalfLineLimitCircle.hlCore_ne_bot
+
+-- `ChapterFockDifferingBasesEsa` (plan QG-3.2-exec): a Hamiltonian built from one-particle
+-- Hermitian operators conserves the particle number, hence its commutator form against the
+-- diagonal comparison operator `N = dΓ(ω) + 𝒩 + 1` vanishes identically; Faris–Lavine then
+-- gives essential self-adjointness on the finite-particle core under the unweighted gate
+-- `∑ₖ ‖gₖ‖ < ∞`, for summands each diagonal in its own basis and mutually non-commuting.
+#print axioms BookProof.FockDifferingBases.sig_tgt_eq_of_balanced
+#print axioms BookProof.FockDifferingBases.pairOp_commForm_eq_zero
+#print axioms BookProof.FockDifferingBases.balanced_xIdx
+#print axioms BookProof.FockDifferingBases.balancedH_symmetricOn
+#print axioms BookProof.FockDifferingBases.balancedH_norm_le
+#print axioms BookProof.FockDifferingBases.balancedH_commForm_eq_zero
+#print axioms BookProof.FockDifferingBases.balancedH_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockDifferingBases.exchangeH_commForm_eq_zero
+#print axioms BookProof.FockDifferingBases.exchangeH_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockDifferingBases.summable_specAmp
+#print axioms BookProof.FockDifferingBases.spectralFamily_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockDifferingBases.spectralFamily_finite_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockDifferingBases.sumOfTwo_essentiallySelfAdjointOn_core
+#print axioms BookProof.FockDifferingBases.specEntry_ne_zero
+#print axioms BookProof.FockDifferingBases.specEntry_not_commute
+#print axioms BookProof.FockDifferingBases.nestedFock_essentiallySelfAdjointOn_core
+
+-- `ChapterQgOuterFockEsa` (plan QG outer Fock): the gauge-fixed gravity Hamiltonian on the
+-- outer Fock space `𝔉 = ⊕ₙ L²(ℝ^{84n})` is essentially self-adjoint on the finite-particle
+-- core, sector by sector via the general quadratic (Carleman) theorem and the direct-sum
+-- gluing instrument.
+#print axioms BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn
+#print axioms BookProof.QgOuterFock.qgSectorPoly_eq_sum_particles
+#print axioms BookProof.QgOuterFock.qgSectorHam_essentiallySelfAdjointOn
+#print axioms BookProof.QgOuterFock.qgOuterCore_dense
+#print axioms BookProof.QgOuterFock.qgOuterFock_esa
+#print axioms BookProof.QgOuterFock.qgOuterHam_stone_flow
+#print axioms BookProof.QgOuterFock.qgOuterN_quadForm_nonneg
+#print axioms BookProof.QgOuterFock.qgOuterN_esa
+
+-- `ChapterQgOuterFockFarisLavine` (plan QG outer Fock, Faris–Lavine route): comparison
+-- operators, the Friedrichs extension as one, its lift to an `ℓ²`-direct sum, and Faris–Lavine
+-- on the direct sum under uniform fibre data.
+#print axioms BookProof.QgOuterFockFL.Comparison.selfAdjoint
+#print axioms BookProof.QgOuterFockFL.Comparison.essentiallySelfAdjointOn
+#print axioms BookProof.QgOuterFockFL.friedrichsComparison_extends
+#print axioms BookProof.QgOuterFockFL.dsCompOp_surj
+#print axioms BookProof.QgOuterFockFL.dsFibOp_hasSum_commForm
+#print axioms BookProof.QgOuterFockFL.dsFibOp_commForm_le
+#print axioms BookProof.QgOuterFockFL.dsFibOp_essentiallySelfAdjointOn
+#print axioms BookProof.QgOuterFockFL.qgOuterFriedN_surj
+#print axioms BookProof.QgOuterFockFL.qgOuterFriedN_isPositiveSelfAdjointExtension
+#print axioms BookProof.QgOuterFockFL.qgOuterFriedN_esa
+#print axioms BookProof.QgOuterFockFL.qgOuterFock_esa_farisLavine
+
+-- `ChapterQgOuterFockEllipticFL` (plan QG outer Fock, Faris–Lavine route, unconditional case):
+-- positivity of the sum-of-squares Hamiltonian for a nonnegative signature, the general
+-- Friedrichs lift to an `ℓ²`-direct sum, and the elliptic gravity Hamiltonian on the outer
+-- Fock space.
+#print axioms BookProof.QgOuterFockElliptic.quadForm_sumSquares_nonneg
+#print axioms BookProof.QgOuterFockElliptic.sqSumOp_quadForm_nonneg
+#print axioms BookProof.QgOuterFockElliptic.dsCore_le_dsFriedDom
+#print axioms BookProof.QgOuterFockElliptic.dsFriedComparison_isPositiveSelfAdjointExtension
+#print axioms BookProof.QgOuterFockElliptic.dsFriedComparison_esa
+#print axioms BookProof.QgOuterFockElliptic.sectorHam_quadForm_nonneg
+#print axioms BookProof.QgOuterFockElliptic.outerHam_qgKappa
+#print axioms BookProof.QgOuterFockElliptic.outer_esa_farisLavine
+#print axioms BookProof.QgOuterFockElliptic.outer_isPositiveSelfAdjointExtension
+#print axioms BookProof.QgOuterFockElliptic.qgOuterEllipticFock_esa_farisLavine
+
+-- `ChapterHermiteLadderShift` (plan QG outer Fock, Faris–Lavine route): weighted shifts of an
+-- orthonormal family, and the abstract relative bound against a diagonal comparison operator.
+#print axioms BookProof.HermiteLadder.norm_sum_shift_sq
+#print axioms BookProof.HermiteLadder.apply_sum_of_shift
+#print axioms BookProof.HermiteLadder.norm_shift_le_of_diagonal
+
+-- `ChapterGaussCoreQuadBounds` (plan QG outer Fock, Faris–Lavine route): the Gaussian-integral
+-- estimates on the Gauss–polynomial core, with constants independent of the dimension.
+#print axioms BookProof.GaussCoreQuadBounds.coreD_X_comm
+#print axioms BookProof.GaussCoreQuadBounds.quadForm_harm_eq
+#print axioms BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg
+#print axioms BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm
+#print axioms BookProof.GaussCoreQuadBounds.norm_weighted_kin_le
+#print axioms BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise
+
+-- `ChapterSqSumFarisLavine` (plan QG outer Fock, Faris–Lavine route): the two Faris–Lavine
+-- inequalities for `½ Σ_j κ_j π_j² + ½ Σ_r L_r²`, with dimension-free constants.
+#print axioms BookProof.SqSumFarisLavine.schur_bound
+#print axioms BookProof.SqSumFarisLavine.potFun_le_of_schur
+#print axioms BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur
+#print axioms BookProof.SqSumFarisLavine.commPoly_eq
+#print axioms BookProof.SqSumFarisLavine.commForm_sqSumOp_le
+#print axioms BookProof.SqSumFarisLavine.norm_sqSumOp_le
+
+-- `ChapterQgOuterFockCoreFL` (plan QG outer Fock, Faris–Lavine route): the extension of a
+-- relatively bounded symmetric operator from a graph core to the whole comparison domain.
+#print axioms BookProof.QgOuterFockCoreFL.shiftOp_injective
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.coreRange_dense
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.ext_core
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.ext_norm_le
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.ext_symmetricOn
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.ext_commForm_le
+#print axioms BookProof.QgOuterFockCoreFL.CoreData.ext_essentiallySelfAdjointOn
+
+-- `ChapterQgOuterFockFullFL` (plan QG outer Fock, Faris–Lavine route, **unconditional, physical
+-- hyperbolic signature**): the sector data of `qgOuterFock_esa_farisLavine` discharged, and the
+-- full gauge-fixed 3D quantum-gravity Hamiltonian essentially self-adjoint on the domain of the
+-- lifted Friedrichs extension of the positive one-particle operator.
+#print axioms BookProof.QgOuterFockFullFL.isGraphCore_of_eigenbasis
+#print axioms BookProof.QgOuterFockFullFL.harmFried_isGraphCore
+#print axioms BookProof.QgOuterFockFullFL.qgTorsionVecN_row_le
+#print axioms BookProof.QgOuterFockFullFL.qgTorsionVecN_col_le
+#print axioms BookProof.QgOuterFockFullFL.qgSectorHam_norm_le
+#print axioms BookProof.QgOuterFockFullFL.qgSectorHam_commForm_le
+#print axioms BookProof.QgOuterFockFullFL.qgSectorExt_symmetricOn
+#print axioms BookProof.QgOuterFockFullFL.qgSectorExt_commForm_le
+#print axioms BookProof.QgOuterFockFullFL.qgOuterFock_esa_farisLavine_full
+
+-- `ChapterQgOuterFockInteractionFL` (plan QG outer Fock, Faris–Lavine route, **interacting**):
+-- uniform families of sector Hamiltonians whose linear forms may mix the coordinates of
+-- different particles, and the gauge-fixed 3D gravity Hamiltonian with nearest-neighbour torsion
+-- couplings, essentially self-adjoint on the outer Fock space by Faris–Lavine.
+#print axioms BookProof.QgOuterFockInteractionFL.QgFamily.secHam_norm_le
+#print axioms BookProof.QgOuterFockInteractionFL.QgFamily.secHam_commForm_le
+#print axioms BookProof.QgOuterFockInteractionFL.QgFamily.secExt_commForm_le
+#print axioms BookProof.QgOuterFockInteractionFL.QgFamily.outerHam_esa
+#print axioms BookProof.QgOuterFockInteractionFL.QgFamily.esa_farisLavine
+#print axioms BookProof.QgOuterFockInteractionFL.qgIntVec_row_le
+#print axioms BookProof.QgOuterFockInteractionFL.qgIntVec_col_le
+#print axioms BookProof.QgOuterFockInteractionFL.qgCoupling_spans_two_particles
+#print axioms BookProof.QgOuterFockInteractionFL.qgInt_coupling_nontrivial
+#print axioms BookProof.QgOuterFockInteractionFL.qgInteracting_esa_core
+#print axioms BookProof.QgOuterFockInteractionFL.qgInteracting_esa_farisLavine
+
+-- `ChapterScalaronFiberFL` (the scalaron fibre with the full exponential wall): essential
+-- self-adjointness of `−∂²_φ + φ²/4 + V(φ) + s` on the compactly supported smooth core, its
+-- quadratic form, the shift-uniform relative bounds, and the Friedrichs extension as a
+-- Faris–Lavine comparison operator with the core as a graph core.
+#print axioms BookProof.ScalaronFiberFL.WallPot.ham_esa
+#print axioms BookProof.ScalaronFiberFL.ham_quadForm
+#print axioms BookProof.ScalaronFiberFL.norm_sq_le_quadForm
+#print axioms BookProof.ScalaronFiberFL.ham_x_comm
+#print axioms BookProof.ScalaronFiberFL.WallPot.isGraphCore_core
+
+-- `ChapterScalaronOuterFockFL` (the full quantum-gravity Hamiltonian on the outer Fock space):
+-- symmetry, the Schur relative bound, the Faris–Lavine commutator bound and essential
+-- self-adjointness on the domain of the lifted Friedrichs extension `N`.
+#print axioms BookProof.ScalaronOuterFockFL.secN_isGraphCore
+#print axioms BookProof.ScalaronOuterFockFL.secHam_rel
+#print axioms BookProof.ScalaronOuterFockFL.secHam_symmetricOn
+#print axioms BookProof.ScalaronOuterFockFL.imA_le
+#print axioms BookProof.ScalaronOuterFockFL.imB_le
+#print axioms BookProof.ScalaronOuterFockFL.secHam_commForm_le
+#print axioms BookProof.ScalaronOuterFockFL.secData_ext_core
+#print axioms BookProof.ScalaronOuterFockFL.secHam_essentiallySelfAdjointOn
+
+-- `ChapterQgVielbeinModeInstance` (the concrete 3D gauge-fixed vielbein lattice mode data).
+#print axioms BookProof.QgVielbeinModeInstance.ofBounds
+#print axioms BookProof.QgVielbeinModeInstance.ofFintype
+#print axioms BookProof.QgVielbeinModeInstance.torsionGram_herm
+#print axioms BookProof.QgVielbeinModeInstance.qgLattice_essentiallySelfAdjointOn
+#print axioms BookProof.QgVielbeinModeInstance.qgLattice_ext_core
+#print axioms BookProof.QgVielbeinModeInstance.starobinsky_qgLattice_esa
+
+-- `ChapterQgContinuumModeInstance` (the non-lattice mode data: infinitely many exact Fourier
+-- modes, exact derivative symbols).
+#print axioms BookProof.QgContinuumModeInstance.contTorsionGram_herm
+#print axioms BookProof.QgContinuumModeInstance.norm_contTorsionGram_le
+#print axioms BookProof.QgContinuumModeInstance.contTorsionGram_ne_zero
+#print axioms BookProof.QgContinuumModeInstance.qgContinuum_essentiallySelfAdjointOn
+#print axioms BookProof.QgContinuumModeInstance.qgContinuum_ext_core
+#print axioms BookProof.QgContinuumModeInstance.starobinsky_qgContinuum_esa
+
+-- `ChapterQgBrstDerivativeGauge` (BRST gauge fixing of an auxiliary variable to a spatial
+-- derivative, and the restriction principle for the mode data).
+#print axioms BookProof.QgBrstDerivativeGauge.restrict_essentiallySelfAdjointOn
+#print axioms BookProof.QgBrstDerivativeGauge.gaugeReduce_extTorsionCoef
+#print axioms BookProof.QgBrstDerivativeGauge.gaugeReduce_gram
+#print axioms BookProof.QgBrstDerivativeGauge.brstGaugeFixed_esa
+#print axioms BookProof.QgBrstDerivativeGauge.starobinsky_brstGaugeFixed_esa
+#print axioms BookProof.QgBrstDerivativeGauge.gaugeFixedSubset_esa
+
+-- `ChapterQgOuterFockFlow` (the unitary dynamics and its numerical transfer).
+#print axioms BookProof.QgOuterFockFlow.comparison_dom_dense
+#print axioms BookProof.QgOuterFockFlow.qgOuterFock_stone_flow
+#print axioms BookProof.QgOuterFockFlow.starobinsky_qgContinuum_stone_flow
+#print axioms BookProof.QgOuterFockFlow.qgOuterFock_numerical_flow_convergence
+#print axioms BookProof.QgOuterFockFlow.starobinsky_qgContinuum_numerical_flow_convergence
+
+-- `ChapterQgOuterFockOneParticle` (the outer Hamiltonian as a one-particle operator between a
+-- creation and an annihilation operator).
+#print axioms BookProof.QgOuterFockOneParticle.secHam_single
+#print axioms BookProof.QgOuterFockOneParticle.secHam_matrix_element
+#print axioms BookProof.QgOuterFockOneParticle.oneParticleOp_herm
+#print axioms BookProof.QgOuterFockOneParticle.secHam_eq_sum_oneParticle
+#print axioms BookProof.QgOuterFockOneParticle.starobinsky_qgContinuum_matrix_element
+
+-- `ChapterQgTruncationResolvent` (strong resolvent convergence of the mode truncations, and
+-- the resulting unconditional convergence of the numerical flows).
+#print axioms BookProof.QgTruncationResolvent.esa_core_of_ext
+#print axioms BookProof.QgTruncationResolvent.strongResolventConvergence_of_core
+#print axioms BookProof.QgTruncationResolvent.secHam_esa_core
+#print axioms BookProof.QgTruncationResolvent.secHam_truncate_eventually_eq
+#print axioms BookProof.QgTruncationResolvent.qgOuterFock_truncation_flow_convergence
+#print axioms
+  BookProof.QgTruncationResolvent.starobinsky_qgContinuum_momentumCutoff_flow_convergence
+#print axioms BookProof.QgTruncationResolvent.isShiftInvertC_neg_resCLM
+#print axioms BookProof.QgTruncationResolvent.qg_truncation_hashimoto_shiftInvert_tendsto
+
+-- `ChapterQgTimeStepping` (the time half of a concrete scheme: the Crank–Nicolson/Cayley
+-- step, its unitarity, its consistency and the convergence of the fully discrete evolution).
+#print axioms BookProof.QgTimeStepping.norm_cnStep_apply
+#print axioms BookProof.QgTimeStepping.cnStep_second_order
+#print axioms BookProof.QgTimeStepping.norm_cnStep_sub_stoneU_le
+#print axioms BookProof.QgTimeStepping.norm_iterate_cnStep_sub_stoneU_le
+#print axioms BookProof.QgTimeStepping.tendsto_iterate_cnStep
+#print axioms BookProof.QgTimeStepping.qgOuterFock_fullyDiscrete_convergence
+
+-- `ChapterSirkSingleTimeShift` (no time discretization is needed: one shift, one finite
+-- time).  The resolvent identity, normality of the resolvent, shift-independence of strong
+-- resolvent convergence, the single-finite-time flow convergence, the Hashimoto shift-invert
+-- operator at an arbitrary complex shift, the SIRK bound at one finite time, and the
+-- quantum-gravity instances.
+#print axioms BookProof.SirkSingleTime.res_sub_res
+#print axioms BookProof.SirkSingleTime.norm_res_neg
+#print axioms BookProof.SirkSingleTime.strongResAt_of_abs_sub_lt
+#print axioms BookProof.SirkSingleTime.strongResAt_neg
+#print axioms BookProof.SirkSingleTime.strongResAt_of_ne_zero
+#print axioms BookProof.SirkSingleTime.strongResolventConvergence_of_strongResAt
+#print axioms BookProof.SirkSingleTime.singleTime_flow_tendsto_of_strongResAt
+#print axioms BookProof.SirkSingleTime.isShiftInvertC_neg_resCLM_shift
+#print axioms BookProof.SirkSingleTime.norm_neg_resCLM_apply_le
+#print axioms BookProof.SirkSingleTime.sirk_single_time_shiftInvert_bound
+#print axioms BookProof.SirkSingleTime.qgOuterFock_singleTime_shiftInvert_convergence
+#print axioms
+  BookProof.SirkSingleTime.starobinsky_qgContinuum_singleTime_shiftInvert_convergence
+
+-- `ChapterQgManifoldModeInstance` (the same quantum-gravity Hamiltonian over a general
+-- spatial manifold rather than a periodic box).
+#print axioms BookProof.QgManifoldModeInstance.qgManifold_essentiallySelfAdjointOn
+#print axioms BookProof.QgManifoldModeInstance.starobinsky_qgManifold_esa
+#print axioms
+  BookProof.QgManifoldModeInstance.starobinsky_qgManifold_cutoff_flow_convergence
+#print axioms
+  BookProof.QgManifoldModeInstance.starobinsky_qgManifold_fullyDiscrete_convergence
+
+-- `ChapterQgTimeIndependentFlow` (the gauge-fixed Hamiltonian carries no time dependence,
+-- so the propagator is a one-parameter group evaluated at a single finite time): the
+-- two-parameter propagator, its Chapman–Kolmogorov law and time-translation invariance,
+-- uniqueness of the solution of the Schrödinger equation with the fixed generator, and the
+-- quantum-gravity instances (3D BRST gauge-fixed continuum model, general manifold).
+#print axioms BookProof.QgTimeIndependent.prop_apply_prop
+#print axioms BookProof.QgTimeIndependent.prop_time_translation
+#print axioms BookProof.QgTimeIndependent.isSchrodingerSolution_prop
+#print axioms BookProof.QgTimeIndependent.eq_prop_of_isSchrodingerSolution
+#print axioms BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime
+#print axioms
+  BookProof.QgTimeIndependent.starobinsky_brstGaugeFixed_timeIndependent_singleTime
+#print axioms
+  BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime
+
+-- `ChapterFiniteSectionSingleTime` (the finite-section/Galerkin scheme on an `ℓ²` mode
+-- space): the mode projections, the bounded self-adjoint finite section, its convergence to
+-- the Hamiltonian on the core, the single-shift/single-finite-time package, and the
+-- propagator of a selected self-adjoint extension.
+#print axioms BookProof.FiniteSectionSingleTime.projW_apply_tendsto
+#print axioms BookProof.FiniteSectionSingleTime.secOp_isSelfAdjoint
+#print axioms BookProof.FiniteSectionSingleTime.secOp_tendsto_core
+#print axioms BookProof.FiniteSectionSingleTime.isSelfAdjointExtension_ofBounded
+#print axioms BookProof.FiniteSectionSingleTime.finiteSection_singleTime
+#print axioms BookProof.FiniteSectionSingleTime.timeIndependent_of_selfAdjointExtension
+#print axioms BookProof.FiniteSectionSingleTime.windowOfEquiv_exhausts
+
+-- `ChapterNsTimeIndependentFlow` (the `y`-gauge-fixed Navier–Stokes Hamiltonian is
+-- autonomous, and one finite time suffices): the Eulerian fiber Hamiltonian, the same with
+-- the gauge-fixing identities as first conjuncts, and the canonical Lagrangian Hamiltonian.
+#print axioms BookProof.NsTimeIndependent.nsEulerian_timeIndependent_singleTime
+#print axioms BookProof.NsTimeIndependent.nsGaugeY_timeIndependent_singleTime
+#print axioms BookProof.NsTimeIndependent.nsLagrangian_timeIndependent_singleTime
+
+-- `ChapterQymTimeIndependentFlow` (the Weyl-gauge quantum Yang–Mills Hamiltonian is
+-- autonomous, and one finite time suffices): the Friedrichs realization with its
+-- time-translation-invariant propagator, the finite-section package under essential
+-- self-adjointness, and its unconditional diagonal-basis instance.
+#print axioms BookProof.QymTimeIndependent.ymFock_weylGauge_timeIndependent
+#print axioms BookProof.QymTimeIndependent.ymFock_timeIndependent_singleTime_of_esa
+#print axioms
+  BookProof.QymTimeIndependent.ymFock_diagonalBasis_timeIndependent_singleTime
+
+-- `ChapterSqSumOuterFamily` (the outer-Fock Faris–Lavine instrument at an arbitrary fibre
+-- dimension): the finite-particle core inside the domain of the lifted comparison operator,
+-- and the Faris–Lavine headline for a uniform kinetic-plus-squares family.
+#print axioms BookProof.SqSumOuterFamily.outerCore_le_friedDom
+#print axioms BookProof.SqSumOuterFamily.outerFriedN_esa
+#print axioms BookProof.SqSumOuterFamily.SqFamily.esa_farisLavine
+
+-- `ChapterNsOuterFockFarisLavine` (the gauge-fixed Navier–Stokes Hamiltonian on the outer
+-- Fock space, by Faris–Lavine): the Schur data uniform in the parcel number, the genuinely
+-- inter-parcel coupling of the derivative gauge-fixing forms, essential self-adjointness on
+-- the finite-particle core, and the headline on the domain of the lifted Friedrichs
+-- extension of `N₁ = −Δ + ‖x‖²/4`.
+#print axioms BookProof.NsOuterFock.nsVec_row_le
+#print axioms BookProof.NsOuterFock.nsVec_col_le
+#print axioms BookProof.NsOuterFock.linForm_nsConstraint
+#print axioms BookProof.NsOuterFock.linForm_nsTie
+#print axioms BookProof.NsOuterFock.linForm_nsLap
+#print axioms BookProof.NsOuterFock.linForm_nsGaugeY
+#print axioms BookProof.NsOuterFock.nsVec_coupling
+#print axioms BookProof.NsOuterFock.ns_interaction_nontrivial
+#print axioms BookProof.NsOuterFock.nsOuterHam_symmetricOn
+#print axioms BookProof.NsOuterFock.nsOuterHam_esa_core
+#print axioms BookProof.NsOuterFock.nsOuterFock_esa_farisLavine
+
+end BookProof.ChapterRoadmapAudit

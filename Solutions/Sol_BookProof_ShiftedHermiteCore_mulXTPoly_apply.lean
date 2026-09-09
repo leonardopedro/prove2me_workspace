@@ -1,0 +1,27 @@
+-- Generated from ChapterShiftedHermiteCore.lean — solution of BookProof.ShiftedHermiteCore.mulXTPoly_apply
+import Mathlib
+import Definitions.Def_ChapterShiftedHermiteCore
+open BookProof.ShiftedHermiteCore
+
+
+
+
+
+
+
+
+
+
+
+open MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HyperbolicQuadratic
+
+noncomputable section
+
+variable {d : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (a : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulXTPoly a i p = X i * p + ((a i : ℝ) : ℂ) • p := rfl

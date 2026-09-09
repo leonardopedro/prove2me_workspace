@@ -1,0 +1,29 @@
+-- Generated from ChapterSirkWhitening.lean — solution of BookProof.ChapterSirkWhitening.rangeProj_comp_embedding
+import Mathlib
+import Definitions.Def_ChapterSirkWhitening
+open BookProof.ChapterSirkWhitening
+
+
+
+
+
+
+
+
+noncomputable section
+
+
+open BookProof.ChapterH4
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (V : F →L[ℂ] E)
+    (hVV : V.adjoint.comp V = ContinuousLinearMap.id ℂ F) (y : F) :
+    rangeProj V (V y) = V y := by
+
+  have h : V.adjoint (V y) = y := congrArg (fun f : F →L[ℂ] F => f y) hVV
+  simp [rangeProj, h]

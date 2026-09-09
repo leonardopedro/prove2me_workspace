@@ -75,7 +75,41 @@ WAVE = json.load(open(f"{PIPE}/wave_upload.json", encoding="utf-8"))
 WAVE_DEFS = WAVE["defs"]           # chapter name -> def metadata
 WAVE_THMS = WAVE["thms"]           # slug -> {name (dotted), file, meta}
 WAVE_SOL_ORDER = WAVE["sol_order"]  # topological (dependencies first)
-WAVE_DEF_ORDER = sorted(WAVE_DEFS)
+def topological_def_order(defs):
+    """Compute topological order of def bundles respecting cross-bundle dependencies."""
+    dep_graph = {}
+    for name, meta in defs.items():
+        filepath = meta['file']
+        if not os.path.exists(filepath):
+            dep_graph[name] = set()
+            continue
+        with open(filepath) as f:
+            content = f.read()
+        deps = set()
+        for m in re.finditer(r'import Definitions\.Def_(Chapter[A-Z][A-Za-z0-9]*)', content):
+            dep_name = m.group(1)
+            chap_name = dep_name.removeprefix('Def_Chapter')
+            if chap_name in defs:
+                deps.add(chap_name)
+        dep_graph[name] = deps
+    
+    visited = set()
+    order = []
+    def visit(name):
+        if name in visited:
+            return
+        visited.add(name)
+        for dep in sorted(dep_graph.get(name, set())):
+            if dep in defs:
+                visit(dep)
+        order.append(name)
+    
+    for name in defs:
+        visit(name)
+    return list(reversed(order))
+
+
+WAVE_DEF_ORDER = topological_def_order(WAVE_DEFS)
 
 # Hard guard: any source folder is fine EXCEPT Book/ (the prose book chapters
 # — titles without formal math). '/Book/' cannot match '/BookProof/' ('P' != '/'),
@@ -209,7 +243,7 @@ def find_related(name, formal):
 
 def local_compile(path):
     try:
-        r = subprocess.run(["/etc/profiles/per-user/leo/bin/lake", "env", "lean", path],
+        r = subprocess.run(["/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake", "env", "lean", path],
                            cwd=WS, capture_output=True, text=True, timeout=600)
         return r.returncode == 0, (r.stderr or r.stdout)[:400]
     except subprocess.TimeoutExpired:
@@ -383,6 +417,17 @@ def wave_def_meta(chapter):
     return WAVE_DEFS[chapter]
 
 
+def _find_definition_node(chapter):
+    """Locate an already-published Definition node by exact name (search the
+    catalog with a generous limit; the def node may sit after theorem hits)."""
+    for limit in ("50", "100"):
+        ex = api("GET", "theorems", params={"q": chapter, "limit": limit})
+        for t in (ex or {}).get("theorems", []):
+            if t.get("theorem_name") == chapter and t.get("status") == "Definition":
+                return t.get("theorem_id")
+    return None
+
+
 def do_wave_def(st, item, chapter):
     meta = wave_def_meta(chapter)
     rec = st["items"].get(item, {})
@@ -398,11 +443,11 @@ def do_wave_def(st, item, chapter):
     if not ok:
         return f"local compile failed: {err[:200]}"
     body = open(path, encoding="utf-8").read()
-    ex = api("GET", "theorems", params={"q": chapter, "limit": "5"})
-    for t in (ex or {}).get("theorems", []):
-        if t.get("theorem_name") == chapter and t.get("status") == "Definition":
-            st["items"][item] = {"status": "done", "def_id": t.get("theorem_id"), "reused": True}
-            return None
+    existing_id = _find_definition_node(chapter)
+    if existing_id:
+        st["items"][item] = {"status": "done", "def_id": existing_id, "reused": True}
+        log(f"{item}: REUSING existing Definition node {existing_id}")
+        return None
     r = api("POST", "submit-definition", {
         "definition_name": chapter,
         "definition_title": meta["title"],
@@ -415,7 +460,13 @@ def do_wave_def(st, item, chapter):
     if not jobs and isinstance(r, dict) and r.get("job_id"):
         jobs = [{"job_id": r["job_id"]}]
     if not jobs:
-        return f"submit-definition rejected: {json.dumps(r)[:200]}"
+        errtxt = json.dumps(r)[:200]
+        if "already exists" in errtxt:
+            existing_id = _find_definition_node(chapter)
+            if existing_id:
+                st["items"][item] = {"status": "done", "def_id": existing_id, "reused": True}
+                return None
+        return f"submit-definition rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
     save_state(st)
     p = poll_job(jobs[0]["job_id"])
@@ -440,12 +491,16 @@ def do_wave_thm(st, item, slug):
     if not ok:
         return f"local compile failed: {err[:200]}"
     txt = open(path, encoding="utf-8").read()
-    m = re.search(r"\n\n(theorem .*)$", txt, re.S)
+    # Split at the top-level `theorem <dotted name>` declaration: everything
+    # before it (imports/opens/variables/`omit … in`) is the preamble, the
+    # declaration itself is the formal_statement.  Handles files where the
+    # theorem line directly follows `omit … in` (no blank line before it).
+    name = meta["name"]
+    m = re.search(r"(?m)^theorem\s+" + re.escape(name) + r"\b", txt)
     if not m:
         return f"cannot split formal_statement from {path}"
     preamble = txt[:m.start()].rstrip()
-    formal = m.group(1).strip()
-    name = meta["name"]
+    formal = txt[m.start():].strip()
     if not formal.rstrip().endswith(":= by sorry"):
         return "formal_statement does not end with := by sorry"
     ex = find_existing(name, formal)
@@ -590,10 +645,16 @@ def main():
             rec["error"] = err[:300]
             log(f"{item}: FAIL ({err[:150]})")
         save_state(st)
-    n_done = sum(1 for i in st["items"].values() if i["status"] == "done")
-    n_pend = sum(1 for i in st["items"].values() if i["status"] == "pending")
-    n_fail = sum(1 for i in st["items"].values() if i["status"] == "failed")
-    log(f"summary: {n_done} done, {n_pend} pending, {n_fail} failed")
+    # Only ORDER items count towards completion; orphan entries left over from
+    # earlier waves (e.g. reset SirkFinitePrecision nodes already published on
+    # the platform) must not keep the pipeline spinning.
+    in_order = set(ORDER)
+    n_done = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "done")
+    n_pend = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "pending")
+    n_fail = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "failed")
+    n_orphan = len(st["items"]) - sum(1 for k in st["items"] if k in in_order)
+    log(f"summary: {n_done} done, {n_pend} pending, {n_fail} failed"
+        + (f" ({n_orphan} out-of-order orphans ignored)" if n_orphan else ""))
     sys.exit(0 if n_pend == 0 else 1)
 
 

@@ -1,3 +1,6 @@
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterH9
+
 import Mathlib
 
 /-!

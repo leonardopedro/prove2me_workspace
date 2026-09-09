@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFriedrichsExtension
 
 import Mathlib
 

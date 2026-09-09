@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterHermiteProductCore
+
 import Mathlib
 
 /-!

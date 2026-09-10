@@ -1389,6 +1389,45 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "ChapterNavierStokesFockManyMode": {
+   "definition_name": "ChapterNavierStokesFockManyMode",
+   "namespace": "BookProof.NavierStokesFockManyMode",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesFockManyMode.lean",
+   "title": "`BookProof.ChapterNavierStokesHermiteFarisLavine` proves the two Faris\u2013Lavine inequalities for the Navier\u2013Stokes fiber H ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesFockManyMode`, source chapter `BookProof/ChapterNavierStokesFockManyMode.lean`).\n\n`BookProof.ChapterNavierStokesHermiteFarisLavine` proves the two Faris\u2013Lavine inequalities for the Navier\u2013Stokes fiber Hamiltonian of **one** degree of freedom. This module carries out the second quantization: the field has `d` modes, each with its own fiber coordinate `u\u1d62`, its own momentum `\u03c0\u1d62 = -i \u2202/\u2202u\u1d62` and its own linear advection field `V\u1d62(u) = \u03ba\u1d62 u\u1d62`, and the Hamiltonian and the comparison operator are the sums over the modes\n\n`\u0124 = \u2211\u1d62 \u00bd(\u03c0\u1d62 V\u1d62 + V\u1d62 \u03c0\u1d62)`, `N\u0302 = \u2211\u1d62 (\u03c0\u1d62\u00b2 + V\u1d62\u00b2) + I`.\n\nIn the Hermite (occupation-number) basis of the modes, the Hilbert space is `\u2113\u00b2(\u2115\u1d48)` \u2014 the Fock space of the `d`-mode boson field \u2014 the states are labelled by occupation configurations `\u03b1 : Fin d \u2192 \u2115`, the comparison operator is multiplication by the total energy\n\n`\u03a3(\u03b1) = \u2211\u1d62 \u03ba\u1d62(2\u03b1\u1d62 + 1) + 1` (`fockSym`),\n\nand the Hamiltonian is the sum over the modes of the pair creation/annihilation (\"Bogoliubov\") terms `(i\u03ba\u1d62/2)(a\u1d62\u2020\u00b2 \u2212 a\u1d62\u00b2)`, each of which hops `\u03b1 \u21a6 \u03b1 \u00b1 2e\u1d62`.\n\nEach mode contributes an abstract shift Hamiltonian in the sense of `BookProof.ChapterNavierStokesShiftHamiltonian` \u2014 with the **total** symbol `\u03a3` as its comparison symbol \u2014 so the one-mode analysis applies to each summand, and the many-mode inequalities follow by finitely many applications of `(\u2211\u1d62 a\u1d62)\u00b2 \u2264 d \u2211\u1d62 a\u1d62\u00b2`.\n\n* `fockH_symmetricOn` \u2014 `\u0124` is symmetric on the maximal domain of `N\u0302`; * `fockH_relative_bound` \u2014 `\u2016\u0124x\u2016\u00b2 \u2264 (d\u00b2/2)\u2016N\u0302x\u2016\u00b2 + 2d(\u2211\u1d62\u03ba\u1d62\u00b2)\u2016x\u2016\u00b2`; * `fockH_commForm_bound` \u2014 `|\u27eax, i[\u0124, N\u0302]x\u27eb| \u2264 (\u2211\u1d62(2\u03ba\u1d62 + 4\u03ba\u1d62\u00b2)) \u27eax, N\u0302x\u27eb`; * `fockH_essentiallySelfAdjointOn_core` \u2014 hence `\u0124` is essentially self-adjoint on the finite-configuration core of the many-mode Fock space.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFockManyMode.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "ChapterNavierStokesFockCanonical": {
+   "definition_name": "ChapterNavierStokesFockCanonical",
+   "namespace": "BookProof.NavierStokesFockCanonical",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesFockCanonical.lean",
+   "title": "`BookProof.ChapterNavierStokesFockManyMode` proves the two Faris\u2013Lavine inequalities for a concrete operator `fockH` on ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesFockCanonical`, source chapter `BookProof/ChapterNavierStokesFockCanonical.lean`).\n\n`BookProof.ChapterNavierStokesFockManyMode` proves the two Faris\u2013Lavine inequalities for a concrete operator `fockH` on the Fock space `\u2113\u00b2(\u2115\u1d48)` of a `d`-mode field, and for the diagonal comparison operator `diagMax (fockSym \u03ba)`. This module verifies that these two operators really *are* the Navier\u2013Stokes objects they are advertised to be:\n\n* `\u0124 = \u2211\u1d62 \u00bd(\u03c0\u1d62 V\u1d62 + V\u1d62 \u03c0\u1d62)`, the symmetrised transport operator of the field, and * `N\u0302 = \u2211\u1d62 (\u03c0\u1d62\u00b2 + V\u1d62\u00b2) + I`, the comparison operator built from the squares of the individual non-commuting pieces,\n\nfor the canonical pairs `\u03c0\u1d62 = -i \u2202/\u2202u\u1d62`, `u\u1d62` of the modes and the *linear* advection fields `V\u1d62(u) = \u03ba\u1d62 u\u1d62`. Everything is checked on the finite-configuration core `lpFiniteModes (Occ d)`.\n\n* `ann i`, `cre i` \u2014 the annihilation and creation operators of the mode `i`, with `[a\u1d62, a\u1d62\u2020] = I` (`comm_ann_cre`); * `mom \u03ba i`, `pos \u03ba i`, `drift \u03ba i` \u2014 the momentum `\u03c0\u1d62`, the fiber coordinate `u\u1d62` and the advection field `V\u1d62 = \u03ba\u1d62 u\u1d62`; * `comm_mom_pos` \u2014 **`[\u03c0\u1d62, u\u1d62] = -i`**; * `fock_comparison_eq` \u2014 **`\u2211\u1d62(\u03c0\u1d62\u00b2 + V\u1d62\u00b2) + I = N\u0302`**; * `fock_hamiltonian_eq` \u2014 **`\u2211\u1d62 \u00bd(\u03c0\u1d62V\u1d62 + V\u1d62\u03c0\u1d62) = \u0124`**; * `fock_canonical_essentiallySelfAdjointOn_core` \u2014 hence the canonically written many-mode Navier\u2013Stokes Hamiltonian is essentially self-adjoint on the finite-configuration core.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFockCanonical.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "ChapterNavierStokesFockSpace": {
+   "definition_name": "ChapterNavierStokesFockSpace",
+   "namespace": "BookProof.NavierStokesFockSpace",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesFockSpace.lean",
+   "title": "The Lagrangian form of the Navier\u2013Stokes Hamiltonian of `BookProof.ChapterNavierStokesLagrangianEsa` is a *second* quant ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesFockSpace`, source chapter `BookProof/ChapterNavierStokesFockSpace.lean`).\n\nThe Lagrangian form of the Navier\u2013Stokes Hamiltonian of `BookProof.ChapterNavierStokesLagrangianEsa` is a *second* quantization: the Eulerian field `u` is already an operator on a Fock space, and passing to the parcel variables `X(\u03be)` \u2014 one field-carrying parcel for each label `\u03be` in a continuous domain \u2014 quantizes the parcels themselves. The state space is therefore a Fock space **whose one-particle space is itself a Fock space**, and the Hamiltonian is *quadratic* in the outer (parcel) creation and annihilation operators.\n\nThis module builds that state space concretely, in the occupation-number representation, together with both levels of ladder operators.\n\n* `lpDiag`, `lpBasis` \u2014 a general diagonal operator with a real symbol on the finitely supported modes of `\u2113\u00b2(\u03b9)`, its eigenbasis, symmetry, essential self-adjointness (`lpDiag_hasZeroDeficiencyOn`) and unboundedness (`lpDiag_not_bounded`). * `Conf M = M \u2192\u2080 \u2115`, `FockL2 M = \u2113\u00b2(Conf M)`, `FockDom M` \u2014 the Fock space over the mode index `M` in the occupation-number representation and its dense domain of finite-particle, finite-mode states. * `annih m`, `creat m` \u2014 the annihilation and creation operators, with `annih_basis`, `creat_basis` (the usual `\u221an` factors), `creat_adjoint` (`\u27eaa\u2020v, w\u27eb = \u27eav, a w\u27eb`) and the canonical commutation relations `ccr_same`, `ccr_ne`. * `numberOp m = a\u2020\u2098 a\u2098` and `numberOp_basis` \u2014 the mode occupation operator. * `FockOfFockL2 J K = FockL2 (J \u00d7 Conf K)` \u2014 **the Fock space of a Fock space**: the outer one-particle modes are indexed by a parcel mode `j : J` *together with* an inner Fock (occupation) state `c : Conf K`. `outerOneParticle` shows that the outer creation operator applied to the vacuum creates exactly one parcel carrying the inner Fock state `c`.\n\nThe Hamiltonian itself, its integral over the continuous parcel domain and its essential self-adjointness are in `BookProof.ChapterNavierStokesFockEsa`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFockSpace.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "thms": {
@@ -10826,6 +10865,894 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_fockH": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_fockH",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_fockH.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (x : maxDom (fockSym \u03ba)) : commForm (fockH h\u03ba) (diagMax (fockSym \u03ba)) x = \u2211 i, commForm (ShiftData.shiftH (modeData h\u03ba i)) (diagMax (fockSym \u03ba)) x",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.commForm_fockH` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_testState_of_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) {i i\u2080 : Fin d} (hne : i \u2260 i\u2080) : commForm (ShiftData.shiftH (modeData h\u03ba i)) (diagMax (fockSym \u03ba)) (testState \u03ba i\u2080) = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.commForm_testState_of_ne` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_testState_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i\u2080 : Fin d) : commForm (ShiftData.shiftH (modeData h\u03ba i\u2080)) (diagMax (fockSym \u03ba)) (testState \u03ba i\u2080) = 2 * (4 * \u03ba i\u2080) * modeAmp \u03ba i\u2080 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.commForm_testState_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.commTerm_eq_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i i\u2080 : Fin d) (\u03b2 : Occ d) (hprod : ((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2 * ((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) ((modeData h\u03ba i).shift \u03b2) = 0) : 2 * (modeData h\u03ba i).step * ((modeData h\u03ba i).amp \u03b2 * ((starRingEnd \u2102) (((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2) ...",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.commTerm_eq_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_apply": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_apply.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (x : maxDom (fockSym \u03ba)) : (fockH h\u03ba x : L2I (Occ d)) = \u2211 i, (ShiftData.shiftH (modeData h\u03ba i) x : L2I (Occ d))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockH_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_commForm_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (x : maxDom (fockSym \u03ba)) : |commForm (fockH h\u03ba) (diagMax (fockSym \u03ba)) x| \u2264 (\u2211 i, (2 * \u03ba i + 4 * \u03ba i ^ 2)) * quadForm (diagMax (fockSym \u03ba)) x",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockH_commForm_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_essentiallySelfAdjointOn_core",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : EssentiallySelfAdjointOn (lpFiniteModes (Occ d)) ((fockH h\u03ba).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym \u03ba))))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockH_essentiallySelfAdjointOn_core` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_relative_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (x : maxDom (fockSym \u03ba)) : \u2016(fockH h\u03ba x : L2I (Occ d))\u2016 ^ 2 \u2264 ((d : \u211d) ^ 2 / 2) * \u2016(diagMax (fockSym \u03ba) x : L2I (Occ d))\u2016 ^ 2 + (2 * d * \u2211 i, \u03ba i ^ 2) * \u2016(x : L2I (Occ d))\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockH_relative_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : SymmetricOn (maxDom (fockSym \u03ba)) (fockH h\u03ba)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockH_symmetricOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fockSym_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (\u03b1 : Occ d) : 0 \u2264 fockSym \u03ba \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fockSym_nonneg` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i\u2080 : Fin d) (hpos : 0 < \u03ba i\u2080) : commForm (fockH h\u03ba) (diagMax (fockSym \u03ba)) (testState \u03ba i\u2080) \u2260 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeData_sym": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeData_sym",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeData_sym.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i : Fin d) : (modeData h\u03ba i).sym = fockSym \u03ba",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeData_sym` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'.lean",
+   "title": "BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne.lean",
+   "title": "(i i\u2080 : Fin d) : modeShift i (modeShift i\u2080 (0 : Occ d)) \u2260 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_inj": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_inj",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_inj.lean",
+   "title": "{i j : Fin d} (h : modeShift i (0 : Occ d) = modeShift j 0) : i = j",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_inj` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_ne_zero": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_ne_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_ne_zero.lean",
+   "title": "(i : Fin d) : modeShift i (0 : Occ d) \u2260 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_ne_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe.lean",
+   "title": "(i\u2080 : Fin d) (\u03b2 : Occ d) : ((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2 = if \u03b2 = 0 then 1 else if \u03b2 = modeShift i\u2080 0 then 1 else 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.testState_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe_eq_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero.lean",
+   "title": "(i\u2080 : Fin d) {\u03b2 : Occ d} (h0 : \u03b2 \u2260 0) (h1 : \u03b2 \u2260 modeShift i\u2080 0) : ((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2 = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.testState_coe_eq_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero.lean",
+   "title": "(i\u2080 : Fin d) : ((testState \u03ba i\u2080 : L2I (Occ d)) : Occ d \u2192 \u2102) 0 = 1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.testState_coe_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.ann_ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((ann i (ann i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (Real.sqrt ((\u03b1 i : \u211d) + 1) : \u2102) * (Real.sqrt ((\u03b1 i : \u211d) + 2) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (modeShift i \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.ann_ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_ann_coe.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((ann i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (Real.sqrt ((\u03b1 i : \u211d) + 1) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (up i \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.ann_cre_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((ann i (cre i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = ((\u03b1 i : \u2102) + 1) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.ann_cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_anti_DS": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.anti_DS",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_anti_DS.lean",
+   "title": "(i : Fin d) : (cre i - ann i).comp (cre i + ann i) + (cre i + ann i).comp (cre i - ann i) = (2 : \u2102) \u2022 ((cre i).comp (cre i) - (ann i).comp (ann i))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.anti_DS` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_bracket_DS": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.bracket_DS",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_bracket_DS.lean",
+   "title": "(i : Fin d) : (cre i - ann i).comp (cre i + ann i) - (cre i + ann i).comp (cre i - ann i) = (-2 : \u2102) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.bracket_DS` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'.lean",
+   "title": "BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply.lean",
+   "title": "(s : Finset (Fin d)) (v : Fin d \u2192 lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((\u2211 i \u2208 s, v i : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = \u2211 i \u2208 s, (((v i : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.comm_ann_cre",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre.lean",
+   "title": "(i : Fin d) : (ann i).comp (cre i) - (cre i).comp (ann i) = LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.comm_ann_cre` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.comm_mom_pos",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos.lean",
+   "title": "(i : Fin d) (h\u03ba : 0 < \u03ba i) : (mom \u03ba i).comp (pos \u03ba i) - (pos \u03ba i).comp (mom \u03ba i) = (-Complex.I) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.comm_mom_pos` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.cre_ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((cre i (ann i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (\u03b1 i : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.cre_ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_cre_coe": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.cre_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_coe.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((cre i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (Real.sqrt (\u03b1 i : \u211d) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (dn i \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_lt",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) {\u03b2 : Occ d} (h : \u03b2 i < 2) : (((cre i (cre i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2 = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_lt` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_two_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le.lean",
+   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) {\u03b2 : Occ d} (h : 2 \u2264 \u03b2 i) : (((cre i (cre i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b2 = (Real.sqrt (\u03b2 i : \u211d) : \u2102) * (Real.sqrt ((\u03b2 i : \u211d) - 1) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (dn i (dn i \u03b2))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_two_le` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_dn_dn_self": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.dn_dn_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_dn_self.lean",
+   "title": "(i : Fin d) (\u03b2 : Occ d) : (dn i (dn i \u03b2)) i = \u03b2 i - 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_dn_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_dn_self": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.dn_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self.lean",
+   "title": "(i : Fin d) (\u03b1 : Occ d) : dn i \u03b1 i = \u03b1 i - 1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_dn_up": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.dn_up",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_up.lean",
+   "title": "(i : Fin d) (\u03b1 : Occ d) : dn i (up i \u03b1) = \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_up` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : EssentiallySelfAdjointOn (lpFiniteModes (Occ d)) ((lpFiniteModes (Occ d)).subtype.comp (\u2211 i, ((1 : \u2102) / 2) \u2022 ((mom \u03ba i).comp (drift \u03ba i) + (drift \u03ba i).comp (mom \u03ba i))))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.fock_comparison_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : (lpFiniteModes (Occ d)).subtype.comp ((\u2211 i, ((mom \u03ba i).comp (mom \u03ba i) + (drift \u03ba i).comp (drift \u03ba i))) + LinearMap.id) = (diagMax (fockSym \u03ba)).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym \u03ba)))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.fock_comparison_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.fock_hamiltonian_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : (lpFiniteModes (Occ d)).subtype.comp (\u2211 i, ((1 : \u2102) / 2) \u2022 ((mom \u03ba i).comp (drift \u03ba i) + (drift \u03ba i).comp (mom \u03ba i))) = (fockH h\u03ba).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym \u03ba)))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.fock_hamiltonian_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.hop_modeData_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i : Fin d) (g : Occ d \u2192 \u2102) (\u03b2 : Occ d) : (modeData h\u03ba i).hop g \u03b2 = if 2 \u2264 \u03b2 i then g (dn i (dn i \u03b2)) else 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.hop_modeData_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.modeShift_dn_dn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn.lean",
+   "title": "(i : Fin d) {\u03b2 : Occ d} (h : 2 \u2264 \u03b2 i) : modeShift i (dn i (dn i \u03b2)) = \u03b2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.modeShift_dn_dn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.mode_comparison_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq.lean",
+   "title": "(i : Fin d) (h\u03ba : 0 \u2264 \u03ba i) : (mom \u03ba i).comp (mom \u03ba i) + (drift \u03ba i).comp (drift \u03ba i) = (\u03ba i : \u2102) \u2022 ((cre i).comp (ann i) + (ann i).comp (cre i))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.mode_comparison_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.mode_hamiltonian_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq.lean",
+   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) (i : Fin d) : (lpFiniteModes (Occ d)).subtype.comp (((1 : \u2102) / 2) \u2022 ((mom \u03ba i).comp (drift \u03ba i) + (drift \u03ba i).comp (mom \u03ba i))) = (ShiftData.shiftH (modeData h\u03ba i)).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym \u03ba)))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.mode_hamiltonian_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_sq_diff": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.sq_diff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_sq_diff.lean",
+   "title": "(i : Fin d) : (cre i + ann i).comp (cre i + ann i) - (cre i - ann i).comp (cre i - ann i) = (2 : \u2102) \u2022 ((cre i).comp (ann i) + (ann i).comp (cre i))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.sq_diff` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_mul_inv": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.sqrt_half_mul_inv",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_sqrt_half_mul_inv.lean",
+   "title": "(i : Fin d) (h\u03ba : 0 < \u03ba i) : (Real.sqrt (\u03ba i / 2) : \u2102) * ((1 / Real.sqrt (2 * \u03ba i) : \u211d) : \u2102) = 1 / 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.sqrt_half_mul_inv` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_sq": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.sqrt_half_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_sqrt_half_sq.lean",
+   "title": "(i : Fin d) (h\u03ba : 0 \u2264 \u03ba i) : (Real.sqrt (\u03ba i / 2) : \u2102) * (Real.sqrt (\u03ba i / 2) : \u2102) = (\u03ba i : \u2102) / 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.sqrt_half_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_up_self": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.up_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_up_self.lean",
+   "title": "(i : Fin d) (\u03b1 : Occ d) : up i \u03b1 i = \u03b1 i + 1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.up_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_up_up": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.up_up",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_up_up.lean",
+   "title": "(i : Fin d) (\u03b1 : Occ d) : up i (up i \u03b1) = modeShift i \u03b1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.up_up` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.add_single_sub_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single.lean",
+   "title": "(m : M) (n : Conf M) : (n + Finsupp.single m 1 : Conf M) - Finsupp.single m 1 = n",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.add_single_sub_single` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_annih_basis": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.annih_basis",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_annih_basis.lean",
+   "title": "(m : M) (n : Conf M) : annih m (fockBasis n) = ((Real.sqrt (n m) : \u211d) : \u2102) \u2022 fockBasis (n - Finsupp.single m 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.annih_basis` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_annih_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.annih_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_annih_coe.lean",
+   "title": "(m : M) (f : FockDom M) (n : Conf M) : (((annih m f : FockDom M) : FockL2 M) : Conf M \u2192 \u2102) n = (Real.sqrt (n m + 1) : \u2102) * ((f : FockL2 M) : Conf M \u2192 \u2102) (n + Finsupp.single m 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.annih_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_annih_vacuum": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.annih_vacuum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_annih_vacuum.lean",
+   "title": "(m : M) : annih m (vacuum : FockDom M) = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.annih_vacuum` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_ccr_ne": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.ccr_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_ccr_ne.lean",
+   "title": "{m m' : M} (h : m \u2260 m') : (annih m).comp (creat m') - (creat m').comp (annih m) = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.ccr_ne` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_ccr_same": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.ccr_same",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_ccr_same.lean",
+   "title": "(m : M) : (annih m).comp (creat m) - (creat m).comp (annih m) = LinearMap.id (R",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.ccr_same` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.coeffOp_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe.lean",
+   "title": "(T : (\u03b9 \u2192 \u2102) \u2192 \u03b9 \u2192 \u2102) (hsupp) (hadd) (hsmul) (f : lpFiniteModes \u03b9) : (((coeffOp T hsupp hadd hsmul f : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) = T ((f : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.coeffOp_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_creat_adjoint": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.creat_adjoint",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_creat_adjoint.lean",
+   "title": "(m : M) (v w : FockDom M) : (inner \u2102 ((creat m v : FockDom M) : FockL2 M) ((w : FockDom M) : FockL2 M) : \u2102) = inner \u2102 ((v : FockDom M) : FockL2 M) ((annih m w : FockDom M) : FockL2 M)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.creat_adjoint` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_creat_basis": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.creat_basis",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_creat_basis.lean",
+   "title": "(m : M) (n : Conf M) : creat m (fockBasis n) = ((Real.sqrt (n m + 1) : \u211d) : \u2102) \u2022 fockBasis (n + Finsupp.single m 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.creat_basis` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_creat_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.creat_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_creat_coe.lean",
+   "title": "(m : M) (f : FockDom M) (n : Conf M) : (((creat m f : FockDom M) : FockL2 M) : Conf M \u2192 \u2102) n = (Real.sqrt (n m) : \u2102) * ((f : FockL2 M) : Conf M \u2192 \u2102) (n - Finsupp.single m 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.creat_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_creat_vacuum": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.creat_vacuum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_creat_vacuum.lean",
+   "title": "(m : M) : creat m (vacuum : FockDom M) = fockBasis (Finsupp.single m 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.creat_vacuum` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.fockBasis_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe.lean",
+   "title": "(n k : Conf M) : (((fockBasis n : FockDom M) : FockL2 M) : Conf M \u2192 \u2102) k = if k = n then 1 else 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.fockBasis_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_fockDom_dense": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.fockDom_dense",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_fockDom_dense.lean",
+   "title": ": Dense ((FockDom M : Submodule \u2102 (FockL2 M)) : Set (FockL2 M))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.fockDom_dense` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.fockDom_ne_top",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top.lean",
+   "title": "[Nonempty M] : (FockDom M : Submodule \u2102 (FockL2 M)) \u2260 \u22a4",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.fockDom_ne_top` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_innerBasis_total": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.innerBasis_total",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_innerBasis_total.lean",
+   "title": "(w : FockL2 K) (hw : \u2200 c : Conf K, (inner \u2102 ((fockBasis c : FockDom K) : FockL2 K) w : \u2102) = 0) : w = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.innerBasis_total` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpBasis_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe.lean",
+   "title": "[DecidableEq \u03b9] (i j : \u03b9) : (((lpBasis i : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) j = if j = i then 1 else 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpBasis_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpBasis_total": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpBasis_total",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_total.lean",
+   "title": "[DecidableEq \u03b9] (w : lp (fun _ : \u03b9 => \u2102) 2) (hw : \u2200 i, (inner \u2102 ((lpBasis i : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) w : \u2102) = 0) : w = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpBasis_total` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpDiag_basis",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis.lean",
+   "title": "[DecidableEq \u03b9] (c : \u03b9 \u2192 \u211d) (i : \u03b9) : lpDiag c (lpBasis i) = ((c i : \u211d) : \u2102) \u2022 lpBasis i",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpDiag_basis` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpDiag_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe.lean",
+   "title": "(c : \u03b9 \u2192 \u211d) (f : lpFiniteModes \u03b9) (i : \u03b9) : (((lpDiag c f : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) i = (c i : \u2102) * ((f : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) i",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpDiag_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpDiag_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn.lean",
+   "title": "(c : \u03b9 \u2192 \u211d) : HasZeroDeficiencyOn (lpFiniteModes \u03b9) (lpDiag c)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpDiag_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpDiag_isSymmetricDom",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom.lean",
+   "title": "(c : \u03b9 \u2192 \u211d) : IsSymmetricDom (lpDiag c)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpDiag_isSymmetricDom` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_not_bounded": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpDiag_not_bounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_not_bounded.lean",
+   "title": "(c : \u03b9 \u2192 \u211d) (hc : \u2200 C : \u211d, \u2203 i, C < |c i|) : \u00ac \u2203 C : \u211d, \u2200 f : lpFiniteModes \u03b9, \u2016lpDiag c f\u2016 \u2264 C * \u2016f\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpDiag_not_bounded` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpFiniteModes_ne_top",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top.lean",
+   "title": "(\u03b9 : Type*) [Infinite \u03b9] : lpFiniteModes \u03b9 \u2260 (\u22a4 : Submodule \u2102 (lp (fun _ : \u03b9 => \u2102) 2))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpFiniteModes_ne_top` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.lpFiniteModes_sum_repr",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr.lean",
+   "title": "{\u03b9 : Type*} [DecidableEq \u03b9] (f : lpFiniteModes \u03b9) : f = \u2211 i \u2208 f.2.toFinset, (((f : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) i) \u2022 lpBasis i",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.lpFiniteModes_sum_repr` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.norm_lpBasis",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis.lean",
+   "title": "[DecidableEq \u03b9] (i : \u03b9) : \u2016lpBasis (\u03b9",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.norm_lpBasis` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.ofCoeff_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe.lean",
+   "title": "(\u03c6 : \u03b9 \u2192 \u2102) (h : (Function.support \u03c6).Finite) : (((ofCoeff \u03c6 h : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) = \u03c6",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.ofCoeff_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockOfFock_outerOneParticle": {
+   "name": "BookProof.NavierStokesFlow.FockOfFock.outerOneParticle",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_outerOneParticle.lean",
+   "title": "(j : J) (c : Conf K) : creat (j, c) (vacuum : FockOfFockDom J K) = fockBasis (Finsupp.single (j, c) 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.outerOneParticle` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "sol_order": [
@@ -11276,6 +12203,39 @@
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq",
   "BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx",
   "BookProof_NavierStokesFlow_FarisLavineLift_vEx_apply",
+  "BookProof_NavierStokesFlow_FockCanonical_ann_coe",
+  "BookProof_NavierStokesFlow_FockCanonical_anti_DS",
+  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply",
+  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'",
+  "BookProof_NavierStokesFlow_FockCanonical_cre_coe",
+  "BookProof_NavierStokesFlow_FockCanonical_dn_self",
+  "BookProof_NavierStokesFlow_FockCanonical_dn_up",
+  "BookProof_NavierStokesFlow_FockCanonical_sq_diff",
+  "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_mul_inv",
+  "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_sq",
+  "BookProof_NavierStokesFlow_FockCanonical_up_self",
+  "BookProof_NavierStokesFlow_FockCanonical_up_up",
+  "BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero",
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_apply",
+  "BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg",
+  "BookProof_NavierStokesFlow_FockManyMode_modeData_sym",
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne",
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'",
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_inj",
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_ne_zero",
+  "BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single",
+  "BookProof_NavierStokesFlow_FockOfFock_annih_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_ccr_ne",
+  "BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_creat_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_fockDom_dense",
+  "BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_lpBasis_total",
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom",
+  "BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top",
+  "BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis",
+  "BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul",
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_anti_DS",
@@ -11430,6 +12390,25 @@
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise",
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_vEx_sq",
   "BookProof_NavierStokesFlow_FarisLavineLift_sum_hEx_vEx",
+  "BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe",
+  "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt",
+  "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le",
+  "BookProof_NavierStokesFlow_FockCanonical_dn_dn_self",
+  "BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq",
+  "BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe",
+  "BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe",
+  "BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn",
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_fockH",
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound",
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn",
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_ccr_same",
+  "BookProof_NavierStokesFlow_FockOfFock_creat_adjoint",
+  "BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe",
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis",
+  "BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr",
+  "BookProof_NavierStokesFlow_FockOfFock_innerBasis_total",
+  "BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top",
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_add_two",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one",
@@ -11512,6 +12491,18 @@
   "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg",
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'",
   "BookProof_NavierStokesFlow_FarisLavineLift_not_forall_norm_sum_le_of_pointwise",
+  "BookProof_NavierStokesFlow_FockCanonical_bracket_DS",
+  "BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre",
+  "BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos",
+  "BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq",
+  "BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq",
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound",
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero",
+  "BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero",
+  "BookProof_NavierStokesFlow_FockOfFock_annih_basis",
+  "BookProof_NavierStokesFlow_FockOfFock_creat_basis",
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn",
+  "BookProof_NavierStokesFlow_FockOfFock_lpDiag_not_bounded",
   "BookProof_NavierStokesFlow_HermiteCanonical_bracket_DS",
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_ann_cre",
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos",
@@ -11561,6 +12552,12 @@
   "BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine",
   "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN",
+  "BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq",
+  "BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core",
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne",
+  "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self",
+  "BookProof_NavierStokesFlow_FockOfFock_annih_vacuum",
+  "BookProof_NavierStokesFlow_FockOfFock_creat_vacuum",
   "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn",
@@ -11590,6 +12587,9 @@
   "BookProof_FockSecondQuantization_inner_creA_left",
   "BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore",
+  "BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq",
+  "BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero",
+  "BookProof_NavierStokesFlow_FockOfFock_outerOneParticle",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
   "BookProof_QgHermiteCore_integral_hamiltonian_symm",
@@ -11615,6 +12615,7 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
+  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",

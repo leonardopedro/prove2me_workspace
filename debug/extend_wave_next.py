@@ -45,7 +45,8 @@ NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncat
             "ChapterNavierStokesFarisLavineLift", "ChapterNavierStokesDiffFarisLavine",
             "ChapterNavierStokesSecondQuant", "ChapterQgHermiteCore",
             "ChapterRitzCertificate", "ChapterNavierStokesLagrangianCanonical", "ChapterNavierStokesFockFarisLavine",
-            "ChapterSqSumFarisLavine", "ChapterGaussCoreQuadBounds"]
+            "ChapterSqSumFarisLavine", "ChapterGaussCoreQuadBounds",
+            "ChapterNavierStokesFockManyMode", "ChapterNavierStokesFockCanonical", "ChapterNavierStokesFockSpace"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
@@ -77,6 +78,9 @@ GLOB_PREFIXES = [
     ("ChapterNavierStokesLagrangianCanonical", "NavierStokesFlow_LagrangianCanonical_"),
     ("ChapterSqSumFarisLavine", "SqSumFarisLavine_"),
     ("ChapterGaussCoreQuadBounds", "GaussCoreQuadBounds_"),
+    ("ChapterNavierStokesFockManyMode", "NavierStokesFlow_FockManyMode_"),
+    ("ChapterNavierStokesFockCanonical", "NavierStokesFlow_FockCanonical_"),
+    ("ChapterNavierStokesFockSpace", "NavierStokesFlow_FockOfFock_"),
 ]
 
 DOMAIN = [

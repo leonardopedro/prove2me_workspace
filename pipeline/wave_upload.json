@@ -1037,6 +1037,45 @@
     "sirk",
     "spectral-theory"
    ]
+  },
+  "ChapterSirkRestart": {
+   "definition_name": "ChapterSirkRestart",
+   "namespace": "BookProof.SirkRestart",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkRestart.lean",
+   "title": "Generated def bundle for ChapterSirkRestart. See BookProof/ChapterSirkRestart.lean for full context.",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkRestart`, source chapter `BookProof/ChapterSirkRestart.lean`).\n\nGenerated def bundle for ChapterSirkRestart. See BookProof/ChapterSirkRestart.lean for full context.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkRitzSpectrum": {
+   "definition_name": "ChapterSirkRitzSpectrum",
+   "namespace": "BookProof.SirkRitzSpectrum",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkRitzSpectrum.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a712.2 **Gap 2, QYM**: \"the Friedrichs route gives the resolvent geometry; missing \u2026 the statement ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkRitzSpectrum`, source chapter `BookProof/ChapterSirkRitzSpectrum.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a712.2 **Gap 2, QYM**: \"the Friedrichs route gives the resolvent geometry; missing \u2026 the statement that the Ritz/gap values converge to the *spectrum* of the Friedrichs extension as `m \u2192 \u221e`\".\n\n`BookProof.HermiteGalerkin.ritzInf_tendsto_domainInf` already proves that the Rayleigh\u2013Ritz values of the Galerkin truncations decrease to the infimum of the *energy form* over the finite-mode domain. What was missing is the identification of that limit with a *spectral* quantity \u2014 the bottom of the spectrum of the selected (Friedrichs) extension. This chapter supplies the missing link and the assembled statement.\n\n* `rayleighSet` / `rayleighInf` \u2014 the Rayleigh quotients of the unit vectors of a bounded operator, and their infimum. * `le_rayleigh_iff_le_spectrum` \u2014 **the numerical characterisation of the bottom of the spectrum**: for a bounded self-adjoint operator `T` and a real `c`, `c\u2016x\u2016\u00b2 \u2264 \u27eaTx, x\u27eb` for every `x` **iff** `c \u2264 \u03bc` for every `\u03bc \u2208 spectrum \u211d T`. * `spectrum_real_nonempty`, `spectrum_real_bddBelow` \u2014 the real spectrum of a bounded self-adjoint operator on a nonzero Hilbert space is a nonempty set that is bounded below (by `\u2212\u2016T\u2016`). * `sInf_spectrum_eq_rayleighInf` \u2014 **the bottom of the spectrum is the bottom of the numerical range**, `sInf (spectrum \u211d T) = rayleighInf T`. * `ritzInf_finiteModeDomain_eq_rayleighInf` \u2014 the Ritz infimum over the finite-mode (Hermite) domain equals the Rayleigh infimum over the whole space: the truncation domain is dense, and the Rayleigh quotient is continuous. * `ritzInf_tendsto_sInf_spectrum` \u2014 **headline**: for a bounded positive self-adjoint operator, the Rayleigh\u2013Ritz values of the Hermite\u2013Galerkin truncations converge to `sInf (spectrum \u211d A)`. * `galerkin_ritz_tendsto_sInf_spectrum_of_selected` \u2014 the same statement with the extension named: the limit is the bottom of the spectrum of the operator the Galerkin/Hashimoto algorithm *selects* (the positive self-adjoint extension of the matrix, which for the bounded regime is the Friedrichs extension of `BookProof.YangMillsFriedrichsLimit`).\n\nEverything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`, `Quot.sound`).",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkTruncation": {
+   "definition_name": "ChapterSirkTruncation",
+   "namespace": "BookProof.SirkTruncation",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkTruncation.lean",
+   "title": "Generated def bundle for ChapterSirkTruncation. See BookProof/ChapterSirkTruncation.lean for full context.",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkTruncation`, source chapter `BookProof/ChapterSirkTruncation.lean`).\n\nGenerated def bundle for ChapterSirkTruncation. See BookProof/ChapterSirkTruncation.lean for full context.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
   }
  },
  "thms": {
@@ -2266,7 +2305,7 @@
   "BookProof_YangMillsHermite_ymHamiltonian_apply": {
    "name": "BookProof.YangMillsHermite.ymHamiltonian_apply",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsHermite_ymHamiltonian_apply.lean",
-   "title": "(\u03a6 : CoreRep 99 D) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (x : D) : ymHamiltonian \u03a6 fabc x = ((1 / 2 : \u211d) : \u2102) \u2022 ((\u2211 m, ((piOps \u03a6 m (piOps \u03a6 m x) : D) : L2d 99)) + \u2211 m, ((magOps \u03a6 fabc m (magOps \u03a6 fabc m x) : D) : L2d 99))",
+   "title": "(\u03a6 : CoreRep 99 D) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (x : D) : ymHamiltonian \u03a6 fabc x = ((1 / 2 : \u211d) : \u2102) \u2022 ((\u2211 m, ((piOps \u03a6 m (piOps \u03a6 m x) : D) : L2d 99)) + \u2211 m, ((magOps \u03a6 fabc m (magOps \u03a6 fabc...",
    "nl": "Lean 4 theorem `BookProof.YangMillsHermite.ymHamiltonian_apply` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
    "tags": [
@@ -2518,7 +2557,7 @@
   "BookProof_YangMillsHermite_ymHamiltonian_quadForm": {
    "name": "BookProof.YangMillsHermite.ymHamiltonian_quadForm",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsHermite_ymHamiltonian_quadForm.lean",
-   "title": "(\u03a6 : CoreRep 99 D) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (x : D) : quadForm (ymHamiltonian \u03a6 fabc) x = 1 / 2 * (\u2211 m, \u2016((piOps \u03a6 m x : D) : L2d 99)\u2016 ^ 2) + 1 / 2 * \u2211 m, \u2016((magOps \u03a6 fabc m x : D) : L2d 99)\u2016 ^ 2",
+   "title": "(\u03a6 : CoreRep 99 D) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (x : D) : quadForm (ymHamiltonian \u03a6 fabc) x = 1 / 2 * (\u2211 m, \u2016((piOps \u03a6 m x : D) : L2d 99)\u2016 ^ 2) + 1 / 2 * \u2211 m, \u2016((magOps \u03a6 fabc m x : D) : L2d...",
    "nl": "Lean 4 theorem `BookProof.YangMillsHermite.ymHamiltonian_quadForm` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
    "tags": [
@@ -2554,7 +2593,7 @@
   "BookProof_YangMillsHermite_ym_hermite_hashimoto_selects": {
    "name": "BookProof.YangMillsHermite.ym_hermite_hashimoto_selects",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsHermite_ym_hermite_hashimoto_selects.lean",
-   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 (L2d 99)) (A : Dom \u2192\u2097[\u2102] L2d 99) (R : L2d 99 \u2192L[\u2102] L2d 99), IsPositiveSelfAdjointExtension (ymHamiltonian (coreRepBasis e) fabc) A \u2227 IsShiftInvert A \u03b3 R \u2227 IsSelfAdjoint R \u2227 (\u2200 u : L2d 99, Filter.Te ...",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 (L2d 99)) (A : Dom \u2192\u2097[\u2102] L2d 99) (R : L2d 99 \u2192L[\u2102] L2d 99), IsPositiveSelfAdjointExtension (ym...",
    "nl": "Lean 4 theorem `BookProof.YangMillsHermite.ym_hermite_hashimoto_selects` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
    "tags": [
@@ -2638,7 +2677,7 @@
   "BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time": {
    "name": "BookProof.ChapterSirkEndToEnd.sirk_flow_error_uniform_in_time",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time.lean",
-   "title": "{G : \u2115 \u2192 Type*} [\u2200 m, NormedAddCommGroup (G m)] [\u2200 m, InnerProductSpace \u2102 (G m)] [\u2200 m, CompleteSpace (G m)] (flow : \u211d \u2192 E \u2192L[\u2102] E) (V : \u2200 m, G m \u2192L[\u2102] E) (psiB : \u2200 m, \u211d \u2192 G m \u2192L[\u2102] G m) (C Dmin h : \u211d) (hh : 0 < h) (v : E) (hbound : \u2200 (t : \u211d) (m : \u2115), \u2016flow t v - sirkApprox (V m) (psiB m t) v\u2016 \u2264 sirk ...",
+   "title": "{G : \u2115 \u2192 Type*} [\u2200 m, NormedAddCommGroup (G m)] [\u2200 m, InnerProductSpace \u2102 (G m)] [\u2200 m, CompleteSpace (G m)] (flow : \u211d \u2192 E \u2192L[\u2102] E) (V : \u2200 m, G m \u2192L[\u2102] E) (psiB : \u2200 m, \u211d \u2192 G m \u2192L[\u2102] G m) (C Dmin h :...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirk_flow_error_uniform_in_time` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
    "tags": [
@@ -2662,7 +2701,7 @@
   "BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain": {
    "name": "BookProof.ChapterSirkPerSystem.diagKR_sirk_crouzeix_domain",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain.lean",
-   "title": "(\u03b3 : \u2115 \u2192 \u2102) (h\u03b3 : \u2200 j, (\u03b3 j).im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2N) (A : Dom \u2192\u2097[\u2102] L2N) (X : \u2115 \u2192 L2N \u2192L[\u2102] L2N), IsSelfAdjointExtension (lagrangianCore diagKR) A \u2227 (\u2200 j, IsShiftInvertC A (\u03b3 j) (X j)) \u2227 (\u2200 j, numRange (X j) \u2286 Metric.closedBall (0 : \u2102) |(\u03b3 j).im|\u207b\u00b9) \u2227 \u2200 (j m : \u2115) (V : EuclideanSpace \u2102 (F ...",
+   "title": "(\u03b3 : \u2115 \u2192 \u2102) (h\u03b3 : \u2200 j, (\u03b3 j).im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2N) (A : Dom \u2192\u2097[\u2102] L2N) (X : \u2115 \u2192 L2N \u2192L[\u2102] L2N), IsSelfAdjointExtension (lagrangianCore diagKR) A \u2227 (\u2200 j, IsShiftInvertC A (\u03b3 j) (X j))...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.diagKR_sirk_crouzeix_domain` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2674,7 +2713,7 @@
   "BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain": {
    "name": "BookProof.ChapterSirkPerSystem.lagrangian_sirk_crouzeix_domain",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain.lean",
-   "title": "{F : Type*} [NormedAddCommGroup F] [InnerProductSpace \u2102 F] [CompleteSpace F] (L : LagrangianFullData F) (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L)) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : Submodule \u2102 F) (A : Dom \u2192\u2097[\u2102] F) (X : F \u2192L[\u2102] F), IsSelfAdjointExtension (lagrangianCore L) A \u2227 IsShiftI ...",
+   "title": "{F : Type*} [NormedAddCommGroup F] [InnerProductSpace \u2102 F] [CompleteSpace F] (L : LagrangianFullData F) (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L)) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : S...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.lagrangian_sirk_crouzeix_domain` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2698,7 +2737,7 @@
   "BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain": {
    "name": "BookProof.ChapterSirkPerSystem.ns_sirk_crouzeix_domain",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain.lean",
-   "title": "(A : Matrix (Fin 3) (Fin 3) \u211d) (c : Fin 3 \u2192 \u211d) (b : HilbertBasis \u2115 \u2102 (L2I Vel)) (\u03b3 : \u2115 \u2192 \u2102) (h\u03b3 : \u2200 j, (\u03b3 j).im \u2260 0) : \u2203 (Dom : Submodule \u2102 (L2I Vel)) (G : Dom \u2192\u2097[\u2102] L2I Vel) (X : \u2115 \u2192 L2I Vel \u2192L[\u2102] L2I Vel), IsSelfAdjointExtension (velCore A c) G \u2227 (\u2200 j, IsShiftInvertC G (\u03b3 j) (X j)) \u2227 (\u2200 j, numRang ...",
+   "title": "(A : Matrix (Fin 3) (Fin 3) \u211d) (c : Fin 3 \u2192 \u211d) (b : HilbertBasis \u2115 \u2102 (L2I Vel)) (\u03b3 : \u2115 \u2192 \u2102) (h\u03b3 : \u2200 j, (\u03b3 j).im \u2260 0) : \u2203 (Dom : Submodule \u2102 (L2I Vel)) (G : Dom \u2192\u2097[\u2102] L2I Vel) (X : \u2115 \u2192 L2I Vel \u2192L[\u2102]...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.ns_sirk_crouzeix_domain` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2710,7 +2749,7 @@
   "BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects": {
    "name": "BookProof.ChapterSirkPerSystem.qgR2_shiftInvert_selects",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects.lean",
-   "title": "(a b : \u2115 \u2192 \u211d) (M alpha : \u211d) (Rc : \u2115 \u2192 \u211d) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2Nat) (A : Dom \u2192\u2097[\u2102] L2Nat) (X : L2Nat \u2192L[\u2102] L2Nat), IsSelfAdjointExtension (qgR2ModeHamiltonian a b M alpha Rc) A \u2227 IsShiftInvertC A \u03b3 X \u2227 \u2016X\u2016 \u2264 |\u03b3.im|\u207b\u00b9",
+   "title": "(a b : \u2115 \u2192 \u211d) (M alpha : \u211d) (Rc : \u2115 \u2192 \u211d) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2Nat) (A : Dom \u2192\u2097[\u2102] L2Nat) (X : L2Nat \u2192L[\u2102] L2Nat), IsSelfAdjointExtension (qgR2ModeHamiltonian a b M alpha...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.qgR2_shiftInvert_selects` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2722,7 +2761,7 @@
   "BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain": {
    "name": "BookProof.ChapterSirkPerSystem.ym_sirk_crouzeix_domain",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain.lean",
-   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 (L2d 99)) (A : Dom \u2192\u2097[\u2102] L2d 99) (R : L2d 99 \u2192L[\u2102] L2d 99), IsPositiveSelfAdjointExtension (ymHamiltonian (coreRepBasis e) fabc) A \u2227 IsShiftInvert A \u03b3 R \u2227 IsSelfAdjoint R \u2227 numRange R \u2286 realSegment ...",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 (L2d 99)) (A : Dom \u2192\u2097[\u2102] L2d 99) (R : L2d 99 \u2192L[\u2102] L2d 99), IsPositiveSelfAdjointExtension (ym...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.ym_sirk_crouzeix_domain` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2842,7 +2881,7 @@
   "BookProof_ChapterSirkEndToEnd_sirk_error_bound_at": {
    "name": "BookProof.ChapterSirkEndToEnd.sirk_error_bound_at",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirk_error_bound_at.lean",
-   "title": "(V : F \u2192L[\u2102] E) (phiA psiX rX : E \u2192L[\u2102] E) (psiB rB : F \u2192L[\u2102] F) (C D : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * D) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * D) (v : E) (hrt : rX v = V (rB (V.adjoint v))) : \u2016phiA v - sirkApprox V psiB v\u2016 ...",
+   "title": "(V : F \u2192L[\u2102] E) (phiA psiX rX : E \u2192L[\u2102] E) (psiB rB : F \u2192L[\u2102] F) (C D : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * D) (h...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirk_error_bound_at` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
    "tags": [
@@ -2854,7 +2893,7 @@
   "BookProof_ChapterSirkEndToEnd_sirk_flow_error_tendsto_zero": {
    "name": "BookProof.ChapterSirkEndToEnd.sirk_flow_error_tendsto_zero",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirk_flow_error_tendsto_zero.lean",
-   "title": "{G : \u2115 \u2192 Type*} [\u2200 m, NormedAddCommGroup (G m)] [\u2200 m, InnerProductSpace \u2102 (G m)] [\u2200 m, CompleteSpace (G m)] (flow : E \u2192L[\u2102] E) (V : \u2200 m, G m \u2192L[\u2102] E) (psiB : \u2200 m, G m \u2192L[\u2102] G m) (C Dmin h : \u211d) (hh : 0 < h) (v : E) (hbound : \u2200 m, \u2016flow v - sirkApprox (V m) (psiB m) v\u2016 \u2264 sirkBound C Dmin h \u2016v\u2016 m) : Te ...",
+   "title": "{G : \u2115 \u2192 Type*} [\u2200 m, NormedAddCommGroup (G m)] [\u2200 m, InnerProductSpace \u2102 (G m)] [\u2200 m, CompleteSpace (G m)] (flow : E \u2192L[\u2102] E) (V : \u2200 m, G m \u2192L[\u2102] E) (psiB : \u2200 m, G m \u2192L[\u2102] G m) (C Dmin h : \u211d) (hh...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirk_flow_error_tendsto_zero` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
    "tags": [
@@ -2866,7 +2905,7 @@
   "BookProof_ChapterSirkPerSystem_qgR2_sirk_crouzeix_domain": {
    "name": "BookProof.ChapterSirkPerSystem.qgR2_sirk_crouzeix_domain",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkPerSystem_qgR2_sirk_crouzeix_domain.lean",
-   "title": "(a b : \u2115 \u2192 \u211d) (M alpha : \u211d) (Rc : \u2115 \u2192 \u211d) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2Nat) (A : Dom \u2192\u2097[\u2102] L2Nat) (X : L2Nat \u2192L[\u2102] L2Nat), IsSelfAdjointExtension (qgR2ModeHamiltonian a b M alpha Rc) A \u2227 IsShiftInvertC A \u03b3 X \u2227 \u2016X\u2016 \u2264 |\u03b3.im|\u207b\u00b9 \u2227 numRange X \u2286 Metric.closedBall (0 : \u2102) |\u03b3.im|\u207b\u00b9 \u2227 \u2200 (m ...",
+   "title": "(a b : \u2115 \u2192 \u211d) (M alpha : \u211d) (Rc : \u2115 \u2192 \u211d) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : \u2203 (Dom : Submodule \u2102 L2Nat) (A : Dom \u2192\u2097[\u2102] L2Nat) (X : L2Nat \u2192L[\u2102] L2Nat), IsSelfAdjointExtension (qgR2ModeHamiltonian a b M alpha...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkPerSystem.qgR2_sirk_crouzeix_domain` (module `BookProof.ChapterSirkPerSystem`), source chapter `BookProof/ChapterChapterSirkPerSystem.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkPerSystem.lean",
    "tags": [
@@ -2878,7 +2917,7 @@
   "BookProof_ChapterSirkWhitening_whiteningEquiv_isometry": {
    "name": "BookProof.ChapterSirkWhitening.whiteningEquiv_isometry",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkWhitening_whiteningEquiv_isometry.lean",
-   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : \u2200 y : F, \u2016V\u2081 y\u2016 = \u2016y\u2016) (hV\u2082 : \u2200 z : G, \u2016V\u2082 z\u2016 = \u2016z\u2016) (hV\u2082adj : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (y : F) : \u2016whiteningEquiv V\u2081 V\u2082 y\u2016 = \u2016y\u2016",
+   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : \u2200 y : F, \u2016V\u2081 y\u2016 = \u2016y\u2016) (hV\u2082 : \u2200 z : G, \u2016V\u2082 z\u2016 = \u2016z\u2016) (hV\u2082adj : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (y : F...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.whiteningEquiv_isometry` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
    "tags": [
@@ -2890,7 +2929,7 @@
   "BookProof_ChapterSirkWhitening_whiteningEquiv_left_inverse": {
    "name": "BookProof.ChapterSirkWhitening.whiteningEquiv_left_inverse",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkWhitening_whiteningEquiv_left_inverse.lean",
-   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (y : F) : whiteningEquiv V\u2082 V\u2081 (whiteningEquiv V\u2081 V\u2082 y) = y",
+   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (y : F) : whi...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.whiteningEquiv_left_inverse` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
    "tags": [
@@ -2938,7 +2977,7 @@
   "BookProof_ChapterSirkEndToEnd_sirk_end_to_end": {
    "name": "BookProof.ChapterSirkEndToEnd.sirk_end_to_end",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end.lean",
-   "title": "(V : F \u2192L[\u2102] E) (X qX qXinv : E \u2192L[\u2102] E) (qBinv : F \u2192L[\u2102] F) (p : Polynomial \u2102) (flow psiX : E \u2192L[\u2102] E) (psiB : F \u2192L[\u2102] F) (C Dmin h : \u211d) (m : \u2115) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hinvX : \u2200 x : F, \u2203 y : F, X ( ...",
+   "title": "(V : F \u2192L[\u2102] E) (X qX qXinv : E \u2192L[\u2102] E) (qBinv : F \u2192L[\u2102] F) (p : Polynomial \u2102) (flow psiX : E \u2192L[\u2102] E) (psiB : F \u2192L[\u2102] F) (C Dmin h : \u211d) (m : \u2115) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirk_end_to_end` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
    "tags": [
@@ -2950,7 +2989,7 @@
   "BookProof_ChapterSirkWhitening_compress_conj_whitening": {
    "name": "BookProof.ChapterSirkWhitening.compress_conj_whitening",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkWhitening_compress_conj_whitening.lean",
-   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) : compress V\u2081 X = (whiteningEquiv V\u2082 V\u2081).comp ((compress V\u2082 X).comp (whiteningEquiv V\u2081 V\u2082))",
+   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) : compress V\u2081 X = (whiteningEquiv V\u2082 V\u2081).comp ((compr...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.compress_conj_whitening` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
    "tags": [
@@ -2962,7 +3001,7 @@
   "BookProof_ChapterSirkWhitening_rangeProj_eq_of_range_eq": {
    "name": "BookProof.ChapterSirkWhitening.rangeProj_eq_of_range_eq",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkWhitening_rangeProj_eq_of_range_eq.lean",
-   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (h21 : \u2200 z : G, \u2203 y : F, V\u2082 z = V\u2081 y) : rangeProj V\u2081 = rangeProj V\u2082",
+   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (h21 : \u2200 z :...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.rangeProj_eq_of_range_eq` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
    "tags": [
@@ -2974,7 +3013,7 @@
   "BookProof_ChapterSirkEndToEnd_sirk_end_to_end_satisfiable": {
    "name": "BookProof.ChapterSirkEndToEnd.sirk_end_to_end_satisfiable",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end_satisfiable.lean",
-   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hinvX : \u2200 x : F, \u2203 y : F, X (V x) = V y) (m : \u2115) (v : E) (hv : V (V.adjoint v) = v) : \u2016X v - sirkApprox V (compress V X) v\u2016 \u2264 sirkBound 1 1 1 \u2016 ...",
+   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hinvX : \u2200 x : F, \u2203 y : F, X (V x) = V y)...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirk_end_to_end_satisfiable` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
    "tags": [
@@ -2986,9 +3025,975 @@
   "BookProof_ChapterSirkWhitening_sirkApprox_eq_of_range_eq": {
    "name": "BookProof.ChapterSirkWhitening.sirkApprox_eq_of_range_eq",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkWhitening_sirkApprox_eq_of_range_eq.lean",
-   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082 z) (h21 : \u2200 z : G, \u2203 y : F, V\u2082 z = V\u2081 y) : V\u2081.comp ((compress V\u2081 X).comp V\u2081.adjoint) = V\u2082.comp ((compre ...",
+   "title": "(V\u2081 : F \u2192L[\u2102] E) (V\u2082 : G \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hV\u2081 : V\u2081.adjoint.comp V\u2081 = ContinuousLinearMap.id \u2102 F) (hV\u2082 : V\u2082.adjoint.comp V\u2082 = ContinuousLinearMap.id \u2102 G) (h12 : \u2200 y : F, \u2203 z : G, V\u2081 y = V\u2082...",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.sirkApprox_eq_of_range_eq` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_bornPMF_apply": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.bornPMF_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_bornPMF_apply.lean",
+   "title": "(v : LinfZ) (t : \u211d) (psi : L2Z) (hpsi : \u2016psi\u2016 = 1) (z : \u2124) : bornPMF v t psi hpsi z = ENNReal.ofReal (\u2016((evolvedState v t psi : L2Z) : \u2124 \u2192 \u2102) z\u2016 ^ 2)",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.bornPMF_apply` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_empty": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_empty",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_bornRecover_empty.lean",
+   "title": "(v : LinfZ) (t : \u211d) (psi : L2Z) : bornRecover v t psi \u2205 = 0",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.bornRecover_empty` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_mono",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono.lean",
+   "title": "(v : LinfZ) (t : \u211d) (psi : L2Z) {B C : Finset \u2124} (h : B \u2286 C) : bornRecover v t psi B \u2264 bornRecover v t psi C",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.bornRecover_mono` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_nonneg": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_bornRecover_nonneg.lean",
+   "title": "(v : LinfZ) (t : \u211d) (psi : L2Z) (B : Finset \u2124) : 0 \u2264 bornRecover v t psi B",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_union": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_union",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_bornRecover_union.lean",
+   "title": "(v : LinfZ) (t : \u211d) (psi : L2Z) {B C : Finset \u2124} (h : Disjoint B C) : bornRecover v t psi (B \u222a C) = bornRecover v t psi B + bornRecover v t psi C",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.bornRecover_union` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite.lean",
+   "title": "(v : X \u2192 LinfZ) (t : \u211d) (psi : X \u2192 L2Z) (hpsi : \u2200 x, \u2016psi x\u2016 = 1) (x : X) : (\u2211' z : \u2124, bornPMF (v x) t (psi x) (hpsi x) z) = 1 \u2227 \u2200 B : Finset \u2124, \u2211 z \u2208 B, bornPMF (v x) t (psi x) (hpsi x) z = ENNReal.ofReal (bornRecover (v x) t (psi x) B)",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_add": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_add.lean",
+   "title": "(v : LinfZ) (s t : \u211d) : continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_zero": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_zero.lean",
+   "title": "(v : LinfZ) : continuityUnitary v 0 = 1",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_zero` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_momentum_apply": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply.lean",
+   "title": "(f : L2Z) (k : \u2124) : ((momentum f : L2Z) : \u2124 \u2192 \u2102) k = (-Complex.I / 2) * ((f : \u2124 \u2192 \u2102) (k + 1) - (f : \u2124 \u2192 \u2102) (k - 1))",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.momentum_apply` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_isSelfAdjoint",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint.lean",
+   "title": ": IsSelfAdjoint momentum",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.momentum_isSelfAdjoint` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_shiftLin_apply": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.shiftLin_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_shiftLin_apply.lean",
+   "title": "(m : \u2124) (f : L2Z) (k : \u2124) : ((shiftLin m f : L2Z) : \u2124 \u2192 \u2102) k = (f : \u2124 \u2192 \u2102) (k + m)",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.shiftLin_apply` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_velocityLin_apply": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityLin_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityLin_apply.lean",
+   "title": "(v : LinfZ) (f : L2Z) (k : \u2124) : ((velocityLin v f : L2Z) : \u2124 \u2192 \u2102) k = ((v : \u2124 \u2192 \u211d) k : \u2102) * (f : \u2124 \u2192 \u2102) k",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.velocityLin_apply` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint": {
+   "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint.lean",
+   "title": "(v : LinfZ) : IsSelfAdjoint (velocityOp v)",
+   "nl": "Lean 4 theorem `BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint` (module `BookProof.ChapterContinuityUnitaryInfinite`), source chapter `BookProof/ChapterChapterContinuityUnitaryInfinite.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterContinuityUnitaryInfinite.lean",
+   "tags": [
+    "timepiece",
+    "unitary",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterH1_duhamel_phiOp1": {
+   "name": "BookProof.ChapterH1.duhamel_phiOp1",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_duhamel_phiOp1.lean",
+   "title": "{n : \u2115} (A : Matrix (Fin n) (Fin n) \u2102) (g : Fin n \u2192 \u2102) (\u03b4 : \u211d) : (\u222b s in (0 : \u211d)..\u03b4, (NormedSpace.exp ((\u03b4 - s) \u2022 A)).mulVec g) = \u03b4 \u2022 phiOp1 (\u03b4 \u2022 A) g",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.duhamel_phiOp1` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_eigenvalue_mem_numericalRange": {
+   "name": "BookProof.ChapterH1.eigenvalue_mem_numericalRange",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_eigenvalue_mem_numericalRange.lean",
+   "title": "(A : E \u2192\u2097[\u2102] E) (l : \u2102) (v : E) (hv : \u2016v\u2016 = 1) (hAv : A v = l \u2022 v) : l \u2208 numericalRange A",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.eigenvalue_mem_numericalRange` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_at_zero": {
+   "name": "BookProof.ChapterH1.phi_at_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_at_zero.lean",
+   "title": "(k : \u2115) : phi k 0 = 1 / k.factorial",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_at_zero` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_one": {
+   "name": "BookProof.ChapterH1.phi_one",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_one.lean",
+   "title": "{z : \u2102} (hz : z \u2260 0) : phi 1 z = (Complex.exp z - 1) / z",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_one` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_succ_apply": {
+   "name": "BookProof.ChapterH1.phi_succ_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_succ_apply.lean",
+   "title": "(k : \u2115) (z : \u2102) : phi (k + 1) z = \u222b s in (0 : \u211d)..1, Complex.exp (s * z) * (1 - s) ^ k / k.factorial",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_succ_apply` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_succ_mul": {
+   "name": "BookProof.ChapterH1.phi_succ_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_succ_mul.lean",
+   "title": "(k : \u2115) (z : \u2102) : z * phi (k + 1) z = phi k z - 1 / k.factorial",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_succ_mul` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_zero": {
+   "name": "BookProof.ChapterH1.phi_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_zero.lean",
+   "title": ": phi 0 = Complex.exp",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_zero` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_phi_zero_apply": {
+   "name": "BookProof.ChapterH1.phi_zero_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_phi_zero_apply.lean",
+   "title": "(z : \u2102) : phi 0 z = Complex.exp z",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_zero_apply` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_psi_resolvent": {
+   "name": "BookProof.ChapterH1.psi_resolvent",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_psi_resolvent.lean",
+   "title": "(k : \u2115) (\u03b3 z : \u2102) (_hz : \u03b3 - z \u2260 0) : psi k \u03b3 (\u03b3 - z)\u207b\u00b9 = phi k z",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.psi_resolvent` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_resolvent_eigenvector": {
+   "name": "BookProof.ChapterH1.resolvent_eigenvector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_resolvent_eigenvector.lean",
+   "title": "{F : Type*} [NormedAddCommGroup F] [NormedSpace \u2102 F] (T : F \u2192L[\u2102] F) (X : F \u2192L[\u2102] F) (\u03b3 z : \u2102) (v : F) (hTv : T v = z \u2022 v) (hz : \u03b3 - z \u2260 0) (_hXr : (\u03b3 \u2022 (1 : F \u2192L[\u2102] F) - T) * X = 1) (hXl : X * (\u03b3 \u2022 (1 : F \u2192L[\u2102] F) - T) = 1) : X v = (\u03b3 - z)\u207b\u00b9 \u2022 v",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.resolvent_eigenvector` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_resolvent_identity": {
+   "name": "BookProof.ChapterH1.resolvent_identity",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_resolvent_identity.lean",
+   "title": "(a : A) (gj gm : \u2102) (Xj Xm : A) (_hjl : (algebraMap \u2102 A gj - a) * Xj = 1) (hjr : Xj * (algebraMap \u2102 A gj - a) = 1) (hml : (algebraMap \u2102 A gm - a) * Xm = 1) (_hmr : Xm * (algebraMap \u2102 A gm - a) = 1) : Xj - Xm = (gm - gj) \u2022 (Xj * Xm)",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.resolvent_identity` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_resolvent_shift_mul": {
+   "name": "BookProof.ChapterH1.resolvent_shift_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_resolvent_shift_mul.lean",
+   "title": "(a : A) (N h : \u2102) (j m : \u2102) (Xj Xm : A) (_hjl : (algebraMap \u2102 A (N - h * j) - a) * Xj = 1) (hjr : Xj * (algebraMap \u2102 A (N - h * j) - a) = 1) (hml : (algebraMap \u2102 A (N - h * m) - a) * Xm = 1) (_hmr : Xm * (algebraMap \u2102 A (N - h * m) - a) = 1) : Xj * (1 + (h * (m - j)) \u2022 Xm) = Xm",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.resolvent_shift_mul` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH1_resolvent_shift_repr": {
+   "name": "BookProof.ChapterH1.resolvent_shift_repr",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH1_resolvent_shift_repr.lean",
+   "title": "(a : A) (N h : \u2102) (j m : \u2102) (Xj Xm : A) (hjl : (algebraMap \u2102 A (N - h * j) - a) * Xj = 1) (hjr : Xj * (algebraMap \u2102 A (N - h * j) - a) = 1) (hml : (algebraMap \u2102 A (N - h * m) - a) * Xm = 1) (hmr : Xm * (algebraMap \u2102 A (N - h * m) - a) = 1) [Invertible (1 + (h * (m - j)) \u2022 Xm)] : Xj = \u215f(1 + (h * (m - ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterH1.resolvent_shift_repr` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_compress_X_comp_V": {
+   "name": "BookProof.ChapterH4.compress_X_comp_V",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_compress_X_comp_V.lean",
+   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hinv : \u2200 x : F, \u2203 y : F, X (V x) = V y) : X.comp V = V.comp (compress V X)",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.compress_X_comp_V` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_compress_inv_transfer": {
+   "name": "BookProof.ChapterH4.compress_inv_transfer",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_compress_inv_transfer.lean",
+   "title": "(V : F \u2192L[\u2102] E) (qX qXinv : E \u2192L[\u2102] E) (qB qBinv : F \u2192L[\u2102] F) (hintertwine : qX.comp V = V.comp qB) (hqXl : qXinv.comp qX = ContinuousLinearMap.id \u2102 E) (hqBr : qB.comp qBinv = ContinuousLinearMap.id \u2102 F) : qXinv.comp V = V.comp qBinv",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.compress_inv_transfer` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_compress_pow": {
+   "name": "BookProof.ChapterH4.compress_pow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_compress_pow.lean",
+   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hinv : \u2200 x : F, \u2203 y : F, X (V x) = V y) (n : \u2115) : (X ^ n).comp V = V.comp ((compress V X) ^ n)",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.compress_pow` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_compress_transfer": {
+   "name": "BookProof.ChapterH4.compress_transfer",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_compress_transfer.lean",
+   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (hinv : \u2200 x : F, \u2203 y : F, X (V x) = V y) (n : \u2115) (v : E) (hv : V (V.adjoint v) = v) : (X ^ n) v = V ((compress V X ^ n) (V.adjoint v))",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.compress_transfer` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_psi_shift_eq_phi": {
+   "name": "BookProof.ChapterH4.psi_shift_eq_phi",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_psi_shift_eq_phi.lean",
+   "title": "(k : \u2115) (\u03b3 z : \u2102) (_h : \u03b3 - z \u2260 0) : psi k \u03b3 ((\u03b3 - z)\u207b\u00b9) = BookProof.ChapterH1.phi k z",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.psi_shift_eq_phi` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_sia_error_bound": {
+   "name": "BookProof.ChapterH4.sia_error_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_sia_error_bound.lean",
+   "title": "(V : F \u2192L[\u2102] E) (phiA psiX pX : E \u2192L[\u2102] E) (psiB pB : F \u2192L[\u2102] F) (C Dsia : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hrt : \u2200 v : E, pX v = V (pB (V.adjoint v))) (hcx1 : \u2016psiX - pX\u2016 \u2264 C * Dsia) (hcx2 : \u2016psiB - pB\u2016 \u2264 C * Dsia) (v : E) : \u2016phiA v - V ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.sia_error_bound` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_sirk_error_bound": {
+   "name": "BookProof.ChapterH4.sirk_error_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_sirk_error_bound.lean",
+   "title": "(V : F \u2192L[\u2102] E) (phiA psiX rX : E \u2192L[\u2102] E) (psiB rB : F \u2192L[\u2102] F) (C D : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hrt : \u2200 v : E, rX v = V (rB (V.adjoint v))) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * D) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * D) (v : E) : \u2016phiA v - V (psiB (V. ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.sirk_error_bound` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_sirk_error_bound_decay": {
+   "name": "BookProof.ChapterH4.sirk_error_bound_decay",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_sirk_error_bound_decay.lean",
+   "title": "(V : F \u2192L[\u2102] E) (phiA psiX rX : E \u2192L[\u2102] E) (psiB rB : F \u2192L[\u2102] F) (C D Dmin h m : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hrt : \u2200 v : E, rX v = V (rB (V.adjoint v))) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * D) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * D) (hC : 0 \u2264 C) (hdecay : ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.sirk_error_bound_decay` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH4_sirk_le_sia": {
+   "name": "BookProof.ChapterH4.sirk_le_sia",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH4_sirk_le_sia.lean",
+   "title": "(C Dmin h m normv : \u211d) (hC : 0 \u2264 C) (hD : 0 \u2264 Dmin) (hnv : 0 \u2264 normv) (hh : 0 \u2264 h) (hm : 0 \u2264 m) : 2 * C * Real.exp (-(h * m)) * Dmin * normv \u2264 2 * C * Dmin * normv",
+   "nl": "Lean 4 theorem `BookProof.ChapterH4.sirk_le_sia` (module `BookProof.ChapterH4`), source chapter `BookProof/ChapterChapterH4.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH4.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH6_sirk_error_decay_exponential": {
+   "name": "BookProof.ChapterH6.sirk_error_decay_exponential",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH6_sirk_error_decay_exponential.lean",
+   "title": "(C Dmin h nv : \u211d) (hh : 0 < h) : Tendsto (fun m : \u2115 => sirkBound C Dmin h nv m) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.ChapterH6.sirk_error_decay_exponential` (module `BookProof.ChapterH6`), source chapter `BookProof/ChapterChapterH6.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH6.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH6_sirk_error_tendsto_zero": {
+   "name": "BookProof.ChapterH6.sirk_error_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH6_sirk_error_tendsto_zero.lean",
+   "title": "(C Dmin h nv : \u211d) (hh : 0 < h) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2200\u1da0 m : \u2115 in atTop, |sirkBound C Dmin h nv m| < \u03b5",
+   "nl": "Lean 4 theorem `BookProof.ChapterH6.sirk_error_tendsto_zero` (module `BookProof.ChapterH6`), source chapter `BookProof/ChapterChapterH6.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH6.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH8_compress_rational_transfer": {
+   "name": "BookProof.ChapterH8.compress_rational_transfer",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_compress_rational_transfer.lean",
+   "title": "(V : F \u2192L[\u2102] E) (X qX qXinv : E \u2192L[\u2102] E) (qBinv : F \u2192L[\u2102] F) (p : Polynomial \u2102) (hVV : (adjoint V).comp V = ContinuousLinearMap.id \u2102 F) (hinvX : \u2200 x : F, \u2203 y : F, X (V x) = V y) (hinvq : \u2200 x : F, \u2203 y : F, qX (V x) = V y) (hqXl : qXinv.comp qX = ContinuousLinearMap.id \u2102 E) (hqBr : (compress V qX).com ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterH8.compress_rational_transfer` (module `BookProof.ChapterH8`), source chapter `BookProof/ChapterChapterH8.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH8.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH9_numRange_compress_subset": {
+   "name": "BookProof.ChapterH9.numRange_compress_subset",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH9_numRange_compress_subset.lean",
+   "title": "(V : F \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) : numRange (compress V X) \u2286 numRange X",
+   "nl": "Lean 4 theorem `BookProof.ChapterH9.numRange_compress_subset` (module `BookProof.ChapterH9`), source chapter `BookProof/ChapterChapterH9.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH9.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterH9_numRange_subset_closedBall": {
+   "name": "BookProof.ChapterH9.numRange_subset_closedBall",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH9_numRange_subset_closedBall.lean",
+   "title": "(X : E \u2192L[\u2102] E) : numRange X \u2286 Metric.closedBall (0 : \u2102) \u2016X\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterH9.numRange_subset_closedBall` (module `BookProof.ChapterH9`), source chapter `BookProof/ChapterChapterH9.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH9.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_convex_realSegment": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.convex_realSegment",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_convex_realSegment.lean",
+   "title": "(a b : \u211d) : Convex \u211d (realSegment a b)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.convex_realSegment` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_convexHull": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_convexHull",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_convexHull.lean",
+   "title": "(V : G \u2192L[\u2102] E) (X : E \u2192L[\u2102] E) (hViso : \u2200 x : G, \u2016V x\u2016 = \u2016x\u2016) (S : Set \u2102) (hconv : Convex \u211d S) (hS : numRange X \u2286 S) : convexHull \u211d (numRange (compress V X)) \u2286 S",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_convexHull` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvert",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert.lean",
+   "title": "{G : Type*} [NormedAddCommGroup G] [InnerProductSpace \u2102 G] [CompleteSpace G] {A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u211d} {R : F \u2192L[\u2102] F} (hR : IsShiftInvert A \u03b3 R) (hsym : SymmetricOn Dom A) (hpos : \u2200 x : Dom, 0 \u2264 quadForm A x) (h\u03b3 : 0 < \u03b3) (V : G \u2192L[\u2102] F) (hViso : \u2200 x : G, \u2016V x\u2016 = \u2016x\u2016) : convexHull \u211d (numRange (comp ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvert` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvertC",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC.lean",
+   "title": "{G : Type*} [NormedAddCommGroup G] [InnerProductSpace \u2102 G] [CompleteSpace G] {A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u2102} {X : F \u2192L[\u2102] F} (hX : IsShiftInvertC A \u03b3 X) (hsym : SymmetricOn Dom A) (h\u03b3 : \u03b3.im \u2260 0) (V : G \u2192L[\u2102] F) (hViso : \u2200 x : G, \u2016V x\u2016 = \u2016x\u2016) : convexHull \u211d (numRange (compress V X)) \u2286 Metric.closedBall (0 ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_shiftInvertC` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_numRange_subset_closedBall_of_shiftInvertC": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.numRange_subset_closedBall_of_shiftInvertC",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_numRange_subset_closedBall_of_shiftInvertC.lean",
+   "title": "{A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u2102} {X : F \u2192L[\u2102] F} (hX : IsShiftInvertC A \u03b3 X) (hsym : SymmetricOn Dom A) (h\u03b3 : \u03b3.im \u2260 0) : numRange X \u2286 Metric.closedBall (0 : \u2102) |\u03b3.im|\u207b\u00b9",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.numRange_subset_closedBall_of_shiftInvertC` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_numRange_subset_realSegment_of_shiftInvert": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.numRange_subset_realSegment_of_shiftInvert",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_numRange_subset_realSegment_of_shiftInvert.lean",
+   "title": "{A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u211d} {R : F \u2192L[\u2102] F} (hR : IsShiftInvert A \u03b3 R) (hsym : SymmetricOn Dom A) (hpos : \u2200 x : Dom, 0 \u2264 quadForm A x) (h\u03b3 : 0 < \u03b3) : numRange R \u2286 realSegment 0 \u03b3\u207b\u00b9",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.numRange_subset_realSegment_of_shiftInvert` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_realSegment_subset_closedBall": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.realSegment_subset_closedBall",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_realSegment_subset_closedBall.lean",
+   "title": "{a b : \u211d} (ha : 0 \u2264 a) : realSegment a b \u2286 Metric.closedBall (0 : \u2102) b",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.realSegment_subset_closedBall` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain.lean",
+   "title": "(V : G \u2192L[\u2102] E) (X qX qXinv : E \u2192L[\u2102] E) (qBinv : G \u2192L[\u2102] G) (p : Polynomial \u2102) (flow psiX : E \u2192L[\u2102] E) (psiB : G \u2192L[\u2102] G) (C Dmin h : \u211d) (m : \u2115) (S : Set \u2102) (hS : numRange X \u2286 S) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 G) (hViso : \u2200 x : G, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016 ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvert",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert.lean",
+   "title": "{A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u211d} {R : F \u2192L[\u2102] F} (hR : IsShiftInvert A \u03b3 R) (hsym : SymmetricOn Dom A) (hpos : \u2200 x : Dom, 0 \u2264 quadForm A x) (h\u03b3 : 0 < \u03b3) (V : G \u2192L[\u2102] F) (qX qXinv : F \u2192L[\u2102] F) (qBinv : G \u2192L[\u2102] G) (p : Polynomial \u2102) (flow psiX : F \u2192L[\u2102] F) (psiB : G \u2192L[\u2102] G) (C Dmin h : \u211d) (m : \u2115) (hVV : V.a ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvert` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC": {
+   "name": "BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvertC",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC.lean",
+   "title": "{A : Dom \u2192\u2097[\u2102] F} {\u03b3 : \u2102} {X : F \u2192L[\u2102] F} (hX : IsShiftInvertC A \u03b3 X) (hsym : SymmetricOn Dom A) (h\u03b3 : \u03b3.im \u2260 0) (V : G \u2192L[\u2102] F) (qX qXinv : F \u2192L[\u2102] F) (qBinv : G \u2192L[\u2102] G) (p : Polynomial \u2102) (flow psiX : F \u2192L[\u2102] F) (psiB : G \u2192L[\u2102] G) (C Dmin h : \u211d) (m : \u2115) (hVV : V.adjoint.comp V = ContinuousLinearM ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvertC` (module `BookProof.ChapterSirkSpectralGeometry`), source chapter `BookProof/ChapterChapterSirkSpectralGeometry.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkSpectralGeometry.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_brst_leakage_bound": {
+   "name": "BookProof.ChapterSirkRestart.brst_leakage_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_brst_leakage_bound.lean",
+   "title": "(U S Om : E \u2192L[\u2102] E) (eps : \u211d) (hU : \u2200 w : E, \u2016U w\u2016 \u2264 \u2016w\u2016) (hS : \u2200 w : E, \u2016S w\u2016 \u2264 \u2016w\u2016) (hstep : \u2200 w : E, \u2016U w - S w\u2016 \u2264 eps * \u2016w\u2016) (hcomm : Om.comp U = U.comp Om) (n : \u2115) (v : E) (hv : Om v = 0) : \u2016Om ((S ^ n) v)\u2016 \u2264 \u2016Om\u2016 * (n * eps * \u2016v\u2016)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.brst_leakage_bound` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_brst_leakage_zero_of_exact": {
+   "name": "BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_brst_leakage_zero_of_exact.lean",
+   "title": "(U Om : E \u2192L[\u2102] E) (hcomm : Om.comp U = U.comp Om) (n : \u2115) (v : E) (hv : Om v = 0) : Om ((U ^ n) v) = 0",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_comp_pow_of_comm": {
+   "name": "BookProof.ChapterSirkRestart.comp_pow_of_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_comp_pow_of_comm.lean",
+   "title": "(U Om : E \u2192L[\u2102] E) (hcomm : Om.comp U = U.comp Om) (n : \u2115) : Om.comp (U ^ n) = (U ^ n).comp Om",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.comp_pow_of_comm` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction": {
+   "name": "BookProof.ChapterSirkRestart.norm_pow_apply_le_of_contraction",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction.lean",
+   "title": "(S : E \u2192L[\u2102] E) (hS : \u2200 w : E, \u2016S w\u2016 \u2264 \u2016w\u2016) (n : \u2115) (v : E) : \u2016(S ^ n) v\u2016 \u2264 \u2016v\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.norm_pow_apply_le_of_contraction` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_restart_error_accumulation": {
+   "name": "BookProof.ChapterSirkRestart.restart_error_accumulation",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_restart_error_accumulation.lean",
+   "title": "(U S : E \u2192L[\u2102] E) (eps : \u211d) (hU : \u2200 w : E, \u2016U w\u2016 \u2264 \u2016w\u2016) (hS : \u2200 w : E, \u2016S w\u2016 \u2264 \u2016w\u2016) (hstep : \u2200 w : E, \u2016U w - S w\u2016 \u2264 eps * \u2016w\u2016) (n : \u2115) (v : E) : \u2016(U ^ n) v - (S ^ n) v\u2016 \u2264 n * eps * \u2016v\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.restart_error_accumulation` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_restart_error_accumulation_sirk": {
+   "name": "BookProof.ChapterSirkRestart.restart_error_accumulation_sirk",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_restart_error_accumulation_sirk.lean",
+   "title": "(U S : E \u2192L[\u2102] E) (C Dmin h : \u211d) (m : \u2115) (hU : \u2200 w : E, \u2016U w\u2016 \u2264 \u2016w\u2016) (hS : \u2200 w : E, \u2016S w\u2016 \u2264 \u2016w\u2016) (hstep : \u2200 w : E, \u2016U w - S w\u2016 \u2264 sirkBound C Dmin h 1 m * \u2016w\u2016) (n : \u2115) (v : E) : \u2016(U ^ n) v - (S ^ n) v\u2016 \u2264 n * sirkBound C Dmin h 1 m * \u2016v\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.restart_error_accumulation_sirk` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRestart_restart_error_tendsto_zero": {
+   "name": "BookProof.ChapterSirkRestart.restart_error_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRestart_restart_error_tendsto_zero.lean",
+   "title": "(C Dmin h nv : \u211d) (n : \u2115) (hh : 0 < h) : Tendsto (fun m : \u2115 => (n : \u211d) * sirkBound C Dmin h nv m) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRestart.restart_error_tendsto_zero` (module `BookProof.ChapterSirkRestart`), source chapter `BookProof/ChapterChapterSirkRestart.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRestart.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_abs_re_inner_le": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.abs_re_inner_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_abs_re_inner_le.lean",
+   "title": "(T : F \u2192L[\u2102] F) (x : F) : |(inner \u2102 x (T x) : \u2102).re| \u2264 \u2016T\u2016 * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.abs_re_inner_le` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.galerkin_ritz_tendsto_sInf_spectrum_of_selected",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hsa : IsSelfAdjoint A) (hpos : \u2200 u : F, 0 \u2264 (inner \u2102 u (A u) : \u2102).re) (b : HilbertBasis \u2115 \u2102 F) : IsPositiveSelfAdjointExtension (finiteModeRestrict A b) (topRestrict A) \u2227 Tendsto (fun m : \u2115 => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop (nhds (sIn ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.galerkin_ritz_tendsto_sInf_spectrum_of_selected` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_le_rayleigh_iff_le_spectrum": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.le_rayleigh_iff_le_spectrum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_le_rayleigh_iff_le_spectrum.lean",
+   "title": "(T : F \u2192L[\u2102] F) (hT : IsSelfAdjoint T) (c : \u211d) : (\u2200 x : F, c * \u2016x\u2016 ^ 2 \u2264 (inner \u2102 x (T x) : \u2102).re) \u2194 \u2200 \u03bc \u2208 spectrum \u211d T, c \u2264 \u03bc",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.le_rayleigh_iff_le_spectrum` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_neg_norm_le_re_inner": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.neg_norm_le_re_inner",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_neg_norm_le_re_inner.lean",
+   "title": "(T : F \u2192L[\u2102] F) (x : F) : -(\u2016T\u2016 * \u2016x\u2016 ^ 2) \u2264 (inner \u2102 x (T x) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.neg_norm_le_re_inner` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.rayleighInf_mul_normSq_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le.lean",
+   "title": "[Nontrivial F] (T : F \u2192L[\u2102] F) (x : F) : rayleighInf T * \u2016x\u2016 ^ 2 \u2264 (inner \u2102 x (T x) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.rayleighInf_mul_normSq_le` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_rayleighSet_bddBelow": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.rayleighSet_bddBelow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_rayleighSet_bddBelow.lean",
+   "title": "(T : F \u2192L[\u2102] F) : BddBelow (rayleighSet T)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.rayleighSet_bddBelow` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_rayleighSet_nonempty": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.rayleighSet_nonempty",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_rayleighSet_nonempty.lean",
+   "title": "[Nontrivial F] (T : F \u2192L[\u2102] F) : (rayleighSet T).Nonempty",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.rayleighSet_nonempty` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_comm": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.re_inner_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_re_inner_comm.lean",
+   "title": "(T : F \u2192L[\u2102] F) (x : F) : (inner \u2102 (T x) x : \u2102).re = (inner \u2102 x (T x) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.re_inner_comm` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_le_norm": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.re_inner_le_norm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_re_inner_le_norm.lean",
+   "title": "(T : F \u2192L[\u2102] F) (x : F) : (inner \u2102 x (T x) : \u2102).re \u2264 \u2016T\u2016 * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.re_inner_le_norm` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_real_smul": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.re_inner_real_smul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_re_inner_real_smul.lean",
+   "title": "(T : F \u2192L[\u2102] F) (c : \u211d) (x : F) : (inner \u2102 ((c : \u2102) \u2022 x) (T ((c : \u2102) \u2022 x)) : \u2102).re = c ^ 2 * (inner \u2102 x (T x) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.re_inner_real_smul` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_sub_algebraMap": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.re_inner_sub_algebraMap",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_re_inner_sub_algebraMap.lean",
+   "title": "(T : F \u2192L[\u2102] F) (c : \u211d) (x : F) : (inner \u2102 ((T - (algebraMap \u211d (F \u2192L[\u2102] F)) c) x) x : \u2102).re = (inner \u2102 (T x) x : \u2102).re - c * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.re_inner_sub_algebraMap` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_eq_rayleighInf",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (b : HilbertBasis \u2115 \u2102 F) : ritzInf (finiteModeRestrict A b) (finiteModeDomain b) = rayleighInf A",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_eq_rayleighInf` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_le": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_le.lean",
+   "title": "(A : F \u2192L[\u2102] F) (b : HilbertBasis \u2115 \u2102 F) {x : F} (hx1 : \u2016x\u2016 = 1) : ritzInf (finiteModeRestrict A b) (finiteModeDomain b) \u2264 (inner \u2102 x (A x) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_le` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hsa : IsSelfAdjoint A) (hpos : \u2200 u : F, 0 \u2264 (inner \u2102 u (A u) : \u2102).re) (b : HilbertBasis \u2115 \u2102 F) : Tendsto (fun m : \u2115 => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop (nhds (sInf (spectrum \u211d A)))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzSet_finiteModeRestrict_bddBelow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow.lean",
+   "title": "(A : F \u2192L[\u2102] F) (b : HilbertBasis \u2115 \u2102 F) : BddBelow (ritzSet (finiteModeRestrict A b) (finiteModeDomain b))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzSet_finiteModeRestrict_bddBelow` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_eq": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzSet_finiteModeRestrict_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_eq.lean",
+   "title": "(A : F \u2192L[\u2102] F) (b : HilbertBasis \u2115 \u2102 F) : ritzSet (finiteModeRestrict A b) (finiteModeDomain b) = {t : \u211d | \u2203 u : F, u \u2208 finiteModeDomain b \u2227 \u2016u\u2016 = 1 \u2227 t = (inner \u2102 u (A u) : \u2102).re}",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzSet_finiteModeRestrict_eq` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_subset_rayleighSet": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.ritzSet_subset_rayleighSet",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_ritzSet_subset_rayleighSet.lean",
+   "title": "(A : F \u2192L[\u2102] F) (b : HilbertBasis \u2115 \u2102 F) : ritzSet (finiteModeRestrict A b) (finiteModeDomain b) \u2286 rayleighSet A",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.ritzSet_subset_rayleighSet` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.sInf_spectrum_eq_rayleighInf",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf.lean",
+   "title": "[Nontrivial F] (T : F \u2192L[\u2102] F) (hT : IsSelfAdjoint T) : sInf (spectrum \u211d T) = rayleighInf T",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.sInf_spectrum_eq_rayleighInf` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_selfAdjoint_re_inner_coe": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.selfAdjoint_re_inner_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_selfAdjoint_re_inner_coe.lean",
+   "title": "(T : F \u2192L[\u2102] F) (hT : IsSelfAdjoint T) (x : F) : (((inner \u2102 (T x) x : \u2102).re : \u211d) : \u2102) = inner \u2102 (T x) x",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.selfAdjoint_re_inner_coe` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.spectrum_real_bddBelow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow.lean",
+   "title": "(T : F \u2192L[\u2102] F) (hT : IsSelfAdjoint T) : BddBelow (spectrum \u211d T)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.spectrum_real_bddBelow` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkRitzSpectrum_spectrum_real_nonempty": {
+   "name": "BookProof.ChapterSirkRitzSpectrum.spectrum_real_nonempty",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkRitzSpectrum_spectrum_real_nonempty.lean",
+   "title": "[Nontrivial F] (T : F \u2192L[\u2102] F) (hT : IsSelfAdjoint T) : (spectrum \u211d T).Nonempty",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkRitzSpectrum.spectrum_real_nonempty` (module `BookProof.ChapterSirkRitzSpectrum`), source chapter `BookProof/ChapterChapterSirkRitzSpectrum.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkRitzSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_adjoint_reconstruction_eq": {
+   "name": "BookProof.ChapterSirkTruncation.adjoint_reconstruction_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_adjoint_reconstruction_eq.lean",
+   "title": "(V : F \u2192L[\u2102] E) (hVV : V.adjoint.comp V = ContinuousLinearMap.id \u2102 F) (v : E) : V.adjoint (V (V.adjoint v)) = V.adjoint v",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.adjoint_reconstruction_eq` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_compress_comp": {
+   "name": "BookProof.ChapterSirkTruncation.compress_comp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_compress_comp.lean",
+   "title": "(V : F \u2192L[\u2102] E) (W : G \u2192L[\u2102] F) (X : E \u2192L[\u2102] E) : compress (V.comp W) X = compress W (compress V X)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.compress_comp` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_isometry_comp": {
+   "name": "BookProof.ChapterSirkTruncation.isometry_comp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_isometry_comp.lean",
+   "title": "(V : F \u2192L[\u2102] E) (W : G \u2192L[\u2102] F) (hV : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hW : \u2200 x : G, \u2016W x\u2016 = \u2016x\u2016) (x : G) : \u2016(V.comp W) x\u2016 = \u2016x\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.isometry_comp` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated": {
+   "name": "BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated.lean",
+   "title": "(V : F \u2192L[\u2102] E) (rX : E \u2192L[\u2102] E) (rB : F \u2192L[\u2102] F) (flow psiX : E \u2192L[\u2102] E) (psiB : F \u2192L[\u2102] F) (C Dmin h : \u211d) (m : \u2115) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hflow : flow = psiX) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * (Real.exp (-(h * m)) * Dmin)) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * (Real.exp ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated_of_exact": {
+   "name": "BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated_of_exact",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated_of_exact.lean",
+   "title": "(V : F \u2192L[\u2102] E) (rX : E \u2192L[\u2102] E) (rB : F \u2192L[\u2102] F) (flow psiX : E \u2192L[\u2102] E) (psiB : F \u2192L[\u2102] F) (C Dmin h : \u211d) (m : \u2115) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hflow : flow = psiX) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * (Real.exp (-(h * m)) * Dmin)) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * (Real.exp ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated_of_exact` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky": {
+   "name": "BookProof.ChapterSirkTruncation.sirk_error_bound_at_leaky",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky.lean",
+   "title": "(V : F \u2192L[\u2102] E) (phiA psiX rX : E \u2192L[\u2102] E) (psiB rB : F \u2192L[\u2102] F) (C D rho : \u211d) (hphi : phiA = psiX) (hViso : \u2200 x : F, \u2016V x\u2016 = \u2016x\u2016) (hVadj : \u2200 v : E, \u2016V.adjoint v\u2016 \u2264 \u2016v\u2016) (hcx1 : \u2016psiX - rX\u2016 \u2264 C * D) (hcx2 : \u2016psiB - rB\u2016 \u2264 C * D) (v : E) (hrt : \u2016rX v - V (rB (V.adjoint v))\u2016 \u2264 rho) : \u2016phiA v - sirkAppr ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.sirk_error_bound_at_leaky` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage": {
+   "name": "BookProof.ChapterSirkTruncation.transfer_defect_le_of_leakage",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage.lean",
+   "title": "(V : F \u2192L[\u2102] E) (rX : E \u2192L[\u2102] E) (rB : F \u2192L[\u2102] F) (v : E) (hexact : rX (V (V.adjoint v)) = V (rB (V.adjoint (V (V.adjoint v))))) (hproj : V.adjoint (V (V.adjoint v)) = V.adjoint v) : \u2016rX v - V (rB (V.adjoint v))\u2016 \u2264 \u2016rX\u2016 * \u2016v - V (V.adjoint v)\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTruncation.transfer_defect_le_of_leakage` (module `BookProof.ChapterSirkTruncation`), source chapter `BookProof/ChapterChapterSirkTruncation.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTruncation.lean",
    "tags": [
     "timepiece",
     "sirk",
@@ -3147,6 +4152,91 @@
   "BookProof_YangMillsHermite_ymHamiltonian_quadForm_nonneg",
   "BookProof_YangMillsHermite_ymHamiltonian_symmetricOn",
   "BookProof_YangMillsHermite_ym_hermite_hashimoto_selects",
-  "BookProof_YangMillsHermite_ym_hermite_friedrichs_extension"
+  "BookProof_YangMillsHermite_ym_hermite_friedrichs_extension",
+  "BookProof_ChapterContinuityUnitaryInfinite_bornPMF_apply",
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_empty",
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono",
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_nonneg",
+  "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_union",
+  "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_add",
+  "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_zero",
+  "BookProof_ChapterContinuityUnitaryInfinite_momentum_apply",
+  "BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint",
+  "BookProof_ChapterContinuityUnitaryInfinite_shiftLin_apply",
+  "BookProof_ChapterContinuityUnitaryInfinite_velocityLin_apply",
+  "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint",
+  "BookProof_ChapterH1_duhamel_phiOp1",
+  "BookProof_ChapterH1_eigenvalue_mem_numericalRange",
+  "BookProof_ChapterH1_phi_at_zero",
+  "BookProof_ChapterH1_phi_succ_apply",
+  "BookProof_ChapterH1_phi_zero",
+  "BookProof_ChapterH1_phi_zero_apply",
+  "BookProof_ChapterH1_psi_resolvent",
+  "BookProof_ChapterH1_resolvent_eigenvector",
+  "BookProof_ChapterH1_resolvent_identity",
+  "BookProof_ChapterH1_resolvent_shift_mul",
+  "BookProof_ChapterH4_compress_X_comp_V",
+  "BookProof_ChapterH4_compress_inv_transfer",
+  "BookProof_ChapterH4_psi_shift_eq_phi",
+  "BookProof_ChapterH4_sia_error_bound",
+  "BookProof_ChapterH4_sirk_error_bound",
+  "BookProof_ChapterH4_sirk_le_sia",
+  "BookProof_ChapterH6_sirk_error_decay_exponential",
+  "BookProof_ChapterH6_sirk_error_tendsto_zero",
+  "BookProof_ChapterH8_compress_rational_transfer",
+  "BookProof_ChapterH9_numRange_compress_subset",
+  "BookProof_ChapterH9_numRange_subset_closedBall",
+  "BookProof_ChapterSirkRestart_comp_pow_of_comm",
+  "BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction",
+  "BookProof_ChapterSirkRestart_restart_error_tendsto_zero",
+  "BookProof_ChapterSirkRitzSpectrum_abs_re_inner_le",
+  "BookProof_ChapterSirkRitzSpectrum_rayleighSet_nonempty",
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_comm",
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_real_smul",
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_sub_algebraMap",
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_eq",
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_subset_rayleighSet",
+  "BookProof_ChapterSirkRitzSpectrum_selfAdjoint_re_inner_coe",
+  "BookProof_ChapterSirkSpectralGeometry_convex_realSegment",
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_convexHull",
+  "BookProof_ChapterSirkSpectralGeometry_numRange_subset_closedBall_of_shiftInvertC",
+  "BookProof_ChapterSirkSpectralGeometry_numRange_subset_realSegment_of_shiftInvert",
+  "BookProof_ChapterSirkSpectralGeometry_realSegment_subset_closedBall",
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain",
+  "BookProof_ChapterSirkTruncation_adjoint_reconstruction_eq",
+  "BookProof_ChapterSirkTruncation_compress_comp",
+  "BookProof_ChapterSirkTruncation_isometry_comp",
+  "BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky",
+  "BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage",
+  "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite",
+  "BookProof_ChapterH1_phi_succ_mul",
+  "BookProof_ChapterH1_resolvent_shift_repr",
+  "BookProof_ChapterH4_compress_pow",
+  "BookProof_ChapterH4_sirk_error_bound_decay",
+  "BookProof_ChapterSirkRestart_brst_leakage_zero_of_exact",
+  "BookProof_ChapterSirkRestart_restart_error_accumulation",
+  "BookProof_ChapterSirkRitzSpectrum_neg_norm_le_re_inner",
+  "BookProof_ChapterSirkRitzSpectrum_re_inner_le_norm",
+  "BookProof_ChapterSirkRitzSpectrum_le_rayleigh_iff_le_spectrum",
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC",
+  "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert",
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert",
+  "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC",
+  "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated",
+  "BookProof_ChapterH1_phi_one",
+  "BookProof_ChapterH4_compress_transfer",
+  "BookProof_ChapterSirkRestart_brst_leakage_bound",
+  "BookProof_ChapterSirkRestart_restart_error_accumulation_sirk",
+  "BookProof_ChapterSirkRitzSpectrum_rayleighSet_bddBelow",
+  "BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow",
+  "BookProof_ChapterSirkRitzSpectrum_spectrum_real_nonempty",
+  "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated_of_exact",
+  "BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le",
+  "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow",
+  "BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf",
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_le",
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf",
+  "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
+  "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected"
  ]
 }

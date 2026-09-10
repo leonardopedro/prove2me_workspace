@@ -1,9 +1,13 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — solution of BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf
 open BookProof.ChapterSirkRitzSpectrum
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichsLimit
 
 
 
@@ -15,8 +19,6 @@ open BookProof.ChapterSirkRitzSpectrum
 noncomputable section
 
 
-open BookProof.FarisLavine BookProof.HermiteGalerkin
-open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

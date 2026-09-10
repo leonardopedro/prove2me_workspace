@@ -1,3 +1,6 @@
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Mathlib
+
 import Mathlib
 
 /-!
@@ -47,6 +50,8 @@ noncomputable section
 
 namespace BookProof.ChapterSirkRitzSpectrum
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

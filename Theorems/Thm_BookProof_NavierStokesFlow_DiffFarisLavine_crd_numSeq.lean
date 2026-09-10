@@ -1,0 +1,31 @@
+-- Generated from ChapterNavierStokesDiffFarisLavine.lean — theorem BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq
+import Mathlib
+import Definitions.Def_ChapterNavierStokesDiffFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.DiffFarisLavine
+
+
+
+
+
+
+
+
+
+
+
+
+
+open MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DifferentialL2
+
+noncomputable section
+
+set_option maxHeartbeats 4000000 in
+-- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
+-- so the default heartbeat budget is not enough.
+theorem BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq (i : Fin 3) (x : lpFiniteModes Vel) (β : Vel) :
+    crd (numSeq i x) β = ((β i : ℝ) : ℂ) * crd x β := by sorry

@@ -1276,6 +1276,45 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "ChapterNavierStokesFarisLavineLift": {
+   "definition_name": "ChapterNavierStokesFarisLavineLift",
+   "namespace": "BookProof.NavierStokesFarisLavineLift",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesFarisLavineLift.lean",
+   "title": "Companion to `BookProof.ChapterNavierStokesSecondQuant`, which lifts *essential self-adjointness* from the sectors of a ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesFarisLavineLift`, source chapter `BookProof/ChapterNavierStokesFarisLavineLift.lean`).\n\nCompanion to `BookProof.ChapterNavierStokesSecondQuant`, which lifts *essential self-adjointness* from the sectors of a Fock space to the finite-particle domain. This module supplies the other two ingredients of the Faris\u2013Lavine route to essential self-adjointness of the Navier\u2013Stokes Hamiltonian:\n\n**1. The one-particle comparison operator.** In the fiber space the advection term is a *linear* vector field `V(u)`, so the natural comparison operator is `n = \u2211\u1d62 \u03c0\u1d62\u00b2 + \u2211\u1d62 V\u1d62\u00b2 + I`. `ComparisonData` packages the (symmetric) momenta `\u03c0\u1d62` and drifts `V\u1d62` on a dense domain of an arbitrary complex inner product space, and `ComparisonData.comparison` is the operator. Proved here: `comparison_isSymmetricDom` (symmetry), `comparison_inner_eq` (the quadratic form is `\u2211\u2016\u03c0\u1d62v\u2016\u00b2 + \u2211\u2016V\u1d62v\u2016\u00b2 + \u2016v\u2016\u00b2` \u2014 no cross terms, because the squares are squares of symmetric operators), `comparison_ge_norm_sq` (`n \u2265 I`, the positivity Faris\u2013Lavine asks of the comparison operator) and two criteria for essential self-adjointness: `comparison_hasZeroDeficiencyOn_of_eigenvectors` from a total family of eigenvectors, and `diagComparison_hasZeroDeficiencyOn`, an unconditional instance in the representation in which the `\u03c0\u1d62` and `V\u1d62` are simultaneously diagonal (the fiber momentum representation), where the operator is also genuinely unbounded (`diagComparison_not_bounded`).\n\n**2. How the two Faris\u2013Lavine bounds behave when summed over particles.** On an `m`-particle sector the second-quantized operators are `\u0124 = \u2211\u2096 h\u2096` and `N\u0302 = \u2211\u2096 n\u2096 + I`.\n\n* `norm_sum_le_of_pairwise` \u2014 the *operator* bound lifts with the **same** constant provided the domination holds *pairwise*, `|Re\u27eah\u2096v, h\u2097v\u27eb| \u2264 c\u00b2 Re\u27ean\u2096v, n\u2097v\u27eb` for all pairs `k, l`. * `not_forall_norm_sum_le_of_pointwise` \u2014 and pairwise is genuinely needed: the naive argument \"triangle inequality plus the one-particle bound\" is **not** valid. There are two pairs `(h\u2096, n\u2096)` with `\u2016h\u2096 x\u2016 \u2264 \u2016n\u2096 x\u2016` for every `x` and yet `\u2016(h\u2080 + h\u2081)x\u2016 > \u2016(n\u2080 + n\u2081)x\u2016`; the step `\u2211\u2096 \u2016n\u2096 \u03a8\u2016 \u2264 \u2016N\u0302 \u03a8\u2016` in the informal argument is false as stated. * `abs_re_inner_commutator_sum_le` \u2014 the *form commutator* bound, by contrast, lifts exactly as the informal argument says, because quadratic forms are additive: with `[h\u2096, n\u2097] = 0` for `k \u2260 l` (different particles) one has `[\u0124, N\u0302] = \u2211\u2096 [h\u2096, n\u2096]`(`commDom_sum`, `commDom_add_id`) and therefore `|Re\u27ea\u03a8, [\u0124, N\u0302]\u03a8\u27eb| \u2264 c\u2082 Re\u27ea\u03a8, N\u0302\u03a8\u27eb`.\n\nNothing here claims essential self-adjointness of the continuum Navier\u2013Stokes generator. The Faris\u2013Lavine criterion itself is not proved anywhere in this project; it enters as a named hypothesis (`ns_esa_of_farisLavine_dense`). What is established here is exactly which bounds survive second quantization, and in what form.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFarisLavineLift.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "ChapterNavierStokesDiffFarisLavine": {
+   "definition_name": "ChapterNavierStokesDiffFarisLavine",
+   "namespace": "BookProof.NavierStokesDiffFarisLavine",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesDiffFarisLavine.lean",
+   "title": "`BookProof.ChapterNavierStokesHermiteFarisLavine` and `BookProof.ChapterNavierStokesFockManyMode` prove the two Faris\u2013La ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesDiffFarisLavine`, source chapter `BookProof/ChapterNavierStokesDiffFarisLavine.lean`).\n\n`BookProof.ChapterNavierStokesHermiteFarisLavine` and `BookProof.ChapterNavierStokesFockManyMode` prove the two Faris\u2013Lavine inequalities \u2014 the relative bound `\u2016Hx\u2016\u00b2 \u2264 a\u2016Nx\u2016\u00b2 + b\u2016x\u2016\u00b2` and the form-commutator bound `\u00b1i[H, N] \u2264 c N` \u2014 in the *sequence* (occupation-number) realization, and `BookProof.ChapterNavierStokesDifferentialL2` proves essential self-adjointness of the Navier\u2013Stokes quadratic symbol written as an honest differential operator on `L\u00b2(du\u2081du\u2082du\u2083)`, but by transporting the sequence-space theorem along the Hermite basis. This module supplies the missing layer: the two Faris\u2013Lavine inequalities **for the differential operator itself**, against a differential comparison operator, and the resulting Faris\u2013Lavine proof of essential self-adjointness in `L\u00b2(\u211d\u00b3)`.\n\nOn the Gauss\u2013polynomial (Hermite) core `polyGaussCore` of `L\u00b2(\u211d\u00b3)`, with `\u03c0\u1d62 = \u2212i \u2202/\u2202u\u1d62` (`momOp`) and `u\u1d62` multiplication by the coordinate (`posOp`):\n\n* the Hamiltonian is the Weyl quantization `nsDiffH A c = \u2211\u1d62 \u00bd(\u03c0\u1d62V\u1d62 + V\u1d62\u03c0\u1d62)` of the Navier\u2013Stokes quadratic symbol `A_i(u) = u_j u_{i,j} \u2212 \u03bd u_{i,jj}`, `V\u1d62 = \u2211\u2096A_{i\u2096}u\u2096 + c\u1d62` (`BookProof.ChapterNavierStokesDifferentialL2`); * the comparison operator is the *differential* harmonic-oscillator operator `nsDiffN \u03bc = 2\u03bc \u2211\u1d62 (\u03c0\u1d62\u00b2 + u\u1d62\u00b2/4) + 1`, whose one-mode blocks are the honest second-order operators `\u2212\u2202\u00b2/\u2202u\u1d62\u00b2 + u\u1d62\u00b2/4`.\n\n`oscOp_eq_number` is the algebraic heart of the identification: on the Gauss\u2013polynomial core, `\u03c0\u1d62\u00b2 + u\u1d62\u00b2/4 = a\u1d62\u2020a\u1d62 + \u00bd`, proved as a polynomial identity (`oscPoly_eq`) from the Leibniz rule `\u2202\u1d62(u\u1d62p) = p + u\u1d62\u2202\u1d62p`. Hence `nsDiffN \u03bc` is the transport of multiplication by the comparison symbol `velSym \u03bc \u03b2 = \u03bc(2|\u03b2| + 3) + 1` (`intertwined_nsDiffN`, `velNcore_eq_diagMax`), and `embedCore_surjective` says the Gauss\u2013polynomial core *is* the transported finite-mode core, so every statement about core states is a statement about all of `polyGaussCore`.\n\n* `nsDiffN_symmetricOn`, `nsDiffN_quadForm_ge_norm_sq` \u2014 the differential comparison operator is symmetric and dominates the identity (`\u27eaf, Nf\u27eb \u2265 \u2016f\u2016\u00b2`); * `nsDiffH_relative_bound` \u2014 **the first Faris\u2013Lavine inequality** for the differential operator: `\u2016H f\u2016\u00b2 \u2264 a\u2016N f\u2016\u00b2 + b\u2016f\u2016\u00b2` on the Hermite core, for every real velocity gradient `A` and constant part `c`; * `nsDiffH_commForm_bound` \u2014 **the second Faris\u2013Lavine inequality**: `|\u27eaf, i[H, N] f\u27eb| \u2264 c \u27eaf, N f\u27eb`; * `diffMaxDom`, `diffMaxH`, `diffMaxN` \u2014 the same pair on the maximal domain of the comparison operator in `L\u00b2(\u211d\u00b3)`, with the Faris\u2013Lavine package there (`diffMaxH_symmetricOn`, `diffMaxN_quadForm_nonneg`, `diffMaxN_add_one_surjective`, `diffMaxN_core_approx`, `diffMaxH_relative_bound`, `diffMaxH_commForm_bound`) and `diffMaxH_restrict`, which identifies its restriction to the Hermite core with `nsDiffH`; * `nsDiffH_esa_of_farisLavine` \u2014 **the payoff**: essential self-adjointness of the differentially written Navier\u2013Stokes symbol on the Hermite core of `L\u00b2(du\u2081du\u2082du\u2083)`, obtained from the Faris\u2013Lavine criterion of `BookProof.ChapterFarisLavine` applied in `L\u00b2(\u211d\u00b3)` itself \u2014 the alternative route to `BookProof.ChapterNavierStokesDifferentialL2.nsDiffH_essentiallySelfAdjointOn_core`, which transported essential self-adjointness instead of the estimates.\n\nThe estimates are the transported sequence-space ones: the mathematics unifying the two pictures is the identification `\u03c0\u1d62\u00b2 + u\u1d62\u00b2/4 = a\u1d62\u2020a\u1d62 + \u00bd` and the fact that the Gauss\u2013polynomial core is the transported finite-mode core, not a new analytic input. The non-vacuity of the mechanism (a genuinely non-zero commutator `[H, N]`, and an unbounded `H`) is recorded in `BookProof.ChapterNavierStokesHermiteFarisLavine.commForm_ne_zero_of_pos`, `BookProof.ChapterNavierStokesFockManyMode.fock_commForm_ne_zero` and `BookProof.ChapterNavierStokesDifferentialL2.nsDiffH_not_bounded`. As everywhere on\n\n...",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesDiffFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "ChapterNavierStokesSecondQuant": {
+   "definition_name": "ChapterNavierStokesSecondQuant",
+   "namespace": "BookProof.NavierStokesSecondQuant",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesSecondQuant.lean",
+   "title": "This module supplies the *Fock-space* half of the essential-self-adjointness argument for the Navier\u2013Stokes Hamiltonian: ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesSecondQuant`, source chapter `BookProof/ChapterNavierStokesSecondQuant.lean`).\n\nThis module supplies the *Fock-space* half of the essential-self-adjointness argument for the Navier\u2013Stokes Hamiltonian: the passage from a one-particle comparison operator to its second quantization.\n\nThe Fock space is modelled, as in Reed\u2013Simon Vol. I \u00a7II.4, as the Hilbert direct sum `\u2a01\u2098 S\u2098` of the `m`-particle sectors, realized concretely as `lp S 2`. The *finite-particle domain* `fockCore D` consists of the states with finitely many non-zero sectors, each of them lying in the sector domain `D m`; when every `D m` is dense this is a dense subspace of the Fock space (`fockCore_dense`), and for infinitely many nontrivial sectors it is a *proper* one (`fockCore_ne_top`).\n\nA sector-wise family of operators `A m : D m \u2192\u2097[\u2102] D m` assembles into the operator `fockOp A` on the finite-particle domain \u2014 this is `d\u0393` written in sectors, `d\u0393(a)` acting on the `m`-particle sector as `\u2211_{k<m} a_k`. The headline result is\n\n* `fockOp_hasZeroDeficiencyOn`: **if every sector operator is essentially self-adjoint on its sector domain, then the second quantization is essentially self-adjoint on the finite-particle domain.**\n\nThis is the direct-sum half of the second-quantization theorem (Reed\u2013Simon Vol. I, Theorem VIII.33 / \u00a7VIII.10). The remaining half \u2014 that the `m`-particle sector operator `\u2211_{k<m} a_k` is essentially self-adjoint on the algebraic tensor power of a core for `a` \u2014 is *not* proved here in that generality; what is proved (`sectorOfEigenbasis_hasZeroDeficiencyOn` in the companion module, and `BookProof.NavierStokesFlow.FockOfFock.dGamma_hasZeroDeficiencyOn` already in the project) is the case in which the one-particle operator is diagonalized by a total family of eigenvectors, which is the situation of the Navier\u2013Stokes comparison operator in the fiber momentum representation.\n\nNothing here claims essential self-adjointness of the continuum Navier\u2013Stokes generator, nor global existence for Navier\u2013Stokes. This module is about the Fock-space bookkeeping: what sector-wise essential self-adjointness gives, and what it does not.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSecondQuant.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "thms": {
@@ -8373,6 +8412,738 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_ge_norm_sq": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_ge_norm_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_ge_norm_sq.lean",
+   "title": "(v : c.D) : \u2016(v : F)\u2016 ^ 2 \u2264 (inner \u2102 ((v : F)) ((c.comparison v : c.D) : F) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_ge_norm_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_hasZeroDeficiencyOn_of_eigenvectors",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors.lean",
+   "title": "{I : Type*} (e : I \u2192 c.D) (lam : I \u2192 \u211d) (heig : \u2200 i, c.comparison (e i) = ((lam i : \u2102)) \u2022 e i) (htotal : \u2200 w : F, (\u2200 i, (inner \u2102 ((e i : c.D) : F) w : \u2102) = 0) \u2192 w = 0) : HasZeroDeficiencyOn c.D c.comparison",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_hasZeroDeficiencyOn_of_eigenvectors` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_inner_eq": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_inner_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_inner_eq.lean",
+   "title": "(v : c.D) : (inner \u2102 ((v : F)) ((c.comparison v : c.D) : F) : \u2102).re = (\u2211 i, \u2016((c.mom i v : c.D) : F)\u2016 ^ 2) + (\u2211 i, \u2016((c.drift i v : c.D) : F)\u2016 ^ 2) + \u2016(v : F)\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_inner_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg.lean",
+   "title": "(v : c.D) : 0 \u2264 (inner \u2102 ((v : F)) ((c.comparison v : c.D) : F) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_nonneg` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.coe_sum_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply.lean",
+   "title": "(s : Finset \u03ba) (A : \u03ba \u2192 (D \u2192\u2097[\u2102] D)) (v : D) : (((\u2211 k \u2208 s, A k) v : D) : F) = \u2211 k \u2208 s, ((A k v : D) : F)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.coe_sum_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_add_id": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.commDom_add_id",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_commDom_add_id.lean",
+   "title": "(A B : D \u2192\u2097[\u2102] D) : commDom A (B + LinearMap.id) = commDom A B",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.commDom_add_id` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_apply": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.commDom_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_commDom_apply.lean",
+   "title": "(A B : D \u2192\u2097[\u2102] D) (v : D) : commDom A B v = A (B v) - B (A v)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.commDom_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_sum": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.commDom_sum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_commDom_sum.lean",
+   "title": "(s : Finset \u03ba) (h n : \u03ba \u2192 (D \u2192\u2097[\u2102] D)) (hcomm : \u2200 k \u2208 s, \u2200 l \u2208 s, k \u2260 l \u2192 (h k).comp (n l) = (n l).comp (h k)) : commDom (\u2211 k \u2208 s, h k) (\u2211 k \u2208 s, n k) = \u2211 k \u2208 s, commDom (h k) (n k)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.commDom_sum` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_hasZeroDeficiencyOn.lean",
+   "title": "(d : \u2115) (p q : Fin d \u2192 \u2115 \u2192 \u211d) : HasZeroDeficiencyOn (lpFiniteModes \u2115) (diagComparisonData d p q).comparison",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_not_bounded": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_not_bounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_not_bounded.lean",
+   "title": "(d : \u2115) (p q : Fin d \u2192 \u2115 \u2192 \u211d) (hunb : \u2200 C : \u211d, \u2203 k, C < |(\u2211 i, p i k ^ 2) + (\u2211 i, q i k ^ 2) + 1|) : \u00ac \u2203 C : \u211d, \u2200 f : lpFiniteModes \u2115, \u2016(diagComparisonData d p q).comparison f\u2016 \u2264 C * \u2016f\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_not_bounded` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_hEx": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_hEx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_hEx.lean",
+   "title": "(k : Fin 2) (x : E2) : \u2016hEx k x\u2016 = \u2016x k\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_hEx` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'.lean",
+   "title": "BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le.lean",
+   "title": "(s : Finset \u03ba) (h n : \u03ba \u2192 (D \u2192\u2097[\u2102] D)) (c\u2082 : \u211d) (hc\u2082 : 0 \u2264 c\u2082) (v : D) (hcomm : \u2200 k \u2208 s, \u2200 l \u2208 s, k \u2260 l \u2192 (h k).comp (n l) = (n l).comp (h k)) (hbound : \u2200 k \u2208 s, \u2016(inner \u2102 ((v : F)) ((commDom (h k) (n k) v : D) : F) : \u2102)\u2016 \u2264 c\u2082 * (inner \u2102 ((v : F)) ((n k v : D) : F) : \u2102).re) : \u2016(inner \u2102 ((v : F)) ((c ...",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_id": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_le_norm_add_id",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_id.lean",
+   "title": "(N : D \u2192\u2097[\u2102] D) (v : D) (hpos : 0 \u2264 (inner \u2102 ((N v : D) : F) ((v : F)) : \u2102).re) : \u2016((N v : D) : F)\u2016 \u2264 \u2016((((N + LinearMap.id : D \u2192\u2097[\u2102] D)) v : D) : F)\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_le_norm_add_id` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_of_re_inner_nonneg": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_le_norm_add_of_re_inner_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_of_re_inner_nonneg.lean",
+   "title": "{x y : F} (h : 0 \u2264 (inner \u2102 x y : \u2102).re) : \u2016x\u2016 \u2264 \u2016x + y\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_le_norm_add_of_re_inner_nonneg` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_nEx": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_nEx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_nEx.lean",
+   "title": "(k : Fin 2) (x : E2) : \u2016nEx k x\u2016 = \u2016x k\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_nEx` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_le_of_pairwise",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise.lean",
+   "title": "(s : Finset \u03ba) (h n : \u03ba \u2192 (D \u2192\u2097[\u2102] D)) (cst : \u211d) (hc : 0 \u2264 cst) (v : D) (hpair : \u2200 k \u2208 s, \u2200 l \u2208 s, |(inner \u2102 ((h k v : D) : F) ((h l v : D) : F) : \u2102).re| \u2264 cst ^ 2 * (inner \u2102 ((n k v : D) : F) ((n l v : D) : F) : \u2102).re) : \u2016(((\u2211 k \u2208 s, h k) v : D) : F)\u2016 \u2264 cst * \u2016(((\u2211 k \u2208 s, n k) v : D) : F)\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_le_of_pairwise` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_sq_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq.lean",
+   "title": "{\u03ba : Type*} (s : Finset \u03ba) (a : \u03ba \u2192 F) : \u2016\u2211 k \u2208 s, a k\u2016 ^ 2 = \u2211 k \u2208 s, \u2211 l \u2208 s, (inner \u2102 (a k) (a l) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_sq_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_vEx_sq": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_vEx_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_vEx_sq.lean",
+   "title": ": \u2016vEx\u2016 ^ 2 = 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm_vEx_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_not_forall_norm_sum_le_of_pointwise": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.not_forall_norm_sum_le_of_pointwise",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_not_forall_norm_sum_le_of_pointwise.lean",
+   "title": ": \u2203 (h n : Fin 2 \u2192 (E2 \u2192\u2097[\u2102] E2)) (v : E2), (\u2200 (k : Fin 2) (x : E2), \u2016h k x\u2016 \u2264 \u2016n k x\u2016) \u2227 \u2016(n 0 + n 1) v\u2016 < \u2016(h 0 + h 1) v\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.not_forall_norm_sum_le_of_pointwise` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_sum_hEx_vEx": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.sum_hEx_vEx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_sum_hEx_vEx.lean",
+   "title": ": (hEx 0 + hEx 1) vEx = (2 : \u2102) \u2022 EuclideanSpace.single (0 : Fin 2) (1 : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.sum_hEx_vEx` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.sum_nEx_vEx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx.lean",
+   "title": ": (nEx 0 + nEx 1) vEx = vEx",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.sum_nEx_vEx` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_vEx_apply": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.vEx_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_vEx_apply.lean",
+   "title": "(i : Fin 2) : vEx i = 1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.vEx_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_canH_coe_velH": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.canH_coe_velH",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_canH_coe_velH.lean",
+   "title": "(x : lpFiniteModes Vel) : ((canH A c x : lpFiniteModes Vel) : L2I Vel) = velH A c (Submodule.inclusion (finiteModes_le_maxDom (velSym (velMu A c))) x)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.canH_coe_velH` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.commForm_embedCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore.lean",
+   "title": "(x : lpFiniteModes Vel) : commForm ((polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.commForm_embedCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_crd_numSeq": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_crd_numSeq.lean",
+   "title": "(i : Fin 3) (x : lpFiniteModes Vel) (\u03b2 : Vel) : crd (numSeq i x) \u03b2 = ((\u03b2 i : \u211d) : \u2102) * crd x \u03b2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxEquiv_coe": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxEquiv_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxEquiv_coe.lean",
+   "title": "(mu : \u211d) (z : maxDom (velSym mu)) : ((diffMaxEquiv mu z : diffMaxDom mu) : L2d 3) = velUnitary ((z : L2I Vel))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxEquiv_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_apply": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_apply.lean",
+   "title": "(z : maxDom (velSym (velMu A (seqConst c)))) : diffMaxH A c (diffMaxEquiv (velMu A (seqConst c)) z) = velUnitary ((velH A (seqConst c) z : L2I Vel))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_commForm_bound": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_commForm_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_commForm_bound.lean",
+   "title": ": \u2203 cst : \u211d, 0 \u2264 cst \u2227 \u2200 z : diffMaxDom (velMu A (seqConst c)), |commForm (diffMaxH A c) (diffMaxN (velMu A (seqConst c))) z| \u2264 cst * quadForm (diffMaxN (velMu A (seqConst c))) z",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_commForm_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_relative_bound": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_relative_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_relative_bound.lean",
+   "title": ": \u2203 a b : \u211d, 0 \u2264 a \u2227 0 \u2264 b \u2227 \u2200 z : diffMaxDom (velMu A (seqConst c)), \u2016diffMaxH A c z\u2016 ^ 2 \u2264 a * \u2016diffMaxN (velMu A (seqConst c)) z\u2016 ^ 2 + b * \u2016(z : L2d 3)\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_relative_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_symmetricOn.lean",
+   "title": ": SymmetricOn (diffMaxDom (velMu A (seqConst c))) (diffMaxH A c)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_symmetricOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_add_one_surjective": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_add_one_surjective",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_add_one_surjective.lean",
+   "title": "(mu : \u211d) (hmu : 0 \u2264 mu) (f : L2d 3) : \u2203 z : diffMaxDom mu, diffMaxN mu z + (z : L2d 3) = f",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_add_one_surjective` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_apply": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_apply.lean",
+   "title": "(mu : \u211d) (z : maxDom (velSym mu)) : diffMaxN mu (diffMaxEquiv mu z) = velUnitary ((diagMax (velSym mu) z : L2I Vel))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_core_approx": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_core_approx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_core_approx.lean",
+   "title": "(mu : \u211d) (z : diffMaxDom mu) (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) : \u2203 y : diffMaxDom mu, (y : L2d 3) \u2208 (polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_core_approx` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_quadForm_nonneg": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_quadForm_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_quadForm_nonneg.lean",
+   "title": "(mu : \u211d) (hmu : 0 \u2264 mu) (z : diffMaxDom mu) : 0 \u2264 quadForm (diffMaxN mu) z",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_quadForm_nonneg` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_symmetricOn.lean",
+   "title": "(mu : \u211d) : SymmetricOn (diffMaxDom mu) (diffMaxN mu)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxN_symmetricOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMu_nonneg": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.diffMu_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMu_nonneg.lean",
+   "title": ": 0 \u2264 diffMu A c",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.diffMu_nonneg` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_embedCore_surjective": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.embedCore_surjective",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_embedCore_surjective.lean",
+   "title": ": Function.Surjective (embedCore)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.embedCore_surjective` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_hermiteMvLp_mem_range": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.hermiteMvLp_mem_range",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_hermiteMvLp_mem_range.lean",
+   "title": "(a : Fin 3 \u2192\u2080 \u2115) : hermiteMvLp a \u2208 Submodule.map ((polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.hermiteMvLp_mem_range` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.intertwined_nsDiffN",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN.lean",
+   "title": "(mu : \u211d) : Intertwined (velNcore mu) (nsDiffN mu)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.intertwined_nsDiffN` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_commForm_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound.lean",
+   "title": ": \u2203 cst : \u211d, 0 \u2264 cst \u2227 \u2200 f : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_commForm_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_embedCore": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_embedCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_embedCore.lean",
+   "title": "(x : lpFiniteModes Vel) : ((nsDiffH A c (embedCore x) : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_embedCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_esa_of_farisLavine",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine.lean",
+   "title": ": EssentiallySelfAdjointOn (polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_esa_of_farisLavine` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_relative_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound.lean",
+   "title": ": \u2203 a b : \u211d, 0 \u2264 a \u2227 0 \u2264 b \u2227 \u2200 f : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffH_relative_bound` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_embedCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore.lean",
+   "title": "(mu : \u211d) (x : lpFiniteModes Vel) : ((nsDiffN mu (embedCore x) : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_embedCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_eq_ladder": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_eq_ladder",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_eq_ladder.lean",
+   "title": "(mu : \u211d) : nsDiffN mu = (((2 * mu : \u211d) : \u2102)) \u2022 (\u2211 i, (creOp i).comp (annOp i)) + (((3 * mu + 1 : \u211d) : \u2102)) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_eq_ladder` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_quadForm_ge_norm_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq.lean",
+   "title": "(mu : \u211d) (hmu : 0 \u2264 mu) (f : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_quadForm_ge_norm_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn.lean",
+   "title": "(mu : \u211d) : SymmetricOn (polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.nsDiffN_symmetricOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_one_le_diffMu": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.one_le_diffMu",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_one_le_diffMu.lean",
+   "title": ": 1 \u2264 diffMu A c",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.one_le_diffMu` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_oscOp_eq_number": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.oscOp_eq_number",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_oscOp_eq_number.lean",
+   "title": "(i : Fin 3) : oscOp i = (creOp i).comp (annOp i) + ((1 / 2 : \u2102)) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.oscOp_eq_number` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_oscPoly_eq": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.oscPoly_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_oscPoly_eq.lean",
+   "title": "(i : Fin 3) (p : MvPolynomial (Fin 3) \u2102) : momPoly i (momPoly i p) + mulXPoly i (mulXPoly i (((1 / 4 : \u2102)) \u2022 p)) = crePoly i (annPoly i p) + ((1 / 2 : \u2102)) \u2022 p",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.oscPoly_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_polyGaussCore_le_diffMaxDom": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.polyGaussCore_le_diffMaxDom",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_polyGaussCore_le_diffMaxDom.lean",
+   "title": "(mu : \u211d) : (polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.polyGaussCore_le_diffMaxDom` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.quadForm_nsDiffN_embedCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore.lean",
+   "title": "(mu : \u211d) (x : lpFiniteModes Vel) : quadForm ((polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.quadForm_nsDiffN_embedCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiffFarisLavine_velNcore_eq_diagMax": {
+   "name": "BookProof.NavierStokesFlow.DiffFarisLavine.velNcore_eq_diagMax",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DiffFarisLavine_velNcore_eq_diagMax.lean",
+   "title": "(mu : \u211d) (x : lpFiniteModes Vel) : ((velNcore mu x : lpFiniteModes Vel) : L2I Vel) = (diagMax (velSym mu) (Submodule.inclusion (finiteModes_le_maxDom (velSym mu)) x) : L2I Vel)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.DiffFarisLavine.velNcore_eq_diagMax` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_fockCore_dense": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.fockCore_dense",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_fockCore_dense.lean",
+   "title": "(hD : \u2200 m, Dense ((D m : Submodule \u2102 (S m)) : Set (S m))) : Dense ((fockCore D : Submodule \u2102 (lp S 2)) : Set (lp S 2))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.fockCore_dense` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_fockCore_ne_top": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.fockCore_ne_top",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_fockCore_ne_top.lean",
+   "title": "{S : \u2115 \u2192 Type*} [\u2200 m, NormedAddCommGroup (S m)] [\u2200 m, InnerProductSpace \u2102 (S m)] (D : \u2200 m, Submodule \u2102 (S m)) (v : \u2200 m, S m) (hv : \u2200 m, \u2016v m\u2016 = 1) : (fockCore D : Submodule \u2102 (lp S 2)) \u2260 \u22a4",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.fockCore_ne_top` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_apply": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_apply.lean",
+   "title": "(A : \u2200 m, D m \u2192\u2097[\u2102] D m) (f : fockCore D) (m : \u03b9) : ((fockOp A f : lp S 2) : \u2200 m, S m) m = ((A m \u27e8(f : lp S 2) m, (f.2).2 m\u27e9 : D m) : S m)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.fockOp_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn.lean",
+   "title": "(A : \u2200 m, D m \u2192\u2097[\u2102] D m) (hA : \u2200 m, HasZeroDeficiencyOn (D m) (A m)) : HasZeroDeficiencyOn (fockCore D) (fockOp A)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_mem_fockCore": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.mem_fockCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_mem_fockCore.lean",
+   "title": "{f : lp S 2} : f \u2208 fockCore D \u2194 (Function.support fun m => \u2016(f : \u2200 m, S m) m\u2016).Finite \u2227 \u2200 m, (f : \u2200 m, S m) m \u2208 D m",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.mem_fockCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_ofSectors_apply": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.ofSectors_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_ofSectors_apply.lean",
+   "title": "(g : \u2200 m, S m) (h : (Function.support fun m => \u2016g m\u2016).Finite) (m : \u03b9) : (ofSectors g h : \u2200 m, S m) m = g m",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.ofSectors_apply` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_SecondQuant_single_mem_fockCore": {
+   "name": "BookProof.NavierStokesFlow.SecondQuant.single_mem_fockCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_SecondQuant_single_mem_fockCore.lean",
+   "title": "[DecidableEq \u03b9] (m : \u03b9) (x : S m) (hx : x \u2208 D m) : lp.single 2 m x \u2208 fockCore D",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SecondQuant.single_mem_fockCore` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "sol_order": [
@@ -8789,6 +9560,30 @@
   "BookProof_FockSecondQuantization_up_of_ne",
   "BookProof_FockSecondQuantization_up_self",
   "BookProof_FriedrichsFormGap_formSpace_norm_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_canH_coe_velH",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_crd_numSeq",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxEquiv_coe",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_apply",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_apply",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMu_nonneg",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_hermiteMvLp_mem_range",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_embedCore",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_one_le_diffMu",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_oscPoly_eq",
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors",
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_inner_eq",
+  "BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply",
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_add_id",
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_apply",
+  "BookProof_NavierStokesFlow_FarisLavineLift_commDom_sum",
+  "BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_hasZeroDeficiencyOn",
+  "BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_not_bounded",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_hEx",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_of_re_inner_nonneg",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_nEx",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq",
+  "BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx",
+  "BookProof_NavierStokesFlow_FarisLavineLift_vEx_apply",
   "BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul",
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_anti_DS",
@@ -8797,6 +9592,11 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_sq_diff",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt",
+  "BookProof_NavierStokesFlow_SecondQuant_fockCore_ne_top",
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_apply",
+  "BookProof_NavierStokesFlow_SecondQuant_mem_fockCore",
+  "BookProof_NavierStokesFlow_SecondQuant_ofSectors_apply",
+  "BookProof_NavierStokesFlow_SecondQuant_single_mem_fockCore",
   "BookProof_SirkBandLedger_Decimal_leB_iff",
   "BookProof_SirkBandLedger_formatExampleLedger_lo_zero",
   "BookProof_SirkBandLedger_formatExampleLedger_parse",
@@ -8862,6 +9662,22 @@
   "BookProof_FockSecondQuantization_up_dn_comm",
   "BookProof_FockSecondQuantization_up_up_comm",
   "BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_velNcore_eq_diagMax",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_symmetricOn",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_commForm_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_relative_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_add_one_surjective",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_core_approx",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_quadForm_nonneg",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_symmetricOn",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_embedCore_surjective",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_oscOp_eq_number",
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_ge_norm_sq",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_id",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_vEx_sq",
+  "BookProof_NavierStokesFlow_FarisLavineLift_sum_hEx_vEx",
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_add_two",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one",
@@ -8869,6 +9685,8 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq",
+  "BookProof_NavierStokesFlow_SecondQuant_fockCore_dense",
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn",
   "BookProof_SirkBandLedger_ledgerWf_enclosing",
   "BookProof_SirkBandLedger_ledgerWf_step",
   "BookProof_SirkBandLedger_ledger_width_eventually_const",
@@ -8907,6 +9725,11 @@
   "BookProof_FockSecondQuantization_annA_apply",
   "BookProof_FockSecondQuantization_creA_apply",
   "BookProof_FriedrichsFormGap_friedrichs_extension_form_gap",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_polyGaussCore_le_diffMaxDom",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_eq_ladder",
+  "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'",
+  "BookProof_NavierStokesFlow_FarisLavineLift_not_forall_norm_sum_le_of_pointwise",
   "BookProof_NavierStokesFlow_HermiteCanonical_bracket_DS",
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_ann_cre",
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos",
@@ -8937,6 +9760,8 @@
   "BookProof_FockSecondQuantization_ccr_annA_creA_of_ne",
   "BookProof_FockSecondQuantization_ccr_creA_creA",
   "BookProof_FockSecondQuantization_support_creA",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN",
   "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
   "BookProof_SirkBandLedger_nestedBands_of_wf",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
@@ -8952,6 +9777,7 @@
   "BookProof_FockOneParticleGap_fock_gap_quadForm",
   "BookProof_FockSecondQuantization_sum_creVec_annA_subset",
   "BookProof_FockSecondQuantization_inner_creA_left",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore",
   "BookProof_SirkBandLedger_formatExampleLedger_nested",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger",
   "BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger",
@@ -8967,6 +9793,10 @@
   "BookProof_FockSecondQuantization_dGamma_eq_sum_aux",
   "BookProof_FockSecondQuantization_inner_creA_right",
   "BookProof_FockSecondQuantization_inner_creVec_annA",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
   "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto",
@@ -8974,6 +9804,8 @@
   "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator",
   "BookProof_FockSecondQuantization_dGamma_eq_sum",
   "BookProof_FockSecondQuantization_inner_annA_creVec",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound",
+  "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq",
   "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected",
   "BookProof_FockSecondQuantization_inner_dGamma_left",
   "BookProof_FockSecondQuantization_inner_dGamma_right",

@@ -1,6 +1,7 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.quadForm_ge_of_le_ritzInf
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFriedrichsFormGap
 open BookProof.BandEnclosure
 
 

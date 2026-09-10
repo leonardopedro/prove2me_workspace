@@ -1,3 +1,6 @@
+import Definitions.Def_ChapterSirkCertifiedGap
+import Mathlib
+
 import Mathlib
 
 /-!
@@ -44,6 +47,7 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.SirkCertificateReader
 
+open BookProof.SirkCertifiedGap
 
 /-! ## 1. Exact decimal literals
 

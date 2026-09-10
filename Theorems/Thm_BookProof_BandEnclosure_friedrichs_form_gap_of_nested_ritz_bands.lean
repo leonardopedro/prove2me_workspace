@@ -1,6 +1,7 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.friedrichs_form_gap_of_nested_ritz_bands
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFriedrichsFormGap
 open BookProof.BandEnclosure
 
 

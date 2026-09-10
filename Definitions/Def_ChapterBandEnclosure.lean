@@ -1,3 +1,8 @@
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Mathlib
+
 import Mathlib
 
 /-!
@@ -59,6 +64,8 @@ open Filter Topology
 
 namespace BookProof.BandEnclosure
 
+open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
+open BookProof.ChapterH6 BookProof.ChapterH8
 
 /-! ## 1. Nested bands -/
 
@@ -89,6 +96,8 @@ def NestedBands (lo hi : ℕ → ℝ) : Prop :=
 
 section Selected
 
+open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
@@ -115,6 +124,8 @@ assumed:
 
 section Unbounded
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

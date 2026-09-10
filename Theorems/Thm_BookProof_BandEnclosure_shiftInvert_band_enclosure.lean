@@ -1,6 +1,7 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.shiftInvert_band_enclosure
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFriedrichsFormGap
 open BookProof.BandEnclosure
 
 

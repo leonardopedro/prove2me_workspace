@@ -64,7 +64,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
-open BookProof.FriedrichsFormGap
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.quadForm_real_smul
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFriedrichsFormGap
 open BookProof.BandEnclosure
 
 

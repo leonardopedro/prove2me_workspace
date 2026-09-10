@@ -1,7 +1,20 @@
 import Definitions.Def_ChapterSirkCertificateReader
 import Definitions.Def_ChapterBandEnclosure
-
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
+open BookProof.SirkCertificateReader
+open BookProof.BandEnclosure
+open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
+open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
+
 
 /-!
 # QYM-1 task 1 — the emitted bands are *nested compatible* enclosures

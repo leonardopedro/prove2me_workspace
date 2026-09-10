@@ -38,7 +38,10 @@ NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncat
             "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
             "ChapterSirkMultiShift",
             "ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable", "ChapterSirkCertifiedGap",
-            "ChapterSirkRitzMinMax", "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift"]
+            "ChapterSirkRitzMinMax", "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift",
+            "ChapterNavierStokesHermiteCanonical", "ChapterSirkCertificateReader",
+            "ChapterSirkBandLedger", "ChapterFockSecondQuantization", "ChapterFockOneParticleGap",
+            "ChapterBandEnclosure", "ChapterFriedrichsFormGap"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
@@ -51,6 +54,17 @@ THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
 MANIFEST_CHAPS = ["ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable",
                   "ChapterSirkCertifiedGap", "ChapterSirkRitzMinMax",
                   "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift"]
+# Chapters whose thm files are found by a namespace-prefix glob (the generator
+# names them after the source namespaces; used for wave-4 Fock/Band/Sirk/NS batch).
+GLOB_PREFIXES = [
+    ("ChapterNavierStokesHermiteCanonical", "NavierStokesFlow_HermiteCanonical_"),
+    ("ChapterSirkCertificateReader", "SirkCertificateReader_"),
+    ("ChapterSirkBandLedger", "SirkBandLedger_"),
+    ("ChapterFockSecondQuantization", "FockSecondQuantization_"),
+    ("ChapterFockOneParticleGap", "FockOneParticleGap_"),
+    ("ChapterBandEnclosure", "BandEnclosure_"),
+    ("ChapterFriedrichsFormGap", "FriedrichsFormGap_"),
+]
 
 DOMAIN = [
     ("Stone", ["stone-theorem", "spectral-theory"]),
@@ -186,6 +200,19 @@ def main():
             continue
         new_slugs.append(slug)
         wave["thms"][slug] = thm_meta(slug)
+
+    # Namespace-prefix glob chapters (wave-4 Fock/Band/Sirk/NS batch).
+    for _chap, prefix in GLOB_PREFIXES:
+        for f in sorted(glob.glob(f"{WS}/Theorems/Thm_BookProof_*{prefix}*.lean")):
+            slug = os.path.basename(f)[len("Thm_"):-len(".lean")]
+            if slug in wave["thms"]:
+                new_slugs.append(slug)
+                continue
+            if not compiles(f):
+                print(f"skip thm (no compile): {slug}")
+                continue
+            new_slugs.append(slug)
+            wave["thms"][slug] = thm_meta(slug)
 
     # Topological order: a sol slug comes after every thm it imports.
     alln = set(new_slugs)

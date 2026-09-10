@@ -1193,6 +1193,89 @@
     "sirk",
     "spectral-theory"
    ]
+  },
+  "ChapterNavierStokesHermiteCanonical": {
+   "definition_name": "ChapterNavierStokesHermiteCanonical",
+   "namespace": "BookProof.NavierStokesHermiteCanonical",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesHermiteCanonical.lean",
+   "title": "`BookProof.ChapterNavierStokesHermiteFarisLavine` proves the two Faris\u2013Lavine inequalities for a concrete operator `nsH` ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesHermiteCanonical`, source chapter `BookProof/ChapterNavierStokesHermiteCanonical.lean`).\n\n`BookProof.ChapterNavierStokesHermiteFarisLavine` proves the two Faris\u2013Lavine inequalities for a concrete operator `nsH` on `\u2113\u00b2(\u2115)` \u2014 the `\u00b12`-shift with amplitudes `w(n) = (\u03ba/2)\u221a((n+1)(n+2))` \u2014 and for the diagonal comparison operator `diagMax (oscSymbol \u03ba)`. This module verifies that these two operators really *are* the Navier\u2013Stokes objects they are advertised to be, namely\n\n* `H = \u00bd(\u03c0 V + V \u03c0)`, the symmetrised first-order transport operator, and * `N = \u03c0\u00b2 + V\u00b2 + I`, the comparison operator built from the squares of the individual non-commuting pieces,\n\nfor the canonical pair `\u03c0 = -i \u2202/\u2202u`, `u` of the fiber and the *linear* advection field `V(u) = \u03ba u`. Everything is checked on the finite-mode core `lpFiniteModes \u2115`, which the Hermite functions span.\n\n* `ann`, `cre` \u2014 the annihilation and creation operators of the Hermite basis, with `[a, a\u2020] = I` (`comm_ann_cre`); * `mom \u03ba = i\u221a(\u03ba/2)(a\u2020 - a)`, `pos \u03ba = (2\u03ba)^{-1/2}(a + a\u2020)`, `drift \u03ba = \u03ba \u00b7 pos \u03ba` \u2014 the momentum, the fiber coordinate and the advection field; * `comm_mom_pos` \u2014 **`[\u03c0, u] = -i`**: the two are genuinely non-commuting, which is the whole point of the Faris\u2013Lavine mechanism; * `comparison_eq` \u2014 **`\u03c0\u00b2 + V\u00b2 + I = N`**, the diagonal comparison operator of the Faris\u2013Lavine chapter; * `hamiltonian_eq` \u2014 **`\u00bd(\u03c0V + V\u03c0) = H`**, the `\u00b12`-shift operator of the Faris\u2013Lavine chapter; * `canonical_essentiallySelfAdjointOn_core` \u2014 hence the *canonically written* Navier\u2013Stokes fiber Hamiltonian `\u00bd(\u03c0V + V\u03c0)` is essentially self-adjoint on the finite-mode core.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesHermiteCanonical.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "ChapterSirkCertificateReader": {
+   "definition_name": "ChapterSirkCertificateReader",
+   "namespace": "BookProof.SirkCertificateReader",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkCertificateReader.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a713.4 / \u00a713.7 (T8). `ChapterSirkCertifiedGap` proves the certified-gap theorem **T6** for the tru ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkCertificateReader`, source chapter `BookProof/ChapterSirkCertificateReader.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a713.4 / \u00a713.7 (T8). `ChapterSirkCertifiedGap` proves the certified-gap theorem **T6** for the truncated Hamiltonian; the kernel's certificate emitter writes, one JSON object per line, a parity label together with the sector Ritz value `\u03b8` and the assembled width `\u03b4 = residual + roundoff + enclosure`. This chapter is the missing *reader*: a parser that turns those lines into the parameters of T6, and the theorems that make a parsed line usable inside a proof.\n\n* **No floating-point value is trusted, and none is even used.** The wire format is read as an *exact decimal literal*: `Decimal` records a mantissa and a power of ten, so `-0.4231` becomes `(-4231, 4)` and its value `(-4231 : \u211a)/10^4` is exact. Nothing in this file mentions `Float`. * **No numerical claim is verified here.** The parser is a total function on strings; the theorems are *conditional* on the two enclosures the certificate asserts (`sectorGround \u2264 \u03b8\u1d49 + \u03b4\u1d49` and `\u03b8\u1d52 \u2212 \u03b4\u1d52 \u2264 sectorGround`), exactly as T6 is. Those enclosures are what the finite-precision layer `ChapterSirkFinitePrecision` (T1\u2013T5) supplies for a given solve; the reader only carries the numbers across. * Every statement is about the **truncated** operator: the continuum leg stays the recorded boundary of \u00a713.\n\n* `Decimal`, `Decimal.toQ`, `parseDec` \u2014 exact decimal literals, with `parseDec_neg_example` and friends as reduction sanity checks. * `fieldChars`, `parseSectorLine`, `parseCertificate`, `ndjsonLower` \u2014 the reader: NDJSON text \u21a6 the two sector records \u21a6 the certified lower bound `\u03b8\u1d52 \u2212 \u03b8\u1d49 \u2212 (\u03b4\u1d52 + \u03b4\u1d49)` as an exact rational. * `CertificateData.toGapCertificate` \u2014 the bridge to `SirkCertifiedGap.GapCertificate`, refusing (rather than trusting) a negative assembled width. * **T8** `gap_ge_of_ndjson` and `gap_pos_of_ndjson`: what a parsed certificate proves about the sector gap of the truncated Hamiltonian, via T6. * `formatExampleNdjson` with `formatExample_parse`, `formatExample_lower` and `formatExample_certified_gap` \u2014 the wire format worked through end to end on the recorded `g = 2`, `m = 4` aggregates.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkBandLedger": {
+   "definition_name": "ChapterSirkBandLedger",
+   "namespace": "BookProof.SirkBandLedger",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkBandLedger.lean",
+   "title": "Plan item **QYM-1, task 1** of `CONSOLIDATED_PLAN.md`: \"prove that the certified bands the kernel emits are *nested comp ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkBandLedger`, source chapter `BookProof/ChapterSirkBandLedger.lean`).\n\nPlan item **QYM-1, task 1** of `CONSOLIDATED_PLAN.md`: \"prove that the certified bands the kernel emits are *nested compatible* enclosures in the sense `BandEnclosure` requires (same operator, mesh refinement) \u2014 a Lean statement over the band interface (`ChapterSirkCertificateReader` / `ChapterBandEnclosure`), not over f64 outputs.\"\n\n`ChapterBandEnclosure` consumes its bands through one predicate, `BandEnclosure.NestedBands lo hi`, and everything downstream (`band_enclosure_of_nested`, `ritz_band_enclosure_of_nested`, `friedrichs_form_gap_of_nested_ritz_bands`) is stated for functions `lo hi : \u2115 \u2192 \u211d`. What the emitter actually produces is a *finite* list of records, one per truncation order. This chapter is the missing adapter, and the proof that the adapter's output is nested.\n\n* `BandRecord` \u2014 one emitted band: the operator tag `op` (constructor / version / coupling / truncation / enclosure-convention identity), the mesh order `order`, and the two endpoints `lo`, `hi` as **exact decimals** (`Decimal` of `ChapterSirkCertificateReader`; no `Float` occurs anywhere in this file). * `parseBandLine`, `parseLedger` \u2014 the reader for the NDJSON band stream, built from the exact-decimal parser of the certificate reader. * `ledgerLo`, `ledgerHi : List BandRecord \u2192 \u2115 \u2192 \u211d` \u2014 the adapter: the order-`m` endpoints, extended by the last recorded band beyond the end of the ledger (a finite ledger says nothing after its last order, so it repeats it).\n\n`LedgerWf L` is a **decidable** conjunction of exactly the conditions the plan names, checked on the recorded exact decimals:\n\n* the ledger is non-empty; * **same operator**: every record carries the same operator tag; * the orders are `0, 1, 2, \u2026` in sequence (no gaps, no reordering); * **mesh refinement**: `lo` is nondecreasing and `hi` is nonincreasing along the ledger; * each band encloses (`lo \u2264 hi`).\n\n`nestedBands_of_wf` : a well-formed ledger yields `NestedBands (ledgerLo L) (ledgerHi L)`. Composing with `ChapterBandEnclosure`:\n\n* `ritz_band_enclosure_of_ledger` \u2014 for a bounded positive self-adjoint one-particle operator, every ledger band encloses `sInf (spectrum \u211d A)`; * `friedrichs_form_gap_of_ledger` \u2014 for the unbounded Hamiltonian on the finite-mode core, a ledger whose first band has lower end `\u2265 \u03bc` gives `\u27eay, A y\u27eb \u2265 \u03bc\u2016y\u2016\u00b2` on the whole domain of the Friedrichs extension the Hashimoto shift-invert selects; * `friedrichs_form_gap_of_ledger_lo_zero` \u2014 the same, with `\u03bc` read off the ledger's first band.\n\n* Nesting and the \"same operator\" property are properties of the **recorded numbers and metadata**, and that is exactly what this chapter proves. That the order-`m` Ritz value really lies in the order-`m` band is the analytic / finite-precision input (`ChapterSirkFinitePrecision`, `ChapterSirkCertifiedGap`), carried here as the hypothesis `hritz` \u2014 it is not established by inspecting the ledger. * A **finite** ledger cannot certify band collapse: beyond its last order the extension repeats the last band, so the widths are eventually constant (`ledger_width_eventually_const`) and tend to `0` only if the last recorded width is `0` (`ledger_width_tendsto_zero_iff`). The theorems used above are precisely the ones that do *not* need vanishing widths; the collapse remains the analytic input (`ChapterH6.sirk_error_decay_exponential`). * No floating-point value is read: the endpoints are exact decimals, compared through integer cross-multiplication (`Decimal.leB`).\n\nEverything in this module is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterFockSecondQuantization": {
+   "definition_name": "ChapterFockSecondQuantization",
+   "namespace": "BookProof.FockSecondQuantization",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockSecondQuantization.lean",
+   "title": "`PLAN_LEAN_SPECIALIST_QYM_FLOW.md` Part F.11 asks for the **second-quantized** Hamiltonian on the finite-occupation stat ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FockSecondQuantization`, source chapter `BookProof/ChapterFockSecondQuantization.lean`).\n\n`PLAN_LEAN_SPECIALIST_QYM_FLOW.md` Part F.11 asks for the **second-quantized** Hamiltonian on the finite-occupation states over the one-particle core, i.e. the last row of the field-space realization of the gauge-fixed Yang\u2013Mills Hamiltonian.\n\nThe Fock space over a one-particle space with a countable orthonormal basis `(e_k)` is `\u2113\u00b2` over the *configurations* `Conf = \u2115 \u2192\u2080 \u2115` (occupation numbers, finitely many excited modes), and the finite-occupation domain is the dense subspace `lpFiniteModes Conf` of finitely supported configuration vectors. All operators are defined at the *algebraic* level on `FockAlg = Conf \u2192\u2080 \u2102` \u2014 where linearity is free \u2014 and transported to the Hilbert space by the isomorphism `fockEquiv`.\n\n* `up`, `dn` \u2014 adding and removing one quantum in a mode; * `annA j`, `creA j` \u2014 annihilation and creation, with the canonical commutation relation `[a_j, a_j\u2020] = 1` (`ccr_annA_creA`) and the adjoint pairing `\u27eaa_j\u2020 u, v\u27eb = \u27eau, a_j v\u27eb` (`inner_creA_left`); * `dGamma col` \u2014 the second quantization `d\u0393(A) = \u03a3_{j,k} \u27eae_j, A e_k\u27eb a_j\u2020 a_k` of a one-particle operator given by its (column-finite) matrix `col`, and `dGamma_one_particle`, which checks that on the one-particle sector it *is* the one-particle operator; * `dGammaOp_symmetricOn`, `dGammaOp_quadForm_nonneg` \u2014 symmetry and positivity of `d\u0393(A)` on the finite-occupation domain, from Hermiticity and positivity of the one-particle matrix; * `dGamma_friedrichs_extension` \u2014 hence `d\u0393(A)` has a positive self-adjoint (Friedrichs) extension; * `secondQuantization_friedrichs` \u2014 the same for the matrix of an arbitrary symmetric positive one-particle operator on the finite-mode domain of a Hilbert basis; * `ym_fock_friedrichs_extension` \u2014 **F.11**: the second quantization of the field-space Yang\u2013Mills Hamiltonian `H\u2081 = \u00bd\u03a3\u03c0\u00b2 + \u00bd\u03a3B\u00b2` of `BookProof.YangMillsHermite` has a positive self-adjoint extension on the Fock space over the Gauss\u2013polynomial core of `L\u00b2(\u211d\u2079\u2079)`; * `dGamma_hashimoto_selects`, `secondQuantization_hashimoto_selects` and `ym_fock_hashimoto_selects` \u2014 the Hashimoto/SIRK shift-invert limit selects exactly that Friedrichs extension, with the Galerkin truncations of the shift-inverted operator converging strongly and in the resolvent sense.\n\nNo mass gap and no global existence is claimed; the Millennium problem stays out of scope.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "ChapterFockOneParticleGap": {
+   "definition_name": "ChapterFockOneParticleGap",
+   "namespace": "BookProof.FockOneParticleGap",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockOneParticleGap.lean",
+   "title": "/-! Interpretation convention: this module proves facts about the inner one-particle operator and their lift. The physic ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FockOneParticleGap`, source chapter `BookProof/ChapterFockOneParticleGap.lean`).\n\n/-! Interpretation convention: this module proves facts about the inner one-particle operator and their lift. The physical final Hamiltonian in QYM, QED, QG, and NS is the outer creation-left/annihilation-right enclosure of that operator. Hence inner squeezed states are not full-theory grounds; the outer vacuum is killed by the rightmost outer annihilator.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "ChapterBandEnclosure": {
+   "definition_name": "ChapterBandEnclosure",
+   "namespace": "BookProof.BandEnclosure",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterBandEnclosure.lean",
+   "title": "`CONSOLIDATED_PLAN.md` (top work package, \"Hashimoto observable to the real-Hamiltonian gap\") left exactly one hypothesi ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.BandEnclosure`, source chapter `BookProof/ChapterBandEnclosure.lean`).\n\n`CONSOLIDATED_PLAN.md` (top work package, \"Hashimoto observable to the real-Hamiltonian gap\") left exactly one hypothesis of `BookProof.FockOneParticleGap` underived: the **band enclosure**\n\n`\u2200 m, lam \u2208 Set.Icc (lo m) (hi m)`,\n\ni.e. that every finite certificate brackets the one-particle spectral edge `lam` of the *infinite* selected operator. In `ChapterFockOneParticleGap` that was an assumption. This chapter derives it from material that is already proved in the project:\n\n* **band nesting** \u2014 the order-`m+1` band sits inside the order-`m` band (`ChapterH8.sirk_band_contained`, `sirk_band_contained_le`; abstracted here as `NestedBands`); * **exponential shrinking** \u2014 the band widths decay like `e^{\u2212hm}` and hence vanish (`ChapterH6.sirk_error_decay_exponential`), so the nested bands collapse to one point; * **Hashimoto selects the Friedrichs extension, and its Ritz values converge to the edge of the selected operator** \u2014 `HermiteGalerkin.finiteModeRestrict_selects_operator` and `ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum`.\n\nThe logical skeleton is `band_enclosure_of_nested`: if the order-`m` *approximant* lies in the order-`m` band, the bands nest, and the approximants converge to `lam`, then `lam` lies in **every** band \u2014 because for `n \u2265 m` the approximant `a n` already lies in the order-`m` band, which is closed. Feeding the Hashimoto/Galerkin Ritz values in as the approximants and the Ritz convergence theorem in as the convergence, the enclosed point is `sInf (spectrum \u211d A)`, the spectral edge of the operator the algorithm selects.\n\n* `NestedBands`, `nestedBands_le` \u2014 nesting of the certified intervals, iterated; * `band_enclosure_of_nested` \u2014 **the band-enclosure hypothesis, derived** from nesting and convergence of the approximants; * `band_limit_unique`, `band_enclosure_endpoints_tendsto` \u2014 with vanishing widths the nested bands determine a *unique* limiting edge and their endpoints converge to it; * `sirk_nestedBands`, `sirk_band_widths_tendsto_zero`, `sirk_band_enclosure` \u2014 the instance carried by the already-proved SIRK band theorems (nesting from `ChapterH8.sirk_band_contained`, exponential collapse from `ChapterH6.sirk_error_decay_exponential`); * `ritz_band_enclosure_of_nested` \u2014 **the enclosure for the selected operator**: nested certified bands that contain the Hashimoto/Galerkin Ritz values enclose `sInf (spectrum \u211d A)` of the operator the algorithm selects; * `fock_mass_gap_of_nested_ritz_bands` \u2014 the composition with the free `d\u0393` lift of `ChapterFockOneParticleGap`: **no enclosure hypothesis is assumed any more** in the bounded selected-operator regime; * `shiftInvert_band_enclosure`, `shiftInvert_widths_tendsto_zero` \u2014 the transport of a band enclosure through the Hashimoto shift-invert `lam = nu\u207b\u00b9 \u2212 \u03b3`, for the unbounded (resolvent) route.\n\nEverything is `sorry`-free and introduces no axioms.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "ChapterFriedrichsFormGap": {
+   "definition_name": "ChapterFriedrichsFormGap",
+   "namespace": "BookProof.FriedrichsFormGap",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFriedrichsFormGap.lean",
+   "title": "Aggregation bundle: this chapter has no def material of its own (3/3 decls are node theorems). The namespace is declared ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FriedrichsFormGap`, source chapter `BookProof/ChapterFriedrichsFormGap.lean`).\n\nAggregation bundle: this chapter has no def material of its own (3/3 decls are node theorems). The namespace is declared so the dot-named thm stubs' `open` resolves; the statements' names come from the imported upstream def bundles (FriedrichsExtension, SirkRitzSpectrum).",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFriedrichsFormGap.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "thms": {
@@ -6448,6 +6531,1848 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.amp_eq_sqrt_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul.lean",
+   "title": "(\u03ba : \u211d) (n : \u2115) : amp \u03ba n = (\u03ba / 2) * (Real.sqrt ((n : \u211d) + 1) * Real.sqrt ((n : \u211d) + 2))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.amp_eq_sqrt_mul` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.ann_ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_ann_coe.lean",
+   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((ann (ann x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (Real.sqrt ((n : \u211d) + 1) : \u2102) * (Real.sqrt ((n : \u211d) + 2) : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) (n + 2)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.ann_ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_coe.lean",
+   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((ann x : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (Real.sqrt (n + 1) : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) (n + 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.ann_cre_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe.lean",
+   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((ann (cre x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = ((n : \u2102) + 1) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) n",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.ann_cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_anti_DS": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.anti_DS",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_anti_DS.lean",
+   "title": ": (cre - ann).comp (cre + ann) + (cre + ann).comp (cre - ann) = (2 : \u2102) \u2022 (cre.comp cre - ann.comp ann)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.anti_DS` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_bracket_DS": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.bracket_DS",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_bracket_DS.lean",
+   "title": ": (cre - ann).comp (cre + ann) - (cre + ann).comp (cre - ann) = (-2 : \u2102) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.bracket_DS` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.canonical_essentiallySelfAdjointOn_core",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core.lean",
+   "title": "(h\u03ba : 0 \u2264 \u03ba) : EssentiallySelfAdjointOn (lpFiniteModes \u2115) ((lpFiniteModes \u2115).subtype.comp (((1 : \u2102) / 2) \u2022 ((mom \u03ba).comp (drift \u03ba) + (drift \u03ba).comp (mom \u03ba))))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.canonical_essentiallySelfAdjointOn_core` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_comm_ann_cre": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.comm_ann_cre",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_comm_ann_cre.lean",
+   "title": ": ann.comp cre - cre.comp ann = LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.comm_ann_cre` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.comm_mom_pos",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos.lean",
+   "title": "(h\u03ba : 0 < \u03ba) : (mom \u03ba).comp (pos \u03ba) - (pos \u03ba).comp (mom \u03ba) = (-Complex.I) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.comm_mom_pos` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.comparison_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq.lean",
+   "title": "(h\u03ba : 0 \u2264 \u03ba) : (lpFiniteModes \u2115).subtype.comp ((mom \u03ba).comp (mom \u03ba) + (drift \u03ba).comp (drift \u03ba) + LinearMap.id) = (diagMax (oscSymbol \u03ba)).comp (Submodule.inclusion (finiteModes_le_maxDom (oscSymbol \u03ba)))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.comparison_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_ann_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe.lean",
+   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((cre (ann x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (n : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) n",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_coe",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_coe.lean",
+   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((cre x : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (Real.sqrt n : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) (n - 1)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_add_two": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_add_two",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_add_two.lean",
+   "title": "(x : lpFiniteModes \u2115) (k : \u2115) : (((cre (cre x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) (k + 2) = (Real.sqrt ((k : \u211d) + 2) : \u2102) * (Real.sqrt ((k : \u211d) + 1) : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) k",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_add_two` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_one",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one.lean",
+   "title": "(x : lpFiniteModes \u2115) : (((cre (cre x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) 1 = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_one` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_zero": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_zero.lean",
+   "title": "(x : lpFiniteModes \u2115) : (((cre (cre x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) 0 = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_cre_coe_zero` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_drift_eq": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.drift_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_drift_eq.lean",
+   "title": "(h\u03ba : 0 < \u03ba) : drift \u03ba = (\u03ba : \u2102) \u2022 pos \u03ba",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.drift_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.hamiltonian_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq.lean",
+   "title": "(h\u03ba : 0 \u2264 \u03ba) : (lpFiniteModes \u2115).subtype.comp (((1 : \u2102) / 2) \u2022 ((mom \u03ba).comp (drift \u03ba) + (drift \u03ba).comp (mom \u03ba))) = (nsH \u03ba h\u03ba).comp (Submodule.inclusion (finiteModes_le_maxDom (oscSymbol \u03ba)))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.hamiltonian_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_sq_diff": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.sq_diff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_sq_diff.lean",
+   "title": ": (cre + ann).comp (cre + ann) - (cre - ann).comp (cre - ann) = (2 : \u2102) \u2022 (cre.comp ann + ann.comp cre)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.sq_diff` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.sqrt_half_mul_inv",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv.lean",
+   "title": "(h\u03ba : 0 < \u03ba) : (Real.sqrt (\u03ba / 2) : \u2102) * ((1 / Real.sqrt (2 * \u03ba) : \u211d) : \u2102) = 1 / 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.sqrt_half_mul_inv` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.sqrt_half_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq.lean",
+   "title": "(h\u03ba : 0 \u2264 \u03ba) : (Real.sqrt (\u03ba / 2) : \u2102) * (Real.sqrt (\u03ba / 2) : \u2102) = (\u03ba : \u2102) / 2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.sqrt_half_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt": {
+   "name": "BookProof.NavierStokesFlow.HermiteCanonical.sqrt_mul_sqrt",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt.lean",
+   "title": "(r : \u211d) (hr : 0 \u2264 r) : (Real.sqrt r : \u2102) * (Real.sqrt r : \u2102) = (r : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.sqrt_mul_sqrt` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_SirkCertificateReader_Decimal_toQ_nonneg": {
+   "name": "BookProof.SirkCertificateReader.Decimal.toQ_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_Decimal_toQ_nonneg.lean",
+   "title": "{d : Decimal} (h : 0 \u2264 d.mant) : 0 \u2264 d.toQ",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.Decimal.toQ_nonneg` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_certified_gap": {
+   "name": "BookProof.SirkCertificateReader.formatExample_certified_gap",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_certified_gap.lean",
+   "title": "{E : Type*} [NormedAddCommGroup E] [InnerProductSpace \u2102 E] {T P : E \u2192\u2097[\u2102] E} (hEven : sectorGround T P 1 \u2264 ((formatExampleData.even.theta.toQ : \u211a) : \u211d) + ((formatExampleData.even.delta.toQ : \u211a) : \u211d)) (hOdd : ((formatExampleData.odd.theta.toQ : \u211a) : \u211d) - ((formatExampleData.odd.delta.toQ : \u211a) : \u211d) \u2264 ...",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_certified_gap` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_gap": {
+   "name": "BookProof.SirkCertificateReader.formatExample_gap",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_gap.lean",
+   "title": ": formatExampleData.gapQ = 19875 / 10000",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_gap` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_lower": {
+   "name": "BookProof.SirkCertificateReader.formatExample_lower",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_lower.lean",
+   "title": ": ndjsonLower formatExampleNdjson = some (1932 / 1000)",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_lower` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_lower_pos": {
+   "name": "BookProof.SirkCertificateReader.formatExample_lower_pos",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_lower_pos.lean",
+   "title": ": (0 : \u211a) < 1932 / 1000",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_lower_pos` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_parse": {
+   "name": "BookProof.SirkCertificateReader.formatExample_parse",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_parse.lean",
+   "title": ": parseCertificate formatExampleNdjson = some formatExampleData",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_parse` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_formatExample_width": {
+   "name": "BookProof.SirkCertificateReader.formatExample_width",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_formatExample_width.lean",
+   "title": ": formatExampleData.widthQ = 555 / 10000",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.formatExample_width` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_gap_ge_of_ndjson": {
+   "name": "BookProof.SirkCertificateReader.gap_ge_of_ndjson",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_gap_ge_of_ndjson.lean",
+   "title": "{T P : E \u2192\u2097[\u2102] E} {s : String} {d : CertificateData} {lo : \u211a} (hd : parseCertificate s = some d) (hs : ndjsonLower s = some lo) (hEven : sectorGround T P 1 \u2264 ((d.even.theta.toQ : \u211a) : \u211d) + ((d.even.delta.toQ : \u211a) : \u211d)) (hOdd : ((d.odd.theta.toQ : \u211a) : \u211d) - ((d.odd.delta.toQ : \u211a) : \u211d) \u2264 sectorGround ...",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.gap_ge_of_ndjson` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_gap_pos_of_ndjson": {
+   "name": "BookProof.SirkCertificateReader.gap_pos_of_ndjson",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_gap_pos_of_ndjson.lean",
+   "title": "{T P : E \u2192\u2097[\u2102] E} {s : String} {d : CertificateData} {lo : \u211a} (hd : parseCertificate s = some d) (hs : ndjsonLower s = some lo) (hpos : 0 < lo) (hEven : sectorGround T P 1 \u2264 ((d.even.theta.toQ : \u211a) : \u211d) + ((d.even.delta.toQ : \u211a) : \u211d)) (hOdd : ((d.odd.theta.toQ : \u211a) : \u211d) - ((d.odd.delta.toQ : \u211a) : \u211d) ...",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.gap_pos_of_ndjson` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_parseDec_example": {
+   "name": "BookProof.SirkCertificateReader.parseDec_example",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_parseDec_example.lean",
+   "title": ": parseDec \"1.9875\".toList = some \u27e819875, 4\u27e9",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.parseDec_example` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_parseDec_int_example": {
+   "name": "BookProof.SirkCertificateReader.parseDec_int_example",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_parseDec_int_example.lean",
+   "title": ": parseDec \"7\".toList = some \u27e87, 0\u27e9",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.parseDec_int_example` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_parseDec_neg_example": {
+   "name": "BookProof.SirkCertificateReader.parseDec_neg_example",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_parseDec_neg_example.lean",
+   "title": ": parseDec \"-0.4231\".toList = some \u27e8-4231, 4\u27e9",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.parseDec_neg_example` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_parseDec_reject": {
+   "name": "BookProof.SirkCertificateReader.parseDec_reject",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_parseDec_reject.lean",
+   "title": ": parseDec \"NaN\".toList = none",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.parseDec_reject` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkCertificateReader_toGapCertificate_lower": {
+   "name": "BookProof.SirkCertificateReader.toGapCertificate_lower",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkCertificateReader_toGapCertificate_lower.lean",
+   "title": "{d : CertificateData} {c : GapCertificate} (h : d.toGapCertificate = some c) : c.lower = ((d.lowerQ : \u211a) : \u211d)",
+   "nl": "Lean 4 theorem `BookProof.SirkCertificateReader.toGapCertificate_lower` (module `BookProof.SirkCertificateReader`), source chapter `BookProof/ChapterSirkCertificateReader.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkCertificateReader.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_Decimal_leB_iff": {
+   "name": "BookProof.SirkBandLedger.Decimal.leB_iff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_Decimal_leB_iff.lean",
+   "title": "(d e : Decimal) : Decimal.leB d e \u2194 d.toQ \u2264 e.toQ",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.Decimal.leB_iff` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_formatExampleLedger_lo_zero": {
+   "name": "BookProof.SirkBandLedger.formatExampleLedger_lo_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_formatExampleLedger_lo_zero.lean",
+   "title": ": ledgerLo formatExampleLedger 0 = 0.9",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.formatExampleLedger_lo_zero` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_formatExampleLedger_nested": {
+   "name": "BookProof.SirkBandLedger.formatExampleLedger_nested",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_formatExampleLedger_nested.lean",
+   "title": ": NestedBands (ledgerLo formatExampleLedger) (ledgerHi formatExampleLedger)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.formatExampleLedger_nested` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_formatExampleLedger_parse": {
+   "name": "BookProof.SirkBandLedger.formatExampleLedger_parse",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_formatExampleLedger_parse.lean",
+   "title": ": parseLedger formatExampleLedgerNdjson = formatExampleLedger",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.formatExampleLedger_parse` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_formatExampleLedger_wf": {
+   "name": "BookProof.SirkBandLedger.formatExampleLedger_wf",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_formatExampleLedger_wf.lean",
+   "title": ": LedgerWf formatExampleLedger",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.formatExampleLedger_wf` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger": {
+   "name": "BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger.lean",
+   "title": "(b : HilbertBasis \u2115 \u2102 F) (H : finiteModeDomain b \u2192\u2097[\u2102] F) (hsym : SymmetricOn (finiteModeDomain b) H) (hpos : \u2200 x : finiteModeDomain b, 0 \u2264 quadForm H x) {L : List BandRecord} (hwf : LedgerWf L) (hritz : \u2200 m, ritzInf H (galerkinSpan b (m + 1)) \u2208 Set.Icc (ledgerLo L m) (ledgerHi L m)) {mu : \u211d} {m\u2080 : ...",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero": {
+   "name": "BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger_lo_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero.lean",
+   "title": "(b : HilbertBasis \u2115 \u2102 F) (H : finiteModeDomain b \u2192\u2097[\u2102] F) (hsym : SymmetricOn (finiteModeDomain b) H) (hpos : \u2200 x : finiteModeDomain b, 0 \u2264 quadForm H x) {L : List BandRecord} (hwf : LedgerWf L) (hritz : \u2200 m, ritzInf H (galerkinSpan b (m + 1)) \u2208 Set.Icc (ledgerLo L m) (ledgerHi L m)) : ledgerLo L 0 ...",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger_lo_zero` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_hiQ_antitone": {
+   "name": "BookProof.SirkBandLedger.hiQ_antitone",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_hiQ_antitone.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) : Antitone (hiQ L)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.hiQ_antitone` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerLo_le_ledgerHi": {
+   "name": "BookProof.SirkBandLedger.ledgerLo_le_ledgerHi",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerLo_le_ledgerHi.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) (m : \u2115) : ledgerLo L m \u2264 ledgerHi L m",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerLo_le_ledgerHi` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerWf_enclosing": {
+   "name": "BookProof.SirkBandLedger.ledgerWf_enclosing",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerWf_enclosing.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) {r : BandRecord} (hr : r \u2208 L) : r.lo.toQ \u2264 r.hi.toQ",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerWf_enclosing` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerWf_ne_nil": {
+   "name": "BookProof.SirkBandLedger.ledgerWf_ne_nil",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerWf_ne_nil.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) : L \u2260 []",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerWf_ne_nil` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerWf_order": {
+   "name": "BookProof.SirkBandLedger.ledgerWf_order",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerWf_order.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) {i : \u2115} (hi : i < L.length) : (L.getD i default).order = i",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerWf_order` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerWf_sameOp": {
+   "name": "BookProof.SirkBandLedger.ledgerWf_sameOp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerWf_sameOp.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) {r : BandRecord} (hr : r \u2208 L) : r.op = (L.getD 0 default).op",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerWf_sameOp` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledgerWf_step": {
+   "name": "BookProof.SirkBandLedger.ledgerWf_step",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledgerWf_step.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) {i : \u2115} (hi : i + 1 < L.length) : (L.getD i default).lo.toQ \u2264 (L.getD (i + 1) default).lo.toQ \u2227 (L.getD (i + 1) default).hi.toQ \u2264 (L.getD i default).hi.toQ",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledgerWf_step` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledger_width_eventually_const": {
+   "name": "BookProof.SirkBandLedger.ledger_width_eventually_const",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledger_width_eventually_const.lean",
+   "title": "(L : List BandRecord) {m : \u2115} (hm : L.length - 1 \u2264 m) : ledgerHi L m - ledgerLo L m = ledgerHi L (L.length - 1) - ledgerLo L (L.length - 1)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledger_width_eventually_const` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ledger_width_tendsto_zero_iff": {
+   "name": "BookProof.SirkBandLedger.ledger_width_tendsto_zero_iff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ledger_width_tendsto_zero_iff.lean",
+   "title": "(L : List BandRecord) : Filter.Tendsto (fun m => ledgerHi L m - ledgerLo L m) Filter.atTop (nhds 0) \u2194 ledgerHi L (L.length - 1) - ledgerLo L (L.length - 1) = 0",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ledger_width_tendsto_zero_iff` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_loQ_monotone": {
+   "name": "BookProof.SirkBandLedger.loQ_monotone",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_loQ_monotone.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) : Monotone (loQ L)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.loQ_monotone` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_nestedBands_of_wf": {
+   "name": "BookProof.SirkBandLedger.nestedBands_of_wf",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_nestedBands_of_wf.lean",
+   "title": "{L : List BandRecord} (h : LedgerWf L) : NestedBands (ledgerLo L) (ledgerHi L)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.nestedBands_of_wf` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_recAt_of_ge": {
+   "name": "BookProof.SirkBandLedger.recAt_of_ge",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_recAt_of_ge.lean",
+   "title": "{L : List BandRecord} {m : \u2115} (hm : L.length - 1 \u2264 m) : recAt L m = recAt L (L.length - 1)",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.recAt_of_ge` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_recAt_of_lt": {
+   "name": "BookProof.SirkBandLedger.recAt_of_lt",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_recAt_of_lt.lean",
+   "title": "{L : List BandRecord} {m : \u2115} (hm : m < L.length) : recAt L m = L.getD m default",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.recAt_of_lt` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger": {
+   "name": "BookProof.SirkBandLedger.ritz_band_enclosure_of_ledger",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hsa : IsSelfAdjoint A) (hpos : \u2200 u : F, 0 \u2264 (inner \u2102 u (A u) : \u2102).re) (b : HilbertBasis \u2115 \u2102 F) {L : List BandRecord} (hwf : LedgerWf L) (hritz : \u2200 m, ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1)) \u2208 Set.Icc (ledgerLo L m) (ledgerHi L m)) : IsPositiveSelfAdj ...",
+   "nl": "Lean 4 theorem `BookProof.SirkBandLedger.ritz_band_enclosure_of_ledger` (module `BookProof.SirkBandLedger`), source chapter `BookProof/ChapterSirkBandLedger.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkBandLedger.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_FockSecondQuantization_annA_apply": {
+   "name": "BookProof.FockSecondQuantization.annA_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_annA_apply.lean",
+   "title": "(j : \u2115) (u : FockAlg) (\u03b1 : Conf) : annA j u \u03b1 = ((Real.sqrt ((\u03b1 j : \u211d) + 1) : \u211d) : \u2102) * u (up j \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.annA_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_annA_eq_zero_of_not_mem_modes": {
+   "name": "BookProof.FockSecondQuantization.annA_eq_zero_of_not_mem_modes",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_annA_eq_zero_of_not_mem_modes.lean",
+   "title": "{u : FockAlg} {k : \u2115} (h : k \u2209 modes u) : annA k u = 0",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.annA_eq_zero_of_not_mem_modes` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_annA_single": {
+   "name": "BookProof.FockSecondQuantization.annA_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_annA_single.lean",
+   "title": "(j : \u2115) (\u03b2 : Conf) (c : \u2102) : annA j (Finsupp.single \u03b2 c) = c \u2022 Finsupp.single (dn j \u03b2) ((Real.sqrt (\u03b2 j) : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.annA_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ccr_annA_annA": {
+   "name": "BookProof.FockSecondQuantization.ccr_annA_annA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ccr_annA_annA.lean",
+   "title": "(j k : \u2115) (u : FockAlg) : annA j (annA k u) = annA k (annA j u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ccr_annA_annA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ccr_annA_creA": {
+   "name": "BookProof.FockSecondQuantization.ccr_annA_creA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ccr_annA_creA.lean",
+   "title": "(j : \u2115) (u : FockAlg) : annA j (creA j u) - creA j (annA j u) = u",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ccr_annA_creA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ccr_annA_creA_of_ne": {
+   "name": "BookProof.FockSecondQuantization.ccr_annA_creA_of_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ccr_annA_creA_of_ne.lean",
+   "title": "{j k : \u2115} (h : j \u2260 k) (u : FockAlg) : annA j (creA k u) = creA k (annA j u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ccr_annA_creA_of_ne` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ccr_creA_creA": {
+   "name": "BookProof.FockSecondQuantization.ccr_creA_creA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ccr_creA_creA.lean",
+   "title": "(j k : \u2115) (u : FockAlg) : creA j (creA k u) = creA k (creA j u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ccr_creA_creA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_coe_dGammaOp": {
+   "name": "BookProof.FockSecondQuantization.coe_dGammaOp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_coe_dGammaOp.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (x : lpFiniteModes Conf) : dGammaOp col x = toLp (dGamma col (fockEquiv.symm x))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coe_dGammaOp` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_coe_fockEquiv": {
+   "name": "BookProof.FockSecondQuantization.coe_fockEquiv",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_coe_fockEquiv.lean",
+   "title": "(u : FockAlg) : ((fockEquiv u : lpFiniteModes Conf) : Fock) = toLp u",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coe_fockEquiv` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_coe_fockEquiv_symm": {
+   "name": "BookProof.FockSecondQuantization.coe_fockEquiv_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm.lean",
+   "title": "(x : lpFiniteModes Conf) : ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coe_fockEquiv_symm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_coe_ymOnePart": {
+   "name": "BookProof.FockSecondQuantization.coe_ymOnePart",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_coe_ymOnePart.lean",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (x : finiteModeDomain (coreBasis e)) : ((ymOnePart e fabc x : finiteModeDomain (coreBasis e)) : L2d 99) = ymHamiltonian (coreRepBasis e) fabc x",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coe_ymOnePart` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_col_support_subset_closure": {
+   "name": "BookProof.FockSecondQuantization.col_support_subset_closure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_col_support_subset_closure.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) : \u2200 k \u2208 modes u \u222a modes v, (col k).support \u2286 closureModes col u v",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.col_support_subset_closure` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_coordFinsupp_apply": {
+   "name": "BookProof.FockSecondQuantization.coordFinsupp_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_coordFinsupp_apply.lean",
+   "title": "{b : HilbertBasis \u2115 \u2102 F} {x : F} (hx : x \u2208 finiteModeDomain b) (j : \u2115) : coordFinsupp b x j = inner \u2102 (b j) x",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coordFinsupp_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_creA_apply": {
+   "name": "BookProof.FockSecondQuantization.creA_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_creA_apply.lean",
+   "title": "(j : \u2115) (u : FockAlg) (\u03b1 : Conf) : creA j u \u03b1 = ((Real.sqrt (\u03b1 j) : \u211d) : \u2102) * u (dn j \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.creA_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_creA_single": {
+   "name": "BookProof.FockSecondQuantization.creA_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_creA_single.lean",
+   "title": "(j : \u2115) (\u03b2 : Conf) (c : \u2102) : creA j (Finsupp.single \u03b2 c) = c \u2022 Finsupp.single (up j \u03b2) ((Real.sqrt ((\u03b2 j : \u211d) + 1) : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.creA_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_creVec_apply": {
+   "name": "BookProof.FockSecondQuantization.creVec_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_creVec_apply.lean",
+   "title": "(v : \u2115 \u2192\u2080 \u2102) (x : FockAlg) : creVec v x = \u2211 j \u2208 v.support, v j \u2022 creA j x",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.creVec_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGammaOpB_quadForm_nonneg": {
+   "name": "BookProof.FockSecondQuantization.dGammaOpB_quadForm_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGammaOpB_quadForm_nonneg.lean",
+   "title": "{\u03b5 : \u2115 \u2243 Conf} {col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hpos : IsPosCol col) (x : finiteModeDomain (fockBasisN \u03b5)) : 0 \u2264 quadForm (dGammaOpB \u03b5 col) x",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGammaOpB_quadForm_nonneg` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGammaOpB_symmetricOn": {
+   "name": "BookProof.FockSecondQuantization.dGammaOpB_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGammaOpB_symmetricOn.lean",
+   "title": "{\u03b5 : \u2115 \u2243 Conf} {col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hherm : IsHermCol col) : SymmetricOn (finiteModeDomain (fockBasisN \u03b5)) (dGammaOpB \u03b5 col)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGammaOpB_symmetricOn` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGammaOp_quadForm_nonneg": {
+   "name": "BookProof.FockSecondQuantization.dGammaOp_quadForm_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGammaOp_quadForm_nonneg.lean",
+   "title": "{col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hpos : IsPosCol col) (x : lpFiniteModes Conf) : 0 \u2264 quadForm (dGammaOp col) x",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGammaOp_quadForm_nonneg` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGammaOp_symmetricOn": {
+   "name": "BookProof.FockSecondQuantization.dGammaOp_symmetricOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn.lean",
+   "title": "{col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hherm : IsHermCol col) : SymmetricOn (lpFiniteModes Conf) (dGammaOp col)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGammaOp_symmetricOn` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_eq_sum": {
+   "name": "BookProof.FockSecondQuantization.dGamma_eq_sum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_eq_sum.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) {u : FockAlg} {K : Finset \u2115} (hK : modes u \u2286 K) : dGamma col u = \u2211 k \u2208 K, creVec (col k) (annA k u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_eq_sum` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_eq_sum_aux": {
+   "name": "BookProof.FockSecondQuantization.dGamma_eq_sum_aux",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_eq_sum_aux.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u : FockAlg) : \u2200 K : Finset \u2115, modes u \u2286 K \u2192 dGamma col u = \u2211 k \u2208 K, creVec (col k) (annA k u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_eq_sum_aux` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_friedrichs_extension": {
+   "name": "BookProof.FockSecondQuantization.dGamma_friedrichs_extension",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_friedrichs_extension.lean",
+   "title": "{col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hherm : IsHermCol col) (hpos : IsPosCol col) : \u2203 (Dom : Submodule \u2102 Fock) (A : Dom \u2192\u2097[\u2102] Fock), IsPositiveSelfAdjointExtension (dGammaOp col) A",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_friedrichs_extension` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_hashimoto_selects": {
+   "name": "BookProof.FockSecondQuantization.dGamma_hashimoto_selects",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_hashimoto_selects.lean",
+   "title": "(\u03b5 : \u2115 \u2243 Conf) {col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hherm : IsHermCol col) (hpos : IsPosCol col) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 Fock) (A : Dom \u2192\u2097[\u2102] Fock) (R : Fock \u2192L[\u2102] Fock), IsPositiveSelfAdjointExtension (dGammaOpB \u03b5 col) A \u2227 IsShiftInvert A \u03b3 R \u2227 \u2016R\u2016 \u2264 \u03b3\u207b\u00b9 \u2227 IsSelfAdjoint R \u2227 (\u2200 u : Fock, Tendst ...",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_hashimoto_selects` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_one_particle": {
+   "name": "BookProof.FockSecondQuantization.dGamma_one_particle",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_one_particle.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (k : \u2115) : dGamma col (Finsupp.single (Finsupp.single k 1) 1) = \u2211 j \u2208 (col k).support, (col k) j \u2022 Finsupp.single (Finsupp.single j 1) (1 : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_one_particle` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dGamma_single": {
+   "name": "BookProof.FockSecondQuantization.dGamma_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dGamma_single.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (\u03b2 : Conf) (c : \u2102) : dGamma col (Finsupp.single \u03b2 c) = c \u2022 \u2211 k \u2208 \u03b2.support, creVec (col k) (annA k (Finsupp.single \u03b2 1))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_dn_comm": {
+   "name": "BookProof.FockSecondQuantization.dn_dn_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dn_dn_comm.lean",
+   "title": "(j k : \u2115) (\u03b1 : Conf) : dn k (dn j \u03b1) = dn j (dn k \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_dn_comm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_of_ne": {
+   "name": "BookProof.FockSecondQuantization.dn_of_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dn_of_ne.lean",
+   "title": "{i j : \u2115} (\u03b1 : Conf) (h : i \u2260 j) : dn j \u03b1 i = \u03b1 i",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_of_ne` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_self": {
+   "name": "BookProof.FockSecondQuantization.dn_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dn_self.lean",
+   "title": "(j : \u2115) (\u03b1 : Conf) : dn j \u03b1 j = \u03b1 j - 1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_self` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_up": {
+   "name": "BookProof.FockSecondQuantization.dn_up",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_dn_up.lean",
+   "title": "(j : \u2115) (\u03b1 : Conf) : dn j (up j \u03b1) = \u03b1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_up` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_finiteOccupation_dense": {
+   "name": "BookProof.FockSecondQuantization.finiteOccupation_dense",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_finiteOccupation_dense.lean",
+   "title": ": Dense ((lpFiniteModes Conf : Submodule \u2102 Fock) : Set Fock)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.finiteOccupation_dense` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_annA_creVec": {
+   "name": "BookProof.FockSecondQuantization.inner_annA_creVec",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_annA_creVec.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) (j : \u2115) {L : Finset \u2115} (h : (col j).support \u2286 L) : (inner \u2102 (toLp u) (toLp (creVec (col j) (annA j v))) : \u2102) = \u2211 k \u2208 L, (col j) k * inner \u2102 (toLp (annA k u)) (toLp (annA j v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_annA_creVec` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_creA_left": {
+   "name": "BookProof.FockSecondQuantization.inner_creA_left",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_creA_left.lean",
+   "title": "(j : \u2115) (u v : FockAlg) : (inner \u2102 (toLp (creA j u)) (toLp v) : \u2102) = inner \u2102 (toLp u) (toLp (annA j v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_creA_left` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_creA_right": {
+   "name": "BookProof.FockSecondQuantization.inner_creA_right",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_creA_right.lean",
+   "title": "(j : \u2115) (u v : FockAlg) : (inner \u2102 (toLp u) (toLp (creA j v)) : \u2102) = inner \u2102 (toLp (annA j u)) (toLp v)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_creA_right` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_creVec_annA": {
+   "name": "BookProof.FockSecondQuantization.inner_creVec_annA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_creVec_annA.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) (k : \u2115) {L : Finset \u2115} (h : (col k).support \u2286 L) : (inner \u2102 (toLp (creVec (col k) (annA k u))) (toLp v) : \u2102) = \u2211 j \u2208 L, (starRingEnd \u2102) ((col k) j) * inner \u2102 (toLp (annA k u)) (toLp (annA j v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_creVec_annA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_dGamma_left": {
+   "name": "BookProof.FockSecondQuantization.inner_dGamma_left",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_dGamma_left.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) {L : Finset \u2115} (hu : modes u \u2286 L) (hL : \u2200 k \u2208 modes u \u222a modes v, (col k).support \u2286 L) : (inner \u2102 (toLp (dGamma col u)) (toLp v) : \u2102) = \u2211 k \u2208 L, \u2211 j \u2208 L, (starRingEnd \u2102) ((col k) j) * inner \u2102 (toLp (annA k u)) (toLp (annA j v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_dGamma_left` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_dGamma_nonneg": {
+   "name": "BookProof.FockSecondQuantization.inner_dGamma_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_dGamma_nonneg.lean",
+   "title": "{col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hpos : IsPosCol col) (u : FockAlg) : 0 \u2264 (inner \u2102 (toLp u) (toLp (dGamma col u)) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_dGamma_nonneg` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_dGamma_right": {
+   "name": "BookProof.FockSecondQuantization.inner_dGamma_right",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_dGamma_right.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) {L : Finset \u2115} (hv : modes v \u2286 L) (hL : \u2200 k \u2208 modes u \u222a modes v, (col k).support \u2286 L) : (inner \u2102 (toLp u) (toLp (dGamma col v)) : \u2102) = \u2211 j \u2208 L, \u2211 k \u2208 L, (col j) k * inner \u2102 (toLp (annA k u)) (toLp (annA j v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_dGamma_right` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_dGamma_symm": {
+   "name": "BookProof.FockSecondQuantization.inner_dGamma_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_dGamma_symm.lean",
+   "title": "{col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)} (hherm : IsHermCol col) (u v : FockAlg) : (inner \u2102 (toLp (dGamma col u)) (toLp v) : \u2102) = inner \u2102 (toLp u) (toLp (dGamma col v))",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_dGamma_symm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_toLp": {
+   "name": "BookProof.FockSecondQuantization.inner_toLp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_toLp.lean",
+   "title": "(u v : FockAlg) : (inner \u2102 (toLp u) (toLp v) : \u2102) = \u2211 \u03b1 \u2208 u.support, (starRingEnd \u2102) (u \u03b1) * v \u03b1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_toLp` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_inner_toLp_of_subset": {
+   "name": "BookProof.FockSecondQuantization.inner_toLp_of_subset",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_inner_toLp_of_subset.lean",
+   "title": "{u : FockAlg} {s : Finset Conf} (hs : u.support \u2286 s) (v : FockAlg) : (inner \u2102 (toLp u) (toLp v) : \u2102) = \u2211 \u03b1 \u2208 s, (starRingEnd \u2102) (u \u03b1) * v \u03b1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.inner_toLp_of_subset` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_isHermCol_opCol": {
+   "name": "BookProof.FockSecondQuantization.isHermCol_opCol",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_isHermCol_opCol.lean",
+   "title": "{b : HilbertBasis \u2115 \u2102 F} {A : finiteModeDomain b \u2192\u2097[\u2102] finiteModeDomain b} (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A)) : IsHermCol (opCol b A)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.isHermCol_opCol` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_isPosCol_opCol": {
+   "name": "BookProof.FockSecondQuantization.isPosCol_opCol",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_isPosCol_opCol.lean",
+   "title": "{b : HilbertBasis \u2115 \u2102 F} {A : finiteModeDomain b \u2192\u2097[\u2102] finiteModeDomain b} (hpos : \u2200 x, 0 \u2264 quadForm ((finiteModeDomain b).subtype.comp A) x) : IsPosCol (opCol b A)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.isPosCol_opCol` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_modes_left_subset_closure": {
+   "name": "BookProof.FockSecondQuantization.modes_left_subset_closure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_modes_left_subset_closure.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) : modes u \u2286 closureModes col u v",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.modes_left_subset_closure` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_modes_right_subset_closure": {
+   "name": "BookProof.FockSecondQuantization.modes_right_subset_closure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_modes_right_subset_closure.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u v : FockAlg) : modes v \u2286 closureModes col u v",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.modes_right_subset_closure` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_opCol_apply": {
+   "name": "BookProof.FockSecondQuantization.opCol_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_opCol_apply.lean",
+   "title": "(b : HilbertBasis \u2115 \u2102 F) (A : finiteModeDomain b \u2192\u2097[\u2102] finiteModeDomain b) (k j : \u2115) : opCol b A k j = inner \u2102 (b j) ((A \u27e8b k, Submodule.subset_span \u27e8k, rfl\u27e9\u27e9 : finiteModeDomain b) : F)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.opCol_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_secondQuantization_friedrichs": {
+   "name": "BookProof.FockSecondQuantization.secondQuantization_friedrichs",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs.lean",
+   "title": "(b : HilbertBasis \u2115 \u2102 F) (A : finiteModeDomain b \u2192\u2097[\u2102] finiteModeDomain b) (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A)) (hpos : \u2200 x, 0 \u2264 quadForm ((finiteModeDomain b).subtype.comp A) x) : \u2203 (Dom : Submodule \u2102 Fock) (A' : Dom \u2192\u2097[\u2102] Fock), IsPositiveSelfAdjointExtensi ...",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.secondQuantization_friedrichs` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_secondQuantization_hashimoto_selects": {
+   "name": "BookProof.FockSecondQuantization.secondQuantization_hashimoto_selects",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_secondQuantization_hashimoto_selects.lean",
+   "title": "{F : Type*} [NormedAddCommGroup F] [InnerProductSpace \u2102 F] (\u03b5 : \u2115 \u2243 Conf) (b : HilbertBasis \u2115 \u2102 F) (A : finiteModeDomain b \u2192\u2097[\u2102] finiteModeDomain b) (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A)) (hpos : \u2200 x, 0 \u2264 quadForm ((finiteModeDomain b).subtype.comp A) x) {\u03b3 : \u211d ...",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.secondQuantization_hashimoto_selects` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_sum_creVec_annA_subset": {
+   "name": "BookProof.FockSecondQuantization.sum_creVec_annA_subset",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_sum_creVec_annA_subset.lean",
+   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (u : FockAlg) {K L : Finset \u2115} (hKL : K \u2286 L) (hK : modes u \u2286 K) : \u2211 k \u2208 K, creVec (col k) (annA k u) = \u2211 k \u2208 L, creVec (col k) (annA k u)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.sum_creVec_annA_subset` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_support_annA": {
+   "name": "BookProof.FockSecondQuantization.support_annA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_support_annA.lean",
+   "title": "(j : \u2115) (u : FockAlg) : (annA j u).support \u2286 u.support.image (dn j)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.support_annA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_support_creA": {
+   "name": "BookProof.FockSecondQuantization.support_creA",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_support_creA.lean",
+   "title": "(j : \u2115) (u : FockAlg) : (creA j u).support \u2286 u.support.image (up j)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.support_creA` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_support_dn": {
+   "name": "BookProof.FockSecondQuantization.support_dn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_support_dn.lean",
+   "title": "(j : \u2115) (\u03b1 : Conf) : (dn j \u03b1).support \u2286 \u03b1.support",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.support_dn` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_support_subset_modes": {
+   "name": "BookProof.FockSecondQuantization.support_subset_modes",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_support_subset_modes.lean",
+   "title": "{u : FockAlg} {\u03b2 : Conf} (h : \u03b2 \u2208 u.support) : \u03b2.support \u2286 modes u",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.support_subset_modes` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_support_up": {
+   "name": "BookProof.FockSecondQuantization.support_up",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_support_up.lean",
+   "title": "(j : \u2115) (\u03b1 : Conf) : (up j \u03b1).support \u2286 insert j \u03b1.support",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.support_up` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_toLpL_apply": {
+   "name": "BookProof.FockSecondQuantization.toLpL_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_toLpL_apply.lean",
+   "title": "(u : FockAlg) : toLpL u = toLp u",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.toLpL_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_toLp_apply": {
+   "name": "BookProof.FockSecondQuantization.toLp_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_toLp_apply.lean",
+   "title": "(u : FockAlg) (\u03b1 : Conf) : ((toLp u : Fock) : Conf \u2192 \u2102) \u03b1 = u \u03b1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.toLp_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_toLp_zero": {
+   "name": "BookProof.FockSecondQuantization.toLp_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_toLp_zero.lean",
+   "title": ": toLp (0 : FockAlg) = 0",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.toLp_zero` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_dn": {
+   "name": "BookProof.FockSecondQuantization.up_dn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_dn.lean",
+   "title": "(j : \u2115) {\u03b1 : Conf} (h : 1 \u2264 \u03b1 j) : up j (dn j \u03b1) = \u03b1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_dn` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_dn_comm": {
+   "name": "BookProof.FockSecondQuantization.up_dn_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_dn_comm.lean",
+   "title": "{j k : \u2115} (h : j \u2260 k) (\u03b1 : Conf) : dn k (up j \u03b1) = up j (dn k \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_dn_comm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_injective": {
+   "name": "BookProof.FockSecondQuantization.up_injective",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_injective.lean",
+   "title": "(j : \u2115) : Function.Injective (up j)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_injective` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_of_ne": {
+   "name": "BookProof.FockSecondQuantization.up_of_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_of_ne.lean",
+   "title": "{i j : \u2115} (\u03b1 : Conf) (h : i \u2260 j) : up j \u03b1 i = \u03b1 i",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_of_ne` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_self": {
+   "name": "BookProof.FockSecondQuantization.up_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_self.lean",
+   "title": "(j : \u2115) (\u03b1 : Conf) : up j \u03b1 j = \u03b1 j + 1",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_self` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_up_comm": {
+   "name": "BookProof.FockSecondQuantization.up_up_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_up_up_comm.lean",
+   "title": "(j k : \u2115) (\u03b1 : Conf) : up k (up j \u03b1) = up j (up k \u03b1)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_up_comm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ymFockCol_apply": {
+   "name": "BookProof.FockSecondQuantization.ymFockCol_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ymFockCol_apply.lean",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (k j : \u2115) : ymFockCol e fabc k j = inner \u2102 (coreBasis e j) (ymHamiltonian (coreRepBasis e) fabc \u27e8coreBasis e k, Submodule.subset_span \u27e8k, rfl\u27e9\u27e9)",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ymFockCol_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ym_fock_friedrichs_extension": {
+   "name": "BookProof.FockSecondQuantization.ym_fock_friedrichs_extension",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ym_fock_friedrichs_extension.lean",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) : \u2203 (Dom : Submodule \u2102 Fock) (A : Dom \u2192\u2097[\u2102] Fock), IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) A",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ym_fock_friedrichs_extension` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockSecondQuantization_ym_fock_hashimoto_selects": {
+   "name": "BookProof.FockSecondQuantization.ym_fock_hashimoto_selects",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockSecondQuantization_ym_fock_hashimoto_selects.lean",
+   "title": "(e : \u2115 \u2243 (Fin 99 \u2192\u2080 \u2115)) (fabc : Fin 8 \u2192 Fin 8 \u2192 Fin 8 \u2192 \u211d) (\u03b5 : \u2115 \u2243 Conf) {\u03b3 : \u211d} (h\u03b3 : 0 < \u03b3) : \u2203 (Dom : Submodule \u2102 Fock) (A : Dom \u2192\u2097[\u2102] Fock) (R : Fock \u2192L[\u2102] Fock), IsPositiveSelfAdjointExtension (dGammaOpB \u03b5 (ymFockCol e fabc)) A \u2227 IsShiftInvert A \u03b3 R \u2227 \u2016R\u2016 \u2264 \u03b3\u207b\u00b9 \u2227 IsSelfAdjoint R \u2227 (\u2200 u : Fock, ...",
+   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.ym_fock_hashimoto_selects` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_band_endpoints_tendsto": {
+   "name": "BookProof.FockOneParticleGap.band_endpoints_tendsto",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_band_endpoints_tendsto.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam : \u211d} (hmem : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) : Tendsto lo atTop (\ud835\udcdd lam) \u2227 Tendsto hi atTop (\ud835\udcdd lam)",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.band_endpoints_tendsto` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confEnergy_add_const": {
+   "name": "BookProof.FockOneParticleGap.confEnergy_add_const",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confEnergy_add_const.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (mu : \u211d) (\u03b2 : Conf) : confEnergy (fun k => e k + mu) \u03b2 = confEnergy e \u03b2 + mu * (confNumber \u03b2 : \u211d)",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confEnergy_add_const` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confEnergy_nonneg": {
+   "name": "BookProof.FockOneParticleGap.confEnergy_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confEnergy_nonneg.lean",
+   "title": "{e : \u2115 \u2192 \u211d} (he : \u2200 k, 0 \u2264 e k) (\u03b2 : Conf) : 0 \u2264 confEnergy e \u03b2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confEnergy_nonneg` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confEnergy_one": {
+   "name": "BookProof.FockOneParticleGap.confEnergy_one",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confEnergy_one.lean",
+   "title": "(\u03b2 : Conf) : confEnergy (fun _ => 1) \u03b2 = (confNumber \u03b2 : \u211d)",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confEnergy_one` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confEnergy_single": {
+   "name": "BookProof.FockOneParticleGap.confEnergy_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confEnergy_single.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (k : \u2115) : confEnergy e (Finsupp.single k 1) = e k",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confEnergy_single` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confEnergy_zero": {
+   "name": "BookProof.FockOneParticleGap.confEnergy_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confEnergy_zero.lean",
+   "title": "(e : \u2115 \u2192 \u211d) : confEnergy e (0 : Conf) = 0",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confEnergy_zero` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confNumber_pos": {
+   "name": "BookProof.FockOneParticleGap.confNumber_pos",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confNumber_pos.lean",
+   "title": "{\u03b2 : Conf} (h : \u03b2 \u2260 0) : 1 \u2264 confNumber \u03b2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confNumber_pos` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_confNumber_zero": {
+   "name": "BookProof.FockOneParticleGap.confNumber_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_confNumber_zero.lean",
+   "title": ": confNumber (0 : Conf) = 0",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.confNumber_zero` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_conj_mul_re": {
+   "name": "BookProof.FockOneParticleGap.conj_mul_re",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_conj_mul_re.lean",
+   "title": "(z : \u2102) : ((starRingEnd \u2102) z * z).re = \u2016z\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.conj_mul_re` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_creA_annA_single": {
+   "name": "BookProof.FockOneParticleGap.creA_annA_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_creA_annA_single.lean",
+   "title": "(k : \u2115) (\u03b2 : Conf) (c : \u2102) : creA k (annA k (Finsupp.single \u03b2 c)) = ((\u03b2 k : \u211d) : \u2102) \u2022 Finsupp.single \u03b2 c",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.creA_annA_single` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_creVec_diagCol": {
+   "name": "BookProof.FockOneParticleGap.creVec_diagCol",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_creVec_diagCol.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (k : \u2115) (x : FockAlg) : creVec (diagCol e k) x = ((e k : \u211d) : \u2102) \u2022 creA k x",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.creVec_diagCol` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_dGamma_diagCol_apply": {
+   "name": "BookProof.FockOneParticleGap.dGamma_diagCol_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_dGamma_diagCol_apply.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (u : FockAlg) (\u03b2 : Conf) : dGamma (diagCol e) u \u03b2 = ((confEnergy e \u03b2 : \u211d) : \u2102) * u \u03b2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.dGamma_diagCol_apply` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_dGamma_diagCol_one_particle": {
+   "name": "BookProof.FockOneParticleGap.dGamma_diagCol_one_particle",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_dGamma_diagCol_one_particle.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (k : \u2115) : dGamma (diagCol e) (Finsupp.single (Finsupp.single k 1) (1 : \u2102)) = ((e k : \u211d) : \u2102) \u2022 Finsupp.single (Finsupp.single k 1) (1 : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.dGamma_diagCol_one_particle` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_dGamma_diagCol_shift": {
+   "name": "BookProof.FockOneParticleGap.dGamma_diagCol_shift",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_dGamma_diagCol_shift.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (mu : \u211d) (u : FockAlg) : dGamma (diagCol fun k => e k + mu) u = dGamma (diagCol e) u + ((mu : \u211d) : \u2102) \u2022 dGamma numberCol u",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.dGamma_diagCol_shift` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_dGamma_diagCol_single": {
+   "name": "BookProof.FockOneParticleGap.dGamma_diagCol_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_dGamma_diagCol_single.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (\u03b2 : Conf) (c : \u2102) : dGamma (diagCol e) (Finsupp.single \u03b2 c) = ((confEnergy e \u03b2 : \u211d) : \u2102) \u2022 Finsupp.single \u03b2 c",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.dGamma_diagCol_single` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_dGamma_diagCol_vac": {
+   "name": "BookProof.FockOneParticleGap.dGamma_diagCol_vac",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_dGamma_diagCol_vac.lean",
+   "title": "(e : \u2115 \u2192 \u211d) : dGamma (diagCol e) vac = 0",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.dGamma_diagCol_vac` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_energy_one_particle": {
+   "name": "BookProof.FockOneParticleGap.fock_energy_one_particle",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_energy_one_particle.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (k : \u2115) : (inner \u2102 (toLp (Finsupp.single (Finsupp.single k 1) (1 : \u2102))) (toLp (dGamma (diagCol e) (Finsupp.single (Finsupp.single k 1) (1 : \u2102)))) : \u2102).re = e k",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_energy_one_particle` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_gap_of_one_particle_gap": {
+   "name": "BookProof.FockOneParticleGap.fock_gap_of_one_particle_gap",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_gap_of_one_particle_gap.lean",
+   "title": "{e : \u2115 \u2192 \u211d} {mu : \u211d} (hmu : 0 \u2264 mu) (he : \u2200 k, mu \u2264 e k) : dGammaOp (diagCol e) (fockEquiv vac) = 0 \u2227 \u2200 x : lpFiniteModes Conf, (inner \u2102 (toLp vac) ((x : Fock)) : \u2102) = 0 \u2192 mu * \u2016(x : Fock)\u2016 ^ 2 \u2264 quadForm (dGammaOp (diagCol e)) x",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_gap_of_one_particle_gap` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_gap_of_operator_spectral_edge": {
+   "name": "BookProof.FockOneParticleGap.fock_gap_of_operator_spectral_edge",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_gap_of_operator_spectral_edge.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {b : HilbertBasis \u2115 \u2102 F} {e : \u2115 \u2192 \u211d} (heig : \u2200 k, A (b k) = ((e k : \u211d) : \u2102) \u2022 b k) {mu : \u211d} (hmu : 0 \u2264 mu) (hspec : \u2200 lam \u2208 spectrum \u211d A, mu \u2264 lam) : dGamma (diagCol e) vac = 0 \u2227 \u2200 u : FockAlg, u 0 = 0 \u2192 mu * \u2016toLp u\u2016 ^ 2 \u2264 (inner \u2102 (toLp u) (toLp (dGamma (diag ...",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_gap_of_operator_spectral_edge` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_gap_quadForm": {
+   "name": "BookProof.FockOneParticleGap.fock_gap_quadForm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_gap_quadForm.lean",
+   "title": "{e : \u2115 \u2192 \u211d} {mu : \u211d} (hmu : 0 \u2264 mu) (he : \u2200 k, mu \u2264 e k) {u : FockAlg} (h0 : u 0 = 0) : mu * \u2016toLp u\u2016 ^ 2 \u2264 (inner \u2102 (toLp u) (toLp (dGamma (diagCol e) u)) : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_gap_quadForm` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands": {
+   "name": "BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands.lean",
+   "title": "{e : \u2115 \u2192 \u211d} {lo hi : \u2115 \u2192 \u211d} {lam mu : \u211d} (hmu : 0 \u2264 mu) (hband : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) {m\u2080 : \u2115} (hlo : mu \u2264 lo m\u2080) (hedge : \u2200 k, lam \u2264 e k) : Tendsto lo atTop (\ud835\udcdd lam) \u2227 mu \u2264 lam \u2227 dGamma (diagCol e) vac = 0 \u2227 \u2200 u : FockAlg, u 0 = 0 \u2192 ...",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator": {
+   "name": "BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands_operator",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {b : HilbertBasis \u2115 \u2102 F} {e : \u2115 \u2192 \u211d} (heig : \u2200 k, A (b k) = ((e k : \u211d) : \u2102) \u2022 b k) {lo hi : \u2115 \u2192 \u211d} {mu : \u211d} (hmu : 0 \u2264 mu) (hband : \u2200 m, sInf (spectrum \u211d A) \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) {m\u2080 : \u2115} (hlo : mu \u2264 lo m ...",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.fock_mass_gap_of_certified_bands_operator` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_iInf_le_confEnergy": {
+   "name": "BookProof.FockOneParticleGap.iInf_le_confEnergy",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_iInf_le_confEnergy.lean",
+   "title": "{e : \u2115 \u2192 \u211d} (he : \u2200 k, 0 \u2264 e k) {\u03b2 : Conf} (h\u03b2 : \u03b2 \u2260 0) : (\u2a05 k, e k) \u2264 confEnergy e \u03b2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.iInf_le_confEnergy` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_inner_vac": {
+   "name": "BookProof.FockOneParticleGap.inner_vac",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_inner_vac.lean",
+   "title": "(u : FockAlg) : (inner \u2102 (toLp vac) (toLp u) : \u2102) = u 0",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.inner_vac` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_le_confEnergy": {
+   "name": "BookProof.FockOneParticleGap.le_confEnergy",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_le_confEnergy.lean",
+   "title": "{e : \u2115 \u2192 \u211d} {mu : \u211d} (hmu : 0 \u2264 mu) (he : \u2200 k, mu \u2264 e k) {\u03b2 : Conf} (h\u03b2 : \u03b2 \u2260 0) : mu \u2264 confEnergy e \u03b2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.le_confEnergy` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_le_eigenvalue_of_le_spectrum": {
+   "name": "BookProof.FockOneParticleGap.le_eigenvalue_of_le_spectrum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_le_eigenvalue_of_le_spectrum.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {b : HilbertBasis \u2115 \u2102 F} {e : \u2115 \u2192 \u211d} (heig : \u2200 k, A (b k) = ((e k : \u211d) : \u2102) \u2022 b k) {mu : \u211d} (hspec : \u2200 lam \u2208 spectrum \u211d A, mu \u2264 lam) : \u2200 k, mu \u2264 e k",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.le_eigenvalue_of_le_spectrum` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_le_of_band": {
+   "name": "BookProof.FockOneParticleGap.le_of_band",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_le_of_band.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam mu : \u211d} (hmem : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) {m : \u2115} (hlo : mu \u2264 lo m) : mu \u2264 lam",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.le_of_band` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_norm_toLp_sq": {
+   "name": "BookProof.FockOneParticleGap.norm_toLp_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_norm_toLp_sq.lean",
+   "title": "(u : FockAlg) : \u2016toLp u\u2016 ^ 2 = \u2211 \u03b1 \u2208 u.support, \u2016u \u03b1\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.norm_toLp_sq` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_numberOp_vac": {
+   "name": "BookProof.FockOneParticleGap.numberOp_vac",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_numberOp_vac.lean",
+   "title": ": dGamma numberCol vac = 0",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.numberOp_vac` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate": {
+   "name": "BookProof.FockOneParticleGap.one_particle_edge_ge_of_parity_certificate",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate.lean",
+   "title": "{T P : E \u2192\u2097[\u2102] E} (c : GapCertificate) {thetaE thetaO deltaE deltaO lam : \u211d} (hgap : c.gap = thetaO - thetaE) (hwidth : c.width = deltaO + deltaE) (hEven : sectorGround T P 1 \u2264 thetaE + deltaE) (hOdd : thetaO - deltaO \u2264 sectorGround T P (-1)) (hvac : sectorGround T P 1 = 0) (hone : sectorGround T P ...",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.one_particle_edge_ge_of_parity_certificate` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_qcdG2M4_fock_gap_of_one_particle_enclosure": {
+   "name": "BookProof.FockOneParticleGap.qcdG2M4_fock_gap_of_one_particle_enclosure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_qcdG2M4_fock_gap_of_one_particle_enclosure.lean",
+   "title": "{e : \u2115 \u2192 \u211d} {lo hi : \u2115 \u2192 \u211d} {lam : \u211d} (hband : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) {m\u2080 : \u2115} (hlo : (1.932 : \u211d) \u2264 lo m\u2080) (hedge : \u2200 k, lam \u2264 e k) : (1.932 : \u211d) \u2264 lam \u2227 dGamma (diagCol e) vac = 0 \u2227 \u2200 u : FockAlg, u 0 = 0 \u2192 (1.932 : \u211d) * \u2016toLp u\u2016 ^ 2 \u2264 (inner \u2102 (toLp u) (toLp (dGamma (diagCol e) u)) : \u2102) ...",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.qcdG2M4_fock_gap_of_one_particle_enclosure` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_qcdG2M4_lower_eq": {
+   "name": "BookProof.FockOneParticleGap.qcdG2M4_lower_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_qcdG2M4_lower_eq.lean",
+   "title": ": BookProof.SirkCertifiedGap.qcdG2M4.lower = 1.932",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.qcdG2M4_lower_eq` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_re_inner_dGamma_diagCol": {
+   "name": "BookProof.FockOneParticleGap.re_inner_dGamma_diagCol",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_re_inner_dGamma_diagCol.lean",
+   "title": "(e : \u2115 \u2192 \u211d) (u : FockAlg) : (inner \u2102 (toLp u) (toLp (dGamma (diagCol e) u)) : \u2102).re = \u2211 \u03b1 \u2208 u.support, confEnergy e \u03b1 * \u2016u \u03b1\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.re_inner_dGamma_diagCol` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FockOneParticleGap_sInf_nonvacuumEnergies": {
+   "name": "BookProof.FockOneParticleGap.sInf_nonvacuumEnergies",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FockOneParticleGap_sInf_nonvacuumEnergies.lean",
+   "title": "{e : \u2115 \u2192 \u211d} (he : \u2200 k, 0 \u2264 e k) : sInf (nonvacuumEnergies e) = \u2a05 k, e k",
+   "nl": "Lean 4 theorem `BookProof.FockOneParticleGap.sInf_nonvacuumEnergies` (module `BookProof.FockOneParticleGap`), source chapter `BookProof/ChapterFockOneParticleGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockOneParticleGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_band_enclosure_endpoints_tendsto": {
+   "name": "BookProof.BandEnclosure.band_enclosure_endpoints_tendsto",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_band_enclosure_endpoints_tendsto.lean",
+   "title": "{lo hi a : \u2115 \u2192 \u211d} {lam : \u211d} (hnest : NestedBands lo hi) (hmem : \u2200 m, a m \u2208 Set.Icc (lo m) (hi m)) (hconv : Tendsto a atTop (\ud835\udcdd lam)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) : (\u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) \u2227 (\u2200 lam', (\u2200 m, lam' \u2208 Set.Icc (lo m) (hi m)) \u2192 lam' = lam) \u2227 Tendsto lo atT ...",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.band_enclosure_endpoints_tendsto` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_band_enclosure_of_nested": {
+   "name": "BookProof.BandEnclosure.band_enclosure_of_nested",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_band_enclosure_of_nested.lean",
+   "title": "{lo hi a : \u2115 \u2192 \u211d} {lam : \u211d} (hnest : NestedBands lo hi) (hmem : \u2200 m, a m \u2208 Set.Icc (lo m) (hi m)) (hconv : Tendsto a atTop (\ud835\udcdd lam)) : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.band_enclosure_of_nested` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_band_limit_unique": {
+   "name": "BookProof.BandEnclosure.band_limit_unique",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_band_limit_unique.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam lam' : \u211d} (h : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (h' : \u2200 m, lam' \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) : lam = lam'",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.band_limit_unique` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands": {
+   "name": "BookProof.BandEnclosure.fock_mass_gap_of_nested_ritz_bands",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hsa : IsSelfAdjoint A) (hpos : \u2200 u : F, 0 \u2264 (inner \u2102 u (A u) : \u2102).re) (b : HilbertBasis \u2115 \u2102 F) {e : \u2115 \u2192 \u211d} (heig : \u2200 k, A (b k) = ((e k : \u211d) : \u2102) \u2022 b k) {lo hi : \u2115 \u2192 \u211d} {mu : \u211d} (hmu : 0 \u2264 mu) (hnest : NestedBands lo hi) (hritz : \u2200 m, ritzInf (finiteModeRestrict A b) ...",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.fock_mass_gap_of_nested_ritz_bands` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands": {
+   "name": "BookProof.BandEnclosure.friedrichs_form_gap_of_nested_ritz_bands",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands.lean",
+   "title": "(b : HilbertBasis \u2115 \u2102 F) (H : finiteModeDomain b \u2192\u2097[\u2102] F) (hsym : SymmetricOn (finiteModeDomain b) H) (hpos : \u2200 x : finiteModeDomain b, 0 \u2264 quadForm H x) {lo hi : \u2115 \u2192 \u211d} {mu : \u211d} (hnest : NestedBands lo hi) (hritz : \u2200 m, ritzInf H (galerkinSpan b (m + 1)) \u2208 Set.Icc (lo m) (hi m)) {m\u2080 : \u2115} (hlo : mu ...",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.friedrichs_form_gap_of_nested_ritz_bands` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_nestedBands_le": {
+   "name": "BookProof.BandEnclosure.nestedBands_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_nestedBands_le.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} (h : NestedBands lo hi) {m n : \u2115} (hmn : m \u2264 n) : Set.Icc (lo n) (hi n) \u2286 Set.Icc (lo m) (hi m)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.nestedBands_le` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_quadForm_ge_of_le_ritzInf": {
+   "name": "BookProof.BandEnclosure.quadForm_ge_of_le_ritzInf",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_quadForm_ge_of_le_ritzInf.lean",
+   "title": "{D : Submodule \u2102 F} (H : D \u2192\u2097[\u2102] F) (hpos : \u2200 x : D, 0 \u2264 quadForm H x) {mu : \u211d} (hmu : mu \u2264 ritzInf H D) (x : D) : mu * \u2016(x : F)\u2016 ^ 2 \u2264 quadForm H x",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.quadForm_ge_of_le_ritzInf` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_quadForm_real_smul": {
+   "name": "BookProof.BandEnclosure.quadForm_real_smul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_quadForm_real_smul.lean",
+   "title": "{D : Submodule \u2102 F} (H : D \u2192\u2097[\u2102] F) (c : \u211d) (x : D) : quadForm H ((c : \u2102) \u2022 x) = c ^ 2 * quadForm H x",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.quadForm_real_smul` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_ritz_band_enclosure_of_nested": {
+   "name": "BookProof.BandEnclosure.ritz_band_enclosure_of_nested",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_ritz_band_enclosure_of_nested.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hsa : IsSelfAdjoint A) (hpos : \u2200 u : F, 0 \u2264 (inner \u2102 u (A u) : \u2102).re) (b : HilbertBasis \u2115 \u2102 F) {lo hi : \u2115 \u2192 \u211d} (hnest : NestedBands lo hi) (hritz : \u2200 m, ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1)) \u2208 Set.Icc (lo m) (hi m)) : IsPositiveSelfAdjointExtension ...",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.ritz_band_enclosure_of_nested` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_shiftInvert_band_enclosure": {
+   "name": "BookProof.BandEnclosure.shiftInvert_band_enclosure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_shiftInvert_band_enclosure.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {nu lam gam : \u211d} (hlopos : \u2200 m, 0 < lo m) (hband : \u2200 m, nu \u2208 Set.Icc (lo m) (hi m)) (hmap : lam = nu\u207b\u00b9 - gam) : \u2200 m, lam \u2208 Set.Icc ((hi m)\u207b\u00b9 - gam) ((lo m)\u207b\u00b9 - gam)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.shiftInvert_band_enclosure` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_shiftInvert_widths_tendsto_zero": {
+   "name": "BookProof.BandEnclosure.shiftInvert_widths_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_shiftInvert_widths_tendsto_zero.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {nu gam : \u211d} (hnu : nu \u2260 0) (hlo : Tendsto lo atTop (\ud835\udcdd nu)) (hhi : Tendsto hi atTop (\ud835\udcdd nu)) : Tendsto (fun m => ((lo m)\u207b\u00b9 - gam) - ((hi m)\u207b\u00b9 - gam)) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.shiftInvert_widths_tendsto_zero` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_sirk_band_enclosure": {
+   "name": "BookProof.BandEnclosure.sirk_band_enclosure",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_sirk_band_enclosure.lean",
+   "title": "(C Dmin h nv : \u211d) (hC : 0 \u2264 C) (hD : 0 \u2264 Dmin) (hnv : 0 \u2264 nv) (hh : 0 < h) {a : \u2115 \u2192 \u211d} {lam : \u211d} (hmem : \u2200 m, a m \u2208 Set.Icc (0 : \u211d) (sirkBound C Dmin h nv m)) (hconv : Tendsto a atTop (\ud835\udcdd lam)) : (\u2200 m, lam \u2208 Set.Icc (0 : \u211d) (sirkBound C Dmin h nv m)) \u2227 (\u2200 lam', (\u2200 m, lam' \u2208 Set.Icc (0 : \u211d) (sirkBound ...",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.sirk_band_enclosure` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_sirk_band_widths_tendsto_zero": {
+   "name": "BookProof.BandEnclosure.sirk_band_widths_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_sirk_band_widths_tendsto_zero.lean",
+   "title": "(C Dmin h nv : \u211d) (hh : 0 < h) : Tendsto (fun m => sirkBound C Dmin h nv m - 0) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.sirk_band_widths_tendsto_zero` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_BandEnclosure_sirk_nestedBands": {
+   "name": "BookProof.BandEnclosure.sirk_nestedBands",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BandEnclosure_sirk_nestedBands.lean",
+   "title": "(C Dmin h nv : \u211d) (hC : 0 \u2264 C) (hD : 0 \u2264 Dmin) (hnv : 0 \u2264 nv) (hh : 0 \u2264 h) : NestedBands (fun _ => (0 : \u211d)) (fun m => sirkBound C Dmin h nv m)",
+   "nl": "Lean 4 theorem `BookProof.BandEnclosure.sirk_nestedBands` (module `BookProof.BandEnclosure`), source chapter `BookProof/ChapterBandEnclosure.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterBandEnclosure.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FriedrichsFormGap_formSpace_norm_bound": {
+   "name": "BookProof.FriedrichsFormGap.formSpace_norm_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsFormGap_formSpace_norm_bound.lean",
+   "title": "(P : PosSymOp F) {mu : \u211d} (hmu : \u2200 x : P.dom, mu * \u2016(x : F)\u2016 ^ 2 \u2264 quadForm P.op x) (k : FormSpace P) : (1 + mu) * \u2016formExt P k\u2016 ^ 2 \u2264 \u2016k\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.FriedrichsFormGap.formSpace_norm_bound` (module `BookProof.FriedrichsFormGap`), source chapter `BookProof/ChapterFriedrichsFormGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFriedrichsFormGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FriedrichsFormGap_friedrichs_extension_form_gap": {
+   "name": "BookProof.FriedrichsFormGap.friedrichs_extension_form_gap",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsFormGap_friedrichs_extension_form_gap.lean",
+   "title": "(P : PosSymOp F) (hdense : Dense (P.dom : Set F)) {mu : \u211d} (hmu : \u2200 x : P.dom, mu * \u2016(x : F)\u2016 ^ 2 \u2264 quadForm P.op x) : \u2203 (Dom : Submodule \u2102 F) (A : Dom \u2192\u2097[\u2102] F) (S : F \u2192L[\u2102] F), IsPositiveSelfAdjointExtension P.op A \u2227 IsShiftInvert A 1 S \u2227 IsSelfAdjoint S \u2227 (\u2200 y : Dom, mu * \u2016(y : F)\u2016 ^ 2 \u2264 quadForm ...",
+   "nl": "Lean 4 theorem `BookProof.FriedrichsFormGap.friedrichs_extension_form_gap` (module `BookProof.FriedrichsFormGap`), source chapter `BookProof/ChapterFriedrichsFormGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFriedrichsFormGap.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound": {
+   "name": "BookProof.FriedrichsFormGap.friedrichs_quadForm_lower_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound.lean",
+   "title": "(P : PosSymOp F) (hinj : Function.Injective (friedrichsResolvent P)) {mu : \u211d} (hmu : \u2200 x : P.dom, mu * \u2016(x : F)\u2016 ^ 2 \u2264 quadForm P.op x) (y : LinearMap.range ((friedrichsResolvent P) : F \u2192\u2097[\u2102] F)) : mu * \u2016(y : F)\u2016 ^ 2 \u2264 quadForm (invShiftOperator (friedrichsResolvent P) hinj 1) y",
+   "nl": "Lean 4 theorem `BookProof.FriedrichsFormGap.friedrichs_quadForm_lower_bound` (module `BookProof.FriedrichsFormGap`), source chapter `BookProof/ChapterFriedrichsFormGap.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFriedrichsFormGap.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -6602,6 +8527,135 @@
   "BookProof_YangMillsHermite_ymHamiltonian_symmetricOn",
   "BookProof_YangMillsHermite_ym_hermite_hashimoto_selects",
   "BookProof_YangMillsHermite_ym_hermite_friedrichs_extension",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_hFun_mul",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_mul_hFun",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hFun_single",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossB_le",
+  "BookProof_NavierStokesFlow_SignedShift_listH_cons",
+  "BookProof_NavierStokesFlow_SignedShift_listH_nil",
+  "BookProof_RitzMinMax_abs_rayleighVal_le",
+  "BookProof_RitzMinMax_exists_le_finrank_eq",
+  "BookProof_RitzMinMax_exists_uniform_proj_bound",
+  "BookProof_RitzMinMax_exists_unit_mem",
+  "BookProof_RitzMinMax_finrank_galerkinSpan",
+  "BookProof_RitzMinMax_minmaxSetIn_subset",
+  "BookProof_RitzMinMax_rayleighVal_smul",
+  "BookProof_RitzMinMax_rayleighVal_sub_le",
+  "BookProof_RitzPerturbation_minmaxGap_nonneg",
+  "BookProof_RitzPerturbation_minmaxLevel_le_norm",
+  "BookProof_RitzPerturbation_minmaxLevel_mono_form",
+  "BookProof_RitzPerturbation_minmaxSetIn_nonempty_congr",
+  "BookProof_RitzPerturbation_minmaxSet_nonempty_congr",
+  "BookProof_RitzPerturbation_neg_norm_le_minmaxLevel",
+  "BookProof_RitzPerturbation_rayleighVal_shiftOp",
+  "BookProof_RitzPerturbation_rayleighVal_sub_le_dist",
+  "BookProof_SirkCertifiedGap_certifiedGap_tendsto",
+  "BookProof_SirkCertifiedGap_certified_parity_gap",
+  "BookProof_SirkCertifiedGap_le_sectorGround",
+  "BookProof_SirkCertifiedGap_qcdG2M4_lower",
+  "BookProof_SirkCertifiedGap_rayleigh_sectorRestrict",
+  "BookProof_SirkCertifiedGap_resolvent_commutes_parity",
+  "BookProof_SirkCertifiedGap_sectorRayleighSet_bddBelow",
+  "BookProof_SirkCertifiedGap_sectorRestrict_coe",
+  "BookProof_SirkCertifiedGap_sectorRestrict_isSymmetric",
+  "BookProof_SirkGapTable_CouplingCertificate_lo_le_hi",
+  "BookProof_SirkGapTable_certified_gap_table",
+  "BookProof_SirkGapTable_gap_le_of_certificate",
+  "BookProof_SirkGapTable_one_lt_ratio",
+  "BookProof_SirkGapTable_qcdG2M4Row_lo",
+  "BookProof_SirkGapTable_qcdG2M4_strongCoupling_consistent",
+  "BookProof_SirkGapTable_richardson_exact",
+  "BookProof_SirkGapTable_richardson_qym_g4",
+  "BookProof_SirkGapTable_strongCoupling_lt",
+  "BookProof_SirkGapTable_strongCoupling_mem_of_certificate",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_relative_bound",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossA",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossB",
+  "BookProof_NavierStokesFlow_SignedShift_listH_coe",
+  "BookProof_RitzMinMax_neg_norm_le_rayleighVal_of_unit",
+  "BookProof_RitzMinMax_rayleighVal_le_norm_of_unit",
+  "BookProof_RitzMinMax_rayleighSetOn_nonempty",
+  "BookProof_RitzMinMax_minmaxSetIn_galerkin_nonempty",
+  "BookProof_RitzMinMax_rayleighSetOn_span_singleton",
+  "BookProof_RitzPerturbation_rayleighSup_shiftOp",
+  "BookProof_RitzPerturbation_abs_rayleighVal_sub_le_dist",
+  "BookProof_RitzPerturbation_rayleighSup_le_rayleighSup_add",
+  "BookProof_SirkCertifiedGap_certifiedGap_eventually_pos",
+  "BookProof_SirkCertifiedGap_certified_parity_gap_pos",
+  "BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling",
+  "BookProof_SirkCertifiedGap_gap_ge_of_certificate",
+  "BookProof_SirkCertifiedGap_qcdG2M4_lower_pos",
+  "BookProof_SirkCertifiedGap_resolvent_mapsTo_paritySector",
+  "BookProof_SirkCertifiedGap_sectorGround_le_rayleigh",
+  "BookProof_SirkGapTable_certified_gap_mem_interval",
+  "BookProof_SirkGapTable_richardson_error",
+  "BookProof_SirkGapTable_richardson_qym_g4_gt",
+  "BookProof_NavierStokesFlow_SignedShift_listH_relative_bound",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_left",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right",
+  "BookProof_RitzMinMax_rayleighSetOn_bddAbove",
+  "BookProof_RitzMinMax_rayleighSup_le_norm",
+  "BookProof_RitzMinMax_minmaxSet_nonempty",
+  "BookProof_RitzMinMax_rayleighSup_span_singleton",
+  "BookProof_RitzPerturbation_minmaxLevel_shiftOp",
+  "BookProof_RitzPerturbation_abs_rayleighSup_sub_le_dist",
+  "BookProof_RitzPerturbation_minmaxLevelIn_le_minmaxLevelIn_add",
+  "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevel_add",
+  "BookProof_SirkCertifiedGap_certifiedGap_sound",
+  "BookProof_SirkCertifiedGap_gap_pos_of_certificate",
+  "BookProof_SirkCertifiedGap_qcdG2M4_certified_gap",
+  "BookProof_SirkCertifiedGap_certified_parity_gap_of_data",
+  "BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified",
+  "BookProof_SirkGapTable_certified_gap_table_interval",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_commForm",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_symmetricOn",
+  "BookProof_RitzMinMax_neg_norm_le_rayleighSup",
+  "BookProof_RitzMinMax_rayleighSup_mono",
+  "BookProof_RitzMinMax_rayleighVal_le_rayleighSup",
+  "BookProof_RitzMinMax_minmaxSet_zero_eq_rayleighSet",
+  "BookProof_RitzPerturbation_minmaxGap_shiftOp",
+  "BookProof_RitzPerturbation_abs_minmaxLevelIn_sub_le_dist",
+  "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevelIn_add",
+  "BookProof_RitzPerturbation_abs_minmaxLevel_sub_le_dist",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_commForm_bound",
+  "BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn",
+  "BookProof_RitzMinMax_minmaxSetIn_bddBelow",
+  "BookProof_RitzMinMax_minmaxSet_bddBelow",
+  "BookProof_RitzMinMax_exists_galerkin_approx_subspace",
+  "BookProof_RitzMinMax_minmaxLevel_zero_eq_rayleighInf",
+  "BookProof_RitzPerturbation_abs_minmaxGap_sub_le",
+  "BookProof_RitzPerturbation_abs_sInf_spectrum_sub_le_dist",
+  "BookProof_RitzPerturbation_minmaxGap_ge_of_dist_le",
+  "BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto",
+  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_essentiallySelfAdjointOn_core",
+  "BookProof_NavierStokesFlow_SignedShift_listH_commForm_bound",
+  "BookProof_NavierStokesFlow_SignedShift_gaffH_symmetricOn",
+  "BookProof_RitzMinMax_minmaxLevel_le_minmaxLevelIn",
+  "BookProof_RitzMinMax_minmaxLevel_mono",
+  "BookProof_RitzMinMax_minmaxLevel_zero_eq_sInf_spectrum",
+  "BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos",
+  "BookProof_RitzPerturbation_galerkin_model_gap_tendsto",
+  "BookProof_RitzPerturbation_minmaxGap_pos_of_dist_lt",
+  "BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto",
+  "BookProof_NavierStokesFlow_SignedShift_listH_essentiallySelfAdjointOn_core",
+  "BookProof_RitzMinMax_galerkin_minmaxLevel_tendsto",
+  "BookProof_NavierStokesFlow_SignedShift_gaffH_essentiallySelfAdjointOn_core",
+  "BookProof_RitzMinMax_galerkin_gap_tendsto",
+  "BookProof_RitzMinMax_galerkin_gap_eventually_pos",
+  "BookProof_BandEnclosure_band_limit_unique",
+  "BookProof_BandEnclosure_nestedBands_le",
+  "BookProof_BandEnclosure_quadForm_real_smul",
+  "BookProof_BandEnclosure_shiftInvert_band_enclosure",
+  "BookProof_BandEnclosure_shiftInvert_widths_tendsto_zero",
+  "BookProof_BandEnclosure_sirk_band_widths_tendsto_zero",
+  "BookProof_BandEnclosure_sirk_nestedBands",
   "BookProof_ChapterContinuityUnitaryInfinite_bornPMF_apply",
   "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_empty",
   "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono",
@@ -6697,54 +8751,74 @@
   "BookProof_ChapterSirkTruncation_isometry_comp",
   "BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky",
   "BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_hFun_mul",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_mul_hFun",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hFun_single",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossB_le",
-  "BookProof_NavierStokesFlow_SignedShift_listH_cons",
-  "BookProof_NavierStokesFlow_SignedShift_listH_nil",
-  "BookProof_RitzMinMax_abs_rayleighVal_le",
-  "BookProof_RitzMinMax_exists_le_finrank_eq",
-  "BookProof_RitzMinMax_exists_uniform_proj_bound",
-  "BookProof_RitzMinMax_exists_unit_mem",
-  "BookProof_RitzMinMax_finrank_galerkinSpan",
-  "BookProof_RitzMinMax_minmaxSetIn_subset",
-  "BookProof_RitzMinMax_rayleighVal_smul",
-  "BookProof_RitzMinMax_rayleighVal_sub_le",
-  "BookProof_RitzPerturbation_minmaxGap_nonneg",
-  "BookProof_RitzPerturbation_minmaxLevel_le_norm",
-  "BookProof_RitzPerturbation_minmaxLevel_mono_form",
-  "BookProof_RitzPerturbation_minmaxSetIn_nonempty_congr",
-  "BookProof_RitzPerturbation_minmaxSet_nonempty_congr",
-  "BookProof_RitzPerturbation_neg_norm_le_minmaxLevel",
-  "BookProof_RitzPerturbation_rayleighVal_shiftOp",
-  "BookProof_RitzPerturbation_rayleighVal_sub_le_dist",
-  "BookProof_SirkCertifiedGap_certifiedGap_tendsto",
-  "BookProof_SirkCertifiedGap_certified_parity_gap",
-  "BookProof_SirkCertifiedGap_le_sectorGround",
-  "BookProof_SirkCertifiedGap_qcdG2M4_lower",
-  "BookProof_SirkCertifiedGap_rayleigh_sectorRestrict",
-  "BookProof_SirkCertifiedGap_resolvent_commutes_parity",
-  "BookProof_SirkCertifiedGap_sectorRayleighSet_bddBelow",
-  "BookProof_SirkCertifiedGap_sectorRestrict_coe",
-  "BookProof_SirkCertifiedGap_sectorRestrict_isSymmetric",
-  "BookProof_SirkGapTable_CouplingCertificate_lo_le_hi",
-  "BookProof_SirkGapTable_certified_gap_table",
-  "BookProof_SirkGapTable_gap_le_of_certificate",
-  "BookProof_SirkGapTable_one_lt_ratio",
-  "BookProof_SirkGapTable_qcdG2M4Row_lo",
-  "BookProof_SirkGapTable_qcdG2M4_strongCoupling_consistent",
-  "BookProof_SirkGapTable_richardson_exact",
-  "BookProof_SirkGapTable_richardson_qym_g4",
-  "BookProof_SirkGapTable_strongCoupling_lt",
-  "BookProof_SirkGapTable_strongCoupling_mem_of_certificate",
+  "BookProof_FockOneParticleGap_band_endpoints_tendsto",
+  "BookProof_FockOneParticleGap_confEnergy_add_const",
+  "BookProof_FockOneParticleGap_confEnergy_nonneg",
+  "BookProof_FockOneParticleGap_confEnergy_one",
+  "BookProof_FockOneParticleGap_confEnergy_single",
+  "BookProof_FockOneParticleGap_confEnergy_zero",
+  "BookProof_FockOneParticleGap_confNumber_pos",
+  "BookProof_FockOneParticleGap_confNumber_zero",
+  "BookProof_FockOneParticleGap_conj_mul_re",
+  "BookProof_FockOneParticleGap_creA_annA_single",
+  "BookProof_FockOneParticleGap_creVec_diagCol",
+  "BookProof_FockOneParticleGap_iInf_le_confEnergy",
+  "BookProof_FockOneParticleGap_inner_vac",
+  "BookProof_FockOneParticleGap_le_eigenvalue_of_le_spectrum",
+  "BookProof_FockOneParticleGap_le_of_band",
+  "BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate",
+  "BookProof_FockOneParticleGap_qcdG2M4_lower_eq",
+  "BookProof_FockSecondQuantization_annA_single",
+  "BookProof_FockSecondQuantization_coe_dGammaOp",
+  "BookProof_FockSecondQuantization_coe_fockEquiv",
+  "BookProof_FockSecondQuantization_coe_ymOnePart",
+  "BookProof_FockSecondQuantization_col_support_subset_closure",
+  "BookProof_FockSecondQuantization_coordFinsupp_apply",
+  "BookProof_FockSecondQuantization_creA_single",
+  "BookProof_FockSecondQuantization_creVec_apply",
+  "BookProof_FockSecondQuantization_dn_of_ne",
+  "BookProof_FockSecondQuantization_dn_self",
+  "BookProof_FockSecondQuantization_finiteOccupation_dense",
+  "BookProof_FockSecondQuantization_inner_toLp_of_subset",
+  "BookProof_FockSecondQuantization_modes_left_subset_closure",
+  "BookProof_FockSecondQuantization_modes_right_subset_closure",
+  "BookProof_FockSecondQuantization_support_subset_modes",
+  "BookProof_FockSecondQuantization_toLpL_apply",
+  "BookProof_FockSecondQuantization_toLp_apply",
+  "BookProof_FockSecondQuantization_toLp_zero",
+  "BookProof_FockSecondQuantization_up_of_ne",
+  "BookProof_FockSecondQuantization_up_self",
+  "BookProof_FriedrichsFormGap_formSpace_norm_bound",
+  "BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul",
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe",
+  "BookProof_NavierStokesFlow_HermiteCanonical_anti_DS",
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_coe",
+  "BookProof_NavierStokesFlow_HermiteCanonical_drift_eq",
+  "BookProof_NavierStokesFlow_HermiteCanonical_sq_diff",
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv",
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt",
+  "BookProof_SirkBandLedger_Decimal_leB_iff",
+  "BookProof_SirkBandLedger_formatExampleLedger_lo_zero",
+  "BookProof_SirkBandLedger_formatExampleLedger_parse",
+  "BookProof_SirkBandLedger_formatExampleLedger_wf",
+  "BookProof_SirkBandLedger_ledgerWf_ne_nil",
+  "BookProof_SirkBandLedger_ledgerWf_order",
+  "BookProof_SirkBandLedger_ledgerWf_sameOp",
+  "BookProof_SirkBandLedger_recAt_of_ge",
+  "BookProof_SirkBandLedger_recAt_of_lt",
+  "BookProof_SirkCertificateReader_Decimal_toQ_nonneg",
+  "BookProof_SirkCertificateReader_formatExample_gap",
+  "BookProof_SirkCertificateReader_formatExample_lower_pos",
+  "BookProof_SirkCertificateReader_formatExample_parse",
+  "BookProof_SirkCertificateReader_formatExample_width",
+  "BookProof_SirkCertificateReader_gap_ge_of_ndjson",
+  "BookProof_SirkCertificateReader_parseDec_example",
+  "BookProof_SirkCertificateReader_parseDec_int_example",
+  "BookProof_SirkCertificateReader_parseDec_neg_example",
+  "BookProof_SirkCertificateReader_parseDec_reject",
+  "BookProof_SirkCertificateReader_toGapCertificate_lower",
+  "BookProof_BandEnclosure_band_enclosure_of_nested",
+  "BookProof_BandEnclosure_quadForm_ge_of_le_ritzInf",
   "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite",
   "BookProof_ChapterH1_phi_succ_mul",
   "BookProof_ChapterH1_resolvent_shift_repr",
@@ -6770,29 +8844,39 @@
   "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert",
   "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC",
   "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply",
+  "BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded",
   "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_relative_bound",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossA",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossB",
-  "BookProof_NavierStokesFlow_SignedShift_listH_coe",
-  "BookProof_RitzMinMax_neg_norm_le_rayleighVal_of_unit",
-  "BookProof_RitzMinMax_rayleighVal_le_norm_of_unit",
-  "BookProof_RitzMinMax_rayleighSetOn_nonempty",
-  "BookProof_RitzMinMax_minmaxSetIn_galerkin_nonempty",
-  "BookProof_RitzMinMax_rayleighSetOn_span_singleton",
-  "BookProof_RitzPerturbation_rayleighSup_shiftOp",
-  "BookProof_RitzPerturbation_abs_rayleighVal_sub_le_dist",
-  "BookProof_RitzPerturbation_rayleighSup_le_rayleighSup_add",
-  "BookProof_SirkCertifiedGap_certifiedGap_eventually_pos",
-  "BookProof_SirkCertifiedGap_certified_parity_gap_pos",
-  "BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling",
-  "BookProof_SirkCertifiedGap_gap_ge_of_certificate",
-  "BookProof_SirkCertifiedGap_qcdG2M4_lower_pos",
-  "BookProof_SirkCertifiedGap_resolvent_mapsTo_paritySector",
-  "BookProof_SirkCertifiedGap_sectorGround_le_rayleigh",
-  "BookProof_SirkGapTable_certified_gap_mem_interval",
-  "BookProof_SirkGapTable_richardson_error",
-  "BookProof_SirkGapTable_richardson_qym_g4_gt",
+  "BookProof_FockOneParticleGap_le_confEnergy",
+  "BookProof_FockOneParticleGap_norm_toLp_sq",
+  "BookProof_FockOneParticleGap_dGamma_diagCol_single",
+  "BookProof_FockOneParticleGap_sInf_nonvacuumEnergies",
+  "BookProof_FockSecondQuantization_dGamma_single",
+  "BookProof_FockSecondQuantization_coe_fockEquiv_symm",
+  "BookProof_FockSecondQuantization_opCol_apply",
+  "BookProof_FockSecondQuantization_dn_dn_comm",
+  "BookProof_FockSecondQuantization_support_dn",
+  "BookProof_FockSecondQuantization_inner_toLp",
+  "BookProof_FockSecondQuantization_support_up",
+  "BookProof_FockSecondQuantization_dn_up",
+  "BookProof_FockSecondQuantization_up_dn",
+  "BookProof_FockSecondQuantization_up_dn_comm",
+  "BookProof_FockSecondQuantization_up_up_comm",
+  "BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound",
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_ann_coe",
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_add_two",
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one",
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_zero",
+  "BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe",
+  "BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe",
+  "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq",
+  "BookProof_SirkBandLedger_ledgerWf_enclosing",
+  "BookProof_SirkBandLedger_ledgerWf_step",
+  "BookProof_SirkBandLedger_ledger_width_eventually_const",
+  "BookProof_SirkCertificateReader_formatExample_lower",
+  "BookProof_SirkCertificateReader_gap_pos_of_ndjson",
+  "BookProof_BandEnclosure_band_enclosure_endpoints_tendsto",
+  "BookProof_BandEnclosure_ritz_band_enclosure_of_nested",
+  "BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands",
   "BookProof_ChapterH1_phi_one",
   "BookProof_ChapterH4_compress_transfer",
   "BookProof_ChapterSirkGramCutoff_gramEigen_nonneg",
@@ -6809,24 +8893,32 @@
   "BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow",
   "BookProof_ChapterSirkRitzSpectrum_spectrum_real_nonempty",
   "BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel",
+  "BookProof_ChapterSirkTrotterKato_flow_tendsto_of_strong_tendsto",
+  "BookProof_ChapterSirkTrotterKato_flow_transfer_of_strong_tendsto",
   "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated_of_exact",
-  "BookProof_NavierStokesFlow_SignedShift_listH_relative_bound",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_left",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right",
-  "BookProof_RitzMinMax_rayleighSetOn_bddAbove",
-  "BookProof_RitzMinMax_rayleighSup_le_norm",
-  "BookProof_RitzMinMax_minmaxSet_nonempty",
-  "BookProof_RitzMinMax_rayleighSup_span_singleton",
-  "BookProof_RitzPerturbation_minmaxLevel_shiftOp",
-  "BookProof_RitzPerturbation_abs_rayleighSup_sub_le_dist",
-  "BookProof_RitzPerturbation_minmaxLevelIn_le_minmaxLevelIn_add",
-  "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevel_add",
-  "BookProof_SirkCertifiedGap_certifiedGap_sound",
-  "BookProof_SirkCertifiedGap_gap_pos_of_certificate",
-  "BookProof_SirkCertifiedGap_qcdG2M4_certified_gap",
-  "BookProof_SirkCertifiedGap_certified_parity_gap_of_data",
-  "BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified",
-  "BookProof_SirkGapTable_certified_gap_table_interval",
+  "BookProof_FockOneParticleGap_dGamma_diagCol_apply",
+  "BookProof_FockOneParticleGap_dGamma_diagCol_one_particle",
+  "BookProof_FockOneParticleGap_dGamma_diagCol_vac",
+  "BookProof_FockSecondQuantization_dGamma_one_particle",
+  "BookProof_FockSecondQuantization_isHermCol_opCol",
+  "BookProof_FockSecondQuantization_isPosCol_opCol",
+  "BookProof_FockSecondQuantization_ymFockCol_apply",
+  "BookProof_FockSecondQuantization_up_injective",
+  "BookProof_FockSecondQuantization_annA_apply",
+  "BookProof_FockSecondQuantization_creA_apply",
+  "BookProof_FriedrichsFormGap_friedrichs_extension_form_gap",
+  "BookProof_NavierStokesFlow_HermiteCanonical_bracket_DS",
+  "BookProof_NavierStokesFlow_HermiteCanonical_comm_ann_cre",
+  "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos",
+  "BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq",
+  "BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq",
+  "BookProof_SirkBandLedger_ledgerLo_le_ledgerHi",
+  "BookProof_SirkBandLedger_hiQ_antitone",
+  "BookProof_SirkBandLedger_loQ_monotone",
+  "BookProof_SirkBandLedger_ledger_width_tendsto_zero_iff",
+  "BookProof_SirkCertificateReader_formatExample_certified_gap",
+  "BookProof_BandEnclosure_sirk_band_enclosure",
+  "BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands",
   "BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le",
   "BookProof_ChapterSirkGramWhitening_gramOp_eq_toEuclideanCLM",
   "BookProof_ChapterSirkGramWhitening_exists_isWhitening",
@@ -6835,16 +8927,18 @@
   "BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le",
   "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow",
   "BookProof_ChapterSirkTrotterKato_norm_res_stoneU_sub_stoneU_res_le",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_commForm",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_symmetricOn",
-  "BookProof_RitzMinMax_neg_norm_le_rayleighSup",
-  "BookProof_RitzMinMax_rayleighSup_mono",
-  "BookProof_RitzMinMax_rayleighVal_le_rayleighSup",
-  "BookProof_RitzMinMax_minmaxSet_zero_eq_rayleighSet",
-  "BookProof_RitzPerturbation_minmaxGap_shiftOp",
-  "BookProof_RitzPerturbation_abs_minmaxLevelIn_sub_le_dist",
-  "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevelIn_add",
-  "BookProof_RitzPerturbation_abs_minmaxLevel_sub_le_dist",
+  "BookProof_FockOneParticleGap_dGamma_diagCol_shift",
+  "BookProof_FockOneParticleGap_re_inner_dGamma_diagCol",
+  "BookProof_FockOneParticleGap_numberOp_vac",
+  "BookProof_FockSecondQuantization_annA_eq_zero_of_not_mem_modes",
+  "BookProof_FockSecondQuantization_ccr_annA_annA",
+  "BookProof_FockSecondQuantization_support_annA",
+  "BookProof_FockSecondQuantization_ccr_annA_creA",
+  "BookProof_FockSecondQuantization_ccr_annA_creA_of_ne",
+  "BookProof_FockSecondQuantization_ccr_creA_creA",
+  "BookProof_FockSecondQuantization_support_creA",
+  "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
+  "BookProof_SirkBandLedger_nestedBands_of_wf",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
   "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix",
   "BookProof_ChapterSirkGramWhitening_compress_gram_whitening_conj",
@@ -6854,42 +8948,46 @@
   "BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_le",
   "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_commForm_bound",
-  "BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn",
-  "BookProof_RitzMinMax_minmaxSetIn_bddBelow",
-  "BookProof_RitzMinMax_minmaxSet_bddBelow",
-  "BookProof_RitzMinMax_exists_galerkin_approx_subspace",
-  "BookProof_RitzMinMax_minmaxLevel_zero_eq_rayleighInf",
-  "BookProof_RitzPerturbation_abs_minmaxGap_sub_le",
-  "BookProof_RitzPerturbation_abs_sInf_spectrum_sub_le_dist",
-  "BookProof_RitzPerturbation_minmaxGap_ge_of_dist_le",
-  "BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto",
+  "BookProof_FockOneParticleGap_fock_energy_one_particle",
+  "BookProof_FockOneParticleGap_fock_gap_quadForm",
+  "BookProof_FockSecondQuantization_sum_creVec_annA_subset",
+  "BookProof_FockSecondQuantization_inner_creA_left",
+  "BookProof_SirkBandLedger_formatExampleLedger_nested",
+  "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger",
+  "BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff_retained",
   "BookProof_ChapterSirkGramCutoff_sirk_end_to_end_truncated_cutoff",
   "BookProof_ChapterSirkGramWhitening_isWhitening_one_of_orthonormal",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf",
   "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_on_interval",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_essentiallySelfAdjointOn_core",
-  "BookProof_NavierStokesFlow_SignedShift_listH_commForm_bound",
-  "BookProof_NavierStokesFlow_SignedShift_gaffH_symmetricOn",
-  "BookProof_RitzMinMax_minmaxLevel_le_minmaxLevelIn",
-  "BookProof_RitzMinMax_minmaxLevel_mono",
-  "BookProof_RitzMinMax_minmaxLevel_zero_eq_sInf_spectrum",
-  "BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos",
-  "BookProof_RitzPerturbation_galerkin_model_gap_tendsto",
-  "BookProof_RitzPerturbation_minmaxGap_pos_of_dist_lt",
-  "BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto",
+  "BookProof_FockOneParticleGap_fock_gap_of_one_particle_gap",
+  "BookProof_FockOneParticleGap_fock_gap_of_operator_spectral_edge",
+  "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands",
+  "BookProof_FockOneParticleGap_qcdG2M4_fock_gap_of_one_particle_enclosure",
+  "BookProof_FockSecondQuantization_dGamma_eq_sum_aux",
+  "BookProof_FockSecondQuantization_inner_creA_right",
+  "BookProof_FockSecondQuantization_inner_creVec_annA",
+  "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
   "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto",
   "BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn",
-  "BookProof_NavierStokesFlow_SignedShift_listH_essentiallySelfAdjointOn_core",
-  "BookProof_RitzMinMax_galerkin_minmaxLevel_tendsto",
+  "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator",
+  "BookProof_FockSecondQuantization_dGamma_eq_sum",
+  "BookProof_FockSecondQuantization_inner_annA_creVec",
   "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected",
-  "BookProof_NavierStokesFlow_SignedShift_gaffH_essentiallySelfAdjointOn_core",
-  "BookProof_RitzMinMax_galerkin_gap_tendsto",
-  "BookProof_RitzMinMax_galerkin_gap_eventually_pos",
-  "BookProof_ChapterSirkTrotterKato_flow_tendsto_of_strong_tendsto",
-  "BookProof_ChapterSirkTrotterKato_flow_transfer_of_strong_tendsto",
-  "BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded"
+  "BookProof_FockSecondQuantization_inner_dGamma_left",
+  "BookProof_FockSecondQuantization_inner_dGamma_right",
+  "BookProof_FockSecondQuantization_inner_dGamma_nonneg",
+  "BookProof_FockSecondQuantization_inner_dGamma_symm",
+  "BookProof_FockSecondQuantization_dGammaOp_quadForm_nonneg",
+  "BookProof_FockSecondQuantization_dGammaOp_symmetricOn",
+  "BookProof_FockSecondQuantization_dGammaOpB_quadForm_nonneg",
+  "BookProof_FockSecondQuantization_dGammaOpB_symmetricOn",
+  "BookProof_FockSecondQuantization_dGamma_friedrichs_extension",
+  "BookProof_FockSecondQuantization_dGamma_hashimoto_selects",
+  "BookProof_FockSecondQuantization_secondQuantization_friedrichs",
+  "BookProof_FockSecondQuantization_secondQuantization_hashimoto_selects",
+  "BookProof_FockSecondQuantization_ym_fock_friedrichs_extension",
+  "BookProof_FockSecondQuantization_ym_fock_hashimoto_selects"
  ]
 }

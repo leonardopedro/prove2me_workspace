@@ -46,12 +46,14 @@ start() {
 }
 
 stop() {
+    # Kill the recorded wrapper PID first (graceful), then sweep every
+    # uploader process (wrapper AND python) so an orphaned child can never
+    # keep submitting while a fresh instance starts.
     if [ -f "$PIDFILE" ]; then
         local pid
         pid=$(cat "$PIDFILE")
         if kill -0 "$pid" 2>/dev/null; then
             kill "$pid" 2>/dev/null
-            # Wait briefly for graceful shutdown
             for i in 1 2 3 4 5; do
                 if kill -0 "$pid" 2>/dev/null; then
                     sleep 1
@@ -59,14 +61,16 @@ stop() {
                     break
                 fi
             done
-            # Force kill if still alive
-            if kill -0 "$pid" 2>/dev/null; then
-                kill -9 "$pid" 2>/dev/null
-                sleep 1
-            fi
+            kill -9 "$pid" 2>/dev/null
         fi
         rm -f "$PIDFILE"
     fi
+    # Sweep leftovers: kill ONLY the real uploader processes (the python
+    # pipeline and the crash-loop wrapper).  The pattern includes the full
+    # python3 invocation so shells that merely *grep/pgrep* for the pipeline
+    # name are never matched and killed.
+    pkill -f "python3 ${WS}/pipeline/upload_pipeline.py" 2>/dev/null
+    sleep 1
     echo "Upload pipeline stopped."
 }
 

@@ -34,11 +34,15 @@ ELAN = "/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake"
 
 # New def bundles for this batch (platform-safe: their `import Definitions.` deps
 # are already published or in the current wave).
-NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation"]
+NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation",
+            "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
+            "ChapterSirkMultiShift"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
-             "ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation"]
+             "ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation",
+             "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
+             "ChapterSirkMultiShift"]
 
 DOMAIN = [
     ("Stone", ["stone-theorem", "spectral-theory"]),

@@ -74,6 +74,7 @@ namespace BookProof.SirkCertifiedGap
 
 open scoped InnerProductSpace
 open Finset Filter Topology
+open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 

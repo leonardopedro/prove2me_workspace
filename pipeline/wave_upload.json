@@ -1076,6 +1076,58 @@
     "sirk",
     "spectral-theory"
    ]
+  },
+  "ChapterSirkGramWhitening": {
+   "definition_name": "ChapterSirkGramWhitening",
+   "namespace": "BookProof.SirkGramWhitening",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkGramWhitening.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a712.2, **Gap 4c**. `BookProof/ChapterSirkWhitening.lean` proves that the reduced operator does no ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkGramWhitening`, source chapter `BookProof/ChapterSirkGramWhitening.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a712.2, **Gap 4c**. `BookProof/ChapterSirkWhitening.lean` proves that the reduced operator does not depend on *which* orthonormalization of the retained Krylov vectors is used \u2014 but every statement there is conditional on being handed an isometric embedding `V` (`V\u2217V = 1`) with the prescribed range. The numerics does not orthonormalize by an abstract construction: it forms the Gram matrix `G_{ij} = \u27eaw_i, w_j\u27eb` of the raw (rational) Krylov vectors, diagonalizes it, and whitens with a `T` such that `T\u2217 G T = 1`.\n\nThis module closes that gap from below: it builds the objects the numerics uses and proves that they satisfy the hypotheses of `ChapterSirkWhitening`.\n\n* `synthesis w` \u2014 the coefficient-to-state map `c \u21a6 \u2211 i, c i \u2022 w i` of the raw Krylov vectors, with `range_synthesis`: its range is exactly the retained subspace `span{w\u2080, \u2026, w_{m\u22121}}`. * `gramOp w = (synthesis w)\u2217 (synthesis w)` \u2014 the Gram operator, with `gramOp_apply` (its entries are the Gram matrix `\u27eaw i, w j\u27eb`), `gramOp_isSelfAdjoint`, `gramOp_nonneg`. * `IsWhitening w T` \u2014 the numerics' defining property `T\u2217 G T = 1`; `whitened w T` the resulting embedding. * `whitened_adjoint_comp_self` \u2014 **a whitening is an isometric embedding**, so every theorem of `ChapterSirkWhitening` applies to it; `range_whitened` \u2014 its range is the retained subspace as soon as `T` is surjective. * `exists_isWhitening` \u2014 **a whitening exists** for linearly independent Krylov vectors (the non-degenerate case), and `exists_isometry_range_eq_span` \u2014 an isometric embedding of the retained subspace exists in general, with reduced dimension equal to the rank (the exact, lossless rank truncation). * `sirkApprox_gram_whitening_eq`, `compress_gram_whitening_conj` \u2014 the end statements: the reconstructed SIRK operator is literally the same for any two whitenings of the same raw vectors, and the reduced `m \u00d7 m` generators are unitarily conjugate, hence carry the same Ritz values. * Matrix layer: `gramMatrix`, `gramMatrix_conjTranspose`, `IsWhiteningMatrix` (`M\u1d34 G M = 1`, what the code computes from the Hermitian eigendecomposition of `G`) and `isWhitening_of_matrix`. * `norm_defect_synthesis_le` \u2014 the quantified rank truncation: if every raw vector lies within `\u03b4` of the retained subspace, a reduced state loses at most `\u03b4 \u221am \u2016c\u2016`; and `sirk_end_to_end_truncated_gram`, the end-to-end bound with that term in place of the abstract defect of `ChapterSirkTruncation`.\n\nEverything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`, `Quot.sound`).\n\n**Boundary.** The existence statement is about *some* whitening; the specific inverse-square-root factor the code uses is one such, and `ChapterSirkWhitening` shows the reduction does not depend on the choice. The near-degenerate case is covered only through the geometric parameter `\u03b4` (the distance of the raw vectors to the retained subspace): no relation between `\u03b4` and the discarded Gram eigenvalues, and no floating-point analysis, is claimed here.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkGramCutoff": {
+   "definition_name": "ChapterSirkGramCutoff",
+   "namespace": "BookProof.SirkGramCutoff",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkGramCutoff.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a712.2, the recorded residue of **Gap 4c**.",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkGramCutoff`, source chapter `BookProof/ChapterSirkGramCutoff.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a712.2, the recorded residue of **Gap 4c**.\n\n`BookProof/ChapterSirkGramWhitening.lean` quantifies the rank truncation of the SIRK/Hashimoto solver through a *geometric* parameter `\u03b4`: if every raw (rational) Krylov vector `w i` sits within `\u03b4` of the retained subspace, a reduced state loses at most `\u03b4 \u221am \u2016c\u2016`. What was missing is the link between that `\u03b4` and the quantity the code actually thresholds \u2014 the **eigenvalues of the Gram matrix** `G_{ij} = \u27eaw i, w j\u27eb` that fall below the numerical cutoff (`rel_tol`) and are discarded.\n\nThis module supplies that link. With `u` an orthonormal eigenbasis of the Gram operator (what the Hermitian eigendecomposition returns), eigenvalues `lam`, and a retained index set `R` such that every *discarded* eigenvalue satisfies `lam k \u2264 tol`, the whole defect is `\u221atol`.\n\n* `IsGramEigen`, `exists_gramEigen` \u2014 the eigendecomposition of the Gram operator (it always exists: the operator is self-adjoint), `gramEigen_nonneg`, `inner_synthesis_gramEigen` (the synthesized eigenvectors are orthogonal with squared norms the eigenvalues) and `norm_sq_sum_orthogonal`. * `norm_sub_proj_le_of_mem_range` \u2014 for an isometric embedding `V`, the point `V V\u2217 x` of `range V` is the closest one; the projection property the defect estimate needs. * `dist_synthesis_retained_le` \u2014 **every state assembled from the raw vectors is within `\u221atol \u2016c\u2016` of the retained subspace**. * `defect_le_sqrt_cutoff` \u2014 hence each raw vector `w i` is within `\u221atol` of it: the geometric parameter of `ChapterSirkGramWhitening` obeys `\u03b4 \u2264 \u221atol`. * `sirk_end_to_end_truncated_cutoff` \u2014 the end-to-end SIRK bound with the additive truncation term `\u2016r(X)\u2016 \u221atol \u221am \u2016c\u2016`, expressed purely through the numerical cutoff. * `retainedVec`, `retainedEmbedding` \u2014 the embedding the code builds from the retained eigenpairs, `V = W U_R \u039b_R^{\u22121/2}` (the inverse-square-root whitening), with `retainedVec_orthonormal`, `retainedEmbedding_isometry` (`V\u2217V = 1`) and `range_retainedEmbedding` (its range is the retained subspace), so that `defect_le_sqrt_cutoff_retained` applies to the object the solver actually produces.\n\nEverything is `sorry`-free and `axiom`-free.\n\n**Boundary.** `tol` is here an exact bound on the discarded Gram eigenvalues; the floating-point analysis relating the *computed* eigenvalues to the exact ones (plan \u00a712.2 Gap 6) is not addressed and stays out of scope.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkTrotterKato": {
+   "definition_name": "ChapterSirkTrotterKato",
+   "namespace": "BookProof.SirkTrotterKato",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkTrotterKato.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a712.2 **Gap 3** asks for the transfer of generator convergence to the *unitary group*: `e^{\u2212itA\u2099} ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkTrotterKato`, source chapter `BookProof/ChapterSirkTrotterKato.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a712.2 **Gap 3** asks for the transfer of generator convergence to the *unitary group*: `e^{\u2212itA\u2099} \u2192 e^{\u2212itA}` strongly, locally uniformly in `t`. `ChapterSirkGroupTransfer` settled the **bounded** half (norm convergence of bounded generators, with an explicit rate). This chapter settles the **unbounded** half \u2014 the Trotter\u2013Kato theorem itself \u2014 for the unbounded self-adjoint operators of `ChapterStoneResolvent`, i.e. exactly the objects the selection theorems of the project produce:\n\n> if the resolvents `(A\u2099 \u2212 i)\u207b\u00b9` converge strongly to `(A \u2212 i)\u207b\u00b9`, then > `e^{\u2212itA\u2099} v \u2192 e^{\u2212itA} v` for every `v`, uniformly for `t` in a bounded > interval.\n\nThe proof is the classical Duhamel argument, formalized in four steps.\n\n* `hasDerivAt_stoneU_const_sub` \u2014 the backwards flow `r \u21a6 e^{\u2212i(t\u2212r)A} z` differentiates to `+ i A` on the domain. * `hasDerivAt_stoneU_const_sub_apply` \u2014 the **weak product rule**: the flow is only strongly continuous, so `r \u21a6 e^{\u2212i(t\u2212r)A} (y r)` cannot be differentiated by the ordinary product rule; it is differentiated here from the definition, for a curve `y` differentiable at the point and taking its value there in the domain. * `resolvent_commutator_eq` \u2014 the algebraic heart, `A\u209b R\u209b \u2212 R\u209b A = (R \u2212 R\u209b)(A \u2212 i)` on `dom A`, where `R = (A \u2212 i)\u207b\u00b9` and `R\u209b = (A\u209b \u2212 i)\u207b\u00b9`. * `hasDerivAt_duhamel` \u2014 the Duhamel derivative `d/dr [ e^{\u2212i(t\u2212r)A\u209b} R\u209b e^{\u2212irA} \u03c7 ] = i e^{\u2212i(t\u2212r)A\u209b} (R \u2212 R\u209b) e^{\u2212irA}(A \u2212 i)\u03c7`, and `norm_res_stoneU_sub_stoneU_res_le` \u2014 the resulting mean-value estimate.\n\nThe convergence statements are `trotterKato_uniform_of_mem_range` (on the dense set `R(dom A)`), `trotterKato_uniform_on_interval` and `trotterKato_tendstoUniformlyOn` (**the headline: locally uniformly in `t`**) and `trotterKato_tendsto` (strong convergence at a fixed time). The auxiliary `tendsto_uniformly_on_isCompact_of_tendsto` is the standard equi-Lipschitz upgrade of pointwise convergence to uniform convergence on a compact set.\n\nStrong resolvent convergence is *assumed* at the single point `i` of the resolvent set, which is all the theorem needs; nothing here proves that the Galerkin/Hashimoto compressions of a given physical Hamiltonian satisfy it \u2014 that is the content of the per-system selection theorems, which the project proves separately. Together with those, this chapter closes the transfer step: the flow of the selected generator is the limit of the approximating flows.\n\nEverything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`, `Quot.sound`).",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkMultiShift": {
+   "definition_name": "ChapterSirkMultiShift",
+   "namespace": "BookProof.SirkMultiShift",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkMultiShift.lean",
+   "title": "`CONSOLIDATED_PLAN.md` \u00a712.2, **Gap 4b**: `ChapterH5` covers the *single*-shift inversion-free shortcut (`krylov_no_inve ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkMultiShift`, source chapter `BookProof/ChapterSirkMultiShift.lean`).\n\n`CONSOLIDATED_PLAN.md` \u00a712.2, **Gap 4b**: `ChapterH5` covers the *single*-shift inversion-free shortcut (`krylov_no_inversion_eq_standard`: the sequence `w\u2096 = (H\u0304 \u2212 \u03b3I)w\u2096\u208b\u2081` spans the standard Krylov subspace). The SIRK/Hashimoto numerics use a *sequence of distinct complex shifts* `z\u2081, z\u2082, \u2026`, i.e. the forward sequence\n\n`w\u2080 = v\u2080`, `w\u2096\u208a\u2081 = (H\u0304 \u2212 z\u2096 I) w\u2096`,\n\nand the identity that the plan records as missing is\n\n`span{w\u2080, w\u2081, \u2026, w_{m\u22121}} = Kry m(H\u0304, v\u2080)`.\n\nThat identity is proved here, together with the general principle behind it.\n\n* `triangularSpan_eq_krylovSpan` \u2014 the **general triangular criterion**: any family `u : \u2115 \u2192 E` with `u\u1d62 \u2212 H^i v \u2208 Kry i(H, v)` spans exactly the Krylov flag, `span{u\u1d62 | i < m} = Kry m(H, v)` for every `m`. This isolates the only property a \"forward sequence\" needs: the change of basis from `{H^i v}` is unitriangular. * `multiShiftSeq` \u2014 the multi-shift forward sequence `w\u2096\u208a\u2081 = (H \u2212 z\u2096 I) w\u2096`, for an arbitrary shift sequence `z : \u2115 \u2192 K` (no distinctness, no non-vanishing, no field-characteristic hypothesis). * `multiShiftSeq_sub_pow_mem` \u2014 the degree-lowering core: `w\u1d62 \u2212 H^i v \u2208 Kry i`. * `krylov_multiShift_eq_standard` \u2014 **headline (Gap 4b)**: `span{w\u1d62 | i < m} = Kry m(H, v)`. * `krylov_multiShift_span_eq_of_shifts` \u2014 hence the span does not depend on the shift sequence at all: two different shift schedules produce the same subspace, so the numerics' choice of `{z_j}` changes the basis but never the Krylov space that is compressed. * `multiShiftSeq_const` \u2014 the single-shift sequence of `ChapterH5` is the constant-schedule instance.\n\nEverything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`, `Quot.sound`).",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
   }
  },
  "thms": {
@@ -3999,6 +4051,930 @@
     "sirk",
     "spectral-theory"
    ]
+  },
+  "BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner": {
+   "name": "BookProof.ChapterSirkGramWhitening.adjoint_comp_self_of_inner",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner.lean",
+   "title": "{F : Type*} [NormedAddCommGroup F] [InnerProductSpace \u2102 F] [CompleteSpace F] (V : F \u2192L[\u2102] E) (h : \u2200 c d : F, \u27eaV c, V d\u27eb_\u2102 = \u27eac, d\u27eb_\u2102) : (ContinuousLinearMap.adjoint V).comp V = ContinuousLinearMap.id \u2102 F",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.adjoint_comp_self_of_inner` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_compress_gram_whitening_conj": {
+   "name": "BookProof.ChapterSirkGramWhitening.compress_gram_whitening_conj",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_compress_gram_whitening_conj.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (X : E \u2192L[\u2102] E) {T\u2081 T\u2082 : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT\u2082 : IsWhitening w T\u2082) (hs\u2081 : Function.Surjective T\u2081) (hs\u2082 : Function.Surjective T\u2082) : compress (whitened w T\u2081) X = (whiteningEquiv (whitened w T\u2082) (whitened w T\u2081)).comp ((compress (whitened w ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.compress_gram_whitening_conj` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_exists_isWhitening": {
+   "name": "BookProof.ChapterSirkGramWhitening.exists_isWhitening",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_exists_isWhitening.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : LinearIndependent \u2102 w) : \u2203 T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m), Function.Bijective T \u2227 IsWhitening w T",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.exists_isWhitening` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span": {
+   "name": "BookProof.ChapterSirkGramWhitening.exists_isometry_fin_range_eq_span",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : LinearIndependent \u2102 w) : \u2203 V : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] E, (ContinuousLinearMap.adjoint V).comp V = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin m)) \u2227 LinearMap.range (V : EuclideanSpace \u2102 (Fin m) \u2192\u2097[\u2102] E) = Submodule.span \u2102 (Set.range w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.exists_isometry_fin_range_eq_span` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span": {
+   "name": "BookProof.ChapterSirkGramWhitening.exists_isometry_range_eq_span",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : \u2203 (d : \u2115) (V : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] E), d = Module.finrank \u2102 (Submodule.span \u2102 (Set.range w)) \u2227 (ContinuousLinearMap.adjoint V).comp V = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin d)) \u2227 LinearMap.range (V : EuclideanSpace \u2102 (Fin d) \u2192\u2097[\u2102] E) = Submodule.span \u2102 ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.exists_isometry_range_eq_span` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_exists_whitened_isometry_onto_span": {
+   "name": "BookProof.ChapterSirkGramWhitening.exists_whitened_isometry_onto_span",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_exists_whitened_isometry_onto_span.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : LinearIndependent \u2102 w) : \u2203 T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m), IsWhitening w T \u2227 (ContinuousLinearMap.adjoint (whitened w T)).comp (whitened w T) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin m)) \u2227 LinearMap.range (whitened w T : EuclideanSp ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.exists_whitened_isometry_onto_span` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_gramMatrix_conjTranspose": {
+   "name": "BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_gramMatrix_conjTranspose.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : (gramMatrix w)\u1d34 = gramMatrix w",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_gramOp_apply": {
+   "name": "BookProof.ChapterSirkGramWhitening.gramOp_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_gramOp_apply.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) (i : Fin m) : gramOp w c i = \u2211 j, \u27eaw i, w j\u27eb_\u2102 * c j",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.gramOp_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_gramOp_eq_toEuclideanCLM": {
+   "name": "BookProof.ChapterSirkGramWhitening.gramOp_eq_toEuclideanCLM",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_gramOp_eq_toEuclideanCLM.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : gramOp w = Matrix.toEuclideanCLM (\ud835\udd5c",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.gramOp_eq_toEuclideanCLM` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_gramOp_isSelfAdjoint": {
+   "name": "BookProof.ChapterSirkGramWhitening.gramOp_isSelfAdjoint",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_gramOp_isSelfAdjoint.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : IsSelfAdjoint (gramOp w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.gramOp_isSelfAdjoint` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_gramOp_nonneg": {
+   "name": "BookProof.ChapterSirkGramWhitening.gramOp_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_gramOp_nonneg.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) : 0 \u2264 (\u27eac, gramOp w c\u27eb_\u2102).re",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.gramOp_nonneg` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_inner_gramOp": {
+   "name": "BookProof.ChapterSirkGramWhitening.inner_gramOp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_inner_gramOp.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c d : EuclideanSpace \u2102 (Fin m)) : \u27eac, gramOp w d\u27eb_\u2102 = \u27easynthesis w c, synthesis w d\u27eb_\u2102",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.inner_gramOp` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_inner_synthesis_left": {
+   "name": "BookProof.ChapterSirkGramWhitening.inner_synthesis_left",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_inner_synthesis_left.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) (x : E) : \u27easynthesis w c, x\u27eb_\u2102 = \u2211 i, (starRingEnd \u2102) (c i) * \u27eaw i, x\u27eb_\u2102",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.inner_synthesis_left` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_isWhiteningMatrix_one_of_orthonormal": {
+   "name": "BookProof.ChapterSirkGramWhitening.isWhiteningMatrix_one_of_orthonormal",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_isWhiteningMatrix_one_of_orthonormal.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : Orthonormal \u2102 w) : IsWhiteningMatrix w 1",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.isWhiteningMatrix_one_of_orthonormal` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix": {
+   "name": "BookProof.ChapterSirkGramWhitening.isWhitening_of_matrix",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) {M : Matrix (Fin m) (Fin m) \u2102} (hM : IsWhiteningMatrix w M) : IsWhitening w (Matrix.toEuclideanCLM (\ud835\udd5c",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.isWhitening_of_matrix` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_isWhitening_one_of_orthonormal": {
+   "name": "BookProof.ChapterSirkGramWhitening.isWhitening_one_of_orthonormal",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_isWhitening_one_of_orthonormal.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : Orthonormal \u2102 w) : IsWhitening w (Matrix.toEuclideanCLM (\ud835\udd5c",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.isWhitening_one_of_orthonormal` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le": {
+   "name": "BookProof.ChapterSirkGramWhitening.norm_defect_synthesis_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le.lean",
+   "title": "{m d : \u2115} (w : Fin m \u2192 E) (V : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] E) {delta : \u211d} (hdelta : \u2200 i, \u2016w i - V (ContinuousLinearMap.adjoint V (w i))\u2016 \u2264 delta) (c : EuclideanSpace \u2102 (Fin m)) : \u2016synthesis w c - V (ContinuousLinearMap.adjoint V (synthesis w c))\u2016 \u2264 delta * (Real.sqrt m * \u2016c\u2016)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.norm_defect_synthesis_le` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_norm_whitened_apply": {
+   "name": "BookProof.ChapterSirkGramWhitening.norm_whitened_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_norm_whitened_apply.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) {T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT : IsWhitening w T) (c : EuclideanSpace \u2102 (Fin m)) : \u2016whitened w T c\u2016 = \u2016c\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.norm_whitened_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_onbEmbedding_apply": {
+   "name": "BookProof.ChapterSirkGramWhitening.onbEmbedding_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_onbEmbedding_apply.lean",
+   "title": "{d : \u2115} (S : Submodule \u2102 E) [CompleteSpace S] (b : OrthonormalBasis (Fin d) \u2102 S) (c : EuclideanSpace \u2102 (Fin d)) : onbEmbedding S b c = (b.repr.symm c : E)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.onbEmbedding_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry": {
+   "name": "BookProof.ChapterSirkGramWhitening.onbEmbedding_isometry",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry.lean",
+   "title": "{d : \u2115} (S : Submodule \u2102 E) [CompleteSpace S] (b : OrthonormalBasis (Fin d) \u2102 S) : (ContinuousLinearMap.adjoint (onbEmbedding S b)).comp (onbEmbedding S b) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin d))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.onbEmbedding_isometry` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_range_onbEmbedding": {
+   "name": "BookProof.ChapterSirkGramWhitening.range_onbEmbedding",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_range_onbEmbedding.lean",
+   "title": "{d : \u2115} (S : Submodule \u2102 E) [CompleteSpace S] (b : OrthonormalBasis (Fin d) \u2102 S) : LinearMap.range (onbEmbedding S b : EuclideanSpace \u2102 (Fin d) \u2192\u2097[\u2102] E) = S",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.range_onbEmbedding` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_range_synthesis": {
+   "name": "BookProof.ChapterSirkGramWhitening.range_synthesis",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_range_synthesis.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : LinearMap.range (synthesis w : EuclideanSpace \u2102 (Fin m) \u2192\u2097[\u2102] E) = Submodule.span \u2102 (Set.range w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.range_synthesis` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_range_whitened": {
+   "name": "BookProof.ChapterSirkGramWhitening.range_whitened",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_range_whitened.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) {T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT : Function.Surjective T) : LinearMap.range (whitened w T : EuclideanSpace \u2102 (Fin m) \u2192\u2097[\u2102] E) = Submodule.span \u2102 (Set.range w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.range_whitened` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_range_whitened_le": {
+   "name": "BookProof.ChapterSirkGramWhitening.range_whitened_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_range_whitened_le.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)) : LinearMap.range (whitened w T : EuclideanSpace \u2102 (Fin m) \u2192\u2097[\u2102] E) \u2264 Submodule.span \u2102 (Set.range w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.range_whitened_le` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_sirkApprox_gram_whitening_eq": {
+   "name": "BookProof.ChapterSirkGramWhitening.sirkApprox_gram_whitening_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_sirkApprox_gram_whitening_eq.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (X : E \u2192L[\u2102] E) {T\u2081 T\u2082 : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT\u2081 : IsWhitening w T\u2081) (hT\u2082 : IsWhitening w T\u2082) (hs\u2081 : Function.Surjective T\u2081) (hs\u2082 : Function.Surjective T\u2082) : (whitened w T\u2081).comp ((compress (whitened w T\u2081) X).comp (ContinuousLinearMap.adj ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.sirkApprox_gram_whitening_eq` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram": {
+   "name": "BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram.lean",
+   "title": "{m d : \u2115} (w : Fin m \u2192 E) (V : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] E) (rX : E \u2192L[\u2102] E) (rB : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] EuclideanSpace \u2102 (Fin d)) (flow psiX : E \u2192L[\u2102] E) (psiB : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] EuclideanSpace \u2102 (Fin d)) (C Dmin hrate : \u211d) (k : \u2115) {delta : \u211d} (hViso : \u2200 x : EuclideanSpa ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_sum_norm_coord_le": {
+   "name": "BookProof.ChapterSirkGramWhitening.sum_norm_coord_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_sum_norm_coord_le.lean",
+   "title": "{m : \u2115} (c : EuclideanSpace \u2102 (Fin m)) : \u2211 i, \u2016c i\u2016 \u2264 Real.sqrt m * \u2016c\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.sum_norm_coord_le` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_synthesis_adjoint_eq": {
+   "name": "BookProof.ChapterSirkGramWhitening.synthesis_adjoint_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_adjoint_eq.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (x : E) : (ContinuousLinearMap.adjoint (synthesis w)) x = (WithLp.toLp 2 fun i => \u27eaw i, x\u27eb_\u2102)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.synthesis_adjoint_eq` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_synthesis_apply": {
+   "name": "BookProof.ChapterSirkGramWhitening.synthesis_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_apply.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) : synthesis w c = \u2211 i, c i \u2022 w i",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.synthesis_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent": {
+   "name": "BookProof.ChapterSirkGramWhitening.synthesis_injective_of_linearIndependent",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent.lean",
+   "title": "{m : \u2115} {w : Fin m \u2192 E} (hw : LinearIndependent \u2102 w) : Function.Injective (synthesis w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.synthesis_injective_of_linearIndependent` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_synthesis_mem_span": {
+   "name": "BookProof.ChapterSirkGramWhitening.synthesis_mem_span",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_mem_span.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) : synthesis w c \u2208 Submodule.span \u2102 (Set.range w)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.synthesis_mem_span` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self": {
+   "name": "BookProof.ChapterSirkGramWhitening.whitened_adjoint_comp_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) {T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT : IsWhitening w T) : (ContinuousLinearMap.adjoint (whitened w T)).comp (whitened w T) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin m))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.whitened_adjoint_comp_self` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramWhitening_whitened_apply": {
+   "name": "BookProof.ChapterSirkGramWhitening.whitened_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramWhitening_whitened_apply.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) (T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)) (c : EuclideanSpace \u2102 (Fin m)) : whitened w T c = synthesis w (T c)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.whitened_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff": {
+   "name": "BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff.lean",
+   "title": "(heig : IsGramEigen w u lam) {tol : \u211d} (R : Finset (Fin m)) (hcut : \u2200 k \u2209 R, lam k \u2264 tol) {d : \u2115} (V : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] E) (hV : (adjoint V).comp V = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin d))) (hmem : \u2200 k \u2208 R, \u2203 z, V z = synthesis w (u k)) (i : Fin m) : \u2016w i - V (adjoint V (w ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff_retained": {
+   "name": "BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff_retained",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff_retained.lean",
+   "title": "(heig : IsGramEigen w u lam) {tol : \u211d} {d : \u2115} {e : Fin d \u2192 Fin m} (he : Function.Injective e) (hpos : \u2200 j : Fin d, 0 < lam (e j)) (hcut : \u2200 k \u2209 (Finset.univ.image e), lam k \u2264 tol) (i : Fin m) : \u2016w i - retainedEmbedding w u lam e (adjoint (retainedEmbedding w u lam e) (w i))\u2016 \u2264 Real.sqrt tol",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.defect_le_sqrt_cutoff_retained` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le": {
+   "name": "BookProof.ChapterSirkGramCutoff.dist_synthesis_retained_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le.lean",
+   "title": "(heig : IsGramEigen w u lam) {tol : \u211d} (R : Finset (Fin m)) (hcut : \u2200 k \u2209 R, lam k \u2264 tol) (c : EuclideanSpace \u2102 (Fin m)) : \u2016synthesis w c - \u2211 k \u2208 R, \u27eau k, c\u27eb_\u2102 \u2022 synthesis w (u k)\u2016 \u2264 Real.sqrt tol * \u2016c\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.dist_synthesis_retained_le` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_exists_gramEigen": {
+   "name": "BookProof.ChapterSirkGramCutoff.exists_gramEigen",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_exists_gramEigen.lean",
+   "title": "{m : \u2115} (w : Fin m \u2192 E) : \u2203 (u : OrthonormalBasis (Fin m) \u2102 (EuclideanSpace \u2102 (Fin m))) (lam : Fin m \u2192 \u211d), IsGramEigen w u lam",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.exists_gramEigen` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_gramEigen_nonneg": {
+   "name": "BookProof.ChapterSirkGramCutoff.gramEigen_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_gramEigen_nonneg.lean",
+   "title": "(heig : IsGramEigen w u lam) (k : Fin m) : 0 \u2264 lam k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.gramEigen_nonneg` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_inner_synthesis_gramEigen": {
+   "name": "BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_inner_synthesis_gramEigen.lean",
+   "title": "(heig : IsGramEigen w u lam) (k l : Fin m) : \u27easynthesis w (u k), synthesis w (u l)\u27eb_\u2102 = if k = l then (lam l : \u2102) else 0",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_mem_range_retainedEmbedding": {
+   "name": "BookProof.ChapterSirkGramCutoff.mem_range_retainedEmbedding",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_mem_range_retainedEmbedding.lean",
+   "title": "{d : \u2115} {e : Fin d \u2192 Fin m} (hpos : \u2200 j : Fin d, 0 < lam (e j)) (j : Fin d) : \u2203 z, retainedEmbedding w u lam e z = synthesis w (u (e j))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.mem_range_retainedEmbedding` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_norm_sq_sum_orthogonal": {
+   "name": "BookProof.ChapterSirkGramCutoff.norm_sq_sum_orthogonal",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_norm_sq_sum_orthogonal.lean",
+   "title": "{m : \u2115} (y : Fin m \u2192 E) (lam : Fin m \u2192 \u211d) (h : \u2200 k l, \u27eay k, y l\u27eb_\u2102 = if k = l then (lam l : \u2102) else 0) (s : Finset (Fin m)) (a : Fin m \u2192 \u2102) : \u2016\u2211 k \u2208 s, a k \u2022 y k\u2016 ^ 2 = \u2211 k \u2208 s, \u2016a k\u2016 ^ 2 * lam k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.norm_sq_sum_orthogonal` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_norm_sq_synthesis_gramEigen": {
+   "name": "BookProof.ChapterSirkGramCutoff.norm_sq_synthesis_gramEigen",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_norm_sq_synthesis_gramEigen.lean",
+   "title": "(heig : IsGramEigen w u lam) (k : Fin m) : \u2016synthesis w (u k)\u2016 ^ 2 = lam k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.norm_sq_synthesis_gramEigen` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range": {
+   "name": "BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range.lean",
+   "title": "{F : Type*} [NormedAddCommGroup F] [InnerProductSpace \u2102 F] [CompleteSpace F] (V : F \u2192L[\u2102] E) (hV : (adjoint V).comp V = ContinuousLinearMap.id \u2102 F) (x : E) {y : E} (hy : \u2203 z, V z = y) : \u2016x - V (adjoint V x)\u2016 \u2264 \u2016x - y\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_range_retainedEmbedding": {
+   "name": "BookProof.ChapterSirkGramCutoff.range_retainedEmbedding",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_range_retainedEmbedding.lean",
+   "title": "{d : \u2115} (w : Fin m \u2192 E) (u : OrthonormalBasis (Fin m) \u2102 (EuclideanSpace \u2102 (Fin m))) (lam : Fin m \u2192 \u211d) (e : Fin d \u2192 Fin m) : LinearMap.range (retainedEmbedding w u lam e : EuclideanSpace \u2102 (Fin d) \u2192\u2097[\u2102] E) = Submodule.span \u2102 (Set.range (retainedVec w u lam e))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.range_retainedEmbedding` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry": {
+   "name": "BookProof.ChapterSirkGramCutoff.retainedEmbedding_isometry",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry.lean",
+   "title": "(heig : IsGramEigen w u lam) {d : \u2115} {e : Fin d \u2192 Fin m} (he : Function.Injective e) (hpos : \u2200 j, 0 < lam (e j)) : (adjoint (retainedEmbedding w u lam e)).comp (retainedEmbedding w u lam e) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin d))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.retainedEmbedding_isometry` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_retainedVec_orthonormal": {
+   "name": "BookProof.ChapterSirkGramCutoff.retainedVec_orthonormal",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_retainedVec_orthonormal.lean",
+   "title": "(heig : IsGramEigen w u lam) {d : \u2115} {e : Fin d \u2192 Fin m} (he : Function.Injective e) (hpos : \u2200 j, 0 < lam (e j)) : Orthonormal \u2102 (retainedVec w u lam e)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.retainedVec_orthonormal` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_sirk_end_to_end_truncated_cutoff": {
+   "name": "BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_sirk_end_to_end_truncated_cutoff.lean",
+   "title": "(heig : IsGramEigen w u lam) {tol : \u211d} (R : Finset (Fin m)) (hcut : \u2200 k \u2209 R, lam k \u2264 tol) {d : \u2115} (V : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] E) (rX : E \u2192L[\u2102] E) (rB : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] EuclideanSpace \u2102 (Fin d)) (flow psiX : E \u2192L[\u2102] E) (psiB : EuclideanSpace \u2102 (Fin d) \u2192L[\u2102] EuclideanSpace \u2102 (Fi ...",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_synthesis_eq_sum_gramEigen": {
+   "name": "BookProof.ChapterSirkGramCutoff.synthesis_eq_sum_gramEigen",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_synthesis_eq_sum_gramEigen.lean",
+   "title": "(c : EuclideanSpace \u2102 (Fin m)) : synthesis w c = \u2211 k, \u27eau k, c\u27eb_\u2102 \u2022 synthesis w (u k)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.synthesis_eq_sum_gramEigen` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_synthesis_isometry_of_orthonormal": {
+   "name": "BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_synthesis_isometry_of_orthonormal.lean",
+   "title": "{d : \u2115} {v : Fin d \u2192 E} (hv : Orthonormal \u2102 v) : (adjoint (synthesis v)).comp (synthesis v) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin d))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkGramCutoff_synthesis_single": {
+   "name": "BookProof.ChapterSirkGramCutoff.synthesis_single",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkGramCutoff_synthesis_single.lean",
+   "title": "(i : Fin m) : synthesis w (EuclideanSpace.single i (1 : \u2102)) = w i",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramCutoff.synthesis_single` (module `BookProof.ChapterSirkGramCutoff`), source chapter `BookProof/ChapterChapterSirkGramCutoff.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramCutoff.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_exists_res_domain_approx": {
+   "name": "BookProof.ChapterSirkTrotterKato.exists_res_domain_approx",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_exists_res_domain_approx.lean",
+   "title": "(v : H) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 w : T.domain, \u2016v - T.resCLM 1 (w : H)\u2016 < \u03b5",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.exists_res_domain_approx` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel": {
+   "name": "BookProof.ChapterSirkTrotterKato.hasDerivAt_duhamel",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel.lean",
+   "title": "(T S : UnboundedSelfAdjoint H) (chi : T.domain) (t u : \u211d) : HasDerivAt (fun r : \u211d => S.stoneU (t - r) (S.resCLM 1 (T.stoneU r (chi : H)))) (Complex.I \u2022 S.stoneU (t - u) (T.resCLM 1 (T.stoneU u (T.shift 1 chi)) - S.resCLM 1 (T.stoneU u (T.shift 1 chi)))) u",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.hasDerivAt_duhamel` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub": {
+   "name": "BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub.lean",
+   "title": "(S : UnboundedSelfAdjoint H) (z : S.domain) (t u : \u211d) : HasDerivAt (fun r : \u211d => S.stoneU (t - r) (z : H)) (Complex.I \u2022 S.op \u27e8S.stoneU (t - u) (z : H), S.stoneU_mem_domain (t - u) z\u27e9) u",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply": {
+   "name": "BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply.lean",
+   "title": "(S : UnboundedSelfAdjoint H) {y : \u211d \u2192 H} {y' : H} {t u : \u211d} (hy : HasDerivAt y y' u) (hmem : y u \u2208 S.domain) : HasDerivAt (fun r : \u211d => S.stoneU (t - r) (y r)) (Complex.I \u2022 S.op \u27e8S.stoneU (t - u) (y u), S.stoneU_mem_domain (t - u) \u27e8y u, hmem\u27e9\u27e9 + S.stoneU (t - u) y') u",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub_apply` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_incr": {
+   "name": "BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub_incr",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_incr.lean",
+   "title": "(S : UnboundedSelfAdjoint H) {y : \u211d \u2192 H} {y' : H} {t u : \u211d} (hy : HasDerivAt y y' u) : HasDerivAt (fun r : \u211d => S.stoneU (t - r) (y r - y u)) (S.stoneU (t - u) y') u",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub_incr` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_isCompact_orbit": {
+   "name": "BookProof.ChapterSirkTrotterKato.isCompact_orbit",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_isCompact_orbit.lean",
+   "title": "(y : H) (T\u2080 : \u211d) : IsCompact ((fun s : \u211d => T.stoneU s y) '' Set.Icc (-T\u2080) T\u2080)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.isCompact_orbit` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_norm_resDiff_apply_le": {
+   "name": "BookProof.ChapterSirkTrotterKato.norm_resDiff_apply_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_norm_resDiff_apply_le.lean",
+   "title": "(n : \u2115) (y : H) : \u2016resDiff T S n y\u2016 \u2264 2 * \u2016y\u2016",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.norm_resDiff_apply_le` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_norm_res_stoneU_sub_stoneU_res_le": {
+   "name": "BookProof.ChapterSirkTrotterKato.norm_res_stoneU_sub_stoneU_res_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_norm_res_stoneU_sub_stoneU_res_le.lean",
+   "title": "(T S : UnboundedSelfAdjoint H) (chi : T.domain) (t : \u211d) {C : \u211d} (hC : \u2200 s \u2208 Set.uIcc (0 : \u211d) t, \u2016T.resCLM 1 (T.stoneU s (T.shift 1 chi)) - S.resCLM 1 (T.stoneU s (T.shift 1 chi))\u2016 \u2264 C) : \u2016S.resCLM 1 (T.stoneU t (chi : H)) - S.stoneU t (S.resCLM 1 (chi : H))\u2016 \u2264 C * |t|",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.norm_res_stoneU_sub_stoneU_res_le` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_resolvent_commutator_eq": {
+   "name": "BookProof.ChapterSirkTrotterKato.resolvent_commutator_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_resolvent_commutator_eq.lean",
+   "title": "(T S : UnboundedSelfAdjoint H) (y : T.domain) : S.op \u27e8S.resCLM 1 (y : H), S.resCLM_mem 1 (y : H)\u27e9 - S.resCLM 1 (T.op y) = T.resCLM 1 (T.shift 1 y) - S.resCLM 1 (T.shift 1 y)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.resolvent_commutator_eq` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_stoneU_shift": {
+   "name": "BookProof.ChapterSirkTrotterKato.stoneU_shift",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_stoneU_shift.lean",
+   "title": "(T : UnboundedSelfAdjoint H) (chi : T.domain) (u : \u211d) : T.shift 1 \u27e8T.stoneU u (chi : H), T.stoneU_mem_domain u chi\u27e9 = T.stoneU u (T.shift 1 chi)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.stoneU_shift` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_tendsto_resDiff": {
+   "name": "BookProof.ChapterSirkTrotterKato.tendsto_resDiff",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_tendsto_resDiff.lean",
+   "title": "(hres : StrongResolventConvergence T S) (y : H) : Tendsto (fun n => resDiff T S n y) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.tendsto_resDiff` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto": {
+   "name": "BookProof.ChapterSirkTrotterKato.tendsto_uniformly_on_isCompact_of_tendsto",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto.lean",
+   "title": "{D : \u2115 \u2192 H \u2192L[\u2102] H} {M : \u211d} (hM : \u2200 n y, \u2016D n y\u2016 \u2264 M * \u2016y\u2016) (hptw : \u2200 y, Tendsto (fun n => D n y) atTop (\ud835\udcdd 0)) {K : Set H} (hK : IsCompact K) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2200\u1da0 n in atTop, \u2200 y \u2208 K, \u2016D n y\u2016 \u2264 \u03b5",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.tendsto_uniformly_on_isCompact_of_tendsto` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto": {
+   "name": "BookProof.ChapterSirkTrotterKato.trotterKato_tendsto",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto.lean",
+   "title": "(hres : StrongResolventConvergence T S) (v : H) (t : \u211d) : Tendsto (fun n => (S n).stoneU t v) atTop (\ud835\udcdd (T.stoneU t v))",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.trotterKato_tendsto` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn": {
+   "name": "BookProof.ChapterSirkTrotterKato.trotterKato_tendstoUniformlyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn.lean",
+   "title": "(hres : StrongResolventConvergence T S) (v : H) {T\u2080 : \u211d} (hT\u2080 : 0 \u2264 T\u2080) : TendstoUniformlyOn (fun n t => (S n).stoneU t v) (fun t => T.stoneU t v) atTop (Set.Icc (-T\u2080) T\u2080)",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.trotterKato_tendstoUniformlyOn` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range": {
+   "name": "BookProof.ChapterSirkTrotterKato.trotterKato_uniform_of_mem_range",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range.lean",
+   "title": "(hres : StrongResolventConvergence T S) (w : T.domain) {T\u2080 : \u211d} (hT\u2080 : 0 \u2264 T\u2080) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2200\u1da0 n in atTop, \u2200 t : \u211d, |t| \u2264 T\u2080 \u2192 \u2016(S n).stoneU t (T.resCLM 1 (w : H)) - T.stoneU t (T.resCLM 1 (w : H))\u2016 \u2264 \u03b5",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.trotterKato_uniform_of_mem_range` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_on_interval": {
+   "name": "BookProof.ChapterSirkTrotterKato.trotterKato_uniform_on_interval",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkTrotterKato_trotterKato_uniform_on_interval.lean",
+   "title": "(hres : StrongResolventConvergence T S) (v : H) {T\u2080 : \u211d} (hT\u2080 : 0 \u2264 T\u2080) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2200\u1da0 n in atTop, \u2200 t : \u211d, |t| \u2264 T\u2080 \u2192 \u2016(S n).stoneU t v - T.stoneU t v\u2016 \u2264 \u03b5",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkTrotterKato.trotterKato_uniform_on_interval` (module `BookProof.ChapterSirkTrotterKato`), source chapter `BookProof/ChapterChapterSirkTrotterKato.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkTrotterKato.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_krylov_multiShift_eq_standard": {
+   "name": "BookProof.ChapterSirkMultiShift.krylov_multiShift_eq_standard",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_krylov_multiShift_eq_standard.lean",
+   "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) (m : \u2115) : Submodule.span K {x | \u2203 i < m, x = multiShiftSeq H z v i} = krylovSpan H v m",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.krylov_multiShift_eq_standard` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_krylov_multiShift_span_eq_of_shifts": {
+   "name": "BookProof.ChapterSirkMultiShift.krylov_multiShift_span_eq_of_shifts",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_krylov_multiShift_span_eq_of_shifts.lean",
+   "title": "(H : E \u2192\u2097[K] E) (z z' : \u2115 \u2192 K) (v : E) (m : \u2115) : Submodule.span K {x | \u2203 i < m, x = multiShiftSeq H z v i} = Submodule.span K {x | \u2203 i < m, x = multiShiftSeq H z' v i}",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.krylov_multiShift_span_eq_of_shifts` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_mem_seqSpan": {
+   "name": "BookProof.ChapterSirkMultiShift.mem_seqSpan",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_mem_seqSpan.lean",
+   "title": "(u : \u2115 \u2192 E) {i m : \u2115} (hi : i < m) : u i \u2208 seqSpan (K",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.mem_seqSpan` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_const": {
+   "name": "BookProof.ChapterSirkMultiShift.multiShiftSeq_const",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_const.lean",
+   "title": "(H : E \u2192\u2097[K] E) (\u03b3 : K) (v : E) (k : \u2115) : multiShiftSeq H (fun _ => \u03b3) v k = noInversionSeq H \u03b3 v k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_const` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_sub_pow_mem": {
+   "name": "BookProof.ChapterSirkMultiShift.multiShiftSeq_sub_pow_mem",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_sub_pow_mem.lean",
+   "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) (k : \u2115) : multiShiftSeq H z v k - (H ^ k) v \u2208 krylovSpan H v k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_sub_pow_mem` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_succ": {
+   "name": "BookProof.ChapterSirkMultiShift.multiShiftSeq_succ",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_succ.lean",
+   "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) (k : \u2115) : multiShiftSeq H z v (k + 1) = H (multiShiftSeq H z v k) - z k \u2022 multiShiftSeq H z v k",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_succ` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_zero": {
+   "name": "BookProof.ChapterSirkMultiShift.multiShiftSeq_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_zero.lean",
+   "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) : multiShiftSeq H z v 0 = v",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_zero` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_pow_mem_seqSpan": {
+   "name": "BookProof.ChapterSirkMultiShift.pow_mem_seqSpan",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_pow_mem_seqSpan.lean",
+   "title": "(u : \u2115 \u2192 E) (hu : \u2200 i, u i - (H ^ i) v \u2208 krylovSpan H v i) (i : \u2115) : (H ^ i) v \u2208 seqSpan (K",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.pow_mem_seqSpan` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_seqSpan_le_krylovSpan": {
+   "name": "BookProof.ChapterSirkMultiShift.seqSpan_le_krylovSpan",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_seqSpan_le_krylovSpan.lean",
+   "title": "(u : \u2115 \u2192 E) (hu : \u2200 i, u i - (H ^ i) v \u2208 krylovSpan H v i) (m : \u2115) : seqSpan (K",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.seqSpan_le_krylovSpan` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_seqSpan_mono": {
+   "name": "BookProof.ChapterSirkMultiShift.seqSpan_mono",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_seqSpan_mono.lean",
+   "title": "(u : \u2115 \u2192 E) {m n : \u2115} (hmn : m \u2264 n) : seqSpan (K",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.seqSpan_mono` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_ChapterSirkMultiShift_triangularSpan_eq_krylovSpan": {
+   "name": "BookProof.ChapterSirkMultiShift.triangularSpan_eq_krylovSpan",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterSirkMultiShift_triangularSpan_eq_krylovSpan.lean",
+   "title": "(u : \u2115 \u2192 E) (hu : \u2200 i, u i - (H ^ i) v \u2208 krylovSpan H v i) (m : \u2115) : seqSpan (K",
+   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.triangularSpan_eq_krylovSpan` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
+   "tags": [
+    "timepiece",
+    "sirk",
+    "spectral-theory"
+   ]
   }
  },
  "sol_order": [
@@ -4186,6 +5162,35 @@
   "BookProof_ChapterH8_compress_rational_transfer",
   "BookProof_ChapterH9_numRange_compress_subset",
   "BookProof_ChapterH9_numRange_subset_closedBall",
+  "BookProof_ChapterSirkGramCutoff_exists_gramEigen",
+  "BookProof_ChapterSirkGramCutoff_inner_synthesis_gramEigen",
+  "BookProof_ChapterSirkGramCutoff_mem_range_retainedEmbedding",
+  "BookProof_ChapterSirkGramCutoff_norm_sq_sum_orthogonal",
+  "BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range",
+  "BookProof_ChapterSirkGramCutoff_range_retainedEmbedding",
+  "BookProof_ChapterSirkGramCutoff_synthesis_eq_sum_gramEigen",
+  "BookProof_ChapterSirkGramCutoff_synthesis_isometry_of_orthonormal",
+  "BookProof_ChapterSirkGramCutoff_synthesis_single",
+  "BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner",
+  "BookProof_ChapterSirkGramWhitening_gramMatrix_conjTranspose",
+  "BookProof_ChapterSirkGramWhitening_gramOp_isSelfAdjoint",
+  "BookProof_ChapterSirkGramWhitening_inner_gramOp",
+  "BookProof_ChapterSirkGramWhitening_inner_synthesis_left",
+  "BookProof_ChapterSirkGramWhitening_isWhiteningMatrix_one_of_orthonormal",
+  "BookProof_ChapterSirkGramWhitening_onbEmbedding_apply",
+  "BookProof_ChapterSirkGramWhitening_range_onbEmbedding",
+  "BookProof_ChapterSirkGramWhitening_range_synthesis",
+  "BookProof_ChapterSirkGramWhitening_sum_norm_coord_le",
+  "BookProof_ChapterSirkGramWhitening_synthesis_apply",
+  "BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent",
+  "BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self",
+  "BookProof_ChapterSirkGramWhitening_whitened_apply",
+  "BookProof_ChapterSirkMultiShift_mem_seqSpan",
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_const",
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_succ",
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_zero",
+  "BookProof_ChapterSirkMultiShift_seqSpan_le_krylovSpan",
+  "BookProof_ChapterSirkMultiShift_seqSpan_mono",
   "BookProof_ChapterSirkRestart_comp_pow_of_comm",
   "BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction",
   "BookProof_ChapterSirkRestart_restart_error_tendsto_zero",
@@ -4203,6 +5208,15 @@
   "BookProof_ChapterSirkSpectralGeometry_numRange_subset_realSegment_of_shiftInvert",
   "BookProof_ChapterSirkSpectralGeometry_realSegment_subset_closedBall",
   "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain",
+  "BookProof_ChapterSirkTrotterKato_exists_res_domain_approx",
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub",
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_incr",
+  "BookProof_ChapterSirkTrotterKato_isCompact_orbit",
+  "BookProof_ChapterSirkTrotterKato_norm_resDiff_apply_le",
+  "BookProof_ChapterSirkTrotterKato_resolvent_commutator_eq",
+  "BookProof_ChapterSirkTrotterKato_stoneU_shift",
+  "BookProof_ChapterSirkTrotterKato_tendsto_resDiff",
+  "BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto",
   "BookProof_ChapterSirkTruncation_adjoint_reconstruction_eq",
   "BookProof_ChapterSirkTruncation_compress_comp",
   "BookProof_ChapterSirkTruncation_isometry_comp",
@@ -4213,6 +5227,16 @@
   "BookProof_ChapterH1_resolvent_shift_repr",
   "BookProof_ChapterH4_compress_pow",
   "BookProof_ChapterH4_sirk_error_bound_decay",
+  "BookProof_ChapterSirkGramCutoff_norm_sq_synthesis_gramEigen",
+  "BookProof_ChapterSirkGramCutoff_retainedVec_orthonormal",
+  "BookProof_ChapterSirkGramWhitening_gramOp_nonneg",
+  "BookProof_ChapterSirkGramWhitening_synthesis_adjoint_eq",
+  "BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry",
+  "BookProof_ChapterSirkGramWhitening_synthesis_mem_span",
+  "BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le",
+  "BookProof_ChapterSirkGramWhitening_norm_whitened_apply",
+  "BookProof_ChapterSirkMultiShift_multiShiftSeq_sub_pow_mem",
+  "BookProof_ChapterSirkMultiShift_pow_mem_seqSpan",
   "BookProof_ChapterSirkRestart_brst_leakage_zero_of_exact",
   "BookProof_ChapterSirkRestart_restart_error_accumulation",
   "BookProof_ChapterSirkRitzSpectrum_neg_norm_le_re_inner",
@@ -4222,21 +5246,50 @@
   "BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert",
   "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert",
   "BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC",
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply",
   "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated",
   "BookProof_ChapterH1_phi_one",
   "BookProof_ChapterH4_compress_transfer",
+  "BookProof_ChapterSirkGramCutoff_gramEigen_nonneg",
+  "BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry",
+  "BookProof_ChapterSirkGramWhitening_gramOp_apply",
+  "BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span",
+  "BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span",
+  "BookProof_ChapterSirkGramWhitening_range_whitened_le",
+  "BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram",
+  "BookProof_ChapterSirkMultiShift_triangularSpan_eq_krylovSpan",
   "BookProof_ChapterSirkRestart_brst_leakage_bound",
   "BookProof_ChapterSirkRestart_restart_error_accumulation_sirk",
   "BookProof_ChapterSirkRitzSpectrum_rayleighSet_bddBelow",
   "BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow",
   "BookProof_ChapterSirkRitzSpectrum_spectrum_real_nonempty",
+  "BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel",
   "BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated_of_exact",
+  "BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le",
+  "BookProof_ChapterSirkGramWhitening_gramOp_eq_toEuclideanCLM",
+  "BookProof_ChapterSirkGramWhitening_exists_isWhitening",
+  "BookProof_ChapterSirkGramWhitening_range_whitened",
+  "BookProof_ChapterSirkMultiShift_krylov_multiShift_eq_standard",
   "BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le",
   "BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow",
+  "BookProof_ChapterSirkTrotterKato_norm_res_stoneU_sub_stoneU_res_le",
+  "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
+  "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix",
+  "BookProof_ChapterSirkGramWhitening_compress_gram_whitening_conj",
+  "BookProof_ChapterSirkGramWhitening_exists_whitened_isometry_onto_span",
+  "BookProof_ChapterSirkGramWhitening_sirkApprox_gram_whitening_eq",
+  "BookProof_ChapterSirkMultiShift_krylov_multiShift_span_eq_of_shifts",
   "BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_le",
+  "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range",
+  "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff_retained",
+  "BookProof_ChapterSirkGramCutoff_sirk_end_to_end_truncated_cutoff",
+  "BookProof_ChapterSirkGramWhitening_isWhitening_one_of_orthonormal",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_finiteModeDomain_eq_rayleighInf",
+  "BookProof_ChapterSirkTrotterKato_trotterKato_uniform_on_interval",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
+  "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto",
+  "BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn",
   "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected"
  ]
 }

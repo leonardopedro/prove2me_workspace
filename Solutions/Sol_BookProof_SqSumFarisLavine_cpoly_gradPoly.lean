@@ -1,0 +1,33 @@
+-- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.cpoly_gradPoly
+import Mathlib
+import Definitions.Def_ChapterSqSumFarisLavine
+import Theorems.Thm_BookProof_SqSumFarisLavine_cpoly_linForm
+open BookProof.SqSumFarisLavine
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.FarisLavine
+open BookProof.GaussCoreQuadBounds
+
+noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (v : R → Fin D → ℝ) (k : Fin D) :
+    cpoly (gradPoly v k) = gradPoly v k := by
+
+  rw [gradPoly, cpoly_sum]
+  exact Finset.sum_congr rfl fun r _ => by rw [cpoly_real_smul, cpoly_linForm]

@@ -1365,6 +1365,30 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "ChapterSqSumFarisLavine": {
+   "definition_name": "ChapterSqSumFarisLavine",
+   "namespace": "BookProof.SqSumFarisLavine",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSqSumFarisLavine.lean",
+   "title": "This module proves, on the Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d30)`, the two inequalities that Theorem 1 of Faris\u2013Lavine asks o ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SqSumFarisLavine`, source chapter `BookProof/ChapterSqSumFarisLavine.lean`).\n\nThis module proves, on the Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d30)`, the two inequalities that Theorem 1 of Faris\u2013Lavine asks of a Hamiltonian and its comparison operator, for the **kinetic-plus-squares Hamiltonian**\n\n`H = \u00bd \u03a3_j \u03ba_j \u03c0_j\u00b2 + \u00bd \u03a3_r L_r\u00b2`, `L_r = \u03a3_i v_{ri} x_i`,\n\nof `BookProof.QgOuterFock.sqSumOp`, against the harmonic comparison operator `N = \u2212\u0394 + \u2016x\u2016\u00b2/4` (`harmCore`). The signature `\u03ba` is an arbitrary *real* vector \u2014 no sign, no ellipticity \u2014 and the family of linear forms `L_r` is arbitrary and finite.\n\nWhat matters for the Fock lift is the *shape of the constants*: both are expressed through\n\n* `km`, a bound on `|\u03ba_j|`, and * Schur-type `\u2113\u00b9` bounds on the coefficient matrix `v` of the linear forms\n\nand **not** through the dimension `D`. This is exactly what makes the same two constants serve every particle-number sector of the outer Fock space simultaneously, which is the hypothesis the `\u2113\u00b2`-direct-sum Faris\u2013Lavine theorem of `BookProof.ChapterQgOuterFockFarisLavine` needs.\n\n* `schur_bound` \u2014 the Schur test for a real matrix with bounded row and column `\u2113\u00b9` norms; * `linFun`, `potFun`, `potPoly`, `gradPoly`, `gradFun`, `kinPart` \u2014 the data of the Hamiltonian, and `sqSumPoly_apply`, its splitting into kinetic and potential parts; * `potFun_le_of_schur`, `sum_gradFun_sq_le_of_schur` \u2014 the pointwise bounds `V(x) \u2264 (ab/2)\u2016x\u2016\u00b2` and `\u03a3_k (\u2202_k V)(x)\u00b2 \u2264 (ab)\u00b2\u2016x\u2016\u00b2` from the Schur data of `v`; * `commPoly`, `commPoly_eq` \u2014 the commutator `[H, N]` computed in polynomial coordinates: it is again first order, with the gradient of the potential as its coefficient; * `commForm_eq_im`, `abs_im_gaussInt_le` \u2014 the commutator form as a Gaussian integral; * **`commForm_sqSumOp_le`** \u2014 the Faris\u2013Lavine commutator bound `|\u27eau, i[H,N]u\u27eb| \u2264 (km/2 + 2M)\u00b7\u27eau, Nu\u27eb`, with `M` a bound on the gradient of the potential; * **`norm_sqSumOp_le`** \u2014 the relative bound `\u2016Hu\u2016 \u2264 (3km/2 + 8B)\u00b7\u2016(N+1)u\u2016`, with `B` a bound on the potential.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterGaussCoreQuadBounds": {
+   "definition_name": "ChapterGaussCoreQuadBounds",
+   "namespace": "BookProof.GaussCoreQuadBounds",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterGaussCoreQuadBounds.lean",
+   "title": "This module is the analytic toolbox behind the Faris\u2013Lavine inequalities for the quantum-gravity Hamiltonian. Everything ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.GaussCoreQuadBounds`, source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`).\n\nThis module is the analytic toolbox behind the Faris\u2013Lavine inequalities for the quantum-gravity Hamiltonian. Everything is computed on the Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d30)` \u2014 the vectors `pgLp p = p\u00b7e^{\u2212\u2016x\u2016\u00b2/4}` with `p` a polynomial \u2014 where inner products are Gaussian integrals of polynomials (`gaussInt`) and the harmonic comparison operator `N = \u2212\u0394 + \u2016x\u2016\u00b2/4` acts as the polynomial map `harmP p = kinPoly p + harmPoly\u00b7p`.\n\nThe estimates are stated so that **every constant is explicit and none of them depends on the dimension `D`** except through the coefficients of the operator being estimated; this is what later lets the same constants serve every particle-number sector of the outer Fock space.\n\n* `gaussInt_re`, `gaussInt_re_mono`, `norm_pgLp_sq` \u2014 the Gaussian integral of a real part, its monotonicity, and the `L\u00b2` norm of a core vector as a Gaussian integral; * `coreD_comm`, `coreD_mul`, `coreD_sq_mul`, `coreD_X_comm` \u2014 the twisted derivative `coreD j = \u2202_j \u2212 x_j/2` (the annihilation half of the canonical pair on the core): it commutes with itself in different directions, obeys the Leibniz rule and satisfies the canonical commutation relation `[coreD j, x_j] = 1`; * `quadForm_harm_eq`, `quadForm_harm_nonneg`, `norm_sq_le_quadForm_harm` \u2014 the quadratic form of the comparison operator, `\u27eau, Nu\u27eb = \u03a3_j \u2016coreD j u\u2016\u00b2 + (D/2)\u2016u\u2016\u00b2`-style identities, its positivity, and `\u2016u\u2016\u00b2 \u2264 \u27eau, Nu\u27eb`; * `shiftNorm` and the family `norm_pgLp_le_shiftNorm`, `norm_harmP_le_shiftNorm`, `dim_mul_norm_le_shiftNorm`, `sqrt_dim_mul_norm_le_shiftNorm`, `norm_harmPoly_mul_le_shiftNorm`, `norm_kinPoly_le_shiftNorm` \u2014 everything that the shifted comparison operator `N + 1` controls, in the graph norm `\u2016(N+1)u\u2016`; * `norm_weighted_kin_sq`, `norm_weighted_kin_le` \u2014 **the kinetic estimate**: a weighted second-order operator `\u03a3_j c_j \u2202_j\u00b2` is bounded by `\u2016(N+1)u\u2016` with a constant proportional to `sup_j |c_j|`, with no dependence on `D`; * `norm_mul_le_of_pointwise`, `sum_norm_sq_mul_le_of_pointwise` \u2014 **the potential estimate**: multiplication by a polynomial dominated pointwise by `\u03bb\u2016x\u2016\u00b2` is bounded by `\u2016(N+1)u\u2016` with a constant proportional to `\u03bb`.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "thms": {
@@ -10222,6 +10246,586 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "BookProof_SqSumFarisLavine_C_two_eq": {
+   "name": "BookProof.SqSumFarisLavine.C_two_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_C_two_eq.lean",
+   "title": ": (C (2 : \u2102) : MvPolynomial (Fin D) \u2102) = 2",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.C_two_eq` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_abs_im_gaussInt_le": {
+   "name": "BookProof.SqSumFarisLavine.abs_im_gaussInt_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_abs_im_gaussInt_le.lean",
+   "title": "(q w : MvPolynomial (Fin D) \u2102) : |(gaussInt (cpoly q * w)).im| \u2264 \u2016pgLp q\u2016 * \u2016pgLp w\u2016",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.abs_im_gaussInt_le` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_commPoly_eq": {
+   "name": "BookProof.SqSumFarisLavine.commPoly_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_commPoly_eq.lean",
+   "title": "(kappa : Fin D \u2192 \u211d) (v : R \u2192 Fin D \u2192 \u211d) (p : MvPolynomial (Fin D) \u2102) : commPoly kappa v p = ((commConst kappa v : \u211d) : \u2102) \u2022 p + (\u2211 j : Fin D, ((-(kappa j) / 2 : \u211d) : \u2102) \u2022 (X j * coreD j p)) + (2 : \u2102) \u2022 \u2211 k : Fin D, gradPoly v k * coreD k p",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.commPoly_eq` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_coreD_neg": {
+   "name": "BookProof.SqSumFarisLavine.coreD_neg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_coreD_neg.lean",
+   "title": "(j : Fin D) (p : MvPolynomial (Fin D) \u2102) : coreD j (-p) = -coreD j p",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.coreD_neg` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_coreD_sum": {
+   "name": "BookProof.SqSumFarisLavine.coreD_sum",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_coreD_sum.lean",
+   "title": "{\u03b9 : Type*} (s : Finset \u03b9) (j : Fin D) (f : \u03b9 \u2192 MvPolynomial (Fin D) \u2102) : coreD j (\u2211 i \u2208 s, f i) = \u2211 i \u2208 s, coreD j (f i)",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.coreD_sum` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_core_eq_pgLp": {
+   "name": "BookProof.SqSumFarisLavine.core_eq_pgLp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_core_eq_pgLp.lean",
+   "title": "(u : polyGaussCore (d",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.core_eq_pgLp` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_cpoly_gradPoly": {
+   "name": "BookProof.SqSumFarisLavine.cpoly_gradPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_cpoly_gradPoly.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (k : Fin D) : cpoly (gradPoly v k) = gradPoly v k",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.cpoly_gradPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_cpoly_linForm": {
+   "name": "BookProof.SqSumFarisLavine.cpoly_linForm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_cpoly_linForm.lean",
+   "title": "(v : Fin D \u2192 \u211d) : cpoly (linForm v) = linForm v",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.cpoly_linForm` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_eval_gradPoly": {
+   "name": "BookProof.SqSumFarisLavine.eval_gradPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_eval_gradPoly.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (k : Fin D) (x : Vd D) : MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (gradPoly v k) = ((gradFun v k x : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.eval_gradPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_eval_linForm": {
+   "name": "BookProof.SqSumFarisLavine.eval_linForm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_eval_linForm.lean",
+   "title": "(v : Fin D \u2192 \u211d) (x : Vd D) : MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (linForm v) = ((linFun v x : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.eval_linForm` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_eval_potPoly": {
+   "name": "BookProof.SqSumFarisLavine.eval_potPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_eval_potPoly.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (x : Vd D) : MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (potPoly v) = ((potFun v x : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.eval_potPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_kin_kin_comm": {
+   "name": "BookProof.SqSumFarisLavine.kin_kin_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_kin_kin_comm.lean",
+   "title": "(c : Fin D \u2192 \u2102) (p : MvPolynomial (Fin D) \u2102) : (\u2211 k : Fin D, coreD k (coreD k (\u2211 j : Fin D, c j \u2022 coreD j (coreD j p)))) = \u2211 j : Fin D, c j \u2022 coreD j (coreD j (\u2211 k : Fin D, coreD k (coreD k p)))",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.kin_kin_comm` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_kin_mul_comm": {
+   "name": "BookProof.SqSumFarisLavine.kin_mul_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_kin_mul_comm.lean",
+   "title": "(c : Fin D \u2192 \u2102) (f p : MvPolynomial (Fin D) \u2102) : (\u2211 j : Fin D, c j \u2022 coreD j (coreD j (f * p))) - f * \u2211 j : Fin D, c j \u2022 coreD j (coreD j p) = \u2211 j : Fin D, c j \u2022 (pderiv j (pderiv j f) * p + (2 : \u2102) \u2022 (pderiv j f * coreD j p))",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.kin_mul_comm` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_norm_potPoly_mul_le": {
+   "name": "BookProof.SqSumFarisLavine.norm_potPoly_mul_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_norm_potPoly_mul_le.lean",
+   "title": "{v : R \u2192 Fin D \u2192 \u211d} {B : \u211d} (hB0 : 0 \u2264 B) (hB : \u2200 x : Vd D, potFun v x \u2264 B * \u2016x\u2016 ^ 2) (p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (potPoly v * p)\u2016 \u2264 4 * B * \u2016pgLp (harmPoly * p)\u2016",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.norm_potPoly_mul_le` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_norm_sqSumPoly_le": {
+   "name": "BookProof.SqSumFarisLavine.norm_sqSumPoly_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_norm_sqSumPoly_le.lean",
+   "title": "{kappa : Fin D \u2192 \u211d} {v : R \u2192 Fin D \u2192 \u211d} {km B : \u211d} (hkm : 0 \u2264 km) (hk : \u2200 j, |kappa j| \u2264 km) (hB0 : 0 \u2264 B) (hB : \u2200 x : Vd D, potFun v x \u2264 B * \u2016x\u2016 ^ 2) (p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (sqSumPoly kappa v p)\u2016 \u2264 (3 / 2 * km + 8 * B) * shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.norm_sqSumPoly_le` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_pderiv_gradPoly_self": {
+   "name": "BookProof.SqSumFarisLavine.pderiv_gradPoly_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_pderiv_gradPoly_self.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (k : Fin D) : pderiv k (gradPoly v k) = C (((\u2211 r : R, (v r k) ^ 2 : \u211d) : \u2102))",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.pderiv_gradPoly_self` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_pderiv_harmPoly": {
+   "name": "BookProof.SqSumFarisLavine.pderiv_harmPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_pderiv_harmPoly.lean",
+   "title": "(j : Fin D) : pderiv j (harmPoly (d",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.pderiv_harmPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_pderiv_linForm": {
+   "name": "BookProof.SqSumFarisLavine.pderiv_linForm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_pderiv_linForm.lean",
+   "title": "(v : Fin D \u2192 \u211d) (j : Fin D) : pderiv j (linForm v) = C ((v j : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.pderiv_linForm` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly": {
+   "name": "BookProof.SqSumFarisLavine.pderiv_pderiv_harmPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly.lean",
+   "title": "(j : Fin D) : pderiv j (pderiv j (harmPoly (d",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.pderiv_pderiv_harmPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_pderiv_potPoly": {
+   "name": "BookProof.SqSumFarisLavine.pderiv_potPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_pderiv_potPoly.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (k : Fin D) : pderiv k (potPoly v) = gradPoly v k",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.pderiv_potPoly` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_potFun_le_of_schur": {
+   "name": "BookProof.SqSumFarisLavine.potFun_le_of_schur",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_potFun_le_of_schur.lean",
+   "title": "{v : R \u2192 Fin D \u2192 \u211d} {a b : \u211d} (ha0 : 0 \u2264 a) (ha : \u2200 r, \u2211 i : Fin D, |v r i| \u2264 a) (hb : \u2200 i, \u2211 r : R, |v r i| \u2264 b) (x : Vd D) : potFun v x \u2264 (a * b / 2) * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.potFun_le_of_schur` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_potFun_nonneg": {
+   "name": "BookProof.SqSumFarisLavine.potFun_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_potFun_nonneg.lean",
+   "title": "(v : R \u2192 Fin D \u2192 \u211d) (x : Vd D) : 0 \u2264 potFun v x",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.potFun_nonneg` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_schur_bound": {
+   "name": "BookProof.SqSumFarisLavine.schur_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_schur_bound.lean",
+   "title": "{I J : Type*} [Fintype I] [Fintype J] (A : I \u2192 J \u2192 \u211d) {a b : \u211d} (ha0 : 0 \u2264 a) (ha : \u2200 i, \u2211 j : J, |A i j| \u2264 a) (hb : \u2200 j, \u2211 i : I, |A i j| \u2264 b) (y : J \u2192 \u211d) : \u2211 i : I, (\u2211 j : J, A i j * y j) ^ 2 \u2264 a * b * \u2211 j : J, (y j) ^ 2",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.schur_bound` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_sqSumPoly_apply": {
+   "name": "BookProof.SqSumFarisLavine.sqSumPoly_apply",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_sqSumPoly_apply.lean",
+   "title": "(kappa : Fin D \u2192 \u211d) (v : R \u2192 Fin D \u2192 \u211d) (p : MvPolynomial (Fin D) \u2102) : sqSumPoly kappa v p = kinPart kappa p + potPoly v * p",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.sqSumPoly_apply` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur": {
+   "name": "BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur.lean",
+   "title": "{v : R \u2192 Fin D \u2192 \u211d} {a b : \u211d} (ha0 : 0 \u2264 a) (hb0 : 0 \u2264 b) (ha : \u2200 r, \u2211 i : Fin D, |v r i| \u2264 a) (hb : \u2200 i, \u2211 r : R, |v r i| \u2264 b) (x : Vd D) : \u2211 k : Fin D, (gradFun v k x) ^ 2 \u2264 (a * b) ^ 2 * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur` (module `BookProof.SqSumFarisLavine`), source chapter `BookProof/ChapterSqSumFarisLavine.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterSqSumFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_coreD_X_comm": {
+   "name": "BookProof.GaussCoreQuadBounds.coreD_X_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_coreD_X_comm.lean",
+   "title": "(j : Fin D) (p : MvPolynomial (Fin D) \u2102) : coreD j (X j * p) - X j * coreD j p = p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.coreD_X_comm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_coreD_comm": {
+   "name": "BookProof.GaussCoreQuadBounds.coreD_comm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_coreD_comm.lean",
+   "title": "(j k : Fin D) (p : MvPolynomial (Fin D) \u2102) : coreD j (coreD k p) = coreD k (coreD j p)",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.coreD_comm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_coreD_mul": {
+   "name": "BookProof.GaussCoreQuadBounds.coreD_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_coreD_mul.lean",
+   "title": "(j : Fin D) (f p : MvPolynomial (Fin D) \u2102) : coreD j (f * p) = pderiv j f * p + f * coreD j p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.coreD_mul` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_coreD_sq_mul": {
+   "name": "BookProof.GaussCoreQuadBounds.coreD_sq_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_coreD_sq_mul.lean",
+   "title": "(j : Fin D) (f p : MvPolynomial (Fin D) \u2102) : coreD j (coreD j (f * p)) = pderiv j (pderiv j f) * p + (2 : \u2102) \u2022 (pderiv j f * coreD j p) + f * coreD j (coreD j p)",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.coreD_sq_mul` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_cpoly_real_smul": {
+   "name": "BookProof.GaussCoreQuadBounds.cpoly_real_smul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_cpoly_real_smul.lean",
+   "title": "(c : \u211d) (q : MvPolynomial (Fin D) \u2102) : cpoly (((c : \u211d) : \u2102) \u2022 q) = ((c : \u211d) : \u2102) \u2022 cpoly q",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.cpoly_real_smul` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.dim_mul_norm_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : ((D : \u211d) / 2 + 1) * \u2016pgLp p\u2016 \u2264 shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.dim_mul_norm_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_eval_cpoly_self_re": {
+   "name": "BookProof.GaussCoreQuadBounds.eval_cpoly_self_re",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_eval_cpoly_self_re.lean",
+   "title": "(q : MvPolynomial (Fin D) \u2102) (x : Vd D) : (MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (cpoly q * q)).re = \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) q\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.eval_cpoly_self_re` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair": {
+   "name": "BookProof.GaussCoreQuadBounds.gaussInt_coreD_sq_pair",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair.lean",
+   "title": "(j k : Fin D) (p : MvPolynomial (Fin D) \u2102) : gaussInt (cpoly (coreD j (coreD j p)) * coreD k (coreD k p)) = ((\u2016pgLp (coreD k (coreD j p))\u2016 ^ 2 : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.gaussInt_coreD_sq_pair` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_gaussInt_re": {
+   "name": "BookProof.GaussCoreQuadBounds.gaussInt_re",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_gaussInt_re.lean",
+   "title": "(r : MvPolynomial (Fin D) \u2102) : (gaussInt r).re = \u222b x : Vd D, (MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) r).re * gaussWD x",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.gaussInt_re` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_gaussInt_re_mono": {
+   "name": "BookProof.GaussCoreQuadBounds.gaussInt_re_mono",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_gaussInt_re_mono.lean",
+   "title": "{r s : MvPolynomial (Fin D) \u2102} (h : \u2200 x : Vd D, (MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) r).re \u2264 (MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) s).re) : (gaussInt r).re \u2264 (gaussInt s).re",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.gaussInt_re_mono` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_gaussInt_self": {
+   "name": "BookProof.GaussCoreQuadBounds.gaussInt_self",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_gaussInt_self.lean",
+   "title": "(q : MvPolynomial (Fin D) \u2102) : gaussInt (cpoly q * q) = ((\u2016pgLp q\u2016 ^ 2 : \u211d) : \u2102)",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.gaussInt_self` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_inner_harmP_re": {
+   "name": "BookProof.GaussCoreQuadBounds.inner_harmP_re",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_inner_harmP_re.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : (inner \u2102 (pgLp (harmP p)) (pgLp p) : \u2102).re = quadForm harmCore \u27e8pgLp p, pgLp_mem_core p\u27e9",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.inner_harmP_re` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_harmP_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (harmP p)\u2016 \u2264 shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_harmP_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (harmPoly * p)\u2016 \u2264 2 * shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_kinPoly_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (kinPoly p)\u2016 \u2264 3 * shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_kinPoly_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise.lean",
+   "title": "{f g : MvPolynomial (Fin D) \u2102} {lam : \u211d} (hlam : 0 \u2264 lam) (h : \u2200 x : Vd D, \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) f\u2016 \u2264 lam * \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) g\u2016) (p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (f * p)\u2016 \u2264 lam * \u2016pgLp (g * p)\u2016",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : \u2016pgLp p\u2016 \u2264 shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_pgLp_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_pgLp_sq": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_sq.lean",
+   "title": "(q : MvPolynomial (Fin D) \u2102) : \u2016pgLp q\u2016 ^ 2 = (gaussInt (cpoly q * q)).re",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_pgLp_sq` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : ((D : \u211d) / 2) * \u2016pgLp p\u2016 ^ 2 \u2264 quadForm harmCore \u27e8pgLp p, pgLp_mem_core p\u27e9",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_weighted_kin_le": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_weighted_kin_le.lean",
+   "title": "{kappa : Fin D \u2192 \u211d} {km : \u211d} (hkm : 0 \u2264 km) (hk : \u2200 j, |kappa j| \u2264 km) (p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (\u2211 j : Fin D, ((kappa j : \u211d) : \u2102) \u2022 coreD j (coreD j p))\u2016 \u2264 km * \u2016pgLp (kinPoly p)\u2016",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_weighted_kin_le` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq": {
+   "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq.lean",
+   "title": "(c : Fin D \u2192 \u211d) (p : MvPolynomial (Fin D) \u2102) : \u2016pgLp (\u2211 j : Fin D, ((c j : \u211d) : \u2102) \u2022 coreD j (coreD j p))\u2016 ^ 2 = \u2211 j : Fin D, \u2211 k : Fin D, c j * c k * \u2016pgLp (coreD k (coreD j p))\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.norm_weighted_kin_sq` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_quadForm_harm_eq": {
+   "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : quadForm harmCore \u27e8pgLp p, pgLp_mem_core p\u27e9 = \u2211 j : Fin D, (\u2016pgLp (coreD j p)\u2016 ^ 2 + \u2016pgLp (X j * p)\u2016 ^ 2 / 4)",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.quadForm_harm_eq` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg": {
+   "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : 0 \u2264 quadForm harmCore \u27e8pgLp p, pgLp_mem_core p\u27e9",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_re_inner_symm": {
+   "name": "BookProof.GaussCoreQuadBounds.re_inner_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_re_inner_symm.lean",
+   "title": "(a b : L2d D) : (inner \u2102 a b : \u2102).re = (inner \u2102 b a : \u2102).re",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.re_inner_symm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_shiftNorm_nonneg": {
+   "name": "BookProof.GaussCoreQuadBounds.shiftNorm_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_shiftNorm_nonneg.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : 0 \u2264 shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.shiftNorm_nonneg` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_shiftNorm_sq": {
+   "name": "BookProof.GaussCoreQuadBounds.shiftNorm_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_shiftNorm_sq.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : shiftNorm p ^ 2 = \u2016pgLp (harmP p)\u2016 ^ 2 + 2 * quadForm harmCore \u27e8pgLp p, pgLp_mem_core p\u27e9 + \u2016pgLp p\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.shiftNorm_sq` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm": {
+   "name": "BookProof.GaussCoreQuadBounds.sqrt_dim_mul_norm_le_shiftNorm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm.lean",
+   "title": "(p : MvPolynomial (Fin D) \u2102) : Real.sqrt ((D : \u211d) / 2) * \u2016pgLp p\u2016 \u2264 shiftNorm p",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.sqrt_dim_mul_norm_le_shiftNorm` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise": {
+   "name": "BookProof.GaussCoreQuadBounds.sum_norm_sq_mul_le_of_pointwise",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise.lean",
+   "title": "{R : Type*} [Fintype R] {f : R \u2192 MvPolynomial (Fin D) \u2102} {g : R \u2192 MvPolynomial (Fin D) \u2102} {lam : \u211d} (h : \u2200 x : Vd D, \u2211 r : R, \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (f r)\u2016 ^ 2 \u2264 lam * \u2211 r : R, \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) (g r)\u2016 ^ 2) (p : MvPolynomial (Fin D) \u2102) : \u2211 r : R, \u2016p ...",
+   "nl": "Lean 4 theorem `BookProof.GaussCoreQuadBounds.sum_norm_sq_mul_le_of_pointwise` (module `BookProof.GaussCoreQuadBounds`), source chapter `BookProof/ChapterGaussCoreQuadBounds.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterGaussCoreQuadBounds.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -10638,6 +11242,16 @@
   "BookProof_FockSecondQuantization_up_of_ne",
   "BookProof_FockSecondQuantization_up_self",
   "BookProof_FriedrichsFormGap_formSpace_norm_bound",
+  "BookProof_GaussCoreQuadBounds_coreD_comm",
+  "BookProof_GaussCoreQuadBounds_coreD_mul",
+  "BookProof_GaussCoreQuadBounds_cpoly_real_smul",
+  "BookProof_GaussCoreQuadBounds_eval_cpoly_self_re",
+  "BookProof_GaussCoreQuadBounds_gaussInt_re",
+  "BookProof_GaussCoreQuadBounds_gaussInt_self",
+  "BookProof_GaussCoreQuadBounds_norm_pgLp_sq",
+  "BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg",
+  "BookProof_GaussCoreQuadBounds_re_inner_symm",
+  "BookProof_GaussCoreQuadBounds_shiftNorm_nonneg",
   "BookProof_NavierStokesFlow_DiffFarisLavine_canH_coe_velH",
   "BookProof_NavierStokesFlow_DiffFarisLavine_crd_numSeq",
   "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxEquiv_coe",
@@ -10737,6 +11351,18 @@
   "BookProof_SirkCertificateReader_parseDec_neg_example",
   "BookProof_SirkCertificateReader_parseDec_reject",
   "BookProof_SirkCertificateReader_toGapCertificate_lower",
+  "BookProof_SqSumFarisLavine_C_two_eq",
+  "BookProof_SqSumFarisLavine_abs_im_gaussInt_le",
+  "BookProof_SqSumFarisLavine_coreD_neg",
+  "BookProof_SqSumFarisLavine_coreD_sum",
+  "BookProof_SqSumFarisLavine_core_eq_pgLp",
+  "BookProof_SqSumFarisLavine_cpoly_linForm",
+  "BookProof_SqSumFarisLavine_eval_linForm",
+  "BookProof_SqSumFarisLavine_kin_mul_comm",
+  "BookProof_SqSumFarisLavine_pderiv_linForm",
+  "BookProof_SqSumFarisLavine_potFun_nonneg",
+  "BookProof_SqSumFarisLavine_schur_bound",
+  "BookProof_SqSumFarisLavine_sqSumPoly_apply",
   "BookProof_BandEnclosure_band_enclosure_of_nested",
   "BookProof_BandEnclosure_quadForm_ge_of_le_ritzInf",
   "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite",
@@ -10782,6 +11408,12 @@
   "BookProof_FockSecondQuantization_up_dn_comm",
   "BookProof_FockSecondQuantization_up_up_comm",
   "BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound",
+  "BookProof_GaussCoreQuadBounds_coreD_X_comm",
+  "BookProof_GaussCoreQuadBounds_coreD_sq_mul",
+  "BookProof_GaussCoreQuadBounds_gaussInt_re_mono",
+  "BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair",
+  "BookProof_GaussCoreQuadBounds_quadForm_harm_eq",
+  "BookProof_GaussCoreQuadBounds_inner_harmP_re",
   "BookProof_NavierStokesFlow_DiffFarisLavine_velNcore_eq_diagMax",
   "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_commForm_bound",
@@ -10808,6 +11440,8 @@
   "BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq",
   "BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState",
   "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ",
+  "BookProof_NavierStokesFlow_SecondQuant_fockComparison_ge_norm_sq",
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_commDom",
   "BookProof_NavierStokesFlow_SecondQuant_fockCore_dense",
   "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_ExpBounded_add",
@@ -10827,6 +11461,14 @@
   "BookProof_SirkBandLedger_ledger_width_eventually_const",
   "BookProof_SirkCertificateReader_formatExample_lower",
   "BookProof_SirkCertificateReader_gap_pos_of_ndjson",
+  "BookProof_SqSumFarisLavine_pderiv_harmPoly",
+  "BookProof_SqSumFarisLavine_kin_kin_comm",
+  "BookProof_SqSumFarisLavine_cpoly_gradPoly",
+  "BookProof_SqSumFarisLavine_eval_gradPoly",
+  "BookProof_SqSumFarisLavine_eval_potPoly",
+  "BookProof_SqSumFarisLavine_pderiv_gradPoly_self",
+  "BookProof_SqSumFarisLavine_pderiv_potPoly",
+  "BookProof_SqSumFarisLavine_potFun_le_of_schur",
   "BookProof_BandEnclosure_band_enclosure_endpoints_tendsto",
   "BookProof_BandEnclosure_ritz_band_enclosure_of_nested",
   "BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands",
@@ -10860,6 +11502,11 @@
   "BookProof_FockSecondQuantization_annA_apply",
   "BookProof_FockSecondQuantization_creA_apply",
   "BookProof_FriedrichsFormGap_friedrichs_extension_form_gap",
+  "BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise",
+  "BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise",
+  "BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq",
+  "BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm",
+  "BookProof_GaussCoreQuadBounds_shiftNorm_sq",
   "BookProof_NavierStokesFlow_DiffFarisLavine_polyGaussCore_le_diffMaxDom",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_eq_ladder",
   "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg",
@@ -10872,6 +11519,7 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq",
   "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState",
+  "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine",
   "BookProof_QgHermiteCore_expBounded_poly",
   "BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul",
   "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded",
@@ -10884,6 +11532,9 @@
   "BookProof_SirkBandLedger_loQ_monotone",
   "BookProof_SirkBandLedger_ledger_width_tendsto_zero_iff",
   "BookProof_SirkCertificateReader_formatExample_certified_gap",
+  "BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly",
+  "BookProof_SqSumFarisLavine_norm_potPoly_mul_le",
+  "BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur",
   "BookProof_BandEnclosure_sirk_band_enclosure",
   "BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands",
   "BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le",
@@ -10904,6 +11555,10 @@
   "BookProof_FockSecondQuantization_ccr_annA_creA_of_ne",
   "BookProof_FockSecondQuantization_ccr_creA_creA",
   "BookProof_FockSecondQuantization_support_creA",
+  "BookProof_GaussCoreQuadBounds_norm_weighted_kin_le",
+  "BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm",
+  "BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm",
+  "BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine",
   "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN",
   "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
@@ -10918,6 +11573,8 @@
   "BookProof_RitzCertificate_temple_band_mem",
   "BookProof_RitzCertificate_nested_certificate_of_bands",
   "BookProof_SirkBandLedger_nestedBands_of_wf",
+  "BookProof_SqSumFarisLavine_commPoly_eq",
+  "BookProof_SqSumFarisLavine_norm_sqSumPoly_le",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
   "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix",
   "BookProof_ChapterSirkGramWhitening_compress_gram_whitening_conj",
@@ -10931,6 +11588,7 @@
   "BookProof_FockOneParticleGap_fock_gap_quadForm",
   "BookProof_FockSecondQuantization_sum_creVec_annA_subset",
   "BookProof_FockSecondQuantization_inner_creA_left",
+  "BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
@@ -10952,6 +11610,7 @@
   "BookProof_FockSecondQuantization_dGamma_eq_sum_aux",
   "BookProof_FockSecondQuantization_inner_creA_right",
   "BookProof_FockSecondQuantization_inner_creVec_annA",
+  "BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
@@ -10967,6 +11626,7 @@
   "BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator",
   "BookProof_FockSecondQuantization_dGamma_eq_sum",
   "BookProof_FockSecondQuantization_inner_annA_creVec",
+  "BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow",
@@ -10984,9 +11644,6 @@
   "BookProof_FockSecondQuantization_secondQuantization_friedrichs",
   "BookProof_FockSecondQuantization_secondQuantization_hashimoto_selects",
   "BookProof_FockSecondQuantization_ym_fock_friedrichs_extension",
-  "BookProof_FockSecondQuantization_ym_fock_hashimoto_selects",
-  "BookProof_NavierStokesFlow_SecondQuant_fockComparison_ge_norm_sq",
-  "BookProof_NavierStokesFlow_SecondQuant_fockOp_commDom",
-  "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine"
+  "BookProof_FockSecondQuantization_ym_fock_hashimoto_selects"
  ]
 }

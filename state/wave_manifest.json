@@ -1,86 +1,415 @@
 [
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_comp",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_comp",
-  "plen": 3,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.schur_bound",
+  "slug": "BookProof_SqSumFarisLavine_schur_bound",
+  "plen": 39,
+  "ns": "BookProof.SqSumFarisLavine"
  },
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_sub",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_sub",
-  "plen": 3,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.sqSumPoly_apply",
+  "slug": "BookProof_SqSumFarisLavine_sqSumPoly_apply",
+  "plen": 30,
+  "ns": "BookProof.SqSumFarisLavine"
  },
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_commDom",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_commDom",
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.eval_linForm",
+  "slug": "BookProof_SqSumFarisLavine_eval_linForm",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.eval_potPoly",
+  "slug": "BookProof_SqSumFarisLavine_eval_potPoly",
+  "plen": 5,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.eval_gradPoly",
+  "slug": "BookProof_SqSumFarisLavine_eval_gradPoly",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.cpoly_linForm",
+  "slug": "BookProof_SqSumFarisLavine_cpoly_linForm",
   "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "ns": "BookProof.SqSumFarisLavine"
  },
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_isSymmetricDom",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_isSymmetricDom",
-  "plen": 13,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.cpoly_gradPoly",
+  "slug": "BookProof_SqSumFarisLavine_cpoly_gradPoly",
+  "plen": 2,
+  "ns": "BookProof.SqSumFarisLavine"
  },
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_norm_le_of_sectors",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors",
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.potFun_le_of_schur",
+  "slug": "BookProof_SqSumFarisLavine_potFun_le_of_schur",
+  "plen": 6,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur",
+  "slug": "BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur",
+  "plen": 10,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.potFun_nonneg",
+  "slug": "BookProof_SqSumFarisLavine_potFun_nonneg",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.norm_potPoly_mul_le",
+  "slug": "BookProof_SqSumFarisLavine_norm_potPoly_mul_le",
+  "plen": 6,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.norm_sqSumPoly_le",
+  "slug": "BookProof_SqSumFarisLavine_norm_sqSumPoly_le",
+  "plen": 16,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.coreD_sum",
+  "slug": "BookProof_SqSumFarisLavine_coreD_sum",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.coreD_neg",
+  "slug": "BookProof_SqSumFarisLavine_coreD_neg",
+  "plen": 1,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.pderiv_linForm",
+  "slug": "BookProof_SqSumFarisLavine_pderiv_linForm",
+  "plen": 6,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.C_two_eq",
+  "slug": "BookProof_SqSumFarisLavine_C_two_eq",
+  "plen": 2,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.pderiv_potPoly",
+  "slug": "BookProof_SqSumFarisLavine_pderiv_potPoly",
+  "plen": 12,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.pderiv_gradPoly_self",
+  "slug": "BookProof_SqSumFarisLavine_pderiv_gradPoly_self",
+  "plen": 6,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.pderiv_harmPoly",
+  "slug": "BookProof_SqSumFarisLavine_pderiv_harmPoly",
+  "plen": 12,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.pderiv_pderiv_harmPoly",
+  "slug": "BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly",
+  "plen": 1,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.kin_mul_comm",
+  "slug": "BookProof_SqSumFarisLavine_kin_mul_comm",
+  "plen": 5,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.kin_kin_comm",
+  "slug": "BookProof_SqSumFarisLavine_kin_kin_comm",
+  "plen": 20,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.commPoly_eq",
+  "slug": "BookProof_SqSumFarisLavine_commPoly_eq",
+  "plen": 67,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.coreEquiv_eq",
+  "slug": "BookProof_SqSumFarisLavine_coreEquiv_eq",
+  "plen": 1,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.sqSumOp_pgLp",
+  "slug": "BookProof_SqSumFarisLavine_sqSumOp_pgLp",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.harmCore_symmetricOn",
+  "slug": "BookProof_SqSumFarisLavine_harmCore_symmetricOn",
+  "plen": 1,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.commForm_eq_im",
+  "slug": "BookProof_SqSumFarisLavine_commForm_eq_im",
   "plen": 22,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "ns": "BookProof.SqSumFarisLavine"
  },
  {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_norm_inner_le_of_sectors",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors",
-  "plen": 27,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_ge_norm_sq",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq",
-  "plen": 15,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn_of_farisLavine",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine",
-  "plen": 13,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_hasZeroDeficiencyOn",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_hasZeroDeficiencyOn",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_ge_norm_sq",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_ge_norm_sq",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_dense",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_dense",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
- },
- {
-  "leaf": "ChapterNavierStokesFockFarisLavine",
-  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_domain_ne_top",
-  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_domain_ne_top",
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.core_eq_pgLp",
+  "slug": "BookProof_SqSumFarisLavine_core_eq_pgLp",
   "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.abs_im_gaussInt_le",
+  "slug": "BookProof_SqSumFarisLavine_abs_im_gaussInt_le",
+  "plen": 2,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.commForm_sqSumOp_le",
+  "slug": "BookProof_SqSumFarisLavine_commForm_sqSumOp_le",
+  "plen": 131,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterSqSumFarisLavine",
+  "name": "BookProof.SqSumFarisLavine.norm_sqSumOp_le",
+  "slug": "BookProof_SqSumFarisLavine_norm_sqSumOp_le",
+  "plen": 4,
+  "ns": "BookProof.SqSumFarisLavine"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.gaussInt_re",
+  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_re",
+  "plen": 4,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.gaussInt_re_mono",
+  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_re_mono",
+  "plen": 9,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_sq",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_pgLp_sq",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.coreD_comm",
+  "slug": "BookProof_GaussCoreQuadBounds_coreD_comm",
+  "plen": 7,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.coreD_mul",
+  "slug": "BookProof_GaussCoreQuadBounds_coreD_mul",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.coreD_sq_mul",
+  "slug": "BookProof_GaussCoreQuadBounds_coreD_sq_mul",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.coreD_X_comm",
+  "slug": "BookProof_GaussCoreQuadBounds_coreD_X_comm",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_eq",
+  "slug": "BookProof_GaussCoreQuadBounds_quadForm_harm_eq",
+  "plen": 18,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg",
+  "slug": "BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg",
+  "plen": 1,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm",
+  "plen": 39,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.re_inner_symm",
+  "slug": "BookProof_GaussCoreQuadBounds_re_inner_symm",
+  "plen": 1,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.inner_harmP_re",
+  "slug": "BookProof_GaussCoreQuadBounds_inner_harmP_re",
+  "plen": 5,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.shiftNorm_sq",
+  "slug": "BookProof_GaussCoreQuadBounds_shiftNorm_sq",
+  "plen": 3,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.shiftNorm_nonneg",
+  "slug": "BookProof_GaussCoreQuadBounds_shiftNorm_nonneg",
+  "plen": 0,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm",
+  "plen": 4,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_harmP_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm",
+  "plen": 3,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.dim_mul_norm_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm",
+  "plen": 19,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.sqrt_dim_mul_norm_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm",
+  "plen": 7,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm",
+  "plen": 4,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_kinPoly_le_shiftNorm",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm",
+  "plen": 10,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.gaussInt_self",
+  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_self",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.cpoly_real_smul",
+  "slug": "BookProof_GaussCoreQuadBounds_cpoly_real_smul",
+  "plen": 2,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.gaussInt_coreD_sq_pair",
+  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair",
+  "plen": 9,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_sq",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq",
+  "plen": 16,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_le",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_weighted_kin_le",
+  "plen": 24,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.eval_cpoly_self_re",
+  "slug": "BookProof_GaussCoreQuadBounds_eval_cpoly_self_re",
+  "plen": 5,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise",
+  "slug": "BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise",
+  "plen": 24,
+  "ns": "BookProof.GaussCoreQuadBounds"
+ },
+ {
+  "leaf": "ChapterGaussCoreQuadBounds",
+  "name": "BookProof.GaussCoreQuadBounds.sum_norm_sq_mul_le_of_pointwise",
+  "slug": "BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise",
+  "plen": 24,
+  "ns": "BookProof.GaussCoreQuadBounds"
  }
 ]

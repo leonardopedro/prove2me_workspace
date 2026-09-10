@@ -1,0 +1,40 @@
+-- Generated from ChapterNavierStokesSignedShift.lean — solution of BookProof.NavierStokesFlow.SignedShift.SignedHop.summable_crossA
+import Mathlib
+import Definitions.Def_ChapterNavierStokesSignedShift
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignedShift
+open BookProof.NavierStokesFlow.SignedShift.SignedHop
+
+
+
+
+
+
+
+
+
+
+open scoped ENNReal
+
+
+
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber
+
+variable {ι : Type*}
+
+
+
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+
+set_option maxHeartbeats 1000000 in
+theorem solution {X Y : ι → ℂ}
+    (hX : Summable fun β => (S.maj.ampSeq X β) ^ 2) (hY : Summable fun β => ‖Y β‖ ^ 2) :
+    Summable (S.crossA X Y) := by
+
+  refine Summable.of_norm (Summable.of_nonneg_of_le (fun β => norm_nonneg _) (fun β => ?_)
+    ((hX.add (ShiftData.summable_comp_shift S.maj hY)).mul_left (1 / 2)))
+  have h := norm_crossA_le S X Y β
+  simp only [maj_shift]
+  nlinarith [sq_nonneg (S.maj.ampSeq X β - ‖Y (S.shift β)‖),
+    ShiftData.ampSeq_nonneg S.maj X β, norm_nonneg (Y (S.shift β)), h]

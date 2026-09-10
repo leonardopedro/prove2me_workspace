@@ -1,331 +1,1423 @@
 [
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_add",
-  "slug": "BookProof_YangMillsHermite_starP_add",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.ofBounded_op",
+  "slug": "BookProof_ChapterSirkTrotterKato_ofBounded_op",
   "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
+  "ns": "BookProof.ChapterSirkTrotterKato"
  },
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_mul",
-  "slug": "BookProof_YangMillsHermite_starP_mul",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_X",
-  "slug": "BookProof_YangMillsHermite_starP_X",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_C",
-  "slug": "BookProof_YangMillsHermite_starP_C",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_zero",
-  "slug": "BookProof_YangMillsHermite_starP_zero",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_sum",
-  "slug": "BookProof_YangMillsHermite_starP_sum",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_smul",
-  "slug": "BookProof_YangMillsHermite_starP_smul",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_real_smul",
-  "slug": "BookProof_YangMillsHermite_starP_real_smul",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.RealCoeff.add",
-  "slug": "BookProof_YangMillsHermite_RealCoeff_add",
-  "plen": 2,
-  "ns": "BookProof.YangMillsHermite.RealCoeff"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.RealCoeff.mul",
-  "slug": "BookProof_YangMillsHermite_RealCoeff_mul",
-  "plen": 2,
-  "ns": "BookProof.YangMillsHermite.RealCoeff"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.RealCoeff.smul",
-  "slug": "BookProof_YangMillsHermite_RealCoeff_smul",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite.RealCoeff"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.RealCoeff.sum",
-  "slug": "BookProof_YangMillsHermite_RealCoeff_sum",
-  "plen": 2,
-  "ns": "BookProof.YangMillsHermite.RealCoeff"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.realCoeff_X",
-  "slug": "BookProof_YangMillsHermite_realCoeff_X",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.eval_starP",
-  "slug": "BookProof_YangMillsHermite_eval_starP",
-  "plen": 5,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.inner_pgLp_pgLp",
-  "slug": "BookProof_YangMillsHermite_inner_pgLp_pgLp",
-  "plen": 11,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.PolySym.add",
-  "slug": "BookProof_YangMillsHermite_PolySym_add",
-  "plen": 3,
-  "ns": "BookProof.YangMillsHermite.PolySym"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.PolySym.real_smul",
-  "slug": "BookProof_YangMillsHermite_PolySym_real_smul",
-  "plen": 3,
-  "ns": "BookProof.YangMillsHermite.PolySym"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.PolyAdj.symm_of",
-  "slug": "BookProof_YangMillsHermite_PolyAdj_symm_of",
-  "plen": 4,
-  "ns": "BookProof.YangMillsHermite.PolyAdj"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.PolySym.comp_adj",
-  "slug": "BookProof_YangMillsHermite_PolySym_comp_adj",
-  "plen": 2,
-  "ns": "BookProof.YangMillsHermite.PolySym"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.weylProd_polySym",
-  "slug": "BookProof_YangMillsHermite_weylProd_polySym",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.mulOp_apply",
-  "slug": "BookProof_YangMillsHermite_mulOp_apply",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.mulOp_polySym",
-  "slug": "BookProof_YangMillsHermite_mulOp_polySym",
-  "plen": 4,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.derOp_apply",
-  "slug": "BookProof_YangMillsHermite_derOp_apply",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.momOp_apply",
-  "slug": "BookProof_YangMillsHermite_momOp_apply",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_pderiv",
-  "slug": "BookProof_YangMillsHermite_starP_pderiv",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_neg",
-  "slug": "BookProof_YangMillsHermite_starP_neg",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_sub",
-  "slug": "BookProof_YangMillsHermite_starP_sub",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.gaussInt_sub",
-  "slug": "BookProof_YangMillsHermite_gaussInt_sub",
-  "plen": 4,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.gaussInt_leibniz",
-  "slug": "BookProof_YangMillsHermite_gaussInt_leibniz",
-  "plen": 5,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.starP_momOp",
-  "slug": "BookProof_YangMillsHermite_starP_momOp",
-  "plen": 2,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.momOp_polySym",
-  "slug": "BookProof_YangMillsHermite_momOp_polySym",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.resCLM_ofBounded",
+  "slug": "BookProof_ChapterSirkTrotterKato_resCLM_ofBounded",
   "plen": 17,
-  "ns": "BookProof.YangMillsHermite"
+  "ns": "BookProof.ChapterSirkTrotterKato"
  },
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.commutator_coord_mom",
-  "slug": "BookProof_YangMillsHermite_commutator_coord_mom",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.strongResolventConvergence_ofBounded",
+  "slug": "BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded",
   "plen": 6,
-  "ns": "BookProof.YangMillsHermite"
+  "ns": "BookProof.ChapterSirkTrotterKato"
  },
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.CoreRep.op_apply",
-  "slug": "BookProof_YangMillsHermite_CoreRep_op_apply",
-  "plen": 0,
-  "ns": "BookProof.YangMillsHermite.CoreRep"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.CoreRep.coe_op",
-  "slug": "BookProof_YangMillsHermite_CoreRep_coe_op",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.flow_transfer_of_strong_tendsto",
+  "slug": "BookProof_ChapterSirkTrotterKato_flow_transfer_of_strong_tendsto",
   "plen": 1,
-  "ns": "BookProof.YangMillsHermite.CoreRep"
+  "ns": "BookProof.ChapterSirkTrotterKato"
  },
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.CoreRep.coe_symm",
-  "slug": "BookProof_YangMillsHermite_CoreRep_coe_symm",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.flow_tendsto_of_strong_tendsto",
+  "slug": "BookProof_ChapterSirkTrotterKato_flow_tendsto_of_strong_tendsto",
   "plen": 1,
-  "ns": "BookProof.YangMillsHermite.CoreRep"
+  "ns": "BookProof.ChapterSirkTrotterKato"
  },
  {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.CoreRep.symmetricOn_op",
-  "slug": "BookProof_YangMillsHermite_CoreRep_symmetricOn_op",
-  "plen": 9,
-  "ns": "BookProof.YangMillsHermite.CoreRep"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.idxA_injective",
-  "slug": "BookProof_YangMillsHermite_idxA_injective",
-  "plen": 6,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.levi_values",
-  "slug": "BookProof_YangMillsHermite_levi_values",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.realCoeff_magPoly",
-  "slug": "BookProof_YangMillsHermite_realCoeff_magPoly",
-  "plen": 4,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.piOps_symmetricOn",
-  "slug": "BookProof_YangMillsHermite_piOps_symmetricOn",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.magOps_symmetricOn",
-  "slug": "BookProof_YangMillsHermite_magOps_symmetricOn",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ymHamiltonian_apply",
-  "slug": "BookProof_YangMillsHermite_ymHamiltonian_apply",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ymHamiltonian_symmetricOn",
-  "slug": "BookProof_YangMillsHermite_ymHamiltonian_symmetricOn",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ymHamiltonian_quadForm",
-  "slug": "BookProof_YangMillsHermite_ymHamiltonian_quadForm",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ymHamiltonian_quadForm_nonneg",
-  "slug": "BookProof_YangMillsHermite_ymHamiltonian_quadForm_nonneg",
-  "plen": 1,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ym_hermite_friedrichs_extension",
-  "slug": "BookProof_YangMillsHermite_ym_hermite_friedrichs_extension",
-  "plen": 4,
-  "ns": "BookProof.YangMillsHermite"
- },
- {
-  "leaf": "ChapterYangMillsHermite",
-  "name": "BookProof.YangMillsHermite.ym_hermite_hashimoto_selects",
-  "slug": "BookProof_YangMillsHermite_ym_hermite_hashimoto_selects",
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer",
+  "slug": "BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer",
   "plen": 2,
-  "ns": "BookProof.YangMillsHermite"
+  "ns": "BookProof.ChapterSirkTrotterKato"
+ },
+ {
+  "leaf": "ChapterSirkTrotterKatoGalerkin",
+  "name": "BookProof.ChapterSirkTrotterKato.galerkin_flow_tendsto",
+  "slug": "BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto",
+  "plen": 2,
+  "ns": "BookProof.ChapterSirkTrotterKato"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.gap_le_of_certificate",
+  "slug": "BookProof_SirkGapTable_gap_le_of_certificate",
+  "plen": 1,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.certified_gap_mem_interval",
+  "slug": "BookProof_SirkGapTable_certified_gap_mem_interval",
+  "plen": 1,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.CouplingCertificate.lo_le_hi",
+  "slug": "BookProof_SirkGapTable_CouplingCertificate_lo_le_hi",
+  "plen": 3,
+  "ns": "BookProof.SirkGapTable.CouplingCertificate"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.certified_gap_table",
+  "slug": "BookProof_SirkGapTable_certified_gap_table",
+  "plen": 4,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.certified_gap_table_interval",
+  "slug": "BookProof_SirkGapTable_certified_gap_table_interval",
+  "plen": 5,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.strongCoupling_lt",
+  "slug": "BookProof_SirkGapTable_strongCoupling_lt",
+  "plen": 2,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.strongCoupling_mem_of_certificate",
+  "slug": "BookProof_SirkGapTable_strongCoupling_mem_of_certificate",
+  "plen": 5,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.qcdG2M4Row_lo",
+  "slug": "BookProof_SirkGapTable_qcdG2M4Row_lo",
+  "plen": 1,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.qcdG2M4_strongCoupling_consistent",
+  "slug": "BookProof_SirkGapTable_qcdG2M4_strongCoupling_consistent",
+  "plen": 2,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.one_lt_ratio",
+  "slug": "BookProof_SirkGapTable_one_lt_ratio",
+  "plen": 2,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.richardson_exact",
+  "slug": "BookProof_SirkGapTable_richardson_exact",
+  "plen": 15,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.richardson_error",
+  "slug": "BookProof_SirkGapTable_richardson_error",
+  "plen": 28,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.richardson_qym_g4",
+  "slug": "BookProof_SirkGapTable_richardson_qym_g4",
+  "plen": 5,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkGapTable",
+  "name": "BookProof.SirkGapTable.richardson_qym_g4_gt",
+  "slug": "BookProof_SirkGapTable_richardson_qym_g4_gt",
+  "plen": 2,
+  "ns": "BookProof.SirkGapTable"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorRestrict_coe",
+  "slug": "BookProof_SirkCertifiedGap_sectorRestrict_coe",
+  "plen": 0,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorRestrict_isSymmetric",
+  "slug": "BookProof_SirkCertifiedGap_sectorRestrict_isSymmetric",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.rayleigh_sectorRestrict",
+  "slug": "BookProof_SirkCertifiedGap_rayleigh_sectorRestrict",
+  "plen": 1,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorRayleighSet_bddBelow",
+  "slug": "BookProof_SirkCertifiedGap_sectorRayleighSet_bddBelow",
+  "plen": 9,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorGround_le_rayleigh",
+  "slug": "BookProof_SirkCertifiedGap_sectorGround_le_rayleigh",
+  "plen": 1,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.le_sectorGround",
+  "slug": "BookProof_SirkCertifiedGap_le_sectorGround",
+  "plen": 3,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorGround_eq_inf_eigenvalues",
+  "slug": "BookProof_SirkCertifiedGap_sectorGround_eq_inf_eigenvalues",
+  "plen": 39,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.sectorGround_ge_temple",
+  "slug": "BookProof_SirkCertifiedGap_sectorGround_ge_temple",
+  "plen": 14,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certified_parity_gap",
+  "slug": "BookProof_SirkCertifiedGap_certified_parity_gap",
+  "plen": 1,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certified_parity_gap_pos",
+  "slug": "BookProof_SirkCertifiedGap_certified_parity_gap_pos",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certified_parity_gap_of_data",
+  "slug": "BookProof_SirkCertifiedGap_certified_parity_gap_of_data",
+  "plen": 4,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certified_parity_gap_strong_coupling",
+  "slug": "BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling",
+  "plen": 3,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.rayleigh_odd_ge_of_certified",
+  "slug": "BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified",
+  "plen": 4,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.resolvent_commutes_parity",
+  "slug": "BookProof_SirkCertifiedGap_resolvent_commutes_parity",
+  "plen": 5,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.resolvent_mapsTo_paritySector",
+  "slug": "BookProof_SirkCertifiedGap_resolvent_mapsTo_paritySector",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certifiedGap_tendsto",
+  "slug": "BookProof_SirkCertifiedGap_certifiedGap_tendsto",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certifiedGap_eventually_pos",
+  "slug": "BookProof_SirkCertifiedGap_certifiedGap_eventually_pos",
+  "plen": 4,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.certifiedGap_sound",
+  "slug": "BookProof_SirkCertifiedGap_certifiedGap_sound",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.gap_ge_of_certificate",
+  "slug": "BookProof_SirkCertifiedGap_gap_ge_of_certificate",
+  "plen": 3,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.gap_pos_of_certificate",
+  "slug": "BookProof_SirkCertifiedGap_gap_pos_of_certificate",
+  "plen": 2,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.qcdG2M4_lower",
+  "slug": "BookProof_SirkCertifiedGap_qcdG2M4_lower",
+  "plen": 1,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.qcdG2M4_lower_pos",
+  "slug": "BookProof_SirkCertifiedGap_qcdG2M4_lower_pos",
+  "plen": 1,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkCertifiedGap",
+  "name": "BookProof.SirkCertifiedGap.qcdG2M4_certified_gap",
+  "slug": "BookProof_SirkCertifiedGap_qcdG2M4_certified_gap",
+  "plen": 5,
+  "ns": "BookProof.SirkCertifiedGap"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.abs_rayleighVal_le",
+  "slug": "BookProof_RitzMinMax_abs_rayleighVal_le",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighVal_le_norm_of_unit",
+  "slug": "BookProof_RitzMinMax_rayleighVal_le_norm_of_unit",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.neg_norm_le_rayleighVal_of_unit",
+  "slug": "BookProof_RitzMinMax_neg_norm_le_rayleighVal_of_unit",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighVal_smul",
+  "slug": "BookProof_RitzMinMax_rayleighVal_smul",
+  "plen": 7,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighVal_sub_le",
+  "slug": "BookProof_RitzMinMax_rayleighVal_sub_le",
+  "plen": 19,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSetOn_bddAbove",
+  "slug": "BookProof_RitzMinMax_rayleighSetOn_bddAbove",
+  "plen": 3,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.exists_unit_mem",
+  "slug": "BookProof_RitzMinMax_exists_unit_mem",
+  "plen": 8,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSetOn_nonempty",
+  "slug": "BookProof_RitzMinMax_rayleighSetOn_nonempty",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSup_le_norm",
+  "slug": "BookProof_RitzMinMax_rayleighSup_le_norm",
+  "plen": 6,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.neg_norm_le_rayleighSup",
+  "slug": "BookProof_RitzMinMax_neg_norm_le_rayleighSup",
+  "plen": 3,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighVal_le_rayleighSup",
+  "slug": "BookProof_RitzMinMax_rayleighVal_le_rayleighSup",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSup_mono",
+  "slug": "BookProof_RitzMinMax_rayleighSup_mono",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSetOn_span_singleton",
+  "slug": "BookProof_RitzMinMax_rayleighSetOn_span_singleton",
+  "plen": 10,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.rayleighSup_span_singleton",
+  "slug": "BookProof_RitzMinMax_rayleighSup_span_singleton",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSet_bddBelow",
+  "slug": "BookProof_RitzMinMax_minmaxSet_bddBelow",
+  "plen": 3,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSetIn_bddBelow",
+  "slug": "BookProof_RitzMinMax_minmaxSetIn_bddBelow",
+  "plen": 3,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSetIn_subset",
+  "slug": "BookProof_RitzMinMax_minmaxSetIn_subset",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxLevel_le_minmaxLevelIn",
+  "slug": "BookProof_RitzMinMax_minmaxLevel_le_minmaxLevelIn",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.exists_le_finrank_eq",
+  "slug": "BookProof_RitzMinMax_exists_le_finrank_eq",
+  "plen": 13,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxLevel_mono",
+  "slug": "BookProof_RitzMinMax_minmaxLevel_mono",
+  "plen": 8,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSet_zero_eq_rayleighSet",
+  "slug": "BookProof_RitzMinMax_minmaxSet_zero_eq_rayleighSet",
+  "plen": 21,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxLevel_zero_eq_rayleighInf",
+  "slug": "BookProof_RitzMinMax_minmaxLevel_zero_eq_rayleighInf",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxLevel_zero_eq_sInf_spectrum",
+  "slug": "BookProof_RitzMinMax_minmaxLevel_zero_eq_sInf_spectrum",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.finrank_galerkinSpan",
+  "slug": "BookProof_RitzMinMax_finrank_galerkinSpan",
+  "plen": 12,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.exists_uniform_proj_bound",
+  "slug": "BookProof_RitzMinMax_exists_uniform_proj_bound",
+  "plen": 49,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.exists_galerkin_approx_subspace",
+  "slug": "BookProof_RitzMinMax_exists_galerkin_approx_subspace",
+  "plen": 84,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSetIn_galerkin_nonempty",
+  "slug": "BookProof_RitzMinMax_minmaxSetIn_galerkin_nonempty",
+  "plen": 2,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.minmaxSet_nonempty",
+  "slug": "BookProof_RitzMinMax_minmaxSet_nonempty",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.galerkin_minmaxLevel_tendsto",
+  "slug": "BookProof_RitzMinMax_galerkin_minmaxLevel_tendsto",
+  "plen": 14,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.galerkin_gap_tendsto",
+  "slug": "BookProof_RitzMinMax_galerkin_gap_tendsto",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzMinMax",
+  "name": "BookProof.RitzMinMax.galerkin_gap_eventually_pos",
+  "slug": "BookProof_RitzMinMax_galerkin_gap_eventually_pos",
+  "plen": 1,
+  "ns": "BookProof.RitzMinMax"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.rayleighVal_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_rayleighVal_sub_le_dist",
+  "plen": 10,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_rayleighVal_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_abs_rayleighVal_sub_le_dist",
+  "plen": 3,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.rayleighSup_le_rayleighSup_add",
+  "slug": "BookProof_RitzPerturbation_rayleighSup_le_rayleighSup_add",
+  "plen": 5,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_rayleighSup_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_abs_rayleighSup_sub_le_dist",
+  "plen": 4,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxSet_nonempty_congr",
+  "slug": "BookProof_RitzPerturbation_minmaxSet_nonempty_congr",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_le_minmaxLevel_add",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevel_add",
+  "plen": 9,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_minmaxLevel_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_abs_minmaxLevel_sub_le_dist",
+  "plen": 5,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxSetIn_nonempty_congr",
+  "slug": "BookProof_RitzPerturbation_minmaxSetIn_nonempty_congr",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevelIn_le_minmaxLevelIn_add",
+  "slug": "BookProof_RitzPerturbation_minmaxLevelIn_le_minmaxLevelIn_add",
+  "plen": 9,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_minmaxLevelIn_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_abs_minmaxLevelIn_sub_le_dist",
+  "plen": 5,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_le_minmaxLevelIn_add",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevelIn_add",
+  "plen": 4,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_mono_form",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_mono_form",
+  "plen": 10,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxGap_ge_of_dist_le",
+  "slug": "BookProof_RitzPerturbation_minmaxGap_ge_of_dist_le",
+  "plen": 5,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxGap_pos_of_dist_lt",
+  "slug": "BookProof_RitzPerturbation_minmaxGap_pos_of_dist_lt",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_sInf_spectrum_sub_le_dist",
+  "slug": "BookProof_RitzPerturbation_abs_sInf_spectrum_sub_le_dist",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.rayleighVal_shiftOp",
+  "slug": "BookProof_RitzPerturbation_rayleighVal_shiftOp",
+  "plen": 6,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.rayleighSup_shiftOp",
+  "slug": "BookProof_RitzPerturbation_rayleighSup_shiftOp",
+  "plen": 13,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_shiftOp",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_shiftOp",
+  "plen": 20,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxGap_shiftOp",
+  "slug": "BookProof_RitzPerturbation_minmaxGap_shiftOp",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.abs_minmaxGap_sub_le",
+  "slug": "BookProof_RitzPerturbation_abs_minmaxGap_sub_le",
+  "plen": 4,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_tendsto_of_tendsto",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto",
+  "plen": 4,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxGap_tendsto_of_tendsto",
+  "slug": "BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto",
+  "plen": 3,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxLevel_le_norm",
+  "slug": "BookProof_RitzPerturbation_minmaxLevel_le_norm",
+  "plen": 2,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.neg_norm_le_minmaxLevel",
+  "slug": "BookProof_RitzPerturbation_neg_norm_le_minmaxLevel",
+  "plen": 3,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.minmaxGap_nonneg",
+  "slug": "BookProof_RitzPerturbation_minmaxGap_nonneg",
+  "plen": 3,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.galerkin_model_gap_tendsto",
+  "slug": "BookProof_RitzPerturbation_galerkin_model_gap_tendsto",
+  "plen": 4,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterSirkRitzPerturbation",
+  "name": "BookProof.RitzPerturbation.galerkin_model_gap_eventually_pos",
+  "slug": "BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos",
+  "plen": 6,
+  "ns": "BookProof.RitzPerturbation"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_sym",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_shift",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_amp",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_K",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_step",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_coe",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.norm_crossA_le",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.norm_crossB_le",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossB_le",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.summable_crossA",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossA",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.summable_crossB",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossB",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.conj_hFun_mul",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_hFun_mul",
+  "plen": 17,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.conj_mul_hFun",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_mul_hFun",
+  "plen": 16,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hasSum_inner_hopH_left",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_left",
+  "plen": 16,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hasSum_inner_hopH_right",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right",
+  "plen": 18,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_symmetricOn",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_symmetricOn",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_relative_bound",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_relative_bound",
+  "plen": 25,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hasSum_commForm",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_commForm",
+  "plen": 24,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_commForm_bound",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_commForm_bound",
+  "plen": 62,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_essentiallySelfAdjointOn_core",
+  "plen": 5,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_nil",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_nil",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_cons",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_cons",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_symmetricOn",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn",
+  "plen": 12,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_relative_bound",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_relative_bound",
+  "plen": 20,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_commForm_bound",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_commForm_bound",
+  "plen": 21,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_essentiallySelfAdjointOn_core",
+  "plen": 5,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hFun_single",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_SignedHop_hFun_single",
+  "plen": 18,
+  "ns": "BookProof.NavierStokesFlow.SignedShift.SignedHop"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.listH_coe",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_listH_coe",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.gaffH_symmetricOn",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_gaffH_symmetricOn",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterNavierStokesSignedShift",
+  "name": "BookProof.NavierStokesFlow.SignedShift.gaffH_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_NavierStokesFlow_SignedShift_gaffH_essentiallySelfAdjointOn_core",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.SignedShift"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wdeg_eq_sum",
+  "slug": "BookProof_FockWeightedSchur_wdeg_eq_sum",
+  "plen": 1,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wdeg_nonneg",
+  "slug": "BookProof_FockWeightedSchur_wdeg_nonneg",
+  "plen": 5,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wSym_nonneg",
+  "slug": "BookProof_FockWeightedSchur_wSym_nonneg",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wSym_pos",
+  "slug": "BookProof_FockWeightedSchur_wSym_pos",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.ndeg_le_wdeg",
+  "slug": "BookProof_FockWeightedSchur_ndeg_le_wdeg",
+  "plen": 6,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wdeg_up",
+  "slug": "BookProof_FockWeightedSchur_wdeg_up",
+  "plen": 15,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wSym_up",
+  "slug": "BookProof_FockWeightedSchur_wSym_up",
+  "plen": 1,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wgt_apply",
+  "slug": "BookProof_FockWeightedSchur_wgt_apply",
+  "plen": 0,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.support_wgt_subset",
+  "slug": "BookProof_FockWeightedSchur_support_wgt_subset",
+  "plen": 1,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.annA_wgt",
+  "slug": "BookProof_FockWeightedSchur_annA_wgt",
+  "plen": 5,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.inner_wgt_symm",
+  "slug": "BookProof_FockWeightedSchur_inner_wgt_symm",
+  "plen": 8,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.re_inner_wgt",
+  "slug": "BookProof_FockWeightedSchur_re_inner_wgt",
+  "plen": 14,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.sum_wsq_normSq_annA",
+  "slug": "BookProof_FockWeightedSchur_sum_wsq_normSq_annA",
+  "plen": 7,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.sum_le_of_vanishing",
+  "slug": "BookProof_FockWeightedSchur_sum_le_of_vanishing",
+  "plen": 7,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.w_pos",
+  "slug": "BookProof_FockWeightedSchur_w_pos",
+  "plen": 0,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wrow_le",
+  "slug": "BookProof_FockWeightedSchur_wrow_le",
+  "plen": 9,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wcol_le",
+  "slug": "BookProof_FockWeightedSchur_wcol_le",
+  "plen": 11,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wcomm_nonneg",
+  "slug": "BookProof_FockWeightedSchur_wcomm_nonneg",
+  "plen": 4,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wcomm_row_le",
+  "slug": "BookProof_FockWeightedSchur_wcomm_row_le",
+  "plen": 7,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wcomm_col_le",
+  "slug": "BookProof_FockWeightedSchur_wcomm_col_le",
+  "plen": 8,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.normSq_dGamma_le_of_sector",
+  "slug": "BookProof_FockWeightedSchur_normSq_dGamma_le_of_sector",
+  "plen": 64,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.normSq_dGamma_le_w",
+  "slug": "BookProof_FockWeightedSchur_normSq_dGamma_le_w",
+  "plen": 41,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.im_inner_dGamma_wgt_bound",
+  "slug": "BookProof_FockWeightedSchur_im_inner_dGamma_wgt_bound",
+  "plen": 117,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.diagMax_wSym_eq",
+  "slug": "BookProof_FockWeightedSchur_diagMax_wSym_eq",
+  "plen": 7,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.normSq_toLp_wgt",
+  "slug": "BookProof_FockWeightedSchur_normSq_toLp_wgt",
+  "plen": 3,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.dGammaOp_coreRelBound_w",
+  "slug": "BookProof_FockWeightedSchur_dGammaOp_coreRelBound_w",
+  "plen": 9,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.dGammaOp_commForm_bound_w",
+  "slug": "BookProof_FockWeightedSchur_dGammaOp_commForm_bound_w",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.dGamma_essentiallySelfAdjointOn_core_w",
+  "slug": "BookProof_FockWeightedSchur_dGamma_essentiallySelfAdjointOn_core_w",
+  "plen": 3,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.dGamma_stone_flow_w",
+  "slug": "BookProof_FockWeightedSchur_dGamma_stone_flow_w",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.sqrt_le_of_one_le",
+  "slug": "BookProof_FockWeightedSchur_sqrt_le_of_one_le",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscW_ge_one",
+  "slug": "BookProof_FockWeightedSchur_oscW_ge_one",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscW_pos",
+  "slug": "BookProof_FockWeightedSchur_oscW_pos",
+  "plen": 0,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscCol_apply",
+  "slug": "BookProof_FockWeightedSchur_oscCol_apply",
+  "plen": 20,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.norm_oscCol_apply",
+  "slug": "BookProof_FockWeightedSchur_norm_oscCol_apply",
+  "plen": 8,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.isHermCol_oscCol",
+  "slug": "BookProof_FockWeightedSchur_isHermCol_oscCol",
+  "plen": 13,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.support_oscCol_subset",
+  "slug": "BookProof_FockWeightedSchur_support_oscCol_subset",
+  "plen": 11,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.sum_pair_le",
+  "slug": "BookProof_FockWeightedSchur_sum_pair_le",
+  "plen": 10,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.norm_oscCol_le",
+  "slug": "BookProof_FockWeightedSchur_norm_oscCol_le",
+  "plen": 15,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.norm_oscCol_le_col",
+  "slug": "BookProof_FockWeightedSchur_norm_oscCol_le_col",
+  "plen": 15,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wRow_oscCol",
+  "slug": "BookProof_FockWeightedSchur_wRow_oscCol",
+  "plen": 3,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wCol_oscCol",
+  "slug": "BookProof_FockWeightedSchur_wCol_oscCol",
+  "plen": 7,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscComm_term_le",
+  "slug": "BookProof_FockWeightedSchur_oscComm_term_le",
+  "plen": 38,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.wComm_oscCol",
+  "slug": "BookProof_FockWeightedSchur_wComm_oscCol",
+  "plen": 9,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscCol_entries_unbounded",
+  "slug": "BookProof_FockWeightedSchur_oscCol_entries_unbounded",
+  "plen": 11,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.oscCol_not_schurBound",
+  "slug": "BookProof_FockWeightedSchur_oscCol_not_schurBound",
+  "plen": 16,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.osc_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_FockWeightedSchur_osc_essentiallySelfAdjointOn_core",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterFockWeightedSchurEsa",
+  "name": "BookProof.FockWeightedSchur.osc_stone_flow",
+  "slug": "BookProof_FockWeightedSchur_osc_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.FockWeightedSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.degW_ge_one",
+  "slug": "BookProof_GradedBandSchur_degW_ge_one",
+  "plen": 3,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.degW_pos",
+  "slug": "BookProof_GradedBandSchur_degW_pos",
+  "plen": 1,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.wRow_of_gradedBand",
+  "slug": "BookProof_GradedBandSchur_wRow_of_gradedBand",
+  "plen": 10,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.wCol_of_gradedBand",
+  "slug": "BookProof_GradedBandSchur_wCol_of_gradedBand",
+  "plen": 13,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.wComm_of_gradedBand",
+  "slug": "BookProof_GradedBandSchur_wComm_of_gradedBand",
+  "plen": 52,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterGradedBandSchurEsa",
+  "name": "BookProof.GradedBandSchur.dGamma_essentiallySelfAdjointOn_core_gradedBand",
+  "slug": "BookProof_GradedBandSchur_dGamma_essentiallySelfAdjointOn_core_gradedBand",
+  "plen": 3,
+  "ns": "BookProof.GradedBandSchur"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.restrict_essentiallySelfAdjointOn",
+  "slug": "BookProof_QgBrstDerivativeGauge_restrict_essentiallySelfAdjointOn",
+  "plen": 1,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.gaugeReduce_extTorsionCoef",
+  "slug": "BookProof_QgBrstDerivativeGauge_gaugeReduce_extTorsionCoef",
+  "plen": 8,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.gaugeReduce_gram",
+  "slug": "BookProof_QgBrstDerivativeGauge_gaugeReduce_gram",
+  "plen": 5,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.brstGaugeFixed_esa",
+  "slug": "BookProof_QgBrstDerivativeGauge_brstGaugeFixed_esa",
+  "plen": 1,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.starobinsky_brstGaugeFixed_esa",
+  "slug": "BookProof_QgBrstDerivativeGauge_starobinsky_brstGaugeFixed_esa",
+  "plen": 1,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.gaugeFixedSubset_esa",
+  "slug": "BookProof_QgBrstDerivativeGauge_gaugeFixedSubset_esa",
+  "plen": 1,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgBrstDerivativeGauge",
+  "name": "BookProof.QgBrstDerivativeGauge.extTorsionCoef_ne_zero",
+  "slug": "BookProof_QgBrstDerivativeGauge_extTorsionCoef_ne_zero",
+  "plen": 2,
+  "ns": "BookProof.QgBrstDerivativeGauge"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.prop_apply",
+  "slug": "BookProof_QgTimeIndependent_prop_apply",
+  "plen": 0,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.prop_zero_right",
+  "slug": "BookProof_QgTimeIndependent_prop_zero_right",
+  "plen": 0,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.prop_self",
+  "slug": "BookProof_QgTimeIndependent_prop_self",
+  "plen": 1,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.norm_prop_apply",
+  "slug": "BookProof_QgTimeIndependent_norm_prop_apply",
+  "plen": 0,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.prop_apply_prop",
+  "slug": "BookProof_QgTimeIndependent_prop_apply_prop",
+  "plen": 3,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.prop_time_translation",
+  "slug": "BookProof_QgTimeIndependent_prop_time_translation",
+  "plen": 2,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.hasDerivAt_prop",
+  "slug": "BookProof_QgTimeIndependent_hasDerivAt_prop",
+  "plen": 2,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.isSchrodingerSolution_prop",
+  "slug": "BookProof_QgTimeIndependent_isSchrodingerSolution_prop",
+  "plen": 3,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.eq_prop_of_isSchrodingerSolution",
+  "slug": "BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution",
+  "plen": 23,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime",
+  "slug": "BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime",
+  "plen": 5,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.starobinsky_brstGaugeFixed_timeIndependent_singleTime",
+  "slug": "BookProof_QgTimeIndependent_starobinsky_brstGaugeFixed_timeIndependent_singleTime",
+  "plen": 3,
+  "ns": "BookProof.QgTimeIndependent"
+ },
+ {
+  "leaf": "ChapterQgTimeIndependentFlow",
+  "name": "BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime",
+  "slug": "BookProof_QgTimeIndependent_starobinsky_qgManifold_timeIndependent_singleTime",
+  "plen": 2,
+  "ns": "BookProof.QgTimeIndependent"
  }
 ]

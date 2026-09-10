@@ -36,13 +36,21 @@ ELAN = "/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake"
 # are already published or in the current wave).
 NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation",
             "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
-            "ChapterSirkMultiShift"]
+            "ChapterSirkMultiShift",
+            "ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable", "ChapterSirkCertifiedGap",
+            "ChapterSirkRitzMinMax", "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
              "ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation",
              "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
              "ChapterSirkMultiShift"]
+# Chapters whose thm/sol slugs come from the wave manifest (the generator named
+# their files after the source namespaces, e.g. BookProof_RitzMinMax_*, so the
+# Chapter-prefixed glob does not apply).
+MANIFEST_CHAPS = ["ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable",
+                  "ChapterSirkCertifiedGap", "ChapterSirkRitzMinMax",
+                  "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift"]
 
 DOMAIN = [
     ("Stone", ["stone-theorem", "spectral-theory"]),
@@ -154,12 +162,30 @@ def main():
     for chap in THM_CHAPS:
         for f in sorted(glob.glob(f"{WS}/Theorems/Thm_BookProof_Chapter{chap[7:]}_*.lean")):
             slug = os.path.basename(f)[len("Thm_"):-len(".lean")]
+            if slug in wave["thms"]:
+                new_slugs.append(slug)
+                continue
             if not compiles(f):
                 print(f"skip thm (no compile): {slug}")
                 continue
             new_slugs.append(slug)
-            if slug not in wave["thms"]:
-                wave["thms"][slug] = thm_meta(slug)
+            wave["thms"][slug] = thm_meta(slug)
+
+    # Manifest-based chapters: slugs from state/wave_manifest.json.
+    manifest = json.load(open(f"{WS}/state/wave_manifest.json", encoding="utf-8"))
+    for n in manifest:
+        if n["leaf"] not in MANIFEST_CHAPS:
+            continue
+        slug = n["slug"]
+        f = f"{WS}/Theorems/Thm_{slug}.lean"
+        if slug in wave["thms"]:
+            new_slugs.append(slug)
+            continue
+        if not compiles(f):
+            print(f"skip thm (no compile): {slug}")
+            continue
+        new_slugs.append(slug)
+        wave["thms"][slug] = thm_meta(slug)
 
     # Topological order: a sol slug comes after every thm it imports.
     alln = set(new_slugs)
@@ -183,7 +209,12 @@ def main():
             if indeg[m] == 0:
                 q.append(m)
     cyc = sorted(alln - set(order))
-    assert not cyc, f"cycle: {cyc}"
+    # Cycles happen when sols import each other's thm stubs (mutually recursive
+    # source proofs).  The uploader publishes ALL thm: items before ANY sol:, so
+    # the relative order inside a cycle is irrelevant -- just append them.
+    if cyc:
+        print(f"warning: {len(cyc)} slugs in import cycles, appending in sorted order")
+        order += cyc
 
     pre = [s for s in wave["sol_order"] if s not in set(order)]
     wave["sol_order"] = pre

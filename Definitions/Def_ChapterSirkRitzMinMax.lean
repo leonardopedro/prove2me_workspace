@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Mathlib
 
 import Mathlib
 
@@ -55,6 +56,7 @@ noncomputable section
 
 namespace BookProof.RitzMinMax
 
+open BookProof.HermiteGalerkin BookProof.ChapterSirkRitzSpectrum
 open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

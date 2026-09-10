@@ -504,6 +504,16 @@ via Faris–Lavine).
   ChapterNavierStokesMomentumEsa, ChapterNavierStokesFockEsa,
   ChapterNavierStokesEsaConsolidation, and the rest of LEGACY §10.2's NS list.
 
+**De-ESA of the FL chapters (2026-09-10):** `SqSumFarisLavine` and `GaussCoreQuadBounds` are
+DONE -- their defs build without any non-FL ESA deps (embedded linForm/sqSumPoly/harmPoly,
+dropped QgHermiteOscillatorEsa/HermiteQuadraticEsa imports) and are published (wave 9, +53 thms).
+`QgOuterFockFarisLavine` de-ESA is ~85%: embedded the Friedrichs FormDom + HashimotoShiftInvert +
+harmCore chains at root namespace; the last blocker is harmCore_symmetricOn/harmCore_quadForm_nonneg
+which need the QgHermiteFriedrichs node network (hamCore_pgLp, hamPoly, gaussInt_kinPoly,
+inner_potLp_symm, ...) -- re-implementing the Qg Hermite-oscillator ESA inside the FL chapter;
+NOT pursued (would duplicate the excluded ESA content).  `SqSumOuterFamily`/`NsOuterFockFarisLavine`
+wait on QgOuterFockFarisLavine (dsComparison/harmFried).
+
 **Outer-Fock / Faris-Lavine progress (2026-09-10):** `NavierStokesFockFarisLavine` is PUBLISHED (wave 8,
 12 thms, SecondQuant namespace). The remaining FL chapters (`SqSumFarisLavine`, `SqSumOuterFamily`,
 `NsOuterFockFarisLavine`, `SqSumOuterSingleTime`) compile their defs but are blocked by a web of

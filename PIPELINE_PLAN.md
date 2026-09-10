@@ -504,6 +504,17 @@ via Faris–Lavine).
   ChapterNavierStokesMomentumEsa, ChapterNavierStokesFockEsa,
   ChapterNavierStokesEsaConsolidation, and the rest of LEGACY §10.2's NS list.
 
+**QG cluster status (2026-09-10):** `QgHermiteCore` is PUBLISHED (wave 5.5, 36 thms). The rest
+of the QG chain is blocked on a cascade: `QgBrstDerivativeGauge` (needs `QgModeData` from the
+mode-instance chapters) -> `QgVielbeinModeInstance`/`QgContinuumModeInstance` (needs ScalaronFiberFL/
+ScalaronOuterFockFL/`QgOuterFockCoreFL` namespaces -- spurious opens mostly removable, but code uses
+`QgModeData`) -> `QgOuterFockFlow` -> `QgTruncationResolvent` -> `SirkSingleTimeShift` ->
+`QgTimeIndependentFlow` (12 thms). The mode-instance defs compile once their spurious opens are
+dropped and FarisLavine is imported; `memLp_mul_pgFun_of_expBounded` (QgHermiteCore, a node) needs
+embedding for `QgHermiteFriedrichs`/`QgHermiteOscillatorEsa` (dep of SqSum*/outer-Fock). To finish
+the chain: generate + fix the missing mode-instance/Scalaron/outer-Fock def bundles, embed the node
+helpers, then the SqSumFarisLavine/NsOuterFockFarisLavine Faris-Lavine chapters unblock.
+
 **Future-wave playbook** (condensed; full: LEGACY §5.7): pick chapters → Phase-0
 axiom gate in the timepiece env → generate (`scripts/wave_generate.py`; known
 generator bugs in the translation plan §6: bogus `open` for dot-named theorems,

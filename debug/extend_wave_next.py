@@ -44,7 +44,7 @@ NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncat
             "ChapterBandEnclosure", "ChapterFriedrichsFormGap",
             "ChapterNavierStokesFarisLavineLift", "ChapterNavierStokesDiffFarisLavine",
             "ChapterNavierStokesSecondQuant", "ChapterQgHermiteCore",
-            "ChapterRitzCertificate"]
+            "ChapterRitzCertificate", "ChapterNavierStokesLagrangianCanonical"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
@@ -72,6 +72,7 @@ GLOB_PREFIXES = [
     ("ChapterNavierStokesSecondQuant", "NavierStokesFlow_SecondQuant_"),
     ("ChapterQgHermiteCore", "QgHermiteCore_"),
     ("ChapterRitzCertificate", "RitzCertificate_"),
+    ("ChapterNavierStokesLagrangianCanonical", "NavierStokesFlow_LagrangianCanonical_"),
 ]
 
 DOMAIN = [

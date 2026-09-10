@@ -23,8 +23,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
-open CanonicalVector ThreeComponent
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
+open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.ann_comp_cre_eq (i : Fin 3) :
     (ann i).comp (cre i) = (cre i).comp (ann i) + LinearMap.id := by sorry

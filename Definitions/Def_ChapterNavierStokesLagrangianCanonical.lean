@@ -1,5 +1,7 @@
+import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterStoneBridge
+import Mathlib
 
 import Mathlib
 
@@ -85,6 +87,21 @@ namespace LagrangianCanonical
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
+
+namespace BookProof.NavierStokesFlow
+
+namespace CanonicalVector
+
+@[simp] theorem lower_raise (i : Fin 3) (β : Vel) : lower i (raise i β) = β := by
+  funext j
+  by_cases hji : j = i
+  · subst hji; rw [lower_self, raise_self]; omega
+  · rw [lower_of_ne hji, raise_of_ne hji]
+
+end CanonicalVector
+
+end BookProof.NavierStokesFlow
+
 /-! ## The adjoint relation between the ladder operators -/
 
 theorem raise_injective (i : Fin 3) : Function.Injective (raise i) := by
@@ -146,7 +163,7 @@ theorem inner_ann_cre (i : Fin 3) (x y : lpFiniteModes Vel) :
           * (starRingEnd ℂ) (((x : L2I Vel) : Vel → ℂ) β)
           * ((y : L2I Vel) : Vel → ℂ) (raise i β) := by
     funext γ
-    simp only [hg, raise_self, lower_raise]
+    simp only [hg, raise_self, BookProof.NavierStokesFlow.CanonicalVector.lower_raise]
     push_cast
     ring
   have hkey : ∑' γ, g (raise i γ) = ∑' β, g β :=

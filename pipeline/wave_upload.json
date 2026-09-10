@@ -1339,6 +1339,19 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "ChapterNavierStokesLagrangianCanonical": {
+   "definition_name": "ChapterNavierStokesLagrangianCanonical",
+   "namespace": "BookProof.NavierStokesLagrangianCanonical",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNavierStokesLagrangianCanonical.lean",
+   "title": "The Eulerian strand of the Navier\u2013Stokes thread has a canonical/ladder reading of its full quadratic symbol (`BookProof. ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NavierStokesLagrangianCanonical`, source chapter `BookProof/ChapterNavierStokesLagrangianCanonical.lean`).\n\nThe Eulerian strand of the Navier\u2013Stokes thread has a canonical/ladder reading of its full quadratic symbol (`BookProof.ChapterNavierStokesCanonicalVector`) and a Hermite realization of the fiber generator (`BookProof.ChapterNavierStokesHermiteCanonical`). The Lagrangian (parcel) strand had essential self-adjointness (`ChapterNavierStokesLagrangianKatoRellich`), the Hashimoto/SIRK selection, the Fock-of-Fock lifting and the Stone flow, but its positive second-order part\n\n`T = \u00bd \u2211\u1d62 P\u1d62\u00b2 + \u03bd \u2211\u1d62 Q\u1d62\u00b2`\n\nwas realized concretely only on the abstract *diagonal* instance `diagKR` of `\u2113\u00b2(\u2115)`, where `P\u1d62` and `Q\u1d62` commute. This module removes that asymmetry: it realizes the parcel momenta `P\u1d62` and the viscous gradients `Q\u1d62` as the genuinely **non-commuting** canonical pairs of a Hermite basis of the trajectory space `\u2113\u00b2(Fin 3 \u2192 \u2115)`, and proves the second-order part is essentially self-adjoint there.\n\nFor a viscosity `\u03bd > 0` put `\u03c9 = \u221a(2\u03bd)` and, out of the Hermite ladder operators `a_i`, `a_i\u2020` of `BookProof.NavierStokesFlow.CanonicalVector`,\n\n`Q\u1d62 = \u03c9^{-1/2} \u00b7 (a_i + a_i\u2020)/\u221a2`, `P\u1d62 = \u03c9^{1/2} \u00b7 i(a_i\u2020 \u2212 a_i)/\u221a2`.\n\nThese are the position and momentum of the oscillator of frequency `\u03c9`; the canonical commutation relations survive the rescaling (`comm_lagP_lagQ`, `comm_lagP_lagQ_of_ne`), so `P\u1d62` and `Q\u1d62` genuinely fail to commute \u2014 the point on which the diagonal instance `diagKR` was silent.\n\nThe identity that makes the module work is\n\n`\u00bd P\u1d62\u00b2 + \u03bd Q\u1d62\u00b2 = (\u03c9/2)(\u03c0\u1d62\u00b2 + u\u1d62\u00b2) = \u03c9 (a_i\u2020 a_i + \u00bd)`,\n\nwhich is exactly the choice `\u03c9 = \u221a(2\u03bd)` (`lagT_eq_number`). Summed over the three parcel directions the Lagrangian second-order part is therefore the number operator of the trajectory-space Hermite basis, `T = \u03c9(N + 3/2)`, whose eigenvectors are the Hermite states `e_\u03b2` (`lagT_coreState`) \u2014 a total family, so `T` is essentially self-adjoint on the Hermite core (`lagT_esa`), unbounded (`lagT_not_bounded`).\n\n* `lagQ`, `lagP` \u2014 the canonical pairs of the trajectory space, with `comm_lagP_lagQ` (`[P\u1d62, Q\u1d62] = \u2212i`), `comm_lagP_lagQ_of_ne` and the symmetry statements `lagQ_isSymmetricDom`, `lagP_isSymmetricDom` (from the adjoint relation `inner_ann_cre` between the ladder operators); * `lagT_eq_number` \u2014 `\u00bd \u2211P\u1d62\u00b2 + \u03bd \u2211Q\u1d62\u00b2 = \u03c9 (N + 3/2)`, `N = \u2211 a_i\u2020 a_i`; * `lagT_coreState`, `lagT_esa`, `lagT_not_bounded` \u2014 the Hermite states diagonalize it, it is essentially self-adjoint on the Hermite core and it is unbounded; * `lagCanData` \u2014 the resulting `LagrangianFullData` on `\u2113\u00b2(Fin 3 \u2192 \u2115)`: the canonical/ladder realization of the transformed Navier\u2013Stokes Hamiltonian, with the physical drift `D\u1d62 = P\u1d62` and an arbitrary external force; * `lagCan_secondOrder_eq`, `lagCan_esa` \u2014 its second-order part is the operator above and the **full** transformed Hamiltonian is essentially self-adjoint on the Hermite core, by the Kato\u2013Rellich relative bound of `ChapterNavierStokesLagrangianKatoRellich`; * `lagCan_stone_flow` \u2014 hence the canonical Lagrangian Hamiltonian generates a complete unitary flow (Stone), bringing the Lagrangian strand to the same realization level as the Eulerian one.\n\nUnchanged (Contention D5): nothing here claims global regularity of the *classical* Navier\u2013Stokes PDE. The trajectory space is the Hermite (occupation-number) realization `\u2113\u00b2(Fin 3 \u2192 \u2115)` of the parcel coordinates, in which `Q\u1d62` is the coordinate and `P\u1d62 = \u2212i\u2202/\u2202X\u1d62` the momentum, exactly as on the Eulerian side.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesLagrangianCanonical.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "thms": {
@@ -9800,6 +9813,258 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.ann_comp_cre_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq.lean",
+   "title": "(i : Fin 3) : (ann i).comp (cre i) = (cre i).comp (ann i) + LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.ann_comp_cre_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ.lean",
+   "title": "(hnu : 0 < nu) (i : Fin 3) : (lagP nu i).comp (lagQ nu i) - (lagQ nu i).comp (lagP nu i) = (-Complex.I) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne.lean",
+   "title": "{i k : Fin 3} (h : i \u2260 k) : (lagP nu i).comp (lagQ nu k) = (lagQ nu k).comp (lagP nu i)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.coreState_total",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total.lean",
+   "title": "(w : L2I Vel) (hw : \u2200 \u03b2 : Vel, (inner \u2102 ((coreState \u03b2 : lpFiniteModes Vel) : L2I Vel) w : \u2102) = 0) : w = 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.coreState_total` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_coreState",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState.lean",
+   "title": "(\u03b2 \u03b3 : Vel) : crd (coreState \u03b2) \u03b3 = if \u03b3 = \u03b2 then 1 else 0",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.crd_coreState` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp.lean",
+   "title": "(i : Fin 3) (x : lpFiniteModes Vel) : crd (numOp i x) = fun \u03b2 => ((\u03b2 i : \u211d) : \u2102) * crd x \u03b2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq.lean",
+   "title": "(hnu : 0 < nu) (i : Fin 3) : (1 / 2 : \u2102) \u2022 (lagP nu i).comp (lagP nu i) + ((nu : \u211d) : \u2102) \u2022 (lagQ nu i).comp (lagQ nu i) = ((omega nu : \u211d) : \u2102) \u2022 numOp i + ((omega nu / 2 : \u211d) : \u2102) \u2022 LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : (lagCanData nu hnu f).drive = (lagCanData nu hnu f).P",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_esa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : EssentiallySelfAdjointOn (lagCanData nu hnu f).D (lagrangianCore (lagCanData nu hnu f))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_esa` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : HasZeroDeficiencyOn (lagCanData nu hnu f).D (lagCanData nu hnu f).hFull",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : secondOrder (lagCanData nu hnu f) = lagT nu",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : HasZeroDeficiencyOn (lagCanData nu hnu f).D (secondOrder (lagCanData nu hnu f))",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow.lean",
+   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : \u2203 (T : UnboundedSelfAdjoint (L2I Vel)) (U : \u211d \u2192 (L2I Vel \u2192L[\u2102] L2I Vel)), IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op \u2227 IsStoneFlow T U",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState.lean",
+   "title": "(\u03b2 : Vel) : lagT nu (coreState \u03b2) = ((lagLam nu \u03b2 : \u211d) : \u2102) \u2022 coreState \u03b2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_hasZeroDeficiencyOn",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn.lean",
+   "title": ": HasZeroDeficiencyOn (lpFiniteModes Vel) (lagT nu)",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagT_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_not_bounded": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_not_bounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagT_not_bounded.lean",
+   "title": "(hnu : 0 < nu) : \u00ac \u2203 C : \u211d, \u2200 v : lpFiniteModes Vel, \u2016(lagT nu v : L2I Vel)\u2016 \u2264 C * \u2016(v : L2I Vel)\u2016",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagT_not_bounded` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.norm_coreState",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState.lean",
+   "title": "(\u03b2 : Vel) : \u2016((coreState \u03b2 : lpFiniteModes Vel) : L2I Vel)\u2016 = 1",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.norm_coreState` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState.lean",
+   "title": "(i : Fin 3) (\u03b2 : Vel) : numOp i (coreState \u03b2) = ((\u03b2 i : \u211d) : \u2102) \u2022 coreState \u03b2",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_pos",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos.lean",
+   "title": "(hnu : 0 < nu) : 0 < omega nu",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.omega_pos` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq.lean",
+   "title": "(hnu : 0 \u2264 nu) : omega nu * omega nu = 2 * nu",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.omega_sq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq": {
+   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq.lean",
+   "title": "(i : Fin 3) : (pos i).comp (pos i) + (mom i).comp (mom i) = (2 : \u2102) \u2022 numOp i + LinearMap.id",
+   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
+   "tags": [
+    "timepiece",
+    "navier-stokes",
+    "operator-algebras"
+   ]
   }
  },
  "sol_order": [
@@ -10248,6 +10513,15 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_sq_diff",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq",
   "BookProof_NavierStokesFlow_SecondQuant_fockCore_ne_top",
   "BookProof_NavierStokesFlow_SecondQuant_fockOp_apply",
   "BookProof_NavierStokesFlow_SecondQuant_mem_fockCore",
@@ -10365,6 +10639,9 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ",
   "BookProof_NavierStokesFlow_SecondQuant_fockCore_dense",
   "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_ExpBounded_add",
@@ -10427,6 +10704,8 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos",
   "BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq",
   "BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState",
   "BookProof_QgHermiteCore_expBounded_poly",
   "BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul",
   "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded",
@@ -10462,6 +10741,9 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine",
   "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN",
   "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_not_bounded",
   "BookProof_QgHermiteCore_expBounded_scalaronSectorPotential",
   "BookProof_QgHermiteCore_memLp_scalaronFull1D_mul_gaussPoly",
   "BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly",
@@ -10484,6 +10766,7 @@
   "BookProof_FockSecondQuantization_sum_creVec_annA_subset",
   "BookProof_FockSecondQuantization_inner_creA_left",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
   "BookProof_QgHermiteCore_integral_hamiltonian_symm",
   "BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly",
@@ -10507,6 +10790,8 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",
   "BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero",
@@ -10518,6 +10803,7 @@
   "BookProof_FockSecondQuantization_inner_annA_creVec",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq",
+  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow",
   "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected",
   "BookProof_FockSecondQuantization_inner_dGamma_left",
   "BookProof_FockSecondQuantization_inner_dGamma_right",

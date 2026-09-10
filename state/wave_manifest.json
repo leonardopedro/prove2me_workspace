@@ -1,177 +1,149 @@
 [
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.norm_apply_sq",
-  "slug": "BookProof_RitzCertificate_norm_apply_sq",
-  "plen": 9,
-  "ns": "BookProof.RitzCertificate"
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.isSelfAdjoint_sub_const",
-  "slug": "BookProof_RitzCertificate_isSelfAdjoint_sub_const",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.ann_comp_cre_eq",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq",
   "plen": 1,
-  "ns": "BookProof.RitzCertificate"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.re_inner_factor",
-  "slug": "BookProof_RitzCertificate_re_inner_factor",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq",
+  "plen": 25,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_pos",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_sq",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ",
+  "plen": 10,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq",
+  "plen": 32,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq",
   "plen": 14,
-  "ns": "BookProof.RitzCertificate"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.factor_nonneg",
-  "slug": "BookProof_RitzCertificate_factor_nonneg",
-  "plen": 6,
-  "ns": "BookProof.RitzCertificate"
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_coreState",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.factor_nonneg_of_separation",
-  "slug": "BookProof_RitzCertificate_factor_nonneg_of_separation",
-  "plen": 7,
-  "ns": "BookProof.RitzCertificate"
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState",
+  "plen": 8,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.temple_lower_bound",
-  "slug": "BookProof_RitzCertificate_temple_lower_bound",
-  "plen": 12,
-  "ns": "BookProof.RitzCertificate"
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState",
+  "plen": 5,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.sInf_spectrum_le_rayleigh",
-  "slug": "BookProof_RitzCertificate_sInf_spectrum_le_rayleigh",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.coreState_total",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total",
+  "plen": 5,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_hasZeroDeficiencyOn",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_hasZeroDeficiencyOn",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_esa",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa",
   "plen": 4,
-  "ns": "BookProof.RitzCertificate"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.temple_band_mem",
-  "slug": "BookProof_RitzCertificate_temple_band_mem",
-  "plen": 1,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.temple_width_tendsto_zero",
-  "slug": "BookProof_RitzCertificate_temple_width_tendsto_zero",
-  "plen": 17,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.le_runLo",
-  "slug": "BookProof_RitzCertificate_le_runLo",
-  "plen": 1,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runHi_le",
-  "slug": "BookProof_RitzCertificate_runHi_le",
-  "plen": 1,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runLo_mono",
-  "slug": "BookProof_RitzCertificate_runLo_mono",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn",
   "plen": 2,
-  "ns": "BookProof.RitzCertificate"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runHi_antitone",
-  "slug": "BookProof_RitzCertificate_runHi_antitone",
-  "plen": 2,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runBands_nested",
-  "slug": "BookProof_RitzCertificate_runBands_nested",
-  "plen": 1,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.mem_runBand",
-  "slug": "BookProof_RitzCertificate_mem_runBand",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.norm_coreState",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState",
   "plen": 3,
-  "ns": "BookProof.RitzCertificate"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runBand_width_le",
-  "slug": "BookProof_RitzCertificate_runBand_width_le",
-  "plen": 3,
-  "ns": "BookProof.RitzCertificate"
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_not_bounded",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_not_bounded",
+  "plen": 26,
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  },
  {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.runBand_widths_tendsto_zero",
-  "slug": "BookProof_RitzCertificate_runBand_widths_tendsto_zero",
-  "plen": 6,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.nested_certificate_of_bands",
-  "slug": "BookProof_RitzCertificate_nested_certificate_of_bands",
-  "plen": 1,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.temple_nested_certificate",
-  "slug": "BookProof_RitzCertificate_temple_nested_certificate",
-  "plen": 6,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterRitzCertificate",
-  "name": "BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates",
-  "slug": "BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates",
-  "plen": 4,
-  "ns": "BookProof.RitzCertificate"
- },
- {
-  "leaf": "ChapterNsOuterFockSingleTime",
-  "name": "BookProof.NsOuterFock.nsOuterFock_timeIndependent_singleTime",
-  "slug": "BookProof_NsOuterFock_nsOuterFock_timeIndependent_singleTime",
-  "plen": 1,
-  "ns": "BookProof.NsOuterFock"
- },
- {
-  "leaf": "ChapterNsOuterFockSingleTime",
-  "name": "BookProof.NsOuterFock.nsOuterFock_farisLavine_timeIndependent_singleTime",
-  "slug": "BookProof_NsOuterFock_nsOuterFock_farisLavine_timeIndependent_singleTime",
+  "leaf": "ChapterNavierStokesLagrangianCanonical",
+  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow",
+  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow",
   "plen": 2,
-  "ns": "BookProof.NsOuterFock"
- },
- {
-  "leaf": "ChapterNsTimeIndependentFlow",
-  "name": "BookProof.NsTimeIndependent.nsEulerian_timeIndependent_singleTime",
-  "slug": "BookProof_NsTimeIndependent_nsEulerian_timeIndependent_singleTime",
-  "plen": 2,
-  "ns": "BookProof.NsTimeIndependent"
- },
- {
-  "leaf": "ChapterNsTimeIndependentFlow",
-  "name": "BookProof.NsTimeIndependent.nsGaugeY_timeIndependent_singleTime",
-  "slug": "BookProof_NsTimeIndependent_nsGaugeY_timeIndependent_singleTime",
-  "plen": 2,
-  "ns": "BookProof.NsTimeIndependent"
- },
- {
-  "leaf": "ChapterNsTimeIndependentFlow",
-  "name": "BookProof.NsTimeIndependent.nsLagrangian_timeIndependent_singleTime",
-  "slug": "BookProof_NsTimeIndependent_nsLagrangian_timeIndependent_singleTime",
-  "plen": 3,
-  "ns": "BookProof.NsTimeIndependent"
+  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
  }
 ]

@@ -23,8 +23,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
-open CanonicalVector ThreeComponent
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
+open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq (i : Fin 3) :
     (pos i).comp (pos i) + (mom i).comp (mom i)

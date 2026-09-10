@@ -21,11 +21,25 @@ nodes. This unlocks everything the earlier waves deferred.
 
 **Status (2026-09-10):**
 
-- Compile gate: **70 / 70 bundles OK, 0 FAIL** (`state/compile_check.log`).
-- `pipeline/wave_upload.json` **EXTENDED + COMMITTED** (see §5b table + the fix list
-  in §5a): **79 defs** (the 66 upstream closure + SirkPerSystem aggregation bundle +
-  4 deferred chapters), **151 thms**, **151 sol_order**. Extender script:
-  `debug/extend_wave.py`.
+- Compile gate: **70 / 70 bundles OK, 0 FAIL** (`state/compile_check.log`) — the
+  wave-1 def gate. Wave-2/3 added ~15 more gated def bundles (§1b).
+- `pipeline/wave_upload.json` now **91 defs / 440 thms / 440 sols** across waves 1–3
+  (wave-1: 70 defs + 82 deferred thms; wave-2: +SirkRestart/SirkRitzSpectrum/
+  SirkTruncation + ContinuityUnitaryInfinite/H1/H4/H6/H8/H9/SirkSpectralGeometry
+  (+85); wave-2.5: +SirkGramWhitening/GramCutoff/TrotterKato/MultiShift (+77);
+  wave-3: +SirkTrotterKatoGalerkin/GapTable/CertifiedGap/RitzMinMax/RitzPerturbation/
+  SignedShift (+127)). Extender scripts: `debug/extend_wave.py` (wave-1) and
+  `debug/extend_wave_next.py` (waves 2–3).
+- **Upload RUNNING** via the resilient wrapper (`./start_upload.sh status`;
+  log `state/pipeline.log`). Progress (2026-09-10 ~11:30): **defs 99/99 done,
+  thms ~379/428 done, sols ~309/407 done**, a small expected `failed` tail (the
+  documented proof-gap sols + a few pre-fix thm caps). New nodes confirmed on the
+  platform via `GET /publish-jobs` (RitzMinMax/SignedShift thm nodes PUBLISHED).
+  Per-item job polls can idle up to `JOB_TIMEOUT=900s` on big bundles — NORMAL.
+- **ESA scope decision (binding, human):** standalone `*Esa` chapters are
+  EXCLUDED from waves — only the Friedrichs extension of `N` lifts to the outer
+  Fock space, not the one-particle ESA proofs; publish ESA content only via
+  Faris–Lavine (§8).
 - **Upload RUNNING since 2026-09-10 00:15** via the resilient wrapper
   (`./start_upload.sh status`; log `state/pipeline.log`). Progress snapshot at the
   time of writing: **~50/54 defs done, 0 failed**, then 151 thms + 151 sols. Per-item
@@ -445,6 +459,16 @@ debug/compile_check.sh                          # full 70-chapter gate
 - **NO Riemann Hypothesis and NO P-vs-NP proofs** (the `Legacy.lean` chain rests on
   `sorryAx`).
 - **Priority: QYM, NS (Navier–Stokes), QG, SIRK** BookProof chapters.
+- **ESA chapters: NOT a target on their own** (binding, human, 2026-09-10). Only
+  the **Friedrichs extension of the number operator `N`** lifts to the **outer Fock
+  space**; the essential-self-adjointness (ESA) proofs on the one-particle
+  Hamiltonians do NOT lift. So publish ESA content **only through the Faris–Lavine
+  route** (`FarisLavine`, `FarisLavineCore`, the Faris–Lavine chapters) — standalone
+  `*Esa` chapters (`FockWeightedSchurEsa`, `GradedBandSchurEsa`,
+  `HermiteBandCalculus(Higher)`, `FullQuadraticEsa`, `QuadraticFockEsa`,
+  `HermiteQuadraticEsa`, `ModeQuadraticEsa`, `OperatorSeriesEsa`, `ShiftedHermiteCore`,
+  the ~30 other `*Esa` chapters) are **excluded from waves** (def bundles may be
+  fixed/generated only if needed as an upstream dependency of a non-ESA chapter).
 - Solutions must be axiom-clean: `#print axioms X` ⊆ `{propext, Classical.choice,
   Quot.sound}`. Phase-0 gate: `/home/leo/Projects/timepiece/axiom_gate.lean`
   (prefix-based over BookProof/PnpProof/UsedRoute/UnusedRoute/RandomMap; `grep '^BAD'`
@@ -455,7 +479,8 @@ debug/compile_check.sh                          # full 70-chapter gate
   `sorry_free: true` metadata from the gate run.
 
 **Selection criteria for the next wave:** Mathlib-only (or fully published upstream
-deps) > previously compiling > axiom-clean > priority QYM > SIRK > ESA > NS > QG.
+deps) > previously compiling > axiom-clean > priority QYM > SIRK > NS > QG > (ESA only
+via Faris–Lavine).
 
 **Candidate chapters not yet uploaded** (full list: LEGACY §10.2):
 
@@ -469,9 +494,12 @@ deps) > previously compiling > axiom-clean > priority QYM > SIRK > ESA > NS > QG
   ChapterSirkTruncation, ChapterSirkPerSystemFlowBound.
   (SirkDiffusiveDecay/EndToEnd/PerSystem/Whitening/SpectralGeometry are in the
   current wave or already published.)
-- ESA: ChapterFockWeightedSchurEsa, ChapterGradedBandSchurEsa,
+- ESA: **EXCLUDED as standalone targets** (binding decision above — only the
+  Friedrichs extension of `N` lifts to the outer Fock space, not the one-particle
+  ESA proofs). Publish ESA content only via Faris–Lavine. (Formerly listed:
+  ChapterFockWeightedSchurEsa, ChapterGradedBandSchurEsa,
   ChapterHermiteBandCalculusHigher, ChapterQuadraticFockEsa, plus the ~30 `*Esa`
-  chapters (see LEGACY §10.2).
+  chapters — see LEGACY §10.2.)
 - NS: ChapterNavierStokesSignedShift (29 thms — bundle now compiles),
   ChapterNavierStokesMomentumEsa, ChapterNavierStokesFockEsa,
   ChapterNavierStokesEsaConsolidation, and the rest of LEGACY §10.2's NS list.

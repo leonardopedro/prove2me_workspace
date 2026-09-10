@@ -1,254 +1,177 @@
 [
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.exp_abs_le_const_mul_exp_sq",
-  "slug": "BookProof_QgHermiteCore_exp_abs_le_const_mul_exp_sq",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.norm_apply_sq",
+  "slug": "BookProof_RitzCertificate_norm_apply_sq",
+  "plen": 9,
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.exp_abs_mul_gaussH_le",
-  "slug": "BookProof_QgHermiteCore_exp_abs_mul_gaussH_le",
-  "plen": 8,
-  "ns": "BookProof.QgHermiteCore"
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.isSelfAdjoint_sub_const",
+  "slug": "BookProof_RitzCertificate_isSelfAdjoint_sub_const",
+  "plen": 1,
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.tendsto_exp_abs_mul_gaussH_atTop",
-  "slug": "BookProof_QgHermiteCore_tendsto_exp_abs_mul_gaussH_atTop",
-  "plen": 10,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.ExpBounded.nonneg_const",
-  "slug": "BookProof_QgHermiteCore_ExpBounded_nonneg_const",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore.ExpBounded"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.ExpBounded.add",
-  "slug": "BookProof_QgHermiteCore_ExpBounded_add",
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.re_inner_factor",
+  "slug": "BookProof_RitzCertificate_re_inner_factor",
   "plen": 14,
-  "ns": "BookProof.QgHermiteCore.ExpBounded"
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.ExpBounded.const_mul",
-  "slug": "BookProof_QgHermiteCore_ExpBounded_const_mul",
-  "plen": 4,
-  "ns": "BookProof.QgHermiteCore.ExpBounded"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.ExpBounded.mul",
-  "slug": "BookProof_QgHermiteCore_ExpBounded_mul",
-  "plen": 13,
-  "ns": "BookProof.QgHermiteCore.ExpBounded"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.expBounded_pow",
-  "slug": "BookProof_QgHermiteCore_expBounded_pow",
-  "plen": 7,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.expBounded_poly",
-  "slug": "BookProof_QgHermiteCore_expBounded_poly",
-  "plen": 4,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.continuous_starobinskyV",
-  "slug": "BookProof_QgHermiteCore_continuous_starobinskyV",
-  "plen": 2,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.expBounded_starobinskyV",
-  "slug": "BookProof_QgHermiteCore_expBounded_starobinskyV",
-  "plen": 37,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.continuous_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_continuous_gaussPoly",
-  "plen": 1,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_memLp_gaussPoly",
-  "plen": 1,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_abs_poly_mul_exp_neg_eighth",
-  "slug": "BookProof_QgHermiteCore_memLp_abs_poly_mul_exp_neg_eighth",
-  "plen": 15,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_mul_gaussPoly_of_expBounded",
-  "slug": "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded",
-  "plen": 41,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_starobinskyV_mul_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_scalaronFull1D_mul_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_memLp_scalaronFull1D_mul_gaussPoly",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.hasDerivAt_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_hasDerivAt_gaussPoly",
-  "plen": 7,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.deriv_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_deriv_gaussPoly",
-  "plen": 2,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.deriv2_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_deriv2_gaussPoly",
-  "plen": 1,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_hamiltonian_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_memLp_hamiltonian_gaussPoly",
-  "plen": 12,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly",
-  "slug": "BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integral_gaussPoly_mul",
-  "slug": "BookProof_QgHermiteCore_integral_gaussPoly_mul",
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.factor_nonneg",
+  "slug": "BookProof_RitzCertificate_factor_nonneg",
   "plen": 6,
-  "ns": "BookProof.QgHermiteCore"
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integrable_gaussPoly_mul",
-  "slug": "BookProof_QgHermiteCore_integrable_gaussPoly_mul",
-  "plen": 5,
-  "ns": "BookProof.QgHermiteCore"
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.factor_nonneg_of_separation",
+  "slug": "BookProof_RitzCertificate_factor_nonneg_of_separation",
+  "plen": 7,
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.gint_gaussPolyDeriv_antisymm",
-  "slug": "BookProof_QgHermiteCore_gint_gaussPolyDeriv_antisymm",
-  "plen": 14,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.gint_gaussPolyDeriv_two_symm",
-  "slug": "BookProof_QgHermiteCore_gint_gaussPolyDeriv_two_symm",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integral_kinetic_symm",
-  "slug": "BookProof_QgHermiteCore_integral_kinetic_symm",
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.temple_lower_bound",
+  "slug": "BookProof_RitzCertificate_temple_lower_bound",
   "plen": 12,
-  "ns": "BookProof.QgHermiteCore"
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integrable_potential_gaussPoly_mul",
-  "slug": "BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul",
-  "plen": 38,
-  "ns": "BookProof.QgHermiteCore"
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.sInf_spectrum_le_rayleigh",
+  "slug": "BookProof_RitzCertificate_sInf_spectrum_le_rayleigh",
+  "plen": 4,
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integral_hamiltonian_symm",
-  "slug": "BookProof_QgHermiteCore_integral_hamiltonian_symm",
-  "plen": 35,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.integral_scalaronHamiltonian_symm",
-  "slug": "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",
-  "plen": 2,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.ExpBounded.comp_coord",
-  "slug": "BookProof_QgHermiteCore_ExpBounded_comp_coord",
-  "plen": 6,
-  "ns": "BookProof.QgHermiteCore.ExpBounded"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval",
-  "slug": "BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval",
-  "plen": 39,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded",
-  "slug": "BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded",
-  "plen": 31,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.continuous_scalaronSectorPotential",
-  "slug": "BookProof_QgHermiteCore_continuous_scalaronSectorPotential",
-  "plen": 3,
-  "ns": "BookProof.QgHermiteCore"
- },
- {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.expBounded_scalaronSectorPotential",
-  "slug": "BookProof_QgHermiteCore_expBounded_scalaronSectorPotential",
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.temple_band_mem",
+  "slug": "BookProof_RitzCertificate_temple_band_mem",
   "plen": 1,
-  "ns": "BookProof.QgHermiteCore"
+  "ns": "BookProof.RitzCertificate"
  },
  {
-  "leaf": "ChapterQgHermiteCore",
-  "name": "BookProof.QgHermiteCore.memLp_scalaronSectorPotential_mul_pgFun",
-  "slug": "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.temple_width_tendsto_zero",
+  "slug": "BookProof_RitzCertificate_temple_width_tendsto_zero",
+  "plen": 17,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.le_runLo",
+  "slug": "BookProof_RitzCertificate_le_runLo",
+  "plen": 1,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runHi_le",
+  "slug": "BookProof_RitzCertificate_runHi_le",
+  "plen": 1,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runLo_mono",
+  "slug": "BookProof_RitzCertificate_runLo_mono",
   "plen": 2,
-  "ns": "BookProof.QgHermiteCore"
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runHi_antitone",
+  "slug": "BookProof_RitzCertificate_runHi_antitone",
+  "plen": 2,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runBands_nested",
+  "slug": "BookProof_RitzCertificate_runBands_nested",
+  "plen": 1,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.mem_runBand",
+  "slug": "BookProof_RitzCertificate_mem_runBand",
+  "plen": 3,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runBand_width_le",
+  "slug": "BookProof_RitzCertificate_runBand_width_le",
+  "plen": 3,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.runBand_widths_tendsto_zero",
+  "slug": "BookProof_RitzCertificate_runBand_widths_tendsto_zero",
+  "plen": 6,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.nested_certificate_of_bands",
+  "slug": "BookProof_RitzCertificate_nested_certificate_of_bands",
+  "plen": 1,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.temple_nested_certificate",
+  "slug": "BookProof_RitzCertificate_temple_nested_certificate",
+  "plen": 6,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterRitzCertificate",
+  "name": "BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates",
+  "slug": "BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates",
+  "plen": 4,
+  "ns": "BookProof.RitzCertificate"
+ },
+ {
+  "leaf": "ChapterNsOuterFockSingleTime",
+  "name": "BookProof.NsOuterFock.nsOuterFock_timeIndependent_singleTime",
+  "slug": "BookProof_NsOuterFock_nsOuterFock_timeIndependent_singleTime",
+  "plen": 1,
+  "ns": "BookProof.NsOuterFock"
+ },
+ {
+  "leaf": "ChapterNsOuterFockSingleTime",
+  "name": "BookProof.NsOuterFock.nsOuterFock_farisLavine_timeIndependent_singleTime",
+  "slug": "BookProof_NsOuterFock_nsOuterFock_farisLavine_timeIndependent_singleTime",
+  "plen": 2,
+  "ns": "BookProof.NsOuterFock"
+ },
+ {
+  "leaf": "ChapterNsTimeIndependentFlow",
+  "name": "BookProof.NsTimeIndependent.nsEulerian_timeIndependent_singleTime",
+  "slug": "BookProof_NsTimeIndependent_nsEulerian_timeIndependent_singleTime",
+  "plen": 2,
+  "ns": "BookProof.NsTimeIndependent"
+ },
+ {
+  "leaf": "ChapterNsTimeIndependentFlow",
+  "name": "BookProof.NsTimeIndependent.nsGaugeY_timeIndependent_singleTime",
+  "slug": "BookProof_NsTimeIndependent_nsGaugeY_timeIndependent_singleTime",
+  "plen": 2,
+  "ns": "BookProof.NsTimeIndependent"
+ },
+ {
+  "leaf": "ChapterNsTimeIndependentFlow",
+  "name": "BookProof.NsTimeIndependent.nsLagrangian_timeIndependent_singleTime",
+  "slug": "BookProof_NsTimeIndependent_nsLagrangian_timeIndependent_singleTime",
+  "plen": 3,
+  "ns": "BookProof.NsTimeIndependent"
  }
 ]

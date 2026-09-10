@@ -1,5 +1,5 @@
-import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterBandEnclosure
+import Mathlib
 
 import Mathlib
 
@@ -63,6 +63,8 @@ open Filter Topology
 
 namespace BookProof.RitzCertificate
 
+open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
+open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
 
 section Temple
 

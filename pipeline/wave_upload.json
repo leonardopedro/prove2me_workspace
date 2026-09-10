@@ -1328,6 +1328,17 @@
     "hermite",
     "special-functions"
    ]
+  },
+  "ChapterRitzCertificate": {
+   "definition_name": "ChapterRitzCertificate",
+   "namespace": "BookProof.RitzCertificate",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterRitzCertificate.lean",
+   "title": "`CONSOLIDATED_PLAN.md` (top work package, status update 2026-08-28) leaves exactly two inputs on the route from the fini ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.RitzCertificate`, source chapter `BookProof/ChapterRitzCertificate.lean`).\n\n`CONSOLIDATED_PLAN.md` (top work package, status update 2026-08-28) leaves exactly two inputs on the route from the finite Hashimoto/SIRK computation to a gap of the infinite selected operator:\n\n1. **the finite certificate at each order** \u2014 that the order-`m` Ritz value lies in the order-`m` emitted band, and that the emitted bands *nest*; and 2. the free/diagonal (number-preserving) hypothesis in the `d\u0393` lift.\n\nThis chapter closes item 1. Nothing here is assumed about the emitter: both halves are *constructed and proved*.\n\n* **the band, from the computation** \u2014 the order-`m` Ritz vector `x m` produces a two-sided enclosure of the spectral edge by itself. Its Rayleigh quotient `\u03b8 = \u27eax, A x\u27eb` is an upper bound for `sInf (spectrum \u211d A)` (Rayleigh\u2013Ritz), and its residual `\u03b5 = \u2016A x \u2212 \u03b8 x\u2016` gives the matching **lower** bound through *Temple's inequality*\n\n`sInf (spectrum \u211d A) \u2265 \u03b8 \u2212 \u03b5\u00b2 / (\u03b2 \u2212 \u03b8)`,\n\nvalid whenever the rest of the spectrum lies above a known `\u03b2 > \u03b8`. Both endpoints are computable from the finite Krylov/Galerkin data, so `[\u03b8 \u2212 \u03b5\u00b2/(\u03b2\u2212\u03b8), \u03b8]` is exactly an *emitted* band, and it encloses the edge of the infinite operator by a theorem, not by assumption (`temple_lower_bound`, `temple_band_mem`).\n\n* **nesting, for free** \u2014 an arbitrary family of enclosing bands is turned into a *nested* family by running intersection, `runLo = max_{k \u2264 m} lo k`, `runHi = min_{k \u2264 m} hi k`. The running family is nested by construction (`runBands_nested`), still encloses everything the original family enclosed (`mem_runBand`), and its widths are no larger (`runBand_width_le`), so they still vanish (`runBand_widths_tendsto_zero`).\n\nComposing the two with the free outer-enclosure/`d\u0393` lift of `ChapterFockOneParticleGap` gives the full-theory statement: the Ritz data first certify the inner one-particle edge, then the creation-left/annihilation-right outer Hamiltonian inherits the exact vacuum and non-vacuum gap. The finite certificate alone does not establish a standalone inner Hamiltonian ground state. `fock_mass_gap_of_temple_certificates`: from finite Rayleigh/residual data alone \u2014 no band hypothesis of any kind \u2014 a Fock mass gap for the free second quantization of the selected bounded operator.\n\nTemple's inequality needs the *spectral separation* input `hsep`: the spectrum of `A` below `\u03b2` consists of the edge alone. That is the standard (and unavoidable) side condition of every rigorous two-sided eigenvalue enclosure \u2014 a residual bound alone can never separate a cluster. It is stated explicitly in every theorem and never derived. As everywhere in this development, `1.932` remains a certified truncated number and no mass gap of the physical Yang\u2013Mills Hamiltonian is claimed.\n\nEverything is `sorry`-free and introduces no axioms.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "thms": {
@@ -9589,6 +9600,206 @@
     "hermite",
     "special-functions"
    ]
+  },
+  "BookProof_RitzCertificate_factor_nonneg": {
+   "name": "BookProof.RitzCertificate.factor_nonneg",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_factor_nonneg.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {l b : \u211d} (hspec : \u2200 t \u2208 spectrum \u211d A, 0 \u2264 (t - l) * (t - b)) : 0 \u2264 (A - (l : \u211d) \u2022 (1 : F \u2192L[\u2102] F)) * (A - (b : \u211d) \u2022 (1 : F \u2192L[\u2102] F))",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.factor_nonneg` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_factor_nonneg_of_separation": {
+   "name": "BookProof.RitzCertificate.factor_nonneg_of_separation",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_factor_nonneg_of_separation.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {l b : \u211d} (hsep : SpectralSeparation A l b) : 0 \u2264 (A - (l : \u211d) \u2022 (1 : F \u2192L[\u2102] F)) * (A - (b : \u211d) \u2022 (1 : F \u2192L[\u2102] F))",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.factor_nonneg_of_separation` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates": {
+   "name": "BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates.lean",
+   "title": "[Nontrivial F] {A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {bas : HilbertBasis \u2115 \u2102 F} {e : \u2115 \u2192 \u211d} (heig : \u2200 k, A (bas k) = ((e k : \u211d) : \u2102) \u2022 bas k) {b delta mu : \u211d} {x : \u2115 \u2192 F} (hsep : SpectralSeparation A (sInf (spectrum \u211d A)) b) (hdelta : 0 < delta) (hmu : 0 \u2264 mu) (hx : \u2200 m, \u2016x m\u2016 = 1) (hle : \u2200 m, rayl ...",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_isSelfAdjoint_sub_const": {
+   "name": "BookProof.RitzCertificate.isSelfAdjoint_sub_const",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_isSelfAdjoint_sub_const.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) (c : \u211d) : IsSelfAdjoint (A - (c : \u211d) \u2022 (1 : F \u2192L[\u2102] F))",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.isSelfAdjoint_sub_const` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_le_runLo": {
+   "name": "BookProof.RitzCertificate.le_runLo",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_le_runLo.lean",
+   "title": "(lo : \u2115 \u2192 \u211d) (m : \u2115) : lo m \u2264 runLo lo m",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.le_runLo` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_mem_runBand": {
+   "name": "BookProof.RitzCertificate.mem_runBand",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_mem_runBand.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam : \u211d} (h : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (m : \u2115) : lam \u2208 Set.Icc (runLo lo m) (runHi hi m)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.mem_runBand` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_nested_certificate_of_bands": {
+   "name": "BookProof.RitzCertificate.nested_certificate_of_bands",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_nested_certificate_of_bands.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam : \u211d} (hmem : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) : NestedBands (runLo lo) (runHi hi) \u2227 (\u2200 m, lam \u2208 Set.Icc (runLo lo m) (runHi hi m)) \u2227 Tendsto (fun m => runHi hi m - runLo lo m) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.nested_certificate_of_bands` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_norm_apply_sq": {
+   "name": "BookProof.RitzCertificate.norm_apply_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_norm_apply_sq.lean",
+   "title": "(A : F \u2192L[\u2102] F) (x : F) (hx : \u2016x\u2016 = 1) : \u2016A x\u2016 ^ 2 = resid A x ^ 2 + rayleigh A x ^ 2",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.norm_apply_sq` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_re_inner_factor": {
+   "name": "BookProof.RitzCertificate.re_inner_factor",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_re_inner_factor.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) (l b : \u211d) (x : F) : (inner \u2102 x ((((A - (l : \u211d) \u2022 (1 : F \u2192L[\u2102] F)) * (A - (b : \u211d) \u2022 (1 : F \u2192L[\u2102] F))) x)) : \u2102).re = \u2016A x\u2016 ^ 2 - (l + b) * rayleigh A x + l * b * \u2016x\u2016 ^ 2",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.re_inner_factor` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runBand_width_le": {
+   "name": "BookProof.RitzCertificate.runBand_width_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runBand_width_le.lean",
+   "title": "(lo hi : \u2115 \u2192 \u211d) (m : \u2115) : runHi hi m - runLo lo m \u2264 hi m - lo m",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runBand_width_le` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runBand_widths_tendsto_zero": {
+   "name": "BookProof.RitzCertificate.runBand_widths_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runBand_widths_tendsto_zero.lean",
+   "title": "{lo hi : \u2115 \u2192 \u211d} {lam : \u211d} (hmem : \u2200 m, lam \u2208 Set.Icc (lo m) (hi m)) (hwidth : Tendsto (fun m => hi m - lo m) atTop (\ud835\udcdd 0)) : Tendsto (fun m => runHi hi m - runLo lo m) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runBand_widths_tendsto_zero` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runBands_nested": {
+   "name": "BookProof.RitzCertificate.runBands_nested",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runBands_nested.lean",
+   "title": "(lo hi : \u2115 \u2192 \u211d) : NestedBands (runLo lo) (runHi hi)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runBands_nested` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runHi_antitone": {
+   "name": "BookProof.RitzCertificate.runHi_antitone",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runHi_antitone.lean",
+   "title": "(hi : \u2115 \u2192 \u211d) {m n : \u2115} (hmn : m \u2264 n) : runHi hi n \u2264 runHi hi m",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runHi_antitone` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runHi_le": {
+   "name": "BookProof.RitzCertificate.runHi_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runHi_le.lean",
+   "title": "(hi : \u2115 \u2192 \u211d) (m : \u2115) : runHi hi m \u2264 hi m",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runHi_le` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_runLo_mono": {
+   "name": "BookProof.RitzCertificate.runLo_mono",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_runLo_mono.lean",
+   "title": "(lo : \u2115 \u2192 \u211d) {m n : \u2115} (hmn : m \u2264 n) : runLo lo m \u2264 runLo lo n",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.runLo_mono` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_sInf_spectrum_le_rayleigh": {
+   "name": "BookProof.RitzCertificate.sInf_spectrum_le_rayleigh",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_sInf_spectrum_le_rayleigh.lean",
+   "title": "[Nontrivial F] (A : F \u2192L[\u2102] F) (hA : IsSelfAdjoint A) {x : F} (hx : \u2016x\u2016 = 1) : sInf (spectrum \u211d A) \u2264 rayleigh A x",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.sInf_spectrum_le_rayleigh` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_temple_band_mem": {
+   "name": "BookProof.RitzCertificate.temple_band_mem",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_temple_band_mem.lean",
+   "title": "[Nontrivial F] {A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {b : \u211d} {x : F} (hsep : SpectralSeparation A (sInf (spectrum \u211d A)) b) (hx : \u2016x\u2016 = 1) (hlt : rayleigh A x < b) : sInf (spectrum \u211d A) \u2208 Set.Icc (rayleigh A x - resid A x ^ 2 / (b - rayleigh A x)) (rayleigh A x)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.temple_band_mem` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_temple_lower_bound": {
+   "name": "BookProof.RitzCertificate.temple_lower_bound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_temple_lower_bound.lean",
+   "title": "{A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {l b : \u211d} {x : F} (hsep : SpectralSeparation A l b) (hx : \u2016x\u2016 = 1) (hlt : rayleigh A x < b) : rayleigh A x - resid A x ^ 2 / (b - rayleigh A x) \u2264 l",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.temple_lower_bound` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_temple_nested_certificate": {
+   "name": "BookProof.RitzCertificate.temple_nested_certificate",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_temple_nested_certificate.lean",
+   "title": "[Nontrivial F] {A : F \u2192L[\u2102] F} (hA : IsSelfAdjoint A) {b delta : \u211d} {x : \u2115 \u2192 F} (hsep : SpectralSeparation A (sInf (spectrum \u211d A)) b) (hdelta : 0 < delta) (hx : \u2200 m, \u2016x m\u2016 = 1) (hle : \u2200 m, rayleigh A (x m) \u2264 b - delta) (hres : Tendsto (fun m => resid A (x m)) atTop (\ud835\udcdd 0)) : NestedBands (runLo fun m ...",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.temple_nested_certificate` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_RitzCertificate_temple_width_tendsto_zero": {
+   "name": "BookProof.RitzCertificate.temple_width_tendsto_zero",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_RitzCertificate_temple_width_tendsto_zero.lean",
+   "title": "{A : F \u2192L[\u2102] F} {b delta : \u211d} {x : \u2115 \u2192 F} (hdelta : 0 < delta) (hle : \u2200 m, rayleigh A (x m) \u2264 b - delta) (hres : Tendsto (fun m => resid A (x m)) atTop (\ud835\udcdd 0)) : Tendsto (fun m => rayleigh A (x m) - (rayleigh A (x m) - resid A (x m) ^ 2 / (b - rayleigh A (x m)))) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.RitzCertificate.temple_width_tendsto_zero` (module `BookProof.RitzCertificate`), source chapter `BookProof/ChapterRitzCertificate.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterRitzCertificate.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -10056,6 +10267,16 @@
   "BookProof_QgHermiteCore_integral_gaussPoly_mul",
   "BookProof_QgHermiteCore_memLp_abs_poly_mul_exp_neg_eighth",
   "BookProof_QgHermiteCore_memLp_gaussPoly",
+  "BookProof_RitzCertificate_factor_nonneg",
+  "BookProof_RitzCertificate_isSelfAdjoint_sub_const",
+  "BookProof_RitzCertificate_le_runLo",
+  "BookProof_RitzCertificate_mem_runBand",
+  "BookProof_RitzCertificate_norm_apply_sq",
+  "BookProof_RitzCertificate_runHi_antitone",
+  "BookProof_RitzCertificate_runHi_le",
+  "BookProof_RitzCertificate_runLo_mono",
+  "BookProof_RitzCertificate_sInf_spectrum_le_rayleigh",
+  "BookProof_RitzCertificate_temple_width_tendsto_zero",
   "BookProof_SirkBandLedger_Decimal_leB_iff",
   "BookProof_SirkBandLedger_formatExampleLedger_lo_zero",
   "BookProof_SirkBandLedger_formatExampleLedger_parse",
@@ -10154,6 +10375,10 @@
   "BookProof_QgHermiteCore_exp_abs_mul_gaussH_le",
   "BookProof_QgHermiteCore_gint_gaussPolyDeriv_two_symm",
   "BookProof_QgHermiteCore_deriv_gaussPoly",
+  "BookProof_RitzCertificate_factor_nonneg_of_separation",
+  "BookProof_RitzCertificate_re_inner_factor",
+  "BookProof_RitzCertificate_runBand_width_le",
+  "BookProof_RitzCertificate_runBands_nested",
   "BookProof_SirkBandLedger_ledgerWf_enclosing",
   "BookProof_SirkBandLedger_ledgerWf_step",
   "BookProof_SirkBandLedger_ledger_width_eventually_const",
@@ -10207,6 +10432,8 @@
   "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded",
   "BookProof_QgHermiteCore_tendsto_exp_abs_mul_gaussH_atTop",
   "BookProof_QgHermiteCore_deriv2_gaussPoly",
+  "BookProof_RitzCertificate_temple_lower_bound",
+  "BookProof_RitzCertificate_runBand_widths_tendsto_zero",
   "BookProof_SirkBandLedger_ledgerLo_le_ledgerHi",
   "BookProof_SirkBandLedger_hiQ_antitone",
   "BookProof_SirkBandLedger_loQ_monotone",
@@ -10240,6 +10467,8 @@
   "BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly",
   "BookProof_QgHermiteCore_integral_kinetic_symm",
   "BookProof_QgHermiteCore_memLp_hamiltonian_gaussPoly",
+  "BookProof_RitzCertificate_temple_band_mem",
+  "BookProof_RitzCertificate_nested_certificate_of_bands",
   "BookProof_SirkBandLedger_nestedBands_of_wf",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
   "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix",
@@ -10258,6 +10487,7 @@
   "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
   "BookProof_QgHermiteCore_integral_hamiltonian_symm",
   "BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly",
+  "BookProof_RitzCertificate_temple_nested_certificate",
   "BookProof_SirkBandLedger_formatExampleLedger_nested",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger",
   "BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger",
@@ -10278,6 +10508,7 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
   "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",
+  "BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
   "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto",

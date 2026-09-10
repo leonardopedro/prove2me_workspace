@@ -504,6 +504,16 @@ via Faris–Lavine).
   ChapterNavierStokesMomentumEsa, ChapterNavierStokesFockEsa,
   ChapterNavierStokesEsaConsolidation, and the rest of LEGACY §10.2's NS list.
 
+**Outer-Fock / Faris-Lavine progress (2026-09-10):** `NavierStokesFockFarisLavine` is PUBLISHED (wave 8,
+12 thms, SecondQuant namespace). The remaining FL chapters (`SqSumFarisLavine`, `SqSumOuterFamily`,
+`NsOuterFockFarisLavine`, `SqSumOuterSingleTime`) compile their defs but are blocked by a web of
+NON-FL-ESA upstream deps (`QgOuterFockEsa` -> `Qg3DGaugeEsa`/`DirectSumEsa`/`FullQuadraticEsa`;
+`HermiteQuadraticEsa`/`GaussCoreQuadBounds` also pulled in) -- excluded per the ESA decision, so
+this chain is NOT pursued.  Embedded helpers `ExpBounded.nonneg_const`, `exists_exp_bound_mvPolyEval`,
+`memLp_mul_pgFun_of_expBounded` in `Def_ChapterQgHermiteCore`, which unblocked `QgHermiteFriedrichs`
+and `QgHermiteOscillatorEsa` (defs compile; not added to the wave since they are only needed by the
+blocked FL chain).
+
 **QG cluster status (2026-09-10):** `QgHermiteCore` is PUBLISHED (wave 5.5, 36 thms). The rest
 of the QG chain is blocked on a cascade: `QgBrstDerivativeGauge` (needs `QgModeData` from the
 mode-instance chapters) -> `QgVielbeinModeInstance`/`QgContinuumModeInstance` (needs ScalaronFiberFL/

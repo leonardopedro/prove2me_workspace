@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
 open BookProof.QgHermiteCore
-open BookProof.QgHermiteCore.ExpBounded
 
 
 

@@ -1315,6 +1315,19 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "ChapterQgHermiteCore": {
+   "definition_name": "ChapterQgHermiteCore",
+   "namespace": "BookProof.QgHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgHermiteCore.lean",
+   "title": "Plan item **\u00a710.6.1, target 1** of `CONSOLIDATED_PLAN.md`: *well-definedness of the gauge-fixed `R + \u03b1R\u00b2` one-particle H ...",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgHermiteCore`, source chapter `BookProof/ChapterQgHermiteCore.lean`).\n\nPlan item **\u00a710.6.1, target 1** of `CONSOLIDATED_PLAN.md`: *well-definedness of the gauge-fixed `R + \u03b1R\u00b2` one-particle Hamiltonian on the Gauss\u2013polynomial core*.\n\nThe scalaron potential `V(\u03c6) = (M\u2074/16\u03b1)(1 \u2212 e^{\u2212\u221a(2/3)\u03c6/M})\u00b2` grows **exponentially** as `\u03c6 \u2192 \u2212\u221e`, so it is not of temperate growth and the Schwartz-core multiplication theorem does not apply to it. The Gauss\u2013polynomial core `p(x)e^{\u2212x\u00b2/4}` \u2014 the basis in which the SIRK numerics actually work \u2014 is nevertheless a legitimate domain for it, because its Gaussian tail **dominates every exponential**.\n\n**1. Gaussian dominance of exponentials.** `exp_abs_le_const_mul_exp_sq`: for every `c \u2265 0` and every `x`, `e^{c|x|} \u2264 e^{2c\u00b2} e^{x\u00b2/8}`; hence `exp_abs_mul_gaussH_le` `e^{c|x|}e^{\u2212x\u00b2/4} \u2264 e^{2c\u00b2}e^{\u2212x\u00b2/8}`, and `tendsto_exp_abs_mul_gaussH_cocompact` \u2014 the product tends to `0` at infinity.\n\n**2. The exponential growth class.** `ExpBounded f` says `|f x| \u2264 C e^{c|x|}` for some constants. It contains every polynomial (`expBounded_poly`), is closed under sums and scalar multiples, and contains the scalaron potential (`expBounded_starobinskyV`) \u2014 for which no temperate bound exists.\n\n**3. Multiplication by such a potential maps the core into `L\u00b2`.** `memLp_gaussPoly` (the core lies in `L\u00b2`), `memLp_mul_gaussPoly_of_expBounded` (an exp-bounded continuous potential times a core element is in `L\u00b2`), and the instances `memLp_starobinskyV_mul_gaussPoly` and `memLp_scalaronFull1D_mul_gaussPoly` for the scalaron potential and for the full one-variable potential `V\u2083 + V` (conformal-mode parabola plus scalaron).\n\n**4. The core is invariant under the kinetic term.** `hasDerivAt_gaussPoly` shows the derivative of a Gauss polynomial is the Gauss polynomial of `p' \u2212 x p / 2` (`gaussPolyDeriv`), so `deriv_gaussPoly` and `deriv2_gaussPoly` stay in the core, and `memLp_hamiltonian_gaussPoly` concludes: **`H \u03c8 = \u2212\u03c8'' + W\u03c8` lands in `L\u00b2` for every core element `\u03c8`**, for every continuous exp-bounded potential `W`, in particular for the scalaron one (`memLp_scalaronHamiltonian_gaussPoly`).\n\n**6. Symmetry on the core.** `gint_gaussPolyDeriv_antisymm` and `gint_gaussPolyDeriv_two_symm` are the integration-by-parts identities at polynomial level (the boundary terms vanish because of the Gaussian weight), and `integral_kinetic_symm` / `integral_hamiltonian_symm` conclude that `\u2212d\u00b2/dx\u00b2 + W` is **symmetric** on the core for every continuous exp-bounded `W` (`integral_scalaronHamiltonian_symm` for the scalaron). This is the symmetric-operator half of the essential-self-adjointness question; the deficiency half is not proved here (for the potential term alone it is proved, for exponentially growing potentials too, in `BookProof.ChapterScalaronHermiteEsa`).\n\n**7. Arbitrary dimension.** `ExpBounded` is stated for any normed space, and `memLp_mul_pgFun_of_expBounded` transports item 3 to the project's product Gauss\u2013polynomial core `pgFun` of `L\u00b2(\u211d\u1d48)` (`BookProof.HermiteProductCore`): multiplication by a continuous, exponentially bounded potential maps that core into `L\u00b2(\u211d\u1d48)`. `ExpBounded.comp_coord` and `exists_exp_bound_mvPolyEval` are the two ingredients, and `memLp_scalaronSectorPotential_mul_pgFun` is the instance for the **reduced two-variable sector** `(R_c, \u03c6)` with the potential `V\u2083(R_c) + V(\u03c6)`.\n\nThis answers, in the Hermite basis, the domain question that \u00a710.3 flags for the raw operator. It does **not** by itself give essential self-adjointness (targets 2\u20134 of \u00a710.6.1); those remain open.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
   }
  },
  "thms": {
@@ -9144,6 +9157,438 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "BookProof_QgHermiteCore_ExpBounded_add": {
+   "name": "BookProof.QgHermiteCore.ExpBounded.add",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_ExpBounded_add.lean",
+   "title": "{f g : E \u2192 \u211d} (hf : ExpBounded f) (hg : ExpBounded g) : ExpBounded (fun x => f x + g x)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.ExpBounded.add` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_ExpBounded_comp_coord": {
+   "name": "BookProof.QgHermiteCore.ExpBounded.comp_coord",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_ExpBounded_comp_coord.lean",
+   "title": "{f : \u211d \u2192 \u211d} (hf : ExpBounded f) (i : Fin d) : ExpBounded (fun x : Vd d => f (x i))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.ExpBounded.comp_coord` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_ExpBounded_const_mul": {
+   "name": "BookProof.QgHermiteCore.ExpBounded.const_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_ExpBounded_const_mul.lean",
+   "title": "{f : E \u2192 \u211d} (hf : ExpBounded f) (a : \u211d) : ExpBounded (fun x => a * f x)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.ExpBounded.const_mul` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_ExpBounded_mul": {
+   "name": "BookProof.QgHermiteCore.ExpBounded.mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_ExpBounded_mul.lean",
+   "title": "{f g : E \u2192 \u211d} (hf : ExpBounded f) (hg : ExpBounded g) : ExpBounded (fun x => f x * g x)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.ExpBounded.mul` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_ExpBounded_nonneg_const": {
+   "name": "BookProof.QgHermiteCore.ExpBounded.nonneg_const",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const.lean",
+   "title": "{f : E \u2192 \u211d} {C c : \u211d} (h : \u2200 x, |f x| \u2264 C * Real.exp (c * \u2016x\u2016)) : 0 \u2264 C",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.ExpBounded.nonneg_const` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_continuous_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.continuous_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_continuous_gaussPoly.lean",
+   "title": "(p : Polynomial \u211d) : Continuous (gaussPoly p)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.continuous_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_continuous_scalaronSectorPotential": {
+   "name": "BookProof.QgHermiteCore.continuous_scalaronSectorPotential",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential.lean",
+   "title": "(M alpha : \u211d) (V3 : Polynomial \u211d) : Continuous (scalaronSectorPotential M alpha V3)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.continuous_scalaronSectorPotential` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_continuous_starobinskyV": {
+   "name": "BookProof.QgHermiteCore.continuous_starobinskyV",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_continuous_starobinskyV.lean",
+   "title": "(M alpha : \u211d) : Continuous (starobinskyV M alpha)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.continuous_starobinskyV` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_deriv2_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.deriv2_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_deriv2_gaussPoly.lean",
+   "title": "(p : Polynomial \u211d) : deriv (deriv (gaussPoly p)) = gaussPoly (gaussPolyDeriv (gaussPolyDeriv p))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.deriv2_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_deriv_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.deriv_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_deriv_gaussPoly.lean",
+   "title": "(p : Polynomial \u211d) : deriv (gaussPoly p) = gaussPoly (gaussPolyDeriv p)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.deriv_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval": {
+   "name": "BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval.lean",
+   "title": "(p : MvPolynomial (Fin d) \u2102) : \u2203 C c : \u211d, 0 \u2264 C \u2227 0 \u2264 c \u2227 \u2200 x : Vd d, \u2016MvPolynomial.eval (fun i => ((x i : \u211d) : \u2102)) p\u2016 \u2264 C * Real.exp (c * \u2016x\u2016)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_expBounded_poly": {
+   "name": "BookProof.QgHermiteCore.expBounded_poly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_expBounded_poly.lean",
+   "title": "(p : Polynomial \u211d) : ExpBounded (fun x => p.eval x)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.expBounded_poly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_expBounded_pow": {
+   "name": "BookProof.QgHermiteCore.expBounded_pow",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_expBounded_pow.lean",
+   "title": "(k : \u2115) : ExpBounded (fun x : \u211d => x ^ k)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.expBounded_pow` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_expBounded_scalaronSectorPotential": {
+   "name": "BookProof.QgHermiteCore.expBounded_scalaronSectorPotential",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (V3 : Polynomial \u211d) : ExpBounded (scalaronSectorPotential M alpha V3)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.expBounded_scalaronSectorPotential` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_expBounded_starobinskyV": {
+   "name": "BookProof.QgHermiteCore.expBounded_starobinskyV",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_expBounded_starobinskyV.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) : ExpBounded (starobinskyV M alpha)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.expBounded_starobinskyV` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_exp_abs_le_const_mul_exp_sq": {
+   "name": "BookProof.QgHermiteCore.exp_abs_le_const_mul_exp_sq",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_exp_abs_le_const_mul_exp_sq.lean",
+   "title": "(c x : \u211d) : Real.exp (c * |x|) \u2264 Real.exp (2 * c ^ 2) * Real.exp (x ^ 2 / 8)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.exp_abs_le_const_mul_exp_sq` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_exp_abs_mul_gaussH_le": {
+   "name": "BookProof.QgHermiteCore.exp_abs_mul_gaussH_le",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_exp_abs_mul_gaussH_le.lean",
+   "title": "(c x : \u211d) : Real.exp (c * |x|) * gaussH x \u2264 Real.exp (2 * c ^ 2) * Real.exp (-x ^ 2 / 8)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.exp_abs_mul_gaussH_le` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_gint_gaussPolyDeriv_antisymm": {
+   "name": "BookProof.QgHermiteCore.gint_gaussPolyDeriv_antisymm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_gint_gaussPolyDeriv_antisymm.lean",
+   "title": "(p q : Polynomial \u211d) : gint (gaussPolyDeriv p * q) = - gint (p * gaussPolyDeriv q)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.gint_gaussPolyDeriv_antisymm` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_gint_gaussPolyDeriv_two_symm": {
+   "name": "BookProof.QgHermiteCore.gint_gaussPolyDeriv_two_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_gint_gaussPolyDeriv_two_symm.lean",
+   "title": "(p q : Polynomial \u211d) : gint (gaussPolyDeriv (gaussPolyDeriv p) * q) = gint (p * gaussPolyDeriv (gaussPolyDeriv q))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.gint_gaussPolyDeriv_two_symm` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_hasDerivAt_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.hasDerivAt_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_hasDerivAt_gaussPoly.lean",
+   "title": "(p : Polynomial \u211d) (x : \u211d) : HasDerivAt (gaussPoly p) (gaussPoly (gaussPolyDeriv p) x) x",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.hasDerivAt_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integrable_gaussPoly_mul": {
+   "name": "BookProof.QgHermiteCore.integrable_gaussPoly_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integrable_gaussPoly_mul.lean",
+   "title": "(p q : Polynomial \u211d) : Integrable (fun x : \u211d => gaussPoly p x * gaussPoly q x)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integrable_gaussPoly_mul` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul": {
+   "name": "BookProof.QgHermiteCore.integrable_potential_gaussPoly_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul.lean",
+   "title": "{W : \u211d \u2192 \u211d} (hW : Continuous W) (hWb : ExpBounded W) (p q : Polynomial \u211d) : Integrable (fun x : \u211d => W x * (gaussPoly p x * gaussPoly q x))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integrable_potential_gaussPoly_mul` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integral_gaussPoly_mul": {
+   "name": "BookProof.QgHermiteCore.integral_gaussPoly_mul",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integral_gaussPoly_mul.lean",
+   "title": "(p q : Polynomial \u211d) : \u222b x : \u211d, gaussPoly p x * gaussPoly q x = gint (p * q)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integral_gaussPoly_mul` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integral_hamiltonian_symm": {
+   "name": "BookProof.QgHermiteCore.integral_hamiltonian_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integral_hamiltonian_symm.lean",
+   "title": "{W : \u211d \u2192 \u211d} (hW : Continuous W) (hWb : ExpBounded W) (p q : Polynomial \u211d) : \u222b x : \u211d, gaussPoly p x * (-deriv (deriv (gaussPoly q)) x + W x * gaussPoly q x) = \u222b x : \u211d, (-deriv (deriv (gaussPoly p)) x + W x * gaussPoly p x) * gaussPoly q x",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integral_hamiltonian_symm` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integral_kinetic_symm": {
+   "name": "BookProof.QgHermiteCore.integral_kinetic_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integral_kinetic_symm.lean",
+   "title": "(p q : Polynomial \u211d) : \u222b x : \u211d, gaussPoly p x * (-deriv (deriv (gaussPoly q)) x) = \u222b x : \u211d, (-deriv (deriv (gaussPoly p)) x) * gaussPoly q x",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integral_kinetic_symm` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm": {
+   "name": "BookProof.QgHermiteCore.integral_scalaronHamiltonian_symm",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (p q : Polynomial \u211d) : \u222b x : \u211d, gaussPoly p x * (-deriv (deriv (gaussPoly q)) x + starobinskyV M alpha x * gaussPoly q x) = \u222b x : \u211d, (-deriv (deriv (gaussPoly p)) x + starobinskyV M alpha x * gaussPoly p x) * gaussPoly q x",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.integral_scalaronHamiltonian_symm` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_abs_poly_mul_exp_neg_eighth": {
+   "name": "BookProof.QgHermiteCore.memLp_abs_poly_mul_exp_neg_eighth",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_abs_poly_mul_exp_neg_eighth.lean",
+   "title": "(p : Polynomial \u211d) : MemLp (fun x : \u211d => ((|p.eval x| * Real.exp (-x ^ 2 / 8) : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_abs_poly_mul_exp_neg_eighth` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.memLp_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_gaussPoly.lean",
+   "title": "(p : Polynomial \u211d) : MemLp (fun x : \u211d => ((gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_hamiltonian_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.memLp_hamiltonian_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_hamiltonian_gaussPoly.lean",
+   "title": "{W : \u211d \u2192 \u211d} (hW : Continuous W) (hWb : ExpBounded W) (p : Polynomial \u211d) : MemLp (fun x : \u211d => ((-deriv (deriv (gaussPoly p)) x + W x * gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_hamiltonian_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded": {
+   "name": "BookProof.QgHermiteCore.memLp_mul_gaussPoly_of_expBounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded.lean",
+   "title": "{W : \u211d \u2192 \u211d} (hW : Continuous W) (hWb : ExpBounded W) (p : Polynomial \u211d) : MemLp (fun x : \u211d => ((W x * gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_mul_gaussPoly_of_expBounded` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded": {
+   "name": "BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded.lean",
+   "title": "{W : Vd d \u2192 \u211d} (hW : Continuous W) (hWb : ExpBounded W) (p : MvPolynomial (Fin d) \u2102) : MemLp (fun x : Vd d => ((W x : \u211d) : \u2102) * pgFun p x) 2 (volume : Measure (Vd d))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_scalaronFull1D_mul_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.memLp_scalaronFull1D_mul_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_scalaronFull1D_mul_gaussPoly.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (V3 : Polynomial \u211d) (p : Polynomial \u211d) : MemLp (fun x : \u211d => (((V3.eval x + starobinskyV M alpha x) * gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_scalaronFull1D_mul_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (p : Polynomial \u211d) : MemLp (fun x : \u211d => ((-deriv (deriv (gaussPoly p)) x + starobinskyV M alpha x * gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun": {
+   "name": "BookProof.QgHermiteCore.memLp_scalaronSectorPotential_mul_pgFun",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (V3 : Polynomial \u211d) (p : MvPolynomial (Fin 2) \u2102) : MemLp (fun x : Vd 2 => ((scalaronSectorPotential M alpha V3 x : \u211d) : \u2102) * pgFun p x) 2 (volume : Measure (Vd 2))",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_scalaronSectorPotential_mul_pgFun` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly": {
+   "name": "BookProof.QgHermiteCore.memLp_starobinskyV_mul_gaussPoly",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly.lean",
+   "title": "(M alpha : \u211d) (hM : 0 < M) (p : Polynomial \u211d) : MemLp (fun x : \u211d => ((starobinskyV M alpha x * gaussPoly p x : \u211d) : \u2102)) 2 (volume : Measure \u211d)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.memLp_starobinskyV_mul_gaussPoly` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
+  },
+  "BookProof_QgHermiteCore_tendsto_exp_abs_mul_gaussH_atTop": {
+   "name": "BookProof.QgHermiteCore.tendsto_exp_abs_mul_gaussH_atTop",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QgHermiteCore_tendsto_exp_abs_mul_gaussH_atTop.lean",
+   "title": "(c : \u211d) : Tendsto (fun x : \u211d => Real.exp (c * |x|) * gaussH x) atTop (\ud835\udcdd 0)",
+   "nl": "Lean 4 theorem `BookProof.QgHermiteCore.tendsto_exp_abs_mul_gaussH_atTop` (module `BookProof.QgHermiteCore`), source chapter `BookProof/ChapterQgHermiteCore.lean`.",
+   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterQgHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "hermite",
+    "special-functions"
+   ]
   }
  },
  "sol_order": [
@@ -9597,6 +10042,20 @@
   "BookProof_NavierStokesFlow_SecondQuant_mem_fockCore",
   "BookProof_NavierStokesFlow_SecondQuant_ofSectors_apply",
   "BookProof_NavierStokesFlow_SecondQuant_single_mem_fockCore",
+  "BookProof_QgHermiteCore_ExpBounded_const_mul",
+  "BookProof_QgHermiteCore_ExpBounded_nonneg_const",
+  "BookProof_QgHermiteCore_continuous_gaussPoly",
+  "BookProof_QgHermiteCore_continuous_starobinskyV",
+  "BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval",
+  "BookProof_QgHermiteCore_expBounded_pow",
+  "BookProof_QgHermiteCore_expBounded_starobinskyV",
+  "BookProof_QgHermiteCore_exp_abs_le_const_mul_exp_sq",
+  "BookProof_QgHermiteCore_gint_gaussPolyDeriv_antisymm",
+  "BookProof_QgHermiteCore_hasDerivAt_gaussPoly",
+  "BookProof_QgHermiteCore_integrable_gaussPoly_mul",
+  "BookProof_QgHermiteCore_integral_gaussPoly_mul",
+  "BookProof_QgHermiteCore_memLp_abs_poly_mul_exp_neg_eighth",
+  "BookProof_QgHermiteCore_memLp_gaussPoly",
   "BookProof_SirkBandLedger_Decimal_leB_iff",
   "BookProof_SirkBandLedger_formatExampleLedger_lo_zero",
   "BookProof_SirkBandLedger_formatExampleLedger_parse",
@@ -9687,6 +10146,14 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq",
   "BookProof_NavierStokesFlow_SecondQuant_fockCore_dense",
   "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn",
+  "BookProof_QgHermiteCore_ExpBounded_add",
+  "BookProof_QgHermiteCore_ExpBounded_comp_coord",
+  "BookProof_QgHermiteCore_ExpBounded_mul",
+  "BookProof_QgHermiteCore_continuous_scalaronSectorPotential",
+  "BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded",
+  "BookProof_QgHermiteCore_exp_abs_mul_gaussH_le",
+  "BookProof_QgHermiteCore_gint_gaussPolyDeriv_two_symm",
+  "BookProof_QgHermiteCore_deriv_gaussPoly",
   "BookProof_SirkBandLedger_ledgerWf_enclosing",
   "BookProof_SirkBandLedger_ledgerWf_step",
   "BookProof_SirkBandLedger_ledger_width_eventually_const",
@@ -9735,6 +10202,11 @@
   "BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos",
   "BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq",
   "BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq",
+  "BookProof_QgHermiteCore_expBounded_poly",
+  "BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul",
+  "BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded",
+  "BookProof_QgHermiteCore_tendsto_exp_abs_mul_gaussH_atTop",
+  "BookProof_QgHermiteCore_deriv2_gaussPoly",
   "BookProof_SirkBandLedger_ledgerLo_le_ledgerHi",
   "BookProof_SirkBandLedger_hiQ_antitone",
   "BookProof_SirkBandLedger_loQ_monotone",
@@ -9763,6 +10235,11 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_esa_of_farisLavine",
   "BookProof_NavierStokesFlow_DiffFarisLavine_intertwined_nsDiffN",
   "BookProof_NavierStokesFlow_HermiteCanonical_canonical_essentiallySelfAdjointOn_core",
+  "BookProof_QgHermiteCore_expBounded_scalaronSectorPotential",
+  "BookProof_QgHermiteCore_memLp_scalaronFull1D_mul_gaussPoly",
+  "BookProof_QgHermiteCore_memLp_starobinskyV_mul_gaussPoly",
+  "BookProof_QgHermiteCore_integral_kinetic_symm",
+  "BookProof_QgHermiteCore_memLp_hamiltonian_gaussPoly",
   "BookProof_SirkBandLedger_nestedBands_of_wf",
   "BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff",
   "BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix",
@@ -9778,6 +10255,9 @@
   "BookProof_FockSecondQuantization_sum_creVec_annA_subset",
   "BookProof_FockSecondQuantization_inner_creA_left",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore",
+  "BookProof_QgHermiteCore_memLp_scalaronSectorPotential_mul_pgFun",
+  "BookProof_QgHermiteCore_integral_hamiltonian_symm",
+  "BookProof_QgHermiteCore_memLp_scalaronHamiltonian_gaussPoly",
   "BookProof_SirkBandLedger_formatExampleLedger_nested",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger",
   "BookProof_SirkBandLedger_ritz_band_enclosure_of_ledger",
@@ -9797,6 +10277,7 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
+  "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",
   "BookProof_SirkBandLedger_friedrichs_form_gap_of_ledger_lo_zero",
   "BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum",
   "BookProof_ChapterSirkTrotterKato_trotterKato_tendsto",

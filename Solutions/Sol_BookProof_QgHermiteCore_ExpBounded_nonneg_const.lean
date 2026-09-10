@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 open BookProof.QgHermiteCore
-open BookProof.QgHermiteCore.ExpBounded
 
 
 

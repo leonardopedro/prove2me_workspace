@@ -1,3 +1,8 @@
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Mathlib
+
 import Mathlib
 
 /-!
@@ -63,6 +68,7 @@ operator.  It does **not** by itself give essential self-adjointness (targets 2�
 namespace BookProof.QgHermiteCore
 
 open MeasureTheory Polynomial Filter Topology
+open BookProof.HermiteCore BookProof.Starobinsky
 
 /-! ## 1. The Gaussian tail dominates every exponential -/
 
@@ -158,6 +164,7 @@ noncomputable def gaussPolyDeriv (p : Polynomial ℝ) : Polynomial ℝ :=
 
 section MultiDim
 
+open BookProof.HermiteProductCore
 
 variable {d : ℕ}
 

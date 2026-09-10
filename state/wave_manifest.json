@@ -1,149 +1,86 @@
 [
  {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.ann_comp_cre_eq",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.posSq_add_momSq",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_posSq_add_momSq",
-  "plen": 25,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_pos",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos",
-  "plen": 0,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.omega_sq",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ",
-  "plen": 10,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne",
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_comp",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_comp",
   "plen": 3,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
  },
  {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq",
-  "plen": 32,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive",
-  "plen": 0,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq",
-  "plen": 14,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_coreState",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_numOp_coreState",
-  "plen": 8,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_coreState",
-  "plen": 5,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.coreState_total",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total",
-  "plen": 5,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_hasZeroDeficiencyOn",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_hasZeroDeficiencyOn",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_esa",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa",
-  "plen": 4,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.norm_coreState",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState",
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_sub",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_sub",
   "plen": 3,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
  },
  {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagT_not_bounded",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagT_not_bounded",
-  "plen": 26,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
- },
- {
-  "leaf": "ChapterNavierStokesLagrangianCanonical",
-  "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow",
-  "slug": "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow",
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_commDom",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_commDom",
   "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.LagrangianCanonical"
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_isSymmetricDom",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_isSymmetricDom",
+  "plen": 13,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_norm_le_of_sectors",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors",
+  "plen": 22,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_norm_inner_le_of_sectors",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors",
+  "plen": 27,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_ge_norm_sq",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq",
+  "plen": 15,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn_of_farisLavine",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine",
+  "plen": 13,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_hasZeroDeficiencyOn",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_hasZeroDeficiencyOn",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_ge_norm_sq",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_ge_norm_sq",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_dense",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_dense",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockFarisLavine",
+  "name": "BookProof.NavierStokesFlow.SecondQuant.fockComparison_domain_ne_top",
+  "slug": "BookProof_NavierStokesFlow_SecondQuant_fockComparison_domain_ne_top",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.SecondQuant"
  }
 ]

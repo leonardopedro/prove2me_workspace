@@ -44,7 +44,7 @@ NEW_DEFS = ["ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncat
             "ChapterBandEnclosure", "ChapterFriedrichsFormGap",
             "ChapterNavierStokesFarisLavineLift", "ChapterNavierStokesDiffFarisLavine",
             "ChapterNavierStokesSecondQuant", "ChapterQgHermiteCore",
-            "ChapterRitzCertificate", "ChapterNavierStokesLagrangianCanonical"]
+            "ChapterRitzCertificate", "ChapterNavierStokesLagrangianCanonical", "ChapterNavierStokesFockFarisLavine"]
 # Chapters whose thm/sol stubs are added (thm-only ones rely on current-wave defs).
 THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
              "ChapterH6", "ChapterH8", "ChapterH9", "ChapterSirkSpectralGeometry",
@@ -56,7 +56,8 @@ THM_CHAPS = ["ChapterContinuityUnitaryInfinite", "ChapterH1", "ChapterH4",
 # Chapter-prefixed glob does not apply).
 MANIFEST_CHAPS = ["ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable",
                   "ChapterSirkCertifiedGap", "ChapterSirkRitzMinMax",
-                  "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift"]
+                  "ChapterSirkRitzPerturbation", "ChapterNavierStokesSignedShift",
+                  "ChapterNavierStokesFockFarisLavine"]
 # Chapters whose thm files are found by a namespace-prefix glob (the generator
 # names them after the source namespaces; used for wave-4 Fock/Band/Sirk/NS batch).
 GLOB_PREFIXES = [

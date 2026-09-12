@@ -50,38 +50,101 @@ Measured against the live platform (API 0.10.3), not from log archaeology:
   head of `ORDER` starves everything behind it in a bounded chunk. Before every submission the runner
   skips (no attempt consumed) any item importing an **unpublished** def bundle — §2 makes that a
   guaranteed server FAILED. `--no-preflight` disables it.
-- **GENERATOR/DATA BUG — `theorem_title` > 200 chars**: the server rejects the whole submission
-  (`theorem_title must be at most 200 characters`) and the wave spec lifted titles verbatim from
-  chapter docstrings — **131 of 890 thm titles** were over, which would have burned one attempt on
-  each. `clamp_title()` now truncates at a word boundary at the submit boundary (defs + thms +
-  legacy). Root cause is generator-side: for many items `wave_meta.json`'s `title` is a raw *type
-  signature* (binders + conclusion), not a human label — worth fixing in `scripts/wave_generate.py`
-  for future waves, since a title is display-only and can be freely rewritten.
-- **Chunk progress (2026-09-12)**: 6 thms published via `--kind thm` + server-gate chunks
-  (SirkCertifiedGap ×3, SirkGapTable ×3), all `DONE`, 0 failures; state 1082 → 1088 done.
-- **Critical path / current blocker**: 2 defs are unpublished and block 44 thms + 44 sols.
-  `ChapterQgHermiteFriedrichs` (added to the wave spec; it was missing) → `ChapterGaussCoreQuadBounds`
-  → `ChapterSqSumFarisLavine`. Server error on both was `unknown import:
-  Definitions.Def_ChapterQgHermiteFriedrichs`. Fixing that surfaced a deeper gap: the bundle is a
-  **hollowed skeleton** — its imports were missing (fixed: +HermiteProductCore/QgHermiteCore/
-  StarobinskyPotential) and `memLp_mul_pgFun_of_expBounded`, used in `potLp`'s body, is declared in
-  the source chapter (`BookProof/ChapterQgHermiteCore.lean:617`) and as a theorem node but in **no**
-  def bundle — so it must be embedded locally before this def can publish. That is the same Qg
-  Hermite-oscillator network §8 already decided NOT to pursue; do not spend attempts on it again
-  without a new decision. **§8's claim that this helper "was embedded in `Def_ChapterQgHermiteCore`"
-  is false**: `git log --all -S memLp_mul_pgFun_of_expBounded -- Definitions/` finds only the initial
-  snapshot, and `Def_ChapterQgHermiteCore` has 4 declarations in every ref (main, origin/main,
-  upstream/main). The embedding was never committed anywhere, so the def cannot be published by
-  imports alone — the helper (plus its own chain: `ExpBounded.nonneg_const`,
-  `exists_exp_bound_mvPolyEval`, `memLp_two_exp_norm_mul_gaussD`, `continuous_pgFun`) has to be
-  written into a bundle first, with no local compiler to check it.
+- **GENERATOR/DATA BUG — `theorem_title` cap is 200 *bytes*, not 200 characters**: the server rejects
+  the whole submission (`theorem_title must be at most 200 characters` — the message says characters,
+  the enforcement is UTF-8 bytes). The wave spec lifted titles verbatim from chapter docstrings, so
+  **131 of 890 thm titles** were over the character count; clamping by character still left **86
+  pending titles over the byte cap**, because these titles are full of multi-byte math symbols
+  (proof: `BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto` — 200 chars,
+  247 bytes, rejected; also `𝓝`, `∀`, `→`, `ε`, `ᶠ`). `clamp_title()` now clips on the *encoded*
+  length at a word boundary without splitting a character; 0 of the 193 pending titles violate it.
+  Root cause is generator-side: for many items `wave_meta.json`'s `title` is a raw *type signature*
+  (binders + conclusion), not a human label — worth fixing in `scripts/wave_generate.py` for future
+  waves, since a title is display-only and can be freely rewritten.
+- **Chunk progress — running totals**: state **1088 → 1174 done / 697 pending / 0 failed** this
+  session (defs 112/0 pending — the whole def layer done). Thms published all `DONE`:
+  SirkCertifiedGap ×6, SirkGapTable ×3, SignedShift, RitzPerturbation ×4, ChapterH1 ×3, ChapterH4,
+  ChapterH8, ChapterSirkGramCutoff, ChapterSirkGramWhitening ×2, ChapterSirkSpectralGeometry,
+  ChapterSirkTruncation ×2, NavierStokesFlow ×6, FockSecondQuantization, FockOneParticleGap,
+  RitzMinMax, +7 in flight. Thm kind went **651 → 676 done / 190 pending, 0 failed**. No item has
+  been marked `failed` by the runner. One submit was rejected by the byte-cap bug above (1 attempt).
+  `--kind thm --parallel 10` resolved **18 items in 139 s**.
+- **Pipelined mode (`--parallel N`)**: the server spends ~20-30 s compiling each submission and the
+  sequential loop slept away most of that per item (36 s/item → 4 items per 150 s chunk). With
+  `--parallel N`, `do_*` returns as soon as the job is accepted and every in-flight job is polled in
+  one round: measured **8 items per 141-150 s**, and `--parallel 12` holds 12. Verdict semantics are
+  unchanged (`done` only on PUBLISHED/ACCEPTED), so an item still compiling when a chunk is cut off
+  stays `pending` with its id and is re-polled next run at no attempt cost. Sequential remains the
+  default path. **Two mis-labelled logs to know about**: `submitting X (attempt n)` is printed before
+  dispatch, so a re-poll of an existing job is logged with the same wording.
+- **A server-side flake cost one attempt**: `publish FAILED: formal statement does not compile:
+  Import parser timed out after 5s` on `thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound`
+  — it **passed on the next attempt unchanged**, so that one is a transient import-parser timeout, not a
+  property of the node. Left out of `TRANSIENT_ERRORS` deliberately: unlike a job poll it could also be
+  deterministic for a huge import closure, and silently retrying it forever would hide a real failure.
+- **`--only SUBSTR`** (repeatable) restricts a run to matching items; needed because a blocking node
+  can sit near the end of the deps-first `ORDER` (the QgHermite chain is at ~1689/1908). Composes with
+  `--kind`, `--dry-run` and `--parallel`.
+- **A dependency wait must never cost an attempt**: `not published yet` (a sol whose target theorem is
+  still pending) is now in `TRANSIENT_ERRORS` alongside `still in flight` / `poll timeout`. Before
+  this, a `--kind sol` chunk would have burned one attempt on each of the 551 pending sols whose
+  theorem had not published yet. Waits also no longer consume the chunk's `--max-items` budget.
+- **FIXED — duplicate sol submissions**: `do_wave_sol` had no re-poll path (unlike `do_wave_thm`), so
+  every chunk re-submitted every sol still compiling, i.e. a fresh proof check per run. It now
+  re-polls a recorded `submission_id` and only re-submits when the verdict is terminal. A terminal
+  *failed* verdict now also drops its `job_id`/`submission_id`, otherwise each later run re-read the
+  same dead verdict and spent an attempt without submitting anything (fixed in both the pipelined
+  drain and the sequential loop). Sol proofs take **>150 s** to verify, so a single bounded chunk
+  usually cannot both submit and drain them — expect to resolve the previous chunk's batch.
+- **Sol-side failure mode (not a pipeline bug)**: the first sols to reach a real verdict came back
+  `CE: Compile error in your proof: … Unknown identifier \`sirk_error_decay_exponential\``
+  (`sirk_error_tendsto_zero`, `numRange_compress_subset`, `nsDiffH_shiftInvert_selects`,
+  `diagKR_hashimoto_selects`). The proofs reference sibling declarations from their source chapter
+  that are not reachable in the platform compilation of that single node — the same class as the
+  QgHermite def gap, and the same reason §5d's repair (import + open the corresponding
+  `Theorems.Thm_*` / `Definitions.Def_*` module) applies. Affected: ChapterSirkEndToEnd (5),
+  ChapterSirkPerSystem (5), YangMillsHermite (4) so far. Retrying unchanged cannot fix these; they
+  need the imports added before they are worth another attempt.
+- **CRITICAL PATH — RESOLVED 2026-09-12. The whole def layer is now published (112 done / 0 pending),
+  and `--status` reports no items waiting on an unpublished def bundle.** The chain was
+  `ChapterQgHermiteFriedrichs` → `ChapterGaussCoreQuadBounds` → `ChapterSqSumFarisLavine`, blocking
+  44 thms + 44 sols. How it was actually unblocked — **this supersedes §8 and the earlier
+  "embed the proof" conclusion**:
+  1. The bundle is a **hollowed skeleton**: its imports were missing and `memLp_mul_pgFun_of_expBounded`
+     (used inside `potLp`'s body) is declared in the source chapter
+     (`BookProof/ChapterQgHermiteCore.lean:617`) and as a theorem node, but in **no** def bundle.
+     §8's claim that the helper "was embedded in `Def_ChapterQgHermiteCore`" **is false**
+     (`git log --all -S memLp_mul_pgFun_of_expBounded -- Definitions/` finds only the initial
+     snapshot; that bundle has 4 declarations in every ref) — the embedding was never committed.
+  2. **NEW PLATFORM RULE (verified, and the key to the unblock): a Definitions module MAY import a
+     published Theorems module**, but *"Imported platform theorems must be **Proved** at submission
+     time"* — merely being published (`Open`) is rejected. So the def declares
+     `import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded` and the existing
+     `open BookProof.QgHermiteCore` makes the identifier resolve. **No proof has to be written into
+     the bundle** — the proof already exists in `Solutions/Sol_BookProof_QgHermiteCore_*.lean`.
+     Prefer this over embedding: it costs 0 compiler-less proof authoring.
+  3. So the fix was to **prove the helper's sol first**, deps-first: the helper's sol chain is exactly
+     3 nodes (`ExpBounded_nonneg_const` already Proved → `exists_exp_bound_mvPolyEval` →
+     `memLp_mul_pgFun_of_expBounded`). Proving those 2 sols flipped both thms to `Proved`, after which
+     the def compiled and GaussCoreQuadBounds → SqSumFarisLavine followed in order.
+  4. Those nodes sit at **~position 1689 of 1908** in the deps-first `ORDER`, far out of reach of a
+     bounded chunk — hence the new `--only SUBSTR` filter (repeatable), which restricts a run to
+     matching items so a specific blocking node can be targeted. `--dry-run --only` previews the set.
+  **Watch for this shape elsewhere**: a def whose body needs a lemma that lives in a theorem node. The
+  recipe is (a) find the lemma, (b) confirm its thm node is published, (c) prove its sol (and its sol
+  chain) until `Proved`, (d) add `import Theorems.Thm_<...>` + the right `open` to the def bundle.
 - 65 plan items are unsubmittable from a partial checkout (missing sources): FockCanonical 28,
   FockManyMode 19 (Wave-10 stubs that were never written to disk), ContinuityUnitaryInfinite 13,
   ChapterH6/H8/H9 helpers.
 - Tooling added: `debug/skill_compliance.py` (SKILL.md rules 1–3 + stub/name checks),
   `debug/api_probe.py` (raw envelopes), `debug/job_failures.py --gap` (failure causes + plan gap),
-  `debug/def_closure.py` (unpublished dependencies, deps-first), `debug/external_refs.py`
-  (missing imports/opens), `debug/add_wave_def.py` (additive wave extender).
+  `debug/def_closure.py` (unpublished dependencies, deps-first), `debug/external_refs.py`  (missing imports/opens), `debug/add_wave_def.py` (additive wave extender).
+
+
+
+- **Local state note**: 38 sols were found carrying a live `submission_id` already `ACCEPTED` on the
+  platform, left behind by chunks killed before their drain. The re-poll guard collects them on the
+  next `--kind sol` run; no manual state surgery is needed and none should be attempted.
 
 **Status (2026-09-10) — historical, counts superseded by §1a:**
 

@@ -2,6 +2,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterStarobinskyPotential
+-- `potLp` is only well defined because of `memLp_mul_pgFun_of_expBounded`, which
+-- no Definitions bundle declares.  It is published as a platform theorem node
+-- (BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded), so import that
+-- module instead of restating the proof here.
+import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
 
 /-!
 # The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry,

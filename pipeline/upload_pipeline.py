@@ -69,6 +69,23 @@ MAX_ATTEMPTS = 5
 # daemon; bounded/chunked runs lower it (--job-timeout) so a chunk returns
 # cleanly instead of being killed mid-poll.
 JOB_TIMEOUT = int(os.environ.get("PROVE2ME_JOB_TIMEOUT") or 900)
+POLL_INTERVAL = float(os.environ.get("PROVE2ME_POLL_INTERVAL") or 8)
+
+# Pipelined mode (--parallel N).  The server spends ~20-30 s compiling each
+# submission, and the sequential loop sleeps away most of that per item.  In
+# pipelined mode the `do_*` handlers stop right after the submit and hand the
+# job id to the caller, which polls every in-flight item together.  Verdict
+# semantics are identical: `done` is only ever written on PUBLISHED/ACCEPTED,
+# anything left in flight stays `pending` with its job id and is re-polled on
+# the next run without consuming an attempt.
+PIPELINE_MODE = False
+INFLIGHT = {}
+SUBMITTED = "__submitted__"
+
+# --only: substring filter for targeting a specific node (or a small chain of
+# them) instead of walking ORDER.  Needed because a blocking node can sit
+# anywhere in the deps-first order, far out of reach of a bounded chunk.
+ONLY_ITEMS = None
 
 IMPORT_DEF = "import Definitions.Def_timepiece_corrector"
 OPENS = "open Complex Finset Filter Topology\nopen scoped ArithmeticFunction ArithmeticFunction.Moebius ComplexConjugate"
@@ -243,18 +260,34 @@ def norm_stmt(text):
     return re.sub(r"\s+", " ", text or "").strip()
 
 
-TITLE_LIMIT = 200  # server-enforced on theorem_title / definition_title
+TITLE_LIMIT = 200  # server-enforced on theorem_title / definition_title (BYTES)
+
+
+def _clip_bytes(text, limit):
+    """Longest prefix of `text` that fits in `limit` UTF-8 bytes, never
+    splitting a character."""
+    out, used = [], 0
+    for ch in text:
+        n = len(ch.encode("utf-8"))
+        if used + n > limit:
+            break
+        out.append(ch)
+        used += n
+    return "".join(out)
 
 
 def clamp_title(title, limit=TITLE_LIMIT):
     """`theorem_title` and `definition_title` are display-only and the server
-    caps them at 200 characters, but the generator lifts them verbatim from
-    chapter docstrings, which are routinely longer.  Clamp at a word boundary
-    instead of letting every such submission burn an attempt."""
+    caps them at 200 **bytes** of UTF-8, but the generator lifts them verbatim
+    from chapter docstrings, which are routinely longer.  Counting characters
+    is not enough: these titles are full of multi-byte math symbols (ℝ, ∀, →,
+    𝓝), so a 200-character title can be 247 bytes and is still rejected.  Clamp
+    on the encoded length at a word boundary instead of letting every such
+    submission burn an attempt."""
     title = norm_stmt(title)
-    if len(title) <= limit:
+    if len(title.encode("utf-8")) <= limit:
         return title
-    cut = title[:limit - 3].rstrip()
+    cut = _clip_bytes(title, limit - 3).rstrip()
     if " " in cut:
         cut = cut[:cut.rfind(" ")].rstrip()
     return cut + "..."
@@ -318,7 +351,9 @@ def find_related(name, formal):
 # records the job_id BEFORE polling and re-polls on the next pass (§3), and big
 # bundles legitimately idle for minutes.  Burning one of the 5 attempts on that
 # would make slow-but-successful items look permanently broken.
-TRANSIENT_ERRORS = ("still in flight", "poll timeout")
+# "not published yet" is the sol-side equivalent: a solution's target theorem
+# may still be pending, which is a wait, not a failure of the solution.
+TRANSIENT_ERRORS = ("still in flight", "poll timeout", "not published yet")
 
 
 def is_transient(err):
@@ -451,6 +486,9 @@ def _do_legacy_thm(st, item, name):
         return f"submit-problem rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
@@ -524,6 +562,11 @@ def do_wave_def(st, item, chapter):
     meta = wave_def_meta(chapter)
     rec = st["items"].get(item, {})
     if rec.get("job_id"):
+        if PIPELINE_MODE:
+            # A job left in flight by an earlier chunk joins this chunk's
+            # parallel drain instead of blocking the fill loop on it.
+            INFLIGHT[rec["job_id"]] = (item, "publish")
+            return SUBMITTED
         p = poll_job(rec["job_id"])
         if p.get("status") == "PUBLISHED":
             st["items"][item] = {"status": "done", "def_id": p.get("theorem_id") or p.get("id")}
@@ -561,6 +604,9 @@ def do_wave_def(st, item, chapter):
         return f"submit-definition rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "def_id": p.get("theorem_id") or p.get("id")}
@@ -572,6 +618,9 @@ def do_wave_thm(st, item, slug):
     meta = WAVE_THMS[slug]
     rec = st["items"].get(item, {})
     if rec.get("job_id"):
+        if PIPELINE_MODE:
+            INFLIGHT[rec["job_id"]] = (item, "publish")
+            return SUBMITTED
         p = poll_job(rec["job_id"])
         if p.get("status") == "PUBLISHED":
             st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
@@ -626,6 +675,9 @@ def do_wave_thm(st, item, slug):
         return f"submit-problem rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
@@ -656,6 +708,25 @@ def theorem_status(tid):
 
 def do_wave_sol(st, item, slug):
     meta = WAVE_THMS[slug]
+    # A submission left compiling by an earlier chunk must be re-polled, never
+    # re-submitted: a proof check takes minutes, so without this guard every run
+    # would post a duplicate submission for the same node.
+    rec = st["items"].get(item, {})
+    if rec.get("submission_id"):
+        if PIPELINE_MODE:
+            INFLIGHT[rec["submission_id"]] = (item, "verify")
+            return SUBMITTED
+        terminal, err = _apply_verify_verdict(
+            api("GET", "verify", params={"submission_id": rec["submission_id"]}))
+        if not terminal:
+            return "verify still in flight"
+        if err is None:
+            st["items"][item] = {"status": "done", "submission_id": rec["submission_id"]}
+            return None
+        # The submission is finished (and failed): drop its id so a later retry
+        # builds a fresh submission instead of re-reading this dead verdict.
+        rec.pop("submission_id", None)
+        return err
     thm = st["items"].get(f"thm:{slug}", {})
     tid = thm.get("theorem_id")
     if thm.get("status") != "done" or not tid:
@@ -687,6 +758,14 @@ def do_wave_sol(st, item, slug):
     sid = resp.get("submission_id")
     if not sid:
         return f"verify rejected: {r.stdout[:200]}"
+    # Record the id before polling in both modes: a proof check outlives any
+    # chunk, so a timeout would otherwise discard the id and re-submit a
+    # duplicate verification on the next run.
+    st["items"][item]["submission_id"] = sid
+    save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[sid] = (item, "verify")
+        return SUBMITTED
     deadline = time.time() + JOB_TIMEOUT
     while time.time() < deadline:
         time.sleep(10)
@@ -968,6 +1047,8 @@ def cmd_dry_run(limit, kinds=None):
             continue
         if kinds and item.partition(":")[0] not in kinds:
             continue
+        if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+            continue
         name = item.partition(":")[2]
         src = (WAVE_DEFS.get(name) or WAVE_THMS.get(name) or {}).get("file", "")
         print(f"  {item:72s} {resolve_path(src) if src else '(legacy item)'}")
@@ -975,6 +1056,170 @@ def cmd_dry_run(limit, kinds=None):
         if shown >= limit:
             break
     print(f"dry run: {shown} item(s) shown, nothing submitted, state untouched")
+    return 0
+
+
+def _apply_publish_verdict(st, item, p):
+    """Map a publish-job payload to state.  Returns (terminal, err); a
+    non-terminal payload means the job is still compiling."""
+    status = (p or {}).get("status")
+    if status == "PUBLISHED":
+        field = "def_id" if item.startswith("def:") else "theorem_id"
+        st["items"][item] = {"status": "done",
+                             field: (p or {}).get("theorem_id") or (p or {}).get("id")}
+        return True, None
+    if status in ("FAILED", "ERROR"):
+        return True, f"publish {status}: {(p or {}).get('error_message', '')[:200]}"
+    return False, None
+
+
+def _apply_verify_verdict(p):
+    """Map a /verify submission payload to a verdict."""
+    status = (p or {}).get("status")
+    if status in ("ACCEPTED", "SKETCH_ACCEPTED", "Proved"):
+        return True, None
+    if status and status not in ("PENDING", "COMPILING"):
+        return True, f"verdict {status}: {(p or {}).get('error_message', '')[:200]}"
+    return False, None
+
+
+def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_seconds):
+    """Bounded chunk with several submissions in flight at once.
+
+    The server spends ~20-30 s compiling each submission, so the sequential
+    loop sleeps away most of every item's wall-clock.  Here `do_*` returns as
+    soon as the job is accepted and every in-flight job is polled in one round.
+    Verdict semantics are unchanged: `done` is only ever written on a terminal
+    PUBLISHED/ACCEPTED verdict, so a chunk that is cut off mid-drain leaves its
+    unfinished items `pending` with their job id, and the next run re-polls
+    them without consuming an attempt."""
+    global PIPELINE_MODE
+    INFLIGHT.clear()
+    started = time.time()
+    waiting = {}
+    processed = 0
+    exhausted = False
+    queue = iter(ORDER)
+
+    def fill():
+        # PIPELINE_MODE/INFLIGHT are module state the `do_*` handlers read; the
+        # assignment below must not bind a local.
+        global PIPELINE_MODE
+        nonlocal exhausted, processed
+        while len(INFLIGHT) < parallel:
+            if max_items and processed + len(INFLIGHT) >= max_items:
+                exhausted = True
+                return
+            if max_seconds and time.time() - started >= max_seconds:
+                exhausted = True
+                return
+            item = next(queue, None)
+            if item is None:
+                exhausted = True
+                return
+            if item in miss:
+                continue
+            if kinds and item.partition(":")[0] not in kinds:
+                continue
+            if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+                continue
+            if published:
+                dep = blocked_by(item, published)
+                if dep:
+                    waiting[dep] = waiting.get(dep, 0) + 1
+                    continue
+            rec = st["items"].get(item, {"status": "pending", "attempts": 0})
+            st["items"][item] = rec
+            if rec["status"] == "done":
+                continue
+            if rec.get("attempts", 0) >= MAX_ATTEMPTS:
+                rec["status"] = "failed"
+                continue
+            kind, _, name = item.partition(":")
+            log(f"submitting {item} (attempt {rec['attempts'] + 1})")
+            PIPELINE_MODE = True
+            try:
+                if kind == "def":
+                    err = do_def(st, item)
+                elif kind == "thm":
+                    err = do_thm(st, item, name)
+                else:
+                    err = do_sol(st, item, name)
+            except Exception as e:
+                err = f"{type(e).__name__}: {e}"
+            finally:
+                PIPELINE_MODE = False
+            if err is None:
+                rec["status"] = "done"
+                processed += 1
+                log(f"{item}: DONE")
+            elif err == SUBMITTED:
+                log(f"{item}: accepted, waiting on the compiler")
+            elif is_transient(err):
+                # Waiting on a dependency or an in-flight job costs nothing and
+                # must not consume the chunk's item budget.
+                log(f"{item}: WAIT ({err[:150]})")
+            else:
+                rec["attempts"] = rec.get("attempts", 0) + 1
+                rec["error"] = err[:300]
+                processed += 1
+                log(f"{item}: FAIL ({err[:150]})")
+            save_state(st)
+
+    while True:
+        fill()
+        if not INFLIGHT:
+            if exhausted:
+                break
+            continue
+        if max_seconds and time.time() - started >= max_seconds:
+            break
+        # One poll round over every in-flight job: no per-job sleep.
+        for ident, (item, channel) in list(INFLIGHT.items()):
+            try:
+                if channel == "publish":
+                    terminal, err = _apply_publish_verdict(
+                        st, item, api("GET", f"publish-jobs/{ident}", None))
+                else:
+                    terminal, err = _apply_verify_verdict(
+                        api("GET", "verify", params={"submission_id": ident}))
+                    if terminal and err is None:
+                        st["items"][item] = {"status": "done", "submission_id": ident}
+            except Exception as e:
+                log(f"{item}: poll error {type(e).__name__}: {e}")
+                continue
+            if not terminal:
+                continue
+            del INFLIGHT[ident]
+            processed += 1
+            rec = st["items"].setdefault(item, {"attempts": 0})
+            if err is None:
+                rec["status"] = "done"
+                log(f"{item}: DONE")
+            else:
+                # A terminal failure must not leave the dead job/submission id
+                # behind, or every later run would re-read this verdict and
+                # spend an attempt on it without submitting anything new.
+                rec.pop("submission_id", None)
+                rec.pop("job_id", None)
+                rec["status"] = "pending"
+                rec["attempts"] = rec.get("attempts", 0) + 1
+                rec["error"] = err[:300]
+                log(f"{item}: FAIL ({err[:150]})")
+            save_state(st)
+        if INFLIGHT:
+            if max_seconds and time.time() - started >= max_seconds:
+                break
+            time.sleep(POLL_INTERVAL)
+    p = plan_progress(st, miss, kinds)
+    log(f"summary: {p['done']} done, {p['pending']} pending, {p['failed']} failed"
+        + (f", {len(miss)} unsubmittable (source missing from this checkout)" if miss else "")
+        + (f" ({p['orphans']} out-of-order orphans ignored)" if p["orphans"] else ""))
+    if waiting:
+        log("waiting on unpublished def bundle(s): "
+            + ", ".join(f"{k} ({v} item(s))" for k, v in sorted(waiting.items())))
+    log(f"chunk: {processed} item(s) resolved in {time.time() - started:.0f}s"
+        + (f", {len(INFLIGHT)} still in flight (re-polled next run)" if INFLIGHT else ""))
     return 0
 
 
@@ -1001,6 +1246,14 @@ def main(argv=None):
     ap.add_argument("--job-timeout", type=int, default=0,
                     help="per-item job poll ceiling in seconds (default 900; "
                          "lower it so a bounded chunk returns cleanly)")
+    ap.add_argument("--only", action="append", default=None, metavar="SUBSTR",
+                    help="restrict the run to items whose name contains one of "
+                         "these substrings (repeatable); use to unblock a "
+                         "specific node that sits far down ORDER")
+    ap.add_argument("--parallel", type=int, default=1,
+                    help="pipelined mode: keep this many submissions in flight "
+                         "at once instead of polling each one to completion "
+                         "(in-flight items never consume an attempt)")
     ap.add_argument("--no-preflight", action="store_true",
                     help="do not skip items that import an unpublished def bundle")
     args = ap.parse_args(argv)
@@ -1008,6 +1261,7 @@ def main(argv=None):
     if args.job_timeout:
         globals()["JOB_TIMEOUT"] = args.job_timeout
     kinds = set(args.kind) if args.kind else None
+    globals()["ONLY_ITEMS"] = args.only or None
 
     if args.check:
         return cmd_check()
@@ -1030,6 +1284,9 @@ def main(argv=None):
     # anything importing an unpublished bundle is a guaranteed FAILED.  Waiting
     # costs nothing; a wasted submission costs one of the 5 attempts.
     published = set() if args.no_preflight else published_defs()
+    if args.parallel > 1:
+        return run_chunk_pipelined(st, miss, kinds, published, args.parallel,
+                                   args.max_items, args.max_seconds)
     started = time.time()
     processed = 0
     waiting = {}
@@ -1037,6 +1294,8 @@ def main(argv=None):
         if item in miss:
             continue
         if kinds and item.partition(":")[0] not in kinds:
+            continue
+        if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
             continue
         if published:
             dep = blocked_by(item, published)
@@ -1074,6 +1333,10 @@ def main(argv=None):
         elif is_transient(err):
             log(f"{item}: WAIT ({err[:150]}) - job in flight, no attempt consumed")
         else:
+            # Drop the finished (failed) job/submission id: keeping it would make
+            # the next run re-read the same verdict and spend an attempt on it.
+            rec.pop("submission_id", None)
+            rec.pop("job_id", None)
             rec["attempts"] = rec.get("attempts", 0) + 1
             rec["error"] = err[:300]
             log(f"{item}: FAIL ({err[:150]})")

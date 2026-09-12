@@ -7076,3 +7076,563 @@ Note: It is not possible to treat `Vd` as an implicitly bound variable)
 07:03:36 chunk: 4 item(s) processed in 102s
 07:03:48 sync: read 162 definition publish job(s)
 07:03:53 sync: read 2533 problem publish job(s)
+07:26:30 sync: read 162 definition publish job(s)
+07:26:35 sync: read 2533 problem publish job(s)
+07:26:35 processing thm:BookProof_SirkCertifiedGap_certifiedGap_eventually_pos (attempt 2)
+07:26:39 thm:BookProof_SirkCertifiedGap_certifiedGap_eventually_pos: title clamped to 196 chars (server limit 200)
+07:27:20 thm:BookProof_SirkCertifiedGap_certifiedGap_eventually_pos: DONE
+07:27:20 processing thm:BookProof_SirkCertifiedGap_certified_parity_gap_pos (attempt 2)
+07:27:24 thm:BookProof_SirkCertifiedGap_certified_parity_gap_pos: title clamped to 190 chars (server limit 200)
+07:27:56 thm:BookProof_SirkCertifiedGap_certified_parity_gap_pos: DONE
+07:27:56 processing thm:BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling (attempt 2)
+07:28:00 thm:BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling: title clamped to 196 chars (server limit 200)
+07:28:33 thm:BookProof_SirkCertifiedGap_certified_parity_gap_strong_coupling: DONE
+07:28:33 processing thm:BookProof_SirkCertifiedGap_gap_ge_of_certificate (attempt 2)
+07:28:37 thm:BookProof_SirkCertifiedGap_gap_ge_of_certificate: title clamped to 198 chars (server limit 200)
+07:29:01 thm:BookProof_SirkCertifiedGap_gap_ge_of_certificate: DONE
+07:29:01 bounded chunk: max-items 4 reached
+07:29:01 summary: 641 done, 225 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:29:01 chunk: 4 item(s) processed in 146s
+07:30:57 sync: read 162 definition publish job(s)
+07:31:01 sync: read 2537 problem publish job(s)
+07:31:01 submitting thm:BookProof_SirkGapTable_certified_gap_mem_interval (attempt 2)
+07:31:05 thm:BookProof_SirkGapTable_certified_gap_mem_interval: title clamped to 197 chars (server limit 200)
+07:32:02 thm:BookProof_SirkGapTable_certified_gap_mem_interval: DONE
+07:32:03 submitting thm:BookProof_SirkGapTable_richardson_error (attempt 2)
+07:32:07 thm:BookProof_SirkGapTable_richardson_error: title clamped to 197 chars (server limit 200)
+07:32:57 thm:BookProof_SirkGapTable_richardson_error: DONE
+07:32:58 submitting thm:BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right (attempt 2)
+07:33:01 thm:BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right: title clamped to 196 chars (server limit 200)
+07:34:05 sync: read 162 definition publish job(s)
+07:34:10 sync: read 2540 problem publish job(s)
+07:34:10 submitting thm:BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right (attempt 2)
+07:34:10 thm:BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right: accepted, waiting on the compiler
+07:34:10 submitting thm:BookProof_SirkCertifiedGap_certifiedGap_sound (attempt 2)
+07:34:14 thm:BookProof_SirkCertifiedGap_certifiedGap_sound: title clamped to 195 chars (server limit 200)
+07:34:15 thm:BookProof_SirkCertifiedGap_certifiedGap_sound: accepted, waiting on the compiler
+07:34:16 submitting thm:BookProof_SirkCertifiedGap_gap_pos_of_certificate (attempt 2)
+07:34:19 thm:BookProof_SirkCertifiedGap_gap_pos_of_certificate: title clamped to 198 chars (server limit 200)
+07:34:20 thm:BookProof_SirkCertifiedGap_gap_pos_of_certificate: accepted, waiting on the compiler
+07:34:20 submitting thm:BookProof_SirkCertifiedGap_qcdG2M4_certified_gap (attempt 2)
+07:34:24 thm:BookProof_SirkCertifiedGap_qcdG2M4_certified_gap: title clamped to 197 chars (server limit 200)
+07:34:25 thm:BookProof_SirkCertifiedGap_qcdG2M4_certified_gap: accepted, waiting on the compiler
+07:34:25 submitting thm:BookProof_SirkCertifiedGap_certified_parity_gap_of_data (attempt 2)
+07:34:29 thm:BookProof_SirkCertifiedGap_certified_parity_gap_of_data: title clamped to 196 chars (server limit 200)
+07:34:29 thm:BookProof_SirkCertifiedGap_certified_parity_gap_of_data: accepted, waiting on the compiler
+07:34:29 thm:BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_inner_hopH_right: DONE
+07:34:38 submitting thm:BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified (attempt 2)
+07:34:41 thm:BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified: title clamped to 194 chars (server limit 200)
+07:34:42 thm:BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified: accepted, waiting on the compiler
+07:34:59 thm:BookProof_SirkCertifiedGap_certifiedGap_sound: DONE
+07:35:08 submitting thm:BookProof_SirkGapTable_certified_gap_table_interval (attempt 2)
+07:35:12 thm:BookProof_SirkGapTable_certified_gap_table_interval: title clamped to 193 chars (server limit 200)
+07:35:12 thm:BookProof_SirkGapTable_certified_gap_table_interval: accepted, waiting on the compiler
+07:35:13 thm:BookProof_SirkCertifiedGap_gap_pos_of_certificate: DONE
+07:35:13 thm:BookProof_SirkCertifiedGap_qcdG2M4_certified_gap: DONE
+07:35:13 thm:BookProof_SirkCertifiedGap_rayleigh_odd_ge_of_certified: DONE
+07:35:21 submitting thm:BookProof_RitzMinMax_exists_galerkin_approx_subspace (attempt 2)
+07:35:25 thm:BookProof_RitzMinMax_exists_galerkin_approx_subspace: title clamped to 197 chars (server limit 200)
+07:35:25 thm:BookProof_RitzMinMax_exists_galerkin_approx_subspace: accepted, waiting on the compiler
+07:35:34 thm:BookProof_SirkCertifiedGap_certified_parity_gap_of_data: DONE
+07:35:50 thm:BookProof_SirkGapTable_certified_gap_table_interval: DONE
+07:36:39 thm:BookProof_RitzMinMax_exists_galerkin_approx_subspace: DONE
+07:36:39 summary: 651 done, 215 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:36:39 chunk: 8 item(s) resolved in 150s
+07:36:47 sync: read 162 definition publish job(s)
+07:36:51 sync: read 2547 problem publish job(s)
+07:36:51 submitting thm:BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto (attempt 2)
+07:36:55 thm:BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto: title clamped to 198 chars (server limit 200)
+07:36:55 thm:BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto: accepted, waiting on the compiler
+07:36:55 submitting thm:BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos (attempt 2)
+07:36:59 thm:BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos: title clamped to 191 chars (server limit 200)
+07:36:59 thm:BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos: accepted, waiting on the compiler
+07:36:59 submitting thm:BookProof_RitzPerturbation_galerkin_model_gap_tendsto (attempt 2)
+07:37:03 thm:BookProof_RitzPerturbation_galerkin_model_gap_tendsto: title clamped to 190 chars (server limit 200)
+07:37:03 thm:BookProof_RitzPerturbation_galerkin_model_gap_tendsto: accepted, waiting on the compiler
+07:37:03 submitting thm:BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto (attempt 2)
+07:37:06 thm:BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto: title clamped to 198 chars (server limit 200)
+07:37:07 thm:BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto: accepted, waiting on the compiler
+07:37:07 submitting thm:BookProof_ChapterH1_resolvent_eigenvector (attempt 2)
+07:37:10 thm:BookProof_ChapterH1_resolvent_eigenvector: title clamped to 196 chars (server limit 200)
+07:37:11 thm:BookProof_ChapterH1_resolvent_eigenvector: accepted, waiting on the compiler
+07:37:11 submitting thm:BookProof_ChapterH1_resolvent_identity (attempt 2)
+07:37:14 thm:BookProof_ChapterH1_resolvent_identity: title clamped to 197 chars (server limit 200)
+07:37:15 thm:BookProof_ChapterH1_resolvent_identity: accepted, waiting on the compiler
+07:37:15 submitting thm:BookProof_ChapterH1_resolvent_shift_mul (attempt 2)
+07:37:18 thm:BookProof_ChapterH1_resolvent_shift_mul: title clamped to 193 chars (server limit 200)
+07:37:19 thm:BookProof_ChapterH1_resolvent_shift_mul: accepted, waiting on the compiler
+07:37:19 submitting thm:BookProof_ChapterH4_compress_inv_transfer (attempt 2)
+07:37:22 thm:BookProof_ChapterH4_compress_inv_transfer: title clamped to 178 chars (server limit 200)
+07:37:23 thm:BookProof_ChapterH4_compress_inv_transfer: accepted, waiting on the compiler
+07:37:23 thm:BookProof_RitzPerturbation_minmaxLevel_tendsto_of_tendsto: DONE
+07:37:32 submitting thm:BookProof_ChapterH4_sia_error_bound (attempt 2)
+07:37:36 thm:BookProof_ChapterH4_sia_error_bound: title clamped to 196 chars (server limit 200)
+07:37:36 thm:BookProof_ChapterH4_sia_error_bound: accepted, waiting on the compiler
+07:37:36 thm:BookProof_RitzPerturbation_galerkin_model_gap_eventually_pos: DONE
+07:37:45 submitting thm:BookProof_ChapterH4_sirk_error_bound (attempt 2)
+07:37:49 thm:BookProof_ChapterH4_sirk_error_bound: title clamped to 197 chars (server limit 200)
+07:37:49 thm:BookProof_ChapterH4_sirk_error_bound: accepted, waiting on the compiler
+07:38:17 thm:BookProof_RitzPerturbation_galerkin_model_gap_tendsto: DONE
+07:38:26 submitting thm:BookProof_ChapterH8_compress_rational_transfer (attempt 2)
+07:38:30 thm:BookProof_ChapterH8_compress_rational_transfer: title clamped to 198 chars (server limit 200)
+07:38:30 thm:BookProof_ChapterH8_compress_rational_transfer: accepted, waiting on the compiler
+07:38:49 thm:BookProof_RitzPerturbation_minmaxGap_tendsto_of_tendsto: DONE
+07:38:59 submitting thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range (attempt 2)
+07:39:02 thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range: title clamped to 195 chars (server limit 200)
+07:39:03 thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range: accepted, waiting on the compiler
+07:39:03 thm:BookProof_ChapterH1_resolvent_eigenvector: DONE
+07:39:03 thm:BookProof_ChapterH1_resolvent_identity: DONE
+07:39:03 thm:BookProof_ChapterH1_resolvent_shift_mul: DONE
+07:39:03 thm:BookProof_ChapterH4_compress_inv_transfer: DONE
+07:39:12 summary: 659 done, 207 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:39:12 chunk: 8 item(s) resolved in 141s, 4 still in flight (re-polled next run)
+07:39:27 sync: read 162 definition publish job(s)
+07:39:31 sync: read 2559 problem publish job(s)
+07:39:31 submitting sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer (attempt 2)
+07:39:32 sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer: accepted, waiting on the compiler
+07:39:32 submitting sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time (attempt 2)
+07:39:33 sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time: accepted, waiting on the compiler
+07:39:33 submitting sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound (attempt 2)
+07:39:33 sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound: accepted, waiting on the compiler
+07:39:33 submitting sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain (attempt 2)
+07:39:34 sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:39:34 submitting sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain (attempt 2)
+07:39:35 sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:39:35 submitting sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain (attempt 2)
+07:39:35 sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:39:35 submitting sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain (attempt 2)
+07:39:36 sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:39:36 submitting sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects (attempt 2)
+07:39:36 sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects: accepted, waiting on the compiler
+07:41:55 summary: 342 done, 551 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:41:55 chunk: 0 item(s) resolved in 144s, 8 still in flight (re-polled next run)
+07:42:04 sync: read 162 definition publish job(s)
+07:42:08 sync: read 2559 problem publish job(s)
+07:42:08 submitting sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer (attempt 2)
+07:42:09 sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer: accepted, waiting on the compiler
+07:42:09 submitting sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time (attempt 2)
+07:42:10 sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time: accepted, waiting on the compiler
+07:42:10 submitting sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound (attempt 2)
+07:42:10 sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound: accepted, waiting on the compiler
+07:42:10 submitting sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain (attempt 2)
+07:42:11 sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:42:11 submitting sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain (attempt 2)
+07:42:12 sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:42:12 submitting sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain (attempt 2)
+07:42:13 sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:42:13 submitting sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain (attempt 2)
+07:42:13 sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:42:13 submitting sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects (attempt 2)
+07:42:14 sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects: accepted, waiting on the compiler
+07:42:14 submitting sol:BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain (attempt 2)
+07:42:14 sol:BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:42:14 submitting sol:BookProof_YangMillsHermite_PolySym_comp_adj (attempt 2)
+07:42:15 sol:BookProof_YangMillsHermite_PolySym_comp_adj: accepted, waiting on the compiler
+07:44:39 summary: 342 done, 551 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:44:39 chunk: 0 item(s) resolved in 151s, 10 still in flight (re-polled next run)
+07:45:05 sync: read 162 definition publish job(s)
+07:45:09 sync: read 2559 problem publish job(s)
+07:45:09 submitting sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_lagrangian_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_ns_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_qgR2_shiftInvert_selects: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain (attempt 2)
+07:45:09 sol:BookProof_ChapterSirkPerSystem_ym_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_YangMillsHermite_PolySym_comp_adj (attempt 2)
+07:45:09 sol:BookProof_YangMillsHermite_PolySym_comp_adj: accepted, waiting on the compiler
+07:45:09 submitting sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_uniform (attempt 2)
+07:45:10 sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_uniform: accepted, waiting on the compiler
+07:45:10 submitting sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_tendsto_zero (attempt 2)
+07:45:10 sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_tendsto_zero: accepted, waiting on the compiler
+07:46:30 sol:BookProof_ChapterSirkEndToEnd_tendsto_zero_of_le_sirkBound: FAIL (verdict CE: Compile error in your proof:
+line 30: Unknown identifier `sirk_error_decay_exponential`)
+07:46:39 submitting sol:BookProof_ChapterSirkPerSystem_qgR2_sirk_crouzeix_domain (attempt 2)
+07:46:40 sol:BookProof_ChapterSirkPerSystem_qgR2_sirk_crouzeix_domain: accepted, waiting on the compiler
+07:46:40 sol:BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer: FAIL (verdict CE: Compile error in your proof:
+line 31: Unknown identifier `numRange_compress_subset`)
+07:46:40 sol:BookProof_ChapterSirkEndToEnd_sirk_flow_error_uniform_in_time: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `sirk_error_tendsto_zero`
+line 36: unsolved goals
+E : Type u_1
+inst✝⁵ : NormedAdd)
+07:46:50 submitting sol:BookProof_YangMillsHermite_PolyAdj_symm_of (attempt 2)
+07:46:50 sol:BookProof_YangMillsHermite_PolyAdj_symm_of: accepted, waiting on the compiler
+07:46:50 submitting sol:BookProof_YangMillsHermite_PolySym_add (attempt 2)
+07:46:51 sol:BookProof_YangMillsHermite_PolySym_add: accepted, waiting on the compiler
+07:47:22 sol:BookProof_ChapterSirkPerSystem_nsDiff_sirk_crouzeix_domain: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `nsDiffH_shiftInvert_selects`
+line 38: Tactic `rcases` failed: `x✝ : ?m.151` is n)
+07:47:31 submitting sol:BookProof_YangMillsHermite_RealCoeff_add (attempt 2)
+07:47:33 sol:BookProof_YangMillsHermite_RealCoeff_add: accepted, waiting on the compiler
+07:47:34 sol:BookProof_ChapterSirkPerSystem_diagKR_sirk_crouzeix_domain: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `diagKR_hashimoto_selects`
+line 38: Tactic `rcases` failed: `x✝ : ?m.106` is not )
+07:47:43 summary: 342 done, 551 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:47:43 chunk: 5 item(s) resolved in 154s, 11 still in flight (re-polled next run)
+07:48:43 sync: read 162 definition publish job(s)
+07:48:48 sync: read 2559 problem publish job(s)
+07:48:48 submitting thm:BookProof_ChapterH4_sia_error_bound (attempt 2)
+07:48:48 thm:BookProof_ChapterH4_sia_error_bound: accepted, waiting on the compiler
+07:48:48 submitting thm:BookProof_ChapterH4_sirk_error_bound (attempt 2)
+07:48:48 thm:BookProof_ChapterH4_sirk_error_bound: accepted, waiting on the compiler
+07:48:48 submitting thm:BookProof_ChapterH8_compress_rational_transfer (attempt 2)
+07:48:48 thm:BookProof_ChapterH8_compress_rational_transfer: accepted, waiting on the compiler
+07:48:48 submitting thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range (attempt 2)
+07:48:48 thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range: accepted, waiting on the compiler
+07:48:48 submitting thm:BookProof_ChapterSirkGramCutoff_range_retainedEmbedding (attempt 2)
+07:48:51 thm:BookProof_ChapterSirkGramCutoff_range_retainedEmbedding: title clamped to 198 chars (server limit 200)
+07:48:52 thm:BookProof_ChapterSirkGramCutoff_range_retainedEmbedding: accepted, waiting on the compiler
+07:48:52 submitting thm:BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner (attempt 2)
+07:48:56 thm:BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner: title clamped to 179 chars (server limit 200)
+07:48:56 thm:BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner: accepted, waiting on the compiler
+07:48:56 submitting thm:BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self (attempt 2)
+07:49:00 thm:BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self: title clamped to 180 chars (server limit 200)
+07:49:00 thm:BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self: accepted, waiting on the compiler
+07:49:00 submitting thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain (attempt 2)
+07:49:04 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain: title clamped to 189 chars (server limit 200)
+07:49:04 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain: accepted, waiting on the compiler
+07:49:04 submitting thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto (attempt 2)
+07:49:08 thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto: FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_title must be at most 200 characters"], "message": "0/1 problem(s) queued. Poll GET /api/v1/)
+07:49:08 submitting thm:BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky (attempt 2)
+07:49:12 thm:BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky: title clamped to 198 chars (server limit 200)
+07:49:12 thm:BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky: accepted, waiting on the compiler
+07:49:12 submitting thm:BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage (attempt 2)
+07:49:15 thm:BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage: title clamped to 195 chars (server limit 200)
+07:49:16 thm:BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage: accepted, waiting on the compiler
+07:49:16 thm:BookProof_ChapterH4_sia_error_bound: DONE
+07:49:16 thm:BookProof_ChapterH4_sirk_error_bound: DONE
+07:49:16 thm:BookProof_ChapterH8_compress_rational_transfer: DONE
+07:49:17 thm:BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range: DONE
+07:49:26 submitting thm:BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate (attempt 2)
+07:49:29 thm:BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate: title clamped to 196 chars (server limit 200)
+07:49:30 thm:BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate: accepted, waiting on the compiler
+07:49:30 submitting thm:BookProof_FockSecondQuantization_coe_ymOnePart (attempt 2)
+07:49:33 thm:BookProof_FockSecondQuantization_coe_ymOnePart: title clamped to 198 chars (server limit 200)
+07:49:33 thm:BookProof_FockSecondQuantization_coe_ymOnePart: accepted, waiting on the compiler
+07:49:34 submitting thm:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors (attempt 2)
+07:49:37 thm:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors: title clamped to 196 chars (server limit 200)
+07:49:38 thm:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors: accepted, waiting on the compiler
+07:49:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe (attempt 2)
+07:49:41 thm:BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe: accepted, waiting on the compiler
+07:49:42 thm:BookProof_ChapterSirkGramCutoff_range_retainedEmbedding: DONE
+07:49:51 submitting thm:BookProof_NavierStokesFlow_FockOfFock_creat_coe (attempt 2)
+07:49:55 thm:BookProof_NavierStokesFlow_FockOfFock_creat_coe: accepted, waiting on the compiler
+07:49:55 thm:BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner: DONE
+07:50:05 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense (attempt 2)
+07:50:09 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense: accepted, waiting on the compiler
+07:50:09 thm:BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self: DONE
+07:50:09 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain: DONE
+07:50:18 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe (attempt 2)
+07:50:22 thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe: accepted, waiting on the compiler
+07:50:22 thm:BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky: DONE
+07:50:32 thm:BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage: DONE
+07:50:32 thm:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_hasZeroDeficiencyOn_of_eigenvectors: DONE
+07:50:32 thm:BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe: DONE
+07:50:33 thm:BookProof_NavierStokesFlow_FockOfFock_creat_coe: DONE
+07:50:41 thm:BookProof_FockSecondQuantization_coe_ymOnePart: DONE
+07:50:50 thm:BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate: DONE
+07:50:59 thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe: DONE
+07:51:07 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense: DONE
+07:51:07 summary: 676 done, 190 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:51:07 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (10 item(s))
+07:51:07 chunk: 18 item(s) resolved in 139s
+07:51:41 sync: read 162 definition publish job(s)
+07:51:45 sync: read 2572 problem publish job(s)
+07:51:45 submitting thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto (attempt 3)
+07:51:49 thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto: title clamped to 165 chars (server limit 200)
+07:51:50 thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto: accepted, waiting on the compiler
+07:51:50 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_total (attempt 2)
+07:51:54 thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_total: accepted, waiting on the compiler
+07:51:54 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe (attempt 2)
+07:51:58 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe: accepted, waiting on the compiler
+07:51:58 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom (attempt 2)
+07:52:02 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom: accepted, waiting on the compiler
+07:52:02 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top (attempt 2)
+07:52:06 thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top: accepted, waiting on the compiler
+07:52:06 submitting thm:BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis (attempt 2)
+07:52:10 thm:BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis: accepted, waiting on the compiler
+07:52:10 submitting thm:BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe (attempt 2)
+07:52:14 thm:BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe: accepted, waiting on the compiler
+07:52:14 submitting thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq (attempt 2)
+07:52:17 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq: title clamped to 164 chars (server limit 200)
+07:52:18 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq: accepted, waiting on the compiler
+07:52:18 submitting thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors (attempt 2)
+07:52:21 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors: title clamped to 167 chars (server limit 200)
+07:52:21 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors: accepted, waiting on the compiler
+07:52:22 submitting thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors (attempt 2)
+07:52:25 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors: title clamped to 171 chars (server limit 200)
+07:52:26 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors: accepted, waiting on the compiler
+07:52:26 submitting thm:BookProof_RitzCertificate_temple_width_tendsto_zero (attempt 2)
+07:52:29 thm:BookProof_RitzCertificate_temple_width_tendsto_zero: title clamped to 181 chars (server limit 200)
+07:52:30 thm:BookProof_RitzCertificate_temple_width_tendsto_zero: accepted, waiting on the compiler
+07:52:30 submitting thm:BookProof_SirkCertificateReader_gap_ge_of_ndjson (attempt 2)
+07:52:33 thm:BookProof_SirkCertificateReader_gap_ge_of_ndjson: title clamped to 184 chars (server limit 200)
+07:52:33 thm:BookProof_SirkCertificateReader_gap_ge_of_ndjson: accepted, waiting on the compiler
+07:52:34 thm:BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isCompact_of_tendsto: DONE
+07:52:34 thm:BookProof_NavierStokesFlow_FockOfFock_lpBasis_total: DONE
+07:52:34 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe: DONE
+07:52:34 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom: DONE
+07:52:43 submitting thm:BookProof_ChapterH1_resolvent_shift_repr (attempt 2)
+07:52:47 thm:BookProof_ChapterH1_resolvent_shift_repr: title clamped to 187 chars (server limit 200)
+07:52:47 thm:BookProof_ChapterH1_resolvent_shift_repr: accepted, waiting on the compiler
+07:52:47 submitting thm:BookProof_ChapterH4_sirk_error_bound_decay (attempt 2)
+07:52:51 thm:BookProof_ChapterH4_sirk_error_bound_decay: title clamped to 167 chars (server limit 200)
+07:52:51 thm:BookProof_ChapterH4_sirk_error_bound_decay: accepted, waiting on the compiler
+07:52:51 submitting thm:BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry (attempt 2)
+07:52:55 thm:BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry: title clamped to 185 chars (server limit 200)
+07:52:55 thm:BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry: accepted, waiting on the compiler
+07:52:55 submitting thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le (attempt 2)
+07:52:59 thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le: title clamped to 173 chars (server limit 200)
+07:52:59 thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le: accepted, waiting on the compiler
+07:52:59 thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top: DONE
+07:52:59 thm:BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis: DONE
+07:53:09 submitting thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC (attempt 2)
+07:53:13 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC: title clamped to 180 chars (server limit 200)
+07:53:13 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC: accepted, waiting on the compiler
+07:53:13 submitting thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert (attempt 2)
+07:53:17 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert: title clamped to 181 chars (server limit 200)
+07:53:17 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert: accepted, waiting on the compiler
+07:53:17 thm:BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe: DONE
+07:53:17 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq: DONE
+07:53:17 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors: DONE
+07:53:18 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors: DONE
+07:53:18 thm:BookProof_RitzCertificate_temple_width_tendsto_zero: DONE
+07:53:18 thm:BookProof_ChapterH1_resolvent_shift_repr: DONE
+07:53:27 submitting thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert (attempt 2)
+07:53:31 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert: title clamped to 174 chars (server limit 200)
+07:53:31 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert: accepted, waiting on the compiler
+07:53:31 submitting thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC (attempt 2)
+07:53:35 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC: title clamped to 165 chars (server limit 200)
+07:53:35 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC: accepted, waiting on the compiler
+07:53:36 thm:BookProof_SirkCertificateReader_gap_ge_of_ndjson: DONE
+07:53:36 thm:BookProof_ChapterH4_sirk_error_bound_decay: DONE
+07:53:45 thm:BookProof_ChapterSirkGramWhitening_onbEmbedding_isometry: DONE
+07:54:04 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvert: DONE
+07:54:12 summary: 692 done, 174 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:54:12 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (10 item(s)), ChapterSqSumFarisLavine (12 item(s))
+07:54:12 chunk: 16 item(s) resolved in 147s, 4 still in flight (re-polled next run)
+07:54:18 sync: read 162 definition publish job(s)
+07:54:22 sync: read 2592 problem publish job(s)
+07:54:22 submitting thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le (attempt 2)
+07:54:22 thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le: accepted, waiting on the compiler
+07:54:22 submitting thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC (attempt 2)
+07:54:22 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC: accepted, waiting on the compiler
+07:54:22 submitting thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert (attempt 2)
+07:54:22 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert: accepted, waiting on the compiler
+07:54:22 submitting thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC (attempt 2)
+07:54:22 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC: accepted, waiting on the compiler
+07:54:22 submitting thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply (attempt 2)
+07:54:26 thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply: title clamped to 180 chars (server limit 200)
+07:54:26 thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply: accepted, waiting on the compiler
+07:54:26 submitting thm:BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded (attempt 2)
+07:54:30 thm:BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded: title clamped to 166 chars (server limit 200)
+07:54:30 thm:BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded: accepted, waiting on the compiler
+07:54:30 submitting thm:BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated (attempt 2)
+07:54:34 thm:BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated: title clamped to 162 chars (server limit 200)
+07:54:34 thm:BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated: accepted, waiting on the compiler
+07:54:34 submitting thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound (attempt 2)
+07:54:37 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: title clamped to 186 chars (server limit 200)
+07:54:38 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: accepted, waiting on the compiler
+07:54:38 submitting thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le (attempt 2)
+07:54:41 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le: title clamped to 161 chars (server limit 200)
+07:54:42 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le: accepted, waiting on the compiler
+07:54:42 submitting thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise (attempt 2)
+07:54:46 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise: title clamped to 168 chars (server limit 200)
+07:54:46 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise: accepted, waiting on the compiler
+07:54:46 submitting thm:BookProof_NavierStokesFlow_FockOfFock_ccr_same (attempt 2)
+07:54:50 thm:BookProof_NavierStokesFlow_FockOfFock_ccr_same: accepted, waiting on the compiler
+07:54:50 submitting thm:BookProof_NavierStokesFlow_FockOfFock_creat_adjoint (attempt 2)
+07:54:55 thm:BookProof_NavierStokesFlow_FockOfFock_creat_adjoint: accepted, waiting on the compiler
+07:54:55 thm:BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le: DONE
+07:54:55 thm:BookProof_ChapterSirkSpectralGeometry_crouzeix_domain_shiftInvertC: DONE
+07:54:55 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvert: DONE
+07:54:55 thm:BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_shiftInvertC: DONE
+07:55:05 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe (attempt 2)
+07:55:09 thm:BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe: accepted, waiting on the compiler
+07:55:09 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis (attempt 2)
+07:55:13 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis: accepted, waiting on the compiler
+07:55:13 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr (attempt 2)
+07:55:17 thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr: accepted, waiting on the compiler
+07:55:17 submitting thm:BookProof_NavierStokesFlow_FockOfFock_innerBasis_total (attempt 2)
+07:55:21 thm:BookProof_NavierStokesFlow_FockOfFock_innerBasis_total: accepted, waiting on the compiler
+07:55:21 thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply: DONE
+07:55:31 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top (attempt 2)
+07:55:35 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top: accepted, waiting on the compiler
+07:55:55 thm:BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded: DONE
+07:55:55 thm:BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated: DONE
+07:56:05 submitting thm:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded (attempt 2)
+07:56:08 thm:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded: accepted, waiting on the compiler
+07:56:08 submitting thm:BookProof_RitzCertificate_re_inner_factor (attempt 2)
+07:56:12 thm:BookProof_RitzCertificate_re_inner_factor: title clamped to 168 chars (server limit 200)
+07:56:12 thm:BookProof_RitzCertificate_re_inner_factor: accepted, waiting on the compiler
+07:56:12 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: FAIL (publish FAILED: formal statement does not compile: Import parser timed out after 5s)
+07:56:22 submitting thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson (attempt 2)
+07:56:26 thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson: title clamped to 176 chars (server limit 200)
+07:56:26 thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson: accepted, waiting on the compiler
+07:56:26 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le: DONE
+07:56:27 thm:BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_le_of_pairwise: DONE
+07:56:36 thm:BookProof_NavierStokesFlow_FockOfFock_ccr_same: DONE
+07:56:36 thm:BookProof_NavierStokesFlow_FockOfFock_creat_adjoint: DONE
+07:56:46 summary: 703 done, 163 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+07:56:46 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (16 item(s)), ChapterSqSumFarisLavine (12 item(s))
+07:56:46 chunk: 12 item(s) resolved in 144s, 8 still in flight (re-polled next run)
+07:59:29 sync: read 162 definition publish job(s)
+07:59:34 sync: read 2608 problem publish job(s)
+07:59:34 submitting thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound (attempt 3)
+07:59:37 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: title clamped to 186 chars (server limit 200)
+07:59:38 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe (attempt 2)
+07:59:38 thm:BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis (attempt 2)
+07:59:38 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr (attempt 2)
+07:59:38 thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_innerBasis_total (attempt 2)
+07:59:38 thm:BookProof_NavierStokesFlow_FockOfFock_innerBasis_total: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top (attempt 2)
+07:59:38 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded (attempt 2)
+07:59:38 thm:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_RitzCertificate_re_inner_factor (attempt 2)
+07:59:38 thm:BookProof_RitzCertificate_re_inner_factor: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson (attempt 2)
+07:59:38 thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson: accepted, waiting on the compiler
+07:59:38 submitting thm:BookProof_BandEnclosure_band_enclosure_endpoints_tendsto (attempt 2)
+07:59:41 thm:BookProof_BandEnclosure_band_enclosure_endpoints_tendsto: title clamped to 181 chars (server limit 200)
+07:59:42 thm:BookProof_BandEnclosure_band_enclosure_endpoints_tendsto: accepted, waiting on the compiler
+07:59:42 submitting thm:BookProof_BandEnclosure_ritz_band_enclosure_of_nested (attempt 2)
+07:59:48 thm:BookProof_BandEnclosure_ritz_band_enclosure_of_nested: title clamped to 173 chars (server limit 200)
+07:59:48 thm:BookProof_BandEnclosure_ritz_band_enclosure_of_nested: accepted, waiting on the compiler
+07:59:48 submitting thm:BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands (attempt 2)
+07:59:51 thm:BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands: title clamped to 176 chars (server limit 200)
+07:59:52 thm:BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands: accepted, waiting on the compiler
+07:59:52 thm:BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe: DONE
+07:59:52 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis: DONE
+07:59:52 thm:BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_sum_repr: DONE
+07:59:53 thm:BookProof_NavierStokesFlow_FockOfFock_innerBasis_total: DONE
+07:59:53 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_ne_top: DONE
+07:59:53 thm:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded: DONE
+07:59:53 thm:BookProof_RitzCertificate_re_inner_factor: DONE
+07:59:53 thm:BookProof_SirkCertificateReader_gap_pos_of_ndjson: DONE
+08:00:02 submitting thm:BookProof_ChapterH4_compress_transfer (attempt 2)
+08:00:06 thm:BookProof_ChapterH4_compress_transfer: title clamped to 182 chars (server limit 200)
+08:00:06 thm:BookProof_ChapterH4_compress_transfer: accepted, waiting on the compiler
+08:00:06 submitting thm:BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry (attempt 2)
+08:00:09 thm:BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry: title clamped to 192 chars (server limit 200)
+08:00:10 thm:BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry: accepted, waiting on the compiler
+08:00:10 submitting thm:BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span (attempt 2)
+08:00:14 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span: title clamped to 179 chars (server limit 200)
+08:00:14 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span: accepted, waiting on the compiler
+08:00:14 submitting thm:BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span (attempt 2)
+08:00:18 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span: title clamped to 175 chars (server limit 200)
+08:00:18 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span: accepted, waiting on the compiler
+08:00:18 submitting thm:BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram (attempt 2)
+08:00:22 thm:BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram: title clamped to 171 chars (server limit 200)
+08:00:22 thm:BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram: accepted, waiting on the compiler
+08:00:22 submitting thm:BookProof_ChapterSirkRestart_brst_leakage_bound (attempt 2)
+08:00:26 thm:BookProof_ChapterSirkRestart_brst_leakage_bound: title clamped to 153 chars (server limit 200)
+08:00:26 thm:BookProof_ChapterSirkRestart_brst_leakage_bound: accepted, waiting on the compiler
+08:00:26 submitting thm:BookProof_ChapterSirkRestart_restart_error_accumulation_sirk (attempt 2)
+08:00:30 thm:BookProof_ChapterSirkRestart_restart_error_accumulation_sirk: title clamped to 156 chars (server limit 200)
+08:00:30 thm:BookProof_ChapterSirkRestart_restart_error_accumulation_sirk: accepted, waiting on the compiler
+08:00:30 submitting thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel (attempt 2)
+08:00:34 thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel: title clamped to 183 chars (server limit 200)
+08:00:34 thm:BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel: accepted, waiting on the compiler
+08:00:34 thm:BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound: DONE
+08:00:34 thm:BookProof_BandEnclosure_band_enclosure_endpoints_tendsto: DONE
+08:00:35 thm:BookProof_BandEnclosure_ritz_band_enclosure_of_nested: DONE
+08:00:44 thm:BookProof_ChapterH4_compress_transfer: DONE
+08:01:03 thm:BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands: DONE
+08:01:03 thm:BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry: DONE
+08:01:13 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span: DONE
+08:01:39 thm:BookProof_ChapterSirkGramWhitening_exists_isometry_range_eq_span: DONE
+08:01:57 summary: 719 done, 147 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:01:57 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (16 item(s)), ChapterSqSumFarisLavine (20 item(s))
+08:01:57 chunk: 16 item(s) resolved in 143s, 4 still in flight (re-polled next run)
+08:02:28 sync: read 162 definition publish job(s)
+08:02:33 sync: read 2620 problem publish job(s)
+08:02:33 processing def:ChapterQgHermiteFriedrichs (attempt 2)
+08:04:02 def:ChapterQgHermiteFriedrichs: FAIL (publish FAILED: Imported platform theorems must be Proved at submission time, but the following are not: BookProof.QgHermiteCore.memLp_mul_pgFun_of_ex)
+08:04:03 bounded chunk: max-items 1 reached
+08:04:03 summary: 109 done, 3 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:04:03 waiting on unpublished def bundle(s): ChapterQgHermiteFriedrichs (2 item(s))
+08:04:03 chunk: 1 item(s) processed in 89s
+08:04:47 sync: read 163 definition publish job(s)
+08:04:51 sync: read 2620 problem publish job(s)
+08:04:51 submitting sol:BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval (attempt 2)
+08:04:52 sol:BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval: accepted, waiting on the compiler
+08:07:19 summary: 342 done, 551 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:07:19 chunk: 0 item(s) resolved in 148s, 1 still in flight (re-polled next run)
+08:07:23 sync: read 163 definition publish job(s)
+08:07:28 sync: read 2620 problem publish job(s)
+08:07:28 submitting sol:BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval (attempt 2)
+08:07:28 sol:BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval: accepted, waiting on the compiler
+08:07:28 sol:BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval: DONE
+08:07:28 summary: 343 done, 550 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:07:28 chunk: 1 item(s) resolved in 0s
+08:07:37 sync: read 163 definition publish job(s)
+08:07:42 sync: read 2620 problem publish job(s)
+08:07:42 submitting sol:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded (attempt 2)
+08:07:43 sol:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded: accepted, waiting on the compiler
+08:09:46 sol:BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded: DONE
+08:09:46 summary: 344 done, 549 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:09:46 chunk: 1 item(s) resolved in 123s
+08:09:52 sync: read 163 definition publish job(s)
+08:09:56 sync: read 2620 problem publish job(s)
+08:09:56 submitting def:ChapterQgHermiteFriedrichs (attempt 3)
+08:10:04 def:ChapterQgHermiteFriedrichs: accepted, waiting on the compiler
+08:12:14 summary: 109 done, 3 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:12:14 chunk: 0 item(s) resolved in 138s, 1 still in flight (re-polled next run)
+08:12:19 sync: read 164 definition publish job(s)
+08:12:23 sync: read 2620 problem publish job(s)
+08:12:23 submitting def:ChapterQgHermiteFriedrichs (attempt 3)
+08:12:23 def:ChapterQgHermiteFriedrichs: accepted, waiting on the compiler
+08:13:29 def:ChapterQgHermiteFriedrichs: DONE
+08:13:29 summary: 110 done, 2 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:13:29 chunk: 1 item(s) resolved in 66s
+08:13:35 sync: read 164 definition publish job(s)
+08:13:39 sync: read 2620 problem publish job(s)
+08:13:39 submitting def:ChapterGaussCoreQuadBounds (attempt 2)
+08:13:47 def:ChapterGaussCoreQuadBounds: accepted, waiting on the compiler
+08:16:15 summary: 110 done, 2 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:16:15 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (1 item(s))
+08:16:15 chunk: 0 item(s) resolved in 155s, 1 still in flight (re-polled next run)
+08:16:19 sync: read 165 definition publish job(s)
+08:16:24 sync: read 2620 problem publish job(s)
+08:16:24 submitting def:ChapterGaussCoreQuadBounds (attempt 2)
+08:16:24 def:ChapterGaussCoreQuadBounds: accepted, waiting on the compiler
+08:17:55 def:ChapterGaussCoreQuadBounds: DONE
+08:17:55 summary: 111 done, 1 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:17:55 waiting on unpublished def bundle(s): ChapterGaussCoreQuadBounds (1 item(s))
+08:17:55 chunk: 1 item(s) resolved in 91s
+08:17:59 sync: read 165 definition publish job(s)
+08:18:04 sync: read 2620 problem publish job(s)
+08:18:04 submitting def:ChapterSqSumFarisLavine (attempt 2)
+08:18:11 def:ChapterSqSumFarisLavine: accepted, waiting on the compiler
+08:20:38 summary: 111 done, 1 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:20:38 chunk: 0 item(s) resolved in 155s, 1 still in flight (re-polled next run)
+08:20:42 sync: read 166 definition publish job(s)
+08:20:47 sync: read 2620 problem publish job(s)
+08:20:47 submitting def:ChapterSqSumFarisLavine (attempt 2)
+08:20:47 def:ChapterSqSumFarisLavine: accepted, waiting on the compiler
+08:23:23 summary: 111 done, 1 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:23:23 chunk: 0 item(s) resolved in 155s, 1 still in flight (re-polled next run)
+08:23:29 sync: read 166 definition publish job(s)
+08:23:33 sync: read 2620 problem publish job(s)
+08:23:33 submitting def:ChapterSqSumFarisLavine (attempt 2)
+08:23:33 def:ChapterSqSumFarisLavine: accepted, waiting on the compiler
+08:23:34 def:ChapterSqSumFarisLavine: DONE
+08:23:34 summary: 112 done, 0 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (179 out-of-order orphans ignored)
+08:23:34 chunk: 1 item(s) resolved in 0s

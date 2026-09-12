@@ -19,7 +19,71 @@ chapters) plus the 4 deferred chapters themselves
 (SirkEndToEnd, SirkWhitening, SirkPerSystem, YangMillsHermite) with their thm/sol
 nodes. This unlocks everything the earlier waves deferred.
 
-**Status (2026-09-10):**
+### 1a. VERIFIED STATE (2026-09-12, Freebuff cloud sandbox — supersedes the counts below)
+
+Measured against the live platform (API 0.10.3), not from log archaeology:
+
+- Wave spec: **111 defs / 890 thms / 890 sols** (`pipeline/wave_upload.json`); `ORDER` = 1907 in-plan items.
+- Platform holds **119 published definitions** and **722 published problems** for this account
+  (`leonardopedro`); `state/pipeline.json` reconciled to **1082 done / 788 pending / 0 failed** by
+  `--sync` (653 items were still marked pending locally while already published upstream).
+- **Platform envelope changed in 0.10.x**: `GET /publish-jobs` returns `{publish_jobs, total}`, not
+  `{jobs}`; `GET /theorems?tags=…` returns 400. **Neither is documented in the 0.10.3 skill** — the
+  uploader accepts any list-valued envelope key, and `debug/api_probe.py` prints raw shapes.
+- **Skill/repo sync (done 2026-09-12)**: the fork was already merged with
+  `prove2me/prove2me_workspace` (merge commit `482ff33`); only the sandbox checkout lagged. Synced with
+  `git remote add upstream … && git fetch upstream --tags && git merge --ff-only origin/main`
+  (clean fast-forward, no local work touched). Skill version now matches the platform
+  (**0.10.3 / 0.10.3**), and `references/campaigns.md` (0.9.9 feature) arrived. Upstream carries only
+  the skill; the fork adds `BookProof/ Definitions/ Theorems/ Solutions/ pipeline/ state/`.
+  The fork's `main` is its only branch and does **not** contain the missing stubs below — those were
+  never committed (the Wave-10 commit message claims +74, but 0 exist in any ref).
+- **Chunked mode added** to `pipeline/upload_pipeline.py` for hosts that cannot run a daemon:
+  `--check` (auth + inventory), `--status` (plan vs state + unsubmittable list), `--sync`
+  (reconcile from publish jobs, exits), `--dry-run`, `--max-items N` / `--max-seconds S`
+  (bounded run, exits 0 at the bound). `WS`/`LAKE_BIN`/`PROVE2ME_API_KEY`/`PROVE2ME_WS` are
+  env-overridable; wave-spec absolute paths are re-rooted onto the checkout.
+- **Job-poll states no longer consume an attempt** (`still in flight`, `poll timeout`): a big bundle
+  idling for minutes is normal (§3) and must not burn one of the 5 attempts. Chunks use
+  `--job-timeout 25..40` so a bounded run returns cleanly; the saved `job_id` is re-polled next run.
+- **Per-kind runs + preflight guard**: `--kind def|thm|sol` (repeatable) because a blocked def at the
+  head of `ORDER` starves everything behind it in a bounded chunk. Before every submission the runner
+  skips (no attempt consumed) any item importing an **unpublished** def bundle — §2 makes that a
+  guaranteed server FAILED. `--no-preflight` disables it.
+- **GENERATOR/DATA BUG — `theorem_title` > 200 chars**: the server rejects the whole submission
+  (`theorem_title must be at most 200 characters`) and the wave spec lifted titles verbatim from
+  chapter docstrings — **131 of 890 thm titles** were over, which would have burned one attempt on
+  each. `clamp_title()` now truncates at a word boundary at the submit boundary (defs + thms +
+  legacy). Root cause is generator-side: for many items `wave_meta.json`'s `title` is a raw *type
+  signature* (binders + conclusion), not a human label — worth fixing in `scripts/wave_generate.py`
+  for future waves, since a title is display-only and can be freely rewritten.
+- **Chunk progress (2026-09-12)**: 6 thms published via `--kind thm` + server-gate chunks
+  (SirkCertifiedGap ×3, SirkGapTable ×3), all `DONE`, 0 failures; state 1082 → 1088 done.
+- **Critical path / current blocker**: 2 defs are unpublished and block 44 thms + 44 sols.
+  `ChapterQgHermiteFriedrichs` (added to the wave spec; it was missing) → `ChapterGaussCoreQuadBounds`
+  → `ChapterSqSumFarisLavine`. Server error on both was `unknown import:
+  Definitions.Def_ChapterQgHermiteFriedrichs`. Fixing that surfaced a deeper gap: the bundle is a
+  **hollowed skeleton** — its imports were missing (fixed: +HermiteProductCore/QgHermiteCore/
+  StarobinskyPotential) and `memLp_mul_pgFun_of_expBounded`, used in `potLp`'s body, is declared in
+  the source chapter (`BookProof/ChapterQgHermiteCore.lean:617`) and as a theorem node but in **no**
+  def bundle — so it must be embedded locally before this def can publish. That is the same Qg
+  Hermite-oscillator network §8 already decided NOT to pursue; do not spend attempts on it again
+  without a new decision. **§8's claim that this helper "was embedded in `Def_ChapterQgHermiteCore`"
+  is false**: `git log --all -S memLp_mul_pgFun_of_expBounded -- Definitions/` finds only the initial
+  snapshot, and `Def_ChapterQgHermiteCore` has 4 declarations in every ref (main, origin/main,
+  upstream/main). The embedding was never committed anywhere, so the def cannot be published by
+  imports alone — the helper (plus its own chain: `ExpBounded.nonneg_const`,
+  `exists_exp_bound_mvPolyEval`, `memLp_two_exp_norm_mul_gaussD`, `continuous_pgFun`) has to be
+  written into a bundle first, with no local compiler to check it.
+- 65 plan items are unsubmittable from a partial checkout (missing sources): FockCanonical 28,
+  FockManyMode 19 (Wave-10 stubs that were never written to disk), ContinuityUnitaryInfinite 13,
+  ChapterH6/H8/H9 helpers.
+- Tooling added: `debug/skill_compliance.py` (SKILL.md rules 1–3 + stub/name checks),
+  `debug/api_probe.py` (raw envelopes), `debug/job_failures.py --gap` (failure causes + plan gap),
+  `debug/def_closure.py` (unpublished dependencies, deps-first), `debug/external_refs.py`
+  (missing imports/opens), `debug/add_wave_def.py` (additive wave extender).
+
+**Status (2026-09-10) — historical, counts superseded by §1a:**
 
 - Compile gate: **70 / 70 bundles OK, 0 FAIL** (`state/compile_check.log`) — the
   wave-1 def gate. Wave-2/3 added ~15 more gated def bundles (§1b).

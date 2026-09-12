@@ -1,5 +1,8 @@
 # Credentials — never commit tokens
 credentials.json
+.env
+.env.*
+!.env.example
 
 # Local Lean project files (agent-local, environment-specific; see references/lean-setup.md)
 lean-toolchain

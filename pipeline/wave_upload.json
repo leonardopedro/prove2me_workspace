@@ -1428,6 +1428,19 @@
     "navier-stokes",
     "operator-algebras"
    ]
+  },
+  "ChapterQgHermiteFriedrichs": {
+   "definition_name": "ChapterQgHermiteFriedrichs",
+   "namespace": "BookProof.QgHermiteFriedrichs",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgHermiteFriedrichs.lean",
+   "title": "The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry, semiboundedness, and the Friedrichs extension",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgHermiteFriedrichs`, source chapter `BookProof/ChapterQgHermiteFriedrichs.lean`): The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry, semiboundedness, and the Friedrichs extension\n\n`CONSOLIDATED_PLAN.md` \u00a710.6.1 asks for the one-particle gauge-fixed `R + \u03b1R\u00b2` Hamiltonian `H = \u2212\u0394 + W` to be realized as a genuine operator on the Gauss\u2013polynomial (Hermite) core of `L\u00b2(\u211d\u1d48)` \u2014 the basis the SIRK numerics work in \u2014 and for a self-adjoint realization of it. Target 1 (well-definedness: `H` maps the core into `L\u00b2`) is `BookProof.ChapterQgHermiteCore`. This module takes the next step:\n\n* the kinetic term is realized **algebraically** on the core. Differentiating `pgFun p = p(x) e^{\u2212\u2016x\u2016\u00b2/4}` in the coordinate `j` multiplies the polynomial by the *twisted derivative* `coreD j p = \u2202\u2c7c p \u2212 \u00bd x\u2c7c p` (`hasDerivAt_pgFun_coord`), so the Laplacian acts on the core as the polynomial map `kinPoly p = \u2212\u2211\u2c7c coreD j (coreD j p)` (`pgFun_kinPoly`); * `coreD j` is **antisymmetric** for the Gaussian pairing (`gaussInt_coreD`), which is the polynomial form of integration by parts \u2014 the analytic input is the project's `gaussInt_pderiv`; * consequently `H = \u2212\u0394 + W` on the core (`hamCore`) is **symmetric** (`hamCore_symmetricOn`) and **bounded below by the lower bound of the potential** (`hamCore_quadForm_ge`, `hamCore_quadForm_nonneg`): the kinetic quadratic form is the sum of the squared norms of the first derivatives; * since the core is dense (`polyGaussCore_dense`), the Friedrichs machinery of `BookProof.ChapterFriedrichsExtension` yields a **semibounded self-adjoint extension** with the same lower bound (`hermiteCore_friedrichs_extension`), and a *positive* one when the potential is nonnegative (`hermiteCore_friedrichs_extension_of_nonneg`).\n\nThe named instances are the ones \u00a710.6.1 asks for: the one-variable **scalaron** Hamiltonian `\u2212\u0394 + V(\u03c6)` (`qgOneParticleHermite_friedrichs`) \u2014 unconditional, no finite-speed hypothesis, and with the exponentially growing potential the temperate-growth theorems cannot reach \u2014 and the reduced two-variable sector `(R_c, \u03c6)` with the conformal-mode parabola (`qgOneParticleSector_friedrichs`).\n\n**Honest boundary.** This is the *existence and canonical choice* of a self-adjoint realization, not the *uniqueness* of one: essential self-adjointness on the core (\u00a710.6.1 target 4) is not proved here, and no statement of this module asserts it. It is proved elsewhere for the two cases now available \u2014 the harmonic potential (`BookProof.ChapterQgHermiteOscillatorEsa`) and the potential term alone, exponential growth included (`BookProof.ChapterScalaronHermiteEsa`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgHermiteFriedrichs.lean",
+   "tags": [
+    "timepiece",
+    "qg",
+    "hermitian-core"
+   ]
   }
  },
  "thms": {

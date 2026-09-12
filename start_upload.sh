@@ -8,11 +8,13 @@
 #   ./start_upload.sh status   # status
 #   ./start_upload.sh restart  # stop + start
 
-WS="/home/leo/prove2me_workspace"
+# Workspace root: PROVE2ME_WS override, else the directory holding this script.
+WS="${PROVE2ME_WS:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 LOG="${WS}/state/upload.log"
 mkdir -p "$(dirname "$LOG")"
 
 PIPELINE="python3 ${WS}/pipeline/upload_pipeline.py"
+export PROVE2ME_WS="${WS}"
 PIDFILE="/tmp/upload_pipeline.pid"
 
 start() {

@@ -54,7 +54,13 @@ import os
 import re
 import sys
 
-WS = "/home/leo/prove2me_workspace"
+# Workspace root: the canonical checkout on the build host, unless this copy is
+# run from a different checkout (Freebuff sandbox) — then use that root, matching
+# the convention of the other debug tools.  (`$PROJ`-dependent generator inputs
+# still have to exist; see PIPELINE_PLAN §1f.)
+WS = (os.environ.get("PROVE2ME_WS")
+      or (__file__ and os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+      or "/home/leo/prove2me_workspace")
 SKETCH_DIR = f"{WS}/state/sketch"
 DEF_DIR = f"{WS}/Definitions"
 

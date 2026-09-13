@@ -586,10 +586,26 @@ hand with `debug/drop_embedded_dups.py` after every run. Fixed in both tools:
 **Next blockers, in order.**
 
 1. **17 def bundles are unpublished**; three are genuine content repairs, not ordering:
-   `ChapterFullQuadraticEsa` (generator syntax damage: `line 15: unexpected token 'def'`),
-   `ChapterHermiteQuadraticEsa` (`unknown namespace BookProof.HermiteProductCore` — confirm the ORDER
-   edge against `Def_ChapterHermiteProductCore`), `ChapterShiftedHermiteCore` (`Unknown identifier
-   Vd`).
+   - `ChapterFullQuadraticEsa` — the generator emitted **bare declaration headers with no bodies**
+     (`def fqAmp`, `def fqMl`, `def fqExch`, `def fqSymbol`, `def rotMat` at lines 16–27 of
+     `Definitions/Def_ChapterFullQuadraticEsa.lean`), hence `unexpected token 'def'`.
+   - `ChapterHermiteQuadraticEsa` — the bundle imports **only `Mathlib`** and then
+     `open BookProof.HermiteProductCore …` at line 72, so the namespace is unknown; it needs
+     `import Definitions.Def_ChapterHermiteProductCore` (published: `ChapterHermiteProductCore` is
+     `PUBLISHED`, as is `ChapterHermiteProductBasis`).
+   - `ChapterShiftedHermiteCore` — it imports `Def_ChapterHermiteProductCore` but never **opens** it,
+     so `Vd` (`abbrev Vd (d : ℕ) := EuclideanSpace ℝ (Fin d)`,
+     `Def_ChapterHermiteProductCore.lean:46`, namespace `BookProof.HermiteProductCore`) is unknown at
+     line 57.
+
+   **The sanctioned generator cannot repair any of them in this sandbox.** `debug/regen_defs.py`
+   embeds `scripts/wave_generate.py`, whose `load_graph()` reads
+   `/home/leo/Projects/timepiece/decl_graph.jsonl` — absent here (§1f). Its `WS` is now portable
+   (`$PROVE2ME_WS`, else the checkout holding the script, like the other tools), so the *reader* runs;
+   the missing graph is the blocker. Do **not** reach for `debug/fix_def_imports_closure.py` to patch
+   the two import/open defects: it rewrites every bundle's imports to the source closure with no
+   dry-run and would undo the deliberately self-contained bundles. Fix the import/open pair by hand
+   (it is the one repair shape with no judgement in it) or leave it for a host that has the graph.
 2. Once those land: re-run `debug/extend_wave_stubs.py` to add the `HermiteBand` /
    `HermiteQuadraticEsa` thm nodes it is holding back, then `debug/reopen_failed.py --yes` for the
    sols parked on `unknown import`.

@@ -16778,6 +16778,424 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le": {
+   "name": "BookProof.HermiteQuadraticEsa.abs_confW_sub_harmW_le",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le.lean",
+   "title": "The Lean 4 theorem `abs_confW_sub_harmW_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `abs_confW_sub_harmW_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_abs_coord_le_norm": {
+   "name": "BookProof.HermiteQuadraticEsa.abs_coord_le_norm",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_abs_coord_le_norm.lean",
+   "title": "The Lean 4 theorem `abs_coord_le_norm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `abs_coord_le_norm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two": {
+   "name": "BookProof.HermiteQuadraticEsa.abs_coord_zero_le_norm_two",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two.lean",
+   "title": "The Lean 4 theorem `abs_coord_zero_le_norm_two` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `abs_coord_zero_le_norm_two` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le": {
+   "name": "BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le.lean",
+   "title": "The Lean 4 theorem `abs_sectorQuadW_sub_harmW_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `abs_sectorQuadW_sub_harmW_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `confV_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `confV_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_confV_stone_flow": {
+   "name": "BookProof.HermiteQuadraticEsa.confV_stone_flow",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_confV_stone_flow.lean",
+   "title": "The Lean 4 theorem `confV_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `confV_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_continuous_confW": {
+   "name": "BookProof.HermiteQuadraticEsa.continuous_confW",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_continuous_confW.lean",
+   "title": "The Lean 4 theorem `continuous_confW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `continuous_confW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_continuous_sectorQuadW": {
+   "name": "BookProof.HermiteQuadraticEsa.continuous_sectorQuadW",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW.lean",
+   "title": "The Lean 4 theorem `continuous_sectorQuadW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `continuous_sectorQuadW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_coreD_X_mul": {
+   "name": "BookProof.HermiteQuadraticEsa.coreD_X_mul",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_coreD_X_mul.lean",
+   "title": "The Lean 4 theorem `coreD_X_mul` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreD_X_mul` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul": {
+   "name": "BookProof.HermiteQuadraticEsa.coreD_harmPoly_mul",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul.lean",
+   "title": "The Lean 4 theorem `coreD_harmPoly_mul` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreD_harmPoly_mul` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_cpoly_add": {
+   "name": "BookProof.HermiteQuadraticEsa.cpoly_add",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_cpoly_add.lean",
+   "title": "The Lean 4 theorem `cpoly_add` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `cpoly_add` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_cpoly_harmPoly": {
+   "name": "BookProof.HermiteQuadraticEsa.cpoly_harmPoly",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_cpoly_harmPoly.lean",
+   "title": "The Lean 4 theorem `cpoly_harmPoly` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `cpoly_harmPoly` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic": {
+   "name": "BookProof.HermiteQuadraticEsa.esa_of_close_to_harmonic",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic.lean",
+   "title": "The Lean 4 theorem `esa_of_close_to_harmonic` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `esa_of_close_to_harmonic` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_expBounded_confW": {
+   "name": "BookProof.HermiteQuadraticEsa.expBounded_confW",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_expBounded_confW.lean",
+   "title": "The Lean 4 theorem `expBounded_confW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `expBounded_confW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound": {
+   "name": "BookProof.HermiteQuadraticEsa.expBounded_of_growth_bound",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound.lean",
+   "title": "The Lean 4 theorem `expBounded_of_growth_bound` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `expBounded_of_growth_bound` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_expBounded_of_le_harm": {
+   "name": "BookProof.HermiteQuadraticEsa.expBounded_of_le_harm",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_expBounded_of_le_harm.lean",
+   "title": "The Lean 4 theorem `expBounded_of_le_harm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `expBounded_of_le_harm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW": {
+   "name": "BookProof.HermiteQuadraticEsa.expBounded_sectorQuadW",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW.lean",
+   "title": "The Lean 4 theorem `expBounded_sectorQuadW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `expBounded_sectorQuadW` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_gaussInt_anticommutator": {
+   "name": "BookProof.HermiteQuadraticEsa.gaussInt_anticommutator",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_gaussInt_anticommutator.lean",
+   "title": "The Lean 4 theorem `gaussInt_anticommutator` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `gaussInt_anticommutator` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_gaussInt_cross": {
+   "name": "BookProof.HermiteQuadraticEsa.gaussInt_cross",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_gaussInt_cross.lean",
+   "title": "The Lean 4 theorem `gaussInt_cross` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `gaussInt_cross` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_gaussInt_harm_self": {
+   "name": "BookProof.HermiteQuadraticEsa.gaussInt_harm_self",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_gaussInt_harm_self.lean",
+   "title": "The Lean 4 theorem `gaussInt_harm_self` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `gaussInt_harm_self` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_gaussInt_self": {
+   "name": "BookProof.HermiteQuadraticEsa.gaussInt_self",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_gaussInt_self.lean",
+   "title": "The Lean 4 theorem `gaussInt_self` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `gaussInt_self` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_hamCore_congr": {
+   "name": "BookProof.HermiteQuadraticEsa.hamCore_congr",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_hamCore_congr.lean",
+   "title": "The Lean 4 theorem `hamCore_congr` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hamCore_congr` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `harmonic_add_linearGrowth_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `harmonic_add_linearGrowth_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `harmonic_add_subquadratic_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `harmonic_add_subquadratic_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow": {
+   "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_stone_flow",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow.lean",
+   "title": "The Lean 4 theorem `harmonic_add_subquadratic_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `harmonic_add_subquadratic_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le": {
+   "name": "BookProof.HermiteQuadraticEsa.norm_harmPoly_mul_le",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le.lean",
+   "title": "The Lean 4 theorem `norm_harmPoly_mul_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_harmPoly_mul_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm": {
+   "name": "BookProof.HermiteQuadraticEsa.norm_potLp_le_of_le_harm",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm.lean",
+   "title": "The Lean 4 theorem `norm_potLp_le_of_le_harm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_potLp_le_of_le_harm` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le": {
+   "name": "BookProof.HermiteQuadraticEsa.norm_sq_harmPoly_mul_le",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le.lean",
+   "title": "The Lean 4 theorem `norm_sq_harmPoly_mul_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_sq_harmPoly_mul_le` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_norm_sq_one": {
+   "name": "BookProof.HermiteQuadraticEsa.norm_sq_one",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_norm_sq_one.lean",
+   "title": "The Lean 4 theorem `norm_sq_one` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_sq_one` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_norm_sq_two": {
+   "name": "BookProof.HermiteQuadraticEsa.norm_sq_two",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_norm_sq_two.lean",
+   "title": "The Lean 4 theorem `norm_sq_two` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_sq_two` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_pderiv_harmPoly": {
+   "name": "BookProof.HermiteQuadraticEsa.pderiv_harmPoly",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_pderiv_harmPoly.lean",
+   "title": "The Lean 4 theorem `pderiv_harmPoly` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pderiv_harmPoly` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.quadraticGrowth_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `quadraticGrowth_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `quadraticGrowth_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.scaledHarmonic_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `scaledHarmonic_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `scaledHarmonic_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `sectorHarmonicApprox_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sectorHarmonicApprox_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint": {
+   "name": "BookProof.HermiteQuadraticEsa.sectorQuad_essentiallySelfAdjoint",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `sectorQuad_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sectorQuad_essentiallySelfAdjoint` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow": {
+   "name": "BookProof.HermiteQuadraticEsa.sectorQuad_stone_flow",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow.lean",
+   "title": "The Lean 4 theorem `sectorQuad_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sectorQuad_stone_flow` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq": {
+   "name": "BookProof.HermiteQuadraticEsa.tendsto_starobinskyV_div_sq",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq.lean",
+   "title": "The Lean 4 theorem `tendsto_starobinskyV_div_sq` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `tendsto_starobinskyV_div_sq` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge": {
+   "name": "BookProof.HermiteQuadraticEsa.two_re_inner_kin_harm_ge",
+   "chapter": "ChapterHermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge.lean",
+   "title": "The Lean 4 theorem `two_re_inner_kin_harm_ge` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `two_re_inner_kin_harm_ge` in the `ChapterHermiteQuadraticEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -18088,6 +18506,44 @@
   "BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hFull_hasZeroDeficiencyOn",
   "BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_of_lagrangian_katoRellich",
   "BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs",
-  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'"
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'",
+  "BookProof_HermiteQuadraticEsa_continuous_confW",
+  "BookProof_HermiteQuadraticEsa_continuous_sectorQuadW",
+  "BookProof_HermiteQuadraticEsa_coreD_X_mul",
+  "BookProof_HermiteQuadraticEsa_cpoly_add",
+  "BookProof_HermiteQuadraticEsa_cpoly_harmPoly",
+  "BookProof_HermiteQuadraticEsa_expBounded_of_le_harm",
+  "BookProof_HermiteQuadraticEsa_gaussInt_self",
+  "BookProof_HermiteQuadraticEsa_hamCore_congr",
+  "BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm",
+  "BookProof_HermiteQuadraticEsa_norm_sq_one",
+  "BookProof_HermiteQuadraticEsa_norm_sq_two",
+  "BookProof_HermiteQuadraticEsa_pderiv_harmPoly",
+  "BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq",
+  "BookProof_HermiteQuadraticEsa_gaussInt_cross",
+  "BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound",
+  "BookProof_HermiteQuadraticEsa_gaussInt_harm_self",
+  "BookProof_HermiteQuadraticEsa_abs_coord_le_norm",
+  "BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two",
+  "BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul",
+  "BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le",
+  "BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le",
+  "BookProof_HermiteQuadraticEsa_gaussInt_anticommutator",
+  "BookProof_HermiteQuadraticEsa_expBounded_confW",
+  "BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW",
+  "BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge",
+  "BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le",
+  "BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le",
+  "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic",
+  "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow",
+  "BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_confV_stone_flow",
+  "BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint",
+  "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow"
  ]
 }

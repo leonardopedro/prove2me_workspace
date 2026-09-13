@@ -609,6 +609,29 @@ hand with `debug/drop_embedded_dups.py` after every run. Fixed in both tools:
 2. Once those land: re-run `debug/extend_wave_stubs.py` to add the `HermiteBand` /
    `HermiteQuadraticEsa` thm nodes it is holding back, then `debug/reopen_failed.py --yes` for the
    sols parked on `unknown import`.
+
+**Def layer advanced (same session, after the blocker list above).**
+
+- `def:ChapterHermiteQuadraticEsa` — **PUBLISHED.** The bundle imported only `Mathlib` and then
+  `open`ed nine `BookProof.*` namespaces, so the repair was the import block of the *already
+  published* bundles: `Def_ChapterHermiteProductCore`, `Def_ChapterQgHermiteCore`,
+  `Def_ChapterQgHermiteFriedrichs`, `Def_ChapterQgHermiteOscillatorEsa`, `Def_ChapterFarisLavine`,
+  `Def_ChapterStarobinskyPotential`, `Def_ChapterStoneBridge`, `Def_ChapterEsaClosureCore`,
+  `Def_ChapterStoneResolvent` (all `PUBLISHED`, all members of the source chapter's import closure).
+  That immediately unblocked the chapter's **38 theorem nodes**: `debug/extend_wave_stubs.py` added
+  them (spec 1309 → **1347 thms / 1346 `sol_order`**) and the wave began publishing them; their sols
+  follow through `sol_order`.
+- `def:ChapterShiftedHermiteCore` — added `open BookProof.HermiteProductCore` (it imported the bundle
+  but never opened it, so `Vd` was unknown). The verdict then moved **past** the import defect to
+  real proof debt: `line 184: Unknown identifier pgMapT_apply`, `simp made no progress`, line 208.
+  It is no longer an import problem — repairing it means fixing those helper proofs inside the
+  bundle.
+- `def:ChapterFullQuadraticEsa` — unchanged, still needs the generator (`regen_defs.py`, blocked on
+  `decl_graph.jsonl`): its declarations are bare headers with no bodies.
+
+Numbers after the pass: state **2523 done / 231 pending / 64 failed** (171 orphans ignored),
+platform `num_solved_prob` **542**. The extender's guard behaved as designed in both runs: 47
+embedded duplicates skipped, 0 of them re-added.
 3. **48 failed records** (36 sols / 11 thms / 1 def): 13 sols on `Unknown identifier` (the residual
    no-node class of §1f), 4 on `unsolved goals`, the rest one-off CE/`ERROR`.
 

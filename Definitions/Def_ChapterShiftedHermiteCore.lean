@@ -46,6 +46,7 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 namespace BookProof.ShiftedHermiteCore
 
 open MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore
 
 noncomputable section
 

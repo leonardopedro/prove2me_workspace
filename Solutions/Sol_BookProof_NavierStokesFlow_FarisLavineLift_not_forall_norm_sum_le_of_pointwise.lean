@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_nEx
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_vEx_sq
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_sum_hEx_vEx
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -19,7 +21,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 
@@ -46,7 +48,7 @@ variable {d : ℕ} (c : ComparisonData F d)
 
 
 
-open LpNat DiagonalEsa
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
 
 
 

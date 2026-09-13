@@ -8,6 +8,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sum
 open BookProof.GaussCoreQuadBounds
 
 

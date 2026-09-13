@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_comp
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_sub
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 
@@ -18,7 +19,7 @@ open scoped ENNReal
 
 
 
-open FarisLavineLift
+open BookProof.NavierStokesFlow.FarisLavineLift
 
 variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterEsaClosure
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.EsaClosure
 
 

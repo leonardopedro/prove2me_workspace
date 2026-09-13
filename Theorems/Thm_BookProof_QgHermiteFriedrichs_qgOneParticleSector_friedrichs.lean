@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterRitzCertificate
+import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
+import Theorems.Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential
 open BookProof.QgHermiteFriedrichs
 
 

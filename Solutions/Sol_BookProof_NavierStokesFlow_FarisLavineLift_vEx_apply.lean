@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.vEx_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -14,7 +16,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 
@@ -41,7 +43,7 @@ variable {d : ℕ} (c : ComparisonData F d)
 
 
 
-open LpNat DiagonalEsa
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
 
 
 

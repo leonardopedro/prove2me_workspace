@@ -3,10 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_embedCore_surjective
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore
-open BookProof.FarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+
+open BookProof.FarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 
@@ -25,7 +31,7 @@ open BookProof.NavierStokesFlow.DiffFarisLavine
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 

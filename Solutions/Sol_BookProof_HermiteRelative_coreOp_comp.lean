@@ -40,4 +40,4 @@ theorem solution (S T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d
     coreOp (S.comp T) = (coreOp S).comp (coreOp T) := by
 
   refine LinearMap.ext fun x => ?_
-  simp [coreOp_apply']
+  simp [coreOp_apply_prime]

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open Filter Topology

@@ -327,6 +327,102 @@ server rejects them with `has already been declared` because the declaration is 
 time with 50 solutions in flight: solutions take >150 s each to verify and the server serialises its
 compile queue, so `state/upload.log` going quiet is normal, not a hang.
 
+### 1f. Session 4 (2026-09-13) — the solution side had every stub-side generator gap, plus two I introduced
+
+**The headline: every generator gap §1c–§1e repaired on `Theorems/` stubs was still live on
+`Solutions/`.** The stubs were fixed because a broken *statement* fails loudly at publish; a broken
+*proof* fails inside the verdict, one round trip at a time, so it looked like proof debt. It was
+import debt. Repaired this session, all idempotent:
+
+| tool | scope | files |
+|---|---|---|
+| `debug/fix_bare_opens.py --sols` | bare `open LpNat FarisLavine …` lifted out of its enclosing namespace (`unknown namespace FarisLavine`) | **181** |
+| `debug/hoist_imports.py` | `import` below a non-import line — Lean: *`invalid 'import' command, it must be used in the beginning of the file`* | **14** |
+| `debug/fix_scoped_opens.py --sols` | `ℓ²` with no `lp` scope (`unexpected token '²'`) | **8** |
+| `debug/fix_node_imports.py` | import the `Theorems` node declaring an identifier **no def bundle declares** (`norm_weighted_kin_le`, `IsStoneFlow`, `isSelfAdjoint_galerkinCompression`, …) | **13** |
+| `debug/fix_primed_slugs.py` | reconcile primed slugs with the declarations on disk | **1 renamed + 3 dropped** |
+
+The `--sols` pass also has to **add** the declaring bundle's import, not just rename the token:
+honouring §1e's published-graph rule, a namespace must be declared by a module the file imports
+*directly*, so resolution runs against what those direct imports themselves declare. Two
+resolution bugs surfaced during the dry run and are worth remembering:
+
+- `Def_ChapterNavierStokesLagrangianCanonical.lean:91` nests `namespace BookProof.NavierStokesFlow`
+  *inside* `…LagrangianCanonical`, so the bundle genuinely declares
+  `…LagrangianCanonical.BookProof.NavierStokesFlow.CanonicalVector`. "Most specific wins" resolved the
+  bare token `CanonicalVector` to that composite and would have written an unknown namespace.
+  `is_composite()` now rejects any candidate that splits at a dot boundary into two declared
+  namespaces.
+- `DECL_RE`'s identifier pattern stopped at the first `.`, so every declaration indexed as `BookProof`
+  and `fix_node_imports.py` found nothing. A declared name may be fully qualified; key on its leaf.
+
+**`open … in` scoped to the wrong command (1 file).** `Thm_…lagCan_stone_flow.lean` had
+`open A B C in` immediately followed by a *plain* `open D`, so the `in` binder consumed the `open D`
+command and the theorem two lines below saw none of A B C — `Unknown identifier IsStoneFlow` even
+after the declaring bundle was imported. Fixed by putting the plain `open` first. Measured across both
+directories: exactly one file had the shape, so no tool was written for it.
+
+**POST-MORTEM — I corrupted 37 files and had to revert `Solutions/` + `Theorems/`.** `OPEN_RE` used
+`\s+` between tokens, and `\s` matches newlines: the token group swallowed the following commands
+(`import …`, `noncomputable section`) onto the open line, destroying the file. Caught by reading a
+diff instead of trusting the "181 patched" line. Everything before this session is committed, so
+`git checkout -- Solutions/ Theorems/` restored the exact pre-run state and the whole chain was
+re-run against a line-local regex (`[ \t]+`). **Rule: after a bulk rewrite, diff a sample and grep for
+the corruption signature — a patch count is not verification.** The earlier session's stub pass did
+*not* have this defect (verified: 0 hits in `HEAD`).
+
+**Primed slugs reconciled.** `submit-problem` rejects a `theorem_name` containing a prime (§6.1), so a
+primed slug can never publish — but `fix_primed_names.py` had renamed the *declaration* to `_prime`
+while leaving the slug, the file name and the citations on the prime. The thm splitter looks the
+declaration up by slug, so that state failed *both* ways, and 4 sibling proofs died on
+`Unknown identifier coreOp_apply'`. `fix_primed_slugs.py` renames the slug + both file names and
+rewrites the citations together, and **drops** the slugs that can never exist (stub absent from this
+checkout, or the stub's declaration is a different name and the unprimed sibling is already
+published): `FockCanonical_coe_sum_apply'`, `FockManyMode_modeShift_shift_ne'`,
+`FarisLavineLift_norm_inner_commutator_sum_le'` (its stub declares `…_alt`).
+
+**Session numbers** (platform 0.10.3 / skill 0.10.3, `leonardopedro`):
+
+| metric | session start | this report |
+|---|---|---|
+| `num_solved_prob` (the website's "proved") | 409 | **418**, still climbing (sol verdicts land on later chunks) |
+| state records done / pending / failed | 2414 / 176 / 4 | **2434 / 161 / 2** |
+| plan (`--status`) done / pending | 2292 / 421 | **2308 / 402** |
+| in-plan thms pending | 23 | **17** |
+| in-plan sols pending | 398 | **385** |
+
+Verified end to end: `sol:BookProof_SqSumFarisLavine_norm_sqSumPoly_le` — parked at **5 attempts** on
+three `Unknown identifier`s — went **DONE** after `fix_node_imports.py`. It is the single best
+confirmation that the sol-side repairs change verdicts rather than just syntax.
+
+**The daemon is the right way to run this** (§1e confirmed again): `bash start_upload.sh start`,
+verified alive across many calls, `--parallel 50 --job-timeout 60`, log `state/upload.log`. The stale
+verdict guards fire constantly now (`recorded verdict predates the current solution file —
+resubmitting`, `recorded publish job predates the current statement`) — that is the repairs being
+picked up, not a bug. Stop it before any state surgery (`reopen_failed.py`): it writes
+`state/pipeline.json` wholesale.
+
+**RESIDUAL — blocked on content this checkout cannot generate.** 16 items name an identifier with no
+def-bundle declaration *and* no `Theorems` node. `debug/fix_node_imports.py` reports them `NO NODE`.
+Concretely: `sqSumOp` (a `def` in `BookProof/ChapterQgOuterFockEsa.lean:225`, a chapter with **no**
+Definitions bundle), `coreOp_coreEquiv` / `nsDiffH_essentiallySelfAdjointOn_core` /
+`coreEquiv_coe` / `coreOp_coe` (theorems in `ChapterNavierStokesDifferentialL2.lean` whose bundle is
+published but which were never made nodes), `momPoly_apply` (the source declares `momPoly_apply'`).
+**The sanctioned generator cannot run in this sandbox**: `scripts/wave_generate.py` needs
+`$PROJ/decl_graph.jsonl` and `PROJ` is `/home/leo/Projects/timepiece`; the only `decl_graph.jsonl`
+anywhere on the box is the *example fixture* under `examples/upload_full_project/expected/`. Also note
+`state/wave_manifest.json` holds only **74** entries (it was already truncated at `HEAD`, not by this
+session) and `wave_generate.py` overwrites it wholesale — back it up before ever running that script.
+Those 16 stay blocked until the graph and source project are available here, or the declarations are
+published by hand (which is how the defects above were introduced in the first place — do not).
+
+**Next steps.**
+1. Let the daemon drain (~385 sols); sol verdicts take >150 s and resolve on a later chunk. Re-read
+   `--status` rather than the state file (§1d).
+2. Re-check the 2 remaining `failed` (`sqSumOp_pgLp` is `NO NODE`; the other is reopened) and any
+   fresh `NO NODE`/`NO STUB` classes the new verdicts expose, then re-run the repair chain + reopen.
+3. Commit: 30+ modified `Solutions/`/`Theorems/` files plus 6 new `debug/` tools.
+
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 
 **Read the backlog from `--status`, never from the state file.** `plan_progress` counts an

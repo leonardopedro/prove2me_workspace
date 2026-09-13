@@ -7,6 +7,7 @@ import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFockOneParticleGap
 import Definitions.Def_ChapterBandEnclosure
+import Theorems.Thm_BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator
 open BookProof.RitzCertificate
 
 

@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_raise_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shDiag_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shPair_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shShear_apply
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Definitions.Def_ChapterNavierStokesSignedShift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 
@@ -30,7 +35,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
+open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.SignedShift
 
 
 

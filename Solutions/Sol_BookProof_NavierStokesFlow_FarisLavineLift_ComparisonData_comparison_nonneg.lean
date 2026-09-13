@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_ge_norm_sq
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.NavierStokesFlow
 
@@ -15,7 +16,7 @@ open BookProof.NavierStokesFlow
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

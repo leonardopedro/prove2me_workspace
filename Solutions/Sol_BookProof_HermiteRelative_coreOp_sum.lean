@@ -43,5 +43,5 @@ theorem solution {ι : Type*} (s : Finset ι)
 
   classical
   induction s using Finset.induction with
-  | empty => refine LinearMap.ext fun x => ?_; simp [coreOp_apply']
+  | empty => refine LinearMap.ext fun x => ?_; simp [coreOp_apply_prime]
   | insert i s hi ih => rw [Finset.sum_insert hi, coreOp_add, ih, Finset.sum_insert hi]

@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_commDom_add_id
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_commDom_sum
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -17,7 +19,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 
@@ -44,7 +46,7 @@ variable {d : ℕ} (c : ComparisonData F d)
 
 
 
-open LpNat DiagonalEsa
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
 
 
 

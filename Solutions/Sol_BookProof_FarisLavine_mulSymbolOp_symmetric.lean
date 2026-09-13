@@ -5,6 +5,7 @@ import Definitions.Def_ChapterBandEnclosure
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_FarisLavine_mulSymbolOp_coe
 open BookProof.FarisLavine
 
 

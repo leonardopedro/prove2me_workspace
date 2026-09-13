@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — theorem BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_shiftInvert_selects
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 

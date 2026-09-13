@@ -598,3 +598,724 @@ Note: It is not possible to treat )
 00:45:29 thm:BookProof_EsaClosure_hashimoto_multishift_selects_esa: FAIL (publish FAILED: formal statement does not compile: line 36: Unknown identifier `IsShiftInvertC`
 
 Note: It is not possible to treat `IsShiftInvertC` as)
+07:48:47 sync: read 168 definition publish job(s)
+07:48:54 sync: read 3502 problem publish job(s)
+07:48:54 submitting thm:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow (attempt 1)
+07:48:54 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+07:48:57 thm:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow: title clamped to 178 chars (server limit 200)
+07:48:58 thm:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow: accepted, waiting on the compiler
+07:48:58 submitting thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto (attempt 2)
+07:49:02 thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto: accepted, waiting on the compiler
+07:49:02 submitting thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer (attempt 2)
+07:49:06 thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply (attempt 5)
+07:49:06 thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict (attempt 1)
+07:49:06 thm:BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_single (attempt 1)
+07:49:06 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_single: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SirkCertifiedGap_sectorGround_eq_inf_eigenvalues (attempt 1)
+07:49:06 thm:BookProof_SirkCertifiedGap_sectorGround_eq_inf_eigenvalues: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+07:49:06 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 1)
+07:49:06 thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_StoneBridge_isStoneFlow_stoneU (attempt 1)
+07:49:06 thm:BookProof_StoneBridge_isStoneFlow_stoneU: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ (attempt 1)
+07:49:06 thm:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_apply_eq (attempt 1)
+07:49:06 thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_apply_eq: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SirkCertifiedGap_sectorGround_ge_temple (attempt 1)
+07:49:06 thm:BookProof_SirkCertifiedGap_sectorGround_ge_temple: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 4)
+07:49:06 thm:BookProof_SqSumFarisLavine_commForm_eq_im: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 4)
+07:49:06 thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le: accepted, waiting on the compiler
+07:49:06 submitting thm:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes (attempt 3)
+07:49:06 thm:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes: recorded publish job predates the current statement — resubmitting
+07:49:10 thm:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes: accepted, waiting on the compiler
+07:49:10 submitting thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le (attempt 3)
+07:49:10 thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: accepted, waiting on the compiler
+07:49:10 submitting thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_hashimoto_selects (attempt 3)
+07:49:10 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_hashimoto_selects: recorded publish job predates the current statement — resubmitting
+07:49:14 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_hashimoto_selects: accepted, waiting on the compiler
+07:49:14 submitting thm:BookProof_NavierStokesFlow_DiffHashimoto_nsQuadraticDiffH_hashimoto_selects (attempt 3)
+07:49:14 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsQuadraticDiffH_hashimoto_selects: recorded publish job predates the current statement — resubmitting
+07:49:18 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsQuadraticDiffH_hashimoto_selects: accepted, waiting on the compiler
+07:49:18 submitting thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_shiftInvert_selects (attempt 3)
+07:49:18 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_shiftInvert_selects: recorded publish job predates the current statement — resubmitting
+07:49:22 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_shiftInvert_selects: accepted, waiting on the compiler
+07:49:22 submitting thm:BookProof_QgHermiteFriedrichs_qgOneParticleSector_friedrichs (attempt 2)
+07:49:22 thm:BookProof_QgHermiteFriedrichs_qgOneParticleSector_friedrichs: recorded publish job predates the current statement — resubmitting
+07:49:26 thm:BookProof_QgHermiteFriedrichs_qgOneParticleSector_friedrichs: accepted, waiting on the compiler
+07:49:26 submitting thm:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hashimoto_selects (attempt 2)
+07:49:26 thm:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hashimoto_selects: recorded publish job predates the current statement — resubmitting
+07:49:30 thm:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hashimoto_selects: accepted, waiting on the compiler
+07:49:30 submitting thm:BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs (attempt 2)
+07:49:30 thm:BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs: recorded publish job predates the current statement — resubmitting
+07:49:34 thm:BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs: accepted, waiting on the compiler
+07:49:34 submitting sol:BookProof_GaussCoreQuadBounds_gaussInt_self (attempt 1)
+07:49:34 sol:BookProof_GaussCoreQuadBounds_gaussInt_self: accepted, waiting on the compiler
+07:49:34 submitting sol:BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg (attempt 1)
+07:49:34 sol:BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg: accepted, waiting on the compiler
+07:49:34 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 2)
+07:49:34 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: WAIT (theorem not published yet)
+07:49:34 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply' (attempt 2)
+07:49:34 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply': WAIT (theorem not published yet)
+07:49:34 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 2)
+07:49:34 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: WAIT (theorem not published yet)
+07:49:34 submitting sol:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne' (attempt 2)
+07:49:34 sol:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne': WAIT (theorem not published yet)
+07:49:34 submitting sol:BookProof_SqSumFarisLavine_abs_im_gaussInt_le (attempt 1)
+07:49:34 sol:BookProof_SqSumFarisLavine_abs_im_gaussInt_le: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_SqSumFarisLavine_cpoly_linForm (attempt 1)
+07:49:35 sol:BookProof_SqSumFarisLavine_cpoly_linForm: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_SqSumFarisLavine_sqSumPoly_apply (attempt 1)
+07:49:35 sol:BookProof_SqSumFarisLavine_sqSumPoly_apply: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 2)
+07:49:35 sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_quadForm_harm_eq (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_quadForm_harm_eq: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_inner_harmP_re (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_inner_harmP_re: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_SqSumFarisLavine_cpoly_gradPoly (attempt 1)
+07:49:35 sol:BookProof_SqSumFarisLavine_cpoly_gradPoly: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_GaussCoreQuadBounds_shiftNorm_sq (attempt 1)
+07:49:35 sol:BookProof_GaussCoreQuadBounds_shiftNorm_sq: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 2)
+07:49:35 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: WAIT (theorem not published yet)
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockOfFock_annih_basis (attempt 1)
+07:49:35 sol:BookProof_NavierStokesFlow_FockOfFock_annih_basis: recorded verdict predates the current solution file — resubmitting
+07:49:35 sol:BookProof_NavierStokesFlow_FockOfFock_annih_basis: accepted, waiting on the compiler
+07:49:35 submitting sol:BookProof_NavierStokesFlow_FockOfFock_creat_basis (attempt 1)
+07:49:35 sol:BookProof_NavierStokesFlow_FockOfFock_creat_basis: recorded verdict predates the current solution file — resubmitting
+07:49:36 sol:BookProof_NavierStokesFlow_FockOfFock_creat_basis: accepted, waiting on the compiler
+07:49:36 submitting sol:BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn (attempt 1)
+07:49:36 sol:BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn: recorded verdict predates the current solution file — resubmitting
+07:49:37 sol:BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn: accepted, waiting on the compiler
+07:49:37 submitting sol:BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq (attempt 1)
+07:49:37 sol:BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq: recorded verdict predates the current solution file — resubmitting
+07:49:37 sol:BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq: accepted, waiting on the compiler
+07:49:37 submitting sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine (attempt 1)
+07:49:37 sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine: recorded verdict predates the current solution file — resubmitting
+07:49:38 sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_SqSumFarisLavine_norm_potPoly_mul_le (attempt 1)
+07:49:38 sol:BookProof_SqSumFarisLavine_norm_potPoly_mul_le: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands (attempt 1)
+07:49:38 sol:BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm (attempt 1)
+07:49:38 sol:BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 2)
+07:49:38 sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: WAIT (theorem not published yet)
+07:49:38 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 2)
+07:49:38 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+07:49:38 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 2)
+07:49:38 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: WAIT (theorem not published yet)
+07:49:38 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 2)
+07:49:38 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: WAIT (theorem not published yet)
+07:49:38 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq (attempt 1)
+07:49:38 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn (attempt 1)
+07:49:38 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn: accepted, waiting on the compiler
+07:49:38 submitting sol:BookProof_SqSumFarisLavine_norm_sqSumPoly_le (attempt 1)
+07:49:39 sol:BookProof_SqSumFarisLavine_norm_sqSumPoly_le: accepted, waiting on the compiler
+07:49:39 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore (attempt 1)
+07:49:39 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore: accepted, waiting on the compiler
+07:49:39 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 2)
+07:49:39 sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: WAIT (theorem not published yet)
+07:49:39 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 2)
+07:49:39 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: WAIT (theorem not published yet)
+07:49:39 submitting sol:BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm (attempt 5)
+07:49:39 sol:BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm: recorded verdict predates the current solution file — resubmitting
+07:49:40 sol:BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm: accepted, waiting on the compiler
+07:49:40 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore (attempt 5)
+07:49:40 sol:BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore: recorded verdict predates the current solution file — resubmitting
+07:49:41 sol:BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore: accepted, waiting on the compiler
+07:49:41 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound (attempt 5)
+07:49:41 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound: recorded verdict predates the current solution file — resubmitting
+07:49:41 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound: accepted, waiting on the compiler
+07:49:42 thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply: FAIL (publish FAILED: formal statement does not compile: line 33: Invalid field `mem`: The environment does not contain `And.mem`, so it is not possible to )
+07:49:42 thm:BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict: FAIL (publish FAILED: formal statement does not compile: line 50: Unknown identifier `polyGaussCore_le_diffMaxDom`
+
+Note: It is not possible to treat `polyG)
+07:49:42 thm:BookProof_NavierStokesFlow_SecondQuant_fockOp_single: FAIL (publish FAILED: formal statement does not compile: line 31: Unknown identifier `single_mem_fockCore`
+
+Note: It is not possible to treat `single_mem_fo)
+07:49:42 thm:BookProof_SirkCertifiedGap_sectorGround_eq_inf_eigenvalues: FAIL (publish FAILED: formal statement does not compile: line 28: Unknown identifier `sectorRestrict_isSymmetric`
+
+Note: It is not possible to treat `sector)
+07:49:42 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: FAIL (publish FAILED: formal statement does not compile: line 26: Unknown identifier `BookProof.NavierStokesFlow.DifferentialL2.coreEquiv`)
+07:49:43 thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn: FAIL (publish FAILED: formal statement does not compile: line 27: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicit)
+07:49:43 thm:BookProof_StoneBridge_isStoneFlow_stoneU: FAIL (publish FAILED: formal statement does not compile: line 32: Invalid field `stoneU`: The environment does not contain `BookProof.ChapterStoneResolvent.)
+07:49:43 thm:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ: FAIL (publish FAILED: formal statement does not compile: line 34: Unknown constant `BookProof.YangMillsFriedrichsLimit.mem`)
+07:49:43 thm:BookProof_HashimotoShiftInvert_IsShiftInvertC_apply_eq: FAIL (publish FAILED: formal statement does not compile: line 33: Invalid field `mem`: The environment does not contain `And.mem`, so it is not possible to )
+07:49:43 thm:BookProof_SirkCertifiedGap_sectorGround_ge_temple: FAIL (publish FAILED: formal statement does not compile: line 28: Unknown identifier `sectorRestrict_isSymmetric`
+
+Note: It is not possible to treat `sector)
+07:49:43 thm:BookProof_SqSumFarisLavine_commForm_eq_im: FAIL (publish FAILED: formal statement does not compile: line 26: Unknown identifier `sqSumOp`
+
+Note: It is not possible to treat `sqSumOp` as an implicitly)
+07:49:44 thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le: FAIL (publish FAILED: formal statement does not compile: line 28: Unknown identifier `sqSumOp`
+
+Note: It is not possible to treat `sqSumOp` as an implicitly)
+07:49:44 thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: FAIL (publish FAILED: formal statement does not compile: line 29: Unknown identifier `sqSumOp`
+
+Note: It is not possible to treat `sqSumOp` as an implicitly)
+07:49:45 sol:BookProof_GaussCoreQuadBounds_gaussInt_self: FAIL (verdict CE: Compile error in your proof:
+line 30: Unknown identifier `inner_pgLp_pgLp`
+line 28: unsolved goals
+D : ℕ
+q : MvPolynomial (Fin D) ℂ
+⊢ gaus)
+07:49:45 sol:BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg: FAIL (verdict CE: Compile error in your proof:
+line 29: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicitly bound v)
+07:49:45 sol:BookProof_SqSumFarisLavine_abs_im_gaussInt_le: FAIL (verdict CE: Compile error in your proof:
+line 36: Unknown identifier `inner_pgLp_pgLp`
+line 34: unsolved goals
+D : ℕ
+q w : MvPolynomial (Fin D) ℂ
+⊢ |()
+07:49:45 sol:BookProof_SqSumFarisLavine_cpoly_linForm: FAIL (verdict CE: Compile error in your proof:
+line 36: Unknown identifier `cpoly_sum`
+line 34: unsolved goals
+D : ℕ
+v : Fin D → ℝ
+⊢ cpoly (∑ i, ↑(v i) • X )
+07:49:46 sol:BookProof_SqSumFarisLavine_sqSumPoly_apply: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `YangMillsHermite.momOp`
+line 43: Unknown identifier `YangMillsHermite.momOp_appl)
+07:49:46 sol:BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair: FAIL (verdict CE: Compile error in your proof:
+line 37: Unknown identifier `gaussInt_coreD`
+line 40: Unknown identifier `gaussInt_coreD`)
+07:49:46 sol:BookProof_GaussCoreQuadBounds_quadForm_harm_eq: FAIL (verdict CE: Compile error in your proof:
+line 30: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicitly bound v)
+07:49:46 sol:BookProof_GaussCoreQuadBounds_inner_harmP_re: FAIL (verdict CE: Compile error in your proof:
+line 31: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicitly bound v)
+07:49:46 sol:BookProof_SqSumFarisLavine_cpoly_gradPoly: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `cpoly_sum`
+line 36: unsolved goals
+D : ℕ
+R : Type u_1
+inst✝ : Fintype R
+v : R → )
+07:49:46 sol:BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `cpoly_sum`)
+07:49:47 sol:BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm: FAIL (verdict CE: Compile error in your proof:
+line 32: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicitly bound v)
+07:49:47 sol:BookProof_GaussCoreQuadBounds_shiftNorm_sq: FAIL (verdict CE: Compile error in your proof:
+line 31: Unknown identifier `harmCore`
+
+Note: It is not possible to treat `harmCore` as an implicitly bound v)
+07:49:48 sol:BookProof_SqSumFarisLavine_norm_potPoly_mul_le: FAIL (verdict CE: Compile error in your proof:
+line 41: Unknown identifier `eval_harmPoly`
+line 38: unsolved goals
+D : ℕ
+R : Type u_1
+inst✝ : Fintype R
+v : )
+07:49:48 sol:BookProof_BandEnclosure_fock_mass_gap_of_nested_ritz_bands: FAIL (verdict CE: Compile error in your proof:
+line 69: Unknown identifier `fock_mass_gap_of_certified_bands_operator`)
+07:49:48 sol:BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm: FAIL (verdict CE: Compile error in your proof:
+line 41: Unknown identifier `harmCore`
+line 51: linarith failed to find a contradiction
+D : ℕ
+p : MvPolynomia)
+07:49:49 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_eq: FAIL (verdict CE: Compile error in your proof:
+line 59: Unknown identifier `LagrangianFullData.kinetic`
+line 59: Unknown identifier `LagrangianFullData.visc)
+07:49:49 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagT_hasZeroDeficiencyOn: FAIL (verdict CE: Compile error in your proof:
+line 55: Unknown identifier `hasZeroDeficiencyOn_of_total_eigenvectors`)
+07:49:57 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn (attempt 5)
+07:49:57 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn: recorded verdict predates the current solution file — resubmitting
+07:49:58 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn: accepted, waiting on the compiler
+07:49:58 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore (attempt 5)
+07:49:58 sol:BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore: recorded verdict predates the current solution file — resubmitting
+07:49:59 sol:BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore: accepted, waiting on the compiler
+07:49:59 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 2)
+07:49:59 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+07:49:59 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa (attempt 5)
+07:49:59 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa: recorded verdict predates the current solution file — resubmitting
+07:49:59 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa: accepted, waiting on the compiler
+07:49:59 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn (attempt 5)
+07:49:59 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn: recorded verdict predates the current solution file — resubmitting
+07:50:00 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn: accepted, waiting on the compiler
+07:50:00 submitting sol:BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates (attempt 5)
+07:50:01 sol:BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates: accepted, waiting on the compiler
+07:50:01 submitting sol:BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum (attempt 5)
+07:50:06 sol:BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum: accepted, waiting on the compiler
+07:50:06 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound (attempt 5)
+07:50:07 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound: accepted, waiting on the compiler
+07:50:07 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq (attempt 5)
+07:50:08 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq: accepted, waiting on the compiler
+07:50:08 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow (attempt 2)
+07:50:08 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow: WAIT (theorem not published yet)
+07:50:08 submitting sol:BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected (attempt 5)
+07:50:08 sol:BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected: accepted, waiting on the compiler
+07:50:08 submitting sol:BookProof_FockSecondQuantization_inner_dGamma_left (attempt 5)
+07:50:09 sol:BookProof_FockSecondQuantization_inner_dGamma_left: accepted, waiting on the compiler
+07:50:09 submitting sol:BookProof_FockSecondQuantization_inner_dGamma_right (attempt 5)
+07:50:09 sol:BookProof_FockSecondQuantization_inner_dGamma_right: accepted, waiting on the compiler
+07:50:09 submitting sol:BookProof_FockSecondQuantization_dGamma_friedrichs_extension (attempt 5)
+07:50:10 sol:BookProof_FockSecondQuantization_dGamma_friedrichs_extension: accepted, waiting on the compiler
+07:50:10 submitting sol:BookProof_FockSecondQuantization_dGamma_hashimoto_selects (attempt 5)
+07:50:10 sol:BookProof_FockSecondQuantization_dGamma_hashimoto_selects: accepted, waiting on the compiler
+07:50:10 submitting sol:BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto (attempt 1)
+07:50:10 sol:BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto: WAIT (theorem not published yet)
+07:50:10 submitting sol:BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer (attempt 1)
+07:50:10 sol:BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer: WAIT (theorem not published yet)
+07:50:10 submitting sol:BookProof_EsaClosure_hashimoto_multishift_selects_esa (attempt 1)
+07:50:10 sol:BookProof_EsaClosure_hashimoto_multishift_selects_esa: WAIT (theorem not published yet)
+07:50:11 submitting sol:BookProof_EsaClosure_isSelfAdjointExtension_of_positive (attempt 3)
+07:50:11 sol:BookProof_EsaClosure_isSelfAdjointExtension_of_positive: recorded verdict predates the current solution file — resubmitting
+07:50:11 sol:BookProof_EsaClosure_isSelfAdjointExtension_of_positive: accepted, waiting on the compiler
+07:50:11 submitting sol:BookProof_FarisLavine_conj_mul_ofReal (attempt 4)
+07:50:12 sol:BookProof_FarisLavine_conj_mul_ofReal: accepted, waiting on the compiler
+07:50:12 submitting sol:BookProof_FarisLavine_conj_mul_ofReal₂ (attempt 4)
+07:50:12 sol:BookProof_FarisLavine_conj_mul_ofReal₂: accepted, waiting on the compiler
+07:50:12 submitting sol:BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn (attempt 3)
+07:50:12 sol:BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn: recorded verdict predates the current solution file — resubmitting
+07:50:13 sol:BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn: accepted, waiting on the compiler
+07:50:13 submitting sol:BookProof_FarisLavine_mulComparison_surjective (attempt 3)
+07:50:14 sol:BookProof_FarisLavine_mulComparison_surjective: accepted, waiting on the compiler
+07:50:14 submitting sol:BookProof_FarisLavine_mulHamiltonian_not_bounded (attempt 4)
+07:50:14 sol:BookProof_FarisLavine_mulHamiltonian_not_bounded: accepted, waiting on the compiler
+07:50:14 submitting sol:BookProof_FarisLavine_mulSymbolOp_coe (attempt 3)
+07:50:15 sol:BookProof_FarisLavine_mulSymbolOp_coe: accepted, waiting on the compiler
+07:50:15 submitting sol:BookProof_FarisLavine_mulSymbolOp_symmetric (attempt 3)
+07:50:21 sol:BookProof_FarisLavine_mulSymbolOp_symmetric: accepted, waiting on the compiler
+07:50:21 submitting sol:BookProof_FarisLavine_not_farisLavine_criterion_of_relative_bound (attempt 3)
+07:50:22 sol:BookProof_FarisLavine_not_farisLavine_criterion_of_relative_bound: accepted, waiting on the compiler
+07:50:22 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply (attempt 1)
+07:50:22 sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply: WAIT (theorem not published yet)
+07:50:22 submitting sol:BookProof_HashimotoShiftInvert_diagCLMC_apply (attempt 3)
+07:50:22 sol:BookProof_HashimotoShiftInvert_diagCLMC_apply: DONE
+07:50:22 submitting sol:BookProof_HashimotoShiftInvert_diagLinC_apply (attempt 3)
+07:50:22 sol:BookProof_HashimotoShiftInvert_diagLinC_apply: DONE
+07:50:23 submitting sol:BookProof_HashimotoShiftInvert_ell2Example_symmetricOn (attempt 3)
+07:50:23 sol:BookProof_HashimotoShiftInvert_ell2Example_symmetricOn: accepted, waiting on the compiler
+07:50:23 submitting sol:BookProof_HermiteGalerkin_finiteModeDomain_ne_top (attempt 3)
+07:50:24 sol:BookProof_HermiteGalerkin_finiteModeDomain_ne_top: DONE
+07:50:24 submitting sol:BookProof_HermiteRelative_coreOp_add (attempt 3)
+07:50:24 sol:BookProof_HermiteRelative_coreOp_add: accepted, waiting on the compiler
+07:50:24 submitting sol:BookProof_HermiteRelative_coreOp_comp (attempt 3)
+07:50:25 sol:BookProof_HermiteRelative_coreOp_comp: accepted, waiting on the compiler
+07:50:25 submitting sol:BookProof_HermiteRelative_coreOp_smul (attempt 2)
+07:50:25 sol:BookProof_HermiteRelative_coreOp_smul: recorded verdict predates the current solution file — resubmitting
+07:50:26 sol:BookProof_HermiteRelative_coreOp_smul: accepted, waiting on the compiler
+07:50:26 submitting sol:BookProof_HermiteRelative_foOp_linear_apply_eq_mul (attempt 2)
+07:50:26 sol:BookProof_HermiteRelative_foOp_linear_apply_eq_mul: recorded verdict predates the current solution file — resubmitting
+07:50:27 sol:BookProof_HermiteRelative_foOp_linear_apply_eq_mul: accepted, waiting on the compiler
+07:50:27 submitting sol:BookProof_HermiteRelative_hermiteMvBasis_repr_quadOp (attempt 2)
+07:50:27 sol:BookProof_HermiteRelative_hermiteMvBasis_repr_quadOp: recorded verdict predates the current solution file — resubmitting
+07:50:27 sol:BookProof_HermiteRelative_hermiteMvBasis_repr_quadOp: accepted, waiting on the compiler
+07:50:27 submitting sol:BookProof_HermiteRelative_momPoly_eq_ymMomOp (attempt 2)
+07:50:27 sol:BookProof_HermiteRelative_momPoly_eq_ymMomOp: recorded verdict predates the current solution file — resubmitting
+07:50:28 sol:BookProof_HermiteRelative_momPoly_eq_ymMomOp: accepted, waiting on the compiler
+07:50:28 submitting sol:BookProof_HermiteRelative_mulXPoly_eq_mulOp (attempt 2)
+07:50:28 sol:BookProof_HermiteRelative_mulXPoly_eq_mulOp: recorded verdict predates the current solution file — resubmitting
+07:50:29 sol:BookProof_HermiteRelative_mulXPoly_eq_mulOp: accepted, waiting on the compiler
+07:51:49 thm:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow: FAIL (publish FAILED: formal statement does not compile: line 53: Unknown identifier `IsStoneFlow`
+
+Note: It is not possible to treat `IsStoneFlow` as an im)
+07:51:50 thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_transfer: DONE
+07:52:05 submitting sol:BookProof_HermiteRelative_oscL_hermiteMvLp (attempt 2)
+07:52:05 sol:BookProof_HermiteRelative_oscL_hermiteMvLp: recorded verdict predates the current solution file — resubmitting
+07:52:06 sol:BookProof_HermiteRelative_oscL_hermiteMvLp: accepted, waiting on the compiler
+07:52:06 submitting sol:BookProof_HermiteRelative_symmetricOn_of_polySym (attempt 2)
+07:52:06 sol:BookProof_HermiteRelative_symmetricOn_of_polySym: recorded verdict predates the current solution file — resubmitting
+07:52:06 sol:BookProof_HermiteRelative_symmetricOn_of_polySym: accepted, waiting on the compiler
+07:52:07 thm:BookProof_ChapterSirkTrotterKato_galerkin_flow_tendsto: DONE
+07:52:07 thm:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes: FAIL (publish FAILED: Imported platform theorems must be Proved at submission time, but the following are not: BookProof.NavierStokesFlow.continuityHamilton)
+07:52:07 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_hashimoto_selects: DONE
+07:52:07 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_shiftInvert_selects: DONE
+07:52:22 submitting sol:BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict (attempt 1)
+07:52:22 sol:BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict: WAIT (theorem not published yet)
+07:52:22 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_id (attempt 2)
+07:52:22 sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_id: recorded verdict predates the current solution file — resubmitting
+07:52:23 sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_id: accepted, waiting on the compiler
+07:52:23 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_selfAdjoint_extension_unique (attempt 2)
+07:52:23 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_selfAdjoint_extension_unique: accepted, waiting on the compiler
+07:52:23 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum (attempt 2)
+07:52:24 sol:BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum: accepted, waiting on the compiler
+07:52:24 submitting sol:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_isSymmetricDom (attempt 2)
+07:52:24 sol:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_isSymmetricDom: accepted, waiting on the compiler
+07:52:25 thm:BookProof_NavierStokesFlow_DiffHashimoto_nsQuadraticDiffH_hashimoto_selects: DONE
+07:52:25 thm:BookProof_QgHermiteFriedrichs_qgOneParticleSector_friedrichs: FAIL (publish FAILED: formal statement does not compile: line 60: Unknown identifier `expBounded_scalaronSectorPotential`
+
+Note: It is not possible to treat)
+07:52:25 thm:BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs: FAIL (publish FAILED: formal statement does not compile: line 58: Unknown identifier `expBounded_scalaronW`
+
+Note: It is not possible to treat `expBounded_s)
+07:52:40 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift (attempt 2)
+07:52:40 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift: accepted, waiting on the compiler
+07:52:40 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drive (attempt 2)
+07:52:41 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drive: accepted, waiting on the compiler
+07:52:41 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder (attempt 2)
+07:52:42 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder: accepted, waiting on the compiler
+07:52:43 sol:BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le. No such theorem exists in this Lean environment (math)
+07:52:57 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagOp_zero_symbol (attempt 2)
+07:52:58 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagOp_zero_symbol: accepted, waiting on the compiler
+07:52:58 thm:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hashimoto_selects: DONE
+07:52:58 sol:BookProof_NavierStokesFlow_FockOfFock_annih_basis: FAIL (verdict CE: Compile error in your proof:
+line 58: unsolved goals
+case inl
+M : Type u_3
+inst✝ : DecidableEq M
+m : M
+n : Conf M
+hk : ((n - fun₀ | m => 1)
+07:52:58 sol:BookProof_NavierStokesFlow_FockOfFock_creat_basis: FAIL (verdict CE: Compile error in your proof:
+line 59: unsolved goals
+case inl
+M : Type u_3
+inst✝ : DecidableEq M
+m : M
+n : Conf M
+h1 : ((n + fun₀ | m => 1)
+07:53:14 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_drift_dominated_of_drive_eq_P (attempt 1)
+07:53:14 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_drift_dominated_of_drive_eq_P: recorded verdict predates the current solution file — resubmitting
+07:53:15 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_drift_dominated_of_drive_eq_P: accepted, waiting on the compiler
+07:53:15 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_eq_add (attempt 1)
+07:53:15 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_eq_add: recorded verdict predates the current solution file — resubmitting
+07:53:15 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_eq_add: accepted, waiting on the compiler
+07:53:15 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_zero (attempt 1)
+07:53:15 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_zero: recorded verdict predates the current solution file — resubmitting
+07:53:16 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_zero: accepted, waiting on the compiler
+07:53:17 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_embedCore: FAIL (verdict CE: Compile error in your proof:
+line 7: invalid 'import' command, it must be used in the beginning of the file)
+07:53:31 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_jacobiLag_secondOrder_eq_zero (attempt 1)
+07:53:31 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_jacobiLag_secondOrder_eq_zero: recorded verdict predates the current solution file — resubmitting
+07:53:32 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_jacobiLag_secondOrder_eq_zero: accepted, waiting on the compiler
+07:53:32 sol:BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn: FAIL (verdict CE: Compile error in your proof:
+line 44: Unknown identifier `hasZeroDeficiencyOn_of_total_eigenvectors`)
+07:53:47 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn (attempt 1)
+07:53:47 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn: recorded verdict predates the current solution file — resubmitting
+07:53:48 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn: accepted, waiting on the compiler
+07:53:48 sol:BookProof_NavierStokesFlow_HermiteCanonical_comparison_eq: FAIL (verdict CE: Compile error in your proof:
+line 9: invalid 'import' command, it must be used in the beginning of the file)
+07:53:48 sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn_of_farisLavine: FAIL (verdict CE: Compile error in your proof:
+line 51: Unknown identifier `ns_esa_of_farisLavine_dense`
+line 54: No goals to be solved)
+07:53:49 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 7: invalid 'import' command, it must be used in the beginning of the file)
+07:54:04 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_selfAdjoint_extension_unique (attempt 1)
+07:54:04 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_selfAdjoint_extension_unique: recorded verdict predates the current solution file — resubmitting
+07:54:10 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_selfAdjoint_extension_unique: accepted, waiting on the compiler
+07:54:10 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lowOrder_isSymmetricDom (attempt 1)
+07:54:10 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lowOrder_isSymmetricDom: recorded verdict predates the current solution file — resubmitting
+07:54:10 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lowOrder_isSymmetricDom: accepted, waiting on the compiler
+07:54:10 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_inner (attempt 1)
+07:54:10 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_inner: recorded verdict predates the current solution file — resubmitting
+07:54:11 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_inner: accepted, waiting on the compiler
+07:54:11 sol:BookProof_NavierStokesFlow_DiffFarisLavine_commForm_embedCore: FAIL (verdict CE: Compile error in your proof:
+line 8: invalid 'import' command, it must be used in the beginning of the file)
+07:54:12 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound: FAIL (verdict CE: Compile error in your proof:
+line 10: invalid 'import' command, it must be used in the beginning of the file)
+07:54:12 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn: FAIL (verdict CE: Compile error in your proof:
+line 57: unsolved goals
+nu : ℝ
+hnu : 0 < nu
+f : Fin 3 → ℝ
+v : ↥(lagCanData nu hnu f).D
+⊢ 0 v = 0)
+07:54:28 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_isSymmetricDom (attempt 1)
+07:54:28 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_isSymmetricDom: recorded verdict predates the current solution file — resubmitting
+07:54:28 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_isSymmetricDom: accepted, waiting on the compiler
+07:54:28 submitting sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_single (attempt 1)
+07:54:28 sol:BookProof_NavierStokesFlow_SecondQuant_fockOp_single: WAIT (theorem not published yet)
+07:54:28 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_amp (attempt 1)
+07:54:28 sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_amp: recorded verdict predates the current solution file — resubmitting
+07:54:29 sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_amp: accepted, waiting on the compiler
+07:54:29 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_shift (attempt 1)
+07:54:29 sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_shift: recorded verdict predates the current solution file — resubmitting
+07:54:30 sol:BookProof_NavierStokesFlow_ThreeComponent_diagHop_shift: accepted, waiting on the compiler
+07:54:30 sol:BookProof_SqSumFarisLavine_norm_sqSumPoly_le: DONE
+07:54:47 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_hopList_eq (attempt 1)
+07:54:47 sol:BookProof_NavierStokesFlow_ThreeComponent_hopList_eq: recorded verdict predates the current solution file — resubmitting
+07:54:47 sol:BookProof_NavierStokesFlow_ThreeComponent_hopList_eq: accepted, waiting on the compiler
+07:54:48 sol:BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore: FAIL (verdict CE: Compile error in your proof:
+line 6: invalid 'import' command, it must be used in the beginning of the file)
+07:54:48 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa: FAIL (verdict CE: Compile error in your proof:
+line 58: Unknown identifier `essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn`
+line 57: unsolved goals
+nu : ℝ)
+07:55:04 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_norm_velState (attempt 1)
+07:55:04 sol:BookProof_NavierStokesFlow_ThreeComponent_norm_velState: recorded verdict predates the current solution file — resubmitting
+07:55:04 sol:BookProof_NavierStokesFlow_ThreeComponent_norm_velState: accepted, waiting on the compiler
+07:55:04 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_amp (attempt 1)
+07:55:04 sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_amp: recorded verdict predates the current solution file — resubmitting
+07:55:05 sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_amp: accepted, waiting on the compiler
+07:55:05 sol:BookProof_RitzCertificate_fock_mass_gap_of_temple_certificates: DONE
+07:55:21 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_shift (attempt 1)
+07:55:21 sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_shift: recorded verdict predates the current solution file — resubmitting
+07:55:21 sol:BookProof_NavierStokesFlow_ThreeComponent_pairHop_shift: accepted, waiting on the compiler
+07:55:22 sol:BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum: FAIL (verdict CE: Compile error in your proof:
+line 8: invalid 'import' command, it must be used in the beginning of the file)
+07:55:22 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound: FAIL (verdict CE: Compile error in your proof:
+line 9: invalid 'import' command, it must be used in the beginning of the file)
+07:55:38 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_raise_apply (attempt 1)
+07:55:38 sol:BookProof_NavierStokesFlow_ThreeComponent_raise_apply: recorded verdict predates the current solution file — resubmitting
+07:55:39 sol:BookProof_NavierStokesFlow_ThreeComponent_raise_apply: accepted, waiting on the compiler
+07:55:39 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_amp (attempt 1)
+07:55:39 sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_amp: recorded verdict predates the current solution file — resubmitting
+07:55:40 sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_amp: accepted, waiting on the compiler
+07:55:40 sol:BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq: FAIL (verdict CE: Compile error in your proof:
+line 7: invalid 'import' command, it must be used in the beginning of the file)
+07:55:40 sol:BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected: DONE
+07:55:40 sol:BookProof_FockSecondQuantization_dGamma_friedrichs_extension: FAIL (verdict CE: Compile error in your proof:
+line 35: Unknown identifier `friedrichs_extension_exists`)
+07:55:55 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_shift (attempt 1)
+07:55:55 sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_shift: recorded verdict predates the current solution file — resubmitting
+07:55:55 sol:BookProof_NavierStokesFlow_ThreeComponent_rotHop_shift: accepted, waiting on the compiler
+07:55:55 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_shDiag_apply (attempt 1)
+07:55:55 sol:BookProof_NavierStokesFlow_ThreeComponent_shDiag_apply: recorded verdict predates the current solution file — resubmitting
+07:55:56 sol:BookProof_NavierStokesFlow_ThreeComponent_shDiag_apply: accepted, waiting on the compiler
+07:55:56 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_amp (attempt 1)
+07:55:56 sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_amp: recorded verdict predates the current solution file — resubmitting
+07:55:57 sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_amp: accepted, waiting on the compiler
+07:55:57 sol:BookProof_FockSecondQuantization_inner_dGamma_left: FAIL (verdict CE: Compile error in your proof:
+line 49: `simp` made no progress)
+07:55:57 sol:BookProof_FockSecondQuantization_inner_dGamma_right: FAIL (verdict CE: Compile error in your proof:
+line 49: `simp` made no progress)
+07:55:57 sol:BookProof_FockSecondQuantization_dGamma_hashimoto_selects: FAIL (verdict CE: Compile error in your proof:
+line 136: Unknown identifier `friedrichs_hashimoto_selects`)
+07:56:12 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_shift (attempt 1)
+07:56:12 sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_shift: recorded verdict predates the current solution file — resubmitting
+07:56:13 sol:BookProof_NavierStokesFlow_ThreeComponent_shearHop_shift: accepted, waiting on the compiler
+07:56:13 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_domain_dense (attempt 1)
+07:56:13 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_domain_dense: recorded verdict predates the current solution file — resubmitting
+07:56:14 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_domain_dense: accepted, waiting on the compiler
+07:56:14 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_essentiallySelfAdjointOn_core (attempt 1)
+07:56:14 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_essentiallySelfAdjointOn_core: recorded verdict predates the current solution file — resubmitting
+07:56:14 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+07:56:30 sol:BookProof_FarisLavine_conj_mul_ofReal: DONE
+07:56:30 sol:BookProof_FarisLavine_mulHamiltonian_not_bounded: FAIL (verdict CE: Compile error in your proof:
+line 37: unsolved goals
+case pos
+lam : ℕ → ℝ
+hlam : ∀ (C : ℝ), ∃ n, C < |lam n|
+C : ℝ
+hC : ∀ (f : ↥(mulSymbol)
+07:56:45 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_symmetricOn (attempt 1)
+07:56:45 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_symmetricOn: recorded verdict predates the current solution file — resubmitting
+07:56:46 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_symmetricOn: accepted, waiting on the compiler
+07:56:46 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velState_coe (attempt 1)
+07:56:46 sol:BookProof_NavierStokesFlow_ThreeComponent_velState_coe: recorded verdict predates the current solution file — resubmitting
+07:56:46 sol:BookProof_NavierStokesFlow_ThreeComponent_velState_coe: accepted, waiting on the compiler
+07:56:47 sol:BookProof_EsaClosure_isSelfAdjointExtension_of_positive: DONE
+07:56:47 sol:BookProof_FarisLavine_conj_mul_ofReal₂: FAIL (verdict WA: Your proof does not match the target type:
+Unknown identifier `solution`
+
+Note: It is not possible to treat `solution` as an implicitly bo)
+07:56:48 sol:BookProof_FarisLavine_not_farisLavine_criterion_of_relative_bound: FAIL (verdict CE: Compile error in your proof:
+line 29: Unknown identifier `jacobiOp_not_hasZeroDeficiencyOn`
+line 30: No goals to be solved)
+07:57:02 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velSym_of_total (attempt 1)
+07:57:02 sol:BookProof_NavierStokesFlow_ThreeComponent_velSym_of_total: recorded verdict predates the current solution file — resubmitting
+07:57:03 sol:BookProof_NavierStokesFlow_ThreeComponent_velSym_of_total: accepted, waiting on the compiler
+07:57:03 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_vel_eq_iff (attempt 1)
+07:57:03 sol:BookProof_NavierStokesFlow_ThreeComponent_vel_eq_iff: recorded verdict predates the current solution file — resubmitting
+07:57:03 sol:BookProof_NavierStokesFlow_ThreeComponent_vel_eq_iff: accepted, waiting on the compiler
+07:57:03 submitting sol:BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded (attempt 1)
+07:57:03 sol:BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded: accepted, waiting on the compiler
+07:57:11 sol:BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded: FAIL (verdict CE: Compile error in your proof:
+line 29: Type mismatch: After simplification, term
+  HasDerivAt.neg (HasDerivAt.const_mul s (hasDerivAt_id t))
+07:57:19 submitting sol:BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense (attempt 1)
+07:57:19 sol:BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense: accepted, waiting on the compiler
+07:57:27 sol:BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense: DONE
+07:57:35 submitting sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors (attempt 1)
+07:57:35 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors: accepted, waiting on the compiler
+07:57:35 sol:BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn: DONE
+07:57:35 sol:BookProof_FarisLavine_mulSymbolOp_symmetric: FAIL (verdict CE: Compile error in your proof:
+line 34: Unknown identifier `mulSymbolOp_coe`
+line 29: unsolved goals
+lam s : ℕ → ℝ
+hs : ∀ (n : ℕ), |s n| ≤ |)
+07:57:36 sol:BookProof_HermiteRelative_coreOp_comp: FAIL (verdict CE: Compile error in your proof:
+line 43: Unknown identifier `coreOp_apply'`
+line 40: unsolved goals
+d : ℕ
+S T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] )
+07:57:36 sol:BookProof_HermiteRelative_foOp_linear_apply_eq_mul: FAIL (verdict CE: Compile error in your proof:
+line 53: Unknown identifier `BookProof.HyperbolicQuadratic.pgFun_add`
+line 58: Unknown identifier `posOp_appl)
+07:57:42 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors: DONE
+07:57:50 submitting sol:BookProof_NavierStokesFlow_mem_finiteModes (attempt 1)
+07:57:50 sol:BookProof_NavierStokesFlow_mem_finiteModes: recorded verdict predates the current solution file — resubmitting
+07:57:51 sol:BookProof_NavierStokesFlow_mem_finiteModes: DONE
+07:57:51 submitting sol:BookProof_NavierStokesFlow_nsFlowEuclidean_hasDerivAt (attempt 1)
+07:57:51 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_hasDerivAt: recorded verdict predates the current solution file — resubmitting
+07:57:51 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_hasDerivAt: accepted, waiting on the compiler
+07:57:51 submitting sol:BookProof_NavierStokesFlow_nsFlowEuclidean_norm (attempt 1)
+07:57:51 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_norm: recorded verdict predates the current solution file — resubmitting
+07:57:52 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_norm: accepted, waiting on the compiler
+07:57:52 submitting sol:BookProof_NavierStokesFlow_nsFlowEuclidean_zero (attempt 1)
+07:57:52 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_zero: recorded verdict predates the current solution file — resubmitting
+07:57:53 sol:BookProof_NavierStokesFlow_nsFlowEuclidean_zero: accepted, waiting on the compiler
+07:57:53 submitting sol:BookProof_QgHermiteFriedrichs_conj_mul_self (attempt 1)
+07:57:53 sol:BookProof_QgHermiteFriedrichs_conj_mul_self: recorded verdict predates the current solution file — resubmitting
+07:57:54 sol:BookProof_QgHermiteFriedrichs_conj_mul_self: accepted, waiting on the compiler
+07:57:54 submitting sol:BookProof_QgHermiteFriedrichs_continuous_scalaronW (attempt 1)
+07:57:54 sol:BookProof_QgHermiteFriedrichs_continuous_scalaronW: recorded verdict predates the current solution file — resubmitting
+07:57:54 sol:BookProof_QgHermiteFriedrichs_continuous_scalaronW: accepted, waiting on the compiler
+07:57:55 sol:BookProof_FarisLavine_mulComparison_surjective: DONE
+07:57:55 sol:BookProof_FarisLavine_mulSymbolOp_coe: DONE
+07:57:55 sol:BookProof_HashimotoShiftInvert_ell2Example_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 96: unexpected token '²'; expected ')')
+07:57:55 sol:BookProof_HermiteRelative_coreOp_add: FAIL (verdict CE: Compile error in your proof:
+line 43: Unknown identifier `coreOp_apply'`
+line 40: unsolved goals
+d : ℕ
+S T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] )
+07:57:56 sol:BookProof_HermiteRelative_momPoly_eq_ymMomOp: FAIL (verdict CE: Compile error in your proof:
+line 43: Unknown identifier `momPoly_apply`
+line 40: unsolved goals
+d : ℕ
+i : Fin d
+p : MvPolynomial (Fin d) )
+07:58:10 submitting sol:BookProof_QgHermiteFriedrichs_coordLine_apply (attempt 1)
+07:58:10 sol:BookProof_QgHermiteFriedrichs_coordLine_apply: recorded verdict predates the current solution file — resubmitting
+07:58:11 sol:BookProof_QgHermiteFriedrichs_coordLine_apply: accepted, waiting on the compiler
+07:58:11 submitting sol:BookProof_QgHermiteFriedrichs_coreEquiv_apply (attempt 1)
+07:58:11 sol:BookProof_QgHermiteFriedrichs_coreEquiv_apply: recorded verdict predates the current solution file — resubmitting
+07:58:12 sol:BookProof_QgHermiteFriedrichs_coreEquiv_apply: accepted, waiting on the compiler
+07:58:12 submitting sol:BookProof_QgHermiteFriedrichs_coreEquiv_symm_pgLp (attempt 1)
+07:58:12 sol:BookProof_QgHermiteFriedrichs_coreEquiv_symm_pgLp: accepted, waiting on the compiler
+07:58:12 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_C (attempt 1)
+07:58:13 sol:BookProof_QgHermiteFriedrichs_cpoly_C: accepted, waiting on the compiler
+07:58:13 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_X (attempt 1)
+07:58:14 sol:BookProof_QgHermiteFriedrichs_cpoly_X: accepted, waiting on the compiler
+07:58:29 sol:BookProof_HermiteRelative_coreOp_smul: FAIL (verdict CE: Compile error in your proof:
+line 43: Unknown identifier `coreOp_apply'`
+line 40: unsolved goals
+d : ℕ
+r : ℂ
+T : MvPolynomial (Fin d) ℂ →ₗ)
+07:58:29 sol:BookProof_HermiteRelative_mulXPoly_eq_mulOp: FAIL (verdict CE: Compile error in your proof:
+line 40: unsolved goals
+d : ℕ
+i : Fin d
+p : MvPolynomial (Fin d) ℂ
+⊢ (mulXPoly i) p = X i * p)
+07:58:44 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_add (attempt 1)
+07:58:45 sol:BookProof_QgHermiteFriedrichs_cpoly_add: accepted, waiting on the compiler
+07:58:45 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_mul (attempt 1)
+07:58:45 sol:BookProof_QgHermiteFriedrichs_cpoly_mul: accepted, waiting on the compiler
+07:58:46 sol:BookProof_HermiteRelative_hermiteMvBasis_repr_quadOp: FAIL (verdict CE: Compile error in your proof:
+line 46: Unknown identifier `quadOp_symmetric`
+line 43: unsolved goals
+d : ℕ
+c : Fin d → ℝ
+u : ↥polyGaussCore)
+07:58:46 sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_id: FAIL (verdict CE: Compile error in your proof:
+line 47: Unknown identifier `coreOp_coreEquiv`
+line 43: unsolved goals
+d : ℕ
+p : MvPolynomial (Fin d) ℂ
+⊢ (co)
+07:59:01 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_neg (attempt 1)
+07:59:02 sol:BookProof_QgHermiteFriedrichs_cpoly_neg: accepted, waiting on the compiler
+07:59:02 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_pderiv (attempt 1)
+07:59:02 sol:BookProof_QgHermiteFriedrichs_cpoly_pderiv: accepted, waiting on the compiler
+07:59:18 sol:BookProof_HermiteRelative_oscL_hermiteMvLp: FAIL (verdict CE: Compile error in your proof:
+line 48: Unknown identifier `coreEquiv_coe`
+line 51: Unknown identifier `coreOp_coe`
+line 43: unsolved goals
+)
+07:59:19 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_selfAdjoint_extension_unique: FAIL (verdict CE: Compile error in your proof:
+line 42: Unknown identifier `nsDiffH_essentiallySelfAdjointOn_core`)
+07:59:19 sol:BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum: FAIL (verdict CE: Compile error in your proof:
+line 45: unsolved goals
+case empty
+d : ℕ
+ι : Type u_1
+T : ι → Module.End ℂ (MvPolynomial (Fin d) ℂ)
+hT : ∀ i )
+07:59:35 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_sub (attempt 1)
+07:59:36 sol:BookProof_QgHermiteFriedrichs_cpoly_sub: accepted, waiting on the compiler
+07:59:36 submitting sol:BookProof_QgHermiteFriedrichs_cpoly_sum (attempt 1)
+07:59:36 sol:BookProof_QgHermiteFriedrichs_cpoly_sum: accepted, waiting on the compiler
+07:59:37 submitting sol:BookProof_QgHermiteFriedrichs_expBounded_scalaronW (attempt 1)
+07:59:37 sol:BookProof_QgHermiteFriedrichs_expBounded_scalaronW: accepted, waiting on the compiler
+07:59:38 sol:BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_isSymmetricDom: FAIL (verdict CE: Compile error in your proof:
+line 33: Unknown identifier `ComparisonData`
+
+Note: It is not possible to treat `ComparisonData` as an implic)
+07:59:54 submitting sol:BookProof_QgHermiteFriedrichs_gaussInt_neg (attempt 1)
+07:59:55 sol:BookProof_QgHermiteFriedrichs_gaussInt_neg: accepted, waiting on the compiler
+07:59:55 sol:BookProof_HermiteRelative_symmetricOn_of_polySym: FAIL (verdict CE: Compile error in your proof:
+line 52: Unknown identifier `coreOp_coe`
+line 54: Unknown identifier `coreOp_coe`
+line 55: Unknown identifier)
+07:59:55 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drive: FAIL (verdict CE: Compile error in your proof:
+line 6: invalid 'import' command, it must be used in the beginning of the file)
+08:00:11 submitting sol:BookProof_QgHermiteFriedrichs_gaussInt_sub (attempt 1)
+08:00:12 sol:BookProof_QgHermiteFriedrichs_gaussInt_sub: accepted, waiting on the compiler
+08:00:12 submitting sol:BookProof_QgHermiteFriedrichs_inner_L2_eq (attempt 1)
+08:00:13 sol:BookProof_QgHermiteFriedrichs_inner_L2_eq: accepted, waiting on the compiler
+08:00:14 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagOp_zero_symbol: FAIL (verdict CE: Compile error in your proof:
+line 6: invalid 'import' command, it must be used in the beginning of the file)
+08:00:29 submitting sol:BookProof_QgHermiteFriedrichs_integrable_potential_normSq (attempt 1)
+08:00:29 sol:BookProof_QgHermiteFriedrichs_integrable_potential_normSq: accepted, waiting on the compiler
+08:00:30 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift: FAIL (verdict CE: Compile error in your proof:
+line 6: invalid 'import' command, it must be used in the beginning of the file)
+08:00:45 submitting sol:BookProof_QgHermiteFriedrichs_potLp_coeFn (attempt 1)
+08:00:46 sol:BookProof_QgHermiteFriedrichs_potLp_coeFn: accepted, waiting on the compiler
+08:00:46 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder: FAIL (verdict CE: Compile error in your proof:
+line 6: invalid 'import' command, it must be used in the beginning of the file)

@@ -8685,18 +8685,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'": {
-   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'.lean",
-   "title": "BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FarisLavineLift.norm.inner.commutator.sum.le'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le": {
    "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le.lean",
@@ -11037,18 +11025,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'": {
-   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'.lean",
-   "title": "BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockManyMode.modeShift.shift.ne'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne": {
    "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne.lean",
@@ -11174,18 +11150,6 @@
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_bracket_DS.lean",
    "title": "(i : Fin d) : (cre i - ann i).comp (cre i + ann i) - (cre i + ann i).comp (cre i - ann i) = (-2 : \u2102) \u2022 LinearMap.id",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.bracket_DS` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'.lean",
-   "title": "BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.coe.sum.apply'` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -13162,17 +13126,6 @@
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteRelative_coreOp_add.lean",
    "title": "The Lean 4 theorem `coreOp_add` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `coreOp_add` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteRelative_coreOp_apply'": {
-   "name": "BookProof.HermiteRelative.coreOp_apply_prime",
-   "chapter": "ChapterHermiteRelativeBound",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteRelative_coreOp_apply'.lean",
-   "title": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
    "tags": [
     "timepiece"
@@ -16400,6 +16353,17 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_HermiteRelative_coreOp_apply_prime": {
+   "name": "BookProof.HermiteRelative.coreOp_apply_prime",
+   "chapter": "ChapterHermiteRelativeBound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteRelative_coreOp_apply'.lean",
+   "title": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -16853,7 +16817,6 @@
   "BookProof_NavierStokesFlow_FockCanonical_ann_coe",
   "BookProof_NavierStokesFlow_FockCanonical_anti_DS",
   "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply",
-  "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'",
   "BookProof_NavierStokesFlow_FockCanonical_cre_coe",
   "BookProof_NavierStokesFlow_FockCanonical_dn_self",
   "BookProof_NavierStokesFlow_FockCanonical_dn_up",
@@ -16867,7 +16830,6 @@
   "BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg",
   "BookProof_NavierStokesFlow_FockManyMode_modeData_sym",
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne",
-  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'",
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_inj",
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_ne_zero",
   "BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single",
@@ -17136,7 +17098,6 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_polyGaussCore_le_diffMaxDom",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_eq_ladder",
   "BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_nonneg",
-  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'",
   "BookProof_NavierStokesFlow_FarisLavineLift_not_forall_norm_sum_le_of_pointwise",
   "BookProof_NavierStokesFlow_FockCanonical_bracket_DS",
   "BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre",
@@ -17357,7 +17318,7 @@
   "BookProof_HermiteProductCore_pgFun_zero",
   "BookProof_HermiteRelative_apply_sum_of_diagonal",
   "BookProof_HermiteRelative_coreOp_add",
-  "BookProof_HermiteRelative_coreOp_apply'",
+  "BookProof_HermiteRelative_coreOp_apply_prime",
   "BookProof_HermiteRelative_coreOp_comp",
   "BookProof_HermiteRelative_coreOp_smul",
   "BookProof_HermiteRelative_foOp_linear_apply_eq_mul",

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -13,7 +14,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

@@ -10,6 +10,7 @@ import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFockOneParticleGap
+import Theorems.Thm_BookProof_FockOneParticleGap_fock_mass_gap_of_certified_bands_operator
 open BookProof.BandEnclosure
 
 

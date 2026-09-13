@@ -93,7 +93,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 
 
-open scoped InnerProductSpace ENNReal
+open scoped ENNReal InnerProductSpace lp
 
 set_option maxHeartbeats 1000000 in
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) :

@@ -11,9 +11,14 @@ uses `ℓ²` and the scope is missing.  A wider union of every transitive def-bu
 scope was measured to touch 1312 stubs for no reason, so the rule is deliberately
 narrow.
 
+Solution files carry the same gap (their proofs use `ℓ²` in the same way), where it
+surfaces as `verdict CE: ... unexpected token '²'; expected ')'`, so `--sols` runs the
+same pass over `Solutions/`.
+
 Usage:
   python3 debug/fix_scoped_opens.py --dry-run [--only SUBSTR]
   python3 debug/fix_scoped_opens.py
+  python3 debug/fix_scoped_opens.py --sols --dry-run
 """
 import argparse
 import os
@@ -22,6 +27,7 @@ import sys
 
 WS = os.environ.get("PROVE2ME_WS") or os.getcwd()
 THMS = os.path.join(WS, "Theorems")
+SOLS = os.path.join(WS, "Solutions")
 
 SCOPED_RE = re.compile(r'^open[ \t]+scoped[ \t]+([A-Za-z_][\w.]*(?:[ \t]+[A-Za-z_][\w.]*)*)[ \t]*$', re.M)
 
@@ -30,13 +36,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only", action="append", default=[])
+    ap.add_argument("--sols", action="store_true",
+                    help="run over Solutions/ instead of Theorems/")
     a = ap.parse_args()
 
+    home = SOLS if a.sols else THMS
     patched = 0
-    for fn in sorted(f for f in os.listdir(THMS) if f.endswith(".lean")):
+    for fn in sorted(f for f in os.listdir(home) if f.endswith(".lean")):
         if a.only and not any(s in fn for s in a.only):
             continue
-        path = os.path.join(THMS, fn)
+        path = os.path.join(home, fn)
         txt = open(path).read()
         if "ℓ²" not in txt:
             continue

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.NavierStokesFlow
 
@@ -14,7 +15,7 @@ open BookProof.NavierStokesFlow
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

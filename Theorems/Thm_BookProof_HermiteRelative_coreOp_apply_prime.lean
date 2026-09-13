@@ -1,4 +1,4 @@
--- Generated from ChapterHermiteRelativeBound.lean — theorem BookProof.HermiteRelative.coreOp_apply'
+-- Generated from ChapterHermiteRelativeBound.lean — theorem BookProof.HermiteRelative.coreOp_apply_prime
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.norm_le_norm_add_of_re_inner_nonneg
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -14,7 +15,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

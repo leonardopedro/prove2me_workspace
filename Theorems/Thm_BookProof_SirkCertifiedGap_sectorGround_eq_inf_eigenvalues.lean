@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkCertifiedGap.lean — theorem BookProof.SirkCertifiedGap.sectorGround_eq_inf_eigenvalues
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
+import Theorems.Thm_BookProof_SirkCertifiedGap_sectorRestrict_isSymmetric
 open BookProof.SirkCertifiedGap
 
 

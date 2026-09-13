@@ -4,6 +4,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_re_formInner_swap
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_add_left
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_add_right
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

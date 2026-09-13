@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_ge_norm_sq
+import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_ge_norm_sq
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 

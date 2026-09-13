@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
 import Theorems.Thm_BookProof_RitzPerturbation_minmaxSet_nonempty_congr
 import Theorems.Thm_BookProof_RitzPerturbation_minmaxLevel_le_minmaxLevel_add
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

@@ -4,8 +4,13 @@ import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.CoreRep
 
 
 

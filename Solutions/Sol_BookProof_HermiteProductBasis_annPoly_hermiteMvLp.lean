@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteMv
 import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_sub_single
 import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductBasis
 
 

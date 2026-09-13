@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterH1
 import Theorems.Thm_BookProof_ChapterH1_phi_succ_mul
+import Theorems.Thm_BookProof_ChapterH1_phi_zero_apply
 open BookProof.ChapterH1
 
 

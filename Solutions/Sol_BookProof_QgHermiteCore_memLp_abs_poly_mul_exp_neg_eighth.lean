@@ -1,6 +1,9 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.memLp_abs_poly_mul_exp_neg_eighth
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Theorems.Thm_BookProof_HermiteCore_integrable_poly_mul_gaussH
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

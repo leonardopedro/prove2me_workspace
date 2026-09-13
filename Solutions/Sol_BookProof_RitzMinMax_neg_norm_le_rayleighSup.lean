@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_neg_norm_le_rayleighVal_of_unit
 import Theorems.Thm_BookProof_RitzMinMax_rayleighSetOn_bddAbove
 import Theorems.Thm_BookProof_RitzMinMax_exists_unit_mem
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

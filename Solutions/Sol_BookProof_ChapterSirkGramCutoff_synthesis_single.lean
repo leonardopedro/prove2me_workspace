@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramCutoff.lean — solution of BookProof.ChapterSirkGramCutoff.synthesis_single
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Theorems.Thm_BookProof_ChapterSirkGramWhitening_synthesis_apply
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

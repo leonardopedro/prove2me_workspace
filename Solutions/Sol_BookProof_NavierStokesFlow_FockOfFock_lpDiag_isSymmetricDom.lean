@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.lpDiag_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

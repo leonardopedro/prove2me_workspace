@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sub_natCast_ne_zero
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HashimotoShiftInvert
 
 

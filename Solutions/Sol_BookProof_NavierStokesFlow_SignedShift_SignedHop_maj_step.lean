@@ -1,6 +1,11 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — solution of BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_step
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.SignedShift.SignedHop

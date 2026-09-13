@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkCertificateReader.lean — solution of BookProof.SirkCertificateReader.toGapCertificate_lower
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 

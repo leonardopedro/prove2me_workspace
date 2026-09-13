@@ -140,11 +140,355 @@ Measured against the live platform (API 0.10.3), not from log archaeology:
   `debug/api_probe.py` (raw envelopes), `debug/job_failures.py --gap` (failure causes + plan gap),
   `debug/def_closure.py` (unpublished dependencies, deps-first), `debug/external_refs.py`  (missing imports/opens), `debug/add_wave_def.py` (additive wave extender).
 
+### 1c. Freebuff cloud sandbox runbook + stub-extension wave (2026-09-12, session 2)
 
+**Workspace here is `/home/daytona/codebase`** (not the canonical `/home/leo/prove2me_workspace`);
+`WS` is derived from the script location, and spec paths are re-rooted by `resolve_path`, so the
+same spec and state work from this checkout. `credentials.json`/`.env` are gitignored — the key is
+read from `PROVE2ME_API_KEY` first, and `--check` confirms it (0.10.3 / 0.10.3, `leonardopedro`).
+
+**Operating model — why a run appears to "never finish", and what to do about it.**
+The host terminal is *synchronous* (killed at the tool timeout: 30 s default, 180 s max) and there
+is **no persistent background process** — `setsid nohup` / `start_upload.sh` / the systemd unit do
+NOT survive the call, so the daemon of §3 is unusable here. Every run must therefore be a **bounded
+chunk that returns on its own**:
+
+```bash
+cd /home/daytona/codebase
+PROVE2ME_MAX_SECONDS=120 python3 pipeline/upload_pipeline.py \
+    --kind thm --parallel 20 --max-seconds 95 --job-timeout 45
+```
+
+- `PROVE2ME_MAX_SECONDS` is the only bound that covers the **whole** process (catalogue preflight +
+polls); `--max-seconds` alone only reaches the submit loop. Keep budget + preflight under the tool
+timeout.
+- No Lean toolchain in this checkout, so the local gate self-degrades to "skipped" (one warning)
+and the platform compiler is the oracle; `PROVE2ME_SKIP_LOCAL_COMPILE=1` just silences it.
+- A dropped tool connection (HTTP 502 from the transport) kills the process mid-chunk. Harmless:
+state is saved per item and the job id is recorded **before** polling, so the next chunk re-polls it
+at no attempt cost. Do not "clean up" afterwards.
+- **Throughput measured:** `--parallel 20` resolves **15–23 items per ~100 s chunk** (vs 8–9 at
+`--parallel 12`, 1–4 sequential). In steady state a chunk re-polls the previous chunk's in-flight
+batch and refills back up to 20, so *keep calling chunks*; one chunk cannot both submit a sol and
+see its verdict (sol proofs take >150 s).
+- Never run `--sync`/`--check` unbounded: each reads 168 + ~2800 publish jobs (~15 s) and `--sync`
+then issues one GET per pending solution. `--sync` in this session marked 7 already-`Proved` sols
+done (the other ~150 pending sols have published-but-`Open` theorems and need real proofs).
+
+**GAP FOUND & FIXED — the wave spec held only 890 of the 1437 generated stubs.**
+`Theorems/` holds 1437 stubs; **440 of the 607 not in the wave target chapters whose def bundle is
+already PUBLISHED**, and **439 of them have a solution file**. They were never added to the wave —
+which is exactly why `debug/fix_sol_imports.py` reports their references as `status=absent`: the node
+is absent because it was never *submitted*, not because it cannot exist. That also explains the two
+chapters §1b left blocked (`GaussCoreQuadBounds`, `SqSumFarisLavine`): they are waiting on
+`QgHermiteFriedrichs_*` / `HermiteProductCore_*` nodes whose stubs are sitting on disk.
+
+**New tool: `debug/extend_wave_stubs.py`** (append-only). For every stub (a) not already in the
+spec, (b) whose `Definitions.Def_<chapter>` target is PUBLISHED on the platform, and (c) whose sol
+file exists, it rebuilds the entry the way the generator did — docstring sliced out of the source
+chapter at the `state/sketch/sketch_<leaf>.jsonl` offsets, line-linked `source` anchor from the same
+record, chapter tags inherited from an already-published node of that chapter — then appends the
+slug to `sol_order` after a topological sort of the batch. Only ~2 % of these declarations carry a
+docstring, so most get the same generated-title form the live catalogue already uses.
+
+```bash
+python3 debug/extend_wave_stubs.py --dry-run [--limit N] [--chapter ChapterX]
+python3 debug/extend_wave_stubs.py            # append-only write
+```
+
+Result: `pipeline/wave_upload.json` = **112 defs / 1357 thms / 1357 sol slugs**, ORDER **2843**
+(backup: `pipeline/wave_upload.json.pre_stubs.bak`). `--status` then reports 1739 done / 1071
+pending (454 thm + 617 sol).
+
+**Three un-publishable subsets show up among the new stubs** (each costs one attempt, then parks
+`failed`; do not retry them unchanged):
+1. **already declared** — the declaration was *embedded* into its def bundle by the §5a repairs
+   (`ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_mem`, `res_shift`), so a separate node is a
+duplicate by construction. Drop from the wave; a later `--sync` reuses any node the catalogue holds.
+2. **unknown namespace** — the stub opens a namespace its def bundle does not declare
+   (`BookProof.EsaClosure`, `BookProof.NavierStokesFlow` in the `FarisLavine_*` / `EsaClosure_*`
+   stubs). Same class as §5c: needs the aggregation-bundle treatment before it can submit.
+3. **unknown identifier** — the statement cites a helper that lives in the source chapter but in
+   neither the def bundle nor a published node (`isSelfAdjoint_galerkinCompression`).
+
+**Session numbers (platform 0.10.3, `--check`):** start **123 published defs / 956 published
+problems**; end **123 / 969 published + 7 in flight** (3 PENDING, 4 COMPILING), state **1719 →
+1739 done**. Repo sync touched nothing here: the platform-side growth is all new publications.
+
+**REPAIR PASS DONE (2026-09-12, same session) — and what "done" really means.**
+The user spotted that the website reports **341 theorems proved** while the pipeline reported far more
+"successful" items. Both are right; they count different things. `GET /me` returns
+`num_solved_prob: 341` — that is the website's number, i.e. *theorems with a verified proof*. The
+state file's "done" is a **plan** metric, and a sample of 40 published nodes returns
+`29 Proved / 7 Open / 4 Definition`. Breakdown of the 1 877 `done` records:
+
+| records | meaning |
+|---|---|
+| 707 sols | skipped — the target theorem was **already Proved upstream** (not our proof) |
+| 605 thm nodes | reused — the node was already on the platform |
+| 347 thm nodes | **published by us as Open statements** — no proof attached |
+| 119 defs | published definition bundles |
+| 99 sols | our own submissions the server accepted |
+
+So uploading statements is volume, not proof: only an accepted solution moves `num_solved_prob`.
+Journal this in every progress report — "published" and "proved" are different counters, and
+`SKETCH_ACCEPTED` (an Open child imported) is a *reduction*, not a proof.
+
+Two repair tools were added and run:
+
+- **`debug/fix_sol_imports_defs.py`** — the Definitions-first solution-import repair. `sol_deps`
+  picks the module with the longest dotted prefix, and the generated stubs declare fully dotted
+  names while the Definitions bundles declare them bare inside a `namespace` block, so the *stub*
+  always won and the tooling imported a (`sorry`) Theorems node instead of the bundle that contains
+  the proof. Preferring the Definitions module is the difference between `ACCEPTED` and
+  `SKETCH_ACCEPTED`. `--allow-open` additionally accepts a published-but-Open child (reduction), off
+  by default. Applied to `GaussCoreQuadBounds` + `SqSumFarisLavine`: **13 files patched**, 32 refs
+  still blocked on nodes that are not yet published. Verified: `SqSumFarisLavine_kin_mul_comm` and
+  `SqSumFarisLavine_kin_kin_comm` had been failing with `Unknown identifier` in ~1 s and now submit
+  and compile; `kin_kin_comm` also exercises the stale-verdict resubmit guard.
+- **`debug/repair_stubs.py`** — statement-level repair for the two mechanical classes:
+  *unknown namespace* → add the `Definitions.Def_<chapter>` import that declares the opened
+  namespace (a published one; nested `namespace` blocks must be composed, or the analysis invents
+  bogus misses), and *already declared* → **drop the slug** from the wave spec (and its `sol_order`
+  entry): the declaration was embedded into its def bundle by the §5a repairs, so a separate node is
+  a duplicate by construction. Result: **109 stubs rewritten**, **47 duplicates dropped** (spec
+  1357 → 1310 thms). Verified: `FarisLavine_conj_mul_ofReal` (was `unknown namespace
+  BookProof.NavierStokesFlow`) → **DONE**, and `FarisLavine_mulComparison_surjective` /
+  `HashimotoShiftInvert_IsShiftInvertC_mem` re-submitted off the repaired statements and accepted.
+  Stubs whose node is already published are never rewritten.
+- **Still open:** the *unknown identifier* class (the statement cites a helper that lives in the
+  source chapter but in no published module, e.g. `QgHermiteFriedrichs_cpoly_*`,
+  `GaussCoreQuadBounds_coreD_sq_mul`). Fix by publishing the helper's own node first (walk ORDER,
+  which reaches `QgHermiteFriedrichs` late), then re-run the Definitions-first tool with
+  `--allow-open` if a reduction is acceptable.
+
+**Next steps (in priority order).**
+1. **Keep calling bounded chunks** — this is now a volume grind, not a bug hunt: `--kind thm`
+   resolves ~15-23 nodes per 100 s chunk at `--parallel 20`. Thms are cheap; sol proofs are slow
+   and only ever resolve on a later chunk, so alternate thm chunks with `--kind sol` chunks.
+2. **Repair the three structural classes above** before their 5th attempt parks them: `failed` is
+   terminal in the selector, so a parked item needs `debug/reopen_failed.py --only SUBSTR` (which
+   is also why the runner wants a `--retry-failed` flag). The "unknown namespace" case is the §5c
+   aggregation-bundle recipe; "already declared" should just be dropped from the wave spec.
+3. **Re-run `debug/fix_sol_imports.py` once the `QgHermiteFriedrichs_*` / `HermiteProductCore_*`
+   nodes are published** (they are the `status=absent` blockers of §1b). Importing a node that is
+   still `Open` is not an error for a *solution* — the server answers `SKETCH_ACCEPTED`, a terminal
+   success that resolves the item — so the tool's Proved-only gate should be relaxed (or a
+   `--allow-open` flag added) for the 34 sols in `GaussCoreQuadBounds` / `SqSumFarisLavine`.
+
+
+
+### 1e. CORRECTION to §1c — the daemon DOES work here, and the solution-side repairs
+
+**§1c's "no persistent background process" is wrong for a detached run.** A *foreground*
+bounded chunk dies with the tool call, but `bash start_upload.sh start` (which does
+`setsid nohup bash -c "while true; do …; done" … & disown`) **survives across calls and 502s**,
+verified over ~10 minutes. A plain `nohup … &` survives ordinary calls but is killed by the
+transport-error (502) path, so use the wrapper, not a hand-rolled `nohup`.
+
+**The wrapper was running the pipeline in *sequential* mode.** `PIPELINE` had no `--parallel`, so the
+daemon resolved ~1-4 items/60 s instead of the measured 10-50. It now passes
+`--parallel 50 --job-timeout 60` (override with `PROVE2ME_PARALLEL` / `PROVE2ME_JOB_TIMEOUT`).
+
+**Log destinations differ.** The wrapper redirects the pipeline's stdout to `state/upload.log`;
+`state/pipeline.log` is only written when *you* redirect a foreground run into it. Read progress from
+`state/upload.log` (and from `state/pipeline.json`) while the daemon runs. Beware: `log()` writes to
+stdout, so a foreground run redirected with `>> state/pipeline.log` produces every line twice.
+
+**PUBLISHED module graph ≠ local module graph.** A solution that relied on a *transitive* import for a
+namespace it opens was rejected with `unknown namespace BookProof.HermiteGalerkin` even though its local
+import (`Def_ChapterBandEnclosure`) does import the declaring bundle (`Def_ChapterHermiteGalerkinFriedrichs`).
+**Rule: every namespace a file `open`s must be declared by a module the file imports *directly*.**
+1122 solution files were repaired on that rule.
+
+**Solution-side repair tools added (the proof files had the same generator gaps as the stubs):**
+
+| tool | does |
+|---|---|
+| `debug/fix_sol_ns_imports.py` | add the direct `Definitions.Def_*` import for every opened-but-undeclared namespace; `--drop` removes opens no bundle can declare (KatoRellich, DirectSumEsa, … — a hard error otherwise) |
+| `debug/fix_sol_def_imports.py` | add import + `open` for identifiers the recorded CE names (`harmCore`, `cpoly_sum`, `gaussInt_coreD`, …) |
+| `debug/restore_opens.py` | **correct** Lean namespace scanner (`section`/`end` tracked in the same stack as `namespace`) + restores valid opens a buggy drop pass removed |
+| `debug/drop_embedded_dups.py` | drop wave slugs whose declaration is already embedded in an imported def bundle |
+| `debug/def_jobs.py` | list definition publish jobs by status (`theorem_name` = module name) |
+
+**Post-mortem on a bug I introduced and fixed.** The first `fix_sol_ns_imports.py --drop` used an inline
+scanner that pushed only `namespace` blocks but popped on **every** `end`, so a `section … end` closed the
+enclosing namespace and namespaces declared after the first section looked undeclared. It dropped 13
+*valid* opens (e.g. `BookProof.YangMillsHermite.RealCoeff`, which `Def_ChapterYangMillsHermite` does
+declare); `debug/restore_opens.py` re-adds them from `git show HEAD:<file>`. The same class of scanner bug
+made `drop_embedded_dups.py` initially find nothing.
+
+**Facts worth keeping.** (a) Definition publish jobs are *retried*: 45 FAILED def jobs are all superseded
+by a later PUBLISHED job — only 3 modules (the `TestDef*` probes) have no published job at all, so a
+FAILED def job is NOT evidence the bundle is missing. (b) The 6
+`ChapterStoneResolvent.UnboundedSelfAdjoint_*` nodes are already out of the wave spec (state orphans); the
+server rejects them with `has already been declared` because the declaration is embedded in
+`Def_ChapterStoneResolvent` — they must never be re-added. (c) The daemon sits silent for minutes at a
+time with 50 solutions in flight: solutions take >150 s each to verify and the server serialises its
+compile queue, so `state/upload.log` going quiet is normal, not a hang.
+
+### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
+
+**Read the backlog from `--status`, never from the state file.** `plan_progress` counts an
+in-plan item with **no state record at all** as pending, so the numbers differ by design:
+the state file said `164 pending`, while `--status` said `704 pending` — the ~540 difference is
+items the runner never reached (all sols/thms skipped by the preflight while the def layer was
+still incomplete). With the def layer now **112/112 done** those are reachable, so a plain
+unfiltered `--kind thm` / `--kind sol` chunk picks them up in ORDER. `state/pipeline.json`'s
+`pending`/`failed` counts are record-level bookkeeping, not the plan frontier.
+
+**Three generator defects repaired (all statement-level, all mechanical).** Each was a distinct
+shape of the same root cause — the stub copies only what it thinks it needs from the source
+chapter, and anything the source resolved *through its enclosing namespace context* is lost:
+
+1. **Path-relative `open`s → `unexpected ... unknown namespace X`.**
+   `BookProof/ChapterNavierStokesThreeComponent.lean:78` writes
+   `open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift` while sitting inside
+   `namespace BookProof.NavierStokesFlow` → `namespace ThreeComponent`. The stub lifts that line
+to file root, where the bare names do not resolve. **`debug/fix_bare_opens.py`** resolves each
+   bare token against the namespaces actually declared by the stub's transitive
+   `Definitions.Def_*` imports (nested `namespace` blocks composed), and rewrites only tokens that
+   are neither root-declared nor ambiguous. 101 files patched (`FarisLavine` → `BookProof.FarisLavine`,
+   `LpNat` → `BookProof.NavierStokesFlow.LpNat`, …). *An earlier revision of this tool merged
+   adjacent `open` lines because its regex ended in `\s*$`; it now normalizes one command per line
+   and is idempotent.*
+2. **`open scoped … lp` missing → `unexpected token '²'`.** `ℓ²(ℕ, ℂ)` is notation **only inside the
+   `lp` scope**: the def bundle carries `open scoped InnerProductSpace ENNReal lp`, the stub copies
+   only `… ENNReal`. **`debug/fix_scoped_opens.py`** adds `lp` to any stub using `ℓ²`. Exactly 7
+   files. (A union-of-all-transitive-scopes rule was measured to touch 1312 stubs for no reason —
+   the rule is deliberately narrow to the one scope that actually breaks a statement.)
+3. **Statement cites a declaration from *another* def bundle → `Unknown identifier X`.**
+   **`debug/fix_stub_def_imports.py`** indexes every top-level declaration in every `Definitions/`
+   bundle (`def`/`theorem`/`lemma`/`abbrev`/`structure`/`class`/`instance`), and for each identifier
+   named in the item's recorded error adds `import Definitions.Def_<bundle>` plus `open <innermost
+   namespace at the declaration>`. 13 files. Identifiers declared in **no** def bundle are reported
+   `BLOCKED` (7 of them — see the residual list below). `debug/repair_stubs.py` does a
+   statement-static superset of this (40 files) and remains the primary pass; run both.
+
+**Residual `failed` classes (statement-level, each needs its own node published first).**
+`isSelfAdjoint_galerkinCompression`, `sqSumOp`, `sectorRestrict_isSymmetric`, `harmCore`,
+`single_mem_fockCore`, `polyGaussCore_le_diffMaxDom` are `def`s that live only in the source
+chapter (`BookProof/Chapter*.lean`) and in no published module, so the stub's statement cannot
+compile. Publishing them means adding **definitions** (`debug/add_wave_def.py`), not theorem
+nodes. Two further classes are not mechanical and are left alone: `Invalid field `mem`` /
+`Invalid constant X.mem` (the statement uses a `.mem`/field access that does not exist on the
+inferred type) and 6 `ChapterStoneResolvent.UnboundedSelfAdjoint_*` nodes that are **duplicates**
+— their declarations were embedded into `Def_ChapterStoneResolvent` by the §5a repairs, so the
+standalone node can never compile.
+
+**Why the repaired statements were worth it:** the `Unknown identifier` sols in
+`GaussCoreQuadBounds` / `SqSumFarisLavine` (the chapters §1b left blocked) now resolve — those
+families moved from instant CE failures to `DONE` at ~10 items/chunk. The remaining heavy sol
+classes are `SqSumFarisLavine_*` and `NavierStokesFlow_Lagrangian*`, blocked on helper **nodes
+that are in the wave spec but not yet published** (`QgHermiteFriedrichs_inner_pgLp_pgLp`,
+`StoneBridge_exists_stone_flow_of_esa`, `HashimotoShiftInvert_IsShiftInvertC_opNorm_le`,
+`HermiteGalerkin_galerkinCompression_tendsto`, `QgHermiteFriedrichs_hamCore_symmetricOn`, …).
+Those are ordered work, not a defect: publish the thm node (even `Open`) and the importing sol
+resolves as `SKETCH_ACCEPTED`.
+
+**Session 3 numbers** (platform 0.10.3 / skill 0.10.3, `leonardopedro`):
+
+| metric | session start | session end |
+|---|---|---|
+| `num_solved_prob` (the website's "theorems proved") | 352 | **394** |
+| published problems | 1120 | **1289** (+18 pending, 3 compiling) |
+| in-plan thms done / pending | 1058 / 214 | **1206 / 70** |
+| in-plan sols done / pending | 821 / 490 | **889 / 422** |
+| state records done / pending / failed | 2121 / 164 / 20 | **2330 / 139 / 23** |
+
+Measured throughput: **~10–38 items resolved per ~60 s chunk** at `--parallel 45–60` (thm chunks
+resolve faster than sol chunks; sols take >150 s per proof and mostly drain on the *next* call).
+
+**Tooling added this session:** `debug/fix_bare_opens.py`, `debug/fix_scoped_opens.py`,
+`debug/fix_stub_def_imports.py`, `debug/platform_stats.py` (`/me` + state breakdown in one shot).
+
+**Next steps.**
+1. Keep calling bounded chunks — alternate `--kind thm` (fast, unblocks sols) with `--kind sol`.
+   The thm frontier is nearly clear (~70), the sol frontier is the long grind (~422).
+2. Publish the blocked helper `def`s listed above via `debug/add_wave_def.py`, then re-run
+   `debug/repair_stubs.py` and `debug/fix_stub_def_imports.py` and reopen with
+   `debug/reopen_failed.py --yes --only SUBSTR`.
+3. Drop the 6 `ChapterStoneResolvent.UnboundedSelfAdjoint_*` duplicates from `wave_upload.json`
+   (they can never compile) so the plan stops counting them as failed.
 
 - **Local state note**: 38 sols were found carrying a live `submission_id` already `ACCEPTED` on the
   platform, left behind by chunks killed before their drain. The re-poll guard collects them on the
   next `--kind sol` run; no manual state surgery is needed and none should be attempted.
+
+**§1b — the "failed" solutions were not proof failures (verified 2026-09-12).** Every one of the 24
+sols in `ChapterSirkEndToEnd` / `ChapterSirkPerSystem` / `YangMillsHermite` that this runbook recorded
+as a CE failure targets a node the platform already reports **`Proved`** (resolved by `theorem_id`, not
+by name). At catalogue scale **374 of 577** locally-pending sols were already `Proved` upstream — they
+looked pending only because `--sync` reconciled defs/thms from `publish-jobs` but never reconciled
+*solutions* (a solution has no publish job). `sync_state` now resolves every pending `sol:` through its
+`theorem_id` and marks it done; one `--sync` moved the state **1180 → 1558 done / 318 pending**, and
+all three chapters are now `0 pending` (14 + 7 + 47 sols).
+
+- **GENERATOR BUG — a solution never imports the other chapters its proof cites.** `build_sol` emits
+  `import Theorems.Thm_<own chapter>_<dep>` for siblings *inside* the target chapter, but a generated
+  solution imports only `Definitions.Def_<own chapter>` (definition-only bundles). Any lemma inherited
+  from a chapter the source module imports is therefore an `Unknown identifier`, and the compiler stops
+  at the first one, so it surfaced one round trip at a time. **273 of 1440 local solutions** carry this
+  defect — that is what the CE messages actually were (`numRange_compress_subset`,
+  `sirk_error_tendsto_zero`, `sirk_error_decay_exponential`, `diagKR_hashimoto_selects`,
+  `nsDiffH_shiftInvert_selects`).
+  Tooling: `debug/sol_deps.py` resolves the whole missing set statically — comments stripped, and gated
+  on the file **already opening** the declaring namespace (the ambiguity-safe rule), with pattern-only
+  names such as a match arm `| add p q =>` excluded. `debug/fix_sol_imports.py --chapter X [--dry-run]`
+  writes them, refusing any import whose node is not `Proved` ("imported platform theorems must be
+  Proved at submission time"). Applied to the three chapters: 12 files patched; 20 references remain
+  blocked on 15 dependency nodes **absent from the platform** (they are in the tree, but never in the
+  wave spec, so never published — `--only`/the wave extender is the route).
+- **The cross-chapter import form is confirmed to work**: `{ChapterSirkEndToEnd}_crouzeix_domain_uniform`
+  (which needs `ChapterH9.numRange_subset_closedBall` from a different module) was submitted and
+  returned **ACCEPTED** — the same `import Theorems.Thm_*` mechanism the QgHermite def fix relied on.
+- **BUG — a stale verdict could be reported as a failure of the current proof.** `do_wave_sol`
+  re-polled a recorded `submission_id` without checking whether the solution file had changed since, so
+  a chunk read the verdict *of the pre-fix revision* (`line 33: Unknown identifier
+  numRange_subset_closedBall`, terminal in **1 s** versus ~5.5 min for a real compile) and counted it
+  against the fixed file. Each submission now records `submission_src` (sha1 of the file); when the file
+  no longer matches, the obsolete id is dropped and the current revision resubmitted instead of burning
+  one of the 5 attempts on a dead verdict.
+
+- **BUG — the statement splitter's identifier boundary rejected Lean-primed names.** `do_wave_thm`
+  locates the declaration with `^theorem\s+<name>\b`. A trailing `\b` cannot express "not a prefix of
+  a longer identifier" when the name ends in a non-word character: for `…commutator_sum_le'`, the `'`
+  followed by a space has **no word boundary**, so the regex never matched and the item reported
+  `cannot split formal_statement` — one of the 5 attempts burned per visit until `failed`. Replaced
+  with a negative lookahead `(?![A-Za-z0-9_'.!?])`, which also keeps the prefix guard (the unprimed
+  name no longer matches the primed declaration).
+- **BUG — the wave spec's dotted `name` is a heuristic, and the file is authoritative.**
+  `wave_upload.json` is assembled with a `_` → `.` rewrite, which is right for chapters that open a
+  namespace per component (`…LinearIsometryEquiv.isNote4Unitary`) but wrong for an identifier that
+  keeps its underscores: the spec held `…FarisLavineLift.norm.inner.commutator.sum.le'`. A wrong name
+  is not cosmetic — the splitter looks for it verbatim and never finds it. `reconcile_thm_names()` now
+  runs at import: when the spec's name is not a declaration in the file, a stub declaring exactly one
+  top-level `theorem` adopts that declaration (multi-declaration files fall back to comparing the
+  names with `.`/`_` dropped). It reports its repairs in `REPAIRED_THM_NAMES` instead of silently
+  patching the payload. Exactly 1 of 890 thms was affected — the other 2 primed names
+  (`FockCanonical_coe_sum_apply'`, `FockManyMode_modeShift_shift_ne'`) are among the unsubmittable
+  items below and have no file to correct from.
+- **Platform rule re-confirmed (was already §6.1): `theorem_name` rejects a trailing prime.**
+  `submit-problem` answered `theorem_name must be a valid Lean identifier (identifier segments
+  separated by '.')` for the repaired primed name. The node is published under
+  `…norm_inner_commutator_sum_le_alt` — a deliberately *different* name from the documented `_prime`
+  convention, chosen because it was already published by the time the rule was noticed and re-publishing
+  under `_prime` would add a duplicate statement node to the catalogue. **Use `_prime` for any future
+  primed declaration.**
+- **GAP — `failed` items are permanently unreopenable.** The selector skips `done` *and* `failed`
+  (lines ~1001, ~1050), and nothing resets them, so a defect at the submit boundary strands every item
+  it broke — exactly what happened to the item above. `debug/reopen_failed.py [--yes] [--only SUBSTR]`
+  reopens them (attempts → 0, dead `job_id`/`submission_id` dropped, backup `state/pipeline.json.bak.reopen`).
+  The runner should grow a `--retry-failed` flag; `str_replace` cannot reach past ~line 1300 of
+  `upload_pipeline.py`, which is why this lives in `debug/` for now.
+- **65 items are unsubmittable: 60 thm stubs + 5 sols that were never generated** (47 `NavierStokesFlow*`,
+  13 `ChapterContinuityUnitaryInfinite`, 2 each `ChapterH6`/`ChapterH9`, 1 `ChapterH8`). The source
+  chapters **are** in the checkout (`BookProof/ChapterNavierStokesFockManyMode.lean:181` really does
+  declare `fockH_apply`) and `state/sketch/sketch_<leaf>.jsonl` carries the declaration spans, but
+  `scripts/wave_generate.py` needs `decl_graph.jsonl` (hardcoded `/home/leo/Projects/timepiece/…`,
+  absent here) to attach the dotted `uname` that `build_thm` writes, so regenerating them needs either
+  that graph or reconstructed nodes from the sketch files. **Do not re-run the generator unguarded:**
+  it overwrites `Theorems/`+`Solutions/` wholesale and would revert the cross-chapter import fixes.
 
 **Status (2026-09-10) — historical, counts superseded by §1a:**
 

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.HashimotoShiftInvert
-open BookProof.HashimotoShiftInvert.IsShiftInvertC
 
 
 

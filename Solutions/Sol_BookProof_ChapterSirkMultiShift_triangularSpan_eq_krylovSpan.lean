@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkMultiShift
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_seqSpan_mono
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_seqSpan_le_krylovSpan
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_pow_mem_seqSpan
+import Definitions.Def_ChapterH5
 open BookProof.ChapterSirkMultiShift
 
 

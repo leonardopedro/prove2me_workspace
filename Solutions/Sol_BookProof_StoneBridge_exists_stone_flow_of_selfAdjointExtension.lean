@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
 import Theorems.Thm_BookProof_StoneBridge_isStoneFlow_stoneU
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.StoneBridge
 
 

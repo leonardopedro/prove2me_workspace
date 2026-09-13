@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkWhitening.lean — solution of BookProof.ChapterSirkWhitening.rangeProj_comp_embedding
 import Mathlib
 import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
 
 

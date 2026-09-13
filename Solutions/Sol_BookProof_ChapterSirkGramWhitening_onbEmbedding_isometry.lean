@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_adjoint_comp_self_of_inner
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_onbEmbedding_apply
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 

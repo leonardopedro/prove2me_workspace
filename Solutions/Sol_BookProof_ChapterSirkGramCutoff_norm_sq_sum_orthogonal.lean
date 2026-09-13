@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkGramCutoff.lean — solution of BookProof.ChapterSirkGramCutoff.norm_sq_sum_orthogonal
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

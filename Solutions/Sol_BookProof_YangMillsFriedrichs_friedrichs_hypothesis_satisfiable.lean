@@ -1,6 +1,7 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

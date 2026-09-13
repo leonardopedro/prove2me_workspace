@@ -2,6 +2,19 @@
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 import Theorems.Thm_BookProof_BandEnclosure_quadForm_real_smul
+import Theorems.Thm_BookProof_HermiteGalerkin_ritzSet_bddBelow
+import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.BandEnclosure
 
 

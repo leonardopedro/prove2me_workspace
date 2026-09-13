@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 import Theorems.Thm_BookProof_SirkGapTable_gap_le_of_certificate
+import Theorems.Thm_BookProof_SirkCertifiedGap_certified_parity_gap
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
 
 

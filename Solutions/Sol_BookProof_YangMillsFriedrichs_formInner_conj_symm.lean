@@ -1,6 +1,7 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.formInner_conj_symm
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

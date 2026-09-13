@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesThreeComponent.lean — solution of BookProof.NavierStokesFlow.ThreeComponent.velH_essentiallySelfAdjointOn_core
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_listH_essentiallySelfAdjointOn_core
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 

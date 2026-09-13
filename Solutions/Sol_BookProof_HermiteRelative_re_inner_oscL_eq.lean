@@ -4,6 +4,11 @@ import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteRelative_posL_symmetric
 import Theorems.Thm_BookProof_HermiteRelative_momL_symmetric
 import Theorems.Thm_BookProof_HermiteRelative_oscOp_eq
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteRelative
 
 

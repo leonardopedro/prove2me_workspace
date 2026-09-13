@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_HermiteGalerkin_ritzSet_mono
 import Theorems.Thm_BookProof_HermiteGalerkin_ritzSet_bddBelow
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteGalerkin
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_integral_prod_coord
 import Theorems.Thm_BookProof_HermiteProductCore_gaussWD_eq_prod
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

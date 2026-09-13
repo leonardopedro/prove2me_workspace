@@ -25,6 +25,7 @@ open scoped ENNReal
 
 open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow.LagrangianNS
 
 
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterHermiteGalerkinFriedrichs.lean — solution of BookProof.HermiteGalerkin.compression_tendsto_of_starProjection_tendsto
 import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteGalerkin
 
 

@@ -2,8 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 import Theorems.Thm_BookProof_HermiteBand_g1_nonneg
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBand
-open BookProof.HermiteBand.Band
 
 
 

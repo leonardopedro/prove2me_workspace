@@ -4,6 +4,8 @@ import Definitions.Def_ChapterHermiteBandCalculus
 import Theorems.Thm_BookProof_HermiteBand_annPoly_hpsi
 import Theorems.Thm_BookProof_HermiteBand_degree_sub_single
 import Theorems.Thm_BookProof_HermiteBand_le_degree
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBand
 
 

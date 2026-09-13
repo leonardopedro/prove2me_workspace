@@ -1,6 +1,10 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — solution of BookProof.GaussCoreQuadBounds.eval_cpoly_self_re
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.GaussCoreQuadBounds
 
 

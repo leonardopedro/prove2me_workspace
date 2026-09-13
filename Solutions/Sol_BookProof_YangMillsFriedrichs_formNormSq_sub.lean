@@ -4,6 +4,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_real_smul_left
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_real_smul_right
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_add
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

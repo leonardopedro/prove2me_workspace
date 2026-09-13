@@ -12,6 +12,10 @@ import Theorems.Thm_BookProof_HermiteBand_IsBand2_sum
 import Theorems.Thm_BookProof_HermiteBand_isBand1_mulXPoly
 import Theorems.Thm_BookProof_HermiteBand_isBand1_momPoly
 import Theorems.Thm_BookProof_HermiteBand_isBand2_weylProd
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBand
 
 
@@ -51,7 +55,7 @@ variable {d : ℕ}
 
 
 
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
+open BookProof.NavierStokesFlow.DifferentialL2
 
 set_option maxHeartbeats 1000000 in
 theorem solution (P Q S : Fin d → Fin d → ℝ) : IsBand2 (fqQuadPoly P Q S) := by

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_range_whitened
+import Theorems.Thm_BookProof_ChapterSirkWhitening_compress_conj_whitening
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 

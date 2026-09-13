@@ -4,6 +4,12 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Theorems.Thm_BookProof_Starobinsky_mulSymbolDomain_dense
 import Theorems.Thm_BookProof_Starobinsky_qgR2Mode_symmetric
 import Theorems.Thm_BookProof_Starobinsky_qgR2Mode_esa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.Starobinsky
 
 

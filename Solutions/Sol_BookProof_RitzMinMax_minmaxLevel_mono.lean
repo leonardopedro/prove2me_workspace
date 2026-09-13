@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_rayleighSup_mono
 import Theorems.Thm_BookProof_RitzMinMax_minmaxSet_bddBelow
 import Theorems.Thm_BookProof_RitzMinMax_exists_le_finrank_eq
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

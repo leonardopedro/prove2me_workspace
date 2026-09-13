@@ -1,6 +1,12 @@
 -- Generated from ChapterRitzCertificate.lean — solution of BookProof.RitzCertificate.sInf_spectrum_le_rayleigh
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_rayleighInf_mul_normSq_le
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
 
 

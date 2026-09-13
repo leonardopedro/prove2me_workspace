@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkCertificateReader.lean — solution of BookProof.SirkCertificateReader.gap_ge_of_ndjson
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Theorems.Thm_BookProof_SirkCertifiedGap_certified_parity_gap
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 

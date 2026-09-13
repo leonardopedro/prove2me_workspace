@@ -16,6 +16,7 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

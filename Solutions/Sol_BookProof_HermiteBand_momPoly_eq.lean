@@ -1,6 +1,12 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.momPoly_eq
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBand
 
 
@@ -40,7 +46,7 @@ variable {d : ℕ}
 
 
 
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
+open BookProof.NavierStokesFlow.DifferentialL2
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) :

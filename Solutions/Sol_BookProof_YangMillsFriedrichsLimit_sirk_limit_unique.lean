@@ -1,6 +1,10 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.sirk_limit_unique
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichsLimit
 
 

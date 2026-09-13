@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_conj_symm
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

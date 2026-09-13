@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkWhitening
 import Theorems.Thm_BookProof_ChapterSirkWhitening_adjoint_comp_rangeProj
 import Theorems.Thm_BookProof_ChapterSirkWhitening_embedding_comp_whiteningEquiv
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
 
 

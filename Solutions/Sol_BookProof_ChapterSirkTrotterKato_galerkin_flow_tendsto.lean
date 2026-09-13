@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_flow_tendsto_of_strong_tendsto
+import Theorems.Thm_BookProof_HermiteGalerkin_isSelfAdjoint_galerkinCompression
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.ChapterSirkTrotterKato
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkGapTable.lean — solution of BookProof.SirkGapTable.qcdG2M4_strongCoupling_consistent
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
 
 

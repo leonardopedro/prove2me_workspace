@@ -84,7 +84,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 
 
-open scoped InnerProductSpace ENNReal
+open scoped ENNReal InnerProductSpace lp
 
 theorem BookProof.HashimotoShiftInvert.diagCLMC_apply {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ²(ℕ, ℂ)) (n : ℕ) :
     ((diagCLMC hc x : ℓ²(ℕ, ℂ)) : ℕ → ℂ) n = c n * x n := by sorry

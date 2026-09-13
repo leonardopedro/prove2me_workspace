@@ -1,7 +1,12 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — solution of BookProof.SirkSingleTime.sirk_single_time_shiftInvert_bound
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
-open BookProof.SirkSingleTime
+import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterComplexShiftCore
 
 
 

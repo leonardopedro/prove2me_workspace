@@ -1,6 +1,9 @@
 -- Generated from ChapterSirkRitzPerturbation.lean — solution of BookProof.RitzPerturbation.minmaxSet_nonempty_congr
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

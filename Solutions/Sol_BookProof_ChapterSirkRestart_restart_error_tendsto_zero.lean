@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkRestart.lean — solution of BookProof.ChapterSirkRestart.restart_error_tendsto_zero
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
+import Theorems.Thm_BookProof_ChapterH6_sirk_error_decay_exponential
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_deriv_gaussPoly
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

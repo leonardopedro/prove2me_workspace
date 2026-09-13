@@ -2,8 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_add
-open BookProof.YangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.YangMillsHermite.PolyAdj
+open BookProof.YangMillsHermite
 
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_HermiteGalerkin_isUnit_algebraMap_sub
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteGalerkin
 
 

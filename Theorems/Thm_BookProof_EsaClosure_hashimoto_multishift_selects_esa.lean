@@ -1,6 +1,9 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.hashimoto_multishift_selects_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterNavierStokesDiffHashimoto
 open BookProof.EsaClosure
 
 

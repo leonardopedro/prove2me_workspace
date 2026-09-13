@@ -1,6 +1,8 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.positiveExtension_eq_closure_of_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 
 

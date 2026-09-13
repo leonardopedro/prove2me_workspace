@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramWhitening.lean — solution of BookProof.ChapterSirkGramWhitening.sum_norm_coord_le
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 

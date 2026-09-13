@@ -1,6 +1,10 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.rkSpan_mono
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HashimotoShiftInvert
 
 

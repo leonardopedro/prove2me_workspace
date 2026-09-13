@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff
+import Theorems.Thm_BookProof_ChapterSirkGramWhitening_sirk_end_to_end_truncated_gram
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

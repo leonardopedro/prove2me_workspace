@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_exp_abs_mul_gaussH_le
+import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_const_mul
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

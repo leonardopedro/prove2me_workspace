@@ -1,6 +1,7 @@
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.hermiteCx_zero
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

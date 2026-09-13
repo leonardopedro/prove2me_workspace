@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_minmaxSetIn_subset
 import Theorems.Thm_BookProof_RitzMinMax_minmaxSetIn_galerkin_nonempty
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

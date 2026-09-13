@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkCertifiedGap.lean — solution of BookProof.SirkCertifiedGap.sectorRestrict_coe
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
 
 

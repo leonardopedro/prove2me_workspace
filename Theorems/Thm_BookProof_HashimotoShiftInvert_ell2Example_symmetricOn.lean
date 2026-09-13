@@ -84,7 +84,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 
 
-open scoped InnerProductSpace ENNReal
+open scoped ENNReal InnerProductSpace lp
 
 theorem BookProof.HashimotoShiftInvert.ell2Example_symmetricOn :
     SymmetricOn (LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)))

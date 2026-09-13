@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_triangularSpan_eq_krylovSpan
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_sub_pow_mem
+import Definitions.Def_ChapterH5
 open BookProof.ChapterSirkMultiShift
 
 

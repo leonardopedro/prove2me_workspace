@@ -1,6 +1,10 @@
 -- Generated from ChapterSirkTruncation.lean — solution of BookProof.ChapterSirkTruncation.compress_comp
 import Mathlib
 import Definitions.Def_ChapterSirkTruncation
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkTruncation
 
 

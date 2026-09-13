@@ -1,6 +1,11 @@
 -- Generated from ChapterSirkRitzPerturbation.lean — solution of BookProof.RitzPerturbation.minmaxLevel_le_norm
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
+import Theorems.Thm_BookProof_RitzMinMax_minmaxSet_bddBelow
+import Theorems.Thm_BookProof_RitzMinMax_rayleighSup_le_norm
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

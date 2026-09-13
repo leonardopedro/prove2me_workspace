@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_resolvent_commutator_eq
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_stoneU_shift
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterSirkTrotterKato
 
 

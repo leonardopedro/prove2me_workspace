@@ -22,6 +22,7 @@ open Filter Topology
 
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
+open BookProof.FockOneParticleGap
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

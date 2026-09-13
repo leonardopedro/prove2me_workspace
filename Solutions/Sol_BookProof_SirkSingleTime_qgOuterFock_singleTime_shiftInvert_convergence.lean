@@ -3,7 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_ne_zero
 import Theorems.Thm_BookProof_SirkSingleTime_isShiftInvertC_neg_resCLM_shift
-open BookProof.SirkSingleTime
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
 
 
 
@@ -47,8 +53,7 @@ variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [
 
 
 
-open BookProof.QgTruncationResolvent BookProof.FarisLavine BookProof.EsaClosure
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.FarisLavine BookProof.EsaClosure
 
 variable {ι : Type*}
 

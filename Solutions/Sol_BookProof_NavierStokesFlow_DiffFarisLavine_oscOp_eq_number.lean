@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_oscPoly_eq
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 

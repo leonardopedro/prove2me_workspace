@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteRelative_re_inner_diagonal_le
 import Theorems.Thm_BookProof_HermiteRelative_oscL_hermiteMvLp
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteRelative
 
 

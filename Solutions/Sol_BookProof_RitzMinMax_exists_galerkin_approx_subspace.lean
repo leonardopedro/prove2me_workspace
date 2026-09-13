@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_RitzMinMax_rayleighVal_sub_le
 import Theorems.Thm_BookProof_RitzMinMax_rayleighSetOn_nonempty
 import Theorems.Thm_BookProof_RitzMinMax_rayleighVal_le_rayleighSup
 import Theorems.Thm_BookProof_RitzMinMax_exists_uniform_proj_bound
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

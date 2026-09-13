@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

@@ -4,6 +4,9 @@ import Definitions.Def_ChapterFockOneParticleGap
 import Theorems.Thm_BookProof_FockOneParticleGap_dGamma_diagCol_vac
 import Theorems.Thm_BookProof_FockOneParticleGap_fock_gap_quadForm
 import Theorems.Thm_BookProof_FockOneParticleGap_le_of_band
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
 
 

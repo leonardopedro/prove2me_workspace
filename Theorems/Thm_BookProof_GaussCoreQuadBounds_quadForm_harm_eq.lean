@@ -1,6 +1,7 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.quadForm_harm_eq
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
 open BookProof.GaussCoreQuadBounds
 
 
@@ -13,6 +14,7 @@ open BookProof.GaussCoreQuadBounds
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator
 
 noncomputable section
 

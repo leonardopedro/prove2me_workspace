@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSirkBandLedger
 import Theorems.Thm_BookProof_SirkBandLedger_ledgerWf_step
 import Theorems.Thm_BookProof_SirkBandLedger_recAt_of_ge
 import Theorems.Thm_BookProof_SirkBandLedger_recAt_of_lt
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.SirkBandLedger
 
 

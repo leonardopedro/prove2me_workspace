@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_isWhiteningMatrix_one_of_orthonormal
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 

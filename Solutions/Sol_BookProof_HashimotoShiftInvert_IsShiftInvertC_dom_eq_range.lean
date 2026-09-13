@@ -2,8 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_mem
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HashimotoShiftInvert
-open BookProof.HashimotoShiftInvert.IsShiftInvertC
 
 
 

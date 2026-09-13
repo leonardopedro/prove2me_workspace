@@ -4,6 +4,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_nonneg
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_add
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_sub
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

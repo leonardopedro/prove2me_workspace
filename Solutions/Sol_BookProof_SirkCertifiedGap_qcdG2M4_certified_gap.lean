@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 import Theorems.Thm_BookProof_SirkCertifiedGap_gap_ge_of_certificate
 import Theorems.Thm_BookProof_SirkCertifiedGap_qcdG2M4_lower
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
 
 

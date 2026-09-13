@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 import Theorems.Thm_BookProof_SirkCertificateReader_gap_ge_of_ndjson
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 

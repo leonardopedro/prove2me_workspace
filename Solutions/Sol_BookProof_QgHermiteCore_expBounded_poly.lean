@@ -4,6 +4,8 @@ import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_add
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_const_mul
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_pow
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

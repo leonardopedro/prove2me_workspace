@@ -13,7 +13,13 @@ WS="${PROVE2ME_WS:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 LOG="${WS}/state/upload.log"
 mkdir -p "$(dirname "$LOG")"
 
-PIPELINE="python3 ${WS}/pipeline/upload_pipeline.py"
+# Pipelined mode: the server spends 20-150 s compiling each submission, so a
+# sequential loop sleeps most of that away.  --parallel keeps many submissions in
+# flight and polls them in one round (measured ~10-50 items resolved per 60 s chunk
+# vs 1-4 sequential).  --job-timeout keeps a bounded per-item poll.
+PARALLEL="${PROVE2ME_PARALLEL:-50}"
+JOB_TIMEOUT="${PROVE2ME_JOB_TIMEOUT:-60}"
+PIPELINE="python3 ${WS}/pipeline/upload_pipeline.py --parallel ${PARALLEL} --job-timeout ${JOB_TIMEOUT}"
 export PROVE2ME_WS="${WS}"
 PIDFILE="/tmp/upload_pipeline.pid"
 

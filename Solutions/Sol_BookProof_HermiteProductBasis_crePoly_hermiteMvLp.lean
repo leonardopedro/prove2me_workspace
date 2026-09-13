@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMv
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_add_single
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductBasis
 
 

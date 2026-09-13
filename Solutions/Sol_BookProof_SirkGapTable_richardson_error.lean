@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 import Theorems.Thm_BookProof_SirkGapTable_one_lt_ratio
 import Theorems.Thm_BookProof_SirkGapTable_richardson_exact
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
 
 

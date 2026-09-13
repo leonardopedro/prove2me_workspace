@@ -1,7 +1,9 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — solution of BookProof.SirkSingleTime.res_sub_res
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
-open BookProof.SirkSingleTime
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
 
 
 

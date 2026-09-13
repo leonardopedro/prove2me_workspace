@@ -4,6 +4,10 @@ import Definitions.Def_ChapterBandEnclosure
 import Theorems.Thm_BookProof_BandEnclosure_band_enclosure_endpoints_tendsto
 import Theorems.Thm_BookProof_BandEnclosure_sirk_nestedBands
 import Theorems.Thm_BookProof_BandEnclosure_sirk_band_widths_tendsto_zero
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.BandEnclosure
 
 

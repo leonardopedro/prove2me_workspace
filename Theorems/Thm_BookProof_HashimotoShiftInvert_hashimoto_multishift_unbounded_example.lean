@@ -84,7 +84,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 
 
-open scoped InnerProductSpace ENNReal
+open scoped ENNReal InnerProductSpace lp
 
 theorem BookProof.HashimotoShiftInvert.hashimoto_multishift_unbounded_example (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
     ∃ X : ℕ → ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ),

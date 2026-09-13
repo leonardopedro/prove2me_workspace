@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.exists_res_domain_approx
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterSirkTrotterKato
 
 

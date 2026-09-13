@@ -1,6 +1,9 @@
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.FarisLavine
 
 

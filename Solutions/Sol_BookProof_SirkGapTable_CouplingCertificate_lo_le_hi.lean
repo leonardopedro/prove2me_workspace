@@ -1,8 +1,8 @@
 -- Generated from ChapterSirkGapTable.lean — solution of BookProof.SirkGapTable.CouplingCertificate.lo_le_hi
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
-open BookProof.SirkGapTable.CouplingCertificate
 
 
 

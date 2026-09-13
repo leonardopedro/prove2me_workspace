@@ -1,8 +1,9 @@
 -- Generated from ChapterSirkBandLedger.lean — solution of BookProof.SirkBandLedger.Decimal.leB_iff
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.SirkBandLedger
-open BookProof.SirkBandLedger.Decimal
 
 
 

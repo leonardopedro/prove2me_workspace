@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_ge_normSq
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

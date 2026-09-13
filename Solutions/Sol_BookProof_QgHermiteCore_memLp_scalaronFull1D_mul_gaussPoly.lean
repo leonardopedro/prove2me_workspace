@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_QgHermiteCore_expBounded_poly
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — theorem BookProof.QgHermiteFriedrichs.qgOneParticleSector_friedrichs
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.QgHermiteFriedrichs
 
 

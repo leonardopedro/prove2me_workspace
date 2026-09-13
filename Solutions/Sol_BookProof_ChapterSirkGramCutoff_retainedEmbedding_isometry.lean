@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_retainedVec_orthonormal
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_synthesis_isometry_of_orthonormal
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FockSecondQuantization
 
 

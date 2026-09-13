@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneResolvent.lean — solution of BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le
 import Mathlib
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 

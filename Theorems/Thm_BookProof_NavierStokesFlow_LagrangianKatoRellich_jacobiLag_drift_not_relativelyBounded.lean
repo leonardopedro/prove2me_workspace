@@ -1,33 +1,13 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.jacobiLag_drift_not_relativelyBounded
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
-
-
-
-open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
@@ -66,26 +46,8 @@ variable (L : LagrangianFullData F)
 
 
 
-open LpNat DiagonalEsa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open LpNat JacobiDeficiency
-
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.JacobiDeficiency
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.jacobiLag_drift_not_relativelyBounded :

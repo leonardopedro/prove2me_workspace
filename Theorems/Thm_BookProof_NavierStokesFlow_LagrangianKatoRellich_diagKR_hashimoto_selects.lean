@@ -1,33 +1,13 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_selects
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
-
-
-
-open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
@@ -66,8 +46,7 @@ variable (L : LagrangianFullData F)
 
 
 
-open LpNat DiagonalEsa
-
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_selects (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
     ∃ (Dom : Submodule ℂ L2N) (A : Dom →ₗ[ℂ] L2N) (X : ℕ → L2N →L[ℂ] L2N),
       IsSelfAdjointExtension (lagrangianCore diagKR) A ∧

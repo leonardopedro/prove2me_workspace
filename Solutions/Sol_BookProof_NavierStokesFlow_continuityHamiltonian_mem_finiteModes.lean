@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_shiftOp_mem_finiteModes
 import Theorems.Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
 

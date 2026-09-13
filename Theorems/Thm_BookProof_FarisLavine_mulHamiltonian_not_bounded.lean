@@ -1,6 +1,7 @@
 -- Generated from ChapterFarisLavine.lean — theorem BookProof.FarisLavine.mulHamiltonian_not_bounded
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.FarisLavine
 
 

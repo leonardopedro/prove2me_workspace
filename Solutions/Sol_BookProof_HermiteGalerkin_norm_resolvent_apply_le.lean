@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_HermiteGalerkin_norm_sub_smul_ge
 import Theorems.Thm_BookProof_HermiteGalerkin_sub_resolvent_apply
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteGalerkin
 
 

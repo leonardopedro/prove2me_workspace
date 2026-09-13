@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
 import Theorems.Thm_BookProof_FockOneParticleGap_confNumber_pos
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
 
 

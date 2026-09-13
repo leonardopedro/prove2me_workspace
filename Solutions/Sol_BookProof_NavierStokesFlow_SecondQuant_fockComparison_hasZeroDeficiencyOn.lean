@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — solution of BookProof.NavierStokesFlow.SecondQuant.fockComparison_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_hasZeroDeficiencyOn
+import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_hasZeroDeficiencyOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 

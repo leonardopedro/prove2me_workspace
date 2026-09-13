@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap
 import Theorems.Thm_BookProof_FriedrichsFormGap_friedrichs_quadForm_lower_bound
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FriedrichsFormGap
 
 

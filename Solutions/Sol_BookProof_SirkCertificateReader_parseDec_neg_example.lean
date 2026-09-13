@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkCertificateReader.lean — solution of BookProof.SirkCertificateReader.parseDec_neg_example
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 

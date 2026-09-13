@@ -1,6 +1,10 @@
 -- Generated from ChapterFarisLavine.lean — theorem BookProof.FarisLavine.mulHamiltonian_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.FarisLavine
 
 

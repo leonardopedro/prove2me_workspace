@@ -1,6 +1,8 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.harmCore_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
 open BookProof.SqSumFarisLavine
 
 

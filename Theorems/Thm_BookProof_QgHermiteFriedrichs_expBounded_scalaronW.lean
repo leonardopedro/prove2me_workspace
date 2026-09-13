@@ -1,6 +1,7 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — theorem BookProof.QgHermiteFriedrichs.expBounded_scalaronW
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.QgHermiteFriedrichs
 
 

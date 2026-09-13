@@ -15,6 +15,7 @@ open scoped ENNReal
 
 
 open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
+open BookProof.NavierStokesFlow.IkebeKato
 
 
 

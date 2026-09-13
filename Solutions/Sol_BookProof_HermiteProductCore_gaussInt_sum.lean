@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

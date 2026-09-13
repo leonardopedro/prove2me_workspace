@@ -21,6 +21,8 @@ open BookProof.NavierStokesFlow.DiffFarisLavine
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

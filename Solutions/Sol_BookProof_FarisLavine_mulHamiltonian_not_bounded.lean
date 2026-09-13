@@ -1,6 +1,9 @@
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.mulHamiltonian_not_bounded
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.FarisLavine
 
 

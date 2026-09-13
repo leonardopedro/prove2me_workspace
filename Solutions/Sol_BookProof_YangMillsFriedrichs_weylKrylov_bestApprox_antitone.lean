@@ -1,6 +1,9 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_antitone
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

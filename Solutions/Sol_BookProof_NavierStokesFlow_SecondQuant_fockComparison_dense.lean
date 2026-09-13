@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — solution of BookProof.NavierStokesFlow.SecondQuant.fockComparison_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
+import Definitions.Def_ChapterNavierStokesEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockCore_dense
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 

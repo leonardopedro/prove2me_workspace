@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_HermiteGalerkin_compression_tendsto_of_starProjection_tendsto
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinProj_tendsto
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteGalerkin
 
 

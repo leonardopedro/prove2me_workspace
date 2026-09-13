@@ -1,6 +1,11 @@
 -- Generated from ChapterShiftedHermiteCore.lean — solution of BookProof.ShiftedHermiteCore.coreOpT_coreEquivT
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.ShiftedHermiteCore
 
 

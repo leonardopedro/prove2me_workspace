@@ -1,6 +1,7 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — theorem BookProof.QgHermiteFriedrichs.coreEquiv_apply
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.QgHermiteFriedrichs
 
 

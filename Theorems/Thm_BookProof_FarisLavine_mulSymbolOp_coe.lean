@@ -1,6 +1,7 @@
 -- Generated from ChapterFarisLavine.lean — theorem BookProof.FarisLavine.mulSymbolOp_coe
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.FarisLavine
 
 

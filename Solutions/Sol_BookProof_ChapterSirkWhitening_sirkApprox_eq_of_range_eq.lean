@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkWhitening
 import Theorems.Thm_BookProof_ChapterSirkWhitening_rangeProj_eq_of_range_eq
 import Theorems.Thm_BookProof_ChapterSirkWhitening_compress_reconstruct_eq
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
 
 

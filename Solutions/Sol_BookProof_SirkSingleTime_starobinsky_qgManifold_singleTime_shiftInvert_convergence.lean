@@ -2,7 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
-open BookProof.SirkSingleTime
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
 
 
 
@@ -46,18 +52,15 @@ variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [
 
 
 
-open BookProof.QgTruncationResolvent BookProof.FarisLavine BookProof.EsaClosure
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.FarisLavine BookProof.EsaClosure
 
 variable {ι : Type*}
 
 
 
 
-open BookProof.QgContinuumModeInstance
 
 
-open BookProof.QgManifoldModeInstance
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ)

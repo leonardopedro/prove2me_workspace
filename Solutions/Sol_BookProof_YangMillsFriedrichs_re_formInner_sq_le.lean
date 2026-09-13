@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_nonneg
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_add_smul
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

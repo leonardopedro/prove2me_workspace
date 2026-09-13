@@ -1,6 +1,8 @@
 -- Generated from ChapterHermiteProductBasis.lean — solution of BookProof.HermiteProductBasis.crePoly_apply
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductBasis
 
 

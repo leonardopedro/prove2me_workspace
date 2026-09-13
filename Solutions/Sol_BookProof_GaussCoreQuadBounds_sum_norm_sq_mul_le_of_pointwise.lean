@@ -4,6 +4,10 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_re_mono
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_sq
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_eval_cpoly_self_re
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.GaussCoreQuadBounds
 
 

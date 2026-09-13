@@ -84,7 +84,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 
 
-open scoped InnerProductSpace ENNReal
+open scoped ENNReal InnerProductSpace lp
 
 theorem BookProof.HashimotoShiftInvert.ell2ShiftInvert_resolventPre {γ : ℂ} (hγ : γ.im ≠ 0) (u : ℓ²(ℕ, ℂ)) :
     ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolvent hγ u := by sorry

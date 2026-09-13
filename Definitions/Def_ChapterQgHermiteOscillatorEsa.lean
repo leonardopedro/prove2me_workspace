@@ -56,6 +56,9 @@ remains open, as does target 2 (which needs restating) and target 3.
 namespace BookProof.QgHermiteOscillator
 
 open MeasureTheory Complex MvPolynomial
+open BookProof.QgHermiteCore
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
 
 noncomputable section
 

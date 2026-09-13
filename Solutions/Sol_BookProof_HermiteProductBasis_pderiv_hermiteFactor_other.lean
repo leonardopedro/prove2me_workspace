@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_aeval_other
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductBasis
 
 

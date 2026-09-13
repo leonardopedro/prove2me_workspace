@@ -1,6 +1,8 @@
 -- Generated from ChapterH1.lean — solution of BookProof.ChapterH1.phi_at_zero
 import Mathlib
 import Definitions.Def_ChapterH1
+import Theorems.Thm_BookProof_ChapterH1_phi_succ_apply
+import Theorems.Thm_BookProof_ChapterH1_phi_zero_apply
 open BookProof.ChapterH1
 
 

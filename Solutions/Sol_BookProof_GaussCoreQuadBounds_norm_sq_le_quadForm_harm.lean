@@ -4,6 +4,11 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_sq
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_coreD_X_comm
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.GaussCoreQuadBounds
 
 

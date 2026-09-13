@@ -1,6 +1,11 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — solution of BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.GaussCoreQuadBounds
 
 

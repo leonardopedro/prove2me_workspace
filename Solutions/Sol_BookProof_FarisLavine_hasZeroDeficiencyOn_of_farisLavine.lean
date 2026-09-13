@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.FarisLavine
 
 

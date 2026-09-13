@@ -1,6 +1,10 @@
 -- Generated from ChapterFriedrichsFormGap.lean — solution of BookProof.FriedrichsFormGap.formSpace_norm_bound
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FriedrichsFormGap
 
 

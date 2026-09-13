@@ -1,6 +1,11 @@
 -- Generated from ChapterSirkEndToEnd.lean — solution of BookProof.ChapterSirkEndToEnd.crouzeix_domain_transfer
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
+import Theorems.Thm_BookProof_ChapterH9_numRange_compress_subset
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkEndToEnd
 
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxEquiv_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_apply
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 

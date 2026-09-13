@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_hasZe
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drive
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_constraint_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder_hasZeroDeficiencyOn
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -28,7 +33,7 @@ open Filter Topology
 
 
 
-open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open FullEsa LagrangianEsa BookProof.FarisLavine
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 

@@ -17,6 +17,8 @@ noncomputable section
 open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
+open BookProof.ChapterSirkEndToEnd
+open BookProof.ChapterH6
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

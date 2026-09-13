@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
 

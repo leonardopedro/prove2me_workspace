@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 import Theorems.Thm_BookProof_SirkBandLedger_Decimal_leB_iff
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.SirkBandLedger
 
 

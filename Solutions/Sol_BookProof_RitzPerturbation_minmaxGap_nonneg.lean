@@ -1,6 +1,10 @@
 -- Generated from ChapterSirkRitzPerturbation.lean — solution of BookProof.RitzPerturbation.minmaxGap_nonneg
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
+import Theorems.Thm_BookProof_RitzMinMax_minmaxLevel_mono
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

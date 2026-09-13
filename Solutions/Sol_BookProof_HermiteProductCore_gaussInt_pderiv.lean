@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_HermiteProductCore_gaussMoment_succ
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_monomial
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

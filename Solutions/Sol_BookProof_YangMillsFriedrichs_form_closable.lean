@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_nonneg
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formInner_add_right
 import Theorems.Thm_BookProof_YangMillsFriedrichs_re_formInner_sq_le
 import Theorems.Thm_BookProof_YangMillsFriedrichs_formNormSq_add_le
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

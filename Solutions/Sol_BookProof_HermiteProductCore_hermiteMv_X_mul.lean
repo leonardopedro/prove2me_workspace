@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteFactor_X_mul
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_erase
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

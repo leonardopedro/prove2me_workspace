@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkRitzMinMax.lean — solution of BookProof.RitzMinMax.finrank_galerkinSpan
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

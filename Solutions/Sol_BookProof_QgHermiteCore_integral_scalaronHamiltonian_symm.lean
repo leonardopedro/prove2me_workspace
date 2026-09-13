@@ -4,6 +4,8 @@ import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_integral_hamiltonian_symm
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

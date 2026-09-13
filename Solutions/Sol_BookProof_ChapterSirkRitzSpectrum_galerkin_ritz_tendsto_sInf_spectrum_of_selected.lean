@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.ChapterSirkRitzSpectrum
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs

@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkCertifiedGap.lean — solution of BookProof.SirkCertifiedGap.certified_parity_gap
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
 
 

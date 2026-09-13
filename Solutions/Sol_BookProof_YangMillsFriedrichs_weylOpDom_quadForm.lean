@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 import Theorems.Thm_BookProof_YangMillsFriedrichs_inner_sq_eq_normSq
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 

@@ -19,6 +19,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

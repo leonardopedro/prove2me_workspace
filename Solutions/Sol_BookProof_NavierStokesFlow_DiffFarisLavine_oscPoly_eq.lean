@@ -1,6 +1,10 @@
 -- Generated from ChapterNavierStokesDiffFarisLavine.lean — solution of BookProof.NavierStokesFlow.DiffFarisLavine.oscPoly_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 

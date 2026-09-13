@@ -1,8 +1,14 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.PolySym.comp_adj
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-open BookProof.YangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.YangMillsHermite.PolySym
+open BookProof.YangMillsHermite
 
 
 

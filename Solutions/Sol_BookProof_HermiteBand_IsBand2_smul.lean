@@ -3,8 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 import Theorems.Thm_BookProof_HermiteBand_Band_smul
 import Theorems.Thm_BookProof_HermiteBand_IsBand1_smul
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBand
-open BookProof.HermiteBand.IsBand2
 
 
 
@@ -43,7 +46,7 @@ variable {d : ℕ}
 
 
 
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
+open BookProof.NavierStokesFlow.DifferentialL2
 
 set_option maxHeartbeats 1000000 in
 theorem solution {T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ} (c : ℂ)

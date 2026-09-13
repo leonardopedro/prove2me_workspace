@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_minmaxSet_zero_eq_rayleighSet
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
 
 

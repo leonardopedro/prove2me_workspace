@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_FarisLavine_mulSymbolOp_symmetric
 import Theorems.Thm_BookProof_FarisLavine_mulComparison_nonneg
 import Theorems.Thm_BookProof_FarisLavine_mulHamiltonian_commForm
 import Theorems.Thm_BookProof_FarisLavine_mulComparison_surjective
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.FarisLavine
 
 

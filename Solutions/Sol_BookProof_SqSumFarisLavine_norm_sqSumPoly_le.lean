@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_sqSumPoly_apply
 import Theorems.Thm_BookProof_SqSumFarisLavine_norm_potPoly_mul_le
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_shiftNorm_nonneg
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterFarisLavine
 open BookProof.SqSumFarisLavine
 
 

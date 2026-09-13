@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 import Theorems.Thm_BookProof_SirkCertifiedGap_certified_parity_gap
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
 
 

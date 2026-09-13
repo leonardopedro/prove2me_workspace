@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteCx_zero
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
 
 

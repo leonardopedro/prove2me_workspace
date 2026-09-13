@@ -28253,3 +28253,360 @@ c : Fin 3 → ℝ
 13:30:17 chunk: 2 item(s) resolved in 137s, 48 still in flight (re-polled next run)
 13:30:24 sync: read 204 definition publish job(s)
 13:30:35 sync: read 3630 problem publish job(s)
+13:31:11 sync: read 204 definition publish job(s)
+13:31:21 sync: read 3630 problem publish job(s)
+13:31:21 submitting def:ChapterQgTruncationResolvent (attempt 3)
+13:31:21 def:ChapterQgTruncationResolvent: accepted, waiting on the compiler
+13:31:21 submitting def:ChapterQgCouplingDGammaSum (attempt 4)
+13:31:21 def:ChapterQgCouplingDGammaSum: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_continuous_confW (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_continuous_confW: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_continuous_sectorQuadW (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_continuous_sectorQuadW: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_coreD_X_mul (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_coreD_X_mul: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_cpoly_add (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_cpoly_add: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_cpoly_harmPoly (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_cpoly_harmPoly: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_expBounded_of_le_harm (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_expBounded_of_le_harm: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_gaussInt_self (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_gaussInt_self: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_hamCore_congr (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_hamCore_congr: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_norm_sq_one (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_norm_sq_one: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_norm_sq_two (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_norm_sq_two: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_pderiv_harmPoly (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_pderiv_harmPoly: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_gaussInt_cross (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_gaussInt_cross: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_gaussInt_harm_self (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_gaussInt_harm_self: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_abs_coord_le_norm (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_abs_coord_le_norm: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le: accepted, waiting on the compiler
+13:31:21 submitting thm:BookProof_HermiteQuadraticEsa_gaussInt_anticommutator (attempt 1)
+13:31:21 thm:BookProof_HermiteQuadraticEsa_gaussInt_anticommutator: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_expBounded_confW (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_expBounded_confW: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_confV_stone_flow (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_confV_stone_flow: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:22 submitting thm:BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow (attempt 1)
+13:31:22 thm:BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 2)
+13:31:22 sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 2)
+13:31:22 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa (attempt 4)
+13:31:22 sol:BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply (attempt 1)
+13:31:22 sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+13:31:22 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 1)
+13:31:22 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_StoneBridge_isStoneFlow_stoneU (attempt 1)
+13:31:22 sol:BookProof_StoneBridge_isStoneFlow_stoneU: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ (attempt 1)
+13:31:22 sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_FarisLavine_mulHamiltonian_commForm (attempt 5)
+13:31:22 sol:BookProof_FarisLavine_mulHamiltonian_commForm: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_apply_eq (attempt 1)
+13:31:22 sol:BookProof_HashimotoShiftInvert_IsShiftInvertC_apply_eq: WAIT (theorem not published yet)
+13:31:22 submitting sol:BookProof_HermiteRelative_coreOp_sum (attempt 4)
+13:31:22 sol:BookProof_HermiteRelative_coreOp_sum: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_HermiteRelative_polySym_momPoly (attempt 4)
+13:31:22 sol:BookProof_HermiteRelative_polySym_momPoly: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_HermiteRelative_polySym_mulXPoly (attempt 4)
+13:31:22 sol:BookProof_HermiteRelative_polySym_mulXPoly: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_fieldPoly (attempt 4)
+13:31:22 sol:BookProof_NavierStokesFlow_DiffHashimoto_coreOp_fieldPoly: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_fieldPoly_polySym (attempt 4)
+13:31:22 sol:BookProof_NavierStokesFlow_DiffHashimoto_fieldPoly_polySym: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_eq (attempt 4)
+13:31:22 sol:BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_eq: accepted, waiting on the compiler
+13:31:22 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift_not_bounded (attempt 4)
+13:31:22 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+13:31:23 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift_not_bounded: accepted, waiting on the compiler
+13:31:23 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder_hasZeroDeficiencyOn (attempt 4)
+13:31:24 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder_hasZeroDeficiencyOn: accepted, waiting on the compiler
+13:31:24 def:ChapterQgTruncationResolvent: FAIL (publish FAILED: definition does not compile: line 15: unexpected token 'end'; expected ':=', 'where' or '|')
+13:31:24 def:ChapterQgCouplingDGammaSum: FAIL (publish FAILED: definition does not compile: line 14: unexpected token 'def'; expected ':=', 'where' or '|'; line 16: unexpected token 'def'; expected)
+13:31:25 thm:BookProof_HermiteQuadraticEsa_continuous_confW: DONE
+13:31:25 thm:BookProof_HermiteQuadraticEsa_continuous_sectorQuadW: DONE
+13:31:25 thm:BookProof_HermiteQuadraticEsa_coreD_X_mul: DONE
+13:31:25 thm:BookProof_HermiteQuadraticEsa_cpoly_add: DONE
+13:31:26 thm:BookProof_HermiteQuadraticEsa_cpoly_harmPoly: DONE
+13:31:26 thm:BookProof_HermiteQuadraticEsa_expBounded_of_le_harm: DONE
+13:31:26 thm:BookProof_HermiteQuadraticEsa_gaussInt_self: DONE
+13:31:26 thm:BookProof_HermiteQuadraticEsa_hamCore_congr: DONE
+13:31:27 thm:BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm: DONE
+13:31:27 thm:BookProof_HermiteQuadraticEsa_norm_sq_two: DONE
+13:31:27 thm:BookProof_HermiteQuadraticEsa_pderiv_harmPoly: DONE
+13:31:43 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_hashimoto_selects (attempt 4)
+13:31:44 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_hashimoto_selects: accepted, waiting on the compiler
+13:31:44 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_norm_P_sq_le (attempt 4)
+13:31:44 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_norm_P_sq_le: accepted, waiting on the compiler
+13:31:44 submitting sol:BookProof_NavierStokesFlow_single_mem_finiteModes (attempt 3)
+13:31:45 sol:BookProof_NavierStokesFlow_single_mem_finiteModes: accepted, waiting on the compiler
+13:31:45 submitting sol:BookProof_QgHermiteFriedrichs_conj_polyEval (attempt 3)
+13:31:46 sol:BookProof_QgHermiteFriedrichs_conj_polyEval: accepted, waiting on the compiler
+13:31:46 submitting sol:BookProof_QgHermiteOscillator_hamCore_add_potential (attempt 3)
+13:31:46 sol:BookProof_QgHermiteOscillator_hamCore_add_potential: accepted, waiting on the compiler
+13:31:46 submitting sol:BookProof_QgHermiteOscillator_potCore_symmetricOn (attempt 3)
+13:31:47 sol:BookProof_QgHermiteOscillator_potCore_symmetricOn: accepted, waiting on the compiler
+13:31:47 submitting sol:BookProof_QgHermiteOscillator_crePoly_annPoly_hermiteMv (attempt 3)
+13:31:48 sol:BookProof_QgHermiteOscillator_crePoly_annPoly_hermiteMv: accepted, waiting on the compiler
+13:31:48 submitting sol:BookProof_SirkCertifiedGap_sectorGround_ge_temple (attempt 3)
+13:31:49 sol:BookProof_SirkCertifiedGap_sectorGround_ge_temple: accepted, waiting on the compiler
+13:31:49 submitting sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 1)
+13:31:49 sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp: WAIT (theorem not published yet)
+13:31:49 submitting sol:BookProof_StoneBridge_exists_stone_flow_of_esa (attempt 3)
+13:31:49 sol:BookProof_StoneBridge_exists_stone_flow_of_esa: accepted, waiting on the compiler
+13:31:49 submitting sol:BookProof_StoneBridge_exists_stone_flow_of_selfAdjointExtension (attempt 3)
+13:31:51 sol:BookProof_StoneBridge_exists_stone_flow_of_selfAdjointExtension: accepted, waiting on the compiler
+13:31:51 submitting sol:BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded (attempt 3)
+13:31:51 sol:BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded: accepted, waiting on the compiler
+13:31:51 submitting sol:BookProof_FarisLavine_mulHamiltonian_essentiallySelfAdjoint (attempt 3)
+13:31:52 sol:BookProof_FarisLavine_mulHamiltonian_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:31:52 submitting sol:BookProof_HashimotoShiftInvert_ell2Resolvent_isShiftInvertC (attempt 3)
+13:31:53 sol:BookProof_HashimotoShiftInvert_ell2Resolvent_isShiftInvertC: accepted, waiting on the compiler
+13:31:53 thm:BookProof_HermiteQuadraticEsa_norm_sq_one: DONE
+13:31:53 thm:BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq: DONE
+13:31:54 thm:BookProof_HermiteQuadraticEsa_gaussInt_cross: DONE
+13:31:54 thm:BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound: DONE
+13:31:54 thm:BookProof_HermiteQuadraticEsa_gaussInt_harm_self: DONE
+13:31:54 thm:BookProof_HermiteQuadraticEsa_abs_coord_le_norm: DONE
+13:31:54 thm:BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two: DONE
+13:31:55 thm:BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le: DONE
+13:32:12 submitting sol:BookProof_HermiteRelative_polySym_sum (attempt 3)
+13:32:13 sol:BookProof_HermiteRelative_polySym_sum: accepted, waiting on the compiler
+13:32:13 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_eq_coreOp (attempt 3)
+13:32:14 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_eq_coreOp: accepted, waiting on the compiler
+13:32:14 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffPoly_polySym (attempt 3)
+13:32:14 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffPoly_polySym: accepted, waiting on the compiler
+13:32:14 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_shiftInvert_selects (attempt 3)
+13:32:15 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_shiftInvert_selects: accepted, waiting on the compiler
+13:32:15 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_diag (attempt 3)
+13:32:16 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_diag: accepted, waiting on the compiler
+13:32:16 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_diag_tower (attempt 3)
+13:32:17 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_diag_tower: accepted, waiting on the compiler
+13:32:17 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_pair (attempt 3)
+13:32:17 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_pair: accepted, waiting on the compiler
+13:32:17 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_rot (attempt 3)
+13:32:19 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_rot: accepted, waiting on the compiler
+13:32:19 thm:BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul: DONE
+13:32:19 thm:BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le: DONE
+13:32:19 thm:BookProof_HermiteQuadraticEsa_gaussInt_anticommutator: DONE
+13:32:19 thm:BookProof_HermiteQuadraticEsa_expBounded_confW: DONE
+13:32:20 thm:BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge: DONE
+13:32:38 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_shear (attempt 3)
+13:32:39 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_coord_shear: accepted, waiting on the compiler
+13:32:39 submitting sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_bounded_symmetric (attempt 2)
+13:32:39 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_bounded_symmetric: accepted, waiting on the compiler
+13:32:39 submitting sol:BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes (attempt 3)
+13:32:40 sol:BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes: accepted, waiting on the compiler
+13:32:40 submitting sol:BookProof_QgHermiteFriedrichs_hasDerivAt_polyEval_coordLine (attempt 2)
+13:32:40 sol:BookProof_QgHermiteFriedrichs_hasDerivAt_polyEval_coordLine: accepted, waiting on the compiler
+13:32:40 submitting sol:BookProof_QgHermiteOscillator_harmCore_pgLp (attempt 2)
+13:32:40 sol:BookProof_QgHermiteOscillator_harmCore_pgLp: accepted, waiting on the compiler
+13:32:40 thm:BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW: DONE
+13:32:40 thm:BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le: DONE
+13:32:40 thm:BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le: DONE
+13:32:41 thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint: DONE
+13:32:41 thm:BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow: DONE
+13:32:50 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_bounded_symmetric: FAIL (verdict CE: Compile error in your proof:
+line 38: Unknown identifier `symmetric_hasZeroDeficiency`
+line 40: Unknown identifier `symmetric_hasZeroDefic)
+13:32:50 sol:BookProof_QgHermiteFriedrichs_hasDerivAt_polyEval_coordLine: FAIL (verdict ERROR: Failed to resolve platform imports: Import parser timed out after 5s)
+13:32:51 sol:BookProof_QgHermiteOscillator_harmCore_pgLp: FAIL (verdict CE: Compile error in your proof:
+line 49: Unknown identifier `hamCore_pgLp`
+line 46: unsolved goals
+d : ℕ
+p : MvPolynomial (Fin d) ℂ
+⊢ (hamCor)
+13:32:59 submitting sol:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 1)
+13:32:59 sol:BookProof_SqSumFarisLavine_commForm_eq_im: WAIT (theorem not published yet)
+13:32:59 submitting sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 1)
+13:32:59 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: WAIT (theorem not published yet)
+13:32:59 submitting sol:BookProof_Starobinsky_qgR2_stone_flow (attempt 2)
+13:32:59 sol:BookProof_Starobinsky_qgR2_stone_flow: accepted, waiting on the compiler
+13:32:59 submitting sol:BookProof_StoneBridge_exists_stone_flow_of_positive (attempt 2)
+13:32:59 sol:BookProof_StoneBridge_exists_stone_flow_of_positive: accepted, waiting on the compiler
+13:32:59 submitting sol:BookProof_HashimotoShiftInvert_sirkDen_rkVec (attempt 2)
+13:33:00 sol:BookProof_HashimotoShiftInvert_sirkDen_rkVec: accepted, waiting on the compiler
+13:33:00 submitting sol:BookProof_HermiteProductBasis_annPoly_hermiteMvLp (attempt 1)
+13:33:00 sol:BookProof_HermiteProductBasis_annPoly_hermiteMvLp: accepted, waiting on the compiler
+13:33:00 submitting sol:BookProof_HermiteProductBasis_crePoly_hermiteMv (attempt 1)
+13:33:00 sol:BookProof_HermiteProductBasis_crePoly_hermiteMv: accepted, waiting on the compiler
+13:33:00 submitting sol:BookProof_HermiteRelative_re_inner_oscL_le_quadOp (attempt 1)
+13:33:00 sol:BookProof_HermiteRelative_re_inner_oscL_le_quadOp: accepted, waiting on the compiler
+13:33:00 submitting sol:BookProof_HermiteRelative_polySym_foPoly (attempt 2)
+13:33:01 sol:BookProof_HermiteRelative_polySym_foPoly: accepted, waiting on the compiler
+13:33:01 submitting sol:BookProof_HermiteRelative_re_inner_oscL_eq (attempt 1)
+13:33:01 sol:BookProof_HermiteRelative_re_inner_oscL_eq: accepted, waiting on the compiler
+13:33:01 thm:BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic: DONE
+13:33:01 thm:BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint: DONE
+13:33:02 thm:BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint: DONE
+13:33:02 thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint: FAIL (publish FAILED: formal statement does not compile: line 29: Unknown identifier `continuous_confW`
+
+Note: It is not possible to treat `continuous_confW)
+13:33:02 thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint: FAIL (publish FAILED: formal statement does not compile: line 30: Unknown identifier `continuous_sectorQuadW`
+
+Note: It is not possible to treat `continuous)
+13:33:10 sol:BookProof_Starobinsky_qgR2_stone_flow: FAIL (verdict CE: Compile error in your proof:
+line 61: Unknown identifier `exists_stone_flow_of_esa`)
+13:33:10 sol:BookProof_HermiteProductBasis_annPoly_hermiteMvLp: FAIL (verdict CE: Compile error in your proof:
+line 30: Ambiguous term
+  pgMap_apply
+Possible interpretations:
+  BookProof.HermiteProductCore.pgMap_apply : )
+13:33:11 sol:BookProof_HermiteProductBasis_crePoly_hermiteMv: DONE
+13:33:11 sol:BookProof_HermiteRelative_re_inner_oscL_le_quadOp: FAIL (verdict CE: Compile error in your proof:
+line 70: Unknown identifier `quadOp_hermiteMvLp`
+line 71: Type mismatch: After simplification, term
+  hmain
+ )
+13:33:11 sol:BookProof_HermiteRelative_re_inner_oscL_eq: DONE
+13:33:19 submitting sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_symmetricOn (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_symmetricOn: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_norm_sum_P_le (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_norm_sum_P_le: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_not_bounded (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_not_bounded: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_strain (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_strain: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_vorticity (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_vorticity: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn_of_flow (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn_of_flow: accepted, waiting on the compiler
+13:33:19 submitting sol:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes (attempt 1)
+13:33:19 sol:BookProof_NavierStokesFlow_continuityHamiltonian_hasZeroDeficiencyOn_finiteModes: WAIT (theorem not published yet)
+13:33:19 submitting sol:BookProof_QgHermiteFriedrichs_hasDerivAt_gaussD_coordLine (attempt 1)
+13:33:19 sol:BookProof_QgHermiteFriedrichs_hasDerivAt_gaussD_coordLine: accepted, waiting on the compiler
+13:33:20 submitting sol:BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp (attempt 1)
+13:33:20 sol:BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp: accepted, waiting on the compiler
+13:33:20 submitting sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly_left (attempt 1)
+13:33:20 sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly_left: accepted, waiting on the compiler
+13:33:20 submitting sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly (attempt 1)
+13:33:20 sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly: accepted, waiting on the compiler
+13:33:20 thm:BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint: DONE
+13:33:20 thm:BookProof_HermiteQuadraticEsa_confV_stone_flow: FAIL (publish FAILED: formal statement does not compile: line 30: Unknown identifier `continuous_confW`
+
+Note: It is not possible to treat `continuous_confW)
+13:33:21 sol:BookProof_FarisLavine_mulHamiltonian_commForm: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_FarisLavine_conj_mul_ofReal₂. No such theorem exists in this Lean environment (mathlib 0df444a))
+13:33:28 sol:BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 47: Unknown identifier `symmetricOn_of_polySym`
+line 45: unsolved goals
+A : Matrix (Fin 3) (Fin 3) ℝ
+c :)
+13:33:28 sol:BookProof_NavierStokesFlow_LagrangianKatoRellich_norm_sum_P_le: DONE
+13:33:29 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_not_bounded: DONE
+13:33:29 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_strain: DONE
+13:33:29 sol:BookProof_NavierStokesFlow_ThreeComponent_velH_ne_zero_of_vorticity: DONE
+13:33:29 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn_of_flow: DONE
+13:33:29 sol:BookProof_QgHermiteFriedrichs_hasDerivAt_gaussD_coordLine: DONE
+13:33:30 sol:BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp: DONE
+13:33:30 sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly_left: DONE
+13:33:30 sol:BookProof_QgHermiteFriedrichs_gaussInt_kinPoly: DONE
+13:33:38 summary: 2567 done, 185 pending, 66 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+13:33:38 waiting on unpublished def bundle(s): ChapterFiniteSectionSingleTime (1 item(s)), ChapterFullQuadraticEsa (2 item(s)), ChapterHermiteBandCalculus (2 item(s)), ChapterHermiteBandCalculusHigher (1 item(s)), ChapterQgOuterFockFarisLavine (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQuadraticFockEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianEsa (1 item(s))
+13:33:38 chunk: 57 item(s) resolved in 137s, 37 still in flight (re-polled next run)

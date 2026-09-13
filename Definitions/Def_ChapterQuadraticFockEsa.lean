@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterHermiteBandCalculus
 import Mathlib
 
 import Mathlib
@@ -51,7 +52,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.QuadFockEsa
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur
+open BookProof.HermiteBand
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

@@ -78,6 +78,60 @@ STOP = {
 }
 
 
+def _components(ns):
+    return ns.split(".")
+
+
+def comp_alias(a, b):
+    """`a` and `b` name the same namespace up to the generator's `Chapter`
+    infix: `BookProof.CarlemanSimplex` vs `BookProof.ChapterCarlemanSimplex`.
+
+    The generator names some bundles `BookProof.Chapter<Leaf>` where the source
+    (and every consumer) says `BookProof.<Leaf>`, so an `open BookProof.X` has no
+    provider even though the content was published.  Same arity, and every
+    component equal or differing by exactly one `Chapter` prefix.
+    """
+    ca, cb = _components(a), _components(b)
+    if len(ca) != len(cb):
+        return False
+    for x, y in zip(ca, cb):
+        if x == y or x == "Chapter" + y or y == "Chapter" + x:
+            continue
+        return False
+    return True
+
+
+def load_platform_index():
+    """state/defs_index.json (debug/platform_def_index.py): what the platform's
+    PUBLISHED definition modules actually declare.  Authoritative -- the local
+    Def_*.lean can be an empty placeholder for a live module."""
+    try:
+        return json.load(open(f"{WS}/state/defs_index.json", encoding="utf-8"))
+    except Exception:
+        return None
+
+
+SRC_CACHE = {}
+
+
+def source_decls(chapter):
+    """Names declared by the SOURCE chapter `BookProof/Chapter<chapter>.lean`.
+
+    Used to prove that dropping an `open` is safe: if none of the names the
+    source declares in that namespace occur in the bundle body, the `open` was
+    decorative (the generator copies the source's open list verbatim).
+    """
+    if chapter in SRC_CACHE:
+        return SRC_CACHE[chapter]
+    out = set()
+    path = f"{PROJ}/BookProof/Chapter{chapter}.lean"
+    if os.path.exists(path):
+        txt = open(path, encoding="utf-8", errors="replace").read()
+        out = {m.split(".")[0] for m in DECL.findall(txt)}
+    SRC_CACHE[chapter] = out
+    return out
+
+
 def spec_state():
     spec = json.load(open(f"{WS}/pipeline/wave_upload.json"))
     try:
@@ -127,14 +181,24 @@ def regenerate(leaves):
     return r.returncode
 
 
-def resolve(text, leaf, published, idx):
-    """Imports for every external declaration the regenerated body references."""
+def resolve(text, leaf, published, idx, plat_leaf=None):
+    """Imports for every external declaration the regenerated body references.
+
+    The platform index (`state/defs_index.json`) wins over the local files: an
+    identifier the server already publishes must be imported from the module
+    that really declares it, even when the local Def_*.lean is a placeholder.
+    """
     own = {m.split(".")[0] for m in DECL.findall(text)}
     used = {t for t in TOKEN.findall(text) if len(t) > 2 and t not in STOP}
     need = {}
     dropped = {}
     for name in sorted(used - own):
-        hit = idx.get(name)
+        hit = None
+        pb = (plat_leaf or {}).get(name)
+        if pb:
+            hit = (pb, "?")
+        if hit is None:
+            hit = idx.get(name)
         if not hit:
             continue
         bundle, ns = hit
@@ -165,30 +229,89 @@ def ns_index():
     return out
 
 
-def open_imports(text, leaf, published, nsidx):
-    """Every `open BookProof.X` must be declared by a module the bundle imports
-    DIRECTLY (PIPELINE_PLAN 1e), so an opened namespace whose declaring bundle
-    is not imported has to pull that bundle in.  Returns (need, no_provider)."""
+def open_imports(text, leaf, published, nsidx, plat=None, body_only=None):
+    """Resolve every `open BookProof.X` the way the server will.
+
+    A namespace must be declared by a module the bundle imports DIRECTLY
+    (PIPELINE_PLAN 1e), so an opened namespace whose declaring bundle is not
+    imported has to pull that bundle in.  Three outcomes per open:
+
+    * `import Definitions.Def_<owner>` when a published bundle declares it;
+    * **ALIASED** -- the generator's synthetic `BookProof.Chapter<Leaf>` name is
+      rewritten to the name the source and the consumers use;
+    * **DROPPED** -- nothing declares it and no declaration of the source chapter
+      is used in the body (a decorative open copied from the source's header);
+      reported as BLOCKING instead when the body does use one.
+
+    Returns (need, no_provider, rewritten_text, aliased, dropped, blocking).
+    """
+    owners = {ns: b for ns, b in nsidx.items() if b != leaf}
+    if plat:
+        for ns, b in plat.get("namespace_owner", {}).items():
+            if b != leaf:
+                owners.setdefault(ns, b)
+    # The file being replaced must not vouch for its own namespaces: the current
+    # bundle may be a self-contained blob that declares them, while the
+    # regenerated body this resolution is for does not.  Only what the
+    # regenerated text itself declares counts as "own".
+    for ns in NS.findall(text):
+        owners[ns.rstrip(",")] = leaf
     need, missing = {}, set()
+    aliased, dropped, blocking = {}, {}, set()
+    out = []
     for line in text.split("\n"):
         s = line.strip()
         if not (s.startswith("open ") or s.startswith("open scoped ")):
+            out.append(line)
             continue
-        body = s[len("open scoped "):] if s.startswith("open scoped ") else s[len("open "):]
-        for tok in body.split():
+        prefix = "open scoped " if s.startswith("open scoped ") else "open "
+        kept = []
+        for tok in s[len(prefix):].split():
             if not tok.startswith("BookProof"):
+                kept.append(tok)
                 continue
             best = None
-            for ns in nsidx:
+            for ns in owners:
                 if (tok == ns or tok.startswith(ns + ".")) and (best is None or len(ns) > len(best)):
                     best = ns
+            newtok = tok
             if best is None:
-                missing.add(tok)
-            elif nsidx[best] != leaf and nsidx[best] in published:
-                need[nsidx[best]] = best
-            elif nsidx[best] != leaf:
-                missing.add(tok)
-    return need, missing
+                cands = [ns for ns in owners if comp_alias(tok, ns)]
+                if cands:
+                    best = max(cands, key=len)
+                    newtok = best
+                    aliased[tok] = best
+            if best is None:
+                # No provider under any spelling.  Safe to drop only if the body
+                # never names anything that chapter declares.
+                blob = body_only or text
+                used = {n for n in source_decls(best_leaf_guess(tok))
+                        if re.search(r"(?<![A-Za-z0-9_'])" + re.escape(n)
+                                     + r"(?![A-Za-z0-9_'])", blob)}
+                if used:
+                    blocking.add(tok)
+                    kept.append(tok)
+                else:
+                    dropped[tok] = "no provider; no name from it is used"
+                continue
+            owner = owners[best]
+            if owner == leaf:
+                kept.append(newtok)
+            elif owner in published:
+                need.setdefault(owner, best)
+                kept.append(newtok)
+            else:
+                missing.add(newtok)
+                kept.append(newtok)
+        if kept:
+            out.append(prefix + " ".join(kept))
+    return need, missing, "\n".join(out), aliased, dropped, blocking
+
+
+def best_leaf_guess(ns):
+    """`BookProof.Book.ChapterFoo` -> `Foo`, for the source-declaration check."""
+    leaf = ns.split(".")[-1]
+    return leaf[len("Chapter"):] if leaf.startswith("Chapter") else leaf
 
 
 def insert_imports(text, bundles, idx):
@@ -222,6 +345,20 @@ def main():
     except Exception:
         published = {d for d in spec if items.get("def:" + d, {}).get("status") == "done"}
         print("WARNING: state/defs_published.json missing -- using local state only")
+    # Platform ground truth (debug/platform_def_index.py).  A bundle whose newest
+    # job FAILED may still be live from an earlier PUBLISHED run (PIPELINE_PLAN
+    # 1e), so this widens the set rather than replacing it.
+    plat = load_platform_index()
+    if plat:
+        plat_leaf = plat.get("name_owner") or None
+        plat_pub = {b for b, v in plat.get("bundles", {}).items()
+                    if v.get("status") == "PUBLISHED"}
+        published |= plat_pub
+        print(f"platform index: {len(plat_pub)} PUBLISHED bundle(s), "
+              f"{len(plat_leaf or {})} declaration name(s)")
+    else:
+        plat_leaf = None
+        print("WARNING: state/defs_index.json missing -- resolving from local files only")
 
     if only:
         leaves = list(only)          # explicit list: re-process even if no longer hollow
@@ -257,15 +394,23 @@ def main():
         text = open(src, encoding="utf-8").read()
         bare = BARE.findall(text)
         nsn = NS.search(text)
-        need, dropped = resolve(text, leaf, published, idx)
-        onames, missing = open_imports(text, leaf, published, NSIDX)
+        need, dropped = resolve(text, leaf, published, idx, plat_leaf)
+        onames, missing, text_a, aliased, dropped_opens, blocking = open_imports(
+            text, leaf, published, NSIDX, plat)
         for b, ns in onames.items():
             need.setdefault(b, ns)
-        text2, added = insert_imports(text, need, idx)
+        text2, added = insert_imports(text_a, need, idx)
         print(f"\n  {leaf}")
         print(f"    lines={len(text.splitlines())} namespace={nsn.group(1) if nsn else '?'} "
               f"bare_headers={len(bare)}")
         print(f"    imports added : {added or '(none)'}")
+        for tok, ns in sorted(aliased.items()):
+            print(f"    ALIASED OPEN  : {tok} -> {ns}")
+        for tok, why in sorted(dropped_opens.items()):
+            print(f"    DROPPED OPEN  : {tok} ({why})")
+        if blocking:
+            print(f"    BLOCKING OPEN : {sorted(blocking)}  (namespace has no provider and "
+                  f"its declarations ARE used -- regenerate its bundle first)")
         for b, (names, ns) in sorted(dropped.items()):
             print(f"    NOT PUBLISHED : {b} <- {sorted(names)[:5]}  (import omitted)")
         if missing:

@@ -29900,3 +29900,73 @@ a : Fin d →₀ ℕ
 15:39:33 def:ChapterFullQuadraticEsa: accepted, waiting on the compiler
 15:41:42 summary: 124 done, 15 pending, 2 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
 15:41:42 chunk: 0 item(s) resolved in 137s, 1 still in flight (re-polled next run)
+15:42:38 sync: read 213 definition publish job(s)
+15:42:48 sync: read 3643 problem publish job(s)
+15:42:48 submitting def:ChapterFullQuadraticEsa (attempt 2)
+15:42:48 def:ChapterFullQuadraticEsa: accepted, waiting on the compiler
+15:42:49 submitting def:ChapterQgTruncationResolvent (attempt 2)
+15:42:56 def:ChapterQgTruncationResolvent: accepted, waiting on the compiler
+15:42:56 submitting def:ChapterQgCouplingDGammaSum (attempt 2)
+15:43:05 def:ChapterQgCouplingDGammaSum: accepted, waiting on the compiler
+15:43:14 def:ChapterFullQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 2351: Type mismatch: After simplification, term
+  Integrable.add hp hq
+ has type
+  @Integrable ℝ Pse)
+15:43:32 def:ChapterQgTruncationResolvent: FAIL (publish FAILED: definition does not compile: line 64: unknown namespace `BookProof.QgOuterFockCoreFL`; line 65: unknown namespace `BookProof.ScalaronE)
+15:43:49 def:ChapterQgCouplingDGammaSum: FAIL (publish FAILED: definition does not compile: line 178: Unknown constant `dGammaOp_finsetSum_col_eq`; line 179: Unknown constant `coupling_friedrichs`;)
+15:43:49 summary: 124 done, 15 pending, 2 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:43:49 waiting on unpublished def bundle(s): ChapterFullQuadraticEsa (2 item(s)), ChapterHermiteBandCalculusHigher (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQuadraticFockEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s))
+15:43:49 chunk: 3 item(s) resolved in 60s
+15:45:05 sync: read 215 definition publish job(s)
+15:45:16 sync: read 3643 problem publish job(s)
+15:45:16 submitting def:ChapterHermiteBandCalculusHigher (attempt 3)
+15:45:24 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+15:46:12 sync: read 216 definition publish job(s)
+15:46:23 sync: read 3643 problem publish job(s)
+15:46:23 submitting def:ChapterHermiteBandCalculusHigher (attempt 3)
+15:46:23 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+15:46:23 def:ChapterHermiteBandCalculusHigher: FAIL (publish FAILED: definition does not compile: line 50: unknown namespace `BookProof.HermiteBand`; line 90: Unknown identifier `Band`)
+15:46:23 summary: 124 done, 15 pending, 2 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:46:23 waiting on unpublished def bundle(s): ChapterFullQuadraticEsa (1 item(s))
+15:46:23 chunk: 1 item(s) resolved in 0s
+16:20:01 sync: read 216 definition publish job(s)
+16:20:13 sync: read 3643 problem publish job(s)
+16:20:37 sync: read 216 definition publish job(s)
+16:20:49 sync: read 3643 problem publish job(s)
+16:21:03 sync: read 216 definition publish job(s)
+16:21:15 sync: read 3643 problem publish job(s)
+16:22:54 sync: read 216 definition publish job(s)
+16:23:06 sync: read 3643 problem publish job(s)
+16:23:06 processing def:ChapterFullQuadraticEsa (attempt 3)
+16:23:06 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+16:25:27 def:ChapterFullQuadraticEsa: DONE
+16:25:27 summary: 2592 done, 158 pending, 68 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+16:25:27 chunk: 1 item(s) processed in 142s
+16:25:54 sync: read 217 definition publish job(s)
+16:26:05 sync: read 3643 problem publish job(s)
+16:26:05 submitting def:ChapterHermiteBandCalculus (attempt 1)
+16:26:05 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+16:26:13 def:ChapterHermiteBandCalculus: accepted, waiting on the compiler
+16:26:13 submitting def:ChapterHermiteBandCalculusHigher (attempt 4)
+16:26:21 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+16:26:55 def:ChapterHermiteBandCalculus: DONE
+16:28:26 summary: 2593 done, 157 pending, 68 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+16:28:26 waiting on unpublished def bundle(s): ChapterHermiteBandCalculus (1 item(s))
+16:28:26 chunk: 1 item(s) resolved in 142s, 1 still in flight (re-polled next run)
+16:28:34 sync: read 219 definition publish job(s)
+16:28:45 sync: read 3643 problem publish job(s)
+16:28:45 submitting def:ChapterHermiteBandCalculusHigher (attempt 4)
+16:28:45 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+16:28:45 submitting def:ChapterQuadraticFockEsa (attempt 2)
+16:28:45 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+16:28:53 def:ChapterQuadraticFockEsa: accepted, waiting on the compiler
+16:28:53 def:ChapterHermiteBandCalculusHigher: FAIL (publish FAILED: definition does not compile: line 50: unknown namespace `BookProof.HermiteBand`; line 90: Unknown identifier `Band`)
+16:31:11 sync: read 220 definition publish job(s)
+16:31:23 sync: read 3643 problem publish job(s)
+16:31:23 submitting def:ChapterHermiteBandCalculusHigher (attempt 5)
+16:31:23 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+16:31:31 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+16:31:31 submitting def:ChapterQuadraticFockEsa (attempt 2)
+16:31:31 def:ChapterQuadraticFockEsa: accepted, waiting on the compiler
+16:33:56 summary: 2593 done, 157 pending, 68 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+16:33:56 chunk: 0 item(s) resolved in 153s, 2 still in flight (re-polled next run)

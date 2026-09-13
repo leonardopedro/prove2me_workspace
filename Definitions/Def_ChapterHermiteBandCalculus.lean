@@ -1,7 +1,14 @@
-import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFullQuadraticEsa
+import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterSirkFinitePrecision
 
 /-!
 # The graded band calculus of the product Hermite basis: a real quadratic Hamiltonian has a
@@ -112,6 +119,7 @@ def g2 : ℕ → ℝ := fun n => (n : ℝ) + 1
 
 
 
+open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
 
 /-- A first-order band operator. -/
 def IsBand1 (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) : Prop :=

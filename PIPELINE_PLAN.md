@@ -749,6 +749,86 @@ installed but **Mathlib is not built** (`../timepiece/.lake` does not exist) —
 + `lake exe cache get` would give local verification before submissions; until then the server stays
 the oracle.
 
+### 1j. Session 8 (2026-09-13) — the def layer CRACKED: resolve imports against the platform, not the checkout
+
+**Skill check:** `SKILL.md` 0.10.3 == API 0.10.3, no drift.
+
+**The mistake that had been blocking everything.** `repair_hollow_defs.py` resolved a regenerated
+bundle's identifiers against the *local* `Definitions/Def_*.lean` files. Those files lie in both
+directions:
+
+* a local file can be empty while the platform module is live — `Definitions/Def_ChapterCarlemanTwoStep.lean`
+  is 182 bytes of `import Mathlib`, and the published module is a generator stub that declares
+  **nothing**; and
+* the file being *replaced* vouches for its own namespaces. `Definitions/Def_ChapterFullQuadraticEsa.lean`
+  was the 18 622-line **self-contained** blob (`import Mathlib` only, every chapter inlined), which
+  declares `BookProof.QuadratureEsa`, `BookProof.CarlemanSimplex`, `BookProof.ModeQuadratic`, … So
+  every `open` looked satisfied and the resumed 215-line body was submitted with opens that resolve
+  to nothing.
+
+**New tool: `debug/platform_def_index.py` → `state/defs_index.json` (platform ground truth).**
+`GET /publish-jobs?kind=definition` returns the *source text* each job published in its `definitions`
+field, so the platform can be asked what each module declares. Newest job per `theorem_name` wins; a
+newer FAILED job never revokes an older PUBLISHED one (§1e), so the index is unioned with
+`state/defs_published.json` rather than replacing it. Measured: **217 jobs, 142 distinct bundles,
+126 PUBLISHED** — of which **5 are stubs that declare no namespace** (`ChapterCarlemanTwoStep`,
+`ChapterFockWeightedSchurEsa`, `ChapterKatoRellichDeficiency`, `ChapterQgBrstDerivativeGauge`,
+`ChapterQgTimeIndependentFlow`) — **121 with real content, 118 namespaces, 1202 declaration names**.
+
+**New tool: `debug/probe_publish_jobs.py`.** A publish job keeps the *whole* error in
+`error_message`; `log()`/state clip at ~150 chars, which had been hiding the second half of every
+elaboration error. Read the job, not the log, before diagnosing a verdict.
+
+**`repair_hollow_defs.py` now has four outcomes per `open`** (all reported):
+
+1. `import Definitions.Def_<owner>` — the platform index's `namespace_owner`/`name_owner` wins over the
+   local files, which are only a fallback;
+2. **ALIASED OPEN** — the same namespace under the generator's synthetic `Chapter` infix
+   (`BookProof.CarlemanSimplex` → `BookProof.ChapterCarlemanSimplex`); the alias rule matches
+   component-wise, so `BookProof.A.B` ↔ `BookProof.ChapterA.B` both work;
+3. **DROPPED OPEN** — nothing declares it *and* the body uses no declaration of that source chapter
+   (word-boundary check against `BookProof/Chapter<Leaf>.lean`). The generator copies the source's
+   `open` list verbatim, so decorative opens are common; a naive substring check had flagged
+   `BookProof.QuadratureEsa` as blocking because `hermiteCore` is a substring of the docstring word
+   `fqOp_hermiteCore`;
+4. **BLOCKING OPEN** — the body *does* use that chapter's declarations, so its bundle must be
+   regenerated first.
+
+**Results — two keystones published, four bundles unblocked behind them.**
+
+* `def:ChapterFullQuadraticEsa` **DONE** (2591 → 2592 done). It needed 16 imports, 1 alias, 3 dropped
+  opens. The 18 622-line artifact it replaced never had a chance: its real server error was not the
+  clipped log line but an **instance-path mismatch** (`Integrable.add hp hq` at
+  `NormedAddCommGroup.toENormedAddCommMonoid.toContinuousENorm` where the goal wants
+  `SeminormedAddGroup.toContinuousENorm` — `integrable_poly_mul_exp_neg`, v4.28→v4.33 drift, §6.2)
+  **plus** `Vel`/`lower`/`raise`/`lpFiniteModes`/`L2I`/`LpNat` unknown from line 3201 — names the
+  self-contained inliner never brought in. Size was never the wall; the shape was.
+* `def:ChapterHermiteBandCalculus` **DONE** (→ 2593). It publishes `BookProof.HermiteBand`, which is
+  exactly the provider `ChapterHermiteBandCalculusHigher` was failing on (`unknown namespace
+  BookProof.HermiteBand`, 3 attempts).
+* `def:ChapterQuadraticFockEsa` repaired and submitted (in flight); `ChapterHermiteBandCalculusHigher`
+  re-submitted on top of the new provider.
+
+**Backlog, measured in `ORDER` terms (the §1d rule: `--status`, never raw state counts).** `ORDER`
+is 2849 items, **2591 done**; the remainder is **104 actionable** (7 def, 5 thm, 92 sol), **46 blocked
+by an unpublished def**, **77 parked at max attempts** (real proof debt; `debug/reopen_failed.py`
+re-arms them after a repair), **31 source-missing**. The state file's `157 pending` also contains **48
+orphan records** — 46 `thm:` + 2 `sol:` from the 47 nodes whose names a def bundle already declares
+(they are not in `ORDER`, have no platform node and no solution file, and are correctly ignored).
+
+**Plan gaps found (leaf-name jobs, not proof jobs).** `ChapterQuadratureEsa` is in no def spec, yet it
+declares `BookProof.QuadratureEsa`; today it costs nothing (that open is decorative, above) but any
+bundle that *uses* a quadrature declaration will need it. `def:ChapterQgOuterFockFarisLavine` is
+parked at 5 attempts for a different reason: it imports platform **theorems that are still `Open`**
+(`BookProof.QgHermiteFriedrichs.hamCore_quadForm_nonneg`, `…hamCore_symm`) and the rule is that an
+imported theorem must be `Proved` at submission time — so the def layer and the solution layer
+interlock there: those QgHermiteFriedrichs nodes have to be proved before that bundle can publish.
+
+**Supersedes §1i's next steps.** Platform `num_solved_prob` **572** (was 556); 3 def bundles published
+this pass. `PIPELINE_PLAN.md` has now outgrown the file editor's read window (~64 KB of the 103 KB
+are visible), so this section was spliced in through a 3-way split and `cat` — see the note at the end
+of §9 if a later edit against the middle of the file mysteriously reports "old string not found".
+
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 
 **Read the backlog from `--status`, never from the state file.** `plan_progress` counts an
@@ -1447,3 +1527,9 @@ batch hygiene (append-only state, update §1/§4 counts).
 - Timepiece origin: `git@github.com:leonardopedro/timepiece.git`.
 - `credentials.json` and `state/` are gitignored or must stay out of commits — never
   commit the API key.
+- **Editing this file (session 8):** the file editor only sees about the first 64 KB of it,
+  so a `str_replace` whose anchor lies past that point fails with a misleading
+  "old string not found" (a string `grep` finds happily). Split, edit, rejoin:
+  `head -500 PIPELINE_PLAN.md > PIPELINE_PLAN.p1.md`, `sed -n '501,1000p' … > p2`, `sed -n '1001,$p' … > p3`,
+  `str_replace` the part that holds the anchor, then `cat PIPELINE_PLAN.p1.md PIPELINE_PLAN.p2.md
+  PIPELINE_PLAN.p3.md > PIPELINE_PLAN.md` and delete the parts. Keep each part under ~40 KB.

@@ -151,11 +151,29 @@ def main():
     sols = {os.path.basename(p)[4:-5]: p
             for p in glob.glob(os.path.join(WS, "Solutions", "Sol_BookProof_*.lean"))}
 
+    # A stub whose declaration a `Def_*` bundle already declares can never publish
+    # as a node of its own — the server answers "has already been declared" and the
+    # item burns all five attempts.  The gate below ("the chapter's def bundle is
+    # published") is exactly what makes this class reappear after every
+    # embedded-declaration repair, so exclude it here instead of relying on
+    # `debug/drop_embedded_dups.py` to undo the append afterwards.
+    sys.path.insert(0, HERE)
+    try:
+        from drop_embedded_dups import detect as _embedded_dups
+        embedded = set(_embedded_dups())
+    except Exception as e:                                    # never block the pass
+        print(f"  (embedded-duplicate check unavailable: {type(e).__name__}: {e})")
+        embedded = set()
+
     added = []
     skipped_nosol = []
+    skipped_embedded = []
     for path in sorted(glob.glob(os.path.join(WS, "Theorems", "Thm_BookProof_*.lean"))):
         slug = os.path.basename(path)[4:-5]
         if slug in have:
+            continue
+        if slug in embedded:
+            skipped_embedded.append(slug)
             continue
         txt = open(path, encoding="utf-8", errors="replace").read()
         g = GEN_COMMENT.search(txt)
@@ -209,7 +227,8 @@ def main():
             break
 
     if not added:
-        print("nothing to add (every publishable stub is already in the wave spec)")
+        print("nothing to add (every publishable stub is already in the wave spec, "
+              f"or embedded in a def bundle: {len(skipped_embedded)} skipped)")
         return 0
 
     # Topological order inside the batch: a sol that imports a sibling stub's
@@ -241,6 +260,9 @@ def main():
     if skipped_nosol:
         print(f"  ({len(skipped_nosol)} of the publishable stubs have no solution file "
               f"and were left out, e.g. {skipped_nosol[:3]})")
+    if skipped_embedded:
+        print(f"  ({len(skipped_embedded)} stubs skipped: a `Def_*` bundle already "
+              f"declares them, so no node can publish — e.g. {skipped_embedded[:3]})")
     for s, m in added[:5]:
         print(f"  {s}\n      name : {m['name']}\n      title: {m['title'][:110]}"
               f"\n      src  : {m['source']}")

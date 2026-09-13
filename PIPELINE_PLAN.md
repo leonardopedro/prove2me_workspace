@@ -544,6 +544,58 @@ whenever "proved vs accepted" comes up.
   `solved_problems` + `submitted_problems`, both partially capped) — size any "submissions" claim
   accordingly, and say which source it came from.
 
+**Session-6 execution (same day).** `num_solved_prob` **517 → 537**; state **2440 done / 276 pending /
+26 failed → 2489 / 205 / 48** (plan 2773 = 140 defs + 1309 thms + 1309 sols). Pending is now **188
+sols + 17 defs**: the wave is one def layer away from its solution backlog.
+
+**The launched daemon does not survive a tool call here.** `bash start_upload.sh start` reports a
+healthy PID, then within ~10 s the process is gone with **no** `pipeline exited rc=` line in
+`state/upload.log` and a stale `/tmp/upload_pipeline.pid`. Drive the wave with bounded foreground
+chunks instead:
+
+```bash
+python3 pipeline/upload_pipeline.py --parallel 50 --job-timeout 60 --max-seconds 135
+```
+
+~140 s per call, 0–45 items resolved, 46–49 left in flight for the next chunk (a verdict takes
+20–150 s, so every chunk both drains the previous one and opens a new set).
+
+**Plan gap closed: 141 theorem nodes that solutions import were in neither the wave spec nor the
+platform.** Every `import Theorems.Thm_X` under `Solutions/` was checked against the spec and against
+`GET /theorems?q=<name>`: **221 import sites / 141 distinct nodes** were absent from both, so those
+solutions could only ever burn attempts (`verdict FAILED: unknown import … No such theorem exists`).
+They belong to chapters whose def bundle is not published yet (`ChapterHermiteBand*`,
+`ChapterHermiteQuadraticEsa`, …), which is why `debug/extend_wave_stubs.py` correctly refuses to add
+them now — they are the batch that follows the 17 pending defs.
+
+**`extend_wave_stubs.py` was re-adding 47 nodes that can never publish.** Its gate — "the chapter's
+def bundle is published" — is exactly the condition under which the earlier embedded-declaration
+repairs put those declarations *inside* the bundle, so it proposed 47 stubs whose names are already
+declared (`ChapterStoneResolvent.UnboundedSelfAdjoint.*`, `NavierStokesFlow_{finiteModes_dense,
+shiftOp_mem_finiteModes,…}`, `YangMillsFriedrichs.weylOp*`, `HermiteProductCore.span_range_coreBasis`,
+…). Each answers `has already been declared` and burns five attempts, and the loop had to be closed by
+hand with `debug/drop_embedded_dups.py` after every run. Fixed in both tools:
+
+- `debug/drop_embedded_dups.py` now exposes `detect()`, which defaults to **every stub on disk** — it
+  used to scan only slugs already in the spec, so a dropped slug was re-proposed on the next pass.
+- `debug/extend_wave_stubs.py` imports that detector and skips embedded stubs, reporting
+  `N skipped`. The spec is stable at **140 defs / 1309 thms / 1308 `sol_order`** and a re-run is a
+  no-op; the 47 slots are counted as out-of-order orphans by `--status` (their in-flight submissions
+  were already spent and cannot be retracted).
+
+**Next blockers, in order.**
+
+1. **17 def bundles are unpublished**; three are genuine content repairs, not ordering:
+   `ChapterFullQuadraticEsa` (generator syntax damage: `line 15: unexpected token 'def'`),
+   `ChapterHermiteQuadraticEsa` (`unknown namespace BookProof.HermiteProductCore` — confirm the ORDER
+   edge against `Def_ChapterHermiteProductCore`), `ChapterShiftedHermiteCore` (`Unknown identifier
+   Vd`).
+2. Once those land: re-run `debug/extend_wave_stubs.py` to add the `HermiteBand` /
+   `HermiteQuadraticEsa` thm nodes it is holding back, then `debug/reopen_failed.py --yes` for the
+   sols parked on `unknown import`.
+3. **48 failed records** (36 sols / 11 thms / 1 def): 13 sols on `Unknown identifier` (the residual
+   no-node class of §1f), 4 on `unsolved goals`, the rest one-off CE/`ERROR`.
+
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 
 **Read the backlog from `--status`, never from the state file.** `plan_progress` counts an

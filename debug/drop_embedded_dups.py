@@ -34,11 +34,8 @@ SPEC = os.path.join(WS, "pipeline", "wave_upload.json")
 THM_RE = re.compile(r'^theorem\s+([A-Za-z_][\w.\'!?]*)', re.M)
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true")
-    a = ap.parse_args()
-
+def def_decls():
+    """(declaring namespace, base name) -> `Def_*` bundle that declares it."""
     decls = {}
     for fn in sorted(os.listdir(DEFS)):
         if not (fn.startswith("Def_") and fn.endswith(".lean")):
@@ -46,10 +43,26 @@ def main():
         _, d = scan(open(os.path.join(DEFS, fn)).read().split("\n"))
         for key in d:
             decls.setdefault(key, fn[4:-5])
+    return decls
 
-    spec = json.load(open(SPEC))
-    drop = []
-    for slug in list(spec["thms"]):
+
+def detect(spec_thms=None):
+    """slug -> Def bundle, for every candidate whose declaration that bundle already
+    declares (so a node of its own can never publish).
+
+    Exposed for `debug/extend_wave_stubs.py`, whose "is the chapter's def bundle
+    published" gate is exactly what keeps re-proposing this class after every
+    embedded-declaration repair.
+    """
+    decls = def_decls()
+    if spec_thms is None:
+        # Default to every stub on disk, not the spec's members: a caller asking
+        # "may I add this stub?" needs the answer before the slug is in the spec,
+        # otherwise the class simply returns on the next pass.
+        spec_thms = [f[4:-5] for f in os.listdir(THMS)
+                     if f.startswith("Thm_") and f.endswith(".lean")]
+    found = {}
+    for slug in spec_thms:
         path = os.path.join(THMS, f"Thm_{slug}.lean")
         if not os.path.exists(path):
             continue
@@ -58,8 +71,21 @@ def main():
             continue
         ns, _, base = m.group(1).rpartition(".")
         if (ns, base) in decls:
-            drop.append(slug)
-            print(f"DROP {slug}  (declared by Def_{decls[(ns, base)]})")
+            found[slug] = decls[(ns, base)]
+    return found
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+
+    spec = json.load(open(SPEC))
+    found = detect(spec["thms"])
+    drop = []
+    for slug, bundle in found.items():
+        drop.append(slug)
+        print(f"DROP {slug}  (declared by Def_{bundle})")
 
     if not drop:
         print("no embedded duplicates found")

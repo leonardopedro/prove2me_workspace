@@ -331,8 +331,15 @@ def api(method, endpoint, data=None, params=None):
     if params:
         url += "?" + urllib.parse.urlencode(params)
     cmd = ["curl", "-s", "-X", method, url, "-H", f"Authorization: Bearer {token()}"]
+    payload = None
     if data is not None:
-        cmd += ["-H", "Content-Type: application/json", "-d", json.dumps(data)]
+        # Body goes on stdin (`--data-binary @-`), never as an argv element: a
+        # self-contained def bundle is tens of thousands of lines, and passing
+        # that through the command line dies with
+        # "OSError: [Errno 7] Argument list too long: 'curl'" long before the
+        # server sees it.
+        cmd += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
+        payload = json.dumps(data)
     left = budget_left()
     if left is not None:
         if left <= 1:
@@ -341,7 +348,8 @@ def api(method, endpoint, data=None, params=None):
     else:
         timeout = 90
     try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                           input=payload)
     except subprocess.TimeoutExpired:
         if over_budget():
             raise BudgetExceeded(BUDGET_WAIT)

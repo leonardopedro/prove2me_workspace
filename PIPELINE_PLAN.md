@@ -19,10 +19,13 @@ chapters) plus the 4 deferred chapters themselves
 (SirkEndToEnd, SirkWhitening, SirkPerSystem, YangMillsHermite) with their thm/sol
 nodes. This unlocks everything the earlier waves deferred.
 
-**Read the newest session section first: §1h** (accounting rules — which platform
-counter means what) then **§1f** (the solution-side repair chain and what is still
-blocked). Live backlog is always `python3 pipeline/upload_pipeline.py --status`,
-never the state file (§1d).
+**Read the newest session section first: §1i** (the sources + Lean are now present, and the def
+layer's real blocker — hollow def bundles), then **§1h** (accounting rules — which platform counter
+means what) and **§1f** (the solution-side repair chain). Live backlog is always
+`python3 pipeline/upload_pipeline.py --status`, never the state file (§1d).
+
+**Generators need two env vars in this sandbox** (defaults are the build host):
+`PROVE2ME_WS=/home/daytona/codebase TIMEPIECE_PROJ=/home/daytona/timepiece`.
 
 ### 1a. VERIFIED STATE (2026-09-12, Freebuff cloud sandbox — supersedes the counts below)
 
@@ -651,6 +654,100 @@ chapters (`diagCol` / `occEnergy` / `numberCol` / `comparisonCol` at
   (`scripts/wave_generate.py`), never by hand.
 3. **48 failed records** (36 sols / 11 thms / 1 def): 13 sols on `Unknown identifier` (the residual
    no-node class of §1f), 4 on `unsolved goals`, the rest one-off CE/`ERROR`.
+
+### 1i. Session 7 (2026-09-13) — the sources and Lean are here, and the def layer is HOLLOW BUNDLES
+
+**Environment unlock (supersedes §1f's and §1h's "cannot run the generator here").** `../timepiece`
+is now present with the whole source project — `BookProof/` (all chapters), `decl_graph.jsonl`
+(8.2 MB), `lakefile.toml` — and **Lean 4.33.1 is installed** via elan at `~/.elan/bin` (a bare
+`lean`/`lake` is still "not found" because that directory is not on `PATH`; prefix the command or
+add it). `$TIMEPIECE_PROJ` now resolves for every `$PROJ`-dependent tool.
+
+**Generator portability (the actual blocker §1f named).** `scripts/wave_generate.py` hardcoded
+`WS = "/home/leo/prove2me_workspace"` / `PROJ = "/home/leo/Projects/timepiece"` (only the *readers*
+had been made portable). Both are now env-overridable — `PROVE2ME_WS`, `TIMEPIECE_PROJ` (alias
+`PROVE2ME_PROJ`) — **defaults unchanged**, so nothing about the build host changes:
+
+```bash
+PROVE2ME_WS=/home/daytona/codebase TIMEPIECE_PROJ=/home/daytona/timepiece \
+    python3 debug/regen_defs.py --check          # 140 bundles read from the real graph
+```
+
+**THE DEF BLOCKER IS A DEFECT CLASS, NOT THREE CHAPTERS: 15 HOLLOW BUNDLES.** A bundle is *hollow*
+when its declarations are bare headers — `def fqAmp`, `def fqMl`, `def fqExch`, … with no `:=` body.
+The platform answers `unexpected token 'def'; expected ':=', 'where' or '|'`. **12 of the 15 are
+wave-spec defs**, which is why the def layer never drained: 11 of the 17 pending defs are hollow:
+`ChapterFiniteSectionSingleTime`, `ChapterFullQuadraticEsa`, `ChapterHermiteBandCalculusHigher`,
+`ChapterQgCouplingDGammaSum`, `ChapterQgManifoldModeInstance`, `ChapterQgTimeStepping`,
+`ChapterQgTruncationResolvent`, `ChapterQuadraticFockEsa`, `ChapterSirkSingleTimeShift`,
+`ChapterYangMillsAbelianEsa`, `ChapterYangMillsAbelianFockEsa`, `ChapterYangMillsBandBounds`
+(the other three — `ChapterCoreBoundsEsa`, `ChapterFockSchurEsa`, `ChapterOperatorSeriesEsa` — are
+not in the wave spec; keep them out until their wave exists). Measure any time with
+`debug/repair_hollow_defs.py --check`.
+
+Two defects ride along with the hollowness. (a) The same generator invented a **synthetic
+namespace**: `Def_ChapterFullQuadraticEsa` declared `BookProof.ChapterFullQuadraticEsa` while the
+source — and every consumer stub — uses `BookProof.FullQuadratic`. (b) Some of *those* bundles are
+already published with the synthetic name (`Def_ChapterCarlemanSimplex` declares
+`BookProof.ChapterCarlemanSimplex`, while `BookProof/ChapterCarlemanSimplex.lean` declares
+`BookProof.CarlemanSimplex`), so an `open BookProof.CarlemanSimplex` in a regenerated bundle has no
+provider at all. That is the "unknown namespace" family, and it is namespace convention, not proof
+debt.
+
+**New tool: `debug/repair_hollow_defs.py`.** Detects hollow bundles, regenerates them with the
+sanctioned generator (`scripts/wave_generate.py --defs-only <leaf>`, into a scratch WS), then resolves
+what the regenerated body needs exactly the way the platform requires: an `import Definitions.Def_<chapter>`
+for every referenced declaration **and for every namespace the bundle opens** (§1e — a namespace must
+be declared by a module the file imports *directly*). Imports of bundles the platform has not
+published are **omitted and reported** (`NOT PUBLISHED`), never guessed; opened namespaces no bundle
+declares are reported as `NO PROVIDER`. `--check` lists, `--dry-run` regenerates + resolves without
+writing, `--apply` writes (backup `Definitions/Def_<leaf>.lean.pre_hollow.bak`), and naming chapters
+explicitly re-processes bundles that are no longer hollow. Published-definition ground truth:
+`GET /publish-jobs?kind=definition` — 207 jobs, **132 PUBLISHED / 75 FAILED** (a FAILED def job is
+superseded, not evidence of absence, §1e) — cached to `state/defs_published.json`.
+
+**Uploader fix — large bundles could not be submitted at all.** `api()` passed the JSON body as a
+curl *argv* element, so the 18 622-line self-contained bundle died with
+`OSError: [Errno 7] Argument list too long: 'curl'` before the request left the box. It now sends the
+body on stdin (`--data-binary @-` + `subprocess(input=…)`), which is also what makes
+`regen_defs.py`'s fully self-contained path usable at all.
+
+**First results — all three sub-classes reproduced, each costs a server attempt:**
+
+- `ChapterFullQuadraticEsa` — regenerated under its **real** namespace, submitted, and (with the
+  stdin fix) the **18 622-line self-contained** variant was *accepted* by the server and was still
+  compiling after 130 s. Big bundles are normal (§3); re-poll next chunk. Size is not a wall any more.
+- `ChapterQgCouplingDGammaSum` — real content gap: `Unknown constant dGammaOp_finsetSum_col_eq` /
+  `coupling_friedrichs`, helpers that exist in the source chapter but in no bundle → §1a's recipe
+  (prove the node first, then `import Theorems.Thm_*`).
+- `ChapterQgTruncationResolvent`, `ChapterQgTimeStepping`, `ChapterSirkSingleTimeShift`,
+  `ChapterQgManifoldModeInstance`, `ChapterFiniteSectionSingleTime` — open namespaces that **no**
+  Definition bundle declares: `BookProof.QgOuterFockCoreFL`, `BookProof.ScalaronFiberFL`,
+  `BookProof.ScalaronOuterFockFL`, `BookProof.QgContinuumModeInstance`, `BookProof.QgTimeIndependent`,
+  `BookProof.DirectSumEsa`. Fix by regenerating the declaring bundle first, or by dropping the open
+  (report-only today).
+- `ChapterHermiteBandCalculusHigher`, `ChapterQuadraticFockEsa`, `ChapterYangMillsBandBounds` — open
+  `BookProof.HermiteBand` / `BookProof.GradedBandSchur`, declared only by `ChapterHermiteBandCalculus`
+  (in the spec, not hollow, still failing on its own proof debt) → blocked behind that bundle.
+
+Remember the selector never revisits a `failed` item; the three reopened ones were re-armed with
+`python3 debug/reopen_failed.py --yes --only ChapterX …` (backup `state/pipeline.json.bak.hollow`).
+
+**Numbers.** Platform `num_solved_prob` **556**; `state/pipeline.json` **2714 done / 159 pending /
+68 failed**; plan 124 defs of 140 done. `--status` still reports *65 unsubmittable items "source
+missing from this checkout"* — but the sources are here now, under different leaf names than the
+plan used (`FockCanonical` → `ChapterNavierStokesFockCanonical`, `FockManyMode` →
+`ChapterNavierStokesFockContinuum`, and `ChapterContinuityUnitaryInfinite`, `ChapterH6/H8/H9` all
+exist). Re-generating those 65 is the next volume unlock; the mapping is a leaf-name job, not a proof
+job.
+
+**Next steps.** 1. Re-poll the in-flight `ChapterFullQuadraticEsa` and submit the repaired batch
+(`--kind def`, repeated chunks). 2. Resolve the `NO PROVIDER` opens by regenerating their declaring
+bundles (`ChapterHermiteBandCalculus` needs its own proof debt fixed first). 3. Map the 65
+"unsubmittable" plan items onto the now-present source leaves and generate them. 4. Lean 4.33.1 is
+installed but **Mathlib is not built** (`../timepiece/.lake` does not exist) — `references/lean-setup.md`
++ `lake exe cache get` would give local verification before submissions; until then the server stays
+the oracle.
 
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 

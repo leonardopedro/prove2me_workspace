@@ -37,8 +37,15 @@ import os
 import re
 import sys
 
-WS = "/home/leo/prove2me_workspace"
-PROJ = "/home/leo/Projects/timepiece"
+# Host paths.  Defaults are the canonical build host; both are overridable so
+# the generator also runs from a sandbox checkout (e.g. the Freebuff cloud
+# workspace) that has its own copy of the workspace and of the source project.
+#   PROVE2ME_WS     -> workspace root (Definitions/Theorems/Solutions/spec)
+#   TIMEPIECE_PROJ  -> source project root (decl_graph.jsonl + BookProof/*.lean)
+WS = os.environ.get("PROVE2ME_WS") or "/home/leo/prove2me_workspace"
+PROJ = (os.environ.get("TIMEPIECE_PROJ")
+        or os.environ.get("PROVE2ME_PROJ")
+        or "/home/leo/Projects/timepiece")
 GRAPH = f"{PROJ}/decl_graph.jsonl"
 SKETCH_DIR = f"{WS}/state/sketch"
 OUT_DEF = f"{WS}/Definitions"

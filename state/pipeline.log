@@ -29863,3 +29863,40 @@ a : Fin d →₀ ℕ
 13:53:45 summary: 2591 done, 156 pending, 71 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
 13:53:45 waiting on unpublished def bundle(s): ChapterFiniteSectionSingleTime (39 item(s)), ChapterFullQuadraticEsa (2 item(s)), ChapterHermiteBandCalculus (2 item(s)), ChapterHermiteBandCalculusHigher (1 item(s)), ChapterQgOuterFockFarisLavine (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQuadraticFockEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianEsa (1 item(s))
 13:53:45 chunk: 29 item(s) resolved in 135s, 40 still in flight (re-polled next run)
+15:34:49 sync: read 207 definition publish job(s)
+15:35:00 sync: read 3643 problem publish job(s)
+15:35:00 submitting def:ChapterHermiteBandCalculusHigher (attempt 1)
+15:35:08 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+15:35:08 submitting def:ChapterQuadraticFockEsa (attempt 1)
+15:35:16 def:ChapterQuadraticFockEsa: accepted, waiting on the compiler
+15:35:42 def:ChapterHermiteBandCalculusHigher: FAIL (publish FAILED: definition does not compile: line 45: unknown namespace `BookProof.HermiteProductCore`; line 46: unknown namespace `BookProof.HermiteB)
+15:36:16 def:ChapterQuadraticFockEsa: FAIL (publish FAILED: definition does not compile: line 51: unknown namespace `BookProof.HermiteBand`; line 54: unknown namespace `BookProof.FullQuadratic`;)
+15:36:16 summary: 124 done, 12 pending, 5 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:36:16 waiting on unpublished def bundle(s): ChapterFullQuadraticEsa (1 item(s)), ChapterHermiteBandCalculusHigher (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQuadraticFockEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s))
+15:36:16 chunk: 2 item(s) resolved in 76s
+15:37:06 sync: read 209 definition publish job(s)
+15:37:16 sync: read 3643 problem publish job(s)
+15:37:16 summary: 124 done, 12 pending, 5 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:37:16 chunk: 0 item(s) resolved in 0s
+15:37:30 sync: read 209 definition publish job(s)
+15:37:41 sync: read 3643 problem publish job(s)
+15:37:41 submitting def:ChapterFullQuadraticEsa (attempt 1)
+15:37:49 def:ChapterFullQuadraticEsa: FAIL (OSError: [Errno 7] Argument list too long: 'curl')
+15:37:49 submitting def:ChapterQgTruncationResolvent (attempt 1)
+15:37:57 def:ChapterQgTruncationResolvent: accepted, waiting on the compiler
+15:37:57 submitting def:ChapterHermiteBandCalculusHigher (attempt 2)
+15:38:05 def:ChapterHermiteBandCalculusHigher: accepted, waiting on the compiler
+15:38:05 submitting def:ChapterQgCouplingDGammaSum (attempt 1)
+15:38:13 def:ChapterQgCouplingDGammaSum: accepted, waiting on the compiler
+15:38:39 def:ChapterQgTruncationResolvent: FAIL (publish FAILED: definition does not compile: line 64: unknown namespace `BookProof.QgOuterFockCoreFL`; line 65: unknown namespace `BookProof.ScalaronE)
+15:38:48 def:ChapterHermiteBandCalculusHigher: FAIL (publish FAILED: definition does not compile: line 50: unknown namespace `BookProof.HermiteBand`; line 90: Unknown identifier `Band`)
+15:38:57 def:ChapterQgCouplingDGammaSum: FAIL (publish FAILED: definition does not compile: line 178: Unknown constant `dGammaOp_finsetSum_col_eq`; line 179: Unknown constant `coupling_friedrichs`;)
+15:38:57 summary: 124 done, 15 pending, 2 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:38:57 waiting on unpublished def bundle(s): ChapterFullQuadraticEsa (2 item(s)), ChapterHermiteBandCalculusHigher (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQuadraticFockEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s))
+15:38:57 chunk: 4 item(s) resolved in 75s
+15:39:13 sync: read 212 definition publish job(s)
+15:39:25 sync: read 3643 problem publish job(s)
+15:39:25 submitting def:ChapterFullQuadraticEsa (attempt 2)
+15:39:33 def:ChapterFullQuadraticEsa: accepted, waiting on the compiler
+15:41:42 summary: 124 done, 15 pending, 2 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
+15:41:42 chunk: 0 item(s) resolved in 137s, 1 still in flight (re-polled next run)

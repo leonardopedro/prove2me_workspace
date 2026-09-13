@@ -632,6 +632,23 @@ hand with `debug/drop_embedded_dups.py` after every run. Fixed in both tools:
 Numbers after the pass: state **2523 done / 231 pending / 64 failed** (171 orphans ignored),
 platform `num_solved_prob` **542**. The extender's guard behaved as designed in both runs: 47
 embedded duplicates skipped, 0 of them re-added.
+
+**The last two def bundles are gated by stub extraction, not by their own content** — do not spend a
+pass copying their bodies in. Both fail on bare `def` headers, and the bodies do exist in the source
+chapters (`diagCol` / `occEnergy` / `numberCol` / `comparisonCol` at
+`BookProof/ChapterQgCouplingDGammaSum.lean:216,219,343,358`; `momWindow` at
+`BookProof/ChapterQgTruncationResolvent.lean:381`), but neither fix unblocks a publication:
+
+- `momWindow` is `Set CMode`, and **no `Definitions/` bundle declares `CMode` or `momSq`** — they live
+  only in the source chapter `BookProof/ChapterQgContinuumModeInstance.lean`, which has no def bundle
+  (the §1f residual class).
+- Every consumer stub is **mangled by the statement splitter**: `Thm_isHermCol_diagCol` carries
+  `variable {(lam : ℕ → ℝ) : IsHermCol (diagCol lam)}`, `Thm_isHermCol_numberCol` carries
+  `variable {IsHermCol numberCol}`, and `Thm_secHam_esa_core` carries
+  `variable {EssentiallySelfAdjointOn (secCore (ι}` above a bare
+  `theorem secHam_esa_core := by sorry`. The type was dropped, so publishing fails regardless of the
+  def bundle. Same family as §1c's `cannot split formal_statement`: repair by regeneration
+  (`scripts/wave_generate.py`), never by hand.
 3. **48 failed records** (36 sols / 11 thms / 1 def): 13 sols on `Unknown identifier` (the residual
    no-node class of §1f), 4 on `unsolved goals`, the rest one-off CE/`ERROR`.
 

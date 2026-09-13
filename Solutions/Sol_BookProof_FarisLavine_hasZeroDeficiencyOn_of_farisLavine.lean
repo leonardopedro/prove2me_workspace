@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDe
 import Definitions.Def_ChapterBandEnclosure
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_of_farisLavine
 open BookProof.FarisLavine
 
 

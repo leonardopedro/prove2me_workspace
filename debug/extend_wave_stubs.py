@@ -128,6 +128,12 @@ def main():
     argv = sys.argv[1:]
     dry = "--dry-run" in argv
     argv = [a for a in argv if a != "--dry-run"]
+    # A stub that some *other* solution imports as a reduction only needs to be
+    # PUBLISHED to unblock that importer; it does not need a solution of its own
+    # to exist first.  --nodes-only adds those stubs to `thms` without appending
+    # them to `sol_order`, which is what a stub with no `Sol_<slug>.lean` can do.
+    nodes_only = "--nodes-only" in argv
+    argv = [a for a in argv if a != "--nodes-only"]
     limit = 0
     if "--limit" in argv:
         i = argv.index("--limit")
@@ -172,8 +178,9 @@ def main():
             continue                                   # chapter's def bundle is not live
         short = name.split(".")[-1]
         if slug not in sols:
-            skipped_nosol.append(slug)
-            continue
+            if not nodes_only:
+                skipped_nosol.append(slug)
+                continue
         doc, l0, l1 = source_docstring(stem, short)
         paras = prose(doc)
         if paras:
@@ -206,17 +213,21 @@ def main():
         return 0
 
     # Topological order inside the batch: a sol that imports a sibling stub's
-    # theorem must be uploaded after it.
-    batch = {s for s, _ in added}
+    # theorem must be uploaded after it.  A nodes-only batch has no solutions to
+    # order (the whole point is stubs whose `Sol_<slug>.lean` does not exist).
+    batch = {s for s, _ in added} if not nodes_only else set()
+    order = []
     indeg = {s: 0 for s in batch}
     adj = {s: set() for s in batch}
     for s, _ in added:
+        if s not in batch:
+            continue
         for dep in re.findall(r"(?m)^import\s+Theorems\.Thm_(\S+)",
                               open(sols[s], encoding="utf-8", errors="replace").read()):
             if dep in batch and dep != s:
                 adj[dep].add(s)
                 indeg[s] += 1
-    order, q = [], sorted(s for s in batch if indeg[s] == 0)
+    q = sorted(s for s in batch if indeg[s] == 0)
     while q:
         s = q.pop(0)
         order.append(s)

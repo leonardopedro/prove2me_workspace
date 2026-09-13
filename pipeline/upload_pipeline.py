@@ -882,14 +882,23 @@ def do_wave_sol(st, item, slug):
     tid = thm.get("theorem_id")
     if thm.get("status") != "done" or not tid:
         return "theorem not published yet"
+    # A skip must not replace the record wholesale: the plan only needs
+    # `status: done`, but the record is also the evidence of which submission
+    # proved the node (the platform's `/users/<uid>` solved list is the count of
+    # our verified proofs, and a dropped submission_id makes our own work look
+    # like someone else's).  Mutate in place so `submission_id` survives.
     if thm.get("reused_status") == "Proved":
-        st["items"][item] = {"status": "done", "skipped": "theorem already Proved on platform"}
+        rec = st["items"].setdefault(item, {})
+        rec.update({"status": "done", "theorem_id": tid,
+                    "skipped": "theorem already Proved on platform"})
         return None
     # Dedupe rule (b): an already-Proved node needs no solution; resolving this
     # lazily costs one GET and saves a whole submission.
     if theorem_status(tid) == "Proved":
-        st["items"][item] = {"status": "done", "theorem_id": tid,
-                             "skipped": "theorem already Proved on platform"}
+        rec = st["items"].setdefault(item, {})
+        rec.update({"status": "done", "theorem_id": tid, "reused": True,
+                    "reused_status": "Proved",
+                    "skipped": "theorem already Proved on platform"})
         return None
     ok, err = local_compile(path)
     if not ok:
@@ -1101,10 +1110,18 @@ def sync_state(st):
             log(f"sync: checked {checked} pending solution(s), {solved} already Proved")
         tid = (st["items"].get(f"thm:{item.partition(':')[2]}") or {}).get("theorem_id")
         if tid and theorem_status(tid) == "Proved":
-            st["items"][item] = {"status": "done", "theorem_id": tid,
-                                 "reused": True, "reused_status": "Proved",
-                                 "skipped": "theorem already Proved on platform",
-                                 "synced_from": "theorems"}
+            # Carry a recorded submission_id across the reconciliation: it is the
+            # link between this plan item and the proof the platform credits us
+            # for, and replacing the record wholesale dropped it.
+            prev = st["items"].get(item) or {}
+            rec = {"status": "done", "theorem_id": tid,
+                   "reused": True, "reused_status": "Proved",
+                   "skipped": "theorem already Proved on platform",
+                   "synced_from": "theorems"}
+            for k in ("submission_id", "submission_src", "platform_solver_submission"):
+                if prev.get(k):
+                    rec[k] = prev[k]
+            st["items"][item] = rec
             solved += 1
     save_state(st)
     log(f"sync: marked {added} already-published item(s) and {solved} "

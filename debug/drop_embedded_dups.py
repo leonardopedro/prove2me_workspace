@@ -69,7 +69,10 @@ def main():
     if a.dry_run:
         return 0
     victims = set(drop)
-    spec["thms"] = [s for s in spec["thms"] if s not in victims]
+    # `thms` is slug -> metadata (not a bare list of slugs): rebuilding it as a
+    # list silently breaks `upload_pipeline.reconcile_thm_names`, which iterates
+    # `.items()`.  Filter the mapping and keep the schema intact.
+    spec["thms"] = {s: m for s, m in spec["thms"].items() if s not in victims}
     spec["sol_order"] = [s for s in spec["sol_order"] if s not in victims]
     with open(SPEC, "w") as f:
         json.dump(spec, f, indent=1)

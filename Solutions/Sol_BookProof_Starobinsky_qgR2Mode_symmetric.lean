@@ -7,6 +7,7 @@ import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_FarisLavine_mulSymbolOp_symmetric
 open BookProof.Starobinsky
 
 

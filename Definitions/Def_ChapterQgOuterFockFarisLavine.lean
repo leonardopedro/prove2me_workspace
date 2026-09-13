@@ -4,6 +4,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_quadForm_nonneg
 open scoped ENNReal
 open BookProof.FarisLavine
 open BookProof.YangMillsFriedrichs
@@ -618,6 +620,8 @@ def harmFried (d : ℕ) : Comparison (L2d d) :=
 `ℓ²`-direct sum `⊕ₙ N₁^{(n)}` of the sector realizations of the Friedrichs extension.  It
 is again positive, self-adjoint and has `𝑁 + 1` onto the whole outer Fock space, so it is
 an admissible Faris–Lavine comparison operator there. -/
+abbrev qgOuterFock := lp (fun n : ℕ => L2d (n * 84)) 2
+
 def qgOuterComparison : Comparison qgOuterFock :=
   dsComparison (fun n : ℕ => harmFried (n * 84))
 

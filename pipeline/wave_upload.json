@@ -1455,6 +1455,398 @@
     "faris-lavine",
     "spectral-theory"
    ]
+  },
+  "ChapterQgOuterFockFarisLavine": {
+   "definition_name": "ChapterQgOuterFockFarisLavine",
+   "namespace": "BookProof.FriedrichsExtension",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgOuterFockFarisLavine.lean",
+   "title": "Faris\u2013Lavine on the outer Fock space: the lifted Friedrichs comparison operator What is proved Honest boundary",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgOuterFockFarisLavine`, source chapter `BookProof/ChapterQgOuterFockFarisLavine.lean`): Faris\u2013Lavine on the outer Fock space: the lifted Friedrichs comparison operator What is proved Honest boundary\n\n`BookProof.ChapterQgOuterFockEsa` proves that the full gauge-fixed gravity Hamiltonian is essentially self-adjoint on the finite-particle core of the outer Fock space `\ud835\udd09 = \u2295\u2099 L\u00b2(\u211d^{84n})`, by the Carleman route sector by sector. This module builds the **Faris\u2013Lavine apparatus on the outer Fock space itself**, with the comparison operator that the strategy calls for: the Friedrichs extension of the positive one-particle operator `N\u2081 = \u2212\u0394 + \u2016x\u2016\u00b2/4`, lifted to `\ud835\udd09`.\n\nTheorem 1 of Faris\u2013Lavine (`BookProof.ChapterFarisLavine`) needs exactly three things of its comparison operator `N`: symmetry, positivity, and that `N + 1` maps the domain **onto** the space \u2014 the one consequence of self-adjointness the argument uses. The point of this module is that all three survive the two constructions the strategy chains together:\n\n* **Friedrichs.** `friedrichsComparison` packages the Friedrichs extension of `BookProof.ChapterFriedrichsExtension` as such a comparison operator: the extension is built there as `S\u207b\u00b9 \u2212 1` for the resolvent `S = (P+1)\u207b\u00b9`, so `N + 1` is onto by construction. `Comparison.selfAdjoint` shows conversely that these three properties *are* self-adjointness, so `Comparison.isPositiveSelfAdjointExtension` produces the project's `IsPositiveSelfAdjointExtension` predicate. * **Lifting.** `dsComparison` lifts a family of fibre comparison operators to the `\u2113\u00b2`-direct sum, on the maximal domain `dsDom`. Symmetry and positivity are fibrewise (`dsCompOp_hasSum_quadForm`), and surjectivity of `N + 1` lifts because the fibre solutions obey `\u2016x\u1d62\u2016 \u2264 \u2016(N\u1d62+1)x\u1d62\u2016 = \u2016f\u1d62\u2016` (`norm_le_norm_shift`), so they are automatically square-summable (`dsCompOp_surj`). This is the precise sense in which \"the Friedrichs extension of the positive one-particle operator lifts to an operator on the outer Fock space\".\n\n* `Comparison`, `Comparison.selfAdjoint`, `Comparison.isPositiveSelfAdjointExtension`, `Comparison.essentiallySelfAdjointOn`, `Comparison.esa_self` \u2014 comparison operators and the Faris\u2013Lavine criterion packaged with one; a comparison operator is essentially self-adjoint on its own domain (the case `H = N`, `c = 0`). * `friedrichsComparison`, `friedrichsComparison_extends` \u2014 every densely defined positive symmetric operator has one, namely its Friedrichs extension. * `dsDom`, `dsCompOp`, `dsComparison`, `dsCompOp_surj` \u2014 the lift to an `\u2113\u00b2`-direct sum. * `dsFibOp`, `dsFibOp_symmetricOn`, `dsFibOp_hasSum_commForm`, `dsFibOp_commForm_le` \u2014 a fibrewise symmetric operator on the lifted domain, under a relative bound `\u2016H\u1d62u\u2016 \u2264 K\u2016(N\u1d62+1)u\u2016` uniform in the fibre; **the commutator form of the lift is the sum of the fibre commutator forms**, so the Faris\u2013Lavine bound `\u00b1i[H,N] \u2264 cN` lifts with the *same* constant `c`. * `dsFibOp_essentiallySelfAdjointOn` \u2014 **Faris\u2013Lavine on an `\u2113\u00b2`-direct sum**: uniform fibre data gives essential self-adjointness of the direct-sum operator on the lifted domain. * `harmPosSym`, `harmFried`, `harmFried_isPositiveSelfAdjointExtension` \u2014 the positive one-particle gravity operator `N\u2081 = \u2212\u0394 + \u2016x\u2016\u00b2/4` and its Friedrichs extension. * `qgOuterComparison`, `qgOuterFriedDom`, `qgOuterFriedN`, `qgOuterFriedN_surj`, `qgOuterCore_le_friedDom`, `qgOuterFriedN_isPositiveSelfAdjointExtension`, `qgOuterFriedN_esa` \u2014 **the lifted comparison operator on the outer Fock space**: it is a positive self-adjoint extension of the finite-particle-core operator `d\u0393(N\u2081)` (`qgOuterN`), `\ud835\udc41 + 1` is onto `\ud835\udd09`, and it is essentially self-adjoint on its domain. * `qgOuterFock_esa_farisLavine` \u2014 **the Faris\u2013Lavine theorem for the gravity Hamiltonian on the outer Fock space**: given sector realizations of the `n`-particle Hamiltonians on the domain of the sector comparison operator that are\n\n...",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgOuterFockFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterHermiteBandCalculus": {
+   "definition_name": "ChapterHermiteBandCalculus",
+   "namespace": "BookProof.HermiteBand",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterHermiteBandCalculus.lean",
+   "title": "The graded band calculus of the product Hermite basis: a real quadratic Hamiltonian has a # band matrix whose entries grow like the degree What is proved",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.HermiteBandCalculus`, source chapter `BookProof/ChapterHermiteBandCalculus.lean`): The graded band calculus of the product Hermite basis: a real quadratic Hamiltonian has a # band matrix whose entries grow like the degree What is proved\n\n`BookProof.ChapterHermiteProductBasis` makes the product Hermite functions `\u03c8_\u03b1 = He_\u03b1 \u00b7 e^{-\u2016x\u2016\u00b2/4} / \u2016\u00b7\u2016` an orthonormal basis of `L\u00b2(\u211d\u1d48)` and records the ladder relations `a\u2020\u1d62\u03c8_\u03b1 = \u221a(\u03b1\u1d62+1) \u03c8_{\u03b1+e\u1d62}`, `a\u1d62\u03c8_\u03b1 = \u221a\u03b1\u1d62 \u03c8_{\u03b1\u2212e\u1d62}`. This chapter turns those relations into a **calculus of band operators**, whose purpose is the input of the weighted Schur gate of `BookProof.ChapterFockWeightedSchurEsa`: a one-particle matrix that is band-limited in the degree, has boundedly many entries per column, and whose entries grow at most like `deg + 1`.\n\n* `hpsi`, `pgLp_hpsi`, `hcomb` \u2014 the normalized Hermite *polynomial* `\u03c8_\u03b1`, its `L\u00b2` vector, and the finite combination `\u03a3_\u03b2 f_\u03b2 \u03c8_\u03b2` of Hermite states. * `crePoly_hpsi`, `annPoly_hpsi` \u2014 the ladder relations at the level of polynomials. * `Band T r M C g` \u2014 the band predicate: `T \u03c8_\u03b1` is a combination of at most `M` Hermite states whose degrees differ from `deg \u03b1` by at most `r`, with coefficients bounded by `C \u00b7 g (deg \u03b1)`. The two growths used are `g1 n = \u221a(n+1)` (first order) and `g2 n = n + 1` (second order). * `Band.add`, `Band.smul`, `Band.mono`, `Band.toBand2` \u2014 the closure properties. * `band_crePoly`, `band_annPoly` \u2014 the ladder operators are first-order band operators with `M = C = 1`. * **`Band.comp`** \u2014 the composition of two first-order band operators is a second-order one: `M\u2081M\u2082` entries, band `2`, and the growth `2 M\u2081 C\u2081 C\u2082 (deg \u03b1 + 1)`; the analytic content is `\u221a(deg \u03b1 + 1) \u00b7 \u221a(deg \u03b3 + 1) \u2264 2 (deg \u03b1 + 1)` for `|deg \u03b3 \u2212 deg \u03b1| \u2264 1`. * `IsBand1` / `IsBand2` \u2014 the existential forms, closed under sums, scalar multiples, finite sums and (for `IsBand1`) composition. * `mulXPoly_eq`, `momPoly_eq` \u2014 the coordinate and momentum operators are the ladder combinations `x\u1d62 = a\u1d62\u2020 + a\u1d62` and `\u03c0\u1d62 = (i/2)(a\u1d62\u2020 \u2212 a\u1d62)`, hence first-order. * **`isBand2_fqPoly`** \u2014 the headline: the general real quadratic Hamiltonian `fqPoly P Q S b b'` of `BookProof.ChapterFullQuadraticEsa` \u2014 an arbitrary Weyl-ordered quadratic form in the coordinates and momenta, plus a first-order term \u2014 is a second-order band operator.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterHermiteQuadraticEsa": {
+   "definition_name": "ChapterHermiteQuadraticEsa",
+   "namespace": "BookProof.HermiteQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterHermiteQuadraticEsa.lean",
+   "title": "Unbounded quadratic-type perturbations on the Gauss\u2013polynomial (Hermite) core The analytic input What is proved",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.HermiteQuadraticEsa`, source chapter `BookProof/ChapterHermiteQuadraticEsa.lean`): Unbounded quadratic-type perturbations on the Gauss\u2013polynomial (Hermite) core The analytic input What is proved\n\n`CONSOLIDATED_PLAN.md` \u00a710.6.1 target 4 asks for essential self-adjointness of the *sum* `\u2212\u0394 + V` on the Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d48)`. What was available so far is `BookProof.ChapterQgHermiteOscillatorEsa`: the harmonic (conformal-mode) Hamiltonian `\u2212\u0394 + \u2016x\u2016\u00b2/4` is essentially self-adjoint on that core, and \u2014 by Kato\u2013Rellich with relative bound `0` \u2014 so is `\u2212\u0394 + \u2016x\u2016\u00b2/4 + B` for a *bounded* continuous `B`. On the other side, `BookProof.ChapterHermiteExpWall` shows that the exponentially growing scalaron wall is **not** relatively bounded on this core at all, so no Kato\u2013Rellich argument can reach it.\n\nThis module fills the gap in between: **unbounded** perturbations of quadratic type.\n\nThe one quantitative fact needed is the relative bound of the harmonic potential itself with respect to the harmonic Hamiltonian, with constant `1`:\n\n`\u2016(\u2016x\u2016\u00b2/4)\u03c8\u2016\u00b2 \u2264 \u2016(\u2212\u0394 + \u2016x\u2016\u00b2/4)\u03c8\u2016\u00b2 + (d/2)\u2016\u03c8\u2016\u00b2` (`norm_sq_harmPoly_mul_le`).\n\nIt comes from the anticommutator identity (`gaussInt_anticommutator`), which on the Gauss\u2013polynomial core is a purely algebraic computation with the twisted derivative `coreD j = \u2202\u2c7c \u2212 x\u2c7c/2` and Gaussian integration by parts:\n\n`\u27ea\u2212\u0394\u03c8, W\u03c8\u27eb + \u27eaW\u03c8, \u2212\u0394\u03c8\u27eb = 2 \u2211\u2c7c \u27ea\u2202\u2c7c\u03c8, W \u2202\u2c7c\u03c8\u27eb \u2212 (d/2)\u2016\u03c8\u2016\u00b2`, `W = \u2016x\u2016\u00b2/4`,\n\nwhose right-hand side is `\u2265 \u2212(d/2)\u2016\u03c8\u2016\u00b2` because `W \u2265 0`. (Classically this is `{\u2212\u0394, W} = \u2212\u0394W + 2\u2211\u2c7c(\u2212\u2202\u2c7c)W\u2202\u2c7c` with `\u0394W = d/2`.)\n\n* `gaussInt_anticommutator`, `two_re_inner_kin_harm_ge`, `norm_sq_harmPoly_mul_le`, `norm_harmPoly_mul_le` \u2014 the relative bound of `\u2016x\u2016\u00b2/4` with respect to `\u2212\u0394 + \u2016x\u2016\u00b2/4`, with relative constant `1` and additive constant `\u221a(d/2)`; * `norm_potLp_le_of_le_harm` \u2014 the `L\u00b2` bound `\u2016V\u03c8\u2016 \u2264 a\u2016W\u03c8\u2016 + b\u2016\u03c8\u2016` for a potential dominated pointwise by `a\u00b7\u2016x\u2016\u00b2/4 + b`; * **`harmonic_add_subquadratic_essentiallySelfAdjoint`** \u2014 the headline: if `V` is continuous with `|V(x)| \u2264 a\u2016x\u2016\u00b2/4 + b` and `a < 1`, then `\u2212\u0394 + \u2016x\u2016\u00b2/4 + V` is essentially self-adjoint on the Gauss\u2013polynomial core. The perturbation may be unbounded; * `harmonic_add_subquadratic_stone_flow` \u2014 the self-adjoint realization and its unitary group, read off from essential self-adjointness; * `quadraticGrowth_essentiallySelfAdjoint` \u2014 the criterion in growth form: a continuous potential `U` with `|U(x) \u2212 \u2016x\u2016\u00b2/4| \u2264 A\u2016x\u2016\u00b2 + C\u2016x\u2016 + B` and `4A < 1`; * `scaledHarmonic_essentiallySelfAdjoint` \u2014 `\u2212\u0394 + \u03bb\u2016x\u2016\u00b2/4` is essentially self-adjoint on the (fixed, width-one) Gauss core for every `\u03bb \u2208 (0, 2)`; * **`confV_essentiallySelfAdjoint`** \u2014 the conformal-mode instance of \u00a710.6.1 target 4: the regularized `R + \u03b1R\u00b2` conformal-mode Hamiltonian `\u2212\u0394 + V\u2083`, `V\u2083(R_c) = \u2212(M\u00b2/2)R_c + \u03b1R_c\u00b2`, is essentially self-adjoint on the Gauss core of `L\u00b2(\u211d)` for `0 < \u03b1 < 1/2`, unconditionally (no finite-speed hypothesis), together with its Stone flow `confV_stone_flow`; * **`sectorQuad_essentiallySelfAdjoint`** \u2014 the two-variable reduced `(R_c, \u03c6)` sector with the scalaron wall replaced by a quadratic term, `V\u2083(R_c) + \u03bc\u03c6\u00b2` on `L\u00b2(\u211d\u00b2)`, for `0 < \u03b1 < 1/2` and `0 < \u03bc < 1/2`, with `sectorQuad_stone_flow`; `tendsto_starobinskyV_div_sq` computes the curvature of the scalaron potential at its minimum, `V(\u03c6)/\u03c6\u00b2 \u2192 M\u00b2/(24\u03b1)`, and `sectorHarmonicApprox_essentiallySelfAdjoint` is the sector statement at that physically natural value of `\u03bc`, valid when `M\u00b2 < 12\u03b1`.\n\n**Honest boundary.** The relative bound of `\u2016x\u2016\u00b2/4` against `\u2212\u0394 + \u2016x\u2016\u00b2/4` is exactly `1`, so the Kato\u2013Rellich window `a < 1` is the natural limit of this method: it reaches quadratic potentials whose curvature is within a factor `2` of the width of the Gauss core (this is why `confV_essentiallySelfAdjoint` carries `\u03b1 < 1/2`; a different `\u03b1` is the same operator on a Gauss core of a different width, which this module does not build), and every strictly subquadratic perturbation o\n\n...",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteQuadraticEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterShiftedHermiteCore": {
+   "definition_name": "ChapterShiftedHermiteCore",
+   "namespace": "BookProof.ShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterShiftedHermiteCore.lean",
+   "title": "The translated, modulated Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d48)` What is proved",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.ShiftedHermiteCore`, source chapter `BookProof/ChapterShiftedHermiteCore.lean`): The translated, modulated Gauss\u2013polynomial core of `L\u00b2(\u211d\u1d48)` What is proved\n\n`BookProof.ChapterHermiteProductCore` builds the Gauss\u2013polynomial (product Hermite) core `polyGaussCore = { p \u00b7 e^{-\u2016x\u2016\u00b2/4} }` of `L\u00b2(\u211d\u1d48)` and proves it dense, and `BookProof.ChapterHyperbolicQuadraticEsa` uses it to diagonalize the diagonal quadratic Hamiltonians `H_c = \u2211\u1d62 c\u1d62(\u03c0\u1d62\u00b2 + x\u1d62\u00b2/4)`.\n\nThis module builds the **phase-space translate** of that core: for a translation vector `a \u2208 \u211d\u1d48` and a wave vector `k \u2208 \u211d\u1d48`,\n\n`D_{a,k} = { x \u21a6 p(x \u2212 a) \u00b7 e^{-\u2016x\u2212a\u2016\u00b2/4} \u00b7 e^{i\u27e8k,x\u27e9} : p \u2208 \u2102[X\u2080,\u2026,X_{d-1}] }`.\n\nThis is the image of `polyGaussCore` under the Weyl (phase-space translation) unitary `f \u21a6 e^{i\u27e8k,x\u27e9} f(x \u2212 a)`, and it is the natural core for a quadratic Hamiltonian that has been *completed to a square*: it is the Hermite core recentred at the classical equilibrium `x = a` and boosted to the classical momentum `k`.\n\n* `pgFunT`, `memLp_pgFunT`, `pgLpT`, `pgMapT`, `pgMapT_injective` \u2014 the translated, modulated Gauss\u2013polynomial functions are square integrable and depend injectively on the polynomial; * `inner_pgLpT` \u2014 the map is **isometric**: `\u27eapgLpT a k p, pgLpT a k q\u27eb = \u27eapgLp p, pgLp q\u27eb` (translation invariance of Lebesgue measure and `|e^{i\u27e8k,x\u27e9}| = 1`); * `polyGaussCoreT`, `polyGaussCoreT_dense` \u2014 the resulting core is dense in `L\u00b2(\u211d\u1d48)`; * `hermiteTLp`, `orthonormal_hermiteTLp`, `span_hermiteTLp`, `hermiteTLp_total` \u2014 the translated, modulated product Hermite functions are an orthonormal family spanning the core, and total in `L\u00b2(\u211d\u1d48)`; * `coreEquivT`, `coreOpT` \u2014 the core coordinatized by polynomials, and operators on it given by operators on the polynomial coordinates; * `mulXTPoly`, `momTPoly`, `pgFunT_mulXTPoly`, `pgFunT_momTPoly` \u2014 **the canonical pair in the translated frame**: on `D_{a,k}` multiplication by `x\u1d62` is `X\u1d62 + a\u1d62` and the momentum `\u03c0\u1d62 = \u2212i\u2202/\u2202x\u1d62` is `momPoly\u1d62 + k\u1d62` in the polynomial coordinates, the second identity being an honest statement about Mathlib's `deriv` along the `i`-th coordinate line.\n\nEverything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`, `Quot.sound`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkSingleTimeShift": {
+   "definition_name": "ChapterSirkSingleTimeShift",
+   "namespace": "BookProof.ChapterSirkSingleTimeShift",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkSingleTimeShift.lean",
+   "title": "Chapter ChapterSirkSingleTimeShift",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkSingleTimeShift`, source chapter `BookProof/ChapterSirkSingleTimeShift.lean`): Chapter ChapterSirkSingleTimeShift\n\nGenerated def bundle for ChapterSirkSingleTimeShift. See BookProof/ChapterSirkSingleTimeShift.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkSingleTimeShift.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterYangMillsBandBounds": {
+   "definition_name": "ChapterYangMillsBandBounds",
+   "namespace": "BookProof.ChapterYangMillsBandBounds",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterYangMillsBandBounds.lean",
+   "title": "Chapter ChapterYangMillsBandBounds",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.YangMillsBandBounds`, source chapter `BookProof/ChapterYangMillsBandBounds.lean`): Chapter ChapterYangMillsBandBounds\n\nGenerated def bundle for ChapterYangMillsBandBounds. See BookProof/ChapterYangMillsBandBounds.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsBandBounds.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterYangMillsGhostSector": {
+   "definition_name": "ChapterYangMillsGhostSector",
+   "namespace": "BookProof.YangMillsGhost",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterYangMillsGhostSector.lean",
+   "title": "The Faddeev\u2013Popov ghost sector of the 3D gauge-fixed Yang\u2013Mills Hamiltonian The model What is proved Honest boundary",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.YangMillsGhostSector`, source chapter `BookProof/ChapterYangMillsGhostSector.lean`): The Faddeev\u2013Popov ghost sector of the 3D gauge-fixed Yang\u2013Mills Hamiltonian The model What is proved Honest boundary\n\nThe gauge-fixing machinery of the development is algebraic (`BookProof.ChapterGaugeFixing`: the BRST doublets and the gauge-fixing fermion, `BookProof.ChapterGhostField`: the ghost CAR pair and the ghost number operator) and the BRST-gauge-fixed *Hamiltonians* that exist are the gravity ones (`BookProof.ChapterQgBrstDerivativeGauge`). On the Yang\u2013Mills side the Hamiltonian carried no ghost sector at all. This chapter supplies it.\n\n`K` ghost mode pairs `(c_p, c\u0304_p)` give a finite-dimensional ghost Fock space with basis the ghost configurations `S \u2286 {0,\u2026,K\u22121}`, so the total space is the orthogonal direct sum\n\n`\ud835\udd09 = \u2a01_{S \u2286 Fin K} L\u00b2(\u211d\u2079\u2079)` (`GhostSpace K`),\n\nthe gauge sector tensored with the ghost Fock space. For a **free** ghost sector \u2014 the Faddeev\u2013Popov operator of the abelian gauge fixing is field independent, which is the formal content of `L_gf_evaluation`'s \"the ghosts drop out of the physics\" \u2014 the ghost Hamiltonian is diagonal in that basis, with eigenvalue the ghost energy `E(S) = \u03a3_{p \u2208 S} \u03c9_p`, so the total Hamiltonian is\n\n`H_tot = H\u2081 \u2297 1 + 1 \u2297 H_gh = \u2a01_S (H\u2081 + E(S))` (`ymGhostHam`).\n\n* `ghostNum`, `ghostEnergy`, `ghostEnergy_empty`, `ghostEnergy_nonneg` \u2014 the ghost number and the ghost energy. * `ghostCore`, `ghostCore_dense`, `fibreHam`, `ymGhostHam` \u2014 the glued core and the total Hamiltonian, for **every** family of structure constants and every ghost dispersion. * `fibreHam_symmetricOn`, **`ymGhostHam_symmetricOn`** \u2014 symmetry, unconditional. * **`ymGhostHam_preserves_ghostNumber`** \u2014 ghost number is conserved: the Hamiltonian preserves every ghost-number sector. `ymGhostHam_fibre` and **`ymGhostHam_vacuum_fibre`** \u2014 on the ghost vacuum `S = \u2205` the total Hamiltonian *is* the gauge-sector Hamiltonian `H\u2081`: the ghosts decouple. * **`ymGhostHam_essentiallySelfAdjointOn_core`** \u2014 for the abelian (QED) gauge fixing `f_abc = 0` the total gauge+ghost Hamiltonian is essentially self-adjoint on the glued Gauss\u2013polynomial core, hence has a unique self-adjoint realization (`ymGhostHam_stone_flow` is the unitary group it generates). * **`ymGhostHam_add_bounded_coupling_esa`** \u2014 the same after adding an arbitrary *bounded* symmetric gauge\u2013ghost coupling, by Kato\u2013Rellich: any regulated Faddeev\u2013Popov coupling is covered.\n\nFor `f_abc \u2260 0` the Faddeev\u2013Popov operator depends on the gauge field, so the ghost coupling is an unbounded multiplication operator; neither the free statement nor the bounded-coupling statement applies to it, and the gauge sector itself is then the open quartic problem of `BookProof.ChapterYangMillsBandBounds`. Symmetry, ghost-number conservation and the decoupling of the ghost vacuum hold for every `f_abc`; only the self-adjointness statements are restricted to the abelian case. No mass gap and no spectral claim is made.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterCarlemanSimplex": {
+   "definition_name": "ChapterCarlemanSimplex",
+   "namespace": "BookProof.ChapterCarlemanSimplex",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterCarlemanSimplex.lean",
+   "title": "Chapter ChapterCarlemanSimplex",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.CarlemanSimplex`, source chapter `BookProof/ChapterCarlemanSimplex.lean`): Chapter ChapterCarlemanSimplex\n\nGenerated def bundle for ChapterCarlemanSimplex. See BookProof/ChapterCarlemanSimplex.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterCarlemanSimplex.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterCarlemanTwoStep": {
+   "definition_name": "ChapterCarlemanTwoStep",
+   "namespace": "BookProof.CarlemanTwoStep",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterCarlemanTwoStep.lean",
+   "title": "Chapter CarlemanTwoStep",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.CarlemanTwoStep`, source chapter `BookProof/ChapterCarlemanTwoStep.lean`): Chapter CarlemanTwoStep\n\nGenerated def bundle for ChapterCarlemanTwoStep. See BookProof/ChapterCarlemanTwoStep.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterCarlemanTwoStep.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterFiniteSectionSingleTime": {
+   "definition_name": "ChapterFiniteSectionSingleTime",
+   "namespace": "BookProof.ChapterFiniteSectionSingleTime",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFiniteSectionSingleTime.lean",
+   "title": "Chapter ChapterFiniteSectionSingleTime",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FiniteSectionSingleTime`, source chapter `BookProof/ChapterFiniteSectionSingleTime.lean`): Chapter ChapterFiniteSectionSingleTime\n\nGenerated def bundle for ChapterFiniteSectionSingleTime. See BookProof/ChapterFiniteSectionSingleTime.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFiniteSectionSingleTime.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterFockWeightedSchurEsa": {
+   "definition_name": "ChapterFockWeightedSchurEsa",
+   "namespace": "BookProof.FockWeightedSchurEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockWeightedSchurEsa.lean",
+   "title": "Chapter FockWeightedSchurEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FockWeightedSchurEsa`, source chapter `BookProof/ChapterFockWeightedSchurEsa.lean`): Chapter FockWeightedSchurEsa\n\nGenerated def bundle for ChapterFockWeightedSchurEsa. See BookProof/ChapterFockWeightedSchurEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFockWeightedSchurEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterFullQuadraticEsa": {
+   "definition_name": "ChapterFullQuadraticEsa",
+   "namespace": "BookProof.ChapterFullQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFullQuadraticEsa.lean",
+   "title": "Chapter ChapterFullQuadraticEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.FullQuadraticEsa`, source chapter `BookProof/ChapterFullQuadraticEsa.lean`): Chapter ChapterFullQuadraticEsa\n\nGenerated def bundle for ChapterFullQuadraticEsa. See BookProof/ChapterFullQuadraticEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFullQuadraticEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterGhostField": {
+   "definition_name": "ChapterGhostField",
+   "namespace": "BookProof.GhostField",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterGhostField.lean",
+   "title": "Chapter \"Free field parametrization \u2026 Navier-Stokes\", \u00a7\"Free field parametrization in Navier-Stokes equations\" \u2014 the fermionic ghost field and BRST charge",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.GhostField`, source chapter `BookProof/ChapterGhostField.lean`): Chapter \"Free field parametrization \u2026 Navier-Stokes\", \u00a7\"Free field parametrization in Navier-Stokes equations\" \u2014 the fermionic ghost field and BRST charge\n\nSource: `book.tex`, chapter *\"Free field parametrization in Classical Statistical Field Theory and Navier-Stokes equations\"*, \u00a7*\"Free field parametrization in Navier-Stokes equations\"* (line ~4134).\n\nThe book builds the Navier\u2013Stokes Hilbert space as a tensor product of symmetric and antisymmetric Fock spaces, giving a graded Lie superalgebra of bosonic and fermionic creation/annihilation operators. The **divergence constraint** is imposed via a single fermionic *ghost* field `\u03c8` (with its space derivatives `\u03c8_j`), and the **BRST charge** is\n\n``` \u03a9 = \u222b d\u00b3x \u2026 a\u2020(x,\u2026) [ u_{j,j} \u03c8\u2020 ] a(x,\u2026). ```\n\nThe book specifies the ghost's canonical *anti*commutation relations and its concrete action on the two\u2013dimensional `\u2124\u2082` Fock factor:\n\n``` {\u03c8, \u03c8\u2020} = \u03c8 \u03c8\u2020 + \u03c8\u2020 \u03c8 = 1 \u03c8\u2020{a}(j) = a(1) \u03b4_{j0} \u03c8{a}(j) = a(0) \u03b4_{j1} ```\n\nThis file formalizes the self-contained mathematical content of that construction:\n\n* the single fermionic mode as the concrete `2\u00d72` matrix model on the `\u2124\u2082` Fock factor `\u2102\u00b2`, its **canonical anticommutation relations** (CAR) `{\u03c8,\u03c8\u2020} = 1`, `\u03c8\u00b2 = 0`, `\u03c8\u2020\u00b2 = 0`, and `\u03c8\u2020 = \u03c8\u1d34`; * the ghost **number operator** `N = \u03c8\u2020\u03c8` is an orthogonal projection (`N\u00b2 = N`, `N = N\u1d34`) \u2014 the fermionic occupation is `0` or `1` (Pauli exclusion), and `N + \u03c8\u03c8\u2020 = 1`; * the abstract **nilpotency of the BRST charge** `\u03a9\u00b2 = 0`, which is the reason the BRST cohomology is defined: for any operator `b` that commutes with a square-zero ghost factor `f` (`f\u00b2 = 0`), the composite `\u03a9 = b\u00b7f` satisfies `\u03a9\u00b2 = 0`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterGhostField.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterGradedBandSchurEsa": {
+   "definition_name": "ChapterGradedBandSchurEsa",
+   "namespace": "BookProof.ChapterGradedBandSchurEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterGradedBandSchurEsa.lean",
+   "title": "Chapter ChapterGradedBandSchurEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.GradedBandSchurEsa`, source chapter `BookProof/ChapterGradedBandSchurEsa.lean`): Chapter ChapterGradedBandSchurEsa\n\nGenerated def bundle for ChapterGradedBandSchurEsa. See BookProof/ChapterGradedBandSchurEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterGradedBandSchurEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterHermiteBandCalculusHigher": {
+   "definition_name": "ChapterHermiteBandCalculusHigher",
+   "namespace": "BookProof.ChapterHermiteBandCalculusHigher",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterHermiteBandCalculusHigher.lean",
+   "title": "Chapter ChapterHermiteBandCalculusHigher",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.HermiteBandCalculusHigher`, source chapter `BookProof/ChapterHermiteBandCalculusHigher.lean`): Chapter ChapterHermiteBandCalculusHigher\n\nGenerated def bundle for ChapterHermiteBandCalculusHigher. See BookProof/ChapterHermiteBandCalculusHigher.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculusHigher.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterModeQuadraticEsa": {
+   "definition_name": "ChapterModeQuadraticEsa",
+   "namespace": "BookProof.ChapterModeQuadraticEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterModeQuadraticEsa.lean",
+   "title": "Chapter ChapterModeQuadraticEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.ModeQuadraticEsa`, source chapter `BookProof/ChapterModeQuadraticEsa.lean`): Chapter ChapterModeQuadraticEsa\n\nGenerated def bundle for ChapterModeQuadraticEsa. See BookProof/ChapterModeQuadraticEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterModeQuadraticEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgBrstDerivativeGauge": {
+   "definition_name": "ChapterQgBrstDerivativeGauge",
+   "namespace": "BookProof.QgBrstDerivativeGauge",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgBrstDerivativeGauge.lean",
+   "title": "Chapter QgBrstDerivativeGauge",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgBrstDerivativeGauge`, source chapter `BookProof/ChapterQgBrstDerivativeGauge.lean`): Chapter QgBrstDerivativeGauge\n\nGenerated def bundle for ChapterQgBrstDerivativeGauge. See BookProof/ChapterQgBrstDerivativeGauge.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgBrstDerivativeGauge.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgCouplingDGammaSum": {
+   "definition_name": "ChapterQgCouplingDGammaSum",
+   "namespace": "BookProof.ChapterQgCouplingDGammaSum",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgCouplingDGammaSum.lean",
+   "title": "Chapter ChapterQgCouplingDGammaSum",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgCouplingDGammaSum`, source chapter `BookProof/ChapterQgCouplingDGammaSum.lean`): Chapter ChapterQgCouplingDGammaSum\n\nGenerated def bundle for ChapterQgCouplingDGammaSum. See BookProof/ChapterQgCouplingDGammaSum.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgCouplingDGammaSum.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgManifoldModeInstance": {
+   "definition_name": "ChapterQgManifoldModeInstance",
+   "namespace": "BookProof.ChapterQgManifoldModeInstance",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgManifoldModeInstance.lean",
+   "title": "Chapter ChapterQgManifoldModeInstance",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgManifoldModeInstance`, source chapter `BookProof/ChapterQgManifoldModeInstance.lean`): Chapter ChapterQgManifoldModeInstance\n\nGenerated def bundle for ChapterQgManifoldModeInstance. See BookProof/ChapterQgManifoldModeInstance.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgManifoldModeInstance.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgOuterFockFlow": {
+   "definition_name": "ChapterQgOuterFockFlow",
+   "namespace": "BookProof.ChapterQgOuterFockFlow",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgOuterFockFlow.lean",
+   "title": "Chapter ChapterQgOuterFockFlow",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgOuterFockFlow`, source chapter `BookProof/ChapterQgOuterFockFlow.lean`): Chapter ChapterQgOuterFockFlow\n\nGenerated def bundle for ChapterQgOuterFockFlow. See BookProof/ChapterQgOuterFockFlow.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgOuterFockFlow.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgTimeIndependentFlow": {
+   "definition_name": "ChapterQgTimeIndependentFlow",
+   "namespace": "BookProof.QgTimeIndependentFlow",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgTimeIndependentFlow.lean",
+   "title": "Chapter QgTimeIndependentFlow",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgTimeIndependentFlow`, source chapter `BookProof/ChapterQgTimeIndependentFlow.lean`): Chapter QgTimeIndependentFlow\n\nGenerated def bundle for ChapterQgTimeIndependentFlow. See BookProof/ChapterQgTimeIndependentFlow.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgTimeIndependentFlow.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgTimeStepping": {
+   "definition_name": "ChapterQgTimeStepping",
+   "namespace": "BookProof.ChapterQgTimeStepping",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgTimeStepping.lean",
+   "title": "Chapter ChapterQgTimeStepping",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgTimeStepping`, source chapter `BookProof/ChapterQgTimeStepping.lean`): Chapter ChapterQgTimeStepping\n\nGenerated def bundle for ChapterQgTimeStepping. See BookProof/ChapterQgTimeStepping.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgTimeStepping.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgTruncationResolvent": {
+   "definition_name": "ChapterQgTruncationResolvent",
+   "namespace": "BookProof.ChapterQgTruncationResolvent",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgTruncationResolvent.lean",
+   "title": "Chapter ChapterQgTruncationResolvent",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgTruncationResolvent`, source chapter `BookProof/ChapterQgTruncationResolvent.lean`): Chapter ChapterQgTruncationResolvent\n\nGenerated def bundle for ChapterQgTruncationResolvent. See BookProof/ChapterQgTruncationResolvent.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgTruncationResolvent.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQuadraticFockEsa": {
+   "definition_name": "ChapterQuadraticFockEsa",
+   "namespace": "BookProof.ChapterQuadraticFockEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQuadraticFockEsa.lean",
+   "title": "Chapter ChapterQuadraticFockEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QuadraticFockEsa`, source chapter `BookProof/ChapterQuadraticFockEsa.lean`): Chapter ChapterQuadraticFockEsa\n\nGenerated def bundle for ChapterQuadraticFockEsa. See BookProof/ChapterQuadraticFockEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuadraticFockEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQymTimeIndependentFlow": {
+   "definition_name": "ChapterQymTimeIndependentFlow",
+   "namespace": "BookProof.ChapterQymTimeIndependentFlow",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQymTimeIndependentFlow.lean",
+   "title": "Chapter ChapterQymTimeIndependentFlow",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QymTimeIndependentFlow`, source chapter `BookProof/ChapterQymTimeIndependentFlow.lean`): Chapter ChapterQymTimeIndependentFlow\n\nGenerated def bundle for ChapterQymTimeIndependentFlow. See BookProof/ChapterQymTimeIndependentFlow.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQymTimeIndependentFlow.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterSirkFinitePrecision": {
+   "definition_name": "ChapterSirkFinitePrecision",
+   "namespace": "BookProof.SirkFinitePrecision",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSirkFinitePrecision.lean",
+   "title": "Chapter SirkFinitePrecision \u2014 the finite-precision certificate layer (T1\u2013T5) Deliverables",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.SirkFinitePrecision`, source chapter `BookProof/ChapterSirkFinitePrecision.lean`): Chapter SirkFinitePrecision \u2014 the finite-precision certificate layer (T1\u2013T5) Deliverables\n\n`CONSOLIDATED_PLAN.md` \u00a713.3, `MASS_GAP_CERTIFIED.md` \u00a74: the SIRK/Hashimoto reliability chain of \u00a712 is stated in *exact* arithmetic, while the kernel runs in `f64`. This chapter formalises the layers that turn a computed number into a *rigorous enclosure*, with every constant explicit. Nothing here trusts a floating-point value: the theorems consume only residuals, backward-error bounds and interval enclosures, all of which enter as hypotheses or as certified data.\n\n* `HasRealEigenvalue` \u2014 a real eigenvalue of an operator; `rayleigh` \u2014 the Rayleigh quotient `re \u27eax, T x\u27eb`, the quantity the kernel reports as a Ritz value. * The spectral expansion of a symmetric operator in its eigenbasis (`repr_apply_of_symmetric`, `norm_sq_eq_sum_repr`, `rayleigh_eq_sum_eigenvalues`, `norm_apply_sq_eq_sum_eigenvalues`). * **T2 (Rayleigh\u2013Ritz residual bound, Layer 3, \u00a74.3)** `exists_eigenvalue_dist_le_residual` / `exists_eigenvalue_dist_le_residual_unit`: for *any* vector `x \u2260 0` and any real `\u03b8` there is an eigenvalue `lam` of the exact operator with `|lam \u2212 \u03b8| \u00b7 \u2016x\u2016 \u2264 \u2016T x \u2212 \u03b8 x\u2016`. This is Parlett's a-posteriori bound: it applies to the *computed* vector and the *exact* operator, so no infinite-precision hypothesis is needed at the theorem level. * **T1/T3 (backward error + Weyl, Layer 1, \u00a74.1)** `backward_error_weyl` and `backward_error_weyl_symm`: if the computed eigenpairs are exact eigenpairs of a perturbed operator `S` with `\u2016T x \u2212 S x\u2016 \u2264 \u03b5 \u2016x\u2016` (the LAPACK backward-error model, `\u03b5 = c(n) \u00b7 u \u00b7 \u2016\u011c\u2016`), then the eigenvalues of `S` and of `T` are within `\u03b5` of each other. This is Weyl's inequality in the enclosure (Hausdorff) form \u2014 the form the certificate consumes. * **The Rayleigh\u2013Ritz upper bound** `ground_le_rayleigh`: the lowest eigenvalue never exceeds a computed Rayleigh quotient \u2014 the direction that is unconditionally sound. * **Temple's inequality** `temple_lower_bound`: the rigorous *lower* bound for the lowest eigenvalue from a computed Rayleigh quotient and an a-priori separation constant `\u03b2`. (The bound `\u03bb\u2080 \u2265 \u03b8 \u2212 \u2016r\u2016` used informally in `MASS_GAP_CERTIFIED.md` \u00a73.4 step 1 is *not* valid without extra information \u2014 a small residual only certifies that *some* eigenvalue is near `\u03b8`. Temple's inequality and `ground_ge_of_no_eigenvalue_below` are the two honest replacements, and they are what `ChapterSirkCertifiedGap` uses.) * **T4 (certified-observable propagation, \u00a75.2)** `observable_propagation`: `|\u27e8O\u27e9_u \u2212 \u27e8O\u27e9_w| \u2264 \u2016O\u2016 (\u2016u\u2016 + \u2016w\u2016) \u2016u \u2212 w\u2016`, and the `2\u2016O\u2016 \u00b7 band \u00b7 \u2016v\u2016` form `observable_propagation_band`. * **T5 (the interval-enclosure core, Layer 2, \u00a74.2/\u00a74.4)** `CertInterval` with `add`/`neg`/`sub`/`mul`/`widen` and their soundness theorems (`mem_add`, `mem_neg`, `mem_sub`, `mem_mul`, `mem_widen`), the outward-rounding model `mem_ofRounded`, the certified supremum `le_sup_bound_of_isotone` / `abs_le_of_isotone`, and the half-width extraction `dist_le_width`.\n\nEverything is `sorry`-free and `axiom`-free.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSirkFinitePrecision.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterYangMillsAbelianEsa": {
+   "definition_name": "ChapterYangMillsAbelianEsa",
+   "namespace": "BookProof.ChapterYangMillsAbelianEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterYangMillsAbelianEsa.lean",
+   "title": "Chapter ChapterYangMillsAbelianEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.YangMillsAbelianEsa`, source chapter `BookProof/ChapterYangMillsAbelianEsa.lean`): Chapter ChapterYangMillsAbelianEsa\n\nGenerated def bundle for ChapterYangMillsAbelianEsa. See BookProof/ChapterYangMillsAbelianEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsAbelianEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterYangMillsAbelianFockEsa": {
+   "definition_name": "ChapterYangMillsAbelianFockEsa",
+   "namespace": "BookProof.ChapterYangMillsAbelianFockEsa",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterYangMillsAbelianFockEsa.lean",
+   "title": "Chapter ChapterYangMillsAbelianFockEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.YangMillsAbelianFockEsa`, source chapter `BookProof/ChapterYangMillsAbelianFockEsa.lean`): Chapter ChapterYangMillsAbelianFockEsa\n\nGenerated def bundle for ChapterYangMillsAbelianFockEsa. See BookProof/ChapterYangMillsAbelianFockEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsAbelianFockEsa.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
   }
  },
  "thms": {
@@ -16364,6 +16756,28 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'": {
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le'",
+   "chapter": "ChapterNavierStokesFarisLavineLift",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'.lean",
+   "title": "The Lean 4 theorem `norm_inner_commutator_sum_le'` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_inner_commutator_sum_le'` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFarisLavineLift.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_NavierStokesFlow_NSHashimoto_ns_hashimoto_selects": {
+   "name": "--",
+   "chapter": "ChapterNavierStokesHashimoto",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_NSHashimoto_ns_hashimoto_selects.lean",
+   "title": "The Lean 4 theorem `--` in the `ChapterNavierStokesHashimoto` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `--` in the `ChapterNavierStokesHashimoto` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesHashimoto.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -17673,6 +18087,7 @@
   "BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hashimoto_selects",
   "BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_hFull_hasZeroDeficiencyOn",
   "BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_of_lagrangian_katoRellich",
-  "BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs"
+  "BookProof_QgHermiteFriedrichs_qgOneParticleHermite_friedrichs",
+  "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le'"
  ]
 }

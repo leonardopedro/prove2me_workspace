@@ -11,6 +11,7 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

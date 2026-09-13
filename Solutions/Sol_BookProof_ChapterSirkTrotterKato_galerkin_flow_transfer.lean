@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_HermiteGalerkin_isSelfAdjoint_galerkinCompression
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
 open BookProof.ChapterSirkTrotterKato
 
 

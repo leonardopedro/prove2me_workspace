@@ -19,6 +19,11 @@ chapters) plus the 4 deferred chapters themselves
 (SirkEndToEnd, SirkWhitening, SirkPerSystem, YangMillsHermite) with their thm/sol
 nodes. This unlocks everything the earlier waves deferred.
 
+**Read the newest session section first: §1h** (accounting rules — which platform
+counter means what) then **§1f** (the solution-side repair chain and what is still
+blocked). Live backlog is always `python3 pipeline/upload_pipeline.py --status`,
+never the state file (§1d).
+
 ### 1a. VERIFIED STATE (2026-09-12, Freebuff cloud sandbox — supersedes the counts below)
 
 Measured against the live platform (API 0.10.3), not from log archaeology:
@@ -422,6 +427,122 @@ published by hand (which is how the defects above were introduced in the first p
 2. Re-check the 2 remaining `failed` (`sqSumOp_pgLp` is `NO NODE`; the other is reopened) and any
    fresh `NO NODE`/`NO STUB` classes the new verdicts expose, then re-run the repair chain + reopen.
 3. Commit: 30+ modified `Solutions/`/`Theorems/` files plus 6 new `debug/` tools.
+
+### 1g. Session 5 (2026-09-13) — the "proved vs accepted" mismatch, resolved with the platform's own data
+
+**Question:** prove2me reports **517 theorems proved** while the local record of *our own accepted
+submissions* is smaller. Measured, not reasoned, with the new `debug/reconcile_solved.py`:
+
+| counter | value |
+|---|---|
+| `/me num_solved_prob` (the website's "proved") | **517** |
+| `/users/<uid>` `solved_problems` | **517** (the ground-truth set) |
+| `/submissions` for this account | 1000 of `total: 1201` visible |
+| local `state/pipeline.json` | 2440 done / 276 pending / 26 failed |
+| local `sol:` records | 1220 (1110 done, 90 pending, 20 failed after the fix) |
+| local `sol:` records carrying a `submission_id` | **341 → 588** after the re-link |
+| of the platform's 517, linked to a local record | 261 before the fix, **508 after** |
+
+**The platform is right; the local count was the broken one.** Attribution was checked the only way
+that settles it — `GET /theorems/<tid>/submissions` for sampled solved nodes returns the
+`submission_id` the profile credits, and in every sample that submission's `user_id` is **ours**
+(`2971852e-…`), including two nodes (`YangMillsBianchi.fieldStrength_antisymm`,
+`ChapterMajoranaProp61.gsq_Hsq_comm`) that a second account (`9d3ad061-…`) also solved, and one
+legacy node (`hurwitz_nonvanishing_limit`) whose solving submission predates `pipeline.json`
+entirely. So `num_solved_prob` counts *our* verified proofs, one per theorem, first-prover or not.
+
+**Where the local count lost 256 of them (three distinct leaks, all now fixed):**
+
+1. **`sync_state()` replaced the record wholesale** when it marked a pending solution done because
+   its target node was already `Proved` — discarding the `submission_id` of the very submission that
+   proved it (`synced_from: theorems`). It now carries `submission_id` / `submission_src` /
+   `platform_solver_submission` across, which is the link the website's counter is built on.
+   `do_wave_sol`'s two skip branches did the same (and the first one dropped `theorem_id` too); both
+   now mutate the existing record in place.
+2. **Accepted submissions stuck at `pending`.** 21 solved theorems sit on a local record whose
+   verdict was never drained (a chunk was cut off after the submit). The daemon re-polls those, but
+   nothing made the *count* honest while it was stopped.
+3. **Duplicate submissions.** 6 solved theorems carry ≥2 of our accepted submissions (one node holds
+   **ten**); `file_stamp()` correctly forces a resubmit after a file repair, so the repairs cost
+   duplicate proof checks. Cost, not correctness — but it is why `ACCEPTED` submissions (394 in the
+   visible window) exceed distinct solved theorems (372 there).
+
+**API 0.10.3 quirks that hid the answer** (all verified):
+
+- `GET /submissions` **ignores `offset`, `page`, `status`, and `limit` > 1000**, always returning the
+  newest 1000 with a separate `total` (1201). So the oldest submissions — exactly the early,
+  pre-`pipeline.json` proofs — are unreachable through it; `debug/platform_stats.py` and any future
+  accounting should use `/users/<uid>` instead.
+- `GET /users/<uid>` `submitted_problems` is **capped at 1000** (newest first) while
+  `solved_problems` is complete (517/517), so "how many problems did we publish" cannot be read off
+  the profile either.
+- `num_submitted_prob` is **0 for every account** checked (`wamlart` 6559 solved, `Test_Bot`,
+  `Community (Bot)`, ours) — a dead platform counter, not a symptom of this problem.
+
+**New tool: `debug/reconcile_solved.py`.** Fetches `solved_problems`, cross-references the local
+state by wave slug, classifies every solved theorem (`tracked` / `verdict not drained` /
+`submission_id lost` / `duplicate submission` / `no local record`) and prints the report; `--apply`
+re-links the lost ids additively (sets `status: done`, `submission_id`,
+`platform_solver_submission`, drops the stale `error`) and is idempotent — re-running reports
+"nothing to change". It was applied here under a `state/pipeline.json.bak.reconcile` backup.
+**Use it as the accounting check before any progress report**: the website's counter is
+`num_solved_prob`, never the state file's `done` (§1c's counting rule, now with a tool behind it).
+
+**Rule for progress reports.** "Published" (plan `done`: 1333 thm nodes — 666 of them reused — 817
+`already Proved` solution skips and 120 def bundles) and "proved" (`num_solved_prob`, one per theorem) are
+different counters; the only number that moves when we prove something is `num_solved_prob`.
+
+### 1h. Session 6 (2026-09-13) — "fewer accepted submissions than theorems proved": the counter is
+right, the *list* is truncated
+
+**Question, stated precisely.** The profile reports **517 theorems proved** while the submission list
+shows only **394 `ACCEPTED`** (425 adding `SKETCH_ACCEPTED`). Fewer accepted submissions than proved
+theorems should be impossible — every proof needs at least one accepted submission.
+
+**Answer: all 517 proved theorems carry an accepted submission of ours; `GET /submissions` is a
+truncated window and cannot show 185 of them.** Measured on the platform alone (no local state
+involved) with the new `debug/audit_submissions.py`:
+
+| measurement | value |
+|---|---|
+| `/me num_solved_prob` | 517 |
+| `/users/<uid>` `solved_problems` | 517 entries, **517 distinct** credited `submission_id`s |
+| per-theorem audit of all 517 (`/theorems/<tid>/submissions`) | **579** of our `ACCEPTED`+`SKETCH_ACCEPTED` submissions |
+| ... of which the profile's *credited* submission, and ours | **517 / 517** (0 missing, 0 belonging to another account) |
+| theorems carrying >1 of our accepted submissions | **41** (+62 extra; worst `J_unitary_prime` holds **10**) |
+| `/submissions` window (1000 rows of `total: 1201`) | 425 accepted-family (394 `ACCEPTED` + 31 `SKETCH_ACCEPTED`) |
+| our accepted submissions the window cannot show | **185** |
+| credited proofs whose submission predates the window's oldest row | 145 |
+
+The arithmetic closes exactly: **579 audited accepted − 185 outside the window = 394**, the `ACCEPTED`
+count the list does show. The window spans `2026-09-08T06:01 … 2026-09-13T11:49`, so the Sep 6–8
+proofs (the pre-`pipeline.json` waves, ~92 % accepted) drop out of it entirely, while the 201 rows it
+withholds from `total` are dominated by the later CE-heavy waves. Nothing is lost on the platform —
+only the listing is capped. The 31 `SKETCH_ACCEPTED` are reductions whose parents are still Open, so
+they are correctly *not* part of the 517.
+
+**Correction to §1g:** the duplicate-submission count there (6) came from a sample; the full sweep says
+**41 theorems / 62 extra accepted submissions**. Same cause and same verdict — `file_stamp()` forces a
+resubmit after each solution-file repair, so every repair pass re-proves a few nodes. Bandwidth, not
+corruption, and it is why 579 accepted submissions serve only 517 theorems.
+
+Per-theorem reads are the only complete history available: the no-arg `/theorems/<tid>/submissions`
+returns every row for that theorem (816 rows across the 517), whereas the account-wide `/submissions`
+ignores `offset`/`status` (§1g). Cross-check that attribution is still ours: other accounts also hold
+accepted proofs on **46** of our 517 solved nodes (`carlok` 15, `wamlart` 14, `salim` 12, `Patrick`
+4) and we are credited on all of them, reconfirming §1g.
+
+**Tool.** `python3 debug/audit_submissions.py [--limit N]` — 517 reads at concurrency 10, ~1 minute,
+prints the three sections above and reports `INCOMPLETE` if any theorem could not be read. Run it
+whenever "proved vs accepted" comes up.
+
+**Rules.**
+
+- Never quote an `ACCEPTED` count from `GET /submissions` as account-wide: it is the newest 1000 rows.
+  The proved counter is `num_solved_prob` = `len(solved_problems)`.
+- The complete per-account submission history can only be reconstructed per theorem (or from
+  `solved_problems` + `submitted_problems`, both partially capped) — size any "submissions" claim
+  accordingly, and say which source it came from.
 
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 

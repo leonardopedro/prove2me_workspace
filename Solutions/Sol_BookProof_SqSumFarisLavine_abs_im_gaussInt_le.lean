@@ -7,6 +7,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
 open BookProof.SqSumFarisLavine
 
 

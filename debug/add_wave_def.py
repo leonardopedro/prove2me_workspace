@@ -54,10 +54,18 @@ def main():
     ns_m = re.search(r"(?m)^namespace\s+(\S+)", txt)
     doc_m = re.search(r"/-!(.*?)-/", txt, re.S)
     blocks = [re.sub(r"\s+", " ", b).strip() for b in (doc_m.group(1) if doc_m else "").split("\n\n")]
-    # The docstring opens with a markdown heading (`# ...`, possibly over two
-    # paragraphs); that heading is the title, the prose below it is the NL.
-    heading = [b for b in blocks if b.startswith("#")]
-    paras = [b for b in blocks if b and not b.startswith("#")]
+    # The docstring opens with a markdown heading (`# ...`, possibly spanning
+    # consecutive heading paragraphs); that heading is the title, the prose below
+    # it is the NL.  Only the LEADING run of heading blocks counts: taking every
+    # `#`-block in the docstring also picked up the section headings that follow
+    # the prose, so 7 published entries read e.g. "From a graph core to the whole
+    # comparison domain What is proved" (`--reset` repairs those).
+    heading, paras = [], []
+    for b in blocks:
+        if b.startswith("#") and not paras:
+            heading.append(b)
+        elif b:
+            paras.append(b)
     title = " ".join(h.lstrip("# ").strip() for h in heading).strip()
     if not title:
         title = paras[0] if paras else f"Formal definitions for {chapter}"
@@ -75,7 +83,11 @@ def main():
         "title": title[:200],
         "nl": nl,
         "source": f"{REPO}/BookProof/Chapter{leaf}.lean",
-        "tags": ["timepiece"] + (extra_tags or DEFAULT_TAGS) if "timepiece" not in (extra_tags or []) else extra_tags,
+        # `timepiece` is the first tag, and the extras must not repeat it: the
+        # old expression appended the default list (which starts with it), so
+        # every added entry carried `timepiece` twice.
+        "tags": ["timepiece"] + [t for t in (extra_tags or DEFAULT_TAGS)
+                                if t != "timepiece"],
     }
     with open(SPEC, "w", encoding="utf-8") as f:
         json.dump(spec, f, indent=1)

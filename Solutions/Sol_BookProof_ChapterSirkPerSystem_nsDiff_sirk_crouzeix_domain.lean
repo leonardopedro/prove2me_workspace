@@ -22,6 +22,7 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_shiftInvert_selects
 open BookProof.ChapterSirkPerSystem
 
 

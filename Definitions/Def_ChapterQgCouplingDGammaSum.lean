@@ -1,15 +1,11 @@
-import Mathlib
-
+import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterYangMillsFriedrichs
+
 
 /-!
 # QG-3.2 operator track — a sum of second quantizations in *differing* bases

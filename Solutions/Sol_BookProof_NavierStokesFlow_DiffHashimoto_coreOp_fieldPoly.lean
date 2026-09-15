@@ -11,6 +11,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_add
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_smul
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_sum
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 

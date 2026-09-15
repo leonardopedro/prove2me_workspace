@@ -7,6 +7,10 @@ import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_kinPoly
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
 open BookProof.GaussCoreQuadBounds
 
 

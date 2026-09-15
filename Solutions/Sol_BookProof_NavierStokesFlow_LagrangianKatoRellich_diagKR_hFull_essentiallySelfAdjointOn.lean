@@ -13,6 +13,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 

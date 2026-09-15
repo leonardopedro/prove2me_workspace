@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
+import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
 open BookProof.HermiteBand
 
 

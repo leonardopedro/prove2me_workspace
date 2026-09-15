@@ -1,8 +1,8 @@
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 
-import Mathlib
 
 /-!
 # The **full** (untruncated) Navier–Stokes Hamiltonian and its essential
@@ -236,20 +236,14 @@ noncomputable def latticeFullData (v : Fin 15 → LinfZ) (nu : ℝ) : NSFullData
   dense := finiteModes_dense
   u_symm k := by
     intro x y
-    change (inner ℂ (velocityOp (v k) (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (velocityOp (v k) (y : L2Z))
-    exact velocityOp_isSymmetric (v k) (x : L2Z) (y : L2Z)
+    simpa using velocityOp_isSymmetric (v k) (x : L2Z) (y : L2Z)
   mom_symm _ := by
     intro x y
-    change (inner ℂ (momentum (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (momentum (y : L2Z))
-    exact momentum_isSymmetric (x : L2Z) (y : L2Z)
+    simpa using momentum_isSymmetric (x : L2Z) (y : L2Z)
   u_comm k l := by
     refine LinearMap.ext fun f => Subtype.ext ?_
-    change (velocityOp (v k)) ((velocityOp (v l)) (f : L2Z))
-        = (velocityOp (v l)) ((velocityOp (v k)) (f : L2Z))
     have h := congrArg (fun T : L2Z →L[ℂ] L2Z => T (f : L2Z)) (velocityOp_commute (v k) (v l))
-    simpa using h
+    simpa [restrictCLM] using h
 
 
 

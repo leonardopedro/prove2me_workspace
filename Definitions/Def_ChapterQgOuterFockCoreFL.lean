@@ -1,17 +1,12 @@
-import Mathlib
-
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterYangMillsSU3
+
 
 /-!
 # From a graph core to the whole comparison domain

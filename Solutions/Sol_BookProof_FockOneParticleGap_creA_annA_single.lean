@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_FockSecondQuantization_creA_single
 import Theorems.Thm_BookProof_FockSecondQuantization_dn_self
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_FockSecondQuantization_up_dn
 open BookProof.FockOneParticleGap
 
 

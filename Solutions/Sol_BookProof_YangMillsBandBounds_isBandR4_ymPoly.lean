@@ -13,6 +13,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HermiteRelative_momPoly_eq_ymMomOp
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_smul
 
 
 

@@ -9,6 +9,7 @@ import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 open BookProof.HashimotoShiftInvert
 
 

@@ -6,6 +6,7 @@ import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HermiteGalerkin_starProjection_tendsto_of_monotone_dense
 open BookProof.HashimotoShiftInvert
 
 

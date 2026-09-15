@@ -4,6 +4,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
 open BookProof.HermiteGalerkin
 
 

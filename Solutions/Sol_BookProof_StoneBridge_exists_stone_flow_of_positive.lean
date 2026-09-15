@@ -8,6 +8,7 @@ import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_of_positive
 open BookProof.StoneBridge
 
 

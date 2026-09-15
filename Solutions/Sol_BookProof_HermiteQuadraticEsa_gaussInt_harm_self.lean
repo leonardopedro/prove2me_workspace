@@ -14,6 +14,8 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 open BookProof.HermiteQuadraticEsa
 
 

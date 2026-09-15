@@ -13,6 +13,7 @@ import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

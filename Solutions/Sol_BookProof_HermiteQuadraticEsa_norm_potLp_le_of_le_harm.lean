@@ -13,6 +13,8 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
+import Theorems.Thm_BookProof_QgHermiteOscillator_eval_harmPoly
 open BookProof.HermiteQuadraticEsa
 
 

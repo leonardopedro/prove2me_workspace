@@ -146,6 +146,25 @@
    "status": "PUBLISHED",
    "stub": false
   },
+  "ChapterDirectSumEsa": {
+   "lines": 233,
+   "names": [
+    "dsCore",
+    "memLp_of_finite_support",
+    "dsOp",
+    "dsOpD",
+    "parcelSector",
+    "fockSpace",
+    "sectorCore",
+    "fockCore",
+    "fockH"
+   ],
+   "namespaces": [
+    "BookProof.DirectSumEsa"
+   ],
+   "status": "FAILED",
+   "stub": false
+  },
   "ChapterDoubleSlit": {
    "lines": 74,
    "names": [
@@ -356,9 +375,9 @@
    ],
    "namespaces": [
     "BookProof.FriedrichsExtension",
-    "FormDom",
-    "FormDom",
-    "FormDom"
+    "BookProof.FriedrichsExtension.FormDom",
+    "BookProof.FriedrichsExtension.FormDom",
+    "BookProof.FriedrichsExtension.FormDom"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1002,8 +1021,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "AffineFiber",
-    "PairShift"
+    "BookProof.NavierStokesFlow.AffineFiber",
+    "BookProof.NavierStokesFlow.AffineFiber.PairShift"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1037,7 +1056,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "CanonicalVector"
+    "BookProof.NavierStokesFlow.CanonicalVector"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1053,7 +1072,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LagrangianNS"
+    "BookProof.NavierStokesFlow.LagrangianNS"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1087,9 +1106,9 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LpNat",
-    "JacobiDeficiency",
-    "DiagonalEsa"
+    "BookProof.NavierStokesFlow.LpNat",
+    "BookProof.NavierStokesFlow.JacobiDeficiency",
+    "BookProof.NavierStokesFlow.DiagonalEsa"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1110,7 +1129,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "DiffFarisLavine"
+    "BookProof.NavierStokesFlow.DiffFarisLavine"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1123,7 +1142,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "DiffHashimoto"
+    "BookProof.NavierStokesFlow.DiffHashimoto"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1198,8 +1217,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "FarisLavineLift",
-    "ComparisonData"
+    "BookProof.NavierStokesFlow.FarisLavineLift",
+    "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1240,7 +1259,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LagrangianNS"
+    "BookProof.NavierStokesFlow.LagrangianNS"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1264,7 +1283,23 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "FockCanonical"
+    "BookProof.NavierStokesFlow.FockCanonical"
+   ],
+   "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterNavierStokesFockContinuum": {
+   "lines": 168,
+   "names": [
+    "boundedEnergyCore",
+    "memLp_mul",
+    "mul_mem_boundedEnergyCore",
+    "multOp",
+    "sectorEnergy"
+   ],
+   "namespaces": [
+    "BookProof.NavierStokesFlow",
+    "BookProof.NavierStokesFlow.FockContinuum"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1278,7 +1313,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "SecondQuant"
+    "BookProof.NavierStokesFlow.SecondQuant"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1304,7 +1339,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "FockManyMode"
+    "BookProof.NavierStokesFlow.FockManyMode"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1335,7 +1370,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "FockOfFock"
+    "BookProof.NavierStokesFlow.FockOfFock"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1376,8 +1411,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "FullEsa",
-    "NSFullData"
+    "BookProof.NavierStokesFlow.FullEsa",
+    "BookProof.NavierStokesFlow.FullEsa.NSFullData"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1389,7 +1424,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "NSHashimoto"
+    "BookProof.NavierStokesFlow.NSHashimoto"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1412,7 +1447,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "HermiteCanonical"
+    "BookProof.NavierStokesFlow.HermiteCanonical"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1452,7 +1487,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "HermiteFarisLavine"
+    "BookProof.NavierStokesFlow.HermiteFarisLavine"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1469,7 +1504,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "IkebeKato"
+    "BookProof.NavierStokesFlow.IkebeKato"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1496,9 +1531,9 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LagrangianCanonical",
+    "BookProof.NavierStokesFlow.LagrangianCanonical",
     "BookProof.NavierStokesFlow",
-    "CanonicalVector"
+    "BookProof.NavierStokesFlow.CanonicalVector"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1522,8 +1557,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LagrangianEsa",
-    "LagrangianFullData"
+    "BookProof.NavierStokesFlow.LagrangianEsa",
+    "BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1539,7 +1574,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "LagrangianKatoRellich"
+    "BookProof.NavierStokesFlow.LagrangianKatoRellich"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1556,7 +1591,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "SecondQuant"
+    "BookProof.NavierStokesFlow.SecondQuant"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1592,8 +1627,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "ShiftHamiltonian",
-    "ShiftData"
+    "BookProof.NavierStokesFlow.ShiftHamiltonian",
+    "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1625,8 +1660,8 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "SignedShift",
-    "SignedHop"
+    "BookProof.NavierStokesFlow.SignedShift",
+    "BookProof.NavierStokesFlow.SignedShift.SignedHop"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1695,7 +1730,7 @@
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
-    "ThreeComponent"
+    "BookProof.NavierStokesFlow.ThreeComponent"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -1845,11 +1880,11 @@
    ],
    "namespaces": [
     "BookProof.FriedrichsExtension",
-    "FormDom",
+    "BookProof.FriedrichsExtension.FormDom",
     "BookProof.HashimotoShiftInvert",
     "BookProof.QgOuterFockFL"
    ],
-   "status": "FAILED",
+   "status": "PUBLISHED",
    "stub": false
   },
   "ChapterQgOuterFockFlow": {
@@ -1930,6 +1965,43 @@
     "BookProof.RitzCertificate"
    ],
    "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterScalaronCoreEsa": {
+   "lines": 270,
+   "names": [
+    "ccSchwartz",
+    "ccInclLM",
+    "ccInclLM_injective",
+    "ccDomain",
+    "ccEquiv",
+    "ccDomain_le_schwartzDomain",
+    "mulCc",
+    "opCc",
+    "scalaronFullPotential",
+    "waveCc",
+    "waveAddSmoothPotential",
+    "qgScalaronModePotential",
+    "qgScalaronModeHamiltonian"
+   ],
+   "namespaces": [
+    "BookProof.ScalaronEsa"
+   ],
+   "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterScalaronWallEsa": {
+   "lines": 127,
+   "names": [
+    "kinOpR",
+    "kinCcR",
+    "wallHam",
+    "testCc"
+   ],
+   "namespaces": [
+    "BookProof.ScalaronWallEsa"
+   ],
+   "status": "FAILED",
    "stub": false
   },
   "ChapterShiftedHermiteCore": {
@@ -2088,7 +2160,7 @@
    ],
    "namespaces": [
     "BookProof.SirkFinitePrecision",
-    "CertInterval"
+    "BookProof.SirkFinitePrecision.CertInterval"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2249,7 +2321,7 @@
    "namespaces": [
     "BookProof.ChapterSirkTrotterKato",
     "BookProof.ChapterStoneResolvent",
-    "UnboundedSelfAdjoint"
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2367,7 +2439,7 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneMeasurable",
-    "WeakMeasurableUnitaryGroup"
+    "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2393,7 +2465,7 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneResolvent",
-    "UnboundedSelfAdjoint"
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2432,7 +2504,7 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneResolvent",
-    "UnboundedSelfAdjoint"
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2471,7 +2543,7 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneMeasurable",
-    "WeakMeasurableUnitaryGroup"
+    "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2509,8 +2581,8 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneResolvent",
-    "UnboundedSelfAdjoint",
-    "UnboundedSelfAdjoint"
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2554,7 +2626,7 @@
    ],
    "namespaces": [
     "BookProof.ChapterStoneResolvent",
-    "UnboundedSelfAdjoint"
+    "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2663,6 +2735,19 @@
    "status": "PUBLISHED",
    "stub": false
   },
+  "ChapterWeakSecondDerivative": {
+   "lines": 140,
+   "names": [
+    "IsTestFun",
+    "doubleAntideriv"
+   ],
+   "namespaces": [
+    "BookProof.WeakSecondDeriv",
+    "BookProof.WeakSecondDeriv.IsTestFun"
+   ],
+   "status": "PUBLISHED",
+   "stub": false
+  },
   "ChapterWeylHamiltonian": {
    "lines": 85,
    "names": [
@@ -2670,6 +2755,22 @@
    ],
    "namespaces": [
     "BookProof.WeylHamiltonian"
+   ],
+   "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterYangMillsAbelianEsa": {
+   "lines": 158,
+   "names": [
+    "ymMomIdx",
+    "ymMomVec",
+    "ymMagVec",
+    "ymFqP",
+    "ymFqQ",
+    "ymAbelianPoly"
+   ],
+   "namespaces": [
+    "BookProof.YangMillsAbelianEsa"
    ],
    "status": "PUBLISHED",
    "stub": false
@@ -2848,10 +2949,10 @@
   }
  },
  "job_counts": {
-  "FAILED": 14,
-  "PUBLISHED": 129
+  "FAILED": 15,
+  "PUBLISHED": 134
  },
- "job_total": 224,
+ "job_total": 242,
  "name_owner": {
   "Band": "ChapterHermiteBandCalculus",
   "BandRecord": "ChapterSirkBandLedger",
@@ -2859,6 +2960,7 @@
   "BrstIntegral": "ChapterGaugeFixing",
   "CertInterval": "ChapterSirkFinitePrecision",
   "CertificateData": "ChapterSirkCertificateReader",
+  "Comparison": "ChapterQgOuterFockFarisLavine",
   "ComparisonData": "ChapterNavierStokesFarisLavineLift",
   "Conf": "ChapterFockSecondQuantization",
   "CoreRep": "ChapterYangMillsHermite",
@@ -2903,6 +3005,7 @@
   "IsStoneFlow": "ChapterStoneBridge",
   "IsSymmetricDom": "ChapterNavierStokesFullEsa",
   "IsSymmetricOn": "ChapterUnitaryTransport",
+  "IsTestFun": "ChapterWeakSecondDerivative",
   "IsWhitening": "ChapterSirkGramWhitening",
   "IsWhiteningMatrix": "ChapterSirkGramWhitening",
   "L2I": "ChapterNavierStokesIkebeKato",
@@ -3029,6 +3132,7 @@
   "bornRecover": "ChapterContinuityUnitary",
   "bornRecover_tsum_univ": "ChapterContinuityUnitaryInfinite",
   "bornRecover_univ": "ChapterContinuityUnitary",
+  "boundedEnergyCore": "ChapterNavierStokesFockContinuum",
   "bracket": "ChapterFreeFieldConstraint",
   "cFun": "ChapterNavierStokesCanonicalVector",
   "cFun_vanishes_off_range": "ChapterNavierStokesLagrangianCanonical",
@@ -3038,6 +3142,12 @@
   "cast_add_le_total": "ChapterNavierStokesThreeComponent",
   "cast_le_total": "ChapterNavierStokesThreeComponent",
   "cauchySeq_of_dense_of_isometry": "ChapterStoneUnitary",
+  "ccDomain": "ChapterScalaronCoreEsa",
+  "ccDomain_le_schwartzDomain": "ChapterScalaronCoreEsa",
+  "ccEquiv": "ChapterScalaronCoreEsa",
+  "ccInclLM": "ChapterScalaronCoreEsa",
+  "ccInclLM_injective": "ChapterScalaronCoreEsa",
+  "ccSchwartz": "ChapterScalaronCoreEsa",
   "certifiedGap": "ChapterSirkCertifiedGap",
   "christoffel": "ChapterQuantumGravityDensitized",
   "clDom": "ChapterEsaClosureCore",
@@ -3153,6 +3263,7 @@
   "denseRange_toComplL": "ChapterFriedrichsExtension",
   "dense_avgSpan": "ChapterStoneMeasurable",
   "dense_domain_of_isSelfAdjointExtension": "ChapterStoneBridge",
+  "dense_range_formExt": "ChapterQgOuterFockFarisLavine",
   "derOp": "ChapterYangMillsHermite",
   "derivative_hermiteR": "ChapterHermiteFunctions",
   "derivative_hermiteZ": "ChapterHermiteProductCore",
@@ -3192,7 +3303,17 @@
   "digitVal": "ChapterSirkCertificateReader",
   "digitsAux": "ChapterSirkCertificateReader",
   "dn": "ChapterFockSecondQuantization",
+  "doubleAntideriv": "ChapterWeakSecondDerivative",
   "drift": "ChapterNavierStokesFlow",
+  "dsCompOp": "ChapterQgOuterFockFarisLavine",
+  "dsCompOp_fib": "ChapterQgOuterFockFarisLavine",
+  "dsCompOp_hasSum_quadForm": "ChapterQgOuterFockFarisLavine",
+  "dsCompOp_quadForm_nonneg": "ChapterQgOuterFockFarisLavine",
+  "dsCompOp_surj": "ChapterQgOuterFockFarisLavine",
+  "dsCompOp_symmetricOn": "ChapterQgOuterFockFarisLavine",
+  "dsComparison": "ChapterQgOuterFockFarisLavine",
+  "dsDom": "ChapterQgOuterFockFarisLavine",
+  "dsFibOp": "ChapterQgOuterFockFarisLavine",
   "eigenvalue": "ChapterNavierStokesLagrangianEsa",
   "ell2Basis": "ChapterHermiteGalerkinFriedrichs",
   "ell2Basis_apply": "ChapterHashimotoShiftInvert",
@@ -3219,6 +3340,7 @@
   "expBounded_harmW": "ChapterQgHermiteOscillatorEsa",
   "exp_smul_I_unitary": "ChapterContinuityUnitary",
   "fR": "ChapterStarobinskyPotential",
+  "fib": "ChapterQgOuterFockFarisLavine",
   "fiberCore": "ChapterNavierStokesFockFarisLavine",
   "fiberSector": "ChapterNavierStokesFockFarisLavine",
   "fieldChars": "ChapterSirkCertificateReader",
@@ -3256,6 +3378,8 @@
   "fockSym_ge_one": "ChapterNavierStokesFockManyMode",
   "fockSym_step": "ChapterNavierStokesFockManyMode",
   "formExt": "ChapterFriedrichsExtension",
+  "formExt_coe": "ChapterQgOuterFockFarisLavine",
+  "formExt_injective": "ChapterQgOuterFockFarisLavine",
   "formInner": "ChapterYangMillsFriedrichs",
   "formNormSq": "ChapterYangMillsFriedrichs",
   "formRiesz": "ChapterFriedrichsExtension",
@@ -3275,7 +3399,12 @@
   "fqPoly": "ChapterFullQuadraticEsa",
   "fqQuadPoly": "ChapterFullQuadraticEsa",
   "fqSymbol": "ChapterFullQuadraticEsa",
+  "friedrichsComparison": "ChapterQgOuterFockFarisLavine",
   "friedrichsResolvent": "ChapterFriedrichsExtension",
+  "friedrichsResolvent_apply": "ChapterQgOuterFockFarisLavine",
+  "friedrichsResolvent_injective": "ChapterQgOuterFockFarisLavine",
+  "friedrichsResolvent_isSelfAdjoint": "ChapterQgOuterFockFarisLavine",
+  "friedrichsResolvent_pos": "ChapterQgOuterFockFarisLavine",
   "fst": "ChapterNavierStokesAffineFiberEsa",
   "g1": "ChapterHermiteBandCalculus",
   "g2": "ChapterHermiteBandCalculus",
@@ -3342,9 +3471,13 @@
   "hamPolyMap": "ChapterQgHermiteFriedrichs",
   "hamiltonian": "ChapterNavierStokesFullEsa",
   "harmCore": "ChapterQgHermiteOscillatorEsa",
+  "harmFried": "ChapterQgOuterFockFarisLavine",
   "harmP": "ChapterGaussCoreQuadBounds",
   "harmPoly": "ChapterGaussCoreQuadBounds",
+  "harmPosSym": "ChapterQgOuterFockFarisLavine",
   "harmW": "ChapterQgHermiteOscillatorEsa",
+  "harmonicCore_quadForm_nonneg": "ChapterQgOuterFockFarisLavine",
+  "harmonicCore_symmetricOn": "ChapterQgOuterFockFarisLavine",
   "hasDerivAt_apply": "ChapterStoneEvolution",
   "hasDerivAt_approxU": "ChapterStoneEvolution",
   "hasDerivAt_approxU_apply": "ChapterStoneEvolution",
@@ -3425,9 +3558,11 @@
   "inner_apply_avgVec": "ChapterStoneMeasurable",
   "inner_apply_self_im": "ChapterComplexShiftCore",
   "inner_avgVec": "ChapterStoneMeasurable",
+  "inner_coe_eq": "ChapterQgOuterFockFarisLavine",
   "inner_cre_ann": "ChapterNavierStokesLagrangianCanonical",
   "inner_def": "ChapterFriedrichsExtension",
   "inner_eq_sum_range": "ChapterNavierStokesDeficiency",
+  "inner_friedrichsResolvent": "ChapterQgOuterFockFarisLavine",
   "inner_hermiteMvLp": "ChapterHermiteProductBasis",
   "inner_im_swap": "ChapterComplexShiftCore",
   "inner_map_map": "ChapterStoneMeasurable",
@@ -3457,8 +3592,12 @@
   "invCoeff_ne_zero": "ChapterHashimotoShiftInvert",
   "invCoeff_pos": "ChapterHashimotoShiftInvert",
   "invShiftOperator": "ChapterHashimotoShiftInvert",
+  "invShiftOperator_apply": "ChapterQgOuterFockFarisLavine",
+  "invShiftOperator_quadForm_nonneg": "ChapterQgOuterFockFarisLavine",
+  "invShiftOperator_symmetricOn": "ChapterQgOuterFockFarisLavine",
   "isSelfAdjointExtension_unique_of_esa": "ChapterEsaClosureCore",
   "isSelfAdjointOn_of_isSelfAdjointExtension": "ChapterStoneBridge",
+  "isUniformInducing_toComplL": "ChapterQgOuterFockFarisLavine",
   "isom": "ChapterStoneMeasurable",
   "jacobiFullData": "ChapterNavierStokesFullEsa",
   "jacobiFun": "ChapterNavierStokesDeficiency",
@@ -3554,6 +3693,7 @@
   "memLpTwo_of_tail_zero": "ChapterNavierStokesDeficiency",
   "memLp_hFun": "ChapterNavierStokesHermiteFarisLavine",
   "memLp_hermiteC": "ChapterHermiteFunctions",
+  "memLp_mul": "ChapterNavierStokesFockContinuum",
   "memLp_pgFun": "ChapterHermiteProductCore",
   "memLp_pgFun_monomial": "ChapterHermiteProductCore",
   "memLp_poly_mul_gaussH": "ChapterHermiteFunctions",
@@ -3605,6 +3745,7 @@
   "monomialFamily_eq": "ChapterHermiteProductCore",
   "mul": "ChapterSirkFinitePrecision",
   "mulBasis": "ChapterFarisLavine",
+  "mulCc": "ChapterScalaronCoreEsa",
   "mulComparison": "ChapterFarisLavine",
   "mulDomain": "ChapterUnboundedPosition",
   "mulHamiltonian": "ChapterFarisLavine",
@@ -3617,6 +3758,8 @@
   "mulVecCLM'": "ChapterNavierStokesCauchy",
   "mulXPoly": "ChapterNavierStokesDifferentialL2",
   "mul_X_mem_span_hermiteMv": "ChapterHermiteProductCore",
+  "mul_mem_boundedEnergyCore": "ChapterNavierStokesFockContinuum",
+  "multOp": "ChapterNavierStokesFockContinuum",
   "multiShiftSeq": "ChapterSirkMultiShift",
   "mvDeg": "ChapterQgHermiteOscillatorEsa",
   "mvpoly_eq_zero_of_eval_real": "ChapterHermiteProductCore",
@@ -3644,6 +3787,7 @@
   "norm_inner_le": "ChapterStoneMeasurable",
   "norm_jn_apply_le": "ChapterStoneGroup",
   "norm_jn_sub_domain": "ChapterStoneGroup",
+  "norm_le_norm_shift": "ChapterQgOuterFockFarisLavine",
   "norm_le_of_inner_self_bound": "ChapterStoneMeasurable",
   "norm_of_unitary": "ChapterContinuityUnitaryInfinite",
   "norm_phase": "ChapterUnboundedPosition",
@@ -3700,11 +3844,17 @@
   "omega": "ChapterNavierStokesLagrangianCanonical",
   "onbEmbedding": "ChapterSirkGramWhitening",
   "one_le_velMu": "ChapterNavierStokesThreeComponent",
+  "opCc": "ChapterScalaronCoreEsa",
   "opCol": "ChapterFockSecondQuantization",
   "opGraph": "ChapterEsaClosureCore",
   "opGraph_eq_range": "ChapterEsaClosureCore",
   "opGraph_le_clGraph": "ChapterEsaClosureCore",
   "opL2": "ChapterStrichartzWave",
+  "opTot": "ChapterQgOuterFockFarisLavine",
+  "opTot_add": "ChapterQgOuterFockFarisLavine",
+  "opTot_of_mem": "ChapterQgOuterFockFarisLavine",
+  "opTot_smul": "ChapterQgOuterFockFarisLavine",
+  "opTot_zero": "ChapterQgOuterFockFarisLavine",
   "op_eq_of_inner": "ChapterStoneResolvent",
   "op_res": "ChapterStoneResolvent",
   "orthonormalEmbedding": "ChapterH8Bases",
@@ -3775,6 +3925,7 @@
   "preCoeff": "ChapterHashimotoComplexShifts",
   "preCoeff_norm_le": "ChapterHashimotoComplexShifts",
   "preim": "ChapterHashimotoShiftInvert",
+  "preim_eq": "ChapterQgOuterFockFarisLavine",
   "preim_spec": "ChapterHashimotoShiftInvert",
   "prodEquiv": "ChapterU",
   "prodToTensor": "ChapterU",
@@ -3791,8 +3942,14 @@
   "qgModeHamiltonian": "ChapterQuantumGravityDensitized",
   "qgModeSymbol": "ChapterQuantumGravityDensitized",
   "qgMomenta": "ChapterQuantumGravityDensitized",
+  "qgOuterComparison": "ChapterQgOuterFockFarisLavine",
+  "qgOuterFock": "ChapterQgOuterFockFarisLavine",
+  "qgOuterFriedDom": "ChapterQgOuterFockFarisLavine",
+  "qgOuterFriedN": "ChapterQgOuterFockFarisLavine",
   "qgR2ModeHamiltonian": "ChapterStarobinskyPotential",
   "qgR2ModePotential": "ChapterStarobinskyPotential",
+  "qgScalaronModeHamiltonian": "ChapterScalaronCoreEsa",
+  "qgScalaronModePotential": "ChapterScalaronCoreEsa",
   "qgSymbol": "ChapterQuantumGravityDensitized",
   "quadForm": "ChapterFarisLavineCore",
   "quadForm_im": "ChapterComplexShiftCore",
@@ -3848,6 +4005,7 @@
   "rkVec": "ChapterHashimotoComplexShifts",
   "rotHop": "ChapterNavierStokesThreeComponent",
   "rotMat": "ChapterFullQuadraticEsa",
+  "rpow_two_eq": "ChapterQgOuterFockFarisLavine",
   "runHi": "ChapterRitzCertificate",
   "runLo": "ChapterRitzCertificate",
   "sMat": "ChapterGaugeFixing",
@@ -3860,6 +4018,7 @@
   "sMat_zero": "ChapterGaugeFixing",
   "sTop": "ChapterGaugeFixing",
   "scalaron": "ChapterStarobinskyPotential",
+  "scalaronFullPotential": "ChapterScalaronCoreEsa",
   "scalaronSectorPotential": "ChapterQgHermiteCore",
   "scalaronW": "ChapterQgHermiteFriedrichs",
   "schwartzDomain": "ChapterStrichartzWave",
@@ -3869,6 +4028,7 @@
   "secondOrder": "ChapterNavierStokesLagrangianKatoRellich",
   "sectorApply": "ChapterNavierStokesSecondQuant",
   "sectorApply_support": "ChapterNavierStokesSecondQuant",
+  "sectorEnergy": "ChapterNavierStokesFockContinuum",
   "sectorGround": "ChapterSirkCertifiedGap",
   "sectorQuadW": "ChapterHermiteQuadraticEsa",
   "sectorRayleighSet": "ChapterSirkCertifiedGap",
@@ -3901,6 +4061,7 @@
   "shiftLin": "ChapterContinuityUnitaryInfinite",
   "shiftLin_norm": "ChapterContinuityUnitaryInfinite",
   "shiftMap": "ChapterHashimotoShiftInvert",
+  "shiftMap_apply": "ChapterQgOuterFockFarisLavine",
   "shiftNorm": "ChapterGaussCoreQuadBounds",
   "shiftOp": "ChapterContinuityUnitaryInfinite",
   "shiftOp_apply": "ChapterContinuityUnitaryInfinite",
@@ -4042,6 +4203,8 @@
   "velocityOp_mem_finiteModes": "ChapterNavierStokesEsa",
   "velocity_bound": "ChapterContinuityUnitaryInfinite",
   "viscous": "ChapterNavierStokesFlow",
+  "waveAddSmoothPotential": "ChapterScalaronCoreEsa",
+  "waveCc": "ChapterScalaronCoreEsa",
   "waveOp": "ChapterStrichartzWave",
   "weylHamiltonian": "ChapterWeylHamiltonian",
   "weylOp": "ChapterYangMillsFriedrichs",
@@ -4055,9 +4218,15 @@
   "whiteningEquiv": "ChapterSirkWhitening",
   "widen": "ChapterSirkFinitePrecision",
   "width": "ChapterSirkFinitePrecision",
+  "ymAbelianPoly": "ChapterYangMillsAbelianEsa",
   "ymEnum": "ChapterYangMillsHermite",
   "ymFockCol": "ChapterFockSecondQuantization",
+  "ymFqP": "ChapterYangMillsAbelianEsa",
+  "ymFqQ": "ChapterYangMillsAbelianEsa",
   "ymHamiltonian": "ChapterYangMillsHermite",
+  "ymMagVec": "ChapterYangMillsAbelianEsa",
+  "ymMomIdx": "ChapterYangMillsAbelianEsa",
+  "ymMomVec": "ChapterYangMillsAbelianEsa",
   "ymOnePart": "ChapterFockSecondQuantization",
   "yosida": "ChapterStoneGroup",
   "yosidaGen": "ChapterStoneEvolution",
@@ -4074,7 +4243,6 @@
   "zeroField": "ChapterNavierStokesLagrangianEsa"
  },
  "namespace_owner": {
-  "AffineFiber": "ChapterNavierStokesAffineFiberEsa",
   "BookProof.BRSTNilpotent": "ChapterBRSTNilpotent",
   "BookProof.BandEnclosure": "ChapterBandEnclosure",
   "BookProof.ChapterBaryonAsymmetry": "ChapterBaryonAsymmetry",
@@ -4107,8 +4275,9 @@
   "BookProof.ChapterSirkWhitening": "ChapterSirkWhitening",
   "BookProof.ChapterStoneGenerator": "ChapterStoneGenerator",
   "BookProof.ChapterStoneMeasurable": "ChapterStoneConverse",
+  "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup": "ChapterStoneConverse",
   "BookProof.ChapterStoneResolvent": "ChapterSirkTrotterKato",
-  "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint": "ChapterStoneTheorem",
+  "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint": "ChapterSirkTrotterKato",
   "BookProof.ChapterStoneTheorem": "ChapterStoneTheorem",
   "BookProof.ChapterTrajectory": "ChapterTrajectory",
   "BookProof.ChapterU": "ChapterU",
@@ -4120,6 +4289,7 @@
   "BookProof.FockSecondQuantization": "ChapterFockSecondQuantization",
   "BookProof.FreeFieldConstraint": "ChapterFreeFieldConstraint",
   "BookProof.FriedrichsExtension": "ChapterFriedrichsExtension",
+  "BookProof.FriedrichsExtension.FormDom": "ChapterFriedrichsExtension",
   "BookProof.FriedrichsFormGap": "ChapterFriedrichsFormGap",
   "BookProof.FullQuadratic": "ChapterFullQuadraticEsa",
   "BookProof.GaugeFixing": "ChapterGaugeFixing",
@@ -4138,62 +4308,66 @@
   "BookProof.MassGap": "ChapterMassGap",
   "BookProof.NavierStokes": "ChapterNavierStokes",
   "BookProof.NavierStokesFlow": "ChapterNavierStokesAffineFiberEsa",
+  "BookProof.NavierStokesFlow.AffineFiber": "ChapterNavierStokesAffineFiberEsa",
+  "BookProof.NavierStokesFlow.AffineFiber.PairShift": "ChapterNavierStokesAffineFiberEsa",
+  "BookProof.NavierStokesFlow.CanonicalVector": "ChapterNavierStokesCanonicalVector",
+  "BookProof.NavierStokesFlow.DiagonalEsa": "ChapterNavierStokesDeficiency",
+  "BookProof.NavierStokesFlow.DiffFarisLavine": "ChapterNavierStokesDiffFarisLavine",
+  "BookProof.NavierStokesFlow.DiffHashimoto": "ChapterNavierStokesDiffHashimoto",
   "BookProof.NavierStokesFlow.DifferentialL2": "ChapterNavierStokesDifferentialL2",
+  "BookProof.NavierStokesFlow.FarisLavineLift": "ChapterNavierStokesFarisLavineLift",
+  "BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData": "ChapterNavierStokesFarisLavineLift",
+  "BookProof.NavierStokesFlow.FockCanonical": "ChapterNavierStokesFockCanonical",
+  "BookProof.NavierStokesFlow.FockContinuum": "ChapterNavierStokesFockContinuum",
+  "BookProof.NavierStokesFlow.FockManyMode": "ChapterNavierStokesFockManyMode",
+  "BookProof.NavierStokesFlow.FockOfFock": "ChapterNavierStokesFockSpace",
+  "BookProof.NavierStokesFlow.FullEsa": "ChapterNavierStokesFullEsa",
+  "BookProof.NavierStokesFlow.FullEsa.NSFullData": "ChapterNavierStokesFullEsa",
+  "BookProof.NavierStokesFlow.HermiteCanonical": "ChapterNavierStokesHermiteCanonical",
+  "BookProof.NavierStokesFlow.HermiteFarisLavine": "ChapterNavierStokesHermiteFarisLavine",
+  "BookProof.NavierStokesFlow.IkebeKato": "ChapterNavierStokesIkebeKato",
+  "BookProof.NavierStokesFlow.JacobiDeficiency": "ChapterNavierStokesDeficiency",
+  "BookProof.NavierStokesFlow.LagrangianCanonical": "ChapterNavierStokesLagrangianCanonical",
+  "BookProof.NavierStokesFlow.LagrangianEsa": "ChapterNavierStokesLagrangianEsa",
+  "BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData": "ChapterNavierStokesLagrangianEsa",
+  "BookProof.NavierStokesFlow.LagrangianKatoRellich": "ChapterNavierStokesLagrangianKatoRellich",
+  "BookProof.NavierStokesFlow.LagrangianNS": "ChapterNavierStokesCauchy",
+  "BookProof.NavierStokesFlow.LpNat": "ChapterNavierStokesDeficiency",
+  "BookProof.NavierStokesFlow.NSHashimoto": "ChapterNavierStokesHashimoto",
+  "BookProof.NavierStokesFlow.SecondQuant": "ChapterNavierStokesFockFarisLavine",
+  "BookProof.NavierStokesFlow.ShiftHamiltonian": "ChapterNavierStokesShiftHamiltonian",
+  "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData": "ChapterNavierStokesShiftHamiltonian",
+  "BookProof.NavierStokesFlow.SignedShift": "ChapterNavierStokesSignedShift",
+  "BookProof.NavierStokesFlow.SignedShift.SignedHop": "ChapterNavierStokesSignedShift",
+  "BookProof.NavierStokesFlow.ThreeComponent": "ChapterNavierStokesThreeComponent",
   "BookProof.QgHermiteCore": "ChapterQgHermiteCore",
   "BookProof.QgHermiteFriedrichs": "ChapterQgHermiteFriedrichs",
   "BookProof.QgHermiteOscillator": "ChapterQgHermiteOscillatorEsa",
+  "BookProof.QgOuterFockFL": "ChapterQgOuterFockFarisLavine",
   "BookProof.QuadFockEsa": "ChapterQuadraticFockEsa",
   "BookProof.QuantumGravityDensitized": "ChapterQuantumGravityDensitized",
   "BookProof.RitzCertificate": "ChapterRitzCertificate",
   "BookProof.RitzMinMax": "ChapterSirkRitzMinMax",
   "BookProof.RitzPerturbation": "ChapterSirkRitzPerturbation",
+  "BookProof.ScalaronEsa": "ChapterScalaronCoreEsa",
   "BookProof.SirkBandLedger": "ChapterSirkBandLedger",
   "BookProof.SirkCertificateReader": "ChapterSirkCertificateReader",
   "BookProof.SirkCertifiedGap": "ChapterSirkCertifiedGap",
   "BookProof.SirkFinitePrecision": "ChapterSirkFinitePrecision",
+  "BookProof.SirkFinitePrecision.CertInterval": "ChapterSirkFinitePrecision",
   "BookProof.SirkGapTable": "ChapterSirkGapTable",
   "BookProof.SqSumFarisLavine": "ChapterSqSumFarisLavine",
   "BookProof.Starobinsky": "ChapterStarobinskyPotential",
   "BookProof.StoneBridge": "ChapterStoneBridge",
   "BookProof.StrichartzWave": "ChapterStrichartzWave",
+  "BookProof.WeakSecondDeriv": "ChapterWeakSecondDerivative",
+  "BookProof.WeakSecondDeriv.IsTestFun": "ChapterWeakSecondDerivative",
   "BookProof.WeylHamiltonian": "ChapterWeylHamiltonian",
+  "BookProof.YangMillsAbelianEsa": "ChapterYangMillsAbelianEsa",
   "BookProof.YangMillsFieldStrength": "ChapterYangMillsFieldStrength",
   "BookProof.YangMillsFriedrichs": "ChapterYangMillsFriedrichs",
   "BookProof.YangMillsFriedrichsLimit": "ChapterYangMillsFriedrichsLimit",
   "BookProof.YangMillsHermite": "ChapterYangMillsHermite",
-  "CanonicalVector": "ChapterNavierStokesCanonicalVector",
-  "CertInterval": "ChapterSirkFinitePrecision",
-  "ComparisonData": "ChapterNavierStokesFarisLavineLift",
-  "DiagonalEsa": "ChapterNavierStokesDeficiency",
-  "DiffFarisLavine": "ChapterNavierStokesDiffFarisLavine",
-  "DiffHashimoto": "ChapterNavierStokesDiffHashimoto",
-  "FarisLavineLift": "ChapterNavierStokesFarisLavineLift",
-  "FockCanonical": "ChapterNavierStokesFockCanonical",
-  "FockManyMode": "ChapterNavierStokesFockManyMode",
-  "FockOfFock": "ChapterNavierStokesFockSpace",
-  "FormDom": "ChapterFriedrichsExtension",
-  "FullEsa": "ChapterNavierStokesFullEsa",
-  "HermiteCanonical": "ChapterNavierStokesHermiteCanonical",
-  "HermiteFarisLavine": "ChapterNavierStokesHermiteFarisLavine",
-  "IkebeKato": "ChapterNavierStokesIkebeKato",
-  "JacobiDeficiency": "ChapterNavierStokesDeficiency",
-  "LagrangianCanonical": "ChapterNavierStokesLagrangianCanonical",
-  "LagrangianEsa": "ChapterNavierStokesLagrangianEsa",
-  "LagrangianFullData": "ChapterNavierStokesLagrangianEsa",
-  "LagrangianKatoRellich": "ChapterNavierStokesLagrangianKatoRellich",
-  "LagrangianNS": "ChapterNavierStokesCauchy",
-  "LpNat": "ChapterNavierStokesDeficiency",
-  "NSFullData": "ChapterNavierStokesFullEsa",
-  "NSHashimoto": "ChapterNavierStokesHashimoto",
-  "PairShift": "ChapterNavierStokesAffineFiberEsa",
-  "SecondQuant": "ChapterNavierStokesFockFarisLavine",
-  "ShiftData": "ChapterNavierStokesShiftHamiltonian",
-  "ShiftHamiltonian": "ChapterNavierStokesShiftHamiltonian",
-  "SignedHop": "ChapterNavierStokesSignedShift",
-  "SignedShift": "ChapterNavierStokesSignedShift",
-  "ThreeComponent": "ChapterNavierStokesThreeComponent",
-  "UnboundedSelfAdjoint": "ChapterSirkTrotterKato",
-  "WeakMeasurableUnitaryGroup": "ChapterStoneConverse",
   "`BookProof.HashimotoShiftInvert`.": "ChapterHashimotoComplexShifts"
  },
  "stub_bundles": [

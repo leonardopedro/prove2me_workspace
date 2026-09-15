@@ -7,6 +7,7 @@ import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_norm_apply_le
 open BookProof.ChapterSirkSpectralGeometry
 
 

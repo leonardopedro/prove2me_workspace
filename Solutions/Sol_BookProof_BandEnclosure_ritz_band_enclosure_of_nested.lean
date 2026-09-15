@@ -10,6 +10,8 @@ import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFockOneParticleGap
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum
+import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeRestrict_selects_operator
 open BookProof.BandEnclosure
 
 

@@ -8,6 +8,7 @@ import Theorems.Thm_BookProof_HermiteGalerkin_positive_selfadjoint_extension_uni
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded
 open BookProof.HermiteGalerkin
 
 

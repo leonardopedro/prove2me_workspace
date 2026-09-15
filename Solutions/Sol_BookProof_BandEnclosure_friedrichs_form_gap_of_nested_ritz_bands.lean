@@ -17,6 +17,8 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFockOneParticleGap
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_FriedrichsFormGap_friedrichs_extension_form_gap
+import Theorems.Thm_BookProof_HermiteGalerkin_ritzInf_tendsto_domainInf
 open BookProof.BandEnclosure
 
 

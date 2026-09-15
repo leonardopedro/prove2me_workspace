@@ -20,6 +20,9 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
+import Theorems.Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC
+import Theorems.Thm_BookProof_Starobinsky_qgR2_stone_flow
 open BookProof.ChapterSirkPerSystem
 
 

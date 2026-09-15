@@ -1,10 +1,6 @@
 import Mathlib
+import Definitions.Def_ChapterNavierStokesFullEsa
 
-import Mathlib
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterSirkFinitePrecision
 
 /-!
 # The continuum limit: the second-quantized Hamiltonian on a parcel sector
@@ -45,7 +41,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace FockContinuum
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 variable {X : Type*} [MeasurableSpace X]
 

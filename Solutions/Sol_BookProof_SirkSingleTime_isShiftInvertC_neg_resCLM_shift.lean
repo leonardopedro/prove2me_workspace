@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse
 
 
 

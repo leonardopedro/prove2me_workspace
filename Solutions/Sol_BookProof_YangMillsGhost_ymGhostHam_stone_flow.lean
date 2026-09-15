@@ -10,6 +10,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.YangMillsGhost
 
 

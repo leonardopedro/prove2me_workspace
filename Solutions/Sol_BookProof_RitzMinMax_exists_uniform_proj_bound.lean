@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Theorems.Thm_BookProof_HermiteGalerkin_galerkinProj_tendsto
 open BookProof.RitzMinMax
 
 

@@ -446,8 +446,26 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     head = ["import Mathlib"]
     if upstream:
         head = upstream + head
-    text = "\n".join(head) + "\n\n" + text
+    text = dedupe_imports("\n".join(head) + "\n\n" + text)
     return text
+
+
+def dedupe_imports(text):
+    """Drop duplicate top-level `import` lines, keeping the first occurrence.
+
+    `build_def_file` prepends `import Mathlib` (plus the upstream Def imports) to
+    a body that still carries the source's own `import Mathlib`, so the plain
+    concatenation emits it twice.  Imports precede every command in a Lean file,
+    so a top-level `import` line is always header material.
+    """
+    seen, out = set(), []
+    for line in text.split("\n"):
+        if line.startswith("import ") and line in seen:
+            continue
+        if line.startswith("import "):
+            seen.add(line)
+        out.append(line)
+    return "\n".join(out)
 
 
 def module_doc(bt):

@@ -11,6 +11,7 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
 open BookProof.QgHermiteOscillator
 
 

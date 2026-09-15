@@ -1,20 +1,13 @@
+import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
-
-import Mathlib
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterH1
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterSirkFinitePrecision
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterStoneMeasurable
-import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterYangMillsSU3
+
 
 /-!
 # The scalaron fibre: the exponential wall as a Faris–Lavine comparison operator
@@ -60,7 +53,7 @@ namespace BookProof.ScalaronFiberFL
 
 open MeasureTheory SchwartzMap
 open BookProof.StrichartzWave
-open BookProof.FarisLavine BookProof.ScalaronWallEsa
+open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallEsaSemibounded
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.FriedrichsExtension

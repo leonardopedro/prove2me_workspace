@@ -1,14 +1,10 @@
+import Definitions.Def_ChapterQgVielbeinModeInstance
 import Mathlib
-
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterScalaronFiberFL
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterScalaronOuterFockFL
+
 
 /-!
 # The continuum (non-lattice) mode instance of the outer-Fock quantum-gravity Hamiltonian

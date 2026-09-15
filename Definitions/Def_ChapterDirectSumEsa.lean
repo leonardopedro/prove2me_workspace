@@ -1,13 +1,9 @@
-import Mathlib
-
-import Mathlib
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
+import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterStoneConverse
+
 
 /-!
 # Fibrewise essential self-adjointness glues: the orthogonal direct sum

@@ -1058,6 +1058,123 @@ now *wait on* the unpublished CoreFL bundle, so they cannot resolve before the d
 in the bundle docstring, so the 5 new entries read e.g. "From a graph core to the whole comparison domain
 What is proved", and it appends a duplicate `timepiece` tag. Fine to publish with, ugly in the catalogue.
 
+### 1m. Session 11 (2026-09-15, third run) — `--sync` was worth 56 items, and the def layer is a *generator* defect, not an import defect
+
+**RULE, and it is the single most valuable thing this session found: run `--sync`, not a chunk.** The local
+state tracks *what the uploader last saw*, and the preflight's `WAIT (theorem not published yet)` /
+`waiting on unpublished def bundle(s)` branches **skip an item without ever polling the platform again**.
+So a submission that the server has *already accepted* stays `pending` locally forever. One `--sync`
+recovered **56 items this session** (`sync: marked 1 already-published item(s) and 55 already-proved
+solution(s) done`; `checked 100 pending solution(s), 51 already Proved`), i.e. **20 of the 45 `failed`
+entries were actually proved on the platform**, and the frontier moved:
+
+| | before sync | after sync |
+|---|---|---|
+| done / pending / failed (state) | 2809 / 94 / 45 | **2865 / 92 / 25** |
+| `--status` (non-orphan) | 2686 / 98 / 45 | — |
+| done by kind | thm 1366, sol 1305, def 138 | thm 1367, **sol 1360**, def 138 |
+
+`debug/platform_stats.py` had reported **2809/94/45 immediately before** the sync and **2865/92/25
+immediately after** — it reads the state file, so it is only as fresh as the last sync. **Do `--check`,
+then `--sync`, then `--status` at session start, and re-`--sync` after every chunk** before recording
+numbers. (This is the same class as §1g/§1h, one level deeper: §1g fixed "proved vs accepted"; this one is
+"accepted but never re-polled because preflight short-circuits the poll".)
+
+**Do NOT use `/me` as a progress metric for this wave.** `num_solved_prob = 616` **before** the first chunk
+and **616 after the sync recovered 56 items**; `num_submitted_prob = 0` throughout. It moved 615 → 616
+once, earlier in the session (`sol:` items accepted from the §1e direct-import repairs), and is otherwise
+flat. Progress in this wave is `--status` + `--sync`, full stop. And when subtracting a start-of-session
+baseline, **read `/me` at session start** (§1k's rule) — it was read here, so the +1 is attributable.
+
+**The def layer, now fully enumerated — and the leaves' failure is a generator defect.** 24 def bundles
+are unpublished; they partition into three disjoint classes, and mixing them up is what made §1i–§1l look
+like "import resolution":
+
+| class | count | bundles |
+|---|---|---|
+| in the pipeline, not done | 5 | **exhausted** at 5 attempts: `ChapterShiftedHermiteCore`, `ChapterQgCouplingDGammaSum`; **pending** at 4: `ChapterQgTruncationResolvent`, `ChapterDirectSumEsa`, `ChapterScalaronWallEsa` |
+| in `wave_upload.json`, **never reached** (starved behind the blocked head of deps-first `ORDER`) | 14 | `ChapterFiniteSectionSingleTime`, `ChapterQgContinuumModeInstance`, `ChapterQgManifoldModeInstance`, `ChapterQgOuterFockCoreFL`, `ChapterQgTimeStepping`, `ChapterQgVielbeinModeInstance`, `ChapterQymTimeIndependentFlow`, `ChapterScalaronFiberFL`, `ChapterScalaronOuterFockFL`, `ChapterSirkSingleTimeShift`, `ChapterWallEsaSemibounded`, `ChapterYangMillsAbelianFockEsa`, `ChapterYangMillsBandBounds`, `ChapterYangMillsGhostSector` |
+| on disk with a full docstring, **absent from the spec altogether** | 5 | `ChapterCoreBoundsEsa`, `ChapterFockSchurEsa`, `ChapterNsOuterFockFarisLavine`, `ChapterOperatorSeriesEsa`, `ChapterSqSumOuterFamily` |
+
+**`--kind def` now resolves 0 items and attempts nothing — a preflight deadlock, not a bug to chase.** Every
+remaining bundle imports at least one other unpublished bundle, so `blocked_by` skips all of them:
+
+```
+15:03:08 chunk: 0 item(s) resolved in 0s
+15:03:08 waiting on unpublished def bundle(s): ChapterDirectSumEsa (3 item(s)), ChapterFiniteSectionSingleTime (1 item(s)),
+         ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), … (12 bundles, 15 items)
+```
+
+**`--no-preflight` is the only way to reach the leaves**, and the leaves fail for a reason no import fix can
+touch. `def:ChapterDirectSumEsa` (its final verdict, 4 attempts spent):
+
+```
+FAIL  line 216: Unknown identifier `sectorEnergy_measurable`
+```
+
+and `Definitions/Def_ChapterDirectSumEsa.lean:216` is
+
+```lean
+def fockH {w : ℝ → ℝ} (hw : Measurable w) : fockCore w →ₗ[ℂ] fockCore w :=
+  dsOpD (fun n => multOp (volume : Measure (Fin n → ℝ)) (sectorEnergy_measurable hw n))
+```
+
+`grep` the sources: `sectorEnergy_measurable` is a **`theorem`**, at
+`BookProof/ChapterNavierStokesFockContinuum.lean:392`. A definitions-only bundle cannot contain a theorem,
+so **`fockH` is unexpressible as generated** — the `def` body calls the chapter's own proof, and the
+generator emitted it verbatim while correctly stripping the theorem. That is the real class, and it is not
+import resolution: `repair_hollow_defs.py` is asked to resolve a name that has no bundle to come from.
+Same shape for `def:ChapterScalaronWallEsa` (`Unknown identifier ccDomain`, `IsTestFun`, `Invalid field
+hasCompactSupport`).
+
+**Two remedies, neither tried yet (they are source surgery per def, ~1–3 names per bundle):**
+
+1. **rename-and-inline the prerequisite proof into the bundle.** Copy the theorem's `:= by …` body into the
+   def bundle under a private name (`sectorEnergy_measurable_def`) and call *that*; the thm bundle keeps the
+   public name, so the cumulative platform environment sees no duplicate declaration. This is the general
+   fix and the only one that preserves the `def` as the source states it.
+2. **restate the def** so the measurability witness is inlined (`… (by exact ⟨…⟩)`), abandoning the
+   generated body for that one declaration.
+
+Neither is a mechanical pass over 24 bundles: candidate-set each leaf's missing identifiers with
+
+```bash
+python3 - <<'PY'   # every missing identifier per def bundle, from the verdict log
+import re, collections
+res=collections.defaultdict(set)
+for line in open('state/pipeline.log', errors='ignore'):
+    m=re.search(r'def:([A-Za-z0-9_]+): FAIL \(publish FAILED: definition does not compile: (.*)', line)
+    if m:
+        for i in re.findall(r'(?:Unknown identifier|unknown namespace) `([^`]+)`', m.group(2)): res[m.group(1)].add(i)
+        for i in re.findall(r'Invalid field `([^`]+)`', m.group(2)): res[m.group(1)].add('.'+i)
+for k in sorted(res): print(k, sorted(res[k]))
+PY
+```
+
+**`ChapterFiniteSectionSingleTime` is a valid, unconsumed def-only bundle — and it is the prize.** Its
+`Definitions/Def_ChapterFiniteSectionSingleTime.lean` carries exactly the chapter's six definitions
+(`basisVec`, `coreVec`, `projW`, `Exhausts`, `secOp`, `windowOfEquiv`) with the theorems correctly stripped,
+so it should publish; **39 items wait on it**. It cannot go first: it imports
+`Def_ChapterQgTruncationResolvent` and `Def_ChapterSirkSingleTimeShift`, both unpublished, so fixing it
+means fixing the chain below it. Do **not** spend its attempts before those two publish.
+
+**Attempt budget, before touching the leaves.** `--status` next-order: `def:ChapterDirectSumEsa`,
+`def:ChapterQgOuterFockCoreFL`, `def:ChapterScalaronWallEsa`, `def:ChapterWallEsaSemibounded`,
+`def:ChapterScalaronFiberFL`, `def:ChapterScalaronOuterFockFL`, `def:ChapterQgVielbeinModeInstance`,
+`def:ChapterQgContinuumModeInstance`. Of the 5 in-pipeline, **2 are exhausted** and 3 sit at 4/5, so each
+leaf has exactly **one** submission left — verify a rewritten bundle compiles *before* spending it. The 14
+starved bundles have **0 attempts** and are free to try; the 5 unregistered ones need
+`debug/add_wave_def.py <Chapter>` first (`--reset` also rewrites the §1l title/tag wart, now fixed in the
+tool).
+
+**Cosmetics fixed this session (§1l's wart).** `debug/add_wave_def.py` now takes only the **leading run of
+markdown headings** as the title and builds the tag list as `["timepiece"] + [t for t in tags if t !=
+"timepiece"]`, so new entries no longer read "From a graph core to the whole comparison domain What is
+proved" and no longer duplicate the `timepiece` tag. Also fixed: `debug/platform_def_index.py` resolved a
+namespace's owner by exact match only, but the platform index **flattens nested namespaces**, so
+`BookProof.NavierStokesFlow.FockContinuum` was reported as unowned (a *false* blocker in
+`debug/def_layer_order.py`); it now matches the flattened prefix too.
+
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 
 **Read the backlog from `--status`, never from the state file.** `plan_progress` counts an

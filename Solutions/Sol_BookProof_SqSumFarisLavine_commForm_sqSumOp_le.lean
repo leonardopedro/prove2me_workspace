@@ -13,6 +13,10 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_self
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 open BookProof.SqSumFarisLavine
 
 

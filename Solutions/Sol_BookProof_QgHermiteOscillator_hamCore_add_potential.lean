@@ -10,6 +10,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_pgLp
 open BookProof.QgHermiteOscillator
 
 

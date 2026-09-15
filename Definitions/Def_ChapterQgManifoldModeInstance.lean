@@ -1,18 +1,14 @@
 import Definitions.Def_ChapterQgTimeStepping
 import Mathlib
-
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStoneConverse
+
 
 /-!
 # The quantum-gravity Hamiltonian on a general spatial manifold

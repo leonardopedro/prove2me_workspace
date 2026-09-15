@@ -11,6 +11,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMv
+import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteMv
 open BookProof.QgHermiteOscillator
 
 

@@ -14,6 +14,7 @@ import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
 open BookProof.HashimotoShiftInvert
 
 

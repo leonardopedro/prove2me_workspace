@@ -14,6 +14,7 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.HermiteQuadraticEsa
 
 

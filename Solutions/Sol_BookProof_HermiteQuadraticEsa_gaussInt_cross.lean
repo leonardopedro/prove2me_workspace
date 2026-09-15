@@ -14,6 +14,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD
 open BookProof.HermiteQuadraticEsa
 
 

@@ -36,10 +36,14 @@ USAGE
     python3 debug/repair_hollow_defs.py --check              # report only
     python3 debug/repair_hollow_defs.py --dry-run            # regen + resolve, no write
     python3 debug/repair_hollow_defs.py --apply [ChapterX ...]
+    python3 debug/repair_hollow_defs.py --apply --faithful [ChapterX ...]
+        # import-faithful: resolve imports only from `open` namespaces (exact)
+        # and the generator's source-mapped Def imports -- never from body names
 """
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -173,6 +177,18 @@ def regenerate(leaves):
     link = f"{SCRATCH}/state/sketch"
     if not os.path.exists(link):
         os.symlink(f"{WS}/state/sketch", link)
+    # Seed the scratch Definitions/ with the bundles that already exist.  The
+    # generator emits `import Definitions.Def_X` only for providers it can SEE
+    # (it tests os.path.exists against its own OUT_DEF), so an empty scratch
+    # silently drops every source-faithful import and leaves the name-based
+    # pass to invent a replacement -- that is where CoreFL's and DirectSumEsa's
+    # mutual import came from.  Copies, never symlinks: the generator writes
+    # into SCRATCH/Definitions, and a symlink would clobber the real bundle.
+    for f in sorted(os.listdir(DEF_DIR)):
+        if f.startswith("Def_") and f.endswith(".lean"):
+            dst = f"{SCRATCH}/Definitions/{f}"
+            if not os.path.exists(dst):
+                shutil.copy2(f"{DEF_DIR}/{f}", dst)
     env = dict(os.environ, PROVE2ME_WS=SCRATCH, TIMEPIECE_PROJ=PROJ)
     cmd = [sys.executable, f"{WS}/scripts/wave_generate.py", "--defs-only"] + leaves
     r = subprocess.run(cmd, env=env, capture_output=True, text=True)
@@ -217,16 +233,77 @@ NSIDX = {}
 
 
 def ns_index():
-    """namespace -> bundle, for every `namespace X` declared by a local Def_*.lean."""
+    """namespace -> bundle, for every `namespace X` declared by a local Def_*.lean.
+
+    Nested blocks are COMPOSED: `namespace BookProof.NavierStokesFlow` followed by
+    `namespace FullEsa` declares `BookProof.NavierStokesFlow.FullEsa`, which is the
+    name a consumer's `open FullEsa` (or relative open) actually needs.  Recording
+    only the raw tokens left that composite invisible, so no import was emitted and
+    the server answered `unknown namespace FullEsa` -- a real submission spent on a
+    gap in this index.  `section` pushes too, only so that its `end` pops the
+    right frame; sections create no namespace prefix.
+    """
     out = {}
     for fn in sorted(os.listdir(DEF_DIR)):
         if not (fn.startswith("Def_") and fn.endswith(".lean")):
             continue
         bundle = fn[len("Def_"):-len(".lean")]
         txt = open(os.path.join(DEF_DIR, fn), encoding="utf-8", errors="replace").read()
-        for m in NS.findall(txt):
-            out.setdefault(m.rstrip(","), bundle)
+        stack = []          # enclosing namespaces; "" marks a section frame
+        for line in txt.split("\n"):
+            s = line.strip()
+            if s == "namespace" or s.startswith("namespace "):
+                rel = s.split(None, 1)[1].strip().rstrip(",") if " " in s else ""
+                if rel and stack and not rel.startswith("BookProof"):
+                    enclosing = [x for x in stack if x][-1]
+                    rel = enclosing + "." + rel
+                stack.append(rel)
+                if rel:
+                    out.setdefault(rel, bundle)
+            elif s == "section" or s.startswith("section "):
+                stack.append("")
+            elif s == "end" or s.startswith("end "):
+                if stack:
+                    stack.pop()
     return out
+
+
+def qualify_opens(text, owners):
+    """Rewrite relative `open X` tokens to the absolute name a provider owns.
+
+    A source nested in `namespace BookProof.NavierStokesFlow` may say
+    `open FullEsa`; Lean resolves that against the enclosing namespace prefixes,
+    so the bundle needs the *import* of `BookProof.FullEsa`'s provider -- but the
+    token carries no `BookProof` prefix for the resolver to key on, so the open
+    was left alone and the server answered `unknown namespace FullEsa`.
+    Deepest enclosing prefix first, then the bare name; anything unowned is left
+    exactly as it was.
+    """
+    chain, out = [], []
+    for line in text.split("\n"):
+        s = line.strip()
+        if s.startswith("namespace "):
+            rel = s.split(None, 1)[1].strip().rstrip(",")
+            if chain and not rel.startswith("BookProof"):
+                rel = chain[-1] + "." + rel
+            chain.append(rel)
+        elif s == "end" or s.startswith("end "):
+            if chain:
+                chain.pop()
+        if s.startswith("open ") or s.startswith("open scoped "):
+            prefix = "open scoped " if s.startswith("open scoped ") else "open "
+            toks = []
+            for tok in s[len(prefix):].split():
+                if tok.startswith("BookProof") or not tok[:1].isupper() or not chain:
+                    toks.append(tok)
+                    continue
+                parts = chain[-1].split(".")
+                cands = [".".join(parts[:i] + [tok]) for i in range(len(parts), 0, -1)]
+                toks.append(next((c for c in cands if c in owners), tok))
+            out.append(prefix + " ".join(toks))
+        else:
+            out.append(line)
+    return "\n".join(out)
 
 
 def open_imports(text, leaf, published, nsidx, plat=None, body_only=None):
@@ -256,6 +333,9 @@ def open_imports(text, leaf, published, nsidx, plat=None, body_only=None):
     # regenerated text itself declares counts as "own".
     for ns in NS.findall(text):
         owners[ns.rstrip(",")] = leaf
+    # Relative opens do not carry a `BookProof` prefix; expand them first so the
+    # resolver below sees the namespace the provider actually declares.
+    text = qualify_opens(text, owners)
     need, missing = {}, set()
     aliased, dropped, blocking = {}, {}, set()
     out = []
@@ -334,6 +414,14 @@ def main():
     args = sys.argv[1:]
     apply_ = "--apply" in args
     dry = "--dry-run" in args or apply_
+    # `--faithful`: do NOT add imports derived from body *names*.  The name
+    # index is keyed by leaf name, so common leaves (`ext`, `Lp`) resolve to a
+    # bundle the source never imports -- that is how CoreFL and DirectSumEsa
+    # acquired a mutual import and the def layer became unorderable.  The
+    # faithful set is the namespace-based one (`open` resolution, which is
+    # exact) plus the generator's source-mapped Def imports; the name-based
+    # resolution is still reported, as a checker.
+    faithful = "--faithful" in args
     only = [a for a in args if not a.startswith("--")]
 
     spec, items = spec_state()
@@ -395,6 +483,9 @@ def main():
         bare = BARE.findall(text)
         nsn = NS.search(text)
         need, dropped = resolve(text, leaf, published, idx, plat_leaf)
+        namebased = dict(need)
+        if faithful:
+            need = {}
         onames, missing, text_a, aliased, dropped_opens, blocking = open_imports(
             text, leaf, published, NSIDX, plat)
         for b, ns in onames.items():
@@ -404,6 +495,8 @@ def main():
         print(f"    lines={len(text.splitlines())} namespace={nsn.group(1) if nsn else '?'} "
               f"bare_headers={len(bare)}")
         print(f"    imports added : {added or '(none)'}")
+        if faithful and namebased:
+            print(f"    NAME-BASED (ignored) : {sorted(namebased)}")
         for tok, ns in sorted(aliased.items()):
             print(f"    ALIASED OPEN  : {tok} -> {ns}")
         for tok, why in sorted(dropped_opens.items()):

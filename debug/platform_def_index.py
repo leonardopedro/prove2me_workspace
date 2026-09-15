@@ -56,8 +56,35 @@ GENERATED_STUB = re.compile(r"Generated def bundle for \w+")
 
 
 def scan(text):
-    """Namespaces + top-level declaration names in a bundle's published source."""
-    nss = [m.rstrip(",") for m in NS.findall(text)]
+    """Namespaces + top-level declaration names in a bundle's published source.
+
+    Nested `namespace` blocks are COMPOSED: `namespace BookProof.NavierStokesFlow`
+    followed by `namespace FockContinuum` declares
+    `BookProof.NavierStokesFlow.FockContinuum`, which is the name a consumer's
+    `open` needs.  Recording only the raw tokens published `FockContinuum` as a
+    namespace of its own and left the composite looking undeclared, so
+    `debug/def_layer_order.py` reported a **false** blocker (`open
+    BookProof.NavierStokesFlow.FockContinuum <- ChapterNavierStokesFockContinuum`,
+    whose bundle is live) and the def chain was read as unorderable when it was
+    not.  `section` pushes too, only so that its `end` pops the right frame;
+    sections create no namespace prefix.
+    """
+    nss, stack = [], []
+    for line in text.split("\n"):
+        s = line.strip()
+        if s == "namespace" or s.startswith("namespace "):
+            rel = s.split(None, 1)[1].strip().rstrip(",") if " " in s else ""
+            if rel and stack and not rel.startswith("BookProof"):
+                enclosing = [x for x in stack if x][-1]
+                rel = enclosing + "." + rel
+            stack.append(rel)
+            if rel:
+                nss.append(rel)
+        elif s == "section" or s.startswith("section "):
+            stack.append("")
+        elif s == "end" or s.startswith("end "):
+            if stack:
+                stack.pop()
     names = [m.split(".")[0] for m in DECL.findall(text)]
     return nss, names
 

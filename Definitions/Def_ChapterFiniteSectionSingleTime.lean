@@ -1,20 +1,16 @@
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Mathlib
-
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Mathlib
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterStoneResolvent
+
 
 /-!
 # Finite sections: one shift, one finite time, for any essentially self-adjoint mode Hamiltonian
@@ -72,7 +68,7 @@ namespace BookProof.FiniteSectionSingleTime
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

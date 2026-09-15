@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift

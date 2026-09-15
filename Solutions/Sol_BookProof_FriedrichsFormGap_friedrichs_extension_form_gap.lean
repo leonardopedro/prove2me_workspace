@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
 -- Generated from ChapterFriedrichsFormGap.lean — solution of BookProof.FriedrichsFormGap.friedrichs_extension_form_gap
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap

@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterComplexShiftCore
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.ell2Example_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts

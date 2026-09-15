@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto

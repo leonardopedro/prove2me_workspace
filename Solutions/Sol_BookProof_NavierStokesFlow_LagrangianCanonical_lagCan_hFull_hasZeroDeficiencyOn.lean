@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — solution of BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_hFull_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical

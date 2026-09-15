@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.nsFlowEuclidean_norm
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa

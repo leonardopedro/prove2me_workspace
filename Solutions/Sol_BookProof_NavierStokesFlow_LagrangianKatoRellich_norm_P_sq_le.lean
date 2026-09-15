@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_P_sq_le
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich

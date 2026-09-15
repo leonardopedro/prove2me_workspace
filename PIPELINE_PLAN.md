@@ -19,13 +19,20 @@ chapters) plus the 4 deferred chapters themselves
 (SirkEndToEnd, SirkWhitening, SirkPerSystem, YangMillsHermite) with their thm/sol
 nodes. This unlocks everything the earlier waves deferred.
 
-**Read the newest session section first: §1i** (the sources + Lean are now present, and the def
-layer's real blocker — hollow def bundles), then **§1h** (accounting rules — which platform counter
-means what) and **§1f** (the solution-side repair chain). Live backlog is always
+**Read the newest session section first: §1k** (this host's environment, the local-gate bug that was
+burning attempts, and the def layer measured as a chain), then **§1j** (resolve imports against the
+platform, not the checkout), **§1h** (accounting rules — which platform counter means what) and
+**§1f** (the solution-side repair chain). Live backlog is always
 `python3 pipeline/upload_pipeline.py --status`, never the state file (§1d).
 
-**Generators need two env vars in this sandbox** (defaults are the build host):
-`PROVE2ME_WS=/home/daytona/codebase TIMEPIECE_PROJ=/home/daytona/timepiece`.
+**Two host facts before any run.** (1) `credentials.json` is gitignored and absent from this
+checkout: a local run needs the API key pasted by the human (the cloud sandbox gets
+`PROVE2ME_API_KEY` injected; this host does not). (2) The checkout root is wherever `pipeline/`
+lives — `/home/leo/prove2me_workspace` on the canonical build host, `/home/daytona/codebase` in the
+sandbox, an external-drive path on the current dev box; `WS` is derived from the script location, so
+no env var is needed for the uploader. **Generators** still want
+`PROVE2ME_WS=<checkout> TIMEPIECE_PROJ=<source project>`, and on the dev box `TIMEPIECE_PROJ` has no
+useful value at all (§1k: `../timepiece` is a different, older snapshot).
 
 ### 1a. VERIFIED STATE (2026-09-12, Freebuff cloud sandbox — supersedes the counts below)
 
@@ -828,6 +835,141 @@ interlock there: those QgHermiteFriedrichs nodes have to be proved before that b
 this pass. `PIPELINE_PLAN.md` has now outgrown the file editor's read window (~64 KB of the 103 KB
 are visible), so this section was spliced in through a 3-way split and `cat` — see the note at the end
 of §9 if a later edit against the middle of the file mysteriously reports "old string not found".
+
+### 1k. Session 9 (2026-09-15) — the local Lean gate was burning attempts, and the sources are in the workspace, not `../timepiece`
+
+**This host.** Checkout is on an external drive (`/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`),
+`$HOME=/home/leo` but `ELAN_HOME` points at the drive; `/home/leo/prove2me_workspace` does not exist, so
+the canonical absolute paths in comments are comments only. Skill check: `SKILL.md` 0.10.3 == API
+0.10.3, no drift. The key was pasted by the human and `--check` answers: `leonardopedro`, **224
+definition jobs (136 PUBLISHED / 88 FAILED)**, **3643 problem jobs (1370 PUBLISHED)**.
+
+**FIXED — GENERATOR/HOST BUG: the local Lean gate was scoring a *toolchain* fact as a proof
+verdict, and it cost one of the 5 attempts per item.** `LAKE_BIN` falls back to
+`shutil.which("lake")`, which is on `PATH` on this host — but the checkout is not a Lean project
+(no `lakefile.toml`/`lakefile.lean`/`lean-toolchain`; the Lean files here are the *platform tree*).
+So `lake env lean Definitions/Def_X.lean` in `cwd=WS` answers `error: unknown module prefix
+'Mathlib'` (or elan's `waiting for previous installation request`), the gate returns
+`(False, …)`, the runner logs `FAIL (local compile failed: …)` and the submission **never reaches
+the server**. Observed: `def:ChapterQgTruncationResolvent` attempt 3 and
+`def:ChapterQgCouplingDGammaSum` attempt 3 died this way; both were one attempt from parking, for a
+reason that says nothing about the bundle. `local_compile()` now degrades exactly like the
+existing missing-toolchain case when the checkout has no lakefile: one warning, then
+`local compile skipped (no Lean project in this checkout)` and the platform compiler as the oracle.
+Verified: the next chunk submitted both and got **real** platform verdicts. Lean on this host is
+elan **v4.28.0 / v4.31.0 / v4.32.0 only — no v4.33.1** (the platform environment), and `../timepiece/.lake`
+is Mathlib-for-4.28, so the local gate is worth *nothing* here until a 4.33.1 + Mathlib env exists
+(`references/lean-setup.md`); treating it as a verdict was strictly harmful.
+
+**The sources are in the WORKSPACE, not `../timepiece` — and the graph is still missing.** `../timepiece`
+is a different, older snapshot of `leonardopedro/timepiece` (last commit 2026-07-28): its `BookProof/`
+holds 241 files covering **19 of the 151** wave def chapters and **0 of the 1437** thm chapters
+(Attention/FreeField/Majorana/DeepLearning material), and it contains **no `decl_graph.jsonl`** and no
+`sketch_info*`. §1i's "the sources and the graph are present" does not reproduce here. What *is*
+present is `BookProof/` **committed at the workspace root** (619 chapters, 9.4 MB, 622 tracked files),
+and it contains every chapter the wave needs — `ChapterQgHermiteCore`, `ChapterSirkEndToEnd`,
+`ChapterYangMillsHermite`, `ChapterNavierStokesFockCanonical`, `ChapterQgCouplingDGammaSum`,
+`ChapterFullQuadraticEsa`, `ChapterContinuityUnitaryInfinite`, the `ChapterH6/H8/H9` and
+`HermiteRelative` families. So the "65 unsubmittable (source missing from this checkout)" items have
+their **statements** locally but their **generation** needs `decl_graph.jsonl`: `regen_defs.py` /
+`wave_generate.py --defs-only` still cannot run, and `add_wave_def.py` only *registers* a bundle that
+already exists. The 65 and the `NOSOURCE` def namespaces are a generator job, not a leaf-name job —
+§1i's "map the leaf names" step is withdrawn.
+
+**DEF LAYER, MEASURED AS A CHAIN (new tool `debug/def_layer_order.py`): 0 of the 11 pending bundles
+are ready.** A bundle must be `open`-clean *and* import only published modules; both gates are
+checked against `state/defs_index.json`. The blocker map (blockers → predecessor):
+
+| pending def bundle | blocker |
+|---|---|
+| `ChapterYangMillsAbelianEsa` | imports `Def_ChapterQgManifoldModeInstance` (unpublished) |
+| `ChapterYangMillsGhostSector` | imports `Def_ChapterYangMillsAbelianEsa` (unpublished) |
+| `ChapterQymTimeIndependentFlow` | imports `Def_ChapterFiniteSectionSingleTime`, `Def_ChapterQgCouplingDGammaSum` |
+| `ChapterYangMillsBandBounds` | opens `BookProof.YangMillsAbelianEsa`, `BookProof.YmAbelianFock` |
+| `ChapterQgTimeStepping`, `ChapterQgManifoldModeInstance`, `ChapterQgTruncationResolvent`, `ChapterSirkSingleTimeShift` | open `BookProof.QgOuterFockCoreFL`, `BookProof.ScalaronFiberFL`, `BookProof.DirectSumEsa`, `BookProof.QgContinuumModeInstance` — **no bundle declares any of them** (`NOSOURCE`) |
+| `ChapterFiniteSectionSingleTime`, `ChapterYangMillsAbelianFockEsa` | both `NOSOURCE` opens and unpublished imports (`GradedBandSchur`, `QgTimeIndependent`, …) |
+| `ChapterQgCouplingDGammaSum` | opens `BookProof.NavierStokesFlow.IkebeKato` — see the caveat below |
+
+Every chain ends in a `NOSOURCE` namespace, i.e. a **chapter with no def bundle at all**, so the def
+layer cannot drain by chunking: it needs the sanctioned generator. Published this session:
+`ChapterQuadraticFockEsa` (in flight from §1j, **DONE**) and `ChapterHermiteBandCalculusHigher`
+(repaired, then `REUSING existing Definition node` → `DONE`) — the def layer went 127 → 128 done.
+
+**CAVEAT on the platform index as ground truth (new, important).** `state/defs_index.json` is built
+from `GET /publish-jobs`, which is **account-scoped**: a module published by *another* account is
+invisible, so a namespace it declares reads as unpublished. `def:ChapterQgCouplingDGammaSum` is
+blocked in the map by `BookProof.NavierStokesFlow.IkebeKato` even though
+`def:ChapterNavierStokesIkebeKato` is a `reused=True` node ("already on the platform"). Treat a
+single-namespace blocker as *suspected*, not proven, and prefer the server's verdict — but do not
+spend the last attempt proving it (§1j's rule stands: read the job, and repair only what the
+verdict names).
+
+**New tool `debug/check_def_opens.py` — the §1e direct-import rule as a checker** (`--theorems`,
+`--solutions`, `--pending`, `--only`, `--fix`). It resolves every `open BookProof.X` in a file
+against `namespace_owner` in the platform index (never the local file, §1j), with the generator's
+`Chapter` alias rule, and reports `OK` / `ALIASED` / `MISSING IMPORT` / `NO PROVIDER`. Measured:
+`Definitions/` **86 MISSING IMPORT, 55 NO PROVIDER, 221 OK** over 151 bundles — but most misses sit
+in *already-published* bundles, i.e. local-vs-published drift that costs nothing; the pending-scoped
+set was 3 files. `Solutions/ --pending` (79 non-done files) **44 MISSING IMPORT, 44 repaired**.
+Together with `fix_sol_def_imports.py` (3 files) this pass inserted **47 import lines in 44 files**,
+every one verified by diff, and a grep for any added line that is not exactly
+`import Definitions.Def_*` came back empty — the §1f corruption signature (`\s+` swallowing the next
+command) is absent, because insertion is line-local and append-only.
+
+**Re-arming is now a filtered operation: `debug/reopen_failed.py --yes --stale-only`.** It reopens
+only items whose recorded verdict predates the current source file (it keeps a sha1 stamp per
+submission), resets `attempts` to 0 and drops the dead `job_id`/`submission_id`. 33 parked items
+were re-armed that way this session, which is what turned 24 `failed` records into `done`.
+
+**Numbers (start of session → now).**
+
+| metric | start | now |
+|---|---|---|
+| plan (`--status`) done / pending / failed | 2593 / 157 / 68 | **2672 / 97 / 49** |
+| in-plan pending by kind | 13 def, 5 thm, 139 sol | **11 def, 0 thm, 86 sol** |
+| platform `num_solved_prob` (`/me`) | not captured (!) | **615** |
+| definition publish jobs | 217 read / 126 PUBLISHED | **224 / 136** |
+
+**Accounting — read this before claiming progress.** Of the **83** state records that flipped to
+`done` this session, **78 are `reused`/`skipped`** ("node already on the platform" / "theorem
+already Proved") and **0 carry a new accepted `submission_id`**. The session's own submissions were
+mostly CE verdicts that exposed import debt, and its genuine publication is the one def bundle that
+was already in flight. The 572 → 615 move is **not** attributable here because `/me` was not read at
+session start (the driver sits between §1j and this session). **Rule for every future session: read
+`/me num_solved_prob` before the first chunk, and quote the delta, not the absolute (§1h).**
+
+**Still blocked, in priority order.**
+
+1. **Def layer (46 in-plan consumers wait on it).** Needs def bundles for the `NOSOURCE` namespaces
+   (`QgOuterFockCoreFL`, `ScalaronFiberFL`, `DirectSumEsa`, `QgContinuumModeInstance`,
+   `GradedBandSchur`, `QgTimeIndependent`, …) — i.e. `decl_graph.jsonl` for the workspace `BookProof/`
+   sources, then `wave_generate.py --defs-only`. 38 items wait on `def:ChapterFiniteSectionSingleTime`
+   alone; 1 on `ChapterQgOuterFockFarisLavine`, parked at 5 for importing theorems that are still
+   `Open` (def↔sol interlock, §1j).
+2. **The "unknown identifier, no node/bundle" sol class** — `fix_sol_def_imports.py` names 33 of them
+   (`coreOp_coe`, `coreEquiv_coe`, `embedCore_coe`, `diagOp_*`, `nsFlow_*`, `inner_pgLp_pgLp`,
+   `qgModeHamiltonian_*`, `krylov_bestApprox_tendsto_zero`, …). Imports cannot fix these: the
+   declaration has to be published (`debug/add_wave_def.py` + its node), so they are the same
+   generator job as (1).
+3. **Cross-node solution imports** — `hashimoto_multishift_selects_esa`, `galerkinCompression_tendsto`,
+   `IsShiftInvertC`-style chains: publish the sibling node's solution first (deps-first `sol_order`),
+   then re-run the repair chain. This is a volume loop, not a new class.
+4. **The 65 "source missing" items** are statement-only in this checkout (§ above): regenerating them
+   is the generator job again, and their `chapters:` line in `--status` should be read as "needs the
+   graph", not "needs a leaf-name map".
+
+**Next steps for the next agent.**
+
+1. Get `decl_graph.jsonl` for the workspace `BookProof/` (619 chapters) — that single artifact
+   unblocks (1), (2) and (4). With it, `wave_generate.py --defs-only <leaf>` + `repair_hollow_defs.py`
+   resume, and the def layer drains as a chain by repeated `--kind def` chunks.
+2. Until then the only productive loop is: `--kind thm --kind sol` chunks (`--parallel 40` resolved
+   39–55 items/chunk when verdicts were waiting, 6 once the backlog is repair-bound), then
+   `fix_sol_def_imports.py` on the fresh CEs, then `check_def_opens.py --solutions --pending --fix`,
+   then `reopen_failed.py --yes --stale-only`. Expect the gains to be `reused`/`skipped` bookkeeping
+   — say so when reporting.
+3. Install a **4.33.1 + Mathlib** env for the workspace (`references/lean-setup.md`, `lake exe cache get`)
+   if the local gate is ever to be used here; today `LAKE_BIN` must stay unusable or the gate skips.
 
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 

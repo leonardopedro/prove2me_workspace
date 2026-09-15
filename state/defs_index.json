@@ -627,8 +627,25 @@
    "status": "PUBLISHED",
    "stub": false
   },
+  "ChapterHermiteBandCalculus": {
+   "lines": 181,
+   "names": [
+    "hpsi",
+    "hcomb",
+    "Band",
+    "g1",
+    "g2",
+    "IsBand1",
+    "IsBand2"
+   ],
+   "namespaces": [
+    "BookProof.HermiteBand"
+   ],
+   "status": "PUBLISHED",
+   "stub": false
+  },
   "ChapterHermiteBandCalculusHigher": {
-   "lines": 182,
+   "lines": 180,
    "names": [
     "gpow",
     "IsBandR",
@@ -637,7 +654,7 @@
    "namespaces": [
     "BookProof.HermiteBandHigher"
    ],
-   "status": "FAILED",
+   "status": "PUBLISHED",
    "stub": false
   },
   "ChapterHermiteFunctions": {
@@ -1705,7 +1722,7 @@
    "stub": true
   },
   "ChapterQgCouplingDGammaSum": {
-   "lines": 190,
+   "lines": 186,
    "names": [
     "diagCol",
     "occEnergy",
@@ -1864,7 +1881,7 @@
    "stub": false
   },
   "ChapterQuadraticFockEsa": {
-   "lines": 128,
+   "lines": 132,
    "names": [
     "span_hermiteMvLp_comp",
     "hermBasisN",
@@ -1877,7 +1894,7 @@
    "namespaces": [
     "BookProof.QuadFockEsa"
    ],
-   "status": "FAILED",
+   "status": "PUBLISHED",
    "stub": false
   },
   "ChapterQuantumGravityDensitized": {
@@ -2831,11 +2848,12 @@
   }
  },
  "job_counts": {
-  "FAILED": 16,
-  "PUBLISHED": 126
+  "FAILED": 14,
+  "PUBLISHED": 129
  },
- "job_total": 217,
+ "job_total": 224,
  "name_owner": {
+  "Band": "ChapterHermiteBandCalculus",
   "BandRecord": "ChapterSirkBandLedger",
   "BiDegree": "ChapterGaugeFixing",
   "BrstIntegral": "ChapterGaugeFixing",
@@ -2868,6 +2886,10 @@
   "HasZeroDeficiency": "ChapterNavierStokesFlow",
   "HasZeroDeficiencyOn": "ChapterNavierStokesFlow",
   "Intertwined": "ChapterNavierStokesDifferentialL2",
+  "IsBand1": "ChapterHermiteBandCalculus",
+  "IsBand2": "ChapterHermiteBandCalculus",
+  "IsBandDeg": "ChapterHermiteBandCalculusHigher",
+  "IsBandR": "ChapterHermiteBandCalculusHigher",
   "IsCoercive": "ChapterSirkDiffusiveDecay",
   "IsGramEigen": "ChapterSirkGramCutoff",
   "IsHermCol": "ChapterFockSecondQuantization",
@@ -3092,6 +3114,7 @@
   "coreFamily_linearIndependent": "ChapterHermiteProductCore",
   "coreOp": "ChapterNavierStokesDifferentialL2",
   "coreRepBasis": "ChapterYangMillsHermite",
+  "coreRepHerm": "ChapterQuadraticFockEsa",
   "coreRepPoly": "ChapterYangMillsHermite",
   "coreState": "ChapterNavierStokesCanonicalVector",
   "coreState_coe": "ChapterNavierStokesDifferentialL2",
@@ -3209,6 +3232,7 @@
   "finiteModeDomain": "ChapterHermiteGalerkinFriedrichs",
   "finiteModeDomain_coreBasis": "ChapterYangMillsHermite",
   "finiteModeDomain_fockBasisN": "ChapterFockSecondQuantization",
+  "finiteModeDomain_hermBasisN": "ChapterQuadraticFockEsa",
   "finiteModeDomain_le_range": "ChapterHashimotoShiftInvert",
   "finiteModeRestrict": "ChapterHermiteGalerkinFriedrichs",
   "finiteModes": "ChapterNavierStokesEsa",
@@ -3253,6 +3277,8 @@
   "fqSymbol": "ChapterFullQuadraticEsa",
   "friedrichsResolvent": "ChapterFriedrichsExtension",
   "fst": "ChapterNavierStokesAffineFiberEsa",
+  "g1": "ChapterHermiteBandCalculus",
+  "g2": "ChapterHermiteBandCalculus",
   "gLinHop": "ChapterNavierStokesSignedShift",
   "gShearHop": "ChapterNavierStokesSignedShift",
   "gaffH": "ChapterNavierStokesSignedShift",
@@ -3298,6 +3324,7 @@
   "gint_one": "ChapterHermiteFunctions",
   "gint_sub": "ChapterHermiteFunctions",
   "gint_zero": "ChapterHermiteFunctions",
+  "gpow": "ChapterHermiteBandCalculusHigher",
   "gradFun": "ChapterSqSumFarisLavine",
   "gradPoly": "ChapterSqSumFarisLavine",
   "gradVelocity": "ChapterNavierStokesFullEsa",
@@ -3332,7 +3359,11 @@
   "hasSum_hop_iff": "ChapterNavierStokesShiftHamiltonian",
   "hasSum_normSq": "ChapterNavierStokesHermiteFarisLavine",
   "hasSum_shift2_iff": "ChapterNavierStokesHermiteFarisLavine",
+  "hcomb": "ChapterHermiteBandCalculus",
   "heatFlow": "ChapterSirkDiffusiveDecay",
+  "hermBasisN": "ChapterQuadraticFockEsa",
+  "hermBasisN_apply": "ChapterQuadraticFockEsa",
+  "hermCol": "ChapterQuadraticFockEsa",
   "hermiteBasis": "ChapterHermiteFunctions",
   "hermiteC": "ChapterHermiteFunctions",
   "hermiteCx": "ChapterHermiteProductCore",
@@ -3382,6 +3413,7 @@
   "hop_nonneg": "ChapterNavierStokesShiftHamiltonian",
   "hop_shift": "ChapterNavierStokesShiftHamiltonian",
   "hop_sq": "ChapterNavierStokesShiftHamiltonian",
+  "hpsi": "ChapterHermiteBandCalculus",
   "idxA": "ChapterYangMillsHermite",
   "idxD": "ChapterYangMillsHermite",
   "in": "ChapterStoneBridge",
@@ -3776,6 +3808,7 @@
   "raise_of_ne": "ChapterNavierStokesThreeComponent",
   "raise_self": "ChapterNavierStokesThreeComponent",
   "rangeProj": "ChapterSirkWhitening",
+  "range_hermBasisN": "ChapterQuadraticFockEsa",
   "range_hermiteVel": "ChapterNavierStokesDifferentialL2",
   "rankOneProj": "ChapterH5",
   "rayleigh": "ChapterRitzCertificate",
@@ -3893,6 +3926,7 @@
   "span_coreState": "ChapterNavierStokesDifferentialL2",
   "span_hermiteMv": "ChapterHermiteProductCore",
   "span_hermiteMvLp": "ChapterHermiteProductBasis",
+  "span_hermiteMvLp_comp": "ChapterQuadraticFockEsa",
   "span_range_coreBasis": "ChapterHermiteProductCore",
   "splitDot": "ChapterSirkCertificateReader",
   "splitLines": "ChapterSirkCertificateReader",
@@ -4092,6 +4126,8 @@
   "BookProof.GaussCoreQuadBounds": "ChapterGaussCoreQuadBounds",
   "BookProof.GhostField": "ChapterGhostField",
   "BookProof.HashimotoShiftInvert": "ChapterComplexShiftCore",
+  "BookProof.HermiteBand": "ChapterHermiteBandCalculus",
+  "BookProof.HermiteBandHigher": "ChapterHermiteBandCalculusHigher",
   "BookProof.HermiteCore": "ChapterHermiteFunctions",
   "BookProof.HermiteGalerkin": "ChapterHermiteGalerkinFriedrichs",
   "BookProof.HermiteProductBasis": "ChapterHermiteProductBasis",
@@ -4106,6 +4142,7 @@
   "BookProof.QgHermiteCore": "ChapterQgHermiteCore",
   "BookProof.QgHermiteFriedrichs": "ChapterQgHermiteFriedrichs",
   "BookProof.QgHermiteOscillator": "ChapterQgHermiteOscillatorEsa",
+  "BookProof.QuadFockEsa": "ChapterQuadraticFockEsa",
   "BookProof.QuantumGravityDensitized": "ChapterQuantumGravityDensitized",
   "BookProof.RitzCertificate": "ChapterRitzCertificate",
   "BookProof.RitzMinMax": "ChapterSirkRitzMinMax",

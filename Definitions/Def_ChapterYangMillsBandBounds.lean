@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterHermiteBandCalculusHigher
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
 import Mathlib
+import Definitions.Def_ChapterHermiteBandCalculus
 
 import Mathlib
 import Definitions.Def_ChapterFarisLavine

@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterComplexShiftCore
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.sirkDen_rkVec
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts

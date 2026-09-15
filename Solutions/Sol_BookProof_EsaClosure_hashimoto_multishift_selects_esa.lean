@@ -8,6 +8,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.EsaClosure
 
 

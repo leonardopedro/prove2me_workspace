@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsAbelianEsa
 import Mathlib
+import Definitions.Def_ChapterHermiteBandCalculus
 
 import Mathlib
 import Definitions.Def_ChapterComplexShiftCore

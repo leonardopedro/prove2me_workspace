@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound
 import Mathlib
 import Definitions.Def_ChapterFarisLavine

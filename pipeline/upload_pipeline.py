@@ -485,6 +485,20 @@ def local_compile(path):
             log(f"warning: no Lean toolchain at {LAKE_BIN} - skipping the local gate "
                 f"and using the platform compiler as the oracle")
         return True, "local compile skipped (no Lean toolchain in this checkout)"
+    # `lake env lean` needs a Lean project at WS.  A checkout that has a `lake`
+    # on PATH but no lakefile (e.g. this workspace, whose Lean files are the
+    # platform tree, not a lake project) answers `unknown module prefix
+    # 'Mathlib'` for EVERY file - a toolchain fact, not a verdict on the proof.
+    # Scoring it as a compile failure burned one of the 5 attempts per item and
+    # never let the submission reach the server, so degrade like a missing
+    # toolchain instead.
+    if not any(os.path.exists(f"{WS}/{f}")
+               for f in ("lakefile.toml", "lakefile.lean", "lean-toolchain")):
+        if not _TOOLCHAIN_WARNED:
+            _TOOLCHAIN_WARNED = True
+            log(f"warning: no lakefile at {WS} - skipping the local gate and "
+                f"using the platform compiler as the oracle")
+        return True, "local compile skipped (no Lean project in this checkout)"
     try:
         r = subprocess.run([LAKE_BIN, "env", "lean", path],
                            cwd=WS, capture_output=True, text=True, timeout=600)

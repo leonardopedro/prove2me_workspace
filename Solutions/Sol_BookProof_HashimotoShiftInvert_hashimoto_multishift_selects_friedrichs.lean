@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterComplexShiftCore
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.hashimoto_multishift_selects_friedrichs
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts

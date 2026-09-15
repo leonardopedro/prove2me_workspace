@@ -971,6 +971,93 @@ session start (the driver sits between §1j and this session). **Rule for every 
 3. Install a **4.33.1 + Mathlib** env for the workspace (`references/lean-setup.md`, `lake exe cache get`)
    if the local gate is ever to be used here; today `LAKE_BIN` must stay unusable or the gate skips.
 
+### 1l. Session 10 (2026-09-15, second run) — the sources AND the graph are here now, the generator runs, and the def layer's real blocker is the repair pass's import resolution
+
+**§1k's "next step 1" is satisfied — `../timepiece` is now the full, current source project.** It was synced
+to `origin/main` (Sep 9, 112 commits) plus two local commits (`fa8429b`, `ad8a977`, `1cd6496`), so its
+`BookProof/` holds **617 chapters** (not the 241 §1k measured) and it **carries `decl_graph.jsonl`**
+(15 085 records / 612 modules). Every tool takes the root from `TIMEPIECE_PROJ`; **the tools' default
+`/home/leo/Projects/timepiece` does not exist on this host**, so export
+`TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece` (and `PROVE2ME_WS=$(pwd)`) for
+every generator/repair call. The two `BookProof/` copies differ in 8 files (`ChapterH1`,
+`ChapterHermiteFunctions`, `ChapterHermiteProductCore`, `ChapterContinuityUnitaryInfinite`,
+`ChapterEsaClosureCore`, `ChapterTrajectory`, `ChapterU`, `ChapterWeylHamiltonian`); **timepiece's are the
+newer ones** (upstream's Sept compactions), so timepiece is the correct source root.
+
+**The generator now runs. `python3 scripts/wave_generate.py --defs-only <leaf>` produced 7 bundles** for the
+namespaces that block the def chain (`ChapterQgOuterFockCoreFL`, `ChapterScalaronFiberFL`,
+`ChapterDirectSumEsa`, `ChapterQgContinuumModeInstance`, `ChapterNavierStokesFockContinuum`, each then
+`repair_hollow_defs.py --apply`-ed), and 5 of them were registered in `pipeline/wave_upload.json`
+(`debug/add_wave_def.py`, now 144 defs). This is the first time on this host that the generator output
+anything, and it is the concrete content behind §1k's "needs `decl_graph.jsonl`".
+
+**A whole-project `lake build` is not viable on this host — do not retry it as a `decl_graph.jsonl` path.**
+`lake build BookProof` (617 chapters) ran ~25 min and finished 14 modules (`✔ [8047/8645]`), because it is
+**I/O-starved on the external drive**: each Lean process accumulated ~1 min of user CPU per 11.5 min wall
+(`load 20` with <1.5 cores of real CPU), memory 10/15 GB. Killed it. What *is* viable:
+`lake build BookProof.ChapterPauliGrover` finished in seconds (its only deps are Mathlib +
+`ChapterConditional`), and a **single-module variant of the Stage-1 extractor** (temporary file, since
+deleted) merged that module's records into `decl_graph.jsonl`: **15 085 → 15 096 records, 612 → 613
+modules**, now carrying `BookProof.ChapterPauliGrover.pauliX`, `pauliX_conjTranspose`, `pauliX_sq`,
+`pauliX_unitary`, `pauliX_rotates`, `pauliX_parametrizes_delta`, `pauliGrover_joint_one`,
+`pauliGrover_marg_one`, `pauliGrover_cond_one` (+ the `pauliX.eq_1` auxiliary) with fresh-olean line spans.
+(The extractor needs the freshest olean for the target module; the first attempt was OOM-killed while the
+full build held 10 GB — run it with the build stopped.)
+
+**The def layer's real blocker is now precise, and it is the repair pass's import resolution — not the
+bundle bodies.** Two verdicts from the platform oracle:
+
+```
+def:ChapterDirectSumEsa          FAIL  line 201: unknown namespace `BookProof.NavierStokesFlow.FockContinuum`
+                                       line 204: Unknown identifier `Lp`
+def:ChapterNavierStokesFockContinuum FAIL  line 48: unknown namespace `BookProof.FullEsa`
+```
+
+Both are **missing import providers for namespaces the source itself imports** — `repair_hollow_defs.py`
+resolves providers *by name*, and it fails in both directions:
+
+- **over-approximates (creates cycles).** It inserted `import Definitions.Def_ChapterQgOuterFockCoreFL`
+  into `Def_ChapterDirectSumEsa.lean` **and** `import Definitions.Def_ChapterDirectSumEsa` into
+  `Def_ChapterQgOuterFockCoreFL.lean`. Neither source imports the other, so this is a **mutual import**:
+  the preflight then reports `waiting on unpublished def bundle(s): ChapterDirectSumEsa` for the CoreFL
+  item and vice versa, and **no deps-first order exists**. The cycle was broken by hand (dropped the
+  CoreFL import from DirectSumEsa) purely to obtain a verdict at all.
+- **under-approximates.** It drops namespace providers when no *name* matches textually (the
+  `FockContinuum` and `FullEsa` cases above), and it mis-attributes common leaf names (it wants CoreFL's
+  `ext` for FockContinuum and `Lp` for DirectSumEsa).
+
+**Proposed fix (do this before spending more attempts):** have the generator emit the **source's own
+`import BookProof.Chapter*` set mapped onto `Definitions.Def_*`** — import-faithful, deps-first — and keep
+the name-based pass only as a *checker*. The measured closure to generate, in dependency order, is:
+`FullEsa` → `NavierStokesFockContinuum` → `DirectSumEsa` → `QgOuterFockCoreFL` → `ScalaronWallEsa` /
+`WallEsaSemibounded` → `ScalaronFiberFL` → `ScalaronOuterFockFL` / `QgVielbeinModeInstance` →
+`QgContinuumModeInstance`, with `QgOuterFockFarisLavine` parked (def↔sol interlock) and `QgOuterFockFL`,
+`GradedBandSchur`, `QgTimeIndependent` having **no chapter file at all** in timepiece (so their namespaces
+must be declared by whichever bundle the fix generates).
+
+**Honest session accounting.** `/me num_solved_prob = 615` **before the first chunk and 615 after** —
+**this session produced no new accepted solve**, and `num_submitted_prob = 0`. The bounded
+`--kind thm --kind sol --parallel 40` chunk resolved 5 items in 126 s, **all FAIL (CE)**:
+`sol:…_FockOfFock_creat_basis` (unsolved goals), `sol:…_lagrangian_hashimoto_selects` and
+`sol:BookProof_EsaClosure_hashimoto_multishift_selects_esa` (both `Unknown identifier …`). Frontier by
+`--status`: plan 2849 (140 defs / 1347 thms / 1347 sols), state **2672 done / 97 pending / 49 failed**
+(99 pending / 50 failed by the state-file counter `debug/platform_stats.py`); pending is 86 sol + 11 def.
+65 items remain "source missing from this checkout" because their *generated* files were never built here.
+
+**Those three CEs are the §1e direct-import rule, and they are cheap to fix:** `exists_isShiftInvertC` is
+declared in `Definitions/Def_ChapterHashimotoComplexShifts.lean` and `hashimoto_multishift_selects_esa` in
+`Definitions/Def_ChapterEsaClosureCore.lean` — both published — so those solutions need the direct
+`import Definitions.Def_*` + `open <its namespace>`. `debug/fix_sol_def_imports.py` patched 2 files this
+session (`Sol_BookProof_HermiteRelative_oscL_hermiteMvLp`, `Sol_BookProof_HermiteRelative_symmetricOn_of_polySym`,
++2 lines each: `open BookProof.QgOuterFockCoreFL.CoreData` and
+`import Definitions.Def_ChapterQgOuterFockCoreFL`) and reported 16 blocked; `debug/check_def_opens.py
+--solutions --pending --fix` repaired 0 of 49 checked (21 NO PROVIDER, 254 OK). Note the 2 patched files
+now *wait on* the unpublished CoreFL bundle, so they cannot resolve before the def chain drains.
+
+**Cosmetic tool wart worth fixing:** `debug/add_wave_def.py` builds `title` from *every* markdown heading
+in the bundle docstring, so the 5 new entries read e.g. "From a graph core to the whole comparison domain
+What is proved", and it appends a duplicate `timepiece` tag. Fine to publish with, ugly in the catalogue.
+
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 
 **Read the backlog from `--status`, never from the state file.** `plan_progress` counts an

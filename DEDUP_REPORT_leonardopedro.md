@@ -95,10 +95,18 @@ python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterProve2me
     --namespace BookProof.Prove2meReuse
 ```
 
+The complete set of Lean modules added to timepiece since the previous wave (`git status`-derived),
+re-run 2026‑09‑17:
+
 | module | declarations | `STMT` | `DECL` | `SIG` | `NAME` | `LEAF` |
 | :-- | --: | --: | --: | --: | --: | --: |
-| `ChapterNsFourierElimination.lean` (65 decls, 3 `abbrev` compared by name only) | 65 | 0 | 0 | 0 | 0 | 0 |
-| `ChapterProve2meReuse.lean` (14 decls, 7 of them named hypotheses) | 14 | 0 | 0 | 0 | 0 | 0 |
+| `ChapterNsFourierElimination.lean` (3 `abbrev` compared by name only) | 82 | 0 | 0 | 0 | 0 | 0 |
+| `ChapterProve2meReuse.lean` (7 of them named hypotheses) | 14 | 0 | 0 | 0 | 0 | 0 |
+| `Book/FourierElimination.lean` (Verso manual chapter: `#check`s only, no declarations) | 0 | 0 | 0 | 0 | 0 | 0 |
+| `ChapterNsLagrangianFourierElimination.lean` (WIP scaffold — *provisional*) | 36 | *0* | *0* | *0* | *0* | *0* |
+
+The first module was 65 declarations when this section was written and is 82 now (the advection
+section was added afterwards), which is why the pass was re-run rather than trusted.
 
 Nothing to re-publish as a reduction, and nothing for the new modules to import: they are built
 from timepiece's own instruments (`weylOp*`, `friedrichs_extension_exists`,

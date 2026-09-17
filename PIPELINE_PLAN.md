@@ -1306,22 +1306,38 @@ that reads the declaration set straight from the source: `debug/find_duplicates.
 **The two new modules of the wave, checked declaration by declaration (index
 `state/platform_index.jsonl`, 73 968 distinct rows, frozen 2026‑09‑17).**
 
+**The complete set, `git status`-derived: every Lean module added to timepiece since the previous
+wave (§1n, 2026‑09‑15) — re-run and refreshed 2026‑09‑17.**
+
 | module (namespace) | declarations parsed | `STMT` | `DECL` | `SIG` | `NAME` | `LEAF` |
 | :-- | --: | --: | --: | --: | --: | --: |
-| `../timepiece/BookProof/ChapterNsFourierElimination.lean` (`BookProof.NsFullEuler`) | 65 | **0** | **0** | **0** | **0** | **0** |
+| `../timepiece/BookProof/ChapterNsFourierElimination.lean` (`BookProof.NsFullEuler`) | 82 | **0** | **0** | **0** | **0** | **0** |
 | `../timepiece/BookProof/ChapterProve2meReuse.lean` (`BookProof.Prove2meReuse`) | 14 | **0** | **0** | **0** | **0** | **0** |
+| `../timepiece/Book/FourierElimination.lean` (no namespace — Verso manual chapter) | 0 | 0 | 0 | 0 | 0 | 0 |
+| `../timepiece/BookProof/ChapterNsLagrangianFourierElimination.lean` (`BookProof.NsLagFourier`) — **WIP scaffold, see below** | 36 | *0* | *0* | *0* | *0* | *0* |
 
 ```
 python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterNsFourierElimination.lean \
     --namespace BookProof.NsFullEuler --max 8
 python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterProve2meReuse.lean \
     --namespace BookProof.Prove2meReuse --max 5
+python3 debug/find_duplicates.py --module ../timepiece/Book/FourierElimination.lean --max 5
+python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterNsLagrangianFourierElimination.lean \
+    --namespace BookProof.NsLagFourier --max 5
 ```
 
-Three declarations of the first module and seven of the second are `abbrev`/`structure` (no
-comparable statement text), so they are compared by `NAME`/`LEAF` only; both classes are 0 for all
-ten. `NAME` compares the dotted name (`BookProof.NsFullEuler.<decl>`) against the platform's
-`theorem_name`, so a **0** there is exact, not approximate.
+The declaration count of the first module is **82** (it was 65 when §1o was first written: the
+advection section of the Eulerian chapter — transfer weight, `mulOp_polySkew`, `coreRep_skewOn_op`,
+`coreRep_quadForm_skew_zero` and the lifted advection forms — was added after that pass, and the
+pass was re-run rather than trusted).  `Book/FourierElimination.lean` is a **Verso manual chapter**:
+`#check` blocks and prose, no declarations of its own, so there is nothing to classify — its thirty
+`#check`s resolve against the first module, which is what makes it a view of it and not a new node.
+Three declarations of the first module (`ruIdx6`, `rqIdx6`, `nsRedFockSpace`), seven of the second
+(the seven named hypotheses) and four of the fourth (`xiIdx12`, `vIdx12`, `accIdx12`, `qIdx12`) are
+`abbrev`/`structure` — no comparable statement text — so they are compared by `NAME`/`LEAF` only;
+both classes are 0 for all of them.  `NAME` compares the dotted name
+(`BookProof.NsFullEuler.<decl>`) against the platform's `theorem_name`, so a **0** there is exact,
+not approximate.
 
 **Reading.**
 
@@ -1346,22 +1362,75 @@ ten. `NAME` compares the dotted name (`BookProof.NsFullEuler.<decl>`) against th
   hit must be triaged by hand (leaf names on generic one-liners are false positives, §1n); a `STMT`
   hit is an import reduction, never a fresh proof.  `--module` is now part of the tooling of §1n.
 
-* **One module of the wave is deliberately *not* classified yet.**
+* **The fourth module is classified but recorded as *provisional*.**
   `../timepiece/BookProof/ChapterNsLagrangianFourierElimination.lean` (the Lagrangian item 6 of
   `CONSOLIDATED_PLAN.md`) is a **handoff scaffold**: §1–3 are green except the two `Fin 36`-index
   lemmas `lagElimCoord_fIdx` / `lagElimCoord_vgIdx`, which exceed the heartbeat budget, and §4–5
-  sit on top of them.  It is unimported, in no Lake target, and left untouched by the wave.  The
-  rule of §1o applies to it *once it compiles* — a declaration set that does not elaborate can
-  still be name-classified, but a `STMT`/`SIG` verdict on half-written proofs is noise, so the
-  pass is deferred and the module is recorded as **pending** rather than as 0/0/0/0.  (Process
-  note, 2026-09-17: writing plan-item Lean is the Lean specialist's job; this repository's share is
-  the design record, the symbolic evidence `B4a–B5b` of `DESIGN_COMPARISON_N_20260915.cdb`, and the
+  sit on top of them.  It is unimported and in no Lake target, and the wave leaves it untouched.
+  The pass was run on it for the record — 0 in every class, *italicised* in the table above because
+  a `STMT`/`SIG` verdict on a declaration set that does not elaborate is structural noise rather
+  than a result: the two classes that remain meaningful here are `NAME` (exact) and `LEAF` (already
+  0 on the whole module in the 2026‑09‑17 in-wave pass), and both are 0.  Re-run it once the
+  scaffold compiles, and treat that run as the authoritative one.
+* **The Lagrangian item is degenerate, and that is a *reuse* finding too.**  `B4a–B5b` of
+  `DESIGN_COMPARISON_N_20260915.md` §9 (machine-checked in `DESIGN_COMPARISON_N_20260915.cdb`)
+  show that the mode-wise elimination of the deformation gradient annihilates the Piola term and
+  collapses the volume constraint to a constant, so the Lagrangian route carries `det F` as an
+  independent scalar mode.  No platform theorem of the reuse table is owed for that finding, and
+  the one reuse row it touches — §6 `detPoly_pos` — is unchanged (see the row's note in
+  `CONSOLIDATED_PLAN.md`).  (Process note, 2026-09-17: writing plan-item Lean is the Lean
+  specialist's job; this repository's share is the design record, the symbolic evidence, and the
   reuse survey above.)
 
 Context for the frozen index at the time of this pass: `status=Proved` 67 546, `Open` 6 205,
 `Definition` 7 325, and **291** statement-duplicate groups spanning more than one author — the pool
 a future wave should import from (one more than the 290 recorded in §1n, i.e. the catalogue is a
 moving target; always re-run rather than trust the count).
+
+### 1p. Session 13b (2026-09-17) — the Lagrangian degeneracy against the **wave**: nothing to flag, and a guard for the next wave
+
+**What the finding is.**  `CONSOLIDATED_PLAN.md` item 6 and `DESIGN_COMPARISON_N_20260915.md` §9
+(checks `B4a–B5b`, machine-run by `DESIGN_COMPARISON_N_20260915.cdb`) record that the *mode-wise*
+elimination of the Lagrangian deformation gradient is **degenerate**: `F_{ij} ⇒ i ℓ_j ξ_i` makes
+`F = ℓ ⊗ ξ` rank one, so every `2 × 2` minor vanishes (`cof F = 0` — the whole Piola pressure
+coupling of the material momentum equation dies) and `det F = 0` (the volume constraint
+`det F = 1` collapses to the constant `−1`, square `1`).  A statement whose only support is the
+*degree* evidence `B1–B3` (Piola quadratic / `det F` cubic / volume square sextic) is therefore
+**vacuously supported**: those three are satisfied trivially by the zero polynomial.
+
+**The scan of the wave.**  All **1 543** `Theorems/Thm_*.lean` stubs, plus the `Definitions/Def_*`
+bundles, searched for anything that would rest on that evidence:
+
+| grep over `Theorems/` + `Definitions/` | hits | reading |
+| :-- | --: | :-- |
+| `volumePoly` \| `cofPoly` \| `detPoly` \| `lagResPoly` | **0** | no stub mentions the material determinant / Piola objects at all |
+| `i k_j` \| `fourierAdvect` \| `eliminat` \| `Elim` | **0** | no stub is *about* the elimination (Eulerian or Lagrangian) |
+| `NsFullEuler` \| `NsLagFourier` \| `nsElim` \| `redHam` | **0** | the new modules have no stubs yet — the same fact as §1o, seen from the wave side |
+| `not_quadratic` \| `cof\b` \| `Piola` \| `volumePoly` \| `sextic` | **0** | no stub asserts a Lagrangian degree/cofactor claim |
+| `quadForm_nonneg` | **7** | **unaffected**: `FockSecondQuantization.dGammaOp/dGammaOpB`, `YangMillsFriedrichs.weylOpDom`, `YangMillsHermite.ymHamiltonian`, `QgHermiteFriedrichs.hamCore`, `QgHermiteOscillator.harmonicCore`, `NavierStokesFlow.DiffFarisLavine.diffMaxN` — all generic positivity lemmas about *un-eliminated* operators |
+
+```
+cd ../prove2me_workspace
+grep -rl  "volumePoly\|cofPoly\|detPoly\|lagResPoly" Theorems/ Definitions/ | wc -l   # 0
+grep -rl  "i k_j\|fourierAdvect\|eliminat\|Elim"   Theorems/ Definitions/ | wc -l   # 0
+grep -rli "NsFullEuler\|NsLagFourier\|nsElim\|redHam" Theorems/ Definitions/ | wc -l # 0
+grep -rl  "quadForm_nonneg"                        Theorems/                | wc -l   # 7
+```
+
+**Conclusion: nothing to flag, and nothing to withdraw.**  The wave predates the elimination
+design — it contains neither a stub nor a def bundle for the Lagrangian material model's
+determinant/Piola objects (`Def_ChapterNavierStokesFullLagrangianFock*` does not exist here;
+the only Lagrangian bundles are `…LagrangianCanonical`, `…LagrangianEsa`,
+`…LagrangianKatoRellich`, which are the trajectory/ladder line, unrelated to the deformation
+gradient).  So no published node is supported by `B1–B3`, and no node's statement becomes vacuous.
+
+**The guard for the *next* wave.**  Before a stub is generated from a statement that a *degree*
+check of `cofPoly` / `detPoly` / `volumePoly²` supports — the `B1–B3` pattern — require the
+discriminating rows instead (all three minors zero, `det F = 0`, `volumePoly = −1`, square `= 1`,
+i.e. `B4a–B5b` of `DESIGN_COMPARISON_N_20260915.md` §9), and reject the stub otherwise: in the
+material picture the deformation gradient must be carried as an independent scalar mode
+(`log det F`), so any stub that *eliminates* `F` states a vacuous theorem even when its proof
+obligation is dischargeable.
 
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 

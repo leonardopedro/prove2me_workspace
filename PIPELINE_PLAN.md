@@ -1372,6 +1372,12 @@ not approximate.
   than a result: the two classes that remain meaningful here are `NAME` (exact) and `LEAF` (already
   0 on the whole module in the 2026‑09‑17 in-wave pass), and both are 0.  Re-run it once the
   scaffold compiles, and treat that run as the authoritative one.
+* **The Eulerian module has a *pending* formalization delta, so its 0/0/0/0 is provisional too.**
+  The plan of record for the reduced Hamiltonian changed on 2026‑09‑17 (modulus squares of every
+  surviving form — the honest Navier–Stokes nonlinearity — rather than the real pressure–viscous
+  symbol alone): `redFieldN` must gain the real and imaginary parts of the remaining forms, which
+  adds declarations to `ChapterNsFourierElimination.lean`.  Re-run the `--module` pass on it after
+  that change lands, exactly as for the Lagrangian scaffold, rather than quoting this table as final.
 * **The Lagrangian item is degenerate, and that is a *reuse* finding too.**  `B4a–B5b` of
   `DESIGN_COMPARISON_N_20260915.md` §9 (machine-checked in `DESIGN_COMPARISON_N_20260915.cdb`)
   show that the mode-wise elimination of the deformation gradient annihilates the Piola term and

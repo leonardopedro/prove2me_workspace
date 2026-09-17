@@ -147,12 +147,13 @@
    "stub": false
   },
   "ChapterDirectSumEsa": {
-   "lines": 233,
+   "lines": 249,
    "names": [
     "dsCore",
     "memLp_of_finite_support",
     "dsOp",
     "dsOpD",
+    "sectorEnergy_measurable",
     "parcelSector",
     "fockSpace",
     "sectorCore",
@@ -162,7 +163,7 @@
    "namespaces": [
     "BookProof.DirectSumEsa"
    ],
-   "status": "FAILED",
+   "status": "PUBLISHED",
    "stub": false
   },
   "ChapterDoubleSlit": {
@@ -2949,10 +2950,10 @@
   }
  },
  "job_counts": {
-  "FAILED": 15,
-  "PUBLISHED": 134
+  "FAILED": 14,
+  "PUBLISHED": 135
  },
- "job_total": 242,
+ "job_total": 245,
  "name_owner": {
   "Band": "ChapterHermiteBandCalculus",
   "BandRecord": "ChapterSirkBandLedger",
@@ -3312,8 +3313,11 @@
   "dsCompOp_surj": "ChapterQgOuterFockFarisLavine",
   "dsCompOp_symmetricOn": "ChapterQgOuterFockFarisLavine",
   "dsComparison": "ChapterQgOuterFockFarisLavine",
+  "dsCore": "ChapterDirectSumEsa",
   "dsDom": "ChapterQgOuterFockFarisLavine",
   "dsFibOp": "ChapterQgOuterFockFarisLavine",
+  "dsOp": "ChapterDirectSumEsa",
+  "dsOpD": "ChapterDirectSumEsa",
   "eigenvalue": "ChapterNavierStokesLagrangianEsa",
   "ell2Basis": "ChapterHermiteGalerkinFriedrichs",
   "ell2Basis_apply": "ChapterHashimotoShiftInvert",
@@ -3369,11 +3373,12 @@
   "fockComparison": "ChapterNavierStokesFockFarisLavine",
   "fockConfBasis": "ChapterFockSecondQuantization",
   "fockConfBasis_apply": "ChapterFockSecondQuantization",
-  "fockCore": "ChapterNavierStokesSecondQuant",
+  "fockCore": "ChapterDirectSumEsa",
   "fockEnum": "ChapterFockSecondQuantization",
   "fockEquiv": "ChapterFockSecondQuantization",
-  "fockH": "ChapterNavierStokesFockManyMode",
+  "fockH": "ChapterDirectSumEsa",
   "fockOp": "ChapterNavierStokesSecondQuant",
+  "fockSpace": "ChapterDirectSumEsa",
   "fockSym": "ChapterNavierStokesFockManyMode",
   "fockSym_ge_one": "ChapterNavierStokesFockManyMode",
   "fockSym_step": "ChapterNavierStokesFockManyMode",
@@ -3694,6 +3699,7 @@
   "memLp_hFun": "ChapterNavierStokesHermiteFarisLavine",
   "memLp_hermiteC": "ChapterHermiteFunctions",
   "memLp_mul": "ChapterNavierStokesFockContinuum",
+  "memLp_of_finite_support": "ChapterDirectSumEsa",
   "memLp_pgFun": "ChapterHermiteProductCore",
   "memLp_pgFun_monomial": "ChapterHermiteProductCore",
   "memLp_poly_mul_gaussH": "ChapterHermiteFunctions",
@@ -3872,6 +3878,7 @@
   "pFun": "ChapterNavierStokesCanonicalVector",
   "pairH": "ChapterNavierStokesAffineFiberEsa",
   "pairHop": "ChapterNavierStokesThreeComponent",
+  "parcelSector": "ChapterDirectSumEsa",
   "paritySector": "ChapterSirkCertifiedGap",
   "paritySector_invariant": "ChapterSirkCertifiedGap",
   "parseBandLine": "ChapterSirkBandLedger",
@@ -4028,7 +4035,9 @@
   "secondOrder": "ChapterNavierStokesLagrangianKatoRellich",
   "sectorApply": "ChapterNavierStokesSecondQuant",
   "sectorApply_support": "ChapterNavierStokesSecondQuant",
+  "sectorCore": "ChapterDirectSumEsa",
   "sectorEnergy": "ChapterNavierStokesFockContinuum",
+  "sectorEnergy_measurable": "ChapterDirectSumEsa",
   "sectorGround": "ChapterSirkCertifiedGap",
   "sectorQuadW": "ChapterHermiteQuadraticEsa",
   "sectorRayleighSet": "ChapterSirkCertifiedGap",
@@ -4283,6 +4292,7 @@
   "BookProof.ChapterU": "ChapterU",
   "BookProof.ChapterUnboundedPosition": "ChapterUnboundedPosition",
   "BookProof.ChapterUnitaryTransport": "ChapterUnitaryTransport",
+  "BookProof.DirectSumEsa": "ChapterDirectSumEsa",
   "BookProof.EsaClosure": "ChapterEsaClosureCore",
   "BookProof.FarisLavine": "ChapterFarisLavine",
   "BookProof.FockOneParticleGap": "ChapterFockOneParticleGap",

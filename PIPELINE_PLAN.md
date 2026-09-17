@@ -19,10 +19,11 @@ chapters) plus the 4 deferred chapters themselves
 (SirkEndToEnd, SirkWhitening, SirkPerSystem, YangMillsHermite) with their thm/sol
 nodes. This unlocks everything the earlier waves deferred.
 
-**Read the newest session section first: §1k** (this host's environment, the local-gate bug that was
-burning attempts, and the def layer measured as a chain), then **§1j** (resolve imports against the
-platform, not the checkout), **§1h** (accounting rules — which platform counter means what) and
-**§1f** (the solution-side repair chain). Live backlog is always
+**Read §1n first** — reuse-first: index the platform, publish a *reduction* instead of a twin, and
+consult `DEDUP_REPORT_leonardopedro.md`. Then the newest session section **§1k** (this host's
+environment, the local-gate bug that was burning attempts, and the def layer measured as a chain),
+**§1j** (resolve imports against the platform, not the checkout), **§1h** (accounting rules — which
+platform counter means what) and **§1f** (the solution-side repair chain). Live backlog is always
 `python3 pipeline/upload_pipeline.py --status`, never the state file (§1d).
 
 **Two host facts before any run.** (1) `credentials.json` is gitignored and absent from this
@@ -1174,6 +1175,193 @@ proved" and no longer duplicate the `timepiece` tag. Also fixed: `debug/platform
 namespace's owner by exact match only, but the platform index **flattens nested namespaces**, so
 `BookProof.NavierStokesFlow.FockContinuum` was reported as unowned (a *false* blocker in
 `debug/def_layer_order.py`); it now matches the flattened prefix too.
+
+### 1n. Session 12 (2026-09-17) — reuse-first: index the platform, import instead of re-submitting
+
+**The rule for every new node.** Before a stub is generated or a solution is written, check whether
+the platform already states (or proves) it. A statement that already exists as a **Proved** node is
+published as a *reduction* — `import Theorems.Thm_<slug>` and prove `solution` from it — not as a
+fresh proof. Importing a Proved child verifies as `ACCEPTED`; importing an Open child verifies as
+`SKETCH_ACCEPTED` and registers the child in the decomposition graph (`references/prove.md`,
+“Reductions”; SKILL.md rule 2 still forbids importing your own target). This is also the
+anti-duplication rule for the catalogue: every twin node we publish slows the server compile queue
+and splits the dependency graph.
+
+**Three tools (all read-only against the platform).**
+
+| tool | what it does |
+| :-- | :-- |
+| `debug/find_duplicates.py --reset --index [--pages N]` | Paged, **resumable** fetch of the default-environment catalogue into `state/platform_index.jsonl`; each row stores id/name/status/author/leaf and a **name-stripped** semantic statement + hashes. Re-run in bounded chunks until `done=true`. |
+| `debug/find_duplicates.py --report [--max N]` | **Offline** (no platform call): classifies every `Theorems/Thm_*.lean` stub in the wave against the cached index in `STMT`/`DECL`/`SIG`/`NAME`/`LEAF` classes. This is the per-pipeline-item reuse/duplication pass; results in §1n and `DEDUP_REPORT_leonardopedro.md` §F. |
+| `debug/find_duplicates.py --module <file.lean> [--namespace N]` | **Reuse check for an addition that is not (yet) in the wave**: reads the top-level declarations of a Lean source and classifies each against the cached index in the same `STMT`/`DECL`/`SIG`/`NAME`/`LEAF` classes. Run it *before* generating stubs for a new module (`--report` only sees `Theorems/Thm_*.lean`). Results: §1o. |
+| `debug/dedup_report.py` | Cross-references the cached index with `GET /users/<uid>` → `solved_problems` (the ground-truth “proved by us”, §1g/§1h) and writes `DEDUP_REPORT_leonardopedro.md`. |
+| `debug/find_reusable_proved.py [--q kato …]` | Keyword scan over `status=Proved` for reuse candidates by *instrument* — used for the Faris–Lavine / Fock route. |
+| `debug/export_reusable_report.py` | Freezes the curated candidate set — **verbatim `formal_statement`**, platform id, author, and a Mathlib-only / needs-defs portability verdict — into `../timepiece/PROVE2ME_REUSABLE_THEOREMS.md`. The timepiece specialist is offline, so this file (not the live API) is what the plan can cite. |
+
+**Index facts (measured 2026-09-17, API 0.10.4).** Default env = `Mathlib 0df444a (Lean v4.33.1)`.
+Paged `total` 83731 but **73968 distinct** rows (≈11 % cross-page overlap); `status=Proved` 67546,
+`Open` 6205, `Definition` 7325. Fetch cost ≈ 1.3 s/page at `limit=200`. Store the **name-stripped**
+statement: the platform keeps `theorem <full.name> … := by sorry`, so hashing the raw text makes
+every equality a *name* equality — the first pass returned zero duplicates for that reason alone.
+
+**Findings for this account.**
+
+* `num_solved_prob = 616`; all 616 mapped into the index.
+* **0** solved theorems are exact (name-stripped) restatements of another user's **Proved** node.
+  Our statements are project-specific `BookProof.*` types over our own definitions, so a cross-user
+  twin is not expected; a zero is a **lower bound**, not a clean bill (the match is syntactic).
+* **2 internal duplicates** (one claim, two of our nodes): `cpoly_add`
+  (`HermiteQuadraticEsa` vs `QgHermiteFriedrichs`) and `gaussInt_sub` (`QgHermiteFriedrichs` vs
+  `YangMillsHermite`). Keep one canonical; link/deprecate the other.
+* **2 near matches** by token signature; only `BookProof.QgHermiteFriedrichs.conj_mul_self` ≈
+  `AsaiLargeSieve.sq_ofReal_norm` (raver1975) is a genuine restatement across authors.
+* **2 leaf-name reuse candidates**: `ChapterSirkDiffusiveDecay.norm_heatFlow_le` ≈
+  `NavierStokes.norm_heatFlow_le` (korbonits), `ChapterH1.phi_zero` ≈ `PythHydra.phi_zero`
+  (raver1975).
+* Context: the catalogue holds **6137** statement-duplicate groups, **290** spanning >1 author — the
+  pool future waves should import from.
+
+**The theorems already in the pipeline, checked statement-by-statement (run 2026-09-17).**
+`python3 debug/find_duplicates.py --report` parses every `Theorems/Thm_*.lean` stub named in
+`pipeline/wave_upload.json` and classifies each against the 73 968-row cached catalogue. Measured
+over the **1 289** stubs on disk:
+
+| class | collisions | with a `Proved` node | reading |
+| :-- | --: | --: | :-- |
+| `STMT` (same name-stripped statement) | **0** | 0 | no wave theorem is an exact restatement of *any* existing node |
+| `DECL` (same declaration text) | **0** | 0 | see the primed-slug note below |
+| `SIG` (same token set, binder-renamed) | **0** | 0 | — |
+| `NAME` (same dotted name) | **0** | 0 | each pending name is new |
+| `LEAF` (same last component) | **67** | 67 | mostly **false positives** on generic leaves (`add`, `car`, `sum`, `injective`, `resolvent_identity`, …) |
+
+`[C]` separately: **1 270 of 1 289** wave theorems already exist under their own dotted name (all
+ours — the published part of the wave; `--sync` reuses them, never re-submit). The 19 with no
+platform record are the live pending frontier.
+
+The **7 cross-author leaf hits**, triaged by hand — the only ones that could be a real import:
+
+* `BookProof.ChapterSirkDiffusiveDecay.norm_heatFlow_le` ≈ `NavierStokes.norm_heatFlow_le`
+  (korbonits, `88931298-…`): different setting (3-D vector heat flow vs. the generic `E/F` statement),
+  but it is already a **reuse instrument** of the table below (plan item 4).
+* `BookProof.HermiteQuadraticEsa.abs_coord_le_norm` ≈ `QFS.abs_coord_le_norm` (dbenbenn,
+  `9fed8780-…`, `|x i| ≤ ‖x‖`): **not needed** — timepiece's own Mathlib `v4.28.0` proves it as
+  `PiLp.norm_apply_le` (`Mathlib/Analysis/Normed/Lp/PiLp.lean`) with `Real.norm_eq_abs`, verified by
+  `simpa using PiLp.norm_apply_le (p := 2) x i`.  The leaf match is a naming coincidence on a
+  generic one-liner; no platform import is owed (recorded in
+  `../timepiece/PROVE2ME_REUSABLE_THEOREMS.md`, “Leaf-name triage”).
+* `BookProof.ChapterH1.phi_zero` ≈ `PythHydra.phi_zero` (raver1975): different statement
+  (`phi 0 = Complex.exp` vs. `phi k 0 = 1`) — false positive.
+* `ChebotarevGeodesic.HasErrorExponent.sum` (raver1975),
+  `MarkovEntanglement.resolvent_identity` (tianyipeng),
+  `AlgebraicGeometry.RelPicard.IsDeformationClassMap.injective` (Claude): generic leaf names on
+  unrelated types — false positives.
+
+**Primed-slug false positive (fixed in the tool).** The first run of this pass reported *one*
+`DECL` collision — `FarisLavineLift_norm_inner_commutator_sum_le'` → `…_sum_le_alt` — which is
+**not** a duplicate. The platform's `theorem_name` validator rejects a prime (§6.1), so the stub
+for that slug deliberately declares the prime-free name `…norm_inner_commutator_sum_le_alt` (the
+stub's own `NOTE` says so) while the wave slug keeps the `…sum_le'` handle; the node is the same
+one, already `Proved` (`86a053d3-…`), and its statement (`… ≤ c₂ · ‖…‖`) is *distinct* from the
+unprimed sibling (`… ≤ c₂ · (…).re`), so **nothing is dropped**. `find_duplicates.py` now compares
+the platform name against the name the stub **actually declares** (comments stripped) and updates
+`local_theorems()` accordingly; the class is 0 on re-run.
+
+**Conclusion for the pipeline.** No wave theorem needs a cross-author import: the pipeline holds
+**0** statement-level duplicates of another user's node (and 0 of our own), so nothing to re-submit
+as a reduction. The statement-level reuse that *does* exist for the incoming Faris–Lavine / Fock
+work is the **instrument table** below, not a wave-node twin. No pipeline item needs a cross-author
+citation at all, so the pass leaves the wave unchanged. Re-run it before `debug/extend_wave_stubs.py`
+grows the wave: a new slug whose dotted name already resolves is a duplicate by construction (§1c
+“already declared”).
+
+**Reusable instruments for the new Faris–Lavine / Fock work** (all `Proved`, other users; ids and
+the route mapping are tabulated in the timepiece `CONSOLIDATED_PLAN.md`, §“Cross-platform reuse”):
+`QFS.formHs_*` / `QFS.localPoincare_visible_on` / `QFS.chain_estimate` (dbenbenn) for the `H^s` form
+domain and the cutoff; `VectorSpaceOpt.coercive_selfadjoint_bijective` (wenxinzhang) for `N + 1`
+onto; `posDef_quadratic_form_lower_bound` (olivier) for Friedrichs positivity;
+`AsaiLargeSieve.schur_row_bound_of_quasiOrthogonal` / `largeSieve_of_schur` (raver1975) for Schur;
+`MeasureTheory.L2.convolutionCLM_isSymmetric_of_conj_neg` (Claude) for the convolution algebra;
+`singular_value_zero_le_spectral_norm` / `spectral_norm_le_singular_value_zero` (Aphrodite) for the
+determinant norm bound; `BookProof.ChapterMajoranaProp76.fourierTransform_isNote4Unitary` (ours)
+for the Plancherel step.
+
+**Version split — why reuse is statement-level.** timepiece pins Lean `v4.28.0` (Aristotle
+requirement); the platform compiles `v4.33.1 / Mathlib 0df444a`, so a platform module **cannot** be
+`import`ed into timepiece. Cite the platform theorem as a *named hypothesis* on the 4.28 side (never
+a silent `axiom`) and discharge it as a reduction on the 4.33 side; restore any drifted statement
+against the catalogue in `references/prove2me-lean4.33-translation/PLAN_LEAN4_33_TRANSLATION.md` §2.
+
+**Anti-reuse (do not cite).** `tianyipeng.navier_stokes_global_regularity` is `Proved` but its
+statement only asserts `∃ u, (∀ t, ContDiff ℝ ⊤ (u t)) ∧ u 0 = u₀` — the momentum equation never
+appears, so it is vacuous for Navier–Stokes; likewise `tianyipeng.sum_of_squares_r_function`
+concludes `True`. A `Proved` badge is not a correctness check on *usefulness*.
+
+### 1o. Session 13 (2026-09-17, second run) — reuse identification for the **new additions** (the Fourier-elimination wave)
+
+**Why a second pass.** §1n ran the statement-by-statement check over the **1 289** wave stubs. The
+new additions of this session are not in the wave (no `Theorems/Thm_*.lean` stub exists for them),
+so nothing in §1n covers them. The rule “check before a stub is generated” therefore needs a pass
+that reads the declaration set straight from the source: `debug/find_duplicates.py --module`.
+
+**The two new modules of the wave, checked declaration by declaration (index
+`state/platform_index.jsonl`, 73 968 distinct rows, frozen 2026‑09‑17).**
+
+| module (namespace) | declarations parsed | `STMT` | `DECL` | `SIG` | `NAME` | `LEAF` |
+| :-- | --: | --: | --: | --: | --: | --: |
+| `../timepiece/BookProof/ChapterNsFourierElimination.lean` (`BookProof.NsFullEuler`) | 65 | **0** | **0** | **0** | **0** | **0** |
+| `../timepiece/BookProof/ChapterProve2meReuse.lean` (`BookProof.Prove2meReuse`) | 14 | **0** | **0** | **0** | **0** | **0** |
+
+```
+python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterNsFourierElimination.lean \
+    --namespace BookProof.NsFullEuler --max 8
+python3 debug/find_duplicates.py --module ../timepiece/BookProof/ChapterProve2meReuse.lean \
+    --namespace BookProof.Prove2meReuse --max 5
+```
+
+Three declarations of the first module and seven of the second are `abbrev`/`structure` (no
+comparable statement text), so they are compared by `NAME`/`LEAF` only; both classes are 0 for all
+ten. `NAME` compares the dotted name (`BookProof.NsFullEuler.<decl>`) against the platform's
+`theorem_name`, so a **0** there is exact, not approximate.
+
+**Reading.**
+
+* **Nothing to re-publish as a reduction.** Neither module restates an existing node, so no new
+  slug is a duplicate by construction (§1c “already declared” does not fire either).
+* **Nothing to import for the new modules.** They are built entirely from timepiece’s own
+  instruments — `weylOp` / `weylOpDom_symmetricOn` / `weylOpDom_quadForm_nonneg`
+  (`ChapterYangMillsFriedrichs/Part2`), `friedrichs_extension_exists` / `friedrichsComparison`
+  (`ChapterFriedrichsExtension`), `Comparison.esa_self`, `dsCore` / `dsOp` / `dsComparison` /
+  `dsOp_quadForm_nonneg` (`ChapterDirectSumEsa`, `ChapterQgOuterFockFarisLavine/Part1`),
+  `dsOp_number_conserving` (`ChapterQg3DGaugeFarisLavine`), `momOp_polySym` / `mulOp_polySym` /
+  `RealCoeff` (`ChapterYangMillsHermite/Part1`) — plus Mathlib’s `MvPolynomial` API.  This is the
+  same finding as §1n, now for the whole new chain rather than for the wave: the reusable
+  instruments are *cross-platform theorems cited as named hypotheses* (`ChapterProve2meReuse`, the
+  7 Mathlib-only ones frozen in `../timepiece/PROVE2ME_REUSABLE_THEOREMS.md`), not wave-node twins.
+* **Why the zeros are structural, and what they are worth.** The new statements are types over
+  `BookProof`-specific definitions (`MvPolynomial (Fin (n * 21)) ℂ` with our index layout,
+  `polyGaussCore`, `weylOp`, `dsComparison`), so a cross-author twin is not expected; as in §1n the
+  zero is a **lower bound** on duplication, not a clean bill — the match is syntactic.
+* **The check to run for every future addition.** Before `debug/extend_wave_stubs.py` is allowed to
+  grow the wave for a new module, run `find_duplicates.py --module <that file>`.  A `NAME` or `LEAF`
+  hit must be triaged by hand (leaf names on generic one-liners are false positives, §1n); a `STMT`
+  hit is an import reduction, never a fresh proof.  `--module` is now part of the tooling of §1n.
+
+* **One module of the wave is deliberately *not* classified yet.**
+  `../timepiece/BookProof/ChapterNsLagrangianFourierElimination.lean` (the Lagrangian item 6 of
+  `CONSOLIDATED_PLAN.md`) is a **handoff scaffold**: §1–3 are green except the two `Fin 36`-index
+  lemmas `lagElimCoord_fIdx` / `lagElimCoord_vgIdx`, which exceed the heartbeat budget, and §4–5
+  sit on top of them.  It is unimported, in no Lake target, and left untouched by the wave.  The
+  rule of §1o applies to it *once it compiles* — a declaration set that does not elaborate can
+  still be name-classified, but a `STMT`/`SIG` verdict on half-written proofs is noise, so the
+  pass is deferred and the module is recorded as **pending** rather than as 0/0/0/0.  (Process
+  note, 2026-09-17: writing plan-item Lean is the Lean specialist's job; this repository's share is
+  the design record, the symbolic evidence `B4a–B5b` of `DESIGN_COMPARISON_N_20260915.cdb`, and the
+  reuse survey above.)
+
+Context for the frozen index at the time of this pass: `status=Proved` 67 546, `Open` 6 205,
+`Definition` 7 325, and **291** statement-duplicate groups spanning more than one author — the pool
+a future wave should import from (one more than the 290 recorded in §1n, i.e. the catalogue is a
+moving target; always re-run rather than trust the count).
 
 ### 1d. Session 3 (2026-09-12 evening) — three more generator-repair tools, and the counting rule
 

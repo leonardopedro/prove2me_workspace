@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
-"""Reopen items the runner has parked at `failed`.
+"""Reopen items the runner has parked, whether or not it has written `failed`.
 
 `upload_pipeline.py` stops selecting an item once it reaches MAX_ATTEMPTS and
 never revisits it, so a defect at the *submit boundary* (the title byte-cap, the
 statement splitter) strands every item it broke.  This tool reopens those items
 so a fixed boundary can actually retry them.
 
+An item at the ceiling is parked even when its status still reads `pending`: the
+runner only rewrites the status to `failed` when it *visits* the item, and a def
+bundle whose dependencies are all unpublished is never visited at all (preflight
+skips it first).  Those items are just as stranded as the written-off ones, so
+both are reopened here.
+
 Usage:
-    python3 debug/reopen_failed.py                # list the failed items
+    python3 debug/reopen_failed.py                # list the parked items
     python3 debug/reopen_failed.py --yes          # reopen all of them
     python3 debug/reopen_failed.py --yes --only SUBSTR
+    python3 debug/reopen_failed.py --yes --stale-only   # only where the file changed
 """
 import argparse
 import hashlib
@@ -17,6 +24,10 @@ import json
 import os
 import shutil
 import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                "pipeline"))
+from upload_pipeline import MAX_ATTEMPTS  # noqa: E402  (one ceiling, one source)
 
 WS = os.environ.get("PROVE2ME_WS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE = os.path.join(WS, "state", "pipeline.json")
@@ -79,14 +90,19 @@ def main(argv=None):
 
     st = json.load(open(STATE, encoding="utf-8"))
     items = st.setdefault("items", {})
+
+    def parked(rec):
+        return (rec.get("status") == "failed"
+                or rec.get("attempts", 0) >= MAX_ATTEMPTS)
+
     targets = [
         k for k, rec in items.items()
-        if rec.get("status") == "failed" and (not args.only or any(o in k for o in args.only))
+        if parked(rec) and (not args.only or any(o in k for o in args.only))
         and (not args.stale_only or is_stale(k, rec))
     ]
 
     if not targets:
-        print("no failed items match")
+        print("no parked items match")
         return 0
 
     for k in targets:

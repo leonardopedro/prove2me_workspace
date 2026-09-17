@@ -169,16 +169,14 @@ def comparisonCol (s : Finset ι) (cols : ι → ℕ → (ℕ →₀ ℂ)) : ℕ
 
 
 
-/-! ## 7. Axiom audit -/
+/-! ## 7. Axiom audit
 
-#print axioms dGammaOp_finsetSum_col_eq
-#print axioms coupling_friedrichs
-#print axioms coupling_quadForm_le
-#print axioms commForm_finsetSum
-#print axioms coupling_esa_dGamma
-#print axioms comparison_friedrichs
-#print axioms coupling_quadForm_le_comparison
-#print axioms numberOp_essentiallySelfAdjoint
+The audit of the eight headline theorems (`dGammaOp_finsetSum_col_eq`, `coupling_friedrichs`,
+`coupling_quadForm_le`, `commForm_finsetSum`, `coupling_esa_dGamma`, `comparison_friedrichs`,
+`coupling_quadForm_le_comparison`, `numberOp_essentiallySelfAdjoint`) belongs to their own
+`Theorems` nodes. Those declarations are not part of this *definition* bundle, and a `#print`
+of a name the module does not declare is a hard elaboration error on the platform
+(`Unknown constant`), not a warning -- so the commands are not carried over here. -/
 
 end
 

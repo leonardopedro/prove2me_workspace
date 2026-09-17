@@ -18,3 +18,8 @@ lake-manifest.json
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Regenerable platform-catalogue cache (57 MB; rebuild with
+# `python3 debug/find_duplicates.py --reset --index`). See PIPELINE_PLAN.md §1n.
+state/platform_index.jsonl
+state/platform_index.meta.json

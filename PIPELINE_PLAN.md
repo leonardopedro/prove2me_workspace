@@ -26,6 +26,16 @@ environment, the local-gate bug that was burning attempts, and the def layer mea
 platform counter means what) and **§1f** (the solution-side repair chain). Live backlog is always
 `python3 pipeline/upload_pipeline.py --status`, never the state file (§1d).
 
+**Live state, 2026-09-17 third run (§1q below) — read this before deciding what to run.**  Plan **3010
+items** (151 defs / 1422 thms / 1422 sols); state **1322 done / 61 pending / 16 failed**; defs **140
+done / 12 pending / 0 failed**; **thms 0 pending** apart from the newly appended batch; **sols 121
+pending and every one of them WAITs on an unpublished theorem**.  The whole remaining backlog is the
+**65 items whose sources were missing from the checkout** — and those sources are now in
+`../timepiece`, so the blocker is removable (see §1q for the exact generator path).  Two live actions:
+(a) publish the def bundles in dependency order (`ChapterScalaronFiberFL` → `ChapterScalaronOuterFockFL`
+→ … , §1q item 2); (b) generate the missing stubs/solutions from `../timepiece` and append them to the
+wave (§1q item 5).  A detached upload is running against this state while the docs are updated.
+
 **Two host facts before any run.** (1) `credentials.json` is gitignored and absent from this
 checkout: a local run needs the API key pasted by the human (the cloud sandbox gets
 `PROVE2ME_API_KEY` injected; this host does not). (2) The checkout root is wherever `pipeline/`
@@ -1295,6 +1305,87 @@ against the catalogue in `references/prove2me-lean4.33-translation/PLAN_LEAN4_33
 statement only asserts `∃ u, (∀ t, ContDiff ℝ ⊤ (u t)) ∧ u 0 = u₀` — the momentum equation never
 appears, so it is vacuous for Navier–Stokes; likewise `tianyipeng.sum_of_squares_r_function`
 concludes `True`. A `Proved` badge is not a correctness check on *usefulness*.
+
+### 1q. Session 14 (2026-09-17, third run) — the skill drifted, the def layer is an ordering problem, and the "missing sources" are no longer missing
+
+Measured on this host (external-drive checkout), with the uploader as the only oracle.  Log of the
+detached run: `/tmp/upload_bg.log`.
+
+1. **Skill drift, fixed.**  `--check` reported `skill / platform: 0.10.3 / 0.10.4`, so the cached skill
+   was stale.  Our `SKILL.md` was byte-identical to upstream tag `v0.10.3` (verified with
+   `git diff --stat v0.10.3 -- SKILL.md references/` before touching anything — the only diffs were
+   *our* extra files under `references/`), and the upstream repo is not configured as a remote here, so
+   the update was `git fetch <upstream-url> tag v0.10.4` + `git checkout v0.10.4 -- SKILL.md
+   references/communicate.md` (the whole 0.10.4 diff is the version line plus five lines of
+   `is_agent` provenance documentation in `references/communicate.md`).  **Upstream carries only the
+   skill** (`references/` is a superset here), so never `git pull` it — take the tags.
+2. **The def layer is blocked by ordering, not by defects.**  `--status`: defs 140 done / 12 pending / 0
+   failed, and `--kind def` chunks resolve 1 item per ~110 s because everything left waits on something
+   else.  Two real compile errors, both diagnosed:
+   * `def:ChapterScalaronFiberFL` (attempts exhausted) — line 105/106 reference
+     `BookProof.ScalaronEsa.contDiff_starobinskyV`, and the platform has **no `BookProof.ScalaronEsa.*`
+     node at all** (checked against the 83 731-record `state/platform_index.jsonl`).  The smoothness that
+     *does* exist is `BookProof.QgHermiteCore.continuous_starobinskyV` (**`Continuous`** only, not
+     `ContDiff ℝ ⊤`) and `BookProof.Starobinsky.starobinskyV_nonneg` (**Proved**).  So the repair is
+     either (i) publish a theorem node for the `ContDiff` fact (stub + sol first — a Definitions module
+     may import a Theorems module **only if it is Proved**) and import it, or (ii) lower the
+     `WallPot.smooth` field to what is available.  Do not simply resubmit: the identifier does not
+     exist yet.
+   * `def:ChapterQgTruncationResolvent` (attempts exhausted) — line 64 `open BookProof.QgOuterFockCoreFL
+     BookProof.ScalaronFiberFL …`: the *first* such namespace is fine, the others belong to bundles that
+     are **themselves still pending** (`ChapterScalaronFiberFL`, `ChapterScalaronOuterFockFL`).  This is
+     ordering: publish the dependencies, then resubmit unchanged.  The same holds for the rest of the
+     pending set — `ChapterQgVielbeinModeInstance`, `ChapterQgContinuumModeInstance`,
+     `ChapterQgTimeStepping`, `ChapterQgManifoldModeInstance`, `ChapterSirkSingleTimeShift`,
+     `ChapterFiniteSectionSingleTime`, `ChapterQymTimeIndependentFlow`, `ChapterYangMillsAbelianFockEsa`.
+3. **Every pending solution is a wait, not a failure.**  A `--kind sol` chunk resolves 0 items in ~1 s
+   by design: all 121 pending sols print `WAIT (theorem not published yet)`, and a wait consumes no
+   attempt.  They are `FockCanonical`/`FockManyMode`/`ContinuityUnitaryInfinite` sols whose **thms are
+   the 65 unsubmittable items**.  So the sol layer cannot move until those thms exist.
+4. **Wave-spec extension from generated stubs — legitimate, but its filter is too permissive.**
+   `debug/extend_wave_stubs.py` (append-only; it gates on "the stub's `Definitions/Def_<chapter>` import
+   is published" and "`Solutions/Sol_<slug>.lean` exists") appended **75** stubs that were on disk but
+   absent from the spec — `ChapterHermiteBandCalculus` (`Band.*`), `ChapterShiftedHermiteCore`,
+   `ChapterYangMillsGhostSector` — growing the plan 2860 → 3010 items.  All 75 have a stub and a
+   solution.  **But these name declarations inside *structure* namespaces**
+   (`BookProof.HermiteBand.Band.add`, `…Band.comp`, `BookProof.HyperbolicQuadratic.…`), which is not a
+   Lean namespace, so the server rejects them with `unknown namespace …` and each burns its attempts.
+   The tool already skips the analogous case (48 stubs skipped because a `Def_*` bundle declares them):
+   **extend that filter to skip structure-namespaced declarations before running it again.**
+5. **The 65-item blocker is now removable — this is the real next action.**  The unsubmittable set is
+   `ChapterNavierStokesFockCanonical` (28), `ChapterNavierStokesFockManyMode` (19),
+   `ChapterContinuityUnitaryInfinite` (13), plus `ChapterH6`/`ChapterH8`/`ChapterH9` helpers, and their
+   sols are 121 of the pending items.  **All of those chapters now exist in `../timepiece`**
+   (`ChapterNavierStokesFockCanonical.lean` + dir, `ChapterNavierStokesFockManyMode.lean`,
+   `ChapterContinuityUnitaryInfinite.lean`, `ChapterH6.lean`, `ChapterH8.lean`, `ChapterH9.lean`), and
+   Lean 4 is installed there (`../timepiece/lean-toolchain` = `leanprover/lean4:v4.28.0`, with
+   `lakefile.toml`).  So the stubs can be generated instead of waited for:
+   `scripts/wave_generate.py` wants the declaration graph at the hard-coded
+   `/home/leo/Projects/timepiece/decl_graph.jsonl`, which does **not** exist on this host — build it with
+   `scripts/extract_decl_graph.lean` against `../timepiece` (or point the path at the new graph), run the
+   generator, then `debug/extend_wave_stubs.py` to append only the new slugs (it is append-only and also
+   maintains `sol_order` topologically).  **The platform stays the compile oracle**: the uploader prints
+   `no lakefile at <ws> — skipping the local gate` and that is correct for this workspace layout
+   (`Definitions/`+`Theorems/`+`Solutions/` is not a Lake project); the sources in `../timepiece` are for
+   *generation*, not for a local gate.
+6. **Failure taxonomy of the 23 exhausted items** (16 thm + 7 sol) — each class has one repair, and only
+   the third is worth resubmitting:
+   * *structure-namespace stubs* (item 4) — generator artifact, do not resubmit;
+   * *stub statements naming what no published def bundle provides* — `SqSumFarisLavine` (`sqSumOp`,
+     `harmCore`), `StoneBridge` (invalid field `stoneU`), `HermiteQuadraticEsa` (`continuous_confW`,
+     `continuous_sectorQuad…`), `HashimotoShiftInvert` (invalid field `mem`),
+     `YangMillsFriedrichsLimit` — fix the stub's `import Definitions.Def_…` + `open`, or the generator;
+   * *sol proofs citing a sibling declaration* (`sirk_error_decay_exponential`, `ComparisonData`,
+     `hashimoto_multishift_selects_esa`, `krylov_bestApprox_tendsto_zero`) — the §5d repair
+     (`import Theorems.Thm_…` / `Definitions.Def_…` + `open`) makes them submittable again;
+   * *two genuine proof failures* — `sol:…FockOfFock_annih_basis` / `…creat_basis` (`unsolved goals`) and
+     `sol:…HashimotoShiftInvert_sirkDen_rkVec`; these need real proof work, not a pipeline fix.
+7. **Operating notes.**  (a) Never run two uploaders at once: they share `state/pipeline.json` — kill a
+   stale chunk by PID (`pgrep -af upload_pipeline.py`), never with `pkill -f "<pattern>"` from a shell
+   whose own command line contains the pattern, which kills the shell itself.  (b) A detached run must be
+   `setsid nohup … &`: a plain `nohup … &` dies with the parent shell on this host.  (c) A bounded chunk
+   that resolves nothing is normal when the head of `ORDER` is blocked ("a blocked def starves
+   everything behind it", §1a) — read `--status`, not the chunk summary.
 
 ### 1o. Session 13 (2026-09-17, second run) — reuse identification for the **new additions** (the Fourier-elimination wave)
 

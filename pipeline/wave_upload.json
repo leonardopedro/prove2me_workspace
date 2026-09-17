@@ -17350,6 +17350,831 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_HermiteBand_Band_add": {
+   "name": "BookProof.HermiteBand.Band.add",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_Band_add.lean",
+   "title": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_Band_comp": {
+   "name": "BookProof.HermiteBand.Band.comp",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_Band_comp.lean",
+   "title": "The Lean 4 theorem `comp` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `comp` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_Band_mono": {
+   "name": "BookProof.HermiteBand.Band.mono",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_Band_mono.lean",
+   "title": "The Lean 4 theorem `mono` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `mono` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_Band_smul": {
+   "name": "BookProof.HermiteBand.Band.smul",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_Band_smul.lean",
+   "title": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_Band_toBand2": {
+   "name": "BookProof.HermiteBand.Band.toBand2",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_Band_toBand2.lean",
+   "title": "The Lean 4 theorem `toBand2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `toBand2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand1_add": {
+   "name": "BookProof.HermiteBand.IsBand1.add",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand1_add.lean",
+   "title": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand1_comp": {
+   "name": "BookProof.HermiteBand.IsBand1.comp",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand1_comp.lean",
+   "title": "The Lean 4 theorem `comp` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `comp` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand1_smul": {
+   "name": "BookProof.HermiteBand.IsBand1.smul",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand1_smul.lean",
+   "title": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand1_sum": {
+   "name": "BookProof.HermiteBand.IsBand1.sum",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand1_sum.lean",
+   "title": "The Lean 4 theorem `sum` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sum` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand1_toBand2": {
+   "name": "BookProof.HermiteBand.IsBand1.toBand2",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand1_toBand2.lean",
+   "title": "The Lean 4 theorem `toBand2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `toBand2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand2_add": {
+   "name": "BookProof.HermiteBand.IsBand2.add",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand2_add.lean",
+   "title": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `add` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand2_smul": {
+   "name": "BookProof.HermiteBand.IsBand2.smul",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand2_smul.lean",
+   "title": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `smul` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_IsBand2_sum": {
+   "name": "BookProof.HermiteBand.IsBand2.sum",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_IsBand2_sum.lean",
+   "title": "The Lean 4 theorem `sum` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sum` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_annPoly_hpsi": {
+   "name": "BookProof.HermiteBand.annPoly_hpsi",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_annPoly_hpsi.lean",
+   "title": "The Lean 4 theorem `annPoly_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `annPoly_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_band_annPoly": {
+   "name": "BookProof.HermiteBand.band_annPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_band_annPoly.lean",
+   "title": "The Lean 4 theorem `band_annPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `band_annPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_band_crePoly": {
+   "name": "BookProof.HermiteBand.band_crePoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_band_crePoly.lean",
+   "title": "The Lean 4 theorem `band_crePoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `band_crePoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_crePoly_hpsi": {
+   "name": "BookProof.HermiteBand.crePoly_hpsi",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_crePoly_hpsi.lean",
+   "title": "The Lean 4 theorem `crePoly_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `crePoly_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_degree_add_single": {
+   "name": "BookProof.HermiteBand.degree_add_single",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_degree_add_single.lean",
+   "title": "The Lean 4 theorem `degree_add_single` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `degree_add_single` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_degree_sub_single": {
+   "name": "BookProof.HermiteBand.degree_sub_single",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_degree_sub_single.lean",
+   "title": "The Lean 4 theorem `degree_sub_single` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `degree_sub_single` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_g1_le_g2": {
+   "name": "BookProof.HermiteBand.g1_le_g2",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_g1_le_g2.lean",
+   "title": "The Lean 4 theorem `g1_le_g2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `g1_le_g2` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_g1_nonneg": {
+   "name": "BookProof.HermiteBand.g1_nonneg",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_g1_nonneg.lean",
+   "title": "The Lean 4 theorem `g1_nonneg` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `g1_nonneg` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_g2_nonneg": {
+   "name": "BookProof.HermiteBand.g2_nonneg",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_g2_nonneg.lean",
+   "title": "The Lean 4 theorem `g2_nonneg` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `g2_nonneg` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_annPoly": {
+   "name": "BookProof.HermiteBand.isBand1_annPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_annPoly.lean",
+   "title": "The Lean 4 theorem `isBand1_annPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_annPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_crePoly": {
+   "name": "BookProof.HermiteBand.isBand1_crePoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_crePoly.lean",
+   "title": "The Lean 4 theorem `isBand1_crePoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_crePoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_foPoly": {
+   "name": "BookProof.HermiteBand.isBand1_foPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_foPoly.lean",
+   "title": "The Lean 4 theorem `isBand1_foPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_foPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_momPoly": {
+   "name": "BookProof.HermiteBand.isBand1_momPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_momPoly.lean",
+   "title": "The Lean 4 theorem `isBand1_momPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_momPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_mulXPoly": {
+   "name": "BookProof.HermiteBand.isBand1_mulXPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_mulXPoly.lean",
+   "title": "The Lean 4 theorem `isBand1_mulXPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_mulXPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand1_zero": {
+   "name": "BookProof.HermiteBand.isBand1_zero",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand1_zero.lean",
+   "title": "The Lean 4 theorem `isBand1_zero` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand1_zero` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand2_fqPoly": {
+   "name": "BookProof.HermiteBand.isBand2_fqPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand2_fqPoly.lean",
+   "title": "The Lean 4 theorem `isBand2_fqPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand2_fqPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand2_fqQuadPoly": {
+   "name": "BookProof.HermiteBand.isBand2_fqQuadPoly",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand2_fqQuadPoly.lean",
+   "title": "The Lean 4 theorem `isBand2_fqQuadPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand2_fqQuadPoly` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand2_weylProd": {
+   "name": "BookProof.HermiteBand.isBand2_weylProd",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand2_weylProd.lean",
+   "title": "The Lean 4 theorem `isBand2_weylProd` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand2_weylProd` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_isBand2_zero": {
+   "name": "BookProof.HermiteBand.isBand2_zero",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_isBand2_zero.lean",
+   "title": "The Lean 4 theorem `isBand2_zero` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `isBand2_zero` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_le_degree": {
+   "name": "BookProof.HermiteBand.le_degree",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_le_degree.lean",
+   "title": "The Lean 4 theorem `le_degree` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `le_degree` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_momPoly_eq": {
+   "name": "BookProof.HermiteBand.momPoly_eq",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_momPoly_eq.lean",
+   "title": "The Lean 4 theorem `momPoly_eq` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `momPoly_eq` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_mulXPoly_eq": {
+   "name": "BookProof.HermiteBand.mulXPoly_eq",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_mulXPoly_eq.lean",
+   "title": "The Lean 4 theorem `mulXPoly_eq` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `mulXPoly_eq` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_HermiteBand_pgLp_hpsi": {
+   "name": "BookProof.HermiteBand.pgLp_hpsi",
+   "chapter": "ChapterHermiteBandCalculus",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteBand_pgLp_hpsi.lean",
+   "title": "The Lean 4 theorem `pgLp_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgLp_hpsi` in the `ChapterHermiteBandCalculus` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteBandCalculus.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_coreEquivT_coe": {
+   "name": "BookProof.ShiftedHermiteCore.coreEquivT_coe",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_coreEquivT_coe.lean",
+   "title": "The Lean 4 theorem `coreEquivT_coe` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreEquivT_coe` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_coreOpT_coe": {
+   "name": "BookProof.ShiftedHermiteCore.coreOpT_coe",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_coreOpT_coe.lean",
+   "title": "The Lean 4 theorem `coreOpT_coe` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreOpT_coe` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_coreOpT_coreEquivT": {
+   "name": "BookProof.ShiftedHermiteCore.coreOpT_coreEquivT",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_coreOpT_coreEquivT.lean",
+   "title": "The Lean 4 theorem `coreOpT_coreEquivT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreOpT_coreEquivT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_deriv_pgFunT_sec": {
+   "name": "BookProof.ShiftedHermiteCore.deriv_pgFunT_sec",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_deriv_pgFunT_sec.lean",
+   "title": "The Lean 4 theorem `deriv_pgFunT_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `deriv_pgFunT_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT": {
+   "name": "BookProof.ShiftedHermiteCore.eq_zero_of_inner_coreT",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT.lean",
+   "title": "The Lean 4 theorem `eq_zero_of_inner_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `eq_zero_of_inner_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec": {
+   "name": "BookProof.ShiftedHermiteCore.hasDerivAt_pgFunT_sec",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec.lean",
+   "title": "The Lean 4 theorem `hasDerivAt_pgFunT_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hasDerivAt_pgFunT_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec": {
+   "name": "BookProof.ShiftedHermiteCore.hasDerivAt_phaseFun_sec",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec.lean",
+   "title": "The Lean 4 theorem `hasDerivAt_phaseFun_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hasDerivAt_phaseFun_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT": {
+   "name": "BookProof.ShiftedHermiteCore.hermiteTLp_mem_coreT",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT.lean",
+   "title": "The Lean 4 theorem `hermiteTLp_mem_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hermiteTLp_mem_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_hermiteTLp_total": {
+   "name": "BookProof.ShiftedHermiteCore.hermiteTLp_total",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_hermiteTLp_total.lean",
+   "title": "The Lean 4 theorem `hermiteTLp_total` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hermiteTLp_total` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_inner_hermiteTLp": {
+   "name": "BookProof.ShiftedHermiteCore.inner_hermiteTLp",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_inner_hermiteTLp.lean",
+   "title": "The Lean 4 theorem `inner_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_inner_pgLpT_left": {
+   "name": "BookProof.ShiftedHermiteCore.inner_pgLpT_left",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_inner_pgLpT_left.lean",
+   "title": "The Lean 4 theorem `inner_pgLpT_left` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_pgLpT_left` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_momTPoly_apply": {
+   "name": "BookProof.ShiftedHermiteCore.momTPoly_apply",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_momTPoly_apply.lean",
+   "title": "The Lean 4 theorem `momTPoly_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `momTPoly_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_mulXTPoly_apply": {
+   "name": "BookProof.ShiftedHermiteCore.mulXTPoly_apply",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_mulXTPoly_apply.lean",
+   "title": "The Lean 4 theorem `mulXTPoly_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `mulXTPoly_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp": {
+   "name": "BookProof.ShiftedHermiteCore.orthonormal_hermiteTLp",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp.lean",
+   "title": "The Lean 4 theorem `orthonormal_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `orthonormal_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgFunT_apply_add": {
+   "name": "BookProof.ShiftedHermiteCore.pgFunT_apply_add",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_add.lean",
+   "title": "The Lean 4 theorem `pgFunT_apply_add` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgFunT_apply_add` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgFunT_apply_smul": {
+   "name": "BookProof.ShiftedHermiteCore.pgFunT_apply_smul",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_smul.lean",
+   "title": "The Lean 4 theorem `pgFunT_apply_smul` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgFunT_apply_smul` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgFunT_momTPoly": {
+   "name": "BookProof.ShiftedHermiteCore.pgFunT_momTPoly",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgFunT_momTPoly.lean",
+   "title": "The Lean 4 theorem `pgFunT_momTPoly` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgFunT_momTPoly` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly": {
+   "name": "BookProof.ShiftedHermiteCore.pgFunT_mulXTPoly",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly.lean",
+   "title": "The Lean 4 theorem `pgFunT_mulXTPoly` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgFunT_mulXTPoly` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgLpT_mem_coreT": {
+   "name": "BookProof.ShiftedHermiteCore.pgLpT_mem_coreT",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgLpT_mem_coreT.lean",
+   "title": "The Lean 4 theorem `pgLpT_mem_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgLpT_mem_coreT` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_pgLpT_smul": {
+   "name": "BookProof.ShiftedHermiteCore.pgLpT_smul",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgLpT_smul.lean",
+   "title": "The Lean 4 theorem `pgLpT_smul` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `pgLpT_smul` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_phaseArg_sec": {
+   "name": "BookProof.ShiftedHermiteCore.phaseArg_sec",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_phaseArg_sec.lean",
+   "title": "The Lean 4 theorem `phaseArg_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `phaseArg_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_phaseFun_add": {
+   "name": "BookProof.ShiftedHermiteCore.phaseFun_add",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_phaseFun_add.lean",
+   "title": "The Lean 4 theorem `phaseFun_add` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `phaseFun_add` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_phaseFun_ne_zero": {
+   "name": "BookProof.ShiftedHermiteCore.phaseFun_ne_zero",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_phaseFun_ne_zero.lean",
+   "title": "The Lean 4 theorem `phaseFun_ne_zero` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `phaseFun_ne_zero` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_phaseFun_sec": {
+   "name": "BookProof.ShiftedHermiteCore.phaseFun_sec",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_phaseFun_sec.lean",
+   "title": "The Lean 4 theorem `phaseFun_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `phaseFun_sec` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_polyGaussCoreT_dense": {
+   "name": "BookProof.ShiftedHermiteCore.polyGaussCoreT_dense",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_polyGaussCoreT_dense.lean",
+   "title": "The Lean 4 theorem `polyGaussCoreT_dense` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `polyGaussCoreT_dense` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ShiftedHermiteCore_span_hermiteTLp": {
+   "name": "BookProof.ShiftedHermiteCore.span_hermiteTLp",
+   "chapter": "ChapterShiftedHermiteCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_span_hermiteTLp.lean",
+   "title": "The Lean 4 theorem `span_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `span_hermiteTLp` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_fibreHam_abelian_esa": {
+   "name": "BookProof.YangMillsGhost.fibreHam_abelian_esa",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_fibreHam_abelian_esa.lean",
+   "title": "The Lean 4 theorem `fibreHam_abelian_esa` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `fibreHam_abelian_esa` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_fibreHam_apply": {
+   "name": "BookProof.YangMillsGhost.fibreHam_apply",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_fibreHam_apply.lean",
+   "title": "The Lean 4 theorem `fibreHam_apply` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `fibreHam_apply` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_fibreHam_symmetricOn": {
+   "name": "BookProof.YangMillsGhost.fibreHam_symmetricOn",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_fibreHam_symmetricOn.lean",
+   "title": "The Lean 4 theorem `fibreHam_symmetricOn` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `fibreHam_symmetricOn` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ghostCore_dense": {
+   "name": "BookProof.YangMillsGhost.ghostCore_dense",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ghostCore_dense.lean",
+   "title": "The Lean 4 theorem `ghostCore_dense` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ghostCore_dense` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ghostEnergy_empty": {
+   "name": "BookProof.YangMillsGhost.ghostEnergy_empty",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ghostEnergy_empty.lean",
+   "title": "The Lean 4 theorem `ghostEnergy_empty` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ghostEnergy_empty` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ghostEnergy_nonneg": {
+   "name": "BookProof.YangMillsGhost.ghostEnergy_nonneg",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ghostEnergy_nonneg.lean",
+   "title": "The Lean 4 theorem `ghostEnergy_nonneg` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ghostEnergy_nonneg` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_add_bounded_coupling_esa",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_add_bounded_coupling_esa` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_add_bounded_coupling_esa` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_essentiallySelfAdjointOn_core",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_essentiallySelfAdjointOn_core` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_essentiallySelfAdjointOn_core` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_fibre": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_fibre",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_fibre.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_fibre` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_fibre` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_preserves_ghostNumber",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_preserves_ghostNumber` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_preserves_ghostNumber` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_stone_flow": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_stone_flow",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_stone_flow.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_stone_flow` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_stone_flow` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_symmetricOn": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_symmetricOn",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_symmetricOn.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_symmetricOn` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_symmetricOn` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre": {
+   "name": "BookProof.YangMillsGhost.ymGhostHam_vacuum_fibre",
+   "chapter": "ChapterYangMillsGhostSector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre.lean",
+   "title": "The Lean 4 theorem `ymGhostHam_vacuum_fibre` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ymGhostHam_vacuum_fibre` in the `ChapterYangMillsGhostSector` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsGhostSector.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -18698,6 +19523,81 @@
   "BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint",
   "BookProof_HermiteQuadraticEsa_confV_stone_flow",
   "BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint",
-  "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow"
+  "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow",
+  "BookProof_HermiteBand_Band_add",
+  "BookProof_HermiteBand_Band_mono",
+  "BookProof_HermiteBand_Band_smul",
+  "BookProof_HermiteBand_annPoly_hpsi",
+  "BookProof_HermiteBand_crePoly_hpsi",
+  "BookProof_HermiteBand_degree_add_single",
+  "BookProof_HermiteBand_degree_sub_single",
+  "BookProof_HermiteBand_g1_le_g2",
+  "BookProof_HermiteBand_g1_nonneg",
+  "BookProof_HermiteBand_g2_nonneg",
+  "BookProof_HermiteBand_isBand1_zero",
+  "BookProof_HermiteBand_isBand2_zero",
+  "BookProof_HermiteBand_le_degree",
+  "BookProof_HermiteBand_momPoly_eq",
+  "BookProof_HermiteBand_mulXPoly_eq",
+  "BookProof_HermiteBand_pgLp_hpsi",
+  "BookProof_ShiftedHermiteCore_coreEquivT_coe",
+  "BookProof_ShiftedHermiteCore_coreOpT_coreEquivT",
+  "BookProof_ShiftedHermiteCore_inner_hermiteTLp",
+  "BookProof_ShiftedHermiteCore_inner_pgLpT_left",
+  "BookProof_ShiftedHermiteCore_momTPoly_apply",
+  "BookProof_ShiftedHermiteCore_mulXTPoly_apply",
+  "BookProof_ShiftedHermiteCore_pgFunT_apply_add",
+  "BookProof_ShiftedHermiteCore_pgFunT_apply_smul",
+  "BookProof_ShiftedHermiteCore_pgLpT_mem_coreT",
+  "BookProof_ShiftedHermiteCore_pgLpT_smul",
+  "BookProof_ShiftedHermiteCore_phaseArg_sec",
+  "BookProof_ShiftedHermiteCore_phaseFun_add",
+  "BookProof_ShiftedHermiteCore_phaseFun_ne_zero",
+  "BookProof_ShiftedHermiteCore_span_hermiteTLp",
+  "BookProof_YangMillsGhost_fibreHam_abelian_esa",
+  "BookProof_YangMillsGhost_fibreHam_apply",
+  "BookProof_YangMillsGhost_ghostCore_dense",
+  "BookProof_YangMillsGhost_ghostEnergy_empty",
+  "BookProof_YangMillsGhost_ghostEnergy_nonneg",
+  "BookProof_YangMillsGhost_ymGhostHam_fibre",
+  "BookProof_HermiteBand_Band_toBand2",
+  "BookProof_HermiteBand_Band_comp",
+  "BookProof_HermiteBand_band_annPoly",
+  "BookProof_HermiteBand_band_crePoly",
+  "BookProof_ShiftedHermiteCore_coreOpT_coe",
+  "BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp",
+  "BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly",
+  "BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT",
+  "BookProof_ShiftedHermiteCore_phaseFun_sec",
+  "BookProof_ShiftedHermiteCore_polyGaussCoreT_dense",
+  "BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core",
+  "BookProof_YangMillsGhost_fibreHam_symmetricOn",
+  "BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber",
+  "BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre",
+  "BookProof_HermiteBand_IsBand1_toBand2",
+  "BookProof_HermiteBand_IsBand1_comp",
+  "BookProof_HermiteBand_isBand1_annPoly",
+  "BookProof_HermiteBand_isBand1_crePoly",
+  "BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec",
+  "BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT",
+  "BookProof_YangMillsGhost_ymGhostHam_symmetricOn",
+  "BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec",
+  "BookProof_ShiftedHermiteCore_hermiteTLp_total",
+  "BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa",
+  "BookProof_YangMillsGhost_ymGhostHam_stone_flow",
+  "BookProof_ShiftedHermiteCore_deriv_pgFunT_sec",
+  "BookProof_ShiftedHermiteCore_pgFunT_momTPoly",
+  "BookProof_HermiteBand_IsBand1_add",
+  "BookProof_HermiteBand_IsBand1_smul",
+  "BookProof_HermiteBand_IsBand1_sum",
+  "BookProof_HermiteBand_IsBand2_add",
+  "BookProof_HermiteBand_IsBand2_smul",
+  "BookProof_HermiteBand_IsBand2_sum",
+  "BookProof_HermiteBand_isBand1_foPoly",
+  "BookProof_HermiteBand_isBand1_momPoly",
+  "BookProof_HermiteBand_isBand1_mulXPoly",
+  "BookProof_HermiteBand_isBand2_fqPoly",
+  "BookProof_HermiteBand_isBand2_fqQuadPoly",
+  "BookProof_HermiteBand_isBand2_weylProd"
  ]
 }

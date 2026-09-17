@@ -1387,6 +1387,61 @@ detached run: `/tmp/upload_bg.log`.
    that resolves nothing is normal when the head of `ORDER` is blocked ("a blocked def starves
    everything behind it", §1a) — read `--status`, not the chunk summary.
 
+### 1r. Session 15 (2026-09-17, fourth run) — why the post-append wave "went red", the **cross-chapter import defect** (fixed in the generator), and the def head's exact closure
+
+**The observation that started this session: "the last submissions are all failing (before they were being
+accepted)."** It is partly an artifact of retries and partly real, and the real part had a single cause.
+
+1. **Measured first, not assumed.** `state/pipeline.json` holds **3107 items: 2898 done / 185 pending / 24
+   failed**; over the last 400 verdict lines in `state/pipeline.log` the split is **325 FAIL : 165 DONE**.
+   The FAIL stream repeats a small set of slugs (21+20+16+15×9 … lines for ~20 distinct names), so the
+   visible "wall" is retries of a handful of items on top of a genuine regression.  Terminal failures are
+   still only 0.8% — but the *rate* is what the user was reading.
+2. **Class A — `sol:` "Unknown identifier <x>".** `<x>` is a lemma that exists in the timepiece chapter
+   but in **no published `Def_*` bundle**: `momPoly_apply` (`ChapterNavierStokesDifferentialL2/Part1.lean`),
+   `HermiteProductCore.pgMap_apply`, `sirkDen_rkVec`.  The transplant rule makes every public theorem a
+   *node*, so these live in `Theorems/Thm_*.lean` — and the generated solution cited them bare.
+3. **Class B — `sol:` "unknown import: Theorems.Thm_… No such theorem exists".** A solution importing a
+   sibling node that was never published.  Same cause as Class A.
+4. **ROOT CAUSE (fixed).** `scripts/wave_generate.py: build_sol` emitted `import Theorems.Thm_<slug>` only
+   for dependencies that are nodes of the **same chapter** (`node_deps`); a citation of a node in another
+   chapter — `StrichartzWave.constCoeffOp_symmetric`, `ScalaronCoreEsa.symmetricOn_inclusion`,
+   `NavierStokesFlow.DifferentialL2.momPoly_apply` — produced a bare identifier.  **Fix:** the generator
+   gained `thm_node_index()` (short name → the `Theorems/Thm_*.lean` stubs declaring it),
+   `index_register()` (stubs written earlier in the same run, since the index is memoised) and
+   `cross_chapter_imports()` (emits `import Theorems.Thm_<slug>` for each cited name that is a node of
+   another chapter; an **exact** full-name match wins, an ambiguous short name is skipped rather than
+   guessed, and a name with no stub stays bare so a missing node remains a missing node instead of becoming
+   an unknown-import failure).  Verified: `Sol_BookProof_ScalaronWallEsa_kinCcR_symmetricOn.lean` now
+   carries `import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric`; re-running the generator
+   repaired **7** already-installed sols.  Every future batch inherits the fix — this, not the retry
+   volume, is what stops the class.
+5. **Second defect (open, blocks the def head).** `src_byte_text(leaf)` reads `BookProof/<leaf>.lean`, but a
+   multi-part chapter's sketch stores byte offsets in **part-file** space.  Evidence:
+   `state/sketch/sketch_ChapterScalaronCoreEsa.jsonl` puts `ccSchwartz` at offset **4747** while the
+   aggregator `ChapterScalaronCoreEsa.lean` is **4221 bytes** → `IndexError` in `ByteText.slice`.  Blocks
+   `ChapterScalaronCoreEsa` and `ChapterScalaronFiberFL` (every chapter that is a directory) — i.e. exactly
+   the two chapters whose nodes the def head needs.  Fix direction: record the per-decl module in the sketch
+   (or slice per part and offset-shift) instead of assuming one file per leaf.
+6. **The def head `def:ChapterScalaronFiberFL` — exact closure.** A static closure of the bundle's free
+   identifiers against its 8 `Definitions` imports yields **exactly 5** names, matching the platform's error
+   list: `contDiff_starobinskyV` (line 105), `starobinskyV_nonneg` (106), `wallHam_symmetricOn` (133),
+   `kinCcR_quadratic_form` + `opCc_quadratic_form` (175-176).  Each has a unique `Theorems/Thm_*.lean`; the 5
+   `import Theorems.Thm_…` lines are now in the bundle (a Definitions module may import a Theorems module —
+   only once it is **Proved**).  The item is `failed` (5/5 attempts) and stays **parked** until all five are
+   Proved: the platform rejects a def importing an `Open` theorem, so reopening earlier only spends the
+   fresh attempt budget.
+7. **Content added this session (adapted from `../timepiece`).** `wave_generate.py` run for the Scalaron
+   chain produced **65 nodes** (Thm+Sol) and 2 new def bundles (`ChapterBddBelowFiberSumEsa`,
+   `ChapterScalaronEdge`); `debug/extend_wave_stubs.py` registered **36** of them (the rest wait on their def
+   bundle, per its gate).  Spec is now **151 defs / 1458 thms / 1457 sol_order**.  The 3 bundles the generator
+   wanted to rewrite (`ChapterScalaronWallEsa`, `ChapterStrichartzWave`, `ChapterWallEsaSemibounded`) are
+   already PUBLISHED, so the generated copies were **not** installed — only their nodes were.
+8. **Uploader.** One detached loop only (`setsid nohup … &`, never a plain `nohup … &`), whose first chunk is
+   focused (`--only Scalaron --only WallEsaSemibounded --only Strichartz`) so the 5-node closure publishes
+   before the general chunks run; the rest of the loop is the usual
+   `--kind def --kind thm --kind sol --parallel 8 --max-seconds 800 --job-timeout 90`.
+
 ### 1o. Session 13 (2026-09-17, second run) — reuse identification for the **new additions** (the Fourier-elimination wave)
 
 **Why a second pass.** §1n ran the statement-by-statement check over the **1 289** wave stubs. The

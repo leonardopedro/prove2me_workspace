@@ -1,0 +1,74 @@
+-- Generated from ChapterStrichartzWave.lean — solution of BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial
+import Mathlib
+import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_StrichartzWave_contDiff_symbolFn
+import Theorems.Thm_BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero
+open BookProof.StrichartzWave
+
+
+
+
+
+
+
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (c : ι → ℝ) (w : ι → V) (κ : ℝ) {z : ℂ} (hz : z.im ≠ 0) :
+    BookProof.FarisLavine.DeficiencyTrivialAt (schwartzDomain V)
+      (opL2 (constCoeffOp c w κ)) z := by
+
+  intro u hu
+  have hz1 : ∀ x : V, ((symbolFn c w κ x : ℝ) : ℂ) - (starRingEnd ℂ) z ≠ 0 := by
+    intro x hx
+    exact hz (by simpa using congrArg Complex.im hx)
+  have hz2 : ∀ x : V, ((symbolFn c w κ x : ℝ) : ℂ) - z ≠ 0 := by
+    intro x hx
+    exact hz (by simpa using congrArg Complex.im hx)
+  -- Step 1: `∫ χ • 𝓕 u = 0` for every real smooth compactly supported `χ`.
+  have main : ∀ χ : V → ℝ, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) χ → HasCompactSupport χ →
+      ∫ x, χ x • ((𝓕 u : Lp ℂ 2 (volume : Measure V)) x) = 0 := by
+    intro χ hχ hχc
+    have hsmooth : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞)
+        (fun x => (χ x : ℂ) * (((symbolFn c w κ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹) := by
+      refine (Complex.ofRealCLM.contDiff.comp hχ).mul (ContDiff.inv ?_ hz1)
+      exact (Complex.ofRealCLM.contDiff.comp (contDiff_symbolFn c w κ)).sub contDiff_const
+    have hsupp : HasCompactSupport
+        (fun x => (χ x : ℂ) * (((symbolFn c w κ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹) := by
+      refine HasCompactSupport.mul_right ?_
+      simpa using hχc.comp_left (g := fun r : ℝ => (r : ℂ)) (by simp)
+    obtain ⟨ψ, hψcoe⟩ : ∃ ψ : 𝓢(V, ℂ), (ψ : V → ℂ) =
+        fun x => (χ x : ℂ) * (((symbolFn c w κ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹ :=
+      ⟨hsupp.toSchwartzMap hsmooth, rfl⟩
+    have key := integral_conj_mul_symbol_sub_eq_zero c w κ z u hu ψ
+    rw [← key]
+    refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+    have hpx : ψ x = (χ x : ℂ) * (((symbolFn c w κ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹ :=
+      congrFun hψcoe x
+    have hc : (starRingEnd ℂ) (ψ x) * (((symbolFn c w κ x : ℝ) : ℂ) - z) = (χ x : ℂ) := by
+      rw [hpx]
+      simp only [map_mul, map_inv₀, map_sub, Complex.conj_ofReal, Complex.conj_conj]
+      field_simp
+      exact mul_div_cancel_right₀ _ (hz2 x)
+    change χ x • ((𝓕 u : Lp ℂ 2 (volume : Measure V)) x)
+      = (starRingEnd ℂ) (ψ x) * (((symbolFn c w κ x : ℝ) : ℂ) - z) *
+        ((𝓕 u : Lp ℂ 2 (volume : Measure V)) x)
+    rw [Complex.real_smul, ← hc]
+  -- Step 2: conclude that `𝓕 u = 0`, hence `u = 0`.
+  have hgloc : LocallyIntegrable
+      (fun x => ((𝓕 u : Lp ℂ 2 (volume : Measure V)) x : ℂ)) (volume : Measure V) :=
+    (Lp.memLp (𝓕 u : Lp ℂ 2 (volume : Measure V))).locallyIntegrable (by norm_num)
+  have hae : ∀ᵐ x ∂(volume : Measure V), ((𝓕 u : Lp ℂ 2 (volume : Measure V)) x : ℂ) = 0 :=
+    ae_eq_zero_of_integral_contDiff_smul_eq_zero hgloc (fun χ hχ hχc => main χ hχ hχc)
+  have hg0 : (𝓕 u : Lp ℂ 2 (volume : Measure V)) = 0 := Lp.eq_zero_iff_ae_eq_zero.mpr hae
+  have hnorm : ‖u‖ = 0 := by
+    rw [← MeasureTheory.Lp.norm_fourier_eq u, hg0, norm_zero]
+  exact norm_eq_zero.mp hnorm

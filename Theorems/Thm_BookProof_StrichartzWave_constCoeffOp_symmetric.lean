@@ -1,0 +1,22 @@
+-- Generated from ChapterStrichartzWave.lean — theorem BookProof.StrichartzWave.constCoeffOp_symmetric
+import Mathlib
+import Definitions.Def_ChapterStrichartzWave
+open BookProof.StrichartzWave
+
+
+
+
+
+
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
+theorem BookProof.StrichartzWave.constCoeffOp_symmetric (c : ι → ℝ) (w : ι → V) (κ : ℝ) :
+    BookProof.FarisLavine.SymmetricOn (schwartzDomain V) (opL2 (constCoeffOp c w κ)) := by sorry

@@ -32,6 +32,7 @@ Def-material = non-private defs/inductives + instance roots.  Def-embedded
 theorems (cited by a def body) stay in the bundle so it never imports a
 sorry stub.
 """
+import glob
 import json
 import os
 import re
@@ -276,6 +277,85 @@ def fmt_name(stmt, newname):
     return stmt[:m.start()] + f"theorem {newname}" + stmt[m.end():]
 
 
+_THM_INDEX = None
+
+
+def thm_node_index():
+    """`short name -> [(full name, slug)]` for every generated `Theorems/` stub.
+
+    WHY THIS EXISTS
+    ---------------
+    A node's solution may cite a declaration that is a **node in another
+    chapter** (e.g. `ScalaronWallEsa.kinCcR_symmetricOn` proves its statement
+    from `StrichartzWave.constCoeffOp_symmetric` and
+    `ScalaronCoreEsa.symmetricOn_inclusion`).  The transplant rule makes every
+    public theorem a node, so such a declaration is *not* in any `Def_*` bundle:
+    it lives in `Theorems/Thm_<slug>.lean`.  The platform compiles a solution
+    against the published modules only, so without that import the reference is
+    "Unknown identifier" -- the CE class that dominated the wave after the
+    2026-09-17 append (e.g. `momPoly_apply`, `HermiteProductCore.pgMap_apply`).
+
+    `build_sol` already imported siblings *within* the chapter (`node_deps`);
+    this index extends the same rule across chapters, and only ever emits an
+    import for a stub that exists on disk, so a missing node stays a missing
+    node instead of becoming an unknown-import failure.
+    """
+    global _THM_INDEX
+    if _THM_INDEX is None:
+        _THM_INDEX = {}
+        for p in glob.glob(f"{OUT_THM}/Thm_*.lean"):
+            try:
+                with open(p, encoding="utf-8") as f:
+                    txt = f.read()
+            except OSError:
+                continue
+            m = re.search(r"(?m)^theorem\s+([A-Za-z_][\w.']*)", txt)
+            if not m:
+                continue
+            slug = os.path.basename(p)[len("Thm_"):-len(".lean")]
+            _THM_INDEX.setdefault(m.group(1).split(".")[-1], []).append(
+                (m.group(1), slug))
+    return _THM_INDEX
+
+
+def index_register(fullname, slug):
+    """Add a stub written during THIS run to the index, so a later chapter's
+    solution can import it.  (The index is memoised; without this, a cross-chapter
+    dep generated earlier in the same invocation would be invisible.)"""
+    idx = thm_node_index()
+    entry = (fullname, slug)
+    bucket = idx.setdefault(fullname.split(".")[-1], [])
+    if entry not in bucket:
+        bucket.append(entry)
+
+
+def cross_chapter_imports(node, nodes, inline):
+    """`import Theorems.Thm_<slug>` lines for this node's cited declarations that
+    are nodes of OTHER chapters.  Sibling chapters are handled by `node_deps`.
+
+    A cited name is dropped when it is ambiguous (two stubs declaring the same
+    short name and neither an exact full-name match): an over-eager import of
+    the wrong node would shadow the intended one.
+    """
+    local = {o.short() for o in nodes}
+    inlined = {d.short() for d in inline}
+    index = thm_node_index()
+    out = set()
+    for dep in list(node.vdeps) + list(getattr(node, "tdeps", [])):
+        short = dep.split(".")[-1]
+        if short in local or short in inlined:
+            continue
+        cands = index.get(short)
+        if not cands:
+            continue
+        exact = [s for full, s in cands if full == dep or dep.endswith("." + full)]
+        if len(exact) == 1:
+            out.add(exact[0])
+        elif not exact and len(cands) == 1:
+            out.add(cands[0][1])
+    return [f"import Theorems.Thm_{s}\n" for s in sorted(out)]
+
+
 def collect_inline_closure(node, decls, inline):
     short = {d.short(): d for d in decls}
     needed = set()
@@ -376,6 +456,7 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     parts.append(f"import Definitions.Def_{leaf}\n")
     for o in node_deps:
         parts.append(f"import Theorems.Thm_{o.uname.replace('.', '_')}\n")
+    parts.extend(cross_chapter_imports(node, nodes, inline))
     for ns in opens_for(node, modns):
         parts.append(f"open {ns}\n")
     if ctx:
@@ -502,6 +583,7 @@ def main():
                 f.write(build_thm(bt, leaf, decls, node, modns))
             with open(f"{OUT_SOL}/Sol_{slug}.lean", "w", encoding="utf-8") as f:
                 f.write(build_sol(bt, leaf, decls, nodes, inline, node, modns))
+            index_register(node.uname, slug)
             manifest.append({"leaf": leaf, "name": node.uname,
                              "slug": slug, "plen": node.plen,
                              "ns": node.parent_ns()})

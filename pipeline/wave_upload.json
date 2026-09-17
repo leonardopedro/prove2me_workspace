@@ -18175,6 +18175,402 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_ScalaronEsa_contDiff_starobinskyV": {
+   "name": "BookProof.ScalaronEsa.contDiff_starobinskyV",
+   "chapter": "ChapterScalaronCoreEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronEsa_contDiff_starobinskyV.lean",
+   "title": "The Lean 4 theorem `contDiff_starobinskyV` in the `ChapterScalaronCoreEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `contDiff_starobinskyV` in the `ChapterScalaronCoreEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronCoreEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_deriv_ofReal_comp": {
+   "name": "BookProof.ScalaronWallEsa.deriv_ofReal_comp",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_deriv_ofReal_comp.lean",
+   "title": "The Lean 4 theorem `deriv_ofReal_comp` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `deriv_ofReal_comp` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable": {
+   "name": "BookProof.ScalaronWallEsa.eq_zero_of_convexOn_nonneg_integrable",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable.lean",
+   "title": "The Lean 4 theorem `eq_zero_of_convexOn_nonneg_integrable` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `eq_zero_of_convexOn_nonneg_integrable` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_kinCcR_symmetricOn": {
+   "name": "BookProof.ScalaronWallEsa.kinCcR_symmetricOn",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_kinCcR_symmetricOn.lean",
+   "title": "The Lean 4 theorem `kinCcR_symmetricOn` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `kinCcR_symmetricOn` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_kinOpR_apply": {
+   "name": "BookProof.ScalaronWallEsa.kinOpR_apply",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_kinOpR_apply.lean",
+   "title": "The Lean 4 theorem `kinOpR_apply` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `kinOpR_apply` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_ode_solution_eq_zero": {
+   "name": "BookProof.ScalaronWallEsa.ode_solution_eq_zero",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero.lean",
+   "title": "The Lean 4 theorem `ode_solution_eq_zero` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ode_solution_eq_zero` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_starobinskyWall_esa": {
+   "name": "BookProof.ScalaronWallEsa.starobinskyWall_esa",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_starobinskyWall_esa.lean",
+   "title": "The Lean 4 theorem `starobinskyWall_esa` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `starobinskyWall_esa` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_starobinskyWall_stone_flow": {
+   "name": "BookProof.ScalaronWallEsa.starobinskyWall_stone_flow",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_starobinskyWall_stone_flow.lean",
+   "title": "The Lean 4 theorem `starobinskyWall_stone_flow` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `starobinskyWall_stone_flow` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_testCc_apply": {
+   "name": "BookProof.ScalaronWallEsa.testCc_apply",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_testCc_apply.lean",
+   "title": "The Lean 4 theorem `testCc_apply` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `testCc_apply` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt": {
+   "name": "BookProof.ScalaronWallEsa.wallHam_deficiencyTrivialAt",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt.lean",
+   "title": "The Lean 4 theorem `wallHam_deficiencyTrivialAt` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHam_deficiencyTrivialAt` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint": {
+   "name": "BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `wallHam_essentiallySelfAdjoint` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHam_essentiallySelfAdjoint` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_wallHam_symmetricOn": {
+   "name": "BookProof.ScalaronWallEsa.wallHam_symmetricOn",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn.lean",
+   "title": "The Lean 4 theorem `wallHam_symmetricOn` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHam_symmetricOn` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_ScalaronWallEsa_wallHam_weak_eq": {
+   "name": "BookProof.ScalaronWallEsa.wallHam_weak_eq",
+   "chapter": "ChapterScalaronWallEsa",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq.lean",
+   "title": "The Lean 4 theorem `wallHam_weak_eq` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHam_weak_eq` in the `ChapterScalaronWallEsa` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronWallEsa.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial": {
+   "name": "BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial.lean",
+   "title": "The Lean 4 theorem `constCoeffOp_deficiencyTrivial` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `constCoeffOp_deficiencyTrivial` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint": {
+   "name": "BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `constCoeffOp_essentiallySelfAdjoint` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `constCoeffOp_essentiallySelfAdjoint` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_constCoeffOp_symmetric": {
+   "name": "BookProof.StrichartzWave.constCoeffOp_symmetric",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_constCoeffOp_symmetric.lean",
+   "title": "The Lean 4 theorem `constCoeffOp_symmetric` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `constCoeffOp_symmetric` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_contDiff_symbolFn": {
+   "name": "BookProof.StrichartzWave.contDiff_symbolFn",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_contDiff_symbolFn.lean",
+   "title": "The Lean 4 theorem `contDiff_symbolFn` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `contDiff_symbolFn` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_exists_smooth_cutoff": {
+   "name": "BookProof.StrichartzWave.exists_smooth_cutoff",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_exists_smooth_cutoff.lean",
+   "title": "The Lean 4 theorem `exists_smooth_cutoff` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `exists_smooth_cutoff` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_fourier_constCoeffOp_apply": {
+   "name": "BookProof.StrichartzWave.fourier_constCoeffOp_apply",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_fourier_constCoeffOp_apply.lean",
+   "title": "The Lean 4 theorem `fourier_constCoeffOp_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `fourier_constCoeffOp_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_fourier_secondDeriv_apply": {
+   "name": "BookProof.StrichartzWave.fourier_secondDeriv_apply",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_fourier_secondDeriv_apply.lean",
+   "title": "The Lean 4 theorem `fourier_secondDeriv_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `fourier_secondDeriv_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_inner_toLp_eq_integral_fourier": {
+   "name": "BookProof.StrichartzWave.inner_toLp_eq_integral_fourier",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_inner_toLp_eq_integral_fourier.lean",
+   "title": "The Lean 4 theorem `inner_toLp_eq_integral_fourier` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_toLp_eq_integral_fourier` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_inner_toLp_left": {
+   "name": "BookProof.StrichartzWave.inner_toLp_left",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_inner_toLp_left.lean",
+   "title": "The Lean 4 theorem `inner_toLp_left` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_toLp_left` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_inner_toLp_left_fourier": {
+   "name": "BookProof.StrichartzWave.inner_toLp_left_fourier",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_inner_toLp_left_fourier.lean",
+   "title": "The Lean 4 theorem `inner_toLp_left_fourier` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_toLp_left_fourier` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_integrable_conj_schwartz_mul": {
+   "name": "BookProof.StrichartzWave.integrable_conj_schwartz_mul",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul.lean",
+   "title": "The Lean 4 theorem `integrable_conj_schwartz_mul` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `integrable_conj_schwartz_mul` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero": {
+   "name": "BookProof.StrichartzWave.integral_conj_mul_symbol_sub_eq_zero",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero.lean",
+   "title": "The Lean 4 theorem `integral_conj_mul_symbol_sub_eq_zero` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `integral_conj_mul_symbol_sub_eq_zero` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_opL2_apply": {
+   "name": "BookProof.StrichartzWave.opL2_apply",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_opL2_apply.lean",
+   "title": "The Lean 4 theorem `opL2_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `opL2_apply` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_schwartzEquiv_coe": {
+   "name": "BookProof.StrichartzWave.schwartzEquiv_coe",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_schwartzEquiv_coe.lean",
+   "title": "The Lean 4 theorem `schwartzEquiv_coe` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `schwartzEquiv_coe` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_wave_essentiallySelfAdjoint": {
+   "name": "BookProof.StrichartzWave.wave_essentiallySelfAdjoint",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_wave_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `wave_essentiallySelfAdjoint` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wave_essentiallySelfAdjoint` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_StrichartzWave_wave_symmetric": {
+   "name": "BookProof.StrichartzWave.wave_symmetric",
+   "chapter": "ChapterStrichartzWave",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_StrichartzWave_wave_symmetric.lean",
+   "title": "The Lean 4 theorem `wave_symmetric` in the `ChapterStrichartzWave` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wave_symmetric` in the `ChapterStrichartzWave` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStrichartzWave.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_ccEquiv_norm_sq": {
+   "name": "BookProof.WallEsaSemibounded.ccEquiv_norm_sq",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq.lean",
+   "title": "The Lean 4 theorem `ccEquiv_norm_sq` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `ccEquiv_norm_sq` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_inner_toLp_self": {
+   "name": "BookProof.WallEsaSemibounded.inner_toLp_self",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_inner_toLp_self.lean",
+   "title": "The Lean 4 theorem `inner_toLp_self` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `inner_toLp_self` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul": {
+   "name": "BookProof.WallEsaSemibounded.integral_conj_neg_deriv2_mul",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul.lean",
+   "title": "The Lean 4 theorem `integral_conj_neg_deriv2_mul` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `integral_conj_neg_deriv2_mul` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_kinCcR_quadratic_form": {
+   "name": "BookProof.WallEsaSemibounded.kinCcR_quadratic_form",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_kinCcR_quadratic_form.lean",
+   "title": "The Lean 4 theorem `kinCcR_quadratic_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `kinCcR_quadratic_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_opCc_quadratic_form": {
+   "name": "BookProof.WallEsaSemibounded.opCc_quadratic_form",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_opCc_quadratic_form.lean",
+   "title": "The Lean 4 theorem `opCc_quadratic_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `opCc_quadratic_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded": {
+   "name": "BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded.lean",
+   "title": "The Lean 4 theorem `wallHamBddBelow_semibounded` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHamBddBelow_semibounded` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
+  },
+  "BookProof_WallEsaSemibounded_wallHam_nonneg_form": {
+   "name": "BookProof.WallEsaSemibounded.wallHam_nonneg_form",
+   "chapter": "ChapterWallEsaSemibounded",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_WallEsaSemibounded_wallHam_nonneg_form.lean",
+   "title": "The Lean 4 theorem `wallHam_nonneg_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `wallHam_nonneg_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -19598,6 +19994,42 @@
   "BookProof_HermiteBand_isBand1_mulXPoly",
   "BookProof_HermiteBand_isBand2_fqPoly",
   "BookProof_HermiteBand_isBand2_fqQuadPoly",
-  "BookProof_HermiteBand_isBand2_weylProd"
+  "BookProof_HermiteBand_isBand2_weylProd",
+  "BookProof_ScalaronEsa_contDiff_starobinskyV",
+  "BookProof_ScalaronWallEsa_deriv_ofReal_comp",
+  "BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable",
+  "BookProof_ScalaronWallEsa_kinCcR_symmetricOn",
+  "BookProof_ScalaronWallEsa_kinOpR_apply",
+  "BookProof_ScalaronWallEsa_testCc_apply",
+  "BookProof_StrichartzWave_contDiff_symbolFn",
+  "BookProof_StrichartzWave_exists_smooth_cutoff",
+  "BookProof_StrichartzWave_fourier_secondDeriv_apply",
+  "BookProof_StrichartzWave_inner_toLp_left",
+  "BookProof_StrichartzWave_integrable_conj_schwartz_mul",
+  "BookProof_StrichartzWave_opL2_apply",
+  "BookProof_StrichartzWave_schwartzEquiv_coe",
+  "BookProof_WallEsaSemibounded_inner_toLp_self",
+  "BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul",
+  "BookProof_WallEsaSemibounded_opCc_quadratic_form",
+  "BookProof_ScalaronWallEsa_ode_solution_eq_zero",
+  "BookProof_ScalaronWallEsa_wallHam_symmetricOn",
+  "BookProof_ScalaronWallEsa_wallHam_weak_eq",
+  "BookProof_StrichartzWave_fourier_constCoeffOp_apply",
+  "BookProof_StrichartzWave_inner_toLp_eq_integral_fourier",
+  "BookProof_StrichartzWave_inner_toLp_left_fourier",
+  "BookProof_WallEsaSemibounded_ccEquiv_norm_sq",
+  "BookProof_WallEsaSemibounded_kinCcR_quadratic_form",
+  "BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt",
+  "BookProof_StrichartzWave_constCoeffOp_symmetric",
+  "BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero",
+  "BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded",
+  "BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint",
+  "BookProof_StrichartzWave_wave_symmetric",
+  "BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial",
+  "BookProof_WallEsaSemibounded_wallHam_nonneg_form",
+  "BookProof_ScalaronWallEsa_starobinskyWall_esa",
+  "BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint",
+  "BookProof_ScalaronWallEsa_starobinskyWall_stone_flow",
+  "BookProof_StrichartzWave_wave_essentiallySelfAdjoint"
  ]
 }

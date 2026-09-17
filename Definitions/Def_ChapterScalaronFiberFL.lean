@@ -7,6 +7,20 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStrichartzWave
+-- Theorem-layer dependencies of the embedded theorems below.  The transplant rule makes every
+-- public theorem a *node* (`Theorems/Thm_<slug>.lean`), so the four lemmas these proofs cite are
+-- not in any def bundle: they must be imported, and only after they are Proved on the platform
+-- (a Definitions module may import a Theorems module, but only a Proved one).  The list is exactly
+-- the free-identifier closure of this bundle against its `Definitions` imports:
+--   line 105 `contDiff_starobinskyV`        (hosts: the wall's `smooth` field)
+--   line 106 `starobinskyV_nonneg`          (hosts: the wall's `nonneg` field)
+--   line 133 `wallHam_symmetricOn`          (hosts: `WallPot.ham_symmetricOn`)
+--   lines 175-176 `kinCcR_quadratic_form`, `opCc_quadratic_form` (hosts: `ham_inner_self`)
+import Theorems.Thm_BookProof_ScalaronEsa_contDiff_starobinskyV
+import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
+import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
+import Theorems.Thm_BookProof_WallEsaSemibounded_kinCcR_quadratic_form
+import Theorems.Thm_BookProof_WallEsaSemibounded_opCc_quadratic_form
 
 
 /-!

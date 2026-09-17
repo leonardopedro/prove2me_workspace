@@ -1923,6 +1923,44 @@ kept as reference only.
 
 ---
 
+### 1s. Session 16 (2026-09-17, fifth run) — the ScalaronFiberFL def head closure is *published and Proved*: DONE, WAIT, DONE, FAIL, FAIL — and what each one meant
+
+**Goal:** publish `contDiff_starobinskyV`-adjacent nodes and open the `def:ChapterScalaronFiberFL`
+head (1 attempt left at session start, budget restored to 5 via `debug/reopen_failed.py`).
+
+1. **The two cycle-blocked nodes publish via published-bundle-only imports.**
+   `Thm_BookProof_ScalaronFiberFL_{norm_sub_I_sq,isGraphCore_of_esa}` were generated importing the
+   *unpublished* own-chapter def bundle (deadlock). Re-pointed both stubs and sols at published
+   bundles only (`QgOuterFockFarisLavine`, `QgOuterFockCoreFL`, `FarisLavineCore`) and registered
+   them manually in the spec (the extender's gate blocks on the unpublished chapter bundle).
+   Result: both **DONE** — `isGraphCore_of_esa`'s sol needed its sibling call site fully qualified
+   (`BookProof.ScalaronFiberFL.norm_sub_I_sq`, a top-level `solution` does not inherit the
+   chapter namespace) plus one new import; `norm_sub_I_sq` needed
+   `import Theorems.Thm_BookProof_FarisLavine_inner_apply_self_im` (the platform node; the
+   FarisLavineCore def bundle does not carry it).
+2. **Both new def bundles cleared with hand-audited closures.** `Def_ChapterScalaronEdge` needed
+   8 def-bundle imports + the `contDiff_starobinskyV` node import; `Def_ChapterBddBelowFiberSumEsa`
+   needed 6 def-bundle imports and the removal of `open BookProof.BddBelowWallEsa` (a namespace no
+   published bundle declares — the hollowed body uses none of its names). Both **DONE**.
+3. **The def head's real remaining cost was the theorems behind its two quadratic-form imports.**
+   The `kinCcR_quadratic_form`/`opCc_quadratic_form` theorems were published but **Open** (their
+   sols had never run — parked at the tail of `sol_order`). Proving them surfaced three more
+   missing node imports, all fixed with `debug/fix_sol_node_imports.py` (now also patched by the
+   same pass): `ccEquiv_coe` (twice), `mulCc_apply`. One wasted def-head attempt came from
+   submitting before the platform registered the new Proved statuses (sync theorem items first
+   or wait out the publish lag).
+4. **Current blocker is platform-side and benign:** both quadratic-form sols sit at
+   `SKETCH_ACCEPTED` with `null` verdict for 2h+ (server compile queue; the runner treats
+   `SKETCH_ACCEPTED` as terminal and marks the item done — verify via
+   `GET /verify?submission_id=...` that the theorem actually flipped to **Proved** before spending
+   another def-head attempt). **The def head has 3 attempts left.** When both flips are visible,
+   a single `--kind def --only ChapterScalaronFiberFL` run should publish it.
+5. **Spec inventory:** 153 defs / 1755 thms / 1754 sol_order (the two ScalaronFiberFL nodes are
+   registered manually at the head of `sol_order`). The two generated batches (550 files) are
+   committed. Next content step remains: the six-chapter stub generation for the waiting sols.
+
+---
+
 ## 2. Platform model (what compiles where)
 
 The platform compiles each **def bundle** (`Definitions/Def_ChapterX.lean`) with ONLY

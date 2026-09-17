@@ -1,16 +1,7 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_shiftInvert_selects
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_selfAdjoint_extension
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesLagrangianEsa
-import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_dom_eq_range
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
 import Theorems.Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC
@@ -20,59 +11,12 @@ open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 
 
-open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
 theorem solution

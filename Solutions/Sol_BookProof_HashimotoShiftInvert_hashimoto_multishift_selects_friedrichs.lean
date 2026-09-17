@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterComplexShiftCore
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.hashimoto_multishift_selects_friedrichs
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
@@ -10,27 +9,8 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_resolvent_identi
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_commute
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_comp_one_sub
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sirkDen_rkVec
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
 open BookProof.HashimotoShiftInvert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -38,59 +18,6 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F)

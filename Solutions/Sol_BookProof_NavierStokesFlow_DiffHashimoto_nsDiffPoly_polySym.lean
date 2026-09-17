@@ -12,6 +12,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
 import Theorems.Thm_BookProof_HermiteRelative_polySym_momPoly
+import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 

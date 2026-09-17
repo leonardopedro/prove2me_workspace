@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
 open BookProof.WallEsaSemibounded
 
 
@@ -16,7 +23,7 @@ open BookProof.WallEsaSemibounded
 
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
-open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

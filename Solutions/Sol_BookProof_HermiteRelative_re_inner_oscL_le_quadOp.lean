@@ -8,6 +8,7 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 open BookProof.HermiteRelative
 
 

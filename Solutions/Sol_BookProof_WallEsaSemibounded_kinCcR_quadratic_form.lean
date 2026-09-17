@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul
 import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 open BookProof.WallEsaSemibounded
 
 
@@ -19,7 +24,7 @@ open BookProof.WallEsaSemibounded
 
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
-open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

@@ -21,6 +21,11 @@ import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
 import Theorems.Thm_BookProof_WallEsaSemibounded_kinCcR_quadratic_form
 import Theorems.Thm_BookProof_WallEsaSemibounded_opCc_quadratic_form
+-- (second pass, from the platform's own residual errors): the bundle also cites these two —
+--   `ccDomain_dense`        (ScalaronEsa; used by the `isGraphCore` reasoning further down)
+--   `isGraphCore_of_esa`    (ScalaronFiberFL's own node; cited inside the WallPot namespace)
+import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
+import Theorems.Thm_BookProof_ScalaronFiberFL_isGraphCore_of_esa
 
 
 /-!

@@ -1,4 +1,9 @@
 import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterFarisLavineCore
 import Mathlib
 
 
@@ -55,7 +60,7 @@ namespace BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
+open BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

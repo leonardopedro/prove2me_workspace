@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric
+import Theorems.Thm_BookProof_ScalaronEsa_symmetricOn_inclusion
 open BookProof.ScalaronWallEsa
 
 

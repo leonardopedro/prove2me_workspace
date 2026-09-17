@@ -10,27 +10,9 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_sirkDen_rkVec
 import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_symmetricOn
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Resolvent_isShiftInvertC
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
+import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded
 open BookProof.HashimotoShiftInvert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -38,68 +20,6 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-
-open scoped ENNReal InnerProductSpace lp
 
 set_option maxHeartbeats 1000000 in
 theorem solution (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

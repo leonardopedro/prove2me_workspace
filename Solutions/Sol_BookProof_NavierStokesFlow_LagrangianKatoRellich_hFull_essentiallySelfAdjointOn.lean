@@ -5,29 +5,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_eq_ad
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_isSymmetricDom
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lowOrder_isSymmetricDom
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lowOrder_relBound
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -35,13 +15,8 @@ open Filter Topology
 
 
 
-open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] {kap kap' cc : ℝ}

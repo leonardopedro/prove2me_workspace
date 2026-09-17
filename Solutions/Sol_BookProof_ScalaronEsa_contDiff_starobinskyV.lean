@@ -1,20 +1,26 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.contDiff_starobinskyV
---
--- The potential is `M⁴/(16α)·(1 − e^{−√(2/3)·φ/M})²`: a constant times the square of a difference
--- of a constant and the exponential of an affine function.  The proof is the source chapter's, and
--- it was validated against the same definition in `../timepiece` (Lean 4.28) before submission.
 import Mathlib
-import Definitions.Def_ChapterStarobinskyPotential
-open BookProof.Starobinsky
+import Definitions.Def_ChapterScalaronCoreEsa
+open BookProof.ScalaronEsa
 
 
-open Filter Topology
 
+open Filter Topology MeasureTheory SchwartzMap
+
+
+open BookProof.StrichartzWave BookProof.FarisLavine BookProof.Starobinsky
+open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierStokesFlow
+open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
+set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (fun phi : ℝ => starobinskyV M alpha phi) := by
+
   unfold starobinskyV
   exact contDiff_const.mul
     ((contDiff_const.sub (Real.contDiff_exp.comp

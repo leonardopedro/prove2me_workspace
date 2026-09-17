@@ -36,6 +36,7 @@ import glob
 import json
 import os
 import re
+import subprocess
 import sys
 
 # Host paths.  Defaults are the canonical build host; both are overridable so
@@ -155,6 +156,20 @@ def load_decls(leaf, g):
             if r["kind"] == "decl":
                 facts.append(Decl(r, leaf))
     facts.sort(key=lambda d: d.s)
+    # Guard against a sketch/space mismatch: the sketch offsets must fit inside
+    # the source the generator will slice.  A split chapter whose monolith could
+    # not be recovered (or a stale sketch for a rewritten chapter) would
+    # otherwise raise a bare IndexError deep inside ByteText.slice, or worse,
+    # slice a wrong-but-in-range span silently.
+    if facts:
+        size = os.path.getsize(src_path_for(leaf))
+        over = max(d.e for d in facts) > size
+        if over:
+            raise RuntimeError(
+                f"{leaf}: sketch offsets exceed the source text "
+                f"({max(d.e for d in facts)} > {size} bytes at "
+                f"{src_path_for(leaf)}) -- the sketch indexes a different "
+                f"source layout; refusing to slice")
     grows = [x for x in g.get(f"BookProof.{leaf}", []) if x["startLine"] > 0]
     for d in facts:
         cands = [x for x in grows if d.sl <= x["startLine"] <= d.el]
@@ -198,8 +213,62 @@ def classify(decls, module_doc):
     return defmat, embedded, nodes, inline
 
 
+# The Aristotle snapshot (timepiece a5fcf4a, 2026-09-15) split many chapters from
+# one file into a directory of `Part1.lean …` files.  The sketch oracle and the
+# declaration graph were built from the PRE-SPLIT monolith and store byte
+# offsets / line numbers in its space, so every consumer of sketch offsets must
+# read that same text.  Chapters split this way are recovered from git at the
+# last commit that touched the aggregator (the split commit) and cached under
+# state/sketch/monolith/; a chapter that is still a plain file is read directly.
+# Note the monolith is deliberately the *old* text: statements and proofs are cut
+# from what the sketch and graph describe, which is the only self-consistent view.
+SPLIT_SENTINEL_DIRS = True
+
+_monolith_cache = {}
+
+
+def src_path_for(leaf):
+    """Path of the source text this leaf's sketch and graph rows index.
+
+    For a split chapter (a `BookProof/<leaf>/` directory of parts) that is the
+    pre-split monolith, materialised from git and cached; otherwise the plain
+    file.  Raises when a split chapter has no recoverable monolith rather than
+    silently slicing the wrong file (an offset past the aggregator's end is the
+    IndexError that blocked ChapterScalaronCoreEsa / ChapterScalaronFiberFL and
+    with them the def head's five-node import closure)."""
+    if os.path.isdir(f"{PROJ}/BookProof/{leaf}"):
+        p = _monolith_cache.get(leaf)
+        if p is None:
+            d = f"{WS}/state/sketch/monolith"
+            os.makedirs(d, exist_ok=True)
+            p = f"{d}/{leaf}.lean"
+            if not os.path.exists(p):
+                # The last commit that touched the aggregator is the split
+                # commit; its parent still has the monolith.
+                r = subprocess.run(
+                    ["git", "-C", PROJ, "log", "-1", "--format=%H", "--",
+                     f"BookProof/{leaf}.lean"],
+                    capture_output=True, text=True, timeout=120)
+                split = r.stdout.strip()
+                got = ""
+                if split:
+                    r2 = subprocess.run(
+                        ["git", "-C", PROJ, "show", f"{split}^:BookProof/{leaf}.lean"],
+                        capture_output=True, text=True, timeout=120)
+                    got = r2.stdout if r2.returncode == 0 else ""
+                if not got.strip():
+                    raise RuntimeError(
+                        f"{leaf}: split into parts and no monolith recoverable "
+                        f"from git ({(r.stderr or r2.stderr if split else r.stderr)[:200]})")
+                with open(p, "w", encoding="utf-8") as f:
+                    f.write(got)
+            _monolith_cache[leaf] = p
+        return p
+    return f"{PROJ}/BookProof/{leaf}.lean"
+
+
 def src_byte_text(leaf):
-    with open(f"{PROJ}/BookProof/{leaf}.lean", encoding="utf-8") as f:
+    with open(src_path_for(leaf), encoding="utf-8") as f:
         return ByteText(f.read())
 
 
@@ -214,12 +283,61 @@ def structural_preamble(bt, upto_byte):
     wrappers ending in ` in` (`omit … in`, `set_option … in`, `include … in`,
     `open … in`) are NOT structural: Stage 2's decl facts already put them inside
     the wrapped declaration's span, so hoisting them here would attach them to
-    the wrong (or no) declaration."""
+    the wrong (or no) declaration.
+
+    Block comments are skipped wholesale: a module docstring or `/-! -/` section
+    header can contain a line whose prose starts with e.g. "open " (the
+    ScalaronCoreEsa docstring has "open at the *continuum* level …"), and
+    hoisting that into the emitted preamble produced a stub that does not
+    parse.  Comment state is tracked linearly: `/- … -/` blocks nest, `--` runs
+    to end of line, and a `"…"` string inside code protects its contents."""
     pre = bt.slice(0, upto_byte)
     out = []
     in_variable = False
+    depth = 0          # nesting depth of /- -/ block comments
+    in_str = False     # inside a Lean string literal
     for line in pre.split("\n"):
-        s = line.strip()
+        if depth > 0:
+            # inside a block comment: only track nesting
+            i = 0
+            while i < len(line):
+                if line.startswith("/-", i):
+                    depth += 1
+                    i += 2
+                elif line.startswith("-/", i):
+                    depth -= 1
+                    i += 2
+                else:
+                    i += 1
+            continue
+        # scan the line once to classify it (code / line comment / string)
+        code = []
+        i = 0
+        while i < len(line):
+            if in_str:
+                if line[i] == "\\" and i + 1 < len(line):
+                    i += 2
+                    continue
+                if line[i] == '"':
+                    in_str = False
+                i += 1
+                continue
+            if line.startswith("/-", i):
+                depth += 1
+                i += 2
+                continue
+            if line.startswith("-/", i):
+                i += 2
+                continue
+            if line.startswith("--", i):
+                break  # line comment: rest of the line ignored
+            if line[i] == '"':
+                in_str = True
+                i += 1
+                continue
+            code.append(line[i])
+            i += 1
+        s = "".join(code).strip()
         if in_variable and s and line[:1].isspace():
             # continuation line of a multi-line `variable` command
             out.append(line)
@@ -387,7 +505,7 @@ def module_namespace(leaf):
     module is `BookProof.Chapter<Name>` but the namespace is `BookProof.<Name>`
     (e.g. ChapterSirkFinitePrecision -> BookProof.SirkFinitePrecision).  Grab it
     from the first `namespace` command in the source."""
-    with open(f"{PROJ}/BookProof/{leaf}.lean", encoding="utf-8") as f:
+    with open(src_path_for(leaf), encoding="utf-8") as f:
         text = f.read()
     m = re.search(r"^namespace (BookProof\.[A-Za-z0-9_'.]+)", text, re.M)
     if m:

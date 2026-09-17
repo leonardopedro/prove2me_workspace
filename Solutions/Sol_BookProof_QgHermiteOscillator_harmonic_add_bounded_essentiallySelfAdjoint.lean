@@ -16,6 +16,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 open BookProof.QgHermiteOscillator
 
 

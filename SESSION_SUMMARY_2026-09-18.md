@@ -98,6 +98,10 @@ def:ChapterFiniteSectionSingleTime (imports: SirkSingleTimeShift, QgTimeIndepend
 - **Generator**: `scripts/wave_generate.py` needs `PROVE2ME_WS` and `TIMEPIECE_PROJ`
 - **Build command**: `lean Def_<X>.lean -o .lake/build/lib/lean/Definitions/Def_<X>.olean`
 - **LEAN_PATH**: must include project build dir + mathlib + all transitive deps
+  - Correct: `ML_PKG=.../mathlib/.lake`, then `ML=$ML_PKG/build/lib/lean`, `BT=$ML_PKG/packages/batteries/.lake/build/lib/lean`, etc.
+  - Wrong: `$ML/../batteries/...` (resolves to `.lake/build/batteries/...`, not `.lake/packages/batteries/...`)
+- **Dependency order compilation**: defs must be compiled in dependency order (see chain in §1w)
+- **Background compilation**: PID 339568 running dependency-order chain compile
 
 ## Success Criteria
 
@@ -106,6 +110,7 @@ def:ChapterFiniteSectionSingleTime (imports: SirkSingleTimeShift, QgTimeIndepend
 - [x] State synced
 - [x] Namespace fix applied
 - [x] Build environment configured
-- [ ] All 170 defs verified compiling locally
+- [ ] All 170 defs verified compiling locally (compilation running in background)
 - [ ] Missing thm/sol sources generated from timepiece
 - [ ] num_solved_prob increases (currently 616)
+- [ ] API reachable for upload

@@ -31754,3 +31754,313 @@ line 72: Unknown identifier `sirkDen_rkVec`)
 22:25:13 summary: 140 done, 12 pending, 0 failed, 65 unsubmittable (source missing from this checkout) (171 out-of-order orphans ignored)
 22:25:13 waiting on unpublished def bundle(s): ChapterScalaronFiberFL (1 item(s))
 22:25:13 chunk: 0 item(s) resolved in 0s
+08:30:54 sync: read 288 definition publish job(s)
+08:31:10 sync: read 4572 problem publish job(s)
+08:31:10 submitting def:ChapterScalaronFiberFL (attempt 2)
+08:31:19 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+08:31:19 submitting def:ChapterScalaronEdge (attempt 1)
+08:31:23 def:ChapterScalaronEdge: REUSING existing Definition node 63c6f8e8-5985-4c27-89e0-028bf15d0da5
+08:31:23 def:ChapterScalaronEdge: DONE
+08:31:23 submitting def:ChapterBddBelowFiberSumEsa (attempt 1)
+08:31:27 def:ChapterBddBelowFiberSumEsa: REUSING existing Definition node e7ed541c-c232-4bd2-9d87-b7ea976d5101
+08:31:27 def:ChapterBddBelowFiberSumEsa: DONE
+08:31:27 submitting def:ChapterQgOuterFockEsa (attempt 1)
+08:31:37 def:ChapterQgOuterFockEsa: accepted, waiting on the compiler
+08:31:37 submitting def:ChapterQg3DGaugeEsa (attempt 1)
+08:31:45 def:ChapterQg3DGaugeEsa: accepted, waiting on the compiler
+08:31:45 submitting thm:BookProof_ScalaronFiberFL_norm_sub_I_sq (attempt 1)
+08:31:49 thm:BookProof_ScalaronFiberFL_norm_sub_I_sq: REUSING existing BookProof.ScalaronFiberFL.norm_sub_I_sq (Proved) 21d5e63f-1216-4b6d-9c26-e3c161dae2d0
+08:31:49 thm:BookProof_ScalaronFiberFL_norm_sub_I_sq: DONE
+08:31:49 submitting thm:BookProof_ScalaronFiberFL_isGraphCore_of_esa (attempt 1)
+08:31:54 thm:BookProof_ScalaronFiberFL_isGraphCore_of_esa: REUSING existing BookProof.ScalaronFiberFL.isGraphCore_of_esa (Proved) 886d106d-cdee-40cd-9198-ec5090941720
+08:31:54 thm:BookProof_ScalaronFiberFL_isGraphCore_of_esa: DONE
+08:31:54 submitting thm:BookProof_HermiteBand_Band_add (attempt 1)
+08:31:58 thm:BookProof_HermiteBand_Band_add: REUSING existing BookProof.HermiteBand.Band.add (Proved) 42d02652-cbf9-428b-b6bc-4575f092147a
+08:31:58 thm:BookProof_HermiteBand_Band_add: DONE
+08:31:58 submitting thm:BookProof_HermiteBand_Band_mono (attempt 1)
+08:32:02 thm:BookProof_HermiteBand_Band_mono: REUSING existing BookProof.HermiteBand.Band.mono (Proved) 7a94898e-7500-4ed2-8bcd-0e4273fac9d5
+08:32:02 thm:BookProof_HermiteBand_Band_mono: DONE
+08:32:02 submitting thm:BookProof_HermiteBand_Band_smul (attempt 1)
+08:32:06 thm:BookProof_HermiteBand_Band_smul: REUSING existing BookProof.HermiteBand.Band.smul (Proved) cd7c8941-6f7b-4544-8163-ea0682492807
+08:32:06 thm:BookProof_HermiteBand_Band_smul: DONE
+08:32:06 submitting thm:BookProof_HermiteBand_annPoly_hpsi (attempt 1)
+08:32:10 thm:BookProof_HermiteBand_annPoly_hpsi: REUSING existing BookProof.HermiteBand.annPoly_hpsi (Proved) a233a6b5-c241-4c1e-b018-63b0fcc2d9e9
+08:32:10 thm:BookProof_HermiteBand_annPoly_hpsi: DONE
+08:32:10 submitting thm:BookProof_HermiteBand_crePoly_hpsi (attempt 1)
+08:32:14 thm:BookProof_HermiteBand_crePoly_hpsi: REUSING existing BookProof.HermiteBand.crePoly_hpsi (Proved) 39f1e789-e1f5-4c0a-b799-002054dd2cab
+08:32:14 thm:BookProof_HermiteBand_crePoly_hpsi: DONE
+08:32:14 submitting thm:BookProof_HermiteBand_degree_add_single (attempt 1)
+08:32:18 thm:BookProof_HermiteBand_degree_add_single: REUSING existing BookProof.HermiteBand.degree_add_single (Proved) e04edd2b-71c9-4f40-abfa-4addfa2795b7
+08:32:18 thm:BookProof_HermiteBand_degree_add_single: DONE
+08:32:18 submitting thm:BookProof_HermiteBand_degree_sub_single (attempt 1)
+08:32:23 thm:BookProof_HermiteBand_degree_sub_single: REUSING existing BookProof.HermiteBand.degree_sub_single (Proved) 01ff5b21-612c-42fc-96b4-5e19500e219b
+08:32:23 thm:BookProof_HermiteBand_degree_sub_single: DONE
+08:32:23 submitting thm:BookProof_HermiteBand_g1_le_g2 (attempt 1)
+08:32:27 thm:BookProof_HermiteBand_g1_le_g2: REUSING existing BookProof.HermiteBand.g1_le_g2 (Proved) abe75282-cd52-4754-a5c6-8e7bd627860a
+08:32:27 thm:BookProof_HermiteBand_g1_le_g2: DONE
+08:32:27 submitting thm:BookProof_HermiteBand_g1_nonneg (attempt 1)
+08:32:31 thm:BookProof_HermiteBand_g1_nonneg: REUSING existing BookProof.HermiteBand.g1_nonneg (Proved) 1be892d7-37c6-4643-839a-d292a4e92512
+08:32:31 thm:BookProof_HermiteBand_g1_nonneg: DONE
+08:32:31 submitting thm:BookProof_HermiteBand_g2_nonneg (attempt 1)
+08:32:35 thm:BookProof_HermiteBand_g2_nonneg: REUSING existing BookProof.HermiteBand.g2_nonneg (Proved) 4360dd87-86b8-4098-8908-246afc354817
+08:32:35 thm:BookProof_HermiteBand_g2_nonneg: DONE
+08:32:35 submitting thm:BookProof_HermiteBand_isBand1_zero (attempt 1)
+08:32:39 thm:BookProof_HermiteBand_isBand1_zero: REUSING existing BookProof.HermiteBand.isBand1_zero (Proved) 472d1a42-1017-44e5-bbd2-03b544efad56
+08:32:39 thm:BookProof_HermiteBand_isBand1_zero: DONE
+08:32:39 submitting thm:BookProof_HermiteBand_isBand2_zero (attempt 1)
+08:32:44 thm:BookProof_HermiteBand_isBand2_zero: REUSING existing BookProof.HermiteBand.isBand2_zero (Proved) 57823cb3-aaa8-407f-939a-446e5e40fae7
+08:32:44 thm:BookProof_HermiteBand_isBand2_zero: DONE
+08:32:44 submitting thm:BookProof_HermiteBand_le_degree (attempt 1)
+08:32:48 thm:BookProof_HermiteBand_le_degree: REUSING existing BookProof.HermiteBand.le_degree (Proved) df21df0f-f6df-4e30-ac9b-84ece4dcdc61
+08:32:48 thm:BookProof_HermiteBand_le_degree: DONE
+08:32:48 submitting thm:BookProof_HermiteBand_momPoly_eq (attempt 1)
+08:32:52 thm:BookProof_HermiteBand_momPoly_eq: REUSING existing BookProof.HermiteBand.momPoly_eq (Open) c71ddc17-dd13-47d6-bd99-ad5985a329c5
+08:32:52 thm:BookProof_HermiteBand_momPoly_eq: DONE
+08:32:52 submitting thm:BookProof_HermiteBand_mulXPoly_eq (attempt 1)
+08:32:57 thm:BookProof_HermiteBand_mulXPoly_eq: REUSING existing BookProof.HermiteBand.mulXPoly_eq (Proved) bd60b576-defc-4c01-88a9-65ee60c89ab2
+08:32:57 thm:BookProof_HermiteBand_mulXPoly_eq: DONE
+08:32:57 submitting thm:BookProof_HermiteBand_pgLp_hpsi (attempt 1)
+08:33:01 thm:BookProof_HermiteBand_pgLp_hpsi: REUSING existing BookProof.HermiteBand.pgLp_hpsi (Open) 474f2fee-df01-4767-a2b8-d52689f98de5
+08:33:01 thm:BookProof_HermiteBand_pgLp_hpsi: DONE
+08:33:01 submitting thm:BookProof_ShiftedHermiteCore_coreEquivT_coe (attempt 1)
+08:33:05 thm:BookProof_ShiftedHermiteCore_coreEquivT_coe: REUSING existing BookProof.ShiftedHermiteCore.coreEquivT_coe (Proved) 58fac682-9e99-44d0-9e6a-f596561094c1
+08:33:05 thm:BookProof_ShiftedHermiteCore_coreEquivT_coe: DONE
+08:33:05 submitting thm:BookProof_ShiftedHermiteCore_coreOpT_coreEquivT (attempt 1)
+08:33:09 thm:BookProof_ShiftedHermiteCore_coreOpT_coreEquivT: REUSING existing BookProof.ShiftedHermiteCore.coreOpT_coreEquivT (Proved) de833b9b-7d2a-4072-b4e1-e8e3c36c49a7
+08:33:09 thm:BookProof_ShiftedHermiteCore_coreOpT_coreEquivT: DONE
+08:33:09 submitting thm:BookProof_ShiftedHermiteCore_inner_hermiteTLp (attempt 1)
+08:33:14 thm:BookProof_ShiftedHermiteCore_inner_hermiteTLp: REUSING existing BookProof.ShiftedHermiteCore.inner_hermiteTLp (Proved) a49072bc-7bcc-49f2-88b3-348173defa6a
+08:33:14 thm:BookProof_ShiftedHermiteCore_inner_hermiteTLp: DONE
+08:33:14 submitting thm:BookProof_ShiftedHermiteCore_inner_pgLpT_left (attempt 1)
+08:33:18 thm:BookProof_ShiftedHermiteCore_inner_pgLpT_left: REUSING existing BookProof.ShiftedHermiteCore.inner_pgLpT_left (Proved) f5df7be8-b8f8-4cdb-9fa9-f620b56d3bf1
+08:33:18 thm:BookProof_ShiftedHermiteCore_inner_pgLpT_left: DONE
+08:33:18 submitting thm:BookProof_ShiftedHermiteCore_momTPoly_apply (attempt 1)
+08:33:22 thm:BookProof_ShiftedHermiteCore_momTPoly_apply: REUSING existing BookProof.ShiftedHermiteCore.momTPoly_apply (Proved) 3a04de16-d53b-48dc-8c41-2acc87608898
+08:33:22 thm:BookProof_ShiftedHermiteCore_momTPoly_apply: DONE
+08:33:22 submitting thm:BookProof_ShiftedHermiteCore_mulXTPoly_apply (attempt 1)
+08:33:26 thm:BookProof_ShiftedHermiteCore_mulXTPoly_apply: REUSING existing BookProof.ShiftedHermiteCore.mulXTPoly_apply (Proved) 964955f5-1146-47b9-8485-94ba12bea3d2
+08:33:26 thm:BookProof_ShiftedHermiteCore_mulXTPoly_apply: DONE
+08:33:26 submitting thm:BookProof_ShiftedHermiteCore_pgFunT_apply_add (attempt 1)
+08:33:30 thm:BookProof_ShiftedHermiteCore_pgFunT_apply_add: REUSING existing BookProof.ShiftedHermiteCore.pgFunT_apply_add (Proved) a57ce4b4-385d-498e-ae18-e71f30cc984b
+08:33:30 thm:BookProof_ShiftedHermiteCore_pgFunT_apply_add: DONE
+08:33:30 submitting thm:BookProof_ShiftedHermiteCore_pgFunT_apply_smul (attempt 1)
+08:33:34 thm:BookProof_ShiftedHermiteCore_pgFunT_apply_smul: REUSING existing BookProof.ShiftedHermiteCore.pgFunT_apply_smul (Proved) f539a29c-eb70-4865-a41e-7eb8c2a0fe57
+08:33:34 thm:BookProof_ShiftedHermiteCore_pgFunT_apply_smul: DONE
+08:33:34 submitting thm:BookProof_ShiftedHermiteCore_pgLpT_mem_coreT (attempt 1)
+08:33:38 thm:BookProof_ShiftedHermiteCore_pgLpT_mem_coreT: REUSING existing BookProof.ShiftedHermiteCore.pgLpT_mem_coreT (Proved) 6b11e924-6a19-4d91-a32f-7882956d483e
+08:33:38 thm:BookProof_ShiftedHermiteCore_pgLpT_mem_coreT: DONE
+08:33:38 submitting thm:BookProof_ShiftedHermiteCore_pgLpT_smul (attempt 1)
+08:33:42 thm:BookProof_ShiftedHermiteCore_pgLpT_smul: REUSING existing BookProof.ShiftedHermiteCore.pgLpT_smul (Proved) ef546caf-975c-4f23-8329-0ef4a747cb6b
+08:33:42 thm:BookProof_ShiftedHermiteCore_pgLpT_smul: DONE
+08:33:42 submitting thm:BookProof_ShiftedHermiteCore_phaseArg_sec (attempt 1)
+08:33:47 thm:BookProof_ShiftedHermiteCore_phaseArg_sec: REUSING existing BookProof.ShiftedHermiteCore.phaseArg_sec (Open) acf0823f-3fb7-4618-b8da-0ba51115789d
+08:33:47 thm:BookProof_ShiftedHermiteCore_phaseArg_sec: DONE
+08:33:47 submitting thm:BookProof_ShiftedHermiteCore_phaseFun_add (attempt 1)
+08:33:51 thm:BookProof_ShiftedHermiteCore_phaseFun_add: REUSING existing BookProof.ShiftedHermiteCore.phaseFun_add (Proved) 8edb0d5e-690c-4ca4-8692-4946e608acd9
+08:33:51 thm:BookProof_ShiftedHermiteCore_phaseFun_add: DONE
+08:33:51 submitting thm:BookProof_ShiftedHermiteCore_phaseFun_ne_zero (attempt 1)
+08:33:55 thm:BookProof_ShiftedHermiteCore_phaseFun_ne_zero: REUSING existing BookProof.ShiftedHermiteCore.phaseFun_ne_zero (Proved) f2bdb5a8-9ad5-4786-8b66-48ee7c48d646
+08:33:55 thm:BookProof_ShiftedHermiteCore_phaseFun_ne_zero: DONE
+08:33:55 submitting thm:BookProof_ShiftedHermiteCore_span_hermiteTLp (attempt 1)
+08:33:59 thm:BookProof_ShiftedHermiteCore_span_hermiteTLp: REUSING existing BookProof.ShiftedHermiteCore.span_hermiteTLp (Open) 2b9e2882-46ec-4227-87f5-a0f2cc9b81fd
+08:33:59 thm:BookProof_ShiftedHermiteCore_span_hermiteTLp: DONE
+08:33:59 submitting thm:BookProof_YangMillsGhost_fibreHam_abelian_esa (attempt 1)
+08:34:03 thm:BookProof_YangMillsGhost_fibreHam_abelian_esa: REUSING existing BookProof.YangMillsGhost.fibreHam_abelian_esa (Open) 46aac5ab-7c48-456e-b388-bfd66364c7e3
+08:34:03 thm:BookProof_YangMillsGhost_fibreHam_abelian_esa: DONE
+08:34:03 submitting thm:BookProof_YangMillsGhost_fibreHam_apply (attempt 1)
+08:34:07 thm:BookProof_YangMillsGhost_fibreHam_apply: REUSING existing BookProof.YangMillsGhost.fibreHam_apply (Open) e80044ec-84b9-47d1-8d70-4bbfd9173848
+08:34:07 thm:BookProof_YangMillsGhost_fibreHam_apply: DONE
+08:34:07 submitting thm:BookProof_YangMillsGhost_ghostCore_dense (attempt 1)
+08:34:24 sync: read 291 definition publish job(s)
+08:34:39 sync: read 4572 problem publish job(s)
+08:34:39 submitting def:ChapterScalaronFiberFL (attempt 2)
+08:34:39 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+08:34:39 submitting def:ChapterQgOuterFockEsa (attempt 1)
+08:34:39 def:ChapterQgOuterFockEsa: accepted, waiting on the compiler
+08:34:39 submitting def:ChapterQg3DGaugeEsa (attempt 1)
+08:34:39 def:ChapterQg3DGaugeEsa: accepted, waiting on the compiler
+08:34:39 submitting thm:BookProof_YangMillsGhost_ghostCore_dense (attempt 1)
+08:34:44 thm:BookProof_YangMillsGhost_ghostCore_dense: REUSING existing BookProof.YangMillsGhost.ghostCore_dense (Open) 48aaa840-4fa8-4b5f-8401-5280c066af19
+08:34:44 thm:BookProof_YangMillsGhost_ghostCore_dense: DONE
+08:34:45 submitting thm:BookProof_YangMillsGhost_ghostEnergy_empty (attempt 1)
+08:34:49 thm:BookProof_YangMillsGhost_ghostEnergy_empty: REUSING existing BookProof.YangMillsGhost.ghostEnergy_empty (Proved) b7385619-e3ce-46e8-8769-e24f8d2aede5
+08:34:49 thm:BookProof_YangMillsGhost_ghostEnergy_empty: DONE
+08:34:49 submitting thm:BookProof_YangMillsGhost_ghostEnergy_nonneg (attempt 1)
+08:34:54 thm:BookProof_YangMillsGhost_ghostEnergy_nonneg: REUSING existing BookProof.YangMillsGhost.ghostEnergy_nonneg (Proved) 9584bde3-4917-4e7f-bd85-50c4603237f1
+08:34:54 thm:BookProof_YangMillsGhost_ghostEnergy_nonneg: DONE
+08:34:54 submitting thm:BookProof_YangMillsGhost_ymGhostHam_fibre (attempt 1)
+08:35:00 thm:BookProof_YangMillsGhost_ymGhostHam_fibre: REUSING existing BookProof.YangMillsGhost.ymGhostHam_fibre (Open) 5fd887d3-d4fa-47cb-a12d-1434f6286001
+08:35:00 thm:BookProof_YangMillsGhost_ymGhostHam_fibre: DONE
+08:35:00 submitting thm:BookProof_HermiteBand_Band_toBand2 (attempt 1)
+08:35:04 thm:BookProof_HermiteBand_Band_toBand2: REUSING existing BookProof.HermiteBand.Band.toBand2 (Proved) e83a308a-3203-4bbb-8c43-a31d1990d189
+08:35:04 thm:BookProof_HermiteBand_Band_toBand2: DONE
+08:35:04 submitting thm:BookProof_HermiteBand_Band_comp (attempt 1)
+08:35:08 thm:BookProof_HermiteBand_Band_comp: REUSING existing BookProof.HermiteBand.Band.comp (Open) b7db6542-d18c-40f6-bffd-53cde3614139
+08:35:08 thm:BookProof_HermiteBand_Band_comp: DONE
+08:35:08 submitting thm:BookProof_HermiteBand_band_annPoly (attempt 1)
+08:35:12 thm:BookProof_HermiteBand_band_annPoly: REUSING existing BookProof.HermiteBand.band_annPoly (Proved) f2268222-ebe6-4414-9cdc-94e1c96ee479
+08:35:12 thm:BookProof_HermiteBand_band_annPoly: DONE
+08:35:12 submitting thm:BookProof_HermiteBand_band_crePoly (attempt 1)
+08:35:16 thm:BookProof_HermiteBand_band_crePoly: REUSING existing BookProof.HermiteBand.band_crePoly (Proved) 820d986e-e051-4451-a67d-1a2fceb81706
+08:35:16 thm:BookProof_HermiteBand_band_crePoly: DONE
+08:35:16 submitting thm:BookProof_ShiftedHermiteCore_coreOpT_coe (attempt 1)
+08:35:21 thm:BookProof_ShiftedHermiteCore_coreOpT_coe: REUSING existing BookProof.ShiftedHermiteCore.coreOpT_coe (Open) 98d3896b-2485-4476-ae90-5b02a5fb7374
+08:35:21 thm:BookProof_ShiftedHermiteCore_coreOpT_coe: DONE
+08:35:21 submitting thm:BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp (attempt 1)
+08:35:25 thm:BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp: REUSING existing BookProof.ShiftedHermiteCore.orthonormal_hermiteTLp (Open) 9470ee0d-adf9-46b7-9518-28ee54629e0f
+08:35:25 thm:BookProof_ShiftedHermiteCore_orthonormal_hermiteTLp: DONE
+08:35:25 submitting thm:BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly (attempt 1)
+08:35:29 thm:BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly: REUSING existing BookProof.ShiftedHermiteCore.pgFunT_mulXTPoly (Open) 5bd01b37-3ced-4906-87ff-5b140b388059
+08:35:29 thm:BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly: DONE
+08:35:29 submitting thm:BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT (attempt 1)
+08:35:33 thm:BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT: REUSING existing BookProof.ShiftedHermiteCore.hermiteTLp_mem_coreT (Open) f56ef98a-5e20-47f5-9255-e96363006d3c
+08:35:33 thm:BookProof_ShiftedHermiteCore_hermiteTLp_mem_coreT: DONE
+08:35:33 submitting thm:BookProof_ShiftedHermiteCore_phaseFun_sec (attempt 1)
+08:35:37 thm:BookProof_ShiftedHermiteCore_phaseFun_sec: REUSING existing BookProof.ShiftedHermiteCore.phaseFun_sec (Open) d416b0b7-68d5-413a-abb6-0dbf5f87dfa1
+08:35:37 thm:BookProof_ShiftedHermiteCore_phaseFun_sec: DONE
+08:35:37 submitting thm:BookProof_ShiftedHermiteCore_polyGaussCoreT_dense (attempt 1)
+08:35:41 thm:BookProof_ShiftedHermiteCore_polyGaussCoreT_dense: REUSING existing BookProof.ShiftedHermiteCore.polyGaussCoreT_dense (Open) 38a7e36b-63f3-47c9-997a-363ab2b47843
+08:35:41 thm:BookProof_ShiftedHermiteCore_polyGaussCoreT_dense: DONE
+08:35:41 submitting thm:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core (attempt 1)
+08:35:46 thm:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core: REUSING existing BookProof.YangMillsGhost.ymGhostHam_essentiallySelfAdjointOn_core (Open) 9916bc1a-0df8-45f9-bc4e-33f930c21841
+08:35:46 thm:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core: DONE
+08:35:46 submitting thm:BookProof_YangMillsGhost_fibreHam_symmetricOn (attempt 1)
+08:35:50 thm:BookProof_YangMillsGhost_fibreHam_symmetricOn: REUSING existing BookProof.YangMillsGhost.fibreHam_symmetricOn (Open) 759ce9a4-bc96-4f0e-b829-15e25358d8eb
+08:35:50 thm:BookProof_YangMillsGhost_fibreHam_symmetricOn: DONE
+08:35:50 submitting thm:BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber (attempt 1)
+08:35:54 thm:BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber: REUSING existing BookProof.YangMillsGhost.ymGhostHam_preserves_ghostNumber (Open) 4a2a0172-35f0-476b-9d80-2cd2f326d242
+08:35:54 thm:BookProof_YangMillsGhost_ymGhostHam_preserves_ghostNumber: DONE
+08:35:54 submitting thm:BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre (attempt 1)
+08:35:58 thm:BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre: REUSING existing BookProof.YangMillsGhost.ymGhostHam_vacuum_fibre (Open) 2479c6c5-2bbf-492b-9ad6-1f3aadee8332
+08:35:58 thm:BookProof_YangMillsGhost_ymGhostHam_vacuum_fibre: DONE
+08:35:58 submitting thm:BookProof_HermiteBand_IsBand1_toBand2 (attempt 1)
+08:36:02 thm:BookProof_HermiteBand_IsBand1_toBand2: REUSING existing BookProof.HermiteBand.IsBand1.toBand2 (Proved) 54bc09c3-12e9-44f7-bdc0-972641832b3a
+08:36:02 thm:BookProof_HermiteBand_IsBand1_toBand2: DONE
+08:36:02 submitting thm:BookProof_HermiteBand_IsBand1_comp (attempt 1)
+08:36:06 thm:BookProof_HermiteBand_IsBand1_comp: REUSING existing BookProof.HermiteBand.IsBand1.comp (Open) eb0d32d2-60de-4437-84fb-4ae4dec79e21
+08:36:06 thm:BookProof_HermiteBand_IsBand1_comp: DONE
+08:36:06 submitting thm:BookProof_HermiteBand_isBand1_annPoly (attempt 1)
+08:36:11 thm:BookProof_HermiteBand_isBand1_annPoly: REUSING existing BookProof.HermiteBand.isBand1_annPoly (Proved) d4247da3-f05f-4a9d-9ccc-e7aa4c84f35d
+08:36:11 thm:BookProof_HermiteBand_isBand1_annPoly: DONE
+08:36:11 submitting thm:BookProof_HermiteBand_isBand1_crePoly (attempt 1)
+08:36:15 thm:BookProof_HermiteBand_isBand1_crePoly: REUSING existing BookProof.HermiteBand.isBand1_crePoly (Proved) 5ab3d11b-c94c-4173-9416-237cec89c1c2
+08:36:15 thm:BookProof_HermiteBand_isBand1_crePoly: DONE
+08:36:15 submitting thm:BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec (attempt 1)
+08:36:19 thm:BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec: REUSING existing BookProof.ShiftedHermiteCore.hasDerivAt_phaseFun_sec (Open) 4b8b8ed6-4d7e-4f9d-a782-2005cc5170ae
+08:36:19 thm:BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec: DONE
+08:36:19 submitting thm:BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT (attempt 1)
+08:36:24 thm:BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT: REUSING existing BookProof.ShiftedHermiteCore.eq_zero_of_inner_coreT (Open) 70a7e79a-8e13-402d-abfa-fe75ff52e6c4
+08:36:24 thm:BookProof_ShiftedHermiteCore_eq_zero_of_inner_coreT: DONE
+08:36:24 submitting thm:BookProof_YangMillsGhost_ymGhostHam_symmetricOn (attempt 1)
+08:36:28 thm:BookProof_YangMillsGhost_ymGhostHam_symmetricOn: REUSING existing BookProof.YangMillsGhost.ymGhostHam_symmetricOn (Open) 51cd00a0-d202-4a95-80da-3a8e59983c4e
+08:36:28 thm:BookProof_YangMillsGhost_ymGhostHam_symmetricOn: DONE
+08:36:28 submitting thm:BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec (attempt 1)
+08:36:32 thm:BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec: REUSING existing BookProof.ShiftedHermiteCore.hasDerivAt_pgFunT_sec (Open) 68cbece6-5897-4ae9-8bfb-0fc850eea569
+08:36:32 thm:BookProof_ShiftedHermiteCore_hasDerivAt_pgFunT_sec: DONE
+08:36:32 submitting thm:BookProof_ShiftedHermiteCore_hermiteTLp_total (attempt 1)
+08:36:36 thm:BookProof_ShiftedHermiteCore_hermiteTLp_total: REUSING existing BookProof.ShiftedHermiteCore.hermiteTLp_total (Open) 0226bc2c-2699-4fc4-87b0-ee109ab107d0
+08:36:36 thm:BookProof_ShiftedHermiteCore_hermiteTLp_total: DONE
+08:36:36 submitting thm:BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa (attempt 1)
+08:36:40 thm:BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa: REUSING existing BookProof.YangMillsGhost.ymGhostHam_add_bounded_coupling_esa (Open) 4177bc9a-7733-45f8-89ac-ea0d4d1f7926
+08:36:40 thm:BookProof_YangMillsGhost_ymGhostHam_add_bounded_coupling_esa: DONE
+08:36:40 summary: 2813 done, 821 pending, 16 failed, 63 unsubmittable (source missing from this checkout) (125 out-of-order orphans ignored)
+08:36:40 waiting on unpublished def bundle(s): ChapterFiniteSectionSingleTime (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQymTimeIndependentFlow (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
+08:36:40 chunk: 28 item(s) resolved in 121s, 3 still in flight (re-polled next run)
+08:36:49 sync: read 291 definition publish job(s)
+08:37:05 sync: read 4572 problem publish job(s)
+08:37:05 submitting def:ChapterScalaronFiberFL (attempt 2)
+08:37:05 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+08:37:05 submitting def:ChapterQgOuterFockEsa (attempt 1)
+08:37:05 def:ChapterQgOuterFockEsa: accepted, waiting on the compiler
+08:37:05 submitting def:ChapterQg3DGaugeEsa (attempt 1)
+08:37:05 def:ChapterQg3DGaugeEsa: accepted, waiting on the compiler
+08:37:05 submitting thm:BookProof_YangMillsGhost_ymGhostHam_stone_flow (attempt 1)
+08:37:09 thm:BookProof_YangMillsGhost_ymGhostHam_stone_flow: REUSING existing BookProof.YangMillsGhost.ymGhostHam_stone_flow (Open) d116299d-cb21-4c1a-8689-847c7120bbc9
+08:37:09 thm:BookProof_YangMillsGhost_ymGhostHam_stone_flow: DONE
+08:37:09 submitting thm:BookProof_ShiftedHermiteCore_deriv_pgFunT_sec (attempt 1)
+08:37:13 thm:BookProof_ShiftedHermiteCore_deriv_pgFunT_sec: REUSING existing BookProof.ShiftedHermiteCore.deriv_pgFunT_sec (Open) b153839c-de96-4abf-8d8b-390011637663
+08:37:13 thm:BookProof_ShiftedHermiteCore_deriv_pgFunT_sec: DONE
+08:37:13 submitting thm:BookProof_ShiftedHermiteCore_pgFunT_momTPoly (attempt 1)
+08:37:18 thm:BookProof_ShiftedHermiteCore_pgFunT_momTPoly: REUSING existing BookProof.ShiftedHermiteCore.pgFunT_momTPoly (Open) a9f5ef5b-058d-4728-97fd-72643599c646
+08:37:18 thm:BookProof_ShiftedHermiteCore_pgFunT_momTPoly: DONE
+08:37:18 submitting thm:BookProof_HermiteBand_IsBand1_add (attempt 1)
+08:37:22 thm:BookProof_HermiteBand_IsBand1_add: REUSING existing BookProof.HermiteBand.IsBand1.add (Proved) 76fd6d5b-97c1-4e9f-9117-19754d04de28
+08:37:22 thm:BookProof_HermiteBand_IsBand1_add: DONE
+08:37:22 submitting thm:BookProof_HermiteBand_IsBand1_smul (attempt 1)
+08:37:26 thm:BookProof_HermiteBand_IsBand1_smul: REUSING existing BookProof.HermiteBand.IsBand1.smul (Proved) e10f00b6-5786-4cdf-a8c5-dc74e279ccef
+08:37:26 thm:BookProof_HermiteBand_IsBand1_smul: DONE
+08:37:26 submitting thm:BookProof_HermiteBand_IsBand1_sum (attempt 1)
+08:37:30 thm:BookProof_HermiteBand_IsBand1_sum: REUSING existing BookProof.HermiteBand.IsBand1.sum (Proved) 359b21ba-4da4-44f2-993f-0a4317ebe904
+08:37:30 thm:BookProof_HermiteBand_IsBand1_sum: DONE
+08:37:30 submitting thm:BookProof_HermiteBand_IsBand2_add (attempt 1)
+08:37:34 thm:BookProof_HermiteBand_IsBand2_add: REUSING existing BookProof.HermiteBand.IsBand2.add (Proved) beb3d975-406f-435c-835e-ccd2dee0cbe3
+08:37:34 thm:BookProof_HermiteBand_IsBand2_add: DONE
+08:37:34 submitting thm:BookProof_HermiteBand_IsBand2_smul (attempt 1)
+08:37:38 thm:BookProof_HermiteBand_IsBand2_smul: REUSING existing BookProof.HermiteBand.IsBand2.smul (Proved) b8c39201-c6a6-4e9b-9e0b-db77f0175dbb
+08:37:38 thm:BookProof_HermiteBand_IsBand2_smul: DONE
+08:37:38 submitting thm:BookProof_HermiteBand_IsBand2_sum (attempt 1)
+08:37:43 thm:BookProof_HermiteBand_IsBand2_sum: REUSING existing BookProof.HermiteBand.IsBand2.sum (Proved) 1d75cb0b-ebdd-4c6d-a4c5-2092f0368f80
+08:37:43 thm:BookProof_HermiteBand_IsBand2_sum: DONE
+08:37:43 submitting thm:BookProof_HermiteBand_isBand1_foPoly (attempt 1)
+08:37:47 thm:BookProof_HermiteBand_isBand1_foPoly: REUSING existing BookProof.HermiteBand.isBand1_foPoly (Open) 8f8e5e93-3345-4469-a6a4-6e1f5dd65400
+08:37:47 thm:BookProof_HermiteBand_isBand1_foPoly: DONE
+08:37:47 submitting thm:BookProof_HermiteBand_isBand1_momPoly (attempt 1)
+08:37:51 thm:BookProof_HermiteBand_isBand1_momPoly: REUSING existing BookProof.HermiteBand.isBand1_momPoly (Open) 356bf01f-a376-460d-b999-2af434f9f7cc
+08:37:51 thm:BookProof_HermiteBand_isBand1_momPoly: DONE
+08:37:51 submitting thm:BookProof_HermiteBand_isBand1_mulXPoly (attempt 1)
+08:37:55 thm:BookProof_HermiteBand_isBand1_mulXPoly: REUSING existing BookProof.HermiteBand.isBand1_mulXPoly (Open) 7ddf4aa0-ac22-454b-8c35-c4c4b131d716
+08:37:55 thm:BookProof_HermiteBand_isBand1_mulXPoly: DONE
+08:37:55 submitting thm:BookProof_HermiteBand_isBand2_fqPoly (attempt 1)
+08:37:59 thm:BookProof_HermiteBand_isBand2_fqPoly: REUSING existing BookProof.HermiteBand.isBand2_fqPoly (Open) 4a82a12f-9ee3-4770-b69b-de62fd5d9957
+08:37:59 thm:BookProof_HermiteBand_isBand2_fqPoly: DONE
+08:37:59 submitting thm:BookProof_HermiteBand_isBand2_fqQuadPoly (attempt 1)
+08:38:03 thm:BookProof_HermiteBand_isBand2_fqQuadPoly: REUSING existing BookProof.HermiteBand.isBand2_fqQuadPoly (Open) 22c35bbb-19fd-477b-a5bb-b16e7fc18a60
+08:38:03 thm:BookProof_HermiteBand_isBand2_fqQuadPoly: DONE
+08:38:03 submitting thm:BookProof_HermiteBand_isBand2_weylProd (attempt 1)
+08:38:07 thm:BookProof_HermiteBand_isBand2_weylProd: REUSING existing BookProof.HermiteBand.isBand2_weylProd (Open) b084ea22-e07f-490e-81c3-942c544501b4
+08:38:07 thm:BookProof_HermiteBand_isBand2_weylProd: DONE
+08:38:07 submitting thm:BookProof_ScalaronEsa_contDiff_starobinskyV (attempt 1)
+08:38:12 thm:BookProof_ScalaronEsa_contDiff_starobinskyV: REUSING existing BookProof.ScalaronEsa.contDiff_starobinskyV (Proved) 45df48ff-f419-4353-a7f9-a3d835b13dab
+08:38:12 thm:BookProof_ScalaronEsa_contDiff_starobinskyV: DONE
+08:38:12 submitting thm:BookProof_ScalaronWallEsa_deriv_ofReal_comp (attempt 1)
+08:38:16 thm:BookProof_ScalaronWallEsa_deriv_ofReal_comp: REUSING existing BookProof.ScalaronWallEsa.deriv_ofReal_comp (Proved) 761e99f8-a680-4446-9670-78da9e52656a
+08:38:16 thm:BookProof_ScalaronWallEsa_deriv_ofReal_comp: DONE
+08:38:16 submitting thm:BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable (attempt 1)
+08:38:20 thm:BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable: REUSING existing BookProof.ScalaronWallEsa.eq_zero_of_convexOn_nonneg_integrable (Proved) a8071f42-58ec-44db-b54a-72b55cbc42ad
+08:38:20 thm:BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable: DONE
+08:38:20 submitting thm:BookProof_ScalaronWallEsa_kinCcR_symmetricOn (attempt 1)
+08:38:24 thm:BookProof_ScalaronWallEsa_kinCcR_symmetricOn: REUSING existing BookProof.ScalaronWallEsa.kinCcR_symmetricOn (Open) 6f669858-2e8a-443a-8f59-f2e4ccd24d95
+08:38:24 thm:BookProof_ScalaronWallEsa_kinCcR_symmetricOn: DONE
+08:38:24 submitting thm:BookProof_ScalaronWallEsa_kinOpR_apply (attempt 1)
+08:38:28 thm:BookProof_ScalaronWallEsa_kinOpR_apply: REUSING existing BookProof.ScalaronWallEsa.kinOpR_apply (Proved) 75d4c4c4-29ff-4593-a496-317a3cdeb3d5
+08:38:28 thm:BookProof_ScalaronWallEsa_kinOpR_apply: DONE
+08:38:28 submitting thm:BookProof_ScalaronWallEsa_testCc_apply (attempt 1)
+08:38:32 thm:BookProof_ScalaronWallEsa_testCc_apply: REUSING existing BookProof.ScalaronWallEsa.testCc_apply (Proved) d22790aa-a8de-44dd-9446-9e076133daed
+08:38:32 thm:BookProof_ScalaronWallEsa_testCc_apply: DONE
+08:38:32 submitting thm:BookProof_StrichartzWave_contDiff_symbolFn (attempt 1)
+08:38:37 thm:BookProof_StrichartzWave_contDiff_symbolFn: REUSING existing BookProof.StrichartzWave.contDiff_symbolFn (Proved) a6027fa0-a8ed-440e-8f09-bf48096ee240
+08:38:37 thm:BookProof_StrichartzWave_contDiff_symbolFn: DONE
+08:38:37 submitting thm:BookProof_StrichartzWave_exists_smooth_cutoff (attempt 1)
+08:38:41 thm:BookProof_StrichartzWave_exists_smooth_cutoff: REUSING existing BookProof.StrichartzWave.exists_smooth_cutoff (Proved) 56b3b4dc-7612-443a-a08c-25dca38000e1
+08:38:41 thm:BookProof_StrichartzWave_exists_smooth_cutoff: DONE
+08:38:41 submitting thm:BookProof_StrichartzWave_fourier_secondDeriv_apply (attempt 1)
+08:38:45 thm:BookProof_StrichartzWave_fourier_secondDeriv_apply: REUSING existing BookProof.StrichartzWave.fourier_secondDeriv_apply (Proved) 79d98c14-6716-43cb-8ee1-6b1a4536cd42
+08:38:45 thm:BookProof_StrichartzWave_fourier_secondDeriv_apply: DONE
+08:38:45 submitting thm:BookProof_StrichartzWave_inner_toLp_left (attempt 1)
+08:38:49 thm:BookProof_StrichartzWave_inner_toLp_left: REUSING existing BookProof.StrichartzWave.inner_toLp_left (Proved) 3faf8274-c257-43aa-93dc-0b374cfd1eb4
+08:38:49 thm:BookProof_StrichartzWave_inner_toLp_left: DONE
+08:38:49 submitting thm:BookProof_StrichartzWave_integrable_conj_schwartz_mul (attempt 1)
+08:38:54 thm:BookProof_StrichartzWave_integrable_conj_schwartz_mul: REUSING existing BookProof.StrichartzWave.integrable_conj_schwartz_mul (Proved) 3f28fe11-9612-4de7-a243-ea4ab7bf6876
+08:38:54 thm:BookProof_StrichartzWave_integrable_conj_schwartz_mul: DONE
+08:38:54 submitting thm:BookProof_StrichartzWave_opL2_apply (attempt 1)
+08:38:58 thm:BookProof_StrichartzWave_opL2_apply: REUSING existing BookProof.StrichartzWave.opL2_apply (Open) e87134fc-83d5-46a1-b50e-a22e446c9aeb
+08:38:58 thm:BookProof_StrichartzWave_opL2_apply: DONE
+08:38:58 submitting thm:BookProof_StrichartzWave_schwartzEquiv_coe (attempt 1)
+08:39:02 thm:BookProof_StrichartzWave_schwartzEquiv_coe: REUSING existing BookProof.StrichartzWave.schwartzEquiv_coe (Proved) c465e5b2-9a9c-4714-9cf3-a1a2a8989882
+08:39:02 thm:BookProof_StrichartzWave_schwartzEquiv_coe: DONE
+08:39:02 submitting thm:BookProof_WallEsaSemibounded_inner_toLp_self (attempt 1)
+08:39:06 thm:BookProof_WallEsaSemibounded_inner_toLp_self: REUSING existing BookProof.WallEsaSemibounded.inner_toLp_self (Open) 6236a96a-8260-4ba4-ae90-d448b931c967
+08:39:06 thm:BookProof_WallEsaSemibounded_inner_toLp_self: DONE
+08:39:06 summary: 2842 done, 792 pending, 16 failed, 63 unsubmittable (source missing from this checkout) (125 out-of-order orphans ignored)
+08:39:06 waiting on unpublished def bundle(s): ChapterFiniteSectionSingleTime (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQymTimeIndependentFlow (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
+08:39:06 chunk: 29 item(s) resolved in 121s, 3 still in flight (re-polled next run)

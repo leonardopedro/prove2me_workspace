@@ -1,5 +1,6 @@
 import Mathlib
 
+
 /-!
 # Chapter "Real representations, CPT theorem and the relativistic position operator",
 §"Fourier-Majorana Transform", **Proposition 76** — the energy transform `𝓔` and the

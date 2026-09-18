@@ -8,24 +8,8 @@ import Theorems.Thm_BookProof_QgHermiteOscillator_potCore_symmetricOn
 import Theorems.Thm_BookProof_QgHermiteOscillator_hamCore_add_potential
 import Theorems.Thm_BookProof_QgHermiteOscillator_expBounded_of_bounded
 import Theorems.Thm_BookProof_QgHermiteOscillator_norm_potLp_le
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -36,17 +20,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {B : Vd d → ℝ} {M : ℝ}

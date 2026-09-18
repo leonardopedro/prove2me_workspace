@@ -1,7 +1,7 @@
 -- Generated from ChapterKatoRellichRelative.lean — theorem BookProof.KatoRellich.norm_le_of_relBound
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
-open BookProof.KatoRellich
+open BookProof.ChapterKatoRellichRelative
 
 
 

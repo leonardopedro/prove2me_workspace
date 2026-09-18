@@ -2,23 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteOscillator_deficiencyTrivialAt_of_eigenbasis
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -29,11 +13,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : D →ₗ[ℂ] F) (b : HilbertBasis ι ℂ F)

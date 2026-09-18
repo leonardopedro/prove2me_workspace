@@ -5,19 +5,11 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.span_hermiteMv :
     Submodule.span ℂ (Set.range (hermiteMv (d := d))) = ⊤ := by sorry

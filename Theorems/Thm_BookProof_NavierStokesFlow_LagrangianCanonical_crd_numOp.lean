@@ -5,26 +5,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
+open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open CanonicalVector ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp (i : Fin 3) (x : lpFiniteModes Vel) :
     crd (numOp i x) = fun β => ((β i : ℝ) : ℂ) * crd x β := by sorry

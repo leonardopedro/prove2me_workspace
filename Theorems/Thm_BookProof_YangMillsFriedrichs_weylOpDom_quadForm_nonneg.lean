@@ -1,51 +1,11 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — theorem BookProof.YangMillsFriedrichs.weylOpDom_quadForm_nonneg
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.YangMillsFriedrichs
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

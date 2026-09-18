@@ -3,19 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteRelative_re_inner_diagonal_le
 import Theorems.Thm_BookProof_HermiteRelative_oscL_hermiteMvLp
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -27,16 +16,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 1000000 in

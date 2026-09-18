@@ -6,18 +6,6 @@ open BookProof.SirkBandLedger.Decimal
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 

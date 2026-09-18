@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkFinitePrecision
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkCertifiedGap — the certified mass gap of the truncated Hamiltonian (T6, T7)

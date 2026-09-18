@@ -1,8 +1,7 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterStoneResolvent
-
+import Definitions.Def_ChapterStoneTheorem
+import Definitions.Def_ChapterEsaClosure
 import Mathlib
+
 
 /-!
 # The Stone bridge: from a selected self-adjoint extension to the unitary flow
@@ -39,10 +38,11 @@ Everything is `sorry`-free and `axiom`-free.
 
 open Filter Topology
 open scoped InnerProductSpace
-open BookProof.EsaClosure BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
 namespace BookProof.StoneBridge
 
+open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
+open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

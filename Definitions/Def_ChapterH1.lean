@@ -1,5 +1,6 @@
 import Mathlib
 
+
 /-!
 # Chapter H1 — Hashimoto SIRK: φ-functions and resolvent algebra (roadmap N13, §0 S7)
 

@@ -4,25 +4,10 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 
 noncomputable section
-
-
-
-
-
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterH4.sirk_error_bound_decay
     (V : F →L[ℂ] E) (phiA psiX rX : E →L[ℂ] E) (psiB rB : F →L[ℂ] F)

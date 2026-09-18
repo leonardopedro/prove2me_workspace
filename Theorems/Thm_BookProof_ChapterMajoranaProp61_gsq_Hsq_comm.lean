@@ -5,16 +5,6 @@ open BookProof.ChapterMajoranaProp61
 
 
 
-
-
-
-
-
-
-
-
-
-
 variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
 
 omit [StarRing 𝒜] [StarModule ℝ 𝒜] in

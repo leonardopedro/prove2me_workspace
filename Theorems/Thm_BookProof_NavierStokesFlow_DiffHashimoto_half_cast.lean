@@ -5,11 +5,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
 
-
-
-
-
-
 open Filter Topology
 
 

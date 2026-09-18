@@ -1,12 +1,8 @@
-import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterEsaClosure
 import Definitions.Def_ChapterNavierStokesHashimoto
 import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-
 import Mathlib
+
 
 /-!
 # The Hashimoto/SIRK shift-invert limit selects the *differential* Navier–Stokes generator

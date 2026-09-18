@@ -2,18 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteRelative_re_inner_sum_of_diagonal
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -25,10 +14,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : ι → E) (hv : Orthonormal ℂ v) (lam mu : ι → ℝ)

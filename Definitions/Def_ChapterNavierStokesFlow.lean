@@ -1,22 +1,9 @@
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFreeFieldConstraint
 import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterTrajectory
+import Definitions.Def_ChapterFreeFieldConstraint
+import Definitions.Def_ChapterContinuityUnitary
 import Definitions.Def_ChapterU
-
-import Mathlib
 import Mathlib
 
-import Mathlib
-
-import Mathlib
-import Definitions.Def_ChapterNavierStokesFlow.Part1
-import Definitions.Def_ChapterNavierStokesFlow.Part2
 
 /-!
 # Chapter "Free field parametrization … Navier–Stokes": the truncated

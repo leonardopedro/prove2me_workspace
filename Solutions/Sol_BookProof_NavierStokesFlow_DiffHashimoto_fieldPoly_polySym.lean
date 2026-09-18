@@ -1,25 +1,12 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.fieldPoly_polySym
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_polySym_id
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
-import Theorems.Thm_BookProof_HermiteRelative_polySym_mulXPoly
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

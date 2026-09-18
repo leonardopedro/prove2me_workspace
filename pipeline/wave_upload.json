@@ -22216,6 +22216,32 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_ChapterParityMajoranaQuant_J_unitary'": {
+   "name": "BookProof.ChapterParityMajoranaQuant.J_unitary'",
+   "chapter": "ChapterParityMajoranaQuant",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterParityMajoranaQuant_J_unitary'.lean",
+   "title": "The Lean 4 theorem `J_unitary'` in the `ChapterParityMajoranaQuant` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `J_unitary'` in the `ChapterParityMajoranaQuant` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterParityMajoranaQuant.lean",
+   "tags": [
+    "timepiece",
+    "qym",
+    "parity",
+    "majorana",
+    "quantization"
+   ]
+  },
+  "BookProof_HermiteRelative_coreOp_apply'": {
+   "name": "BookProof.HermiteRelative.coreOp_apply'",
+   "chapter": "ChapterHermiteRelativeBound",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteRelative_coreOp_apply'.lean",
+   "title": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `coreOp_apply'` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "sol_order": [
@@ -24002,6 +24028,8 @@
   "BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form",
   "BookProof_ScalaronEdge_starobinskyEdge_form_gap",
   "BookProof_ScalaronEdge_scalaronEdge_friedrichs_gap",
-  "BookProof_ScalaronEdge_starobinskyEdge_quadForm"
+  "BookProof_ScalaronEdge_starobinskyEdge_quadForm",
+  "BookProof_ChapterParityMajoranaQuant_J_unitary'",
+  "BookProof_HermiteRelative_coreOp_apply'"
  ]
 }

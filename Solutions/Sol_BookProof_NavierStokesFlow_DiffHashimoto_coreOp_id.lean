@@ -1,22 +1,9 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.coreOp_id
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

@@ -1,14 +1,7 @@
+import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFullQuadraticEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterSirkFinitePrecision
 
 /-!
 # The graded band calculus of the product Hermite basis: a real quadratic Hamiltonian has a

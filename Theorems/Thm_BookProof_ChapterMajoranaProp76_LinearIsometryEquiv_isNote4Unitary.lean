@@ -2,14 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMajoranaProp76
 open BookProof.ChapterMajoranaProp76
-
-
-
-
-
-
-
-
+open BookProof.ChapterMajoranaProp76.LinearIsometryEquiv
 
 
 open scoped InnerProductSpace

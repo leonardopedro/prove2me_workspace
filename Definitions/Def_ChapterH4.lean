@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterH1
-
 import Mathlib
+
 
 /-!
 # Chapter H4 — Hashimoto SIRK: operator φ-function core, compression transfer,

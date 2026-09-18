@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterHermiteProductCore
-
 import Mathlib
+
 
 /-!
 # The product Hermite basis of `L²(ℝᵈ)` and its ladder relations
@@ -171,10 +171,6 @@ theorem span_hermiteMvLp :
     change pgLp (hermiteMv a) ∈ Submodule.span ℂ (Set.range (hermiteMvLp (d := d)))
     rw [pgLp_hermiteMv_eq a]
     exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨a, rfl⟩)
-
-theorem hermiteMvLp_mem_core (a : Fin d →₀ ℕ) : hermiteMvLp a ∈ polyGaussCore (d := d) := by
-  rw [← span_hermiteMvLp]
-  exact Submodule.subset_span ⟨a, rfl⟩
 
 /-- **The product Hermite functions form a Hilbert basis of `L²(ℝᵈ)`**, indexed by the
 multi-indices. -/

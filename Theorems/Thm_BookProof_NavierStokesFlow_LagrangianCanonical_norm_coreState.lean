@@ -5,40 +5,11 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (nu : ℝ)
+open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open CanonicalVector ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.norm_coreState (β : Vel) : ‖((coreState β : lpFiniteModes Vel) : L2I Vel)‖ = 1 := by sorry

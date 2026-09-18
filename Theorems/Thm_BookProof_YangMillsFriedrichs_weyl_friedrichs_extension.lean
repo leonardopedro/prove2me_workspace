@@ -1,24 +1,7 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — theorem BookProof.YangMillsFriedrichs.weyl_friedrichs_extension
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.YangMillsFriedrichs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -26,43 +9,7 @@ open BookProof.FarisLavine
 
 
 
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFriedrichs.weyl_friedrichs_extension {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}

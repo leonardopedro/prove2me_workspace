@@ -1,25 +1,7 @@
 -- Generated from ChapterQgHermiteOscillatorEsa.lean — solution of BookProof.QgHermiteOscillator.coreD_sq_add_harm
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
-import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -30,17 +12,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :

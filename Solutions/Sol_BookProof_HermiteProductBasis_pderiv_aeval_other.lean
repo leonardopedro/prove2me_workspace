@@ -1,13 +1,7 @@
 -- Generated from ChapterHermiteProductBasis.lean — solution of BookProof.HermiteProductBasis.pderiv_aeval_other
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductBasis
-
-
-
-
 
 
 

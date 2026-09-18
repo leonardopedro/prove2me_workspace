@@ -6,16 +6,7 @@ import Theorems.Thm_BookProof_SirkCertifiedGap_rayleigh_sectorRestrict
 import Theorems.Thm_BookProof_SirkCertifiedGap_sectorGround_le_rayleigh
 import Theorems.Thm_BookProof_SirkCertifiedGap_le_sectorGround
 import Theorems.Thm_BookProof_SirkFinitePrecision_ground_le_rayleigh
-import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
-
-
-
-
-
-
-
-
 
 
 

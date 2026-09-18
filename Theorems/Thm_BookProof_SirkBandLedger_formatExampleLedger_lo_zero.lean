@@ -5,73 +5,7 @@ open BookProof.SirkBandLedger
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-set_option maxRecDepth 10000
 
 theorem BookProof.SirkBandLedger.formatExampleLedger_lo_zero : ledgerLo formatExampleLedger 0 = 0.9 := by sorry

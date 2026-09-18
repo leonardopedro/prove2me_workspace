@@ -2,51 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm
-import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -2,26 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_raise_apply
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesSignedShift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -29,45 +11,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.SignedShift
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin 3) (β : Vel) (j : Fin 3) :

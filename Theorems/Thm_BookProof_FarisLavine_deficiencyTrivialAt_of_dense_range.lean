@@ -5,15 +5,6 @@ open BookProof.FarisLavine
 
 
 
-
-
-
-
-
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 

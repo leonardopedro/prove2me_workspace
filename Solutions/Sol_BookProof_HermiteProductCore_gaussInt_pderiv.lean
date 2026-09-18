@@ -5,12 +5,7 @@ import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_HermiteProductCore_gaussMoment_succ
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_monomial
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
-
-
-
-
 
 
 
@@ -20,10 +15,6 @@ open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) (r : MvPolynomial (Fin d) ℂ) :

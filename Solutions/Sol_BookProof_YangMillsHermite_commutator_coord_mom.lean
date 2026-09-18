@@ -1,19 +1,7 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.commutator_coord_mom
 import Mathlib
-import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
-import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 

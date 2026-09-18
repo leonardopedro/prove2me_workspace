@@ -5,11 +5,6 @@ open BookProof.HermiteCore
 
 
 
-
-
-
-
-
 open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section

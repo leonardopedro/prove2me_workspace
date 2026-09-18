@@ -1,17 +1,9 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.gaussInt_leibniz
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_pderiv
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 

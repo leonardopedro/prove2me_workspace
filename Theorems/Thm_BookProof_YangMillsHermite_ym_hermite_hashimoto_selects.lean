@@ -1,13 +1,7 @@
 -- Generated from ChapterYangMillsHermite.lean — theorem BookProof.YangMillsHermite.ym_hermite_hashimoto_selects
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 
@@ -18,69 +12,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 theorem BookProof.YangMillsHermite.ym_hermite_hashimoto_selects (e : ℕ ≃ (Fin 99 →₀ ℕ))
     (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) {γ : ℝ} (hγ : 0 < γ) :

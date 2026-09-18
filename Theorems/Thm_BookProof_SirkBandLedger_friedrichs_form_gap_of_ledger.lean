@@ -1,73 +1,12 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.SirkBandLedger
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn (finiteModeDomain b) H)

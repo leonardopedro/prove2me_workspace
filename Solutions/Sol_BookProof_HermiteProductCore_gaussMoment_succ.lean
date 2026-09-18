@@ -1,12 +1,7 @@
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.gaussMoment_succ
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
-
-
-
-
 
 
 
@@ -16,10 +11,6 @@ open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℕ) : gaussMoment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by

@@ -1,18 +1,10 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.foOp_linear_apply_eq_mul
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_add
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_smul
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -24,16 +16,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :

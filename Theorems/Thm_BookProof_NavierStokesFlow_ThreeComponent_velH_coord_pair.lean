@@ -3,9 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
+
+
 open scoped ENNReal
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.SignedShift
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
+
+
+open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
 
 set_option maxHeartbeats 1000000 in
 -- the twenty-four members of the family are expanded and evaluated one by one

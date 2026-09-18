@@ -1,15 +1,9 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.crePoly_hpsi
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMv
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_add_single
 open BookProof.HermiteBand
-
-
-
-
 
 
 

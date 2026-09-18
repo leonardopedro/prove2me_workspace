@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkRitzMinMax — the higher Rayleigh–Ritz levels and the Ritz gap

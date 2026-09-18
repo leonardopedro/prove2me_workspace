@@ -1,14 +1,8 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.pgLp_hpsi
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
+import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 open BookProof.HermiteBand
-
-
-
-
 
 
 

@@ -3,17 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_quadForm_nonneg
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 
@@ -25,69 +16,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :

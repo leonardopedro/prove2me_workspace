@@ -4,13 +4,6 @@ import Definitions.Def_ChapterYangMillsBianchi
 open BookProof.YangMillsBianchi
 
 
-
-
-
-
-
-
-
 open BigOperators
 
 

@@ -1,18 +1,7 @@
 -- Generated from ChapterStarobinskyPotential.lean — theorem BookProof.Starobinsky.lpFiniteModes_le_mulSymbolDomain
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.Starobinsky
-
-
-
-
-
-
-
-
-
 
 
 open Filter Topology

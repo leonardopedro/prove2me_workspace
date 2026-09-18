@@ -1,29 +1,12 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.formNormSq_eq
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
 
 
 

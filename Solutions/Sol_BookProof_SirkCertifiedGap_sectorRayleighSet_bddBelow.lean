@@ -3,16 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 import Theorems.Thm_BookProof_SirkFinitePrecision_ground_le_rayleigh
 import Theorems.Thm_BookProof_SirkFinitePrecision_index_nonempty
-import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkCertifiedGap
-
-
-
-
-
-
-
-
 
 
 

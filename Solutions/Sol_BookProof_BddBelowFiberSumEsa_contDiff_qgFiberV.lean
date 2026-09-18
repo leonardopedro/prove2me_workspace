@@ -16,7 +16,6 @@ open BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

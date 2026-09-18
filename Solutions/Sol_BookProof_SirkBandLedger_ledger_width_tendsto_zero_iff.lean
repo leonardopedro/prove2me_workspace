@@ -2,21 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 import Theorems.Thm_BookProof_SirkBandLedger_ledger_width_eventually_const
-import Definitions.Def_ChapterSirkCertificateReader
-import Definitions.Def_ChapterBandEnclosure
 open BookProof.SirkBandLedger
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

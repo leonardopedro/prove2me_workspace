@@ -1,12 +1,6 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.isSelfAdjointExtension_of_positive
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterSirkBandLedger
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
-open BookProof.EsaClosure
-
 
 
 open Filter Topology

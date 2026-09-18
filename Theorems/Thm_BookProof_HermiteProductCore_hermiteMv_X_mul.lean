@@ -5,19 +5,11 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.hermiteMv_X_mul (i : Fin d) (a : Fin d →₀ ℕ) :
     X i * hermiteMv a

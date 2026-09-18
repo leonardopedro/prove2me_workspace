@@ -2,7 +2,6 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
 
-import Mathlib
 
 /-!
 # The gauge-fixed Yang–Mills Hamiltonian on the Gauss–polynomial core of `L²(ℝ⁹⁹)`
@@ -298,14 +297,5 @@ end YangMills
 
 
 end
-
-namespace RealCoeff
-end RealCoeff
-
-namespace PolySym
-end PolySym
-
-namespace PolyAdj
-end PolyAdj
 
 end BookProof.YangMillsHermite

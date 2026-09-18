@@ -4,12 +4,16 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.HashimotoShiftInvert
+open scoped lp
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
+open scoped lp
 open BookProof.HermiteGalerkin
+open scoped lp
 open Filter Topology
+open scoped lp
 
 theorem BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example :
     IsShiftInvert ell2UnboundedExample 1 ell2ShiftInvert ∧

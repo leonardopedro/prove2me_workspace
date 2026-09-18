@@ -6,13 +6,6 @@ open BookProof.YangMillsBianchi
 
 
 
-
-
-
-
-
-
-
 open BigOperators
 
 

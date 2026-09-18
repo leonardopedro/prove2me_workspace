@@ -4,25 +4,10 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 
 noncomputable section
-
-
-
-
-
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterH4.sirk_le_sia (C Dmin h m normv : ℝ)
     (hC : 0 ≤ C) (hD : 0 ≤ Dmin) (hnv : 0 ≤ normv)

@@ -2,8 +2,8 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterKatoRellichRelative
-
 import Mathlib
+
 
 /-!
 # Essential self-adjointness on the Gauss–polynomial core: the harmonic (conformal-mode)
@@ -56,9 +56,9 @@ remains open, as does target 2 (which needs restating) and target 3.
 namespace BookProof.QgHermiteOscillator
 
 open MeasureTheory Complex MvPolynomial
-open BookProof.QgHermiteCore
-open BookProof.HermiteProductCore
-open BookProof.QgHermiteFriedrichs
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 

@@ -5,12 +5,6 @@ open BookProof.HermiteRelative
 
 
 
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
@@ -18,10 +12,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
 
 theorem BookProof.HermiteRelative.apply_sum_of_diagonal (v : ι → E) (lam : ι → ℝ) {D : Submodule ℂ E}
     (hvD : ∀ a, v a ∈ D) (T : D →ₗ[ℂ] E)

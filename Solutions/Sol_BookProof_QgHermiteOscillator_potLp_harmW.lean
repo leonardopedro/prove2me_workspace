@@ -2,23 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteOscillator_eval_harmPoly
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -29,17 +14,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) :

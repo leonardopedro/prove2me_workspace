@@ -1,35 +1,13 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — theorem BookProof.HashimotoShiftInvert.shiftInvertC_determines
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.HashimotoShiftInvert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 
 theorem BookProof.HashimotoShiftInvert.shiftInvertC_determines {Dom₁ Dom₂ : Submodule ℂ F} {A₁ : Dom₁ →ₗ[ℂ] F}
     {A₂ : Dom₂ →ₗ[ℂ] F} {γ : ℂ} {X : F →L[ℂ] F}

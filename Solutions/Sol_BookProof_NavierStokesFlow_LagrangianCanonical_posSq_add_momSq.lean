@@ -2,28 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_ann_comp_cre_eq
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -31,8 +11,8 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
+open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin 3) :

@@ -3,16 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_exists_unit_mem
 import Theorems.Thm_BookProof_RitzMinMax_rayleighSup_span_singleton
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

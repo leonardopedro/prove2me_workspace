@@ -6,16 +6,6 @@ open BookProof.ChapterBaryonAsymmetry
 
 
 
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in

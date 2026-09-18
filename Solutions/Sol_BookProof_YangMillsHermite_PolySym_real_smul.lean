@@ -2,18 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_real_smul
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
-open BookProof.YangMillsHermite.PolySym
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 open BookProof.YangMillsHermite
-
-
-
-
+open BookProof.YangMillsHermite.PolySym
 
 
 

@@ -5,19 +5,11 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.polyGaussCore_eq_hermiteSpan :
     polyGaussCore (d := d)

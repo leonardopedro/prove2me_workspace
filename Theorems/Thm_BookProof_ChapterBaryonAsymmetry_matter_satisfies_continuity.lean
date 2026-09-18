@@ -4,16 +4,6 @@ import Definitions.Def_ChapterBaryonAsymmetry
 open BookProof.ChapterBaryonAsymmetry
 
 
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 theorem BookProof.ChapterBaryonAsymmetry.matter_satisfies_continuity (ρm0 a : ℝ) (ha : 0 < a) :

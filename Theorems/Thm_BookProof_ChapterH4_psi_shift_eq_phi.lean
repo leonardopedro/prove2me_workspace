@@ -4,13 +4,6 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 

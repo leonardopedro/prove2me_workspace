@@ -1,18 +1,9 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.momPoly_eq_ymMomOp
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
+import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -24,16 +15,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) :

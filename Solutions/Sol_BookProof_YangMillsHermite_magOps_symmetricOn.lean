@@ -4,17 +4,7 @@ import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_magPoly
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 
@@ -26,69 +16,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 99 D) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (m : Fin 24) :

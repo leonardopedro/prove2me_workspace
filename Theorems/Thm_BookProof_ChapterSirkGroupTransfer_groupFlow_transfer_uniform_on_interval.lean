@@ -4,11 +4,6 @@ import Definitions.Def_ChapterSirkGroupTransfer
 open BookProof.ChapterSirkGroupTransfer
 
 
-
-
-
-
-
 noncomputable section
 
 

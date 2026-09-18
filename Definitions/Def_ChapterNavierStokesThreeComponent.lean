@@ -1,12 +1,6 @@
 import Definitions.Def_ChapterNavierStokesSignedShift
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterFarisLavineCore
-
 import Mathlib
-import Definitions.Def_ChapterNavierStokesThreeComponent.Part1
-import Definitions.Def_ChapterNavierStokesThreeComponent.Part2
+
 
 /-!
 # The three coupled velocity components

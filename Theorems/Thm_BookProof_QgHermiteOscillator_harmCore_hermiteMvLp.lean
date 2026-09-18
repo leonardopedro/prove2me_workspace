@@ -1,17 +1,7 @@
 -- Generated from ChapterQgHermiteOscillatorEsa.lean — theorem BookProof.QgHermiteOscillator.harmCore_hermiteMvLp
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
-
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -21,17 +11,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
-
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteOscillator.harmCore_hermiteMvLp (a : Fin d →₀ ℕ) :
     harmCore ⟨hermiteMvLp a, hermiteMvLp_mem_core a⟩

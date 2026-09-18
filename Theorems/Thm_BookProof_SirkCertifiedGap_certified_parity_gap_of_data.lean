@@ -4,14 +4,6 @@ import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertifiedGap
 
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 

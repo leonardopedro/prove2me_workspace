@@ -1,7 +1,7 @@
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterComplexShiftCore
-
 import Mathlib
+
 
 /-!
 # The Hashimoto (SIRK) algorithm with **complex, non-real, and many different shifts**
@@ -65,6 +65,8 @@ non-real shifts, and `hashimoto_multishift_unbounded_example`.
 
 namespace BookProof.HashimotoShiftInvert
 
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
+open BookProof.HermiteGalerkin
 open Filter Topology
 
 
@@ -193,7 +195,7 @@ the algorithm with a whole sequence of such shifts is therefore not vacuous. -/
 
 section UnboundedExample
 
-open scoped InnerProductSpace ENNReal lp
+open scoped InnerProductSpace ENNReal
 
 /-! ### Complex diagonal operators on `ℓ²(ℕ, ℂ)` -/
 
@@ -213,16 +215,8 @@ coefficients bounded by `M`, as a linear map. -/
 noncomputable def diagLinC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) :
     ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ) where
   toFun x := ⟨fun n => c n * x n, memlp_diagFunC hc x⟩
-  map_add' x y := by
-    apply lp.ext; funext n
-    simp only [lp.coeFn_add]
-    dsimp [PreLp]
-    rw [mul_add]
-  map_smul' a x := by
-    apply lp.ext; funext n
-    simp only [lp.coeFn_smul]
-    dsimp [PreLp]
-    ring
+  map_add' x y := by apply lp.ext; funext n; simp [mul_add]
+  map_smul' a x := by apply lp.ext; funext n; simp; ring
 
 
 

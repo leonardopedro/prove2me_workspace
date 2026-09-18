@@ -4,10 +4,6 @@ import Definitions.Def_ChapterH1
 open BookProof.ChapterH1
 
 
-
-
-
-
 open scoped BigOperators
 open intervalIntegral
 

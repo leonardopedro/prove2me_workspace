@@ -4,13 +4,6 @@ import Definitions.Def_ChapterSirkRitzMinMax
 open BookProof.RitzMinMax
 
 
-
-
-
-
-
-
-
 noncomputable section
 
 

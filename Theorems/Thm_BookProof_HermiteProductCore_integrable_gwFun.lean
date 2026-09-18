@@ -5,19 +5,11 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.integrable_gwFun (r : MvPolynomial (Fin d) ℂ) :
     Integrable (fun x : Vd d =>

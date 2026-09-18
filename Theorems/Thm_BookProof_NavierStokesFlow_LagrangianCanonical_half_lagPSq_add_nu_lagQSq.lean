@@ -5,41 +5,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (nu : ℝ)
+open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open CanonicalVector ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq (hnu : 0 < nu) (i : Fin 3) :
     (1 / 2 : ℂ) • (lagP nu i).comp (lagP nu i)

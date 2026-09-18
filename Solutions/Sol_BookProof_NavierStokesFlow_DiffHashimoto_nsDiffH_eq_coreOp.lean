@@ -3,25 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_coreOp_fieldPoly
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_half_cast
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_add
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_comp
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_smul
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_sum
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

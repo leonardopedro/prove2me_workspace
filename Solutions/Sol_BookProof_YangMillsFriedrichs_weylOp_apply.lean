@@ -1,51 +1,12 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.weylOp_apply
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichs
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

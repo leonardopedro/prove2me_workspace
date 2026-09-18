@@ -5,17 +5,6 @@ open BookProof.YangMillsGhost
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa

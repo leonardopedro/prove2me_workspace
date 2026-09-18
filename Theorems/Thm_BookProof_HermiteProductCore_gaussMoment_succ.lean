@@ -5,18 +5,10 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.gaussMoment_succ (k : ℕ) : gaussMoment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by sorry

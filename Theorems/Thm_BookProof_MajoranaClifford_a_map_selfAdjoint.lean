@@ -4,13 +4,6 @@ import Definitions.Def_ChapterMajoranaClifford
 open BookProof.MajoranaClifford
 
 
-
-
-
-
-
-
-
 open RealInnerProductSpace CliffordAlgebra QuadraticMap
 
 

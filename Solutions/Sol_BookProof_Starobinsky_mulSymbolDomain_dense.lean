@@ -2,22 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
 import Theorems.Thm_BookProof_Starobinsky_lpFiniteModes_le_mulSymbolDomain
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQuantumGravityDensitized
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
+import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.Starobinsky
-
-
-
-
-
-
-
-
-
 
 
 

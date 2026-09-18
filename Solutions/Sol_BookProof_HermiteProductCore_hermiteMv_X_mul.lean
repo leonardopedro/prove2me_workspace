@@ -3,12 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteFactor_X_mul
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_erase
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
-
-
-
-
 
 
 
@@ -18,10 +13,6 @@ open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :

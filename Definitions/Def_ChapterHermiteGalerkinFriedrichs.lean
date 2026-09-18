@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterFarisLavineCore
-
 import Mathlib
+
 
 /-!
 # The Hermite-basis Galerkin (Rayleigh–Ritz) truncation and the Friedrichs extension
@@ -70,7 +69,7 @@ The headline combination is `hermiteGalerkin_selects_friedrichs`.
 
 namespace BookProof.HermiteGalerkin
 
-open BookProof.FarisLavine
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
 
 /-! ## Step 2, general form: projections onto an increasing dense flag -/
@@ -229,7 +228,7 @@ end Examples
 
 section ProperDomain
 
-open scoped InnerProductSpace ENNReal lp
+open scoped InnerProductSpace ENNReal
 
 /-- The canonical Hilbert basis of `ℓ²(ℕ, ℂ)` — the abstract model of the
 Hermite basis of `L²(ℝ)`. -/

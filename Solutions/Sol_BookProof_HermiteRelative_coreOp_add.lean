@@ -1,19 +1,7 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.coreOp_add
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterFarisLavine
-import Theorems.Thm_BookProof_HermiteRelative_coreOp_apply_prime
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -26,19 +14,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
-
-
-
-
-variable {d : ℕ}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (S T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) :
     coreOp (S + T) = coreOp S + coreOp T := by
 
   refine LinearMap.ext fun x => ?_
-  simp [coreOp_apply_prime]
+  simp [coreOp_apply']

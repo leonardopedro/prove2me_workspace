@@ -5,10 +5,6 @@ open BookProof.YangMillsHermite
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert

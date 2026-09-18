@@ -2,12 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteProductCore
-
-
-
-
 
 
 
@@ -17,10 +12,6 @@ open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :

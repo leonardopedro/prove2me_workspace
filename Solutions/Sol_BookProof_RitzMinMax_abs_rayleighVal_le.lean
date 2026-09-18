@@ -2,16 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_abs_re_inner_le
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

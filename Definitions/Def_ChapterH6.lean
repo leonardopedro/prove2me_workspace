@@ -2,7 +2,6 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterH5
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter H6 — Krylov projection as a spectral low-pass filter (plan Part F.2,

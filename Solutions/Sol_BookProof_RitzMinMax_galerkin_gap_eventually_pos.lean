@@ -2,16 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_galerkin_gap_tendsto
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

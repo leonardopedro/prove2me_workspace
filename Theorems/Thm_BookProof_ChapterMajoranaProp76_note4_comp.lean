@@ -4,14 +4,6 @@ import Definitions.Def_ChapterMajoranaProp76
 open BookProof.ChapterMajoranaProp76
 
 
-
-
-
-
-
-
-
-
 open scoped InnerProductSpace
 
 

@@ -1,8 +1,7 @@
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQuantumGravityDensitized
-
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
+
 
 /-!
 # The R + αR² (Starobinsky) potentials, and the flow of the regularized conformal mode
@@ -59,10 +58,12 @@ are the mathematics of the derivation, not the symbolic-algebra program that pro
 -/
 
 open Filter Topology
-open BookProof.FarisLavine BookProof.QuantumGravityDensitized
 
 namespace BookProof.Starobinsky
 
+open BookProof.FarisLavine BookProof.NavierStokesFlow
+open BookProof.QuantumGravityDensitized BookProof.StoneBridge
+open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 

@@ -1,12 +1,6 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.positiveExtension_eq_closure_of_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterSirkBandLedger
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
-open BookProof.EsaClosure
-
 
 
 open Filter Topology
@@ -18,11 +12,6 @@ open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
-
-variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.positiveExtension_eq_closure_of_esa {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)

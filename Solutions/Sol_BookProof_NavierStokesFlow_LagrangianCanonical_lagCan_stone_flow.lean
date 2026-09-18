@@ -1,35 +1,10 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — solution of BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
-import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -37,23 +12,8 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato  BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.ThreeComponent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (nu : ℝ)
+open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge BookProof.EsaClosure in

@@ -5,45 +5,7 @@ open BookProof.YangMillsFriedrichs
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

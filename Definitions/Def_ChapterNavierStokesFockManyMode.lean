@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Mathlib
 
-import Mathlib
 
 /-!
 # The Navier–Stokes Hamiltonian of a many-mode field, and its Faris–Lavine bounds

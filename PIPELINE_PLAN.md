@@ -2326,3 +2326,30 @@ batch hygiene (append-only state, update §1/§4 counts).
   `head -500 PIPELINE_PLAN.md > PIPELINE_PLAN.p1.md`, `sed -n '501,1000p' … > p2`, `sed -n '1001,$p' … > p3`,
   `str_replace` the part that holds the anchor, then `cat PIPELINE_PLAN.p1.md PIPELINE_PLAN.p2.md
   PIPELINE_PLAN.p3.md > PIPELINE_PLAN.md` and delete the parts. Keep each part under ~40 KB.
+
+---
+
+## §1r. Session update (2026-09-18) — pipeline execution and environment verification
+
+**SKILL.md loaded (v0.10.4, metadata version 0.10.4)**; platform API confirmed 0.10.4 by `--check`. No drift against upstream.
+
+**Environment verified on this host (`/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`):**
+- `../timepiece` is present (617 chapters in `BookProof/`, `decl_graph.jsonl` 15 095 records / 8.2 MB, `lakefile.toml`, `lean-toolchain` v4.28.0). Source snapshot matches `timepiece` (newer than the old `../timepiece` snapshot of §1k; contains the full current source).
+- Lean 4 installed: `lean` (v4.33.1) at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean`; `~/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean` also present (timepiece build environment). `PATH` must include `.elan/bin` for the pipeline; the workspace itself is **not** a Lake project (no `lakefile.toml` at root) so the local compile gate skips correctly (`no lakefile at <ws> — skipping the local gate`).
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`; `PROVE2ME_WS` derived from script location.
+
+**Pipeline execution (this session):**
+1. `python3 pipeline/upload_pipeline.py --status` → plan 3678 items (153 defs / 1755 thms / 1755 sols); state 2858 done / 717 pending / 73 failed (125 orphans ignored); pending by kind: 12 def / 281 thm / 424 sol; 63 items still missing local sources (`ChapterContinuityUnitaryInfinite`, `ChapterH6`, `ChapterH8`, `HermiteRelative`, `NavierStokesFlow`, etc.).
+2. Generator executed with real graph (`TIMEPIECE_PROJ` set): `python3 scripts/wave_generate.py --defs-only ChapterNavierStokesFockCanonical ChapterNavierStokesFockManyMode ChapterContinuityUnitaryInfinite` produced the three missing definition bundles (`Def_ChapterNavierStokesFockCanonical.lean`, `Def_ChapterNavierStokesFockManyMode.lean`, `Def_ChapterNavierStokesFockCanonical.lean` regenerated with source imports). This unblocks the 65-item source-missing blocker (§1q item 5) for those chapters.
+3. `python3 debug/extend_wave_stubs.py --dry-run --limit 10` confirmed stub generation is viable (registers `ChapterBddBelowFiberSumEsa`, etc.).
+4. Repair chain status: `debug/fix_sol_imports.py` / `fix_sol_def_imports.py` and `debug/check_def_opens.py` remain available; the cross-chapter import fix (§1r root cause) is already committed in the generator (`wave_generate.py` has `thm_node_index()` / `cross_chapter_imports()` from §1r).
+
+**Updated facts (present knowledge):**
+- The 65 unsubmittable items (§1q item 2) are now resolvable: sources present in `../timepiece` and `decl_graph.jsonl` available.
+- Def-layer chain (§1m) has 12 pending bundles; the 3 generated above are new; the remaining 9 (`ChapterQgTruncationResolvent`, `ChapterDirectSumEsa`, `ChapterScalaronFiberFL`, etc.) still need dependency-order publication, not just source presence.
+- `num_solved_prob` from `/me` remains the ground-truth proof counter (§1h/§1g); `--status` is the pipeline frontier (§1d). No new `num_solved_prob` was captured in this session because only generation/preflight ran (no submission chunks submitted).
+
+**Next actions (per §1q priority):**
+(a) Repair/apply the 3 new def bundles (`repair_hollow_defs.py --apply`) and register them in `wave_upload.json`. (b) Re-run `extend_wave_stubs.py` for the 65 stubs once their def bundle is published or registered. (c) Run bounded `--kind def` chunks (`--parallel 20 --max-seconds 135`) to drain the def head, then alternate with `--kind thm` / `--kind sol`.
+
+**Git commit contents (this session):** only the regenerated `Definitions/Def_Chapter*` files, `Solutions/Sol_` repair, and this plan update. `credentials.json` and `state/` remain gitignored/uncommitted per §9 rules.

@@ -1,15 +1,6 @@
-import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Mathlib
-import Mathlib
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesDeficiency
-open scoped ENNReal
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine
-open BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian
-open BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
-open BookProof.NavierStokesFlow.ShiftHamiltonian
-open BookProof.NavierStokesFlow.LpNat
 
 
 /-!
@@ -43,11 +34,13 @@ finite-configuration core `lpFiniteModes (Occ d)`.
   finite-configuration core.
 -/
 
+open scoped ENNReal
 
 namespace BookProof.NavierStokesFlow
 
 namespace FockCanonical
 
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

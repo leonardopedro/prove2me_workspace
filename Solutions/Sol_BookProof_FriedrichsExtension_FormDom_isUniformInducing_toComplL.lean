@@ -1,3 +1,7 @@
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
 -- Generated from ChapterFriedrichsExtension.lean — solution of BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension

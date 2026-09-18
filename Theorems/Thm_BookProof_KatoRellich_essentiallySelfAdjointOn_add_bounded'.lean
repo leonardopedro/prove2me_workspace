@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterNavierStokesHashimoto
 open BookProof.ChapterKatoRellichRelative
 
 

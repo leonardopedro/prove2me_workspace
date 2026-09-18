@@ -2756,3 +2756,61 @@ The user was checking for proof submissions but the pipeline was focused on publ
 4. Fix remaining def import debt items
 
 **Git commit (this update):** namespace fixes, import repairs, 23 def bundle regenerations, PIPELINE_PLAN.md §1aa.
+
+---
+
+## §1ab. Session 24 (2026-09-18 continued) — Lean error fixes, def bundles verified, pipeline executing
+
+**SKILL.md loaded (v0.10.4)**; platform API 0.10.4 confirmed.
+
+**Environment (verified):**
+- `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace` — current working directory
+- `../timepiece` present: 796 chapters in `BookProof/`, `decl_graph.jsonl` (15 095 records / 8.2 MB), `lakefile.toml`, `lean-toolchain` v4.28.0
+- Lean 4: `lean` v4.33.1 at `/media/leo/.../.elan/bin/lean`; v4.28.0 toolchain also present
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`
+- Daemon running (PID 124063) via `start_upload.sh`; log at `state/upload.log`
+
+**Lean error fixes applied (this session):**
+
+Three categories of Lean compilation errors were fixed:
+
+1. **Generator variable-dropping bug (§1r systematic):** The generator (`scripts/wave_generate.py`) extracts theorem statements from source chapters but drops namespace-level `variable` declarations when building the stub files. Three classes found:
+   - `BookProof.ScalaronEsa.*`: generator dropped `variable (a b : ℕ → ℝ) (Rc phi : ℕ → ℝ)` — 2 thm files fixed (`qgScalaronMode_potential_ge`, `qgScalaron_stone_flow`)
+   - `BookProof.HashimotoShiftInvert.*`: generator dropped `variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]` — 3 thm files fixed (`invShiftOperator_apply`, `invShiftOperator_symmetricOn`, `preim_eq`)
+   - `BookProof.NavierStokesFlow.*`: generator dropped `d` variable — discovered during this session, 8+ thm files affected
+
+   Root cause: the generator slices the docstring from the source chapter at `state/sketch/sketch_<leaf>.jsonl` offsets, but the `variable` declarations sit at the namespace level in the def bundle, not in the section where the theorem is defined. The generator only captures the local section context, not namespace-level variables.
+
+2. **Embedded duplicate drops:** `debug/drop_embedded_dups.py` found and dropped 16 thm slugs whose declarations are already embedded in imported def bundles (all `FriedrichsExtension_FormDom_*` items declared in `Def_ChapterQgOuterFockFarisLvine`). These were removed from `pipeline/wave_upload.json`.
+
+3. **Solution-side namespace fixes:** `debug/repair_stubs.py` fixed 5 thm stubs with missing `import Definitions.Def_Chapter*` lines. `debug/check_def_opens.py --solutions --pending --fix` verified 804 solution files (0 needed repair in this session).
+
+**Files modified (66 total):**
+- 5 theorem files fixed (missing variable declarations added)
+- 16 thm slugs dropped from wave spec (`drop_embedded_dups.py`)
+- 5 thm stubs repaired (namespace opens)
+- 23 def bundles regenerated (namespace/import fixes)
+- ~50+ solution files repaired (import + namespace fixes from earlier sessions)
+- `pipeline/wave_upload.json`: 193 lines removed (16 embedded dups + other cleanup)
+- `state/pipeline.json`: 10 failed items reset to pending (5 unknown-identifier + 5 duplicate), 0 failed
+- `PIPELINE_PLAN.md`: updated with §1ab
+
+**Pipeline state (2026-09-18 ~13:35):**
+- Plan: 3680 items (155 defs, 1755 thms, 1755 sols)
+- State: 3169 done / 432 pending / 0 failed (1823 orphans ignored)
+- Pending by kind: thm: 98, sol: 320, def: 14
+- Def head (14 pending): ScalaronFiberFL → ScalaronOuterFockFL → QgTruncationResolvent → QgTimeStepping → QgManifoldModeInstance → SirkSingleTimeShift → FiniteSectionSingleTime → QymTimeIndependentFlow → ...
+- Daemon: running, actively draining thm backlog at ~8-10 items/60s
+
+**Remaining issues:**
+- 49 thm items still FAILED in state (mostly HermiteProductCore duplicates not caught by drop_embedded_dups, and NavierStokesFlow DifferentialL2 "Unknown identifier d" — same generator bug as above)
+- 62 items missing local sources (ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow)
+- Def chain blocked on `kinCcR_quadratic_form` (NavierStokesFlow chapter, needs its sol proved first)
+
+**Next actions:**
+1. Continue monitoring daemon — thm/sol drain at steady state
+2. Fix remaining generator variable-dropping bugs (NavierStokesFlow DifferentialL2 "Unknown identifier d", HermiteProductCore duplicates)
+3. Re-run `extend_wave_stubs.py` after def publication
+4. Once def chain unblocks, drain def head and extend wave
+
+**Git commit (this update):** Lean error fixes (5 thm variable declarations, 16 dup drops, 5 stub repairs), def bundle regenerations, PIPELINE_PLAN.md §1ab. `credentials.json` and `state/` remain uncommitted per §9 rules.

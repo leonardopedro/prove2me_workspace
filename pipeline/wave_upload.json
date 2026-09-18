@@ -19621,89 +19621,12 @@
     "timepiece"
    ]
   },
-  "BookProof_FriedrichsExtension_FormDom_dense_range_formExt": {
-   "name": "BookProof.FriedrichsExtension.FormDom.dense_range_formExt",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_dense_range_formExt.lean",
-   "title": "The Lean 4 theorem `dense_range_formExt` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `dense_range_formExt` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FriedrichsExtension_FormDom_dom_le_range": {
    "name": "BookProof.FriedrichsExtension.FormDom.dom_le_range",
    "chapter": "ChapterFriedrichsExtension",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_dom_le_range.lean",
    "title": "The Lean 4 theorem `dom_le_range` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `dom_le_range` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_formExt_coe": {
-   "name": "BookProof.FriedrichsExtension.FormDom.formExt_coe",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe.lean",
-   "title": "The Lean 4 theorem `formExt_coe` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `formExt_coe` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_formExt_injective": {
-   "name": "BookProof.FriedrichsExtension.FormDom.formExt_injective",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_formExt_injective.lean",
-   "title": "The Lean 4 theorem `formExt_injective` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `formExt_injective` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply": {
-   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply.lean",
-   "title": "The Lean 4 theorem `friedrichsResolvent_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `friedrichsResolvent_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective": {
-   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective.lean",
-   "title": "The Lean 4 theorem `friedrichsResolvent_injective` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `friedrichsResolvent_injective` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint": {
-   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint.lean",
-   "title": "The Lean 4 theorem `friedrichsResolvent_isSelfAdjoint` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `friedrichsResolvent_isSelfAdjoint` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos": {
-   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos.lean",
-   "title": "The Lean 4 theorem `friedrichsResolvent_pos` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `friedrichsResolvent_pos` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
    "tags": [
     "timepiece"
@@ -19726,39 +19649,6 @@
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_incl_apply.lean",
    "title": "The Lean 4 theorem `incl_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `incl_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_inner_coe_eq": {
-   "name": "BookProof.FriedrichsExtension.FormDom.inner_coe_eq",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_inner_coe_eq.lean",
-   "title": "The Lean 4 theorem `inner_coe_eq` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `inner_coe_eq` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_inner_friedrichsResolvent": {
-   "name": "BookProof.FriedrichsExtension.FormDom.inner_friedrichsResolvent",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_inner_friedrichsResolvent.lean",
-   "title": "The Lean 4 theorem `inner_friedrichsResolvent` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `inner_friedrichsResolvent` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL": {
-   "name": "BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL.lean",
-   "title": "The Lean 4 theorem `isUniformInducing_toComplL` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `isUniformInducing_toComplL` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
    "tags": [
     "timepiece"
@@ -20094,17 +19984,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HashimotoShiftInvert_invShiftOperator_apply": {
-   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_apply",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply.lean",
-   "title": "The Lean 4 theorem `invShiftOperator_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `invShiftOperator_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension": {
    "name": "BookProof.HashimotoShiftInvert.invShiftOperator_isPositiveSelfAdjointExtension",
    "chapter": "ChapterHashimotoShiftInvert",
@@ -20116,34 +19995,12 @@
     "timepiece"
    ]
   },
-  "BookProof_HashimotoShiftInvert_invShiftOperator_quadForm_nonneg": {
-   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_quadForm_nonneg",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_quadForm_nonneg.lean",
-   "title": "The Lean 4 theorem `invShiftOperator_quadForm_nonneg` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `invShiftOperator_quadForm_nonneg` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion": {
    "name": "BookProof.HashimotoShiftInvert.invShiftOperator_selfAdjointCriterion",
    "chapter": "ChapterHashimotoShiftInvert",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion.lean",
    "title": "The Lean 4 theorem `invShiftOperator_selfAdjointCriterion` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `invShiftOperator_selfAdjointCriterion` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn": {
-   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_symmetricOn",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn.lean",
-   "title": "The Lean 4 theorem `invShiftOperator_symmetricOn` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `invShiftOperator_symmetricOn` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
    "tags": [
     "timepiece"
@@ -20193,34 +20050,12 @@
     "timepiece"
    ]
   },
-  "BookProof_HashimotoShiftInvert_preim_eq": {
-   "name": "BookProof.HashimotoShiftInvert.preim_eq",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_preim_eq.lean",
-   "title": "The Lean 4 theorem `preim_eq` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `preim_eq` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HashimotoShiftInvert_shiftInvert_determines": {
    "name": "BookProof.HashimotoShiftInvert.shiftInvert_determines",
    "chapter": "ChapterHashimotoShiftInvert",
    "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_shiftInvert_determines.lean",
    "title": "The Lean 4 theorem `shiftInvert_determines` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `shiftInvert_determines` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_shiftMap_apply": {
-   "name": "BookProof.HashimotoShiftInvert.shiftMap_apply",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_shiftMap_apply.lean",
-   "title": "The Lean 4 theorem `shiftMap_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `shiftMap_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
    "tags": [
     "timepiece"
@@ -21710,17 +21545,6 @@
    "title": "The Lean 4 theorem `isGraphCore_of_esa` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `isGraphCore_of_esa` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronFiberFL.lean"
-  },
-  "BookProof_BddBelowFiberSumEsa_contDiff_qgFiberV": {
-   "name": "BookProof.BddBelowFiberSumEsa.contDiff_qgFiberV",
-   "chapter": "ChapterBddBelowFiberSumEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_BddBelowFiberSumEsa_contDiff_qgFiberV.lean",
-   "title": "The Lean 4 theorem `contDiff_qgFiberV` in the `ChapterBddBelowFiberSumEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `contDiff_qgFiberV` in the `ChapterBddBelowFiberSumEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterBddBelowFiberSumEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
   },
   "BookProof_BddBelowFiberSumEsa_dsOp_semibounded": {
    "name": "BookProof.BddBelowFiberSumEsa.dsOp_semibounded",
@@ -23619,19 +23443,13 @@
   "BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint",
   "BookProof_HyperbolicQuadratic_wave_indefiniteQuadratic_essentiallySelfAdjoint",
   "BookProof_HyperbolicQuadratic_quadOp_add_realBoundedPotential_essentiallySelfAdjoint",
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
   "BookProof_FriedrichsExtension_FormDom_incl_apply",
-  "BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_mem",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply",
   "BookProof_HashimotoShiftInvert_diagCLM_norm_apply_le",
   "BookProof_HashimotoShiftInvert_diagCLM_symmetric",
-  "BookProof_HashimotoShiftInvert_invShiftOperator_apply",
-  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn",
   "BookProof_HashimotoShiftInvert_norm_shiftMap_ge",
   "BookProof_HashimotoShiftInvert_norm_single_one",
-  "BookProof_HashimotoShiftInvert_preim_eq",
-  "BookProof_HashimotoShiftInvert_shiftMap_apply",
   "BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one",
   "BookProof_HermiteProductBasis_hermiteMvLp_mem_core",
   "BookProof_HermiteProductCore_derivative_hermiteZ",
@@ -23701,8 +23519,6 @@
   "BookProof_NavierStokesFlow_volume_preservation_constraint",
   "BookProof_YangMillsFriedrichs_inner_sq_eq_normSq",
   "BookProof_YangMillsFriedrichs_weylOp_apply",
-  "BookProof_FriedrichsExtension_FormDom_inner_friedrichsResolvent",
-  "BookProof_FriedrichsExtension_FormDom_formExt_coe",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_apply_eq",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_injective",
@@ -23711,7 +23527,6 @@
   "BookProof_HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto",
   "BookProof_HashimotoShiftInvert_isShiftInvert_unique",
   "BookProof_HashimotoShiftInvert_diagCLM_isSelfAdjoint",
-  "BookProof_HashimotoShiftInvert_invShiftOperator_quadForm_nonneg",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le",
   "BookProof_HashimotoShiftInvert_shiftMap_injective",
   "BookProof_HashimotoShiftInvert_shiftRange_isClosed",
@@ -23744,10 +23559,6 @@
   "BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined",
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm",
   "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn",
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint",
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos",
-  "BookProof_FriedrichsExtension_FormDom_dense_range_formExt",
-  "BookProof_FriedrichsExtension_FormDom_inner_coe_eq",
   "BookProof_HashimotoShiftInvert_shiftInvert_determines",
   "BookProof_HashimotoShiftInvert_galerkinResolvent_shiftInvert_tendsto",
   "BookProof_HashimotoShiftInvert_ell2ShiftInvert_isSelfAdjoint",
@@ -23771,7 +23582,6 @@
   "BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency",
   "BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn",
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg",
-  "BookProof_FriedrichsExtension_FormDom_formExt_injective",
   "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift",
   "BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs",
   "BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension",
@@ -23782,7 +23592,6 @@
   "BookProof_NavierStokesFlow_DifferentialL2_intertwined_cre",
   "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec",
   "BookProof_NavierStokesFlow_nsFlow_norm_preserving",
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective",
   "BookProof_FriedrichsExtension_FormDom_dom_le_range",
   "BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example",
   "BookProof_HermiteProductCore_hermiteMv_X_mul",
@@ -23807,7 +23616,6 @@
   "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded",
   "BookProof_NavierStokesFlow_DifferentialL2_nsQuadraticDiffH_essentiallySelfAdjointOn_core",
-  "BookProof_BddBelowFiberSumEsa_contDiff_qgFiberV",
   "BookProof_BddBelowFiberSumEsa_dsOp_semibounded",
   "BookProof_BddBelowFiberSumEsa_fiberCore_dense",
   "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow",

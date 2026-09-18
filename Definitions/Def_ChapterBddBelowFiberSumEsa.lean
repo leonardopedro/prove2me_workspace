@@ -111,6 +111,14 @@ def qgFiberV (M alpha : ℝ) {d : ℕ} (omega : Fin d → ℝ) : Option (Fin d) 
   | none => fun phi => BookProof.Starobinsky.starobinskyV M alpha phi
   | some i => fun x => omega i ^ 2 * x ^ 2
 
+def contDiff_qgFiberV (M alpha : ℝ) {d : ℕ} (omega : Fin d → ℝ) (i : Option (Fin d)) :
+    ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (qgFiberV M alpha omega i) := by
+  cases i with
+  | none => exact BookProof.ScalaronEsa.contDiff_starobinskyV M alpha
+  | some i => exact contDiff_const.mul (contDiff_id.pow 2)
+
+
+
 
 
 

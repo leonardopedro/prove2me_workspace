@@ -48324,3 +48324,4 @@ Note: It is not possible to treat `QgModeData` as an implicitly)
 22:59:09 summary: 146 done, 10 pending, 2 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
 22:59:09 waiting on unpublished def bundle(s): ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
 22:59:09 chunk: 2 item(s) resolved in 70s
+23:04:15 sync: read 347 definition publish job(s)

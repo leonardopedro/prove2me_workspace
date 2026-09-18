@@ -3440,3 +3440,49 @@ curl -s https://prove2.me/api/v1/me \
 
 **Git commit (this update):** PIPELINE_PLAN.md §1zb — API reachable, upload running.
 
+
+---
+
+## §1zc. Session 28 (2026-09-18 continued) — API reachable, upload running, fixes applied
+
+**API status.** The API at `https://prove2.me/api/v1` is reachable (version 0.10.5).
+
+**Upload running.** Background upload process (PID 357260) started at 23:10 to publish
+all pending defs and thm/sol items. First action: sync existing publish jobs and process
+queued items.
+
+**Def bundle regeneration completed.**
+- All 169 def bundles regenerated from `../timepiece` sources
+- Added missing import `BookProof.ChapterNavierStokesDifferentialL2` to
+  `../timepiece/BookProof/ChapterQg3DGaugeEsa.lean` (line 3)
+  - Root cause: `coreOp` was used but not imported, causing QgOuterFockEsa failure
+- QgOuterFockFarisLavine sketch error persists (source 6287 bytes, sketch 5542 bytes)
+
+**Pipeline state update.**
+- Reset 2 failed defs to pending (ScalaronFiberFL, QgOuterFockEsa)
+- 10 defs pending, will be processed by upload
+- State: 3237 done / 363 pending / 41 failed (will update after upload)
+
+**Remaining blockers.**
+
+1. **QgOuterFockFarisLavine sketch error** — generator cannot extract definitions
+   - Source: 6287 bytes, Sketch: 5542 bytes (stale)
+   - Needs sketch regeneration or manual def bundle creation
+
+2. **Variable-dropping bug** — generator drops section-level `variable` declarations:
+   - NavierStokesFlow DifferentialL2: `variable {d : ℕ}`
+   - HashimotoShiftInvert: `variable {F : Type*} ...`
+
+3. **Missing imports in def bundles** — some defs need additional transitive imports
+   - QgTruncationResolvent needs QgBrstDerivativeGauge (for QgModeData)
+   - YangMillsAbelianFockEsa needs GradedBandSchur, SirkSingleTime namespaces
+
+**Next actions.**
+1. Monitor upload progress: `tail -f state/upload.log`
+2. Once defs published, thm/sol backlog should drain
+3. Fix QgOuterFockFarisLavine def bundle manually
+4. Investigate and fix variable-dropping bug in generator
+5. Generate missing stubs from `../timepiece`
+
+**Git commit (this update):** def bundle regeneration, pipeline state reset, PIPELINE_PLAN.md §1zc.
+

@@ -12,5 +12,7 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.dPoly_apply (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     dPoly i p = pderiv i p - (1/2 : ℂ) • (X i * p) := by sorry

@@ -12,5 +12,7 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.oscPoly_hermiteMv (i : Fin d) (a : Fin d →₀ ℕ) :
     oscPoly i (hermiteMv a) = (((a i : ℝ) : ℂ) + 1/2) • hermiteMv a := by sorry

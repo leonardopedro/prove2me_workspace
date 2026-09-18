@@ -12,6 +12,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.minkowski_apply_eq_differential (n : ℕ) (p : MvPolynomial (Fin (1 + n)) ℂ)
     (x : Vd (1 + n)) :
     pgFun (quadPoly (minkowskiCoeff n) p) x

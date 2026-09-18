@@ -12,6 +12,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 open scoped ENNReal in
 theorem BookProof.HyperbolicQuadratic.quadOp_add_boundedPotential_essentiallySelfAdjoint (c : Fin d → ℝ)
     (W : MeasureTheory.Lp ℂ (⊤ : ℝ≥0∞) (volume : Measure (Vd d)))

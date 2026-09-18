@@ -12,5 +12,7 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.wave_indefiniteQuadratic_essentiallySelfAdjoint (n : ℕ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := 1 + n)) (quadOp (minkowskiCoeff n)) := by sorry

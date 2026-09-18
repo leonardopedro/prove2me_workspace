@@ -12,6 +12,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.momPoly_sq (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momPoly i (momPoly i p)
       = -(pderiv i (pderiv i p)) + (1/2 : ℂ) • p + X i * pderiv i p

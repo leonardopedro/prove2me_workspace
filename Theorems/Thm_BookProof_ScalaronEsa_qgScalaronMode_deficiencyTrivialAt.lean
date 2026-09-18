@@ -16,6 +16,8 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable (M alpha : ℝ)
+
 theorem BookProof.ScalaronEsa.qgScalaronMode_deficiencyTrivialAt {z : ℂ} (hz : z.im ≠ 0) :
     DeficiencyTrivialAt
       (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))

@@ -12,6 +12,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.symmetricOn_of_diagonal (v : ι → E) (hv : Orthonormal ℂ v) (lam : ι → ℝ)
     {D : Submodule ℂ E} (hD : Submodule.span ℂ (Set.range v) = D)
     (T : D →ₗ[ℂ] E)

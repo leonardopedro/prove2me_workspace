@@ -12,5 +12,7 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.pgFun_sub (p q : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     pgFun (p - q) x = pgFun p x - pgFun q x := by sorry

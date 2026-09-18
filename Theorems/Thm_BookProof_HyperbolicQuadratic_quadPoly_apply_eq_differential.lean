@@ -12,6 +12,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.quadPoly_apply_eq_differential (c : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ)
     (x : Vd d) :
     pgFun (quadPoly c p) x

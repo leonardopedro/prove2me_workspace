@@ -16,6 +16,8 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable (M alpha : ℝ)
+
 theorem BookProof.ScalaronEsa.qgScalaronMode_esa :
     EssentiallySelfAdjointOn
       (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))

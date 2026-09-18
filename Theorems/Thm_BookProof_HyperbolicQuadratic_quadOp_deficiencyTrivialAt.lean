@@ -12,5 +12,7 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.HyperbolicQuadratic.quadOp_deficiencyTrivialAt (c : Fin d → ℝ) {z : ℂ} (hz : z.im ≠ 0) :
     DeficiencyTrivialAt (polyGaussCore (d := d)) (quadOp c) z := by sorry

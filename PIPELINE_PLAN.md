@@ -2356,9 +2356,17 @@ batch hygiene (append-only state, update §1/§4 counts).
 
 ---
 
-## §1s. Repair cycle (2026-09-18) — LLM-involved repair loop executed
+## §1s. Repair cycle (general procedure + 2026-09-18 execution) — LLM-involved repair loop
 
 **Daemon status:** restarted (`PID 186106` after previous `PID 177698` exited `rc=0` after a 405-item chunk). `start_upload.sh status` reports `Running`; `upload.log` shows active submissions (`submitting thm:...`, `accepted`, `FAIL` verdicts read continuously).
+
+**LLM repair cycle (general procedure — apply this every session):**
+1. **Read verdicts:** parse `state/pipeline.json` + `upload.log` for `FAILED` items (sol: proof debt / unknown node; thm: unknown identifier / namespace / already declared; def: pending / hollow).
+2. **Diagnose (LLM):** classify by error shape; identify root cause (cross-chapter import gap, missing namespace provider, embedded duplicate, proof debt, `NO NODE`).
+3. **Repair (LLM applies):** run appropriate `debug/*` tool (`fix_node_imports.py`, `fix_primed_slugs.py`, `repair_stubs.py`, `check_def_opens.py`, `reopen_failed.py`); for structural blocks (`NO NODE`, proof debt) use generator (`wave_generate.py --defs-only`) or hand-repair.
+4. **Local gate (LLM verifies):** synthetic `lakefile.lean` (+ `.lake/packages/mathlib` linked to `../timepiece`) provides syntax/import verification before resubmit.
+5. **Resubmit:** `reopen_failed.py --yes` resets attempts; daemon (`start_upload.sh`) submits repaired files via `submission_src` sha1 stale-guard.
+6. **Next cycle:** daemon drains chunks; LLM reads new verdicts; repeats until items resolve or stay permanently parked.
 
 **LLM repair cycle executed (this session):**
 1. **Read verdicts:** `python3 -c` parsed `state/pipeline.json` — 77 `failed` (sol: proof debt / unknown node; thm: unknown identifier / already declared / missing namespace; def: pending). Recent `upload.log` shows `FAIL` stream repeating a small set (~20 distinct names) — retries of the same nodes, plus genuine regression from embedded duplicates (`ChapterHermiteProductCore.*` declared twice, `NavierStokesFlow.lpFiniteModes_dense` declared twice, `YangMillsFriedrichs.*` declared twice, `ChapterStoneResolvent.UnboundedSelfAdjoint.*` duplicates).

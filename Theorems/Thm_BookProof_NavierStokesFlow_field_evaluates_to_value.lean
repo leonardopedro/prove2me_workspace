@@ -6,8 +6,6 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
-
 theorem BookProof.NavierStokesFlow.field_evaluates_to_value (phi : E →ₗ[ℂ] E) (phiD : ι → E →ₗ[ℂ] E)
     (X : ι → E →ₗ[ℂ] E) (x : ι → ℂ) (v : E) (hv : ∀ i, X i v = x i • v) :
     fieldTaylor phi phiD X x v = phi v := by sorry

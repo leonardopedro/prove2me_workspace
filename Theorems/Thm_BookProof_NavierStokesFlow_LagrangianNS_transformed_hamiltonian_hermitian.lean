@@ -7,6 +7,4 @@ open BookProof.NavierStokesFlow.LagrangianNS
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
-variable {n : ℕ} (L : LagrangianNS n)
-
 theorem BookProof.NavierStokesFlow.LagrangianNS.transformed_hamiltonian_hermitian : (L.hFull)ᴴ = L.hFull := by sorry

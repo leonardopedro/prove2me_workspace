@@ -6,8 +6,6 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 theorem BookProof.NavierStokesFlow.ns_esa_of_farisLavine (H N : F →ₗ[ℂ] F) (c₁ c₂ : ℝ) (hsym : H.IsSymmetric)
     (farisLavine : ∀ (H' N' : F →ₗ[ℂ] F) (a b : ℝ), H'.IsSymmetric →
       (∀ v : F, ‖H' v‖ ≤ a * ‖N' v‖) →

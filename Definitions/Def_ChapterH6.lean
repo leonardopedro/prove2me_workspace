@@ -66,7 +66,6 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-open BookProof.ChapterH4
 
 
 
@@ -80,7 +79,6 @@ section Reduced
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
-open BookProof.ChapterH4
 
 /-- The **reduced generator** `H̄_reduced = Vᴴ H̄ V` as an explicit `m × m`
 matrix of inner products. -/

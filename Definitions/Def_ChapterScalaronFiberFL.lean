@@ -47,7 +47,7 @@ Hamiltonian: everything is uniform in the shift `s`.
 
 namespace BookProof.ScalaronFiberFL
 
-noncomputable section
+open MeasureTheory SchwartzMap
 
 noncomputable section
 

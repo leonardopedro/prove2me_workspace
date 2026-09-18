@@ -6,8 +6,6 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 theorem BookProof.NavierStokesFlow.farisLavine_holds_of_everywhereDefined :
     ∀ (H' N' : F →ₗ[ℂ] F) (a b : ℝ), H'.IsSymmetric →
       (∀ v : F, ‖H' v‖ ≤ a * ‖N' v‖) →

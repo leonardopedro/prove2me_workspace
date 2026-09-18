@@ -1,9 +1,5 @@
 import Definitions.Def_ChapterQgVielbeinModeInstance
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterScalaronFiberFL
-import Definitions.Def_ChapterScalaronOuterFockFL
 
 
 /-!

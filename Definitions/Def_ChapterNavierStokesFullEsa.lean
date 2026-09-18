@@ -1,9 +1,6 @@
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterNavierStokesFullEsa.Part1
-import Definitions.Def_ChapterNavierStokesFullEsa.Part2
 
 
 /-!

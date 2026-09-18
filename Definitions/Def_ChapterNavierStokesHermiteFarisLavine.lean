@@ -1,25 +1,6 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine.Part1
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine.Part2
 
 /-!
 # The two Faris–Lavine inequalities, verified for the Navier–Stokes generator
@@ -146,11 +127,6 @@ theorem oscSymbol_ge_one (hκ : 0 ≤ κ) (n : ℕ) : 1 ≤ oscSymbol κ n := by
 
 theorem oscSymbol_nonneg (hκ : 0 ≤ κ) (n : ℕ) : 0 ≤ oscSymbol κ n :=
   le_trans zero_le_one (oscSymbol_ge_one hκ n)
-
-theorem oscSymbol_step (n : ℕ) : oscSymbol κ (n + 2) = oscSymbol κ n + 4 * κ := by
-  simp only [oscSymbol]
-  push_cast
-  ring
 
 
 

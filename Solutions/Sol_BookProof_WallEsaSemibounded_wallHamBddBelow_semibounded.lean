@@ -1,3 +1,6 @@
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterStrichartzWave
 -- Generated from ChapterWallEsaSemibounded.lean — solution of BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded

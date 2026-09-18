@@ -1,27 +1,7 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa.Part1
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa.Part2
 
 /-!
 # The **affine** Navier–Stokes fiber field: a `±1`-shift on top of the `±2`-shift

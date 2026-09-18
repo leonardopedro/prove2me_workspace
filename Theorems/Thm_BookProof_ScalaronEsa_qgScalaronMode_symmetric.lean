@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_BookProof.ChapterClosureUniqueness
+import Definitions.Def_ChapterMajoranaClifford
+import Definitions.Def_ChapterMajoranaClifford
+open BookProof.MajoranaClifford
 
 open BookProof.ScalaronEsa
 

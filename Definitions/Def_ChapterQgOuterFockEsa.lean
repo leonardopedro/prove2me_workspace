@@ -1,5 +1,8 @@
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
 
 

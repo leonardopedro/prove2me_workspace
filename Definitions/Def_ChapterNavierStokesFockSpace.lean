@@ -1,9 +1,6 @@
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesFockSpace.Part1
-import Definitions.Def_ChapterNavierStokesFockSpace.Part2
 
 /-!
 # The Fock space of a Fock space, and its ladder operators
@@ -80,22 +77,16 @@ def coeffOp (T : (ι → ℂ) → ι → ℂ)
   toFun f := ofCoeff (T ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ)) (hsupp f.2)
   map_add' f g := by
     ext i
-    have hcoef : (((f + g : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
+    have : (((f + g : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
         = ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) + ((g : lp (fun _ : ι => ℂ) 2) : ι → ℂ) := by
       ext j; simp
-    change T (↑(↑(f + g : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i
-        = T (↑(↑f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i + T (↑(↑g : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i
-    rw [hcoef]
-    exact congrFun (hadd _ _) i
+    simp [ofCoeff, hadd]
   map_smul' c f := by
     ext i
-    have hcoef : (((c • f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
+    have : (((c • f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
         = c • ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) := by
       ext j; simp
-    change T (↑(↑(c • f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i
-        = c • T (↑(↑f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i
-    rw [hcoef]
-    exact congrFun (hsmul c _) i
+    simp [ofCoeff, hsmul]
 
 
 
@@ -158,11 +149,10 @@ abbrev Conf (M : Type*) := M →₀ ℕ
 
 /-- The bosonic Fock space over the mode index `M`, in the occupation-number
 representation. -/
-noncomputable abbrev FockL2 (M : Type*) := lp (fun _ : Conf M => ℂ) 2
+abbrev FockL2 (M : Type*) := lp (fun _ : Conf M => ℂ) 2
 
 /-- The dense domain of finite-particle, finite-mode states. -/
-noncomputable abbrev FockDom (M : Type*) : Submodule ℂ (FockL2 M) :=
-  lpFiniteModes (Conf M)
+abbrev FockDom (M : Type*) : Submodule ℂ (FockL2 M) := lpFiniteModes (Conf M)
 
 
 
@@ -273,11 +263,10 @@ variable {J K : Type*} [DecidableEq J] [DecidableEq K]
 `FockL2 K` of the field modes `K`; a one-particle state of the *outer* level is
 a parcel carrying a parcel mode `j : J` together with an inner Fock (occupation)
 state `c : Conf K`, so the outer mode index is `J × Conf K`. -/
-noncomputable abbrev FockOfFockL2 (J K : Type*) := FockL2 (J × Conf K)
+abbrev FockOfFockL2 (J K : Type*) := FockL2 (J × Conf K)
 
 /-- The dense finite-particle domain of the two-level Fock space. -/
-noncomputable abbrev FockOfFockDom (J K : Type*) : Submodule ℂ (FockOfFockL2 J K) :=
-  FockDom (J × Conf K)
+abbrev FockOfFockDom (J K : Type*) : Submodule ℂ (FockOfFockL2 J K) := FockDom (J × Conf K)
 
 
 

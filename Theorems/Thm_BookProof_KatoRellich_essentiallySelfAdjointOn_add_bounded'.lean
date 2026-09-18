@@ -1,6 +1,7 @@
 -- Generated from ChapterKatoRellichRelative.lean — theorem BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded'
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
+import Definitions.Def_ChapterHashimotoShiftInvert
 open BookProof.ChapterKatoRellichRelative
 
 

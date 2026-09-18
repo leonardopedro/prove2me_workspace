@@ -1,3 +1,8 @@
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_hashimoto_selects
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich

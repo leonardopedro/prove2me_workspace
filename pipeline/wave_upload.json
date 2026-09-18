@@ -19621,94 +19621,6 @@
     "timepiece"
    ]
   },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res.lean",
-   "title": "The Lean 4 theorem `inner_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `inner_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le.lean",
-   "title": "The Lean 4 theorem `norm_resCLM_apply_le` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `norm_resCLM_apply_le` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res.lean",
-   "title": "The Lean 4 theorem `op_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `op_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_apply",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_apply.lean",
-   "title": "The Lean 4 theorem `resCLM_apply` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `resCLM_apply` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_mem",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem.lean",
-   "title": "The Lean 4 theorem `resCLM_mem` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `resCLM_mem` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm.lean",
-   "title": "The Lean 4 theorem `res_comm` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `res_comm` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op.lean",
-   "title": "The Lean 4 theorem `res_op` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `res_op` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift",
-   "chapter": "ChapterStoneResolvent",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift.lean",
-   "title": "The Lean 4 theorem `res_shift` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `res_shift` in the `ChapterStoneResolvent` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneResolvent.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FriedrichsExtension_FormDom_dense_range_formExt": {
    "name": "BookProof.FriedrichsExtension.FormDom.dense_range_formExt",
    "chapter": "ChapterFriedrichsExtension",
@@ -21271,17 +21183,6 @@
     "timepiece"
    ]
   },
-  "BookProof_NavierStokesFlow_HermiteCanonical_mkCore_coe": {
-   "name": "BookProof.NavierStokesFlow.HermiteCanonical.mkCore_coe",
-   "chapter": "ChapterNavierStokesHermiteCanonical",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_mkCore_coe.lean",
-   "title": "The Lean 4 theorem `mkCore_coe` in the `ChapterNavierStokesHermiteCanonical` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `mkCore_coe` in the `ChapterNavierStokesHermiteCanonical` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesHermiteCanonical.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_NavierStokesFlow_LagrangianNS_kinetic_posSemidef": {
    "name": "BookProof.NavierStokesFlow.LagrangianNS.kinetic_posSemidef",
    "chapter": "ChapterNavierStokesFlow",
@@ -21414,17 +21315,6 @@
     "timepiece"
    ]
   },
-  "BookProof_NavierStokesFlow_finiteModes_dense": {
-   "name": "BookProof.NavierStokesFlow.finiteModes_dense",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_finiteModes_dense.lean",
-   "title": "The Lean 4 theorem `finiteModes_dense` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `finiteModes_dense` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric": {
    "name": "BookProof.NavierStokesFlow.hasZeroDeficiencyOn_top_of_symmetric",
    "chapter": "ChapterNavierStokesFlow",
@@ -21443,39 +21333,6 @@
    "title": "The Lean 4 theorem `lagrangian_velocity` in the `ChapterNavierStokesFlow` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `lagrangian_velocity` in the `ChapterNavierStokesFlow` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_NavierStokesFlow_lpFiniteModes_dense": {
-   "name": "BookProof.NavierStokesFlow.lpFiniteModes_dense",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense.lean",
-   "title": "The Lean 4 theorem `lpFiniteModes_dense` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `lpFiniteModes_dense` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes": {
-   "name": "BookProof.NavierStokesFlow.lpSingle_mem_lpFiniteModes",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes.lean",
-   "title": "The Lean 4 theorem `lpSingle_mem_lpFiniteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `lpSingle_mem_lpFiniteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_NavierStokesFlow_mem_lpFiniteModes": {
-   "name": "BookProof.NavierStokesFlow.mem_lpFiniteModes",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes.lean",
-   "title": "The Lean 4 theorem `mem_lpFiniteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `mem_lpFiniteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
    "tags": [
     "timepiece"
    ]
@@ -21755,17 +21612,6 @@
     "timepiece"
    ]
   },
-  "BookProof_NavierStokesFlow_shiftOp_mem_finiteModes": {
-   "name": "BookProof.NavierStokesFlow.shiftOp_mem_finiteModes",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_shiftOp_mem_finiteModes.lean",
-   "title": "The Lean 4 theorem `shiftOp_mem_finiteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `shiftOp_mem_finiteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_NavierStokesFlow_symmetric_hasZeroDeficiency": {
    "name": "BookProof.NavierStokesFlow.symmetric_hasZeroDeficiency",
    "chapter": "ChapterNavierStokesFlow",
@@ -21777,17 +21623,6 @@
     "timepiece"
    ]
   },
-  "BookProof_NavierStokesFlow_velocityOp_mem_finiteModes": {
-   "name": "BookProof.NavierStokesFlow.velocityOp_mem_finiteModes",
-   "chapter": "ChapterNavierStokesEsa",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes.lean",
-   "title": "The Lean 4 theorem `velocityOp_mem_finiteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `velocityOp_mem_finiteModes` in the `ChapterNavierStokesEsa` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesEsa.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_NavierStokesFlow_volume_preservation_constraint": {
    "name": "BookProof.NavierStokesFlow.volume_preservation_constraint",
    "chapter": "ChapterNavierStokesFlow",
@@ -21795,17 +21630,6 @@
    "title": "The Lean 4 theorem `volume_preservation_constraint` in the `ChapterNavierStokesFlow` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `volume_preservation_constraint` in the `ChapterNavierStokesFlow` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ShiftedHermiteCore_pgMapT_apply": {
-   "name": "BookProof.ShiftedHermiteCore.pgMapT_apply",
-   "chapter": "ChapterShiftedHermiteCore",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ShiftedHermiteCore_pgMapT_apply.lean",
-   "title": "The Lean 4 theorem `pgMapT_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `pgMapT_apply` in the `ChapterShiftedHermiteCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedHermiteCore.lean",
    "tags": [
     "timepiece"
    ]
@@ -23795,12 +23619,6 @@
   "BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint",
   "BookProof_HyperbolicQuadratic_wave_indefiniteQuadratic_essentiallySelfAdjoint",
   "BookProof_HyperbolicQuadratic_quadOp_add_realBoundedPotential_essentiallySelfAdjoint",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift",
   "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
   "BookProof_FriedrichsExtension_FormDom_incl_apply",
   "BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL",
@@ -23854,7 +23672,6 @@
   "BookProof_NavierStokesFlow_DifferentialL2_velIdx_apply",
   "BookProof_NavierStokesFlow_DifferentialL2_velIdx_lower",
   "BookProof_NavierStokesFlow_DifferentialL2_velIdx_raise",
-  "BookProof_NavierStokesFlow_HermiteCanonical_mkCore_coe",
   "BookProof_NavierStokesFlow_LagrangianNS_sum_sq_posSemidef",
   "BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_decomposition",
   "BookProof_NavierStokesFlow_ccr_field",
@@ -23863,8 +23680,6 @@
   "BookProof_NavierStokesFlow_field_evaluates_to_value",
   "BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric",
   "BookProof_NavierStokesFlow_lagrangian_velocity",
-  "BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes",
-  "BookProof_NavierStokesFlow_mem_lpFiniteModes",
   "BookProof_NavierStokesFlow_momentumConstraint_preserved",
   "BookProof_NavierStokesFlow_nsAdvection_hermitian",
   "BookProof_NavierStokesFlow_nsBrst_adjoint",
@@ -23882,14 +23697,10 @@
   "BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense",
   "BookProof_NavierStokesFlow_ns_outer_degree_le_two",
   "BookProof_NavierStokesFlow_restrictToTop_apply",
-  "BookProof_NavierStokesFlow_shiftOp_mem_finiteModes",
   "BookProof_NavierStokesFlow_symmetric_hasZeroDeficiency",
-  "BookProof_NavierStokesFlow_velocityOp_mem_finiteModes",
   "BookProof_NavierStokesFlow_volume_preservation_constraint",
-  "BookProof_ShiftedHermiteCore_pgMapT_apply",
   "BookProof_YangMillsFriedrichs_inner_sq_eq_normSq",
   "BookProof_YangMillsFriedrichs_weylOp_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op",
   "BookProof_FriedrichsExtension_FormDom_inner_friedrichsResolvent",
   "BookProof_FriedrichsExtension_FormDom_formExt_coe",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range",
@@ -23928,13 +23739,11 @@
   "BookProof_NavierStokesFlow_derivativeField_momentum",
   "BookProof_NavierStokesFlow_secondDerivativeField_momentum",
   "BookProof_NavierStokesFlow_field_evaluates_to_value_diagonal",
-  "BookProof_NavierStokesFlow_lpFiniteModes_dense",
   "BookProof_NavierStokesFlow_nsHamiltonian_hermitian",
   "BookProof_NavierStokesFlow_nsFlow_groupOnEvolved",
   "BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined",
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm",
   "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm",
   "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint",
   "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos",
   "BookProof_FriedrichsExtension_FormDom_dense_range_formExt",
@@ -23958,7 +23767,6 @@
   "BookProof_NavierStokesFlow_DifferentialL2_intertwine_cre",
   "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec",
   "BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian",
-  "BookProof_NavierStokesFlow_finiteModes_dense",
   "BookProof_NavierStokesFlow_nsFlow_unitary",
   "BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency",
   "BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn",

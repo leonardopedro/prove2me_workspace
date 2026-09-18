@@ -1,76 +1,8 @@
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesSignedShift
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
 import Mathlib
 
-import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
-
-import Mathlib
-import Mathlib
-
-import Mathlib
-
-import Mathlib
-import Definitions.Def_ChapterNavierStokesDifferentialL2.Part1
-import Definitions.Def_ChapterNavierStokesDifferentialL2.Part2
-open BookProof.HermiteProductBasis
-open BookProof.HermiteProductCore
-open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.LpNat
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ThreeComponent
-open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.LagrangianEsa
-open BookProof.FarisLavine
 
 /-!
 # The differential realization of the Navier–Stokes quadratic symbol on `L²(du₁du₂du₃)`
@@ -134,6 +66,12 @@ coordinates.
 namespace BookProof.NavierStokesFlow.DifferentialL2
 
 open MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.IkebeKato
+open BookProof.FarisLavine
+open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 

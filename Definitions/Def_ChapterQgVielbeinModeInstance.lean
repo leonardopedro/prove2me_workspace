@@ -1,8 +1,5 @@
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterScalaronFiberFL
 
 
 /-!

@@ -2707,3 +2707,52 @@ The user was checking for proof submissions but the pipeline was focused on publ
 4. Fix remaining def import issues: QgOuterFockEsa needs `import Definitions.Def_ChapterYangMillsHermite`; Qg3DGaugeEsa needs `import Definitions.Def_ChapterQuantumGravity3DGauge`
 
 **Git commit (this update):** def bundle regeneration (5 chapters), PIPELINE_PLAN.md updated with §1z; `credentials.json` and `state/` remain uncommitted per §9 rules.
+
+---
+
+## §1aa. Session 23 (2026-09-18 continued) — namespace fixes, import repairs, and pipeline drain
+
+**SKILL.md loaded (v0.10.4)**; platform API 0.10.4 confirmed.
+
+**Environment:**
+- `../timepiece`: 796 chapters, `decl_graph.jsonl` (15 095 records)
+- Lean 4: v4.33.1 at `~/.elan/bin/lean`; v4.28.0 toolchain also present
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`
+
+**Namespace fixes applied:**
+- `Def_ChapterScalaronFiberFL`: `BookProof.QgOuterFockFL` → `BookProof.QgOuterFockFlow` (source uses `QgOuterFockFlow`, not `QgOuterFockFL`)
+- `Def_ChapterScalaronOuterFockFL`: same fix
+- `Def_ChapterQgOuterFockEsa`: added `import Definitions.Def_ChapterQuantumGravity3DGauge` (was missing; `open BookProof.QuantumGravity3DGauge` had no provider)
+- `Def_ChapterQg3DGaugeEsa`: added `import Definitions.Def_ChapterQuantumGravity3DGauge` (was missing; `torsionPoly` identifier not found)
+- `Def_ChapterQgTruncationResolvent`: added `import Definitions.Def_ChapterQgOuterFockCoreFL` and `Def_ChapterScalaronEsa` (namespaces `QgOuterFockCoreFL` and `ScalaronEsa` had no provider)
+
+**Def bundle generation (blocked items):**
+- Generated `Def_ChapterQuantumGravity3DGauge` (60 decls, 17 defmat) — was missing entirely
+- Regenerated 23 def bundles: FiniteSectionSingleTime, NavierStokesAffineFiberEsa, NavierStokesCanonicalVector, NavierStokesDiffFarisLavine, NavierStokesDifferentialL2, NavierStokesFarisLavineLift, NavierStokesFockCanonical, NavierStokesFockSpace, NavierStokesFullEsa, NavierStokesHermiteFarisLavine, NavierStokesLagrangianEsa, NavierStokesLagrangianKatoRellich, NavierStokesSignedShift, QgContinuumModeInstance, QgTimeStepping, QgTruncationResolvent, QgVielbeinModeInstance, QymTimeIndependentFlow, ScalaronFiberFL, ScalaronOuterFockFL, SirkSingleTimeShift, WallEsaBddBelow, YangMillsAbelianFockEsa
+- All 155 def bundle files now exist on disk
+
+**Lean error fixes applied:**
+- `fix_stub_def_imports.py`: patched imports across 104 stub files (missing def imports, namespace opens)
+- `fix_node_imports.py`: patched cross-chapter node imports (17 files)
+- `repair_stubs.py`: repaired 104 stubs (namespace opens, embedded duplicate drops)
+- `check_def_opens.py --solutions --pending --fix`: repaired 306 solution files
+- `reopen_failed.py --yes`: reopened 76 failed items for retry
+
+**Current pipeline state (2026-09-18 ~13:10):**
+- Plan: 3712 items (155 defs, 1771 thms, 1771 sols)
+- State: 3145 done / 537 pending / 0 failed (1801 orphans)
+- Pending by kind: thm: 170, sol: 353, def: 14
+- Daemon running (PID 113252), actively draining thm/sol backlog
+
+**Root blockers (def chain):**
+- `ChapterScalaronFiberFL` — FAIL: imports `kinCcR_quadratic_form` which is not yet Proved on platform
+- Remaining 13 defs at head — blocked on ScalaronFiberFL or other upstream deps
+- 62 thms/sols listed as "missing local sources" — def bundles now on disk but platform preflight hasn't synced
+
+**Next actions:**
+1. Prove `kinCcR_quadratic_form` (used by ScalaronFiberFL def bundle proof) — unblocks the entire def chain
+2. Continue thm/sol drain while daemon runs
+3. Re-run `extend_wave_stubs.py` after def publication
+4. Fix remaining def import debt items
+
+**Git commit (this update):** namespace fixes, import repairs, 23 def bundle regenerations, PIPELINE_PLAN.md §1aa.

@@ -10,6 +10,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
+import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply'
 open BookProof.ShiftedHermiteCore
 
 

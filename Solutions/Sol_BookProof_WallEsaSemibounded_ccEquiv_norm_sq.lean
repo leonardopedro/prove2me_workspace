@@ -1,7 +1,11 @@
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterStrichartzWave
 -- Generated from ChapterWallEsaSemibounded.lean — solution of BookProof.WallEsaSemibounded.ccEquiv_norm_sq
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 import Theorems.Thm_BookProof_WallEsaSemibounded_inner_toLp_self
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 open BookProof.WallEsaSemibounded
 
 

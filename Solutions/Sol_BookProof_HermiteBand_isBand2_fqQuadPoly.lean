@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.isBand2_fqQuadPoly
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus

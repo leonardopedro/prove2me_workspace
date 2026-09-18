@@ -1,6 +1,7 @@
 -- Generated from ChapterHashimotoShiftInvert.lean — theorem BookProof.HashimotoShiftInvert.ell2ShiftInvert_eq_sq
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
+import Theorems.Thm_BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one
 open BookProof.HashimotoShiftInvert
 open scoped lp
 

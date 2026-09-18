@@ -4,7 +4,6 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.HashimotoShiftInvert
-open BookProof.HashimotoShiftInvert.IsShiftInvert
 
 
 

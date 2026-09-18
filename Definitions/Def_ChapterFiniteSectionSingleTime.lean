@@ -2,14 +2,6 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Mathlib
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterQgTruncationResolvent
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneBridge
 
 
 /-!
@@ -68,7 +60,7 @@ namespace BookProof.FiniteSectionSingleTime
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

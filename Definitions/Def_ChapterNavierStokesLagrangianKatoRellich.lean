@@ -1,14 +1,8 @@
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterEsaClosure
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich.Part1
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich.Part2
 
 /-!
 # The Lagrangian route: Kato–Rellich control of the drift, and the Hashimoto
@@ -112,8 +106,8 @@ namespace BookProof.NavierStokesFlow
 
 namespace LagrangianKatoRellich
 
-open FullEsa LagrangianEsa BookProof.FarisLavine
-open BookProof.EsaClosure
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 /-! ## The split into second-order and low-order parts -/
 

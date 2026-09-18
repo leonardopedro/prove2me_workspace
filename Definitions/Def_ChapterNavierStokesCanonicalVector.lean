@@ -1,30 +1,6 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesSignedShift
 import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesCanonicalVector.Part1
-import Definitions.Def_ChapterNavierStokesCanonicalVector.Part2
 
 /-!
 # The canonical (differential) form of the full quadratic Navier–Stokes symbol
@@ -145,9 +121,6 @@ theorem support_cFun {i : Fin 3} {X : Vel → ℂ} (h : (Function.support X).Fin
 /-- A finitely supported coordinate sequence as a state of the finite-mode core. -/
 noncomputable def mkCore {X : Vel → ℂ} (h : (Function.support X).Finite) : lpFiniteModes Vel :=
   ⟨⟨X, memLpTwo_of_finite_support h⟩, h⟩
-
-@[simp] theorem mkCore_coe {X : Vel → ℂ} (h : (Function.support X).Finite) (β : Vel) :
-    (((mkCore h : lpFiniteModes Vel) : L2I Vel) : Vel → ℂ) β = X β := rfl
 
 
 

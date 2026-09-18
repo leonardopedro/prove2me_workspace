@@ -1,3 +1,8 @@
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.hashimoto_multishift_selects_friedrichs
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts

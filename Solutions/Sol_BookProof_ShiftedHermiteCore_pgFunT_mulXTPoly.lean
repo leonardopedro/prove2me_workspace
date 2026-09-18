@@ -9,6 +9,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul
 open BookProof.ShiftedHermiteCore
 
 

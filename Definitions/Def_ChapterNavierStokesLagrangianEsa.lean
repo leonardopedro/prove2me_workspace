@@ -1,9 +1,6 @@
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianEsa.Part1
-import Definitions.Def_ChapterNavierStokesLagrangianEsa.Part2
 
 /-!
 # Essential self-adjointness of the **full** Navier–Stokes Hamiltonian *after the
@@ -246,24 +243,16 @@ noncomputable def latticeLagData (v : Fin 3 → LinfZ) (w : LinfZ) (fr : Fin 3 �
   dense := finiteModes_dense
   P_symm _ := by
     intro x y
-    change (inner ℂ (momentum (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (momentum (y : L2Z))
-    exact momentum_isSymmetric (x : L2Z) (y : L2Z)
+    simpa using momentum_isSymmetric (x : L2Z) (y : L2Z)
   Q_symm _ := by
     intro x y
-    change (inner ℂ (momentum (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (momentum (y : L2Z))
-    exact momentum_isSymmetric (x : L2Z) (y : L2Z)
+    simpa using momentum_isSymmetric (x : L2Z) (y : L2Z)
   drive_symm i := by
     intro x y
-    change (inner ℂ (velocityOp (v i) (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (velocityOp (v i) (y : L2Z))
-    exact velocityOp_isSymmetric (v i) (x : L2Z) (y : L2Z)
+    simpa using velocityOp_isSymmetric (v i) (x : L2Z) (y : L2Z)
   constraint_symm := by
     intro x y
-    change (inner ℂ (velocityOp w (x : L2Z)) (y : L2Z) : ℂ)
-      = inner ℂ (x : L2Z) (velocityOp w (y : L2Z))
-    exact velocityOp_isSymmetric w (x : L2Z) (y : L2Z)
+    simpa using velocityOp_isSymmetric w (x : L2Z) (y : L2Z)
   nu_nonneg := hnu
 
 

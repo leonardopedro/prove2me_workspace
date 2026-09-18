@@ -4,6 +4,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 import Definitions.Def_BookProof.ChapterScalaronEsa
+import Theorems.Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong
 
 open BookProof.ScalaronEsa
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.qgScalaron_stone_flow
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterMajoranaClifford
+import Definitions.Def_ChapterMajoranaClifford
+open BookProof.MajoranaClifford
 open BookProof.ScalaronEsa
 
 

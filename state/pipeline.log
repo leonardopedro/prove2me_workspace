@@ -47212,3 +47212,18 @@ Note: It is not possible to treat `d` as an implicitly bound variable here b)
 19:49:31 sync: read 5415 problem publish job(s)
 19:49:31 summary: 145 done, 11 pending, 2 failed, 62 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
 19:49:31 chunk: 0 item(s) processed in 0s
+20:27:42 sync: read 343 definition publish job(s)
+20:28:04 sync: read 5415 problem publish job(s)
+20:28:30 sync: read 343 definition publish job(s)
+20:28:50 sync: read 5415 problem publish job(s)
+20:28:51 sync: checked 25 pending solution(s), 0 already Proved
+20:28:54 sync: checked 50 pending solution(s), 0 already Proved
+20:28:59 sync: checked 75 pending solution(s), 0 already Proved
+20:29:05 sync: checked 100 pending solution(s), 0 already Proved
+20:29:10 sync: checked 125 pending solution(s), 0 already Proved
+20:29:13 sync: checked 150 pending solution(s), 0 already Proved
+20:29:18 sync: checked 175 pending solution(s), 0 already Proved
+20:29:20 sync: checked 200 pending solution(s), 0 already Proved
+20:29:22 sync: checked 225 pending solution(s), 0 already Proved
+20:29:26 sync: checked 250 pending solution(s), 0 already Proved
+20:29:28 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done

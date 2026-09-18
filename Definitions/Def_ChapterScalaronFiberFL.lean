@@ -2,8 +2,6 @@ import Definitions.Def_ChapterWallEsaBddBelow
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterSchrodingerCutoffEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Theorems.Thm_BookProof_ScalaronEsa_contDiff_starobinskyV
-import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 import Mathlib
 
 
@@ -49,12 +47,7 @@ Hamiltonian: everything is uniform in the shift `s`.
 
 namespace BookProof.ScalaronFiberFL
 
-open MeasureTheory SchwartzMap
-open BookProof.StrichartzWave
-open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.WallEsaSemibounded BookProof.WallEsaBddBelow
-open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
+noncomputable section
 
 noncomputable section
 

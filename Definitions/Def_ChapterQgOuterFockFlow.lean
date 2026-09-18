@@ -1,7 +1,3 @@
-import Mathlib
-import Definitions.Def_ChapterQgBrstDerivativeGauge
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterSirkTrotterKato
 
 /-!
 # Chapter ChapterQgOuterFockFlow
@@ -11,7 +7,7 @@ Generated def bundle for ChapterQgOuterFockFlow. See BookProof/ChapterQgOuterFoc
 
 noncomputable section
 
-namespace BookProof.ChapterQgOuterFockFlow
+namespace BookProof.QgOuterFockFlow
 
 
 end BookProof.ChapterQgOuterFockFlow

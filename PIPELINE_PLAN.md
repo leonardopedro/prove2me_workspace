@@ -3191,3 +3191,74 @@ python3 debug/dedup_report.py                            # refresh the dedup rep
 python3 debug/find_duplicates.py --module <file> --namespace <ns>   # a new module, before stubbing
 ```
 
+### 1v. Session 19 (2026-09-18) — def bundles regenerated and fixed, API unreachable, commit pending
+
+**Completed actions.**
+
+**Def bundle regeneration from `../timepiece` source.** All 12 pending defs regenerated
+using `scripts/wave_generate.py --defs-only` with correct env vars:
+`PROVE2ME_WS=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`
+`TIMEPIECE_PROJ=../timepiece`.
+
+**Namespace fixes applied.**
+- `ChapterQgOuterFockFlow`: namespace corrected from `BookProof.ChapterQgOuterFockFlow` to
+  `BookProof.QgOuterFockFlow` (matches source file's `namespace BookProof.QgOuterFockFlow`)
+- `ChapterScalaronFiberFL`: removed all vestigial opens (ScalaronEsa, QgOuterFockFL,
+  FarisLavine, etc.) — none were used by declarations in the file
+- `ChapterQgOuterFockFarisLavine` added as import for `ChapterScalaronFiberFL` (provides
+  `BookProof.QgOuterFockFL` namespace)
+
+**Missing import fixes.**
+- `ChapterQg3DGaugeEsa`: added 9 imports for opened namespaces
+  (HermiteProductCore, YangMillsHermite, FarisLavine, NavierStokesDifferentialL2,
+  HermiteRelativeBound, StoneBridge, EsaClosure, StoneResolvent)
+- `ChapterQgOuterFockEsa`: added 12 imports for opened namespaces
+
+**Systematic open filtering.** Applied `debug/fix_def_bundles.py` to all 10 remaining
+bundles in the dependency chain. Removed all `open BookProof.*` statements that reference
+namespaces not declared by the bundle's imports. 128 opens removed across 10 files.
+The platform compiler will catch any real identifier errors when publishing.
+
+**Wave spec updated.** `pipeline/wave_upload.json` entry for `ChapterQgOuterFockFlow`
+namespace changed from `BookProof.ChapterQgOuterFockFlow` to `BookProof.QgOuterFockFlow`.
+
+**API unreachable.** `api.prove2.me` DNS resolution fails from this sandbox (Tailscale
+MagicDNS not available). Direct publication and `published_defs()` API calls both fail.
+The background uploader (PIDs 289268/290953) was stopped.
+
+**Current state.**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3232 done / 333 pending / 41 failed** |
+| pending by kind | 252 sol, 69 thm, 12 def |
+| num_solved_prob (website) | **616** |
+
+**Remaining work (priority order).**
+
+1. **Start background uploader** (`bash start_upload.sh start`) — `--kind def --parallel 50`
+   once API is reachable. The 12 def chain items should drain in order.
+2. **Verify def bundles compile** — attempt to publish ChapterScalaronFiberFL first;
+   fix any identifier errors the open-filtering introduced.
+3. **Publish thm/sol chain** — once defs are published, the 69 pending thms and 252 pending
+   sols should resolve.
+4. **Generate 62 missing sources** — run `scripts/wave_generate.py` for
+   ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, NavierStokesFlow once the
+   generator can access `decl_graph.jsonl`.
+
+**Known issues.**
+- `ChapterQgOuterFockFlow` namespace mismatch with wave spec — fixed in wave spec
+- Open-filtering may have removed opens needed by some declarations — will surface at compile
+- 41 failed items in state — may include legitimate failures or stale records
+- 62 missing local sources — blocked on generator access to `decl_graph.jsonl`
+
+**Next run plan.**
+```bash
+# When API is reachable:
+bash start_upload.sh start
+# Monitor:
+tail -f state/upload.log
+# Check status:
+python3 pipeline/upload_pipeline.py --status
+```

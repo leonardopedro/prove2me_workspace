@@ -1724,7 +1724,7 @@
     },
     "ChapterQgOuterFockFlow": {
       "definition_name": "ChapterQgOuterFockFlow",
-      "namespace": "BookProof.ChapterQgOuterFockFlow",
+      "namespace": "BookProof.QgOuterFockFlow",
       "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgOuterFockFlow.lean",
       "title": "Chapter ChapterQgOuterFockFlow",
       "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.QgOuterFockFlow`, source chapter `BookProof/ChapterQgOuterFockFlow.lean`): Chapter ChapterQgOuterFockFlow\n\nGenerated def bundle for ChapterQgOuterFockFlow. See BookProof/ChapterQgOuterFockFlow.lean for full context.",

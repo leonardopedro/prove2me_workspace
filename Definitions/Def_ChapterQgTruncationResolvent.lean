@@ -1,10 +1,3 @@
-import Definitions.Def_ChapterQgOuterFockFlow
-import Definitions.Def_ChapterHashimotoComplexShifts
-import Definitions.Def_ChapterScalaronFiberFL
-import Definitions.Def_ChapterScalaronOuterFockFL
-import Definitions.Def_ChapterScalaronEsa
-import Definitions.Def_ChapterQgOuterFockCoreFL
-import Mathlib
 
 
 /-!
@@ -53,10 +46,6 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.QgTruncationResolvent
 
 open Filter Topology
-open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
@@ -162,7 +151,6 @@ variable (W : WallPot) (Q : QgModeData ι)
 
 /-! ## 5. The physical instance: the momentum cutoff of the continuum model -/
 
-open BookProof.QgContinuumModeInstance
 
 /-- **The momentum cutoff**: the window of all vielbein components with `|k|² ≤ n`.  This is
 the discretization actually used in computations — the exact Fourier modes are kept, the
@@ -175,7 +163,6 @@ def momWindow (n : ℕ) : Set CMode := {x | momSq x.1 ≤ (n : ℝ)}
 
 /-! ## 6. The statement in the Hashimoto shift-invert interface -/
 
-open BookProof.HashimotoShiftInvert
 
 
 

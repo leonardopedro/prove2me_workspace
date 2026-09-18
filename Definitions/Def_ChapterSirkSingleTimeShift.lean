@@ -1,7 +1,3 @@
-import Definitions.Def_ChapterSirkEndToEnd
-import Definitions.Def_ChapterQgTruncationResolvent
-import Definitions.Def_ChapterQgManifoldModeInstance
-import Mathlib
 
 
 /-!
@@ -60,8 +56,6 @@ open scoped InnerProductSpace
 namespace BookProof.SirkSingleTime
 
 open Filter Topology
-open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
@@ -101,7 +95,6 @@ variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
 
 /-! ## 4. The SIRK bound at a single finite time -/
 
-open BookProof.ChapterSirkEndToEnd BookProof.ChapterH4 BookProof.ChapterH6
 
 variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
 
@@ -109,18 +102,14 @@ variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [
 
 /-! ## 5. The quantum-gravity instance: any single shift, any single finite time -/
 
-open BookProof.QgTruncationResolvent BookProof.FarisLavine BookProof.EsaClosure
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL BookProof.QgOuterFockCoreFL
 
 variable {ι : Type*}
 
 
 
-open BookProof.QgContinuumModeInstance
 
 
 
-open BookProof.QgManifoldModeInstance
 
 
 

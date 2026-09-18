@@ -102,7 +102,8 @@ ChapterWallEsaBddBelow (PUBLISHED)
 
 ## Next Steps
 
-1. **Regenerate and publish** ChapterScalaronFiberFL and ChapterQg3DGaugeEsa
-2. **Publish the chain** in dependency order using the uploader
-3. **Fix remaining identifier errors** in ChapterQgOuterFockEsa
-4. **Generate stubs** for 62 unsubmittable items using generator with `decl_graph.jsonl`
+1. **API unreachable** — `api.prove2.me` DNS fails from this sandbox. Direct publication impossible.
+2. **Regenerate and publish** ChapterScalaronFiberFL (head of chain) — 5 attempts remaining
+3. **Fix ChapterQgOuterFockEsa** identifier errors (`coreOp`, `qgKappa` unknown)
+4. **Publish the chain** in dependency order once API is reachable
+5. **Generate stubs** for 62 unsubmittable items using generator with `decl_graph.jsonl`

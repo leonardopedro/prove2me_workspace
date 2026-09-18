@@ -97,7 +97,8 @@ def main():
 
     # ---- the theorems already in the upload pipeline, classified the same way ----
     loc = fd.local_theorems()
-    p_sh, p_dh, p_sg, p_nm, p_lf = (collections.defaultdict(list) for _ in range(5))
+    p_sh, p_dh, p_sg, p_nm, p_lf, p_pe = (collections.defaultdict(list)
+                                          for _ in range(6))
     for r in thms:
         p_sh[r["sh"]].append(r)
         if r["dh"]:
@@ -105,10 +106,16 @@ def main():
         p_sg[r["sg"]].append(r)
         p_nm[r["name"]].append(r)
         p_lf[r["leaf"]].append(r)
-    pipe = collections.OrderedDict((k, []) for k in ("STMT", "DECL", "SIG", "NAME", "LEAF"))
+        if r["status"] == "Proved":          # only a Proved node is reusable
+            sp = fd.shape(r["sem"] or "")
+            if sp:
+                p_pe[sp].append(r)
+    pipe = collections.OrderedDict(
+        (k, []) for k in ("STMT", "DECL", "SIG", "SHAPE", "NAME", "LEAF"))
     for lt in loc:
         for label, table, key in (("STMT", p_sh, "sh"), ("DECL", p_dh, "dh"),
-                                  ("SIG", p_sg, "sg"), ("NAME", p_nm, "name"),
+                                  ("SIG", p_sg, "sg"), ("SHAPE", p_pe, "pe"),
+                                  ("NAME", p_nm, "name"),
                                   ("LEAF", p_lf, "leaf")):
             v = lt.get(key)
             if not v:
@@ -120,6 +127,20 @@ def main():
                     continue
                 pipe[label].append((lt, r))
     pipe_pending = [lt for lt in loc if lt["name"] not in by_name]
+
+    # ---- alpha-renamed restatements of Proved nodes (`sig` cannot see these) ----
+    alpha = collections.OrderedDict()
+    for lt in pipe_pending:
+        seen = set()
+        for r in p_pe.get(lt.get("pe") or "", []):
+            if r["name"] in (lt["name"], lt.get("declname")) or r["name"] in seen:
+                continue
+            seen.add(r["name"])
+            alpha.setdefault(lt["name"], []).append(r)
+    alpha_self = sum(1 for v in alpha.values()
+                     for r in v if r["author"] == uname)
+    alpha_other = sum(1 for v in alpha.values()
+                      for r in v if r["author"] != uname)
 
     now = datetime.date.today().isoformat()
 
@@ -225,10 +246,13 @@ def main():
           "`pipeline/wave_upload.json` (`debug/find_duplicates.py --report`). This is the "
           "**avoid duplication in prove2me** check for the incoming work: a wave theorem that "
           "already exists on the platform should be re-published as a reduction, not re-proved.\n\n")
-        W(f"* wave theorems parsed: **{len(loc)}**; already present under their own dotted name: "
-          f"**{len(loc) - len(pipe_pending)}**; live pending frontier: **{len(pipe_pending)}**.\n")
+        W(f"* wave theorems parsed: **{len(loc)}**; already present under their own dotted "
+          f"name: **{len(loc) - len(pipe_pending)}**; live pending frontier: "
+          f"**{len(pipe_pending)}**.\n")
+        W("* local statements are hashed from the **declaration** (`decl_only`), matching "
+          "the platform's `formal_statement`; see the correction below.\n")
         W("\n| class | collisions | with a `Proved` node |\n| :-- | --: | --: |\n")
-        for label in ("STMT", "DECL", "SIG", "NAME", "LEAF"):
+        for label in ("STMT", "DECL", "SIG", "SHAPE", "NAME", "LEAF"):
             hits = pipe[label]
             proved = [x for x in hits if x[1]["status"] == "Proved"]
             W(f"| `{label}` | {len(hits)} | {len(proved)} |\n")
@@ -254,10 +278,66 @@ def main():
           "match is a naming coincidence. The other two are different statements under a shared "
           "leaf (`NavierStokes.norm_heatFlow_le` is a 3-D vector heat-flow bound vs. our generic "
           "`E/F` one; `PythHydra.phi_zero` is `phi k 0 = 1` vs. our `phi 0 = Complex.exp`).\n")
-        W("\n**Conclusion.** No wave theorem is an exact restatement of another user's node, so "
-          "there is no pipeline item to re-publish as a cross-author reduction. The reusable "
-          "material for the *new* Faris–Lavine / Fock work is the instrument table of "
-          "`CONSOLIDATED_PLAN.md` §“Cross-platform reuse”, not a wave-node twin.\n")
+        n_stmt = len(pipe["STMT"])
+        n_sig = len(pipe["SIG"])
+        n_shape = len(pipe["SHAPE"])
+        cross_stmt = [x for x in pipe["STMT"] if x[1]["author"] != uname]
+        W("\n**Correction (2026-09-18).**  Up to and including the previous run this "
+          "table was misleading: the *local* side was hashed from the whole stub file — "
+          "`import`/`open` prologue included — while the platform side is hashed from "
+          "`formal_statement`, which is the bare declaration. The two objects were never "
+          "comparable, so `STMT`/`SIG`/`SHAPE` could not fire and the `0` in the `STMT` "
+          "row read as a clean bill of health when it was an artifact of the mismatch. "
+          "`local_theorems` now hashes `decl_only(...)`, as it always hashed `dh`, and "
+          "the same classes report "
+          f"**{n_stmt} / {n_sig} / {n_shape}** collisions.\n\n")
+        W(f"* **{n_stmt}** of them are exact restatements (`STMT`), **all against our "
+          f"own** nodes — the cross-author `STMT` count is {len(cross_stmt)}.\n")
+        W("* Most are already resolved by the pipeline's own reuse detection: the "
+          "publish-job sync marks them `reused: true` with the id of the existing node "
+          "(`reused_status: published` for the theorem, `Proved` for the solution) "
+          "instead of minting a twin. `PIPELINE_PLAN.md` §1y lists the six and the two "
+          "that are still open.\n")
+        W("* `SIG`/`SHAPE` are triage lists, not verdicts: they compare identifier "
+          "*sets*, so statements sharing API names (`structureConstant_antisymm_swap` / "
+          "`_rotate` / `jacobi`) collide without being restatements.\n")
+        W("\n**Conclusion.** No wave theorem restates **another user's** node in any class, "
+          "so there is no pipeline item to re-publish as a cross-author reduction. The "
+          "reusable material for the *new* Faris–Lavine / Fock work is the instrument "
+          "table of `CONSOLIDATED_PLAN.md` §“Cross-platform reuse”, not a wave-node "
+          "twin. What the wave *does* contain is a handful of **self**-restatements "
+          "(two chapters of ours stating one lemma), which the `SHAPE` class now catches "
+          "before a stub is generated rather than after.\n")
+
+        # ---- G. alpha-renamed restatements (the class `sig` cannot see) ----
+        W("\n## G. Alpha-renamed restatements of an already-`Proved` node\n\n")
+        W("The classes above compare token sets *including* the binder names, which is "
+          "blind to the commonest way a new chapter duplicates an old node: the same "
+          "statement with renamed variables. Two spellings slip through in particular — "
+          "single-letter names (`b`, `g`) are identifiers to the tokenizer and stay in "
+          "the set, while **Greek names (`β`, `γ`) are not matched by it at all** and "
+          "silently disappear, so `sig` and `STMT` compare two spellings of one theorem "
+          "as different strings. The `SHAPE` row above (identifier set with all "
+          "single-character names dropped, `debug/find_duplicates.py: shape`) closes "
+          "that gap.\n\n")
+        W(f"Of the **{len(pipe_pending)}** not-yet-published wave theorems, "
+          f"**{len(alpha)}** restate a `Proved` node up to binder renaming: "
+          f"**{alpha_self}** against one of our own nodes and **{alpha_other}** against "
+          f"another user's.\n\n")
+        if not alpha:
+            W("_None._\n")
+        for name, rs in list(alpha.items())[:args.max]:
+            W(f"* ours `{name}`\n")
+            for r in rs[:3]:
+                who = "**ours**" if r["author"] == uname else f"**{r['author']}**"
+                W(f"  - restates `{r['name']}` — {who}, `{r['id']}`: `{r['sem'][:140]}`\n")
+        if alpha:
+            W("\n**Action.** These need no new proof and no new node: they are the same "
+              "claim, so the pipeline should resolve them as already present rather than "
+              "re-submitting (the publish-job sync already records them as `reused: true` "
+              "with the id of the existing node — `reused_status: published`; see "
+              "`PIPELINE_PLAN.md` §1n/§1y). The `SHAPE` check exists so the *generator* can "
+              "skip a restatement before it becomes a stub, instead of after.\n")
 
         W("\n## Method and caveats\n\n")
         W("* Ground truth for “proved by us” is `GET /users/<uid>` → `solved_problems` "
@@ -275,6 +355,14 @@ def main():
         W("* The matcher is **syntactic**: it does not know that two statements are "
           "logically equivalent under different casts/coercions, nor that one implies "
           "the other. Treat “near” as a triage list, not a verdict.\n")
+        W("* `SIG` keeps the binder names, so despite its docstring it is *not* "
+          "binder-insensitive; `SHAPE` is, but it drops every single-character "
+          "identifier, so it matches on the multi-letter API names alone and needs a "
+          "read. Neither class sees through `PiLp`/coercion restatements, which is why "
+          "`QFS.abs_coord_le_norm` above is a leaf-only hit.\n")
+        W("* The catalogue is a snapshot of the default environment: a theorem published "
+          "after the index was built is invisible to every class here. Refresh with "
+          "`--reset --index` before treating a zero as final.\n")
         W("* Re-run after each upload wave: `python3 debug/find_duplicates.py --reset "
           "--index` (in bounded chunks) then `python3 debug/dedup_report.py`.\n")
 

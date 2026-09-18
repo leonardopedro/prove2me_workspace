@@ -180,6 +180,19 @@ def:ChapterYangMillsBandBounds (1 attempt, imports ChapterYangMillsAbelianFockEs
 - **12 defs blocked by ordering** - Will drain as dependencies are published
 
 ### 🎯 Current Focus:
-- Background uploader continues processing the def chain
-- Fix identifier errors in ChapterQgOuterFockEsa
-- Regenerate ChapterScalaronFiberFL and other blocked defs
+- Background uploader STOPPED — API unreachable from sandbox
+- Fix identifier errors in ChapterQgOuterFockEsa (coreOp, qgKappa unknown)
+- Regenerate all 12 blocked defs from `../timepiece` source
+- Update pipeline plan (§1u)
+- Commit and push when ready
+
+### 🔴 Critical Blocker:
+- `api.prove2.me` DNS resolution fails from this sandbox — direct publication and `published_defs()` API call both impossible
+- Background uploader stuck in infinite loop waiting for unpublished def bundles
+- **To resume**: restart uploader when network access is restored, or run from a host with API access
+
+### ✅ Completed This Session:
+1. Stopped background uploaders (PIDs 156321, 157759, 289268, 290953)
+2. Regenerated def bundles for all 12 chain defs from `../timepiece` source
+3. Updated PIPELINE_PLAN.md §1u with current knowledge
+4. Restored lakefile.lean to original state (no Mathlib — local compilation impractical)

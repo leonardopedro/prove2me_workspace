@@ -21,8 +21,11 @@ Usage
     python3 debug/find_duplicates.py --report --max 40       # cap examples
 
 Matching is exact on a normalized statement hash and on a normalized
-declaration-only hash, plus a token-set signature; the classes and their limits
-are printed in the report header.  Read-only against the platform.
+declaration-only hash, plus a token-set signature and an alpha-insensitive
+`SHAPE` signature (which catches a statement restated under renamed binders --
+the one class that sees through Greek-vs-ASCII binder spellings); the classes
+and their limits are printed in the report header.  Read-only against the
+platform.
 """
 import argparse
 import hashlib
@@ -78,10 +81,41 @@ def decl_only(text):
 
 
 def sig(text):
-    """Token multiset signature — binder-name-insensitive near-match key."""
+    """Token multiset signature — near-match key.
+
+    NOT binder-name-insensitive, despite the name: it keeps every identifier, so a
+    theorem that differs from a platform node only in its binder names is missed.  Use
+    `shape` for that (and see its docstring for the Unicode blind spot).
+    """
     toks = sorted(set(_WORD.findall(text)))
     toks = [t for t in toks if t not in _KEYWORDS]
     return hashlib.sha1(" ".join(toks).encode()).hexdigest()
+
+
+def shape(text, min_tokens=5):
+    """Alpha-insensitive signature: the token set with short names dropped.
+
+    This is the class that catches a theorem restated under *renamed binders* — the
+    commonest way a new chapter duplicates an old node (`(b g : Vel) : crd (coreState b) g
+    = if g = b then 1 else 0` against `(β γ : Vel) : …`).  Two spellings slip past every
+    other class:
+
+    * single-letter names (`b`, `g`) are real identifiers to `_WORD` and so stay in the
+      token set, while
+    * **Greek names are not matched by `_WORD` at all** (`[A-Za-z_]` does not cover
+      `β`/`γ`), so they silently vanish.
+
+    Dropping every token of length <= 1 makes the two spellings comparable.  The price is
+    sensitivity: only the *set* of multi-letter identifiers is compared, so statements
+    built from the same handful of API names can collide.  `min_tokens` suppresses the
+    degenerate ones (short statements carrying almost no content).
+
+    Returns None when the statement is too small to compare meaningfully.
+    """
+    keep = [t for t in _WORD.findall(text) if len(t) > 1 and t not in _KEYWORDS]
+    if len(set(keep)) < min_tokens:
+        return None
+    return hashlib.sha1(" ".join(sorted(set(keep))).encode()).hexdigest()
 
 
 _KEYWORDS = {
@@ -188,15 +222,22 @@ def local_theorems():
             text = open(path).read()
         except OSError:
             continue
-        stmt = norm_stmt(text)
+        # The platform side is hashed from `formal_statement`, which is the *declaration*
+        # (`theorem <name> … := by sorry`).  Hashing the whole stub here would put the
+        # `import`/`open` prologue into the statement, so no STMT/SIG/SHAPE class could
+        # ever fire against it -- the declaration is the comparable object.
+        decl = decl_only(text)
+        stmt = norm_stmt(decl)
         out.append({
             "slug": slug,
             "name": meta.get("name"),
             "declname": declared_name(text),
             "chapter": meta.get("chapter"),
+            "sem": stmt,
             "sh": h(stmt),
-            "dh": h(decl_only(text)),
+            "dh": h(decl),
             "sg": sig(stmt),
+            "pe": shape(stmt),
             "leaf": (meta.get("name") or slug).split(".")[-1],
         })
     return out
@@ -237,6 +278,7 @@ def module_decls(path, namespace=""):
             "sh": h(stmt),
             "dh": h(decl),
             "sg": sig(stmt),
+            "pe": shape(stmt),
             "leaf": m.group(1),
         })
     return out
@@ -248,6 +290,7 @@ def module_report(path, namespace, max_examples):
     print(f"module: {path}  namespace: {namespace or '-'}")
     print(f"platform index: {len(rows)} rows; local declarations parsed: {len(locals_)}")
     by_sh, by_dh, by_sig, by_name, by_leaf = {}, {}, {}, {}, {}
+    by_shape = {}
     for r in rows:
         by_sh.setdefault(r["sh"], []).append(r)
         if r["dh"]:
@@ -255,10 +298,15 @@ def module_report(path, namespace, max_examples):
         by_sig.setdefault(r["sg"], []).append(r)
         by_name.setdefault(r["name"], []).append(r)
         by_leaf.setdefault(r["leaf"], []).append(r)
-    cls = {"STMT": [], "DECL": [], "SIG": [], "NAME": [], "LEAF": []}
+        if r["status"] == "Proved":
+            sp = shape(r["sem"] or "")
+            if sp:
+                by_shape.setdefault(sp, []).append(r)
+    cls = {"STMT": [], "DECL": [], "SIG": [], "SHAPE": [], "NAME": [], "LEAF": []}
     for lt in locals_:
         for label, table, key in (("STMT", by_sh, "sh"), ("DECL", by_dh, "dh"),
-                                  ("SIG", by_sig, "sg"), ("NAME", by_name, "name"),
+                                  ("SIG", by_sig, "sg"), ("SHAPE", by_shape, "pe"),
+                                  ("NAME", by_name, "name"),
                                   ("LEAF", by_leaf, "leaf")):
             val = lt.get(key)
             if not val:
@@ -274,7 +322,7 @@ def module_report(path, namespace, max_examples):
         print(f"note: {len(skipped)} declaration(s) without a comparable statement "
               f"(`abbrev`/`structure`; compared by NAME/LEAF only): "
               + ", ".join(lt["slug"] for lt in skipped[:8]))
-    for label in ("STMT", "DECL", "SIG", "NAME", "LEAF"):
+    for label in ("STMT", "DECL", "SIG", "SHAPE", "NAME", "LEAF"):
         hits = cls[label]
         others = [x for x in hits if x[1]["status"] == "Proved"]
         print(f"{label}: {len(hits)} collisions ({len(others)} with a Proved node)")
@@ -291,10 +339,12 @@ def report(max_examples):
           f"done={meta.get('done')})")
     print(f"local wave theorems parsed: {len(locals_)}")
     print("match classes: STMT (same normalized statement), DECL (same declaration "
-          "text), SIG (same token set, binder-renamed/near), NAME (same dotted name), "
-          "LEAF (same last name component).\n")
+          "text), SIG (same token set), SHAPE (same token set after dropping short "
+          "binder names -- catches alpha-renamed restatements), NAME (same dotted "
+          "name), LEAF (same last name component).\n")
 
     by_sh, by_dh, by_sig, by_name, by_leaf, me = {}, {}, {}, {}, {}, {}
+    by_shape = {}
     for r in rows:
         by_sh.setdefault(r["sh"], []).append(r)
         if r["dh"]:
@@ -303,6 +353,10 @@ def report(max_examples):
         by_name.setdefault(r["name"], []).append(r)
         by_leaf.setdefault(r["leaf"], []).append(r)
         me.setdefault(r["by"], set()).add(r["author"])
+        if r["status"] == "Proved":          # only a Proved node is reusable
+            sp = shape(r["sem"] or "")
+            if sp:
+                by_shape.setdefault(sp, []).append(r)
 
     # 1. within-platform duplicates across authors (reuse candidates)
     cross = [g for g in by_sh.values()
@@ -313,10 +367,11 @@ def report(max_examples):
             f"{x['name']} [{x['status']}/{x['author']}]" for x in g[:4]))
 
     # 2. local theorems that collide with the platform
-    cls = {"STMT": [], "DECL": [], "SIG": [], "NAME": [], "LEAF": []}
+    cls = {"STMT": [], "DECL": [], "SIG": [], "SHAPE": [], "NAME": [], "LEAF": []}
     for lt in locals_:
         checks = [("STMT", by_sh, "sh"), ("DECL", by_dh, "dh"), ("SIG", by_sig, "sg"),
-                  ("NAME", by_name, "name"), ("LEAF", by_leaf, "leaf")]
+                  ("SHAPE", by_shape, "pe"), ("NAME", by_name, "name"),
+                  ("LEAF", by_leaf, "leaf")]
         for label, table, key in checks:
             val = lt.get(key)
             if not val:
@@ -328,7 +383,7 @@ def report(max_examples):
                     continue
                 cls[label].append((lt, r))
     print()
-    for label in ("STMT", "DECL", "SIG", "NAME", "LEAF"):
+    for label in ("STMT", "DECL", "SIG", "SHAPE", "NAME", "LEAF"):
         hits = cls[label]
         others = [x for x in hits if x[1]["status"] == "Proved"]
         print(f"[B] {label}: {len(hits)} collisions "

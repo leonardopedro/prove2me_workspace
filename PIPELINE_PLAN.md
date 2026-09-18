@@ -2076,6 +2076,92 @@ def:ChapterYangMillsBandBounds (1 attempt, imports ChapterYangMillsAbelianFockEs
 
 ## 2. Platform model (what compiles where)
 
+### 1u. Session 18 (2026-09-18) — background uploader stuck, generator over-simplified, plan updated
+
+**Background uploader (PID 289268/290953) was running since ~19:44** with
+`--kind def --parallel 10 --job-timeout 60`. It was stuck in an infinite loop:
+`"waiting on unpublished def bundle(s): ChapterScalaronFiberFL (2 items)"` — the 11
+def chain items had no state entries (never submitted), and the platform's publish-jobs
+list didn't have them as PUBLISHED. Root cause: the uploader's preflight check uses
+`published_defs()` which reads the platform catalogue API; the API is unreachable from this
+sandbox (DNS failure on `api.prove2.me`), so the preflight check fails silently and the loop
+repeats every 25 s forever.
+
+**API unreachable** — all `urllib.request` calls to `api.prove2.me` fail with
+`socket.gaierror: Name or service not known`. This is a sandbox network isolation issue,
+not an API outage. The uploader's internal API function (`api()`) also cannot reach the
+server. Direct def publication via the API is impossible from this host.
+
+**Stopped background uploaders** (PIDs 156321, 157759, 289268, 290953) — the crash-loop
+wrapper (`start_upload.sh`) will restart them if called.
+
+**Regenerated def bundles from `../timepiece` source** for all 11 chain defs:
+`ChapterScalaronFiberFL`, `ChapterScalaronOuterFockFL`, `ChapterQgVielbeinModeInstance`,
+`ChapterQgContinuumModeInstance`, `ChapterQgTruncationResolvent`, `ChapterQgTimeStepping`,
+`ChapterQgManifoldModeInstance`, `ChapterSirkSingleTimeShift`, `ChapterFiniteSectionSingleTime`,
+`ChapterQymTimeIndependentFlow`, `ChapterYangMillsAbelianFockEsa`, `ChapterYangMillsBandBounds`.
+
+**Generator over-simplified 5 files** — `wave_generate.py --defs-only` stripped imports that
+are needed for `open` statements in the source:
+- `ChapterScalaronFiberFL`: removed 2 `Thm_*` imports (theorems not in wave spec) — safe
+- `ChapterScalaronOuterFockFL`: `QgOuterFockFlow` → `QgOuterFockFL` namespace fix — reverted
+- `ChapterQgManifoldModeInstance`: removed 8 imports (EsaClosureCore, FarisLavine, etc.) —
+  **reverted** (file needs these for its opens)
+- `ChapterQgTruncationResolvent`: removed 4 imports (ScalaronFiberFL, etc.) — **reverted**
+- `ChapterYangMillsBandBounds`: removed 14 imports — **reverted**
+
+All files restored to pre-generator state via `git checkout`.
+
+**API unreachability impact on the pipeline** — since direct publication is impossible,
+the workflow is:
+1. Prepare def/them/sol files on disk (done)
+2. Start background uploader (`bash start_upload.sh start`) — it calls `published_defs()`
+   which reads the platform API; if the API is reachable from the host, it works
+3. Monitor `state/upload.log` for progress
+4. If the API becomes reachable again, the uploader will automatically pick up the chain
+
+**Current state (2026-09-18 ~20:00)**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3232 done / 333 pending / 41 failed** |
+| pending by kind | 252 sol, 69 thm, 12 def |
+| num_solved_prob (website) | 616 (last measured) |
+
+**Def chain (12 pending)** — unchanged from §1t:
+`ChapterScalaronFiberFL` (5 attempts, no error — never successfully submitted) →
+`ChapterScalaronOuterFockFL` → `ChapterQgVielbeinModeInstance` → `ChapterQgContinuumModeInstance` →
+`ChapterQgTruncationResolvent` → `ChapterQgTimeStepping` → `ChapterQgManifoldModeInstance` and
+parallel: `ChapterSirkSingleTimeShift` (also imports QgTruncationResolvent),
+`ChapterFiniteSectionSingleTime` (imports SirkSingleTimeShift + QymTimeIndependentFlow),
+`ChapterQymTimeIndependentFlow` (imports FiniteSectionSingleTime + QgCouplingDGammaSum),
+`ChapterYangMillsAbelianFockEsa` (imports QymTimeIndependentFlow),
+`ChapterYangMillsBandBounds` (imports YangMillsAbelianFockEsa).
+
+**ChapterQgOuterFockEsa** — 5 attempts FAILED. Errors: `line 116: Unknown identifier 'coreOp'`,
+`line 142: Unknown identifier 'qgKappa'`. Both should resolve through import chain
+(`ChapterQg3DGaugeEsa` opens `BookProof.NavierStokesFlow.DifferentialL2` and
+`BookProof.QuantumGravity3DGauge`). Root cause unclear — possibly platform compilation
+ordering issue or stale publish jobs. Needs investigation when API is reachable.
+
+**Next actions (when API reachable)**
+
+1. Publish `ChapterScalaronFiberFL` (5 attempts, no error — might need reset)
+2. Fix `ChapterQgOuterFockEsa` identifier errors
+3. Start background uploader
+4. Generate stubs for 62 blocked items
+5. Continue thm/sol publication
+
+**Environment notes**
+
+- `../timepiece` contains all sources: `decl_graph.jsonl` (15,095 records), `BookProof/`
+  (617 chapters), Lean 4.28.0 + Mathlib v4.28.0 in `lakefile.toml`/`lake-manifest.json`
+- Generator (`scripts/wave_generate.py`) runs successfully from this host
+- API (`api.prove2.me`) unreachable from sandbox — direct publication impossible
+
+---
+
 The platform compiles each **def bundle** (`Definitions/Def_ChapterX.lean`) with ONLY
 `import Mathlib` + `Definitions.Def_*` modules **already published**. Consequences:
 
@@ -3007,4 +3093,101 @@ Note: `ChapterQgOuterFockEsa` was previously first in the chain but is now secon
 4. Add `ChapterQuantumGravity3DGauge` to the generator's WAVE list (just added to wave_upload.json but not yet to WAVE)
 
 **Git commit (this update):** Def bundle regenerations, generator WAVE sync, pipeline guard fix, SESSION_SUMMARY.md update. `credentials.json` and `state/` remain uncommitted.
+
+
+---
+
+## §1y. Session 25 (2026-09-18) — the reuse identification, **corrected**: the wave check was comparing two different objects
+
+**What the task asked.** Re-run the prove2me-side reuse identification for (a) every new addition
+and (b) the theorems already in the pipeline, so nothing in prove2me gets duplicated, and register
+the outcome in `PIPELINE_PLAN.md` + the dedup report (§1n, §1o, `DEDUP_REPORT_leonardopedro.md`).
+
+**The check was not doing what its table said.**  §1n/§1o/F compare the local wave against the
+platform catalogue in classes `STMT`/`DECL`/`SIG`/`NAME`/`LEAF`, and reported `STMT = 0` — read as
+“no wave theorem restates an existing node”.  That zero was an artifact, not a result:
+
+* the **platform** side is hashed from `formal_statement`, which is the bare declaration
+  (`theorem <full.name> <binders> : <type> := by sorry`);
+* the **local** side (`local_theorems`) hashed the *whole stub file* — `import`/`open` prologue
+  included — for `sh`, `sg`, and (once added) `pe`, while `dh` alone used `decl_only`.
+
+Two different objects can never collide, so `STMT`/`SIG`/`SHAPE` could not fire on the wave path.
+`local_theorems` now hashes `decl_only(text)`.  **§1o is unaffected and still stands**: the
+`--module` path goes through `module_decls`, which always cut the declaration with `decl_only` —
+that is why the module table there is trustworthy and the wave table here was not.
+
+**The corrected classification**, `python3 debug/find_duplicates.py --report`, wave = the 1 674
+`Theorems/Thm_*.lean` stubs named in `pipeline/wave_upload.json` (1 270 already present on the
+platform under their own dotted name, **404** still unpublished), catalogue = 73 968 rows:
+
+| class | collisions | with a `Proved` node | cross-author |
+| :-- | --: | --: | --: |
+| `STMT` (statement, name-stripped) | **6** | 6 | **0** |
+| `DECL` (declaration text) | 0 | 0 | 0 |
+| `SIG` (identifier set, as written) | 1 310 | 921 | 0 |
+| `SHAPE` (identifier set, short names dropped) | 87 | 87 | **0** |
+| `NAME` (dotted name) | 0 | 0 | 0 |
+| `LEAF` (last name component) | 140 | 138 | 23 non-generic, all triaged false positives |
+
+**All six `STMT` restatements are ours restating ours** — no cross-author duplicate exists in any
+class, which is the answer the earlier report reached for the wrong reason and still holds:
+
+| wave node | restates (already `Proved`) | status |
+| :-- | :-- | :-- |
+| `BookProof.YangMillsHermite.gaussInt_sub` | `BookProof.QgHermiteFriedrichs.gaussInt_sub` (`91fe1f87`) | resolved — `reused: true` |
+| `BookProof.QgHermiteFriedrichs.gaussInt_sub` | `BookProof.YangMillsHermite.gaussInt_sub` (`b9e1ba6f`) | resolved — `reused: true` |
+| `BookProof.QgHermiteFriedrichs.cpoly_add` | `BookProof.HermiteQuadraticEsa.cpoly_add` (`e81100ec`) | resolved — `reused: true` |
+| `BookProof.HermiteQuadraticEsa.cpoly_add` | `BookProof.QgHermiteFriedrichs.cpoly_add` (`a624b3ee`) | resolved — `reused: true` |
+| `BookProof.NavierStokesFlow.nsHamiltonian_hasZeroDeficiencyOn` | `…nsHamiltonian_hasZeroDeficiencyOn_of_flow` (`dedaa307`) | **open** — see (1) |
+| `BookProof.ChapterParityMajoranaQuant.J_unitary'` | `BookProof.ChapterParityMajoranaQuant.J_unitary_prime` (`af3fc4ae`) | **open** — see (2) |
+
+The pipeline already resolves this class by itself: the publish-job sync records the item as
+`reused: true` with `reused_status: published` (theorem) or `Proved` (solution) and the id of the
+existing node — *“theorem already Proved on platform”* — instead of minting a twin. Five of the six
+went through that path without intervention.
+
+**(1) `nsHamiltonian_hasZeroDeficiencyOn` — two independent defects, one fix.**
+`thm:` is **failed** with `publish FAILED: formal statement does not compile: line 9: Unknown
+identifier \`n\` … the \`autoImplicit\` option is set to \`false\``: the stub states
+`HasZeroDeficiencyOn (⊤ : Submodule ℂ (EuclideanSpace ℂ (Fin n))) (restrictToTop … (nsHamiltonian d))`
+but neither `n` nor `d` is bound in it — in `../timepiece` they are section variables. The generator
+must emit the binders (`variable {n d : ℕ}`, or make them explicit arguments) for every stub whose
+statement uses a section variable. Separately, the item is a restatement of the **already-Proved**
+`_of_flow` node, so it should be resolved as `reused` rather than published at all: fixing the
+binder would only publish a duplicate.
+
+**(2) `ChapterParityMajoranaQuant_J_unitary'` — the primed slug.**  `thm:` is **failed** with
+`submit-problem rejected: … theorem_name …`: the platform's name validator rejects the prime, and
+unlike the `_alt` convention (see `declared_name`) this wave entry's stub declares the primed name
+rather than a prime-free one. Its statement restates the Proved `J_unitary_prime` (`af3fc4ae`), so
+the correct resolution is again `reused`, not a new node. Two more handles in the same trio
+(`J_unitary`, `J_unitary_prime`) are already `Proved`.
+
+**The new `SHAPE` class, and why it is needed.**  `SIG` was documented as “binder-renamed/near”,
+but it keeps the binder names and therefore is not binder-insensitive at all; worse, two common
+spellings are structurally invisible to the tokenizer (`_WORD = [A-Za-z_]…`): single-letter names
+(`b`, `g`) *are* matched and stay in the set, while **Greek names (`β`, `γ`) are not matched at all**
+and silently vanish.  So `theorem _ (b g : Vel) : crd (coreState b) g = if g = b then 1 else 0` and
+the platform's `theorem _ (β γ : Vel) : crd (coreState β) γ = if γ = β then 1 else 0` — the same
+claim — compare as different strings in `STMT`, `DECL` and `SIG`.  `SHAPE`
+(`debug/find_duplicates.py: shape`) drops every single-character identifier and compares the rest,
+which closes that gap; it is deliberately coarse (it matches on multi-letter API names alone), so
+its 87 hits are a triage list, not 87 duplicates — e.g. `structureConstant_antisymm_swap` /
+`_rotate` / `jacobi` are three different statements that collide on the identifier set.
+
+**Platform state at this run.**  API **0.10.5** (was 0.10.4; upstream `v0.10.5` — the moderator
+review loop — is merged, SKILL.md bumped), default environment `Mathlib 0df444a` / Lean v4.33.1,
+account `leonardopedro` `num_solved_prob = 714` (616 matched in the catalogue, 98 unmatched).
+The catalogue index (`state/platform_index.jsonl`) predates this run and is **not** refreshed, so a
+theorem published after 2026‑09‑17 is invisible to every class — refresh with
+`--reset --index` before treating any zero here as final.
+
+**Re-run.**
+
+```
+python3 debug/find_duplicates.py --report --max 12        # the wave, all classes (offline)
+python3 debug/dedup_report.py                            # refresh the dedup report (API)
+python3 debug/find_duplicates.py --module <file> --namespace <ns>   # a new module, before stubbing
+```
 

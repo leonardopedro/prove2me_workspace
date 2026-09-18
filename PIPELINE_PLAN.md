@@ -2466,3 +2466,65 @@ Result: 28 + 19 + 15 = 62 def nodes. All 3 bundles regenerated with source impor
 **Daemon strategy:** running `start_upload.sh` (PID 37642); LLM reads new verdicts each session, applies repair by class, verifies locally, resubmits. Target: resolve all pending items or park permanently (proof debt / NO NODE).
 
 **Git commit (this update):** def bundle regeneration, wave extension, PIPELINE_PLAN.md updated with §1u.
+
+## §1v. Session 18 (2026-09-18 continued) — sync, state reconciliation, and new publish-job activity
+
+**Investigation:** user reported "prove2me does not show me any new submissions from leonardopedro".
+
+**Root cause — two distinct concepts confused:**
+1. **Publish-jobs** (theorem/definition nodes being published on the platform) — these ARE being created (20 today, all within 6h). Recent activity: HashimotoShiftInvert.IsShiftInvertC.apply_eq and shift_apply PUBLISHED at 08:59-09:02 UTC.
+2. **Proof submissions** (solutions uploaded via `/verify`) — these stopped at 01:25 UTC. No new ACCEPTED/CE/FAILED proof submissions in the last 9h.
+
+The user was checking for proof submissions but the pipeline was focused on publish-job drain.
+
+**Sync completed** (`--sync`, PID 61562, ~8 min): reconciled state file with platform.
+- Before: 211 done / 1788 pending (stale)
+- After: 3087 done / 623 pending / 0 failed
+- Marked 1494 already-published items and 1382 already-proved solutions as done
+
+**Current state (2026-09-18 ~10:59):**
+- Plan: 3740 items (155 defs, 1785 thms, 1785 sols)
+- State: 3087 done / 623 pending / 0 failed (1784 orphans ignored)
+- Pending by kind: thm: 207, sol: 402, def: 14
+- Next: def:ChapterScalaronFiberFL, def:ChapterScalaronOuterFockFL, def:ChapterQgVielbeinModeInstance, def:ChapterQgContinuumModeInstance, def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, def:ChapterQgManifoldModeInstance, def:ChapterSirkSingleTimeShift
+- 63 items missing local sources: ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow
+
+**Publish-job activity today (within last 6h):**
+- 20 publish-jobs created
+- 2 PUBLISHED: HashimotoShiftInvert.IsShiftInvertC.apply_eq (08:59:55), shift_apply (09:02:36)
+- 13 FAILED (mostly SqSumFarisLavine.* — `sqSumOp` unknown identifier; YangMillsFriedrichsLimit.mem — missing declaration; Qg3DGaugeEsa, QgOuterFockEsa, ChapterScalaronFiberFL — missing imports)
+- Some may still be COMPILING
+
+**Lean compilation errors in submit-problem calls:**
+- `sqSumOp` not defined in SqSumFarisLavine thm files — the theorem references a definition from another module that isn't imported
+- `BookProof.YangMillsFriedrichsLimit.mem` not found — the theorem name doesn't match the declaration in the file
+- These are fixable by correcting the imports or theorem names in the source files
+
+**Def head status (14 pending):**
+- ScalaronFiberFL, ScalaronOuterFockFL, QgVielbeinModeInstance, QgContinuumModeInstance, QgTruncationResolvent, QgTimeStepping, QgManifoldModeInstance, SirkSingleTimeShift, SirkSingleTimeShift — PENDING
+- 63 missing sources block some of these
+
+**Immediate actions:**
+1. Fix SqSumFarisLavine thm files (missing sqSumOp import)
+2. Fix YangMillsFriedrichsLimit.mem (wrong theorem name)
+3. Fix Qg3DGaugeEsa and QgOuterFockEsa (missing imports)
+4. Generate missing def files from ../timepiece for the 63 missing-source chapters
+5. Continue def drain as sources become available
+6. Once defs are published, submit thm/sol pairs
+
+**Pipeline execution:**
+- Killed stale daemon (PID 55049) that was looping on REUSE checks for already-published defs
+- Ran `--sync` to update state: 1494 items marked done
+- State file updated: `state/pipeline.json` (3087 done / 623 pending)
+- Background process (PID 61562) completed sync successfully
+
+**User communication:** The user was informed that publish-jobs ARE being created (20 today) but many FAIL due to Lean compilation errors in the source files. The pipeline is making progress but the user should not expect new proof submissions until the source files are fixed.
+
+**Next actions:**
+(a) Fix Lean compilation errors in failing thm files (SqSumFarisLavine, YangMillsFriedrichsLimit, Qg3DGaugeEsa, QgOuterFockEsa)
+(b) Generate missing def bundles from ../timepiece for 63 missing-source chapters
+(c) Continue def drain as sources become available
+(d) Submit thm/sol pairs for newly published theorems
+(e) Monitor publish-job failures and fix root causes
+
+**Git commit (this update):** PIPELINE_PLAN.md updated with §1v — sync results, publish-job activity, error analysis, and next actions.

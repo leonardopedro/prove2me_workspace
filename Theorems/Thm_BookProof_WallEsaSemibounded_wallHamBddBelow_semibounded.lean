@@ -1,6 +1,8 @@
 -- Generated from ChapterWallEsaSemibounded.lean — theorem BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.WallEsaSemibounded
 
 

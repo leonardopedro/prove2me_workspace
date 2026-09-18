@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronFiberFL.lean — theorem BookProof.ScalaronFiberFL.inner_derivL2
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronFiberFL
 
 

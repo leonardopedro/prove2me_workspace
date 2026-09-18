@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.integral_conj_mul_smoothPotential_sub_eq_zero
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronEsa
 
 

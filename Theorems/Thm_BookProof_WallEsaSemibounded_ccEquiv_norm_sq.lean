@@ -1,6 +1,8 @@
 -- Generated from ChapterWallEsaSemibounded.lean — theorem BookProof.WallEsaSemibounded.ccEquiv_norm_sq
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.WallEsaSemibounded
 
 

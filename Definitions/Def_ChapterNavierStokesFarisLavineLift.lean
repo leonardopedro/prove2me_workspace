@@ -2,6 +2,8 @@ import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesFarisLavineLift.Part1
+import Definitions.Def_ChapterNavierStokesFarisLavineLift.Part2
 
 /-!
 # The one-particle comparison operator, and how the Faris–Lavine bounds lift

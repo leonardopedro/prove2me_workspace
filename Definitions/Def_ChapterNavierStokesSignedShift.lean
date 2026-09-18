@@ -7,6 +7,8 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesSignedShift.Part1
+import Definitions.Def_ChapterNavierStokesSignedShift.Part2
 
 /-!
 # Hopping Hamiltonians with **signed**, non-monotone amplitudes

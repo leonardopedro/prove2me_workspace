@@ -5,6 +5,8 @@ import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_continuous_scalaronW
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_expBounded_scalaronW
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.QgHermiteFriedrichs
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.contDiff_scalaronFullPotential
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_BookProof.ChapterScalaronEsa
+
 open BookProof.ScalaronEsa
 
 

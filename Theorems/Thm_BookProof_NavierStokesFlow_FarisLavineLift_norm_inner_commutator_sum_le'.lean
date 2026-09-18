@@ -5,6 +5,8 @@
 -- `norm_inner_commutator_sum_le_alt`.  The statement is unchanged.
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 

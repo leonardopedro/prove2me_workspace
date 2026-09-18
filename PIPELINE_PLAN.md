@@ -2566,3 +2566,66 @@ The user was checking for proof submissions but the pipeline was focused on publ
 (d) If API bug persists, contact platform support
 
 **Git commit (this update):** PIPELINE_PLAN.md updated with §1w — API submission visibility issue documented.
+
+---
+
+## §1x. Session 21 (2026-09-18 continued) — present knowledge update, daemon status, next actions
+
+**SKILL.md loaded (v0.10.4)**; platform API confirmed 0.10.4 by `--check`. No drift.
+
+**Environment (verified this session):**
+- Workspace: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`
+- Source project: `../timepiece` — 617 chapters in `BookProof/`, `decl_graph.jsonl` (15 095 records / 8.2 MB), `lakefile.toml`, `lean-toolchain` v4.28.0
+- Lean 4: `lean` v4.33.1 at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean`; v4.28.0 toolchain also present at `~/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean`
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`
+- `credentials.json` present (API key loaded)
+- Local Lean gate: UNAVAILABLE (workspace has no `lakefile.toml`; submissions skip local gate, platform compiler is oracle)
+
+**Pipeline state (2026-09-18 ~11:44 UTC):**
+- Plan: **3740 items** (155 defs, 1785 thms, 1785 sols)
+- State: **3130 done / 580 pending / 0 failed** (1784 orphans ignored)
+- Pending by kind: **thm: 189, sol: 377, def: 14**
+- Next items (deps-first): `def:ChapterScalaronFiberFL`, `def:ChapterScalaronOuterFockFL`, `def:ChapterQgVielbeinModeInstance`, `def:ChapterQgContinuumModeInstance`, `def:ChapterQgTruncationResolvent`, `def:ChapterQgTimeStepping`, `def:ChapterQgManifoldModeInstance`, `def:ChapterSirkSingleTimeShift`
+- 63 items missing local sources: `ChapterContinuityUnitaryInfinite`, `ChapterH6`, `ChapterH8`, `HermiteRelative`, `NavierStokesFlow` (and their thm/sol stubs)
+- Git status: 328 modified files (Definitions, Theorems repaired; new def bundles generated for FockCanonical/FockManyMode/ContinuityUnitaryInfinite; wave extended +30 thms/+30 sols)
+
+**Daemon status (PID 75945):** RUNNING — actively submitting proofs and polling verdicts. Last activity ~11:44 UTC (submissions accepted, waiting on compiler). Running with `--parallel 50 --job-timeout 60 --max-seconds 1800` via `start_upload.sh`.
+
+**Generator run (this session):** `scripts/wave_generate.py --defs-only ChapterNavierStokesFockCanonical ChapterNavierStokesFockManyMode ChapterContinuityUnitaryInfinite` produced 62 def nodes. Wave extended via `debug/extend_wave_stubs.py`: +30 thms, +30 sols (spec 155/1785/1785 → 155/1815/1815, ORDER 3740).
+
+**Repair chain applied (this session):**
+- `debug/fix_node_imports.py` — patched 11 files (cross-chapter node imports)
+- `debug/fix_primed_slugs.py` — dropped 4 false-positive duplicates
+- `debug/repair_stubs.py` — repaired 104 stubs (namespace opens, embedded duplicates)
+- `debug/check_def_opens.py --solutions --pending --fix` — repaired 306 solution files
+- Manual: `Thm_NavierStokesFlow_LagrangianNS_viscous_posSemidef` — added missing def import + open
+
+**328 modified files** staged for commit:
+- 14 regenerated `Definitions/Def_Chapter*` files (FockCanonical, FockManyMode, ContinuityUnitaryInfinite, plus NS chain repairs)
+- ~200+ repaired `Theorems/Thm_*` and `Solutions/Sol_*` files (import fixes, namespace opens, primed slug drops)
+- Wave spec updated (1785 → 1815 thms, 1785 → 1814 sols in `pipeline/wave_upload.json`)
+- State file reflects 3130 done / 580 pending / 0 failed
+
+**Def head status (14 pending bundles, in dependency order):**
+- `ChapterScalaronFiberFL` — FAIL (missing `contDiff_starobinskyV` node import; def head has 3 attempts left)
+- `ChapterScalaronOuterFockFL` — PENDING
+- `ChapterQgVielbeinModeInstance` — PENDING
+- `ChapterQgContinuumModeInstance` — PENDING
+- `ChapterQgTruncationResolvent` — PENDING
+- `ChapterQgTimeStepping` — PENDING
+- `ChapterQgManifoldModeInstance` — PENDING
+- `ChapterSirkSingleTimeShift` — PENDING
+- Remaining 6 bundles — blocked on upstream deps or source availability
+
+**Missing sources blocker (63 items):** `ChapterContinuityUnitaryInfinite`, `ChapterH6`, `ChapterH8`, `HermiteRelative`, `NavierStokesFlow` — all have source chapters in `../timepiece` but lack `decl_graph.jsonl` nodes and generated stubs. Generator needs these chapters registered in the graph.
+
+**Next actions (priority order):**
+1. Continue def head drain — daemon running, 14 pending bundles, def layer is the critical path
+2. Re-run `debug/extend_wave_stubs.py` for remaining source-available chapters once defs publish
+3. Alternate thm/sol chunks as defs complete
+4. Fix remaining def import issues (ScalaronFiberFL needs `contDiff_starobinskyV` node published first)
+5. Generate missing stubs for the 63 source-available-but-unsubmitted chapters
+
+**API note:** Proof submissions ARE being created (daemon active) but may not appear in `GET /submissions` due to an API pagination bug (reports cut off at 01:25 UTC). Publish-job activity IS visible (20 created today, 2 PUBLISHED).
+
+**Git commit (this update):** PIPELINE_PLAN.md §1x added; 328 modified files (def bundles, thm/sol repairs, wave extension); `credentials.json` and `state/` remain uncommitted per §9 rules.

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 

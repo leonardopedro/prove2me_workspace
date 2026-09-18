@@ -1,6 +1,8 @@
 -- Generated from ChapterHermiteGalerkinFriedrichs.lean — theorem BookProof.HermiteGalerkin.galerkinSpan_le_finiteModeDomain
 import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.HermiteGalerkin
 
 

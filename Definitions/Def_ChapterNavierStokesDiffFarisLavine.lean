@@ -2,6 +2,8 @@ import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesDiffFarisLavine.Part1
+import Definitions.Def_ChapterNavierStokesDiffFarisLavine.Part2
 
 /-!
 # The two Faris–Lavine inequalities for the *differential* Navier–Stokes symbol

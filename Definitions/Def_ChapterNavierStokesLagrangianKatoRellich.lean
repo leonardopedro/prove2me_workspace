@@ -7,6 +7,8 @@ import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich.Part1
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich.Part2
 
 /-!
 # The Lagrangian route: Kato–Rellich control of the drift, and the Hashimoto

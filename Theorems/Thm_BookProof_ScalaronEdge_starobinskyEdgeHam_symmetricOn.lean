@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronEdge.lean — theorem BookProof.ScalaronEdge.starobinskyEdgeHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronEdge
 
 

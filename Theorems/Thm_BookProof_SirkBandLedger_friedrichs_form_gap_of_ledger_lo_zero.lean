@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger_lo_zero
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.SirkBandLedger
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent

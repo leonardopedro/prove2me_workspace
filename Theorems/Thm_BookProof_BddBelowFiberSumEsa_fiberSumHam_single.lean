@@ -1,6 +1,8 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — theorem BookProof.BddBelowFiberSumEsa.fiberSumHam_single
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.BddBelowFiberSumEsa
 
 

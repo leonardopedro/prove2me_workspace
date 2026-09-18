@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — theorem BookProof.NavierStokesFlow.FockOfFock.annih_vacuum
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow.FullEsa

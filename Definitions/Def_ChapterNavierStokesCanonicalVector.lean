@@ -23,6 +23,8 @@ import Definitions.Def_ChapterU
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesCanonicalVector.Part1
+import Definitions.Def_ChapterNavierStokesCanonicalVector.Part2
 
 /-!
 # The canonical (differential) form of the full quadratic Navier–Stokes symbol

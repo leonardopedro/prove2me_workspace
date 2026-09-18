@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsHermite.lean — theorem BookProof.YangMillsHermite.ym_hermite_hashimoto_selects
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.YangMillsHermite
 
 

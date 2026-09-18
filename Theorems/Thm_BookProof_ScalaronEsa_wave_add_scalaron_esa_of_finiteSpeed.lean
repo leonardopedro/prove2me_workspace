@@ -1,6 +1,10 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.wave_add_scalaron_esa_of_finiteSpeed
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
+import Definitions.Def_BookProof.ChapterScalaronEsa
+
 open BookProof.ScalaronEsa
 
 

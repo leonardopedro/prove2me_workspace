@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesThreeComponent.lean — theorem BookProof.NavierStokesFlow.ThreeComponent.velH_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 open scoped ENNReal

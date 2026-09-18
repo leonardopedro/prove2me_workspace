@@ -60,6 +60,8 @@ import Mathlib
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesDifferentialL2.Part1
+import Definitions.Def_ChapterNavierStokesDifferentialL2.Part2
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow

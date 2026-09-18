@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronWallEsa.lean — theorem BookProof.ScalaronWallEsa.starobinskyWall_esa
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronWallEsa
 
 

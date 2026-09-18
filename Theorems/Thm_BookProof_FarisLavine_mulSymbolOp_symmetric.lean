@@ -4,6 +4,8 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FarisLavine
 
 

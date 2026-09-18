@@ -1,6 +1,8 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 

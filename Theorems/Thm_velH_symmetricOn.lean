@@ -1,5 +1,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 
 open BookProof.ChapterNavierStokesThreeComponent
 

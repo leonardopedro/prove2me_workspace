@@ -1,6 +1,8 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 
 

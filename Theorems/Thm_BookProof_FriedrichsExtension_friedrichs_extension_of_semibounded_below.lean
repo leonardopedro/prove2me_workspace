@@ -1,6 +1,8 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.friedrichs_extension_of_semibounded_below
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 
 

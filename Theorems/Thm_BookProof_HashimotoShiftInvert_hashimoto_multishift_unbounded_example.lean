@@ -1,6 +1,8 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — theorem BookProof.HashimotoShiftInvert.hashimoto_multishift_unbounded_example
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.HashimotoShiftInvert
 
 

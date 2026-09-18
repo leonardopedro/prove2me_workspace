@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — theorem BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.YangMillsFriedrichs
 
 

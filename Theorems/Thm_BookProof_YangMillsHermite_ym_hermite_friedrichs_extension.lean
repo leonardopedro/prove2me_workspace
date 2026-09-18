@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsHermite.lean — theorem BookProof.YangMillsHermite.ym_hermite_friedrichs_extension
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.YangMillsHermite
 
 

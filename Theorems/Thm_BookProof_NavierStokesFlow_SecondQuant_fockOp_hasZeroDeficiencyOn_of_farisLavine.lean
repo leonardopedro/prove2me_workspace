@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn_of_farisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 open scoped ENNReal

@@ -18,6 +18,8 @@ import Definitions.Def_ChapterU
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine.Part1
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine.Part2
 
 /-!
 # The two Faris–Lavine inequalities, verified for the Navier–Stokes generator

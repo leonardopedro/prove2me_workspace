@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Mathlib
+import Definitions.Def_ChapterNavierStokesFockCanonical.Part1
+import Definitions.Def_ChapterNavierStokesFockCanonical.Part2
 
 
 /-!

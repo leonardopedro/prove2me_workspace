@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ChapterSirkRitzSpectrum
 open BookProof.HermiteGalerkin
 

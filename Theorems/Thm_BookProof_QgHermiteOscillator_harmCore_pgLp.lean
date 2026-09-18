@@ -1,6 +1,8 @@
 -- Generated from ChapterQgHermiteOscillatorEsa.lean — theorem BookProof.QgHermiteOscillator.harmCore_pgLp
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
+
 open BookProof.QgHermiteOscillator
 
 

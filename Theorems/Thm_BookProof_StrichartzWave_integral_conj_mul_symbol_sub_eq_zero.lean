@@ -1,6 +1,8 @@
 -- Generated from ChapterStrichartzWave.lean — theorem BookProof.StrichartzWave.integral_conj_mul_symbol_sub_eq_zero
 import Mathlib
 import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.StrichartzWave
 
 

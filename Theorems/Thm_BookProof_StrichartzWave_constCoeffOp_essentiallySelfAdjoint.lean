@@ -1,6 +1,8 @@
 -- Generated from ChapterStrichartzWave.lean — theorem BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.StrichartzWave
 
 

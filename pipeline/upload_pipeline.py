@@ -294,9 +294,14 @@ def load_state():
 
 def save_state(st):
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
-    with open(STATE_FILE + ".tmp", "w") as f:
+    tmp_path = STATE_FILE + ".tmp"
+    # Write to temp file first, then replace atomically
+    with open(tmp_path, "w") as f:
         json.dump(st, f)
-    os.replace(STATE_FILE + ".tmp", STATE_FILE)
+    # Ensure the temp file was written successfully before replacing
+    if not os.path.exists(tmp_path):
+        raise OSError(f"Failed to write temp state to {tmp_path}")
+    os.replace(tmp_path, STATE_FILE)
 
 
 def api_key():

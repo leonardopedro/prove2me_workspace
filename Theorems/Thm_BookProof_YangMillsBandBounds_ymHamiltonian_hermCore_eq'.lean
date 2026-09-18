@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsBandBounds.lean — theorem BookProof.YangMillsBandBounds.ymHamiltonian_hermCore_eq'
 import Mathlib
 import Definitions.Def_ChapterYangMillsBandBounds
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.YangMillsBandBounds
 
 

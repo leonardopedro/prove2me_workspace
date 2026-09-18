@@ -4,6 +4,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesHashimoto
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow.NSHashimoto
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert BookProof.EsaClosure
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato

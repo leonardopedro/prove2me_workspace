@@ -20,6 +20,8 @@ import Definitions.Def_ChapterU
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa.Part1
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa.Part2
 
 /-!
 # The **affine** Navier–Stokes fiber field: a `±1`-shift on top of the `±2`-shift

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.BandEnclosure
 
 

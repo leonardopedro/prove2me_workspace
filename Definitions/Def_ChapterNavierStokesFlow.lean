@@ -15,6 +15,8 @@ import Mathlib
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesFlow.Part1
+import Definitions.Def_ChapterNavierStokesFlow.Part2
 
 /-!
 # Chapter "Free field parametrization … Navier–Stokes": the truncated

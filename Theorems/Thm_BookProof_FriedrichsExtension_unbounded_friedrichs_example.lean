@@ -1,6 +1,8 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.unbounded_friedrichs_example
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterStarobinskyPotential.lean — theorem BookProof.Starobinsky.qgR2Mode_symmetric
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.Starobinsky
 
 

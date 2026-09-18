@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.StoneBridge
 
 

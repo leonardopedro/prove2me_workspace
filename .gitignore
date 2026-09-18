@@ -23,3 +23,5 @@ __pycache__/
 # `python3 debug/find_duplicates.py --reset --index`). See PIPELINE_PLAN.md §1n.
 state/platform_index.jsonl
 state/platform_index.meta.json
+state/
+credentials.json

@@ -2,6 +2,8 @@ import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesLagrangianEsa.Part1
+import Definitions.Def_ChapterNavierStokesLagrangianEsa.Part2
 
 /-!
 # Essential self-adjointness of the **full** Navier–Stokes Hamiltonian *after the

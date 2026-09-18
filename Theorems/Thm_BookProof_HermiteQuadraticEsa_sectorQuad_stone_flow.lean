@@ -1,6 +1,8 @@
 -- Generated from ChapterHermiteQuadraticEsa.lean — theorem BookProof.HermiteQuadraticEsa.sectorQuad_stone_flow
 import Mathlib
 import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_BookProof.ChapterHermiteQuadraticEsa
+
 open BookProof.HermiteQuadraticEsa
 
 

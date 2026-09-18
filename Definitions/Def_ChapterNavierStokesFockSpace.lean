@@ -2,6 +2,8 @@ import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesFockSpace.Part1
+import Definitions.Def_ChapterNavierStokesFockSpace.Part2
 
 /-!
 # The Fock space of a Fock space, and its ladder operators

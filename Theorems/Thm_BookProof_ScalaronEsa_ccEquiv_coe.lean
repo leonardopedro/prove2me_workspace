@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.ccEquiv_coe
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronEsa
 
 

@@ -1,6 +1,10 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.norm_sqSumOp_le
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
+
+import Definitions.Def_BookProof.ChapterQgOuterFockEsa
+
 open BookProof.SqSumFarisLavine
 
 

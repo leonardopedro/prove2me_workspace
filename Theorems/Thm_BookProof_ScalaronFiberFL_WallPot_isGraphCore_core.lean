@@ -1,6 +1,8 @@
 -- Generated from ChapterScalaronFiberFL.lean — theorem BookProof.ScalaronFiberFL.WallPot.isGraphCore_core
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ScalaronFiberFL
 open BookProof.ScalaronFiberFL.WallPot
 

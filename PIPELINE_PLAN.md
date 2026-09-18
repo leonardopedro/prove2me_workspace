@@ -2384,3 +2384,40 @@ batch hygiene (append-only state, update §1/§4 counts).
 **Updated pipeline state (after restart):** `plan: 3634 items` (153 defs / 1733 thms / 1732 sols); `state: 2915 done / 689 pending / 0 failed (229 orphans)` — the 76 reopened items moved to `pending`; `pending by kind`: `sol`: 407, `thm`: 270, `def`: 12. The `63 unsubmittable` items (`ChapterContinuityUnitaryInfinite`, `ChapterH6`, `H8`, `HermiteRelative`, `NavierStokesFlow`) remain source-available (`../timepiece`) but blocked behind missing def bundles (`ChapterFiniteSectionSingleTime` etc.).
 
 **Git commit (this update):** `PIPELINE_PLAN.md` updated with §1r repair-cycle documentation; `credentials.json` and `state/` uncommitted.
+
+---
+
+## §1t. Session update (2026-09-18 continued) — pipeline state and next actions
+
+**SKILL.md loaded (v0.10.4)**; platform API confirmed 0.10.4 by `--check`. No drift against upstream.
+
+**Environment (verified):**
+- `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace` — current working directory
+- `../timepiece` present: 617 chapters in `BookProof/`, `decl_graph.jsonl` (15 095 records), `lakefile.toml`, `lean-toolchain` v4.28.0
+- Lean 4: `lean` v4.33.1 at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean`; v4.28.0 toolchain also present
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`
+- Daemon running: `python3 pipeline/upload_pipeline.py --parallel 50 --job-timeout 60` (PID 29184)
+
+**Pipeline state (2026-09-18 ~08:39):**
+- Plan: 3680 items (155 defs, 1755 thms, 1755 sols)
+- State: 2842 done / 792 pending / 16 failed (125 orphans ignored)
+- Pending by kind: thm: 317, sol: 461, def: 14
+- Next items (deps-first): def:ChapterScalaronFiberFL, def:ChapterScalaronOuterFockFL, def:ChapterQgVielbeinModeInstance, def:ChapterQgContinuumModeInstance, def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, def:ChapterQgManifoldModeInstance, def:ChapterSirkSingleTimeShift
+- 63 items missing local sources: ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow
+
+**Completed actions this session:**
+1. Committed def bundle repairs and wave update (commit 6a15716): 5 new def bundles (WallEsaBddBelow, SchrodingerCutoffEsa, QgOuterFockFullFL, QgOuterFockEsa, Qg3DGaugeEsa), 32 HyperbolicQuadratic stubs fixed, 4 ScalaronEsa stubs fixed
+2. Updated wave_upload.json: 150→155 defs, 1733→1755 thms, 1732→1754 sols
+3. Cleared 23 failed items back to pending
+4. Updated PIPELINE_PLAN.md with §1r repair-cycle documentation
+5. Pipeline state committed (9f7a9af): 2842 done, 792 pending, 16 failed
+
+**Next actions (per §1q priority):**
+(a) Repair/apply the 3 new def bundles and register them — DONE (commit 6a15716)
+(b) Re-run `extend_wave_stubs.py` for the 65 stubs — PENDING (blocked on def bundle publication)
+(c) Run bounded `--kind def` chunks (`--parallel 20 --max-seconds 135`) to drain the def head — PENDING
+(d) Alternate with `--kind thm` / `--kind sol` as defs complete
+
+**Daemon strategy:** keep running `start_upload.sh` in background; LLM reads new verdicts each session, applies repair by class, verifies locally, resubmits. Target: resolve all pending items or park permanently (proof debt / NO NODE).
+
+**Git commit (this update):** pipeline state committed; PIPELINE_PLAN.md updated with §1t.

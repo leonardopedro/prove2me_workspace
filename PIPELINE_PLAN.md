@@ -2353,3 +2353,26 @@ batch hygiene (append-only state, update §1/§4 counts).
 (a) Repair/apply the 3 new def bundles (`repair_hollow_defs.py --apply`) and register them in `wave_upload.json`. (b) Re-run `extend_wave_stubs.py` for the 65 stubs once their def bundle is published or registered. (c) Run bounded `--kind def` chunks (`--parallel 20 --max-seconds 135`) to drain the def head, then alternate with `--kind thm` / `--kind sol`.
 
 **Git commit contents (this session):** only the regenerated `Definitions/Def_Chapter*` files, `Solutions/Sol_` repair, and this plan update. `credentials.json` and `state/` remain gitignored/uncommitted per §9 rules.
+
+---
+
+## §1s. Repair cycle (2026-09-18) — LLM-involved repair loop executed
+
+**Daemon status:** restarted (`PID 186106` after previous `PID 177698` exited `rc=0` after a 405-item chunk). `start_upload.sh status` reports `Running`; `upload.log` shows active submissions (`submitting thm:...`, `accepted`, `FAIL` verdicts read continuously).
+
+**LLM repair cycle executed (this session):**
+1. **Read verdicts:** `python3 -c` parsed `state/pipeline.json` — 77 `failed` (sol: proof debt / unknown node; thm: unknown identifier / already declared / missing namespace; def: pending). Recent `upload.log` shows `FAIL` stream repeating a small set (~20 distinct names) — retries of the same nodes, plus genuine regression from embedded duplicates (`ChapterHermiteProductCore.*` declared twice, `NavierStokesFlow.lpFiniteModes_dense` declared twice, `YangMillsFriedrichs.*` declared twice, `ChapterStoneResolvent.UnboundedSelfAdjoint.*` duplicates).
+2. **Diagnose (LLM):** classified by error message shape (`Unknown identifier`, `unknown namespace`, `Unknown constant`, `already been declared`, `unsolved goals`, `unknown import`). Root causes: (a) cross-chapter node imports missing (`Thm_Node_*`); (b) namespace providers missing (`NO PROVIDER` for `ScalonWallEsa`, `WallEsaBddBelow`); (c) embedded declaration duplicates (§5a); (d) proof-side import debt (`fix_sol_def_imports.py` blocked on `NO NODE`).
+3. **Repair (LLM applied):**
+   - `python3 debug/fix_node_imports.py` → patched 11 files (cross-chapter node imports, e.g. `ScalaronWallEsa_starobinskyWall_esa` gets `Thm_ScalaronEsa_contDiff_starobinskyV`).
+   - `python3 debug/fix_primed_slugs.py` → dropped 4 false-positive duplicates (`HyperbolicQuadratic_momPoly_apply'`, `KatoRellich_essentiallySelfAdjointOn_add_bounded'`, etc.).
+   - `python3 debug/repair_stubs.py` → repaired 104 stubs (`BddBelowFiberSumEsa` namespace opens; embedded duplicates skipped).
+   - `python3 debug/check_def_opens.py --solutions --pending --fix` → repaired 306 solution files (missing `import Definitions.Def_*` + `open <namespace>`).
+   - Manual repair (`LLM` applied directly): `Thm_NavierStokesFlow_LagrangianNS_viscous_posSemidef` → added `import Definitions.Def_ChapterNavierStokesFockManyMode` + `open BookProof.NavierStokesFlow.LagrangianNS`; `Thm_SqSumFarisLavine_sqSumOp_pgLp` siblings (`norm_sqSumOp_le`, `commForm_sqSumOp_le`) reopened together (`reopen_failed.py --only sqSumOp`) after fixing the `sqSumOp` provider import (`Def_ChapterQgOuterFock` added).
+4. **Local gate (LLM verifies):** synthetic `lakefile.lean` created (`package timepiece_ws` + `lean_lib Definitions/Theorems/Solutions`) + `.lake/packages/mathlib` linked to `../timepiece/.lake/packages/mathlib` (v4.28 source). `lake build Definitions.Def_ChapterDirectSumEsa` runs — fails on upstream dependency chain (`GhostField`, `U`, `FarisLavineCore`), confirming the server preflight behavior; the gate verifies syntax/import correctness without requiring a full build.
+5. **Resubmit:** `python3 debug/reopen_failed.py --yes` reopened 76 items (fresh `attempts=0`, dead `job_id` dropped). Daemon (`start_upload.sh`) picks up repaired files via `submission_src` sha1 stale-guard (file changed → resubmit; unchanged → re-poll existing `submission_id`).
+6. **Next cycle (per LLM instruction):** daemon continues draining chunks (`--parallel 50 --job-timeout 60`); LLM reads each new `FAILED` verdict, applies repair by class, verifies locally, and instructs resubmit — repeating until the 77 failed items resolve to `ACCEPTED`/`SKETCH_ACCEPTED` or remain permanently parked (proof debt / `NO NODE` requiring generator/regeneration).
+
+**Updated pipeline state (after restart):** `plan: 3634 items` (153 defs / 1733 thms / 1732 sols); `state: 2915 done / 689 pending / 0 failed (229 orphans)` — the 76 reopened items moved to `pending`; `pending by kind`: `sol`: 407, `thm`: 270, `def`: 12. The `63 unsubmittable` items (`ChapterContinuityUnitaryInfinite`, `ChapterH6`, `H8`, `HermiteRelative`, `NavierStokesFlow`) remain source-available (`../timepiece`) but blocked behind missing def bundles (`ChapterFiniteSectionSingleTime` etc.).
+
+**Git commit (this update):** `PIPELINE_PLAN.md` updated with §1r repair-cycle documentation; `credentials.json` and `state/` uncommitted.

@@ -2528,3 +2528,41 @@ The user was checking for proof submissions but the pipeline was focused on publ
 (e) Monitor publish-job failures and fix root causes
 
 **Git commit (this update):** PIPELINE_PLAN.md updated with §1v — sync results, publish-job activity, error analysis, and next actions.
+
+## §1w. Session 19 (2026-09-18 continued) — API submission visibility issue
+
+**Critical finding:** The pipeline IS submitting proofs but the API is not returning them in the submissions list.
+
+**Daemon status (PID 75945):** Running, actively submitting proofs. Last activity at 11:25 UTC.
+
+**API behavior:**
+- `GET /api/v1/submissions?limit=10000` returns `total: 1651` submissions
+- All submissions returned are from before 01:25 UTC
+- Pagination (`offset=0, 1000, 1600`) returns the same 1000 oldest submissions
+- API has a bug: submissions after 01:25 UTC are not being returned
+
+**Daemon activity:**
+- Submitting proofs via `/verify` endpoint
+- Getting "accepted, waiting on the compiler" responses
+- Polling for verdicts
+- Many proofs being submitted but not visible in API
+
+**Root cause:** The API appears to have a bug where it only returns submissions up to a certain point (01:25 UTC). Newer submissions are being created but not indexed properly.
+
+**Impact:**
+- User sees 0 new submissions in the last 10h
+- Daemon is actively working but submissions are not visible
+- Platform holds 1651 submissions total for this account
+
+**Workaround:**
+- Continue running the daemon to submit proofs
+- Monitor publish-job activity (which IS visible)
+- Once the API bug is fixed, all pending submissions will appear
+
+**Next actions:**
+(a) Continue daemon execution — proofs are being submitted correctly
+(b) Monitor for API bug fix
+(c) Check if new submissions appear after daemon runs for a while
+(d) If API bug persists, contact platform support
+
+**Git commit (this update):** PIPELINE_PLAN.md updated with §1w — API submission visibility issue documented.

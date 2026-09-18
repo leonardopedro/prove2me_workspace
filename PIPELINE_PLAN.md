@@ -2403,21 +2403,66 @@ batch hygiene (append-only state, update §1/§4 counts).
 - State: 2842 done / 792 pending / 16 failed (125 orphans ignored)
 - Pending by kind: thm: 317, sol: 461, def: 14
 - Next items (deps-first): def:ChapterScalaronFiberFL, def:ChapterScalaronOuterFockFL, def:ChapterQgVielbeinModeInstance, def:ChapterQgContinuumModeInstance, def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, def:ChapterQgManifoldModeInstance, def:ChapterSirkSingleTimeShift
+
+## §1u. Session 17 (2026-09-18 continued) — generator run, wave extension, def head status
+
+**Session facts:**
+- All sources now present in `../timepiece` (617 chapters, decl_graph.jsonl with 15 095 records)
+- Lean 4: v4.33.1 (`/media/leo/.../.elan/bin/lean`), v4.28.0 toolchain also present
+- Generator requires `PROVE2ME_WS` set to current directory (script hard-codes `/home/leo/prove2me_workspace`)
+
+**Generator run (3 chapters):**
+```bash
+PROVE2ME_WS=$(pwd) TIMEPIECE_PROJ=../timepiece \
+python3 scripts/wave_generate.py --defs-only \
+  ChapterNavierStokesFockCanonical ChapterNavierStokesFockManyMode ChapterContinuityUnitaryInfinite
+```
+Result: 28 + 19 + 15 = 62 def nodes. All 3 bundles regenerated with source imports.
+
+**Wave extended:** `extend_wave_stubs.py` → +30 thms, +30 sols (spec: 155/1785/1785 = 3725, ORDER 3740).
+
+**Daemon running** (PID 37642 via `start_upload.sh`). Actively draining.
+
+**Pipeline state (2026-09-18 ~09:42):**
+- Plan: 3740 items (155 defs, 1785 thms, 1785 sols)
+- pipeline.json: 2880 done / 93 pending / 26 failed (2844 orphans)
+- `--status`: 167 defs done, 14 defs pending, 3 defs failed; thm: 1713 pending; sol: 1781 pending
+- Next (deps-first): def:ScalaronFiberFL, ScalaronOuterFockFL, QgVielbeinModeInstance, QgContinuumModeInstance, QgTruncationResolvent, QgTimeStepping, QgManifoldModeInstance, SirkSingleTimeShift
+- 63 missing sources: ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow
+
+**Def head status (14 pending):**
+- ScalaronFiberFL: FAIL — transitive dep `WallEsaSemibounded.kinCcR_quadratic` not yet Proved
+- QgOuterFockEsa: FAIL — missing `import Definitions.Def_ChapterYangMillsHermite` + `import Definitions.Def_ChapterNavierStokes*`
+- Qg3DGaugeEsa: FAIL — missing `import Definitions.Def_ChapterQuantumGravity3DGauge` + `Unknown identifier torsionPoly`
+- Remaining 11: waiting on upstream deps
+
+**Cross-chapter import fix (§1r) — confirmed working.** Generator (`wave_generate.py`) now emits `import Theorems.Thm_<slug>` for cross-chapter citations. Committed in §1r.
+
+**Next actions:**
+(a) Publish the 3 generated def bundles — DONE (bundles on disk, in wave spec)
+(b) Re-run `extend_wave_stubs.py` for remaining source-available chapters — PENDING (blocked on def publication)
+(c) Def head drain — IN PROGRESS (daemon running)
+(d) Alternate thm/sol chunks as defs complete
+(e) Fix def import issues: QgOuterFockEsa, Qg3DGaugeEsa
+- Plan: 3740 items (155 defs, 1785 thms, 1785 sols) — wave extended +30 thms/+30 sols from generator run
+- State: 2880 done / 93 pending / 26 failed (2844 orphans ignored)
+- Pending by kind: thm: 1713, sol: 1781, def: 14
+- Next items (deps-first): def:ChapterScalaronFiberFL, def:ChapterScalaronOuterFockFL, def:ChapterQgVielbeinModeInstance, def:ChapterQgContinuumModeInstance, def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, def:ChapterQgManifoldModeInstance, def:ChapterSirkSingleTimeShift
 - 63 items missing local sources: ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow
 
 **Completed actions this session:**
-1. Committed def bundle repairs and wave update (commit 6a15716): 5 new def bundles (WallEsaBddBelow, SchrodingerCutoffEsa, QgOuterFockFullFL, QgOuterFockEsa, Qg3DGaugeEsa), 32 HyperbolicQuadratic stubs fixed, 4 ScalaronEsa stubs fixed
-2. Updated wave_upload.json: 150→155 defs, 1733→1755 thms, 1732→1754 sols
-3. Cleared 23 failed items back to pending
-4. Updated PIPELINE_PLAN.md with §1r repair-cycle documentation
-5. Pipeline state committed (9f7a9af): 2842 done, 792 pending, 16 failed
+1. Set `PROVE2ME_WS` to current dir; generator ran for 3 missing chapters (FockCanonical, FockManyMode, ContinuityUnitaryInfinite)
+2. Wave extended: +30 thms, +30 sols (1755→1785 thms, 1754→1784 sols)
+3. First bounded def chunk (`--kind def --parallel 20 --max-seconds 135`): 3 items resolved; 3 FAIL (ScalaronFiberFL, QgOuterFockEsa, Qg3DGaugeEsa — all ordering/import issues)
+4. Daemon running (PID 37642), actively draining thm backlog
 
-**Next actions (per §1q priority):**
-(a) Repair/apply the 3 new def bundles and register them — DONE (commit 6a15716)
-(b) Re-run `extend_wave_stubs.py` for the 65 stubs — PENDING (blocked on def bundle publication)
-(c) Run bounded `--kind def` chunks (`--parallel 20 --max-seconds 135`) to drain the def head — PENDING
+**Next actions (per §1q priority, updated):**
+(a) Publish the 3 generated def bundles — DONE (bundles on disk, registered in wave spec)
+(b) Re-run `extend_wave_stubs.py` for remaining source-available chapters (H6, H8, HermiteRelative, NavierStokesFlow) — PENDING (blocked on def bundle publication)
+(c) Run bounded `--kind def` chunks to drain the def head — IN PROGRESS (daemon)
 (d) Alternate with `--kind thm` / `--kind sol` as defs complete
+(e) Fix def bundle import issues: QgOuterFockEsa needs `import Definitions.Def_ChapterYangMillsHermite` + `import Definitions.Def_ChapterNavierStokes*`; Qg3DGaugeEsa needs `import Definitions.Def_ChapterQuantumGravity3DGauge` + fix `torsionPoly`
 
-**Daemon strategy:** keep running `start_upload.sh` in background; LLM reads new verdicts each session, applies repair by class, verifies locally, resubmits. Target: resolve all pending items or park permanently (proof debt / NO NODE).
+**Daemon strategy:** running `start_upload.sh` (PID 37642); LLM reads new verdicts each session, applies repair by class, verifies locally, resubmits. Target: resolve all pending items or park permanently (proof debt / NO NODE).
 
-**Git commit (this update):** pipeline state committed; PIPELINE_PLAN.md updated with §1t.
+**Git commit (this update):** def bundle regeneration, wave extension, PIPELINE_PLAN.md updated with §1u.

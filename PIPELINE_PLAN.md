@@ -3325,8 +3325,8 @@ OK with correct LEAN_PATH. Takes ~1-2s per def; full run estimated ~5-10 minutes
 - Sources: `../timepiece` (701 chapters, `decl_graph.jsonl`, `lakefile.toml`, `lean-toolchain` v4.28.0)
 - Lean 4: v4.28.0 via elan at `/media/leo/.elan/bin/lean`
 - Mathlib: v4.28.0, packages in `../timepiece/.lake/packages/` (partial cache, 13 oleans)
-- API: **unreachable** (DNS fails for `api.prove2.me`)
-- Upload: background process (PID 344351) running but stuck waiting for API
+- API: **reachable** (version 0.10.5, as of 2026-09-18 23:00)
+- Upload: background process started (PID 354428) — publishing 12 pending defs
 
 **Completed actions.**
 
@@ -3391,4 +3391,52 @@ OK with correct LEAN_PATH. Takes ~1-2s per def; full run estimated ~5-10 minutes
 5. Generate missing stubs from `../timepiece` using `scripts/wave_generate.py`
 
 **Git commit (this update):** def bundle regeneration, source import fix, lakefile update, PIPELINE_PLAN.md §1za.
+
+
+---
+
+## §1zb. Session 27 (2026-09-18 continued) — API reachable, upload running, plan updated
+
+**API status fix.** The API at `https://prove2.me/api/v1` is now reachable (was previously
+unreachable due to DNS issues). Version confirmed: **0.10.5**.
+
+```bash
+# Health check
+curl -s https://prove2.me/api/v1/health
+# Response: {"status":"ok","service":"prove2me-api","version":"0.10.5",...}
+
+# Token refresh (API key authentication)
+curl -s -X POST https://prove2.me/api/v1/refresh \
+  -H "Authorization: Bearer <api_key>" \
+  -H "Content-Type: application/json"
+# Response: {"access_token":"..."}
+```
+
+**Upload started.** Background upload process (PID 354428) started at 23:00 to publish
+12 pending def bundles in dependency order. First action: sync 345 existing publish jobs.
+
+**Current API commands (verified working).**
+
+```bash
+# Get publish jobs
+curl -s https://prove2.me/api/v1/publish-jobs \
+  -H "Authorization: Bearer $TOKEN"
+
+# Get theorems by tag
+curl -s "https://prove2.me/api/v1/theorems?tags=timepiece" \
+  -H "Authorization: Bearer $TOKEN"
+
+# Get user info (includes num_solved_prob)
+curl -s https://prove2.me/api/v1/me \
+  -H "Authorization: Bearer $TOKEN"
+```
+
+**Next actions.**
+1. Monitor upload progress: `tail -f state/upload.log`
+2. Once defs published, check thm/sol drain
+3. Update pipeline state with `--sync`
+4. Fix remaining def bundles (QgOuterFockFarisLavine sketch error)
+5. Generate missing stubs from `../timepiece`
+
+**Git commit (this update):** PIPELINE_PLAN.md §1zb — API reachable, upload running.
 

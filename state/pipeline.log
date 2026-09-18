@@ -48310,3 +48310,17 @@ halpha : 0 < alp)
 22:53:13 summary: 3234 done, 343 pending, 59 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
 22:53:13 waiting on unpublished def bundle(s): BookProof.ChapterClosureUniqueness (185 item(s)), BookProof.ChapterH9 (1 item(s)), BookProof.ChapterHermiteQuadraticEsa (7 item(s)), BookProof.ChapterQgHermiteOscillatorEsa (9 item(s)), BookProof.ChapterQgOuterFockEsa (1 item(s)), BookProof.ChapterScalaronEsa (2 item(s)), ChapterFiniteSectionSingleTime (38 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQymTimeIndependentFlow (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
 22:53:13 chunk: 157 item(s) resolved in 1341s
+22:57:39 sync: read 345 definition publish job(s)
+22:58:00 sync: read 5467 problem publish job(s)
+22:58:00 submitting def:ChapterQgTruncationResolvent (attempt 3)
+22:58:00 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+22:58:09 def:ChapterQgTruncationResolvent: accepted, waiting on the compiler
+22:58:09 submitting def:ChapterYangMillsAbelianFockEsa (attempt 2)
+22:58:18 def:ChapterYangMillsAbelianFockEsa: accepted, waiting on the compiler
+22:58:44 def:ChapterQgTruncationResolvent: FAIL (publish FAILED: definition does not compile: line 80: Unknown identifier `QgModeData`
+
+Note: It is not possible to treat `QgModeData` as an implicitly)
+22:59:09 def:ChapterYangMillsAbelianFockEsa: FAIL (publish FAILED: definition does not compile: line 58: unknown namespace `BookProof.GradedBandSchur`; line 65: unknown namespace `BookProof.SirkSingleT)
+22:59:09 summary: 146 done, 10 pending, 2 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
+22:59:09 waiting on unpublished def bundle(s): ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
+22:59:09 chunk: 2 item(s) resolved in 70s

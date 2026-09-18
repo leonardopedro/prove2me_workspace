@@ -1,22 +1,7 @@
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterYangMillsHermite
 
 /-!
 # The general real quadratic Hamiltonian on the Gauss–polynomial core
@@ -86,7 +71,10 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
-open BookProof.ChapterCarlemanSimplex
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
+open BookProof.CarlemanSimplex
+open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

@@ -2,7 +2,6 @@ import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 
 /-!
@@ -195,22 +194,6 @@ def dsOpD (A : ∀ i, D i →ₗ[ℂ] D i) : dsCore D →ₗ[ℂ] dsCore D :=
 section FockSpace
 
 open MeasureTheory BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FockContinuum
-
-/-- The measurability of the total energy `∑ₖ w(ξₖ)` of an `n`-parcel
-configuration, travelling with this bundle.
-
-A definition bundle is compiled against the published bundles and nothing else,
-and `sectorEnergy`'s measurability is a *theorem* of the source chapter
-(`BookProof/ChapterNavierStokesFockContinuum.lean`), which
-`Definitions.Def_ChapterNavierStokesFockContinuum` does not carry -- only its
-definitions.  A `def` whose body needs that proof therefore cannot be published
-unless the proof travels with it, which is what this is: the chapter's proof,
-verbatim.  `private` keeps the name out of the cumulative environment, where the
-chapter's own theorem bundle declares the public `sectorEnergy_measurable`; the
-mangled private name cannot collide with it. -/
-private theorem sectorEnergy_measurable {w : ℝ → ℝ} (hw : Measurable w) (n : ℕ) :
-    Measurable (sectorEnergy w n) :=
-  Finset.univ.measurable_sum fun k _ => hw.comp (measurable_pi_apply k)
 
 /-- The `n`-parcel sector `L²(ℝⁿ)` of the continuum Fock space. -/
 abbrev parcelSector (n : ℕ) := Lp ℂ 2 (volume : Measure (Fin n → ℝ))

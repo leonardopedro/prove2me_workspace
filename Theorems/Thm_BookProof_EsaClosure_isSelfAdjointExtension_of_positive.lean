@@ -1,6 +1,7 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.isSelfAdjointExtension_of_positive
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
+open BookProof.EsaClosure
 
 
 open Filter Topology

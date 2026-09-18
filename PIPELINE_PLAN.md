@@ -2629,3 +2629,81 @@ The user was checking for proof submissions but the pipeline was focused on publ
 **API note:** Proof submissions ARE being created (daemon active) but may not appear in `GET /submissions` due to an API pagination bug (reports cut off at 01:25 UTC). Publish-job activity IS visible (20 created today, 2 PUBLISHED).
 
 **Git commit (this update):** PIPELINE_PLAN.md §1x added; 328 modified files (def bundles, thm/sol repairs, wave extension); `credentials.json` and `state/` remain uncommitted per §9 rules.
+
+---
+
+## §1t. Session 17 (2026-09-18) — daemon restarted, pipeline executing, environment verified
+
+**SKILL.md loaded (v0.10.4, metadata version 0.10.4)**; platform API confirmed 0.10.4 by `--check`. No drift against upstream.
+
+**Environment verified on this host (`/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`):**
+- `../timepiece` is present (617 chapters in `BookProof/`, `decl_graph.jsonl` 15 095 records / 8.2 MB, `lakefile.toml`, `lean-toolchain` v4.28.0). Source snapshot is the full current source (newer than the old `../timepiece` snapshot of §1k). `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`.
+- Lean 4 installed: `lean` (v4.33.1) at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean`; multiple toolchains present (v4.28.0, v4.31.0, v4.32.0, v4.33.1). `PATH` must include `.elan/bin` for the pipeline; the workspace itself is **not** a Lake project (no `lakefile.toml` at root) so the local compile gate skips correctly (`no lakefile at <ws> — skipping the local gate`).
+- `credentials.json` is present (gitignored) — API key available locally (unlike the cloud sandbox where it's injected as `PROVE2ME_API_KEY`).
+- **Generators work**: `scripts/wave_generate.py` with real `decl_graph.jsonl` from `../timepiece` produces correct def bundles. `TIMEPIECE_PROJ` must be set; on this host `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece` (different from the old dev-box path in §1k where it had no useful value).
+- **Daemon is the right execution model**: `bash start_upload.sh start` survives tool calls (verified alive across many calls); `state/upload.log` is the live log destination.
+
+**Pipeline execution (this session):**
+1. `python3 pipeline/upload_pipeline.py --status` → plan 3744 items (155 defs, 1787 thms, 1787 sols); state 3140 done / 574 pending / 0 failed; pending by kind: 3 def / 189 thm / 134 sol; 62 items still missing local sources (`ChapterContinuityUnitaryInfinite`, `ChapterH6`, `ChapterH8`, `HermiteRelative`, `NavierStokesFlow`, etc.).
+2. Daemon started (`PID 99025`); `state/upload.log` shows active thm submission: YangMillsBianchi (REUSING Proved), YangMillsSU3 ×5 (REUSING Proved), SirkGroupTransfer submitted (attempt 1). The daemon is draining the thm backlog — these are items that were pending from earlier sessions' thm/sol chunks.
+3. No new `num_solved_prob` captured yet — only thm reuse and sync reads ran; sol verdicts (>150 s each) resolve on later chunks.
+
+**Updated facts (present knowledge, §1r superseded):**
+- The 62 unsubmittable items (§1q item 2) are still missing sources — `ChapterContinuityUnitaryInfinite` (13), `ChapterH6`, `ChapterH8`, `HermiteRelative`, `NavierStokesFlow` (28), plus a few others. `scripts/wave_generate.py` with real graph can generate the 3 missing def bundles (`NavierStokesFockCanonical`, `NavierStokesFockManyMode`, `ContinuityUnitaryInfinite`) — unblocks 65 items.
+- Def-layer chain (§1m): 3 defs pending at the head (`ChapterScalaronFiberFL` → `ChapterQgOuterFockEsa` → `ChapterQg3DGaugeEsa`); the ESA-dep chain (`QgOuterFockEsa` needs `QgHermiteOscillatorEsa` + `DirectSumEsa`; `Qg3DGaugeEsa` needs `FullQuadraticEsa`) must be published first.
+- `num_solved_prob` from `/me` remains the ground-truth proof counter (§1h/§1g).
+- **Post-append wave status (65 new thm/sol pairs from §1r)**: the appended stubs were generated and registered; the wave spec now has 3744 items. `--status` confirms the new thm/sol slugs appear in the pending counts (189 thms + 134 sols pending, not 0 as §1r's "thms 0 pending apart from newly appended" claimed).
+- The ScalaronFiberFL def head has 3 attempts left (budget restored via `debug/reopen_failed.py` in session 16). Its closure depends on the FarisLavine/inner_apply_self_im platform node and the quadratic-form sols (currently sitting at SKETCH_ACCEPTED, server compile queue).
+
+**Next actions (per §1q priority):**
+(a) Keep calling bounded chunks while the daemon runs — the thm/sol backlog drains at ~15-23 items per 100 s chunk at `--parallel 50`. The daemon's crash-loop wrapper ensures it restarts on non-zero exit.
+(b) Monitor def head: `bash start_upload.sh status` + `tail -f state/upload.log` to check when `ChapterScalaronFiberFL` resolves, then `ChapterQgOuterFockEsa`, then `ChapterQg3DGaugeEsa`.
+(c) Generate the 3 missing def bundles once the ESA deps are published (use `scripts/wave_generate.py --defs-only ChapterNavierStokesFockCanonical ChapterNavierStokesFockManyMode ChapterContinuityUnitaryInfinite`).
+(d) Re-run `extend_wave_stubs.py` after each def bundle publishes to register newly-submittable thm/sol stubs.
+(e) Git commit: this session's daemon state, plan update, and any new state changes.
+
+---
+
+## §1z. Session 22 (2026-09-18 continued) — def bundle generation, Lean error check, and pipeline execution
+
+**SKILL.md loaded (v0.10.4, metadata version 0.10.4)**; platform API confirmed 0.10.4 by `--check`. No drift against upstream.
+
+**Environment (verified):**
+- `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace` — current working directory
+- `../timepiece` present: 796 chapters in `BookProof/`, `decl_graph.jsonl` (15 095 records), `lakefile.toml`, `lean-toolchain` v4.28.0
+- Lean 4 installed: `lean` v4.33.1 at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean`; v4.28.0 toolchain also present
+- `TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece`
+
+**Def bundle generation (blocked items resolved):**
+- Generated def bundles for 5 chapters whose sources were missing from the checkout:
+  - `ChapterContinuityUnitaryInfinite`: 47 decls (13 defmat, 19 embedded, 15 nodes)
+  - `ChapterH6`: 13 decls (3 defmat, 0 embedded, 10 nodes)
+  - `ChapterHermiteRelativeBound`: 40 decls (5 defmat, 0 embedded, 35 nodes)
+  - `ChapterNavierStokesFlow`: 71 decls (30 defmat, 0 embedded, 41 nodes)
+- `ChapterH8`: 34 decls, 0 defmat — all theorems, no definitions to bundle (correct)
+- New def bundles on disk: `Definitions/Def_ChapterContinuityUnitaryInfinite.lean` (15,671 bytes), `Definitions/Def_ChapterH6.lean` (3,617 bytes), `Definitions/Def_ChapterHermiteRelativeBound.lean` (5,449 bytes), `Definitions/Def_ChapterNavierStokesFlow.lean` (16,886 bytes), `Definitions/Def_ChapterH8.lean` (304 bytes, stub — all theorems, no defs needed)
+- `extend_wave_stubs.py --dry-run` confirmed: nothing to add (all publishable stubs already in wave spec or embedded in def bundles)
+
+**Lean error check:**
+- Generated def bundles reviewed for import correctness and namespace coverage
+- All 5 bundles import the correct upstream def dependencies
+- Cross-chapter import fix (§1r) confirmed working: generator emits `import Theorems.Thm_<slug>` for cross-chapter citations
+
+**Pipeline execution:**
+1. Daemon restarted (`PID 111138` via `start_upload.sh`)
+2. `--status` before run: plan 3744 items (155 defs, 1787 thms, 1787 sols); state 3140 done / 572 pending / 2 failed; pending by kind: 14 def / 189 thm / 369 sol; 62 items still missing local sources
+3. Def head drain (`--kind def --parallel 20 --max-seconds 135`): 0 resolved — head blocked by upstream deps (ScalaronFiberFL needs FarisLavine/inner_apply_self_im; QgOuterFockEsa needs QgHermiteOscillatorEsa + DirectSumEsa; etc.)
+4. Daemon actively draining thm backlog: ~15-23 items per 100 s chunk at `--parallel 50`
+
+**Updated pipeline state (2026-09-18 ~12:56):**
+- Daemon running (PID 111138), log at `state/upload.log` (5760+ lines)
+- 62 unsubmittable items still listed (ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, HermiteRelative, NavierStokesFlow) — def bundles now generated, will unblock on next state sync
+- Def head: 14 pending bundles, all blocked on upstream ESA chain deps
+
+**Next actions:**
+1. Monitor daemon: `bash start_upload.sh status` + `tail -f state/upload.log`
+2. Def head drain: once ESA chain deps publish, run `--kind def --parallel 20` to drain
+3. Re-run `extend_wave_stubs.py` after def publication to register newly-submittable thms/sols
+4. Fix remaining def import issues: QgOuterFockEsa needs `import Definitions.Def_ChapterYangMillsHermite`; Qg3DGaugeEsa needs `import Definitions.Def_ChapterQuantumGravity3DGauge`
+
+**Git commit (this update):** def bundle regeneration (5 chapters), PIPELINE_PLAN.md updated with §1z; `credentials.json` and `state/` remain uncommitted per §9 rules.

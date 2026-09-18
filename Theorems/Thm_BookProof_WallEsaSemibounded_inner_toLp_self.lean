@@ -14,7 +14,6 @@ open BookProof.WallEsaSemibounded
 
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
-open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
 
 noncomputable section
 

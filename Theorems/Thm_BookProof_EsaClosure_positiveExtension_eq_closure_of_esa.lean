@@ -1,6 +1,7 @@
 -- Generated from ChapterEsaClosure.lean — theorem BookProof.EsaClosure.positiveExtension_eq_closure_of_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
+open BookProof.EsaClosure
 
 
 open Filter Topology

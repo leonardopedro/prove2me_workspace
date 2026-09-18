@@ -7,6 +7,7 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterWallEsaBddBelow
 -- Theorem-layer dependencies of the embedded theorems below.  The transplant rule makes every
 -- public theorem a *node* (`Theorems/Thm_<slug>.lean`), so the four lemmas these proofs cite are
 -- not in any def bundle: they must be imported, and only after they are Proved on the platform

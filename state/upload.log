@@ -2291,3 +2291,183 @@ line 49: Invalid field `kinetic_inner`: The environment does not contain `BookPr
 22:00:21 waiting on unpublished def bundle(s): ChapterFiniteSectionSingleTime (39 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgOuterFockCoreFL (2 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQymTimeIndependentFlow (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterScalaronWallEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterWallEsaSemibounded (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
 22:00:21 chunk: 2 item(s) resolved in 94s
 [2026-09-15 21:58:27] pipeline exited rc=0
+08:54:34 sync: read 291 definition publish job(s)
+08:54:48 sync: read 4572 problem publish job(s)
+08:54:48 submitting def:ChapterScalaronFiberFL (attempt 2)
+08:54:48 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+08:54:48 submitting def:ChapterQgOuterFockEsa (attempt 1)
+08:54:48 def:ChapterQgOuterFockEsa: accepted, waiting on the compiler
+08:54:48 submitting def:ChapterQg3DGaugeEsa (attempt 1)
+08:54:48 def:ChapterQg3DGaugeEsa: accepted, waiting on the compiler
+08:54:49 submitting thm:BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul (attempt 1)
+08:54:49 warning: no Lean toolchain at /home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake - skipping the local gate and using the platform compiler as the oracle
+08:54:53 thm:BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul: REUSING existing BookProof.WallEsaSemibounded.integral_conj_neg_deriv2_mul (Open) 67823146-e348-4c7a-b534-02f676b98b5f
+08:54:53 thm:BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul: DONE
+08:54:53 submitting thm:BookProof_WallEsaSemibounded_opCc_quadratic_form (attempt 1)
+08:54:57 thm:BookProof_WallEsaSemibounded_opCc_quadratic_form: REUSING existing BookProof.WallEsaSemibounded.opCc_quadratic_form (Proved) c86d6643-2f17-451b-9c23-22ed3af2980a
+08:54:57 thm:BookProof_WallEsaSemibounded_opCc_quadratic_form: DONE
+08:54:57 submitting thm:BookProof_ScalaronWallEsa_ode_solution_eq_zero (attempt 1)
+08:55:01 thm:BookProof_ScalaronWallEsa_ode_solution_eq_zero: REUSING existing BookProof.ScalaronWallEsa.ode_solution_eq_zero (Open) 1d9687b7-d3f5-4e9d-a52d-27dd0a78229d
+08:55:01 thm:BookProof_ScalaronWallEsa_ode_solution_eq_zero: DONE
+08:55:01 submitting thm:BookProof_ScalaronWallEsa_wallHam_symmetricOn (attempt 1)
+08:55:05 thm:BookProof_ScalaronWallEsa_wallHam_symmetricOn: REUSING existing BookProof.ScalaronWallEsa.wallHam_symmetricOn (Open) e1b3a639-5a29-4315-b4fe-93b9f1bfe17c
+08:55:05 thm:BookProof_ScalaronWallEsa_wallHam_symmetricOn: DONE
+08:55:05 submitting thm:BookProof_ScalaronWallEsa_wallHam_weak_eq (attempt 1)
+08:55:09 thm:BookProof_ScalaronWallEsa_wallHam_weak_eq: REUSING existing BookProof.ScalaronWallEsa.wallHam_weak_eq (Open) 13effa58-d2c7-4fcc-81b2-9f53aaffd05d
+08:55:09 thm:BookProof_ScalaronWallEsa_wallHam_weak_eq: DONE
+08:55:09 submitting thm:BookProof_StrichartzWave_fourier_constCoeffOp_apply (attempt 1)
+08:55:13 thm:BookProof_StrichartzWave_fourier_constCoeffOp_apply: REUSING existing BookProof.StrichartzWave.fourier_constCoeffOp_apply (Open) a8d869b0-14e4-487c-b3d2-9cd7bcc6c0bb
+08:55:13 thm:BookProof_StrichartzWave_fourier_constCoeffOp_apply: DONE
+08:55:13 submitting thm:BookProof_StrichartzWave_inner_toLp_eq_integral_fourier (attempt 1)
+08:55:18 thm:BookProof_StrichartzWave_inner_toLp_eq_integral_fourier: REUSING existing BookProof.StrichartzWave.inner_toLp_eq_integral_fourier (Open) f98ec1b4-8b36-47d0-9f99-001b8779f814
+08:55:18 thm:BookProof_StrichartzWave_inner_toLp_eq_integral_fourier: DONE
+08:55:18 submitting thm:BookProof_StrichartzWave_inner_toLp_left_fourier (attempt 1)
+08:55:22 thm:BookProof_StrichartzWave_inner_toLp_left_fourier: REUSING existing BookProof.StrichartzWave.inner_toLp_left_fourier (Open) 1d5ca30a-65e5-49d7-9cf7-888f6a42d499
+08:55:22 thm:BookProof_StrichartzWave_inner_toLp_left_fourier: DONE
+08:55:22 submitting thm:BookProof_WallEsaSemibounded_ccEquiv_norm_sq (attempt 1)
+08:55:26 thm:BookProof_WallEsaSemibounded_ccEquiv_norm_sq: REUSING existing BookProof.WallEsaSemibounded.ccEquiv_norm_sq (Open) 32036ffa-312c-4ce4-81e1-dd05967e8297
+08:55:26 thm:BookProof_WallEsaSemibounded_ccEquiv_norm_sq: DONE
+08:55:26 submitting thm:BookProof_WallEsaSemibounded_kinCcR_quadratic_form (attempt 1)
+08:55:30 thm:BookProof_WallEsaSemibounded_kinCcR_quadratic_form: REUSING existing BookProof.WallEsaSemibounded.kinCcR_quadratic_form (Open) 94c5e0e1-6a9e-44ba-b334-a10857e6560e
+08:55:30 thm:BookProof_WallEsaSemibounded_kinCcR_quadratic_form: DONE
+08:55:30 submitting thm:BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt (attempt 1)
+08:55:34 thm:BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt: REUSING existing BookProof.ScalaronWallEsa.wallHam_deficiencyTrivialAt (Open) 0e419eff-9513-4a15-8f36-49ee0a9f47e2
+08:55:34 thm:BookProof_ScalaronWallEsa_wallHam_deficiencyTrivialAt: DONE
+08:55:34 submitting thm:BookProof_StrichartzWave_constCoeffOp_symmetric (attempt 1)
+08:55:39 thm:BookProof_StrichartzWave_constCoeffOp_symmetric: REUSING existing BookProof.StrichartzWave.constCoeffOp_symmetric (Open) b7274d12-87fe-49f8-93a7-18d90f383a16
+08:55:39 thm:BookProof_StrichartzWave_constCoeffOp_symmetric: DONE
+08:55:39 submitting thm:BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero (attempt 1)
+08:55:43 thm:BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero: REUSING existing BookProof.StrichartzWave.integral_conj_mul_symbol_sub_eq_zero (Open) 42676c87-f82b-4fd1-b289-9b1fca4d6575
+08:55:43 thm:BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero: DONE
+08:55:43 submitting thm:BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded (attempt 1)
+08:55:47 thm:BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded: REUSING existing BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded (Open) df8375e0-b5eb-42b6-83ac-efefad815ad2
+08:55:47 thm:BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded: DONE
+08:55:47 submitting thm:BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint (attempt 1)
+08:55:51 thm:BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint: REUSING existing BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint (Open) fb8f105f-06bf-4d1d-bd2f-92bb637e96e2
+08:55:51 thm:BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint: DONE
+08:55:51 submitting thm:BookProof_StrichartzWave_wave_symmetric (attempt 1)
+08:55:55 thm:BookProof_StrichartzWave_wave_symmetric: REUSING existing BookProof.StrichartzWave.wave_symmetric (Open) 3d3dd653-a5db-4f7a-b865-37f71973031b
+08:55:55 thm:BookProof_StrichartzWave_wave_symmetric: DONE
+08:55:55 submitting thm:BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial (attempt 1)
+08:56:00 thm:BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial: REUSING existing BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial (Open) 99d1ed12-3a11-4dbe-a1b4-a941eafbaade
+08:56:00 thm:BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial: DONE
+08:56:00 submitting thm:BookProof_WallEsaSemibounded_wallHam_nonneg_form (attempt 1)
+08:56:04 thm:BookProof_WallEsaSemibounded_wallHam_nonneg_form: REUSING existing BookProof.WallEsaSemibounded.wallHam_nonneg_form (Open) 76943de6-30ea-46b1-9975-6e0f17c9bfc5
+08:56:04 thm:BookProof_WallEsaSemibounded_wallHam_nonneg_form: DONE
+08:56:04 submitting thm:BookProof_ScalaronWallEsa_starobinskyWall_esa (attempt 1)
+08:56:08 thm:BookProof_ScalaronWallEsa_starobinskyWall_esa: REUSING existing BookProof.ScalaronWallEsa.starobinskyWall_esa (Open) 92ee2aa0-bc9c-4439-95ad-84fb5378d284
+08:56:08 thm:BookProof_ScalaronWallEsa_starobinskyWall_esa: DONE
+08:56:08 submitting thm:BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint (attempt 1)
+08:56:12 thm:BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint: REUSING existing BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint (Open) d5349104-71e4-4610-a002-3c2da39edc79
+08:56:12 thm:BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint: DONE
+08:56:12 submitting thm:BookProof_ScalaronWallEsa_starobinskyWall_stone_flow (attempt 1)
+08:56:17 thm:BookProof_ScalaronWallEsa_starobinskyWall_stone_flow: REUSING existing BookProof.ScalaronWallEsa.starobinskyWall_stone_flow (Open) 1a7e2545-3a55-4c83-bd00-793299a976f9
+08:56:17 thm:BookProof_ScalaronWallEsa_starobinskyWall_stone_flow: DONE
+08:56:17 submitting thm:BookProof_StrichartzWave_wave_essentiallySelfAdjoint (attempt 1)
+08:56:21 thm:BookProof_StrichartzWave_wave_essentiallySelfAdjoint: REUSING existing BookProof.StrichartzWave.wave_essentiallySelfAdjoint (Open) 7eb2db82-ff6d-43b7-97dd-f748782dcb7d
+08:56:21 thm:BookProof_StrichartzWave_wave_essentiallySelfAdjoint: DONE
+08:56:21 submitting thm:BookProof_ChapterH9_compress_compress (attempt 1)
+08:56:25 thm:BookProof_ChapterH9_compress_compress: REUSING existing BookProof.ChapterH9.compress_compress (Proved) afd7975c-b12b-4389-a23c-a7dad7a281ea
+08:56:25 thm:BookProof_ChapterH9_compress_compress: DONE
+08:56:25 submitting thm:BookProof_ChapterH9_compress_nonneg (attempt 1)
+08:56:30 thm:BookProof_ChapterH9_compress_nonneg: REUSING existing BookProof.ChapterH9.compress_nonneg (Proved) 4e3920bd-6117-4310-81ac-e1f603af48bc
+08:56:30 thm:BookProof_ChapterH9_compress_nonneg: DONE
+08:56:30 submitting thm:BookProof_ChapterH9_compress_re_inner_mem_Icc (attempt 1)
+08:56:34 thm:BookProof_ChapterH9_compress_re_inner_mem_Icc: REUSING existing BookProof.ChapterH9.compress_re_inner_mem_Icc (Proved) 7fcd3e60-03bc-4439-92ba-8d70f249159a
+08:56:34 thm:BookProof_ChapterH9_compress_re_inner_mem_Icc: DONE
+08:56:34 submitting thm:BookProof_ChapterH9_exists_unit_eigenvector (attempt 1)
+08:56:38 thm:BookProof_ChapterH9_exists_unit_eigenvector: REUSING existing BookProof.ChapterH9.exists_unit_eigenvector (Open) f223f616-c290-44e1-a45c-257c6b5b0fa8
+08:56:38 thm:BookProof_ChapterH9_exists_unit_eigenvector: DONE
+08:56:38 submitting thm:BookProof_ChapterH9_mem_numRange (attempt 1)
+08:56:42 thm:BookProof_ChapterH9_mem_numRange: REUSING existing BookProof.ChapterH9.mem_numRange (Open) c4c722e5-4272-4deb-92d7-bd151c8197c0
+08:56:42 thm:BookProof_ChapterH9_mem_numRange: DONE
+08:56:42 submitting thm:BookProof_ChapterH9_mem_numRange_iff (attempt 1)
+08:56:46 thm:BookProof_ChapterH9_mem_numRange_iff: REUSING existing BookProof.ChapterH9.mem_numRange_iff (Open) 9504a169-bd9a-4f25-bf8b-0530ea9eacd0
+08:56:46 thm:BookProof_ChapterH9_mem_numRange_iff: DONE
+08:56:47 submitting thm:BookProof_ChapterH9_norm_le_one_of_isometry (attempt 1)
+08:56:51 thm:BookProof_ChapterH9_norm_le_one_of_isometry: REUSING existing BookProof.ChapterH9.norm_le_one_of_isometry (Proved) 91030772-e883-4821-ba5e-84131277520a
+08:56:51 thm:BookProof_ChapterH9_norm_le_one_of_isometry: DONE
+08:56:51 submitting thm:BookProof_ChapterH9_norm_map_of_adjoint_comp (attempt 1)
+08:56:55 thm:BookProof_ChapterH9_norm_map_of_adjoint_comp: REUSING existing BookProof.ChapterH9.norm_map_of_adjoint_comp (Proved) 8efb234e-2638-4afb-ab24-de43706e2192
+08:56:55 thm:BookProof_ChapterH9_norm_map_of_adjoint_comp: DONE
+08:56:55 submitting thm:BookProof_ChapterH9_norm_sub_starProjection_le (attempt 1)
+08:56:59 thm:BookProof_ChapterH9_norm_sub_starProjection_le: REUSING existing BookProof.ChapterH9.norm_sub_starProjection_le (Proved) 7b03e853-1035-4c84-a62d-754a91a9dcda
+08:56:59 thm:BookProof_ChapterH9_norm_sub_starProjection_le: DONE
+08:56:59 submitting thm:BookProof_ChapterH9_numRange_compress_subset_closedBall (attempt 1)
+08:57:03 thm:BookProof_ChapterH9_numRange_compress_subset_closedBall: REUSING existing BookProof.ChapterH9.numRange_compress_subset_closedBall (Proved) 36456cd6-2ba2-4d42-9367-c244ea15cf02
+08:57:03 thm:BookProof_ChapterH9_numRange_compress_subset_closedBall: DONE
+08:57:03 submitting thm:BookProof_ChapterH9_ritz_mem_numRange (attempt 1)
+08:57:07 thm:BookProof_ChapterH9_ritz_mem_numRange: REUSING existing BookProof.ChapterH9.ritz_mem_numRange (Proved) cc2ce50a-04d0-4461-ba5b-8fa03126ddab
+08:57:07 thm:BookProof_ChapterH9_ritz_mem_numRange: DONE
+08:57:07 submitting thm:BookProof_HyperbolicQuadratic_dPoly_apply (attempt 1)
+08:57:12 thm:BookProof_HyperbolicQuadratic_dPoly_apply: accepted, waiting on the compiler
+08:57:12 submitting thm:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal (attempt 1)
+08:57:16 thm:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: accepted, waiting on the compiler
+08:57:16 submitting thm:BookProof_HyperbolicQuadratic_hermiteMvLp_total (attempt 1)
+08:57:21 thm:BookProof_HyperbolicQuadratic_hermiteMvLp_total: accepted, waiting on the compiler
+08:57:21 submitting thm:BookProof_HyperbolicQuadratic_hermiteMv_number (attempt 1)
+08:57:25 thm:BookProof_HyperbolicQuadratic_hermiteMv_number: accepted, waiting on the compiler
+08:57:25 submitting thm:BookProof_HyperbolicQuadratic_momPoly_apply' (attempt 1)
+08:57:30 thm:BookProof_HyperbolicQuadratic_momPoly_apply': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+08:57:30 submitting thm:BookProof_HyperbolicQuadratic_pgFun_add (attempt 1)
+08:57:34 thm:BookProof_HyperbolicQuadratic_pgFun_add: accepted, waiting on the compiler
+08:57:34 submitting thm:BookProof_HyperbolicQuadratic_pgFun_smul (attempt 1)
+08:57:39 thm:BookProof_HyperbolicQuadratic_pgFun_smul: accepted, waiting on the compiler
+08:57:39 submitting thm:BookProof_HyperbolicQuadratic_pgFun_sub (attempt 1)
+08:57:43 thm:BookProof_HyperbolicQuadratic_pgFun_sub: accepted, waiting on the compiler
+08:57:43 submitting thm:BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp (attempt 1)
+08:57:49 thm:BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp: accepted, waiting on the compiler
+08:57:49 submitting thm:BookProof_HyperbolicQuadratic_polyGaussCore_dense_L2 (attempt 1)
+08:57:53 thm:BookProof_HyperbolicQuadratic_polyGaussCore_dense_L2: accepted, waiting on the compiler
+08:57:53 submitting thm:BookProof_HyperbolicQuadratic_quadSymbol_single (attempt 1)
+08:57:58 thm:BookProof_HyperbolicQuadratic_quadSymbol_single: accepted, waiting on the compiler
+08:57:58 submitting thm:BookProof_HyperbolicQuadratic_sec_coord (attempt 1)
+08:58:02 thm:BookProof_HyperbolicQuadratic_sec_coord: accepted, waiting on the compiler
+08:58:02 submitting thm:BookProof_HyperbolicQuadratic_sec_sec (attempt 1)
+08:58:08 thm:BookProof_HyperbolicQuadratic_sec_sec: accepted, waiting on the compiler
+08:58:08 submitting thm:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal (attempt 1)
+08:58:12 thm:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: accepted, waiting on the compiler
+08:58:12 submitting thm:BookProof_ScalaronEsa_ccEquiv_coe (attempt 1)
+08:58:16 thm:BookProof_ScalaronEsa_ccEquiv_coe: REUSING existing BookProof.ScalaronEsa.ccEquiv_coe (Proved) b1cd9f77-77ae-4c45-886c-c0805e3c4b00
+08:58:16 thm:BookProof_ScalaronEsa_ccEquiv_coe: DONE
+08:58:16 submitting thm:BookProof_ScalaronEsa_ccInclLM_apply (attempt 1)
+08:58:21 thm:BookProof_ScalaronEsa_ccInclLM_apply: REUSING existing BookProof.ScalaronEsa.ccInclLM_apply (Open) 4f8749ad-6070-4018-b2ef-8ab5fd7e04ef
+08:58:21 thm:BookProof_ScalaronEsa_ccInclLM_apply: DONE
+08:58:21 submitting thm:BookProof_ScalaronEsa_contDiff_scalaronAlong (attempt 1)
+08:58:25 thm:BookProof_ScalaronEsa_contDiff_scalaronAlong: REUSING existing BookProof.ScalaronEsa.contDiff_scalaronAlong (Open) 9caf50ec-6a63-47e7-95b6-49ece7c5aee3
+08:58:25 thm:BookProof_ScalaronEsa_contDiff_scalaronAlong: DONE
+08:58:25 submitting thm:BookProof_ScalaronEsa_mem_ccSchwartz (attempt 1)
+08:58:29 thm:BookProof_ScalaronEsa_mem_ccSchwartz: REUSING existing BookProof.ScalaronEsa.mem_ccSchwartz (Proved) ebde4c74-e336-4921-9836-c4bc161a573f
+08:58:29 thm:BookProof_ScalaronEsa_mem_ccSchwartz: DONE
+08:58:29 submitting thm:BookProof_ScalaronEsa_mulCc_apply (attempt 1)
+08:58:33 thm:BookProof_ScalaronEsa_mulCc_apply: REUSING existing BookProof.ScalaronEsa.mulCc_apply (Proved) e91d6c68-a26c-4033-926e-a5939dc6a57c
+08:58:33 thm:BookProof_ScalaronEsa_mulCc_apply: DONE
+08:58:33 submitting thm:BookProof_ScalaronEsa_opCc_apply (attempt 1)
+08:58:38 thm:BookProof_ScalaronEsa_opCc_apply: REUSING existing BookProof.ScalaronEsa.opCc_apply (Proved) efe9d79d-bca9-49fc-a0df-fce7cb660d34
+08:58:38 thm:BookProof_ScalaronEsa_opCc_apply: DONE
+08:58:38 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt (attempt 1)
+08:58:42 thm:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: accepted, waiting on the compiler
+08:58:42 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_esa (attempt 1)
+08:58:47 thm:BookProof_ScalaronEsa_qgScalaronMode_esa: accepted, waiting on the compiler
+08:58:47 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_potential_ge (attempt 1)
+08:58:52 thm:BookProof_ScalaronEsa_qgScalaronMode_potential_ge: accepted, waiting on the compiler
+08:58:52 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_symmetric (attempt 1)
+08:58:56 thm:BookProof_ScalaronEsa_qgScalaronMode_symmetric: accepted, waiting on the compiler
+08:58:56 submitting thm:BookProof_ScalaronEsa_scalaronFullPotential_ge (attempt 1)
+08:59:01 thm:BookProof_ScalaronEsa_scalaronFullPotential_ge: REUSING existing BookProof.ScalaronEsa.scalaronFullPotential_ge (Open) 94f87fe1-d9e4-434a-acf0-d9444649e136
+08:59:01 thm:BookProof_ScalaronEsa_scalaronFullPotential_ge: DONE
+08:59:01 submitting thm:BookProof_ScalaronEsa_starobinskyV_not_hasTemperateGrowth (attempt 1)
+08:59:05 thm:BookProof_ScalaronEsa_starobinskyV_not_hasTemperateGrowth: REUSING existing BookProof.ScalaronEsa.starobinskyV_not_hasTemperateGrowth (Open) 49b85afa-32f9-4870-9998-eae0b10f79d7
+08:59:05 thm:BookProof_ScalaronEsa_starobinskyV_not_hasTemperateGrowth: DONE
+08:59:05 submitting thm:BookProof_ScalaronEsa_symmetricOn_inclusion (attempt 1)
+08:59:09 thm:BookProof_ScalaronEsa_symmetricOn_inclusion: REUSING existing BookProof.ScalaronEsa.symmetricOn_inclusion (Open) b6cfefad-7982-4fcd-b8f7-340d52eea1e8
+08:59:09 thm:BookProof_ScalaronEsa_symmetricOn_inclusion: DONE
+08:59:09 submitting thm:BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed (attempt 1)
+08:59:14 thm:BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed: REUSING existing BookProof.ScalaronEsa.wave_add_smoothPotential_esa_of_finiteSpeed (Open) 4a8ae473-c2a0-471b-9816-e5aff42e95c2
+08:59:14 thm:BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed: DONE
+08:59:14 submitting thm:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint (attempt 1)
+08:59:19 thm:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint: accepted, waiting on the compiler
+08:59:19 submitting thm:BookProof_ChapterH9_numRange_compress_mono (attempt 1)
+08:59:23 thm:BookProof_ChapterH9_numRange_compress_mono: REUSING existing BookProof.ChapterH9.numRange_compress_mono (Proved) 1b7a2be7-7d5a-4fd9-b25e-1b8dffd50a3f
+08:59:23 thm:BookProof_ChapterH9_numRange_compress_mono: DONE
+08:59:23 submitting thm:BookProof_ChapterH9_norm_adjoint_le_one_of_isometry (attempt 1)

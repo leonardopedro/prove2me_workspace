@@ -31,4 +31,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 
 theorem BookProof.HashimotoShiftInvert.IsShiftInvertC.apply_eq {A : Dom →ₗ[ℂ] F} {γ : ℂ} {X : F →L[ℂ] F}
     (h : IsShiftInvertC A γ X) (u : F) :
-    A ⟨X u, h.mem u⟩ = γ • X u - u := by sorry
+    A ⟨X u, (h.2 u).choose⟩ = γ • X u - u := by sorry

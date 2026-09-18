@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterHermiteFunctions
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.span_range_coreBasis
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore

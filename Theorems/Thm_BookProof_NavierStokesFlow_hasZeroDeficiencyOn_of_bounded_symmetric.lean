@@ -16,6 +16,8 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {n : ℕ} (L : LagrangianNS n)
+
 theorem BookProof.NavierStokesFlow.hasZeroDeficiencyOn_of_bounded_symmetric (A : F →L[ℂ] F)
     (hsym : (A : F →ₗ[ℂ] F).IsSymmetric) (D : Submodule ℂ F) (hdense : Dense (D : Set F))
     (hinv : ∀ v : D, A (v : F) ∈ D) :

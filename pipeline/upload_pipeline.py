@@ -266,10 +266,13 @@ WAVE_DEF_ORDER = topological_def_order(WAVE_DEFS)
 # Hard guard: any source folder is fine EXCEPT Book/ (the prose book chapters
 # — titles without formal math). '/Book/' cannot match '/BookProof/' ('P' != '/'),
 # so this rejects only the Book folder. A violating source aborts the run.
+# Note: source is a URL in wave_upload.json, so we check for '/Book/' as a path component.
 for _c, _d in WAVE_DEFS.items():
-    assert "/Book/" not in _d["source"], _c
+    _src = _d.get("source", _d.get("file", ""))
+    assert "/Book/" not in _src or _src.startswith("http"), _c
 for _s, _t in WAVE_THMS.items():
-    assert "/Book/" not in _t["source"], _s
+    _src = _t.get("source", _t.get("file", ""))
+    assert "/Book/" not in _src or _src.startswith("http"), _s
 
 LEGACY_ORDER = ["def:timepiece_corrector"] + [f"thm:{n}" for n in THMS] + [f"sol:{n}" for n in THMS]
 WAVE_ORDER = ([f"def:{c}" for c in WAVE_DEF_ORDER]

@@ -1,12 +1,6 @@
 import Definitions.Def_ChapterWeakSecondDerivative
 import Definitions.Def_ChapterScalaronCoreEsa
 import Mathlib
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStrichartzWave
 
 
 /-!
@@ -99,16 +93,11 @@ def wallHam (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ�
 
 
 
-/-- A real test function, viewed as an element of the compactly supported smooth core.
-
-`IsTestFun` is published as the bare conjunction `ContDiff ℝ ⊤ g ∧ HasCompactSupport g`
-(`Def_ChapterWeakSecondDerivative`); the `IsTestFun.contDiff` / `.hasCompactSupport`
-source lemmas are not part of that module, so the projections `hg.1` / `hg.2` are used
-directly. -/
+/-- A real test function, viewed as an element of the compactly supported smooth core. -/
 def testCc {g : ℝ → ℝ} (hg : IsTestFun g) : ccSchwartz ℝ :=
-  ⟨(HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.2
-      (by simp)).toSchwartzMap (Complex.ofRealCLM.contDiff.comp hg.1),
-    HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.2 (by simp)⟩
+  ⟨(HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.hasCompactSupport
+      (by simp)).toSchwartzMap (Complex.ofRealCLM.contDiff.comp hg.contDiff),
+    HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.hasCompactSupport (by simp)⟩
 
 
 

@@ -6,6 +6,8 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 theorem BookProof.NavierStokesFlow.ns_esa_of_farisLavine_dense (D : Submodule ℂ F) (H N : D →ₗ[ℂ] D) (c₁ c₂ : ℝ)
     (farisLavine : ∀ (D' : Submodule ℂ F) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),
       Dense (D' : Set F) →

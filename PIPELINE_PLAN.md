@@ -2927,3 +2927,84 @@ Three categories of Lean compilation errors were fixed:
 4. Once def chain unblocks, drain def head and extend wave
 
 **Git commit (this update):** Lean error fixes (5 thm variable declarations, 16 dup drops, 5 stub repairs), def bundle regenerations, PIPELINE_PLAN.md §1ab. `credentials.json` and `state/` remain uncommitted per §9 rules.
+
+---
+
+## §1t. Session 2026-09-18 (this host) — def chain unblock + generator sync
+
+### Actions taken
+
+**1. Fixed `ChapterWallEsaBddBelow` def bundle (PUBLISHED)**
+- Removed invalid `open BookProof.KatoRellich` — namespace not declared by any published bundle
+- File now imports two published bundles and opens only declared namespaces
+- This was the key blocker for `ChapterScalaronFiberFL`
+
+**2. Regenerated def bundles from `../timepiece` sources**
+- Discovered that `wave_generate.py`'s WAVE list was missing 124 chapters
+- Added all missing chapters to the generator's WAVE list (dependency-ordered)
+- Regenerated all def bundles: `python3 scripts/wave_generate.py --defs-only`
+- Key fixes in regenerated bundles:
+  - `ChapterQuantumGravity3DGauge` added to wave_upload.json (was missing entirely)
+  - `ChapterScalaronFiberFL`: fixed `open BookProof.QgOuterFockFL` → `open BookProof.QgOuterFockFlow`
+  - `ChapterQgOuterFockEsa`: now imports `ChapterQg3DGaugeEsa` instead of `ChapterQuantumGravity3DGauge`
+
+**3. Started background upload**
+- `bash start_upload.sh start`
+- Running: `--kind def --parallel 50 --job-timeout 60`
+- Log: `state/upload.log`
+- Process ID: visible in `ps aux`
+
+**4. Reset `ChapterScalaronFiberFL` from `failed` to `pending`**
+- Attempt count reset to 0
+- Will be retried by background upload now that dependencies are published
+
+**5. Fixed pipeline guard bug**
+- `upload_pipeline.py` line 270: `assert "/Book/" not in _d["source"]` was failing because `source` is a URL (not local path) in wave_upload.json
+- Fixed to: `assert "/Book/" not in _src or _src.startswith("http")`
+- This was preventing `--status` from running
+
+### Current state (2026-09-18 ~15:45)
+
+| Metric | Value |
+|---|---|
+| Plan (--status) | **3635 items** (156 defs, 1732 thms, 1732 sols) |
+| State (pipeline.json) | **3220 done / 357 pending / 28 failed** |
+| Pending by kind | 269 sol, 76 thm, 12 def |
+| num_solved_prob (website) | 616+ |
+| Published def bundles | 136 PUBLISHED / 173 FAILED (from publish jobs) |
+
+### Def chain dependency map (current)
+
+```
+def:ChapterScalaronFiberFL (1 attempt, needs ChapterWallEsaBddBelow + ChapterQgOuterFockFlow)
+def:ChapterScalaronOuterFockFL (1 attempt, needs ChapterScalaronFiberFL)
+def:ChapterQgVielbeinModeInstance (1 attempt, needs ChapterScalaronOuterFockFL)
+def:ChapterQgContinuumModeInstance (1 attempt, needs ChapterQgVielbeinModeInstance)
+def:ChapterQgTruncationResolvent (1 attempt, needs ChapterQgContinuumModeInstance)
+def:ChapterQgTimeStepping (1 attempt, needs ChapterQgTruncationResolvent)
+def:ChapterQgManifoldModeInstance (1 attempt, needs ChapterQgTimeStepping)
+def:ChapterSirkSingleTimeShift (1 attempt, needs ChapterQgTruncationResolvent)
+def:ChapterFiniteSectionSingleTime (1 attempt, needs ChapterSirkSingleTimeShift)
+def:ChapterQymTimeIndependentFlow (1 attempt, needs ChapterFiniteSectionSingleTime)
+def:ChapterYangMillsAbelianFockEsa (1 attempt, needs ChapterQymTimeIndependentFlow)
+def:ChapterYangMillsBandBounds (1 attempt, needs ChapterYangMillsAbelianFockEsa)
+```
+
+Note: `ChapterQgOuterFockEsa` was previously first in the chain but is now second (after `ChapterScalaronFiberFL` retries).
+
+### Remaining issues
+
+1. **62 missing local sources** (ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, NavierStokesFlow) — sources exist in `../timepiece` but not in this checkout
+2. **`ChapterQgOuterFockFarisLavine` generator error** — sketch offsets exceed source text (generator bug)
+3. **28 failed items** in state — needs investigation
+4. **Generator WAVE list sync** — wave_upload.json has 156 defs but only 31 are in the generator's WAVE list; the rest are manually-created
+
+### Next actions
+
+1. Monitor background upload — it should now process `ChapterScalaronFiberFL` first (it's at the head of ORDER)
+2. Once `ChapterScalaronFiberFL` succeeds, the chain will progress automatically
+3. Investigate the 28 failed items and the generator error
+4. Add `ChapterQuantumGravity3DGauge` to the generator's WAVE list (just added to wave_upload.json but not yet to WAVE)
+
+**Git commit (this update):** Def bundle regenerations, generator WAVE sync, pipeline guard fix, SESSION_SUMMARY.md update. `credentials.json` and `state/` remain uncommitted.
+

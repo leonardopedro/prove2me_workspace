@@ -15,5 +15,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {n : ℕ} (d : NSTruncation n)
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.momPoly_apply (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momPoly i p = C (-Complex.I) * (pderiv i p - C (1/2 : ℂ) * (X i * p)) := by sorry

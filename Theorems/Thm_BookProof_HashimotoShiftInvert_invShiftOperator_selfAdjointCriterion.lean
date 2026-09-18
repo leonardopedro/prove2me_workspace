@@ -9,6 +9,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 theorem BookProof.HashimotoShiftInvert.invShiftOperator_selfAdjointCriterion (R : F →L[ℂ] F) (hinj : Function.Injective R)
     (γ : ℝ) (hR : IsSelfAdjoint R) (w u : F)
     (hw : ∀ v : LinearMap.range (R : F →ₗ[ℂ] F),

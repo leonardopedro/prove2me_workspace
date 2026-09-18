@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterHermiteFunctions
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.gaussWD_eq_sq
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore

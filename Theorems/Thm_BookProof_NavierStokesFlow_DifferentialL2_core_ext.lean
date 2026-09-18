@@ -15,5 +15,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.core_ext {M : Type*} [AddCommGroup M] [Module ℂ M]
     {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by sorry

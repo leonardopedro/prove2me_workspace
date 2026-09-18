@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterHermiteFunctions
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.norm_sq_eq_sum
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore

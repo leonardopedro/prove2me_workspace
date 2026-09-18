@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterHermiteFunctions
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.gaussInt_smul
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore

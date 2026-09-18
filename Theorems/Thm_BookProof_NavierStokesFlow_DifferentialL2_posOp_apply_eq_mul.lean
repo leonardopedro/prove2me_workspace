@@ -15,5 +15,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {n : ℕ} (d : NSTruncation n)
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by sorry

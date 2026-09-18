@@ -23,4 +23,6 @@ variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 noncomputable section
 
+variable {n : ℕ} (d : NSTruncation n)
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.pgLp_smul (c : ℂ) (p : MvPolynomial (Fin d) ℂ) : pgLp (c • p) = c • pgLp p := by sorry

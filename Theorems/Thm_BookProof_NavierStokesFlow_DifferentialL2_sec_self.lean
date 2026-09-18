@@ -15,4 +15,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {n : ℕ} (d : NSTruncation n)
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.sec_self (i : Fin d) (x : Vd d) : sec i x (x i) = x := by sorry

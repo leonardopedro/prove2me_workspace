@@ -1,12 +1,5 @@
 import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterQuantumGravityDensitized
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStrichartzWave
 
 
 /-!

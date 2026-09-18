@@ -1,9 +1,3 @@
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterYangMillsFriedrichs
 -- Generated from ChapterEsaClosure.lean — solution of BookProof.EsaClosure.hashimoto_multishift_selects_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure

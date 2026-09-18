@@ -1,11 +1,5 @@
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
-import Definitions.Def_ChapterDirectSumEsa
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterYangMillsFriedrichs
 
 
 /-!
@@ -55,6 +49,7 @@ namespace BookProof.QgOuterFockCoreFL
 
 open BookProof.FarisLavine
 open BookProof.DirectSumEsa
+open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL
 open BookProof.YangMillsFriedrichs
 open BookProof.EsaClosure

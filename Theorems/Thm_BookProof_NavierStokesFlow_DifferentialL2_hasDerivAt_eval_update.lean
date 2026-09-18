@@ -15,6 +15,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {n : ℕ} (d : NSTruncation n)
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_eval_update (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Fin d → ℂ) (t : ℂ) :
     HasDerivAt (fun s : ℂ => MvPolynomial.eval (Function.update x i s) p)
       (MvPolynomial.eval (Function.update x i t) (pderiv i p)) t := by sorry

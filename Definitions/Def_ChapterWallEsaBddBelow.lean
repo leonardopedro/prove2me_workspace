@@ -35,7 +35,7 @@ namespace BookProof.WallEsaBddBelow
 
 open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
+open BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
 noncomputable section

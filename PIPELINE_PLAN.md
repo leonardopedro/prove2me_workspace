@@ -1959,6 +1959,119 @@ head (1 attempt left at session start, budget restored to 5 via `debug/reopen_fa
    registered manually at the head of `sol_order`). The two generated batches (550 files) are
    committed. Next content step remains: the six-chapter stub generation for the waiting sols.
 
+### 1t. Session 17 (2026-09-18) — the def layer is an ordering problem, sources are here, generator runs
+
+**Host facts.** Checkout on external drive (`/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`);
+`$HOME=/home/leo` but `ELAN_HOME` points at the drive. Lean 4.28.0 installed via elan at
+`~/.elan/toolchains/leanprover--lean4---v4.28.0/bin` (lake available, lean available). Skill: 0.10.4 == API 0.10.4.
+
+**Sources confirmed in `../timepiece`.** `../timepiece/decl_graph.jsonl` has 15 095 records / 613 modules;
+`../timepiece/BookProof/` has 617 chapters covering all wave def chapters. Both are current (synced
+Sep 9 + local commits). Generator (`scripts/wave_generate.py`) is portable: `TIMEPIECE_PROJ` and
+`PROVE2ME_WS` env vars override the hardcoded defaults.
+
+**Generator verified working** from this host with:
+```bash
+export TIMEPIECE_PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece
+export PROVE2ME_WS=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+python3 scripts/wave_generate.py --defs-only ChapterKatoRellichDeficiency
+```
+
+**Plan state (measured 2026-09-18, post-`--sync`).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) done / pending / failed | **3219 / 375 / 10** |
+| pending by kind | 269 sol, 92 thm, 14 def |
+| def layer status | 142 done, 14 pending, 0 failed |
+| `num_solved_prob` (website) | 616 (last measured) |
+
+**Def chain dependency map (the 14 pending defs).**
+
+Tracing the 15 items (one is done by the sync recovery):
+
+```
+def:ChapterScalaronFiberFL (4 attempts, blocked by ChapterWallEsaBddBelow)
+def:ChapterScalaronOuterFockFL (1 attempt, imports ChapterScalaronFiberFL)
+def:ChapterQgVielbeinModeInstance (1 attempt, imports ChapterScalaronOuterFockFL)
+def:ChapterQgContinuumModeInstance (1 attempt, imports ChapterQgVielbeinModeInstance)
+def:ChapterFiniteSectionSingleTime (1 attempt, imports ChapterSirkSingleTimeShift)
+def:ChapterQgTruncationResolvent (1 attempt, imports ChapterQgContinuumModeInstance)
+def:ChapterQgTimeStepping (1 attempt, imports ChapterQgTruncationResolvent)
+def:ChapterQgManifoldModeInstance (1 attempt, imports ChapterQgTimeStepping)
+def:ChapterSirkSingleTimeShift (1 attempt, imports ChapterQgTruncationResolvent)
+def:ChapterQymTimeIndependentFlow (1 attempt, imports FiniteSectionSingleTime + QgCouplingDGammaSum)
+def:ChapterWallEsaBddBelow (0 attempts, NEW — not in wave spec, but published by ScalaronFiberFL)
+def:ChapterQgOuterFockEsa (1 attempt, namespace errors: BookProof.YangMillsHermite, etc.)
+def:ChapterQg3DGaugeEsa (1 attempt, namespace errors: BookProof.QuantumGravity3DGauge)
+def:ChapterYangMillsAbelianFockEsa (1 attempt, imports ChapterQymTimeIndependentFlow)
+def:ChapterYangMillsBandBounds (1 attempt, imports ChapterYangMillsAbelianFockEsa)
+```
+
+**Two classes of errors among the 14 pending defs.**
+
+1. **Ordering deadlock** (12 defs): each def imports a sibling that is itself pending. The chain is:
+   `ChapterScalaronFiberFL` → `ChapterWallEsaBddBelow` (now has 0 attempts, ready to publish)
+   → `ChapterScalaronOuterFockFL` → `ChapterQgVielbeinModeInstance` → `ChapterQgContinuumModeInstance`
+   → `ChapterQgTruncationResolvent` → `ChapterQgTimeStepping` → `ChapterQgManifoldModeInstance`
+   and parallel branches: `ChapterSirkSingleTimeShift` (also imports QgTruncationResolvent),
+   `ChapterFiniteSectionSingleTime` (imports SirkSingleTimeShift + ChapterQymTimeIndependentFlow),
+   `ChapterQymTimeIndependentFlow` (imports FiniteSectionSingleTime + QgCouplingDGammaSum),
+   `ChapterYangMillsAbelianFockEsa` (imports QymTimeIndependentFlow),
+   `ChapterYangMillsBandBounds` (imports YangMillsAbelianFockEsa).
+   **Root cause**: `ChapterWallEsaBddBelow` was not in the wave spec (§1q item 4 noted this). Once
+   published, the ScalaronFiberFL chain can drain.
+
+2. **Namespace/identifier errors** (2 defs):
+   - `ChapterQgOuterFockEsa`: opens `BookProof.YangMillsHermite`, `BookProof.NavierStokesFlow.DifferentialL2` —
+     both published, but the bundle imports only `Mathlib`, so the opens fail. Needs
+     `import Definitions.Def_ChapterYangMillsHermite` + `import Definitions.Def_ChapterNavierStokesDifferentialL2`.
+   - `ChapterQg3DGaugeEsa`: opens `BookProof.QuantumGravity3DGauge` — no bundle declares this namespace
+     (no def bundle for that chapter exists). Needs regeneration or manual fix.
+
+**Immediate actions taken.**
+
+1. **Fixed `ChapterWallEsaBddBelow`** (attempts 0→ready). Removed `open BookProof.KatoRellich` — the namespace
+   is not declared by any published bundle, and the identifier `essentiallySelfAdjointOn_add_bounded`
+   (mentioned in the docstring) is not used in the actual code. The file now imports two published
+   bundles and opens only declared namespaces.
+
+2. **Ran `--sync`** — recovered 11 already-proved solutions that were stuck in `pending` due to preflight
+   short-circuit (§1m). State moved 3188 → 3219 done.
+
+**Remaining work (priority order).**
+
+1. **Publish `ChapterWallEsaBddBelow`** — now has 0 attempts and a clean file. Single submission needed.
+   Once published, `ChapterScalaronFiberFL` (4 attempts remaining) can be retried.
+2. **Publish the Scalaron chain**: `ChapterScalaronFiberFL` → `ChapterScalaronOuterFockFL` →
+   `ChapterQgVielbeinModeInstance` → `ChapterQgContinuumModeInstance` → `ChapterQgTruncationResolvent` →
+   `ChapterQgTimeStepping` → `ChapterQgManifoldModeInstance` → `ChapterSirkSingleTimeShift`.
+   Each has 1 attempt remaining except ScalaronFiberFL (4).
+3. **Fix `ChapterQgOuterFockEsa`** — add missing imports for opened namespaces.
+4. **Fix `ChapterQg3DGaugeEsa`** — regenerate or manually add the missing namespace provider.
+5. **Publish `ChapterFiniteSectionSingleTime`** chain — blocked by `ChapterSirkSingleTimeShift` and
+   `ChapterQymTimeIndependentFlow` (which needs `ChapterQgCouplingDGammaSum`).
+6. **Publish `ChapterQymTimeIndependentFlow`** → `ChapterYangMillsAbelianFockEsa` → `ChapterYangMillsBandBounds`.
+7. **Register `ChapterWallEsaBddBelow` in the wave spec** — it's missing from `wave_upload.json`.
+8. **Generate stubs for the 62 unsubmittable items** using `scripts/wave_generate.py` with
+   `decl_graph.jsonl` and `debug/extend_wave_stubs.py`.
+9. **Continue the thm/sol publication** once defs are unblocked.
+
+**Environment notes.**
+
+- Local Lean gate is skipped (no lakefile in workspace root, only in `../timepiece`). This is correct:
+  sources are for generation, not local compilation.
+- `../timepiece` has Lean 4.28.0 + Mathlib (v4.28.0), not 4.33.1. Platform compiles 4.33.1. This is fine
+  for generation; only submissions use the platform oracle.
+- The generator (`wave_generate.py`) runs successfully from this host with the two env vars set.
+
+**Failure taxonomy reminder.**
+
+- `failed` items are terminal (5 attempts exhausted). Reopen with `debug/reopen_failed.py --yes --stale-only`.
+- `SKETCH_ACCEPTED` items are terminal for thms (reduction), but sols importing them may still fail
+  until the def bundle publishes.
+- Wasted attempts: retrying a CE that won't resolve on re-submission. Always read the error before retrying.
+
 ---
 
 ## 2. Platform model (what compiles where)

@@ -3315,3 +3315,80 @@ OK with correct LEAN_PATH. Takes ~1-2s per def; full run estimated ~5-10 minutes
 3. Update state with new def/sol/thm entries
 4. Commit and push when API reachable
 
+
+---
+
+## §1za. Session 26 (2026-09-18) — local gate fixes, def bundle regeneration, plan update
+
+**Environment.**
+- Host: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`
+- Sources: `../timepiece` (701 chapters, `decl_graph.jsonl`, `lakefile.toml`, `lean-toolchain` v4.28.0)
+- Lean 4: v4.28.0 via elan at `/media/leo/.elan/bin/lean`
+- Mathlib: v4.28.0, packages in `../timepiece/.lake/packages/` (partial cache, 13 oleans)
+- API: **unreachable** (DNS fails for `api.prove2.me`)
+- Upload: background process (PID 344351) running but stuck waiting for API
+
+**Completed actions.**
+
+1. **Fixed missing import in source** (`../timepiece/BookProof/ChapterQg3DGaugeEsa.lean`):
+   - Added `import BookProof.ChapterNavierStokesDifferentialL2` (line 3)
+   - Root cause: `coreOp` is used in the source but the file didn't import its module
+   - The def bundle generator now correctly includes `import Definitions.Def_ChapterNavierStokesDifferentialL2`
+
+2. **Regenerated def bundles** from updated source:
+   - `ChapterScalaronFiberFL` — 42 decls, imports: WallEsaBddBelow, WallEsaSemibounded, SchrodingerCutoffEsa, QgOuterFockCoreFL
+   - `ChapterQg3DGaugeEsa` — 27 decls, now imports NavierStokesDifferentialL2 (was missing)
+   - `ChapterQgOuterFockEsa` — 41 decls (not yet verified — see below)
+
+3. **Fixed lakefile.toml** for prove2me_workspace:
+   - Added `[[require]]` for mathlib v4.28.0
+   - Changed from `[[lean_lib]]` style to match timepiece's Lake 4.x syntax
+
+**Verification status.**
+
+- Local compilation not yet possible — mathlib olean cache is incomplete (13/8042 files)
+- Server-side compilation failed for:
+  - `ChapterQgOuterFockEsa`: `coreOp`, `qgKappa`, `torsionVec`, `torsionIdx1` unknown (should be fixed now)
+  - `ChapterScalaronFiberFL`: error not captured in upload log (possibly stale)
+- `ChapterQgOuterFockFarisLavine`: generator error — sketch offsets exceed source (known bug, source has 6287 bytes, sketch has 5542 bytes)
+
+**Current pipeline state (2026-09-18 ~23:00).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3232 done / 363 pending / 41 failed** (stale) |
+| pending by kind | 252 sol, 99 thm, 12 def |
+| num_solved_prob (website) | **616** (last known) |
+
+**Remaining work.**
+
+1. **Def chain unblock** — publish the 12 pending defs in dependency order
+   - ScalaronFiberFL → ScalaronOuterFockFL → QgVielbeinModeInstance → ... → YangMillsBandBounds
+   - QgOuterFockEsa (should now compile with NavierStokesDifferentialL2 import)
+
+2. **Missing import debt** — many solutions reference unpublished theorem nodes:
+   - `Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_*` (coreOp, coe, etc.)
+   - `Theorems.Thm_BookProof_HashimotoShiftInvert_*` (preim_eq, invShiftOperator, etc.)
+   - `Theorems.Thm_BookProof_FriedrichsExtension_FormDom_*` (friedrichsResolvent, etc.)
+   - These thm nodes need to be published before their sol nodes can compile
+
+3. **Variable-dropping bug** — generator drops section-level `variable` declarations:
+   - NavierStokesFlow DifferentialL2: `variable {d : ℕ}` dropped
+   - HashimotoShiftInvert: `variable {F : Type*} [NormedAddCommGroup F] ...` dropped
+   - Fix: regenerate stubs with correct env vars
+
+4. **62 missing local sources** — ChapterContinuityUnitaryInfinite, ChapterH6, ChapterH8, NavierStokesFlow chapters not in generator WAVE list
+
+5. **API unreachable** — cannot publish or sync until DNS resolves
+
+**Next actions (when API reachable).**
+
+1. Start background upload: `bash start_upload.sh start --kind def --parallel 50`
+2. Publish def chain head (ScalaronFiberFL) first — should now compile
+3. Once defs published, thm/sol backlog should drain
+4. Fix remaining def bundles with sketch errors (QgOuterFockFarisLavine)
+5. Generate missing stubs from `../timepiece` using `scripts/wave_generate.py`
+
+**Git commit (this update):** def bundle regeneration, source import fix, lakefile update, PIPELINE_PLAN.md §1za.
+

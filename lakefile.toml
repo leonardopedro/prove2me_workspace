@@ -10,3 +10,8 @@ name = "Theorems"
 
 [[lean_lib]]
 name = "Solutions"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.28.0"

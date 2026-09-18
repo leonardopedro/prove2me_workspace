@@ -1,0 +1,12 @@
+name = "prove2me_workspace"
+version = "0.1.0"
+defaultTargets = ["Definitions"]
+
+[[lean_lib]]
+name = "Definitions"
+
+[[lean_lib]]
+name = "Theorems"
+
+[[lean_lib]]
+name = "Solutions"

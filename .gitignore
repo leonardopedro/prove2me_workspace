@@ -25,3 +25,4 @@ state/platform_index.jsonl
 state/platform_index.meta.json
 state/
 credentials.json
+/.lake

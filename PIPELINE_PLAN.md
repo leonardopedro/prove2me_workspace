@@ -3262,3 +3262,56 @@ tail -f state/upload.log
 # Check status:
 python3 pipeline/upload_pipeline.py --status
 ```
+
+---
+
+### 1w. Session 20 (2026-09-18) — build environment fixed, def bundles regenerated, compilation running
+
+**Build environment resolved.** Lake 5.0.0 dropped `[[require]]` syntax; created
+`lakefile.toml` with correct Lake 5.0.0 syntax (`name`, `[[lean_lib]]`). Mathlib v4.28.0
+cloned and cached via `lake exe cache get` (8042 olean files). Direct `lean` command works
+with explicit LEAN_PATH including all transitive deps (mathlib + batteries + Qq + aesop +
+proofwidgets + importGraph + LeanSearchClient + plausible).
+
+**lean-toolchain fixed.** Was JSON `{"leanOptions":...}` (v4.33+ syntax); set to plain
+`leanprover--lean4---v4.28.0`.
+
+**Namespace fix applied.** `ChapterQgOuterFockFlow`: `end BookProof.ChapterQgOuterFockFlow` →
+`end BookProof.QgOuterFockFlow` (git diff shows only this change + `.gitignore` update).
+
+**Local compilation in progress.** Created `scripts/compile_defs.py` to compile all 170 def
+bundles. Background process (PID 334563) running. First test: ChapterQgOuterFockFlow compiles
+OK with correct LEAN_PATH. Takes ~1-2s per def; full run estimated ~5-10 minutes.
+
+**API unreachable.** `api.prove2.me` DNS resolution fails. Cannot upload submissions.
+
+**Source availability confirmed.** `../timepiece` has 701 BookProof chapters; workspace has
+169 def bundles. 1784 thm/sol state entries have missing source files (need regeneration).
+
+**Environment summary.**
+
+| Component | Value |
+|---|---|
+| Lean | 4.28.0 (v4.33.1 not available) |
+| Lake | 5.0.0 (no `[[require]]` support) |
+| Mathlib | v4.28.0, 8042 oleans cached |
+| Transitive deps | batteries, Qq, aesop, proofwidgets, importGraph, LeanSearchClient, plausible |
+| Build command | `lean Def_<X>.lean -o .lake/build/lib/lean/Definitions/Def_<X>.olean` |
+| LEAN_PATH | project build + mathlib + all 7 transitive deps + lean lib |
+
+**Current state.**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3232 done / 363 pending / 41 failed** |
+| pending by kind | 252 sol, 99 thm, 12 def |
+| num_solved_prob (website) | **616** |
+| Built oleans | 3 / 170 |
+
+**Next steps.**
+1. Wait for compilation to finish, then verify all defs compile
+2. Generate missing thm/sol sources from `../timepiece` using `scripts/wave_generate.py`
+3. Update state with new def/sol/thm entries
+4. Commit and push when API reachable
+

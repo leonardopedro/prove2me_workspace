@@ -2055,6 +2055,12 @@
       "namespace": "BookProof.QuantumGravity3DGauge",
       "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQuantumGravity3DGauge.lean",
       "title": "Quantum gravity 3D gauge Hamiltonian"
+    },
+    "ChapterSchrodingerCutoffEsa": {
+      "definition_name": "ChapterSchrodingerCutoffEsa",
+      "namespace": "BookProof.SchrodingerCutoffEsa",
+      "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSchrodingerCutoffEsa.lean",
+      "title": "Schrodinger cutoff ESA"
     }
   },
   "thms": {

@@ -79,7 +79,7 @@ WAVE = [
     "ChapterStoneBridge", "ChapterQgHermiteOscillatorEsa", "ChapterYangMillsFriedrichs",
     "ChapterHermiteGalerkinFriedrichs", "ChapterHermiteProductBasis", "ChapterHermiteRelativeBound",
     # QG mode instances and outer Fock (dependency chain for QgOuterFockEsa)
-    "ChapterScalaronCoreEsa", "ChapterScalaronWallEsa", "ChapterScalaronFiberFL",
+    "ChapterScalaronCoreEsa", "ChapterScalaronWallEsa", "ChapterScalaronFiberFL", "ChapterSchrodingerCutoffEsa",
     "ChapterQgOuterFockFlow", "ChapterQuantumGravity3DGauge",
     "ChapterQgOuterFockEsa", "ChapterQg3DGaugeEsa",
     "ChapterQgOuterFockCoreFL", "ChapterQgOuterFockFarisLavine",

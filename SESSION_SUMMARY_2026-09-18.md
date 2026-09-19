@@ -188,3 +188,47 @@ All 11 defs exist in both workspace and timepiece. Compilation in progress.
 Mostly "unknown identifier" errors from missing imports or definitions.
 Should be resolved once full compilation completes and missing sources are generated.
 
+
+## Round 5 - 2026-09-19
+
+### Documentation Updates
+
+1. **API base URL**: `https://prove2.me/api/v1` (confirmed in SKILL.md v0.10.5)
+   - All endpoints documented: `https://prove2.me/api/v1/...`
+
+2. **Lean4 version separation**:
+   - **prove2me workspace**: Target v4.33.1 (platform version)
+   - **timepiece sources**: v4.28.0 (legacy snapshot)
+
+### Toolchain Status
+
+- **v4.28.0**: Installed and working at `/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean`
+- **v4.33.1**: NOT installed — needs installation
+
+### Configuration for Dual Versions
+
+```bash
+# For timepiece sources (v4.28.0) - already working
+export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin:$PATH"
+export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean"
+
+# For platform uploads (v4.33.1) - pending installation
+export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin:$PATH"
+export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+```
+
+### Compilation Status
+
+Background compilation running with v4.28.0 (appropriate for source verification):
+- PID 387109 running `scripts/compile_defs.py`
+- 2 lean processes active (v4.28.0)
+- Compiling all 192 defs
+
+### Next Steps
+
+1. Install v4.33.1 toolchain when available
+2. Update compilation scripts for dual-version support
+3. Regenerate def bundles with v4.33.1
+4. Run upload with v4.33.1 toolchain
+5. Fix any version-specific compilation errors
+

@@ -3568,3 +3568,59 @@ export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean
 export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
 ```
 
+
+---
+
+## §1zc. Session 28 (2026-09-19) — documentation update, Lean4 version separation
+
+**Documentation updates.**
+
+1. **API base URL**: `https://prove2.me/api/v1` (already documented in SKILL.md v0.10.5)
+   - All endpoints: `https://prove2.me/api/v1/...`
+   - Security note: NEVER send credentials to any domain other than `prove2.me`
+
+2. **Lean4 version separation**:
+   - **prove2me workspace**: Lean 4.33.1 (target platform version)
+   - **timepiece sources**: Lean 4.28.0 (legacy snapshot)
+   - See §1zb for environment configuration
+
+**Lean4 toolchain requirements.**
+
+| Component | Version | Path |
+|---|---|---|
+| Platform (prove2me) | v4.33.1 | To be installed |
+| Sources (timepiece) | v4.28.0 | `/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean` |
+
+**Current toolchain status.**
+
+- v4.28.0: installed and working
+- v4.33.1: NOT installed — needs installation via `elan toolchain install leanprover/lean4:v4.33.1`
+
+**Compilation configuration (when v4.33.1 is available).**
+
+```bash
+# For prove2me workspace (v4.33.1)
+export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin:$PATH"
+export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+export LEAN_PATH="...v4.33.1/lib/lean"
+
+# For timepiece sources (v4.28.0)
+export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin:$PATH"
+export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean"
+export LEAN_PATH="...v4.28.0/lib/lean"
+```
+
+**Note on version compatibility.**
+
+The timepiece project uses v4.28.0 while the platform expects v4.33.1. Def bundles generated from
+timepiece sources may need adjustments for the newer compiler. The `compile_defs.py` script
+currently uses v4.28.0 for both, which is appropriate for source verification. Platform uploads
+should use v4.33.1 once installed.
+
+**Next actions.**
+
+1. Install Lean v4.33.1 toolchain
+2. Update compilation scripts for dual-version support
+3. Regenerate def bundles with v4.33.1 where applicable
+4. Run upload with v4.33.1 toolchain
+

@@ -6,15 +6,6 @@ open BookProof.ScalaronWallEsa
 
 
 
-
-
-
-
-
-
-
-
-
 open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.Starobinsky BookProof.StoneBridge BookProof.EsaClosure

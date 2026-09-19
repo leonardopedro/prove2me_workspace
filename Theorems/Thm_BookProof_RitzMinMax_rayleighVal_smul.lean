@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 open BookProof.RitzMinMax
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 noncomputable section
 

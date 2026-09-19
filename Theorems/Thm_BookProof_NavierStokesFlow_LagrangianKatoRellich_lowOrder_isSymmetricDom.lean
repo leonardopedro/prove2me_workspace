@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.lowOrder_isSymmetricDom
 import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 

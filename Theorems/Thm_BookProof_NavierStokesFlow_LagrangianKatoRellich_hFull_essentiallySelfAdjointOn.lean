@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hFull_essentiallySelfAdjointOn
 import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkBandLedger
 import Definitions.Def_ChapterRitzCertificate
 open BookProof.NavierStokesFlow

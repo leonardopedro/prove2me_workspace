@@ -1,7 +1,8 @@
 -- Generated from ChapterNavierStokesHashimoto.lean — theorem
 -- BookProof.NavierStokesFlow.NSHashimoto.ns_hashimoto_selects
 import Mathlib
-import Definitions.Def_ChapterNavierStokesHashimoto
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHashimoto
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_BookProof.ChapterClosureUniqueness

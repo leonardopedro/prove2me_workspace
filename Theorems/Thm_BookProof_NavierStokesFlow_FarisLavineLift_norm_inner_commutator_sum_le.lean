@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.NavierStokesFlow

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.drift_dominated_of_drive_eq_P
 import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich

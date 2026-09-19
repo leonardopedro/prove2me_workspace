@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.not_forall_norm_sum_le_of_pointwise
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 

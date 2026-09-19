@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_eq
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow

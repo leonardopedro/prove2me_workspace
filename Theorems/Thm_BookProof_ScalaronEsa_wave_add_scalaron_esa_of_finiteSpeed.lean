@@ -1,12 +1,10 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.wave_add_scalaron_esa_of_finiteSpeed
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
-import Definitions.Def_BookProof.ChapterScalaronEsa
-import Theorems.Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong
-
 open BookProof.ScalaronEsa
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 open Filter Topology MeasureTheory SchwartzMap

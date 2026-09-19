@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 
 open Filter Topology MeasureTheory SchwartzMap
 

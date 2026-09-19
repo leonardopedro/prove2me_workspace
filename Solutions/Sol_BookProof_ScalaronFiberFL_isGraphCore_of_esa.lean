@@ -1,19 +1,26 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.isGraphCore_of_esa
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_sub_I_sq
-open BookProof.FarisLavine
-open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockCoreFL
+open BookProof.ScalaronFiberFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+
+
+open MeasureTheory SchwartzMap
+open BookProof.StrichartzWave
+open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.WallEsaSemibounded BookProof.WallEsaBddBelow
+open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
+
+noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (C : Comparison F) (C₀ : Submodule ℂ F) (hle : C₀ ≤ C.dom)
     (P : C₀ →ₗ[ℂ] F) (hext : ∀ p : C₀, C.op ⟨(p : F), hle p.2⟩ = P p)
     (hesa : EssentiallySelfAdjointOn C₀ P) : IsGraphCore C C₀ := by
+
   classical
   set R : Submodule ℂ F := LinearMap.range (P - Complex.I • C₀.subtype) with hR
   have hperp : Rᗮ = ⊥ := by
@@ -47,7 +54,7 @@ theorem solution (C : Comparison F) (C₀ : Submodule ℂ F) (hle : C₀ ≤ C.d
     simp only [LinearMap.sub_apply, LinearMap.smul_apply, Submodule.subtype_apply,
       Submodule.coe_sub, hq, hext p, smul_sub]
     abel
-  have hkey := BookProof.ScalaronFiberFL.norm_sub_I_sq C.op C.sym (q - x)
+  have hkey := norm_sub_I_sq C.op C.sym (q - x)
   rw [hval] at hkey
   have hcoe : ((q - x : C.dom) : F) = (p : F) - (x : F) := rfl
   refine ⟨q, p.2, ?_, ?_⟩

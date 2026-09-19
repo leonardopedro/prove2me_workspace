@@ -1,8 +1,3 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterYangMillsFriedrichs
 -- Generated from ChapterStoneBridge.lean — solution of BookProof.StoneBridge.isStoneFlow_stoneU
 import Mathlib
 import Definitions.Def_ChapterStoneBridge

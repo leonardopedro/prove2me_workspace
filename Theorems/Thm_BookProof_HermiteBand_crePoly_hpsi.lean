@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 
+variable {d : ℕ}
+
 
 
 noncomputable section

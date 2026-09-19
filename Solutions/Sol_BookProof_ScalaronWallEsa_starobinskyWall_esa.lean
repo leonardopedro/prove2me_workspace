@@ -1,11 +1,3 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterWeakSecondDerivative
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.starobinskyWall_esa
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
@@ -13,15 +5,6 @@ import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_ScalaronEsa_contDiff_starobinskyV
 import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 open BookProof.ScalaronWallEsa
-
-
-
-
-
-
-
-
-
 
 
 

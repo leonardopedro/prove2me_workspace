@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.fockH_apply
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFockManyMode
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 

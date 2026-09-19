@@ -1,18 +1,7 @@
 -- Generated from ChapterScalaronWallEsa.lean — theorem BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.ScalaronWallEsa
-
-
-
-
-
-
-
-
-
 
 
 

@@ -4,6 +4,8 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.CoreRep
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial

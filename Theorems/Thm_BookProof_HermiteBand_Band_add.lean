@@ -4,6 +4,8 @@ import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 open BookProof.HermiteBand.Band
 
+variable {d : ℕ}
+
 
 
 noncomputable section

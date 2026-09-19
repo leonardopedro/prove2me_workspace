@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial

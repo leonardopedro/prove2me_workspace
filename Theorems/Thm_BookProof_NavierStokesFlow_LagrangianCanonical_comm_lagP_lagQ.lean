@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — theorem BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ
 import Mathlib
-import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

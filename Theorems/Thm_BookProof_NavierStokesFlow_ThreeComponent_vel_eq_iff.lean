@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesThreeComponent.lean — theorem BookProof.NavierStokesFlow.ThreeComponent.vel_eq_iff
 import Mathlib
-import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 

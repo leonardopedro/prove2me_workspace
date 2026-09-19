@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesDiffFarisLavine.lean — theorem BookProof.NavierStokesFlow.DiffFarisLavine.diffMaxH_relative_bound
 import Mathlib
-import Definitions.Def_ChapterNavierStokesDiffFarisLavine
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDiffFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_BookProof.ChapterClosureUniqueness

@@ -1,19 +1,23 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.contDiff_starobinskyV
---
--- This node exists because `Definitions/Def_ChapterScalaronFiberFL.lean` needs the smoothness of
--- the Einstein-frame scalaron potential as a *Proved* platform theorem: a Definitions module may
--- import a Theorems module, but only once that theorem is Proved.  The declaration is hollowed out
--- of the definitions layer (`Def_ChapterScalaronCoreEsa` documents it and does not declare it), so
--- it has to live in the theorem layer.
 import Mathlib
-import Definitions.Def_ChapterStarobinskyPotential
-open BookProof.Starobinsky
+import Definitions.Def_ChapterScalaronCoreEsa
+open BookProof.ScalaronEsa
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
-open Filter Topology
+open Filter Topology MeasureTheory SchwartzMap
 
+
+open BookProof.StrichartzWave BookProof.FarisLavine BookProof.Starobinsky
+open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierStokesFlow
+open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.contDiff_starobinskyV (M alpha : ℝ) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (fun phi : ℝ => starobinskyV M alpha phi) := by sorry

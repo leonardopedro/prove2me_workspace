@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_isSymmetricDom
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFockFarisLavine
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFockFarisLavine
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.NavierStokesFlow

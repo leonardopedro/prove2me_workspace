@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsBianchi
 open BookProof.YangMillsBianchi
 
+variable {R : Type*} [Ring R]
+
 
 open BigOperators
 

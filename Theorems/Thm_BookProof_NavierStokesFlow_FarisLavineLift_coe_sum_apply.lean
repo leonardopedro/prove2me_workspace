@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.coe_sum_apply
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos
-import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_comm_mom_pos
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

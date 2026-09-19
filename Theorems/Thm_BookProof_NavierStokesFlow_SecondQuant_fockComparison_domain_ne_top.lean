@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockComparison_domain_ne_top
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFockFarisLavine
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFockFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 open scoped ENNReal

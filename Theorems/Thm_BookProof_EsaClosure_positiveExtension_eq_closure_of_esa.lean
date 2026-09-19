@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterEsaClosure
 open BookProof.EsaClosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 
 open Filter Topology
 

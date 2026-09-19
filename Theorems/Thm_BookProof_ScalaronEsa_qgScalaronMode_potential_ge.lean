@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -15,8 +18,6 @@ noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
-
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 theorem BookProof.ScalaronEsa.qgScalaronMode_potential_ge (halpha : 0 < alpha) (k : ℕ) :
     -(M ^ 4 / (16 * alpha)) ≤ qgScalaronModePotential M alpha Rc phi k := by sorry

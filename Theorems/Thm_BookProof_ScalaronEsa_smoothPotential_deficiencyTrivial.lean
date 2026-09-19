@@ -1,9 +1,10 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.smoothPotential_deficiencyTrivial
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.ScalaronEsa
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 open Filter Topology MeasureTheory SchwartzMap

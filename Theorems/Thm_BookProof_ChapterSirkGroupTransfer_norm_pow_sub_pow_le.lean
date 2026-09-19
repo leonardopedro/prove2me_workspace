@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkGroupTransfer
 open BookProof.ChapterSirkGroupTransfer
 
+variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
+
 
 noncomputable section
 

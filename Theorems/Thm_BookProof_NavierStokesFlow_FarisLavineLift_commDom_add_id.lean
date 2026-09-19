@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.commDom_add_id
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.NavierStokesFlow

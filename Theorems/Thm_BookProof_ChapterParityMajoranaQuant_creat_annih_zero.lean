@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterParityMajoranaQuant
 open BookProof.ChapterParityMajoranaQuant
 
+variable {m : ℕ}
+
 
 open Matrix
 open scoped ComplexConjugate

@@ -3964,21 +3964,65 @@ export PROVE2ME_SKIP_LOCAL_COMPILE=1
    ```
 
 2. **Compilation results:**
-   - v4.33.1 compiles all 170 defs (0 failures)
-   - Local gate functional
-   - `PROVE2ME_SKIP_LOCAL_COMPILE=1` needed (no lakefile in workspace)
+   - v4.33.1 attempted to compile all 170 defs
+   - 3 defs failed: ChapterScalaronFiberFL, ChapterQgTruncationResolvent, ChapterYangMillsAbelianFockEsa
+   - 2 fixed: added missing imports (Def_ChapterStarobinskyPotential, Def_ChapterScalaronOuterFockFL)
+   - Root cause: mathlib is pinned to v4.28.0 but workspace uses v4.33.1; mathlib build is incomplete
+   - The compile_defs.py script reports 170/170 but only 3 olean files exist in workspace build dir
+   - System-wide mathlib at `/media/leo/.../lean/.lake/packages/mathlib/` has 8044 olean files but was built for v4.28.0 (incompatible with v4.33.1)
 
 3. **API status:** reachable, v0.10.5
 
 4. **Def generation:** `scripts/wave_generate.py --defs-only` with `TIMEPIECE_PROJ=../timepiece`
 
+**Current state (2026-09-19 ~08:25).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | 3636 items (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | 3250 done / 182 pending / 204 failed |
+| pending by kind | 39 thm, 132 sol, 11 def |
+| def chain blockers | 11 defs in dependency chain (see §1zh) |
+| upload running | YES (PID 532195) |
+| sources available | YES (`../timepiece` with decl_graph.jsonl) |
+| mathlib status | BLOCKER: v4.28.0 vs workspace v4.33.1, incomplete build |
+
+**Def chain (11 items, dependency order).**
+
+`ChapterScalaronFiberFL` → `ChapterScalaronOuterFockFL` → `QgVielbeinModeInstance` → `QgContinuumModeInstance` → `QgTruncationResolvent` → `QgTimeStepping` → `QgManifoldModeInstance` → `SirkSingleTimeShift` → (`YangMillsAbelianFockEsa` → `YangMillsBandBounds`) and `FiniteSectionSingleTime` → `ScalaronFiberFL`
+
+**Def fixes applied.**
+
+- `Def_ChapterScalaronFiberFL.lean`: added import `Def_ChapterStarobinskyPotential` (provides `BookProof.Starobinsky.starobinskyV_nonneg`)
+- `Def_ChapterQgTruncationResolvent.lean`: added import `Def_ChapterScalaronOuterFockFL` (provides `QgModeData`)
+
+**Failed defs reset to 0 attempts (will retry on next upload).**
+
+- `def:ChapterScalaronFiberFL`: was 5 attempts, reset to 0
+- `def:ChapterQgTruncationResolvent`: was 5 attempts, reset to 0
+- `def:ChapterYangMillsAbelianFockEsa`: was 4 attempts, reset to 0
+
 **Next actions.**
 
-1. Continue monitoring upload progress
-2. Check for Lean errors in upload log
-3. Generate thm/sol stubs from timepiece (not just defs)
-4. Reopen failed items if needed
-5. Git commit and push
+1. **CRITICAL: Fix mathlib compatibility** — mathlib must be rebuilt for v4.33.1 or the workspace must use v4.28.0
+2. Continue monitoring upload progress
+3. Fix remaining def compilation errors after mathlib is resolved
+4. Generate thm/sol stubs from timepiece
+5. Reopen failed items if needed
+6. Git commit and push
+
+**Git status (before commit).**
+
+```
+ M Definitions/Def_ChapterScalaronFiberFL.lean
+ M Definitions/Def_ChapterQgTruncationResolvent.lean
+ M Definitions/Def_ChapterYangMillsAbelianFockEsa.lean
+ M state/pipeline.json
+ M state/pipeline.log
+ M state/upload.log
+ M PIPELINE_PLAN.md
+ M SESSION_SUMMARY_2026-09-18.md
+```
 
 **Git status (before commit).**
 

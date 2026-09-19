@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — theorem BookProof.NavierStokesFlow.SignedShift.gaffH_essentiallySelfAdjointOn_core
 import Mathlib
-import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesSignedShift
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.NavierStokesFlow

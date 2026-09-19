@@ -1,25 +1,8 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterWeakSecondDerivative
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.ode_solution_eq_zero
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Theorems.Thm_BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable
 open BookProof.ScalaronWallEsa
-
-
-
-
-
-
-
-
-
 
 
 

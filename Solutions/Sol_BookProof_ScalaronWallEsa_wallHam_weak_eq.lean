@@ -1,29 +1,14 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterWeakSecondDerivative
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.wallHam_weak_eq
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
 import Theorems.Thm_BookProof_ScalaronWallEsa_deriv_ofReal_comp
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 open BookProof.ScalaronWallEsa
-
-
-
-
-
-
-
-
-
 
 
 

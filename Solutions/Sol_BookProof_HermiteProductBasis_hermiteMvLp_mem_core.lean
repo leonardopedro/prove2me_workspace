@@ -1,5 +1,3 @@
-import Definitions.Def_ChapterHermiteFunctions
-import Definitions.Def_ChapterHermiteProductCore
 -- Generated from ChapterHermiteProductBasis.lean — solution of BookProof.HermiteProductBasis.hermiteMvLp_mem_core
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis

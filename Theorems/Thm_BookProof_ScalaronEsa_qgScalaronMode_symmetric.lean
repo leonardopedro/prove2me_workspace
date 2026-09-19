@@ -1,14 +1,10 @@
 -- Generated from ChapterScalaronCoreEsa.lean — theorem BookProof.ScalaronEsa.qgScalaronMode_symmetric
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-import Definitions.Def_ChapterMajoranaClifford
-import Definitions.Def_ChapterMajoranaClifford
-import Definitions.Def_ChapterMajoranaClifford
-import Definitions.Def_ChapterMajoranaClifford
-open BookProof.MajoranaClifford
-
 open BookProof.ScalaronEsa
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 open Filter Topology MeasureTheory SchwartzMap
@@ -22,8 +18,6 @@ noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
-
-variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronEsa.qgScalaronMode_symmetric :
     SymmetricOn (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))

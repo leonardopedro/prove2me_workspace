@@ -1,5 +1,3 @@
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.pgLp_hpsi
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus

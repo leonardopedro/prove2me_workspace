@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.hamiltonian_eq
 import Mathlib
-import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHermiteCanonical
 import Definitions.Def_BookProof.ChapterClosureUniqueness
 
 open BookProof.NavierStokesFlow

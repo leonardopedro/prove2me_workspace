@@ -1,8 +1,11 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — theorem BookProof.NavierStokesFlow.DiffHashimoto.exists_hermiteEnum
 import Mathlib
-import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDiffHashimoto
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 open Filter Topology

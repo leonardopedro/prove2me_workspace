@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterStoneBridge
 open BookProof.StoneBridge
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 
 open Filter Topology
 open scoped InnerProductSpace

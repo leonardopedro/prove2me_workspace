@@ -1,18 +1,9 @@
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.kinCcR_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
-import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric
 import Theorems.Thm_BookProof_ScalaronEsa_symmetricOn_inclusion
+import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric
 open BookProof.ScalaronWallEsa
-
-
-
-
-
-
-
-
-
 
 
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
 
+variable {K : ℕ}
+
 
 
 noncomputable section

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_ge_norm_sq
 import Mathlib
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData

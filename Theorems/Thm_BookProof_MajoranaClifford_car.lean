@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterMajoranaClifford
 open BookProof.MajoranaClifford
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
+
 
 open RealInnerProductSpace CliffordAlgebra QuadraticMap
 

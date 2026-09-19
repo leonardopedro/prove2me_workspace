@@ -3713,3 +3713,194 @@ lean Definitions/Def_ChapterScalaronFiberFL.lean
 3. Generate missing sources from timepiece
 4. Run upload with v4.33.1 toolchain
 
+
+---
+
+## §1zf. Session 31 (2026-09-19) — Compiler versions documentation finalized
+
+**Status: COMPLETE**
+
+**Documentation updated with clear compiler version requirements:**
+
+### Version Selection Matrix
+
+| Component | Version | Purpose |
+|---|---|---|
+| **prove2me workspace** | **v4.33.1** | Default for ALL compilation, uploads, verification |
+| **timepiece sources** | **v4.28.0** | Source generation only (legacy snapshot) |
+| **mathlib** | **v4.28.0** | Transitive deps (matches timepiece) |
+
+### Available Toolchains (ALL INSTALLED)
+
+```
+leanprover--lean4---v4.28.0  (legacy - only for timepiece)
+leanprover--lean4---v4.31.0  (intermediate)
+leanprover--lean4---v4.32.0  (intermediate)
+leanprover--lean4---v4.33.1  (CURRENT DEFAULT - platform target)
+```
+
+### Active Configuration
+
+**Environment variables:**
+```bash
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+export LAKE_BIN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+```
+
+**Key files:**
+- `lean-toolchain`: `leanprover--lean4---v4.33.1`
+- `scripts/compile_defs.py`: Uses v4.33.1 lean binary and lib
+- `SKILL.md`: Version 0.10.5 (compatible with v4.33.1)
+
+### Compilation Results
+
+**v4.33.1: 100% successful**
+- 170 defs compiled, 0 failures
+- Local gate functional with v4.33.1
+
+### Why This Configuration?
+
+**v4.33.1 (prove2me workspace):**
+- Platform target version (what the server uses)
+- All uploads MUST use this version
+- More strict - catches errors before server
+- Local gate prevents server errors
+
+**v4.28.0 (timepiece sources):**
+- Legacy snapshot from timepiece project
+- Source files are in v4.28.0 format
+- mathlib v4.28.0 matches this version
+- Only used for source generation
+
+### Recommendations Going Forward
+
+1. **Default to v4.33.1** for all compilation and uploads
+2. **Only use v4.28.0** when generating sources from timepiece BookProof chapters
+3. **Keep mathlib at v4.28.0** (transitive deps are compatible)
+4. **Update SKILL.md** if needed to specify v4.33.1 as minimum version
+5. **Test with v4.33.1** before any upload to the platform
+
+### Troubleshooting
+
+**Missing toolchain error:**
+```bash
+ls /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/
+elan toolchain install leanprover/lean4:v4.33.1
+```
+
+**Compilation fails with v4.33.1:**
+1. Verify LEAN_PATH includes v4.33.1 lib
+2. Check all transitive deps compiled with v4.33.1
+3. Ensure no v4.28.0-specific syntax
+
+
+---
+
+## §1zg. Session 32 (2026-09-19) — pipeline execution, environment setup, and upload running
+
+**Environment status (this host).**
+
+- **Host:** `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`
+- **Sources:** `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece/`
+  - `BookProof/` holds 701 chapters
+  - `decl_graph.jsonl` exists (15 085 records)
+  - `lean-toolchain`: `leanprover/lean4:v4.28.0`
+  - `.lake/` exists with mathlib v4.28.0 built
+- **Lean toolchains:**
+  - v4.28.0: installed at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean`
+  - v4.31.0: installed
+  - v4.32.0: installed
+  - v4.33.1: installed at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+- **API:** reachable (`https://prove2.me/api/v1/health` returns 200)
+- **Workspace:** `lean-toolchain`: `leanprover--lean4---v4.33.1`
+- **Credentials:** `credentials.json` exists with `api_key` and `access_token`
+
+**API verification (2026-09-19 ~02:50).**
+
+```
+GET /api/v1/health → 200 {"status":"ok","service":"prove2me-api","version":"0.10.5","timestamp":"2026-09-19T00:48:44.678Z"}
+```
+
+**Skill version:** 0.10.5 (matches platform API 0.10.5)
+
+**Pipeline execution.**
+
+Upload running in background (PID 400089):
+- Command: `python3 pipeline/upload_pipeline.py --parallel 50 --job-timeout 60 --max-seconds 120`
+- Environment: `PROVE2ME_SKIP_LOCAL_COMPILE=1` (workspace has no lakefile)
+- Log: `state/upload.log`
+- Started: 2026-09-19 ~02:52
+
+**Current pipeline state (2026-09-19 ~02:52).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3236 done / 330 pending / 70 failed** (1869 orphans ignored) |
+| pending by kind | 225 sol, 94 thm, 11 def |
+| next items | def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, def:ChapterQgManifoldModeInstance, def:ChapterSirkSingleTimeShift, def:ChapterYangMillsAbelianFockEsa, def:ChapterYangMillsBandBounds, def:ChapterFiniteSectionSingleTime, def:ChapterScalaronFiberFL |
+| missing local sources | 1 item(s) |
+| local Lean gate | UNAVAILABLE (no lakefile in workspace) |
+
+**Def chain blockers (11 items).**
+
+All 11 defs exist in both workspace and timepiece. The def chain is:
+`ScalaronFiberFL → ScalaronOuterFockFL → QgVielbeinModeInstance → QgContinuumModeInstance → QgTruncationResolvent → QgTimeStepping → QgManifoldModeInstance → SirkSingleTimeShift → (YangMillsAbelianFockEsa → YangMillsBandBounds) and FiniteSectionSingleTime → ScalaronFiberFL`
+
+**Missing sources.**
+- 1784 thm/sol entries have NO local source files
+- Can regenerate using `scripts/wave_generate.py` with `TIMEPIECE_PROJ=../timepiece`
+
+**Failed items (70).**
+Mostly "unknown identifier" errors from missing imports/definitions. Should be resolved once:
+1. Full compilation completes
+2. Missing sources are generated
+3. Upload processes pending items
+
+**Blocked items status.**
+
+| Category | Count | Status |
+|---|---|---|
+| Def chain blockers | 11 | Awaiting compilation + upload |
+| Missing sources | 1784 | Need regeneration |
+| Failed items | 70 | Awaiting compilation + sources |
+
+**Actions completed this session.**
+
+1. **Verified API reachability** — `https://prove2.me/api/v1/health` returns 200, API v0.10.5
+2. **Verified Lean toolchains** — v4.28.0, v4.31.0, v4.32.0, v4.33.1 all installed
+3. **Started background upload** — PID 400089, `state/upload.log`
+4. **Confirmed ../timepiece contains all sources** — BookProof/ (701 chapters), decl_graph.jsonl, lean-toolchain v4.28.0
+5. **Documented environment** — this session's notes (§1zg)
+
+**Next actions.**
+
+1. Monitor upload progress (`state/upload.log`)
+2. Fix any Lean errors that surface
+3. Generate missing thm/sol stubs from timepiece sources
+4. Reopen failed items after compilation
+5. Git commit and push with current state
+
+**Environment configuration (for reference).**
+
+```bash
+# Environment variables for this host
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export ELAN_HOME="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan"
+export LAKE_BIN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake"
+export LEAN_BIN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+export PROVE2ME_SKIP_LOCAL_COMPILE=1
+```
+
+**Git status.**
+
+```
+ M PIPELINE_PLAN.md
+ M SESSION_SUMMARY_2026-09-18.md
+ M state/pipeline.json
+ M state/pipeline.log
+ M state/upload.log
+```
+

@@ -49336,3 +49336,495 @@ line 53: Tactic `rcases` failed: `x✝ : ?m.255` is)
 23:26:11 summary: 3236 done, 330 pending, 70 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
 23:26:11 waiting on unpublished def bundle(s): BookProof.ChapterClosureUniqueness (185 item(s)), BookProof.ChapterH9 (1 item(s)), BookProof.ChapterHermiteQuadraticEsa (7 item(s)), BookProof.ChapterQgHermiteOscillatorEsa (9 item(s)), BookProof.ChapterQgOuterFockEsa (1 item(s)), BookProof.ChapterScalaronEsa (2 item(s)), ChapterFiniteSectionSingleTime (38 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
 23:26:11 chunk: 145 item(s) resolved in 1295s
+02:50:08 sync: read 351 definition publish job(s)
+02:50:22 sync: read 351 definition publish job(s)
+02:50:29 sync: read 5514 problem publish job(s)
+02:50:29 submitting def:ChapterQgTruncationResolvent (attempt 5)
+02:50:29 def:ChapterQgTruncationResolvent: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:29 submitting def:ChapterYangMillsAbelianFockEsa (attempt 4)
+02:50:29 def:ChapterYangMillsAbelianFockEsa: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:29 submitting def:ChapterScalaronFiberFL (attempt 2)
+02:50:29 def:ChapterScalaronFiberFL: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:29 submitting thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 3)
+02:50:29 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:29 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 3)
+02:50:29 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:29 submitting thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 3)
+02:50:29 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 3)
+02:50:30 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:30 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 3)
+02:50:31 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:31 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:32 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 3)
+02:50:32 thm:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 1)
+02:50:33 sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 1)
+02:50:33 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+02:50:33 submitting sol:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+02:50:33 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 1)
+02:50:34 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ (attempt 1)
+02:50:34 sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 1)
+02:50:34 sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 1)
+02:50:34 sol:BookProof_SqSumFarisLavine_commForm_eq_im: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 1)
+02:50:34 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_SqSumFarisLavine_commForm_sqSumOp_le (attempt 1)
+02:50:34 sol:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal (attempt 1)
+02:50:34 sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: WAIT (theorem not published yet)
+02:50:34 submitting sol:BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp (attempt 5)
+02:50:34 sol:BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:34 submitting sol:BookProof_HyperbolicQuadratic_quadSymbol_single (attempt 5)
+02:50:35 sol:BookProof_HyperbolicQuadratic_quadSymbol_single: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:35 submitting sol:BookProof_HyperbolicQuadratic_sec_sec (attempt 5)
+02:50:35 sol:BookProof_HyperbolicQuadratic_sec_sec: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:35 submitting sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal (attempt 1)
+02:50:35 sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: WAIT (theorem not published yet)
+02:50:35 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt (attempt 1)
+02:50:35 sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: WAIT (theorem not published yet)
+02:50:35 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_esa (attempt 1)
+02:50:35 sol:BookProof_ScalaronEsa_qgScalaronMode_esa: WAIT (theorem not published yet)
+02:50:35 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_potential_ge (attempt 5)
+02:50:35 sol:BookProof_ScalaronEsa_qgScalaronMode_potential_ge: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:35 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_symmetric (attempt 1)
+02:50:35 sol:BookProof_ScalaronEsa_qgScalaronMode_symmetric: WAIT (theorem not published yet)
+02:50:35 submitting sol:BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed (attempt 5)
+02:50:36 sol:BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:36 submitting sol:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint (attempt 1)
+02:50:36 sol:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint: WAIT (theorem not published yet)
+02:50:36 submitting sol:BookProof_HyperbolicQuadratic_momPoly_sq (attempt 5)
+02:50:36 sol:BookProof_HyperbolicQuadratic_momPoly_sq: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:36 submitting sol:BookProof_HyperbolicQuadratic_momPoly_sq_eq_dPoly (attempt 5)
+02:50:37 sol:BookProof_HyperbolicQuadratic_momPoly_sq_eq_dPoly: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:37 submitting sol:BookProof_HyperbolicQuadratic_deriv_pgFun_sec (attempt 5)
+02:50:37 sol:BookProof_HyperbolicQuadratic_deriv_pgFun_sec: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:37 submitting sol:BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero (attempt 5)
+02:50:37 sol:BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:38 submitting sol:BookProof_ScalaronEsa_smoothPotential_symmetric (attempt 5)
+02:50:38 sol:BookProof_ScalaronEsa_smoothPotential_symmetric: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:38 submitting sol:BookProof_ScalaronEsa_qgScalaron_stone_flow (attempt 5)
+02:50:38 sol:BookProof_ScalaronEsa_qgScalaron_stone_flow: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:38 submitting sol:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed (attempt 1)
+02:50:38 sol:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed: WAIT (theorem not published yet)
+02:50:38 submitting sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa (attempt 1)
+02:50:38 sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: WAIT (theorem not published yet)
+02:50:38 submitting sol:BookProof_ChapterH9_numRange_compress_orthonormal_mono (attempt 5)
+02:50:39 sol:BookProof_ChapterH9_numRange_compress_orthonormal_mono: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:39 submitting sol:BookProof_ChapterH9_krylov_bestApprox_antitone (attempt 5)
+02:50:39 sol:BookProof_ChapterH9_krylov_bestApprox_antitone: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:39 submitting sol:BookProof_HyperbolicQuadratic_oscPoly_apply (attempt 5)
+02:50:39 sync: read 351 definition publish job(s)
+02:50:40 sol:BookProof_HyperbolicQuadratic_oscPoly_apply: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:40 submitting sol:BookProof_HyperbolicQuadratic_deriv2_pgFun_sec (attempt 5)
+02:50:40 sol:BookProof_HyperbolicQuadratic_deriv2_pgFun_sec: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:40 submitting sol:BookProof_ScalaronEsa_smoothPotential_deficiencyTrivial (attempt 5)
+02:50:40 sol:BookProof_ScalaronEsa_smoothPotential_deficiencyTrivial: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:40 submitting sol:BookProof_ChapterH9_sirk_numRange_krylov (attempt 1)
+02:50:40 sol:BookProof_ChapterH9_sirk_numRange_krylov: WAIT (theorem not published yet)
+02:50:40 submitting sol:BookProof_HyperbolicQuadratic_oscPoly_hermiteMv (attempt 5)
+02:50:41 sol:BookProof_HyperbolicQuadratic_oscPoly_hermiteMv: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:41 submitting sol:BookProof_HyperbolicQuadratic_oscPoly_apply_eq_differential (attempt 5)
+02:50:41 sol:BookProof_HyperbolicQuadratic_oscPoly_apply_eq_differential: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:41 submitting sol:BookProof_ScalaronEsa_wave_add_scalaron_symmetric (attempt 1)
+02:50:41 sol:BookProof_ScalaronEsa_wave_add_scalaron_symmetric: WAIT (theorem not published yet)
+02:50:41 submitting sol:BookProof_ChapterH9_spectrum_compress_subset_numRange_orthonormal (attempt 5)
+02:50:42 sol:BookProof_ChapterH9_spectrum_compress_subset_numRange_orthonormal: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:42 submitting sol:BookProof_ChapterH9_sirk_numRange_nested_orders (attempt 5)
+02:50:42 sol:BookProof_ChapterH9_sirk_numRange_nested_orders: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:42 submitting sol:BookProof_HyperbolicQuadratic_quadPoly_hermiteMv (attempt 5)
+02:50:42 sync: read 5514 problem publish job(s)
+02:50:42 submitting def:ChapterQgTruncationResolvent (attempt 5)
+02:50:42 sol:BookProof_HyperbolicQuadratic_quadPoly_hermiteMv: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:42 def:ChapterQgTruncationResolvent: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:42 submitting sol:BookProof_HyperbolicQuadratic_quadPoly_apply_eq_differential (attempt 5)
+02:50:43 sol:BookProof_HyperbolicQuadratic_quadPoly_apply_eq_differential: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:43 submitting sol:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint (attempt 1)
+02:50:43 sol:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint: WAIT (theorem not published yet)
+02:50:43 submitting sol:BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp (attempt 5)
+02:50:43 sol:BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:43 submitting sol:BookProof_HyperbolicQuadratic_quadOp_deficiencyTrivialAt (attempt 5)
+02:50:43 sol:BookProof_HyperbolicQuadratic_quadOp_deficiencyTrivialAt: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:44 submitting sol:BookProof_HyperbolicQuadratic_quadOp_not_bounded (attempt 5)
+02:50:44 sol:BookProof_HyperbolicQuadratic_quadOp_not_bounded: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:44 submitting sol:BookProof_HyperbolicQuadratic_quadOp_symmetric (attempt 5)
+02:50:44 sol:BookProof_HyperbolicQuadratic_quadOp_symmetric: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:44 submitting sol:BookProof_HyperbolicQuadratic_quadOp_essentiallySelfAdjoint (attempt 5)
+02:50:45 sol:BookProof_HyperbolicQuadratic_quadOp_essentiallySelfAdjoint: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:45 submitting sol:BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint (attempt 5)
+02:50:45 sol:BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:45 submitting sol:BookProof_HyperbolicQuadratic_quadOp_add_realBoundedPotential_essentiallySelfAdjoint (attempt 5)
+02:50:45 sol:BookProof_HyperbolicQuadratic_quadOp_add_realBoundedPotential_essentiallySelfAdjoint: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:45 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem (attempt 1)
+02:50:45 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: WAIT (theorem not published yet)
+02:50:45 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply (attempt 1)
+02:50:45 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply: WAIT (theorem not published yet)
+02:50:45 submitting sol:BookProof_HashimotoShiftInvert_diagCLM_norm_apply_le (attempt 5)
+02:50:46 sol:BookProof_HashimotoShiftInvert_diagCLM_norm_apply_le: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:46 submitting sol:BookProof_HashimotoShiftInvert_diagCLM_symmetric (attempt 5)
+02:50:46 sol:BookProof_HashimotoShiftInvert_diagCLM_symmetric: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:46 submitting sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge (attempt 1)
+02:50:46 sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: WAIT (theorem not published yet)
+02:50:46 submitting sol:BookProof_HashimotoShiftInvert_norm_single_one (attempt 5)
+02:50:47 sol:BookProof_HashimotoShiftInvert_norm_single_one: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:47 submitting sol:BookProof_HermiteProductBasis_hermiteMvLp_mem_core (attempt 1)
+02:50:47 sol:BookProof_HermiteProductBasis_hermiteMvLp_mem_core: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_HermiteProductCore_derivative_hermiteZ (attempt 1)
+02:50:47 sol:BookProof_HermiteProductCore_derivative_hermiteZ: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_HermiteProductCore_gaussInt_smul (attempt 1)
+02:50:47 sol:BookProof_HermiteProductCore_gaussInt_smul: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_HermiteProductCore_gaussMoment_succ (attempt 1)
+02:50:47 sol:BookProof_HermiteProductCore_gaussMoment_succ: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_HermiteProductCore_gaussWD_eq_sq (attempt 1)
+02:50:47 sol:BookProof_HermiteProductCore_gaussWD_eq_sq: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_KatoRellich_norm_le_of_relBound (attempt 5)
+02:50:47 sol:BookProof_KatoRellich_norm_le_of_relBound: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self (attempt 1)
+02:50:47 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self: WAIT (theorem not published yet)
+02:50:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_velIdx_lower (attempt 5)
+02:50:48 sol:BookProof_NavierStokesFlow_DifferentialL2_velIdx_lower: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:48 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_velIdx_raise (attempt 5)
+02:50:48 sol:BookProof_NavierStokesFlow_DifferentialL2_velIdx_raise: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:48 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_decomposition (attempt 4)
+02:50:48 sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_decomposition: DONE
+02:50:49 submitting sol:BookProof_NavierStokesFlow_farisLavine_without_symmetry_forces_trivial (attempt 4)
+02:50:49 sol:BookProof_NavierStokesFlow_farisLavine_without_symmetry_forces_trivial: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:49 submitting sol:BookProof_NavierStokesFlow_field_evaluates_to_value (attempt 4)
+02:50:49 sol:BookProof_NavierStokesFlow_field_evaluates_to_value: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:49 submitting sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric (attempt 4)
+02:50:50 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:50 submitting sol:BookProof_NavierStokesFlow_nsAdvection_hermitian (attempt 4)
+02:50:50 sol:BookProof_NavierStokesFlow_nsAdvection_hermitian: DONE
+02:50:50 submitting sol:BookProof_NavierStokesFlow_nsBrst_adjoint (attempt 4)
+02:50:50 sol:BookProof_NavierStokesFlow_nsBrst_adjoint: DONE
+02:50:50 submitting sol:BookProof_NavierStokesFlow_nsBrst_nilpotent (attempt 4)
+02:50:51 sol:BookProof_NavierStokesFlow_nsBrst_nilpotent: DONE
+02:50:51 submitting sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix (attempt 1)
+02:50:51 sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: WAIT (theorem not published yet)
+02:50:51 submitting sol:BookProof_NavierStokesFlow_nsFlow_group (attempt 4)
+02:50:51 sol:BookProof_NavierStokesFlow_nsFlow_group: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:51 submitting sol:BookProof_NavierStokesFlow_nsFlow_zero (attempt 4)
+02:50:51 sol:BookProof_NavierStokesFlow_nsFlow_zero: DONE
+02:50:52 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_isPolynomial (attempt 4)
+02:50:52 sol:BookProof_NavierStokesFlow_nsHamiltonian_isPolynomial: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:52 submitting sol:BookProof_NavierStokesFlow_nsNumberOp_eq_secondQuant (attempt 4)
+02:50:52 sol:BookProof_NavierStokesFlow_nsNumberOp_eq_secondQuant: DONE
+02:50:52 submitting sol:BookProof_NavierStokesFlow_nsNumberOp_posSemidef (attempt 4)
+02:50:52 sol:BookProof_NavierStokesFlow_nsNumberOp_posSemidef: DONE
+02:50:52 submitting sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine (attempt 4)
+02:50:53 sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:53 submitting sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense (attempt 4)
+02:50:53 sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:53 submitting sol:BookProof_NavierStokesFlow_ns_outer_degree_le_two (attempt 4)
+02:50:54 sol:BookProof_NavierStokesFlow_ns_outer_degree_le_two: FAIL (local compile failed: error: missing manifest; use `lake update` to generate one
+)
+02:50:54 submitting sol:BookProof_NavierStokesFlow_symmetric_hasZeroDeficiency (attempt 4)
+02:50:54 sol:BookProof_NavierStokesFlow_symmetric_hasZeroDeficiency: DONE
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_apply_eq (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_apply_eq: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_injective (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_injective: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_isShiftInvert_unique (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_isShiftInvert_unique: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_shiftMap_injective (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_shiftMap_injective: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_shiftRange_isClosed (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_shiftRange_isClosed: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion (attempt 1)
+02:50:54 sol:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion: WAIT (theorem not published yet)
+02:50:54 submitting sol:BookProof_HashimotoShiftInvert_isShiftInvert_invShiftOperator (attempt 4)
+02:50:57 sync: read 351 definition publish job(s)
+02:51:16 sync: read 5514 problem publish job(s)
+02:51:16 submitting def:ChapterYangMillsAbelianFockEsa (attempt 5)
+02:51:25 def:ChapterYangMillsAbelianFockEsa: accepted, waiting on the compiler
+02:51:25 submitting def:ChapterScalaronFiberFL (attempt 3)
+02:51:32 sync: read 352 definition publish job(s)
+02:51:54 sync: read 352 definition publish job(s)
+02:52:13 sync: read 5514 problem publish job(s)
+02:52:13 submitting def:ChapterYangMillsAbelianFockEsa (attempt 5)
+02:52:13 def:ChapterYangMillsAbelianFockEsa: accepted, waiting on the compiler
+02:52:13 submitting def:ChapterScalaronFiberFL (attempt 3)
+02:52:15 sync: read 352 definition publish job(s)
+02:52:22 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+02:52:22 submitting thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 4)
+02:52:26 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: title clamped to 178 chars (server limit 200)
+02:52:27 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: accepted, waiting on the compiler
+02:52:27 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 4)
+02:52:31 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: title clamped to 166 chars (server limit 200)
+02:52:31 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: accepted, waiting on the compiler
+02:52:31 submitting thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 4)
+02:52:35 sync: read 5516 problem publish job(s)
+02:52:35 submitting def:ChapterYangMillsAbelianFockEsa (attempt 5)
+02:52:35 def:ChapterYangMillsAbelianFockEsa: accepted, waiting on the compiler
+02:52:35 submitting def:ChapterScalaronFiberFL (attempt 3)
+02:52:35 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: title clamped to 172 chars (server limit 200)
+02:52:36 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: accepted, waiting on the compiler
+02:52:36 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 4)
+02:52:41 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
+02:52:41 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 4)
+02:52:45 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+02:52:45 submitting thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 4)
+02:52:47 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+02:52:47 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 4)
+02:52:50 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: title clamped to 178 chars (server limit 200)
+02:52:50 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: accepted, waiting on the compiler
+02:52:50 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 4)
+02:52:51 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: title clamped to 174 chars (server limit 200)
+02:52:52 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+02:52:52 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 4)
+02:52:55 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: title clamped to 166 chars (server limit 200)
+02:52:55 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: accepted, waiting on the compiler
+02:52:55 submitting thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 4)
+02:52:57 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+02:52:57 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 4)
+02:53:01 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: title clamped to 172 chars (server limit 200)
+02:53:02 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: accepted, waiting on the compiler
+02:53:02 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 4)
+02:53:04 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: accepted, waiting on the compiler
+02:53:04 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 4)
+02:53:09 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
+02:53:09 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 4)
+02:53:11 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: accepted, waiting on the compiler
+02:53:11 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 4)
+02:53:17 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+02:53:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 4)
+02:53:18 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: title clamped to 183 chars (server limit 200)
+02:53:19 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: accepted, waiting on the compiler
+02:53:19 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 4)
+02:53:25 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: title clamped to 174 chars (server limit 200)
+02:53:25 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+02:53:25 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 4)
+02:53:27 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: accepted, waiting on the compiler
+02:53:27 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 4)
+02:53:34 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+02:53:34 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 4)
+02:53:35 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: accepted, waiting on the compiler
+02:53:35 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 4)
+02:53:40 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: accepted, waiting on the compiler
+02:53:40 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 4)
+02:53:41 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: title clamped to 173 chars (server limit 200)
+02:53:41 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: accepted, waiting on the compiler
+02:53:41 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 4)
+02:53:47 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: accepted, waiting on the compiler
+02:53:47 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 4)
+02:53:48 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: accepted, waiting on the compiler
+02:53:48 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 4)
+02:53:52 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: title clamped to 183 chars (server limit 200)
+02:53:53 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: accepted, waiting on the compiler
+02:53:53 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 4)
+02:53:53 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
+02:53:53 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 4)

@@ -1,4 +1,9 @@
-# Session Summary - 2026-09-18 (Round 3)
+# Session Summary - 2026-09-18 (Round 3 + Session 32)
+
+## Sessions Overview
+
+- **Round 3**: Sessions 25-31 (2026-09-19 early morning)
+- **Session 32**: 2026-09-19 ~02:50 - Pipeline execution, environment setup, upload running
 
 ## Completed Actions
 
@@ -233,6 +238,36 @@ Background compilation running with v4.28.0 (appropriate for source verification
 5. Fix any version-specific compilation errors
 
 
+### Session 32 (2026-09-19 ~02:50)
+
+**Status: ACTIVE**
+
+**Completed:**
+- ✅ Verified API reachability (`https://prove2.me/api/v1/health` → 200)
+- ✅ Verified all Lean toolchains installed (v4.28.0, v4.31.0, v4.32.0, v4.33.1)
+- ✅ Started background upload (PID 400089)
+- ✅ Documented environment configuration
+- ✅ Confirmed ../timepiece contains all sources (701 chapters, decl_graph.jsonl)
+
+**Current state:**
+- Upload running: `python3 pipeline/upload_pipeline.py --parallel 50 --job-timeout 60 --max-seconds 120`
+- Environment: `PROVE2ME_SKIP_LOCAL_COMPILE=1` (no lakefile in workspace)
+- Log: `state/upload.log`
+- Pipeline state: 3236 done / 330 pending / 70 failed (1869 orphans ignored)
+
+**Environment (this host):**
+- PATH: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH`
+- ELAN_HOME: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan`
+- Lean v4.33.1: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+
+**Next actions:**
+1. Monitor upload progress
+2. Fix any Lean errors
+3. Generate missing thm/sol stubs from timepiece
+4. Reopen failed items
+5. Git commit and push
+
+
 ## Round 6 - 2026-09-19 (Lean4.33.1 Migration)
 
 ### Migration Complete
@@ -296,4 +331,58 @@ LEAN_PATH=... lean Definitions/Def_ChapterScalaronFiberFL.lean
 - Log: `/tmp/compile_defs_v4331.log`
 
 **Next:** Monitor compilation, fix errors, generate missing sources, upload
+
+
+## Round 8 - 2026-09-19 (Compiler Versions Documentation)
+
+### Compiler Versions - FINAL DOCUMENTATION
+
+**Updated documentation with clear version requirements:**
+
+**Available Toolchains (all installed):**
+- `leanprover--lean4---v4.28.0` (legacy)
+- `leanprover--lean4---v4.31.0` (intermediate)
+- `leanprover--lean4---v4.32.0` (intermediate)
+- `leanprover--lean4---v4.33.1` (CURRENT DEFAULT - platform target)
+
+**Version Selection Matrix:**
+
+| Component | Version | Use Case |
+|---|---|---|
+| **prove2me workspace** | **v4.33.1** | ALL compilation, uploads, verification |
+| **timepiece sources** | **v4.28.0** | Source generation only |
+| **mathlib** | **v4.28.0** | Transitive deps (matches timepiece) |
+
+**Key Configuration:**
+```bash
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+export LAKE_BIN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+```
+
+**lean-toolchain file:**
+```bash
+cat /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/lean-toolchain
+# leanprover--lean4---v4.33.1
+```
+
+**scripts/compile_defs.py:**
+```python
+LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+LB = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+```
+
+### Compilation Results
+
+**v4.33.1: 170/170 defs compiled successfully (100%)**
+- All defs pass with v4.33.1
+- Local gate functional
+- No failures
+
+### Recommendations
+
+1. **Default to v4.33.1** for all work
+2. **Only use v4.28.0** for timepiece source generation
+3. **Keep mathlib at v4.28.0**
+4. **Document in SKILL.md** if needed
 

@@ -6,7 +6,7 @@ import sys
 import time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAN = "/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean"
+LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean"
 ML_PKG = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake"
 ML = f"{ML_PKG}/build/lib/lean"
 BT = f"{ML_PKG}/packages/batteries/.lake/build/lib/lean"
@@ -16,7 +16,7 @@ PW = f"{ML_PKG}/packages/proofwidgets/.lake/build/lib/lean"
 IG = f"{ML_PKG}/packages/importGraph/.lake/build/lib/lean"
 LSC = f"{ML_PKG}/packages/LeanSearchClient/.lake/build/lib/lean"
 PL = f"{ML_PKG}/packages/plausible/.lake/build/lib/lean"
-LB = "/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
+LB = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
 PB = f"{WS}/.lake/build/lib/lean"
 
 def get_lean_path():

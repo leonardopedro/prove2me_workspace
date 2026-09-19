@@ -3624,3 +3624,49 @@ should use v4.33.1 once installed.
 3. Regenerate def bundles with v4.33.1 where applicable
 4. Run upload with v4.33.1 toolchain
 
+
+---
+
+## §1zd. Session 29 (2026-09-19) — Lean4 v4.33.1 migration complete
+
+**Migration status: COMPLETE**
+
+**Lean4 toolchain installed:**
+- v4.33.1: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+- Binary: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+- Toolchain installed: `leanprover/lean4:v4.33.1`
+
+**Configuration changes:**
+- `lean-toolchain`: v4.28.0 → v4.33.1
+- `compile_defs.py`: Updated LAKE_BIN and LB to v4.33.1
+- PATH: Added `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin`
+- LEAN_PATH: Updated to use v4.33.1 lib
+
+**Available toolchains (elan):**
+```
+leanprover--lean4---v4.28.0
+leanprover--lean4---v4.31.0
+leanprover--lean4---v4.32.0
+leanprover--lean4---v4.33.1  ← CURRENT (prove2me workspace)
+```
+
+**Compilation environment:**
+```bash
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+```
+
+**Note on v4.33.1 strictness:**
+v4.33.1 is more strict than v4.28.0. Compilation may surface additional errors that were previously accepted. The local gate will catch these before server upload.
+
+**Compilation command:**
+```bash
+python3 scripts/compile_defs.py
+```
+
+**Next actions:**
+1. Verify compilation with v4.33.1
+2. Fix any version-specific errors
+3. Run upload with v4.33.1 toolchain
+4. Update state with results
+

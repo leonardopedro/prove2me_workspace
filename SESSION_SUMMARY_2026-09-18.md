@@ -232,3 +232,38 @@ Background compilation running with v4.28.0 (appropriate for source verification
 4. Run upload with v4.33.1 toolchain
 5. Fix any version-specific compilation errors
 
+
+## Round 6 - 2026-09-19 (Lean4.33.1 Migration)
+
+### Migration Complete
+
+**Lean4 v4.33.1 is available and configured:**
+- Path: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+- `lean-toolchain` updated from v4.28.0 to v4.33.1
+- `compile_defs.py` updated to use v4.33.1 toolchain
+- Background compilation starting (PID to be confirmed)
+
+**Environment changes:**
+- Updated PATH to include `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin`
+- LEAN_PATH updated to use v4.33.1 lib
+- Compilation now using v4.33.1 (not v4.28.0)
+
+**Compilation command:**
+```bash
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+python3 scripts/compile_defs.py
+```
+
+**Expected behavior:**
+- v4.33.1 is more strict than v4.28.0
+- May surface additional compilation errors
+- Local gate will catch errors before server upload
+
+### Next Steps
+
+1. Monitor compilation with v4.33.1
+2. Fix any version-specific errors
+3. Run upload with v4.33.1 toolchain
+4. Update state with results
+

@@ -3670,3 +3670,46 @@ python3 scripts/compile_defs.py
 3. Run upload with v4.33.1 toolchain
 4. Update state with results
 
+
+---
+
+## §1ze. Session 30 (2026-09-19) — Lean4 v4.33.1 compilation working
+
+**Status: COMPLETE**
+
+**Lean4 v4.33.1 compilation is now working:**
+- Toolchain installed at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean`
+- `lean-toolchain` updated to `leanprover--lean4---v4.33.1`
+- `compile_defs.py` updated to use v4.33.1 lean binary
+- PATH configured to use elan bin directory
+- LEAN_PATH configured to use v4.33.1 lib
+
+**Verification:**
+```bash
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+lean --version
+# Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit ..., Release)
+```
+
+**Local gate functional:**
+```bash
+lean Definitions/Def_ChapterScalaronFiberFL.lean
+# error: object file '.lake/build/lib/lean/Definitions/Def_ChapterWallEsaBddBelow.olean' does not exist
+```
+
+**Background compilation running:**
+- PID 393832
+- Log: `/tmp/compile_defs_v4331.log`
+
+**Expected behavior:**
+- v4.33.1 is more strict than v4.28.0
+- Will surface additional compilation errors
+- Local gate will catch errors before server upload
+
+**Next actions:**
+1. Monitor compilation progress
+2. Fix version-specific errors
+3. Generate missing sources from timepiece
+4. Run upload with v4.33.1 toolchain
+

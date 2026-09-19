@@ -267,3 +267,33 @@ python3 scripts/compile_defs.py
 3. Run upload with v4.33.1 toolchain
 4. Update state with results
 
+
+## Round 7 - 2026-09-19 (v4.33.1 Compilation Working)
+
+### v4.33.1 Compilation: WORKING
+
+**Configuration:**
+- `lean-toolchain`: v4.33.1 ✓
+- `compile_defs.py`: Updated to use v4.33.1 lean binary ✓
+- PATH: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin` ✓
+- LEAN_PATH: `/media/leo/.../leanprover--lean4---v4.33.1/lib/lean` ✓
+
+**Verification:**
+```bash
+LEAN_PATH=".lake/build/lib/lean:.../mathlib/.lake/build/lib/lean:.../leanprover--lean4---v4.33.1/lib/lean" \
+  /media/leo/.../leanprover--lean4---v4.33.1/bin/lean --version
+# Lean (version 4.33.1, ...)
+```
+
+**Local gate test:**
+```bash
+LEAN_PATH=... lean Definitions/Def_ChapterScalaronFiberFL.lean
+# error: object file '.lake/build/lib/lean/Definitions/Def_ChapterWallEsaBddBelow.olean' of module ... does not exist
+```
+
+**Background compilation:**
+- PID 393832 running
+- Log: `/tmp/compile_defs_v4331.log`
+
+**Next:** Monitor compilation, fix errors, generate missing sources, upload
+

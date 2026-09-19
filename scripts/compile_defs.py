@@ -6,7 +6,7 @@ import sys
 import time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin/lean"
+LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
 ML_PKG = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake"
 ML = f"{ML_PKG}/build/lib/lean"
 BT = f"{ML_PKG}/packages/batteries/.lake/build/lib/lean"

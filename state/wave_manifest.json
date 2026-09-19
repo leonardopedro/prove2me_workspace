@@ -1,135 +1,352 @@
 [
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockSym_nonneg",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.sec_apply",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_sec_apply",
   "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.modeData_sym",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_modeData_sym",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.sec_self",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_sec_self",
   "plen": 0,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_apply",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockH_apply",
-  "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.norm_sq_sec",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_symmetricOn",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn",
-  "plen": 7,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_gaussD_sec",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec",
+  "plen": 16,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_relative_bound",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound",
-  "plen": 40,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_eval_update",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update",
+  "plen": 30,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_fockH",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_commForm_fockH",
-  "plen": 8,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
- },
- {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_commForm_bound",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_evalSec",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec",
   "plen": 20,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_ne_zero",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_ne_zero",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_pgFun_sec",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec",
+  "plen": 16,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.coreEquiv_coe",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.coreOp_coreEquiv",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.coreOp_coe",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.mulXPoly_apply",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.momPoly_apply",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.momOp_apply_eq_differential",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential",
   "plen": 4,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_zero_inj",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_modeShift_zero_inj",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.momOp_coe_eq_differential",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.comm_momPoly_mulXPoly",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly",
+  "plen": 19,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.comm_momOp_posOp",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp",
   "plen": 5,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_testState_coe",
-  "plen": 10,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.velIdx_apply",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_velIdx_apply",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe_zero",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
- },
- {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.testState_coe_eq_zero",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero",
-  "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
- },
- {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.velIdx_raise",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_velIdx_raise",
   "plen": 4,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne'",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.velIdx_lower",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_velIdx_lower",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.core_ext",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_core_ext",
+  "plen": 7,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.crd_coreState",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_crd_coreState",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.ann_coreState",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_ann_coreState",
+  "plen": 17,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.cre_coreState",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_cre_coreState",
+  "plen": 15,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.pgLp_smul",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.embedCore_coe",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.embedCore_coreState",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_embedCore_coreState",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwine_ann",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwine_ann",
   "plen": 9,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.commTerm_eq_zero",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwine_cre",
+  "plen": 9,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.add",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_add",
   "plen": 1,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_testState_of_ne",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne",
-  "plen": 26,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.sub",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_sub",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.commForm_testState_self",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self",
-  "plen": 29,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.smul",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_smul",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero",
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.comp",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_comp",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.id",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_id",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined.sum",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_sum",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2.Intertwined"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_ann",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_ann",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_cre",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_cre",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.posOp_eq_ladder",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_posOp_eq_ladder",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_momOp_eq_ladder",
+  "plen": 15,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_ne_zero",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_sqrtTwo_ne_zero",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_mul_self",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_sqrtTwo_mul_self",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_pos",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_pos",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_mom",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_mom",
   "plen": 11,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  },
  {
-  "leaf": "ChapterNavierStokesFockManyMode",
-  "name": "BookProof.NavierStokesFlow.FockManyMode.fockH_essentiallySelfAdjointOn_core",
-  "slug": "BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core",
-  "plen": 5,
-  "ns": "BookProof.NavierStokesFlow.FockManyMode"
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_fieldV",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV",
+  "plen": 18,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.intertwined_canH",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH",
+  "plen": 24,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_real_ne_zero",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_sqrtTwo_real_ne_zero",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core",
+  "plen": 17,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_not_bounded",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded",
+  "plen": 10,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_domain_dense",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_domain_dense",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
+ },
+ {
+  "leaf": "ChapterNavierStokesDifferentialL2",
+  "name": "BookProof.NavierStokesFlow.DifferentialL2.nsQuadraticDiffH_essentiallySelfAdjointOn_core",
+  "slug": "BookProof_NavierStokesFlow_DifferentialL2_nsQuadraticDiffH_essentiallySelfAdjointOn_core",
+  "plen": 1,
+  "ns": "BookProof.NavierStokesFlow.DifferentialL2"
  }
 ]

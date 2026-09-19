@@ -3486,3 +3486,85 @@ queued items.
 
 **Git commit (this update):** def bundle regeneration, pipeline state reset, PIPELINE_PLAN.md §1zc.
 
+
+---
+
+## §1zb. Session 27 (2026-09-19) — local gate configured, compilation running, plan update
+
+**Environment.**
+- Host: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace`
+- Sources: `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece/` (701 chapters)
+- Lean 4: v4.28.0 via elan at `/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean`
+- Mathlib: v4.28.0, 8042 oleans cached at `../timepiece/.lake/packages/mathlib/.lake/build/lib/lean/`
+- API: **unreachable** from this environment (DNS fails for api.prove2.me)
+- Compilation: running in background (PID 387109, 8 lean processes)
+
+**Actions taken.**
+
+1. **Configured local Lean4 gate**:
+   - Set `LAKE_BIN` to v4.28.0 toolchain (not v4.33.1)
+   - Added lean to PATH: `export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin:$PATH"`
+   - Set `LEAN_PATH` to include project build + mathlib + all transitive deps
+   - This enables local compilation checking before upload
+
+2. **Verified local gate works**:
+   ```
+   lean Definitions/Def_ChapterScalaronFiberFL.lean
+   # error: object file '.lake/build/lib/lean/Definitions/Def_ChapterWallEsaBddBelow.olean' of module Definitions.Def_ChapterWallEsaBddBelow does not exist
+   ```
+   - Catches missing dependencies before server upload
+
+3. **Started background compilation**:
+   - Running `scripts/compile_defs.py` (PID 387109)
+   - Compiling all 192 defs in dependency order
+   - 8 lean processes actively working
+   - Log: `/tmp/compile_defs.log`
+
+**Current pipeline state (2026-09-19 ~02:08).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | **3636 items** (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | **3236 done / 330 pending / 70 failed** |
+| pending by kind | 225 sol, 94 thm, 11 def |
+| num_solved_prob (website) | 616 (last known) |
+
+**Def chain blockers (11 items).**
+
+All 11 defs exist in both workspace and timepiece. Compilation in progress:
+- ScalaronFiberFL → ScalaronOuterFockFL → QgVielbeinModeInstance → QgContinuumModeInstance → QgTruncationResolvent → QgTimeStepping → QgManifoldModeInstance → SirkSingleTimeShift → (YangMillsAbelianFockEsa → YangMillsBandBounds) and FiniteSectionSingleTime → ScalaronFiberFL
+
+**Missing sources.**
+- 1784 thm/sol entries have NO local source files
+- Can regenerate using `scripts/wave_generate.py` with `TIMEPIECE_PROJ=../timepiece`
+
+**Failed items (70).**
+Mostly "unknown identifier" errors from missing imports/definitions. Should be resolved once:
+1. Full compilation completes
+2. Missing sources are generated
+
+**Blocked items status.**
+
+| Category | Count | Status |
+|---|---|---|
+| Def chain blockers | 11 | Compiling (background) |
+| Missing sources | 1784 | Need regeneration |
+| Failed items | 70 | Awaiting compilation + sources |
+
+**Next actions (when API reachable and compilation complete).**
+
+1. Check compilation results (`/tmp/compile_defs.log`)
+2. Fix any Lean errors
+3. Generate missing thm/sol stubs from timepiece sources
+4. Run upload in background
+5. Update state with new results
+6. Git commit and push
+
+**Environment configuration.**
+
+```bash
+export PATH="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin:$PATH"
+export LAKE_BIN="/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean"
+export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/home/leo/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
+```
+

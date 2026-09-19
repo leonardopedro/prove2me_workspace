@@ -1,12 +1,3 @@
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesLagrangianEsa
-import Definitions.Def_ChapterNavierStokesThreeComponent
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2

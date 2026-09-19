@@ -15,7 +15,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-variable {n : ℕ} (d : NSTruncation n)
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.norm_sq_sec (i : Fin d) (x : Vd d) (t : ℝ) :
     ‖sec i x t‖ ^ 2 = (∑ j ∈ Finset.univ.erase i, (x j) ^ 2) + t ^ 2 := by sorry

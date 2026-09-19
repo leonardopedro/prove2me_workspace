@@ -15,8 +15,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-variable {n : ℕ} (d : NSTruncation n)
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.coreOp_coe (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
     (p : MvPolynomial (Fin d) ℂ) :
     ((coreOp T (coreEquiv p) : polyGaussCore (d := d)) : L2d d) = pgLp (T p) := by sorry

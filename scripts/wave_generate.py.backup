@@ -317,10 +317,7 @@ def src_path_for(leaf):
 
 
 def src_byte_text(leaf):
-    path = src_path_for(leaf)
-    import sys
-    print(f"DEBUG src_byte_text: leaf={leaf}, path={path}, is_file={os.path.isfile(path)}", file=sys.stderr)
-    with open(path, encoding="utf-8") as f:
+    with open(src_path_for(leaf), encoding="utf-8") as f:
         return ByteText(f.read())
 
 
@@ -599,93 +596,11 @@ def imports_for(leaf, node, modns):
     return "\n".join(lines)
 
 
-def extract_namespace_variables(bt):
-    """Extract namespace-level variable declarations from the source.
-    These are variable commands that appear after the namespace declaration
-    but before any section, and are needed by the stub to compile."""
-    pre = bt.text[:5000]  # Check first 5000 bytes for namespace variables
-    lines = pre.split("\n")
-    result = []
-    import sys
-    print(f"DEBUG: extract_namespace_variables called, checking {len(pre)} bytes", file=sys.stderr)
-    # Debug: print first few lines
-    print(f"DEBUG: First 5 lines: {lines[:5]}", file=sys.stderr)
-    print(f"DEBUG: Looking for 'variable' in lines 75-85: {lines[75:85]}", file=sys.stderr)
-    in_variable = False
-    depth = 0
-    in_str = False
-    
-    for line in lines:
-        if depth > 0:
-            i = 0
-            while i < len(line):
-                if line.startswith("/-", i):
-                    depth += 1
-                    i += 2
-                elif line.startswith("-/", i):
-                    depth -= 1
-                    i += 2
-                else:
-                    i += 1
-            continue
-        
-        code = []
-        i = 0
-        while i < len(line):
-            if in_str:
-                if line[i] == "\\" and i + 1 < len(line):
-                    i += 2
-                    continue
-                if line[i] == '"':
-                    in_str = False
-                i += 1
-                continue
-            if line.startswith("/-", i):
-                depth += 1
-                i += 2
-                continue
-            if line.startswith("-/", i):
-                i += 2
-                continue
-            if line.startswith("--", i):
-                break
-            if line[i] == '"':
-                in_str = True
-                i += 1
-                continue
-            code.append(line[i])
-            i += 1
-        
-        s = "".join(code).strip()
-        
-        if in_variable and s and line[:1].isspace():
-            result.append(line)
-            continue
-        
-        in_variable = False
-        if s.startswith("variable "):
-            result.append(line)
-            in_variable = True
-    
-    return "\n".join(result)
-
-
 def build_thm(bt, leaf, decls, node, modns):
     ctx = structural_preamble(bt, node.s)
     stmt = fmt_name(the_statement(bt, node), node.uname)
     head = [f"-- Generated from {leaf}.lean — theorem {node.uname}\n"]
     head.append(imports_for(leaf, node, modns) + "\n")
-    
-    # Add namespace-level variables if any
-    try:
-        ns_vars = extract_namespace_variables(bt)
-        if ns_vars:
-            head.append("\n" + ns_vars + "\n")
-    except Exception as e:
-        # Log but don't fail
-        import sys
-        print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
-    
     if ctx:
         head.append(ctx + "\n")
     head.append("\n")

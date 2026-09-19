@@ -49828,3 +49828,420 @@ line 53: Tactic `rcases` failed: `x✝ : ?m.255` is)
 02:53:53 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 4)
 02:53:53 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
 02:53:53 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 4)
+02:53:57 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: accepted, waiting on the compiler
+02:53:57 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 4)
+02:53:58 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: accepted, waiting on the compiler
+02:53:58 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 4)
+02:54:02 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: accepted, waiting on the compiler
+02:54:02 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 4)
+02:54:03 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: accepted, waiting on the compiler
+02:54:03 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 4)
+02:54:06 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: title clamped to 173 chars (server limit 200)
+02:54:07 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: accepted, waiting on the compiler
+02:54:07 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 4)
+02:54:07 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: accepted, waiting on the compiler
+02:54:07 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 4)
+02:54:12 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: title clamped to 172 chars (server limit 200)
+02:54:12 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: accepted, waiting on the compiler
+02:54:12 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 4)
+02:54:12 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: accepted, waiting on the compiler
+02:54:12 submitting thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 4)
+02:54:18 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
+02:54:19 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 4)
+02:54:19 thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: accepted, waiting on the compiler
+02:54:19 summary: 3244 done, 294 pending, 98 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
+02:54:19 waiting on unpublished def bundle(s): BookProof.ChapterClosureUniqueness (69 item(s)), BookProof.ChapterQgHermiteOscillatorEsa (5 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
+02:54:19 chunk: 0 item(s) resolved in 125s, 22 still in flight (re-polled next run)
+02:54:23 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: accepted, waiting on the compiler
+02:54:23 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 4)
+02:54:28 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: accepted, waiting on the compiler
+02:54:28 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 4)
+02:54:32 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: accepted, waiting on the compiler
+02:54:32 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 4)
+02:54:36 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: title clamped to 172 chars (server limit 200)
+02:54:37 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: accepted, waiting on the compiler
+02:54:37 summary: 3244 done, 294 pending, 98 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
+02:54:37 waiting on unpublished def bundle(s): BookProof.ChapterClosureUniqueness (69 item(s)), BookProof.ChapterQgHermiteOscillatorEsa (5 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s))
+02:54:37 chunk: 0 item(s) resolved in 122s, 21 still in flight (re-polled next run)
+02:57:09 sync: read 354 definition publish job(s)
+02:57:28 sync: read 5553 problem publish job(s)
+02:57:28 summary: 3244 done, 294 pending, 98 failed, 1 unsubmittable (source missing from this checkout) (1869 out-of-order orphans ignored)
+03:03:47 sync: read 354 definition publish job(s)
+03:04:07 sync: read 5553 problem publish job(s)
+03:04:07 submitting def:ChapterScalaronFiberFL (attempt 3)
+03:04:07 def:ChapterScalaronFiberFL: recorded publish job predates the current bundle — resubmitting
+03:04:16 def:ChapterScalaronFiberFL: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 4)
+03:04:16 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: accepted, waiting on the compiler
+03:04:16 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 4)
+03:04:16 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 4)
+03:04:17 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: accepted, waiting on the compiler
+03:04:17 submitting thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 4)
+03:04:21 thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: accepted, waiting on the compiler
+03:04:21 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 4)
+03:04:26 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: accepted, waiting on the compiler
+03:04:26 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 4)
+03:04:31 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: accepted, waiting on the compiler
+03:04:31 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 4)
+03:04:35 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: accepted, waiting on the compiler
+03:04:35 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 4)
+03:04:39 thm:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: title clamped to 182 chars (server limit 200)
+03:04:40 thm:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: accepted, waiting on the compiler
+03:04:40 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 4)
+03:04:45 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+03:04:45 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 4)
+03:04:49 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: accepted, waiting on the compiler
+03:04:49 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 4)
+03:04:54 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: accepted, waiting on the compiler
+03:04:54 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 4)
+03:04:58 thm:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: title clamped to 181 chars (server limit 200)
+03:04:58 thm:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: accepted, waiting on the compiler
+03:04:58 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 4)
+03:05:03 thm:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: accepted, waiting on the compiler
+03:05:03 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 4)
+03:05:07 thm:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: title clamped to 180 chars (server limit 200)
+03:05:08 thm:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 1)
+03:05:08 sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: WAIT (theorem not published yet)
+03:05:08 submitting sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 1)
+03:05:08 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 1)
+03:05:09 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ (attempt 1)
+03:05:09 sol:BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_commForm_eq_im: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_SqSumFarisLavine_commForm_sqSumOp_le (attempt 1)
+03:05:09 sol:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal (attempt 1)
+03:05:09 sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal (attempt 1)
+03:05:09 sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_esa (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_qgScalaronMode_esa: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_symmetric (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_qgScalaronMode_symmetric: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ChapterH9_sirk_numRange_krylov (attempt 1)
+03:05:09 sol:BookProof_ChapterH9_sirk_numRange_krylov: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_wave_add_scalaron_symmetric (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_wave_add_scalaron_symmetric: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint (attempt 1)
+03:05:09 sol:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint: WAIT (theorem not published yet)
+03:05:09 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem (attempt 1)
+03:05:09 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply (attempt 1)
+03:05:10 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge (attempt 1)
+03:05:10 sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HermiteProductBasis_hermiteMvLp_mem_core (attempt 1)
+03:05:10 sol:BookProof_HermiteProductBasis_hermiteMvLp_mem_core: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HermiteProductCore_derivative_hermiteZ (attempt 1)
+03:05:10 sol:BookProof_HermiteProductCore_derivative_hermiteZ: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HermiteProductCore_gaussInt_smul (attempt 1)
+03:05:10 sol:BookProof_HermiteProductCore_gaussInt_smul: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HermiteProductCore_gaussMoment_succ (attempt 1)
+03:05:10 sol:BookProof_HermiteProductCore_gaussMoment_succ: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_HermiteProductCore_gaussWD_eq_sq (attempt 1)
+03:05:10 sol:BookProof_HermiteProductCore_gaussWD_eq_sq: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self (attempt 1)
+03:05:10 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self: WAIT (theorem not published yet)
+03:05:10 submitting sol:BookProof_NavierStokesFlow_farisLavine_without_symmetry_forces_trivial (attempt 5)
+03:05:11 sol:BookProof_NavierStokesFlow_farisLavine_without_symmetry_forces_trivial: accepted, waiting on the compiler
+03:05:11 submitting sol:BookProof_NavierStokesFlow_field_evaluates_to_value (attempt 5)
+03:05:11 sol:BookProof_NavierStokesFlow_field_evaluates_to_value: DONE
+03:05:12 submitting sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric (attempt 5)
+03:05:12 sol:BookProof_NavierStokesFlow_hasZeroDeficiencyOn_top_of_symmetric: DONE
+03:05:12 submitting sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix (attempt 1)
+03:05:12 sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: WAIT (theorem not published yet)
+03:05:12 submitting sol:BookProof_NavierStokesFlow_nsFlow_group (attempt 5)
+03:05:12 sol:BookProof_NavierStokesFlow_nsFlow_group: DONE
+03:05:12 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_isPolynomial (attempt 5)
+03:05:13 sol:BookProof_NavierStokesFlow_nsHamiltonian_isPolynomial: accepted, waiting on the compiler
+03:05:13 submitting sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine (attempt 5)
+03:05:14 sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine: accepted, waiting on the compiler
+03:05:14 submitting sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense (attempt 5)
+03:05:15 sol:BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense: accepted, waiting on the compiler
+03:05:15 submitting sol:BookProof_NavierStokesFlow_ns_outer_degree_le_two (attempt 5)
+03:05:16 sol:BookProof_NavierStokesFlow_ns_outer_degree_le_two: accepted, waiting on the compiler
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_apply_eq (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_apply_eq: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_injective (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_injective: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_isShiftInvert_unique (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_isShiftInvert_unique: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_shiftMap_injective (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_shiftMap_injective: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_shiftRange_isClosed (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_shiftRange_isClosed: WAIT (theorem not published yet)
+03:05:16 submitting sol:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded (attempt 1)
+03:05:16 sol:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded: WAIT (theorem not published yet)
+03:05:17 submitting sol:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion (attempt 1)
+03:05:17 sol:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion: WAIT (theorem not published yet)
+03:05:17 submitting sol:BookProof_HashimotoShiftInvert_isShiftInvert_invShiftOperator (attempt 4)
+03:05:17 sol:BookProof_HashimotoShiftInvert_isShiftInvert_invShiftOperator: accepted, waiting on the compiler
+03:05:17 submitting sol:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot (attempt 1)
+03:05:17 sol:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot: WAIT (theorem not published yet)
+03:05:18 submitting sol:BookProof_HashimotoShiftInvert_ell2ShiftInvert_eq_sq (attempt 4)
+03:05:19 sol:BookProof_HashimotoShiftInvert_ell2ShiftInvert_eq_sq: accepted, waiting on the compiler
+03:05:19 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp (attempt 1)
+03:05:19 sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp: WAIT (theorem not published yet)
+03:05:19 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe (attempt 1)
+03:05:19 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe: WAIT (theorem not published yet)
+03:05:19 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_eq_ladder (attempt 4)
+03:05:20 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_eq_ladder: accepted, waiting on the compiler
+03:05:20 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_eq_ladder (attempt 4)
+03:05:21 sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_eq_ladder: accepted, waiting on the compiler
+03:05:21 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_ann_coreState (attempt 4)
+03:05:22 sol:BookProof_NavierStokesFlow_DifferentialL2_ann_coreState: accepted, waiting on the compiler
+03:05:22 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_cre_coreState (attempt 4)
+03:05:23 sol:BookProof_NavierStokesFlow_DifferentialL2_cre_coreState: accepted, waiting on the compiler
+03:05:23 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_embedCore_coreState (attempt 4)
+03:05:24 sol:BookProof_NavierStokesFlow_DifferentialL2_embedCore_coreState: accepted, waiting on the compiler
+03:05:24 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec (attempt 1)
+03:05:24 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec: WAIT (theorem not published yet)
+03:05:24 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec (attempt 1)
+03:05:24 sol:BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec: WAIT (theorem not published yet)
+03:05:24 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_kinetic_posSemidef (attempt 4)
+03:05:24 sol:BookProof_NavierStokesFlow_LagrangianNS_kinetic_posSemidef: DONE
+03:05:24 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef (attempt 1)
+03:05:24 sol:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef: WAIT (theorem not published yet)
+03:05:24 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hermitian (attempt 4)
+03:05:24 sol:BookProof_NavierStokesFlow_nsHamiltonian_hermitian: DONE
+03:05:24 submitting sol:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved (attempt 1)
+03:05:24 sol:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved: WAIT (theorem not published yet)
+03:05:24 submitting sol:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined (attempt 1)
+03:05:24 sol:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined: WAIT (theorem not published yet)
+03:05:24 submitting sol:BookProof_HashimotoShiftInvert_shiftInvert_determines (attempt 1)
+03:05:24 sol:BookProof_HashimotoShiftInvert_shiftInvert_determines: WAIT (theorem not published yet)
+03:05:25 submitting sol:BookProof_HashimotoShiftInvert_galerkinResolvent_shiftInvert_tendsto (attempt 1)
+03:05:25 sol:BookProof_HashimotoShiftInvert_galerkinResolvent_shiftInvert_tendsto: WAIT (theorem not published yet)
+03:05:25 submitting sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 1)
+03:05:25 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: WAIT (theorem not published yet)
+03:05:25 submitting sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert (attempt 1)
+03:05:25 sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert: WAIT (theorem not published yet)
+03:05:25 submitting sol:BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension (attempt 1)
+03:05:25 sol:BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension: WAIT (theorem not published yet)
+03:05:25 submitting sol:BookProof_HashimotoShiftInvert_ell2UnboundedExample_isShiftInvert (attempt 4)
+03:05:26 sol:BookProof_HashimotoShiftInvert_ell2UnboundedExample_isShiftInvert: accepted, waiting on the compiler
+03:05:26 submitting sol:BookProof_HashimotoShiftInvert_shiftMap_surjective (attempt 1)
+03:05:26 sol:BookProof_HashimotoShiftInvert_shiftMap_surjective: WAIT (theorem not published yet)
+03:05:26 submitting sol:BookProof_HashimotoShiftInvert_ell2ShiftInvert_le_one (attempt 4)
+03:05:27 sol:BookProof_HashimotoShiftInvert_ell2ShiftInvert_le_one: accepted, waiting on the compiler
+03:05:27 submitting sol:BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded (attempt 4)
+03:05:28 sol:BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded: accepted, waiting on the compiler
+03:05:28 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential (attempt 1)
+03:05:28 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential: WAIT (theorem not published yet)
+03:05:28 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_intertwine_ann (attempt 4)
+03:05:29 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwine_ann: accepted, waiting on the compiler
+03:05:29 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_intertwine_cre (attempt 4)
+03:05:30 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwine_cre: accepted, waiting on the compiler
+03:05:30 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec (attempt 1)
+03:05:30 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian (attempt 1)
+03:05:30 sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_NavierStokesFlow_nsFlow_unitary (attempt 1)
+03:05:30 sol:BookProof_NavierStokesFlow_nsFlow_unitary: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency (attempt 1)
+03:05:30 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn (attempt 1)
+03:05:30 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift (attempt 1)
+03:05:30 sol:BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs (attempt 1)
+03:05:30 sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: WAIT (theorem not published yet)
+03:05:30 submitting sol:BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension (attempt 4)
+03:05:31 sol:BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension: accepted, waiting on the compiler
+03:05:31 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec (attempt 1)
+03:05:31 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_NavierStokesFlow_nsFlow_norm_preserving (attempt 1)
+03:05:31 sol:BookProof_NavierStokesFlow_nsFlow_norm_preserving: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_FriedrichsExtension_FormDom_dom_le_range (attempt 1)
+03:05:31 sol:BookProof_FriedrichsExtension_FormDom_dom_le_range: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example (attempt 1)
+03:05:31 sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_HermiteProductCore_hermiteMv_X_mul (attempt 1)
+03:05:31 sol:BookProof_HermiteProductCore_hermiteMv_X_mul: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_HermiteProductCore_gaussInt_sum (attempt 1)
+03:05:31 sol:BookProof_HermiteProductCore_gaussInt_sum: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential (attempt 1)
+03:05:31 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_NavierStokesFlow_nsFlow_noBlowup (attempt 1)
+03:05:31 sol:BookProof_NavierStokesFlow_nsFlow_noBlowup: WAIT (theorem not published yet)
+03:05:31 submitting sol:BookProof_FriedrichsExtension_friedrichs_extension_exists (attempt 4)
+03:05:32 sol:BookProof_FriedrichsExtension_friedrichs_extension_exists: accepted, waiting on the compiler
+03:05:32 def:ChapterScalaronFiberFL: FAIL (publish FAILED: definition does not compile: line 102: Unknown identifier `Thm_BookProof_ScalaronEsa_contDiff_starobinskyV.contDiff_starobinskyV`; lin)
+03:05:32 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:33 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 17: Unknown identifier `L2I`
+
+Note: It is not possib)
+03:05:33 thm:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: FAIL (publish FAILED: formal statement does not compile: line 8: Unknown identifier `X`
+
+Note: It is not possible to treat `X` as an implicitly bound variab)
+03:05:33 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:34 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:34 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:34 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:35 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`)
+03:05:35 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:35 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:35 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 15: Unknown identifier `Occ`
+
+Note: It is not possib)
+03:05:36 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 16: Unknown identifier `maxDom`
+
+Note: It is not pos)
+03:05:36 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 16: Unknown identifier `maxDom`
+
+Note: It is not pos)
+03:05:36 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 17: Unknown identifier `SymmetricOn`
+
+Note: It is no)
+03:05:37 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`; line 17: Unknown identifier `L2I`
+
+Note: It is not possib)
+03:05:37 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: FAIL (publish FAILED: formal statement does not compile: line 12: unknown namespace `FarisLavine`)

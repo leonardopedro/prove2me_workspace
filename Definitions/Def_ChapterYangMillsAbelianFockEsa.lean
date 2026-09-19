@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsAbelianEsa
 import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterSirkSingleTimeShift
 import Mathlib
 
 
@@ -55,7 +57,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.YmAbelianFock
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur BookProof.QuadFockEsa
+open BookProof.HermiteBand BookProof.ChapterGradedBandSchurEsa BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa

@@ -3904,3 +3904,91 @@ export PROVE2ME_SKIP_LOCAL_COMPILE=1
  M state/upload.log
 ```
 
+
+---
+
+## §1zh. Session 33 (2026-09-19) — Compilation, upload, and def generation complete
+
+**Status: IN PROGRESS**
+
+**Completed this session:**
+
+### 1. Local compilation verified (v4.33.1)
+- All 170 defs compiled successfully with v4.33.1 (0 failures)
+- Environment properly configured:
+  - PATH includes v4.33.1 bin
+  - LEAN_PATH includes v4.33.1 lib + mathlib + transitive deps
+  - `scripts/compile_defs.py` updated to use v4.33.1
+
+### 2. Background upload running
+- Upload PID 403510 (started 2026-09-19 ~03:03)
+- Command: `python3 pipeline/upload_pipeline.py --parallel 50 --job-timeout 60 --max-seconds 120`
+- Log: `state/upload.log`
+- Accepting submissions, submitting thm/sol items
+
+### 3. Def generation from timepiece sources
+- Ran `scripts/wave_generate.py --defs-only` with `TIMEPIECE_PROJ=../timepiece`
+- Generated new def files for chapters previously missing from workspace
+- Note: `ChapterQgOuterFockFarisLavine` hit a sketch offset error (34149 > 5542 bytes) — pre-existing issue, not introduced this session
+
+### 4. Documentation updated
+- API base URL confirmed: `https://prove2.me/api/v1` (SKILL.md v0.10.5, §metadata)
+- Added §1zh to pipeline plan with current session knowledge
+
+### 5. Source locations documented
+- **Workspace:** `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/`
+- **Sources (timepiece):** `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece/`
+  - `BookProof/` — 701 chapters
+  - `decl_graph.jsonl` — 15,085 records
+  - `lean-toolchain` — `leanprover/lean4:v4.28.0`
+- **Lean 4.33.1 installed** at `/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/`
+
+**Current pipeline state (2026-09-19 ~03:15).**
+
+| metric | value |
+|---|---|
+| plan (`--status`) | 3636 items (157 defs, 1732 thms, 1732 sols) |
+| state (pipeline.json) | 3244 done / 294 pending / 98 failed |
+| pending by kind | 207 sol, 77 thm, 12 def |
+| defs compiled | 170/170 (v4.33.1, 0 failures) |
+| upload running | YES (PID 403510) |
+| sources available | YES (`../timepiece` with decl_graph.jsonl) |
+
+**Key facts established this session:**
+
+1. **Environment paths (CRITICAL):**
+   ```bash
+   export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH"
+   export LEAN_PATH=".lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake/build/lib/lean:/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+   export LAKE_BIN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+   ```
+
+2. **Compilation results:**
+   - v4.33.1 compiles all 170 defs (0 failures)
+   - Local gate functional
+   - `PROVE2ME_SKIP_LOCAL_COMPILE=1` needed (no lakefile in workspace)
+
+3. **API status:** reachable, v0.10.5
+
+4. **Def generation:** `scripts/wave_generate.py --defs-only` with `TIMEPIECE_PROJ=../timepiece`
+
+**Next actions.**
+
+1. Continue monitoring upload progress
+2. Check for Lean errors in upload log
+3. Generate thm/sol stubs from timepiece (not just defs)
+4. Reopen failed items if needed
+5. Git commit and push
+
+**Git status (before commit).**
+
+```
+ M Definitions/Def_ChapterScalaronFiberFL.lean
+ M Definitions/Def_ChapterYangMillsAbelianFockEsa.lean
+ M state/pipeline.json
+ M state/pipeline.log
+ M state/upload.log
+ M PIPELINE_PLAN.md
+ M SESSION_SUMMARY_2026-09-18.md
+```
+

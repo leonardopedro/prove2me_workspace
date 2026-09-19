@@ -1,5 +1,7 @@
 import Mathlib
 
+open scoped Fourier
+
 
 /-!
 # The Hermite functions: orthonormality, completeness, and the Hermite core of `L²(ℝ)`
@@ -444,8 +446,8 @@ theorem ae_eq_zero_of_fourier_eq_zero {v : ℝ → ℂ} (hv : Integrable v)
   rw [hzero] at hkey
   have hrw : ∫ x : ℝ, g x • v x = ∫ x : ℝ, v x * (psi : ℝ → ℂ) x := by
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp [hpsi, Complex.real_smul]
-    ring
+    rw [hpsi]
+    simp [Complex.real_smul, mul_comm]
   rw [hrw, ← hkey]
 
 /-- The exponential series for `Complex.exp`. -/

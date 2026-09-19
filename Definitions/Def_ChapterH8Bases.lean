@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterH8
-import Mathlib
-
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
 import Mathlib
 
 /-!

@@ -50,6 +50,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.QgTruncationResolvent
 
 open Filter Topology
+open BookProof.ScalaronOuterFockFL
 
 noncomputable section
 

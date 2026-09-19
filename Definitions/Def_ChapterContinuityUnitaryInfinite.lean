@@ -198,8 +198,8 @@ theorem velocityOp_isSymmetric (v : LinfZ) :
   intro f g
   rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
   refine tsum_congr fun k => ?_
-  simp only [ContinuousLinearMap.coe_coe, velocityOp_apply, RCLike.inner_apply, map_mul,
-    Complex.conj_ofReal]
+  simp only [ContinuousLinearMap.coe_coe, LinearMap.mkContinuous_apply, RCLike.inner_apply,
+    map_mul, Complex.conj_ofReal]
   ring
 
 
@@ -225,7 +225,7 @@ theorem continuityHamiltonian_isSymmetric (v : LinfZ) :
     momentum_isSymmetric _ _
   simp only [continuityHamiltonian, ContinuousLinearMap.coe_coe,
     ContinuousLinearMap.smul_apply, ContinuousLinearMap.add_apply,
-    ContinuousLinearMap.coe_comp', Function.comp_apply, inner_smul_left, inner_smul_right,
+    ContinuousLinearMap.coe_comp, Function.comp_apply, inner_smul_left, inner_smul_right,
     inner_add_left, inner_add_right]
   rw [hp1, hv1, hv2, hp2]
   simp only [map_div₀, map_one, Complex.conj_ofNat]

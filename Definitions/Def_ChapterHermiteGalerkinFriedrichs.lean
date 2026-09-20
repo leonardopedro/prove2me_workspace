@@ -228,7 +228,7 @@ end Examples
 
 section ProperDomain
 
-open scoped InnerProductSpace ENNReal lp
+open scoped InnerProductSpace ENNReal
 
 /-- The canonical Hilbert basis of `ℓ²(ℕ, ℂ)` — the abstract model of the
 Hermite basis of `L²(ℝ)`. -/

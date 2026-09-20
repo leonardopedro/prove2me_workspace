@@ -2,8 +2,9 @@ import Definitions.Def_ChapterWallEsaBddBelow
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterSchrodingerCutoffEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
+import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
+import Theorems.Thm_BookProof_WallEsaSemibounded_kinCcR_quadratic_form
 
 
 /-!
@@ -99,11 +100,7 @@ structure WallPot where
 `M⁴/(16α)·(1 − exp(−√(2/3)·φ/M))²`, with the exponential in full. -/
 def starobinskyWall (M alpha : ℝ) (halpha : 0 < alpha) : WallPot where
   V := BookProof.Starobinsky.starobinskyV M alpha
-  smooth := by
-    unfold BookProof.Starobinsky.starobinskyV
-    exact contDiff_const.mul
-      ((contDiff_const.sub (Real.contDiff_exp.comp
-        ((contDiff_const.mul contDiff_id).div_const M))).pow 2)
+  smooth := BookProof.ScalaronEsa.contDiff_starobinskyV M alpha
   nonneg := fun phi => BookProof.Starobinsky.starobinskyV_nonneg halpha phi
 
 namespace WallPot

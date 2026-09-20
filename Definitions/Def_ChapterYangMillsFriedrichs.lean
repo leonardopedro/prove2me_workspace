@@ -1,5 +1,4 @@
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterWeylHamiltonian
 import Definitions.Def_ChapterH9
 import Mathlib

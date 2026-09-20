@@ -1,6 +1,7 @@
 -- Generated from ChapterQgOuterFockFlow.lean — solution of BookProof.QgOuterFockFlow.secData_ext_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_symmetricOn
 open BookProof.QgOuterFockFlow
 
 

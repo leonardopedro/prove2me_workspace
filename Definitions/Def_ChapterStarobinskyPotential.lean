@@ -126,12 +126,8 @@ def qgR2ModeHamiltonian :
   qgModeHamiltonian a b (qgR2ModePotential M alpha Rc)
 
 
-/-! ## starobinskyV_nonneg -/
 
-theorem starobinskyV_nonneg {M alpha : ℝ} (halpha : 0 < alpha) (phi : ℝ) :
-    0 ≤ starobinskyV M alpha phi := by
-  unfold starobinskyV
-  positivity
+
 
 
 

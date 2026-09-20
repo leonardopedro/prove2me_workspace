@@ -2,7 +2,6 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 
-open scoped lp
 
 /-!
 # The Hashimoto (SIRK) algorithm with **complex, non-real, and many different shifts**
@@ -217,7 +216,7 @@ noncomputable def diagLinC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ �
     ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ) where
   toFun x := ⟨fun n => c n * x n, memlp_diagFunC hc x⟩
   map_add' x y := by apply lp.ext; funext n; simp [mul_add]
-  map_smul' a x := by apply lp.ext; funext n; simp [mul_comm, smul_eq_mul]
+  map_smul' a x := by apply lp.ext; funext n; simp; ring
 
 
 

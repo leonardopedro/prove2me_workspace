@@ -58,6 +58,44 @@ Everything is `sorry`-free and `axiom`-free.
 open scoped InnerProductSpace
 
 namespace BookProof.SirkSingleTime
+/-! ## Cross-chapter definitions from `BookProof.QgTruncationResolvent` -/
+theorem isShiftInvertC_neg_resCLM (T : UnboundedSelfAdjoint F) :
+    IsShiftInvertC T.op Complex.I (-(T.resCLM 1)) := by
+  have hI : (Complex.I).im ≠ 0 := by simp
+  have key : ∀ x : T.domain, cshiftMap T.op Complex.I x = -(T.shift 1 x) := by
+    intro x
+    rw [UnboundedSelfAdjoint.shift_apply]
+    change Complex.I • (x : F) - T.op x = -(T.op x - (((1 : ℝ) : ℂ) * Complex.I) • (x : F))
+    simp only [Complex.ofReal_one, one_mul]
+    abel
+  refine isShiftInvertC_of_rightInverse T.symmetric hI fun u => ?_
+  have hmem : (-(T.resCLM 1)) u ∈ T.domain := by
+    have h := T.resCLM_mem 1 u
+    simp only [ContinuousLinearMap.neg_apply]
+    exact T.domain.neg_mem h
+  refine ⟨hmem, ?_⟩
+  have hneg : (⟨(-(T.resCLM 1)) u, hmem⟩ : T.domain) = -(T.res 1 u) := Subtype.ext (by simp)
+  rw [hneg, map_neg, key, neg_neg, T.shift_res one_ne_zero]
+
+/-- **The numerical statement in the form the shift-invert (Hashimoto/SIRK) machinery of
+this project consumes.**  The exact quantum-gravity Hamiltonian and each of its
+mode truncations have a unique self-adjoint realization; each realization has a Hashimoto
+shift-invert operator at the complex shift `γ = i`, namely `−(H − i)⁻¹`; and the truncated
+shift-invert operators converge strongly to the exact one.  This is exactly the input of the
+rational-Krylov (SIRK) layer, and by Trotter–Kato it yields convergence of the flows. -/
+theorem qg_truncation_hashimoto_shiftInvert_tendsto (Λ : ℕ → Set ι)
+    (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :
+    ∃ (T : UnboundedSelfAdjoint (Sec ι)) (S : ℕ → UnboundedSelfAdjoint (Sec ι)),
+      IsSelfAdjointExtension (secHam W Q) T.op ∧
+        (∀ n, IsSelfAdjointExtension (secHam W (truncModes Q (Λ n))) (S n).op) ∧
+        IsShiftInvertC T.op Complex.I (-(T.resCLM 1)) ∧
+        (∀ n, IsShiftInvertC (S n).op Complex.I (-((S n).resCLM 1))) ∧
+        ∀ u : Sec ι, Tendsto (fun n => -((S n).resCLM 1 u)) atTop (𝓝 (-(T.resCLM 1 u))) := by
+  obtain ⟨T, S, hT, hS, hres, -⟩ := qgOuterFock_truncation_flow_convergence W Q Λ hexh
+  exact ⟨T, S, hT, hS, isShiftInvertC_neg_resCLM T, fun n => isShiftInvertC_neg_resCLM (S n),
+    fun u => (hres u).neg⟩
+
+end
 
 open Filter Topology
 

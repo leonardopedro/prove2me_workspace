@@ -68,15 +68,29 @@ Everything is `sorry`-free and `axiom`-free.
 -/
 
 namespace BookProof.YangMillsAbelianEsa
+/-! ## Cross-chapter definitions from `BookProof.Qg3DGaugeEsa` -/
+theorem qg3D_essentiallySelfAdjointOn_core :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qg3DHamiltonian (coreRepPoly 84)) :=
+  qgSigned_essentiallySelfAdjointOn_core qgKappa
+
+/-- **The complete unitary flow of the gravity Hamiltonian**, by Stone's theorem applied to
+the unique self-adjoint extension supplied by essential self-adjointness. -/
+theorem qg3D_stone_flow :
+    ∃ (T : UnboundedSelfAdjoint (L2d 84)) (U : ℝ → (L2d 84 →L[ℂ] L2d 84)),
+      IsSelfAdjointExtension (qg3DHamiltonian (coreRepPoly 84)) T.op ∧ IsStoneFlow T U :=
+  exists_stone_flow_of_esa _ polyGaussCore_dense (qg3D_symmetricOn (coreRepPoly 84))
+    qg3D_essentiallySelfAdjointOn_core
+
+/-- The elliptic sector, for comparison: essential self-adjointness upgrades its Friedrichs
+extension from existence to uniqueness. -/
+theorem qg3DElliptic_essentiallySelfAdjointOn_core :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84))
+      (qg3DEllipticHamiltonian (coreRepPoly 84)) :=
+  qgSigned_essentiallySelfAdjointOn_core qgKappaElliptic
+
+end
 
 open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.YangMillsHermite
-open BookProof.FarisLavine
-open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.HermiteRelative
-open BookProof.FullQuadratic
-open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
-open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
 
 noncomputable section
 

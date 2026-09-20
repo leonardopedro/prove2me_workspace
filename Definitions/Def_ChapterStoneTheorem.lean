@@ -14,9 +14,6 @@ import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 import Mathlib
-open BookProof.ChapterUnitaryTransport
-open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneResolvent
 
 /-!
 # The general Stone theorem on a separable Hilbert space
@@ -39,6 +36,46 @@ This file assembles the two halves of Stone's theorem proved in
 open scoped InnerProductSpace
 
 namespace BookProof.ChapterStoneMeasurable
+/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
+theorem stone_bijection :
+    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
+  constructor
+  · intro T S h
+    have h' : T.stoneGroup = S.stoneGroup := h
+    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
+  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
+
+end BookProof.ChapterStoneTheorem
+/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
+theorem stone_bijection :
+    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
+  constructor
+  · intro T S h
+    have h' : T.stoneGroup = S.stoneGroup := h
+    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
+  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
+
+end BookProof.ChapterStoneTheorem
+/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
+theorem stone_bijection :
+    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
+  constructor
+  · intro T S h
+    have h' : T.stoneGroup = S.stoneGroup := h
+    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
+  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
+
+end BookProof.ChapterStoneTheorem
+/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
+theorem stone_bijection :
+    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
+  constructor
+  · intro T S h
+    have h' : T.stoneGroup = S.stoneGroup := h
+    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
+  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
+
+end BookProof.ChapterStoneTheorem
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 

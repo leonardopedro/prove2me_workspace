@@ -64,17 +64,30 @@ the plateau works, and a smaller constant only shrinks the window).
 -/
 
 namespace BookProof.ScalaronEdge
+/-! ## Cross-chapter definitions from `BookProof.FriedrichsFormGap` -/
+theorem friedrichs_extension_form_gap (P : PosSymOp F) (hdense : Dense (P.dom : Set F))
+    {mu : ℝ} (hmu : ∀ x : P.dom, mu * ‖(x : F)‖ ^ 2 ≤ quadForm P.op x) :
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F) (S : F →L[ℂ] F),
+      IsPositiveSelfAdjointExtension P.op A ∧ IsShiftInvert A 1 S ∧
+        IsSelfAdjoint S ∧ (∀ y : Dom, mu * ‖(y : F)‖ ^ 2 ≤ quadForm A y) := by
+  have hinj : Function.Injective (friedrichsResolvent P) :=
+    friedrichsResolvent_injective P hdense
+  refine ⟨_, invShiftOperator (friedrichsResolvent P) hinj 1, friedrichsResolvent P, ?_,
+    isShiftInvert_invShiftOperator _ hinj 1, friedrichsResolvent_isSelfAdjoint P,
+    friedrichs_quadForm_lower_bound P hinj hmu⟩
+  refine invShiftOperator_isPositiveSelfAdjointExtension (friedrichsResolvent P) hinj 1
+    (friedrichsResolvent_isSelfAdjoint P) (friedrichsResolvent_pos P) (dom_le_range P) P.op ?_
+  intro x
+  have hpre : preim (friedrichsResolvent P) ⟨(x : F), dom_le_range P x.2⟩
+      = (x : F) + P.op x :=
+    preim_eq _ hinj _ (friedrichsResolvent_shift P x)
+  rw [invShiftOperator_apply, hpre]
+  push_cast
+  module
+
+end BookProof.FriedrichsFormGap
 
 open Complex Real MeasureTheory Function SchwartzMap ComplexOrder
-open BookProof.Starobinsky
-open BookProof.ScalaronWallEsa
-open BookProof.ScalaronEsa
-open BookProof.FarisLavine
-open BookProof.WallEsaSemibounded
-open BookProof.FriedrichsExtension
-open BookProof.FriedrichsFormGap
-open BookProof.YangMillsFriedrichs
-open BookProof.HashimotoShiftInvert
 
 /-! ## 0. The Starobinsky potential and the operator
 

@@ -42,6 +42,13 @@ symmetric exactly when the multiplier is real almost everywhere.
 -/
 
 namespace BookProof.StrichartzWave
+/-! ## Cross-chapter definitions from `BookProof.StrichartzWave` -/
+theorem wave_essentiallySelfAdjoint (n : ℕ) (κ : ℝ) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain (SpaceTime n))
+      (opL2 (waveOp n κ)) :=
+  constCoeffOp_essentiallySelfAdjoint _ _ _
+
+end BookProof.StrichartzWave
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
 

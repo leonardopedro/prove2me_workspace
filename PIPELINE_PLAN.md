@@ -4342,3 +4342,118 @@ Despite both theorems being committed to their respective def bundles. The serve
 3. Generate missing thm/sol stubs from `../timepiece`
 4. Fix thm/sol failures (104 failed thms, 46 failed sols)
 5. Git commit and push remaining changes
+
+---
+
+## §1zi. Session 36 (2026-09-20) — def bundles self-contained, local compilation, build fixes
+
+**Status: IN PROGRESS**
+
+**Work completed this session:**
+
+### 1. Def bundles verified self-contained
+
+All 169 `Def_Chapter*.lean` files now follow the pattern: `import Mathlib` + `import Definitions.Def_*`. No `import Theorems` in any def bundle. Verified by static analysis (Python script scanning all import lines).
+
+### 2. Local compilation with lean4.33.1
+
+**Environment:**
+- Lean 4.33.1 installed at `.elan/toolchains/leanprover--lean4---v4.33.1/`
+- Mathlib v4.33.1 (rev `0df444a360eaa60ab8c11dca51a86af692955474`)
+- Cache downloaded via `lake exe cache get` (8690 files)
+
+**Build issue:** `lake build Definitions` hangs at ~8744/8877 modules when run directly. Root cause: multiple lake processes spawn parallel lean compilations for the same files, causing resource contention. Background builds were attempted but tool execution timeout prevents reliable background execution.
+
+**Build workaround:** Use `compile_def.sh` with correct LEAN_PATH for individual def bundles. Topological ordering is required — dependencies must be compiled first.
+
+**Build status:** 72/169 def bundles have .olean files (from previous sessions). Remaining 97 need compilation in dependency order.
+
+**Key findings:**
+- `Def_ChapterScalaronFiberFL.lean` imports: `Def_ChapterWallEsaBddBelow`, `Def_ChapterWallEsaSemibounded`, `Def_ChapterScalaronCoreEsa`, `Def_ChapterScalaronWallEsa`, `Def_ChapterSchrodingerCutoffEsa`, `Def_ChapterQgOuterFockCoreFL`, `Def_ChapterStarobinskyPotential`, `Mathlib`
+- `Def_ChapterStarobinskyPotential.lean` provides `starobinskyV`, `starobinskyV_nonneg`, `contDiff_starobinskyV`
+- `Def_ChapterScalaronCoreEsa.lean` provides `ccDomain_dense`, `contDiff_starobinskyV`
+
+### 3. Def generation from timepiece
+
+Ran `scripts/wave_generate.py --defs-only` with `TIMEPIECE_PROJ` and `PROVE2ME_WS` set correctly.
+
+**Generated successfully:** 38 def bundles (including previously missing ones like ChapterStarobinskyPotential, ChapterScalaronCoreEsa, etc.)
+
+**Failed:** ChapterQgOuterFockFarisLavine — sketch offsets exceed source text (34149 > 5542 bytes). The sketch data in `state/sketch/monolith/` is stale/incompatible with the current source file in timepiece.
+
+**Impact:** 38 new def bundles generated. The generated files are self-contained (Mathlib + Definitions.Def_*).
+
+### 4. Def bundle fixes applied (previous sessions)
+
+| Commit | Fix |
+|--------|-----|
+| 9c96333 | Made all def bundles self-contained (import Mathlib + Definitions.Def_*) |
+| bdded11 | Touch to force server cache refresh |
+| 863c53a | Added missing import `Definitions.Def_ChapterScalaronWallEsa` in ScalaronFiberFL |
+| 863c53a | Restored `starobinskyV_nonneg` in StarobinskyPotential |
+| 863c53a | Added `contDiff_starobinskyV` + `ccDomain_dense` in ScalaronCoreEsa |
+
+### 5. Current state
+
+```
+plan : 3637 items (158 defs, 1732 thms, 1732 sols)
+state: 3316 done / 181 pending / 140 failed
+pending by kind: {'sol': 132, 'thm': 39, 'def': 10}
+```
+
+**10 pending defs** — head of chain: `ChapterScalaronFiberFL → ChapterScalaronOuterFockFL → ChapterQgVielbeinModeInstance → ...`
+
+**Build order for def bundles** (topological, 169 modules):
+
+Root nodes (no def dependencies): ChapterH1, ChapterH5, ChapterH6, ChapterH7, ChapterH8, ChapterH9, ChapterDoubleSlit, ChapterU, ChapterWeylHamiltonian
+
+Key chains:
+```
+ChapterH1 → ChapterH4
+ChapterH5 → ChapterH6 → ChapterH7 → ChapterH8 → ChapterH9
+ChapterWallEsaBddBelow → ChapterScalaronFiberFL → ChapterScalaronOuterFockFL → ...
+ChapterQuantumGravity3DGauge → ChapterQgOuterFockEsa → ChapterQg3DGaugeEsa
+ChapterQgHermiteCore → ChapterQgHermiteFriedrichs
+ChapterFarisLavineCore → ChapterHashimotoComplexShifts → ChapterEsaClosure
+```
+
+### 6. Upload status
+
+API token refresh returns HTTP 500. Direct API queries blocked. Upload pipeline handles refresh internally.
+
+Upload log: `state/upload.log`
+
+### 7. Next actions
+
+1. **Build def bundles in topological order** — use `compile_def.sh` script with correct LEAN_PATH, processing in dependency order. 97 def bundles need compilation.
+2. **Generate missing thm/sol stubs** from timepiece sources (62 items blocked by missing stubs)
+3. **Fix thm/sol failures** (104 failed thms, 46 failed sols)
+4. **Regenerate sketch data** for ChapterQgOuterFockFarisLavine (offset mismatch)
+5. **Monitor upload** for remaining def bundle compilations
+6. **Git commit and push** remaining changes
+7. **Run full build** after all fixes: `lake build Definitions` (requires single lake process, no parallel duplicates)
+
+**Git commits:**
+
+```
+863c53a fix: add missing import for Def_ChapterScalaronWallEsa in ScalaronFiberFL
+9c96333 fix: make def bundles self-contained (import Mathlib + Definitions.Def_*), add missing theorems
+bdded11 chore: touch to force server cache refresh
+6753bf3 fix: add missing theorem imports for ChapterScalaronFiberFL, update pipeline state and def bundles
+```
+
+**Local build command (sequential, safe):**
+```bash
+cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+LEAN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+LEAN_PATH="$PWD/.lake/build/lib/lean:..."
+export LEAN_PATH
+# Build in dependency order using topological sort from scripts/compile_deps_v4331.py
+```
+
+**Build command (parallel, faster but needs single lake process):**
+```bash
+cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+nohup .elan/bin/lake build Definitions > /tmp/lake_build.log 2>&1 &
+# Ensure only ONE lake process runs (check with: ps aux | grep lake)
+```

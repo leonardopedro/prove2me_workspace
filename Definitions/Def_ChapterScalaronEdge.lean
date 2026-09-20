@@ -7,7 +7,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterFriedrichsFormGap
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHashimotoShiftInvert
-import Theorems.Thm_BookProof_ScalaronEsa_contDiff_starobinskyV
+
 import Mathlib
 
 

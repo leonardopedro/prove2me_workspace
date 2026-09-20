@@ -4,8 +4,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_quadForm_nonneg
+
+
 open scoped ENNReal
 open BookProof.FarisLavine
 open BookProof.YangMillsFriedrichs

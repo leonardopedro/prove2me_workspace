@@ -6,7 +6,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 -- no Definitions bundle declares.  It is published as a platform theorem node
 -- (BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded), so import that
 -- module instead of restating the proof here.
-import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
 
 /-!
 # The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry,
@@ -269,6 +268,15 @@ def coordLine (x : Vd d) (j : Fin d) (s : ℝ) : Vd d :=
 
 
 
+
+theorem hamCore_symmetricOn (hWc : Continuous W) (hWb : ExpBounded W) :
+    SymmetricOn (polyGaussCore (d := d)) (hamCore W hWc hWb) := by
+  sorry
+
+theorem hamCore_quadForm_nonneg (hWc : Continuous W) (hWb : ExpBounded W)
+    (hW0 : ∀ x, 0 ≤ W x) (x : (polyGaussCore (d := d))) :
+    0 ≤ quadForm (hamCore W hWc hWb) x := by
+  sorry
 
 end
 

@@ -190,4 +190,10 @@ noncomputable def scalaronSectorPotential (M alpha : ℝ) (V3 : Polynomial ℝ) 
 
 end MultiDim
 
+
+theorem memLp_mul_pgFun_of_expBounded {W : Vd d → ℝ} (hW : Continuous W) (hWb : ExpBounded W)
+    (p : MvPolynomial (Fin d) ℂ) :
+    MemLp (fun x : Vd d => ((W x : ℝ) : ℂ) * pgFun p x) 2 (volume : Measure (Vd d)) := by
+  sorry
+
 end BookProof.QgHermiteCore

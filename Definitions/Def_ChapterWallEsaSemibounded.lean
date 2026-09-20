@@ -75,6 +75,19 @@ def SemiboundedBelowOn (D : Submodule ℂ F) (T : D →ₗ[ℂ] F) (c : ℝ) : P
 
 
 
+theorem kinCcR_quadratic_form (f : ccSchwartz ℝ) :
+    (inner ℂ (kinCcR (ccEquiv ℝ f))
+        ((ccEquiv ℝ f : ccDomain ℝ) : Lp ℂ 2 (volume : Measure ℝ)) : ℂ)
+      = ((∫ x, ‖deriv ((f : 𝓢(ℝ, ℂ)) : ℝ → ℂ) x‖ ^ 2 : ℝ) : ℂ) := by
+  sorry
+
+theorem opCc_quadratic_form (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
+    (f : ccSchwartz ℝ) :
+    (inner ℂ (opCc V hV (ccEquiv ℝ f))
+        ((ccEquiv ℝ f : ccDomain ℝ) : Lp ℂ 2 (volume : Measure ℝ)) : ℂ)
+      = ((∫ x, V x * ‖(f : 𝓢(ℝ, ℂ)) x‖ ^ 2 : ℝ) : ℂ) := by
+  sorry
+
 end
 
 end BookProof.WallEsaSemibounded

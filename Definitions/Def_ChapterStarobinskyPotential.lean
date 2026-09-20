@@ -135,6 +135,10 @@ def qgR2ModeHamiltonian :
 
 
 
+theorem starobinskyV_nonneg {M alpha : ℝ} (halpha : 0 < alpha) (phi : ℝ) :
+    0 ≤ starobinskyV M alpha phi := by
+  sorry
+
 end
 
 end BookProof.Starobinsky

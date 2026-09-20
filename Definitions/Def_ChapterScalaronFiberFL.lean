@@ -2,9 +2,10 @@ import Definitions.Def_ChapterWallEsaBddBelow
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterSchrodingerCutoffEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
-import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
-import Theorems.Thm_BookProof_WallEsaSemibounded_kinCcR_quadratic_form
+
 
 
 /-!

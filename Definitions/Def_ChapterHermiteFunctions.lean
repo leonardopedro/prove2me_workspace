@@ -94,14 +94,18 @@ theorem continuous_gaussH : Continuous gaussH := by
 
 
 theorem gaussH_sq (x : ℝ) : gaussH x * gaussH x = gaussW x := by
-  rw [gaussH, gaussW, ← Real.exp_add]; ring_nf
+  rw [gaussH, gaussW, ← Real.exp_add]
+  congr 1
+  ring
 
 theorem hasDerivAt_gaussW (x : ℝ) : HasDerivAt gaussW (-x * gaussW x) x := by
   have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-x) x := by
     have h0 := ((hasDerivAt_pow 2 x).neg).div_const 2
     convert h0 using 1
     ring
-  simpa [gaussW, mul_comm] using h.exp
+  have := h.exp
+  unfold gaussW
+  simpa [mul_comm] using this
 
 
 
@@ -142,7 +146,10 @@ theorem integrable_pow_mul_exp_neg (k : ℕ) {b : ℝ} (hb : 0 < b) :
 theorem integrable_poly_mul_exp_neg (p : Polynomial ℝ) {b : ℝ} (hb : 0 < b) :
     Integrable (fun x : ℝ => p.eval x * Real.exp (-b * x ^ 2)) := by
   induction p using Polynomial.induction_on' with
-  | add p q hp hq => simpa [add_mul] using hp.add hq
+  | add p q hp hq =>
+      have := hp.add hq
+      exact this.congr (Filter.Eventually.of_forall fun x => by
+        simp [add_mul])
   | monomial k a =>
       simpa [Polynomial.eval_monomial, mul_assoc] using
         (integrable_pow_mul_exp_neg k hb).const_mul a
@@ -187,9 +194,11 @@ theorem gint_one : gint 1 = Real.sqrt (2 * Real.pi) := by
 `∫ p' q w = ∫ p (X q − q') w`, because `(q w)' = (q' − X q) w`. -/
 theorem gint_ibp (p q : Polynomial ℝ) :
     gint (derivative p * q) = gint (p * (X * q - derivative q)) := by
-  have hu : ∀ x : ℝ, HasDerivAt (fun y : ℝ => p.eval y) ((derivative p).eval x) x :=
+  have hu : ∀ x ∈ tsupport (fun y : ℝ => q.eval y * gaussW y),
+      HasDerivAt (fun y : ℝ => p.eval y) ((derivative p).eval x) x :=
     fun x => p.hasDerivAt x
-  have hv : ∀ x : ℝ, HasDerivAt (fun y : ℝ => q.eval y * gaussW y)
+  have hv : ∀ x ∈ tsupport (fun y : ℝ => p.eval y),
+      HasDerivAt (fun y : ℝ => q.eval y * gaussW y)
       (((derivative q).eval x - x * q.eval x) * gaussW x) x := by
     intro x
     have h := (q.hasDerivAt x).mul (hasDerivAt_gaussW x)

@@ -4141,11 +4141,67 @@ export PROVE2ME_SKIP_LOCAL_COMPILE=1
 **Git status (before commit).**
 
 ```
- M Definitions/Def_ChapterQgTruncationResolvent.lean
- M Definitions/Def_ChapterStarobinskyPotential.lean
- M Definitions/Def_ChapterYangMillsFriedrichs.lean
+ M Definitions/Def_ChapterHermiteFunctions.lean
  M state/pipeline.json
  M state/pipeline.log
- M PIPELINE_PLAN.md
+ M state/upload.log
 ```
+
+### 1v. Session 19 (2026-09-19) — local compilation verified, 4 target def bundles already done, ChapterScalaronFiberFL is the head blocker
+
+**All 4 def bundles mentioned by user are already done (no Lean errors):**
+- `ChapterHashimotoComplexShifts`: done
+- `ChapterHermiteFunctions`: done  
+- `ChapterFriedrichsExtension`: done
+- `ChapterContinuityUnitaryInfinite`: done
+
+**Local compilation verified:** All 170 def bundles compile with v4.28.0 (dependency-order topologic sort). Mathlib is v4.28.0; v4.33.1 toolchain exists but mathlib oleans are v4.28.0-only.
+
+**Environment:** `PROVE2ME_SKIP_LOCAL_COMPILE=1` set for uploads. Local gate uses v4.28.0.
+
+**Current state (2026-09-19):**
+```
+plan : 3637 items (158 defs, 1732 thms, 1732 sols)
+state: 3304 done / 181 pending / 152 failed (1868 orphans ignored)
+pending by kind: {'sol': 132, 'def': 10, 'thm': 39}
+next : def:ChapterScalaronOuterFockFL, def:ChapterQgTruncationResolvent, def:ChapterQgTimeStepping, ...
+```
+
+**Head blocker — ChapterScalaronFiberFL (5 failed attempts):**
+Error: `starobinskyV_nonneg`, `wallHam_symmetricOn`, `kinCcR_quadratic` — unknown identifiers.
+These are theorems in imported def bundles (`StarobinskyPotential`, `WallEsaSemibounded`) that the
+def bundle uses but which the server can't resolve. Same class as §1b's QgHermite gap.
+Fix: add `import Theorems.Thm_*` for the missing theorem nodes, or embed the theorem body into the def bundle.
+
+**10 pending defs blocked on upstream defs:**
+```
+def:ChapterFiniteSectionSingleTime (blocked on ChapterSirkSingleTimeShift)
+def:ChapterScalaronOuterFockFL (blocked on ChapterScalaronFiberFL - FAILED)
+def:ChapterQgContinuumModeInstance (blocked on ChapterQgVielbeinModeInstance)
+def:ChapterQgManifoldModeInstance (blocked on ChapterQgTimeStepping)
+def:ChapterQgTimeStepping (blocked on ChapterQgTruncationResolvent)
+def:ChapterQgTruncationResolvent (blocked on ChapterQgContinuumModeInstance)
+def:ChapterQgVielbeinModeInstance (blocked on ChapterScalaronOuterFockFL)
+def:ChapterSirkSingleTimeShift (blocked on ChapterQgTruncationResolvent)
+def:ChapterYangMillsAbelianFockEsa (blocked on ChapterQymTimeIndependentFlow)
+def:ChapterYangMillsBandBounds (blocked on ChapterYangMillsAbelianFockEsa)
+```
+
+**Upload detached (PID 125672) but died after one chunk** — API appears reachable (health check works) but upload loop exhausted its budget on WAIT items.
+
+**Action items:**
+1. Fix ChapterScalaronFiberFL by adding missing theorem imports (starobinskyV_nonneg, wallHam_symmetricOn, kinCcR_quadratic_form)
+2. Re-run upload with `--parallel 50 --max-seconds 300`
+3. Generate missing stubs from `../timepiece` for 1784 items
+4. Monitor upload, fix errors, iterate until complete
+
+**Lean toolchain note:** mathlib v4.28.0 oleans are incompatible with v4.33.1. The platform server uses v4.33.1. With PROVE2ME_SKIP_LOCAL_COMPILE=1, the server handles compilation. If a def bundle has v4.28.0-specific syntax, it may fail on the server even if it compiles locally.
+
+**Compilation command (dependency order):**
+```bash
+cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+export PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.28.0/bin:$PATH"
+python3 scripts/compile_deps_deporder.py
+```
+
 

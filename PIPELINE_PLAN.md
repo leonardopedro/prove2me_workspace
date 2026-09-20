@@ -4425,35 +4425,39 @@ Upload log: `state/upload.log`
 
 ### 7. Next actions
 
-1. **Build def bundles in topological order** — use `compile_def.sh` script with correct LEAN_PATH, processing in dependency order. 97 def bundles need compilation.
-2. **Generate missing thm/sol stubs** from timepiece sources (62 items blocked by missing stubs)
-3. **Fix thm/sol failures** (104 failed thms, 46 failed sols)
-4. **Regenerate sketch data** for ChapterQgOuterFockFarisLavine (offset mismatch)
-5. **Monitor upload** for remaining def bundle compilations
-6. **Git commit and push** remaining changes
-7. **Run full build** after all fixes: `lake build Definitions` (requires single lake process, no parallel duplicates)
+1. **Build def bundles in topological order** — run `python3 build_all_ordered.py` from the workspace. 97 def bundles need compilation (72 already built from previous sessions). The script computes dependencies and builds in order. Takes ~10-15 min for all 169 modules.
+2. **Generate missing thm/sol stubs** — run `wave_generate.py` (already done for most chapters; only `ChapterQgOuterFockFarisLavine` blocked by stale sketch data)
+3. **Fix thm/sol failures** (104 failed thms, 46 failed sols) — identify patterns, fix import errors, drop broken primed slugs
+4. **Regenerate sketch for ChapterQgOuterFockFarisLavine** — requires running `extract_sketch_info.lean` (Lean-based tool, needs `lake build`)
+5. **Monitor upload** — check `state/upload.log` for remaining def bundle compilations
+6. **Run full build** — `lake build Definitions` after all fixes (single lake process, no duplicates)
 
-**Git commits:**
+**Build status:** 72/169 def bundles have .olean files. 97 need compilation. The `build_all_ordered.py` script handles topological ordering.
+
+**Sketch fix needed:** `state/sketch/monolith/ChapterQgOuterFockFarisLavine.lean` has offsets for a 34149-byte source but the current source is 6287 bytes. Re-run `extract_sketch_info.lean` to regenerate.
+
+**Git commits so far:**
 
 ```
+6887366 fix: update def bundles, solutions, theorems, scripts, and lakefile for v4.33.1
+36d7da7 docs: update pipeline plan with session 36
 863c53a fix: add missing import for Def_ChapterScalaronWallEsa in ScalaronFiberFL
 9c96333 fix: make def bundles self-contained (import Mathlib + Definitions.Def_*), add missing theorems
 bdded11 chore: touch to force server cache refresh
 6753bf3 fix: add missing theorem imports for ChapterScalaronFiberFL, update pipeline state and def bundles
 ```
 
-**Local build command (sequential, safe):**
-```bash
-cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
-LEAN="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
-LEAN_PATH="$PWD/.lake/build/lib/lean:..."
-export LEAN_PATH
-# Build in dependency order using topological sort from scripts/compile_deps_v4331.py
-```
+**Local build commands:**
 
-**Build command (parallel, faster but needs single lake process):**
 ```bash
+# Sequential build (safe, single file at a time)
 cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+bash compile_def.sh   # builds one def bundle (edit the file first)
+
+# Full topological build
+python3 build_all_ordered.py  # requires ~10-15 min execution
+
+# Parallel build (faster, needs single lake process)
 nohup .elan/bin/lake build Definitions > /tmp/lake_build.log 2>&1 &
-# Ensure only ONE lake process runs (check with: ps aux | grep lake)
+# Verify: ps aux | grep lake → only ONE lake process
 ```

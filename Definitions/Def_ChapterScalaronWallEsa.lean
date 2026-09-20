@@ -115,10 +115,6 @@ def testCc {g : ℝ → ℝ} (hg : IsTestFun g) : ccSchwartz ℝ :=
 
 
 
-theorem wallHam_symmetricOn (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
-    SymmetricOn (ccDomain ℝ) (wallHam V hV) := by
-  sorry
-
 end
 
 end BookProof.ScalaronWallEsa

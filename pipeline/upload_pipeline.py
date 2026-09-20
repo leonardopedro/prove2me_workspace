@@ -721,6 +721,14 @@ def do_wave_def(st, item, chapter):
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
+    # Check that platform theorems imported by this def bundle are already Proved.
+    # Importing an Open theorem is a guaranteed server FAILED — burn no attempt.
+    thm_deps = thm_imports(path)
+    proved = published_theorems()
+    if thm_deps:
+        undone = [t for t in thm_deps if t not in proved]
+        if undone:
+            return "theorem dependency not proved yet: " + ", ".join(undone[:5])
     body = open(path, encoding="utf-8").read()
     existing_id = _find_definition_node(chapter)
     if existing_id:
@@ -1263,6 +1271,33 @@ def published_defs():
             "preflight could not read the published definition catalogue "
             "(network/API failure): refusing to run with dependency checking off")
     return defs
+
+
+def published_theorems():
+    """Names of theorems with ACCEPTED (Proved) status on the platform."""
+    jobs = platform_jobs()
+    return {n for n, j in jobs.items()
+            if j.get("kind") == "problem" and j.get("status") == "PUBLISHED"}
+
+
+def def_imports(path):
+    """`import Definitions.Def_X` names a source file depends on."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return [m[len("Definitions.Def_"):] for m in
+            re.findall(r"(?m)^import\s+(Definitions\.Def_\S+)", txt)]
+
+
+def thm_imports(path):
+    """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return [m[len("Theorems.Thm_"):].replace(".lean", "")
+            for m in re.findall(r"(?m)^import\s+(Theorems\.Thm_\S+)", txt)]
 
 
 def def_imports(path):

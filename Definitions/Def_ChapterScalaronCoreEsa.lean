@@ -257,14 +257,6 @@ def qgScalaronModeHamiltonian :
 
 
 
-theorem contDiff_starobinskyV (M alpha : ℝ) :
-    ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (fun phi : ℝ => starobinskyV M alpha phi) := by
-  sorry
-
-theorem ccDomain_dense : Dense ((ccDomain E : Submodule ℂ (Lp ℂ 2 (volume : Measure E))) :
-    Set (Lp ℂ 2 (volume : Measure E))) := by
-  sorry
-
 end
 
 end BookProof.ScalaronEsa

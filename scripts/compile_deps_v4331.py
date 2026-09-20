@@ -3,7 +3,7 @@
 import re, os, subprocess, time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean"
+LEAN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean"
 ML_PKG = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.lake/packages/mathlib/.lake"
 ML = ML_PKG + "/build/lib/lean"
 BT = ML_PKG + "/packages/batteries/.lake/build/lib/lean"
@@ -13,7 +13,7 @@ PW = ML_PKG + "/packages/proofwidgets/.lake/build/lib/lean"
 IG = ML_PKG + "/packages/importGraph/.lake/build/lib/lean"
 LSC = ML_PKG + "/packages/LeanSearchClient/.lake/build/lib/lean"
 PL = ML_PKG + "/packages/plausible/.lake/build/lib/lean"
-LB = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+LB = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
 PB = WS + "/.lake/build/lib/lean"
 
 def get_lean_path():

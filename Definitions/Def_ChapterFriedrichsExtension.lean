@@ -1,8 +1,6 @@
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Mathlib
 
-import Mathlib
-
 /-!
 # The Friedrichs extension of an **unbounded** positive symmetric operator
 
@@ -78,8 +76,9 @@ favour of the occupation-number/Hermite realization.
 -/
 
 namespace BookProof.FriedrichsExtension
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 /-! ## Cross-chapter definitions from `BookProof.YangMillsFriedrichsLimit` -/
-theorem friedrichs_of_bounded [CompleteSpace F] {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
+theorem friedrichs_of_bounded [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F] {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D H)
     (hpos : ∀ x : D, 0 ≤ quadForm H x) (C : ℝ) (hbd : ∀ x : D, ‖H x‖ ≤ C * ‖(x : F)‖) :
     ∃ A : F →L[ℂ] F, (∀ x : D, A (x : F) = H x) ∧
@@ -98,7 +97,7 @@ theorem friedrichs_of_bounded [CompleteSpace F] {D : Submodule ℂ F} (H : D →
     simpa [hA, hHc] using this
   refine ⟨A, hagree, ?_, ?_, ?_, ?_⟩
   · intro x
-    exact ⟨trivial, by simpa using hagree x⟩
+    exact ⟨trivial, by simpa [topRestrict_apply] using hagree x⟩
   · refine symmetricOn_top_of_dense A hdense ?_
     intro x y
     rw [hagree x, hagree y]
@@ -128,7 +127,7 @@ theorem friedrichs_of_bounded [CompleteSpace F] {D : Submodule ℂ F} (H : D →
 degenerate**: on any complete space the identity restricted to a proper dense
 domain is symmetric, positive and bounded, so the construction applies with
 `D ≠ ⊤` available whenever such a `D` exists. -/
-theorem friedrichs_bounded_nontrivial_example [CompleteSpace F] (D : Submodule ℂ F)
+theorem friedrichs_bounded_nontrivial_example [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F] (D : Submodule ℂ F)
     (hdense : Dense (D : Set F)) :
     ∃ A : F →L[ℂ] F, (∀ x : D, A (x : F) = D.subtype x) ∧
       IsPositiveSelfAdjointExtension (D.subtype) (topRestrict A) := by
@@ -136,8 +135,6 @@ theorem friedrichs_bounded_nontrivial_example [CompleteSpace F] (D : Submodule �
   · simp only [quadForm, Submodule.subtype_apply]
     simpa using inner_self_nonneg (𝕜 := ℂ) (x := (x : F))
   · simp
-
-end Bounded
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

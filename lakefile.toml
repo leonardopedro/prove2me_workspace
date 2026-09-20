@@ -11,6 +11,9 @@ name = "Theorems"
 [[lean_lib]]
 name = "Solutions"
 
+[[lean_lib]]
+name = "BookProof"
+
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"

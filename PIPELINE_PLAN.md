@@ -4205,3 +4205,110 @@ python3 scripts/compile_deps_deporder.py
 ```
 
 
+
+
+---
+
+## §1zi. Session 35 (2026-09-20) — def bundles made self-contained, server compile errors, token refresh issue
+
+**Status: IN PROGRESS**
+
+**Work completed this session:**
+
+### 1. Def bundles made self-contained
+
+All def bundles now follow the pattern: `import Mathlib` + `import Definitions.Def_*`. No `import Theorems` in any def bundle.
+
+**`Def_ChapterScalaronFiberFL.lean`** — fixed imports:
+- Removed: `import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense` (buggy line: `import Mathlibimport Theorems...`)
+- Added: `import Definitions.Def_ChapterScalaronCoreEsa` (for `contDiff_starobinskyV` and `ccDomain_dense`)
+- Added: `import Definitions.Def_ChapterStarobinskyPotential` (restored — was removed in commit 6753bf3)
+- Net result: 5 imports (was 5 before 6753bf3 broke it, now back to correct set)
+
+**`Def_ChapterStarobinskyPotential.lean`** — restored `starobinskyV_nonneg` theorem (was removed in 6753bf3).
+
+**`Def_ChapterScalaronCoreEsa.lean`** — added `contDiff_starobinskyV` and `ccDomain_dense` theorems (were uncommitted additions).
+
+### 2. Root cause of ChapterScalaronFiberFL failure
+
+The server repeatedly failed with:
+- `Unknown identifier BookProof.ScalaronEsa.contDiff_starobinskyV` (line 104)
+- `Unknown identifier BookProof.Starobinsky.starobinskyV_nonneg` (line 105)
+
+This was because:
+1. Commit 6753bf3 removed `starobinskyV_nonneg` from StarobinskyPotential and the `contDiff_starobinskyV` theorem was never committed (only existed as uncommitted changes)
+2. The ScalaronFiberFL def bundle was modified to USE `contDiff_starobinskyV` without the import
+3. The server compiles the COMMITTED code, not local working tree changes
+
+**Fix:** Committed both theorems to their respective def bundles so the server can find them.
+
+### 3. API token refresh issue
+
+Token refresh (`POST /api/v1/agent/refresh`) returns HTTP 500. The access token in `credentials.json` is stale.
+This blocks direct API queries but the upload pipeline handles refresh internally.
+
+### 4. Local compilation attempt
+
+Set `PROVE2ME_SKIP_LOCAL_COMPILE=0` to enable local compilation. Mathlib v4.28.0 oleans are incompatible with v4.33.1, so local compilation will fail for most def bundles. The upload pipeline will fall back to server compilation.
+
+### 5. Upload process
+
+Current state:
+```
+plan : 3637 items (158 defs, 1732 thms, 1732 sols)
+state: 3316 done / 181 pending / 140 failed (1868 orphans ignored)
+pending by kind: {'sol': 132, 'thm': 39, 'def': 10}
+```
+
+The 10 pending defs are blocked on the def chain:
+```
+def:ChapterScalaronFiberFL → ChapterScalaronOuterFockFL → ...
+```
+
+**Actions completed this session:**
+
+1. ✅ Fixed `Def_ChapterScalaronFiberFL.lean` imports (self-contained: Mathlib + Definitions.Def_*)
+2. ✅ Restored `starobinskyV_nonneg` in `Def_ChapterStarobinskyPotential.lean`
+3. ✅ Added `contDiff_starobinskyV` + `ccDomain_dense` in `Def_ChapterScalaronCoreEsa.lean`
+4. ✅ Committed and pushed all def bundle fixes (commits 9c96333, bdded11)
+5. ✅ Set `PROVE2ME_SKIP_LOCAL_COMPILE=0` for upload pipeline
+6. ⏳ Monitor upload progress — server compile env issue (see below)
+7. ⏳ Fix any remaining server compilation errors
+8. ⏳ Generate missing stubs/solutions from `../timepiece`
+9. ⏳ Git commit and push remaining changes
+
+**Key facts:**
+
+1. **Def bundles are now self-contained** — only `import Mathlib` + `import Definitions.Def_*`
+2. **Server compiles with v4.33.1** (confirmed API v0.10.6)
+3. **Local compilation with v4.33.1 impossible** (mathlib oleans are v4.28.0)
+4. **`PROVE2ME_SKIP_LOCAL_COMPILE=0`** — pipeline tries local compile first, falls back to server
+5. **Local compile script bug** — `compile_deps_deporder.py` reports 41 OK/0 FAIL but writes 0 oleans (subprocess issue with lean binary path)
+6. **Server compile issue** — server consistently fails on ChapterScalaronFiberFL with "Unknown identifier" errors for `contDiff_starobinskyV` and `starobinskyV_nonneg`, even after commit pushed. Root cause: server may not resolve transitive Definitions imports, or server uses cached code.
+
+**Git commits:**
+
+```
+9c96333 fix: make def bundles self-contained (import Mathlib + Definitions.Def_*), add missing theorems
+bdded11 chore: touch to force server cache refresh
+6753bf3 fix: add missing theorem imports for ChapterScalaronFiberFL, update pipeline state and def bundles
+```
+
+**Root cause analysis:**
+
+The server repeatedly fails with:
+- `Unknown identifier BookProof.ScalaronEsa.contDiff_starobinskyV` (line 104)
+- `Unknown identifier BookProof.Starobinsky.starobinskyV_nonneg` (line 105)
+
+Despite both theorems being committed to their respective def bundles. The server's `submit-definition` endpoint receives the file body and compiles it. The error suggests the server either:
+1. Uses a cached version of the repository (not picking up latest commit)
+2. Only resolves direct imports, not transitive ones
+3. Has a different Lean environment (v4.28.0 vs v4.33.1)
+
+**Next actions:**
+
+1. Monitor upload log (`state/upload.log`) for ChapterScalaronFiberFL compilation
+2. If server continues to fail, investigate alternative: embed theorem bodies directly into ScalaronFiberFL (eliminates import chain)
+3. Generate missing thm/sol stubs from `../timepiece`
+4. Fix thm/sol failures (104 failed thms, 46 failed sols)
+5. Git commit and push remaining changes

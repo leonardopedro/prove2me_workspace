@@ -136,6 +136,26 @@ Of the **404** not-yet-published wave theorems, **4** restate a `Proved` node up
 
 **Action.** These need no new proof and no new node: they are the same claim, so the pipeline should resolve them as already present rather than re-submitting (the publish-job sync already records them as `reused: true` with the id of the existing node — `reused_status: published`; see `PIPELINE_PLAN.md` §1n/§1y). The `SHAPE` check exists so the *generator* can skip a restatement before it becomes a stub, instead of after.
 
+## H. Re-run 2026-09-21 (prove2me API 0.10.7)
+
+*Generated 2026-09-21 against the cached catalogue (`state/platform_index.jsonl`, snapshot 2026-09-17) and the live API (`0.10.7`) for the named rows. Read-only.*
+
+**Headline (unchanged in kind).**
+
+* the offline sweep now parses **1 732** wave theorems (up from 1 674 in §F/G).
+* **0** of them restate **another user's** `Proved` node in `STMT`/`DECL`/`NAME`; `SHAPE` cross-author = 0; the 23 non-generic cross-author `LEAF` hits are the same three triaged false positives (`QFS.abs_coord_le_norm`, `NavierStokes.norm_heatFlow_le`, `PythHydra.phi_zero`).  There is therefore **no new cross-author reduction to publish**.
+* **1 298 of 1 732** wave names already exist on the platform by dotted name (the continuation re-publishes names the account already holds); the pipeline’s reuse detection resolves these as `reused: true` rather than minting twins (§F, `PIPELINE_PLAN.md` §1y).
+* **2** internal self-restatements remain unfixed: `BookProof.HermiteQuadraticEsa.cpoly_add` ≈ `BookProof.QgHermiteFriedrichs.cpoly_add` (`cpoly_add`) and `BookProof.QgHermiteFriedrichs.gaussInt_sub` ≈ `BookProof.YangMillsHermite.gaussInt_sub` (`gaussInt_sub`).  Keep one canonical, deprecate the other.
+
+**The new 2026-09-21 timepiece wave is *not* reducible to a platform node.**  Ten core-transfer / second-quantization ESA chapters (`GraphCoreTransfer`, `TensorGraphCore`, `SecondQuantizationCoreEsa`, `TensorOperatorBound`, `BoundedDGammaEsa`, `ScalarDGammaEsa`, `DiagonalDGammaEsa`, `FlowDGammaEsa`, `EsaPairDGamma`, `EsaOneParticleDGamma`) and four gauge chapters (`GaugeComprehensiveFixing`, `GaugeParametrization`, `GaugeCasimirAverage`, `DampedOscillatorEnergy`) are **new** statements.  A live search by natural phrasing (`Faris-Lavine`, `essentially self-adjoint`, `Friedrichs extension`, `Fock space`, `second quantization`, `Kato-Rellich`, `relatively bounded`, `Friedrichs inequality`) returns **no relevant** `Proved` node.  Of the route’s own tree the platform currently carries only a subset:
+
+* `Proved` — `BookProof.FarisLavine.essentiallySelfAdjointOn_core_of_farisLavine` (`7db0d12f-5f2b-4eb5-bab2-8b10ee9a7556`), `BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound` (`141a95c7-eec1-4206-ae94-677c2f2bda7f`), `BookProof.FockSecondQuantization.dGamma_one_particle` (`2a89fd45-9326-4e15-8194-dc34ed4d2e24`);
+* **absent** — `BookProof.DirectSumEsa.*`, `BookProof.EsaClosure.*`, `BookProof.ChapterFarisLavineCore.*`, `BookProof.NsOuterFock.*`, `BookProof.QgOuterFockFL.*`, and every node of the new chapters.
+
+So the new chapters are new nodes (to be published upward), and the only *downward* reuse they consume is the frozen instrument table of `CONSOLIDATED_PLAN.md` §“Cross-platform reuse” / `PROVE2ME_REUSABLE_THEOREMS.md` — re-verified live on `0.10.7` at the same ids: `MeasureTheory.L2.convolutionCLM_isSymmetric_of_conj_neg` (`f7acdc05`), `…exists_convolutionCLM_isCompactOperator_of_compactSpace` (`b4b789f8`), `posDef_quadratic_form_lower_bound` (`0fc6dadb`), `Diaz.det_add_two` (`47ddec80`), `ContinuousLinearMap.orthogonal_iSup_eigenspace_ne_zero_eq_ker` (`9b157d55`), `…le_ker_or_finiteDimensional_of_forall_inf_highPart_orthogonal` (`2126e74d`), `GribovRegion.exists_neg_quadratic_form_of_traceless` (`a883b692`) — all still `Proved`, so `BookProof/ChapterProve2meReuse.lean` needs no change and the three `4.28 gap` rows stay deferred.
+
+**Refresh note.** The catalogue is still the 2026-09-17 snapshot; a theorem published after it is invisible to every class here, so refresh with `--reset --index` (bounded chunks) before treating a zero as final.  Platform version self-check: the cached `SKILL.md` records `0.10.5` while the live API answers `0.10.7` — pull the latest workspace release tag before the next submission wave.
+
 ## Method and caveats
 
 * Ground truth for “proved by us” is `GET /users/<uid>` → `solved_problems` (PIPELINE_PLAN.md §1g/§1h). `created_by` alone over-counts (a node we published Open can be Proved later by anyone), and `GET /submissions` is a truncated window.

@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsGhostSector.lean — solution of BookProof.YangMillsGhost.ymGhostHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
-import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_symmetricOn
 open BookProof.YangMillsGhost
 
 

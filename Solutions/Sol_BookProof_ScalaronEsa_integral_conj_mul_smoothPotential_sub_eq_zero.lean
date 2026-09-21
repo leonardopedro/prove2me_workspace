@@ -1,10 +1,6 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.integral_conj_mul_smoothPotential_sub_eq_zero
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
-import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
-import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
-import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
 open BookProof.ScalaronEsa
 
 

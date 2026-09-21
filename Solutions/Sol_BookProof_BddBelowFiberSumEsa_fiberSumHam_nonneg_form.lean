@@ -1,7 +1,6 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — solution of BookProof.BddBelowFiberSumEsa.fiberSumHam_nonneg_form
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
-import Theorems.Thm_BookProof_BddBelowFiberSumEsa_fiberSumHam_semibounded
 open BookProof.BddBelowFiberSumEsa
 
 

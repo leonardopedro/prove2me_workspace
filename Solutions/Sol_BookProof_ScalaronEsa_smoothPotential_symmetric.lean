@@ -1,9 +1,6 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.smoothPotential_symmetric
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
-import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
-import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 open BookProof.ScalaronEsa
 
 

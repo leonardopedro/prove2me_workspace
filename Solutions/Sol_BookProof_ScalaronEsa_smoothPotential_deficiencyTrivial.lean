@@ -1,7 +1,6 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.smoothPotential_deficiencyTrivial
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Theorems.Thm_BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero
 open BookProof.ScalaronEsa
 
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_apply_eq_differential
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
 

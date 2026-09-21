@@ -4461,3 +4461,68 @@ python3 build_all_ordered.py  # requires ~10-15 min execution
 nohup .elan/bin/lake build Definitions > /tmp/lake_build.log 2>&1 &
 # Verify: ps aux | grep lake → only ONE lake process
 ```
+
+## §1zj. Session 37 (2026-09-21) — reuse re-run for the current wave and for the new timepiece additions
+
+**Scope.** Refresh the reuse identification (a) for the theorems already in the pipeline and (b) for the
+new additions now in `../timepiece` (the 2026-09-21 core-transfer / `dΓ`-ESA wave and the gauge wave),
+so nothing is published that duplicates an existing platform node.  Read-only: no platform state was
+changed, no stub was generated, no submission was made.
+
+**Tools.** Offline sweep `python3 debug/find_duplicates.py --report --max 40` against the cached
+catalogue (`state/platform_index.jsonl`, 73 968 rows, snapshot 2026-09-17); live by-name verification
+`debug/find_reusable_proved.py` and direct `GET /theorems?q=<name>` queries.  Platform version
+answered `0.10.7` (the frozen `SKILL.md` records `0.10.5` — pull the workspace release tag before the
+next submission wave).
+
+**Reuse for the theorems already in the pipeline (the 1 732-stub wave).**
+
+* **Cross-author: none.**  `STMT`/`DECL`/`NAME` = 0 collisions with another author's `Proved` node;
+  `SHAPE` cross-author = 0; the cross-author `LEAF` hits are the three already-triaged false
+  positives (`QFS.abs_coord_le_norm`, `NavierStokes.norm_heatFlow_le`, `PythHydra.phi_zero`).  No
+  pipeline item can be re-published as a cross-author reduction.
+* **Self: large and expected.**  **1 298 of 1 732** wave names already exist on the platform by dotted
+  name; the publish-job sync resolves them as `reused: true` with the existing id (`reused_status:
+  published`) instead of minting a twin.  Two internal self-restatements remain to be de-duplicated at
+  the source: `BookProof.HermiteQuadraticEsa.cpoly_add` vs `BookProof.QgHermiteFriedrichs.cpoly_add`,
+  and `BookProof.QgHermiteFriedrichs.gaussInt_sub` vs `BookProof.YangMillsHermite.gaussInt_sub`
+  (keep one canonical, deprecate the other).  The four alpha-renamed restatements of §G are the same
+  class.
+
+**Reuse for the new timepiece additions (to be published upward only).**  The new chapters are
+`sorry`-free, `axiom`-free statements that are **not** on the platform:
+
+| new chapter | verdict |
+| :-- | :-- |
+| `ChapterGraphCoreTransfer` (`BookProof.GraphCore`) | new — no platform node |
+| `ChapterTensorGraphCore` (`BookProof.TensorCore`) | new |
+| `ChapterSecondQuantizationCoreEsa` (`BookProof.SecondQuantizationCore`) | new (distinct from the published `BookProof.FockSecondQuantization.*`, which is the `Conf`/`ℓ²(Conf)` occupation-number spelling; the new one is the sector/tensor-power core-transfer spelling) |
+| `ChapterTensorOperatorBound` (`BookProof.TensorOpBound`) | new |
+| `ChapterBoundedDGammaEsa`, `ChapterScalarDGammaEsa`, `ChapterDiagonalDGammaEsa`, `ChapterFlowDGammaEsa`, `ChapterEsaPairDGamma`, `ChapterEsaOneParticleDGamma` | new |
+| `ChapterGaugeComprehensiveFixing`, `ChapterGaugeParametrization`, `ChapterGaugeCasimirAverage`, `ChapterDampedOscillatorEnergy` | new (no platform node; the predicate host `BookProof.ChapterGaugeIncompleteFixing.*` is itself unpublished) |
+
+A live search by natural phrasing (`Faris-Lavine`, `essentially self-adjoint`, `Friedrichs extension`,
+`Fock space`, `second quantization`, `Kato-Rellich`, `relatively bounded`, `Friedrichs inequality`)
+returns **no relevant** `Proved` node, so these are new nodes, not reductions.  Of the route’s own tree
+the platform currently holds only a subset — `Proved`: `BookProof.FarisLavine.essentiallySelfAdjointOn_core_of_farisLavine`
+(`7db0d12f-5f2b-4eb5-bab2-8b10ee9a7556`), `BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound`
+(`141a95c7-eec1-4206-ae94-677c2f2bda7f`), `BookProof.FockSecondQuantization.dGamma_one_particle`
+(`2a89fd45-9326-4e15-8194-dc34ed4d2e24`); **absent**: `BookProof.DirectSumEsa.*`, `BookProof.EsaClosure.*`,
+`BookProof.ChapterFarisLavineCore.*`, `BookProof.NsOuterFock.*`, `BookProof.QgOuterFockFL.*`.
+
+**Downward reuse (instruments) — unchanged.**  The seven `Mathlib-only` rows of
+`PROVE2ME_REUSABLE_THEOREMS.md` / `CONSOLIDATED_PLAN.md` §“Cross-platform reuse” were re-fetched live
+and are still `Proved` at the same ids on `0.10.7`
+(`MeasureTheory.L2.convolutionCLM_isSymmetric_of_conj_neg` `f7acdc05`;
+`…exists_convolutionCLM_isCompactOperator_of_compactSpace` `b4b789f8`;
+`posDef_quadratic_form_lower_bound` `0fc6dadb`; `Diaz.det_add_two` `47ddec80`;
+`ContinuousLinearMap.orthogonal_iSup_eigenspace_ne_zero_eq_ker` `9b157d55`;
+`…le_ker_or_finiteDimensional_of_forall_inf_highPart_orthogonal` `2126e74d`;
+`GribovRegion.exists_neg_quadratic_form_of_traceless` `a883b692`).  No change is needed in
+`BookProof/ChapterProve2meReuse.lean`; the three `4.28 gap` rows stay deferred.
+
+**Next actions.**  (1) refresh the catalogue (`--reset --index`, bounded chunks) before treating a
+zero as final; (2) when the new-wave stubs are generated, run the `SHAPE`/`STMT` check first so the
+`cpoly_add` / `gaussInt_sub` self-restatements never become stubs; (3) publish the new chapters
+upward as fresh nodes — there is no reduction for them to use.  The per-item map is in
+`../timepiece/CONSOLIDATED_PLAN.md` §“Cross-platform reuse” and `DEDUP_REPORT_leonardopedro.md` §H.

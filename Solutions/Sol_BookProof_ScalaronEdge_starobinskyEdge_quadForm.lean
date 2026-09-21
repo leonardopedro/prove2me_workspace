@@ -1,10 +1,6 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.starobinskyEdge_quadForm
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_inner_eq
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_self_inner
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_quadForm_eq
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_form_gap
 open BookProof.ScalaronEdge
 
 

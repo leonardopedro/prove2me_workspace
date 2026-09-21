@@ -1,12 +1,6 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.starobinskyEdge_form_gap
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
-import Theorems.Thm_BookProof_ScalaronEdge_scalV_nonneg
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyV_lt_shelf_bounded
-import Theorems.Thm_BookProof_ScalaronEdge_edgeKinConst_pos
-import Theorems.Thm_BookProof_ScalaronEdge_edgeMassConst_pos
-import Theorems.Thm_BookProof_ScalaronEdge_edge_energy_bound
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_quadForm_eq
 open BookProof.ScalaronEdge
 
 

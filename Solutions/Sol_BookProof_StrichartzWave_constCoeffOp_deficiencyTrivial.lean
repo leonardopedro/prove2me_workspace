@@ -1,8 +1,6 @@
 -- Generated from ChapterStrichartzWave.lean — solution of BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial
 import Mathlib
 import Definitions.Def_ChapterStrichartzWave
-import Theorems.Thm_BookProof_StrichartzWave_contDiff_symbolFn
-import Theorems.Thm_BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero
 open BookProof.StrichartzWave
 
 

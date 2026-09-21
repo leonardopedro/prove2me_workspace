@@ -5,7 +5,6 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterH9
 import Definitions.Def_ChapterH5
 import Definitions.Def_ChapterFarisLavine
-import Theorems.Thm_BookProof_ChapterH9_krylov_bestApprox_tendsto_zero
 open BookProof.YangMillsFriedrichsLimit
 
 

@@ -6,7 +6,6 @@ import Definitions.Def_ChapterH8
 -- Generated from ChapterH9.lean — solution of BookProof.ChapterH9.krylov_bestApprox_tendsto_zero
 import Mathlib
 import Definitions.Def_ChapterH9
-import Theorems.Thm_BookProof_ChapterH9_norm_sub_starProjection_le
 open BookProof.ChapterH9
 
 

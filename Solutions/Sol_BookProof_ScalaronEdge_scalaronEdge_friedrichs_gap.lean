@@ -1,8 +1,6 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.scalaronEdge_friedrichs_gap
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdgeHam_symmetricOn
-import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_form_gap
 open BookProof.ScalaronEdge
 
 

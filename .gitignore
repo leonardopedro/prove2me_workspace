@@ -15,6 +15,9 @@ lake-manifest.json
 # OS noise
 .DS_Store
 
+# Lean anonymous-name artefacts (e.g. `?m.18`), written at the workspace root
+\?m.*
+
 # Python bytecode
 __pycache__/
 *.pyc

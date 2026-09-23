@@ -1,0 +1,234 @@
+BookProof/ChapterQgDerivativeRealization.lean:104:5: error: unknown namespace `MvPolynomial`
+
+BookProof/ChapterQgDerivativeRealization.lean:105:5: error: unknown namespace `BookProof.GaugeFixing`
+
+BookProof/ChapterQgDerivativeRealization.lean:106:5: error: unknown namespace `BookProof.QuantumGravity3DGauge`
+
+BookProof/ChapterQgDerivativeRealization.lean:107:5: error: unknown namespace `BookProof.QgPhysicalSectorIdentity`
+
+BookProof/ChapterQgDerivativeRealization.lean:113:31: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+BookProof/ChapterQgDerivativeRealization.lean:119:9: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:123:29: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+BookProof/ChapterQgDerivativeRealization.lean:126:32: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:134:26: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgDerivativeRealization.lean:133:35: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:146:32: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:150:47: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:149:38: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:156:34: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:154:38: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:165:38: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:163:39: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:174:29: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:173:27: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:179:6: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:177:28: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:186:5: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:202:38: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:204:12: error: unexpected token '-'; expected command
+
+BookProof/ChapterQgDerivativeRealization.lean:208:15: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:209:40: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:214:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgDerivativeRealization.lean:213:28: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:219:14: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:218:23: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:230:27: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:241:57: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:240:46: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:255:6: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:253:39: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:263:2: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:262:38: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:270:2: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:269:37: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:278:55: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:277:45: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:287:57: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:296:57: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:306:4: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:315:23: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+BookProof/ChapterQgDerivativeRealization.lean:318:32: error: unexpected token '!'; expected term
+
+BookProof/ChapterQgDerivativeRealization.lean:318:24: error(lean.unknownIdentifier): Unknown identifier `Mat2R`
+
+Note: It is not possible to treat `Mat2R` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:321:32: error: unexpected token '!'; expected term
+
+BookProof/ChapterQgDerivativeRealization.lean:321:24: error(lean.unknownIdentifier): Unknown identifier `Mat2R`
+
+Note: It is not possible to treat `Mat2R` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:324:37: error(lean.unknownIdentifier): Unknown identifier `Mat2R`
+
+Note: It is not possible to treat `Mat2R` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:324:59: error: unexpected token '*'; expected command
+
+BookProof/ChapterQgDerivativeRealization.lean:329:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:331:25: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgDerivativeRealization.lean:331:22: error(lean.unknownIdentifier): Unknown identifier `QmR`
+
+Note: It is not possible to treat `QmR` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:334:25: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgDerivativeRealization.lean:334:22: error(lean.unknownIdentifier): Unknown identifier `QmR`
+
+Note: It is not possible to treat `QmR` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:337:54: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgDerivativeRealization.lean:345:52: error: unexpected token '-'; expected ')', ',' or ':'
+
+BookProof/ChapterQgDerivativeRealization.lean:348:45: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:348:25: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:352:25: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:351:26: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:358:56: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:363:16: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:367:53: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:367:34: error(lean.unknownIdentifier): Unknown identifier `SpacetimePoly`
+
+Note: It is not possible to treat `SpacetimePoly` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:374:27: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgDerivativeRealization.lean:380:43: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgDerivativeRealization.lean:396:39: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:399:24: error: unexpected token '+'; expected command
+
+BookProof/ChapterQgDerivativeRealization.lean:425:6: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:423:34: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:432:59: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:431:46: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:437:11: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:445:40: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:444:33: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:452:34: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:462:6: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:459:43: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:474:6: error: expected token
+
+BookProof/ChapterQgDerivativeRealization.lean:470:41: error(lean.unknownIdentifier): Unknown identifier `TetradConfig`
+
+Note: It is not possible to treat `TetradConfig` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgDerivativeRealization.lean:482:45: error: unexpected token '-'; expected term
+

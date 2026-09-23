@@ -1,0 +1,206 @@
+BookProof/ChapterQgBrstCompleted.lean:57:12: error: unknown namespace `ENNReal`
+
+BookProof/ChapterQgBrstCompleted.lean:58:15: error: unknown namespace `BookProof.QuantumGravityFock`
+
+BookProof/ChapterQgBrstCompleted.lean:66:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgBrstCompleted.lean:69:19: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterQgBrstCompleted.lean:71:44: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:75:54: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:84:63: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:117:58: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:124:44: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:128:20: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:133:77: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:133:52: error(lean.unknownIdentifier): Unknown identifier `wshiftL`
+
+Note: It is not possible to treat `wshiftL` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:135:37: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:146:20: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgBrstCompleted.lean:146:13: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgBrstCompleted.lean:150:75: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:150:51: error(lean.unknownIdentifier): Unknown identifier `wshift`
+
+Note: It is not possible to treat `wshift` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:152:36: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:156:35: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:176:14: error(lean.unknownIdentifier): Unknown identifier `L2`
+
+BookProof/ChapterQgBrstCompleted.lean:181:10: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgBrstCompleted.lean:180:27: error(lean.unknownIdentifier): Unknown identifier `BoseConf`
+
+Note: It is not possible to treat `BoseConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:184:25: error(lean.unknownIdentifier): Unknown identifier `GradedIdx`
+
+Note: It is not possible to treat `GradedIdx` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:186:45: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:189:68: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:197:66: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:213:53: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:216:71: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:221:65: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:226:67: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:238:66: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:269:57: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:272:74: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:278:40: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgBrstCompleted.lean:287:71: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:316:17: error(lean.unknownIdentifier): Unknown identifier `BoseConf`
+
+Note: It is not possible to treat `BoseConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:318:48: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:322:49: error: unexpected token; expected '_', '}' or identifier
+
+BookProof/ChapterQgBrstCompleted.lean:339:66: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:339:31: error(lean.unknownIdentifier): Unknown identifier `qgBrstCharge`
+
+Note: It is not possible to treat `qgBrstCharge` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:350:24: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgBrstCompleted.lean:349:42: error(lean.unknownIdentifier): Unknown identifier `GradedIdx`
+
+Note: It is not possible to treat `GradedIdx` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:354:4: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:360:4: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:363:70: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:369:44: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgBrstCompleted.lean:369:38: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:373:26: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:372:59: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:375:67: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:375:42: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:380:40: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:379:53: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:387:61: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:395:6: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:393:52: error(lean.unknownIdentifier): Unknown identifier `GradedIdx`
+
+Note: It is not possible to treat `GradedIdx` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:410:66: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:428:24: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgBrstCompleted.lean:427:48: error(lean.unknownIdentifier): Unknown identifier `GradedIdx`
+
+Note: It is not possible to treat `GradedIdx` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:431:4: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:436:4: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:439:76: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:444:50: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgBrstCompleted.lean:444:44: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:449:32: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:448:65: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:452:4: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:459:62: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:485:49: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:491:6: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:490:19: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:497:40: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:497:4: error(lean.unknownIdentifier): Unknown identifier `exactStates`
+
+Note: It is not possible to treat `exactStates` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:504:12: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:511:12: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:518:40: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:521:58: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:521:30: error(lean.unknownIdentifier): Unknown identifier `qgBrstTransfer`
+
+Note: It is not possible to treat `qgBrstTransfer` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:527:6: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:526:5: error(lean.unknownIdentifier): Unknown identifier `qgBrstTransfer`
+
+Note: It is not possible to treat `qgBrstTransfer` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstCompleted.lean:531:43: error(lean.unknownIdentifier): Unknown identifier `Function.Bijective`
+
+BookProof/ChapterQgBrstCompleted.lean:538:6: error: expected token
+
+BookProof/ChapterQgBrstCompleted.lean:536:44: error(lean.unknownIdentifier): Unknown identifier `QGH`
+
+Note: It is not possible to treat `QGH` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

@@ -1,0 +1,39 @@
+BookProof/ChapterBaryonAsymmetry.lean:51:5: error: unknown namespace `Filter`
+
+BookProof/ChapterBaryonAsymmetry.lean:57:37: warning: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+BookProof/ChapterBaryonAsymmetry.lean:57:55: error: expected token
+
+BookProof/ChapterBaryonAsymmetry.lean:61:34: warning: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+BookProof/ChapterBaryonAsymmetry.lean:61:52: error: expected token
+
+BookProof/ChapterBaryonAsymmetry.lean:64:44: warning: Variable name `ρr0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ρr0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+BookProof/ChapterBaryonAsymmetry.lean:65:22: error: expected token
+
+BookProof/ChapterBaryonAsymmetry.lean:70:55: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterBaryonAsymmetry.lean:86:58: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterBaryonAsymmetry.lean:102:55: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterBaryonAsymmetry.lean:110:63: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterBaryonAsymmetry.lean:121:64: error: unexpected token '<'; expected ')'
+

@@ -1,0 +1,334 @@
+BookProof/ChapterFermionFock.lean:58:5: error: unknown namespace `BookProof.NavierStokesFlow`
+
+BookProof/ChapterFermionFock.lean:59:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterFermionFock.lean:60:5: error: unknown namespace `BookProof.YangMillsFriedrichs`
+
+BookProof/ChapterFermionFock.lean:61:5: error: unknown namespace `BookProof.HashimotoShiftInvert`
+
+BookProof/ChapterFermionFock.lean:62:5: error: unknown namespace `BookProof.FockSecondQuantization`
+
+BookProof/ChapterFermionFock.lean:70:16: error(lean.unknownIdentifier): Unknown identifier `Finset`
+
+BookProof/ChapterFermionFock.lean:74:26: error: expected token
+
+BookProof/ChapterFermionFock.lean:77:20: error(lean.unknownIdentifier): Unknown identifier `L2I`
+
+BookProof/ChapterFermionFock.lean:82:38: error: unexpected token '-'; expected ')', '_', identifier or term
+
+BookProof/ChapterFermionFock.lean:82:23: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:84:54: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterFermionFock.lean:84:36: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:88:69: error: expected token
+
+BookProof/ChapterFermionFock.lean:88:32: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:93:62: error: expected token
+
+BookProof/ChapterFermionFock.lean:93:33: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:104:69: error: expected token
+
+BookProof/ChapterFermionFock.lean:104:39: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:116:58: error: expected token
+
+BookProof/ChapterFermionFock.lean:149:29: error: expected token
+
+BookProof/ChapterFermionFock.lean:156:29: error: expected token
+
+BookProof/ChapterFermionFock.lean:162:6: error: expected token
+
+BookProof/ChapterFermionFock.lean:160:41: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:168:6: error: expected token
+
+BookProof/ChapterFermionFock.lean:166:41: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:174:15: error: expected token
+
+BookProof/ChapterFermionFock.lean:173:32: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:211:15: error: expected token
+
+BookProof/ChapterFermionFock.lean:210:32: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:247:21: error: unexpected token '+'; expected ':=', 'where' or '|'
+
+BookProof/ChapterFermionFock.lean:246:40: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:260:21: error: unexpected token '+'; expected ':=', 'where' or '|'
+
+BookProof/ChapterFermionFock.lean:259:37: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:302:66: error: expected token
+
+BookProof/ChapterFermionFock.lean:302:36: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:310:21: error: unexpected token '+'; expected ':=', 'where' or '|'
+
+BookProof/ChapterFermionFock.lean:309:37: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:342:47: error: expected token
+
+BookProof/ChapterFermionFock.lean:381:16: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:383:54: error: expected token
+
+BookProof/ChapterFermionFock.lean:387:69: error: expected token
+
+BookProof/ChapterFermionFock.lean:403:15: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:407:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:406:33: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:410:23: error: expected token
+
+BookProof/ChapterFermionFock.lean:419:55: error: expected token
+
+BookProof/ChapterFermionFock.lean:419:34: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:421:43: error: expected token
+
+BookProof/ChapterFermionFock.lean:421:23: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:424:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterFermionFock.lean:423:26: error(lean.unknownIdentifier): Unknown identifier `Function.Injective`
+
+BookProof/ChapterFermionFock.lean:431:80: error: expected token
+
+BookProof/ChapterFermionFock.lean:448:38: error: expected token
+
+BookProof/ChapterFermionFock.lean:447:27: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:455:41: error: unexpected token 'if'; expected term
+
+BookProof/ChapterFermionFock.lean:455:24: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:457:49: error: expected token
+
+BookProof/ChapterFermionFock.lean:460:53: error: expected token
+
+BookProof/ChapterFermionFock.lean:463:66: error: expected token
+
+BookProof/ChapterFermionFock.lean:463:35: error(lean.unknownIdentifier): Unknown identifier `FConf`
+
+Note: It is not possible to treat `FConf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:470:23: error: expected token
+
+BookProof/ChapterFermionFock.lean:469:34: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:484:23: error: expected token
+
+BookProof/ChapterFermionFock.lean:483:34: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:499:47: error: expected token
+
+BookProof/ChapterFermionFock.lean:498:39: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:530:47: error: expected token
+
+BookProof/ChapterFermionFock.lean:529:40: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:539:26: error: expected token
+
+BookProof/ChapterFermionFock.lean:539:17: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:551:55: error: expected token
+
+BookProof/ChapterFermionFock.lean:550:36: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:554:44: error: expected token
+
+BookProof/ChapterFermionFock.lean:553:33: error(lean.unknownIdentifier): Unknown identifier `lpFiniteModes`
+
+Note: It is not possible to treat `lpFiniteModes` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:561:20: error: expected token
+
+BookProof/ChapterFermionFock.lean:567:27: error: expected token
+
+BookProof/ChapterFermionFock.lean:571:30: error: expected token
+
+BookProof/ChapterFermionFock.lean:575:46: error: expected token
+
+BookProof/ChapterFermionFock.lean:581:47: error: expected token
+
+BookProof/ChapterFermionFock.lean:587:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:621:38: error: expected token
+
+BookProof/ChapterFermionFock.lean:627:44: error: expected token
+
+BookProof/ChapterFermionFock.lean:646:50: error: expected token
+
+BookProof/ChapterFermionFock.lean:646:29: error(lean.unknownIdentifier): Unknown identifier `toLpF`
+
+Note: It is not possible to treat `toLpF` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:649:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:664:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:678:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:695:43: error: expected token
+
+BookProof/ChapterFermionFock.lean:714:33: error: expected token
+
+BookProof/ChapterFermionFock.lean:717:50: error: expected token
+
+BookProof/ChapterFermionFock.lean:721:51: error: expected token
+
+BookProof/ChapterFermionFock.lean:725:51: error: expected token
+
+BookProof/ChapterFermionFock.lean:732:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:745:44: error: expected token
+
+BookProof/ChapterFermionFock.lean:782:29: error: expected token
+
+BookProof/ChapterFermionFock.lean:785:37: error: expected token
+
+BookProof/ChapterFermionFock.lean:789:45: error: expected token
+
+BookProof/ChapterFermionFock.lean:795:49: error: expected token
+
+BookProof/ChapterFermionFock.lean:802:4: error(lean.unknownIdentifier): Unknown identifier `Dense`
+
+Note: It is not possible to treat `Dense` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:807:52: error: expected token
+
+BookProof/ChapterFermionFock.lean:818:48: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterFermionFock.lean:832:24: error: expected token
+
+BookProof/ChapterFermionFock.lean:837:16: error: expected token
+
+BookProof/ChapterFermionFock.lean:836:35: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:850:64: error: expected token
+
+BookProof/ChapterFermionFock.lean:850:32: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:857:23: error: expected token
+
+BookProof/ChapterFermionFock.lean:856:34: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:873:23: error: expected token
+
+BookProof/ChapterFermionFock.lean:872:34: error(lean.unknownIdentifier): Unknown identifier `FermiAlg`
+
+Note: It is not possible to treat `FermiAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:887:5: error: unknown namespace `Filter`
+
+BookProof/ChapterFermionFock.lean:889:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterFermionFock.lean:892:21: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterFermionFock.lean:895:44: error: expected token
+
+BookProof/ChapterFermionFock.lean:895:32: error(lean.unknownIdentifier): Unknown identifier `l2Basis`
+
+Note: It is not possible to treat `l2Basis` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:901:20: error: expected token
+
+BookProof/ChapterFermionFock.lean:908:30: error: expected token
+
+BookProof/ChapterFermionFock.lean:914:7: error: expected token
+
+BookProof/ChapterFermionFock.lean:931:41: error: expected token
+
+BookProof/ChapterFermionFock.lean:955:22: error: expected token
+
+BookProof/ChapterFermionFock.lean:959:38: error: expected token
+
+BookProof/ChapterFermionFock.lean:966:42: error: expected token
+
+BookProof/ChapterFermionFock.lean:973:41: error: expected token
+
+BookProof/ChapterFermionFock.lean:991:18: error: expected token
+
+BookProof/ChapterFermionFock.lean:998:55: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterFermionFock.lean:1026:23: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:1029:24: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterFermionFock.lean:1037:5: error: unknown tactic
+
+BookProof/ChapterFermionFock.lean:1035:4: error(lean.unknownIdentifier): Unknown identifier `BookProof.BRSTNilpotent.GhostCAR`
+
+BookProof/ChapterFermionFock.lean:1054:29: error: expected token
+

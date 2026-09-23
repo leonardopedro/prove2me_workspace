@@ -1,0 +1,42 @@
+BookProof/ChapterParityHiggs.lean:55:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityHiggs.lean:56:12: error: unknown namespace `Kronecker`
+
+BookProof/ChapterParityHiggs.lean:57:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParityHiggs.lean:61:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParityHiggs.lean:68:37: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterParityHiggs.lean:79:37: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterParityHiggs.lean:91:53: error: expected token
+
+BookProof/ChapterParityHiggs.lean:91:26: error(lean.unknownIdentifier): Unknown identifier `pauli2.map`
+
+BookProof/ChapterParityHiggs.lean:96:34: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityHiggs.lean:96:28: error(lean.unknownIdentifier): Unknown identifier `pauli2`
+
+Note: It is not possible to treat `pauli2` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHiggs.lean:103:42: error: expected token
+
+BookProof/ChapterParityHiggs.lean:102:37: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHiggs.lean:110:42: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterParityHiggs.lean:120:15: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterParityHiggs.lean:135:44: error: expected token
+
+BookProof/ChapterParityHiggs.lean:139:38: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityHiggs.lean:139:29: error(lean.unknownIdentifier): Unknown identifier `higgsReal`
+
+Note: It is not possible to treat `higgsReal` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHiggs.lean:146:40: error: expected token
+

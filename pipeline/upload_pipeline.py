@@ -14,9 +14,10 @@ Operator entry points:
     python3 pipeline/upload_pipeline.py --kind thm --max-items 3 --job-timeout 60
 
 Environment: PROVE2ME_WS (workspace root), PROVE2ME_API_KEY (platform credential),
-LAKE_BIN (Lean toolchain), PROVE2ME_SKIP_LOCAL_COMPILE=1 (no local gate; the
-server compiles every submission anyway).  A bounded run exits 0 at the bound, so
-short-lived hosts can drive the same append-only state in chunks.
+LAKE_BIN (Lean toolchain).  Every submission is compiled locally before upload by
+default (PROVE2ME_SKIP_LOCAL_COMPILE=1 disables the local gate only when the toolchain
+is genuinely unavailable).  A bounded run exits 0 at the bound, so short-lived hosts
+can drive the same append-only state in chunks.
 """
 import argparse
 import hashlib
@@ -478,13 +479,11 @@ _TOOLCHAIN_WARNED = False
 
 def local_compile(path):
     global _TOOLCHAIN_WARNED
-    # The local gate is only as good as the toolchain in this checkout.  A
-    # checkout with no Lean toolchain at all (a cloud sandbox, a fresh clone
-    # before `lake exe cache get`) cannot run it: failing here would burn one of
-    # the 5 attempts on every fresh submission for a reason that says nothing
-    # about the proof.  `cmd_status` reports the missing toolchain, so degrade to
-    # a one-time warning and let the platform compiler be the oracle (the server
-    # compiles every submission regardless).
+    # Every submission is compiled locally before upload by default.
+    # SKIP_LOCAL_COMPILE=1 is the escape hatch for environments where the toolchain
+    # is genuinely unavailable (cloud sandbox with no Lean, fresh clone before
+    # `lake exe cache get`).  Without a local gate, a broken file burns one of the
+    # 5 attempts on every visit until it is parked as `failed`.
     if SKIP_LOCAL_COMPILE:
         return True, "local compile skipped (PROVE2ME_SKIP_LOCAL_COMPILE=1)"
     if not os.path.exists(LAKE_BIN):

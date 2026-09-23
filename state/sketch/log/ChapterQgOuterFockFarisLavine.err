@@ -1,0 +1,160 @@
+BookProof/ChapterQgOuterFockFarisLavine.lean:84:12: error: unknown namespace `ENNReal`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:88:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:89:5: error: unknown namespace `BookProof.DirectSumEsa`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:90:5: error: unknown namespace `BookProof.QgOuterFock`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:91:5: error: unknown namespace `BookProof.YangMillsFriedrichs`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:92:5: error: unknown namespace `BookProof.FriedrichsExtension`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:93:5: error: unknown namespace `BookProof.FriedrichsExtension.FormDom`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:94:5: error: unknown namespace `BookProof.HashimotoShiftInvert`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:95:5: error: unknown namespace `BookProof.QgHermiteOscillator`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:96:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:104:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:108:55: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:130:30: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:131:47: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:133:33: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:135:25: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:137:24: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:139:48: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:145:48: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:173:12: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:179:16: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:189:3: error: unknown tactic
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:198:53: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:216:4: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:234:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:238:32: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:243:19: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:246:30: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:251:28: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:257:27: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:263:28: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:269:31: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:274:41: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:273:12: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:310:6: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:314:24: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:328:43: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:328:4: error: Type mismatch
+  ?m.10
+has type
+  ?m.9
+but is expected to have type
+  (i : ?m.6) → ?m.7
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:331:13: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:334:43: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:334:4: error: Type mismatch
+  ?m.10
+has type
+  ?m.9
+but is expected to have type
+  (i : ?m.6) → ?m.7
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:338:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:337:31: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:345:38: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:347:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:359:51: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:359:49: error(lean.unknownIdentifier): Unknown constant `OfNat`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:364:37: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:405:31: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:414:30: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:418:55: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:458:39: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:464:39: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:475:39: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:498:39: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:519:86: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:533:25: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:541:36: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:545:29: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:545:5: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:550:21: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:557:4: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:566:41: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:569:25: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:572:40: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:574:36: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:577:64: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:577:62: error(lean.unknownIdentifier): Unknown constant `OfNat`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:583:4: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:589:46: error: expected token
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:608:54: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:621:5: error: unknown tactic
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:619:4: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:628:28: error(lean.unknownIdentifier): Unknown constant `CoeFun`
+
+BookProof/ChapterQgOuterFockFarisLavine.lean:644:31: error: unexpected token '*'; expected ')', ',' or ':'
+

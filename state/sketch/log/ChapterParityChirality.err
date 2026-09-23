@@ -1,0 +1,66 @@
+BookProof/ChapterParityChirality.lean:49:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityChirality.lean:50:12: error: unknown namespace `Kronecker`
+
+BookProof/ChapterParityChirality.lean:54:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterParityChirality.lean:55:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParityChirality.lean:56:5: error: unknown namespace `BookProof.ChapterParitySU2`
+
+BookProof/ChapterParityChirality.lean:59:42: error: expected token
+
+BookProof/ChapterParityChirality.lean:63:42: error: expected token
+
+BookProof/ChapterParityChirality.lean:67:38: error: expected token
+
+BookProof/ChapterParityChirality.lean:74:28: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:74:21: error(lean.unknownIdentifier): Unknown identifier `isigma3`
+
+Note: It is not possible to treat `isigma3` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:98:28: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:98:21: error(lean.unknownIdentifier): Unknown identifier `igamma5`
+
+Note: It is not possible to treat `igamma5` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:114:33: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:114:26: error(lean.unknownIdentifier): Unknown identifier `isigma3`
+
+Note: It is not possible to treat `isigma3` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:129:33: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:129:26: error(lean.unknownIdentifier): Unknown identifier `igamma5`
+
+Note: It is not possible to treat `igamma5` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:139:20: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:139:17: error(lean.unknownIdentifier): Unknown identifier `chi`
+
+Note: It is not possible to treat `chi` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:155:30: error: expected token
+
+BookProof/ChapterParityChirality.lean:155:20: error(lean.unknownIdentifier): Unknown identifier `chi.trace`
+
+BookProof/ChapterParityChirality.lean:163:41: error: expected token
+
+BookProof/ChapterParityChirality.lean:170:28: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityChirality.lean:170:22: error(lean.unknownIdentifier): Unknown identifier `QLProj`
+
+Note: It is not possible to treat `QLProj` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityChirality.lean:181:36: error: expected token
+
+BookProof/ChapterParityChirality.lean:181:23: error(lean.unknownIdentifier): Unknown identifier `QLProj.trace`
+
+BookProof/ChapterParityChirality.lean:189:33: error: expected token
+
+BookProof/ChapterParityChirality.lean:207:38: error: expected token
+

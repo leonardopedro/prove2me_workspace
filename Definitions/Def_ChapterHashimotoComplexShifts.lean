@@ -59,7 +59,7 @@ gives strong convergence of the compressions along the flag.
 
 ## Part 6 — a genuinely unbounded example with non-real shifts
 
-The number operator `A eₙ = n eₙ` on `ℓ²(ℕ, ℂ)`, its resolvents at arbitrary
+The number operator `A eₙ = n eₙ` on `ℓ^2(ℕ, ℂ)`, its resolvents at arbitrary
 non-real shifts, and `hashimoto_multishift_unbounded_example`.
 -/
 
@@ -188,7 +188,7 @@ end Headline
 
 /-! ## Part 6 — a genuinely unbounded example with non-real shifts
 
-The number operator `A eₙ = n eₙ` on `ℓ²(ℕ, ℂ)` of
+The number operator `A eₙ = n eₙ` on `ℓ^2(ℕ, ℂ)` of
 `BookProof.ChapterHashimotoShiftInvert`, whose resolvent at a shift `γ` off the
 real axis is the bounded complex diagonal operator `eₙ ↦ eₙ/(γ − n)`.  Running
 the algorithm with a whole sequence of such shifts is therefore not vacuous. -/
@@ -196,10 +196,11 @@ the algorithm with a whole sequence of such shifts is therefore not vacuous. -/
 section UnboundedExample
 
 open scoped InnerProductSpace ENNReal
+open scoped lp
 
-/-! ### Complex diagonal operators on `ℓ²(ℕ, ℂ)` -/
+/-! ### Complex diagonal operators on `ℓ^2(ℕ, ℂ)` -/
 
-theorem memlp_diagFunC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ²(ℕ, ℂ)) :
+theorem memlp_diagFunC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ^2(ℕ, ℂ)) :
     Memℓp (fun n => c n * x n) 2 := by
   have hx : Summable fun n => ‖(x : ℕ → ℂ) n‖ ^ (2 : ℝ≥0∞).toReal :=
     (lp.memℓp x).summable (by norm_num)
@@ -210,17 +211,25 @@ theorem memlp_diagFunC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M)
   gcongr
   exact hc n
 
-/-- The diagonal (multiplication) operator on `ℓ²(ℕ, ℂ)` with **complex**
+/-- The diagonal (multiplication) operator on `ℓ^2(ℕ, ℂ)` with **complex**
 coefficients bounded by `M`, as a linear map. -/
 noncomputable def diagLinC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) :
-    ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ) where
+    ℓ^2(ℕ, ℂ) →ₗ[ℂ] ℓ^2(ℕ, ℂ) where
   toFun x := ⟨fun n => c n * x n, memlp_diagFunC hc x⟩
-  map_add' x y := by apply lp.ext; funext n; simp [mul_add]
-  map_smul' a x := by apply lp.ext; funext n; simp; ring
+  map_add' x y := by
+    apply lp.ext; funext n
+    simp only [lp.coeFn_add]
+    dsimp [PreLp]
+    rw [mul_add]
+  map_smul' a x := by
+    apply lp.ext; funext n
+    simp only [lp.coeFn_smul]
+    dsimp [PreLp]
+    ring
 
 
 
-theorem diagLinC_norm_le {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ²(ℕ, ℂ)) :
+theorem diagLinC_norm_le {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ^2(ℕ, ℂ)) :
     ‖diagLinC hc x‖ ≤ M * ‖x‖ := by
   have hM : 0 ≤ M := le_trans (norm_nonneg (c 0)) (hc 0)
   refine lp.norm_le_of_tsum_le (by norm_num) (by positivity) ?_
@@ -238,7 +247,7 @@ theorem diagLinC_norm_le {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ 
 
 /-- The complex diagonal operator as a bounded operator, of norm at most `M`. -/
 noncomputable def diagCLMC {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) :
-    ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ) :=
+    ℓ^2(ℕ, ℂ) →L[ℂ] ℓ^2(ℕ, ℂ) :=
   (diagLinC hc).mkContinuous M (diagLinC_norm_le hc)
 
 
@@ -293,12 +302,12 @@ theorem preCoeff_norm_le {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) :
 
 /-- **The resolvent of the number operator at a non-real shift**: the bounded
 complex diagonal operator `eₙ ↦ eₙ/(γ − n)`, of norm at most `1/|Im γ|`. -/
-noncomputable def ell2Resolvent {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ) :=
+noncomputable def ell2Resolvent {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ^2(ℕ, ℂ) →L[ℂ] ℓ^2(ℕ, ℂ) :=
   diagCLMC (resCoeff_norm_le hγ)
 
 /-- The auxiliary diagonal `eₙ ↦ (n+1) eₙ/(γ − n)`, a preimage of the resolvent
 under `R = (A+1)⁻¹`. -/
-noncomputable def ell2ResolventPre {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ) :=
+noncomputable def ell2ResolventPre {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ^2(ℕ, ℂ) →L[ℂ] ℓ^2(ℕ, ℂ) :=
   diagCLMC (preCoeff_norm_le hγ)
 
 

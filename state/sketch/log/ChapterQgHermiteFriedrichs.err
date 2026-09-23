@@ -1,0 +1,252 @@
+BookProof/ChapterQgHermiteFriedrichs.lean:52:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQgHermiteFriedrichs.lean:53:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgHermiteFriedrichs.lean:54:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgHermiteFriedrichs.lean:64:15: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:68:12: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:72:12: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:75:75: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:75:29: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:79:41: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:79:4: error(lean.unknownIdentifier): Unknown identifier `cpoly`
+
+Note: It is not possible to treat `cpoly` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:83:23: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:82:26: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:87:6: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:85:27: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:94:32: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:93:24: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:101:15: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:102:13: error: unexpected token '-'; expected command
+
+BookProof/ChapterQgHermiteFriedrichs.lean:105:14: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:110:15: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:115:12: error: unexpected token '-'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:118:64: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:121:27: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:126:22: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:125:25: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:132:68: error: unexpected token '-'; expected term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:132:17: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:136:14: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:140:15: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:148:36: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:147:31: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:159:15: error: unexpected token '-'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:164:62: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:172:23: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:189:31: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:193:22: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:192:27: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:199:21: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:208:31: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:218:14: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:222:17: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:226:35: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:225:27: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:230:22: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:240:23: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:251:19: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:252:19: error: unexpected token '+'; expected command
+
+BookProof/ChapterQgHermiteFriedrichs.lean:256:28: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:270:39: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:270:16: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:274:53: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:273:29: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:277:45: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:276:33: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:285:30: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:289:48: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:288:28: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:295:49: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:295:33: error(lean.unknownIdentifier): Unknown identifier `starRingEnd`
+
+Note: It is not possible to treat `starRingEnd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:303:6: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:301:27: error(lean.unknownIdentifier): Unknown identifier `L2d`
+
+Note: It is not possible to treat `L2d` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:312:6: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:309:32: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:321:6: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:318:32: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:330:47: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:328:32: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:339:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:337:35: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:356:22: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:367:4: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:382:35: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:398:15: error: unexpected token '-'; expected term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:444:18: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:454:15: error: unexpected token '-'; expected term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:462:18: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:472:33: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:475:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteFriedrichs.lean:474:45: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:478:50: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:482:50: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:490:61: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:500:60: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteFriedrichs.lean:516:19: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:520:24: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:519:29: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:522:76: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:522:28: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:527:29: error: expected token
+
+BookProof/ChapterQgHermiteFriedrichs.lean:545:7: error: unexpected token '-'; expected ')' or term
+
+BookProof/ChapterQgHermiteFriedrichs.lean:559:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteFriedrichs.lean:555:43: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:599:36: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteFriedrichs.lean:602:2: error: unexpected token 'have'; expected command
+

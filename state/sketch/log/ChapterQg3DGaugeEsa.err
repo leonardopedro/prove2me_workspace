@@ -1,0 +1,136 @@
+BookProof/ChapterQg3DGaugeEsa.lean:64:5: error: unknown namespace `Finset`
+
+BookProof/ChapterQg3DGaugeEsa.lean:65:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQg3DGaugeEsa.lean:66:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQg3DGaugeEsa.lean:67:5: error: unknown namespace `BookProof.NavierStokesFlow.DifferentialL2`
+
+BookProof/ChapterQg3DGaugeEsa.lean:68:5: error: unknown namespace `BookProof.HermiteRelative`
+
+BookProof/ChapterQg3DGaugeEsa.lean:69:5: error: unknown namespace `BookProof.FullQuadratic`
+
+BookProof/ChapterQg3DGaugeEsa.lean:70:5: error: unknown namespace `BookProof.QuantumGravity3DGauge`
+
+BookProof/ChapterQg3DGaugeEsa.lean:71:5: error: unknown namespace `BookProof.StoneBridge`
+
+BookProof/ChapterQg3DGaugeEsa.lean:78:45: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:78:19: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:81:45: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:81:19: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:84:44: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:84:18: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:88:52: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:92:18: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:96:19: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:95:27: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:99:21: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:102:21: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:107:3: error: unexpected token 'if'; expected ')', '_', identifier or term
+
+BookProof/ChapterQg3DGaugeEsa.lean:106:20: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:110:4: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:120:4: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:137:52: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQg3DGaugeEsa.lean:137:19: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:141:35: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:141:17: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:143:29: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQg3DGaugeEsa.lean:154:4: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:191:29: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:198:6: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:196:36: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:203:52: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:213:23: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:212:40: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:273:29: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:272:31: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:277:61: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:277:27: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:281:6: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:279:35: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:295:6: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:293:34: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:324:3: error: unknown tactic
+
+BookProof/ChapterQg3DGaugeEsa.lean:321:56: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:332:4: error(lean.unknownIdentifier): Unknown identifier `EssentiallySelfAdjointOn`
+
+Note: It is not possible to treat `EssentiallySelfAdjointOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQg3DGaugeEsa.lean:338:4: error: expected token
+
+BookProof/ChapterQg3DGaugeEsa.lean:346:4: error(lean.unknownIdentifier): Unknown identifier `EssentiallySelfAdjointOn`
+
+Note: It is not possible to treat `EssentiallySelfAdjointOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

@@ -1,0 +1,132 @@
+BookProof/ChapterQgHermiteCore.lean:68:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQgHermiteCore.lean:69:5: error: unknown namespace `BookProof.HermiteCore`
+
+BookProof/ChapterQgHermiteCore.lean:76:15: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:84:15: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:96:37: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:112:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgHermiteCore.lean:118:2: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:121:13: error: unexpected token '|'; expected term
+
+BookProof/ChapterQgHermiteCore.lean:127:28: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:144:26: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:152:28: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:170:60: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:181:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteCore.lean:180:29: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:188:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteCore.lean:187:48: error(lean.unknownIdentifier): Unknown identifier `Continuous`
+
+Note: It is not possible to treat `Continuous` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:193:53: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:236:33: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:236:71: error: unexpected token '*'; expected command
+
+BookProof/ChapterQgHermiteCore.lean:238:34: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:242:29: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:248:26: error: unexpected token '|'; expected ')', '_', identifier or term
+
+BookProof/ChapterQgHermiteCore.lean:269:29: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:313:62: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:322:64: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:335:38: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:336:26: error: unexpected token '-'; expected command
+
+BookProof/ChapterQgHermiteCore.lean:338:34: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:340:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgHermiteCore.lean:349:24: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:348:29: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:355:32: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:354:30: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:364:10: error: unexpected token '-'; expected ')', '_', identifier or term
+
+BookProof/ChapterQgHermiteCore.lean:380:65: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:393:4: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:402:42: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:412:26: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:430:43: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:438:4: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:456:32: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:503:4: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:542:63: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:554:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgHermiteCore.lean:562:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteCore.lean:560:48: error(lean.unknownIdentifier): Unknown identifier `ExpBounded`
+
+Note: It is not possible to treat `ExpBounded` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:571:4: error: expected token
+
+BookProof/ChapterQgHermiteCore.lean:619:42: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgHermiteCore.lean:657:62: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:658:16: error: unexpected token '+'; expected command
+
+BookProof/ChapterQgHermiteCore.lean:662:3: error: unknown tactic
+
+BookProof/ChapterQgHermiteCore.lean:660:63: error(lean.unknownIdentifier): Unknown identifier `Polynomial`
+
+Note: It is not possible to treat `Polynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgHermiteCore.lean:666:64: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgHermiteCore.lean:672:69: error: unexpected token '<'; expected ')'
+

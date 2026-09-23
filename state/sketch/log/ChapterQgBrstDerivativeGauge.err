@@ -1,0 +1,62 @@
+BookProof/ChapterQgBrstDerivativeGauge.lean:49:5: error: unknown namespace `BookProof.ScalaronFiberFL`
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:50:5: error: unknown namespace `BookProof.QgVielbeinModeInstance`
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:51:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:62:27: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:106:51: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:116:16: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:116:20: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:120:16: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:120:22: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:123:11: error(lean.unknownIdentifier): Unknown identifier `EMode`
+
+Note: It is not possible to treat `EMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:131:16: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:129:24: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:140:21: error(lean.unknownIdentifier): Unknown identifier `EMode`
+
+Note: It is not possible to treat `EMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:141:16: error: unexpected token '+'; expected command
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:144:5: error: unexpected token 'if'; expected ')', '_', identifier or term
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:150:4: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:170:6: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:168:40: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:184:48: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:203:32: error(lean.unknownIdentifier): Unknown identifier `WallPot`
+
+Note: It is not possible to treat `WallPot` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:209:64: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:217:34: error(lean.unknownIdentifier): Unknown identifier `WallPot`
+
+Note: It is not possible to treat `WallPot` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:227:50: error: expected token
+
+BookProof/ChapterQgBrstDerivativeGauge.lean:226:36: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

@@ -1,0 +1,50 @@
+BookProof/ChapterQedAbelianConsolidation.lean:52:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQedAbelianConsolidation.lean:53:5: error: unknown namespace `BookProof.YangMillsHermite`
+
+BookProof/ChapterQedAbelianConsolidation.lean:54:5: error: unknown namespace `BookProof.YangMillsAbelianNoGap`
+
+BookProof/ChapterQedAbelianConsolidation.lean:55:5: error: unknown namespace `BookProof.FockSecondQuantization`
+
+BookProof/ChapterQedAbelianConsolidation.lean:56:5: error: unknown namespace `BookProof.StoneBridge`
+
+BookProof/ChapterQedAbelianConsolidation.lean:57:5: error: unknown namespace `BookProof.YangMillsGhost`
+
+BookProof/ChapterQedAbelianConsolidation.lean:58:5: error: unknown namespace `BookProof.YangMillsFriedrichs`
+
+BookProof/ChapterQedAbelianConsolidation.lean:59:5: error: unknown namespace `BookProof.HermiteCore`
+
+BookProof/ChapterQedAbelianConsolidation.lean:60:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQedAbelianConsolidation.lean:67:4: error(lean.unknownIdentifier): Unknown identifier `EssentiallySelfAdjointOn`
+
+Note: It is not possible to treat `EssentiallySelfAdjointOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQedAbelianConsolidation.lean:72:4: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:79:28: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:84:45: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:91:55: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:99:41: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:112:44: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:120:68: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQedAbelianConsolidation.lean:131:41: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQedAbelianConsolidation.lean:137:35: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQedAbelianConsolidation.lean:143:64: error: expected token
+
+BookProof/ChapterQedAbelianConsolidation.lean:142:48: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

@@ -1,0 +1,19 @@
+[0s] Found 169 definitions
+[0s] Parsed imports (0.1s)
+[0s] Already built: 71
+[0s] Round 1: building 3 definitions
+[7s]   FAIL Def_ChapterHermiteFunctions: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHermiteFunctions.lean:150:21: error: Type mismatch
+  Integrable.add hp hq
+has type
+  Integrable ((fun x => eva
+[35s]   FAIL Def_ChapterUnboundedPosition: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterUnboundedPosition.lean:134:23: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply`
+[40s]   FAIL Def_ChapterYangMillsFriedrichs: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterYangMillsFriedrichs.lean:184:57: error(lean.unknownIdentifier): Unknown identifier `SymmetricOn`
+/media/leo/e7
+[40s]   Round done: built=0, failed=3
+[40s] Round 2: stuck on same 3 definitions. Breaking.
+[40s] 
+Done. Built: 0, Failed: 3 (40s total)
+[40s] Failed:
+[40s]   Def_ChapterHermiteFunctions
+[40s]   Def_ChapterUnboundedPosition
+[40s]   Def_ChapterYangMillsFriedrichs

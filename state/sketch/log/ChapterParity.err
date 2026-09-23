@@ -1,0 +1,112 @@
+BookProof/ChapterParity.lean:40:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParity.lean:41:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParity.lean:47:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterParity.lean:50:32: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:50:71: error: expected token
+
+BookProof/ChapterParity.lean:54:4: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterParity.lean:53:36: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:58:3: error: unknown tactic
+
+BookProof/ChapterParity.lean:57:34: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:64:3: error: unknown tactic
+
+BookProof/ChapterParity.lean:63:38: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:76:6: error: expected token
+
+BookProof/ChapterParity.lean:75:36: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:88:54: error: unexpected token '!'; expected term
+
+BookProof/ChapterParity.lean:88:27: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:92:32: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:92:70: error: expected token
+
+BookProof/ChapterParity.lean:95:26: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:95:20: error(lean.unknownIdentifier): Unknown identifier `pauli2`
+
+Note: It is not possible to treat `pauli2` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:100:36: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:100:25: error(lean.unknownIdentifier): Unknown identifier `higgsParity`
+
+Note: It is not possible to treat `higgsParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:106:15: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:106:4: error(lean.unknownIdentifier): Unknown identifier `higgsParity`
+
+Note: It is not possible to treat `higgsParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:112:15: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:112:4: error(lean.unknownIdentifier): Unknown identifier `higgsParity`
+
+Note: It is not possible to treat `higgsParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:122:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterParity.lean:126:29: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:126:21: error(lean.unknownIdentifier): Unknown identifier `mgamma`
+
+Note: It is not possible to treat `mgamma` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:135:12: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:135:4: error(lean.unknownIdentifier): Unknown identifier `mgamma`
+
+Note: It is not possible to treat `mgamma` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:146:29: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParity.lean:146:21: error(lean.unknownIdentifier): Unknown identifier `dgamma`
+
+Note: It is not possible to treat `dgamma` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:155:8: error: unexpected token '!'; expected term
+
+BookProof/ChapterParity.lean:154:29: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:167:8: error: unexpected token '-'; expected term
+
+BookProof/ChapterParity.lean:166:23: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:176:37: error: expected token
+
+BookProof/ChapterParity.lean:175:27: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParity.lean:185:42: error: unexpected token '-'; expected term
+

@@ -1,0 +1,34 @@
+BookProof/ChapterMajoranaFourier.lean:42:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterMajoranaFourier.lean:46:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterMajoranaFourier.lean:51:51: error: expected token
+
+BookProof/ChapterMajoranaFourier.lean:54:60: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterMajoranaFourier.lean:57:60: error: unexpected token '-'; expected ')', ',' or ':'
+
+BookProof/ChapterMajoranaFourier.lean:113:30: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterMajoranaFourier.lean:119:51: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterMajoranaFourier.lean:132:49: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterMajoranaFourier.lean:164:2: error: expected token
+
+BookProof/ChapterMajoranaFourier.lean:163:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterMajoranaFourier.lean:167:27: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterMajoranaFourier.lean:168:11: error: unexpected token '*'; expected command
+
+BookProof/ChapterMajoranaFourier.lean:263:18: error: expected token
+
+BookProof/ChapterMajoranaFourier.lean:271:65: error: expected token
+
+BookProof/ChapterMajoranaFourier.lean:302:22: error: expected token
+

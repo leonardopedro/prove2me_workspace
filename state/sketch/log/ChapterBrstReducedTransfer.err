@@ -1,0 +1,96 @@
+BookProof/ChapterBrstReducedTransfer.lean:52:15: error: unknown namespace `BookProof.ChapterStoneResolvent`
+
+BookProof/ChapterBrstReducedTransfer.lean:56:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterBrstReducedTransfer.lean:58:19: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstReducedTransfer.lean:61:61: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:61:21: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:65:61: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:65:18: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:67:39: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:69:48: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:72:31: error(lean.unknownIdentifier): Unknown identifier `IsClosed`
+
+Note: It is not possible to treat `IsClosed` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:77:61: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:86:42: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstReducedTransfer.lean:95:39: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstReducedTransfer.lean:112:17: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:116:21: error(lean.unknownIdentifier): Unknown identifier `physicalStates`
+
+BookProof/ChapterBrstReducedTransfer.lean:116:39: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:120:24: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstReducedTransfer.lean:125:39: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstReducedTransfer.lean:133:23: error: unexpected token '['; expected ')', ',' or ':'
+
+BookProof/ChapterBrstReducedTransfer.lean:137:38: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:142:6: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:140:41: error(lean.unknownIdentifier): Unknown identifier `physicalStates`
+
+Note: It is not possible to treat `physicalStates` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:145:46: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:155:65: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:165:75: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:174:51: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:192:55: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:221:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterBrstReducedTransfer.lean:222:48: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstReducedTransfer.lean:223:55: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:228:57: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:231:56: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:231:29: error(lean.unknownIdentifier): Unknown identifier `stoneTransfer`
+
+Note: It is not possible to treat `stoneTransfer` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:236:6: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:235:5: error(lean.unknownIdentifier): Unknown identifier `stoneTransfer`
+
+Note: It is not possible to treat `stoneTransfer` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstReducedTransfer.lean:240:37: error: unknown tactic
+
+BookProof/ChapterBrstReducedTransfer.lean:239:42: error(lean.unknownIdentifier): Unknown identifier `Function.Bijective`
+
+BookProof/ChapterBrstReducedTransfer.lean:244:58: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:251:59: error: unexpected token '-'; expected ')'
+
+BookProof/ChapterBrstReducedTransfer.lean:259:51: error: expected token
+
+BookProof/ChapterBrstReducedTransfer.lean:259:4: error(lean.unknownIdentifier): Unknown identifier `Metric.infDist`
+

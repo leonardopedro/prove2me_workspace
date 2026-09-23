@@ -1,0 +1,74 @@
+BookProof/ChapterParityMajoranaQuant.lean:51:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityMajoranaQuant.lean:52:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParityMajoranaQuant.lean:59:26: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:60:12: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:65:5: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:64:33: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:70:5: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:69:33: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:73:14: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:76:26: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:81:22: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:86:30: error: unexpected token '+'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityMajoranaQuant.lean:86:19: error(lean.unknownIdentifier): Unknown identifier `annihProj`
+
+Note: It is not possible to treat `annihProj` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:93:31: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:104:31: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:115:33: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:124:33: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:133:33: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:139:33: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:147:26: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:151:27: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:156:24: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:166:24: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityMajoranaQuant.lean:180:52: error: unexpected token '!'; expected term
+
+BookProof/ChapterParityMajoranaQuant.lean:180:25: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:183:22: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityMajoranaQuant.lean:183:18: error(lean.unknownIdentifier): Unknown identifier `stdJ`
+
+Note: It is not possible to treat `stdJ` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityMajoranaQuant.lean:188:24: error: expected token
+
+BookProof/ChapterParityMajoranaQuant.lean:188:20: error(lean.unknownIdentifier): Unknown identifier `stdJ`
+
+Note: It is not possible to treat `stdJ` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

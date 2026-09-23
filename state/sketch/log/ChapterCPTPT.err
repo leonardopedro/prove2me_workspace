@@ -1,0 +1,94 @@
+BookProof/ChapterCPTPT.lean:57:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterCPTPT.lean:61:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterCPTPT.lean:66:49: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:66:32: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:70:43: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:70:35: error(lean.unknownIdentifier): Unknown identifier `mgamma5Z`
+
+Note: It is not possible to treat `mgamma5Z` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:73:43: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:73:35: error(lean.unknownIdentifier): Unknown identifier `mgamma5Z`
+
+Note: It is not possible to treat `mgamma5Z` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:78:46: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:78:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:84:40: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:84:33: error(lean.unknownIdentifier): Unknown identifier `mgamma5`
+
+Note: It is not possible to treat `mgamma5` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:89:40: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:89:33: error(lean.unknownIdentifier): Unknown identifier `mgamma5`
+
+Note: It is not possible to treat `mgamma5` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:96:44: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:96:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:100:38: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:100:33: error(lean.unknownIdentifier): Unknown identifier `MassA`
+
+Note: It is not possible to treat `MassA` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:105:38: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:105:33: error(lean.unknownIdentifier): Unknown identifier `MassB`
+
+Note: It is not possible to treat `MassB` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:120:22: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:119:27: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:130:63: error: expected token
+
+BookProof/ChapterCPTPT.lean:130:26: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:136:53: error: expected token
+
+BookProof/ChapterCPTPT.lean:136:26: error(lean.unknownIdentifier): Unknown identifier `MassA`
+
+Note: It is not possible to treat `MassA` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:142:53: error: expected token
+
+BookProof/ChapterCPTPT.lean:142:26: error(lean.unknownIdentifier): Unknown identifier `MassB`
+
+Note: It is not possible to treat `MassB` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:153:45: error: expected token
+
+BookProof/ChapterCPTPT.lean:152:29: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterCPTPT.lean:175:11: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterCPTPT.lean:174:28: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

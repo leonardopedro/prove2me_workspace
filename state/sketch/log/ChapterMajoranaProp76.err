@@ -1,0 +1,32 @@
+BookProof/ChapterMajoranaProp76.lean:44:12: error: unknown namespace `InnerProductSpace`
+
+BookProof/ChapterMajoranaProp76.lean:48:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterMajoranaProp76.lean:54:28: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp76.lean:60:22: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterMajoranaProp76.lean:67:50: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:76:24: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:85:26: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:98:20: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterMajoranaProp76.lean:104:27: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:110:39: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:118:38: error: expected token
+
+BookProof/ChapterMajoranaProp76.lean:127:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterMajoranaProp76.lean:129:20: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterMajoranaProp76.lean:137:4: error(lean.unknownIdentifier): Unknown identifier `IsNote4Unitary`
+
+Note: It is not possible to treat `IsNote4Unitary` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterMajoranaProp76.lean:143:49: error: unexpected token '*'; expected '}'
+

@@ -1,0 +1,158 @@
+BookProof/ChapterQgContinuumModeInstance.lean:52:5: error: unknown namespace `BookProof.ScalaronFiberFL`
+
+BookProof/ChapterQgContinuumModeInstance.lean:53:5: error: unknown namespace `BookProof.QgVielbeinModeInstance`
+
+BookProof/ChapterQgContinuumModeInstance.lean:54:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgContinuumModeInstance.lean:61:14: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+BookProof/ChapterQgContinuumModeInstance.lean:65:16: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+BookProof/ChapterQgContinuumModeInstance.lean:65:20: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:68:27: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:68:15: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:70:35: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:70:26: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:73:58: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:73:25: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:78:14: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:78:30: error: unexpected token '+'; expected command
+
+BookProof/ChapterQgContinuumModeInstance.lean:80:36: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:80:25: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:85:36: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:85:25: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:90:14: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:91:23: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:93:35: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:93:24: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:102:52: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:102:23: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:111:3: error: unexpected token 'if'; expected ')', '_', identifier or term
+
+BookProof/ChapterQgContinuumModeInstance.lean:110:21: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:114:46: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:113:30: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:119:4: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:127:4: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:143:40: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgContinuumModeInstance.lean:143:27: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:150:24: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:149:36: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:164:49: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:171:4: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:209:29: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgContinuumModeInstance.lean:209:16: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:211:35: error: unexpected token '|'; expected term
+
+BookProof/ChapterQgContinuumModeInstance.lean:216:45: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgContinuumModeInstance.lean:216:32: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:220:23: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:219:41: error(lean.unknownIdentifier): Unknown identifier `CMode`
+
+Note: It is not possible to treat `CMode` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:229:54: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:233:53: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:253:20: error: unknown tactic
+
+BookProof/ChapterQgContinuumModeInstance.lean:251:31: error(lean.unknownIdentifier): Unknown identifier `QgModeData`
+
+Note: It is not possible to treat `QgModeData` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:288:50: error(lean.unknownIdentifier): Unknown identifier `WallPot`
+
+Note: It is not possible to treat `WallPot` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:297:6: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:294:34: error(lean.unknownIdentifier): Unknown identifier `WallPot`
+
+Note: It is not possible to treat `WallPot` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:303:25: error(lean.unknownIdentifier): Unknown identifier `Infinite`
+
+Note: It is not possible to treat `Infinite` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:306:29: error: unexpected token 'if'; expected term
+
+BookProof/ChapterQgContinuumModeInstance.lean:306:14: error(lean.unknownIdentifier): Unknown identifier `Mom`
+
+Note: It is not possible to treat `Mom` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:311:62: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:311:4: error(lean.unknownIdentifier): Unknown identifier `contTorsionGram`
+
+Note: It is not possible to treat `contTorsionGram` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgContinuumModeInstance.lean:317:45: error: expected token
+
+BookProof/ChapterQgContinuumModeInstance.lean:327:61: error: unexpected token '<'; expected ')'
+

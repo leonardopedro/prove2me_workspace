@@ -1,0 +1,90 @@
+BookProof/ChapterQgMultiHalfDensity.lean:69:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQgMultiHalfDensity.lean:70:5: error: unknown namespace `BookProof.NavierStokesFlow.FockContinuum`
+
+BookProof/ChapterQgMultiHalfDensity.lean:71:5: error: unknown namespace `BookProof.QuantumGravityHalfDensity`
+
+BookProof/ChapterQgMultiHalfDensity.lean:79:20: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgMultiHalfDensity.lean:83:61: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:87:28: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:86:29: error(lean.unknownIdentifier): Unknown identifier `MeasurePreserving`
+
+Note: It is not possible to treat `MeasurePreserving` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:91:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:101:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:108:13: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:112:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:117:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:124:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:136:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:149:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:165:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:191:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:209:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgMultiHalfDensity.lean:213:21: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:216:19: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:219:5: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:225:5: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:234:3: error: unknown tactic
+
+BookProof/ChapterQgMultiHalfDensity.lean:233:11: error(lean.unknownIdentifier): Unknown identifier `SFinite`
+
+Note: It is not possible to treat `SFinite` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:236:10: error(lean.unknownIdentifier): Unknown identifier `SFinite`
+
+Note: It is not possible to treat `SFinite` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:242:4: error(lean.unknownIdentifier): Unknown identifier `MeasurePreserving`
+
+Note: It is not possible to treat `MeasurePreserving` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:247:4: error(lean.unknownIdentifier): Unknown identifier `MeasurePreserving`
+
+Note: It is not possible to treat `MeasurePreserving` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:259:6: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:258:4: error(lean.unknownIdentifier): Unknown identifier `Lp`
+
+Note: It is not possible to treat `Lp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:266:38: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:272:4: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:276:45: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:285:58: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:303:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:317:50: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:333:6: error: expected token
+
+BookProof/ChapterQgMultiHalfDensity.lean:331:4: error(lean.unknownIdentifier): Unknown identifier `Lp`
+
+Note: It is not possible to treat `Lp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgMultiHalfDensity.lean:339:4: error: expected token
+

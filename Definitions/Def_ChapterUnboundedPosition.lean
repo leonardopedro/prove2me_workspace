@@ -131,7 +131,7 @@ noncomputable def momentum : L2Z →L[ℂ] L2Z :=
 theorem momentum_apply (f : L2Z) (k : ℤ) :
     ((momentum f : L2Z) : ℤ → ℂ) k
       = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) := by
-  simp only [momentum, ContinuousLinearMap.smul_apply, ContinuousLinearMap.sub_apply,
+  simp only [momentum, smul_apply, ContinuousLinearMap.sub_apply,
     lp.coeFn_smul, lp.coeFn_sub, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, shiftOp_apply]
   congr 2
 
@@ -170,7 +170,7 @@ noncomputable def velocityLin (v : LinfZ) : L2Z →ₗ[ℂ] L2Z where
   toFun f := ⟨fun k => ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k, memℓp_mul v f⟩
   map_add' f g := by
     ext k
-    simp [Pi.add_apply]
+    simp only [lp.coeFn_add, Pi.add_apply, mul_add]
   map_smul' c f := by
     ext k
     simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply]

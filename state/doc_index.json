@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated_at": "2026-09-24T06:16:06+00:00",
+ "generated_at": "2026-09-24T06:18:15+00:00",
  "docs": [
   {
    "path": "AGENTS.md",
@@ -53,6 +53,25 @@
     "## Defs Needing Regeneration",
     "## Dependency Chain (in publish order)",
     "## Next Steps"
+   ]
+  },
+  {
+   "path": "DISK_CLEANUP_PLAN.md",
+   "title": "Disk Cleanup Plan — prove2me workspace",
+   "lines": 150,
+   "headings": [
+    "# Disk Cleanup Plan — prove2me workspace",
+    "## Current state",
+    "## Tier 1 — Safe & rebuildable (approve freely)",
+    "# Cargo target dirs — run from each project root, or the blanket form:",
+    "# .lake trees (active workspace = optional keep)",
+    "# Caches",
+    "## Tier 2 — Stale duplicates (approve after a glance)",
+    "# Example — review each before rm; keep the original verifiedUniqueAliases/.git",
+    "## Tier 3 — Needs your explicit confirmation (likely keep)",
+    "# australVM/safestos, leonardo, /persistent: manual decision only",
+    "## Suggested order of operations",
+    "## Safety rules"
    ]
   },
   {

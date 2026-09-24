@@ -4,7 +4,7 @@
 > Index semantics adapted from `typos` (notes-core `index.rs`,
 > Apache-2.0): full rebuild, incremental `--file` update, links deduplicated by (source, target), versioned JSON under `state/`.
 
-## Documents (30)
+## Documents (31)
 
 | Document | Title | Lines | Out | In |
 |---|---|---:|---:|---:|
@@ -12,6 +12,7 @@
 | [CHANGELOG.md](CHANGELOG.md) | Changelog | 70 | 0 | 0 |
 | [DEDUP_REPORT_leonardopedro.md](DEDUP_REPORT_leonardopedro.md) | Deduplication report — theorems proved/accepted by `leonardopedro` | 167 | 0 | 0 |
 | [DEF_BUNDLE_FIXES.md](DEF_BUNDLE_FIXES.md) | Def Bundle Fixes - 2026-09-18 | 109 | 0 | 0 |
+| [DISK_CLEANUP_PLAN.md](DISK_CLEANUP_PLAN.md) | Disk Cleanup Plan — prove2me workspace | 150 | 0 | 0 |
 | [PIPELINE_PLAN.md](PIPELINE_PLAN.md) | Timepiece → Prove2me Transplant — Runbook | 4790 | 0 | 1 |
 | [PIPELINE_PLAN_LEGACY.md](PIPELINE_PLAN_LEGACY.md) | Timepiece → Prove2me Transplant — Runbook & Plan | 1630 | 1 | 0 |
 | [PROJECT_REVIEW_AND_PLAN.md](PROJECT_REVIEW_AND_PLAN.md) | Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass) | 285 | 0 | 1 |
@@ -47,6 +48,7 @@
 | [CHANGELOG.md](CHANGELOG.md) | — |
 | [DEDUP_REPORT_leonardopedro.md](DEDUP_REPORT_leonardopedro.md) | — |
 | [DEF_BUNDLE_FIXES.md](DEF_BUNDLE_FIXES.md) | — |
+| [DISK_CLEANUP_PLAN.md](DISK_CLEANUP_PLAN.md) | — |
 | [PIPELINE_PLAN.md](PIPELINE_PLAN.md) | [README.md](README.md) |
 | [PIPELINE_PLAN_LEGACY.md](PIPELINE_PLAN_LEGACY.md) | — |
 | [PROJECT_REVIEW_AND_PLAN.md](PROJECT_REVIEW_AND_PLAN.md) | [README.md](README.md) |
@@ -112,6 +114,21 @@
 - ## Defs Needing Regeneration
 - ## Dependency Chain (in publish order)
 - ## Next Steps
+
+### Disk Cleanup Plan — prove2me workspace (`DISK_CLEANUP_PLAN.md`)
+
+- # Disk Cleanup Plan — prove2me workspace
+- ## Current state
+- ## Tier 1 — Safe & rebuildable (approve freely)
+- # Cargo target dirs — run from each project root, or the blanket form:
+- # .lake trees (active workspace = optional keep)
+- # Caches
+- ## Tier 2 — Stale duplicates (approve after a glance)
+- # Example — review each before rm; keep the original verifiedUniqueAliases/.git
+- ## Tier 3 — Needs your explicit confirmation (likely keep)
+- # australVM/safestos, leonardo, /persistent: manual decision only
+- ## Suggested order of operations
+- ## Safety rules
 
 ### Timepiece → Prove2me Transplant — Runbook (`PIPELINE_PLAN.md`)
 
@@ -441,11 +458,12 @@
 - ## Declared tasks
 
 
-## Never linked (7)
+## Never linked (8)
 
 - CHANGELOG.md
 - DEDUP_REPORT_leonardopedro.md
 - DEF_BUNDLE_FIXES.md
+- DISK_CLEANUP_PLAN.md
 - PIPELINE_PLAN_LEGACY.md
 - README.md
 - SESSION_SUMMARY_2026-09-18.md

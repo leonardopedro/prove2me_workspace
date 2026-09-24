@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated_at": "2026-09-24T06:18:15+00:00",
+ "generated_at": "2026-09-24T06:36:28+00:00",
  "docs": [
   {
    "path": "AGENTS.md",
@@ -58,7 +58,7 @@
   {
    "path": "DISK_CLEANUP_PLAN.md",
    "title": "Disk Cleanup Plan — prove2me workspace",
-   "lines": 150,
+   "lines": 235,
    "headings": [
     "# Disk Cleanup Plan — prove2me workspace",
     "## Current state",
@@ -66,6 +66,12 @@
     "# Cargo target dirs — run from each project root, or the blanket form:",
     "# .lake trees (active workspace = optional keep)",
     "# Caches",
+    "## Tier 1B — Installed packages (Debian + Deepin / linglong) — survey added 2026-09-24",
+    "# Dry-run any set before real removal:",
+    "# Example large block (edit to taste after reviewing the dry-run):",
+    "# Themes: keep your favorites, purge the rest (list first):",
+    "# Config remnants + stale apt sources (antigravity, azure-cli, docker, intel-sgx…):",
+    "# linglong app store payload (only if you don't use linglong apps):",
     "## Tier 2 — Stale duplicates (approve after a glance)",
     "# Example — review each before rm; keep the original verifiedUniqueAliases/.git",
     "## Tier 3 — Needs your explicit confirmation (likely keep)",
@@ -180,7 +186,7 @@
   {
    "path": "PROJECT_REVIEW_AND_PLAN.md",
    "title": "Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass)",
-   "lines": 285,
+   "lines": 293,
    "headings": [
     "# Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass)",
     "## 1. Whole-project review — findings (rev. 2, re-verified)",

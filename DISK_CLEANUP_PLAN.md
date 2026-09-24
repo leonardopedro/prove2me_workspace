@@ -70,6 +70,85 @@ sudo journalctl --vacuum-size=200M
 
 ---
 
+## Tier 1B — Installed packages (Debian + Deepin / linglong) — survey added 2026-09-24
+
+System: **Deepin V23 (crimson)** base — 3342 packages installed, of which
+~1379 carry `deepin`/`dde` branding (the desktop itself: keep).
+`linglong` is Deepin's own package format (`linglong-bin/builder/pica/…`);
+its store at `/var/lib/linglong` holds **5.6 G** of app payloads.
+
+Nothing below is executed — check each box mentally before approving.
+
+### 1B-a. Clearly unneeded / safe to purge (large wins)
+
+| Package(s) | Size | Why unneeded |
+|---|---|---|
+| `nvidia-cuda-dev` | **2292 MB** | CUDA *headers/static libs* for app builds; runtime GPU stack (`libcuda1`, driver, `nvidia-smi`) stays — you have a working GTX 1060 + `nvcc 12.2`, but the -dev tree is only needed if you *compile* CUDA code |
+| Nsight profilers: `nsight-compute` (2023.2 + 2025.4 + targets), `nsight-systems` (2023.2 + 2025.1 + 2025.5 + targets), `cuda-nsight*` | **~2839 MB** across 10 pkgs | GPU profiling tools; 6 overlapping versions installed. Keep one set max, or all if you actively profile CUDA |
+| `qemu-system-{arm,mips,ppc,sparc,misc}` | **~390 MB** | non-x86 emulation; you only need `qemu-system-x86` for local VMs (unless you cross-test ARM images) |
+| Old kernels `linux-image-6.18.34` + `6.18.36` + matching `linux-headers-*` (running = **6.18.48**) | **~400 MB** | keep running kernel + one backup; remove 34 & 36 |
+| `deepin-theme-{organic-glass,hazy-color,macaron,square,bloom,bloom-dark,flow,origin,nirvana,vintage}` (keep 1–2 you actually use) | **~551 MB** total | 10 optional themes; default theme remains |
+| `deepin-systemassistant-knowledge` | **740 MB** | offline knowledge base for Deepin's assistant; removable if you don't use it |
+| `oci-cli` (Oracle Cloud) + `google-cloud-cli` + `google-cloud-cli-anthoscli` | **~1126 MB** | cloud CLIs; remove any cloud you don't actively use (`.oci`/`.config/gcloud` configs are tiny/146 M) |
+| `cherrystudio` (534 M) + `pinokio` (383 M) | **~917 MB** | GUI app launchers; remove if unused |
+| Doc packages: `bzip2-doc`, `golang-doc`, `golang-1.22-doc`, `nvidia-cuda-toolkit-doc`, `libcupti-doc`, `nodejs-doc`, `ruby3.3-doc`, … | **~682 MB** (doc+dbg) | man/doc trees; pure reference |
+| Duplicate Java: keep one of `openjdk-17-{jdk,jdk-headless,jre,jre-headless}` + `default-jdk` stack; drop `nvidia-openjdk-8-jre` (Nsight dep) with Nsight | ~300–400 MB | several JRE/JDK flavors coinstalled |
+| Go full stack if you don't write Go: `golang`, `golang-1.22{,-go,-src,-doc}` | ~350 MB | remove if unused |
+| `flatpak` (store is empty, 4 K) | ~small | installed but no apps; remove package if unused |
+| linglong store: `/var/lib/linglong` | **5.6 G** | data dir for linglong apps — clear only if you don't use linglong-installed apps |
+
+**Purge-remnants (`rc` = config-only, 139 pkgs)** — files already gone, configs
+left: `thunderbird` (240 M recorded), `antigravity` (690 M recorded — repo key
+still in `/etc/apt`), `libreoffice-*` (98 pkgs, only 4 `ii`), `cpis-base`,
+`deepin-wine-helper`, old `linux-image-6.18.{24,27}`. Purge frees `/etc` bits
+and dpkg metadata (actual disk win is small but tidy).
+
+Suggested (dry-run first — **always** inspect the list):
+
+```bash
+# Dry-run any set before real removal:
+apt-get -s purge <pkgs>       # shows exactly what would go
+sudo apt-get purge <pkgs>
+sudo apt-get autoremove       # currently only: libwtmpdb0 ncurses-term
+
+# Example large block (edit to taste after reviewing the dry-run):
+sudo apt-get purge nvidia-cuda-dev \
+  nsight-compute nsight-compute-2025.4.0 nsight-compute-target \
+  nsight-systems nsight-systems-2025.1.3 nsight-systems-2025.5.2 nsight-systems-target \
+  cuda-nsight-13-1 cuda-nsight-compute-13-1 cuda-nsight-systems-13-1 \
+  qemu-system-arm qemu-system-mips qemu-system-ppc qemu-system-sparc qemu-system-misc \
+  linux-image-6.18.34-amd64-desktop-rolling linux-headers-6.18.34-amd64-desktop-rolling \
+  linux-image-6.18.36-amd64-desktop-rolling linux-headers-6.18.36-amd64-desktop-rolling \
+  deepin-systemassistant-knowledge \
+  oci-cli google-cloud-cli google-cloud-cli-anthoscli \
+  cherrystudio pinokio \
+  bzip2-doc golang-doc golang-1.22-doc nvidia-cuda-toolkit-doc
+
+# Themes: keep your favorites, purge the rest (list first):
+dpkg -l 'deepin-theme-*' | awk '/^ii/{print $2}'
+
+# Config remnants + stale apt sources (antigravity, azure-cli, docker, intel-sgx…):
+dpkg -l | awk '$1=="rc"{print $2}' | xargs sudo dpkg --purge   # review list first!
+sudo rm /etc/apt/sources.list.d/{antigravity.list,azure-cli.sources,docker.list,intel-sgx.list}  # if repos unused
+
+# linglong app store payload (only if you don't use linglong apps):
+sudo rm -rf /var/lib/linglong    # OR linglong's own uninstall flow
+```
+
+**Tier 1B estimated reclaim: ~13–15 G** (mostly Nsight + cuda-dev + linglong
+store + themes/docs/CLIs). Keep CUDA runtime/driver — only `-dev`/profilers go.
+
+### 1B-b. Decide yourself (installed but maybe wanted)
+
+| Package | Size | Notes |
+|---|---|---|
+| Browsers ×3: `firefox` (315 M) + `brave-browser` (462 M) + `google-chrome-stable` (434 M) | ~1.2 G pkgs; profiles `~/.mozilla` 1.2 G, Brave 639 M, Chrome 181 M | Chrome profile touched most recently (Jun 2); Firefox profile Jul 30 2025, Brave Dec 10 2025 — drop the two you don't use |
+| `warp-terminal` | — | if you don't use Warp |
+| `deepin-app-store` + `deepin-app-store-runtime` + `deepin-home` + `deepin-home-appstore-daemon` + `deepin-sync-daemon` | ~60–70 M + store data | Deepin's store/sync — only if you never install via it |
+| `deepin-*` suite at large (1379 pkgs) | — | this *is* the Deepin desktop; don't bulk-remove `dde-*`/core `deepin-*` without knowing the DE |
+
+---
+
 ## Tier 2 — Stale duplicates (approve after a glance)
 
 Old copies/backups of trees that also exist elsewhere. Verify the survivor is
@@ -132,9 +211,12 @@ sudo podman system prune -af      # or docker system prune -af
 ## Suggested order of operations
 
 1. Approve **Tier 1** → run → re-check `df -h` and the four repos' `git status`.
-2. Spot-check **Tier 2** survivors (open originals, confirm mtimes) → run.
-3. Decide item-by-item on **Tier 3**.
-4. Re-run survey (`df -h`, `du -sh` per tree) and record actual reclaim here.
+2. **Tier 1B packages**: dry-run (`apt-get -s purge …`) every block → approve →
+   `sudo apt-get purge` → `autoremove`. Keep CUDA runtime/driver.
+3. Spot-check **Tier 2** survivors (open originals, confirm mtimes) → run.
+4. Decide item-by-item on **Tier 3**.
+5. Re-run survey (`df -h`, `du -sh` per tree, `df -h /` after purge) and record
+   actual reclaim here.
 
 ## Safety rules
 
@@ -145,6 +227,9 @@ sudo podman system prune -af      # or docker system prune -af
 - No `lake build` / `cargo build` is run as a matter of course — only after you
   ask for a compile.
 - Nothing is pushed or committed as part of cleanup.
+- Package removal: **always `apt-get -s purge` first** and read the list;
+  never bulk-purge `dde-*`/core `deepin-*` (that's the desktop); keep NVIDIA
+  driver + `libcuda1`/`cuda-runtime` — only `-dev`/Nsight/old kernels go.
 
 ---
 *Plan only — no commands from this file have been executed.*

@@ -36,7 +36,7 @@ plus per-item acceptance results (§4).
 | `australVM` | OCaml Austral compiler + Rust cranelift bridge | `build-and-test.yml`, `build-macos.yml` | ✓ | ✓ | **pin was missing** although dynamic-arctic's pin file + README claim a shared 1.97.1 → **now** root `rust-toolchain.toml` (H1); verified: both Cargo workspaces sit one level below root, so rustup's walk-up resolves the pin from either |
 | `velysterm` | Rust editor/agent workspace | `rust.yml` | ✓ | MIT/Apache-2.0 | best-in-class already (CHANGELOG, PROGRESS, docs/) — used as the in-family model; untouched |
 | `dynamic-arctic` | Rust Arctic threshold-signature crate | `ci.yml` (SHA-pinned) | **was missing → now ✓** | MIT (Ian Goldberg) | AGENTS.md added from README+CI (H4) |
-| `test` | GitBook-style docs site (SUMMARY.md 69 l, 50 pages) | **was missing → now ✓** | **was missing → now ✓** | missing (owner decision) | no CI, no checker, no agent guide, no .gitignore → **now** `scripts/check_site.py` + `.github/workflows/site-check.yml` (SHA-pin copied from dynamic-arctic's verified pin; branch `master` matches `origin/HEAD`) + `AGENTS.md` + `.gitignore` (H6); `node_modules` tracked (1070 files) — flagged, owner decision |
+| `test` | GitBook-style docs site (SUMMARY.md 69 l, 50 pages) | **was missing → now ✓** | **was missing → now ✓** | missing (owner decision) | no CI, no checker, no agent guide, no .gitignore → **now** `scripts/check_site.py` + `.github/workflows/site-check.yml` (SHA-pin copied from dynamic-arctic's verified pin; branch `master` matches `origin/HEAD`) + `AGENTS.md` + `.gitignore` (H6); **`node_modules` untracked on owner's call (2026-09-24a): 1070 files dropped from the index, files kept on disk, now ignored** |
 
 ### 1.2 cross-cutting findings → status
 
@@ -98,8 +98,10 @@ plus per-item acceptance results (§4).
 
 ### 1.4 New findings from the rev. 2 deep pass
 
-- `test/` tracks **1070 `node_modules` files** — flagged (untracking is a big,
-  owner-visible change; not executed).
+- `test/` tracked **1070 `node_modules` files** — was flagged in rev. 2;
+  **untracked 2026-09-24b on the owner's explicit call** (`git rm -r
+  --cached node_modules`): files remain on disk for local GitBook builds,
+  now git-ignored; `test/AGENTS.md` rule 4 updated to match.
 - `timepiece` tracks a **compiled bytecode file**
   (`scripts/__pycache__/import_components.cpython-312.pyc`) — flagged, not
   removed (pre-existing; `__pycache__/` now ignored so no *new* ones land).
@@ -283,3 +285,9 @@ Each entry: item → files touched → acceptance result.
   example YAML parses. ✓
 - **P4** — full verification battery (listed in §2 Phase P4) — all green. ✓
 - **P5** — commits per repo; pushes limited to established sync targets. ✓
+- **P6a (owner request, 2026-09-24b)** — doc-index freshness wired into
+  `timepiece/.github/workflows/ci.yml` as a third `docs` job (plain probe,
+  Python stdlib, SHA-pinned checkout, same shape as test's site-check). ✓
+- **P6b (owner request, 2026-09-24b)** — `test` `node_modules` untracked from
+  the index (1070 deletions recorded), kept on disk, added to `.gitignore`,
+  AGENTS rule updated. ✓

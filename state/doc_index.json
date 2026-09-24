@@ -1,0 +1,886 @@
+{
+ "version": 1,
+ "generated_at": "2026-09-24T06:16:06+00:00",
+ "docs": [
+  {
+   "path": "AGENTS.md",
+   "title": "AGENTS.md — prove2me_workspace (driver repo)",
+   "lines": 60,
+   "headings": [
+    "# AGENTS.md — prove2me_workspace (driver repo)",
+    "## Prerequisites",
+    "## Layout map",
+    "## Health / verify entry points (ax `/healthz` pattern — exit 0 = healthy)",
+    "## Rules"
+   ]
+  },
+  {
+   "path": "CHANGELOG.md",
+   "title": "Changelog",
+   "lines": 70,
+   "headings": [
+    "# Changelog",
+    "## [Unreleased]",
+    "## Releases (skill version bumps)",
+    "## History (newest first, seeded from `git log`)"
+   ]
+  },
+  {
+   "path": "DEDUP_REPORT_leonardopedro.md",
+   "title": "Deduplication report — theorems proved/accepted by `leonardopedro`",
+   "lines": 167,
+   "headings": [
+    "# Deduplication report — theorems proved/accepted by `leonardopedro`",
+    "## Headline",
+    "## A. Internal duplication — two of our nodes for one claim",
+    "## B. Solved theorems that exactly restate another user's Proved theorem",
+    "## C. Near duplicates — same token signature as another user's Proved node",
+    "## D. Reuse shortlist — another user's Proved node with our leaf name",
+    "## E. Platform-wide duplicate backlog (context)",
+    "## F. The theorems already in the pipeline — does any restate an existing node?",
+    "## G. Alpha-renamed restatements of an already-`Proved` node",
+    "## H. Re-run 2026-09-21 (prove2me API 0.10.7)",
+    "## Method and caveats"
+   ]
+  },
+  {
+   "path": "DEF_BUNDLE_FIXES.md",
+   "title": "Def Bundle Fixes - 2026-09-18",
+   "lines": 109,
+   "headings": [
+    "# Def Bundle Fixes - 2026-09-18",
+    "## Completed Fixes",
+    "## Defs Needing Regeneration",
+    "## Dependency Chain (in publish order)",
+    "## Next Steps"
+   ]
+  },
+  {
+   "path": "PIPELINE_PLAN.md",
+   "title": "Timepiece → Prove2me Transplant — Runbook",
+   "lines": 4790,
+   "headings": [
+    "# Timepiece → Prove2me Transplant — Runbook",
+    "## 1. CURRENT TASK — upstream-def publication wave + pending thm/sol backlog",
+    "# → add  import Definitions.Def_<that>  +  open <its namespace>  after the last import",
+    "## 2. Platform model (what compiles where)",
+    "## 3. Uploader & resilient launch (`pipeline/upload_pipeline.py`, `start_upload.sh`)",
+    "# PID /tmp/upload_pipeline.pid ; logs state/upload.log + state/pipeline.log",
+    "## 4. Current platform & workspace state (verified 2026-09-09 late; superseded for the wave by §1 Status)",
+    "## 5. Machine & environment facts (NixOS)",
+    "## 6. Lean & platform gotcha catalogue (do not rediscover)",
+    "## 7. API quick reference",
+    "# what's published / in flight",
+    "# service",
+    "# compile gate",
+    "## 8. Scope rules & next waves",
+    "## 9. Git rules",
+    "## §1r. Session update (2026-09-18) — pipeline execution and environment verification",
+    "## §1s. Repair cycle (general procedure + 2026-09-18 execution) — LLM-involved repair loop",
+    "## §1t. Session update (2026-09-18 continued) — pipeline state and next actions",
+    "## §1u. Session 17 (2026-09-18 continued) — generator run, wave extension, def head status",
+    "## §1v. Session 18 (2026-09-18 continued) — sync, state reconciliation, and new publish-job activity",
+    "## §1w. Session 19 (2026-09-18 continued) — API submission visibility issue",
+    "## §1x. Session 21 (2026-09-18 continued) — present knowledge update, daemon status, next actions",
+    "## §1t. Session 17 (2026-09-18) — daemon restarted, pipeline executing, environment verified",
+    "## §1z. Session 22 (2026-09-18 continued) — def bundle generation, Lean error check, and pipeline execution",
+    "## §1aa. Session 23 (2026-09-18 continued) — namespace fixes, import repairs, and pipeline drain",
+    "## §1ab. Session 24 (2026-09-18 continued) — Lean error fixes, def bundles verified, pipeline executing",
+    "## §1t. Session 2026-09-18 (this host) — def chain unblock + generator sync",
+    "## §1y. Session 25 (2026-09-18) — the reuse identification, **corrected**: the wave check was comparing two different objects",
+    "# When API is reachable:",
+    "# Monitor:",
+    "# Check status:",
+    "## §1za. Session 26 (2026-09-18) — local gate fixes, def bundle regeneration, plan update",
+    "## §1zb. Session 27 (2026-09-18 continued) — API reachable, upload running, plan updated",
+    "# Health check",
+    "# Response: {\"status\":\"ok\",\"service\":\"prove2me-api\",\"version\":\"0.10.5\",...}",
+    "# Token refresh (API key authentication)",
+    "# Response: {\"access_token\":\"...\"}",
+    "# Get publish jobs",
+    "# Get theorems by tag",
+    "# Get user info (includes num_solved_prob)",
+    "## §1zc. Session 28 (2026-09-18 continued) — API reachable, upload running, fixes applied",
+    "## §1zb. Session 27 (2026-09-19) — local gate configured, compilation running, plan update",
+    "## §1zc. Session 28 (2026-09-19) — documentation update, Lean4 version separation",
+    "# For prove2me workspace (v4.33.1)",
+    "# For timepiece sources (v4.28.0)",
+    "## §1zd. Session 29 (2026-09-19) — Lean4 v4.33.1 migration complete",
+    "## §1ze. Session 30 (2026-09-19) — Lean4 v4.33.1 compilation working",
+    "# Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit ..., Release)",
+    "# error: object file '.lake/build/lib/lean/Definitions/Def_ChapterWallEsaBddBelow.olean' does not exist",
+    "## §1zf. Session 31 (2026-09-19) — Compiler versions documentation finalized",
+    "## §1zg. Session 32 (2026-09-19) — pipeline execution, environment setup, and upload running",
+    "# Environment variables for this host",
+    "## §1zh. Session 33 (2026-09-19) — Compilation, upload, and def generation complete",
+    "## §1zc. Session 27 (2026-09-19) — mathlib v4.33.1 confirmed, def fixes applied, upload running",
+    "## §1zd. Session 27 (2026-09-19, continued) — build complete, upload running, def fixes applied",
+    "## §1zi. Session 35 (2026-09-20) — def bundles made self-contained, server compile errors, token refresh issue",
+    "## §1zi. Session 36 (2026-09-20) — def bundles self-contained, local compilation, build fixes",
+    "# build_all_ordered.py now runs `lake build` directly (not via build_one.sh)",
+    "## §1zj. Session 37 (2026-09-21) — reuse re-run for the current wave and for the new timepiece additions",
+    "## §1zk. Session 37 (2026-09-21) — compilation of timepiece331, upload scripts fixed",
+    "## §1zl. Session 38 (2026-09-22) — build fix, current state assessment, and plan update"
+   ]
+  },
+  {
+   "path": "PIPELINE_PLAN_LEGACY.md",
+   "title": "Timepiece → Prove2me Transplant — Runbook & Plan",
+   "lines": 1630,
+   "headings": [
+    "# Timepiece → Prove2me Transplant — Runbook & Plan",
+    "## -1. Bootstrap",
+    "## 0. STEP ZERO — Load and verify the skill (mandatory, non-negotiable)",
+    "## 1. What this project is",
+    "## 2. Machine facts (NixOS)",
+    "## 3. How the uploader works (pipeline/upload_pipeline.py)",
+    "## 4. Status snapshot",
+    "## 9. CURRENT SESSION TASKS (2026-09-08)",
+    "# All 5 wave defs + all transitive deps compile:",
+    "## 5. NEXT AGENT TASK: fix def bundle compilation + upload remaining items",
+    "## 6. Expensive lessons (do not rediscover)",
+    "## 7. Quick reference",
+    "# token + any API call (as any user who can read the workspace)",
+    "# what's published / in flight",
+    "# service",
+    "# local compile gate (v4.33.1 workspace env)",
+    "## 8. Translation handoff (v4.28 → v4.33.1)",
+    "## 9. Session fixes log (2026-09-08)",
+    "# start (or restart)",
+    "# stop",
+    "# check status",
+    "# stop + start",
+    "## 11. Session 2026-09-08 — build repair + wave regeneration",
+    "## 10. Next wave — available chapters for pipeline",
+    "## 12. SESSION 2026-09-09 — SELF-CONTAINED DEF BUNDLES + UPLOADER FIXES (READ FIRST)",
+    "# log: state/upload.log ; script log: state/pipeline.log",
+    "## 13. SESSION 2026-09-09 (EVENING) — WAVE PUBLISHED, RESILIENT UPLOAD LIVE (READ FIRST)",
+    "## 14. SESSION 2026-09-09 (LATE) — UPSTREAM-DEF PUBLICATION WAVE (READ FIRST)"
+   ]
+  },
+  {
+   "path": "PROJECT_REVIEW_AND_PLAN.md",
+   "title": "Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass)",
+   "lines": 285,
+   "headings": [
+    "# Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass)",
+    "## 1. Whole-project review — findings (rev. 2, re-verified)",
+    "## 2. The plan (ordered, with acceptance criteria and status)",
+    "## 3. Attribution register",
+    "## 4. Execution log"
+   ]
+  },
+  {
+   "path": "README.md",
+   "title": "Prove2me Workspace",
+   "lines": 95,
+   "headings": [
+    "# Prove2me Workspace",
+    "## Getting started",
+    "## Layout",
+    "## What lives here (maintainer view)",
+    "## Health & quick commands",
+    "# Is the pipeline healthy? (exit 0 = healthy)",
+    "# List / dry-run / run the declared health tasks (see tasks/README.md)",
+    "# Re-run checks automatically while you edit (debounced)",
+    "# Ask the doc index who links to a file, or search every doc (typos queries)",
+    "## Quick-start instructions for your agent",
+    "## Credentials",
+    "## Conventions"
+   ]
+  },
+  {
+   "path": "SESSION_SUMMARY_2026-09-18.md",
+   "title": "Session Summary - 2026-09-18 (Round 3 + Session 32)",
+   "lines": 388,
+   "headings": [
+    "# Session Summary - 2026-09-18 (Round 3 + Session 32)",
+    "## Sessions Overview",
+    "## Completed Actions",
+    "## Current State (2026-09-18)",
+    "## Def Chain Dependency Map (unchanged from Round 2)",
+    "## Remaining Issues",
+    "## Environment Notes",
+    "## Success Criteria",
+    "## Round 4 - 2026-09-19",
+    "## Round 5 - 2026-09-19",
+    "# For timepiece sources (v4.28.0) - already working",
+    "# For platform uploads (v4.33.1) - pending installation",
+    "## Round 6 - 2026-09-19 (Lean4.33.1 Migration)",
+    "## Round 7 - 2026-09-19 (v4.33.1 Compilation Working)",
+    "# Lean (version 4.33.1, ...)",
+    "# error: object file '.lake/build/lib/lean/Definitions/Def_ChapterWallEsaBddBelow.olean' of module ... does not exist",
+    "## Round 8 - 2026-09-19 (Compiler Versions Documentation)",
+    "# leanprover--lean4---v4.33.1"
+   ]
+  },
+  {
+   "path": "SKILL.md",
+   "title": "Prove2me — An open-source platform for math formalization at scale",
+   "lines": 192,
+   "headings": [
+    "# Prove2me — An open-source platform for math formalization at scale",
+    "## The agent loop",
+    "## Pick your role",
+    "## Workspace layout",
+    "## Authentication (in brief)",
+    "## Three basic rules that gate every submission",
+    "## Version self-check",
+    "## Reference files",
+    "## All endpoints"
+   ]
+  },
+  {
+   "path": "examples/upload_full_project/README.md",
+   "title": "Worked example — uploading a full Lean project",
+   "lines": 66,
+   "headings": [
+    "# Worked example — uploading a full Lean project",
+    "## The source project",
+    "## Reproduce it",
+    "# Stage 1 — declaration graph (edit the two EDIT lines first)",
+    "# Stage 2 — sketch facts, one run per source file",
+    "## Reading the graph (`expected/decl_graph.jsonl`)",
+    "## Reading the sketch facts (`expected/sketch_info.*.jsonl`)",
+    "## The generated platform tree (`expected/platform/`)"
+   ]
+  },
+  {
+   "path": "references/INDEX.md",
+   "title": "Doc index",
+   "lines": 228,
+   "headings": [
+    "# Doc index",
+    "## Documents (17)",
+    "## Backlinks (52 links)",
+    "## Section index",
+    "## Never linked (3)"
+   ]
+  },
+  {
+   "path": "references/campaigns.md",
+   "title": "Campaigns",
+   "lines": 171,
+   "headings": [
+    "# Campaigns",
+    "## Discover campaigns",
+    "## Enter a campaign",
+    "## What happens at review",
+    "## Private work"
+   ]
+  },
+  {
+   "path": "references/communicate.md",
+   "title": "Communicate: Mission Discussions & Backlinks",
+   "lines": 122,
+   "headings": [
+    "# Communicate: Mission Discussions & Backlinks",
+    "## Read a mission's discussion",
+    "## Reference artifacts inline",
+    "## Post a comment",
+    "## Edit or delete your own comment",
+    "# Edit (re-parses references)",
+    "# Delete (soft-delete)",
+    "## Find where an artifact is discussed (backlinks)",
+    "## Working effectively with discussions"
+   ]
+  },
+  {
+   "path": "references/contribute.md",
+   "title": "Contribute: Problems, Definitions, Updates, Deprecation",
+   "lines": 328,
+   "headings": [
+    "# Contribute: Problems, Definitions, Updates, Deprecation",
+    "## Submit New Problems",
+    "## Track a Publish Job",
+    "## Submit Definitions",
+    "## Private submissions",
+    "## IMPORTANT principles of submit problems/definitions",
+    "## Update Your Theorem",
+    "## Deprecate (Retire) Junk Theorems, Definitions, and Submissions"
+   ]
+  },
+  {
+   "path": "references/curate.md",
+   "title": "Curate & Personalize: Tags, Votes, Profile, Users",
+   "lines": 200,
+   "headings": [
+    "# Curate & Personalize: Tags, Votes, Profile, Users",
+    "## Tags",
+    "## Vote on Theorems & Proofs",
+    "## Your Profile & Stats",
+    "## Browse Users"
+   ]
+  },
+  {
+   "path": "references/discover.md",
+   "title": "Discover Theorems: Saved List, Missions, Browse",
+   "lines": 260,
+   "headings": [
+    "# Discover Theorems: Saved List, Missions, Browse",
+    "## Save/Bookmark Theorems",
+    "## Rate Theorems",
+    "## Browse Theorems",
+    "# All accepted solutions (direct proofs and reduction sketches)",
+    "# Who solved it first? (only the earliest ACCEPTED submission)"
+   ]
+  },
+  {
+   "path": "references/lean-setup.md",
+   "title": "Local Lean Setup: Verify Before You Submit",
+   "lines": 117,
+   "headings": [
+    "# Local Lean Setup: Verify Before You Submit",
+    "## 1. Install elan (Lean toolchain manager)",
+    "## 2. Set up the local verification env",
+    "## 3. Fetch dependencies and prebuilt Mathlib",
+    "## 4. Mirror the server's module layout",
+    "## 5. The local verification loop",
+    "## Appendix: Multiple environments in one workspace",
+    "## Checking whether a Mathlib module exists"
+   ]
+  },
+  {
+   "path": "references/mission_auditor.md",
+   "title": "Role: Mission Auditor — Writing Read-backs",
+   "lines": 55,
+   "headings": [
+    "# Role: Mission Auditor — Writing Read-backs",
+    "## Independence is the point",
+    "## The principles",
+    "## Format of read-back",
+    "## Attaching the read-back"
+   ]
+  },
+  {
+   "path": "references/mission_captain.md",
+   "title": "Role: Mission Captain",
+   "lines": 526,
+   "headings": [
+    "# Role: Mission Captain",
+    "## The captain loop",
+    "## KEY principles of captain",
+    "## Mission proposals",
+    "# Revise a draft theorem's STATEMENT (send any field from \"Add a draft theorem or definition\")",
+    "# Remove an item",
+    "# The current list (in item_order)",
+    "# Make an item a milestone (re-POST overwrites its text)",
+    "# Edit either field (a milestone always keeps both set)",
+    "# Remove an entry — the item stays in the proposal as a plain theorem",
+    "## Private missions",
+    "## Milestones (captain-only management)",
+    "## Edit a live mission",
+    "## Create a field"
+   ]
+  },
+  {
+   "path": "references/mission_description.md",
+   "title": "Principles for writing mission descriptions",
+   "lines": 122,
+   "headings": [
+    "# Principles for writing mission descriptions",
+    "## 1. Motivation",
+    "## 2. Setting",
+    "## 3. Target",
+    "## 4. Significance",
+    "## 5. Difficulty",
+    "## 6. Formalization scope",
+    "## 7. References",
+    "## Style",
+    "## Skeleton",
+    "## <Motivation>",
+    "## <Setting>",
+    "## Formalization targets",
+    "## <Significance>",
+    "## <Difficulty>",
+    "## Formalization scope",
+    "## Selected references"
+   ]
+  },
+  {
+   "path": "references/mission_solver.md",
+   "title": "Role: Mission Solver",
+   "lines": 85,
+   "headings": [
+    "# Role: Mission Solver",
+    "## One-time setup",
+    "## The solver loop",
+    "## Submitting new problems/definitions along the way",
+    "## Earn contributing score for your human user"
+   ]
+  },
+  {
+   "path": "references/missions.md",
+   "title": "Fields & Missions",
+   "lines": 204,
+   "headings": [
+    "# Fields & Missions",
+    "## Fields",
+    "## Missions",
+    "## Milestones",
+    "## Creating and managing missions"
+   ]
+  },
+  {
+   "path": "references/prove.md",
+   "title": "Prove: Submit Proofs, Disproofs, and Reductions",
+   "lines": 307,
+   "headings": [
+    "# Prove: Submit Proofs, Disproofs, and Reductions",
+    "## Lean environments",
+    "## Recommended workflow",
+    "## Submit a proof",
+    "## Submit a disproof",
+    "## Attach an explanation",
+    "## Poll for the verdict",
+    "## Reductions (Decompose Core Proofs)",
+    "## Platform Imports"
+   ]
+  },
+  {
+   "path": "references/prove2me-lean4.33-translation/PLAN_LEAN4_33_TRANSLATION.md",
+   "title": "Plan: Porting timepiece Lean 4 code from v4.28.0 → v4.33.1 (Prove2me)",
+   "lines": 281,
+   "headings": [
+    "# Plan: Porting timepiece Lean 4 code from v4.28.0 → v4.33.1 (Prove2me)",
+    "## 0. Where things live",
+    "## 1. Goal and scope",
+    "## 2. The drift classes encountered so far (v4.28 → v4.33.1)",
+    "## 3. Files: what each fixed artifact demonstrates",
+    "## 4. Recommended working order (for the specialist)",
+    "## 5. Artifacts still in /tmp that should be copied into Projects",
+    "## 6. Generator fixes (needed before the NEXT wave)",
+    "## 7. The NS SignedShift wave (deferred)",
+    "## 8. Quick reference (tactic/lemma facts verified on v4.33.1)"
+   ]
+  },
+  {
+   "path": "references/prove2me-lean4.33-translation/README.md",
+   "title": "prove2me-lean4.33-translation (vendored reference)",
+   "lines": 26,
+   "headings": [
+    "# prove2me-lean4.33-translation (vendored reference)",
+    "## Contents",
+    "## Sync policy"
+   ]
+  },
+  {
+   "path": "references/prove2me-lean4.33-translation/notes/README.md",
+   "title": "Notes",
+   "lines": 7,
+   "headings": [
+    "# Notes"
+   ]
+  },
+  {
+   "path": "references/setup.md",
+   "title": "Setup: Get Credentials, Manage Tokens",
+   "lines": 177,
+   "headings": [
+    "# Setup: Get Credentials, Manage Tokens",
+    "## 0. Working folder",
+    "## The credential workflow (decision tree)",
+    "## 1. Register (skip if your human already has an account)",
+    "## 2. With email + password: log in and mint the API key yourself",
+    "## 3. Without the password: your human copies the API key for you",
+    "## 4. Use the API key",
+    "## 5. Install the Lean toolchain (after you have credentials)"
+   ]
+  },
+  {
+   "path": "references/upload_full_project.md",
+   "title": "Upload a full Lean project with respect to the Prove2Me standard",
+   "lines": 123,
+   "headings": [
+    "# Upload a full Lean project with respect to the Prove2Me standard",
+    "## Phase 0 — Preparation",
+    "## Phase 1 — Extract the declaration graph (Lean meta-programming)",
+    "## Phase 2 — Plan the node set",
+    "## Phase 3 — Generate the platform tree by skeleton subtraction",
+    "## Phase 4 — Platformize the upload text",
+    "## Phase 5 — Validate the exact upload text",
+    "## Phase 6 — Draft metadata",
+    "## Phase 7 — Upload, strictly ordered",
+    "## Final verification"
+   ]
+  },
+  {
+   "path": "tasks/README.md",
+   "title": "Task manifests — schema reference",
+   "lines": 64,
+   "headings": [
+    "# Task manifests — schema reference",
+    "## File format",
+    "## Fields",
+    "## Semantics (the `/healthz` contract)",
+    "## Declared tasks"
+   ]
+  }
+ ],
+ "links": [
+  {
+   "source": "PIPELINE_PLAN_LEGACY.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "README.md",
+   "target": "AGENTS.md"
+  },
+  {
+   "source": "README.md",
+   "target": "PIPELINE_PLAN.md"
+  },
+  {
+   "source": "README.md",
+   "target": "PROJECT_REVIEW_AND_PLAN.md"
+  },
+  {
+   "source": "README.md",
+   "target": "SKILL.md"
+  },
+  {
+   "source": "README.md",
+   "target": "references/INDEX.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/campaigns.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/curate.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/discover.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/mission_auditor.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/mission_description.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/mission_solver.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/setup.md"
+  },
+  {
+   "source": "SKILL.md",
+   "target": "references/upload_full_project.md"
+  },
+  {
+   "source": "examples/upload_full_project/README.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "examples/upload_full_project/README.md",
+   "target": "references/upload_full_project.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/campaigns.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/curate.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/discover.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/mission_auditor.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/mission_description.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/mission_solver.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/prove2me-lean4.33-translation/PLAN_LEAN4_33_TRANSLATION.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/prove2me-lean4.33-translation/README.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/prove2me-lean4.33-translation/notes/README.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/setup.md"
+  },
+  {
+   "source": "references/INDEX.md",
+   "target": "references/upload_full_project.md"
+  },
+  {
+   "source": "references/campaigns.md",
+   "target": "SKILL.md"
+  },
+  {
+   "source": "references/campaigns.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "references/campaigns.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/campaigns.md",
+   "target": "references/mission_solver.md"
+  },
+  {
+   "source": "references/campaigns.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/communicate.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/contribute.md",
+   "target": "references/curate.md"
+  },
+  {
+   "source": "references/contribute.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/contribute.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/curate.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/discover.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/discover.md",
+   "target": "references/curate.md"
+  },
+  {
+   "source": "references/discover.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/discover.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/lean-setup.md",
+   "target": "SKILL.md"
+  },
+  {
+   "source": "references/lean-setup.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/lean-setup.md",
+   "target": "references/setup.md"
+  },
+  {
+   "source": "references/mission_auditor.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/campaigns.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/discover.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/mission_auditor.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/mission_description.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/mission_solver.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/mission_captain.md",
+   "target": "references/upload_full_project.md"
+  },
+  {
+   "source": "references/mission_description.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "SKILL.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/curate.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/discover.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/missions.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/mission_solver.md",
+   "target": "references/setup.md"
+  },
+  {
+   "source": "references/missions.md",
+   "target": "references/campaigns.md"
+  },
+  {
+   "source": "references/missions.md",
+   "target": "references/communicate.md"
+  },
+  {
+   "source": "references/missions.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/missions.md",
+   "target": "references/mission_solver.md"
+  },
+  {
+   "source": "references/missions.md",
+   "target": "references/prove.md"
+  },
+  {
+   "source": "references/prove.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/prove.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "references/prove.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/setup.md",
+   "target": "SKILL.md"
+  },
+  {
+   "source": "references/setup.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "references/upload_full_project.md",
+   "target": "examples/upload_full_project/README.md"
+  },
+  {
+   "source": "references/upload_full_project.md",
+   "target": "references/contribute.md"
+  },
+  {
+   "source": "references/upload_full_project.md",
+   "target": "references/lean-setup.md"
+  },
+  {
+   "source": "references/upload_full_project.md",
+   "target": "references/mission_captain.md"
+  },
+  {
+   "source": "references/upload_full_project.md",
+   "target": "references/prove.md"
+  }
+ ]
+}

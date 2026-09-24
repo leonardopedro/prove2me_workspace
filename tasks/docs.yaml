@@ -1,0 +1,18 @@
+# ax-style Task manifests (pattern adapted from ../ax, Apache-2.0).
+apiVersion: timepiece.dev/v1alpha1
+kind: Task
+metadata:
+  name: docs
+  description: Doc index / backlinks freshness for this repo and ../test
+spec:
+  steps:
+    - name: index-check
+      run: python3 scripts/doc_index.py --check
+      health: true
+    - name: index-rebuild
+      run: python3 scripts/doc_index.py
+    - name: references-index
+      run: python3 scripts/doc_index.py --scan references --out-md references/INDEX.md --out-json state/references_index.json
+    - name: site-check
+      run: python3 ../test/scripts/check_site.py
+      health: true

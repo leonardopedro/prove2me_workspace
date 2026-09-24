@@ -26,6 +26,10 @@ __pycache__/
 # `python3 debug/find_duplicates.py --reset --index`). See PIPELINE_PLAN.md §1n.
 state/platform_index.jsonl
 state/platform_index.meta.json
-state/
+state/*
+# …but the two versioned doc-index JSONs are committed artifacts
+# (typos index discipline): fresh checkouts must pass `--check`.
+!state/doc_index.json
+!state/references_index.json
 credentials.json
 /.lake

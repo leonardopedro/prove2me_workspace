@@ -1,0 +1,18 @@
+# ax-style Task manifests (pattern adapted from ../ax, Apache-2.0).
+# These WRAP existing commands; they never reimplement them.
+apiVersion: timepiece.dev/v1alpha1
+kind: Task
+metadata:
+  name: pipeline
+  description: Upload-pipeline health & sync probes (state in state/pipeline.json)
+spec:
+  steps:
+    - name: status
+      run: python3 pipeline/upload_pipeline.py --status
+      health: true          # local: plan vs. state, no network
+    - name: check
+      run: python3 pipeline/upload_pipeline.py --check
+      # needs PROVE2ME_API_KEY + network — run on demand, not as health
+    - name: sync
+      run: python3 pipeline/upload_pipeline.py --sync
+      # mutates platform-side reconciliation — run on demand only

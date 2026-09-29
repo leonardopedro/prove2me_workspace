@@ -4,6 +4,9 @@ import Definitions.Def_ChapterFockOneParticleGap
 import Theorems.Thm_BookProof_FockOneParticleGap_confEnergy_one
 import Theorems.Thm_BookProof_FockOneParticleGap_confEnergy_add_const
 import Theorems.Thm_BookProof_FockOneParticleGap_dGamma_diagCol_apply
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
 
 

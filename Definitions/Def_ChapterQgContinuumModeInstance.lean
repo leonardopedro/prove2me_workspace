@@ -1,8 +1,5 @@
-import Mathlib
-import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
-open BookProof.QgVielbeinModeInstance
-open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
+import Mathlib
 
 
 /-!

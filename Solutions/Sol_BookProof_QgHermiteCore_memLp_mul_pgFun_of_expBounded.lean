@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
 import Theorems.Thm_BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval
+import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_const_mul
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

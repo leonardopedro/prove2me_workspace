@@ -5,17 +5,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow
@@ -25,8 +14,5 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.sec_self (i : Fin d) (x : Vd d) : sec i x (x i) = x := by sorry

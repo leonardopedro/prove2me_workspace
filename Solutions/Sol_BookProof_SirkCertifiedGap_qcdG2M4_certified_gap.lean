@@ -7,14 +7,6 @@ open BookProof.SirkCertifiedGap
 
 
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 

@@ -1,20 +1,11 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — theorem BookProof.NavierStokesFlow.FockOfFock.fockDom_ne_top
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
-
-
-
-
-
-
-
-
-open FullEsa
-
-
-
+open BookProof.NavierStokesFlow.FullEsa
 variable {ι : Type*}
 
 

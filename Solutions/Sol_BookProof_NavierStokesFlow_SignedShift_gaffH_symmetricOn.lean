@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 

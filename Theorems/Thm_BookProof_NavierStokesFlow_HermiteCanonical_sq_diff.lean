@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.sq_diff
 import Mathlib
-import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHermiteCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 

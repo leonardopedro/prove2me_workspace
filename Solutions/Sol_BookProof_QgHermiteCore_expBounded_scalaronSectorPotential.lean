@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_add
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_poly
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_comp_coord
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

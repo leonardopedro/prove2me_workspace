@@ -9,18 +9,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_ann_coreState
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coreState
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_hermiteMvLp
 open BookProof.NavierStokesFlow.DifferentialL2
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -34,9 +24,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin 3) : (annOp i).comp embedCore = embedCore.comp (ann i) := by

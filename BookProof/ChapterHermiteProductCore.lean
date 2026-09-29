@@ -162,7 +162,11 @@ theorem continuous_polyEval (p : MvPolynomial (Fin d) ℂ) :
     Continuous (fun x : Vd d => MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p) := by
   induction p using MvPolynomial.induction_on with
   | C a => simpa using continuous_const
-  | add p q hp hq => simpa [Pi.add_apply] using hp.add hq
+  | add p q hp hq =>
+      have h := hp.add hq
+      -- `h : Continuous (f + g)`, goal: `Continuous (λ x => f x + g x)`
+      -- `f + g` is definitionally `λ x => f x + g x` for Pi types
+      exact h
   | mul_X p i hp =>
       simp only [map_mul, MvPolynomial.eval_X]
       exact hp.mul (by fun_prop)
@@ -503,8 +507,13 @@ theorem ae_eq_zero_of_fourier_eq_zero {v : Vd d → ℂ} (hv : Integrable v)
   rw [hzero] at hkey
   have hrw : ∫ x : Vd d, g x • v x = ∫ x : Vd d, v x * (psi : Vd d → ℂ) x := by
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp [hpsi, smul_eq_mul]
-    ring
+    have hpsi_val : (psi : Vd d → ℂ) x = ((g x : ℝ) : ℂ) := by
+      dsimp [psi]
+      rfl
+    calc
+      g x • v x = ((g x : ℝ) : ℂ) * v x := by simp
+      _ = v x * ((g x : ℝ) : ℂ) := mul_comm _ _
+      _ = v x * (psi : Vd d → ℂ) x := by rw [hpsi_val]
   rw [hrw, ← hkey]
 
 /-- **Vanishing of all Gaussian moments forces `u = 0`** on `ℝᵈ`. -/

@@ -5,17 +5,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow
@@ -25,9 +14,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.coreEquiv_coe (p : MvPolynomial (Fin d) ℂ) :
     ((coreEquiv p : polyGaussCore (d := d)) : L2d d) = pgLp p := by sorry

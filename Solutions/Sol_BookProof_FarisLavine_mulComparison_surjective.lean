@@ -1,6 +1,10 @@
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.mulComparison_surjective
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_FarisLavine_mulSymbolOp_coe
 open BookProof.FarisLavine
 
 

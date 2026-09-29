@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterEsaClosure
 open BookProof.EsaClosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 open Filter Topology
@@ -14,17 +16,6 @@ open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.hashimoto_multishift_selects_esa (b : HilbertBasis ℕ ℂ F) (T : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T)

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesSecondQuant.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_single
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSecondQuant
+import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_single_mem_fockCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 

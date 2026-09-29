@@ -1,14 +1,5 @@
 import Mathlib
-import Mathlib
-import Mathlib
-import Mathlib
 
-import Mathlib
-import Mathlib
-
-import Mathlib
-
-import Mathlib
 
 /-!
 # The dynamics-based unitary on the infinite lattice `ℓ²(ℤ)`
@@ -63,7 +54,7 @@ namespace BookProof.ChapterContinuityUnitaryInfinite
 noncomputable abbrev L2Z := lp (fun _ : ℤ => ℂ) 2
 
 /-- Bounded velocity fields on the lattice: `ℓ^∞(ℤ)`. -/
-abbrev LinfZ := lp (fun _ : ℤ => ℝ) ∞
+noncomputable abbrev LinfZ := lp (fun _ : ℤ => ℝ) ∞
 
 theorem summable_normSq (f : L2Z) : Summable fun k : ℤ => ‖(f : ℤ → ℂ) k‖ ^ 2 := by
   have hsum := (lp.memℓp f).summable (p := 2) (by norm_num)
@@ -88,8 +79,15 @@ theorem memℓp_shift (f : L2Z) (m : ℤ) : Memℓp (fun k : ℤ => (f : ℤ →
 /-- The lattice translation `(S_m f) k = f (k + m)`, as a linear map. -/
 noncomputable def shiftLin (m : ℤ) : L2Z →ₗ[ℂ] L2Z where
   toFun f := ⟨fun k => (f : ℤ → ℂ) (k + m), memℓp_shift f m⟩
-  map_add' f g := by ext k; rfl
-  map_smul' c f := by ext k; rfl
+  map_add' f g := by
+    ext k
+    rfl
+  map_smul' c f := by
+    ext k
+    simp [Pi.smul_apply]
+
+@[simp] theorem shiftLin_apply (m : ℤ) (f : L2Z) (k : ℤ) :
+    ((shiftLin m f : L2Z) : ℤ → ℂ) k = (f : ℤ → ℂ) (k + m) := rfl
 
 
 
@@ -107,8 +105,12 @@ noncomputable def shiftEquiv (m : ℤ) : L2Z ≃ₗᵢ[ℂ] L2Z where
   toLinearEquiv :=
     { shiftLin m with
       invFun := shiftLin (-m)
-      left_inv := fun f => by ext k; simp [shiftLin]
-      right_inv := fun f => by ext k; simp [shiftLin] }
+      left_inv := fun f => by
+        ext k
+        simp [shiftLin, add_comm, add_left_comm, add_assoc]
+      right_inv := fun f => by
+        ext k
+        simp [shiftLin, add_comm, add_left_comm, add_assoc] }
   norm_map' := shiftLin_norm m
 
 /-- The lattice translation as a bounded operator. -/
@@ -138,6 +140,13 @@ theorem inner_shiftOp_left (m : ℤ) (f g : L2Z) :
 noncomputable def momentum : L2Z →L[ℂ] L2Z :=
   (-Complex.I / 2) • (shiftOp 1 - shiftOp (-1))
 
+theorem momentum_apply (f : L2Z) (k : ℤ) :
+    ((momentum f : L2Z) : ℤ → ℂ) k
+      = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) := by
+  simp only [momentum, ContinuousLinearMap.smul_apply, ContinuousLinearMap.sub_apply,
+    lp.coeFn_smul, lp.coeFn_sub, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, shiftOp_apply]
+  congr 2
+
 
 
 /-- **The momentum operator is self-adjoint.** -/
@@ -150,6 +159,9 @@ theorem momentum_isSymmetric : (momentum : L2Z →ₗ[ℂ] L2Z).IsSymmetric := b
     inner_sub_right, h1, h2, neg_neg]
   simp only [map_div₀, map_neg, Complex.conj_I, Complex.conj_ofNat]
   ring
+
+theorem momentum_isSelfAdjoint : IsSelfAdjoint momentum :=
+  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 momentum_isSymmetric
 
 
 
@@ -172,11 +184,17 @@ theorem memℓp_mul (v : LinfZ) (f : L2Z) :
 /-- Multiplication by a bounded real velocity field, as a linear map. -/
 noncomputable def velocityLin (v : LinfZ) : L2Z →ₗ[ℂ] L2Z where
   toFun f := ⟨fun k => ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k, memℓp_mul v f⟩
-  map_add' f g := by ext k; simp [mul_add]; rfl
+  map_add' f g := by
+    ext k
+    show ((v : ℤ → ℝ) k : ℂ) * ((f + g) k) = ((v : ℤ → ℝ) k : ℂ) * (f k) + ((v : ℤ → ℝ) k : ℂ) * (g k)
+    simp [Pi.add_apply, mul_add]
   map_smul' c f := by
     ext k
     simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply]
     ring
+
+@[simp] theorem velocityLin_apply (v : LinfZ) (f : L2Z) (k : ℤ) :
+    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
 
 
 
@@ -188,7 +206,7 @@ theorem velocityLin_norm_le (v : LinfZ) (f : L2Z) : ‖velocityLin v f‖ ≤ �
       ≤ ‖v‖ ^ 2 * ‖(f : ℤ → ℂ) k‖ ^ 2 := by
     intro k
     have hnorm : ‖((velocityLin v f : L2Z) : ℤ → ℂ) k‖ = |(v : ℤ → ℝ) k| * ‖(f : ℤ → ℂ) k‖ := by
-      simp [velocityLin, norm_mul, Complex.norm_real]
+      simp [velocityLin]
     rw [hnorm, mul_pow]
     have h1 : |(v : ℤ → ℝ) k| ^ 2 ≤ ‖v‖ ^ 2 := by
       nlinarith [abs_nonneg ((v : ℤ → ℝ) k), velocity_bound v k]
@@ -213,9 +231,13 @@ theorem velocityOp_isSymmetric (v : LinfZ) :
   intro f g
   rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
   refine tsum_congr fun k => ?_
-  simp only [ContinuousLinearMap.coe_coe, velocityOp_apply, RCLike.inner_apply, map_mul,
-    Complex.conj_ofReal]
-  ring
+  simp only [ContinuousLinearMap.coe_coe, RCLike.inner_apply, velocityOp, velocityLin]
+  dsimp
+  rw [map_mul (starRingEnd ℂ)]
+  simp [mul_comm, mul_left_comm, mul_assoc]
+
+theorem velocityOp_isSelfAdjoint (v : LinfZ) : IsSelfAdjoint (velocityOp v) :=
+  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 (velocityOp_isSymmetric v)
 
 
 
@@ -240,7 +262,7 @@ theorem continuityHamiltonian_isSymmetric (v : LinfZ) :
     momentum_isSymmetric _ _
   simp only [continuityHamiltonian, ContinuousLinearMap.coe_coe,
     ContinuousLinearMap.smul_apply, ContinuousLinearMap.add_apply,
-    ContinuousLinearMap.coe_comp', Function.comp_apply, inner_smul_left, inner_smul_right,
+    ContinuousLinearMap.coe_comp, Function.comp_apply, inner_smul_left, inner_smul_right,
     inner_add_left, inner_add_right]
   rw [hp1, hv1, hv2, hp2]
   simp only [map_div₀, map_one, Complex.conj_ofNat]
@@ -286,6 +308,25 @@ theorem continuityUnitary_unitary (v : LinfZ) (t : ℝ) :
       continuityUnitary v t * star (continuityUnitary v t) = 1 :=
   exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
 
+theorem continuityUnitary_zero (v : LinfZ) : continuityUnitary v 0 = 1 := by
+  simp [continuityUnitary]
+
+/-- `U` is a one-parameter group: `U (s + t) = U s ∘ U t`. -/
+theorem continuityUnitary_add (v : LinfZ) (s t : ℝ) :
+    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t := by
+  let +nondep : NormedAlgebra ℚ (L2Z →L[ℂ] L2Z) := .restrictScalars ℚ ℂ _
+  have hcomm : Commute (((s : ℂ) * Complex.I) • continuityHamiltonian v)
+      (((t : ℂ) * Complex.I) • continuityHamiltonian v) := by
+    simp [Commute, SemiconjBy, smul_smul, mul_comm]
+  have hsum : (((s + t : ℝ) : ℂ) * Complex.I) • continuityHamiltonian v
+      = ((s : ℂ) * Complex.I) • continuityHamiltonian v
+        + ((t : ℂ) * Complex.I) • continuityHamiltonian v := by
+    rw [← add_smul]
+    push_cast
+    ring_nf
+  rw [continuityUnitary, hsum, NormedSpace.exp_add_of_commute hcomm]
+  rfl
+
 
 
 
@@ -312,6 +353,22 @@ noncomputable def evolvedState (v : LinfZ) (t : ℝ) (psi : L2Z) : L2Z :=
 /-- The Born weight of a set `B` of lattice sites in the evolved state. -/
 noncomputable def bornRecover (v : LinfZ) (t : ℝ) (psi : L2Z) (B : Finset ℤ) : ℝ :=
   ∑ z ∈ B, ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2
+
+theorem bornRecover_nonneg (v : LinfZ) (t : ℝ) (psi : L2Z) (B : Finset ℤ) :
+    0 ≤ bornRecover v t psi B :=
+  Finset.sum_nonneg fun _ _ => by positivity
+
+theorem bornRecover_empty (v : LinfZ) (t : ℝ) (psi : L2Z) : bornRecover v t psi ∅ = 0 := by
+  simp [bornRecover]
+
+theorem bornRecover_union (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ}
+    (h : Disjoint B C) :
+    bornRecover v t psi (B ∪ C) = bornRecover v t psi B + bornRecover v t psi C := by
+  simp [bornRecover, Finset.sum_union h]
+
+theorem bornRecover_mono (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ} (h : B ⊆ C) :
+    bornRecover v t psi B ≤ bornRecover v t psi C :=
+  Finset.sum_le_sum_of_subset_of_nonneg h fun _ _ _ => by positivity
 
 
 
@@ -347,12 +404,30 @@ noncomputable def bornPMF (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 
         bornRecover_tsum_univ v t psi hpsi, ENNReal.ofReal_one]
     exact htsum ▸ ENNReal.summable.hasSum⟩
 
+@[simp] theorem bornPMF_apply (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) (z : ℤ) :
+    bornPMF v t psi hpsi z
+      = ENNReal.ofReal (‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2) := rfl
+
 
 
 /-! ## The capstone -/
 
 variable {X : Type*}
 
-
+/-- **Capstone (infinite lattice).**  A family of bounded velocity fields `v x`
+on `ℤ`, together with normalized initial states `psi x`, determines by the
+dynamics-based unitary — and by *no* basis choice — a genuine conditional
+probability law `z ↦ |Ψ_t(x, z)|²` on the infinite lattice for every input `x`:
+it is a countably additive probability measure whose mass on a finite set `B` of
+sites is the Born weight `bornRecover`. -/
+theorem condProb_of_continuity_infinite (v : X → LinfZ) (t : ℝ) (psi : X → L2Z)
+    (hpsi : ∀ x, ‖psi x‖ = 1) (x : X) :
+    (∑' z : ℤ, bornPMF (v x) t (psi x) (hpsi x) z) = 1 ∧
+      ∀ B : Finset ℤ,
+        ∑ z ∈ B, bornPMF (v x) t (psi x) (hpsi x) z
+          = ENNReal.ofReal (bornRecover (v x) t (psi x) B) := by
+  refine ⟨(bornPMF (v x) t (psi x) (hpsi x)).tsum_coe, fun B => ?_⟩
+  rw [bornRecover, ENNReal.ofReal_sum_of_nonneg (fun _ _ => by positivity)]
+  exact Finset.sum_congr rfl fun z _ => bornPMF_apply _ _ _ _ z
 
 end BookProof.ChapterContinuityUnitaryInfinite

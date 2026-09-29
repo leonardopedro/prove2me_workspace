@@ -6,14 +6,6 @@ open BookProof.ChapterMajoranaProp76
 
 
 
-
-
-
-
-
-
-
-
 open scoped InnerProductSpace
 
 
@@ -24,26 +16,6 @@ variable {H K L : Type*}
   [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
   [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
   [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
-
-
-
-
-
-
-variable {H K : Type*}
-  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
-  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
-
-
-
-
-
-
-open MeasureTheory
-
-variable {E F : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

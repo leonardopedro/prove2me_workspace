@@ -6,7 +6,6 @@ open BookProof.EsaClosure
 
 
 
-
 open Filter Topology
 
 
@@ -16,11 +15,6 @@ open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
-
-variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F}

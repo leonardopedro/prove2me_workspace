@@ -1,8 +1,9 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_inner_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-open BookProof.NavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
+open BookProof.NavierStokesFlow
 
 
 
@@ -14,7 +15,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

@@ -1,5 +1,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 
 open BookProof.ChapterNavierStokesLagrangianEsa
 

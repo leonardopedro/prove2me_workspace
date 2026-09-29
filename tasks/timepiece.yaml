@@ -1,0 +1,14 @@
+# ax-style Task manifests (pattern adapted from ../ax, Apache-2.0).
+apiVersion: timepiece.dev/v1alpha1
+kind: Task
+metadata:
+  name: timepiece
+  description: Sibling-repo gates for ../timepiece (checks only — never lake build)
+spec:
+  steps:
+    - name: health
+      run: bash ../timepiece/scripts/health.sh
+      health: true          # pass/warn/gap/fail over doc-index + imports + drift
+    - name: imports-report
+      run: python3 ../timepiece/scripts/import_components.py BookProof
+      # report mode (exit 0); the strict --check baseline lives in health.sh

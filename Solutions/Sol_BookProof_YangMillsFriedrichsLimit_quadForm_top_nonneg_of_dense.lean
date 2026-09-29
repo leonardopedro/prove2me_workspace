@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.quadForm_top_nonneg_of_dense
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichsLimit
 
 

@@ -2,11 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_aeval_self
+import Theorems.Thm_BookProof_HermiteProductCore_derivative_hermiteZ
+import Theorems.Thm_BookProof_HermiteProductCore_hermiteCx_zero
 open BookProof.HermiteProductBasis
-
-
-
-
 
 
 

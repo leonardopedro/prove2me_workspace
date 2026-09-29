@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 
-
-
-
+variable {d : ℕ}
 
 
 
@@ -16,69 +14,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 theorem BookProof.YangMillsHermite.realCoeff_magPoly (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (i : Fin 3) (a : Fin 8) :
     RealCoeff (magPoly fabc i a) := by sorry

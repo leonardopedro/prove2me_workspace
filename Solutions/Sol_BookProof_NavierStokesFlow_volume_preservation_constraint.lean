@@ -5,22 +5,7 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
-
-
-
-
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {d : ℕ} (f : (Fin d → ℝ) →ₗ[ℝ] (Fin d → ℝ))

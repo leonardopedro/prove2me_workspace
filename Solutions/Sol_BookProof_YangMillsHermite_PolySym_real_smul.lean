@@ -2,12 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_real_smul
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.PolySym
-
-
-
-
 
 
 

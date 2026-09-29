@@ -1,0 +1,62 @@
+BookProof/ChapterBrstTruncationLeakage.lean:84:5: error: unknown namespace `NormedSpace`
+
+BookProof/ChapterBrstTruncationLeakage.lean:88:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:93:32: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstTruncationLeakage.lean:95:7: error: unexpected identifier; expected 'abbrev', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'structure', 'syntax' or 'theorem'
+
+BookProof/ChapterBrstTruncationLeakage.lean:98:7: error: unexpected identifier; expected 'abbrev', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'structure', 'syntax' or 'theorem'
+
+BookProof/ChapterBrstTruncationLeakage.lean:102:34: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:111:36: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:125:33: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:132:37: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:142:39: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:147:39: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:154:38: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstTruncationLeakage.lean:181:47: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:212:7: error: unexpected identifier; expected 'abbrev', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'structure', 'syntax' or 'theorem'
+
+BookProof/ChapterBrstTruncationLeakage.lean:219:51: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:237:48: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:250:41: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:265:33: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:282:45: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:289:37: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:306:24: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstTruncationLeakage.lean:308:42: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:318:37: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:358:44: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:382:48: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:403:56: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:413:43: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstTruncationLeakage.lean:417:7: error: unexpected identifier; expected 'abbrev', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'structure', 'syntax' or 'theorem'
+
+BookProof/ChapterBrstTruncationLeakage.lean:431:39: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:466:47: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstTruncationLeakage.lean:479:54: error: unexpected token '['; expected '}'
+

@@ -3,47 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.FarisLavine
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+open BookProof.FarisLavine
 
 
 

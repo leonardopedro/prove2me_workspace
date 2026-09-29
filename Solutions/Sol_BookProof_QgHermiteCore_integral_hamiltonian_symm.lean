@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_QgHermiteCore_deriv2_gaussPoly
 import Theorems.Thm_BookProof_QgHermiteCore_integrable_gaussPoly_mul
 import Theorems.Thm_BookProof_QgHermiteCore_integral_kinetic_symm
 import Theorems.Thm_BookProof_QgHermiteCore_integrable_potential_gaussPoly_mul
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

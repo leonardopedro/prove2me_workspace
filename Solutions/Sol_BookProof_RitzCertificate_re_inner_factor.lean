@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_RitzCertificate_isSelfAdjoint_sub_const
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
 
 

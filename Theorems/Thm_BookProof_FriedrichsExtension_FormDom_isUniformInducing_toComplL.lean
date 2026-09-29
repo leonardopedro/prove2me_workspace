@@ -1,19 +1,10 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
-
-
-
-
-
-
-
-
-
-
-
 
 
 

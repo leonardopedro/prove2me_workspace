@@ -1,6 +1,8 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.symmetricOn_top_of_dense
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichsLimit
 
 

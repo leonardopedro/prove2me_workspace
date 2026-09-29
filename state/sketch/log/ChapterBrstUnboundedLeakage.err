@@ -1,0 +1,102 @@
+BookProof/ChapterBrstUnboundedLeakage.lean:67:5: error: unknown namespace `NormedSpace`
+
+BookProof/ChapterBrstUnboundedLeakage.lean:68:12: error: unknown namespace `InnerProductSpace`
+
+BookProof/ChapterBrstUnboundedLeakage.lean:72:5: error: unknown namespace `BookProof.BrstLeakage`
+
+BookProof/ChapterBrstUnboundedLeakage.lean:74:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:83:47: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:129:33: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:144:33: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:162:14: error(lean.unknownIdentifier): Unknown identifier `UnboundedSelfAdjoint`
+
+Note: It is not possible to treat `UnboundedSelfAdjoint` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:166:42: error: unexpected token '['; expected ')'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:233:41: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:265:39: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:272:31: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:291:43: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:303:61: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:306:31: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:310:31: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:315:33: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:318:36: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:321:46: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:321:35: error(lean.unknownIdentifier): Unknown identifier `projOp`
+
+Note: It is not possible to treat `projOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:324:46: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:327:6: error(lean.unknownIdentifier): Unknown identifier `CompleteSpace`
+
+BookProof/ChapterBrstUnboundedLeakage.lean:328:28: error(lean.unknownIdentifier): Unknown identifier `IsIdempotentElem`
+
+Note: It is not possible to treat `IsIdempotentElem` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:331:33: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:335:47: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:335:31: error(lean.unknownIdentifier): Unknown identifier `opProj`
+
+Note: It is not possible to treat `opProj` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:339:44: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:346:3: error: unknown tactic
+
+BookProof/ChapterBrstUnboundedLeakage.lean:345:33: error(lean.unknownIdentifier): Unknown identifier `IsSelfAdjoint`
+
+Note: It is not possible to treat `IsSelfAdjoint` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:365:36: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:365:28: error(lean.unknownIdentifier): Unknown identifier `projOp`
+
+Note: It is not possible to treat `projOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:372:36: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:406:50: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:412:57: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:419:46: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:425:40: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:437:57: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:445:40: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:457:52: error: unexpected token '['; expected '}'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:469:85: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:473:43: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterBrstUnboundedLeakage.lean:475:43: error(lean.unknownIdentifier): Unknown identifier `IsSelfAdjoint`
+
+Note: It is not possible to treat `IsSelfAdjoint` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterBrstUnboundedLeakage.lean:479:4: error: expected token
+
+BookProof/ChapterBrstUnboundedLeakage.lean:486:37: error: unexpected token '['; expected '}'
+

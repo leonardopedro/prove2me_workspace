@@ -36,6 +36,7 @@ open BookProof.ChapterH6 BookProof.ChapterH8
 
 open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
+open BookProof.FockOneParticleGap
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

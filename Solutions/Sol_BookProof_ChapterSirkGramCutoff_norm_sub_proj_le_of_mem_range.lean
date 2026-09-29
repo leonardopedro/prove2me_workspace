@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkGramCutoff.lean — solution of BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

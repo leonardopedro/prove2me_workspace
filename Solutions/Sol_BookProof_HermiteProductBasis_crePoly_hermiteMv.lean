@@ -3,11 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteMv
 import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_X_mul
 open BookProof.HermiteProductBasis
-
-
-
-
 
 
 

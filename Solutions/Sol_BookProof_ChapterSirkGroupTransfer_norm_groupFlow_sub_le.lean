@@ -6,11 +6,6 @@ open BookProof.ChapterSirkGroupTransfer
 
 
 
-
-
-
-
-
 noncomputable section
 
 

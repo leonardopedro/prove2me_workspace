@@ -1,6 +1,9 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

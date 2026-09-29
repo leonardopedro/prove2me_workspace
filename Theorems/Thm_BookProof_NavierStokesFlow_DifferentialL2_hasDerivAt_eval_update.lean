@@ -5,17 +5,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow
@@ -25,9 +14,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_eval_update (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Fin d → ℂ) (t : ℂ) :
     HasDerivAt (fun s : ℂ => MvPolynomial.eval (Function.update x i s) p)

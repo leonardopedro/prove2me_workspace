@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteProductBasis
 
-
-
-
+variable {d : ℕ}
 
 
 

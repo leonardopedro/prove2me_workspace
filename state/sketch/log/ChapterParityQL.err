@@ -1,0 +1,28 @@
+BookProof/ChapterParityQL.lean:39:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityQL.lean:40:12: error: unknown namespace `Kronecker`
+
+BookProof/ChapterParityQL.lean:44:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterParityQL.lean:45:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParityQL.lean:52:43: error: expected token
+
+BookProof/ChapterParityQL.lean:57:30: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityQL.lean:57:22: error(lean.unknownIdentifier): Unknown identifier `QLParity`
+
+Note: It is not possible to treat `QLParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityQL.lean:65:36: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityQL.lean:65:28: error(lean.unknownIdentifier): Unknown identifier `QLParity`
+
+Note: It is not possible to treat `QLParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityQL.lean:73:12: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityQL.lean:73:4: error(lean.unknownIdentifier): Unknown identifier `QLParity`
+
+Note: It is not possible to treat `QLParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

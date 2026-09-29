@@ -1,13 +1,9 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — solution of BookProof.NavierStokesFlow.FockCanonical.sqrt_half_sq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
-
-
-
-
-
 
 
 
@@ -15,7 +11,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

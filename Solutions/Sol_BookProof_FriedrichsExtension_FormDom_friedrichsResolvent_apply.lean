@@ -1,3 +1,7 @@
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
 -- Generated from ChapterFriedrichsExtension.lean — solution of BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
@@ -7,65 +11,10 @@ open BookProof.FriedrichsExtension.FormDom
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F) (u : F) :

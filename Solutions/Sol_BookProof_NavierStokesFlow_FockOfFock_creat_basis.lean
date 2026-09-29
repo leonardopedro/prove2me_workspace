@@ -1,8 +1,11 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.creat_basis
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_creat_coe
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -14,7 +17,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

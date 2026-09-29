@@ -2,13 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_selfAdjoint_extension
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_dom_eq_range
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
+import Theorems.Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC
+import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_determines
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

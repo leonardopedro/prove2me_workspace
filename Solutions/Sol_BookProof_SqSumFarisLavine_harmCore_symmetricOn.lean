@@ -1,6 +1,12 @@
 -- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.harmCore_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
 open BookProof.SqSumFarisLavine
 
 

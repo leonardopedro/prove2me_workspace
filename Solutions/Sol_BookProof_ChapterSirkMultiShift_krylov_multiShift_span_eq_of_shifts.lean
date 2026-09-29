@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_krylov_multiShift_eq_standard
+import Definitions.Def_ChapterH5
 open BookProof.ChapterSirkMultiShift
 
 

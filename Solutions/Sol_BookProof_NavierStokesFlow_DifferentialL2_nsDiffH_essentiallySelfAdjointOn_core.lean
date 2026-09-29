@@ -3,18 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH
+import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
 open BookProof.NavierStokesFlow.DifferentialL2
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -28,89 +18,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

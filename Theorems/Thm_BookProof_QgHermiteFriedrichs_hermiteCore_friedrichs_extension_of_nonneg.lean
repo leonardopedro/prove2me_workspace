@@ -1,6 +1,10 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — theorem BookProof.QgHermiteFriedrichs.hermiteCore_friedrichs_extension_of_nonneg
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.QgHermiteFriedrichs
 
 

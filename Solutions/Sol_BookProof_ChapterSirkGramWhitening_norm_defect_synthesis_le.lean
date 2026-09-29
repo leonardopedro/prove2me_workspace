@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_sum_norm_coord_le
+import Theorems.Thm_BookProof_ChapterSirkGramWhitening_synthesis_apply
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 

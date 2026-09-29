@@ -6,13 +6,6 @@ open BookProof.MajoranaClifford
 
 
 
-
-
-
-
-
-
-
 open RealInnerProductSpace CliffordAlgebra QuadraticMap
 
 

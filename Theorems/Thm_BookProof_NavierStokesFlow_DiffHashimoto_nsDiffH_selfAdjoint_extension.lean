@@ -4,10 +4,7 @@ import Definitions.Def_ChapterNavierStokesDiffHashimoto
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-
-
-
-
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 open Filter Topology

@@ -4,11 +4,6 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.bornPMF_apply (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) (z : ℤ) :

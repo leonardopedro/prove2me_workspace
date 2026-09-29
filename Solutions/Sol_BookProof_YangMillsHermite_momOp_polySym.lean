@@ -5,11 +5,8 @@ import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
 import Theorems.Thm_BookProof_YangMillsHermite_gaussInt_sub
 import Theorems.Thm_BookProof_YangMillsHermite_gaussInt_leibniz
 import Theorems.Thm_BookProof_YangMillsHermite_starP_momOp
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 

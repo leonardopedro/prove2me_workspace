@@ -2,11 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_eval_starP
+import Theorems.Thm_BookProof_HermiteProductCore_gaussWD_eq_sq
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 

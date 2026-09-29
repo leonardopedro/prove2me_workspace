@@ -1,6 +1,9 @@
 -- Generated from ChapterFockOneParticleGap.lean — solution of BookProof.FockOneParticleGap.band_endpoints_tendsto
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
 
 

@@ -2,22 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangian_selfAdjoint_extension
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_dom_eq_range
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
+import Theorems.Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC
+import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_determines
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -27,39 +17,6 @@ open Filter Topology
 
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
 theorem solution

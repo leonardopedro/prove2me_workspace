@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_sqSumOp_pgLp
 import Theorems.Thm_BookProof_SqSumFarisLavine_harmCore_symmetricOn
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_sub
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
 open BookProof.SqSumFarisLavine
 
 

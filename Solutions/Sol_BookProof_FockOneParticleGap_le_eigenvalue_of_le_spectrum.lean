@@ -1,6 +1,12 @@
 -- Generated from ChapterFockOneParticleGap.lean — solution of BookProof.FockOneParticleGap.le_eigenvalue_of_le_spectrum
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_le_rayleigh_iff_le_spectrum
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
 
 

@@ -4,69 +4,7 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {X : Type*}
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite (v : X → LinfZ) (t : ℝ) (psi : X → L2Z)
     (hpsi : ∀ x, ‖psi x‖ = 1) (x : X) :

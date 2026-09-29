@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkPerSystem.lean — theorem BookProof.ChapterSirkPerSystem.qgR2_shiftInvert_selects
 import Mathlib
 import Definitions.Def_ChapterSirkPerSystem
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ChapterSirkPerSystem
 
 

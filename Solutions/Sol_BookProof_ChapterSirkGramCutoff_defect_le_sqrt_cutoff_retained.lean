@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkGramCutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_mem_range_retainedEmbedding
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

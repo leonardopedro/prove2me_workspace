@@ -1,18 +1,8 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.cre_coreState
 import Mathlib
-import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -25,9 +15,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.cre_coreState (i : Fin 3) (b : Vel) :
     cre i (coreState b) = ((Real.sqrt ((b i : ℝ) + 1) : ℝ) : ℂ) • coreState (raise i b) := by sorry

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.add_single_sub_single
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -12,7 +13,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

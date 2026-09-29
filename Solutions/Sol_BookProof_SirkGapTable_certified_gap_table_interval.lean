@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 import Theorems.Thm_BookProof_SirkGapTable_certified_gap_mem_interval
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
 
 

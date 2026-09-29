@@ -5,17 +5,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow
@@ -25,9 +14,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_pgFun_sec (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     HasDerivAt (fun t : ℝ => pgFun p (sec i x t))

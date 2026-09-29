@@ -8,16 +8,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zer
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_commForm
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
-
-
-
-
-
-
-
-
 
 
 
@@ -25,7 +18,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian
+open LpNat FarisLavine IkebeKato ShiftHamiltonian
 
 
 variable {d : ℕ} {κ : Fin d → ℝ}

@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
 import Theorems.Thm_BookProof_RitzPerturbation_rayleighSup_le_rayleighSup_add
+import Theorems.Thm_BookProof_RitzMinMax_minmaxSet_bddBelow
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

@@ -1,15 +1,14 @@
 -- Generated from ChapterH8.lean — theorem BookProof.ChapterH8.compress_rational_transfer
 import Mathlib
 import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH4
-open BookProof.ChapterH8 BookProof.ChapterH4
-open ContinuousLinearMap
+open BookProof.ChapterH8
 
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
+noncomputable section
+
+
+open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+
 theorem BookProof.ChapterH8.compress_rational_transfer (V : F →L[ℂ] E) (X qX qXinv : E →L[ℂ] E)
     (qBinv : F →L[ℂ] F) (p : Polynomial ℂ)
     (hVV : (adjoint V).comp V = ContinuousLinearMap.id ℂ F)

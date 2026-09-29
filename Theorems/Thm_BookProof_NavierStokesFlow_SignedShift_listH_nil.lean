@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — theorem BookProof.NavierStokesFlow.SignedShift.listH_nil
 import Mathlib
-import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesSignedShift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber

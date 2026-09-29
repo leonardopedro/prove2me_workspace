@@ -5,18 +5,10 @@ open BookProof.HermiteProductCore
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
 open scoped FourierTransform
 open SchwartzMap
 
 noncomputable section
-
-
-
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductCore.pgMap_apply (p : MvPolynomial (Fin d) ℂ) : pgMap p = pgLp p := by sorry

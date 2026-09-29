@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap
 import Theorems.Thm_BookProof_FriedrichsFormGap_formSpace_norm_bound
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FriedrichsFormGap
 
 

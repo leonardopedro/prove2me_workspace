@@ -2,7 +2,6 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterH5
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter H6 — Krylov projection as a spectral low-pass filter (plan Part F.2,
@@ -67,7 +66,6 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-open BookProof.ChapterH4
 
 
 
@@ -81,7 +79,6 @@ section Reduced
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
-open BookProof.ChapterH4
 
 /-- The **reduced generator** `H̄_reduced = Vᴴ H̄ V` as an explicit `m × m`
 matrix of inner products. -/

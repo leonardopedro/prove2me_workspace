@@ -2,14 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_minmaxLevel_zero_eq_rayleighInf
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

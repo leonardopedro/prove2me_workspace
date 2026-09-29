@@ -1,13 +1,10 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.symmetricOn_of_polySym
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
+import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
 open BookProof.HermiteRelative
-
-
-
-
-
-
 
 
 
@@ -19,16 +16,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 1000000 in

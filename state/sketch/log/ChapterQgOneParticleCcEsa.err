@@ -1,0 +1,284 @@
+BookProof/ChapterQgOneParticleCcEsa.lean:60:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:61:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:62:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:63:5: error: unknown namespace `BookProof.QgHermiteOscillator`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:64:5: error: unknown namespace `BookProof.StoneBridge`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:65:5: error: unknown namespace `BookProof.DirectSumEsa`
+
+BookProof/ChapterQgOneParticleCcEsa.lean:73:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:80:14: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:126:14: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:141:24: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:144:21: error: unexpected token '('; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:148:37: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:153:44: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:157:28: error(lean.unknownIdentifier): Unknown identifier `SymmetricOn`
+
+Note: It is not possible to treat `SymmetricOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:160:60: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:171:16: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:174:42: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:174:14: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:176:46: error: unexpected token '('; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:180:29: error: unexpected token '('; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:193:58: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:200:23: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:203:55: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:214:55: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:226:53: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:244:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:255:47: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:260:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:265:5: error: unexpected token '+'; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:264:32: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:274:71: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:274:31: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:282:23: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:281:26: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:308:19: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:307:24: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:316:19: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:319:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:325:56: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:325:26: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:327:44: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:330:45: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:335:34: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:344:51: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:344:33: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:347:38: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:347:31: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:349:67: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:349:44: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:351:40: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:359:38: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:359:30: error(lean.unknownIdentifier): Unknown identifier `cut`
+
+Note: It is not possible to treat `cut` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:362:56: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:373:25: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:372:32: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:385:6: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:383:39: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:411:4: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:538:24: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:539:33: error: unexpected token '*'; expected command
+
+BookProof/ChapterQgOneParticleCcEsa.lean:542:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:545:48: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:552:27: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:556:45: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:565:43: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:617:10: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:624:54: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:632:52: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:638:50: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:653:6: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:651:25: error(lean.unknownIdentifier): Unknown identifier `ccSchwartz`
+
+Note: It is not possible to treat `ccSchwartz` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:658:55: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:677:6: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:674:27: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:688:2: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:687:18: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:692:6: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:691:35: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:695:55: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:700:28: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:703:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOneParticleCcEsa.lean:725:24: error: unexpected token '-'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:724:16: error(lean.unknownIdentifier): Unknown identifier `Vd`
+
+Note: It is not possible to treat `Vd` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:732:85: error: unexpected token '-'; expected term
+
+BookProof/ChapterQgOneParticleCcEsa.lean:747:10: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:759:59: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:818:61: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:841:66: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:915:24: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:921:46: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:929:24: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:948:24: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:959:45: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:965:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:969:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:978:41: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:984:48: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:991:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1002:50: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1011:57: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1029:40: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1034:61: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1038:17: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1042:45: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1054:45: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1057:62: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1064:32: error: unexpected token '+'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1071:14: error: unexpected token '|'; expected term
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1089:24: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1102:48: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1107:38: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1106:25: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1109:27: error(lean.unknownIdentifier): Unknown identifier `Dense`
+
+Note: It is not possible to treat `Dense` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1114:49: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1119:65: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1127:24: error: expected token
+
+BookProof/ChapterQgOneParticleCcEsa.lean:1134:24: error: expected token
+

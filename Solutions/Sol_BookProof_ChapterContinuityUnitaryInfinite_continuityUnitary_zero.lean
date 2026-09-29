@@ -5,11 +5,6 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in

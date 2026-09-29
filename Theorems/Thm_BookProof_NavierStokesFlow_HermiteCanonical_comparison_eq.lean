@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.comparison_eq
 import Mathlib
-import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHermiteCanonical
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 
@@ -15,6 +18,7 @@ open scoped ENNReal
 
 
 open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
+open BookProof.NavierStokesFlow.IkebeKato
 
 
 

@@ -1,0 +1,124 @@
+BookProof/ChapterQgCouplingDGammaSum.lean:69:5: error: unknown namespace `BookProof.FockSecondQuantization`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:70:5: error: unknown namespace `BookProof.NavierStokesFlow`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:71:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:75:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgCouplingDGammaSum.lean:81:30: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:87:59: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:90:29: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:103:53: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:114:64: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:127:66: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:137:69: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:144:63: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:150:62: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:176:63: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:185:71: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:195:64: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:205:36: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgCouplingDGammaSum.lean:216:36: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:219:46: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:219:33: error(lean.unknownIdentifier): Unknown identifier `Conf`
+
+Note: It is not possible to treat `Conf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:221:54: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:226:34: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:225:43: error(lean.unknownIdentifier): Unknown identifier `FockAlg`
+
+Note: It is not possible to treat `FockAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:235:24: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:234:37: error(lean.unknownIdentifier): Unknown identifier `FockAlg`
+
+Note: It is not possible to treat `FockAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:250:29: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:249:48: error(lean.unknownIdentifier): Unknown identifier `FockAlg`
+
+Note: It is not possible to treat `FockAlg` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:283:6: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:282:4: error(lean.unknownIdentifier): Unknown identifier `dGammaOp`
+
+Note: It is not possible to treat `dGammaOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:299:77: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:307:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgCouplingDGammaSum.lean:306:42: error(lean.unknownIdentifier): Unknown identifier `IsHermCol`
+
+Note: It is not possible to treat `IsHermCol` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:315:54: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:343:24: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:345:30: error(lean.unknownIdentifier): Unknown identifier `IsHermCol`
+
+Note: It is not possible to treat `IsHermCol` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:347:29: error(lean.unknownIdentifier): Unknown identifier `IsPosCol`
+
+Note: It is not possible to treat `IsPosCol` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:353:4: error(lean.unknownIdentifier): Unknown identifier `EssentiallySelfAdjointOn`
+
+Note: It is not possible to treat `EssentiallySelfAdjointOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgCouplingDGammaSum.lean:358:53: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:361:37: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:367:36: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:386:65: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:394:40: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:407:75: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:438:63: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:446:67: error: expected token
+
+BookProof/ChapterQgCouplingDGammaSum.lean:455:14: error(lean.unknownIdentifier): Unknown constant `dGammaOp_finsetSum_col_eq`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:456:14: error(lean.unknownIdentifier): Unknown constant `coupling_friedrichs`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:457:14: error(lean.unknownIdentifier): Unknown constant `coupling_quadForm_le`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:458:14: error(lean.unknownIdentifier): Unknown constant `commForm_finsetSum`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:459:14: error(lean.unknownIdentifier): Unknown constant `coupling_esa_dGamma`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:460:14: error(lean.unknownIdentifier): Unknown constant `comparison_friedrichs`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:461:14: error(lean.unknownIdentifier): Unknown constant `coupling_quadForm_le_comparison`
+
+BookProof/ChapterQgCouplingDGammaSum.lean:462:14: error(lean.unknownIdentifier): Unknown constant `numberOp_essentiallySelfAdjoint`
+

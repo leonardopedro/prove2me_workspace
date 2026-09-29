@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.amp_eq_sqrt_mul
 import Mathlib
-import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHermiteCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 

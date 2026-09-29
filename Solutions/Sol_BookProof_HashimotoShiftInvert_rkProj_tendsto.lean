@@ -2,22 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_rkSpan_mono
+import Theorems.Thm_BookProof_HermiteGalerkin_starProjection_tendsto_of_monotone_dense
 open BookProof.HashimotoShiftInvert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -25,51 +11,6 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (X : ℕ → F →L[ℂ] F) (v : F)

@@ -4,39 +4,11 @@ import Definitions.Def_ChapterH1
 open BookProof.ChapterH1
 
 
-
-
-
-
 open scoped BigOperators
 open intervalIntegral
 
 
 noncomputable section
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-variable {A : Type*} [Ring A] [Algebra ℂ A]
 
 theorem BookProof.ChapterH1.resolvent_shift_mul (a : A) (N h : ℂ) (j m : ℂ)
     (Xj Xm : A)

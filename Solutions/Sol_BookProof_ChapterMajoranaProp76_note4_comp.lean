@@ -5,14 +5,6 @@ open BookProof.ChapterMajoranaProp76
 
 
 
-
-
-
-
-
-
-
-
 open scoped InnerProductSpace
 
 

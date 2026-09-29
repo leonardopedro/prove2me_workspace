@@ -1,19 +1,7 @@
 -- Generated from ChapterYangMillsGhostSector.lean — solution of BookProof.YangMillsGhost.ymGhostHam_essentiallySelfAdjointOn_core
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
-import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_abelian_esa
 open BookProof.YangMillsGhost
-
-
-
-
-
-
-
-
-
-
-
 
 
 

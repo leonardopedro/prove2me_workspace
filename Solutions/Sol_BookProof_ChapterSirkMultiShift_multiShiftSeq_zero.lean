@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkMultiShift.lean — solution of BookProof.ChapterSirkMultiShift.multiShiftSeq_zero
 import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
+import Definitions.Def_ChapterH5
 open BookProof.ChapterSirkMultiShift
 
 

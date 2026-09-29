@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_coreEquivT_coe
 import Theorems.Thm_BookProof_ShiftedHermiteCore_coreOpT_coreEquivT
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.ShiftedHermiteCore
 
 

@@ -1,18 +1,8 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_mul_self
 import Mathlib
-import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -25,8 +15,5 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_mul_self : ((Real.sqrt 2 : ℝ) : ℂ) * ((Real.sqrt 2 : ℝ) : ℂ) = 2 := by sorry

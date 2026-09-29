@@ -7,17 +7,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow
@@ -27,9 +16,6 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin 3) : Intertwined (ann i) (annOp i) :=

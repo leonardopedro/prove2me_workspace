@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
 import Theorems.Thm_BookProof_RitzPerturbation_abs_minmaxGap_sub_le
+import Theorems.Thm_BookProof_RitzMinMax_galerkin_gap_tendsto
+import Theorems.Thm_BookProof_RitzMinMax_minmaxSet_nonempty
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
 
 

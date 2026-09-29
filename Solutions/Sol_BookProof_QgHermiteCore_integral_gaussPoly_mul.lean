@@ -1,6 +1,8 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.integral_gaussPoly_mul
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

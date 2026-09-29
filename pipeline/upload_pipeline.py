@@ -4,22 +4,123 @@
 Items are processed in order; progress is saved after EVERY item so a crash or
 reboot loses at most the in-flight item. The script exits non-zero while work
 remains (Restart=on-failure keeps it going) and exits 0 when everything is done.
+
+Operator entry points:
+
+    python3 pipeline/upload_pipeline.py --check    # verify API access, exit
+    python3 pipeline/upload_pipeline.py --status   # plan vs state, exit
+    python3 pipeline/upload_pipeline.py --sync      # reconcile with the platform, exit
+    python3 pipeline/upload_pipeline.py --max-items 3 --max-seconds 150   # bounded chunk
+    python3 pipeline/upload_pipeline.py --kind thm --max-items 3 --job-timeout 60
+
+Environment: PROVE2ME_WS (workspace root), PROVE2ME_API_KEY (platform credential),
+LAKE_BIN (Lean toolchain).  Every submission is compiled locally before upload by
+default (PROVE2ME_SKIP_LOCAL_COMPILE=1 disables the local gate only when the toolchain
+is genuinely unavailable).  A bounded run exits 0 at the bound, so short-lived hosts
+can drive the same append-only state in chunks.
 """
+import argparse
+import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
 import urllib.parse
 
-WS = "/home/leo/prove2me_workspace"
+# Workspace root: PROVE2ME_WS override first, else the checkout this script
+# lives in (pipeline/upload_pipeline.py -> repo root).  The canonical NixOS
+# layout (/home/leo/prove2me_workspace) therefore behaves exactly as before,
+# while the same uploader can also run from any other clone of the workspace.
+WS = (os.environ.get("PROVE2ME_WS")
+      or os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PIPE = f"{WS}/pipeline"
+CANONICAL_WS = "/home/leo/prove2me_workspace"
+
+# Lean gate: LAKE_BIN override, else `lake` on PATH, else the elan v4.33.1
+# toolchain used on the canonical machine.  PROVE2ME_SKIP_LOCAL_COMPILE=1
+# skips the local gate explicitly (for checkouts with no Lean toolchain, e.g. a
+# cloud sandbox) and lets the platform compile gate be the oracle.
+LAKE_BIN = (os.environ.get("LAKE_BIN")
+            or shutil.which("lake")
+            or "/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake")
+SKIP_LOCAL_COMPILE = os.environ.get("PROVE2ME_SKIP_LOCAL_COMPILE") == "1"
+
+
+def resolve_path(path):
+    """Wave-spec paths are absolute to the canonical workspace.  Re-root them
+    onto THIS checkout when that absolute path is absent, so one spec runs from
+    any clone."""
+    if os.path.exists(path):
+        return path
+    for prefix in (CANONICAL_WS, WS):
+        if path == prefix or path.startswith(prefix + "/"):
+            cand = os.path.join(WS, path[len(prefix):].lstrip("/"))
+            if os.path.exists(cand):
+                return cand
+    return path
+
 STATE_FILE = f"{WS}/state/pipeline.json"
 LOG = f"{WS}/state/pipeline.log"
 API = "https://prove2.me/api/v1"
-MAX_ATTEMPTS = 5
-JOB_TIMEOUT = 900
+MAX_ATTEMPTS = 5  # per-item attempt ceiling before an item is parked as failed
+# Per-item job poll ceiling.  The server compiles each submission and a big
+# bundle can legitimately idle for minutes (§3), so 900 s is right for the
+# daemon; bounded/chunked runs lower it (--job-timeout) so a chunk returns
+# cleanly instead of being killed mid-poll.
+JOB_TIMEOUT = int(os.environ.get("PROVE2ME_JOB_TIMEOUT") or 900)
+POLL_INTERVAL = float(os.environ.get("PROVE2ME_POLL_INTERVAL") or 8)
+
+# Hard wall-clock budget for the WHOLE process, set from --max-seconds.  The
+# submit loop's own bound is not enough on a short-lived host: the preflight
+# re-reads the whole publish-job catalogue and an in-flight poll round can run
+# on its own clock, so a "bounded" chunk could still outlive the caller's
+# timeout and look like a command that never finishes.  `api()` clamps every
+# request to the remaining budget, so a stalled request cannot overshoot either.
+DEADLINE = None  # time.monotonic() deadline, or None for the unbounded daemon
+# Same budget, set from the environment: the point of a bounded chunk is that
+# the WHOLE process returns, and `--max-seconds` only reaches the submit loop
+# while the preflight (`platform_jobs()` re-reads the catalogue) and any poll in
+# flight run on their own clock.  PROVE2ME_MAX_SECONDS also lets a short-lived
+# host cap a run whose argument list it does not control.
+if (os.environ.get("PROVE2ME_MAX_SECONDS") or "").strip():
+    DEADLINE = time.monotonic() + float(os.environ["PROVE2ME_MAX_SECONDS"])
+
+
+def budget_left():
+    return None if DEADLINE is None else DEADLINE - time.monotonic()
+
+
+def over_budget():
+    return DEADLINE is not None and time.monotonic() >= DEADLINE
+
+
+# Raised by `api()` when the chunk's budget is gone.  A request that could not
+# be made is a *wait*, never a failure of the item: the submit loop maps it to
+# BUDGET_WAIT and stops instead of spending one of the 5 attempts on it.
+class BudgetExceeded(RuntimeError):
+    pass
+
+
+BUDGET_WAIT = "chunk wall-clock budget exhausted"
+
+# Pipelined mode (--parallel N).  The server spends ~20-30 s compiling each
+# submission, and the sequential loop sleeps away most of that per item.  In
+# pipelined mode the `do_*` handlers stop right after the submit and hand the
+# job id to the caller, which polls every in-flight item together.  Verdict
+# semantics are identical: `done` is only ever written on PUBLISHED/ACCEPTED,
+# anything left in flight stays `pending` with its job id and is re-polled on
+# the next run without consuming an attempt.
+PIPELINE_MODE = False
+INFLIGHT = {}
+SUBMITTED = "__submitted__"
+
+# --only: substring filter for targeting a specific node (or a small chain of
+# them) instead of walking ORDER.  Needed because a blocking node can sit
+# anywhere in the deps-first order, far out of reach of a bounded chunk.
+ONLY_ITEMS = None
 
 IMPORT_DEF = "import Definitions.Def_timepiece_corrector"
 OPENS = "open Complex Finset Filter Topology\nopen scoped ArithmeticFunction ArithmeticFunction.Moebius ComplexConjugate"
@@ -75,11 +176,61 @@ WAVE = json.load(open(f"{PIPE}/wave_upload.json", encoding="utf-8"))
 WAVE_DEFS = WAVE["defs"]           # chapter name -> def metadata
 WAVE_THMS = WAVE["thms"]           # slug -> {name (dotted), file, meta}
 WAVE_SOL_ORDER = WAVE["sol_order"]  # topological (dependencies first)
+
+
+def _declared_theorems(path):
+    """Every top-level `theorem` declaration in a generated stub, in order."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            txt = f.read()
+    except OSError:
+        return []
+    return re.findall(r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_'.]*)", txt)
+
+
+def _name_shape(name):
+    """A name's identity up to the assembler's `_` -> `.` guess: drop both
+    separators, so `a_b.c` and `a.b_c` are recognised as the same identifier."""
+    return re.sub(r"[._]", "", name or "")
+
+
+def reconcile_thm_names(thms):
+    """Adopt the declaration that is actually in the file when the spec's dotted
+    `name` does not appear there verbatim.
+
+    `wave_upload.json` is assembled with a `_` -> `.` heuristic, which is right for
+    the chapters that open a namespace per component but wrong for any identifier
+    that keeps its underscores.  A wrong name is not merely cosmetic: the splitter
+    looks for `^theorem <name>` and never finds it, so the item reports
+    "cannot split formal_statement" and burns one of its five attempts on every
+    visit until it is parked at `failed`.  The file is authoritative.
+    """
+    fixed = []
+    for slug, meta in thms.items():
+        decls = _declared_theorems(resolve_path(meta.get("file", "")))
+        if not decls or meta.get("name") in decls:
+            continue
+        # A per-node stub declares exactly the one theorem the node is about, so
+        # a lone declaration settles the name outright.  Only when the file holds
+        # several (inline helpers promoted to top level) is the shape the clue.
+        if len(decls) == 1:
+            cand = decls
+        else:
+            cand = [d for d in decls if _name_shape(d) == _name_shape(meta["name"])]
+        if len(cand) == 1:
+            fixed.append((slug, meta["name"], cand[0]))
+            meta["name"] = cand[0]
+    return fixed
+
+
+# Names the spec got wrong, corrected from the files themselves.  Kept so
+# `--status` and tools can report them instead of silently patching the payload.
+REPAIRED_THM_NAMES = reconcile_thm_names(WAVE_THMS)
 def topological_def_order(defs):
     """Compute topological order of def bundles respecting cross-bundle dependencies."""
     dep_graph = {}
     for name, meta in defs.items():
-        filepath = meta['file']
+        filepath = resolve_path(meta['file'])
         if not os.path.exists(filepath):
             dep_graph[name] = set()
             continue
@@ -116,10 +267,13 @@ WAVE_DEF_ORDER = topological_def_order(WAVE_DEFS)
 # Hard guard: any source folder is fine EXCEPT Book/ (the prose book chapters
 # — titles without formal math). '/Book/' cannot match '/BookProof/' ('P' != '/'),
 # so this rejects only the Book folder. A violating source aborts the run.
+# Note: source is a URL in wave_upload.json, so we check for '/Book/' as a path component.
 for _c, _d in WAVE_DEFS.items():
-    assert "/Book/" not in _d["source"], _c
+    _src = _d.get("source", _d.get("file", ""))
+    assert "/Book/" not in _src or _src.startswith("http"), _c
 for _s, _t in WAVE_THMS.items():
-    assert "/Book/" not in _t["source"], _s
+    _src = _t.get("source", _t.get("file", ""))
+    assert "/Book/" not in _src or _src.startswith("http"), _s
 
 LEGACY_ORDER = ["def:timepiece_corrector"] + [f"thm:{n}" for n in THMS] + [f"sol:{n}" for n in THMS]
 WAVE_ORDER = ([f"def:{c}" for c in WAVE_DEF_ORDER]
@@ -144,12 +298,22 @@ def load_state():
 
 def save_state(st):
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
-    with open(STATE_FILE + ".tmp", "w") as f:
+    tmp_path = STATE_FILE + ".tmp"
+    # Write to temp file first, then replace atomically
+    with open(tmp_path, "w") as f:
         json.dump(st, f)
-    os.replace(STATE_FILE + ".tmp", STATE_FILE)
+    # Ensure the temp file was written successfully before replacing
+    if not os.path.exists(tmp_path):
+        raise OSError(f"Failed to write temp state to {tmp_path}")
+    os.replace(tmp_path, STATE_FILE)
 
 
 def api_key():
+    # PROVE2ME_API_KEY (injected by the host environment) wins; otherwise use
+    # the gitignored credentials.json at the workspace root.
+    key = (os.environ.get("PROVE2ME_API_KEY") or "").strip()
+    if key:
+        return key
     return json.load(open(f"{WS}/credentials.json"))["api_key"]
 
 
@@ -176,9 +340,29 @@ def api(method, endpoint, data=None, params=None):
     if params:
         url += "?" + urllib.parse.urlencode(params)
     cmd = ["curl", "-s", "-X", method, url, "-H", f"Authorization: Bearer {token()}"]
+    payload = None
     if data is not None:
-        cmd += ["-H", "Content-Type: application/json", "-d", json.dumps(data)]
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+        # Body goes on stdin (`--data-binary @-`), never as an argv element: a
+        # self-contained def bundle is tens of thousands of lines, and passing
+        # that through the command line dies with
+        # "OSError: [Errno 7] Argument list too long: 'curl'" long before the
+        # server sees it.
+        cmd += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
+        payload = json.dumps(data)
+    left = budget_left()
+    if left is not None:
+        if left <= 1:
+            raise BudgetExceeded(BUDGET_WAIT)
+        timeout = max(5.0, min(90.0, left))
+    else:
+        timeout = 90
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                           input=payload)
+    except subprocess.TimeoutExpired:
+        if over_budget():
+            raise BudgetExceeded(BUDGET_WAIT)
+        raise
     try:
         return json.loads(r.stdout)
     except ValueError:
@@ -187,6 +371,39 @@ def api(method, endpoint, data=None, params=None):
 
 def norm_stmt(text):
     return re.sub(r"\s+", " ", text or "").strip()
+
+
+TITLE_LIMIT = 200  # server-enforced on theorem_title / definition_title (BYTES)
+
+
+def _clip_bytes(text, limit):
+    """Longest prefix of `text` that fits in `limit` UTF-8 bytes, never
+    splitting a character."""
+    out, used = [], 0
+    for ch in text:
+        n = len(ch.encode("utf-8"))
+        if used + n > limit:
+            break
+        out.append(ch)
+        used += n
+    return "".join(out)
+
+
+def clamp_title(title, limit=TITLE_LIMIT):
+    """`theorem_title` and `definition_title` are display-only and the server
+    caps them at 200 **bytes** of UTF-8, but the generator lifts them verbatim
+    from chapter docstrings, which are routinely longer.  Counting characters
+    is not enough: these titles are full of multi-byte math symbols (ℝ, ∀, →,
+    𝓝), so a 200-character title can be 247 bytes and is still rejected.  Clamp
+    on the encoded length at a word boundary instead of letting every such
+    submission burn an attempt."""
+    title = norm_stmt(title)
+    if len(title.encode("utf-8")) <= limit:
+        return title
+    cut = _clip_bytes(title, limit - 3).rstrip()
+    if " " in cut:
+        cut = cut[:cut.rfind(" ")].rstrip()
+    return cut + "..."
 
 
 def find_existing(name, formal):
@@ -243,9 +460,54 @@ def find_related(name, formal):
     return related
 
 
+# A job that is still queued/compiling is not a failure of the item: the uploader
+# records the job_id BEFORE polling and re-polls on the next pass (§3), and big
+# bundles legitimately idle for minutes.  Burning one of the 5 attempts on that
+# would make slow-but-successful items look permanently broken.
+# "not published yet" is the sol-side equivalent: a solution's target theorem
+# may still be pending, which is a wait, not a failure of the solution.
+TRANSIENT_ERRORS = ("still in flight", "poll timeout", "not published yet",
+                    BUDGET_WAIT)
+
+
+def is_transient(err):
+    return any(t in (err or "") for t in TRANSIENT_ERRORS)
+
+
+_TOOLCHAIN_WARNED = False
+
+
 def local_compile(path):
+    global _TOOLCHAIN_WARNED
+    # Every submission is compiled locally before upload by default.
+    # SKIP_LOCAL_COMPILE=1 is the escape hatch for environments where the toolchain
+    # is genuinely unavailable (cloud sandbox with no Lean, fresh clone before
+    # `lake exe cache get`).  Without a local gate, a broken file burns one of the
+    # 5 attempts on every visit until it is parked as `failed`.
+    if SKIP_LOCAL_COMPILE:
+        return True, "local compile skipped (PROVE2ME_SKIP_LOCAL_COMPILE=1)"
+    if not os.path.exists(LAKE_BIN):
+        if not _TOOLCHAIN_WARNED:
+            _TOOLCHAIN_WARNED = True
+            log(f"warning: no Lean toolchain at {LAKE_BIN} - skipping the local gate "
+                f"and using the platform compiler as the oracle")
+        return True, "local compile skipped (no Lean toolchain in this checkout)"
+    # `lake env lean` needs a Lean project at WS.  A checkout that has a `lake`
+    # on PATH but no lakefile (e.g. this workspace, whose Lean files are the
+    # platform tree, not a lake project) answers `unknown module prefix
+    # 'Mathlib'` for EVERY file - a toolchain fact, not a verdict on the proof.
+    # Scoring it as a compile failure burned one of the 5 attempts per item and
+    # never let the submission reach the server, so degrade like a missing
+    # toolchain instead.
+    if not any(os.path.exists(f"{WS}/{f}")
+               for f in ("lakefile.toml", "lakefile.lean", "lean-toolchain")):
+        if not _TOOLCHAIN_WARNED:
+            _TOOLCHAIN_WARNED = True
+            log(f"warning: no lakefile at {WS} - skipping the local gate and "
+                f"using the platform compiler as the oracle")
+        return True, "local compile skipped (no Lean project in this checkout)"
     try:
-        r = subprocess.run(["/home/leo/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake", "env", "lean", path],
+        r = subprocess.run([LAKE_BIN, "env", "lean", path],
                            cwd=WS, capture_output=True, text=True, timeout=600)
         return r.returncode == 0, (r.stderr or r.stdout)[:400]
     except subprocess.TimeoutExpired:
@@ -307,6 +569,7 @@ def thm_path(name):
 
 
 def _do_legacy_thm(st, item, name):
+    path = thm_path(name)
     rec = st["items"].get(item, {})
     if rec.get("job_id"):
         p = poll_job(rec["job_id"])
@@ -342,7 +605,7 @@ def _do_legacy_thm(st, item, name):
         return None
     r = api("POST", "submit-problem", {
         "theorem_name": name,
-        "theorem_title": meta["title"],
+        "theorem_title": clamp_title(meta["title"]),
         "formal_statement": formal,
         "preamble": ("import Mathlib\n" + IMPORT_DEF + "\n" + OPENS) if name != "zeta_symm" else "import Mathlib\nopen Complex Finset Filter Topology",
         "natural_language_statement": meta["nl"],
@@ -360,7 +623,11 @@ def _do_legacy_thm(st, item, name):
                 return None
         return f"submit-problem rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
+    st["items"][item]["job_src"] = file_stamp(path)
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
@@ -432,18 +699,35 @@ def _find_definition_node(chapter):
 
 def do_wave_def(st, item, chapter):
     meta = wave_def_meta(chapter)
+    path = resolve_path(meta["file"])
     rec = st["items"].get(item, {})
+    if rec.get("job_id") and rec.get("job_src") not in (None, file_stamp(path)):
+        log(f"{item}: recorded publish job predates the current bundle — resubmitting")
+        rec.pop("job_id", None)
+        rec.pop("job_src", None)
     if rec.get("job_id"):
+        if PIPELINE_MODE:
+            # A job left in flight by an earlier chunk joins this chunk's
+            # parallel drain instead of blocking the fill loop on it.
+            INFLIGHT[rec["job_id"]] = (item, "publish")
+            return SUBMITTED
         p = poll_job(rec["job_id"])
         if p.get("status") == "PUBLISHED":
             st["items"][item] = {"status": "done", "def_id": p.get("theorem_id") or p.get("id")}
             return None
         if p.get("status") in ("PENDING", "COMPILING", None):
             return "def job still in flight"
-    path = meta["file"]
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
+    # Check that platform theorems imported by this def bundle are already Proved.
+    # Importing an Open theorem is a guaranteed server FAILED — burn no attempt.
+    thm_deps = thm_imports(path)
+    proved = published_theorems()
+    if thm_deps:
+        undone = [t for t in thm_deps if t not in proved]
+        if undone:
+            return "theorem dependency not proved yet: " + ", ".join(undone[:5])
     body = open(path, encoding="utf-8").read()
     existing_id = _find_definition_node(chapter)
     if existing_id:
@@ -452,7 +736,7 @@ def do_wave_def(st, item, chapter):
         return None
     r = api("POST", "submit-definition", {
         "definition_name": chapter,
-        "definition_title": meta["title"],
+        "definition_title": clamp_title(meta["title"]),
         "definition": body,
         "natural_language_statement": meta["nl"],
         "source": meta["source"],
@@ -470,7 +754,11 @@ def do_wave_def(st, item, chapter):
                 return None
         return f"submit-definition rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
+    st["items"][item]["job_src"] = file_stamp(path)
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "def_id": p.get("theorem_id") or p.get("id")}
@@ -480,15 +768,25 @@ def do_wave_def(st, item, chapter):
 
 def do_wave_thm(st, item, slug):
     meta = WAVE_THMS[slug]
+    path = resolve_path(meta["file"])
     rec = st["items"].get(item, {})
+    if rec.get("job_id") and rec.get("job_src") not in (None, file_stamp(path)):
+        # The statement was corrected after this job was submitted, so its verdict
+        # describes text that no longer exists.  Reporting it would mark a good
+        # statement FAILED and spend one of the five attempts doing it.
+        log(f"{item}: recorded publish job predates the current statement — resubmitting")
+        rec.pop("job_id", None)
+        rec.pop("job_src", None)
     if rec.get("job_id"):
+        if PIPELINE_MODE:
+            INFLIGHT[rec["job_id"]] = (item, "publish")
+            return SUBMITTED
         p = poll_job(rec["job_id"])
         if p.get("status") == "PUBLISHED":
             st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
             return None
         if p.get("status") in ("PENDING", "COMPILING", None):
             return "theorem job still in flight"
-    path = meta["file"]
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
@@ -498,7 +796,12 @@ def do_wave_thm(st, item, slug):
     # declaration itself is the formal_statement.  Handles files where the
     # theorem line directly follows `omit … in` (no blank line before it).
     name = meta["name"]
-    m = re.search(r"(?m)^theorem\s+" + re.escape(name) + r"\b", txt)
+    # The name must not be a *prefix* of a longer identifier.  A trailing \b
+    # cannot express that: theorem names may end in a non-word character (Lean
+    # primes them as `foo'`), and `'` followed by a space has no word boundary,
+    # so a `\b` silently makes the whole declaration unsplittable.  Use a
+    # negative lookahead over identifier characters instead.
+    m = re.search(r"(?m)^theorem\s+" + re.escape(name) + r"(?![A-Za-z0-9_'.!?])", txt)
     if not m:
         return f"cannot split formal_statement from {path}"
     preamble = txt[:m.start()].rstrip()
@@ -512,9 +815,12 @@ def do_wave_thm(st, item, slug):
                              "reused_status": tstatus}
         log(f"{item}: REUSING existing {tname} ({tstatus}) {tid}")
         return None
+    title = clamp_title(meta["title"])
+    if title != meta["title"]:
+        log(f"{item}: title clamped to {len(title)} chars (server limit {TITLE_LIMIT})")
     r = api("POST", "submit-problem", {
         "theorem_name": name,
-        "theorem_title": meta["title"],
+        "theorem_title": title,
         "formal_statement": formal,
         "preamble": preamble,
         "natural_language_statement": meta["nl"],
@@ -532,7 +838,11 @@ def do_wave_thm(st, item, slug):
                 return None
         return f"submit-problem rejected: {errtxt}"
     st["items"][item]["job_id"] = jobs[0]["job_id"]
+    st["items"][item]["job_src"] = file_stamp(path)
     save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[jobs[0]["job_id"]] = (item, "publish")
+        return SUBMITTED
     p = poll_job(jobs[0]["job_id"])
     if p.get("status") == "PUBLISHED":
         st["items"][item] = {"status": "done", "theorem_id": p.get("theorem_id")}
@@ -556,26 +866,89 @@ def sol_explanation(slug, meta):
     return base
 
 
+def theorem_status(tid):
+    """Platform status of a node (`Proved` / `Open` / `Definition`); None if unknown."""
+    return (api("GET", f"theorems/{tid}") or {}).get("status")
+
+
+def file_stamp(path):
+    """Content stamp of a submission's source file.  A verdict describes the exact
+    revision that was submitted, so a re-poll is only meaningful while the file is
+    unchanged."""
+    try:
+        with open(path, "rb") as fh:
+            return hashlib.sha1(fh.read()).hexdigest()[:16]
+    except OSError:
+        return None
+
+
 def do_wave_sol(st, item, slug):
     meta = WAVE_THMS[slug]
+    # A submission left compiling by an earlier chunk must be re-polled, never
+    # re-submitted: a proof check takes minutes, so without this guard every run
+    # would post a duplicate submission for the same node.
+    path = f"{WS}/Solutions/Sol_{slug}.lean"
+    rec = st["items"].get(item, {})
+    if rec.get("submission_id"):
+        stamp = file_stamp(path)
+        if rec.get("submission_src") in (None, stamp):
+            if PIPELINE_MODE:
+                INFLIGHT[rec["submission_id"]] = (item, "verify")
+                return SUBMITTED
+            terminal, err = _apply_verify_verdict(
+                api("GET", "verify", params={"submission_id": rec["submission_id"]}))
+            if not terminal:
+                return "verify still in flight"
+            if err is None:
+                st["items"][item] = {"status": "done", "submission_id": rec["submission_id"]}
+                return None
+            # The submission is finished (and failed): drop its id so a later retry
+            # builds a fresh submission instead of re-reading this dead verdict.
+            rec.pop("submission_id", None)
+            rec.pop("submission_src", None)
+            return err
+        # The recorded submission was made from an earlier revision of this file
+        # (it has been fixed since), so its verdict describes a proof that no
+        # longer exists.  Re-reading it would report an obsolete error as a
+        # failure of the current proof and spend one of the five attempts doing
+        # it, so drop it and submit the current revision instead.
+        log(f"{item}: recorded verdict predates the current solution file — resubmitting")
+        rec.pop("submission_id", None)
+        rec.pop("submission_src", None)
     thm = st["items"].get(f"thm:{slug}", {})
     tid = thm.get("theorem_id")
     if thm.get("status") != "done" or not tid:
         return "theorem not published yet"
+    # A skip must not replace the record wholesale: the plan only needs
+    # `status: done`, but the record is also the evidence of which submission
+    # proved the node (the platform's `/users/<uid>` solved list is the count of
+    # our verified proofs, and a dropped submission_id makes our own work look
+    # like someone else's).  Mutate in place so `submission_id` survives.
     if thm.get("reused_status") == "Proved":
-        st["items"][item] = {"status": "done", "skipped": "theorem already Proved on platform"}
+        rec = st["items"].setdefault(item, {})
+        rec.update({"status": "done", "theorem_id": tid,
+                    "skipped": "theorem already Proved on platform"})
         return None
-    path = f"{WS}/Solutions/Sol_{slug}.lean"
+    # Dedupe rule (b): an already-Proved node needs no solution; resolving this
+    # lazily costs one GET and saves a whole submission.
+    if theorem_status(tid) == "Proved":
+        rec = st["items"].setdefault(item, {})
+        rec.update({"status": "done", "theorem_id": tid, "reused": True,
+                    "reused_status": "Proved",
+                    "skipped": "theorem already Proved on platform"})
+        return None
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
     explanation = sol_explanation(slug, meta)
+    left = budget_left()
+    post_timeout = 90 if left is None else max(5.0, min(90.0, left))
     r = subprocess.run(["curl", "-s", "-X", "POST", f"{API}/verify",
                         "-H", f"Authorization: Bearer {token()}",
                         "-F", f"theorem_id={tid}",
                         "-F", f"file=@{path}",
                         "-F", f"explanation={explanation}"],
-                       capture_output=True, text=True, timeout=90)
+                       capture_output=True, text=True, timeout=post_timeout)
     try:
         resp = json.loads(r.stdout)
     except ValueError:
@@ -583,6 +956,15 @@ def do_wave_sol(st, item, slug):
     sid = resp.get("submission_id")
     if not sid:
         return f"verify rejected: {r.stdout[:200]}"
+    # Record the id before polling in both modes: a proof check outlives any
+    # chunk, so a timeout would otherwise discard the id and re-submit a
+    # duplicate verification on the next run.
+    st["items"][item]["submission_id"] = sid
+    st["items"][item]["submission_src"] = file_stamp(path)
+    save_state(st)
+    if PIPELINE_MODE:
+        INFLIGHT[sid] = (item, "verify")
+        return SUBMITTED
     deadline = time.time() + JOB_TIMEOUT
     while time.time() < deadline:
         time.sleep(10)
@@ -597,29 +979,629 @@ def do_wave_sol(st, item, slug):
 
 
 def do_def(st, item):
+    # The dispatch boundary is where a chunk's wall-clock budget must turn into a
+    # WAIT: an item that never reached the platform has not failed, so it must
+    # not spend one of the 5 attempts (BUDGET_WAIT is in TRANSIENT_ERRORS).
+    if over_budget():
+        return BUDGET_WAIT
     name = item.partition(":")[2]
-    if name in WAVE_DEFS:
-        return do_wave_def(st, item, name)
-    return _do_legacy_def(st, item)
+    try:
+        if name in WAVE_DEFS:
+            return do_wave_def(st, item, name)
+        return _do_legacy_def(st, item)
+    except BudgetExceeded:
+        return BUDGET_WAIT
 
 
 def do_thm(st, item, name):
-    if name in WAVE_THMS:
-        return do_wave_thm(st, item, name)
-    return _do_legacy_thm(st, item, name)
+    if over_budget():
+        return BUDGET_WAIT
+    try:
+        if name in WAVE_THMS:
+            return do_wave_thm(st, item, name)
+        return _do_legacy_thm(st, item, name)
+    except BudgetExceeded:
+        return BUDGET_WAIT
 
 
 def do_sol(st, item, name):
-    if name in WAVE_THMS:
-        return do_wave_sol(st, item, name)
-    return _do_legacy_sol(st, item, name)
+    if over_budget():
+        return BUDGET_WAIT
+    try:
+        if name in WAVE_THMS:
+            return do_wave_sol(st, item, name)
+        return _do_legacy_sol(st, item, name)
+    except BudgetExceeded:
+        return BUDGET_WAIT
 
 
-def main():
+# --------------------------------------------------------------------------
+# Operator entry points: --check (platform access), --status (plan vs state),
+# --sync (platform reconciliation), --max-items/--max-seconds (bounded chunks)
+# --------------------------------------------------------------------------
+
+SKILL_FILE = os.path.join(WS, "SKILL.md")
+
+
+def skill_version():
+    try:
+        txt = open(SKILL_FILE, encoding="utf-8").read()
+    except OSError:
+        return "unknown"
+    m = re.search(r'version:\s*"([^"]+)"', txt)
+    return m.group(1) if m else "unknown"
+
+
+def auth_probe():
+    """Exchange the API key for a 1-hour access token.  (ok, version, detail)."""
+    try:
+        r = subprocess.run(["curl", "-s", "-X", "POST", f"{API}/agent/refresh",
+                            "-H", "Content-Type: application/json",
+                            "-d", json.dumps({"api_key": api_key()})],
+                           capture_output=True, text=True, timeout=30)
+    except Exception as e:  # operator-facing diagnostics
+        return False, None, f"{type(e).__name__}: {e}"
+    try:
+        body = json.loads(r.stdout)
+    except ValueError:
+        return False, None, (r.stdout or r.stderr or "empty response")[:200]
+    if not body.get("access_token"):
+        return False, None, json.dumps(body)[:200]
+    _token["v"], _token["t"] = body["access_token"], time.time()
+    return True, body.get("version"), ""
+
+
+def _list_of(payload):
+    """Items of a list-envelope response.  The platform has shipped several
+    envelope keys (`publish_jobs` in 0.10.x, `jobs`/`theorems` earlier), so
+    accept any list value rather than trusting one name — a changed envelope
+    would otherwise look like an empty account."""
+    if isinstance(payload, list):
+        return payload
+    if isinstance(payload, dict):
+        for key in ("publish_jobs", "jobs", "theorems", "items", "data", "results"):
+            v = payload.get(key)
+            if isinstance(v, list):
+                return v
+        for v in payload.values():
+            if isinstance(v, list):
+                return v
+    return []
+
+
+def _paged(endpoint, params, limit=100, max_pages=100):
+    """Walk a paginated list endpoint; caps at max_pages and reports nothing itself."""
+    out = []
+    for page in range(max_pages):
+        p = dict(params)
+        p["limit"], p["offset"] = str(limit), str(page * limit)
+        items = _list_of(api("GET", endpoint, params=p))
+        out.extend(items)
+        if len(items) < limit:
+            break
+    return out
+
+
+def platform_jobs():
+    """Newest publish job per theorem_name, from the owner's job history."""
+    jobs = {}
+    for kind in ("definition", "problem"):
+        page = _paged("publish-jobs", {"kind": kind})
+        for j in page:
+            name = j.get("theorem_name")
+            if not name:
+                continue
+            prev = jobs.get(name)
+            if prev is None or j.get("status") == "PUBLISHED":
+                jobs[name] = j
+        log(f"sync: read {len(page)} {kind} publish job(s)")
+    return jobs
+
+
+def sync_state(st):
+    """Append-only reconciliation with the platform (publish jobs are the source
+    of truth, §3): mark plan items the platform already holds as done so a chunk
+    never re-submits an existing node.  Never downgrades an existing record."""
+    jobs = platform_jobs()
+    added = 0
+    for item in ORDER:
+        if st["items"].get(item, {}).get("status") == "done":
+            continue
+        kind, _, name = item.partition(":")
+        if kind == "def":
+            j = jobs.get(name)
+        elif kind == "thm":
+            j = jobs.get((WAVE_THMS.get(name) or {}).get("name", name))
+        else:
+            continue  # solutions have no publish job; do_wave_sol resolves them
+        if j and j.get("status") == "PUBLISHED":
+            st["items"][item] = {"status": "done", "job_id": j.get("id"),
+                                 "reused": True, "reused_status": "published",
+                                 "synced_from": "publish-jobs"}
+            if kind == "def":
+                st["items"][item]["def_id"] = j.get("theorem_id")
+            else:
+                st["items"][item]["theorem_id"] = j.get("theorem_id")
+            added += 1
+    # A solution has no publish job, but a node the platform reports as `Proved`
+    # already carries a verified proof — there is nothing left to submit for it.
+    # `do_wave_sol` skips such a node when it reaches it, so recording it here
+    # only makes the backlog honest instead of waiting for a chunk to discover
+    # the same fact one item at a time.  Resolved by theorem_id, never by name:
+    # the theorem catalogue is global and names collide across accounts.
+    solved = 0
+    checked = 0
+    for item in ORDER:
+        if not item.startswith("sol:"):
+            continue
+        if st["items"].get(item, {}).get("status") == "done":
+            continue
+        if over_budget():
+            log(f"sync: wall-clock budget reached after {checked} pending solution(s); "
+                f"re-run to finish reconciling")
+            break
+        checked += 1
+        if checked % 25 == 0:
+            # One GET per pending solution: without this the reconcile looks
+            # hung for a minute on a large backlog.
+            log(f"sync: checked {checked} pending solution(s), {solved} already Proved")
+        tid = (st["items"].get(f"thm:{item.partition(':')[2]}") or {}).get("theorem_id")
+        if tid and theorem_status(tid) == "Proved":
+            # Carry a recorded submission_id across the reconciliation: it is the
+            # link between this plan item and the proof the platform credits us
+            # for, and replacing the record wholesale dropped it.
+            prev = st["items"].get(item) or {}
+            rec = {"status": "done", "theorem_id": tid,
+                   "reused": True, "reused_status": "Proved",
+                   "skipped": "theorem already Proved on platform",
+                   "synced_from": "theorems"}
+            for k in ("submission_id", "submission_src", "platform_solver_submission"):
+                if prev.get(k):
+                    rec[k] = prev[k]
+            st["items"][item] = rec
+            solved += 1
+    save_state(st)
+    log(f"sync: marked {added} already-published item(s) and {solved} "
+        f"already-proved solution(s) done")
+    return added + solved
+
+
+def missing_sources():
+    """ORDER items whose Lean source is absent from THIS checkout."""
+    miss = {}
+    for c, m in WAVE_DEFS.items():
+        p = resolve_path(m["file"])
+        if not os.path.exists(p):
+            miss[f"def:{c}"] = p
+    for s, m in WAVE_THMS.items():
+        p = resolve_path(m["file"])
+        if not os.path.exists(p):
+            miss[f"thm:{s}"] = p
+        elif not os.path.exists(f"{WS}/Solutions/Sol_{s}.lean"):
+            miss[f"sol:{s}"] = f"{WS}/Solutions/Sol_{s}.lean"
+    return miss
+
+
+def plan_progress(st, miss=(), kinds=None):
+    in_plan = set(ORDER)
+    recs = st["items"]
+    if kinds:
+        in_plan = {i for i in in_plan if i.partition(":")[0] in kinds}
+    by_kind = {}
+    for i in in_plan:
+        if i in miss or recs.get(i, {}).get("status") in ("done", "failed"):
+            continue
+        k = i.partition(":")[0]
+        by_kind[k] = by_kind.get(k, 0) + 1
+    return {
+        "in_plan": len(in_plan),
+        "done": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "done"),
+        "failed": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "failed"),
+        "pending": sum(by_kind.values()),
+        "pending_by_kind": by_kind,
+        "orphans": len(recs) - len(set(recs) & set(ORDER)),
+    }
+
+
+def cmd_check():
+    ok, version, detail = auth_probe()
+    if not ok:
+        print("platform access: FAILED")
+        print(f"  detail: {detail}")
+        print("  need:   PROVE2ME_API_KEY in the host environment (Settings -> Environment),")
+        print("          or credentials.json at the workspace root: {\"api_key\": \"...\"}")
+        return 2
+    me = api("GET", "me") or {}
+    print("platform access: OK")
+    print(f"  workspace       : {WS}")
+    print(f"  skill / platform: {skill_version()} / {version}")
+    print(f"  account         : {me.get('username') or me.get('name') or me.get('id')}")
+    for kind in ("definition", "problem"):
+        jobs = _paged("publish-jobs", {"kind": kind}, limit=100, max_pages=60)
+        counts = {}
+        for j in jobs:
+            counts[j.get("status")] = counts.get(j.get("status"), 0) + 1
+        print(f"  publish-jobs[{kind}]: {len(jobs)} read, {counts}")
+        if not jobs:
+            print(f"    (envelope: {json.dumps(api('GET', 'publish-jobs', params={'kind': kind, 'limit': '1'}))[:200]})")
+    return 0
+
+
+def cmd_status():
     st = load_state()
     st.setdefault("items", {})
-    pending = 0
+    miss = missing_sources()
+    p = plan_progress(st, miss)
+    print(f"plan : {p['in_plan']} items ({len(WAVE_DEFS)} defs, "
+          f"{len(WAVE_THMS)} thms, {len(WAVE_THMS)} sols)")
+    print(f"state: {p['done']} done / {p['pending']} pending / {p['failed']} failed"
+          + (f" ({p['orphans']} orphans ignored)" if p["orphans"] else ""))
+    print(f"pending by kind: {p['pending_by_kind']}")
+    nxt = [i for i in ORDER if i not in miss
+           and st["items"].get(i, {}).get("status") not in ("done", "failed")][:8]
+    print(f"next : {', '.join(nxt) if nxt else '(nothing pending)'}")
+    if miss:
+        chaps = sorted({k.split(":", 1)[1].split("_")[1] for k in miss if "_" in k})
+        print(f"missing local sources: {len(miss)} item(s), e.g. {', '.join(list(miss)[:3])}")
+        if chaps:
+            print(f"  chapters: {', '.join(chaps[:6])}")
+    if SKIP_LOCAL_COMPILE:
+        print("local Lean gate: SKIPPED (PROVE2ME_SKIP_LOCAL_COMPILE=1) - the platform compiles")
+    elif not os.path.exists(LAKE_BIN):
+        print(f"local Lean gate: UNAVAILABLE ({LAKE_BIN}) - submissions skip the local "
+              "gate and the platform compiler is the oracle; install a toolchain or "
+              "set PROVE2ME_SKIP_LOCAL_COMPILE=1 to silence this")
+    return 0
+
+
+def published_defs():
+    """Names with a PUBLISHED definition job.  A def bundle is only allowed to
+    import defs that are already published (§2), so this is the preflight set."""
+    defs = {n for n, j in platform_jobs().items()
+            if j.get("kind") == "definition" and j.get("status") == "PUBLISHED"}
+    if not defs:
+        # An empty catalogue means the read failed, not that nothing is
+        # published.  The preflight is truthiness-gated (`if published:`), so an
+        # empty set silently disables it and every item importing an unpublished
+        # bundle would be submitted anyway - a guaranteed server FAILED that
+        # spends one of the 5 attempts.  Refuse to run instead (`--no-preflight`
+        # is the explicit escape hatch).
+        raise RuntimeError(
+            "preflight could not read the published definition catalogue "
+            "(network/API failure): refusing to run with dependency checking off")
+    return defs
+
+
+def published_theorems():
+    """Names of theorems with ACCEPTED (Proved) status on the platform."""
+    jobs = platform_jobs()
+    return {n for n, j in jobs.items()
+            if j.get("kind") == "problem" and j.get("status") == "PUBLISHED"}
+
+
+def def_imports(path):
+    """`import Definitions.Def_X` names a source file depends on."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return [m[len("Definitions.Def_"):] for m in
+            re.findall(r"(?m)^import\s+(Definitions\.Def_\S+)", txt)]
+
+
+def thm_imports(path):
+    """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return [m[len("Theorems.Thm_"):].replace(".lean", "")
+            for m in re.findall(r"(?m)^import\s+(Theorems\.Thm_\S+)", txt)]
+
+
+def def_imports(path):
+    """`import Definitions.Def_X` names a source file depends on."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return [m[len("Definitions.Def_"):] for m in
+            re.findall(r"(?m)^import\s+(Definitions\.Def_\S+)", txt)]
+
+
+def item_source(item):
+    kind, _, name = item.partition(":")
+    if kind == "def":
+        m = WAVE_DEFS.get(name)
+        return resolve_path(m["file"]) if m else f"{PIPE}/def_timepiece_corrector.lean"
+    if kind == "thm":
+        m = WAVE_THMS.get(name)
+        return resolve_path(m["file"]) if m else thm_path(name)
+    return f"{WS}/Solutions/Sol_{name}.lean"
+
+
+def blocked_by(item, published):
+    """An unpublished def bundle this item imports, or None.  Submitting anyway
+    is a guaranteed server FAILED (§2), so the runner waits instead."""
+    for dep in def_imports(item_source(item)):
+        if dep not in published:
+            return dep
+    return None
+
+
+def cmd_dry_run(limit, kinds=None):
+    """Print the next `limit` items a bounded chunk would process.  No API
+    calls, no submissions, and state is never written."""
+    st = load_state()
+    st.setdefault("items", {})
+    miss = missing_sources()
+    shown = 0
     for item in ORDER:
+        if item in miss or st["items"].get(item, {}).get("status") == "done":
+            continue
+        if kinds and item.partition(":")[0] not in kinds:
+            continue
+        if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+            continue
+        name = item.partition(":")[2]
+        src = (WAVE_DEFS.get(name) or WAVE_THMS.get(name) or {}).get("file", "")
+        print(f"  {item:72s} {resolve_path(src) if src else '(legacy item)'}")
+        shown += 1
+        if shown >= limit:
+            break
+    print(f"dry run: {shown} item(s) shown, nothing submitted, state untouched")
+    return 0
+
+
+def _apply_publish_verdict(st, item, p):
+    """Map a publish-job payload to state.  Returns (terminal, err); a
+    non-terminal payload means the job is still compiling."""
+    status = (p or {}).get("status")
+    if status == "PUBLISHED":
+        field = "def_id" if item.startswith("def:") else "theorem_id"
+        st["items"][item] = {"status": "done",
+                             field: (p or {}).get("theorem_id") or (p or {}).get("id")}
+        return True, None
+    if status in ("FAILED", "ERROR"):
+        return True, f"publish {status}: {(p or {}).get('error_message', '')[:200]}"
+    return False, None
+
+
+def _apply_verify_verdict(p):
+    """Map a /verify submission payload to a verdict."""
+    status = (p or {}).get("status")
+    if status in ("ACCEPTED", "SKETCH_ACCEPTED", "Proved"):
+        return True, None
+    if status and status not in ("PENDING", "COMPILING"):
+        return True, f"verdict {status}: {(p or {}).get('error_message', '')[:200]}"
+    return False, None
+
+
+def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_seconds):
+    """Bounded chunk with several submissions in flight at once.
+
+    The server spends ~20-30 s compiling each submission, so the sequential
+    loop sleeps away most of every item's wall-clock.  Here `do_*` returns as
+    soon as the job is accepted and every in-flight job is polled in one round.
+    Verdict semantics are unchanged: `done` is only ever written on a terminal
+    PUBLISHED/ACCEPTED verdict, so a chunk that is cut off mid-drain leaves its
+    unfinished items `pending` with their job id, and the next run re-polls
+    them without consuming an attempt."""
+    global PIPELINE_MODE
+    INFLIGHT.clear()
+    started = time.time()
+    waiting = {}
+    processed = 0
+    exhausted = False
+    queue = iter(ORDER)
+
+    def fill():
+        # PIPELINE_MODE/INFLIGHT are module state the `do_*` handlers read; the
+        # assignment below must not bind a local.
+        global PIPELINE_MODE
+        nonlocal exhausted, processed
+        while len(INFLIGHT) < parallel:
+            if max_items and processed + len(INFLIGHT) >= max_items:
+                exhausted = True
+                return
+            if over_budget() or (max_seconds and time.time() - started >= max_seconds):
+                exhausted = True
+                return
+            item = next(queue, None)
+            if item is None:
+                exhausted = True
+                return
+            if item in miss:
+                continue
+            if kinds and item.partition(":")[0] not in kinds:
+                continue
+            if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+                continue
+            if published:
+                dep = blocked_by(item, published)
+                if dep:
+                    waiting[dep] = waiting.get(dep, 0) + 1
+                    continue
+            rec = st["items"].get(item, {"status": "pending", "attempts": 0})
+            st["items"][item] = rec
+            if rec["status"] == "done":
+                continue
+            if rec.get("attempts", 0) >= MAX_ATTEMPTS:
+                rec["status"] = "failed"
+                continue
+            kind, _, name = item.partition(":")
+            log(f"submitting {item} (attempt {rec['attempts'] + 1})")
+            PIPELINE_MODE = True
+            try:
+                if kind == "def":
+                    err = do_def(st, item)
+                elif kind == "thm":
+                    err = do_thm(st, item, name)
+                else:
+                    err = do_sol(st, item, name)
+            except Exception as e:
+                err = f"{type(e).__name__}: {e}"
+            finally:
+                PIPELINE_MODE = False
+            if err is None:
+                rec["status"] = "done"
+                processed += 1
+                log(f"{item}: DONE")
+            elif err == SUBMITTED:
+                log(f"{item}: accepted, waiting on the compiler")
+            elif is_transient(err):
+                # Waiting on a dependency or an in-flight job costs nothing and
+                # must not consume the chunk's item budget.
+                log(f"{item}: WAIT ({err[:150]})")
+            else:
+                rec["attempts"] = rec.get("attempts", 0) + 1
+                rec["error"] = err[:300]
+                processed += 1
+                log(f"{item}: FAIL ({err[:150]})")
+            save_state(st)
+
+    while True:
+        fill()
+        if not INFLIGHT:
+            if exhausted:
+                break
+            continue
+        if over_budget() or (max_seconds and time.time() - started >= max_seconds):
+            break
+        # One poll round over every in-flight job: no per-job sleep.
+        for ident, (item, channel) in list(INFLIGHT.items()):
+            try:
+                if channel == "publish":
+                    terminal, err = _apply_publish_verdict(
+                        st, item, api("GET", f"publish-jobs/{ident}", None))
+                else:
+                    terminal, err = _apply_verify_verdict(
+                        api("GET", "verify", params={"submission_id": ident}))
+                    if terminal and err is None:
+                        st["items"][item] = {"status": "done", "submission_id": ident}
+            except Exception as e:
+                log(f"{item}: poll error {type(e).__name__}: {e}")
+                continue
+            if not terminal:
+                continue
+            del INFLIGHT[ident]
+            processed += 1
+            rec = st["items"].setdefault(item, {"attempts": 0})
+            if err is None:
+                rec["status"] = "done"
+                log(f"{item}: DONE")
+            else:
+                # A terminal failure must not leave the dead job/submission id
+                # behind, or every later run would re-read this verdict and
+                # spend an attempt on it without submitting anything new.
+                rec.pop("submission_id", None)
+                rec.pop("job_id", None)
+                rec["status"] = "pending"
+                rec["attempts"] = rec.get("attempts", 0) + 1
+                rec["error"] = err[:300]
+                log(f"{item}: FAIL ({err[:150]})")
+            save_state(st)
+        if INFLIGHT:
+            if max_seconds and time.time() - started >= max_seconds:
+                break
+            time.sleep(POLL_INTERVAL)
+    p = plan_progress(st, miss, kinds)
+    log(f"summary: {p['done']} done, {p['pending']} pending, {p['failed']} failed"
+        + (f", {len(miss)} unsubmittable (source missing from this checkout)" if miss else "")
+        + (f" ({p['orphans']} out-of-order orphans ignored)" if p["orphans"] else ""))
+    if waiting:
+        log("waiting on unpublished def bundle(s): "
+            + ", ".join(f"{k} ({v} item(s))" for k, v in sorted(waiting.items())))
+    log(f"chunk: {processed} item(s) resolved in {time.time() - started:.0f}s"
+        + (f", {len(INFLIGHT)} still in flight (re-polled next run)" if INFLIGHT else ""))
+    return 0
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="Resumable prove2me upload pipeline (append-only state).")
+    ap.add_argument("--check", action="store_true",
+                    help="verify platform access with the API key and exit")
+    ap.add_argument("--status", action="store_true",
+                    help="print plan/state progress and exit")
+    ap.add_argument("--sync", action="store_true",
+                    help="reconcile state with the platform's publish jobs, then exit")
+
+    ap.add_argument("--max-items", type=int, default=0,
+                    help="process at most N items, then exit 0 (bounded chunk)")
+    ap.add_argument("--max-seconds", type=float, default=0,
+                    help="stop starting new items after S seconds")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="show the next items a chunk would take; submit nothing")
+    ap.add_argument("--kind", action="append", choices=["def", "thm", "sol"],
+                    help="restrict the run to these item kinds (repeatable); a "
+                         "blocked def bundle at the head of ORDER would otherwise "
+                         "starve everything behind it in a bounded chunk")
+    ap.add_argument("--job-timeout", type=int, default=0,
+                    help="per-item job poll ceiling in seconds (default 900; "
+                         "lower it so a bounded chunk returns cleanly)")
+    ap.add_argument("--only", action="append", default=None, metavar="SUBSTR",
+                    help="restrict the run to items whose name contains one of "
+                         "these substrings (repeatable); use to unblock a "
+                         "specific node that sits far down ORDER")
+    ap.add_argument("--parallel", type=int, default=1,
+                    help="pipelined mode: keep this many submissions in flight "
+                         "at once instead of polling each one to completion "
+                         "(in-flight items never consume an attempt)")
+    ap.add_argument("--no-preflight", action="store_true",
+                    help="do not skip items that import an unpublished def bundle")
+    args = ap.parse_args(argv)
+
+    if args.job_timeout:
+        globals()["JOB_TIMEOUT"] = args.job_timeout
+    kinds = set(args.kind) if args.kind else None
+    globals()["ONLY_ITEMS"] = args.only or None
+
+    if args.check:
+        return cmd_check()
+    if args.status:
+        return cmd_status()
+    if args.dry_run:
+        return cmd_dry_run(args.max_items or 10, kinds)
+
+    st = load_state()
+    st.setdefault("items", {})
+    if args.sync:
+        # Reconciliation only, exactly as documented: the sync is idempotent and
+        # must never fall through into the submit loop (that would spend an
+        # attempt per item on whatever the current toolchain situation is).
+        sync_state(st)
+        return 0
+
+    miss = missing_sources()
+    # Preflight: the platform only sees defs that are already published (§2), so
+    # anything importing an unpublished bundle is a guaranteed FAILED.  Waiting
+    # costs nothing; a wasted submission costs one of the 5 attempts.
+    published = set() if args.no_preflight else published_defs()
+    if args.parallel > 1:
+        return run_chunk_pipelined(st, miss, kinds, published, args.parallel,
+                                   args.max_items, args.max_seconds)
+    started = time.time()
+    processed = 0
+    waiting = {}
+    for item in ORDER:
+        if item in miss:
+            continue
+        if kinds and item.partition(":")[0] not in kinds:
+            continue
+        if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+            continue
+        if published:
+            dep = blocked_by(item, published)
+            if dep:
+                waiting[dep] = waiting.get(dep, 0) + 1
+                continue
+        if args.max_items and processed >= args.max_items:
+            log(f"bounded chunk: max-items {args.max_items} reached")
+            break
+        if args.max_seconds and time.time() - started >= args.max_seconds:
+            log(f"bounded chunk: max-seconds {args.max_seconds:g} reached")
+            break
         rec = st["items"].get(item, {"status": "pending", "attempts": 0})
         st["items"][item] = rec
         if rec["status"] == "done":
@@ -628,7 +1610,7 @@ def main():
             rec["status"] = "failed"
             continue
         kind, _, name = item.partition(":")
-        pending += 1
+        processed += 1
         log(f"processing {item} (attempt {rec['attempts'] + 1})")
         try:
             if kind == "def":
@@ -642,7 +1624,13 @@ def main():
         if err is None:
             rec["status"] = "done"
             log(f"{item}: DONE")
+        elif is_transient(err):
+            log(f"{item}: WAIT ({err[:150]}) - job in flight, no attempt consumed")
         else:
+            # Drop the finished (failed) job/submission id: keeping it would make
+            # the next run re-read the same verdict and spend an attempt on it.
+            rec.pop("submission_id", None)
+            rec.pop("job_id", None)
             rec["attempts"] = rec.get("attempts", 0) + 1
             rec["error"] = err[:300]
             log(f"{item}: FAIL ({err[:150]})")
@@ -650,15 +1638,18 @@ def main():
     # Only ORDER items count towards completion; orphan entries left over from
     # earlier waves (e.g. reset SirkFinitePrecision nodes already published on
     # the platform) must not keep the pipeline spinning.
-    in_order = set(ORDER)
-    n_done = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "done")
-    n_pend = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "pending")
-    n_fail = sum(1 for k, i in st["items"].items() if k in in_order and i["status"] == "failed")
-    n_orphan = len(st["items"]) - sum(1 for k in st["items"] if k in in_order)
-    log(f"summary: {n_done} done, {n_pend} pending, {n_fail} failed"
-        + (f" ({n_orphan} out-of-order orphans ignored)" if n_orphan else ""))
-    sys.exit(0 if n_pend == 0 else 1)
+    p = plan_progress(st, miss, kinds)
+    log(f"summary: {p['done']} done, {p['pending']} pending, {p['failed']} failed"
+        + (f", {len(miss)} unsubmittable (source missing from this checkout)" if miss else "")
+        + (f" ({p['orphans']} out-of-order orphans ignored)" if p["orphans"] else ""))
+    if waiting:
+        log("waiting on unpublished def bundle(s): "
+            + ", ".join(f"{k} ({v} item(s))" for k, v in sorted(waiting.items())))
+    if args.max_items or args.max_seconds:
+        log(f"chunk: {processed} item(s) processed in {time.time() - started:.0f}s")
+        return 0
+    return 0 if p["pending"] == 0 else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

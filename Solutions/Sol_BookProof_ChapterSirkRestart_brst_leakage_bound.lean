@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRestart
 import Theorems.Thm_BookProof_ChapterSirkRestart_restart_error_accumulation
 import Theorems.Thm_BookProof_ChapterSirkRestart_brst_leakage_zero_of_exact
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
 
 

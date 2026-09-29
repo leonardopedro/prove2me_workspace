@@ -4,6 +4,10 @@ import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_RitzCertificate_temple_band_mem
 import Theorems.Thm_BookProof_RitzCertificate_temple_width_tendsto_zero
 import Theorems.Thm_BookProof_RitzCertificate_nested_certificate_of_bands
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
 
 

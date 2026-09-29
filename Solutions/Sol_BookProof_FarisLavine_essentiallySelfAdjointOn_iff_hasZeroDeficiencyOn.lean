@@ -1,6 +1,10 @@
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.FarisLavine
 
 

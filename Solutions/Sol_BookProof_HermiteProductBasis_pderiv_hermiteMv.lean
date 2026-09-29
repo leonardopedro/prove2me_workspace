@@ -3,11 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_aeval_other
 import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteFactor_self
+import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_erase
 open BookProof.HermiteProductBasis
-
-
-
-
 
 
 

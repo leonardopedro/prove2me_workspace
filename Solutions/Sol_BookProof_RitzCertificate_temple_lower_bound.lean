@@ -4,6 +4,10 @@ import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_RitzCertificate_norm_apply_sq
 import Theorems.Thm_BookProof_RitzCertificate_re_inner_factor
 import Theorems.Thm_BookProof_RitzCertificate_factor_nonneg_of_separation
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
 
 

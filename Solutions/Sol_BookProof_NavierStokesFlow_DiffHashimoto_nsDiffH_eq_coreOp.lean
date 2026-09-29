@@ -3,13 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_coreOp_fieldPoly
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_half_cast
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_add
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_comp
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_smul
+import Theorems.Thm_BookProof_HermiteRelative_coreOp_sum
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

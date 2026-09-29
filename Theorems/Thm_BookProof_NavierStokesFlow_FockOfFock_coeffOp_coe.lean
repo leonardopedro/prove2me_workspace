@@ -3,18 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
-
-
-
-
-
-
-
-
-open FullEsa
-
-
-
+open BookProof.NavierStokesFlow.FullEsa
 variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.FockOfFock.coeffOp_coe (T : (ι → ℂ) → ι → ℂ) (hsupp) (hadd) (hsmul) (f : lpFiniteModes ι) :

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_total
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -14,7 +16,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

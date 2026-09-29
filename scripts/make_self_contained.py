@@ -28,8 +28,8 @@ import os
 import re
 import sys
 
-WS = "/home/leo/prove2me_workspace"
-PROJ = "/home/leo/Projects/timepiece"
+WS = os.environ.get("PROVE2ME_WS", "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace")
+PROJ = os.environ.get("TIMEPIECE_PROJ", "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece")
 OUT_DEF = f"{WS}/Definitions"
 PIPE = f"{WS}/pipeline"
 
@@ -109,23 +109,30 @@ def extract_definitions(leaf, namespaces):
     for ns, names in namespaces.items():
         # Map namespace to source leaf
         # BookProof.ChapterH4 -> ChapterH4
-        # BookProof.HashimotoShiftInvert -> HashimotoShiftInvert (but this is a chapter?)
-        # etc.
+        # BookProof.HashimotoShiftInvert -> HashimotoShiftInvert
+        # BookProof.ScalaronEsa -> ChapterScalaronEsa (file has Chapter prefix)
+        # BookProof.Starobinsky -> ChapterStarobinskyPotential
         
-        # Try direct mapping: BookProof.X -> ChapterX
-        if ns.startswith("Chapter"):
-            src_leaf = ns  # BookProof.ChapterH4 -> ChapterH4
-        else:
-            # BookProof.FarisLavine -> FarisLavine
-            src_leaf = ns
+        # Heuristic: if the namespace doesn't start with "Chapter" but the
+        # corresponding file would start with "Chapter", add the prefix
+        candidate = ns
+        if not ns.startswith("Chapter"):
+            test_file = src_path(candidate)
+            if not os.path.exists(test_file):
+                # Try with Chapter prefix
+                candidate = f"Chapter{candidate}"
+                test_file2 = src_path(candidate)
+                if not os.path.exists(test_file2):
+                    # Some namespaces map to files with a different suffix
+                    # e.g., BookProof.Starobinsky -> ChapterStarobinskyPotential
+                    pass
         
-        # Check if source exists
-        src_file = src_path(src_leaf)
+        src_file = src_path(candidate)
         if not os.path.exists(src_file):
             print(f"  WARNING: source {src_file} not found")
             continue
         
-        src = read_src(src_leaf)
+        src = read_src(candidate)
         
         # Find the namespace in the source
         # The source has `namespace BookProof.FarisLavine` or `namespace BookProof.ChapterH4`

@@ -4,25 +4,10 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 
 noncomputable section
-
-
-
-
-
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterH4.sia_error_bound
     (V : F →L[ℂ] E) (phiA psiX pX : E →L[ℂ] E) (psiB pB : F →L[ℂ] F)

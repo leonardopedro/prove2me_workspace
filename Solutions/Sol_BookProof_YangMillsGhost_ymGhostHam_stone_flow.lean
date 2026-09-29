@@ -4,18 +4,8 @@ import Definitions.Def_ChapterYangMillsGhostSector
 import Theorems.Thm_BookProof_YangMillsGhost_ghostCore_dense
 import Theorems.Thm_BookProof_YangMillsGhost_ymGhostHam_symmetricOn
 import Theorems.Thm_BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.YangMillsGhost
-
-
-
-
-
-
-
-
-
-
-
 
 
 

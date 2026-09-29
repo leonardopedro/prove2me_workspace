@@ -4,9 +4,7 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.CoreRep
 
-
-
-
+variable {d : ℕ}
 
 
 
@@ -17,56 +15,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
 
 set_option maxHeartbeats 1000000 in
 -- the `L²` coercions in the rewrite chain need more than the default budget

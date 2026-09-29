@@ -1,0 +1,10 @@
+BookProof/ChapterParityCustodial.lean:45:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityCustodial.lean:46:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParityCustodial.lean:50:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParityCustodial.lean:57:11: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterParityCustodial.lean:75:12: error: expected token
+

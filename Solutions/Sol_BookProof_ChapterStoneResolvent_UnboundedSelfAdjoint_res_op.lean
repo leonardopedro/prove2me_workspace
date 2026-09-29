@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterStoneResolvent
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res
+import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 

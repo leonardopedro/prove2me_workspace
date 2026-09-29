@@ -1,6 +1,14 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.numRange_subset_closedBall_of_shiftInvertC
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Theorems.Thm_BookProof_ChapterH9_numRange_subset_closedBall
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
 open BookProof.ChapterSirkSpectralGeometry
 
 

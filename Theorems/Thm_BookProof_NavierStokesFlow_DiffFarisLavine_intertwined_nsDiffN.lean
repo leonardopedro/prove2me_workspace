@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesDiffFarisLavine.lean — theorem BookProof.NavierStokesFlow.DiffFarisLavine.intertwined_nsDiffN
 import Mathlib
-import Definitions.Def_ChapterNavierStokesDiffFarisLavine
+import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDiffFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.NavierStokesFlow

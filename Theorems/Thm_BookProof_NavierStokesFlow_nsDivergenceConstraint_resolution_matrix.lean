@@ -4,56 +4,7 @@ import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesFlow
 
 
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
-
-
-
-
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (L : LagrangianNS n)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
 
 theorem BookProof.NavierStokesFlow.nsDivergenceConstraint_resolution_matrix (U11 U22 U33 : Matrix (Fin n) (Fin n) ℂ)
     (h : U33 = -(U11 + U22)) : U11 + U22 + U33 = 0 := by sorry

@@ -5,13 +5,6 @@ open BookProof.ChapterH4
 
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 

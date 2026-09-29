@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_RitzCertificate_temple_lower_bound
 import Theorems.Thm_BookProof_RitzCertificate_sInf_spectrum_le_rayleigh
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
 
 

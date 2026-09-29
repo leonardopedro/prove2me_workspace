@@ -1,6 +1,8 @@
 -- Generated from ChapterFriedrichsFormGap.lean — theorem BookProof.FriedrichsFormGap.friedrichs_quadForm_lower_bound
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsFormGap
 
 

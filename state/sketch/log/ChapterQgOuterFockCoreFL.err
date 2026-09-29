@@ -1,0 +1,216 @@
+BookProof/ChapterQgOuterFockCoreFL.lean:49:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:50:5: error: unknown namespace `BookProof.DirectSumEsa`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:51:5: error: unknown namespace `BookProof.QgOuterFock`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:52:5: error: unknown namespace `BookProof.QgOuterFockFL`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:53:5: error: unknown namespace `BookProof.YangMillsFriedrichs`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:54:5: error: unknown namespace `BookProof.EsaClosure`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:55:5: error: unknown namespace `BookProof.QgHermiteOscillator`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:56:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:57:5: error: unknown namespace `Filter`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:65:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:68:40: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:72:16: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:71:35: error(lean.unknownIdentifier): Unknown identifier `Comparison`
+
+Note: It is not possible to treat `Comparison` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:76:56: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:84:54: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:92:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:91:31: error(lean.unknownIdentifier): Unknown identifier `Comparison`
+
+Note: It is not possible to treat `Comparison` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:104:27: error(lean.unknownIdentifier): Unknown identifier `Comparison`
+
+Note: It is not possible to treat `Comparison` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:106:10: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:107:41: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:113:28: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:115:33: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:117:24: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:119:34: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:121:48: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:123:37: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:125:52: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:127:63: error: unexpected identifier; expected 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_initialize', 'class', 'coinductive', 'declare_syntax_cat', 'def', 'elab', 'elab_rules', 'example', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'structure', 'syntax', 'tactic_extension' or 'theorem'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:135:18: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:138:14: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:137:35: error(lean.invalidField): Invalid field `C₀`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C₀`, so it is not possible to project the field `C₀` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:141:22: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:144:18: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:143:39: error(lean.invalidField): Invalid field `C₀`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C₀`, so it is not possible to project the field `C₀` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:147:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:146:30: error(lean.unknownIdentifier): Unknown identifier `Function.Injective`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:155:16: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:158:3: error: unknown tactic
+
+BookProof/ChapterQgOuterFockCoreFL.lean:157:26: error(lean.unknownIdentifier): Unknown identifier `Dense`
+
+Note: It is not possible to treat `Dense` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:173:31: error(lean.unknownIdentifier): Unknown identifier `DenseRange`
+
+Note: It is not possible to treat `DenseRange` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:174:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOuterFockCoreFL.lean:178:38: error(lean.unknownIdentifier): Unknown identifier `IsUniformInducing`
+
+Note: It is not possible to treat `IsUniformInducing` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:182:21: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:182:18: error(lean.invalidField): Invalid field `C₀`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C₀`, so it is not possible to project the field `C₀` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:185:79: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:185:37: error(lean.invalidField): Invalid field `C₀`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C₀`, so it is not possible to project the field `C₀` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:189:31: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:191:46: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:199:32: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:199:20: error(lean.invalidField): Invalid field `coreRange`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.coreRange`, so it is not possible to project the field `coreRange` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:201:30: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:205:17: error: unexpected token '['; expected ':=', 'where' or '|'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:207:25: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:214:19: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:216:42: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:216:25: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:219:59: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:219:24: error(lean.invalidField): Invalid field `C₀`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C₀`, so it is not possible to project the field `C₀` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:229:36: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:240:20: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:239:17: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:242:72: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:242:25: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:246:4: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:250:4: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:253:51: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:258:3: error: unknown tactic
+
+BookProof/ChapterQgOuterFockCoreFL.lean:256:29: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:264:3: error: unknown tactic
+
+BookProof/ChapterQgOuterFockCoreFL.lean:262:32: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:268:33: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:270:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOuterFockCoreFL.lean:275:24: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:274:25: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:280:61: error: expected token
+
+BookProof/ChapterQgOuterFockCoreFL.lean:279:27: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:286:7: error: unexpected identifier; expected '|'
+
+BookProof/ChapterQgOuterFockCoreFL.lean:285:32: error(lean.unknownIdentifier): Unknown identifier `SymmetricOn`
+
+Note: It is not possible to treat `SymmetricOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockCoreFL.lean:300:36: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:303:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOuterFockCoreFL.lean:312:32: error(lean.invalidField): Invalid field `C`: The environment does not contain `BookProof.QgOuterFockCoreFL.CoreData.C`, so it is not possible to project the field `C` from an expression
+  d
+of type `CoreData F`
+
+BookProof/ChapterQgOuterFockCoreFL.lean:314:2: error: unexpected token 'have'; expected command
+
+BookProof/ChapterQgOuterFockCoreFL.lean:320:24: error: unexpected token '|'; expected term
+
+BookProof/ChapterQgOuterFockCoreFL.lean:341:84: error: expected token
+

@@ -1,0 +1,46 @@
+BookProof/ChapterParityZ4.lean:38:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityZ4.lean:42:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParityZ4.lean:43:5: error: unknown namespace `BookProof.ChapterParityQL`
+
+BookProof/ChapterParityZ4.lean:44:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterParityZ4.lean:51:2: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+BookProof/ChapterParityZ4.lean:51:27: error: expected token
+
+BookProof/ChapterParityZ4.lean:56:35: error(lean.unknownIdentifier): Unknown identifier `FieldOps`
+
+Note: It is not possible to treat `FieldOps` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityZ4.lean:64:19: error: expected token
+
+BookProof/ChapterParityZ4.lean:64:4: error(lean.unknownIdentifier): Unknown identifier `combinedParity`
+
+Note: It is not possible to treat `combinedParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityZ4.lean:70:50: error: expected token
+
+BookProof/ChapterParityZ4.lean:70:35: error(lean.unknownIdentifier): Unknown identifier `combinedParity`
+
+Note: It is not possible to treat `combinedParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityZ4.lean:75:49: error: expected token
+
+BookProof/ChapterParityZ4.lean:75:34: error(lean.unknownIdentifier): Unknown identifier `combinedParity`
+
+Note: It is not possible to treat `combinedParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityZ4.lean:81:19: error: expected token
+
+BookProof/ChapterParityZ4.lean:81:4: error(lean.unknownIdentifier): Unknown identifier `combinedParity`
+
+Note: It is not possible to treat `combinedParity` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityZ4.lean:86:56: error: expected token
+
+BookProof/ChapterParityZ4.lean:86:33: error(lean.unknownIdentifier): Unknown identifier `orderOf`
+
+Note: It is not possible to treat `orderOf` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

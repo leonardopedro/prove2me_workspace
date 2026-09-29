@@ -1,0 +1,34 @@
+BookProof/ChapterMajoranaProp61.lean:48:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterMajoranaProp61.lean:57:49: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp61.lean:64:4: error(lean.unknownIdentifier): Unknown constant `lcAny`
+
+BookProof/ChapterMajoranaProp61.lean:64:29: error: unexpected token '*'; expected command
+
+BookProof/ChapterMajoranaProp61.lean:68:4: error(lean.unknownIdentifier): Unknown constant `lcAny`
+
+BookProof/ChapterMajoranaProp61.lean:68:38: error: unexpected token '*'; expected command
+
+BookProof/ChapterMajoranaProp61.lean:72:15: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp61.lean:85:0: error: invalid 'include', variable `hU₁` has not been declared in the current scope
+
+BookProof/ChapterMajoranaProp61.lean:93:28: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterMajoranaProp61.lean:93:4: error(lean.unknownIdentifier): Unknown identifier `star`
+
+Note: It is not possible to treat `star` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterMajoranaProp61.lean:129:21: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterMajoranaProp61.lean:129:19: error(lean.unknownIdentifier): Unknown identifier `Ni`
+
+Note: It is not possible to treat `Ni` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterMajoranaProp61.lean:149:6: error(lean.unknownIdentifier): Unknown identifier `StarModule`
+
+BookProof/ChapterMajoranaProp61.lean:152:24: error(lean.unknownIdentifier): Unknown identifier `IsUnit`
+
+Note: It is not possible to treat `IsUnit` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

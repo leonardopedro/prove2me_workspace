@@ -4,11 +4,6 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.velocityOp_apply (v : LinfZ) (f : L2Z) (k : ℤ) :

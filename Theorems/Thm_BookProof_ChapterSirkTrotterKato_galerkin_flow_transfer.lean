@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — theorem BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Theorems.Thm_BookProof_HermiteGalerkin_isSelfAdjoint_galerkinCompression
 open BookProof.ChapterSirkTrotterKato
 
 

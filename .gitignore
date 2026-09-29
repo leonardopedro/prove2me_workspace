@@ -1,5 +1,8 @@
 # Credentials — never commit tokens
 credentials.json
+.env
+.env.*
+!.env.example
 
 # Local Lean project files (agent-local, environment-specific; see references/lean-setup.md)
 lean-toolchain
@@ -12,6 +15,21 @@ lake-manifest.json
 # OS noise
 .DS_Store
 
+# Lean anonymous-name artefacts (e.g. `?m.18`), written at the workspace root
+\?m.*
+
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Regenerable platform-catalogue cache (57 MB; rebuild with
+# `python3 debug/find_duplicates.py --reset --index`). See PIPELINE_PLAN.md §1n.
+state/platform_index.jsonl
+state/platform_index.meta.json
+state/*
+# …but the two versioned doc-index JSONs are committed artifacts
+# (typos index discipline): fresh checkouts must pass `--check`.
+!state/doc_index.json
+!state/references_index.json
+credentials.json
+/.lake

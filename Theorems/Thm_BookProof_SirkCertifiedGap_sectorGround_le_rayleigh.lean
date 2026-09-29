@@ -3,13 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertifiedGap
 
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 
 noncomputable section

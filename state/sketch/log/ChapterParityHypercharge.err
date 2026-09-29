@@ -1,0 +1,42 @@
+BookProof/ChapterParityHypercharge.lean:51:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParityHypercharge.lean:52:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParityHypercharge.lean:56:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterParityHypercharge.lean:62:53: error: expected token
+
+BookProof/ChapterParityHypercharge.lean:62:24: error(lean.unknownIdentifier): Unknown identifier `mgamma5`
+
+Note: It is not possible to treat `mgamma5` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHypercharge.lean:67:39: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHypercharge.lean:68:19: error: expected token
+
+BookProof/ChapterParityHypercharge.lean:71:39: error: expected token
+
+BookProof/ChapterParityHypercharge.lean:71:26: error(lean.unknownIdentifier): Unknown identifier `hyperPhase`
+
+Note: It is not possible to treat `hyperPhase` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHypercharge.lean:78:16: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityHypercharge.lean:78:4: error(lean.unknownIdentifier): Unknown identifier `hyperPhase`
+
+Note: It is not possible to treat `hyperPhase` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHypercharge.lean:87:49: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityHypercharge.lean:87:37: error(lean.unknownIdentifier): Unknown identifier `hyperPhase`
+
+Note: It is not possible to treat `hyperPhase` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParityHypercharge.lean:91:46: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParityHypercharge.lean:91:34: error(lean.unknownIdentifier): Unknown identifier `hyperPhase`
+
+Note: It is not possible to treat `hyperPhase` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

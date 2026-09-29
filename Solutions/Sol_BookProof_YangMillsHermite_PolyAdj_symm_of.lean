@@ -2,12 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_add
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
 open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.PolyAdj
-
-
-
-
 
 
 

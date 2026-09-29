@@ -12,41 +12,11 @@ open BookProof.HermiteBand
 
 
 
-
-
-
-
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) : IsBand1 (mulXPoly i) := by

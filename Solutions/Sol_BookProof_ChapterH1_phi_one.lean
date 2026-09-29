@@ -6,10 +6,6 @@ open BookProof.ChapterH1
 
 
 
-
-
-
-
 open scoped BigOperators
 open intervalIntegral
 

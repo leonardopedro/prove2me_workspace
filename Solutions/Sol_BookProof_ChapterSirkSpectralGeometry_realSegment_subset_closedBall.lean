@@ -1,6 +1,12 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.realSegment_subset_closedBall
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.ChapterSirkSpectralGeometry
 
 

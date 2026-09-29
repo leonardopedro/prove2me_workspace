@@ -1,6 +1,11 @@
 -- Generated from ChapterSirkEndToEnd.lean — solution of BookProof.ChapterSirkEndToEnd.sirk_flow_error_uniform_in_time
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
+import Theorems.Thm_BookProof_ChapterH6_sirk_error_tendsto_zero
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkEndToEnd
 
 

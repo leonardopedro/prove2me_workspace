@@ -7,18 +7,6 @@ open BookProof.SirkBandLedger
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 

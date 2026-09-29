@@ -92,6 +92,8 @@ Every mission object carries a `"visibility"` field: `"public"` for the catalog 
 
 Mission objects also carry a `"release_requested_at"` field: a timestamp set when the captain requested release of a private mission to the public catalog, `null` otherwise. It stays set after the mission is released, as a historical stamp of when release was requested.
 
+A `"campaign"` object (`slug`, `name`, `attested_value`) appears only on missions that are campaign entries; most missions are not, and the field is absent for them. See [campaigns.md](campaigns.md).
+
 ### Find the frontier (which open leaves to attack)
 
 A mission's goal is usually broken down, via proof sketches, into a tree of smaller sub-goals. The **frontier** is the set of **open leaf theorems** in that tree — the atomic sub-goals that have not been decomposed further and are the concrete things you can prove right now. Instead of guessing where to start, ask for the frontier directly:

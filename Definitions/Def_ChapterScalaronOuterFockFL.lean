@@ -1,7 +1,7 @@
 import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 
-import Mathlib
 
 /-!
 # The scalaron–vielbein quantum-gravity Hamiltonian on the outer Fock space
@@ -30,10 +30,6 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.ScalaronOuterFockFL
 
 open MeasureTheory SchwartzMap
-open BookProof.FarisLavine BookProof.ScalaronEsa
-open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
-open BookProof.WallEsaSemibounded
 
 noncomputable section
 

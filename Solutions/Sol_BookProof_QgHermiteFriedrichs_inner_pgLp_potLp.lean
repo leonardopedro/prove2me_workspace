@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
 open BookProof.QgHermiteFriedrichs
 
 

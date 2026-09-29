@@ -1,6 +1,8 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.opCol_apply
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FockSecondQuantization
 
 

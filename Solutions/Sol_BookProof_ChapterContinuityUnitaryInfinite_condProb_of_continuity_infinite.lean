@@ -6,69 +6,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {X : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : X → LinfZ) (t : ℝ) (psi : X → L2Z)

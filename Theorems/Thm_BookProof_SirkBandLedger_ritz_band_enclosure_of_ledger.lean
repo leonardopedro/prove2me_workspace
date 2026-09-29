@@ -5,59 +5,8 @@ open BookProof.SirkBandLedger
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.SirkBandLedger.ritz_band_enclosure_of_ledger [Nontrivial F] (A : F →L[ℂ] F)
     (hsa : IsSelfAdjoint A) (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re)

@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_hasZeroDeficiencyOn_of_eigenvectors
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-open BookProof.NavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
+open BookProof.NavierStokesFlow
 
 
 
@@ -14,7 +16,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
 
 
-open FullEsa
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

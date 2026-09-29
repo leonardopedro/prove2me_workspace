@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 
-
-
-
+variable {d : ℕ}
 
 
 
@@ -16,69 +14,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 theorem BookProof.YangMillsHermite.magOps_symmetricOn (Φ : CoreRep 99 D) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (m : Fin 24) :
     SymmetricOn D (D.subtype.comp (magOps Φ fabc m)) := by sorry

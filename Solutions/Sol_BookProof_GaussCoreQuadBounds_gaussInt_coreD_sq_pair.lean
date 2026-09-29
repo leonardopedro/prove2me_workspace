@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_coreD_comm
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_self
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD
 open BookProof.GaussCoreQuadBounds
 
 

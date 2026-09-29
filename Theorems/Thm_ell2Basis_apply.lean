@@ -7,7 +7,7 @@ open BookProof.ChapterHashimotoShiftInvert
 
 
 open Matrix
-open scoped ComplexConjugate
+open scoped ComplexConjugate lp
 
 
 variable {(k : ℕ) : (ell2Basis k : ℓ²(ℕ, ℂ)) = lp.single 2 k (1 : ℂ)}

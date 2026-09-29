@@ -1,21 +1,7 @@
+import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
-import Mathlib
-import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHermiteRelativeBound
-open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.YangMillsHermite
-open BookProof.FarisLavine
-open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.HermiteRelative
-open BookProof.FullQuadratic
-open BookProof.QuantumGravity3DGauge
-open BookProof.Qg3DGaugeEsa
-open BookProof.QgHermiteOscillator
-open BookProof.DirectSumEsa
-open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
-open BookProof.YangMillsHermite
 
 
 /-!
@@ -83,6 +69,17 @@ Everything in this module is `sorry`-free and `axiom`-free.
 
 namespace BookProof.QgOuterFock
 
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.YangMillsHermite
+open BookProof.FarisLavine
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HermiteRelative
+open BookProof.FullQuadratic
+open BookProof.QuantumGravity3DGauge
+open BookProof.Qg3DGaugeEsa
+open BookProof.QgHermiteOscillator
+open BookProof.DirectSumEsa
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 

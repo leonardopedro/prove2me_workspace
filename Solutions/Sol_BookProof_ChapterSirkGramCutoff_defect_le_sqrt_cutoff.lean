@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkGramCutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_norm_sub_proj_le_of_mem_range
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_dist_synthesis_retained_le
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_synthesis_single
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

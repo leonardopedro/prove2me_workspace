@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkRestart.lean — solution of BookProof.ChapterSirkRestart.norm_pow_apply_le_of_contraction
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
 
 

@@ -1,0 +1,22 @@
+BookProof/ChapterParitySU3.lean:50:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParitySU3.lean:51:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParitySU3.lean:55:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParitySU3.lean:59:61: error: expected token
+
+BookProof/ChapterParitySU3.lean:59:33: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU3.lean:65:59: error: expected token
+
+BookProof/ChapterParitySU3.lean:64:38: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU3.lean:77:15: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterParitySU3.lean:93:4: error: expected token
+

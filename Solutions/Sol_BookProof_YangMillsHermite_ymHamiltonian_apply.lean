@@ -1,11 +1,8 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.ymHamiltonian_apply
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 
@@ -17,69 +14,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d 99)}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 99 D) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (x : D) :

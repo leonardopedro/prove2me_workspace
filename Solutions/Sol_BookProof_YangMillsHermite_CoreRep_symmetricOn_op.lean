@@ -10,10 +10,6 @@ open BookProof.YangMillsHermite.CoreRep
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert
@@ -21,56 +17,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {D : Submodule ℂ (L2d d)}
 
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 1000000 in

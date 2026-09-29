@@ -4,16 +4,6 @@ import Definitions.Def_ChapterBaryonAsymmetry
 open BookProof.ChapterBaryonAsymmetry
 
 
-
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 theorem BookProof.ChapterBaryonAsymmetry.matterRadiationRatio_eq (ρm0 ρr0 a : ℝ) (ha : 0 < a) (hr : ρr0 ≠ 0) :

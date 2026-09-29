@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
 import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirkApprox_apply
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkEndToEnd
 
 

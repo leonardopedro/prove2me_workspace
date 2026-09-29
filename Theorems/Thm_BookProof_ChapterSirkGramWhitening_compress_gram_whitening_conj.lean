@@ -16,6 +16,7 @@ noncomputable section
 open scoped InnerProductSpace
 open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
+open BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

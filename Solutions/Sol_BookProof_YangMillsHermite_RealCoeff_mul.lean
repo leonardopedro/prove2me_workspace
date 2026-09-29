@@ -8,10 +8,6 @@ open BookProof.YangMillsHermite.RealCoeff
 
 
 
-
-
-
-
 open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert

@@ -1,0 +1,66 @@
+BookProof/ChapterElectroweakFieldStrength.lean:47:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterElectroweakFieldStrength.lean:51:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterElectroweakFieldStrength.lean:55:30: error: unexpected token 'if'; expected term
+
+BookProof/ChapterElectroweakFieldStrength.lean:55:17: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:65:47: error: expected token
+
+BookProof/ChapterElectroweakFieldStrength.lean:65:28: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:69:45: error: expected token
+
+BookProof/ChapterElectroweakFieldStrength.lean:69:26: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:74:13: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:83:13: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:92:12: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterElectroweakFieldStrength.lean:91:32: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:103:14: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:111:2: error: expected token
+
+BookProof/ChapterElectroweakFieldStrength.lean:110:34: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:117:12: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:116:42: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:123:3: error: unexpected token '-'; expected ')', '_', identifier or term
+
+BookProof/ChapterElectroweakFieldStrength.lean:122:36: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:128:6: error: expected token
+
+BookProof/ChapterElectroweakFieldStrength.lean:138:19: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:153:50: error: expected token
+
+BookProof/ChapterElectroweakFieldStrength.lean:170:12: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterElectroweakFieldStrength.lean:169:42: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterElectroweakFieldStrength.lean:175:48: error: expected token
+

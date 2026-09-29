@@ -5,13 +5,6 @@ open BookProof.RitzMinMax
 
 
 
-
-
-
-
-
-
-
 noncomputable section
 
 

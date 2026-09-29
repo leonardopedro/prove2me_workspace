@@ -1,6 +1,9 @@
 -- Generated from ChapterHermiteQuadraticEsa.lean — theorem BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_BookProof.ChapterHermiteQuadraticEsa
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW
+
 open BookProof.HermiteQuadraticEsa
 
 

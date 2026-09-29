@@ -1,6 +1,8 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — theorem BookProof.QgHermiteFriedrichs.cpoly_kinPoly
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.QgHermiteFriedrichs
 
 

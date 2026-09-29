@@ -1,0 +1,32 @@
+BookProof/ChapterMajoranaProp74.lean:44:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterMajoranaProp74.lean:48:5: error: unknown namespace `BookProof.ChapterMajoranaFourier`
+
+BookProof/ChapterMajoranaProp74.lean:49:5: error: unknown namespace `BookProof.ChapterA3`
+
+BookProof/ChapterMajoranaProp74.lean:56:18: error: expected token
+
+BookProof/ChapterMajoranaProp74.lean:62:18: error: expected token
+
+BookProof/ChapterMajoranaProp74.lean:67:18: error: expected token
+
+BookProof/ChapterMajoranaProp74.lean:72:18: error: expected token
+
+BookProof/ChapterMajoranaProp74.lean:80:61: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp74.lean:87:58: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp74.lean:94:58: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp74.lean:108:12: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp74.lean:133:13: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterMajoranaProp74.lean:153:49: error: expected token
+
+BookProof/ChapterMajoranaProp74.lean:169:22: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterMajoranaProp74.lean:168:39: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

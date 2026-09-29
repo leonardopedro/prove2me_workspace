@@ -5,13 +5,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_self
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_up
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_ann_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_cre_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
-
-
-
-
-
 
 
 
@@ -19,7 +15,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

@@ -5,37 +5,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 
 
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
-
-
-
-
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (L : LagrangianNS n)
 
 theorem BookProof.NavierStokesFlow.LagrangianNS.viscous_posSemidef : L.viscous.PosSemidef := by sorry

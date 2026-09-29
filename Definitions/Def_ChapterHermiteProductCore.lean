@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterHermiteFunctions
-
 import Mathlib
+
 
 /-!
 # The Gauss–polynomial (product Hermite) core of `L²(ℝᵈ)`
@@ -60,6 +60,8 @@ theorem integral_prod_coord (f : Fin d → ℝ → ℂ) :
       (MeasurableEquiv.toLp 2 (Fin d → ℝ)).measurableEmbedding
       (fun x : Vd d => ∏ i, f i (x i)))]
   exact MeasureTheory.integral_fintype_prod_eq_prod (fun i => f i)
+
+
 
 /-- Each coordinate is dominated by the norm. -/
 theorem coord_abs_le_norm (x : Vd d) (i : Fin d) : |x i| ≤ ‖x‖ := by
@@ -163,7 +165,9 @@ theorem continuous_polyEval (p : MvPolynomial (Fin d) ℂ) :
     Continuous (fun x : Vd d => MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p) := by
   induction p using MvPolynomial.induction_on with
   | C a => simpa using continuous_const
-  | add p q hp hq => exact (hp.add hq).congr fun x => by rw [Pi.add_apply, MvPolynomial.eval_add]
+  | add p q hp hq =>
+      simp only [MvPolynomial.eval_add]
+      exact hp.add hq
   | mul_X p i hp =>
       simp only [map_mul, MvPolynomial.eval_X]
       exact hp.mul (by fun_prop)
@@ -283,14 +287,12 @@ theorem mvpoly_eq_zero_of_eval_real : ∀ {n : ℕ} {p : MvPolynomial (Fin n) �
 /-- **The Gauss–polynomial map is injective**: distinct polynomials give distinct
 elements of `L²(ℝᵈ)`.  Equivalently the monomials times the Gaussian are linearly
 independent. -/
-theorem pgMap_apply (p : MvPolynomial (Fin d) ℂ) : pgMap p = pgLp p := rfl
-
 theorem pgMap_injective : Function.Injective (pgMap (d := d)) := by
   rw [injective_iff_map_eq_zero]
   intro p hp
   have hae : pgFun p =ᵐ[volume] 0 := by
     have h0 : (pgLp p : Vd d → ℂ) =ᵐ[volume] 0 := by
-      have hp0 : pgLp p = 0 := by simpa [pgMap_apply] using hp
+      have hp0 : pgLp p = 0 := by simpa [pgMap] using hp
       rw [hp0]
       exact Lp.coeFn_zero (E := ℂ) (p := 2) (μ := (volume : Measure (Vd d)))
     exact (pgLp_coeFn p).symm.trans h0
@@ -483,10 +485,7 @@ theorem integral_fourier_mul_comm {f g : Vd d → ℂ} (hf : Integrable f) (hg :
     (V := Vd d) (W := Vd d) (E := ℂ) (F := ℂ) (G := ℂ) (μ := volume) (ν := volume)
     (L := innerₗ (Vd d)) (e := Real.fourierChar) (f := f) (g := g)
     (ContinuousLinearMap.mul ℂ ℂ) Real.continuous_fourierChar hcont hf hg
-  show (∫ (xi : Vd d), VectorFourier.fourierIntegral Real.fourierChar volume
-      (innerₗ (Vd d)) f xi * g xi)
-      = (∫ (x : Vd d), f x *
-          VectorFourier.fourierIntegral Real.fourierChar volume (innerₗ (Vd d)) g x)
+  dsimp [FourierTransform.fourier] at h ⊢
   simpa [hflip, ContinuousLinearMap.mul_apply'] using h
 
 /-- An integrable function on `ℝᵈ` whose Fourier transform vanishes identically is
@@ -498,19 +497,22 @@ theorem ae_eq_zero_of_fourier_eq_zero {v : Vd d → ℂ} (hv : Integrable v)
   set psi : 𝓢(Vd d, ℂ) := HasCompactSupport.toSchwartzMap
     (f := fun x : Vd d => ((g x : ℝ) : ℂ))
     (by exact hgsupp.comp_left (g := fun r : ℝ => (r : ℂ)) (by simp))
-    (Complex.ofRealCLM.contDiff.comp hg) with hpsi
+    (by
+      have h_contDiff : ContDiff ℝ (↑⊤ : ℕ∞) (fun x : Vd d => ((g x : ℝ) : ℂ)) :=
+        Complex.ofRealCLM.contDiff.comp hg
+      exact h_contDiff) with hpsi
   set phi : 𝓢(Vd d, ℂ) := 𝓕⁻ psi with hphi
   have hfourier : 𝓕 (phi : Vd d → ℂ) = (psi : Vd d → ℂ) := by
     rw [← SchwartzMap.fourier_coe, hphi]
     simp
   have hkey := integral_fourier_mul_comm hv (phi : 𝓢(Vd d, ℂ)).integrable
   rw [hfourier] at hkey
-  have hzero : ∫ xi : Vd d, 𝓕 v xi * (phi : Vd d → ℂ) xi = 0 := by simp [h]
+  have hzero : ∫ xi : Vd d, 𝓕 v xi * (phi : Vd d → ℂ) xi = 0 := by
+    rw [funext h]; simp
   rw [hzero] at hkey
   have hrw : ∫ x : Vd d, g x • v x = ∫ x : Vd d, v x * (psi : Vd d → ℂ) x := by
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    have hcoe : (psi : Vd d → ℂ) x = ((g x : ℝ) : ℂ) := rfl
-    simp only [Complex.real_smul, hcoe]
+    simp [hpsi, Complex.real_smul]
     ring
   rw [hrw, ← hkey]
 

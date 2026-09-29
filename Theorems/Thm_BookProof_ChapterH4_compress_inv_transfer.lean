@@ -4,25 +4,10 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 
 noncomputable section
-
-
-
-
-
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 omit [CompleteSpace E] [CompleteSpace F] in
 theorem BookProof.ChapterH4.compress_inv_transfer (V : F →L[ℂ] E)

@@ -1,23 +1,7 @@
 -- Generated from ChapterFriedrichsExtension.lean — solution of BookProof.FriedrichsExtension.friedrichs_extension_exists
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_dom_le_range
 open BookProof.FriedrichsExtension
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -26,69 +10,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open FormDom
-
-variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :

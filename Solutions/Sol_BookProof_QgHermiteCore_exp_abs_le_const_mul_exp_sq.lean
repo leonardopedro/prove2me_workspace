@@ -1,6 +1,8 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.exp_abs_le_const_mul_exp_sq
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
 
 

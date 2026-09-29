@@ -1,6 +1,7 @@
 import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 

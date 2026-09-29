@@ -5,24 +5,11 @@ open BookProof.ChapterParityMajoranaQuant
 
 
 
-
-
-
-
-
-
-
-
 open Matrix
 open scoped ComplexConjugate
 
 
 variable {m : ℕ}
-
-
-
-
-variable (J : Matrix (Fin m) (Fin m) ℂ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution : stdJᴴ = -stdJ := by

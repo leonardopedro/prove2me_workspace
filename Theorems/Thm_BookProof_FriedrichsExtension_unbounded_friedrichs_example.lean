@@ -1,18 +1,9 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.unbounded_friedrichs_example
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -20,80 +11,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open FormDom
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-open Filter Topology
 
 theorem BookProof.FriedrichsExtension.unbounded_friedrichs_example :
     (∃ (Dom : Submodule ℂ (ℓ²(ℕ, ℂ))) (A : Dom →ₗ[ℂ] ℓ²(ℕ, ℂ)),

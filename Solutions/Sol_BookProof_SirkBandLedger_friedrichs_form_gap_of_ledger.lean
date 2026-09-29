@@ -2,72 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 import Theorems.Thm_BookProof_SirkBandLedger_nestedBands_of_wf
+import Theorems.Thm_BookProof_BandEnclosure_friedrichs_form_gap_of_nested_ritz_bands
 open BookProof.SirkBandLedger
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F)

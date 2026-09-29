@@ -2,10 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
+open BookProof.YangMillsHermite.RealCoeff
 
-
-
-
+variable {d : ℕ}
 
 
 

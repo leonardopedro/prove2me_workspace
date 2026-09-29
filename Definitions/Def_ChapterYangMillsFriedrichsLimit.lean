@@ -45,6 +45,7 @@ Krylov limit an operator limit.
 namespace BookProof.YangMillsFriedrichsLimit
 
 open BookProof.ChapterH5
+open BookProof.FarisLavine
 
 
 /-! ## Part C — the Friedrichs hypothesis discharged for bounded operators -/
@@ -59,6 +60,9 @@ submodule `⊤` — the shape in which
 extension. -/
 noncomputable def topRestrict (A : F →L[ℂ] F) : (⊤ : Submodule ℂ F) →ₗ[ℂ] F :=
   A.toLinearMap.comp (⊤ : Submodule ℂ F).subtype
+
+@[simp] theorem topRestrict_apply (A : F →L[ℂ] F) (x : (⊤ : Submodule ℂ F)) :
+    topRestrict A x = A (x : F) := rfl
 
 
 
@@ -123,6 +127,57 @@ section Weyl
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+/-! ## Continuity passes density: symmetry and positivity on the full space -/
+
+theorem symmetricOn_top_of_dense {D : Submodule ℂ F} (A : F →L[ℂ] F)
+    (hdense : Dense (D : Set F)) (hsym : ∀ x y : D, (inner ℂ (A (x : F)) (y : F) : ℂ)
+      = inner ℂ (x : F) (A (y : F))) :
+    SymmetricOn (⊤ : Submodule ℂ F) (topRestrict A) := by
+  -- first fix `x ∈ D` and let `y` run over the dense set
+  have step1 : ∀ x : D, ∀ y : F, (inner ℂ (A (x : F)) y : ℂ) = inner ℂ (x : F) (A y) := by
+    intro x
+    have hcont₁ : Continuous fun y : F => (inner ℂ (A (x : F)) y : ℂ) :=
+      Continuous.inner continuous_const continuous_id
+    have hcont₂ : Continuous fun y : F => (inner ℂ (x : F) (A y) : ℂ) :=
+      Continuous.inner continuous_const A.continuous
+    have := Continuous.ext_on hdense hcont₁ hcont₂ (by
+      rintro y hy
+      exact hsym x ⟨y, hy⟩)
+    exact fun y => congrFun this y
+  -- now let `x` run over the dense set
+  have step2 : ∀ y : F, ∀ x : F, (inner ℂ (A x) y : ℂ) = inner ℂ x (A y) := by
+    intro y
+    have hcont₁ : Continuous fun x : F => (inner ℂ (A x) y : ℂ) :=
+      Continuous.inner A.continuous continuous_const
+    have hcont₂ : Continuous fun x : F => (inner ℂ x (A y) : ℂ) :=
+      Continuous.inner continuous_id continuous_const
+    have := Continuous.ext_on hdense hcont₁ hcont₂ (by
+      rintro x hx
+      exact step1 ⟨x, hx⟩ y)
+    exact fun x => congrFun this x
+  intro x y
+  exact step2 (y : F) (x : F)
+
+/-- Positivity of the quadratic form passes from a dense subspace to the whole
+space, for a *continuous* operator (nonnegativity is a closed condition). -/
+theorem quadForm_top_nonneg_of_dense {D : Submodule ℂ F} (A : F →L[ℂ] F)
+    (hdense : Dense (D : Set F))
+    (hpos : ∀ x : D, 0 ≤ (inner ℂ (x : F) (A (x : F)) : ℂ).re) :
+    ∀ y : (⊤ : Submodule ℂ F), 0 ≤ quadForm (topRestrict A) y := by
+  have hcont : Continuous fun y : F => (inner ℂ y (A y) : ℂ).re :=
+    Complex.continuous_re.comp (Continuous.inner continuous_id A.continuous)
+  have hclosed : IsClosed {y : F | 0 ≤ (inner ℂ y (A y) : ℂ).re} :=
+    isClosed_le continuous_const hcont
+  have hsub : (D : Set F) ⊆ {y : F | 0 ≤ (inner ℂ y (A y) : ℂ).re} := by
+    rintro y hy
+    exact hpos ⟨y, hy⟩
+  have huniv : ∀ y : F, 0 ≤ (inner ℂ y (A y) : ℂ).re := by
+    intro y
+    have := hclosed.closure_subset_iff.mpr hsub
+    have hy : y ∈ closure (D : Set F) := by rw [hdense.closure_eq]; trivial
+    exact this hy
+  intro y
+  exact huniv (y : F)
 
 
 end Weyl

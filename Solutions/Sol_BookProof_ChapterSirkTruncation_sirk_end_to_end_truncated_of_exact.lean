@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkTruncation
 import Theorems.Thm_BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkTruncation
 
 

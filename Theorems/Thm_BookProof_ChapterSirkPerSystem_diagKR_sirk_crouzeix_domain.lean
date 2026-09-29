@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkPerSystem.lean — theorem BookProof.ChapterSirkPerSystem.diagKR_sirk_crouzeix_domain
 import Mathlib
 import Definitions.Def_ChapterSirkPerSystem
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ChapterSirkPerSystem
 
 

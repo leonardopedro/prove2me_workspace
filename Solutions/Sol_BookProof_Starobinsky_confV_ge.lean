@@ -6,15 +6,6 @@ open BookProof.Starobinsky
 
 
 
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 

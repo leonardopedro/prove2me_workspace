@@ -6,23 +6,7 @@ open BookProof.YangMillsFriedrichs
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine
-
 
 
 

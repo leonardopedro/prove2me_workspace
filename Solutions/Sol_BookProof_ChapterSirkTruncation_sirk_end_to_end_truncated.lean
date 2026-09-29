@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkTruncation
 import Theorems.Thm_BookProof_ChapterSirkTruncation_sirk_error_bound_at_leaky
 import Theorems.Thm_BookProof_ChapterSirkTruncation_transfer_defect_le_of_leakage
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkTruncation
 
 

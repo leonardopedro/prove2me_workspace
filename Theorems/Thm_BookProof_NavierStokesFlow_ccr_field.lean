@@ -4,22 +4,7 @@ import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesFlow
 
 
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
-
-
-
-
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 
 theorem BookProof.NavierStokesFlow.ccr_field {σ : Type*} [DecidableEq σ] (a b : σ) (p : MvPolynomial σ ℂ) :
     (MvPolynomial.pderiv a) (MvPolynomial.X b * p)

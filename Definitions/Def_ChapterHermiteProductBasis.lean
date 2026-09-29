@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterHermiteProductCore
-
 import Mathlib
+
 
 /-!
 # The product Hermite basis of `L²(ℝᵈ)` and its ladder relations

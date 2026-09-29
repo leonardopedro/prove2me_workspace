@@ -13,8 +13,8 @@ import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
-WS = "/home/leo/prove2me_workspace"
-PROJ = "/home/leo/Projects/timepiece"
+WS = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace"
+PROJ = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece331"
 SKETCH = f"{WS}/state/sketch"
 LOG = f"{SKETCH}/log"
 TIERS = json.load(open(f"{WS}/state/chapter_tiers.json"))
@@ -38,7 +38,7 @@ for tier, lst in TIERS.items():
 print(f"total jobs: {len(jobs)} (already done: {len(done)})", flush=True)
 
 env = dict(os.environ)
-env["PATH"] = "/home/leo/.elan/bin:" + env.get("PATH", "")
+env["PATH"] = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:" + env.get("PATH", "")
 
 
 def run(job):

@@ -1,9 +1,11 @@
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.continuityHamiltonian_hasZeroDeficiencyOn_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_bounded_symmetric
 import Theorems.Thm_BookProof_NavierStokesFlow_finiteModes_dense
 import Theorems.Thm_BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
 

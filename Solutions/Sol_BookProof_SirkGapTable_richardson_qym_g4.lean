@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkGapTable.lean — solution of BookProof.SirkGapTable.richardson_qym_g4
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
+import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
 
 

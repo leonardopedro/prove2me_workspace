@@ -1,6 +1,14 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Theorems.Thm_BookProof_ChapterH9_numRange_compress_subset
+import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.ChapterSirkSpectralGeometry
 
 

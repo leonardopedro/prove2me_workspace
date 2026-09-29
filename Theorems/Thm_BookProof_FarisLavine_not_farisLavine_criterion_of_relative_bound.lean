@@ -1,6 +1,7 @@
 -- Generated from ChapterFarisLavine.lean — theorem BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.FarisLavine
 
 

@@ -1,13 +1,10 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.polySym_sum
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
+import Theorems.Thm_BookProof_YangMillsHermite_starP_zero
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

@@ -1,0 +1,44 @@
+BookProof/ChapterQedFockGapChain.lean:50:5: error: unknown namespace `BookProof.FockSecondQuantization`
+
+BookProof/ChapterQedFockGapChain.lean:51:5: error: unknown namespace `BookProof.FockNumberPreservingGap`
+
+BookProof/ChapterQedFockGapChain.lean:52:5: error: unknown namespace `BookProof.HermiteGalerkin`
+
+BookProof/ChapterQedFockGapChain.lean:53:5: error: unknown namespace `BookProof.FockDiagonalGapChain`
+
+BookProof/ChapterQedFockGapChain.lean:54:5: error: unknown namespace `MeasureTheory`
+
+BookProof/ChapterQedFockGapChain.lean:58:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQedFockGapChain.lean:63:83: error: expected token
+
+BookProof/ChapterQedFockGapChain.lean:62:40: error(lean.unknownIdentifier): Unknown identifier `HilbertBasis`
+
+Note: It is not possible to treat `HilbertBasis` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQedFockGapChain.lean:76:13: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQedFockGapChain.lean:94:47: error: unexpected token '|'; expected term
+
+BookProof/ChapterQedFockGapChain.lean:96:56: error: expected token
+
+BookProof/ChapterQedFockGapChain.lean:96:54: error(lean.unknownIdentifier): Unknown constant `OfNat`
+
+BookProof/ChapterQedFockGapChain.lean:104:84: error: expected token
+
+BookProof/ChapterQedFockGapChain.lean:104:4: error(lean.unknownIdentifier): Unknown identifier `dGamma`
+
+Note: It is not possible to treat `dGamma` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQedFockGapChain.lean:117:64: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQedFockGapChain.lean:130:59: error(lean.unknownIdentifier): Unknown identifier `max`
+
+BookProof/ChapterQedFockGapChain.lean:130:66: error: unexpected token '|'; expected command
+
+BookProof/ChapterQedFockGapChain.lean:133:7: error: expected token
+
+BookProof/ChapterQedFockGapChain.lean:137:48: error: unexpected token '<'; expected ')'
+
+BookProof/ChapterQedFockGapChain.lean:158:43: error: unexpected token '<'; expected ')'
+

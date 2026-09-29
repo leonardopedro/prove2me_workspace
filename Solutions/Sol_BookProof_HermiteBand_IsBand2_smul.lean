@@ -9,41 +9,11 @@ open BookProof.HermiteBand.IsBand2
 
 
 
-
-
-
-
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
 
 set_option maxHeartbeats 1000000 in
 theorem solution {T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ} (c : ℂ)

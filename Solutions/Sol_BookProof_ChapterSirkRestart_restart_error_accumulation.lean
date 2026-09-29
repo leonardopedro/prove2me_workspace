@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
 import Theorems.Thm_BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
 
 

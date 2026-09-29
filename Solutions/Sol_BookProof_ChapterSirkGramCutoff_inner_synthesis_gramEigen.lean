@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramCutoff.lean — solution of BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Theorems.Thm_BookProof_ChapterSirkGramWhitening_inner_gramOp
+import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 

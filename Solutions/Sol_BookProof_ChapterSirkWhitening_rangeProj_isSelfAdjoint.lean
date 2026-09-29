@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkWhitening
 import Theorems.Thm_BookProof_ChapterSirkWhitening_rangeProj_adjoint
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
 
 

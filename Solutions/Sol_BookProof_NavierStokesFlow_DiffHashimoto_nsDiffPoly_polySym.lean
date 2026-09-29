@@ -3,13 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_fieldPoly_polySym
+import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

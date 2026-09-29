@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — theorem BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvert
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.ChapterSirkSpectralGeometry
 
 

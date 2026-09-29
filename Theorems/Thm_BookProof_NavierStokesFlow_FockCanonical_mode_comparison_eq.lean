@@ -5,16 +5,10 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
 
-
-
-
-
-
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

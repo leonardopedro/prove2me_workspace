@@ -4,11 +4,6 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
 
-
-
-
-
-
 open scoped ENNReal InnerProductSpace
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.shiftLin_apply (m : ℤ) (f : L2Z) (k : ℤ) :

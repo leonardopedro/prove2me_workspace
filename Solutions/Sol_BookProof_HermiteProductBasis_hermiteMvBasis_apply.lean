@@ -6,10 +6,6 @@ open BookProof.HermiteProductBasis
 
 
 
-
-
-
-
 open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCore
 
 noncomputable section

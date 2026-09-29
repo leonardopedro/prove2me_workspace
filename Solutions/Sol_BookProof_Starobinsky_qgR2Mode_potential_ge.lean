@@ -6,15 +6,6 @@ open BookProof.Starobinsky
 
 
 
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 
@@ -23,28 +14,6 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (halpha : 0 < alpha) (k : ℕ) :

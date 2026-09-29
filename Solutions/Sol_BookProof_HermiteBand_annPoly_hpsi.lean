@@ -1,11 +1,10 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.annPoly_hpsi
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_sub_single
+import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteMv
 open BookProof.HermiteBand
-
-
-
-
 
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.mem_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
 

@@ -7,11 +7,6 @@ open BookProof.NavierStokesFlow.DiffHashimoto
 
 
 
-
-
-
-
-
 open Filter Topology
 
 

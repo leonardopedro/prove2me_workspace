@@ -1,0 +1,144 @@
+BookProof/ChapterQgOuterFockEllipticFL.lean:79:5: error: unknown namespace `Finset`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:80:5: error: unknown namespace `BookProof.HermiteProductCore`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:81:5: error: unknown namespace `BookProof.FarisLavine`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:82:5: error: unknown namespace `BookProof.NavierStokesFlow.DifferentialL2`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:83:5: error: unknown namespace `BookProof.HermiteRelative`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:84:5: error: unknown namespace `BookProof.QuantumGravity3DGauge`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:85:5: error: unknown namespace `BookProof.QgOuterFock`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:86:5: error: unknown namespace `BookProof.QgOuterFockFL`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:87:5: error: unknown namespace `BookProof.DirectSumEsa`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:88:5: error: unknown namespace `BookProof.FriedrichsExtension`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:89:5: error: unknown namespace `BookProof.YangMillsFriedrichs`
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:97:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:100:35: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:109:39: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:115:51: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:121:38: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:133:52: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:158:3: error: unknown tactic
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:157:31: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:162:47: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:167:28: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:170:73: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:170:21: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:172:81: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:172:21: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:174:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:178:30: error(lean.unknownIdentifier): Unknown identifier `MvPolynomial`
+
+Note: It is not possible to treat `MvPolynomial` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:186:41: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:197:41: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:208:18: error: unexpected token '*'; expected '}'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:215:32: error(lean.unknownIdentifier): Unknown identifier `PosSymOp`
+
+Note: It is not possible to treat `PosSymOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:223:32: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:221:39: error(lean.unknownIdentifier): Unknown identifier `PosSymOp`
+
+Note: It is not possible to treat `PosSymOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:247:5: error: unknown tactic
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:243:67: error(lean.unknownIdentifier): Unknown identifier `PosSymOp`
+
+Note: It is not possible to treat `PosSymOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:255:40: error(lean.unknownIdentifier): Unknown identifier `PosSymOp`
+
+Note: It is not possible to treat `PosSymOp` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:266:51: error: unexpected token '*'; expected ')', ',' or ':'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:270:26: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:273:50: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:273:33: error(lean.unknownIdentifier): Unknown identifier `kappaN`
+
+Note: It is not possible to treat `kappaN` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:277:56: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:277:36: error(lean.unknownIdentifier): Unknown identifier `sectorHam`
+
+Note: It is not possible to treat `sectorHam` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:281:38: error: unexpected token '*'; expected ')'
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:284:68: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:290:51: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:299:49: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:304:44: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:304:27: error(lean.unknownIdentifier): Unknown identifier `outerHam`
+
+Note: It is not possible to treat `outerHam` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:310:54: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:314:64: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:322:79: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:331:38: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:334:32: error(lean.unknownIdentifier): Unknown identifier `Comparison`
+
+Note: It is not possible to treat `Comparison` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:338:28: error(lean.unknownIdentifier): Unknown identifier `Submodule`
+
+Note: It is not possible to treat `Submodule` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:341:46: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:355:65: error: expected token
+
+BookProof/ChapterQgOuterFockEllipticFL.lean:355:4: error(lean.unknownIdentifier): Unknown identifier `EssentiallySelfAdjointOn`
+
+Note: It is not possible to treat `EssentiallySelfAdjointOn` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

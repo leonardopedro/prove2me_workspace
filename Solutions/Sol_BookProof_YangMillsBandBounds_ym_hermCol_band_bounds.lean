@@ -4,7 +4,17 @@ import Definitions.Def_ChapterYangMillsBandBounds
 import Theorems.Thm_BookProof_YangMillsBandBounds_ymHermCol_eq
 import Theorems.Thm_BookProof_YangMillsBandBounds_isBandR4_ymPoly
 import Theorems.Thm_BookProof_YangMillsBandBounds_gradedBand_of_isBandR
-open BookProof.YangMillsBandBounds
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
 
 
 
@@ -21,11 +31,11 @@ open BookProof.YangMillsBandBounds
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
+open BookProof.HermiteBand
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
-open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
+open BookProof.YangMillsHermite
+open BookProof.YangMillsFriedrichs
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 set_option maxHeartbeats 1000000 in

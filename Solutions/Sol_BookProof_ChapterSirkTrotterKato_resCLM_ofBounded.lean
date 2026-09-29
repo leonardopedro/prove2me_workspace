@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — solution of BookProof.ChapterSirkTrotterKato.resCLM_ofBounded
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterSirkTrotterKato
 
 

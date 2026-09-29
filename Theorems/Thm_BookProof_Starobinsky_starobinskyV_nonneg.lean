@@ -4,15 +4,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 
 
-
-
-
-
-
-
-
-
-
 open Filter Topology
 
 

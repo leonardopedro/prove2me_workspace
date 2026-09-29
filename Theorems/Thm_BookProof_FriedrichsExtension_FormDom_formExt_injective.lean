@@ -1,19 +1,10 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.formExt_injective
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -21,37 +12,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.FormDom.formExt_injective (P : PosSymOp F) : Function.Injective (formExt P) := by sorry

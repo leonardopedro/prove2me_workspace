@@ -5,30 +5,11 @@ open BookProof.ChapterH1
 
 
 
-
-
-
-
 open scoped BigOperators
 open intervalIntegral
 
 
 noncomputable section
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {F : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]

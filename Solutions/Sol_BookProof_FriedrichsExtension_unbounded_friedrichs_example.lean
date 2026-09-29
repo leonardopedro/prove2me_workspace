@@ -2,18 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
+import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeDomain_dense
 open BookProof.FriedrichsExtension
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -22,80 +12,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open FormDom
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-open Filter Topology
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

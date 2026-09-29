@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.norm_resDiff_apply_le
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterSirkTrotterKato
 
 

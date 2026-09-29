@@ -1,7 +1,5 @@
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Mathlib
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-open BookProof.FarisLavine
 
 
 /-!

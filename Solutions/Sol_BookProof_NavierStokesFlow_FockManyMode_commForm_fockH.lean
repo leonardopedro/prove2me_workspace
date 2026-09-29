@@ -2,16 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_apply
+import Theorems.Thm_BookProof_FarisLavine_commForm_eq
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
-
-
-
-
-
-
-
-
 
 
 
@@ -19,7 +12,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian
+open LpNat FarisLavine IkebeKato ShiftHamiltonian
 
 
 variable {d : ℕ} {κ : Fin d → ℝ}

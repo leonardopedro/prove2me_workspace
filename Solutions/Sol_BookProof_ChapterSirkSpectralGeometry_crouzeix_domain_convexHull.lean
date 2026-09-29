@@ -1,6 +1,13 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_convexHull
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Theorems.Thm_BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.ChapterSirkSpectralGeometry
 
 

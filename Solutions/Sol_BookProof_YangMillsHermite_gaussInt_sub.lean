@@ -1,11 +1,9 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.gaussInt_sub
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 open BookProof.YangMillsHermite
-
-
-
-
 
 
 

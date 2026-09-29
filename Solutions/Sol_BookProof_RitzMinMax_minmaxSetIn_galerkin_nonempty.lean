@@ -2,14 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
 import Theorems.Thm_BookProof_RitzMinMax_finrank_galerkinSpan
+import Theorems.Thm_BookProof_HermiteGalerkin_galerkinSpan_mono
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

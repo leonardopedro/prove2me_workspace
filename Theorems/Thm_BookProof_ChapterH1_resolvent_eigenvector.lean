@@ -4,30 +4,11 @@ import Definitions.Def_ChapterH1
 open BookProof.ChapterH1
 
 
-
-
-
-
 open scoped BigOperators
 open intervalIntegral
 
 
 noncomputable section
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.ChapterH1.resolvent_eigenvector {F : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
     (T : F →L[ℂ] F) (X : F →L[ℂ] F) (γ z : ℂ) (v : F)

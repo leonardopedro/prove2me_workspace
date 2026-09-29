@@ -2,18 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_apply
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 open BookProof.YangMillsGhost
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 
-
-
-
+variable {d : ℕ}
 
 
 
@@ -14,32 +12,6 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.DifferentialL2 BookProof.FullQuadratic
 
 theorem BookProof.HermiteBand.momPoly_eq (i : Fin d) :
     (momPoly i : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)

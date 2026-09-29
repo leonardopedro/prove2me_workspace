@@ -1,18 +1,9 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_BookProof.ChapterClosureUniqueness
+
 open BookProof.FriedrichsExtension
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -20,69 +11,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open FormDom
-
-variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}

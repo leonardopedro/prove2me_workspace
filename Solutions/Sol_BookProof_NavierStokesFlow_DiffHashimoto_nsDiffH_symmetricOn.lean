@@ -3,13 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffPoly_polySym
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_eq_coreOp
+import Theorems.Thm_BookProof_HermiteRelative_symmetricOn_of_polySym
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

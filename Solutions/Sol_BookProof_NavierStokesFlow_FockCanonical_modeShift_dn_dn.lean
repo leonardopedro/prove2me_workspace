@@ -3,13 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_up
+import Theorems.Thm_BookProof_FockSecondQuantization_up_dn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
-
-
-
-
-
 
 
 
@@ -17,7 +13,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

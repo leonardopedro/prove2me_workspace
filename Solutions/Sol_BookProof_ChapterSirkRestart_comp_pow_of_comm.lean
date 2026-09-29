@@ -1,6 +1,7 @@
 -- Generated from ChapterSirkRestart.lean — solution of BookProof.ChapterSirkRestart.comp_pow_of_comm
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
 
 

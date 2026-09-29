@@ -1,11 +1,11 @@
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
-open BookProof.HermiteProductCore
-open BookProof.QgHermiteCore
-open MeasureTheory Complex MvPolynomial
-open BookProof.Starobinsky
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+-- `potLp` is only well defined because of `memLp_mul_pgFun_of_expBounded`, which
+-- no Definitions bundle declares.  It is published as a platform theorem node
+-- (BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded), so import that
+-- module instead of restating the proof here.
 
 /-!
 # The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry,
@@ -54,6 +54,8 @@ and the potential term alone, exponential growth included
 
 namespace BookProof.QgHermiteFriedrichs
 
+open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
 
 noncomputable section
 
@@ -266,6 +268,15 @@ def coordLine (x : Vd d) (j : Fin d) (s : ℝ) : Vd d :=
 
 
 
+
+theorem hamCore_symmetricOn (hWc : Continuous W) (hWb : ExpBounded W) :
+    SymmetricOn (polyGaussCore (d := d)) (hamCore W hWc hWb) := by
+  sorry
+
+theorem hamCore_quadForm_nonneg (hWc : Continuous W) (hWb : ExpBounded W)
+    (hW0 : ∀ x, 0 ≤ W x) (x : (polyGaussCore (d := d))) :
+    0 ≤ quadForm (hamCore W hWc hWb) x := by
+  sorry
 
 end
 

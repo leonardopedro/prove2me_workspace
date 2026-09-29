@@ -1,6 +1,13 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.numRange_subset_realSegment_of_shiftInvert
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_norm_apply_le
 open BookProof.ChapterSirkSpectralGeometry
 
 

@@ -5,21 +5,8 @@ open BookProof.HermiteGalerkin
 
 
 
-
-
-
-
-
-
-
-
-
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.HermiteGalerkin.starProjection_tendsto_of_monotone_dense (K : ℕ → Submodule ℂ F)
     [∀ n, (K n).HasOrthogonalProjection] (hmono : Monotone K)

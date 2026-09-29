@@ -4,22 +4,7 @@ import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesFlow
 
 
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
-
-
-
-
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 
 theorem BookProof.NavierStokesFlow.volume_preservation_constraint {d : ℕ} (f : (Fin d → ℝ) →ₗ[ℝ] (Fin d → ℝ))
     (hdet : LinearMap.det f = 1) (s : Set (Fin d → ℝ)) :

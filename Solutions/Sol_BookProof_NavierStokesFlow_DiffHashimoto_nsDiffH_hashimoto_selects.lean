@@ -2,13 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_symmetricOn
+import Theorems.Thm_BookProof_EsaClosure_hashimoto_multishift_selects_esa
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_domain_dense
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
-
-
-
-
-
 
 
 

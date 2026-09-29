@@ -2,15 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteOscillator_potCore_pgLp
+import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_pgLp
 open BookProof.QgHermiteOscillator
-
-
-
-
-
-
-
-
 
 
 
@@ -21,17 +15,6 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
-
-
-
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (V W : Vd d → ℝ) (hVc : Continuous V) (hVb : ExpBounded V)

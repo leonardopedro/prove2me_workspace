@@ -1,6 +1,11 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.commForm_eq_im
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
+
+import Definitions.Def_BookProof.ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+
 open BookProof.SqSumFarisLavine
 
 

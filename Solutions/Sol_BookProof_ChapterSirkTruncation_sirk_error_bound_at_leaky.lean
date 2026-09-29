@@ -1,6 +1,11 @@
 -- Generated from ChapterSirkTruncation.lean — solution of BookProof.ChapterSirkTruncation.sirk_error_bound_at_leaky
 import Mathlib
 import Definitions.Def_ChapterSirkTruncation
+import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirkApprox_apply
+import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkTruncation
 
 

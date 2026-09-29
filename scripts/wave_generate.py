@@ -32,13 +32,22 @@ Def-material = non-private defs/inductives + instance roots.  Def-embedded
 theorems (cited by a def body) stay in the bundle so it never imports a
 sorry stub.
 """
+import glob
 import json
 import os
 import re
+import subprocess
 import sys
 
-WS = "/home/leo/prove2me_workspace"
-PROJ = "/home/leo/Projects/timepiece"
+# Host paths.  Defaults are the canonical build host; both are overridable so
+# the generator also runs from a sandbox checkout (e.g. the Freebuff cloud
+# workspace) that has its own copy of the workspace and of the source project.
+#   PROVE2ME_WS     -> workspace root (Definitions/Theorems/Solutions/spec)
+#   TIMEPIECE_PROJ  -> source project root (decl_graph.jsonl + BookProof/*.lean)
+WS = os.environ.get("PROVE2ME_WS") or "/home/leo/prove2me_workspace"
+PROJ = (os.environ.get("TIMEPIECE_PROJ")
+        or os.environ.get("PROVE2ME_PROJ")
+        or "/home/leo/Projects/timepiece")
 GRAPH = f"{PROJ}/decl_graph.jsonl"
 SKETCH_DIR = f"{WS}/state/sketch"
 OUT_DEF = f"{WS}/Definitions"
@@ -69,6 +78,55 @@ WAVE = [
     "ChapterNavierStokesLagrangianCanonical", "ChapterStarobinskyPotential",
     "ChapterStoneBridge", "ChapterQgHermiteOscillatorEsa", "ChapterYangMillsFriedrichs",
     "ChapterHermiteGalerkinFriedrichs", "ChapterHermiteProductBasis", "ChapterHermiteRelativeBound",
+    # QG mode instances and outer Fock (dependency chain for QgOuterFockEsa)
+    "ChapterScalaronCoreEsa", "ChapterScalaronWallEsa", "ChapterScalaronFiberFL", "ChapterSchrodingerCutoffEsa",
+    "ChapterQgOuterFockFlow", "ChapterQuantumGravity3DGauge",
+    "ChapterQgOuterFockEsa", "ChapterQg3DGaugeEsa",
+    "ChapterQgOuterFockCoreFL", "ChapterQgOuterFockFarisLavine",
+    "ChapterQgHermiteCore", "ChapterQgHermiteFriedrichs",
+    "ChapterQgVielbeinModeInstance", "ChapterQgContinuumModeInstance",
+    "ChapterQgTruncationResolvent", "ChapterQgTimeStepping",
+    "ChapterQgManifoldModeInstance", "ChapterQgTimeIndependentFlow",
+    "ChapterQymTimeIndependentFlow", "ChapterYangMillsAbelianFockEsa",
+    "ChapterYangMillsAbelianEsa", "ChapterYangMillsBandBounds",
+    "ChapterScalaronOuterFockFL", "ChapterFiniteSectionSingleTime",
+    "ChapterSirkSingleTimeShift", "ChapterGaussCoreQuadBounds",
+    "ChapterSqSumFarisLavine", "ChapterWallEsaSemibounded",
+    "ChapterBddBelowFiberSumEsa", "ChapterQgBrstDerivativeGauge",
+    "ChapterQgCouplingDGammaSum", "ChapterModeQuadraticEsa",
+    "ChapterFullQuadraticEsa", "ChapterQuadraticFockEsa",
+    "ChapterNavierStokesFockSpace", "ChapterNavierStokesFockCanonical",
+    "ChapterNavierStokesFockFarisLavine", "ChapterNavierStokesFockContinuum",
+    "ChapterNavierStokesFockManyMode", "ChapterGhostField",
+    "ChapterCarlemanSimplex", "ChapterCarlemanTwoStep",
+    # Remaining chapters
+    "ChapterNavierStokesFlow", "ChapterDoubleSlit", "ChapterFreeFieldConstraint",
+    "ChapterComplexShiftCore", "ChapterContinuityUnitary", "ChapterContinuityUnitaryInfinite",
+    "ChapterEsaClosureCore", "ChapterStoneResolvent", "ChapterNavierStokesCauchy",
+    "ChapterNavierStokesEsa", "ChapterStoneGroup", "ChapterNavierStokesDeficiency",
+    "ChapterNavierStokesFullEsa", "ChapterStoneEvolution", "ChapterStoneUnitary",
+    "ChapterFarisLavine", "ChapterKatoRellichDeficiency", "ChapterKatoRellichRelative",
+    "ChapterNavierStokesIkebeKato", "ChapterNavierStokesShiftHamiltonian",
+    "ChapterQuantumGravityDensitized", "ChapterStoneGenerator", "ChapterStoneMeasurable",
+    "ChapterStrichartzWave", "ChapterWaveBoundedPotential",
+    "ChapterYangMillsFriedrichsLimit", "ChapterNavierStokesHermiteFarisLavine",
+    "ChapterStoneConverse", "ChapterStoneTheorem", "ChapterHashimotoShiftInvert",
+    "ChapterNavierStokesAffineFiberEsa", "ChapterNavierStokesSignedShift",
+    "ChapterFriedrichsExtension", "ChapterNavierStokesCanonicalVector",
+    "ChapterNavierStokesDifferentialL2", "ChapterSirkSpectralGeometry",
+    "ChapterHyperbolicQuadraticEsa", "ChapterNavierStokesHashimoto",
+    "ChapterNavierStokesLagrangianKatoRellich", "ChapterSirkPerSystem",
+    "ChapterSirkRestart", "ChapterSirkRitzSpectrum", "ChapterSirkTruncation",
+    "ChapterSirkGramWhitening", "ChapterSirkGramCutoff", "ChapterSirkTrotterKato",
+    "ChapterSirkMultiShift", "ChapterSirkTrotterKatoGalerkin", "ChapterSirkGapTable",
+    "ChapterSirkRitzPerturbation", "ChapterNavierStokesHermiteCanonical",
+    "ChapterSirkCertificateReader", "ChapterFockSecondQuantization",
+    "ChapterFockOneParticleGap", "ChapterBandEnclosure", "ChapterFriedrichsFormGap",
+    "ChapterNavierStokesFarisLavineLift", "ChapterNavierStokesDiffFarisLavine",
+    "ChapterNavierStokesSecondQuant", "ChapterWeylHamiltonian",
+    "ChapterH5", "ChapterH6", "ChapterH7", "ChapterH8", "ChapterH8Bases", "ChapterH9",
+    "ChapterTrajectory", "ChapterU", "ChapterUnboundedPosition", "ChapterUnitaryTransport",
+    "ChapterWeakSecondDerivative", "ChapterScalaronEdge",
 ]
 
 NODE_MIN = 40
@@ -147,6 +205,20 @@ def load_decls(leaf, g):
             if r["kind"] == "decl":
                 facts.append(Decl(r, leaf))
     facts.sort(key=lambda d: d.s)
+    # Guard against a sketch/space mismatch: the sketch offsets must fit inside
+    # the source the generator will slice.  A split chapter whose monolith could
+    # not be recovered (or a stale sketch for a rewritten chapter) would
+    # otherwise raise a bare IndexError deep inside ByteText.slice, or worse,
+    # slice a wrong-but-in-range span silently.
+    if facts:
+        size = os.path.getsize(src_path_for(leaf))
+        over = max(d.e for d in facts) > size
+        if over:
+            raise RuntimeError(
+                f"{leaf}: sketch offsets exceed the source text "
+                f"({max(d.e for d in facts)} > {size} bytes at "
+                f"{src_path_for(leaf)}) -- the sketch indexes a different "
+                f"source layout; refusing to slice")
     grows = [x for x in g.get(f"BookProof.{leaf}", []) if x["startLine"] > 0]
     for d in facts:
         cands = [x for x in grows if d.sl <= x["startLine"] <= d.el]
@@ -190,8 +262,65 @@ def classify(decls, module_doc):
     return defmat, embedded, nodes, inline
 
 
+# The Aristotle snapshot (timepiece a5fcf4a, 2026-09-15) split many chapters from
+# one file into a directory of `Part1.lean …` files.  The sketch oracle and the
+# declaration graph were built from the PRE-SPLIT monolith and store byte
+# offsets / line numbers in its space, so every consumer of sketch offsets must
+# read that same text.  Chapters split this way are recovered from git at the
+# last commit that touched the aggregator (the split commit) and cached under
+# state/sketch/monolith/; a chapter that is still a plain file is read directly.
+# Note the monolith is deliberately the *old* text: statements and proofs are cut
+# from what the sketch and graph describe, which is the only self-consistent view.
+SPLIT_SENTINEL_DIRS = True
+
+_monolith_cache = {}
+
+
+def src_path_for(leaf):
+    """Path of the source text this leaf's sketch and graph rows index.
+
+    For a split chapter (a `BookProof/<leaf>/` directory of parts) that is the
+    pre-split monolith, materialised from git and cached; otherwise the plain
+    file.  Raises when a split chapter has no recoverable monolith rather than
+    silently slicing the wrong file (an offset past the aggregator's end is the
+    IndexError that blocked ChapterScalaronCoreEsa / ChapterScalaronFiberFL and
+    with them the def head's five-node import closure)."""
+    if os.path.isdir(f"{PROJ}/BookProof/{leaf}"):
+        p = _monolith_cache.get(leaf)
+        if p is None:
+            d = f"{WS}/state/sketch/monolith"
+            os.makedirs(d, exist_ok=True)
+            p = f"{d}/{leaf}.lean"
+            if not os.path.exists(p):
+                # The last commit that touched the aggregator is the split
+                # commit; its parent still has the monolith.
+                r = subprocess.run(
+                    ["git", "-C", PROJ, "log", "-1", "--format=%H", "--",
+                     f"BookProof/{leaf}.lean"],
+                    capture_output=True, text=True, timeout=120)
+                split = r.stdout.strip()
+                got = ""
+                if split:
+                    r2 = subprocess.run(
+                        ["git", "-C", PROJ, "show", f"{split}^:BookProof/{leaf}.lean"],
+                        capture_output=True, text=True, timeout=120)
+                    got = r2.stdout if r2.returncode == 0 else ""
+                if not got.strip():
+                    raise RuntimeError(
+                        f"{leaf}: split into parts and no monolith recoverable "
+                        f"from git ({(r.stderr or r2.stderr if split else r.stderr)[:200]})")
+                with open(p, "w", encoding="utf-8") as f:
+                    f.write(got)
+            _monolith_cache[leaf] = p
+        return p
+    return f"{PROJ}/BookProof/{leaf}.lean"
+
+
 def src_byte_text(leaf):
-    with open(f"{PROJ}/BookProof/{leaf}.lean", encoding="utf-8") as f:
+    path = src_path_for(leaf)
+    import sys
+    print(f"DEBUG src_byte_text: leaf={leaf}, path={path}, is_file={os.path.isfile(path)}", file=sys.stderr)
+    with open(path, encoding="utf-8") as f:
         return ByteText(f.read())
 
 
@@ -206,12 +335,61 @@ def structural_preamble(bt, upto_byte):
     wrappers ending in ` in` (`omit … in`, `set_option … in`, `include … in`,
     `open … in`) are NOT structural: Stage 2's decl facts already put them inside
     the wrapped declaration's span, so hoisting them here would attach them to
-    the wrong (or no) declaration."""
+    the wrong (or no) declaration.
+
+    Block comments are skipped wholesale: a module docstring or `/-! -/` section
+    header can contain a line whose prose starts with e.g. "open " (the
+    ScalaronCoreEsa docstring has "open at the *continuum* level …"), and
+    hoisting that into the emitted preamble produced a stub that does not
+    parse.  Comment state is tracked linearly: `/- … -/` blocks nest, `--` runs
+    to end of line, and a `"…"` string inside code protects its contents."""
     pre = bt.slice(0, upto_byte)
     out = []
     in_variable = False
+    depth = 0          # nesting depth of /- -/ block comments
+    in_str = False     # inside a Lean string literal
     for line in pre.split("\n"):
-        s = line.strip()
+        if depth > 0:
+            # inside a block comment: only track nesting
+            i = 0
+            while i < len(line):
+                if line.startswith("/-", i):
+                    depth += 1
+                    i += 2
+                elif line.startswith("-/", i):
+                    depth -= 1
+                    i += 2
+                else:
+                    i += 1
+            continue
+        # scan the line once to classify it (code / line comment / string)
+        code = []
+        i = 0
+        while i < len(line):
+            if in_str:
+                if line[i] == "\\" and i + 1 < len(line):
+                    i += 2
+                    continue
+                if line[i] == '"':
+                    in_str = False
+                i += 1
+                continue
+            if line.startswith("/-", i):
+                depth += 1
+                i += 2
+                continue
+            if line.startswith("-/", i):
+                i += 2
+                continue
+            if line.startswith("--", i):
+                break  # line comment: rest of the line ignored
+            if line[i] == '"':
+                in_str = True
+                i += 1
+                continue
+            code.append(line[i])
+            i += 1
+        s = "".join(code).strip()
         if in_variable and s and line[:1].isspace():
             # continuation line of a multi-line `variable` command
             out.append(line)
@@ -269,6 +447,85 @@ def fmt_name(stmt, newname):
     return stmt[:m.start()] + f"theorem {newname}" + stmt[m.end():]
 
 
+_THM_INDEX = None
+
+
+def thm_node_index():
+    """`short name -> [(full name, slug)]` for every generated `Theorems/` stub.
+
+    WHY THIS EXISTS
+    ---------------
+    A node's solution may cite a declaration that is a **node in another
+    chapter** (e.g. `ScalaronWallEsa.kinCcR_symmetricOn` proves its statement
+    from `StrichartzWave.constCoeffOp_symmetric` and
+    `ScalaronCoreEsa.symmetricOn_inclusion`).  The transplant rule makes every
+    public theorem a node, so such a declaration is *not* in any `Def_*` bundle:
+    it lives in `Theorems/Thm_<slug>.lean`.  The platform compiles a solution
+    against the published modules only, so without that import the reference is
+    "Unknown identifier" -- the CE class that dominated the wave after the
+    2026-09-17 append (e.g. `momPoly_apply`, `HermiteProductCore.pgMap_apply`).
+
+    `build_sol` already imported siblings *within* the chapter (`node_deps`);
+    this index extends the same rule across chapters, and only ever emits an
+    import for a stub that exists on disk, so a missing node stays a missing
+    node instead of becoming an unknown-import failure.
+    """
+    global _THM_INDEX
+    if _THM_INDEX is None:
+        _THM_INDEX = {}
+        for p in glob.glob(f"{OUT_THM}/Thm_*.lean"):
+            try:
+                with open(p, encoding="utf-8") as f:
+                    txt = f.read()
+            except OSError:
+                continue
+            m = re.search(r"(?m)^theorem\s+([A-Za-z_][\w.']*)", txt)
+            if not m:
+                continue
+            slug = os.path.basename(p)[len("Thm_"):-len(".lean")]
+            _THM_INDEX.setdefault(m.group(1).split(".")[-1], []).append(
+                (m.group(1), slug))
+    return _THM_INDEX
+
+
+def index_register(fullname, slug):
+    """Add a stub written during THIS run to the index, so a later chapter's
+    solution can import it.  (The index is memoised; without this, a cross-chapter
+    dep generated earlier in the same invocation would be invisible.)"""
+    idx = thm_node_index()
+    entry = (fullname, slug)
+    bucket = idx.setdefault(fullname.split(".")[-1], [])
+    if entry not in bucket:
+        bucket.append(entry)
+
+
+def cross_chapter_imports(node, nodes, inline):
+    """`import Theorems.Thm_<slug>` lines for this node's cited declarations that
+    are nodes of OTHER chapters.  Sibling chapters are handled by `node_deps`.
+
+    A cited name is dropped when it is ambiguous (two stubs declaring the same
+    short name and neither an exact full-name match): an over-eager import of
+    the wrong node would shadow the intended one.
+    """
+    local = {o.short() for o in nodes}
+    inlined = {d.short() for d in inline}
+    index = thm_node_index()
+    out = set()
+    for dep in list(node.vdeps) + list(getattr(node, "tdeps", [])):
+        short = dep.split(".")[-1]
+        if short in local or short in inlined:
+            continue
+        cands = index.get(short)
+        if not cands:
+            continue
+        exact = [s for full, s in cands if full == dep or dep.endswith("." + full)]
+        if len(exact) == 1:
+            out.add(exact[0])
+        elif not exact and len(cands) == 1:
+            out.add(cands[0][1])
+    return [f"import Theorems.Thm_{s}\n" for s in sorted(out)]
+
+
 def collect_inline_closure(node, decls, inline):
     short = {d.short(): d for d in decls}
     needed = set()
@@ -300,7 +557,7 @@ def module_namespace(leaf):
     module is `BookProof.Chapter<Name>` but the namespace is `BookProof.<Name>`
     (e.g. ChapterSirkFinitePrecision -> BookProof.SirkFinitePrecision).  Grab it
     from the first `namespace` command in the source."""
-    with open(f"{PROJ}/BookProof/{leaf}.lean", encoding="utf-8") as f:
+    with open(src_path_for(leaf), encoding="utf-8") as f:
         text = f.read()
     m = re.search(r"^namespace (BookProof\.[A-Za-z0-9_'.]+)", text, re.M)
     if m:
@@ -342,11 +599,93 @@ def imports_for(leaf, node, modns):
     return "\n".join(lines)
 
 
+def extract_namespace_variables(bt):
+    """Extract namespace-level variable declarations from the source.
+    These are variable commands that appear after the namespace declaration
+    but before any section, and are needed by the stub to compile."""
+    pre = bt.text[:5000]  # Check first 5000 bytes for namespace variables
+    lines = pre.split("\n")
+    result = []
+    import sys
+    print(f"DEBUG: extract_namespace_variables called, checking {len(pre)} bytes", file=sys.stderr)
+    # Debug: print first few lines
+    print(f"DEBUG: First 5 lines: {lines[:5]}", file=sys.stderr)
+    print(f"DEBUG: Looking for 'variable' in lines 75-85: {lines[75:85]}", file=sys.stderr)
+    in_variable = False
+    depth = 0
+    in_str = False
+    
+    for line in lines:
+        if depth > 0:
+            i = 0
+            while i < len(line):
+                if line.startswith("/-", i):
+                    depth += 1
+                    i += 2
+                elif line.startswith("-/", i):
+                    depth -= 1
+                    i += 2
+                else:
+                    i += 1
+            continue
+        
+        code = []
+        i = 0
+        while i < len(line):
+            if in_str:
+                if line[i] == "\\" and i + 1 < len(line):
+                    i += 2
+                    continue
+                if line[i] == '"':
+                    in_str = False
+                i += 1
+                continue
+            if line.startswith("/-", i):
+                depth += 1
+                i += 2
+                continue
+            if line.startswith("-/", i):
+                i += 2
+                continue
+            if line.startswith("--", i):
+                break
+            if line[i] == '"':
+                in_str = True
+                i += 1
+                continue
+            code.append(line[i])
+            i += 1
+        
+        s = "".join(code).strip()
+        
+        if in_variable and s and line[:1].isspace():
+            result.append(line)
+            continue
+        
+        in_variable = False
+        if s.startswith("variable "):
+            result.append(line)
+            in_variable = True
+    
+    return "\n".join(result)
+
+
 def build_thm(bt, leaf, decls, node, modns):
     ctx = structural_preamble(bt, node.s)
     stmt = fmt_name(the_statement(bt, node), node.uname)
     head = [f"-- Generated from {leaf}.lean — theorem {node.uname}\n"]
     head.append(imports_for(leaf, node, modns) + "\n")
+    
+    # Add namespace-level variables if any
+    try:
+        ns_vars = extract_namespace_variables(bt)
+        if ns_vars:
+            head.append("\n" + ns_vars + "\n")
+    except Exception as e:
+        # Log but don't fail
+        import sys
+        print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
+    
     if ctx:
         head.append(ctx + "\n")
     head.append("\n")
@@ -369,6 +708,7 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     parts.append(f"import Definitions.Def_{leaf}\n")
     for o in node_deps:
         parts.append(f"import Theorems.Thm_{o.uname.replace('.', '_')}\n")
+    parts.extend(cross_chapter_imports(node, nodes, inline))
     for ns in opens_for(node, modns):
         parts.append(f"open {ns}\n")
     if ctx:
@@ -439,8 +779,26 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     head = ["import Mathlib"]
     if upstream:
         head = upstream + head
-    text = "\n".join(head) + "\n\n" + text
+    text = dedupe_imports("\n".join(head) + "\n\n" + text)
     return text
+
+
+def dedupe_imports(text):
+    """Drop duplicate top-level `import` lines, keeping the first occurrence.
+
+    `build_def_file` prepends `import Mathlib` (plus the upstream Def imports) to
+    a body that still carries the source's own `import Mathlib`, so the plain
+    concatenation emits it twice.  Imports precede every command in a Lean file,
+    so a top-level `import` line is always header material.
+    """
+    seen, out = set(), []
+    for line in text.split("\n"):
+        if line.startswith("import ") and line in seen:
+            continue
+        if line.startswith("import "):
+            seen.add(line)
+        out.append(line)
+    return "\n".join(out)
 
 
 def module_doc(bt):
@@ -477,6 +835,7 @@ def main():
                 f.write(build_thm(bt, leaf, decls, node, modns))
             with open(f"{OUT_SOL}/Sol_{slug}.lean", "w", encoding="utf-8") as f:
                 f.write(build_sol(bt, leaf, decls, nodes, inline, node, modns))
+            index_register(node.uname, slug)
             manifest.append({"leaf": leaf, "name": node.uname,
                              "slug": slug, "plen": node.plen,
                              "ns": node.parent_ns()})

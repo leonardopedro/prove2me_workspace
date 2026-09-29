@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 import Theorems.Thm_BookProof_BandEnclosure_nestedBands_le
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.BandEnclosure
 
 

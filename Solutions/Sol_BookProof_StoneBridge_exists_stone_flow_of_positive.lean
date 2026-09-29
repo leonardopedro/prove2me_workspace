@@ -2,11 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_selfAdjointExtension
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_of_positive
 open BookProof.StoneBridge
-
-
-
-
 
 
 
@@ -18,17 +15,6 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}

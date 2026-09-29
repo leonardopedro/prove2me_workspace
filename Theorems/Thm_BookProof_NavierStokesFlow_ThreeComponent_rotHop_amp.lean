@@ -5,61 +5,10 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped ENNReal
 
 
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.ThreeComponent.rotHop_amp (i k : Fin 3) : (rotHop A c i k).amp = ampRot A i k := by sorry

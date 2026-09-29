@@ -2,21 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_velState_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hFun_single
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_listH_coe
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -25,44 +14,6 @@ open scoped ENNReal
 
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (β γ : Vel) :

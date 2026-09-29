@@ -1,0 +1,40 @@
+BookProof/ChapterParitySU2.lean:45:5: error: unknown namespace `Matrix`
+
+BookProof/ChapterParitySU2.lean:46:12: error: unknown namespace `ComplexConjugate`
+
+BookProof/ChapterParitySU2.lean:50:5: error: unknown namespace `BookProof.ChapterParity`
+
+BookProof/ChapterParitySU2.lean:53:54: error: unexpected token '!'; expected term
+
+BookProof/ChapterParitySU2.lean:53:27: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU2.lean:56:54: error: unexpected token '!'; expected term
+
+BookProof/ChapterParitySU2.lean:56:27: error(lean.unknownIdentifier): Unknown identifier `Matrix`
+
+Note: It is not possible to treat `Matrix` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU2.lean:60:27: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU2.lean:70:10: error: unexpected token '*'; expected ':=', 'where' or '|'
+
+BookProof/ChapterParitySU2.lean:69:31: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU2.lean:77:30: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+
+BookProof/ChapterParitySU2.lean:77:77: error: expected token
+
+BookProof/ChapterParitySU2.lean:88:35: error: expected token
+
+BookProof/ChapterParitySU2.lean:87:28: error(lean.unknownIdentifier): Unknown identifier `Fin`
+
+Note: It is not possible to treat `Fin` as an implicitly bound variable here because it has multiple characters while the `relaxedAutoImplicit` option is set to `Bool.false`.
+

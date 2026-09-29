@@ -1,14 +1,8 @@
 -- Generated from ChapterSirkRitzMinMax.lean — solution of BookProof.RitzMinMax.abs_rayleighVal_le
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_abs_re_inner_le
 open BookProof.RitzMinMax
-
-
-
-
-
-
-
 
 
 

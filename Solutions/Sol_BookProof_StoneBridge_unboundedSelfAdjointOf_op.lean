@@ -5,10 +5,6 @@ open BookProof.StoneBridge
 
 
 
-
-
-
-
 open Filter Topology
 open scoped InnerProductSpace
 

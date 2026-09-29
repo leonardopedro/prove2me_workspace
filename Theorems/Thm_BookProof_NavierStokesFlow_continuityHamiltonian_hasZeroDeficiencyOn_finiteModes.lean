@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEsa.lean — theorem BookProof.NavierStokesFlow.continuityHamiltonian_hasZeroDeficiencyOn_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes
 open BookProof.NavierStokesFlow
 
 

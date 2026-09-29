@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_left_eq_zero_on_dense
+import Theorems.Thm_BookProof_NavierStokesFlow_symmetric_hasZeroDeficiency
 open BookProof.NavierStokesFlow
 
 

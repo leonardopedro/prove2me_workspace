@@ -1,4 +1,11 @@
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteCore
+open MeasureTheory Complex MvPolynomial
+open BookProof.Starobinsky
 
 /-!
 # The quantum-gravity one-particle Hamiltonian on the Hermite core: symmetry,
@@ -47,7 +54,6 @@ and the potential term alone, exponential growth included
 
 namespace BookProof.QgHermiteFriedrichs
 
-open MeasureTheory Complex MvPolynomial
 
 noncomputable section
 

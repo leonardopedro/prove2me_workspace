@@ -1,0 +1,42 @@
+-- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.angularMomentum_stone_flow
+import Mathlib
+import Definitions.Def_ChapterFullQuadraticEsa
+import Theorems.Thm_BookProof_FullQuadratic_fqOp_stone_flow
+open BookProof.FullQuadratic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Finset MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.FarisLavine
+open BookProof.HyperbolicQuadratic
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
+open BookProof.CarlemanSimplex
+open BookProof.ModeQuadratic
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+noncomputable section
+
+variable {d : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (k l : Fin d) :
+    ∃ (T : UnboundedSelfAdjoint (L2d d)) (U : ℝ → (L2d d →L[ℂ] L2d d)),
+      IsSelfAdjointExtension (fqOp (d := d) 0 0 (rotMat k l) 0 0) T.op ∧ IsStoneFlow T U := fqOp_stone_flow 0 0 (rotMat k l) 0 0

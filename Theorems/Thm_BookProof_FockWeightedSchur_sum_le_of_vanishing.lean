@@ -1,0 +1,48 @@
+-- Generated from ChapterFockWeightedSchurEsa.lean — theorem BookProof.FockWeightedSchur.sum_le_of_vanishing
+import Mathlib
+import Definitions.Def_ChapterFockWeightedSchurEsa
+open BookProof.FockWeightedSchur
+
+
+
+
+
+
+
+
+
+
+
+
+
+open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
+open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+noncomputable section
+
+
+
+
+variable {w : ℕ → ℝ}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
+
+theorem BookProof.FockWeightedSchur.sum_le_of_vanishing {f : ℕ → ℝ} {S L : Finset ℕ} (hf : ∀ j, 0 ≤ f j)
+    (hz : ∀ j, j ∉ S → f j = 0) : ∑ j ∈ L, f j ≤ ∑ j ∈ S, f j := by sorry

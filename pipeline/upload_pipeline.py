@@ -1404,6 +1404,58 @@ _PUB_PROBLEMS = None
 _PUB_DEF_DECLS = None
 
 
+def _ambient_variables(txt):
+    """Names a def bundle leaves in scope via `variable`, in either brace form."""
+    names = set()
+    for m in re.finditer(r"(?m)^\s*variable\s*(\{[^}]*\}|\([^)]*\)|[^\n]*)", txt):
+        for part in m.group(1).strip("{}()").split(","):
+            mm = re.match(r"^\s*\(?\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", part)
+            if mm:
+                names.add(mm.group(1))
+    return names
+
+
+def statement_needs_ambient_variable(item):
+    """The ambient variable this item's formal statement borrows, or None.
+
+    A generated statement that mentions a section `variable` instead of binding
+    it only elaborates while that variable happens to be in scope -- which it is
+    locally (our def bundles still carry the `variable`) and is not on the
+    platform (it compiles the published bundle). So these items pass a local
+    check and fail server-side with "Unknown identifier". Measured on
+    thm:BookProof_ChapterH6_generation_semigroup, whose statement uses `m` bound
+    only by `variable {m : ℕ}` at Def_ChapterH6.lean:100.
+
+    This is a proxy, not a proof: a published bundle that does keep the variable
+    in scope would still accept such a statement. It is gated like the other
+    preflight checks, so `--no-preflight` remains the way to try one anyway.
+    """
+    if item.partition(":")[0] != "thm":
+        return None
+    slug = item.split(":", 1)[1]
+    try:
+        txt = open(f"{WS}/Theorems/Thm_{slug}.lean", encoding="utf-8").read()
+    except OSError:
+        return None
+    m = re.search(r"(?m)^import Definitions\.(Def_\S+)", txt)
+    if not m:
+        return None
+    try:
+        bundle = open(f"{WS}/Definitions/{m.group(1)}.lean", encoding="utf-8").read()
+    except OSError:
+        return None
+    vs = _ambient_variables(bundle)
+    if not vs:
+        return None
+    stmt = txt[txt.index("theorem"):] if "theorem" in txt else ""
+    sig = stmt.split(":=", 1)[0]
+    for v in sorted(vs):
+        if re.search(r"(?<![\w.'])" + re.escape(v) + r"(?![\w'])", stmt) \
+                and not re.search(r"[( {]" + re.escape(v) + r"\s*:", sig):
+            return v
+    return None
+
+
 def target_declared_in_published_def(item):
     """The published def bundle that already declares this item's theorem name, or
     None.
@@ -1501,6 +1553,9 @@ def blocked_by(item, published):
     dup = target_already_published(item)
     if dup:
         return f"target already published on the platform ({dup})"
+    amb = statement_needs_ambient_variable(item)
+    if amb:
+        return f"statement relies on ambient variable `{amb}` from its def bundle"
     shadow = target_declared_in_published_def(item)
     if shadow:
         return f"target name already declared by published def bundle {shadow}"

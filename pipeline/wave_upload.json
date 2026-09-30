@@ -2074,6 +2074,19 @@
     "wall",
     "bdd-below"
    ]
+  },
+  "ChapterHermiteCarlemanEsa": {
+   "definition_name": "ChapterHermiteCarlemanEsa",
+   "namespace": "BookProof.HermiteCarleman",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterHermiteCarlemanEsa.lean",
+   "title": "Chapter HermiteCarlemanEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.HermiteCarleman`, source chapter `BookProof/ChapterHermiteCarlemanEsa.lean`): Chapter HermiteCarlemanEsa\n\nGenerated def bundle for ChapterHermiteCarlemanEsa. See BookProof/ChapterHermiteCarlemanEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteCarlemanEsa.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
   }
  },
  "thms": {

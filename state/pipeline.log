@@ -206006,3 +206006,40 @@ Note: It is not possible to treat `F` as an implicitly bound varia)
 21:15:14 submitting thm:BookProof_SchrodingerCutoff_chi_contDiff (attempt 1)
 21:15:26 thm:BookProof_SchrodingerCutoff_chi_contDiff: accepted, waiting on the compiler
 21:15:26 submitting thm:BookProof_SchrodingerCutoff_chi_eq_one_of_abs_le_one (attempt 1)
+23:26:26 sync: read 418 definition publish job(s)
+23:26:47 sync: read 5760 problem publish job(s)
+23:26:50 sync: read 418 definition publish job(s)
+23:27:12 sync: read 5760 problem publish job(s)
+23:27:16 sync: read 418 definition publish job(s)
+23:27:39 sync: read 5760 problem publish job(s)
+23:27:39 summary: 148 done, 11 pending, 1 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+23:27:39 waiting on unpublished def bundle(s): open BookProof.QuadratureEsa (no provider) (1 item(s))
+23:28:33 sync: read 418 definition publish job(s)
+23:28:56 sync: read 5760 problem publish job(s)
+23:28:59 sync: read 418 definition publish job(s)
+23:29:23 sync: read 5760 problem publish job(s)
+23:29:26 sync: read 418 definition publish job(s)
+23:29:48 sync: read 5760 problem publish job(s)
+23:29:48 processing def:ChapterHermiteCarlemanEsa (attempt 1)
+23:30:29 sync: read 418 definition publish job(s)
+23:30:54 sync: read 5760 problem publish job(s)
+23:32:49 def:ChapterHermiteCarlemanEsa: DONE
+23:32:49 summary: 149 done, 10 pending, 1 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+23:33:00 sync: read 419 definition publish job(s)
+23:33:22 sync: read 5760 problem publish job(s)
+23:33:22 sync: checked 25 pending solution(s), 0 already Proved
+23:33:25 sync: checked 50 pending solution(s), 5 already Proved
+23:33:30 sync: checked 75 pending solution(s), 22 already Proved
+23:33:31 sync: checked 100 pending solution(s), 27 already Proved
+23:33:31 sync: checked 125 pending solution(s), 27 already Proved
+23:33:32 sync: checked 150 pending solution(s), 28 already Proved
+23:33:35 sync: checked 175 pending solution(s), 38 already Proved
+23:33:36 sync: checked 200 pending solution(s), 43 already Proved
+23:33:36 sync: checked 225 pending solution(s), 43 already Proved
+23:33:40 sync: checked 250 pending solution(s), 53 already Proved
+23:33:42 sync: checked 275 pending solution(s), 62 already Proved
+23:33:42 sync: checked 300 pending solution(s), 62 already Proved
+23:33:42 sync: checked 325 pending solution(s), 62 already Proved
+23:33:42 sync: checked 350 pending solution(s), 62 already Proved
+23:33:42 sync: checked 375 pending solution(s), 62 already Proved
+23:33:42 sync: marked 11 already-published item(s) and 62 already-proved solution(s) done

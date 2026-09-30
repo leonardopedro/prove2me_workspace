@@ -73,7 +73,6 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
-open BookProof.QuadratureEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

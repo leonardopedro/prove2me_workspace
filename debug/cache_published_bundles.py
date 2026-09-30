@@ -32,6 +32,7 @@ USAGE
 import hashlib
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +43,87 @@ import upload_pipeline as up  # noqa: E402
 
 OUT = f"{WS}/state/published_bundles"
 MANIFEST = f"{OUT}/manifest.json"
+THM_OUT = f"{WS}/state/published_theorems"
+THM_MANIFEST = f"{THM_OUT}/manifest.json"
+THEOREM_IMPORT = re.compile(r"^import\s+Theorems\.(Thm_\S+)", re.M)
+
+
+def needed_theorem_modules():
+    """Which `Theorems.*` modules do the published bundles actually import?
+
+    Only a handful do. Caching all ~5.8k published problem jobs would be wasteful
+    and most of them are stubs nobody imports, so drive this off the published
+    def bundles' own import lines."""
+    need = {}
+    if not os.path.isdir(OUT):
+        return need
+    for f in sorted(os.listdir(OUT)):
+        if not (f.startswith("Def_") and f.endswith(".lean")):
+            continue
+        text = open(f"{OUT}/{f}", encoding="utf-8").read()
+        for mod in THEOREM_IMPORT.findall(text):
+            need[mod] = f[len("Def_"):-len(".lean")]
+    return need
+
+
+def module_name(theorem_name):
+    """`BookProof.Qg.foo_bar` -> `Thm_BookProof_Qg_foo_bar`.
+
+    This is the module the def bundles import, so the mapping has to match the
+    platform's own sanitisation rather than anything derived locally."""
+    return "Thm_" + re.sub(r"[^A-Za-z0-9_]", "_", theorem_name)
+
+
+def refresh_theorems():
+    """Cache the published source of every `Theorems.*` module a published def
+    bundle imports. Read-only: a problem job's `definitions` field is the module
+    the platform published, which for a problem is a generated stub."""
+    need = needed_theorem_modules()
+    if not need:
+        print("no published bundle imports a Theorems module")
+        return 0
+    jobs = up._paged("publish-jobs", {"kind": "problem"})
+    if not jobs:
+        print("no problem publish jobs returned", file=sys.stderr)
+        return 1
+    newest = {}
+    for j in jobs:
+        name = j.get("theorem_name") or ""
+        if not name:
+            continue
+        stamp = j.get("updated_at") or j.get("created_at") or ""
+        prev = newest.get(name)
+        if prev is None or (prev.get("updated_at") or prev.get("created_at") or "") <= stamp:
+            newest[name] = j
+    by_module = {}
+    for name, j in newest.items():
+        if j.get("status") == "PUBLISHED":
+            by_module[module_name(name)] = j
+    os.makedirs(THM_OUT, exist_ok=True)
+    manifest, missing = {}, []
+    for mod, importer in sorted(need.items()):
+        j = by_module.get(mod)
+        if j is None:
+            missing.append((mod, importer))
+            continue
+        text = text_of(j)
+        if not text.strip():
+            missing.append((mod, importer))
+            continue
+        with open(f"{THM_OUT}/{mod}.lean", "w", encoding="utf-8") as fh:
+            fh.write(text if text.endswith("\n") else text + "\n")
+        manifest[mod] = {
+            "imported_by": importer,
+            "theorem_name": j.get("theorem_name"),
+            "lines": text.count("\n") + 1,
+            "sha": hashlib.sha256(text.encode("utf-8")).hexdigest()[:16],
+        }
+    with open(THM_MANIFEST, "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, indent=1, sort_keys=True)
+    print(f"needed {len(need)} Theorems module(s); cached {len(manifest)}")
+    for mod, importer in missing:
+        print(f"   MISSING {mod}  (imported by {importer})")
+    return 0 if not missing else 0
 
 
 def newest_jobs():
@@ -128,4 +210,7 @@ def report():
 if __name__ == "__main__":
     if "--report" in sys.argv:
         sys.exit(report())
-    sys.exit(refresh())
+    if "--theorems" in sys.argv:
+        sys.exit(refresh_theorems())
+    rc = refresh()
+    sys.exit(rc)

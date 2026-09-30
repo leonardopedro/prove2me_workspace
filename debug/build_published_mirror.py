@@ -32,6 +32,7 @@ USAGE
 import importlib.util
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -93,9 +94,16 @@ def mirror_sources(pub):
             if not (f.startswith("Def_") and f.endswith(".lean")):
                 continue
             name = f[len("Def_"):-len(".lean")]
-            if name not in pub or os.path.exists(os.path.join(d, f)):
+            if name not in pub:
                 continue
-            shutil.copy2(os.path.join(cached, f), os.path.join(d, f))
+            # The first pass already counted every bundle that has a local file.
+            # This pass exists for published bundles with no local file at all, so
+            # only those are new here -- otherwise `kept` double-counts them.
+            if os.path.exists(os.path.join(local_dir, f)):
+                continue
+            dst = os.path.join(d, f)
+            if not os.path.exists(dst):
+                shutil.copy2(os.path.join(cached, f), dst)
             kept += 1
             from_platform += 1
     return kept, withheld, from_platform, from_local
@@ -133,6 +141,149 @@ def order_all(pub):
     return order
 
 
+def declares_a_theorem(path):
+    """Does this module actually declare something?
+
+    The platform's published `Theorems.*` text for a theorem is a hollow
+    skeleton: it exists only so a Definitions module has something to import,
+    and the declaration is withheld until the theorem is Proved. Measured
+    against that skeleton, `Def_ChapterQgHermiteFriedrichs` failed with
+    `unknown identifier memLp_mul_pgFun_of_expBounded`. A local
+    `Theorems/Thm_*.lean` declares the name (with `by sorry`), which is what a
+    Definitions-layer import actually needs -- the name, not the proof.
+    """
+    if not os.path.exists(path):
+        return False
+    return bool(re.search(r"(?m)^\s*(?:theorem|lemma|axiom)\s+\S", open(path, errors="ignore").read()))
+
+
+def mirror_theorems():
+    """Copy the published `Theorems.*` modules that published def bundles import.
+
+    Three published bundles import Theorems modules, and a Definitions-only
+    mirror reports them as `unknown module prefix 'Theorems'` -- which reads
+    like a platform defect but is only a scope gap here. Those modules are stubs
+    whose content is not the point; their existence is, so the import resolves
+    and the def bundle is measured on its own text."""
+    cached = f"{WS}/state/published_theorems"
+    local = f"{WS}/Theorems"
+    d = os.path.join(MIRROR, "Theorems")
+    if not os.path.isdir(cached):
+        return [], 0
+    os.makedirs(d, exist_ok=True)
+    names, declaring = [], 0
+    for f in sorted(os.listdir(cached)):
+        if not (f.startswith("Thm_") and f.endswith(".lean")):
+            continue
+        src = os.path.join(cached, f)
+        local_src = os.path.join(local, f)
+        if declares_a_theorem(local_src):
+            src = local_src
+            declaring += 1
+        dst = os.path.join(d, f)
+        if not (os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src)):
+            shutil.copy2(src, dst)
+            for stale in (dst[:-5] + ".olean", dst[:-5] + ".ilean"):
+                if os.path.exists(stale):
+                    os.remove(stale)
+        names.append(f[:-len(".lean")])
+    return names, declaring
+
+
+def order_theorems():
+    """Deps-first order for the cached theorem modules, over the published set.
+
+    A theorem stub imports `Mathlib` and possibly a `Definitions.Def_*` bundle, so
+    it must come after the Definitions it imports."""
+    cached = f"{WS}/state/published_theorems"
+    if not os.path.isdir(cached):
+        return []
+    order, seen = [], set()
+
+    def deps(mod):
+        path = os.path.join(MIRROR, "Theorems", f"{mod}.lean")
+        if not os.path.exists(path):
+            return []
+        return [l.split("Def_")[1].strip()
+                for l in open(path, errors="ignore")
+                if l.startswith("import Definitions.Def_")]
+
+    def visit(mod):
+        if mod in seen:
+            return
+        seen.add(mod)
+        for d in deps(mod):
+            visit_def(d)
+        order.append(mod)
+
+    def visit_def(name):
+        if name in def_seen:
+            return
+        def_seen.add(name)
+        path = os.path.join(MIRROR, "Definitions", f"Def_{name}.lean")
+        if os.path.exists(path):
+            for d in dm.imports_of(path):
+                visit_def(d)
+
+    def_seen = set()
+    for f in sorted(os.listdir(cached)):
+        if f.startswith("Thm_") and f.endswith(".lean"):
+            visit(f[:-len(".lean")])
+    return order
+
+
+def order_interleave(ordered):
+    """Topologically sort the mixed def/theorem graph.
+
+    `order_all` only knows about `Definitions.Def_*`. A published def bundle can
+    also `import Theorems.Thm_*`, so those edges exist too. Rather than bolting
+    the theorem stubs on at the end (which would build three stubs before the
+    bundles that need them), sort the union: a stub follows the Definitions it
+    imports, and the bundles that import it follow the stub.
+
+    Anything left over after the walk -- a genuine cycle, which cannot happen in
+    a DAG but is not worth crashing over -- is appended rather than dropped.
+    """
+    nodes = {f"{k}:{n}" for k, n in ordered}
+    order, seen = [], set()
+
+    def imports(path):
+        out = []
+        if not os.path.exists(path):
+            return out
+        for line in open(path, errors="ignore"):
+            m = re.match(r"import Definitions\.Def_(\S+)", line)
+            if m:
+                out.append(("def", m.group(1)))
+                continue
+            m = re.match(r"import Theorems\.(Thm_\S+)", line)
+            if m:
+                out.append(("thm", m.group(1)))
+        return out
+
+    def deps(kind, name):
+        folder = "Definitions" if kind == "def" else "Theorems"
+        prefix = "Def_" if kind == "def" else ""
+        return [n for n in imports(os.path.join(MIRROR, folder, f"{prefix}{name}.lean"))
+                if f"{n[0]}:{n[1]}" in nodes]
+
+    def visit(kind, name):
+        key = f"{kind}:{name}"
+        if key in seen:
+            return
+        seen.add(key)
+        for dk, dn in deps(kind, name):
+            visit(dk, dn)
+        order.append((kind, name))
+
+    for kind, name in ordered:
+        visit(kind, name)
+    for kind, name in ordered:
+        if f"{kind}:{name}" not in seen:
+            order.append((kind, name))
+    return order
+
+
 def main():
     reuse = "--reuse" in sys.argv
     if not PROJ:
@@ -154,12 +305,23 @@ def main():
     env = dict(os.environ)
     env["LEAN_PATH"] = MIRROR + ":" + base_path
 
-    order = order_all(pub)
-    print(f"compiling {len(order)} bundle(s) deps-first", flush=True)
+    thm_mods, thm_declaring = mirror_theorems()
+    if thm_mods:
+        print(f"mirror {MIRROR}: {len(thm_mods)} Theorems module(s) present "
+              f"({thm_declaring} declare a theorem, the rest are platform skeletons)",
+              flush=True)
+
+    order = [("def", n) for n in order_all(pub)]
+    order += [("thm", m) for m in order_theorems()]
+    # interleave deps-first: a theorem stub must follow the Definitions it
+    # imports, and the def bundles that import it must follow the stub.
+    order = order_interleave(order)
+    print(f"compiling {len(order)} module(s) deps-first", flush=True)
 
     ok, failed, skipped = 0, [], []
-    for i, name in enumerate(order, 1):
-        src = os.path.join(MIRROR, "Definitions", f"Def_{name}.lean")
+    for i, (kind, name) in enumerate(order, 1):
+        src = os.path.join(MIRROR, "Definitions" if kind == "def" else "Theorems",
+                           f"{'Def_' if kind == 'def' else ''}{name}.lean")
         olean = src[:-5] + ".olean"
         if os.path.exists(olean):
             skipped.append(name)

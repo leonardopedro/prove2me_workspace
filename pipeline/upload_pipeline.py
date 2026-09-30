@@ -1401,6 +1401,58 @@ def _local_ns_owner(ns, mod):
 _PUB_PROBLEMS = None
 
 
+_PUB_DEF_DECLS = None
+
+
+def target_declared_in_published_def(item):
+    """The published def bundle that already declares this item's theorem name, or
+    None.
+
+    Def bundles carry their proved theorems, and the platform re-compiles the
+    formal statement in the same context, so a statement that redeclares a name
+    the bundle already has dies with "`...` has already been declared" --
+    deterministic, so every visit spends an attempt.  Measured on
+    thm:BookProof_ChapterContinuityUnitaryInfinite_shiftOp_apply, whose target is
+    `@[simp] theorem shiftOp_apply` at Def_ChapterContinuityUnitaryInfinite.lean:120.
+
+    The attribute prefix matters: matching only `^theorem` misses every simp
+    lemma, which is why a first pass reported zero hits.
+    """
+    global _PUB_DEF_DECLS
+    if _PUB_DEF_DECLS is None:
+        try:
+            _PUB_DEF_DECLS = published_defs()
+        except Exception:
+            _PUB_DEF_DECLS = set()
+    if not _PUB_DEF_DECLS or item.partition(":")[0] != "thm":
+        return None
+    slug = item.split(":", 1)[1]
+    try:
+        txt = open(f"{WS}/Theorems/Thm_{slug}.lean", encoding="utf-8").read()
+    except OSError:
+        return None
+    m = re.search(r"(?m)^theorem\s+([A-Za-z0-9_.\'-]+)", txt)
+    if not m:
+        return None
+    name = m.group(1)
+    # The statement names the declaration fully qualified; a def bundle writes the
+    # bare leaf inside `namespace A.B`.  Compare the last component, but only
+    # inside a bundle that actually opens that namespace.
+    ns, _, leafname = name.rpartition(".")
+    for leaf in _PUB_DEF_DECLS:
+        try:
+            dtxt = open(f"{WS}/Definitions/Def_{leaf}.lean", encoding="utf-8").read()
+        except OSError:
+            continue
+        if ns and not re.search(r"(?m)^namespace\s+" + re.escape(ns) + r"\b", dtxt):
+            continue
+        for dm in re.finditer(
+                r"(?m)^(?:@\[[^\]]*\]\s*)?(?:theorem|lemma)\s+([A-Za-z0-9_.\'-]+)", dtxt):
+            if dm.group(1).rpartition(".")[2] == leafname:
+                return leaf
+    return None
+
+
 def target_already_published(item):
     """The target theorem's own name, if it is already PUBLISHED on the platform.
 
@@ -1449,6 +1501,9 @@ def blocked_by(item, published):
     dup = target_already_published(item)
     if dup:
         return f"target already published on the platform ({dup})"
+    shadow = target_declared_in_published_def(item)
+    if shadow:
+        return f"target name already declared by published def bundle {shadow}"
     for ns in def_opens(src):
         owner = ns_owner_of(ns)
         if owner is _NS_UNAVAILABLE:

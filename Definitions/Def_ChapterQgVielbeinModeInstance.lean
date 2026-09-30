@@ -35,6 +35,8 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.QgVielbeinModeInstance
 
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section
 

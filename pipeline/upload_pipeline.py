@@ -1320,12 +1320,106 @@ def item_source(item):
     return f"{WS}/Solutions/Sol_{name}.lean"
 
 
+def def_opens(path):
+    """`open BookProof.N` namespace names this file needs at compile time."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    return re.findall(r"(?m)^open\s+(BookProof\.[A-Za-z0-9_.]+)", txt)
+
+
+_NS_OWNERS = None
+
+
+_NS_UNAVAILABLE = object()   # index unreadable -> fail open, don't guess
+
+
+def ns_owner_of(ns):
+    """Owner chapter of a `BookProof.*` namespace (honouring the §1j `ChapterX`
+    <-> `X` alias), None when the namespace has NO provider, and the
+    `_NS_UNAVAILABLE` sentinel when the platform index could not be read.
+    Reuses check_def_opens so there is one source of truth."""
+    global _NS_OWNERS
+    if _NS_OWNERS is None:
+        try:
+            import importlib.util as _ilu
+            _here = os.path.dirname(os.path.abspath(__file__))
+            _cdo = os.path.join(os.path.dirname(_here), "debug", "check_def_opens.py")
+            _spec = _ilu.spec_from_file_location("_cdo", _cdo)
+            _m = _ilu.module_from_spec(_spec)
+            _spec.loader.exec_module(_m)
+            owners, _ = _m.load_owners()
+            _NS_OWNERS = (owners, _m) if owners else ({}, None)
+        except Exception:
+            _NS_OWNERS = ({}, None)
+    owners, mod = _NS_OWNERS
+    if not owners or mod is None:
+        return _NS_UNAVAILABLE
+    owner, _ = mod.owner_of(ns, owners)
+    if owner is not None:
+        return owner
+    # The platform index is account-scoped and goes stale: a namespace whose
+    # owner IS published can still be absent from it (ChapterQgOuterFockCoreFL
+    # and ChapterWallEsaSemibounded are both live-published yet missing from
+    # namespace_owner).  Falling straight through to "no provider" there blocked
+    # the entire def chain.  Resolve against the local bundles instead, which
+    # only widens the gate with owners we can actually name.
+    return _local_ns_owner(ns, mod)
+
+
+_LOCAL_NS = None
+
+
+def _local_ns_owner(ns, mod):
+    """Chapter leaf whose local `Definitions/Def_<leaf>.lean` declares `ns`,
+    or None.  One pass over the bundles, cached."""
+    global _LOCAL_NS
+    if _LOCAL_NS is None:
+        _LOCAL_NS = {}
+        d = os.path.join(WS, "Definitions")
+        try:
+            names = os.listdir(d)
+        except OSError:
+            names = []
+        for f in names:
+            if not (f.startswith("Def_Chapter") and f.endswith(".lean")):
+                continue
+            try:
+                txt = open(os.path.join(d, f), encoding="utf-8").read()
+            except OSError:
+                continue
+            leaf = f[len("Def_"):-len(".lean")]
+            for m in re.finditer(r"(?m)^namespace\s+(BookProof\.[A-Za-z0-9_.]+)", txt):
+                _LOCAL_NS.setdefault(m.group(1), leaf)
+    if ns in _LOCAL_NS:
+        return _LOCAL_NS[ns]
+    owner, _ = mod.owner_of(ns, _LOCAL_NS) if _LOCAL_NS else (None, False)
+    return owner
+
+
 def blocked_by(item, published):
-    """An unpublished def bundle this item imports, or None.  Submitting anyway
-    is a guaranteed server FAILED (§2), so the runner waits instead."""
-    for dep in def_imports(item_source(item)):
+    """An unpublished def bundle this item imports, or a `BookProof.*` namespace
+    it opens whose owner is not published; None when it can compile.  Submitting
+    either way is a guaranteed server FAILED (§2), so the runner waits instead.
+
+    The `open` half matters as much as the `import` half: a def bundle that opens
+    a namespace only its (unpublished) sibling provides fails on the platform
+    with "unknown namespace", which no import check would have caught.  Both
+    def:ChapterQgTruncationResolvent and def:ChapterYangMillsAbelianFockEsa were
+    spent on exactly that before this check existed."""
+    src = item_source(item)
+    for dep in def_imports(src):
         if dep not in published:
             return dep
+    for ns in def_opens(src):
+        owner = ns_owner_of(ns)
+        if owner is _NS_UNAVAILABLE:
+            continue                      # index unreadable: do not gate on guesses
+        if owner is None:
+            return f"open {ns} (no provider)"
+        if owner not in published:
+            return f"open {ns} (owner {owner})"
     return None
 
 

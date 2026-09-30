@@ -1398,6 +1398,40 @@ def _local_ns_owner(ns, mod):
     return owner
 
 
+_PUB_PROBLEMS = None
+
+
+def target_already_published(item):
+    """The target theorem's own name, if it is already PUBLISHED on the platform.
+
+    A solution for a name the platform already holds is rejected with
+    "`...` has already been declared" -- deterministic, and it can never
+    succeed, so every visit spends one of the 5 attempts for nothing.
+    Return the name when it is a duplicate, else None."""
+    global _PUB_PROBLEMS
+    if _PUB_PROBLEMS is None:
+        try:
+            _PUB_PROBLEMS = published_theorems()
+        except Exception:
+            _PUB_PROBLEMS = set()
+    if not _PUB_PROBLEMS or item.partition(":")[0] != "thm":
+        return None
+    # item_source() for a thm: is the *statement* file, which carries no
+    # "solution of" marker -- the submitted solution does.  Prefer that, and
+    # fall back to the statement's own declared theorem name.
+    slug = item.split(":", 1)[1]
+    for cand in (f"{WS}/Solutions/Sol_{slug}.lean", item_source(item)):
+        try:
+            txt = open(cand, encoding="utf-8").read()
+        except OSError:
+            continue
+        m = re.search(r"solution of ([A-Za-z0-9_.'\-]+)", txt) \
+            or re.search(r"(?m)^theorem\s+([A-Za-z0-9_.'\-]+)", txt)
+        if m:
+            return m.group(1) if m.group(1) in _PUB_PROBLEMS else None
+    return None
+
+
 def blocked_by(item, published):
     """An unpublished def bundle this item imports, or a `BookProof.*` namespace
     it opens whose owner is not published; None when it can compile.  Submitting
@@ -1412,6 +1446,9 @@ def blocked_by(item, published):
     for dep in def_imports(src):
         if dep not in published:
             return dep
+    dup = target_already_published(item)
+    if dup:
+        return f"target already published on the platform ({dup})"
     for ns in def_opens(src):
         owner = ns_owner_of(ns)
         if owner is _NS_UNAVAILABLE:

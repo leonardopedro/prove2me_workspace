@@ -50,25 +50,55 @@ _spec.loader.exec_module(dm)
 
 def mirror_sources(pub):
     """Copy every published bundle into the mirror; withhold the rest, so an
-    import of an unpublished bundle fails exactly as it does server-side."""
+    import of an unpublished bundle fails exactly as it does server-side.
+
+    For a published bundle the authoritative text is what the platform holds,
+    not the local `Definitions/` file: 87 of 150 published bundles have drifted,
+    because `wave_generate.py` regenerated local copies that import modules the
+    platform never imported. Building the local file measures this checkout;
+    building the published text measures the platform. Sources, in order of
+    preference, are `state/published_bundles/Def_<name>.lean` (cached verbatim
+    from GET /publish-jobs) then the local file.
+
+    Returns (kept, withheld, from_platform, from_local)."""
     d = os.path.join(MIRROR, "Definitions")
+    cached = f"{WS}/state/published_bundles"
     os.makedirs(d, exist_ok=True)
-    kept = withheld = 0
-    for f in sorted(os.listdir(os.path.join(WS, "Definitions"))):
+    kept = withheld = from_platform = from_local = 0
+    local_dir = os.path.join(WS, "Definitions")
+    for f in sorted(os.listdir(local_dir)):
         if not (f.startswith("Def_") and f.endswith(".lean")):
             continue
         name = f[len("Def_"):-len(".lean")]
-        src, dst = os.path.join(WS, "Definitions", f), os.path.join(d, f)
-        if name in pub:
-            if not (os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src)):
-                shutil.copy2(src, dst)
-                for stale in (dst[:-5] + ".olean", dst[:-5] + ".ilean"):
-                    if os.path.exists(stale):
-                        os.remove(stale)
-            kept += 1
-        else:
+        if name not in pub:
             withheld += 1
-    return kept, withheld
+            continue
+        plat = os.path.join(cached, f)
+        loc = os.path.join(local_dir, f)
+        src = plat if os.path.exists(plat) else loc
+        if src is plat:
+            from_platform += 1
+        else:
+            from_local += 1
+        dst = os.path.join(d, f)
+        if not (os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src)):
+            shutil.copy2(src, dst)
+            for stale in (dst[:-5] + ".olean", dst[:-5] + ".ilean"):
+                if os.path.exists(stale):
+                    os.remove(stale)
+        kept += 1
+    # published bundles with no local file at all must still be built
+    if os.path.isdir(cached):
+        for f in sorted(os.listdir(cached)):
+            if not (f.startswith("Def_") and f.endswith(".lean")):
+                continue
+            name = f[len("Def_"):-len(".lean")]
+            if name not in pub or os.path.exists(os.path.join(d, f)):
+                continue
+            shutil.copy2(os.path.join(cached, f), os.path.join(d, f))
+            kept += 1
+            from_platform += 1
+    return kept, withheld, from_platform, from_local
 
 
 def lake_env_sh(script):
@@ -111,8 +141,9 @@ def main():
     pub = dm.published_set()
     if not reuse:
         shutil.rmtree(MIRROR, ignore_errors=True)
-    kept, withheld = mirror_sources(pub)
-    print(f"mirror {MIRROR}: {kept} published bundle(s) present, {withheld} withheld",
+    kept, withheld, from_platform, from_local = mirror_sources(pub)
+    print(f"mirror {MIRROR}: {kept} published bundle(s) present, {withheld} withheld "
+          f"({from_platform} from the platform cache, {from_local} local)",
           flush=True)
 
     base_path = lake_env_sh('printf %s "$LEAN_PATH"')

@@ -1,8 +1,6 @@
-import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgContinuumModeInstance
 import Mathlib
 
-import Definitions.Def_ChapterFarisLavine
-import Mathlib
 
 /-!
 # BRST derivative gauge fixing for the outer-Fock quantum-gravity Hamiltonian
@@ -49,7 +47,9 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.QgBrstDerivativeGauge
 
-open BookProof.FarisLavine
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
+open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section
 

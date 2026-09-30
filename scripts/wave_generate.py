@@ -219,6 +219,63 @@ def load_decls(leaf, g):
                 f"({max(d.e for d in facts)} > {size} bytes at "
                 f"{src_path_for(leaf)}) -- the sketch indexes a different "
                 f"source layout; refusing to slice")
+        # A stale sketch can also land *inside* the source: every offset is in
+        # range, so `over` passes, but the slice starts mid-declaration and the
+        # emitted bundle contains fragments like `irst | rfl | ring)`.
+        #
+        # Validate by LINE, not by byte offset: `declStart.line` is what the
+        # decl graph is keyed on, and a byte offset is unreliable here because
+        # the sketch reports byte positions while slicing must agree with it
+        # exactly (chapters are full of multi-byte math symbols). Line numbers
+        # are immune to that.
+        lines = open(src_path_for(leaf), encoding="utf-8", errors="replace").read().split("\n")
+        opener = re.compile(
+            r"^(?:@\[[^\]]*\]\s*)?"
+            r"(?:private\s+|protected\s+|nonrec\s+|noncomputable\s+)*"
+            r"(?:theorem|lemma|def|abbrev|instance|example|structure|inductive|"
+            r"class|axiom|opaque)\b")
+
+        def decl_line_ok(lineno):
+            """Walk forward from a span's first line past comments and
+            `omit ... in`, then require an actual declaration keyword."""
+            i = max(0, lineno - 1)
+            in_doc = False
+            while i < min(len(lines), lineno + 400):
+                ln = lines[i].strip()
+                i += 1
+                if in_doc:
+                    if "-/" in ln:
+                        in_doc = False
+                    continue
+                if ln.startswith("/--"):
+                    if "-/" not in ln[3:]:
+                        in_doc = True
+                    continue
+                if ln.startswith("/-"):
+                    if "-/" not in ln[2:]:
+                        in_doc = True
+                    continue
+                if ln.startswith("--") or not ln:
+                    continue
+                ln = re.sub(r"^omit\s+\[[^\]]*\]\s+in\s+", "", ln)
+                return bool(opener.match(ln))
+            return False
+
+        misaligned = [d.name_text or f"line {d.sl}" for d in facts
+                      if not decl_line_ok(d.sl)]
+        if misaligned:
+            # Advisory only. `declStart.line` is demonstrably unreliable in
+            # chapters whose docstrings span many lines (the sketch sometimes
+            # points at the docstring body or its `-/`), so raising here would
+            # block regeneration of perfectly good chapters. The byte-offset
+            # check above is the hard guard against out-of-range slicing; this
+            # one only reports spans whose recorded line disagrees with the
+            # source, which usually means the sketch predates an edit.
+            print(f"  WARNING {leaf}: {len(misaligned)}/{len(facts)} sketch "
+                  f"spans look misaligned (first: {misaligned[0]}); the sketch "
+                  f"may predate edits to {src_path_for(leaf)} -- refresh with "
+                  f"scripts/run_sketch_all.py if the output looks garbled",
+                  file=sys.stderr)
     grows = [x for x in g.get(f"BookProof.{leaf}", []) if x["startLine"] > 0]
     for d in facts:
         cands = [x for x in grows if d.sl <= x["startLine"] <= d.el]

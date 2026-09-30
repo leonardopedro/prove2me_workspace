@@ -23,7 +23,8 @@ NPROC = int(sys.argv[1]) if len(sys.argv) > 1 else 6
 
 os.makedirs(LOG, exist_ok=True)
 done = set(
-    f[:-5] for f in os.listdir(SKETCH)
+    f[len("sketch_"):-len(".jsonl")]
+    for f in os.listdir(SKETCH)
     if f.startswith("sketch_") and f.endswith(".jsonl") and os.path.getsize(os.path.join(SKETCH, f)) > 0
 )
 

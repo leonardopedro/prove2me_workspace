@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterUnitaryTransport

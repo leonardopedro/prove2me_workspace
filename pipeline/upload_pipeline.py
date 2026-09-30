@@ -509,7 +509,21 @@ def local_compile(path):
     try:
         r = subprocess.run([LAKE_BIN, "env", "lean", path],
                            cwd=WS, capture_output=True, text=True, timeout=600)
-        return r.returncode == 0, (r.stderr or r.stdout)[:400]
+        out = (r.stderr or r.stdout)
+        # An import this checkout has not built is an environment fact, not a
+        # verdict on the file: `lake env lean` reports the missing olean and
+        # stops, so no real diagnostic follows it. Scoring that False burns an
+        # attempt per item until every file is parked, which is what §1k
+        # describes. Skip instead -- the platform compiler is the oracle.
+        #
+        # Everything else is a real verdict and does gate: on
+        # Thm_BookProof_ChapterH8_adjoint_pow the local compile says
+        # "failed to synthesize instance of type class TopologicalSpace F",
+        # matching the platform's "Unknown identifier `F`" that cost 9 attempts
+        # on the ChapterH8 family this session.
+        if "does not exist" in out and "object file" in out:
+            return True, "local compile skipped (dependency not built in this checkout)"
+        return r.returncode == 0, out[:400]
     except subprocess.TimeoutExpired:
         return False, "local compile timeout"
 

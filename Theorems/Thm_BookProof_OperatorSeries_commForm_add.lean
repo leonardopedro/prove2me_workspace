@@ -1,0 +1,23 @@
+-- Generated from ChapterOperatorSeriesEsa.lean — theorem BookProof.OperatorSeries.commForm_add
+import Mathlib
+import Definitions.Def_ChapterOperatorSeriesEsa
+open BookProof.OperatorSeries
+
+
+
+
+
+
+
+
+open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.LpNat
+
+noncomputable section
+
+
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
+theorem BookProof.OperatorSeries.commForm_add (H₁ H₂ N : D →ₗ[ℂ] F) (x : D) :
+    commForm (H₁ + H₂) N x = commForm H₁ N x + commForm H₂ N x := by sorry

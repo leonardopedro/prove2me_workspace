@@ -9,6 +9,16 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 
 import Mathlib
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+open MeasureTheory Complex MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.QgHermiteCore
+open BookProof.QgHermiteFriedrichs
 
 /-!
 # Unbounded quadratic-type perturbations on the Gauss–polynomial (Hermite) core
@@ -78,10 +88,6 @@ can, on this core, by `BookProof.ChapterHermiteExpWall`.
 
 namespace BookProof.HermiteQuadraticEsa
 
-open MeasureTheory Complex MvPolynomial
-open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
-open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 

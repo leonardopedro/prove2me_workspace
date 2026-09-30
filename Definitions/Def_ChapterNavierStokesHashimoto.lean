@@ -8,6 +8,7 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # The Hashimoto/SIRK shift-invert limit selects the Navier–Stokes generator

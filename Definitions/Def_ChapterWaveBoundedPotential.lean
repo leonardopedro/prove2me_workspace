@@ -1,24 +1,7 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterKatoRellichDeficiency
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Mathlib
 
-import Mathlib
 
 /-!
 # The wave operator with a bounded potential
@@ -42,13 +25,6 @@ symmetric exactly when the multiplier is real almost everywhere.
 -/
 
 namespace BookProof.StrichartzWave
-/-! ## Cross-chapter definitions from `BookProof.StrichartzWave` -/
-theorem wave_essentiallySelfAdjoint (n : ℕ) (κ : ℝ) :
-    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain (SpaceTime n))
-      (opL2 (waveOp n κ)) :=
-  constCoeffOp_essentiallySelfAdjoint _ _ _
-
-end BookProof.StrichartzWave
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
 

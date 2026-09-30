@@ -2,6 +2,7 @@ import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterEsaClosure
 import Mathlib
+import Definitions.Def_ChapterEsaClosureCore
 
 
 /-!

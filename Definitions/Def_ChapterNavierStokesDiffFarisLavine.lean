@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Mathlib
+import Definitions.Def_ChapterHermiteProductCore
 
 
 /-!

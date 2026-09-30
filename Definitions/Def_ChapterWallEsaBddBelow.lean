@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneBridge
 
 
 /-!

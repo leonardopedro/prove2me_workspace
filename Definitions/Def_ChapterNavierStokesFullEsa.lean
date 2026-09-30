@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 
 
 /-!
@@ -246,11 +247,20 @@ noncomputable def latticeFullData (v : Fin 15 → LinfZ) (nu : ℝ) : NSFullData
 
 
 
+theorem latticeFullData_hamiltonian_apply (v : Fin 15 → LinfZ) (nu : ℝ)
+    (x : (latticeFullData v nu).D) :
+    ((latticeFullData v nu).hamiltonian x : L2Z) = latticeFullHamiltonianCLM v nu (x : L2Z) := by
+  simp only [NSFullData.hamiltonian, LinearMap.sum_apply, LinearMap.add_apply,
+    LinearMap.comp_apply, Submodule.coe_add, Submodule.coe_sum,
+    latticeFullHamiltonianCLM, ContinuousLinearMap.sum_apply, ContinuousLinearMap.add_apply,
+    ContinuousLinearMap.mul_apply]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  have hmom : ∀ y : (latticeFullData v nu).D,
+      (((latticeFullData v nu).mom i y : (latticeFullData v nu).D) : L2Z) = momentum (y : L2Z) :=
+    fun _ => rfl
+  rw [hmom, latticeFullData_advection_apply, latticeFullData_advection_apply, hmom]
 
 
-/-- The constant real field on the lattice, as an element of `ℓ^∞(ℤ)`. -/
-noncomputable def constField (r : ℝ) : LinfZ :=
-  ⟨fun _ => r, memℓp_infty ⟨|r|, by rintro s ⟨k, rfl⟩; simp⟩⟩
 
 
 
@@ -285,11 +295,6 @@ theorem diagOp_isSymmetricDom (c : ℕ → ℝ) : IsSymmetricDom (diagOp c) := b
   simp only [diagOp_coe, diagFun, map_mul, Complex.conj_ofReal]
   ring
 
-theorem diagOp_comp (a b : ℕ → ℝ) : (diagOp a).comp (diagOp b) = diagOp (fun n => a n * b n) := by
-  refine LinearMap.ext fun f => Subtype.ext (lp.ext ?_)
-  funext n
-  simp only [LinearMap.comp_apply, diagOp_coe, diagFun, Complex.ofReal_mul]
-  ring
 
 
 
@@ -298,6 +303,19 @@ theorem diagOp_comp (a b : ℕ → ℝ) : (diagOp a).comp (diagOp b) = diagOp (f
 
 
 
+theorem diagOp_sum {ι : Type*} (s : Finset ι) (a : ι → ℕ → ℝ) :
+    (∑ i ∈ s, diagOp (a i)) = diagOp (fun n => ∑ i ∈ s, a i n) := by
+  classical
+  induction s using Finset.induction with
+  | empty =>
+      refine LinearMap.ext fun f => Subtype.ext (lp.ext ?_)
+      funext n
+      simp [diagFun]
+  | insert x s hx ih =>
+      rw [Finset.sum_insert hx, ih, diagOp_add]
+      congr 1
+      funext n
+      rw [Finset.sum_insert hx]
 
 /-- The untruncated Navier–Stokes data on `ℓ²(ℕ)` with **diagonal** modes and
 momenta: the symbols `c k` and `p i` are arbitrary real sequences, in particular
@@ -313,20 +331,19 @@ noncomputable def diagFullData (c : Fin 15 → ℕ → ℝ) (p : Fin 3 → ℕ �
   mom_symm i := diagOp_isSymmetricDom (p i)
   u_comm k l := by rw [diagOp_comp, diagOp_comp]; simp [mul_comm]
 
-/-- The symbol of the diagonal full Navier–Stokes Hamiltonian. -/
-def diagFullSymbol (c : Fin 15 → ℕ → ℝ) (p : Fin 3 → ℕ → ℝ) (nu : ℝ) : ℕ → ℝ := fun n =>
-  ∑ i : Fin 3, 2 * (p i n *
-    ((∑ j : Fin 3, c (nsVelIdx j) n * c (nsGradIdx i j) n) - nu * c (nsLapIdx i) n))
 
 
 
 
+/-- **The full Navier–Stokes Hamiltonian of the diagonal realization is
+essentially self-adjoint** on the finite-mode domain of `ℓ²(ℕ)`, for *arbitrary*
+— in particular unbounded — real symbols. -/
+theorem diagFull_hasZeroDeficiencyOn (c : Fin 15 → ℕ → ℝ) (p : Fin 3 → ℕ → ℝ) (nu : ℝ) :
+    HasZeroDeficiencyOn (diagFullData c p nu).D (diagFullData c p nu).hamiltonian := by
+  rw [diagFullData_hamiltonian]
+  exact diagOp_hasZeroDeficiencyOn _
 
-/-- A choice of data whose full Hamiltonian is **unbounded**: the first momentum
-grows linearly, the viscous mode is constant. -/
-noncomputable def diagUnboundedData : NSFullData L2N :=
-  diagFullData (fun k => if k = nsLapIdx 0 then fun _ => 1 else fun _ => 0)
-    (fun i => if i = 0 then fun n => (n : ℝ) else fun _ => 0) 1
+
 
 
 
@@ -355,11 +372,11 @@ noncomputable def jacobiMom (i : Fin 3) : lpFiniteModes ℕ →ₗ[ℂ] lpFinite
 theorem jacobiMode_lap : jacobiMode (nsLapIdx 0) = ((-1 / 2 : ℝ) : ℂ) • LinearMap.id :=
   if_pos rfl
 
-theorem jacobiMode_of_ne {k : Fin 15} (h : k ≠ nsLapIdx 0) : jacobiMode k = 0 := if_neg h
+
 
 theorem jacobiMom_zero : jacobiMom 0 = jacobiOp := if_pos rfl
 
-theorem jacobiMom_of_ne {i : Fin 3} (h : i ≠ 0) : jacobiMom i = 0 := if_neg h
+
 
 theorem jacobiMode_isSymmetricDom (k : Fin 15) : IsSymmetricDom (jacobiMode k) := by
   by_cases hk : k = nsLapIdx 0
@@ -377,24 +394,7 @@ theorem jacobiMode_comm (k l : Fin 15) :
     · rw [jacobiMode_of_ne hl, LinearMap.comp_zero, LinearMap.zero_comp]
   · rw [jacobiMode_of_ne hk, LinearMap.comp_zero, LinearMap.zero_comp]
 
-/-- Untruncated Navier–Stokes data on `ℓ²(ℕ)` whose full Hamiltonian is the
-tridiagonal operator of `BookProof.ChapterNavierStokesDeficiency`: the field
-modes are constants (a uniform velocity field with a constant viscous mode
-`u_{0,jj} = −1/2`) and the first momentum is the Jacobi operator. -/
-noncomputable def jacobiFullData : NSFullData L2N where
-  D := lpFiniteModes ℕ
-  u := jacobiMode
-  mom := jacobiMom
-  nu := 1
-  dense := lpFiniteModes_dense
-  u_symm := jacobiMode_isSymmetricDom
-  mom_symm i := by
-    by_cases hi : i = 0
-    · rw [hi, jacobiMom_zero]
-      exact fun x y => jacobiOp_symmetric x y
-    · rw [jacobiMom_of_ne hi]
-      exact IsSymmetricDom.zero
-  u_comm := jacobiMode_comm
+
 
 
 

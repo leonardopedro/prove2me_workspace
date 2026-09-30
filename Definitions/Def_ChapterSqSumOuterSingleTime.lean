@@ -3,6 +3,11 @@ import Definitions.Def_ChapterFiniteSectionSingleTime
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterSirkTrotterKato
 
 /-!
 # Outer-Fock kinetic-plus-squares families: one shift, one finite time

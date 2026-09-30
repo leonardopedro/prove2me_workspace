@@ -2,6 +2,8 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
 
 /-!
 # Chapter SirkRitzSpectrum — the Rayleigh–Ritz values converge to the bottom of the

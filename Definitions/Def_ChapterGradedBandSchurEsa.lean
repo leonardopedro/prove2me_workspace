@@ -2,6 +2,8 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFockSecondQuantization
 
 /-!
 # From a graded band matrix to the weighted Schur gates

@@ -1,5 +1,11 @@
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
 
 
 /-!

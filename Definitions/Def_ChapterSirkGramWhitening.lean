@@ -3,6 +3,7 @@ import Definitions.Def_ChapterSirkTruncation
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterH4
 
 /-!
 # Chapter SirkGramWhitening — the Gram whitening exists and *is* an orthonormalization

@@ -3,6 +3,7 @@ import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 /-!
 # The Faris–Lavine data on the Fock space

@@ -2,6 +2,7 @@ import Definitions.Def_ChapterStoneResolvent
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterUnitaryTransport
 
 /-!
 # The general Stone theorem, part II: the Yosida approximation

@@ -2,6 +2,12 @@ import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterStoneBridge
 
 
 /-!

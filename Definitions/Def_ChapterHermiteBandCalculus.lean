@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFullQuadraticEsa
 import Mathlib
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 
 
 /-!

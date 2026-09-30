@@ -1,19 +1,8 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterStoneEvolution
-import Definitions.Def_ChapterStoneGenerator
-import Definitions.Def_ChapterStoneGroup
-import Definitions.Def_ChapterStoneMeasurable
-import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterUnboundedPosition
+import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
 
-import Mathlib
-
-import Mathlib
 
 /-!
 # The general Stone theorem on a separable Hilbert space
@@ -36,46 +25,6 @@ This file assembles the two halves of Stone's theorem proved in
 open scoped InnerProductSpace
 
 namespace BookProof.ChapterStoneMeasurable
-/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
-theorem stone_bijection :
-    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
-  constructor
-  · intro T S h
-    have h' : T.stoneGroup = S.stoneGroup := h
-    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
-  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
-
-end BookProof.ChapterStoneTheorem
-/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
-theorem stone_bijection :
-    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
-  constructor
-  · intro T S h
-    have h' : T.stoneGroup = S.stoneGroup := h
-    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
-  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
-
-end BookProof.ChapterStoneTheorem
-/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
-theorem stone_bijection :
-    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
-  constructor
-  · intro T S h
-    have h' : T.stoneGroup = S.stoneGroup := h
-    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
-  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
-
-end BookProof.ChapterStoneTheorem
-/-! ## Cross-chapter definitions from `BookProof.ChapterStoneTheorem` -/
-theorem stone_bijection :
-    Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by
-  constructor
-  · intro T S h
-    have h' : T.stoneGroup = S.stoneGroup := h
-    rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
-  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
-
-end BookProof.ChapterStoneTheorem
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
@@ -85,6 +34,7 @@ end BookProof.ChapterStoneMeasurable
 
 namespace BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
+open BookProof.ChapterStoneMeasurable BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
@@ -120,6 +70,7 @@ end BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 namespace BookProof.ChapterStoneTheorem
 
+open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
   [TopologicalSpace.SeparableSpace H]

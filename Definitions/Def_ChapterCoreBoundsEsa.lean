@@ -9,6 +9,7 @@ import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # Faris–Lavine bounds checked on the finite-mode core alone

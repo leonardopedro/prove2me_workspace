@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Mathlib
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
 
 
 /-!

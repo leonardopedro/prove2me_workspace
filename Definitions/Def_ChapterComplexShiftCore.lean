@@ -1,5 +1,6 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # The non-real shift `γ − A` of a symmetric operator

@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 
 
 /-!

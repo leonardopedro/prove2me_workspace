@@ -3,6 +3,9 @@ import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsAbelianEsa
 import Mathlib
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterYangMillsHermite
 
 
 /-!

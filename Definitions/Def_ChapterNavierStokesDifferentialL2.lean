@@ -2,6 +2,9 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 
 /-!

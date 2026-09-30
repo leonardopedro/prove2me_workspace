@@ -1,6 +1,11 @@
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
 
 /-!
 # A Carleman criterion on the product Hermite basis, and the full diagonal quadratic

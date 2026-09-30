@@ -2,6 +2,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterH5
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # Quantum Yang–Mills, the Friedrichs route: the construction in the bounded regime

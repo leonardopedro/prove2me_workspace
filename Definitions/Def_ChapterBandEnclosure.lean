@@ -4,6 +4,10 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
 
 /-!
 # Chapter BandEnclosure — the band-enclosure hypothesis, derived

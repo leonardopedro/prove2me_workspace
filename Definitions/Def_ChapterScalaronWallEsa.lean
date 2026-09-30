@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterWeakSecondDerivative
 import Definitions.Def_ChapterScalaronCoreEsa
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStarobinskyPotential
 
 
 /-!

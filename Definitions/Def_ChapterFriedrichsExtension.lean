@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # The Friedrichs extension of an **unbounded** positive symmetric operator

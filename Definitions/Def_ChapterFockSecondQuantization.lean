@@ -5,6 +5,10 @@ import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 /-!
 # Second quantization over a one-particle core (Part F.11)

@@ -1,6 +1,7 @@
 import Mathlib
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # Essential self-adjointness selects a **unique** self-adjoint operator

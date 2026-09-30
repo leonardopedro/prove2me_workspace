@@ -3,6 +3,8 @@ import Definitions.Def_ChapterWaveBoundedPotential
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
 
 /-!
 # The hyperbolic operator with an indefinite quadratic potential

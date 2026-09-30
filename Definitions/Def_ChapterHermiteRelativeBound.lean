@@ -2,6 +2,9 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 
 
 /-!

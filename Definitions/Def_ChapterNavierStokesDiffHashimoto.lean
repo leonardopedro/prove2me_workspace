@@ -2,6 +2,10 @@ import Definitions.Def_ChapterEsaClosure
 import Definitions.Def_ChapterNavierStokesHashimoto
 import Definitions.Def_ChapterHermiteRelativeBound
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 
 
 /-!

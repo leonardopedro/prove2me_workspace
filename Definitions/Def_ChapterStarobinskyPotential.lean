@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
 
 
 /-!

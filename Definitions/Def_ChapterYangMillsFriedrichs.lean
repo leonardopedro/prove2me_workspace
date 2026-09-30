@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterWeylHamiltonian
 import Definitions.Def_ChapterH9
 import Mathlib
+import Definitions.Def_ChapterH5
 
 
 /-!

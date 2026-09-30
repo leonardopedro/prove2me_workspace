@@ -3,6 +3,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
 
 /-!
 # The shift-invert (Hashimoto) trick: the Galerkin/Friedrichs selection theorem

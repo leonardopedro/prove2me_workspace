@@ -7,6 +7,8 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsFriedrichs
 
 /-!
 # `dΓ(A)` for a Schur-class one-particle matrix: the number bound and essential

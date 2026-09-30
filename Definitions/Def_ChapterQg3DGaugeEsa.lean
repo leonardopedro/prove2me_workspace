@@ -2,6 +2,10 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterFullQuadraticEsa
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterStoneBridge
 
 
 /-!

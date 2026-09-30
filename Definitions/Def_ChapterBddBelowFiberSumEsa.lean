@@ -5,6 +5,7 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Mathlib
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 
 /-!

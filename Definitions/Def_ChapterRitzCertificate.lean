@@ -2,6 +2,8 @@ import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 
 import Mathlib
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterSirkRitzSpectrum
 
 /-!
 # Chapter RitzCertificate — the per-order finite certificate, derived

@@ -159,9 +159,13 @@ def main():
     if args.only:
         files = [f for f in files if any(s in f for s in args.only)]
     if args.pending:
+        # Scope to the item kind actually being scanned. This was hardcoded to "sol:",
+        # so `--pending` on Definitions/ (or Theorems/) matched nothing and reported
+        # "0 file(s) checked" -- the def layer looked clean when it was not.
         state = json.load(open(f"{WS}/state/pipeline.json"))["items"]
-        live = {k[len("sol:"):] for k, v in state.items()
-                if k.startswith("sol:") and v.get("status") != "done"}
+        kind = {"Def_": "def:", "Thm_": "thm:", "Sol_": "sol:"}[pre]
+        live = {k[len(kind):] for k, v in state.items()
+                if k.startswith(kind) and v.get("status") != "done"}
         files = [f for f in files if f[len(pre):-len(".lean")] in live]
     counts = collections.Counter()
     fixed = 0

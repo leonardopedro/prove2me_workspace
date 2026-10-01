@@ -40,6 +40,7 @@ USAGE
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -119,18 +120,103 @@ def ensure_sketch(leaf, timeout=900, force=False):
     """Refresh the sketch if absent or empty. A stale sketch silently emits
     garbled bundles (it once produced a file containing `irst | rfl | ring)`)."""
     out = f"{SKETCH}/sketch_{leaf}.jsonl"
+    src = f"{BOOK}/{leaf}.lean"
+    # A split chapter (BookProof/<leaf>/ is a directory of parts) is indexed
+    # against the PRE-SPLIT monolith, not the current aggregator -- wave_generate
+    # deliberately slices the old text. Extracting a sketch from the new
+    # aggregator yields offsets past the monolith's end, and load_decls then
+    # refuses to slice. So for split chapters, index the monolith.
+    is_split = os.path.isdir(f"{BOOK}/{leaf}")
+    if is_split:
+        src = f"{SKETCH}/monolith/{leaf}.lean"
+    # A sketch older than its source is stale, and staleness is silent: every
+    # offset is still in range so the generator's overshoot guard passes, and it
+    # slices text out of the middle of unrelated declarations (`nd
+    # BookProof.ChapterA`, `heet))ro_empty)`). 473 of 772 sketches were older
+    # than their source, which is why one publish run rejected 38% of bundles.
+    # Compare mtimes rather than trusting a non-empty cache.
+    # Content-based validity: the sketch's byte offsets must fit the text the
+    # generator will actually slice. mtime is not enough -- a sketch extracted
+    # from a chapter's current aggregator is "newer" than the pre-split monolith
+    # the generator slices for split chapters, yet every one of its offsets is
+    # wrong. load_decls catches the overshoot, but only after the fact.
     if not force and os.path.exists(out) and os.path.getsize(out) > 0:
-        return True, "cached"
+        try:
+            size = os.path.getsize(src) if os.path.exists(src) else -1
+            if size > 0:
+                over = False
+                for line in open(out, encoding="utf-8"):
+                    if '"declEnd"' not in line:
+                        continue
+                    r = json.loads(line)
+                    if r.get("kind") == "decl" and r.get("declEnd", {}).get("offset", 0) > size:
+                        over = True
+                        break
+                if over:
+                    print(f"    (sketch for {leaf} does not index {os.path.basename(src)}"
+                          f"; re-extracting)", flush=True)
+                else:
+                    return True, "cached"
+            else:
+                return True, "cached"
+        except Exception as e:
+            # Never conclude "cached" from an error: that silently keeps a bad
+            # sketch, which is how ChapterNavierStokesFockEsa stayed unfixable
+            # (its sketch indexes the aggregator, not the 29983-byte monolith).
+            print(f"    (sketch check for {leaf} inconclusive: {type(e).__name__}"
+                  f"; re-extracting)", flush=True)
+    if os.path.exists(out) and os.path.getsize(out) > 0:
+        if not os.path.exists(src) or os.path.getmtime(out) >= os.path.getmtime(src):
+            return True, "cached"
+        # Stale: fall through and re-extract. Returning here would report success
+        # while leaving the stale sketch in place, which is exactly what happened
+        # -- 473 stale sketches were reused and ChapterA3c stayed garbled.
+        print(f"    (refreshing stale sketch for {leaf})", flush=True)
     env = dict(os.environ)
     env["PATH"] = ELAN + ":" + env.get("PATH", "")
+    # extract_sketch_info resolves its argument as a MODULE name, so staging the
+    # monolith under a different filename does nothing -- it still read the
+    # aggregator. To index the pre-split text, swap the monolith in under the
+    # real module name for the duration of the extraction, then put the
+    # aggregator back.
+    target = f"BookProof/{leaf}.lean"
+    live = f"{PROJ}/BookProof/{leaf}.lean"
+    backup = None
+    if is_split:
+        if not os.path.exists(src):
+            return False, "split chapter has no cached monolith"
+        backup = live + ".publishall.bak"
+        shutil.copy2(live, backup)
+        shutil.copy2(src, live)
+        # Lean resolves an import to the module's OLEAN when one exists, and
+        # timepiece331 is fully built, so the swapped-in monolith was never read:
+        # the sketch kept indexing the aggregator (max offset 30335 against a
+        # 29983-byte monolith). Move the compiled artefacts aside for the
+        # duration of the extraction.
+        stash = []
+        for ext in (".olean", ".ilean"):
+            art = f"{PROJ}/.lake/build/lib/lean/BookProof/{leaf}{ext}"
+            for cand in (art,):
+                if os.path.exists(cand):
+                    os.rename(cand, cand + ".publishall.bak")
+                    stash.append(cand)
     try:
-        r = subprocess.run(
-            ["lake", "env", "lean", "--run", "extract_sketch_info.lean",
-             f"BookProof/{leaf}.lean", "-DmaxHeartbeats=0",
-             "-DmaxSynthPendingDepth=10", "-DrelaxedAutoImplicit=false"],
-            cwd=PROJ, env=env, capture_output=True, text=True, timeout=timeout)
-    except subprocess.TimeoutExpired:
-        return False, "sketch timeout"
+        try:
+            r = subprocess.run(
+                ["lake", "env", "lean", "--run", "extract_sketch_info.lean",
+                 target, "-DmaxHeartbeats=0",
+                 "-DmaxSynthPendingDepth=10", "-DrelaxedAutoImplicit=false"],
+                cwd=PROJ, env=env, capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            return False, "sketch timeout"
+    finally:
+        # Always put the aggregator back, even on timeout or error: timepiece331
+        # is a git checkout other work depends on.
+        if backup and os.path.exists(backup):
+            shutil.move(backup, live)
+        for art in stash:
+            if os.path.exists(art + ".publishall.bak"):
+                os.rename(art + ".publishall.bak", art)
     # The sketch is written to stdout; it has to be captured to disk, or every
     # later chapter looks "empty" forever.
     if r.stdout.strip():
@@ -180,6 +266,7 @@ def main():
     apply = "--apply" in sys.argv
     refresh = "--refresh" in sys.argv
     include_registered = "--include-registered" in sys.argv
+    include_published = "--include-published" in sys.argv
     only_file = None
     if "--only-file" in sys.argv:
         only_file = sys.argv[sys.argv.index("--only-file") + 1]
@@ -200,8 +287,20 @@ def main():
     # --include-registered re-examines wave chapters too, which is how a repair
     # pass revisits bundles that were registered from a stale sketch and so
     # published garbled text.
-    todo = [c for c in all_ch
-            if c not in registered or (include_registered and c not in pub)]
+    # --include-published re-examines chapters that are ALREADY live. A published
+    # bundle generated from a stale sketch can silently omit declarations that
+    # dependents reference: Def_ChapterNavierStokesFockSpace does not declare
+    # fockDom_dense, so Def_ChapterNavierStokesFockEsa is rejected with
+    # `Unknown identifier fockDom_dense` even though the theorem is proved.
+    # Everything not yet live is a target. `--include-published` additionally
+    # re-examines live chapters, because a published bundle generated from a
+    # stale sketch can omit declarations its dependents reference. The earlier
+    # three-clause form dropped registered-but-FAILED chapters on the floor:
+    # `c not in registered` False, `c not in pub` True but gated behind a flag
+    # that was off, so a chapter the platform had rejected was never retried.
+    todo = [c for c in all_ch if c not in pub
+            or (include_published and c in pub)
+            or (include_registered and c in registered and c not in pub)]
     print(f"chapters {len(all_ch)}, published {len(pub)}, registered-in-wave "
           f"{len(set(wave_defs) - pub)}, to do {len(todo)}")
 
@@ -248,6 +347,15 @@ def main():
             continue
         path = f"{DEFS}/Def_{leaf}.lean"
         txt = open(path, errors="ignore").read()
+        # A bundle whose block comments do not balance is unlexable: the
+        # platform rejects it with `lex error: unterminated comment`, and Lean
+        # will swallow the rest of the file as comment text. Catch it here
+        # rather than spending a job on it.
+        if len(re.findall(r"/-", txt)) != len(re.findall(r"-/", txt)):
+            skipped.append((leaf, "unbalanced block comments"))
+            print(f"  [{i}/{len(order)}] SKIP {leaf}: unbalanced /- and -/",
+                  flush=True)
+            continue
         clean = strip_comments(txt)
         if re.search(r"\bsorry\b", clean):
             skipped.append((leaf, "contains sorry"))

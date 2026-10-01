@@ -810,6 +810,26 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     keep = defmat | embedded
     if not keep:
         return None
+    graph = load_graph()
+    # Lightweight stand-ins for the graph rows. `Decl` cannot take a graph row:
+    # it reads `declStart`/`declEnd`, which only the sketch has, so building one
+    # from a graph row raises KeyError. All `cross_chapter_imports` needs is the
+    # declared name and the dependency lists.
+    class _Row:
+        __slots__ = ("userName", "kind", "vdeps", "tdeps", "is_instance")
+
+        def __init__(self, r):
+            self.userName = r.get("userName") or r.get("name") or ""
+            self.kind = r.get("kind")
+            self.vdeps = r.get("valueDeps") or []
+            self.tdeps = r.get("typeDeps") or []
+            self.is_instance = bool(r.get("isInstance"))
+
+        def short(self):
+            return self.userName.split(".")[-1]
+
+    nodes = [_Row(r) for r in graph.get(f"BookProof.{leaf}", [])]
+    inline = set()
     # Skeleton subtraction: walk the file in order, keeping the text between
     # declarations verbatim but DELETING every unselected declaration span.
     parts = []
@@ -836,6 +856,25 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     head = ["import Mathlib"]
     if upstream:
         head = upstream + head
+    # Cross-chapter theorem imports. A def body can cite a declaration that the
+    # transplant rule puts in the theorem layer rather than in any Def bundle,
+    # because that declaration is a public theorem (e.g.
+    # `NavierStokesFlow.FockOfFock.fockDom_dense` is proved from names in another
+    # chapter, so it lives in `Theorems/Thm_..._fockDom_dense.lean`). Without
+    # this the reference is `Unknown identifier` on the platform, and because the
+    # whole `BookProof.*` import block was stripped above, nothing else supplies
+    # it. `build_sol` has emitted these since the 2026-09-17 append; def bundles
+    # did not, which is what the `Unknown identifier` failures were.
+    keep_short = {getattr(d, "gname", None) or d.name_text for d in decls if d in keep}
+    keep_short |= {(d.uname or "").split(".")[-1] for d in decls
+                   if d in keep and getattr(d, "uname", None)}
+    thm_imports = []
+    for node in nodes:
+        if node.short() not in keep_short:
+            continue
+        thm_imports.extend(cross_chapter_imports(node, nodes, inline))
+    if thm_imports:
+        head = thm_imports + head
     text = dedupe_imports("\n".join(head) + "\n\n" + text)
     return text
 

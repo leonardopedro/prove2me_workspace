@@ -127,7 +127,10 @@ def ensure_sketch(leaf, timeout=900, force=False):
     # aggregator yields offsets past the monolith's end, and load_decls then
     # refuses to slice. So for split chapters, index the monolith.
     is_split = os.path.isdir(f"{BOOK}/{leaf}")
-    if is_split:
+    # wave_generate now slices the current aggregator whenever it exists, so the
+    # sketch must index that same file. Monolith extraction is gone: several
+    # monoliths no longer typecheck, so they cannot be re-indexed at all.
+    if is_split and not os.path.exists(f"{BOOK}/{leaf}.lean"):
         src = f"{SKETCH}/monolith/{leaf}.lean"
     # A sketch older than its source is stale, and staleness is silent: every
     # offset is still in range so the generator's overshoot guard passes, and it
@@ -182,7 +185,12 @@ def ensure_sketch(leaf, timeout=900, force=False):
     target = f"BookProof/{leaf}.lean"
     live = f"{PROJ}/BookProof/{leaf}.lean"
     backup = None
-    if is_split:
+    stash = []
+    # Only swap when the monolith is actually the text being indexed. When the
+    # aggregator is used directly `src` IS `live`, and copying it onto itself
+    # raises SameFileError -- which is how the previous run died partway.
+    use_monolith = is_split and os.path.abspath(src) != os.path.abspath(live)
+    if use_monolith:
         if not os.path.exists(src):
             return False, "split chapter has no cached monolith"
         backup = live + ".publishall.bak"

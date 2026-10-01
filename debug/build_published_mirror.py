@@ -42,6 +42,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 WS = os.environ.get("PROVE2ME_WS") or os.path.dirname(HERE)
 PROJ = os.environ.get("TIMEPIECE_PROJ") or os.environ.get("PROVE2ME_PROJ") or ""
 MIRROR = os.environ.get("DEF_MIRROR") or "/tmp/published_mirror"
+CANDIDATE = "--set" in sys.argv and "wave" in sys.argv
 
 _dm = os.path.join(HERE, "def_mirror.py")
 _spec = importlib.util.spec_from_file_location("def_mirror", _dm)
@@ -49,7 +50,7 @@ dm = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(dm)
 
 
-def mirror_sources(pub):
+def mirror_sources(pub, prefer_local=False):
     """Copy every published bundle into the mirror; withhold the rest, so an
     import of an unpublished bundle fails exactly as it does server-side.
 
@@ -76,7 +77,10 @@ def mirror_sources(pub):
             continue
         plat = os.path.join(cached, f)
         loc = os.path.join(local_dir, f)
-        src = plat if os.path.exists(plat) else loc
+        if prefer_local or not os.path.exists(plat):
+            src = loc
+        else:
+            src = plat
         if src is plat:
             from_platform += 1
         else:
@@ -96,10 +100,7 @@ def mirror_sources(pub):
             name = f[len("Def_"):-len(".lean")]
             if name not in pub:
                 continue
-            # The first pass already counted every bundle that has a local file.
-            # This pass exists for published bundles with no local file at all, so
-            # only those are new here -- otherwise `kept` double-counts them.
-            if os.path.exists(os.path.join(local_dir, f)):
+            if not prefer_local and os.path.exists(os.path.join(local_dir, f)):
                 continue
             dst = os.path.join(d, f)
             if not os.path.exists(dst):
@@ -168,6 +169,25 @@ def mirror_theorems():
     cached = f"{WS}/state/published_theorems"
     local = f"{WS}/Theorems"
     d = os.path.join(MIRROR, "Theorems")
+    # In candidate mode the set of needed theorem modules is whatever the
+    # candidate bundles import, which is far more than the handful the published
+    # mirror needed. Read it off the sources rather than the cache.
+    if CANDIDATE:
+        os.makedirs(d, exist_ok=True)
+        names = []
+        for f in sorted(os.listdir(os.path.join(MIRROR, "Definitions"))):
+            if not (f.startswith("Def_") and f.endswith(".lean")):
+                continue
+            txt = open(os.path.join(MIRROR, "Definitions", f), errors="ignore").read()
+            for mod in re.findall(r"^import Theorems\.(Thm_\S+)", txt, re.M):
+                if mod in names:
+                    continue
+                src = os.path.join(local, f"{mod}.lean")
+                if not os.path.exists(src):
+                    continue
+                shutil.copy2(src, os.path.join(d, f"{mod}.lean"))
+                names.append(mod)
+        return names, len(names)
     if not os.path.isdir(cached):
         return [], 0
     os.makedirs(d, exist_ok=True)
@@ -289,10 +309,20 @@ def main():
     if not PROJ:
         print("set TIMEPIECE_PROJ to the Lean project that owns the toolchain")
         return 2
+    # --set wave validates the CANDIDATE set (every def bundle registered in the
+    # wave, published or not) instead of what the platform currently holds. This
+    # is a pre-flight gate: a bundle that does not elaborate here, against
+    # timepiece331's own compiled Mathlib, will not elaborate there either, so
+    # there is no reason to spend a job finding that out. DEF_MIRROR points the
+    # tree elsewhere so the published mirror stays untouched.
     pub = dm.published_set()
+    if "--set" in sys.argv and sys.argv[sys.argv.index("--set") + 1] == "wave":
+        wave = json.load(open(f"{WS}/pipeline/wave_upload.json"))["defs"]
+        pub = set(wave)
+        print(f"validating the CANDIDATE set: {len(pub)} bundle(s) from the wave")
     if not reuse:
         shutil.rmtree(MIRROR, ignore_errors=True)
-    kept, withheld, from_platform, from_local = mirror_sources(pub)
+    kept, withheld, from_platform, from_local = mirror_sources(pub, prefer_local=CANDIDATE)
     print(f"mirror {MIRROR}: {kept} published bundle(s) present, {withheld} withheld "
           f"({from_platform} from the platform cache, {from_local} local)",
           flush=True)

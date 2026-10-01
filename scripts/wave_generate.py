@@ -342,6 +342,25 @@ def src_path_for(leaf):
     silently slicing the wrong file (an offset past the aggregator's end is the
     IndexError that blocked ChapterScalaronCoreEsa / ChapterScalaronFiberFL and
     with them the def head's five-node import closure)."""
+    # Prefer the CURRENT aggregator when it exists, even for a split chapter.
+    #
+    # The monolith path was right when the aggregator was just a wrapper around
+    # identical parts. It is wrong now for two reasons. (1) The sketch has to
+    # index whatever is sliced, and re-extracting a monolith is not always
+    # possible: `extract_sketch_info` re-elaborates the file, and several
+    # monoliths no longer typecheck against the current Mathlib (Type mismatch
+    # after simplification, from deprecated simp lemmas), so they cannot be
+    # re-indexed at all. (2) The cached sketches were built against the
+    # aggregator for some of these leaves -- ChapterNavierStokesFockEsa's max
+    # offset is 30335 against a 29983-byte monolith -- so sketch and slice
+    # disagreed and the bundle was silently wrong.
+    #
+    # Slicing the aggregator keeps sketch, slice and the passing build in
+    # agreement. The monolith remains the fallback for a split chapter whose
+    # aggregator is missing.
+    plain = f"{PROJ}/BookProof/{leaf}.lean"
+    if os.path.exists(plain):
+        return plain
     if os.path.isdir(f"{PROJ}/BookProof/{leaf}"):
         p = _monolith_cache.get(leaf)
         if p is None:

@@ -7,6 +7,5 @@ variable {R : Type*} [Ring R]
 
 
 
-variable {R : Type*} [Ring R]
 
 theorem BookProof.FreeFieldConstraint.bracket_self (a : R) : bracket a a = 0 := by sorry

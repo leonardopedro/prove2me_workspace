@@ -1,4 +1,5 @@
 -- Generated from ChapterHermiteProductCore.lean — theorem BookProof.HermiteProductCore.hermiteCx_X_mul
+import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore

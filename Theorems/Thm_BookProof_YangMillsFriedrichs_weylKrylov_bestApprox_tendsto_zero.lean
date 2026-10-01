@@ -1,9 +1,12 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — theorem BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_tendsto_zero
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH9
+open BookProof.ChapterH5
+open BookProof.ChapterH9
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
@@ -239,7 +242,6 @@ end Form
 
 section Weyl
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 /-- The **Weyl-gauge Yang–Mills Hamiltonian on a domain**,
 `H = ½ Σᵢ πᵢ² + ½ Σₐ Bₐ²`, for electric- and magnetic-field operators that leave
@@ -332,7 +334,6 @@ end Weyl
 
 section Friedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 /-- The statement "`A` on the domain `Dom` is a positive self-adjoint extension
 of `H` on `D`", spelled out: `Dom` contains `D`, `A` agrees with `H` there, `A`
@@ -402,7 +403,6 @@ section Sirk
 
 open BookProof.ChapterH5 BookProof.ChapterH9
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 /-- The Hashimoto/SIRK order-`n` approximation error for the Weyl-gauge generator
 is **antitone in the order** (proved, `BookProof.ChapterH9`). -/

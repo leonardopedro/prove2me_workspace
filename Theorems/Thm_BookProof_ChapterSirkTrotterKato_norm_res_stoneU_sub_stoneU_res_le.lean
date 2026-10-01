@@ -1,10 +1,11 @@
 -- Generated from ChapterSirkTrotterKato.lean — theorem BookProof.ChapterSirkTrotterKato.norm_res_stoneU_sub_stoneU_res_le
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterSirkTrotterKato
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 
 noncomputable section
@@ -15,7 +16,6 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterStoneResolvent
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterSirkTrotterKato.norm_res_stoneU_sub_stoneU_res_le (T S : UnboundedSelfAdjoint H) (chi : T.domain)
     (t : ℝ) {C : ℝ}

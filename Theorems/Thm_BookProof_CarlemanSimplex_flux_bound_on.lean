@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.flux_bound_on
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.flux_bound_on {w : ℂ} {rc : (Fin d →₀ ℕ) → ℝ} (F : Finset (Fin d →₀ ℕ))
     (P : Fin d →₀ ℕ) {Cn : ℝ} (hC : ∀ a ∈ F, |rc a| ≤ Cn) :

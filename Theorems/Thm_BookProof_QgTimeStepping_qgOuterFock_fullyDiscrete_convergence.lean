@@ -1,6 +1,17 @@
 -- Generated from ChapterQgTimeStepping.lean — theorem BookProof.QgTimeStepping.qgOuterFock_fullyDiscrete_convergence
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.QgTimeStepping
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
@@ -17,7 +28,6 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.QgTimeStepping.qgOuterFock_fullyDiscrete_convergence (W : WallPot) (Q : QgModeData ι) (Λ : ℕ → Set ι)
     (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

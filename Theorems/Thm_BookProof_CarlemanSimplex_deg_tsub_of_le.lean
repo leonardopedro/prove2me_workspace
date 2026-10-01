@@ -1,11 +1,10 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.deg_tsub_of_le
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
 
 variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d → Fin d → ℂ} {z : ℂ}
 
 
 
@@ -14,6 +13,5 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.deg_tsub_of_le {P a : Fin d →₀ ℕ} (h : P ≤ a) : deg (a - P) + deg P = deg a := by sorry

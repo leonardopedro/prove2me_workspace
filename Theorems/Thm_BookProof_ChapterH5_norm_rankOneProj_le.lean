@@ -12,6 +12,5 @@ noncomputable section
 
 
 
-variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
 theorem BookProof.ChapterH5.norm_rankOneProj_le (u : E) : ‖rankOneProj u‖ ≤ ‖u‖ * ‖u‖ := by sorry

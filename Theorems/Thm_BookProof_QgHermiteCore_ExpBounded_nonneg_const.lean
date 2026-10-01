@@ -7,7 +7,6 @@ open BookProof.QgHermiteCore
 open BookProof.QgHermiteCore.ExpBounded
 
 variable {E : Type*} [NormedAddCommGroup E]
-variable {d : ℕ}
 
 
 

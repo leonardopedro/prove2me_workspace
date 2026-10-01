@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.range_retainedEmbedding
+import Definitions.Def_ChapterSirkGramWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 open BookProof.ChapterSirkGramCutoff
@@ -15,7 +16,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.range_retainedEmbedding {d : ℕ} (w : Fin m → E)
     (u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))) (lam : Fin m → ℝ)

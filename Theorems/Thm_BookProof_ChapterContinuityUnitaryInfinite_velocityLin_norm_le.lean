@@ -3,8 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
-variable {X : Type*}
-
 
 open scoped ENNReal InnerProductSpace
 

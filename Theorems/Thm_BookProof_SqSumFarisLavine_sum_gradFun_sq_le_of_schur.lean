@@ -1,6 +1,15 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.SqSumFarisLavine
 
 variable {D : ℕ} {R : Type*} [Fintype R]
@@ -16,7 +25,6 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 theorem BookProof.SqSumFarisLavine.sum_gradFun_sq_le_of_schur {v : R → Fin D → ℝ} {a b : ℝ} (ha0 : 0 ≤ a) (hb0 : 0 ≤ b)
     (ha : ∀ r, ∑ i : Fin D, |v r i| ≤ a) (hb : ∀ i, ∑ r : R, |v r i| ≤ b) (x : Vd D) :

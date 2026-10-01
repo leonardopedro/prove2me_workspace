@@ -22,6 +22,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.continuous_scalaronW (M alpha : ℝ) : Continuous (scalaronW M alpha) := by sorry

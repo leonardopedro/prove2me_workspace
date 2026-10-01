@@ -1,6 +1,8 @@
 -- Generated from ChapterUnboundedPosition.lean — theorem BookProof.ChapterUnboundedPosition.inner_single_left
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 
 

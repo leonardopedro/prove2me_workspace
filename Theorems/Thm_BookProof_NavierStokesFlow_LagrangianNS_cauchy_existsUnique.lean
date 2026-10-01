@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesCauchy.lean — theorem BookProof.NavierStokesFlow.LagrangianNS.cauchy_existsUnique
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterSirkGramWhitening
+open BookProof.ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -15,7 +17,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.inner_synthesis_gramEigen (heig : IsGramEigen w u lam) (k l : Fin m) :
     ⟪synthesis w (u k), synthesis w (u l)⟫_ℂ = if k = l then (lam l : ℂ) else 0 := by sorry

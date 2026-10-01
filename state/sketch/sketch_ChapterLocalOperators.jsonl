@@ -3,7 +3,7 @@
 {"declEnd":{"col":31,"line":57,"offset":2738},"declStart":{"col":0,"line":53,"offset":2469},"docstring":{"end":{"col":14,"line":55,"offset":2648},"start":{"col":0,"line":53,"offset":2469}},"kind":"decl","nameText":"TranslationInvariant","privateTok":null,"valKind":"simple","valStart":{"col":53,"line":56,"offset":2702}}
 {"declEnd":{"col":32,"line":65,"offset":3219},"declStart":{"col":0,"line":59,"offset":2740},"docstring":{"end":{"col":73,"line":62,"offset":3060},"start":{"col":0,"line":59,"offset":2740}},"kind":"decl","nameText":"localIntegral_translation_invariant","privateTok":null,"valKind":"simple","valStart":{"col":32,"line":64,"offset":3184}}
 {"declEnd":{"col":41,"line":71,"offset":3527},"declStart":{"col":0,"line":67,"offset":3221},"docstring":{"end":{"col":51,"line":68,"offset":3354},"start":{"col":0,"line":67,"offset":3221}},"kind":"decl","nameText":"localIntegral_shift","privateTok":null,"valKind":"simple","valStart":{"col":57,"line":70,"offset":3483}}
-{"declEnd":{"col":19,"line":97,"offset":4572},"declStart":{"col":0,"line":73,"offset":3529},"docstring":{"end":{"col":73,"line":77,"offset":3927},"start":{"col":0,"line":73,"offset":3529}},"kind":"decl","nameText":"not_translationInvariant_of_pointSupported","privateTok":null,"valKind":"simple","valStart":{"col":29,"line":81,"offset":4137}}
+{"declEnd":{"col":19,"line":96,"offset":4578},"declStart":{"col":0,"line":73,"offset":3529},"docstring":{"end":{"col":73,"line":77,"offset":3927},"start":{"col":0,"line":73,"offset":3529}},"kind":"decl","nameText":"not_translationInvariant_of_pointSupported","privateTok":null,"valKind":"simple","valStart":{"col":29,"line":81,"offset":4137}}
 {"const":"Nat","end":{"col":15,"line":42,"offset":1964},"kind":"ref","start":{"col":14,"line":42,"offset":1961}}
 {"const":"NormedAddCommGroup","end":{"col":48,"line":42,"offset":1997},"kind":"ref","start":{"col":30,"line":42,"offset":1979}}
 {"const":"NormedSpace","end":{"col":64,"line":42,"offset":2013},"kind":"ref","start":{"col":53,"line":42,"offset":2002}}
@@ -40,5 +40,5 @@
 {"const":"Fin","end":{"col":13,"line":84,"offset":4197},"kind":"ref","start":{"col":10,"line":84,"offset":4194}}
 {"const":"Real","end":{"col":19,"line":84,"offset":4207},"kind":"ref","start":{"col":18,"line":84,"offset":4204}}
 {"const":"congrFun","end":{"col":20,"line":87,"offset":4313},"kind":"ref","start":{"col":12,"line":87,"offset":4305}}
-{"const":"congrFun","end":{"col":21,"line":94,"offset":4499},"kind":"ref","start":{"col":13,"line":94,"offset":4491}}
-{"const":"Eq.symm","end":{"col":19,"line":97,"offset":4572},"kind":"ref","start":{"col":15,"line":97,"offset":4568}}
+{"const":"congrFun","end":{"col":41,"line":94,"offset":4523},"kind":"ref","start":{"col":33,"line":94,"offset":4515}}
+{"const":"Eq.symm","end":{"col":19,"line":96,"offset":4578},"kind":"ref","start":{"col":15,"line":96,"offset":4574}}

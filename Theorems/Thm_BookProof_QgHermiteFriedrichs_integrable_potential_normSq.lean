@@ -22,7 +22,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.integrable_potential_normSq (hWc : Continuous W) (hWb : ExpBounded W)
     (p : MvPolynomial (Fin d) ℂ) :

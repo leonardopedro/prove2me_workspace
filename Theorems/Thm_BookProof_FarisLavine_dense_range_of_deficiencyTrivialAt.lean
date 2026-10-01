@@ -1,6 +1,7 @@
 -- Generated from ChapterFarisLavineCore.lean — theorem BookProof.FarisLavine.dense_range_of_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FarisLavine
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
@@ -8,8 +9,6 @@ variable {D : Submodule ℂ F}
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
 
 theorem BookProof.FarisLavine.dense_range_of_deficiencyTrivialAt [CompleteSpace F] (H : D →ₗ[ℂ] F) (w₀ : ℂ)
     (h : DeficiencyTrivialAt D H (starRingEnd ℂ w₀)) :

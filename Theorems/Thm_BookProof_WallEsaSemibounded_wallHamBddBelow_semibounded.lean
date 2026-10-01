@@ -1,6 +1,13 @@
 -- Generated from ChapterWallEsaSemibounded.lean — theorem BookProof.WallEsaSemibounded.wallHamBddBelow_semibounded
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterWallEsaBddBelow
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 open BookProof.WallEsaSemibounded
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
@@ -13,7 +20,6 @@ open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
 
 noncomputable section
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 ards [(f : 𝓢(ℝ, ℂ)).coeFn_toLp 2 (volume : Measure ℝ)] with x hx
   rw [hx]

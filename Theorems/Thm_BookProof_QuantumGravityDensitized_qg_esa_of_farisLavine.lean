@@ -1,12 +1,12 @@
 -- Generated from ChapterQuantumGravityDensitized.lean — theorem BookProof.QuantumGravityDensitized.qg_esa_of_farisLavine
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QuantumGravityDensitized
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 
 

@@ -1,6 +1,19 @@
 -- Generated from ChapterHermiteRelativeBound.lean — theorem BookProof.HermiteRelative.symmetricOn_of_polySym
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterYangMillsHermite
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

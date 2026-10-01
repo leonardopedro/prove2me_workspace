@@ -1,10 +1,10 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.nestedBands_of_wf
+import Definitions.Def_ChapterSirkCertificateReader
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterBandEnclosure
+open BookProof.BandEnclosure
 open BookProof.SirkBandLedger
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 

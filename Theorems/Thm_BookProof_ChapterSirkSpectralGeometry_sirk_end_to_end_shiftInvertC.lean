@@ -1,6 +1,19 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — theorem BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_shiftInvertC
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterSirkEndToEnd
+open BookProof.ChapterH4
+open BookProof.ChapterH6
+open BookProof.ChapterH9
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkSpectralGeometry
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

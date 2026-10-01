@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesEsa.lean — theorem BookProof.NavierStokesFlow.nsHamiltonian_hasZeroDeficiencyOn_of_flow
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
@@ -12,7 +14,6 @@ open scoped Matrix
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 Lp.ofLp psi)) := by
     ext i

@@ -1,10 +1,9 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.sqrt_mul_sqrt
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
-
-variable {κ : ℝ}
 
 
 open scoped ENNReal

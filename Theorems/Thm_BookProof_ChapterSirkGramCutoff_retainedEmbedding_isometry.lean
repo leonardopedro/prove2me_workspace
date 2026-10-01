@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.retainedEmbedding_isometry
+import Definitions.Def_ChapterSirkGramWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 open BookProof.ChapterSirkGramCutoff
@@ -15,7 +16,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.retainedEmbedding_isometry (heig : IsGramEigen w u lam) {d : ℕ} {e : Fin d → Fin m}
     (he : Function.Injective e) (hpos : ∀ j, 0 < lam (e j)) :

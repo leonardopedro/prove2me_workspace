@@ -1,11 +1,22 @@
 -- Generated from ChapterScalaronFiberFL.lean — theorem BookProof.ScalaronFiberFL.norm_sub_I_sq
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterWallEsaBddBelow
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterSchrodingerCutoffEsa
+import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
+open BookProof.HashimotoShiftInvert
 open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (W : WallPot) (s : ℝ)
-variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
 
 
 

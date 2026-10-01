@@ -1,11 +1,10 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.Decimal.leB_iff
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.SirkBandLedger
 open BookProof.SirkBandLedger.Decimal
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 

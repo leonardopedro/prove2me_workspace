@@ -1,9 +1,10 @@
 -- Generated from ChapterSirkGapTable.lean — theorem BookProof.SirkGapTable.certified_gap_mem_interval
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
+import Definitions.Def_ChapterSirkCertifiedGap
+open BookProof.SirkCertifiedGap
 open BookProof.SirkGapTable
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 

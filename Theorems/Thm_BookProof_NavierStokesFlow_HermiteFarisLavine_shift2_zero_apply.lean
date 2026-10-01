@@ -1,11 +1,9 @@
 -- Generated from ChapterNavierStokesHermiteFarisLavine.lean — theorem BookProof.NavierStokesFlow.HermiteFarisLavine.shift2_zero_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
 
 
 open scoped ENNReal

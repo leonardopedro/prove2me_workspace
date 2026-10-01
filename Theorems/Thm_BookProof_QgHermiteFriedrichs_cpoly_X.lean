@@ -10,7 +10,6 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 
 variable {d : ℕ}
-variable (W : Vd d → ℝ)
 
 
 
@@ -20,6 +19,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.cpoly_X (j : Fin d) : cpoly (X j : MvPolynomial (Fin d) ℂ) = X j := by sorry

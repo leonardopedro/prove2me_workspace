@@ -1,6 +1,16 @@
 -- Generated from ChapterQgManifoldModeInstance.lean — theorem BookProof.QgManifoldModeInstance.starobinsky_qgManifold_esa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.FockSecondQuantization
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
@@ -17,7 +27,6 @@ open BookProof.QgTimeStepping
 
 noncomputable section
 
-variable {ι : Type*}
 
 theorem BookProof.QgManifoldModeInstance.starobinsky_qgManifold_esa (M alpha : ℝ) (halpha : 0 < alpha)
     (S : VielbeinSpectrum ι) (g : ℝ) :

@@ -1,6 +1,13 @@
 -- Generated from ChapterHermiteRelativeBound.lean — theorem BookProof.HermiteRelative.norm_momL_le
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+open BookProof.HermiteProductCore
+open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

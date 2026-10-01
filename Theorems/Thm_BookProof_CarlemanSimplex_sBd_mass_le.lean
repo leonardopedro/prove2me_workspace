@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.sBd_mass_le
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.sBd_mass_le {B : ℝ}
     (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ F, ‖u a‖ ^ 2 ≤ B) (k M : ℕ) :

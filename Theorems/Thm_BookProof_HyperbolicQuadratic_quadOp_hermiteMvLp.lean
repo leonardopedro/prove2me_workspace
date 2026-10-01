@@ -1,6 +1,16 @@
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — theorem BookProof.HyperbolicQuadratic.quadOp_hermiteMvLp
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.HyperbolicQuadratic
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

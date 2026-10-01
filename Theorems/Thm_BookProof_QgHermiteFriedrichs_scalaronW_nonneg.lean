@@ -21,7 +21,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.scalaronW_nonneg {M alpha : ℝ} (halpha : 0 < alpha) (x : Vd 1) :
     0 ≤ scalaronW M alpha x := by sorry

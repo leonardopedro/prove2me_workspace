@@ -26,8 +26,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.qgScalaronMode_potential_ge (halpha : 0 < alpha) (k : ℕ) :
     -(M ^ 4 / (16 * alpha)) ≤ qgScalaronModePotential M alpha Rc phi k := by sorry

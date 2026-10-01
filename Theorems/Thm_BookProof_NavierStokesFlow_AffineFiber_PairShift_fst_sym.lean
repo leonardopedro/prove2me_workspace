@@ -15,6 +15,5 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.fst_sym : P.fst.sym = P.sym := by sorry

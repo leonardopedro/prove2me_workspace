@@ -1,6 +1,17 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — theorem BookProof.QgOuterFockFL.harmFried_isPositiveSelfAdjointExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteOscillator
+open BookProof.YangMillsFriedrichs
 open BookProof.QgOuterFockFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

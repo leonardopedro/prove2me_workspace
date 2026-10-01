@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.iJ_sq (hJ2 : J * J = -1) : iJ J * iJ J = 1 := by sorry

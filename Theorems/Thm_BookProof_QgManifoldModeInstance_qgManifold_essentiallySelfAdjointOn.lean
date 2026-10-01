@@ -1,6 +1,16 @@
 -- Generated from ChapterQgManifoldModeInstance.lean — theorem BookProof.QgManifoldModeInstance.qgManifold_essentiallySelfAdjointOn
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.FockSecondQuantization
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
@@ -17,7 +27,6 @@ open BookProof.QgTimeStepping
 
 noncomputable section
 
-variable {ι : Type*}
 
 theorem BookProof.QgManifoldModeInstance.qgManifold_essentiallySelfAdjointOn (W : WallPot) (S : VielbeinSpectrum ι) (g : ℝ) :
     EssentiallySelfAdjointOn (secN W (S.modes g)).dom (secData W (S.modes g)).ext := by sorry

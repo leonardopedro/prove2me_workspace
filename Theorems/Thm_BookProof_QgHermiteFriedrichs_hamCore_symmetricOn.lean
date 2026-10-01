@@ -23,7 +23,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.hamCore_symmetricOn (hWc : Continuous W) (hWb : ExpBounded W) :
     SymmetricOn (polyGaussCore (d := d)) (hamCore W hWc hWb) := by sorry

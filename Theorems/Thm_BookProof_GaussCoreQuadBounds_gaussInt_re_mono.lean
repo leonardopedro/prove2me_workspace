@@ -1,6 +1,14 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.gaussInt_re_mono
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.GaussCoreQuadBounds
 
 variable {D : ℕ}
@@ -15,7 +23,6 @@ open BookProof.QgOuterFock
 
 noncomputable section
 
-variable {D : ℕ}
 
 theorem BookProof.GaussCoreQuadBounds.gaussInt_re_mono {r s : MvPolynomial (Fin D) ℂ}
     (h : ∀ x : Vd D, (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r).re

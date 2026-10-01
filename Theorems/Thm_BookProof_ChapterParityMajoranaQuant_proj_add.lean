@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.proj_add : annihProj J + creatProj J = 1 := by sorry

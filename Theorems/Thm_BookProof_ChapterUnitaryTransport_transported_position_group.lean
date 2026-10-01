@@ -1,6 +1,10 @@
 -- Generated from ChapterUnitaryTransport.lean — theorem BookProof.ChapterUnitaryTransport.transported_position_group
 import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterUnboundedPosition
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
 
 variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
@@ -10,8 +14,6 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 open scoped InnerProductSpace
 
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 se f)
 

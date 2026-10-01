@@ -1,11 +1,12 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.sum_cube_hop_im
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
+open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 
 
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.sum_cube_hop_im {w : ℂ} {rc lc : (Fin d →₀ ℕ) → Fin d → ℝ} {k : ℕ} {i : Fin d}
     (hcomp : ∀ a : Fin d →₀ ℕ, lc (a + Finsupp.single i k) i = rc a i)

@@ -1,6 +1,10 @@
 -- Generated from ChapterQgContinuumModeInstance.lean — theorem BookProof.QgContinuumModeInstance.qgContinuum_ext_core
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgContinuumModeInstance
 
 

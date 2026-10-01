@@ -1,9 +1,10 @@
 -- Generated from ChapterComplexShiftCore.lean — theorem BookProof.HashimotoShiftInvert.cshiftRange_orthogonal_eq_bot
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   {Dom : Submodule ℂ F}

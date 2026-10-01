@@ -1,4 +1,10 @@
 -- Generated from ChapterQgOuterFockFlow.lean — theorem BookProof.QgOuterFockFlow.secN_dom_dense
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockFlow

@@ -1,6 +1,17 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
+open BookProof.QgHermiteOscillator
 open BookProof.GaussCoreQuadBounds
 
 variable {D : ℕ}
@@ -15,7 +26,6 @@ open BookProof.QgOuterFock
 
 noncomputable section
 
-variable {D : ℕ}
 
 theorem BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm (p : MvPolynomial (Fin D) ℂ) :
     ((D : ℝ) / 2) * ‖pgLp p‖ ^ 2 ≤ quadForm harmCore ⟨pgLp p, pgLp_mem_core p⟩ := by sorry

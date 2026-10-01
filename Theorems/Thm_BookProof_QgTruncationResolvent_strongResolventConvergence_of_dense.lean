@@ -1,11 +1,20 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.strongResolventConvergence_of_dense
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.QgTruncationResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
 
 
 
@@ -17,7 +26,6 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgTruncationResolvent.strongResolventConvergence_of_dense {T : UnboundedSelfAdjoint F}
     {S : ℕ → UnboundedSelfAdjoint F} {G : Set F} (hG : Dense G)

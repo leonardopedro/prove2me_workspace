@@ -1,6 +1,17 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.secondQuantization_friedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
 open BookProof.FockSecondQuantization
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

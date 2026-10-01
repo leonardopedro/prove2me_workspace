@@ -1,6 +1,17 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.timeIndependent_of_selfAdjointExtension
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open BookProof.StoneBridge
 open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]
@@ -19,7 +30,6 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
-variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FiniteSectionSingleTime.timeIndependent_of_selfAdjointExtension {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] [CompleteSpace F] {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}

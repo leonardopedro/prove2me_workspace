@@ -1,6 +1,21 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.qg_truncation_hashimoto_shiftInvert_tendsto
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.QgTruncationResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
@@ -17,7 +32,6 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgTruncationResolvent.qg_truncation_hashimoto_shiftInvert_tendsto (Λ : ℕ → Set ι)
     (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

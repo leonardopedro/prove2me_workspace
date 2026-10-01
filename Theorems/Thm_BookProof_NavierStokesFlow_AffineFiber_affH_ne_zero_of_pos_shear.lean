@@ -1,6 +1,10 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.affH_ne_zero_of_pos_shear
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.NavierStokesFlow.HermiteFarisLavine
+open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -15,7 +19,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
 2I ℕ) : ℕ → ℂ) (n + 2) = _
   have hp2 := PairShift.pairH_coe (P := affData hκ hc) (basisState κ c n) (n + 2)

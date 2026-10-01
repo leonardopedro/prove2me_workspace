@@ -1,6 +1,19 @@
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — theorem BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.EsaClosure
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.LagrangianKatoRellich
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.StoneBridge
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

@@ -1,6 +1,17 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.velH_crd
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow.HermiteFarisLavine
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.SignedShift
+open BookProof.NavierStokesFlow.SignedShift.SignedHop
+open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 

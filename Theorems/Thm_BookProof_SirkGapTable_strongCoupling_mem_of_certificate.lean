@@ -1,9 +1,13 @@
 -- Generated from ChapterSirkGapTable.lean — theorem BookProof.SirkGapTable.strongCoupling_mem_of_certificate
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
+import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterSirkFinitePrecision
+open BookProof.SirkCertifiedGap
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.SirkGapTable
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 

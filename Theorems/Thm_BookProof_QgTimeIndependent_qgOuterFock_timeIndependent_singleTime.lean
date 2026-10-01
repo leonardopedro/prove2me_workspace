@@ -1,6 +1,13 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — theorem BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
 open BookProof.QgTimeIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -13,7 +20,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime (W : WallPot) (Q : QgModeData ι)
     (Λ : ℕ → Set ι) (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

@@ -1,11 +1,14 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — theorem BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterYangMillsFriedrichs
+open BookProof.ChapterH5
+open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 

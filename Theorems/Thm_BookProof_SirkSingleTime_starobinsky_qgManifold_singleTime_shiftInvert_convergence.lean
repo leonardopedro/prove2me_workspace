@@ -1,6 +1,16 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — theorem BookProof.SirkSingleTime.starobinsky_qgManifold_singleTime_shiftInvert_convergence
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open BookProof.FockSecondQuantization
+open `BookProof.HashimotoShiftInvert`.
 open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -18,7 +28,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.SirkSingleTime.starobinsky_qgManifold_singleTime_shiftInvert_convergence (M alpha : ℝ)
     (halpha : 0 < alpha) (Sp : VielbeinSpectrum ι) (g : ℝ) :

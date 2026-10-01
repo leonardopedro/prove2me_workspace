@@ -1,11 +1,17 @@
 -- Generated from ChapterQgTimeStepping.lean — theorem BookProof.QgTimeStepping.tendsto_iterate_cnStep
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeStepping
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)
-variable {ι : Type*}
 
 
 
@@ -17,7 +23,6 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.QgTimeStepping.tendsto_iterate_cnStep {t : ℝ} (ht : 0 < t) (v : H) :
     Tendsto (fun k : ℕ => (cnStep T (t / (k + 1)))^[k + 1] v) atTop

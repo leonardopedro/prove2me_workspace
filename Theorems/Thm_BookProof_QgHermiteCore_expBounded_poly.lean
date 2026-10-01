@@ -9,7 +9,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.QgHermiteCore
 
 variable {E : Type*} [NormedAddCommGroup E]
-variable {d : ℕ}
 
 
 

@@ -10,7 +10,6 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 
 variable {d : ℕ}
-variable (W : Vd d → ℝ)
 
 
 
@@ -20,7 +19,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.cpoly_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
     cpoly (∑ i ∈ s, f i) = ∑ i ∈ s, cpoly (f i) := by sorry

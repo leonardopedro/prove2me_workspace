@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterSirkGramWhitening
+open BookProof.ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -15,7 +17,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal {d : ℕ} {v : Fin d → E} (hv : Orthonormal ℂ v) :
     (adjoint (synthesis v)).comp (synthesis v)

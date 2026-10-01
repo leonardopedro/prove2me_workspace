@@ -4,13 +4,11 @@ import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitary
 
 variable {N : ℕ} [NeZero N]
-variable {X : Type*}
 
 
 open scoped BigOperators Matrix TensorProduct
 
 
-variable {N : ℕ} [NeZero N]
 
 namics-based unitary
 (and *no* basis choice) a genuine conditional probability law

@@ -4,13 +4,11 @@ import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitary
 
 variable {N : ℕ} [NeZero N]
-variable {X : Type*}
 
 
 open scoped BigOperators Matrix TensorProduct
 
 
-variable {N : ℕ} [NeZero N]
 
 -/
 theorem BookProof.ChapterContinuityUnitary.exp_smul_I_unitary {n : Type*} [Fintype n] [DecidableEq n]

@@ -1,6 +1,8 @@
 -- Generated from ChapterUnboundedPosition.lean — theorem BookProof.ChapterUnboundedPosition.sum_single_mem_mulDomain
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 
 

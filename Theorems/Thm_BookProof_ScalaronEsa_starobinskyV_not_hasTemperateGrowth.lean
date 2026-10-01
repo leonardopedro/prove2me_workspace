@@ -14,7 +14,6 @@ open BookProof.ScalaronEsa
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 
 open Filter Topology MeasureTheory SchwartzMap
@@ -26,8 +25,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.starobinskyV_not_hasTemperateGrowth {M alpha : ℝ} (hM : 0 < M) (halpha : 0 < alpha) :
     ¬ Function.HasTemperateGrowth (fun phi : ℝ => starobinskyV M alpha phi) := by sorry

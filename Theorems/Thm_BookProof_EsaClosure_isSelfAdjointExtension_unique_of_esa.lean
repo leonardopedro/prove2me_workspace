@@ -1,12 +1,12 @@
 -- Generated from ChapterEsaClosureCore.lean — theorem BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
-variable [CompleteSpace F] {Dom : Submodule ℂ F}
 
 import BookProof.Prelude
 import BookProof.ChapterFarisLavineCore
@@ -121,7 +121,6 @@ def IsSelfAdjointExtension {D Dom : Submodule ℂ F} (H : D →ₗ[ℂ] F) (A : 
 
 section SelfAdjoint
 
-variable [CompleteSpace F]
 
 /-- The range of `γ − clExt` is closed: the operator is bounded below by
 `|Im γ|` and its graph is closed by construction. -/

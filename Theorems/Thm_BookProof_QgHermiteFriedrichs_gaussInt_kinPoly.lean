@@ -11,7 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
 variable {d : ℕ}
-variable (W : Vd d → ℝ)
 
 
 
@@ -21,7 +20,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.gaussInt_kinPoly (p q : MvPolynomial (Fin d) ℂ) :
     gaussInt (cpoly p * kinPoly q) = ∑ j : Fin d, gaussInt (cpoly (coreD j p) * coreD j q) := by sorry

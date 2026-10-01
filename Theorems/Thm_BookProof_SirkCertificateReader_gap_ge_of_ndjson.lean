@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkCertificateReader.lean — theorem BookProof.SirkCertificateReader.gap_ge_of_ndjson
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterSirkCertifiedGap
+open BookProof.SirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]

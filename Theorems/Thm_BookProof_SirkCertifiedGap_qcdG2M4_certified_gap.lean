@@ -1,6 +1,11 @@
 -- Generated from ChapterSirkCertifiedGap.lean — theorem BookProof.SirkCertifiedGap.qcdG2M4_certified_gap
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterSirkFinitePrecision
+open BookProof.ChapterGravityProjector
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.SirkCertifiedGap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
@@ -13,7 +18,6 @@ open scoped InnerProductSpace
 open Finset Filter Topology
 open BookProof.SirkFinitePrecision
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 2M4_lower : qcdG2M4.lower = 1.932 := by
   norm_num [GapCertificate.lower, qcdG2M4]

@@ -1,4 +1,6 @@
 -- Generated from ChapterSirkGramWhitening.lean — theorem BookProof.ChapterSirkGramWhitening.exists_isometry_range_eq_span
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterSirkWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
@@ -13,7 +15,6 @@ open scoped InnerProductSpace
 open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramWhitening.exists_isometry_range_eq_span {m : ℕ} (w : Fin m → E) :
     ∃ (d : ℕ) (V : EuclideanSpace ℂ (Fin d) →L[ℂ] E),

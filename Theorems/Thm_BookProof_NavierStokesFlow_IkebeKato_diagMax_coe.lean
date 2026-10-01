@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_coe
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 
@@ -13,7 +14,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine
 
-variable {ι : Type*}
 
 ul]
     ring

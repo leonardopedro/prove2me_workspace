@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range
+import Definitions.Def_ChapterSirkGramWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 open BookProof.ChapterSirkGramCutoff
@@ -15,7 +16,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.norm_sub_proj_le_of_mem_range {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] [CompleteSpace F] (V : F →L[ℂ] E)

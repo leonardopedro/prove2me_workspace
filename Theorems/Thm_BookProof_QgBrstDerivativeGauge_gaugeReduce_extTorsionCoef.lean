@@ -1,4 +1,6 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — theorem BookProof.QgBrstDerivativeGauge.gaugeReduce_extTorsionCoef
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
 open BookProof.QgBrstDerivativeGauge

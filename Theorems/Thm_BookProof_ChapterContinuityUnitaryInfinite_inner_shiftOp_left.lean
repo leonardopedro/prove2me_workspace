@@ -3,8 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
-variable {X : Type*}
-
 import Mathlib
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.inner_shiftOp_left (f : L2Z) : ‖f‖ ^ 2 = ∑' k : ℤ, ‖(f : ℤ → ℂ) k‖ ^ 2 := by

@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkCertifiedGap.lean — theorem BookProof.SirkCertifiedGap.certifiedGap_tendsto
+import Definitions.Def_ChapterSirkFinitePrecision
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertifiedGap
@@ -13,7 +14,6 @@ open scoped InnerProductSpace
 open Finset Filter Topology
 open BookProof.SirkFinitePrecision
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 theorem BookProof.SirkCertifiedGap.certifiedGap_tendsto {thetaE thetaO deltaE deltaO : ℕ → ℝ} {lamE lamO : ℝ}
     (hE : Tendsto thetaE atTop (𝓝 lamE)) (hO : Tendsto thetaO atTop (𝓝 lamO))

@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.retainedVec_orthonormal
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterSirkGramWhitening
+open BookProof.ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -15,7 +17,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.retainedVec_orthonormal (heig : IsGramEigen w u lam) {d : ℕ} {e : Fin d → Fin m}
     (he : Function.Injective e) (hpos : ∀ j, 0 < lam (e j)) :

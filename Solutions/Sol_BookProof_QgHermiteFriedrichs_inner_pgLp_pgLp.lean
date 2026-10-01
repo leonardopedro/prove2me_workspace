@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_conj_pgFun
+import Theorems.Thm_BookProof_HermiteProductCore_gaussWD_eq_sq
 open BookProof.QgHermiteFriedrichs
 
 

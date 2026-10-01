@@ -1,10 +1,15 @@
 -- Generated from ChapterStoneBridge.lean — theorem BookProof.StoneBridge.unboundedSelfAdjointOf_domain
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+open BookProof.EsaClosure
 open BookProof.StoneBridge
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
 
 
 open Filter Topology
@@ -14,7 +19,6 @@ open scoped InnerProductSpace
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.StoneBridge.unboundedSelfAdjointOf_domain {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense ((D : Submodule ℂ F) : Set F))

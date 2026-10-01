@@ -10,7 +10,5 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 open scoped InnerProductSpace
 
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 theorem BookProof.ChapterUnitaryTransport.map_real_smul (W : H ≃ₗᵢ[ℂ] K) (r : ℝ) (x : H) : W (r • x) = r • W x := by sorry

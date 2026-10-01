@@ -1,6 +1,37 @@
 -- Generated from ChapterSirkPerSystem.lean — theorem BookProof.ChapterSirkPerSystem.qgR2_shiftInvert_selects
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesHashimoto
+import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Mathlib
 import Definitions.Def_ChapterSirkPerSystem
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+open BookProof.HashimotoShiftInvert
+open BookProof.EsaClosure
+open BookProof.FarisLavine
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.QuantumGravityDensitized
+open BookProof.Starobinsky
+open BookProof.StoneBridge
 open BookProof.ChapterSirkPerSystem
 
 

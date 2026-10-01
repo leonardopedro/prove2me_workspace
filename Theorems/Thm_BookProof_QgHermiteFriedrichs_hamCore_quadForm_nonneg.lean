@@ -23,7 +23,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.hamCore_quadForm_nonneg (hWc : Continuous W) (hWb : ExpBounded W)
     (hW0 : ∀ x, 0 ≤ W x) (x : (polyGaussCore (d := d))) :

@@ -10,7 +10,6 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 open ContinuousLinearMap
 open scoped BigOperators
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
  i))
   · refine smul_nonneg_isPositive _ ?_ (by norm_num)

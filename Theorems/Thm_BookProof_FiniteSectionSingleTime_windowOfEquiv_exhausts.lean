@@ -1,4 +1,11 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.windowOfEquiv_exhausts
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 open BookProof.FiniteSectionSingleTime
@@ -19,6 +26,5 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
-variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FiniteSectionSingleTime.windowOfEquiv_exhausts (en : ℕ ≃ ι) : Exhausts (windowOfEquiv en) := by sorry

@@ -1,6 +1,14 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — theorem BookProof.ChapterSirkSpectralGeometry.crouzeix_domain_convexHull
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH9
+open BookProof.ChapterH4
+open BookProof.ChapterH9
 open BookProof.ChapterSirkSpectralGeometry
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

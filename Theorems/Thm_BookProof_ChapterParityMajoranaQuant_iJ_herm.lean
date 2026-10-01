@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.iJ_herm (hskew : Jᴴ = -J) : (iJ J)ᴴ = iJ J := by sorry

@@ -21,7 +21,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.hasDerivAt_gaussD_coordLine (x : Vd d) (j : Fin d) (t : ℝ) :
     HasDerivAt (fun s : ℝ => gaussD (coordLine x j s))

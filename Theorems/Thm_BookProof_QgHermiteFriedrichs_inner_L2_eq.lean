@@ -21,7 +21,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.inner_L2_eq (f g : L2d d) :
     (inner ℂ f g : ℂ)

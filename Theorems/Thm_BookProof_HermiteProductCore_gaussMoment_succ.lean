@@ -1,6 +1,8 @@
 -- Generated from ChapterHermiteProductCore.lean — theorem BookProof.HermiteProductCore.gaussMoment_succ
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
+open BookProof.HermiteCore
 open BookProof.HermiteProductCore
 
 variable {d : ℕ}

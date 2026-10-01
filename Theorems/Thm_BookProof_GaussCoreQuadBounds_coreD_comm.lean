@@ -1,6 +1,14 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.coreD_comm
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgHermiteFriedrichs
+open BookProof.QgHermiteFriedrichs
 open BookProof.GaussCoreQuadBounds
 
 variable {D : ℕ}
@@ -15,7 +23,6 @@ open BookProof.QgOuterFock
 
 noncomputable section
 
-variable {D : ℕ}
 
 theorem BookProof.GaussCoreQuadBounds.coreD_comm (j k : Fin D) (p : MvPolynomial (Fin D) ℂ) :
     coreD j (coreD k p) = coreD k (coreD j p) := by sorry

@@ -11,7 +11,6 @@ noncomputable section
 
 open NormedSpace
 
-variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
 omit [NormedAlgebra ℂ A] [CompleteSpace A] in
 theorem BookProof.ChapterSirkGroupTransfer.norm_pow_le_of_le {a : A} {M : ℝ} (ha : ‖a‖ ≤ M) (n : ℕ) : ‖a ^ n‖ ≤ M ^ n := by sorry

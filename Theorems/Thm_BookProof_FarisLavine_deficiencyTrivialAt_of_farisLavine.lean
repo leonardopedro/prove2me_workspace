@@ -1,6 +1,9 @@
 -- Generated from ChapterFarisLavineCore.lean — theorem BookProof.FarisLavine.deficiencyTrivialAt_of_farisLavine
 import Mathlib
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
@@ -8,8 +11,6 @@ variable {D : Submodule ℂ F}
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
 
 theorem BookProof.FarisLavine.deficiencyTrivialAt_of_farisLavine
     (H N : D →ₗ[ℂ] F) (c d : ℝ)

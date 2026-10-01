@@ -6,7 +6,6 @@ import Definitions.Def_ChapterQgHermiteCore
 open BookProof.QgHermiteCore
 
 variable {E : Type*} [NormedAddCommGroup E]
-variable {d : ℕ}
 
 
 

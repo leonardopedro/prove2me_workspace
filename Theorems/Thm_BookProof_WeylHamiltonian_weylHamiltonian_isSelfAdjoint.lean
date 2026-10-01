@@ -10,7 +10,6 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 open ContinuousLinearMap
 open scoped BigOperators
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 hB : ∀ a, IsSelfAdjoint (B a)) (x : H) :
     0 ≤ RCLike.re (inner ℂ ((weylHamiltonian π B) x) x) :=

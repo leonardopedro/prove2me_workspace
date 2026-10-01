@@ -13,7 +13,6 @@ open scoped InnerProductSpace
 open Filter Topology MeasureTheory
 
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
 up of its generator -/
 

@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkCertificateReader.lean — theorem BookProof.SirkCertificateReader.formatExample_lower
+import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 open BookProof.SirkCertificateReader

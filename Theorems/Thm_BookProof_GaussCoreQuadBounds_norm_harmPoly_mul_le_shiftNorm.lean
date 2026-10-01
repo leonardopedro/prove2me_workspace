@@ -1,6 +1,15 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
 open BookProof.GaussCoreQuadBounds
 
 variable {D : ℕ}
@@ -15,7 +24,6 @@ open BookProof.QgOuterFock
 
 noncomputable section
 
-variable {D : ℕ}
 
 theorem BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm (p : MvPolynomial (Fin D) ℂ) :
     ‖pgLp (harmPoly * p)‖ ≤ 2 * shiftNorm p := by sorry

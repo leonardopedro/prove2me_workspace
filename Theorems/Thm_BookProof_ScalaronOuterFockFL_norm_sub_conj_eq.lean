@@ -1,4 +1,10 @@
 -- Generated from ChapterScalaronOuterFockFL.lean — theorem BookProof.ScalaronOuterFockFL.norm_sub_conj_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterWallEsaSemibounded
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 open BookProof.ScalaronOuterFockFL

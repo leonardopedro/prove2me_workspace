@@ -1,11 +1,14 @@
 -- Generated from ChapterQgTimeStepping.lean — theorem BookProof.QgTimeStepping.two_div_ne_zero
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 open BookProof.QgTimeStepping
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-variable {ι : Type*}
 
 
 
@@ -17,6 +20,5 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.QgTimeStepping.two_div_ne_zero {tau : ℝ} (h : tau ≠ 0) : (2 / tau : ℝ) ≠ 0 := by sorry

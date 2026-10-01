@@ -1,11 +1,11 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.mem_innK
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
+open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 
 
@@ -14,7 +14,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.mem_innK {d N : ℕ} {i : Fin d} {k : ℕ} {a : Fin d →₀ ℕ} :
     a ∈ innK d N i k ↔ (∀ j, a j ≤ N) ∧ a i + k ≤ N := by sorry

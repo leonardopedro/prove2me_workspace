@@ -1,6 +1,17 @@
 -- Generated from ChapterQgHermiteOscillatorEsa.lean — theorem BookProof.QgHermiteOscillator.norm_potLp_le
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteCore
+open BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

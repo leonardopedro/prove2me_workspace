@@ -1,6 +1,7 @@
 -- Generated from ChapterStrichartzWave.lean — theorem BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.StrichartzWave
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
@@ -11,9 +12,6 @@ variable {ι : Type*} [Fintype ι]
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-variable {ι : Type*} [Fintype ι]
 
  = 0 := by
     rw [← MeasureTheory.Lp.norm_fourier_eq u, hg0, norm_zero]

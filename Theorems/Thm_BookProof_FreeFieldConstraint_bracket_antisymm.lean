@@ -7,6 +7,5 @@ variable {R : Type*} [Ring R]
 
 
 
-variable {R : Type*} [Ring R]
 
 theorem BookProof.FreeFieldConstraint.bracket_antisymm (a b : R) : bracket a b = - bracket b a := by sorry

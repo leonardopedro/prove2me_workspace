@@ -1,6 +1,7 @@
 -- Generated from ChapterFarisLavineCore.lean — theorem BookProof.FarisLavine.essentiallySelfAdjointOn_restrict_of_graph_core
 import Mathlib
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.FarisLavine
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
@@ -8,8 +9,6 @@ variable {D : Submodule ℂ F}
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
 
 theorem BookProof.FarisLavine.essentiallySelfAdjointOn_restrict_of_graph_core
     {C : Submodule ℂ F} (hCD : C ≤ D) (H : D →ₗ[ℂ] F)

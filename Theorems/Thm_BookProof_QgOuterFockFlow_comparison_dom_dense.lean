@@ -1,9 +1,17 @@
 -- Generated from ChapterQgOuterFockFlow.lean — theorem BookProof.QgOuterFockFlow.comparison_dom_dense
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockFlow
-
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 
 

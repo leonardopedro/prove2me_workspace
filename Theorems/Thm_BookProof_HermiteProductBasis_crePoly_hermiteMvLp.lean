@@ -1,6 +1,9 @@
 -- Generated from ChapterHermiteProductBasis.lean — theorem BookProof.HermiteProductBasis.crePoly_hermiteMvLp
+import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.HermiteProductBasis
 
 variable {d : ℕ}
@@ -11,7 +14,6 @@ open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCo
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.HermiteProductBasis.crePoly_hermiteMvLp (i : Fin d) (a : Fin d →₀ ℕ) :
     ((hermiteMvNorm a : ℝ) : ℂ)⁻¹ • pgLp (crePoly i (hermiteMv a))

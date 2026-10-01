@@ -1,10 +1,19 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.projW_apply
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterE4
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.ChapterE4
+open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 
 open scoped InnerProductSpace
@@ -19,7 +28,6 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
-variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FiniteSectionSingleTime.projW_apply (W : Finset ι) (y : L2I ι) :
     projW W y = ∑ c ∈ W, ((y : ι → ℂ) c) • basisVec c := by sorry

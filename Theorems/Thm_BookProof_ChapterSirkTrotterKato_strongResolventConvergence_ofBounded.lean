@@ -1,7 +1,12 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — theorem BookProof.ChapterSirkTrotterKato.strongResolventConvergence_ofBounded
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
@@ -13,7 +18,6 @@ open Filter Topology
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterSirkTrotterKato.strongResolventConvergence_ofBounded {A : ℕ → H →L[ℂ] H} {Alim : H →L[ℂ] H}
     (hA : ∀ n, IsSelfAdjoint (A n)) (hlim : IsSelfAdjoint Alim)

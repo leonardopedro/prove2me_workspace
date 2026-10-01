@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.creat_annih_zero (hJ2 : J * J = -1) : creatProj J * annihProj J = 0 := by sorry

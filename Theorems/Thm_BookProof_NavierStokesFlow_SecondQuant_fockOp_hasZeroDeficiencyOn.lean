@@ -1,6 +1,11 @@
 -- Generated from ChapterNavierStokesSecondQuant.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSecondQuant
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockFarisLavine
+open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 
@@ -14,8 +19,6 @@ open scoped ENNReal
 
 
 
-variable {ι : Type*}
-variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 
 theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn (A : ∀ m, D m →ₗ[ℂ] D m)
     (hA : ∀ m, HasZeroDeficiencyOn (D m) (A m)) :

@@ -1,6 +1,9 @@
 -- Generated from ChapterSirkGramWhitening.lean — theorem BookProof.ChapterSirkGramWhitening.sirkApprox_gram_whitening_eq
+import Definitions.Def_ChapterSirkWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
+import Definitions.Def_ChapterH4
+open BookProof.ChapterH4
 open BookProof.ChapterSirkGramWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -13,7 +16,6 @@ open scoped InnerProductSpace
 open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 nsequences for the reduction -/
 

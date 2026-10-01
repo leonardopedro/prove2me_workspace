@@ -1,9 +1,9 @@
 -- Generated from ChapterSirkGapTable.lean — theorem BookProof.SirkGapTable.richardson_qym_g4_gt
+import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 open BookProof.SirkGapTable
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 

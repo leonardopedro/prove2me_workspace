@@ -1,10 +1,13 @@
 -- Generated from ChapterFockOneParticleGap.lean — theorem BookProof.FockOneParticleGap.creA_annA_single
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesFockCanonical
+open BookProof.FockSecondQuantization
+open BookProof.NavierStokesFlow.FockCanonical
 open BookProof.FockOneParticleGap
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

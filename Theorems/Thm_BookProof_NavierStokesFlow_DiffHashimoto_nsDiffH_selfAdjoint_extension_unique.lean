@@ -1,6 +1,18 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — theorem BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.EsaClosure
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
@@ -20,7 +32,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique {Dom₁ Dom₂ : Submodule ℂ (L2d 3)}
     {G₁ : Dom₁ →ₗ[ℂ] L2d 3} {G₂ : Dom₂ →ₗ[ℂ] L2d 3}

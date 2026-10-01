@@ -1,11 +1,11 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.sum_shiftK
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
+open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 
 
@@ -14,7 +14,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.sum_shiftK (d N : ℕ) (i : Fin d) (k : ℕ) (F : (Fin d →₀ ℕ) → ℂ)
     (hF : ∀ a : Fin d →₀ ℕ, a i < k → F a = 0) :

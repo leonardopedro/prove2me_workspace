@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.not_summable_inv_natCast_add_two
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
@@ -14,6 +15,5 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.not_summable_inv_natCast_add_two : ¬ Summable (fun N : ℕ => ((N : ℝ) + 2)⁻¹) := by sorry

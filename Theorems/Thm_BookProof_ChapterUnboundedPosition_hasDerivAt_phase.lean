@@ -1,6 +1,9 @@
 -- Generated from ChapterUnboundedPosition.lean — theorem BookProof.ChapterUnboundedPosition.hasDerivAt_phase
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+open BookProof.NsLagrangianDet
 open BookProof.ChapterUnboundedPosition
 
 

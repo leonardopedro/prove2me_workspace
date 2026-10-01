@@ -1,6 +1,11 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — theorem BookProof.QgBrstDerivativeGauge.brstGaugeFixed_esa
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgBrstDerivativeGauge
 
 

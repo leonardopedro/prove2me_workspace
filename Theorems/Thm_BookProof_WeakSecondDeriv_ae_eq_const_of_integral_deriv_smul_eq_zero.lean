@@ -1,6 +1,9 @@
 -- Generated from ChapterWeakSecondDerivative.lean — theorem BookProof.WeakSecondDeriv.ae_eq_const_of_integral_deriv_smul_eq_zero
 import Mathlib
 import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterSirkFinitePrecision
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.WeakSecondDeriv
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]

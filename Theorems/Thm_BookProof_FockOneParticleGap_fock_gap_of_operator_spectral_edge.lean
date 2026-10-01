@@ -1,6 +1,10 @@
 -- Generated from ChapterFockOneParticleGap.lean — theorem BookProof.FockOneParticleGap.fock_gap_of_operator_spectral_edge
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+open BookProof.FockSecondQuantization
 open BookProof.FockOneParticleGap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]

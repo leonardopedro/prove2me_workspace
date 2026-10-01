@@ -4,7 +4,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 
 noncomputable section
@@ -15,7 +14,6 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterStoneResolvent
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterSirkTrotterKato.tendsto_uniformly_on_isCompact_of_tendsto {D : ℕ → H →L[ℂ] H} {M : ℝ}
     (hM : ∀ n y, ‖D n y‖ ≤ M * ‖y‖) (hptw : ∀ y, Tendsto (fun n => D n y) atTop (𝓝 0))

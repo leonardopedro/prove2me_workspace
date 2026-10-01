@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -15,7 +18,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
  : ℝ) := hn
   have hmul : 2 * (|C| + 1) < κ * (n : ℝ) := by

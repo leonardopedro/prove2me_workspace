@@ -1,4 +1,6 @@
 -- Generated from ChapterQgContinuumModeInstance.lean — theorem BookProof.QgContinuumModeInstance.cSig_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
 open BookProof.QgContinuumModeInstance

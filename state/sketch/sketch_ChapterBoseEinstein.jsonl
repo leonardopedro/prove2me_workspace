@@ -7,7 +7,7 @@
 {"declEnd":{"col":10,"line":98,"offset":4027},"declStart":{"col":0,"line":89,"offset":3632},"docstring":{"end":{"col":14,"line":90,"offset":3722},"start":{"col":0,"line":89,"offset":3632}},"kind":"decl","nameText":"boseEinstein_strictAntiOn","privateTok":null,"valKind":"simple","valStart":{"col":74,"line":91,"offset":3797}}
 {"declEnd":{"col":6,"line":107,"offset":4310},"declStart":{"col":0,"line":102,"offset":4075},"docstring":null,"kind":"decl","nameText":"thermalTemperature_boseEinstein","privateTok":null,"valKind":"simple","valStart":{"col":84,"line":103,"offset":4214}}
 {"declEnd":{"col":6,"line":126,"offset":5316},"declStart":{"col":0,"line":109,"offset":4312},"docstring":{"end":{"col":83,"line":111,"offset":4563},"start":{"col":0,"line":109,"offset":4312}},"kind":"decl","nameText":"thermalTemperature_boseEinstein_eq_coth","privateTok":null,"valKind":"simple","valStart":{"col":86,"line":113,"offset":4713}}
-{"declEnd":{"col":81,"line":136,"offset":5972},"declStart":{"col":0,"line":128,"offset":5318},"docstring":{"end":{"col":82,"line":129,"offset":5489},"start":{"col":0,"line":128,"offset":5318}},"kind":"decl","nameText":"tendsto_thermalTemperature_boseEinstein","privateTok":null,"valKind":"simple","valStart":{"col":81,"line":131,"offset":5626}}
+{"declEnd":{"col":81,"line":136,"offset":5973},"declStart":{"col":0,"line":128,"offset":5318},"docstring":{"end":{"col":82,"line":129,"offset":5489},"start":{"col":0,"line":128,"offset":5318}},"kind":"decl","nameText":"tendsto_thermalTemperature_boseEinstein","privateTok":null,"valKind":"simple","valStart":{"col":81,"line":131,"offset":5626}}
 {"const":"Real","end":{"col":15,"line":49,"offset":2084},"kind":"ref","start":{"col":14,"line":49,"offset":2081}}
 {"const":"BookProof.ChapterBoseEinstein.boseEinstein","end":{"col":16,"line":53,"offset":2231},"kind":"ref","start":{"col":4,"line":53,"offset":2219}}
 {"const":"Real","end":{"col":23,"line":53,"offset":2240},"kind":"ref","start":{"col":22,"line":53,"offset":2237}}
@@ -114,8 +114,8 @@
 {"const":"Filter.atTop","end":{"col":55,"line":134,"offset":5812},"kind":"ref","start":{"col":50,"line":134,"offset":5807}}
 {"const":"BookProof.ChapterBoseEinstein.boseEinstein","end":{"col":23,"line":135,"offset":5851},"kind":"ref","start":{"col":11,"line":135,"offset":5839}}
 {"const":"one_div","end":{"col":32,"line":135,"offset":5860},"kind":"ref","start":{"col":25,"line":135,"offset":5853}}
-{"const":"Filter.Tendsto.inv_tendsto_atTop","end":{"col":60,"line":135,"offset":5888},"kind":"ref","start":{"col":43,"line":135,"offset":5871}}
-{"const":"BookProof.ChapterCoherentTemperature.thermalTemperature","end":{"col":27,"line":136,"offset":5916},"kind":"ref","start":{"col":9,"line":136,"offset":5898}}
-{"const":"Filter.Tendsto.add","end":{"col":41,"line":136,"offset":5930},"kind":"ref","start":{"col":38,"line":136,"offset":5927}}
-{"const":"tendsto_const_nhds","end":{"col":61,"line":136,"offset":5950},"kind":"ref","start":{"col":43,"line":136,"offset":5932}}
-{"const":"Real","end":{"col":78,"line":136,"offset":5969},"kind":"ref","start":{"col":77,"line":136,"offset":5966}}
+{"const":"Filter.Tendsto.inv_tendsto_atTop","end":{"col":61,"line":135,"offset":5889},"kind":"ref","start":{"col":44,"line":135,"offset":5872}}
+{"const":"BookProof.ChapterCoherentTemperature.thermalTemperature","end":{"col":27,"line":136,"offset":5917},"kind":"ref","start":{"col":9,"line":136,"offset":5899}}
+{"const":"Filter.Tendsto.add","end":{"col":41,"line":136,"offset":5931},"kind":"ref","start":{"col":38,"line":136,"offset":5928}}
+{"const":"tendsto_const_nhds","end":{"col":61,"line":136,"offset":5951},"kind":"ref","start":{"col":43,"line":136,"offset":5933}}
+{"const":"Real","end":{"col":78,"line":136,"offset":5970},"kind":"ref","start":{"col":77,"line":136,"offset":5967}}

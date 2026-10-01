@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — theorem BookProof.NavierStokesFlow.LagrangianCanonical.omega_pos
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

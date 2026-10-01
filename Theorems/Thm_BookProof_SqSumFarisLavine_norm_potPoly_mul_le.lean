@@ -1,6 +1,17 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.norm_potPoly_mul_le
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+open BookProof.GaussCoreQuadBounds
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteOscillator
 open BookProof.SqSumFarisLavine
 
 variable {D : ℕ} {R : Type*} [Fintype R]
@@ -16,7 +27,6 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 theorem BookProof.SqSumFarisLavine.norm_potPoly_mul_le {v : R → Fin D → ℝ} {B : ℝ} (hB0 : 0 ≤ B)
     (hB : ∀ x : Vd D, potFun v x ≤ B * ‖x‖ ^ 2) (p : MvPolynomial (Fin D) ℂ) :

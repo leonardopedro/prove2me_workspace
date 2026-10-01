@@ -1,9 +1,16 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.ritz_band_enclosure_of_ledger
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichsLimit
 open BookProof.SirkBandLedger
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 

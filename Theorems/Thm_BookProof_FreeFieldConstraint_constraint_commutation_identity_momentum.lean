@@ -7,7 +7,6 @@ variable {R : Type*} [Ring R]
 
 
 
-variable {R : Type*} [Ring R]
 
 theorem BookProof.FreeFieldConstraint.constraint_commutation_identity_momentum (D H p1 : R) (hDH : bracket D H = 0) :
     bracket (bracket D p1) H = - bracket D (bracket H p1) := by sorry

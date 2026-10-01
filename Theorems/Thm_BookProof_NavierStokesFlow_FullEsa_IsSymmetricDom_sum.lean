@@ -1,14 +1,15 @@
 -- Generated from ChapterNavierStokesFullEsa.lean — theorem BookProof.NavierStokesFlow.FullEsa.IsSymmetricDom.sum
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.IsSymmetricDom
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (d : NSFullData F)
 
 
 open scoped ENNReal

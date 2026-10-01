@@ -1,6 +1,15 @@
 -- Generated from ChapterQgOuterFockFlow.lean — theorem BookProof.QgOuterFockFlow.secData_ext_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFockFlow
 
 variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)

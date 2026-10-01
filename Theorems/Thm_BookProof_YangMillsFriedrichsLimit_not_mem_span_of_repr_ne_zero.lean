@@ -1,11 +1,10 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — theorem BookProof.YangMillsFriedrichsLimit.not_mem_span_of_repr_ne_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 open BookProof.YangMillsFriedrichsLimit
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 

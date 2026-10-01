@@ -1,6 +1,14 @@
 -- Generated from ChapterHermiteRelativeBound.lean — theorem BookProof.HermiteRelative.polySym_zero
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

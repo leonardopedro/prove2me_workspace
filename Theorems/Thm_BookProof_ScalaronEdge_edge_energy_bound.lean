@@ -1,4 +1,13 @@
 -- Generated from ChapterScalaronEdge.lean — theorem BookProof.ScalaronEdge.edge_energy_bound
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
 open BookProof.ScalaronEdge
@@ -19,7 +28,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 
 
-variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronEdge.edge_energy_bound {A B c : ℝ} (hA : 0 < A) (hB : 0 < B) (hc : 0 < c)
     (V : ℝ → ℝ) (hVcont : Continuous V) (hVnn : ∀ x, 0 ≤ V x)

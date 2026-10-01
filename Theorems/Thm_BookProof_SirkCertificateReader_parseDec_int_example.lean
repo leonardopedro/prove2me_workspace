@@ -1,9 +1,10 @@
 -- Generated from ChapterSirkCertificateReader.lean — theorem BookProof.SirkCertificateReader.parseDec_int_example
+import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterSirkBandLedger
+open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 

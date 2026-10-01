@@ -1,6 +1,9 @@
 -- Generated from ChapterStoneGroup.lean — theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 import Definitions.Def_ChapterStoneGroup
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
@@ -14,9 +17,7 @@ open Filter Topology
 
 open BookProof.ChapterUnitaryTransport
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
-variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le (n : ℝ) (y : H) : ‖T.jn n y‖ ≤ ‖y‖ := by sorry

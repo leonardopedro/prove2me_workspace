@@ -1,6 +1,12 @@
 -- Generated from ChapterNavierStokesFockContinuum.lean — theorem BookProof.NavierStokesFlow.FockContinuum.sectorHamiltonian_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.DirectSumEsa
+open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
@@ -13,7 +19,6 @@ open MeasureTheory
 
 open FullEsa
 
-variable {X : Type*} [MeasurableSpace X]
 
 nergy (w : ℝ → ℝ) (n : ℕ) : (Fin n → ℝ) → ℝ :=
   fun ξ => ∑ k : Fin n, w (ξ k)

@@ -21,6 +21,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.coordLine_self (x : Vd d) (j : Fin d) (s : ℝ) : (coordLine x j s) j = s := by sorry

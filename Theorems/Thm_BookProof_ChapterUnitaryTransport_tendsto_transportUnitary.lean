@@ -10,8 +10,6 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 open scoped InnerProductSpace
 
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 theorem BookProof.ChapterUnitaryTransport.tendsto_transportUnitary (W : H ≃ₗᵢ[ℂ] K) (U : ℝ → H ≃ₗᵢ[ℂ] H)
     (h : ∀ x : H, Filter.Tendsto (fun t : ℝ => U t x) (nhds 0) (nhds x)) (y : K) :

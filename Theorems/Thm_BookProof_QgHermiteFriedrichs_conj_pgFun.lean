@@ -11,7 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
 variable {d : ℕ}
-variable (W : Vd d → ℝ)
 
 
 
@@ -21,7 +20,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.conj_pgFun (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     (starRingEnd ℂ) (pgFun p x) = pgFun (cpoly p) x := by sorry

@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.ikebeKato_momentum
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 
@@ -13,7 +16,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine
 
-variable {ι : Type*}
 
 self]; simp)
 

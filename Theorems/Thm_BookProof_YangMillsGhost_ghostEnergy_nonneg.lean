@@ -1,4 +1,12 @@
 -- Generated from ChapterYangMillsGhostSector.lean — theorem BookProof.YangMillsGhost.ghostEnergy_nonneg
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
@@ -14,7 +22,6 @@ open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
 open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
-variable {K : ℕ}
 
 theorem BookProof.YangMillsGhost.ghostEnergy_nonneg {ω : Fin K → ℝ} (hω : ∀ p, 0 ≤ ω p) (S : GConf K) :
     0 ≤ ghostEnergy ω S := by sorry

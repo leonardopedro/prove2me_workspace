@@ -1,6 +1,15 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — theorem BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open BookProof.FockSecondQuantization
+open `BookProof.HashimotoShiftInvert`.
 open BookProof.QgTimeIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -13,7 +22,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime (M alpha : ℝ)
     (halpha : 0 < alpha) (Sp : VielbeinSpectrum ι) (g : ℝ) :

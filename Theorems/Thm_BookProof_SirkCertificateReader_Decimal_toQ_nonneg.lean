@@ -1,10 +1,11 @@
 -- Generated from ChapterSirkCertificateReader.lean — theorem BookProof.SirkCertificateReader.Decimal.toQ_nonneg
+import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterSirkBandLedger
+open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
 open BookProof.SirkCertificateReader.Decimal
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 

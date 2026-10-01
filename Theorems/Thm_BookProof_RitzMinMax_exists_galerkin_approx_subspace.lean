@@ -1,6 +1,9 @@
 -- Generated from ChapterSirkRitzMinMax.lean — theorem BookProof.RitzMinMax.exists_galerkin_approx_subspace
+import Definitions.Def_ChapterSirkRitzSpectrum
 import Mathlib
 import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+open BookProof.HermiteGalerkin
 open BookProof.RitzMinMax
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
@@ -12,7 +15,6 @@ noncomputable section
 open BookProof.HermiteGalerkin BookProof.ChapterSirkRitzSpectrum
 open Filter Topology
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.RitzMinMax.exists_galerkin_approx_subspace (T : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F)
     {S : Submodule ℂ F} {k : ℕ} (hrank : Module.finrank ℂ S = k + 1) {ε : ℝ} (hε : 0 < ε) :

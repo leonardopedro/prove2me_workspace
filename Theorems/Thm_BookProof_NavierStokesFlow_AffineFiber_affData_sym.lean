@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.affData_sym
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -15,7 +17,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.AffineFiber.affData_sym {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     (affData hκ hc).sym = oscSymbol (affMu κ c) := by sorry

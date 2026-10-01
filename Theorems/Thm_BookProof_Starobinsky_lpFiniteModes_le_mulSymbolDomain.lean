@@ -1,9 +1,15 @@
 -- Generated from ChapterStarobinskyPotential.lean — theorem BookProof.Starobinsky.lpFiniteModes_le_mulSymbolDomain
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesEsa
+open BookProof.FarisLavine
 open BookProof.Starobinsky
-
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
 
 
 open Filter Topology

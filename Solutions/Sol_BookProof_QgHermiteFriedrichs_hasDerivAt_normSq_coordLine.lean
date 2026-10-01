@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_coordLine_apply
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_coordLine_self
+import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
 open BookProof.QgHermiteFriedrichs
 
 

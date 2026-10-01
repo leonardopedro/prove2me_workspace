@@ -10,7 +10,6 @@ variable {X : Type*}
 open scoped BigOperators Matrix TensorProduct
 
 
-variable {N : ℕ} [NeZero N]
 
 x level:**
 `L²(X) ⊗ L²(Z) ≅ L²(X × Z)`.  This is what lets the dynamics-based generator be

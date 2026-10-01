@@ -1,4 +1,7 @@
 -- Generated from ChapterFockOneParticleGap.lean — theorem BookProof.FockOneParticleGap.le_eigenvalue_of_le_spectrum
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.FockOneParticleGap

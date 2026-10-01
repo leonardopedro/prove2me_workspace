@@ -1,11 +1,12 @@
 -- Generated from ChapterQgVielbeinModeInstance.lean — theorem BookProof.QgVielbeinModeInstance.ofFintype_A
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
 open BookProof.QgVielbeinModeInstance
 
 variable {ι : Type*}
 variable [Fintype ι] [DecidableEq ι]
-variable (L : ℕ) [NeZero L]
 
 
 
@@ -14,7 +15,6 @@ open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section
 
-variable {ι : Type*}
 
 theorem BookProof.QgVielbeinModeInstance.ofFintype_A (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι → ι → ℂ)
     (A_herm : ∀ a b, A b a = (starRingEnd ℂ) (A a b))

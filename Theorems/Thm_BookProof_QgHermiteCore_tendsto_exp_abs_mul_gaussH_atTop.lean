@@ -6,9 +6,6 @@ import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteCore
 open BookProof.QgHermiteCore
 
-variable {E : Type*} [NormedAddCommGroup E]
-variable {d : ℕ}
-
 
 
 open MeasureTheory Polynomial Filter Topology

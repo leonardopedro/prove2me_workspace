@@ -1,4 +1,9 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.norm_map_of_adjoint_comp
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
@@ -7,8 +12,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
@@ -19,10 +22,6 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterH9.norm_map_of_adjoint_comp {V : F →L[ℂ] E}
     (hV : (adjoint V).comp V = ContinuousLinearMap.id ℂ F) (x : F) : ‖V x‖ = ‖x‖ := by sorry

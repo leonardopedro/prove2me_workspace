@@ -1,6 +1,8 @@
 -- Generated from ChapterSirkRestart.lean — theorem BookProof.ChapterSirkRestart.restart_error_tendsto_zero
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
+import Definitions.Def_ChapterH6
+open BookProof.ChapterH6
 open BookProof.ChapterSirkRestart
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
@@ -13,7 +15,6 @@ open Filter Topology
 
 open BookProof.ChapterH6
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 m_nonneg _)
 

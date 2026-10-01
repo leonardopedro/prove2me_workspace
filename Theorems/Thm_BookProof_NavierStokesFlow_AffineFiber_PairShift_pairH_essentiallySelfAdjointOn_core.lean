@@ -1,6 +1,10 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_essentiallySelfAdjointOn_core
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
@@ -15,7 +19,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_essentiallySelfAdjointOn_core :
     EssentiallySelfAdjointOn (lpFiniteModes ι)

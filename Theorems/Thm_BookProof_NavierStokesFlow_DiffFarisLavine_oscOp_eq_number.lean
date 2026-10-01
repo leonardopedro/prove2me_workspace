@@ -1,10 +1,15 @@
 -- Generated from ChapterNavierStokesDiffFarisLavine.lean — theorem BookProof.NavierStokesFlow.DiffFarisLavine.oscOp_eq_number
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 

@@ -1,6 +1,15 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.potFun_nonneg
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.SqSumFarisLavine
 
 variable {D : ℕ} {R : Type*} [Fintype R]
@@ -16,6 +25,5 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 theorem BookProof.SqSumFarisLavine.potFun_nonneg (v : R → Fin D → ℝ) (x : Vd D) : 0 ≤ potFun v x := by sorry

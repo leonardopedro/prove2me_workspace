@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.sBd_multiplicity
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.sBd_multiplicity (k : ℕ) (a : Fin d →₀ ℕ) (M : ℕ) :
     (((Finset.range M).filter (fun N => a ∈ sBd d N k)).card) ≤ k := by sorry

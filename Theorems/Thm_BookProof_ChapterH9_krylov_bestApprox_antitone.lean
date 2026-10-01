@@ -1,6 +1,12 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.krylov_bestApprox_antitone
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH5
+open BookProof.ChapterH5
 open BookProof.ChapterH9
 
 variable {E F G : Type*}
@@ -19,10 +25,6 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterH9.krylov_bestApprox_antitone (H : E →ₗ[ℂ] E) (v : E) {m n : ℕ} (hmn : m ≤ n) (u : E) :
     ‖u - (krylovSpan H v n).starProjection u‖ ≤ ‖u - (krylovSpan H v m).starProjection u‖ := by sorry

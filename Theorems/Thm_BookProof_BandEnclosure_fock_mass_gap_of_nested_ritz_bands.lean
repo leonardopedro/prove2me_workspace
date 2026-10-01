@@ -1,9 +1,20 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.fock_mass_gap_of_nested_ritz_bands
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichsLimit
 open BookProof.BandEnclosure
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 

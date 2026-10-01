@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.flux_boundG
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanTwoStep
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.flux_boundG {w : ℂ} {rc : (Fin d →₀ ℕ) → Fin d → ℝ} (N : ℕ) (i : Fin d) (k : ℕ)
     {Cn : ℝ} (hCn : 0 ≤ Cn) (hC : ∀ a ∈ faceK d N i k, |rc a i| ≤ Cn) :

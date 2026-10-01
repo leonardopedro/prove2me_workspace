@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.le_amp
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -131,7 +133,6 @@ structure PairShift (ι : Type*) where
 
 namespace PairShift
 
-variable (P : PairShift ι)
 
 /-- The first of the two shift Hamiltonians packaged by `P`. -/
 @[reducible] def fst : ShiftData ι where

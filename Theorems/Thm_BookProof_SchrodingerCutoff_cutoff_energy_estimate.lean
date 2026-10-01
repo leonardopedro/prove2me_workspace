@@ -1,6 +1,8 @@
 -- Generated from ChapterSchrodingerCutoffEsa.lean — theorem BookProof.SchrodingerCutoff.cutoff_energy_estimate
 import Mathlib
 import Definitions.Def_ChapterSchrodingerCutoffEsa
+import Definitions.Def_ChapterParityChirality
+open BookProof.ChapterParityChirality
 open BookProof.SchrodingerCutoff
 
 

@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkRestart.lean — theorem BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact
+import Definitions.Def_ChapterH6
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
 open BookProof.ChapterSirkRestart
@@ -13,7 +14,6 @@ open Filter Topology
 
 open BookProof.ChapterH6
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 rw [h1, h2]
 

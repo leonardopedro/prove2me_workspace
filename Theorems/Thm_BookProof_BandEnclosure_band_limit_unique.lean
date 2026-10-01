@@ -1,10 +1,11 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.band_limit_unique
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 open BookProof.BandEnclosure
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

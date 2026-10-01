@@ -1,4 +1,5 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.flux_identityQ
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
@@ -14,7 +15,6 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanSimplex.flux_identityQ (hM : ∀ i j, M j i = (starRingEnd ℂ) (M i j))
     (hrec : LadderRecQ u lam w W M z) (N : ℕ) :

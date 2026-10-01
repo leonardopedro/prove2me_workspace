@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.flux_identity2
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
+open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
@@ -14,7 +16,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.flux_identity2 (hrec : LadderRec2 u lam w1 w2 z) (N : ℕ) :
     z.im * (∑ a ∈ cube d N, ‖u a‖ ^ 2)

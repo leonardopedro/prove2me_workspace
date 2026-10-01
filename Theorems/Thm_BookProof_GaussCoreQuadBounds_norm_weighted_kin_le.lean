@@ -1,6 +1,15 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.norm_weighted_kin_le
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
 open BookProof.GaussCoreQuadBounds
 
 variable {D : ℕ}
@@ -15,7 +24,6 @@ open BookProof.QgOuterFock
 
 noncomputable section
 
-variable {D : ℕ}
 
 theorem BookProof.GaussCoreQuadBounds.norm_weighted_kin_le {kappa : Fin D → ℝ} {km : ℝ} (hkm : 0 ≤ km)
     (hk : ∀ j, |kappa j| ≤ km) (p : MvPolynomial (Fin D) ℂ) :

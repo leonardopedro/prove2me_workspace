@@ -1,12 +1,16 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+open BookProof.QgOuterFockFL
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-variable [CompleteSpace F]
 variable [CompleteSpace F]
 
 
@@ -15,7 +19,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShif
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 ed_eq (by fun_prop) (by fun_prop)
   simpa using hall k

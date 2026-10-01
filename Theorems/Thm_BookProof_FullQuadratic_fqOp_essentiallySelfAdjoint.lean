@@ -1,6 +1,17 @@
 -- Generated from ChapterFullQuadraticEsa.lean — theorem BookProof.FullQuadratic.fqOp_essentiallySelfAdjoint
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.FullQuadratic
 
 variable {d : ℕ}
@@ -21,7 +32,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.FullQuadratic.fqOp_essentiallySelfAdjoint (P Q S : Fin d → Fin d → ℝ) (b b' : Fin d → ℝ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := d)) (fqOp P Q S b b') := by sorry

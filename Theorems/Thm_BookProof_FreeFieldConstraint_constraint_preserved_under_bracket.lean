@@ -7,7 +7,6 @@ variable {R : Type*} [Ring R]
 
 
 
-variable {R : Type*} [Ring R]
 
 theorem BookProof.FreeFieldConstraint.constraint_preserved_under_bracket (D H A : R)
     (hDH : bracket D H = 0) (hDA : bracket D A = 0) :

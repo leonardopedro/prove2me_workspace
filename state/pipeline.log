@@ -206043,3 +206043,2242 @@ Note: It is not possible to treat `F` as an implicitly bound varia)
 23:33:42 sync: checked 350 pending solution(s), 62 already Proved
 23:33:42 sync: checked 375 pending solution(s), 62 already Proved
 23:33:42 sync: marked 11 already-published item(s) and 62 already-proved solution(s) done
+02:51:01 sync: read 419 definition publish job(s)
+02:51:22 sync: read 5760 problem publish job(s)
+02:51:26 sync: read 419 definition publish job(s)
+02:51:48 sync: read 5760 problem publish job(s)
+02:51:52 sync: read 419 definition publish job(s)
+02:52:13 sync: read 5760 problem publish job(s)
+02:52:13 processing def:ChapterClosureUniqueness (attempt 1)
+02:53:11 sync: read 419 definition publish job(s)
+02:53:30 sync: read 5760 problem publish job(s)
+02:58:46 def:ChapterClosureUniqueness: DONE
+02:58:46 summary: 150 done, 10 pending, 1 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+05:10:16 sync: read 420 definition publish job(s)
+05:10:37 sync: read 5760 problem publish job(s)
+05:10:40 sync: read 420 definition publish job(s)
+05:11:01 sync: read 5760 problem publish job(s)
+05:11:05 sync: read 420 definition publish job(s)
+05:11:25 sync: read 5760 problem publish job(s)
+05:11:25 submitting def:ChapterA (attempt 1)
+05:12:33 def:ChapterA: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterA.lean:72:0: error: unexpected identif)
+05:12:33 submitting def:ChapterA3 (attempt 1)
+05:12:45 sync: read 420 definition publish job(s)
+05:13:05 sync: read 5760 problem publish job(s)
+05:13:14 def:ChapterA3: accepted, waiting on the compiler
+05:13:14 submitting def:ChapterA4 (attempt 1)
+05:13:24 sync: read 421 definition publish job(s)
+05:13:45 sync: read 5760 problem publish job(s)
+05:13:52 def:ChapterA4: accepted, waiting on the compiler
+05:13:52 submitting def:ChapterA4c (attempt 1)
+05:14:00 sync: read 422 definition publish job(s)
+05:14:20 sync: read 5760 problem publish job(s)
+05:14:27 def:ChapterA4c: accepted, waiting on the compiler
+05:14:27 submitting def:ChapterAbelianDiagonal (attempt 1)
+05:14:36 sync: read 423 definition publish job(s)
+05:14:56 sync: read 5760 problem publish job(s)
+05:15:02 def:ChapterAbelianDiagonal: accepted, waiting on the compiler
+05:16:33 def:ChapterA3: DONE
+05:16:42 submitting def:ChapterAbelianDiagonalCountable (attempt 1)
+05:16:49 def:ChapterAbelianDiagonalCountable: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAbelianDiagonalCountable.lean:115:51: )
+05:16:49 submitting def:ChapterAbelianVonNeumannFinite (attempt 1)
+05:16:57 sync: read 424 definition publish job(s)
+05:17:19 sync: read 5760 problem publish job(s)
+05:17:28 def:ChapterAbelianVonNeumannFinite: accepted, waiting on the compiler
+05:17:28 def:ChapterA4: DONE
+05:17:37 submitting def:ChapterAngularMomentum (attempt 1)
+05:17:47 sync: read 425 definition publish job(s)
+05:18:08 sync: read 5760 problem publish job(s)
+05:18:15 def:ChapterAngularMomentum: accepted, waiting on the compiler
+05:18:15 def:ChapterA4c: DONE
+05:18:15 def:ChapterAbelianDiagonal: DONE
+05:18:24 submitting def:ChapterAtomicDecomposition (attempt 1)
+05:18:30 def:ChapterAtomicDecomposition: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAtomicDecomposition.lean:56:0: error: )
+05:18:30 submitting def:ChapterAttentionEntropy (attempt 1)
+05:18:37 def:ChapterAttentionEntropy: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionEntropy.lean:37:21: error: un)
+05:18:37 submitting def:ChapterAttentionLowRank (attempt 1)
+05:18:46 sync: read 426 definition publish job(s)
+05:19:06 sync: read 5760 problem publish job(s)
+05:19:13 def:ChapterAttentionLowRank: accepted, waiting on the compiler
+05:19:13 submitting def:ChapterAttentionOVCircuit (attempt 1)
+05:19:18 def:ChapterAttentionOVCircuit: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionOVCircuit.lean:36:12: error: )
+05:19:18 submitting def:ChapterB4 (attempt 1)
+05:19:24 def:ChapterB4: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterB4.lean:60:50: error: Function expecte)
+05:19:24 submitting def:ChapterBayesInference (attempt 1)
+05:19:33 sync: read 427 definition publish job(s)
+05:19:53 sync: read 5760 problem publish job(s)
+05:20:00 def:ChapterBayesInference: accepted, waiting on the compiler
+05:20:00 def:ChapterAbelianVonNeumannFinite: DONE
+05:20:09 submitting def:ChapterBell (attempt 1)
+05:20:19 sync: read 428 definition publish job(s)
+05:20:41 sync: read 5760 problem publish job(s)
+05:20:50 def:ChapterBell: accepted, waiting on the compiler
+05:21:54 def:ChapterAngularMomentum: DONE
+05:22:03 submitting def:ChapterBijectionProbability (attempt 1)
+05:22:13 sync: read 429 definition publish job(s)
+05:22:35 sync: read 5760 problem publish job(s)
+05:22:45 def:ChapterBijectionProbability: accepted, waiting on the compiler
+05:23:13 def:ChapterAttentionLowRank: DONE
+05:23:22 submitting def:ChapterBookBrstGaugeFixing (attempt 1)
+05:23:29 def:ChapterBookBrstGaugeFixing: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstGaugeFixing.lean:67:5: error: )
+05:23:29 submitting def:ChapterBookBrstYangMills (attempt 1)
+05:23:35 def:ChapterBookBrstYangMills: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstYangMills.lean:57:42: error: u)
+05:23:36 submitting def:ChapterBornMeasure (attempt 1)
+05:23:44 sync: read 430 definition publish job(s)
+05:24:05 sync: read 5760 problem publish job(s)
+05:24:14 def:ChapterBornMeasure: accepted, waiting on the compiler
+05:24:15 def:ChapterBayesInference: DONE
+05:24:15 def:ChapterBell: DONE
+05:24:24 submitting def:ChapterBosonicCCR (attempt 1)
+05:24:35 sync: read 431 definition publish job(s)
+05:24:58 sync: read 5760 problem publish job(s)
+05:25:07 def:ChapterBosonicCCR: accepted, waiting on the compiler
+05:25:07 submitting def:ChapterBrstReducedTransfer (attempt 1)
+05:25:16 sync: read 432 definition publish job(s)
+05:25:37 sync: read 5760 problem publish job(s)
+05:25:48 def:ChapterBrstReducedTransfer: accepted, waiting on the compiler
+05:25:49 def:ChapterBijectionProbability: DONE
+05:25:57 submitting def:ChapterBrstTruncationLeakage (attempt 1)
+05:26:07 sync: read 433 definition publish job(s)
+05:26:29 sync: read 5760 problem publish job(s)
+05:26:38 def:ChapterBrstTruncationLeakage: accepted, waiting on the compiler
+05:27:23 def:ChapterBornMeasure: DONE
+05:27:32 submitting def:ChapterCarlemanUnboundedHop (attempt 1)
+05:27:39 sync: read 434 definition publish job(s)
+05:27:58 sync: read 5760 problem publish job(s)
+05:28:10 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+05:28:20 def:ChapterBosonicCCR: DONE
+05:28:29 submitting def:ChapterCayleyTransform (attempt 1)
+05:28:38 sync: read 435 definition publish job(s)
+05:28:58 sync: read 5760 problem publish job(s)
+05:29:04 def:ChapterCayleyTransform: accepted, waiting on the compiler
+05:29:04 def:ChapterBrstReducedTransfer: DONE
+05:29:05 def:ChapterBrstTruncationLeakage: DONE
+05:29:13 submitting def:ChapterCoherentOverlap (attempt 1)
+05:29:22 sync: read 436 definition publish job(s)
+05:29:43 sync: read 5760 problem publish job(s)
+05:29:57 def:ChapterCoherentOverlap: accepted, waiting on the compiler
+05:29:57 submitting def:ChapterCoherentTemperature (attempt 1)
+05:30:06 sync: read 437 definition publish job(s)
+05:30:30 sync: read 5760 problem publish job(s)
+05:30:44 def:ChapterCoherentTemperature: accepted, waiting on the compiler
+05:31:30 def:ChapterCarlemanUnboundedHop: FAIL (publish FAILED: definition does not compile: line 100: Type mismatch: After simplification, term
+  zero_memℓp
+ has type
+  @Memℓp ℕ (fun x => ℂ) (fun i)
+05:31:30 def:ChapterCayleyTransform: DONE
+05:31:39 submitting def:ChapterCollapseDiagonal (attempt 1)
+05:31:48 sync: read 438 definition publish job(s)
+05:32:09 sync: read 5760 problem publish job(s)
+05:32:25 def:ChapterCollapseDiagonal: accepted, waiting on the compiler
+05:32:25 submitting def:ChapterCompactCompleteReducibility (attempt 1)
+05:32:35 sync: read 439 definition publish job(s)
+05:32:57 sync: read 5760 problem publish job(s)
+05:33:05 def:ChapterCompactCompleteReducibility: accepted, waiting on the compiler
+05:33:05 def:ChapterCoherentOverlap: DONE
+05:33:06 def:ChapterCoherentTemperature: DONE
+05:33:14 submitting def:ChapterComputableScarcity (attempt 1)
+05:33:23 sync: read 440 definition publish job(s)
+05:33:44 sync: read 5760 problem publish job(s)
+05:33:56 def:ChapterComputableScarcity: accepted, waiting on the compiler
+05:33:56 submitting def:ChapterConditional (attempt 1)
+05:34:01 def:ChapterConditional: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterConditional.lean:63:19: error: Functio)
+05:34:01 submitting def:ChapterConservative (attempt 1)
+05:34:07 def:ChapterConservative: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterConservative.lean:59:0: error: unexpec)
+05:34:07 submitting def:ChapterConservativeDiagonal (attempt 1)
+05:34:15 sync: read 441 definition publish job(s)
+05:34:36 sync: read 5760 problem publish job(s)
+05:34:53 def:ChapterConservativeDiagonal: accepted, waiting on the compiler
+05:34:53 def:ChapterCollapseDiagonal: DONE
+05:35:02 submitting def:ChapterConvolutionCalc (attempt 1)
+05:35:07 def:ChapterConvolutionCalc: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterConvolutionCalc.lean:22:5: error: unkn)
+05:35:07 submitting def:ChapterDampedOscillatorEnergy (attempt 1)
+05:35:17 sync: read 442 definition publish job(s)
+05:35:38 sync: read 5760 problem publish job(s)
+05:35:48 def:ChapterDampedOscillatorEnergy: accepted, waiting on the compiler
+05:35:48 def:ChapterCompactCompleteReducibility: DONE
+05:35:57 submitting def:ChapterDensityMarginalConditional (attempt 1)
+05:36:06 sync: read 443 definition publish job(s)
+05:36:30 sync: read 5760 problem publish job(s)
+05:36:47 def:ChapterDensityMarginalConditional: accepted, waiting on the compiler
+05:36:47 def:ChapterComputableScarcity: DONE
+05:36:56 submitting def:ChapterDensitySpectral (attempt 1)
+05:37:06 sync: read 444 definition publish job(s)
+05:37:29 sync: read 5760 problem publish job(s)
+05:37:46 def:ChapterDensitySpectral: accepted, waiting on the compiler
+05:37:46 def:ChapterConservativeDiagonal: DONE
+05:37:55 submitting def:ChapterDiagonalDGammaEsa (attempt 1)
+05:38:09 def:ChapterDiagonalDGammaEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterDiagonalDGammaEsa.lean:48:5: error: un)
+05:38:09 submitting def:ChapterDirectSumEdge (attempt 1)
+05:38:15 sync: read 445 definition publish job(s)
+05:38:39 sync: read 5760 problem publish job(s)
+05:38:56 def:ChapterDirectSumEdge: accepted, waiting on the compiler
+05:38:56 def:ChapterDampedOscillatorEnergy: DONE
+05:39:05 submitting def:ChapterDisplacedThermalOverlap (attempt 1)
+05:39:15 sync: read 446 definition publish job(s)
+05:39:38 sync: read 5760 problem publish job(s)
+05:39:55 def:ChapterDisplacedThermalOverlap: accepted, waiting on the compiler
+05:39:55 def:ChapterDensityMarginalConditional: DONE
+05:39:56 def:ChapterDensitySpectral: DONE
+05:40:05 submitting def:ChapterDutchBook (attempt 1)
+05:40:15 sync: read 447 definition publish job(s)
+05:40:39 sync: read 5760 problem publish job(s)
+05:40:57 def:ChapterDutchBook: accepted, waiting on the compiler
+05:40:57 submitting def:ChapterE (attempt 1)
+05:41:02 def:ChapterE: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterE.lean:37:0: error: unexpected identif)
+05:41:02 submitting def:ChapterE2 (attempt 1)
+05:41:11 sync: read 448 definition publish job(s)
+05:41:34 sync: read 5760 problem publish job(s)
+05:41:52 def:ChapterE2: accepted, waiting on the compiler
+05:41:52 def:ChapterDirectSumEdge: DONE
+05:42:01 submitting def:ChapterE3 (attempt 1)
+05:42:10 sync: read 449 definition publish job(s)
+05:42:34 sync: read 5760 problem publish job(s)
+05:42:51 def:ChapterE3: accepted, waiting on the compiler
+05:44:05 def:ChapterDisplacedThermalOverlap: DONE
+05:44:13 submitting def:ChapterE4 (attempt 1)
+05:44:23 sync: read 450 definition publish job(s)
+05:44:47 sync: read 5760 problem publish job(s)
+05:45:04 def:ChapterE4: accepted, waiting on the compiler
+05:45:04 def:ChapterDutchBook: DONE
+05:45:05 def:ChapterE2: DONE
+05:45:13 submitting def:ChapterEnergyBandDecomposition (attempt 1)
+05:45:23 sync: read 451 definition publish job(s)
+05:45:47 sync: read 5760 problem publish job(s)
+05:46:04 def:ChapterEnergyBandDecomposition: accepted, waiting on the compiler
+05:46:04 submitting def:ChapterEntropy (attempt 1)
+05:46:14 sync: read 452 definition publish job(s)
+05:46:39 sync: read 5760 problem publish job(s)
+05:46:46 def:ChapterEntropy: accepted, waiting on the compiler
+05:47:50 def:ChapterE3: DONE
+05:47:59 submitting def:ChapterEsaPairDGamma (attempt 1)
+05:48:05 def:ChapterEsaPairDGamma: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterEsaPairDGamma.lean:43:5: error: unknow)
+05:48:05 submitting def:ChapterEulerComplexQuat (attempt 1)
+05:48:14 sync: read 453 definition publish job(s)
+05:48:34 sync: read 5760 problem publish job(s)
+05:48:41 def:ChapterEulerComplexQuat: accepted, waiting on the compiler
+05:48:41 def:ChapterE4: DONE
+05:48:50 submitting def:ChapterEulerCountableChain (attempt 1)
+05:48:58 sync: read 454 definition publish job(s)
+05:49:18 sync: read 5760 problem publish job(s)
+05:49:25 def:ChapterEulerCountableChain: accepted, waiting on the compiler
+05:49:25 def:ChapterEnergyBandDecomposition: DONE
+05:49:26 def:ChapterEntropy: DONE
+05:49:34 submitting def:ChapterEulerDensityMatrix (attempt 1)
+05:49:43 sync: read 455 definition publish job(s)
+05:50:04 sync: read 5760 problem publish job(s)
+05:50:11 def:ChapterEulerDensityMatrix: accepted, waiting on the compiler
+05:50:11 submitting def:ChapterEulerGenericDensity (attempt 1)
+05:50:20 sync: read 456 definition publish job(s)
+05:50:41 sync: read 5760 problem publish job(s)
+05:50:48 def:ChapterEulerGenericDensity: accepted, waiting on the compiler
+05:50:48 def:ChapterEulerComplexQuat: DONE
+05:50:57 submitting def:ChapterEulerNState (attempt 1)
+05:51:06 sync: read 457 definition publish job(s)
+05:51:27 sync: read 5760 problem publish job(s)
+05:51:34 def:ChapterEulerNState: accepted, waiting on the compiler
+05:51:34 def:ChapterEulerCountableChain: DONE
+05:51:43 submitting def:ChapterEulerStochastic (attempt 1)
+05:51:52 sync: read 458 definition publish job(s)
+05:52:11 sync: read 5760 problem publish job(s)
+05:52:18 def:ChapterEulerStochastic: accepted, waiting on the compiler
+05:52:36 def:ChapterEulerDensityMatrix: DONE
+05:52:45 submitting def:ChapterF1 (attempt 1)
+05:52:52 def:ChapterF1: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterF1.lean:97:0: error: unexpected identi)
+05:52:52 submitting def:ChapterF6 (attempt 1)
+05:52:58 def:ChapterF6: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterF6.lean:119:0: error: unexpected ident)
+05:52:58 submitting def:ChapterF7 (attempt 1)
+05:53:05 def:ChapterF7: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterF7.lean:98:1: error: unexpected identi)
+05:53:05 submitting def:ChapterFermionFock (attempt 1)
+05:53:12 def:ChapterFermionFock: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFermionFock.lean:63:64: error(lean.unk)
+05:53:13 submitting def:ChapterFiniteArithmeticPrior (attempt 1)
+05:53:22 sync: read 459 definition publish job(s)
+05:53:44 sync: read 5760 problem publish job(s)
+05:53:58 def:ChapterFiniteArithmeticPrior: accepted, waiting on the compiler
+05:53:58 def:ChapterEulerGenericDensity: DONE
+05:53:58 def:ChapterEulerNState: DONE
+05:54:07 submitting def:ChapterFockDegreesOfFreedom (attempt 1)
+05:54:16 sync: read 460 definition publish job(s)
+05:54:37 sync: read 5760 problem publish job(s)
+05:54:52 def:ChapterFockDegreesOfFreedom: accepted, waiting on the compiler
+05:54:52 submitting def:ChapterFourierMultiplierEsa (attempt 1)
+05:54:58 def:ChapterFourierMultiplierEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFourierMultiplierEsa.lean:62:0: error:)
+05:54:58 submitting def:ChapterFreeEMField (attempt 1)
+05:55:08 sync: read 461 definition publish job(s)
+05:55:28 sync: read 5760 problem publish job(s)
+05:55:41 def:ChapterFreeEMField: accepted, waiting on the compiler
+05:55:42 def:ChapterEulerStochastic: DONE
+05:55:42 def:ChapterFiniteArithmeticPrior: DONE
+05:55:51 submitting def:ChapterFriedrichsCanonical (attempt 1)
+05:55:58 sync: read 462 definition publish job(s)
+05:56:19 sync: read 5760 problem publish job(s)
+05:56:31 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+05:56:31 submitting def:ChapterFriedrichsSquareFactorization (attempt 1)
+05:56:36 sync: read 463 definition publish job(s)
+05:56:57 sync: read 5760 problem publish job(s)
+05:57:12 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+05:57:12 def:ChapterFockDegreesOfFreedom: DONE
+05:57:21 submitting def:ChapterG3 (attempt 1)
+05:57:27 def:ChapterG3: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterG3.lean:121:2: error(lean.unknownIdent)
+05:57:27 submitting def:ChapterGaugeAdjointAlgebra (attempt 1)
+05:57:37 sync: read 464 definition publish job(s)
+05:57:58 sync: read 5760 problem publish job(s)
+05:58:06 def:ChapterGaugeAdjointAlgebra: accepted, waiting on the compiler
+05:58:15 def:ChapterFreeEMField: DONE
+05:58:24 submitting def:ChapterGaugeIncompleteFixing (attempt 1)
+05:58:33 sync: read 465 definition publish job(s)
+05:58:55 sync: read 5760 problem publish job(s)
+05:59:09 def:ChapterGaugeIncompleteFixing: accepted, waiting on the compiler
+05:59:18 def:ChapterFriedrichsCanonical: FAIL (publish FAILED: definition does not compile: line 82: Unknown identifier `friedrichsResolvent_injective`; line 171: Unknown identifier `continuous_sca)
+05:59:27 submitting def:ChapterGaugeMechanicsCharge (attempt 1)
+05:59:33 def:ChapterGaugeMechanicsCharge: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGaugeMechanicsCharge.lean:124:2: error)
+05:59:33 submitting def:ChapterGaugeShiftExample (attempt 1)
+05:59:43 sync: read 466 definition publish job(s)
+06:00:04 sync: read 5760 problem publish job(s)
+06:00:17 def:ChapterGaugeShiftExample: accepted, waiting on the compiler
+06:00:18 def:ChapterGaugeAdjointAlgebra: DONE
+06:00:27 submitting def:ChapterGaugeUnconstrainedSpectrum (attempt 1)
+06:00:36 sync: read 467 definition publish job(s)
+06:00:57 sync: read 5760 problem publish job(s)
+06:01:05 def:ChapterGaugeUnconstrainedSpectrum: accepted, waiting on the compiler
+06:01:05 def:ChapterFriedrichsSquareFactorization: FAIL (publish FAILED: definition does not compile: line 196: Unknown identifier `mem_adjGraph_iff`; line 193: unsolved goals
+F : Type u_1
+inst✝¹ : NormedAdd)
+06:01:06 def:ChapterGaugeIncompleteFixing: DONE
+06:01:14 submitting def:ChapterGaugeWeylResidual (attempt 1)
+06:01:23 sync: read 468 definition publish job(s)
+06:01:44 sync: read 5760 problem publish job(s)
+06:01:57 def:ChapterGaugeWeylResidual: accepted, waiting on the compiler
+06:01:57 submitting def:ChapterGaussCoordCombo (attempt 1)
+06:02:06 sync: read 469 definition publish job(s)
+06:02:28 sync: read 5760 problem publish job(s)
+06:02:41 def:ChapterGaussCoordCombo: accepted, waiting on the compiler
+06:02:41 def:ChapterGaugeShiftExample: DONE
+06:02:50 submitting def:ChapterGhostMajoranaRep (attempt 1)
+06:02:59 sync: read 470 definition publish job(s)
+06:03:19 sync: read 5760 problem publish job(s)
+06:03:30 def:ChapterGhostMajoranaRep: accepted, waiting on the compiler
+06:04:43 def:ChapterGaugeUnconstrainedSpectrum: DONE
+06:04:51 submitting def:ChapterGleasonPureMixed (attempt 1)
+06:05:01 sync: read 471 definition publish job(s)
+06:05:21 sync: read 5760 problem publish job(s)
+06:05:28 def:ChapterGleasonPureMixed: accepted, waiting on the compiler
+06:05:37 def:ChapterGaugeWeylResidual: DONE
+06:05:47 submitting def:ChapterGraphCoreTransfer (attempt 1)
+06:05:55 sync: read 472 definition publish job(s)
+06:06:16 sync: read 5760 problem publish job(s)
+06:06:23 def:ChapterGraphCoreTransfer: accepted, waiting on the compiler
+06:06:23 def:ChapterGaussCoordCombo: DONE
+06:06:23 def:ChapterGhostMajoranaRep: DONE
+06:06:32 submitting def:ChapterGravityIrrep (attempt 1)
+06:06:42 sync: read 473 definition publish job(s)
+06:07:03 sync: read 5760 problem publish job(s)
+06:07:14 def:ChapterGravityIrrep: accepted, waiting on the compiler
+06:07:14 submitting def:ChapterGravityProjector (attempt 1)
+06:07:19 def:ChapterGravityProjector: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGravityProjector.lean:66:0: error: une)
+06:07:19 submitting def:ChapterGroupAverageEsa (attempt 1)
+06:07:25 def:ChapterGroupAverageEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGroupAverageEsa.lean:38:5: error: unkn)
+06:07:25 submitting def:ChapterH3 (attempt 1)
+06:07:34 sync: read 474 definition publish job(s)
+06:07:55 sync: read 5760 problem publish job(s)
+06:08:04 def:ChapterH3: accepted, waiting on the compiler
+06:08:04 def:ChapterGleasonPureMixed: DONE
+06:08:13 submitting def:ChapterHalfLineLimitCircle (attempt 1)
+06:08:20 def:ChapterHalfLineLimitCircle: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHalfLineLimitCircle.lean:59:23: error:)
+06:08:20 submitting def:ChapterHarmonicOscillatorEsa (attempt 1)
+06:08:25 def:ChapterHarmonicOscillatorEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHarmonicOscillatorEsa.lean:40:30: erro)
+06:08:25 submitting def:ChapterHermiteExpWall (attempt 1)
+06:08:30 sync: read 475 definition publish job(s)
+06:08:49 sync: read 5760 problem publish job(s)
+06:08:56 def:ChapterHermiteExpWall: accepted, waiting on the compiler
+06:08:56 def:ChapterGraphCoreTransfer: DONE
+06:09:05 submitting def:ChapterHierarchicalBayes (attempt 1)
+06:09:14 sync: read 476 definition publish job(s)
+06:09:34 sync: read 5760 problem publish job(s)
+06:09:41 def:ChapterHierarchicalBayes: accepted, waiting on the compiler
+06:09:50 def:ChapterGravityIrrep: DONE
+06:09:59 submitting def:ChapterHowlandAutonomization (attempt 1)
+06:10:11 sync: read 477 definition publish job(s)
+06:10:31 sync: read 5760 problem publish job(s)
+06:10:38 def:ChapterHowlandAutonomization: accepted, waiting on the compiler
+06:10:39 def:ChapterH3: DONE
+06:10:47 submitting def:ChapterIPin (attempt 1)
+06:10:53 def:ChapterIPin: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterIPin.lean:78:0: error: unterminated co)
+06:10:53 submitting def:ChapterInverseTransform (attempt 1)
+06:11:02 sync: read 478 definition publish job(s)
+06:11:22 sync: read 5760 problem publish job(s)
+06:11:28 def:ChapterInverseTransform: accepted, waiting on the compiler
+06:11:29 def:ChapterHermiteExpWall: DONE
+06:11:29 def:ChapterHierarchicalBayes: DONE
+06:11:37 submitting def:ChapterIrreversible (attempt 1)
+06:11:43 def:ChapterIrreversible: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterIrreversible.lean:131:0: error: unterm)
+06:11:43 submitting def:ChapterIrreversibleDynamics (attempt 1)
+06:11:52 sync: read 479 definition publish job(s)
+06:12:11 sync: read 5760 problem publish job(s)
+06:12:18 def:ChapterIrreversibleDynamics: accepted, waiting on the compiler
+06:12:18 submitting def:ChapterKernelBound (attempt 1)
+06:12:27 sync: read 480 definition publish job(s)
+06:12:47 sync: read 5760 problem publish job(s)
+06:12:55 def:ChapterKernelBound: accepted, waiting on the compiler
+06:12:55 def:ChapterHowlandAutonomization: DONE
+06:12:56 def:ChapterInverseTransform: DONE
+06:13:04 submitting def:PhysMeasureBasis (attempt 1)
+06:13:13 sync: read 481 definition publish job(s)
+06:13:33 sync: read 5760 problem publish job(s)
+06:13:40 def:PhysMeasureBasis: accepted, waiting on the compiler
+06:13:40 submitting def:PhysFunctionalAnalysis (attempt 1)
+06:13:45 def:PhysFunctionalAnalysis: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysFunctionalAnalysis.lean:20:5: error: unkn)
+06:13:45 submitting def:PhysMehler (attempt 1)
+06:13:51 def:PhysMehler: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysMehler.lean:40:5: error: unknown namespac)
+06:13:51 submitting def:ChapterLegendrePolynomial (attempt 1)
+06:14:01 sync: read 482 definition publish job(s)
+06:14:20 sync: read 5760 problem publish job(s)
+06:14:27 def:ChapterLegendrePolynomial: accepted, waiting on the compiler
+06:14:28 def:ChapterIrreversibleDynamics: DONE
+06:14:37 submitting def:ChapterLinftyMultiplication (attempt 1)
+06:14:48 sync: read 483 definition publish job(s)
+06:15:07 sync: read 5760 problem publish job(s)
+06:15:14 def:ChapterLinftyMultiplication: accepted, waiting on the compiler
+06:15:15 def:ChapterKernelBound: DONE
+06:15:24 submitting def:ChapterLittleGroup (attempt 1)
+06:15:34 sync: read 484 definition publish job(s)
+06:15:56 sync: read 5760 problem publish job(s)
+06:16:03 def:ChapterLittleGroup: accepted, waiting on the compiler
+06:16:03 def:PhysMeasureBasis: DONE
+06:16:04 def:ChapterLegendrePolynomial: DONE
+06:16:12 submitting def:ChapterLocalOperators (attempt 1)
+06:16:18 def:ChapterLocalOperators: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterLocalOperators.lean:64:0: error: unexp)
+06:16:18 submitting def:ChapterLocalityConstraintNull (attempt 1)
+06:16:27 sync: read 485 definition publish job(s)
+06:16:47 sync: read 5760 problem publish job(s)
+06:16:54 def:ChapterLocalityConstraintNull: accepted, waiting on the compiler
+06:16:54 submitting def:ChapterLorentzGroup (attempt 1)
+06:17:04 sync: read 486 definition publish job(s)
+06:17:24 sync: read 5760 problem publish job(s)
+06:17:32 def:ChapterLorentzGroup: accepted, waiting on the compiler
+06:17:32 def:ChapterLinftyMultiplication: DONE
+06:17:41 submitting def:ChapterLorentzTranslation (attempt 1)
+06:17:50 sync: read 487 definition publish job(s)
+06:18:11 sync: read 5760 problem publish job(s)
+06:18:18 def:ChapterLorentzTranslation: accepted, waiting on the compiler
+06:18:19 def:ChapterLittleGroup: DONE
+06:18:27 submitting def:ChapterMAPNull (attempt 1)
+06:18:33 def:ChapterMAPNull: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterMAPNull.lean:26:0: error: unexpected i)
+06:18:33 submitting def:ChapterMackeyImprimitivity (attempt 1)
+06:18:42 sync: read 488 definition publish job(s)
+06:19:02 sync: read 5760 problem publish job(s)
+06:19:10 def:ChapterMackeyImprimitivity: accepted, waiting on the compiler
+06:19:10 def:ChapterLocalityConstraintNull: DONE
+06:19:10 def:ChapterLorentzGroup: DONE
+06:19:19 submitting def:ChapterMackeyQuasiInvariant (attempt 1)
+06:19:30 sync: read 489 definition publish job(s)
+06:19:51 sync: read 5760 problem publish job(s)
+06:19:58 def:ChapterMackeyQuasiInvariant: accepted, waiting on the compiler
+06:19:58 submitting def:ChapterMarkovEntropy (attempt 1)
+06:20:07 sync: read 490 definition publish job(s)
+06:20:29 sync: read 5760 problem publish job(s)
+06:20:36 def:ChapterMarkovEntropy: accepted, waiting on the compiler
+06:21:04 def:ChapterLorentzTranslation: DONE
+06:21:12 submitting def:ChapterMaschkeFiniteGroup (attempt 1)
+06:21:18 def:ChapterMaschkeFiniteGroup: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterMaschkeFiniteGroup.lean:55:0: error: u)
+06:21:18 submitting def:ChapterMaxEntropy (attempt 1)
+06:21:27 sync: read 491 definition publish job(s)
+06:21:47 sync: read 5760 problem publish job(s)
+06:21:53 def:ChapterMaxEntropy: accepted, waiting on the compiler
+06:22:39 def:ChapterMackeyImprimitivity: DONE
+06:22:48 submitting def:ChapterMeasurementLLN (attempt 1)
+06:22:53 def:ChapterMeasurementLLN: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterMeasurementLLN.lean:61:1: error: unexp)
+06:22:53 submitting def:ChapterNavierStokesAffineBlockEsa (attempt 1)
+06:22:59 sync: read 492 definition publish job(s)
+06:23:20 sync: read 5760 problem publish job(s)
+06:23:28 def:ChapterNavierStokesAffineBlockEsa: accepted, waiting on the compiler
+06:23:28 def:ChapterMackeyQuasiInvariant: DONE
+06:23:28 def:ChapterMarkovEntropy: DONE
+06:23:28 def:ChapterMaxEntropy: DONE
+06:23:37 submitting def:ChapterNavierStokesBilinearEsa (attempt 1)
+06:23:44 def:ChapterNavierStokesBilinearEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNavierStokesBilinearEsa.lean:92:67: er)
+06:23:44 submitting def:ChapterNavierStokesCarleman (attempt 1)
+06:23:49 sync: read 493 definition publish job(s)
+06:24:08 sync: read 5760 problem publish job(s)
+06:24:16 def:ChapterNavierStokesCarleman: accepted, waiting on the compiler
+06:24:16 submitting def:ChapterNavierStokesEulerian (attempt 1)
+06:24:22 def:ChapterNavierStokesEulerian: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNavierStokesEulerian.lean:60:0: error:)
+06:24:22 submitting def:ChapterNavierStokesFockEsa (attempt 1)
+06:24:26 sync: read 494 definition publish job(s)
+06:24:46 sync: read 5760 problem publish job(s)
+06:24:54 def:ChapterNavierStokesFockEsa: accepted, waiting on the compiler
+06:24:54 submitting def:ChapterNavierStokesFockLagrangian (attempt 1)
+06:24:58 sync: read 495 definition publish job(s)
+06:25:19 sync: read 5760 problem publish job(s)
+06:25:32 def:ChapterNavierStokesFockLagrangian: accepted, waiting on the compiler
+06:26:27 def:ChapterNavierStokesAffineBlockEsa: FAIL (publish FAILED: definition does not compile: line 62: unknown namespace `BilinearEsa`; line 73: Unknown identifier `affData`; line 74: Unknown identif)
+06:26:36 submitting def:ChapterNavierStokesGaugeY (attempt 1)
+06:26:46 sync: read 496 definition publish job(s)
+06:27:06 sync: read 5760 problem publish job(s)
+06:27:13 def:ChapterNavierStokesGaugeY: accepted, waiting on the compiler
+06:27:14 def:ChapterNavierStokesCarleman: FAIL (publish FAILED: definition does not compile: line 105: Type mismatch: After simplification, term
+  tridiagFun_add c (↑↑f) (↑↑g) n
+ has type
+  @Eq ℂ (t)
+06:27:22 submitting def:ChapterNavierStokesMomentumEsa (attempt 1)
+06:27:29 sync: read 497 definition publish job(s)
+06:27:51 sync: read 5760 problem publish job(s)
+06:28:02 def:ChapterNavierStokesMomentumEsa: accepted, waiting on the compiler
+06:28:02 def:ChapterNavierStokesFockEsa: FAIL (publish FAILED: definition does not compile: line 97: Unknown identifier `lpDiag_isSymmetricDom`; line 219: Unknown identifier `fockDom_dense`; line 2)
+06:28:11 submitting def:ChapterNavierStokesMomentumPerturbation (attempt 1)
+06:28:23 sync: read 498 definition publish job(s)
+06:28:42 sync: read 5760 problem publish job(s)
+06:28:49 def:ChapterNavierStokesMomentumPerturbation: accepted, waiting on the compiler
+06:28:50 def:ChapterNavierStokesFockLagrangian: FAIL (publish FAILED: definition does not compile: line 309: Invalid field `core`: The environment does not contain `BookProof.NavierStokesFlow.FockLagrangi)
+06:28:58 submitting def:ChapterNoBestPrior (attempt 1)
+06:29:07 sync: read 499 definition publish job(s)
+06:29:27 sync: read 5760 problem publish job(s)
+06:29:35 def:ChapterNoBestPrior: accepted, waiting on the compiler
+06:29:35 def:ChapterNavierStokesGaugeY: DONE
+06:29:35 def:ChapterNavierStokesMomentumEsa: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 561:0: unterminated comment)
+06:29:44 submitting def:ChapterNonnegResolvent (attempt 1)
+06:29:50 def:ChapterNonnegResolvent: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNonnegResolvent.lean:38:5: error: unkn)
+06:29:50 submitting def:ChapterNsCutoffUniformity (attempt 1)
+06:29:55 def:ChapterNsCutoffUniformity: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNsCutoffUniformity.lean:44:18: error: )
+06:29:55 submitting def:ChapterNsLagrangianDetConvolution (attempt 1)
+06:30:05 sync: read 500 definition publish job(s)
+06:30:25 sync: read 5760 problem publish job(s)
+06:30:33 def:ChapterNsLagrangianDetConvolution: accepted, waiting on the compiler
+06:30:34 submitting def:ChapterNsPartialFourier (attempt 1)
+06:30:46 sync: read 501 definition publish job(s)
+06:31:06 sync: read 5760 problem publish job(s)
+06:31:14 def:ChapterNsPartialFourier: accepted, waiting on the compiler
+06:31:14 def:ChapterNavierStokesMomentumPerturbation: DONE
+06:31:14 def:ChapterNoBestPrior: DONE
+06:31:23 submitting def:ChapterNsScalarVectorCurry (attempt 1)
+06:31:35 def:ChapterNsScalarVectorCurry: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNsScalarVectorCurry.lean:259:17: error)
+06:31:35 submitting def:ChapterNumericalRangeCrouzeix (attempt 1)
+06:31:45 sync: read 502 definition publish job(s)
+06:32:05 sync: read 5760 problem publish job(s)
+06:32:14 def:ChapterNumericalRangeCrouzeix: accepted, waiting on the compiler
+06:32:14 submitting def:ChapterNumericalRangeSemigroup (attempt 1)
+06:32:25 sync: read 503 definition publish job(s)
+06:32:45 sync: read 5760 problem publish job(s)
+06:32:59 def:ChapterNumericalRangeSemigroup: accepted, waiting on the compiler
+06:32:59 def:ChapterNsLagrangianDetConvolution: DONE
+06:32:59 def:ChapterNsPartialFourier: DONE
+06:33:08 submitting def:ChapterOdeUnitaryFlow (attempt 1)
+06:33:17 sync: read 504 definition publish job(s)
+06:33:39 sync: read 5760 problem publish job(s)
+06:33:49 def:ChapterOdeUnitaryFlow: accepted, waiting on the compiler
+06:33:49 submitting def:ChapterPauliLorentz (attempt 1)
+06:33:59 sync: read 505 definition publish job(s)
+06:34:20 sync: read 5760 problem publish job(s)
+06:34:30 def:ChapterPauliLorentz: accepted, waiting on the compiler
+06:34:30 def:ChapterNumericalRangeCrouzeix: DONE
+06:34:39 submitting def:ChapterProbabilityClockStochastic (attempt 1)
+06:34:45 def:ChapterProbabilityClockStochastic: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterProbabilityClockStochastic.lean:117:0:)
+06:34:45 submitting def:ChapterProbabilityInterface (attempt 1)
+06:34:55 sync: read 506 definition publish job(s)
+06:35:17 sync: read 5760 problem publish job(s)
+06:35:28 def:ChapterProbabilityInterface: accepted, waiting on the compiler
+06:35:28 def:ChapterNumericalRangeSemigroup: DONE
+06:35:28 def:ChapterOdeUnitaryFlow: DONE
+06:35:37 submitting def:ChapterProve2meReuse (attempt 1)
+06:35:49 sync: read 507 definition publish job(s)
+06:36:11 sync: read 5760 problem publish job(s)
+06:36:22 def:ChapterProve2meReuse: accepted, waiting on the compiler
+06:36:22 submitting def:ChapterPvmMeasure (attempt 1)
+06:36:31 def:ChapterPvmMeasure: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterPvmMeasure.lean:94:8: error(lean.unkno)
+06:36:31 submitting def:ChapterQgOuterFockEllipticFL (attempt 1)
+06:36:37 sync: read 508 definition publish job(s)
+06:36:56 sync: read 5760 problem publish job(s)
+06:37:05 def:ChapterQgOuterFockEllipticFL: accepted, waiting on the compiler
+06:37:05 def:ChapterPauliLorentz: DONE
+06:37:15 submitting def:ChapterQgOuterFockFullFL (attempt 1)
+06:37:20 sync: read 509 definition publish job(s)
+06:37:40 sync: read 5760 problem publish job(s)
+06:37:47 def:ChapterQgOuterFockFullFL: accepted, waiting on the compiler
+06:37:47 def:ChapterProbabilityInterface: DONE
+06:37:56 submitting def:ChapterQuadraticRotationEsa (attempt 1)
+06:38:01 sync: read 510 definition publish job(s)
+06:38:23 sync: read 5760 problem publish job(s)
+06:38:35 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+06:38:35 def:ChapterProve2meReuse: DONE
+06:38:44 submitting def:ChapterQuantizationWeyl (attempt 1)
+06:38:55 sync: read 511 definition publish job(s)
+06:39:17 sync: read 5760 problem publish job(s)
+06:39:23 def:ChapterQuantizationWeyl: accepted, waiting on the compiler
+06:39:51 def:ChapterQgOuterFockEllipticFL: FAIL (publish FAILED: definition does not compile: line 83: unknown namespace `BookProof.NavierStokesFlow.DifferentialL2`; line 84: unknown namespace `BookP)
+06:40:00 submitting def:ChapterQuantumGravityHalfDensity (attempt 1)
+06:40:07 sync: read 512 definition publish job(s)
+06:40:29 sync: read 5760 problem publish job(s)
+06:40:40 def:ChapterQuantumGravityHalfDensity: accepted, waiting on the compiler
+06:40:59 def:ChapterQgOuterFockFullFL: FAIL (publish FAILED: definition does not compile: line 76: unknown namespace `BookProof.QgOuterFock`; line 77: unknown namespace `BookProof.Qg3DGaugeEsa`; )
+06:41:08 submitting def:ChapterRadialMollifier (attempt 1)
+06:41:19 sync: read 513 definition publish job(s)
+06:41:42 sync: read 5760 problem publish job(s)
+06:41:52 def:ChapterRadialMollifier: accepted, waiting on the compiler
+06:41:52 def:ChapterQuadraticRotationEsa: FAIL (publish FAILED: definition does not compile: line 163: Unknown identifier `rotLin_apply`; line 164: Type mismatch: After simplification, term
+  rot_do)
+06:42:02 submitting def:ChapterReconstruct (attempt 1)
+06:42:12 sync: read 514 definition publish job(s)
+06:42:32 sync: read 5760 problem publish job(s)
+06:42:39 def:ChapterReconstruct: accepted, waiting on the compiler
+06:42:39 def:ChapterQuantizationWeyl: DONE
+06:42:48 submitting def:ChapterRieszFischer (attempt 1)
+06:42:58 sync: read 515 definition publish job(s)
+06:43:17 sync: read 5760 problem publish job(s)
+06:43:27 def:ChapterRieszFischer: accepted, waiting on the compiler
+06:43:28 def:ChapterQuantumGravityHalfDensity: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 193:0: unterminated comment)
+06:43:36 submitting def:ChapterScalarDGammaEsa (attempt 1)
+06:43:42 def:ChapterScalarDGammaEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterScalarDGammaEsa.lean:38:5: error: unkn)
+06:43:42 submitting def:ChapterScalaronFockEsa (attempt 1)
+06:43:48 sync: read 516 definition publish job(s)
+06:44:08 sync: read 5760 problem publish job(s)
+06:44:16 def:ChapterScalaronFockEsa: accepted, waiting on the compiler
+06:44:16 def:ChapterRadialMollifier: DONE
+06:44:17 def:ChapterReconstruct: DONE
+06:44:25 submitting def:ChapterScalaronHermiteEsa (attempt 1)
+06:44:31 sync: read 517 definition publish job(s)
+06:44:51 sync: read 5760 problem publish job(s)
+06:45:00 def:ChapterScalaronHermiteEsa: accepted, waiting on the compiler
+06:45:00 submitting def:ChapterSecondQuantizationCoreEsa (attempt 1)
+06:45:05 sync: read 518 definition publish job(s)
+06:45:26 sync: read 5760 problem publish job(s)
+06:45:38 def:ChapterSecondQuantizationCoreEsa: accepted, waiting on the compiler
+06:45:38 def:ChapterRieszFischer: DONE
+06:45:47 submitting def:ChapterShannonSampling (attempt 1)
+06:45:58 sync: read 519 definition publish job(s)
+06:46:20 sync: read 5760 problem publish job(s)
+06:46:27 def:ChapterShannonSampling: accepted, waiting on the compiler
+06:46:45 def:ChapterScalaronFockEsa: FAIL (publish FAILED: definition does not compile: line 143: Unknown identifier `contDiff_scalaronFullPotential`)
+06:46:54 submitting def:ChapterShiftedQuadraticEsa (attempt 1)
+06:47:00 sync: read 520 definition publish job(s)
+06:47:20 sync: read 5760 problem publish job(s)
+06:47:27 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+06:47:46 def:ChapterScalaronHermiteEsa: DONE
+06:47:55 submitting def:ChapterSmCarAlgebra (attempt 1)
+06:48:07 sync: read 521 definition publish job(s)
+06:48:27 sync: read 5760 problem publish job(s)
+06:48:33 def:ChapterSmCarAlgebra: accepted, waiting on the compiler
+06:48:43 def:ChapterSecondQuantizationCoreEsa: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.GraphCore`; line 52: Unknown identifier `IPSpace`
+
+Note: It is not )
+06:48:52 submitting def:ChapterSmHiggsVacuum (attempt 1)
+06:49:02 sync: read 522 definition publish job(s)
+06:49:22 sync: read 5760 problem publish job(s)
+06:49:28 def:ChapterSmHiggsVacuum: accepted, waiting on the compiler
+06:49:29 def:ChapterShannonSampling: DONE
+06:49:38 submitting def:ChapterSmOneParticle (attempt 1)
+06:49:48 sync: read 523 definition publish job(s)
+06:50:09 sync: read 5760 problem publish job(s)
+06:50:16 def:ChapterSmOneParticle: accepted, waiting on the compiler
+06:50:26 def:ChapterShiftedQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.HyperbolicQuadratic`; line 148: Unknown identifier `dPoly`)
+06:50:35 submitting def:ChapterSolovay (attempt 1)
+06:50:38 def:ChapterSolovay: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovay.lean:1:0: error: unknown modul)
+06:50:38 submitting def:ChapterSolovayCoordinates (attempt 1)
+06:50:44 def:ChapterSolovayCoordinates: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayCoordinates.lean:40:57: error(l)
+06:50:44 submitting def:ChapterSolovayTailDimension (attempt 1)
+06:50:47 def:ChapterSolovayTailDimension: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayTailDimension.lean:1:0: error: )
+06:50:47 submitting def:ChapterSpectralEnergyBound (attempt 1)
+06:50:53 def:ChapterSpectralEnergyBound: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSpectralEnergyBound.lean:63:0: error: )
+06:50:53 submitting def:ChapterSpectralGapStability (attempt 1)
+06:51:00 def:ChapterSpectralGapStability: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSpectralGapStability.lean:59:0: error:)
+06:51:00 submitting def:ChapterSphericalBessel (attempt 1)
+06:51:06 def:ChapterSphericalBessel: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSphericalBessel.lean:116:0: error: unt)
+06:51:06 submitting def:ChapterSpinStatistics (attempt 1)
+06:51:18 sync: read 524 definition publish job(s)
+06:51:38 sync: read 5760 problem publish job(s)
+06:51:44 def:ChapterSpinStatistics: accepted, waiting on the compiler
+06:51:54 def:ChapterSmCarAlgebra: DONE
+06:52:03 submitting def:ChapterStatementOperator (attempt 1)
+06:52:16 sync: read 525 definition publish job(s)
+06:52:35 sync: read 5760 problem publish job(s)
+06:52:41 def:ChapterStatementOperator: accepted, waiting on the compiler
+06:52:41 def:ChapterSmHiggsVacuum: DONE
+06:52:50 submitting def:ChapterSternGerlach (attempt 1)
+06:53:01 sync: read 526 definition publish job(s)
+06:53:20 sync: read 5760 problem publish job(s)
+06:53:27 def:ChapterSternGerlach: accepted, waiting on the compiler
+06:55:17 def:ChapterSmOneParticle: DONE
+06:55:26 submitting def:ChapterStoneSeparable (attempt 1)
+06:55:32 sync: read 527 definition publish job(s)
+06:55:52 sync: read 5760 problem publish job(s)
+06:55:58 def:ChapterStoneSeparable: accepted, waiting on the compiler
+06:55:59 def:ChapterSpinStatistics: DONE
+06:55:59 def:ChapterStatementOperator: DONE
+06:55:59 def:ChapterSternGerlach: DONE
+06:56:08 submitting def:ChapterStrichartzHermiteQG (attempt 1)
+06:56:15 sync: read 528 definition publish job(s)
+06:56:34 sync: read 5760 problem publish job(s)
+06:56:41 def:ChapterStrichartzHermiteQG: accepted, waiting on the compiler
+06:56:41 submitting def:ChapterSuperBracket (attempt 1)
+06:56:50 sync: read 529 definition publish job(s)
+06:57:09 sync: read 5760 problem publish job(s)
+06:57:16 def:ChapterSuperBracket: accepted, waiting on the compiler
+06:57:16 submitting def:ChapterTempleSeparationNecessary (attempt 1)
+06:57:20 sync: read 530 definition publish job(s)
+06:57:40 sync: read 5760 problem publish job(s)
+06:57:47 def:ChapterTempleSeparationNecessary: accepted, waiting on the compiler
+06:59:09 def:ChapterStoneSeparable: FAIL (publish FAILED: definition does not compile: line 62: Invalid field `gen_stoneGroup_eq`: The environment does not contain `BookProof.ChapterStoneResol)
+06:59:18 submitting def:ChapterTensorKatoRellich (attempt 1)
+06:59:27 def:ChapterTensorKatoRellich: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterTensorKatoRellich.lean:39:5: error: un)
+06:59:27 submitting def:ChapterTotalVariance (attempt 1)
+06:59:37 sync: read 531 definition publish job(s)
+06:59:57 sync: read 5760 problem publish job(s)
+07:00:03 def:ChapterTotalVariance: accepted, waiting on the compiler
+07:00:03 def:ChapterStrichartzHermiteQG: FAIL (publish FAILED: definition does not compile: line 58: unexpected token '/-!'; expected ']'; line 57: Unknown identifier `hermiteBasis_apply`; line 56:)
+07:00:04 def:ChapterSuperBracket: DONE
+07:00:12 submitting def:ChapterUnitaryCompleteReducibility (attempt 1)
+07:00:22 sync: read 532 definition publish job(s)
+07:00:44 sync: read 5760 problem publish job(s)
+07:00:51 def:ChapterUnitaryCompleteReducibility: accepted, waiting on the compiler
+07:00:51 submitting def:ChapterWallDeficiencyObstruction (attempt 1)
+07:00:56 sync: read 533 definition publish job(s)
+07:01:18 sync: read 5760 problem publish job(s)
+07:01:24 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+07:01:25 def:ChapterTempleSeparationNecessary: DONE
+07:01:34 submitting def:ChapterWaveUnboundedPotential (attempt 1)
+07:01:42 sync: read 534 definition publish job(s)
+07:02:04 sync: read 5760 problem publish job(s)
+07:02:14 def:ChapterWaveUnboundedPotential: accepted, waiting on the compiler
+07:02:14 def:ChapterTotalVariance: DONE
+07:02:15 def:ChapterUnitaryCompleteReducibility: DONE
+07:02:23 submitting def:ChapterWeakValue (attempt 1)
+07:02:32 sync: read 535 definition publish job(s)
+07:02:52 sync: read 5760 problem publish job(s)
+07:03:00 def:ChapterWeakValue: accepted, waiting on the compiler
+07:03:00 submitting def:ChapterWeylSl2 (attempt 1)
+07:03:11 sync: read 536 definition publish job(s)
+07:03:32 sync: read 5760 problem publish job(s)
+07:03:39 def:ChapterWeylSl2: accepted, waiting on the compiler
+07:03:39 def:ChapterWallDeficiencyObstruction: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 479:0: unterminated comment)
+07:03:48 submitting def:ChapterWignerLittleGroup (attempt 1)
+07:03:58 sync: read 537 definition publish job(s)
+07:04:18 sync: read 5760 problem publish job(s)
+07:04:24 def:ChapterWignerLittleGroup: accepted, waiting on the compiler
+07:04:52 def:ChapterWaveUnboundedPotential: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 101:0: unterminated comment)
+07:05:01 submitting def:ChapterWignerSymmetry (attempt 1)
+07:05:12 sync: read 538 definition publish job(s)
+07:05:33 sync: read 5760 problem publish job(s)
+07:05:39 def:ChapterWignerSymmetry: accepted, waiting on the compiler
+07:05:40 def:ChapterWeakValue: DONE
+07:05:49 def:ChapterWeylSl2: DONE
+07:05:58 def:ChapterWignerLittleGroup: DONE
+07:07:21 def:ChapterWignerSymmetry: DONE
+07:07:21 summary: 250 done, 302 pending, 1 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+07:07:21 waiting on unpublished def bundle(s): ChapterA (15 item(s)), ChapterA1 (1 item(s)), ChapterA2b (1 item(s)), ChapterA3 (26 item(s)), ChapterA3c (1 item(s)), ChapterA4c (2 item(s)), ChapterA4d (1 item(s)), ChapterA4e (1 item(s)), ChapterAbelianCyclicModel (1 item(s)), ChapterAbelianDiagonalCountable (1 item(s)), ChapterAbelianGelfandModel (2 item(s)), ChapterAtomicDecomposition (1 item(s)), ChapterAttentionEntropy (4 item(s)), ChapterAttentionMarkov (1 item(s)), ChapterAttentionMasking (1 item(s)), ChapterAttentionOutput (8 item(s)), ChapterAttentionSparse (2 item(s)), ChapterBayesInference (7 item(s)), ChapterBookBrstYangMills (1 item(s)), ChapterBoseEinstein (1 item(s)), ChapterBrstReducedTransfer (1 item(s)), ChapterBrstTruncationLeakage (1 item(s)), ChapterCPTHamiltonian (2 item(s)), ChapterCayleyTransform (2 item(s)), ChapterCoherentOverlap (3 item(s)), ChapterCoherentOverlapComplex (3 item(s)), ChapterCoherentTemperature (3 item(s)), ChapterConditional (1 item(s)), ChapterConservative (1 item(s)), ChapterConvolutionCalc (1 item(s)), ChapterCyclicDecomposition (1 item(s)), ChapterCyclicDirectSum (1 item(s)), ChapterDiagonalDGammaEsa (1 item(s)), ChapterDisplacedThermalOverlap (1 item(s)), ChapterEnergyBandDecomposition (1 item(s)), ChapterF1 (3 item(s)), ChapterF3 (1 item(s)), ChapterFarisLavineOnly (1 item(s)), ChapterFermionFock (1 item(s)), ChapterFlowDGammaEsa (1 item(s)), ChapterFockSchurEsa (1 item(s)), ChapterFockStatisticsEsa (2 item(s)), ChapterFourierMultiplierEsa (2 item(s)), ChapterFriedrichsSquareFactorization (1 item(s)), ChapterGaugeIncompleteFixing (3 item(s)), ChapterGaussCoordCombo (1 item(s)), ChapterGradedFock (1 item(s)), ChapterGradedFriedrichs (1 item(s)), ChapterGraphCoreTransfer (2 item(s)), ChapterGravityProjector (5 item(s)), ChapterHierarchicalBayes (1 item(s)), ChapterHierarchicalBayesComposition (1 item(s)), ChapterLinftyMultiplication (5 item(s)), ChapterLorentzGroup (1 item(s)), ChapterLorentzRealRep (1 item(s)), ChapterMackeyImprimitivity (1 item(s)), ChapterMackeyQuasiInvariant (2 item(s)), ChapterMajoranaFourier (1 item(s)), ChapterMarkovEntropy (1 item(s)), ChapterNavierStokesAffineBlockEsa (1 item(s)), ChapterNavierStokesFockLagrangian (1 item(s)), ChapterNavierStokesFullEulerianFock (1 item(s)), ChapterNavierStokesFullLagrangianFock (1 item(s)), ChapterNavierStokesGaugeY (1 item(s)), ChapterNavierStokesGaugeY2 (1 item(s)), ChapterNonnegResolvent (2 item(s)), ChapterNonnegSemigroup (1 item(s)), ChapterNsPartialFourier (1 item(s)), ChapterNsSpatialMomentumMultiplier (1 item(s)), ChapterObservableExpectation (3 item(s)), ChapterParity (4 item(s)), ChapterPauliLorentz (1 item(s)), ChapterPermutationSectorEsa (1 item(s)), ChapterPvmCyclicUnitary (1 item(s)), ChapterPvmMeasure (2 item(s)), ChapterQg3DGaugeFarisLavine (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgOuterFockFullFL (2 item(s)), ChapterQgOuterFockInteractionFL (2 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQuantumGravityHalfDensity (1 item(s)), ChapterRadialMollifier (1 item(s)), ChapterReconstruct (2 item(s)), ChapterRieszFischer (2 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronFockEsa (1 item(s)), ChapterScalaronOuterFockFL (2 item(s)), ChapterShannonSampling (1 item(s)), ChapterSirkSingleTimeShift (2 item(s)), ChapterSmBrstGhost (1 item(s)), ChapterSmCarAlgebra (2 item(s)), ChapterSmComparison (2 item(s)), ChapterSmHamiltonian (2 item(s)), ChapterSmOneParticle (1 item(s)), ChapterSoftmaxBorn (2 item(s)), ChapterSoftmaxFluctuation (1 item(s)), ChapterSoftmaxJacobian (1 item(s)), ChapterSoftmaxSharpness (1 item(s)), ChapterSolovayCoordinates (2 item(s)), ChapterSolovayHilbertTensor (1 item(s)), ChapterSpectralDirectSum (1 item(s)), ChapterSpectralMultiplication (2 item(s)), ChapterSphericalBessel (2 item(s)), ChapterSphericalBesselODE (1 item(s)), ChapterSqSumOuterFamily (2 item(s)), ChapterSqueezedGaussStates (1 item(s)), ChapterTensorGraphCore (2 item(s)), ChapterThermalTemperatureCore (1 item(s)), ChapterWallDeficiencyObstruction (3 item(s)), ChapterWeylSl2 (2 item(s)), ChapterWignerLittleGroup (1 item(s)), ChapterWignerLittleGroupOrbits (1 item(s)), ChapterWignerSymmetry (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s)), open BookProof.ChapterA3 (owner ChapterA3) (1 item(s)), open BookProof.ChapterAttentionEntropy (owner ChapterAttentionEntropy) (2 item(s)), open BookProof.ChapterSoftmaxSharpness (owner ChapterSoftmaxSharpness) (5 item(s)), open BookProof.ChapterStoneSeparable (owner ChapterStoneSeparable) (1 item(s)), open BookProof.DiagonalDGamma (owner ChapterDiagonalDGammaEsa) (1 item(s)), open BookProof.FiniteSectionSingleTime (owner ChapterFiniteSectionSingleTime) (1 item(s)), open BookProof.FriedrichsSquare (owner ChapterFriedrichsSquareFactorization) (1 item(s)), open BookProof.GroupAverage (owner ChapterGroupAverageEsa) (1 item(s)), open BookProof.KatoRellich (no provider) (1 item(s)), open BookProof.ModeQuadratic (no provider) (1 item(s)), open BookProof.QgContinuumModeInstance (owner ChapterQgContinuumModeInstance) (1 item(s))
+07:07:21 chunk: 167 item(s) resolved in 7004s
+07:32:25 sync: read 539 definition publish job(s)
+07:32:48 sync: read 5760 problem publish job(s)
+07:32:53 sync: read 539 definition publish job(s)
+07:33:15 sync: read 5760 problem publish job(s)
+07:33:19 sync: read 539 definition publish job(s)
+07:33:42 sync: read 5760 problem publish job(s)
+07:33:42 submitting def:ChapterA (attempt 2)
+07:34:27 sync: read 539 definition publish job(s)
+07:34:50 sync: read 5760 problem publish job(s)
+07:35:05 def:ChapterA: accepted, waiting on the compiler
+07:35:05 submitting def:ChapterA3b (attempt 1)
+07:35:11 sync: read 540 definition publish job(s)
+07:35:35 sync: read 5760 problem publish job(s)
+07:35:44 def:ChapterA3b: accepted, waiting on the compiler
+07:35:44 submitting def:ChapterA3i (attempt 1)
+07:35:48 sync: read 541 definition publish job(s)
+07:36:10 sync: read 5760 problem publish job(s)
+07:36:23 def:ChapterA3i: accepted, waiting on the compiler
+07:36:23 submitting def:ChapterA3j (attempt 1)
+07:36:28 sync: read 542 definition publish job(s)
+07:36:50 sync: read 5760 problem publish job(s)
+07:37:01 def:ChapterA3j: accepted, waiting on the compiler
+07:37:55 def:ChapterA: DONE
+07:38:04 submitting def:ChapterA4d (attempt 1)
+07:38:09 sync: read 543 definition publish job(s)
+07:38:29 sync: read 5760 problem publish job(s)
+07:38:41 def:ChapterA4d: accepted, waiting on the compiler
+07:38:41 def:ChapterA3b: FAIL (publish FAILED: definition does not compile: line 91: unexpected identifier; expected command; line 95: unexpected token '/'; expected term; line 97: )
+07:38:42 def:ChapterA3i: DONE
+07:38:50 submitting def:ChapterA4e (attempt 1)
+07:39:05 def:ChapterA4e: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterA4e.lean:40:5: error: unknown namespac)
+07:39:05 submitting def:ChapterAbelianDiagonalCountable (attempt 2)
+07:39:16 sync: read 544 definition publish job(s)
+07:39:34 sync: read 5760 problem publish job(s)
+07:39:41 def:ChapterAbelianDiagonalCountable: accepted, waiting on the compiler
+07:39:41 submitting def:ChapterAtomicDecomposition (attempt 2)
+07:39:51 sync: read 545 definition publish job(s)
+07:40:11 sync: read 5760 problem publish job(s)
+07:40:18 def:ChapterAtomicDecomposition: accepted, waiting on the compiler
+07:40:18 def:ChapterA3j: DONE
+07:40:27 submitting def:ChapterAttentionEntropy (attempt 2)
+07:40:34 def:ChapterAttentionEntropy: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionEntropy.lean:37:21: error: un)
+07:40:34 submitting def:ChapterSoftmaxBorn (attempt 1)
+07:40:38 sync: read 546 definition publish job(s)
+07:40:57 sync: read 5760 problem publish job(s)
+07:41:04 def:ChapterSoftmaxBorn: accepted, waiting on the compiler
+07:41:04 def:ChapterA4d: FAIL (publish FAILED: definition does not compile: line 68: unexpected identifier; expected command)
+07:41:13 submitting def:ChapterB4 (attempt 2)
+07:41:23 sync: read 547 definition publish job(s)
+07:41:43 sync: read 5760 problem publish job(s)
+07:41:50 def:ChapterB4: accepted, waiting on the compiler
+07:41:50 def:ChapterAbelianDiagonalCountable: DONE
+07:41:50 def:ChapterAtomicDecomposition: DONE
+07:41:59 submitting def:ChapterBookBrstYangMills (attempt 2)
+07:42:07 def:ChapterBookBrstYangMills: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstYangMills.lean:57:42: error: u)
+07:42:07 submitting def:ChapterBrstUnboundedLeakage (attempt 1)
+07:42:13 sync: read 548 definition publish job(s)
+07:42:32 sync: read 5760 problem publish job(s)
+07:42:39 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+07:42:39 submitting def:ChapterCPTHamiltonian (attempt 1)
+07:42:44 sync: read 549 definition publish job(s)
+07:43:03 sync: read 5760 problem publish job(s)
+07:43:10 def:ChapterCPTHamiltonian: accepted, waiting on the compiler
+07:43:10 def:ChapterSoftmaxBorn: DONE
+07:43:10 def:ChapterB4: DONE
+07:43:19 submitting def:ChapterCarlemanUnboundedHop (attempt 2)
+07:43:28 sync: read 550 definition publish job(s)
+07:43:49 sync: read 5760 problem publish job(s)
+07:43:55 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+07:43:55 submitting def:ChapterCoherentOverlapComplex (attempt 1)
+07:44:02 sync: read 551 definition publish job(s)
+07:44:21 sync: read 5760 problem publish job(s)
+07:44:28 def:ChapterCoherentOverlapComplex: accepted, waiting on the compiler
+07:45:33 def:ChapterCPTHamiltonian: DONE
+07:45:41 submitting def:ChapterCoherentPositionSpace (attempt 1)
+07:45:47 sync: read 552 definition publish job(s)
+07:46:07 sync: read 5760 problem publish job(s)
+07:46:14 def:ChapterCoherentPositionSpace: accepted, waiting on the compiler
+07:46:33 def:ChapterBrstUnboundedLeakage: FAIL (publish FAILED: definition does not compile: line 140: unexpected token ':'; expected command; line 148: unexpected token ':'; expected term)
+07:46:42 submitting def:ChapterConditional (attempt 2)
+07:46:54 sync: read 553 definition publish job(s)
+07:47:14 sync: read 5760 problem publish job(s)
+07:47:22 def:ChapterConditional: accepted, waiting on the compiler
+07:47:22 def:ChapterCoherentOverlapComplex: DONE
+07:47:31 submitting def:ChapterConservative (attempt 2)
+07:47:42 sync: read 554 definition publish job(s)
+07:48:01 sync: read 5760 problem publish job(s)
+07:48:09 def:ChapterConservative: accepted, waiting on the compiler
+07:48:09 def:ChapterCarlemanUnboundedHop: FAIL (publish FAILED: definition does not compile: line 66: unexpected identifier; expected command; line 75: unknown namespace `Bimport`; line 405: Type mi)
+07:48:18 submitting def:ChapterDeepLearningMAP (attempt 1)
+07:48:23 sync: read 555 definition publish job(s)
+07:48:43 sync: read 5760 problem publish job(s)
+07:48:51 def:ChapterDeepLearningMAP: accepted, waiting on the compiler
+07:49:18 def:ChapterCoherentPositionSpace: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 76:0: unterminated comment)
+07:49:27 submitting def:ChapterDeepLearningSampling (attempt 1)
+07:49:32 sync: read 556 definition publish job(s)
+07:49:52 sync: read 5760 problem publish job(s)
+07:49:59 def:ChapterDeepLearningSampling: accepted, waiting on the compiler
+07:49:59 def:ChapterConditional: DONE
+07:50:08 submitting def:ChapterEsaPairDGamma (attempt 2)
+07:50:16 def:ChapterEsaPairDGamma: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterEsaPairDGamma.lean:43:5: error: unknow)
+07:50:16 submitting def:ChapterE (attempt 2)
+07:50:26 sync: read 557 definition publish job(s)
+07:50:46 sync: read 5760 problem publish job(s)
+07:50:53 def:ChapterE: accepted, waiting on the compiler
+07:50:54 def:ChapterConservative: DONE
+07:50:54 def:ChapterDeepLearningMAP: DONE
+07:51:02 submitting def:ChapterEnergyBoundedEvolution (attempt 1)
+07:51:08 sync: read 558 definition publish job(s)
+07:51:28 sync: read 5760 problem publish job(s)
+07:51:36 def:ChapterEnergyBoundedEvolution: accepted, waiting on the compiler
+07:51:36 submitting def:ChapterF6 (attempt 2)
+07:51:45 sync: read 559 definition publish job(s)
+07:52:05 sync: read 5760 problem publish job(s)
+07:52:12 def:ChapterF6: accepted, waiting on the compiler
+07:52:13 def:ChapterDeepLearningSampling: DONE
+07:52:21 submitting def:ChapterF7 (attempt 2)
+07:52:33 sync: read 560 definition publish job(s)
+07:52:53 sync: read 5760 problem publish job(s)
+07:53:00 def:ChapterF7: accepted, waiting on the compiler
+07:53:18 def:ChapterE: DONE
+07:53:27 submitting def:ChapterFermionFock (attempt 2)
+07:53:35 def:ChapterFermionFock: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFermionFock.lean:63:64: error(lean.unk)
+07:53:35 submitting def:ChapterFourierMultiplierEsa (attempt 2)
+07:53:46 sync: read 561 definition publish job(s)
+07:54:07 sync: read 5760 problem publish job(s)
+07:54:14 def:ChapterFourierMultiplierEsa: accepted, waiting on the compiler
+07:55:00 def:ChapterEnergyBoundedEvolution: DONE
+07:55:09 submitting def:ChapterFriedrichsCanonical (attempt 2)
+07:55:17 sync: read 562 definition publish job(s)
+07:55:36 sync: read 5760 problem publish job(s)
+07:55:43 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+07:55:43 def:ChapterF6: DONE
+07:55:43 def:ChapterF7: DONE
+07:55:52 submitting def:ChapterFriedrichsSquareFactorization (attempt 2)
+07:55:57 sync: read 563 definition publish job(s)
+07:56:17 sync: read 5760 problem publish job(s)
+07:56:25 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+07:56:25 submitting def:ChapterG3 (attempt 2)
+07:56:32 def:ChapterG3: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterG3.lean:121:2: error(lean.unknownIdent)
+07:56:32 submitting def:ChapterGaugeMechanicsCharge (attempt 2)
+07:56:38 def:ChapterGaugeMechanicsCharge: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGaugeMechanicsCharge.lean:124:2: error)
+07:56:38 submitting def:ChapterGaugeParametrization (attempt 1)
+07:56:42 sync: read 564 definition publish job(s)
+07:57:01 sync: read 5760 problem publish job(s)
+07:57:08 def:ChapterGaugeParametrization: accepted, waiting on the compiler
+07:57:08 def:ChapterFourierMultiplierEsa: DONE
+07:57:09 def:ChapterFriedrichsCanonical: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 208:0: unterminated comment)
+07:57:17 submitting def:ChapterGravityProjector (attempt 2)
+07:57:28 sync: read 565 definition publish job(s)
+07:57:48 sync: read 5760 problem publish job(s)
+07:57:55 def:ChapterGravityProjector: accepted, waiting on the compiler
+07:57:55 submitting def:ChapterReducingSubspaceEsa (attempt 1)
+07:58:01 sync: read 566 definition publish job(s)
+07:58:21 sync: read 5760 problem publish job(s)
+07:58:28 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+07:58:28 def:ChapterFriedrichsSquareFactorization: FAIL (publish FAILED: definition does not compile: line 196: Unknown identifier `mem_adjGraph_iff`; line 193: unsolved goals
+F : Type u_1
+inst✝¹ : NormedAdd)
+07:58:28 def:ChapterGaugeParametrization: DONE
+07:58:37 submitting def:ChapterHalfLineLimitCircle (attempt 2)
+07:58:44 def:ChapterHalfLineLimitCircle: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHalfLineLimitCircle.lean:59:23: error:)
+07:58:44 submitting def:ChapterStrichartzHermiteQG (attempt 2)
+07:58:52 sync: read 567 definition publish job(s)
+07:59:12 sync: read 5760 problem publish job(s)
+07:59:19 def:ChapterStrichartzHermiteQG: accepted, waiting on the compiler
+07:59:19 submitting def:ChapterHierarchicalBayesComposition (attempt 1)
+07:59:24 sync: read 568 definition publish job(s)
+07:59:43 sync: read 5760 problem publish job(s)
+07:59:50 def:ChapterHierarchicalBayesComposition: accepted, waiting on the compiler
+08:01:05 def:ChapterGravityProjector: DONE
+08:01:14 submitting def:ChapterIPin (attempt 2)
+08:01:25 sync: read 569 definition publish job(s)
+08:01:46 sync: read 5760 problem publish job(s)
+08:01:53 def:ChapterIPin: accepted, waiting on the compiler
+08:02:20 def:ChapterReducingSubspaceEsa: FAIL (publish FAILED: definition does not compile: line 104: Type mismatch: After simplification, term
+  hx
+ has type
+  @Eq F (P ↑↑x) ↑↑x
+but is expected to)
+08:02:29 submitting def:ChapterIrreversible (attempt 2)
+08:02:39 sync: read 570 definition publish job(s)
+08:02:59 sync: read 5760 problem publish job(s)
+08:03:05 def:ChapterIrreversible: accepted, waiting on the compiler
+08:03:06 def:ChapterStrichartzHermiteQG: FAIL (publish FAILED: definition does not compile: line 57: Unknown identifier `hermiteBasis_apply`; line 56: unsolved goals
+n : ℕ
+⊢ hermiteBasis.repr (herm)
+08:03:06 def:ChapterHierarchicalBayesComposition: DONE
+08:03:14 submitting def:PhysFunctionalAnalysis (attempt 2)
+08:03:20 def:PhysFunctionalAnalysis: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysFunctionalAnalysis.lean:20:5: error: unkn)
+08:03:20 submitting def:PhysMehler (attempt 2)
+08:03:26 def:PhysMehler: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysMehler.lean:40:5: error: unknown namespac)
+08:03:26 submitting def:ChapterLocalOperators (attempt 2)
+08:03:35 sync: read 571 definition publish job(s)
+08:03:55 sync: read 5760 problem publish job(s)
+08:04:02 def:ChapterLocalOperators: accepted, waiting on the compiler
+08:04:02 submitting def:ChapterLorentzOrthochronous (attempt 1)
+08:04:08 sync: read 572 definition publish job(s)
+08:04:30 sync: read 5760 problem publish job(s)
+08:04:37 def:ChapterLorentzOrthochronous: accepted, waiting on the compiler
+08:04:37 def:ChapterIPin: DONE
+08:04:46 submitting def:ChapterLorentzRealRep (attempt 1)
+08:04:50 sync: read 573 definition publish job(s)
+08:05:10 sync: read 5760 problem publish job(s)
+08:05:17 def:ChapterLorentzRealRep: accepted, waiting on the compiler
+08:05:17 def:ChapterIrreversible: DONE
+08:05:26 submitting def:ChapterLpRestrictSplit (attempt 1)
+08:05:31 sync: read 574 definition publish job(s)
+08:05:51 sync: read 5760 problem publish job(s)
+08:05:58 def:ChapterLpRestrictSplit: accepted, waiting on the compiler
+08:07:20 def:ChapterLocalOperators: DONE
+08:07:29 submitting def:ChapterLpScaleMeasure (attempt 1)
+08:07:33 sync: read 575 definition publish job(s)
+08:07:53 sync: read 5760 problem publish job(s)
+08:08:01 def:ChapterLpScaleMeasure: accepted, waiting on the compiler
+08:08:10 def:ChapterLorentzOrthochronous: DONE
+08:08:19 submitting def:ChapterMAPNull (attempt 2)
+08:08:30 sync: read 576 definition publish job(s)
+08:08:51 sync: read 5760 problem publish job(s)
+08:08:57 def:ChapterMAPNull: accepted, waiting on the compiler
+08:09:06 def:ChapterLorentzRealRep: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterPinOmega`; line 69: Unknown identifier `mgammaZ`; line 69: U)
+08:09:15 submitting def:ChapterMackeyInducedSystem (attempt 1)
+08:09:20 sync: read 577 definition publish job(s)
+08:09:39 sync: read 5760 problem publish job(s)
+08:09:46 def:ChapterMackeyInducedSystem: accepted, waiting on the compiler
+08:09:56 def:ChapterLpRestrictSplit: DONE
+08:10:05 submitting def:ChapterMajoranaFourier (attempt 1)
+08:10:11 sync: read 578 definition publish job(s)
+08:10:31 sync: read 5760 problem publish job(s)
+08:10:37 def:ChapterMajoranaFourier: accepted, waiting on the compiler
+08:11:42 def:ChapterMAPNull: DONE
+08:11:50 submitting def:ChapterMaschkeFiniteGroup (attempt 2)
+08:12:00 sync: read 579 definition publish job(s)
+08:12:21 sync: read 5760 problem publish job(s)
+08:12:28 def:ChapterMaschkeFiniteGroup: accepted, waiting on the compiler
+08:12:28 def:ChapterLpScaleMeasure: DONE
+08:12:37 submitting def:ChapterMeasurementLLN (attempt 2)
+08:12:47 sync: read 580 definition publish job(s)
+08:13:06 sync: read 5760 problem publish job(s)
+08:13:13 def:ChapterMeasurementLLN: accepted, waiting on the compiler
+08:13:13 def:ChapterMackeyInducedSystem: FAIL (publish FAILED: definition does not compile: line 83: Unknown identifier `cocycle_mem_stabilizer`; line 91: Unknown identifier `cocycle_mem_stabilizer)
+08:13:13 def:ChapterMajoranaFourier: DONE
+08:13:22 submitting def:ChapterNavierStokesBilinearEsa (attempt 2)
+08:13:28 def:ChapterNavierStokesBilinearEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNavierStokesBilinearEsa.lean:92:67: er)
+08:13:28 submitting def:ChapterNavierStokesCarleman (attempt 2)
+08:13:33 sync: read 581 definition publish job(s)
+08:13:53 sync: read 5760 problem publish job(s)
+08:14:03 def:ChapterNavierStokesCarleman: accepted, waiting on the compiler
+08:14:03 submitting def:ChapterNavierStokesEulerian (attempt 2)
+08:14:14 sync: read 582 definition publish job(s)
+08:14:33 sync: read 5760 problem publish job(s)
+08:14:40 def:ChapterNavierStokesEulerian: accepted, waiting on the compiler
+08:15:17 def:ChapterMaschkeFiniteGroup: DONE
+08:15:26 submitting def:ChapterNavierStokesFockEsa (attempt 2)
+08:15:31 sync: read 583 definition publish job(s)
+08:15:52 sync: read 5760 problem publish job(s)
+08:15:59 def:ChapterNavierStokesFockEsa: accepted, waiting on the compiler
+08:16:36 def:ChapterMeasurementLLN: DONE
+08:16:36 def:ChapterNavierStokesCarleman: FAIL (publish FAILED: definition does not compile: line 105: Type mismatch: After simplification, term
+  tridiagFun_add c (↑↑f) (↑↑g) n
+ has type
+  @Eq ℂ (t)
+08:16:45 submitting def:ChapterNavierStokesFockLagrangian (attempt 2)
+08:16:50 sync: read 584 definition publish job(s)
+08:17:12 sync: read 5760 problem publish job(s)
+08:17:19 def:ChapterNavierStokesFockLagrangian: accepted, waiting on the compiler
+08:17:19 submitting def:ChapterNavierStokesGaugeY2 (attempt 1)
+08:17:24 sync: read 585 definition publish job(s)
+08:17:44 sync: read 5760 problem publish job(s)
+08:17:51 def:ChapterNavierStokesGaugeY2: accepted, waiting on the compiler
+08:17:51 def:ChapterNavierStokesEulerian: DONE
+08:18:00 submitting def:ChapterNavierStokesMomentumEsa (attempt 2)
+08:18:08 sync: read 586 definition publish job(s)
+08:18:27 sync: read 5760 problem publish job(s)
+08:18:35 def:ChapterNavierStokesMomentumEsa: accepted, waiting on the compiler
+08:18:35 def:ChapterNavierStokesFockEsa: FAIL (publish FAILED: definition does not compile: line 97: Unknown identifier `lpDiag_isSymmetricDom`; line 219: Unknown identifier `fockDom_dense`; line 2)
+08:18:44 submitting def:ChapterQgOuterFockFullFL (attempt 2)
+08:18:49 sync: read 587 definition publish job(s)
+08:19:09 sync: read 5760 problem publish job(s)
+08:19:16 def:ChapterQgOuterFockFullFL: accepted, waiting on the compiler
+08:19:17 def:ChapterNavierStokesFockLagrangian: FAIL (publish FAILED: definition does not compile: line 309: Invalid field `core`: The environment does not contain `BookProof.NavierStokesFlow.FockLagrangi)
+08:19:25 submitting def:ChapterNsScalarFourier (attempt 1)
+08:19:30 sync: read 588 definition publish job(s)
+08:19:49 sync: read 5760 problem publish job(s)
+08:19:56 def:ChapterNsScalarFourier: accepted, waiting on the compiler
+08:19:56 def:ChapterNavierStokesGaugeY2: DONE
+08:20:05 submitting def:ChapterNsScalarVectorCurry (attempt 2)
+08:20:18 def:ChapterNsScalarVectorCurry: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNsScalarVectorCurry.lean:259:17: error)
+08:20:18 submitting def:ChapterParity (attempt 1)
+08:20:23 sync: read 589 definition publish job(s)
+08:20:45 sync: read 5760 problem publish job(s)
+08:20:51 def:ChapterParity: accepted, waiting on the compiler
+08:23:08 def:ChapterNavierStokesMomentumEsa: DONE
+08:23:17 submitting def:ChapterPauliCommutant (attempt 1)
+08:23:22 sync: read 590 definition publish job(s)
+08:23:43 sync: read 5760 problem publish job(s)
+08:23:50 def:ChapterPauliCommutant: accepted, waiting on the compiler
+08:23:51 def:ChapterNsScalarFourier: FAIL (publish FAILED: definition does not compile: line 33: unknown namespace `BookProof.NsScalarVectorCurry`; line 49: Unknown identifier `curryLI.symm.tra)
+08:23:59 submitting def:ChapterPauliSU2 (attempt 1)
+08:24:05 sync: read 591 definition publish job(s)
+08:24:25 sync: read 5760 problem publish job(s)
+08:24:31 def:ChapterPauliSU2: accepted, waiting on the compiler
+08:24:32 def:ChapterQgOuterFockFullFL: FAIL (publish FAILED: definition does not compile: line 76: unknown namespace `BookProof.QgOuterFock`; line 77: unknown namespace `BookProof.Qg3DGaugeEsa`; )
+08:24:40 submitting def:ChapterPinDoubleCover (attempt 1)
+08:24:46 sync: read 592 definition publish job(s)
+08:25:07 sync: read 5760 problem publish job(s)
+08:25:13 def:ChapterPinDoubleCover: accepted, waiting on the compiler
+08:25:14 def:ChapterParity: DONE
+08:25:23 submitting def:ChapterPinOmega (attempt 1)
+08:25:28 sync: read 593 definition publish job(s)
+08:25:48 sync: read 5760 problem publish job(s)
+08:25:54 def:ChapterPinOmega: accepted, waiting on the compiler
+08:25:54 def:ChapterPauliCommutant: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 63:0: unterminated comment)
+08:26:04 submitting def:ChapterPriorDependence (attempt 1)
+08:26:09 sync: read 594 definition publish job(s)
+08:26:29 sync: read 5760 problem publish job(s)
+08:26:41 def:ChapterPriorDependence: accepted, waiting on the compiler
+08:26:42 def:ChapterPauliSU2: FAIL (publish FAILED: definition does not compile: line 85: Function expected at
+  2
+but this term has type
+  ?m.50
+
+Note: Expected a function because this )
+08:26:50 submitting def:ChapterProbabilityClockStochastic (attempt 2)
+08:27:02 sync: read 595 definition publish job(s)
+08:27:23 sync: read 5760 problem publish job(s)
+08:27:30 def:ChapterProbabilityClockStochastic: accepted, waiting on the compiler
+08:28:25 def:ChapterPinDoubleCover: DONE
+08:28:33 submitting def:ChapterPvmMeasure (attempt 2)
+08:28:40 def:ChapterPvmMeasure: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterPvmMeasure.lean:94:8: error(lean.unkno)
+08:28:40 submitting def:ChapterQgBrstCompleted (attempt 1)
+08:28:46 sync: read 596 definition publish job(s)
+08:29:06 sync: read 5760 problem publish job(s)
+08:29:13 def:ChapterQgBrstCompleted: accepted, waiting on the compiler
+08:29:14 def:ChapterPinOmega: DONE
+08:29:14 def:ChapterPriorDependence: DONE
+08:29:14 def:ChapterProbabilityClockStochastic: DONE
+08:29:23 submitting def:ChapterQgOuterFockEllipticFL (attempt 2)
+08:29:29 sync: read 597 definition publish job(s)
+08:29:50 sync: read 5760 problem publish job(s)
+08:29:57 def:ChapterQgOuterFockEllipticFL: accepted, waiting on the compiler
+08:29:57 submitting def:ChapterQuadraticRotationEsa (attempt 2)
+08:30:03 sync: read 598 definition publish job(s)
+08:30:25 sync: read 5760 problem publish job(s)
+08:30:35 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+08:30:35 submitting def:ChapterQuantumGravityHalfDensity (attempt 2)
+08:30:41 sync: read 599 definition publish job(s)
+08:31:02 sync: read 5760 problem publish job(s)
+08:31:11 def:ChapterQuantumGravityHalfDensity: accepted, waiting on the compiler
+08:31:48 def:ChapterQgBrstCompleted: FAIL (publish FAILED: definition does not compile: line 58: unknown namespace `BookProof.QuantumGravityFock`; line 130: unsolved goals
+ι : Type u_1
+w : ι → )
+08:31:57 submitting def:ChapterSE2 (attempt 1)
+08:32:02 sync: read 600 definition publish job(s)
+08:32:23 sync: read 5760 problem publish job(s)
+08:32:34 def:ChapterSE2: accepted, waiting on the compiler
+08:32:35 def:ChapterQgOuterFockEllipticFL: FAIL (publish FAILED: definition does not compile: line 83: unknown namespace `BookProof.NavierStokesFlow.DifferentialL2`; line 84: unknown namespace `BookP)
+08:32:35 def:ChapterQuadraticRotationEsa: FAIL (publish FAILED: definition does not compile: line 163: Unknown identifier `rotLin_apply`; line 164: Type mismatch: After simplification, term
+  rot_do)
+08:32:44 submitting def:ChapterTensorGraphCore (attempt 1)
+08:32:49 sync: read 601 definition publish job(s)
+08:33:10 sync: read 5760 problem publish job(s)
+08:33:17 def:ChapterTensorGraphCore: accepted, waiting on the compiler
+08:33:17 submitting def:ChapterScalaronFockEsa (attempt 2)
+08:33:23 sync: read 602 definition publish job(s)
+08:33:42 sync: read 5760 problem publish job(s)
+08:33:51 def:ChapterScalaronFockEsa: accepted, waiting on the compiler
+08:33:51 def:ChapterQuantumGravityHalfDensity: DONE
+08:34:00 submitting def:ChapterSelectingEvents (attempt 1)
+08:34:07 sync: read 603 definition publish job(s)
+08:34:28 sync: read 5760 problem publish job(s)
+08:34:35 def:ChapterSelectingEvents: accepted, waiting on the compiler
+08:34:45 def:ChapterSE2: FAIL (publish FAILED: definition does not compile: line 106: unexpected token '/--'; expected ']'; line 106: Invalid rewrite argument: Expected an equality )
+08:34:54 submitting def:ChapterSequentialBayes (attempt 1)
+08:35:00 sync: read 604 definition publish job(s)
+08:35:22 sync: read 5760 problem publish job(s)
+08:35:29 def:ChapterSequentialBayes: accepted, waiting on the compiler
+08:35:29 def:ChapterTensorGraphCore: DONE
+08:35:30 def:ChapterSelectingEvents: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 460:0: unterminated comment)
+08:35:38 submitting def:ChapterShiftedQuadraticEsa (attempt 2)
+08:35:44 sync: read 605 definition publish job(s)
+08:36:05 sync: read 5760 problem publish job(s)
+08:36:14 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+08:36:14 submitting def:ChapterSmDiracYukawa (attempt 1)
+08:36:20 sync: read 606 definition publish job(s)
+08:36:41 sync: read 5760 problem publish job(s)
+08:36:48 def:ChapterSmDiracYukawa: accepted, waiting on the compiler
+08:36:48 def:ChapterScalaronFockEsa: FAIL (publish FAILED: definition does not compile: line 143: Unknown identifier `contDiff_scalaronFullPotential`)
+08:36:57 submitting def:ChapterSolovay (attempt 2)
+08:37:01 def:ChapterSolovay: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovay.lean:1:0: error: unknown modul)
+08:37:01 submitting def:ChapterSolovayCoordinates (attempt 2)
+08:37:08 def:ChapterSolovayCoordinates: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayCoordinates.lean:40:57: error(l)
+08:37:08 submitting def:ChapterSolovayTailDimension (attempt 2)
+08:37:12 def:ChapterSolovayTailDimension: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayTailDimension.lean:1:0: error: )
+08:37:12 submitting def:ChapterSpectralEnergyBound (attempt 2)
+08:37:24 sync: read 607 definition publish job(s)
+08:37:45 sync: read 5760 problem publish job(s)
+08:37:52 def:ChapterSpectralEnergyBound: accepted, waiting on the compiler
+08:37:53 def:ChapterSequentialBayes: DONE
+08:38:01 submitting def:ChapterSpectralGapStability (attempt 2)
+08:38:13 sync: read 608 definition publish job(s)
+08:38:31 sync: read 5760 problem publish job(s)
+08:38:38 def:ChapterSpectralGapStability: accepted, waiting on the compiler
+08:38:38 def:ChapterShiftedQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.HyperbolicQuadratic`; line 148: Unknown identifier `dPoly`)
+08:38:39 def:ChapterSmDiracYukawa: DONE
+08:38:47 submitting def:ChapterSphericalBessel (attempt 2)
+08:38:59 sync: read 609 definition publish job(s)
+08:39:20 sync: read 5760 problem publish job(s)
+08:39:27 def:ChapterSphericalBessel: accepted, waiting on the compiler
+08:39:27 submitting def:ChapterSqueezedGaussStates (attempt 1)
+08:39:32 sync: read 610 definition publish job(s)
+08:39:51 sync: read 5760 problem publish job(s)
+08:39:58 def:ChapterSqueezedGaussStates: accepted, waiting on the compiler
+08:39:58 def:ChapterSpectralEnergyBound: DONE
+08:40:07 submitting def:ChapterStoneSeparable (attempt 2)
+08:40:12 sync: read 611 definition publish job(s)
+08:40:31 sync: read 5760 problem publish job(s)
+08:40:38 def:ChapterStoneSeparable: accepted, waiting on the compiler
+08:41:05 def:ChapterSpectralGapStability: DONE
+08:41:14 submitting def:ChapterSymmetryEntropy (attempt 1)
+08:41:20 sync: read 612 definition publish job(s)
+08:41:40 sync: read 5760 problem publish job(s)
+08:41:47 def:ChapterSymmetryEntropy: accepted, waiting on the compiler
+08:41:48 def:ChapterSphericalBessel: DONE
+08:41:57 submitting def:ChapterTimeTranslation (attempt 1)
+08:42:03 sync: read 613 definition publish job(s)
+08:42:24 sync: read 5760 problem publish job(s)
+08:42:31 def:ChapterTimeTranslation: accepted, waiting on the compiler
+08:42:31 def:ChapterSqueezedGaussStates: DONE
+08:42:32 def:ChapterStoneSeparable: FAIL (publish FAILED: definition does not compile: line 62: Invalid field `gen_stoneGroup_eq`: The environment does not contain `BookProof.ChapterStoneResol)
+08:42:40 submitting def:ChapterUniformPrior (attempt 1)
+08:42:45 sync: read 614 definition publish job(s)
+08:43:07 sync: read 5760 problem publish job(s)
+08:43:14 def:ChapterUniformPrior: accepted, waiting on the compiler
+08:43:14 submitting def:ChapterUniformPriorPosterior (attempt 1)
+08:43:20 sync: read 615 definition publish job(s)
+08:43:40 sync: read 5760 problem publish job(s)
+08:43:47 def:ChapterUniformPriorPosterior: accepted, waiting on the compiler
+08:45:00 def:ChapterSymmetryEntropy: DONE
+08:45:09 submitting def:ChapterWallDeficiencyObstruction (attempt 2)
+08:45:15 sync: read 616 definition publish job(s)
+08:45:36 sync: read 5760 problem publish job(s)
+08:45:44 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+08:46:12 def:ChapterTimeTranslation: FAIL (publish FAILED: definition does not compile: line 83: unexpected token '('; expected command)
+08:46:21 submitting def:ChapterWaveUnboundedPotential (attempt 2)
+08:46:29 sync: read 617 definition publish job(s)
+08:46:49 sync: read 5760 problem publish job(s)
+08:47:04 def:ChapterWaveUnboundedPotential: accepted, waiting on the compiler
+08:47:04 def:ChapterUniformPrior: DONE
+08:47:05 def:ChapterUniformPriorPosterior: DONE
+08:47:13 submitting def:ChapterWeylCauchyRiemann (attempt 1)
+08:47:19 sync: read 618 definition publish job(s)
+08:47:40 sync: read 5760 problem publish job(s)
+08:47:47 def:ChapterWeylCauchyRiemann: accepted, waiting on the compiler
+08:47:47 submitting def:ChapterWignerLittleGroupOrbits (attempt 1)
+08:47:53 sync: read 619 definition publish job(s)
+08:48:14 sync: read 5760 problem publish job(s)
+08:48:21 def:ChapterWignerLittleGroupOrbits: accepted, waiting on the compiler
+08:48:21 def:ChapterWallDeficiencyObstruction: FAIL (publish FAILED: definition does not compile: line 118: Unknown constant `integral_conj_deriv2_mul`; line 119: Unknown constant `inner_eq_of_ode`; line)
+08:48:30 submitting def:ChapterWignerSymmetryInfinite (attempt 1)
+08:48:35 sync: read 620 definition publish job(s)
+08:48:54 sync: read 5760 problem publish job(s)
+08:49:03 def:ChapterWignerSymmetryInfinite: accepted, waiting on the compiler
+08:49:58 def:ChapterWaveUnboundedPotential: DONE
+08:50:07 submitting def:ChapterAbelianGelfandModel (attempt 1)
+08:50:14 sync: read 621 definition publish job(s)
+08:50:38 sync: read 5760 problem publish job(s)
+08:50:56 def:ChapterAbelianGelfandModel: accepted, waiting on the compiler
+08:50:56 def:ChapterWeylCauchyRiemann: DONE
+08:50:57 def:ChapterWignerLittleGroupOrbits: DONE
+08:51:05 submitting def:ChapterAbelianMixture (attempt 1)
+08:51:13 sync: read 622 definition publish job(s)
+08:51:40 sync: read 5760 problem publish job(s)
+08:51:57 def:ChapterAbelianMixture: accepted, waiting on the compiler
+08:51:57 submitting def:ChapterCayleyInverse (attempt 1)
+08:52:02 sync: read 623 definition publish job(s)
+08:52:24 sync: read 5760 problem publish job(s)
+08:52:41 def:ChapterCayleyInverse: accepted, waiting on the compiler
+08:52:41 def:ChapterWignerSymmetryInfinite: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterOrthogonalSums`; line 69: Unknown identifier `IsWignerSymmet)
+08:52:50 submitting def:ChapterCoherentOccupation (attempt 1)
+08:52:56 sync: read 624 definition publish job(s)
+08:53:20 sync: read 5760 problem publish job(s)
+08:53:37 def:ChapterCoherentOccupation: accepted, waiting on the compiler
+08:54:23 def:ChapterAbelianGelfandModel: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 1206:0: unterminated comment)
+08:54:32 submitting def:ChapterDisplacedThermalMulti (attempt 1)
+08:54:39 sync: read 625 definition publish job(s)
+08:55:02 sync: read 5760 problem publish job(s)
+08:55:19 def:ChapterDisplacedThermalMulti: accepted, waiting on the compiler
+08:55:38 def:ChapterAbelianMixture: DONE
+08:55:47 submitting def:ChapterEll2Separable (attempt 1)
+08:55:53 sync: read 626 definition publish job(s)
+08:56:18 sync: read 5760 problem publish job(s)
+08:56:35 def:ChapterEll2Separable: accepted, waiting on the compiler
+08:56:35 def:ChapterCayleyInverse: FAIL (publish FAILED: definition does not compile: line 123: unsolved goals
+H : Type u_1
+inst✝¹ : NormedAddCommGroup H
+inst✝ : InnerProductSpace ℂ H
+V : H ≃)
+08:56:35 def:ChapterCoherentOccupation: DONE
+08:56:44 submitting def:ChapterGaugeCasimirAverage (attempt 1)
+08:56:50 sync: read 627 definition publish job(s)
+08:57:15 sync: read 5760 problem publish job(s)
+08:57:32 def:ChapterGaugeCasimirAverage: accepted, waiting on the compiler
+08:57:32 submitting def:ChapterGaugeComprehensiveFixing (attempt 1)
+08:57:38 sync: read 628 definition publish job(s)
+08:58:00 sync: read 5760 problem publish job(s)
+08:58:17 def:ChapterGaugeComprehensiveFixing: accepted, waiting on the compiler
+08:58:17 def:ChapterDisplacedThermalMulti: DONE
+08:58:26 submitting def:ChapterL2FibreSum (attempt 1)
+08:58:33 sync: read 629 definition publish job(s)
+08:58:55 sync: read 5760 problem publish job(s)
+08:59:12 def:ChapterL2FibreSum: accepted, waiting on the compiler
+08:59:12 def:ChapterEll2Separable: DONE
+08:59:13 def:ChapterGaugeCasimirAverage: DONE
+08:59:21 submitting def:ChapterLinftyMaximalAbelian (attempt 1)
+08:59:28 sync: read 630 definition publish job(s)
+08:59:51 sync: read 5760 problem publish job(s)
+09:00:08 def:ChapterLinftyMaximalAbelian: accepted, waiting on the compiler
+09:00:08 submitting def:ChapterPaFreeCompletion (attempt 1)
+09:00:16 sync: read 631 definition publish job(s)
+09:00:41 sync: read 5760 problem publish job(s)
+09:00:58 def:ChapterPaFreeCompletion: accepted, waiting on the compiler
+09:01:16 def:ChapterGaugeComprehensiveFixing: DONE
+09:01:25 submitting def:ChapterPaleyWienerSampling (attempt 1)
+09:01:32 sync: read 632 definition publish job(s)
+09:01:56 sync: read 5760 problem publish job(s)
+09:02:14 def:ChapterPaleyWienerSampling: accepted, waiting on the compiler
+09:02:14 def:ChapterL2FibreSum: FAIL (publish FAILED: definition does not compile: line 35: unknown namespace `BookProof.ChapterHilbertSumIntertwine`; line 47: Unknown identifier `proj`
+
+N)
+09:02:14 def:ChapterLinftyMaximalAbelian: DONE
+09:02:23 submitting def:ChapterSmBrstGhost (attempt 1)
+09:02:32 sync: read 633 definition publish job(s)
+09:02:56 sync: read 5760 problem publish job(s)
+09:03:13 def:ChapterSmBrstGhost: accepted, waiting on the compiler
+09:03:14 submitting def:ChapterSmHamiltonian (attempt 1)
+09:03:20 sync: read 634 definition publish job(s)
+09:03:40 sync: read 5760 problem publish job(s)
+09:03:58 def:ChapterSmHamiltonian: accepted, waiting on the compiler
+09:03:58 def:ChapterPaFreeCompletion: DONE
+09:04:07 submitting def:ChapterWeylSL2Group (attempt 1)
+09:04:13 sync: read 635 definition publish job(s)
+09:04:33 sync: read 5760 problem publish job(s)
+09:04:47 def:ChapterWeylSL2Group: accepted, waiting on the compiler
+09:05:34 def:ChapterPaleyWienerSampling: FAIL (publish FAILED: definition does not compile: line 37: Unknown constant `BookProof.ChapterShannonSampling.exists_rep`; line 99: Unknown identifier `exi)
+09:06:01 def:ChapterSmBrstGhost: DONE
+09:08:01 def:ChapterWeylSL2Group: DONE
+09:08:26 def:ChapterSmHamiltonian: DONE
+09:08:26 summary: 314 done, 238 pending, 1 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+09:08:26 waiting on unpublished def bundle(s): ChapterA (15 item(s)), ChapterA1 (1 item(s)), ChapterA2b (1 item(s)), ChapterA3b (4 item(s)), ChapterA3c (1 item(s)), ChapterA3e (1 item(s)), ChapterA3j (4 item(s)), ChapterA4d (2 item(s)), ChapterA4e (1 item(s)), ChapterAbelianCyclicModel (1 item(s)), ChapterAbelianDiagonalCountable (1 item(s)), ChapterAbelianGelfandModel (2 item(s)), ChapterAtomicDecomposition (1 item(s)), ChapterAttentionEntropy (4 item(s)), ChapterAttentionMarkov (1 item(s)), ChapterAttentionMasking (1 item(s)), ChapterAttentionOutput (9 item(s)), ChapterAttentionSparse (2 item(s)), ChapterBookBrstYangMills (2 item(s)), ChapterBoseEinstein (1 item(s)), ChapterCPTHamiltonian (2 item(s)), ChapterCoherentOccupation (2 item(s)), ChapterCoherentOverlapComplex (3 item(s)), ChapterConditional (1 item(s)), ChapterConservative (1 item(s)), ChapterConvolutionCalc (1 item(s)), ChapterCyclicDecomposition (1 item(s)), ChapterCyclicDirectSum (1 item(s)), ChapterDegSchrodingerCore (1 item(s)), ChapterDiagonalDGammaEsa (1 item(s)), ChapterEsaPairDGamma (1 item(s)), ChapterF1 (3 item(s)), ChapterF3 (1 item(s)), ChapterFarisLavineOnly (1 item(s)), ChapterFermionFock (1 item(s)), ChapterFlowDGammaEsa (1 item(s)), ChapterFockSchurEsa (1 item(s)), ChapterFockStatisticsEsa (2 item(s)), ChapterFourierMultiplierEsa (2 item(s)), ChapterFriedrichsSquareFactorization (1 item(s)), ChapterG2 (1 item(s)), ChapterGradedFock (1 item(s)), ChapterGradedFriedrichs (1 item(s)), ChapterGravityProjector (5 item(s)), ChapterHierarchicalBayesComposition (1 item(s)), ChapterLorentzRealRep (2 item(s)), ChapterMajoranaFourier (1 item(s)), ChapterNavierStokesAffineBlockEsa (1 item(s)), ChapterNavierStokesBilinearEsa (1 item(s)), ChapterNavierStokesFockLagrangian (1 item(s)), ChapterNavierStokesFullEulerianFock (1 item(s)), ChapterNavierStokesFullLagrangianFock (1 item(s)), ChapterNavierStokesGaugeY2 (1 item(s)), ChapterNonnegResolvent (2 item(s)), ChapterNonnegSemigroup (1 item(s)), ChapterNonnegSquareRoot (1 item(s)), ChapterNsFourierElimination (1 item(s)), ChapterNsSpatialMomentumMultiplier (1 item(s)), ChapterObservableExpectation (3 item(s)), ChapterParity (8 item(s)), ChapterPermutationSectorEsa (1 item(s)), ChapterPinOmega (1 item(s)), ChapterPvmCyclicUnitary (2 item(s)), ChapterPvmMeasure (2 item(s)), ChapterQg3DGaugeFarisLavine (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgOuterFockFullFL (2 item(s)), ChapterQgOuterFockInteractionFL (2 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterQuantumGravityHalfDensity (1 item(s)), ChapterReducingSubspaceEsa (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronFockEsa (1 item(s)), ChapterScalaronOuterFockFL (2 item(s)), ChapterSecondQuantizationCoreEsa (1 item(s)), ChapterSirkSingleTimeShift (2 item(s)), ChapterSmBrstGhost (1 item(s)), ChapterSmComparison (2 item(s)), ChapterSmHamiltonian (2 item(s)), ChapterSoftmaxBorn (2 item(s)), ChapterSoftmaxFluctuation (1 item(s)), ChapterSoftmaxJacobian (1 item(s)), ChapterSoftmaxSharpness (1 item(s)), ChapterSolovayCoordinates (2 item(s)), ChapterSolovayHilbertTensor (1 item(s)), ChapterSpectralDirectSum (1 item(s)), ChapterSpectralMultiplication (3 item(s)), ChapterSphericalBessel (2 item(s)), ChapterSphericalBesselODE (1 item(s)), ChapterSqSumOuterFamily (2 item(s)), ChapterSqueezedGaussStates (1 item(s)), ChapterStrichartzHermiteQG (1 item(s)), ChapterTensorGraphCore (3 item(s)), ChapterTensorSumEsa (1 item(s)), ChapterThermalTemperatureCore (1 item(s)), ChapterTimeTranslation (1 item(s)), ChapterWallDeficiencyObstruction (3 item(s)), ChapterWeylSL2Group (1 item(s)), ChapterWignerLittleGroupOrbits (1 item(s)), ChapterYangMillsAbelianFockEsa (1 item(s)), open BookProof.ChapterAttentionEntropy (owner ChapterAttentionEntropy) (2 item(s)), open BookProof.ChapterSoftmaxSharpness (owner ChapterSoftmaxSharpness) (5 item(s)), open BookProof.ChapterStoneSeparable (owner ChapterStoneSeparable) (1 item(s)), open BookProof.DiagonalDGamma (owner ChapterDiagonalDGammaEsa) (1 item(s)), open BookProof.FiniteSectionSingleTime (owner ChapterFiniteSectionSingleTime) (1 item(s)), open BookProof.FriedrichsSquare (owner ChapterFriedrichsSquareFactorization) (1 item(s)), open BookProof.GroupAverage (owner ChapterGroupAverageEsa) (1 item(s)), open BookProof.KatoRellich (no provider) (1 item(s)), open BookProof.ModeQuadratic (no provider) (1 item(s)), open BookProof.QgContinuumModeInstance (owner ChapterQgContinuumModeInstance) (1 item(s))
+09:08:26 chunk: 113 item(s) resolved in 5739s
+09:40:07 sync: read 636 definition publish job(s)
+09:40:31 sync: read 5760 problem publish job(s)
+09:40:37 sync: read 636 definition publish job(s)
+09:41:01 sync: read 5760 problem publish job(s)
+09:41:06 sync: read 636 definition publish job(s)
+09:41:27 sync: read 5760 problem publish job(s)
+09:41:27 submitting def:ChapterA1 (attempt 1)
+09:41:34 sync: read 636 definition publish job(s)
+09:41:59 sync: read 5760 problem publish job(s)
+09:42:06 def:ChapterA1: accepted, waiting on the compiler
+09:42:06 submitting def:ChapterA3b (attempt 2)
+09:42:12 sync: read 637 definition publish job(s)
+09:42:34 sync: read 5760 problem publish job(s)
+09:42:41 def:ChapterA3b: accepted, waiting on the compiler
+09:42:41 submitting def:ChapterA3k (attempt 1)
+09:42:46 sync: read 638 definition publish job(s)
+09:43:08 sync: read 5760 problem publish job(s)
+09:43:15 def:ChapterA3k: accepted, waiting on the compiler
+09:43:15 submitting def:ChapterA3n (attempt 1)
+09:43:20 sync: read 639 definition publish job(s)
+09:43:44 sync: read 5760 problem publish job(s)
+09:44:01 def:ChapterA3n: accepted, waiting on the compiler
+09:46:55 def:ChapterA1: DONE
+09:46:55 def:ChapterA3b: DONE
+09:47:03 submitting def:ChapterA4d (attempt 2)
+09:47:09 sync: read 640 definition publish job(s)
+09:47:32 sync: read 5760 problem publish job(s)
+09:47:40 def:ChapterA4d: accepted, waiting on the compiler
+09:47:40 submitting def:ChapterAttentionEntropy (attempt 3)
+09:48:40 def:ChapterAttentionEntropy: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionEntropy.lean:37:21: error: un)
+09:48:40 submitting def:ChapterObservableExpectation (attempt 1)
+09:48:46 sync: read 641 definition publish job(s)
+09:49:07 sync: read 5760 problem publish job(s)
+09:49:15 def:ChapterObservableExpectation: accepted, waiting on the compiler
+09:49:15 def:ChapterA3k: FAIL (publish FAILED: definition does not compile: line 88: unexpected identifier; expected command; line 177: Unknown identifier `BookProof.ChapterA3j.chir)
+09:49:15 def:ChapterA3n: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 164:0: unterminated comment)
+09:49:24 submitting def:ChapterSoftmaxSharpness (attempt 1)
+09:49:29 sync: read 642 definition publish job(s)
+09:49:49 sync: read 5760 problem publish job(s)
+09:49:56 def:ChapterSoftmaxSharpness: accepted, waiting on the compiler
+09:49:56 submitting def:ChapterBookBrstYangMills (attempt 3)
+09:50:09 def:ChapterBookBrstYangMills: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstYangMills.lean:57:42: error: u)
+09:50:09 submitting def:ChapterBrstUnboundedLeakage (attempt 2)
+09:50:15 sync: read 643 definition publish job(s)
+09:50:38 sync: read 5760 problem publish job(s)
+09:50:45 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+09:51:49 def:ChapterA4d: DONE
+09:51:57 submitting def:ChapterCarlemanUnboundedHop (attempt 3)
+09:52:05 sync: read 644 definition publish job(s)
+09:52:26 sync: read 5760 problem publish job(s)
+09:52:33 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+09:54:14 def:ChapterSoftmaxSharpness: FAIL (publish FAILED: definition does not compile: line 90: unexpected identifier; expected command; line 93: unexpected identifier; expected command)
+09:54:23 submitting def:ChapterEsaPairDGamma (attempt 3)
+09:54:30 def:ChapterEsaPairDGamma: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterEsaPairDGamma.lean:43:5: error: unknow)
+09:54:30 submitting def:ChapterFermionFock (attempt 3)
+09:54:38 def:ChapterFermionFock: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFermionFock.lean:63:64: error(lean.unk)
+09:54:38 submitting def:ChapterFriedrichsCanonical (attempt 3)
+09:54:46 sync: read 645 definition publish job(s)
+09:55:08 sync: read 5760 problem publish job(s)
+09:55:16 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+09:55:16 def:ChapterBrstUnboundedLeakage: FAIL (publish FAILED: definition does not compile: line 140: unexpected token ':'; expected command; line 148: unexpected token ':'; expected term)
+09:55:25 submitting def:ChapterFriedrichsSquareFactorization (attempt 3)
+09:55:31 sync: read 646 definition publish job(s)
+09:55:54 sync: read 5760 problem publish job(s)
+09:56:02 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+09:56:02 def:ChapterObservableExpectation: DONE
+09:56:03 def:ChapterCarlemanUnboundedHop: FAIL (publish FAILED: definition does not compile: line 66: unexpected identifier; expected command; line 75: unknown namespace `Bimport`; line 405: Type mi)
+09:56:12 submitting def:ChapterG3 (attempt 3)
+09:56:17 def:ChapterG3: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterG3.lean:121:2: error(lean.unknownIdent)
+09:56:17 submitting def:ChapterGaugeMechanicsCharge (attempt 3)
+09:56:24 def:ChapterGaugeMechanicsCharge: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGaugeMechanicsCharge.lean:124:2: error)
+09:56:24 submitting def:ChapterGravityTimeProj (attempt 1)
+09:56:29 sync: read 647 definition publish job(s)
+10:20:16 sync: read 647 definition publish job(s)
+10:20:37 sync: read 5760 problem publish job(s)
+10:20:41 sync: read 647 definition publish job(s)
+10:21:01 sync: read 5760 problem publish job(s)
+10:21:06 sync: read 647 definition publish job(s)
+10:21:27 sync: read 5760 problem publish job(s)
+10:21:27 submitting def:Complexification (attempt 1)
+10:21:34 sync: read 647 definition publish job(s)
+10:21:54 sync: read 5760 problem publish job(s)
+10:22:02 def:Complexification: accepted, waiting on the compiler
+10:22:02 submitting def:ChapterA1b (attempt 1)
+10:22:07 sync: read 648 definition publish job(s)
+10:22:29 sync: read 5760 problem publish job(s)
+10:22:36 def:ChapterA1b: accepted, waiting on the compiler
+10:22:36 submitting def:ChapterA3c (attempt 1)
+10:22:44 sync: read 649 definition publish job(s)
+10:23:07 sync: read 5760 problem publish job(s)
+10:23:14 def:ChapterA3c: accepted, waiting on the compiler
+10:23:14 submitting def:ChapterA3k (attempt 2)
+10:23:20 sync: read 650 definition publish job(s)
+10:23:42 sync: read 5760 problem publish job(s)
+10:23:55 def:ChapterA3k: accepted, waiting on the compiler
+10:28:57 def:ChapterA3c: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 216:0: unterminated comment)
+10:29:05 submitting def:ChapterA3n (attempt 2)
+10:29:11 sync: read 651 definition publish job(s)
+10:29:32 sync: read 5760 problem publish job(s)
+10:29:38 def:ChapterA3n: accepted, waiting on the compiler
+10:29:38 def:Complexification: FAIL (publish FAILED: definition does not compile: line 70: `simp` made no progress; line 70: `simp` made no progress; line 71: `simp` made no progress; lin)
+10:29:39 def:ChapterA1b: FAIL (publish FAILED: definition does not compile: line 62: Unknown identifier `Cx`
+
+Note: It is not possible to treat `Cx` as an implicitly bound variable )
+10:29:39 def:ChapterA3k: FAIL (publish FAILED: definition does not compile: line 88: unexpected identifier; expected command; line 177: Unknown identifier `BookProof.ChapterA3j.chir)
+10:29:47 submitting def:ChapterA4f (attempt 1)
+10:29:54 sync: read 652 definition publish job(s)
+10:30:17 sync: read 5760 problem publish job(s)
+10:30:23 def:ChapterA4f: accepted, waiting on the compiler
+10:30:23 submitting def:ChapterAttentionEntropy (attempt 4)
+10:31:12 def:ChapterAttentionEntropy: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionEntropy.lean:37:21: error: un)
+10:31:12 submitting def:ChapterSoftmaxSharpness (attempt 2)
+10:31:19 sync: read 653 definition publish job(s)
+10:31:40 sync: read 5760 problem publish job(s)
+10:31:47 def:ChapterSoftmaxSharpness: accepted, waiting on the compiler
+10:31:47 submitting def:ChapterBookBrstYangMills (attempt 4)
+10:31:54 def:ChapterBookBrstYangMills: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstYangMills.lean:57:42: error: u)
+10:31:54 submitting def:ChapterBrstUnboundedLeakage (attempt 3)
+10:32:00 sync: read 654 definition publish job(s)
+10:32:22 sync: read 5760 problem publish job(s)
+10:32:29 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+10:35:31 def:ChapterA3n: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 164:0: unterminated comment)
+10:35:40 submitting def:ChapterCarlemanUnboundedHop (attempt 4)
+10:35:49 sync: read 655 definition publish job(s)
+10:36:12 sync: read 5760 problem publish job(s)
+10:36:21 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+10:36:58 def:ChapterA4f: FAIL (publish FAILED: definition does not compile: line 53: unknown namespace `BookProof.ChapterA5`)
+10:37:07 submitting def:ChapterEsaPairDGamma (attempt 4)
+10:37:15 def:ChapterEsaPairDGamma: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterEsaPairDGamma.lean:43:5: error: unknow)
+10:37:15 submitting def:ChapterFermionFock (attempt 4)
+10:37:23 def:ChapterFermionFock: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFermionFock.lean:63:64: error(lean.unk)
+10:37:23 submitting def:ChapterFriedrichsCanonical (attempt 3)
+10:37:23 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+10:37:23 def:ChapterSoftmaxSharpness: DONE
+10:37:23 def:ChapterBrstUnboundedLeakage: FAIL (publish FAILED: definition does not compile: line 140: unexpected token ':'; expected command; line 148: unexpected token ':'; expected term)
+10:37:24 def:ChapterFriedrichsCanonical: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 208:0: unterminated comment)
+10:37:32 submitting def:ChapterFriedrichsSquareFactorization (attempt 3)
+10:37:32 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+10:37:32 submitting def:ChapterG3 (attempt 4)
+10:37:39 def:ChapterG3: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterG3.lean:121:2: error(lean.unknownIdent)
+10:37:39 submitting def:ChapterGaugeMechanicsCharge (attempt 4)
+10:37:45 def:ChapterGaugeMechanicsCharge: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGaugeMechanicsCharge.lean:124:2: error)
+10:37:45 submitting def:ChapterGravityTimeProj (attempt 1)
+10:37:52 sync: read 656 definition publish job(s)
+10:38:15 sync: read 5760 problem publish job(s)
+10:38:25 def:ChapterGravityTimeProj: accepted, waiting on the compiler
+10:38:25 submitting def:ChapterReducingSubspaceEsa (attempt 2)
+10:38:31 sync: read 657 definition publish job(s)
+10:38:54 sync: read 5760 problem publish job(s)
+10:39:00 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+10:39:01 def:ChapterFriedrichsSquareFactorization: FAIL (publish FAILED: definition does not compile: line 196: Unknown identifier `mem_adjGraph_iff`; line 193: unsolved goals
+F : Type u_1
+inst✝¹ : NormedAdd)
+10:39:09 submitting def:ChapterHalfLineLimitCircle (attempt 3)
+10:39:18 def:ChapterHalfLineLimitCircle: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHalfLineLimitCircle.lean:59:23: error:)
+10:39:18 submitting def:ChapterStrichartzHermiteQG (attempt 3)
+10:39:28 sync: read 658 definition publish job(s)
+10:39:51 sync: read 5760 problem publish job(s)
+10:39:58 def:ChapterStrichartzHermiteQG: accepted, waiting on the compiler
+10:42:26 def:ChapterCarlemanUnboundedHop: FAIL (publish FAILED: definition does not compile: line 66: unexpected identifier; expected command; line 75: unknown namespace `Bimport`; line 405: Type mi)
+10:42:35 submitting def:PhysFunctionalAnalysis (attempt 3)
+10:42:42 def:PhysFunctionalAnalysis: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysFunctionalAnalysis.lean:20:5: error: unkn)
+10:42:42 submitting def:PhysMehler (attempt 3)
+10:42:49 def:PhysMehler: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysMehler.lean:40:5: error: unknown namespac)
+10:42:49 submitting def:ChapterLorentzRealRep (attempt 2)
+10:42:54 sync: read 659 definition publish job(s)
+10:43:15 sync: read 5760 problem publish job(s)
+10:43:22 def:ChapterLorentzRealRep: accepted, waiting on the compiler
+10:43:31 def:ChapterGravityTimeProj: DONE
+10:43:40 submitting def:ChapterMackeyInducedSystem (attempt 2)
+10:43:45 sync: read 660 definition publish job(s)
+10:44:05 sync: read 5760 problem publish job(s)
+10:44:12 def:ChapterMackeyInducedSystem: accepted, waiting on the compiler
+10:44:12 def:ChapterReducingSubspaceEsa: FAIL (publish FAILED: definition does not compile: line 104: Type mismatch: After simplification, term
+  hx
+ has type
+  @Eq F (P ↑↑x) ↑↑x
+but is expected to)
+10:44:12 def:ChapterStrichartzHermiteQG: FAIL (publish FAILED: definition does not compile: line 57: Unknown identifier `hermiteBasis_apply`; line 56: unsolved goals
+n : ℕ
+⊢ hermiteBasis.repr (herm)
+10:44:21 submitting def:ChapterMajoranaProp74 (attempt 1)
+10:44:28 sync: read 661 definition publish job(s)
+10:44:49 sync: read 5760 problem publish job(s)
+10:45:01 def:ChapterMajoranaProp74: accepted, waiting on the compiler
+10:45:01 submitting def:ChapterMixedLinearEsa (attempt 1)
+10:45:08 sync: read 662 definition publish job(s)
+10:45:30 sync: read 5760 problem publish job(s)
+10:45:38 def:ChapterMixedLinearEsa: accepted, waiting on the compiler
+10:46:24 def:ChapterLorentzRealRep: DONE
+10:46:33 submitting def:ChapterMixedPrior (attempt 1)
+10:46:38 sync: read 663 definition publish job(s)
+10:47:00 sync: read 5760 problem publish job(s)
+10:47:06 def:ChapterMixedPrior: accepted, waiting on the compiler
+10:48:11 def:ChapterMackeyInducedSystem: FAIL (publish FAILED: definition does not compile: line 83: Unknown identifier `cocycle_mem_stabilizer`; line 91: Unknown identifier `cocycle_mem_stabilizer)
+10:48:20 submitting def:ChapterNavierStokesBilinearEsa (attempt 3)
+11:26:46 sync: read 664 definition publish job(s)
+11:27:10 sync: read 5760 problem publish job(s)
+11:27:15 sync: read 664 definition publish job(s)
+11:27:39 sync: read 5760 problem publish job(s)
+11:27:44 sync: read 664 definition publish job(s)
+11:28:06 sync: read 5760 problem publish job(s)
+11:28:06 submitting def:Complexification (attempt 2)
+11:28:12 sync: read 664 definition publish job(s)
+11:28:34 sync: read 5760 problem publish job(s)
+11:28:41 def:Complexification: accepted, waiting on the compiler
+11:28:41 submitting def:ChapterA1b (attempt 2)
+11:28:47 sync: read 665 definition publish job(s)
+11:29:12 sync: read 5760 problem publish job(s)
+11:29:19 def:ChapterA1b: accepted, waiting on the compiler
+11:29:19 submitting def:ChapterA3c (attempt 2)
+11:29:23 sync: read 666 definition publish job(s)
+11:29:46 sync: read 5760 problem publish job(s)
+11:29:58 def:ChapterA3c: accepted, waiting on the compiler
+11:29:58 submitting def:ChapterA3k (attempt 3)
+11:30:05 sync: read 667 definition publish job(s)
+11:30:28 sync: read 5760 problem publish job(s)
+11:30:38 def:ChapterA3k: accepted, waiting on the compiler
+11:33:22 def:Complexification: FAIL (publish FAILED: definition does not compile: line 70: `simp` made no progress; line 70: `simp` made no progress; line 71: `simp` made no progress; lin)
+11:33:31 submitting def:ChapterA3n (attempt 3)
+11:33:36 sync: read 668 definition publish job(s)
+11:33:58 sync: read 5760 problem publish job(s)
+11:34:10 def:ChapterA3n: accepted, waiting on the compiler
+11:34:10 def:ChapterA1b: FAIL (publish FAILED: definition does not compile: line 62: Unknown identifier `Cx`
+
+Note: It is not possible to treat `Cx` as an implicitly bound variable )
+11:34:11 def:ChapterA3c: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 216:0: unterminated comment)
+11:34:11 def:ChapterA3k: FAIL (publish FAILED: definition does not compile: line 88: unexpected identifier; expected command; line 177: Unknown identifier `BookProof.ChapterA3j.chir)
+11:34:19 submitting def:ChapterAttentionEntropy (attempt 5)
+11:34:26 def:ChapterAttentionEntropy: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionEntropy.lean:37:21: error: un)
+11:34:26 submitting def:ChapterAttentionOutput (attempt 1)
+11:34:32 sync: read 669 definition publish job(s)
+11:34:54 sync: read 5760 problem publish job(s)
+11:35:12 def:ChapterAttentionOutput: accepted, waiting on the compiler
+11:35:12 submitting def:ChapterBookBrstYangMills (attempt 5)
+11:35:20 def:ChapterBookBrstYangMills: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterBookBrstYangMills.lean:57:42: error: u)
+11:35:20 submitting def:ChapterBrstUnboundedLeakage (attempt 4)
+11:35:26 sync: read 670 definition publish job(s)
+11:35:48 sync: read 5760 problem publish job(s)
+11:36:06 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+11:36:06 submitting def:ChapterCarlemanUnboundedHop (attempt 5)
+11:36:14 sync: read 671 definition publish job(s)
+11:36:36 sync: read 5760 problem publish job(s)
+11:36:53 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+11:39:38 def:ChapterA3n: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 164:0: unterminated comment)
+11:39:47 submitting def:ChapterCoherentPositionSpace (attempt 2)
+11:39:53 sync: read 672 definition publish job(s)
+11:40:15 sync: read 5760 problem publish job(s)
+11:40:33 def:ChapterCoherentPositionSpace: accepted, waiting on the compiler
+11:41:01 def:ChapterAttentionOutput: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterSoftmaxOrder`; line 58: Unknown identifier `observableExpect)
+11:41:01 def:ChapterBrstUnboundedLeakage: FAIL (publish FAILED: definition does not compile: line 140: unexpected token ':'; expected command; line 148: unexpected token ':'; expected term)
+11:41:10 submitting def:ChapterEsaPairDGamma (attempt 5)
+11:41:16 def:ChapterEsaPairDGamma: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterEsaPairDGamma.lean:43:5: error: unknow)
+11:41:16 submitting def:ChapterStoneSeparable (attempt 3)
+11:41:22 sync: read 673 definition publish job(s)
+11:41:42 sync: read 5760 problem publish job(s)
+11:41:49 def:ChapterStoneSeparable: accepted, waiting on the compiler
+11:41:49 submitting def:ChapterFermionFock (attempt 5)
+11:41:56 def:ChapterFermionFock: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFermionFock.lean:63:64: error(lean.unk)
+11:41:56 submitting def:ChapterFriedrichsCanonical (attempt 4)
+11:42:05 sync: read 674 definition publish job(s)
+11:42:26 sync: read 5760 problem publish job(s)
+11:42:33 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+11:42:33 def:ChapterCarlemanUnboundedHop: FAIL (publish FAILED: definition does not compile: line 66: unexpected identifier; expected command; line 75: unknown namespace `Bimport`; line 405: Type mi)
+11:42:42 submitting def:ChapterFriedrichsSquareFactorization (attempt 4)
+11:42:49 sync: read 675 definition publish job(s)
+11:43:11 sync: read 5760 problem publish job(s)
+11:43:18 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+11:43:36 def:ChapterCoherentPositionSpace: DONE
+12:15:23 sync: read 676 definition publish job(s)
+12:15:45 sync: read 5760 problem publish job(s)
+12:15:50 sync: read 676 definition publish job(s)
+12:16:11 sync: read 5760 problem publish job(s)
+12:16:16 sync: read 676 definition publish job(s)
+12:16:37 sync: read 5760 problem publish job(s)
+12:16:37 submitting def:Complexification (attempt 3)
+12:16:45 sync: read 676 definition publish job(s)
+12:17:06 sync: read 5760 problem publish job(s)
+12:17:13 def:Complexification: accepted, waiting on the compiler
+12:17:13 submitting def:ChapterA1b (attempt 3)
+12:17:20 sync: read 677 definition publish job(s)
+12:17:40 sync: read 5760 problem publish job(s)
+12:17:47 def:ChapterA1b: accepted, waiting on the compiler
+12:17:47 submitting def:ChapterA3c (attempt 3)
+12:17:53 sync: read 678 definition publish job(s)
+12:18:14 sync: read 5760 problem publish job(s)
+12:18:21 def:ChapterA3c: accepted, waiting on the compiler
+12:18:21 submitting def:ChapterA3k (attempt 4)
+12:18:26 sync: read 679 definition publish job(s)
+12:18:47 sync: read 5760 problem publish job(s)
+12:18:54 def:ChapterA3k: accepted, waiting on the compiler
+12:22:05 def:Complexification: FAIL (publish FAILED: definition does not compile: line 70: `simp` made no progress; line 70: `simp` made no progress; line 71: `simp` made no progress; lin)
+12:22:13 submitting def:ChapterA3n (attempt 4)
+12:22:19 sync: read 680 definition publish job(s)
+12:22:41 sync: read 5760 problem publish job(s)
+12:22:54 def:ChapterA3n: accepted, waiting on the compiler
+12:22:54 def:ChapterA1b: FAIL (publish FAILED: definition does not compile: line 62: Unknown identifier `Cx`
+
+Note: It is not possible to treat `Cx` as an implicitly bound variable )
+12:23:03 submitting def:ChapterAttentionOutput (attempt 2)
+12:23:09 sync: read 681 definition publish job(s)
+12:23:32 sync: read 5760 problem publish job(s)
+12:23:39 def:ChapterAttentionOutput: accepted, waiting on the compiler
+12:24:16 def:ChapterA3c: DONE
+12:24:25 submitting def:ChapterBrstUnboundedLeakage (attempt 5)
+12:24:30 sync: read 682 definition publish job(s)
+12:24:54 sync: read 5760 problem publish job(s)
+12:25:10 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+12:25:29 def:ChapterA3k: DONE
+12:25:37 submitting def:ChapterStoneSeparable (attempt 3)
+12:25:37 def:ChapterStoneSeparable: accepted, waiting on the compiler
+12:25:39 def:ChapterStoneSeparable: FAIL (publish FAILED: definition does not compile: line 62: Invalid field `gen_stoneGroup_eq`: The environment does not contain `BookProof.ChapterStoneResol)
+12:25:47 submitting def:ChapterFriedrichsCanonical (attempt 4)
+12:25:47 def:ChapterFriedrichsCanonical: accepted, waiting on the compiler
+12:25:48 def:ChapterFriedrichsCanonical: FAIL (publish FAILED: definition does not compile: could not lex the submitted code: Token scanner failed: lex error at 208:0: unterminated comment)
+12:25:56 submitting def:ChapterFriedrichsSquareFactorization (attempt 4)
+12:25:56 def:ChapterFriedrichsSquareFactorization: accepted, waiting on the compiler
+12:25:57 def:ChapterFriedrichsSquareFactorization: FAIL (publish FAILED: definition does not compile: line 196: Unknown identifier `mem_adjGraph_iff`; line 193: unsolved goals
+F : Type u_1
+inst✝¹ : NormedAdd)
+12:26:05 submitting def:ChapterG3 (attempt 5)
+12:26:53 def:ChapterG3: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterG3.lean:121:2: error(lean.unknownIdent)
+12:26:53 submitting def:ChapterGaugeMechanicsCharge (attempt 5)
+12:27:02 def:ChapterGaugeMechanicsCharge: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterGaugeMechanicsCharge.lean:124:2: error)
+12:27:02 submitting def:ChapterReducingSubspaceEsa (attempt 3)
+12:27:09 sync: read 683 definition publish job(s)
+12:27:30 sync: read 5760 problem publish job(s)
+12:27:45 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+12:27:45 def:ChapterA3n: DONE
+12:27:45 def:ChapterAttentionOutput: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterSoftmaxOrder`; line 58: Unknown identifier `observableExpect)
+12:27:54 submitting def:ChapterHalfLineLimitCircle (attempt 4)
+12:28:04 def:ChapterHalfLineLimitCircle: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHalfLineLimitCircle.lean:59:23: error:)
+12:28:04 submitting def:ChapterStrichartzHermiteQG (attempt 4)
+12:28:14 sync: read 684 definition publish job(s)
+12:28:36 sync: read 5760 problem publish job(s)
+12:28:46 def:ChapterStrichartzHermiteQG: accepted, waiting on the compiler
+12:28:46 submitting def:PhysFunctionalAnalysis (attempt 4)
+12:28:53 def:PhysFunctionalAnalysis: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysFunctionalAnalysis.lean:20:5: error: unkn)
+12:28:53 submitting def:PhysMehler (attempt 4)
+12:29:01 def:PhysMehler: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysMehler.lean:40:5: error: unknown namespac)
+12:29:01 submitting def:ChapterLorentzRealRepSum (attempt 1)
+12:29:08 sync: read 685 definition publish job(s)
+12:29:29 sync: read 5760 problem publish job(s)
+12:29:43 def:ChapterLorentzRealRepSum: accepted, waiting on the compiler
+12:29:43 def:ChapterBrstUnboundedLeakage: FAIL (publish FAILED: definition does not compile: line 140: unexpected token ':'; expected command; line 148: unexpected token ':'; expected term)
+12:29:52 submitting def:ChapterMackeyInducedSystem (attempt 3)
+12:29:58 sync: read 686 definition publish job(s)
+12:30:20 sync: read 5760 problem publish job(s)
+12:30:30 def:ChapterMackeyInducedSystem: accepted, waiting on the compiler
+12:31:44 def:ChapterReducingSubspaceEsa: FAIL (publish FAILED: definition does not compile: line 104: Type mismatch: After simplification, term
+  hx
+ has type
+  @Eq F (P ↑↑x) ↑↑x
+but is expected to)
+12:31:52 submitting def:ChapterMajoranaProp74 (attempt 1)
+12:31:52 def:ChapterMajoranaProp74: accepted, waiting on the compiler
+12:31:54 def:ChapterMajoranaProp74: DONE
+12:32:02 submitting def:ChapterMixedLinearEsa (attempt 1)
+12:32:02 def:ChapterMixedLinearEsa: recorded publish job predates the current bundle — resubmitting
+12:32:08 sync: read 687 definition publish job(s)
+12:32:28 sync: read 5760 problem publish job(s)
+12:32:35 def:ChapterMixedLinearEsa: accepted, waiting on the compiler
+12:32:35 def:ChapterStrichartzHermiteQG: FAIL (publish FAILED: definition does not compile: line 57: Unknown identifier `hermiteBasis_apply`; line 56: unsolved goals
+n : ℕ
+⊢ hermiteBasis.repr (herm)
+12:32:44 submitting def:ChapterMixedPrior (attempt 1)
+12:32:44 def:ChapterMixedPrior: recorded publish job predates the current bundle — resubmitting
+12:32:51 sync: read 688 definition publish job(s)
+12:33:12 sync: read 5760 problem publish job(s)
+12:33:21 def:ChapterMixedPrior: accepted, waiting on the compiler
+12:33:30 def:ChapterLorentzRealRepSum: DONE
+12:33:39 submitting def:ChapterNavierStokesBilinearEsa (attempt 3)
+12:33:46 def:ChapterNavierStokesBilinearEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNavierStokesBilinearEsa.lean:92:67: er)
+12:33:46 submitting def:ChapterNavierStokesCarleman (attempt 3)
+12:33:52 sync: read 689 definition publish job(s)
+12:34:15 sync: read 5760 problem publish job(s)
+12:34:25 def:ChapterNavierStokesCarleman: accepted, waiting on the compiler
+12:34:43 def:ChapterMackeyInducedSystem: FAIL (publish FAILED: definition does not compile: line 83: Unknown identifier `cocycle_mem_stabilizer`; line 91: Unknown identifier `cocycle_mem_stabilizer)
+12:34:52 submitting def:ChapterNavierStokesFockEsa (attempt 3)
+12:34:57 sync: read 690 definition publish job(s)
+12:35:18 sync: read 5760 problem publish job(s)
+12:35:26 def:ChapterNavierStokesFockEsa: accepted, waiting on the compiler
+12:36:03 def:ChapterMixedLinearEsa: FAIL (publish FAILED: definition does not compile: line 65: unexpected token '*'; expected term; line 71: unexpected token '#'; expected ':' or ']'; line 73)
+12:36:12 submitting def:ChapterNavierStokesFockLagrangian (attempt 3)
+12:36:18 sync: read 691 definition publish job(s)
+12:36:38 sync: read 5760 problem publish job(s)
+12:36:45 def:ChapterNavierStokesFockLagrangian: accepted, waiting on the compiler
+12:36:45 def:ChapterMixedPrior: DONE
+12:36:54 submitting def:ChapterNsBrstDerivativeGauge (attempt 1)
+12:37:00 sync: read 692 definition publish job(s)
+12:37:20 sync: read 5760 problem publish job(s)
+12:37:27 def:ChapterNsBrstDerivativeGauge: accepted, waiting on the compiler
+12:38:13 def:ChapterNavierStokesCarleman: FAIL (publish FAILED: definition does not compile: line 105: Type mismatch: After simplification, term
+  tridiagFun_add c (↑↑f) (↑↑g) n
+ has type
+  @Eq ℂ (t)
+12:38:21 submitting def:ChapterQgOuterFockFullFL (attempt 3)
+12:38:27 sync: read 693 definition publish job(s)
+12:38:48 sync: read 5760 problem publish job(s)
+12:38:55 def:ChapterQgOuterFockFullFL: accepted, waiting on the compiler
+12:39:23 def:ChapterNavierStokesFockEsa: FAIL (publish FAILED: definition does not compile: line 97: Unknown identifier `lpDiag_isSymmetricDom`; line 219: Unknown identifier `fockDom_dense`; line 2)
+12:39:32 submitting def:ChapterNsScalarVectorCurry (attempt 3)
+12:39:41 def:ChapterNsScalarVectorCurry: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNsScalarVectorCurry.lean:259:17: error)
+12:39:41 submitting def:ChapterNsSpatialMomentumMultiplier (attempt 1)
+12:39:47 sync: read 694 definition publish job(s)
+12:40:08 sync: read 5760 problem publish job(s)
+12:40:15 def:ChapterNsSpatialMomentumMultiplier: accepted, waiting on the compiler
+12:41:19 def:ChapterNavierStokesFockLagrangian: FAIL (publish FAILED: definition does not compile: line 309: Invalid field `core`: The environment does not contain `BookProof.NavierStokesFlow.FockLagrangi)
+12:41:28 submitting def:ChapterParityHiggs (attempt 1)
+12:41:34 sync: read 695 definition publish job(s)
+12:41:53 sync: read 5760 problem publish job(s)
+12:41:59 def:ChapterParityHiggs: accepted, waiting on the compiler
+12:42:00 def:ChapterNsBrstDerivativeGauge: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.BRSTNilpotent`; line 150: Unknown identifier `pderiv`; line 200: Un)
+12:42:00 def:ChapterQgOuterFockFullFL: FAIL (publish FAILED: definition does not compile: Import parser timed out after 5s)
+12:42:09 submitting def:ChapterParityHypercharge (attempt 1)
+12:42:15 sync: read 696 definition publish job(s)
+12:42:36 sync: read 5760 problem publish job(s)
+12:42:44 def:ChapterParityHypercharge: accepted, waiting on the compiler
+12:42:44 submitting def:ChapterParityQL (attempt 1)
+12:42:50 sync: read 697 definition publish job(s)
+12:43:14 sync: read 5760 problem publish job(s)
+12:43:31 def:ChapterParityQL: accepted, waiting on the compiler
+12:43:32 def:ChapterNsSpatialMomentumMultiplier: DONE
+12:43:40 submitting def:ChapterParitySU2 (attempt 1)
+12:43:47 sync: read 698 definition publish job(s)
+12:44:09 sync: read 5760 problem publish job(s)
+12:44:17 def:ChapterParitySU2: accepted, waiting on the compiler
+12:45:49 def:ChapterParityHiggs: DONE
+12:45:58 submitting def:ChapterPauliCommutant (attempt 2)
+12:46:05 sync: read 699 definition publish job(s)
+12:46:26 sync: read 5760 problem publish job(s)
+12:46:33 def:ChapterPauliCommutant: accepted, waiting on the compiler
+12:46:33 def:ChapterParityHypercharge: DONE
+12:46:42 submitting def:ChapterPauliFundamental (attempt 1)
+12:46:48 sync: read 700 definition publish job(s)
+12:47:09 sync: read 5760 problem publish job(s)
+12:47:19 def:ChapterPauliFundamental: accepted, waiting on the compiler
+12:47:19 def:ChapterParityQL: DONE
+12:47:19 def:ChapterParitySU2: DONE
+12:47:28 submitting def:ChapterPauliGrover (attempt 1)
+12:47:34 sync: read 701 definition publish job(s)
+12:47:54 sync: read 5760 problem publish job(s)
+12:48:05 def:ChapterPauliGrover: accepted, waiting on the compiler
+12:48:05 submitting def:ChapterPauliSU2 (attempt 2)
+12:48:11 sync: read 702 definition publish job(s)
+12:48:31 sync: read 5760 problem publish job(s)
+12:48:38 def:ChapterPauliSU2: accepted, waiting on the compiler
+12:50:55 def:ChapterPauliCommutant: DONE
+12:51:04 submitting def:ChapterPvmMeasure (attempt 3)
+12:51:49 def:ChapterPvmMeasure: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterPvmMeasure.lean:94:8: error(lean.unkno)
+12:51:49 submitting def:ChapterQgOuterFockEllipticFL (attempt 3)
+12:51:57 sync: read 703 definition publish job(s)
+12:52:18 sync: read 5760 problem publish job(s)
+12:52:24 def:ChapterQgOuterFockEllipticFL: accepted, waiting on the compiler
+12:52:25 def:ChapterPauliFundamental: FAIL (publish FAILED: definition does not compile: line 65: unknown namespace `BookProof.ChapterGammaCommutant`; line 141: Unknown identifier `mgammaZ`; lin)
+12:52:25 def:ChapterPauliGrover: DONE
+12:52:34 submitting def:ChapterQuadraticRotationEsa (attempt 3)
+12:52:41 sync: read 704 definition publish job(s)
+12:53:02 sync: read 5760 problem publish job(s)
+12:53:09 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+12:53:09 submitting def:ChapterRotaryPosition (attempt 1)
+12:53:15 sync: read 705 definition publish job(s)
+12:53:37 sync: read 5760 problem publish job(s)
+12:53:54 def:ChapterRotaryPosition: accepted, waiting on the compiler
+12:53:54 def:ChapterPauliSU2: DONE
+12:54:03 submitting def:ChapterSE2 (attempt 2)
+12:54:10 sync: read 706 definition publish job(s)
+12:54:31 sync: read 5760 problem publish job(s)
+12:54:43 def:ChapterSE2: accepted, waiting on the compiler
+12:54:53 def:ChapterQgOuterFockEllipticFL: FAIL (publish FAILED: definition does not compile: line 83: unknown namespace `BookProof.NavierStokesFlow.DifferentialL2`; line 84: unknown namespace `BookP)
+12:55:02 submitting def:ChapterSecondQuantizationCoreEsa (attempt 2)
+12:55:08 sync: read 707 definition publish job(s)
+12:55:31 sync: read 5760 problem publish job(s)
+12:55:38 def:ChapterSecondQuantizationCoreEsa: accepted, waiting on the compiler
+12:57:28 def:ChapterQuadraticRotationEsa: FAIL (publish FAILED: definition does not compile: line 163: Unknown identifier `rotLin_apply`; line 164: Type mismatch: After simplification, term
+  rot_do)
+12:57:37 submitting def:ChapterScalaronDensitizedTransfer (attempt 1)
+12:57:42 sync: read 708 definition publish job(s)
+12:58:04 sync: read 5760 problem publish job(s)
+12:58:11 def:ChapterScalaronDensitizedTransfer: accepted, waiting on the compiler
+12:58:30 def:ChapterRotaryPosition: DONE
+12:58:38 submitting def:ChapterScalaronFockEsa (attempt 3)
+12:58:46 sync: read 709 definition publish job(s)
+12:59:12 sync: read 5760 problem publish job(s)
+12:59:25 def:ChapterScalaronFockEsa: accepted, waiting on the compiler
+12:59:25 def:ChapterSE2: DONE
+12:59:34 submitting def:ChapterSelectingEvents (attempt 2)
+12:59:43 sync: read 710 definition publish job(s)
+13:00:06 sync: read 5760 problem publish job(s)
+13:00:12 def:ChapterSelectingEvents: accepted, waiting on the compiler
+13:00:13 def:ChapterSecondQuantizationCoreEsa: FAIL (publish FAILED: definition does not compile: line 79: Unknown identifier `pushDom_mono`)
+13:00:22 submitting def:ChapterShiftedQuadraticEsa (attempt 3)
+13:00:28 sync: read 711 definition publish job(s)
+13:00:54 sync: read 5760 problem publish job(s)
+13:01:01 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+13:02:06 def:ChapterScalaronDensitizedTransfer: DONE
+13:02:15 submitting def:ChapterSmDiracSpinor (attempt 1)
+13:02:23 sync: read 712 definition publish job(s)
+13:02:43 sync: read 5760 problem publish job(s)
+13:02:50 def:ChapterSmDiracSpinor: accepted, waiting on the compiler
+13:03:00 def:ChapterScalaronFockEsa: FAIL (publish FAILED: definition does not compile: line 143: Unknown identifier `contDiff_scalaronFullPotential`)
+13:03:09 submitting def:ChapterSolovay (attempt 3)
+13:03:42 def:ChapterSolovay: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovay.lean:1:0: error: unknown modul)
+13:03:42 submitting def:ChapterSolovayCoordinates (attempt 3)
+13:04:05 def:ChapterSolovayCoordinates: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayCoordinates.lean:40:57: error(l)
+13:04:05 submitting def:ChapterSolovayTailDimension (attempt 3)
+13:04:10 def:ChapterSolovayTailDimension: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayTailDimension.lean:1:0: error: )
+13:04:10 submitting def:ChapterSphericalBesselODE (attempt 1)
+13:04:18 sync: read 713 definition publish job(s)
+13:04:40 sync: read 5760 problem publish job(s)
+13:04:52 def:ChapterSphericalBesselODE: accepted, waiting on the compiler
+13:04:53 def:ChapterSelectingEvents: DONE
+13:05:02 submitting def:ChapterSphericalPlancherel (attempt 1)
+13:05:09 sync: read 714 definition publish job(s)
+13:05:30 sync: read 5760 problem publish job(s)
+13:05:37 def:ChapterSphericalPlancherel: accepted, waiting on the compiler
+13:05:38 def:ChapterShiftedQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.HyperbolicQuadratic`; line 148: Unknown identifier `dPoly`)
+13:05:46 submitting def:ChapterSymmetryRep (attempt 1)
+13:05:53 sync: read 715 definition publish job(s)
+13:06:17 sync: read 5760 problem publish job(s)
+13:06:24 def:ChapterSymmetryRep: accepted, waiting on the compiler
+13:07:29 def:ChapterSmDiracSpinor: DONE
+13:07:38 submitting def:ChapterTimeTranslation (attempt 2)
+13:07:44 sync: read 716 definition publish job(s)
+13:08:04 sync: read 5760 problem publish job(s)
+13:08:11 def:ChapterTimeTranslation: accepted, waiting on the compiler
+13:10:19 def:ChapterSphericalBesselODE: DONE
+13:10:28 submitting def:ChapterWallDeficiencyObstruction (attempt 3)
+13:10:37 sync: read 717 definition publish job(s)
+13:10:59 sync: read 5760 problem publish job(s)
+13:11:06 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+13:11:06 def:ChapterSphericalPlancherel: DONE
+13:11:15 submitting def:ChapterWignerOrbitClassification (attempt 1)
+13:11:22 sync: read 718 definition publish job(s)
+13:11:47 sync: read 5760 problem publish job(s)
+13:11:54 def:ChapterWignerOrbitClassification: accepted, waiting on the compiler
+13:12:13 def:ChapterSymmetryRep: FAIL (publish FAILED: definition does not compile: line 48: Unknown identifier `timeEvo_mem_unitaryGroup`; line 53: Unknown identifier `timeEvo_zero`; line )
+13:12:22 submitting def:ChapterWignerSymmetryInfinite (attempt 2)
+13:12:29 sync: read 719 definition publish job(s)
+13:12:54 sync: read 5760 problem publish job(s)
+13:13:01 def:ChapterWignerSymmetryInfinite: accepted, waiting on the compiler
+13:13:01 def:ChapterTimeTranslation: DONE
+13:13:10 submitting def:ChapterYangMillsAbelianNoGap (attempt 1)
+13:13:18 sync: read 720 definition publish job(s)
+13:13:40 sync: read 5760 problem publish job(s)
+13:13:47 def:ChapterYangMillsAbelianNoGap: accepted, waiting on the compiler
+13:15:43 sync: read 721 definition publish job(s)
+13:16:08 sync: read 5760 problem publish job(s)
+13:16:13 sync: read 721 definition publish job(s)
+13:16:35 sync: read 5760 problem publish job(s)
+13:16:40 sync: read 721 definition publish job(s)
+13:17:01 sync: read 5760 problem publish job(s)
+13:17:01 submitting def:ChapterNavierStokesFockEsa (attempt 4)
+13:17:02 def:ChapterNavierStokesFockEsa: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterNavierStokesFockEsa.lean:1:0: error: u)
+13:17:02 submitting def:ChapterWallDeficiencyObstruction (attempt 3)
+13:17:02 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+13:17:02 submitting def:Complexification (attempt 4)
+13:17:08 sync: read 721 definition publish job(s)
+13:17:26 def:ChapterWallDeficiencyObstruction: FAIL (publish FAILED: definition does not compile: line 118: Unknown constant `integral_conj_deriv2_mul`; line 119: Unknown constant `inner_eq_of_ode`; line)
+13:17:29 sync: read 5760 problem publish job(s)
+13:17:35 submitting def:ChapterAttentionCapacity (attempt 1)
+13:17:36 def:Complexification: accepted, waiting on the compiler
+13:17:36 submitting def:ChapterA1b (attempt 4)
+13:17:42 sync: read 722 definition publish job(s)
+13:18:03 sync: read 5760 problem publish job(s)
+13:18:09 def:ChapterA1b: accepted, waiting on the compiler
+13:18:09 submitting def:ChapterA3d (attempt 1)
+13:18:17 sync: read 723 definition publish job(s)
+13:18:20 def:ChapterAttentionCapacity: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionCapacity.lean:39:5: error: un)
+13:18:20 submitting def:ChapterAttentionMarkov (attempt 1)
+13:18:26 def:ChapterAttentionMarkov: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionMarkov.lean:37:5: error: unkn)
+13:18:26 submitting def:ChapterAttentionMasking (attempt 1)
+13:18:32 def:ChapterAttentionMasking: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterAttentionMasking.lean:42:5: error: unk)
+13:18:32 submitting def:ChapterLayerNorm (attempt 1)
+13:18:39 def:ChapterLayerNorm: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterLayerNorm.lean:34:5: error: unknown na)
+13:18:39 submitting def:ChapterSinusoidalPosition (attempt 1)
+13:18:39 sync: read 5760 problem publish job(s)
+13:18:46 def:ChapterA3d: accepted, waiting on the compiler
+13:18:46 def:ChapterSinusoidalPosition: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSinusoidalPosition.lean:32:5: error: u)
+13:18:46 submitting def:ChapterAbelianAtomicCondensation (attempt 1)
+13:18:46 def:ChapterWallDeficiencyObstruction: FAIL (publish FAILED: definition does not compile: line 118: Unknown constant `integral_conj_deriv2_mul`; line 119: Unknown constant `inner_eq_of_ode`; line)
+13:18:53 sync: read 724 definition publish job(s)
+13:18:55 submitting def:ChapterA3l (attempt 1)
+13:19:01 sync: read 724 definition publish job(s)
+13:19:14 sync: read 5760 problem publish job(s)
+13:19:23 def:ChapterAbelianAtomicCondensation: accepted, waiting on the compiler
+13:19:23 def:ChapterWignerOrbitClassification: DONE
+13:19:23 sync: read 5760 problem publish job(s)
+13:19:24 def:ChapterWignerSymmetryInfinite: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterOrthogonalSums`; line 69: Unknown identifier `IsWignerSymmet)
+13:19:24 def:ChapterYangMillsAbelianNoGap: DONE
+13:19:31 def:ChapterA3l: accepted, waiting on the compiler
+13:19:32 submitting def:ChapterAbelianGelfandModel (attempt 2)
+13:19:39 sync: read 726 definition publish job(s)
+13:20:00 sync: read 5760 problem publish job(s)
+13:20:07 def:ChapterAbelianGelfandModel: accepted, waiting on the compiler
+13:20:07 submitting def:ChapterCayleyInverse (attempt 2)
+13:20:14 sync: read 727 definition publish job(s)
+13:20:37 sync: read 5760 problem publish job(s)
+13:20:44 def:Complexification: FAIL (publish FAILED: definition does not compile: line 70: `simp` made no progress; line 70: `simp` made no progress; line 71: `simp` made no progress; lin)
+13:20:44 def:ChapterCayleyInverse: accepted, waiting on the compiler
+13:20:53 submitting def:ChapterA3o (attempt 1)
+13:21:00 sync: read 728 definition publish job(s)
+13:21:23 sync: read 5760 problem publish job(s)
+13:21:30 def:ChapterA3o: accepted, waiting on the compiler
+13:21:30 def:ChapterA1b: FAIL (publish FAILED: definition does not compile: line 62: Unknown identifier `Cx`
+
+Note: It is not possible to treat `Cx` as an implicitly bound variable )
+13:21:39 submitting def:ChapterA5 (attempt 1)
+13:21:46 sync: read 729 definition publish job(s)
+13:22:08 sync: read 5760 problem publish job(s)
+13:22:15 def:ChapterA5: accepted, waiting on the compiler
+13:23:10 def:ChapterA3d: DONE
+13:23:19 submitting def:ChapterAttentionOutput (attempt 3)
+13:23:26 sync: read 730 definition publish job(s)
+13:23:48 sync: read 5760 problem publish job(s)
+13:24:03 def:ChapterAttentionOutput: accepted, waiting on the compiler
+13:24:03 def:ChapterA3l: DONE
+13:24:12 submitting def:ChapterBoseEinstein (attempt 1)
+13:24:20 sync: read 731 definition publish job(s)
+13:24:42 sync: read 5760 problem publish job(s)
+13:24:51 def:ChapterBoseEinstein: accepted, waiting on the compiler
+13:25:56 def:ChapterA3o: DONE
+13:26:04 submitting def:ChapterStoneSeparable (attempt 4)
+13:26:12 sync: read 732 definition publish job(s)
+13:26:33 sync: read 5760 problem publish job(s)
+13:26:40 def:ChapterStoneSeparable: accepted, waiting on the compiler
+13:26:40 def:ChapterA5: DONE
+13:26:49 submitting def:ChapterFriedrichsCanonical (attempt 5)
+13:26:50 def:ChapterFriedrichsCanonical: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFriedrichsCanonical.lean:1:0: error: u)
+13:26:50 submitting def:ChapterFriedrichsSquareFactorization (attempt 5)
+13:26:51 def:ChapterFriedrichsSquareFactorization: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterFriedrichsSquareFactorization.lean:1:0)
+13:26:51 submitting def:ChapterReducingSubspaceEsa (attempt 4)
+13:26:58 sync: read 733 definition publish job(s)
+13:27:20 sync: read 5760 problem publish job(s)
+13:27:34 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+13:28:11 def:ChapterAttentionOutput: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterSoftmaxOrder`; line 58: Unknown identifier `observableExpect)
+13:28:20 submitting def:ChapterHalfLineLimitCircle (attempt 5)
+13:28:28 def:ChapterHalfLineLimitCircle: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterHalfLineLimitCircle.lean:59:23: error:)
+13:28:28 submitting def:ChapterStrichartzHermiteQG (attempt 5)
+13:28:29 def:ChapterStrichartzHermiteQG: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterStrichartzHermiteQG.lean:1:0: error: u)
+13:28:29 submitting def:PhysFunctionalAnalysis (attempt 5)
+13:28:34 def:PhysFunctionalAnalysis: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysFunctionalAnalysis.lean:20:5: error: unkn)
+13:28:34 submitting def:PhysMehler (attempt 5)
+13:28:40 def:PhysMehler: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_PhysMehler.lean:40:5: error: unknown namespac)
+13:28:40 submitting def:ChapterMackeyInducedSystem (attempt 4)
+13:28:46 sync: read 734 definition publish job(s)
+13:29:07 sync: read 5760 problem publish job(s)
+13:29:14 def:ChapterMackeyInducedSystem: accepted, waiting on the compiler
+15:55:27 sync: read 735 definition publish job(s)
+15:55:52 sync: read 5760 problem publish job(s)
+15:56:11 sync: read 735 definition publish job(s)
+15:56:37 sync: read 5760 problem publish job(s)
+15:56:43 sync: read 735 definition publish job(s)
+15:57:06 sync: read 5760 problem publish job(s)
+15:57:06 submitting def:ChapterA3e (attempt 1)
+15:57:14 sync: read 735 definition publish job(s)
+15:57:39 sync: read 5760 problem publish job(s)
+15:57:47 def:ChapterA3e: accepted, waiting on the compiler
+15:57:47 submitting def:ChapterA4e (attempt 2)
+15:57:54 sync: read 736 definition publish job(s)
+15:58:17 sync: read 5760 problem publish job(s)
+15:58:24 def:ChapterA4e: accepted, waiting on the compiler
+15:58:24 submitting def:ChapterA4f (attempt 2)
+15:58:31 sync: read 737 definition publish job(s)
+15:58:54 sync: read 5760 problem publish job(s)
+15:59:08 def:ChapterA4f: accepted, waiting on the compiler
+15:59:08 submitting def:ChapterBoseEinstein (attempt 1)
+15:59:08 def:ChapterBoseEinstein: accepted, waiting on the compiler
+15:59:09 def:ChapterBoseEinstein: DONE
+15:59:18 submitting def:ChapterThermalTemperatureCore (attempt 1)
+15:59:26 sync: read 738 definition publish job(s)
+15:59:49 sync: read 5760 problem publish job(s)
+16:00:00 def:ChapterThermalTemperatureCore: accepted, waiting on the compiler
+16:01:46 def:ChapterA3e: DONE
+16:01:55 submitting def:ChapterParityZ4 (attempt 1)
+16:02:02 sync: read 739 definition publish job(s)
+16:02:32 sync: read 5760 problem publish job(s)
+16:02:40 def:ChapterParityZ4: accepted, waiting on the compiler
+16:02:40 def:ChapterA4e: DONE
+16:02:49 submitting def:ChapterSolovay (attempt 4)
+16:03:24 def:ChapterSolovay: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovay.lean:1:0: error: unknown modul)
+16:03:24 submitting def:ChapterSolovayCoordinates (attempt 4)
+16:03:50 def:ChapterSolovayCoordinates: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayCoordinates.lean:40:57: error(l)
+16:03:50 submitting def:ChapterSolovayTailDimension (attempt 4)
+16:03:54 def:ChapterSolovayTailDimension: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Definitions/Def_ChapterSolovayTailDimension.lean:1:0: error: )
+16:03:54 submitting def:ChapterWignerOrbitClassification (attempt 1)
+16:03:54 def:ChapterWignerOrbitClassification: accepted, waiting on the compiler
+16:03:54 def:ChapterA4f: DONE
+16:03:55 def:ChapterThermalTemperatureCore: DONE
+16:03:55 def:ChapterWignerOrbitClassification: DONE
+16:04:03 submitting def:ChapterAbelianAtomicCondensation (attempt 1)
+16:04:11 sync: read 740 definition publish job(s)
+16:04:33 sync: read 5760 problem publish job(s)
+16:04:37 def:ChapterAbelianAtomicCondensation: REUSING existing Definition node 215717c5-0301-49b5-9264-112ab2bff262
+16:04:37 def:ChapterAbelianAtomicCondensation: DONE
+16:04:37 submitting def:ChapterDeterministic (attempt 1)
+16:04:43 sync: read 740 definition publish job(s)
+16:05:11 sync: read 5760 problem publish job(s)
+16:05:23 def:ChapterDeterministic: accepted, waiting on the compiler
+16:05:23 submitting def:ChapterElectroweakFieldStrength (attempt 1)
+16:05:33 sync: read 741 definition publish job(s)
+16:05:58 sync: read 5760 problem publish job(s)
+16:06:06 def:ChapterElectroweakFieldStrength: accepted, waiting on the compiler
+16:06:06 submitting def:ChapterFiniteBayesHierarchy (attempt 1)
+16:06:15 sync: read 742 definition publish job(s)
+16:06:39 sync: read 5760 problem publish job(s)
+16:06:47 def:ChapterFiniteBayesHierarchy: accepted, waiting on the compiler
+16:06:47 def:ChapterParityZ4: DONE
+16:06:56 submitting def:ChapterGellMann (attempt 1)
+16:07:03 sync: read 743 definition publish job(s)
+16:07:29 sync: read 5760 problem publish job(s)
+16:07:37 def:ChapterGellMann: accepted, waiting on the compiler
+16:09:30 def:ChapterDeterministic: DONE
+16:09:39 submitting def:ChapterGravityMetric (attempt 1)
+16:09:47 sync: read 744 definition publish job(s)
+16:10:13 sync: read 5760 problem publish job(s)
+16:10:24 def:ChapterGravityMetric: accepted, waiting on the compiler
+16:11:02 def:ChapterElectroweakFieldStrength: DONE
+16:11:13 submitting def:ChapterGravityPolymomentum (attempt 1)
+16:11:20 sync: read 745 definition publish job(s)
+16:11:43 sync: read 5760 problem publish job(s)
+16:11:52 def:ChapterGravityPolymomentum: accepted, waiting on the compiler
+16:11:52 def:ChapterFiniteBayesHierarchy: DONE
+16:12:01 submitting def:ChapterGravitySplit (attempt 1)
+16:12:09 sync: read 746 definition publish job(s)
+16:12:33 sync: read 5760 problem publish job(s)
+16:12:42 def:ChapterGravitySplit: accepted, waiting on the compiler
+16:13:49 def:ChapterGellMann: DONE
+16:13:57 submitting def:ChapterLorentzRealRepFull (attempt 1)
+16:14:08 sync: read 747 definition publish job(s)
+16:14:32 sync: read 5760 problem publish job(s)
+16:14:48 def:ChapterLorentzRealRepFull: accepted, waiting on the compiler
+16:17:31 def:ChapterGravityMetric: DONE
+16:17:40 submitting def:ChapterObservableOperator (attempt 1)
+16:17:48 sync: read 748 definition publish job(s)
+16:18:15 sync: read 5760 problem publish job(s)
+16:18:25 def:ChapterObservableOperator: accepted, waiting on the compiler
+16:18:53 def:ChapterGravityPolymomentum: DONE
+16:19:02 submitting def:ChapterParityChirality (attempt 1)
+16:19:12 sync: read 749 definition publish job(s)
+16:19:34 sync: read 5760 problem publish job(s)
+16:19:42 def:ChapterParityChirality: accepted, waiting on the compiler
+16:19:42 def:ChapterGravitySplit: DONE
+16:19:51 submitting def:ChapterRadialLaplacian (attempt 1)
+16:19:59 sync: read 750 definition publish job(s)
+16:20:25 sync: read 5760 problem publish job(s)
+16:20:32 def:ChapterRadialLaplacian: accepted, waiting on the compiler
+16:20:44 def:ChapterLorentzRealRepFull: DONE
+16:20:53 submitting def:ChapterScaledDotProduct (attempt 1)
+16:21:02 sync: read 751 definition publish job(s)
+16:21:27 sync: read 5760 problem publish job(s)
+16:21:40 def:ChapterScaledDotProduct: accepted, waiting on the compiler
+16:22:27 def:ChapterObservableOperator: DONE
+16:22:36 submitting def:ChapterSmGaugeConnection (attempt 1)
+16:23:24 sync: read 752 definition publish job(s)
+16:23:46 sync: read 5760 problem publish job(s)
+16:23:53 def:ChapterSmGaugeConnection: accepted, waiting on the compiler
+16:23:53 def:ChapterParityChirality: DONE
+16:24:02 submitting def:ChapterWeylSL2Unipotent (attempt 1)
+16:24:11 sync: read 753 definition publish job(s)
+16:24:35 sync: read 5760 problem publish job(s)
+16:24:52 def:ChapterWeylSL2Unipotent: accepted, waiting on the compiler
+16:25:21 def:ChapterRadialLaplacian: DONE
+16:25:30 submitting def:ChapterThermalMaxEntropy (attempt 1)
+16:25:39 sync: read 754 definition publish job(s)
+16:26:01 sync: read 5760 problem publish job(s)
+16:26:10 def:ChapterThermalMaxEntropy: accepted, waiting on the compiler
+16:26:10 def:ChapterScaledDotProduct: DONE
+16:27:24 def:ChapterSmGaugeConnection: DONE
+16:28:26 def:ChapterWeylSL2Unipotent: DONE
+16:29:08 def:ChapterThermalMaxEntropy: DONE
+16:29:08 summary: 371 done, 173 pending, 9 failed, 1 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+16:29:08 waiting on unpublished def bundle(s): ChapterA3e (1 item(s)), ChapterA4e (2 item(s)), ChapterGravityMetric (1 item(s)), ChapterLorentzRealRepFull (1 item(s)), ChapterSolovayCoordinates (1 item(s))
+16:29:08 chunk: 26 item(s) resolved in 1997s
+16:43:58 sync: read 755 definition publish job(s)
+16:44:21 sync: read 5760 problem publish job(s)
+16:44:27 sync: read 755 definition publish job(s)
+16:44:47 sync: read 5760 problem publish job(s)
+16:44:52 sync: read 755 definition publish job(s)
+16:45:20 sync: read 5760 problem publish job(s)
+16:45:20 processing sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 1)
+16:50:47 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_fockH. No such theorem exists in this Lean environment ()
+16:50:47 processing sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 1)
+16:54:54 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq. No such theorem exists in this Lean environ)
+16:54:54 processing sol:BookProof_QgOuterFock_dsOp_quadForm_nonneg (attempt 1)
+16:58:30 sync: read 755 definition publish job(s)
+16:58:55 sync: read 5760 problem publish job(s)
+16:59:02 sync: read 755 definition publish job(s)
+16:59:28 sync: read 5760 problem publish job(s)
+16:59:35 sync: read 755 definition publish job(s)
+17:00:08 sync: read 5760 problem publish job(s)
+17:00:08 submitting thm:BookProof_ChapterH6_generation_at_zero (attempt 3)
+17:00:32 thm:BookProof_ChapterH6_generation_at_zero: accepted, waiting on the compiler
+17:00:32 submitting thm:BookProof_ChapterH6_generation_semigroup (attempt 3)
+17:00:40 sol:BookProof_QgOuterFock_dsOp_quadForm_nonneg: DONE
+17:00:40 processing sol:BookProof_QgOuterFock_qgOuterCore_dense (attempt 1)
+17:00:52 thm:BookProof_ChapterH6_generation_semigroup: accepted, waiting on the compiler
+17:00:52 submitting thm:BookProof_ChapterH6_generation_single_exponential (attempt 3)
+17:01:07 thm:BookProof_ChapterH6_generation_single_exponential: accepted, waiting on the compiler
+17:04:26 thm:BookProof_ChapterH6_generation_at_zero: DONE
+17:04:34 submitting thm:BookProof_ChapterH8_adjoint_comp_nested (attempt 4)
+17:04:41 thm:BookProof_ChapterH8_adjoint_comp_nested: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_adjoint_comp_nested.lean:25:)
+17:04:41 submitting thm:BookProof_ChapterH8_adjoint_comp_self_of_nested (attempt 4)
+17:04:49 thm:BookProof_ChapterH8_adjoint_comp_self_of_nested: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_adjoint_comp_self_of_nested.)
+17:04:49 submitting thm:BookProof_ChapterH8_adjoint_compress (attempt 4)
+17:04:57 thm:BookProof_ChapterH8_adjoint_compress: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_adjoint_compress.lean:25:5: )
+17:04:57 submitting thm:BookProof_ChapterH8_adjoint_pow (attempt 4)
+17:05:04 thm:BookProof_ChapterH8_adjoint_pow: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_adjoint_pow.lean:25:5: error)
+17:05:04 submitting thm:BookProof_ChapterH8_inv_comp_intertwine (attempt 3)
+17:05:12 thm:BookProof_ChapterH8_inv_comp_intertwine: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_inv_comp_intertwine.lean:25:)
+17:05:12 submitting thm:BookProof_ChapterH8_sirk_compression_block (attempt 3)
+17:05:20 thm:BookProof_ChapterH8_sirk_compression_block: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_sirk_compression_block.lean:)
+17:05:21 submitting thm:BookProof_ChapterH8_sirk_compression_block_le (attempt 3)
+17:05:28 thm:BookProof_ChapterH8_sirk_compression_block_le: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_sirk_compression_block_le.le)
+17:05:28 submitting thm:BookProof_ChapterH8_sirk_compression_block_op (attempt 3)
+17:05:37 thm:BookProof_ChapterH8_sirk_compression_block_op: FAIL (local compile failed: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_sirk_compression_block_op.le)
+17:05:37 submitting thm:BookProof_Qg3DGaugeEsa_coreRepPoly_equiv (attempt 2)
+17:05:54 thm:BookProof_Qg3DGaugeEsa_coreRepPoly_equiv: accepted, waiting on the compiler
+17:05:54 thm:BookProof_ChapterH6_generation_semigroup: DONE
+17:05:55 thm:BookProof_ChapterH6_generation_single_exponential: DONE
+17:06:03 submitting thm:BookProof_Qg3DGaugeEsa_pgLp_eq_pgMap (attempt 2)
+17:06:11 thm:BookProof_Qg3DGaugeEsa_pgLp_eq_pgMap: accepted, waiting on the compiler
+17:06:11 submitting thm:BookProof_Qg3DGaugeEsa_qgSignedPoly_apply (attempt 2)
+17:06:19 thm:BookProof_Qg3DGaugeEsa_qgSignedPoly_apply: accepted, waiting on the compiler
+17:06:38 sol:BookProof_QgOuterFock_qgOuterCore_dense: FAIL (verdict CE: Compile error in your proof:
+line 24: Unknown identifier `dsCore_dense`)
+17:06:38 processing sol:BookProof_QgOuterFock_qgOuterN_esa (attempt 1)
+17:08:00 thm:BookProof_Qg3DGaugeEsa_coreRepPoly_equiv: DONE
+17:08:08 submitting thm:BookProof_Qg3DGaugeEsa_sum_single_X (attempt 2)
+17:08:15 thm:BookProof_Qg3DGaugeEsa_sum_single_X: accepted, waiting on the compiler
+17:08:16 thm:BookProof_Qg3DGaugeEsa_pgLp_eq_pgMap: DONE
+17:08:16 thm:BookProof_Qg3DGaugeEsa_qgSignedPoly_apply: DONE
+17:08:24 submitting thm:BookProof_Qg3DGaugeEsa_torsionOps_eq (attempt 2)
+17:08:32 thm:BookProof_Qg3DGaugeEsa_torsionOps_eq: accepted, waiting on the compiler
+17:08:32 submitting thm:BookProof_Qg3DGaugeEsa_triple_swap (attempt 2)
+17:08:38 thm:BookProof_Qg3DGaugeEsa_triple_swap: accepted, waiting on the compiler
+17:09:29 sol:BookProof_QgOuterFock_qgOuterN_esa: FAIL (verdict CE: Compile error in your proof:
+line 25: Unknown identifier `dsOp_essentiallySelfAdjointOn`)
+17:09:30 processing sol:BookProof_QgOuterFock_qgOuterN_symmetricOn (attempt 1)
+17:11:29 thm:BookProof_Qg3DGaugeEsa_sum_single_X: DONE
+17:11:38 submitting thm:BookProof_Qg3DGaugeEsa_weylProd_self (attempt 2)
+17:11:46 thm:BookProof_Qg3DGaugeEsa_weylProd_self: accepted, waiting on the compiler
+17:12:04 thm:BookProof_Qg3DGaugeEsa_torsionOps_eq: DONE
+17:13:23 sync: read 755 definition publish job(s)
+17:13:44 sync: read 5770 problem publish job(s)
+17:13:48 thm:BookProof_Qg3DGaugeEsa_triple_swap: DONE
+17:13:49 sync: read 755 definition publish job(s)
+17:14:08 sync: read 5770 problem publish job(s)
+17:14:14 sync: read 755 definition publish job(s)
+17:14:35 sync: read 5770 problem publish job(s)
+17:14:35 submitting thm:BookProof_ChapterH8_adjoint_comp_nested (attempt 5)
+17:14:46 sol:BookProof_QgOuterFock_qgOuterN_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 25: Unknown identifier `dsOp_symmetricOn`)
+17:14:46 summary: 1624 done, 320 pending, 6 failed (1822 out-of-order orphans ignored)
+17:14:46 waiting on unpublished def bundle(s): open BookProof.KatoRellich (no provider) (3 item(s))
+17:14:47 thm:BookProof_ChapterH8_adjoint_comp_nested: accepted, waiting on the compiler
+17:14:47 submitting thm:BookProof_ChapterH8_adjoint_comp_self_of_nested (attempt 5)
+17:14:58 thm:BookProof_ChapterH8_adjoint_comp_self_of_nested: accepted, waiting on the compiler
+17:14:58 submitting thm:BookProof_ChapterH8_adjoint_compress (attempt 5)
+17:15:12 thm:BookProof_ChapterH8_adjoint_compress: accepted, waiting on the compiler
+17:16:01 thm:BookProof_Qg3DGaugeEsa_weylProd_self: DONE
+17:16:01 summary: 1646 done, 202 pending, 102 failed (1822 out-of-order orphans ignored)
+17:16:01 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (2 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (2 item(s))
+17:16:01 chunk: 18 item(s) resolved in 1025s
+17:18:37 thm:BookProof_ChapterH8_adjoint_comp_nested: DONE
+17:18:46 submitting thm:BookProof_ChapterH8_adjoint_pow (attempt 5)
+17:18:57 thm:BookProof_ChapterH8_adjoint_pow: accepted, waiting on the compiler
+17:18:58 thm:BookProof_ChapterH8_adjoint_comp_self_of_nested: DONE
+17:18:58 thm:BookProof_ChapterH8_adjoint_compress: DONE
+17:19:06 submitting thm:BookProof_ChapterH8_inv_comp_intertwine (attempt 4)
+17:19:18 thm:BookProof_ChapterH8_inv_comp_intertwine: accepted, waiting on the compiler
+17:19:18 submitting thm:BookProof_ChapterH8_sirk_compression_block (attempt 4)
+17:19:28 thm:BookProof_ChapterH8_sirk_compression_block: accepted, waiting on the compiler
+17:23:22 thm:BookProof_ChapterH8_inv_comp_intertwine: DONE
+17:23:31 submitting thm:BookProof_ChapterH8_sirk_compression_block_le (attempt 4)
+17:23:41 thm:BookProof_ChapterH8_sirk_compression_block_le: accepted, waiting on the compiler
+17:23:42 thm:BookProof_ChapterH8_adjoint_pow: DONE
+17:23:42 thm:BookProof_ChapterH8_sirk_compression_block: DONE
+17:23:51 submitting thm:BookProof_ChapterH8_sirk_compression_block_op (attempt 4)
+17:24:08 thm:BookProof_ChapterH8_sirk_compression_block_op: accepted, waiting on the compiler
+17:25:53 thm:BookProof_ChapterH8_sirk_compression_block_le: DONE
+17:26:01 thm:BookProof_ChapterH8_sirk_compression_block_op: DONE
+17:26:02 summary: 1652 done, 196 pending, 102 failed (1822 out-of-order orphans ignored)
+17:26:02 chunk: 8 item(s) resolved in 738s
+17:26:15 sync: read 755 definition publish job(s)
+17:26:41 sync: read 5778 problem publish job(s)
+17:26:46 sync: read 755 definition publish job(s)
+17:27:10 sync: read 5778 problem publish job(s)
+17:27:16 sync: read 755 definition publish job(s)
+17:27:37 sync: read 5778 problem publish job(s)
+17:27:37 processing sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 2)
+17:32:43 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_fockH. No such theorem exists in this Lean environment ()
+17:32:43 processing sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 2)
+17:36:56 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq. No such theorem exists in this Lean environ)
+17:36:56 processing sol:BookProof_QgOuterFock_dsOp_quadForm_nonneg (attempt 1)
+17:36:56 sol:BookProof_QgOuterFock_dsOp_quadForm_nonneg: DONE
+17:36:56 summary: 1624 done, 320 pending, 6 failed (1822 out-of-order orphans ignored)
+18:56:40 sync: read 755 definition publish job(s)
+18:57:02 sync: read 5778 problem publish job(s)
+18:57:09 sync: read 755 definition publish job(s)
+18:57:30 sync: read 5778 problem publish job(s)
+18:57:36 sync: read 755 definition publish job(s)
+18:57:59 sync: read 5778 problem publish job(s)
+18:57:59 summary: 371 done, 173 pending, 9 failed (1822 out-of-order orphans ignored)
+20:16:45 sync: read 755 definition publish job(s)
+20:17:06 sync: read 5778 problem publish job(s)
+20:17:13 sync: read 755 definition publish job(s)
+20:17:34 sync: read 5778 problem publish job(s)
+20:17:39 sync: read 755 definition publish job(s)
+20:18:02 sync: read 5778 problem publish job(s)
+20:18:02 submitting thm:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 2)
+20:18:08 thm:BookProof_SqSumFarisLavine_sqSumOp_pgLp: accepted, waiting on the compiler
+20:18:08 submitting thm:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 2)
+20:18:14 thm:BookProof_SqSumFarisLavine_commForm_eq_im: accepted, waiting on the compiler
+20:18:14 submitting thm:BookProof_ChapterH6_reduceGenerator_eq_compress_entry (attempt 3)
+20:19:09 thm:BookProof_ChapterH6_reduceGenerator_eq_compress_entry: accepted, waiting on the compiler
+20:30:01 thm:BookProof_SqSumFarisLavine_sqSumOp_pgLp: DONE
+20:30:09 submitting thm:BookProof_ChapterH8_sirk_krylov_tower (attempt 3)
+20:30:29 thm:BookProof_ChapterH8_sirk_krylov_tower: accepted, waiting on the compiler
+20:30:48 thm:BookProof_ChapterH6_reduceGenerator_eq_compress_entry: DONE
+20:30:56 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_coreN_apply (attempt 2)
+20:31:09 thm:BookProof_QgOuterFockCoreFL_CoreData_coreN_apply: accepted, waiting on the compiler
+20:31:10 thm:BookProof_SqSumFarisLavine_commForm_eq_im: DONE
+20:31:18 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_dense (attempt 2)
+20:31:31 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_dense: accepted, waiting on the compiler
+20:42:53 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_dense: DONE
+20:43:01 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_isUniformInducing (attempt 2)
+20:43:13 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_isUniformInducing: accepted, waiting on the compiler
+20:43:13 thm:BookProof_ChapterH8_sirk_krylov_tower: DONE
+20:43:22 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_ext_apply (attempt 2)
+20:43:34 thm:BookProof_QgOuterFockCoreFL_CoreData_ext_apply: accepted, waiting on the compiler
+20:43:34 thm:BookProof_QgOuterFockCoreFL_CoreData_coreN_apply: DONE
+20:43:43 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem (attempt 2)
+20:43:55 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem: accepted, waiting on the compiler
+20:53:52 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_isUniformInducing: DONE
+20:54:02 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_norm_lt (attempt 2)
+20:54:12 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_norm_lt: accepted, waiting on the compiler
+20:54:12 thm:BookProof_QgOuterFockCoreFL_CoreData_ext_apply: DONE
+20:54:21 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_op_norm_lt (attempt 2)
+20:54:31 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_op_norm_lt: accepted, waiting on the compiler
+20:54:32 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem: DONE
+20:54:40 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_norm_resolvedCLM_le (attempt 2)
+20:54:52 thm:BookProof_QgOuterFockCoreFL_CoreData_norm_resolvedCLM_le: accepted, waiting on the compiler
+21:01:08 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_norm_lt: DONE
+21:01:16 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_tendsto_inv_succ (attempt 2)
+21:01:25 thm:BookProof_QgOuterFockCoreFL_CoreData_tendsto_inv_succ: accepted, waiting on the compiler
+21:01:26 thm:BookProof_QgOuterFockCoreFL_CoreData_gcSeq_op_norm_lt: DONE
+21:01:34 submitting thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_denseRange (attempt 1)
+21:01:42 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_denseRange: accepted, waiting on the compiler
+21:02:10 thm:BookProof_QgOuterFockCoreFL_CoreData_norm_resolvedCLM_le: DONE
+21:06:15 thm:BookProof_QgOuterFockCoreFL_CoreData_tendsto_inv_succ: DONE
+21:07:06 thm:BookProof_QgOuterFockCoreFL_CoreData_coreRange_denseRange: DONE
+21:07:06 summary: 1666 done, 182 pending, 102 failed (1822 out-of-order orphans ignored)
+21:07:06 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (3 item(s)), statement relies on ambient variable `E` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (5 item(s)), target already published on the platform (BookProof.HashimotoShiftInvert.exists_isShiftInvertC) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.triple_swap) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.weylProd_self) (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (9 item(s))
+21:07:06 chunk: 14 item(s) resolved in 3000s
+21:07:46 sync: read 755 definition publish job(s)
+21:08:11 sync: read 5792 problem publish job(s)
+21:08:16 sync: read 755 definition publish job(s)
+21:08:40 sync: read 5792 problem publish job(s)
+21:08:46 sync: read 755 definition publish job(s)
+21:09:14 sync: read 5792 problem publish job(s)
+21:09:14 processing sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 3)
+21:13:37 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commForm_fockH. No such theorem exists in this Lean environment ()
+21:13:37 processing sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 3)
+21:17:41 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq. No such theorem exists in this Lean environ)
+21:17:41 processing sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 1)

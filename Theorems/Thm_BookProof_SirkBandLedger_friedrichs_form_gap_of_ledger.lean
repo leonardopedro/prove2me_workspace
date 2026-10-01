@@ -1,9 +1,16 @@
 -- Generated from ChapterSirkBandLedger.lean — theorem BookProof.SirkBandLedger.friedrichs_form_gap_of_ledger
+import Definitions.Def_ChapterSirkCertificateReader
+import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
 open BookProof.SirkBandLedger
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 

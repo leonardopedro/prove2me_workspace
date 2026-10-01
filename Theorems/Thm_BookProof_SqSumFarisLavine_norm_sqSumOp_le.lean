@@ -1,6 +1,19 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.norm_sqSumOp_le
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+open BookProof.GaussCoreQuadBounds
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
+open BookProof.QgHermiteOscillator
+open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
 variable {D : ℕ} {R : Type*} [Fintype R]
@@ -16,7 +29,6 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 theorem BookProof.SqSumFarisLavine.norm_sqSumOp_le {kappa : Fin D → ℝ} {v : R → Fin D → ℝ} {km B : ℝ}
     (hkm : 0 ≤ km) (hk : ∀ j, |kappa j| ≤ km) (hB0 : 0 ≤ B)

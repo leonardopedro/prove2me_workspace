@@ -1,6 +1,13 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.sirk_numRange_nested_orders
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH8Bases
+open BookProof.ChapterH4
 open BookProof.ChapterH9
 
 variable {E F G : Type*}
@@ -8,7 +15,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
@@ -19,10 +25,6 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterH9.sirk_numRange_nested_orders {m n : ℕ} (hmn : m ≤ n) (X : E →L[ℂ] E)
     (w : Fin m → E) (w' : Fin n → E) (hw : Orthonormal ℂ w) (hw' : Orthonormal ℂ w')

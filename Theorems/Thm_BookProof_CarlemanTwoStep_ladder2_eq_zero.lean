@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.ladder2_eq_zero
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
+open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
@@ -14,7 +16,6 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.CarlemanTwoStep.ladder2_eq_zero {B : ℝ} (hz : z.im ≠ 0)
     (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ F, ‖u a‖ ^ 2 ≤ B)

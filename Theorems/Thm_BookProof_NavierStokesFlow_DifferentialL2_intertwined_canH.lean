@@ -1,6 +1,16 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_canH
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterSirkFinitePrecision
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow.DifferentialL2
 
 variable {d : ℕ}
@@ -537,7 +547,6 @@ theorem intertwined_mom (i : Fin 3) :
 
 /-! ### The differentially written Navier–Stokes quadratic symbol -/
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 /-- **The affine fiber field as a multiplication operator** on the Hermite core of
 `L²(ℝ³)`: `Vᵢ(u) = ∑ₖ A_{ik} uₖ + cᵢ`. -/

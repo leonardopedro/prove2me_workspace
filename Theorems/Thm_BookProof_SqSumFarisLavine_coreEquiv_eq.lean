@@ -1,6 +1,20 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.coreEquiv_eq
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.SqSumFarisLavine
 
 variable {D : ℕ} {R : Type*} [Fintype R]
@@ -16,7 +30,6 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 theorem BookProof.SqSumFarisLavine.coreEquiv_eq (p : MvPolynomial (Fin D) ℂ) :
     BookProof.NavierStokesFlow.DifferentialL2.coreEquiv p

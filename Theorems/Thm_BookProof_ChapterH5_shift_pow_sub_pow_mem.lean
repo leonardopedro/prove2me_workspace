@@ -5,14 +5,12 @@ open BookProof.ChapterH5
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {H : E →ₗ[K] E} {v : E}
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
 
 
 
-variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
 theorem BookProof.ChapterH5.shift_pow_sub_pow_mem (H : E →ₗ[K] E) (γ : K) (v : E) (m : ℕ) :
     (((H - γ • 1) ^ m) v) - ((H ^ m) v) ∈ krylovSpan H v m := by sorry

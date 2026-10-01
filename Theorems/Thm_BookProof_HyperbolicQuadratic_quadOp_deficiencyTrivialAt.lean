@@ -1,6 +1,13 @@
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — theorem BookProof.HyperbolicQuadratic.quadOp_deficiencyTrivialAt
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

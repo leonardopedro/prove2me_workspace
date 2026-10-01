@@ -1,18 +1,17 @@
 -- Generated from ChapterNavierStokesEsa.lean — theorem BookProof.NavierStokesFlow.lpFiniteModes_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
-variable {n : ℕ} (d : NSTruncation n)
 
 
 open scoped Matrix
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 .mem_support] at hj
   by_contra hne

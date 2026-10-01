@@ -1,4 +1,9 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.norm_sub_starProjection_antitone
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
@@ -19,10 +24,6 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterH9.norm_sub_starProjection_antitone (K L : Submodule ℂ E)
     [K.HasOrthogonalProjection] [L.HasOrthogonalProjection] (hKL : K ≤ L) (v : E) :

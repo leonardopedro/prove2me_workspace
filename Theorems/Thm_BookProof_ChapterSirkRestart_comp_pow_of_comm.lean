@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkRestart.lean — theorem BookProof.ChapterSirkRestart.comp_pow_of_comm
+import Definitions.Def_ChapterH6
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
 open BookProof.ChapterSirkRestart
@@ -13,7 +14,6 @@ open Filter Topology
 
 open BookProof.ChapterH6
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
  leakage -/
 

@@ -1,6 +1,18 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — theorem BookProof.QgOuterFockFL.qgOuterCore_le_friedDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+open BookProof.DirectSumEsa
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteOscillator
+open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

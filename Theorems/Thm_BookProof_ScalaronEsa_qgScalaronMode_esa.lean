@@ -28,8 +28,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.qgScalaronMode_esa :
     EssentiallySelfAdjointOn

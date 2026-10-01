@@ -1,12 +1,13 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — theorem BookProof.SirkSingleTime.strongResAt_of_ne_zero
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-variable {ι : Type*}
 
 
 open scoped InnerProductSpace
@@ -18,7 +19,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.SirkSingleTime.strongResAt_of_ne_zero {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0)
     (h : StrongResAt T S l) : StrongResAt T S m := by sorry

@@ -1,11 +1,11 @@
 -- Generated from ChapterH4.lean — theorem BookProof.ChapterH4.psi_shift_eq_phi
 import Mathlib
 import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterH1
+open BookProof.GhostField
+open BookProof.ChapterH1
 open BookProof.ChapterH4
-
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 open scoped BigOperators

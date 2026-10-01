@@ -11,7 +11,6 @@ noncomputable section
 
 open NormedSpace
 
-variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
 theorem BookProof.ChapterSirkGroupTransfer.groupFlow_transfer_uniform_on_interval {a b : A} {M T : ℝ} (ha : ‖a‖ ≤ M)
     (hb : ‖b‖ ≤ M) (hT : 0 ≤ T) {t : ℝ} (ht : |t| ≤ T) :

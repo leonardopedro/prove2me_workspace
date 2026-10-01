@@ -1,4 +1,13 @@
 -- Generated from ChapterFullQuadraticEsa.lean — theorem BookProof.FullQuadratic.fqExch_hermitian
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.FullQuadratic
@@ -21,7 +30,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.FullQuadratic.fqExch_hermitian (P Q S : Fin d → Fin d → ℝ) (i j : Fin d) :
     (starRingEnd ℂ) (fqExch P Q S i j) = fqExch P Q S j i := by sorry

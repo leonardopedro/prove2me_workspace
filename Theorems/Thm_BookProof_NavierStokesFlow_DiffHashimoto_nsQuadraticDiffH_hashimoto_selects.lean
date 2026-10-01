@@ -1,6 +1,21 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — theorem BookProof.NavierStokesFlow.DiffHashimoto.nsQuadraticDiffH_hashimoto_selects
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.HermiteGalerkin
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
@@ -20,7 +35,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.DiffHashimoto.nsQuadraticDiffH_hashimoto_selects (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ)
     (lap : Fin 3 → ℝ) (b : HilbertBasis ℕ ℂ (L2d 3)) (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

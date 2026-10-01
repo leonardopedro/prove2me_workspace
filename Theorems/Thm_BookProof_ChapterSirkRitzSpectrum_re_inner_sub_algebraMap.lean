@@ -1,4 +1,8 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — theorem BookProof.ChapterSirkRitzSpectrum.re_inner_sub_algebraMap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
 open BookProof.ChapterSirkRitzSpectrum
@@ -13,7 +17,6 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterSirkRitzSpectrum.re_inner_sub_algebraMap (T : F →L[ℂ] F) (c : ℝ) (x : F) :
     (inner ℂ ((T - (algebraMap ℝ (F →L[ℂ] F)) c) x) x : ℂ).re

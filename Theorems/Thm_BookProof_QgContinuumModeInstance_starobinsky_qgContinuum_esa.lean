@@ -1,6 +1,11 @@
 -- Generated from ChapterQgContinuumModeInstance.lean — theorem BookProof.QgContinuumModeInstance.starobinsky_qgContinuum_esa
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgContinuumModeInstance
 
 

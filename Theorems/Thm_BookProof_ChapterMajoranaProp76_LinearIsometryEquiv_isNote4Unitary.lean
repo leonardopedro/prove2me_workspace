@@ -9,24 +9,13 @@ variable {H K L : Type*}
   [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
   [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
   [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
-variable {H K : Type*}
-  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
-  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
-variable {E F : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 open scoped InnerProductSpace
 
 
-variable {𝕜 : Type*} [RCLike 𝕜]
 
 
-variable {H K L : Type*}
-  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
-  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
-  [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
 
 theorem BookProof.ChapterMajoranaProp76.LinearIsometryEquiv.isNote4Unitary (e : H ≃ₗᵢ[𝕜] K) :
     IsNote4Unitary 𝕜 (e : H → K) := by sorry

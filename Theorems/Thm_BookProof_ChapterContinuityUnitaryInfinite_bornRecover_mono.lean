@@ -1,9 +1,9 @@
 -- Generated from ChapterContinuityUnitaryInfinite.lean — theorem BookProof.ChapterContinuityUnitaryInfinite.bornRecover_mono
 import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterContinuityUnitary
+open BookProof.ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitaryInfinite
-
-variable {X : Type*}
 
 
 open scoped ENNReal InnerProductSpace

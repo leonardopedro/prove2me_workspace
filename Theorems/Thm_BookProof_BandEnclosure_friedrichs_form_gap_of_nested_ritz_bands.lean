@@ -1,9 +1,18 @@
 -- Generated from ChapterBandEnclosure.lean — theorem BookProof.BandEnclosure.friedrichs_form_gap_of_nested_ritz_bands
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
 open BookProof.BandEnclosure
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 

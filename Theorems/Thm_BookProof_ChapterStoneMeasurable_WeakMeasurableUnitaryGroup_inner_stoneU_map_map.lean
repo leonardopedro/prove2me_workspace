@@ -1,6 +1,8 @@
 -- Generated from ChapterStoneConverse.lean — theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_stoneU_map_map
 import Mathlib
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
@@ -13,6 +15,5 @@ open scoped InnerProductSpace
 open Filter Topology MeasureTheory
 
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
  := by sorry

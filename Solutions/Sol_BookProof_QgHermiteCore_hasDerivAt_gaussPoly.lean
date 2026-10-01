@@ -1,6 +1,7 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.hasDerivAt_gaussPoly
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Theorems.Thm_BookProof_HermiteCore_hasDerivAt_gaussH
 open BookProof.QgHermiteCore
 
 

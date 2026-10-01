@@ -1,4 +1,13 @@
 -- Generated from ChapterModeQuadraticEsa.lean — theorem BookProof.ModeQuadratic.sub_single_one_one
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
 open BookProof.ModeQuadratic
@@ -19,7 +28,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ModeQuadratic.sub_single_one_one (i : Fin d) (a : Fin d →₀ ℕ) :
     a - Finsupp.single i 1 - Finsupp.single i 1 = a - Finsupp.single i 2 := by sorry

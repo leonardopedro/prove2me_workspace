@@ -1,6 +1,12 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.comm_mom_pos
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
+import Definitions.Def_ChapterBosonicCCR
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.Bosonic
+open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 

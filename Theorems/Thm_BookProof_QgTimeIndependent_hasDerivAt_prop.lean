@@ -1,10 +1,15 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — theorem BookProof.QgTimeIndependent.hasDerivAt_prop
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.QgTimeIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {ι : Type*}
 
 
 
@@ -13,7 +18,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.QgTimeIndependent.hasDerivAt_prop (T : UnboundedSelfAdjoint E) (x : T.domain) (t s : ℝ) :
     HasDerivAt (fun r : ℝ => prop T r s (x : E))

@@ -1,6 +1,12 @@
 -- Generated from ChapterSirkGramWhitening.lean — theorem BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterSirkWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterSirkEndToEnd
+open BookProof.ChapterH6
+open BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkGramWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -13,7 +19,6 @@ open scoped InnerProductSpace
 open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 _left (sum_norm_coord_le c) hd0
 

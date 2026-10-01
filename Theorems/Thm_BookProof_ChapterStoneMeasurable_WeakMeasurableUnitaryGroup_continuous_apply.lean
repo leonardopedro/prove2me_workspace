@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneMeasurable.lean — theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.continuous_apply
 import Mathlib
 import Definitions.Def_ChapterStoneMeasurable
+import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
@@ -36,7 +37,6 @@ structure WeakMeasurableUnitaryGroup (H : Type*) [NormedAddCommGroup H]
 
 namespace WeakMeasurableUnitaryGroup
 
-variable (G : WeakMeasurableUnitaryGroup H)
 
 /-- Each `U t` is a linear isometry. -/
 noncomputable def isom (t : ℝ) : H →ₗᵢ[ℂ] H :=

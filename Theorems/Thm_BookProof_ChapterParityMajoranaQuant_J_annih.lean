@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.J_annih (hJ2 : J * J = -1) : J * annihProj J = (-Complex.I) • annihProj J := by sorry

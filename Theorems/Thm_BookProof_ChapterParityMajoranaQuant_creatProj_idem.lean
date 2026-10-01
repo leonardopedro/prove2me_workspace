@@ -11,6 +11,5 @@ open Matrix
 open scoped ComplexConjugate
 
 
-variable {m : ℕ}
 
 theorem BookProof.ChapterParityMajoranaQuant.creatProj_idem (hJ2 : J * J = -1) : creatProj J * creatProj J = creatProj J := by sorry

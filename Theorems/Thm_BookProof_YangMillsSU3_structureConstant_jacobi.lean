@@ -12,9 +12,6 @@ variable {T f}
 open Matrix BigOperators
 
 
-variable {n d : ℕ}
-variable (T : Fin d → Matrix (Fin n) (Fin n) ℂ)
-variable (f : Fin d → Fin d → Fin d → ℝ)
 
 theorem BookProof.YangMillsSU3.structureConstant_jacobi
     (hT : TraceOrthonormal T) (hf : ClosesWithStructureConstants T f)

@@ -1,6 +1,7 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.gaussInt_sub
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 open BookProof.QgHermiteFriedrichs
 

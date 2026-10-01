@@ -10,8 +10,6 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 open scoped InnerProductSpace
 
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 theorem BookProof.ChapterUnitaryTransport.transportEquiv_coe (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (x : D) :
     ((transportEquiv W D x : transportDomain W D) : K) = W (x : H) := by sorry

@@ -1,6 +1,8 @@
 -- Generated from ChapterMajoranaProp61.lean — theorem BookProof.ChapterMajoranaProp61.prop61_isUnit
 import Mathlib
 import Definitions.Def_ChapterMajoranaProp61
+import Definitions.Def_ChapterMajoranaFourier
+open BookProof.ChapterMajoranaFourier
 open BookProof.ChapterMajoranaProp61
 
 variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
@@ -20,6 +22,5 @@ variable (U H g E N Ni : 𝒜) (m : ℝ)
 
 
 
-variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
 
 theorem BookProof.ChapterMajoranaProp61.prop61_isUnit : IsUnit (Uprime U H g E Ni) := by sorry

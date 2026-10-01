@@ -1,6 +1,8 @@
 -- Generated from ChapterQuantumGravityDensitized.lean — theorem BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.QuantumGravityDensitized
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

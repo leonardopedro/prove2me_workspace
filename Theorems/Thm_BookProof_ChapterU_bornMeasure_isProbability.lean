@@ -1,12 +1,11 @@
 -- Generated from ChapterU.lean — theorem BookProof.ChapterU.bornMeasure_isProbability
 import Mathlib
 import Definitions.Def_ChapterU
+import Definitions.Def_ChapterBornMeasure
+open BookProof.ChapterBornMeasure
 open BookProof.ChapterU
 
 variable {X : Type*} [MeasurableSpace X]
-variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
-  [AddCommGroup N] [Module R N]
-variable {Ω : Type*} [MeasurableSpace Ω]
 
 
 open MeasureTheory

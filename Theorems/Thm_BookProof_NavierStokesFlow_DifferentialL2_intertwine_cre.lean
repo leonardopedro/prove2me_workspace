@@ -1,10 +1,26 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterBosonicCCR
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
+open BookProof.Bosonic
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
 variable {d : ℕ}
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 

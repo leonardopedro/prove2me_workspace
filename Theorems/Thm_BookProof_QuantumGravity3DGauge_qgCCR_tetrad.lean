@@ -1,6 +1,10 @@
 -- Generated from ChapterQuantumGravity3DGauge.lean — theorem BookProof.QuantumGravity3DGauge.qgCCR_tetrad
 import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
 variable {d : ℕ}
@@ -77,7 +81,6 @@ theorem idxE_ne_idxDE (mu a nu rho b : Fin 4) : idxE mu a ≠ idxDE nu rho b := 
 
 /-! ## F.3 — the canonical commutation relations at polynomial level -/
 
-variable {d : ℕ}
 
 /-- **The canonical commutation relations** `[x_j, π_k] = i δ_{jk}` at polynomial level:
 the diagonal case is the gravity CCR `[e_μ^a, π^ν_b] = i δ^ν_μ δ^a_b`, the off-diagonal
@@ -153,7 +156,6 @@ theorem qgWeylProd_coord_mom_polySym (j k : Fin d) :
 
 section Signed
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 /-- **The two-signed sum of squares** `½ Σ_j κ_j π_j² + ½ Σ_A V_A²` on a domain.  The
 gravity analogue of `BookProof.YangMillsFriedrichs.weylOpDom`: the densitized gravity
@@ -286,7 +288,6 @@ theorem coreRep_commutator {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
 
 section Gravity
 
-variable {D : Submodule ℂ (L2d 84)}
 
 /-- The **coordinate operators** of the gravity field space: multiplication by the
 coordinate `x_j` (the tetrad fields `e_μ^a` and their derivative coordinates). -/

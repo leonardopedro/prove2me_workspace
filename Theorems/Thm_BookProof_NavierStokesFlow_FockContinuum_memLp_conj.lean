@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockContinuum.lean — theorem BookProof.NavierStokesFlow.FockContinuum.memLp_conj
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
@@ -13,6 +14,5 @@ open MeasureTheory
 
 open FullEsa
 
-variable {X : Type*} [MeasurableSpace X]
 
  := by sorry

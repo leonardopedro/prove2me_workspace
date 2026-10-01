@@ -1,12 +1,17 @@
 -- Generated from ChapterYangMillsHermite.lean — theorem BookProof.YangMillsHermite.PolySym.comp_adj
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.PolySym
 
 variable {d : ℕ}
-variable {D : Submodule ℂ (L2d d)}
-variable {D : Submodule ℂ (L2d 99)}
 
 
 
@@ -16,7 +21,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.YangMillsHermite.PolySym.comp_adj {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
     (hS : PolySym S) (hT : PolySym T) : PolyAdj (S.comp T) (T.comp S) := by sorry

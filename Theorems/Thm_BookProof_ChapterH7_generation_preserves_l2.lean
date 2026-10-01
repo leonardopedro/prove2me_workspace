@@ -1,6 +1,9 @@
 -- Generated from ChapterH7.lean — theorem BookProof.ChapterH7.generation_preserves_l2
+import Definitions.Def_ChapterH4
 import Mathlib
 import Definitions.Def_ChapterH7
+import Definitions.Def_ChapterH6
+open BookProof.ChapterH6
 open BookProof.ChapterH7
 
 variable {E F : Type*}

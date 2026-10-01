@@ -1,6 +1,26 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.finiteSection_singleTime
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.StoneBridge
 open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]
@@ -19,7 +39,6 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
-variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FiniteSectionSingleTime.finiteSection_singleTime (hsym : SymmetricOn (lpFiniteModes ι) H)
     (hesa : EssentiallySelfAdjointOn (lpFiniteModes ι) H)

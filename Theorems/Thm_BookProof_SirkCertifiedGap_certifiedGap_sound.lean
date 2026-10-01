@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkCertifiedGap.lean — theorem BookProof.SirkCertifiedGap.certifiedGap_sound
+import Definitions.Def_ChapterSirkFinitePrecision
 import Mathlib
 import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertifiedGap
@@ -13,7 +14,6 @@ open scoped InnerProductSpace
 open Finset Filter Topology
 open BookProof.SirkFinitePrecision
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
  m ≥ m0, 0 < certifiedGap thetaE thetaO deltaE deltaO m := by
   have h := certifiedGap_tendsto hE hO hdE hdO

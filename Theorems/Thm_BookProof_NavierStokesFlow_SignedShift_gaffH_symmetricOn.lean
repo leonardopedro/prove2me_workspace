@@ -1,6 +1,10 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — theorem BookProof.NavierStokesFlow.SignedShift.gaffH_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 
@@ -16,6 +20,5 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
-variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.SignedShift.gaffH_symmetricOn : SymmetricOn (maxDom (gsym kap cst)) (gaffH kap cst) := by sorry

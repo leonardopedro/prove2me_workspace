@@ -1,6 +1,17 @@
 -- Generated from ChapterQuadraticFockEsa.lean — theorem BookProof.QuadFockEsa.gradedBand_of_isBand2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Mathlib
 import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterHermiteBandCalculus
+open BookProof.HermiteBand
 open BookProof.QuadFockEsa
 
 variable {d : ℕ}
@@ -16,7 +27,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QuadFockEsa.gradedBand_of_isBand2 (e : ℕ ≃ (Fin d →₀ ℕ))
     {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)} (h : IsBand2 T) :

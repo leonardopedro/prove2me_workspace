@@ -1,10 +1,19 @@
 -- Generated from ChapterFockOneParticleGap.lean — theorem BookProof.FockOneParticleGap.one_particle_edge_ge_of_parity_certificate
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterSirkCertifiedGap
+import Definitions.Def_ChapterSirkFinitePrecision
+open BookProof.ChapterGravityProjector
+open BookProof.SirkCertifiedGap
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.FockOneParticleGap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

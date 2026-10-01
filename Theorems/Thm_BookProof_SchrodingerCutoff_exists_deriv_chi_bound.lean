@@ -1,6 +1,8 @@
 -- Generated from ChapterSchrodingerCutoffEsa.lean — theorem BookProof.SchrodingerCutoff.exists_deriv_chi_bound
 import Mathlib
 import Definitions.Def_ChapterSchrodingerCutoffEsa
+import Definitions.Def_ChapterParityChirality
+open BookProof.ChapterParityChirality
 open BookProof.SchrodingerCutoff
 
 

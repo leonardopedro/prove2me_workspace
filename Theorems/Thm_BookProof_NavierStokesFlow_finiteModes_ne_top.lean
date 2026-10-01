@@ -1,18 +1,19 @@
 -- Generated from ChapterNavierStokesEsa.lean — theorem BookProof.NavierStokesFlow.finiteModes_ne_top
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
-variable {n : ℕ} (d : NSTruncation n)
 
 
 open scoped Matrix
 
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 tice finite-mode domain is dense. -/
 theorem BookProof.NavierStokesFlow.finiteModes_ne_top : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=

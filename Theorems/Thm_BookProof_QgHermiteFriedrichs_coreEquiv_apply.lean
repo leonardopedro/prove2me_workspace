@@ -23,7 +23,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.coreEquiv_apply (p : MvPolynomial (Fin d) ℂ) :
     ((coreEquiv p : polyGaussCore (d := d)) : L2d d) = pgLp p := by sorry

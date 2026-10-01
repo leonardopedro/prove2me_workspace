@@ -17,7 +17,6 @@ open BookProof.ScalaronEsa
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 
 open Filter Topology MeasureTheory SchwartzMap
@@ -29,8 +28,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.wave_add_scalaronTruncated_esa (n : ℕ) (M alpha : ℝ) (e : SpaceTime n) (R : ℝ) :
     ∃ WR : SpaceTime n → ℝ, Function.HasTemperateGrowth WR ∧

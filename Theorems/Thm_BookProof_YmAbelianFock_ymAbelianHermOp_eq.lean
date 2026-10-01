@@ -1,6 +1,32 @@
 -- Generated from ChapterYangMillsAbelianFockEsa.lean — theorem BookProof.YmAbelianFock.ymAbelianHermOp_eq
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
+open BookProof.ChapterF7
+open BookProof.HermiteGalerkin
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QuadFockEsa
+open BookProof.YangMillsAbelianEsa
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsHermite
 open BookProof.YmAbelianFock
 
 variable {d : ℕ}
@@ -20,7 +46,6 @@ open BookProof.FiniteSectionSingleTime BookProof.QymTimeIndependent BookProof.Qg
 
 noncomputable section
 
-variable {d : ℕ}
 
 set_option maxHeartbeats 4000000 in
 -- the `L²` coercions of the Gauss–polynomial core, and the `24` Weyl-ordered squares of the

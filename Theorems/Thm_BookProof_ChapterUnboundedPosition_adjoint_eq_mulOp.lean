@@ -1,6 +1,10 @@
 -- Generated from ChapterUnboundedPosition.lean — theorem BookProof.ChapterUnboundedPosition.adjoint_eq_mulOp
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterF7
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterF7
 open BookProof.ChapterUnboundedPosition
 
 

@@ -1,4 +1,6 @@
 -- Generated from ChapterH7.lean — theorem BookProof.ChapterH7.generationOperator_mem_unitaryGroup
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
 import Mathlib
 import Definitions.Def_ChapterH7
 open BookProof.ChapterH7

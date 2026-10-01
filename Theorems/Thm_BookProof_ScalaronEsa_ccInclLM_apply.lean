@@ -13,7 +13,6 @@ open BookProof.ScalaronEsa
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 
 open Filter Topology MeasureTheory SchwartzMap
@@ -25,8 +24,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
 
 theorem BookProof.ScalaronEsa.ccInclLM_apply (f : ccSchwartz E) :
     ccInclLM E f = ((f : 𝓢(E, ℂ)).toLp 2 (volume : Measure E)) := by sorry

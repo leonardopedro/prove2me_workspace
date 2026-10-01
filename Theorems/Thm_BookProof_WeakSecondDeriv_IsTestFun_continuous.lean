@@ -4,8 +4,6 @@ import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WeakSecondDeriv
 open BookProof.WeakSecondDeriv.IsTestFun
 
-variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
 
 
 open MeasureTheory Filter Topology intervalIntegral Set

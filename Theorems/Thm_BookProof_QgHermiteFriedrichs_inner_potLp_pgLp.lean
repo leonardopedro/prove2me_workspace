@@ -22,7 +22,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteFriedrichs.inner_potLp_pgLp (hWc : Continuous W) (hWb : ExpBounded W)
     (p q : MvPolynomial (Fin d) ℂ) :

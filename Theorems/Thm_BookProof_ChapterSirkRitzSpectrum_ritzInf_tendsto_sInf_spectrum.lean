@@ -1,6 +1,12 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — theorem BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+open BookProof.HermiteGalerkin
 open BookProof.ChapterSirkRitzSpectrum
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
@@ -13,7 +19,6 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 of the spectrum -/
 

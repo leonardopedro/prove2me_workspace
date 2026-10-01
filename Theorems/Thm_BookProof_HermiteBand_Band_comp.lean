@@ -1,4 +1,6 @@
 -- Generated from ChapterHermiteBandCalculus.lean — theorem BookProof.HermiteBand.Band.comp
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
@@ -12,7 +14,6 @@ noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
-variable {d : ℕ}
 
 theorem BookProof.HermiteBand.Band.comp {T U : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ} {M₁ M₂ : ℕ}
     {C₁ C₂ : ℝ} (hC₁ : 0 ≤ C₁) (hC₂ : 0 ≤ C₂)

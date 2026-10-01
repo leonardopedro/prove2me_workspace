@@ -6,7 +6,6 @@ open BookProof.ChapterU
 variable {X : Type*} [MeasurableSpace X]
 variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
   [AddCommGroup N] [Module R N]
-variable {Ω : Type*} [MeasurableSpace Ω]
 
 
 open MeasureTheory

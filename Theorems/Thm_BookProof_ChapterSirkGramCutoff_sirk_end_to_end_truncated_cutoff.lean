@@ -1,6 +1,12 @@
 -- Generated from ChapterSirkGramCutoff.lean — theorem BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff
 import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterSirkGramWhitening
+open BookProof.ChapterH6
+open BookProof.ChapterSirkEndToEnd
+open BookProof.ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -15,7 +21,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff (heig : IsGramEigen w u lam) {tol : ℝ}
     (R : Finset (Fin m)) (hcut : ∀ k ∉ R, lam k ≤ tol)

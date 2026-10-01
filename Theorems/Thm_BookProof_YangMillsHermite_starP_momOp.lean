@@ -1,11 +1,17 @@
 -- Generated from ChapterYangMillsHermite.lean — theorem BookProof.YangMillsHermite.starP_momOp
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
 
 variable {d : ℕ}
-variable {D : Submodule ℂ (L2d d)}
-variable {D : Submodule ℂ (L2d 99)}
 
 
 
@@ -15,7 +21,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.YangMillsHermite.starP_momOp (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     starP (momOp j p)

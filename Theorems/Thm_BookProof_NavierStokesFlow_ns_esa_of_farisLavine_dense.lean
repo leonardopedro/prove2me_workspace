@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — theorem BookProof.NavierStokesFlow.ns_esa_of_farisLavine_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]

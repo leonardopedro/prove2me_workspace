@@ -1,4 +1,5 @@
 -- Generated from ChapterHermiteProductCore.lean — theorem BookProof.HermiteProductCore.derivative_hermiteZ
+import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore

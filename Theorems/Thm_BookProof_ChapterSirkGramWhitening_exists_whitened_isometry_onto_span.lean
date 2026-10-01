@@ -1,4 +1,6 @@
 -- Generated from ChapterSirkGramWhitening.lean — theorem BookProof.ChapterSirkGramWhitening.exists_whitened_isometry_onto_span
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterSirkWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
@@ -13,7 +15,6 @@ open scoped InnerProductSpace
 open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 rw [← hid]
     ext c

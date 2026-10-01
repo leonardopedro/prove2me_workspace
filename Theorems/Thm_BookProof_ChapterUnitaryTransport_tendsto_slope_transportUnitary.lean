@@ -10,8 +10,6 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 open scoped InnerProductSpace
 
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 ymm_apply] at h1
   exact h1

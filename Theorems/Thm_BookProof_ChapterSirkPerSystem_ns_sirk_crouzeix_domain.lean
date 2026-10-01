@@ -1,6 +1,37 @@
 -- Generated from ChapterSirkPerSystem.lean — theorem BookProof.ChapterSirkPerSystem.ns_sirk_crouzeix_domain
+import Definitions.Def_ChapterSirkSpectralGeometry
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Mathlib
 import Definitions.Def_ChapterSirkPerSystem
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesHashimoto
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
+open BookProof.EsaClosure
+open BookProof.ChapterH4
+open BookProof.ChapterH9
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.HermiteGalerkin
+open BookProof.NavierStokesFlow.NSHashimoto
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.ChapterSirkPerSystem
 
 

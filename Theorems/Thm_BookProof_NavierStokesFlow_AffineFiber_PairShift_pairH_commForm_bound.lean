@@ -1,6 +1,12 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_commForm_bound
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
@@ -15,7 +21,6 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
-variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_commForm_bound (x : maxDom P.sym) :
     |commForm (pairH P) (diagMax P.sym) x|

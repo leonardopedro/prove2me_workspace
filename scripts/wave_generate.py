@@ -779,7 +779,7 @@ def imports_for(leaf, node, modns):
     return "\n".join(imports + opens)
 
 
-def extract_namespace_variables(bt):
+def extract_namespace_variables(bt, upto_line=None):
     """Every top-level `variable` command in the chapter, as source lines.
 
     WHY THIS MATTERS: a stub that references a type the chapter only ever bound
@@ -796,9 +796,15 @@ def extract_namespace_variables(bt):
     """
     lines = bt.text.split("\n")
     out = []
+    seen_sig = set()
     depth = 0
     i = 0
-    n = len(lines)
+    # Only variables declared BEFORE the theorem. Collecting the whole file
+    # shadowed the theorem's own `d` with a `d` from a later section, so `W` got
+    # type `Vd d-vs-d` and elaboration failed with `Application type mismatch`
+    # on `hamCore W` -- while the binder names looked perfectly correct.
+    limit = upto_line if upto_line else len(lines) + 1
+    n = min(len(lines), limit)
     while i < n:
         line = lines[i]
         stripped = line.strip()
@@ -829,7 +835,10 @@ def extract_namespace_variables(bt):
                                                         "end", "noncomputable", "variable", "open", "namespace")):
                 block.append(lines[j])
                 j += 1
-            out.extend(block)
+            sig = " ".join(x.strip() for x in block)
+            if sig not in seen_sig:
+                seen_sig.add(sig)
+                out.extend(block)
             i = j
             continue
         i += 1
@@ -844,7 +853,7 @@ def build_thm(bt, leaf, decls, node, modns):
     
     # Add namespace-level variables if any
     try:
-        ns_vars = extract_namespace_variables(bt)
+        ns_vars = extract_namespace_variables(bt, getattr(node, "sl", None))
         if ns_vars:
             head.append("\n" + ns_vars + "\n")
     except Exception as e:
@@ -856,6 +865,40 @@ def build_thm(bt, leaf, decls, node, modns):
     head.append("\n")
     head.append(stmt + " := by sorry\n")
     text = "".join(head)
+    # Drop duplicate `variable` lines. The same declaration can arrive twice --
+    # once from extract_namespace_variables and once from the copied context --
+    # and Lean's auto-bound `d` then shadows the theorem's own `d`, so `W` picks
+    # up type `Vd d<vs>` and `hamCore W` fails with `Application type mismatch`.
+    _seen_var = set()
+    _kept = []
+    _lines = text.split("\n")
+    _i = 0
+    while _i < len(_lines):
+        _ln = _lines[_i]
+        _st = _ln.strip()
+        if not _st.startswith("variable "):
+            _kept.append(_ln)
+            _i += 1
+            continue
+        # A multi-line `variable` is its first line plus the indented lines that
+        # follow. Dedupe the whole block: dropping only the first line left an
+        # orphaned `  [MeasurableSpace E] [BorelSpace E]` that failed with
+        # `unexpected token '['`.
+        _block = [_ln]
+        _j = _i + 1
+        while (_j < len(_lines) and _lines[_j][:1].isspace()
+               and _lines[_j].strip()
+               and not _lines[_j].strip().startswith(("theorem", "lemma", "def",
+                                                      "abbrev", "instance", "structure",
+                                                      "end", "namespace", "open", "import"))):
+            _block.append(_lines[_j])
+            _j += 1
+        _sig = " ".join(x.strip() for x in _block)
+        if _sig not in _seen_var:
+            _seen_var.add(_sig)
+            _kept.extend(_block)
+        _i = _j
+    text = "\n".join(_kept)
     # The copied context can `open` namespaces the header never mentions (e.g.
     # `open BookProof.FarisLavine BookProof.YangMillsFriedrichs
     # BookProof.FriedrichsExtension` from the source), and an open of a namespace

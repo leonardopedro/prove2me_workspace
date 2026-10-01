@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_sub
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_pderiv
 open BookProof.QgHermiteFriedrichs
 
 

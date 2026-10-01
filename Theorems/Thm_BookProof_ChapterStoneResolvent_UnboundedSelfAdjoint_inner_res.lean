@@ -1,13 +1,16 @@
 -- Generated from ChapterStoneResolvent.lean — theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res
 import Mathlib
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterSirkTrotterKato
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (T : UnboundedSelfAdjoint H)
 variable [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
 
 import Mathlib
 import BookProof.ChapterUnitaryTransport
@@ -111,11 +114,9 @@ theorem shift_injective {l : ℝ} (hl : l ≠ 0) : Function.Injective (T.shift l
 
 end UnboundedSelfAdjoint
 
-variable [CompleteSpace H]
 
 namespace UnboundedSelfAdjoint
 
-variable (T : UnboundedSelfAdjoint H)
 
 theorem shift_range_isClosed {l : ℝ} (hl : l ≠ 0) :
     IsClosed ((LinearMap.range (T.shift l) : Submodule ℂ H) : Set H) := by

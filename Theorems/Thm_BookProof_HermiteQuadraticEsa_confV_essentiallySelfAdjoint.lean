@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteQuadraticEsa.lean — theorem BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterHermiteQuadraticEsa
-import Definitions.Def_BookProof.ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterHermiteQuadraticEsa
 import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_confW
 
 open BookProof.HermiteQuadraticEsa

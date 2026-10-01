@@ -1,7 +1,7 @@
 -- Generated from ChapterSqSumFarisLavine.lean — theorem BookProof.SqSumFarisLavine.sqSumOp_pgLp
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
-import Definitions.Def_BookProof.ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 
 open BookProof.SqSumFarisLavine

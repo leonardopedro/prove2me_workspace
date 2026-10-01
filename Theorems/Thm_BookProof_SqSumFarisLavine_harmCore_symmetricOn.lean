@@ -3,8 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
-
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
 open BookProof.SqSumFarisLavine
 
 

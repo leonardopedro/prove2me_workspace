@@ -1,8 +1,7 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.sirk_numRange_krylov
 import Mathlib
 import Definitions.Def_ChapterH9
-import Definitions.Def_BookProof.ChapterH9
-
+import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
 
 

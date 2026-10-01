@@ -1,16 +1,9 @@
+import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumOp_le
+
+import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_le_of_schur
+
+import Definitions.Def_ChapterQgOuterFockFullFL
 import Mathlib
-import Mathlib
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterSqSumFarisLavine
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterGaussCoreQuadBounds
-open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
-open BookProof.HermiteProductBasis
-open BookProof.SqSumFarisLavine
-open BookProof.QgHermiteFriedrichs
 
 
 /-!
@@ -68,6 +61,13 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.SqSumOuterFamily
 
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.DirectSumEsa
+open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockFullFL
+open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
 
@@ -78,70 +78,6 @@ variable (dim : ℕ → ℕ)
 /-- **The outer Fock space** of a sequence of sector dimensions: the `ℓ²`-direct sum
 `⊕ₙ L²(ℝ^{dim n})`. -/
 abbrev outerFock : Type := lp (fun n : ℕ => L2d (dim n)) 2
-
-
-theorem memLp_of_finite_support {G : ℕ → Type*} [∀ i, NormedAddCommGroup (G i)]
-    {f : ∀ i : ℕ, G i} (h : {i | f i ≠ 0}.Finite) : Memℓp f 2 := by
-  classical
-  refine memℓp_gen (summable_of_ne_finset_zero (s := h.toFinset) fun i hi => ?_)
-  have hzero : f i = 0 := by
-    by_contra hne
-    exact hi (h.mem_toFinset.mpr hne)
-  simp [hzero]
-
-variable {G : ℕ → Type*} [∀ i, NormedAddCommGroup (G i)]
-    [∀ i, InnerProductSpace ℂ (G i)]
-
-def dsCore (D : ∀ i, Submodule ℂ (G i)) : Submodule ℂ (lp G 2) where
-  carrier := {f | {i | (f : ∀ i, G i) i ≠ 0}.Finite ∧ ∀ i, (f : ∀ i, G i) i ∈ D i}
-  add_mem' := by
-    rintro f g ⟨hf, hfD⟩ ⟨hg, hgD⟩
-    constructor
-    · refine Set.Finite.subset (hf.union hg) (fun i hi => ?_)
-      simp only [Set.mem_setOf_eq, lp.coeFn_add, Pi.add_apply] at hi
-      by_contra hcon
-      simp only [Set.mem_union, Set.mem_setOf_eq, not_or, not_not] at hcon
-      exact hi (by rw [hcon.1, hcon.2, add_zero])
-    · intro i
-      simp only [lp.coeFn_add, Pi.add_apply]
-      exact Submodule.add_mem _ (hfD i) (hgD i)
-  zero_mem' := by
-    constructor
-    · refine Set.Finite.subset (Set.finite_empty) (fun i hi => ?_)
-      simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, ne_eq, not_true_eq_false] at hi
-    · intro i
-      simp only [lp.coeFn_zero, Pi.zero_apply]
-      exact Submodule.zero_mem _
-  smul_mem' := by
-    rintro c f ⟨hf, hfD⟩
-    constructor
-    · refine Set.Finite.subset hf (fun i hi => ?_)
-      simp only [Set.mem_setOf_eq, lp.coeFn_smul, Pi.smul_apply] at hi ⊢
-      intro h0
-      exact hi (by rw [h0, smul_zero])
-    · intro i
-      simp only [lp.coeFn_smul, Pi.smul_apply]
-      exact Submodule.smul_mem _ _ (hfD i)
-
-variable {D : ∀ i, Submodule ℂ (G i)}
-
-def dsOp (H : ∀ i, D i →ₗ[ℂ] G i) : dsCore D →ₗ[ℂ] lp G 2 where
-  toFun x := ⟨fun i => H i ⟨(x : lp G 2) i, x.2.2 i⟩, by
-    refine memLp_of_finite_support (Set.Finite.subset x.2.1 (fun i hi => ?_))
-    simp only [Set.mem_setOf_eq] at hi ⊢
-    intro h0
-    refine hi ?_
-    have : (⟨((x : lp G 2) : ∀ i, G i) i, x.2.2 i⟩ : D i) = 0 := Subtype.ext h0
-    rw [this, map_zero]⟩
-  map_add' x y := by
-    refine lp.ext (funext fun i => ?_)
-    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
-    exact map_add (H i) ⟨((x : lp G 2)) i, x.2.2 i⟩ ⟨((y : lp G 2)) i, y.2.2 i⟩
-  map_smul' c x := by
-    refine lp.ext (funext fun i => ?_)
-    simp only [RingHom.id_apply, SetLike.val_smul, lp.coeFn_smul, Pi.smul_apply]
-    exact map_smul (H i) c ⟨((x : lp G 2)) i, x.2.2 i⟩
-
 
 /-- The finite-particle core: the algebraic direct sum of the sector Gauss–polynomial
 cores. -/

@@ -3,15 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 import Theorems.Thm_BookProof_SirkGapTable_one_lt_ratio
 import Theorems.Thm_BookProof_SirkGapTable_richardson_exact
-import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
-
-
-
-
-
-
-
 
 
 
@@ -19,36 +11,6 @@ noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open Real
 
 set_option maxHeartbeats 1000000 in
 theorem solution {D C l1 l2 p d1 d2 eps : ℝ}

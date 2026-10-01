@@ -1,13 +1,12 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.starobinskyEdge_quadForm
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_inner_eq
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_self_inner
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_quadForm_eq
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_form_gap
+import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
 open BookProof.ScalaronEdge
-
-
-
-
-
-
 
 
 
@@ -22,7 +21,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

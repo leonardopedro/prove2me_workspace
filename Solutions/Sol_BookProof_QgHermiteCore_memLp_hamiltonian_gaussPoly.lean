@@ -4,33 +4,13 @@ import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_memLp_gaussPoly
 import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_gaussPoly_of_expBounded
 import Theorems.Thm_BookProof_QgHermiteCore_deriv2_gaussPoly
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {W : ℝ → ℝ} (hW : Continuous W) (hWb : ExpBounded W)

@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Mathlib
 
-import Mathlib
 
 /-!
 # The transformed Navier–Stokes Hamiltonian in the Lagrangian momentum

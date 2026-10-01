@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial

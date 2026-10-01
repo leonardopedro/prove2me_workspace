@@ -12,37 +12,12 @@ open BookProof.CarlemanSimplex
 
 
 
-
-
-
-
-
-
-
 open Finset
 open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {u : (Fin d →₀ ℕ) → ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {w : ℂ} {rc lc : (Fin d →₀ ℕ) → ℝ} {P : Fin d →₀ ℕ}

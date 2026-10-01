@@ -3,14 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_neg
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_pos_of_pos
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterComplexShiftCore
-
-
-
-
-
-
+open BookProof.SirkSingleTime
 
 
 
@@ -24,13 +17,6 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0)

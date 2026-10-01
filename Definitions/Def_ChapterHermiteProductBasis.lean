@@ -1,3 +1,17 @@
+import Theorems.Thm_BookProof_HermiteProductCore_polyGaussCore_eq_hermiteSpan
+
+import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
+
+import Theorems.Thm_BookProof_HermiteCore_hermiteFun_mul
+
+import Theorems.Thm_BookProof_HermiteCore_hermiteInner_eq
+
+import Theorems.Thm_BookProof_HermiteCore_hermiteNorm_sq
+
+import Theorems.Thm_BookProof_HermiteProductCore_integral_prod_coord
+
+import Theorems.Thm_BookProof_HermiteCore_hermiteNorm_pos
+
 import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 
@@ -171,10 +185,6 @@ theorem span_hermiteMvLp :
     change pgLp (hermiteMv a) ∈ Submodule.span ℂ (Set.range (hermiteMvLp (d := d)))
     rw [pgLp_hermiteMv_eq a]
     exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨a, rfl⟩)
-
-theorem hermiteMvLp_mem_core (a : Fin d →₀ ℕ) : hermiteMvLp a ∈ polyGaussCore (d := d) := by
-  rw [← span_hermiteMvLp]
-  exact Submodule.subset_span ⟨a, rfl⟩
 
 /-- **The product Hermite functions form a Hilbert basis of `L²(ℝᵈ)`**, indexed by the
 multi-indices. -/

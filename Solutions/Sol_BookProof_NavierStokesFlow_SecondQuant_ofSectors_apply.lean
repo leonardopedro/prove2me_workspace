@@ -6,13 +6,6 @@ open BookProof.NavierStokesFlow.SecondQuant
 
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
 

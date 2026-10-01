@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
 
-
-
-
-
-
-
-
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 
 noncomputable section
@@ -21,20 +16,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 theorem BookProof.ChapterSirkTrotterKato.isCompact_orbit (y : H) (T₀ : ℝ) :
     IsCompact ((fun s : ℝ => T.stoneU s y) '' Set.Icc (-T₀) T₀) := by sorry

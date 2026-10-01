@@ -19,9 +19,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-# 4. Transport to the core of `L²(ℝ⁸⁴)` -/
+theorem solution (p : MvPolynomial (Fin 84) ℂ) :
+    (coreRepPoly 84).equiv p = coreEquiv p := by
 
-theorem solution (p : MvPolynomial (Fin 84) :=
-   ℂ) :
-      (coreRepPoly 84).equiv p = coreEquiv p := by
-    refine Subtype.ext ?_
+  refine Subtype.ext ?_
+  rw [(coreRepPoly 84).coe_equiv p, coreEquiv_coe p]

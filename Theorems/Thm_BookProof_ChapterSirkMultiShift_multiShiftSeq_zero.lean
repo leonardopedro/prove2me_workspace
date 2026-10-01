@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 open BookProof.ChapterSirkMultiShift
 
-
-
-
-
-
-
-
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
 
 
 noncomputable section
@@ -18,12 +13,6 @@ noncomputable section
 open BookProof.ChapterH5
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-
-
-
-
-
-variable {H : E →ₗ[K] E} {v : E}
 
 theorem BookProof.ChapterSirkMultiShift.multiShiftSeq_zero (H : E →ₗ[K] E) (z : ℕ → K) (v : E) :
     multiShiftSeq H z v 0 = v := by sorry

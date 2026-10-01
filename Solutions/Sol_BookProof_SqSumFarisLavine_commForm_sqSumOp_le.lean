@@ -7,14 +7,13 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_commPoly_eq
 import Theorems.Thm_BookProof_SqSumFarisLavine_commForm_eq_im
 import Theorems.Thm_BookProof_SqSumFarisLavine_core_eq_pgLp
 import Theorems.Thm_BookProof_SqSumFarisLavine_abs_im_gaussInt_le
-import Definitions.Def_ChapterHermiteProductCore
-import Theorems.Thm_BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_self
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
+import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
+import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 open BookProof.SqSumFarisLavine
@@ -22,18 +21,11 @@ open BookProof.SqSumFarisLavine
 
 
 
-
-
-
-
-
-
-
-
-
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

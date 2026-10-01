@@ -18,7 +18,8 @@ theorem solution (V : F →L[ℂ] E) (X : E →L[ℂ] E)
     (v : E) (hv : V (V.adjoint v) = v) :
     (X ^ n) v = V ((compress V X ^ n) (V.adjoint v)) := by
 
-  convert congr_arg (fun f => f (V.adjoint v)) (compress_pow V X hVV hinv n) using 1
-  rw [← hv]
-  have haux : V.adjoint (V (V.adjoint v)) = V.adjoint v := by simp [hv]
-  simp [ContinuousLinearMap.comp_apply, haux]
+  calc (X ^ n) v = ((X ^ n).comp V) (V.adjoint v) := by
+        rw [ContinuousLinearMap.comp_apply, hv]
+    _ = (V.comp ((compress V X) ^ n)) (V.adjoint v) := by
+        rw [compress_pow V X hVV hinv n]
+    _ = V ((compress V X ^ n) (V.adjoint v)) := rfl

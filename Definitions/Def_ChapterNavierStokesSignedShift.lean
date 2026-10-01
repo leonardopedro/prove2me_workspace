@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step
+
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 

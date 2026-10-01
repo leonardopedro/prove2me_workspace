@@ -4,20 +4,14 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
-
-
-
-
-
-
-
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian
+open LpNat FarisLavine IkebeKato ShiftHamiltonian
 
 
 variable {d : ℕ} {κ : Fin d → ℝ}

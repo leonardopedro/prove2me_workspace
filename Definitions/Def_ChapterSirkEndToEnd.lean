@@ -5,7 +5,6 @@ import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterH9
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkEndToEnd — the end-to-end SIRK reliability statement (assembly)
@@ -118,6 +117,6 @@ def sirkReconstruction (V : F →L[ℂ] E) : E →L[ℂ] E := V.comp V.adjoint
 
 /-! ## 6. Non-vacuity -/
 
-
+ positivity
 
 end BookProof.ChapterSirkEndToEnd

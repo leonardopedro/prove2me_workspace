@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — solution of BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_cFun_aFun_self
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

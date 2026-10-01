@@ -2,20 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_polySym_fqQuadPoly
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

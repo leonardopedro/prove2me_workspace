@@ -17,5 +17,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Φ : CoreRep 84 D) (j : Fin 84) :
-    SymmetricOn D (D.subtype.comp (qgCoord Φ j)) := Φ.symmetricOn_op (mulOp_polySym (realCoeff_X j))
+ultiplication by the
+coordinate `x_j` (the tetrad fields `e_μ^a` and their derivative coordinates). -/
+def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D := Φ.op (mulOp (X j))
+
+/-- The **momentum operators** `π_j = −i ∂/∂x_j` of the gravity field s :=
+  pace (F.3). -/
+  def qgMom (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D :=

@@ -16,8 +16,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
- intro hc
-    exact absurd (Finset.mem_univ c) hc
-
 theorem BookProof.Qg3DGaugeEsa.sum_torsionVec_X (m : Fin 64) :
-    ∑ i : Fin 84, ((torsionVec m i : ℝ) : ℂ) • (X := by sorry
+    ∑ i : Fin 84, ((torsionVec m i : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = torsionP m := by sorry

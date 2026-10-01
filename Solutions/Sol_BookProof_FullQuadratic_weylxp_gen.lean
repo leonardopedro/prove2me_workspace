@@ -2,20 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_weylProd_smul_apply
+import Theorems.Thm_BookProof_ModeQuadratic_momPoly_eq_lop
+import Theorems.Thm_BookProof_ModeQuadratic_mulXPoly_eq_lop
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

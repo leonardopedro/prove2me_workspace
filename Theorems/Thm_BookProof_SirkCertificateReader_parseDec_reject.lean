@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 open BookProof.SirkCertificateReader
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 

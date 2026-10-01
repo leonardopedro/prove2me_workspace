@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.lpDiag_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
-import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_coe
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -10,30 +8,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : ι → ℝ) : IsSymmetricDom (lpDiag c) := by

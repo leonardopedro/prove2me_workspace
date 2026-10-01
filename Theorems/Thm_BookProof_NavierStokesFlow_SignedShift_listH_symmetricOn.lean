@@ -1,68 +1,21 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — theorem BookProof.NavierStokesFlow.SignedShift.listH_symmetricOn
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesSignedShift
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
+import Definitions.Def_ChapterNavierStokesSignedShift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber
-open BookProof.NavierStokesFlow.HermiteFarisLavine
+
+variable {ι : Type*}
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+variable {sym : ι → ℝ}
+variable (kap cst : ℝ)
 
 
-
-
-
-
-
-
-
-open BookProof.FarisLavine
 open scoped ENNReal
 
 
 
+open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
-
-
-
-variable {sym : ι → ℝ} (S : SignedHop ι sym)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {sym : ι → ℝ}
 
 theorem BookProof.NavierStokesFlow.SignedShift.listH_symmetricOn (L : List (SignedHop ι sym)) : SymmetricOn (maxDom sym) (listH L) := by sorry

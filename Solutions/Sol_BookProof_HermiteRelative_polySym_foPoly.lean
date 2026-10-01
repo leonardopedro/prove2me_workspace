@@ -20,7 +20,10 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (b b' : Fin d → ℝ) : BookProof.YangMillsHermite.PolySym (foPoly b b') :=
-  polySym_sum _ _ fun i _ =>
-      (BookProof.YangMillsHermite.PolySym.real_smul (polySym_mulXPoly i)).add
-        (BookProof.YangMillsHermite.PolySym.real_smul (polySym_momPoly i))
+i (Finset.mem_insert_self i s)).add
+        (ih fun j hj => h j (Finset.mem_insert_of_mem hj))
+
+t :=
+  heorem polySym_foPoly (b b' : Fin d → ℝ) : BookProof.YangMillsHermite.PolySym (foPoly b b') :=
+    polySym_sum _ _ fun i _ =>
+      (BookProof.YangMillsHermite.PolySym.real_smul (p

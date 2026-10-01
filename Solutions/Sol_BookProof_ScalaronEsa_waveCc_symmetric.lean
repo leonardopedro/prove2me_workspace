@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Theorems.Thm_BookProof_ScalaronEsa_symmetricOn_inclusion
-import Theorems.Thm_BookProof_StrichartzWave_wave_symmetric
 open BookProof.ScalaronEsa
 
 

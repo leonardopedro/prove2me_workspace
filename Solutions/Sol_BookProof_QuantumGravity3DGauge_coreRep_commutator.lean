@@ -14,13 +14,22 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
-    (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (c : ℂ)
-    (h : ∀ p, S (T p) - T (S p) = c • p) (x : D) :
-    Φ.op S (Φ.op T x) - Φ.op T (Φ.op S x) = c • x := by
-
-  have e1 : Φ.op S (Φ.op T x) = Φ.equiv (S (T (Φ.equiv.symm x))) := by
-    simp only [CoreRep.op_apply, LinearEquiv.symm_apply_apply]
-  have e2 : Φ.op T (Φ.op S x) = Φ.equiv (T (S (Φ.equiv.symm x))) := by
-    simp only [CoreRep.op_apply, LinearEquiv.symm_apply_apply]
-  rw [e1, e2, ← map_sub, h, map_smul, LinearEquiv.apply_symm_apply]
+ta `√κ_j π_j`, so the Yang–Mills-style Friedrichs machinery applies to
+it verbatim. -/
+theorem solution {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
+    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
+    signedOp kappa pi Bf
+      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by
+  ext x
+  rw [signedOp_apply, weylOp_apply]
+  congr 2
+  ref :=
+  ine Finset.sum_congr rfl fun i _ => ?_
+    have hsq : (Real.sqrt (kappa i)) * (Real.sqrt (kappa i)) = kappa i :=
+      Real.mul_self_sqrt (hk i)
+    simp only [LinearMap.smul_apply, map_smul, Submodule.coe_smul, smul_smul]
+    rw [← Complex.ofReal_mul, hsq]
+  
+  end Signed
+  
+  /-- Transport of a commutator identity from the polynomial level to the core: this is

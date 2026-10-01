@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,6 +16,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.qgMomScaled_symmetricOn (Φ : CoreRep 84 D) (j : Fin 84) :
-    SymmetricOn D (D.subtype.comp
-      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) := by sorry
+(qgMom_symmetricOn Φ)
+    (torsionOps_symmetricOn Φ) x
+
+theorem BookProof.QuantumGravity3DGauge.qgMomScaled_symmetricOn (Φ : CoreRep 84 D) :
+    qg3DEllipticHamiltonian Φ
+      = weylOp (fun j => ((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j) (torsionOps Φ) :=
+  signedOp_eq_weylOp qgKappa := by sorry

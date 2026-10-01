@@ -1,17 +1,13 @@
 -- Generated from ChapterQgHermiteCore.lean — theorem BookProof.QgHermiteCore.exp_abs_mul_gaussH_le
+import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteFunctions
+open BookProof.HermiteCore
 open BookProof.QgHermiteCore
 
-
-
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E]
+variable {d : ℕ}
 
 
 

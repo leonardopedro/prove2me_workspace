@@ -1,13 +1,9 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.starobinskyEdge_self_inner
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Theorems.Thm_BookProof_WallEsaSemibounded_inner_toLp_self
 open BookProof.ScalaronEdge
-
-
-
-
-
-
 
 
 
@@ -22,7 +18,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

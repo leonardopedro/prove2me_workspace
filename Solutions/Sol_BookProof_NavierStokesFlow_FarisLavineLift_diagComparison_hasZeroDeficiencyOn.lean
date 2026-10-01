@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_eq
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -11,44 +10,18 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
-theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
-    HasZeroDeficiencyOn (lpFiniteModes ℕ) (diagComparisonData d p q).comparison := by
+ :
+      (diagOp fun k => ∑ i, p i k ^ 2) + (diagOp fun k => ∑ i, q i k ^ 2)
+          + (LinearMap.id : lpFiniteModes ℕ →ₗ[ℂ] lpFiniteModes ℕ)
+        = diagOp (fun k => (∑ i, p i k ^ 2) + (∑ i, q i k ^ 2) + 1) := by
+    rw [diagOp_one, FullEsa.diagOp_add, FullEsa.diagOp_add]
+    all_goals rfl
+  exact h1
 
-  rw [diagComparison_eq]
-  exact diagOp_hasZeroDeficiencyOn _
+/-- **The one-particle comparison operator is essentially self-adjoint** in the
+momentum representation, with no hypothe :=
+  sis whatsoever on the symbols: this is
+  the fiber-space form of the

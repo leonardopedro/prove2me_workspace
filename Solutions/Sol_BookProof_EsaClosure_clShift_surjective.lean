@@ -7,14 +7,6 @@ open BookProof.EsaClosure
 
 
 
-
-
-
-
-
-
-
-
 open Filter Topology
 
 
@@ -23,46 +15,20 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
+h0
+  linear_combination -h0
+
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
     (hesa : EssentiallySelfAdjointOn D T) :
-    Function.Surjective (cshiftMap (clExt T hdense hsym) Complex.I) := by
-
-  have hclosed : IsClosed ((cshiftRange (clExt T hdense hsym) Complex.I : Submodule ℂ F) : Set F) :=
-    clRange_isClosed T hdense hsym (by simp)
-  haveI : CompleteSpace (cshiftRange (clExt T hdense hsym) Complex.I) := hclosed.completeSpace_coe
-  have htop : cshiftRange (clExt T hdense hsym) Complex.I = ⊤ := by
-    have h1 := Submodule.orthogonal_orthogonal (cshiftRange (clExt T hdense hsym) Complex.I)
-    rw [clRange_orthogonal_eq_bot T hdense hsym hesa, Submodule.bot_orthogonal_eq_top] at h1
-    exact h1.symm
-  intro u
-  have hmem : u ∈ cshiftRange (clExt T hdense hsym) Complex.I := by rw [htop]; trivial
-  exact hmem
+    Function.Surjective (cshiftMap (clE :=
+  xt T hdense hsym) Complex.I) := by
+    have hclosed : IsClosed ((cshiftRange (clExt T hdense hsym) Complex.I : Submodule ℂ F) : Set F) :=
+      clRange_isClosed T hdense hsym (by simp)
+    have : CompleteSpace (cshiftRange (clExt T hdense hsym) Complex.I) := hclosed.completeSpace_coe
+    have htop : cshiftRange (clExt T hdense hsym) Complex.I = ⊤ := by
+      have h1 := Submodule.orthogonal_orthogonal (cshiftRange (clExt T hdense hsym) Complex.I)
+      rw [clRange_orthogonal_eq_bot T hdense hsym hesa, Submodule.bot_orthogonal_eq_top] at h1
+      exact h1.symm
+    intro u
+    have hmem : u ∈ cshiftRange (clExt T hdense hsym) Complex.I := by rw

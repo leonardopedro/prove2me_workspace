@@ -9,6 +9,12 @@ variable {H K L : Type*}
   [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
   [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
   [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
+variable {H K : Type*}
+  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
+  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
+variable {E F : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 open scoped InnerProductSpace

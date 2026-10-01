@@ -3,33 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 open BookProof.SirkGapTable
 
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.SirkGapTable.strongCoupling_mem_of_certificate {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℂ E] {T P : E →ₗ[ℂ] E} (c : CouplingCertificate)

@@ -5,22 +5,7 @@ import Theorems.Thm_BookProof_FockOneParticleGap_band_endpoints_tendsto
 import Theorems.Thm_BookProof_FockOneParticleGap_le_of_band
 import Theorems.Thm_BookProof_FockOneParticleGap_fock_gap_of_operator_spectral_edge
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_spectrum_real_bddBelow
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterSirkCertifiedGap
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -29,66 +14,6 @@ noncomputable section
 
 open BookProof.FockSecondQuantization BookProof.FarisLavine BookProof.NavierStokesFlow
 open Filter Topology
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-open BookProof.SirkCertifiedGap
-
-
-
-
-
-
-open BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {A : F →L[ℂ] F} (hA : IsSelfAdjoint A)

@@ -3,10 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTimeIndependent
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {ι : Type*}
 
 
 
@@ -16,25 +14,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.SirkSingleTime BookProof.QgTruncationResolvent BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.HashimotoShiftInvert
-
-variable {ι : Type*}
 
 theorem BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime (W : WallPot) (Q : QgModeData ι)
     (Λ : ℕ → Set ι) (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

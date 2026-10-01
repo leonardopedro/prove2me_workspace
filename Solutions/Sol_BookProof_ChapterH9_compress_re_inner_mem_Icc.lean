@@ -1,6 +1,7 @@
 -- Generated from ChapterH9.lean — solution of BookProof.ChapterH9.compress_re_inner_mem_Icc
 import Mathlib
 import Definitions.Def_ChapterH9
+import Theorems.Thm_BookProof_ChapterH6_krylov_rayleigh_transfer
 open BookProof.ChapterH9
 
 

@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterStoneGenerator
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkTrotterKato — the unbounded half of §12 Gap 3 (Trotter–Kato)
@@ -114,50 +113,3 @@ def resDiff (n : ℕ) : H →L[ℂ] H := T.resCLM 1 - (S n).resCLM 1
 
 
 end BookProof.ChapterSirkTrotterKato
-
-namespace BookProof.ChapterStoneResolvent
-
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-namespace UnboundedSelfAdjoint
-
-variable (T : UnboundedSelfAdjoint H)
-
-theorem yosidaGen_commute_resCLM (n l : ℝ) : Commute (T.yosidaGen n) (T.resCLM l) := by
-  have h : ∀ a b : ℝ, Commute (T.resCLM a) (T.resCLM b) := T.resCLM_commute
-  have hy : Commute (T.yosida n) (T.resCLM l) := by
-    unfold yosida
-    refine Commute.add_left (Commute.smul_left ?_ _) (Commute.smul_left ?_ _)
-    · exact h _ _
-    · exact (h _ _).mul_left (h _ _)
-  exact hy.smul_left _
-
-theorem approxU_commute_resCLM (n t l : ℝ) : Commute (T.approxU n t) (T.resCLM l) :=
-  (((T.yosidaGen_commute_resCLM n l).smul_left t)).exp_left
-
-theorem stoneU_commute_resCLM (t l : ℝ) (y : H) :
-    T.stoneU t (T.resCLM l y) = T.resCLM l (T.stoneU t y) := by
-  have h1 : Tendsto (fun k : ℕ => T.approxU ((k : ℝ) + 1) t (T.resCLM l y)) atTop
-      (𝓝 (T.stoneU t (T.resCLM l y))) := T.tendsto_stoneU t _
-  have h2 : Tendsto (fun k : ℕ => T.resCLM l (T.approxU ((k : ℝ) + 1) t y)) atTop
-      (𝓝 (T.resCLM l (T.stoneU t y))) :=
-    ((T.resCLM l).continuous.tendsto _).comp (T.tendsto_stoneU t y)
-  have heq : (fun k : ℕ => T.approxU ((k : ℝ) + 1) t (T.resCLM l y))
-      = fun k : ℕ => T.resCLM l (T.approxU ((k : ℝ) + 1) t y) := by
-    funext k
-    exact congrArg (fun (S : H →L[ℂ] H) => S y) ((T.approxU_commute_resCLM ((k : ℝ) + 1) t l).eq)
-  rw [heq] at h1
-  exact tendsto_nhds_unique h1 h2
-
-theorem stoneU_mem_domain (t : ℝ) (x : T.domain) : T.stoneU t (x : H) ∈ T.domain := by
-  have hx : ((T.res 1 (T.shift 1 x) : T.domain) : H) = (x : H) := by
-    rw [T.res_shift one_ne_zero]
-  have h : T.stoneU t (x : H) = T.resCLM 1 (T.stoneU t (T.shift 1 x)) := by
-    rw [← T.stoneU_commute_resCLM]
-    congr 1
-    exact hx.symm
-  rw [h]
-  exact T.resCLM_mem 1 _
-
-end UnboundedSelfAdjoint
-end BookProof.ChapterStoneResolvent

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,4 +16,7 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-theorem BookProof.HermiteRelative.polySym_foPoly (b b' : Fin d → ℝ) : BookProof.YangMillsHermite.PolySym (foPoly b b') := by sorry
+i (Finset.mem_insert_self i s)).add
+        (ih fun j hj => h j (Finset.mem_insert_of_mem hj))
+
+t := by sorry

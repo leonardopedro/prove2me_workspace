@@ -1,9 +1,9 @@
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterSirkCertifiedGap
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterSpectralGapStability
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter FockOneParticleGap — the one-particle edge and its free `dΓ` lift

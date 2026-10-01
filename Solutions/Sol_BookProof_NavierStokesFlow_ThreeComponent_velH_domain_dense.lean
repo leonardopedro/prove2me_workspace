@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesThreeComponent.lean — solution of BookProof.NavierStokesFlow.ThreeComponent.velH_domain_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 

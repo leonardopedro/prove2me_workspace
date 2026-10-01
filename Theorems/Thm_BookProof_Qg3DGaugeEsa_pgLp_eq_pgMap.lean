@@ -16,6 +16,4 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-w [(coreRepPoly 84).coe_equiv p, coreEquiv_coe p]
-
-theorem BookProof.Qg3DGaugeEsa.pgLp_eq_pgMap (p : MvPol := by sorry
+theorem BookProof.Qg3DGaugeEsa.pgLp_eq_pgMap (p : MvPolynomial (Fin 84) ℂ) : pgLp p = pgMap (d := 84) p := by sorry

@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_eq_ladder
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -16,4 +18,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_eq_ladder (i : Fin 3) : posOp i = annOp i + creOp i := by sorry
+ := by sorry

@@ -8,17 +8,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_cre_coe_one
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_anti_DS
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_sq
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
-
-
-
-
-
 
 
 
@@ -26,32 +18,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {κ : ℝ}
+open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) :

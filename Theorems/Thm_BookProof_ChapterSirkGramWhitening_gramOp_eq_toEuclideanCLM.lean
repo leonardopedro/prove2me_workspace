@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 noncomputable section
@@ -19,5 +15,7 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+ix, Matrix.conjTranspose_apply]
+
 theorem BookProof.ChapterSirkGramWhitening.gramOp_eq_toEuclideanCLM {m : ℕ} (w : Fin m → E) :
-    gramOp w = Matrix.toEuclideanCLM (𝕜 := ℂ) (gramMatrix w) := by sorry
+    gramOp w = Matrix.toEuclidean := by sorry

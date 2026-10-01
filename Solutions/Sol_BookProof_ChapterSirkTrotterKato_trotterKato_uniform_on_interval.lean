@@ -3,15 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_exists_res_domain_approx
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 
@@ -24,20 +17,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hres : StrongResolventConvergence T S) (v : H)

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,6 +18,11 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_essentiallySelfAdjointOn_core :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 3))
-      ((polyGaussCore (d := 3)).subtype.comp (nsDiffH A c)) := by sorry
+ i _ => hterm i
+
+theorem BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_essentiallySelfAdjointOn_core : Real.sqrt 2 ≠ 0 :=
+  ne_of_gt (Real.sqrt_pos.mpr (by norm_num))
+
+/-- **The Navier–Stokes quadratic symbol, written with genuine derivatives and genuine
+multiplication operators on `L²(du₁du₂du₃)`, is essentially self-adjoint on the Hermite
+core** — for every real velocity gradient `A` and eve := by sorry

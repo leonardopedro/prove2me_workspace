@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 open BookProof.ScalaronFiberFL
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
+variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
+
 
 
 open MeasureTheory SchwartzMap

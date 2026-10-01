@@ -1,38 +1,18 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — theorem BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_isSymmetricDom
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
-open BookProof.NavierStokesFlow.FullEsa
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.FarisLavineLift
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
 variable {d : ℕ} (c : ComparisonData F d)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {κ : Type*}
+
+
+
+
+open FullEsa
 
 theorem BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_isSymmetricDom : IsSymmetricDom c.comparison := by sorry

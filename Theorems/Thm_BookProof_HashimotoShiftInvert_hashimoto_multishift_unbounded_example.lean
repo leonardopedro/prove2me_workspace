@@ -3,11 +3,18 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.HashimotoShiftInvert
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+
+  ring
 
 theorem BookProof.HashimotoShiftInvert.hashimoto_multishift_unbounded_example (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
     ∃ X : ℕ → ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ),
@@ -24,4 +31,4 @@ theorem BookProof.HashimotoShiftInvert.hashimoto_multishift_unbounded_example (�
         IsShiftInvertC A' (γ j) (X j) →
         Dom' = LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ))) ∧
       (∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
-        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖) := by sorry
+        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatri := by sorry

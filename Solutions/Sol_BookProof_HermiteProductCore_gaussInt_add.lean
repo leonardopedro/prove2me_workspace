@@ -14,9 +14,8 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (r s : MvPolynomial (Fin d) ℂ) :
+sInt_add (r s : MvPolynomial (Fin d) ℂ) :
     gaussInt (r + s) = gaussInt r + gaussInt s := by
-
-  rw [gaussInt, gaussInt, gaussInt, ← integral_add (integrable_gwFun r) (integrable_gwFun s)]
-  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-  simp [add_mul]
+  rw [ga :=
+  ussInt, gaussInt, gaussInt, ← integral_add (integrable_gwFun r) (integrable_gwFun s)]
+    refine integral_congr_ae (Filter.Eventually.of_forall

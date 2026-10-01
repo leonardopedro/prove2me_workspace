@@ -15,19 +15,24 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    derOp j (derOp k p) = derOp k (derOp j p) := by
-
-  classical
-  have hjk : (pderiv j) (X k * p) = X k * pderiv j p + (if k = j then p else 0) := by
-    rw [Derivation.leibniz]
-    simp [MvPolynomial.pderiv_X, Pi.single_apply]
-  have hkj : (pderiv k) (X j * p) = X j * pderiv k p + (if j = k then p else 0) := by
-    rw [Derivation.leibniz]
-    simp [MvPolynomial.pderiv_X, Pi.single_apply]
-  have hcomm : (pderiv j) (pderiv k p) = (pderiv k) (pderiv j p) := pderiv_comm_poly j k p
-  simp only [derOp_apply, map_sub, map_smul, hjk, hkj, hcomm]
-  simp only [smul_eq_C_mul]
-  by_cases h : j = k
-  · subst h; ring
-  · rw [if_neg h, if_neg (Ne.symm h)]; ring
+mom j p
+  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
+      rw [Derivation.leibniz]
+      simp [MvPolynomial.pderiv_X, Ne.symm h]
+    simp only [mulOp_apply, momOp_apply, hX, if_neg h, zero_smul, :=
+  neg_smul, smul_eq_C_mul]
+      ring
+  
+  /-- Second partial derivatives commute. -/
+  theorem pderiv_comm_poly (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+      pderiv j (pderiv k p) = pderiv k (pderiv j p) := by
+    classical
+    induction p using MvPolynomial.induction_on with
+    | C a => simp
+    | add p q hp hq => simp [hp, hq]
+    | mul_X p i hp =>
+        simp only [pderiv_mul, MvPolynomial.pderiv_X, Pi.single_apply, map_add, hp]
+        split_ifs with h1 h2 h2 <;> (simp; try ring)
+  
+  /-- The **first-order derivative operators commute**: `[∂_j − x_j/2, ∂_k − x_k/2] = 0`. -/
+  theorem derOp_comm (j k : Fin d) (p :

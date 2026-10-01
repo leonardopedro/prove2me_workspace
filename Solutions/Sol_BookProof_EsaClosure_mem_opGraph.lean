@@ -5,14 +5,6 @@ open BookProof.EsaClosure
 
 
 
-
-
-
-
-
-
-
-
 open Filter Topology
 
 

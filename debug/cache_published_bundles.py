@@ -128,7 +128,14 @@ def refresh_theorems():
 
 def newest_jobs():
     jobs = up._paged("publish-jobs", {"kind": "definition"})
+    # Newest job per name wins, EXCEPT that a FAILED job must not revoke an
+    # older PUBLISHED one, and the page order is not chronological. Track the
+    # newest PUBLISHED job separately and let it win. Without this,
+    # ChapterYangMillsSU3 (one PUBLISHED job, three later "already exists"
+    # failures) was withheld from the cache, and every bundle importing it
+    # cascaded.
     newest = {}
+    newest_pub = {}
     for j in jobs:
         name = j.get("theorem_name") or ""
         if not name:
@@ -137,6 +144,12 @@ def newest_jobs():
         prev = newest.get(name)
         if prev is None or (prev.get("updated_at") or prev.get("created_at") or "") <= stamp:
             newest[name] = j
+        if j.get("status") == "PUBLISHED":
+            pp = newest_pub.get(name)
+            if pp is None or (pp.get("updated_at") or pp.get("created_at") or "") <= stamp:
+                newest_pub[name] = j
+    for name, j in newest_pub.items():
+        newest[name] = j
     return newest
 
 

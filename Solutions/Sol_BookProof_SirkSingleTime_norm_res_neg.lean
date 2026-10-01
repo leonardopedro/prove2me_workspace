@@ -1,15 +1,9 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — solution of BookProof.SirkSingleTime.norm_res_neg
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterComplexShiftCore
-
-
-
-
-
-
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm
+open BookProof.SirkSingleTime
 
 
 

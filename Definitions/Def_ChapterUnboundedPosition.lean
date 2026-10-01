@@ -1,10 +1,8 @@
-import Mathlib
-import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
+
 import Definitions.Def_ChapterContinuityUnitaryInfinite
-
 import Mathlib
 
-import Mathlib
 
 /-!
 # The unbounded layer: a self-adjoint operator on `ℓ²(ℤ)` and the group it generates
@@ -60,336 +58,1017 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 
 open scoped ENNReal InnerProductSpace
 
-open BookProof.ChapterContinuityUnitaryInfinite
+namespace BookProof.ChapterUnboundedPosition
+
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
+/-! ## The natural domain of a multiplication operator -/
+
+/-- The **natural domain** `D(f) = {ψ ∈ ℓ²(ℤ) : f·ψ ∈ ℓ²(ℤ)}` of multiplication
+by a real field `f`, as a submodule of `ℓ²(ℤ)`. -/
+def mulDomain (f : ℤ → ℝ) : Submodule ℂ L2Z where
+  carrier := {psi : L2Z | Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2}
+  zero_mem' := by
+    simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, mul_zero]
+    exact zero_memℓp
+  add_mem' := by
+    intro a b ha hb
+    have heq : (fun k => (f k : ℂ) * ((a + b : L2Z) : ℤ → ℂ) k)
+        = (fun k => (f k : ℂ) * (a : ℤ → ℂ) k) + fun k => (f k : ℂ) * (b : ℤ → ℂ) k := by
+      funext k
+      simp [mul_add]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.add hb
+  smul_mem' := by
+    intro c a ha
+    have heq : (fun k => (f k : ℂ) * ((c • a : L2Z) : ℤ → ℂ) k)
+        = c • fun k => (f k : ℂ) * (a : ℤ → ℂ) k := by
+      funext k
+      simp [mul_left_comm]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.const_smul c
+
+
+
+/-- Multiplication by `f`, on its natural domain. -/
+noncomputable def mulOp (f : ℤ → ℝ) : mulDomain f →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k, psi.2⟩
+  map_add' a b := by
+    ext k
+    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
+    ext k
+    simp only [lp.coeFn_smul, Pi.smul_apply, smy, RCLike.inner_apply, map_mul, C j  ilter_upwards with s using sum_single_mem_mulDomain `.
+ of_nonneg (by positivity)] at h
+  push_cast at h
+  linarith
+
+/-! ## The adjoinj]import Mathlib
+
+/-!
+# The unbounded layer: a self-adjoint operator on `ℓ²(ℤ)` and the group it generates
+
+Source: the *Boundary* paragraphs of proof plan appendix §E
+(`Book/ProofPlans.lean`) and the `ConditionalUnitary` chapter — everything the
+book formalizes about the dynamics-based unitary is carried by *bounded*
+operators (matrices on the cyclic lattice in
+`BookProof.ChapterContinuityUnitary`, bounded operators on `ℓ²(ℤ)` in
+`BookProof.ChapterContinuityUnitaryInfinite`, a bounded self-adjoint generator on
+`L²(μ)` in `BookProof.ChapterBornMeasure`).  The remaining open layer is
+*unboundedness*.
+
+This module makes that layer precise rather than rhetorical.  For a real
+"multiplier" `f : ℤ → ℝ` — the lattice position field `f k = k` being the case of
+interest — it builds the multiplication operator on its **natural domain**
+
+  `D(f) = {ψ ∈ ℓ²(ℤ) : f · ψ ∈ ℓ²(ℤ)}`
+
+(a submodule, `mulDomain`), proves that this domain is **dense**
+(`mulDomain_dense`, via the finitely supported vectors), that the operator is
+**symmetric** on it (`mulOp_symmetric`), and that for the position field it is
+genuinely **unbounded** (`position_unbounded`): no constant `C` satisfies
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  So the object here is not a bounded operator in
+disguise; it is the first honest instance of the unbounded layer, and
+`position_not_boundedOperator` records that it is not the restriction of any
+bounded operator either.
+
+The module then goes past symmetry in the two directions that matter for the
+book's claim.
+
+* **Self-adjointness.**  `adjointDomain_eq_mulDomain` shows the adjoint domain is
+  *exactly* `D(f)` — nothing larger — and `adjoint_eq_mulOp` shows the adjoint
+  acts by multiplication there.  So the maximal multiplication operator, position
+  included, is a genuine self-adjoint observable, not merely a symmetric one.
+* **The unitary group.**  `phaseUnitary f t` is the pointwise phase
+  `ψ k ↦ exp(i t f k) ψ k`, a `LinearIsometryEquiv` of `ℓ²(ℤ)`
+  (`phaseUnitary_zero`, `phaseUnitary_add` give the one-parameter group law),
+  strongly continuous at `0` for *every* state (`tendsto_phaseUnitary`), whose
+  generator is the unbounded operator: for `ψ ∈ D(f)` the difference quotient
+  converges in `ℓ²(ℤ)` to `i·f·ψ` (`tendsto_slope_phaseUnitary`), which is
+  Stone's relation `dU/dt|₀ = iA` for an unbounded self-adjoint `A`.
+
+What therefore remains genuinely open is *not* "symmetric ⟹ self-adjoint ⟹ a
+unitary group" — that implication is discharged here for multiplication
+operators — but the same package for unbounded operators that are not
+multiplication operators in the ambient basis (a continuum Laplacian, say), i.e.
+Stone's theorem in full generality.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`).
+-/
+
+open scoped ENNReal InnerProductSpace
 
 namespace BookProof.ChapterUnboundedPosition
-/-! ## Cross-chapter definitions from `BookProof.ChapterContinuityUnitaryInfinite` -/
-theorem memℓp_two_of_summable {g : ℤ → ℂ} (h : Summable fun k => ‖g k‖ ^ 2) : Memℓp g 2 := by
-  apply memℓp_gen
-  simpa [show (2 : ℝ≥0∞).toReal = ((2 : ℕ) : ℝ) from by norm_num, Real.rpow_natCast] using h
 
-/-! ## The lattice translations are unitaries -/
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-theorem memℓp_shift (f : L2Z) (m : ℤ) : Memℓp (fun k : ℤ => (f : ℤ → ℂ) (k + m)) 2 := by
-  apply memℓp_gen
-  exact ((Equiv.addRight m).summable_iff).2 ((lp.memℓp f).summable (p := 2) (by norm_num))
+/-! ## The natural domain of a multiplication operator -/
 
-/-- The lattice translation `(S_m f) k = f (k + m)`, as a linear map. -/
-noncomputable def shiftLin (m : ℤ) : L2Z →ₗ[ℂ] L2Z where
-  toFun f := ⟨fun k => (f : ℤ → ℂ) (k + m), memℓp_shift f m⟩
-  map_add' f g := by
+/-- The **natural domain** `D(f) = {ψ ∈ ℓ²(ℤ) : f·ψ ∈ ℓ²(ℤ)}` of multiplication
+by a real field `f`, as a submodule of `ℓ²(ℤ)`. -/
+def mulDomain (f : ℤ → ℝ) : Submodule ℂ L2Z where
+  carrier := {psi : L2Z | Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2}
+  zero_mem' := by
+    simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, mul_zero]
+    exact zero_memℓp
+  add_mem' := by
+    intro a b ha hb
+    have heq : (fun k => (f k : ℂ) * ((a + b : L2Z) : ℤ → ℂ) k)
+        = (fun k => (f k : ℂ) * (a : ℤ → ℂ) k) + fun k => (f k : ℂ) * (b : ℤ → ℂ) k := by
+      funext k
+      simp [mul_add]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.add hb
+  smul_mem' := by
+    intro c a ha
+    have heq : (fun k => (f k : ℂ) * ((c • a : L2Z) : ℤ → ℂ) k)
+        = c • fun k => (f k : ℂ) * (a : ℤ → ℂ) k := by
+      funext k
+      simp [mul_left_comm]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.const_smul c
+
+theorem mem_mulDomain_iff (f : ℤ → ℝ) (psi : L2Z) :
+    psi ∈ mulDomain f ↔ Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2 := Iff.rfl
+
+/-- Multiplication by `f`, on its natural domain. -/
+noncomputable def mulOp (f : ℤ → ℝ) : mulDomain f →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k, psi.2⟩
+  map_add' a b := by
     ext k
-    rfl
-  map_smul' c f := by ext k; simp
-
-@[simp] theorem shiftLin_apply (m : ℤ) (f : L2Z) (k : ℤ) :
-    ((shiftLin m f : L2Z) : ℤ → ℂ) k = (f : ℤ → ℂ) (k + m) := rfl
-
-theorem shiftLin_norm (m : ℤ) (f : L2Z) : ‖shiftLin m f‖ = ‖f‖ := by
-  have key : ‖shiftLin m f‖ ^ 2 = ‖f‖ ^ 2 := by
-    rw [norm_sq_eq_tsum, norm_sq_eq_tsum]
-    exact (Equiv.addRight m).tsum_eq fun k => ‖(f : ℤ → ℂ) k‖ ^ 2
-  have hpow : ‖shiftLin m f‖ ^ ((2 : ℕ) : ℝ) = ‖f‖ ^ ((2 : ℕ) : ℝ) := by
-    simpa only [Real.rpow_natCast] using key
-  exact Real.rpow_left_injOn (x := ((2 : ℕ) : ℝ)) (by norm_num)
-    (norm_nonneg _) (norm_nonneg _) hpow
-
-/-- **The lattice translation is a unitary of `ℓ²(ℤ)`.** -/
-noncomputable def shiftEquiv (m : ℤ) : L2Z ≃ₗᵢ[ℂ] L2Z where
-  toLinearEquiv :=
-    { shiftLin m with
-      invFun := shiftLin (-m)
-      left_inv := fun f => by ext k; simp
-      right_inv := fun f => by ext k; simp }
-  norm_map' := shiftLin_norm m
-
-/-- The lattice translation as a bounded operator. -/
-noncomputable def shiftOp (m : ℤ) : L2Z →L[ℂ] L2Z :=
-  (shiftEquiv m).toLinearIsometry.toContinuousLinearMap
-
-@[simp] theorem shiftOp_apply (m : ℤ) (f : L2Z) (k : ℤ) :
-    ((shiftOp m f : L2Z) : ℤ → ℂ) k = (f : ℤ → ℂ) (k + m) := rfl
-
-/-- Translations are adjoint to their inverses: `⟪S_m f, g⟫ = ⟪f, S_{-m} g⟫`. -/
-theorem inner_shiftOp_left (m : ℤ) (f g : L2Z) :
-    ⟪shiftOp m f, g⟫_ℂ = ⟪f, shiftOp (-m) g⟫_ℂ := by
-  have h := (shiftEquiv m).inner_map_map f (shiftLin (-m) g)
-  have hg : shiftEquiv m (shiftLin (-m) g) = g := by
+    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
     ext k
-    change (g : ℤ → ℂ) (k + m + -m) = (g : ℤ → ℂ) k
-    simp only [add_neg_cancel_right]
-  rw [hg] at h
-  exact h
+    simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply, Submodule.coe_smul]
+    ring
 
-/-! ## The momentum operator -/
+@[simp] theorem mulOp_apply (f : ℤ → ℝ) (psi : mulDomain f) (k : ℤ) :
+    ((mulOp f psi : L2Z) : ℤ → ℂ) k = (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k := rfl
 
-/-- The **symmetric-difference momentum** on the infinite lattice:
-`(p f) k = -(i/2) (f (k+1) - f (k-1))`. -/
-noncomputable def momentum : L2Z →L[ℂ] L2Z :=
-  (-Complex.I / 2) • (shiftOp 1 - shiftOp (-1))
-
-theorem momentum_apply (f : L2Z) (k : ℤ) :
-    ((momentum f : L2Z) : ℤ → ℂ) k
-      = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) := by
-  simp only [momentum, smul_apply, ContinuousLinearMap.sub_apply,
-    lp.coeFn_smul, lp.coeFn_sub, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, shiftOp_apply]
-  congr 2
-
-/-- **The momentum operator is self-adjoint.** -/
-theorem momentum_isSymmetric : (momentum : L2Z →ₗ[ℂ] L2Z).IsSymmetric := by
-  intro f g
-  have h1 := inner_shiftOp_left 1 f g
-  have h2 := inner_shiftOp_left (-1) f g
-  simp only [momentum, ContinuousLinearMap.coe_coe, ContinuousLinearMap.smul_apply,
-    ContinuousLinearMap.sub_apply, inner_smul_left, inner_smul_right, inner_sub_left,
-    inner_sub_right, h1, h2, neg_neg]
-  simp only [map_div₀, map_neg, Complex.conj_I, Complex.conj_ofNat]
+/-- **The operator is symmetric on its domain.** -/
+theorem mulOp_symmetric (f : ℤ → ℝ) (psi phi : mulDomain f) :
+    ⟪mulOp f psi, (phi : L2Z)⟫_ℂ = ⟪(psi : L2Z), mulOp f phi⟫_ℂ := by
+  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
+  refine tsum_congr fun k => ?_
+  simp only [mulOp_apply, RCLike.inner_apply, map_mul, Complex.conj_ofReal]
   ring
 
-theorem momentum_isSelfAdjoint : IsSelfAdjoint momentum :=
-  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 momentum_isSymmetric
+/-! ## The domain is dense -/
 
-/-! ## The velocity (multiplication) operator -/
+/-- Every basis vector lies in every natural domain. -/
+theorem single_mem_mulDomain (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    lp.single 2 n c ∈ mulDomain f := by
+  refine memℓp_gen (summable_of_ne_finset_zero (s := {n}) ?_)
+  intro j hj
+  have hjn : j ≠ n := by simpa using hj
+  simp [lp.single_apply, hjn]
 
-theorem velocity_bound (v : LinfZ) (k : ℤ) : |(v : ℤ → ℝ) k| ≤ ‖v‖ := by
-  simpa [Real.norm_eq_abs] using lp.norm_apply_le_norm (by simp) v k
+/-- Each finite truncation of a vector lies in the domain. -/
+theorem sum_single_mem_mulDomain (f : ℤ → ℝ) (psi : L2Z) (s : Finset ℤ) :
+    (∑ i ∈ s, lp.single 2 i ((psi : ℤ → ℂ) i)) ∈ mulDomain f :=
+  Submodule.sum_mem _ fun i _ => single_mem_mulDomain f i _
 
-theorem memℓp_mul (v : LinfZ) (f : L2Z) :
-    Memℓp (fun k : ℤ => ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k) 2 := by
-  refine memℓp_two_of_summable (Summable.of_nonneg_of_le (fun k => by positivity) (fun k => ?_)
-    ((summable_normSq f).mul_left (‖v‖ ^ 2)))
-  have hnorm : ‖((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k‖ = |(v : ℤ → ℝ) k| * ‖(f : ℤ → ℂ) k‖ := by
-    simp [Complex.norm_real]
-  rw [hnorm, mul_pow]
-  have h1 : |(v : ℤ → ℝ) k| ^ 2 ≤ ‖v‖ ^ 2 := by
-    nlinarith [abs_nonneg ((v : ℤ → ℝ) k), velocity_bound v k]
-  nlinarith [sq_nonneg ‖(f : ℤ → ℂ) k‖]
+/-- **The natural domain is dense in `ℓ²(ℤ)`** — the operator is densely
+defined, as an unbounded operator must be for its adjoint to exist. -/
+theorem mulDomain_dense (f : ℤ → ℝ) : Dense ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  intro psi
+  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) psi) ?_
+  filter_upwards with s using sum_single_mem_mulDomain f psi s
 
-/-- Multiplication by a bounded real velocity field, as a linear map. -/
-noncomputable def velocityLin (v : LinfZ) : L2Z →ₗ[ℂ] L2Z where
-  toFun f := ⟨fun k => ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k, memℓp_mul v f⟩
-  map_add' f g := by
+/-! ## The position field really is unbounded -/
+
+/-- The lattice **position field** `x̂ : k ↦ k`. -/
+def positionField : ℤ → ℝ := fun k => (k : ℝ)
+
+theorem mulOp_single (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    mulOp f ⟨lp.single 2 n c, single_mem_mulDomain f n c⟩ = lp.single 2 n ((f n : ℂ) * c) := by
+  ext k
+  by_cases hk : k = n
+  · subst hk
+    simp [lp.single_apply]
+  · simp [lp.single_apply, hk]
+
+/-- **The position operator is unbounded**: there is no constant `C` with
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  The basis vectors `e_n` are unit vectors with
+`‖x̂ e_n‖ = |n|`. -/
+theorem position_unbounded :
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := exists_nat_gt C
+  have hmem := single_mem_mulDomain positionField (n : ℤ) (1 : ℂ)
+  have h := hC ⟨lp.single 2 (n : ℤ) (1 : ℂ), hmem⟩
+  rw [mulOp_single positionField (n : ℤ) (1 : ℂ)] at h
+  rw [lp.norm_single (by norm_num), lp.norm_single (by norm_num)] at h
+  simp only [positionField, mul_one, norm_one] at h
+  simp only [Complex.norm_real, Real.norm_eq_abs] at h
+  rw [abs_of_nonneg (by positivity)] at h
+  push_cast at h
+  linarith
+
+/-! ## The adjoint: the maximal multiplication operator is self-adjoint -/
+
+theorem inner_single_left (phi : L2Z) (k : ℤ) (c : ℂ) :
+    ⟪(lp.single 2 k c : L2Z), phi⟫_ℂ = (starRingEnd ℂ) c * (phi : ℤ → ℂ) k := by
+  rw [lp.inner_eq_tsum, tsum_eq_single k (by intro j hj; simp [lp.single_apply, hj])]
+  simp [lp.single_apply, RCLike.inner_apply, mul_comm]
+
+/-- **The adjoint acts by multiplication, on no larger a domain.**  If `φ` is paired
+with some `η ∈ ℓ²(ℤ)` against the whole domain, then `η = f·φ` pointwise — so
+`f·φ` is square-summable and `φ` already lies in the natural domain. -/
+theorem mulOp_adjoint_apply (f : ℤ → ℝ) {phi eta : L2Z}
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
+  have hpt : ∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k := by
+    intro k
+    have hk := h ⟨lp.single 2 k (1 : ℂ), single_mem_mulDomain f k 1⟩
+    rw [mulOp_single f k (1 : ℂ), inner_single_left, inner_single_left] at hk
+    simpa [Complex.conj_ofReal] using hk
+  refine ⟨hpt, ?_⟩
+  change Memℓp _ 2
+  have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta : ℤ f,pht import Mathlib
+
+/-!
+# The unbounded layer: a self-adjoint operator on `ℓ²(ℤ)` and the group it generates
+
+Source: the *Boundary* paragraphs of proof plan appendix §E
+(`Book/ProofPlans.lean`) and the `ConditionalUnitary` chapter — everything the
+book formalizes about the dynamics-based unitary is carried by *bounded*
+operators (matrices on the cyclic lattice in
+`BookProof.ChapterContinuityUnitary`, bounded operators on `ℓ²(ℤ)` in
+`BookProof.ChapterContinuityUnitaryInfinite`, a bounded self-adjoint generator on
+`L²(μ)` in `BookProof.ChapterBornMeasure`).  The remaining open layer is
+*unboundedness*.
+
+This module makes that layer precise rather than rhetorical.  For a real
+"multiplier" `f : ℤ → ℝ` — the lattice position field `f k = k` being the case of
+interest — it builds the multiplication operator on its **natural domain**
+
+  `D(f) = {ψ ∈ ℓ²(ℤ) : f · ψ ∈ ℓ²(ℤ)}`
+
+(a submodule, `mulDomain`), proves that this domain is **dense**
+(`mulDomain_dense`, via the finitely supported vectors), that the operator is
+**symmetric** on it (`mulOp_symmetric`), and that for the position field it is
+genuinely **unbounded** (`position_unbounded`): no constant `C` satisfies
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  So the object here is not a bounded operator in
+disguise; it is the first honest instance of the unbounded layer, and
+`position_not_boundedOperator` records that it is not the restriction of any
+bounded operator either.
+
+The module then goes past symmetry in the two directions that matter for the
+book's claim.
+
+* **Self-adjointness.**  `adjointDomain_eq_mulDomain` shows the adjoint domain is
+  *exactly* `D(f)` — nothing larger — and `adjoint_eq_mulOp` shows the adjoint
+  acts by multiplication there.  So the maximal multiplication operator, position
+  included, is a genuine self-adjoint observable, not merely a symmetric one.
+* **The unitary group.**  `phaseUnitary f t` is the pointwise phase
+  `ψ k ↦ exp(i t f k) ψ k`, a `LinearIsometryEquiv` of `ℓ²(ℤ)`
+  (`phaseUnitary_zero`, `phaseUnitary_add` give the one-parameter group law),
+  strongly continuous at `0` for *every* state (`tendsto_phaseUnitary`), whose
+  generator is the unbounded operator: for `ψ ∈ D(f)` the difference quotient
+  converges in `ℓ²(ℤ)` to `i·f·ψ` (`tendsto_slope_phaseUnitary`), which is
+  Stone's relation `dU/dt|₀ = iA` for an unbounded self-adjoint `A`.
+
+What therefore remains genuinely open is *not* "symmetric ⟹ self-adjoint ⟹ a
+unitary group" — that implication is discharged here for multiplication
+operators — but the same package for unbounded operators that are not
+multiplication operators in the ambient basis (a continuum Laplacian, say), i.e.
+Stone's theorem in full generality.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`).
+-/
+
+open scoped ENNReal InnerProductSpace
+
+namespace BookProof.ChapterUnboundedPosition
+
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
+/-! ## The natural domain of a multiplication operator -/
+
+/-- The **natural domain** `D(f) = {ψ ∈ ℓ²(ℤ) : f·ψ ∈ ℓ²(ℤ)}` of multiplication
+by a real field `f`, as a submodule of `ℓ²(ℤ)`. -/
+def mulDomain (f : ℤ → ℝ) : Submodule ℂ L2Z where
+  carrier := {psi : L2Z | Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2}
+  zero_mem' := by
+    simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, mul_zero]
+    exact zero_memℓp
+  add_mem' := by
+    intro a b ha hb
+    have heq : (fun k => (f k : ℂ) * ((a + b : L2Z) : ℤ → ℂ) k)
+        = (fun k => (f k : ℂ) * (a : ℤ → ℂ) k) + fun k => (f k : ℂ) * (b : ℤ → ℂ) k := by
+      funext k
+      simp [mul_add]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.add hb
+  smul_mem' := by
+    intro c a ha
+    have heq : (fun k => (f k : ℂ) * ((c • a : L2Z) : ℤ → ℂ) k)
+        = c • fun k => (f k : ℂ) * (a : ℤ → ℂ) k := by
+      funext k
+      simp [mul_left_comm]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.const_smul c
+
+theorem mem_mulDomain_iff (f : ℤ → ℝ) (psi : L2Z) :
+    psi ∈ mulDomain f ↔ Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2 := Iff.rfl
+
+/-- Multiplication by `f`, on its natural domain. -/
+noncomputable def mulOp (f : ℤ → ℝ) : mulDomain f →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k, psi.2⟩
+  map_add' a b := by
     ext k
-    simp only [lp.coeFn_add, Pi.add_apply, mul_add]
-  map_smul' c f := by
+    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
+    ext k
+    simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply, Submodule.coe_smul]
+    ring
+
+@[simp] theorem mulOp_apply (f : ℤ → ℝ) (psi : mulDomain f) (k : ℤ) :
+    ((mulOp f psi : L2Z) : ℤ → ℂ) k = (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k := rfl
+
+/-- **The operator is symmetric on its domain.** -/
+theorem mulOp_symmetric (f : ℤ → ℝ) (psi phi : mulDomain f) :
+    ⟪mulOp f psi, (phi : L2Z)⟫_ℂ = ⟪(psi : L2Z), mulOp f phi⟫_ℂ := by
+  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
+  refine tsum_congr fun k => ?_
+  simp only [mulOp_apply, RCLike.inner_apply, map_mul, Complex.conj_ofReal]
+  ring
+
+/-! ## The domain is dense -/
+
+/-- Every basis vector lies in every natural domain. -/
+theorem single_mem_mulDomain (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    lp.single 2 n c ∈ mulDomain f := by
+  refine memℓp_gen (summable_of_ne_finset_zero (s := {n}) ?_)
+  intro j hj
+  have hjn : j ≠ n := by simpa using hj
+  simp [lp.single_apply, hjn]
+
+/-- Each finite truncation of a vector lies in the domain. -/
+theorem sum_single_mem_mulDomain (f : ℤ → ℝ) (psi : L2Z) (s : Finset ℤ) :
+    (∑ i ∈ s, lp.single 2 i ((psi : ℤ → ℂ) i)) ∈ mulDomain f :=
+  Submodule.sum_mem _ fun i _ => single_mem_mulDomain f i _
+
+/-- **The natural domain is dense in `ℓ²(ℤ)`** — the operator is densely
+defined, as an unbounded operator must be for its adjoint to exist. -/
+theorem mulDomain_dense (f : ℤ → ℝ) : Dense ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  intro psi
+  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) psi) ?_
+  filter_upwards with s using sum_single_mem_mulDomain f psi s
+
+/-! ## The position field really is unbounded -/
+
+/-- The lattice **position field** `x̂ : k ↦ k`. -/
+def positionField : ℤ → ℝ := fun k => (k : ℝ)
+
+theorem mulOp_single (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    mulOp f ⟨lp.single 2 n c, single_mem_mulDomain f n c⟩ = lp.single 2 n ((f n : ℂ) * c) := by
+  ext k
+  by_cases hk : k = n
+  · subst hk
+    simp [lp.single_apply]
+  · simp [lp.single_apply, hk]
+
+/-- **The position operator is unbounded**: there is no constant `C` with
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  The basis vectors `e_n` are unit vectors with
+`‖x̂ e_n‖ = |n|`. -/
+theorem position_unbounded :
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := exists_nat_gt C
+  have hmem := single_mem_mulDomain positionField (n : ℤ) (1 : ℂ)
+  have h := hC ⟨lp.single 2 (n : ℤ) (1 : ℂ), hmem⟩
+  rw [mulOp_single positionField (n : ℤ) (1 : ℂ)] at h
+  rw [lp.norm_single (by norm_num), lp.norm_single (by norm_num)] at h
+  simp only [positionField, mul_one, norm_one] at h
+  simp only [Complex.norm_real, Real.norm_eq_abs] at h
+  rw [abs_of_nonneg (by positivity)] at h
+  push_cast at h
+  linarith
+
+/-! ## The adjoint: the maximal multiplication operator is self-adjoint -/
+
+theorem inner_single_left (phi : L2Z) (k : ℤ) (c : ℂ) :
+    ⟪(lp.single 2 k c : L2Z), phi⟫_ℂ = (starRingEnd ℂ) c * (phi : ℤ → ℂ) k := by
+  rw [lp.inner_eq_tsum, tsum_eq_single k (by intro j hj; simp [lp.single_apply, hj])]
+  simp [lp.single_apply, RCLike.inner_apply, mul_comm]
+
+/-- **The adjoint acts by multiplication, on no larger a domain.**  If `φ` is paired
+with some `η ∈ ℓ²(ℤ)` against the whole domain, then `η = f·φ` pointwise — so
+`f·φ` is square-summable and `φ` already lies in the natural domain. -/
+theorem mulOp_adjoint_apply (f : ℤ → ℝ) {phi eta : L2Z}
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
+  have hpt : ∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k := by
+    intro k
+    have hk := h ⟨lp.single 2 k (1 : ℂ), single_mem_mulDomain f k 1⟩
+    rw [mulOp_single f k (1 : ℂ), inner_single_left, inner_single_left] at hk
+    simpa [Complex.conj_ofReal] using hk
+  refine ⟨hpt, ?_⟩
+  change Memℓp _ 2
+  have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta : ℤ → ℂ) := funext hpt
+  rw [hfun]
+  exact lp.memℓp eta
+
+/-- The domain of the adjoint of multiplication by `f`. -/
+def adjointDomain (f : ℤ → ℝ) : Set L2Z :=
+  {phi | ∃ eta : L2Z, ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ}
+
+/-- **The maximal multiplication operator is self-adjoint**: the adjoint domain is
+exactly the natural domain.  In particular the lattice position operator — densely
+defined, symmetric and unbounded — is a *self-adjoint* observable, not merely a
+symmetric one. -/
+theorem adjointDomain_eq_mulDomain (f : ℤ → ℝ) :
+    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  ext phi
+  constructor
+  · rintro ⟨eta, h⟩
+    exact (mulOp_adjoint_apply f h).2
+  · intro hphi
+    exact ⟨mulOp f ⟨phi, hphi⟩, fun psi => mulOp_symmetric f psi ⟨phi, hphi⟩⟩
+
+/-- ... and on that domain the adjoint *is* the operator: any `η` implementing the
+adjoint pairing equals `f·φ`. -/
+theorem adjoint_eq_mulOp (f : ℤ → ℝ) {phi eta : L2Z} (hphi : phi ∈ mulDomain f)
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    eta = mulOp f ⟨phi, hphi⟩ := by
+  refine lp.ext (funext fun k => ?_)
+  exact ((mulOp_adjoint_apply f h).1 k).symm
+
+/-- The position operator is not the restriction of any bounded operator on
+`ℓ²(ℤ)`: a bounded operator would supply exactly the constant that
+`position_unbounded` forbids. -/
+theorem position_not_boundedOperator :
+    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
+      mulOp positionField psi = T (psi : L2Z) := by
+  rintro ⟨T, hT⟩
+  refine position_unbounded ⟨‖T‖, fun psi => ?_⟩
+  rw [hT psi]
+  exact T.le_opNorm _
+
+/-! ## The import Mathlib
+
+/-!
+# The unbounded layer: a self-adjoint operator on `ℓ²(ℤ)` and the group it generates
+
+Source: the *Boundary* paragraphs of proof plan appendix §E
+(`Book/ProofPlans.lean`) and the `ConditionalUnitary` chapter — everything the
+book formalizes about the dynamics-based unitary is carried by *bounded*
+operators (matrices on the cyclic lattice in
+`BookProof.ChapterContinuityUnitary`, bounded operators on `ℓ²(ℤ)` in
+`BookProof.ChapterContinuityUnitaryInfinite`, a bounded self-adjoint generator on
+`L²(μ)` in `BookProof.ChapterBornMeasure`).  The remaining open layer is
+*unboundedness*.
+
+This module makes that layer precise rather than rhetorical.  For a real
+"multiplier" `f : ℤ → ℝ` — the lattice position field `f k = k` being the case of
+interest — it builds the multiplication operator on its **natural domain**
+
+  `D(f) = {ψ ∈ ℓ²(ℤ) : f · ψ ∈ ℓ²(ℤ)}`
+
+(a submodule, `mulDomain`), proves that this domain is **dense**
+(`mulDomain_dense`, via the finitely supported vectors), that the operator is
+**symmetric** on it (`mulOp_symmetric`), and that for the position field it is
+genuinely **unbounded** (`position_unbounded`): no constant `C` satisfies
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  So the object here is not a bounded operator in
+disguise; it is the first honest instance of the unbounded layer, and
+`position_not_boundedOperator` records that it is not the restriction of any
+bounded operator either.
+
+The module then goes past symmetry in the two directions that matter for the
+book's claim.
+
+* **Self-adjointness.**  `adjointDomain_eq_mulDomain` shows the adjoint domain is
+  *exactly* `D(f)` — nothing larger — and `adjoint_eq_mulOp` shows the adjoint
+  acts by multiplication there.  So the maximal multiplication operator, position
+  included, is a genuine self-adjoint observable, not merely a symmetric one.
+* **The unitary group.**  `phaseUnitary f t` is the pointwise phase
+  `ψ k ↦ exp(i t f k) ψ k`, a `LinearIsometryEquiv` of `ℓ²(ℤ)`
+  (`phaseUnitary_zero`, `phaseUnitary_add` give the one-parameter group law),
+  strongly continuous at `0` for *every* state (`tendsto_phaseUnitary`), whose
+  generator is the unbounded operator: for `ψ ∈ D(f)` the difference quotient
+  converges in `ℓ²(ℤ)` to `i·f·ψ` (`tendsto_slope_phaseUnitary`), which is
+  Stone's relation `dU/dt|₀ = iA` for an unbounded self-adjoint `A`.
+
+What therefore remains genuinely open is *not* "symmetric ⟹ self-adjoint ⟹ a
+unitary group" — that implication is discharged here for multiplication
+operators — but the same package for unbounded operators that are not
+multiplication operators in the ambient basis (a continuum Laplacian, say), i.e.
+Stone's theorem in full generality.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`).
+-/
+
+open scoped ENNReal InnerProductSpace
+
+namespace BookProof.ChapterUnboundedPosition
+
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
+/-! ## The natural domain of a multiplication operator -/
+
+/-- The **natural domain** `D(f) = {ψ ∈ ℓ²(ℤ) : f·ψ ∈ ℓ²(ℤ)}` of multiplication
+by a real field `f`, as a submodule of `ℓ²(ℤ)`. -/
+def mulDomain (f : ℤ → ℝ) : Submodule ℂ L2Z where
+  carrier := {psi : L2Z | Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2}
+  zero_mem' := by
+    simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, mul_zero]
+    exact zero_memℓp
+  add_mem' := by
+    intro a b ha hb
+    have heq : (fun k => (f k : ℂ) * ((a + b : L2Z) : ℤ → ℂ) k)
+        = (fun k => (f k : ℂ) * (a : ℤ → ℂ) k) + fun k => (f k : ℂ) * (b : ℤ → ℂ) k := by
+      funext k
+      simp [mul_add]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.add hb
+  smul_mem' := by
+    intro c a ha
+    have heq : (fun k => (f k : ℂ) * ((c • a : L2Z) : ℤ → ℂ) k)
+        = c • fun k => (f k : ℂ) * (a : ℤ → ℂ) k := by
+      funext k
+      simp [mul_left_comm]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.const_smul c
+
+theorem mem_mulDomain_iff (f : ℤ → ℝ) (psi : L2Z) :
+    psi ∈ mulDomain f ↔ Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2 := Iff.rfl
+
+/-- Multiplication by `f`, on its natural domain. -/
+noncomputable def mulOp (f : ℤ → ℝ) : mulDomain f →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k, psi.2⟩
+  map_add' a b := by
+    ext k
+    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
+    ext k
+    simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply, Submodule.coe_smul]
+    ring
+
+@[simp] theorem mulOp_apply (f : ℤ → ℝ) (psi : mulDomain f) (k : ℤ) :
+    ((mulOp f psi : L2Z) : ℤ → ℂ) k = (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k := rfl
+
+/-- **The operator is symmetric on its domain.** -/
+theorem mulOp_symmetric (f : ℤ → ℝ) (psi phi : mulDomain f) :
+    ⟪mulOp f psi, (phi : L2Z)⟫_ℂ = ⟪(psi : L2Z), mulOp f phi⟫_ℂ := by
+  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
+  refine tsum_congr fun k => ?_
+  simp only [mulOp_apply, RCLike.inner_apply, map_mul, Complex.conj_ofReal]
+  ring
+
+/-! ## The domain is dense -/
+
+/-- Every basis vector lies in every natural domain. -/
+theorem single_mem_mulDomain (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    lp.single 2 n c ∈ mulDomain f := by
+  refine memℓp_gen (summable_of_ne_finset_zero (s := {n}) ?_)
+  intro j hj
+  have hjn : j ≠ n := by simpa using hj
+  simp [lp.single_apply, hjn]
+
+/-- Each finite truncation of a vector lies in the domain. -/
+theorem sum_single_mem_mulDomain (f : ℤ → ℝ) (psi : L2Z) (s : Finset ℤ) :
+    (∑ i ∈ s, lp.single 2 i ((psi : ℤ → ℂ) i)) ∈ mulDomain f :=
+  Submodule.sum_mem _ fun i _ => single_mem_mulDomain f i _
+
+/-- **The natural domain is dense in `ℓ²(ℤ)`** — the operator is densely
+defined, as an unbounded operator must be for its adjoint to exist. -/
+theorem mulDomain_dense (f : ℤ → ℝ) : Dense ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  intro psi
+  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) psi) ?_
+  filter_upwards with s using sum_single_mem_mulDomain f psi s
+
+/-! ## The position field really is unbounded -/
+
+/-- The lattice **position field** `x̂ : k ↦ k`. -/
+def positionField : ℤ → ℝ := fun k => (k : ℝ)
+
+theorem mulOp_single (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    mulOp f ⟨lp.single 2 n c, single_mem_mulDomain f n c⟩ = lp.single 2 n ((f n : ℂ) * c) := by
+  ext k
+  by_cases hk : k = n
+  · subst hk
+    simp [lp.single_apply]
+  · simp [lp.single_apply, hk]
+
+/-- **The position operator is unbounded**: there is no constant `C` with
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  The basis vectors `e_n` are unit vectors with
+`‖x̂ e_n‖ = |n|`. -/
+theorem position_unbounded :
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := exists_nat_gt C
+  have hmem := single_mem_mulDomain positionField (n : ℤ) (1 : ℂ)
+  have h := hC ⟨lp.single 2 (n : ℤ) (1 : ℂ), hmem⟩
+  rw [mulOp_single positionField (n : ℤ) (1 : ℂ)] at h
+  rw [lp.norm_single (by norm_num), lp.norm_single (by norm_num)] at h
+  simp only [positionField, mul_one, norm_one] at h
+  simp only [Complex.norm_real, Real.norm_eq_abs] at h
+  rw [abs_of_nonneg (by positivity)] at h
+  push_cast at h
+  linarith
+
+/-! ## The adjoint: the maximal multiplication operator is self-adjoint -/
+
+theorem inner_single_left (phi : L2Z) (k : ℤ) (c : ℂ) :
+    ⟪(lp.single 2 k c : L2Z), phi⟫_ℂ = (starRingEnd ℂ) c * (phi : ℤ → ℂ) k := by
+  rw [lp.inner_eq_tsum, tsum_eq_single k (by intro j hj; simp [lp.single_apply, hj])]
+  simp [lp.single_apply, RCLike.inner_apply, mul_comm]
+
+/-- **The adjoint acts by multiplication, on no larger a domain.**  If `φ` is paired
+with some `η ∈ ℓ²(ℤ)` against the whole domain, then `η = f·φ` pointwise — so
+`f·φ` is square-summable and `φ` already lies in the natural domain. -/
+theorem mulOp_adjoint_apply (f : ℤ → ℝ) {phi eta : L2Z}
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
+  have hpt : ∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k := by
+    intro k
+    have hk := h ⟨lp.single 2 k (1 : ℂ), single_mem_mulDomain f k 1⟩
+    rw [mulOp_single f k (1 : ℂ), inner_single_left, inner_single_left] at hk
+    simpa [Complex.conj_ofReal] using hk
+  refine ⟨hpt, ?_⟩
+  change Memℓp _ 2
+  have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta : ℤ → ℂ) := funext hpt
+  rw [hfun]
+  exact lp.memℓp eta
+
+/-- The domain of the adjoint of multiplication by `f`. -/
+def adjointDomain (f : ℤ → ℝ) : Set L2Z :=
+  {phi | ∃ eta : L2Z, ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ}
+
+/-- **The maximal multiplication operator is self-adjoint**: the adjoint domain is
+exactly the natural domain.  In particular the lattice position operator — densely
+defined, symmetric and unbounded — is a *self-adjoint* observable, not merely a
+symmetric one. -/
+theorem adjointDomain_eq_mulDomain (f : ℤ → ℝ) :
+    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  ext phi
+  constructor
+  · rintro ⟨eta, h⟩
+    exact (mulOp_adjoint_apply f h).2
+  · intro hphi
+    exact ⟨mulOp f ⟨phi, hphi⟩, fun psi => mulOp_symmetric f psi ⟨phi, hphi⟩⟩
+
+/-- ... and on that domain the adjoint *is* the operator: any `η` implementing the
+adjoint pairing equals `f·φ`. -/
+theorem adjoint_eq_mulOp (f : ℤ → ℝ) {phi eta : L2Z} (hphi : phi ∈ mulDomain f)
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    eta = mulOp f ⟨phi, hphi⟩ := by
+  refine lp.ext (funext fun k => ?_)
+  exact ((mulOp_adjoint_apply f h).1 k).symm
+
+/-- The position operator is not the restriction of any bounded operator on
+`ℓ²(ℤ)`: a bounded operator would supply exactly the constant that
+`position_unbounded` forbids. -/
+theorem position_not_boundedOperator :
+    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
+      mulOp positionField psi = T (psi : L2Z) := by
+  rintro ⟨T, hT⟩
+  refine position_unbounded ⟨‖T‖, fun psi => ?_⟩
+  rw [hT psi]
+  exact T.le_opNorm _
+
+/-! ## The unitary group generated by the multiplication operator -/
+
+/-- The phase `e^{i t f k}` of the group generated by multiplication by `f`. -/
+noncomputable def phase (f : ℤ → ℝ) (t : ℝ) (k : ℤ) : ℂ :=
+  Complex.exp (Complex.I * ((t * f k : ℝ) : ℂ))
+
+theorem norm_phase (f : ℤ → ℝ) (t : ℝ) (k : ℤ) : ‖phase f t k‖ = 1 :=
+  Complex.norm_exp_I_mul_ofReal _
+
+theorem continuous_phase (f : ℤ → ℝ) (k : ℤ) : Continuous fun t : ℝ => phase f t k := by
+  unfold phase
+  fun_prop
+
+theorem memℓp_phase (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) :
+    Memℓp (fun k => phase f t k * (psi : ℤ → ℂ) k) 2 := by
+  refine BookProof.ChapterContinuityUnitaryInfinite.memℓp_two_of_summable ?_
+  have h : ∀ k : ℤ, ‖phase f t k * (psi : ℤ → ℂ) k‖ ^ 2 = ‖(psi : ℤ → ℂ) k‖ ^ 2 := by
+    intro k
+    rw [norm_mul, norm_phase, one_mul]
+  simpa only [h] using BookProof.ChapterContinuityUnitaryInfinite.summable_normSq psi
+
+/-- Multiplication by the phase `e^{i t f}`, as a linear map. -/
+noncomputable def phaseLin (f : ℤ → ℝ) (t : ℝ) : L2Z →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => phase f t k * (psi : ℤ → ℂ) k, memℓp_phase f t psi⟩
+  map_add' a b := by
+    ext k
+    simp only [lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := import Mathlib
+
+/-!
+# The unbounded layer: a self-adjoint operator on `ℓ²(ℤ)` and the group it generates
+
+Source: the *Boundary* paragraphs of proof plan appendix §E
+(`Book/ProofPlans.lean`) and the `ConditionalUnitary` chapter — everything the
+book formalizes about the dynamics-based unitary is carried by *bounded*
+operators (matrices on the cyclic lattice in
+`BookProof.ChapterContinuityUnitary`, bounded operators on `ℓ²(ℤ)` in
+`BookProof.ChapterContinuityUnitaryInfinite`, a bounded self-adjoint generator on
+`L²(μ)` in `BookProof.ChapterBornMeasure`).  The remaining open layer is
+*unboundedness*.
+
+This module makes that layer precise rather than rhetorical.  For a real
+"multiplier" `f : ℤ → ℝ` — the lattice position field `f k = k` being the case of
+interest — it builds the multiplication operator on its **natural domain**
+
+  `D(f) = {ψ ∈ ℓ²(ℤ) : f · ψ ∈ ℓ²(ℤ)}`
+
+(a submodule, `mulDomain`), proves that this domain is **dense**
+(`mulDomain_dense`, via the finitely supported vectors), that the operator is
+**symmetric** on it (`mulOp_symmetric`), and that for the position field it is
+genuinely **unbounded** (`position_unbounded`): no constant `C` satisfies
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  So the object here is not a bounded operator in
+disguise; it is the first honest instance of the unbounded layer, and
+`position_not_boundedOperator` records that it is not the restriction of any
+bounded operator either.
+
+The module then goes past symmetry in the two directions that matter for the
+book's claim.
+
+* **Self-adjointness.**  `adjointDomain_eq_mulDomain` shows the adjoint domain is
+  *exactly* `D(f)` — nothing larger — and `adjoint_eq_mulOp` shows the adjoint
+  acts by multiplication there.  So the maximal multiplication operator, position
+  included, is a genuine self-adjoint observable, not merely a symmetric one.
+* **The unitary group.**  `phaseUnitary f t` is the pointwise phase
+  `ψ k ↦ exp(i t f k) ψ k`, a `LinearIsometryEquiv` of `ℓ²(ℤ)`
+  (`phaseUnitary_zero`, `phaseUnitary_add` give the one-parameter group law),
+  strongly continuous at `0` for *every* state (`tendsto_phaseUnitary`), whose
+  generator is the unbounded operator: for `ψ ∈ D(f)` the difference quotient
+  converges in `ℓ²(ℤ)` to `i·f·ψ` (`tendsto_slope_phaseUnitary`), which is
+  Stone's relation `dU/dt|₀ = iA` for an unbounded self-adjoint `A`.
+
+What therefore remains genuinely open is *not* "symmetric ⟹ self-adjoint ⟹ a
+unitary group" — that implication is discharged here for multiplication
+operators — but the same package for unbounded operators that are not
+multiplication operators in the ambient basis (a continuum Laplacian, say), i.e.
+Stone's theorem in full generality.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`).
+-/
+
+open scoped ENNReal InnerProductSpace
+
+namespace BookProof.ChapterUnboundedPosition
+
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
+/-! ## The natural domain of a multiplication operator -/
+
+/-- The **natural domain** `D(f) = {ψ ∈ ℓ²(ℤ) : f·ψ ∈ ℓ²(ℤ)}` of multiplication
+by a real field `f`, as a submodule of `ℓ²(ℤ)`. -/
+def mulDomain (f : ℤ → ℝ) : Submodule ℂ L2Z where
+  carrier := {psi : L2Z | Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2}
+  zero_mem' := by
+    simp only [Set.mem_setOf_eq, lp.coeFn_zero, Pi.zero_apply, mul_zero]
+    exact zero_memℓp
+  add_mem' := by
+    intro a b ha hb
+    have heq : (fun k => (f k : ℂ) * ((a + b : L2Z) : ℤ → ℂ) k)
+        = (fun k => (f k : ℂ) * (a : ℤ → ℂ) k) + fun k => (f k : ℂ) * (b : ℤ → ℂ) k := by
+      funext k
+      simp [mul_add]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.add hb
+  smul_mem' := by
+    intro c a ha
+    have heq : (fun k => (f k : ℂ) * ((c • a : L2Z) : ℤ → ℂ) k)
+        = c • fun k => (f k : ℂ) * (a : ℤ → ℂ) k := by
+      funext k
+      simp [mul_left_comm]
+    change Memℓp _ 2
+    rw [heq]
+    exact ha.const_smul c
+
+theorem mem_mulDomain_iff (f : ℤ → ℝ) (psi : L2Z) :
+    psi ∈ mulDomain f ↔ Memℓp (fun k => (f k : ℂ) * (psi : ℤ → ℂ) k) 2 := Iff.rfl
+
+/-- Multiplication by `f`, on its natural domain. -/
+noncomputable def mulOp (f : ℤ → ℝ) : mulDomain f →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k, psi.2⟩
+  map_add' a b := by
+    ext k
+    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
+    ext k
+    simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply, Submodule.coe_smul]
+    ring
+
+@[simp] theorem mulOp_apply (f : ℤ → ℝ) (psi : mulDomain f) (k : ℤ) :
+    ((mulOp f psi : L2Z) : ℤ → ℂ) k = (f k : ℂ) * ((psi : L2Z) : ℤ → ℂ) k := rfl
+
+/-- **The operator is symmetric on its domain.** -/
+theorem mulOp_symmetric (f : ℤ → ℝ) (psi phi : mulDomain f) :
+    ⟪mulOp f psi, (phi : L2Z)⟫_ℂ = ⟪(psi : L2Z), mulOp f phi⟫_ℂ := by
+  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
+  refine tsum_congr fun k => ?_
+  simp only [mulOp_apply, RCLike.inner_apply, map_mul, Complex.conj_ofReal]
+  ring
+
+/-! ## The domain is dense -/
+
+/-- Every basis vector lies in every natural domain. -/
+theorem single_mem_mulDomain (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    lp.single 2 n c ∈ mulDomain f := by
+  refine memℓp_gen (summable_of_ne_finset_zero (s := {n}) ?_)
+  intro j hj
+  have hjn : j ≠ n := by simpa using hj
+  simp [lp.single_apply, hjn]
+
+/-- Each finite truncation of a vector lies in the domain. -/
+theorem sum_single_mem_mulDomain (f : ℤ → ℝ) (psi : L2Z) (s : Finset ℤ) :
+    (∑ i ∈ s, lp.single 2 i ((psi : ℤ → ℂ) i)) ∈ mulDomain f :=
+  Submodule.sum_mem _ fun i _ => single_mem_mulDomain f i _
+
+/-- **The natural domain is dense in `ℓ²(ℤ)`** — the operator is densely
+defined, as an unbounded operator must be for its adjoint to exist. -/
+theorem mulDomain_dense (f : ℤ → ℝ) : Dense ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  intro psi
+  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) psi) ?_
+  filter_upwards with s using sum_single_mem_mulDomain f psi s
+
+/-! ## The position field really is unbounded -/
+
+/-- The lattice **position field** `x̂ : k ↦ k`. -/
+def positionField : ℤ → ℝ := fun k => (k : ℝ)
+
+theorem mulOp_single (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    mulOp f ⟨lp.single 2 n c, single_mem_mulDomain f n c⟩ = lp.single 2 n ((f n : ℂ) * c) := by
+  ext k
+  by_cases hk : k = n
+  · subst hk
+    simp [lp.single_apply]
+  · simp [lp.single_apply, hk]
+
+/-- **The position operator is unbounded**: there is no constant `C` with
+`‖x̂ψ‖ ≤ C‖ψ‖` on the domain.  The basis vectors `e_n` are unit vectors with
+`‖x̂ e_n‖ = |n|`. -/
+theorem position_unbounded :
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := exists_nat_gt C
+  have hmem := single_mem_mulDomain positionField (n : ℤ) (1 : ℂ)
+  have h := hC ⟨lp.single 2 (n : ℤ) (1 : ℂ), hmem⟩
+  rw [mulOp_single positionField (n : ℤ) (1 : ℂ)] at h
+  rw [lp.norm_single (by norm_num), lp.norm_single (by norm_num)] at h
+  simp only [positionField, mul_one, norm_one] at h
+  simp only [Complex.norm_real, Real.norm_eq_abs] at h
+  rw [abs_of_nonneg (by positivity)] at h
+  push_cast at h
+  linarith
+
+/-! ## The adjoint: the maximal multiplication operator is self-adjoint -/
+
+theorem inner_single_left (phi : L2Z) (k : ℤ) (c : ℂ) :
+    ⟪(lp.single 2 k c : L2Z), phi⟫_ℂ = (starRingEnd ℂ) c * (phi : ℤ → ℂ) k := by
+  rw [lp.inner_eq_tsum, tsum_eq_single k (by intro j hj; simp [lp.single_apply, hj])]
+  simp [lp.single_apply, RCLike.inner_apply, mul_comm]
+
+/-- **The adjoint acts by multiplication, on no larger a domain.**  If `φ` is paired
+with some `η ∈ ℓ²(ℤ)` against the whole domain, then `η = f·φ` pointwise — so
+`f·φ` is square-summable and `φ` already lies in the natural domain. -/
+theorem mulOp_adjoint_apply (f : ℤ → ℝ) {phi eta : L2Z}
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
+  have hpt : ∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k := by
+    intro k
+    have hk := h ⟨lp.single 2 k (1 : ℂ), single_mem_mulDomain f k 1⟩
+    rw [mulOp_single f k (1 : ℂ), inner_single_left, inner_single_left] at hk
+    simpa [Complex.conj_ofReal] using hk
+  refine ⟨hpt, ?_⟩
+  change Memℓp _ 2
+  have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta : ℤ → ℂ) := funext hpt
+  rw [hfun]
+  exact lp.memℓp eta
+
+/-- The domain of the adjoint of multiplication by `f`. -/
+def adjointDomain (f : ℤ → ℝ) : Set L2Z :=
+  {phi | ∃ eta : L2Z, ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ}
+
+/-- **The maximal multiplication operator is self-adjoint**: the adjoint domain is
+exactly the natural domain.  In particular the lattice position operator — densely
+defined, symmetric and unbounded — is a *self-adjoint* observable, not merely a
+symmetric one. -/
+theorem adjointDomain_eq_mulDomain (f : ℤ → ℝ) :
+    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+  ext phi
+  constructor
+  · rintro ⟨eta, h⟩
+    exact (mulOp_adjoint_apply f h).2
+  · intro hphi
+    exact ⟨mulOp f ⟨phi, hphi⟩, fun psi => mulOp_symmetric f psi ⟨phi, hphi⟩⟩
+
+/-- ... and on that domain the adjoint *is* the operator: any `η` implementing the
+adjoint pairing equals `f·φ`. -/
+theorem adjoint_eq_mulOp (f : ℤ → ℝ) {phi eta : L2Z} (hphi : phi ∈ mulDomain f)
+    (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
+    eta = mulOp f ⟨phi, hphi⟩ := by
+  refine lp.ext (funext fun k => ?_)
+  exact ((mulOp_adjoint_apply f h).1 k).symm
+
+/-- The position operator is not the restriction of any bounded operator on
+`ℓ²(ℤ)`: a bounded operator would supply exactly the constant that
+`position_unbounded` forbids. -/
+theorem position_not_boundedOperator :
+    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
+      mulOp positionField psi = T (psi : L2Z) := by
+  rintro ⟨T, hT⟩
+  refine position_unbounded ⟨‖T‖, fun psi => ?_⟩
+  rw [hT psi]
+  exact T.le_opNorm _
+
+/-! ## The unitary group generated by the multiplication operator -/
+
+/-- The phase `e^{i t f k}` of the group generated by multiplication by `f`. -/
+noncomputable def phase (f : ℤ → ℝ) (t : ℝ) (k : ℤ) : ℂ :=
+  Complex.exp (Complex.I * ((t * f k : ℝ) : ℂ))
+
+theorem norm_phase (f : ℤ → ℝ) (t : ℝ) (k : ℤ) : ‖phase f t k‖ = 1 :=
+  Complex.norm_exp_I_mul_ofReal _
+
+theorem continuous_phase (f : ℤ → ℝ) (k : ℤ) : Continuous fun t : ℝ => phase f t k := by
+  unfold phase
+  fun_prop
+
+theorem memℓp_phase (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) :
+    Memℓp (fun k => phase f t k * (psi : ℤ → ℂ) k) 2 := by
+  refine BookProof.ChapterContinuityUnitaryInfinite.memℓp_two_of_summable ?_
+  have h : ∀ k : ℤ, ‖phase f t k * (psi : ℤ → ℂ) k‖ ^ 2 = ‖(psi : ℤ → ℂ) k‖ ^ 2 := by
+    intro k
+    rw [norm_mul, norm_phase, one_mul]
+  simpa only [h] using BookProof.ChapterContinuityUnitaryInfinite.summable_normSq psi
+
+/-- Multiplication by the phase `e^{i t f}`, as a linear map. -/
+noncomputable def phaseLin (f : ℤ → ℝ) (t : ℝ) : L2Z →ₗ[ℂ] L2Z where
+  toFun psi := ⟨fun k => phase f t k * (psi : ℤ → ℂ) k, memℓp_phase f t psi⟩
+  map_add' a b := by
+    ext k
+    simp only [lp.coeFn_add, Pi.add_apply]
+    ring
+  map_smul' c a := by
     ext k
     simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply]
     ring
 
-@[simp] theorem velocityLin_apply (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
+@[simp] theorem phaseLin_apply (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) (k : ℤ) :
+    ((phaseLin f t psi : L2Z) : ℤ → ℂ) k = phase f t k * (psi : ℤ → ℂ) k := rfl
 
-theorem velocityLin_norm_le (v : LinfZ) (f : L2Z) : ‖velocityLin v f‖ ≤ ‖v‖ * ‖f‖ := by
-  refine lp.norm_le_of_tsum_le (by norm_num) (by positivity) ?_
-  rw [show (2 : ℝ≥0∞).toReal = ((2 : ℕ) : ℝ) from by norm_num]
-  simp only [Real.rpow_natCast]
-  have hle : ∀ k : ℤ, ‖((velocityLin v f : L2Z) : ℤ → ℂ) k‖ ^ 2
-      ≤ ‖v‖ ^ 2 * ‖(f : ℤ → ℂ) k‖ ^ 2 := by
-    intro k
-    have hnorm : ‖((velocityLin v f : L2Z) : ℤ → ℂ) k‖ = |(v : ℤ → ℝ) k| * ‖(f : ℤ → ℂ) k‖ := by
-      simp [Complex.norm_real]
-    rw [hnorm, mul_pow]
-    have h1 : |(v : ℤ → ℝ) k| ^ 2 ≤ ‖v‖ ^ 2 := by
-      nlinarith [abs_nonneg ((v : ℤ → ℝ) k), velocity_bound v k]
-    nlinarith [sq_nonneg ‖(f : ℤ → ℂ) k‖]
-  calc ∑' k : ℤ, ‖((velocityLin v f : L2Z) : ℤ → ℂ) k‖ ^ 2
-      ≤ ∑' k : ℤ, ‖v‖ ^ 2 * ‖(f : ℤ → ℂ) k‖ ^ 2 :=
-        Summable.tsum_le_tsum hle (summable_normSq _) ((summable_normSq f).mul_left _)
-    _ = ‖v‖ ^ 2 * ∑' k : ℤ, ‖(f : ℤ → ℂ) k‖ ^ 2 := tsum_mul_left
-    _ = (‖v‖ * ‖f‖) ^ 2 := by rw [← norm_sq_eq_tsum]; ring
+theorem phaseLin_add (f : ℤ → ℝ) (s t : ℝ) (psi : L2Z) :
+    phaseLin f s (phaseLin f t psi) = phaseLin f (s + t) psi := by
+  ext k
+  sm phaseLin_zero (f : ℤ → ℝ) (psi : L2Z) : phaseLin f 0 psi = psi := by
+  ext k
+  simp [phase]
 
-/-- The **velocity operator**: multiplication by a bounded real field `v`. -/
-noncomputable def velocityOp (v : LinfZ) : L2Z →L[ℂ] L2Z :=
-  LinearMap.mkContinuous (velocityLin v) ‖v‖ (velocityLin_norm_le v)
+theorem phaseLin_norm (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) : ‖phaseLin f t psi‖ = ‖psi‖ := by
+  have key : ‖phaseLin f t psi‖ ^ 2 = ‖psi‖ ^ 2 := by
+    rw [BookProof.ChapterContinuityUnitaryInfinite.norm_sq_eq_tsum,
+      BookProof.ChapterContinuityUnitaryInfinite.norm_sq_eq_tsum]
+    refine tsum_congr fun k => ?_
+    rw [phaseLin_apply, norm_mul, norm_phase, one_mul]
+  have hpow : ‖phaseLin f t psi‖ ^ ((2 : ℕ) : ℝ) = ‖psi‖ ^ ((2 : ℕ) : ℝ) := by
+    simpa only [Real.rpow_natCast] using key
+  exact Real.rpow_left_injOn (x := ((2 : ℕ) : ℝ)) (by norm_num)
+    (norm_nonneg _) (norm_nonneg _) hpow
 
-@[simp] theorem velocityOp_apply (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityOp v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
-
-theorem velocityOp_isSymmetric (v : LinfZ) :
-    (velocityOp v : L2Z →ₗ[ℂ] L2Z).IsSymmetric := by
-  intro f g
-  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
-  refine tsum_congr fun k => ?_
-  simp only [ContinuousLinearMap.coe_coe, velocityOp_apply, RCLike.inner_apply, map_mul,
-    Complex.conj_ofReal]
-  ring
-
-theorem velocityOp_isSelfAdjoint (v : LinfZ) : IsSelfAdjoint (velocityOp v) :=
-  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 (velocityOp_isSymmetric v)
-
-/-! ## The Weyl-symmetrized continuity generator -/
-
-/-- The **Weyl-symmetrized continuity generator** `H = ½ (p·v + v·p)` on
-`ℓ²(ℤ)`: a bounded operator, self-adjoint precisely because of the
-symmetrization. -/
-noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
-  (1 / 2 : ℂ) • (momentum.comp (velocityOp v) + (velocityOp v).comp momentum)
-
-theorem continuityHamiltonian_isSymmetric (v : LinfZ) :
-    (continuityHamiltonian v : L2Z →ₗ[ℂ] L2Z).IsSymmetric := by
-  intro f g
-  have hp1 : ⟪momentum ((velocityOp v) f), g⟫_ℂ = ⟪(velocityOp v) f, momentum g⟫_ℂ :=
-    momentum_isSymmetric _ _
-  have hv1 : ⟪(velocityOp v) f, momentum g⟫_ℂ = ⟪f, (velocityOp v) (momentum g)⟫_ℂ :=
-    velocityOp_isSymmetric v _ _
-  have hv2 : ⟪(velocityOp v) (momentum f), g⟫_ℂ = ⟪momentum f, (velocityOp v) g⟫_ℂ :=
-    velocityOp_isSymmetric v _ _
-  have hp2 : ⟪momentum f, (velocityOp v) g⟫_ℂ = ⟪f, momentum ((velocityOp v) g)⟫_ℂ :=
-    momentum_isSymmetric _ _
-  simp only [continuityHamiltonian, ContinuousLinearMap.coe_coe,
-    ContinuousLinearMap.smul_apply, ContinuousLinearMap.add_apply,
-    ContinuousLinearMap.coe_comp', Function.comp_apply, inner_smul_left, inner_smul_right,
-    inner_add_left, inner_add_right]
-  rw [hp1, hv1, hv2, hp2]
-  simp only [map_div₀, map_one, Complex.conj_ofNat]
-  ring
-
-/-- **The Weyl-symmetrized generator is self-adjoint** — the infinite-lattice
-counterpart of `ChapterContinuityUnitary.continuityHamiltonian_hermitian`. -/
-theorem continuityHamiltonian_isSelfAdjoint (v : LinfZ) :
-    IsSelfAdjoint (continuityHamiltonian v) :=
-  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 (continuityHamiltonian_isSymmetric v)
-
-/-! ## The one-parameter unitary group -/
-
-/-- `exp (i t A)` is unitary for a bounded self-adjoint `A` on a Hilbert space —
-the operator-algebra counterpart of `ChapterContinuityUnitary.exp_smul_I_unitary`. -/
-theorem exp_smul_I_unitary {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [CompleteSpace E] (A : E →L[ℂ] E) (hA : IsSelfAdjoint A) (t : ℝ) :
-    star (NormedSpace.exp (((t : ℂ) * Complex.I) • A)) *
-        NormedSpace.exp (((t : ℂ) * Complex.I) • A) = 1 ∧
-      NormedSpace.exp (((t : ℂ) * Complex.I) • A) *
-        star (NormedSpace.exp (((t : ℂ) * Complex.I) • A)) = 1 := by
-  let +nondep : NormedAlgebra ℚ (E →L[ℂ] E) := .restrictScalars ℚ ℂ _
-  set B : E →L[ℂ] E := ((t : ℂ) * Complex.I) • A with hB
-  have hstar : star B = -B := by
-    rw [hB, star_smul, hA.star_eq]
-    simp [RCLike.star_def, ← neg_smul]
-  have hexp : star (NormedSpace.exp B) = NormedSpace.exp (-B) := by
-    rw [NormedSpace.star_exp, hstar]
-  refine ⟨?_, ?_⟩
-  · rw [hexp, ← NormedSpace.exp_add_of_commute (Commute.neg_left (Commute.refl B)),
-      neg_add_cancel, NormedSpace.exp_zero]
-  · rw [hexp, ← NormedSpace.exp_add_of_commute (Commute.neg_right (Commute.refl B)),
-      add_neg_cancel, NormedSpace.exp_zero]
-
-/-- The **dynamics-based unitary on the infinite lattice**: `U t = exp (i t H)`
-for the continuity generator `H` of the bounded velocity field `v`. -/
-noncomputable def continuityUnitary (v : LinfZ) (t : ℝ) : L2Z →L[ℂ] L2Z :=
-  NormedSpace.exp (((t : ℂ) * Complex.I) • continuityHamiltonian v)
-
-/-- **`U t` is unitary.** -/
-theorem continuityUnitary_unitary (v : LinfZ) (t : ℝ) :
-    star (continuityUnitary v t) * continuityUnitary v t = 1 ∧
-      continuityUnitary v t * star (continuityUnitary v t) = 1 :=
-  exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
-
-theorem continuityUnitary_zero (v : LinfZ) : continuityUnitary v 0 = 1 := by
-  simp [continuityUnitary]
-
-/-- `U` is a one-parameter group: `U (s + t) = U s ∘ U t`. -/
-theorem continuityUnitary_add (v : LinfZ) (s t : ℝ) :
-    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t := by
-  let +nondep : NormedAlgebra ℚ (L2Z →L[ℂ] L2Z) := .restrictScalars ℚ ℂ _
-  have hcomm : Commute (((s : ℂ) * Complex.I) • continuityHamiltonian v)
-      (((t : ℂ) * Complex.I) • continuityHamiltonian v) := by
-    simp [Commute, SemiconjBy, smul_smul, mul_comm]
-  have hsum : (((s + t : ℝ) : ℂ) * Complex.I) • continuityHamiltonian v
-      = ((s : ℂ) * Complex.I) • continuityHamiltonian v
-        + ((t : ℂ) * Complex.I) • continuityHamiltonian v := by
-    rw [← add_smul]
-    push_cast
-    ring_nf
-  rw [continuityUnitary, hsum, NormedSpace.exp_add_of_commute hcomm]
-  rfl
-
-/-- A unitary preserves the norm — hence the total `ℓ²` mass. -/
-theorem norm_of_unitary {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [CompleteSpace E] (U : E →L[ℂ] E) (hU : star U * U = 1) (x : E) : ‖U x‖ = ‖x‖ := by
-  have hinner : ⟪U x, U x⟫_ℂ = ⟪x, x⟫_ℂ := by
-    rw [← ContinuousLinearMap.adjoint_inner_left]
-    rw [← ContinuousLinearMap.star_eq_adjoint]
-    rw [show (star U) (U x) = ((star U) * U) x from rfl, hU]
-    rfl
-  have h := congrArg Complex.re hinner
-  simp only [inner_self_eq_norm_sq_to_K] at h
-  have h' : ‖U x‖ ^ 2 = ‖x‖ ^ 2 := by exact_mod_cast h
-  nlinarith [norm_nonneg (U x), norm_nonneg x]
-
-/-! ## Born recovery: a countably additive probability law on the lattice -/
-
-/-- The state evolved for time `t` by the dynamics-based unitary. -/
-noncomputable def evolvedState (v : LinfZ) (t : ℝ) (psi : L2Z) : L2Z :=
-  continuityUnitary v t psi
-
-/-- The Born weight of a set `B` of lattice sites in the evolved state. -/
-noncomputable def bornRecover (v : LinfZ) (t : ℝ) (psi : L2Z) (B : Finset ℤ) : ℝ :=
-  ∑ z ∈ B, ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2
-
-theorem bornRecover_nonneg (v : LinfZ) (t : ℝ) (psi : L2Z) (B : Finset ℤ) :
-    0 ≤ bornRecover v t psi B :=
-  Finset.sum_nonneg fun _ _ => by positivity
-
-theorem bornRecover_empty (v : LinfZ) (t : ℝ) (psi : L2Z) : bornRecover v t psi ∅ = 0 := by
-  simp [bornRecover]
-
-theorem bornRecover_union (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ}
-    (h : Disjoint B C) :
-    bornRecover v t psi (B ∪ C) = bornRecover v t psi B + bornRecover v t psi C := by
-  simp [bornRecover, Finset.sum_union h]
-
-theorem bornRecover_mono (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ} (h : B ⊆ C) :
-    bornRecover v t psi B ≤ bornRecover v t psi C :=
-  Finset.sum_le_sum_of_subset_of_nonneg h fun _ _ _ => by positivity
-
-/-- The evolved state has the same `ℓ²` mass as the initial state. -/
-theorem norm_evolvedState (v : LinfZ) (t : ℝ) (psi : L2Z) :
-    ‖evolvedState v t psi‖ = ‖psi‖ :=
-  norm_of_unitary _ (continuityUnitary_unitary v t).1 psi
-
-/-- **Born recovery: the total mass is `1`.**  On the infinite lattice this is a
-countable sum, and unitarity of `U t` makes it exactly `1` for a normalized
-initial state. -/
-theorem bornRecover_tsum_univ (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) :
-    ∑' z : ℤ, ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2 = 1 := by
-  rw [← norm_sq_eq_tsum, norm_evolvedState, hpsi, one_pow]
-
-theorem summable_bornWeight (v : LinfZ) (t : ℝ) (psi : L2Z) :
-    Summable fun z : ℤ => ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2 :=
-  summable_normSq _
-
-/-- The Born weights of the evolved state, as a probability distribution on the
-infinite lattice `ℤ`. -/
-noncomputable def bornPMF (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) : PMF ℤ :=
-  ⟨fun z => ENNReal.ofReal (‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2), by
-    have hns : ∀ z : ℤ, 0 ≤ ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2 := fun _ => by positivity
-    have htsum : ∑' z : ℤ, ENNReal.ofReal (‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2) = 1 := by
-      rw [← ENNReal.ofReal_tsum_of_nonneg hns (summable_bornWeight v t psi),
-        bornRecover_tsum_univ v t psi hpsi, ENNReal.ofReal_one]
-    exact htsum ▸ ENNReal.summable.hasSum⟩
-
-@[simp] theorem bornPMF_apply (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) (z : ℤ) :
-    bornPMF v t psi hpsi z
-      = ENNReal.ofReal (‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2) := rfl
-
-/-! ## The capstone -/
-
-variable {X : Type*}
-
-/-- **Capstone (infinite lattice).**  A family of bounded velocity fields `v x`
-on `ℤ`, together with normalized initial states `psi x`, determines by the
-dynamics-based unitary — and by *no* basis choice — a genuine conditional
-probability law `z ↦ |Ψ_t(x, z)|²` on the infinite lattice for every input `x`:
-it is a countably additive probability measure whose mass on a finite set `B` of
-sites is the Born weight `bornRecover`. -/
-theorem condProb_of_continuity_infinite (v : X → LinfZ) (t : ℝ) (psi : X → L2Z)
-    (hpsi : ∀ x, ‖psi x‖ = 1) (x : X) :
-    (∑' z : ℤ, bornPMF (v x) t (psi x) (hpsi x) z) = 1 ∧
-      ∀ B : Finset ℤ,
-        ∑ z ∈ B, bornPMF (v x) t (psi x) (hpsi x) z
-          = ENNReal.ofReal (bornRecover (v x) t (psi x) B) := by
-  refine ⟨(bornPMF (v x) t (psi x) (hpsi x)).tsum_coe, fun B => ?_⟩
-  rw [bornRecover, ENNReal.ofReal_sum_of_nonneg (fun _ _ => by positivity)]
-  exact Finset.sum_congr rfl fun z _ => bornPMF_apply _ _ _ _ z
+/-- **The unitary group `U t = e^{i t f}` generated by multiplication by `f`.**
+Every `U t` is a unitary of `ℓ²(ℤ)` — for the position field this is the group
+generated by an *unbounded* self-adjoint observable. -/
+noncomputable def phaseUnitary (f : ℤ → ℝ) (t : ℝ) : L2Z ≃ₗᵢ[ℂ] L2Z where
+  toLinearEquiv :=
+    { phaseLin f t with
+      invFun := phaseLin f (-t)
+      left_inv := fun psi => by
+        change phaseLin f (-t) (phaseLin f t psi) = psi
+        rw [phaseLin_add, neg_add_cancel, phaseLin_zero]
+      right_inv := fun psi => by
+        change phaseLin f t (phaseLin f (-t) psi) _aaseUent ndtendsto 0).comp htsum
+  refine hsqrt.congr fun t => ?_
+  rw [← hsq t, Real.sqrt_sq (norm_nonneg _)]
 
 end BookProof.ChapterUnboundedPosition

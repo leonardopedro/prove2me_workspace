@@ -35,13 +35,25 @@ theorem solution
         convert h_comm using 1;
         simp only [Complex.coe_smul, Finset.smul_sum];
         rw [ ← Finset.sum_neg_distrib ] ; congr ; ext e ; rw [ hf e c ] ;
-        simp only [neg_apply, Complex.coe_smul, Finset.smul_sum, smul_apply, smul_eq_mul] ;
-        simp only [sum_apply, smul_apply, smul_eq_mul, Complex.real_smul, Complex.ext_iff,
+        simp only [neg_apply, Complex.coe_smul, Finset.smul_sum, Matrix.smul_apply, smul_eq_mul] ;
+        simp only [Matrix.sum_apply, Matrix.smul_apply, smul_eq_mul, Complex.real_smul, Complex.ext_iff,
           Complex.neg_re, Complex.re_sum, Complex.mul_re, Complex.ofReal_re,
           Complex.ofReal_im, mul_zero, sub_zero, Complex.mul_im, zero_mul, add_zero,
           Complex.I_re, Complex.I_im, one_mul, zero_sub, mul_neg, zero_add,
           Finset.sum_neg_distrib, neg_zero, Complex.im_sum, neg_inj, Complex.neg_im];
-        exact ⟨ Finset.sum_congr rfl fun _ _ => by ring, Finset.sum_congr rfl fun _ _ => by ring ⟩;
+        constructor
+        · rw [Matrix.neg_apply, Matrix.sum_apply, Complex.neg_re, Complex.re_sum]
+          simp only [Matrix.smul_apply, smul_eq_mul, Complex.mul_re, Complex.mul_im,
+            Complex.ofReal_re, Complex.ofReal_im, mul_zero, zero_mul, sub_zero, add_zero,
+            zero_add]
+          congr 1
+          exact Finset.sum_congr rfl fun _ _ => by ring
+        · rw [Matrix.neg_apply, Matrix.sum_apply, Complex.neg_im, Complex.im_sum]
+          simp only [Matrix.smul_apply, smul_eq_mul, Complex.mul_re, Complex.mul_im,
+            Complex.ofReal_re, Complex.ofReal_im, mul_zero, zero_mul, sub_zero, add_zero,
+            zero_add]
+          congr 1
+          exact Finset.sum_congr rfl fun _ _ => by ring
       -- Applying the hypothesis `h_comm` to each term in the sum, we get:
       have h_sum_comm :
           ∑ e, ∑ g, (f a b e * f e c g + f b c e * f e a g + f c a e * f e b g : ℂ) • T g =

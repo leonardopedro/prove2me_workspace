@@ -1,11 +1,20 @@
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — theorem BookProof.NavierStokesFlow.SecondQuant.fockOp_norm_le_of_sectors
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFockFarisLavine
+import Definitions.Def_ChapterNavierStokesFockFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
+
+variable {ι : Type*}
+variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
+variable {D : ∀ m, Submodule ℂ (S m)}
+
+
 open scoped ENNReal
-open BookProof.NavierStokesFlow.FarisLavineLift
+
+
+
+open FarisLavineLift
+
 variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 variable {D : ∀ m, Submodule ℂ (S m)}

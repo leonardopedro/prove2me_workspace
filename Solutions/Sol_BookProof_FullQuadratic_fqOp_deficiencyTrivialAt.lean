@@ -3,20 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_fqExch_hermitian
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_hermiteCore
+import Theorems.Thm_BookProof_CarlemanSimplex_ladderQ_eq_zero
+import Theorems.Thm_BookProof_HyperbolicQuadratic_hermiteMvLp_total
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

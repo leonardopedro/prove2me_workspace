@@ -3,12 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 open BookProof.ChapterSirkGramCutoff
 
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {m : ℕ} {w : Fin m → E}
+variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
 
 
 noncomputable section
@@ -17,18 +14,8 @@ noncomputable section
 open scoped InnerProductSpace
 open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
-open BookProof.ChapterSirkEndToEnd
-open BookProof.ChapterH6
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {m : ℕ} {w : Fin m → E}
-variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
 
 theorem BookProof.ChapterSirkGramCutoff.sirk_end_to_end_truncated_cutoff (heig : IsGramEigen w u lam) {tol : ℝ}
     (R : Finset (Fin m)) (hcut : ∀ k ∉ R, lam k ≤ tol)

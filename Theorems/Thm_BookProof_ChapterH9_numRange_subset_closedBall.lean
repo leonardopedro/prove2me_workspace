@@ -3,9 +3,26 @@ import Mathlib
 import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
 
-variable {E : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
-set_option maxHeartbeats 1000000 in
+
+noncomputable section
+
+
+open BookProof.ChapterH1 BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+open BookProof.ChapterH8
+open ContinuousLinearMap
+
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
 theorem BookProof.ChapterH9.numRange_subset_closedBall (X : E →L[ℂ] E) :
     numRange X ⊆ Metric.closedBall (0 : ℂ) ‖X‖ := by sorry

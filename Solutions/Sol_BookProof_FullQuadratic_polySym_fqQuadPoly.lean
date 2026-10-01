@@ -1,20 +1,11 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.polySym_fqQuadPoly
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Theorems.Thm_BookProof_HermiteRelative_polySym_sum
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
+import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

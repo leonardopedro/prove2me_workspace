@@ -1,10 +1,9 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagOp_one
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_add
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -12,40 +11,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
@@ -57,18 +23,18 @@ theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     have hcomp : ∀ i : Fin d, ((diagComparisonData d p q).mom i).comp
         ((diagComparisonData d p q).mom i) = diagOp (fun k => p i k ^ 2) := by
       intro i
-      rw [show ((diagComparisonData d p q).mom i) = diagOp (p i) from rfl,
-        FullEsa.diagOp_comp]
+      refine (FullEsa.diagOp_comp (p i) (p i)).trans ?_
       simp [sq]
-    rw [Finset.sum_congr rfl fun i _ => hcomp i, FullEsa.diagOp_sum]
+    rw [Finset.sum_congr rfl fun i _ => hcomp i]
+    exact (FullEsa.diagOp_sum (Finset.univ : Finset (Fin d)) fun i k => p i k ^ 2).trans rfl
   have hdrift : (∑ i, ((diagComparisonData d p q).drift i).comp
       ((diagComparisonData d p q).drift i)) = diagOp (fun k => ∑ i, q i k ^ 2) := by
     have hcomp : ∀ i : Fin d, ((diagComparisonData d p q).drift i).comp
         ((diagComparisonData d p q).drift i) = diagOp (fun k => q i k ^ 2) := by
       intro i
-      rw [show ((diagComparisonData d p q).drift i) = diagOp (q i) from rfl,
-        FullEsa.diagOp_comp]
+      refine (FullEsa.diagOp_comp (q i) (q i)).trans ?_
       simp [sq]
-    rw [Finset.sum_congr rfl fun i _ => hcomp i, FullEsa.diagOp_sum]
-  rw [ComparisonData.comparison, hmom, hdrift, diagOp_one, FullEsa.diagOp_add,
-    FullEsa.diagOp_add]
+    rw [Finset.sum_congr rfl fun i _ => hcomp i]
+    exact (FullEsa.diagOp_sum (Finset.univ : Finset (Fin d)) fun i k => q i k ^ 2).trans rfl
+  rw [ComparisonData.comparison, hmom, hdrift]
+  have 

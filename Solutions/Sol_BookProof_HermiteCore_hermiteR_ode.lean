@@ -1,6 +1,8 @@
 -- Generated from ChapterHermiteFunctions.lean — solution of BookProof.HermiteCore.hermiteR_ode
 import Mathlib
 import Definitions.Def_ChapterHermiteFunctions
+import Theorems.Thm_BookProof_HermiteCore_hermiteR_succ
+import Theorems.Thm_BookProof_HermiteCore_derivative_hermiteR
 open BookProof.HermiteCore
 
 

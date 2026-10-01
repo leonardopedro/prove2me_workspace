@@ -1,16 +1,9 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.exists_res_domain_approx
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 
@@ -23,20 +16,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : H) {ε : ℝ} (hε : 0 < ε) :

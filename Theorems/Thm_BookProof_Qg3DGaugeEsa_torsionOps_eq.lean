@@ -16,6 +16,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-sionPoly (torsionMu m) (torsionNu m) (torsionA m)
-
-theorem BookProof.Qg3DGaugeEsa.torsionOps_eq {D : Submodule ℂ (L2d 84)} (Φ : CoreRep 84 D) (m : Fin 64) := by sorry
+theorem BookProof.Qg3DGaugeEsa.torsionOps_eq {D : Submodule ℂ (L2d 84)} (Φ : CoreRep 84 D) (m : Fin 64) :
+    torsionOps Φ m = Φ.op (mulOp (torsionP m)) := by sorry

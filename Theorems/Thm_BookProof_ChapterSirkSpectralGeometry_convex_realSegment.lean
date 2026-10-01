@@ -3,11 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
 open BookProof.ChapterSirkSpectralGeometry
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 noncomputable section

@@ -1,9 +1,5 @@
 import Mathlib
-import Mathlib
 
-import Mathlib
-
-import Mathlib
 
 /-!
 # Chapter "Reconstructing the classical trajectory of any isolated quantum system"

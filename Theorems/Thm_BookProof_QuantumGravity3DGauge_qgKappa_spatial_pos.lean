@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,4 +16,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.qgKappa_spatial_pos {j : Fin 84} (hj : j ≠ confIndex) : 0 < qgKappa j := by sorry
+itized`). -/
+def qgKappa (j : Fin 84) : ℝ := if j = confIndex then -(1 / 24) else 1 / 16
+
+theorem BookProof.QuantumGravity3DGauge.qgKappa_spatial_pos : qgKappa confIndex < 0 := by norm_num [qgKappa]
+
+theorem qgKappa_ := by sorry

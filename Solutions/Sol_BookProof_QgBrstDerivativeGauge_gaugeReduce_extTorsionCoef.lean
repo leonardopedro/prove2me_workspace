@@ -6,16 +6,6 @@ open BookProof.QgBrstDerivativeGauge
 
 
 
-
-
-
-
-
-
-
-
-
-
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL

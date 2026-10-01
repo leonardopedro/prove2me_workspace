@@ -3,11 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 open BookProof.SirkSingleTime
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 
 open scoped InnerProductSpace
@@ -20,42 +19,6 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterSirkEndToEnd BookProof.ChapterH4 BookProof.ChapterH6
-
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-
-
-
-open BookProof.QgTruncationResolvent BookProof.FarisLavine BookProof.EsaClosure
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL BookProof.QgOuterFockCoreFL
-
-variable {ι : Type*}
-
-
-
-
-open BookProof.QgContinuumModeInstance
-
-
-open BookProof.QgManifoldModeInstance
 
 theorem BookProof.SirkSingleTime.starobinsky_qgManifold_singleTime_shiftInvert_convergence (M alpha : ℝ)
     (halpha : 0 < alpha) (Sp : VielbeinSpectrum ι) (g : ℝ) :

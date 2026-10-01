@@ -1,39 +1,18 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — theorem BookProof.NavierStokesFlow.FockOfFock.ccr_same
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
-open BookProof.NavierStokesFlow.FullEsa
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
+variable {ι : Type*}
 variable {M : Type*} [DecidableEq M]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+
+
+
+
+open FullEsa
 
 theorem BookProof.NavierStokesFlow.FockOfFock.ccr_same (m : M) :
     (annih m).comp (creat m) - (creat m).comp (annih m)

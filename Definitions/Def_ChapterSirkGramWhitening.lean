@@ -1,9 +1,8 @@
 import Definitions.Def_ChapterSirkWhitening
+import Definitions.Def_ChapterSirkDiffusiveDecay
 import Definitions.Def_ChapterSirkTruncation
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterH4
 
 /-!
 # Chapter SirkGramWhitening — the Gram whitening exists and *is* an orthonormalization
@@ -152,45 +151,23 @@ def onbEmbedding {d : ℕ} (S : Submodule ℂ E) [CompleteSpace S]
 
 
 
+   w hT, range_whitened w hbij.2⟩
 
-
-
-
-/-! ## 5. The consequences for the reduction -/
-
-
-
-
+/-! ## 5. The co=  := hmem
+  exact ⟨z, hz.symm⟩
 
 /-! ## 6. The matrix layer -/
 
 /-- The **Gram matrix** `G_{ij} = ⟪w i, w j⟫` the code actually forms. -/
 def gramMatrix {m : ℕ} (w : Fin m → E) : Matrix (Fin m) (Fin m) ℂ :=
-  fun i j => ⟪w i, w j⟫_ℂ
-
-
-
-
+truct]
+    using gramOp_apply w c i
 
 /-- The matrix form of the whitening condition: `Mᴴ G M = 1`, exactly what the
 code computes from the (rank-truncated) Hermitian eigendecomposition of `G`. -/
-def IsWhiteningMatrix {m : ℕ} (w : Fin m → E) (M : Matrix (Fin m) (Fin m) ℂ) : Prop :=
-  Mᴴ * gramMatrix w * M = 1
+def IsWhiteningMatrix {m : ℕ} (w : Fin m → E) (M : Matrix (Fin m) (Fin m) ℂ) : Prop := ℂ) (n := Fin m))
+  exacty]ningMatrix_one_of_orthonormal hw)
 
-
-
-/-! ## 7. Non-vacuity -/
-
-
-
-
-
-/-! ## 8. Quantified rank truncation: how much a reduced state loses -/
-
-
-
-
-
-
+/-! ## 8. Quantified rank truncation: hosiegDmin hrate ‖synthesis w c‖ k)
 
 end BookProof.ChapterSirkGramWhitening

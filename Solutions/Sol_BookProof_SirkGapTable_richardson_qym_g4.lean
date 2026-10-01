@@ -1,15 +1,7 @@
 -- Generated from ChapterSirkGapTable.lean — solution of BookProof.SirkGapTable.richardson_qym_g4
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
-import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
-
-
-
-
-
-
-
 
 
 
@@ -17,36 +9,6 @@ noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open Real
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

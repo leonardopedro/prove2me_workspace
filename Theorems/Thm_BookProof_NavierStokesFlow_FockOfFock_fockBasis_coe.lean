@@ -1,39 +1,18 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — theorem BookProof.NavierStokesFlow.FockOfFock.fockBasis_coe
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
-open BookProof.NavierStokesFlow.FullEsa
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
+variable {ι : Type*}
 variable {M : Type*} [DecidableEq M]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+
+
+
+
+open FullEsa
 
 theorem BookProof.NavierStokesFlow.FockOfFock.fockBasis_coe (n k : Conf M) :
     (((fockBasis n : FockDom M) : FockL2 M) : Conf M → ℂ) k = if k = n then 1 else 0 := by sorry

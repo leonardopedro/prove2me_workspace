@@ -1,21 +1,16 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — theorem BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_le
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.ChapterSirkRitzSpectrum
-open BookProof.HermiteGalerkin
 
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
 
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

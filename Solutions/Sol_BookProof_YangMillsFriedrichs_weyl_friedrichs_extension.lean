@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 import Theorems.Thm_BookProof_YangMillsFriedrichs_friedrichs_extension_of_semibounded
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 open BookProof.YangMillsFriedrichs
 
 
@@ -16,15 +16,18 @@ open BookProof.FarisLavine
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+    ring
+  have hd : (inner ℂ (H ⟨w, trivial⟩ - u) (H ⟨w, trivial⟩ - u) : ℂ) = 0 :=
+    hzero ⟨H ⟨w, trivial⟩ - u, trivial⟩
+  exact sub_eq_zero.mp (inner_self_eq_zero.mp hd)
+
 theorem solution {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
     (friedrichs : ∀ (D' : Submodule ℂ F) (H' : D' →ₗ[ℂ] F), Dense (D' : Set F) →
       SymmetricOn D' H' → (∀ x : D', 0 ≤ quadForm H' x) →
       ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H' A)
     (hdense : Dense (D : Set F))
-    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
-    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
-      IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
-  friedrichs_extension_of_semibounded (weylOp pi Bf) friedrichs hdense
-      (weylOpDom_symmetricOn hpi hB) (weylOpDom_quadForm_nonneg hpi hB)
+    (hpi : ∀ i, SymmetricOn D :=
+   (D.subtype.comp (pi i)))
+      (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
+      ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),

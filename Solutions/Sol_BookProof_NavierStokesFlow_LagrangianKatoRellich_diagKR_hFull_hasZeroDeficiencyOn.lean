@@ -18,7 +18,10 @@ open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 set_option maxHeartbeats 1000000 in
-theorem solution :
-    HasZeroDeficiencyOn diagKR.D diagKR.hFull :=
-  hFull_hasZeroDeficiencyOn_of_drive_eq_P diagKR diagKR_drive le_rfl diagKR_constraint_bound
-      diagKR_secondOrder_hasZeroDeficiencyOn
+drive le_rfl
+    diagKR_constraint_bound
+    ((essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn diagKR.D (secondOrder diagKR)).mpr
+      diagKR_secondOrder_hasZero :=
+  DeficiencyOn)
+  
+  theorem diagKR_hFull_hasZeroDeficiencyOn :

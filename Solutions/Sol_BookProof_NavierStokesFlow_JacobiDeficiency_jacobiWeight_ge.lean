@@ -6,30 +6,13 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
-
-
-
-
-
-
-
-
-
-
-open LpNat
-
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ jacobiWeight n := by
+t]; linarith
 
-  induction n with
-  | zero => norm_num [jacobiWeight]
-  | succ n ih => simp only [jacobiWeight, pow_succ]; linarith
+theorem solution (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ j :=
+  acobiWeight n := by
+    induction n with
+    | zero => norm_num [jacobiWeight]
+    | succ n ih => simp only [jacobiWeight, pow_s

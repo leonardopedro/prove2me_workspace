@@ -4,9 +4,10 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
-
-
-
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (T : UnboundedSelfAdjoint H)
+variable [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 
 open scoped InnerProductSpace
@@ -17,26 +18,8 @@ open BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
-
-
-variable (T : UnboundedSelfAdjoint H)
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace H]
-
-
-variable (T : UnboundedSelfAdjoint H)
+‖ ≤ (1 / |l|) * ‖y‖ :=
+  T.norm_res_le l y
 
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op {l : ℝ} (hl : l ≠ 0) (x : T.domain) :
-    ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) := by sorry
+    ((T.res l := by sorry

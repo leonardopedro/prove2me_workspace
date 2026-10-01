@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -16,4 +18,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre (i : Fin 3) : (creOp i).comp embedCore = embedCore.comp (cre i) := by sorry
+_smul, embedCore_coe, coreState_coe,
+      velUnitary_single, hermiteVel, velIdx_lower]
+  rw [hR, embedCore_coreState, coreOp_coe, map_smul, pgLp_smul, annPoly_hermiteMvLp, := by sorry

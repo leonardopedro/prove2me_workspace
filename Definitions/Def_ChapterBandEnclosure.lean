@@ -1,13 +1,8 @@
-import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterFockOneParticleGap
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_ChapterH8
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
 
 /-!
 # Chapter BandEnclosure — the band-enclosure hypothesis, derived
@@ -130,6 +125,7 @@ section Unbounded
 
 open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert BookProof.FriedrichsExtension
+open BookProof.FriedrichsFormGap
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

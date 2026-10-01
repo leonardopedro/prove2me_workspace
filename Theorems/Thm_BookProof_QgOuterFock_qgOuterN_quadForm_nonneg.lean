@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFock
 
+variable {D : ℕ}
+
 
 
 open Finset MvPolynomial

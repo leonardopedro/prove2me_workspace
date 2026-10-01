@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianCanonical.lean — solution of BookProof.NavierStokesFlow.LagrangianCanonical.comm_lagP_lagQ_of_ne
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_comm_mom_pos_of_ne
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 

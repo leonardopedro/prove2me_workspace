@@ -15,4 +15,8 @@ open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
-theorem BookProof.SirkCertifiedGap.qcdG2M4_lower : qcdG2M4.lower = 1.932 := by sorry
+gap := 1.9875
+  width := 0.0555
+  width_nonneg := by norm_num
+
+/-- The certified lower bound of the `g = 2`, `m = 4` c := by sorry

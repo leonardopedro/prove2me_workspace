@@ -12,6 +12,10 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
+e hγ)
+
 theorem solution :
     SymmetricOn (LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)))
-      ell2UnboundedExample := ell2Example_isPositiveSelfAdjointExtension.2.1
+      ell2Unbounded :=
+  Example :=
+    ell2Example_isPositiveSelfAdjointExten

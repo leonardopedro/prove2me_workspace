@@ -1,13 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.isPosCol_opCol
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -18,89 +14,9 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+_symm]
 
 theorem BookProof.FockSecondQuantization.isPosCol_opCol {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
-    IsPosCol (opCol b A) := by sorry
+    IsPosCol (opC := by sorry

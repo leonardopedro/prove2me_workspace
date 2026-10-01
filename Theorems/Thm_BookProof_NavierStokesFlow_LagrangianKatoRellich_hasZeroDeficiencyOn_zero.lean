@@ -1,54 +1,23 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_zero
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
-import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-open Filter Topology
-open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (L : LagrangianFullData F)
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.JacobiDeficiency
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_zero {D : Submodule ℂ F} (hd : Dense (D : Set F)) :
-    HasZeroDeficiencyOn D (0 : D →ₗ[ℂ] D) := by sorry
+
+open Filter Topology
+
+
+
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
+ A' (γ j) (X j) →
+        Dom' = Dom ∧ ∀ (x : L2N) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) :=
+  lagrangian_hashimoto_selects diagKR diagKR_hFull_essentiallySelfAdjoi := by sorry

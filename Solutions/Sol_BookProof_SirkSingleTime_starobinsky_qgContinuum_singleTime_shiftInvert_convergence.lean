@@ -2,19 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterSirkEndToEnd
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterH4
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterComplexShiftCore
-
-
-
-
-
-
+import Theorems.Thm_BookProof_QgTruncationResolvent_momWindow_exhausts
+open BookProof.SirkSingleTime
 
 
 
@@ -28,37 +17,6 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterSirkEndToEnd BookProof.ChapterH4 BookProof.ChapterH6
-
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-
-
-
-open BookProof.FarisLavine BookProof.EsaClosure
-
-variable {ι : Type*}
-
-
-
-
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ)

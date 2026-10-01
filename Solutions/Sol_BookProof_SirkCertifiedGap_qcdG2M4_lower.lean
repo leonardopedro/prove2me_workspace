@@ -15,6 +15,10 @@ open BookProof.SirkFinitePrecision
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution : qcdG2M4.lower = 1.932 := by
+gap := 1.9875
+  width := 0.0555
+  width_nonneg := by norm_num
 
-  norm_num [GapCertificate.lower, qcdG2M4]
+/-- The certified lower bound of the `g = 2`, `m = 4` c :=
+  ertificate is `1.932`. -/
+  theorem qc

@@ -1,11 +1,6 @@
-import Mathlib
-import Mathlib
 import Definitions.Def_ChapterDoubleSlit
-
 import Mathlib
 
-import Mathlib
-open BookProof.ChapterDoubleSlit
 
 /-!
 # Chapter "Reconstructing the classical trajectory of any isolated quantum system"
@@ -121,17 +116,10 @@ noncomputable def coherentFinal (U V : Matrix (Fin n) (Fin n) ℂ) (psi : Fin n 
 
 /-! ## Double-slit capstone (reusing `ChapterDoubleSlit`'s Hadamard `H`) -/
 
+open BookProof.ChapterDoubleSlit
 
 
 
-
-
-
-
-
-
-
-
-
+it_Huldsal).1]; norm_num
 
 end BookProof.ChapterTrajectory

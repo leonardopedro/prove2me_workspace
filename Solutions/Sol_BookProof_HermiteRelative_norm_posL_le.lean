@@ -17,8 +17,10 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+inarith [sq_nonneg (e * A), sq_nonneg ((2 / (c0 * e)) * B), h, hcross]
+  nlinarith [hsq, hrhs]
+
 theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
-    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCore (d := d)) :
-    ‖posL i u‖ ≤ e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ :=
-  le_relBound_of_sq_le (norm_nonneg _) (norm_nonneg _) hc0 he
-      (norm_posL_sq_le c hc0 hc i u)
+    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCo :=
+  re (d := d)) :
+      ‖posL i u‖ ≤ e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ :=

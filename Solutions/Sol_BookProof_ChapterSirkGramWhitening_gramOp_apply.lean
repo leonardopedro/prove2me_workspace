@@ -2,15 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_synthesis_adjoint_eq
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 

@@ -2,62 +2,21 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
 
-
-
-
-
-
-
+variable {ι : Type*}
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+variable {sym : ι → ℝ}
+variable (kap cst : ℝ)
 
 
 open scoped ENNReal
 
 
 
+open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
-
-
-
-variable {sym : ι → ℝ} (S : SignedHop ι sym)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {sym : ι → ℝ}
 
 theorem BookProof.NavierStokesFlow.SignedShift.SignedHop.hFun_single [DecidableEq ι] {sym : ι → ℝ} (S : SignedHop ι sym)
     {X : ι → ℂ} {o : ι} (hX : ∀ α, X α = if α = o then 1 else 0) (γ : ι) :

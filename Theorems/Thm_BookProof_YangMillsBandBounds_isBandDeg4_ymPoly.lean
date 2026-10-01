@@ -5,15 +5,6 @@ open BookProof.YangMillsBandBounds
 
 
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis

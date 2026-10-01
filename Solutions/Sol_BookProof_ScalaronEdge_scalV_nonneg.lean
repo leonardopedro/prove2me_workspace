@@ -1,13 +1,8 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.scalV_nonneg
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
+import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 open BookProof.ScalaronEdge
-
-
-
-
-
-
 
 
 
@@ -22,7 +17,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

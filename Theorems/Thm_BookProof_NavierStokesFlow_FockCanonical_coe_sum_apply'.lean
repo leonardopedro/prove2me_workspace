@@ -4,17 +4,14 @@ import Definitions.Def_ChapterNavierStokesFockCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
-
-
-
-
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.FockManyMode BookProof.NavierStokesFlow.HermiteCanonical
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

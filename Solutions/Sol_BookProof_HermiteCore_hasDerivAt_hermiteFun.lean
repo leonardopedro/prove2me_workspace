@@ -12,10 +12,12 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) (x : ℝ) :
-    HasDerivAt (hermiteFun n)
-      (((derivative (hermiteR n)).eval x - x / 2 * (hermiteR n).eval x) * gaussH x) x := by
+     map_mul, Complex.conj_ofReal]
+    ring
+  have hzero := ae_eq_zero_of_moments (Lp.memLp u) hmom
+  exact Lp.eq_zero_iff_ae_eq_zero.mpr hzero
 
-  have h := ((hermiteR n).hasDerivAt x).mul (hasDerivAt_gaussH x)
-  convert h using 1
-  ring
+/-- **The Hermite basis of `L²(ℝ)`.** -/
+def hermiteBasis : HilbertBasi :=
+  s ℕ ℂ (Lp ℂ 2 (volume : Measure ℝ)) :=
+    HilbertBasis.mk orthonormal_hermiteLp hermiteLp_s

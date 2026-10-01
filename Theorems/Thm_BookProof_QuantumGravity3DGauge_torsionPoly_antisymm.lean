@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,5 +16,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.torsionPoly_antisymm (mu nu a : Fin 4) :
-    torsionPoly mu nu a = -torsionPoly nu mu a := by sorry
+: RealCoeff (torsionPoly mu nu a) := by
+  have h : starP (X (idxDE mu nu a) - X (idxDE nu mu a) : MvPolynomial (Fin 84) := by sorry

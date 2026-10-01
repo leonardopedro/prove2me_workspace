@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.core_ext
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_span_coreState
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -17,13 +18,16 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {M : Type*} [AddCommGroup M] [Module ℂ M]
-    {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by
+njective
+    (Submodule.injective_subtype (lpFiniteModes Vel)) ?_
+  rw [Submodule.map_span, Submodule.map_top, Submodule.range_subtype, ← Set.range_comp]
+  exact lpFiniteModes_eq_span.symm
 
-  refine LinearMap.ext fun x => ?_
-  have hx : x ∈ Submodule.span ℂ (Set.range coreState) := by rw [span_coreState]; trivial
-  induction hx using Submodule.span_induction with
-  | mem y hy => obtain ⟨b, rfl⟩ := hy; exact h b
-  | zero => simp
-  | add y z _ _ hy hz => rw [map_add, map_add, hy, hz]
-  | smul a y _ hy => rw [map_smul, map_smul, hy]
+/-- Two linear maps out of the finite-mode core agree as soon as the :=
+  y agree on the basis
+  states. -/
+  theorem core_ext {M : Type*} [AddCommGroup M] [Module ℂ M]
+      {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by
+    refine LinearMap.ext fun x => ?_
+    have hx : x ∈ Submodule.span ℂ (Set.range coreState) := by rw [span_coreState]; trivial
+    induction hx using Submodule.s

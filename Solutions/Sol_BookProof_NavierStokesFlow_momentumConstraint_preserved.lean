@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.momentumConstraint_preserved
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Theorems.Thm_BookProof_FreeFieldConstraint_constraint_preserved_under_bracket
 open BookProof.NavierStokesFlow
 
 

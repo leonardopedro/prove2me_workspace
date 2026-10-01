@@ -10,19 +10,6 @@ open BookProof.FullQuadratic
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Finset MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine

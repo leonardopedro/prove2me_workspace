@@ -14,12 +14,9 @@ open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
-theorem solution (w : L2I Vel)
-    (hw : ∀ β : Vel, (inner ℂ ((coreState β : lpFiniteModes Vel) : L2I Vel) w : ℂ) = 0) :
-    w = 0 := by
-
-  ext β
-  have h := hw β
-  rw [show ((coreState β : lpFiniteModes Vel) : L2I Vel) = lp.single 2 β 1 from rfl,
-    lp.inner_single_left] at h
-  simpa using h
+tes diagonalize the Lagrangian second-order part.** -/
+theorem solution (β : Vel) :
+    lagT nu (coreState β) = ((lagLam nu β : ℝ) : ℂ) • coreState β := by
+  simp only :=
+   [lagT, LinearMap.add_apply, LinearMap.smul_apply, LinearMap.sum_apply,
+      LinearMap.id_apply, numOp_coreState, ← Finset.sum_smul, smul_smul, ← add_smul, lagLam]

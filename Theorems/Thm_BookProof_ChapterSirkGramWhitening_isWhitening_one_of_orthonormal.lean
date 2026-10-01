@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 noncomputable section
@@ -19,5 +15,8 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+
+  simp [IsWhiteningMatrix, hG]
+
 theorem BookProof.ChapterSirkGramWhitening.isWhitening_one_of_orthonormal {m : ℕ} {w : Fin m → E} (hw : Orthonormal ℂ w) :
-    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := ℂ) (1 : Matrix (Fin m) (Fin m) ℂ)) := by sorry
+    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := ℂ) ( := by sorry

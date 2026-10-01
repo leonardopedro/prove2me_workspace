@@ -534,6 +534,23 @@ def local_compile(path):
         # import, which is the fix that made those references resolvable at all.
         if "unknown module prefix 'Theorems'" in out:
             return True, "local compile skipped (Theorems layer not built in this checkout)"
+        # Defer whenever the local world cannot actually resolve the file's
+        # Definitions imports -- this workspace builds no Definitions oleans, so
+        # the gate reports missing typeclass instances (the imports resolve to
+        # nothing) rather than the truth. That is how Thm_BookProof_ChapterH8_*
+        # got rejected here while compiling clean against the published mirror,
+        # and that mis-verdict previously cost 9 attempts on this very family.
+        # debug/check_pending_offline.py, which compiles against the mirror, is
+        # the authority in that situation.
+        try:
+            src = open(path, encoding="utf-8").read()
+        except OSError:
+            src = ""
+        if src and not any(
+                os.path.exists(f"{WS}/Definitions/{m[:-5]}.olean")
+                for m in re.findall(r"^import\s+Definitions\.(Def_\S+)", src, re.M)):
+            return True, ("local compile skipped (no Definitions oleans in this "
+                          "checkout; use debug/check_pending_offline.py)")
         return r.returncode == 0, out[:400]
     except subprocess.TimeoutExpired:
         return False, "local compile timeout"
@@ -1806,6 +1823,10 @@ def main(argv=None):
     ap.add_argument("--job-timeout", type=int, default=0,
                     help="per-item job poll ceiling in seconds (default 900; "
                          "lower it so a bounded chunk returns cleanly)")
+    ap.add_argument("--only-file", default=None, metavar="PATH",
+                    help="restrict the run to the chapters listed in PATH, one "
+                         "per line; used to publish exactly the bundles that "
+                         "build_published_mirror.py --set wave verified")
     ap.add_argument("--only", action="append", default=None, metavar="SUBSTR",
                     help="restrict the run to items whose name contains one of "
                          "these substrings (repeatable); use to unblock a "
@@ -1821,7 +1842,19 @@ def main(argv=None):
     if args.job_timeout:
         globals()["JOB_TIMEOUT"] = args.job_timeout
     kinds = set(args.kind) if args.kind else None
-    globals()["ONLY_ITEMS"] = args.only or None
+    # --only-file restricts the run to an explicit list of chapters. Substring
+    # matching is unusable at this scale: `build_published_mirror.py --set wave`
+    # verifies which candidate bundles actually elaborate, and publishing exactly
+    # that set is what keeps a job from ever being spent on a bundle already
+    # known to fail. 219 verified candidates is not expressible as substrings.
+    only = args.only or None
+    if args.only_file:
+        path = args.only_file
+        names = {l.strip() for l in open(path) if l.strip()}
+        if only:
+            names &= set(only)
+        only = sorted(names)
+    globals()["ONLY_ITEMS"] = only or None
 
     if args.check:
         return cmd_check()

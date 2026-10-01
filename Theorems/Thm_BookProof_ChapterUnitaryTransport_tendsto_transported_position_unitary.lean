@@ -1,0 +1,19 @@
+-- Generated from ChapterUnitaryTransport.lean — theorem BookProof.ChapterUnitaryTransport.tendsto_transported_position_unitary
+import Mathlib
+import Definitions.Def_ChapterUnitaryTransport
+open BookProof.ChapterUnitaryTransport
+
+variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
+
+
+open scoped InnerProductSpace
+
+
+variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
+
+s t y
+
+theorem BookProof.ChapterUnitaryTransport.tendsto_transported_position_unitary (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) (y : K) :
+    Filter.Tendsto (fun t : ℝ => transportUnitary W (phaseUnitary f t) y) (nhds 0) (n := by sorry

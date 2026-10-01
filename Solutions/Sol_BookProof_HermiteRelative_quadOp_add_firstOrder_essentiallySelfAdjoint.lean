@@ -20,24 +20,26 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0)
-    (hc : ∀ i, c0 ≤ c i) (b b' : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c + foOp b b') := by
+|b i| + |b' i|) * R := by ring
+    _ = (∑ i, (|b i| + |b' i|)) * R := by rw [Finset.sum_mul]
 
-  classical
-  set K : ℝ := ∑ i, (|b i| + |b' i|) with hK
-  have hK0 : 0 ≤ K := Finset.sum_nonneg fun i _ => by positivity
-  set e : ℝ := 1 / (2 * (K + 1)) with he
-  have he0 : 0 < e := by
-    have : 0 < 2 * (K + 1) := by linarith
-    positivity
-  refine BookProof.KatoRellich.essentiallySelfAdjointOn_add_relBounded _ _ (quadOp_symmetric c)
-    (quadOp_essentiallySelfAdjoint c) (foOp_symmetric b b') (a := K * e)
-    (b := K * (2 / (c0 * e))) (by positivity) ?_ (by positivity) ?_
-  · rw [he]
-    rw [mul_one_div, div_lt_one (by linarith)]
-    linarith
-  · intro u
-    have h := norm_foOp_le c hc0 hc b b' he0 u
-    calc ‖foOp b b' u‖ ≤ K * (e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖) := h
-      _ = K * e * ‖quadOp c u‖ + K * (2 / (c0 * e)) * ‖(u : L2d d)‖ := by ring
+theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0)
+    (hc : ∀ i, c0 ≤ c i) (b b' :=
+  : Fin d → ℝ) :
+      EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c + foOp b b') := by
+    classical
+    set K : ℝ := ∑ i, (|b i| + |b' i|) with hK
+    have hK0 : 0 ≤ K := Finset.sum_nonneg fun i _ => by positivity
+    set e : ℝ := 1 / (2 * (K + 1)) with he
+    have he0 : 0 < e := by
+      have : 0 < 2 * (K + 1) := by linarith
+      positivity
+    refine BookProof.KatoRellich.essentiallySelfAdjointOn_add_relBounded _ _ (quadOp_symmetric c)
+      (quadOp_essentiallySelfAdjoint c) (foOp_symmetric b b') (a := K * e)
+      (b := K * (2 / (c0 * e))) (by positivity) ?_ (by positivity) ?_
+    · rw [he]
+      rw [mul_one_div, div_lt_one (by linarith)]
+      linarith
+    · intro u
+      have h := norm_foOp_le c hc0 hc b b' he0 u
+      calc ‖foOp b b' u‖ ≤ K * (e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)

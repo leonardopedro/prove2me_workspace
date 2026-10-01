@@ -3,20 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_symmetric
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

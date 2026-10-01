@@ -1,8 +1,8 @@
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.wallHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
-import Theorems.Thm_BookProof_ScalaronWallEsa_kinCcR_symmetricOn
 import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_symmetric
+import Theorems.Thm_BookProof_ScalaronWallEsa_kinCcR_symmetricOn
 open BookProof.ScalaronWallEsa
 
 
@@ -17,11 +17,14 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
-    SymmetricOn (ccDomain ℝ) (wallHam V hV) := by
+ + opCc V hV
 
-  intro x y
-  have h1 := kinCcR_symmetricOn x y
-  have h2 := smoothPotential_symmetric V hV x y
-  simp only [wallHam, LinearMap.add_apply, inner_add_left, inner_add_right]
-  linear_combination h1 + h2
+theorem solution : SymmetricOn (ccDomain ℝ) kinCcR :=
+  symmetricOn_inclusion _ _ (constCoeffOp_symmetric _ _ _)
+
+theorem wa :=
+  llHam_symmetricOn (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
+      SymmetricOn (ccDomain ℝ) (wallHam V hV) := by
+    intro x y
+    have h1 := kinCcR_symmetricOn x y
+    have h2 :=

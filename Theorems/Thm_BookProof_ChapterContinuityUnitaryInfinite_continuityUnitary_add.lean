@@ -3,8 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
+variable {X : Type*}
+
 
 open scoped ENNReal InnerProductSpace
 
-theorem BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add (v : LinfZ) (s t : ℝ) :
-    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t := by sorry
+1 ∧
+      continuityUnitary v t * star (continuityUnitary v t) = 1 :=
+  exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
+
+theorem BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add (v : LinfZ) : continuityUnitary := by sorry

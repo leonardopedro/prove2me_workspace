@@ -1,15 +1,9 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — solution of BookProof.ChapterSirkTrotterKato.resCLM_ofBounded
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
-import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterUnitaryTransport
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
+import Theorems.Thm_BookProof_HermiteGalerkin_sub_resolvent_apply
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
 
 
 

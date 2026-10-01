@@ -4,21 +4,13 @@ import Definitions.Def_ChapterSirkGapTable
 open BookProof.SirkGapTable
 open BookProof.SirkGapTable.CouplingCertificate
 
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.SirkGapTable.CouplingCertificate.lo_le_hi (c : CouplingCertificate) : c.lo ≤ c.hi := by sorry

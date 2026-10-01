@@ -1,12 +1,6 @@
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterYangMillsSU3
 
 /-!
 # Summable series of symmetric operators, and the Faris–Lavine bounds

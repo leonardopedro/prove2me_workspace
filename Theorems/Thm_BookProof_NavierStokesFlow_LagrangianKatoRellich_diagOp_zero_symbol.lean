@@ -1,50 +1,21 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagOp_zero_symbol
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
-import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-open Filter Topology
-open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+
+open Filter Topology
 
 
 
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagOp_zero_symbol : diagOp (fun _ => (0 : ℝ)) = 0 := by sorry

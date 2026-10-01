@@ -16,6 +16,12 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+simp_rw [hx]
+  push_cast
+  rw [Finset.sum_mul]
+  exact Finset.sum_congr rfl fun i _ => by ring
+
 theorem solution (b : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d))
-      (quadOp (fun _ => (1 : ℝ)) + foOp b 0) := quadOp_add_firstOrder_essentiallySelfAdjoint _ (c0 := 1) one_pos (fun _ => le_rfl) b 0
+    E :=
+  ssentiallySelfAdjointOn (polyGaussCore (d := d))
+        (quadOp (fun _ => (1 : ℝ)) + foOp

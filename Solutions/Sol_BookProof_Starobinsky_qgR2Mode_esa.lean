@@ -1,6 +1,7 @@
 -- Generated from ChapterStarobinskyPotential.lean — solution of BookProof.Starobinsky.qgR2Mode_esa
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
+import Theorems.Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint
 open BookProof.Starobinsky
 
 

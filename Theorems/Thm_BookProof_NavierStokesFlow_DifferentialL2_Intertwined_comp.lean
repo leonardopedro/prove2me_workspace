@@ -1,9 +1,11 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.comp
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2.Intertwined
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -17,5 +19,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
-    Intertwined (T.comp S) (T'.comp S') := by sorry
+eorem Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS := by sorry

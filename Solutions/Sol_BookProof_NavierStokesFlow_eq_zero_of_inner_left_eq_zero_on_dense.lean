@@ -6,12 +6,6 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
 open scoped Matrix
 
 

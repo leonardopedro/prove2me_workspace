@@ -17,4 +17,5 @@ theorem solution (D : Fin 3 → R) :
 
   simp [ Fin.sum_univ_three, eps ];
   simp [ Int.sign ];
-  grind +suggestions
+  simp only [ Ring.lie_def ];
+  noncomm_ring

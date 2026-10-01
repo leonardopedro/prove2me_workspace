@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.ofCoeff_coe
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -9,15 +8,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (φ : ι → ℂ) (h : (Function.support φ).Finite) :

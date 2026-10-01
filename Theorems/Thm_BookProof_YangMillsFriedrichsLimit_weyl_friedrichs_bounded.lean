@@ -3,54 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 open BookProof.YangMillsFriedrichsLimit
 
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-open scoped InnerProductSpace ENNReal
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-open BookProof.ChapterH5 BookProof.ChapterH9
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterH5 BookProof.ChapterH9
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+]
 
 theorem BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded [CompleteSpace F] {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
@@ -63,4 +25,4 @@ theorem BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded [CompleteSpac
       IsPositiveSelfAdjointExtension (weylOp pi Bf) (topRestrict A) ∧
       (Dense ((⨆ k : ℕ, krylovSpan A.toLinearMap v k : Submodule ℂ F) : Set F) →
         ∀ u : F, Filter.Tendsto (fun k : ℕ => sirkCompression A v k u)
-          Filter.atTop (nhds (A u))) := by sorry
+          Filter.atTop (nhds (A u) := by sorry

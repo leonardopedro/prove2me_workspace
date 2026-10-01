@@ -1,13 +1,8 @@
 -- Generated from ChapterStoneResolvent.lean — solution of BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift
 import Mathlib
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
-
-
-
-
 
 
 
@@ -19,29 +14,10 @@ open BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
-
-
-variable (T : UnboundedSelfAdjoint H)
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable [CompleteSpace H]
-
-
-variable (T : UnboundedSelfAdjoint H)
-
 set_option maxHeartbeats 1000000 in
-theorem solution {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
+g hl]
+  exact (T.shiftEquiv hl).apply_symm_apply y
 
-  rw [res, dif_neg hl]
-  exact (T.shiftEquiv hl).symm_apply_apply x
+theorem solution {l : ℝ} (hl : :=
+  l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
+    rw [res, dif_

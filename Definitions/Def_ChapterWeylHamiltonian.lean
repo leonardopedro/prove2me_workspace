@@ -1,9 +1,5 @@
 import Mathlib
-import Mathlib
 
-import Mathlib
-
-import Mathlib
 
 /-!
 # Chapter "Timepiece and the Gribov ambiguity", §"Renormalization, the mass gap and the Millennium
@@ -66,19 +62,20 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 
 
-
+o_complex]
+    intro x
+    have : (inner ℂ (c • T x) x).re = c * (inner ℂ (T x) x).re := by
+      simp 
+    rw [this]
+    exact mul_nonneg hc (h.2 x)
 
 /-- The Weyl-gauge Yang–Mills Hamiltonian density
 `H_W = ½ Σᵢ πᵢ² + ½ Σₐ Bₐ²`, built from the self-adjoint electric-field
 operators `π` and magnetic-field operators `B`. -/
 noncomputable def weylHamiltonian {n m : ℕ}
-    (π : Fin n → H →L[ℂ] H) (B : Fin m → H →L[ℂ] H) : H →L[ℂ] H :=
-  ((1 / 2 : ℝ) : ℂ) • (∑ i, (π i ∘L π i)) + ((1 / 2 : ℝ) : ℂ) • (∑ a, (B a ∘L B a))
-
-
-
-
-
-
+    (π : Fin n → H →L[ℂ] H) (π (oint, ContinuousLinearMap.ext_iff]
+    simp_all [star, ContinuousLinearMap.comp_apply]
+  unfold weylHamiltonian
+  simp_all [IsSelfAdjoint, Finset.smul_sum]
 
 end BookProof.WeylHamiltonian

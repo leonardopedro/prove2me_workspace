@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 noncomputable section

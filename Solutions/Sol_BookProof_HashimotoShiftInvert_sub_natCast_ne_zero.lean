@@ -11,9 +11,11 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
-theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) : γ - (n : ℂ) ≠ 0 := by
+sing h
 
-  intro h
-  have := norm_sub_natCast_ge γ n
-  rw [h, norm_zero] at this
-  exact hγ (abs_eq_zero.mp (le_antisymm this (abs_nonneg _)))
+theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) : γ - (n : ℂ :=
+  ) ≠ 0 := by
+    intro h
+    have := norm_sub_natCast_ge γ n
+    rw [h, norm_zero] at this
+    exact hγ (abs_eq_zero.mp (le_antisymm this (abs_non

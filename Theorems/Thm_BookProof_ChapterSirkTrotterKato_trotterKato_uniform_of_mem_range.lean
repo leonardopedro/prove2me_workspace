@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
 
-
-
-
-
-
-
-
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 
 noncomputable section
@@ -19,23 +14,8 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 theorem BookProof.ChapterSirkTrotterKato.trotterKato_uniform_of_mem_range (hres : StrongResolventConvergence T S)
     (w : T.domain) {T₀ : ℝ} (hT₀ : 0 ≤ T₀) {ε : ℝ} (hε : 0 < ε) :

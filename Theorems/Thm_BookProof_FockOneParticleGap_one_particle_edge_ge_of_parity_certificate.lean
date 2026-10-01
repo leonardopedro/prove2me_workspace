@@ -3,15 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.FockOneParticleGap
 
-
-
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
@@ -19,57 +12,6 @@ noncomputable section
 
 open BookProof.FockSecondQuantization BookProof.FarisLavine BookProof.NavierStokesFlow
 open Filter Topology
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-open BookProof.SirkCertifiedGap
 
 theorem BookProof.FockOneParticleGap.one_particle_edge_ge_of_parity_certificate {T P : E →ₗ[ℂ] E} (c : GapCertificate)
     {thetaE thetaO deltaE deltaO lam : ℝ}

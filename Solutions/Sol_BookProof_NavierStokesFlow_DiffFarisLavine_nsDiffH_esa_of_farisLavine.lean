@@ -10,15 +10,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxN_core_app
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_relative_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_commForm_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_diffMaxH_restrict
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_core_of_farisLavine
+import Theorems.Thm_velMu_nonneg
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 
@@ -26,38 +19,11 @@ open BookProof.NavierStokesFlow.DiffFarisLavine
 
 
 
-
-
-
-
-
-
-
-
-
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DifferentialL2
+open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 4000000 in

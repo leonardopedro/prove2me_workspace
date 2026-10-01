@@ -4,8 +4,6 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterH4
 
 /-!
 # Chapter SirkSpectralGeometry — the Crouzeix domain of the shift-invert operator

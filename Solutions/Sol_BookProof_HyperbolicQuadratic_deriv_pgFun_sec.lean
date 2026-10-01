@@ -1,12 +1,9 @@
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesDifferentialL2
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.deriv_pgFun_sec
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_sec_sec
 import Theorems.Thm_BookProof_HyperbolicQuadratic_sec_coord
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec
 open BookProof.HyperbolicQuadratic
 
 

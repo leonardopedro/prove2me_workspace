@@ -1,13 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.secondQuantization_friedrichs
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -18,91 +14,11 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+act hq
 
 theorem BookProof.FockSecondQuantization.secondQuantization_friedrichs (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
     (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A))
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
     ∃ (Dom : Submodule ℂ Fock) (A' : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (opCol b A)) A' := by sorry
+      IsPositiveSelfAdjointExtension (dGammaOp (opCol b := by sorry

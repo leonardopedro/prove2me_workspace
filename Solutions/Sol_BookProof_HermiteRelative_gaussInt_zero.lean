@@ -16,7 +16,5 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : gaussInt (0 : MvPolynomial (Fin d) ℂ) = 0 := by
-
-  have h := gaussInt_smul (0 : ℂ) (0 : MvPolynomial (Fin d) ℂ)
-  simpa using h
+ply, LinearMap.smul_apply,
+    Submodule.coe_sum, Submodule.coe_add, := 

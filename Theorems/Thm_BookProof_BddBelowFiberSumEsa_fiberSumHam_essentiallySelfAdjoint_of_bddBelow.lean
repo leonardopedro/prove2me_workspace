@@ -3,18 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.BddBelowFiberSumEsa
 
-
-
-
-
-
-
-
+variable {ι : Type*}
 
 
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

@@ -19,7 +19,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-_essentiallySelfAdjoint (qgFqP kappa) qgFqQ 0 0 0
-
 theorem solution :
-    EssentiallySelfAdjointOn (polyGauss := Core (d := 84)) (qg3DHamiltonian (coreRepPoly 84))
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qg3DHamiltonian (coreRepPoly 84)) := qgSigned_essentiallySelfAdjointOn_core qgKappa

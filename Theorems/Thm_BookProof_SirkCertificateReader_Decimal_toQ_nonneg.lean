@@ -4,11 +4,7 @@ import Definitions.Def_ChapterSirkCertificateReader
 open BookProof.SirkCertificateReader
 open BookProof.SirkCertificateReader.Decimal
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 

@@ -27,4 +27,5 @@ theorem solution (x : d.C.dom) :
 
   have hs : Tendsto (fun k => d.C.op (d.gcSeq x k) + ((d.gcSeq x k : d.C.dom) : F)) atTop
       (𝓝 (d.C.op x + (x : F))) := (d.gcSeq_op_tendsto x).add (d.gcSeq_tendsto x)
-  simpa only [ext_apply] using (d.extCLM.continuous.tendsto _).comp hs
+  simp only [ext_apply]
+  exact (d.extCLM.continuous.tendsto _).comp hs

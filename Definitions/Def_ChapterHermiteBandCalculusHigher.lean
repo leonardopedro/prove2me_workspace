@@ -1,14 +1,6 @@
-import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
-
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterYangMillsHermite
+
 
 /-!
 # The graded band calculus of arbitrary order
@@ -173,9 +165,7 @@ def IsBandDeg (m : ℕ) (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (
 
 
 
-
-
-
+_momial.le_totalDegree hs
 
 end
 

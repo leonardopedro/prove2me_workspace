@@ -16,6 +16,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Φ : CoreRep 84 D) :
-    qg3DEllipticHamiltonian Φ
-      = weylOp (fun j => ((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j) (torsionOps Φ) := signedOp_eq_weylOp qgKappaElliptic_nonneg _ _
+qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ)
+
+theorem solution (Φ : CoreRep 84 D) (x : D) :
+    0 ≤ quadForm (qg3DEllipticHamiltonian Φ) x := signedOp_quadForm_nonneg qgKappaElliptic_nonne

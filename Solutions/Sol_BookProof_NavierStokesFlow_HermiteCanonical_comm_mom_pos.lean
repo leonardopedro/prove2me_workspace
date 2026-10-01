@@ -4,17 +4,8 @@ import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
-
-
-
-
-
 
 
 
@@ -22,32 +13,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {κ : ℝ}
+open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 < κ) :

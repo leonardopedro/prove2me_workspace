@@ -3,15 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_isWhitening_of_matrix
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_isWhiteningMatrix_one_of_orthonormal
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 
@@ -25,5 +17,10 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
+
+  simp [IsWhiteningMatrix, hG]
+
 theorem solution {m : ℕ} {w : Fin m → E} (hw : Orthonormal ℂ w) :
-    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := ℂ) (1 : Matrix (Fin m) (Fin m) ℂ)) := isWhitening_of_matrix w (isWhiteningMatrix_one_of_orthonormal hw)
+    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := ℂ) ( :=
+  1 : Matrix (Fin m) (Fin m) ℂ)) :=
+    isWhitening_of_matrix w (isWhite

@@ -2,18 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FockSecondQuantization
-
-
-
-
 
 
 
@@ -25,105 +14,13 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-open Filter Topology
-
 set_option maxHeartbeats 1000000 in
-theorem solution {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB ε col) := by
+earMap
 
-  intro x y
-  exact dGammaOp_symmetricOn hherm
-    (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε) x)
-    (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε) y)
+theorem solution {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
+    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB :=
+  ε col) := by
+    intro x y
+    exact dGammaOp_symmetricOn hherm
+      (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε) x)
+      (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasis

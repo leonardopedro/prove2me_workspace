@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 open BookProof.HyperbolicQuadratic
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -11,8 +14,6 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
-
-variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.pgLp_hermiteMvLp (a : Fin d →₀ ℕ) :
     pgLp (((hermiteMvNorm a : ℝ) : ℂ)⁻¹ • hermiteMv a) = hermiteMvLp a := by sorry

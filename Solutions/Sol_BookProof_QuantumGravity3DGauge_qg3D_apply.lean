@@ -15,8 +15,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Φ : CoreRep 84 D) (x : D) :
-    qg3DHamiltonian Φ x
-      = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ j, ((qgKappa j : ℝ) : ℂ) • ((qgMom Φ j (qgMom Φ j x) : D) : L2d 84))
-            + ∑ m, ((torsionOps Φ m (torsionOps Φ m x) : D) : L2d 84)) := signedOp_apply qgKappa (qgMom Φ) (torsionOps Φ) x
+zed, Weyl-ordered two-signed sum of squares
+`H = ½ Σ_j κ_j π_j² + ½ Σ T²`, with the hyperbolic signature `qgKappa` produced by
+`qg3DDensity_densitized` and the torsion-type potential ` :=
+  torsionPoly`. -/
+  def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d

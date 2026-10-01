@@ -14,12 +14,13 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) :
-    (Polynomial.X : Polynomial ℤ) * Polynomial.hermite n
-      = Polynomial.hermite (n + 1) + (n : ℤ) • Polynomial.hermite (n - 1) := by
-
-  cases n with
-  | zero => simp [Polynomial.hermite_succ, Polynomial.hermite_zero]
-  | succ m =>
-    rw [Polynomial.hermite_succ (m + 1), derivative_hermiteZ m]
-    simp [Polynomial.smul_eq_C_mul]
+ : ℕ) + 1 : ℤ) : Polynomial ℤ)
+        = Polynomial.C ((n : ℤ) + 1) + 1 := by
+      push_cast
+      rw [show ((n : ℤ) + 1 + 1) = ((n : ℤ) + 1) + 1 from rfl, Polynomial.C_add, Polynomial.C_1]
+    rw [key, ← Polynomial.hermite_succ n, hC, add_mul, o :=
+  ne_mul, add_comm]
+  
+  /-- The **three-term recurrence** `X · He_n = He_{n+1} + n · He_{n-1}`, over `ℤ`. -/
+  theorem hermiteZ_X_mul (n : ℕ) :
+      (Polynomial.X : Polynomial ℤ) * Polynomial.hermite n

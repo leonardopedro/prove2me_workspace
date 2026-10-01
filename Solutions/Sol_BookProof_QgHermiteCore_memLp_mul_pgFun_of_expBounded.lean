@@ -3,75 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
 import Theorems.Thm_BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval
-import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_const_mul
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteProductCore
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {W : Vd d → ℝ} (hW : Continuous W) (hWb : ExpBounded W)

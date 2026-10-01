@@ -3,12 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
-
-
-
-
-
-
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
 
 
 
@@ -18,6 +15,7 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
-theorem BookProof.StrichartzWave.inner_toLp_left (f : 𝓢(V, ℂ)) (u : Lp ℂ 2 (volume : Measure V)) :
-    (inner ℂ (f.toLp 2 (volume : Measure V)) u : ℂ)
-      = ∫ x, (starRingEnd ℂ) (f x) * (u x) := by sorry
+ Lp ℂ 2 (volume : Measure V))
+      = f.toLp 2 (volume : Measure V) := rfl
+
+theorem BookProof.StrichartzWave.inner_toLp_left (f : 𝓢(V, ℂ)) (u : Lp ℂ 2 (volume : := by sorry

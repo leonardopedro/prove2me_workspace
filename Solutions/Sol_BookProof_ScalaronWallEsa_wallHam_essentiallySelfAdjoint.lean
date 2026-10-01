@@ -16,8 +16,12 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
-    (hVnn : ∀ x, 0 ≤ V x) :
-    EssentiallySelfAdjointOn (ccDomain ℝ) (wallHam V hV) :=
-  ⟨wallHam_deficiencyTrivialAt V hV hVnn (by simp),
-      wallHam_deficiencyTrivialAt V hV hVnn (by simp)⟩
+ode_solution_eq_zero hVnn hz hW hW' hintW
+  refine Lp.eq_zero_iff_ae_eq_zero.mpr ?_
+  filter_upwards [hWae] with x hx
+  simp [hx, hzero x]
+
+theorem solution (V : ℝ → ℝ) (hV : C :=
+  ontDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
+      (hVnn : ∀ x, 0 ≤ V x) :
+      EssentiallySelfAdjointOn (

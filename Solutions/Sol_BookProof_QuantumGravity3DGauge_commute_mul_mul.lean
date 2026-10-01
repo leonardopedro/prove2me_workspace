@@ -14,7 +14,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (f g : MvPolynomial (Fin d) ℂ) (p : MvPolynomial (Fin d) ℂ) :
-    mulOp f (mulOp g p) = mulOp g (mulOp f p) := by
+mp only [smul_eq_C_mul]
+  by_cases h : j = k
+  · subst h; ring
+  · rw [if_neg h, if_neg (Ne.symm h)]; ring
 
-  simp only [mulOp_apply]; ring
+theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) : := momOp j (mo

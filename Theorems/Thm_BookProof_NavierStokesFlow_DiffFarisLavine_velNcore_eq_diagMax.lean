@@ -1,29 +1,17 @@
 -- Generated from ChapterNavierStokesDiffFarisLavine.lean — theorem BookProof.NavierStokesFlow.DiffFarisLavine.velNcore_eq_diagMax
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDiffFarisLavine
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
+import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 
-
-
-
-
-
-
-
-
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DifferentialL2
+open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
 

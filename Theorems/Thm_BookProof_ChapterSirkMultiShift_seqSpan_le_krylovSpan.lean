@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 open BookProof.ChapterSirkMultiShift
 
-
-
-
-
-
-
-
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
 
 
 noncomputable section
@@ -18,12 +13,6 @@ noncomputable section
 open BookProof.ChapterH5
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-
-
-
-
-
-variable {H : E →ₗ[K] E} {v : E}
 
 theorem BookProof.ChapterSirkMultiShift.seqSpan_le_krylovSpan (u : ℕ → E)
     (hu : ∀ i, u i - (H ^ i) v ∈ krylovSpan H v i) (m : ℕ) :

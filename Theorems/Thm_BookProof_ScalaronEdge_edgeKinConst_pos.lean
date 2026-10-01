@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronEdge
 open BookProof.ScalaronEdge
 
-
-
-
-
-
+variable (M alpha : ℝ)
 
 
 
@@ -21,7 +17,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

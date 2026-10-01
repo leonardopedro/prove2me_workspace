@@ -3,10 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTimeIndependent
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {ι : Type*}
 
 
 

@@ -2,63 +2,18 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_sirk_limit_eq_positive_selfadjoint_extension
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterH9
-import Definitions.Def_ChapterH5
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 open BookProof.YangMillsFriedrichsLimit
-
-
-
-
-
 
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-open scoped InnerProductSpace ENNReal
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-open BookProof.ChapterH5 BookProof.ChapterH9
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterH5 BookProof.ChapterH9
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
+]
+
 theorem solution [CompleteSpace F] {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
     (hdense : Dense (D : Set F))
@@ -70,9 +25,9 @@ theorem solution [CompleteSpace F] {D : Submodule ℂ F} {n m : ℕ}
       IsPositiveSelfAdjointExtension (weylOp pi Bf) (topRestrict A) ∧
       (Dense ((⨆ k : ℕ, krylovSpan A.toLinearMap v k : Submodule ℂ F) : Set F) →
         ∀ u : F, Filter.Tendsto (fun k : ℕ => sirkCompression A v k u)
-          Filter.atTop (nhds (A u))) := by
-
-  obtain ⟨A, hagree, hext, hlim⟩ :=
-    sirk_limit_eq_positive_selfadjoint_extension (weylOp pi Bf) hdense
-      (weylOpDom_symmetricOn hpi hB) (weylOpDom_quadForm_nonneg hpi hB) C hbd v
-  exact ⟨A, hagree, hext, fun hcyc => (hlim hcyc).1⟩
+          Filter.atTop (nhds (A u) :=
+  )) := by
+    obtain ⟨A, hagree, hext, hlim⟩ :=
+      sirk_limit_eq_positive_selfadjoint_extension (weylOp pi Bf) hdense
+        (weylOpDom_symmetricOn hpi hB) (weylOpDom_quadForm_nonneg hpi hB) C hbd v
+    exact ⟨A, hagree, hext, fun hcyc => (hlim hcyc).1

@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 open BookProof.ChapterSirkMultiShift
 
-
-
-
-
-
-
-
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
 
 
 noncomputable section

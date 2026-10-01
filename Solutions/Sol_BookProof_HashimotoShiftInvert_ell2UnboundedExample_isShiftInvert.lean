@@ -13,5 +13,9 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
+tive 1
+
 theorem solution :
-    IsShiftInvert ell2UnboundedExample 1 ell2ShiftInvert := isShiftInvert_invShiftOperator ell2ShiftInvert ell2ShiftInvert_injective 1
+    IsShiftInvert ell2UnboundedExample 1 ell2Shif :=
+  tInvert :=
+    isShiftInvert_invShiftOperator ell2ShiftInvert ell2ShiftInvert_inj

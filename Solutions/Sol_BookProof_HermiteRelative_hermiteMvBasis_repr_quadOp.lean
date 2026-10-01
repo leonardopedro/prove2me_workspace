@@ -19,13 +19,14 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+ u‖ + K * (2 / (c0 * e)) * ‖(u : L2d d)‖ := by ring
+
 theorem solution (c : Fin d → ℝ) (u : polyGaussCore (d := d))
     (a : Fin d →₀ ℕ) :
-    hermiteMvBasis.repr (quadOp c u) a
-      = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by
-
-  have hmem : hermiteMvLp a ∈ polyGaussCore (d := d) := hermiteMvLp_mem_core a
-  have hsym := quadOp_symmetric c ⟨hermiteMvLp a, hmem⟩ u
-  rw [quadOp_hermiteMvLp c a hmem, inner_smul_left, Complex.conj_ofReal] at hsym
-  rw [HilbertBasis.repr_apply_apply, HilbertBasis.repr_apply_apply, hermiteMvBasis_apply]
-  exact hsym.symm
+    hermiteMvBasis :=
+  .repr (quadOp c u) a
+        = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by
+    have hmem : hermiteMvLp a ∈ polyGaussCore (d := d) := hermiteMvLp_mem_core a
+    have hsym := quadOp_symmetric c ⟨hermiteMvLp a, hmem⟩ u
+    rw [quadOp_hermiteMvLp c a hmem, inner_smul_left, Complex.conj_ofReal] at hsym
+    rw [Hilbe

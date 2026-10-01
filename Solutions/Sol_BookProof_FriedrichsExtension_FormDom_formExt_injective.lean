@@ -10,19 +10,21 @@ open BookProof.FriedrichsExtension.FormDom
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (P : PosSymOp F) : Function.Injective (formExt P) := by
+toAmbient_eq, toAmbient_eq, P.sym (toDom x) (toDom y)]
 
-  rw [injective_iff_map_eq_zero]
-  intro k hk
-  have hzero : ∀ y : FormDom P, (inner ℂ (y : FormSpace P) k : ℂ) = 0 := by
-    intro y
-    rw [inner_coe_eq, hk, inner_zero_right]
-  have hall : ∀ z : FormSpace P, (inner ℂ z k : ℂ) = 0 := by
-    intro z
-    refine UniformSpace.Completion.induction_on z ?_ hzero
-    exact isClosed_eq (by fun_prop) (by fun_prop)
-  simpa using hall k
+theorem solution :=
+  ctive (P : PosSymOp F) : Function.Injective (formExt P) := by
+    rw [injective_iff_map_eq_zero]
+    intro k hk
+    have hzero : ∀ y : FormDom P, (inner ℂ (y : FormSpace P) k : ℂ) = 0 := by
+      intro y
+      rw [inner_coe_eq, hk, inner_zero_right]
+    have hall : ∀ z : FormSpace P, (inner ℂ z k : ℂ) = 0 := by
+      intro z
+      refine UniformSpace.Completion.induction_on z ?_ hzero
+      exact isCl

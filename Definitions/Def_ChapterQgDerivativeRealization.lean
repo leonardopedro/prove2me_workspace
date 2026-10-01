@@ -1,0 +1,333 @@
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Mathlib
+
+
+/-!
+# QG-3.2-exec (ii) — the concrete 84-dimensional derivative-variable fixing `E = ∂e`
+
+Plan item **QG-3.2-exec (ii)** of `CONSOLIDATED_PLAN.md`: the gauge-identity
+track.  `ChapterQgPhysicalSectorIdentity` formalized the *mechanism* of the
+Navier–Stokes derivative-variable fixing abstractly (`gaugeField = v − dφ`,
+`lagrange_term_zero_of_fixing`, `L_gf_constraint_surface`,
+`int_L_gf_eq_zero_physical`) and left the *concrete* 84-dimensional instance —
+"a concrete `gaugeField`, defined `v − dφ` on the actual
+`ChapterQuantumGravity3DGauge` coordinate algebra, fed through those theorems
+to show the coupling reduces to field values" — as the remaining work.  This
+module supplies it.
+
+## The realization
+
+A **field configuration** is a tetrad field whose components are polynomial in
+the four spacetime coordinates (`TetradConfig`), together with the `64`
+*promoted* derivative fields `E_{μν}^a` (`DerivFields`) that the 84-dimensional
+coordinate space of `ChapterQuantumGravity3DGauge` treats as independent
+coordinates.  `configPoint T E x : Fin 84 → ℂ` is the point of the coordinate
+space such a pair determines at a spacetime point `x`:
+
+* `configPoint_idxX` — the `4` spacetime coordinates are `x^μ`;
+* `configPoint_idxE` — the `16` tetrad coordinates are `e_μ^a(x)`;
+* `configPoint_idxDE` — the `64` derivative coordinates are `E_{μν}^a(x)`.
+
+`idx_cases` records that these three families exhaust `Fin 84`
+(`4 + 16 + 64 = 84`), so a point of the coordinate space is *exactly* this
+data.
+
+## The fixing, concretely
+
+`gaugeFieldPoly T E μ ν a = E_{μν}^a − ∂_μ e_ν^a` is the concrete `v − dφ` on
+the 84-dimensional coordinate algebra, and `Fixed T E` is its vanishing — the
+NS constraint `u_{i,j} = ∂_j u_i` (book.tex §4159–4197) in the tetrad
+formalism, `E = ∂e`.  It is realized (`jetDeriv_fixed`: the derivative fields
+*are* the derivatives) and it is not automatic (`exists_not_fixed`), and on the
+fixing surface the coordinate point is the 1-jet of the tetrad field
+(`configPoint_eq_jetPoint_of_fixed`).
+
+## What the fixing buys — the couplings reduce to field values
+
+* `eval_torsionPoly_jetPoint` — on the surface the torsion coordinate
+  polynomial `torsionPoly μ ν a = X (idxDE μ ν a) − X (idxDE ν μ a)` of
+  `ChapterQuantumGravity3DGauge` evaluates to the *actual* antisymmetrized
+  tetrad derivative `∂_μ e_ν^a − ∂_ν e_μ^a`;
+* `eval_crossCouplingPoly_jetPoint` — the tetrad-torsion cross coupling
+  `½ Σ e_μ^a T_{μν}^a`, the coordinate-algebra shape of the `book.tex 8190`
+  cross terms `½S·E + ⅓P·E − e(…)`, evaluates to an explicit expression in the
+  tetrad field and its derivatives (`couplingValue`);
+* `eval_eq_of_fixed_of_comp_eq` — **the "no new independent modes" statement**:
+  on the fixing surface the value of *every* polynomial in the 84 coordinates
+  is determined by the tetrad field alone; two configurations with the same
+  tetrad field give the same value, whatever their (then equal) derivative
+  fields.
+
+## The hookup to the abstract BRST theorems
+
+Section 4 builds a concrete `DerivativeVariableFixingSystem` whose carrier is
+`2 × 2` matrices over the algebra of spacetime polynomials, with the *genuine*
+exterior derivative `d = ∂_μ` acting entrywise (in the abstract matrix model of
+`ChapterGaugeFixing` the exterior derivative is trivial, so `v − dφ` could not
+express `E = ∂e`).  Its `φ` is a tetrad component `e_ν^a`, its `v` is the
+promoted derivative field `E_{μν}^a`, and
+
+* `qgFixing_gaugeField_eq_zero_iff` — its `gaugeField = v − dφ` vanishes
+  **iff** `E_{μν}^a = ∂_μ e_ν^a`, i.e. iff the concrete fixing holds;
+* `qgFixing_lagrange_term_zero`, `qgFixing_L_gf_constraint_surface` — the
+  abstract theorems of `ChapterQgPhysicalSectorIdentity`, run on this concrete
+  system with the hypothesis discharged by `Fixed`;
+* `qgFixing_gaugeField_ne_zero_of_not_fixed`, `qgFixing_B_ne_zero` — the system
+  is not degenerate: off the surface the constraint is genuinely non-zero, and
+  the Nakanishi–Lautrup field is non-zero.
+
+## Honest boundary
+
+* The tetrad fields here are **polynomial** in the spacetime coordinates; this
+  is what makes `∂_μ` an honest linear derivation of the coefficient algebra
+  (and it is the class the Hermite/mode formalism of the tree uses).  Nothing
+  is claimed for general smooth fields.
+* In this concrete system the constraint sector is bosonic: `v` is a multiple
+  of the identity matrix, so its BRST partner `c` is zero.  That is not a loss:
+  on the fixing surface the ghost is BRST-trivial in *any* model (the
+  contractible-pair statement `s_gaugeField_eq_c`), and the non-degenerate
+  ghost sector is exactly what `BookProof.GaugeFixing.matrixModel` and
+  `QgPhysicalSectorIdentity.matrixModel_c_ne_zero` provide.
+* This closes the *representability* half of QG-3.2(a) — the derivative
+  coordinates are realizable as actual derivatives, and on that surface the
+  couplings are functions of the tetrad field.  It does **not** prove that the
+  physical (BRST-closed) sector of the quantum theory is confined to that
+  surface; that remains the named hypothesis recorded in
+  `ChapterQgPhysicalSectorIdentity`, with QG-3.2(b) (direct ESA of the full
+  operator) as the fallback.
+
+Everything in this module is `sorry`-free and `axiom`-free.
+-/
+
+namespace BookProof.QgDerivativeRealization
+
+open MvPolynomial
+open BookProof.GaugeFixing
+open BookProof.QuantumGravity3DGauge
+open BookProof.QgPhysicalSectorIdentity
+
+/-! ## 1. Polynomial tetrad fields and the 84-dimensional configuration point -/
+
+/-- The coefficient algebra: real polynomial functions of the four spacetime
+coordinates.  Polynomiality is what makes `∂_μ` an honest linear derivation. -/
+abbrev SpacetimePoly : Type := MvPolynomial (Fin 4) ℝ
+
+/-- A tetrad field: the `16` components `e_ν^a` as polynomial functions of the
+spacetime coordinates. -/
+structure TetradConfig where
+  /-- The component `e_ν^a` of the tetrad, as a polynomial in `x`. -/
+  comp : Fin 4 → Fin 4 → SpacetimePoly
+
+/-- The `64` *promoted* derivative fields `E_{μν}^a` — the objects the
+84-dimensional coordinate space treats as independent coordinates. -/
+abbrev DerivFields : Type := Fin 4 → Fin 4 → Fin 4 → SpacetimePoly
+
+/-- The actual derivative fields of a tetrad configuration, `∂_μ e_ν^a`. -/
+noncomputable def jetDeriv (T : TetradConfig) : DerivFields :=
+  fun mu nu a => pderiv mu (T.comp nu a)
+
+/-- The point of the 84-dimensional coordinate space determined by a tetrad
+configuration `T`, a family of promoted derivative fields `E`, and a spacetime
+point `x`.  The three blocks are the `4` spacetime coordinates, the `16` tetrad
+coordinates and the `64` derivative coordinates. -/
+noncomputable def configPoint (T : TetradConfig) (E : DerivFields) (x : Fin 4 → ℝ) :
+    Fin 84 → ℂ := fun j =>
+  if h : (j : ℕ) < 4 then ((x ⟨(j : ℕ), h⟩ : ℝ) : ℂ)
+  else if _ : (j : ℕ) < 20 then
+    ((MvPolynomial.eval x
+      (T.comp ⟨((j : ℕ) - 4) / 4, by omega⟩ ⟨((j : ℕ) - 4) % 4, by omega⟩) : ℝ) : ℂ)
+  else
+    ((MvPolynomial.eval x
+      (E ⟨((j : ℕ) - 20) / 16, by omega⟩ ⟨(((j : ℕ) - 20) / 4) % 4, by omega⟩
+        ⟨(j : ℕ) % 4, by omega⟩) : ℝ) : ℂ)
+
+/-- The configuration point of the *realized* derivative fields: the 1-jet of
+the tetrad field at `x`. -/
+noncomputable def jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) : Fin 84 → ℂ :=
+  configPoint T (jetDeriv T) x
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-! ## 2. The concrete gauge field `v − dφ` and its zero locus -/
+
+/-- **The concrete 84-dimensional gauge field.**  `v − dφ` on the coordinate
+algebra of `ChapterQuantumGravity3DGauge`: the promoted derivative field minus
+the actual derivative of the tetrad component. -/
+noncomputable def gaugeFieldPoly (T : TetradConfig) (E : DerivFields) (mu nu a : Fin 4) :
+    SpacetimePoly :=
+  E mu nu a - pderiv mu (T.comp nu a)
+
+/-- The fixing surface `E = ∂e`: the NS derivative-variable constraint
+(`u_{i,j} = ∂_j u_i`) in the tetrad formalism. -/
+def Fixed (T : TetradConfig) (E : DerivFields) : Prop :=
+  ∀ mu nu a, gaugeFieldPoly T E mu nu a = 0
+
+
+
+
+
+
+
+
+
+/-! ## 3. The couplings on the fixing surface reduce to field values -/
+
+
+
+/-- The tetrad–torsion cross coupling on the coordinate algebra: the shape of
+the `book.tex 8190` cross terms `½S·E + ⅓P·E − e(…)`, a tetrad coordinate
+multiplying a derivative (torsion) coordinate. -/
+noncomputable def crossCouplingPoly : MvPolynomial (Fin 84) ℂ :=
+  ∑ mu : Fin 4, ∑ nu : Fin 4, ∑ a : Fin 4,
+    C (1 / 2 : ℂ) * X (idxE mu a) * torsionPoly mu nu a
+
+/-- The value the cross coupling takes on the fixing surface: an explicit
+expression in the tetrad field and its derivatives, with no reference to the
+derivative coordinates. -/
+noncomputable def couplingValue (T : TetradConfig) (x : Fin 4 → ℝ) : ℂ :=
+  ∑ mu : Fin 4, ∑ nu : Fin 4, ∑ a : Fin 4,
+    (1 / 2 : ℂ) * ((MvPolynomial.eval x (T.comp mu a) : ℝ) : ℂ) *
+      (((MvPolynomial.eval x (pderiv mu (T.comp nu a)) : ℝ) : ℂ)
+        - ((MvPolynomial.eval x (pderiv nu (T.comp mu a)) : ℝ) : ℂ))
+
+
+
+
+
+
+
+
+
+/-! ## 4. The concrete gauge-fixing system on the field algebra -/
+
+/-- The carrier: `2 × 2` matrices over the algebra of spacetime polynomials. -/
+abbrev Mat2R : Type := Matrix (Fin 2) (Fin 2) SpacetimePoly
+
+/-- The nilpotent odd generator `Q = E₁₂`. -/
+noncomputable def QmR : Mat2R := !![0, 1; 0, 0]
+
+/-- The anti-ghost `c̄ = E₂₁`. -/
+noncomputable def PmR : Mat2R := !![0, 0; 1, 0]
+
+/-- The BRST differential: the super-commutator with `Q`. -/
+noncomputable def sMatR (g : ℤ) (x : Mat2R) : Mat2R := QmR * x - ((-1 : ℝ) ^ g) • (x * QmR)
+
+/-- **The exterior derivative**: the spacetime partial derivative `∂_μ`, acting
+entrywise.  This is what the abstract matrix model of `ChapterGaugeFixing`
+lacks (there `d = 0`), and what makes `v − dφ` express `E = ∂e`. -/
+noncomputable def dMatR (mu : Fin 4) (x : Mat2R) : Mat2R := x.map (fun p => pderiv mu p)
+
+theorem QmR_mul_QmR : QmR * QmR = 0 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [QmR, Matrix.mul_apply, Fin.sum_univ_two]
+
+theorem QmR_PmR_add : QmR * PmR + PmR * QmR = 1 := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [QmR, PmR]
+
+theorem sMatR_nilpotent (g : ℤ) (x : Mat2R) : sMatR (g + 1) (sMatR g x) = 0 := by
+  have hsgn : ((-1 : ℝ) ^ (g + 1)) = -((-1 : ℝ) ^ g) := by
+    rw [zpow_add_one₀ (by norm_num : (-1 : ℝ) ≠ 0)]; ring
+  simp only [sMatR, hsgn, mul_sub, sub_mul, Matrix.mul_smul, Matrix.smul_mul,
+    neg_smul, ← mul_assoc, QmR_mul_QmR, Matrix.zero_mul]
+  rw [mul_assoc x QmR QmR, QmR_mul_QmR, Matrix.mul_zero]
+  simp
+
+theorem sMatR_sub (g : ℤ) (x y : Mat2R) : sMatR g (x - y) = sMatR g x - sMatR g y := by
+  simp only [sMatR, mul_sub, sub_mul, smul_sub]; abel
+
+theorem dMatR_zero (mu : Fin 4) : dMatR mu 0 = 0 := by
+  ext i j; simp [dMatR]
+
+theorem sMatR_dMatR (mu : Fin 4) (g : ℤ) (x : Mat2R) :
+    sMatR g (dMatR mu x) = dMatR mu (sMatR g x) := by
+  ext i j
+  simp only [sMatR, dMatR, Matrix.sub_apply, Matrix.smul_apply, Matrix.map_apply,
+    Matrix.mul_apply, Fin.sum_univ_two, map_sub]
+  fin_cases i <;> fin_cases j <;> simp [QmR]
+
+theorem sMatR_smul_one (f : SpacetimePoly) : sMatR 0 (f • (1 : Mat2R)) = 0 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [sMatR, QmR]
+
+
+
+
+
+theorem sMatR_PmR : sMatR (-1) PmR = 1 := by
+  have hneg : ((-1 : ℝ) ^ (-1 : ℤ)) = -1 := by norm_num
+  rw [sMatR, hneg]
+  simp only [neg_smul, one_smul, sub_neg_eq_add]
+  exact QmR_PmR_add
+
+theorem sMatR_leibniz (Y : Mat2R) : sMatR (-1) (PmR * Y) = 1 * Y - PmR * sMatR 0 Y := by
+  have hneg : ((-1 : ℝ) ^ (-1 : ℤ)) = -1 := by norm_num
+  have h0 : ((-1 : ℝ) ^ (0 : ℤ)) = 1 := by norm_num
+  have h3 : QmR * PmR * Y + PmR * QmR * Y = Y := by rw [← add_mul, QmR_PmR_add, one_mul]
+  simp only [sMatR, hneg, h0, one_smul, neg_smul, sub_neg_eq_add]
+  calc QmR * (PmR * Y) + PmR * Y * QmR
+      = (QmR * PmR * Y + PmR * QmR * Y) - PmR * QmR * Y + PmR * Y * QmR := by
+        rw [mul_assoc QmR PmR Y]; abel
+    _ = Y - PmR * QmR * Y + PmR * Y * QmR := by rw [h3]
+    _ = 1 * Y - PmR * (QmR * Y - Y * QmR) := by
+        rw [one_mul, mul_sub, ← mul_assoc, ← mul_assoc]; abel
+
+/-- **The concrete derivative-variable fixing system.**  The physical scalar is
+the tetrad component `φ = e_ν^a`, the promoted gauge field is the derivative
+coordinate `v = E_{μν}^a`, and the exterior derivative is the honest spacetime
+derivative `∂_μ`, so that `v − dφ = E_{μν}^a − ∂_μ e_ν^a`. -/
+noncomputable def qgFixingSystem (mu : Fin 4) (f w : SpacetimePoly) :
+    DerivativeVariableFixingSystem (fun _ => Mat2R) where
+  zero := fun _ => 0
+  add := fun _ x y => x + y
+  sub := fun _ x y => x - y
+  mul := fun _ _ x y => x * y
+  d := fun {_ _} x => dMatR mu x
+  s := fun {_ g} x => sMatR g x
+  d_zero := fun _ _ => dMatR_zero mu
+  sub_zero := fun _ x => sub_zero x
+  s_nilpotent := fun _ g x => sMatR_nilpotent g x
+  s_sub := fun _ g x y => sMatR_sub g x y
+  sd_commute := fun _ g x => sMatR_dMatR mu g x
+  phi := f • (1 : Mat2R)
+  v := w • (1 : Mat2R)
+  c := 0
+  c_bar := PmR
+  B := 1
+  def_s_v := sMatR_smul_one w
+  def_s_phi := sMatR_smul_one f
+  def_s_c_bar := sMatR_PmR
+  s_mul_c_bar := sMatR_leibniz
+  mul_zero_left := fun x => Matrix.zero_mul x
+  mul_zero_right := fun x => Matrix.mul_zero x
+
+
+
+
+
+
+
+
+
+/-- The system attached to a tetrad configuration and its promoted derivative
+fields: `φ = e_ν^a`, `v = E_{μν}^a`. -/
+noncomputable def qgSystemOf (T : TetradConfig) (E : DerivFields) (mu nu a : Fin 4) :
+    DerivativeVariableFixingSystem (fun _ => Mat2R) :=
+  qgFixingSystem mu (T.comp nu a) (E mu nu a)
+
+
+
+
+
+
+
+end BookProof.QgDerivativeRealization

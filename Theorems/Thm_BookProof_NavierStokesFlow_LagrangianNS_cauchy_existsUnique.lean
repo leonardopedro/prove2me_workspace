@@ -4,54 +4,17 @@ import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 
-
-
-
-
-
-
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+variable (L : LagrangianNS n)
 
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+Complex.I • L.hFull)) :=
+    ((Commute.refl (Complex.I • L.hFull)).smul_left s).smul_right t
+  rw [flowUnitary, flowUnitary, flowUnitary, matrixFlow, matrixFlow, matrixFlow, add_smul,
+    Matrix.exp_add_of_commute _ _ hcomm]
 
-
-
-variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (L : LagrangianNS n)
-
-theorem BookProof.NavierStokesFlow.LagrangianNS.cauchy_existsUnique (psi : Fin n → ℂ) :
-    ∃! y : ℝ → Fin n → ℂ,
-      y 0 = psi ∧ ∀ t, HasDerivAt y ((Complex.I • L.hFull) *ᵥ y t) t := by sorry
+/-- **B (truncated completeness)** *The Cauchy problem of the transformed
+Lagrangian operator has exactly one g := by sorry

@@ -1,12 +1,6 @@
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterHermiteQuadraticEsa
 import Mathlib
-import Mathlib
-open BookProof.QgHermiteFriedrichs
-open BookProof.QgHermiteCore
-open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 
 
 /-!
@@ -50,6 +44,11 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.GaussCoreQuadBounds
 
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 
 noncomputable section
 
@@ -74,11 +73,6 @@ variable {D : ℕ}
 
 
 /-! ## 3. The harmonic comparison operator on the core -/
-
-variable {d : ℕ}
-
-/-- The harmonic potential, as a polynomial in the coordinates. -/
-def harmPoly : MvPolynomial (Fin d) ℂ := ∑ j : Fin d, C (1 / 4 : ℂ) * X j ^ 2
 
 /-- The polynomial realization of the comparison operator `N = −Δ + ‖x‖²/4`. -/
 def harmP (p : MvPolynomial (Fin D) ℂ) : MvPolynomial (Fin D) ℂ := kinPoly p + harmPoly * p
@@ -132,7 +126,7 @@ def shiftNorm (p : MvPolynomial (Fin D) ℂ) : ℝ := ‖pgLp (harmP p) + pgLp p
 
 
 
-
+un i => ((x i : ℝ) : ℂ)) p‖)]
 
 end
 

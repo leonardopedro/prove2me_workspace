@@ -18,11 +18,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-m * (torsionP m * p)) := by
-  simp [qgSignedPoly]
-
 theorem solution (S : MvPolynomial (Fin 84) ℂ →ₗ[ℂ] MvPolynomial (Fin 84) ℂ)
-    (p : MvP :=
-  olynomial (Fin 84) ℂ) : weylProd S S p = S (S p) := by
-    simp only [weylProd, LinearMap.smul_apply, LinearMap.add_apply, LinearMap.comp_apply]
-    rw
+    (p : MvPolynomial (Fin 84) ℂ) : weylProd S S p = S (S p) := by
+
+  simp only [weylProd, LinearMap.smul_apply, LinearMap.add_apply, LinearMap.comp_apply]
+  rw [← two_smul ℂ (S (S p)), smul_smul]
+  norm_num

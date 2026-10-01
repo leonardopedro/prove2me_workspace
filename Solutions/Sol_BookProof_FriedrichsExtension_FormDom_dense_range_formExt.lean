@@ -10,13 +10,17 @@ open BookProof.FriedrichsExtension.FormDom
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
-    Dense (Set.range (formExt P)) := by
+ed_eq (by fun_prop) (by fun_prop)
+  simpa using hall k
 
-  refine Dense.mono ?_ hdense
-  intro v hv
-  exact ⟨((show FormDom P from ⟨v, hv⟩ : FormDom P) : FormSpace P), by rw [formExt_coe]; rfl⟩
+theorem solution (P : PosSymOp F) (hdense : Den :=
+  se (P.dom : Set F)) :
+      Dense (Set.range (formExt P)) := by
+    refine Dense.mono ?_ hdense
+    intro v hv
+    exact ⟨((show FormDom P from ⟨v, hv⟩

@@ -94,15 +94,30 @@ def main():
     if not jobs:
         print("no definition publish jobs returned")
         return 1
+    # A FAILED job must not revoke an older PUBLISHED one (PIPELINE_PLAN 1e), and
+    # the page order is not chronological, so track the newest PUBLISHED job
+    # separately and prefer it. ChapterYangMillsSU3 has one PUBLISHED job and
+    # three later FAILED ones -- all "already exists", from duplicate
+    # submissions -- which newest-wins marked FAILED. Four published bundles
+    # import it, so withholding it cascaded. Also: the platform holds the
+    # Definition (catalog status "Definition"), it is only the job list that
+    # disagrees.
     newest = {}
+    newest_pub = {}
     for j in jobs:
         name = j.get("theorem_name") or ""
         if not name:
             continue
+        stamp = j.get("updated_at") or j.get("created_at") or ""
         prev = newest.get(name)
-        stamp = (j.get("updated_at") or j.get("created_at") or "")
         if prev is None or (prev.get("updated_at") or prev.get("created_at") or "") <= stamp:
             newest[name] = j
+        if j.get("status") == "PUBLISHED":
+            pp = newest_pub.get(name)
+            if pp is None or (pp.get("updated_at") or pp.get("created_at") or "") <= stamp:
+                newest_pub[name] = j
+    for name, j in newest_pub.items():
+        newest[name] = j
 
     bundles = {}
     ns_owner, name_owner = {}, {}

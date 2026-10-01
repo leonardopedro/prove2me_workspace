@@ -28,4 +28,5 @@ theorem solution (x : d.C.dom) :
   have h1 : Tendsto (fun k => (inner ℂ ((d.gcSeq x k : d.C.dom) : F)
       (d.C.op (d.gcSeq x k)) : ℂ)) atTop (𝓝 (inner ℂ (x : F) (d.C.op x))) :=
     (d.gcSeq_tendsto x).inner (d.gcSeq_op_tendsto x)
-  simpa only [quadForm] using (Complex.reCLM.continuous.tendsto _).comp h1
+  simp only [quadForm]
+  exact (Complex.reCLM.continuous.tendsto _).comp h1

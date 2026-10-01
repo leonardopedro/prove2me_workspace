@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,4 +16,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.idxX_injective : Function.Injective idxX := by sorry
+ := by sorry

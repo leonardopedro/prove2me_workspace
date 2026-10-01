@@ -5,40 +5,10 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-
-
-
-variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
-
 set_option maxHeartbeats 1000000 in
+the flow of the generator `i H_N`. -/
 theorem solution (t : ℝ) :
     nsFlowUnitary d t = matrixFlow (Complex.I • nsHamiltonian d) t := by
-
-  rw [nsFlowUnitary, matrixFlow, ← smul_assoc, Complex.real_smul]
+  rw [ns := FlowUnitary, matrixFlow, ← smul_assoc, Co

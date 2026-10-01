@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,7 +16,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+ySym_mulXPoly i)).add
+      (BookProof.YangMillsHermite.PolySym.real_smul (polySym_momPoly i))
+
 set_option maxHeartbeats 1000000 in
 -- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
-theorem BookProof.HermiteRelative.foOp_symmetric (b b' : Fin d → ℝ) :
-    SymmetricOn (polyGaussCore (d := d)) (foOp b b') := by sorry
+theor := by sorry

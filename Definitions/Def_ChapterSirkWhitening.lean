@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterH4
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkWhitening — the reduced operator depends only on the retained subspace

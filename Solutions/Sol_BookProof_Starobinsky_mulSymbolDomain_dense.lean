@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
 import Theorems.Thm_BookProof_Starobinsky_lpFiniteModes_le_mulSymbolDomain
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.Starobinsky
 
 

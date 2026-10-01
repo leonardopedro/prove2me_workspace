@@ -1,19 +1,8 @@
 -- Generated from ChapterBandEnclosure.lean — solution of BookProof.BandEnclosure.sirk_nestedBands
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
+import Theorems.Thm_BookProof_ChapterH8_sirk_band_contained
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
 
 
 

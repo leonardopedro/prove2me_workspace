@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_secondOrder
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_add
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_real_smul
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -19,7 +22,4 @@ theorem solution :
 
   simp only [secondOrder, LagrangianFullData.kinetic, LagrangianFullData.viscous, diagKR,
     diagLagData, diagOp_comp, diagOp_sum, diagOp_real_smul, diagOp_add]
-  refine congrArg diagOp ?_
-  funext n
-  simp only [Fin.sum_univ_three]
-  ring
+  show ((((1 / 2 : ℝ) : ℂ) • ∑ i, diagOp fun n => (n : ℝ) * (n : ℝ

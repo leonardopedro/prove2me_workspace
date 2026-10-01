@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 open BookProof.ChapterSirkTrotterKato
 
-
-
-
-
-
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 noncomputable section

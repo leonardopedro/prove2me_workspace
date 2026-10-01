@@ -3,18 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_coordLine_apply
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_coordLine_self
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
 open BookProof.QgHermiteFriedrichs
-
-
-
-
 
 
 
@@ -27,38 +16,6 @@ noncomputable section
 
 variable {d : ℕ}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (W : Vd d → ℝ)
-
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) (x : Vd d) (j : Fin d)
     (t : ℝ) :
@@ -67,7 +24,24 @@ theorem solution (p : MvPolynomial (Fin d) ℂ) (x : Vd d) (j : Fin d)
 
   induction p using MvPolynomial.induction_on with
   | C a => simpa using hasDerivAt_const t (a : ℂ)
-  | add p q hp hq => simpa [map_add] using hp.add hq
+  | add p q hp hq =>
+      have hfun :
+          (fun s : ℝ => MvPolynomial.eval (fun i => (((coordLine x j s) i : ℝ) : ℂ)) p)
+            + (fun s : ℝ => MvPolynomial.eval (fun i => (((coordLine x j s) i : ℝ) : ℂ)) q)
+          = fun s : ℝ =>
+              MvPolynomial.eval (fun i => (((coordLine x j s) i : ℝ) : ℂ)) (p + q) := by
+        funext s
+        exact MvPolynomial.eval_add.symm
+      have hder :
+          MvPolynomial.eval (fun i => (((coordLine x j t) i : ℝ) : ℂ)) (pderiv j p)
+            + MvPolynomial.eval (fun i => (((coordLine x j t) i : ℝ) : ℂ)) (pderiv j q)
+          = MvPolynomial.eval (fun i => (((coordLine x j t) i : ℝ) : ℂ))
+            (pderiv j (p + q)) := by
+        rw [← MvPolynomial.eval_add, ← map_add]
+      have h1 := hp.add hq
+      rw [hfun] at h1
+      rw [hder] at h1
+      exact h1
   | mul_X p i hp =>
       have hcoord : HasDerivAt (fun s : ℝ => (((coordLine x j s) i : ℝ) : ℂ))
           (MvPolynomial.eval (fun k => (((coordLine x j t) k : ℝ) : ℂ))

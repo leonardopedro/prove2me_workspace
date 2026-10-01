@@ -13,5 +13,9 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
-theorem BookProof.ScalaronWallEsa.wallHam_symmetricOn (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
-    SymmetricOn (ccDomain ℝ) (wallHam V hV) := by sorry
+ + opCc V hV
+
+theorem BookProof.ScalaronWallEsa.wallHam_symmetricOn : SymmetricOn (ccDomain ℝ) kinCcR :=
+  symmetricOn_inclusion _ _ (constCoeffOp_symmetric _ _ _)
+
+theorem wa := by sorry

@@ -17,15 +17,18 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+nomial (Fin d) ℂ) := by
+  intro p q
+  simp [BookProof.YangMillsHermite.starP, gaussInt_zero]
+
 theorem solution {ι : Type*} (s : Finset ι)
     (T : ι → MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
-    (h : ∀ i ∈ s, BookProof.YangMillsHermite.PolySym (T i)) :
-    BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) := by
-
-  classical
-  induction s using Finset.induction with
-  | empty => simpa using polySym_zero
-  | insert i s hi ih =>
-      rw [Finset.sum_insert hi]
-      exact (h i (Finset.mem_insert_self i s)).add
-        (ih fun j hj => h j (Finset.mem_insert_of_mem hj))
+    (h : ∀ i ∈ s, BookPr :=
+  oof.YangMillsHermite.PolySym (T i)) :
+      BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) := by
+    classical
+    induction s using Finset.induction with
+    | empty => simpa using polySym_zero
+    | insert i s hi ih =>
+        rw [Finset.sum_insert hi]
+        exact (

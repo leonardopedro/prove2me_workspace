@@ -15,14 +15,31 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    mulOp (X j) (momOp k p) - momOp k (mulOp (X j) p) = (if j = k then Complex.I else 0) • p := by
+al = nu'.val := by omega
+  have ha : a.val = a'.val := by omega
+  simp [Prod.ext_iff, Fin.ext_iff, hmu, hnu, ha]
 
-  by_cases h : j = k
-  · subst h
-    simpa using commutator_coord_mom j p
-  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
-      rw [Derivation.leibniz]
-      simp [MvPolynomial.pderiv_X, Ne.symm h]
-    simp only [mulOp_apply, momOp_apply, hX, if_neg h, zero_smul, neg_smul, smul_eq_C_mul]
-    ring
+theorem solution (mu nu a : Fin 4) : idxX mu ≠ idxE nu a := by
+  intro h
+  have := congrArg Fin.val h
+  simp only [idxX, idxE] at this
+  omega
+
+theorem idxX_ne_idxDE (mu nu rho a : Fin 4) : idxX mu ≠ idxDE nu rho a := by
+  intro h
+  have := congrArg :=
+   Fin.val h
+    simp only [idxX, idxDE] at this
+    omega
+  
+  theorem idxE_ne_idxDE (mu a nu rho b : Fin 4) : idxE mu a ≠ idxDE nu rho b := by
+    intro h
+    have := congrArg Fin.val h
+    simp only [idxE, idxDE] at this
+    omega
+  
+  /-! ## F.3 — the canonical commutation relations at polynomial level -/
+  
+  variable {d : ℕ}
+  
+  /--

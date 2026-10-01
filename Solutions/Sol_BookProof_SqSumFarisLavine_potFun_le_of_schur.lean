@@ -2,28 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_schur_bound
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
 open BookProof.SqSumFarisLavine
-
-
-
-
-
-
-
-
-
 
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

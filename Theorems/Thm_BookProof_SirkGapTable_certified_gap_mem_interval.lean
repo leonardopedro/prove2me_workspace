@@ -3,22 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 open BookProof.SirkGapTable
 
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.SirkGapTable.certified_gap_mem_interval {T P : E →ₗ[ℂ] E} {thetaE thetaO deltaE deltaO : ℝ}
     (hEvenHi : sectorGround T P 1 ≤ thetaE + deltaE)

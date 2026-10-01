@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 open BookProof.QgHermiteOscillator
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial

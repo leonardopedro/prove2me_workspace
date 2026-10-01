@@ -16,9 +16,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-in 84, ∑ j : Fin 84, F m i j := Finset.sum_comm
-
 theorem BookProof.Qg3DGaugeEsa.qgFqQ_quadratic_eq :
     ∑ i : Fin 84, ∑ j : Fin 84, ((qgFqQ i j : ℝ) : ℂ)
         • ((X i : MvPolynomial (Fin 84) ℂ) * X j)
-      = ((1 / 2 : ℝ) := by sorry
+      = ((1 / 2 : ℝ) : ℂ) • ∑ m : Fin 64, torsionP m * torsionP m := by sorry

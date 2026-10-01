@@ -57,6 +57,11 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.QgManifoldModeInstance
 
 open Filter Topology
+open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
 
 noncomputable section
 

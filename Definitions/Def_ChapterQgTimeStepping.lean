@@ -1,9 +1,5 @@
 import Definitions.Def_ChapterQgTruncationResolvent
 import Mathlib
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneBridge
 
 
 /-!
@@ -98,14 +94,29 @@ variable (T : UnboundedSelfAdjoint H)
 
 /-! ## 3. The second-order Taylor estimate for the exact flow -/
 
-zero, sub_zero] at hmain
-  calc ‖f tau‖ ≤ C * (tau - 0)(( :step T tau ((y : H)) - T.stoneU tau ((y : H)))
-      have hnn : (0 : h p T tau)^[k + 1] (x : H))
-    ((cnStep T tau)^[k + 1] (x : H) - T.stoneU t (x : H))
-ℕ) : ℝ)))^[m n + 1] v - (S n).stoneU t v)
-    ((S n).stoneU t v - T.stoneU t v)
-  rw [dist_eq_norm, hsplit]
-  linarith
+
+
+/-! ## 4. The local and the global error of the scheme -/
+
+
+
+
+
+
+
+
+
+/-! ## 5. Convergence of the scheme for every initial vector -/
+
+
+
+
+
+/-! ## 6. The fully discrete quantum-gravity evolution -/
+
+variable {ι : Type*}
+
+
 
 end
 

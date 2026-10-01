@@ -5,6 +5,8 @@ open BookProof.YangMillsHermite
 open BookProof.YangMillsHermite.PolyAdj
 
 variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
+variable {D : Submodule ℂ (L2d 99)}
 
 
 

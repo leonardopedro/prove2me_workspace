@@ -1,8 +1,6 @@
 import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH4
-import Definitions.Def_ChapterH5
-import Definitions.Def_ChapterH6
 import Mathlib
+
 
 /-!
 # Chapter H8b — the SIRK nesting hypotheses are realized by Krylov bases
@@ -127,9 +125,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 open ContinuousLinearMap InnerProductSpace
 
-
-
-omit [CompleteSpace E] in
+E] in
 /-- Linear independence of a prefix also gives linear independence of every
 initial segment `Set.Iic i`, in the form Gram–Schmidt asks for. -/
 theorem li_Iic_of_li_Fin {f : ℕ → E} {n : ℕ} (hli : LinearIndependent ℂ (fun i : Fin n => f i))
@@ -163,9 +159,7 @@ prefixes are the nested orthonormal Krylov bases used by the SIRK method. -/
 def krylovOrthonormalSeq (H : E →ₗ[ℂ] E) (v : E) : ℕ → E :=
   gramSchmidtNormed ℂ (fun k : ℕ => (H ^ k) v)
 
-
-
-omit [CompleteSpace E] in
+omit [CompleteSpace E]E] in
 /-- **The order-`n` Krylov basis is orthonormal** as soon as the Krylov sequence
 has not broken down before order `n`. -/
 theorem krylovOrthonormal_orthonormal (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
@@ -173,11 +167,7 @@ theorem krylovOrthonormal_orthonormal (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
     Orthonormal ℂ (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ)) :=
   gramSchmidtNormed_orthonormal_prefix hli
 
-
-
-
-
-/-- The order-`n` **Krylov embedding** `Vₙ : EuclideanSpace ℂ (Fin n) →L[ℂ] E`: the
+omit [CompleteSpace E]E]Krylov embedding** `Vₙ : EuclideanSpace ℂ (Fin n) →L[ℂ] E`: the
 isometry sending coordinate vectors to the orthonormal Krylov basis. -/
 def krylovEmbedding (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
     (hli : LinearIndependent ℂ (fun i : Fin n => (H ^ (i : ℕ)) v)) :
@@ -185,12 +175,6 @@ def krylovEmbedding (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
   orthonormalEmbedding (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ))
     (krylovOrthonormal_orthonormal H v hli)
 
-
-
-
-
-end KrylovBases
-
-end BookProof.ChapterH8
+omit [CompleteSpace E]yl BookProof.ChapterH8
 
 end

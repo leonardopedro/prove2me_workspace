@@ -5,25 +5,8 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
+t]; linarith
 
-
-
-
-
-
-
-
-
-
-open LpNat
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ jacobiWeight n := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ j := by sorry

@@ -4,15 +4,7 @@ import Definitions.Def_ChapterSirkGramCutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_defect_le_sqrt_cutoff
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_retainedEmbedding_isometry
 import Theorems.Thm_BookProof_ChapterSirkGramCutoff_mem_range_retainedEmbedding
-import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramCutoff
-
-
-
-
-
-
-
 
 
 
@@ -24,14 +16,6 @@ open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {m : ℕ} {w : Fin m → E}
-variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (heig : IsGramEigen w u lam) {tol : ℝ}

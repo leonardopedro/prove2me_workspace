@@ -1,20 +1,10 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.exchange_Lp
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Theorems.Thm_BookProof_CarlemanSimplex_rcm_of_zero
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_add_single
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_sub_single
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -9,12 +9,6 @@ open BookProof.ScalaronEdge
 
 
 
-
-
-
-
-
-
 open Complex Real MeasureTheory Function SchwartzMap ComplexOrder
 open BookProof.Starobinsky
 open BookProof.ScalaronWallEsa
@@ -25,7 +19,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

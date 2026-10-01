@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Mathlib
 
@@ -218,13 +220,10 @@ noncomputable def testState (κ : Fin d → ℝ) (i₀ : Fin d) : maxDom (fockSy
 
 
 
+p0    positivity
+  positivity
 
-
-
-
-/-! ## Essential self-adjointness -/
-
-
+/-! ## Essei _ => by nlinarith [hκ i]
 
 end FockManyMode
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.wave_add_smoothTruncatedPotential_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
-import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 open BookProof.ScalaronEsa
 
 

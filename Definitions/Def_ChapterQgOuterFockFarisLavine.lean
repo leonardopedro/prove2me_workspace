@@ -1,24 +1,24 @@
+import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_quadForm_nonneg
+
+import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_symmetricOn
+
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
+
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint
+
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos
+
+import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
+
+import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_quadForm_nonneg
+
+import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn
+
+import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
+
+import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
-import Mathlib
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterYangMillsFriedrichs
-
-
-open scoped ENNReal
-open BookProof.FarisLavine
-open BookProof.YangMillsFriedrichs
-open BookProof.FriedrichsExtension
-open BookProof.FriedrichsExtension.FormDom
-open BookProof.HashimotoShiftInvert
-open BookProof.HermiteProductCore
-open Classical in
-open BookProof.QgHermiteCore
-open BookProof.QgHermiteFriedrichs
 
 
 /-!
@@ -100,155 +100,19 @@ route, in `BookProof.ChapterQgOuterFockEsa` (`qgOuterFock_esa`).
 Everything in this module is `sorry`-free and `axiom`-free.
 -/
 
-
-namespace BookProof.FriedrichsExtension
-
-namespace FormDom
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-theorem isUniformInducing_toComplL (P : PosSymOp F) :
-    IsUniformInducing (UniformSpace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P)) := by
-  simpa [UniformSpace.Completion.coe_toComplL] using
-    UniformSpace.Completion.isUniformInducing_coe (FormDom P)
-
-@[simp] theorem formExt_coe (P : PosSymOp F) (x : FormDom P) :
-    formExt P (x : FormSpace P) = toAmbient x := by
-  have := ContinuousLinearMap.extend_eq (incl P) (denseRange_toComplL P)
-    (isUniformInducing_toComplL P) x
-  simpa [formExt, toAmbient_eq, incl, inclLin, ContinuousLinearMap.coe_coe,
-      UniformSpace.Completion.coe_toComplL] using this
-
-theorem inner_coe_eq (P : PosSymOp F) (x : FormDom P) (k : FormSpace P) :
-    (inner ℂ (x : FormSpace P) k : ℂ)
-      = inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) := by
-  refine UniformSpace.Completion.induction_on k ?_ ?_
-  · exact isClosed_eq (by fun_prop) (by fun_prop)
-  · intro y
-    rw [formExt_coe, UniformSpace.Completion.inner_coe, inner_def, inner_add_left,
-      toAmbient_eq, toAmbient_eq, P.sym (toDom x) (toDom y)]
-
-theorem formExt_injective (P : PosSymOp F) : Function.Injective (formExt P) := by
-  rw [injective_iff_map_eq_zero]
-  intro k hk
-  have hzero : ∀ y : FormDom P, (inner ℂ (y : FormSpace P) k : ℂ) = 0 := by
-    intro y
-    rw [inner_coe_eq, hk, inner_zero_right]
-  have hall : ∀ z : FormSpace P, (inner ℂ z k : ℂ) = 0 := by
-    intro z
-    refine UniformSpace.Completion.induction_on z ?_ hzero
-    exact isClosed_eq (by fun_prop) (by fun_prop)
-  simpa using hall k
-
-theorem dense_range_formExt (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
-    Dense (Set.range (formExt P)) := by
-  refine Dense.mono ?_ hdense
-  intro v hv
-  exact ⟨((show FormDom P from ⟨v, hv⟩ : FormDom P) : FormSpace P), by rw [formExt_coe]; rfl⟩
-
-
-@[simp] theorem friedrichsResolvent_apply (P : PosSymOp F) (u : F) :
-    friedrichsResolvent P u = formExt P (formRiesz P u) := rfl
-
-theorem inner_friedrichsResolvent (P : PosSymOp F) (u v : F) :
-    (inner ℂ u (friedrichsResolvent P v) : ℂ) = inner ℂ (formRiesz P u) (formRiesz P v) := by
-  rw [friedrichsResolvent_apply, formRiesz_spec]
-
-theorem friedrichsResolvent_isSelfAdjoint (P : PosSymOp F) :
-    IsSelfAdjoint (friedrichsResolvent P) := by
-  rw [ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric]
-  intro u v
-  simp only [ContinuousLinearMap.coe_coe]
-  rw [← inner_conj_symm, inner_friedrichsResolvent, inner_friedrichsResolvent, inner_conj_symm]
-
-theorem friedrichsResolvent_pos (P : PosSymOp F) (u : F) :
-    (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2
-      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re := by
-  have h : (inner ℂ (friedrichsResolvent P u) u : ℂ)
-      = starRingEnd ℂ (inner ℂ u (friedrichsResolvent P u)) := (inner_conj_symm _ _).symm
-  rw [h, inner_friedrichsResolvent]
-  have h2 : (inner ℂ (formRiesz P u) (formRiesz P u) : ℂ) = ((‖formRiesz P u‖ ^ 2 : ℝ) : ℂ) := by
-    simp [inner_self_eq_norm_sq_to_K, Complex.ofReal_pow]
-  rw [h2]
-  simp only [Complex.conj_ofReal, Complex.ofReal_re, one_mul, friedrichsResolvent_apply]
-  nlinarith [norm_formExt_apply_le P (formRiesz P u), norm_nonneg (formExt P (formRiesz P u)),
-    norm_nonneg (formRiesz P u)]
-
-theorem friedrichsResolvent_injective (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
-    Function.Injective (friedrichsResolvent P) := by
-  rw [injective_iff_map_eq_zero]
-  intro u hu
-  have h0 : formRiesz P u = 0 := formExt_injective P (by simpa using hu)
-  have hall : ∀ k : FormSpace P, (inner ℂ u (formExt P k) : ℂ) = 0 := by
-    intro k
-    rw [← formRiesz_spec, h0, inner_zero_left]
-  have hzero : ∀ v : F, (inner ℂ u v : ℂ) = 0 := by
-    intro v
-    have hc : Continuous fun w : F => (inner ℂ u w : ℂ) := (innerSL ℂ u).continuous
-    have heq : Set.EqOn (fun w : F => (inner ℂ u w : ℂ)) (fun _ => (0 : ℂ))
-        (Set.range (formExt P)) := by
-      rintro _ ⟨k, rfl⟩
-      exact hall k
-    exact congrFun (Continuous.ext_on (dense_range_formExt P hdense) hc continuous_const heq) v
-  simpa using hzero u
-
-end FormDom
-
-end BookProof.FriedrichsExtension
-
-
-namespace BookProof.HashimotoShiftInvert
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {Dom : Submodule ℂ F}
-
-@[simp] theorem shiftMap_apply (A : Dom →ₗ[ℂ] F) (γ : ℝ) (x : Dom) :
-    shiftMap A γ x = A x + (γ : ℂ) • (x : F) := rfl
-
-
-theorem preim_eq (R : F →L[ℂ] F) (hinj : Function.Injective R)
-    (y : LinearMap.range (R : F →ₗ[ℂ] F)) {u : F} (hu : R u = (y : F)) : preim R y = u :=
-  hinj (by rw [preim_spec, hu])
-
-@[simp] theorem invShiftOperator_apply (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ)
-    (y : LinearMap.range (R : F →ₗ[ℂ] F)) :
-    invShiftOperator R hinj γ y = preim R y - (γ : ℂ) • (y : F) := rfl
-
-theorem invShiftOperator_symmetricOn (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ)
-    (hR : IsSelfAdjoint R) :
-    SymmetricOn (LinearMap.range (R : F →ₗ[ℂ] F)) (invShiftOperator R hinj γ) := by
-  have hRsym := ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mp hR
-  intro y z
-  have hy : R (preim R y) = (y : F) := preim_spec R y
-  have hz : R (preim R z) = (z : F) := preim_spec R z
-  have hcross : (inner ℂ (preim R y) (z : F) : ℂ) = inner ℂ (y : F) (preim R z) := by
-    rw [← hy, ← hz]
-    exact (hRsym (preim R y) (preim R z)).symm
-  simp only [invShiftOperator_apply, inner_sub_left, inner_sub_right, inner_smul_left,
-    inner_smul_right, Complex.conj_ofReal, hcross]
-
-theorem invShiftOperator_quadForm_nonneg (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ)
-    (hposR : ∀ u : F, γ * ‖R u‖ ^ 2 ≤ (inner ℂ (R u) u : ℂ).re)
-    (y : LinearMap.range (R : F →ₗ[ℂ] F)) : 0 ≤ quadForm (invShiftOperator R hinj γ) y := by
-  have hy : R (preim R y) = (y : F) := preim_spec R y
-  have hq : quadForm (invShiftOperator R hinj γ) y
-      = (inner ℂ (y : F) (preim R y) : ℂ).re - γ * ‖(y : F)‖ ^ 2 := by
-    rw [quadForm, invShiftOperator_apply, inner_sub_right, inner_smul_right, Complex.sub_re,
-      inner_self_eq_norm_sq_to_K]
-    congr 1
-    simp [← Complex.ofReal_pow]
-  have hp := hposR (preim R y)
-  rw [hy] at hp
-  rw [hq]
-  linarith
-
-end BookProof.HashimotoShiftInvert
-
+open scoped ENNReal
 
 namespace BookProof.QgOuterFockFL
 
+open BookProof.FarisLavine
+open BookProof.DirectSumEsa
+open BookProof.QgOuterFock
+open BookProof.YangMillsFriedrichs
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.HashimotoShiftInvert
+open BookProof.QgHermiteOscillator
+open BookProof.HermiteProductCore
 
 noncomputable section
 
@@ -302,8 +166,6 @@ structure Comparison (F : Type*) [NormedAddCommGroup F] [InnerProductSpace ℂ F
 
 
 
-
-
 /-- **The Friedrichs extension is a Faris–Lavine comparison operator.**  Every densely
 defined positive symmetric operator has one: the resolvent `S = (P+1)⁻¹` built in
 `BookProof.ChapterFriedrichsExtension` inverts the shift by construction. -/
@@ -339,11 +201,10 @@ variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
 theorem rpow_two_eq (a : ℝ) : a ^ (2 : ℝ≥0∞).toReal = a ^ (2 : ℕ) := by
   simp [ENNReal.toReal_ofNat]
 
+open Classical in
 /-- An operator on a submodule, extended by zero to the whole space. -/
-noncomputable def opTot {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-    {D : Submodule ℂ H} (A : D →ₗ[ℂ] H) (v : H) : H := by
-  classical
-  exact if h : v ∈ D then A ⟨v, h⟩ else 0
+def opTot {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] {D : Submodule ℂ H}
+    (A : D →ₗ[ℂ] H) (v : H) : H := if h : v ∈ D then A ⟨v, h⟩ else 0
 
 theorem opTot_of_mem {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
     {D : Submodule ℂ H} (A : D →ₗ[ℂ] H) {v : H} (h : v ∈ D) : opTot A v = A ⟨v, h⟩ := by
@@ -567,41 +428,8 @@ end Lift
 
 /-! ## 3. The quantum-gravity outer Fock space -/
 
-open BookProof.QgHermiteCore
-open BookProof.QgHermiteFriedrichs
-
-variable {d : ℕ}
-
 /-- The **positive one-particle operator** `N₁ = −Δ + ‖x‖²/4` of the gravity sector, as a
 densely defined positive symmetric operator on `L²(ℝᵈ)`. -/
-def harmW (x : Vd d) : ℝ := ‖x‖ ^ 2 / 4
-
-theorem continuous_harmW : Continuous (harmW (d := d)) := by
-  unfold harmW
-  fun_prop
-
-theorem expBounded_harmW : ExpBounded (harmW (d := d)) := by
-  refine ⟨1, 1, zero_le_one, fun x => ?_⟩
-  have h := Real.pow_div_factorial_le_exp ‖x‖ (norm_nonneg x) 2
-  have hfac : ((Nat.factorial 2 : ℕ) : ℝ) = 2 := by norm_num
-  rw [hfac] at h
-  have hpos : (0 : ℝ) ≤ harmW x := by
-    unfold harmW; positivity
-  rw [abs_of_nonneg hpos, one_mul, one_mul]
-  unfold harmW
-  nlinarith [sq_nonneg ‖x‖]
-
-def harmCore : (polyGaussCore (d := d)) →ₗ[ℂ] L2d d :=
-  hamCore harmW continuous_harmW expBounded_harmW
-
-theorem harmonicCore_symmetricOn : SymmetricOn (polyGaussCore (d := d)) harmCore :=
-  hamCore_symmetricOn harmW continuous_harmW expBounded_harmW
-
-theorem harmonicCore_quadForm_nonneg (x : polyGaussCore (d := d)) : 0 ≤ quadForm harmCore x :=
-  hamCore_quadForm_nonneg harmW continuous_harmW expBounded_harmW
-    (fun x => by unfold harmW; positivity) x
-
-
 def harmPosSym (d : ℕ) : PosSymOp (L2d d) where
   dom := polyGaussCore (d := d)
   op := harmCore
@@ -623,8 +451,6 @@ def harmFried (d : ℕ) : Comparison (L2d d) :=
 `ℓ²`-direct sum `⊕ₙ N₁^{(n)}` of the sector realizations of the Friedrichs extension.  It
 is again positive, self-adjoint and has `𝑁 + 1` onto the whole outer Fock space, so it is
 an admissible Faris–Lavine comparison operator there. -/
-abbrev qgOuterFock := lp (fun n : ℕ => L2d (n * 84)) 2
-
 def qgOuterComparison : Comparison qgOuterFock :=
   dsComparison (fun n : ℕ => harmFried (n * 84))
 
@@ -653,5 +479,3 @@ abbrev qgOuterFriedN : qgOuterFriedDom →ₗ[ℂ] qgOuterFock := qgOuterCompari
 end
 
 end BookProof.QgOuterFockFL
-
-

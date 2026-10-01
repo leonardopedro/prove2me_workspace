@@ -18,6 +18,4 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-w [(coreRepPoly 84).coe_equiv p, coreEquiv_coe p]
-
-theorem solution (p : MvPol := ynomia
+theorem solution (p : MvPolynomial (Fin 84) ℂ) : pgLp p = pgMap (d := 84) p := rfl

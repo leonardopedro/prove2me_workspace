@@ -1,12 +1,12 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.eq_prop_of_isSchrodingerSolution
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+import Theorems.Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_apply
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_deriv
 open BookProof.QgTimeIndependent
-
-
-
-
-
 
 
 

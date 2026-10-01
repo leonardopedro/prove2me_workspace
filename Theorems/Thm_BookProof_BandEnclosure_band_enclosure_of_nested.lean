@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 open BookProof.BandEnclosure
 
-
-
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

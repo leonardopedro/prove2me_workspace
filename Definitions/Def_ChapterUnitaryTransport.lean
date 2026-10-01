@@ -1,13 +1,6 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterUnboundedPosition
-
 import Mathlib
 
-import Mathlib
-open BookProof.ChapterUnboundedPosition
-open BookProof.ChapterContinuityUnitaryInfinite
 
 /-!
 # Unitary transport of the unbounded layer
@@ -116,25 +109,12 @@ noncomputable def transportUnitary (W : H ≃ₗᵢ[ℂ] K) (U : H ≃ₗᵢ[ℂ
 
 
 
-
-
-
+_s_apply]
 
 /-! ## Consequence: everything unitarily equivalent to lattice multiplication -/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+open BookProof.ChapterUnboundedPosition
+open BookProof.ChapterContinuityUnitaryInfinite =
+omnten) ryry f) y
 
 end BookProof.ChapterUnitaryTransport

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_creat_vacuum
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -10,76 +9,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-variable {M : Type*} [DecidableEq M]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : J) (c : Conf K) :

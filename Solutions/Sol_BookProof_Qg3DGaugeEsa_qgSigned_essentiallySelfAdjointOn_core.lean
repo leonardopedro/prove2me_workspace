@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSigned_eq_fqOp
+import Theorems.Thm_BookProof_FullQuadratic_fqOp_essentiallySelfAdjoint
 open BookProof.Qg3DGaugeEsa
 
 
@@ -19,11 +20,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-nedPoly]
-
 theorem solution (kappa : Fin 84 → ℝ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := 84))
-      (signedOp kappa (qgMo :=
-  m (coreRepPoly 84)) (torsionOps (coreRepPoly 84))) := by
-    rw [qgSigned_eq_fqOp kappa]
-    exact fq
+      (signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))) := by
+
+  rw [qgSigned_eq_fqOp kappa]
+  exact fqOp_essentiallySelfAdjoint (qgFqP kappa) qgFqQ 0 0 0

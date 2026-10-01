@@ -5,25 +5,8 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
+ble⟩
 
-
-
-
-
-
-
-
-
-
-open LpNat
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_coe : ((defState : L2N) : ℕ → ℂ) = defFun := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_coe : ((defState : L2N) : ℕ → ℂ) = := by sorry

@@ -9,13 +9,6 @@ open BookProof.CarlemanTwoStep
 
 
 
-
-
-
-
-
-
-
 open Finset
 open BookProof.HermiteCarleman
 

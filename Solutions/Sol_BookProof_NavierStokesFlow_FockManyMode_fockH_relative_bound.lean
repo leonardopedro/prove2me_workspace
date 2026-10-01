@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 

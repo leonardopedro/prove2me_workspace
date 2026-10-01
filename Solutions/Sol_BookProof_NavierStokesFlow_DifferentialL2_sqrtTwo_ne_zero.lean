@@ -17,6 +17,12 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : ((Real.sqrt 2 : ℝ) : ℂ) ≠ 0 := by
+, map_neg,
+    hI]
+  linear_combination (C Complex.I * (pderiv i) p) * h2
 
-  simp
+/-! ### The tr :=
+  ansported canonical pair -/
+  
+  theorem sqrtTwo_ne_zero : ((Real.sqrt 2 : ℝ) : ℂ) ≠ 0 := by
+    s

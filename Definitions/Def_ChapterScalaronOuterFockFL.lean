@@ -1,9 +1,21 @@
+import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_core_le_dom
+
+import Theorems.Thm_BookProof_ScalaronFiberFL_norm_xCc_sq_le
+
+import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable
+
+import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
+
+import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_comparison_core
+
+
+import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_ham_esa
+
+import Theorems.Thm_BookProof_ScalaronFiberFL_isGraphCore_of_esa
+
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterScalaronCoreEsa
 
 
 /-!
@@ -243,10 +255,10 @@ theorem secCore_le_dom : secCore (ι := ι) ≤ (secN W Q).dom := by
   simp only [Set.mem_setOf_eq] at ha ⊢
   intro h0
   refine ha ?_
-  rw [opTot_of_mem _ (W.core_le_dom (Q.sig a) (Q.sig_nonneg a) (hmem a))]
-  have hz : (⟨(x : ∀ _ : ι, L2R) a, W.core_le_dom (Q.sig a) (Q.sig_nonneg a) (hmem a)⟩ :
-      (fibCompar W Q a).dom) = 0 := Subtype.ext h0
-  rw [hz, map_zero]
+  rw [h0]
+  simp only [opTot, dif_pos (zero_mem _)]
+  show (fibCompar W Q a).op 0 = 0
+  exact map_zero _
 
 theorem secN_core (p : secCore (ι := ι)) :
     (secN W Q).op ⟨(p : Sec ι), secCore_le_dom W Q p.2⟩ = secDiag W Q p := by

@@ -3,13 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 open BookProof.BandEnclosure
 
-
-
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
@@ -19,25 +14,6 @@ open Filter Topology
 
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.BandEnclosure.ritz_band_enclosure_of_nested [Nontrivial F] (A : F →L[ℂ] F) (hsa : IsSelfAdjoint A)
     (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re) (b : HilbertBasis ℕ ℂ F)

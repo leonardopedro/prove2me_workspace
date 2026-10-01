@@ -2,15 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_resCLM_ofBounded
-import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterSirkTrotterKato
+import Theorems.Thm_BookProof_HermiteGalerkin_resolvent_tendsto_of_strong_tendsto
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
 
 
 

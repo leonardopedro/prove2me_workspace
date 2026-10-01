@@ -3,23 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
-open BookProof.NavierStokesFlow.FullEsa
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 variable {ι : Type*}
+variable {ι : Type*}
+variable {M : Type*} [DecidableEq M]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+
+
+
+
+open FullEsa
 
 theorem BookProof.NavierStokesFlow.FockOfFock.lpDiag_coe (c : ι → ℝ) (f : lpFiniteModes ι) (i : ι) :
     (((lpDiag c f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i

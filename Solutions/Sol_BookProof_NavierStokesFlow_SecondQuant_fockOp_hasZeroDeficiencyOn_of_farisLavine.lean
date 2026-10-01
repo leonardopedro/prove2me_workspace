@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFockFarisLavine.lean — solution of BookProof.NavierStokesFlow.SecondQuant.fockOp_hasZeroDeficiencyOn_of_farisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockFarisLavine
@@ -7,15 +6,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_isSymmetricDom
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sectors
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockCore_dense
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Theorems.Thm_BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
-
-
-
-
-
-
 
 
 
@@ -23,7 +16,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.FarisLavineLift
+open FarisLavineLift
 
 variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]

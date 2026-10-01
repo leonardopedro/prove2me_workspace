@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
+
 
 open Filter Topology
 

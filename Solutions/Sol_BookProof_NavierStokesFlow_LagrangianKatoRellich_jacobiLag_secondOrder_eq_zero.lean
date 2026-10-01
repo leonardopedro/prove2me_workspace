@@ -14,8 +14,14 @@ open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 set_option maxHeartbeats 1000000 in
-theorem solution : secondOrder jacobiLagData = 0 := by
-
-  have hP : ∀ i : Fin 3, jacobiLagData.P i = 0 := fun _ => rfl
-  have hQ : ∀ i : Fin 3, jacobiLagData.Q i = 0 := fun _ => rfl
-  simp [secondOrder, LagrangianFullData.kinetic, LagrangianFullData.viscous, hP, hQ]
+ have h := hw v
+    simp only [LinearMap.zero_apply, ZeroMemClass.coe_zero, inner_zero_left, inner_smul_right] at h
+    exact (mul_eq_zero.mp h.symm).resolve_left Complex.I_ne_zero
+  · have h := hw v
+    simp only [LinearMap.zero_apply, ZeroMemClass.coe_zero, inner_zero_left, inner_neg_ri :=
+  ght,
+        inner_smul_right] at h
+      exact (mul_eq_zero.mp (neg_eq_zero.mp h.symm)).resolve_left Complex.I_ne_zero
+  
+  /-- In the sharpness example of `BookProof.ChapterNavierStokesLagrangianEsa` —
+  transformed data whose

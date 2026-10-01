@@ -2,12 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime
+import Theorems.Thm_BookProof_QgBrstDerivativeGauge_gaugeReduce_gram
+import Theorems.Thm_BookProof_QgTruncationResolvent_momWindow_exhausts
 open BookProof.QgTimeIndependent
-
-
-
-
-
 
 
 
@@ -18,30 +15,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.SirkSingleTime BookProof.QgTruncationResolvent BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.HashimotoShiftInvert
-
-variable {ι : Type*}
-
-
-
-
-open BookProof.QgContinuumModeInstance BookProof.QgBrstDerivativeGauge
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ)

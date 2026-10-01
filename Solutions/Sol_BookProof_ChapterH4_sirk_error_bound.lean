@@ -27,7 +27,9 @@ theorem solution
       ‖phiA v - V (psiB (V.adjoint v))‖
         ≤ ‖(psiX - rX) v‖ + ‖V ((rB - psiB) (V.adjoint v))‖ := by
     convert norm_add_le ((psiX - rX) v) (V ((rB - psiB) (V.adjoint v))) using 2
-    simp [hphi, hrt]
+    · rfl
+    · simp only [hphi, ContinuousLinearMap.sub_apply, map_sub, hrt]
+      abel
   have h_bounds :
       ‖(psiX - rX) v‖ ≤ C * D * ‖v‖ ∧
         ‖V ((rB - psiB) (V.adjoint v))‖ ≤ C * D * ‖v‖ := by

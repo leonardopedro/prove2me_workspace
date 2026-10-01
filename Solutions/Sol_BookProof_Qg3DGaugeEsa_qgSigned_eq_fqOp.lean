@@ -26,9 +26,28 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- only [pgLp_eq_pgMap, map_smul, map_add, map_sum]
-
 set_option maxHeartbeats 4000000 in
 -- the `L²` coercions of the Gauss–polynomial core make these defeq checks expensive
 theorem solution (kappa : Fin 84 → ℝ) :
-    signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreR := 
+    signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))
+      = fqOp (qgFqP kappa) qgFqQ 0 0 0 := by
+
+  refine LinearMap.ext fun x => ?_
+  obtain ⟨p, rfl⟩ := (coreEquiv (d := 84)).surjective x
+  have hx : ((coreRepPoly 84).equiv.symm (coreEquiv p) : MvPolynomial (Fin 84) ℂ) = p := by
+    rw [← coreRepPoly_equiv p, LinearEquiv.symm_apply_apply]
+  have hmom : ∀ j : Fin 84,
+      ((qgMom (coreRepPoly 84) j (qgMom (coreRepPoly 84) j (coreEquiv p))
+        : polyGaussCore (d := 84)) : L2d 84) = pgLp (pmom j (pmom j p)) := by
+    intro j
+    rw [qgMom, CoreRep.coe_op, CoreRep.op_apply, LinearEquiv.symm_apply_apply, hx]
+  have htor : ∀ m : Fin 64,
+      ((torsionOps (coreRepPoly 84) m (torsionOps (coreRepPoly 84) m (coreEquiv p))
+        : polyGaussCore (d := 84)) : L2d 84) = pgLp (torsionP m * (torsionP m * p)) := by
+    intro m
+    rw [torsionOps_eq, CoreRep.coe_op, CoreRep.op_apply, LinearEquiv.symm_apply_apply, hx]
+    rfl
+  rw [signedOp_apply]
+  simp only [hmom, htor]
+  rw [fqOp, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_coe,
+    ← qgSignedPoly_eq_fqPoly kappa, pgLp_qgSignedPoly]

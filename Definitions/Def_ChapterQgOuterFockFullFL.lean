@@ -1,10 +1,22 @@
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
+
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
+
+import Theorems.Thm_BookProof_QgHermiteOscillator_harmCore_hermiteMvLp
+
+import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_le_of_schur
+
+import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumOp_le
+
+import Theorems.Thm_BookProof_QgOuterFock_modeOf_pcoord
+
+import Theorems.Thm_BookProof_QgOuterFock_partOf_pcoord
+
+import Theorems.Thm_BookProof_QgOuterFock_sum_reindex_particles
+
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
 
 
 /-!

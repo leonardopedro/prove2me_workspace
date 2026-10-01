@@ -5,14 +5,6 @@ open BookProof.ChapterSirkTrotterKato
 
 
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Filter Topology Asymptotics

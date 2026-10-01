@@ -5,25 +5,8 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
+:= rfl
 
-
-
-
-
-
-
-
-
-
-open LpNat
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_ne_zero : defState ≠ 0 := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_ne_zero : defStat := by sorry

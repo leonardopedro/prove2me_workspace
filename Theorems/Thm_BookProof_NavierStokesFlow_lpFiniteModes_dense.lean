@@ -3,11 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.NavierStokesFlow
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+variable {n : ℕ} (d : NSTruncation n)
 
 
 open scoped Matrix
@@ -16,24 +14,10 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+.mem_support] at hj
+  by_contra hne
+  have hjk : j ≠ k := by simpa using hne
+  exact hj (by simp [lp.single_apply, Pi.single_eq_of_ne hjk])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-theorem BookProof.NavierStokesFlow.lpFiniteModes_dense :
-    Dense ((lpFiniteModes ι : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) :
-      Set (lp (fun _ : ι => ℂ) 2)) := by sorry
+/-- **The finite-mode domain is dense**: every `ℓ²` state is the limit of its
+finite truncations. -/ := by sorry

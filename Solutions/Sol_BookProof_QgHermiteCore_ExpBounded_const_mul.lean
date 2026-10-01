@@ -1,33 +1,14 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.ExpBounded.const_mul
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
+open BookProof.QgHermiteCore.ExpBounded
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {f : E → ℝ} (hf : ExpBounded f) (a : ℝ) :

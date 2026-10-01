@@ -1,49 +1,17 @@
 -- Generated from ChapterNavierStokesHermiteCanonical.lean — theorem BookProof.NavierStokesFlow.HermiteCanonical.comparison_eq
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesHermiteCanonical
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
+import Definitions.Def_ChapterNavierStokesHermiteCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 
-
-
-
-
+variable {κ : ℝ}
 
 
 open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {κ : ℝ}
+open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.comparison_eq (hκ : 0 ≤ κ) :
     (lpFiniteModes ℕ).subtype.comp

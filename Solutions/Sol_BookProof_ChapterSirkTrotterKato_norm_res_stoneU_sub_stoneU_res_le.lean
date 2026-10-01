@@ -2,15 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_duhamel
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 

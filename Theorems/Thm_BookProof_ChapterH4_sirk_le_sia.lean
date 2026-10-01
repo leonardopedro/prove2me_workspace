@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 open scoped BigOperators
 

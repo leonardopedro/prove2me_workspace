@@ -12,4 +12,8 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
-theorem solution : IsSelfAdjoint ell2ShiftInvert := diagCLM_isSelfAdjoint invCoeff_abs_le_one
+e_zero
+
+theorem solution : IsSelfAdjoint ell2Shif :=
+  tInvert :=
+    diagCLM_isSelfAdjoint invCoeff_ab

@@ -1,0 +1,19 @@
+-- Generated from ChapterTrajectory.lean — solution of BookProof.ChapterTrajectory.transProb_sum
+import Mathlib
+import Definitions.Def_ChapterTrajectory
+open BookProof.ChapterTrajectory
+
+
+
+open scoped BigOperators Matrix
+
+
+variable {n : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (V : Matrix (Fin n) (Fin n) ℂ) (hV : Vᴴ * V = 1)
+    (a : Fin n) : ∑ f, transProb V f a = 1 := by
+
+  unfold transProb; simp [ ← Matrix.ext_iff ] at *;
+  simp_all [ Matrix.mul_apply, Complex.normSq, Complex.sq_norm ];
+  simp_all [ Complex.ext_iff, Matrix.one_apply ]

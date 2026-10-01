@@ -16,8 +16,10 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : BookProof.YangMillsHermite.PolySym
-    (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) := by
+) = 0 := by
+  have h := gaussInt_smul (0 : ℂ) (0 : MvPolynomial (Fin d) ℂ)
+  simpa using h
 
-  intro p q
-  simp [BookProof.YangMillsHermite.starP, gaussInt_zero]
+theorem solution : BookProof.Y :=
+  angMillsHermite.PolySym
+      (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPo

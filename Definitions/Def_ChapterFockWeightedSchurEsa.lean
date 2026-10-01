@@ -1,10 +1,6 @@
 import Definitions.Def_ChapterFockSchurEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterStoneBridge
 
 /-!
 # `dΓ(A)` for an **unbounded** one-particle operator: the Schur gate weighted by the

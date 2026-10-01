@@ -1,14 +1,7 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.eq_zero_of_hasDerivAt_smul_of_bounded
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.NavierStokesFlow
-
-
-
-
-
-
 
 
 
@@ -27,7 +20,9 @@ theorem solution (g : ℝ → ℂ) (s C : ℝ) (hs : s * s = 1)
     intro t
     have h1 : HasDerivAt (fun t : ℝ => Real.exp (-(s * t))) (-s * Real.exp (-(s * t))) t := by
       have hlin : HasDerivAt (fun t : ℝ => -(s * t)) (-s) t := by
-        simpa using ((hasDerivAt_id t).const_mul s).neg
+        have h0 := ((hasDerivAt_id t).const_mul s).neg
+        simp only [id, mul_one] at h0
+        exact h0
       simpa [mul_comm] using hlin.exp
     have h2 := h1.smul (hgd t)
     have heq : Real.exp (-(s * t)) • ((s : ℂ) * g t) + (-s * Real.exp (-(s * t))) • g t = 0 := by
@@ -47,5 +42,4 @@ theorem solution (g : ℝ → ℂ) (s C : ℝ) (hs : s * s = 1)
     exact mul_le_mul_of_nonneg_left (hb _) (Real.exp_pos _).le
   have htend : Filter.Tendsto (fun T : ℝ => Real.exp (-T) * C) Filter.atTop (nhds 0) := by
     simpa using Real.tendsto_exp_neg_atTop_nhds_zero.mul_const C
-  have hle : ‖g 0‖ ≤ 0 := ge_of_tendsto htend (Filter.Eventually.of_forall hb0)
-  simpa using le_antisymm hle (norm_nonneg _)
+  have hle : ‖g 0‖ ≤ 0 := ge_of_tendsto htend (Filter.Eventually.of_for

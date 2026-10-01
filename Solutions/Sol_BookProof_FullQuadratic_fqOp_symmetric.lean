@@ -2,20 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_polySym_fqPoly
+import Theorems.Thm_BookProof_HermiteRelative_symmetricOn_of_polySym
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

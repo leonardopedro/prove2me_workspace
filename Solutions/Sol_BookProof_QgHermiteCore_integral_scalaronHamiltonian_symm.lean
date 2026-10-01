@@ -4,33 +4,13 @@ import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_starobinskyV
 import Theorems.Thm_BookProof_QgHermiteCore_integral_hamiltonian_symm
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ) (hM : 0 < M) (p q : Polynomial ℝ) :

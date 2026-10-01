@@ -1,6 +1,7 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.isShiftInvertC_of_rightInverse
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
+import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_injective
 open BookProof.HashimotoShiftInvert
 
 

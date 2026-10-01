@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,5 +18,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.coreOp_coreEquiv (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
-    (p : MvPolynomial (Fin d) ℂ) : coreOp T (coreEquiv p) = coreEquiv (T p) := by sorry
+eorem coreOp_coreEquiv (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
+    (p : MvPolynomial (Fin d) ℂ) : coreOp T (coreEquiv p) = coreEquiv (T p) := by
+  simp [coreOp]
+
+theorem BookProof.NavierStokesFlow.DifferentialL2.coreOp_coreEquiv := by sorry

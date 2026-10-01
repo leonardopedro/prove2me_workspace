@@ -1,7 +1,3 @@
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesDifferentialL2
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.quadOp_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa

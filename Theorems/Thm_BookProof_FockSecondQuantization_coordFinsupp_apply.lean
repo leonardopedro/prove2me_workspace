@@ -1,13 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.coordFinsupp_apply
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -18,87 +14,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+else 0
 
 theorem BookProof.FockSecondQuantization.coordFinsupp_apply {b : HilbertBasis ℕ ℂ F} {x : F} (hx : x ∈ finiteModeDomain b)
-    (j : ℕ) : coordFinsupp b x j = inner ℂ (b j) x := by sorry
+    (j : ℕ) : coordFinsupp b x j = inner ℂ := by sorry

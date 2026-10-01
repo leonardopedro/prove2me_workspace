@@ -1,22 +1,17 @@
 -- Generated from ChapterGaussCoreQuadBounds.lean — theorem BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_BookProof.ChapterQgHermiteOscillatorEsa
-
 open BookProof.GaussCoreQuadBounds
 
-
-
-
-
+variable {D : ℕ}
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
-open BookProof.QgHermiteOscillator
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 
 noncomputable section
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_injective
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
@@ -16,14 +18,14 @@ open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin 3) (β : Vel) :
-    numOp i (coreState β) = ((β i : ℝ) : ℂ) • coreState β := by
+_sum, Finset.smul_sum, Finset.smul_sum]
+  rw [← Finset.sum_add_distrib]
+  rw [Finset.sum_congr rfl fun i _ => hmode i]
+  rw [Finset.sum_add_distrib, hcnt, hbridge]
 
-  classical
-  refine crd_injective ?_
-  funext γ
-  rw [crd_numOp, crd_smul]
-  by_cases hγ : γ = β
-  · subst hγ
-    simp [crd_coreState]
-  · simp [crd_coreState, hγ]
+/-! ## Diagonaliz :=
+  ation by the Hermite states -/
+  
+  theorem crd_coreState (β γ : Vel) : crd (coreState β) γ = if γ = β then 1 else 0 := by
+    classical
+    simp [crd, coreState, lp.single_apply,

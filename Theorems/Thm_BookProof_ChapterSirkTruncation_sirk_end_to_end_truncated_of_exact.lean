@@ -3,11 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkTruncation
 open BookProof.ChapterSirkTruncation
 
-
-
-
-
-
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 noncomputable section
@@ -15,8 +14,6 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkWhitening
-open BookProof.ChapterSirkEndToEnd
-open BookProof.ChapterH6
 
 variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

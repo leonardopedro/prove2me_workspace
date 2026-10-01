@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.norm_hEx
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -10,69 +8,11 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {κ : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open EuclideanSpace
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
-theorem solution (k : Fin 2) (x : E2) : ‖hEx k x‖ = ‖x k‖ := by
-
-  simp [hEx, norm_smul]
+: Fin 2) : E2 →ₗ[ℂ] E2 :=
+  LinearMap.smulRight (EuclideanSpace.projₗ (𝕜 := ℂ) k) (EuclideanSp :=
+  ace.single k (1 : ℂ))
+  
+  theorem norm_hEx (k : Fin 2) (x : E2) : ‖hEx k x‖ = ‖x k‖ :=

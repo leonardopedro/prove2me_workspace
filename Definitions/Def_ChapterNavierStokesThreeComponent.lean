@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Mathlib
 

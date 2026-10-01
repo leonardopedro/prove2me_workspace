@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterH4
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter H5 — the inversion-free Krylov shortcut (plan Part F.1, roadmap §9.1)

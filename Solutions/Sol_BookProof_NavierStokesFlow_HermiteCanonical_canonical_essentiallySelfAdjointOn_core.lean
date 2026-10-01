@@ -2,17 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_hamiltonian_eq
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
-
-
-
-
-
 
 
 
@@ -20,32 +13,7 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.HermiteFarisLavine
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {κ : ℝ}
+open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) :

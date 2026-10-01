@@ -3,15 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.FockOneParticleGap
 
-
-
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

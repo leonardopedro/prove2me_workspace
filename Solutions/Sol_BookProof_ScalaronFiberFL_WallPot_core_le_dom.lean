@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.WallPot.core_le_dom
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.ScalaronFiberFL
 open BookProof.ScalaronFiberFL.WallPot

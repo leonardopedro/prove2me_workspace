@@ -11,50 +11,12 @@ open BookProof.CarlemanTwoStep
 
 
 
-
-
-
-
-
-
-
 open Finset
 open BookProof.HermiteCarleman
 
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-variable {u : (Fin d →₀ ℕ) → ℂ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hrec : LadderRec2 u lam w1 w2 z) (N : ℕ) :

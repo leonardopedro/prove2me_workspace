@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.velIdx_lower
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -16,5 +18,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.velIdx_lower (i : Fin 3) (b : Vel) :
-    velIdx (lower i b) = velIdx b - Finsupp.single i 1 := by sorry
+rem velIdx_raise (i : Fin 3) (b : Vel) :
+    velIdx (raise i b) = velIdx b + Finsupp.single i 1 := b := by sorry

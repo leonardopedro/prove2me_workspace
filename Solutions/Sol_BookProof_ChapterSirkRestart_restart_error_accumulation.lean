@@ -2,13 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRestart
 import Theorems.Thm_BookProof_ChapterSirkRestart_norm_pow_apply_le_of_contraction
-import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkRestart
-
-
-
-
-
 
 
 
@@ -51,5 +45,4 @@ theorem solution (U S : E →L[ℂ] E) (eps : ℝ)
     rw [hUstep, hSstep, hsplit]
     refine le_trans (norm_add_le _ _) ?_
     have : ((n : ℝ) + 1) * eps * ‖v‖ = n * eps * ‖v‖ + eps * ‖v‖ := by ring
-    push_cast
-    linarith
+    push_cast at h1 h2 ⊢

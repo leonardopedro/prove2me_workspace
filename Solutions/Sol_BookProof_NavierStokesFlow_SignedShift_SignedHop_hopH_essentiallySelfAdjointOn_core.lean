@@ -4,21 +4,10 @@ import Definitions.Def_ChapterNavierStokesSignedShift
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_symmetricOn
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_relative_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_commForm_bound
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
-
-
-
-
-
-
-
 
 
 
@@ -26,13 +15,9 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber
+open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
-
-
-
-variable {sym : ι → ℝ} (S : SignedHop ι sym)
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

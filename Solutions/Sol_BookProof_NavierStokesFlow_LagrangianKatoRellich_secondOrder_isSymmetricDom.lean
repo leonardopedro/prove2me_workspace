@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.secondOrder_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
 import Theorems.Thm_kinetic_isSymmetricDom
 import Theorems.Thm_viscous_isSymmetricDom
 open BookProof.NavierStokesFlow

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,5 +16,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-theorem BookProof.HermiteRelative.polySym_zero : BookProof.YangMillsHermite.PolySym
-    (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) := by sorry
+) = 0 := by
+  have h := gaussInt_smul (0 : ℂ) (0 : MvPolynomial (Fin d) ℂ)
+  simpa using h
+
+theorem BookProof.HermiteRelative.polySym_zero : BookProof.Y := by sorry

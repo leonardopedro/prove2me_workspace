@@ -16,7 +16,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
- 1 else 0) - (if i = torsionIdx2 m then 1 else 0)
-
 theorem BookProof.Qg3DGaugeEsa.sum_single_X (c : Fin 84) :
-    ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ) := by sorry
+    ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = X c := by sorry

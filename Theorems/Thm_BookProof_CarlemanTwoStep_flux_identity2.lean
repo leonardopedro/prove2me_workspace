@@ -3,12 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanTwoStep
 
-
-
-
-
-
-
+variable {d : ℕ}
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 
 
@@ -18,37 +15,6 @@ open BookProof.HermiteCarleman
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-variable {u : (Fin d →₀ ℕ) → ℂ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.CarlemanTwoStep.flux_identity2 (hrec : LadderRec2 u lam w1 w2 z) (N : ℕ) :
     z.im * (∑ a ∈ cube d N, ‖u a‖ ^ 2)

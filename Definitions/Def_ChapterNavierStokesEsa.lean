@@ -1,10 +1,8 @@
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.ChapterContinuityUnitaryInfinite
-open BookProof.NavierStokesFlow
+import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Mathlib
+
 
 /-!
 # Essential self-adjointness from a complete flow, on a genuinely dense domain
@@ -64,15 +62,12 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
-
-
-
-
-
-
-
-
-
+almu  hakey (-Complex.I) w (by
+      have h2 := hw
+      simp only [← neg_smul] at h2
+      exact h2)
+    simp only [neg_smul] at hkey
+    exact hkey
 
 end Abstract
 
@@ -104,22 +99,9 @@ def lpFiniteModes (ι : Type*) : Submodule ℂ (lp (fun _ : ι => ℂ) 2) where
   smul_mem' := by
     intro c f hf
     refine Set.Finite.subset hf ?_
-    intro k hk
-    simp only [Function.mem_support, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul] at hk
-    exact fun hzero => hk (by rw [hzero, mul_zero])
-
-theorem mem_lpFiniteModes {f : lp (fun _ : ι => ℂ) 2} :
-    f ∈ lpFiniteModes ι ↔ (Function.support ((f : ι → ℂ))).Finite := Iff.rfl
-
-/-- Each canonical basis state `e_k` has finite support. -/
-theorem lpSingle_mem_lpFiniteModes [DecidableEq ι] (k : ι) (c : ℂ) :
-    lp.single 2 k c ∈ lpFiniteModes ι := by
-  refine Set.Finite.subset (Set.finite_singleton k) ?_
-  intro j hj
-  simp only [Function.mem_support] at hj
-  by_contra hne
-  have hjk : j ≠ k := by simpa using hne
-  exact hj (by simp [lp.single_apply, Pi.single_eq_of_ne hjk])
+    intro keoonsure_of_tendsto (lp.hasSum_single (by simp) f) ?_
+  filter_upwards with S
+  exact Submodule.sum_mem _ fun k _ => lpSingle_mem_lpFiniteModes k _
 
 end LpFiniteModes
 
@@ -129,65 +111,14 @@ The `ℓ²(ℤ)` layer of `BookProof.ChapterContinuityUnitaryInfinite` carries a
 bounded self-adjoint generator, the Weyl-symmetrized continuity Hamiltonian
 `H = ½(p v + v p)`.  Its natural *finite-particle* domain — the states with only
 finitely many excited lattice modes — is dense but not the whole space, so the
-statement `HasZeroDeficiencyOn finiteModes …` is a genuine (non-`⊤`) instance of
-essential self-adjointness on a dense domain. -/
+statement `HasZeroDeficiencyOn finiteModes …` is a genuine (non-it2Z := lpFiniteModes ℤ
 
-section InfiniteLattice
-
-
-/-- The finitely supported modes of the lattice Hilbert space `ℓ²(ℤ)`. -/
-abbrev finiteModes : Submodule ℂ L2Z := lpFiniteModes ℤ
-
-variable {ι : Type*}
-
-/-- **The finite-mode domain is dense**: every `ℓ²` state is the limit of its
-finite truncations. -/
-theorem lpFiniteModes_dense :
-    Dense ((lpFiniteModes ι : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) :
-      Set (lp (fun _ : ι => ℂ) 2)) := by
-  classical
-  intro f
-  refine mem_closure_of_tendsto (lp.hasSum_single (by simp) f) ?_
-  filter_upwards with S
-  exact Submodule.sum_mem _ fun k _ => lpSingle_mem_lpFiniteModes k _
-
-/-- The lattice finite-mode domain is dense. -/
-theorem finiteModes_dense : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=
-  lpFiniteModes_dense
-
-/-- The lattice translation preserves the finite-mode domain. -/
-theorem shiftOp_mem_finiteModes (m : ℤ) {f : L2Z} (hf : f ∈ finiteModes) :
-    shiftOp m f ∈ finiteModes := by
-  rw [mem_lpFiniteModes] at hf ⊢
-  refine Set.Finite.subset (hf.image fun k => k - m) ?_
-  intro k hk
-  simp only [Function.mem_support, shiftOp_apply] at hk
-  exact ⟨k + m, hk, by ring⟩
-
-/-- Multiplication by a bounded velocity field preserves the finite-mode
-domain. -/
-theorem velocityOp_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
-    velocityOp v f ∈ finiteModes := by
-  rw [mem_lpFiniteModes] at hf ⊢
-  refine hf.subset fun k hk => ?_
-  simp only [Function.mem_support, velocityOp_apply] at hk
-  exact fun hzero => hk (by rw [hzero, mul_zero])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+theorem mem_finiteModes {f : L2Z} :
+    f ∈ finiteModes ↔ (Function.support ((f : ℤ → ℂ))atimin
+ 
+ Hamiltonian v)
+    (continuityHamiltonian_isSymmetric v) finiteModes finiteModes_dense
+    fun f => continuityHamiltonian_mem_finiteModes v f.2
 
 end InfiniteLattice
 
@@ -195,26 +126,14 @@ end InfiniteLattice
 
 The truncation was already known to be essentially self-adjoint by symmetry
 (`nsHamiltonian_hasZeroDeficiencyOn`).  Here it is re-derived along the route
-that the continuum question would have to follow: from the **completeness** of
-its unitary flow. -/
-
-section Truncation
-
-variable {n : ℕ} (d : NSTruncation n)
-
-/-- The truncated Navier–Stokes flow, transported to the Euclidean (`ℓ²`) model
-of `ℂⁿ`. -/
-noncomputable def nsFlowEuclidean (t : ℝ) (psi : EuclideanSpace ℂ (Fin n)) :
+that the continuum idean (t : ℝ) (psi : EuclideanSpace ℂ (Fin n)) :
     EuclideanSpace ℂ (Fin n) :=
   WithLp.toLp 2 (nsFlowUnitary d t *ᵥ WithLp.ofLp psi)
 
-
-
-
-
-
-
-
+/-- The transported flow is norm-preserving. -/
+theorem nsFlowEuclidean_norm (t : ℝ) (psi : EuclideanSpace ℂ (Fin n)) :
+    ‖nsFlowEuclidean d t psi‖ = ‖psi‖ := byththun psi => nsFlowEuclidean_zero d psi) (fun _ _ => trivial)
+    (fun psi t => nsFlowEuclidean_hasDerivAt d (psi : EuclideanSpace ℂ (Fin n)) t)
 
 end Truncation
 

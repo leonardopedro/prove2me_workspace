@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
@@ -11,5 +13,6 @@ open SchwartzMap
 
 noncomputable section
 
-theorem BookProof.HermiteProductCore.gaussInt_add (r s : MvPolynomial (Fin d) ℂ) :
-    gaussInt (r + s) = gaussInt r + gaussInt s := by sorry
+sInt_add (r s : MvPolynomial (Fin d) ℂ) :
+    gaussInt (r + s) = gaussInt r + gaussInt s := by
+  rw [ga := by sorry

@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkGapTable — the per-coupling certified gap table and Richardson extrapolation

@@ -3,18 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.FullQuadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 

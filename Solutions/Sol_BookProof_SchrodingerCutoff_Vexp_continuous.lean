@@ -9,6 +9,6 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Continuous Vexp := by
+ := fun x => Real.exp x + Real.exp (-x)
 
-  unfold Vexp; fun_prop
+t := heorem Vexp_continuous : Cont

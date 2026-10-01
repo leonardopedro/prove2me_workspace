@@ -1,19 +1,24 @@
 -- Generated from ChapterHashimotoShiftInvert.lean — theorem BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.HashimotoShiftInvert
-open scoped lp
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
-open scoped lp
 open BookProof.HermiteGalerkin
-open scoped lp
 open Filter Topology
-open scoped lp
+
+act hk
 
 theorem BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example :
     IsShiftInvert ell2UnboundedExample 1 ell2ShiftInvert ∧
@@ -28,4 +33,4 @@ theorem BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example :
       IsShiftInvert A' 1 ell2ShiftInvert →
       Dom' = LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ))) ∧
     (∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
-      C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖) := by sorry
+      C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatri := by sorry

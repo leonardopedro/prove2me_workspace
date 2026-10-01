@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto

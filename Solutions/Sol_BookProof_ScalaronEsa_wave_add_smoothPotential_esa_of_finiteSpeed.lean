@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.wave_add_smoothPotential_esa_of_finiteSpeed
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Theorems.Thm_BookProof_QuantumGravityDensitized_strichartz_esa_of_finiteSpeed
 open BookProof.ScalaronEsa
 
 

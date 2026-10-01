@@ -3,10 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRestart
 open BookProof.ChapterSirkRestart
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
@@ -18,8 +15,10 @@ open BookProof.ChapterH6
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
+   linarith
+
 theorem BookProof.ChapterSirkRestart.restart_error_accumulation_sirk (U S : E →L[ℂ] E) (C Dmin h : ℝ) (m : ℕ)
     (hU : ∀ w : E, ‖U w‖ ≤ ‖w‖) (hS : ∀ w : E, ‖S w‖ ≤ ‖w‖)
     (hstep : ∀ w : E, ‖U w - S w‖ ≤ sirkBound C Dmin h 1 m * ‖w‖)
     (n : ℕ) (v : E) :
-    ‖(U ^ n) v - (S ^ n) v‖ ≤ n * sirkBound C Dmin h 1 m * ‖v‖ := by sorry
+    ‖(U ^ n) v - (S ^ n) v‖ ≤ n * sirkBound C Dmin h 1 := by sorry

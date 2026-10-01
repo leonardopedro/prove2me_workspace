@@ -4,6 +4,8 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 
 variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
+variable {D : Submodule ℂ (L2d 99)}
 
 
 

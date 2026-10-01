@@ -1,20 +1,8 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.shiftm_self_eq
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le'
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

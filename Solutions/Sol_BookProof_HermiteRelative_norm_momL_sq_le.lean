@@ -17,16 +17,18 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
-    (i : Fin d) (u : polyGaussCore (d := d)) :
-    ‖momL i u‖ ^ 2 ≤ (4 / c0) * (‖(u : L2d d)‖ * ‖quadOp c u‖) := by
+v_mul_eq_mul_div, le_div_iff₀ hc0]
+  nlinarith [mul_le_mul_of_nonneg_left h1 hc0.le, h2, h3]
 
-  have h1 : ‖momL i u‖ ^ 2 ≤ (inner ℂ (u : L2d d) (oscL i u) : ℂ).re := by
-    rw [re_inner_oscL_eq]
-    nlinarith [sq_nonneg ‖posL i u‖]
-  have h2 := re_inner_oscL_le_quadOp c hc0 hc i u
-  have h3 : (inner ℂ (u : L2d d) (quadOp c u) : ℂ).re ≤ ‖(u : L2d d)‖ * ‖quadOp c u‖ :=
-    re_inner_le_norm (𝕜 := ℂ) (u : L2d d) (quadOp c u)
-  have h4 : 0 ≤ ‖(u : L2d d)‖ * ‖quadOp c u‖ := by positivity
-  rw [div_mul_eq_mul_div, le_div_iff₀ hc0]
-  nlinarith [mul_le_mul_of_nonneg_left h1 hc0.le, h2, h3, h4]
+theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
+    (i : Fin d) (u : polyGau :=
+  ssCore (d := d)) :
+      ‖momL i u‖ ^ 2 ≤ (4 / c0) * (‖(u : L2d d)‖ * ‖quadOp c u‖) := by
+    have h1 : ‖momL i u‖ ^ 2 ≤ (inner ℂ (u : L2d d) (oscL i u) : ℂ).re := by
+      rw [re_inner_oscL_eq]
+      nlinarith [sq_nonneg ‖posL i u‖]
+    have h2 := re_inner_oscL_le_quadOp c hc0 hc i u
+    have h3 : (inner ℂ (u : L2d d) (quadOp c u) : ℂ).re ≤ ‖(u : L2d d)‖ * ‖quadOp c u‖ :=
+      re_inner_le_norm (𝕜 := ℂ) (u : L2d d) (quadOp c u)
+    have h4 : 0 ≤ ‖(u : L2d d)‖ * ‖quadOp c u‖ := by positivity
+    rw [div_

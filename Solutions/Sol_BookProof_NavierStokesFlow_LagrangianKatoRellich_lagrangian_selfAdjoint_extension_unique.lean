@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_selfAdjoint_extension_unique
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 

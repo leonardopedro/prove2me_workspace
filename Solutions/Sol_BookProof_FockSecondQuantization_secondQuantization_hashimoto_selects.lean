@@ -4,18 +4,7 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_hashimoto_selects
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FockSecondQuantization
-
-
-
-
 
 
 
@@ -27,101 +16,9 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-
-
-
-
-
-open Filter Topology
-
 set_option maxHeartbeats 1000000 in
+).symm
+
 theorem solution {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] (ε : ℕ ≃ Conf) (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
@@ -138,4 +35,6 @@ theorem solution {F : Type*} [NormedAddCommGroup F]
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A'' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A'' γ R →
           Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'),
-            A'' ⟨x, hx'⟩ = A' ⟨x, hx⟩) := dGamma_hashimoto_selects ε (isHermCol_opCol hA) (isPosCol_opCol hpos) hγ
+            A'' ⟨x, hx'⟩ = A' ⟨x, :=
+   hx⟩) :=
+    dGamma_hashimoto_selects ε (isHermCol_opCol hA) (isPosCol_opCol h

@@ -1,11 +1,8 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.annih_basis
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single
-import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_annih_coe
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -13,42 +10,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-variable {M : Type*} [DecidableEq M]
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (m : M) (n : Conf M) :
@@ -61,6 +23,7 @@ theorem solution (m : M) (n : Conf M) :
     have hnm : (n m : ℝ) = (k m : ℝ) + 1 := by
       rw [← hk]; push_cast; simp
     subst hkm
+    simp only [Submodule.coe_smul, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul]
     simp [annih_coe, fockBasis_coe, hk, hnm]
   · have hkne : k ≠ n - Finsupp.single m 1 ∨ (n m) = 0 := by
       by_contra hcon
@@ -71,5 +34,6 @@ theorem solution (m : M) (n : Conf M) :
       exact sub_single_add_single (by omega)
     simp only [annih_coe, fockBasis_coe, hk, if_false, mul_zero, Submodule.coe_smul]
     rcases hkne with h | h
-    · simp [fockBasis_coe, h]
+    · simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, fockBasis_coe, h]
+      simp
     · simp [h]

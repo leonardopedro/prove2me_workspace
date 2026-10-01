@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,9 +14,11 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+  simp
+
 theorem BookProof.FockSecondQuantization.inner_dGamma_right (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) {L : Finset ℕ}
     (hv : modes v ⊆ L)
     (hL : ∀ k ∈ modes u ∪ modes v, (col k).support ⊆ L) :
     (inner ℂ (toLp u) (toLp (dGamma col v)) : ℂ)
       = ∑ j ∈ L, ∑ k ∈ L,
-        (col j) k * inner ℂ (toLp (annA k u)) (toLp (annA j v)) := by sorry
+        (col j) k * inner ℂ (toLp (annA k u)) (toLp (ann := by sorry

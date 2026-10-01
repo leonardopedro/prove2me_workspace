@@ -13,6 +13,9 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
-theorem BookProof.ScalaronWallEsa.wallHam_deficiencyTrivialAt (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
-    (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.re = 0) :
-    DeficiencyTrivialAt (ccDomain ℝ) (wallHam V hV) z := by sorry
+ongr_ae (Filter.Eventually.of_forall fun x => ?_)
+    ring
+  rw [hsplit]
+  linear_combination -h1
+
+theorem BookProof.ScalaronWallEsa.wallHam_deficiencyTrivialAt (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ := by sorry

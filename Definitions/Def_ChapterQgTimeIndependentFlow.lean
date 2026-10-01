@@ -3,8 +3,6 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterQgBrstDerivativeGauge
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterEsaClosureCore
 
 /-!
 # The gauge-fixed quantum-gravity Hamiltonian is time-independent, and one finite time suffices

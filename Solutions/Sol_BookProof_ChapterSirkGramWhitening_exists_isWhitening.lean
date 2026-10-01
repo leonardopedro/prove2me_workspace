@@ -4,15 +4,7 @@ import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_synthesis_mem_span
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_exists_isometry_fin_range_eq_span
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 
@@ -71,9 +63,7 @@ theorem solution {m : ℕ} {w : Fin m → E} (hw : LinearIndependent ℂ w) :
   · exact fun y => ⟨A y, e.symm_apply_apply y⟩
   · have hid : (ContinuousLinearMap.adjoint (A.comp T)).comp (A.comp T)
         = ContinuousLinearMap.id ℂ (EuclideanSpace ℂ (Fin m)) := by
-      rw [hATcomp]; ext c; simp
+      rw [hATcomp]; ext c; simp [ContinuousLinearMap.adjoint_id]
     rw [IsWhitening, ← hAA]
     rw [ContinuousLinearMap.adjoint_comp] at hid
-    rw [← hid]
-    ext c
-    simp
+  

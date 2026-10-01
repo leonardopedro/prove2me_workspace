@@ -1,0 +1,22 @@
+-- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_coe
+import Mathlib
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineFiber.PairShift
+
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
+
+
+open scoped ENNReal
+
+
+
+open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+
+variable {ι : Type*}
+
+theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_coe (x : maxDom P.sym) (β : ι) :
+    ((pairH P x : L2I ι) : ι → ℂ) β
+      = P.fst.hFun ((x : L2I ι) : ι → ℂ) β + P.snd.hFun ((x : L2I ι) : ι → ℂ) β := by sorry

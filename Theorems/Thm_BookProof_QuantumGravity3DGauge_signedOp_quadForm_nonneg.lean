@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,8 +16,14 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.signedOp_quadForm_nonneg {n m : ℕ} {kappa : Fin n → ℝ} {pi : Fin n → D →ₗ[ℂ] D}
-    {Bf : Fin m → D →ₗ[ℂ] D} (hk : ∀ i, 0 ≤ kappa i)
-    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
-    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
-    0 ≤ quadForm (signedOp kappa pi Bf) x := by sorry
+(∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2)
+          + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 : ℝ)) : ℂ) := by
+    have hpi' : ∀ i : Fin n,
+        (inner ℂ ((x : D) : F) (((kappa i : ℝ) : ℂ) • ((pi i (pi i x) : D) : F)) : ℂ)
+          = ((kappa i * ‖((pi i x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by
+      intro i
+      rw [inner_smul_right, inner_sq_eq_normSq (hpi i) x]
+      push_cast
+      ring
+    rw [signedOp_apply, inner_smul_right, inner_add_right, inner_sum, inner_sum,
+      Finset.sum_congr rfl fun i _ => hpi' i, := by sorry

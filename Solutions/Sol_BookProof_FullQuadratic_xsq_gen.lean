@@ -1,20 +1,8 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.xsq_gen
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Theorems.Thm_BookProof_ModeQuadratic_mulXPoly_eq_lop
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

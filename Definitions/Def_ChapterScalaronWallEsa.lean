@@ -1,9 +1,10 @@
+import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_contDiff
+
+import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_hasCompactSupport
+
 import Definitions.Def_ChapterWeakSecondDerivative
 import Definitions.Def_ChapterScalaronCoreEsa
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStarobinskyPotential
 
 
 /-!
@@ -68,55 +69,26 @@ noncomputable section
 
 /-! ## 2. The ODE step -/
 
-
-
-/-! ## 3. The Schrödinger operator on the compactly supported smooth core of `L²(ℝ)` -/
-
-/-- The one-dimensional kinetic operator `−d²/dx²` on Schwartz space. -/
-def kinOpR : 𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
-  constCoeffOp (fun _ : Fin 1 => (-1 : ℝ)) (fun _ : Fin 1 => (1 : ℝ)) 0
-
-
-
-/-- The kinetic term on the compactly supported smooth core of `L²(ℝ)`. -/
-def kinCcR : ccDomain ℝ →ₗ[ℂ] Lp ℂ 2 (volume : Measure ℝ) :=
+hFnn hFint x
+  have hn : Complex.normSq (W x) = 0 := by
+    rw [Complex.normSq_apply]; nlinaritpaccDomain ℝ →ₗ[ℂ] Lp ℂ 2 (volume : Measure ℝ) :=
   opL2 kinOpR ∘ₗ Submodule.inclusion (ccDomain_le_schwartzDomain (E := ℝ))
 
 /-- **The Schrödinger operator `−d²/dx² + V`** on the compactly supported smooth core of
 `L²(ℝ)`, for an arbitrary smooth real potential. -/
-def wallHam (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
-    ccDomain ℝ →ₗ[ℂ] Lp ℂ 2 (volume : Measure ℝ) :=
-  kinCcR + opCc V hV
-
-
-
-
-
-/-! ## 4. The deficiency equation in distributional form -/
-
-
+def wallHam (V : ℝ → ℝ) (hV cR smoothPotential_symmetric V hV x y
+  simp only [wallHam, Linea) :
+    deriv (fun y => ((g y : ℝ) : ℂ)) = fun x => ((deriv g x : ℝ) : ℂ) :=
+  funext fun x => ((hg x).hasDerivAt.ofReal_comp).deriv
 
 /-- A real test function, viewed as an element of the compactly supported smooth core. -/
 def testCc {g : ℝ → ℝ} (hg : IsTestFun g) : ccSchwartz ℝ :=
   ⟨(HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.hasCompactSupport
-      (by simp)).toSchwartzMap (Complex.ofRealCLM.contDiff.comp hg.contDiff),
-    HasCompactSupport.comp_left (g := fun r : ℝ => (r : ℂ)) hg.hasCompactSupport (by simp)⟩
-
-
-
-
-
-/-! ## 5. Essential self-adjointness -/
-
-
-
-
-
-/-! ## 6. The scalaron wall -/
-
-
-
-
+      (by simp)).toSchwartzMap (Comples (hint1.const_mul z)]
+    refine integral_c= ccDomain ℝ) (wallHam V hV) :=
+  arpha)) T.op ∧
+        IsStoneFlow T U :=
+  exists_stone_flow_of_esa _ ccDomain_dense (wallHam_symmetricOn _ _) (starobinskyWall_esa halpha)
 
 end
 

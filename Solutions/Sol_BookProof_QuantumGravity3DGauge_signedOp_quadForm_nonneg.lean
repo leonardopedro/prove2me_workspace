@@ -15,14 +15,21 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {n m : ℕ} {kappa : Fin n → ℝ} {pi : Fin n → D →ₗ[ℂ] D}
-    {Bf : Fin m → D →ₗ[ℂ] D} (hk : ∀ i, 0 ≤ kappa i)
-    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
-    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
-    0 ≤ quadForm (signedOp kappa pi Bf) x := by
-
-  rw [signedOp_quadForm hpi hB x]
-  have h1 : 0 ≤ ∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2 :=
-    Finset.sum_nonneg fun i _ => mul_nonneg (hk i) (by positivity)
-  have h2 : 0 ≤ ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := Finset.sum_nonneg fun a _ => by positivity
-  linarith
+(∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2)
+          + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 : ℝ)) : ℂ) := by
+    have hpi' : ∀ i : Fin n,
+        (inner ℂ ((x : D) : F) (((kappa i : ℝ) : ℂ) • ((pi i (pi i x) : D) : F)) : ℂ)
+          = ((kappa i * ‖((pi i x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by
+      intro i
+      rw [inner_smul_right, inner_sq_eq_normSq (hpi i) x]
+      push_cast
+      ring
+    rw [signedOp_apply, inner_smul_right, inner_add_right, inner_sum, inner_sum,
+      Finset.sum_congr rfl fun i _ => hpi' i, :=
+   Finset.sum_congr rfl fun a _ => inner_sq_eq_normSq (hB a) x]
+      push_cast
+      ring
+    rw [quadForm, hinner, Complex.ofReal_re]
+  
+  /-- **Positivity holds exactly in the elliptic sector**: when every coefficient of the
+  signature is nonnegative, the two-signed Hamiltonian is a positive o

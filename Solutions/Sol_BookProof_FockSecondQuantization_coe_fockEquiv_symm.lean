@@ -2,18 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
 open BookProof.FockSecondQuantization
-
-
-
-
 
 
 
@@ -26,7 +15,9 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : lpFiniteModes Conf) :
-    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) := by
+:= rfl
 
-  rw [← coe_fockEquiv, LinearEquiv.apply_symm_apply]
+theorem solution (x : lpFiniteModes Conf) :
+    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv. :=
+  symm x) := by
+    rw [← coe_fockEquiv, LinearEquiv.apply_sym

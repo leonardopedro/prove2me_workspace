@@ -1,0 +1,28 @@
+-- Generated from ChapterH7.lean — solution of BookProof.ChapterH7.reduceGenerator_isHermitian
+import Mathlib
+import Definitions.Def_ChapterH7
+open BookProof.ChapterH7
+
+
+
+noncomputable section
+
+open BookProof.ChapterH4 BookProof.ChapterH6
+
+set_option maxHeartbeats 1000000 in
+theorem solution (m : ℕ) (V : EuclideanSpace ℂ (Fin m) →L[ℂ] E)
+    (X : E →L[ℂ] E) (hX : IsSelfAdjoint X) :
+    (reduceGenerator m V X).IsHermitian := by
+
+  have hadj : ContinuousLinearMap.adjoint X = X :=
+    (ContinuousLinearMap.star_eq_adjoint X).symm.trans hX
+  ext i j
+  have h1 : (inner ℂ (X (V (EuclideanSpace.single i (1 : ℂ))))
+        (V (EuclideanSpace.single j (1 : ℂ))) : ℂ)
+      = inner ℂ (V (EuclideanSpace.single i (1 : ℂ)))
+          (X (V (EuclideanSpace.single j (1 : ℂ)))) := by
+    conv_lhs => rw [← hadj]
+    exact ContinuousLinearMap.adjoint_inner_left X _ _
+  simp only [Matrix.conjTranspose_apply, reduceGenerator, Matrix.of_apply, RCLike.star_def]
+  rw [inner_conj_symm]
+  exact h1

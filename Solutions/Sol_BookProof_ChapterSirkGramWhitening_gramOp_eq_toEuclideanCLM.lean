@@ -2,15 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_gramOp_apply
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 
@@ -24,9 +16,10 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution {m : ℕ} (w : Fin m → E) :
-    gramOp w = Matrix.toEuclideanCLM (𝕜 := ℂ) (gramMatrix w) := by
+ix, Matrix.conjTranspose_apply]
 
-  ext c i
-  simpa [gramMatrix, Matrix.ofLp_toEuclideanCLM, Matrix.mulVec, dotProduct]
-    using gramOp_apply w c i
+theorem solution {m : ℕ} (w : Fin m → E) :
+    gramOp w = Matrix.toEuclidean :=
+  CLM (𝕜 := ℂ) (gramMatrix w) := by
+    ext c i
+    simpa [gramMatrix, Matrix.ofLp_toEuclideanCLM, Matrix.mulVec, dotProd

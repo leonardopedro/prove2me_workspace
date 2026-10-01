@@ -1,15 +1,9 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.hasDerivAt_stoneU_const_sub
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 

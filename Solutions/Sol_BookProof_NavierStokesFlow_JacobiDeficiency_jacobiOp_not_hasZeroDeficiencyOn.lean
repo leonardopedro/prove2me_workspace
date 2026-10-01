@@ -8,30 +8,13 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
 
-
-
-
-
-
-
-
 open scoped ENNReal
 
-
-
-
-
-
-
-
-
-
-
-open LpNat
-
 set_option maxHeartbeats 1000000 in
-theorem solution :
-    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp := by
+  simp
 
-  intro hzero
-  exact defState_ne_zero (hzero.1 defState fun v => defState_deficiency v)
+theorem solution :
+    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) j :=
+  acobiOp := by
+    intro hzero
+    exact defState_ne_zero (hzero.1 defState fun v => defState_defic

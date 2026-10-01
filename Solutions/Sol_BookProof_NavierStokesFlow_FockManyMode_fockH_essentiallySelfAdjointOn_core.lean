@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockSym_nonneg
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
@@ -20,12 +22,14 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian
 variable {d : ℕ} {κ : Fin d → ℝ}
 
 set_option maxHeartbeats 1000000 in
+ntial self-adjointness -/
+
 theorem solution (hκ : ∀ i, 0 ≤ κ i) :
     EssentiallySelfAdjointOn (lpFiniteModes (Occ d))
-      ((fockH hκ).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ)))) := by
-
-  refine essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds (fockSym κ)
-    (fockSym_nonneg hκ) (fockH hκ) ((d : ℝ) ^ 2 / 2) (2 * d * ∑ i, κ i ^ 2)
-    (∑ i, (2 * κ i + 4 * κ i ^ 2)) (fockH_symmetricOn hκ) ?_
-    (fockH_relative_bound hκ) (fockH_commForm_bound hκ)
-  exact Finset.sum_nonneg fun i _ => by nlinarith [hκ i]
+      ((fockH hκ).comp (Submodule.inclusion (finiteModes :=
+  _le_maxDom (fockSym κ)))) := by
+    refine essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds (fockSym κ)
+      (fockSym_nonneg hκ) (fockH hκ) ((d : ℝ) ^ 2 / 2) (2 * d * ∑ i, κ i ^ 2)
+      (∑ i, (2 * κ i + 4 * κ i ^ 2)) (fockH_symmetricOn hκ) ?_
+      (fockH_relative_bound hκ) (fockH_commForm_bound hκ)
+    exact Finset.sum_nonneg fun

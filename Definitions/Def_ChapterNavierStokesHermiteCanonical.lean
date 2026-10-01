@@ -1,7 +1,8 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Mathlib
 
-import Mathlib
 
 /-!
 # The canonical pair behind the Navier–Stokes fiber Hamiltonian
@@ -51,8 +52,6 @@ open LpNat FarisLavine IkebeKato HermiteFarisLavine
 core. -/
 noncomputable def mkCore {X : ℕ → ℂ} (h : (Function.support X).Finite) : lpFiniteModes ℕ :=
   ⟨⟨X, memLpTwo_of_finite_support h⟩, h⟩
-@[simp] theorem mkCore_coe {X : ℕ → ℂ} (h : (Function.support X).Finite) (n : ℕ) :
-    (((mkCore h : lpFiniteModes ℕ) : L2I ℕ) : ℕ → ℂ) n = X n := rfl
 
 
 

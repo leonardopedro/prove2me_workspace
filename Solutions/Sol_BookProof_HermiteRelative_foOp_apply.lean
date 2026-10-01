@@ -18,12 +18,12 @@ open BookProof.HyperbolicQuadratic
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+ (d := d)) →ₗ[ℂ] L2d d :=
+  (polyGaussCore (d := d)).subtype ∘ₗ coreOp (foPoly b b')
+
 set_option maxHeartbeats 1000000 in
 -- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
-theorem solution (b b' : Fin d → ℝ) (u : polyGaussCore (d := d)) :
-    foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) := by
-
-  simp only [foOp, foPoly, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_sum,
-    coreOp_add, coreOp_smul, LinearMap.sum_apply, LinearMap.add_apply, LinearMap.smul_apply,
-    Submodule.coe_sum, Submodule.coe_add, Submodule.coe_smul]
-  rfl
+theorem solution (b b' : Fin d → ℝ) (u : polyGaussCore (d := d)) : :=
+      foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) := by
+    simp only [foOp, foPoly, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_sum,
+      coreOp_add, coreOp_smul, LinearMap.sum_apply, LinearMap.add_

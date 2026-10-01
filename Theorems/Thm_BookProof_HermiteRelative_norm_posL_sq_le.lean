@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,6 +16,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+ Complex.ofReal_im, zero_mul, sub_zero] at hmain
+  exact hmain
+
 theorem BookProof.HermiteRelative.norm_posL_sq_le (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
-    (i : Fin d) (u : polyGaussCore (d := d)) :
-    ‖posL i u‖ ^ 2 ≤ (4 / c0) * (‖(u : L2d d)‖ * ‖quadOp c u‖) := by sorry
+    (i : Fin d) (u : polyGau := by sorry

@@ -18,7 +18,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
-    Intertwined (T.comp S) (T'.comp S') :=
-  fun x => by
-    simp only [LinearMap.comp_apply, hS x, hT (S x)]
+eorem Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS := : Intertwined S

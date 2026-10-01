@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,5 +14,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+upport
+
 theorem BookProof.FockSecondQuantization.modes_left_subset_closure (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) :
-    modes u ⊆ closureModes col u v := by sorry
+    modes u ⊆ closureModes := by sorry

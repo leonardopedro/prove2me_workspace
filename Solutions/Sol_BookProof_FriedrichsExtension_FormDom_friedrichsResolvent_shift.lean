@@ -12,17 +12,19 @@ open BookProof.FriedrichsExtension.FormDom
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (P : PosSymOp F) (x : P.dom) :
-    friedrichsResolvent P ((x : F) + P.op x) = (x : F) := by
+ense) hc continuous_const heq) v
+  simpa using hzero u
 
-  have hx : formRiesz P ((x : F) + P.op x)
-      = ((show FormDom P from x : FormDom P) : FormSpace P) := by
-    refine ext_inner_right ℂ (fun k => ?_)
-    rw [formRiesz_spec, inner_coe_eq]
-    rfl
-  rw [friedrichsResolvent_apply, hx, formExt_coe]
-  rfl
+theorem solution (P : PosSymOp F) (x : P.dom) : :=
+  
+      friedrichsResolvent P ((x : F) + P.op x) = (x : F) := by
+    have hx : formRiesz P ((x : F) + P.op x)
+        = ((show FormDom P from x : FormDom P) : FormSpace P) := by
+      refine ext_inner_right ℂ (fun k => ?_)
+      rw [formRiesz_spec, inner_coe_eq]
+      rfl

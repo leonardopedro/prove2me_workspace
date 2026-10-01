@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
+variable (nu : ℝ)
+
 
 open scoped ENNReal
 

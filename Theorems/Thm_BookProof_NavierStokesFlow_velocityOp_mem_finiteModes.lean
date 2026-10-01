@@ -3,11 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.NavierStokesFlow
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+variable {n : ℕ} (d : NSTruncation n)
 
 
 open scoped Matrix
@@ -16,33 +14,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+ite.subset (hf.image fun k => k - m) ?_
+  intro k hk
+  simp only [Function.mem_support, shiftOp_apply] at hk
+  exact ⟨k + m, hk, by ring⟩
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterContinuityUnitaryInfinite
-
-theorem BookProof.NavierStokesFlow.velocityOp_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
-    velocityOp v f ∈ finiteModes := by sorry
+/-- Multiplication by a bounded velocity field preserves the := by sorry

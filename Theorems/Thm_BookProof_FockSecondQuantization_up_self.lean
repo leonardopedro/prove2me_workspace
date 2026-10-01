@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 

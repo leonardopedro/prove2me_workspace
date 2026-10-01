@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 
-import Mathlib
 
 /-!
 # A Carleman criterion on simplex shells: hops which couple distinct modes

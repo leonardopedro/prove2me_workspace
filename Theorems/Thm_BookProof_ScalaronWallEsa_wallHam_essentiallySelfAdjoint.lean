@@ -13,6 +13,9 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
-theorem BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
-    (hVnn : ∀ x, 0 ≤ V x) :
-    EssentiallySelfAdjointOn (ccDomain ℝ) (wallHam V hV) := by sorry
+ode_solution_eq_zero hVnn hz hW hW' hintW
+  refine Lp.eq_zero_iff_ae_eq_zero.mpr ?_
+  filter_upwards [hWae] with x hx
+  simp [hx, hzero x]
+
+theorem BookProof.ScalaronWallEsa.wallHam_essentiallySelfAdjoint (V : ℝ → ℝ) (hV : C := by sorry

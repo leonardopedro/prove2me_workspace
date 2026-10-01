@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,8 +14,10 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+ toLpL
+
 theorem BookProof.FockSecondQuantization.inner_creVec_annA (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) (k : ℕ) {L : Finset ℕ}
     (h : (col k).support ⊆ L) :
     (inner ℂ (toLp (creVec (col k) (annA k u))) (toLp v) : ℂ)
       = ∑ j ∈ L, (starRingEnd ℂ) ((col k) j)
-          * inner ℂ (toLp (annA k u)) (toLp (annA j v)) := by sorry
+          * inner ℂ (toLp (annA k u)) (toLp (ann := by sorry

@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterH5
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkMultiShift — the multi-shift forward-sequence span identity

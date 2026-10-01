@@ -4,19 +4,7 @@ import Definitions.Def_ChapterBandEnclosure
 import Theorems.Thm_BookProof_BandEnclosure_band_enclosure_of_nested
 import Theorems.Thm_BookProof_BandEnclosure_band_limit_unique
 import Theorems.Thm_BookProof_FockOneParticleGap_band_endpoints_tendsto
-import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
 
 
 

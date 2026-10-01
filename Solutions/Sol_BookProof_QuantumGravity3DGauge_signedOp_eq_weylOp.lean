@@ -16,16 +16,20 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
-    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
-    signedOp kappa pi Bf
-      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by
+ve h1 : 0 ≤ ∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2 :=
+    Finset.sum_nonneg fun i _ => mul_nonneg (hk i) (by positivity)
+  have h2 : 0 ≤ ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := Finset.sum_nonneg fun a _ => by positivity
+  linarith
 
-  ext x
-  rw [signedOp_apply, weylOp_apply]
-  congr 2
-  refine Finset.sum_congr rfl fun i _ => ?_
-  have hsq : (Real.sqrt (kappa i)) * (Real.sqrt (kappa i)) = kappa i :=
-    Real.mul_self_sqrt (hk i)
-  simp only [LinearMap.smul_apply, map_smul, Submodule.coe_smul, smul_smul]
-  rw [← Complex.ofReal_mul, hsq]
+theorem solution {T : D →ₗ[ℂ] D} (r : ℝ)
+    (hT : SymmetricOn D (D.subtype.comp T)) :
+    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • :=
+   T)) := by
+    intro x y
+    have h := hT x y
+    simp only [LinearMap.comp_apply, Submodule.subtype_apply, LinearMap.smul_apply,
+      Submodule.coe_smul] at h ⊢
+    rw [inner_smul_left, inner_smul_right, h, Complex.conj_ofReal]
+  
+  /-- In the elliptic sector the two-signed operator **is** the positive sum of squares of
+  the

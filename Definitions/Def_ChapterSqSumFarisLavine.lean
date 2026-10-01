@@ -1,16 +1,5 @@
-import Definitions.Def_ChapterYangMillsHermite
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterGaussCoreQuadBounds
-open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.QgHermiteCore
-open BookProof.QgHermiteFriedrichs
-open BookProof.YangMillsHermite
-open BookProof.GaussCoreQuadBounds
+import Mathlib
 
 
 /-!
@@ -57,6 +46,12 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.SqSumFarisLavine
 
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
+open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
@@ -73,18 +68,6 @@ def linFun (v : Fin D → ℝ) (x : Vd D) : ℝ := ∑ i : Fin D, v i * x i
 
 /-- The potential `V = ½ Σ_r L_r²`, as a real function. -/
 def potFun (v : R → Fin D → ℝ) (x : Vd D) : ℝ := (1 / 2) * ∑ r : R, (linFun (v r) x) ^ 2
-
-
-def linForm (v : Fin D → ℝ) : MvPolynomial (Fin D) ℂ :=
-  ∑ i : Fin D, ((v i : ℝ) : ℂ) • X i
-
-def sqSumPoly {R : Type*} [Fintype R] (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) :
-    MvPolynomial (Fin D) ℂ →ₗ[ℂ] MvPolynomial (Fin D) ℂ :=
-  ((1 / 2 : ℝ) : ℂ) •
-    ((∑ j : Fin D, ((kappa j : ℝ) : ℂ) •
-        (YangMillsHermite.momOp j).comp (YangMillsHermite.momOp j))
-      + ∑ r : R, (YangMillsHermite.mulOp (linForm (v r))).comp
-          (YangMillsHermite.mulOp (linForm (v r))))
 
 /-- The potential `V = ½ Σ_r L_r²`, as a polynomial. -/
 def potPoly (v : R → Fin D → ℝ) : MvPolynomial (Fin D) ℂ :=

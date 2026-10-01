@@ -1,7 +1,3 @@
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesDifferentialL2
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.oscPoly_apply_eq_differential
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
@@ -9,6 +5,7 @@ import Theorems.Thm_BookProof_HyperbolicQuadratic_deriv2_pgFun_sec
 import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_smul
 import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_add
 import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_sq_eq_dPoly
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul
 open BookProof.HyperbolicQuadratic
 
 

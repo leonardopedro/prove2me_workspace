@@ -4,6 +4,7 @@ import Definitions.Def_ChapterStoneBridge
 open BookProof.StoneBridge
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
 
 
 open Filter Topology

@@ -1,13 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — theorem BookProof.FockSecondQuantization.dGamma_friedrichs_extension
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -18,7 +14,9 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+_dense
+
 theorem BookProof.FockSecondQuantization.dGamma_friedrichs_extension {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col)
     (hpos : IsPosCol col) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp col) A := by sorry
+      IsPositiveSelfAdjointExtension (dGammaOp := by sorry

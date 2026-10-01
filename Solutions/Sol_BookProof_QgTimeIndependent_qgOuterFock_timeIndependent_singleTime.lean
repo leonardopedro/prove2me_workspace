@@ -5,12 +5,8 @@ import Theorems.Thm_BookProof_QgTimeIndependent_norm_prop_apply
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_apply_prop
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_time_translation
 import Theorems.Thm_BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution
+import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
 open BookProof.QgTimeIndependent
-
-
-
-
-
 
 
 
@@ -21,25 +17,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.SirkSingleTime BookProof.QgTruncationResolvent BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.HashimotoShiftInvert
-
-variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (W : WallPot) (Q : QgModeData ι)

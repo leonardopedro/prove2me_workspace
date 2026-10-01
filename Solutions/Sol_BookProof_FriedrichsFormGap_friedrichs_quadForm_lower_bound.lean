@@ -2,16 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsFormGap
 import Theorems.Thm_BookProof_FriedrichsFormGap_formSpace_norm_bound
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_inner_friedrichsResolvent
+import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 open BookProof.FriedrichsFormGap
-
-
-
-
-
 
 
 

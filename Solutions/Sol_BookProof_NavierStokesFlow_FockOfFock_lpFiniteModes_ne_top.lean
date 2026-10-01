@@ -1,8 +1,7 @@
 -- Generated from ChapterNavierStokesFockSpace.lean — solution of BookProof.NavierStokesFlow.FockOfFock.lpFiniteModes_ne_top
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -10,15 +9,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (ι : Type*) [Infinite ι] :

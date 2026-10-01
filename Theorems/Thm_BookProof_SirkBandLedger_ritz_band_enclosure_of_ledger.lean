@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.SirkBandLedger
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 
 open BookProof.SirkCertificateReader

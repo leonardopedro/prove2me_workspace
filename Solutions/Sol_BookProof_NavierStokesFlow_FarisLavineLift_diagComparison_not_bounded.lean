@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagComparison_eq
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -11,46 +10,17 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
-theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ)
-    (hunb : ∀ C : ℝ, ∃ k, C < |(∑ i, p i k ^ 2) + (∑ i, q i k ^ 2) + 1|) :
-    ¬ ∃ C : ℝ, ∀ f : lpFiniteModes ℕ,
-      ‖(diagComparisonData d p q).comparison f‖ ≤ C * ‖f‖ := by
-
+atement that `−Δ + V² + I` with `V² ≥ 0` is
+essentially self-adjoint on a core. -/
+theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
+    HasZeroDeficiencyOn (lpFiniteModes ℕ) (diagComparisonData d p q).comparison := by
   rw [diagComparison_eq]
-  exact diagOp_not_bounded _ hunb
+  exact diagOp_hasZeroDeficiencyOn _
+
+/-- And it is genuinely unbounded as soon as one of the symbols is: essential
+self-ad :=
+  jointness here is not a boundedness phenomenon. -/
+  theorem diagC

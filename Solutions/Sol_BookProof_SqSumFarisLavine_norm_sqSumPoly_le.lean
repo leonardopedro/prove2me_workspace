@@ -3,32 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_sqSumPoly_apply
 import Theorems.Thm_BookProof_SqSumFarisLavine_norm_potPoly_mul_le
-import Theorems.Thm_BookProof_GaussCoreQuadBounds_shiftNorm_nonneg
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
-import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_weighted_kin_le
-import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_weighted_kin_le
+import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 open BookProof.SqSumFarisLavine
-
-
-
-
-
-
-
-
-
 
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

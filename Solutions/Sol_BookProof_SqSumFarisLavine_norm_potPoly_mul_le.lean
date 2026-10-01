@@ -4,29 +4,17 @@ import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_eval_potPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_nonneg
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_QgHermiteOscillator_eval_harmPoly
 open BookProof.SqSumFarisLavine
 
 
 
 
-
-
-
-
-
-
-
-
-
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

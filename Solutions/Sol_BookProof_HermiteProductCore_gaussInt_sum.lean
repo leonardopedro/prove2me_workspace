@@ -14,11 +14,9 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
-    gaussInt (∑ v ∈ s, f v) = ∑ v ∈ s, gaussInt (f v) := by
+un x => ?_)
+  simp [add_mul]
 
-  classical
-  induction s using Finset.induction with
-  | empty => simp [gaussInt]
-  | insert v s hv ih =>
-      rw [Finset.sum_insert hv, Finset.sum_insert hv, gaussInt_add, ih]
+theorem solution (c : ℂ) (r : MvPolynomial (Fin d) ℂ) :
+    gaussInt (c • r) = c * gaussInt r := by
+  rw [gauss := 

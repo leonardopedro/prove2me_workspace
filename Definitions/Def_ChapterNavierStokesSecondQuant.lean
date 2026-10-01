@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
-import Mathlib
 
 /-!
 # Second quantization of an essentially self-adjoint one-particle operator

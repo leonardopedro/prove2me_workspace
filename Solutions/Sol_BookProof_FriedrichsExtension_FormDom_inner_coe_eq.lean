@@ -10,16 +10,18 @@ open BookProof.FriedrichsExtension.FormDom
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
+ormExt_le P, norm_nonneg k, norm_nonneg (formExt P k)]
+
 theorem solution (P : PosSymOp F) (x : FormDom P) (k : FormSpace P) :
     (inner ℂ (x : FormSpace P) k : ℂ)
-      = inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) := by
-
-  refine UniformSpace.Completion.induction_on k ?_ ?_
-  · exact isClosed_eq (by fun_prop) (by fun_prop)
-  · intro y
-    rw [formExt_coe, UniformSpace.Completion.inner_coe, inner_def, inner_add_left,
-      toAmbient_eq, toAmbient_eq, P.sym (toDom x) (toDom y)]
+      = :=
+   inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) := by
+    refine UniformSpace.Completion.induction_on k ?_ ?_
+    · exact isClosed_eq (by fun_prop) (by fun_prop)
+    · intro y
+      rw [formExt_coe, UniformSpace.Completion.inner_coe, inner_def, inner_add_left,

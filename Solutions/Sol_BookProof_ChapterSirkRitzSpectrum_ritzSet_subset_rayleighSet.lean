@@ -1,24 +1,15 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — solution of BookProof.ChapterSirkRitzSpectrum.ritzSet_subset_rayleighSet
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.ChapterSirkRitzSpectrum
-open BookProof.HermiteGalerkin
-open BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit
-
-
-
-
-
 
 
 
 noncomputable section
 
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

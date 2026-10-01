@@ -5,20 +5,9 @@ import Theorems.Thm_BookProof_FullQuadratic_fqQuadPoly_hermiteMv
 import Theorems.Thm_BookProof_FullQuadratic_ascendP_Lp
 import Theorems.Thm_BookProof_FullQuadratic_exchange_Lp
 import Theorems.Thm_BookProof_FullQuadratic_descendP_Lp
+import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

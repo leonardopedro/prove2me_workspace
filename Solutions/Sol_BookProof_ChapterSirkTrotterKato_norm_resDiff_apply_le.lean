@@ -1,16 +1,8 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.norm_resDiff_apply_le
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 
@@ -23,20 +15,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) (y : H) : ‖resDiff T S n y‖ ≤ 2 * ‖y‖ := by

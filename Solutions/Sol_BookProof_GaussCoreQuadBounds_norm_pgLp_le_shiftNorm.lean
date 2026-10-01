@@ -4,23 +4,16 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_shiftNorm_sq
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_shiftNorm_nonneg
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterFarisLavine
 open BookProof.GaussCoreQuadBounds
-
-
-
-
-
 
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 
 noncomputable section
 

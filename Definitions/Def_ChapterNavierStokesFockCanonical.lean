@@ -1,3 +1,6 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
+
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Mathlib
@@ -211,11 +214,30 @@ noncomputable def drift (κ : Fin d → ℝ) (i : Fin d) :
 
 
 
+βi)m (fockSym κ)) x) :
+        L2I (Occ d)) : Occ d → ℂ) β
+      = ∑ i, ((ShiftData.shiftH (modeData hκ i)
+          (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ)) x) :
+            L2I (Occ d)) : Occ d → ℂ) β := by
+    rw [fockH_apply]
+    induction (Finset.univ : Finset (Fin d)) using Finset.induction with
+    | empty => simp
+    | insert i s hi ih =>
+        rw [Finset.sum_insert hi, Finset.sum_insert hi, ← ih]
+        rfl
+  simp only [LinearMap.comp_apply, Submodule.subtype_apply]
+  rw [hsumleft, hsumright]
+  exact Finset.sum_congr rfl fun i _ => hmode i
 
-
-
-
-
+/-- **The canonically written many-mode Navier–Stokes Hamiltonian
+`∑ᵢ ½(πᵢVᵢ + Vᵢπᵢ)` is essentially self-adjoint on the finite-configuration
+core of the Fock space.** -/
+theorem fock_canonical_essentiallySelfAdjointOn_core (hκ : ∀ i, 0 ≤ κ i) :
+    EssentiallySelfAdjointOn (lpFiniteModes (Occ d))
+      ((lpFiniteModes (Occ d)).subtype.comp
+        (∑ i, ((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))) := by
+  rw [fock_hamiltonian_eq hκ]
+  exact fockH_essentiallySelfAdjointOn_core hκ
 
 end FockCanonical
 

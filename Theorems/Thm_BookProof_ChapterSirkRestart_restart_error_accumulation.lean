@@ -3,10 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRestart
 open BookProof.ChapterSirkRestart
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section

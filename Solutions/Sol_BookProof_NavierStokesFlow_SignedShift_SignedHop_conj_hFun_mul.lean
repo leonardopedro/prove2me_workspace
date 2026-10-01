@@ -1,21 +1,10 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — solution of BookProof.NavierStokesFlow.SignedShift.SignedHop.conj_hFun_mul
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_conj_hop
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hop_mul
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
-
-
-
-
-
-
-
 
 
 
@@ -23,13 +12,9 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber
+open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
-
-
-
-variable {sym : ι → ℝ} (S : SignedHop ι sym)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (X Y : ι → ℂ) (β : ι) :

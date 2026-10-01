@@ -3,11 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 open BookProof.SirkSingleTime
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 
 open scoped InnerProductSpace
@@ -20,13 +19,6 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
 
 theorem BookProof.SirkSingleTime.strongResAt_of_pos_of_pos {l m : ℝ} (hl : 0 < l) (hm : 0 < m)
     (h : StrongResAt T S l) : StrongResAt T S m := by sorry

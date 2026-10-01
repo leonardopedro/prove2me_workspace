@@ -1,30 +1,18 @@
 -- Generated from ChapterQgHermiteCore.lean — theorem BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly
+import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+open BookProof.Starobinsky
 open BookProof.QgHermiteCore
 
-
-
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E]
+variable {d : ℕ}
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
 
 theorem BookProof.QgHermiteCore.memLp_scalaronHamiltonian_gaussPoly (M alpha : ℝ) (hM : 0 < M) (p : Polynomial ℝ) :
     MemLp (fun x : ℝ =>

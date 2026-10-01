@@ -1,37 +1,17 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData.comparison_isSymmetricDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesFullEsa
-open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_comp_of_commute
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sum
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
 
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution : IsSymmetricDom c.comparison := by

@@ -1,16 +1,11 @@
 -- Generated from ChapterStrichartzWave.lean — theorem BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial
 import Mathlib
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.StrichartzWave
 
-
-
-
-
-
-
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
 
 
 
@@ -20,6 +15,10 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
-theorem BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial (c : ι → ℝ) (w : ι → V) (κ : ℝ) {z : ℂ} (hz : z.im ≠ 0) :
-    BookProof.FarisLavine.DeficiencyTrivialAt (schwartzDomain V)
-      (opL2 (constCoeffOp c w κ)) z := by sorry
+onst_mul, h1]
+    ring
+  rw [← hcomb]
+  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+  ring
+
+theorem BookProof.StrichartzWave.constCoeffOp_deficiencyTrivial (c : ι → ℝ) (w : ι → V) (κ : ℝ) {z : ℂ} (hz : := by sorry

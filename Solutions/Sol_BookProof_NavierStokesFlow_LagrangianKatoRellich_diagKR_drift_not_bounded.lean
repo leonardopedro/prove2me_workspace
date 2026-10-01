@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drift
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -15,17 +16,23 @@ open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 set_option maxHeartbeats 1000000 in
-theorem solution :
-    ¬ ∃ C : ℝ, ∀ f : diagKR.D, ‖diagKR.drift f‖ ≤ C * ‖f‖ := by
+orem diagKR_constraint_zero : diagKR.constraintOp = 0 := diagOp_zero_symbol
 
-  rw [diagKR_drift]
-  refine diagOp_not_bounded _ fun C => ?_
-  refine ⟨⌈|C|⌉₊ + 1, ?_⟩
-  have hn : |C| ≤ (⌈|C|⌉₊ : ℝ) := Nat.le_ceil _
-  have hc : C ≤ |C| := le_abs_self C
-  have h0 : (0 : ℝ) ≤ (⌈|C|⌉₊ : ℝ) := Nat.cast_nonneg _
-  have habs : |3 * ((⌈|C|⌉₊ + 1 : ℕ) : ℝ)| = 3 * ((⌈|C|⌉₊ : ℝ) + 1) := by
-    push_cast
-    rw [abs_of_nonneg (by positivity)]
-  rw [habs]
-  linarith
+theorem solution (v : diagKR.D) :
+    ‖(diagKR.constraintOp v : L2N)‖ ≤ 0 * ‖(v : L2N)‖ := by
+  rw [diagKR_constraint_zero]
+  simp
+
+theorem diagKR_secondOrder_hasZeroDeficiencyOn :=
+  :
+      HasZeroDeficiencyOn diagKR.D (secondOrder diagKR) := by
+    rw [diagKR_secondOrder]
+    exact diagOp_hasZeroDeficiencyOn _
+  
+  /-- **The drift of this instance is not a bounded perturbation**, so the bounded
+  Kato–Rellich theorem does not apply to it: the relative version is genuinely
+  needed. -/
+  theorem diagKR_drift_not_bounded :
+      ¬ ∃ C : ℝ, ∀ f : diagKR.D, ‖diagKR.drift f‖ ≤ C * ‖f‖ := by
+    rw [diagKR_drift]
+    r

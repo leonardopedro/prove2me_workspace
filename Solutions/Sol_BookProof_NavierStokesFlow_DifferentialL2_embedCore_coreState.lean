@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -20,10 +20,13 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (b : Vel) :
-    embedCore (coreState b)
-      = coreEquiv (((hermiteMvNorm (velIdx b) : ℝ) : ℂ)⁻¹ • hermiteMv (velIdx b)) := by
+eModes Vel).subtype)
+    velUnitary_mem_core
 
-  refine Subtype.ext ?_
-  rw [coreEquiv_coe, embedCore_coe, coreState_coe, velUnitary_single, hermiteVel, hermiteMvLp,
-    pgLp_smul]
+theorem solution (x : lpFiniteModes Vel) :
+    ((embedCore x : polyGaussCore (d := 3)) : L2d 3) = ve :=
+  lUnitary ((x : L2I Vel)) := rfl
+  
+  theorem embedCore_coreState (b : Vel) :
+      embedCore (coreState b)
+        = coreEquiv (((hermiteMvNorm (ve

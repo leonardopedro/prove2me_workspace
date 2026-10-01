@@ -16,6 +16,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-# 4. Transport to the core of `L²(ℝ⁸⁴)` -/
-
-theorem BookProof.Qg3DGaugeEsa.coreRepPoly_equiv (p : MvPolynomial (Fin 84) := by sorry
+theorem BookProof.Qg3DGaugeEsa.coreRepPoly_equiv (p : MvPolynomial (Fin 84) ℂ) :
+    (coreRepPoly 84).equiv p = coreEquiv p := by sorry

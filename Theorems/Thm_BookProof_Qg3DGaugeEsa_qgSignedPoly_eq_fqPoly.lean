@@ -16,8 +16,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-← two_smul ℂ (S (S p)), smul_smul]
-  norm_num
-
 theorem BookProof.Qg3DGaugeEsa.qgSignedPoly_eq_fqPoly (kappa : Fin 84 → ℝ) :
-    qgS := by sorry
+    qgSignedPoly kappa = fqPoly (qgFqP kappa) qgFqQ 0 0 0 := by sorry

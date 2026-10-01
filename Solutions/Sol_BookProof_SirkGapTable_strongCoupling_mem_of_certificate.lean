@@ -2,15 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGapTable
 import Theorems.Thm_BookProof_SirkCertifiedGap_certified_parity_gap
-import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkGapTable
-
-
-
-
-
-
-
 
 
 
@@ -18,21 +10,6 @@ noncomputable section
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {E : Type*} [NormedAddCommGroup E]

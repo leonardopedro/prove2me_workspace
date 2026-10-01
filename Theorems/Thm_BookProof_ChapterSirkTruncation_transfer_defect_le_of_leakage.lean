@@ -3,11 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkTruncation
 open BookProof.ChapterSirkTruncation
 
-
-
-
-
-
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 noncomputable section

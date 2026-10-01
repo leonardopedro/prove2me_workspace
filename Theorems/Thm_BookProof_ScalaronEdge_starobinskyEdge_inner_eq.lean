@@ -1,15 +1,9 @@
 -- Generated from ChapterScalaronEdge.lean — theorem BookProof.ScalaronEdge.starobinskyEdge_inner_eq
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.ScalaronEdge
 
-
-
-
-
-
+variable (M alpha : ℝ)
 
 
 
@@ -23,7 +17,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

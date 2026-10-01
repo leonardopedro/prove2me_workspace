@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
+variable (nu : ℝ)
+
 
 open scoped ENNReal
 
@@ -12,5 +14,13 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
-theorem BookProof.NavierStokesFlow.LagrangianCanonical.lagT_coreState (β : Vel) :
-    lagT nu (coreState β) = ((lagLam nu β : ℝ) : ℂ) • coreState β := by sorry
+ical
+  refine crd_injective ?_
+  funext γ
+  rw [crd_numOp, crd_smul]
+  by_cases hγ : γ = β
+  · subst hγ
+    simp [crd_coreState]
+  · simp [crd_coreState, hγ]
+
+/-- The eigenvalue o := by sorry

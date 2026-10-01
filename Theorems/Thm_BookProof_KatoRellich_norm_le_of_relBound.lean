@@ -1,7 +1,9 @@
 -- Generated from ChapterKatoRellichRelative.lean — theorem BookProof.KatoRellich.norm_le_of_relBound
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
-open BookProof.ChapterKatoRellichRelative
+open BookProof.KatoRellich
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 

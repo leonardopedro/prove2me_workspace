@@ -3,15 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_strongResolventConvergence_ofBounded
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn
-import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
 
 
 

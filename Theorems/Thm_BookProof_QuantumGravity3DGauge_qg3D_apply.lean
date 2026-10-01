@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,8 +16,6 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.qg3D_apply (Φ : CoreRep 84 D) (x : D) :
-    qg3DHamiltonian Φ x
-      = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ j, ((qgKappa j : ℝ) : ℂ) • ((qgMom Φ j (qgMom Φ j x) : D) : L2d 84))
-            + ∑ m, ((torsionOps Φ m (torsionOps Φ m x) : D) : L2d 84)) := by sorry
+zed, Weyl-ordered two-signed sum of squares
+`H = ½ Σ_j κ_j π_j² + ½ Σ T²`, with the hyperbolic signature `qgKappa` produced by
+`qg3DDensity_densitized` and the torsion-type potential ` := by sorry

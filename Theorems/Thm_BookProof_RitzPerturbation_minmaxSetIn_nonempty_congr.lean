@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
 open BookProof.RitzPerturbation
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section

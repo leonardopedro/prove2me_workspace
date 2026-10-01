@@ -2,20 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_add_pvec_eq
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_add_single
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

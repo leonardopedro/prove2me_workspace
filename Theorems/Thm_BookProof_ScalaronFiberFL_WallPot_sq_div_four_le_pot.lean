@@ -4,6 +4,10 @@ import Definitions.Def_ChapterScalaronFiberFL
 open BookProof.ScalaronFiberFL
 open BookProof.ScalaronFiberFL.WallPot
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
+variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
+
 
 
 open MeasureTheory SchwartzMap

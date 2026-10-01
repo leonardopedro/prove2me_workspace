@@ -89,13 +89,16 @@ theorem solution {H : D →ₗ[ℂ] F} (hsym : SymmetricOn D H)
       exact (hsym (x n) (x m)).symm
     have hcont : Filter.Tendsto
         (fun m => (inner ℂ ((x n : F) + H (x n)) ((x m : F)) : ℂ)) Filter.atTop (nhds 0) := by
-      have := ((innerSL ℂ ((x n : F) + H (x n))).continuous.tendsto 0).comp hzero
-      simpa using this
-    have := (Complex.continuous_re.tendsto 0).comp hcont
-    simpa [hform] using this
-  have hle : formNormSq H (x n) - ε / 2 ≤ 0 := by
-    refine ge_of_tendsto hlim ?_
-    filter_upwards [Filter.eventually_ge_atTop (max N₀ N₁)] with m hm
-    exact hkey m hm
-  rw [Real.dist_eq, sub_zero, abs_of_nonneg hnn]
-  linarith
+      have hthis := ((innerSL ℂ ((x n : F) + H (x n))).continuous.tendsto 0).comp hzero
+      simp at hthis
+      refine Filter.Tendsto.congr ?_ hthis
+      intro m
+      rw [Function.comp_apply]
+      simp
+    have hthis := (Complex.continuous_re.tendsto 0).comp hcont
+    simp at hthis
+    refine Filter.Tendsto.congr ?_ hthis
+    intro m
+    rw [Function.comp_apply, hform]
+    simp
+  have hle : formNormSq H (x n) - ε / 2 ≤

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockFlow_secN_dom_dense
 import Theorems.Thm_BookProof_QgOuterFockFlow_secData_ext_symmetricOn
+import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.QgOuterFockFlow
 

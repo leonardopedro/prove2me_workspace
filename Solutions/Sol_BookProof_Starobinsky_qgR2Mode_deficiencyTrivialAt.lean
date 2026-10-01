@@ -1,6 +1,7 @@
 -- Generated from ChapterStarobinskyPotential.lean — solution of BookProof.Starobinsky.qgR2Mode_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
+import Theorems.Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt
 open BookProof.Starobinsky
 
 

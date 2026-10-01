@@ -3,19 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
-open IkebeKato
-open LpNat
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 open scoped ENNReal
 
 
 
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+set_option maxHeartbeats 1000000 in
+-- reason for change: the defeq checks of the two lattice `show` statements below
+-- unify coercion towers over `↑↑x`/`Submodule.inclusion`-terms and exceed 200k
 theorem BookProof.NavierStokesFlow.FockCanonical.mode_hamiltonian_eq (hκ : ∀ i, 0 ≤ κ i) (i : Fin d) :
-    (lpFiniteModes (Occ d)).subtype.comp
-        (((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))
-      = (ShiftData.shiftH (modeData hκ i)).comp
-        (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ))) := by sorry
+    (lpFiniteModes (Occ d)).subtype.comp := by sorry

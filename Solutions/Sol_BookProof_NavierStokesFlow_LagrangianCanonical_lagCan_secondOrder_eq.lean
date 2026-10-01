@@ -18,17 +18,16 @@ set_option maxHeartbeats 1000000 in
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     secondOrder (lagCanData nu hnu f) = lagT nu := by
 
-  rw [lagT]
+  simp only [lagCanData, lagT]
   have hmode := fun i => half_lagPSq_add_nu_lagQSq nu hnu i
   have hhalf : ((1 / 2 : ℝ) : ℂ) = (1 / 2 : ℂ) := by push_cast; ring
-  simp only [secondOrder, LagrangianFullData.kinetic, LagrangianFullData.viscous, lagCanData,
-    Finset.smul_sum, hhalf]
-  rw [← Finset.sum_add_distrib]
-  rw [Finset.sum_congr rfl fun i _ => hmode i]
-  rw [Finset.sum_add_distrib, ← Finset.smul_sum]
-  congr 1
-  rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, ← Nat.cast_smul_eq_nsmul ℂ,
-    smul_smul]
-  congr 1
-  push_cast
-  ring
+  have hcnt :
+      (∑ i : Fin 3, ((omega nu / 2 : ℝ) : ℂ) • LinearMap.id :
+        lpFiniteModes Vel →ₗ[ℂ] lpFiniteModes Vel)
+      = ((3 * omega nu / 2 : ℝ) : ℂ) • LinearMap.id := by
+    rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, ← Nat.cast_smul_eq_nsmul ℂ,
+      smul_smul]
+    congr 1
+    push_cast
+    ring
+  have hbridge : (∑ i : Fin

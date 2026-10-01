@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
 import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_of_positive
+import Theorems.Thm_BookProof_EsaClosure_clExt_extends
+import Theorems.Thm_BookProof_EsaClosure_clExt_selfAdjointCriterion
+import Theorems.Thm_BookProof_EsaClosure_clExt_symmetricOn
+import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa
 open BookProof.EsaClosure
 
 

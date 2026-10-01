@@ -1,6 +1,9 @@
 -- Generated from ChapterYangMillsGhostSector.lean — solution of BookProof.YangMillsGhost.fibreHam_abelian_esa
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
+import Theorems.Thm_BookProof_YangMillsAbelianEsa_ymAbelian_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 open BookProof.YangMillsGhost
 
 

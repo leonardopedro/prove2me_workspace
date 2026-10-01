@@ -4,6 +4,9 @@ import Definitions.Def_ChapterSirkBandLedger
 open BookProof.SirkBandLedger
 open BookProof.SirkBandLedger.Decimal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 
 open BookProof.SirkCertificateReader

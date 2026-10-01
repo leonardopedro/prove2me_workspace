@@ -1,3 +1,9 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+
+import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Mathlib
@@ -328,19 +334,11 @@ noncomputable def basisState (κ c : ℝ) (n : ℕ) : maxDom (oscSymbol (affMu �
 
 
 
-
-
-
-
-
-
-/-! ## The operator is genuinely unbounded -/
-
-
-
-
-
-
+ L^ (njointness is the statement it should
+be. -/
+theorem affH_domain_dense :
+    Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) :=
+  lpFiniteModes_dense
 
 end AffineFiber
 

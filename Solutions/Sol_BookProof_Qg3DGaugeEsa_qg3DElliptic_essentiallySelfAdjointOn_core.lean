@@ -19,11 +19,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-pPoly 84))
-    qg3D_essentiallySelfAdjointOn_core
-
 theorem solution :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 84) :=
-  )
-        (qg3DEllipticHamiltonian (coreRepPoly 84)) :=
-    qgS
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84))
+      (qg3DEllipticHamiltonian (coreRepPoly 84)) := qgSigned_essentiallySelfAdjointOn_core qgKappaElliptic

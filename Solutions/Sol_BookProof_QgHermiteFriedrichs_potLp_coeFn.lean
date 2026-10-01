@@ -1,18 +1,8 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.potLp_coeFn
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
 open BookProof.QgHermiteFriedrichs
-
-
-
-
 
 
 
@@ -24,38 +14,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (W : Vd d → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hWc : Continuous W) (hWb : ExpBounded W) (p : MvPolynomial (Fin d) ℂ) :

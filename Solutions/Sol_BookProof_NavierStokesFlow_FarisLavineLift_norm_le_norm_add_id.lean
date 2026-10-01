@@ -2,8 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_le_norm_add_of_re_inner_nonneg
-import Definitions.Def_ChapterNavierStokesFullEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -11,58 +9,17 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {κ : Type*}
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
-theorem solution (N : D →ₗ[ℂ] D) (v : D)
-    (hpos : 0 ≤ (inner ℂ ((N v : D) : F) ((v : F)) : ℂ).re) :
-    ‖((N v : D) : F)‖ ≤ ‖((((N + LinearMap.id : D →ₗ[ℂ] D)) v : D) : F)‖ := by
+   refine Finset.sum_le_sum fun k hk => ?_
+    rw [Finset.mul_sum]
+    exact Finset.sum_le_sum fun l hl => le_trans (le_abs_self _) (hpair k hk l hl)
+  nlinarith [norm_nonneg (((∑ k ∈ s, h k) v : D) : F),
+    norm_nonneg (((∑ k ∈ s, n k) v : D) : F),
+    mul_nonneg hc (norm_nonneg (((∑ k ∈ s, n k) v : D) : F))]
 
-  have : ((((N + LinearMap.id : D →ₗ[ℂ] D)) v : D) : F) = ((N v : D) : F) + (v : F) := by
-    simp
-  rw [this]
-  exact norm_le_norm_add_of_re_inner_nonneg hpos
+/-- Adding the identi :=
+  ty to the comparison operator can only help, provided the
+  comparison operator is non-negative on the state. -/
+  theorem norm_le_norm_add_id (N : D →ₗ[ℂ] D) (v : D)

@@ -1,8 +1,10 @@
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_add
 
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_smul
+
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
+
 
 /-!
 # The translated, modulated Gauss–polynomial core of `L²(ℝᵈ)`
@@ -47,9 +49,9 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 namespace BookProof.ShiftedHermiteCore
 
 open MeasureTheory MvPolynomial
-open BookProof.HermiteProductCore
-open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
@@ -137,8 +139,7 @@ def pgMapT (a k : Vd d) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] L2d d where
     congr 1
     exact pgFunT_smul a k c p
 
-@[simp] theorem pgMapT_apply (a k : Vd d) (p : MvPolynomial (Fin d) ℂ) :
-    pgMapT a k p = pgLpT a k p := rfl
+
 
 /-! ## The map is an isometry of the core -/
 

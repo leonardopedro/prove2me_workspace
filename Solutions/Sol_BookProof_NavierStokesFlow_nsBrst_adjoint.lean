@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.nsBrst_adjoint
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Theorems.Thm_BookProof_GhostField_psiDag_eq_conjTranspose
 open BookProof.NavierStokesFlow
 
 

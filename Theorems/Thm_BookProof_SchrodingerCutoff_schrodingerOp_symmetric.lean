@@ -7,6 +7,8 @@ open BookProof.SchrodingerCutoff
 
 open MeasureTheory Filter Complex
 
+_combination (norm := module) hk0 - hm0
+
 theorem BookProof.SchrodingerCutoff.schrodingerOp_symmetric (V : ℝ → ℝ) (hV : Continuous V)
     (f g f' f'' g' g'' : ℝ → ℂ)
     (hf1 : ∀ x, HasDerivAt f (f' x) x) (hf2 : ∀ x, HasDerivAt f' (f'' x) x)
@@ -14,4 +16,4 @@ theorem BookProof.SchrodingerCutoff.schrodingerOp_symmetric (V : ℝ → ℝ) (h
     (hf''c : Continuous f'') (hg''c : Continuous g'')
     (hfs : HasCompactSupport f) (hgs : HasCompactSupport g) :
     (∫ x, (starRingEnd ℂ) (schrodingerOp V f x) * g x)
-      = ∫ x, (starRingEnd ℂ) (f x) * schrodingerOp V g x := by sorry
+      = ∫ x, (star := by sorry

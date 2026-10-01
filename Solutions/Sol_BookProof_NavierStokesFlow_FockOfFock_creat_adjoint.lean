@@ -2,9 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single
-import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_annih_coe
-import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_creat_coe
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -12,42 +9,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-variable {M : Type*} [DecidableEq M]
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (m : M) (v w : FockDom M) :

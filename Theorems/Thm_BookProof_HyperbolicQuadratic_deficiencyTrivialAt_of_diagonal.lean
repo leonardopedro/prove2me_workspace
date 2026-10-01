@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 open BookProof.HyperbolicQuadratic
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -11,8 +14,6 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
-
-variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.deficiencyTrivialAt_of_diagonal (v : ι → E) (lam : ι → ℝ)
     (htot : ∀ w : E, (∀ i, (inner ℂ (v i) w : ℂ) = 0) → w = 0)

@@ -10,10 +10,14 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
+heq x) (fun _ => by simpa using hz) hL2
+
 theorem solution
     (u u' u'' : ℝ → ℂ)
     (h1 : ∀ x, HasDerivAt u (u' x) x)
     (h2 : ∀ x, HasDerivAt u' (u'' x) x)
     (heq : ∀ x, -u'' x = Complex.I * u x)
-    (hL2 : Integrable fun x => ‖u x‖ ^ 2) :
-    u = 0 := laplacian_deficiency_trivial Complex.I (by simp) u u' u'' h1 h2 heq hL2
+    (hL2 : Integr :=
+  able fun x => ‖u x‖ ^ 2) :
+      u = 0 :=
+    laplacian_deficiency_trivial C

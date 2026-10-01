@@ -3,10 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkRestart
 open BookProof.ChapterSirkRestart
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section
@@ -18,6 +15,8 @@ open BookProof.ChapterH6
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
+rw [h1, h2]
+
 theorem BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact (U Om : E →L[ℂ] E)
     (hcomm : Om.comp U = U.comp Om) (n : ℕ) (v : E) (hv : Om v = 0) :
-    Om ((U ^ n) v) = 0 := by sorry
+    Om ((U := by sorry

@@ -16,8 +16,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-nedPoly]
-
 theorem BookProof.Qg3DGaugeEsa.qgSigned_essentiallySelfAdjointOn_core (kappa : Fin 84 → ℝ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := 84))
-      (signedOp kappa (qgMo := by sorry
+      (signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))) := by sorry

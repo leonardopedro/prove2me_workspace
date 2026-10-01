@@ -9,6 +9,10 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-theorem BookProof.HermiteCore.hasDerivAt_hermiteFun (n : ℕ) (x : ℝ) :
-    HasDerivAt (hermiteFun n)
-      (((derivative (hermiteR n)).eval x - x / 2 * (hermiteR n).eval x) * gaussH x) x := by sorry
+     map_mul, Complex.conj_ofReal]
+    ring
+  have hzero := ae_eq_zero_of_moments (Lp.memLp u) hmom
+  exact Lp.eq_zero_iff_ae_eq_zero.mpr hzero
+
+/-- **The Hermite basis of `L²(ℝ)`.** -/
+def hermiteBasis : HilbertBasi := by sorry

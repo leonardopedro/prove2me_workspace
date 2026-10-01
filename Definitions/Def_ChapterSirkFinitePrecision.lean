@@ -1,5 +1,6 @@
 import Mathlib
 
+
 /-!
 # Chapter SirkFinitePrecision — the finite-precision certificate layer (T1–T5)
 

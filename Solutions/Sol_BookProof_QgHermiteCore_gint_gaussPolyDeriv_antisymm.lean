@@ -1,33 +1,14 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.gint_gaussPolyDeriv_antisymm
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteFunctions
+import Theorems.Thm_BookProof_HermiteCore_gint_ibp
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (p q : Polynomial ℝ) :

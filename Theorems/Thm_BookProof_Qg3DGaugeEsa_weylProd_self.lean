@@ -16,8 +16,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-m * (torsionP m * p)) := by
-  simp [qgSignedPoly]
-
 theorem BookProof.Qg3DGaugeEsa.weylProd_self (S : MvPolynomial (Fin 84) ℂ →ₗ[ℂ] MvPolynomial (Fin 84) ℂ)
-    (p : MvP := by sorry
+    (p : MvPolynomial (Fin 84) ℂ) : weylProd S S p = S (S p) := by sorry

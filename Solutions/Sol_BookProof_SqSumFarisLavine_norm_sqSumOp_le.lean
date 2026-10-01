@@ -4,28 +4,17 @@ import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumPoly_le
 import Theorems.Thm_BookProof_SqSumFarisLavine_sqSumOp_pgLp
 import Theorems.Thm_BookProof_SqSumFarisLavine_core_eq_pgLp
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_QgHermiteOscillator_harmCore_pgLp
 open BookProof.SqSumFarisLavine
-
-
-
-
-
-
-
-
-
 
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

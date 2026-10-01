@@ -2,56 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 import Theorems.Thm_BookProof_SirkCertificateReader_gap_ge_of_ndjson
-import Definitions.Def_ChapterSirkCertifiedGap
 open BookProof.SirkCertificateReader
 
 
 
 
-
-
-
-
-
-
 open BookProof.SirkCertifiedGap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {T P : E →ₗ[ℂ] E} {s : String} {d : CertificateData} {lo : ℚ}

@@ -15,5 +15,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (D : Fin 3 → R) (j k : Fin 3) :
     fieldStrength D j k = - fieldStrength D k j := by
 
-  simp only [fieldStrength]
-  exact (lie_skew (D j) (D k)).symm
+  simp only [fieldStrength, Ring.lie_def]
+  noncomm_ring

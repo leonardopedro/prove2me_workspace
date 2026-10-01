@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
+
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
@@ -141,41 +143,23 @@ noncomputable def diagComparisonData (d : ℕ) (p q : Fin d → ℕ → ℝ) :
 
 
 
-
-
-
-
-
-
-end DiagonalComparison
-
-/-! ## Lifting the two Faris–Lavine bounds over the particles of a sector -/
-
-section Lifting
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {κ : Type*}
-
-
-
-
-
-
+h1stomparison_not_bounded (d : ℕ) (p q : Fin d → ℕ → ℝ)
+    (hunb : ∀ C : ℝ, ∃ k, C < |(∑ i, p i k ^ 2) + (∑ i, q i k ^ 2) + 1|) :
+    ¬ ∃ C : ℝ, ∀ f : lpFiniteModes ℕ,
+      ‖(diagComparisonData d p q).compariser
+   (hpos : 0 ≤ (inner ℂ ((hahis]
+  exact norm_le_norm_add_of_re_inner_nonneg hpos
 
 /-! ### The commutator -/
 
 /-- The commutator of two domain-preserving operators. -/
 def commDom (A B : D →ₗ[ℂ] D) : D →ₗ[ℂ] D := A.comp B - B.comp A
 
-
-
-
-
-
-
-
-
-
+@[simp] theorem commDom
+ (c s, n k) + LinearMap.id) v : D) : F) : ℂ)‖
+      ≤ c₂ * ‖(inner ℂ ((v : F))
+        ((((∑ k ∈ s, n k) + LinearMa h n c₂ hc₂ v hcomm hbound) ?_
+  exact mul_le_mul_of_nonneg_left (Complex.re_le_norm _) hc₂
 
 end Lifting
 
@@ -193,28 +177,15 @@ noncomputable def hEx (k : Fin 2) : E2 →ₗ[ℂ] E2 :=
   LinearMap.smulRight (EuclideanSpace.projₗ (𝕜 := ℂ) k)
     (EuclideanSpace.single (0 : Fin 2) (1 : ℂ))
 
-/-- `nₖ x = xₖ · eₖ`: the comparison operators are the coordinate
-projections. -/
-noncomputable def nEx (k : Fin 2) : E2 →ₗ[ℂ] E2 :=
-  LinearMap.smulRight (EuclideanSpace.projₗ (𝕜 := ℂ) k) (EuclideanSpace.single k (1 : ℂ))
-
-
-
-
-
-/-- The state on which the naive lifting fails: both coordinates equal to 1. -/
-noncomputable def vEx : E2 :=
-  EuclideanSpace.single (0 : Fin 2) (1 : ℂ) + EuclideanSpace.single (1 : Fin 2) (1 : ℂ)
-
-
-
-
-
-
-
-
-
-
+/-- `nₖ x = xk by[n=
+1 eak x => le_of_eq (by rw [norm_hEx, norm_nEx]), ?_⟩
+  have hn : ‖(nEx 0 + nEx 1) vEx‖ ^ 2 = 2 := by
+    rw [sum_nEx_vEx]; exact norm_vEx_sq
+  have hh : ‖(hEx 0 + hEx 1) vEx‖ = 2 := by
+    rw [sum_hEx_vEx, norm_smul, EuclideanSpace.norm_single]
+    norm_num
+  rw [hh]
+  nlinarith [hn, norm_nonneg ((nEx 0 + nEx 1) vEx)]
 
 end Sharpness
 

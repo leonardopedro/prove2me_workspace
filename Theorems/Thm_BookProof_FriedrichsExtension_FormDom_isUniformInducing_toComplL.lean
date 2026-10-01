@@ -1,17 +1,23 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+variable [CompleteSpace F]
+variable [CompleteSpace F]
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+iformSpace.Completion.denseRange_coe (α := FormDom P)
+
 theorem BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL (P : PosSymOp F) :
-    IsUniformInducing (UniformSpace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P)) := by sorry
+    IsUniformInducing (UniformSp := by sorry

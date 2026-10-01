@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterH9
 import Theorems.Thm_BookProof_ChapterH9_norm_map_of_adjoint_comp
+import Theorems.Thm_BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp
 open BookProof.ChapterH9
 
 

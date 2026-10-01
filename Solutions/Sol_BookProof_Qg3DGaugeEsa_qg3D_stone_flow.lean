@@ -21,11 +21,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-
-  qgSigned_essentiallySelfAdjointOn_core qgKappa
-
 theorem solution :
     ∃ (T : UnboundedSelfAdjoint (L2d 84)) (U : ℝ → (L2d 84 →L[ℂ] L2d 84)),
-      IsSelfAdjointExtension (qg3DHami :=
-  ltonian (coreRepPoly 84)) T.op ∧ IsStoneFlow T U :=
-    exists_stone_flow_of_esa _ polyGaussCore_dense (qg3D_symmetricOn (core
+      IsSelfAdjointExtension (qg3DHamiltonian (coreRepPoly 84)) T.op ∧ IsStoneFlow T U :=
+  exists_stone_flow_of_esa _ polyGaussCore_dense (qg3D_symmetricOn (coreRepPoly 84))
+      qg3D_essentiallySelfAdjointOn_core

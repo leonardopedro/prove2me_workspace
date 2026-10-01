@@ -16,8 +16,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-* ∑ m : Fin 64, torsionVec m i * torsionVec m j
-
 theorem BookProof.Qg3DGaugeEsa.triple_swap {α : Type*} [AddCommMonoid α] (F : Fin 64 → Fin 84 → Fin 84 → α) :
     ∑ i : Fin 84, ∑ j : Fin 84, ∑ m : Fin 64, F m i j
-      = ∑ m := by sorry
+      = ∑ m : Fin 64, ∑ i : Fin 84, ∑ j : Fin 84, F m i j := by sorry

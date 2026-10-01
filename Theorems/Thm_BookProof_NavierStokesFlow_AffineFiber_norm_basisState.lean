@@ -1,0 +1,20 @@
+-- Generated from ChapterNavierStokesAffineFiberEsa.lean — theorem BookProof.NavierStokesFlow.AffineFiber.norm_basisState
+import Mathlib
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineFiber
+
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
+
+
+open scoped ENNReal
+
+
+
+open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+
+variable {ι : Type*}
+
+theorem BookProof.NavierStokesFlow.AffineFiber.norm_basisState (κ c : ℝ) (n : ℕ) : ‖(basisState κ c n : L2I ℕ)‖ = 1 := by sorry

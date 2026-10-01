@@ -1,13 +1,11 @@
 -- Generated from ChapterScalaronEdge.lean — solution of BookProof.ScalaronEdge.scalaronEdge_friedrichs_gap
 import Mathlib
 import Definitions.Def_ChapterScalaronEdge
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdgeHam_symmetricOn
+import Theorems.Thm_BookProof_ScalaronEdge_starobinskyEdge_form_gap
+import Theorems.Thm_BookProof_FriedrichsFormGap_friedrichs_extension_form_gap
+import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.ScalaronEdge
-
-
-
-
-
-
 
 
 
@@ -22,7 +20,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
-
 
 
 variable (M alpha : ℝ)

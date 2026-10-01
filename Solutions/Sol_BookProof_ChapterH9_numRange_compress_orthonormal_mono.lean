@@ -1,11 +1,9 @@
-import Definitions.Def_ChapterH1
-import Definitions.Def_ChapterH4
-import Definitions.Def_ChapterH5
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterH8
 -- Generated from ChapterH9.lean — solution of BookProof.ChapterH9.numRange_compress_orthonormal_mono
 import Mathlib
 import Definitions.Def_ChapterH9
+import Theorems.Thm_BookProof_ChapterH9_numRange_compress_mono
+import Theorems.Thm_BookProof_ChapterH9_coordIncl_norm_map
+import Theorems.Thm_BookProof_ChapterH8_orthonormalEmbedding_nested
 open BookProof.ChapterH9
 
 

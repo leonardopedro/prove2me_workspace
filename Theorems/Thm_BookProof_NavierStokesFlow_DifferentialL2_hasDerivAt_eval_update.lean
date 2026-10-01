@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,6 +18,9 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+_sq_sec, hS]
+  ring
+
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_eval_update (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Fin d → ℂ) (t : ℂ) :
     HasDerivAt (fun s : ℂ => MvPolynomial.eval (Function.update x i s) p)
-      (MvPolynomial.eval (Function.update x i t) (pderiv i p)) t := by sorry
+      (MvPolynomial.eval (Function.update x := by sorry

@@ -7,42 +7,18 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-
-
-
-variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
-
 set_option maxHeartbeats 1000000 in
-theorem solution (psi : Fin n → ℂ) (t : ℝ) :
-    HasDerivAt (fun s : ℝ => nsFlowUnitary d s *ᵥ psi)
-      ((Complex.I • nsHamiltonian d) *ᵥ (nsFlowUnitary d t *ᵥ psi)) t := by
-
+rem nsFlow_hasDerivAt (t : ℝ) :
+    HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by
   rw [nsFlowUnitary_eq_matrixFlow']
-  exact matrixFlow_vec_hasDerivAt (Complex.I • nsHamiltonian d) psi t
+  exact matrixFlow_hasDerivAt (Complex.I • nsHamiltonian d) t
+
+/-- **D.9 (headline)** *The evolved state solves the Navier–Stokes evolution
+equation on the truncation*: `ψ(t) = U(t) ψ` is differentiable with
+`ψ̇(t) = i H_N ψ(t)`, for every real time — the differential form of
+`book.tex` ~4210–4 :=
+  216, on the truncation. -/
+  theorem nsFlow_solves_schrodinger (psi : Fin n → ℂ) (t : ℝ) :
+      HasDerivAt (fu

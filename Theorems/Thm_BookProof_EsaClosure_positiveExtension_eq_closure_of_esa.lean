@@ -5,6 +5,8 @@ open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
+variable [CompleteSpace F]
+variable [CompleteSpace F]
 
 
 open Filter Topology

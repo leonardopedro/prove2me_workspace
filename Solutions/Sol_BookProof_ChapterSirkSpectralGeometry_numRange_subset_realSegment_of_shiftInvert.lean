@@ -1,20 +1,10 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — solution of BookProof.ChapterSirkSpectralGeometry.numRange_subset_realSegment_of_shiftInvert
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
-import Definitions.Def_ChapterSirkEndToEnd
-import Definitions.Def_ChapterH9
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterH4
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
-import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_norm_apply_le
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint
+import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le
 open BookProof.ChapterSirkSpectralGeometry
-
-
-
-
-
-
 
 
 
@@ -23,14 +13,6 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH9
 open BookProof.ChapterSirkEndToEnd BookProof.HashimotoShiftInvert BookProof.FarisLavine
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  {Dom : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {A : Dom →ₗ[ℂ] F} {γ : ℝ} {R : F →L[ℂ] F}

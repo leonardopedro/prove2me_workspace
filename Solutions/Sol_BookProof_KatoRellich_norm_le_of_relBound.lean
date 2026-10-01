@@ -1,4 +1,3 @@
-import Definitions.Def_ChapterFarisLavine
 -- Generated from ChapterKatoRellichRelative.lean — solution of BookProof.KatoRellich.norm_le_of_relBound
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative

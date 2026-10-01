@@ -7,23 +7,14 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-
-
-
-variable {n : ℕ}
-
 set_option maxHeartbeats 1000000 in
-theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (x : Fin n → ℂ) (t : ℝ) :
-    HasDerivAt (fun s : ℝ => matrixFlow A s *ᵥ x) (A *ᵥ (matrixFlow A t *ᵥ x)) t := by
+]
+  simp [NormedSpace.exp_zero]
 
-  have h := (applyVecCLM x).hasFDerivAt.comp_hasDerivAt t (matrixFlow_hasDerivAt A t)
-  simpa [matrixFlow_comm, Matrix.mulVec_mulVec] using h
+theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (x : Fin n → ℂ) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => matrixFlow A s *ᵥ x) (A :=
+   *ᵥ (matrixFlow A t *ᵥ x)) t := by
+    have h := (applyVecCLM x).hasFDerivAt.comp_hasDerivAt t (matrixFlow_hasDerivAt A t)
+    convert h using 1

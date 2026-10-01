@@ -1,0 +1,39 @@
+-- Generated from ChapterNavierStokesShiftHamiltonian.lean — solution of BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hasSum_inner_shiftH_left
+import Mathlib
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_summable_crossA
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_summable_crossB
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_conj_hFun_mul
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+
+
+
+open scoped ENNReal
+
+
+
+open LpNat FarisLavine IkebeKato
+
+set_option maxHeartbeats 1000000 in
+theorem solution (x : maxDom S.sym) (y : L2I ι) :
+    HasSum (fun β => -Complex.I * S.crossA ((x : L2I ι) : ι → ℂ) ((y : ι → ℂ)) β
+        + Complex.I * S.crossB ((x : L2I ι) : ι → ℂ) ((y : ι → ℂ)) β)
+      (inner ℂ (shiftH S x : L2I ι) y) := by
+
+  have hA := summable_crossA S (Y := (y : ι → ℂ)) (summable_ampSeq_sq S x) (summable_normSq y)
+  have hB := summable_crossB S (Y := (y : ι → ℂ)) (summable_ampSeq_sq S x) (summable_normSq y)
+  have hgoal := (hA.hasSum.mul_left (-Complex.I)).add (hB.hasSum.mul_left Complex.I)
+  have hshift := (((hasSum_hop_iff S).mpr hA.hasSum).mul_left (-Complex.I)).add
+    (hB.hasSum.mul_left Complex.I)
+  have hinner := lp.hasSum_inner (𝕜 := ℂ) ((shiftH S x : L2I ι)) y
+  have heq : (fun β => (inner ℂ (((shiftH S x : L2I ι) : ι → ℂ) β) ((y : ι → ℂ) β) : ℂ))
+      = fun β => -Complex.I * S.hop (S.crossA ((x : L2I ι) : ι → ℂ) ((y : ι → ℂ))) β
+          + Complex.I * S.crossB ((x : L2I ι) : ι → ℂ) ((y : ι → ℂ)) β := by
+    funext β
+    rw [RCLike.inner_apply, shiftH_coe, mul_comm]
+    exact conj_hFun_mul S _ _ β
+  rw [heq] at hinner
+  rwa [hshift.unique hinner] at hgoal

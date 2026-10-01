@@ -18,7 +18,9 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin 3) : Intertwined (ann i) (annOp i) :=
-  fun x =>
+ntertwined_ann (i : Fin 3) : Intertwined (ann i) (annOp i) := fun x :=
+  =>
     congrFun (congrArg (fun F : lpFiniteModes Vel →ₗ[ℂ] (polyGaussCore (d := 3)) => ⇑F)
       (intertwine_ann i)) x
+  
+  theorem

@@ -1,16 +1,22 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_sum_P_le
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
-import Definitions.Def_ChapterSirkBandLedger
-import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-open Filter Topology
-open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+
+open Filter Topology
+
+
+
+open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.norm_sum_P_le (v : L.D) {eps : ℝ} (heps : 0 < eps) :
     ∑ j : Fin 3, ‖(L.P j v : F)‖

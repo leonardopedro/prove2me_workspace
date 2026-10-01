@@ -1,10 +1,9 @@
 -- Generated from ChapterKatoRellichRelative.lean — theorem BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded'
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
-import Definitions.Def_ChapterHashimotoShiftInvert
-import Definitions.Def_ChapterShiftedHermiteCore
-import Definitions.Def_ChapterNavierStokesHashimoto
-open BookProof.ChapterKatoRellichRelative
+open BookProof.KatoRellich
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 

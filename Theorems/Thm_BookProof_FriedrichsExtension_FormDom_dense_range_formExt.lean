@@ -1,17 +1,23 @@
 -- Generated from ChapterFriedrichsExtension.lean — theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+variable [CompleteSpace F]
+variable [CompleteSpace F]
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
-    Dense (Set.range (formExt P)) := by sorry
+ed_eq (by fun_prop) (by fun_prop)
+  simpa using hall k
+
+theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt (P : PosSymOp F) (hdense : Den := by sorry

@@ -1,17 +1,8 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.restrict_essentiallySelfAdjointOn
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 open BookProof.QgBrstDerivativeGauge
-
-
-
-
-
-
-
-
-
-
 
 
 

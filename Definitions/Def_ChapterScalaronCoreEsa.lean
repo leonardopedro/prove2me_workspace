@@ -1,8 +1,6 @@
+import Definitions.Def_ChapterWaveUnboundedPotential
 import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
-import Definitions.Def_ChapterQuantumGravityDensitized
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterStrichartzWave
 
 
 /-!

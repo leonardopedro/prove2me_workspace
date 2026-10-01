@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.core_ext
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -16,5 +18,9 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.core_ext {M : Type*} [AddCommGroup M] [Module ℂ M]
-    {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by sorry
+njective
+    (Submodule.injective_subtype (lpFiniteModes Vel)) ?_
+  rw [Submodule.map_span, Submodule.map_top, Submodule.range_subtype, ← Set.range_comp]
+  exact lpFiniteModes_eq_span.symm
+
+/-- Two linear maps out of the finite-mode core agree as soon as the := by sorry

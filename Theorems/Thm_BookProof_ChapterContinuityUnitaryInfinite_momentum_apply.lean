@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
+variable {X : Type*}
+
 
 open scoped ENNReal InnerProductSpace
 
-theorem BookProof.ChapterContinuityUnitaryInfinite.momentum_apply (f : L2Z) (k : ℤ) :
-    ((momentum f : L2Z) : ℤ → ℂ) k
-      = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) := by sorry
+ := by sorry

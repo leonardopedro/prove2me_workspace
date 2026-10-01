@@ -9,6 +9,10 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-theorem BookProof.HermiteCore.hermiteFun_oscillator (n : ℕ) (x : ℝ) :
-    -(deriv (deriv (hermiteFun n)) x) + x ^ 2 / 4 * hermiteFun n x
-      = ((n : ℝ) + 1 / 2) * hermiteFun n x := by sorry
+ => p.eval y * gaussH y)
+      ((derivative p - C (1 / 2 : ℝ) * (X * p)).eval x * gaussH x) x := by
+  have h := (p.hasDerivAt x).mul (hasDerivAt_gaussH x)
+  convert h using 1 <;> first
+  | rfl
+  | simp only [Polynomial.eval_sub, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]
+    ri := by sorry

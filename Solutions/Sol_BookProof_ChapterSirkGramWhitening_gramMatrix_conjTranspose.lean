@@ -1,15 +1,7 @@
 -- Generated from ChapterSirkGramWhitening.lean — solution of BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 
@@ -23,8 +15,9 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution {m : ℕ} (w : Fin m → E) :
-    (gramMatrix w)ᴴ = gramMatrix w := by
+  fun i j => ⟪w i, w j⟫_ℂ
 
-  ext i j
-  simp [gramMatrix, Matrix.conjTranspose_apply]
+theorem solution {m : ℕ} (w : Fin m → E) : :=
+  (gramMatrix w)ᴴ = gramMatrix w := by
+    ext i j
+    simp [gramMa

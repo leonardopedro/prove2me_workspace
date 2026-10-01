@@ -1,19 +1,8 @@
 import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFullQuadraticEsa
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterStoneMeasurable
-import Definitions.Def_ChapterYangMillsHermite
 
 /-!
 # The second quantization of a real quadratic Hamiltonian is essentially self-adjoint on the
@@ -52,7 +41,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.QuadFockEsa
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand
+open BookProof.HermiteBand BookProof.GradedBandSchur
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

@@ -1,74 +1,13 @@
 -- Generated from ChapterQgHermiteCore.lean — solution of BookProof.QgHermiteCore.exists_exp_bound_mvPolyEval
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QgHermiteCore
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteProductCore
-
-variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) :

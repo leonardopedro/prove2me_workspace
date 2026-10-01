@@ -3,23 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_symmetricOn_top_of_dense
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_quadForm_top_nonneg_of_dense
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterFarisLavine
 open BookProof.YangMillsFriedrichsLimit
 
 
 
 
-
-
-
-
-
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)

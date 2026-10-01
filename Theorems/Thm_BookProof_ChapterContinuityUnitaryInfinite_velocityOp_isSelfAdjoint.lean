@@ -3,7 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
+variable {X : Type*}
+
 
 open scoped ENNReal InnerProductSpace
 
-theorem BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint (v : LinfZ) : IsSelfAdjoint (velocityOp v) := by sorry
+Complex.conj_ofReal]
+  ring
+
+theorem BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint (v : LinfZ) : IsSelfAdjoint (velocityOp v) :=
+  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 (velocityOp_isSymmetric v)
+
+/-! ## The Weyl-symmetrized continuity generator := by sorry

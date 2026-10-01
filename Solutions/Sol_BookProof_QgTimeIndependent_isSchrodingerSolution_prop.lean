@@ -2,12 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_QgTimeIndependent_hasDerivAt_prop
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 open BookProof.QgTimeIndependent
-
-
-
-
-
 
 
 

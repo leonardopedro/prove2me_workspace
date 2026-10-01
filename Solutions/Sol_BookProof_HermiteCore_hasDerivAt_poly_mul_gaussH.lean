@@ -12,11 +12,15 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (p : Polynomial ℝ) (x : ℝ) :
-    HasDerivAt (fun y : ℝ => p.eval y * gaussH y)
-      ((derivative p - C (1 / 2 : ℝ) * (X * p)).eval x * gaussH x) x := by
+n_dense
 
-  have h := (p.hasDerivAt x).mul (hasDerivAt_gaussH x)
-  convert h using 1
-  simp only [Polynomial.eval_sub, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]
-  ring
+theorem solution (n : ℕ) : hermiteBasis n = hermiteLp n := by
+  rw [hermiteBasis, HilbertBasis.coe_mk]
+
+/-! ## The harmonic oscillator -/
+
+/-- The first derivative of a Hermite function. -/
+theorem hasDerivAt_hermiteFun (n : ℕ) (x : ℝ) : :=
+     HasDerivAt (hermiteFun n)
+        (((derivative (hermiteR n)).eval x - x / 2 * (hermiteR n).eval x) * gaussH x) x := by
+    have h := ((hermiteR n).hasDerivAt x).mul (hasDerivAt_gau

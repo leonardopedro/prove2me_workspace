@@ -1,23 +1,8 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterContinuityUnitary
-import Definitions.Def_ChapterContinuityUnitaryInfinite
-import Definitions.Def_ChapterDoubleSlit
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterGhostField
-import Definitions.Def_ChapterNavierStokesCauchy
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterNavierStokesFlow
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
+
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterTrajectory
-import Definitions.Def_ChapterU
-
 import Mathlib
 
-import Mathlib
 
 /-!
 # Shift Hamiltonians and their Faris–Lavine inequalities

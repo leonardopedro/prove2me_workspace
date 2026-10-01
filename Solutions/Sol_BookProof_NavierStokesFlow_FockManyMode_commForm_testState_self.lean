@@ -8,7 +8,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zer
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero
-import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hasSum_commForm
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
@@ -48,6 +48,7 @@ theorem solution (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) :
     · rw [testState_coe_eq_zero i₀ (modeShift_shift_ne i₀ i₀) (modeShift_shift_ne' i₀ i₀),
         mul_zero]
     · rw [testState_coe_eq_zero i₀ hβ h1, zero_mul]
+  simp only [modeData_sym]
   rw [hs.unique hsingle]
   have hshift0 : (modeData hκ i₀).shift 0 = modeShift i₀ 0 := rfl
   have hamp0 : (modeData hκ i₀).amp 0 = modeAmp κ i₀ 0 := rfl
@@ -55,5 +56,4 @@ theorem solution (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) :
   have hc0 : ((testState κ i₀ : L2I (Occ d)) : Occ d → ℂ) 0 = 1 := testState_coe_zero i₀
   have hc1 : ((testState κ i₀ : L2I (Occ d)) : Occ d → ℂ) (modeShift i₀ 0) = 1 := by
     rw [testState_coe, if_neg (modeShift_zero_ne_zero i₀), if_pos rfl]
-  rw [hshift0, hamp0, hstep, hc0, hc1]
-  simp
+  rw [hshift0, ham

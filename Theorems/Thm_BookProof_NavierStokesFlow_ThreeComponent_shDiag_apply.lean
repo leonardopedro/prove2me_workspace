@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 open scoped ENNReal
 

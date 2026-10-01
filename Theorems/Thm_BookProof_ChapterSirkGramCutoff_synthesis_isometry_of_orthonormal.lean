@@ -3,12 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramCutoff
 open BookProof.ChapterSirkGramCutoff
 
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {m : ℕ} {w : Fin m → E}
+variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
 
 
 noncomputable section
@@ -19,14 +16,6 @@ open BookProof.ChapterSirkGramWhitening
 open ContinuousLinearMap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-variable {m : ℕ} {w : Fin m → E}
-variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
 
 theorem BookProof.ChapterSirkGramCutoff.synthesis_isometry_of_orthonormal {d : ℕ} {v : Fin d → E} (hv : Orthonormal ℂ v) :
     (adjoint (synthesis v)).comp (synthesis v)

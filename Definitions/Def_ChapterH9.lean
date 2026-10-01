@@ -6,7 +6,6 @@ import Definitions.Def_ChapterH8
 import Definitions.Def_ChapterH8Bases
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter H9 — the SIRK numerical ranges nest (plan `PLAN_LEAN_SPECIALIST_SIRK_NESTED.md`)

@@ -1,70 +1,19 @@
 -- Generated from ChapterQgHermiteCore.lean — theorem BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 
-
-
-
-
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E]
+variable {d : ℕ}
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteProductCore
-
-variable {d : ℕ}
 
 theorem BookProof.QgHermiteCore.memLp_mul_pgFun_of_expBounded {W : Vd d → ℝ} (hW : Continuous W) (hWb : ExpBounded W)
     (p : MvPolynomial (Fin d) ℂ) :

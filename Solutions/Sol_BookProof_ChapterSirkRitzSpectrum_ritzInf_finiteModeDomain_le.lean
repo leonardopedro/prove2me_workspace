@@ -1,27 +1,18 @@
 -- Generated from ChapterSirkRitzSpectrum.lean — solution of BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_le
 import Mathlib
 import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_eq
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzSet_finiteModeRestrict_bddBelow
 import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeDomain_dense
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.ChapterSirkRitzSpectrum
-open BookProof.HermiteGalerkin
-open BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit
-
-
-
-
-
 
 
 
 noncomputable section
 
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
@@ -47,7 +38,9 @@ theorem solution (A : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F)
     rw [dist_comm]
     exact (hydist n).le
   have hnorm : Tendsto (fun n => ‖y n‖) atTop (nhds 1) := by
-    simpa [hx1] using (continuous_norm.continuousAt.tendsto.comp hy)
+    have h := continuous_norm.continuousAt.tendsto.comp hy
+    rw [hx1] at h
+    exact h
   set u : ℕ → F := fun n => ‖y n‖⁻¹ • y n with hu
   have hutend : Tendsto u atTop (nhds x) := by
     have h1 : Tendsto (fun n => ‖y n‖⁻¹) atTop (nhds 1) := by
@@ -63,4 +56,4 @@ theorem solution (A : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F)
       t = (inner ℂ w (A w) : ℂ).re} ≤ (inner ℂ (u n) (A (u n)) : ℂ).re := by
     filter_upwards [hev] with n hn
     exact csInf_le hbdd ⟨u n, S.smul_mem _ (hymem n), hn, rfl⟩
-  exact ge_of_tendsto ((hf.tendsto x).comp hutend) hle
+  exact ge_of_tendsto ((hf.tendsto

@@ -2,16 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkMultiShift
 import Theorems.Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_succ
-import Definitions.Def_ChapterH5
+import Theorems.Thm_BookProof_ChapterH5_krylovSpan_map_le
+import Theorems.Thm_BookProof_ChapterH5_krylovSpan_mono
+import Theorems.Thm_BookProof_ChapterH5_pow_apply_mem_krylovSpan
 open BookProof.ChapterSirkMultiShift
-
-
-
-
-
-
-
-
 
 
 
@@ -21,12 +15,6 @@ noncomputable section
 open BookProof.ChapterH5
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-
-
-
-
-
-variable {H : E →ₗ[K] E} {v : E}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[K] E) (z : ℕ → K) (v : E) (k : ℕ) :

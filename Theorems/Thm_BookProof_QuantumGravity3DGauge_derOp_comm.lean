@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,5 +16,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.derOp_comm (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    derOp j (derOp k p) = derOp k (derOp j p) := by sorry
+mom j p
+  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
+      rw [Derivation.leibniz]
+      simp [MvPolynomial.pderiv_X, Ne.symm h]
+    simp only [mulOp_apply, momOp_apply, hX, if_neg h, zero_smul, := by sorry

@@ -80,7 +80,8 @@ def coeffOp (T : (ι → ℂ) → ι → ℂ)
     have : (((f + g : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
         = ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) + ((g : lp (fun _ : ι => ℂ) 2) : ι → ℂ) := by
       ext j; simp
-    simp [ofCoeff, hadd]
+    simp [ofCoeff]
+    exact congrArg (fun F : ι → ℂ => F i) (hadd _ _)
   map_smul' c f := by
     ext i
     have : (((c • f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
@@ -149,7 +150,7 @@ abbrev Conf (M : Type*) := M →₀ ℕ
 
 /-- The bosonic Fock space over the mode index `M`, in the occupation-number
 representation. -/
-abbrev FockL2 (M : Type*) := lp (fun _ : Conf M => ℂ) 2
+noncomputable abbrev FockL2 (M : Type*) := lp (fun _ : Conf M => ℂ) 2
 
 /-- The dense domain of finite-particle, finite-mode states. -/
 abbrev FockDom (M : Type*) : Submodule ℂ (FockL2 M) := lpFiniteModes (Conf M)
@@ -263,7 +264,7 @@ variable {J K : Type*} [DecidableEq J] [DecidableEq K]
 `FockL2 K` of the field modes `K`; a one-particle state of the *outer* level is
 a parcel carrying a parcel mode `j : J` together with an inner Fock (occupation)
 state `c : Conf K`, so the outer mode index is `J × Conf K`. -/
-abbrev FockOfFockL2 (J K : Type*) := FockL2 (J × Conf K)
+noncomputable abbrev FockOfFockL2 (J K : Type*) := FockL2 (J × Conf K)
 
 /-- The dense finite-particle domain of the two-level Fock space. -/
 abbrev FockOfFockDom (J K : Type*) : Submodule ℂ (FockOfFockL2 J K) := FockDom (J × Conf K)

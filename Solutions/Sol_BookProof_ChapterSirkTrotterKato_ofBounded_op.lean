@@ -1,15 +1,7 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — solution of BookProof.ChapterSirkTrotterKato.ofBounded_op
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
-import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
 
 
 

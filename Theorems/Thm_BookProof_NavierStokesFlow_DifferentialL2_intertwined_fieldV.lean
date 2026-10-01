@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,9 +18,10 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+affine field. -/
+def nsDiffH : (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=
+  ∑ i, ((1 : ℂ) / 2) • ((momOp i).comp (fieldOp A c i) + (fieldOp A c i).comp (momOp i))
+
 set_option maxHeartbeats 4000000 in
 -- The transport arguments unfold operators on a submodule of `L²(ℝ³)` through several
--- linear equivalences, so the default heartbeat budget is not enough.
-theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_fieldV (i : Fin 3) :
-    Intertwined (fieldV A c i)
-      (((1 / Real.sqrt 2 : ℝ) : ℂ) • fieldOp A (fun j => Real.sqrt 2 * c j) i) := by sorry
+-- linear equivalences, so the defau := by sorry

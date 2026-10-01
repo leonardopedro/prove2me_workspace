@@ -1,0 +1,22 @@
+-- Generated from ChapterNavierStokesFullEsa.lean — solution of BookProof.NavierStokesFlow.FullEsa.latticeFullHamiltonianCLM_isSelfAdjoint
+import Mathlib
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_latticeAdvectionCLM_isSelfAdjoint
+import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FullEsa
+
+
+
+open scoped ENNReal
+
+set_option maxHeartbeats 1000000 in
+theorem solution (v : Fin 15 → LinfZ) (nu : ℝ) :
+    IsSelfAdjoint (latticeFullHamiltonianCLM v nu) := by
+
+  change star (latticeFullHamiltonianCLM v nu) = latticeFullHamiltonianCLM v nu
+  rw [latticeFullHamiltonianCLM, star_sum]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  rw [star_add, star_mul, star_mul, (latticeAdvectionCLM_isSelfAdjoint v nu i).star_eq,
+    momentum_isSelfAdjoint.star_eq]
+  exact add_comm _ _

@@ -2,25 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterBandEnclosure
 import Theorems.Thm_BookProof_BandEnclosure_band_enclosure_of_nested
-import Definitions.Def_ChapterYangMillsFriedrichsLimit
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
 import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_ritzInf_tendsto_sInf_spectrum
 import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeRestrict_selects_operator
 open BookProof.BandEnclosure
-
-
-
-
-
-
-
-
 
 
 
@@ -31,25 +15,6 @@ open Filter Topology
 
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
-open BookProof.YangMillsFriedrichsLimit BookProof.ChapterSirkRitzSpectrum
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution [Nontrivial F] (A : F →L[ℂ] F) (hsa : IsSelfAdjoint A)

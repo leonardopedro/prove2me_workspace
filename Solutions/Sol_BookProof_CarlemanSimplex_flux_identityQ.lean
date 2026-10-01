@@ -8,14 +8,8 @@ import Theorems.Thm_BookProof_CarlemanSimplex_deg_pvec
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_shift
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_vanish
 import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish'
+import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
 open BookProof.CarlemanSimplex
-
-
-
-
-
-
-
 
 
 
@@ -26,51 +20,6 @@ open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {u : (Fin d →₀ ℕ) → ℂ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d → Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hM : ∀ i j, M j i = (starRingEnd ℂ) (M i j))

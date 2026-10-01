@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.qgScalaronMode_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Theorems.Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt
 open BookProof.ScalaronEsa
 
 

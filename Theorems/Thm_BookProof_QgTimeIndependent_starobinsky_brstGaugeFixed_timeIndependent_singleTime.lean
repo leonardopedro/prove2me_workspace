@@ -3,10 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTimeIndependent
 
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {ι : Type*}
 
 
 
@@ -16,30 +14,6 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-open BookProof.SirkSingleTime BookProof.QgTruncationResolvent BookProof.FarisLavine
-open BookProof.EsaClosure BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.HashimotoShiftInvert
-
-variable {ι : Type*}
-
-
-
-
-open BookProof.QgContinuumModeInstance BookProof.QgBrstDerivativeGauge
 
 theorem BookProof.QgTimeIndependent.starobinsky_brstGaugeFixed_timeIndependent_singleTime (M alpha : ℝ)
     (halpha : 0 < alpha) (g : ℝ) :

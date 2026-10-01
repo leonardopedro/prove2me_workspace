@@ -11,5 +11,7 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
+; ring
+
 theorem solution {c : ℕ → ℂ} {M : ℝ} (hc : ∀ n, ‖c n‖ ≤ M) (x : ℓ²(ℕ, ℂ)) (n : ℕ) :
-    ((diagLinC hc x : ℓ²(ℕ, ℂ)) : ℕ → ℂ) n = c n * x n := rfl
+    ((diagLinC hc x : ℓ²(ℕ, ℂ)) : ℕ → ℂ) n = c := n * x

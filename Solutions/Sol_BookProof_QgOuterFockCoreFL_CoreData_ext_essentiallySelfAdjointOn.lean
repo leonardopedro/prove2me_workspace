@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_symmetricOn
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_commForm_le
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_essentiallySelfAdjointOn
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

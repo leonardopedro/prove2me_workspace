@@ -2,7 +2,6 @@ import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterEsaClosure
 import Mathlib
-import Definitions.Def_ChapterEsaClosureCore
 
 
 /-!
@@ -207,44 +206,16 @@ noncomputable def diagKR : LagrangianFullData L2N :=
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/-- `ℓ²(ℕ)` carries an `ℕ`-indexed Hilbert basis, so the selection theorem below
-is not vacuous. -/
-noncomputable def l2NatBasis : HilbertBasis ℕ ℂ L2N :=
-  HilbertBasis.ofRepr (LinearIsometryEquiv.refl ℂ L2N)
-
-
-
-end Instance
-
-/-! ## The sharpness record, seen from here -/
-
-section Sharpness
-
-open LpNat JacobiDeficiency
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
+))su * nheef-aR_  Tendsto (fun n : ℕ => galerkinCompression (X j) l2NatBasis n u) atTop
+        (nhds (X j u))) ∧
+      (∀ j (Dom' : Submodule ℂ L2N) (A' : Dom' →ₗ[ℂ] L2N), IsShiftInvertC· o   simp
+  have hT : HasZeroDeficiencyOn jacobiLagData.D (secondOrder jacobiLagData) := by
+    rw [jacobiLag_secondOrder_eq_zero]
+    exact hasZeroDeficiencyOn_zero jacobiLagData.dense
+  have hesa : HasZeroDeficiencyOn jacobiLagData.D jacobiLagData.hFull :=
+    hFull_hasZeroDeficiencyOn jacobiLagData hkap hkap' le_rfl h hC hT
+  rw [jacobiLagData_hFull] at hesa
+  exact jacobiOp_not_hasZeroDeficiencyOn hesa
 
 end Sharpness
 

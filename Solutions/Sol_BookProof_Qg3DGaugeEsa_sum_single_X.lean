@@ -18,13 +18,13 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- 1 else 0) - (if i = torsionIdx2 m then 1 else 0)
-
 theorem solution (c : Fin 84) :
-    ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ) :=
-   • (X i : MvPolynomial (Fin 84) ℂ)
-        = X c := by
-    rw [Finset.sum_eq_single c]
-    · simp
-    · intro b _ hb
-      simp [hb]
+    ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = X c := by
+
+  rw [Finset.sum_eq_single c]
+  · simp
+  · intro b _ hb
+    simp [hb]
+  · intro hc
+    exact absurd (Finset.mem_univ c) hc

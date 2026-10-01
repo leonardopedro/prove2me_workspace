@@ -2,7 +2,6 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterH6
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter H7 — the reduced generator is Hermitian, its spectrum is contained,

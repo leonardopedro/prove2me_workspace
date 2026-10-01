@@ -15,11 +15,19 @@ open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
-theorem solution (β : Vel) :
-    lagT nu (coreState β) = ((lagLam nu β : ℝ) : ℂ) • coreState β := by
+ical
+  refine crd_injective ?_
+  funext γ
+  rw [crd_numOp, crd_smul]
+  by_cases hγ : γ = β
+  · subst hγ
+    simp [crd_coreState]
+  · simp [crd_coreState, hγ]
 
-  simp only [lagT, LinearMap.add_apply, LinearMap.smul_apply, LinearMap.sum_apply,
-    LinearMap.id_apply, numOp_coreState, ← Finset.sum_smul, smul_smul, ← add_smul, lagLam]
-  congr 1
-  push_cast
-  ring
+/-- The eigenvalue o :=
+  f the second-order part at the Hermite state `e_β`:
+  `ω(|β| + 3/2)`. -/
+  noncomputable def lagLam (nu : ℝ) (β : Vel) : ℝ :=
+    omega nu * (∑ i : Fin 3, (β i : ℝ)) + 3 * omega nu / 2
+  
+  /-- **The Hermite s

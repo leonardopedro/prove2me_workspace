@@ -6,20 +6,8 @@ import Theorems.Thm_BookProof_FullQuadratic_sub_pvec_eq
 import Theorems.Thm_BookProof_FullQuadratic_add_sub_single_eq_shiftm
 import Theorems.Thm_BookProof_FullQuadratic_add_single_apply_ne
 import Theorems.Thm_BookProof_FullQuadratic_smul_shiftm_diag
+import Theorems.Thm_BookProof_ModeQuadratic_lop_hermiteMv
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

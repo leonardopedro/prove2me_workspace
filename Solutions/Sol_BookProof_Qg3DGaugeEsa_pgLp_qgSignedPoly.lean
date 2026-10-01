@@ -19,13 +19,11 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-(Fin 84) ℂ) : pgLp p = pgMap (d := 84) p := rfl
-
 theorem solution (kappa : Fin 84 → ℝ) (p : MvPolynomial (Fin 84) ℂ) :
     pgLp (qgSignedPoly kappa p)
       = ((1 / 2 : ℝ) : ℂ)
         • ((∑ j : Fin 84, ((kappa j : ℝ) : ℂ) • pgLp (pmom j (pmom j p)))
-            + ∑ :=
-   m : Fin 64, pgLp (torsionP m * (torsionP m * p))) := by
-    rw [qgSignedPoly_apply]
-    si
+            + ∑ m : Fin 64, pgLp (torsionP m * (torsionP m * p))) := by
+
+  rw [qgSignedPoly_apply]
+  simp only [pgLp_eq_pgMap, map_smul, map_add, map_sum]

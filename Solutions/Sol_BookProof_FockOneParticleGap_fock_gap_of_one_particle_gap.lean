@@ -6,20 +6,7 @@ import Theorems.Thm_BookProof_FockOneParticleGap_fock_gap_quadForm
 import Theorems.Thm_BookProof_FockOneParticleGap_inner_vac
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFarisLavine
 open BookProof.FockOneParticleGap
-
-
-
-
-
-
-
-
-
-
 
 
 

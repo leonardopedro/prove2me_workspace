@@ -13,6 +13,7 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
-theorem BookProof.ScalaronWallEsa.starobinskyWall_esa {M alpha : ℝ} (halpha : 0 < alpha) :
-    EssentiallySelfAdjointOn (ccDomain ℝ)
-      (wallHam (fun phi : ℝ => starobinskyV M alpha phi) (contDiff_starobinskyV M alpha)) := by sorry
+⟨wallHam_deficiencyTrivialAt V hV hVnn (by simp),
+    wallHam_deficiencyTrivialAt V hV hVnn (by simp)⟩
+
+theorem BookProof.ScalaronWallEsa.starobinskyWall_esa {M alpha : ℝ} (halpha : 0 < alpha := by sorry

@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkCertifiedGap
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkCertificateReader — the instantiation seam (T8)

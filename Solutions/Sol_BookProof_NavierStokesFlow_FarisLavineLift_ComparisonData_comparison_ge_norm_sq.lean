@@ -2,36 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_ComparisonData_comparison_inner_eq
-import Definitions.Def_ChapterNavierStokesFullEsa
-open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
 
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-
-
-variable {d : ℕ} (c : ComparisonData F d)
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : c.D) :

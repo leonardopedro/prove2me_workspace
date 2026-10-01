@@ -5,14 +5,11 @@ open BookProof.ChapterSirkRitzSpectrum
 
 
 
-
-
-
-
-
 noncomputable section
 
 
+open BookProof.FarisLavine BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

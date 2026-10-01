@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore

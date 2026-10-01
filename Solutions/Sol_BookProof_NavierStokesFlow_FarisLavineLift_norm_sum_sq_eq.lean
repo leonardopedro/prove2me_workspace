@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_sq_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 
@@ -9,17 +8,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 
 
-
-
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution {κ : Type*} (s : Finset κ) (a : κ → F) :

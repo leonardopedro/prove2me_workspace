@@ -13,4 +13,7 @@ variable {R : Type*} [Ring R]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (D : Fin 3 → R) (i j k : Fin 3) :
-    ⁅D i, ⁅D j, D k⁆⁆ + ⁅D j, ⁅D k, D i⁆⁆ + ⁅D k, ⁅D i, D j⁆⁆ = 0 := lie_jacobi (D i) (D j) (D k)
+    ⁅D i, ⁅D j, D k⁆⁆ + ⁅D j, ⁅D k, D i⁆⁆ + ⁅D k, ⁅D i, D j⁆⁆ = 0 := by
+
+  simp only [Ring.lie_def]
+  noncomm_ring

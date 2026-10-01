@@ -72,8 +72,9 @@ theorem solution (f g : ℝ → ℂ)
       (g := fun x => (x : ℂ) * ((starRingEnd ℂ) (f x) * deriv g x
         - (starRingEnd ℂ) (deriv f x) * g x)) (fun x => ?_) (by fun_prop)
       ((hcs0.mul_right.sub hcs1.mul_right).mul_left)
-    have hx : HasDerivAt (fun y : ℝ => (y : ℂ)) 1 x := by
-      simpa using (Complex.ofRealCLM.hasDerivAt (x := x))
+    have hx : @HasDerivAt ℝ _ ℂ Complex.instNormedAddCommGroup.toAddCommGroup
+        instInnerProductSpaceRealComplex.toModule _ _ (fun y : ℝ => (y : ℂ)) 1 x :=
+      Complex.ofRealCLM.hasDerivAt (x := x)
     have hprod : HasDerivAt (fun y => (starRingEnd ℂ) (f y) * deriv g y
         - (starRingEnd ℂ) (deriv f y) * g y)
         (((starRingEnd ℂ) (deriv f x) * deriv g x
@@ -81,9 +82,24 @@ theorem solution (f g : ℝ → ℂ)
           - ((starRingEnd ℂ) (deriv (deriv f) x) * g x
             + (starRingEnd ℂ) (deriv f x) * deriv g x)) x :=
       ((ha0 x).mul (he1 x)).sub ((ha1 x).mul (he0 x))
-    have := hx.mul hprod
-    convert this using 1
-    ring
+    have hmul := hx.mul hprod
+    have hfun : ((fun y : ℝ => (y : ℂ))
+          * (fun y : ℝ => (starRingEnd ℂ) (f y) * deriv g y
+              - (starRingEnd ℂ) (deriv f y) * g y))
+        = (fun y : ℝ => (y : ℂ) * ((starRingEnd ℂ) (f y) * deriv g y
+            - (starRingEnd ℂ) (deriv f y) * g y)) := by
+      funext y; rfl
+    rw [hfun] at hmul
+    have hval : 1 * ((starRingEnd ℂ) (f x) * deriv g x - (starRingEnd ℂ) (deriv f x) * g x)
+          + (x : ℂ) * ((starRingEnd ℂ) (deriv f x) * deriv g x
+              + (starRingEnd ℂ) (f x) * deriv (deriv g) x
+              - ((starRingEnd ℂ) (deriv (deriv f) x) * g x
+                + (starRingEnd ℂ) (deriv f x) * deriv g x))
+        = ((starRingEnd ℂ) (f x) * deriv g x - (starRingEnd ℂ) (deriv f x) * g x
+          + (x : ℂ) * ((starRingEnd ℂ) (f x) * deriv (deriv g) x
+              - (starRingEnd ℂ) (deriv (deriv f) x) * g x)) := by ring
+    rw [hval] at hmul
+    exact hmul
   -- integrability of the pieces
   have hI1 : Integrable fun x => (starRingEnd ℂ) (f x) * deriv g x :=
     (by fun_prop : Continuous fun x => (starRingEnd ℂ) (f x) * deriv g x

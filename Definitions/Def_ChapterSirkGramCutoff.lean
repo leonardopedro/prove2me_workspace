@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkGramWhitening
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkGramCutoff — the numerical Gram cutoff controls the truncation defect

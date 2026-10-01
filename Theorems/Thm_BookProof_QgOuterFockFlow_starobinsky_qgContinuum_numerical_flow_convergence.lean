@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockFlow
 
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
+
 
 
 open Filter Topology

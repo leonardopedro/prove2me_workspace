@@ -1,13 +1,6 @@
-import Mathlib
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterSqSumOuterFamily
-open Finset MvPolynomial
-open BookProof.FarisLavine
-open BookProof.SqSumOuterFamily
-open BookProof.QgHermiteCore
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Mathlib
 
 
 /-!
@@ -100,6 +93,12 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.NsOuterFock
 
+open Finset MvPolynomial
+open BookProof.FarisLavine BookProof.DirectSumEsa
+open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
+open BookProof.QgOuterFock BookProof.QgOuterFockFL
+open BookProof.QgOuterFockInteractionFL
+open BookProof.SqSumOuterFamily
 
 noncomputable section
 

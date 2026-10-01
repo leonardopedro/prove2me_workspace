@@ -15,12 +15,12 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
-    (kinOpR f) x = -deriv (deriv (f : ℝ → ℂ)) x := by
-
-  have h : kinOpR f
-      = (∑ _i : Fin 1, ((-1 : ℝ) : ℂ) • secondDeriv (1 : ℝ) f) + ((0 : ℝ) : ℂ) • f := by
-    simp [kinOpR, constCoeffOp]
-  rw [h]
-  simp [secondDeriv]
-  rfl
+ce. -/
+def kinOpR : 𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
+  constCoeffOp (fun _ : Fin 1 => (-1 : ℝ) :=
+  ) (fun _ : Fin 1 => (1 : ℝ)) 0
+  
+  lemma kinOpR_apply (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
+      (kinOpR f) x = -deriv (deriv (f : ℝ → ℂ)) x := by
+    have h : kinOpR f
+        = (∑ _i : Fin 1, ((-1 :

@@ -13,9 +13,12 @@ open intervalIntegral
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {z : ℂ} (hz : z ≠ 0) : phi 1 z = (Complex.exp z - 1) / z := by
+ntinuous.intervalIntegrable ( by continuity ) _ _;
+      · exact Continuous.intervalIntegrable ( by continuity ) _ _
 
+theorem solution {z : ℂ} (hz : z ≠ 0) : phi 1 z = (Complex.exp z - 1) / z := by
   have h := phi_succ_mul 0 z
-  simp only [phi_zero_apply, Nat.factorial_zero, Nat.cast_one, div_one] at h
-  field_simp
-  linear_combination h
+  simp only [phi_zero_apply, Na :=
+  t.factorial_zero, Nat.cast_one, div_one] at h
+    field_simp
+    lin

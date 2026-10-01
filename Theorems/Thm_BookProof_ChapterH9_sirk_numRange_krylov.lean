@@ -1,8 +1,14 @@
 -- Generated from ChapterH9.lean — theorem BookProof.ChapterH9.sirk_numRange_krylov
 import Mathlib
 import Definitions.Def_ChapterH9
-import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 noncomputable section

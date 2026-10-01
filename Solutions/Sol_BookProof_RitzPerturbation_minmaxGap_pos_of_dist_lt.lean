@@ -2,16 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkRitzPerturbation
 import Theorems.Thm_BookProof_RitzPerturbation_minmaxGap_ge_of_dist_le
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterSirkRitzMinMax
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.RitzPerturbation
-
-
-
-
-
-
 
 
 

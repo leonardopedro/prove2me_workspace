@@ -16,7 +16,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-_essentiallySelfAdjoint (qgFqP kappa) qgFqQ 0 0 0
-
 theorem BookProof.Qg3DGaugeEsa.qg3D_essentiallySelfAdjointOn_core :
-    EssentiallySelfAdjointOn (polyGauss := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qg3DHamiltonian (coreRepPoly 84)) := by sorry

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_norm_shiftMap_ge
+import Theorems.Thm_BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion
 open BookProof.HashimotoShiftInvert
 
 

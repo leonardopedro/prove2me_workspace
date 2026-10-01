@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronWallEsa.lean — solution of BookProof.ScalaronWallEsa.ode_solution_eq_zero
 import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
+import Theorems.Thm_BookProof_ScalaronWallEsa_eq_zero_of_convexOn_nonneg_integrable
 open BookProof.ScalaronWallEsa
 
 
@@ -33,9 +34,13 @@ theorem solution {V : ℝ → ℝ} (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.r
       (2 * (W x).re * (W' x).re + 2 * (W x).im * (W' x).im) x := by
     intro x
     have h1 : HasDerivAt (fun y => (W y).re ^ 2) (2 * (W x).re * (W' x).re) x := by
-      simpa [mul_comm, mul_assoc, mul_left_comm] using (hdp x).pow 2
+      have h := (hdp x).pow 2
+      show HasDerivAt ((fun y => (W y).re) ^ 2) _ x
+      simpa [mul_comm, mul_assoc, mul_left_comm] using h
     have h2 : HasDerivAt (fun y => (W y).im ^ 2) (2 * (W x).im * (W' x).im) x := by
-      simpa [mul_comm, mul_assoc, mul_left_comm] using (hdq x).pow 2
+      have h := (hdq x).pow 2
+      show HasDerivAt ((fun y => (W y).im) ^ 2) _ x
+      simpa [mul_comm, mul_assoc, mul_left_comm] using h
     exact h1.add h2
   have hdG : ∀ x, HasDerivAt (fun y => 2 * (W y).re * (W' y).re + 2 * (W y).im * (W' y).im)
       (2 * ((W' x).re ^ 2 + (W' x).im ^ 2) + 2 * V x * ((W x).re ^ 2 + (W x).im ^ 2)) x := by
@@ -69,7 +74,4 @@ theorem solution {V : ℝ → ℝ} (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.r
     change ‖W x‖ ^ 2 = (W x).re ^ 2 + (W x).im ^ 2
     rw [← Complex.normSq_eq_norm_sq, Complex.normSq_apply]; ring
   intro x
-  have hzero := eq_zero_of_convexOn_nonneg_integrable hFconv hFnn hFint x
-  have hn : Complex.normSq (W x) = 0 := by
-    rw [Complex.normSq_apply]; nlinarith [hzero]
-  exact Complex.normSq_eq_zero.1 hn
+  have hzero := eq_zero_of_convexOn_nonneg_integrable hFconv 

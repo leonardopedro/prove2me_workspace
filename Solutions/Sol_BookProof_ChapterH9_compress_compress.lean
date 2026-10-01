@@ -1,6 +1,7 @@
 -- Generated from ChapterH9.lean — solution of BookProof.ChapterH9.compress_compress
 import Mathlib
 import Definitions.Def_ChapterH9
+import Theorems.Thm_BookProof_ChapterH8_sirk_compression_block_op
 open BookProof.ChapterH9
 
 

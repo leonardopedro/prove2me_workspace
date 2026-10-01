@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Mathlib
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 
 
 /-!

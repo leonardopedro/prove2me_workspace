@@ -6,11 +6,6 @@ open BookProof.QgTimeIndependent
 
 
 
-
-
-
-
-
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 

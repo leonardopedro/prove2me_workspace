@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
@@ -11,4 +13,9 @@ open SchwartzMap
 
 noncomputable section
 
-theorem BookProof.HermiteProductCore.gaussMoment_succ (k : ℕ) : gaussMoment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by sorry
+ | empty => simp [gaussInt]
+  | insert v s hv ih =>
+      rw [Finset.sum_insert hv, Finset.sum_insert hv, gaussInt_add, ih]
+
+/-- The one-dimensional Gaussian moments `M k = ∫ tᵏ e^{-t²/2} dt`. -/
+def gaussMoment (k : ℕ) : ℝ := gint ((Polynomial.X : Polynomial ℝ) ^ k) := by sorry

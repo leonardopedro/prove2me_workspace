@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,6 +14,8 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+apply]
+
 theorem BookProof.FockSecondQuantization.dGamma_single (col : ℕ → (ℕ →₀ ℂ)) (β : Conf) (c : ℂ) :
     dGamma col (Finsupp.single β c)
-      = c • ∑ k ∈ β.support, creVec (col k) (annA k (Finsupp.single β 1)) := by sorry
+      = c • ∑ k ∈ β.support, creVec (col k) (annA k (Finsupp.single := by sorry

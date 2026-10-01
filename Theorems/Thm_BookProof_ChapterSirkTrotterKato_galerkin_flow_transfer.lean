@@ -1,14 +1,9 @@
 -- Generated from ChapterSirkTrotterKatoGalerkin.lean — theorem BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
-import Theorems.Thm_BookProof_HermiteGalerkin_isSelfAdjoint_galerkinCompression
 open BookProof.ChapterSirkTrotterKato
 
-
-
-
-
-
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 noncomputable section
@@ -19,17 +14,6 @@ open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-open BookProof.HermiteGalerkin
 
 theorem BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer {A : H →L[ℂ] H} (hA : IsSelfAdjoint A)
     (b : HilbertBasis ℕ ℂ H) (v : H) {T₀ : ℝ} (hT₀ : 0 ≤ T₀) :

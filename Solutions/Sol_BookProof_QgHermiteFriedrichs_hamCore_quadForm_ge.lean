@@ -8,19 +8,7 @@ import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_potLp
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_re_gaussInt_kinPoly_self
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_norm_sq_pgLp
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_integrable_potential_normSq
-import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_const_mul
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
 open BookProof.QgHermiteFriedrichs
-
-
-
-
 
 
 
@@ -32,38 +20,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 noncomputable section
 
 variable {d : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (W : Vd d → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hWc : Continuous W) (hWb : ExpBounded W) (c : ℝ)

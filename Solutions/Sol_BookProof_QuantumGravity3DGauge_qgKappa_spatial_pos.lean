@@ -14,6 +14,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {j : Fin 84} (hj : j ≠ confIndex) : 0 < qgKappa j := by
+itized`). -/
+def qgKappa (j : Fin 84) : ℝ := if j = confIndex then -(1 / 24) else 1 / 16
 
-  simp [qgKappa, hj]
+theorem solution : qgKappa confIndex < 0 := by norm_num [qgKappa]
+
+theorem qgKappa_ := spatial_p

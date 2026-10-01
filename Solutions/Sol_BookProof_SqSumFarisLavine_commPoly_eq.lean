@@ -9,28 +9,16 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_harmPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_kin_mul_comm
 import Theorems.Thm_BookProof_SqSumFarisLavine_kin_kin_comm
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFarisLavine
 open BookProof.SqSumFarisLavine
-
-
-
-
-
-
-
-
-
 
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

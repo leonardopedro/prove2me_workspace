@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,5 +14,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+Equiv]
+
 theorem BookProof.FockSecondQuantization.dGammaOp_symmetricOn {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (lpFiniteModes Conf) (dGammaOp col) := by sorry
+    SymmetricOn (lpFiniteModes Conf) (dGamma := by sorry

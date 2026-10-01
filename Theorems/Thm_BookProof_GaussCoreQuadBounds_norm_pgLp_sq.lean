@@ -3,16 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.GaussCoreQuadBounds
 
-
-
-
-
+variable {D : ℕ}
 
 
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
-open BookProof.FarisLavine
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.HermiteQuadraticEsa
+open BookProof.QgOuterFock
 
 noncomputable section
 

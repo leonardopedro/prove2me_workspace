@@ -6,38 +6,16 @@ open BookProof.NavierStokesFlow
 
 
 
-
-
-
-
-
-
-
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-
-
-
-variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
-
 set_option maxHeartbeats 1000000 in
+lex.real_smul]
+
 theorem solution :
-    nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) := funext (nsFlowUnitary_eq_matrixFlow d)
+    nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
+  funext (nsFlowUnitary_eq_matrixFl :=
+  ow d)
+  
+  /-- **D.8** The Navier–Stokes flow is differentiable in time:
+  `d/dt U(t) = U(t) · i H_N`. -/
+  th

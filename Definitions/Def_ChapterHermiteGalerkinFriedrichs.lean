@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Mathlib
-import Definitions.Def_ChapterFarisLavine
 
 
 /-!
@@ -234,9 +233,7 @@ open scoped InnerProductSpace ENNReal lp
 /-- The canonical Hilbert basis of `ℓ²(ℕ, ℂ)` — the abstract model of the
 Hermite basis of `L²(ℝ)`. -/
 noncomputable def ell2Basis : HilbertBasis ℕ ℂ (ℓ²(ℕ, ℂ)) :=
-  HilbertBasis.ofRepr (LinearIsometryEquiv.refl ℂ _)
-
-
+  HilbertBasis.ofRepr (LinearIsometryEquiv.refl ℂ _al)
 
 end ProperDomain
 

@@ -1,9 +1,5 @@
 import Mathlib
-import Mathlib
 
-import Mathlib
-
-import Mathlib
 
 /-!
 # Chapter U — Unitary inference / unfer
@@ -113,7 +109,6 @@ the external hypothesis; Mathlib v4.28.0 has no Brownian motion.
 The `P(differentiable) = 0` corollary of `no_differentiable_trajectory`.
 -/
 
-
 /-! ## U.5 — Independent components: portfolio risk falls like `1/√n` -/
 
 variable {Ω : Type*} [MeasurableSpace Ω]
@@ -123,12 +118,10 @@ variable {Ω : Type*} [MeasurableSpace Ω]
 of the average `(∑ Xᵢ)/n` is `σ²/n` — the Central-Limit `1/√n` reduction of
 aggregate portfolio risk (no CLT needed; only additivity of variance).
 -/
-
-
+t
 /-
 Standard-deviation form of `portfolio_risk_inv_sqrt`: the aggregate
 standard deviation is `σ/√n`.
 -/
-
-
+t
 end BookProof.ChapterU

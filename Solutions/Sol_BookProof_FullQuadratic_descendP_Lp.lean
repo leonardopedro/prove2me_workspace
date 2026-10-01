@@ -4,20 +4,8 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_pvec_comm
 import Theorems.Thm_BookProof_FullQuadratic_sub_pvec_eq
 import Theorems.Thm_BookProof_FullQuadratic_swap_prodC
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_sub_single
 open BookProof.FullQuadratic
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

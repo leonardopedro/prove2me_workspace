@@ -1,15 +1,12 @@
 -- Generated from ChapterSirkSpectralGeometry.lean — theorem BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain
 import Mathlib
 import Definitions.Def_ChapterSirkSpectralGeometry
-import Definitions.Def_BookProof.ChapterClosureUniqueness
-
 open BookProof.ChapterSirkSpectralGeometry
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 noncomputable section
@@ -17,23 +14,6 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH9
 open BookProof.ChapterSirkEndToEnd BookProof.HashimotoShiftInvert BookProof.FarisLavine
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  {Dom : Submodule ℂ F}
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterSirkSpectralGeometry.sirk_end_to_end_crouzeix_domain
     (V : G →L[ℂ] E) (X qX qXinv : E →L[ℂ] E) (qBinv : G →L[ℂ] G) (p : Polynomial ℂ)

@@ -2,15 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_norm_defect_synthesis_le
-import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
+import Theorems.Thm_BookProof_ChapterSirkTruncation_sirk_end_to_end_truncated
 open BookProof.ChapterSirkGramWhitening
-
-
-
-
-
-
 
 
 
@@ -24,6 +17,8 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
+_left (sum_norm_coord_le c) hd0
+
 theorem solution {m d : ℕ} (w : Fin m → E)
     (V : EuclideanSpace ℂ (Fin d) →L[ℂ] E)
     (rX : E →L[ℂ] E) (rB : EuclideanSpace ℂ (Fin d) →L[ℂ] EuclideanSpace ℂ (Fin d))
@@ -44,11 +39,11 @@ theorem solution {m d : ℕ} (w : Fin m → E)
     ‖flow (synthesis w c)
         - BookProof.ChapterSirkEndToEnd.sirkApprox V psiB (synthesis w c)‖
       ≤ BookProof.ChapterH6.sirkBound C Dmin hrate ‖synthesis w c‖ k
-        + ‖rX‖ * (delta * (Real.sqrt m * ‖c‖)) := by
-
-  have hbase := BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated V rX rB flow psiX
-    psiB C Dmin hrate k hViso hVadj hflow hcx1 hcx2 (synthesis w c) hexact hproj
-  refine hbase.trans ?_
-  exact add_le_add_right
-    (mul_le_mul_of_nonneg_left (norm_defect_synthesis_le w V hdelta c) (norm_nonneg rX))
-    (BookProof.ChapterH6.sirkBound C Dmin hrate ‖synthesis w c‖ k)
+        + ‖rX‖ * ( :=
+  delta * (Real.sqrt m * ‖c‖)) := by
+    have hbase := BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated V rX rB flow psiX
+      psiB C Dmin hrate k hViso hVadj hflow hcx1 hcx2 (synthesis w c) hexact hproj
+    refine hbase.trans ?_
+    exact add_le_add_right
+      (mul_le_mul_of_nonneg_left (norm_defect_synthesis_le w V hdelta c) (norm_nonneg rX))
+      (BookProof.ChapterH6.sirkBound C

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_mem
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply
+import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 open BookProof.HashimotoShiftInvert
 
 

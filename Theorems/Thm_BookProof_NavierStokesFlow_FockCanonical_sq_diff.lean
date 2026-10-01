@@ -1,15 +1,17 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — theorem BookProof.NavierStokesFlow.FockCanonical.sq_diff
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesFockCanonical
+import Definitions.Def_ChapterNavierStokesFockCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 open scoped ENNReal
 
 
 
+open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

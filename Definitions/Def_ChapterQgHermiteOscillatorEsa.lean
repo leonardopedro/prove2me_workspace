@@ -3,8 +3,6 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterKatoRellichRelative
 import Mathlib
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgHermiteCore
 
 
 /-!

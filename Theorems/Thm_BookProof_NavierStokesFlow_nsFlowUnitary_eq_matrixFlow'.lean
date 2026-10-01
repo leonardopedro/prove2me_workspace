@@ -3,38 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.NavierStokesFlow
 
-
-
-
-
-
-
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+variable (L : LagrangianNS n)
 
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-
-
-
-variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {n : ℕ} (d : NSTruncation n)
+lex.real_smul]
 
 theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow' :
-    nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) := by sorry
+    nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
+  funext (nsFlowUnitary_eq_matrixFl := by sorry

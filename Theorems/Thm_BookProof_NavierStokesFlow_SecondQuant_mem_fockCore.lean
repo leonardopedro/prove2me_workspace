@@ -4,12 +4,10 @@ import Definitions.Def_ChapterNavierStokesSecondQuant
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 
-
-
-
-
-
-
+variable {ι : Type*}
+variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
+variable (D : ∀ m, Submodule ℂ (S m))
+variable {D}
 
 
 open scoped ENNReal
@@ -18,15 +16,6 @@ open scoped ENNReal
 
 variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
-
-
-
-
-
-variable (D : ∀ m, Submodule ℂ (S m))
-
-
-variable {D}
 
 theorem BookProof.NavierStokesFlow.SecondQuant.mem_fockCore {f : lp S 2} :
     f ∈ fockCore D ↔

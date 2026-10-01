@@ -16,9 +16,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-, (mulOp (torsionP m)).comp (mulOp (torsionP m)))
-
 theorem BookProof.Qg3DGaugeEsa.qgSignedPoly_apply (kappa : Fin 84 → ℝ) (p : MvPolynomial (Fin 84) ℂ) :
     qgSignedPoly kappa p
       = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ j : Fin 84, ((kappa j : ℝ) : ℂ) • pmom j (pmom j p)) := by sorry
+        • ((∑ j : Fin 84, ((kappa j : ℝ) : ℂ) • pmom j (pmom j p))
+            + ∑ m : Fin 64, torsionP m * (torsionP m * p)) := by sorry

@@ -13,5 +13,6 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
-theorem BookProof.ScalaronWallEsa.kinOpR_apply (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
-    (kinOpR f) x = -deriv (deriv (f : ℝ → ℂ)) x := by sorry
+ce. -/
+def kinOpR : 𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
+  constCoeffOp (fun _ : Fin 1 => (-1 : ℝ) := by sorry

@@ -16,9 +16,6 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-  qgSigned_essentiallySelfAdjointOn_core qgKappa
-
 theorem BookProof.Qg3DGaugeEsa.qg3D_stone_flow :
     ∃ (T : UnboundedSelfAdjoint (L2d 84)) (U : ℝ → (L2d 84 →L[ℂ] L2d 84)),
-      IsSelfAdjointExtension (qg3DHami := by sorry
+      IsSelfAdjointExtension (qg3DHamiltonian (coreRepPoly 84)) T.op ∧ IsStoneFlow T U := by sorry

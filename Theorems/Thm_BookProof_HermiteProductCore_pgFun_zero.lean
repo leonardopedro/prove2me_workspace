@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 
+variable {d : ℕ}
+
 
 
 open MeasureTheory Complex MvPolynomial BookProof.HermiteCore
@@ -11,4 +13,6 @@ open SchwartzMap
 
 noncomputable section
 
-theorem BookProof.HermiteProductCore.pgFun_zero : pgFun (0 : MvPolynomial (Fin d) ℂ) = 0 := by sorry
+p continuous_gaussD)
+
+theorem BookProof.HermiteProductCore.pgFun_zero : pgFun (0 : MvPolyno := by sorry

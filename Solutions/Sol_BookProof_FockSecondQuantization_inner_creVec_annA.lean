@@ -1,21 +1,10 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.inner_creVec_annA
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_toLpL_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_creA_left
 import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
-import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterComplexShiftCore
+import Theorems.Thm_BookProof_FockSecondQuantization_toLpL_apply
 open BookProof.FockSecondQuantization
-
-
-
-
 
 
 
@@ -28,17 +17,19 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+ toLpL
+
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) (k : ℕ) {L : Finset ℕ}
     (h : (col k).support ⊆ L) :
     (inner ℂ (toLp (creVec (col k) (annA k u))) (toLp v) : ℂ)
       = ∑ j ∈ L, (starRingEnd ℂ) ((col k) j)
-          * inner ℂ (toLp (annA k u)) (toLp (annA j v)) := by
-
-  have hexp : toLp (creVec (col k) (annA k u))
-      = ∑ j ∈ (col k).support, (col k) j • toLp (creA j (annA k u)) := by
-    rw [creVec_apply, ← toLpL_apply, map_sum]
-    exact Finset.sum_congr rfl fun j _ => by rw [map_smul, toLpL_apply]
-  rw [hexp, sum_inner, ← Finset.sum_subset h (fun j _ hj => by
-    rw [Finsupp.notMem_support_iff.mp hj, map_zero, zero_mul])]
-  refine Finset.sum_congr rfl fun j _ => ?_
-  rw [inner_smul_left, inner_creA_left]
+          * inner ℂ (toLp (annA k u)) (toLp (ann :=
+  A j v)) := by
+    have hexp : toLp (creVec (col k) (annA k u))
+        = ∑ j ∈ (col k).support, (col k) j • toLp (creA j (annA k u)) := by
+      rw [creVec_apply, ← toLpL_apply, map_sum]
+      exact Finset.sum_congr rfl fun j _ => by rw [map_smul, toLpL_apply]
+    rw [hexp, sum_inner, ← Finset.sum_subset h (fun j _ hj => by
+      rw [Finsupp.notMem_support_iff.mp hj, map_zero, zero_mul])]
+    refine Finset.sum_congr rfl fun j _ => ?_
+    rw [inner_smul_left, inner_cr

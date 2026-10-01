@@ -3,52 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 open BookProof.SirkCertificateReader
 
-
-
-
-
-
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 
 open BookProof.SirkCertifiedGap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.SirkCertificateReader.gap_pos_of_ndjson {T P : E →ₗ[ℂ] E} {s : String} {d : CertificateData} {lo : ℚ}
     (hd : parseCertificate s = some d) (hs : ndjsonLower s = some lo) (hpos : 0 < lo)

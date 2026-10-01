@@ -2,7 +2,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkTrotterKatoGalerkin — the Galerkin flows converge to the selected flow

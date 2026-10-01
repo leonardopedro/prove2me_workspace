@@ -7,4 +7,6 @@ open BookProof.SchrodingerCutoff
 
 open MeasureTheory Filter Complex
 
-theorem BookProof.SchrodingerCutoff.Vexp_continuous : Continuous Vexp := by sorry
+ := fun x => Real.exp x + Real.exp (-x)
+
+t := by sorry

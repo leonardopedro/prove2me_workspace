@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe
-import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -10,42 +9,7 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 
 
-
-
-
-
-open BookProof.NavierStokesFlow.FullEsa
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-
-
-variable {M : Type*} [DecidableEq M]
+open FullEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} [DecidableEq ι] (f : lpFiniteModes ι) :
@@ -72,7 +36,7 @@ theorem solution {ι : Type*} [DecidableEq ι] (f : lpFiniteModes ι) :
     · intro hcon; exact absurd hj hcon
   · have hzero : ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) j = 0 := by
       by_contra hne
-      exact hj (by simpa [Set.Finite.mem_toFinset, Function.mem_support] using hne)
+      exact hj (Set.Finite.mem_toFinset f.2 |>.mpr (Function.mem_support.mpr hne))
     rw [hzero]
     refine (Finset.sum_eq_zero fun i hi => ?_).symm
     by_cases hij : j = i

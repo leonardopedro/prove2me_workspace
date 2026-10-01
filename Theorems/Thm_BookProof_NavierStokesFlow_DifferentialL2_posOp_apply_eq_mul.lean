@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,5 +18,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-    pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by sorry
+m operator** `πᵢ = −i ∂/∂uᵢ` on the Hermite core of `L²(ℝᵈ)`. -/
+def momOp (i : Fin d) : (polyGaussCore (d := d)) →ₗ[ℂ] (polyGaussCore (d := d)) :=
+  coreOp (momPoly i)
+
+/-- **The position operator is mu := by sorry

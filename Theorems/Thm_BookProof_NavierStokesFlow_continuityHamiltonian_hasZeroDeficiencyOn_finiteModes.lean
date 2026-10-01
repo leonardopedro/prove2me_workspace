@@ -1,14 +1,11 @@
 -- Generated from ChapterNavierStokesEsa.lean — theorem BookProof.NavierStokesFlow.continuityHamiltonian_hasZeroDeficiencyOn_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
-import Theorems.Thm_BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes
 open BookProof.NavierStokesFlow
 
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+variable {n : ℕ} (d : NSTruncation n)
 
 
 open scoped Matrix
@@ -17,36 +14,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {ι : Type*}
-
-
-
-
-
-
-
-
-
-open BookProof.ChapterContinuityUnitaryInfinite
+ have hstep := Submodule.smul_mem finiteModes (1 / 2 : ℂ) (Submodule.add_mem finiteModes h1 h2)
+  simpa [continuityHamiltonian] using hstep
 
 theorem BookProof.NavierStokesFlow.continuityHamiltonian_hasZeroDeficiencyOn_finiteModes (v : LinfZ) :
     HasZeroDeficiencyOn finiteModes
-      (LinearMap.codRestrict finiteModes
-        ((continuityHamiltonian v : L2Z →ₗ[ℂ] L2Z).comp finiteModes.subtype)
-        fun f => continuityHamiltonian_mem_finiteModes v f.2) := by sorry
+      (LinearMap.codRestrict finiteModes := by sorry

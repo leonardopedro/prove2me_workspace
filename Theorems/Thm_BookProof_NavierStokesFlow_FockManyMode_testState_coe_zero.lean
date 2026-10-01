@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 
 open scoped ENNReal
 

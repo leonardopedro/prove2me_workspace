@@ -5,14 +5,6 @@ open BookProof.EsaClosure
 
 
 
-
-
-
-
-
-
-
-
 open Filter Topology
 
 
@@ -22,5 +14,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+c T x)
+    simpa using this
+
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
-    (x : clDom T) : clExt T hdense hsym x = clFun T x := rfl
+    (x : clDom T) : clExt := T hde

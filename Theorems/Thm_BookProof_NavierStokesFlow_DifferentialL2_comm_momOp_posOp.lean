@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 
 
 open MeasureTheory MvPolynomial
@@ -15,9 +18,15 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+omPoly_apply, mulXPoly_apply, hpd]
+  by_cases hik : i = k
+  · subst hik
+    rw [if_pos rfl, if_pos rfl]
+    ring
+  · rw [if_neg hik, if_neg hik]
+    simp only [map_zero, zero_mul]
+    ring
+
 set_option maxHeartbeats 1000000 in
 -- The core-level commutator unfolds a composite of three linear equivalences, which is
--- elaboration-heavy; the default heartbeat budget is not enough.
-theorem BookProof.NavierStokesFlow.DifferentialL2.comm_momOp_posOp (i k : Fin d) :
-    (momOp i).comp (posOp k) - (posOp k).comp (momOp i)
-      = (if i = k then -Complex.I else 0) • LinearMap.id := by sorry
+-- elaboration-heavy; the defa := by sorry

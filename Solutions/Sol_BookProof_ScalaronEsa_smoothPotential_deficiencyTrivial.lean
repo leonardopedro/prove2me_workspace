@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronCoreEsa.lean — solution of BookProof.ScalaronEsa.smoothPotential_deficiencyTrivial
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
+import Theorems.Thm_BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero
 open BookProof.ScalaronEsa
 
 
@@ -39,7 +40,7 @@ theorem solution (W : E → ℝ)
     have hsupp : HasCompactSupport
         (fun x => (χ x : ℂ) * (((W x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹) := by
       refine HasCompactSupport.mul_right ?_
-      simpa using hχc.comp_left (g := fun r : ℝ => (r : ℂ)) (by simp)
+      exact hχc.comp_left (g := fun r : ℝ => (r : ℂ)) (by simp)
     set ψ : ccSchwartz E := ⟨hsupp.toSchwartzMap hsmooth, hsupp⟩ with hψ
     have hψx : ∀ x, (ψ : 𝓢(E, ℂ)) x
         = (χ x : ℂ) * (((W x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹ := fun _ => rfl

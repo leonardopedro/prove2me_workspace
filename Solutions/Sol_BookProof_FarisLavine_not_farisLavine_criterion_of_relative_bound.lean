@@ -1,12 +1,10 @@
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterNavierStokesDeficiency
+import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_not_hasZeroDeficiencyOn
+import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric
+import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.FarisLavine
-
 
 
 

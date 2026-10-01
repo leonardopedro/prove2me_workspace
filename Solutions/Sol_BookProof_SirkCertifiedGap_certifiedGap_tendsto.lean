@@ -20,5 +20,4 @@ theorem solution {thetaE thetaO deltaE deltaO : ℕ → ℝ} {lamE lamO : ℝ}
     (hdE : Tendsto deltaE atTop (𝓝 0)) (hdO : Tendsto deltaO atTop (𝓝 0)) :
     Tendsto (certifiedGap thetaE thetaO deltaE deltaO) atTop (𝓝 (lamO - lamE)) := by
 
-  have h := ((hO.sub hE).sub (hdO.add hdE))
-  simpa [certifiedGap] using h
+  have h : Tendsto (fun x => thetaO x - thetaE x - (deltaO x + deltaE x)) 

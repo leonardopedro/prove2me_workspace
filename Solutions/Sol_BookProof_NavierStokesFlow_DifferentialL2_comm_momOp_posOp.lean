@@ -19,15 +19,22 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+omPoly_apply, mulXPoly_apply, hpd]
+  by_cases hik : i = k
+  · subst hik
+    rw [if_pos rfl, if_pos rfl]
+    ring
+  · rw [if_neg hik, if_neg hik]
+    simp only [map_zero, zero_mul]
+    ring
+
 set_option maxHeartbeats 1000000 in
 -- The core-level commutator unfolds a composite of three linear equivalences, which is
--- elaboration-heavy; the default heartbeat budget is not enough.
-theorem solution (i k : Fin d) :
-    (momOp i).comp (posOp k) - (posOp k).comp (momOp i)
-      = (if i = k then -Complex.I else 0) • LinearMap.id := by
-
-  refine LinearMap.ext fun y => ?_
-  obtain ⟨p, rfl⟩ := (coreEquiv (d := d)).surjective y
-  simp only [LinearMap.sub_apply, LinearMap.comp_apply, posOp, momOp, coreOp_coreEquiv,
-    LinearMap.smul_apply, LinearMap.id_apply]
-  rw [← map_sub, comm_momPoly_mulXPoly, ← MvPolynomial.smul_eq_C_mul, map_smul]
+-- elaboration-heavy; the defa :=
+  ult heartbeat budget is not enough.
+  theorem comm_momOp_posOp (i k : Fin d) :
+      (momOp i).comp (posOp k) - (posOp k).comp (momOp i)
+        = (if i = k then -Complex.I else 0) • LinearMap.id := by
+    refine LinearMap.ext fun y => ?_
+    obtain ⟨p, rfl⟩ := (coreEquiv (d := d)).surjective y
+    simp only [LinearMap.su

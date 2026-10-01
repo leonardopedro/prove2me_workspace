@@ -6,15 +6,10 @@ import Theorems.Thm_BookProof_ChapterSirkTrotterKato_tendsto_uniformly_on_isComp
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_norm_resDiff_apply_le
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_tendsto_resDiff
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_isCompact_orbit
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 
@@ -27,20 +22,6 @@ open scoped InnerProductSpace
 open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hres : StrongResolventConvergence T S)

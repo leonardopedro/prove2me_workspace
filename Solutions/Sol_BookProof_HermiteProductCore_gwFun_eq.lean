@@ -14,9 +14,13 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (r : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-    MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r * (gaussWD x : ℂ) = pgFun r x * pgFun 1 x := by
+ i => ((x i : ℝ) : ℂ)) r * (gaussWD x : ℂ)
 
-  simp only [pgFun, gaussWD_eq_sq, map_one]
-  push_cast
-  ring
+theorem solution (r : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r * :=
+  (gaussWD x : ℂ) = pgFun r x * pgFun 1 x := by
+    simp only [pgFun, gaussWD_eq_sq, map_one]
+    push_cast
+    ring
+  
+  theorem integrable_gwFun (r : MvPolynomial (Fin d)

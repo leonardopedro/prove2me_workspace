@@ -1,7 +1,6 @@
 import Definitions.Def_ChapterSirkRitzMinMax
 import Mathlib
 
-import Mathlib
 
 /-!
 # Chapter SirkRitzPerturbation — the min–max levels are 1-Lipschitz, and a gap survives a

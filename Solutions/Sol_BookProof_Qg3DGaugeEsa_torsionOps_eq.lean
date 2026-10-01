@@ -18,7 +18,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-sionPoly (torsionMu m) (torsionNu m) (torsionA m)
-
-theorem solution {D : Submodule ℂ (L2d 84)} (Φ : CoreRep 84 D) (m : Fin 64) :=
-  :
+theorem solution {D : Submodule ℂ (L2d 84)} (Φ : CoreRep 84 D) (m : Fin 64) :
+    torsionOps Φ m = Φ.op (mulOp (torsionP m)) := rfl

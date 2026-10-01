@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,4 +14,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-theorem BookProof.FockSecondQuantization.finiteOccupation_dense : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Set Fock) := by sorry
+hpos _
+
+theorem BookProof.FockSecondQuantization.finiteOccupation_dense : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Se := by sorry

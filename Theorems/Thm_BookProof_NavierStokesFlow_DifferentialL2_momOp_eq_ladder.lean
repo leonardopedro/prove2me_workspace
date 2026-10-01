@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder
 import Mathlib
-import Definitions.Def_Chapter
-import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
@@ -16,7 +18,10 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
--- Unfolding the core coordinates through three linear equivalences is elaboration-heavy.
-theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder (i : Fin 3) :
-    momOp i = (Complex.I / 2) • (creOp i - annOp i) := by sorry
+Equiv (d := 3)).surjective y
+  simp only [posOp, annOp, creOp, coreOp_coreEquiv, LinearMap.add_apply, ← map_add]
+  congr 1
+  simp only [mulXPoly_apply, annPoly_apply, crePoly_apply]
+  ring
+
+set_option maxHeartbeats 1 := by sorry

@@ -32,5 +32,6 @@ theorem solution (x : d.C.dom) :
   have h2 : Tendsto (fun k => (inner ℂ (d.C.op (d.gcSeq x k)) (d.ext (d.gcSeq x k)) : ℂ))
       atTop (𝓝 (inner ℂ (d.C.op x) (d.ext x))) :=
     (d.gcSeq_op_tendsto x).inner (d.gcSeq_ext_tendsto x)
-  simpa only [commForm] using (Complex.reCLM.continuous.tendsto _).comp
+  simp only [commForm]
+  exact (Complex.reCLM.continuous.tendsto _).comp
     (((h1.sub h2).const_mul Complex.I))

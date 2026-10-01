@@ -3,15 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_hasDerivAt_stoneU_const_sub_incr
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 open BookProof.ChapterSirkTrotterKato
-
-
-
-
-
-
-
-
 
 
 

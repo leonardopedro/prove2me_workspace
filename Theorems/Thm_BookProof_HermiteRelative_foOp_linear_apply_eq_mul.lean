@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,5 +16,7 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-theorem BookProof.HermiteRelative.foOp_linear_apply_eq_mul (b : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-    pgFun (foPoly b 0 p) x = ((∑ i, b i * x i : ℝ) : ℂ) * pgFun p x := by sorry
+r_apply_apply, hermiteMvBasis_apply]
+  exact hsym.symm
+
+theorem BookProof.HermiteRelative.foOp_linear_apply_eq_mul (b : Fin d → ℝ) (p : MvPolynomial (Fin := by sorry

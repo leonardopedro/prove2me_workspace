@@ -394,7 +394,6 @@ def src_path_for(leaf):
 
 def src_byte_text(leaf):
     path = src_path_for(leaf)
-    import sys
     print(f"DEBUG src_byte_text: leaf={leaf}, path={path}, is_file={os.path.isfile(path)}", file=sys.stderr)
     with open(path, encoding="utf-8") as f:
         return ByteText(f.read())
@@ -524,6 +523,9 @@ def fmt_name(stmt, newname):
 
 
 _THM_INDEX = None
+_NAME_OWNER = None
+_NS_OWNER = None
+_NS_TO_OWNER = None
 
 
 def thm_node_index():
@@ -668,82 +670,170 @@ def upstream_def_imports(source_text, leaf):
     return imports
 
 
+def namespace_to_owner():
+    """namespace -> the bundle that declares it, from the platform index."""
+    global _NS_TO_OWNER
+    if _NS_TO_OWNER is None:
+        _NS_TO_OWNER = {}
+        try:
+            idx = json.load(open(f"{WS}/state/defs_index.json"))
+        except Exception:
+            return {}
+        _NS_TO_OWNER.update(idx.get("namespace_owner") or {})
+    return _NS_TO_OWNER
+
+
+def namespace_owner_map():
+    """bundle -> the namespaces it declares, from the platform index."""
+    global _NS_OWNER
+    if _NS_OWNER is None:
+        _NS_OWNER = {}
+        try:
+            idx = json.load(open(f"{WS}/state/defs_index.json"))
+        except Exception:
+            return {}
+        for ns, owner in (idx.get("namespace_owner") or {}).items():
+            _NS_OWNER.setdefault(owner, []).append(ns)
+    return _NS_OWNER
+
+
+def name_owner_map():
+    """bare declaration name -> the Def bundle that declares it.
+
+    Built from the platform index (`state/defs_index.json`), so it reflects what
+    is actually published rather than what this checkout happens to contain.
+    """
+    global _NAME_OWNER
+    if _NAME_OWNER is None:
+        _NAME_OWNER = {}
+        try:
+            idx = json.load(open(f"{WS}/state/defs_index.json"))
+        except Exception:
+            return {}
+        for bare, owner in (idx.get("name_owner") or {}).items():
+            _NAME_OWNER.setdefault(bare.split(".")[-1], owner)
+    return _NAME_OWNER
+
+
+def dep_def_imports(leaf, node):
+    """`import Definitions.Def_X` lines for the chapters owning this node's deps.
+
+    WHY: a theorem's statement can mention a name that no bundle it imports
+    declares. `Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded`
+    mentions `Vd`, which `Def_ChapterHermiteProductCore` declares and
+    `Def_ChapterQgHermiteCore` does not -- so the stub failed with
+    `Function expected at Vd`, `Vd` resolving to the type synonym rather than
+    the function. The def bundles got the same treatment in `build_def_file`
+    (cross-chapter theorem imports); this is the mirror image of it.
+    """
+    owners = name_owner_map()
+    if not owners:
+        return []
+    out = set()
+    for dep in list(getattr(node, "tdeps", []) or []) + list(getattr(node, "vdeps", []) or []):
+        short = dep.split(".")[-1]
+        owner = owners.get(short)
+        if owner and owner != leaf:
+            out.add(owner)
+    lines = []
+    for o in sorted(out):
+        lines.append(f"import Definitions.Def_{o}")
+        # An import alone does not put the owner's names in scope unqualified:
+        # `Vd` is declared inside `namespace BookProof.HermiteProductCore`, so a
+        # stub that imports Def_ChapterHermiteProductCore without opening that
+        # namespace still fails with `Function expected at Vd`. Open whatever the
+        # owner declares.
+        for ns in namespace_owner_map().get(o, ()):
+            lines.append(f"open {ns}")
+    return lines
+
+
 def imports_for(leaf, node, modns):
-    lines = ["import Mathlib", f"import Definitions.Def_{leaf}"]
+    # ALL imports first, then all `open`s. Lean requires every `import` at the
+    # top of the file; interleaving them with `open` fails with "`import`
+    # command, it must be used in the beginning of the file".
+    imports, seen = [], set()
+    for ln in ["import Mathlib", f"import Definitions.Def_{leaf}"] + \
+            [l for l in dep_def_imports(leaf, node) if l.startswith("import")]:
+        if ln not in seen:
+            seen.add(ln)
+            imports.append(ln)
+    opens = [l for l in dep_def_imports(leaf, node) if l.startswith("open ")]
     for ns in opens_for(node, modns):
-        lines.append(f"open {ns}")
-    return "\n".join(lines)
+        line = f"open {ns}"
+        if line not in opens:
+            opens.append(line)
+        # An `open` of a namespace nothing declares is `unknown namespace`, so
+        # import the bundle that provides it. `open BookProof.YangMillsFriedrichs`
+        # needs Def_ChapterYangMillsFriedrichs to be in scope first.
+        # `opens_for` can return a combined line -- `open BookProof.FarisLavine
+        # BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension` -- so each
+        # namespace has to be looked up separately or the provider import is
+        # missed and the open fails with `unknown namespace`.
+        for one in ns.split():
+            owner = namespace_to_owner().get(one)
+            if owner and owner != leaf:
+                imp = f"import Definitions.Def_{owner}"
+                if imp not in imports:
+                    imports.append(imp)
+    return "\n".join(imports + opens)
 
 
 def extract_namespace_variables(bt):
-    """Extract namespace-level variable declarations from the source.
-    These are variable commands that appear after the namespace declaration
-    but before any section, and are needed by the stub to compile."""
-    pre = bt.text[:5000]  # Check first 5000 bytes for namespace variables
-    lines = pre.split("\n")
-    result = []
-    import sys
-    print(f"DEBUG: extract_namespace_variables called, checking {len(pre)} bytes", file=sys.stderr)
-    # Debug: print first few lines
-    print(f"DEBUG: First 5 lines: {lines[:5]}", file=sys.stderr)
-    print(f"DEBUG: Looking for 'variable' in lines 75-85: {lines[75:85]}", file=sys.stderr)
-    in_variable = False
+    """Every top-level `variable` command in the chapter, as source lines.
+
+    WHY THIS MATTERS: a stub that references a type the chapter only ever bound
+    with `variable` will not elaborate. 51 pending statements failed with
+    `failed to synthesize instance of type class TopologicalSpace F` because
+    ChapterH6 declares `variable {E F : Type*}` at line 95 and the stub emitted
+    neither it nor anything else, so `F` and `E` were undeclared. The previous
+    implementation scanned only the first 5000 bytes and returned an empty
+    string for most chapters.
+
+    Lean's `variable` is section-scoped, so collecting all of them is safe: a
+    binder the theorem does not use is simply unused. Multi-line declarations
+    (a `variable` continued onto an indented line) are kept together.
+    """
+    lines = bt.text.split("\n")
+    out = []
     depth = 0
-    in_str = False
-    
-    for line in lines:
+    i = 0
+    n = len(lines)
+    while i < n:
+        line = lines[i]
+        stripped = line.strip()
         if depth > 0:
-            i = 0
-            while i < len(line):
-                if line.startswith("/-", i):
-                    depth += 1
-                    i += 2
-                elif line.startswith("-/", i):
-                    depth -= 1
-                    i += 2
-                else:
-                    i += 1
-            continue
-        
-        code = []
-        i = 0
-        while i < len(line):
-            if in_str:
-                if line[i] == "\\" and i + 1 < len(line):
-                    i += 2
-                    continue
-                if line[i] == '"':
-                    in_str = False
-                i += 1
-                continue
-            if line.startswith("/-", i):
-                depth += 1
-                i += 2
-                continue
-            if line.startswith("-/", i):
-                i += 2
-                continue
-            if line.startswith("--", i):
-                break
-            if line[i] == '"':
-                in_str = True
-                i += 1
-                continue
-            code.append(line[i])
+            # inside a block comment: watch for the closer
+            depth += line.count("/-") - line.count("-/")
+            if depth < 0:
+                depth = 0
             i += 1
-        
-        s = "".join(code).strip()
-        
-        if in_variable and s and line[:1].isspace():
-            result.append(line)
             continue
-        
-        in_variable = False
-        if s.startswith("variable "):
-            result.append(line)
-            in_variable = True
-    
-    return "\n".join(result)
+        if stripped.startswith("/-"):
+            depth = stripped.count("/-") - stripped.count("-/")
+            if depth <= 0:
+                depth = 0
+            i += 1
+            continue
+        if stripped.startswith("--") or not stripped:
+            i += 1
+            continue
+        if stripped.startswith("variable") and (
+                len(stripped) == 8 or not stripped[8].isalnum()):
+            block = [line]
+            # absorb indented continuation lines
+            j = i + 1
+            while j < n and lines[j][:1].isspace() and lines[j].strip() \
+                    and not lines[j].strip().startswith(("--", "/-", "theorem", "lemma",
+                                                        "def", "abbrev", "instance", "structure",
+                                                        "end", "noncomputable", "variable", "open", "namespace")):
+                block.append(lines[j])
+                j += 1
+            out.extend(block)
+            i = j
+            continue
+        i += 1
+    return "\n".join(out)
 
 
 def build_thm(bt, leaf, decls, node, modns):
@@ -759,14 +849,35 @@ def build_thm(bt, leaf, decls, node, modns):
             head.append("\n" + ns_vars + "\n")
     except Exception as e:
         # Log but don't fail
-        import sys
-        print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
+            print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
     
     if ctx:
         head.append(ctx + "\n")
     head.append("\n")
     head.append(stmt + " := by sorry\n")
-    return "".join(head)
+    text = "".join(head)
+    # The copied context can `open` namespaces the header never mentions (e.g.
+    # `open BookProof.FarisLavine BookProof.YangMillsFriedrichs
+    # BookProof.FriedrichsExtension` from the source), and an open of a namespace
+    # nothing declares is `unknown namespace`. Add each one's provider import.
+    # Imports have to go at the very top, so this runs on the assembled text.
+    have = set(re.findall(r"(?m)^import\s+(\S+)", text))
+    extra = []
+    for line in re.findall(r"(?m)^open\s+(.+)$", text):
+        for one in line.split():
+            if not one.startswith("BookProof."):
+                continue
+            owner = namespace_to_owner().get(one)
+            if not owner:
+                continue
+            mod = f"Definitions.Def_{owner}"
+            if mod not in have:
+                have.add(mod)
+                extra.append(f"import {mod}")
+    if extra:
+        first = text.index("\n")
+        text = text[:first + 1] + "\n".join(extra) + "\n" + text[first + 1:]
+    return text
 
 
 def build_sol(bt, leaf, decls, nodes, inline, node, modns):

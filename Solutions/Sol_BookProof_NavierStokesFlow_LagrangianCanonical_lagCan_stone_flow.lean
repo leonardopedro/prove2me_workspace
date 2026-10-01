@@ -16,9 +16,21 @@ open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in
+te (fun _ => n))
+  rw [lagT_coreState nu, norm_coreState] at hb
+  have hlam : lagLam nu (fun _ => n) = 3 * omega nu * (n : ℝ) + 3 * omega nu / 2 := by
+    simp only [lagLam, Fin.sum_univ_three]
+    ring
+  rw [hlam] at hb
+  simp only [Submodule.coe_smul, norm_smul, Complex.norm_real, Real.norm_eq_abs,
+    norm_coreState, mul_one] at hb
+  have hpos : 0 ≤ 3 * omega nu * (n : ℝ) + 3 * omega nu / 2 := by positivity
+  rw [abs_of_nonneg hpos] at hb
+  linarith
+
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge BookProof.EsaClosure in
-theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
-    ∃ (T : UnboundedSelfAdjoint (L2I Vel)) (U : ℝ → (L2I Vel →L[ℂ] L2I Vel)),
-      IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op ∧ IsStoneFlow T U :=
-  exists_stone_flow_of_esa (lagrangianCore (lagCanData nu hnu f)) (lagCanData nu hnu f).dense
-      (lagrangianCore_symmetricOn (lagCanData nu hnu f)) (lagCan_esa nu hnu f)
+/-- **The canonical Lagrangian Navier–Stokes Hamiltonian generates a complete
+unitary flow.**  E :=
+  ssential self-adjointness on the trajectory-space Hermite core
+  selects the unique self-adjoint extension, and Stone's theorem turns it into the
+  global group `e^{-itT}` solvi

@@ -105,35 +105,10 @@ variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F
 
 
 
+tsarity theorem -/
 
+/-- The double antiderivattiat she double antiderivative -/
 
+/-- The double antiderivatonatatgularity theorem -/
 
-
-/-! ## 4. The real regularity theorem -/
-
-/-- The double antiderivative of a locally integrable function. -/
-def doubleAntideriv (G : ℝ → ℝ) (x : ℝ) : ℝ := ∫ t in (0 : ℝ)..x, ∫ s in (0 : ℝ)..t, G s
-
-
-
-
-
-
-
-/-! ## 5. Calculus for the double antiderivative -/
-
-
-
-
-
-
-
-
-
-/-! ## 6. The complex regularity theorem -/
-
-
-
-end
-
-end BookProof.WeakSecondDeriv
+/-- **Regularity of weak secondDeriv

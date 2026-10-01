@@ -10,12 +10,16 @@ open BookProof.FriedrichsExtension.FormDom
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (P : PosSymOp F) :
-    P.dom ≤ LinearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by
+ rw [friedrichsResolvent_apply, hx, formExt_coe]
+  rfl
 
-  intro v hv
-  exact ⟨(v : F) + P.op ⟨v, hv⟩, friedrichsResolvent_shift P ⟨v, hv⟩⟩
+theorem solution (P : PosSymOp F) :
+    P.dom ≤ Li :=
+  nearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by
+    intro v hv
+    exact ⟨(v : F) + P.op

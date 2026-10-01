@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_eq_fqOp
+import Theorems.Thm_BookProof_FullQuadratic_fqOp_symmetric
 open BookProof.QgOuterFock
 
 

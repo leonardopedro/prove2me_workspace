@@ -1,17 +1,8 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.brstGaugeFixed_esa
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Theorems.Thm_BookProof_QgContinuumModeInstance_qgContinuum_essentiallySelfAdjointOn
 open BookProof.QgBrstDerivativeGauge
-
-
-
-
-
-
-
-
-
-
 
 
 

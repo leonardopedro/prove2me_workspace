@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_piOps_symmetricOn
 import Theorems.Thm_BookProof_YangMillsHermite_magOps_symmetricOn
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 open BookProof.YangMillsHermite
 
 

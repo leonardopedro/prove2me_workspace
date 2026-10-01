@@ -17,5 +17,15 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Φ : CoreRep 84 D) (m : Fin 64) :
-    SymmetricOn D (D.subtype.comp (torsionOps Φ m)) := Φ.symmetricOn_op (mulOp_polySym (realCoeff_torsionPoly _ _ _))
+o spacetime indices. -/
+theorem solution (mu nu a : Fin 4) :
+    torsionPoly mu nu a = -torsionPoly nu mu a := by
+  simp [torsionPoly]
+
+/-- The `64` potential operators `T_{μν}^a` on the core, indexed by `Fin 64`. -/
+def torsionOps (Φ : CoreRep 84 D) (m : Fin 64) : D →ₗ[ℂ] D :=
+  Φ.op (mulOp (torsionPoly ⟨m.val / 16, by omega⟩ ⟨m.val / 4 % 4, by omega⟩
+    ⟨m.val :=
+   % 4, by omega⟩))
+  
+  theorem torsionOps_symmetri

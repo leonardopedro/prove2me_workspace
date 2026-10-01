@@ -4,6 +4,8 @@ import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
+variable (nu : ℝ)
+
 
 open scoped ENNReal
 
@@ -12,5 +14,9 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
-theorem BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState (i : Fin 3) (β : Vel) :
-    numOp i (coreState β) = ((β i : ℝ) : ℂ) • coreState β := by sorry
+_sum, Finset.smul_sum, Finset.smul_sum]
+  rw [← Finset.sum_add_distrib]
+  rw [Finset.sum_congr rfl fun i _ => hmode i]
+  rw [Finset.sum_add_distrib, hcnt, hbridge]
+
+/-! ## Diagonaliz := by sorry

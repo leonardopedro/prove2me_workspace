@@ -2,21 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_tsum_ampSeq_sq_le
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
-
-
-
-
-
-
-
 
 
 
@@ -24,13 +12,9 @@ open scoped ENNReal
 
 
 
-open BookProof.NavierStokesFlow.LpNat BookProof.FarisLavine BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.ShiftHamiltonian BookProof.NavierStokesFlow.AffineFiber
+open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
-
-
-
-variable {sym : ι → ℝ} (S : SignedHop ι sym)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (x : maxDom sym) :

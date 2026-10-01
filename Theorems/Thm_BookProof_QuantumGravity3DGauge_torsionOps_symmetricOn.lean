@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -12,5 +16,12 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.torsionOps_symmetricOn (Φ : CoreRep 84 D) (m : Fin 64) :
-    SymmetricOn D (D.subtype.comp (torsionOps Φ m)) := by sorry
+o spacetime indices. -/
+theorem BookProof.QuantumGravity3DGauge.torsionOps_symmetricOn (mu nu a : Fin 4) :
+    torsionPoly mu nu a = -torsionPoly nu mu a := by
+  simp [torsionPoly]
+
+/-- The `64` potential operators `T_{μν}^a` on the core, indexed by `Fin 64`. -/
+def torsionOps (Φ : CoreRep 84 D) (m : Fin 64) : D →ₗ[ℂ] D :=
+  Φ.op (mulOp (torsionPoly ⟨m.val / 16, by omega⟩ ⟨m.val / 4 % 4, by omega⟩
+    ⟨m.val := by sorry

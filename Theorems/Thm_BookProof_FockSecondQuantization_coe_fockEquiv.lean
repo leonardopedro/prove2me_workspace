@@ -3,9 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
@@ -16,5 +14,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+   rfl
+
 theorem BookProof.FockSecondQuantization.coe_fockEquiv (u : FockAlg) : ((fockEquiv u : lpFiniteModes Conf) : Fock)
-    = toLp u := by sorry
+    = := by sorry

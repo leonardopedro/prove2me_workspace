@@ -56,7 +56,7 @@ theorem solution
     have hR' := hasDerivAt_reInner u u' u'' x (h1 x) (h2 x)
     rw [hP x] at hR'
     have hw2 : HasDerivAt (fun y => w y ^ 2) (2 * w x * wd x) x := by
-      simpa using (hwderiv x).pow 2
+      convert (hwderiv x).pow 2 <;> first | rfl | norm_num | (funext y; rfl)
     exact hw2.mul hR'
   have hGcont : Continuous G := by fun_prop
   -- compact support of everything built from the cutoff
@@ -182,4 +182,4 @@ theorem solution
   have hfinal4 : (4 : ℝ) * (C ^ 2 / R ^ 2 * (∫ x, ‖u x‖ ^ 2)) =
       4 * C ^ 2 / R ^ 2 * (∫ x, ‖u x‖ ^ 2) := by ring
   exact ⟨by linarith [hlhs1, hT3le, hQle, hfinal2],
-    by linarith [hlhs2, hT2le, hQle, hfinal4]⟩
+    by 

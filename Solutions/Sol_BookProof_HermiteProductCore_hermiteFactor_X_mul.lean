@@ -14,8 +14,7 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin d) (n : ℕ) :
-    X i * hermiteFactor i n = hermiteFactor i (n + 1) + (n : ℂ) • hermiteFactor i (n - 1) := by
-
-  have h := congrArg (Polynomial.aeval (X i : MvPolynomial (Fin d) ℂ)) (hermiteCx_X_mul n)
-  simpa [hermiteFactor, map_add, map_smul] using h
+ctor_X_mul (i : Fin d) (n : ℕ) :
+    X i * hermiteFactor i n = hermiteFactor i (n + 1) + (n : ℂ) • hermiteFactor i (n - 1) := b :=
+  y
+    have h := congrArg (Polynom

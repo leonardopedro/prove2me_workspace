@@ -1,12 +1,8 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.prop_apply_prop
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
 open BookProof.QgTimeIndependent
-
-
-
-
-
 
 
 

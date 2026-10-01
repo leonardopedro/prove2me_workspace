@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.HermiteRelative
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 
 
 open MeasureTheory MvPolynomial
@@ -13,6 +16,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+l_eq_mul_div, le_div_iff₀ hc0]
+  nlinarith [mul_le_mul_of_nonneg_left h1 hc0.le, h2, h3, h4]
+
 theorem BookProof.HermiteRelative.le_relBound_of_sq_le {t A B c0 e : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
-    (hc0 : 0 < c0) (he : 0 < e) (h : t ^ 2 ≤ (4 / c0) * (B * A)) :
-    t ≤ e * A + (2 / (c0 * e)) * B := by sorry
+    (hc0 : := by sorry

@@ -13,6 +13,7 @@ open SchwartzMap
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : pgFun (0 : MvPolynomial (Fin d) ℂ) = 0 := by
+p continuous_gaussD)
 
-  funext x; simp [pgFun]
+theorem solution : pgFun (0 : MvPolyno :=
+  mial (Fin d) ℂ) = 0 := by

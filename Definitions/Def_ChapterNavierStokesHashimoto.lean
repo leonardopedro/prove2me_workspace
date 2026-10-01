@@ -1,14 +1,9 @@
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterHashimotoShiftInvert
-import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+
+import Definitions.Def_ChapterEsaClosure
 import Definitions.Def_ChapterNavierStokesThreeComponent
-import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
 
 /-!
 # The Hashimoto/SIRK shift-invert limit selects the Navier–Stokes generator

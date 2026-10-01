@@ -1,3 +1,9 @@
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
+
+
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_lower_raise
+
+
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterStoneBridge
@@ -259,38 +265,14 @@ noncomputable def lagT (nu : ℝ) : lpFiniteModes Vel →ₗ[ℂ] lpFiniteModes 
   ((omega nu : ℝ) : ℂ) • (∑ i : Fin 3, numOp i)
     + ((3 * omega nu / 2 : ℝ) : ℂ) • LinearMap.id
 
-
-
-/-! ## Diagonalization by the Hermite states -/
-
-
-
-
-
-/-- The eigenvalue of the second-order part at the Hermite state `e_β`:
-`ω(|β| + 3/2)`. -/
-noncomputable def lagLam (nu : ℝ) (β : Vel) : ℝ :=
-  omega nu * (∑ i : Fin 3, (β i : ℝ)) + 3 * omega nu / 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-/-! ## Unboundedness, and the complete unitary flow -/
-
-
-
-
-
-
+ulPissta
+  edeen).D
+      (secondOrder (lagCanData nu hnu f))).mpr (lagCan_etang the Schrödinger equation on the domain. -/
+theorem lagCan_stone_flow (hnu : 0 < nu) (f : Fin 3 → ℝ) :
+    ∃ (T : UnboundedSelfAdjoint (L2I Vel)) (U : ℝ → (L2I Vel →L[ℂ] L2I Vel)),
+      IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op ∧ IsStoneFlow T U :=
+  exists_stone_flow_of_esa (lagrangianCore (lagCanData nu hnu f)) (lagCanData nu hnu f).dense
+    (lagrangianCore_symmetricOn (lagCanData nu hnu f)) (lagCan_esa nu hnu f)
 
 end LagrangianCanonical
 

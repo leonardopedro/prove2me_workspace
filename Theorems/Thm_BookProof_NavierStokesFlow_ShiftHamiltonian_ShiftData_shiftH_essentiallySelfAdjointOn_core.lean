@@ -1,0 +1,18 @@
+-- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_essentiallySelfAdjointOn_core
+import Mathlib
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+
+variable {ι : Type*} (S : ShiftData ι)
+
+
+open scoped ENNReal
+
+
+
+open LpNat FarisLavine IkebeKato
+
+theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_essentiallySelfAdjointOn_core :
+    EssentiallySelfAdjointOn (lpFiniteModes ι)
+      ((shiftH S).comp (Submodule.inclusion (finiteModes_le_maxDom S.sym))) := by sorry

@@ -3,10 +3,9 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
-open BookProof.QgManifoldModeInstance
+import Definitions.Def_ChapterA4
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)
@@ -16,9 +15,6 @@ variable (S : VielbeinSpectrum ι)
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
-open BookProof.QgTimeStepping
 
 noncomputable section
 

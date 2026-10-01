@@ -2,7 +2,7 @@
 import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
-open BookProof.CarlemanTwoStep
+import Definitions.Def_ChapterA4
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}

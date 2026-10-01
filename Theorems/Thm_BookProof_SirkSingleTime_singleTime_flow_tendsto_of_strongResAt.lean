@@ -5,7 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-open BookProof.SirkSingleTime
+import Definitions.Def_ChapterA4
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}

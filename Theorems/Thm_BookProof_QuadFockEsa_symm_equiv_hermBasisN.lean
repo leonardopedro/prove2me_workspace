@@ -22,7 +22,6 @@ variable {d : ℕ}
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

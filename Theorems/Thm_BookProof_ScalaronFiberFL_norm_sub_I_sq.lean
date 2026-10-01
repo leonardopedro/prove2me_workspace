@@ -13,8 +13,8 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
-open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

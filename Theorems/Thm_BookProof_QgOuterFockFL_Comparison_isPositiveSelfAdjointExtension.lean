@@ -17,7 +17,6 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.YangMillsFriedrichs
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFL.Comparison
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

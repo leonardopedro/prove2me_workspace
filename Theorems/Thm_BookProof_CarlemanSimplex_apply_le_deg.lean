@@ -1,15 +1,13 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.apply_le_deg
-import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
-open BookProof.CarlemanSimplex
+import Definitions.Def_ChapterA4
 
 variable {d : ℕ}
 
 
 
 open Finset
-open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

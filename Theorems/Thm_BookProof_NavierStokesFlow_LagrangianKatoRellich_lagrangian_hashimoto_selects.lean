@@ -1,5 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_hashimoto_selects
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich

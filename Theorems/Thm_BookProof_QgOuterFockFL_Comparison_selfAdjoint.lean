@@ -10,7 +10,6 @@ import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFL.Comparison
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

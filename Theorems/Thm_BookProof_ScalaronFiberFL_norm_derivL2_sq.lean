@@ -11,8 +11,8 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
-open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (W : WallPot) (s : ℝ)

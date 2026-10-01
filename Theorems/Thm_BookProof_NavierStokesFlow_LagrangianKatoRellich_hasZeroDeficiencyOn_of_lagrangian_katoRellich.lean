@@ -1,5 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_of_lagrangian_katoRellich
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs

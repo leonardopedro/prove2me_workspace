@@ -12,12 +12,11 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.FarisLavineLift
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronEsa
-open BookProof.ScalaronFiberFL
-open BookProof.ScalaronFiberFL.WallPot
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (W : WallPot) (s : ℝ)

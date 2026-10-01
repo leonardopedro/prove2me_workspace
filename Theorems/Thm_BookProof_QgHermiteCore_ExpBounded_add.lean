@@ -4,7 +4,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 open BookProof.QgHermiteCore
-open BookProof.QgHermiteCore.ExpBounded
 
 variable {E : Type*} [NormedAddCommGroup E]
 

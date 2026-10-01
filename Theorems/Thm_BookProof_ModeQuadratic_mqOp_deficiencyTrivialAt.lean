@@ -11,9 +11,9 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
-open BookProof.ModeQuadratic
 
 variable {d : ℕ}
 
@@ -25,8 +25,6 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
-open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

@@ -4,8 +4,6 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterYangMillsAbelianEsa
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
@@ -19,7 +17,6 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
-open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
 

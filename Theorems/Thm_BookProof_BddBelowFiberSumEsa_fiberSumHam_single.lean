@@ -1,7 +1,5 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — theorem BookProof.BddBelowFiberSumEsa.fiberSumHam_single
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterWallEsaSemibounded
-import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterScalaronCoreEsa
@@ -16,7 +14,6 @@ variable {ι : Type*}
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

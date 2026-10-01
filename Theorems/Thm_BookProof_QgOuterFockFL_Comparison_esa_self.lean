@@ -11,7 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFL.Comparison
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

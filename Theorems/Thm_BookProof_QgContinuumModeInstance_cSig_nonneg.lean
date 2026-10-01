@@ -3,12 +3,10 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
-open BookProof.QgContinuumModeInstance
+import Definitions.Def_ChapterA4
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgVielbeinModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

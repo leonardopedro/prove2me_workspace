@@ -1,7 +1,6 @@
 -- Generated from ChapterQuadraticFockEsa.lean — theorem BookProof.QuadFockEsa.dGamma_fqPoly_essentiallySelfAdjointOn_core
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
-import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
@@ -22,7 +21,6 @@ variable {d : ℕ}
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

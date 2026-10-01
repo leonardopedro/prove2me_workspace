@@ -6,7 +6,6 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.FullEsa.IsSymmetricDom
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

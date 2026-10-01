@@ -8,10 +8,10 @@ import Definitions.Def_ChapterQgManifoldModeInstance
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterA4
 open BookProof.FockSecondQuantization
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
-open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)
@@ -21,9 +21,6 @@ variable (S : VielbeinSpectrum ι)
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
-open BookProof.QgTimeStepping
 
 noncomputable section
 

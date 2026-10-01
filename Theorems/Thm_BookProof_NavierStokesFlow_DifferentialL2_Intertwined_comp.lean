@@ -14,7 +14,6 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.NavierStokesFlow.DifferentialL2.Intertwined
 
 variable {d : ℕ}
 

@@ -6,7 +6,6 @@ import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.SirkGapTable
-open BookProof.SirkGapTable.CouplingCertificate
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 

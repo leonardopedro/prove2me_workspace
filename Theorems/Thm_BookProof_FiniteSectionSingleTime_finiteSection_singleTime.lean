@@ -14,6 +14,7 @@ import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.IkebeKato
@@ -21,7 +22,6 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.StoneBridge
-open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]
 variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
@@ -33,7 +33,6 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

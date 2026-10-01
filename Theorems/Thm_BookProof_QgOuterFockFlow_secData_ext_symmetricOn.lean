@@ -8,17 +8,15 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterA4
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
-open BookProof.QgOuterFockFlow
 
 variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 
 
 open Filter Topology
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato

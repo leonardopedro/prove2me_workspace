@@ -6,7 +6,6 @@ import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
-open BookProof.QgHermiteCore.ExpBounded
 
 variable {E : Type*} [NormedAddCommGroup E]
 variable {d : ℕ}

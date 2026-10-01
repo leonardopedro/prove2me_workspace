@@ -8,7 +8,6 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
-open BookProof.HashimotoShiftInvert.IsShiftInvertC
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 

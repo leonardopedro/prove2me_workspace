@@ -7,15 +7,13 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
-open BookProof.QgOuterFockFlow
+import Definitions.Def_ChapterA4
 
 variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 
 
 open Filter Topology
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato

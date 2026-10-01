@@ -4,7 +4,6 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
-open BookProof.HermiteBand.Band
 
 variable {d : ℕ}
 

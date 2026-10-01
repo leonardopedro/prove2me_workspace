@@ -9,7 +9,6 @@ import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.PolySym
 
 variable {d : ℕ}
 

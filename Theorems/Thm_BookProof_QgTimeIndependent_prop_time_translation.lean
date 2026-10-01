@@ -4,7 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-open BookProof.QgTimeIndependent
+import Definitions.Def_ChapterA4
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

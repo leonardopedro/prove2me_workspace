@@ -4,7 +4,6 @@ import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.SirkBandLedger
-open BookProof.SirkBandLedger.Decimal
 
 
 

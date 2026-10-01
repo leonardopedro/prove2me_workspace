@@ -683,6 +683,26 @@ def namespace_to_owner():
     return _NS_TO_OWNER
 
 
+def owner_of_namespace(ns):
+    """Bundle that declares `ns`, tolerating nested namespaces.
+
+    The index records `namespace BookProof.HashimotoShiftInvert` and
+    `namespace IsShiftInvert` as two separate entries, so a lookup of the dotted
+    path `BookProof.HashimotoShiftInvert.IsShiftInvert` misses -- and an `open`
+    of it then fails with `unknown namespace` because nothing imported the
+    bundle. Fall back to the longest declared prefix.
+    """
+    table = namespace_to_owner()
+    if ns in table:
+        return table[ns]
+    parts = ns.split(".")
+    for k in range(len(parts) - 1, 0, -1):
+        prefix = ".".join(parts[:k])
+        if prefix in table:
+            return table[prefix]
+    return None
+
+
 def namespace_owner_map():
     """bundle -> the namespaces it declares, from the platform index."""
     global _NS_OWNER
@@ -771,7 +791,7 @@ def imports_for(leaf, node, modns):
         # namespace has to be looked up separately or the provider import is
         # missed and the open fails with `unknown namespace`.
         for one in ns.split():
-            owner = namespace_to_owner().get(one)
+            owner = owner_of_namespace(one)
             if owner and owner != leaf:
                 imp = f"import Definitions.Def_{owner}"
                 if imp not in imports:
@@ -899,6 +919,29 @@ def build_thm(bt, leaf, decls, node, modns):
             _kept.extend(_block)
         _i = _j
     text = "\n".join(_kept)
+    # Drop `open` of BookProof namespaces the platform index does not declare.
+    # A section is not a namespace: `section IsShiftInvert` inside
+    # `namespace BookProof.HashimotoShiftInvert` creates no
+    # `BookProof.HashimotoShiftInvert.IsShiftInvert`, so opening it is
+    # `unknown namespace` -- and the stub was inventing it. Our own namespaces
+    # are the index's business, so it is authoritative here; Mathlib's are not
+    # indexed, which is why the filter is scoped to BookProof.
+    _known = set(namespace_to_owner())
+    _drop = []
+    for _i, _ln in enumerate(text.split("\n")):
+        _st = _ln.strip()
+        if _st.startswith("open BookProof."):
+            for _one in _st.split()[1:]:
+                if _one.startswith("BookProof.") and _one not in _known:
+                    _drop.append((_i, _one))
+                    break
+    if _drop:
+        _lines = text.split("\n")
+        _bad = {i for i, _ in _drop}
+        text = "\n".join(l for i, l in enumerate(_lines) if i not in _bad)
+        for _i, _one in _drop:
+            print(f"  WARNING dropped `open {_one}`: no bundle declares it",
+                  file=sys.stderr)
     # The copied context can `open` namespaces the header never mentions (e.g.
     # `open BookProof.FarisLavine BookProof.YangMillsFriedrichs
     # BookProof.FriedrichsExtension` from the source), and an open of a namespace
@@ -910,7 +953,7 @@ def build_thm(bt, leaf, decls, node, modns):
         for one in line.split():
             if not one.startswith("BookProof."):
                 continue
-            owner = namespace_to_owner().get(one)
+            owner = owner_of_namespace(one)
             if not owner:
                 continue
             mod = f"Definitions.Def_{owner}"

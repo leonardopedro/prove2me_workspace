@@ -6,9 +6,9 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
-open BookProof.QgTimeIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {ι : Type*}

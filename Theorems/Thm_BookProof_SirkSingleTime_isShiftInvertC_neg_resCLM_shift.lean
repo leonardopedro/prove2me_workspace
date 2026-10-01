@@ -6,11 +6,11 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
-open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}

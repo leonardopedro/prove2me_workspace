@@ -5,7 +5,6 @@ import Definitions.Def_ChapterSirkCertificateReader
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
-open BookProof.SirkCertificateReader.Decimal
 
 
 

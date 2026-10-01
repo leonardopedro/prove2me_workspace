@@ -9,6 +9,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
@@ -16,15 +17,12 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.StoneBridge
-open BookProof.QgOuterFockFlow
 
 variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 
 
 open Filter Topology
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato

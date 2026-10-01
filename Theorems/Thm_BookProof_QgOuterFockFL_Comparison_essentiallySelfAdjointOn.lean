@@ -13,7 +13,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFL.Comparison
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

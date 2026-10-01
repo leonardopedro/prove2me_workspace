@@ -10,7 +10,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.CoreRep
 
 variable {d : ℕ}
 variable {D : Submodule ℂ (L2d d)}

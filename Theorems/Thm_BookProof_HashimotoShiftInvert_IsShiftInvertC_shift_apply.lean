@@ -9,7 +9,6 @@ import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterComplexShiftCore
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.HashimotoShiftInvert
-open BookProof.HashimotoShiftInvert.IsShiftInvertC
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 

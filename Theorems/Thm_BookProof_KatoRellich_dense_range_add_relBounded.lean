@@ -3,7 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterFarisLavineCore
-open BookProof.KatoRellich
+import Definitions.Def_ChapterA4
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 

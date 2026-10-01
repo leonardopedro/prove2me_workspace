@@ -7,12 +7,12 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
-open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}

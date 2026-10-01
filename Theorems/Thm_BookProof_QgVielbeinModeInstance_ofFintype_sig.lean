@@ -3,14 +3,13 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
-open BookProof.QgVielbeinModeInstance
+import Definitions.Def_ChapterA4
 
 variable {ι : Type*}
 variable [Fintype ι] [DecidableEq ι]
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

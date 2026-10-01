@@ -3,12 +3,10 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
-open BookProof.QgBrstDerivativeGauge
+import Definitions.Def_ChapterA4
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

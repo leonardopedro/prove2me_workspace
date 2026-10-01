@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterMajoranaProp76
 open BookProof.ChapterMajoranaProp76
-open BookProof.ChapterMajoranaProp76.LinearIsometryEquiv
 
 variable {𝕜 : Type*} [RCLike 𝕜]
 variable {H K L : Type*}

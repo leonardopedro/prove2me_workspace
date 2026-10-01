@@ -1,8 +1,7 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.sBd_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
-open BookProof.CarlemanSimplex
+import Definitions.Def_ChapterA4
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
@@ -11,7 +10,6 @@ variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d →
 
 
 open Finset
-open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

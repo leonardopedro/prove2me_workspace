@@ -7,7 +7,6 @@ import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.HermiteBand
-open BookProof.HermiteBand.IsBand2
 
 variable {d : ℕ}
 

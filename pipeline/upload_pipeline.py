@@ -1489,9 +1489,17 @@ def statement_needs_ambient_variable(item):
     vs = _ambient_variables(bundle)
     if not vs:
         return None
-    stmt = txt[txt.index("theorem"):] if "theorem" in txt else ""
+    cut = txt.index("theorem") if "theorem" in txt else 0
+    pre, stmt = txt[:cut], txt[cut:]
     sig = stmt.split(":=", 1)[0]
+    # Names the stub's own preamble declares. Since the generator was changed to
+    # emit each theorem's `variable` declarations, a statement may legitimately
+    # mention a name the def bundle also leaves ambient -- the preamble binds it.
+    # Checking only the statement made this gate fire on stubs it had just fixed.
+    declared = _ambient_variables(pre) if pre.strip() else set()
     for v in sorted(vs):
+        if v in declared:
+            continue
         if re.search(r"(?<![\w.'])" + re.escape(v) + r"(?![\w'])", stmt) \
                 and not re.search(r"[( {]" + re.escape(v) + r"\s*:", sig):
             return v

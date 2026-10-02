@@ -1,156 +1,93 @@
 [
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_eq",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_eq",
-  "plen": 3,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.topRestrict_apply",
+  "slug": "BookProof_YangMillsFriedrichsLimit_topRestrict_apply",
+  "plen": 0,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_conj_symm",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_conj_symm",
-  "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.symmetricOn_top_of_dense",
+  "slug": "BookProof_YangMillsFriedrichsLimit_symmetricOn_top_of_dense",
+  "plen": 24,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.re_formInner_swap",
-  "slug": "BookProof_YangMillsFriedrichs_re_formInner_swap",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_ge_normSq",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_ge_normSq",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_nonneg",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_nonneg",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_add_left",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_add_left",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_add_right",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_add_right",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_real_smul_left",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_real_smul_left",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_real_smul_right",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_real_smul_right",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add",
-  "plen": 3,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_sub",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_sub",
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.quadForm_top_nonneg_of_dense",
+  "slug": "BookProof_YangMillsFriedrichsLimit_quadForm_top_nonneg_of_dense",
   "plen": 14,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add_smul",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add_smul",
-  "plen": 10,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_of_bounded",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded",
+  "plen": 39,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.re_formInner_sq_le",
-  "slug": "BookProof_YangMillsFriedrichs_re_formInner_sq_le",
-  "plen": 25,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add_le",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add_le",
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_nontrivial_example",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_nontrivial_example",
   "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.form_closable",
-  "slug": "BookProof_YangMillsFriedrichs_form_closable",
-  "plen": 76,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOp_apply",
-  "slug": "BookProof_YangMillsFriedrichs_weylOp_apply",
-  "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn",
-  "slug": "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn",
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.not_mem_span_of_repr_ne_zero",
+  "slug": "BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero",
   "plen": 17,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOpDom_quadForm",
-  "slug": "BookProof_YangMillsFriedrichs_weylOpDom_quadForm",
-  "plen": 9,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.mem\u2113p_one_div_succ",
+  "slug": "BookProof_YangMillsFriedrichsLimit_mem\u2113p_one_div_succ",
+  "plen": 17,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded",
-  "slug": "BookProof_YangMillsFriedrichs_friedrichs_extension_of_semibounded",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_proper_domain_example",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_proper_domain_example",
+  "plen": 19,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable",
-  "slug": "BookProof_YangMillsFriedrichs_friedrichs_hypothesis_satisfiable",
-  "plen": 8,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.krylov_starProjection_tendsto",
+  "slug": "BookProof_YangMillsFriedrichsLimit_krylov_starProjection_tendsto",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weyl_friedrichs_extension",
-  "slug": "BookProof_YangMillsFriedrichs_weyl_friedrichs_extension",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_compression_tendsto",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_compression_tendsto",
+  "plen": 37,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_tendsto_zero",
-  "slug": "BookProof_YangMillsFriedrichs_weylKrylov_bestApprox_tendsto_zero",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_limit_unique",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_limit_unique",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_limit_eq_positive_selfadjoint_extension",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_limit_eq_positive_selfadjoint_extension",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded",
+  "slug": "BookProof_YangMillsFriedrichsLimit_weyl_friedrichs_bounded",
+  "plen": 4,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
  }
 ]

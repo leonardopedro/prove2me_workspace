@@ -208478,3 +208478,66 @@ Note: It is not possible to treat `ShiftData` as an implic)
 10:25:46 summary: 1691 done, 175 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
 10:25:46 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (1 item(s))
 10:25:46 chunk: 4 item(s) resolved in 1699s
+10:34:00 sync: read 755 definition publish job(s)
+10:34:25 sync: read 5820 problem publish job(s)
+10:34:30 sync: read 755 definition publish job(s)
+10:34:50 sync: read 5820 problem publish job(s)
+10:34:55 sync: read 755 definition publish job(s)
+10:35:15 sync: read 5820 problem publish job(s)
+10:35:15 submitting thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne' (attempt 3)
+10:36:02 thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne': accepted, waiting on the compiler
+10:47:47 thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne': DONE
+10:47:47 summary: 1692 done, 174 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+10:47:47 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (3 item(s)), statement relies on ambient variable `E` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (5 item(s)), target already published on the platform (BookProof.HashimotoShiftInvert.exists_isShiftInvertC) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.triple_swap) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.weylProd_self) (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (9 item(s))
+10:47:47 chunk: 1 item(s) resolved in 803s
+10:51:22 sync: read 755 definition publish job(s)
+10:51:43 sync: read 5821 problem publish job(s)
+10:51:49 sync: read 755 definition publish job(s)
+10:52:09 sync: read 5821 problem publish job(s)
+10:52:15 sync: read 755 definition publish job(s)
+10:52:35 sync: read 5821 problem publish job(s)
+10:52:36 summary: 1692 done, 174 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+10:52:36 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (3 item(s)), statement relies on ambient variable `E` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (5 item(s)), target already published on the platform (BookProof.HashimotoShiftInvert.exists_isShiftInvertC) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.triple_swap) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.weylProd_self) (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (9 item(s))
+10:52:36 chunk: 0 item(s) resolved in 53s
+10:55:13 sync: read 755 definition publish job(s)
+10:55:34 sync: read 5821 problem publish job(s)
+10:55:39 sync: read 755 definition publish job(s)
+10:55:58 sync: read 5821 problem publish job(s)
+10:56:03 sync: read 755 definition publish job(s)
+10:56:24 sync: read 5821 problem publish job(s)
+10:56:24 summary: 1692 done, 174 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+10:56:24 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (3 item(s)), statement relies on ambient variable `E` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (5 item(s)), target already published on the platform (BookProof.HashimotoShiftInvert.exists_isShiftInvertC) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.triple_swap) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.weylProd_self) (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (9 item(s))
+10:56:24 chunk: 0 item(s) resolved in 50s
+10:58:01 submitting thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 2)
+10:58:08 thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn: accepted, waiting on the compiler
+10:58:08 submitting thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 2)
+10:58:17 thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le: accepted, waiting on the compiler
+10:58:17 submitting thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le (attempt 2)
+10:58:26 thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: accepted, waiting on the compiler
+11:12:51 thm:BookProof_SqSumFarisLavine_commForm_sqSumOp_le: DONE
+11:12:59 submitting thm:BookProof_HashimotoShiftInvert_norm_shiftMap_ge (attempt 2)
+11:13:26 thm:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: accepted, waiting on the compiler
+11:13:27 thm:BookProof_SqSumFarisLavine_harmCore_symmetricOn: DONE
+11:13:27 thm:BookProof_SqSumFarisLavine_norm_sqSumOp_le: DONE
+11:13:35 submitting thm:BookProof_HashimotoShiftInvert_isShiftInvert_unique (attempt 2)
+11:13:43 thm:BookProof_HashimotoShiftInvert_isShiftInvert_unique: accepted, waiting on the compiler
+11:13:43 submitting thm:BookProof_HashimotoShiftInvert_shiftMap_injective (attempt 2)
+11:13:52 thm:BookProof_HashimotoShiftInvert_shiftMap_injective: accepted, waiting on the compiler
+11:28:43 thm:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: DONE
+11:28:52 submitting thm:BookProof_HashimotoShiftInvert_shiftRange_isClosed (attempt 2)
+11:29:06 thm:BookProof_HashimotoShiftInvert_shiftRange_isClosed: accepted, waiting on the compiler
+11:29:32 thm:BookProof_HashimotoShiftInvert_isShiftInvert_unique: DONE
+11:29:41 submitting thm:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot (attempt 2)
+11:29:48 thm:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot: accepted, waiting on the compiler
+11:29:48 thm:BookProof_HashimotoShiftInvert_shiftMap_injective: DONE
+11:29:57 submitting thm:BookProof_HashimotoShiftInvert_shiftInvert_determines (attempt 2)
+11:30:04 thm:BookProof_HashimotoShiftInvert_shiftInvert_determines: accepted, waiting on the compiler
+11:42:00 thm:BookProof_HashimotoShiftInvert_shiftRange_isClosed: DONE
+11:42:09 submitting thm:BookProof_HashimotoShiftInvert_exists_isShiftInvert (attempt 2)
+11:42:20 thm:BookProof_HashimotoShiftInvert_exists_isShiftInvert: accepted, waiting on the compiler
+11:42:47 thm:BookProof_HashimotoShiftInvert_shiftInvert_determines: DONE
+11:42:55 submitting thm:BookProof_HashimotoShiftInvert_shiftMap_surjective (attempt 2)
+11:43:05 thm:BookProof_HashimotoShiftInvert_shiftMap_surjective: accepted, waiting on the compiler
+11:43:14 thm:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot: DONE
+11:43:23 submitting thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs (attempt 2)
+11:43:33 thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: accepted, waiting on the compiler

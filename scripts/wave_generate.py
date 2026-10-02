@@ -950,6 +950,7 @@ def build_thm(bt, leaf, decls, node, modns):
     # Both filters run LAST: the block above can still add `open` lines, and a
     # filter that runs before it misses everything it adds.
     text = drop_undeclared_opens(text, leaf)
+    text = add_missing_namespace_imports(text)
     text = drop_shadowing_opens(text, text)
     return text
 
@@ -1049,6 +1050,55 @@ def drop_shadowing_opens(text, stmt=None):
         print(f"  WARNING re-opened the parent of a shadowing namespace from `{r}`",
               file=sys.stderr)
     return "\n".join(out)
+
+
+def add_missing_namespace_imports(text):
+    """Import the def bundle behind every `open BookProof.X`, or drop the open.
+
+    `drop_undeclared_opens` only asked whether *some* bundle declares the
+    namespace. That is the wrong question: `BookProof.QgHermiteOscillator` is
+    declared by Def_ChapterQgHermiteOscillatorEsa, so the `open` survived --
+    but Sol_..._harmCore_symmetricOn imports only Def_ChapterSqSumFarisLavine,
+    so the namespace is not in scope and Lean reports `unknown namespace`. The
+    generator copied eight such `open` lines from the source file header
+    without carrying the imports that back them.
+
+    Importing is the better repair than dropping the open: the proof body may
+    genuinely use names from that namespace, and a bare `open` is only noise
+    when nothing references it. So add the import when the owning bundle is
+    published, and leave the existing behaviour to `drop_undeclared_opens` for
+    namespaces nothing declares at all.
+    """
+    owner = namespace_to_owner()
+    if not owner:
+        return text
+    have = set(re.findall(r"(?m)^import Definitions\.(Def_\S+)", text))
+    wanted = {}
+    for ln in text.split("\n"):
+        st = ln.strip()
+        if not st.startswith("open BookProof."):
+            continue
+        for one in st.split()[1:]:
+            if not one.startswith("BookProof."):
+                continue
+            b = owner.get(one) or owner_of_namespace(one)
+            if b:
+                # The index records the chapter name; the module is Def_<chapter>.
+                mod = b if b.startswith("Def_") else f"Def_{b}"
+                if mod not in have:
+                    wanted[mod] = one
+    if not wanted:
+        return text
+    lines = text.split("\n")
+    # Imports must precede every `open`, or Lean rejects them with
+    # "invalid 'import' command, it must be used at the beginning".
+    at = max((i for i, l in enumerate(lines) if l.startswith("import ")), default=0)
+    adds = [f"import Definitions.{b}" for b in sorted(wanted)]
+    lines[at + 1:at + 1] = adds
+    for b, ns in sorted(wanted.items()):
+        print(f"  WARNING added `import Definitions.{b}`: it declares "
+              f"`{ns}`, which was opened but never imported", file=sys.stderr)
+    return "\n".join(lines)
 
 
 def drop_undeclared_opens(text, leaf=None):
@@ -1165,7 +1215,8 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     # uploader's preflight gate refused three otherwise-submittable solutions
     # over `open BookProof.HashimotoShiftInvert.IsShiftInvert`, which nothing
     # declares -- a `section` is not a namespace.
-    return drop_undeclared_opens("".join(parts), leaf)
+    text = drop_undeclared_opens("".join(parts), leaf)
+    return add_missing_namespace_imports(text)
 
 
 def build_def_file(bt, leaf, decls, defmat, embedded):
@@ -1243,6 +1294,7 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     # `unknown namespace` / `Unknown identifier`, from the same shadowing and
     # bare-name problems already fixed in build_thm and build_sol.
     text = drop_undeclared_opens(text, leaf)
+    text = add_missing_namespace_imports(text)
     text = drop_shadowing_opens(text, text)
     return text
 

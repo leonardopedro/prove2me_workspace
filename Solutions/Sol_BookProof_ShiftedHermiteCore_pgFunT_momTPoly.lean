@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_smul
 import Theorems.Thm_BookProof_ShiftedHermiteCore_deriv_pgFunT_sec
 import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 import Theorems.Thm_BookProof_HyperbolicQuadratic_dPoly_apply
+import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply
 open BookProof.ShiftedHermiteCore
 
 

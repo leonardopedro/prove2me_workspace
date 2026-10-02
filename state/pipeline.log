@@ -208991,3 +208991,104 @@ Note: It is not possible to treat `D` as an implicitly bound varia)
 Note: It is not possible to treat `d` as an implicitly bound varia)
 18:37:39 summary: 1707 done, 161 pending, 100 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
 18:37:39 chunk: 2 item(s) resolved in 1288s
+18:43:38 submitting thm:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+18:43:44 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: accepted, waiting on the compiler
+18:43:44 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe (attempt 1)
+18:44:17 thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: accepted, waiting on the compiler
+19:02:23 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: DONE
+19:02:48 thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: DONE
+19:02:48 summary: 1709 done, 159 pending, 100 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+19:02:48 chunk: 2 item(s) resolved in 1151s
+19:03:31 retry-failed: re-armed 127 item(s)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite (attempt 1)
+19:03:31 sol:BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: WAIT (theorem not published yet)
+19:03:31 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 1)
+19:03:31 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: WAIT (theorem not published yet)
+19:03:31 summary: 1631 done, 335 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+19:03:31 chunk: 0 item(s) resolved in 1s
+19:06:07 retry-failed: re-armed 0 item(s)
+19:06:07 submitting sol:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+19:06:21 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: accepted, waiting on the compiler
+19:06:21 submitting sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 2)
+19:06:28 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: accepted, waiting on the compiler
+19:06:28 submitting sol:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 2)
+19:06:33 sol:BookProof_SqSumFarisLavine_commForm_eq_im: accepted, waiting on the compiler
+19:06:33 submitting sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 2)
+19:06:39 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: accepted, waiting on the compiler
+19:06:39 submitting sol:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core (attempt 1)
+19:06:43 sol:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+19:06:43 submitting sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge (attempt 2)
+19:07:06 sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: accepted, waiting on the compiler
+19:07:06 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe (attempt 1)
+19:07:11 sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: accepted, waiting on the compiler
+19:20:48 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: FAIL (verdict CE: Compile error in your proof:
+line 12: unknown namespace `BookProof.QgHermiteOscillator`
+line 13: unknown namespace `BookProof.HermiteQuadr)
+19:20:58 submitting sol:BookProof_HermiteProductCore_hermiteCx_zero (attempt 1)
+19:20:58 sol:BookProof_HermiteProductCore_hermiteCx_zero: WAIT (theorem not published yet)
+19:20:58 submitting sol:BookProof_HermiteProductCore_hermiteMv_erase (attempt 1)
+19:20:58 sol:BookProof_HermiteProductCore_hermiteMv_erase: WAIT (theorem not published yet)
+19:20:58 submitting sol:BookProof_HermiteProductCore_integral_prod_coord (attempt 1)
+19:20:58 sol:BookProof_HermiteProductCore_integral_prod_coord: WAIT (theorem not published yet)
+19:20:58 submitting sol:BookProof_HermiteProductCore_pgMap_apply (attempt 1)
+19:20:58 sol:BookProof_HermiteProductCore_pgMap_apply: WAIT (theorem not published yet)
+19:20:58 submitting sol:BookProof_HermiteProductCore_span_range_coreBasis (attempt 1)
+19:20:58 sol:BookProof_HermiteProductCore_span_range_coreBasis: WAIT (theorem not published yet)
+19:20:58 submitting sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq (attempt 1)
+19:20:58 sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq: WAIT (theorem not published yet)
+19:21:56 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 12: unknown namespace `BookProof.QgHermiteOscillator`
+line 13: unknown namespace `BookProof.HermiteQuadr)
+19:22:53 sol:BookProof_SqSumFarisLavine_commForm_eq_im: FAIL (verdict CE: Compile error in your proof:
+line 33: Ambiguous term
+  sqSumPoly
+Possible interpretations:
+  (BookProof.QgOuterFock.sqSumPoly kappa v) p :)
+19:25:02 sol:BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core: FAIL (verdict CE: Compile error in your proof:
+line 22: Unknown identifier `dsOp_essentiallySelfAdjointOn`)
+19:25:02 sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: FAIL (verdict CE: Compile error in your proof:
+line 21: Unknown identifier `shiftMap_apply`
+line 22: Tactic `rewrite` failed: Did not find an occurrence of )
+19:25:11 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: DONE
+19:26:01 sol:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: DONE
+19:26:01 summary: 1633 done, 333 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+19:26:01 chunk: 7 item(s) resolved in 1193s
+19:41:43 retry-failed: re-armed 0 item(s)
+19:41:43 submitting sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 3)
+19:42:27 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: accepted, waiting on the compiler
+19:42:27 submitting sol:BookProof_HermiteProductCore_hermiteCx_zero (attempt 1)
+19:42:27 sol:BookProof_HermiteProductCore_hermiteCx_zero: WAIT (theorem not published yet)
+19:42:27 submitting sol:BookProof_HermiteProductCore_hermiteMv_erase (attempt 1)
+19:42:27 sol:BookProof_HermiteProductCore_hermiteMv_erase: WAIT (theorem not published yet)
+19:42:27 submitting sol:BookProof_HermiteProductCore_integral_prod_coord (attempt 1)
+19:42:27 sol:BookProof_HermiteProductCore_integral_prod_coord: WAIT (theorem not published yet)
+19:42:27 submitting sol:BookProof_HermiteProductCore_pgMap_apply (attempt 1)
+19:42:27 sol:BookProof_HermiteProductCore_pgMap_apply: WAIT (theorem not published yet)
+19:42:27 submitting sol:BookProof_HermiteProductCore_span_range_coreBasis (attempt 1)
+19:42:27 sol:BookProof_HermiteProductCore_span_range_coreBasis: WAIT (theorem not published yet)
+19:42:27 submitting sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq (attempt 1)
+19:42:27 sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq: WAIT (theorem not published yet)

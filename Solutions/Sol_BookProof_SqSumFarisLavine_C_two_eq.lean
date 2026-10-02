@@ -1,6 +1,14 @@
 -- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.C_two_eq
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.SqSumFarisLavine
 
 

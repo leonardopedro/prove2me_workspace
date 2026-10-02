@@ -1,7 +1,10 @@
 -- Generated from ChapterHermiteProductCore.lean — theorem BookProof.HermiteProductCore.gaussInt_smul
+import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
+
+variable {d : ℕ}
 
 
 

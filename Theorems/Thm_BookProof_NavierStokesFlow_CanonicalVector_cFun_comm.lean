@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.cFun_comm
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterGravityProjector
@@ -14,6 +15,6 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 theorem BookProof.NavierStokesFlow.CanonicalVector.cFun_comm (i k : Fin 3) (X : Vel → ℂ) : cFun i (cFun k X) = cFun k (cFun i X) := by sorry

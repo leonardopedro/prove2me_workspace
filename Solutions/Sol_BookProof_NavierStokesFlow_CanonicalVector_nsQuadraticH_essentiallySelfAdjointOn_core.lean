@@ -11,19 +11,12 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-The quantized full quadratic Navier–Stokes symbol is essentially self-adjoint on the
-Hermite core of the three velocity components**, for every viscosity, every velocity
-gradient and every velocity Laplacian at the fiber. -/
 theorem solution
     (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (lap : Fin 3 → ℝ) :
     EssentiallySelfAdjointOn (lpFiniteModes Vel)
-      ((lpFiniteModes Vel).subtype.comp (nsQuadraticH nu grad lap)) :=
-  c :=
-  anH_essentiallySelfAdjointOn_core grad _
-  
-  /--
+      ((lpFiniteModes Vel).subtype.comp (nsQuadraticH nu grad lap)) := canH_essentiallySelfAdjointOn_core grad _

@@ -28,10 +28,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-Equiv (d := 3)).surjective y
-  simp only [posOp, annOp, creOp, coreOp_coreEquiv, LinearMap.add_apply, ← map_add]
-  congr 1
-  simp only [mulXPoly_apply, annPoly_apply, crePoly_apply]
-  ring
-
-set_option maxHeartbeats 1 := by sorry
+set_option maxHeartbeats 1000000 in
+-- Unfolding the core coordinates through three linear equivalences is elaboration-heavy.
+theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder (i : Fin 3) :
+    momOp i = (Complex.I / 2) • (creOp i - annOp i) := by sorry

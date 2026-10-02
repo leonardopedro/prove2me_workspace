@@ -10,20 +10,20 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-e_normSq f))
-
-theorem solution {g : ι → ℂ} (h : (Function.support g).Finite) : :=
+theorem solution {g : ι → ℂ} (h : (Function.support g).Finite) :
     Memℓp g 2 := by
-    classical
-    refine memLpTwo_of_summable_normSq (summable_of_ne_finset_zero (s := h.toFinset) ?_)
-    intro k hk
-    have : g k = 0 := by
-      by_contra hne
-      exact hk (h.mem_toFinset.mpr hne)
+
+  classical
+  refine memLpTwo_of_summable_normSq (summable_of_ne_finset_zero (s := h.toFinset) ?_)
+  intro k hk
+  have : g k = 0 := by
+    by_contra hne
+    exact hk (h.mem_toFinset.mpr hne)
+  simp [this]

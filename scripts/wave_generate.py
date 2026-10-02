@@ -883,6 +883,13 @@ def build_thm(bt, leaf, decls, node, modns):
     if ctx:
         head.append(ctx + "\n")
     head.append("\n")
+    # PIPELINE_PLAN 6.1: the server rejects `'` in a theorem_name --
+    # "theorem_name must be a valid Lean identifier". Observed directly:
+    # `modeShift_shift_ne'` was refused while its eight siblings published.
+    # Rewrite primes to `_prime`, as the plan prescribes.
+    stmt = re.sub(r"^(theorem\s+)([A-Za-z_][\w.]*?')",
+                  lambda m: m.group(1) + re.sub(r"'", "_prime", m.group(2)),
+                  stmt, flags=re.M)
     head.append(stmt + " := by sorry\n")
     text = "".join(head)
     # Drop duplicate `variable` lines. The same declaration can arrive twice --
@@ -970,6 +977,20 @@ def drop_undeclared_opens(text, leaf=None):
             if bad:
                 dropped.extend(bad)
                 continue
+        elif st.startswith("open ") and "BookProof." not in st:
+            # Qualify a bare namespace with `BookProof.` when that namespace
+            # exists. `open LpNat FarisLavine IkebeKato ThreeComponent` fails with
+            # `unknown namespace 'FarisLavine'`: Lean resolves a bare `open`
+            # against root namespaces only, and these are all `BookProof.*`.
+            toks = st.split()
+            fixed = [toks[0]]
+            for t in toks[1:]:
+                if not t.startswith("BookProof.") and f"BookProof.{t}" in known:
+                    fixed.append("BookProof." + t)
+                else:
+                    fixed.append(t)
+            if fixed != toks:
+                ln = ln.replace(st, " ".join(fixed))
         out.append(ln)
     for one in dropped:
         print(f"  WARNING dropped `open {one}`: no bundle declares it",

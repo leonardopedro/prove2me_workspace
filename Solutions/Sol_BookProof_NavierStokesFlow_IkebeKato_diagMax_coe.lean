@@ -10,15 +10,12 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-ul]
-    ring
-
 theorem solution (c : ι → ℝ) (f : maxDom c) (k : ι) :
-    ((diagMax c f : L2I ι) : ι → ℂ) k = (c k : ℂ) * ((f : L2I ι) : := ι →
+    ((diagMax c f : L2I ι) : ι → ℂ) k = (c k : ℂ) * ((f : L2I ι) : ι → ℂ) k := rfl

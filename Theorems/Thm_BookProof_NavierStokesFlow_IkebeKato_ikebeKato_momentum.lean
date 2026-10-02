@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.ikebeKato_momentum
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterFarisLavineCore
@@ -14,11 +15,9 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
-
-self]; simp)
 
 theorem BookProof.NavierStokesFlow.IkebeKato.ikebeKato_momentum (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) :
     EssentiallySelfAdjointOn (lpFiniteModes ι)
-      ((diagMax c).comp (Submodule.inclusion (finiteModes_l := by sorry
+      ((diagMax c).comp (Submodule.inclusion (finiteModes_le_maxDom c))) := by sorry

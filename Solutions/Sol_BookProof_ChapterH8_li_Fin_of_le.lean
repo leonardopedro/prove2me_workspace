@@ -25,5 +25,3 @@ theorem solution (f : ℕ → E) {m n : ℕ} (hmn : m ≤ n)
 
   have h := hli.comp (Fin.castLE hmn) (Fin.castLE_injective hmn)
   exact h
-
-omit [CompleteSpace 

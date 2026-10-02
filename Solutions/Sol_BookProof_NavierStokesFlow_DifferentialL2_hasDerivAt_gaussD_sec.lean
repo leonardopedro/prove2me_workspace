@@ -37,4 +37,5 @@ theorem solution (i : Fin d) (x : Vd d) (t : ℝ) :
     simpa using h
   have h2 := (Real.hasDerivAt_exp (-(S + t ^ 2) / 4)).comp t h1
   refine HasDerivAt.congr_deriv h2 ?_
-  rw [gaussD, no
+  rw [gaussD, norm_sq_sec, hS]
+  ring

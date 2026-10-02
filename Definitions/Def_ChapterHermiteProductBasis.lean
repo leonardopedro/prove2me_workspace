@@ -2,15 +2,7 @@ import Theorems.Thm_BookProof_HermiteProductCore_polyGaussCore_eq_hermiteSpan
 
 import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
 
-import Theorems.Thm_BookProof_HermiteCore_hermiteFun_mul
-
-import Theorems.Thm_BookProof_HermiteCore_hermiteInner_eq
-
-import Theorems.Thm_BookProof_HermiteCore_hermiteNorm_sq
-
 import Theorems.Thm_BookProof_HermiteProductCore_integral_prod_coord
-
-import Theorems.Thm_BookProof_HermiteCore_hermiteNorm_pos
 
 import Definitions.Def_ChapterHermiteProductCore
 import Mathlib

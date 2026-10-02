@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_add_one_surjective
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
@@ -12,10 +13,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
-
-f `N + 1` -/
 
 theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_add_one_surjective (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) (f : L2I ι) :
-    ∃ x : maxDom c, (diagMax c x : L2I ι) + (x := by sorry
+    ∃ x : maxDom c, (diagMax c x : L2I ι) + (x : L2I ι) = f := by sorry

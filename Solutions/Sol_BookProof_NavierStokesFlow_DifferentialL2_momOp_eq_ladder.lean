@@ -20,25 +20,23 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-Equiv (d := 3)).surjective y
-  simp only [posOp, annOp, creOp, coreOp_coreEquiv, LinearMap.add_apply, ← map_add]
-  congr 1
-  simp only [mulXPoly_apply, annPoly_apply, crePoly_apply]
-  ring
+set_option maxHeartbeats 1000000 in
+-- Unfolding the core coordinates through three linear equivalences is elaboration-heavy.
+theorem solution (i : Fin 3) :
+    momOp i = (Complex.I / 2) • (creOp i - annOp i) := by
 
-set_option maxHeartbeats 1 :=
-  000000 in
-  -- Unfolding the core coordinates through three linear equivalences is elaboration-heavy.
-  theorem momOp_eq_ladder (i : Fin 3) :
-      momOp i = (Complex.I / 2) • (creOp i - annOp i) := by
-    refine LinearMap.ext fun y => ?_
-    obtain ⟨p, rfl⟩ := (coreEquiv (d := 3)).surjective y
-    simp only [momOp, annOp, creOp, coreOp_coreEquiv, LinearMap.smul_apply, LinearMap.sub_apply,
-      ← map_sub, ← map_smul]
+  refine LinearMap.ext fun y => ?_
+  obtain ⟨p, rfl⟩ := (coreEquiv (d := 3)).surjective y
+  simp only [momOp, annOp, creOp, coreOp_coreEquiv, LinearMap.smul_apply, LinearMap.sub_apply,
+    ← map_sub, ← map_smul]
+  congr 1
+  have hI : (C (Complex.I / 2) : MvPolynomial (Fin 3) ℂ) = C Complex.I * C (1 / 2 : ℂ) := by
+    rw [← map_mul]
     congr 1
-    have hI : (C (Complex.I / 2) : MvPolynomial (Fin 3) ℂ) = C Complex.I * C (1 / 2 : ℂ) := by
-      rw [← map_mul]
-      congr 1
-      ring
-    have h2 : (C (1 / 2 : ℂ) : MvPolynomial (Fin 3) ℂ) * 2 = 1 := by
-      rw [← map_of
+    ring
+  have h2 : (C (1 / 2 : ℂ) : MvPolynomial (Fin 3) ℂ) * 2 = 1 := by
+    rw [← map_ofNat C 2, ← map_mul]
+    norm_num
+  simp only [momPoly_apply, annPoly_apply, crePoly_apply, MvPolynomial.smul_eq_C_mul, map_neg,
+    hI]
+  linear_combination (C Complex.I * (pderiv i) p) * h2

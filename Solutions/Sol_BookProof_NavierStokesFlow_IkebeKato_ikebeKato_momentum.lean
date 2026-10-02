@@ -17,24 +17,22 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-self]; simp)
-
 theorem solution (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) :
     EssentiallySelfAdjointOn (lpFiniteModes ι)
-      ((diagMax c).comp (Submodule.inclusion (finiteModes_l :=
-  e_maxDom c))) := by
-    refine essentiallySelfAdjointOn_core_of_farisLavine (finiteModes_le_maxDom c)
-      (diagMax c) (diagMax c) 1 0 0 (diagMax_symmetricOn c) (diagMax_symmetricOn c) le_rfl
-      (diagMax_quadForm_nonneg c hc) (diagMax_add_one_surjective c hc)
-      (fun x => by rw [commForm_self]; simp)
-      (fun x => by simp) ?_
-    intro x ε hε
-    obtain ⟨y, hy1, hy2, hy3⟩ := exists_finiteModes_graph_approx c x ε hε
-    exact ⟨y, hy
+      ((diagMax c).comp (Submodule.inclusion (finiteModes_le_maxDom c))) := by
+
+  refine essentiallySelfAdjointOn_core_of_farisLavine (finiteModes_le_maxDom c)
+    (diagMax c) (diagMax c) 1 0 0 (diagMax_symmetricOn c) (diagMax_symmetricOn c) le_rfl
+    (diagMax_quadForm_nonneg c hc) (diagMax_add_one_surjective c hc)
+    (fun x => by rw [commForm_self]; simp)
+    (fun x => by simp) ?_
+  intro x ε hε
+  obtain ⟨y, hy1, hy2, hy3⟩ := exists_finiteModes_graph_approx c x ε hε
+  exact ⟨y, hy1, hy2, hy3⟩

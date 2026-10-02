@@ -36,6 +36,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-creation operator on the Hermite core of `L²(ℝ³)`**: `uᵢ/2 − ∂ᵢ`. -/
-def creOp (i : Fin 3) : (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=
-  core := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.intertwine_ann (i : Fin 3) : (annOp i).comp embedCore = embedCore.comp (ann i) := by sorry

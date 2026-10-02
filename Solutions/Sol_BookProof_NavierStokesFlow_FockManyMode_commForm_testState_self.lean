@@ -18,7 +18,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
 
 variable {d : ℕ} {κ : Fin d → ℝ}
@@ -58,4 +58,5 @@ theorem solution (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) :
   have hc0 : ((testState κ i₀ : L2I (Occ d)) : Occ d → ℂ) 0 = 1 := testState_coe_zero i₀
   have hc1 : ((testState κ i₀ : L2I (Occ d)) : Occ d → ℂ) (modeShift i₀ 0) = 1 := by
     rw [testState_coe, if_neg (modeShift_zero_ne_zero i₀), if_pos rfl]
-  rw [hshift0, ham
+  rw [hshift0, hamp0, hstep, hc0, hc1]
+  simp

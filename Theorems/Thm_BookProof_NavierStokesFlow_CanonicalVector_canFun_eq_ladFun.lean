@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.canFun_eq_ladFun
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesThreeComponent
@@ -14,7 +15,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 set_option maxHeartbeats 4000000 in
 -- Both sides expand into the same several-dozen-term ladder polynomial; normalising it

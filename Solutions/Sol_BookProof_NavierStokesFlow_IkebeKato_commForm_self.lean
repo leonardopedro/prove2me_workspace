@@ -11,18 +11,17 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-t, proved -/
+theorem solution (c : ι → ℝ) (x : maxDom c) : commForm (diagMax c) (diagMax c) x = 0 := by
 
-theorem solution (c : ι → ℝ) (x : maxDom c) : commForm (diagMax c) (dia :=
-  gMax c) x = 0 := by
-    rw [commForm_eq]
-    have him : (inner ℂ (diagMax c x) (diagMax c x) : ℂ).im = 0 := by
-      simpa using inner_self_im (𝕜 := ℂ) ((diagMax c x))
-    r
+  rw [commForm_eq]
+  have him : (inner ℂ (diagMax c x) (diagMax c x) : ℂ).im = 0 := by
+    simpa using inner_self_im (𝕜 := ℂ) ((diagMax c x))
+  rw [him]
+  ring

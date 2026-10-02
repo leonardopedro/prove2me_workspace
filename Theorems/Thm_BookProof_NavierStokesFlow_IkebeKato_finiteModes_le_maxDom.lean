@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesEsa
@@ -13,9 +14,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 
-mode core -/
-
-theorem BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom (c : ι → ℝ) : lpFiniteModes ι := by sorry
+theorem BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom (c : ι → ℝ) : lpFiniteModes ι ≤ maxDom c := by sorry

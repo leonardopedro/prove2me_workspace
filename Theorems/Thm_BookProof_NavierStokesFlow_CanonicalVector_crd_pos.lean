@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.crd_pos
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterBosonicCCR
@@ -17,7 +18,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 theorem BookProof.NavierStokesFlow.CanonicalVector.crd_pos (i : Fin 3) (x : lpFiniteModes Vel) :
     crd (pos i x) = pFun i (crd x) := by sorry

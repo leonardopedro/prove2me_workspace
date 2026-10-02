@@ -19,8 +19,7 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-
 theorem solution {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
-    Intertwined (T :=
-   - S) (T' - S') := fun x => by
-    simp only [LinearMap.sub_apply,
+    Intertwined (T - S) (T' - S') :=
+  fun x => by
+    simp only [LinearMap.sub_apply, hT x, hS x, map_sub]

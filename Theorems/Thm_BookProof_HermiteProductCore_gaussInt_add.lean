@@ -14,6 +14,5 @@ open SchwartzMap
 
 noncomputable section
 
-sInt_add (r s : MvPolynomial (Fin d) ℂ) :
-    gaussInt (r + s) = gaussInt r + gaussInt s := by
-  rw [ga := by sorry
+theorem BookProof.HermiteProductCore.gaussInt_add (r s : MvPolynomial (Fin d) ℂ) :
+    gaussInt (r + s) = gaussInt r + gaussInt s := by sorry

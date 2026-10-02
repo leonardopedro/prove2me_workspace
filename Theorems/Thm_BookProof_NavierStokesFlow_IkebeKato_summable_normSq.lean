@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.summable_normSq
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
@@ -12,9 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 
-y helpers -/
-
-theorem BookProof.NavierStokesFlow.IkebeKato.summable_normSq (f : L2I ι) : Summable fun k => ‖(f : ι → := by sorry
+theorem BookProof.NavierStokesFlow.IkebeKato.summable_normSq (f : L2I ι) : Summable fun k => ‖(f : ι → ℂ) k‖ ^ 2 := by sorry

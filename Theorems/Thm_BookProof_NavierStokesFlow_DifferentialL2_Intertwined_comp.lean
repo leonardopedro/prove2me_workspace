@@ -29,4 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-eorem Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
+    Intertwined (T.comp S) (T'.comp S') := by sorry

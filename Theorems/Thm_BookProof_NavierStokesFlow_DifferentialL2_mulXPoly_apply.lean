@@ -26,4 +26,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
- := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.mulXPoly_apply (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulXPoly i p = X i * p := by sorry

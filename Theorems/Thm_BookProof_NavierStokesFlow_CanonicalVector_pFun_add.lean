@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.pFun_add
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesThreeComponent
@@ -14,7 +15,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 theorem BookProof.NavierStokesFlow.CanonicalVector.pFun_add (i : Fin 3) (X Y : Vel → ℂ) :
     pFun i (X + Y) = pFun i X + pFun i Y := by sorry

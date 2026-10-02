@@ -32,9 +32,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-rIsometryEquiv velUnitary velUnitary_mem_core hint ?_
-  exact (essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn _ _).1
-    (canH_essentiallySelfAdjointOn_core A (fun j => c j / Real.sqrt 2))
-
-/-- **The differentially written operator is unbounded**: essential self-adjointness above
-is not a boundedness phenomenon. := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_not_bounded (hA : A 0 0 ≠ 0) (K : ℝ) :
+    ∃ f : polyGaussCore (d := 3), ‖(f : L2d 3)‖ = 1
+      ∧ K < ‖((nsDiffH A c f : polyGaussCore (d := 3)) : L2d 3)‖ := by sorry

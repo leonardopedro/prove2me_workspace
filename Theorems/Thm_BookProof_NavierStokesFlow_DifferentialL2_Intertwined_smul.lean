@@ -29,7 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
- x, hS x, map_sub]
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.smul {T T'} (c : ℂ) (hT : Intertwined T T') :
     Intertwined (c • T) (c • T') := by sorry

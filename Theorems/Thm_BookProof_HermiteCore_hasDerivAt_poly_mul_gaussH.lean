@@ -9,12 +9,6 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-n_dense
-
-theorem BookProof.HermiteCore.hasDerivAt_poly_mul_gaussH (n : ℕ) : hermiteBasis n = hermiteLp n := by
-  rw [hermiteBasis, HilbertBasis.coe_mk]
-
-/-! ## The harmonic oscillator -/
-
-/-- The first derivative of a Hermite function. -/
-theorem hasDerivAt_hermiteFun (n : ℕ) (x : ℝ) : := by sorry
+theorem BookProof.HermiteCore.hasDerivAt_poly_mul_gaussH (p : Polynomial ℝ) (x : ℝ) :
+    HasDerivAt (fun y : ℝ => p.eval y * gaussH y)
+      ((derivative p - C (1 / 2 : ℝ) * (X * p)).eval x * gaussH x) x := by sorry

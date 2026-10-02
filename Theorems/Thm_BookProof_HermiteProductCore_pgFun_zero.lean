@@ -14,6 +14,4 @@ open SchwartzMap
 
 noncomputable section
 
-p continuous_gaussD)
-
-theorem BookProof.HermiteProductCore.pgFun_zero : pgFun (0 : MvPolyno := by sorry
+theorem BookProof.HermiteProductCore.pgFun_zero : pgFun (0 : MvPolynomial (Fin d) ℂ) = 0 := by sorry

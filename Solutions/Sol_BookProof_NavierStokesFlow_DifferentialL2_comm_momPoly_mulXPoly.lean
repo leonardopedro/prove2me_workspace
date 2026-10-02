@@ -19,26 +19,26 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
- -/
-theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    ((momOp i (coreEquiv p) : polyGaussCore (d := d)) : L2d d)
-      = pgLp (momPoly i p) := coreOp_coe _ p
+theorem solution (i k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momPoly i (mulXPoly k p) - mulXPoly k (momPoly i p)
+      = C (if i = k then -Complex.I else 0) * p := by
 
-/-- **The canonical commutation relation** `[πᵢ, u_k] = −i δ_{ik}` for the differential
-ope :=
-  rators. -/
-  theorem comm_momPoly_mulXPoly (i k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-      momPoly i (mulXPoly k p) - mulXPoly k (momPoly i p)
-        = C (if i = k then -Complex.I else 0) * p := by
-    classical
-    have hpd : pderiv i (X k * p) = (if i = k then (1 : MvPolynomial (Fin d) ℂ) else 0) * p
-        + X k * pderiv i p := by
-      rw [Derivation.leibniz]
-      by_cases hik : i = k
-      · subst hik
-        rw [if_pos rfl, pderiv_X_self]
-        simp only [smul_eq_mul, mul_one, one_mul]
-        ring
-      · rw [pderiv_X_of_ne (Ne.symm hik), if_neg hik]
-        simp [smul_eq_mul]
-    simp only
+  classical
+  have hpd : pderiv i (X k * p) = (if i = k then (1 : MvPolynomial (Fin d) ℂ) else 0) * p
+      + X k * pderiv i p := by
+    rw [Derivation.leibniz]
+    by_cases hik : i = k
+    · subst hik
+      rw [if_pos rfl, pderiv_X_self]
+      simp only [smul_eq_mul, mul_one, one_mul]
+      ring
+    · rw [pderiv_X_of_ne (Ne.symm hik), if_neg hik]
+      simp [smul_eq_mul]
+  simp only [momPoly_apply, mulXPoly_apply, hpd]
+  by_cases hik : i = k
+  · subst hik
+    rw [if_pos rfl, if_pos rfl]
+    ring
+  · rw [if_neg hik, if_neg hik]
+    simp only [map_zero, zero_mul]
+    ring

@@ -21,8 +21,6 @@ open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
 open ContinuousLinearMap
 
- in
 theorem BookProof.ChapterH8.krylovOrthonormal_span (H : E →ₗ[ℂ] E) (v : E) (n : ℕ) :
     Submodule.span ℂ (Set.range (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ)))
-      = krylovSpan H v n := by
-  have hrange : := by sorry
+      = krylovSpan H v n := by sorry

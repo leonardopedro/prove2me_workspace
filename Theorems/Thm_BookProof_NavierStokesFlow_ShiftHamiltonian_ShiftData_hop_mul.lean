@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hop_mul
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterStoneResolvent
@@ -13,7 +14,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hop_mul (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
     S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by sorry

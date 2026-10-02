@@ -20,17 +20,11 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-wise. -/
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-    pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by
-  simp [pgFun, mulXPoly]
-  ring
+    pgFun (momPoly i p) x
+      = -Complex.I * deriv (fun t : ℝ => pgFun p (sec i x t)) (x i) := by
 
-/-- **The momentum operator is the derivative**: at every point, the value of `momOp i` on
-`f = p·e^{-‖u‖²/4}` is `−i` times the honest derivative of `f` along the `i`-th
-coordinate. :=
-   -/
-  theorem momOp_apply_eq_differential (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-      pgFun (momPoly i p) x
-        = -Complex.I * deriv (fun t : ℝ => pgFun p (sec i x t)) (x i) := by
-    rw [
+  rw [(hasDerivAt_pgFun_sec i p x).deriv]
+  simp only [momPoly, pgFun, LinearMap.coe_mk, AddHom.coe_mk, map_mul, map_sub,
+    MvPolynomial.eval_C, MvPolynomial.eval_X, MvPolynomial.smul_eval]
+  ring

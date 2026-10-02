@@ -14,8 +14,6 @@ open SchwartzMap
 
 noncomputable section
 
- : ℕ) + 1 : ℤ) : Polynomial ℤ)
-        = Polynomial.C ((n : ℤ) + 1) + 1 := by
-      push_cast
-      rw [show ((n : ℤ) + 1 + 1) = ((n : ℤ) + 1) + 1 from rfl, Polynomial.C_add, Polynomial.C_1]
-    rw [key, ← Polynomial.hermite_succ n, hC, add_mul, o := by sorry
+theorem BookProof.HermiteProductCore.hermiteZ_X_mul (n : ℕ) :
+    (Polynomial.X : Polynomial ℤ) * Polynomial.hermite n
+      = Polynomial.hermite (n + 1) + (n : ℤ) • Polynomial.hermite (n - 1) := by sorry

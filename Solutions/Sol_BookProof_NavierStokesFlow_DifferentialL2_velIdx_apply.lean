@@ -16,5 +16,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : Vel) (i : Fin 3) : velIdx b i = b i := rfl

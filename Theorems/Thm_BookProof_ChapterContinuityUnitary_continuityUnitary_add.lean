@@ -10,7 +10,5 @@ open scoped BigOperators Matrix TensorProduct
 
 
 
-ary_add (v : ZMod N → ℝ) (s t : ℝ) :
-    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t := by
-  have hcomm : Commute (((s : ℂ) * Complex.I) • continuityHamiltonian v)
-      (((t : ℂ) * C := by sorry
+theorem BookProof.ChapterContinuityUnitary.continuityUnitary_add (v : ZMod N → ℝ) (s t : ℝ) :
+    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t := by sorry

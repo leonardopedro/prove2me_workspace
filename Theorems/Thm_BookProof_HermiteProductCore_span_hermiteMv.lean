@@ -14,8 +14,5 @@ open SchwartzMap
 
 noncomputable section
 
-X_mul]
-    exact add_mem (Submodule.subset_span ⟨_, rfl⟩)
-      (Submodule.smul_mem _ _ (Submodule.subset_span ⟨_, rfl⟩))
-  | zero => simp
-  | a := by sorry
+theorem BookProof.HermiteProductCore.span_hermiteMv :
+    Submodule.span ℂ (Set.range (hermiteMv (d := d))) = ⊤ := by sorry

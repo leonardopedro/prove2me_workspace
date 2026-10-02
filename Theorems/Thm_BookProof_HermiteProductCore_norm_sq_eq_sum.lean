@@ -14,4 +14,4 @@ open SchwartzMap
 
 noncomputable section
 
- := by sorry
+theorem BookProof.HermiteProductCore.norm_sq_eq_sum (x : Vd d) : ‖x‖ ^ 2 = ∑ i, (x i) ^ 2 := by sorry

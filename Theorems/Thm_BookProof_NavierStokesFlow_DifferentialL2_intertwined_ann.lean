@@ -31,4 +31,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-ntertwined_ann (i : Fin 3) : Intertwined (ann i) (annOp i) := fun x := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_ann (i : Fin 3) : Intertwined (ann i) (annOp i) := by sorry

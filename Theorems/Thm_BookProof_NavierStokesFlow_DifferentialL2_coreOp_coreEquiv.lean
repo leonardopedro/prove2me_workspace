@@ -27,8 +27,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-eorem coreOp_coreEquiv (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
-    (p : MvPolynomial (Fin d) ℂ) : coreOp T (coreEquiv p) = coreEquiv (T p) := by
-  simp [coreOp]
-
-theorem BookProof.NavierStokesFlow.DifferentialL2.coreOp_coreEquiv := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.coreOp_coreEquiv (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
+    (p : MvPolynomial (Fin d) ℂ) : coreOp T (coreEquiv p) = coreEquiv (T p) := by sorry

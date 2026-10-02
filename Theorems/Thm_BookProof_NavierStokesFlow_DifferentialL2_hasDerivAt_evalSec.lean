@@ -27,11 +27,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
- [Ne.symm hj]
-        rw [hpd]
-        simp only [map_mul, MvPolynomial.eval_X] at h ⊢
-        convert h using 1
-        all_goals first | rfl | ring
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_evalSec (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
-    HasDerivAt ( := by sorry
+    HasDerivAt (fun t : ℝ => MvPolynomial.eval (fun j => (((sec i x t) j : ℝ) : ℂ)) p)
+      (MvPolynomial.eval (fun j => ((x j : ℝ) : ℂ)) (pderiv i p)) (x i) := by sorry

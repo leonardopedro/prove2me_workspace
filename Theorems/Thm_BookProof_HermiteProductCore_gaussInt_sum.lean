@@ -14,9 +14,5 @@ open SchwartzMap
 
 noncomputable section
 
-un x => ?_)
-  simp [add_mul]
-
-theorem BookProof.HermiteProductCore.gaussInt_sum (c : ℂ) (r : MvPolynomial (Fin d) ℂ) :
-    gaussInt (c • r) = c * gaussInt r := by
-  rw [gauss := by sorry
+theorem BookProof.HermiteProductCore.gaussInt_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
+    gaussInt (∑ v ∈ s, f v) = ∑ v ∈ s, gaussInt (f v) := by sorry

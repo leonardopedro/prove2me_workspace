@@ -29,6 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.add {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
     Intertwined (T + S) (T' + S') := by sorry

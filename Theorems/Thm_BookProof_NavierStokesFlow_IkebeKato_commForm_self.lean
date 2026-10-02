@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.commForm_self
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterFarisLavineCore
@@ -13,9 +14,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 
-t, proved -/
-
-theorem BookProof.NavierStokesFlow.IkebeKato.commForm_self (c : ι → ℝ) (x : maxDom c) : commForm (diagMax c) (dia := by sorry
+theorem BookProof.NavierStokesFlow.IkebeKato.commForm_self (c : ι → ℝ) (x : maxDom c) : commForm (diagMax c) (diagMax c) x = 0 := by sorry

@@ -20,10 +20,7 @@ open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
 open ContinuousLinearMap
 
- in
 theorem BookProof.ChapterH8.krylovOrthonormal_nested {H : E →ₗ[ℂ] E} {v : E} {m n : ℕ} (hmn : m ≤ n)
     (i : Fin m) :
     krylovOrthonormalSeq H v (i : ℕ)
-      = krylovOrthonormalSeq H v ((Fin.castLE hmn i : Fin n) : ℕ) := rfl
-
-omit [Complete := by sorry
+      = krylovOrthonormalSeq H v ((Fin.castLE hmn i : Fin n) : ℕ) := by sorry

@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.fockH_symmetricOn
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterDirectSumEsa
@@ -20,7 +21,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
 
 

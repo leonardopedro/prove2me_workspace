@@ -29,11 +29,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-') :
-    Intertwined (T.comp S) (T'.comp S') := fun x => by
-  simp only [LinearMap.comp_apply, hS x, hT (S x)]
-
-theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.id : Intertwined LinearMap.id LinearMap.id := fun _ => rfl
-
-theorem Intertwined.sum {ι : Type*} (s : Finset ι)
-    {T : ι → lpFiniteModes Vel →ₗ[ℂ] lpFiniteMode := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.id : Intertwined LinearMap.id LinearMap.id := by sorry

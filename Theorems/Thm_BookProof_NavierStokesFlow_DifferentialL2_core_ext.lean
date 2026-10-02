@@ -29,9 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-njective
-    (Submodule.injective_subtype (lpFiniteModes Vel)) ?_
-  rw [Submodule.map_span, Submodule.map_top, Submodule.range_subtype, ← Set.range_comp]
-  exact lpFiniteModes_eq_span.symm
-
-/-- Two linear maps out of the finite-mode core agree as soon as the := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.core_ext {M : Type*} [AddCommGroup M] [Module ℂ M]
+    {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by sorry

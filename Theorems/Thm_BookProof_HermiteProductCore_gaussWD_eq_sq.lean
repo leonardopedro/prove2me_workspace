@@ -14,6 +14,4 @@ open SchwartzMap
 
 noncomputable section
 
-nctions` by Fubini. -/
-
-/-- The Gaussian weight `e^{-‖x‖²/2} = := by sorry
+theorem BookProof.HermiteProductCore.gaussWD_eq_sq (x : Vd d) : gaussWD x = gaussD x * gaussD x := by sorry

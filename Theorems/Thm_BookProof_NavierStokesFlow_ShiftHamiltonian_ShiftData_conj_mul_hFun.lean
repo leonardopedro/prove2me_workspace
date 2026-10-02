@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.conj_mul_hFun
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
@@ -15,7 +16,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.conj_mul_hFun (X Y : ι → ℂ) (β : ι) :
     (starRingEnd ℂ) (X β) * S.hFun Y β

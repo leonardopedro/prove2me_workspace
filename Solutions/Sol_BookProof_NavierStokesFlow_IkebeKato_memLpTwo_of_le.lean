@@ -11,18 +11,16 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-g h.summable
-
-theorem solution (f : L2I ι) {g : ι → ℂ} (h : ∀ k, ‖g k‖ ≤ ‖(f : ι → ℂ) k‖) : :=
+theorem solution (f : L2I ι) {g : ι → ℂ} (h : ∀ k, ‖g k‖ ≤ ‖(f : ι → ℂ) k‖) :
     Memℓp g 2 :=
-    memLpTwo_of_summable_normSq
+  memLpTwo_of_summable_normSq
       (Summable.of_nonneg_of_le (fun k => sq_nonneg _)
         (fun k => by nlinarith [norm_nonneg (g k), norm_nonneg ((f : ι → ℂ) k), h k])
-        (summa
+        (summable_normSq f))

@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterFarisLavineCore
@@ -16,7 +17,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_essentiallySelfAdjointOn_core :
     EssentiallySelfAdjointOn (lpFiniteModes ι)

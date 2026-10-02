@@ -27,11 +27,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-) : ℂ)
-      = fun j => ((x j : ℝ) : ℂ) := by
-    funext j
-    rw [Function.update_apply]
-    by_cases hj : j = i <;> simp [hj]
-  rwa [hfun] at h
-
-theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_pgFun_sec (i : Fin d) (p : M := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_pgFun_sec (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    HasDerivAt (fun t : ℝ => pgFun p (sec i x t))
+      (pgFun (pderiv i p - (1/2 : ℂ) • (X i * p)) x) (x i) := by sorry

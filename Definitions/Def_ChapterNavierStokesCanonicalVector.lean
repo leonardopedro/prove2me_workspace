@@ -2,8 +2,6 @@ import Theorems.Thm_raise_injective
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
 
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
-
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Mathlib
 
@@ -331,7 +329,9 @@ noncomputable def symProdFun (i k : Fin 3) (X : Vel → ℂ) (γ : Vel) : ℂ :=
 noncomputable def coreState (β : Vel) : lpFiniteModes Vel :=
   ⟨lp.single 2 β 1, lpSingle_mem_lpFiniteModes β 1⟩
 
-## The Navier–Stokes reading of the coefficients
+
+
+/-! ## The Navier–Stokes reading of the coefficients
 
 At one Eulerian fiber the quadratic symbol of the Navier–Stokes generator is
 `A_i(u) = u_j u_{i,j} − ν u_{i,jj}`, an affine function of the velocity whose linear part
@@ -345,6 +345,10 @@ noncomputable def nsQuadraticH (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (l
     lpFiniteModes Vel →ₗ[ℂ] lpFiniteModes Vel :=
   canH grad (fun i => -(nu * lap i))
 
-/-- **ThCanonicalVector
+
+
+
+
+end CanonicalVector
 
 end BookProof.NavierStokesFlow

@@ -1,7 +1,11 @@
 -- Generated from ChapterHermiteProductCore.lean — theorem BookProof.HermiteProductCore.integrable_gwFun
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
+open BookProof.HermiteCore
 open BookProof.HermiteProductCore
+
+variable {d : ℕ}
 
 
 

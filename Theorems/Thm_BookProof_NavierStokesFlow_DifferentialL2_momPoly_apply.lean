@@ -26,7 +26,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-  mulXPoly i p = X i * p := rfl
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.momPoly_apply (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    momPoly i p = C (-Complex.I) * (pderiv i p - C (1/2 := by sorry
+    momPoly i p = C (-Complex.I) * (pderiv i p - C (1/2 : ℂ) * (X i * p)) := by sorry

@@ -4,12 +4,16 @@ import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitary
 
 variable {N : ℕ} [NeZero N]
+variable {X : Type*}
 
 
 open scoped BigOperators Matrix TensorProduct
 
 
 
-namics-based unitary
-(and *no* basis choice) a genuine conditional probability law
-`z ↦ |Ψ_t(x, z)|²` for every input `x`: it is a probability distr := by sorry
+theorem BookProof.ChapterContinuityUnitary.condProb_of_continuity (v : X → (ZMod N → ℝ)) (t : ℝ)
+    (psi : X → ZMod N → ℂ) (hpsi : ∀ x, ∑ z, ‖psi x z‖ ^ 2 = 1) (x : X) :
+    (∑' z, bornPMF (v x) t (psi x) (hpsi x) z) = 1 ∧
+      ∀ B : Finset (ZMod N),
+        ∑ z ∈ B, bornPMF (v x) t (psi x) (hpsi x) z
+          = ENNReal.ofReal (bornRecover (v x) t (psi x) B) := by sorry

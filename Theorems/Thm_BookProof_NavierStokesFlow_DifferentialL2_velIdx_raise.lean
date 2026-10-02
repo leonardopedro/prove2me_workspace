@@ -27,5 +27,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-as a finitely supported multi-index. -/
-def velIdx : Vel ≃ (Fin 3 →₀ ℕ) := Finsupp.equivFunO := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.velIdx_raise (i : Fin 3) (b : Vel) :
+    velIdx (raise i b) = velIdx b + Finsupp.single i 1 := by sorry

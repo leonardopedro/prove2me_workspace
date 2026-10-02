@@ -27,8 +27,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-m operator** `πᵢ = −i ∂/∂uᵢ` on the Hermite core of `L²(ℝᵈ)`. -/
-def momOp (i : Fin d) : (polyGaussCore (d := d)) →ₗ[ℂ] (polyGaussCore (d := d)) :=
-  coreOp (momPoly i)
-
-/-- **The position operator is mu := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by sorry

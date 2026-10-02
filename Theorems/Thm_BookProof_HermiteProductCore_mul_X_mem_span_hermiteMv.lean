@@ -14,10 +14,6 @@ open SchwartzMap
 
 noncomputable section
 
- = a i - 1 := by simp [Finsupp.tsub_apply]
-  rw [hermiteMv_erase i a, hermiteMv_erase i (a + Finsupp.single i 1),
-    hermiteMv_erase i (a - Finsupp.single i 1), hrest _ hadd, hrest _ hsub, hai, hsi,
-    ← mul_assoc, hermiteFactor_X_mul i (a i)]
-  rw [add_mul, smul_mul_assoc]
-
-/-- The span of the product Hermite p := by sorry
+theorem BookProof.HermiteProductCore.mul_X_mem_span_hermiteMv (i : Fin d) {p : MvPolynomial (Fin d) ℂ}
+    (hp : p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d)))) :
+    X i * p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d))) := by sorry

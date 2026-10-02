@@ -17,6 +17,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     ((momOp i (coreEquiv p) : polyGaussCore (d := d)) : L2d d)

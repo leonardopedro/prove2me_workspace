@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.mem_maxDom
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
@@ -12,10 +13,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
-
-const_smul a
 
 theorem BookProof.NavierStokesFlow.IkebeKato.mem_maxDom {c : ι → ℝ} {f : L2I ι} :
-    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι := by sorry
+    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι → ℂ) k) 2 := by sorry

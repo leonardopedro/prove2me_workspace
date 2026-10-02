@@ -220,10 +220,13 @@ noncomputable def testState (κ : Fin d → ℝ) (i₀ : Fin d) : maxDom (fockSy
 
 
 
-p0    positivity
-  positivity
 
-/-! ## Essei _ => by nlinarith [hκ i]
+
+
+
+/-! ## Essential self-adjointness -/
+
+
 
 end FockManyMode
 

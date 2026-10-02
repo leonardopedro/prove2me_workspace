@@ -9,7 +9,4 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-t 2
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp ( := by sorry
+theorem BookProof.HermiteCore.hasDerivAt_gaussH (x : ℝ) : HasDerivAt gaussH (-(x / 2) * gaussH x) x := by sorry

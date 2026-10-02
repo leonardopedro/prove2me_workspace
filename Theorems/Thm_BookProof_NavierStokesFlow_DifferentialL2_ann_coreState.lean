@@ -35,7 +35,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-### The ladder action on the basis states -/
-
-theorem BookProof.NavierStokesFlow.DifferentialL2.ann_coreState (b g : Vel) : crd (coreState b) g = if g = b then 1 else 0 := by
-  simp [crd, coreState, lp.single_apply, Pi.singl := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.ann_coreState (i : Fin 3) (b : Vel) :
+    ann i (coreState b) = ((Real.sqrt ((b i : ℝ)) : ℝ) : ℂ) • coreState (lower i b) := by sorry

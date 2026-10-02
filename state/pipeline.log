@@ -208395,3 +208395,60 @@ Note: It is not possible to treat `Dom` as an implicitly bound variable he)
 N)
 07:42:52 submitting thm:BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom (attempt 1)
 07:43:04 thm:BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom: accepted, waiting on the compiler
+07:58:56 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded: FAIL (publish FAILED: formal statement does not compile: line 20: unknown namespace `FarisLavine`)
+07:59:05 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm (attempt 1)
+07:59:54 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm: accepted, waiting on the compiler
+07:59:55 thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds: FAIL (publish FAILED: formal statement does not compile: line 17: unknown namespace `FarisLavine`; line 20: unexpected identifier; expected command; line 27)
+08:00:03 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound (attempt 1)
+08:00:51 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound: accepted, waiting on the compiler
+08:00:52 thm:BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom: FAIL (publish FAILED: formal statement does not compile: line 16: unknown namespace `FarisLavine`; line 19: unexpected identifier; expected command; line 20)
+08:01:01 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound (attempt 1)
+08:01:32 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound: accepted, waiting on the compiler
+08:11:31 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `ShiftData`
+
+Note: It is not possible to treat `ShiftData` as an implic)
+08:11:40 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn (attempt 1)
+08:12:38 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn: accepted, waiting on the compiler
+08:12:38 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `ShiftData`
+
+Note: It is not possible to treat `ShiftData` as an implic)
+08:12:39 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound: FAIL (publish FAILED: formal statement does not compile: line 16: Unknown identifier `ShiftData`
+
+Note: It is not possible to treat `ShiftData` as an implic)
+08:12:47 submitting thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt (attempt 1)
+08:13:33 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt: accepted, waiting on the compiler
+08:13:33 submitting thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint (attempt 1)
+08:14:12 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: accepted, waiting on the compiler
+08:20:52 sync: read 755 definition publish job(s)
+08:21:12 sync: read 5812 problem publish job(s)
+08:21:17 sync: read 755 definition publish job(s)
+08:21:37 sync: read 5812 problem publish job(s)
+08:21:42 sync: read 755 definition publish job(s)
+08:22:01 sync: read 5812 problem publish job(s)
+08:22:01 submitting thm:BookProof_ChapterH8_krylov_li_of_le (attempt 2)
+08:22:48 thm:BookProof_ChapterH8_krylov_li_of_le: accepted, waiting on the compiler
+08:22:49 submitting thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core (attempt 2)
+08:22:57 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+08:22:57 submitting thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded (attempt 2)
+08:23:04 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded: accepted, waiting on the compiler
+08:28:08 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt: DONE
+08:28:17 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn: FAIL (publish FAILED: formal statement does not compile: line 13: Unknown identifier `ShiftData`
+
+Note: It is not possible to treat `ShiftData` as an implic)
+08:28:17 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: DONE
+08:28:17 summary: 1683 done, 183 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+08:28:17 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (1 item(s)), target name already declared by published def bundle ChapterContinuityUnitary (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (2 item(s)), target name already declared by published def bundle ChapterHermiteFunctions (1 item(s)), target name already declared by published def bundle ChapterNavierStokesDifferentialL2 (1 item(s))
+08:28:17 chunk: 13 item(s) resolved in 3810s
+08:37:10 thm:BookProof_ChapterH8_krylov_li_of_le: DONE
+08:37:19 submitting thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne' (attempt 2)
+08:37:29 thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+08:37:29 submitting thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds (attempt 2)
+08:37:38 thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds: accepted, waiting on the compiler
+08:37:39 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core: DONE
+08:37:39 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded: DONE
+08:37:47 submitting thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt (attempt 1)
+08:37:47 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt: accepted, waiting on the compiler
+08:37:47 submitting thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint (attempt 1)
+08:37:47 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: accepted, waiting on the compiler
+08:37:48 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt: DONE
+08:37:48 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: DONE

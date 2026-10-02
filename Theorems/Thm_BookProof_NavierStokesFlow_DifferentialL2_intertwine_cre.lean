@@ -34,6 +34,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-_smul, embedCore_coe, coreState_coe,
-      velUnitary_single, hermiteVel, velIdx_lower]
-  rw [hR, embedCore_coreState, coreOp_coe, map_smul, pgLp_smul, annPoly_hermiteMvLp, := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.intertwine_cre (i : Fin 3) : (creOp i).comp embedCore = embedCore.comp (cre i) := by sorry

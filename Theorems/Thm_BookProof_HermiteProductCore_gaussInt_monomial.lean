@@ -15,7 +15,5 @@ open SchwartzMap
 
 noncomputable section
 
-Moment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by
-  have h := gint_ibp ((Polynomial.X : Polynomial ℝ) ^ k) 1
-  rw [Polynomial.derivative_X_pow, mul_one, Polynomial.derivative_one, sub_zero, mul_one] at h
-  r := by sorry
+theorem BookProof.HermiteProductCore.gaussInt_monomial (a : Fin d →₀ ℕ) :
+    gaussInt (monomial a (1 : ℂ)) = ∏ i, ((gaussMoment (a i) : ℝ) : ℂ) := by sorry

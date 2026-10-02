@@ -19,8 +19,8 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-m operator** `πᵢ = −i ∂/∂uᵢ` on the Hermite core of `L²(ℝᵈ)`. -/
-def momOp (i : Fin d) : (polyGaussCore (d := d)) →ₗ[ℂ] (polyGaussCore (d := d)) :=
-  coreOp (momPoly i)
+theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by
 
-/-- **The position operator is mu := ltiplication by the coordinate**, poi
+  simp [pgFun, mulXPoly]
+  ring

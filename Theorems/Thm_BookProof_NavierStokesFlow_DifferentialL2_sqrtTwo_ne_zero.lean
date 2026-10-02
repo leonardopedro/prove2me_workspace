@@ -26,8 +26,4 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-, map_neg,
-    hI]
-  linear_combination (C Complex.I * (pderiv i) p) * h2
-
-/-! ### The tr := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.sqrtTwo_ne_zero : ((Real.sqrt 2 : ℝ) : ℂ) ≠ 0 := by sorry

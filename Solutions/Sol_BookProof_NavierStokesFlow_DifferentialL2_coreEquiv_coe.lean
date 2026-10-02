@@ -19,9 +19,5 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-nearEquiv.ofInjective (pgMap (d := d)) (pgMap_injective (d := d))
-
 theorem solution (p : MvPolynomial (Fin d) ℂ) :
     ((coreEquiv p : polyGaussCore (d := d)) : L2d d) = pgLp p := rfl
-
-/-- An operator on the core, given by a := 

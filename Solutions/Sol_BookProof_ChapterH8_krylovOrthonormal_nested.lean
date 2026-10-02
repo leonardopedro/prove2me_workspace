@@ -19,10 +19,7 @@ open ContinuousLinearMap
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
- in
 theorem solution {H : E →ₗ[ℂ] E} {v : E} {m n : ℕ} (hmn : m ≤ n)
     (i : Fin m) :
     krylovOrthonormalSeq H v (i : ℕ)
       = krylovOrthonormalSeq H v ((Fin.castLE hmn i : Fin n) : ℕ) := rfl
-
-omit [Complete := Space

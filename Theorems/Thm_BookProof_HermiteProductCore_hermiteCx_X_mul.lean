@@ -14,6 +14,6 @@ open SchwartzMap
 
 noncomputable section
 
-omial.X : Polynomial ℂ) * hermiteCx n
-      = hermiteCx (n + 1) + (n : ℂ) • hermiteCx (n - 1) := by
-  have h := congrArg (Pol := by sorry
+theorem BookProof.HermiteProductCore.hermiteCx_X_mul (n : ℕ) :
+    (Polynomial.X : Polynomial ℂ) * hermiteCx n
+      = hermiteCx (n + 1) + (n : ℂ) • hermiteCx (n - 1) := by sorry

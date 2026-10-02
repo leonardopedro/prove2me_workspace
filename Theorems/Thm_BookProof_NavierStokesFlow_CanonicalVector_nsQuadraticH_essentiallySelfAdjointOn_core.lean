@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.nsQuadraticH_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterFarisLavineCore
@@ -16,13 +17,9 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
-The quantized full quadratic Navier–Stokes symbol is essentially self-adjoint on the
-Hermite core of the three velocity components**, for every viscosity, every velocity
-gradient and every velocity Laplacian at the fiber. -/
 theorem BookProof.NavierStokesFlow.CanonicalVector.nsQuadraticH_essentiallySelfAdjointOn_core
     (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (lap : Fin 3 → ℝ) :
     EssentiallySelfAdjointOn (lpFiniteModes Vel)
-      ((lpFiniteModes Vel).subtype.comp (nsQuadraticH nu grad lap)) :=
-  c := by sorry
+      ((lpFiniteModes Vel).subtype.comp (nsQuadraticH nu grad lap)) := by sorry

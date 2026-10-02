@@ -14,7 +14,6 @@ open SchwartzMap
 
 noncomputable section
 
-product
-Hermite core" is justified here: the products `∏ᵢ He_{αᵢ}(xᵢ)` of probabilists'
-Hermite polynomials span the same space, because the three-term recurrence
-`X · He_n = He_{n+1} + n · He_{n-1}` makes their span st := by sorry
+theorem BookProof.HermiteProductCore.derivative_hermiteZ (n : ℕ) :
+    Polynomial.derivative (Polynomial.hermite (n + 1))
+      = Polynomial.C ((n : ℤ) + 1) * Polynomial.hermite n := by sorry

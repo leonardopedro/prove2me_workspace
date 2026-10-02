@@ -19,10 +19,10 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-as a finitely supported multi-index. -/
-def velIdx : Vel ≃ (Fin 3 →₀ ℕ) := Finsupp.equivFunO :=
-  nFinite.symm
-  
-  @[simp] theorem velIdx_apply (b : Vel) (i : Fin 3) : velIdx b i = b i := rfl
-  
-  th
+theorem solution (i : Fin 3) (b : Vel) :
+    velIdx (raise i b) = velIdx b + Finsupp.single i 1 := by
+
+  ext j
+  by_cases hj : j = i
+  · subst hj; simp
+  · simp [raise_of_ne hj, Ne.symm hj]

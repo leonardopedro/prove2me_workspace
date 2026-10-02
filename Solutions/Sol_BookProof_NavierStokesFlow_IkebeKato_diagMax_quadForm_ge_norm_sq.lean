@@ -11,14 +11,19 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-sq_nonneg _)
-
 theorem solution (c : ι → ℝ) (hc : ∀ k, 1 ≤ c k) (x : maxDom c) :
-    ‖(x : L2I ι)‖ ^ 2 ≤ quadForm := 
+    ‖(x : L2I ι)‖ ^ 2 ≤ quadForm (diagMax c) x := by
+
+  have hnorm := lp.hasSum_norm (p := 2) (E := fun _ : ι => ℂ) (by norm_num) ((x : L2I ι))
+  have h2 : ((2 : ℝ≥0∞).toReal) = ((2 : ℕ) : ℝ) := by norm_num
+  rw [h2] at hnorm
+  simp only [Real.rpow_natCast] at hnorm
+  refine hasSum_le (fun k => ?_) hnorm (diagMax_hasSum_quadForm c x)
+  nlinarith [sq_nonneg ‖((x : L2I ι) : ι → ℂ) k‖, hc k]

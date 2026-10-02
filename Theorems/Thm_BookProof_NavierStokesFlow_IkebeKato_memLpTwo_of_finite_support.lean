@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_finite_support
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesDeficiency
@@ -16,9 +17,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 
-e_normSq f))
-
-theorem BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_finite_support {g : ι → ℂ} (h : (Function.support g).Finite) : := by sorry
+theorem BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_finite_support {g : ι → ℂ} (h : (Function.support g).Finite) :
+    Memℓp g 2 := by sorry

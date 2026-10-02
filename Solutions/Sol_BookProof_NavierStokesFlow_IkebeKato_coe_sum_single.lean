@@ -10,25 +10,23 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-, mul_zero])
-
 theorem solution [DecidableEq ι] (S : Finset ι) (u : ι → ℂ) (k : ι) :
-    ((∑ i ∈ S, lp.single 2 i (u i) : L2I ι) : ι → ℂ) k = if k ∈ S th :=
-  en u k else 0 := by
-    classical
-    induction S using Finset.induction with
-    | empty => simp
-    | insert a S ha ih =>
-        rw [Finset.sum_insert ha]
-        simp only [lp.coeFn_add, Pi.add_apply, lp.single_apply, Pi.single_apply, ih]
-        by_cases hka : k = a
-        · subst hka
-          simp [ha]
-        · simp [hka, Fins
+    ((∑ i ∈ S, lp.single 2 i (u i) : L2I ι) : ι → ℂ) k = if k ∈ S then u k else 0 := by
+
+  classical
+  induction S using Finset.induction with
+  | empty => simp
+  | insert a S ha ih =>
+      rw [Finset.sum_insert ha]
+      simp only [lp.coeFn_add, Pi.add_apply, lp.single_apply, Pi.single_apply, ih]
+      by_cases hka : k = a
+      · subst hka
+        simp [ha]
+      · simp [hka, Finset.mem_insert]

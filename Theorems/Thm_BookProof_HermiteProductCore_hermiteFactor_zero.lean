@@ -14,6 +14,4 @@ open SchwartzMap
 
 noncomputable section
 
-_i)` in the `i`-th coordinate. -/
-def hermiteFactor (i : Fin d) (n : ℕ) : MvPolynomial (Fin d) ℂ :=
-  Polynomial.aeval (X i : MvPolynomial (Fi := by sorry
+theorem BookProof.HermiteProductCore.hermiteFactor_zero (i : Fin d) : hermiteFactor i 0 = 1 := by sorry

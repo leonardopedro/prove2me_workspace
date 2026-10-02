@@ -1,6 +1,7 @@
 -- Generated from ChapterHermiteFunctions.lean — solution of BookProof.HermiteCore.integrable_poly_mul_gaussH
 import Mathlib
 import Definitions.Def_ChapterHermiteFunctions
+import Theorems.Thm_BookProof_HermiteCore_integrable_poly_mul_exp_neg
 open BookProof.HermiteCore
 
 

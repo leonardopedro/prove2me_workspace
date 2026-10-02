@@ -14,8 +14,5 @@ open SchwartzMap
 
 noncomputable section
 
-prod_coord (fun i t => (((t ^ (a i) * Real.exp (-t ^ 2 / 2) : ℝ)) : ℂ))]
-  refine Finset.prod_congr rfl fun i _ => ?_
-  rw [gaussMoment, gint]
-  rw [← integral_complex_ofReal]
-  refine integral_congr_ae (Filter.Eventually.of_forall fun := by sorry
+theorem BookProof.HermiteProductCore.gaussInt_pderiv (j : Fin d) (r : MvPolynomial (Fin d) ℂ) :
+    gaussInt (pderiv j r) = gaussInt (X j * r) := by sorry

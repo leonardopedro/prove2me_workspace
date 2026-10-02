@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterDirectSumEsa
@@ -20,12 +21,9 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
 
-
-, hstep, hc0, hc1]
-  simp
 
 theorem BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) (hpos : 0 < κ i₀) :
-    commForm (fockH hκ) (diagMax (fockSym κ)) := by sorry
+    commForm (fockH hκ) (diagMax (fockSym κ)) (testState κ i₀) ≠ 0 := by sorry

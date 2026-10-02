@@ -35,8 +35,6 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-eModes Vel).subtype)
-    velUnitary_mem_core
-
-theorem BookProof.NavierStokesFlow.DifferentialL2.embedCore_coreState (x : lpFiniteModes Vel) :
-    ((embedCore x : polyGaussCore (d := 3)) : L2d 3) = ve := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.embedCore_coreState (b : Vel) :
+    embedCore (coreState b)
+      = coreEquiv (((hermiteMvNorm (velIdx b) : ℝ) : ℂ)⁻¹ • hermiteMv (velIdx b)) := by sorry

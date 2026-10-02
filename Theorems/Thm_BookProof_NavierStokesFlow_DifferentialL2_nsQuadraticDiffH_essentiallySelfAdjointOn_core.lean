@@ -29,9 +29,7 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-raticDiffH (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (lap : Fin 3 → ℝ) :
-    (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=
-  nsDiffH grad (fun i => -(nu * lap i))
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.nsQuadraticDiffH_essentiallySelfAdjointOn_core
-    (nu : ℝ) := by sorry
+    (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (lap : Fin 3 → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 3))
+      ((polyGaussCore (d := 3)).subtype.comp (nsQuadraticDiffH nu grad lap)) := by sorry

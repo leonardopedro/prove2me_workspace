@@ -13,9 +13,6 @@ variable {N : ℕ} [NeZero N]
 variable {N : ℕ} [NeZero N]
 
 set_option maxHeartbeats 1000000 in
-tinuityUnitary_zero (v : ZMod N → ℝ) : continuityUnitary v 0 = 1 := by
-  simp [continuityUnitary, NormedSpace.exp_zero]
+theorem solution (v : ZMod N → ℝ) : continuityUnitary v 0 = 1 := by
 
-/-- `U` is a one-parameter group: `U (s + t) = U s :=
-   · U t`. -/
-  theorem continuityUn
+  simp [continuityUnitary, NormedSpace.exp_zero]

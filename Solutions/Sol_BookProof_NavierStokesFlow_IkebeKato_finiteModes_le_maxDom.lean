@@ -12,20 +12,18 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-mode core -/
+theorem solution (c : ι → ℝ) : lpFiniteModes ι ≤ maxDom c := by
 
-theorem solution (c : ι → ℝ) : lpFiniteModes ι :=
-   ≤ maxDom c := by
-    intro f hf
-    refine memLpTwo_of_finite_support (Set.Finite.subset (mem_lpFiniteModes.mp hf) ?_)
-    intro k hk
-    simp only [Function.mem_support] at hk ⊢
-    intro h0
-    exact hk (by rw [
+  intro f hf
+  refine memLpTwo_of_finite_support (Set.Finite.subset (mem_lpFiniteModes.mp hf) ?_)
+  intro k hk
+  simp only [Function.mem_support] at hk ⊢
+  intro h0
+  exact hk (by rw [h0, mul_zero])

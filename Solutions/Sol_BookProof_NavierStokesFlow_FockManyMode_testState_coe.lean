@@ -11,7 +11,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
 
 variable {d : ℕ} {κ : Fin d → ℝ}

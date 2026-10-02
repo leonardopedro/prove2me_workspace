@@ -43,77 +43,6 @@ noncomputable section
 /-- The (probabilists') Hermite polynomials, as real polynomials. -/
 def hermiteR (n : ℕ) : Polynomial ℝ := (Polynomial.hermite n).map (Int.castRingHom ℝ)
 
-
-
-
-
-
-
-
-
-
-
-/-! ## The Gaussian weights -/
-
-/-- The Gaussian weight `e^{-x²/2}` of the Hermite polynomials. -/
-def gaussW (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 2)
-
-/-- The half weight `e^{-x²/4}`, which turns Hermite *polynomials* into Hermite
-*functions*. -/
-def gaussH (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 4)
-
-
-
-
-
-
-
-
-
-hens -import Mathlib
-
-/-!
-# The Hermite functions: orthonormality, completeness, and the Hermite core of `L²(ℝ)`
-
-This chapter supplies the concrete object that the abstract Galerkin/Friedrichs
-chapter (`BookProof/ChapterHermiteGalerkinFriedrichs.lean`) and the quantum
-gravity chapter (`BookProof/ChapterQuantumGravityDensitized.lean`) so far only
-used *abstractly*: a genuine **Hilbert basis of Hermite functions** of `L²(ℝ)`,
-and hence a genuine **Hermite core** — the space of finite linear combinations of
-Hermite functions, i.e. "polynomials times the Gaussian".
-
-The convention is the probabilists' one: `H_{n+1} = X H_n − H_n'`
-(`Polynomial.hermite` of Mathlib), and the Hermite *functions* are
-
-  `ψ_n(x) = H_n(x) e^{-x²/4}`,   `∫ ψ_m ψ_n = δ_{mn} n! √(2π)`.
-
-Contents:
-
-* `hermiteR`, `derivative_hermiteR`, `hermiteR_ode` — the polynomials, the
-  derivative rule `H_{n+1}' = (n+1) H_n` and the Hermite differential equation;
-* `gint_ibp` — integration by parts against the Gaussian weight on all of `ℝ`;
-* `hermiteInner_eq` — the orthogonality relations
-  `∫ H_m H_n e^{-x²/2} = δ_{mn} n! √(2π)`;
-* `orthonormal_hermiteLp` — the normalized Hermite functions are orthonormal in
-  `L²(ℝ, ℂ)`;
-* `hermiteLp_span_dense`, `hermiteBasis` — completeness: they form a Hilbert
-  basis (proved from scratch: orthogonality to all `xⁿ e^{-x²/4}` forces the
-  Fourier transform of `e^{-x²/4} u` to vanish identically);
-* `hermiteFun_oscillator` — each Hermite function is an eigenfunction of the
-  harmonic oscillator `-d²/dx² + x²/4` with eigenvalue `n + 1/2`.
--/
-
-namespace BookProof.HermiteCore
-
-open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
-
-noncomputable section
-
-/-! ## The Hermite polynomials over `ℝ` -/
-
-/-- The (probabilists') Hermite polynomials, as real polynomials. -/
-def hermiteR (n : ℕ) : Polynomial ℝ := (Polynomial.hermite n).map (Int.castRingHom ℝ)
-
 theorem hermiteR_zero : hermiteR 0 = 1 := by
   simp [hermiteR, Polynomial.hermite_zero]
 
@@ -142,15 +71,7 @@ theorem derivative_hermiteR (n : ℕ) :
     rw [hC]
     ring
 
-/-- The Hermite differential equation `H_n'' − X H_n' + n H_n = 0`. -/
-theorem hermiteR_ode (n : ℕ) :
-    derivative (derivative (hermiteR n)) - X * derivative (hermiteR n) + C (n : ℝ) * hermiteR n
-      = 0 := by
-  have h := derivative_hermiteR n
-  rw [hermiteR_succ n, derivative_sub, derivative_mul, derivative_X] at h
-  have hC : (C ((n : ℝ) + 1) : Polynomial ℝ) = C (n : ℝ) + 1 := by rw [map_add, map_one]
-  rw [hC] at h
-  linear_combination -h
+
 
 /-! ## The Gaussian weights -/
 
@@ -166,167 +87,9 @@ theorem gaussH_pos (x : ℝ) : 0 < gaussH x := Real.exp_pos _
 theorem continuous_gaussH : Continuous gaussH := by
   unfold gaussH; fun_prop
 
-theorem continuous_gaussW : Continuous gaussW := by
-  unfold gaussW; fun_prop
 
-theorem gaussW_pos (x : ℝ) : 0 < gaussW x := Real.exp_pos _
 
-theorem gaussH_sq (x : ℝ) : gaussH x * gaussH x = gaussW x := by
-  rw [gaussH, gaussW, ← Real.exp_add]; ring
 
-theorem hasDerivAt_gaussW (x : ℝ) : HasDerivAt gaussW (-x * gaussW x) x := by
-  have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-x) x := by
-    have h0 : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-(2 * x) / 2) x := by
-      simpa using ((hasDerivAt_pow 2 x).neg).div_const 2
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 2)) (-x * Real.exp (-x ^ 2 / 2)) x
-  simpa [mul_comm] using h.exp
-
-theorem hasDerivAt_gaussH (x : ℝ) : HasDerivAt gaussH (-(x / 2) * gaussH x) x := by
-  have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(x / 2)) x := by
-    have h0 : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(2 * x) / 4) x := by
-      simpa using ((hasDerivAt_pow 2 x).neg).div_const 4
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 4)) (-(x / 2) * Real.exp (-x ^ 2 / 4)) x
-  simpa [mul_comm] using h.exp
-
-/-- Every monomial is integrable against a Gaussian. -/
-theorem integrable_pow_mul_exp_neg (k : ℕ) {b : ℝ} (hb : 0 < b) :
-    Integrable (fun x : ℝ => x ^ k * Real.exp (-b * x ^ 2)) := by
-  have hdom : Integrable
-      (fun x : ℝ => ((k.factorial : ℝ) * Real.exp (1 / (2 * b))) * Real.exp (-(b / 2) * x ^ 2)) :=
-    (integrable_exp_neg_mul_sq (by positivity)).const_mul _
-  refine hdom.mono' (Continuous.aestronglyMeasurable (by fun_prop)) ?_
-  filter_upwards with x
-  have hfac : (0 : ℝ) < (k.factorial : ℝ) := by positivity
-  have h1 : |x| ^ k ≤ (k.factorial : ℝ) * Real.exp |x| := by
-    have h := Real.pow_div_factorial_le_exp |x| (abs_nonneg x) k
-    rw [div_le_iff₀ hfac] at h
-    linarith [h]
-  have h2 : |x| - b * x ^ 2 ≤ 1 / (2 * b) - (b / 2) * x ^ 2 := by
-    have hx2 : x ^ 2 = |x| ^ 2 := (sq_abs x).symm
-    rw [hx2, ← sub_nonneg]
-    have key : 1 / (2 * b) - b / 2 * |x| ^ 2 - (|x| - b * |x| ^ 2)
-        = (b * |x| - 1) ^ 2 / (2 * b) := by
-      field_simp
-      ring
-    rw [key]
-    positivity
-  have hnorm : ‖x ^ k * Real.exp (-b * x ^ 2)‖ = |x| ^ k * Real.exp (-b * x ^ 2) := by
-    rw [norm_mul, Real.norm_eq_abs, Real.norm_eq_abs, abs_pow, abs_of_pos (Real.exp_pos _)]
-  rw [hnorm]
-  calc |x| ^ k * Real.exp (-b * x ^ 2)
-      ≤ ((k.factorial : ℝ) * Real.exp |x|) * Real.exp (-b * x ^ 2) := by gcongr
-    _ = (k.factorial : ℝ) * Real.exp (|x| - b * x ^ 2) := by
-          rw [mul_assoc, ← Real.exp_add]; ring_nf
-    _ ≤ (k.factorial : ℝ) * Real.exp (1 / (2 * b) - (b / 2) * x ^ 2) := by gcongr
-    _ = ((k.factorial : ℝ) * Real.exp (1 / (2 * b))) * Real.exp (-(b / 2) * x ^ 2) := by
-          rw [mul_assoc, ← Real.exp_add]; ring_nf
-
-/-- Every polynomial is integrable against a Gaussian. -/
-theorem integrable_poly_mul_exp_neg (p : Polynomial ℝ) {b : ℝ}onp_neg p (b := 1 / 2) (by norm_num)
-  refine h.congr (Filter. :e_import Mathlib
-
-/-!
-# The Hermite functions: orthonormality, completeness, and the Hermite core of `L²(ℝ)`
-
-This chapter supplies the concrete object that the abstract Galerkin/Friedrichs
-chapter (`BookProof/ChapterHermiteGalerkinFriedrichs.lean`) and the quantum
-gravity chapter (`BookProof/ChapterQuantumGravityDensitized.lean`) so far only
-used *abstractly*: a genuine **Hilbert basis of Hermite functions** of `L²(ℝ)`,
-and hence a genuine **Hermite core** — the space of finite linear combinations of
-Hermite functions, i.e. "polynomials times the Gaussian".
-
-The convention is the probabilists' one: `H_{n+1} = X H_n − H_n'`
-(`Polynomial.hermite` of Mathlib), and the Hermite *functions* are
-
-  `ψ_n(x) = H_n(x) e^{-x²/4}`,   `∫ ψ_m ψ_n = δ_{mn} n! √(2π)`.
-
-Contents:
-
-* `hermiteR`, `derivative_hermiteR`, `hermiteR_ode` — the polynomials, the
-  derivative rule `H_{n+1}' = (n+1) H_n` and the Hermite differential equation;
-* `gint_ibp` — integration by parts against the Gaussian weight on all of `ℝ`;
-* `hermiteInner_eq` — the orthogonality relations
-  `∫ H_m H_n e^{-x²/2} = δ_{mn} n! √(2π)`;
-* `orthonormal_hermiteLp` — the normalized Hermite functions are orthonormal in
-  `L²(ℝ, ℂ)`;
-* `hermiteLp_span_dense`, `hermiteBasis` — completeness: they form a Hilbert
-  basis (proved from scratch: orthogonality to all `xⁿ e^{-x²/4}` forces the
-  Fourier transform of `e^{-x²/4} u` to vanish identically);
-* `hermiteFun_oscillator` — each Hermite function is an eigenfunction of the
-  harmonic oscillator `-d²/dx² + x²/4` with eigenvalue `n + 1/2`.
--/
-
-namespace BookProof.HermiteCore
-
-open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
-
-noncomputable section
-
-/-! ## The Hermite polynomials over `ℝ` -/
-
-/-- The (probabilists') Hermite polynomials, as real polynomials. -/
-def hermiteR (n : ℕ) : Polynomial ℝ := (Polynomial.hermite n).map (Int.castRingHom ℝ)
-
-theorem hermiteR_zero : hermiteR 0 = 1 := by
-  simp [hermiteR, Polynomial.hermite_zero]
-
-theorem hermiteR_one : hermiteR 1 = X := by
-  simp [hermiteR]
-
-theorem hermiteR_succ (n : ℕ) :
-    hermiteR (n + 1) = X * hermiteR n - derivative (hermiteR n) := by
-  simp [hermiteR, Polynomial.hermite_succ, Polynomial.derivative_map]
-
-/-- `H_{n+1}' = (n+1) H_n`. -/
-theorem derivative_hermiteR (n : ℕ) :
-    derivative (hermiteR (n + 1)) = C ((n : ℝ) + 1) * hermiteR n := by
-  induction n with
-  | zero => simp [hermiteR_one, hermiteR_zero]
-  | succ n ih =>
-    have key : derivative (hermiteR (n + 1 + 1))
-        = hermiteR (n + 1) + C ((n : ℝ) + 1) * (X * hermiteR n - derivative (hermiteR n)) := by
-      rw [hermiteR_succ (n + 1), derivative_sub, derivative_mul, derivative_X, ih,
-        derivative_C_mul]
-      ring
-    have hC : (C (((n : ℝ) + 1) + 1) : Polynomial ℝ) = C ((n : ℝ) + 1) + 1 := by
-      rw [map_add, map_one]
-    rw [key, ← hermiteR_succ n]
-    push_cast
-    rw [hC]
-    ring
-
-/-- The Hermite differential equation `H_n'' − X H_n' + n H_n = 0`. -/
-theorem hermiteR_ode (n : ℕ) :
-    derivative (derivative (hermiteR n)) - X * derivative (hermiteR n) + C (n : ℝ) * hermiteR n
-      = 0 := by
-  have h := derivative_hermiteR n
-  rw [hermiteR_succ n, derivative_sub, derivative_mul, derivative_X] at h
-  have hC : (C ((n : ℝ) + 1) : Polynomial ℝ) = C (n : ℝ) + 1 := by rw [map_add, map_one]
-  rw [hC] at h
-  linear_combination -h
-
-/-! ## The Gaussian weights -/
-
-/-- The Gaussian weight `e^{-x²/2}` of the Hermite polynomials. -/
-def gaussW (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 2)
-
-/-- The half weight `e^{-x²/4}`, which turns Hermite *polynomials* into Hermite
-*functions*. -/
-def gaussH (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 4)
-
-theorem gaussH_pos (x : ℝ) : 0 < gaussH x := Real.exp_pos _
-
-theorem continuous_gaussH : Continuous gaussH := by
-  unfold gaussH; fun_prop
-
-theorem continuous_gaussW : Continuous gaussW := by
-  unfold gaussW; fun_prop
-
-theorem gaussW_pos (x : ℝ) : 0 < gaussW x := Real.exp_pos _
 
 theorem gaussH_sq (x : ℝ) : gaussH x * gaussH x = gaussW x := by
   rw [gaussH, gaussW, ← Real.exp_add]; ring
@@ -340,14 +103,7 @@ theorem hasDerivAt_gaussW (x : ℝ) : HasDerivAt gaussW (-x * gaussW x) x := by
   show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 2)) (-x * Real.exp (-x ^ 2 / 2)) x
   simpa [mul_comm] using h.exp
 
-theorem hasDerivAt_gaussH (x : ℝ) : HasDerivAt gaussH (-(x / 2) * gaussH x) x := by
-  have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(x / 2)) x := by
-    have h0 : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(2 * x) / 4) x := by
-      simpa using ((hasDerivAt_pow 2 x).neg).div_const 4
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 4)) (-(x / 2) * Real.exp (-x ^ 2 / 4)) x
-  simpa [mul_comm] using h.exp
+
 
 /-- Every monomial is integrable against a Gaussian. -/
 theorem integrable_pow_mul_exp_neg (k : ℕ) {b : ℝ} (hb : 0 < b) :
@@ -400,238 +156,7 @@ theorem integrable_poly_mul_gaussW (p : Polynomial ℝ) :
   simp only [gaussW]
   ring_nf
 
-theorem integrable_poly_mul_gaussH (p : Polynomial ℝ) :
-    Integrable (fun x : ℝ => p.eval x * gaussH x) := by
-  have h := integrable_poly_mul_exp_neg p (b := 1 / 4) (by norm_num)
-  refine h.congr (Filter.Eventually.of_forall fun x => ?_)
-  simp only [gaussH]
-  ring_nf
 
-/-! ## The Gaussian-weighted integral of a polynomial -/
-
-/-- `gint p = ∫: l_l_nt, ← integral_neg]
-    rX]]
-    refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp only [Polynomial.eval_mul]
-    ring
-  rw [hL, hR] at key
- _:=
-
- 0 := by
-  induction m generalizing n with
-  | zero =>o]
-      simp
-  | succ m ih =>
-    cases n with
-    | zero => simpa using hermiteInner_succ_zero m
-    | succ n =>
-      rw [hermiteInner_succ_succ, ih n]
-      by_cases h : m = n
-      · subst h
-        simp [Nat.factorial_succ]
-        ring
-      · simp [h]
-
-/-! ## The Hermite functions in `L²(ℝ, ℂ)` -/
-
-/-- The Hermite function `ψ_n(x) = H_n(iteFun m x * hermiteFun n x = (hermiteR m * hermiteR n).eval x * gaussW x := by
-  simp only [hermiteFun, Polynomial.eval_mul]
-  rw [show (hermiteR m).eval x * gaussH x * ((hermiteR n).eval x * gaussH x)
-      = (hermiteR m).eval x * (hermiteR n).eval n mp.c*  Mrentegral_congr_ae (Filter.Eventually.of_forall fun x => hermiteFun_mul m n x)
-  rw [hint, hermiteInner_eq]
-  by_cases h : m = n
-  · subst h
-    rw [if_pos rfl, if_pos rfl, hermiteNorm_sq]
-    have : (0:ℝ) < (m.factorial : ℝ) * Real.sqrt (2 * Real.pi) := by
-      have : (0 : ℝ) < Real.sqrt (2 * Real.pi) := Real.sqrt_pos.mpr (by positivity)
-      positivity
-    rw [div_self (ne_of_gt this)]
-    norm_num
-  · rw [if_neg h, if_neg h]
-    simp
-
-/-! ## Completeness
-
-The completeness proof is elementary but not short.  If `na (ne [hr   :> huom :p_oL_musynomial.eval_X, Complex.ofReal_mul,
- passimport Mathlib
-
-/-!
-# The Hermite functions: orthonormality, completeness, and the Hermite core of `L²(ℝ)`
-
-This chapter supplies the concrete object that the abstract Galerkin/Friedrichs
-chapter (`BookProof/ChapterHermiteGalerkinFriedrichs.lean`) and the quantum
-gravity chapter (`BookProof/ChapterQuantumGravityDensitized.lean`) so far only
-used *abstractly*: a genuine **Hilbert basis of Hermite functions** of `L²(ℝ)`,
-and hence a genuine **Hermite core** — the space of finite linear combinations of
-Hermite functions, i.e. "polynomials times the Gaussian".
-
-The convention is the probabilists' one: `H_{n+1} = X H_n − H_n'`
-(`Polynomial.hermite` of Mathlib), and the Hermite *functions* are
-
-  `ψ_n(x) = H_n(x) e^{-x²/4}`,   `∫ ψ_m ψ_n = δ_{mn} n! √(2π)`.
-
-Contents:
-
-* `hermiteR`, `derivative_hermiteR`, `hermiteR_ode` — the polynomials, the
-  derivative rule `H_{n+1}' = (n+1) H_n` and the Hermite differential equation;
-* `gint_ibp` — integration by parts against the Gaussian weight on all of `ℝ`;
-* `hermiteInner_eq` — the orthogonality relations
-  `∫ H_m H_n e^{-x²/2} = δ_{mn} n! √(2π)`;
-* `orthonormal_hermiteLp` — the normalized Hermite functions are orthonormal in
-  `L²(ℝ, ℂ)`;
-* `hermiteLp_span_dense`, `hermiteBasis` — completeness: they form a Hilbert
-  basis (proved from scratch: orthogonality to all `xⁿ e^{-x²/4}` forces the
-  Fourier transform of `e^{-x²/4} u` to vanish identically);
-* `hermiteFun_oscillator` — each Hermite function is an eigenfunction of the
-  harmonic oscillator `-d²/dx² + x²/4` with eigenvalue `n + 1/2`.
--/
-
-namespace BookProof.HermiteCore
-
-open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
-
-noncomputable section
-
-/-! ## The Hermite polynomials over `ℝ` -/
-
-/-- The (probabilists') Hermite polynomials, as real polynomials. -/
-def hermiteR (n : ℕ) : Polynomial ℝ := (Polynomial.hermite n).map (Int.castRingHom ℝ)
-
-theorem hermiteR_zero : hermiteR 0 = 1 := by
-  simp [hermiteR, Polynomial.hermite_zero]
-
-theorem hermiteR_one : hermiteR 1 = X := by
-  simp [hermiteR]
-
-theorem hermiteR_succ (n : ℕ) :
-    hermiteR (n + 1) = X * hermiteR n - derivative (hermiteR n) := by
-  simp [hermiteR, Polynomial.hermite_succ, Polynomial.derivative_map]
-
-/-- `H_{n+1}' = (n+1) H_n`. -/
-theorem derivative_hermiteR (n : ℕ) :
-    derivative (hermiteR (n + 1)) = C ((n : ℝ) + 1) * hermiteR n := by
-  induction n with
-  | zero => simp [hermiteR_one, hermiteR_zero]
-  | succ n ih =>
-    have key : derivative (hermiteR (n + 1 + 1))
-        = hermiteR (n + 1) + C ((n : ℝ) + 1) * (X * hermiteR n - derivative (hermiteR n)) := by
-      rw [hermiteR_succ (n + 1), derivative_sub, derivative_mul, derivative_X, ih,
-        derivative_C_mul]
-      ring
-    have hC : (C (((n : ℝ) + 1) + 1) : Polynomial ℝ) = C ((n : ℝ) + 1) + 1 := by
-      rw [map_add, map_one]
-    rw [key, ← hermiteR_succ n]
-    push_cast
-    rw [hC]
-    ring
-
-/-- The Hermite differential equation `H_n'' − X H_n' + n H_n = 0`. -/
-theorem hermiteR_ode (n : ℕ) :
-    derivative (derivative (hermiteR n)) - X * derivative (hermiteR n) + C (n : ℝ) * hermiteR n
-      = 0 := by
-  have h := derivative_hermiteR n
-  rw [hermiteR_succ n, derivative_sub, derivative_mul, derivative_X] at h
-  have hC : (C ((n : ℝ) + 1) : Polynomial ℝ) = C (n : ℝ) + 1 := by rw [map_add, map_one]
-  rw [hC] at h
-  linear_combination -h
-
-/-! ## The Gaussian weights -/
-
-/-- The Gaussian weight `e^{-x²/2}` of the Hermite polynomials. -/
-def gaussW (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 2)
-
-/-- The half weight `e^{-x²/4}`, which turns Hermite *polynomials* into Hermite
-*functions*. -/
-def gaussH (x : ℝ) : ℝ := Real.exp (-x ^ 2 / 4)
-
-theorem gaussH_pos (x : ℝ) : 0 < gaussH x := Real.exp_pos _
-
-theorem continuous_gaussH : Continuous gaussH := by
-  unfold gaussH; fun_prop
-
-theorem continuous_gaussW : Continuous gaussW := by
-  unfold gaussW; fun_prop
-
-theorem gaussW_pos (x : ℝ) : 0 < gaussW x := Real.exp_pos _
-
-theorem gaussH_sq (x : ℝ) : gaussH x * gaussH x = gaussW x := by
-  rw [gaussH, gaussW, ← Real.exp_add]; ring
-
-theorem hasDerivAt_gaussW (x : ℝ) : HasDerivAt gaussW (-x * gaussW x) x := by
-  have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-x) x := by
-    have h0 : HasDerivAt (fun y : ℝ => -y ^ 2 / 2) (-(2 * x) / 2) x := by
-      simpa using ((hasDerivAt_pow 2 x).neg).div_const 2
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 2)) (-x * Real.exp (-x ^ 2 / 2)) x
-  simpa [mul_comm] using h.exp
-
-theorem hasDerivAt_gaussH (x : ℝ) : HasDerivAt gaussH (-(x / 2) * gaussH x) x := by
-  have h : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(x / 2)) x := by
-    have h0 : HasDerivAt (fun y : ℝ => -y ^ 2 / 4) (-(2 * x) / 4) x := by
-      simpa using ((hasDerivAt_pow 2 x).neg).div_const 4
-    convert h0 using 1
-    ring
-  show HasDerivAt (fun y : ℝ => Real.exp (-y ^ 2 / 4)) (-(x / 2) * Real.exp (-x ^ 2 / 4)) x
-  simpa [mul_comm] using h.exp
-
-/-- Every monomial is integrable against a Gaussian. -/
-theorem integrable_pow_mul_exp_neg (k : ℕ) {b : ℝ} (hb : 0 < b) :
-    Integrable (fun x : ℝ => x ^ k * Real.exp (-b * x ^ 2)) := by
-  have hdom : Integrable
-      (fun x : ℝ => ((k.factorial : ℝ) * Real.exp (1 / (2 * b))) * Real.exp (-(b / 2) * x ^ 2)) :=
-    (integrable_exp_neg_mul_sq (by positivity)).const_mul _
-  refine hdom.mono' (Continuous.aestronglyMeasurable (by fun_prop)) ?_
-  filter_upwards with x
-  have hfac : (0 : ℝ) < (k.factorial : ℝ) := by positivity
-  have h1 : |x| ^ k ≤ (k.factorial : ℝ) * Real.exp |x| := by
-    have h := Real.pow_div_factorial_le_exp |x| (abs_nonneg x) k
-    rw [div_le_iff₀ hfac] at h
-    linarith [h]
-  have h2 : |x| - b * x ^ 2 ≤ 1 / (2 * b) - (b / 2) * x ^ 2 := by
-    have hx2 : x ^ 2 = |x| ^ 2 := (sq_abs x).symm
-    rw [hx2, ← sub_nonneg]
-    have key : 1 / (2 * b) - b / 2 * |x| ^ 2 - (|x| - b * |x| ^ 2)
-        = (b * |x| - 1) ^ 2 / (2 * b) := by
-      field_simp
-      ring
-    rw [key]
-    positivity
-  have hnorm : ‖x ^ k * Real.exp (-b * x ^ 2)‖ = |x| ^ k * Real.exp (-b * x ^ 2) := by
-    rw [norm_mul, Real.norm_eq_abs, Real.norm_eq_abs, abs_pow, abs_of_pos (Real.exp_pos _)]
-  rw [hnorm]
-  calc |x| ^ k * Real.exp (-b * x ^ 2)
-      ≤ ((k.factorial : ℝ) * Real.exp |x|) * Real.exp (-b * x ^ 2) := by gcongr
-    _ = (k.factorial : ℝ) * Real.exp (|x| - b * x ^ 2) := by
-          rw [mul_assoc, ← Real.exp_add]; ring_nf
-    _ ≤ (k.factorial : ℝ) * Real.exp (1 / (2 * b) - (b / 2) * x ^ 2) := by gcongr
-    _ = ((k.factorial : ℝ) * Real.exp (1 / (2 * b))) * Real.exp (-(b / 2) * x ^ 2) := by
-          rw [mul_assoc, ← Real.exp_add]; ring_nf
-
-/-- Every polynomial is integrable against a Gaussian. -/
-theorem integrable_poly_mul_exp_neg (p : Polynomial ℝ) {b : ℝ} (hb : 0 < b) :
-    Integrable (fun x : ℝ => p.eval x * Real.exp (-b * x ^ 2)) := by
-  induction p using Polynomial.induction_on' with
-  | add p q hp hq =>
-    refine (hp.add hq).congr (Filter.Eventually.of_forall fun x => ?_)
-    simp [Polynomial.eval_add, add_mul]
-  | monomial k a =>
-      simpa [Polynomial.eval_monomial, mul_assoc] using
-        (integrable_pow_mul_exp_neg k hb).const_mul a
-
-theorem integrable_poly_mul_gaussW (p : Polynomial ℝ) :
-    Integrable (fun x : ℝ => p.eval x * gaussW x) := by
-  have h := integrable_poly_mul_exp_neg p (b := 1 / 2) (by norm_num)
-  refine h.congr (Filter.Eventually.of_forall fun x => ?_)
-  simp only [gaussW]
-  ring_nf
-
-theorem integrable_poly_mul_gaussH (p : Polynomial ℝ) :
-    Integrable (fun x : ℝ => p.eval x * gaussH x) := by
-  have h := integrable_poly_mul_exp_neg p (b := 1 / 4) (by norm_num)
-  refine h.congr (Filter.Eventually.of_forall fun x => ?_)
-  simp only [gaussH]
-  ring_nf
 
 /-! ## The Gaussian-weighted integral of a polynomial -/
 
@@ -640,9 +165,7 @@ def gint (p : Polynomial ℝ) : ℝ := ∫ x : ℝ, p.eval x * gaussW x
 
 @[simp] theorem gint_zero : gint 0 = 0 := by simp [gint]
 
-theorem gint_add (p q : Polynomial ℝ) : gint (p + q) = gint p + gint q := by
-  simp only [gint, Polynomial.eval_add, add_mul]
-  exact integral_add (integrable_poly_mul_gaussW p) (integrable_poly_mul_gaussW q)
+
 
 theorem gint_sub (p q : Polynomial ℝ) : gint (p - q) = gint p - gint q := by
   simp only [gint, Polynomial.eval_sub, sub_mul]
@@ -1042,10 +565,7 @@ theorem coeff_hermiteR_self (n : ℕ) : (hermiteR n).coeff n = 1 := by
 theorem coeff_hermiteR_of_lt {n k : ℕ} (h : n < k) : (hermiteR n).coeff k = 0 := by
   simp [hermiteR, Polynomial.coeff_map, Polynomial.coeff_hermite_of_lt h]
 
-theorem natDegree_hermiteR (n : ℕ) : (hermiteR n).natDegree = n := by
-  have hinj : Function.Injective ⇑(Int.castRingHom ℝ) := fun a b h => by
-    simpa [Int.castRingHom] using h
-  rw [hermiteR, Polynomial.natDegree_map_eq_of_injective hinj, Polynomial.natDegree_hermite]
+
 
 /-- Adding polynomials adds the corresponding `L²` elements. -/
 theorem toLp_poly_add (p q : Polynomial ℝ) :
@@ -1150,30 +670,17 @@ theorem hermiteLp_span_dense :
 def hermiteBasis : HilbertBasis ℕ ℂ (Lp ℂ 2 (volume : Measure ℝ)) :=
   HilbertBasis.mk orthonormal_hermiteLp hermiteLp_span_dense
 
-@[simp] theorem hermiteBasis_apply (n : ℕ) : hermiteBasis n = hermiteLp n := by
-  rw [hermiteBasis, HilbertBasis.coe_mk]
+
 
 /-! ## The harmonic oscillator -/
 
-/-- The first derivative of a Hermite function. -/
-theorem hasDerivAt_hermiteFun (n : ℕ) (x : ℝ) :
-    HasDerivAt (hermiteFun n)
-      (((derivative (hermiteR n)).eval x - x / 2 * (hermiteR n).eval x) * gaussH x) x := by
-  have h := ((hermiteR n).hasDerivAt x).mul (hasDerivAt_gaussH x)
-  unfold hermiteFun
-  convert h using 1 <;> first | rfl | ring
 
-/-- The derivative of "polynomial times half Gaussian" is again of that form. -/
-theorem hasDerivAt_poly_mul_gaussH (p : Polynomial ℝ) (x : ℝ) :
-    HasDerivAt (fun y : ℝ  - C (1 / 2 : ℝ) * (hermiteR n + X * derivative (hermiteR n)) := by
-    rw [hq, derivative_sub, derivative_C_mul, derivative_mul, derivative_X, one_mul]
-  have hode := congrArg (Polynomial.eval x) (hermiteR_ode n)
-  simp only [Polynomial.eval_add, Polynomial.eval_sub, Polynomial.eval_mul, Polynomial.eval_C,
-    Polynomial.eval_X, Polynomial.eval_zero] at hode
-  rw [h3, hq', hq, h1]
-  simp only [Polynomial.eval_add, Polynomial.eval_sub, Polynomial.eval_mul, Polynomial.eval_C,
-    Polynomial.eval_X]
-  linear_combination (-gaussH x) * hode
+
+
+
+
+
+
 
 end
 

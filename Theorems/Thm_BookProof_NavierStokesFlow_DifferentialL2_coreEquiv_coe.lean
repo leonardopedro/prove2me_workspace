@@ -27,9 +27,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-nearEquiv.ofInjective (pgMap (d := d)) (pgMap_injective (d := d))
-
 theorem BookProof.NavierStokesFlow.DifferentialL2.coreEquiv_coe (p : MvPolynomial (Fin d) ℂ) :
-    ((coreEquiv p : polyGaussCore (d := d)) : L2d d) = pgLp p := rfl
-
-/-- An operator on the core, given by a := by sorry
+    ((coreEquiv p : polyGaussCore (d := d)) : L2d d) = pgLp p := by sorry

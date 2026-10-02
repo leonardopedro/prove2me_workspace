@@ -10,14 +10,12 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 variable {ι : Type*}
 
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-const_smul a
-
 theorem solution {c : ι → ℝ} {f : L2I ι} :
-    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι := → ℂ) k
+    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι → ℂ) k) 2 := Iff.rfl

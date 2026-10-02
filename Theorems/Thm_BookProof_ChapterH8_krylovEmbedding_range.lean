@@ -21,9 +21,7 @@ open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
 open ContinuousLinearMap
 
- in
 theorem BookProof.ChapterH8.krylovEmbedding_range (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
     (hli : LinearIndependent ℂ (fun i : Fin n => (H ^ (i : ℕ)) v)) :
     LinearMap.range (krylovEmbedding H v hli : EuclideanSpace ℂ (Fin n) →ₗ[ℂ] E)
-      = krylovSpan H v n := by
-  rw [krylovEmbe := by sorry
+      = krylovSpan H v n := by sorry

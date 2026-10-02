@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterFarisLavineCore
@@ -13,11 +14,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
-
-[him]
-  ring
 
 theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_essentiallySelfAdjointOn (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) :
-    EssentiallySelfAdjointOn (maxDom c := by sorry
+    EssentiallySelfAdjointOn (maxDom c) (diagMax c) := by sorry

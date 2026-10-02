@@ -21,12 +21,9 @@ open ContinuousLinearMap
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
- in
 theorem solution (H : E →ₗ[ℂ] E) (v : E) {n : ℕ}
     (hli : LinearIndependent ℂ (fun i : Fin n => (H ^ (i : ℕ)) v)) :
     LinearMap.range (krylovEmbedding H v hli : EuclideanSpace ℂ (Fin n) →ₗ[ℂ] E)
       = krylovSpan H v n := by
-  rw [krylovEmbe :=
-  dding, orthonormalEmbedding_range, krylovOrthonormal_span]
-  
-  /-- **(c) for the Kr
+
+  rw [krylovEmbedding, orthonormalEmbedding_range, krylovOrthonormal_span]

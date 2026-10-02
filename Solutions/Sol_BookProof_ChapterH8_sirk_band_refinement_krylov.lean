@@ -21,11 +21,6 @@ open ContinuousLinearMap
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-ov flag itself.**  For orders `m ≤ n` at which the Krylov
-sequence has not broken down, and a generator `X` leaving both Krylov ranges
-invariant, the order-`n` SIRK approximant of `p(X) u` agrees with the order-`m`
-one on the order-`m` data: the approximations really do nest, with the bases the
-method builds. -/
 theorem solution {m n : ℕ} (hmn : m ≤ n) (H : E →ₗ[ℂ] E) (v : E)
     (X : E →L[ℂ] E) (hli : LinearIndependent ℂ (fun i : Fin n => (H ^ (i : ℕ)) v))
     (hinvm : ∀ x : EuclideanSpace ℂ (Fin m), ∃ y : EuclideanSpace ℂ (Fin m),
@@ -42,14 +37,9 @@ theorem solution {m n : ℕ} (hmn : m ≤ n) (H : E →ₗ[ℂ] E) (v : E)
       = krylovEmbedding H v (krylov_li_of_le hmn hli)
         ((Polynomial.aeval (compress (krylovEmbedding H v (krylov_li_of_le hmn hli)) X) p)
           ((adjoint (krylovEmbedding H v (krylov_li_of_le hmn hli))) u)) :=
-  sirk_band_refinem :=
-  ent_of_orthonormal hmn X
+  sirk_band_refinement_of_orthonormal hmn X
       (fun i : Fin m => krylovOrthonormalSeq H v (i : ℕ))
       (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ))
       (krylovOrthonormal_orthonormal H v (krylov_li_of_le hmn hli))
       (krylovOrthonormal_orthonormal H v hli)
       (fun _ => rfl) hinvm hinvn p u hu
-  
-  end KrylovBases
-  
-  end

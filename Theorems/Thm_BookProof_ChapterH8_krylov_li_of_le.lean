@@ -20,8 +20,6 @@ open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
 open ContinuousLinearMap
 
- in
 theorem BookProof.ChapterH8.krylov_li_of_le {H : E →ₗ[ℂ] E} {v : E} {m n : ℕ} (hmn : m ≤ n)
     (hli : LinearIndependent ℂ (fun i : Fin n => (H ^ (i : ℕ)) v)) :
-    LinearIndependent ℂ (fun i : Fin m => (H ^ (i : ℕ)) v) :=
-  li_Fin_of_le (fun := by sorry
+    LinearIndependent ℂ (fun i : Fin m => (H ^ (i : ℕ)) v) := by sorry

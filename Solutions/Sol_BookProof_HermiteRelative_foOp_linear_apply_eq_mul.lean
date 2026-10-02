@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_add
 import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_smul
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul
 open BookProof.HermiteRelative
 
 

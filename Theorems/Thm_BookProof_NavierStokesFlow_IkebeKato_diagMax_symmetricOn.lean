@@ -1,4 +1,5 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterFarisLavineCore
@@ -13,9 +14,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine
+open LpNat BookProof.FarisLavine
 
 
-ositivity -/
-
-theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn (c : ι → ℝ) : SymmetricOn (maxDom c := by sorry
+theorem BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn (c : ι → ℝ) : SymmetricOn (maxDom c) (diagMax c) := by sorry

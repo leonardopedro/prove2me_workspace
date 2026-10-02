@@ -19,7 +19,5 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-  mulXPoly i p = X i * p := rfl
-
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    momPoly i p = C (-Complex.I) * (pderiv i p - C (1/2 := : ℂ) * (X i * p)) := r
+    momPoly i p = C (-Complex.I) * (pderiv i p - C (1/2 : ℂ) * (X i * p)) := rfl

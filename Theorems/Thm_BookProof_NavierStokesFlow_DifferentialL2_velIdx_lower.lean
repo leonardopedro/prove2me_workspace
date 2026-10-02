@@ -29,5 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-rem velIdx_raise (i : Fin 3) (b : Vel) :
-    velIdx (raise i b) = velIdx b + Finsupp.single i 1 := b := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.velIdx_lower (i : Fin 3) (b : Vel) :
+    velIdx (lower i b) = velIdx b - Finsupp.single i 1 := by sorry

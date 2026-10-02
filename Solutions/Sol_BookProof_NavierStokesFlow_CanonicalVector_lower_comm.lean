@@ -10,7 +10,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i k : Fin 3) (β : Vel) : lower i (lower k β) = lower k (lower i β) := by

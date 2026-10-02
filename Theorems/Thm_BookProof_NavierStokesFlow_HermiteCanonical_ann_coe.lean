@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.ann_coe (x : lpFiniteModes ℕ) (n : ℕ) :
     (((ann x : lpFiniteModes ℕ) : L2I ℕ) : ℕ → ℂ) n

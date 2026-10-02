@@ -15,7 +15,7 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 
 variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)

@@ -10,7 +10,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 set_option maxHeartbeats 1000000 in
 theorem solution (r : ℝ) (hr : 0 ≤ r) : (Real.sqrt r : ℂ) * (Real.sqrt r : ℂ) = (r : ℂ) := by

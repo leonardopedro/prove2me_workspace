@@ -926,7 +926,6 @@ def build_thm(bt, leaf, decls, node, modns):
             _kept.extend(_block)
         _i = _j
     text = "\n".join(_kept)
-    text = drop_undeclared_opens(text, leaf)
     # The copied context can `open` namespaces the header never mentions (e.g.
     # `open BookProof.FarisLavine BookProof.YangMillsFriedrichs
     # BookProof.FriedrichsExtension` from the source), and an open of a namespace
@@ -948,7 +947,58 @@ def build_thm(bt, leaf, decls, node, modns):
     if extra:
         first = text.index("\n")
         text = text[:first + 1] + "\n".join(extra) + "\n" + text[first + 1:]
+    # Both filters run LAST: the block above can still add `open` lines, and a
+    # filter that runs before it misses everything it adds.
+    text = drop_undeclared_opens(text, leaf)
+    text = drop_shadowing_opens(text, text)
     return text
+
+
+def drop_shadowing_opens(text, stmt=None):
+    """Drop an `open NS` whose last segment shadows a name the statement uses.
+
+    A structure and a namespace can share a name. `ChapterNavierStokesShiftHamiltonian`
+    declares `structure ShiftData (ι : Type*)` inside
+    `namespace BookProof.NavierStokesFlow.ShiftHamiltonian`, and also a nested
+    `namespace ...ShiftHamiltonian.ShiftData` holding `hasSum_commForm`. Opening
+    the nested one makes the bare name `ShiftData` resolve to the NAMESPACE
+    rather than the structure, so `ShiftData ι` fails with `Function expected at
+    ShiftData`. Opening the parent keeps the structure usable and still brings
+    the nested declarations into scope.
+    """
+    if not stmt:
+        return text
+    # `stmt` here is the WHOLE assembled file, not just the declaration: the
+    # application that matters is usually in a `variable` line
+    # (`variable {ι : Type*} (S : ShiftData ι)`), which sits outside the
+    # declaration itself.
+    # Only an APPLIED name shadows usefully: the failure is `ShiftData ι`
+    # where `ShiftData` is a structure. A bare mention of the name is harmless,
+    # so matching on application avoids rewriting legitimate opens.
+    out, rewritten = [], []
+    for ln in text.split("\n"):
+        st = ln.strip()
+        if st.startswith("open BookProof."):
+            names = st.split()[1:]
+            keep, changed = [], False
+            for one in names:
+                last = one.split(".")[-1]
+                applied = re.search(r"(?<![.\w])" + re.escape(last) + r"\s+\S", stmt)
+                if applied:
+                    parent = ".".join(one.split(".")[:-1])
+                    if parent:
+                        keep.append(parent)
+                        changed = True
+                        continue
+                keep.append(one)
+            if changed:
+                rewritten.append(st)
+                ln = ln.replace(st, "open " + " ".join(keep))
+        out.append(ln)
+    for r in rewritten:
+        print(f"  WARNING re-opened the parent of a shadowing namespace from `{r}`",
+              file=sys.stderr)
+    return "\n".join(out)
 
 
 def drop_undeclared_opens(text, leaf=None):

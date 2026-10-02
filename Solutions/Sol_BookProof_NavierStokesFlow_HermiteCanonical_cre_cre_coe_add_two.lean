@@ -11,7 +11,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 set_option maxHeartbeats 1000000 in
 theorem solution (x : lpFiniteModes ℕ) (k : ℕ) :

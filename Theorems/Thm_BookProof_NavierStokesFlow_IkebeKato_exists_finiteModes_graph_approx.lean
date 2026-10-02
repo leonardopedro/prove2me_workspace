@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.exists_finiteModes_graph_approx
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesEsa

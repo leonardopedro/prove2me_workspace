@@ -1,14 +1,14 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.phaseFun_add
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,6 +19,5 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.phaseFun_add (k x y : Vd d) : phaseFun k (x + y) = phaseFun k x * phaseFun k y := by sorry

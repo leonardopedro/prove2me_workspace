@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne'
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa

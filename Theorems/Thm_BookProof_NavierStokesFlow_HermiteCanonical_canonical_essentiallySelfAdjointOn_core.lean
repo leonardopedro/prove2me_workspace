@@ -9,8 +9,8 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteCanonical
 
@@ -21,7 +21,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.canonical_essentiallySelfAdjointOn_core (hκ : 0 ≤ κ) :
     EssentiallySelfAdjointOn (lpFiniteModes ℕ)

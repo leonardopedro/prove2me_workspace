@@ -2,30 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteQuadraticEsa
 import Theorems.Thm_BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterFiniteSectionSingleTime
-import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterBandEnclosure
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 open BookProof.HermiteQuadraticEsa
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -36,6 +14,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

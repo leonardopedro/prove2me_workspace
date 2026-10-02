@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterFarisLavineCore
@@ -7,8 +6,8 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 

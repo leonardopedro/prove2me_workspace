@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.commTerm_eq_zero
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
@@ -7,7 +6,7 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 

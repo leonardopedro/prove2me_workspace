@@ -1,14 +1,16 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.pgFunT_momTPoly
+import Definitions.Def_ChapterHermiteProductBasis
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+open BookProof.HermiteProductCore
+open BookProof.HyperbolicQuadratic
+open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,7 +21,6 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.pgFunT_momTPoly (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     pgFunT a k (momTPoly k i p) x

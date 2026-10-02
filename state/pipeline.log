@@ -208452,3 +208452,29 @@ Note: It is not possible to treat `ShiftData` as an implic)
 08:37:47 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: accepted, waiting on the compiler
 08:37:48 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt: DONE
 08:37:48 thm:BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint: DONE
+08:52:10 thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds: DONE
+08:52:10 summary: 1687 done, 179 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+08:52:10 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (1 item(s))
+08:52:10 chunk: 7 item(s) resolved in 1858s
+09:57:08 sync: read 755 definition publish job(s)
+09:57:27 sync: read 5816 problem publish job(s)
+09:57:33 sync: read 755 definition publish job(s)
+09:57:54 sync: read 5816 problem publish job(s)
+09:57:59 sync: read 755 definition publish job(s)
+09:58:19 sync: read 5816 problem publish job(s)
+09:58:19 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm (attempt 2)
+09:58:58 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm: accepted, waiting on the compiler
+09:58:58 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound (attempt 2)
+09:59:12 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound: accepted, waiting on the compiler
+09:59:12 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound (attempt 2)
+09:59:19 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound: accepted, waiting on the compiler
+10:11:15 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm: DONE
+10:11:24 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn (attempt 1)
+10:11:24 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn: recorded publish job predates the current statement — resubmitting
+10:11:39 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn: accepted, waiting on the compiler
+10:11:49 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound: DONE
+10:11:49 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound: DONE
+10:25:46 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn: DONE
+10:25:46 summary: 1691 done, 175 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+10:25:46 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (1 item(s))
+10:25:46 chunk: 4 item(s) resolved in 1699s

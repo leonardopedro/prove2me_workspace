@@ -12,7 +12,7 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgOuterFockCoreFL
-open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.QgOuterFockCoreFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (d : CoreData F)

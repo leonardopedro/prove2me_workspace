@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.inv_sqrt_two_sq
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa

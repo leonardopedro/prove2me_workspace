@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_le
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterContinuityUnitaryInfinite
@@ -8,7 +7,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
-open BookProof.NavierStokesFlow.LpNat
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_apply
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 open BookProof.QuantumGravity3DGauge
 
 

@@ -6,7 +6,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.FriedrichsExtension
-open BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

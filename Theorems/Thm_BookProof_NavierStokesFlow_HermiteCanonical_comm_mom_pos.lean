@@ -17,7 +17,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.comm_mom_pos (hκ : 0 < κ) :
     (mom κ).comp (pos κ) - (pos κ).comp (mom κ) = (-Complex.I) • LinearMap.id := by sorry

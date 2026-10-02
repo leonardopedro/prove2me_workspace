@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.summable_ampOcc
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterFarisLavineCore
@@ -7,9 +6,9 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.ShiftHamiltonian
 
 variable {ι : Type*} (S : ShiftData ι)
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.nsFlowEuclidean_hasDerivAt
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
-import Theorems.Thm_BookProof_NavierStokesFlow_nsFlow_solves_schrodinger
 open BookProof.NavierStokesFlow
 
 

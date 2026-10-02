@@ -4,7 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (T : UnboundedSelfAdjoint H)

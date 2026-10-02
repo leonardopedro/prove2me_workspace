@@ -1,14 +1,14 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.pgFunT_apply_smul
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,7 +19,6 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.pgFunT_apply_smul (a k : Vd d) (c : ℂ) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     pgFunT a k (c • p) x = c * pgFunT a k p x := by sorry

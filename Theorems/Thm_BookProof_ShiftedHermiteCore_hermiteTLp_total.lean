@@ -1,14 +1,14 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.hermiteTLp_total
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,7 +19,6 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.hermiteTLp_total (a k : Vd d) (v : L2d d)
     (h : ∀ α, (inner ℂ (hermiteTLp (d := d) a k α) v : ℂ) = 0) : v = 0 := by sorry

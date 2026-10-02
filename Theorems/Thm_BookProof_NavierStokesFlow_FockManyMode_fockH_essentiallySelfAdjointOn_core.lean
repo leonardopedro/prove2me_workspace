@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.fockH_essentiallySelfAdjointOn_core
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterDirectSumEsa
@@ -8,7 +7,7 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.DirectSumEsa
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 

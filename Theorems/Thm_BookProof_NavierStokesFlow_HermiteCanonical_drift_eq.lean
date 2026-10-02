@@ -18,6 +18,6 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.drift_eq (hκ : 0 < κ) : drift κ = (κ : ℂ) • pos κ := by sorry

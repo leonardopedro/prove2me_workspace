@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesShiftHamiltonian.lean — theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.norm_crossA
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
@@ -7,7 +6,7 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+open BookProof.NavierStokesFlow.ShiftHamiltonian
 
 variable {ι : Type*} (S : ShiftData ι)
 

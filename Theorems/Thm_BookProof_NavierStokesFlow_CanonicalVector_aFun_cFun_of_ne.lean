@@ -1,12 +1,11 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — theorem BookProof.NavierStokesFlow.CanonicalVector.aFun_cFun_of_ne
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterGravityProjector
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterGravityProjector
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 

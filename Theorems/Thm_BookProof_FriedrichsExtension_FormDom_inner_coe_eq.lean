@@ -8,7 +8,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
 open BookProof.FriedrichsExtension
-open BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]

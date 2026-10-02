@@ -1,14 +1,14 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.eq_zero_of_inner_coreT
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,7 +19,6 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.eq_zero_of_inner_coreT (a k : Vd d) (v : L2d d)
     (h : ∀ z ∈ polyGaussCoreT a k, (inner ℂ z v : ℂ) = 0) : v = 0 := by sorry

@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — theorem BookProof.NavierStokesFlow.IkebeKato.commForm_self
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterFarisLavineCore

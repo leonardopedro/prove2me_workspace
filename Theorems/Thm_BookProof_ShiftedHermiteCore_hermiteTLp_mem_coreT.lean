@@ -1,14 +1,15 @@
 -- Generated from ChapterShiftedHermiteCore.lean — theorem BookProof.ShiftedHermiteCore.hermiteTLp_mem_coreT
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-
-
-
-
-
-
+variable {d : ℕ}
 
 
 
@@ -19,7 +20,6 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-variable {d : ℕ}
 
 theorem BookProof.ShiftedHermiteCore.hermiteTLp_mem_coreT (a k : Vd d) (α : Fin d →₀ ℕ) :
     hermiteTLp a k α ∈ polyGaussCoreT a k := by sorry

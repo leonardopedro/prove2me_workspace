@@ -15,7 +15,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.anti_DS :
     (cre - ann).comp (cre + ann) + (cre + ann).comp (cre - ann)

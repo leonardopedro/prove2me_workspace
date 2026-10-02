@@ -13,6 +13,6 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 theorem BookProof.NavierStokesFlow.HermiteCanonical.comm_ann_cre : ann.comp cre - cre.comp ann = LinearMap.id := by sorry

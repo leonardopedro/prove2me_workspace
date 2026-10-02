@@ -4,19 +4,7 @@ import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_phaseFun_ne_zero
 import Theorems.Thm_BookProof_ShiftedHermiteCore_pgLpT_mem_coreT
 import Theorems.Thm_BookProof_ShiftedHermiteCore_inner_pgLpT_left
-import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.ShiftedHermiteCore
-
-
-
-
-
-
-
 
 
 
@@ -27,6 +15,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

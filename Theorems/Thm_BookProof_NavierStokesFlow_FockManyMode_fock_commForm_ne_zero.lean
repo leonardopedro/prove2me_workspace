@@ -1,5 +1,4 @@
 -- Generated from ChapterNavierStokesFockManyMode.lean — theorem BookProof.NavierStokesFlow.FockManyMode.fock_commForm_ne_zero
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterDirectSumEsa
@@ -8,8 +7,8 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.DirectSumEsa
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode

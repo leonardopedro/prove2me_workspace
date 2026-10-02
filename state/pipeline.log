@@ -209121,3 +209121,207 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 22:51:54 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
 22:51:54 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
 22:52:01 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+23:12:38 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: DONE
+23:12:46 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+23:12:59 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: title clamped to 174 chars (server limit 200)
+23:12:59 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+23:13:18 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: DONE
+23:13:27 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+23:13:34 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+23:13:44 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: DONE
+23:13:52 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+23:27:27 retry-failed: re-armed 0 item(s)
+23:27:27 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+23:27:27 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+23:27:27 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+23:27:27 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+23:27:27 submitting thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+23:27:27 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+23:27:27 submitting thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+23:27:35 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: accepted, waiting on the compiler
+23:27:35 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 1)
+23:27:42 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: accepted, waiting on the compiler
+23:27:42 submitting thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 1)
+23:27:49 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: title clamped to 183 chars (server limit 200)
+23:27:49 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: accepted, waiting on the compiler
+23:27:49 submitting thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 1)
+23:27:56 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: accepted, waiting on the compiler
+23:27:56 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 1)
+23:28:04 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: accepted, waiting on the compiler
+23:28:04 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 1)
+23:28:11 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: title clamped to 173 chars (server limit 200)
+23:28:11 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: accepted, waiting on the compiler
+23:28:11 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 1)
+23:28:19 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: accepted, waiting on the compiler
+23:28:19 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: DONE
+23:28:30 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 1)
+23:28:37 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
+23:30:14 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: DONE
+23:30:25 submitting thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 1)
+23:30:34 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: accepted, waiting on the compiler
+23:31:38 thm:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: DONE
+23:31:49 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 1)
+23:31:56 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: accepted, waiting on the compiler
+23:49:41 thm:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: DONE
+23:49:52 submitting thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos (attempt 1)
+23:49:59 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: accepted, waiting on the compiler
+23:50:00 thm:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: DONE
+23:50:11 submitting thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq (attempt 1)
+23:50:17 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: title clamped to 172 chars (server limit 200)
+23:50:17 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: accepted, waiting on the compiler
+23:50:18 thm:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: DONE
+23:50:29 submitting thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 1)
+23:50:36 thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: accepted, waiting on the compiler
+23:50:36 thm:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: DONE
+23:50:47 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 1)
+23:50:58 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: accepted, waiting on the compiler
+23:50:58 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: DONE
+23:50:59 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: DONE
+23:50:59 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: DONE
+23:51:09 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 1)
+23:51:17 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: accepted, waiting on the compiler
+23:51:17 submitting thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 1)
+23:51:29 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: accepted, waiting on the compiler
+23:51:29 submitting thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core (attempt 1)
+23:51:41 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+23:51:42 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe: DONE
+23:51:52 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne (attempt 1)
+23:52:01 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: accepted, waiting on the compiler
+23:52:24 thm:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: DONE
+23:52:35 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self (attempt 1)
+23:52:42 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: accepted, waiting on the compiler
+23:53:15 thm:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: DONE
+23:53:25 submitting thm:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal (attempt 1)
+23:53:33 thm:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: accepted, waiting on the compiler
+00:15:03 thm:BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos: DONE
+00:15:14 submitting thm:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal (attempt 1)
+00:15:21 thm:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: accepted, waiting on the compiler
+00:16:28 thm:BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq: DONE
+00:16:38 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt (attempt 1)
+00:16:45 thm:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: accepted, waiting on the compiler
+00:16:46 thm:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: DONE
+00:16:56 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_esa (attempt 1)
+00:17:03 thm:BookProof_ScalaronEsa_qgScalaronMode_esa: accepted, waiting on the compiler
+00:17:03 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: DONE
+00:17:14 submitting thm:BookProof_ScalaronEsa_qgScalaronMode_symmetric (attempt 1)
+00:17:22 thm:BookProof_ScalaronEsa_qgScalaronMode_symmetric: accepted, waiting on the compiler
+00:17:22 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: DONE
+00:17:23 thm:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: DONE
+00:17:33 submitting thm:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint (attempt 1)
+00:17:41 thm:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint: accepted, waiting on the compiler
+00:17:41 submitting thm:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa (attempt 1)
+00:17:49 thm:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: accepted, waiting on the compiler
+00:17:49 thm:BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core: DONE
+00:18:00 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly (attempt 1)
+00:18:08 thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly: accepted, waiting on the compiler
+00:18:08 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_of_ne: DONE
+00:18:18 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv (attempt 1)
+00:18:25 thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: accepted, waiting on the compiler
+00:18:26 thm:BookProof_NavierStokesFlow_FockManyMode_commForm_testState_self: DONE
+00:18:36 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update (attempt 1)
+00:18:43 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: accepted, waiting on the compiler
+00:18:44 thm:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: DONE
+00:18:54 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply (attempt 1)
+00:19:01 thm:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: accepted, waiting on the compiler
+00:40:48 thm:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: DONE
+00:40:59 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply (attempt 1)
+00:41:07 thm:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: accepted, waiting on the compiler
+00:41:40 thm:BookProof_ScalaronEsa_qgScalaronMode_esa: DONE
+00:41:50 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul (attempt 1)
+00:41:57 thm:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: accepted, waiting on the compiler
+00:41:58 thm:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: DONE
+00:42:08 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul (attempt 1)
+00:42:17 thm:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: accepted, waiting on the compiler
+00:42:17 thm:BookProof_ScalaronEsa_qgScalaronMode_symmetric: DONE
+00:42:17 thm:BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint: DONE
+00:42:27 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_sec_apply (attempt 1)
+00:42:35 thm:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: accepted, waiting on the compiler
+00:42:35 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_sec_self (attempt 1)
+00:42:42 thm:BookProof_NavierStokesFlow_DifferentialL2_sec_self: accepted, waiting on the compiler
+00:42:42 thm:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: DONE
+00:42:43 thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momPoly_mulXPoly: DONE
+00:42:53 submitting thm:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix (attempt 1)
+00:43:01 thm:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: accepted, waiting on the compiler
+00:43:01 submitting thm:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion (attempt 1)
+00:43:08 thm:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion: accepted, waiting on the compiler
+00:43:08 thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: DONE
+00:43:08 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: DONE
+00:43:18 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp (attempt 1)
+00:43:26 thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp: accepted, waiting on the compiler
+00:43:26 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe (attempt 1)
+00:43:33 thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe: accepted, waiting on the compiler
+00:43:33 thm:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: DONE
+00:43:44 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec (attempt 1)
+00:43:51 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec: accepted, waiting on the compiler
+00:59:10 thm:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: DONE
+00:59:20 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec (attempt 1)
+00:59:31 thm:BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec: accepted, waiting on the compiler
+01:01:30 thm:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: DONE
+01:01:40 submitting thm:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef (attempt 1)
+01:01:47 thm:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef: accepted, waiting on the compiler
+01:01:58 thm:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: DONE
+01:02:08 submitting thm:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved (attempt 1)
+01:02:19 thm:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved: accepted, waiting on the compiler
+01:02:32 thm:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: DONE
+01:02:32 thm:BookProof_NavierStokesFlow_DifferentialL2_sec_self: DONE
+01:02:42 submitting thm:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined (attempt 1)
+01:02:49 thm:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined: accepted, waiting on the compiler
+01:02:49 submitting thm:BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension (attempt 1)
+01:02:55 thm:BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension: accepted, waiting on the compiler
+01:02:56 thm:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: DONE
+01:03:06 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential (attempt 1)
+01:03:18 thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential: accepted, waiting on the compiler
+01:03:52 thm:BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion: DONE
+01:04:02 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec (attempt 1)
+01:04:09 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec: accepted, waiting on the compiler
+01:04:10 thm:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp: DONE
+01:04:20 submitting thm:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian (attempt 1)
+01:04:27 thm:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian: accepted, waiting on the compiler
+01:04:28 thm:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe: DONE
+01:04:38 submitting thm:BookProof_NavierStokesFlow_nsFlow_unitary (attempt 1)
+01:04:45 thm:BookProof_NavierStokesFlow_nsFlow_unitary: accepted, waiting on the compiler
+01:04:45 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec: DONE
+01:04:56 submitting thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency (attempt 1)
+01:05:03 thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency: accepted, waiting on the compiler
+01:20:06 thm:BookProof_NavierStokesFlow_DifferentialL2_norm_sq_sec: DONE
+01:20:17 submitting thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn (attempt 1)
+01:20:28 thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn: accepted, waiting on the compiler
+01:21:44 thm:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef: DONE
+01:21:55 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec (attempt 1)
+01:22:02 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec: accepted, waiting on the compiler
+01:22:13 thm:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved: DONE
+01:22:23 submitting thm:BookProof_NavierStokesFlow_nsFlow_norm_preserving (attempt 1)
+01:22:30 thm:BookProof_NavierStokesFlow_nsFlow_norm_preserving: accepted, waiting on the compiler
+01:23:45 thm:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined: DONE
+01:23:55 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential (attempt 1)
+01:24:03 thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential: accepted, waiting on the compiler
+01:24:14 thm:BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension: DONE
+01:24:24 submitting thm:BookProof_NavierStokesFlow_nsFlow_noBlowup (attempt 1)
+01:24:32 thm:BookProof_NavierStokesFlow_nsFlow_noBlowup: accepted, waiting on the compiler
+01:24:33 thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential: DONE
+01:24:43 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV (attempt 1)
+01:24:50 thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV: accepted, waiting on the compiler
+01:25:02 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec: DONE
+01:25:12 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH (attempt 1)
+01:25:19 thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH: accepted, waiting on the compiler
+01:25:19 thm:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian: DONE
+01:25:29 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core (attempt 1)
+01:25:36 thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+01:25:36 thm:BookProof_NavierStokesFlow_nsFlow_unitary: DONE
+01:25:47 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded (attempt 1)
+01:25:54 thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded: accepted, waiting on the compiler
+01:25:55 thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency: DONE
+01:26:05 submitting thm:BookProof_BddBelowFiberSumEsa_dsOp_semibounded (attempt 1)
+01:26:14 thm:BookProof_BddBelowFiberSumEsa_dsOp_semibounded: accepted, waiting on the compiler
+01:41:28 thm:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn: DONE
+01:42:31 thm:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec: DONE
+01:42:31 thm:BookProof_NavierStokesFlow_nsFlow_norm_preserving: DONE
+01:43:01 thm:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential: DONE
+01:43:30 thm:BookProof_NavierStokesFlow_nsFlow_noBlowup: DONE
+01:44:17 thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV: DONE
+01:45:39 thm:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH: DONE
+01:45:48 thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core: DONE
+01:45:49 thm:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded: DONE
+01:46:22 thm:BookProof_BddBelowFiberSumEsa_dsOp_semibounded: DONE
+01:46:22 summary: 1771 done, 195 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+01:46:22 chunk: 63 item(s) resolved in 8335s

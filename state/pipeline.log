@@ -208844,3 +208844,103 @@ but is expected to)
 14:54:16 sync: read 788 definition publish job(s)
 14:54:38 sync: read 5837 problem publish job(s)
 14:54:51 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+15:05:42 def:ChapterNsScalarVectorCurry: FAIL (publish FAILED: definition does not compile: line 259: unsolved goals
+case tmul.tmul
+V : Type u_1
+W : Type u_2
+inst✝³ : MeasurableSpace V
+inst✝² : Mea)
+15:05:51 submitting def:ChapterSecondQuantizationCoreEsa (attempt 4)
+15:05:59 sync: read 789 definition publish job(s)
+15:06:25 sync: read 5837 problem publish job(s)
+15:06:40 def:ChapterSecondQuantizationCoreEsa: accepted, waiting on the compiler
+15:07:17 def:ChapterPauliFundamental: FAIL (publish FAILED: definition does not compile: line 140: Unknown identifier `mgammaZ`; line 147: Unknown identifier `mgamma`)
+15:07:26 submitting def:ChapterScalaronFockEsa (attempt 5)
+15:07:33 sync: read 790 definition publish job(s)
+15:07:53 sync: read 5837 problem publish job(s)
+15:07:53 def:ChapterScalaronFockEsa: FAIL (theorem dependency not proved yet: BookProof_ScalaronEsa_contDiff_scalaronFullPotential)
+15:07:53 submitting def:ChapterShiftedQuadraticEsa (attempt 5)
+15:08:00 sync: read 790 definition publish job(s)
+15:08:22 sync: read 5837 problem publish job(s)
+15:08:29 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+15:08:29 def:ChapterPvmMeasure: FAIL (publish FAILED: definition does not compile: line 94: Unknown identifier `BookProof.ChapterOrthogonalSums.hasSum_norm_sq_of_hasSum`; Sorry policy viol)
+15:08:38 submitting def:ChapterSymmetryRep (attempt 3)
+15:08:45 sync: read 791 definition publish job(s)
+15:09:05 sync: read 5837 problem publish job(s)
+15:09:12 def:ChapterSymmetryRep: accepted, waiting on the compiler
+15:10:07 def:ChapterQuadraticRotationEsa: FAIL (publish FAILED: definition does not compile: line 163: Unknown identifier `rotLin_apply`; line 164: Type mismatch: After simplification, term
+  rot_do)
+15:10:16 submitting def:ChapterWignerSymmetryInfinite (attempt 3)
+15:10:23 sync: read 792 definition publish job(s)
+15:10:46 sync: read 5837 problem publish job(s)
+15:10:56 def:ChapterWignerSymmetryInfinite: accepted, waiting on the compiler
+15:19:51 def:ChapterSecondQuantizationCoreEsa: FAIL (publish FAILED: definition does not compile: line 79: Unknown identifier `pushDom_mono`)
+15:19:59 submitting def:ChapterAbelianGelfandModel (attempt 3)
+15:20:08 sync: read 793 definition publish job(s)
+15:20:34 sync: read 5837 problem publish job(s)
+15:20:52 def:ChapterAbelianGelfandModel: accepted, waiting on the compiler
+15:22:46 def:ChapterShiftedQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.HyperbolicQuadratic`; line 148: Unknown identifier `dPoly`)
+15:22:55 submitting def:ChapterCayleyInverse (attempt 3)
+15:23:06 sync: read 794 definition publish job(s)
+15:23:36 sync: read 5837 problem publish job(s)
+15:23:53 def:ChapterCayleyInverse: accepted, waiting on the compiler
+15:24:03 def:ChapterSymmetryRep: FAIL (publish FAILED: definition does not compile: line 48: Unknown identifier `timeEvo_mem_unitaryGroup`; line 53: Unknown identifier `timeEvo_zero`; line )
+15:24:12 submitting def:ChapterL2FibreSum (attempt 3)
+15:24:20 sync: read 795 definition publish job(s)
+15:24:49 sync: read 5837 problem publish job(s)
+15:25:06 def:ChapterL2FibreSum: accepted, waiting on the compiler
+15:25:06 def:ChapterWignerSymmetryInfinite: FAIL (publish FAILED: definition does not compile: line 68: Unknown identifier `IsWignerSymmetry`
+
+Note: It is not possible to treat `IsWignerSymmetry` as a)
+15:25:15 submitting def:ChapterPaleyWienerSampling (attempt 3)
+15:25:24 sync: read 796 definition publish job(s)
+15:25:52 sync: read 5837 problem publish job(s)
+15:26:09 def:ChapterPaleyWienerSampling: accepted, waiting on the compiler
+15:28:10 sync: read 797 definition publish job(s)
+15:28:34 sync: read 5837 problem publish job(s)
+15:28:41 sync: read 797 definition publish job(s)
+15:29:06 sync: read 5837 problem publish job(s)
+15:29:06 summary: 1706 done, 160 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+15:29:06 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (2 item(s)), target already published on the platform (BookProof.ChapterH6.krylov_rayleigh_transfer) (1 item(s)), target already published on the platform (BookProof.QgOuterFockCoreFL.commForm_congr) (1 item(s)), target already published on the platform (BookProof.QgOuterFockCoreFL.quadForm_congr) (1 item(s))
+15:29:06 chunk: 0 item(s) resolved in 31s
+15:32:20 sync: read 797 definition publish job(s)
+15:32:45 sync: read 5837 problem publish job(s)
+15:32:51 sync: read 797 definition publish job(s)
+15:33:18 sync: read 5837 problem publish job(s)
+15:33:23 sync: read 797 definition publish job(s)
+15:33:31 def:ChapterAbelianGelfandModel: FAIL (publish FAILED: definition does not compile: line 132: unsolved goals
+X : Type u_1
+inst✝ : TopologicalSpace X
+psi : C(X, ℂ) →ₗ[ℂ] ℂ
+f g : C(X, ℝ)
+x : )
+15:33:48 sync: read 5837 problem publish job(s)
+15:33:48 processing sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn (attempt 1)
+15:35:00 def:ChapterCayleyInverse: FAIL (publish FAILED: definition does not compile: line 123: unsolved goals
+H : Type u_1
+inst✝¹ : NormedAddCommGroup H
+inst✝ : InnerProductSpace ℂ H
+V : H ≃)
+15:38:29 def:ChapterL2FibreSum: FAIL (publish FAILED: definition does not compile: line 46: Unknown identifier `proj`
+
+Note: It is not possible to treat `proj` as an implicitly bound varia)
+15:39:37 def:ChapterPaleyWienerSampling: FAIL (publish FAILED: definition does not compile: line 37: Unknown constant `BookProof.ChapterShannonSampling.exists_rep`; line 99: Unknown identifier `exi)
+15:39:37 summary: 372 done, 160 pending, 21 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+15:39:37 waiting on unpublished def bundle(s): ChapterAttentionOutput (2 item(s)), ChapterBookBrstYangMills (1 item(s)), ChapterEsaPairDGamma (1 item(s)), ChapterNavierStokesBilinearEsa (1 item(s)), ChapterNsFourierElimination (1 item(s)), ChapterNsScalarVectorCurry (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterReducingSubspaceEsa (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSecondQuantizationCoreEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterSolovayCoordinates (1 item(s)), ChapterStrichartzHermiteQG (1 item(s)), ChapterTensorSumEsa (1 item(s))
+15:39:37 chunk: 25 item(s) resolved in 4745s
+15:51:28 sol:BookProof_SqSumFarisLavine_harmCore_symmetricOn: FAIL (verdict CE: Compile error in your proof:
+line 12: unknown namespace `BookProof.QgHermiteOscillator`
+line 13: unknown namespace `BookProof.HermiteQuadr)
+15:51:28 processing sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le (attempt 1)
+16:08:51 sol:BookProof_SqSumFarisLavine_norm_sqSumOp_le: FAIL (verdict ERROR: Failed to materialize the target's dependencies: Import parser timed out after 5s)
+16:08:51 processing sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge (attempt 1)
+16:24:43 sol:BookProof_HashimotoShiftInvert_norm_shiftMap_ge: FAIL (verdict CE: Compile error in your proof:
+line 21: Unknown identifier `shiftMap_apply`
+line 22: Tactic `rewrite` failed: Did not find an occurrence of )
+16:24:43 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 2)
+16:24:43 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: DONE
+16:24:44 processing sol:BookProof_HashimotoShiftInvert_shiftMap_injective (attempt 1)
+16:42:45 sol:BookProof_HashimotoShiftInvert_shiftMap_injective: DONE
+16:42:45 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 2)
+16:42:45 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: DONE
+16:42:45 processing sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert (attempt 1)

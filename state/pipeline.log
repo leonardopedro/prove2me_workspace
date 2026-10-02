@@ -208282,3 +208282,40 @@ line 25: Unknown identifier `dsOp_symmetricOn`)
 21:13:37 processing sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core (attempt 3)
 21:17:41 sol:BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq. No such theorem exists in this Lean environ)
 21:17:41 processing sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp (attempt 1)
+21:25:44 sol:BookProof_SqSumFarisLavine_sqSumOp_pgLp: FAIL (verdict FAILED: unknown import: Theorems.Thm_BookProof_SqSumFarisLavine_coreEquiv_eq. No such theorem exists in this Lean environment (mathlib 0df444a)
+21:25:44 processing sol:BookProof_SqSumFarisLavine_commForm_eq_im (attempt 1)
+21:35:26 sol:BookProof_SqSumFarisLavine_commForm_eq_im: FAIL (verdict ERROR: Failed to resolve platform imports: Import parser timed out after 5s)
+21:35:26 summary: 1624 done, 320 pending, 6 failed (1822 out-of-order orphans ignored)
+22:03:38 sync: read 755 definition publish job(s)
+22:04:01 sync: read 5792 problem publish job(s)
+22:04:08 sync: read 755 definition publish job(s)
+22:04:31 sync: read 5792 problem publish job(s)
+22:04:37 sync: read 755 definition publish job(s)
+22:05:00 sync: read 5792 problem publish job(s)
+22:05:00 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_mem (attempt 2)
+22:06:12 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: accepted, waiting on the compiler
+22:06:12 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 2)
+22:06:23 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: accepted, waiting on the compiler
+22:06:23 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_injective (attempt 2)
+22:06:33 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_injective: accepted, waiting on the compiler
+22:13:05 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: DONE
+22:13:05 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: DONE
+22:13:14 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg (attempt 2)
+22:13:25 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg: accepted, waiting on the compiler
+22:13:25 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint (attempt 2)
+22:13:35 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint: accepted, waiting on the compiler
+22:13:35 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_injective: DONE
+22:13:45 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le (attempt 2)
+22:13:57 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le: accepted, waiting on the compiler
+22:21:23 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_inner_nonneg: DONE
+22:21:32 submitting thm:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 2)
+22:21:50 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: accepted, waiting on the compiler
+22:21:50 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint: DONE
+22:21:59 submitting thm:BookProof_QgOuterFockFlow_comparison_dom_dense (attempt 2)
+22:22:07 thm:BookProof_QgOuterFockFlow_comparison_dom_dense: accepted, waiting on the compiler
+22:22:08 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le: DONE
+22:30:17 thm:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: DONE
+22:31:24 thm:BookProof_QgOuterFockFlow_comparison_dom_dense: DONE
+22:31:25 summary: 1681 done, 167 pending, 102 failed (1822 out-of-order orphans ignored)
+22:31:25 waiting on unpublished def bundle(s): statement relies on ambient variable `D` from its def bundle (3 item(s)), statement relies on ambient variable `E` from its def bundle (1 item(s)), statement relies on ambient variable `d` from its def bundle (5 item(s)), target already published on the platform (BookProof.HashimotoShiftInvert.exists_isShiftInvertC) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.triple_swap) (1 item(s)), target already published on the platform (BookProof.Qg3DGaugeEsa.weylProd_self) (1 item(s)), target name already declared by published def bundle ChapterHashimotoShiftInvert (9 item(s))
+22:31:25 chunk: 8 item(s) resolved in 1644s

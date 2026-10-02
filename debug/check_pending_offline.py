@@ -135,7 +135,16 @@ def formal_of(name):
     # BookProof.ChapterH6.krylov.rayleigh.transfer and the match fails. When that
     # happened this function fell through to the legacy fixed preamble and
     # reported 126 of 129 pending statements as broken when they were not.
-    m = re.search(r"(?m)^theorem\s+\S", txt)
+    # Split at the FIRST top-level `theorem`, whatever it is named. Matching the
+    # pipeline's slug does not work: the key underscores chapter and identifier
+    # alike, so `BookProof_HermiteProductCore_hermiteCx_zero` cannot be
+    # reconstructed from `BookProof.HermiteProductCore.hermiteCx_zero`. Getting
+    # this wrong reported 10 statements as "cannot locate a declaration" when
+    # they were perfectly fine.
+    # Allow leading whitespace: a stub whose declarations sit inside a `namespace`
+    # indents them, so anchoring at column 0 missed them and reported 10
+    # perfectly good statements as "cannot locate a declaration".
+    m = re.search(r"(?m)^[ \t]*theorem\s+\S", txt)
     if not m:
         return None, None, "cannot locate a declaration in Thm_%s.lean" % name
     preamble = txt[:m.start()].rstrip()

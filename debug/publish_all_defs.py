@@ -246,6 +246,22 @@ def generate(leaf, timeout=900):
                            cwd=WS, env=env, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         return False, "generate timeout"
+    # The generator reports misaligned sketch spans on stderr. Offsets that
+    # still FIT the file are not necessarily aligned, and a misaligned span
+    # slices the middle of an unrelated declaration -- which is what produced
+    # the `unexpected identifier` and empty-stub failures (ChapterHermiteProductCore
+    # had 25 of 74 spans misaligned). Re-extract once and retry.
+    if "look misaligned" in (r.stderr or ""):
+        print(f"    ({leaf}: sketch spans misaligned; re-extracting)", flush=True)
+        ok2, _ = ensure_sketch(leaf, timeout=timeout, force=True)
+        if ok2:
+            try:
+                r = subprocess.run([sys.executable, f"{WS}/scripts/wave_generate.py",
+                                    "--defs-only", leaf],
+                                   cwd=WS, env=env, capture_output=True, text=True,
+                                   timeout=timeout)
+            except subprocess.TimeoutExpired:
+                return False, "generate timeout (after refresh)"
     out = f"{DEFS}/Def_{leaf}.lean"
     if not os.path.exists(out) or os.path.getsize(out) == 0:
         return False, "no bundle written (rc=%s)" % r.returncode

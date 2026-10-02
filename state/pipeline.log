@@ -208979,3 +208979,15 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 18:09:10 chunk: 0 item(s) resolved in 0s
 18:11:53 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
 18:11:53 chunk: 0 item(s) resolved in 0s
+18:16:11 submitting thm:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 1)
+18:16:22 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: accepted, waiting on the compiler
+18:16:23 submitting thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe (attempt 1)
+18:16:58 thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: accepted, waiting on the compiler
+18:37:39 thm:BookProof_SqSumFarisLavine_coreEquiv_eq: FAIL (publish FAILED: formal statement does not compile: line 31: Unknown identifier `D`
+
+Note: It is not possible to treat `D` as an implicitly bound varia)
+18:37:39 thm:BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe: FAIL (publish FAILED: formal statement does not compile: line 28: Unknown identifier `d`
+
+Note: It is not possible to treat `d` as an implicitly bound varia)
+18:37:39 summary: 1707 done, 161 pending, 100 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+18:37:39 chunk: 2 item(s) resolved in 1288s

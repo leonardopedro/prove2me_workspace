@@ -12,6 +12,7 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 open BookProof.SqSumFarisLavine
 
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

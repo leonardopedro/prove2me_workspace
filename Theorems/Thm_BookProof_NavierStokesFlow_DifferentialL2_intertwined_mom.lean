@@ -21,6 +21,7 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
 
 
 

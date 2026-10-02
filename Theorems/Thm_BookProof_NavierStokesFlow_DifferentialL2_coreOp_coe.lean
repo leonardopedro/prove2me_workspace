@@ -16,6 +16,7 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
 
 
 

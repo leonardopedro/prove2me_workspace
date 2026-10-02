@@ -13,6 +13,7 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
 
 
 

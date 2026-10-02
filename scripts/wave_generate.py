@@ -950,7 +950,6 @@ def build_thm(bt, leaf, decls, node, modns):
     # Both filters run LAST: the block above can still add `open` lines, and a
     # filter that runs before it misses everything it adds.
     text = drop_undeclared_opens(text, leaf)
-    text = drop_rebound_variables(text, text)
     text = drop_shadowing_opens(text, text)
     return text
 
@@ -1244,7 +1243,6 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     # `unknown namespace` / `Unknown identifier`, from the same shadowing and
     # bare-name problems already fixed in build_thm and build_sol.
     text = drop_undeclared_opens(text, leaf)
-    text = drop_rebound_variables(text, text)
     text = drop_shadowing_opens(text, text)
     return text
 

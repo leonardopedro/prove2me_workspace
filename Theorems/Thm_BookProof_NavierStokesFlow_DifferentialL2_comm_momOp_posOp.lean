@@ -15,6 +15,7 @@ open BookProof.HermiteProductCore
 open BookProof.MixedLinearEsa
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
 
 
 

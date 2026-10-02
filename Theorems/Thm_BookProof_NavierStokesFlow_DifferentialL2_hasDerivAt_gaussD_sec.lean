@@ -13,6 +13,7 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
 
 
 

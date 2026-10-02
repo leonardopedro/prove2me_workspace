@@ -209111,3 +209111,13 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 22:29:01 sync: checked 375 pending solution(s), 121 already Proved
 22:29:01 sync: checked 400 pending solution(s), 121 already Proved
 22:29:01 sync: marked 378 already-published item(s) and 121 already-proved solution(s) done
+22:51:00 submitting thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 1)
+22:51:38 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: title clamped to 178 chars (server limit 200)
+22:51:39 thm:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: accepted, waiting on the compiler
+22:51:39 submitting thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 1)
+22:51:46 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: title clamped to 166 chars (server limit 200)
+22:51:47 thm:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: accepted, waiting on the compiler
+22:51:47 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 1)
+22:51:54 thm:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
+22:51:54 submitting thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+22:52:01 thm:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler

@@ -447,7 +447,7 @@
    "stub": false
   },
   "ChapterAttentionOutput": {
-   "lines": 85,
+   "lines": 84,
    "names": [
     "headOutput"
    ],
@@ -2725,7 +2725,7 @@
    "stub": false
   },
   "ChapterL2FibreSum": {
-   "lines": 245,
+   "lines": 244,
    "names": [
     "proj_add",
     "proj_smul",
@@ -3195,60 +3195,27 @@
    "stub": false
   },
   "ChapterMixedLinearEsa": {
-   "lines": 756,
+   "lines": 222,
    "names": [
     "posOp",
     "mixedLinearOp",
     "cutSchwartz",
     "gaugePhase",
     "gaugeFun",
-    "potMomOp",
-    "phaseFun",
-    "hasTemperateGrowth_innerC",
-    "posOp",
-    "posOp_apply",
-    "posOp_symmetric",
-    "integral_conj_mul_pos_sub_eq_zero",
-    "posOp_deficiencyTrivialAt",
-    "posOp_essentiallySelfAdjoint",
-    "mixedLinearOp",
-    "momentumOp_apply",
-    "mixedLinearOp_apply",
-    "opL2_add",
-    "mixedLinearOp_symmetric",
-    "exists_cutoff_seq",
-    "cutSchwartz",
-    "cutSchwartz_apply",
-    "hasCompactSupport_cutSchwartz",
-    "momentumOp_cutSchwartz",
-    "momentum_test_compactSupport_extend",
-    "momentumOp_eq_zero_of_compactSupport_test",
-    "gaugePhase",
-    "gaugeFun",
-    "hasDerivAt_gaugePhase_line",
-    "hasDerivAt_gaugeFun_line",
     "contDiff_gaugePhase",
     "contDiff_gaugeFun",
-    "norm_gaugeFun",
     "gaugeSchwartz",
-    "gaugeSchwartz_apply",
-    "mixedLinearOp_gauge",
-    "mixedLinearOp_deficiencyTrivialAt",
-    "mixedLinearOp_essentiallySelfAdjoint",
     "potMomOp",
-    "potMomOp_apply",
-    "potMomOp_symmetric",
     "phaseFun",
-    "norm_phaseFun",
     "contDiff_phaseFun",
     "phaseSchwartz",
-    "polyPotential_add_momentum_symmetric"
+    "polyPotential",
+    "polyPhase"
    ],
    "namespaces": [
-    "BookProof.MixedLinearEsa",
     "BookProof.MixedLinearEsa"
    ],
-   "status": "FAILED",
+   "status": "PUBLISHED",
    "stub": false
   },
   "ChapterMixedPrior": {
@@ -3362,7 +3329,7 @@
    "stub": false
   },
   "ChapterNavierStokesCarleman": {
-   "lines": 288,
+   "lines": 262,
    "names": [
     "tridiagFun",
     "tridiagFun_add",
@@ -3371,10 +3338,15 @@
     "tridiagOp",
     "tridiag_wronskian",
     "tridiagOp_isSymmetricDom",
-    "wron_eq_sum",
-    "tridiagOp_sum",
-    "halfLineFullData_advection",
-    "halfLineFullData_hamiltonian"
+    "wron",
+    "momOp",
+    "momOp_isSymmetricDom",
+    "nsCoupling",
+    "halfLineFullData",
+    "halfLineAlpha",
+    "halfLineSymbol",
+    "linearMode",
+    "linearFullData"
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
@@ -3697,6 +3669,7 @@
     "Q_dom",
     "Dr_dom",
     "c_dom",
+    "core",
     "core_dense",
     "Pop",
     "Qop",
@@ -3704,9 +3677,9 @@
     "Cop",
     "data",
     "total",
+    "kinSym",
     "visSym",
-    "driSym",
-    "sq_dom"
+    "driSym"
    ],
    "namespaces": [
     "BookProof.NavierStokesFlow",
@@ -4310,6 +4283,49 @@
    "status": "FAILED",
    "stub": false
   },
+  "ChapterNsScalarVectorCurry": {
+   "lines": 485,
+   "names": [
+    "memLp_mulProd",
+    "memLp_smulConst",
+    "prodMk",
+    "fibMk",
+    "coeFn_prodMk",
+    "coeFn_fibMk",
+    "prodMk_add_left",
+    "prodMk_smul_left",
+    "prodMk_add_right",
+    "prodMk_smul_right",
+    "fibMk_add_left",
+    "fibMk_smul_left",
+    "fibMk_add_right",
+    "fibMk_smul_right",
+    "inner_eq_integral",
+    "inner_prodMk",
+    "inner_fibMk",
+    "prodBil",
+    "fibBil",
+    "prodTensor",
+    "fibTensor",
+    "fibTensor_tmul",
+    "inner_prodTensor_eq_inner_fibTensor",
+    "norm_prodTensor_eq_norm_fibTensor",
+    "fibMk_indicatorConstLp",
+    "simpleFunc_mem_range_fibTensor",
+    "denseRange_fibTensor",
+    "prodMk_indicatorConstLp",
+    "integrableOn_of_measure_lt_top",
+    "ae_eq_zero_of_forall_setIntegral_rect_eq_zero",
+    "denseRange_prodTensor",
+    "curryLI",
+    "IsSliceOf"
+   ],
+   "namespaces": [
+    "BookProof.NsScalarVectorCurry"
+   ],
+   "status": "PENDING",
+   "stub": false
+  },
   "ChapterNsSpatialMomentumMultiplier": {
    "lines": 115,
    "names": [
@@ -4548,7 +4564,7 @@
    "stub": false
   },
   "ChapterPauliFundamental": {
-   "lines": 200,
+   "lines": 199,
    "names": [
     "M4",
     "gp",
@@ -4567,7 +4583,7 @@
    "namespaces": [
     "BookProof.ChapterPauliFundamental"
    ],
-   "status": "FAILED",
+   "status": "PENDING",
    "stub": false
   },
   "ChapterPauliGrover": {
@@ -4694,6 +4710,26 @@
     "BookProof.Prove2meReuse"
    ],
    "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterPvmMeasure": {
+   "lines": 130,
+   "names": [
+    "Pvm",
+    "p_empty",
+    "orthogonal",
+    "inner_eq_zero",
+    "pvmMeasure",
+    "pvmMeasure_apply",
+    "pvmMeasure_univ",
+    "pvmOrbit",
+    "IsCyclic"
+   ],
+   "namespaces": [
+    "BookProof.ChapterPvmMeasure",
+    "BookProof.ChapterPvmMeasure.Pvm"
+   ],
+   "status": "PENDING",
    "stub": false
   },
   "ChapterQg3DGaugeEsa": {
@@ -5208,7 +5244,7 @@
    "stub": false
   },
   "ChapterQgTruncationResolvent": {
-   "lines": 190,
+   "lines": 181,
    "names": [
     "truncModes",
     "momWindow"
@@ -5279,7 +5315,7 @@
    "namespaces": [
     "BookProof.QuadraticRotation"
    ],
-   "status": "FAILED",
+   "status": "PENDING",
    "stub": false
   },
   "ChapterQuantizationWeyl": {
@@ -6355,6 +6391,64 @@
     "BookProof.ChapterSoftmaxSharpness"
    ],
    "status": "PUBLISHED",
+   "stub": false
+  },
+  "ChapterSolovay": {
+   "lines": 124,
+   "names": [
+    "SolovayHilbertSpace",
+    "toSolovay",
+    "headSumEquiv",
+    "tensorHeadObservable",
+    "IsFiniteOrthogonalTailSymmetry",
+    "TailPriorAdmissible"
+   ],
+   "namespaces": [
+    "BookProof.ChapterSolovay"
+   ],
+   "status": "FAILED",
+   "stub": false
+  },
+  "ChapterSolovayCoordinates": {
+   "lines": 137,
+   "names": [
+    "standardGaussian",
+    "gaussianHead",
+    "gaussianHead_isProbability",
+    "CoordinateTail",
+    "coordinateTailMeasure",
+    "coordinateTailMeasure_isProbability",
+    "tailSplitEquiv",
+    "pairIndexEquiv",
+    "tailTensorEquiv",
+    "CoordinateSpace",
+    "coordinateStateMeasure",
+    "coordinateStateMeasure_isProbability",
+    "enlargeEquiv",
+    "enlargedHeadMeasure",
+    "enlargedHeadMeasure_isProbability",
+    "DecidableLanguage",
+    "DecidableLanguage",
+    "tensor_language_membership_decidable"
+   ],
+   "namespaces": [
+    "BookProof.ChapterSolovayCoordinates"
+   ],
+   "status": "FAILED",
+   "stub": false
+  },
+  "ChapterSolovayTailDimension": {
+   "lines": 80,
+   "names": [
+    "substrateInterval",
+    "substrateInterval_measurableSet",
+    "substrateInterval_measure_ne_top",
+    "substrateBasisVector"
+   ],
+   "namespaces": [
+    "BookProof.ChapterSolovayTailDimension"
+   ],
+   "status": "FAILED",
    "stub": false
   },
   "ChapterSpectralEnergyBound": {
@@ -7677,9 +7771,10 @@
  },
  "job_counts": {
   "FAILED": 47,
-  "PUBLISHED": 380
+  "PENDING": 4,
+  "PUBLISHED": 381
  },
- "job_total": 755,
+ "job_total": 789,
  "name_owner": {
   "A0": "ChapterBell",
   "A1": "ChapterBell",
@@ -8299,7 +8394,10 @@
   "constOp": "ChapterWallEsaBddBelow",
   "constants": "ChapterSmBrstGhost",
   "constrainedSpectrum": "ChapterGaugeUnconstrainedSpectrum",
+  "contDiff_gaugeFun": "ChapterMixedLinearEsa",
+  "contDiff_gaugePhase": "ChapterMixedLinearEsa",
   "contDiff_oddBump": "ChapterSphericalPlancherel",
+  "contDiff_phaseFun": "ChapterMixedLinearEsa",
   "contSubmodule": "ChapterStoneMeasurable",
   "continuityHamiltonian": "ChapterContinuityUnitary",
   "continuityHamiltonian_hermitian": "ChapterContinuityUnitary",
@@ -8376,6 +8474,7 @@
   "cshiftRange_orthogonal_eq_bot": "ChapterComplexShiftCore",
   "cube": "ChapterHermiteCarlemanEsa",
   "curve_coeff_eq": "ChapterWeylSL2Unipotent",
+  "cutSchwartz": "ChapterMixedLinearEsa",
   "cyclicShear": "ChapterNavierStokesEulerian",
   "dCPoly": "ChapterWeylSL2Unipotent",
   "dGamma": "ChapterFockSecondQuantization",
@@ -8697,7 +8796,10 @@
   "gaugeA1": "ChapterGaugeWeylResidual",
   "gaugeAverage": "ChapterGaugeCasimirAverage",
   "gaugeField": "ChapterGaugeFixing",
+  "gaugeFun": "ChapterMixedLinearEsa",
   "gaugeMassForm": "ChapterSmHiggsVacuum",
+  "gaugePhase": "ChapterMixedLinearEsa",
+  "gaugeSchwartz": "ChapterMixedLinearEsa",
   "gaugeVarA": "ChapterGaugeAdjointAlgebra",
   "gaussD": "ChapterHermiteProductCore",
   "gaussD_eq_prod": "ChapterHermiteProductBasis",
@@ -9154,6 +9256,7 @@
   "minmaxSet": "ChapterSirkRitzMinMax",
   "minmaxSetIn": "ChapterSirkRitzMinMax",
   "mixOp": "ChapterHermiteCarlemanEsa",
+  "mixedLinearOp": "ChapterMixedLinearEsa",
   "mixedOp": "ChapterFourierMultiplierEsa",
   "mixedSymbolFn": "ChapterFourierMultiplierEsa",
   "mixtureMeasure": "ChapterAbelianMixture",
@@ -9437,12 +9540,13 @@
   "pgMap_injective": "ChapterHermiteProductCore",
   "phase": "ChapterNsLagrangianDetConvolution",
   "phaseArg": "ChapterShiftedHermiteCore",
-  "phaseFun": "ChapterShiftedHermiteCore",
+  "phaseFun": "ChapterMixedLinearEsa",
   "phaseLin": "ChapterUnboundedPosition",
   "phaseLin_add": "ChapterUnboundedPosition",
   "phaseLin_apply": "ChapterUnboundedPosition",
   "phaseLin_norm": "ChapterUnboundedPosition",
   "phaseLin_zero": "ChapterUnboundedPosition",
+  "phaseSchwartz": "ChapterMixedLinearEsa",
   "phaseUnitary": "ChapterUnboundedPosition",
   "phi": "ChapterH1",
   "phiHom": "ChapterIPin",
@@ -9461,11 +9565,13 @@
   "polyGaussCore_dense": "ChapterHermiteProductCore",
   "polyGaussCore_eq_hermiteSpan": "ChapterHermiteProductCore",
   "polyMom": "ChapterGravityPolymomentum",
+  "polyPhase": "ChapterMixedLinearEsa",
+  "polyPotential": "ChapterMixedLinearEsa",
   "poly_mul_gaussH_mem_span": "ChapterHermiteFunctions",
   "poly_mul_gaussH_mem_span_aux": "ChapterHermiteFunctions",
   "pos": "ChapterNavierStokesCanonicalVector",
   "posL": "ChapterHermiteRelativeBound",
-  "posOp": "ChapterNavierStokesDifferentialL2",
+  "posOp": "ChapterMixedLinearEsa",
   "pos_isSymmetricDom": "ChapterNavierStokesLagrangianCanonical",
   "position": "ChapterF7",
   "positionField": "ChapterUnboundedPosition",
@@ -9478,6 +9584,7 @@
   "potLp": "ChapterQgHermiteFriedrichs",
   "potLp_add": "ChapterQgHermiteFriedrichs",
   "potLp_smul": "ChapterQgHermiteFriedrichs",
+  "potMomOp": "ChapterMixedLinearEsa",
   "potPoly": "ChapterSqSumFarisLavine",
   "potPolyMap": "ChapterQgHermiteOscillatorEsa",
   "potentialOp": "ChapterWaveUnboundedPotential",
@@ -10353,6 +10460,7 @@
   "BookProof.LorentzOrthochronous": "ChapterLorentzOrthochronous",
   "BookProof.MajoranaClifford": "ChapterMajoranaClifford",
   "BookProof.MassGap": "ChapterMassGap",
+  "BookProof.MixedLinearEsa": "ChapterMixedLinearEsa",
   "BookProof.NavierStokes": "ChapterNavierStokes",
   "BookProof.NavierStokesEulerian": "ChapterNavierStokesEulerian",
   "BookProof.NavierStokesFlow": "ChapterNavierStokesAffineFiberEsa",

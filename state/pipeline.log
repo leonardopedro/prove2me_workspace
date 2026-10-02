@@ -208541,3 +208541,219 @@ Note: It is not possible to treat `ShiftData` as an implic)
 11:43:14 thm:BookProof_HashimotoShiftInvert_shiftRange_orthogonal_eq_bot: DONE
 11:43:23 submitting thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs (attempt 2)
 11:43:33 thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: accepted, waiting on the compiler
+11:59:15 thm:BookProof_HashimotoShiftInvert_exists_isShiftInvert: DONE
+11:59:24 submitting thm:BookProof_ChapterH6_krylov_rayleigh_transfer (attempt 3)
+11:59:32 thm:BookProof_ChapterH6_krylov_rayleigh_transfer: accepted, waiting on the compiler
+12:01:01 thm:BookProof_HashimotoShiftInvert_shiftMap_surjective: DONE
+12:01:10 submitting thm:BookProof_Qg3DGaugeEsa_triple_swap (attempt 2)
+12:01:10 thm:BookProof_Qg3DGaugeEsa_triple_swap: recorded publish job predates the current statement — resubmitting
+12:01:19 thm:BookProof_Qg3DGaugeEsa_triple_swap: REUSING existing BookProof.Qg3DGaugeEsa.triple_swap (Proved) 0eab5f6a-055c-4742-a8c0-f1e335963604
+12:01:19 thm:BookProof_Qg3DGaugeEsa_triple_swap: DONE
+12:01:19 submitting thm:BookProof_Qg3DGaugeEsa_weylProd_self (attempt 2)
+12:01:19 thm:BookProof_Qg3DGaugeEsa_weylProd_self: recorded publish job predates the current statement — resubmitting
+12:01:27 thm:BookProof_Qg3DGaugeEsa_weylProd_self: REUSING existing BookProof.Qg3DGaugeEsa.weylProd_self (Proved) b95bfa6c-2fd8-4625-8180-c60e68ccc065
+12:01:27 thm:BookProof_Qg3DGaugeEsa_weylProd_self: DONE
+12:01:27 submitting thm:BookProof_QgOuterFockCoreFL_commForm_congr (attempt 2)
+12:01:33 thm:BookProof_QgOuterFockCoreFL_commForm_congr: accepted, waiting on the compiler
+12:02:44 thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: DONE
+12:02:53 submitting thm:BookProof_QgOuterFockCoreFL_quadForm_congr (attempt 2)
+12:03:01 thm:BookProof_QgOuterFockCoreFL_quadForm_congr: accepted, waiting on the compiler
+12:11:43 sync: read 755 definition publish job(s)
+12:12:04 sync: read 5836 problem publish job(s)
+12:12:09 sync: read 755 definition publish job(s)
+12:12:31 sync: read 5836 problem publish job(s)
+12:12:36 sync: read 755 definition publish job(s)
+12:12:56 sync: read 5836 problem publish job(s)
+12:12:56 submitting def:ChapterNavierStokesFockEsa (attempt 5)
+12:13:05 sync: read 755 definition publish job(s)
+12:13:26 sync: read 5836 problem publish job(s)
+12:13:26 def:ChapterNavierStokesFockEsa: FAIL (theorem dependency not proved yet: BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom, BookProof_NavierStokesFlow_FockOfFock_fockDom_dense)
+12:13:26 submitting def:ChapterWallDeficiencyObstruction (attempt 4)
+12:13:32 sync: read 755 definition publish job(s)
+12:13:51 sync: read 5836 problem publish job(s)
+12:14:02 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+12:14:02 submitting def:Complexification (attempt 5)
+12:14:09 sync: read 756 definition publish job(s)
+12:14:31 sync: read 5836 problem publish job(s)
+12:14:37 thm:BookProof_ChapterH6_krylov_rayleigh_transfer: DONE
+12:14:41 def:Complexification: accepted, waiting on the compiler
+12:14:41 submitting def:ChapterA1b (attempt 5)
+12:14:46 submitting thm:BookProof_QuantumGravity3DGauge_pderiv_comm_poly (attempt 2)
+12:14:48 sync: read 757 definition publish job(s)
+12:15:10 sync: read 5836 problem publish job(s)
+12:15:25 def:ChapterA1b: accepted, waiting on the compiler
+12:15:25 submitting def:ChapterAttentionOutput (attempt 4)
+12:15:27 thm:BookProof_QuantumGravity3DGauge_pderiv_comm_poly: accepted, waiting on the compiler
+12:15:32 sync: read 758 definition publish job(s)
+12:15:53 thm:BookProof_QgOuterFockCoreFL_commForm_congr: DONE
+12:15:54 sync: read 5837 problem publish job(s)
+12:16:02 submitting thm:BookProof_QuantumGravity3DGauge_qgMom_symmetricOn (attempt 1)
+12:16:02 thm:BookProof_QuantumGravity3DGauge_qgMom_symmetricOn: accepted, waiting on the compiler
+12:16:03 thm:BookProof_QuantumGravity3DGauge_qgMom_symmetricOn: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `D`
+
+Note: It is not possible to treat `D` as an implicitly bound varia)
+12:16:09 def:ChapterAttentionOutput: accepted, waiting on the compiler
+12:16:11 submitting thm:BookProof_QuantumGravity3DGauge_qgWeylProd_polySym (attempt 1)
+12:16:11 thm:BookProof_QuantumGravity3DGauge_qgWeylProd_polySym: accepted, waiting on the compiler
+12:16:12 thm:BookProof_QuantumGravity3DGauge_qgWeylProd_polySym: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `d`
+
+Note: It is not possible to treat `d` as an implicitly bound varia)
+12:16:46 thm:BookProof_QgOuterFockCoreFL_quadForm_congr: DONE
+12:26:44 def:ChapterWallDeficiencyObstruction: FAIL (publish FAILED: definition does not compile: line 118: Unknown constant `integral_conj_deriv2_mul`; line 119: Unknown constant `inner_eq_of_ode`; line)
+12:26:53 submitting def:ChapterStoneSeparable (attempt 4)
+12:26:53 def:ChapterStoneSeparable: recorded publish job predates the current bundle — resubmitting
+12:26:59 sync: read 759 definition publish job(s)
+12:27:21 sync: read 5837 problem publish job(s)
+12:27:21 def:ChapterStoneSeparable: FAIL (theorem dependency not proved yet: BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext', BookProof_ChapterStoneMeasurable_WeakMeasurableUn)
+12:27:21 submitting def:ChapterReducingSubspaceEsa (attempt 4)
+12:27:21 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+12:27:22 def:ChapterReducingSubspaceEsa: FAIL (publish FAILED: definition does not compile: line 104: Type mismatch: After simplification, term
+  hx
+ has type
+  @Eq F (P ↑↑x) ↑↑x
+but is expected to)
+12:27:30 submitting def:ChapterMackeyInducedSystem (attempt 4)
+12:27:30 def:ChapterMackeyInducedSystem: accepted, waiting on the compiler
+12:27:31 def:ChapterMackeyInducedSystem: FAIL (publish FAILED: definition does not compile: line 83: Unknown identifier `cocycle_mem_stabilizer`; line 91: Unknown identifier `cocycle_mem_stabilizer)
+12:27:40 submitting def:ChapterMixedLinearEsa (attempt 2)
+12:27:47 sync: read 759 definition publish job(s)
+12:27:48 thm:BookProof_QuantumGravity3DGauge_pderiv_comm_poly: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `d`
+
+Note: It is not possible to treat `d` as an implicitly bound varia)
+12:27:48 summary: 1709 done, 157 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+12:27:48 chunk: 20 item(s) resolved in 5387s
+12:28:08 sync: read 5837 problem publish job(s)
+12:28:15 def:ChapterMixedLinearEsa: accepted, waiting on the compiler
+12:28:15 def:Complexification: FAIL (publish FAILED: definition does not compile: line 70: `simp` made no progress; line 70: `simp` made no progress; line 71: `simp` made no progress; lin)
+12:28:16 def:ChapterA1b: FAIL (publish FAILED: definition does not compile: line 62: Unknown identifier `Cx`
+
+Note: It is not possible to treat `Cx` as an implicitly bound variable )
+12:28:16 def:ChapterAttentionOutput: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterSoftmaxOrder`; line 58: Unknown identifier `observableExpect)
+12:28:24 submitting def:ChapterNavierStokesBilinearEsa (attempt 4)
+12:28:31 sync: read 760 definition publish job(s)
+12:28:52 sync: read 5837 problem publish job(s)
+12:28:52 def:ChapterNavierStokesBilinearEsa: FAIL (theorem dependency not proved yet: BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support, BookProof_NavierStokesFlow_mem_lpFiniteModes, Book)
+12:28:52 submitting def:ChapterNavierStokesCarleman (attempt 4)
+12:28:59 sync: read 760 definition publish job(s)
+12:29:21 sync: read 5837 problem publish job(s)
+12:29:29 def:ChapterNavierStokesCarleman: accepted, waiting on the compiler
+12:29:29 submitting def:ChapterNavierStokesFockLagrangian (attempt 4)
+12:29:36 sync: read 761 definition publish job(s)
+12:29:57 sync: read 5837 problem publish job(s)
+12:30:04 def:ChapterNavierStokesFockLagrangian: accepted, waiting on the compiler
+12:30:04 submitting def:ChapterNsBrstDerivativeGauge (attempt 2)
+12:30:12 sync: read 762 definition publish job(s)
+12:30:34 sync: read 5837 problem publish job(s)
+12:30:41 def:ChapterNsBrstDerivativeGauge: accepted, waiting on the compiler
+12:38:34 def:ChapterMixedLinearEsa: DONE
+12:38:43 submitting def:ChapterQgOuterFockFullFL (attempt 4)
+12:38:48 sync: read 763 definition publish job(s)
+12:39:09 sync: read 5837 problem publish job(s)
+12:39:09 def:ChapterQgOuterFockFullFL: FAIL (theorem dependency not proved yet: BookProof_QgOuterFockFL_harmFried_op_core, BookProof_HermiteProductBasis_hermiteMvBasis_apply, BookProof_HermitePro)
+12:39:09 submitting def:ChapterNsScalarVectorCurry (attempt 4)
+12:39:40 sync: read 763 definition publish job(s)
+12:40:01 sync: read 5837 problem publish job(s)
+12:40:11 def:ChapterNsScalarVectorCurry: accepted, waiting on the compiler
+12:40:11 def:ChapterNavierStokesCarleman: FAIL (publish FAILED: definition does not compile: line 142: Type mismatch: After simplification, term
+  tridiagFun_tail_zero c hx
+ has type
+  ∀ (n : ℕ), N )
+12:40:12 def:ChapterNavierStokesFockLagrangian: FAIL (publish FAILED: definition does not compile: line 311: Unknown identifier `boundedEnergyCore_dense`; line 329: Unknown identifier `LagrangianEsa.Lagra)
+12:40:20 submitting def:ChapterPauliFundamental (attempt 2)
+12:40:26 sync: read 764 definition publish job(s)
+12:40:46 sync: read 5837 problem publish job(s)
+12:40:53 def:ChapterPauliFundamental: accepted, waiting on the compiler
+12:40:53 submitting def:ChapterPvmMeasure (attempt 4)
+12:41:10 sync: read 765 definition publish job(s)
+12:41:30 sync: read 5837 problem publish job(s)
+12:41:37 def:ChapterPvmMeasure: accepted, waiting on the compiler
+12:41:37 def:ChapterNsBrstDerivativeGauge: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.BRSTNilpotent`; line 150: Unknown identifier `pderiv`; line 200: Un)
+12:41:46 submitting def:ChapterQgOuterFockEllipticFL (attempt 4)
+12:41:52 sync: read 766 definition publish job(s)
+12:42:14 sync: read 5837 problem publish job(s)
+12:42:14 def:ChapterQgOuterFockEllipticFL: FAIL (theorem dependency not proved yet: BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg, BookProof_QgOuterFock_sqSumOp_symmetricOn, BookProof_Hermit)
+12:42:14 submitting def:ChapterQuadraticRotationEsa (attempt 4)
+12:42:21 sync: read 766 definition publish job(s)
+12:42:45 sync: read 5837 problem publish job(s)
+12:43:00 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+12:51:21 def:ChapterNsScalarVectorCurry: FAIL (publish FAILED: definition does not compile: line 259: unsolved goals
+case tmul.tmul
+V : Type u_1
+W : Type u_2
+inst✝³ : MeasurableSpace V
+inst✝² : Mea)
+12:51:29 submitting def:ChapterSecondQuantizationCoreEsa (attempt 3)
+12:51:36 sync: read 767 definition publish job(s)
+12:51:55 sync: read 5837 problem publish job(s)
+12:52:02 def:ChapterSecondQuantizationCoreEsa: accepted, waiting on the compiler
+12:52:21 def:ChapterPauliFundamental: FAIL (publish FAILED: definition does not compile: line 65: unknown namespace `BookProof.ChapterGammaCommutant`; line 141: Unknown identifier `mgammaZ`; lin)
+12:52:30 submitting def:ChapterScalaronFockEsa (attempt 4)
+12:52:36 sync: read 768 definition publish job(s)
+12:53:00 sync: read 5837 problem publish job(s)
+12:53:00 def:ChapterScalaronFockEsa: FAIL (theorem dependency not proved yet: BookProof_ScalaronEsa_contDiff_scalaronFullPotential)
+12:53:00 submitting def:ChapterShiftedQuadraticEsa (attempt 4)
+12:53:07 sync: read 768 definition publish job(s)
+12:53:27 sync: read 5837 problem publish job(s)
+12:53:36 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+12:54:22 def:ChapterPvmMeasure: FAIL (publish FAILED: definition does not compile: line 94: Unknown identifier `BookProof.ChapterOrthogonalSums.hasSum_norm_sq_of_hasSum`; Sorry policy viol)
+12:54:31 submitting def:ChapterSolovay (attempt 5)
+12:54:41 sync: read 769 definition publish job(s)
+12:55:03 sync: read 5837 problem publish job(s)
+12:55:10 def:ChapterSolovay: accepted, waiting on the compiler
+12:55:37 def:ChapterQuadraticRotationEsa: FAIL (publish FAILED: definition does not compile: line 163: Unknown identifier `rotLin_apply`; line 164: Type mismatch: After simplification, term
+  rot_do)
+12:55:46 submitting def:ChapterSolovayCoordinates (attempt 5)
+12:55:59 sync: read 770 definition publish job(s)
+12:56:21 sync: read 5837 problem publish job(s)
+12:56:28 def:ChapterSolovayCoordinates: accepted, waiting on the compiler
+13:04:06 def:ChapterSecondQuantizationCoreEsa: FAIL (publish FAILED: definition does not compile: line 79: Unknown identifier `pushDom_mono`)
+13:04:15 submitting def:ChapterSolovayTailDimension (attempt 5)
+13:04:24 sync: read 771 definition publish job(s)
+13:04:45 sync: read 5837 problem publish job(s)
+13:04:54 def:ChapterSolovayTailDimension: accepted, waiting on the compiler
+13:04:54 def:ChapterShiftedQuadraticEsa: FAIL (publish FAILED: definition does not compile: line 73: unknown namespace `BookProof.HyperbolicQuadratic`; line 148: Unknown identifier `dPoly`)
+13:05:03 submitting def:ChapterSymmetryRep (attempt 2)
+13:05:10 sync: read 772 definition publish job(s)
+13:05:32 sync: read 5837 problem publish job(s)
+13:05:41 def:ChapterSymmetryRep: accepted, waiting on the compiler
+13:06:54 def:ChapterSolovay: FAIL (publish FAILED: definition does not compile: line 22: unknown namespace `MeasureTheory`; line 23: unknown namespace `ENNReal`; line 36: Unknown identi)
+13:07:03 submitting def:ChapterWignerSymmetryInfinite (attempt 2)
+13:07:03 def:ChapterWignerSymmetryInfinite: accepted, waiting on the compiler
+13:07:04 def:ChapterWignerSymmetryInfinite: FAIL (publish FAILED: definition does not compile: line 48: unknown namespace `BookProof.ChapterOrthogonalSums`; line 69: Unknown identifier `IsWignerSymmet)
+13:07:12 submitting def:ChapterAbelianGelfandModel (attempt 2)
+13:07:18 sync: read 773 definition publish job(s)
+13:07:40 sync: read 5837 problem publish job(s)
+13:07:47 def:ChapterAbelianGelfandModel: accepted, waiting on the compiler
+13:10:22 def:ChapterSolovayCoordinates: FAIL (publish FAILED: definition does not compile: line 40: Unknown identifier `PhysHSGaussian.gammaMeasure`; line 44: Unknown identifier `PhysHSGaussian.ga)
+13:10:31 submitting def:ChapterCayleyInverse (attempt 2)
+13:10:39 sync: read 774 definition publish job(s)
+13:11:01 sync: read 5837 problem publish job(s)
+13:11:10 def:ChapterCayleyInverse: accepted, waiting on the compiler
+13:20:17 def:ChapterSolovayTailDimension: FAIL (publish FAILED: definition does not compile: line 32: unknown namespace `MeasureTheory`; line 33: unknown namespace `ENNReal`; line 41: expected token)
+13:20:26 submitting def:ChapterL2FibreSum (attempt 2)
+13:20:35 sync: read 775 definition publish job(s)
+13:20:56 sync: read 5837 problem publish job(s)
+13:21:03 def:ChapterL2FibreSum: accepted, waiting on the compiler
+13:21:03 def:ChapterSymmetryRep: FAIL (publish FAILED: definition does not compile: line 48: Unknown identifier `timeEvo_mem_unitaryGroup`; line 53: Unknown identifier `timeEvo_zero`; line )
+13:21:12 submitting def:ChapterPaleyWienerSampling (attempt 2)
+13:21:19 sync: read 776 definition publish job(s)
+13:21:41 sync: read 5837 problem publish job(s)
+13:21:50 def:ChapterPaleyWienerSampling: accepted, waiting on the compiler
+13:22:17 def:ChapterAbelianGelfandModel: FAIL (publish FAILED: definition does not compile: line 132: unsolved goals
+X : Type u_1
+inst✝ : TopologicalSpace X
+psi : C(X, ℂ) →ₗ[ℂ] ℂ
+f g : C(X, ℝ)
+x : )
+13:24:04 def:ChapterCayleyInverse: FAIL (publish FAILED: definition does not compile: line 123: unsolved goals
+H : Type u_1
+inst✝¹ : NormedAddCommGroup H
+inst✝ : InnerProductSpace ℂ H
+V : H ≃)
+13:31:59 def:ChapterL2FibreSum: FAIL (publish FAILED: definition does not compile: line 46: Unknown identifier `proj`
+
+Note: It is not possible to treat `proj` as an implicitly bound varia)
+13:32:41 def:ChapterPaleyWienerSampling: FAIL (publish FAILED: definition does not compile: line 37: Unknown constant `BookProof.ChapterShannonSampling.exists_rep`; line 99: Unknown identifier `exi)
+13:32:41 summary: 372 done, 166 pending, 15 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+13:32:41 waiting on unpublished def bundle(s): ChapterAttentionOutput (2 item(s)), ChapterBookBrstYangMills (1 item(s)), ChapterEsaPairDGamma (1 item(s)), ChapterNavierStokesBilinearEsa (1 item(s)), ChapterNsFourierElimination (1 item(s)), ChapterNsScalarVectorCurry (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (2 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterReducingSubspaceEsa (1 item(s)), ChapterScalaronFiberFL (1 item(s)), ChapterScalaronOuterFockFL (1 item(s)), ChapterSecondQuantizationCoreEsa (1 item(s)), ChapterSirkSingleTimeShift (1 item(s)), ChapterSolovayCoordinates (1 item(s)), ChapterStrichartzHermiteQG (1 item(s)), ChapterTensorSumEsa (1 item(s)), open BookProof.QgContinuumModeInstance (owner ChapterQgContinuumModeInstance) (1 item(s))
+13:32:41 chunk: 31 item(s) resolved in 4837s

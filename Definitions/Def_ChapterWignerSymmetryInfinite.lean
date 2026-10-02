@@ -45,7 +45,6 @@ open scoped InnerProductSpace ComplexConjugate
 
 namespace BookProof.ChapterWignerSymmetryInfinite
 
-open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

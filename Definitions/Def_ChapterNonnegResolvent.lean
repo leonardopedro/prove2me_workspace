@@ -36,7 +36,6 @@ where the *strong* convergence statements need a dense domain.
 
 namespace BookProof.NonnegResolvent
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

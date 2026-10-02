@@ -32,7 +32,6 @@ open scoped InnerProductSpace
 
 namespace BookProof.ChapterL2FibreSum
 
-open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterHilbertSumIntertwine
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
 

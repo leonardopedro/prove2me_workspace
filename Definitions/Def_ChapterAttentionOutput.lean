@@ -45,7 +45,6 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionOutput
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterSoftmaxBorn BookProof.ChapterObservableExpectation
 
 variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

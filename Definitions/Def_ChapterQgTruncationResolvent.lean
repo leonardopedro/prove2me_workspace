@@ -51,7 +51,6 @@ namespace BookProof.QgTruncationResolvent
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
@@ -158,7 +157,6 @@ variable (W : WallPot) (Q : QgModeData ι)
 
 /-! ## 5. The physical instance: the momentum cutoff of the continuum model -/
 
-open BookProof.QgContinuumModeInstance
 
 /-- **The momentum cutoff**: the window of all vielbein components with `|k|² ≤ n`.  This is
 the discretization actually used in computations — the exact Fourier modes are kept, the

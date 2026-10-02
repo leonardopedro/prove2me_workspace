@@ -1,5 +1,10 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
 import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 
+
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Mathlib
@@ -81,7 +86,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace BilinearEsa
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 variable {J : Type*}
 

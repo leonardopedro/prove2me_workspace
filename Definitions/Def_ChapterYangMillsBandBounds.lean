@@ -65,7 +65,6 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 /-! ## The polynomial-level Hamiltonian for arbitrary structure constants -/

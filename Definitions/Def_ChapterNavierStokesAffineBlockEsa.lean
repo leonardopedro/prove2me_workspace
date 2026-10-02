@@ -1,3 +1,11 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_add
+
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_smul
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_support_hFun
+
 import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 
 import Definitions.Def_ChapterNavierStokesBilinearEsa
@@ -62,7 +70,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace AffineBlock
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
 
 variable {J : Type*}
 

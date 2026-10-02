@@ -62,7 +62,6 @@ open Matrix Finset
 
 namespace BookProof.ChapterPauliFundamental
 
-open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
 
 /-- `4×4` complex matrices. -/
 abbrev M4 := Matrix (Fin 4) (Fin 4) ℂ

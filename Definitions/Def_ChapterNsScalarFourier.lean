@@ -31,7 +31,6 @@ open MeasureTheory
 
 namespace BookProof.NsScalarFourier
 
-open BookProof.NsPartialFourier BookProof.NsScalarVectorCurry
 
 noncomputable section
 

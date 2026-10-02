@@ -60,7 +60,6 @@ namespace BookProof.FiniteSectionSingleTime
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

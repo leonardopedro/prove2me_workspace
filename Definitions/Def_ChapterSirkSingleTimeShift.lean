@@ -109,18 +109,14 @@ variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [
 
 /-! ## 5. The quantum-gravity instance: any single shift, any single finite time -/
 
-open BookProof.QgTruncationResolvent BookProof.FarisLavine BookProof.EsaClosure
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL BookProof.QgOuterFockCoreFL
 
 variable {ι : Type*}
 
 
 
-open BookProof.QgContinuumModeInstance
 
 
 
-open BookProof.QgManifoldModeInstance
 
 
 

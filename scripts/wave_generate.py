@@ -1188,6 +1188,12 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     if thm_imports:
         head = thm_imports + head
     text = dedupe_imports("\n".join(head) + "\n\n" + text)
+    # Def bundles need the same two open filters the stubs got. Without them a
+    # batch of 29 regenerated bundles was rejected server-side on
+    # `unknown namespace` / `Unknown identifier`, from the same shadowing and
+    # bare-name problems already fixed in build_thm and build_sol.
+    text = drop_undeclared_opens(text, leaf)
+    text = drop_shadowing_opens(text, text)
     return text
 
 

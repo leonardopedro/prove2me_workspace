@@ -1,7 +1,3 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range
-
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
-
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 

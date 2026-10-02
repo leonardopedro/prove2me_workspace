@@ -37,7 +37,6 @@ Nothing is assumed: the module contains no `axiom` and no `sorry`.
 namespace BookProof.TensorKatoRellich
 
 open scoped TensorProduct
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
 
 noncomputable section
 

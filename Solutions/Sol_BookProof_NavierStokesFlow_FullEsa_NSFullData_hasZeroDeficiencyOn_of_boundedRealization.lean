@@ -9,6 +9,10 @@ open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable (d : NSFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F)
     (hsym : (A : F →ₗ[ℂ] F).IsSymmetric) (hHA : ∀ x : d.D, (d.hamiltonian x : F) = A (x : F)) :

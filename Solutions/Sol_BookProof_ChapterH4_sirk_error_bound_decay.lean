@@ -11,6 +11,10 @@ open scoped BigOperators
 
 noncomputable section
 
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution
     (V : F →L[ℂ] E) (phiA psiX rX : E →L[ℂ] E) (psiB rB : F →L[ℂ] F)

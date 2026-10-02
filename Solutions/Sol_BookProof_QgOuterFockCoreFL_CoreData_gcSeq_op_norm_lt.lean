@@ -19,6 +19,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : d.C.dom) (k : ℕ) :
     ‖d.C.op (d.gcSeq x k) - d.C.op x‖ < 1 / (k + 1) := (d.gc.approx x (1 / (k + 1)) (by positivity)).choose_spec.2.2

@@ -15,6 +15,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 r_add_left,
     inner_add_right, sum_inner, sum_inner, inner_sum, inner_sum]

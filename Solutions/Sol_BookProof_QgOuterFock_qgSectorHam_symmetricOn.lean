@@ -21,6 +21,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) :
     SymmetricOn (polyGaussCore (d := n * 84)) (qgSectorHam n) := sqSumOp_symmetricOn _ _

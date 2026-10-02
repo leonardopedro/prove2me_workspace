@@ -20,6 +20,9 @@ open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 undedness -/
 

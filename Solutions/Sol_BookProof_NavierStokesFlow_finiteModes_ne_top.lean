@@ -12,6 +12,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 tice finite-mode domain is dense. -/
 theorem solution : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=

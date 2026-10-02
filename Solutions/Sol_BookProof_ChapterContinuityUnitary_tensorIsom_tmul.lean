@@ -10,6 +10,9 @@ open scoped BigOperators Matrix TensorProduct
 
 variable {N : ℕ} [NeZero N]
 
+variable {N : ℕ} [NeZero N]
+variable {X : Type*}
+
 set_option maxHeartbeats 1000000 in
 x level:**
 `L²(X) ⊗ L²(Z) ≅ L²(X × Z)`.  This is what lets the dynamics-based generator be

@@ -12,6 +12,10 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (f : 𝓢(V, ℂ)) (m : V) (x : V) :
     (𝓕 (secondDeriv m f) : 𝓢(V, ℂ)) x

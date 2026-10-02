@@ -21,6 +21,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
    · have hb0 : b i = 0 := by
         by_contra hne

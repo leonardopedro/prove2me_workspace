@@ -13,6 +13,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 ta `√κ_j π_j`, so the Yang–Mills-style Friedrichs machinery applies to
 it verbatim. -/

@@ -12,6 +12,8 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (hdense : Dense (D : Set F))
     (w : F) (hw : ∀ v : D, (inner ℂ (v : F) w : ℂ) = 0) : w = 0 :=

@@ -18,6 +18,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {r s : MvPolynomial (Fin D) ℂ}
     (h : ∀ x : Vd D, (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) r).re

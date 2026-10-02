@@ -20,6 +20,8 @@ open BookProof.HashimotoShiftInvert
 
 variable (M alpha : ℝ)
 
+variable (M alpha : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (z w : ℂ) {δ : ℝ} (hδ : 0 < δ) :
     ((starRingEnd ℂ) w * z + (starRingEnd ℂ) z * w).re ≤ δ * ‖z‖ ^ 2 + δ⁻¹ * ‖w‖ ^ 2 := by

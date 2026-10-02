@@ -10,6 +10,8 @@ open BookProof.YangMillsFriedrichsLimit
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D H)

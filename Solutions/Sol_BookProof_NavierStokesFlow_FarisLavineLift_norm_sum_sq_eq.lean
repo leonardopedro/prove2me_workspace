@@ -10,6 +10,8 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {κ : Type*} (s : Finset κ) (a : κ → F) :
     ‖∑ k ∈ s, a k‖ ^ 2 = ∑ k ∈ s, ∑ l ∈ s, (inner ℂ (a k) (a l) : ℂ).re := by

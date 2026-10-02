@@ -19,6 +19,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : d.C₀) :
     d.coreN p = d.C.op ⟨(p : F), d.gc.le p.2⟩ := rfl

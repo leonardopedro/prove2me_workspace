@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
-open BookProof.HermiteBand.Band
 
 
 
@@ -10,6 +9,8 @@ open BookProof.HermiteBand.Band
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

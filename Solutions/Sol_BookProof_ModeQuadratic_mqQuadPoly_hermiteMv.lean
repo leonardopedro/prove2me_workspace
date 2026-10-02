@@ -4,7 +4,6 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Theorems.Thm_BookProof_ModeQuadratic_momsq_hermiteMv
 import Theorems.Thm_BookProof_ModeQuadratic_xsq_hermiteMv
 import Theorems.Thm_BookProof_ModeQuadratic_weylxp_hermiteMv
-open BookProof.ModeQuadratic
 
 
 
@@ -15,11 +14,11 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
-open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

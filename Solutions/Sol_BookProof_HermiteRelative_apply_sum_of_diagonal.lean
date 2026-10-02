@@ -14,6 +14,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : ι → E) (lam : ι → ℝ) {D : Submodule ℂ E}
     (hvD : ∀ a, v a ∈ D) (T : D →ₗ[ℂ] E)

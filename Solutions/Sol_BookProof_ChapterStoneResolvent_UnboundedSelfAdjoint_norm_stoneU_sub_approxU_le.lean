@@ -19,6 +19,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℝ) (t : ℝ) (x : T.domain) :
     ‖T.stoneU t (x : H) - T.approxU k t (x : H)‖ ≤ |t| * ‖T.op x - T.yosida k (x : H)‖ := by

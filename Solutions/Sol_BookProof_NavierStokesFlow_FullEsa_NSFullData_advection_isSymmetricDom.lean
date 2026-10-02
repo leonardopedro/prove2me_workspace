@@ -12,6 +12,10 @@ open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable (d : NSFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin 3) : IsSymmetricDom (d.advection i) :=
   ((IsSymmetricDom.sum Finset.univ fun _ _ =>

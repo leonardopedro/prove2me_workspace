@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) : oscSymbol κ (n + 2) = oscSymbol κ n + 4 * κ := by
 

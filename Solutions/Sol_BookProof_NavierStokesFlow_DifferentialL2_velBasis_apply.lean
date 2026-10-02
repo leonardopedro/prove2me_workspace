@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
       rw [Submodule.dense_iff_topologicalClosure_eq_top] at hd
       rw [hd])

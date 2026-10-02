@@ -10,6 +10,8 @@ open BookProof.QgHermiteCore
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
 
+variable {E : Type*} [NormedAddCommGroup E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p q : Polynomial ℝ) :
     gint (gaussPolyDeriv (gaussPolyDeriv p) * q)

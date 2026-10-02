@@ -16,6 +16,9 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) (t : ℝ) :
     deriv (fun s : ℝ => pgFun p (sec i x s)) t = pgFun (dPoly i p) (sec i x t) := by

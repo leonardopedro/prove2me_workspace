@@ -14,6 +14,8 @@ open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : F →L[ℂ] F) (c : ℝ) (x : F) :
     (inner ℂ ((c : ℂ) • x) (T ((c : ℂ) • x)) : ℂ).re = c ^ 2 * (inner ℂ x (T x) : ℂ).re := by

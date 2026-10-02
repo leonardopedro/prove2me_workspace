@@ -17,6 +17,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 4000000 in
 -- Both sides expand into the same several-dozen-term ladder polynomial; normalising it

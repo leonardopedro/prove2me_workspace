@@ -17,6 +17,9 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {f : 𝓢(E, ℂ)} :
     f ∈ ccSchwartz E ↔ HasCompactSupport (f : E → ℂ) := Iff.rfl

@@ -12,6 +12,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 .mem_support] at hj
   by_contra hne

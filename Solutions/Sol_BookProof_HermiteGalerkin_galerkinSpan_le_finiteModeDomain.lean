@@ -9,6 +9,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F) (m : ℕ) :
     galerkinSpan b m ≤ finiteModeDomain b := Submodule.span_mono (by rintro x ⟨i, _, rfl⟩; exact ⟨i, rfl⟩)

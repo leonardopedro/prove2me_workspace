@@ -4,19 +4,18 @@ import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockFlow_qgOuterFock_stone_flow
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn
-open BookProof.QgOuterFockFlow
 
 
 
 
 open Filter Topology
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

@@ -12,6 +12,8 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (e : ℕ ≃ (Fin d →₀ ℕ)) :
     Submodule.span ℂ (Set.range (coreBasis (d := d) e)) = polyGaussCore (d := d) := by

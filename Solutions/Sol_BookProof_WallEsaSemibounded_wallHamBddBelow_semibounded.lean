@@ -17,6 +17,8 @@ noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 ards [(f : 𝓢(ℝ, ℂ)).coeFn_toLp 2 (volume : Measure ℝ)] with x hx
   rw [hx]

@@ -14,6 +14,8 @@ open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F) :
     ritzSet (finiteModeRestrict A b) (finiteModeDomain b) ⊆ rayleighSet A := by

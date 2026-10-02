@@ -9,6 +9,9 @@ open BookProof.FarisLavine
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] (H : D →ₗ[ℂ] F) (w₀ : ℂ)
     (h : DeficiencyTrivialAt D H (starRingEnd ℂ w₀)) :

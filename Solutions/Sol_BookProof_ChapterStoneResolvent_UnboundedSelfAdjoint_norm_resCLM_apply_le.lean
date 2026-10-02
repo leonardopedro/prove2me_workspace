@@ -14,6 +14,10 @@ open BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (T : UnboundedSelfAdjoint H)
+variable [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
  : H) : T.resCLM l y ∈ T.domain := (T.res l y).2
 

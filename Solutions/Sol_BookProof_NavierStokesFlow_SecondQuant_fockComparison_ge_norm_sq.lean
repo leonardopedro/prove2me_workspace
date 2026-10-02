@@ -18,6 +18,10 @@ variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 variable {D : ∀ m, Submodule ℂ (S m)}
 
+variable {ι : Type*}
+variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
+variable {D : ∀ m, Submodule ℂ (S m)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) (v : fockCore fiberCore) :
     ‖(v : lp fiberSector 2)‖ ^ 2

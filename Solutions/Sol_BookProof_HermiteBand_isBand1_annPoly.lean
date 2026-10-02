@@ -13,5 +13,7 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) : IsBand1 (annPoly i) := ⟨1, 1, zero_le_one, band_annPoly i⟩

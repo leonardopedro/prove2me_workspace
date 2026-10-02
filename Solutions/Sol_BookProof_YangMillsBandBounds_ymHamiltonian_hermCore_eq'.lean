@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsBandBounds.lean — solution of BookProof.YangMillsBandBounds.ymHamiltonian_hermCore_eq'
 import Mathlib
 import Definitions.Def_ChapterYangMillsBandBounds
-open BookProof.YangMillsBandBounds
 
 
 
@@ -13,7 +12,6 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 set_option maxHeartbeats 1000000 in

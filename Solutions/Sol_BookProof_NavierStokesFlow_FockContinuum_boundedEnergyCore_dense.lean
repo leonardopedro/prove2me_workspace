@@ -15,6 +15,8 @@ open FullEsa
 
 variable {X : Type*} [MeasurableSpace X]
 
+variable {X : Type*} [MeasurableSpace X]
+
 set_option maxHeartbeats 1000000 in
 imp only [one_div] at h
   rw [show (0 : ENNReal) ^ (2 : ℝ)⁻¹ = 0 from ENNReal.zero_rpow_of_pos (by norm_num)] at h

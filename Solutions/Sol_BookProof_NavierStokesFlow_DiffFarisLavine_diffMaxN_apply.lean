@@ -14,6 +14,8 @@ open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 4000000 in
 -- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,

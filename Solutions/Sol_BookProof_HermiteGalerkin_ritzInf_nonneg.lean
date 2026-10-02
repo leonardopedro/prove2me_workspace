@@ -9,6 +9,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : D →ₗ[ℂ] F) (hpos : ∀ x : D, 0 ≤ quadForm H x)
     (V : Submodule ℂ F) (hV : (ritzSet H V).Nonempty) : 0 ≤ ritzInf H V := le_csInf hV (by rintro t ⟨x, _, _, rfl⟩; exact hpos x)

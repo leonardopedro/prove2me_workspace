@@ -21,6 +21,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : d.C.dom) :
     Tendsto (fun k => commForm d.ext d.C.op (d.gcSeq x k)) atTop

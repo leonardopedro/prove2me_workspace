@@ -24,6 +24,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin D) ℂ) :
     ((D : ℝ) / 2) * ‖pgLp p‖ ^ 2 ≤ quadForm harmCore ⟨pgLp p, pgLp_mem_core p⟩ := by

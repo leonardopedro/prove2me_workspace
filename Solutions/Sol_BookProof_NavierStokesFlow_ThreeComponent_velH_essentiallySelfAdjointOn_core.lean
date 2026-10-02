@@ -15,6 +15,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn (lpFiniteModes Vel)

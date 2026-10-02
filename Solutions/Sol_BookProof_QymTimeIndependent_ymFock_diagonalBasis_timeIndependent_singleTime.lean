@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQymTimeIndependentFlow
 import Theorems.Thm_BookProof_QymTimeIndependent_ymFock_timeIndependent_singleTime_of_esa
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_dGammaOp_diagCol_essentiallySelfAdjoint
-open BookProof.QymTimeIndependent
 
 
 
@@ -11,13 +10,13 @@ open BookProof.QymTimeIndependent
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime BookProof.QgTimeIndependent
-open BookProof.FiniteSectionSingleTime BookProof.YangMillsFriedrichs
 open BookProof.FockSecondQuantization BookProof.QgCouplingDGammaSum
 open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 

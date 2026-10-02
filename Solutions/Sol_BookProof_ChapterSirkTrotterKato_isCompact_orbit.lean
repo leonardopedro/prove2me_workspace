@@ -15,6 +15,9 @@ open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (y : H) (T₀ : ℝ) :
     IsCompact ((fun s : ℝ => T.stoneU s y) '' Set.Icc (-T₀) T₀) := (isCompact_Icc).image (T.continuous_stoneU_apply y)

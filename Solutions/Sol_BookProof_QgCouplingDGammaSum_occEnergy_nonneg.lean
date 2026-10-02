@@ -14,6 +14,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {lam : ℕ → ℝ} (hlam : ∀ k, 0 ≤ lam k) (α : Conf) :
     0 ≤ occEnergy lam α := Finset.sum_nonneg fun k _ => mul_nonneg (hlam k) (Nat.cast_nonneg _)

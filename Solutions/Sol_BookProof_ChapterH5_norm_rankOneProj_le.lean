@@ -11,6 +11,10 @@ noncomputable section
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (u : E) : ‖rankOneProj u‖ ≤ ‖u‖ * ‖u‖ := by
 

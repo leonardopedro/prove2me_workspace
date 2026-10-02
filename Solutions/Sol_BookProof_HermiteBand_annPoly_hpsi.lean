@@ -15,6 +15,8 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (α : Fin d →₀ ℕ) :
     annPoly i (hpsi α) = ((Real.sqrt (α i : ℝ) : ℝ) : ℂ) • hpsi (α - Finsupp.single i 1) := by

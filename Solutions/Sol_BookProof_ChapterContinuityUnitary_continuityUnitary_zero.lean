@@ -10,6 +10,8 @@ open scoped BigOperators Matrix TensorProduct
 
 variable {N : ℕ} [NeZero N]
 
+variable {N : ℕ} [NeZero N]
+
 set_option maxHeartbeats 1000000 in
 tinuityUnitary_zero (v : ZMod N → ℝ) : continuityUnitary v 0 = 1 := by
   simp [continuityUnitary, NormedSpace.exp_zero]

@@ -2,11 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.FullEsa.IsSymmetricDom
 
 
 
 open scoped ENNReal
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {A B : D →ₗ[ℂ] D} (hA : IsSymmetricDom A)

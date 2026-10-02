@@ -19,5 +19,8 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Tendsto (fun k : ℕ => 1 / ((k : ℝ) + 1)) atTop (𝓝 0) := tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ)

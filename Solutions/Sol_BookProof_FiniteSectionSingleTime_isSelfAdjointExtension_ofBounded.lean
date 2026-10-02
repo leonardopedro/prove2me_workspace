@@ -1,7 +1,6 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — solution of BookProof.FiniteSectionSingleTime.isSelfAdjointExtension_ofBounded
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
-open BookProof.FiniteSectionSingleTime
 
 
 
@@ -11,13 +10,15 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
 variable {ι : Type*} [DecidableEq ι]
+
+variable {ι : Type*} [DecidableEq ι]
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution {F : Type*} [NormedAddCommGroup F]

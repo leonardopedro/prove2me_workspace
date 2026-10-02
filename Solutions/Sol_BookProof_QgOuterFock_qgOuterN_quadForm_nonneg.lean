@@ -22,5 +22,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : qgOuterCore) : 0 ≤ quadForm qgOuterN x := dsOp_quadForm_nonneg _ (fun _ u => harmonicCore_quadForm_nonneg u) x

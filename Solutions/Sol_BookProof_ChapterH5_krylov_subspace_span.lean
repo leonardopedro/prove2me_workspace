@@ -11,6 +11,9 @@ noncomputable section
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[K] E) (v : E) (m : ℕ) :
     krylovSpan H v m = Submodule.span K {x | ∃ i < m, x = (H ^ i) v} := rfl

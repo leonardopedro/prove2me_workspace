@@ -21,6 +21,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : d.C.dom) (k : ℕ) :
     d.ext (d.gcSeq x k) = d.H₀ ⟨((d.gcSeq x k : d.C.dom) : F), d.gcSeq_mem x k⟩ := by

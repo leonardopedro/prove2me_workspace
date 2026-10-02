@@ -7,6 +7,9 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+
 set_option maxHeartbeats 1000000 in
 - The flow of `A` commutes with everything `A` commutes with. -/
 theorem solution (A B : Matrix (Fin n) (Fin n) ℂ) (h : Commute A B)

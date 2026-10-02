@@ -15,6 +15,10 @@ open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
+
 set_option maxHeartbeats 1000000 in
  : ℝ) := hn
   have hmul : 2 * (|C| + 1) < κ * (n : ℝ) := by

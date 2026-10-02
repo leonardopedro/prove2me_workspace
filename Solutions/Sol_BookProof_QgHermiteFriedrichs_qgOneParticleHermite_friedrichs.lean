@@ -18,6 +18,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ) (hM : 0 < M) (halpha : 0 < alpha) :
     ∃ (Dom : Submodule ℂ (L2d 1)) (A : Dom →ₗ[ℂ] L2d 1),

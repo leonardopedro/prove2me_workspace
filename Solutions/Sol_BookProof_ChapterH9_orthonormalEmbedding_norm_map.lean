@@ -20,6 +20,12 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (w : Fin m → E) (hw : Orthonormal ℂ w)
     (x : EuclideanSpace ℂ (Fin m)) : ‖orthonormalEmbedding w hw x‖ = ‖x‖ := norm_map_of_adjoint_comp (orthonormalEmbedding_adjoint_comp w hw) x

@@ -15,5 +15,7 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : IsHermCol numberCol := isHermCol_diagCol _

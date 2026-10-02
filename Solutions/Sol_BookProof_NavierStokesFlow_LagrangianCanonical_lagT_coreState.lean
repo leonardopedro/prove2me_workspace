@@ -14,6 +14,8 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
+variable (nu : ℝ)
+
 set_option maxHeartbeats 1000000 in
 ical
   refine crd_injective ?_

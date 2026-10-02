@@ -7,6 +7,11 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
+variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
+variable {n : ℕ} (L : LagrangianNS n)
+variable {n : ℕ} (d : NSTruncation n)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H N : F →ₗ[ℂ] F) (c₁ c₂ : ℝ) (hsym : H.IsSymmetric)
     (farisLavine : ∀ (H' N' : F →ₗ[ℂ] F) (a b : ℝ), H'.IsSymmetric →

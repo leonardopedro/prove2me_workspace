@@ -1,7 +1,6 @@
 -- Generated from ChapterQgTruncationResolvent.lean — solution of BookProof.QgTruncationResolvent.momWindow_exhausts
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
-open BookProof.QgTruncationResolvent
 
 
 
@@ -9,12 +8,15 @@ open BookProof.QgTruncationResolvent
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (F : Finset CMode) :

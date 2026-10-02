@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_ham_eq_toLp
 import Theorems.Thm_BookProof_ScalaronFiberFL_xCc_eq_toLp
 import Theorems.Thm_BookProof_ScalaronFiberFL_inner_toLp_toLp
 import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
-open BookProof.ScalaronFiberFL
 
 
 
@@ -19,6 +18,9 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (W : WallPot) (s : ℝ) (f g : ccSchwartz ℝ) :

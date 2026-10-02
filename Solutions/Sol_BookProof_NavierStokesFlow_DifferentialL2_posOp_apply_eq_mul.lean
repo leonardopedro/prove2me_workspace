@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 m operator** `πᵢ = −i ∂/∂uᵢ` on the Hermite core of `L²(ℝᵈ)`. -/
 def momOp (i : Fin d) : (polyGaussCore (d := d)) →ₗ[ℂ] (polyGaussCore (d := d)) :=

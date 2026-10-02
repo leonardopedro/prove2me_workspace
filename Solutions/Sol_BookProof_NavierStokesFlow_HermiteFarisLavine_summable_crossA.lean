@@ -13,6 +13,9 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) {X Y : ℕ → ℂ}
     (hX : Summable fun n => (ampSeq κ X n) ^ 2) (hY : Summable fun n => ‖Y n‖ ^ 2) :

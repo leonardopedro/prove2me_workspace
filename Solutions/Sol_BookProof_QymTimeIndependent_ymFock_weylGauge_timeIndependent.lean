@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_of_positive
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_timeIndependent_of_selfAdjointExtension
 import Theorems.Thm_BookProof_FockSecondQuantization_ym_fock_friedrichs_extension
 import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_quadForm
-open BookProof.QymTimeIndependent
 
 
 
@@ -13,13 +12,13 @@ open BookProof.QymTimeIndependent
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime BookProof.QgTimeIndependent
-open BookProof.FiniteSectionSingleTime BookProof.YangMillsFriedrichs
 open BookProof.FockSecondQuantization BookProof.QgCouplingDGammaSum
 open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 

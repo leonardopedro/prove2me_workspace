@@ -15,6 +15,8 @@ open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {T : E →ₗ[ℂ] E} {P : E →ₗ[ℂ] E} {s : ℝ}
     (hT : T.IsSymmetric) {x : E} (hx : ‖x‖ = 1) (hmem : x ∈ paritySector P s) :

@@ -14,6 +14,8 @@ open MeasureTheory Filter Topology intervalIntegral Set
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {g : ℝ → ℝ} (hg : IsTestFun g) (a b : ℝ) :
     AbsolutelyContinuousOnInterval g a b := by

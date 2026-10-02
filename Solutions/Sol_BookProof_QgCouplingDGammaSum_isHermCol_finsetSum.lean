@@ -14,6 +14,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {s : Finset ι} {cols : ι → ℕ → (ℕ →₀ ℂ)}
     (h : ∀ i ∈ s, IsHermCol (cols i)) : IsHermCol (fun k => ∑ i ∈ s, cols i k) := by

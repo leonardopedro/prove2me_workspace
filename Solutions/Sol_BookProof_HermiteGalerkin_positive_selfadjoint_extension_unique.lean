@@ -9,6 +9,10 @@ open BookProof.HermiteGalerkin
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (A : F →L[ℂ] F) (hAH : ∀ x : D, A (x : F) = H x)

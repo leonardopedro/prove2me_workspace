@@ -8,6 +8,8 @@ open BookProof.ChapterMajoranaProp61
 
 variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
 
+variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
+
 set_option maxHeartbeats 1000000 in
 omit [StarRing 𝒜] [StarModule ℝ 𝒜] in
 theorem solution (H g : 𝒜) (m : ℝ) (hanti : H * g + g * H = (2 * m) • (1 : 𝒜)) :

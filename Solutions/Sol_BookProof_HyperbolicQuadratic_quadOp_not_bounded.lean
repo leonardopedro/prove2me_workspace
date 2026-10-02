@@ -16,6 +16,9 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) {i : Fin d} (hci : c i ≠ 0) :
     ¬ ∃ C : ℝ, ∀ f : polyGaussCore (d := d), ‖quadOp c f‖ ≤ C * ‖(f : L2d d)‖ := by

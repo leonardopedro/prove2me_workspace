@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
     starP (∑ i ∈ s, f i) = ∑ i ∈ s, starP (f i) := map_sum _ _ _

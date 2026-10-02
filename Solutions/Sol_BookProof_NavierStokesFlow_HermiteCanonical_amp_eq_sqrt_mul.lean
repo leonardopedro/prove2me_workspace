@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (κ : ℝ) (n : ℕ) :
     amp κ n = (κ / 2) * (Real.sqrt ((n : ℝ) + 1) * Real.sqrt ((n : ℝ) + 2)) := by

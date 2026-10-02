@@ -20,6 +20,12 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m n : ℕ} (hmn : m ≤ n) (x : EuclideanSpace ℂ (Fin m)) :
     ‖coordIncl hmn x‖ = ‖x‖ := norm_map_of_adjoint_comp (coordIncl_adjoint_comp hmn) x

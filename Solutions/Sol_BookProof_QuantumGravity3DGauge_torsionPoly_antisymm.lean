@@ -13,6 +13,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 set_option maxHeartbeats 1000000 in
 : RealCoeff (torsionPoly mu nu a) := by
   have h : starP (X (idxDE mu nu a) - X (idxDE nu mu a) : MvPolynomial (Fin 84) :=

@@ -15,6 +15,8 @@ open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution [Nontrivial F] (T : F →L[ℂ] F)
     (hT : IsSelfAdjoint T) : minmaxLevel T 0 = sInf (spectrum ℝ T) := by

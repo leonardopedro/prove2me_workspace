@@ -20,6 +20,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {R : Type*} [Fintype R] {α : Type*} [AddCommMonoid α]
     (F : R → Fin D → Fin D → α) :

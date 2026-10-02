@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_HermiteBand_IsBand1_add
 import Theorems.Thm_BookProof_HermiteBand_IsBand2_add
 import Theorems.Thm_BookProof_HermiteBand_isBand1_zero
 open BookProof.HermiteBand
-open BookProof.HermiteBand.IsBand1
 
 
 
@@ -14,6 +13,8 @@ open BookProof.HermiteBand.IsBand1
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

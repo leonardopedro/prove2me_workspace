@@ -8,6 +8,8 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (t : ℝ) :
     HasDerivAt (fun s : ℝ => matrixFlow A (-s)) (-(matrixFlow A (-t) * A)) t := by

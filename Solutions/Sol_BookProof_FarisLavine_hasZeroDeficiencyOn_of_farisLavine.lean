@@ -19,6 +19,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 key w Complex.I).1 hw), fun w hw => h2 w ?_⟩
     intro v

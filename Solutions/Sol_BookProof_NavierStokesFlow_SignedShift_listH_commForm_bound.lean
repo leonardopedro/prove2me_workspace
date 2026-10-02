@@ -17,6 +17,10 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+variable {sym : ι → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (L : List (SignedHop ι sym)) (hsym : ∀ β, 1 ≤ sym β) :
     ∃ cst : ℝ, 0 ≤ cst ∧ ∀ x : maxDom sym,

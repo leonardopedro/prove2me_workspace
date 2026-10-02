@@ -19,6 +19,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
  (Set.right_mem_uIcc)
   have hg0 : g 0 = 0 := by simp [hg]

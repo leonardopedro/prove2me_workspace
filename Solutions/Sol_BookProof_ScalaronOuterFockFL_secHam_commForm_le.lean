@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_imA_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_imB_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_quadForm_secDiag_eq
 import Theorems.Thm_BookProof_FarisLavine_commForm_eq
-open BookProof.ScalaronOuterFockFL
 
 
 
@@ -14,10 +13,15 @@ open BookProof.ScalaronOuterFockFL
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (x : secCore (ι := ι)) :

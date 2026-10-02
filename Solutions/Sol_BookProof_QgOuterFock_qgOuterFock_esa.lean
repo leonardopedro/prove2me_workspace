@@ -21,5 +21,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : EssentiallySelfAdjointOn qgOuterCore qgOuterHam := dsOp_essentiallySelfAdjointOn _ fun n => qgSectorHam_essentiallySelfAdjointOn n

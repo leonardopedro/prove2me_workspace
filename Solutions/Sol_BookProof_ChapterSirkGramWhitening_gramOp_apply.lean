@@ -15,6 +15,8 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (w : Fin m → E) (c : EuclideanSpace ℂ (Fin m)) (i : Fin m) :
     gramOp w c i = ∑ j, ⟪w i, w j⟫_ℂ * c j := by

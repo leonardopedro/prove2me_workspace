@@ -11,6 +11,8 @@ open Filter Topology MeasureTheory
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {y : H} {C : ℝ} (hC : 0 ≤ C)
     (h : ‖⟪y, y⟫_ℂ‖ ≤ C * ‖y‖) : ‖y‖ ≤ C := by

@@ -15,6 +15,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (β γ : Vel) :
     ((velH A c (velState A c β) : L2I Vel) : Vel → ℂ) γ

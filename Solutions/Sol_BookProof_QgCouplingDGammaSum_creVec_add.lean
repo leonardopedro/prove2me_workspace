@@ -15,6 +15,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v w : ℕ →₀ ℂ) (x : FockAlg) :
     creVec (v + w) x = creVec v x + creVec w x := by

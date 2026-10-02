@@ -13,6 +13,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {i j : Fin d} (h : j ≠ i) (n : ℕ) :
     pderiv j (hermiteFactor i n) = 0 := pderiv_aeval_other h _

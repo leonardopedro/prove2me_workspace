@@ -12,6 +12,8 @@ open BookProof.FarisLavine
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : D →ₗ[ℂ] F) (x : D) :
     formNormSq H x = ‖(x : F)‖ ^ 2 + quadForm H x := by

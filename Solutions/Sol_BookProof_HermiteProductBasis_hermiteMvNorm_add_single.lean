@@ -13,6 +13,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :
     hermiteMvNorm (a + Finsupp.single i 1) = hermiteMvNorm a * Real.sqrt ((a i : ℝ) + 1) := by

@@ -8,6 +8,9 @@ open BookProof.NavierStokesFlow.LagrangianNS
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
+variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
+variable {n : ℕ} (L : LagrangianNS n)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} {R : Fin 3 → Matrix (Fin m) (Fin m) ℂ}
     (hR : ∀ i, (R i)ᴴ = R i) : (∑ i, R i * R i).PosSemidef := by

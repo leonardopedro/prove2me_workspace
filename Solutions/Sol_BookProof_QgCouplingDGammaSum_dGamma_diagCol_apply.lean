@@ -18,6 +18,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (lam : ℕ → ℝ) (u : FockAlg) (α : Conf) :
     dGamma (diagCol lam) u α = ((occEnergy lam α : ℝ) : ℂ) * u α := by

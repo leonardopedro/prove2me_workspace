@@ -16,6 +16,9 @@ open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 ense) hc continuous_const heq) v
   simpa using hzero u

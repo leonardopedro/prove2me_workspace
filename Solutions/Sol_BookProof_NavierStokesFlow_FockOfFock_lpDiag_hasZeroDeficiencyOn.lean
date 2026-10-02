@@ -13,6 +13,8 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 open FullEsa
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (c : ι → ℝ) :
     HasZeroDeficiencyOn (lpFiniteModes ι) (lpDiag c) := by

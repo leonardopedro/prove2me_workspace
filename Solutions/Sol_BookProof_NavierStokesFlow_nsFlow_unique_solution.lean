@@ -9,6 +9,9 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+
 set_option maxHeartbeats 1000000 in
 s : ℝ => nsFlowUnitary d s *ᵥ psi)
       ((Complex.I • nsHamiltonian d) *ᵥ (nsFlowUnitary d t *ᵥ psi)) t := by

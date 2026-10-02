@@ -17,6 +17,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0) (y : H) :
     T.resCLM l y - T.resCLM m y

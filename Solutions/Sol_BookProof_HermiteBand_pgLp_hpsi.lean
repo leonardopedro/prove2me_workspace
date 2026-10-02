@@ -13,6 +13,8 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (α : Fin d →₀ ℕ) : pgLp (hpsi α) = hermiteMvLp α := by
 

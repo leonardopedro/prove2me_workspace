@@ -15,6 +15,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {ι : Type*} (S : ShiftData ι)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : maxDom S.sym) :
     ‖(shiftH S x : L2I ι)‖ ^ 2

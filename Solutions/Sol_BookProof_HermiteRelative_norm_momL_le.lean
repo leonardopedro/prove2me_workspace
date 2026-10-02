@@ -16,6 +16,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 le_relBound_of_sq_le (norm_nonneg _) (norm_nonneg _) hc0 he
     (norm_posL_sq_le c hc0 hc i u)

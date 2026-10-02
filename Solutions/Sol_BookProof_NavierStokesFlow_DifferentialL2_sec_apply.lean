@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (x : Vd d) (t : ℝ) (j : Fin d) :
     (sec i x t) j = if j = i then t else x j := by

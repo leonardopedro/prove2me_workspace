@@ -13,13 +13,9 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
-_i)` in the `i`-th coordinate. -/
-def hermiteFactor (i : Fin d) (n : ℕ) : MvPolynomial (Fin d) ℂ :=
-  Polynomial.aeval (X i : MvPolynomial (Fi :=
-  n d) ℂ) (hermiteCx n)
-  
-  theorem hermiteFactor_zero (i : Fin d) : hermiteFactor i 0 = 1 := by
-    simp [hermiteFactor, hermiteCx_zero]
-  
-  theorem hermite
+theorem solution (i : Fin d) : hermiteFactor i 0 = 1 := by
+
+  simp [hermiteFactor, hermiteCx_zero]

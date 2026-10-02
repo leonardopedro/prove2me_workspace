@@ -19,6 +19,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin D) ℂ) :
     ‖pgLp (harmP p)‖ ≤ shiftNorm p := by

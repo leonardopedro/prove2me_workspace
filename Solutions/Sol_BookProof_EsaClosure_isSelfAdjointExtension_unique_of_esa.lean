@@ -4,6 +4,10 @@ import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_EsaClosure_selfAdjointExtension_eq_adjoint
 open BookProof.EsaClosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 import BookProof.Prelude
 import BookProof.ChapterFarisLavineCore

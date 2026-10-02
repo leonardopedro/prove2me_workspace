@@ -13,6 +13,9 @@ noncomputable section
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH9
 open BookProof.ChapterSirkEndToEnd BookProof.HashimotoShiftInvert BookProof.FarisLavine
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {G : Type*} [NormedAddCommGroup G]
     [InnerProductSpace ℂ G] [CompleteSpace G] {A : Dom →ₗ[ℂ] F} {γ : ℂ} {X : F →L[ℂ] F}

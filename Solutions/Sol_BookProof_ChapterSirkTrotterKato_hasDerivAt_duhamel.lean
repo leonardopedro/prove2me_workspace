@@ -22,6 +22,8 @@ open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T S : UnboundedSelfAdjoint H) (chi : T.domain) (t u : ℝ) :
     HasDerivAt (fun r : ℝ => S.stoneU (t - r) (S.resCLM 1 (T.stoneU r (chi : H))))

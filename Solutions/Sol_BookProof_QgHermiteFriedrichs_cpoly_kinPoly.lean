@@ -17,6 +17,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) :
     cpoly (kinPoly p) = kinPoly (cpoly p) := by

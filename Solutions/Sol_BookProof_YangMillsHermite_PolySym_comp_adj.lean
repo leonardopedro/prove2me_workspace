@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.PolySym
 
 
 
@@ -12,6 +11,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFried
 open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

@@ -18,6 +18,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℕ) (u : FockAlg) (α : Conf) :
     creA k (annA k u) α = ((α k : ℝ) : ℂ) * u α := by

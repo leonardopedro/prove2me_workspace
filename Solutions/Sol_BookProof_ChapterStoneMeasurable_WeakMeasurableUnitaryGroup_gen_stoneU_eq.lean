@@ -13,6 +13,10 @@ open Filter Topology MeasureTheory
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
+variable (G : WeakMeasurableUnitaryGroup H)
+
 set_option maxHeartbeats 1000000 in
 ans (hconst.trans ht))
 

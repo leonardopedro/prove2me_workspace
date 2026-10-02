@@ -19,6 +19,8 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin D → ℂ) (p : MvPolynomial (Fin D) ℂ) :
     (∑ k : Fin D, coreD k (coreD k (∑ j : Fin D, c j • coreD j (coreD j p))))

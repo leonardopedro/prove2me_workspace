@@ -13,6 +13,9 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) (i : Fin d) (n : ℕ) :
     quadSymbol c (Finsupp.single i n) = c i * (n : ℝ) + ∑ j, c j * (1/2) := by

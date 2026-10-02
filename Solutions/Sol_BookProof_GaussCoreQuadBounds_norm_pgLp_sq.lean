@@ -17,6 +17,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (q : MvPolynomial (Fin D) ℂ) :
     ‖pgLp q‖ ^ 2 = (gaussInt (cpoly q * q)).re := by

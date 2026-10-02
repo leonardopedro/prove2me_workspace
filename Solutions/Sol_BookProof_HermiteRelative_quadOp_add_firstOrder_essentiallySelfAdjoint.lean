@@ -19,6 +19,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 |b i| + |b' i|) * R := by ring
     _ = (∑ i, (|b i| + |b' i|)) * R := by rw [Finset.sum_mul]

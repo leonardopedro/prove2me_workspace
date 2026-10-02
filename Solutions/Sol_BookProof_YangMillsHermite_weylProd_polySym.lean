@@ -17,6 +17,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
     (hS : PolySym S) (hT : PolySym T) : PolySym (weylProd S T) := PolySym.real_smul ((hS.comp_adj hT).symm_of (hT.comp_adj hS))

@@ -15,6 +15,11 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ} (c : ComparisonData F d)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {κ : Type*}
+
 set_option maxHeartbeats 1000000 in
 nSpace.single (0 : Fin 2) (1 : ℂ) := by
   simp only [LinearMap.add_apply, hEx, LinearMap.smulRight_apply, ← add_smul]

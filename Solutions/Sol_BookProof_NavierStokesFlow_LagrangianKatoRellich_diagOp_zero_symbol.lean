@@ -13,6 +13,10 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution : diagOp (fun _ => (0 : ℝ)) = 0 := by
 

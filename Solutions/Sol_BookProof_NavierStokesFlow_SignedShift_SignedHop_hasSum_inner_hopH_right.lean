@@ -19,6 +19,9 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x y : maxDom sym) :
     HasSum (fun β => -Complex.I * S.crossA ((x : L2I ι) : ι → ℂ) (((y : L2I ι) : ι → ℂ)) β

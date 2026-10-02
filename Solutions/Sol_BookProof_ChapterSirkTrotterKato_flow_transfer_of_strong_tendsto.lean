@@ -16,6 +16,8 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A : ℕ → H →L[ℂ] H} {Alim : H →L[ℂ] H}
     (hA : ∀ n, IsSelfAdjoint (A n)) (hlim : IsSelfAdjoint Alim)

@@ -12,6 +12,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (q : Polynomial ℂ) :
     pderiv i (Polynomial.aeval (X i : MvPolynomial (Fin d) ℂ) q)

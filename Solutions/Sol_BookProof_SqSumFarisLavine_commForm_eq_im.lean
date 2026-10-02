@@ -23,6 +23,8 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (p : MvPolynomial (Fin D) ℂ) :
     commForm (sqSumOp kappa v) harmCore ⟨pgLp p, pgLp_mem_core p⟩

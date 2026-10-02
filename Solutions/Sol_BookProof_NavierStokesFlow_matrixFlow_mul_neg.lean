@@ -7,6 +7,8 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
  1
     <;> (first | rfl | simp)

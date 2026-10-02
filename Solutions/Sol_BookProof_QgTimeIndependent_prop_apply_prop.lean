@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
-open BookProof.QgTimeIndependent
 
 
 
@@ -11,6 +10,8 @@ open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

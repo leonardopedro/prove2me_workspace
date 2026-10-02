@@ -15,6 +15,8 @@ noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℝ → ℂ)
     (h1 : ∀ x, HasDerivAt f (deriv f x) x)

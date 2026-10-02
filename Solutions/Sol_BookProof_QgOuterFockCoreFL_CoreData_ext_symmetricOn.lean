@@ -23,6 +23,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hsym : SymmetricOn d.C₀ d.H₀) : SymmetricOn d.C.dom d.ext := by
 

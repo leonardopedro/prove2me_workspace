@@ -17,6 +17,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 ntertwined_ann (i : Fin 3) : Intertwined (ann i) (annOp i) := fun x :=
   =>

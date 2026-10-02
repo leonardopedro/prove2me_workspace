@@ -15,6 +15,8 @@ open Filter Topology
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (hpos : ∀ x : D, 0 ≤ quadForm H x) {mu : ℝ} (hmu : mu ≤ ritzInf H D) (x : D) :

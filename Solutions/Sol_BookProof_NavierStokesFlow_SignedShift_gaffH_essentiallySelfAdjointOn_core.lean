@@ -16,6 +16,11 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {sym : ι → ℝ} (S : SignedHop ι sym)
+variable {sym : ι → ℝ}
+variable (kap cst : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn (lpFiniteModes ℕ)

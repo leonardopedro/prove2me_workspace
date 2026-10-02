@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 nearEquiv.ofInjective (pgMap (d := d)) (pgMap_injective (d := d))
 

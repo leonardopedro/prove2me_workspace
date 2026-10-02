@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p q : MvPolynomial (Fin d) ℂ) :
     starP (p * q) = starP p * starP q := map_mul _ _ _

@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
 import Theorems.Thm_BookProof_QgManifoldModeInstance_VielbeinSpectrum_energyWindow_exhausts
-open BookProof.SirkSingleTime
 
 
 
@@ -17,6 +16,11 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ)

@@ -14,6 +14,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (z : ℂ) : (starRingEnd ℂ) z * z = ((‖z‖ ^ 2 : ℝ) : ℂ) := by
 

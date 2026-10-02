@@ -13,5 +13,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Dense ((polyGaussCore (d := d) : Submodule ℂ (L2d d)) : Set (L2d d)) := polyGaussCore_dense

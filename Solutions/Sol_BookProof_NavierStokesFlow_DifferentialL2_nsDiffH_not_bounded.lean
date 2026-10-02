@@ -19,6 +19,9 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 rIsometryEquiv velUnitary velUnitary_mem_core hint ?_
   exact (essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn _ _).1

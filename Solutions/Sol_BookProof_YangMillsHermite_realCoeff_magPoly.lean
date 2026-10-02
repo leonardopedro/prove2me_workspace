@@ -20,6 +20,10 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
+variable {D : Submodule ℂ (L2d 99)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (i : Fin 3) (a : Fin 8) :
     RealCoeff (magPoly fabc i a) := by

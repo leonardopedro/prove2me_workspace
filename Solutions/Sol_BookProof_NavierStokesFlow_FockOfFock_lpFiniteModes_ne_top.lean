@@ -11,6 +11,8 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 open FullEsa
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (ι : Type*) [Infinite ι] :
     lpFiniteModes ι ≠ (⊤ : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) := by

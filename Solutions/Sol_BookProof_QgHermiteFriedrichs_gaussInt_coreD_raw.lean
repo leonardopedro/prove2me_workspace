@@ -17,6 +17,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) (a b : MvPolynomial (Fin d) ℂ) :
     gaussInt (coreD j a * b) = -gaussInt (a * coreD j b) := by

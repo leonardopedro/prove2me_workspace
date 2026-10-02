@@ -23,6 +23,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) :
     sqSumPoly (qgKappaN n) (qgTorsionVecN n)

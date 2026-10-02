@@ -16,6 +16,8 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
  _ k j
 

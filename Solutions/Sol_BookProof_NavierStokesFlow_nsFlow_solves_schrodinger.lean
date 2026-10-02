@@ -9,6 +9,9 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+
 set_option maxHeartbeats 1000000 in
 rem nsFlow_hasDerivAt (t : ℝ) :
     HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by

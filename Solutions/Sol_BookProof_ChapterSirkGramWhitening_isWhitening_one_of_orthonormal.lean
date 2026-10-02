@@ -16,6 +16,8 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 
   simp [IsWhiteningMatrix, hG]

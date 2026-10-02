@@ -11,6 +11,8 @@ open scoped BigOperators Matrix TensorProduct
 
 variable {N : ℕ} [NeZero N]
 
+variable {N : ℕ} [NeZero N]
+
 set_option maxHeartbeats 1000000 in
 namics-based unitary
 (and *no* basis choice) a genuine conditional probability law

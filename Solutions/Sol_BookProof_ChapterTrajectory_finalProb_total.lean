@@ -12,6 +12,8 @@ open scoped BigOperators Matrix
 
 variable {n : ℕ}
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (U V : Matrix (Fin n) (Fin n) ℂ) (psi : Fin n → ℂ)
     (hU : Uᴴ * U = 1) (hV : Vᴴ * V = 1) (hpsi : ∑ a, ‖psi a‖ ^ 2 = 1) :

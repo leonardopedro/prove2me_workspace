@@ -17,6 +17,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 open ContinuousLinearMap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m n : ℕ} (hmn : m ≤ n) (i : Fin m) :
     coordIncl hmn (EuclideanSpace.single i (1 : ℂ))

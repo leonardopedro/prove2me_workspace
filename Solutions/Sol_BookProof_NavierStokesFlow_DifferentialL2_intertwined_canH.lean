@@ -10,6 +10,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_Intertwined_sum
 open BookProof.NavierStokesFlow.DifferentialL2
 
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterHermiteProductBasis

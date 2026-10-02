@@ -14,6 +14,8 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
+variable (nu : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {i k : Fin 3} (h : i ≠ k) :
     (lagP nu i).comp (lagQ nu k) = (lagQ nu k).comp (lagP nu i) := by

@@ -21,5 +21,7 @@ open BookProof.HashimotoShiftInvert
 
 variable (M alpha : ℝ)
 
+variable (M alpha : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (halpha : 0 < alpha) (x : ℝ) : 0 ≤ scalV M alpha x := starobinskyV_nonneg halpha x

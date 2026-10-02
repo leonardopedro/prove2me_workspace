@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_strongResolventConvergence_of_dense
 import Theorems.Thm_BookProof_QgTruncationResolvent_tendsto_resCLM_shift
-open BookProof.QgTruncationResolvent
 
 
 
@@ -11,10 +10,11 @@ open BookProof.QgTruncationResolvent
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

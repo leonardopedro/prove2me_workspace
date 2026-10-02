@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.CoreRep
 
 
 
@@ -17,6 +16,9 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
 
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 1000000 in

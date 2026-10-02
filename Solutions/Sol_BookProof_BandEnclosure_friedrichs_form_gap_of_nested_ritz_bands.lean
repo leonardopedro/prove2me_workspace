@@ -19,6 +19,8 @@ open Filter Topology
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn (finiteModeDomain b) H)

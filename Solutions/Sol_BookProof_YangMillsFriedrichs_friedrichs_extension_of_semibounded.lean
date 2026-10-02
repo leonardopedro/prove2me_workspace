@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterFarisLavine

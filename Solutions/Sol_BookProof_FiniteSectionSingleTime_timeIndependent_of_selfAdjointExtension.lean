@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution
 import Theorems.Thm_BookProof_QgTimeIndependent_norm_prop_apply
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_apply_prop
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_time_translation
-open BookProof.FiniteSectionSingleTime
 
 
 
@@ -15,13 +14,15 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
 variable {ι : Type*} [DecidableEq ι]
+
+variable {ι : Type*} [DecidableEq ι]
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution {F : Type*} [NormedAddCommGroup F]

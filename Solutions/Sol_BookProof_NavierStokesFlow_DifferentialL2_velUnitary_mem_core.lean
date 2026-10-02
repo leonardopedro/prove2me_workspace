@@ -18,6 +18,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 ∈ polyGaussCore (d := 3) :=
   hermiteMvLp_mem_core (velIdx b)

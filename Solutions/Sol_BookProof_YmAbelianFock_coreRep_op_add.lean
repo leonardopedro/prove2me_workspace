@@ -1,23 +1,21 @@
 -- Generated from ChapterYangMillsAbelianFockEsa.lean — solution of BookProof.YmAbelianFock.coreRep_op_add
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
-open BookProof.YmAbelianFock
 
 
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
 open BookProof.YangMillsFriedrichs
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
-open BookProof.FiniteSectionSingleTime BookProof.QymTimeIndependent BookProof.QgTimeIndependent
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

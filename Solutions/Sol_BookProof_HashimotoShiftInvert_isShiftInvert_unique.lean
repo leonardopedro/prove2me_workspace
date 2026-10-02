@@ -12,6 +12,10 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A : Dom →ₗ[ℂ] F} {γ : ℝ} {R S : F →L[ℂ] F}
     (hR : IsShiftInvert A γ R) (hS : IsShiftInvert A γ S) : R = S := by

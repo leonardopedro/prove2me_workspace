@@ -13,6 +13,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (sym : Vel → ℝ) (x : lpFiniteModes Vel) :
     ((Submodule.inclusion (finiteModes_le_maxDom sym) x : maxDom sym) : L2I Vel)

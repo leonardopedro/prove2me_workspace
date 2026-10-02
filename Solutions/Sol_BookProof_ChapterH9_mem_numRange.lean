@@ -18,6 +18,11 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {X : E →L[ℂ] E} (x : E) (hx : ‖x‖ = 1) :
     (inner ℂ x (X x) : ℂ) ∈ numRange X := ⟨x, hx, rfl⟩

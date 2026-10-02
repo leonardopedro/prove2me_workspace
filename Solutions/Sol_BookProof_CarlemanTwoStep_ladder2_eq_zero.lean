@@ -9,7 +9,6 @@ import Theorems.Thm_BookProof_CarlemanTwoStep_flux_boundG
 import Theorems.Thm_BookProof_CarlemanTwoStep_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_shifted_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
-open BookProof.CarlemanTwoStep
 
 
 
@@ -20,6 +19,10 @@ open BookProof.HermiteCarleman
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {B : ℝ} (hz : z.im ≠ 0)

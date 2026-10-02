@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_op_apply
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.CoreRep
 
 
 
@@ -15,6 +14,9 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep d D) (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (x : D) :

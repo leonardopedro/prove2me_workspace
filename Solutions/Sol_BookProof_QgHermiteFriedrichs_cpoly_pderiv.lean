@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     cpoly (pderiv j p) = pderiv j (cpoly p) := pderiv_map.symm

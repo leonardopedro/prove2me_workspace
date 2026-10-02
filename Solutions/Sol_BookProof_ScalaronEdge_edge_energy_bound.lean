@@ -23,6 +23,8 @@ open BookProof.HashimotoShiftInvert
 
 variable (M alpha : ℝ)
 
+variable (M alpha : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A B c : ℝ} (hA : 0 < A) (hB : 0 < B) (hc : 0 < c)
     (V : ℝ → ℝ) (hVcont : Continuous V) (hVnn : ∀ x, 0 ≤ V x)

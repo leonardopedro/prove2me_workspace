@@ -19,6 +19,9 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 set_option maxHeartbeats 1000000 in
 omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
 theorem solution {M alpha : ℝ} (halpha : 0 < alpha) (eRc ephi : E) (x : E) :

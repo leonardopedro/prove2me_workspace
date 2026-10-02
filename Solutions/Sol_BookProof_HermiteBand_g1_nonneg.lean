@@ -12,5 +12,7 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) : 0 ≤ g1 n := Real.sqrt_nonneg _

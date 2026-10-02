@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_QuantumGravity3DGauge_idxE_injective
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgCCR
 open BookProof.QuantumGravity3DGauge
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterYangMillsHermite

@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_exists_res_domain_approx
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res
-open BookProof.QgTimeStepping
 
 
 
@@ -11,12 +10,13 @@ open BookProof.QgTimeStepping
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : H) {eps : ℝ} (heps : 0 < eps) :

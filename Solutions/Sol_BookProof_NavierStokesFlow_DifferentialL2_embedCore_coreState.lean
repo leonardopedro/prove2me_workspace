@@ -19,6 +19,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 eModes Vel).subtype)
     velUnitary_mem_core

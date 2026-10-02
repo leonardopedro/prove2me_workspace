@@ -16,6 +16,10 @@ open BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (T : UnboundedSelfAdjoint H)
+variable [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 t, inner_smul_right, hsym]
   simp [Complex.conj_I]

@@ -13,6 +13,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ι ℂ F) {w : F}
     (h : ∀ i, (inner ℂ (b i) w : ℂ) = 0) : w = 0 := by

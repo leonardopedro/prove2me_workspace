@@ -9,6 +9,10 @@ open BookProof.NavierStokesFlow.LagrangianNS
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+variable (L : LagrangianNS n)
+
 set_option maxHeartbeats 1000000 in
 Complex.I • L.hFull)) :=
     ((Commute.refl (Complex.I • L.hFull)).smul_left s).smul_right t

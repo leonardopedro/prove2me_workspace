@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_sub_I_sq
-open BookProof.ScalaronFiberFL
 
 
 
@@ -15,6 +14,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (C : Comparison F) (C₀ : Submodule ℂ F) (hle : C₀ ≤ C.dom)

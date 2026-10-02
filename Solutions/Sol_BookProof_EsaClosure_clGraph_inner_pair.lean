@@ -13,6 +13,9 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {T : D →ₗ[ℂ] F} (hsym : SymmetricOn D T) {p q : F × F}
     (hp : p ∈ clGraph T) (hq : q ∈ clGraph T) :

@@ -12,6 +12,9 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (X : ℕ → F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ m : ℕ, rkSpan X v m : Submodule ℂ F) : Set F)) (u : F) :

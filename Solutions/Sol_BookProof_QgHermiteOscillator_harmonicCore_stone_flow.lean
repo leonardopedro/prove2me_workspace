@@ -17,6 +17,10 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     ∃ (T : UnboundedSelfAdjoint (L2d d)) (U : ℝ → (L2d d →L[ℂ] L2d d)),

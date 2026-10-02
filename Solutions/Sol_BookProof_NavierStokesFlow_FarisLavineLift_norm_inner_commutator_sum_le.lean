@@ -13,6 +13,11 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ} (c : ComparisonData F d)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {κ : Type*}
+
 set_option maxHeartbeats 1000000 in
    intro k hk
     rw [Finset.sum_eq_single_of_mem k hk]

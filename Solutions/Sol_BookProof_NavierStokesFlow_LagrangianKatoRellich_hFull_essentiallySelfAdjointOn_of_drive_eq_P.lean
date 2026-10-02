@@ -15,6 +15,9 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] (hdrive : L.drive = L.P)
     {cc : ℝ} (hcc : 0 ≤ cc) (hC : ∀ v : L.D, ‖(L.constraintOp v : F)‖ ≤ cc * ‖(v : F)‖)

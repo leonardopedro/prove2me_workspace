@@ -18,6 +18,9 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Dense ((ccDomain E : Submodule ℂ (Lp ℂ 2 (volume : Measure E))) :
     Set (Lp ℂ 2 (volume : Measure E))) := by

@@ -3,13 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteCore
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
 open BookProof.QgHermiteCore
-open BookProof.QgHermiteCore.ExpBounded
 
 
 
 
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
+
+variable {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {f g : E → ℝ} (hf : ExpBounded f) (hg : ExpBounded g) :

@@ -7,6 +7,9 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+variable {n : ℕ} (d : NSTruncation n)
+
 set_option maxHeartbeats 1000000 in
 the flow of the generator `i H_N`. -/
 theorem solution (t : ℝ) :

@@ -14,6 +14,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {ι : Type*} (S : ShiftData ι)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : maxDom S.sym) :
     HasSum (fun β => 2 * S.step * (S.amp β

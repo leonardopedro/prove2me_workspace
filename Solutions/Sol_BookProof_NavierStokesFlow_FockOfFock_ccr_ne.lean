@@ -10,6 +10,9 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 open FullEsa
 
+variable {ι : Type*}
+variable {M : Type*} [DecidableEq M]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m m' : M} (h : m ≠ m') :
     (annih m).comp (creat m') - (creat m').comp (annih m) = 0 := by

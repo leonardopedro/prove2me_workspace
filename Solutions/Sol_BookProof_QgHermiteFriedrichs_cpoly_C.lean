@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a : ℂ) :
     cpoly (C a : MvPolynomial (Fin d) ℂ) = C (starRingEnd ℂ a) := by

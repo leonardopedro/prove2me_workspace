@@ -2,13 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_ext_core
-open BookProof.QgContinuumModeInstance
 
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgVielbeinModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

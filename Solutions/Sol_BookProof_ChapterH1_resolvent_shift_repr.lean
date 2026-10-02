@@ -12,6 +12,9 @@ open intervalIntegral
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {A : Type*} [Ring A] [Algebra ℂ A]
+
 set_option maxHeartbeats 1000000 in
 unction
 `X_j = (1 + h(m−j)·X_m)⁻¹ · X_m` of `X_m` (Hashimoto §4, "Since `X_j` is

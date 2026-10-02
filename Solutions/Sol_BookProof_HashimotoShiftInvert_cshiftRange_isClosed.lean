@@ -11,6 +11,10 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A : Dom →ₗ[ℂ] F} (hsym : SymmetricOn Dom A)
     (hsa : ∀ w u : F, (∀ v : Dom, (inner ℂ (A v) w : ℂ) = inner ℂ (v : F) u) →

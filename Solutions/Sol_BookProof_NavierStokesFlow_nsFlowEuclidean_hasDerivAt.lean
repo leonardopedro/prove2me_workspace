@@ -12,6 +12,10 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+variable {n : ℕ} (d : NSTruncation n)
+
 set_option maxHeartbeats 1000000 in
 eorem nsFlowEuclidean_zero (psi : EuclideanSpace ℂ (Fin n)) :
     nsFlowEuclidean d 0 psi = psi := by

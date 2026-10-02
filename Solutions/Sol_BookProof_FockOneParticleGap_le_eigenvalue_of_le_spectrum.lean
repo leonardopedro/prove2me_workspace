@@ -12,6 +12,9 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FarisLavine BookProof.NavierStokesFlow
 open Filter Topology
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A : F →L[ℂ] F} (hA : IsSelfAdjoint A)
     {b : HilbertBasis ℕ ℂ F} {e : ℕ → ℝ}

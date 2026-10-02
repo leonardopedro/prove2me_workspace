@@ -14,6 +14,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 mom j p
   · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by

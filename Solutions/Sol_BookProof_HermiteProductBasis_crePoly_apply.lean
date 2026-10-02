@@ -12,6 +12,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     crePoly i p = X i * p - pderiv i p := rfl

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.NavierStokesFlow.DifferentialL2.Intertwined
 
 
 
@@ -16,6 +15,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 eorem Intertwined.comp {T S T' S'} (hT : Intertwined T T') (hS := : Intertwined S

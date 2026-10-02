@@ -12,6 +12,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 ite.subset (hf.image fun k => k - m) ?_
   intro k hk

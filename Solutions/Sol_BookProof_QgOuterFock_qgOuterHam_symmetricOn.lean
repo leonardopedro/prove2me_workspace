@@ -21,5 +21,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : SymmetricOn qgOuterCore qgOuterHam := dsOp_symmetricOn _ fun n => qgSectorHam_symmetricOn n

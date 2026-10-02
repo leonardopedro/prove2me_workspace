@@ -20,6 +20,11 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
 set_option maxHeartbeats 1000000 in
 theorem solution [FiniteDimensional ℂ F]
     (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G) (X : E →L[ℂ] E)

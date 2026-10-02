@@ -18,5 +18,7 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution : SymmetricOn (polyGaussCore (d := D)) (harmCore (d := D)) := hamCore_symmetricOn _ _ _

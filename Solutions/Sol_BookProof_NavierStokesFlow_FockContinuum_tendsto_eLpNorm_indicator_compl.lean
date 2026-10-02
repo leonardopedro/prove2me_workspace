@@ -14,6 +14,8 @@ open FullEsa
 
 variable {X : Type*} [MeasurableSpace X]
 
+variable {X : Type*} [MeasurableSpace X]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
     (f : Lp ℂ 2 μ) :

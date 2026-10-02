@@ -13,6 +13,9 @@ open Filter Topology NormedSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n t : ℝ) :
     t • T.yosidaGen n ∈ skewAdjoint (H →L[ℂ] H) := by

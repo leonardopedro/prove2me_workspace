@@ -13,6 +13,10 @@ open Filter Topology MeasureTheory
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
+variable (G : WeakMeasurableUnitaryGroup H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : H) (a : ℝ) :
     G.genOp ⟨G.bAvg x a, G.bAvg_mem_genDomain x a⟩ = Complex.I • (G.U a x - x) := by

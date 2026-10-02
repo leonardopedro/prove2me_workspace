@@ -17,6 +17,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
  (d := d)) →ₗ[ℂ] L2d d :=
   (polyGaussCore (d := d)).subtype ∘ₗ coreOp (foPoly b b')

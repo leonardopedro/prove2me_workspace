@@ -11,6 +11,8 @@ noncomputable section
 
 open BookProof.SirkCertifiedGap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {n : ℕ} (row : Fin n → CouplingCertificate)
     (T P : Fin n → E →ₗ[ℂ] E) (thetaE thetaO deltaE deltaO : Fin n → ℝ)

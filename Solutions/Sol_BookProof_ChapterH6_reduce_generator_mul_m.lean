@@ -9,6 +9,11 @@ noncomputable section
 
 open Filter Topology
 
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (m : ℕ) : Fintype.card (Fin m × Fin m) = m * m := by
 

@@ -18,6 +18,8 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin D) :
     pderiv j (pderiv j (harmPoly (d := D))) = C (1 / 2 : ℂ) := by

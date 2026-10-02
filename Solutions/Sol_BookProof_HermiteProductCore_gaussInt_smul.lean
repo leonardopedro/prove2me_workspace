@@ -12,6 +12,8 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (c : ℂ) (r : MvPolynomial (Fin d) ℂ) :
     gaussInt (c • r) = c * gaussInt r := by

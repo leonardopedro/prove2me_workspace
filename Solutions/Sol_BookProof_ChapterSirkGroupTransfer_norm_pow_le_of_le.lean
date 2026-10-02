@@ -12,6 +12,8 @@ open NormedSpace
 
 variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
+variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
+
 set_option maxHeartbeats 1000000 in
 omit [NormedAlgebra ℂ A] [CompleteSpace A] in
 theorem solution {a : A} {M : ℝ} (ha : ‖a‖ ≤ M) (n : ℕ) : ‖a ^ n‖ ≤ M ^ n := by

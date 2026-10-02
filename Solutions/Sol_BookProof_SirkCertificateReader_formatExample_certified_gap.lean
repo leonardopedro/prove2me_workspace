@@ -11,6 +11,8 @@ open BookProof.SirkCertificateReader
 
 open BookProof.SirkCertifiedGap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℂ E] {T P : E →ₗ[ℂ] E}

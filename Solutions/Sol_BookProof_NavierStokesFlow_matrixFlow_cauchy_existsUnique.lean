@@ -9,6 +9,8 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 
   calc y t = (matrixFlow A t * matrixFlow A (-t)) *ᵥ y t := by rw [matrixFlow_mul_neg]; simp

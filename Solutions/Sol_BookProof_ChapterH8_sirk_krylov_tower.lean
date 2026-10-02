@@ -11,6 +11,8 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[K] E) (v : E) (n : ℕ) :
     krylovSpan H v n ≤ krylovSpan H v (n + 1) := krylovSpan_mono (Nat.le_succ n)

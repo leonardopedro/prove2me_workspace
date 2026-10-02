@@ -17,6 +17,10 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :
     crePoly i (annPoly i (hermiteMv a)) = ((a i : ℂ)) • hermiteMv a := by

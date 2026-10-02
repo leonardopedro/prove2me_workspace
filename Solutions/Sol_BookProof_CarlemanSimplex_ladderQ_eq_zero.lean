@@ -13,17 +13,19 @@ import Theorems.Thm_BookProof_CarlemanSimplex_sBd_mass_le
 import Theorems.Thm_BookProof_CarlemanSimplex_shifted_sBd_mass_le
 import Theorems.Thm_BookProof_CarlemanSimplex_not_summable_inv_natCast_add_two
 import Theorems.Thm_BookProof_CarlemanTwoStep_rc1_nonneg
-open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
-open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d → Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {B : ℝ} (hz : z.im ≠ 0)

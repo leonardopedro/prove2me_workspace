@@ -13,6 +13,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 mp only [smul_eq_C_mul]
   by_cases h : j = k

@@ -13,6 +13,9 @@ open scoped InnerProductSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : UnboundedSelfAdjoint H) (x : T.domain) :
     T.stoneGroup.genOp ⟨(x : H), T.domain_le_genDomain x.2⟩ = T.op x := T.stoneGroup.genOp_eq_of_hasDerivAt (T.hasDerivAt_stoneU_zero x)

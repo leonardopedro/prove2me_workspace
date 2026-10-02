@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     mulOp (X j) (momOp j p) - momOp j (mulOp (X j) p) = Complex.I • p := by

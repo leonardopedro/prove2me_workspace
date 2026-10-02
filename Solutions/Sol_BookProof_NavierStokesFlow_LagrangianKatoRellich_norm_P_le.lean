@@ -14,6 +14,9 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : L.D) (i : Fin 3) {eps : ℝ} (heps : 0 < eps) :
     ‖(L.P i v : F)‖ ≤ eps * ‖(secondOrder L v : F)‖ + (1 / (2 * eps)) * ‖(v : F)‖ := by

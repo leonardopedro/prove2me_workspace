@@ -12,6 +12,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a : Fin d →₀ ℕ) : hermiteMvLp a ∈ polyGaussCore (d := d) := by
 

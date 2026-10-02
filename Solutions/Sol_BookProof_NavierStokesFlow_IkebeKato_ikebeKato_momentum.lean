@@ -21,6 +21,8 @@ open LpNat FarisLavine
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 self]; simp)
 

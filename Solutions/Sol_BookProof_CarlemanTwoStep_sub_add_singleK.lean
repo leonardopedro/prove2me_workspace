@@ -1,7 +1,6 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sub_add_singleK
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
-open BookProof.CarlemanTwoStep
 
 
 
@@ -10,6 +9,8 @@ open Finset
 open BookProof.HermiteCarleman
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

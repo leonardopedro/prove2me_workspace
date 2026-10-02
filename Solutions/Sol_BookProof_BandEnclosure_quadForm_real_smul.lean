@@ -13,6 +13,8 @@ open Filter Topology
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] F) (c : ℝ) (x : D) :
     quadForm H ((c : ℂ) • x) = c ^ 2 * quadForm H x := by

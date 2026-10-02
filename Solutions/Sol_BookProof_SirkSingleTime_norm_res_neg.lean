@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm
-open BookProof.SirkSingleTime
 
 
 
@@ -15,6 +14,8 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

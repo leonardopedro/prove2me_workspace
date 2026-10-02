@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFL.Comparison
 
 
 
@@ -20,6 +19,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (C : Comparison F) (w u : F)

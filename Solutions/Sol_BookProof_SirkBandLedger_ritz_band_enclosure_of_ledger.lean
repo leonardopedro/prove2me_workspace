@@ -11,6 +11,8 @@ open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution [Nontrivial F] (A : F →L[ℂ] F)
     (hsa : IsSelfAdjoint A) (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re)

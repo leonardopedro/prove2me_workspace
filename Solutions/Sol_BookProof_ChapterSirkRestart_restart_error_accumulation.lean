@@ -15,6 +15,8 @@ open BookProof.ChapterH6
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (U S : E →L[ℂ] E) (eps : ℝ)
     (hU : ∀ w : E, ‖U w‖ ≤ ‖w‖) (hS : ∀ w : E, ‖S w‖ ≤ ‖w‖)

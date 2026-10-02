@@ -10,6 +10,8 @@ open scoped BigOperators Matrix TensorProduct
 
 variable {N : ℕ} [NeZero N]
 
+variable {N : ℕ} [NeZero N]
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     (momentum 3 * velocityOp (fun k => (k.val : ℝ)))ᴴ

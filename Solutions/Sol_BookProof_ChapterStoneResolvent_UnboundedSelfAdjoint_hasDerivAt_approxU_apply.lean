@@ -14,6 +14,9 @@ open Filter Topology NormedSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n t : ℝ) (x : H) :
     HasDerivAt (fun s : ℝ => T.approxU n s x) ((T.approxU n t * T.yosidaGen n) x) t := hasDerivAt_apply x (T.hasDerivAt_approxU n t)

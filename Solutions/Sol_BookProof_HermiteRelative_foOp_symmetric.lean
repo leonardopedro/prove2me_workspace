@@ -16,6 +16,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 ySym_mulXPoly i)).add
       (BookProof.YangMillsHermite.PolySym.real_smul (polySym_momPoly i))

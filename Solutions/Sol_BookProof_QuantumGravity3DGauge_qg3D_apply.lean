@@ -14,6 +14,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 set_option maxHeartbeats 1000000 in
 zed, Weyl-ordered two-signed sum of squares
 `H = ½ Σ_j κ_j π_j² + ½ Σ T²`, with the hyperbolic signature `qgKappa` produced by

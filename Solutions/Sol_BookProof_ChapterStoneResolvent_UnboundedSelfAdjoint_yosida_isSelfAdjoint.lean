@@ -18,5 +18,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℝ) : IsSelfAdjoint (T.yosida n) := ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mpr (fun y z => T.yosida_inner n y z)

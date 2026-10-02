@@ -9,7 +9,6 @@ import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
-open BookProof.QgTruncationResolvent
 
 
 
@@ -17,12 +16,15 @@ open BookProof.QgTruncationResolvent
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (Λ : ℕ → Set ι)

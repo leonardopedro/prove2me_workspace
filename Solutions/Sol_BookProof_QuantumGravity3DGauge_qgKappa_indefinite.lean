@@ -16,6 +16,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
+
 set_option maxHeartbeats 1000000 in
  {j : Fin 84} (hj : j ≠ confIndex) : 0 < qgKappa j := by
   simp [qgK :=

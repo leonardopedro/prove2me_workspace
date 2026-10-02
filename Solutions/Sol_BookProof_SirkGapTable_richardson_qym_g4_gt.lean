@@ -11,6 +11,8 @@ noncomputable section
 
 open BookProof.SirkCertifiedGap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution : qymG4L4 < richardson qymG4L3 qymG4L4 3 4 2 := by
 

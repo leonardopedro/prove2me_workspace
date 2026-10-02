@@ -12,6 +12,9 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (κ : ℝ) (X Y : ℕ → ℂ) (m : ℕ) :
     (starRingEnd ℂ) (X m) * hFun κ Y m

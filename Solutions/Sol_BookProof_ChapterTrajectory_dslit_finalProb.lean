@@ -12,6 +12,8 @@ open scoped BigOperators Matrix
 
 variable {n : ℕ}
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 _closed_born a
 

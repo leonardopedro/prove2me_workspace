@@ -16,6 +16,8 @@ open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
+
 set_option maxHeartbeats 1000000 in
  m ≥ m0, 0 < certifiedGap thetaE thetaO deltaE deltaO m := by
   have h := certifiedGap_tendsto hE hO hdE hdO

@@ -10,6 +10,8 @@ open scoped BigOperators Matrix TensorProduct
 
 variable {N : ℕ} [NeZero N]
 
+variable {N : ℕ} [NeZero N]
+
 set_option maxHeartbeats 1000000 in
 h]
 

@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {ι : Type*} (S : ShiftData ι)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {f g : ι → ℝ} {A B : ℝ} (hf : HasSum f A) (hg : HasSum g B)
     (h : ∀ β, |f β| ≤ g β) : |A| ≤ B := by

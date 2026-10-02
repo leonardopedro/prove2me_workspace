@@ -19,6 +19,9 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) (M alpha : ℝ) (e : SpaceTime n) (R : ℝ) :
     ∃ WR : SpaceTime n → ℝ, Function.HasTemperateGrowth WR ∧

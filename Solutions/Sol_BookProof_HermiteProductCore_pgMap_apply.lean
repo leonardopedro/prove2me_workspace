@@ -12,5 +12,7 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) : pgMap p = pgLp p := rfl

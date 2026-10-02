@@ -13,6 +13,9 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ} (c : ComparisonData F d)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     (diagComparisonData d p q).comparison

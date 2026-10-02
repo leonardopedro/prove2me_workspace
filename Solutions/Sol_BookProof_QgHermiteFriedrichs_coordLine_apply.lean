@@ -14,6 +14,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : Vd d) (j : Fin d) (s : ℝ) (i : Fin d) :
     (coordLine x j s) i = Function.update x.ofLp j s i := rfl

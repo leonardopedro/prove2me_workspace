@@ -12,6 +12,9 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ} (c : ComparisonData F d)
+
 set_option maxHeartbeats 1000000 in
 atement that `−Δ + V² + I` with `V² ≥ 0` is
 essentially self-adjoint on a core. -/

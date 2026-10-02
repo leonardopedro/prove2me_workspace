@@ -11,6 +11,8 @@ open intervalIntegral
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 ty `φ_k(A) =
 ψ_{k,γ}(X)`.

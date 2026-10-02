@@ -13,6 +13,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 The quantized full quadratic Navier–Stokes symbol is essentially self-adjoint on the
 Hermite core of the three velocity components**, for every viscosity, every velocity

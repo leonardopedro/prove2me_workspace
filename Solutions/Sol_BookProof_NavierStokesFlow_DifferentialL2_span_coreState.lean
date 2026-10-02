@@ -17,6 +17,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 ubmodule.sum_mem _ fun b _ =>
       Submodule.smul_mem _ _ (Submodule.subset_span ⟨b, rfl⟩)

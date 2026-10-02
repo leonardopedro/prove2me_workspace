@@ -16,6 +16,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a b : L2d D) :
     (inner ℂ a b : ℂ).re = (inner ℂ b a : ℂ).re := by

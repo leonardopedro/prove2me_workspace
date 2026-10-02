@@ -18,6 +18,9 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) (x : maxDom (oscSymbol κ)) :
     |commForm (nsH κ hκ) (diagMax (oscSymbol κ)) x|

@@ -17,6 +17,8 @@ open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 of the spectrum -/
 

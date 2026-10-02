@@ -8,6 +8,10 @@ open BookProof.ChapterU
 open MeasureTheory
 open scoped ENNReal ProbabilityTheory TensorProduct
 
+variable {X : Type*} [MeasurableSpace X]
+variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
+  [AddCommGroup N] [Module R N]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     [IsProbabilityMeasure P] (path : Ω → ℝ → ℝ)

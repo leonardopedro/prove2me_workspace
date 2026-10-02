@@ -18,5 +18,7 @@ open BookProof.NavierStokesFlow.IkebeKato
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution : EssentiallySelfAdjointOn (lpFiniteModes Vel) (velCore A c) := velH_essentiallySelfAdjointOn_core A c

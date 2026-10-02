@@ -9,6 +9,9 @@ open BookProof.QuantumGravityDensitized
 
 open Filter Topology BookProof.FarisLavine
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (H N : D →ₗ[ℂ] F) (c : ℝ)
     (hH : SymmetricOn D H) (hN : SymmetricOn D N) (hc : 0 ≤ c)

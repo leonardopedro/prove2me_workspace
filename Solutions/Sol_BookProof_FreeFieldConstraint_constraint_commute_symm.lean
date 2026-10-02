@@ -9,6 +9,8 @@ open BookProof.FreeFieldConstraint
 
 variable {R : Type*} [Ring R]
 
+variable {R : Type*} [Ring R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (D H : R) : bracket D H = 0 ↔ bracket H D = 0 := by
 

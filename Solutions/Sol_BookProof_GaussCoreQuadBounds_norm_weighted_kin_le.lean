@@ -18,6 +18,8 @@ noncomputable section
 
 variable {D : ℕ}
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {kappa : Fin D → ℝ} {km : ℝ} (hkm : 0 ≤ km)
     (hk : ∀ j, |kappa j| ≤ km) (p : MvPolynomial (Fin D) ℂ) :

@@ -22,6 +22,10 @@ variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 variable {D : ∀ m, Submodule ℂ (S m)}
 
+variable {ι : Type*}
+variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
+variable {D : ∀ m, Submodule ℂ (S m)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution
     (H N : ∀ m, D m →ₗ[ℂ] D m) (c₁ c₂ : ℝ) (hc₁ : 0 ≤ c₁) (hc₂ : 0 ≤ c₂)

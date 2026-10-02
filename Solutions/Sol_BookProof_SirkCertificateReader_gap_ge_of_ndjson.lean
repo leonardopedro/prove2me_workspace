@@ -9,6 +9,8 @@ open BookProof.SirkCertificateReader
 
 open BookProof.SirkCertifiedGap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {T P : E →ₗ[ℂ] E} {s : String} {d : CertificateData} {lo : ℚ}
     (hd : parseCertificate s = some d) (hs : ndjsonLower s = some lo)

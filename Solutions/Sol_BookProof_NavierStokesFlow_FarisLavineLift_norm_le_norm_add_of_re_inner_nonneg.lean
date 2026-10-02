@@ -10,6 +10,8 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 
 open FullEsa
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {x y : F} (h : 0 ≤ (inner ℂ x y : ℂ).re) :
     ‖x‖ ≤ ‖x + y‖ := by

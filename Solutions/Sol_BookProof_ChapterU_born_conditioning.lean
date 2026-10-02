@@ -8,6 +8,8 @@ open BookProof.ChapterU
 open MeasureTheory
 open scoped ENNReal ProbabilityTheory TensorProduct
 
+variable {X : Type*} [MeasurableSpace X]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (Ψ : X → ℂ) (μ : Measure X) (E : Set X)
     (hE : MeasurableSet E) (hpos : bornMeasure Ψ μ E ≠ 0)

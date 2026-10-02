@@ -14,6 +14,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {a b : ℕ → (ℕ →₀ ℂ)} (ha : IsPosCol a) (hb : IsPosCol b) :
     IsPosCol (fun k => a k + b k) := by

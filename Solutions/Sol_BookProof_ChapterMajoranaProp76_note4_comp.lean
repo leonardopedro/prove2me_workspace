@@ -16,6 +16,12 @@ variable {H K L : Type*}
   [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
   [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
 
+variable {𝕜 : Type*} [RCLike 𝕜]
+variable {H K L : Type*}
+  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
+  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
+  [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {f : H → K} {g : K → L}
     (hf : IsNote4Unitary 𝕜 f) (hg : IsNote4Unitary 𝕜 g) :

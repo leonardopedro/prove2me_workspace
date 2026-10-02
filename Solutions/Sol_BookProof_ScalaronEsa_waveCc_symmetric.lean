@@ -18,5 +18,8 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) : SymmetricOn (ccDomain (SpaceTime n)) (waveCc n) := symmetricOn_inclusion _ _ (wave_symmetric n 0)

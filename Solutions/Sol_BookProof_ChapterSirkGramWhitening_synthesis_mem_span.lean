@@ -15,6 +15,8 @@ open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (w : Fin m → E) (c : EuclideanSpace ℂ (Fin m)) :
     synthesis w c ∈ Submodule.span ℂ (Set.range w) := by

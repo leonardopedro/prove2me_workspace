@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec
-open BookProof.FiniteSectionSingleTime
 
 
 
@@ -12,11 +11,12 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 variable {ι : Type*} [DecidableEq ι]
 

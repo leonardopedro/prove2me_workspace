@@ -17,6 +17,8 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin D → ℝ) (j : Fin D) :
     pderiv j (linForm v) = C ((v j : ℝ) : ℂ) := by

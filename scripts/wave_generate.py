@@ -919,29 +919,7 @@ def build_thm(bt, leaf, decls, node, modns):
             _kept.extend(_block)
         _i = _j
     text = "\n".join(_kept)
-    # Drop `open` of BookProof namespaces the platform index does not declare.
-    # A section is not a namespace: `section IsShiftInvert` inside
-    # `namespace BookProof.HashimotoShiftInvert` creates no
-    # `BookProof.HashimotoShiftInvert.IsShiftInvert`, so opening it is
-    # `unknown namespace` -- and the stub was inventing it. Our own namespaces
-    # are the index's business, so it is authoritative here; Mathlib's are not
-    # indexed, which is why the filter is scoped to BookProof.
-    _known = set(namespace_to_owner())
-    _drop = []
-    for _i, _ln in enumerate(text.split("\n")):
-        _st = _ln.strip()
-        if _st.startswith("open BookProof."):
-            for _one in _st.split()[1:]:
-                if _one.startswith("BookProof.") and _one not in _known:
-                    _drop.append((_i, _one))
-                    break
-    if _drop:
-        _lines = text.split("\n")
-        _bad = {i for i, _ in _drop}
-        text = "\n".join(l for i, l in enumerate(_lines) if i not in _bad)
-        for _i, _one in _drop:
-            print(f"  WARNING dropped `open {_one}`: no bundle declares it",
-                  file=sys.stderr)
+    text = drop_undeclared_opens(text, leaf)
     # The copied context can `open` namespaces the header never mentions (e.g.
     # `open BookProof.FarisLavine BookProof.YangMillsFriedrichs
     # BookProof.FriedrichsExtension` from the source), and an open of a namespace
@@ -966,6 +944,39 @@ def build_thm(bt, leaf, decls, node, modns):
     return text
 
 
+def drop_undeclared_opens(text, leaf=None):
+    """Remove `open BookProof.X` lines for namespaces no bundle declares.
+
+    A `section IsShiftInvert` nested inside `namespace
+    BookProof.HashimotoShiftInvert` creates no namespace of that name, so
+    opening it is `unknown namespace` -- and nothing can import it away. The
+    generator was inventing these from the node's own dotted path.
+
+    Scoped to `BookProof.` on purpose: our namespaces are the platform index's
+    business and it is authoritative for them, but Mathlib's are not indexed at
+    all, so a blanket filter would be wrong.
+
+    Applied to both theorem stubs and solutions -- the solution side had the
+    identical defect, and the uploader's preflight gate refused three otherwise
+    submittable solutions over it.
+    """
+    known = set(namespace_to_owner())
+    out, dropped = [], []
+    for ln in text.split("\n"):
+        st = ln.strip()
+        if st.startswith("open BookProof."):
+            bad = [one for one in st.split()[1:]
+                   if one.startswith("BookProof.") and one not in known]
+            if bad:
+                dropped.extend(bad)
+                continue
+        out.append(ln)
+    for one in dropped:
+        print(f"  WARNING dropped `open {one}`: no bundle declares it",
+              file=sys.stderr)
+    return "\n".join(out)
+
+
 def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     ctx = structural_preamble(bt, node.s)
     stmt = fmt_name(the_statement(bt, node), "solution")
@@ -986,6 +997,16 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
         parts.append(f"open {ns}\n")
     if ctx:
         parts.append("\n" + ctx + "\n")
+    # The `variable` declarations, bounded to this theorem. Same omission the
+    # theorem stubs had: `Sol_...IsShiftInvert_mem` states
+    # `theorem solution {A : Dom ->L[] F} ... : R u ∈ Dom`, and `Dom` is only
+    # ever bound by a `variable` in the source, so the server rejected it with
+    # `Unknown identifier 'Dom'` -- and explicitly noted it cannot be auto-bound
+    # because the platform runs with `autoImplicit := false`. build_sol never
+    # emitted them at all.
+    ns_vars = extract_namespace_variables(bt, getattr(node, "sl", None))
+    if ns_vars:
+        parts.append("\n" + ns_vars + "\n")
     for h in sorted(needed, key=lambda x: x.s):
         frag = re.sub(r"^/--(?:.*?)-/\s*", "", bt.slice(h.s, h.e),
                       flags=re.S).rstrip()
@@ -1019,7 +1040,11 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     else:
         parts.append(stmt + " := by\n")
         parts.append(proof if proof.endswith("\n") else proof + "\n")
-    return "".join(parts)
+    # Same undeclared-namespace filter as the theorem stubs. Without it the
+    # uploader's preflight gate refused three otherwise-submittable solutions
+    # over `open BookProof.HashimotoShiftInvert.IsShiftInvert`, which nothing
+    # declares -- a `section` is not a namespace.
+    return drop_undeclared_opens("".join(parts), leaf)
 
 
 def build_def_file(bt, leaf, decls, defmat, embedded):

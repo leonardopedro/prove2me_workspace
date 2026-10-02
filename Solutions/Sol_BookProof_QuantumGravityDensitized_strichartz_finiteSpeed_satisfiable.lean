@@ -10,6 +10,8 @@ open BookProof.QuantumGravityDensitized
 
 open Filter Topology BookProof.FarisLavine
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a b V : ℕ → ℝ) :
     EssentiallySelfAdjointOn (mulSymbolDomain (qgModeSymbol a b V)) (qgModeHamiltonian a b V) := strichartz_esa_of_finiteSpeed _ fun _ hz => qgModeHamiltonian_deficiencyTrivialAt a b V hz

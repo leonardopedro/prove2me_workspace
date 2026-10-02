@@ -1,7 +1,6 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.cc_integrable
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
-open BookProof.ScalaronFiberFL
 
 
 
@@ -14,6 +13,9 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ccSchwartz ℝ) {W : ℝ → ℝ} (hW : Continuous W) :

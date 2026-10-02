@@ -15,6 +15,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {M alpha : ℝ} (halpha : 0 < alpha) (x : Vd 1) :
     0 ≤ scalaronW M alpha x := starobinskyV_nonneg halpha _

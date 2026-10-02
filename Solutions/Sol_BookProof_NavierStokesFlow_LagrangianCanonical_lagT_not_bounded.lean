@@ -16,6 +16,8 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
+variable (nu : ℝ)
+
 set_option maxHeartbeats 1000000 in
 q_P (lagCanData nu hnu f) rfl le_rfl
     (fun v => by simp only [lagCanData]; simp; first | rfl | exact? | done)

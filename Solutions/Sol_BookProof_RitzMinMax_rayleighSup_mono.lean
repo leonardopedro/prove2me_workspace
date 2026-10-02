@@ -15,6 +15,8 @@ open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : F →L[ℂ] F) {S S' : Submodule ℂ F} (h : S ≤ S')
     (hS : 0 < Module.finrank ℂ S) : rayleighSup T S ≤ rayleighSup T S' :=

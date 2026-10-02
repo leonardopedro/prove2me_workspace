@@ -15,6 +15,10 @@ open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     SymmetricOn (maxDom (oscSymbol (affMu κ c))) (affH hκ hc) := PairShift.pairH_symmetricOn (affData hκ hc)

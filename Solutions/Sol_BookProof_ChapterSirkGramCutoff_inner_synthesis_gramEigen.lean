@@ -15,6 +15,10 @@ open ContinuousLinearMap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {m : ℕ} {w : Fin m → E}
+variable {u : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin m))} {lam : Fin m → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (heig : IsGramEigen w u lam) (k l : Fin m) :
     ⟪synthesis w (u k), synthesis w (u l)⟫_ℂ = if k = l then (lam l : ℂ) else 0 := by

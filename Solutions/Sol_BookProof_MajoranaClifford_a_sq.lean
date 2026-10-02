@@ -11,6 +11,8 @@ open RealInnerProductSpace CliffordAlgebra QuadraticMap
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : V) : a v * a v = algebraMap ℝ (CliffordAlgebra (Qform (V := V))) ⟪v, v⟫ := by
 

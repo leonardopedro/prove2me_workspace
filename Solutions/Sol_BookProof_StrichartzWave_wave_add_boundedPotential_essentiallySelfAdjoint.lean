@@ -15,6 +15,9 @@ open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ)
     (W : Lp ℂ (⊤ : ℝ≥0∞) (volume : Measure (SpaceTime n)))

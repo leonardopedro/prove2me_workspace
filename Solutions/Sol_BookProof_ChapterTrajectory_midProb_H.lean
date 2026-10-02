@@ -11,6 +11,8 @@ open scoped BigOperators Matrix
 
 variable {n : ℕ}
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a : Fin 2) : midProb H psi0 a = 1 / 2 := by
 

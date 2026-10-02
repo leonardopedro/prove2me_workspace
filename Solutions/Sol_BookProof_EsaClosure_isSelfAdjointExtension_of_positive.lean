@@ -15,6 +15,9 @@ open BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D Dom : Submodule ℂ F} {H : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (h : IsPositiveSelfAdjointExtension H A) : IsSelfAdjointExtension H A := ⟨h.1, h.2.1, h.2.2.2⟩

@@ -25,6 +25,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 creation operator on the Hermite core of `L²(ℝ³)`**: `uᵢ/2 − ∂ᵢ`. -/
 def creOp (i : Fin 3) : (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=

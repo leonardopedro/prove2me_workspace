@@ -11,6 +11,9 @@ open scoped InnerProductSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution : ∀ {T S : UnboundedSelfAdjoint H}, T.domain = S.domain →
     (∀ (x : H) (hx : x ∈ T.domain) (hx' : x ∈ S.domain), T.op ⟨x, hx⟩ = S.op ⟨x, hx'⟩) → T = S

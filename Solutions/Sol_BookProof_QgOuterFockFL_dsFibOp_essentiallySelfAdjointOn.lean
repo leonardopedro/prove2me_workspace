@@ -23,6 +23,13 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
+variable (C : ∀ i, Comparison (G i))
+variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
+variable {C H}
+
 set_option maxHeartbeats 1000000 in
 theorem solution [∀ i, CompleteSpace (G i)] {K c : ℝ} (hc : 0 ≤ c)
     (hrel : ∀ (i : ι) (u : (C i).dom), ‖H i u‖ ≤ K * ‖(C i).op u + (u : G i)‖)

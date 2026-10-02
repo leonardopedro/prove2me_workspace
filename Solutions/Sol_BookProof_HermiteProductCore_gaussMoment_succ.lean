@@ -13,16 +13,12 @@ open SchwartzMap
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
- | empty => simp [gaussInt]
-  | insert v s hv ih =>
-      rw [Finset.sum_insert hv, Finset.sum_insert hv, gaussInt_add, ih]
+variable {d : ℕ}
 
-/-- The one-dimensional Gaussian moments `M k = ∫ tᵏ e^{-t²/2} dt`. -/
-def gaussMoment (k : ℕ) : ℝ := gint ((Polynomial.X : Polynomial ℝ) ^ k) :=
-  
-  
-  /-- **The moment recurrence** `M_{k+1} = k · M_{k-1}`, one-dimensional integration
-  by parts against the Gaussian (`BookProof.HermiteCore.gint_ibp`).  For `k = 0` it
-  reads `M₁ = 0`. -/
-  theorem gaussMoment_succ (k : ℕ) : gau
+set_option maxHeartbeats 1000000 in
+theorem solution (k : ℕ) : gaussMoment (k + 1) = (k : ℝ) * gaussMoment (k - 1) := by
+
+  have h := gint_ibp ((Polynomial.X : Polynomial ℝ) ^ k) 1
+  rw [Polynomial.derivative_X_pow, mul_one, Polynomial.derivative_one, sub_zero, mul_one] at h
+  rw [gint_C_mul] at h
+  rw [gaussMoment, gaussMoment, h, pow_succ]

@@ -3,17 +3,18 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_simplex_split
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_ltermP
-open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
-open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {u : (Fin d →₀ ℕ) → ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {w : ℂ} {rc lc : (Fin d →₀ ℕ) → ℝ} {P : Fin d →₀ ℕ}

@@ -11,6 +11,9 @@ noncomputable section
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[K] E) (γ : K) (v : E) (k : ℕ) :
     noInversionSeq H γ v k = (((H - γ • 1) ^ k) v) := by

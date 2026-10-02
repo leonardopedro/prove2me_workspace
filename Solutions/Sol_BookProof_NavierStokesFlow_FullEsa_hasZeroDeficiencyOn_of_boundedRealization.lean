@@ -10,6 +10,9 @@ open BookProof.NavierStokesFlow.FullEsa
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] D)
     (A : F →L[ℂ] F) (hsym : (A : F →ₗ[ℂ] F).IsSymmetric) (hdense : Dense (D : Set F))

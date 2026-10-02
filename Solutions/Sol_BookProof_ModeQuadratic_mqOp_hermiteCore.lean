@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_ModeQuadratic_ascend2_Lp
 import Theorems.Thm_BookProof_ModeQuadratic_descend2_Lp
 import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
-open BookProof.ModeQuadratic
 
 
 
@@ -17,11 +16,11 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
-open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

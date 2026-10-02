@@ -25,6 +25,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 _smul, embedCore_coe, coreState_coe,
       velUnitary_single, hermiteVel, velIdx_lower]

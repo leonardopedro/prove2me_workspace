@@ -4,6 +4,10 @@ import Definitions.Def_ChapterStrichartzWave
 import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric
 open BookProof.StrichartzWave
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
 set_option maxHeartbeats 1000000 in
  :=
   import Mathlib

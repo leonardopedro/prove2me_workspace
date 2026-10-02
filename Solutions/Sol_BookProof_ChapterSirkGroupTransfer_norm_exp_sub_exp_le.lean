@@ -14,6 +14,8 @@ open NormedSpace
 
 variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
+variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {a b : A} {M : ℝ} (ha : ‖a‖ ≤ M) (hb : ‖b‖ ≤ M) :
     ‖exp a - exp b‖ ≤ ‖a - b‖ * Real.exp M := by

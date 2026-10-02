@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {ι : Type*} (S : ShiftData ι)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
     S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by

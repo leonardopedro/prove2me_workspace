@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_QgTimeStepping_stoneU_mem_domain_two
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
-open BookProof.QgTimeStepping
 
 
 
@@ -13,12 +12,13 @@ open BookProof.QgTimeStepping
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (t : ℝ) (x : T.domain) (hx : T.op x ∈ T.domain) :

@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 rem velIdx_raise (i : Fin 3) (b : Vel) :
     velIdx (raise i b) = velIdx b + Finsupp.single i 1 := b :=

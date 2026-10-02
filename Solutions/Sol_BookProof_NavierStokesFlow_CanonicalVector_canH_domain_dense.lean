@@ -13,6 +13,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 e finite-mode core is dense, so the canonical operator is densely defined and its
 essential self-adjointness is the statement it should be. -/

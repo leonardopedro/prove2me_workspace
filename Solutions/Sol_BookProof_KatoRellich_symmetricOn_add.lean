@@ -1,12 +1,13 @@
 -- Generated from ChapterKatoRellichRelative.lean — solution of BookProof.KatoRellich.symmetricOn_add
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
-open BookProof.KatoRellich
 
 
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 

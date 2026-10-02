@@ -22,6 +22,8 @@ noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ)
     (lap : Fin 3 → ℝ) (b : HilbertBasis ℕ ℂ (L2d 3)) (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

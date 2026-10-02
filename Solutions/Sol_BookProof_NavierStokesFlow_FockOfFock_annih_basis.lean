@@ -12,6 +12,9 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 open FullEsa
 
+variable {ι : Type*}
+variable {M : Type*} [DecidableEq M]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (m : M) (n : Conf M) :
     annih m (fockBasis n) = ((Real.sqrt (n m) : ℝ) : ℂ) • fockBasis (n - Finsupp.single m 1) := by

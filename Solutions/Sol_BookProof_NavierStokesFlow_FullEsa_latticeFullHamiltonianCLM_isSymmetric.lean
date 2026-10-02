@@ -9,6 +9,10 @@ open BookProof.NavierStokesFlow.FullEsa
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable (d : NSFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin 15 → LinfZ) (nu : ℝ) :
     ((latticeFullHamiltonianCLM v nu : L2Z →L[ℂ] L2Z) : L2Z →ₗ[ℂ] L2Z).IsSymmetric := ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.1 (latticeFullHamiltonianCLM_isSelfAdjoint v nu)

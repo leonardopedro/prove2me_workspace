@@ -13,5 +13,8 @@ open Filter Topology NormedSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n t : ℝ) : T.approxU n t ∈ unitary (H →L[ℂ] H) := exp_mem_unitary_of_mem_skewAdjoint (T.smul_yosidaGen_mem_skewAdjoint n t)

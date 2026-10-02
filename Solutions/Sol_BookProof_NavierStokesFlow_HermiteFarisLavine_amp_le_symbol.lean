@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) (n : ℕ) :
     amp κ n ≤ (1 / 4 + κ / 2) * oscSymbol κ n := by

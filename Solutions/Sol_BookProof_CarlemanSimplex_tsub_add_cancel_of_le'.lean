@@ -1,15 +1,15 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.tsub_add_cancel_of_le'
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
-open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
-open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

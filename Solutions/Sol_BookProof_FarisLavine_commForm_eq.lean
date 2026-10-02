@@ -10,6 +10,9 @@ open BookProof.FarisLavine
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H N : D →ₗ[ℂ] F) (x : D) :
     commForm H N x = -2 * (inner ℂ (H x) (N x) : ℂ).im := by

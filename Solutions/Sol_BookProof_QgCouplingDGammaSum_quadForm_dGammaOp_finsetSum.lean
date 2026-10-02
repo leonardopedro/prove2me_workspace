@@ -15,6 +15,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (s : Finset ι) (cols : ι → ℕ → (ℕ →₀ ℂ))
     (x : lpFiniteModes Conf) :

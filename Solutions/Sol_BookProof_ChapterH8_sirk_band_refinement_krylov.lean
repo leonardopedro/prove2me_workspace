@@ -18,6 +18,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 open ContinuousLinearMap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 ov flag itself.**  For orders `m ≤ n` at which the Krylov
 sequence has not broken down, and a generator `X` leaving both Krylov ranges

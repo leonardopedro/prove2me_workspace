@@ -12,6 +12,10 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
 set_option maxHeartbeats 1000000 in
  :=
   import Mathlib

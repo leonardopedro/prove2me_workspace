@@ -14,6 +14,8 @@ open ContinuousLinearMap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (y : Fin m → E) (lam : Fin m → ℝ)
     (h : ∀ k l, ⟪y k, y l⟫_ℂ = if k = l then (lam l : ℂ) else 0)

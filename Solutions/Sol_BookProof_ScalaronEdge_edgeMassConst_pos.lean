@@ -20,6 +20,8 @@ open BookProof.HashimotoShiftInvert
 
 variable (M alpha : ℝ)
 
+variable (M alpha : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {c : ℝ} (hc : 0 < c) : 0 < edgeMassConst c := by
 

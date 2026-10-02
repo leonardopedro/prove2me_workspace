@@ -11,6 +11,9 @@ open BookProof.QgHermiteCore
 open MeasureTheory Polynomial Filter Topology
 open BookProof.HermiteCore BookProof.Starobinsky
 
+variable {E : Type*} [NormedAddCommGroup E]
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {W : Vd d → ℝ} (hW : Continuous W) (hWb : ExpBounded W)
     (p : MvPolynomial (Fin d) ℂ) :

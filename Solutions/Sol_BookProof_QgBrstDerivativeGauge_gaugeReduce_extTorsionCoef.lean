@@ -1,13 +1,10 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.gaugeReduce_extTorsionCoef
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
-open BookProof.QgBrstDerivativeGauge
 
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

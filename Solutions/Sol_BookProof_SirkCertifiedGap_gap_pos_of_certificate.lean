@@ -15,6 +15,8 @@ open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
+
 set_option maxHeartbeats 1000000 in
 )
     (hOdd : thetaO - deltaO ≤ sectorGround T P (-1)) :

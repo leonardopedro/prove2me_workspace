@@ -15,6 +15,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 ply, LinearMap.smul_apply,
     Submodule.coe_sum, Submodule.coe_add, := 

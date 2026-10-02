@@ -15,6 +15,12 @@ open scoped InnerProductSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable [TopologicalSpace.SeparableSpace H]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     Function.Bijective (fun T : UnboundedSelfAdjoint H => T.stoneGroup) := by

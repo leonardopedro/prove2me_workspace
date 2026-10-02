@@ -10,6 +10,9 @@ open BookProof.FarisLavine
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : D →ₗ[ℂ] F) (hT : SymmetricOn D T) (x : D) :
     (inner ℂ (T x) (x : F) : ℂ).im = 0 := by

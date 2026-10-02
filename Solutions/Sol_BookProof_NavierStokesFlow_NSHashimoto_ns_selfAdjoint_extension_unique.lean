@@ -19,6 +19,8 @@ open BookProof.NavierStokesFlow.IkebeKato
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {Dom₁ Dom₂ : Submodule ℂ (L2I Vel)}
     {G₁ : Dom₁ →ₗ[ℂ] L2I Vel} {G₂ : Dom₂ →ₗ[ℂ] L2I Vel}

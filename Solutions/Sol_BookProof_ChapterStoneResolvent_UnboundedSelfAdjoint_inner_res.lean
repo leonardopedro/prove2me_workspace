@@ -4,6 +4,10 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (T : UnboundedSelfAdjoint H)
+variable [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterUnitaryTransport

@@ -14,6 +14,9 @@ open BookProof.ChapterH5
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {H : E →ₗ[K] E} {v : E}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[K] E) (z : ℕ → K) (v : E) (m : ℕ) :
     Submodule.span K {x | ∃ i < m, x = multiShiftSeq H z v i} = krylovSpan H v m :=

@@ -14,6 +14,8 @@ open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense ((D : Submodule ℂ F) : Set F))

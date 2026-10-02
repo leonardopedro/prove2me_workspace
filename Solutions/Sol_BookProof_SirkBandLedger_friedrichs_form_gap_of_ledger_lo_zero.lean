@@ -10,6 +10,8 @@ open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn (finiteModeDomain b) H)

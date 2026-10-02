@@ -18,6 +18,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a b : ℕ → (ℕ →₀ ℂ)) (x : lpFiniteModes Conf) :
     dGammaOp (fun k => a k + b k) x = dGammaOp a x + dGammaOp b x := by

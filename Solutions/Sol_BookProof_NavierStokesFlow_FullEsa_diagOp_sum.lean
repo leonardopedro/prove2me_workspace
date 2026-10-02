@@ -9,6 +9,10 @@ open BookProof.NavierStokesFlow.FullEsa
 
 open scoped ENNReal
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable (d : NSFullData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} (s : Finset ι) (a : ι → ℕ → ℝ) :
     (∑ i ∈ s, diagOp (a i)) = diagOp (fun n => ∑ i ∈ s, a i n) := by

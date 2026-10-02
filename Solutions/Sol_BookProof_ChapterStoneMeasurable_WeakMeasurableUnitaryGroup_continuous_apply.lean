@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (G : WeakMeasurableUnitaryGroup H)
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterStoneGenerator

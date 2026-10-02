@@ -29105,9 +29105,243 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_ChapterContinuityUnitary_exp_smul_I_unitary": {
+   "name": "BookProof.ChapterContinuityUnitary.exp_smul_I_unitary",
+   "chapter": "ChapterContinuityUnitary",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterContinuityUnitary_exp_smul_I_unitary.lean",
+   "title": "exp_smul_I_unitary",
+   "nl": "Formal statement of `BookProof.ChapterContinuityUnitary.exp_smul_I_unitary` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterContinuityUnitary.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterContinuityUnitary.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterH8_krylov_li_of_le": {
+   "name": "BookProof.ChapterH8.krylov_li_of_le",
+   "chapter": "ChapterH8Bases",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterH8_krylov_li_of_le.lean",
+   "title": "krylov_li_of_le",
+   "nl": "Formal statement of `BookProof.ChapterH8.krylov_li_of_le` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterH8Bases.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterH8Bases.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion": {
+   "name": "BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion",
+   "chapter": "ChapterComplexShiftCore",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion.lean",
+   "title": "closed_of_selfAdjointCriterion",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterComplexShiftCore.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterComplexShiftCore.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HermiteCore_gint_ibp": {
+   "name": "BookProof.HermiteCore.gint_ibp",
+   "chapter": "ChapterHermiteFunctions",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_HermiteCore_gint_ibp.lean",
+   "title": "gint_ibp",
+   "nl": "Formal statement of `BookProof.HermiteCore.gint_ibp` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHermiteFunctions.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteFunctions.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core",
+   "chapter": "ChapterNavierStokesCanonicalVector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core.lean",
+   "title": "canH_essentiallySelfAdjointOn_core",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesCanonicalVector.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesCanonicalVector.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded": {
+   "name": "BookProof.NavierStokesFlow.CanonicalVector.canH_not_bounded",
+   "chapter": "ChapterNavierStokesCanonicalVector",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded.lean",
+   "title": "canH_not_bounded",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.CanonicalVector.canH_not_bounded` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesCanonicalVector.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesCanonicalVector.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core": {
+   "name": "BookProof.NavierStokesFlow.DifferentialL2.velUnitary_mem_core",
+   "chapter": "ChapterNavierStokesDifferentialL2",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core.lean",
+   "title": "velUnitary_mem_core",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.DifferentialL2.velUnitary_mem_core` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesDifferentialL2.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesDifferentialL2.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'": {
+   "name": "BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne'",
+   "chapter": "ChapterNavierStokesFockManyMode",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'.lean",
+   "title": "modeShift_shift_ne'",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne'` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesFockManyMode.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFockManyMode.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds.lean",
+   "title": "essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesIkebeKato.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesIkebeKato.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom.lean",
+   "title": "finiteModes_le_maxDom",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesIkebeKato.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesIkebeKato.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm": {
+   "name": "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hasSum_commForm",
+   "chapter": "ChapterNavierStokesShiftHamiltonian",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm.lean",
+   "title": "hasSum_commForm",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hasSum_commForm` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesShiftHamiltonian.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesShiftHamiltonian.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound": {
+   "name": "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_commForm_bound",
+   "chapter": "ChapterNavierStokesShiftHamiltonian",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound.lean",
+   "title": "shiftH_commForm_bound",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_commForm_bound` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesShiftHamiltonian.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesShiftHamiltonian.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound": {
+   "name": "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_relative_bound",
+   "chapter": "ChapterNavierStokesShiftHamiltonian",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound.lean",
+   "title": "shiftH_relative_bound",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_relative_bound` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesShiftHamiltonian.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesShiftHamiltonian.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_symmetricOn",
+   "chapter": "ChapterNavierStokesShiftHamiltonian",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn.lean",
+   "title": "shiftH_symmetricOn",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_symmetricOn` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesShiftHamiltonian.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesShiftHamiltonian.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt": {
+   "name": "BookProof.QuantumGravityDensitized.qgModeHamiltonian_deficiencyTrivialAt",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt.lean",
+   "title": "qgModeHamiltonian_deficiencyTrivialAt",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.qgModeHamiltonian_deficiencyTrivialAt` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQuantumGravityDensitized.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravityDensitized.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint": {
+   "name": "BookProof.QuantumGravityDensitized.qgModeHamiltonian_essentiallySelfAdjoint",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint.lean",
+   "title": "qgModeHamiltonian_essentiallySelfAdjoint",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.qgModeHamiltonian_essentiallySelfAdjoint` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQuantumGravityDensitized.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravityDensitized.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "ell2Basis_apply": {
+   "name": "ell2Basis_apply",
+   "chapter": "?",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_ell2Basis_apply.lean",
+   "title": "ell2Basis_apply",
+   "nl": "Formal statement of `ell2Basis_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/?.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/?.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "ell2ShiftInvert_injective": {
+   "name": "ell2ShiftInvert_injective",
+   "chapter": "?",
+   "file": "/home/leo/prove2me_workspace/Theorems/Thm_ell2ShiftInvert_injective.lean",
+   "title": "ell2ShiftInvert_injective",
+   "nl": "Formal statement of `ell2ShiftInvert_injective` from the timepiece Lean 4 formalization (source chapter `BookProof/?.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/?.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
   }
  },
  "sol_order": [
+  "BookProof_ChapterContinuityUnitary_exp_smul_I_unitary",
+  "BookProof_ChapterH8_krylov_li_of_le",
+  "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion",
+  "BookProof_HermiteCore_gint_ibp",
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core",
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded",
+  "BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core",
+  "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'",
+  "BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
+  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom",
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm",
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound",
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound",
+  "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn",
+  "BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt",
+  "BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint",
+  "ell2Basis_apply",
+  "ell2ShiftInvert_injective",
   "BookProof_ScalaronFiberFL_norm_sub_I_sq",
   "BookProof_ScalaronFiberFL_isGraphCore_of_esa",
   "BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity",

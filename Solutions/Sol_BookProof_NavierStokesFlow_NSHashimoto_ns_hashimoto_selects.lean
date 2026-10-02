@@ -21,6 +21,8 @@ open BookProof.NavierStokesFlow.IkebeKato
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ (L2I Vel)) (γ : ℕ → ℂ)
     (hγ : ∀ j, (γ j).im ≠ 0) :

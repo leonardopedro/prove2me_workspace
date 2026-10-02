@@ -13,5 +13,8 @@ open Filter Topology NormedSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n m s t : ℝ) : Commute (T.approxU n s) (T.approxU m t) := (((T.approxU_gen_commute n m).smul_left s).smul_right t).exp

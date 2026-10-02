@@ -16,6 +16,8 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : H →L[ℂ] H) (hA : IsSelfAdjoint A) (y : H) :
     (ofBounded A hA).resCLM 1 y = -(resolvent A Complex.I y) := by

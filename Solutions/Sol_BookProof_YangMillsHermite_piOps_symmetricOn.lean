@@ -16,6 +16,10 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
+variable {D : Submodule ℂ (L2d 99)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 99 D) (m : Fin 24) :
     SymmetricOn D (D.subtype.comp (piOps Φ m)) := Φ.symmetricOn_op (momOp_polySym _)

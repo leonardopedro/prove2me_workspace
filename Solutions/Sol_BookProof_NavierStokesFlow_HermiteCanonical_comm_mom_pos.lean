@@ -15,6 +15,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 < κ) :
     (mom κ).comp (pos κ) - (pos κ).comp (mom κ) = (-Complex.I) • LinearMap.id := by

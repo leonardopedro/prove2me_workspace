@@ -18,6 +18,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 omPoly_apply, mulXPoly_apply, hpd]
   by_cases hik : i = k

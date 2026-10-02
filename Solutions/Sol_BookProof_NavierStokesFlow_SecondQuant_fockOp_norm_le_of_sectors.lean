@@ -15,6 +15,10 @@ open FarisLavineLift
 variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 variable {D : ∀ m, Submodule ℂ (S m)}
+
+variable {ι : Type*}
+variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
+variable {D : ∀ m, Submodule ℂ (S m)}
 private theorem rpow_two_eq (x : ℝ) : x ^ ((2 : ℝ≥0∞).toReal) = x ^ 2 := by
   have h : ((2 : ℝ≥0∞).toReal) = ((2 : ℕ) : ℝ) := by norm_num
   rw [h, Real.rpow_natCast]

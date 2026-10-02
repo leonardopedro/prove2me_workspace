@@ -17,6 +17,9 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) (x y : maxDom (oscSymbol κ)) :
     HasSum (fun n => -Complex.I * crossA κ ((x : L2I ℕ) : ℕ → ℂ) (((y : L2I ℕ) : ℕ → ℂ)) n

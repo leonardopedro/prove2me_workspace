@@ -19,6 +19,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 i (Finset.mem_insert_self i s)).add
         (ih fun j hj => h j (Finset.mem_insert_of_mem hj))

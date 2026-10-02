@@ -14,6 +14,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (hκ : 0 < κ i) :
     (Real.sqrt (κ i / 2) : ℂ) * ((1 / Real.sqrt (2 * κ i) : ℝ) : ℂ) = 1 / 2 := by

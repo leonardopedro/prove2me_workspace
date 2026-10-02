@@ -15,6 +15,8 @@ noncomputable section
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn (lpFiniteModes Conf) (dGammaOp numberCol) := dGammaOp_diagCol_essentiallySelfAdjoint (fun _ => zero_le_one)

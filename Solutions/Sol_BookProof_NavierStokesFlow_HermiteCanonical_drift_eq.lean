@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 < κ) : drift κ = (κ : ℂ) • pos κ := by
 

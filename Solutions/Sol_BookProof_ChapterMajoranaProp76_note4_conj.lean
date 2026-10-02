@@ -18,6 +18,12 @@ variable {H K L : Type*}
   [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
   [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
 
+variable {𝕜 : Type*} [RCLike 𝕜]
+variable {H K L : Type*}
+  [NormedAddCommGroup H] [InnerProductSpace 𝕜 H]
+  [NormedAddCommGroup K] [InnerProductSpace 𝕜 K]
+  [NormedAddCommGroup L] [InnerProductSpace 𝕜 L]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (Θ : H ≃ₗᵢ[𝕜] K) {V : H → H} (hV : IsNote4Unitary 𝕜 V) :
     IsNote4Unitary 𝕜 ((Θ : H → K) ∘ V ∘ (Θ.symm : K → H)) := by

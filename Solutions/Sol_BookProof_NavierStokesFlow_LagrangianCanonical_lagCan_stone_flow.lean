@@ -15,6 +15,8 @@ open scoped ENNReal
 open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
+variable (nu : ℝ)
+
 set_option maxHeartbeats 1000000 in
 te (fun _ => n))
   rw [lagT_coreState nu, norm_coreState] at hb

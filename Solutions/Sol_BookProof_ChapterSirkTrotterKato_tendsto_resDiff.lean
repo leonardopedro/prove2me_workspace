@@ -15,6 +15,9 @@ open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H) (S : ℕ → UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hres : StrongResolventConvergence T S) (y : H) :
     Tendsto (fun n => resDiff T S n y) atTop (𝓝 0) := by

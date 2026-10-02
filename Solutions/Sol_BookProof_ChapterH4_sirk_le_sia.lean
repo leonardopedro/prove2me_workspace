@@ -10,6 +10,10 @@ open scoped BigOperators
 
 noncomputable section
 
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (C Dmin h m normv : ℝ)
     (hC : 0 ≤ C) (hD : 0 ≤ Dmin) (hnv : 0 ≤ normv)

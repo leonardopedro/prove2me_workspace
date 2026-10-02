@@ -5,8 +5,6 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_isGraphCore_of_esa
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_ham_esa
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_core_le_dom
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_comparison_core
-open BookProof.ScalaronFiberFL
-open BookProof.ScalaronFiberFL.WallPot
 
 
 
@@ -19,6 +17,10 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
+variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
 
 set_option maxHeartbeats 1000000 in
 theorem solution : IsGraphCore (W.comparison s hs) (ccDomain ℝ) :=

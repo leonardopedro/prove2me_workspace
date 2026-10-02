@@ -16,6 +16,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) (x : Vd d) (j : Fin d)
     (t : ℝ) :

@@ -12,6 +12,8 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 l_of_bounded g s (‖w‖ * ‖(v : F)‖) hs hgd hb
 

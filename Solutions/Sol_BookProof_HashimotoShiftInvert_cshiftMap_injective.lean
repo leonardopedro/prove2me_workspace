@@ -10,6 +10,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {A : Dom →ₗ[ℂ] F} (hsym : SymmetricOn Dom A)
     {γ : ℂ} (hγ : γ.im ≠ 0) : Function.Injective (cshiftMap A γ) := by

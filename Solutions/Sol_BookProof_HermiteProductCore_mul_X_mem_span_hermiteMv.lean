@@ -13,20 +13,19 @@ open SchwartzMap
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
- = a i - 1 := by simp [Finsupp.tsub_apply]
-  rw [hermiteMv_erase i a, hermiteMv_erase i (a + Finsupp.single i 1),
-    hermiteMv_erase i (a - Finsupp.single i 1), hrest _ hadd, hrest _ hsub, hai, hsi,
-    ← mul_assoc, hermiteFactor_X_mul i (a i)]
-  rw [add_mul, smul_mul_assoc]
+variable {d : ℕ}
 
-/-- The span of the product Hermite p :=
-  olynomials is stable under multiplication by
-  each coordinate. -/
-  theorem mul_X_mem_span_hermiteMv (i : Fin d) {p : MvPolynomial (Fin d) ℂ}
-      (hp : p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d)))) :
-      X i * p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d))) := by
-    induction hp using Submodule.span_induction with
-    | mem x hx =>
-      obtain ⟨a, rfl⟩ := hx
-      rw [hermiteM
+set_option maxHeartbeats 1000000 in
+theorem solution (i : Fin d) {p : MvPolynomial (Fin d) ℂ}
+    (hp : p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d)))) :
+    X i * p ∈ Submodule.span ℂ (Set.range (hermiteMv (d := d))) := by
+
+  induction hp using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨a, rfl⟩ := hx
+    rw [hermiteMv_X_mul]
+    exact add_mem (Submodule.subset_span ⟨_, rfl⟩)
+      (Submodule.smul_mem _ _ (Submodule.subset_span ⟨_, rfl⟩))
+  | zero => simp
+  | add x y _ _ hx hy => rw [mul_add]; exact add_mem hx hy
+  | smul c x _ hx => rw [mul_smul_comm]; exact Submodule.smul_mem _ _ hx

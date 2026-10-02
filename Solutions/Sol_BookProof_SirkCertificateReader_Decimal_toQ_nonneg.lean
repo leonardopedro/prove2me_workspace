@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSirkCertificateReader
 open BookProof.SirkCertificateReader
-open BookProof.SirkCertificateReader.Decimal
 
 
 

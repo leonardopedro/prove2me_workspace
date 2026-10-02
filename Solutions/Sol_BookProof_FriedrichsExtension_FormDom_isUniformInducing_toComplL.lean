@@ -13,6 +13,8 @@ open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 iformSpace.Completion.denseRange_coe (α := FormDom P)
 

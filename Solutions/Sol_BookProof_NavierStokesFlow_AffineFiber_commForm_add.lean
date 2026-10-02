@@ -14,6 +14,9 @@ open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (H₁ H₂ N : D →ₗ[ℂ] F) (x : D) :
     commForm (H₁ + H₂) N x = commForm H₁ N x + commForm H₂ N x := by

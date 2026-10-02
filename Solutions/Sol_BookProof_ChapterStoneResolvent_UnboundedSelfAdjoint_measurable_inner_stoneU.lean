@@ -17,6 +17,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x y : H) :
     Measurable (fun t : ℝ => ⟪ y, T.stoneU t x ⟫_ℂ) := (continuous_const.inner (T.continuous_stoneU_apply x)).measurable

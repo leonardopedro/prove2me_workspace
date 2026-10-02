@@ -17,6 +17,8 @@ open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F)
     (hinj : Function.Injective (friedrichsResolvent P)) {mu : ℝ}

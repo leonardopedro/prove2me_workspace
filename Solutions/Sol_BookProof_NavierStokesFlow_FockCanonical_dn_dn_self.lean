@@ -15,6 +15,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (β : Occ d) : (dn i (dn i β)) i = β i - 2 := by
 

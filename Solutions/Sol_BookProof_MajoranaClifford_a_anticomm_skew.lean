@@ -11,6 +11,8 @@ open RealInnerProductSpace CliffordAlgebra QuadraticMap
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (J : V →ₗ[ℝ] V) (hJ : ∀ v w : V, ⟪J v, w⟫ = -⟪v, J w⟫) (v : V) :
     a v * a (J v) + a (J v) * a v = 0 := by

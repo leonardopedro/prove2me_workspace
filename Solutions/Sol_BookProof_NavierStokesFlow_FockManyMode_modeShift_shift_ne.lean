@@ -15,6 +15,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i i₀ : Fin d) :
     modeShift i (modeShift i₀ (0 : Occ d)) ≠ 0 := by

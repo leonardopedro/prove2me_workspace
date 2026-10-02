@@ -11,6 +11,8 @@ open scoped BigOperators
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : H →L[ℂ] H) (h : IsSelfAdjoint T) :
     (T ∘L T).IsPositive := by

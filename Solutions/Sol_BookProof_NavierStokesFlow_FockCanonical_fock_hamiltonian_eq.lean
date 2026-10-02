@@ -17,6 +17,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
  i := h
       push_cast [Nat.cast_sub h2]

@@ -15,6 +15,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : ∀ i, 0 ≤ κ i) (i : Fin d) (g : Occ d → ℂ) (β : Occ d) :
     (modeData hκ i).hop g β = if 2 ≤ β i then g (dn i (dn i β)) else 0 := by

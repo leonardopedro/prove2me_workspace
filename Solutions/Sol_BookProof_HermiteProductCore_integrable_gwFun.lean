@@ -13,6 +13,8 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (r : MvPolynomial (Fin d) ℂ) :
     Integrable (fun x : Vd d =>

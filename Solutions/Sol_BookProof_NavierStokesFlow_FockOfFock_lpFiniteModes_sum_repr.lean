@@ -11,6 +11,9 @@ open BookProof.NavierStokesFlow.FockOfFock
 
 open FullEsa
 
+variable {ι : Type*}
+variable {M : Type*} [DecidableEq M]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} [DecidableEq ι] (f : lpFiniteModes ι) :
     f = ∑ i ∈ f.2.toFinset, (((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i) • lpBasis i := by

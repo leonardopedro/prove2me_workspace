@@ -19,5 +19,8 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution : IsUniformInducing (d.coreRange.subtypeL) := (isometry_subtype_coe (s := (d.coreRange : Set F))).isUniformInducing

@@ -4,7 +4,6 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_ne_zero
 import Theorems.Thm_BookProof_SirkSingleTime_isShiftInvertC_neg_resCLM_shift
 import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_convergence
-open BookProof.SirkSingleTime
 
 
 
@@ -18,6 +17,11 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (W : WallPot) (Q : QgModeData ι)

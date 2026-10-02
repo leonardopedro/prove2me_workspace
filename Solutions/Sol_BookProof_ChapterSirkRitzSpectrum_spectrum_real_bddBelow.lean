@@ -16,6 +16,8 @@ open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (T : F →L[ℂ] F) (hT : IsSelfAdjoint T) :
     BddBelow (spectrum ℝ T) := by

@@ -8,13 +8,14 @@ open BookProof.QuadFockEsa
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

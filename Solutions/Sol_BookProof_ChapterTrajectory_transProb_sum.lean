@@ -10,6 +10,8 @@ open scoped BigOperators Matrix
 
 variable {n : ℕ}
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (V : Matrix (Fin n) (Fin n) ℂ) (hV : Vᴴ * V = 1)
     (a : Fin n) : ∑ f, transProb V f a = 1 := by

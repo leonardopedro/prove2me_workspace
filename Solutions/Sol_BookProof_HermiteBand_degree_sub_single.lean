@@ -12,6 +12,8 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {α : Fin d →₀ ℕ} {i : Fin d} (h : 1 ≤ α i) :
     (α - Finsupp.single i 1).degree + 1 = α.degree := by

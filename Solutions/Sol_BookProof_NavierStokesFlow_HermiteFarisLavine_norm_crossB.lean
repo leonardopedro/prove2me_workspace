@@ -12,6 +12,9 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato
 
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : 0 ≤ κ) (X Y : ℕ → ℂ) (n : ℕ) :
     ‖crossB κ X Y n‖ = amp κ n * ‖X (n + 2)‖ * ‖Y n‖ := by

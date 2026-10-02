@@ -15,6 +15,8 @@ open FullEsa
 
 variable {X : Type*} [MeasurableSpace X]
 
+variable {X : Type*} [MeasurableSpace X]
+
 set_option maxHeartbeats 1000000 in
 nergy (w : ℝ → ℝ) (n : ℕ) : (Fin n → ℝ) → ℝ :=
   fun ξ => ∑ k : Fin n, w (ξ k)

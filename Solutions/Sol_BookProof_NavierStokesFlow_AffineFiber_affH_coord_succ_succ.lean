@@ -8,6 +8,10 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_basisState_coe
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
+variable {ι : Type*}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
+
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterNavierStokesShiftHamiltonian

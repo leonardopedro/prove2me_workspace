@@ -20,6 +20,11 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
+variable (C : ∀ i, Comparison (G i))
+
 set_option maxHeartbeats 1000000 in
 theorem solution {x : lp G 2} :
     x ∈ dsDom C ↔ (∀ i, (x : ∀ i, G i) i ∈ (C i).dom) ∧

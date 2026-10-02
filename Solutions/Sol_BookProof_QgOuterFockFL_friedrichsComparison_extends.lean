@@ -25,6 +25,8 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] (P : PosSymOp F)
     (hdense : Dense (P.dom : Set F)) (x : P.dom) :

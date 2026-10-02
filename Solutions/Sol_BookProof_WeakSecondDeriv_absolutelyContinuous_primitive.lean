@@ -10,6 +10,8 @@ open MeasureTheory Filter Topology intervalIntegral Set
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {G : ℝ → ℝ} (hG : LocallyIntegrable G volume)
     {a b c : ℝ} (hc : c ∈ uIcc a b) :

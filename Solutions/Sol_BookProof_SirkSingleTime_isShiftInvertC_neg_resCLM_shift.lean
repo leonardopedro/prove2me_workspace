@@ -4,7 +4,6 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse
-open BookProof.SirkSingleTime
 
 
 
@@ -18,6 +17,9 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : UnboundedSelfAdjoint E) {l : ℝ} (hl : l ≠ 0) :

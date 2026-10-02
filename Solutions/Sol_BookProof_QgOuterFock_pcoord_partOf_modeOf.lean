@@ -20,6 +20,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {n : ℕ} (I : Fin (n * 84)) :
     pcoord (partOf I) (modeOf I) = I := by

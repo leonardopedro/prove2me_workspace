@@ -10,6 +10,8 @@ noncomputable section
 
 open BookProof.SirkCertifiedGap
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {l1 l2 p : ℝ} (hl1 : 0 < l1) (hl : l1 < l2) (hp : 0 < p) :
     1 < (l2 / l1) ^ p := by

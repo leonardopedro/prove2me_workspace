@@ -14,6 +14,10 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
+variable {D : Submodule ℂ (L2d 99)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 99 D) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (x : D) :
     ymHamiltonian Φ fabc x

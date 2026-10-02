@@ -17,6 +17,8 @@ open LpNat FarisLavine IkebeKato ShiftHamiltonian
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 
+variable {d : ℕ} {κ : Fin d → ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hκ : ∀ i, 0 ≤ κ i) (x : maxDom (fockSym κ)) :
     ‖(fockH hκ x : L2I (Occ d))‖ ^ 2

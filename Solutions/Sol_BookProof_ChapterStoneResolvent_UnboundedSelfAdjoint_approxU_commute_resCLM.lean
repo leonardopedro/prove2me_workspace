@@ -16,5 +16,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 variable (T : UnboundedSelfAdjoint H)
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n t l : ℝ) : Commute (T.approxU n t) (T.resCLM l) := (((T.yosidaGen_commute_resCLM n l).smul_left t)).exp_left

@@ -10,6 +10,12 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
 set_option maxHeartbeats 1000000 in
 open ContinuousLinearMap in
 theorem solution (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)

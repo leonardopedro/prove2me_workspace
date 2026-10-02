@@ -18,6 +18,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
  u‖ + K * (2 / (c0 * e)) * ‖(u : L2d d)‖ := by ring
 

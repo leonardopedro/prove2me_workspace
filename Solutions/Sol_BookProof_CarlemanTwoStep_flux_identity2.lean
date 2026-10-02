@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_vanish
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_vanish
-open BookProof.CarlemanTwoStep
 
 
 
@@ -17,6 +16,10 @@ open BookProof.HermiteCarleman
 noncomputable section
 
 variable {d : ℕ}
+
+variable {d : ℕ}
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hrec : LadderRec2 u lam w1 w2 z) (N : ℕ) :

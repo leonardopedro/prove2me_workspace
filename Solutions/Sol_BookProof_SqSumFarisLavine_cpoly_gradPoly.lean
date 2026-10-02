@@ -20,6 +20,8 @@ noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]
 
+variable {D : ℕ} {R : Type*} [Fintype R]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : R → Fin D → ℝ) (k : Fin D) :
     cpoly (gradPoly v k) = gradPoly v k := by

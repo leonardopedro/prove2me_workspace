@@ -4,7 +4,6 @@ import Definitions.Def_ChapterQgTimeStepping
 import Theorems.Thm_BookProof_QgTimeStepping_cnStep_apply
 import Theorems.Thm_BookProof_QgTimeStepping_two_div_ne_zero
 import Theorems.Thm_BookProof_QgTimeStepping_res_second_order
-open BookProof.QgTimeStepping
 
 
 
@@ -12,12 +11,13 @@ open BookProof.QgTimeStepping
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution {tau : ℝ} (htau : tau ≠ 0) (x : T.domain) (hx : T.op x ∈ T.domain) :

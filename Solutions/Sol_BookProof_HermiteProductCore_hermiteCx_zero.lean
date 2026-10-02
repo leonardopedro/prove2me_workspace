@@ -12,6 +12,8 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : hermiteCx 0 = 1 := by
 

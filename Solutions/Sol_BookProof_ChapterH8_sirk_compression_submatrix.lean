@@ -11,6 +11,13 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) (X : E →L[ℂ] E)
     (Vn : EuclideanSpace ℂ (Fin n) →L[ℂ] E)

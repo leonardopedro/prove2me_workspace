@@ -15,6 +15,9 @@ open Filter Topology MeasureTheory
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (G : WeakMeasurableUnitaryGroup H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (s : ℝ) (y v : H) : ⟪ y, G.U s v ⟫_ℂ = ⟪ G.U (-s) y, v ⟫_ℂ := by
 

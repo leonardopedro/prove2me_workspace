@@ -14,6 +14,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
     cpoly (∑ i ∈ s, f i) = ∑ i ∈ s, cpoly (f i) := map_sum (MvPolynomial.map (starRingEnd ℂ)) f s

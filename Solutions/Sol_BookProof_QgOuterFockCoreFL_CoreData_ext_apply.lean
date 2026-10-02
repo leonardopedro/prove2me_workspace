@@ -19,5 +19,8 @@ open Filter Topology
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : d.C.dom) : d.ext x = d.extCLM (d.C.op x + (x : F)) := rfl

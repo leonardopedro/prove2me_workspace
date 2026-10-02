@@ -20,6 +20,8 @@ open BookProof.HashimotoShiftInvert
 
 variable (M alpha : ℝ)
 
+variable (M alpha : ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℝ → ℂ) (hf : ContDiff ℝ 2 f) (x : ℝ) :
     HasDerivAt (fun t => ‖f t‖ ^ 2)

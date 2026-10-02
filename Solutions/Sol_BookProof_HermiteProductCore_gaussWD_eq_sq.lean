@@ -12,12 +12,10 @@ open SchwartzMap
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
-nctions` by Fubini. -/
+variable {d : ℕ}
 
-/-- The Gaussian weight `e^{-‖x‖²/2} = :=
-   (e^{-‖x‖²/4})²`. -/
-  def gaussWD (x : Vd d) : ℝ := Real.exp (-‖x‖ ^ 2 / 2)
-  
-  theorem gaussWD_eq_sq (x : Vd d) : gaussWD x = gaussD x * gaussD x := by
-    rw [
+set_option maxHeartbeats 1000000 in
+theorem solution (x : Vd d) : gaussWD x = gaussD x * gaussD x := by
+
+  rw [gaussWD, gaussD, ← Real.exp_add]
+  ring_nf

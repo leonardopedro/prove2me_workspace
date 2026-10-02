@@ -7,6 +7,8 @@ open BookProof.NavierStokesFlow
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
+variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : Matrix (Fin 3) (Fin 3) ℝ) :
     HasDerivAt (fun t : ℝ => (1 + t • A).det) A.trace 0 := by

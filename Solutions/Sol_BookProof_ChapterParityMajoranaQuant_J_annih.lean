@@ -11,6 +11,9 @@ open scoped ComplexConjugate
 
 variable {m : ℕ}
 
+variable {m : ℕ}
+variable (J : Matrix (Fin m) (Fin m) ℂ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hJ2 : J * J = -1) : J * annihProj J = (-Complex.I) • annihProj J := by
 

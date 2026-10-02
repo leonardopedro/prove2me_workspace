@@ -21,6 +21,10 @@ open BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)

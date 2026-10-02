@@ -15,6 +15,8 @@ open FullEsa
 
 variable {X : Type*} [MeasurableSpace X]
 
+variable {X : Type*} [MeasurableSpace X]
+
 set_option maxHeartbeats 1000000 in
 )) 2 μ := by
   refine ⟨Complex.continuous_conj.comp_aestronglyMeasurable h.1, ?_⟩

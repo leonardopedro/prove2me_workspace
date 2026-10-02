@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_fibOf_coe
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_xCc_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_exists_band₂
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_inner_secHam_expand
-open BookProof.ScalaronOuterFockFL
 
 
 
@@ -13,10 +12,15 @@ open BookProof.ScalaronOuterFockFL
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution : SymmetricOn (secCore (ι := ι)) (secHam W Q) := by

@@ -20,5 +20,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Dense ((qgOuterCore : Submodule ℂ qgOuterFock) : Set qgOuterFock) := dsCore_dense fun _ => polyGaussCore_dense

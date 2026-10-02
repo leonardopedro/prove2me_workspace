@@ -21,6 +21,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {D : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution {R : Type*} [Fintype R] (v : R → Fin D → ℝ) :
     ∑ i : Fin D, ∑ j : Fin D, ((gramQ v i j : ℝ) : ℂ)

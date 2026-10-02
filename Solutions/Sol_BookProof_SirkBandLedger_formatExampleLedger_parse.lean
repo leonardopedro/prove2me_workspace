@@ -9,6 +9,8 @@ open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     parseLedger formatExampleLedgerNdjson = formatExampleLedger := by

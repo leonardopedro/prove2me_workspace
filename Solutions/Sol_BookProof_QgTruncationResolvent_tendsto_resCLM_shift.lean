@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
-open BookProof.QgTruncationResolvent
 
 
 
@@ -11,10 +10,11 @@ open BookProof.QgTruncationResolvent
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

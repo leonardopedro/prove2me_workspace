@@ -10,6 +10,8 @@ open RealInnerProductSpace CliffordAlgebra QuadraticMap
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v w : V) : polar (Qform (V := V)) v w = 2 * ⟪v, w⟫ := by
 

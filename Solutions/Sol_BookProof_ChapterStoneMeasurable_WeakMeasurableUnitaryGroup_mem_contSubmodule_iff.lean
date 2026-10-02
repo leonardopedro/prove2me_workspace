@@ -12,6 +12,9 @@ open Filter Topology MeasureTheory
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable (G : WeakMeasurableUnitaryGroup H)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (v : H) :
     v ∈ G.contSubmodule ↔ Tendsto (fun s : ℝ => G.U s v) (𝓝 0) (𝓝 v) := Iff.rfl

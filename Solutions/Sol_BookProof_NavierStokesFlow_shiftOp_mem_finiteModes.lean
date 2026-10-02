@@ -12,6 +12,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 pa [hgdef, Function.mem_support] using one_div_ne_zero hkC
   exact (Set.infinite_univ.diff (Set.finite_singleton (0 : ℤ))) (hg.subset hsub)

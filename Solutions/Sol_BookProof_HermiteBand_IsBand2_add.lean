@@ -4,7 +4,6 @@ import Definitions.Def_ChapterHermiteBandCalculus
 import Theorems.Thm_BookProof_HermiteBand_Band_add
 import Theorems.Thm_BookProof_HermiteBand_IsBand1_add
 open BookProof.HermiteBand
-open BookProof.HermiteBand.IsBand2
 
 
 
@@ -12,6 +11,8 @@ open BookProof.HermiteBand.IsBand2
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

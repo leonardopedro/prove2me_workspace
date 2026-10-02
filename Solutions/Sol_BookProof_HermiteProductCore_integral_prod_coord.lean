@@ -12,6 +12,8 @@ open SchwartzMap
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (f : Fin d → ℝ → ℂ) :
     ∫ x : Vd d, ∏ i, f i (x i) = ∏ i, ∫ t : ℝ, f i t := by

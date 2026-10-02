@@ -15,6 +15,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (x : Vd d) (j : Fin d) (s : ℝ) : (coordLine x j s) j = s := by
 

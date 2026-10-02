@@ -16,6 +16,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 as a finitely supported multi-index. -/
 def velIdx : Vel ≃ (Fin 3 →₀ ℕ) := Finsupp.equivFunO :=

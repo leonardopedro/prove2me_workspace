@@ -21,5 +21,7 @@ noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Nonempty (ℕ ≃ (Fin 3 →₀ ℕ)) := nonempty_equiv_of_countable

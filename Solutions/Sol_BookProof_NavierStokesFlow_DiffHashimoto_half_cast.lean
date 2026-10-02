@@ -21,6 +21,8 @@ noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution : (((1 / 2 : ℝ) : ℂ)) = (1 : ℂ) / 2 := by
  norm_num

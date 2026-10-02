@@ -11,6 +11,8 @@ open BookProof.SirkBandLedger
 open BookProof.SirkCertificateReader
 open BookProof.BandEnclosure
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     NestedBands (ledgerLo formatExampleLedger) (ledgerHi formatExampleLedger) := nestedBands_of_wf formatExampleLedger_wf

@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_add
 open BookProof.YangMillsHermite
-open BookProof.YangMillsHermite.RealCoeff
 
 
 
@@ -13,6 +12,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFried
 open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.HashimotoShiftInvert
 
 noncomputable section
+
+variable {d : ℕ}
 
 variable {d : ℕ}
 

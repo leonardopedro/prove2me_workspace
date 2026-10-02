@@ -15,6 +15,8 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (n : ℕ) :
     pderiv i (hermiteFactor i n) = (n : ℂ) • hermiteFactor i (n - 1) := by

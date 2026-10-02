@@ -14,6 +14,9 @@ noncomputable section
 
 variable {d : ℕ}
 
+variable {d : ℕ}
+variable (W : Vd d → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : MvPolynomial (Fin d) ℂ) :
     coreEquiv.symm ⟨pgLp p, pgLp_mem_core p⟩ = p := by

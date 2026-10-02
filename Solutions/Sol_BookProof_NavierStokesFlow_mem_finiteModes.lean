@@ -11,6 +11,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 ).Finite := Iff.rfl
 

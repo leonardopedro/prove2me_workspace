@@ -208327,3 +208327,71 @@ line 25: Unknown identifier `dsOp_symmetricOn`)
 03:18:46 sync: read 5800 problem publish job(s)
 03:18:46 summary: 1624 done, 320 pending, 6 failed (1822 out-of-order orphans ignored)
 03:18:46 waiting on unpublished def bundle(s): open BookProof.HashimotoShiftInvert.IsShiftInvert (no provider) (3 item(s))
+03:22:26 sync: read 755 definition publish job(s)
+03:22:51 sync: read 5800 problem publish job(s)
+03:22:56 sync: read 755 definition publish job(s)
+03:23:21 sync: read 5800 problem publish job(s)
+03:23:27 sync: read 755 definition publish job(s)
+03:23:52 sync: read 5800 problem publish job(s)
+03:23:52 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem (attempt 1)
+03:30:53 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: FAIL (verdict CE: Compile error in your proof:
+line 14: Unknown identifier `Dom`
+
+Note: It is not possible to treat `Dom` as an implicitly bound variable he)
+03:30:53 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 1)
+03:33:53 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: FAIL (verdict CE: Compile error in your proof:
+line 15: Unknown identifier `Dom`
+
+Note: It is not possible to treat `Dom` as an implicitly bound variable he)
+03:33:53 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 1)
+03:36:56 sync: read 755 definition publish job(s)
+03:37:18 sync: read 5800 problem publish job(s)
+03:37:23 sync: read 755 definition publish job(s)
+03:37:43 sync: read 5800 problem publish job(s)
+03:37:49 sync: read 755 definition publish job(s)
+03:38:10 sync: read 5800 problem publish job(s)
+03:38:10 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem (attempt 2)
+03:40:19 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: FAIL (verdict CE: Compile error in your proof:
+line 15: Unknown identifier `Dom`
+
+Note: It is not possible to treat `Dom` as an implicitly bound variable he)
+03:40:19 summary: 1624 done, 320 pending, 6 failed (1822 out-of-order orphans ignored)
+03:43:32 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_mem: DONE
+03:43:32 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range (attempt 2)
+04:23:46 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_dom_eq_range: WAIT (verify poll timeout) - job in flight, no attempt consumed
+04:23:46 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 1)
+04:23:46 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: recorded verdict predates the current solution file — resubmitting
+04:23:49 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: FAIL (verify rejected (non-JSON): )
+04:23:49 summary: 1625 done, 319 pending, 6 failed (1822 out-of-order orphans ignored)
+07:21:44 sync: read 755 definition publish job(s)
+07:22:05 sync: read 5800 problem publish job(s)
+07:22:10 sync: read 755 definition publish job(s)
+07:22:28 sync: read 5800 problem publish job(s)
+07:22:28 summary: 1681 done, 167 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+07:22:28 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (1 item(s))
+07:22:28 chunk: 0 item(s) resolved in 24s
+07:24:28 sync: read 755 definition publish job(s)
+07:24:48 sync: read 5800 problem publish job(s)
+07:24:52 sync: read 755 definition publish job(s)
+07:25:13 sync: read 5800 problem publish job(s)
+07:25:19 sync: read 755 definition publish job(s)
+07:25:38 sync: read 5800 problem publish job(s)
+07:25:38 submitting thm:BookProof_ChapterH8_krylov_li_of_le (attempt 1)
+07:26:33 thm:BookProof_ChapterH8_krylov_li_of_le: accepted, waiting on the compiler
+07:26:33 submitting thm:BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion (attempt 1)
+07:26:44 thm:BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion: accepted, waiting on the compiler
+07:26:45 submitting thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core (attempt 1)
+07:26:53 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core: accepted, waiting on the compiler
+07:41:23 thm:BookProof_ChapterH8_krylov_li_of_le: FAIL (publish FAILED: formal statement does not compile: line 27: unexpected token ':='; expected '[', '{', '|', '⦃' or term)
+07:41:32 submitting thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded (attempt 1)
+07:41:40 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded: accepted, waiting on the compiler
+07:42:15 thm:BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion: FAIL (publish FAILED: formal statement does not compile: line 14: `BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion` has already been declared)
+07:42:24 submitting thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne' (attempt 1)
+07:42:33 thm:BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne': FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+07:42:33 submitting thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds (attempt 1)
+07:42:43 thm:BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds: accepted, waiting on the compiler
+07:42:43 thm:BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core: FAIL (publish FAILED: formal statement does not compile: line 21: unknown namespace `FarisLavine`; line 23: Unknown identifier `EssentiallySelfAdjointOn`
+
+N)
+07:42:52 submitting thm:BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom (attempt 1)
+07:43:04 thm:BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom: accepted, waiting on the compiler

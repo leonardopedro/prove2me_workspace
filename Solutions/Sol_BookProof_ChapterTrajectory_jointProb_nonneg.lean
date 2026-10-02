@@ -12,6 +12,8 @@ open scoped BigOperators Matrix
 
 variable {n : ℕ}
 
+variable {n : ℕ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (U V : Matrix (Fin n) (Fin n) ℂ) (psi : Fin n → ℂ)
     (f a : Fin n) : 0 ≤ jointProb U V psi f a := mul_nonneg (midProb_nonneg _ _ _) (transProb_nonneg _ _ _)

@@ -13,6 +13,8 @@ open Filter Topology
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterH6 BookProof.ChapterH8
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {lo hi : ℕ → ℝ} {nu gam : ℝ} (hnu : nu ≠ 0)
     (hlo : Tendsto lo atTop (𝓝 nu)) (hhi : Tendsto hi atTop (𝓝 nu)) :

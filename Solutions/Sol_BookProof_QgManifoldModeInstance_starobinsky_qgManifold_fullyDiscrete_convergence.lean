@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 import Theorems.Thm_BookProof_QgManifoldModeInstance_VielbeinSpectrum_energyWindow_exhausts
 import Theorems.Thm_BookProof_QgTimeStepping_qgOuterFock_fullyDiscrete_convergence
-open BookProof.QgManifoldModeInstance
 
 
 
@@ -11,13 +10,13 @@ open BookProof.QgManifoldModeInstance
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
-open BookProof.QgTimeStepping
 
 noncomputable section
 
 variable {ι : Type*}
+
+variable {ι : Type*}
+variable (S : VielbeinSpectrum ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha : ℝ) (halpha : 0 < alpha)

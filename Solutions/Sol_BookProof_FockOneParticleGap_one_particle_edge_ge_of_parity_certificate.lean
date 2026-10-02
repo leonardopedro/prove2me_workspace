@@ -12,6 +12,8 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FarisLavine BookProof.NavierStokesFlow
 open Filter Topology
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {T P : E →ₗ[ℂ] E} (c : GapCertificate)
     {thetaE thetaO deltaE deltaO lam : ℝ}

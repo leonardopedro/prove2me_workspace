@@ -11,6 +11,9 @@ open scoped Matrix
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*}
+
 set_option maxHeartbeats 1000000 in
 rem mem_lpFiniteModes {f : lp (fun _ : ι => ℂ) 2} :
     f ∈ lpFiniteModes ι ↔ (Function.support ((f : ι → ℂ))).Finite := Iff.rfl

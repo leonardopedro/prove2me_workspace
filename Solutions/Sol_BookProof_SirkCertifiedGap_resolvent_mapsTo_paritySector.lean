@@ -15,6 +15,8 @@ open BookProof.SirkFinitePrecision
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {T P R : E →ₗ[ℂ] E} {z : ℂ} {s : ℝ}
     (hcomm : ∀ x, T (P x) = P (T x))

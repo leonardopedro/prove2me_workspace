@@ -15,6 +15,10 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable [CompleteSpace F]
+
 set_option maxHeartbeats 1000000 in
 h0
   linear_combination -h0

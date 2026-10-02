@@ -12,6 +12,8 @@ open scoped ENNReal
 
 open LpNat FarisLavine IkebeKato HermiteFarisLavine
 
+variable {κ : ℝ}
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     (cre + ann).comp (cre + ann) - (cre - ann).comp (cre - ann)

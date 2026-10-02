@@ -1,17 +1,18 @@
 -- Generated from ChapterQgVielbeinModeInstance.lean — solution of BookProof.QgVielbeinModeInstance.ofFintype_A
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
-open BookProof.QgVielbeinModeInstance
 
 
 
 
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section
 
 variable {ι : Type*}
+
+variable {ι : Type*}
+variable [Fintype ι] [DecidableEq ι]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι → ι → ℂ)

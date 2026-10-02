@@ -15,6 +15,8 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
+
 set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn

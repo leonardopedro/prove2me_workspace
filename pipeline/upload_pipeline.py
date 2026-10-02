@@ -1845,6 +1845,13 @@ def main(argv=None):
                          "(in-flight items never consume an attempt)")
     ap.add_argument("--no-preflight", action="store_true",
                     help="do not skip items that import an unpublished def bundle")
+    ap.add_argument("--retry-failed", action="store_true",
+                    help="re-arm items whose recorded status is 'failed' and "
+                         "clear their attempt count, so a fixed stub or a "
+                         "fixed dependency can be retried without hand-editing "
+                         "state/pipeline.json. Use with --only/--only-file to "
+                         "keep the retry scoped. The previous error is kept as "
+                         "'prev_error' so the audit trail survives.")
     args = ap.parse_args(argv)
 
     if args.job_timeout:
@@ -1873,6 +1880,25 @@ def main(argv=None):
 
     st = load_state()
     st.setdefault("items", {})
+    if args.retry_failed:
+        # The submit loop treats `attempts >= MAX_ATTEMPTS` as terminal, so a
+        # stub fixed after the cap was hit stays un-runnable forever. Resetting
+        # that by hand is easy to get subtly wrong -- I reset `status` and kept
+        # `attempts`, and the items were silently skipped with "chunk: 0
+        # resolved". Keep it in the tool instead.
+        rearmed = 0
+        for item, rec in st["items"].items():
+            if rec.get("status") != "failed":
+                continue
+            if args.only and not any(o in item for o in args.only):
+                continue
+            st["items"][item] = {
+                "status": "pending",
+                "attempts": 0,
+                "prev_error": (rec.get("prev_error") or rec.get("error") or "")[:400],
+            }
+            rearmed += 1
+        log(f"retry-failed: re-armed {rearmed} item(s)")
     if args.sync:
         # Reconciliation only, exactly as documented: the sync is idempotent and
         # must never fall through into the submit loop (that would spend an

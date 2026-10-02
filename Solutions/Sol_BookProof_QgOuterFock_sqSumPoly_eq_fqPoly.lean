@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_gramQ_quadratic_eq
-import Theorems.Thm_BookProof_QgOuterFock_weylProd_self'
+import Theorems.Thm_BookProof_QgOuterFock_weylProd_self_prime
 import Theorems.Thm_BookProof_HermiteRelative_momPoly_eq_ymMomOp
 open BookProof.QgOuterFock
 

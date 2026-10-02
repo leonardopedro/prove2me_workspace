@@ -1,7 +1,7 @@
 -- Generated from ChapterYangMillsAbelianEsa.lean — solution of BookProof.YangMillsAbelianEsa.gramWeyl_eq
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianEsa
-import Theorems.Thm_BookProof_YangMillsAbelianEsa_triple_swap'
+import Theorems.Thm_BookProof_YangMillsAbelianEsa_triple_swap_prime
 open BookProof.YangMillsAbelianEsa
 
 

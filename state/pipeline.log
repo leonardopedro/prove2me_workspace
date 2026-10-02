@@ -209092,3 +209092,22 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 19:42:27 sol:BookProof_HermiteProductCore_span_range_coreBasis: WAIT (theorem not published yet)
 19:42:27 submitting sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq (attempt 1)
 19:42:27 sol:BookProof_YangMillsFriedrichs_inner_sq_eq_normSq: WAIT (theorem not published yet)
+22:27:48 sync: read 797 definition publish job(s)
+22:28:14 sync: read 5842 problem publish job(s)
+22:28:21 sync: checked 25 pending solution(s), 16 already Proved
+22:28:21 sync: checked 50 pending solution(s), 16 already Proved
+22:28:25 sync: checked 75 pending solution(s), 24 already Proved
+22:28:33 sync: checked 100 pending solution(s), 45 already Proved
+22:28:38 sync: checked 125 pending solution(s), 62 already Proved
+22:28:40 sync: checked 150 pending solution(s), 68 already Proved
+22:28:45 sync: checked 175 pending solution(s), 79 already Proved
+22:28:47 sync: checked 200 pending solution(s), 83 already Proved
+22:28:49 sync: checked 225 pending solution(s), 86 already Proved
+22:28:54 sync: checked 250 pending solution(s), 101 already Proved
+22:28:59 sync: checked 275 pending solution(s), 117 already Proved
+22:29:01 sync: checked 300 pending solution(s), 120 already Proved
+22:29:01 sync: checked 325 pending solution(s), 121 already Proved
+22:29:01 sync: checked 350 pending solution(s), 121 already Proved
+22:29:01 sync: checked 375 pending solution(s), 121 already Proved
+22:29:01 sync: checked 400 pending solution(s), 121 already Proved
+22:29:01 sync: marked 378 already-published item(s) and 121 already-proved solution(s) done

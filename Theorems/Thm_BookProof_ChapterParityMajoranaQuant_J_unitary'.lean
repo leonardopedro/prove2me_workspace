@@ -12,4 +12,4 @@ open scoped ComplexConjugate
 
 
 
-theorem BookProof.ChapterParityMajoranaQuant.J_unitary' (hJ2 : J * J = -1) (hskew : Jᴴ = -J) : J * Jᴴ = 1 := by sorry
+theorem BookProof.ChapterParityMajoranaQuant.J_unitary_prime (hJ2 : J * J = -1) (hskew : Jᴴ = -J) : J * Jᴴ = 1 := by sorry

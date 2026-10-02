@@ -9,7 +9,7 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.Bosonic
 open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.FockManyMode
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
@@ -20,7 +20,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.mode_comparison_eq (i : Fin d) (hκ : 0 ≤ κ i) :

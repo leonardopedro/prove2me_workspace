@@ -8,7 +8,7 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.Bosonic
 open BookProof.FockSecondQuantization
-open BookProof.NavierStokesFlow.FockManyMode
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
@@ -19,7 +19,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.ann_cre_coe (i : Fin d) (x : lpFiniteModes (Occ d)) (α : Occ d) :

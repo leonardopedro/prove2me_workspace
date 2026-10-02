@@ -12,7 +12,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 open BookProof.FarisLavine
 
 
-theorem BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded' [CompleteSpace F] (H : D →ₗ[ℂ] F)
+theorem BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded_prime [CompleteSpace F] (H : D →ₗ[ℂ] F)
     (hH : SymmetricOn D H) (hesa : EssentiallySelfAdjointOn D H) (B : F →L[ℂ] F)
     (hB : ∀ x y : F, (inner ℂ (B x) y : ℂ) = inner ℂ x (B y)) :
     EssentiallySelfAdjointOn D (H + (B.toLinearMap ∘ₗ D.subtype)) := by sorry

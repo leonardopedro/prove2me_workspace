@@ -7,8 +7,8 @@ import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.FockSecondQuantization
-open BookProof.NavierStokesFlow.FockManyMode
-open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
@@ -20,7 +20,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.hop_modeData_eq (hκ : ∀ i, 0 ≤ κ i) (i : Fin d) (g : Occ d → ℂ) (β : Occ d) :

@@ -10,7 +10,7 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

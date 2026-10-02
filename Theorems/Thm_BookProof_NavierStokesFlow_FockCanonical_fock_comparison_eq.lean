@@ -10,8 +10,8 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.Bosonic
 open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.FockManyMode
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
@@ -22,7 +22,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.fock_comparison_eq (hκ : ∀ i, 0 ≤ κ i) :

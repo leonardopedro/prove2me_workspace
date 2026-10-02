@@ -9,19 +9,20 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterBosonicCCR
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterMixedLinearEsa
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.Bosonic
 open BookProof.HermiteProductCore
+open BookProof.MixedLinearEsa
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
 
 
 

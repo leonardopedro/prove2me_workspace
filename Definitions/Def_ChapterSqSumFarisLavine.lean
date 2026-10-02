@@ -55,7 +55,6 @@ open BookProof.GaussCoreQuadBounds
 
 noncomputable section
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 /-! ## 1. The Schur test -/
 

@@ -20,5 +20,5 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
-theorem BookProof.HyperbolicQuadratic.momPoly_apply' (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+theorem BookProof.HyperbolicQuadratic.momPoly_apply_prime (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momPoly i p = (-Complex.I) • (pderiv i p - (1/2 : ℂ) • (X i * p)) := by sorry

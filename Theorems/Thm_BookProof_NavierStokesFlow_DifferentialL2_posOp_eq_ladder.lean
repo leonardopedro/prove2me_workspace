@@ -10,11 +10,12 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterMixedLinearEsa
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
+open BookProof.MixedLinearEsa
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
 
 
 

@@ -18,7 +18,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

@@ -208944,3 +208944,38 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 16:42:45 processing sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le (attempt 2)
 16:42:45 sol:BookProof_HashimotoShiftInvert_IsShiftInvert_opNorm_le: DONE
 16:42:45 processing sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert (attempt 1)
+16:59:53 sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert: DONE
+16:59:53 processing sol:BookProof_HashimotoShiftInvert_shiftMap_surjective (attempt 1)
+17:16:33 sol:BookProof_HashimotoShiftInvert_shiftMap_surjective: DONE
+17:16:33 processing sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs (attempt 1)
+17:24:10 sync: read 797 definition publish job(s)
+17:24:32 sync: read 5837 problem publish job(s)
+17:24:37 sync: read 797 definition publish job(s)
+17:25:00 sync: read 5837 problem publish job(s)
+17:25:06 sync: read 797 definition publish job(s)
+17:25:34 sync: read 5837 problem publish job(s)
+17:25:34 summary: 372 done, 160 pending, 21 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+17:32:08 sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: DONE
+17:32:08 summary: 1631 done, 329 pending, 6 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+17:33:30 sync: read 797 definition publish job(s)
+17:33:54 sync: read 5837 problem publish job(s)
+17:34:00 sync: read 797 definition publish job(s)
+17:34:24 sync: read 5837 problem publish job(s)
+17:34:29 sync: read 797 definition publish job(s)
+17:34:53 sync: read 5837 problem publish job(s)
+17:34:53 summary: 1706 done, 160 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+17:34:53 waiting on unpublished def bundle(s): statement relies on ambient variable `d` from its def bundle (2 item(s))
+17:34:53 chunk: 0 item(s) resolved in 59s
+17:38:10 submitting thm:BookProof_QgOuterFock_sqSumOp_symmetricOn (attempt 1)
+17:38:49 thm:BookProof_QgOuterFock_sqSumOp_symmetricOn: accepted, waiting on the compiler
+17:53:41 thm:BookProof_QgOuterFock_sqSumOp_symmetricOn: DONE
+17:53:41 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+17:53:41 chunk: 1 item(s) resolved in 931s
+18:00:28 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+18:00:28 chunk: 0 item(s) resolved in 0s
+18:04:19 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+18:04:19 chunk: 0 item(s) resolved in 0s
+18:09:10 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+18:09:10 chunk: 0 item(s) resolved in 0s
+18:11:53 summary: 1707 done, 159 pending, 102 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+18:11:53 chunk: 0 item(s) resolved in 0s

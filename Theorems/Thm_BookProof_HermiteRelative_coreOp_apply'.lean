@@ -23,5 +23,5 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-theorem BookProof.HermiteRelative.coreOp_apply' (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
+theorem BookProof.HermiteRelative.coreOp_apply_prime (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
     (x : polyGaussCore (d := d)) : coreOp T x = coreEquiv (T (coreEquiv.symm x)) := by sorry

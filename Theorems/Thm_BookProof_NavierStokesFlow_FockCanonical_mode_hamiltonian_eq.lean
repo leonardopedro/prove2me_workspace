@@ -15,10 +15,10 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.Bosonic
 open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.FockManyMode
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
@@ -30,7 +30,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
 set_option maxHeartbeats 1000000 in

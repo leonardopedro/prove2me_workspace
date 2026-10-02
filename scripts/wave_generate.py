@@ -950,8 +950,59 @@ def build_thm(bt, leaf, decls, node, modns):
     # Both filters run LAST: the block above can still add `open` lines, and a
     # filter that runs before it misses everything it adds.
     text = drop_undeclared_opens(text, leaf)
+    text = drop_rebound_variables(text, text)
     text = drop_shadowing_opens(text, text)
     return text
+
+
+def drop_rebound_variables(text, stmt):
+    """Drop a `variable` line for a name the declaration binds itself.
+
+    A chapter-level `variable {d : ℕ}` is right for most theorems in the file,
+    but a theorem that binds `d` at a DIFFERENT type -- `(d : NSTruncation n)` --
+    then gets the chapter's implicit `d` applied first and fails with
+    `Application type mismatch: The argument d has type NSTruncation n but is
+    expected to have type ℕ`. Identical-block dedupe does not catch it, because
+    the two declarations are not identical.
+
+    Only the declaration's own binder names count, so this keys off the `sig`
+    (everything before `:=`).
+    """
+    if not stmt:
+        return text
+    cut = stmt.index("theorem") if "theorem" in stmt else 0
+    decl = stmt[cut:]
+    sig = decl.split(":=", 1)[0]
+    bound = set(re.findall(r"[({\[,|:]\s*([A-Za-z_][\w']*)\s*(?::|∈)", sig))
+    bound |= set(re.findall(r"^\s*[|⟨]?\s*([A-Za-z_][\w']*)\s*(?::|∈)", sig, re.M))
+    if not bound:
+        return text
+    out, dropped = [], []
+    lines = text.split("\n")
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        st = ln.strip()
+        if st.startswith("variable "):
+            block = [ln]
+            j = i + 1
+            while (j < len(lines) and lines[j][:1].isspace() and lines[j].strip()
+                   and not lines[j].strip().startswith(("theorem", "lemma", "def",
+                                                          "abbrev", "instance", "structure",
+                                                          "end", "namespace", "open", "import"))):
+                block.append(lines[j]); j += 1
+            names = set(re.findall(r"([A-Za-z_][\w']*)\s*:", " ".join(block)))
+            if names & bound:
+                dropped.append(sorted(names & bound))
+                i = j
+                continue
+            out.extend(block); i = j
+            continue
+        out.append(ln); i += 1
+    for d in dropped:
+        print(f"  WARNING dropped `variable` for {d}: the declaration binds it "
+              f"itself at a different type", file=sys.stderr)
+    return "\n".join(out)
 
 
 def drop_shadowing_opens(text, stmt=None):
@@ -1193,6 +1244,7 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     # `unknown namespace` / `Unknown identifier`, from the same shadowing and
     # bare-name problems already fixed in build_thm and build_sol.
     text = drop_undeclared_opens(text, leaf)
+    text = drop_rebound_variables(text, text)
     text = drop_shadowing_opens(text, text)
     return text
 

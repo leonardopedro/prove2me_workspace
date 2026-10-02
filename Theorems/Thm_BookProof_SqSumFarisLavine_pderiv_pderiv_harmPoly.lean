@@ -12,7 +12,6 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.GaussCoreQuadBounds
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

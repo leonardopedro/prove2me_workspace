@@ -14,7 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteOscillator
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

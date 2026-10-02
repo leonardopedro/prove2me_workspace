@@ -12,7 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
 
 
 

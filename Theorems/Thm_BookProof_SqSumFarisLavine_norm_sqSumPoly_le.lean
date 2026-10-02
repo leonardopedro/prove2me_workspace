@@ -15,7 +15,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

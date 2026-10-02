@@ -6,7 +6,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.ChapterF7
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.LagrangianNS
+open BookProof.NavierStokesFlow
 
 variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)

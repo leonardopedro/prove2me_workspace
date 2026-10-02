@@ -21,7 +21,6 @@ open BookProof.NavierStokesFlow.LagrangianCanonical
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
 
 
 

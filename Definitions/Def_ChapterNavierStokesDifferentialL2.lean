@@ -79,7 +79,6 @@ noncomputable section
 
 /-! ## Differentiating along one coordinate -/
 
-variable {d : ℕ}
 
 /-- The line through `x` in the `i`-th coordinate direction. -/
 def sec (i : Fin d) (x : Vd d) (t : ℝ) : Vd d :=

@@ -11,7 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 

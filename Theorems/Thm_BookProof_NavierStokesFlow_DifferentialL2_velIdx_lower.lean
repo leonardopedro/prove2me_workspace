@@ -15,7 +15,6 @@ open BookProof.ChapterGravityProjector
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
 
 
 

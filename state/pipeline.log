@@ -209771,3 +209771,139 @@ inst✝¹ : NormedA)
 19:15:37 sync: checked 175 pending solution(s), 7 already Proved
 19:15:37 sync: checked 200 pending solution(s), 7 already Proved
 19:15:37 sync: marked 0 already-published item(s) and 7 already-proved solution(s) done
+20:23:41 retry-failed: re-armed 0 item(s)
+20:23:47 sync: read 797 definition publish job(s)
+20:24:08 sync: read 5945 problem publish job(s)
+20:24:14 sync: read 797 definition publish job(s)
+20:24:36 sync: read 5945 problem publish job(s)
+20:24:41 sync: read 797 definition publish job(s)
+20:25:03 sync: read 5945 problem publish job(s)
+20:25:03 submitting def:Complexification (attempt 1)
+20:25:10 sync: read 797 definition publish job(s)
+20:25:31 sync: read 5945 problem publish job(s)
+20:25:43 def:Complexification: accepted, waiting on the compiler
+20:25:43 submitting def:ChapterBrstUnboundedLeakage (attempt 1)
+20:25:49 sync: read 798 definition publish job(s)
+20:26:12 sync: read 5945 problem publish job(s)
+20:26:19 def:ChapterBrstUnboundedLeakage: accepted, waiting on the compiler
+20:26:19 submitting def:ChapterCarlemanUnboundedHop (attempt 1)
+20:27:00 sync: read 799 definition publish job(s)
+20:27:21 sync: read 5945 problem publish job(s)
+20:27:31 def:ChapterCarlemanUnboundedHop: accepted, waiting on the compiler
+20:27:31 submitting def:ChapterReducingSubspaceEsa (attempt 1)
+20:27:42 sync: read 800 definition publish job(s)
+20:28:02 sync: read 5945 problem publish job(s)
+20:28:09 def:ChapterReducingSubspaceEsa: accepted, waiting on the compiler
+20:28:09 submitting def:PhysFunctionalAnalysis (attempt 1)
+20:28:16 sync: read 801 definition publish job(s)
+20:28:36 sync: read 5945 problem publish job(s)
+20:28:43 def:PhysFunctionalAnalysis: accepted, waiting on the compiler
+20:41:04 def:Complexification: DONE
+20:41:13 submitting def:ChapterNavierStokesCarleman (attempt 1)
+20:41:21 sync: read 802 definition publish job(s)
+20:41:44 sync: read 5945 problem publish job(s)
+20:42:01 def:ChapterNavierStokesCarleman: accepted, waiting on the compiler
+20:42:20 def:ChapterBrstUnboundedLeakage: DONE
+20:42:29 submitting def:ChapterNsScalarVectorCurry (attempt 1)
+20:43:12 sync: read 803 definition publish job(s)
+20:43:34 sync: read 5945 problem publish job(s)
+20:43:51 def:ChapterNsScalarVectorCurry: accepted, waiting on the compiler
+20:43:51 def:ChapterCarlemanUnboundedHop: DONE
+20:43:52 def:ChapterReducingSubspaceEsa: DONE
+20:44:00 submitting def:ChapterQuadraticRotationEsa (attempt 1)
+20:44:09 sync: read 804 definition publish job(s)
+20:44:31 sync: read 5945 problem publish job(s)
+20:44:45 def:ChapterQuadraticRotationEsa: accepted, waiting on the compiler
+20:44:45 submitting def:ChapterCayleyInverse (attempt 1)
+20:44:53 sync: read 805 definition publish job(s)
+20:45:15 sync: read 5945 problem publish job(s)
+20:45:29 def:ChapterCayleyInverse: accepted, waiting on the compiler
+20:45:30 def:PhysFunctionalAnalysis: DONE
+20:58:13 def:ChapterNavierStokesCarleman: DONE
+21:01:54 def:ChapterNsScalarVectorCurry: DONE
+21:02:28 def:ChapterQuadraticRotationEsa: DONE
+21:02:54 def:ChapterCayleyInverse: DONE
+21:02:54 summary: 9 done, 544 pending, 0 failed, 2 unsubmittable (source missing from this checkout)
+21:02:54 waiting on unpublished def bundle(s): ChapterReducingSubspaceEsa (1 item(s))
+21:02:54 chunk: 9 item(s) resolved in 2325s
+21:03:14 sync: read 806 definition publish job(s)
+21:03:34 sync: read 5945 problem publish job(s)
+21:03:39 sync: checked 25 pending solution(s), 17 already Proved
+21:03:45 sync: checked 50 pending solution(s), 40 already Proved
+21:03:51 sync: checked 75 pending solution(s), 65 already Proved
+21:03:58 sync: checked 100 pending solution(s), 90 already Proved
+21:04:04 sync: checked 125 pending solution(s), 115 already Proved
+21:04:10 sync: checked 150 pending solution(s), 140 already Proved
+21:04:18 sync: checked 175 pending solution(s), 165 already Proved
+21:04:24 sync: checked 200 pending solution(s), 190 already Proved
+21:04:31 sync: checked 225 pending solution(s), 215 already Proved
+21:04:37 sync: checked 250 pending solution(s), 240 already Proved
+21:04:43 sync: checked 275 pending solution(s), 265 already Proved
+21:04:49 sync: checked 300 pending solution(s), 290 already Proved
+21:04:56 sync: checked 325 pending solution(s), 315 already Proved
+21:05:03 sync: checked 350 pending solution(s), 340 already Proved
+21:05:10 sync: checked 375 pending solution(s), 365 already Proved
+21:05:17 sync: checked 400 pending solution(s), 390 already Proved
+21:05:24 sync: checked 425 pending solution(s), 415 already Proved
+21:05:32 sync: checked 450 pending solution(s), 440 already Proved
+21:05:38 sync: checked 475 pending solution(s), 465 already Proved
+21:05:44 sync: checked 500 pending solution(s), 490 already Proved
+21:05:51 sync: checked 525 pending solution(s), 515 already Proved
+21:05:58 sync: checked 550 pending solution(s), 540 already Proved
+21:06:06 sync: checked 575 pending solution(s), 565 already Proved
+21:06:13 sync: checked 600 pending solution(s), 590 already Proved
+21:06:20 sync: checked 625 pending solution(s), 614 already Proved
+21:06:26 sync: checked 650 pending solution(s), 639 already Proved
+21:06:33 sync: checked 675 pending solution(s), 664 already Proved
+21:06:39 sync: checked 700 pending solution(s), 689 already Proved
+21:06:45 sync: checked 725 pending solution(s), 714 already Proved
+21:06:52 sync: checked 750 pending solution(s), 739 already Proved
+21:06:59 sync: checked 775 pending solution(s), 764 already Proved
+21:07:06 sync: checked 800 pending solution(s), 789 already Proved
+21:07:13 sync: checked 825 pending solution(s), 814 already Proved
+21:07:21 sync: checked 850 pending solution(s), 837 already Proved
+21:07:28 sync: checked 875 pending solution(s), 861 already Proved
+21:07:35 sync: checked 900 pending solution(s), 885 already Proved
+21:07:42 sync: checked 925 pending solution(s), 910 already Proved
+21:07:49 sync: checked 950 pending solution(s), 935 already Proved
+21:07:55 sync: checked 975 pending solution(s), 960 already Proved
+21:08:02 sync: checked 1000 pending solution(s), 985 already Proved
+21:08:09 sync: checked 1025 pending solution(s), 1010 already Proved
+21:08:16 sync: checked 1050 pending solution(s), 1035 already Proved
+21:08:22 sync: checked 1075 pending solution(s), 1060 already Proved
+21:08:28 sync: checked 1100 pending solution(s), 1085 already Proved
+21:08:35 sync: checked 1125 pending solution(s), 1108 already Proved
+21:08:42 sync: checked 1150 pending solution(s), 1133 already Proved
+21:08:48 sync: checked 1175 pending solution(s), 1158 already Proved
+21:08:55 sync: checked 1200 pending solution(s), 1183 already Proved
+21:09:02 sync: checked 1225 pending solution(s), 1208 already Proved
+21:09:09 sync: checked 1250 pending solution(s), 1232 already Proved
+21:09:15 sync: checked 1275 pending solution(s), 1257 already Proved
+21:09:23 sync: checked 1300 pending solution(s), 1281 already Proved
+21:09:29 sync: checked 1325 pending solution(s), 1306 already Proved
+21:09:36 sync: checked 1350 pending solution(s), 1330 already Proved
+21:09:42 sync: checked 1375 pending solution(s), 1354 already Proved
+21:09:49 sync: checked 1400 pending solution(s), 1375 already Proved
+21:09:56 sync: checked 1425 pending solution(s), 1399 already Proved
+21:10:03 sync: checked 1450 pending solution(s), 1421 already Proved
+21:10:09 sync: checked 1475 pending solution(s), 1446 already Proved
+21:10:17 sync: checked 1500 pending solution(s), 1471 already Proved
+21:10:26 sync: checked 1525 pending solution(s), 1496 already Proved
+21:10:32 sync: checked 1550 pending solution(s), 1519 already Proved
+21:10:39 sync: checked 1575 pending solution(s), 1541 already Proved
+21:10:45 sync: checked 1600 pending solution(s), 1560 already Proved
+21:10:52 sync: checked 1625 pending solution(s), 1585 already Proved
+21:10:59 sync: checked 1650 pending solution(s), 1610 already Proved
+21:11:06 sync: checked 1675 pending solution(s), 1633 already Proved
+21:11:13 sync: checked 1700 pending solution(s), 1657 already Proved
+21:11:19 sync: checked 1725 pending solution(s), 1673 already Proved
+21:11:25 sync: checked 1750 pending solution(s), 1692 already Proved
+21:11:31 sync: checked 1775 pending solution(s), 1712 already Proved
+21:11:34 sync: checked 1800 pending solution(s), 1726 already Proved
+21:11:40 sync: checked 1825 pending solution(s), 1746 already Proved
+21:11:45 sync: checked 1850 pending solution(s), 1763 already Proved
+21:11:45 sync: checked 1875 pending solution(s), 1764 already Proved
+21:11:45 sync: checked 1900 pending solution(s), 1764 already Proved
+21:11:45 sync: checked 1925 pending solution(s), 1764 already Proved
+21:11:45 sync: checked 1950 pending solution(s), 1765 already Proved
+21:11:46 sync: marked 2171 already-published item(s) and 1765 already-proved solution(s) done

@@ -414,6 +414,29 @@ thanks to §2.8f, so re-declaring them collides).
 different lists in this session each used a different form and every mismatch
 produced a silent `NOSRC` or a doubled `Def_` prefix rather than an error.
 
+### §2.10e The candidate def build is one ordered pass — use the tool
+
+`debug/build_candidate_mirror.py --targets <list> --report <tsv>` does the whole
+§2.10d job in the right order and is the only thing to run:
+
+1. stage the 381 published bundles plus the candidates into a candidate mirror
+   (`CANDIDATE_MIRROR`, never `/tmp/published_mirror` — §6.4);
+2. topologically order all Definitions by their own imports and compile the
+   `Theorems.*` stubs the candidates need;
+3. compile the defs deps-first, marking any bundle whose theorem import did not
+   build as `BLOCKED by <mod>` rather than a compile error — those are different
+   problems and were previously conflated;
+4. write `/tmp/cand_ok.txt` (the verified set to publish) and a per-bundle report.
+
+The three orderings it handles are the ones that actually occur: def→def,
+thm→def, and def→thm (a def bundle importing a theorem stub, §1s). A cycle is
+broken arbitrarily and reported by the compiler rather than silently.
+
+Do not hand-roll this with a shell loop. Three lists in this session each used a
+different name form (`ChapterFoo` / `Def_ChapterFoo` / `Thm_ChapterFoo`) and every
+mismatch produced a silent `NOSRC`, a doubled `Def_`, or a doubled `Thm_` — all of
+which read as "the bundle is broken" rather than "the list is malformed".
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

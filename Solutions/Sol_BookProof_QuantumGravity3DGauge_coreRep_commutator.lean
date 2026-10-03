@@ -17,16 +17,10 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-ta `√κ_j π_j`, so the Yang–Mills-style Friedrichs machinery applies to
-it verbatim. -/
 theorem solution {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
     (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
     signedOp kappa pi Bf
-      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by
-  ext x
-  rw [signedOp_apply, weylOp_apply]
-  congr 2
-  ref :=
+      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf :=
   ine Finset.sum_congr rfl fun i _ => ?_
     have hsq : (Real.sqrt (kappa i)) * (Real.sqrt (kappa i)) = kappa i :=
       Real.mul_self_sqrt (hk i)

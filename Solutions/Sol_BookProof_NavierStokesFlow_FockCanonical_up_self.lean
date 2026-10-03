@@ -17,5 +17,9 @@ variable {d : ℕ} {κ : Fin d → ℝ}
 variable {d : ℕ} {κ : Fin d → ℝ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin d) (α : Occ d) : up i α i = α i + 1 := by
+theorem solution (i : Fin d) (α : Occ d) : up i α i = α i + 1 := by simp [up]
+
+@[simp] theorem dn_self (i : Fin d) (α : Occ d) : dn i α i = α i - 1 := by simp [dn]
+
+theorem up_injective (i : Fin d) : Function.Injective (up i : Occ d → Occ d) := by
  simp [up]

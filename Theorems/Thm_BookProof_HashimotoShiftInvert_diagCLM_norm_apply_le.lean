@@ -19,7 +19,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-:= rfl
-
 theorem BookProof.HashimotoShiftInvert.diagCLM_norm_apply_le {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) (x : ℓ²(ℕ, ℂ)) :
     ‖diagCLM hc x‖ ≤ := by sorry

@@ -21,8 +21,6 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-cts the constructed extension -/
-
 open Filter Topology
 
 theorem BookProof.FriedrichsExtension.friedrichs_hashimoto_selects (b : HilbertBasis ℕ ℂ F)
@@ -36,4 +34,4 @@ theorem BookProof.FriedrichsExtension.friedrichs_hashimoto_selects (b : HilbertB
           Tendsto (fun k : ℕ => resolvent (galerkinCompression R b k) z u) atTop
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ F) (A' : Dom' →ₗ[ℂ] F), IsShiftInvert A' γ R →
-          Dom' = Dom ∧ ∀ (x : F) (hx : x ∈ Do := by sorry
+          Dom' = Dom ∧ ∀ (x : F) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) := by sorry

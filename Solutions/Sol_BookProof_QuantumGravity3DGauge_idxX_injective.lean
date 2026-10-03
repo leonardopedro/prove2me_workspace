@@ -14,7 +14,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- :=
+/-- The coordinate index of the spacetime coordinate `x^μ`. -/
+def idxX (mu : Fin 4) : Fin 84 :=
   import Mathlib
   import BookProof.ChapterYangMillsHermite
   import BookProof.ChapterQuantumGravityDensitized

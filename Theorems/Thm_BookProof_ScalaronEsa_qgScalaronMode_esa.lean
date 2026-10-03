@@ -29,7 +29,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
+/
 theorem BookProof.ScalaronEsa.qgScalaronMode_esa :
-    EssentiallySelfAdjointOn
-      (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))
-      (qgScalaronModeHamiltonian a b M alpha Rc phi) := by sorry
+    EssentiallySelfAdjointOn := by sorry

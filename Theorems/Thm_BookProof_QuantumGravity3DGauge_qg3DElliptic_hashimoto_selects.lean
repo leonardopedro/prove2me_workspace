@@ -29,16 +29,6 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-) :=
-  smul_symmetricOn _ (qgMom_symmetricOn Φ j)
-
 theorem BookProof.QuantumGravity3DGauge.qg3DElliptic_hashimoto_selects :
     ∃ (Dom : Submodule ℂ (L2d 84)) (A : Dom →ₗ[ℂ] L2d 84),
-      IsPositiveSelfAdjointExtension (qg3DEllipticHamiltonian (coreRepPoly 84)) A :=
-  friedrichs_extension_exists
-    ⟨polyGaussCore, qg3DEllipticHamiltonian (coreRepPoly 84),
-      qg3DElliptic_symmetricOn _, qg3DElliptic_quadForm_nonneg _⟩
-    polyGaussCore_dense
-
-/-- **F.8 — the Hashimoto/SIRK shift-invert limit selects exactly that Friedrichs
-extension** of the elliptic sector, on the fini := by sorry
+      IsPositiveSelfAdjointExtension (qg3DEllipticHamiltonian (coreRepPoly 84)) A := by sorry

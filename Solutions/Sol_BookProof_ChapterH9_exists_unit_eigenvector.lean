@@ -24,7 +24,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 set_option maxHeartbeats 1000000 in
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem solution [FiniteDimensional ℂ F] (A : F →L[ℂ] F) {lam : ℂ}
     (hlam : lam ∈ spectrum ℂ (A : F →ₗ[ℂ] F)) : ∃ y : F, ‖y‖ = 1 ∧ A y = lam • y := by
 

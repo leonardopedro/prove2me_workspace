@@ -25,5 +25,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-theorem BookProof.ScalaronEsa.mem_ccSchwartz {f : 𝓢(E, ℂ)} :
-    f ∈ ccSchwartz E ↔ HasCompactSupport (f : E → ℂ) := by sorry
+def ccInclLM (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] :
+    ccSchwartz E →ₗ[ℂ] Lp ℂ 2 (volume : Measure E) := by sorry

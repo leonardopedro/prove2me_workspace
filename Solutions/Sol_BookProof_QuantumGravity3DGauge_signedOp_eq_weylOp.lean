@@ -18,14 +18,9 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-ve h1 : 0 ≤ ∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2 :=
-    Finset.sum_nonneg fun i _ => mul_nonneg (hk i) (by positivity)
-  have h2 : 0 ≤ ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := Finset.sum_nonneg fun a _ => by positivity
-  linarith
-
 theorem solution {T : D →ₗ[ℂ] D} (r : ℝ)
     (hT : SymmetricOn D (D.subtype.comp T)) :
-    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • :=
+    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • T)) :=
    T)) := by
     intro x y
     have h := hT x y

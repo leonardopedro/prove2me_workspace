@@ -18,6 +18,12 @@ variable {d : ℕ} {κ : Fin d → ℝ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (α : Occ d) : dn i (up i α) = α := by
+  funext j
+  by_cases hj : j = i
+  · subst hj; simp [up, dn]
+  · simp [up, dn, hj]
+
+theorem up_dn (i : Fin d) {α : Occ d} (h : 1 ≤ α i) : up i (dn i α) = α := by
 
   funext j
   by_cases hj : j = i

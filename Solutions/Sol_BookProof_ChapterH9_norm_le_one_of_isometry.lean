@@ -24,6 +24,5 @@ variable {E F G : Type*}
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 set_option maxHeartbeats 1000000 in
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem solution (V : F →L[ℂ] E) (hViso : ∀ x : F, ‖V x‖ = ‖x‖) :
     ‖V‖ ≤ 1 := ContinuousLinearMap.opNorm_le_bound _ zero_le_one fun x => by rw [hViso, one_mul]

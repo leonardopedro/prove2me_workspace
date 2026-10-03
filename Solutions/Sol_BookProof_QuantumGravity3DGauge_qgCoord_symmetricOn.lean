@@ -21,10 +21,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-ultiplication by the
-coordinate `x_j` (the tetrad fields `e_μ^a` and their derivative coordinates). -/
-def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D := Φ.op (mulOp (X j))
-
-/-- The **momentum operators** `π_j = −i ∂/∂x_j` of the gravity field s :=
+def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D :=
   pace (F.3). -/
   def qgMom (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D :=

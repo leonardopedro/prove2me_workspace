@@ -21,15 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-o spacetime indices. -/
 theorem solution (mu nu a : Fin 4) :
-    torsionPoly mu nu a = -torsionPoly nu mu a := by
-  simp [torsionPoly]
-
-/-- The `64` potential operators `T_{μν}^a` on the core, indexed by `Fin 64`. -/
-def torsionOps (Φ : CoreRep 84 D) (m : Fin 64) : D →ₗ[ℂ] D :=
-  Φ.op (mulOp (torsionPoly ⟨m.val / 16, by omega⟩ ⟨m.val / 4 % 4, by omega⟩
-    ⟨m.val :=
+    torsionPoly mu nu a = -torsionPoly nu mu a :=
    % 4, by omega⟩))
   
   theorem torsionOps_symmetri

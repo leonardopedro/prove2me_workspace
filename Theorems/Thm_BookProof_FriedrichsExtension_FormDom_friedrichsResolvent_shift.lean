@@ -20,7 +20,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-ense) hc continuous_const heq) v
-  simpa using hzero u
-
-theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift (P : PosSymOp F) (x : P.dom) : := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift (P : PosSymOp F) (x : P.dom) :
+    friedrichsResolvent P ((x : F) + P.op x) = (x : F) := by sorry

@@ -19,7 +19,7 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin d) :
-    pderiv j (harmPoly (d := d)) = C (1 / 2 : ℂ) * X j := by
+    pderiv j (harmPoly (d := by
 
   have hC : (C (1 / 4 : ℂ) : MvPolynomial (Fin d) ℂ) * 2 = C (1 / 2 : ℂ) := by
     have h2 : ((2 : MvPolynomial (Fin d) ℂ)) = C (2 : ℂ) :=

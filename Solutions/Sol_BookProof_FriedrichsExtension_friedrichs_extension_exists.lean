@@ -6,7 +6,6 @@ import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_po
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_dom_le_range
-import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension
 import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
 open BookProof.FriedrichsExtension
@@ -24,14 +23,12 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-undedness -/
-
 open FormDom
 
 variable [CompleteSpace F]
 
 theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
-    ∃ (Dom : Submodule ℂ F) (A : Do :=
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A :=
   m →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A := by
     have hinj : Function.Injective (friedrichsResolvent P) :=
       friedrichsResolvent_injective P hdense

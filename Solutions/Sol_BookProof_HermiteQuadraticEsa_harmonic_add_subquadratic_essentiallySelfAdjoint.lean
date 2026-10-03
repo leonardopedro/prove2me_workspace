@@ -32,8 +32,7 @@ theorem solution {V : Vd d → ℝ} {a b : ℝ}
     (hVc : Continuous V) (ha : 0 ≤ a) (ha1 : a < 1) (hb : 0 ≤ b)
     (hV : ∀ x, |V x| ≤ a * harmW x + b)
     (hsc : Continuous fun x => harmW x + V x) (hsb : ExpBounded fun x => harmW x + V x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d))
-      (hamCore (fun x => harmW x + V x) hsc hsb) := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := by
 
   have hVb : ExpBounded V := expBounded_of_le_harm ha hb hV
   have hs0 : (0 : ℝ) ≤ Real.sqrt ((d : ℝ) / 2) := Real.sqrt_nonneg _

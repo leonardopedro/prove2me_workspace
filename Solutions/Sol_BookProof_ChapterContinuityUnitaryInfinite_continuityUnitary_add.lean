@@ -12,7 +12,7 @@ set_option maxHeartbeats 1000000 in
       continuityUnitary v t * star (continuityUnitary v t) = 1 :=
   exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
 
-theorem solution (v : LinfZ) : continuityUnitary :=
+theorem solution (v : LinfZ) : continuityUnitary v 0 = 1 :=
    v 0 = 1 := by
     simp [continuityUnitary]
   

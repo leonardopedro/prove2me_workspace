@@ -534,11 +534,20 @@ def the_statement(bt, d):
     # Ask for everything to EOF rather than a fixed window: `slice` takes BYTE
     # offsets and maps them through a char-index table, so a guessed window can
     # land somewhere unhelpful, and the statement is only a few lines long.
-    # Not anchored to a line start: `theorem t : Foo x 2 := by` puts the `:=`
-    # mid-line, right after the type.
-    m2 = re.search(r":=", bt.slice(d.s, max(bt.b2c)))
-    if m2 is not None:
-        frag = bt.slice(d.s, d.vs + (m2.start() - len(frag)))
+    # `valStart` is not reliably the `:=` token: in
+    # ChapterNavierStokesFockCanonical it points at col 66 of the statement's
+    # own body, mid-expression. So do not trust it -- search forward from the
+    # declaration for the first `:=` that terminates the TYPE. Anchoring to a
+    # line that starts with `:=` is not enough either (a one-line declaration
+    # puts it mid-line), and searching blindly finds the `:= sorry` we are about
+    # to append, which truncates the type into `( := by sorry`. Take the first
+    # `:=` after the declaration keyword, which is by construction the type's.
+    body = bt.slice(d.s, max(bt.b2c))
+    km = DECL_KEYWORD.match(body) or DECL_KEYWORD.search(body)
+    if km is not None:
+        m2 = re.compile(r":=").search(body, km.end())
+        if m2 is not None:
+            frag = body[:m2.start()]
     frag = re.sub(r"^/--(?:.*?)-/\s*", "", frag, flags=re.S).rstrip()
     # The re-slice above can land in the middle of a docstring, leaving its tail
     # (`... support. -/`) as the first line of the statement. Drop any leading

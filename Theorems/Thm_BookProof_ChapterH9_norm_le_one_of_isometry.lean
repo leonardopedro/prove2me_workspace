@@ -23,6 +23,5 @@ open ContinuousLinearMap
 
 
 
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem BookProof.ChapterH9.norm_le_one_of_isometry (V : F →L[ℂ] E) (hViso : ∀ x : F, ‖V x‖ = ‖x‖) :
     ‖V‖ ≤ 1 := by sorry

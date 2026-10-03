@@ -20,7 +20,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-t P (formRiesz P u)),
-    norm_nonneg (formRiesz P u)]
-
-theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective (P : PosSymOp F) (hdense : Dense (P.dom : S := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
+    Function.Injective (friedrichsResolvent P) := by sorry

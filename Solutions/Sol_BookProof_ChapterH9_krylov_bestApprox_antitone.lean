@@ -29,4 +29,4 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (H : E →ₗ[ℂ] E) (v : E) {m n : ℕ} (hmn : m ≤ n) (u : E) :
-    ‖u - (krylovSpan H v n).starProjection u‖ ≤ ‖u - (krylovSpan H v m).starProjection u‖ := norm_sub_starProjection_antitone _ _ (krylovSpan_mono hmn) u
+    ‖u - (krylovSpan H v n).starProjection u‖ ≤ ‖u - (krylovSpan H v m).starProjection u‖ := norm_sub_starProjection_antitone _ _ (

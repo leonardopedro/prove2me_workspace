@@ -18,4 +18,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 set_option maxHeartbeats 1000000 in
 mOp F} (x : FormDom P) : incl P x = toAmbient x := rfl
 
-the := 
+theorem solution (P : PosSymOp F) : ‖incl P‖ ≤ 1 := 

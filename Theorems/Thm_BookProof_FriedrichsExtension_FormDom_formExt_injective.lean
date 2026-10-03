@@ -20,6 +20,4 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-toAmbient_eq, toAmbient_eq, P.sym (toDom x) (toDom y)]
-
-theorem BookProof.FriedrichsExtension.FormDom.formExt_injective := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.formExt_injective (P : PosSymOp F) : Function.Injective (formExt P) := by sorry

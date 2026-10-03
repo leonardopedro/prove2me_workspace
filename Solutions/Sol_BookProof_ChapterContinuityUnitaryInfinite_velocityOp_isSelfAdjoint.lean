@@ -13,9 +13,6 @@ Complex.conj_ofReal]
   ring
 
 theorem solution (v : LinfZ) : IsSelfAdjoint (velocityOp v) :=
-  ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2 (velocityOp_isSymmetric v)
-
-/-! ## The Weyl-symmetrized continuity generator :=
   -/
   
   /-- The **Weyl-symmetrized continuity generator** `H = ½ (p·v + v·p)` on

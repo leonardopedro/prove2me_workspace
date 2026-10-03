@@ -27,4 +27,4 @@ noncomputable section
 
 
 theorem BookProof.HermiteQuadraticEsa.pderiv_harmPoly (j : Fin d) :
-    pderiv j (harmPoly (d := d)) = C (1 / 2 : ℂ) * X j := by sorry
+    pderiv j (harmPoly (d := by sorry

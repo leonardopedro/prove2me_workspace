@@ -8,7 +8,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
 open BookProof.FriedrichsExtension
-open BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
@@ -20,7 +20,13 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
- :=
+:=
   (incl P).extend UniformSpace.Completion.toComplL
 
-theorem BookProof.FriedrichsExtension.FormDom.formExt_coe (P : PosSymOp F) (x : For := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.formExt_coe (P : PosSymOp F) (x : FormDom P) :
+    formExt P (x : FormSpace P) = toAmbient x := by
+  have := ContinuousLinearMap.extend_eq (incl P) (denseRange_toComplL P)
+    (isUniformInducing_toComplL P) x
+  simpa [formExt, UniformSpace.Completion.coe_toComplL] using this
+
+theorem norm_formExt_le (P : PosSymOp F) : ‖formExt P‖ ≤ 1 := by sorry

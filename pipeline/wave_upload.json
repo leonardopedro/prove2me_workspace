@@ -21928,10 +21928,10 @@
    ]
   },
   "BookProof_YangMillsFriedrichsLimit_mem\u2113p_one_div_succ": {
-   "name": "BookProof.YangMillsFriedrichsLimit.mem\u2113p_one_div_succ\u2113p_one_div_succ",
+   "name": "BookProof.YangMillsFriedrichsLimit.mem\u2113p_one_div_succ",
    "chapter": "ChapterYangMillsFriedrichsLimit",
    "file": "Theorems/Thm_BookProof_YangMillsFriedrichsLimit_mem\u2113p_one_div_succ.lean",
-   "title": "The Lean 4 theorem `mem\u2113p_one_div_succ\u2113p_one_div_succ` in the `ChapterYangMillsFriedrichsLimit` chapter of the timepiece formalization",
+   "title": "The Lean 4 theorem `mem\u2113p_one_div_succ` in the `ChapterYangMillsFriedrichsLimit` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `mem\u2113p_one_div_succ` in the `ChapterYangMillsFriedrichsLimit` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichsLimit.lean",
    "tags": [

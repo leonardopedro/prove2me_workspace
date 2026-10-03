@@ -20,7 +20,6 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-Resolvent, inner_friedrichsResolvent, inner_conj_symm]
-
 theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos (P : PosSymOp F) (u : F) :
-    (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2 := by sorry
+    (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2
+      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re := by sorry

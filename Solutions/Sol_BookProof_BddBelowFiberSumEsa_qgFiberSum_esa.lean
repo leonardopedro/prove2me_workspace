@@ -19,6 +19,4 @@ variable {ι : Type*}
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {M alpha : ℝ} (halpha : 0 < alpha) {d : ℕ} (omega : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (fiberCore (Option (Fin d)))
-      (fiberSumHam (qgFiberV M alpha omega) (contDiff_qgFiberV M alpha omega)) := fiberSumHam_essentiallySelfAdjoint_of_nonneg _ _ (qgFiberV_nonneg halpha omega)
+ := 

@@ -17,7 +17,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 set_option maxHeartbeats 1000000 in
-open ContinuousLinearMap in
 theorem solution (A : F →L[ℂ] F) (k : ℕ) : adjoint (A ^ k) = (adjoint A) ^ k := by
 
   simp [← ContinuousLinearMap.star_eq_adjoint, star_pow]

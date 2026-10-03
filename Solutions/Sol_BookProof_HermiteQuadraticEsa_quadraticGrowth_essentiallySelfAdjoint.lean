@@ -22,7 +22,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {U : Vd d → ℝ} (hUc : Continuous U)
     (hUb : ExpBounded U) {A Ccoef B : ℝ} (hA : 0 ≤ A) (hA1 : 4 * A < 1)
     (hB : 0 ≤ B) (hU : ∀ x, |U x - harmW x| ≤ A * ‖x‖ ^ 2 + Ccoef * ‖x‖ + B) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (hamCore U hUc hUb) := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := by
 
   set e : ℝ := (1 - 4 * A) / 2 with he
   have he0 : 0 < e := by rw [he]; linarith

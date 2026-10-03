@@ -25,13 +25,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-ta `√κ_j π_j`, so the Yang–Mills-style Friedrichs machinery applies to
-it verbatim. -/
 theorem BookProof.QuantumGravity3DGauge.coreRep_commutator {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
     (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
     signedOp kappa pi Bf
-      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by
-  ext x
-  rw [signedOp_apply, weylOp_apply]
-  congr 2
-  ref := by sorry
+      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by sorry

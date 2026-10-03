@@ -21,6 +21,5 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
   [MeasurableSpace E] [BorelSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (W : E → ℝ) (hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W)
-    (f : ccSchwartz E) (x : E) :
-    (mulCc W hW f) x = (W x : ℂ) * (f : 𝓢(E, ℂ)) x := rfl
+def opCc (W : E → ℝ) (hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W) :
+    ccDomain E →ₗ[ℂ] Lp ℂ 2 (volume : Measure E) := rfl

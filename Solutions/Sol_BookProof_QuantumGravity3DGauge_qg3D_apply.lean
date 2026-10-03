@@ -19,8 +19,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-zed, Weyl-ordered two-signed sum of squares
-`H = ½ Σ_j κ_j π_j² + ½ Σ T²`, with the hyperbolic signature `qgKappa` produced by
-`qg3DDensity_densitized` and the torsion-type potential ` :=
+def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d 84 :=
   torsionPoly`. -/
   def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d

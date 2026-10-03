@@ -17,11 +17,8 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-mom j p
-  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
-      rw [Derivation.leibniz]
-      simp [MvPolynomial.pderiv_X, Ne.symm h]
-    simp only [mulOp_apply, momOp_apply, hX, if_neg h, zero_smul, :=
+theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    pderiv j (pderiv k p) = pderiv k (pderiv j p) :=
   neg_smul, smul_eq_C_mul]
       ring
   

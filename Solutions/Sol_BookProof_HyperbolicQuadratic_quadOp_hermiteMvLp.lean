@@ -23,8 +23,7 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) (a : Fin d →₀ ℕ)
-    (h : hermiteMvLp a ∈ polyGaussCore (d := d)) :
-    quadOp c ⟨hermiteMvLp a, h⟩ = ((quadSymbol c a : ℝ) : ℂ) • hermiteMvLp a := by
+    (h : hermiteMvLp a ∈ polyGaussCore (d := by
 
   have hcoe : (⟨hermiteMvLp a, h⟩ : polyGaussCore (d := d))
       = coreEquiv (((hermiteMvNorm a : ℝ) : ℂ)⁻¹ • hermiteMv a) := by

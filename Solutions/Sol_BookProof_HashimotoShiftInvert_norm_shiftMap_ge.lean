@@ -13,6 +13,12 @@ open Filter Topology
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+namespace BookProof.HashimotoShiftInvert
+
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
+open BookProof.HermiteGalerkin
+open Filter Topology
+
 theorem solution {A : Dom →ₗ[ℂ] F} (hpos : ∀ x : Dom, 0 ≤ quadForm A x)
     {γ : ℝ} (x : Dom) :
     γ * ‖(x : F)‖ ≤ ‖shiftMap A γ x‖ := by

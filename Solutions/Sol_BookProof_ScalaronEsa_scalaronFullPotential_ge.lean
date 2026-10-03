@@ -23,7 +23,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
   [MeasurableSpace E] [BorelSpace E]
 
 set_option maxHeartbeats 1000000 in
-omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
 theorem solution {M alpha : ℝ} (halpha : 0 < alpha) (eRc ephi : E) (x : E) :
     -(M ^ 4 / (16 * alpha)) ≤ scalaronFullPotential M alpha eRc ephi x := by
 

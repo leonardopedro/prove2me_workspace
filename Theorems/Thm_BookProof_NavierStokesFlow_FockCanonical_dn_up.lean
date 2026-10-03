@@ -19,4 +19,10 @@ open scoped ENNReal
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
-theorem BookProof.NavierStokesFlow.FockCanonical.dn_up (i : Fin d) (α : Occ d) : dn i (up i α) = α := by sorry
+theorem BookProof.NavierStokesFlow.FockCanonical.dn_up (i : Fin d) (α : Occ d) : dn i (up i α) = α := by
+  funext j
+  by_cases hj : j = i
+  · subst hj; simp [up, dn]
+  · simp [up, dn, hj]
+
+theorem up_dn (i : Fin d) {α : Occ d} (h : 1 ≤ α i) : up i (dn i α) = α := by sorry

@@ -16,8 +16,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-e hc x
-
 theorem solution {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) (x y : ℓ²(ℕ, ℂ)) :
     (inner ℂ (diagCLM hc x) y : ℂ) = inner ℂ x (diagCL :=
   M hc y) := by

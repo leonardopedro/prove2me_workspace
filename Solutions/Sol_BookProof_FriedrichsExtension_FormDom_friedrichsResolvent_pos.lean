@@ -18,10 +18,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-Resolvent, inner_friedrichsResolvent, inner_conj_symm]
-
 theorem solution (P : PosSymOp F) (u : F) :
-    (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2 :=
+    (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2
+      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re :=
      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re := by
     have h : (inner ℂ (friedrichsResolvent P u) u : ℂ)
         = starRingEnd ℂ (inner ℂ u (friedrichsResolvent P u)) := (inner_conj_symm _ _).symm

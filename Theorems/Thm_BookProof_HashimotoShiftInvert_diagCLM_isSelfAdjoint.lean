@@ -19,7 +19,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-  ring
-
 theorem BookProof.HashimotoShiftInvert.diagCLM_isSelfAdjoint {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) :
     IsSelfAdjoint (diag := by sorry

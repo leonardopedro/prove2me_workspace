@@ -28,5 +28,4 @@ noncomputable section
 
 
 theorem BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint (M alpha : ℝ) (h0 : 0 < alpha) (h2 : alpha < 1 / 2) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 1))
-      (hamCore (confW M alpha) (continuous_confW M alpha) (expBounded_confW M alpha)) := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry

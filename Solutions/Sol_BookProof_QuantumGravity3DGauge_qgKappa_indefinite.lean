@@ -21,8 +21,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
- {j : Fin 84} (hj : j ≠ confIndex) : 0 < qgKappa j := by
-  simp [qgK :=
+theorem solution : (∃ j, 0 < qgKappa j) ∧ ∃ j, qgKappa j < 0 :=
   appa, hj]
   
   /-- **The signature is

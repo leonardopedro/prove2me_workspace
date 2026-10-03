@@ -12,6 +12,6 @@ ecover]
 
 theorem solution (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ}
     (h : Disjoint B C) :
-    bornRecover v t psi (B ∪ C) :=
+    bornRecover v t psi (B ∪ C) = bornRecover v t psi B + bornRecover v t psi C :=
    = bornRecover v t psi B + bornRecover v t psi C := by
     simp [bornReco

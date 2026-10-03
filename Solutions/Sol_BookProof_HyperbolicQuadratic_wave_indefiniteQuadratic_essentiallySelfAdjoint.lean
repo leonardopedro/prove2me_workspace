@@ -18,5 +18,4 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 1 + n)) (quadOp (minkowskiCoeff n)) := quadOp_essentiallySelfAdjoint _
+theorem solution := 

@@ -18,10 +18,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-:= by
-  rw [friedrichsResolvent_apply, formRiesz_spec]
-
-theorem solution (P : :=
+theorem solution (P : PosSymOp F) :
+    IsSelfAdjoint (friedrichsResolvent P) :=
   PosSymOp F) :
       IsSelfAdjoint (friedrichsResolvent P) := by
     rw [ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric]

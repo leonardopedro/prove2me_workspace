@@ -11,6 +11,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-theorem BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by
-  rw [memℓp_gen_iff (by norm_num : (0 : ℝ) < (2 : ℝ≥0∞).toReal)]
-  have hcong : ∀ := by sorry
+theorem BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by sorry

@@ -21,7 +21,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
- : Tendsto (fun e : ℝ => 1 / e) (𝓝[>] (0 : ℝ)) atTop :=
-  tendsto_inv_det_atTop
-
-/-- **T := by sorry
+theorem BookProof.QuantumGravity3DGauge.qg3DDensity_densitized (e s p : ℝ) (he : 0 < e) :
+    qg3DDensity e s p = 1 / 16 * (s / densY e) ^ 2 - 1 / 24 * (p / densY e) ^ 2 := by sorry

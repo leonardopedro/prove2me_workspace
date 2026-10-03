@@ -20,6 +20,10 @@ if "autoImplicit" not in head:
     i = max((k for k, l in enumerate(L) if l.startswith(("import ", "open "))), default=0)
     L.insert(i + 1, "set_option autoImplicit false")
     head = "\n".join(L)
+# The platform compiles the WHOLE stub, proof body included: a statement that
+# elaborates under `by sorry` but whose proof body has an error is rejected with
+# "formal statement does not compile". So the gate must check the body too --
+# checking the statement alone reports OK for stubs the server will refuse.
 open(sys.argv[2], "w").write(head + "\n\n" + t[m.start():].strip() + "\n")
 PY
 LEAN_PATH="/tmp/published_mirror:$base" timeout 600 "$lean" "$tmp/S.lean" >/dev/null 2>"$tmp/err"

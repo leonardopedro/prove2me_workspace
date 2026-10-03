@@ -21,6 +21,6 @@ UniformSpace.Completion (FormDom P)
 namespace FormDom
 
 theorem solution (P : PosSymOp F) :
-    DenseRange (UniformSp :=
+    DenseRange (UniformSpace.Completion.toComplL (𝕜 :=
   ace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P)) := by
     simpa [UniformSpace.Completion.coe_toComplL] using

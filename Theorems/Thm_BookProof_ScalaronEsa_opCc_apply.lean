@@ -25,6 +25,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-theorem BookProof.ScalaronEsa.opCc_apply (W : E → ℝ) (hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W)
-    (f : ccSchwartz E) :
-    opCc W hW (ccEquiv E f) = (mulCc W hW f).toLp 2 (volume : Measure E) := by sorry
+theorem BookProof.ScalaronEsa.opCc_apply (W : E → ℝ)
+    (hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W) :
+    SymmetricOn (ccDomain E) (opCc W hW) := by sorry

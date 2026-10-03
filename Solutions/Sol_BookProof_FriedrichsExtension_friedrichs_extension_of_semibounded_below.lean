@@ -17,13 +17,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-: F) u) →
-      ∃ h : w ∈ Dom, A ⟨w, h⟩ = u)
-
 theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D H) (c : ℝ)
     (hbelow : ∀ x : D, -c * ‖(x : F)‖ ^ 2 ≤ quadForm H x) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom :=
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsSemiboundedSelfAdjointExtension c H A :=
   →ₗ[ℂ] F), IsSemiboundedSelfAdjointExtension c H A := by
     -- the shifted operator `H + c` is positive
     set Hc : D →ₗ[ℂ] F := H + (c : ℂ) • D.subtype with hHc

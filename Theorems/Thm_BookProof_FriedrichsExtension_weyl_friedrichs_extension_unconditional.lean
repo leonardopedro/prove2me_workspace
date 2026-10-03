@@ -19,11 +19,10 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-richs_extension_exists ⟨D', H', hsym, hpos⟩ hdense
-
 theorem BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
     (hdense : Dense (D : Set F))
     (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
     (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F) := by sorry
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
+      IsPositiveSelfAdjointExtension (weylOp pi Bf) A := by sorry

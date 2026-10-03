@@ -22,7 +22,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
   [MeasurableSpace E] [BorelSpace E]
 
 set_option maxHeartbeats 1000000 in
-omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
 theorem solution (M alpha : ℝ) (e : E) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞)
       (fun x : E => starobinskyV M alpha (inner ℝ x e)) := (contDiff_starobinskyV M alpha).comp ((innerSL ℝ).flip e).contDiff

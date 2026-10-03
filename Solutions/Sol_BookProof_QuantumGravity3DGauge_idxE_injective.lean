@@ -14,9 +14,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-:= ⟨4 + 4 * mu.val + a.val, by omega⟩
-
-/-- The coordinate index of the independent derivative coordinate :=
+def idxDE (mu nu a : Fin 4) : Fin 84 :=
    `∂_μ e_ν^a`. -/
   def idxDE (mu nu a : Fin 4) : Fin 84 := ⟨20 + 16 * mu.val + 4 * nu.val + a.val, by omega⟩
   

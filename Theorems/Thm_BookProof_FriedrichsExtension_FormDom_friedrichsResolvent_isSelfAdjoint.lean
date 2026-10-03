@@ -20,7 +20,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-:= by
-  rw [friedrichsResolvent_apply, formRiesz_spec]
-
-theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint (P : := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint (P : PosSymOp F) :
+    IsSelfAdjoint (friedrichsResolvent P) := by sorry

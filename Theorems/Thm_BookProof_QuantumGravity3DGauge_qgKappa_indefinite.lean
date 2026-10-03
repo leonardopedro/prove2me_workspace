@@ -24,5 +24,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
- {j : Fin 84} (hj : j ≠ confIndex) : 0 < qgKappa j := by
-  simp [qgK := by sorry
+theorem BookProof.QuantumGravity3DGauge.qgKappa_indefinite : (∃ j, 0 < qgKappa j) ∧ ∃ j, qgKappa j < 0 := by sorry

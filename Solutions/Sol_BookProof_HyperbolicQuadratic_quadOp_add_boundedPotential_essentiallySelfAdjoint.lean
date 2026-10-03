@@ -21,13 +21,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-open scoped ENNReal in
 theorem solution (c : Fin d → ℝ)
     (W : MeasureTheory.Lp ℂ (⊤ : ℝ≥0∞) (volume : Measure (Vd d)))
     (hW : ∀ᵐ x ∂(volume : Measure (Vd d)), (starRingEnd ℂ) (W x) = W x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d))
-      (quadOp c + ((BookProof.StrichartzWave.mulL2 W).toLinearMap ∘ₗ
-        (polyGaussCore (d := d)).subtype)) :=
+    EssentiallySelfAdjointOn (polyGaussCore (d :=
   BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded _ (quadOp_symmetric c)
       (quadOp_essentiallySelfAdjoint c) (BookProof.StrichartzWave.mulL2 W)
       (BookProof.StrichartzWave.mulL2_symmetric W hW)

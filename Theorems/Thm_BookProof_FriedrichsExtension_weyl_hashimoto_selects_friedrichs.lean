@@ -21,8 +21,6 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-Dom, A, R, hA, hR, hnorm, hsa, hstrong, hres, huniq⟩
-
 theorem BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs (b : HilbertBasis ℕ ℂ F) {n m : ℕ}
     {pi : Fin n → finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     {Bf : Fin m → finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
@@ -33,4 +31,4 @@ theorem BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs (b : Hil
       IsPositiveSelfAdjointExtension (weylOp pi Bf) A ∧ IsShiftInvert A γ R ∧
         IsSelfAdjoint R ∧
         (∀ u : F, Tendsto (fun k : ℕ => galerkinCompression R b k u) atTop (nhds (R u))) ∧
-        (∀ (Dom' : Submodule ℂ F) (A' : Dom := by sorry
+        (∀ (Dom' : Submodule ℂ F) (A' : Dom' →ₗ[ℂ] F), IsShiftInvert A' γ R → Dom' = Dom) := by sorry

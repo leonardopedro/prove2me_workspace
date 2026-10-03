@@ -9,7 +9,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
- :=
+theorem solution : (momentum : L2Z →ₗ[ℂ] L2Z).IsSymmetric :=
   import Mathlib
   
   /-!

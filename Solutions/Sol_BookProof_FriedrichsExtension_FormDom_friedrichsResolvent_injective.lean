@@ -19,10 +19,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-t P (formRiesz P u)),
-    norm_nonneg (formRiesz P u)]
-
-theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : S :=
+theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
+    Function.Injective (friedrichsResolvent P) :=
   et F)) :
       Function.Injective (friedrichsResolvent P) := by
     rw [injective_iff_map_eq_zero]

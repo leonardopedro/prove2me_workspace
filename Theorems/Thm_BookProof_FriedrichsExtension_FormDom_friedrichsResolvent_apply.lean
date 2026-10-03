@@ -21,4 +21,4 @@ open scoped InnerProductSpace ENNReal lp
 drichsResolvent P u = formExt P (formRiesz P u) := rfl
 
 theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply (P : PosSymOp F) (u v : F) :
-    (inner ℂ u (friedrichsResolvent := by sorry
+    (inner ℂ u (friedrichsResolvent P v) : ℂ) = inner ℂ (formRiesz P u) (formRiesz P v) := by sorry

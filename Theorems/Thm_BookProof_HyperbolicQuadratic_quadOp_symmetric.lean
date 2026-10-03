@@ -23,4 +23,4 @@ open BookProof.NavierStokesFlow.DifferentialL2
 noncomputable section
 
 theorem BookProof.HyperbolicQuadratic.quadOp_symmetric (c : Fin d → ℝ) :
-    SymmetricOn (polyGaussCore (d := d)) (quadOp c) := by sorry
+    SymmetricOn (polyGaussCore (d := by sorry

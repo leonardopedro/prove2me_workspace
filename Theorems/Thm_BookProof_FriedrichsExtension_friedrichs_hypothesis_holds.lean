@@ -19,11 +19,7 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-rw [invShiftOperator_apply, hpre]
-  push_cast
-  module
-
 theorem BookProof.FriedrichsExtension.friedrichs_hypothesis_holds :
     ∀ (D' : Submodule ℂ F) (H' : D' →ₗ[ℂ] F), Dense (D' : Set F) →
       SymmetricOn D' H' → (∀ x : D', 0 ≤ quadForm H' x) →
-      ∃ (Dom : Submodule ℂ F) (A : := by sorry
+      ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H' A := by sorry

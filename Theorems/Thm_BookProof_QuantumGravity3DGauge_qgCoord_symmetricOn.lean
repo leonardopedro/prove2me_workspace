@@ -29,8 +29,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-ultiplication by the
-coordinate `x_j` (the tetrad fields `e_μ^a` and their derivative coordinates). -/
-def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D := Φ.op (mulOp (X j))
-
-/-- The **momentum operators** `π_j = −i ∂/∂x_j` of the gravity field s := by sorry
+def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D := by sorry

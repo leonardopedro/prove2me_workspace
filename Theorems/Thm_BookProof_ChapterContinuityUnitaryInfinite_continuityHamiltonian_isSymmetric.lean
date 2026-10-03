@@ -8,6 +8,4 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
-(ℤ)`: a bounded operator, self-adjoint precisely because of the
-symmetrization. -/
-noncomputable def continuityHamilto := by sorry
+noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z := by sorry

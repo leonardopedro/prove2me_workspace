@@ -20,6 +20,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-:= ⟨4 + 4 * mu.val + a.val, by omega⟩
-
-/-- The coordinate index of the independent derivative coordinate := by sorry
+def idxDE (mu nu a : Fin 4) : Fin 84 := by sorry

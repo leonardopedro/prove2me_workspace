@@ -25,11 +25,11 @@ variable {d : ℕ} {κ : Fin d → ℝ}
 variable {d : ℕ} {κ : Fin d → ℝ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- reason for change: the defeq checks of the two lattice `show` statements below
--- unify coercion towers over `↑↑x`/`Submodule.inclusion`-terms and exceed 200k
 theorem solution (hκ : ∀ i, 0 ≤ κ i) (i : Fin d) :
-    (lpFiniteModes (Occ d)).subtype.comp :=
+    (lpFiniteModes (Occ d)).subtype.comp
+        (((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))
+      = (ShiftData.shiftH (modeData hκ i)).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ))) :=
     (((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))
         = (ShiftData.shiftH (modeData hκ i)).comp
           (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ))) := by

@@ -20,8 +20,6 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-ormExt_le P, norm_nonneg k, norm_nonneg (formExt P k)]
-
 theorem BookProof.FriedrichsExtension.FormDom.inner_coe_eq (P : PosSymOp F) (x : FormDom P) (k : FormSpace P) :
     (inner ℂ (x : FormSpace P) k : ℂ)
-      = := by sorry
+      = inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) := by sorry

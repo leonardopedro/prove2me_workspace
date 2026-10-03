@@ -75,5 +75,4 @@ theorem solution [CompleteSpace F] (H B : D →ₗ[ℂ] F)
     simpa [hKapply] using hdenseK (-e) hneg
   have hdenseKe : Dense (Set.range fun x : D => K x - ((e : ℂ) * Complex.I) • (x : F)) := by
     simpa [hKapply] using hdenseK e hself
-  exact ⟨deficiencyTrivialAt_of_dense_range K hKsymm e he0 Complex.I (by simp) hdenseKe hdefK,
-    deficiencyTrivialAt_of_dense_range K hKsymm e he0 (-Complex.I) (by simp) hdenseKe hdefK⟩
+  exact ⟨deficiencyTrivialAt_of_dense_range K hKsymm e he0 Compl

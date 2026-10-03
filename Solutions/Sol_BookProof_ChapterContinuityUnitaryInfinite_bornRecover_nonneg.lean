@@ -12,6 +12,6 @@ Z) (t : ℝ) (psi : L2Z) (B : Finset ℤ) :
     0 ≤ bornRecover v t psi B :=
   Finset.sum_nonneg fun _ _ => by positivity
 
-theorem solution (v : LinfZ) (t : ℝ) (psi : L2Z) : :=
+theorem solution (v : LinfZ) (t : ℝ) (psi : L2Z) : bornRecover v t psi ∅ = 0 :=
    bornRecover v t psi ∅ = 0 := by
     simp [bor

@@ -8,4 +8,4 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
- := by sorry
+theorem BookProof.ChapterContinuityUnitaryInfinite.momentum_isSymmetric : (momentum : L2Z →ₗ[ℂ] L2Z).IsSymmetric := by sorry

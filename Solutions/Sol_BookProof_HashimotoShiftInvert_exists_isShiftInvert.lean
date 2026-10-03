@@ -17,9 +17,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
   {Dom : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {A : Dom →ₗ[ℂ] F} (hpos : ∀ x : Dom, 0 ≤ quadForm A x)
-    {γ : ℝ} (hγ : 0 < γ) (hsurj : Function.Surjective (shiftMap A γ)) :
-    ∃ R : F →L[ℂ] F, IsShiftInvert A γ R := by
+ := by
 
   classical
   have hinj : Function.Injective (shiftMap A γ) := shiftMap_injective hpos hγ

@@ -16,8 +16,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-eff n)
-
 theorem solution (n : ℕ) : |sqrtInvCoeff n :=
   | ≤ 1 := by
     have h0 : 0 ≤ sqrtInvCoeff n := Real.sqrt_nonneg _

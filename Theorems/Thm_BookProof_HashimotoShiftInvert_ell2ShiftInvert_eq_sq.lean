@@ -19,7 +19,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-one n)
-
 theorem BookProof.HashimotoShiftInvert.ell2ShiftInvert_eq_sq (x : ℓ²(ℕ, ℂ)) :
     ell2ShiftInvert x = diagCLM sqrtInvCoeff_abs_le_one (diagCLM sqrtInvCoeff_abs_le := by sorry

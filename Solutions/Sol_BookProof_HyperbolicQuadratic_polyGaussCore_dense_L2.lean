@@ -18,4 +18,4 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    Dense ((polyGaussCore (d := d) : Submodule ℂ (L2d d)) : Set (L2d d)) := polyGaussCore_dense
+    Dense ((polyGaussCore (d := polyGaussCore_dense

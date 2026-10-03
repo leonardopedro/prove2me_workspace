@@ -20,9 +20,4 @@ variable {E F G : Type*}
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-    (H : E →ₗ[K] E) (v : E) (C Dmin h nv : ℝ)
-    (hC : 0 ≤ C) (hD : 0 ≤ Dmin) (hnv : 0 ≤ nv) (hh : 0 ≤ h) {m n : ℕ} (hmn : m ≤ n) :
-    krylovSpan H v m ≤ krylovSpan H v n
-      ∧ Set.Icc (0 : ℝ) (sirkBound C Dmin h nv n)
-          ⊆ Set.Icc (0 : ℝ) (sirkBound C Dmin h nv m) := ⟨krylovSpan_mono hmn, sirk_band_contained_le C Dmin h nv hC hD hnv hh hmn⟩
+ := 

@@ -24,4 +24,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
- := by sorry
+def signedOp {n m : ℕ} (kappa : Fin n → ℝ) (pi : Fin n → D →ₗ[ℂ] D)
+    (Bf : Fin m → D →ₗ[ℂ] D) : D →ₗ[ℂ] F := by sorry

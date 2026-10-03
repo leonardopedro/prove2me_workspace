@@ -19,4 +19,4 @@ open scoped InnerProductSpace ENNReal lp
 
 mOp F} (x : FormDom P) : incl P x = toAmbient x := rfl
 
-the := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.incl_apply (P : PosSymOp F) : ‖incl P‖ ≤ 1 := by sorry

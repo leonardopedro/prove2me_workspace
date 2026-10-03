@@ -26,7 +26,4 @@ open ContinuousLinearMap
 
 
 
-theorem BookProof.ChapterH9.krylov_bestApprox_tendsto_zero (H : E →ₗ[ℂ] E) (v u : E)
-    (hdense : Dense ((⨆ n : ℕ, krylovSpan H v n : Submodule ℂ E) : Set E)) :
-    Filter.Tendsto (fun n : ℕ => ‖u - (krylovSpan H v n).starProjection u‖)
-      Filter.atTop (nhds 0) := by sorry
+ := by sorry

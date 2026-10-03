@@ -20,10 +20,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-tion is not vacuous: a genuinely unbounded operator -/
-
-theorem solution :
-    (∃ (Dom : Submodule ℂ (ℓ²(ℕ, ℂ))) (A : Dom →ₗ[ℂ] ℓ²(ℕ, ℂ)),
-        IsPositiveSelfAdjointExtension ell2ExampleMatrix A) ∧
-      ∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
-        C * := 
+tion is not vacuous: a genuinely unbounded op := 

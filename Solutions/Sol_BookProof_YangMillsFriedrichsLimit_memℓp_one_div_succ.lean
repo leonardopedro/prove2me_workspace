@@ -11,9 +11,7 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by
-  rw [memℓp_gen_iff (by norm_num : (0 : ℝ) < (2 : ℝ≥0∞).toReal)]
-  have hcong : ∀ :=
+theorem solution : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 :=
    2 := by
     rw [memℓp_gen_iff (by norm_num : (0 : ℝ) < (2 : ℝ≥0∞).toReal)]
     have hcong : ∀ n : ℕ, ‖(1 / (n + 1) : ℂ)‖ ^ (2 : ℝ≥0∞).toReal = (1 / ((n : ℝ) + 1)) ^ 2 := by

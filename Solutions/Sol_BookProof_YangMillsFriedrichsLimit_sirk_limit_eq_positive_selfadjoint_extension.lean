@@ -25,23 +25,7 @@ theorem solution [CompleteSpace F] {D : Submodule ℂ F}
           Filter.atTop (nhds (A u)))
         ∧ ∀ B : F →L[ℂ] F,
             (∀ x ∈ (⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F), A x = B x) →
-            A = B) := by
-  obtain ⟨A, hagree, hext⟩ := friedrichs_of_bounded H hdenseD hsym hpos C hbd
-  exact ⟨A, hagree, hext, fun hcyc =>
-    ⟨fun u => sirk_compression_tendsto A v hcyc u, fun B hB => sirk_limit_unique A B v hcyc hB⟩⟩
-
-end Sirk
-
-/-! ## The Weyl-gauge Hamiltonian: the two parts combined -/
-
-section Weyl
-
-open BookProof.ChapterH5 BookProof.ChapterH9
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-/-- **The Weyl-gauge Yang–Mills Hamiltonian in the bounded regime has an
-explicit positive self-adjoint extension**, and the Hashimoto/SIRK compre :=
+            A = B) :=
   B) := by
     obtain ⟨A, hagree, hext⟩ := friedrichs_of_bounded H hdenseD hsym hpos C hbd
     exact ⟨A, hagree, hext, fun hcyc =>

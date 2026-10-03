@@ -24,9 +24,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-mp only [smul_eq_C_mul]
-  by_cases h : j = k
-  · subst h; ring
-  · rw [if_neg h, if_neg (Ne.symm h)]; ring
-
-theorem BookProof.QuantumGravity3DGauge.commute_mul_mul (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) : := by sorry
+theorem BookProof.QuantumGravity3DGauge.commute_mul_mul (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momOp j (momOp k p) = momOp k (momOp j p) := by sorry

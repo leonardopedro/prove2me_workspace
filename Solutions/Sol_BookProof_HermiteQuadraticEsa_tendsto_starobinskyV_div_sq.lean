@@ -41,12 +41,4 @@ theorem solution (M alpha : ℝ) :
     have h := hasDerivAt_iff_tendsto_slope.mp hderiv
     refine h.congr fun phi => ?_
     simp [slope_def_field, div_eq_inv_mul, sub_zero]
-  have hsq : Filter.Tendsto (fun phi : ℝ => M ^ 4 / (16 * alpha)
-      * ((1 - Real.exp (-(k * phi))) / phi) ^ 2)
-      (nhdsWithin 0 {(0 : ℝ)}ᶜ) (nhds (M ^ 4 / (16 * alpha) * k ^ 2)) :=
-    ((hslope.pow 2).const_mul _)
-  have hval : M ^ 4 / (16 * alpha) * k ^ 2 = M ^ 2 / (24 * alpha) := by
-    have hk2 : k ^ 2 = (2 / 3) / M ^ 2 := by
-      rw [hk, div_pow, Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 2 / 3)]
-    rw [hk2]
-    field_s
+  have hsq : Filter.Tendsto (

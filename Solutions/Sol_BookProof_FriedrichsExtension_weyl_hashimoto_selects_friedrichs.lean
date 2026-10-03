@@ -18,8 +18,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-Dom, A, R, hA, hR, hnorm, hsa, hstrong, hres, huniq⟩
-
 theorem solution (b : HilbertBasis ℕ ℂ F) {n m : ℕ}
     {pi : Fin n → finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     {Bf : Fin m → finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
@@ -30,7 +28,7 @@ theorem solution (b : HilbertBasis ℕ ℂ F) {n m : ℕ}
       IsPositiveSelfAdjointExtension (weylOp pi Bf) A ∧ IsShiftInvert A γ R ∧
         IsSelfAdjoint R ∧
         (∀ u : F, Tendsto (fun k : ℕ => galerkinCompression R b k u) atTop (nhds (R u))) ∧
-        (∀ (Dom' : Submodule ℂ F) (A' : Dom :=
+        (∀ (Dom' : Submodule ℂ F) (A' : Dom' →ₗ[ℂ] F), IsShiftInvert A' γ R → Dom' = Dom) :=
   ' →ₗ[ℂ] F), IsShiftInvert A' γ R → Dom' = Dom) := by
     obtain ⟨Dom, A, R, hA, hR, -, hsa, hstrong, -, huniq⟩ :=
       friedrichs_hashimoto_selects b (weylOp pi Bf) (weylOpDom_symmetricOn hpi hB)

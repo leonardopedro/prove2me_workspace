@@ -29,6 +29,4 @@ noncomputable section
 
 theorem BookProof.HermiteQuadraticEsa.sectorQuad_essentiallySelfAdjoint (M alpha mu : ℝ) (ha0 : 0 < alpha)
     (ha2 : alpha < 1 / 2) (hm0 : 0 < mu) (hm2 : mu < 1 / 2) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 2))
-      (hamCore (sectorQuadW M alpha mu) (continuous_sectorQuadW M alpha mu)
-        (expBounded_sectorQuadW M alpha mu)) := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry

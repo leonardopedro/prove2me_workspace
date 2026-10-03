@@ -19,6 +19,4 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-e_zero
-
 theorem BookProof.HashimotoShiftInvert.ell2ShiftInvert_isSelfAdjoint : IsSelfAdjoint ell2Shif := by sorry

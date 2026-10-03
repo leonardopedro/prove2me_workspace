@@ -19,17 +19,4 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-p
-    ring
-  rw [← hval]
-  exact hsq.congr fun phi => (hg phi).symm
-
-theorem solution (M alpha : ℝ) (hM : M ≠ 0)
-    (ha0 : 0 < alpha) (ha2 : alpha < 1 / 2) (hMa : M ^ 2 < 12 * alpha) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := 2))
-      (hamCore (sectorQuadW M alpha (M ^ 2 / (24 * alpha)))
-        (continuous_sectorQuadW M alpha (M ^ 2 / (24 * alp :=
-  ha)))
-          (expBounded_sectorQuadW M alpha (M ^ 2 / (24 * alpha)))) := by
-    have hM2 : 0 < M ^ 2 := by positivity
-    refine sectorQuad_essentiallySelfAdjoint M alpha _ ha0 ha2 (by positivity) ?_
+ := 

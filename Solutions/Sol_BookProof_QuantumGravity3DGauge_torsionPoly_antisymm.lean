@@ -18,8 +18,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-: RealCoeff (torsionPoly mu nu a) := by
-  have h : starP (X (idxDE mu nu a) - X (idxDE nu mu a) : MvPolynomial (Fin 84) :=
+theorem solution (mu nu a : Fin 4) :
+    torsionPoly mu nu a = -torsionPoly nu mu a :=
    ℂ)
         = X (idxDE mu nu a) - X (idxDE nu mu a) := by
       rw [st

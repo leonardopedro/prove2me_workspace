@@ -23,8 +23,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-mom j p
-  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
-      rw [Derivation.leibniz]
-      simp [MvPolynomial.pderiv_X, Ne.symm h]
-    simp only [mulOp_apply, momOp_apply, hX, if_neg h, zero_smul, := by sorry
+theorem BookProof.QuantumGravity3DGauge.derOp_comm (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    pderiv j (pderiv k p) = pderiv k (pderiv j p) := by sorry

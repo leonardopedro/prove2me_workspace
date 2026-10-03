@@ -12,4 +12,4 @@ open scoped ENNReal InnerProductSpace
       continuityUnitary v t * star (continuityUnitary v t) = 1 :=
   exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
 
-theorem BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add (v : LinfZ) : continuityUnitary := by sorry
+theorem BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add (v : LinfZ) : continuityUnitary v 0 = 1 := by sorry

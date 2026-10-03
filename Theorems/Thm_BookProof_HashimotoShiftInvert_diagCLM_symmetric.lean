@@ -19,7 +19,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-e hc x
-
 theorem BookProof.HashimotoShiftInvert.diagCLM_symmetric {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) (x y : ℓ²(ℕ, ℂ)) :
     (inner ℂ (diagCLM hc x) y : ℂ) = inner ℂ x (diagCL := by sorry

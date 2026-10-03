@@ -26,7 +26,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
 theorem BookProof.ScalaronEsa.contDiff_scalaronAlong (M alpha : ℝ) (e : E) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞)
       (fun x : E => starobinskyV M alpha (inner ℝ x e)) := by sorry

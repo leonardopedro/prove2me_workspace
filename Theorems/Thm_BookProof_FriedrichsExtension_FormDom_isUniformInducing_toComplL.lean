@@ -20,4 +20,4 @@ open scoped InnerProductSpace ENNReal lp
 iformSpace.Completion.denseRange_coe (α := FormDom P)
 
 theorem BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL (P : PosSymOp F) :
-    IsUniformInducing (UniformSp := by sorry
+    IsUniformInducing (UniformSpace.Completion.toComplL (𝕜 := by sorry

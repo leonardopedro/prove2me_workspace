@@ -18,9 +18,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-toAmbient_eq, toAmbient_eq, P.sym (toDom x) (toDom y)]
-
-theorem solution :=
+theorem solution (P : PosSymOp F) : Function.Injective (formExt P) :=
   ctive (P : PosSymOp F) : Function.Injective (formExt P) := by
     rw [injective_iff_map_eq_zero]
     intro k hk

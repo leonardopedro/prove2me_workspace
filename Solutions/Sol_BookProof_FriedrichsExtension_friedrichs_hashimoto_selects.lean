@@ -19,8 +19,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-cts the constructed extension -/
-
 open Filter Topology
 
 theorem solution (b : HilbertBasis ℕ ℂ F)
@@ -34,4 +32,4 @@ theorem solution (b : HilbertBasis ℕ ℂ F)
           Tendsto (fun k : ℕ => resolvent (galerkinCompression R b k) z u) atTop
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ F) (A' : Dom' →ₗ[ℂ] F), IsShiftInvert A' γ R →
-          Dom' = Dom ∧ ∀ (x : F) (hx : x ∈ Do := 
+          Dom' = Dom ∧ ∀ (x : F) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) := 

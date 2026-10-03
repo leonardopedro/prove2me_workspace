@@ -8,4 +8,8 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
- := by sorry
+1 - shiftOp (-1))
+
+theorem BookProof.ChapterContinuityUnitaryInfinite.momentum_apply (f : L2Z) (k : ℤ) :
+    ((momentum f : L2Z) : ℤ → ℂ) k
+      = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) := by sorry

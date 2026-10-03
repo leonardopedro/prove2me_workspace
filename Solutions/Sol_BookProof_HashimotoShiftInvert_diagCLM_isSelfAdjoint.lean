@@ -17,8 +17,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-  ring
-
 theorem solution {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) :
     IsSelfAdjoint (diag :=
   CLM hc) :=

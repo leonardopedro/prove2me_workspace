@@ -18,9 +18,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-itized`). -/
-def qgKappa (j : Fin 84) : ℝ := if j = confIndex then -(1 / 24) else 1 / 16
-
-theorem solution : qgKappa confIndex < 0 := by norm_num [qgKappa]
-
-theorem qgKappa_ := spatial_p
+def qgKappa (j : Fin 84) : ℝ := spatial_p

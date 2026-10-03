@@ -21,4 +21,4 @@ open BookProof.NavierStokesFlow.DifferentialL2
 noncomputable section
 
 theorem BookProof.HyperbolicQuadratic.polyGaussCore_dense_L2 :
-    Dense ((polyGaussCore (d := d) : Submodule ℂ (L2d d)) : Set (L2d d)) := by sorry
+    Dense ((polyGaussCore (d := by sorry

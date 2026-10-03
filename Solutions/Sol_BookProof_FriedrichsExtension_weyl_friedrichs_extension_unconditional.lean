@@ -18,14 +18,13 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-richs_extension_exists ⟨D', H', hsym, hpos⟩ hdense
-
 theorem solution {D : Submodule ℂ F} {n m : ℕ}
     {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
     (hdense : Dense (D : Set F))
     (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
     (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F) :=
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
+      IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
   ,
         IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
     friedrichs_extension_exists

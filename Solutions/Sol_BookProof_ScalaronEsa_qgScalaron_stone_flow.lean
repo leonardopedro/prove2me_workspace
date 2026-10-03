@@ -26,10 +26,4 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 set_option maxHeartbeats 1000000 in
-theorem solution :
-    ∃ (T : UnboundedSelfAdjoint L2Nat) (U : ℝ → (L2Nat →L[ℂ] L2Nat)),
-      IsSelfAdjointExtension (qgScalaronModeHamiltonian a b M alpha Rc phi) T.op ∧
-        IsStoneFlow T U :=
-  exists_stone_flow_of_esa (qgScalaronModeHamiltonian a b M alpha Rc phi)
-      (mulSymbolDomain_dense _) (qgScalaronMode_symmetric a b M alpha Rc phi)
-      (qgScalaronMode_esa a b M alpha Rc phi)
+ := 

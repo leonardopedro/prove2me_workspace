@@ -14,12 +14,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F)) (u : F) :
-    Filter.Tendsto (fun n : ℕ => sirkCompression A v n u) Filter.atTop (nhds (A u)) := by
-  rw [tendsto_iff_norm_sub_tendsto_zero]
-  -- `‖Pₙ A Pₙ u − A u‖ ≤ ‖A‖ ‖Pₙ u − u‖ + ‖Pₙ (A u) − A u‖`
-  have hbound : ∀ n : ℕ, ‖sirkCompression A v n u - A u‖
-      ≤ ‖A‖ * ‖(krylovSpan A.toLinearMap v n).starProjection u - u‖
-        + ‖(krylovSpan A. :=
+    Filter.Tendsto (fun n : ℕ => sirkCompression A v n u) Filter.atTop (nhds (A u)) :=
   )) := by
     rw [tendsto_iff_norm_sub_tendsto_zero]
     -- `‖Pₙ A Pₙ u − A u‖ ≤ ‖A‖ ‖Pₙ u − u‖ + ‖Pₙ (A u) − A u‖`

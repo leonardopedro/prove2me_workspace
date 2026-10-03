@@ -31,7 +31,4 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-theorem BookProof.ScalaronEsa.qgScalaron_stone_flow :
-    ∃ (T : UnboundedSelfAdjoint L2Nat) (U : ℝ → (L2Nat →L[ℂ] L2Nat)),
-      IsSelfAdjointExtension (qgScalaronModeHamiltonian a b M alpha Rc phi) T.op ∧
-        IsStoneFlow T U := by sorry
+ := by sorry

@@ -10,9 +10,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-(ℤ)`: a bounded operator, self-adjoint precisely because of the
-symmetrization. -/
-noncomputable def continuityHamilto :=
+noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
   nian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
     (1 / 2 : ℂ) • (momentum.comp (velocityOp v) + (velocityOp v).comp momentum)
   

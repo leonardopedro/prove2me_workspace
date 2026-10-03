@@ -20,6 +20,4 @@ open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 noncomputable section
 
 
-theorem BookProof.BddBelowFiberSumEsa.qgFiberSum_esa {M alpha : ℝ} (halpha : 0 < alpha) {d : ℕ} (omega : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (fiberCore (Option (Fin d)))
-      (fiberSumHam (qgFiberV M alpha omega) (contDiff_qgFiberV M alpha omega)) := by sorry
+ := by sorry

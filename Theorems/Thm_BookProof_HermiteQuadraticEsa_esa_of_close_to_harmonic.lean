@@ -32,4 +32,4 @@ noncomputable section
 theorem BookProof.HermiteQuadraticEsa.esa_of_close_to_harmonic {U : Vd d → ℝ} (hUc : Continuous U) (hUb : ExpBounded U)
     {a b : ℝ} (ha : 0 ≤ a) (ha1 : a < 1) (hb : 0 ≤ b)
     (hU : ∀ x, |U x - harmW x| ≤ a * harmW x + b) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (hamCore U hUc hUb) := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry

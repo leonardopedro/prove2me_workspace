@@ -22,4 +22,4 @@ UniformSpace.Completion (FormDom P)
 namespace FormDom
 
 theorem BookProof.FriedrichsExtension.FormDom.denseRange_toComplL (P : PosSymOp F) :
-    DenseRange (UniformSp := by sorry
+    DenseRange (UniformSpace.Completion.toComplL (𝕜 := by sorry

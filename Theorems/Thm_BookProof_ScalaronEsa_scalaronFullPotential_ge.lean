@@ -26,6 +26,5 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
 theorem BookProof.ScalaronEsa.scalaronFullPotential_ge {M alpha : ℝ} (halpha : 0 < alpha) (eRc ephi : E) (x : E) :
     -(M ^ 4 / (16 * alpha)) ≤ scalaronFullPotential M alpha eRc ephi x := by sorry

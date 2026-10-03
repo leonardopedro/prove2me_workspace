@@ -18,11 +18,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-ormExt_le P, norm_nonneg k, norm_nonneg (formExt P k)]
-
 theorem solution (P : PosSymOp F) (x : FormDom P) (k : FormSpace P) :
     (inner ℂ (x : FormSpace P) k : ℂ)
-      = :=
+      = inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) :=
    inner ℂ (toAmbient x + P.op (toDom x)) (formExt P k) := by
     refine UniformSpace.Completion.induction_on k ?_ ?_
     · exact isClosed_eq (by fun_prop) (by fun_prop)

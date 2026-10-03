@@ -22,13 +22,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-ace operator with
-the conformal direction's sign flipped to `+1/16`, i.e. the positive sum of squares to
-which the Friedrichs machinery applies. -/
 def qg3DEllipticHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d 84 :=
-  signedOp qgKappaElliptic (qgMom Φ) (torsionOps Φ)
-
-theorem solution (Φ : CoreRep 84 D) :
-    SymmetricOn D (qg3 :=
   DEllipticHamiltonian Φ) :=
     signedOp_symmetricOn

@@ -18,7 +18,8 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
- :=
+def signedOp {n m : ℕ} (kappa : Fin n → ℝ) (pi : Fin n → D →ₗ[ℂ] D)
+    (Bf : Fin m → D →ₗ[ℂ] D) : D →ₗ[ℂ] F :=
   import Mathlib
   import BookProof.ChapterYangMillsHermite
   import BookProof.ChapterQuantumGravityDensitized

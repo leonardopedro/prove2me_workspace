@@ -16,9 +16,5 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-mp only [smul_eq_C_mul]
-  by_cases h : j = k
-  · subst h; ring
-  · rw [if_neg h, if_neg (Ne.symm h)]; ring
-
-theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) : := momOp j (mo
+theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momOp j (momOp k p) = momOp k (momOp j p) := momOp j (mo

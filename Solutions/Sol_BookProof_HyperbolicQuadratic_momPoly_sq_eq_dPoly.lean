@@ -1,7 +1,7 @@
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.momPoly_sq_eq_dPoly
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply_prime
+import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply'
 open BookProof.HyperbolicQuadratic
 
 

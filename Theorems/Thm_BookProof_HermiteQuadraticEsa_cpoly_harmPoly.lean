@@ -27,4 +27,4 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 
-theorem BookProof.HermiteQuadraticEsa.cpoly_harmPoly : cpoly (harmPoly (d := d)) = harmPoly := by sorry
+theorem BookProof.HermiteQuadraticEsa.cpoly_harmPoly : cpoly (harmPoly (d := by sorry

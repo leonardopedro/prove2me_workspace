@@ -25,12 +25,9 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-r_add_left,
-    inner_add_right, sum_inner, sum_inner, inner_sum, inner_sum]
-  have hpisum : ∀ i : Fin n,
-      (inner ℂ (((kappa i : ℝ) : ℂ) • ((pi i (pi i x) : D) : F)) ((y : D) : F) : ℂ)
-        = inner ℂ ((x : D) : F) (((kappa i : ℝ) : ℂ) • ((pi i (pi i y) : D) : F)) := by
-    intro i
-    rw [inner_smul_left, inner_smul_right, hsq (pi i) (hpi i), Complex.conj_ofReal]
-  have hBsum : ∀ a : Fin m, (inner ℂ ((Bf a (Bf a x) : D) : F) ((y : D) : F) : ℂ)
-      = inner ℂ ((x : D) : F) ((Bf a (Bf a y) : D) : F) := fun a => hsq := by sorry
+theorem BookProof.QuantumGravity3DGauge.signedOp_quadForm {n m : ℕ} {kappa : Fin n → ℝ} {pi : Fin n → D →ₗ[ℂ] D}
+    {Bf : Fin m → D →ₗ[ℂ] D} (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
+    quadForm (signedOp kappa pi Bf) x
+      = 1 / 2 * (∑ i, kappa i * ‖((pi i x : D) : F)‖ ^ 2)
+        + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := by sorry

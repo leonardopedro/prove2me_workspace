@@ -28,13 +28,7 @@ open scoped ENNReal
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
- i := h
-      push_cast [Nat.cast_sub h2]
-      ring
-    rw [hc1, hc2]
-    push_cast
-    change (1 / 2 * (Complex.I * ↑(κ i) * (↑(Real.sqrt ↑(β i)) * ↑(Real.sqrt (↑(β i) - 1))
-      * ((x : L2I (Occ d)) : Occ d → ℂ) (dn i (dn i β))
-      - ↑(Real.sqrt (↑(β i) + 1)) * ↑(Real.sqrt (↑(β i) + 2))
-        * ((x : L2I (Occ d)) : Occ d → ℂ) (modeShift i β)))) =
-      (Complex.I * (↑(κ i) / 2 * ↑(Real.sqrt (↑(β i) - 1)) * := by sorry
+theorem BookProof.NavierStokesFlow.FockCanonical.fock_hamiltonian_eq (hκ : ∀ i, 0 ≤ κ i) :
+    (lpFiniteModes (Occ d)).subtype.comp
+        (∑ i, ((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))
+      = (fockH hκ).comp (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ))) := by sorry

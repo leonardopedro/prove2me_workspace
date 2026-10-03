@@ -24,9 +24,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-itized`). -/
-def qgKappa (j : Fin 84) : ℝ := if j = confIndex then -(1 / 24) else 1 / 16
-
-theorem BookProof.QuantumGravity3DGauge.qgKappa_spatial_pos : qgKappa confIndex < 0 := by norm_num [qgKappa]
-
-theorem qgKappa_ := by sorry
+def qgKappa (j : Fin 84) : ℝ := by sorry

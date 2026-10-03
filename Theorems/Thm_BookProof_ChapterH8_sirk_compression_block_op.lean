@@ -19,7 +19,6 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
-open ContinuousLinearMap in
 theorem BookProof.ChapterH8.sirk_compression_block_op (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)
     (X : E →L[ℂ] E) (hJ : Vn = Vm.comp J) :
     compress Vn X = (adjoint J).comp ((compress Vm X).comp J) := by sorry

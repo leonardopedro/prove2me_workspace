@@ -23,6 +23,5 @@ open ContinuousLinearMap
 
 
 
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem BookProof.ChapterH9.exists_unit_eigenvector [FiniteDimensional ℂ F] (A : F →L[ℂ] F) {lam : ℂ}
     (hlam : lam ∈ spectrum ℂ (A : F →ₗ[ℂ] F)) : ∃ y : F, ‖y‖ = 1 ∧ A y = lam • y := by sorry

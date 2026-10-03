@@ -20,10 +20,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-ense) hc continuous_const heq) v
-  simpa using hzero u
-
-theorem solution (P : PosSymOp F) (x : P.dom) : :=
+theorem solution (P : PosSymOp F) (x : P.dom) :
+    friedrichsResolvent P ((x : F) + P.op x) = (x : F) :=
   
       friedrichsResolvent P ((x : F) + P.op x) = (x : F) := by
     have hx : formRiesz P ((x : F) + P.op x)

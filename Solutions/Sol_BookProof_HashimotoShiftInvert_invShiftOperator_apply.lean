@@ -16,6 +16,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ)
-    (y : LinearMap.range (R : F →ₗ[ℂ] F)) :
-    invShiftOperator R hinj γ y = preim R y - (γ : ℂ) • (y : F) := rfl
+ := rfl

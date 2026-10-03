@@ -18,7 +18,6 @@ variable {E F G : Type*}
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-omit [CompleteSpace F] [CompleteSpace G] in
 theorem solution {A : F →L[ℂ] F} {B : G →L[ℂ] G} {Ai : F →L[ℂ] F} {Bi : G →L[ℂ] G}
     (P : G →L[ℂ] F) (hAl : Ai.comp A = ContinuousLinearMap.id ℂ F)
     (hBr : B.comp Bi = ContinuousLinearMap.id ℂ G)

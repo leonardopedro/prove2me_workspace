@@ -23,4 +23,5 @@ open scoped InnerProductSpace ENNReal lp
 ed_eq (by fun_prop) (by fun_prop)
   simpa using hall k
 
-theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt (P : PosSymOp F) (hdense : Den := by sorry
+theorem BookProof.FriedrichsExtension.FormDom.dense_range_formExt (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
+    Dense (Set.range (formExt P)) := by sorry

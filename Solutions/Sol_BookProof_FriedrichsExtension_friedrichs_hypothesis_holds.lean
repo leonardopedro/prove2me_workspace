@@ -17,14 +17,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-rw [invShiftOperator_apply, hpre]
-  push_cast
-  module
-
 theorem solution :
     ∀ (D' : Submodule ℂ F) (H' : D' →ₗ[ℂ] F), Dense (D' : Set F) →
       SymmetricOn D' H' → (∀ x : D', 0 ≤ quadForm H' x) →
-      ∃ (Dom : Submodule ℂ F) (A : :=
+      ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H' A :=
   Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H' A :=
     fun D' H' hdense hsym hpos =>
       fri

@@ -18,5 +18,4 @@ noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
-open ContinuousLinearMap in
 theorem BookProof.ChapterH8.adjoint_pow (A : F →L[ℂ] F) (k : ℕ) : adjoint (A ^ k) = (adjoint A) ^ k := by sorry

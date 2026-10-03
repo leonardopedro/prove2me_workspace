@@ -18,24 +18,4 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) (p : MvPolynomial (Fin (1 + n)) ℂ)
-    (x : Vd (1 + n)) :
-    pgFun (quadPoly (minkowskiCoeff n) p) x
-      = (-(deriv (fun t : ℝ => deriv (fun s : ℝ => pgFun p (sec 0 x s)) t) (x 0))
-          + (((x 0 : ℝ) : ℂ) ^ 2 / 4) * pgFun p x)
-        - ∑ k ∈ Finset.univ.erase (0 : Fin (1 + n)),
-            (-(deriv (fun t : ℝ => deriv (fun s : ℝ => pgFun p (sec k x s)) t) (x k))
-              + (((x k : ℝ) : ℂ) ^ 2 / 4) * pgFun p x) := by
-
-  classical
-  have h0 : ((minkowskiCoeff n 0 : ℝ) : ℂ) = 1 := by simp [minkowskiCoeff]
-  have hk : ∀ k ∈ Finset.univ.erase (0 : Fin (1 + n)), ((minkowskiCoeff n k : ℝ) : ℂ) = -1 := by
-    intro k hk
-    simp [minkowskiCoeff, Finset.ne_of_mem_erase hk]
-  rw [quadPoly_apply_eq_differential,
-    ← Finset.add_sum_erase _ _ (Finset.mem_univ (0 : Fin (1 + n))), h0, one_mul,
-    sub_eq_add_neg, ← Finset.sum_neg_distrib]
-  congr 1
-  refine Finset.sum_congr rfl fun k hkm => ?_
-  rw [hk k hkm]
-  ring
+ := 

@@ -19,6 +19,8 @@ variable [CompleteSpace F]
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
+open FormDom
+open Filter Topology
 
 
 theorem BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs (b : HilbertBasis ℕ ℂ F) {n m : ℕ}

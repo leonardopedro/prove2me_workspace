@@ -215,6 +215,29 @@ already has this" from a local name match — ask the API.
 Lesson in the same shape as §2.6: I introduced a bulk state mutation, then trusted
 its own bookkeeping. Every un-parking must be justified by an API answer.
 
+### §2.8d The 54 "already been declared" stubs are CORRECTLY unpublished
+
+54 of the 74 pending theorem stubs fail with
+`` `Ns.name` has already been declared ``. That is **not** a generator defect: the
+def bundles are published from whole chapters, so a chapter's theorems are already
+inside its def bundle, and a stub that imports that bundle and re-declares the same
+name collides. The name is therefore unavailable as a *problem*, which is the same
+conclusion §2.8c reached for the wrong reason.
+
+So the correct split of the thm backlog is **20 publishable / 54 duplicate**, not
+"68 failures to fix". Do not try to repair the duplicates.
+
+**Test to reuse** (compare the bare final name against `names` of each *imported*
+PUBLISHED bundle — and note the import token already carries its `Def_` prefix;
+I stripped four characters off an already-prefixed token, which emptied the set and
+made every count come out 0 twice before I noticed):
+
+```python
+imported = set(re.findall(r'^import Definitions\.(Def_\S+)', text))
+hit = any(f'Def_{ch}' in imported and base in (info.get('names') or [])
+          for ch, info in bundles.items() if info.get('status') == 'PUBLISHED')
+```
+
 ### §2.9 Rejected as unpublishable, with reasons
 
 - **`--retry-failed` exists; use it.** The loop treats `attempts >= MAX_ATTEMPTS` as
@@ -249,6 +272,34 @@ first attempt for reasons now understood (cited an unproved theorem, or named an
 identifier no published bundle carries). They are re-generatable and mostly
 re-publishable via §5a. The 4082 failed problem jobs are overwhelmingly the parked
 classes in §2.7/§2.9, not real mathematics.
+
+### §2.10b Triage of the 19 publishable theorem stubs (after §2.8d)
+
+| Count | First error | Class |
+| ---: | :--- | :--- |
+| 2 | — | **compile clean** |
+| 4 | `Function expected at adjoint` / `Tendsto` | missing `open` from the chapter header |
+| 5 | (blank — timeout in my triage loop) | re-gate needed |
+| 3 | `failed to synthesize instance` | §6.2 / drift |
+| 2 | `Invalid field \`mem\`` | **real type error in the statement** |
+| 1 | `Application type mismatch` | real |
+| 1 | `Invalid argument name \`D\`` | generator: named-arg from a shadowed `D` |
+| 1 | `object file not found` | mirror closure |
+
+`debug/add_missing_opens.py` handles the missing-`open` class, the same shape as
+`fix_scoped_opens.py` but for plain `open` lines (notation like `Tendsto` lives in
+`Filter`/`Topology`). It copies only the `open` lines from the stub's own source
+chapter and only when the compiler's first error names something notation-like.
+
+**Two bugs I hit writing it, both mine:** `Function expected at X` puts X on the
+*next* line, so a same-line regex finds nothing; and the filter tested
+`any(hit_name in open_line)`, asking whether `"Tendsto"` is a substring of
+`"open Filter Topology"` — never true. Lean resolves notation by whether the
+namespace is open, so the direction is inverted.
+
+The `Invalid field \`mem\`` pair are genuine Lean errors in the extracted statement
+(a hypothesis is a conjunction, and the generator projects a field that isn't there).
+Those need statement surgery, not tooling.
 
 ### §2.11 Execution order from here
 

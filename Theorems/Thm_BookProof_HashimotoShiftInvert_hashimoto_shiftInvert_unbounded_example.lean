@@ -6,6 +6,8 @@ import Definitions.Def_ChapterComplexShiftCore
 open scoped lp
 open BookProof.HermiteGalerkin
 open BookProof.HashimotoShiftInvert
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
+open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

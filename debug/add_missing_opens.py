@@ -1,119 +1,108 @@
-#!/usr/bin/env python3
-"""Re-add `open BookProof.X` lines from the source chapter into each def bundle
-(the generator used to strip them; bundle bodies reference the opened
-identifiers unqualified and the namespaces are declared by upstream Def
-bundles).  Opens already present in the bundle are skipped.
+"""Add a chapter's own `open` lines to stubs that are missing them.
 
-Only opens whose namespace is declared by a Def bundle **in the bundle's own
-import closure** are added: an open for a namespace that no imported module
-declares is a hard error ("unknown namespace").
+`Tendsto` is notation that lives in the `Topology`/`Filter` namespaces. The source
+chapter says `open Filter Topology`; the stub does not, so the statement fails with
+`Function expected at Tendsto ... but this term has type ?m.15` -- the same shape as
+the `ℓ²`/`lp` case that fix_scoped_opens.py handles for `open scoped`.
+
+Narrow by construction: copy ONLY the `open` lines that appear in the stub's own
+source chapter, and only when the stub's first error is a name the added namespaces
+actually provide. That keeps it inside 5d's rule -- react to the compiler's first
+error, do not sweep the corpus by static name matching.
+
+Usage:
+  python3 debug/add_missing_opens.py <slug> [<slug> ...]
+  python3 debug/add_missing_opens.py --from-file list.txt
 """
 import os
 import re
+import subprocess
+import sys
 
-DEF_DIR = "Definitions"
-SRC_DIR = "BookProof"
-
-
-def imports_of(path):
-    txt = open(path, encoding="utf-8", errors="replace").read()
-    return [
-        m.group(1)
-        for m in re.finditer(r"^import\s+(Definitions\.Def_Chapter[A-Za-z0-9_]+)", txt, re.M)
-    ]
+WS = os.environ.get("PROVE2ME_WS") or os.getcwd()
+MIRROR = os.environ.get("DEF_MIRROR", "/tmp/published_mirror")
+# Namespaces that carry notation rather than declarations; an `Unknown identifier`
+# for one of these is a missing `open`, not a missing import.
+NOTATION = {"Tendsto", "Memℓp", "HasFiniteDimensionalSupport", "ENNReal", "Real",
+            "Finset", "WithLp", "ofScientific"}
 
 
-def main():
-    # Map namespace -> def bundle declaring it.
-    ns_to_bundle = {}
-    for fn in sorted(os.listdir(DEF_DIR)):
-        if not fn.startswith("Def_Chapter") or not fn.endswith(".lean"):
+def lake(cmd):
+    proj = os.environ.get("TIMEPIECE_PROJ", os.path.join(WS, "..", "timepiece331"))
+    return subprocess.run(["lake", "env", "bash", "-c", cmd], cwd=proj,
+                          capture_output=True, text=True).stdout.strip()
+
+
+def compile_err(path):
+    env = dict(os.environ,
+               PATH="/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:"
+                    + os.environ["PATH"])
+    lp = f"{MIRROR}:{lake('printf %s \"$LEAN_PATH\"')}"
+    r = subprocess.run([lake("command -v lean"), path],
+                       env=dict(env, LEAN_PATH=lp), capture_output=True, text=True)
+    return r.returncode, r.stdout + r.stderr
+
+
+def chapter_opens(leaf):
+    p = f"{WS}/../timepiece331/BookProof/{leaf}.lean"
+    if not os.path.exists(p):
+        return []
+    out = []
+    for line in open(p, encoding="utf-8", errors="ignore"):
+        m = re.match(r"^open ([A-Z][\w.]*(?: [A-Z][\w.]*)*)\s*$", line)
+        if m and not line.startswith("open scoped"):
+            out.append("open " + m.group(1))
+    return out
+
+
+def main(argv):
+    args = [a for a in argv if not a.startswith("-")]
+    if "--from-file" in argv:
+        args = [l.strip() for l in open(args[0]) if l.strip()]
+    base = f"{WS}/Theorems/Thm_"
+    fixed = []
+    for slug in args:
+        f = base + slug + ".lean"
+        if not os.path.exists(f):
+            print(f"  MISSING {slug}")
             continue
-        txt = open(os.path.join(DEF_DIR, fn), encoding="utf-8", errors="replace").read()
-        for m in re.finditer(r"^namespace\s+(BookProof\.[A-Za-z0-9_.]+)\s*$", txt, re.M):
-            ns_to_bundle.setdefault(m.group(1), fn)
-
-    fixed = 0
-    for fn in sorted(os.listdir(DEF_DIR)):
-        if not fn.startswith("Def_Chapter") or not fn.endswith(".lean"):
+        rc, out = compile_err(f)
+        if rc == 0:
             continue
-        chap = fn[len("Def_Chapter"):-len(".lean")]
-        src = os.path.join(SRC_DIR, f"Chapter{chap}.lean")
-        if not os.path.exists(src):
+        # `Function expected at X` puts X on the NEXT line, so the name has to be
+        # matched across the newline -- matching on one line finds nothing.
+        names = re.findall(r"Function expected at\s*\n\s*([A-Za-z_][\w.']*)", out)
+        names += re.findall(r"Unknown identifier [`\u2018']?\s*([A-Za-z_][\w.']*)", out)
+        hit = [n for n in set(names) if n in NOTATION]
+        if not hit:
             continue
-        stxt = open(src, encoding="utf-8", errors="replace").read()
-        opens = []
-        for m in re.finditer(r"^open ((?:BookProof\.[A-Za-z0-9_.]+\s*)+)", stxt, re.M):
-            for name in re.findall(r"BookProof\.[A-Za-z0-9_.]+", m.group(1)):
-                if name not in opens:
-                    opens.append(name)
-        if not opens:
+        text = open(f, encoding="utf-8").read()
+        m = re.search(r"Generated from (\S+)\.lean", text)
+        if not m:
             continue
-        path = os.path.join(DEF_DIR, fn)
-        txt = open(path, encoding="utf-8", errors="replace").read()
-        have = set()
-        for m in re.finditer(r"^open ((?:BookProof\.[A-Za-z0-9_.]+\s*)+)", txt, re.M):
-            have |= set(re.findall(r"BookProof\.[A-Za-z0-9_.]+", m.group(1)))
-
-        # Import closure of this bundle (transitive).
-        closure = set()
-        stack = [fn]
-        while stack:
-            cur = stack.pop()
-            if cur in closure:
-                continue
-            closure.add(cur)
-            for imp in imports_of(os.path.join(DEF_DIR, cur)):
-                prov = imp.split(".")[-1]
-                if prov.startswith("Def_Chapter"):
-                    prov = prov[len("Def_"):]
-                prov_fn = f"Def_{prov}.lean"
-                if prov_fn not in closure and os.path.exists(os.path.join(DEF_DIR, prov_fn)):
-                    stack.append(prov_fn)
-
-        missing = []
-        for o in opens:
-            if o in have:
-                continue
-            prov = ns_to_bundle.get(o)
-            if prov is None or prov not in closure:
-                # Cannot safely open: either no def bundle declares it or it is
-                # not reachable from this bundle's imports.
-                continue
-            missing.append(o)
-
-        # Remove existing opens that are NOT declared by an in-closure bundle
-        # (these were added by an earlier buggy run and hard-error).
-        lines = txt.splitlines()
-        keep = []
-        removed = []
-        for l in lines:
-            m = re.match(r"^open ((?:BookProof\.[A-Za-z0-9_.]+\s*)+)$", l)
-            if not m:
-                keep.append(l)
-                continue
-            names = re.findall(r"BookProof\.[A-Za-z0-9_.]+", m.group(1))
-            if all(ns_to_bundle.get(n) in closure for n in names):
-                keep.append(l)
-            else:
-                removed.extend(names)
-        if removed:
-            print(f"removed bad opens from {fn}: {removed}")
-            fixed += 1
-        if missing:
-            # Insert after the last import line.
-            last_import = 0
-            for i, l in enumerate(keep):
-                if l.startswith("import "):
-                    last_import = i
-            for o in reversed(missing):
-                keep.insert(last_import + 1, f"open {o}")
-            print(f"added opens to {fn}: {missing}")
-            fixed += 1
-        if removed or missing:
-            open(path, "w", encoding="utf-8").write("\n".join(keep) + "\n")
-    print(f"total: {fixed}")
+        # Match the ERROR NAME against the namespaces the open provides, not the
+        # other way round: `Tendsto` is provided BY `open Filter Topology`, so
+        # testing `any(h in o for h in hit)` asks whether "Tendsto" is a substring
+        # of "open Filter Topology" -- never true. Lean resolves a notation name by
+        # whether the namespace is open, so accept the whole chapter open block when
+        # any reported name is notation.
+        adds = [o for o in chapter_opens(m.group(1)) if o not in text]
+        if adds and hit:
+            print(f"  (notation {hit} -> adding {adds})")
+        if not adds:
+            continue
+        lines = text.split("\n")
+        # `open` lines go after the last import and after any existing open block.
+        idx = [i for i, l in enumerate(lines)
+               if l.startswith("import ") or l.strip().startswith("open ")
+               or l.strip().startswith("open scoped")]
+        at = max(idx) if idx else -1
+        lines[at + 1:at + 1] = adds
+        open(f, "w", encoding="utf-8").write("\n".join(lines))
+        fixed.append((slug, adds))
+        print(f"  FIXED {slug[:52]} + {adds}")
+    print(f"{len(fixed)} file(s) changed")
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main(sys.argv[1:]))

@@ -209737,3 +209737,23 @@ inst✝¹ : NormedA)
 16:15:10 sync: checked 175 pending solution(s), 0 already Proved
 16:15:10 sync: checked 200 pending solution(s), 0 already Proved
 16:15:10 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done
+17:08:41 retry-failed: re-armed 0 item(s)
+17:08:41 submitting thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example (attempt 1)
+17:09:35 thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example: accepted, waiting on the compiler
+17:09:35 submitting thm:BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs (attempt 1)
+17:09:47 thm:BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs: accepted, waiting on the compiler
+17:20:54 thm:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example: DONE
+17:21:11 thm:BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs: DONE
+17:21:11 summary: 1799 done, 172 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1812 out-of-order orphans ignored)
+17:21:11 chunk: 2 item(s) resolved in 750s
+17:27:38 sync: read 797 definition publish job(s)
+17:27:58 sync: read 5945 problem publish job(s)
+17:28:02 sync: checked 25 pending solution(s), 4 already Proved
+17:28:06 sync: checked 50 pending solution(s), 4 already Proved
+17:28:09 sync: checked 75 pending solution(s), 4 already Proved
+17:28:10 sync: checked 100 pending solution(s), 5 already Proved
+17:28:10 sync: checked 125 pending solution(s), 5 already Proved
+17:28:10 sync: checked 150 pending solution(s), 5 already Proved
+17:28:10 sync: checked 175 pending solution(s), 5 already Proved
+17:28:10 sync: checked 200 pending solution(s), 5 already Proved
+17:28:10 sync: marked 0 already-published item(s) and 5 already-proved solution(s) done

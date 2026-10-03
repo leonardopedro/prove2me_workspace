@@ -4323,7 +4323,7 @@
    "namespaces": [
     "BookProof.NsScalarVectorCurry"
    ],
-   "status": "PENDING",
+   "status": "FAILED",
    "stub": false
   },
   "ChapterNsSpatialMomentumMultiplier": {
@@ -4583,7 +4583,7 @@
    "namespaces": [
     "BookProof.ChapterPauliFundamental"
    ],
-   "status": "PENDING",
+   "status": "FAILED",
    "stub": false
   },
   "ChapterPauliGrover": {
@@ -4729,7 +4729,7 @@
     "BookProof.ChapterPvmMeasure",
     "BookProof.ChapterPvmMeasure.Pvm"
    ],
-   "status": "PENDING",
+   "status": "FAILED",
    "stub": false
   },
   "ChapterQg3DGaugeEsa": {
@@ -5315,7 +5315,7 @@
    "namespaces": [
     "BookProof.QuadraticRotation"
    ],
-   "status": "PENDING",
+   "status": "FAILED",
    "stub": false
   },
   "ChapterQuantizationWeyl": {
@@ -7460,7 +7460,7 @@
    "stub": false
   },
   "ChapterWignerSymmetryInfinite": {
-   "lines": 241,
+   "lines": 240,
    "names": [
     "phase",
     "img",
@@ -7770,11 +7770,10 @@
   }
  },
  "job_counts": {
-  "FAILED": 47,
-  "PENDING": 4,
+  "FAILED": 51,
   "PUBLISHED": 381
  },
- "job_total": 789,
+ "job_total": 797,
  "name_owner": {
   "A0": "ChapterBell",
   "A1": "ChapterBell",

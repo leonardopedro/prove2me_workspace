@@ -39,7 +39,7 @@ theorem solution {kappa : Fin D → ℝ} {v : R → Fin D → ℝ} {km B : ℝ}
     (hB : ∀ x : Vd D, potFun v x ≤ B * ‖x‖ ^ 2) (p : MvPolynomial (Fin D) ℂ) :
     ‖pgLp (sqSumPoly kappa v p)‖ ≤ (3 / 2 * km + 8 * B) * shiftNorm p := by
 
-  have hsplit : pgLp (sqSumPoly kappa v p)
+  have hsplit : pgLp (BookProof.SqSumFarisLavine.sqSumPoly kappa v p)
       = pgLp (kinPart kappa p) + pgLp (potPoly v * p) := by
     rw [sqSumPoly_apply, ← pgMap_apply, ← pgMap_apply, ← pgMap_apply, map_add]
   have hkin : ‖pgLp (kinPart kappa p)‖ ≤ km / 2 * ‖pgLp (kinPoly p)‖ :=
@@ -49,9 +49,9 @@ theorem solution {kappa : Fin D → ℝ} {v : R → Fin D → ℝ} {km B : ℝ}
         rw [abs_le]
         constructor <;> linarith [h.1, h.2]) p
   have h1 : ‖pgLp (kinPoly p)‖ ≤ 3 * shiftNorm p := norm_kinPoly_le_shiftNorm p
-  have h2 : ‖pgLp (harmPoly * p)‖ ≤ 2 * shiftNorm p := norm_harmPoly_mul_le_shiftNorm p
+  have h2 : ‖pgLp (BookProof.SqSumFarisLavine.harmPoly * p)‖ ≤ 2 * shiftNorm p := norm_harmPoly_mul_le_shiftNorm p
   have hpot := norm_potPoly_mul_le hB0 hB p
   rw [hsplit]
   refine (norm_add_le _ _).trans ?_
-  nlinarith [norm_nonneg (pgLp (kinPoly p)), norm_nonneg (pgLp (harmPoly * p)),
+  nlinarith [norm_nonneg (pgLp (kinPoly p)), norm_nonneg (pgLp (BookProof.SqSumFarisLavine.harmPoly * p)),
     shiftNorm_nonneg p]

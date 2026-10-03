@@ -47,12 +47,12 @@ theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ)
     rw [show (-Complex.I) * (-Complex.I) = (-1 : ℂ) by
       rw [neg_mul_neg, Complex.I_mul_I]]
     rw [neg_one_smul]
-  have hlhs : sqSumPoly kappa v p
+  have hlhs : BookProof.SqSumFarisLavine.sqSumPoly kappa v p
       = ((1 / 2 : ℝ) : ℂ)
         • ((∑ j : Fin D, ((kappa j : ℝ) : ℂ)
               • YangMillsHermite.momOp j (YangMillsHermite.momOp j p))
-            + ∑ r : R, linForm (v r) * (linForm (v r) * p)) := by
-    simp [sqSumPoly]
+            + ∑ r : R, BookProof.SqSumFarisLavine.linForm (v r) * (BookProof.SqSumFarisLavine.linForm (v r) * p)) := by
+    simp [BookProof.SqSumFarisLavine.sqSumPoly]
   rw [hlhs, kinPart, potPoly, smul_add]
   congr 1
   · rw [Finset.smul_sum]

@@ -31,7 +31,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin D → ℝ) (x : Vd D) :
     MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (linForm v) = ((linFun v x : ℝ) : ℂ) := by
 
-  rw [linForm, linFun, map_sum, Complex.ofReal_sum]
+  rw [BookProof.SqSumFarisLavine.linForm, linFun, map_sum, Complex.ofReal_sum]
   refine Finset.sum_congr rfl fun i _ => ?_
   rw [MvPolynomial.smul_eq_C_mul, map_mul, MvPolynomial.eval_C, MvPolynomial.eval_X,
     Complex.ofReal_mul]

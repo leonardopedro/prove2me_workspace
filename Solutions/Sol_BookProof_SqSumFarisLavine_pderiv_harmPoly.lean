@@ -32,7 +32,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin D) :
     pderiv j (harmPoly (d := D)) = C (1 / 2 : ℂ) * X j := by
 
-  rw [harmPoly, map_sum, Finset.sum_eq_single j]
+  rw [BookProof.SqSumFarisLavine.harmPoly, map_sum, Finset.sum_eq_single j]
   · rw [show (X j : MvPolynomial (Fin D) ℂ) ^ 2 = X j * X j by ring, pderiv_C_mul, pderiv_mul,
       pderiv_X_self, one_mul, mul_one,
       show (X j + X j : MvPolynomial (Fin D) ℂ) = C (2 : ℂ) * X j by rw [C_two_eq]; ring,

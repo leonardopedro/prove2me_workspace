@@ -31,7 +31,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin D → ℝ) (j : Fin D) :
     pderiv j (linForm v) = C ((v j : ℝ) : ℂ) := by
 
-  rw [linForm, map_sum, Finset.sum_eq_single j]
+  rw [BookProof.SqSumFarisLavine.linForm, map_sum, Finset.sum_eq_single j]
   · rw [MvPolynomial.smul_eq_C_mul, pderiv_C_mul, pderiv_X_self, mul_one]
   · intro i _ hi
     simp [MvPolynomial.smul_eq_C_mul, pderiv_X, Ne.symm hi]

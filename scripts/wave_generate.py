@@ -1101,6 +1101,75 @@ def add_missing_namespace_imports(text):
     return "\n".join(lines)
 
 
+def disambiguate_names(text, leaf, ns=None):
+    """Qualify a name that two imported def bundles both declare.
+
+    `BookProof.QgOuterFock.sqSumPoly` and `BookProof.SqSumFarisLavine.sqSumPoly`
+    are distinct definitions with the same base name. Once a solution imports
+    both bundles -- which `add_missing_namespace_imports` does whenever the
+    source file's `open` lines reach into both chapters -- every bare
+    `sqSumPoly` becomes `Ambiguous term`. The fix belongs in the generator, not
+    per file: qualify the occurrence with the declaring namespace of the
+    theorem being proved, which is the one whose meaning the proof intends.
+
+    Only names that (a) are declared by more than one *imported* bundle and
+    (b) occur bare in the proof body are touched, and the declaration itself is
+    never rewritten.
+    """
+    mods = re.findall(r"(?m)^import Definitions\.(Def_\S+)", text)
+    if len(mods) < 2:
+        return text
+    try:
+        idx = json.load(open(f"{WS}/state/defs_index.json"))["bundles"]
+    except Exception:
+        return text
+    owners = {}
+    for m in mods:
+        for n in (idx.get(m, {}).get("names") or []):
+            owners.setdefault(n, set()).add(m)
+    # The index only carries names for bundles whose published text still has
+    # its declarations. Once a theorem is Proved the platform withholds them, so
+    # a fully published bundle indexes zero names while Lean still sees all of
+    # them. Fall back to the declaration sites for anything the index missed.
+    DECL = re.compile(r"(?m)^\s*(?:noncomputable\s+)?(?:private\s+)?"
+                      r"(?:def|abbrev|theorem|lemma)\s+([A-Za-z_][\w']*)")
+    for m in mods:
+        src = f"{WS}/state/published_bundles/{m}.lean"
+        if not os.path.exists(src):
+            src = f"{WS}/Definitions/{m}.lean"
+        if not os.path.exists(src):
+            continue
+        for n in DECL.findall(open(src, errors="ignore").read()):
+            owners.setdefault(n, set()).add(m)
+    dupes = {n for n, ms in owners.items() if len(ms) > 1}
+    if not dupes:
+        return text
+    if not ns:
+        # The stub declares `theorem solution : ...` -- that is the submission
+        # format from references/prove.md, not the target's name, so parsing it
+        # yields the namespace `solution` and qualifies everything wrongly. Fall
+        # back to the fully-dotted form only if one is actually present.
+        m = re.search(r"(?m)^[ \t]*theorem\s+([\w.]+\.[\w']+)\s*[:(]", text)
+        if not m:
+            return text
+        ns = m.group(1).rsplit(".", 1)[0]
+    head, sep, body = text.partition(":= by")
+    if not sep:
+        return text
+    changed = []
+    for n in sorted(dupes, key=len, reverse=True):
+        # already qualified, or not bare: leave it alone
+        pat = re.compile(rf"(?<![\w.]){re.escape(n)}\b")
+        if not pat.search(body):
+            continue
+        body = pat.sub(f"{ns}.{n}", body)
+        changed.append(n)
+    for n in changed:
+        print(f"  WARNING qualified `{n}` as `{ns}.{n}`: declared by more than "
+              f"one imported bundle", file=sys.stderr)
+    return head + sep + body
+
+
 def drop_undeclared_opens(text, leaf=None):
     """Remove `open BookProof.X` lines for namespaces no bundle declares.
 
@@ -1216,7 +1285,16 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     # over `open BookProof.HashimotoShiftInvert.IsShiftInvert`, which nothing
     # declares -- a `section` is not a namespace.
     text = drop_undeclared_opens("".join(parts), leaf)
-    return add_missing_namespace_imports(text)
+    text = add_missing_namespace_imports(text)
+    # The statement uses unqualified names (the preamble opens them) and the
+    # declaration is literally `theorem solution`, so neither carries the
+    # target's namespace. The first `open BookProof.X` in the preamble does:
+    # the generator emits the leaf's own namespace first, before the extra
+    # chapters the source file happened to reference.
+    if not ns:
+        m = re.search(r"(?m)^open (BookProof\.[\w.]+)\s*$", text)
+        ns = m.group(1) if m else None
+    return disambiguate_names(text, leaf, ns)
 
 
 def build_def_file(bt, leaf, decls, defmat, embedded):

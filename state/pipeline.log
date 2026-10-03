@@ -209610,3 +209610,24 @@ inst✝¹ : NormedA)
 10:43:17 sync: checked 200 pending solution(s), 2 already Proved
 10:43:17 sync: checked 225 pending solution(s), 3 already Proved
 10:43:17 sync: marked 1 already-published item(s) and 3 already-proved solution(s) done
+11:47:31 retry-failed: re-armed 0 item(s)
+11:47:31 submitting sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq (attempt 1)
+11:48:04 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: accepted, waiting on the compiler
+11:48:04 submitting sol:BookProof_HyperbolicQuadratic_momPoly_apply_prime (attempt 1)
+11:48:11 sol:BookProof_HyperbolicQuadratic_momPoly_apply_prime: accepted, waiting on the compiler
+12:00:58 sol:BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq: DONE
+12:01:56 sol:BookProof_HyperbolicQuadratic_momPoly_apply_prime: DONE
+12:01:56 summary: 1740 done, 224 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+12:01:56 chunk: 2 item(s) resolved in 865s
+12:02:16 sync: read 797 definition publish job(s)
+12:02:38 sync: read 5924 problem publish job(s)
+12:02:41 sync: checked 25 pending solution(s), 0 already Proved
+12:02:43 sync: checked 50 pending solution(s), 1 already Proved
+12:02:46 sync: checked 75 pending solution(s), 1 already Proved
+12:02:48 sync: checked 100 pending solution(s), 1 already Proved
+12:02:48 sync: checked 125 pending solution(s), 1 already Proved
+12:02:48 sync: checked 150 pending solution(s), 1 already Proved
+12:02:48 sync: checked 175 pending solution(s), 1 already Proved
+12:02:48 sync: checked 200 pending solution(s), 1 already Proved
+12:02:48 sync: checked 225 pending solution(s), 1 already Proved
+12:02:48 sync: marked 0 already-published item(s) and 1 already-proved solution(s) done

@@ -16,7 +16,6 @@ open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
-open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section

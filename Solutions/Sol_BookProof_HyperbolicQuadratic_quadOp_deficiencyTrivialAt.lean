@@ -22,6 +22,6 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) {z : ℂ} (hz : z.im ≠ 0) :
-    DeficiencyTrivialAt (polyGaussCore (d :=
+    DeficiencyTrivialAt (polyGaussCore (d := d)) (quadOp c) z :=
   deficiencyTrivialAt_of_diagonal hermiteMvLp (quadSymbol c) hermiteMvLp_total (quadOp c)
       hermiteMvLp_mem_core (fun a h => quadOp_hermiteMvLp c a h) hz

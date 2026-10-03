@@ -20,6 +20,6 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) :
-    SymmetricOn (polyGaussCore (d :=
+    SymmetricOn (polyGaussCore (d := d)) (quadOp c) :=
   symmetricOn_of_diagonal hermiteMvLp orthonormal_hermiteMvLp (quadSymbol c)
       span_hermiteMvLp (quadOp c) (fun a h => quadOp_hermiteMvLp c a h)

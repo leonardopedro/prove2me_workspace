@@ -25,4 +25,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-theorem BookProof.ScalaronEsa.ccEquiv_coe : ccDomain E ≤ schwartzDomain E := by sorry
+theorem BookProof.ScalaronEsa.ccEquiv_coe (f : ccSchwartz E) :
+    ((ccEquiv E f : ccDomain E) : Lp ℂ 2 (volume : Measure E))
+      = (f : 𝓢(E, ℂ)).toLp 2 (volume : Measure E) := by sorry

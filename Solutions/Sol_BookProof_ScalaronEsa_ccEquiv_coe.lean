@@ -21,4 +21,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
   [MeasurableSpace E] [BorelSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution : ccDomain E ≤ schwartzDomain E := rfl
+theorem solution (f : ccSchwartz E) :
+    ((ccEquiv E f : ccDomain E) : Lp ℂ 2 (volume : Measure E))
+      = (f : 𝓢(E, ℂ)).toLp 2 (volume : Measure E) := rfl

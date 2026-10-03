@@ -18,6 +18,5 @@ variable {d : ℕ} {κ : Fin d → ℝ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (x : lpFiniteModes (Occ d)) (α : Occ d) :
-    (((ann i (ann i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
-      = (Real.sqrt ((α i : ℝ) + 1) : ℂ) * (Real.sqrt ((α i : ℝ) + 2) : ℂ)
-        * ((x : L2I (Occ d)) : Occ d → ℂ) (modeShift i α) := rfl
+    (((cre i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
+      = (Real.sqrt (α i : ℝ) : ℂ) * ((x : L2I (Occ d)) : Occ d → ℂ) (dn i α) := rfl

@@ -25,4 +25,6 @@ noncomputable section
 theorem BookProof.HyperbolicQuadratic.quadOp_add_realBoundedPotential_essentiallySelfAdjoint (c : Fin d → ℝ)
     (W : Vd d → ℝ)
     (hW : MeasureTheory.MemLp (fun x => (W x : ℂ)) (⊤ : ℝ≥0∞) (volume : Measure (Vd d))) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (quadOp c + ((BookProof.StrichartzWave.mulL2 (hW.toLp _)).toLinearMap ∘ₗ
+        (polyGaussCore (d := d)).subtype)) := by sorry

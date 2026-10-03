@@ -24,7 +24,9 @@ variable {d : ℕ}
 set_option maxHeartbeats 1000000 in
 theorem solution (M alpha mu : ℝ) (ha0 : 0 < alpha)
     (ha2 : alpha < 1 / 2) (hm0 : 0 < mu) (hm2 : mu < 1 / 2) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := 2))
+      (hamCore (sectorQuadW M alpha mu) (continuous_sectorQuadW M alpha mu)
+        (expBounded_sectorQuadW M alpha mu)) := by
 
   refine quadraticGrowth_essentiallySelfAdjoint (A := max |alpha - 1 / 4| |mu - 1 / 4|)
     (Ccoef := M ^ 2 / 2) (B := 0) _ _ (le_trans (abs_nonneg _) (le_max_left _ _)) ?_ le_rfl

@@ -21,6 +21,5 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
   [MeasurableSpace E] [BorelSpace E]
 
 set_option maxHeartbeats 1000000 in
-def ccInclLM (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-    [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] :
-    ccSchwartz E →ₗ[ℂ] Lp ℂ 2 (volume : Measure E) := Iff.rfl
+theorem solution {f : 𝓢(E, ℂ)} :
+    f ∈ ccSchwartz E ↔ HasCompactSupport (f : E → ℂ) := Iff.rfl

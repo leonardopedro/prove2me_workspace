@@ -10,6 +10,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong
 open BookProof.Starobinsky
 open BookProof.StrichartzWave
 open BookProof.ScalaronEsa

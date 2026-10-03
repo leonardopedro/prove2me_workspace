@@ -21,7 +21,9 @@ set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ)
     (W : Vd d → ℝ)
     (hW : MeasureTheory.MemLp (fun x => (W x : ℂ)) (⊤ : ℝ≥0∞) (volume : Measure (Vd d))) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (quadOp c + ((BookProof.StrichartzWave.mulL2 (hW.toLp _)).toLinearMap ∘ₗ
+        (polyGaussCore (d := d)).subtype)) := by
 
   refine quadOp_add_boundedPotential_essentiallySelfAdjoint c (hW.toLp _) ?_
   filter_upwards [hW.coeFn_toLp] with x hx

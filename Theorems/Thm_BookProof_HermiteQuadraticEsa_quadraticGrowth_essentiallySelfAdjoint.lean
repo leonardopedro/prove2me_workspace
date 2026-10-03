@@ -32,4 +32,4 @@ noncomputable section
 theorem BookProof.HermiteQuadraticEsa.quadraticGrowth_essentiallySelfAdjoint {U : Vd d → ℝ} (hUc : Continuous U)
     (hUb : ExpBounded U) {A Ccoef B : ℝ} (hA : 0 ≤ A) (hA1 : 4 * A < 1)
     (hB : 0 ≤ B) (hU : ∀ x, |U x - harmW x| ≤ A * ‖x‖ ^ 2 + Ccoef * ‖x‖ + B) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (hamCore U hUc hUb) := by sorry

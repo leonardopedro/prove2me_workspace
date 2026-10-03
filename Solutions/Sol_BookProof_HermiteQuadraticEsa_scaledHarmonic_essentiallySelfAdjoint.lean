@@ -22,7 +22,8 @@ set_option maxHeartbeats 1000000 in
 theorem solution {lam : ℝ} (h0 : 0 < lam) (h2 : lam < 2)
     (hsc : Continuous fun x : Vd d => lam * harmW x)
     (hsb : ExpBounded fun x : Vd d => lam * harmW x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (hamCore (fun x : Vd d => lam * harmW x) hsc hsb) := by
 
   refine esa_of_close_to_harmonic hsc hsb (a := |lam - 1|) (b := 0) (abs_nonneg _)
     (by rw [abs_lt]; constructor <;> linarith) le_rfl fun x => ?_

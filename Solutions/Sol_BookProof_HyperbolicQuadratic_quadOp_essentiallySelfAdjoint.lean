@@ -19,4 +19,4 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := ⟨quadOp_deficiencyTrivialAt c (by simp), quadOp_deficiencyTrivialAt c (by simp)⟩
+    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c) := ⟨quadOp_deficiencyTrivialAt c (by simp), quadOp_deficiencyTrivialAt c (by simp)⟩

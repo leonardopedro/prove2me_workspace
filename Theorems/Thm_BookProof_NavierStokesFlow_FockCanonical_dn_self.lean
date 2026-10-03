@@ -19,6 +19,4 @@ open scoped ENNReal
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 
-theorem BookProof.NavierStokesFlow.FockCanonical.dn_self (i : Fin d) (α : Occ d) : dn i α i = α i - 1 := by simp [dn]
-
-theorem up_injective (i : Fin d) : Function.Injective (up i : Occ d → Occ d) := by sorry
+theorem BookProof.NavierStokesFlow.FockCanonical.dn_self (i : Fin d) (α : Occ d) : dn i α i = α i - 1 := by sorry

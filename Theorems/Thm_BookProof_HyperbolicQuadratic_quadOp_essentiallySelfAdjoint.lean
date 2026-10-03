@@ -22,4 +22,4 @@ open BookProof.NavierStokesFlow.DifferentialL2
 noncomputable section
 
 theorem BookProof.HyperbolicQuadratic.quadOp_essentiallySelfAdjoint (c : Fin d → ℝ) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c) := by sorry

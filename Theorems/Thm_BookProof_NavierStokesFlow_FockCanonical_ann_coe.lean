@@ -23,6 +23,6 @@ open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode Hermite
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.ann_coe (i : Fin d) (x : lpFiniteModes (Occ d)) (α : Occ d) :
-    (((ann i (ann i x) : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
-      = (Real.sqrt ((α i : ℝ) + 1) : ℂ) * (Real.sqrt ((α i : ℝ) + 2) : ℂ)
-        * ((x : L2I (Occ d)) : Occ d → ℂ) (modeShift i α) := by sorry
+    (((ann i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
+      = (Real.sqrt ((α i : ℝ) + 1) : ℂ)
+        * ((x : L2I (Occ d)) : Occ d → ℂ) (up i α) := by sorry

@@ -209631,3 +209631,26 @@ inst✝¹ : NormedA)
 12:02:48 sync: checked 200 pending solution(s), 1 already Proved
 12:02:48 sync: checked 225 pending solution(s), 1 already Proved
 12:02:48 sync: marked 0 already-published item(s) and 1 already-proved solution(s) done
+12:26:49 retry-failed: re-armed 0 item(s)
+12:26:49 submitting thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint (attempt 2)
+12:26:55 thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint: accepted, waiting on the compiler
+12:26:55 submitting thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint (attempt 2)
+12:27:00 thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint: accepted, waiting on the compiler
+12:27:00 submitting thm:BookProof_HermiteQuadraticEsa_confV_stone_flow (attempt 2)
+12:27:06 thm:BookProof_HermiteQuadraticEsa_confV_stone_flow: accepted, waiting on the compiler
+12:40:20 thm:BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint: DONE
+12:40:54 thm:BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint: DONE
+12:41:03 thm:BookProof_HermiteQuadraticEsa_confV_stone_flow: DONE
+12:41:03 summary: 1781 done, 185 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+12:41:03 chunk: 3 item(s) resolved in 854s
+13:19:43 retry-failed: re-armed 0 item(s)
+13:19:43 submitting thm:BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow (attempt 1)
+13:19:53 thm:BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow: accepted, waiting on the compiler
+13:19:53 submitting thm:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed (attempt 1)
+13:20:37 thm:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed: accepted, waiting on the compiler
+13:20:37 submitting thm:BookProof_ChapterH9_sirk_numRange_krylov (attempt 1)
+13:20:49 thm:BookProof_ChapterH9_sirk_numRange_krylov: accepted, waiting on the compiler
+13:20:49 submitting thm:BookProof_ScalaronEsa_wave_add_scalaron_symmetric (attempt 1)
+13:20:58 thm:BookProof_ScalaronEsa_wave_add_scalaron_symmetric: accepted, waiting on the compiler
+13:20:58 submitting thm:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint (attempt 1)
+13:21:11 thm:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint: accepted, waiting on the compiler

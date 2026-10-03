@@ -500,6 +500,33 @@ def structural_preamble(bt, upto_byte):
 # re-slice path, which then found the `:=` of its own one-line `:= rfl` body and
 # emitted an EMPTY statement -- a stub with no `theorem` in it at all, for any
 # attributed single-line declaration.
+def find_term_as(text, start):
+    """Offset of the `:=` that ends a declaration's TYPE, or None.
+
+    Not simply the first `:=` after the keyword: a named argument inside the type
+    looks identical. `theorem t : EssentiallySelfAdjointOn (polyGaussCore (d := 1))
+    (hamCore ...) := by ...` has THREE `:=` tokens, and the first belongs to the
+    argument. Taking it truncated the type to
+    `... (polyGaussCore (d := by sorry`.
+
+    So: skip any `:=` that is a named argument -- preceded by `(`, `,`, `{` or
+    whitespace-after-those, with an identifier before it -- and take the first one
+    that is not. That is the declaration's own `:=`.
+    """
+    for m in re.finditer(r":=", text[start:]):
+        i = start + m.start()
+        before = text[:i].rstrip()
+        if before.endswith(("(", ",", "{", "[", "|")):
+            continue
+        # `f (d := x)`: the token before `:=` is an identifier and the character
+        # before that is an opening delimiter.
+        name = re.search(r"([A-Za-z_][\w']*)$", before)
+        if name and len(before) > len(name.group(1)) and before[-len(name.group(1))-1] in "(,{[|":
+            continue
+        return i
+    return None
+
+
 DECL_KEYWORD = re.compile(
     r"(?m)^[ \t]*(?:@\[[^\]]*\][ \t]*)?"
     r"(?:(?:omit\s+[^\n]*?|set_option\s+[^\n]*?)\s+in\s+)?"
@@ -553,9 +580,9 @@ def the_statement(bt, d):
     body = bt.slice(d.s, max(bt.b2c))
     km = DECL_KEYWORD.match(body) or DECL_KEYWORD.search(body)
     if km is not None:
-        m2 = re.compile(r":=").search(body, km.end())
+        m2 = find_term_as(body, km.end())
         if m2 is not None:
-            frag = body[:m2.start()]
+            frag = body[:m2]
     frag = re.sub(r"^/--(?:.*?)-/\s*", "", frag, flags=re.S).rstrip()
     # The re-slice above can land in the middle of a docstring, leaving its tail
     # (`... support. -/`) as the first line of the statement. Drop any leading

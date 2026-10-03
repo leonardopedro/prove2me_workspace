@@ -22,7 +22,7 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution : cpoly (harmPoly (d := by
+theorem solution : cpoly (harmPoly (d := d)) = harmPoly := by
 
   have hq : (starRingEnd ℂ) (1 / 4 : ℂ) = 1 / 4 := by norm_num [Complex.ext_iff]
   unfold harmPoly

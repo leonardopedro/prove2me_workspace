@@ -10,6 +10,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterFarisLavineCore
+import Theorems.Thm_BookProof_ScalaronEsa_contDiff_scalaronFullPotential
 open BookProof.ScalaronEsa
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]

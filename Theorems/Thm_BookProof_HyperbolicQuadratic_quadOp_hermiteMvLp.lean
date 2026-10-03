@@ -26,4 +26,5 @@ open BookProof.NavierStokesFlow.DifferentialL2
 noncomputable section
 
 theorem BookProof.HyperbolicQuadratic.quadOp_hermiteMvLp (c : Fin d → ℝ) (a : Fin d →₀ ℕ)
-    (h : hermiteMvLp a ∈ polyGaussCore (d := by sorry
+    (h : hermiteMvLp a ∈ polyGaussCore (d := d)) :
+    quadOp c ⟨hermiteMvLp a, h⟩ = ((quadSymbol c a : ℝ) : ℂ) • hermiteMvLp a := by sorry

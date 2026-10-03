@@ -19,5 +19,3 @@ variable {d : ℕ}
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     dPoly i p = pderiv i p - (1/2 : ℂ) • (X i * p) := rfl
-
-theorem sec_sec (i : Fin d) (x : Vd d) (t s : ℝ) : sec i (sec i x t) s = sec i x s := rfl

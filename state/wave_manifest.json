@@ -1,5 +1,796 @@
 [
  {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_single",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_single",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_symmetricOn",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_symmetricOn",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberCore_dense",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberCore_dense",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow",
+  "plen": 3,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow'",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow'",
+  "plen": 3,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_nonneg",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_nonneg",
+  "plen": 2,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_stone_flow",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.dsOp_semibounded",
+  "slug": "BookProof_BddBelowFiberSumEsa_dsOp_semibounded",
+  "plen": 31,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_semibounded",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_semibounded",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_nonneg_form",
+  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_nonneg_form",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.contDiff_qgFiberV",
+  "slug": "BookProof_BddBelowFiberSumEsa_contDiff_qgFiberV",
+  "plen": 3,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.qgFiberV_nonneg",
+  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberV_nonneg",
+  "plen": 3,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.qgFiberSum_esa",
+  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberSum_esa",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterBddBelowFiberSumEsa",
+  "name": "BookProof.BddBelowFiberSumEsa.qgFiberSum_nonneg_form",
+  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form",
+  "plen": 1,
+  "ns": "BookProof.BddBelowFiberSumEsa"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.inner_shiftOp_left",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_inner_shiftOp_left",
+  "plen": 7,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_apply",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_momentum_apply",
+  "plen": 3,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_isSymmetric",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_momentum_isSymmetric",
+  "plen": 8,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityLin_norm_le",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityLin_norm_le",
+  "plen": 17,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSymmetric",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSymmetric",
+  "plen": 6,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint",
+  "plen": 1,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityHamiltonian_isSymmetric",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_continuityHamiltonian_isSymmetric",
+  "plen": 16,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_add",
+  "plen": 12,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_nonneg",
+  "plen": 1,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_union",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_union",
+  "plen": 1,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_mono",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono",
+  "plen": 1,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterContinuityUnitaryInfinite",
+  "name": "BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite",
+  "slug": "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite",
+  "plen": 3,
+  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.incl_apply",
+  "slug": "BookProof_FriedrichsExtension_FormDom_incl_apply",
+  "plen": 1,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.denseRange_toComplL",
+  "slug": "BookProof_FriedrichsExtension_FormDom_denseRange_toComplL",
+  "plen": 2,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL",
+  "slug": "BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL",
+  "plen": 2,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.formExt_coe",
+  "slug": "BookProof_FriedrichsExtension_FormDom_formExt_coe",
+  "plen": 3,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.norm_formExt_le",
+  "slug": "BookProof_FriedrichsExtension_FormDom_norm_formExt_le",
+  "plen": 6,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.inner_coe_eq",
+  "slug": "BookProof_FriedrichsExtension_FormDom_inner_coe_eq",
+  "plen": 5,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.formExt_injective",
+  "slug": "BookProof_FriedrichsExtension_FormDom_formExt_injective",
+  "plen": 10,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.dense_range_formExt",
+  "slug": "BookProof_FriedrichsExtension_FormDom_dense_range_formExt",
+  "plen": 3,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
+  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
+  "plen": 1,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint",
+  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint",
+  "plen": 4,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos",
+  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos",
+  "plen": 9,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective",
+  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective",
+  "plen": 15,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift",
+  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift",
+  "plen": 7,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.FormDom.dom_le_range",
+  "slug": "BookProof_FriedrichsExtension_FormDom_dom_le_range",
+  "plen": 2,
+  "ns": "BookProof.FriedrichsExtension.FormDom"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.friedrichs_extension_exists",
+  "slug": "BookProof_FriedrichsExtension_friedrichs_extension_exists",
+  "plen": 12,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.friedrichs_hypothesis_holds",
+  "slug": "BookProof_FriedrichsExtension_friedrichs_hypothesis_holds",
+  "plen": 2,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional",
+  "slug": "BookProof_FriedrichsExtension_weyl_friedrichs_extension_unconditional",
+  "plen": 2,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.friedrichs_extension_of_semibounded_below",
+  "slug": "BookProof_FriedrichsExtension_friedrichs_extension_of_semibounded_below",
+  "plen": 52,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.friedrichs_hashimoto_selects",
+  "slug": "BookProof_FriedrichsExtension_friedrichs_hashimoto_selects",
+  "plen": 5,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs",
+  "slug": "BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs",
+  "plen": 4,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterFriedrichsExtension",
+  "name": "BookProof.FriedrichsExtension.unbounded_friedrichs_example",
+  "slug": "BookProof_FriedrichsExtension_unbounded_friedrichs_example",
+  "plen": 9,
+  "ns": "BookProof.FriedrichsExtension"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_krylov_tower",
+  "slug": "BookProof_ChapterH8_sirk_krylov_tower",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_compression_block_op",
+  "slug": "BookProof_ChapterH8_sirk_compression_block_op",
+  "plen": 3,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.adjoint_comp_self_of_nested",
+  "slug": "BookProof_ChapterH8_adjoint_comp_self_of_nested",
+  "plen": 7,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.adjoint_comp_nested",
+  "slug": "BookProof_ChapterH8_adjoint_comp_nested",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.adjoint_compress",
+  "slug": "BookProof_ChapterH8_adjoint_compress",
+  "plen": 2,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.adjoint_pow",
+  "slug": "BookProof_ChapterH8_adjoint_pow",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_compression_block",
+  "slug": "BookProof_ChapterH8_sirk_compression_block",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_compression_submatrix",
+  "slug": "BookProof_ChapterH8_sirk_compression_submatrix",
+  "plen": 2,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_compression_block_le",
+  "slug": "BookProof_ChapterH8_sirk_compression_block_le",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_compression_submatrix_le",
+  "slug": "BookProof_ChapterH8_sirk_compression_submatrix_le",
+  "plen": 2,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_comp_intertwine",
+  "slug": "BookProof_ChapterH8_compress_comp_intertwine",
+  "plen": 12,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_pow_comp_intertwine",
+  "slug": "BookProof_ChapterH8_compress_pow_comp_intertwine",
+  "plen": 18,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.fine_range_of_coarse",
+  "slug": "BookProof_ChapterH8_fine_range_of_coarse",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_refinement",
+  "slug": "BookProof_ChapterH8_sirk_band_refinement",
+  "plen": 6,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_refinement_proj",
+  "slug": "BookProof_ChapterH8_sirk_band_refinement_proj",
+  "plen": 8,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_approx_projection",
+  "slug": "BookProof_ChapterH8_sirk_approx_projection",
+  "plen": 19,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_aeval_comp",
+  "slug": "BookProof_ChapterH8_compress_aeval_comp",
+  "plen": 12,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_aeval_transfer",
+  "slug": "BookProof_ChapterH8_compress_aeval_transfer",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_inv_transfer_apply",
+  "slug": "BookProof_ChapterH8_compress_inv_transfer_apply",
+  "plen": 6,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_rational_transfer",
+  "slug": "BookProof_ChapterH8_compress_rational_transfer",
+  "plen": 7,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_refinement_poly",
+  "slug": "BookProof_ChapterH8_sirk_band_refinement_poly",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_refinement_rational",
+  "slug": "BookProof_ChapterH8_sirk_band_refinement_rational",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_aeval_comp_intertwine",
+  "slug": "BookProof_ChapterH8_compress_aeval_comp_intertwine",
+  "plen": 12,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.adjoint_aeval",
+  "slug": "BookProof_ChapterH8_adjoint_aeval",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_adjoint_intertwine",
+  "slug": "BookProof_ChapterH8_compress_adjoint_intertwine",
+  "plen": 4,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.compress_adjoint_intertwine_poly",
+  "slug": "BookProof_ChapterH8_compress_adjoint_intertwine_poly",
+  "plen": 8,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_approx_projection_poly",
+  "slug": "BookProof_ChapterH8_sirk_approx_projection_poly",
+  "plen": 13,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.inv_comp_intertwine",
+  "slug": "BookProof_ChapterH8_inv_comp_intertwine",
+  "plen": 5,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_approx_projection_rational",
+  "slug": "BookProof_ChapterH8_sirk_approx_projection_rational",
+  "plen": 19,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_contained",
+  "slug": "BookProof_ChapterH8_sirk_band_contained",
+  "plen": 2,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_band_contained_le",
+  "slug": "BookProof_ChapterH8_sirk_band_contained_le",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_bands_tendsto_zero",
+  "slug": "BookProof_ChapterH8_sirk_bands_tendsto_zero",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_nested_orders",
+  "slug": "BookProof_ChapterH8_sirk_nested_orders",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH8",
+  "name": "BookProof.ChapterH8.sirk_nested_orders_le",
+  "slug": "BookProof_ChapterH8_sirk_nested_orders_le",
+  "plen": 1,
+  "ns": "BookProof.ChapterH8"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.mem_numRange_iff",
+  "slug": "BookProof_ChapterH9_mem_numRange_iff",
+  "plen": 0,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.mem_numRange",
+  "slug": "BookProof_ChapterH9_mem_numRange",
+  "plen": 0,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_map_of_adjoint_comp",
+  "slug": "BookProof_ChapterH9_norm_map_of_adjoint_comp",
+  "plen": 6,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_le_one_of_isometry",
+  "slug": "BookProof_ChapterH9_norm_le_one_of_isometry",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_adjoint_le_one_of_isometry",
+  "slug": "BookProof_ChapterH9_norm_adjoint_le_one_of_isometry",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_compress_subset",
+  "slug": "BookProof_ChapterH9_numRange_compress_subset",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_subset_closedBall",
+  "slug": "BookProof_ChapterH9_numRange_subset_closedBall",
+  "plen": 7,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_compress_subset_closedBall",
+  "slug": "BookProof_ChapterH9_numRange_compress_subset_closedBall",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.compress_compress",
+  "slug": "BookProof_ChapterH9_compress_compress",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_compress_mono",
+  "slug": "BookProof_ChapterH9_numRange_compress_mono",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_compress_chain",
+  "slug": "BookProof_ChapterH9_numRange_compress_chain",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.convexHull_numRange_compress_mono",
+  "slug": "BookProof_ChapterH9_convexHull_numRange_compress_mono",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_compress_le",
+  "slug": "BookProof_ChapterH9_norm_compress_le",
+  "plen": 9,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_compress_mono",
+  "slug": "BookProof_ChapterH9_norm_compress_mono",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.ritz_mem_numRange",
+  "slug": "BookProof_ChapterH9_ritz_mem_numRange",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.ritz_mem_numRange_compress",
+  "slug": "BookProof_ChapterH9_ritz_mem_numRange_compress",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.ritz_re_mem_Icc_of_fine",
+  "slug": "BookProof_ChapterH9_ritz_re_mem_Icc_of_fine",
+  "plen": 3,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.compress_nonneg",
+  "slug": "BookProof_ChapterH9_compress_nonneg",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.compress_re_inner_mem_Icc",
+  "slug": "BookProof_ChapterH9_compress_re_inner_mem_Icc",
+  "plen": 3,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.exists_unit_eigenvector",
+  "slug": "BookProof_ChapterH9_exists_unit_eigenvector",
+  "plen": 10,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.spectrum_compress_subset_numRange",
+  "slug": "BookProof_ChapterH9_spectrum_compress_subset_numRange",
+  "plen": 3,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.spectrum_compress_subset_numRange_compress",
+  "slug": "BookProof_ChapterH9_spectrum_compress_subset_numRange_compress",
+  "plen": 3,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.orthonormalEmbedding_norm_map",
+  "slug": "BookProof_ChapterH9_orthonormalEmbedding_norm_map",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.coordIncl_norm_map",
+  "slug": "BookProof_ChapterH9_coordIncl_norm_map",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.numRange_compress_orthonormal_mono",
+  "slug": "BookProof_ChapterH9_numRange_compress_orthonormal_mono",
+  "plen": 2,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.sirk_numRange_nested_orders",
+  "slug": "BookProof_ChapterH9_sirk_numRange_nested_orders",
+  "plen": 6,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.spectrum_compress_subset_numRange_orthonormal",
+  "slug": "BookProof_ChapterH9_spectrum_compress_subset_numRange_orthonormal",
+  "plen": 4,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.sirk_numRange_krylov",
+  "slug": "BookProof_ChapterH9_sirk_numRange_krylov",
+  "plen": 5,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_sub_starProjection_le",
+  "slug": "BookProof_ChapterH9_norm_sub_starProjection_le",
+  "plen": 4,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.norm_sub_starProjection_antitone",
+  "slug": "BookProof_ChapterH9_norm_sub_starProjection_antitone",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.krylov_bestApprox_antitone",
+  "slug": "BookProof_ChapterH9_krylov_bestApprox_antitone",
+  "plen": 1,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
+  "leaf": "ChapterH9",
+  "name": "BookProof.ChapterH9.krylov_bestApprox_tendsto_zero",
+  "slug": "BookProof_ChapterH9_krylov_bestApprox_tendsto_zero",
+  "plen": 16,
+  "ns": "BookProof.ChapterH9"
+ },
+ {
   "leaf": "ChapterHashimotoShiftInvert",
   "name": "BookProof.HashimotoShiftInvert.shiftMap_apply",
   "slug": "BookProof_HashimotoShiftInvert_shiftMap_apply",
@@ -280,599 +1071,718 @@
   "ns": "BookProof.HashimotoShiftInvert"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_eq",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_eq",
-  "plen": 3,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_conj_symm",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_conj_symm",
-  "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.re_formInner_swap",
-  "slug": "BookProof_YangMillsFriedrichs_re_formInner_swap",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_ge_normSq",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_ge_normSq",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_nonneg",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_nonneg",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_add_left",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_add_left",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_add_right",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_add_right",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_real_smul_left",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_real_smul_left",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formInner_real_smul_right",
-  "slug": "BookProof_YangMillsFriedrichs_formInner_real_smul_right",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add",
-  "plen": 3,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_sub",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_sub",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.pderiv_harmPoly",
+  "slug": "BookProof_HermiteQuadraticEsa_pderiv_harmPoly",
   "plen": 14,
-  "ns": "BookProof.YangMillsFriedrichs"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add_smul",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add_smul",
-  "plen": 10,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.re_formInner_sq_le",
-  "slug": "BookProof_YangMillsFriedrichs_re_formInner_sq_le",
-  "plen": 25,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.formNormSq_add_le",
-  "slug": "BookProof_YangMillsFriedrichs_formNormSq_add_le",
-  "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.form_closable",
-  "slug": "BookProof_YangMillsFriedrichs_form_closable",
-  "plen": 76,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOp_apply",
-  "slug": "BookProof_YangMillsFriedrichs_weylOp_apply",
-  "plen": 4,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn",
-  "slug": "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn",
-  "plen": 17,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylOpDom_quadForm",
-  "slug": "BookProof_YangMillsFriedrichs_weylOpDom_quadForm",
-  "plen": 9,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded",
-  "slug": "BookProof_YangMillsFriedrichs_friedrichs_extension_of_semibounded",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable",
-  "slug": "BookProof_YangMillsFriedrichs_friedrichs_hypothesis_satisfiable",
-  "plen": 8,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weyl_friedrichs_extension",
-  "slug": "BookProof_YangMillsFriedrichs_weyl_friedrichs_extension",
-  "plen": 2,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterYangMillsFriedrichs",
-  "name": "BookProof.YangMillsFriedrichs.weylKrylov_bestApprox_tendsto_zero",
-  "slug": "BookProof_YangMillsFriedrichs_weylKrylov_bestApprox_tendsto_zero",
-  "plen": 1,
-  "ns": "BookProof.YangMillsFriedrichs"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_single",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_single",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_symmetricOn",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_symmetricOn",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberCore_dense",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberCore_dense",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.coreD_harmPoly_mul",
+  "slug": "BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul",
   "plen": 3,
-  "ns": "BookProof.BddBelowFiberSumEsa"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow'",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow'",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.coreD_X_mul",
+  "slug": "BookProof_HermiteQuadraticEsa_coreD_X_mul",
   "plen": 3,
-  "ns": "BookProof.BddBelowFiberSumEsa"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_nonneg",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_nonneg",
-  "plen": 2,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_stone_flow",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_stone_flow",
-  "plen": 2,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.dsOp_semibounded",
-  "slug": "BookProof_BddBelowFiberSumEsa_dsOp_semibounded",
-  "plen": 31,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_semibounded",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_semibounded",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.cpoly_add",
+  "slug": "BookProof_HermiteQuadraticEsa_cpoly_add",
   "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.fiberSumHam_nonneg_form",
-  "slug": "BookProof_BddBelowFiberSumEsa_fiberSumHam_nonneg_form",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.contDiff_qgFiberV",
-  "slug": "BookProof_BddBelowFiberSumEsa_contDiff_qgFiberV",
-  "plen": 3,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.qgFiberV_nonneg",
-  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberV_nonneg",
-  "plen": 3,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.qgFiberSum_esa",
-  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberSum_esa",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterBddBelowFiberSumEsa",
-  "name": "BookProof.BddBelowFiberSumEsa.qgFiberSum_nonneg_form",
-  "slug": "BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form",
-  "plen": 1,
-  "ns": "BookProof.BddBelowFiberSumEsa"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.incl_apply",
-  "slug": "BookProof_FriedrichsExtension_FormDom_incl_apply",
-  "plen": 1,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.denseRange_toComplL",
-  "slug": "BookProof_FriedrichsExtension_FormDom_denseRange_toComplL",
-  "plen": 2,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.isUniformInducing_toComplL",
-  "slug": "BookProof_FriedrichsExtension_FormDom_isUniformInducing_toComplL",
-  "plen": 2,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.formExt_coe",
-  "slug": "BookProof_FriedrichsExtension_FormDom_formExt_coe",
-  "plen": 3,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.norm_formExt_le",
-  "slug": "BookProof_FriedrichsExtension_FormDom_norm_formExt_le",
-  "plen": 6,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.inner_coe_eq",
-  "slug": "BookProof_FriedrichsExtension_FormDom_inner_coe_eq",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.cpoly_harmPoly",
+  "slug": "BookProof_HermiteQuadraticEsa_cpoly_harmPoly",
   "plen": 5,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.formExt_injective",
-  "slug": "BookProof_FriedrichsExtension_FormDom_formExt_injective",
-  "plen": 10,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.dense_range_formExt",
-  "slug": "BookProof_FriedrichsExtension_FormDom_dense_range_formExt",
-  "plen": 3,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
-  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
-  "plen": 1,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint",
-  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint",
-  "plen": 4,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos",
-  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos",
-  "plen": 9,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective",
-  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective",
-  "plen": 15,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift",
-  "slug": "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift",
-  "plen": 7,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.FormDom.dom_le_range",
-  "slug": "BookProof_FriedrichsExtension_FormDom_dom_le_range",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_cross",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_cross",
   "plen": 2,
-  "ns": "BookProof.FriedrichsExtension.FormDom"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.friedrichs_extension_exists",
-  "slug": "BookProof_FriedrichsExtension_friedrichs_extension_exists",
-  "plen": 12,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.friedrichs_hypothesis_holds",
-  "slug": "BookProof_FriedrichsExtension_friedrichs_hypothesis_holds",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_self",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_self",
   "plen": 2,
-  "ns": "BookProof.FriedrichsExtension"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.weyl_friedrichs_extension_unconditional",
-  "slug": "BookProof_FriedrichsExtension_weyl_friedrichs_extension_unconditional",
-  "plen": 2,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.friedrichs_extension_of_semibounded_below",
-  "slug": "BookProof_FriedrichsExtension_friedrichs_extension_of_semibounded_below",
-  "plen": 52,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.friedrichs_hashimoto_selects",
-  "slug": "BookProof_FriedrichsExtension_friedrichs_hashimoto_selects",
-  "plen": 5,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs",
-  "slug": "BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs",
-  "plen": 4,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterFriedrichsExtension",
-  "name": "BookProof.FriedrichsExtension.unbounded_friedrichs_example",
-  "slug": "BookProof_FriedrichsExtension_unbounded_friedrichs_example",
-  "plen": 9,
-  "ns": "BookProof.FriedrichsExtension"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.inner_shiftOp_left",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_inner_shiftOp_left",
-  "plen": 7,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_apply",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_momentum_apply",
-  "plen": 3,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.momentum_isSymmetric",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_momentum_isSymmetric",
-  "plen": 8,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityLin_norm_le",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityLin_norm_le",
-  "plen": 17,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSymmetric",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSymmetric",
-  "plen": 6,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint",
-  "plen": 1,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityHamiltonian_isSymmetric",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_continuityHamiltonian_isSymmetric",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_harm_self",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_harm_self",
   "plen": 16,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.continuityUnitary_add",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_continuityUnitary_add",
-  "plen": 12,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_anticommutator",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_anticommutator",
+  "plen": 42,
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_nonneg",
-  "plen": 1,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.two_re_inner_kin_harm_ge",
+  "slug": "BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge",
+  "plen": 22,
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_union",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_union",
-  "plen": 1,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_harmPoly_mul_le",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le",
+  "plen": 7,
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.bornRecover_mono",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_bornRecover_mono",
-  "plen": 1,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterContinuityUnitaryInfinite",
-  "name": "BookProof.ChapterContinuityUnitaryInfinite.condProb_of_continuity_infinite",
-  "slug": "BookProof_ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite",
-  "plen": 3,
-  "ns": "BookProof.ChapterContinuityUnitaryInfinite"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.mem_mulDomain_iff",
-  "slug": "BookProof_ChapterUnboundedPosition_mem_mulDomain_iff",
-  "plen": 0,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.mulOp_symmetric",
-  "slug": "BookProof_ChapterUnboundedPosition_mulOp_symmetric",
-  "plen": 4,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.single_mem_mulDomain",
-  "slug": "BookProof_ChapterUnboundedPosition_single_mem_mulDomain",
-  "plen": 4,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.sum_single_mem_mulDomain",
-  "slug": "BookProof_ChapterUnboundedPosition_sum_single_mem_mulDomain",
-  "plen": 1,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.mulDomain_dense",
-  "slug": "BookProof_ChapterUnboundedPosition_mulDomain_dense",
-  "plen": 3,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.mulOp_single",
-  "slug": "BookProof_ChapterUnboundedPosition_mulOp_single",
-  "plen": 5,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.position_unbounded",
-  "slug": "BookProof_ChapterUnboundedPosition_position_unbounded",
-  "plen": 11,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.inner_single_left",
-  "slug": "BookProof_ChapterUnboundedPosition_inner_single_left",
-  "plen": 2,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.mulOp_adjoint_apply",
-  "slug": "BookProof_ChapterUnboundedPosition_mulOp_adjoint_apply",
-  "plen": 10,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.adjointDomain_eq_mulDomain",
-  "slug": "BookProof_ChapterUnboundedPosition_adjointDomain_eq_mulDomain",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_harmPoly_mul_le",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le",
   "plen": 6,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.adjoint_eq_mulOp",
-  "slug": "BookProof_ChapterUnboundedPosition_adjoint_eq_mulOp",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_of_le_harm",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_of_le_harm",
+  "plen": 10,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_potLp_le_of_le_harm",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm",
+  "plen": 28,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint",
+  "plen": 18,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow",
   "plen": 2,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.position_not_boundedOperator",
-  "slug": "BookProof_ChapterUnboundedPosition_position_not_boundedOperator",
-  "plen": 4,
-  "ns": "BookProof.ChapterUnboundedPosition"
- },
- {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.phaseUnitary_apply",
-  "slug": "BookProof_ChapterUnboundedPosition_phaseUnitary_apply",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.hamCore_congr",
+  "slug": "BookProof_HermiteQuadraticEsa_hamCore_congr",
   "plen": 1,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.tendsto_phaseUnitary",
-  "slug": "BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary",
-  "plen": 36,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.esa_of_close_to_harmonic",
+  "slug": "BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic",
+  "plen": 9,
+  "ns": "BookProof.HermiteQuadraticEsa"
  },
  {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.hasDerivAt_phase",
-  "slug": "BookProof_ChapterUnboundedPosition_hasDerivAt_phase",
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_of_growth_bound",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound",
+  "plen": 15,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.quadraticGrowth_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint",
+  "plen": 12,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.scaledHarmonic_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.continuous_confW",
+  "slug": "BookProof_HermiteQuadraticEsa_continuous_confW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_one",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_one",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_coord_le_norm",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_coord_le_norm",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_confW_sub_harmW_le",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le",
+  "plen": 17,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_confW",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_confW",
+  "plen": 16,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.confV_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_confV_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.continuous_sectorQuadW",
+  "slug": "BookProof_HermiteQuadraticEsa_continuous_sectorQuadW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_two",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_two",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_coord_zero_le_norm_two",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le",
+  "plen": 30,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_sectorQuadW",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorQuad_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint",
+  "plen": 9,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorQuad_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.tendsto_starobinskyV_div_sq",
+  "slug": "BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq",
+  "plen": 29,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint",
+  "plen": 4,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.symmetricOn_of_diagonal",
+  "slug": "BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal",
+  "plen": 56,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.deficiencyTrivialAt_of_diagonal",
+  "slug": "BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal",
+  "plen": 11,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.momPoly_apply'",
+  "slug": "BookProof_HyperbolicQuadratic_momPoly_apply'",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.momPoly_sq",
+  "slug": "BookProof_HyperbolicQuadratic_momPoly_sq",
+  "plen": 22,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.oscPoly_apply",
+  "slug": "BookProof_HyperbolicQuadratic_oscPoly_apply",
+  "plen": 3,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.hermiteMv_number",
+  "slug": "BookProof_HyperbolicQuadratic_hermiteMv_number",
+  "plen": 17,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.oscPoly_hermiteMv",
+  "slug": "BookProof_HyperbolicQuadratic_oscPoly_hermiteMv",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadPoly_hermiteMv",
+  "slug": "BookProof_HyperbolicQuadratic_quadPoly_hermiteMv",
+  "plen": 12,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.pgLp_hermiteMvLp",
+  "slug": "BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_hermiteMvLp",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp",
+  "plen": 8,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.hermiteMvLp_total",
+  "slug": "BookProof_HyperbolicQuadratic_hermiteMvLp_total",
   "plen": 5,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "ns": "BookProof.HyperbolicQuadratic"
  },
  {
-  "leaf": "ChapterUnboundedPosition",
-  "name": "BookProof.ChapterUnboundedPosition.tendsto_slope_phaseUnitary",
-  "slug": "BookProof_ChapterUnboundedPosition_tendsto_slope_phaseUnitary",
-  "plen": 69,
-  "ns": "BookProof.ChapterUnboundedPosition"
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_symmetric",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_symmetric",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_deficiencyTrivialAt",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_deficiencyTrivialAt",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_essentiallySelfAdjoint",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_essentiallySelfAdjoint",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.polyGaussCore_dense_L2",
+  "slug": "BookProof_HyperbolicQuadratic_polyGaussCore_dense_L2",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadSymbol_single",
+  "slug": "BookProof_HyperbolicQuadratic_quadSymbol_single",
+  "plen": 9,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_not_bounded",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_not_bounded",
+  "plen": 25,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.dPoly_apply",
+  "slug": "BookProof_HyperbolicQuadratic_dPoly_apply",
+  "plen": 0,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.sec_sec",
+  "slug": "BookProof_HyperbolicQuadratic_sec_sec",
+  "plen": 4,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.sec_coord",
+  "slug": "BookProof_HyperbolicQuadratic_sec_coord",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.deriv_pgFun_sec",
+  "slug": "BookProof_HyperbolicQuadratic_deriv_pgFun_sec",
+  "plen": 4,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.deriv2_pgFun_sec",
+  "slug": "BookProof_HyperbolicQuadratic_deriv2_pgFun_sec",
+  "plen": 3,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.pgFun_smul",
+  "slug": "BookProof_HyperbolicQuadratic_pgFun_smul",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.pgFun_add",
+  "slug": "BookProof_HyperbolicQuadratic_pgFun_add",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.pgFun_sub",
+  "slug": "BookProof_HyperbolicQuadratic_pgFun_sub",
+  "plen": 2,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.momPoly_sq_eq_dPoly",
+  "slug": "BookProof_HyperbolicQuadratic_momPoly_sq_eq_dPoly",
+  "plen": 7,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.oscPoly_apply_eq_differential",
+  "slug": "BookProof_HyperbolicQuadratic_oscPoly_apply_eq_differential",
+  "plen": 15,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadPoly_apply_eq_differential",
+  "slug": "BookProof_HyperbolicQuadratic_quadPoly_apply_eq_differential",
+  "plen": 8,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_add_boundedPotential_essentiallySelfAdjoint",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint",
+  "plen": 3,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.quadOp_add_realBoundedPotential_essentiallySelfAdjoint",
+  "slug": "BookProof_HyperbolicQuadratic_quadOp_add_realBoundedPotential_essentiallySelfAdjoint",
+  "plen": 4,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.wave_indefiniteQuadratic_essentiallySelfAdjoint",
+  "slug": "BookProof_HyperbolicQuadratic_wave_indefiniteQuadratic_essentiallySelfAdjoint",
+  "plen": 1,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterHyperbolicQuadraticEsa",
+  "name": "BookProof.HyperbolicQuadratic.minkowski_apply_eq_differential",
+  "slug": "BookProof_HyperbolicQuadratic_minkowski_apply_eq_differential",
+  "plen": 12,
+  "ns": "BookProof.HyperbolicQuadratic"
+ },
+ {
+  "leaf": "ChapterKatoRellichRelative",
+  "name": "BookProof.KatoRellich.symmetricOn_add",
+  "slug": "BookProof_KatoRellich_symmetricOn_add",
+  "plen": 2,
+  "ns": "BookProof.KatoRellich"
+ },
+ {
+  "leaf": "ChapterKatoRellichRelative",
+  "name": "BookProof.KatoRellich.norm_le_of_relBound",
+  "slug": "BookProof_KatoRellich_norm_le_of_relBound",
+  "plen": 16,
+  "ns": "BookProof.KatoRellich"
+ },
+ {
+  "leaf": "ChapterKatoRellichRelative",
+  "name": "BookProof.KatoRellich.dense_range_add_relBounded",
+  "slug": "BookProof_KatoRellich_dense_range_add_relBounded",
+  "plen": 98,
+  "ns": "BookProof.KatoRellich"
+ },
+ {
+  "leaf": "ChapterKatoRellichRelative",
+  "name": "BookProof.KatoRellich.essentiallySelfAdjointOn_add_relBounded",
+  "slug": "BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded",
+  "plen": 54,
+  "ns": "BookProof.KatoRellich"
+ },
+ {
+  "leaf": "ChapterKatoRellichRelative",
+  "name": "BookProof.KatoRellich.essentiallySelfAdjointOn_add_bounded'",
+  "slug": "BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded'",
+  "plen": 3,
+  "ns": "BookProof.KatoRellich"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.up_self",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_up_self",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.dn_self",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_dn_self",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.dn_up",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_dn_up",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.up_up",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_up_up",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.modeShift_dn_dn",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.dn_dn_self",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_dn_dn_self",
+  "plen": 2,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.ann_coe",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_ann_coe",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.cre_coe",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_cre_coe",
+  "plen": 0,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.ann_ann_coe",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_two_le",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le",
+  "plen": 7,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_lt",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt",
+  "plen": 8,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.ann_cre_coe",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe",
+  "plen": 5,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.cre_ann_coe",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe",
+  "plen": 12,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.comm_ann_cre",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre",
+  "plen": 4,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.bracket_DS",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_bracket_DS",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.sq_diff",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_sq_diff",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.anti_DS",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_anti_DS",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.sqrt_half_sq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_sq",
+  "plen": 3,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.sqrt_half_mul_inv",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_mul_inv",
+  "plen": 8,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.comm_mom_pos",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_comm_mom_pos",
+  "plen": 10,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.mode_comparison_eq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_mode_comparison_eq",
+  "plen": 19,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply'",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply'",
+  "plen": 6,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.fock_comparison_eq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_fock_comparison_eq",
+  "plen": 27,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.hop_modeData_eq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq",
+  "plen": 13,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.mode_hamiltonian_eq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_mode_hamiltonian_eq",
+  "plen": 49,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
+ },
+ {
+  "leaf": "ChapterNavierStokesFockCanonical",
+  "name": "BookProof.NavierStokesFlow.FockCanonical.fock_hamiltonian_eq",
+  "slug": "BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq",
+  "plen": 37,
+  "ns": "BookProof.NavierStokesFlow.FockCanonical"
  },
  {
   "leaf": "ChapterQuantumGravity3DGauge",
@@ -1057,255 +1967,570 @@
   "ns": "BookProof.QuantumGravity3DGauge"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.gaussInt_re",
-  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_re",
-  "plen": 4,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.gaussInt_re_mono",
-  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_re_mono",
-  "plen": 9,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_sq",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_pgLp_sq",
-  "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.coreD_comm",
-  "slug": "BookProof_GaussCoreQuadBounds_coreD_comm",
-  "plen": 7,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.coreD_mul",
-  "slug": "BookProof_GaussCoreQuadBounds_coreD_mul",
-  "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.coreD_sq_mul",
-  "slug": "BookProof_GaussCoreQuadBounds_coreD_sq_mul",
-  "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.coreD_X_comm",
-  "slug": "BookProof_GaussCoreQuadBounds_coreD_X_comm",
-  "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_eq",
-  "slug": "BookProof_GaussCoreQuadBounds_quadForm_harm_eq",
-  "plen": 18,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.quadForm_harm_nonneg",
-  "slug": "BookProof_GaussCoreQuadBounds_quadForm_harm_nonneg",
-  "plen": 1,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_sq_le_quadForm_harm",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_sq_le_quadForm_harm",
-  "plen": 39,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.re_inner_symm",
-  "slug": "BookProof_GaussCoreQuadBounds_re_inner_symm",
-  "plen": 1,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.inner_harmP_re",
-  "slug": "BookProof_GaussCoreQuadBounds_inner_harmP_re",
-  "plen": 5,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.shiftNorm_sq",
-  "slug": "BookProof_GaussCoreQuadBounds_shiftNorm_sq",
-  "plen": 3,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.shiftNorm_nonneg",
-  "slug": "BookProof_GaussCoreQuadBounds_shiftNorm_nonneg",
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.mem_ccSchwartz",
+  "slug": "BookProof_ScalaronEsa_mem_ccSchwartz",
   "plen": 0,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_pgLp_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_pgLp_le_shiftNorm",
-  "plen": 4,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.ccInclLM_apply",
+  "slug": "BookProof_ScalaronEsa_ccInclLM_apply",
+  "plen": 0,
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_harmP_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm",
-  "plen": 3,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.ccEquiv_coe",
+  "slug": "BookProof_ScalaronEsa_ccEquiv_coe",
+  "plen": 0,
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.dim_mul_norm_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_dim_mul_norm_le_shiftNorm",
-  "plen": 19,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.ccDomain_dense",
+  "slug": "BookProof_ScalaronEsa_ccDomain_dense",
+  "plen": 12,
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.sqrt_dim_mul_norm_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm",
-  "plen": 7,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.mulCc_apply",
+  "slug": "BookProof_ScalaronEsa_mulCc_apply",
+  "plen": 0,
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_harmPoly_mul_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_harmPoly_mul_le_shiftNorm",
-  "plen": 4,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.opCc_apply",
+  "slug": "BookProof_ScalaronEsa_opCc_apply",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_kinPoly_le_shiftNorm",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm",
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.smoothPotential_symmetric",
+  "slug": "BookProof_ScalaronEsa_smoothPotential_symmetric",
   "plen": 10,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.gaussInt_self",
-  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_self",
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.integral_conj_mul_smoothPotential_sub_eq_zero",
+  "slug": "BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero",
+  "plen": 24,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.smoothPotential_deficiencyTrivial",
+  "slug": "BookProof_ScalaronEsa_smoothPotential_deficiencyTrivial",
+  "plen": 36,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.smoothPotential_essentiallySelfAdjoint",
+  "slug": "BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint",
   "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.cpoly_real_smul",
-  "slug": "BookProof_GaussCoreQuadBounds_cpoly_real_smul",
-  "plen": 2,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.gaussInt_coreD_sq_pair",
-  "slug": "BookProof_GaussCoreQuadBounds_gaussInt_coreD_sq_pair",
-  "plen": 9,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_sq",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_weighted_kin_sq",
-  "plen": 16,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_weighted_kin_le",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_weighted_kin_le",
-  "plen": 24,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.eval_cpoly_self_re",
-  "slug": "BookProof_GaussCoreQuadBounds_eval_cpoly_self_re",
-  "plen": 5,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise",
-  "slug": "BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise",
-  "plen": 24,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterGaussCoreQuadBounds",
-  "name": "BookProof.GaussCoreQuadBounds.sum_norm_sq_mul_le_of_pointwise",
-  "slug": "BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise",
-  "plen": 24,
-  "ns": "BookProof.GaussCoreQuadBounds"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_zero",
-  "slug": "BookProof_ChapterH1_phi_zero",
-  "plen": 0,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_zero_apply",
-  "slug": "BookProof_ChapterH1_phi_zero_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_succ_apply",
-  "slug": "BookProof_ChapterH1_phi_succ_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_at_zero",
-  "slug": "BookProof_ChapterH1_phi_at_zero",
-  "plen": 9,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_succ_mul",
-  "slug": "BookProof_ChapterH1_phi_succ_mul",
-  "plen": 52,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.phi_one",
-  "slug": "BookProof_ChapterH1_phi_one",
-  "plen": 1,
-  "ns": "BookProof.ChapterH1"
- },
- {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.psi_resolvent",
-  "slug": "BookProof_ChapterH1_psi_resolvent",
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.contDiff_starobinskyV",
+  "slug": "BookProof_ScalaronEsa_contDiff_starobinskyV",
   "plen": 4,
-  "ns": "BookProof.ChapterH1"
+  "ns": "BookProof.ScalaronEsa"
  },
  {
-  "leaf": "ChapterH1",
-  "name": "BookProof.ChapterH1.resolvent_shift_repr",
-  "slug": "BookProof_ChapterH1_resolvent_shift_repr",
-  "plen": 11,
-  "ns": "BookProof.ChapterH1"
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.starobinskyV_not_hasTemperateGrowth",
+  "slug": "BookProof_ScalaronEsa_starobinskyV_not_hasTemperateGrowth",
+  "plen": 63,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.contDiff_scalaronAlong",
+  "slug": "BookProof_ScalaronEsa_contDiff_scalaronAlong",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.starobinskyV_essentiallySelfAdjoint",
+  "slug": "BookProof_ScalaronEsa_starobinskyV_essentiallySelfAdjoint",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.contDiff_scalaronFullPotential",
+  "slug": "BookProof_ScalaronEsa_contDiff_scalaronFullPotential",
+  "plen": 5,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.scalaronFullPotential_ge",
+  "slug": "BookProof_ScalaronEsa_scalaronFullPotential_ge",
+  "plen": 4,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.scalaronFullPotential_essentiallySelfAdjoint",
+  "slug": "BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.symmetricOn_inclusion",
+  "slug": "BookProof_ScalaronEsa_symmetricOn_inclusion",
+  "plen": 2,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.waveCc_symmetric",
+  "slug": "BookProof_ScalaronEsa_waveCc_symmetric",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_smoothPotential_symmetric",
+  "slug": "BookProof_ScalaronEsa_wave_add_smoothPotential_symmetric",
+  "plen": 5,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_scalaron_symmetric",
+  "slug": "BookProof_ScalaronEsa_wave_add_scalaron_symmetric",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_smoothTruncatedPotential_essentiallySelfAdjoint",
+  "slug": "BookProof_ScalaronEsa_wave_add_smoothTruncatedPotential_essentiallySelfAdjoint",
+  "plen": 14,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_scalaronTruncated_esa",
+  "slug": "BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa",
+  "plen": 2,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_smoothPotential_esa_of_finiteSpeed",
+  "slug": "BookProof_ScalaronEsa_wave_add_smoothPotential_esa_of_finiteSpeed",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.wave_add_scalaron_esa_of_finiteSpeed",
+  "slug": "BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.qgScalaronMode_potential_ge",
+  "slug": "BookProof_ScalaronEsa_qgScalaronMode_potential_ge",
+  "plen": 4,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.qgScalaronMode_symmetric",
+  "slug": "BookProof_ScalaronEsa_qgScalaronMode_symmetric",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.qgScalaronMode_esa",
+  "slug": "BookProof_ScalaronEsa_qgScalaronMode_esa",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.qgScalaronMode_deficiencyTrivialAt",
+  "slug": "BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt",
+  "plen": 1,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterScalaronCoreEsa",
+  "name": "BookProof.ScalaronEsa.qgScalaron_stone_flow",
+  "slug": "BookProof_ScalaronEsa_qgScalaron_stone_flow",
+  "plen": 3,
+  "ns": "BookProof.ScalaronEsa"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.topRestrict_apply",
+  "slug": "BookProof_YangMillsFriedrichsLimit_topRestrict_apply",
+  "plen": 0,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.symmetricOn_top_of_dense",
+  "slug": "BookProof_YangMillsFriedrichsLimit_symmetricOn_top_of_dense",
+  "plen": 24,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.quadForm_top_nonneg_of_dense",
+  "slug": "BookProof_YangMillsFriedrichsLimit_quadForm_top_nonneg_of_dense",
+  "plen": 14,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_of_bounded",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded",
+  "plen": 39,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_nontrivial_example",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_nontrivial_example",
+  "plen": 4,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.not_mem_span_of_repr_ne_zero",
+  "slug": "BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero",
+  "plen": 17,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.mem\u2113p_one_div_succ",
+  "slug": "BookProof_YangMillsFriedrichsLimit_mem\u2113p_one_div_succ",
+  "plen": 17,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_proper_domain_example",
+  "slug": "BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_proper_domain_example",
+  "plen": 19,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.krylov_starProjection_tendsto",
+  "slug": "BookProof_YangMillsFriedrichsLimit_krylov_starProjection_tendsto",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_compression_tendsto",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_compression_tendsto",
+  "plen": 37,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_limit_unique",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_limit_unique",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.sirk_limit_eq_positive_selfadjoint_extension",
+  "slug": "BookProof_YangMillsFriedrichsLimit_sirk_limit_eq_positive_selfadjoint_extension",
+  "plen": 3,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterYangMillsFriedrichsLimit",
+  "name": "BookProof.YangMillsFriedrichsLimit.weyl_friedrichs_bounded",
+  "slug": "BookProof_YangMillsFriedrichsLimit_weyl_friedrichs_bounded",
+  "plen": 4,
+  "ns": "BookProof.YangMillsFriedrichsLimit"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.pderiv_harmPoly",
+  "slug": "BookProof_HermiteQuadraticEsa_pderiv_harmPoly",
+  "plen": 14,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.coreD_harmPoly_mul",
+  "slug": "BookProof_HermiteQuadraticEsa_coreD_harmPoly_mul",
+  "plen": 3,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.coreD_X_mul",
+  "slug": "BookProof_HermiteQuadraticEsa_coreD_X_mul",
+  "plen": 3,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.cpoly_add",
+  "slug": "BookProof_HermiteQuadraticEsa_cpoly_add",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.cpoly_harmPoly",
+  "slug": "BookProof_HermiteQuadraticEsa_cpoly_harmPoly",
+  "plen": 5,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_cross",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_cross",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_self",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_self",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_harm_self",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_harm_self",
+  "plen": 16,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.gaussInt_anticommutator",
+  "slug": "BookProof_HermiteQuadraticEsa_gaussInt_anticommutator",
+  "plen": 42,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.two_re_inner_kin_harm_ge",
+  "slug": "BookProof_HermiteQuadraticEsa_two_re_inner_kin_harm_ge",
+  "plen": 22,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_harmPoly_mul_le",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_harmPoly_mul_le",
+  "plen": 7,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_harmPoly_mul_le",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_of_le_harm",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_of_le_harm",
+  "plen": 10,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_potLp_le_of_le_harm",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_potLp_le_of_le_harm",
+  "plen": 28,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint",
+  "plen": 18,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.hamCore_congr",
+  "slug": "BookProof_HermiteQuadraticEsa_hamCore_congr",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.esa_of_close_to_harmonic",
+  "slug": "BookProof_HermiteQuadraticEsa_esa_of_close_to_harmonic",
+  "plen": 9,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_of_growth_bound",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_of_growth_bound",
+  "plen": 15,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.quadraticGrowth_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_quadraticGrowth_essentiallySelfAdjoint",
+  "plen": 12,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_harmonic_add_linearGrowth_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.scaledHarmonic_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_scaledHarmonic_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.continuous_confW",
+  "slug": "BookProof_HermiteQuadraticEsa_continuous_confW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_one",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_one",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_coord_le_norm",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_coord_le_norm",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_confW_sub_harmW_le",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_confW_sub_harmW_le",
+  "plen": 17,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_confW",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_confW",
+  "plen": 16,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.confV_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint",
+  "plen": 6,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.confV_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_confV_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.continuous_sectorQuadW",
+  "slug": "BookProof_HermiteQuadraticEsa_continuous_sectorQuadW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.norm_sq_two",
+  "slug": "BookProof_HermiteQuadraticEsa_norm_sq_two",
+  "plen": 1,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_coord_zero_le_norm_two",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le",
+  "slug": "BookProof_HermiteQuadraticEsa_abs_sectorQuadW_sub_harmW_le",
+  "plen": 30,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.expBounded_sectorQuadW",
+  "slug": "BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorQuad_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint",
+  "plen": 9,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorQuad_stone_flow",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow",
+  "plen": 2,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.tendsto_starobinskyV_div_sq",
+  "slug": "BookProof_HermiteQuadraticEsa_tendsto_starobinskyV_div_sq",
+  "plen": 29,
+  "ns": "BookProof.HermiteQuadraticEsa"
+ },
+ {
+  "leaf": "ChapterHermiteQuadraticEsa",
+  "name": "BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint",
+  "slug": "BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint",
+  "plen": 4,
+  "ns": "BookProof.HermiteQuadraticEsa"
  }
 ]

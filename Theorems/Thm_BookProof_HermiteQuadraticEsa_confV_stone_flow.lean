@@ -11,6 +11,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_confW
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_confW
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs

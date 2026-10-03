@@ -12,7 +12,7 @@ open scoped ENNReal
 
 
 
-open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

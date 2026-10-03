@@ -32,4 +32,5 @@ noncomputable section
 theorem BookProof.HermiteQuadraticEsa.scaledHarmonic_essentiallySelfAdjoint {lam : ℝ} (h0 : 0 < lam) (h2 : lam < 2)
     (hsc : Continuous fun x : Vd d => lam * harmW x)
     (hsb : ExpBounded fun x : Vd d => lam * harmW x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (hamCore (fun x : Vd d => lam * harmW x) hsc hsb) := by sorry

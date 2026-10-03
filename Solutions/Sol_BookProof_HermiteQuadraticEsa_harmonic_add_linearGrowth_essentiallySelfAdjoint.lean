@@ -23,7 +23,8 @@ theorem solution {V : Vd d → ℝ} {Ccoef B : ℝ}
     (hB : 0 ≤ B)
     (hV : ∀ x, |V x| ≤ Ccoef * ‖x‖ + B)
     (hsc : Continuous fun x => harmW x + V x) (hsb : ExpBounded fun x => harmW x + V x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (hamCore (fun x => harmW x + V x) hsc hsb) := by
 
   refine quadraticGrowth_essentiallySelfAdjoint (A := 0) (Ccoef := Ccoef) (B := B) hsc hsb
     le_rfl (by norm_num) hB fun x => ?_

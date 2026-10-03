@@ -33,4 +33,5 @@ theorem BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfA
     (hB : 0 ≤ B)
     (hV : ∀ x, |V x| ≤ Ccoef * ‖x‖ + B)
     (hsc : Continuous fun x => harmW x + V x) (hsb : ExpBounded fun x => harmW x + V x) :
-    EssentiallySelfAdjointOn (polyGaussCore (d := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (hamCore (fun x => harmW x + V x) hsc hsb) := by sorry

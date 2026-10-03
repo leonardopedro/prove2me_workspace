@@ -839,15 +839,22 @@ def upstream_def_imports(source_text, leaf):
         def_file = f"Def_Chapter{name}.lean"
         if os.path.exists(f"{OUT_DEF}/{def_file}"):
             imports.append(f"import Definitions.Def_Chapter{name}")
-    # Match import BookProof.<Name> (direct, no Chapter prefix)
+    # Match import BookProof.<Name> (direct, no Chapter prefix).
+    #
+    # The bundle for such a module is NOT always Def_Chapter<Name>: ChapterA1b
+    # imports `BookProof.Complexification`, whose bundle is Def_Complexification,
+    # so building Def_ChapterComplexification found nothing and the import was
+    # dropped. The result was `Function expected at Cx ... but this term has type
+    # ?m.3` on a bundle that references Cx 20-odd times. Try both spellings.
     for m in re.finditer(r"^import BookProof\.([A-Z][A-Za-z0-9]*)", source_text, re.M):
         name = m.group(1)
         if name in seen:
             continue
         seen.add(name)
-        def_file = f"Def_Chapter{name}.lean"
-        if os.path.exists(f"{OUT_DEF}/{def_file}"):
-            imports.append(f"import Definitions.Def_Chapter{name}")
+        for cand in (f"Def_Chapter{name}.lean", f"Def_{name}.lean"):
+            if os.path.exists(f"{OUT_DEF}/{cand}"):
+                imports.append(f"import Definitions.{cand[:-len('.lean')]}")
+                break
     return imports
 
 

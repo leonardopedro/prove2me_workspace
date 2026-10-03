@@ -301,6 +301,70 @@ The `Invalid field \`mem\`` pair are genuine Lean errors in the extracted statem
 (a hypothesis is a conjunction, and the generator projects a field that isn't there).
 Those need statement surgery, not tooling.
 
+### §2.10c The def backlog splits cleanly: 61 tractable, 8 blocked
+
+| Count | Condition |
+| ---: | :--- |
+| **61** | no unpublished-theorem import — should publish as-is |
+| 8 | cite a theorem that is not published yet (§5a: embed the helper's proof) |
+
+Since `../timepiece331` compiles and has no `sorry` (§2.1), the 61 need no
+mathematics — only a correct stub and a local compile gate. The 8 are the genuine
+§5a work: a def bundle may not cite an unproved theorem, so the helper's *proof*
+has to go inside the bundle.
+
+The 8, and what each waits on:
+
+| Def bundle | waits on |
+| :--- | :--- |
+| `ChapterScalaronOuterFockFL` | `ScalaronFiberFL_WallPot_core_le_do` |
+| `ChapterFermionFock` | `NavierStokesFlow_lpSingle_mem_lpFi…` |
+| `ChapterFriedrichsCanonical` | `FriedrichsExtension_FormDom_friedr…` |
+| `ChapterFriedrichsSquareFactorization` | `EsaClosure_clGraph_isClosed` |
+| `ChapterNavierStokesAffineBlockEsa` | `NavierStokesFlow_AffineFiber_hFun…` |
+| (3 more) | — |
+
+**Attack order: the 61 first.** They are the largest single block in the whole
+backlog and they need no new mathematics. The 8 are then unblocked in dependency
+order as their cited theorems get proved.
+
+### §2.8e THE def-bundle blocker: a lemma can be BOTH a node and a dependency
+
+`build_def_file` keeps `defmat | embedded`. `classify` computes `embedded` as the
+closure of `defmat` over **`vdeps` only**, and puts every other public theorem in
+`nodes` (i.e. a separate problem to publish). So a lemma that a *def bundle's own
+proof* needs can end up in `nodes`, be published separately, and be **omitted from
+the bundle** — leaving `simp` in that bundle with nothing to fire on.
+
+Worked example, `Complexification`:
+
+```
+add_re  kind=theorem is_instance=False vdeps=3
+defmat=19 embedded=6 nodes=28
+add_re: in nodes=True  in embedded=False
+```
+
+The bundle compiles in `../timepiece331` because everything is in scope. The
+generated `Def_Complexification.lean` drops `add_re add_im zero_re zero_im neg_re
+neg_im sub_re sub_im …` and then fails 12× with `simp made no progress`, because
+`simp` has no projection lemma to use. **896 declarations are dropped this way
+across the 55 candidate bundles.**
+
+Two things must both be true, and the plan previously assumed only the first:
+
+1. the lemma should be a publishable node (it is a real theorem), **and**
+2. the bundle's own proofs must still see it.
+
+So a node that a kept declaration's proof depends on must ALSO be embedded. The
+closure in `classify` has to follow the *proof* dependencies of what it keeps, not
+only the value dependencies of `defmat`. Note the graph exposes only
+`typeDeps`/`valueDeps` — a proof-body dependency (`simp` firing on `add_re`) is in
+NEITHER, which is why this needs the source text, not the graph.
+
+Diagnostic that finds it cheaply: a run of 3+ consecutive blank lines inside a
+bundle is where a dropped declaration used to be. 596 bundles have at least one
+such hole; harmless where nothing later depends on it, fatal where it is.
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

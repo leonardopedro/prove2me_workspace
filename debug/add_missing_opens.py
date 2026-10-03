@@ -22,9 +22,11 @@ import sys
 WS = os.environ.get("PROVE2ME_WS") or os.getcwd()
 MIRROR = os.environ.get("DEF_MIRROR", "/tmp/published_mirror")
 # Namespaces that carry notation rather than declarations; an `Unknown identifier`
-# for one of these is a missing `open`, not a missing import.
+# for one of these is a missing `open`, not a missing import. Extended for def
+# bundles: `Function expected at Cx` is the same shape (a notation/function applied
+# with its defining namespace unopened), not a missing import.
 NOTATION = {"Tendsto", "Memℓp", "HasFiniteDimensionalSupport", "ENNReal", "Real",
-            "Finset", "WithLp", "ofScientific"}
+            "Finset", "WithLp", "ofScientific", "Cx", "Memℓp", "MeasureTheory"}
 
 
 def lake(cmd):
@@ -59,7 +61,9 @@ def main(argv):
     args = [a for a in argv if not a.startswith("-")]
     if "--from-file" in argv:
         args = [l.strip() for l in open(args[0]) if l.strip()]
-    base = f"{WS}/Theorems/Thm_"
+    kind = os.environ.get("OPEN_TARGET", "thm")
+    base = (f"{WS}/Theorems/Thm_" if kind == "thm"
+            else f"{WS}/Definitions/Def_")
     fixed = []
     for slug in args:
         f = base + slug + ".lean"

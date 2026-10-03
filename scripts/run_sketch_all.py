@@ -22,10 +22,28 @@ TIERS = json.load(open(f"{WS}/state/chapter_tiers.json"))
 NPROC = int(sys.argv[1]) if len(sys.argv) > 1 else 6
 
 os.makedirs(LOG, exist_ok=True)
+def _fresh(leaf):
+    """A cache counts as done only if it is NEWER than its source.
+
+    The old test was "file exists and is non-empty", which silently accepted
+    caches older than the chapter they describe. 361 of 777 were stale, and a
+    stale cache carries byte offsets that no longer index the source at all --
+    `BlockText.slice` then returns '' and the generated stub is a bare
+    `:= by sorry`, or a declaration spliced onto the wrong text. That is the
+    root cause of every empty/mangled stub I have been fixing one at a time,
+    and it is invisible from any single file.
+    """
+    f = os.path.join(SKETCH, f"sketch_{leaf}.jsonl")
+    src = f"{PROJ}/BookProof/{leaf}.lean"
+    if not (os.path.exists(f) and os.path.getsize(f) > 0 and os.path.exists(src)):
+        return False
+    return os.path.getmtime(f) >= os.path.getmtime(src)
+
+
 done = set(
     f[len("sketch_"):-len(".jsonl")]
     for f in os.listdir(SKETCH)
-    if f.startswith("sketch_") and f.endswith(".jsonl") and os.path.getsize(os.path.join(SKETCH, f)) > 0
+    if f.startswith("sketch_") and f.endswith(".jsonl") and _fresh(f[len("sketch_"):-len(".jsonl")])
 )
 
 jobs = []

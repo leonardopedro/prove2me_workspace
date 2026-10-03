@@ -80,3 +80,11 @@ ChapterQgOuterFockEllipticFL	True	0	505
 ChapterQgOneParticleCcEsa	True	0	2760
 ChapterRoadmapAudit	True	0	2152
 ChapterQgOuterFockFarisLavine	True	0	1013
+ChapterQgOuterFockFlow	TIMEOUT	-1	-1
+ChapterQgTimeIndependentFlow	TIMEOUT	-1	-1
+ChapterQgPhysicalSectorIdentity	TIMEOUT	-1	-1
+ChapterQuantumGravity3DGauge	TIMEOUT	-1	-1
+ChapterScalaronEdge	TIMEOUT	-1	-1
+ChapterQymTimeIndependentFlow	TIMEOUT	-1	-1
+ChapterQuantumGravityFock	TIMEOUT	-1	-1
+ChapterQuantumGravityBrstCharge	TIMEOUT	-1	-1

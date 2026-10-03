@@ -161,6 +161,35 @@ unpublishable**, which is why they were invisible as "failures":
    `/home/leo/...` on another machine — silently unresolvable, not an error.
    `WS`/`PROJ` in `wave_generate.py` had the same defect.
 
+### §2.8b THE ROOT CAUSE: stale sketch caches (found last, explains everything above)
+
+Every mangled/empty stub in §2.8 traces to **one** cause, and it is not per-file.
+
+`state/sketch/sketch_<Chapter>.jsonl` holds **byte offsets** into
+`../timepiece331/BookProof/<Chapter>.lean`. **361 of 777 caches are OLDER than their
+source** (e.g. `ChapterBddBelowFiberSumEsa`: cache Sep 15, source Sep 21). A stale
+cache's offsets no longer index the file at all, so `BlockText.slice` returns `''`
+and the emitted stub is a bare `:= by sorry` — no `theorem`, or a declaration
+spliced onto unrelated text.
+
+This is why §2.4's first-error triage kept finding *new* instances of the same
+shape: I was treating a systemic data-staleness bug as a sequence of one-off
+parser bugs. The parser fixes in §2.8 are all correct and all necessary; none of
+them is sufficient on its own.
+
+**Re-extraction is currently NOT viable.** `scripts/run_sketch_all.py` now treats a
+stale cache as not-done (it previously skipped on "exists and non-empty", which is
+how 361 got stale unnoticed), but re-running it over the 354 it selects produces
+mostly `False`: `lake env lean --run extract_sketch_info.lean` **exceeds the 900s
+timeout** on chapters that are not tiny (`ChapterBaryonAsymmetry` returns rc=124
+with empty stdout). So the fix is to make the generator **resolve declarations by
+name when offsets are out of range**, not to wait on the extractor.
+
+Corollary for triage: when a stub looks impossible (`unexpected token`, an
+identifier from an unrelated chapter), **check `os.path.getmtime(cache)` against the
+source before reading the stub.** A stale cache explains it without any further
+hunting.
+
 ### §2.9 Rejected as unpublishable, with reasons
 
 - **`--retry-failed` exists; use it.** The loop treats `attempts >= MAX_ATTEMPTS` as
@@ -184,6 +213,17 @@ unpublishable**, which is why they were invisible as "failures":
 Published this run: 70 theorem problems + 4 solutions, **zero failures** on every
 locally-gated batch. 381 def bundles published. Zero failures anywhere is the direct
 payoff of gating locally first.
+
+### §2.10a Platform inventory (2026-10-03, from `upload_pipeline.py --check`)
+
+797 definition jobs — **381 PUBLISHED / 416 FAILED**.
+5932 problem jobs — **1850 PUBLISHED / 4082 FAILED**.
+
+The 416 failed definition jobs are the §2.11 item-3 backlog; most failed on their
+first attempt for reasons now understood (cited an unproved theorem, or named an
+identifier no published bundle carries). They are re-generatable and mostly
+re-publishable via §5a. The 4082 failed problem jobs are overwhelmingly the parked
+classes in §2.7/§2.9, not real mathematics.
 
 ### §2.11 Execution order from here
 

@@ -546,18 +546,34 @@ def the_statement(bt, d):
     # So: if there is no declaration in the slice, the offsets are pointing at
     # the docstring rather than the `theorem` keyword. Re-slice from the keyword.
     frag = bt.slice(d.s, d.vs)
+    # Stale offsets fail two ways, and both must be caught here. When they run past
+    # EOF the slice is empty; but they can also land MID-TEXT -- Chapter
+    # FriedrichsExtension's stale offset 28883 slices to 'tion is not vacuous: a
+    # genuinely unbounded op', i.e. non-empty and useless. A slice that does not
+    # begin with a declaration is therefore just as suspect as an empty one.
+    lead0 = re.sub(r"^/--(?:.*?)-/\s*", "", frag, flags=re.S)
+    if not frag.strip() or not DECL_KEYWORD.match(lead0):
+        alt = resolve_by_name(bt, d)
+        if alt is not None and DECL_KEYWORD.match(
+                re.sub(r"^/--(?:.*?)-/\s*", "", alt[0], flags=re.S)):
+            return alt[0]
     # The keyword has to be the FIRST thing in the slice, not merely present:
     # a docstring's prose can contain the word "theorem", and matching inside it
     # made this guard silently pass. Only a match at position 0 means the
     # offsets really do point at the declaration.
-    if not DECL_KEYWORD.match(frag):
+    # A span that begins with its own `/-- ... -/` docstring is the NORMAL case,
+    # not the broken one. Testing position 0 with DECL_KEYWORD alone sent every
+    # documented declaration down the re-slice path, where the search ran past
+    # the slice and returned None -- so the statement came out empty and the stub
+    # was just `:= by sorry`. See Thm_..._qgFiberSum_nonneg_form.
+    lead = re.sub(r"^/--(?:.*?)-/\s*", "", frag, flags=re.S)
+    if not DECL_KEYWORD.match(lead):
         # Offsets point at the docstring, not the `theorem` keyword. Find the
         # keyword in the wider source and re-slice from there, so the leading
         # fragment is dropped instead of being emitted as the first line.
         # d.vs + 4000 can run past the end of the file, and slice() indexes
         # rather than clamping.
-        m = DECL_KEYWORD.search(bt.slice(d.s, d.vs + 4000)
-                                if bt.slice(d.s, d.vs + 4000) else bt.text)
+        m = DECL_KEYWORD.search(bt.slice(d.s, max(bt.b2c)))
         if m is None:
             return frag
         frag = bt.slice(d.s + m.start(), d.vs)
@@ -595,6 +611,57 @@ def the_statement(bt, d):
     return frag
 
 
+def resolve_by_name(bt, d):
+    """Re-derive a declaration's span from the source TEXT when offsets are stale.
+
+    A sketch cache older than its chapter records byte offsets that no longer index
+    the file, so `bt.slice(d.s, d.vs)` returns '' and the stub comes out as a bare
+    `:= by sorry` (PIPELINE_PLAN 2.8b: 361 of 777 caches are stale). Re-extraction
+    is not available -- `extract_sketch_info.lean` blows its 900s timeout on most of
+    those chapters -- so locate the declaration textually instead.
+
+    `d.name_text` and the graph's `startLine` are both independent of the byte
+    offsets, so they survive: start at the recorded line (with slack either way in
+    case that drifted too) and take the first line matching the declaration, then
+    span to the next top-level declaration.
+
+    Returns (statement, proof), or None when the name cannot be located.
+    """
+    name = getattr(d, "name_text", None)
+    if not name:
+        return None
+    lines = bt.text.split("\n")
+    pat = re.compile(r"^\s*(?:@\[[^\]]*\][ \t]*)?"
+                     r"(?:(?:private|protected|noncomputable|unsafe|partial)\s+)*"
+                     r"(?:theorem|lemma|def|abbrev)\s+" + re.escape(name) + r"\b")
+    start = None
+    base = max(0, (getattr(d, "sl", 1) or 1) - 1)
+    # `startLine` may point at the declaration's DOCSTRING rather than its keyword
+    # (ChapterFriedrichsExtension: startLine 586, `theorem` on 592), so the forward
+    # window has to cover a multi-line docstring. 60 covers every docstring seen;
+    # the pattern requires the exact name, so a wide window costs nothing.
+    order = [base - k for k in range(0, 8)] + [base + k for k in range(1, 60)]
+    for cand in order + list(range(len(lines))):
+        if 0 <= cand < len(lines) and pat.match(lines[cand]):
+            start = cand
+            break
+    if start is None:
+        return None
+    end = len(lines)
+    for j in range(start + 1, len(lines)):
+        if re.match(r"^\s*(?:@\[|private\s|protected\s|noncomputable\s|theorem\s|"
+                    r"lemma\s|def\s|abbrev\s|instance\s|structure\s|"
+                    r"end\b|section\b|namespace\b|/-)", lines[j]):
+            end = j
+            break
+    body = "\n".join(lines[start:end]).rstrip()
+    km = DECL_KEYWORD.match(body)
+    cut = find_term_as(body, km.end()) if km else None
+    if cut is None:
+        return body, ""
+    return body[:cut].rstrip(), body[cut + 2:].strip()
+
+
 def the_proof(bt, d):
     """Return (body, mode) where mode is 'tactic' when the source proof starts
     with `by` (a tactic block) and 'term' when it is a plain term (`:= rfl`,
@@ -602,6 +669,11 @@ def the_proof(bt, d):
     indentation; term bodies are emitted directly after `:=` (never under a
     `by` block, which cannot contain `⟨…⟩` constructor syntax)."""
     frag = bt.slice(d.vs, d.e)
+    if not frag.strip():
+        alt = resolve_by_name(bt, d)
+        frag = alt[1] if alt is not None else frag
+    if frag.strip() and not re.match(r"^\s*(?:by\b|\S)", frag):
+        pass
     frag = re.sub(r"^\s*:=\s*", "", frag)
     if re.match(r"^\s*by\b", frag):
         return re.sub(r"^\s*by\b", "", frag), "tactic"

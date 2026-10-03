@@ -4,7 +4,7 @@ import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterUnboundedPosition
 
 set_option maxHeartbeats 1000000 in
-open scoped ENNReal InnerProductSpace
+open scoped ENNReal InnerProductSpace lp
 
 namespace BookProof.ChapterUnboundedPosition
 

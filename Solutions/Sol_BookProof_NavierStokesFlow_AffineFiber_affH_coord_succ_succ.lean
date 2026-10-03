@@ -16,6 +16,7 @@ set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterNavierStokesShiftHamiltonian
 import BookProof.ChapterNavierStokesHermiteFarisLavine
+open scoped lp
 
 theorem solution (H₁ H₂ N : D →ₗ[ℂ] F) (x : D) :
     commForm (H₁ + H₂) N x = commForm H₁ N x + commForm H₂ N x := by

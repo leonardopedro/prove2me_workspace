@@ -21,6 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D :=
+theorem solution (Φ : CoreRep 84 D) (j k : Fin 84) (x : D) :
+    qgCoord Φ j (qgMom Φ k x) - qgMom Φ k (qgCoord Φ j x)
+      = (if j = k then Complex.I else 0) • x :=
   pace (F.3). -/
   def qgMom (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D :=

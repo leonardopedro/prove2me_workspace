@@ -34,8 +34,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-set_option maxHeartbeats 4000000 in
--- The transport arguments unfold operators on a submodule of `L²(ℝ³)` through several
--- linear equivalences, so the default heartbeat budget is not enough.
 theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_canH :
     Intertwined (canH A c) (nsDiffH A (fun j => Real.sqrt 2 * c j)) := by sorry

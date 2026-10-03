@@ -9,4 +9,13 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-nPMF_apply (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 1) (z : ℤ)  := 
+theorem solution (v : X → LinfZ) (t : ℝ) (psi : X → L2Z)
+    (hpsi : ∀ x, ‖psi x‖ = 1) (x : X) :
+    (∑' z : ℤ, bornPMF (v x) t (psi x) (hpsi x) z) = 1 ∧
+      ∀ B : Finset ℤ,
+        ∑ z ∈ B, bornPMF (v x) t (psi x) (hpsi x) z
+          = ENNReal.ofReal (bornRecover (v x) t (psi x) B) := by
+
+  refine ⟨(bornPMF (v x) t (psi x) (hpsi x)).tsum_coe, fun B => ?_⟩
+  rw [bornRecover, ENNReal.ofReal_sum_of_nonneg (fun _ _ => by positivity)]
+  exact Finset.sum_congr rfl fun z _ => bornPMF_apply _ _ _ _ z

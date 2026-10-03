@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
+open scoped lp
 open BookProof.HermiteGalerkin
 
 

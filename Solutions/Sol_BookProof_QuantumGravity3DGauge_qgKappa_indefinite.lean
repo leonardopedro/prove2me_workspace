@@ -21,7 +21,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-theorem solution : (∃ j, 0 < qgKappa j) ∧ ∃ j, qgKappa j < 0 :=
+theorem solution (j : Fin 84) : 0 ≤ qgKappaElliptic j :=
   appa, hj]
   
   /-- **The signature is

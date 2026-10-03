@@ -26,4 +26,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d 84 := by sorry
+theorem BookProof.QuantumGravity3DGauge.qg3D_apply (Φ : CoreRep 84 D) : SymmetricOn D (qg3DHamiltonian Φ) := by sorry

@@ -17,10 +17,10 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
-    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
-    signedOp kappa pi Bf
-      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf :=
+theorem solution {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
+    (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (c : ℂ)
+    (h : ∀ p, S (T p) - T (S p) = c • p) (x : D) :
+    Φ.op S (Φ.op T x) - Φ.op T (Φ.op S x) = c • x :=
   ine Finset.sum_congr rfl fun i _ => ?_
     have hsq : (Real.sqrt (kappa i)) * (Real.sqrt (kappa i)) = kappa i :=
       Real.mul_self_sqrt (hk i)

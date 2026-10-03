@@ -8,7 +8,4 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
-Complex.conj_ofReal]
-  ring
-
-theorem BookProof.ChapterContinuityUnitaryInfinite.velocityOp_isSelfAdjoint (v : LinfZ) : IsSelfAdjoint (velocityOp v) := by sorry
+noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z := by sorry

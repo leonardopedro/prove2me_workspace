@@ -27,11 +27,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-4 :=
-  signedOp qgKappa (qgMom Φ) (torsionOps Φ)
-
 theorem BookProof.QuantumGravity3DGauge.qg3D_symmetricOn (Φ : CoreRep 84 D) (x : D) :
-    qg3DHamiltonian Φ x
-      = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ j, ((qgKappa j : ℝ) : ℂ) • ((qgMom Φ j (qgMom Φ j x) : D) : L2d 84))
-            + ∑ m, ((torsionOps Φ m (torsionOps Φ m x) : D) : L2d 84)) := by sorry
+    quadForm (qg3DHamiltonian Φ) x
+      = 1 / 2 * (∑ j, qgKappa j * ‖((qgMom Φ j x : D) : L2d 84)‖ ^ 2)
+        + 1 / 2 * ∑ m, ‖((torsionOps Φ m x : D) : L2d 84)‖ ^ 2 := by sorry

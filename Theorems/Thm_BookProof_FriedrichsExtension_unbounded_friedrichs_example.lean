@@ -21,4 +21,8 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-tion is not vacuous: a genuinely unbounded op := by sorry
+theorem BookProof.FriedrichsExtension.unbounded_friedrichs_example :
+    (∃ (Dom : Submodule ℂ (ℓ²(ℕ, ℂ))) (A : Dom →ₗ[ℂ] ℓ²(ℕ, ℂ)),
+        IsPositiveSelfAdjointExtension ell2ExampleMatrix A) ∧
+      ∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
+        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖ := by sorry

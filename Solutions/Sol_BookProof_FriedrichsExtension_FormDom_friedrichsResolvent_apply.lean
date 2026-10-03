@@ -17,7 +17,5 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-drichsResolvent P u = formExt P (formRiesz P u) := rfl
-
 theorem solution (P : PosSymOp F) (u v : F) :
     (inner ℂ u (friedrichsResolvent P v) : ℂ) = inner ℂ (formRiesz P u) (formRiesz P v) := P v) : ℂ) = inner ℂ (formRiesz P u) (formRiesz P v

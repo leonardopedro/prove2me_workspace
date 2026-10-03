@@ -34,6 +34,4 @@ theorem solution (hA : A 0 0 ≠ 0) (K : ℝ) :
   refine ⟨embedCore x, ?_, ?_⟩
   · rw [embedCore_coe, velUnitary.norm_map, hx1]
   · have h := intertwined_canH A (fun j => c j / Real.sqrt 2) x
-    rw [hc] at h
-    rw [h, embedCore_coe, velUnitary.norm_map]
-    exact hx2
+    rw [hc] at

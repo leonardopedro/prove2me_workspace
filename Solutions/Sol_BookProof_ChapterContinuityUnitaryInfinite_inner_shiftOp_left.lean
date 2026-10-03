@@ -4,14 +4,8 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterContinuityUnitaryInfinite
 
 set_option maxHeartbeats 1000000 in
-open scoped ENNReal InnerProductSpace
-
-namespace BookProof.ChapterContinuityUnitaryInfinite
-
-/-! ## The lattice Hilbert space and the `ℓ^∞` velocity fields -/
-
-/-- The infinite lattice Hilbert space `ℓ²(ℤ)`. -/
-noncomputable abbrev L2Z :=
+theorem solution (m : ℤ) (f g : L2Z) :
+    ⟪shiftOp m f, g⟫_ℂ = ⟪f, shiftOp (-m) g⟫_ℂ :=
   iftOp (-m) g⟫_ℂ := by
     have h := (shiftEquiv m).inner_map_map f (shiftLin (-m) g)
     have hg : shiftEquiv m (shiftLin (-m) g) = g := by

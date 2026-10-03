@@ -19,4 +19,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
- := by sorry
+theorem BookProof.HashimotoShiftInvert.exists_isShiftInvert {A : Dom →ₗ[ℂ] F} (hpos : ∀ x : Dom, 0 ≤ quadForm A x)
+    {γ : ℝ} (hγ : 0 < γ) (hsurj : Function.Surjective (shiftMap A γ)) :
+    ∃ R : F →L[ℂ] F, IsShiftInvert A γ R := by sorry

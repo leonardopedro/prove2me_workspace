@@ -18,8 +18,10 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-def signedOp {n m : ℕ} (kappa : Fin n → ℝ) (pi : Fin n → D →ₗ[ℂ] D)
-    (Bf : Fin m → D →ₗ[ℂ] D) : D →ₗ[ℂ] F :=
+theorem solution {n m : ℕ} {kappa : Fin n → ℝ} {pi : Fin n → D →ₗ[ℂ] D}
+    {Bf : Fin m → D →ₗ[ℂ] D} (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
+    SymmetricOn D (signedOp kappa pi Bf) :=
   import Mathlib
   import BookProof.ChapterYangMillsHermite
   import BookProof.ChapterQuantumGravityDensitized

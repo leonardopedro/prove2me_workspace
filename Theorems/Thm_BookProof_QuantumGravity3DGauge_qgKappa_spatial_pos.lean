@@ -24,4 +24,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-def qgKappa (j : Fin 84) : ℝ := by sorry
+def qgKappaElliptic (_j : Fin 84) : ℝ := by sorry

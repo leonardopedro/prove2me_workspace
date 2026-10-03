@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le
+open scoped lp
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 

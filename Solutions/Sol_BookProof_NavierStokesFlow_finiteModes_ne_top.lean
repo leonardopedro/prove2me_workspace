@@ -6,7 +6,7 @@ open BookProof.NavierStokesFlow
 
 
 
-open scoped Matrix
+open scoped Matrix lp
 
 
 

@@ -16,6 +16,7 @@ variable (P : PairShift ι)
 import Mathlib
 import BookProof.ChapterNavierStokesShiftHamiltonian
 import BookProof.ChapterNavierStokesHermiteFarisLavine
+open scoped lp
 
 theorem BookProof.NavierStokesFlow.AffineFiber.affH_coord_succ_succ (H₁ H₂ N : D →ₗ[ℂ] F) (x : D) :
     commForm (H₁ + H₂) N x = commForm H₁ N x + commForm H₂ N x := by

@@ -16,6 +16,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-mOp F} (x : FormDom P) : incl P x = toAmbient x := rfl
-
-theorem solution (P : PosSymOp F) : ‖incl P‖ ≤ 1 := 
+theorem solution (P : PosSymOp F) : ‖incl P‖ ≤ 1 := LinearMap.mkContinuous_norm_le _ zero_le_one _

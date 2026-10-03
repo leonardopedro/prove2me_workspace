@@ -8,11 +8,8 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-1 ∧
-      continuityUnitary v t * star (continuityUnitary v t) = 1 :=
-  exp_smul_I_unitary _ (continuityHamiltonian_isSelfAdjoint v) t
-
-theorem solution (v : LinfZ) : continuityUnitary v 0 = 1 :=
+theorem solution (v : LinfZ) (s t : ℝ) :
+    continuityUnitary v (s + t) = continuityUnitary v s * continuityUnitary v t :=
    v 0 = 1 := by
     simp [continuityUnitary]
   

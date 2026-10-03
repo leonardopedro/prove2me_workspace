@@ -18,8 +18,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-mExt, UniformSpace.Completion.coe_toComplL] using this
-
 theorem solution (P : PosSymOp F) : ‖formExt P‖ ≤ 1 :=
   orm_formExt_le (P : PosSymOp F) : ‖formExt P‖ ≤ 1 := by
     have h : ‖(incl P).extend (UniformSpace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P))‖

@@ -29,5 +29,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.torsionOps_symmetricOn (mu nu a : Fin 4) :
-    torsionPoly mu nu a = -torsionPoly nu mu a := by sorry
+def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d 84 := by sorry

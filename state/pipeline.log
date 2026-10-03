@@ -209654,3 +209654,54 @@ inst✝¹ : NormedA)
 13:20:58 thm:BookProof_ScalaronEsa_wave_add_scalaron_symmetric: accepted, waiting on the compiler
 13:20:58 submitting thm:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint (attempt 1)
 13:21:11 thm:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:32:06 thm:BookProof_HermiteQuadraticEsa_sectorQuad_stone_flow: DONE
+13:32:33 thm:BookProof_ScalaronEsa_wave_add_scalaron_esa_of_finiteSpeed: DONE
+13:32:42 thm:BookProof_ChapterH9_sirk_numRange_krylov: DONE
+13:33:34 thm:BookProof_ScalaronEsa_wave_add_scalaron_symmetric: DONE
+13:33:35 thm:BookProof_ScalaronEsa_scalaronFullPotential_essentiallySelfAdjoint: DONE
+13:33:35 summary: 1786 done, 180 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+13:33:35 chunk: 5 item(s) resolved in 832s
+13:40:19 sync: read 797 definition publish job(s)
+13:40:42 sync: read 5932 problem publish job(s)
+13:40:46 sync: checked 25 pending solution(s), 0 already Proved
+13:40:50 sync: checked 50 pending solution(s), 3 already Proved
+13:40:53 sync: checked 75 pending solution(s), 4 already Proved
+13:40:55 sync: checked 100 pending solution(s), 4 already Proved
+13:40:55 sync: checked 125 pending solution(s), 4 already Proved
+13:40:55 sync: checked 150 pending solution(s), 4 already Proved
+13:40:55 sync: checked 175 pending solution(s), 4 already Proved
+13:40:55 sync: checked 200 pending solution(s), 4 already Proved
+13:40:55 sync: checked 225 pending solution(s), 4 already Proved
+13:40:55 sync: marked 0 already-published item(s) and 4 already-proved solution(s) done
+15:02:59 retry-failed: re-armed 0 item(s)
+15:02:59 submitting thm:BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint (attempt 1)
+15:03:05 thm:BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint: accepted, waiting on the compiler
+15:03:05 submitting thm:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded (attempt 1)
+15:03:45 thm:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded: accepted, waiting on the compiler
+15:03:45 submitting thm:BookProof_FriedrichsExtension_FormDom_dom_le_range (attempt 1)
+15:04:05 thm:BookProof_FriedrichsExtension_FormDom_dom_le_range: accepted, waiting on the compiler
+15:04:05 submitting thm:BookProof_FriedrichsExtension_unbounded_friedrichs_example (attempt 1)
+15:04:15 thm:BookProof_FriedrichsExtension_unbounded_friedrichs_example: accepted, waiting on the compiler
+15:04:15 submitting thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_esa (attempt 1)
+15:04:22 thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_esa: accepted, waiting on the compiler
+15:04:22 submitting thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form (attempt 1)
+15:04:29 thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form: accepted, waiting on the compiler
+15:14:27 thm:BookProof_HermiteQuadraticEsa_sectorHarmonicApprox_essentiallySelfAdjoint: DONE
+15:14:37 thm:BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded: DONE
+15:15:13 thm:BookProof_FriedrichsExtension_FormDom_dom_le_range: DONE
+15:15:41 thm:BookProof_FriedrichsExtension_unbounded_friedrichs_example: DONE
+15:16:07 thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form: DONE
+15:16:15 thm:BookProof_BddBelowFiberSumEsa_qgFiberSum_esa: DONE
+15:16:15 summary: 1792 done, 174 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+15:16:15 chunk: 6 item(s) resolved in 796s
+15:23:34 sync: read 797 definition publish job(s)
+15:23:55 sync: read 5938 problem publish job(s)
+15:23:58 sync: checked 25 pending solution(s), 4 already Proved
+15:24:02 sync: checked 50 pending solution(s), 6 already Proved
+15:24:05 sync: checked 75 pending solution(s), 7 already Proved
+15:24:07 sync: checked 100 pending solution(s), 8 already Proved
+15:24:07 sync: checked 125 pending solution(s), 8 already Proved
+15:24:07 sync: checked 150 pending solution(s), 8 already Proved
+15:24:07 sync: checked 175 pending solution(s), 8 already Proved
+15:24:07 sync: checked 200 pending solution(s), 8 already Proved
+15:24:07 sync: marked 0 already-published item(s) and 8 already-proved solution(s) done

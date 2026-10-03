@@ -20,5 +20,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-/-- The coordinate index of the spacetime coordinate `x^μ`. -/
-def idxX (mu : Fin 4) : Fin 84 := by sorry
+theorem BookProof.QuantumGravity3DGauge.idxX_injective : Function.Injective (fun q : Fin 4 × Fin 4 => idxE q.1 q.2) := by sorry

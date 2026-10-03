@@ -29,4 +29,6 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-def qgCoord (Φ : CoreRep 84 D) (j : Fin 84) : D →ₗ[ℂ] D := by sorry
+theorem BookProof.QuantumGravity3DGauge.qgCoord_symmetricOn (Φ : CoreRep 84 D) (j k : Fin 84) (x : D) :
+    qgCoord Φ j (qgMom Φ k x) - qgMom Φ k (qgCoord Φ j x)
+      = (if j = k then Complex.I else 0) • x := by sorry

@@ -8,8 +8,6 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
-Z) (t : ℝ) (psi : L2Z) (B : Finset ℤ) :
-    0 ≤ bornRecover v t psi B :=
-  Finset.sum_nonneg fun _ _ => by positivity
-
-theorem BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg (v : LinfZ) (t : ℝ) (psi : L2Z) : bornRecover v t psi ∅ = 0 := by sorry
+theorem BookProof.ChapterContinuityUnitaryInfinite.bornRecover_nonneg (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ}
+    (h : Disjoint B C) :
+    bornRecover v t psi (B ∪ C) = bornRecover v t psi B + bornRecover v t psi C := by sorry

@@ -24,8 +24,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-al = nu'.val := by omega
-  have ha : a.val = a'.val := by omega
-  simp [Prod.ext_iff, Fin.ext_iff, hmu, hnu, ha]
-
-theorem BookProof.QuantumGravity3DGauge.ccr_poly (mu nu a : Fin 4) : idxX mu ≠ idxE nu a := by sorry
+theorem BookProof.QuantumGravity3DGauge.ccr_poly (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulOp (X j) (momOp k p) - momOp k (mulOp (X j) p) = (if j = k then Complex.I else 0) • p := by sorry

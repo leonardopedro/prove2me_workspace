@@ -7,7 +7,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterF7
 open BookProof.ChapterUnboundedPosition
 
-open scoped ENNReal InnerProductSpace
+open scoped ENNReal InnerProductSpace lp
 
 namespace BookProof.ChapterUnboundedPosition
 

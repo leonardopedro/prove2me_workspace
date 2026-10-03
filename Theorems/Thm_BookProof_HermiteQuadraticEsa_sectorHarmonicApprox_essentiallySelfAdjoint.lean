@@ -11,6 +11,8 @@ import Definitions.Def_ChapterHermiteQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteQuadraticEsa
@@ -27,4 +29,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 noncomputable section
 
 
- := by sorry
+theorem BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint (M alpha : ℝ) (hM : M ≠ 0)
+    (ha0 : 0 < alpha) (ha2 : alpha < 1 / 2) (hMa : M ^ 2 < 12 * alpha) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 2))
+      (hamCore (sectorQuadW M alpha (M ^ 2 / (24 * alpha)))
+        (continuous_sectorQuadW M alpha (M ^ 2 / (24 * alpha)))
+        (expBounded_sectorQuadW M alpha (M ^ 2 / (24 * alpha)))) := by sorry

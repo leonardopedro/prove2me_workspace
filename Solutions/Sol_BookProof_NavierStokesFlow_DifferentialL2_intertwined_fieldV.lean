@@ -26,9 +26,6 @@ variable {d : ℕ}
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- The transport arguments unfold operators on a submodule of `L²(ℝ³)` through several
--- linear equivalences, so the default heartbeat budget is not enough.
 theorem solution (i : Fin 3) :
     Intertwined (fieldV A c i)
       (((1 / Real.sqrt 2 : ℝ) : ℂ) • fieldOp A (fun j => Real.sqrt 2 * c j) i) := by

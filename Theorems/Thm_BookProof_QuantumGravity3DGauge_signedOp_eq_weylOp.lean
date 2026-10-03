@@ -24,6 +24,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.signedOp_eq_weylOp {T : D →ₗ[ℂ] D} (r : ℝ)
-    (hT : SymmetricOn D (D.subtype.comp T)) :
-    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • T)) := by sorry
+theorem BookProof.QuantumGravity3DGauge.signedOp_eq_weylOp {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
+    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
+    signedOp kappa pi Bf
+      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by sorry

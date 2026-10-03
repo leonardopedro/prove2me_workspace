@@ -17,4 +17,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 set_option maxHeartbeats 1000000 in
 theorem solution {T : D →ₗ[ℂ] D}
     (hT : SymmetricOn D (D.subtype.comp T)) (x : D) :
-    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := 
+    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by
+
+  have h := hT x (T x)
+  simp only [LinearMap.comp_apply, Submodule.subtype_apply] at h
+  rw [← h]
+  simp

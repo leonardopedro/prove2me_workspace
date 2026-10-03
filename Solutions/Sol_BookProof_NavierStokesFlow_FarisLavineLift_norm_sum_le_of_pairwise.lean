@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply
+open scoped lp
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
 

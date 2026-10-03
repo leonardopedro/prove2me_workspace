@@ -18,9 +18,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-rw [friedrichsResolvent_apply, hx, formExt_coe]
-  rfl
-
 theorem solution (P : PosSymOp F) :
     P.dom ≤ LinearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) :=
   nearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by

@@ -23,6 +23,5 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 set_option maxHeartbeats 1000000 in
-/
 theorem solution :
-    EssentiallySelfAdjointOn := 
+    EssentiallySelfAdjointOn := qgModeHamiltonian_essentiallySelfAdjoint a b (qgScalaronModePotential M alpha Rc phi)

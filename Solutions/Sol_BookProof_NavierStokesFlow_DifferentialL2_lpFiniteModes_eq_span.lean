@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+open scoped lp
 open BookProof.NavierStokesFlow.DifferentialL2
 
 

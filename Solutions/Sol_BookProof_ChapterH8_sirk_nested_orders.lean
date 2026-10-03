@@ -20,4 +20,4 @@ variable {E F G : Type*}
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution {K E : Type*} [Field K] [AddCommG := 
+theorem solution {K E : Type*} [Field K] [AddCommG := fun n => ⟨sirk_krylov_tower H v n, sirk_band_contained C Dmin h nv hC hD hnv hh n⟩

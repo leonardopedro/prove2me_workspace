@@ -16,5 +16,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (e s p : ℝ) (he : 0 < e) :
-    qg3DDensity e s p = 1 / 16 * (s / densY e) ^ 2 - 1 / 24 * (p / densY e) ^ 2 := he densitized form of the
+def idxX (mu : Fin 4) : Fin 84 := he densitized form of the

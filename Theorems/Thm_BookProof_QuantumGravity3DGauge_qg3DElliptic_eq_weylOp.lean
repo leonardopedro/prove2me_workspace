@@ -27,7 +27,6 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ)
-
-theorem BookProof.QuantumGravity3DGauge.qg3DElliptic_eq_weylOp (Φ : CoreRep 84 D) (x : D) :
-    0 ≤ quadForm (qg3DEllipticHamiltonian Φ) x := by sorry
+theorem BookProof.QuantumGravity3DGauge.qg3DElliptic_eq_weylOp (Φ : CoreRep 84 D) (j : Fin 84) :
+    SymmetricOn D (D.subtype.comp
+      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) := by sorry

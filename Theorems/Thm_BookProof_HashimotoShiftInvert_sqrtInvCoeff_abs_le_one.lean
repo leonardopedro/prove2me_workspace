@@ -19,4 +19,4 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-theorem BookProof.HashimotoShiftInvert.sqrtInvCoeff_abs_le_one (n : ℕ) : |sqrtInvCoeff n := by sorry
+theorem BookProof.HashimotoShiftInvert.sqrtInvCoeff_abs_le_one (n : ℕ) : |sqrtInvCoeff n| ≤ 1 := by sorry

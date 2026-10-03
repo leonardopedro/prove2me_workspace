@@ -18,7 +18,7 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    pderiv j (pderiv k p) = pderiv k (pderiv j p) :=
+    derOp j (derOp k p) = derOp k (derOp j p) :=
   neg_smul, smul_eq_C_mul]
       ring
   

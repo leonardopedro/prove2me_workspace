@@ -8,10 +8,8 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-Z) (t : ℝ) (psi : L2Z) (B : Finset ℤ) :
-    0 ≤ bornRecover v t psi B :=
-  Finset.sum_nonneg fun _ _ => by positivity
-
-theorem solution (v : LinfZ) (t : ℝ) (psi : L2Z) : bornRecover v t psi ∅ = 0 :=
+theorem solution (v : LinfZ) (t : ℝ) (psi : L2Z) {B C : Finset ℤ}
+    (h : Disjoint B C) :
+    bornRecover v t psi (B ∪ C) = bornRecover v t psi B + bornRecover v t psi C :=
    bornRecover v t psi ∅ = 0 := by
     simp [bor

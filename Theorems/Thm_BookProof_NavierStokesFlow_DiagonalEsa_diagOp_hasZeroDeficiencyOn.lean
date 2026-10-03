@@ -11,6 +11,7 @@ open BookProof.NavierStokesFlow.DiagonalEsa
 
 import Mathlib
 import BookProof.ChapterNavierStokesEsa
+open scoped lp
 
 theorem BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn {ι : Type*} {g : ι → ℂ}
     (h : Summable fun k => ‖g k‖ ^ 2) : Memℓp g 2 := by

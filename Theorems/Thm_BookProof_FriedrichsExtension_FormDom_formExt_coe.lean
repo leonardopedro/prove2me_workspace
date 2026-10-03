@@ -20,8 +20,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-:=
-  (incl P).extend UniformSpace.Completion.toComplL
-
 theorem BookProof.FriedrichsExtension.FormDom.formExt_coe (P : PosSymOp F) (x : FormDom P) :
     formExt P (x : FormSpace P) = toAmbient x := by sorry

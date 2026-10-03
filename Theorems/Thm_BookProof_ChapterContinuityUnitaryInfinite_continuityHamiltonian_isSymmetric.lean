@@ -8,4 +8,5 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 open scoped ENNReal InnerProductSpace
 
-noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z := by sorry
+theorem BookProof.ChapterContinuityUnitaryInfinite.continuityHamiltonian_isSymmetric (v : LinfZ) :
+    (continuityHamiltonian v : L2Z →ₗ[ℂ] L2Z).IsSymmetric := by sorry

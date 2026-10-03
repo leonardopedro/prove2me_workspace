@@ -12,6 +12,7 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_symmetricOn
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Resolvent_isShiftInvertC
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

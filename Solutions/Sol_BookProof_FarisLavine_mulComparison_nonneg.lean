@@ -16,7 +16,7 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 
 
-open scoped ENNReal
+open scoped ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

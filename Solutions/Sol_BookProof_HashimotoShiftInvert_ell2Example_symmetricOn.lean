@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

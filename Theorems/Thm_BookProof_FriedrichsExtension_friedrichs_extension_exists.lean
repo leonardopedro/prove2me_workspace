@@ -21,8 +21,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-open FormDom
-
-
 theorem BookProof.FriedrichsExtension.friedrichs_extension_exists (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A := by sorry

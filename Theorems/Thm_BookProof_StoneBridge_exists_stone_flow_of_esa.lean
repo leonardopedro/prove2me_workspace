@@ -27,5 +27,4 @@ open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 theorem BookProof.StoneBridge.exists_stone_flow_of_esa {D : Submodule ℂ F} (Hc : D →ₗ[ℂ] F)
     (hdense : Dense ((D : Submodule ℂ F) : Set F)) (hsym : SymmetricOn D Hc)
     (hesa : EssentiallySelfAdjointOn D Hc) :
-    ∃ (T : UnboundedSelfAdjoint F) (U : ℝ → (F →L[ℂ] F)),
-      IsSelfAdjointExtension Hc T.op ∧ IsStoneFlow T U := by sorry
+    ∃ (T : UnboundedSelfAdjoint F) (U : ℝ → ( := by sorry

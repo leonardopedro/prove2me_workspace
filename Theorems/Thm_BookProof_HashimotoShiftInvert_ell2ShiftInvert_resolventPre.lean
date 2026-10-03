@@ -7,6 +7,7 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterComplexShiftCore
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}

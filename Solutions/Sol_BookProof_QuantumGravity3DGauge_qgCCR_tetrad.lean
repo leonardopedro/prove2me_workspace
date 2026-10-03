@@ -10,21 +10,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-namespace BookProof.QuantumGravity3DGauge
-
-open MeasureTheory Complex MvPolynomial Filter Topology
-open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
-open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerkin
-open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
-
-noncomputable section
-
-/-! ## F.1 — the singular Hamiltonian density and the densitized form -/
-
-/-- The manuscript's 3D gravity Hamiltonian density,
-`ℋ = (1/(16 e)) 𝒮² − (1/(24 e)) 𝒫²`, with the tetrad determinant `e = det e_i^a` in the
-denominator: it is *not* defined where the tetrad degenerates. -/
-def qg3DDensity (e s p : ℝ) : ℝ :=
+theorem solution (Φ : CoreRep 84 D) (mu a nu b : Fin 4) (x : D) :
+    qgCoord Φ (idxE mu a) (qgMom Φ (idxE nu b) x) - qgMom Φ (idxE nu b) (qgCoord Φ (idxE mu a) x)
+      = (if mu = nu ∧ a = b then Complex.I else 0) • x :=
   **The gravity canonical commutation relations on the core** (F.3):
   `[x_j, π_k] = i δ_{jk}`. -/
   theorem qgCCR (Φ : CoreRep 84 D) (j k : Fin 84) (x : D) :

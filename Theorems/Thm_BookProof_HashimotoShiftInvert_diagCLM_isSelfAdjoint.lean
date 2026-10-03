@@ -20,4 +20,4 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 theorem BookProof.HashimotoShiftInvert.diagCLM_isSelfAdjoint {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) :
-    IsSelfAdjoint (diag := by sorry
+    IsSelfAdjoint (diagCLM hc) := by sorry

@@ -20,9 +20,6 @@ variable {K : ℕ}
 variable {K : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the direct-sum coercions of `lp` over the ghost configurations make the defeq checks here
--- expensive
 theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (ω : Fin K → ℝ)
     (x : ghostCore K) :
     ((ymGhostHam fabc ω x : GhostSpace K) : ∀ _ : GConf K, L2d 99) ∅

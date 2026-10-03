@@ -6,7 +6,7 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 
 
-open scoped ENNReal
+open scoped ENNReal lp
 
 set_option maxHeartbeats 1000000 in
  :=

@@ -1,6 +1,7 @@
 -- Generated from ChapterHashimotoShiftInvert.lean — solution of BookProof.HashimotoShiftInvert.diagCLM_norm_apply_le
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -17,4 +18,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) (x : ℓ²(ℕ, ℂ)) :
-    ‖diagCLM hc x‖ ≤ := ‖x‖ := diagLin_norm
+    ‖diagCLM hc x‖ ≤ ‖x‖ := ‖x‖ := diagLin_norm

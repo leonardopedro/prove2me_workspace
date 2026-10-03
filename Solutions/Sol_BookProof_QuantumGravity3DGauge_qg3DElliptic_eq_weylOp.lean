@@ -20,7 +20,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ)
-
-theorem solution (Φ : CoreRep 84 D) (x : D) :
-    0 ≤ quadForm (qg3DEllipticHamiltonian Φ) x := signedOp_quadForm_nonneg qgKappaElliptic_nonne
+theorem solution (Φ : CoreRep 84 D) (j : Fin 84) :
+    SymmetricOn D (D.subtype.comp
+      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) := signedOp_quadForm_nonneg qgKappaElliptic_nonne

@@ -24,4 +24,4 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 theorem BookProof.QuantumGravity3DGauge.derOp_comm (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    pderiv j (pderiv k p) = pderiv k (pderiv j p) := by sorry
+    derOp j (derOp k p) = derOp k (derOp j p) := by sorry

@@ -21,9 +21,6 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- The core-level commutator unfolds a composite of three linear equivalences, which is
--- elaboration-heavy; the default heartbeat budget is not enough.
 theorem solution (i k : Fin d) :
     (momOp i).comp (posOp k) - (posOp k).comp (momOp i)
       = (if i = k then -Complex.I else 0) • LinearMap.id := by

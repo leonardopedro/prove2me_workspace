@@ -21,8 +21,6 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-open Filter Topology
-
 theorem BookProof.FriedrichsExtension.friedrichs_hashimoto_selects (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn (finiteModeDomain b) H)
     (hpos : ∀ x : finiteModeDomain b, 0 ≤ quadForm H x) {γ : ℝ} (hγ : 0 < γ) :

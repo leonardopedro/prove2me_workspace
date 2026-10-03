@@ -29,6 +29,5 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
-/
 theorem BookProof.ScalaronEsa.qgScalaronMode_esa :
     EssentiallySelfAdjointOn := by sorry

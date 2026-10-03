@@ -1,6 +1,7 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.diagLinC_apply
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

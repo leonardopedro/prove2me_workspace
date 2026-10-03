@@ -18,8 +18,5 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-rw [friedrichsResolvent_apply, hx, formExt_coe]
-  rfl
-
 theorem BookProof.FriedrichsExtension.FormDom.dom_le_range (P : PosSymOp F) :
     P.dom ≤ LinearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by sorry

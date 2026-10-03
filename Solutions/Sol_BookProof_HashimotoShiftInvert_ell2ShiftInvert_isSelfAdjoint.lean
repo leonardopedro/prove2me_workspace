@@ -17,6 +17,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution : IsSelfAdjoint ell2Shif :=
+theorem solution : IsSelfAdjoint ell2ShiftInvert :=
   tInvert :=
     diagCLM_isSelfAdjoint invCoeff_ab

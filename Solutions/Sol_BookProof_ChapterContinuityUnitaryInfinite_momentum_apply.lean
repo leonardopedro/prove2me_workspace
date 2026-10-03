@@ -5,11 +5,9 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 
 
-open scoped ENNReal InnerProductSpace
+open scoped ENNReal InnerProductSpace lp
 
 set_option maxHeartbeats 1000000 in
-1 - shiftOp (-1))
-
 theorem solution (f : L2Z) (k : ℤ) :
     ((momentum f : L2Z) : ℤ → ℂ) k
       = (-Complex.I / 2) * ((f : ℤ → ℂ) (k + 1) - (f : ℤ → ℂ) (k - 1)) :=

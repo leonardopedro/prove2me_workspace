@@ -15,11 +15,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-al = nu'.val := by omega
-  have ha : a.val = a'.val := by omega
-  simp [Prod.ext_iff, Fin.ext_iff, hmu, hnu, ha]
-
-theorem solution (mu nu a : Fin 4) : idxX mu ≠ idxE nu a :=
+theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulOp (X j) (momOp k p) - momOp k (mulOp (X j) p) = (if j = k then Complex.I else 0) • p :=
    Fin.val h
     simp only [idxX, idxDE] at this
     omega

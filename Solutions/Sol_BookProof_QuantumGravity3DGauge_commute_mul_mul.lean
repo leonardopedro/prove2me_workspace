@@ -16,5 +16,5 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    momOp j (momOp k p) = momOp k (momOp j p) := momOp j (mo
+def qgWeylProd (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
+    Module.End ℂ (MvPolynomial (Fin d) ℂ) := momOp j (mo

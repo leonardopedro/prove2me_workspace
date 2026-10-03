@@ -6,7 +6,7 @@ open BookProof.ChapterUnboundedPosition
 
 
 
-open scoped ENNReal InnerProductSpace
+open scoped ENNReal InnerProductSpace lp
 
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)

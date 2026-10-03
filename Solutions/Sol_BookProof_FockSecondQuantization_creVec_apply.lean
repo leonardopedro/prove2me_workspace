@@ -9,6 +9,7 @@ import BookProof.ChapterNavierStokesEsa
 import BookProof.ChapterNavierStokesIkebeKato
 import BookProof.ChapterFriedrichsExtension
 import BookProof.ChapterYangMillsHermite
+open scoped lp
 
 theorem solution (j : ℕ) (u : FockAlg) (α : Conf) :
     annA j u α = ((Real.sqrt ((α j : ℝ) + 1) : ℝ) : ℂ) * u (up j α) := by

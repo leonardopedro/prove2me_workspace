@@ -16,10 +16,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-UniformSpace.Completion (FormDom P)
-
-namespace FormDom
-
 theorem solution (P : PosSymOp F) :
     DenseRange (UniformSpace.Completion.toComplL (𝕜 :=
   ace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P)) := by

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sub_natCast_ne_zero
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

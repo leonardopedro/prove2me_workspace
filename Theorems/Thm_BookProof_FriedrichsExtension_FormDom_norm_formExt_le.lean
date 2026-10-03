@@ -18,6 +18,4 @@ open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
 
-mExt, UniformSpace.Completion.coe_toComplL] using this
-
 theorem BookProof.FriedrichsExtension.FormDom.norm_formExt_le (P : PosSymOp F) : ‖formExt P‖ ≤ 1 := by sorry

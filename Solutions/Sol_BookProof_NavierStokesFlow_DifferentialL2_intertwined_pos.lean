@@ -24,9 +24,6 @@ noncomputable section
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- The transport arguments unfold operators on a submodule of `L²(ℝ³)` through several
--- linear equivalences, so the default heartbeat budget is not enough.
 theorem solution (i : Fin 3) :
     Intertwined (pos i) (((1 / Real.sqrt 2 : ℝ) : ℂ) • posOp i) := by
 

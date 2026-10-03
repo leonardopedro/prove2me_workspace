@@ -24,10 +24,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-open FormDom
-
-variable [CompleteSpace F]
-
 theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A :=
   m →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A := by

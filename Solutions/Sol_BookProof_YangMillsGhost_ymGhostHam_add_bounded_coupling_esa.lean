@@ -20,10 +20,6 @@ variable {K : ℕ}
 variable {K : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (ω : Fin K → ℝ)
-    (B : GhostSpace K →L[ℂ] GhostSpace K)
-    (hB : ∀ x y : GhostSpace K, (inner ℂ (B x) y : ℂ) = inner ℂ x (B y)) :
-    EssentiallySelfAdjointOn (ghostCore K)
-      (ymGhostHam 0 ω + (B.toLinearMap ∘ₗ (ghostCore K).subtype)) :=
+theorem solution (ω : Fin K → :=
   essentiallySelfAdjointOn_add_bounded _ (ymGhostHam_symmetricOn 0 ω)
       (ymGhostHam_essentiallySelfAdjointOn_core ω) B hB

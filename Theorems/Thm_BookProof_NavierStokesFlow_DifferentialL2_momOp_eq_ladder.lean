@@ -28,7 +28,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
--- Unfolding the core coordinates through three linear equivalences is elaboration-heavy.
 theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder (i : Fin 3) :
     momOp i = (Complex.I / 2) • (creOp i - annOp i) := by sorry

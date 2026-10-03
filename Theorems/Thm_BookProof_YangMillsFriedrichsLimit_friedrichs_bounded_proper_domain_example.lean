@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
+open scoped lp
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit
 

@@ -20,4 +20,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-def idxDE (mu nu a : Fin 4) : Fin 84 := by sorry
+theorem BookProof.QuantumGravity3DGauge.idxE_injective :
+    Function.Injective (fun q : Fin 4 × Fin 4 × Fin 4 => idxDE q.1 q.2.1 q.2.2) := by sorry

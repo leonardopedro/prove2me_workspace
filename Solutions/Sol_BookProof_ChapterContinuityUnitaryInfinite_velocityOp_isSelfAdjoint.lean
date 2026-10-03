@@ -9,10 +9,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-Complex.conj_ofReal]
-  ring
-
-theorem solution (v : LinfZ) : IsSelfAdjoint (velocityOp v) :=
+noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
   -/
   
   /-- The **Weyl-symmetrized continuity generator** `H = ½ (p·v + v·p)` on

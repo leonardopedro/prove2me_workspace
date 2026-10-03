@@ -24,5 +24,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.torsionPoly_antisymm (mu nu a : Fin 4) :
-    torsionPoly mu nu a = -torsionPoly nu mu a := by sorry
+theorem BookProof.QuantumGravity3DGauge.torsionPoly_antisymm (Φ : CoreRep 84 D) (m : Fin 64) :
+    SymmetricOn D (D.subtype.comp (torsionOps Φ m)) := by sorry

@@ -10,7 +10,8 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-noncomputable def continuityHamiltonian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
+theorem solution (v : LinfZ) :
+    (continuityHamiltonian v : L2Z →ₗ[ℂ] L2Z).IsSymmetric :=
   nian (v : LinfZ) : L2Z →L[ℂ] L2Z :=
     (1 / 2 : ℂ) • (momentum.comp (velocityOp v) + (velocityOp v).comp momentum)
   

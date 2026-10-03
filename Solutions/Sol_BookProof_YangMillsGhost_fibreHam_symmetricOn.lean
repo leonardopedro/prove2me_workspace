@@ -19,8 +19,6 @@ variable {K : ℕ}
 variable {K : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make the defeq checks here expensive
 theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (ω : Fin K → ℝ)
     (S : GConf K) : SymmetricOn (polyGaussCore (d := 99)) (fibreHam fabc ω S) := by
 

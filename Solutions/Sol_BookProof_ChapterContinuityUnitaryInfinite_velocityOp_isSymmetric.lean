@@ -8,10 +8,8 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-inearMap.mkContinuous (velocityLin v) ‖v‖ (velocityLin_norm_le v)
-
-theorem solution (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityOp v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k :=
+theorem solution (v : LinfZ) :
+    (velocityOp v : L2Z →ₗ[ℂ] L2Z).IsSymmetric :=
   apply (v : LinfZ) (f : L2Z) (k : ℤ) :
       ((velocityOp v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
   

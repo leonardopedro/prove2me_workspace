@@ -18,9 +18,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-ed_eq (by fun_prop) (by fun_prop)
-  simpa using hall k
-
 theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
     Dense (Set.range (formExt P)) :=
   se (P.dom : Set F)) :

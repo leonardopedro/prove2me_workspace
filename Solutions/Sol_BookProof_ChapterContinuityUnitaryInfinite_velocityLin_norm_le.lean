@@ -9,11 +9,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open scoped ENNReal InnerProductSpace
 
 set_option maxHeartbeats 1000000 in
-.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply]
-    ring
-
-theorem solution (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k :=
+theorem solution (v : LinfZ) (f : L2Z) : ‖velocityLin v f‖ ≤ ‖v‖ * ‖f‖ :=
   _apply (v : LinfZ) (f : L2Z) (k : ℤ) :
       ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
   

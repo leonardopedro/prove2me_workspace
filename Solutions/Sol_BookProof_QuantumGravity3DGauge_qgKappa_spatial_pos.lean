@@ -18,4 +18,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-def qgKappa (j : Fin 84) : ℝ := spatial_p
+def qgKappaElliptic (_j : Fin 84) : ℝ := spatial_p

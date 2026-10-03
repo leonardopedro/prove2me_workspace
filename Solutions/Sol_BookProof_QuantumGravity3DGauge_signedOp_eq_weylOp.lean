@@ -19,9 +19,10 @@ variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {T : D →ₗ[ℂ] D} (r : ℝ)
-    (hT : SymmetricOn D (D.subtype.comp T)) :
-    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • T)) :=
+theorem solution {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
+    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
+    signedOp kappa pi Bf
+      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf :=
    T)) := by
     intro x y
     have h := hT x y

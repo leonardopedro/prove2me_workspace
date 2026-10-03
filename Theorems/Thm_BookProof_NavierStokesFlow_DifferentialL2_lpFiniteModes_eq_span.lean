@@ -11,6 +11,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesThreeComponent
+open scoped lp
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 

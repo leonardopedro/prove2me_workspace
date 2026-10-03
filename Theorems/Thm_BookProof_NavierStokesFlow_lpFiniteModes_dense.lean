@@ -8,7 +8,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 
-open scoped Matrix
+open scoped Matrix lp
 
 
 

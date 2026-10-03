@@ -26,12 +26,4 @@ theorem solution (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) (hpos : 0 < κ i₀) :
 
   classical
   rw [commForm_fockH]
-  rw [Finset.sum_eq_single i₀ (fun i _ hne => commForm_testState_of_ne hκ hne)
-    (fun h => absurd (Finset.mem_univ i₀) h), commForm_testState_self]
-  have hamp : 0 < modeAmp κ i₀ 0 := by
-    have h : (0 : ℝ) < Real.sqrt ((((0 : Occ d) i₀ : ℝ) + 1) * (((0 : Occ d) i₀ : ℝ) + 2)) := by
-      rw [Real.sqrt_pos]
-      norm_num
-    simp only [modeAmp]
-    positivity
-  positivity
+  r

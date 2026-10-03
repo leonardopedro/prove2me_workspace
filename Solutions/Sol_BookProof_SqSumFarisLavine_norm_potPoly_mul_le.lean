@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_eval_potPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_nonneg
-import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise
 import Theorems.Thm_BookProof_QgHermiteOscillator_eval_harmPoly
 open BookProof.SqSumFarisLavine
 

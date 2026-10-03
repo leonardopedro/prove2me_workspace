@@ -10,6 +10,7 @@ open BookProof.NavierStokesFlow.DiagonalEsa
 set_option maxHeartbeats 1000000 in
 import Mathlib
 import BookProof.ChapterNavierStokesEsa
+open scoped lp
 
 theorem solution {ι : Type*} {g : ι → ℂ}
     (h : Summable fun k => ‖g k‖ ^ 2) : Memℓp g 2 := by

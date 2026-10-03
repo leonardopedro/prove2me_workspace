@@ -16,8 +16,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-iformSpace.Completion.denseRange_coe (α := FormDom P)
-
 theorem solution (P : PosSymOp F) :
     IsUniformInducing (UniformSpace.Completion.toComplL (𝕜 :=
   ace.Completion.toComplL (𝕜 := ℂ) (E := FormDom P)) := by

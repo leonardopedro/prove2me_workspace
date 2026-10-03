@@ -25,7 +25,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.coreRep_commutator {n m : ℕ} {kappa : Fin n → ℝ} (hk : ∀ i, 0 ≤ kappa i)
-    (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) :
-    signedOp kappa pi Bf
-      = weylOp (fun i => ((Real.sqrt (kappa i) : ℝ) : ℂ) • pi i) Bf := by sorry
+theorem BookProof.QuantumGravity3DGauge.coreRep_commutator {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
+    (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (c : ℂ)
+    (h : ∀ p, S (T p) - T (S p) = c • p) (x : D) :
+    Φ.op S (Φ.op T x) - Φ.op T (Φ.op S x) = c • x := by sorry

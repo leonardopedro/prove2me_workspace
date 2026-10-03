@@ -29,4 +29,7 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 
 
- := by sorry
+theorem BookProof.ScalaronEsa.qgScalaronMode_deficiencyTrivialAt {z : ℂ} (hz : z.im ≠ 0) :
+    DeficiencyTrivialAt
+      (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))
+      (qgScalaronModeHamiltonian a b M alpha Rc phi) z := by sorry

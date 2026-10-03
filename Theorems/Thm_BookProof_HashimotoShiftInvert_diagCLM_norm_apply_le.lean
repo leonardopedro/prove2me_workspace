@@ -6,6 +6,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterComplexShiftCore
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
@@ -20,4 +21,4 @@ open BookProof.HermiteGalerkin
 open Filter Topology
 
 theorem BookProof.HashimotoShiftInvert.diagCLM_norm_apply_le {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) (x : ℓ²(ℕ, ℂ)) :
-    ‖diagCLM hc x‖ ≤ := by sorry
+    ‖diagCLM hc x‖ ≤ ‖x‖ := by sorry

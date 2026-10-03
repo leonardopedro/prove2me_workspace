@@ -9,7 +9,7 @@ open BookProof.NavierStokesFlow.AffineFiber
 
 
 
-open scoped ENNReal
+open scoped ENNReal lp
 
 
 

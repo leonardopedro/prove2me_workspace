@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLM_norm_apply_le
 import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLM_symmetric
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ShiftInvert_eq_sq
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -20,9 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-/
 theorem solution (v : ℓ²(ℕ, ℂ)) :
-    (1 : ℝ) * ‖ell2ShiftInvert v‖ ^ 2 ≤ (inner ℂ (ell2ShiftInvert v) v : :=
+    (1 : ℝ) * ‖ell2ShiftInvert v‖ ^ 2 ≤ (inner ℂ (ell2ShiftInvert v) v : ℂ).re :=
   ℂ).re := by
     set S := diagCLM sqrtInvCoeff_abs_le_one with hS
     have hsq : ell2ShiftInvert v = S (S v) := ell2ShiftInvert_eq_sq v

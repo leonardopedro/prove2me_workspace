@@ -18,6 +18,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {c : ℕ → ℝ} (hc : ∀ n, |c n| ≤ 1) :
-    IsSelfAdjoint (diag :=
+    IsSelfAdjoint (diagCLM hc) :=
   CLM hc) :=
     ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mpr (diagCLM_symme

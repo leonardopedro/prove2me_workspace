@@ -188,10 +188,34 @@ def mirror_theorems():
                 shutil.copy2(src, os.path.join(d, f"{mod}.lean"))
                 names.append(mod)
         return names, len(names)
-    if not os.path.isdir(cached):
-        return [], 0
     os.makedirs(d, exist_ok=True)
     names, declaring = [], 0
+    seen = set()
+    # Solution stubs import theorem modules that no def bundle imports -- the 63
+    # problem statements published in the last sweep are all in that position,
+    # since they were published to make those solutions submittable. Without
+    # them the mirror reports `object file not found` for every solution, which
+    # looks like the solution is broken rather than the mirror being incomplete.
+    # Take them from the local stub: that is the text the server compiled.
+    for f in sorted(os.listdir(f"{WS}/Solutions")):
+        if not (f.startswith("Sol_") and f.endswith(".lean")):
+            continue
+        for mod in re.findall(r"^import Theorems\.(Thm_\S+)",
+                              open(f"{WS}/Solutions/{f}", errors="ignore").read(), re.M):
+            src = os.path.join(local, f"{mod}.lean")
+            dst = os.path.join(d, f"{mod}.lean")
+            if mod in seen or not os.path.exists(src):
+                continue
+            seen.add(mod)
+            if not (os.path.exists(dst)
+                    and os.path.getmtime(dst) >= os.path.getmtime(src)):
+                shutil.copy2(src, dst)
+                for stale in (dst[:-5] + ".olean", dst[:-5] + ".ilean"):
+                    if os.path.exists(stale):
+                        os.remove(stale)
+            names.append(mod)
+    if not os.path.isdir(cached):
+        return names, 0
     for f in sorted(os.listdir(cached)):
         if not (f.startswith("Thm_") and f.endswith(".lean")):
             continue
@@ -246,9 +270,17 @@ def order_theorems():
                 visit_def(d)
 
     def_seen = set()
-    for f in sorted(os.listdir(cached)):
-        if f.startswith("Thm_") and f.endswith(".lean"):
-            visit(f[:-len(".lean")])
+    # Walk the mirror, not the cache. `mirror_theorems` also stages modules the
+    # local solution stubs import, and those never pass through
+    # state/published_theorems -- ordering from the cache alone left 2233 sources
+    # in the mirror with 5 oleans, so every solution check failed on
+    # `object file not found` and it read as a broken proof rather than an
+    # incomplete mirror.
+    md = os.path.join(MIRROR, "Theorems")
+    if os.path.isdir(md):
+        for f in sorted(os.listdir(md)):
+            if f.startswith("Thm_") and f.endswith(".lean"):
+                visit(f[:-len(".lean")])
     return order
 
 

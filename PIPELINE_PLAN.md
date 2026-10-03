@@ -365,6 +365,55 @@ Diagnostic that finds it cheaply: a run of 3+ consecutive blank lines inside a
 bundle is where a dropped declaration used to be. 596 bundles have at least one
 such hole; harmless where nothing later depends on it, fatal where it is.
 
+### §2.8f The b2c sparsity bug (the real one) and what it unblocked
+
+`ByteText.b2c` maps byte offset -> code-point index. It assigned only the FIRST
+byte of each character, so the interior bytes of every multi-byte character kept the
+list's default `0`. `b2c[gap] == 0` therefore made `slice()` read from the **start of
+the file** instead of failing. Nothing raised — the text was simply wrong.
+
+Caught by two slices of the same window disagreeing:
+
+```
+slice(17831, 17840) -> '@[simp] t'      # correct
+slice(17831, 18031) -> ''               # 18031 falls in a gap
+```
+
+Clamping had the same defect in a different form: `max(self.b2c)` is the last mapped
+byte *and* the max code-point index, so using it as the bound made any offset past
+the character count return `''`. `ByteText` now has `nbytes`, a `c2b` inverse, and a
+dense table.
+
+**Measured effect:** `@[simp]` lemmas missing from their own def bundle **57 -> 9 -> 0**
+across the 55 candidate bundles; 896 declarations had been silently dropped this way.
+`Def_Complexification` now compiles clean (it previously failed 12x with
+`simp made no progress`, because `add_re add_im zero_re zero_im neg_re neg_im …` were
+omitted — `simp` had no projection lemma to fire on).
+
+Two supporting changes, both required:
+* `classify` closes `embedded` over identifiers in kept declarations' **proof bodies**.
+  A proof-body reference is in neither `typeDeps` nor `valueDeps`, so the graph is
+  blind to it.
+* a `@[simp]` lemma is seeded into `embedded` unconditionally: `zero_add := by ext
+  <;> simp` never names `zero_re`, but simp cannot close `re 0 = 0` without it.
+
+Lesson worth more than the fix: **a silently-wrong result is worse than a crash.**
+Every one of these returned valid-looking text. `resolve_by_name` and the blank-line
+"hole" heuristic both existed to compensate for it.
+
+### §2.10d Def-bundle verification is a dependency-ordered BUILD, not a gate
+
+Compiling the 55 candidate def bundles is not 55 independent checks. They import each
+other, so the mirror must be built **in topological order** (and their `Theorems.*`
+imports compiled first). Current position: 6 compile, 8 more once 18 theorem modules
+were added, and the rest are blocked on a further 8 theorem stubs — of which 2 are
+genuine duplicates (`csmul_im`/`csmul_re` are now *inside* `Def_Complexification`
+thanks to §2.8f, so re-declaring them collides).
+
+`debug/_one_def2.sh` takes either a chapter name or a module id, because three
+different lists in this session each used a different form and every mismatch
+produced a silent `NOSRC` or a doubled `Def_` prefix rather than an error.
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

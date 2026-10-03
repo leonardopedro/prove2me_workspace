@@ -2,14 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteQuadraticEsa
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.SqSumFarisLavine
 
 
@@ -47,12 +39,12 @@ theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ)
     rw [show (-Complex.I) * (-Complex.I) = (-1 : ℂ) by
       rw [neg_mul_neg, Complex.I_mul_I]]
     rw [neg_one_smul]
-  have hlhs : BookProof.SqSumFarisLavine.sqSumPoly kappa v p
+  have hlhs : sqSumPoly kappa v p
       = ((1 / 2 : ℝ) : ℂ)
         • ((∑ j : Fin D, ((kappa j : ℝ) : ℂ)
               • YangMillsHermite.momOp j (YangMillsHermite.momOp j p))
-            + ∑ r : R, BookProof.SqSumFarisLavine.linForm (v r) * (BookProof.SqSumFarisLavine.linForm (v r) * p)) := by
-    simp [BookProof.SqSumFarisLavine.sqSumPoly]
+            + ∑ r : R, linForm (v r) * (linForm (v r) * p)) := by
+    simp [sqSumPoly]
   rw [hlhs, kinPart, potPoly, smul_add]
   congr 1
   · rw [Finset.smul_sum]

@@ -950,7 +950,6 @@ def build_thm(bt, leaf, decls, node, modns):
     # Both filters run LAST: the block above can still add `open` lines, and a
     # filter that runs before it misses everything it adds.
     text = drop_undeclared_opens(text, leaf)
-    text = add_missing_namespace_imports(text)
     text = drop_shadowing_opens(text, text)
     return text
 
@@ -1285,16 +1284,7 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
     # over `open BookProof.HashimotoShiftInvert.IsShiftInvert`, which nothing
     # declares -- a `section` is not a namespace.
     text = drop_undeclared_opens("".join(parts), leaf)
-    text = add_missing_namespace_imports(text)
-    # The statement uses unqualified names (the preamble opens them) and the
-    # declaration is literally `theorem solution`, so neither carries the
-    # target's namespace. The first `open BookProof.X` in the preamble does:
-    # the generator emits the leaf's own namespace first, before the extra
-    # chapters the source file happened to reference.
-    if not ns:
-        m = re.search(r"(?m)^open (BookProof\.[\w.]+)\s*$", text)
-        ns = m.group(1) if m else None
-    return disambiguate_names(text, leaf, ns)
+    return text
 
 
 def build_def_file(bt, leaf, decls, defmat, embedded):
@@ -1372,7 +1362,6 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     # `unknown namespace` / `Unknown identifier`, from the same shadowing and
     # bare-name problems already fixed in build_thm and build_sol.
     text = drop_undeclared_opens(text, leaf)
-    text = add_missing_namespace_imports(text)
     text = drop_shadowing_opens(text, text)
     return text
 

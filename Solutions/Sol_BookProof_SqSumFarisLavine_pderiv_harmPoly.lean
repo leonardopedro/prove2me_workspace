@@ -2,14 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_SqSumFarisLavine_C_two_eq
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteQuadraticEsa
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.SqSumFarisLavine
 
 
@@ -32,7 +24,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin D) :
     pderiv j (harmPoly (d := D)) = C (1 / 2 : ℂ) * X j := by
 
-  rw [BookProof.SqSumFarisLavine.harmPoly, map_sum, Finset.sum_eq_single j]
+  rw [harmPoly, map_sum, Finset.sum_eq_single j]
   · rw [show (X j : MvPolynomial (Fin D) ℂ) ^ 2 = X j * X j by ring, pderiv_C_mul, pderiv_mul,
       pderiv_X_self, one_mul, mul_one,
       show (X j + X j : MvPolynomial (Fin D) ℂ) = C (2 : ℂ) * X j by rw [C_two_eq]; ring,

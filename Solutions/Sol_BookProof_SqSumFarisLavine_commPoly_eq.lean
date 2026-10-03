@@ -9,14 +9,6 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_harmPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_pderiv_harmPoly
 import Theorems.Thm_BookProof_SqSumFarisLavine_kin_mul_comm
 import Theorems.Thm_BookProof_SqSumFarisLavine_kin_kin_comm
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteQuadraticEsa
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.SqSumFarisLavine
 
 
@@ -65,11 +57,11 @@ theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (p : MvPolyno
     rw [← Finset.sum_add_distrib]
     exact Finset.sum_congr rfl fun k _ => by rw [coreD_add, coreD_add]
   -- the harmonic commutator
-  have gKW : (∑ j : Fin D, c j • coreD j (coreD j (BookProof.SqSumFarisLavine.harmPoly * p)))
-        - BookProof.SqSumFarisLavine.harmPoly * ∑ j : Fin D, c j • coreD j (coreD j p)
+  have gKW : (∑ j : Fin D, c j • coreD j (coreD j (harmPoly * p)))
+        - harmPoly * ∑ j : Fin D, c j • coreD j (coreD j p)
       = (∑ j : Fin D, c j * (1 / 2 : ℂ)) • p
         + ∑ j : Fin D, c j • (X j * coreD j p) := by
-    rw [kin_mul_comm c BookProof.SqSumFarisLavine.harmPoly p, Finset.sum_smul, ← Finset.sum_add_distrib]
+    rw [kin_mul_comm c harmPoly p, Finset.sum_smul, ← Finset.sum_add_distrib]
     refine Finset.sum_congr rfl fun j _ => ?_
     have h2mul : (2 : ℂ) • (C (1 / 2 : ℂ) * X j * coreD j p) = X j * coreD j p := by
       rw [MvPolynomial.smul_eq_C_mul, ← mul_assoc, ← mul_assoc, ← map_mul]
@@ -90,8 +82,8 @@ theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (p : MvPolyno
   have gKL := kin_kin_comm c p
   -- assemble
   have hcp : commPoly kappa v p
-      = ((∑ j : Fin D, c j • coreD j (coreD j (BookProof.SqSumFarisLavine.harmPoly * p)))
-          - BookProof.SqSumFarisLavine.harmPoly * ∑ j : Fin D, c j • coreD j (coreD j p))
+      = ((∑ j : Fin D, c j • coreD j (coreD j (harmPoly * p)))
+          - harmPoly * ∑ j : Fin D, c j • coreD j (coreD j p))
         + ((∑ k : Fin D, coreD k (coreD k (potPoly v * p)))
           - potPoly v * ∑ k : Fin D, coreD k (coreD k p)) := by
     rw [commPoly, sqSumPoly_apply, sqSumPoly_apply, harmP, harmP, kinPoly, kinPoly, kinPart,

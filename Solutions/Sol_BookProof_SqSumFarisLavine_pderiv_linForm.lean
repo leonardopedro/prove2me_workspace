@@ -1,14 +1,6 @@
 -- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.pderiv_linForm
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterHermiteQuadraticEsa
-import Definitions.Def_ChapterQgHermiteCore
-import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.SqSumFarisLavine
 
 
@@ -31,7 +23,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin D → ℝ) (j : Fin D) :
     pderiv j (linForm v) = C ((v j : ℝ) : ℂ) := by
 
-  rw [BookProof.SqSumFarisLavine.linForm, map_sum, Finset.sum_eq_single j]
+  rw [linForm, map_sum, Finset.sum_eq_single j]
   · rw [MvPolynomial.smul_eq_C_mul, pderiv_C_mul, pderiv_X_self, mul_one]
   · intro i _ hi
     simp [MvPolynomial.smul_eq_C_mul, pderiv_X, Ne.symm hi]

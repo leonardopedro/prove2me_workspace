@@ -44,10 +44,14 @@ import sys
 # workspace) that has its own copy of the workspace and of the source project.
 #   PROVE2ME_WS     -> workspace root (Definitions/Theorems/Solutions/spec)
 #   TIMEPIECE_PROJ  -> source project root (decl_graph.jsonl + BookProof/*.lean)
-WS = os.environ.get("PROVE2ME_WS") or "/home/leo/prove2me_workspace"
+WS = (os.environ.get("PROVE2ME_WS")
+      or os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PROJ = (os.environ.get("TIMEPIECE_PROJ")
         or os.environ.get("PROVE2ME_PROJ")
-        or "/home/leo/Projects/timepiece")
+        # Same stale-absolute-path trap as the wave entries: a fallback
+        # pointing at another machine is silently wrong rather than loud.
+        or os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "..", "timepiece331"))
 GRAPH = f"{PROJ}/decl_graph.jsonl"
 SKETCH_DIR = f"{WS}/state/sketch"
 OUT_DEF = f"{WS}/Definitions"
@@ -146,7 +150,13 @@ class ByteText:
         self.b2c[b] = len(text)
 
     def slice(self, bstart, bend):
-        return self.text[self.b2c[bstart]:self.b2c[bend]]
+        # Clamp: callers legitimately ask for a window past EOF when they are
+        # searching for a token, and b2c is a dict lookup, so an out-of-range
+        # offset raised IndexError instead of returning the tail.
+        keys = self.b2c
+        lo = min(bstart, max(keys))
+        hi = min(bend, max(keys))
+        return self.text[keys[lo]:keys[hi]]
 
 
 class Decl:
@@ -484,9 +494,59 @@ def structural_preamble(bt, upto_byte):
     return res
 
 
+DECL_KEYWORD = re.compile(
+    r"(?m)^[ \t]*(?:private\s+|protected\s+|noncomputable\s+|unsafe\s+)*"
+    r"(?:theorem|lemma|def|abbrev)\s")
+
+
 def the_statement(bt, d):
+    # Some decls have declStart pointing just past their docstring, so the slice
+    # opens on the docstring's own text preceded by a fragment of whatever came
+    # before -- in ChapterYangMillsFriedrichsLimit, `Thm_..._memℓp_one_div_succ`
+    # opened with a bare `)` left over from the previous declaration. Anchoring
+    # the docstring strip at ^ then could not match, the `)` survived into the
+    # emitted statement, and the stub failed with
+    # `unexpected token ')'; expected comma`.
+    #
+    # So: if there is no declaration in the slice, the offsets are pointing at
+    # the docstring rather than the `theorem` keyword. Re-slice from the keyword.
     frag = bt.slice(d.s, d.vs)
+    # The keyword has to be the FIRST thing in the slice, not merely present:
+    # a docstring's prose can contain the word "theorem", and matching inside it
+    # made this guard silently pass. Only a match at position 0 means the
+    # offsets really do point at the declaration.
+    if not DECL_KEYWORD.match(frag):
+        # Offsets point at the docstring, not the `theorem` keyword. Find the
+        # keyword in the wider source and re-slice from there, so the leading
+        # fragment is dropped instead of being emitted as the first line.
+        # d.vs + 4000 can run past the end of the file, and slice() indexes
+        # rather than clamping.
+        m = DECL_KEYWORD.search(bt.slice(d.s, d.vs + 4000)
+                                if bt.slice(d.s, d.vs + 4000) else bt.text)
+        if m is None:
+            return frag
+        frag = bt.slice(d.s + m.start(), d.vs)
+    # `valStart` is the offset of `:=`, not the end of the type. A statement like
+    # `theorem t : Memℓp f 2 := by` has valStart pointing at the `:=`, so slicing
+    # to it drops the trailing `2` and the emitted statement becomes
+    # `Memℓp f` -- a different, arity-wrong proposition that fails with
+    # `type expected, got (Memℓp fun n => ...)`. Extend to the `:=` ourselves.
+    # Ask for everything to EOF rather than a fixed window: `slice` takes BYTE
+    # offsets and maps them through a char-index table, so a guessed window can
+    # land somewhere unhelpful, and the statement is only a few lines long.
+    # Not anchored to a line start: `theorem t : Foo x 2 := by` puts the `:=`
+    # mid-line, right after the type.
+    m2 = re.search(r":=", bt.slice(d.s, max(bt.b2c)))
+    if m2 is not None:
+        frag = bt.slice(d.s, d.vs + (m2.start() - len(frag)))
     frag = re.sub(r"^/--(?:.*?)-/\s*", "", frag, flags=re.S).rstrip()
+    # The re-slice above can land in the middle of a docstring, leaving its tail
+    # (`... support. -/`) as the first line of the statement. Drop any leading
+    # text up to and including a docstring closer.
+    if not DECL_KEYWORD.match(frag):
+        frag = re.sub(r"^(?:.|\n)*?-/\s*", "", frag, count=1, flags=re.S).lstrip()
+    if not DECL_KEYWORD.match(frag):
+        return frag
     frag = re.sub(r":=\s*$", "", frag).rstrip()
     return frag
 
@@ -515,7 +575,12 @@ def fmt_name(stmt, newname):
         r"(?:(?:@\[[^\]]*\]|omit\s+\[[^\]]*\]\s+in|"
         r"set_option\s+[^\n]*?\s+in|/--(?:.*?)-/|/-(?:.*?)-/)\s*)*"
         r"(?:(?:protected|private|unsafe|noncomputable|partial)\s+)*"
-        r"(?:theorem|lemma)\s+[A-Za-z0-9_.']+",
+        # `[A-Za-z0-9_.']` is ASCII-only, and timepiece uses non-ASCII identifiers
+    # freely (memℓp_one_div_succ, Memℓp). Matching only `theorem mem` and
+    # splicing left the tail glued onto the new name, so every such theorem was
+    # emitted as `...memℓp_one_div_succℓp_one_div_succ` -- a name that does not
+    # exist, hence never provable. Consume the whole identifier instead.
+    r"(?:theorem|lemma)\s+[^\s(){}\[\]:;]+",
         stmt, flags=re.S)
     if not m:
         return stmt

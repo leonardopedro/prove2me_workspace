@@ -15,9 +15,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-)
-
 theorem BookProof.YangMillsFriedrichsLimit.krylov_starProjection_tendsto (A : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F)) (u : F) :
     Filter.Tendsto (fun n : ℕ => (krylovSpan A.toLinearMap v n).starProjection u)
-      Filter.atTop (nhds := by sorry
+      Filter.atTop (nhds u) := by
+  have h := krylov_bestApprox_tendsto_zero A.toLinearMap v u hdense
+  rw [tendst := by sorry

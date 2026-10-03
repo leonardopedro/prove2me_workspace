@@ -11,7 +11,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-]
-
 theorem BookProof.YangMillsFriedrichsLimit.not_mem_span_of_repr_ne_zero (b : HilbertBasis ℕ ℂ F)
-    (x : F) (hx : ∀ i, b.repr x i ≠ 0) : x ∉ Submodule.span ℂ (Set.range := by sorry
+    (x : F) (hx : ∀ i, b.repr x i ≠ 0) : x ∉ Submodule.span ℂ (Set.range b) := by
+  intro hmem
+  obtain ⟨T, hTsub, hxT⟩ := Submodule.mem_span_finite_of_mem_span hmem
+  have hinj : Function.Injective b := b.orthonormal.linearIndependent.injectiv := by sorry

@@ -12,12 +12,12 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-)
-
 theorem solution (A : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F)) (u : F) :
     Filter.Tendsto (fun n : ℕ => (krylovSpan A.toLinearMap v n).starProjection u)
-      Filter.atTop (nhds :=
+      Filter.atTop (nhds u) := by
+  have h := krylov_bestApprox_tendsto_zero A.toLinearMap v u hdense
+  rw [tendst :=
   u) := by
     have h := krylov_bestApprox_tendsto_zero A.toLinearMap v u hdense
     rw [tendsto_iff_norm_sub_tendsto_zero]

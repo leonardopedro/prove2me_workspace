@@ -11,12 +11,15 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-m
-
 theorem solution (A B : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F))
     (hagree : ∀ x ∈ (⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F), A x = B x) :
-    A = :=
+    A = B := by
+  ext u
+  have := Continuous.ext_on hdense A.continuous B.continuous (fun x hx => hagree x hx)
+  exact congrFun this u
+
+/-- **Part D.4 in the bounded regime.**  Let `H` be a densely defin :=
    B := by
     ext u
     have := Continuous.ext_on hdense A.continuous B.continuous (fun x hx => hagree x hx)

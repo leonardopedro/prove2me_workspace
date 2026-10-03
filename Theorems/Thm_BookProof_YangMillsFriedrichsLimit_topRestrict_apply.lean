@@ -11,5 +11,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-theorem BookProof.YangMillsFriedrichsLimit.topRestrict_apply (A : F →L[ℂ] F) (x : (⊤ : Submodule ℂ F)) :
-    topRestrict A x = A (x : F) := by sorry
+theorem := by sorry

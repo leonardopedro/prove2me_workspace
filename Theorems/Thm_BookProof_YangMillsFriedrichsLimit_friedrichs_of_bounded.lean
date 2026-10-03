@@ -17,4 +17,11 @@ theorem BookProof.YangMillsFriedrichsLimit.friedrichs_of_bounded [CompleteSpace 
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D H)
     (hpos : ∀ x : D, 0 ≤ quadForm H x) (C : ℝ) (hbd : ∀ x : D, ‖H x‖ ≤ C * ‖(x : F)‖) :
     ∃ A : F →L[ℂ] F, (∀ x : D, A (x : F) = H x) ∧
-      IsPositiveSelfAdjointExtension H (topRestrict A) := by sorry
+      IsPositiveSelfAdjointExtension H (topRestrict A) := by
+  -- the continuous extension
+  have hb : ∀ x : D, ‖H x‖ ≤ C * ‖x‖ := fun x => by simpa using hbd x
+  set Hc : D →L[ℂ] F := H.mkContinuous C hb with hHc
+  have hdr : DenseRange (D.subtypeL) := by
+    simpa [DenseRange, Submodule.subtypeL, Set.range_comp] using hdense
+  have hui : IsUniformInducing (D.subtypeL) :=
+    (isometry_subtype_coe (s := (D : Set F))).isUnifo := by sorry

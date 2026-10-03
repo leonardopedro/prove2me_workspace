@@ -11,5 +11,4 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (A : F →L[ℂ] F) (x : (⊤ : Submodule ℂ F)) :
-    topRestrict A x = A (x : F) := rfl
+theorem := rfl

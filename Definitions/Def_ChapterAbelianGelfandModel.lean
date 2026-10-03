@@ -121,7 +121,7 @@ variable {X : Type*} [TopologicalSpace X]
 def toC (f : C(X, ℝ)) : C(X, ℂ) :=
   ⟨fun x => (f x : ℂ), Complex.continuous_ofReal.comp f.continuous⟩
 
-
+@[simp] theorem toC_apply (f : C(X, ℝ)) (x : X) : toC f x = (f x : ℂ) := rfl
 
 /-- The real-linear functional attached to a complex functional: the real part of its
 values on real functions. -/
@@ -295,7 +295,7 @@ noncomputable def mulRepHom : C(X, ℂ) →⋆ₐ[ℂ] (Lp ℂ 2 mu →L[ℂ] Lp
     rw [h, mulRep_smul, mulRep_one]
     rfl
 
-
+@[simp] theorem mulRepHom_apply (f : C(X, ℂ)) : mulRepHom mu f = mulRep mu f := rfl
 
 
 

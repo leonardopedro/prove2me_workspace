@@ -240,8 +240,3 @@ def crePoly (i : Fin d) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin
 
 
 
-
-
-end
-
-end BookProof.HermiteProductBasis

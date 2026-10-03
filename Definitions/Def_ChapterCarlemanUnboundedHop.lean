@@ -156,7 +156,8 @@ def kernelOp {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) : lpFiniteModes ℕ �
     have : (((c • f : lpFiniteModes ℕ) : L2N) : ℕ → ℂ) k = c * ((f : L2N) : ℕ → ℂ) k := by simp
     rw [this]; ring
 
-
+@[simp] theorem kernelOp_coe {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) (f : lpFiniteModes ℕ) :
+    ((kernelOp hk f : L2N) : ℕ → ℂ) = kernelFun a ((f : L2N) : ℕ → ℂ) := rfl
 
 
 

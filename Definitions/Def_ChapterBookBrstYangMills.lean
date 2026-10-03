@@ -210,7 +210,8 @@ def gaussVec (c : Fin N) : (Fin 4 × Fin N) → FieldPoly N := fun i =>
 def gaussDer (c : Fin N) : Derivation ℂ (FieldPoly N) (FieldPoly N) :=
   mkDerivation ℂ (gaussVec G c)
 
-
+@[simp] theorem gaussDer_X (c : Fin N) (i : Fin 4 × Fin N) :
+    gaussDer G c (X i) = gaussVec G c i := mkDerivation_X ℂ _ i
 
 
 

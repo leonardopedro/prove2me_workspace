@@ -84,7 +84,7 @@ variable (P D) in
 def redIncl : redDom P D →ₗ[ℂ] D :=
   LinearMap.codRestrict D (((sector P).subtype).comp (redDom P D).subtype) (fun x => x.2)
 
-
+@[simp] theorem redIncl_coe (x : redDom P D) : ((redIncl P D x : D) : F) = (x : F) := rfl
 
 variable (T : D →ₗ[ℂ] F)
 
@@ -113,7 +113,9 @@ def redOp (hP : IsReducingProjection P) {hPD : ∀ x ∈ D, P x ∈ D} (hC : Com
     redDom P D →ₗ[ℂ] sector P :=
   LinearMap.codRestrict (sector P) (T ∘ₗ redIncl P D) (map_mem_sector hP hC)
 
-
+@[simp] theorem redOp_coe (hP : IsReducingProjection P) {hPD : ∀ x ∈ D, P x ∈ D}
+    (hC : Commutes T hPD) (x : redDom P D) :
+    ((redOp T hP hC x : sector P) : F) = T (redIncl P D x) := rfl
 
 /-! ## Symmetry and the deficiency spaces -/
 
@@ -133,9 +135,9 @@ def symProj : F →ₗ[ℂ] F := (2⁻¹ : ℂ) • (LinearMap.id + U)
 /-- The antisymmetrizing projection `(1 - U)/2` of a self-inverse map `U`. -/
 def asymProj : F →ₗ[ℂ] F := (2⁻¹ : ℂ) • (LinearMap.id - U)
 
+@[simp] theorem symProj_apply (x : F) : symProj U x = (2⁻¹ : ℂ) • (x + U x) := rfl
 
-
-
+@[simp] theorem asymProj_apply (x : F) : asymProj U x = (2⁻¹ : ℂ) • (x - U x) := rfl
 
 variable {U}
 

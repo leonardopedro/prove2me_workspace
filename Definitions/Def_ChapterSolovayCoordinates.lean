@@ -131,6 +131,10 @@ instance tensor_language_membership_decidable {α β : Type*}
     Decidable ((L₁.tensor L₂).decide x = true) := by
   infer_instance
 
-
+/-- The tensor decision procedure computes conjunction of the component
+procedures. -/
+@[simp] theorem tensor_decide_apply {α β : Type*}
+    (L₁ : DecidableLanguage α) (L₂ : DecidableLanguage β) (x : α × β) :
+    (L₁.tensor L₂).decide x = (L₁.decide x.1 && L₂.decide x.2) := rfl
 
 end BookProof.ChapterSolovayCoordinates

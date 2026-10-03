@@ -106,8 +106,3 @@ def ymAbelianHermCol (e : ℕ ≃ (Fin 99 →₀ ℕ)) : ℕ → (ℕ →₀ ℂ
 
 
 
-
-
-end
-
-end BookProof.YmAbelianFock

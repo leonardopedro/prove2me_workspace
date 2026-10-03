@@ -1,0 +1,21 @@
+-- Generated from ChapterAttentionEntropy.lean — theorem BookProof.ChapterAttentionEntropy.shannonEntropy_scoreSoftmax_le_log_card
+import Definitions.Def_ChapterSoftmaxBorn
+import Mathlib
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterA4
+open BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
+
+
+open scoped BigOperators
+
+noncomputable section
+
+
+open Filter Topology BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness
+
+
+theorem BookProof.ChapterAttentionEntropy.shannonEntropy_scoreSoftmax_le_log_card (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :
+    shannonEntropy (fun j => scoreSoftmax beta s j) ≤ Real.log m := by sorry

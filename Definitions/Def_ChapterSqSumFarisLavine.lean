@@ -164,10 +164,3 @@ def commConst (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) : ℝ :=
 
 
 
-
-
-
-
-end
-
-end BookProof.SqSumFarisLavine

@@ -1,5 +1,6 @@
 import Theorems.Thm_BookProof_HermiteCore_hermiteBasis_apply
 
+
 import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQuantumGravityDensitized
@@ -58,7 +59,9 @@ noncomputable def hermiteRepr : L2R ≃ₗᵢ[ℂ] L2Nat := hermiteBasis.repr
     hermiteRepr (hermiteLp n) = lp.single 2 n (1 : ℂ) := by
   rw [hermiteRepr, ← hermiteBasis_apply, HilbertBasis.repr_self]
 
-
+@[simp] theorem hermiteRepr_symm_single (n : ℕ) :
+    hermiteRepr.symm (lp.single 2 n (1 : ℂ)) = hermiteLp n := by
+  rw [hermiteRepr, HilbertBasis.repr_symm_single, hermiteBasis_apply]
 
 
 

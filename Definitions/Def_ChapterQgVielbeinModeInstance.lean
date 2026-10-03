@@ -166,11 +166,23 @@ def ofFintype (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι →
       have h := le_finKap sig A B a b
       have := norm_nonneg (A a b); have := norm_nonneg (B a b); linarith)
 
+omit [DecidableEq ι] in
+@[simp] theorem ofFintype_sig (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι → ι → ℂ)
+    (A_herm : ∀ a b, A b a = (starRingEnd ℂ) (A a b))
+    (B_herm : ∀ a b, B b a = (starRingEnd ℂ) (B a b)) :
+    (ofFintype sig one_le_sig A B A_herm B_herm).sig = sig := rfl
 
+omit [DecidableEq ι] in
+@[simp] theorem ofFintype_A (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι → ι → ℂ)
+    (A_herm : ∀ a b, A b a = (starRingEnd ℂ) (A a b))
+    (B_herm : ∀ a b, B b a = (starRingEnd ℂ) (B a b)) :
+    (ofFintype sig one_le_sig A B A_herm B_herm).A = A := rfl
 
-
-
-
+omit [DecidableEq ι] in
+@[simp] theorem ofFintype_B (sig : ι → ℝ) (one_le_sig : ∀ a, 1 ≤ sig a) (A B : ι → ι → ℂ)
+    (A_herm : ∀ a b, A b a = (starRingEnd ℂ) (A a b))
+    (B_herm : ∀ a b, B b a = (starRingEnd ℂ) (B a b)) :
+    (ofFintype sig one_le_sig A B A_herm B_herm).B = B := rfl
 
 end Fintype
 

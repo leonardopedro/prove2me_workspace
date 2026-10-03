@@ -241,7 +241,9 @@ def prodTensor : TensorProduct ℂ (Lp ℂ 2 μ) (Lp ℂ 2 ν) →ₗ[ℂ] Lp �
 def fibTensor : TensorProduct ℂ (Lp ℂ 2 μ) (Lp ℂ 2 ν) →ₗ[ℂ] Lp (Lp ℂ 2 ν) 2 μ :=
   TensorProduct.lift fibBil
 
-
+omit [SigmaFinite μ] [SigmaFinite ν] in
+@[simp] theorem prodTensor_tmul (a : Lp ℂ 2 μ) (c : Lp ℂ 2 ν) :
+    prodTensor (a ⊗ₜ[ℂ] c) = prodMk a c := rfl
 
 omit [SigmaFinite μ] [SigmaFinite ν] in
 @[simp] theorem fibTensor_tmul (a : Lp ℂ 2 μ) (c : Lp ℂ 2 ν) :
@@ -444,9 +446,13 @@ def curryLI : Lp (Lp ℂ 2 ν) 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 (μ.prod ν) :=
     fibTensor prodTensor denseRange_fibTensor denseRange_prodTensor
     (fun s => norm_prodTensor_eq_norm_fibTensor s)
 
+/-- The identification carries the fibred lift of a tensor to its scalar lift. -/
+theorem curryLI_fibTensor (t : TensorProduct ℂ (Lp ℂ 2 μ) (Lp ℂ 2 ν)) :
+    curryLI (fibTensor t) = prodTensor t :=
+  LinearEquiv.extendOfIsometry_eq _ _ _ _ _ _ t
 
-
-
+@[simp] theorem curryLI_fibMk (a : Lp ℂ 2 μ) (c : Lp ℂ 2 ν) :
+    curryLI (fibMk a c) = prodMk a c := curryLI_fibTensor (a ⊗ₜ[ℂ] c)
 
 
 
@@ -473,7 +479,18 @@ def IsSliceOf (f : Lp (Lp ℂ 2 ν) 2 μ) (g : Lp ℂ 2 (μ.prod ν)) : Prop :=
 
 
 
-
+omit [SigmaFinite μ] in
+/-- The slice property is preserved by sums. -/
+theorem IsSliceOf.add {f₁ f₂ : Lp (Lp ℂ 2 ν) 2 μ} {g₁ g₂ : Lp ℂ 2 (μ.prod ν)}
+    (h₁ : IsSliceOf f₁ g₁) (h₂ : IsSliceOf f₂ g₂) : IsSliceOf (f₁ + f₂) (g₁ + g₂) := by
+  have hg := Measure.ae_ae_of_ae_prod (Lp.coeFn_add g₁ g₂)
+  filter_upwards [h₁, h₂, Lp.coeFn_add f₁ f₂, hg] with x e₁ e₂ e₃ e₄
+  have e₅ := Lp.coeFn_add ((f₁ : V → Lp ℂ 2 ν) x) ((f₂ : V → Lp ℂ 2 ν) x)
+  filter_upwards [e₁, e₂, e₄, e₅] with y d₁ d₂ d₄ d₅
+  rw [e₃]
+  simp only [Pi.add_apply] at d₅ ⊢
+  rw [d₅, d₁, d₂, d₄]
+  simp
 
 
 

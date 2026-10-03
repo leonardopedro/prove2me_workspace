@@ -57,14 +57,14 @@ instance : Zero (Cx W) := ⟨⟨0, 0⟩⟩
 instance : Neg (Cx W) := ⟨fun x => ⟨-x.re, -x.im⟩⟩
 instance : Sub (Cx W) := ⟨fun x y => ⟨x.re - y.re, x.im - y.im⟩⟩
 
-
-
-
-
-
-
-
-
+@[simp] lemma add_re (x y : Cx W) : (x + y).re = x.re + y.re := rfl
+@[simp] lemma add_im (x y : Cx W) : (x + y).im = x.im + y.im := rfl
+@[simp] lemma zero_re : (0 : Cx W).re = 0 := rfl
+@[simp] lemma zero_im : (0 : Cx W).im = 0 := rfl
+@[simp] lemma neg_re (x : Cx W) : (-x).re = -x.re := rfl
+@[simp] lemma neg_im (x : Cx W) : (-x).im = -x.im := rfl
+@[simp] lemma sub_re (x y : Cx W) : (x - y).re = x.re - y.re := rfl
+@[simp] lemma sub_im (x y : Cx W) : (x - y).im = x.im - y.im := rfl
 
 instance : AddCommGroup (Cx W) where
   add_assoc a b c := by ext <;> simp [add_assoc]
@@ -81,8 +81,8 @@ instance : AddCommGroup (Cx W) where
 noncomputable instance : SMul ℂ (Cx W) :=
   ⟨fun z x => ⟨z.re • x.re - z.im • x.im, z.re • x.im + z.im • x.re⟩⟩
 
-
-
+@[simp] lemma csmul_re (z : ℂ) (x : Cx W) : (z • x).re = z.re • x.re - z.im • x.im := rfl
+@[simp] lemma csmul_im (z : ℂ) (x : Cx W) : (z • x).im = z.re • x.im + z.im • x.re := rfl
 
 noncomputable instance : Module ℂ (Cx W) where
   one_smul x := by ext <;> simp
@@ -103,7 +103,7 @@ noncomputable def cxInner (x y : Cx W) : ℂ :=
 
 noncomputable instance : Inner ℂ (Cx W) := ⟨cxInner⟩
 
-
+@[simp] lemma inner_def (x y : Cx W) : inner ℂ x y = cxInner x y := rfl
 
 noncomputable instance : NormedAddCommGroup (Cx W) :=
   letI core : InnerProductSpace.Core ℂ (Cx W) :=
@@ -143,7 +143,9 @@ noncomputable instance : NormedAddCommGroup (Cx W) :=
 
 noncomputable instance : InnerProductSpace ℂ (Cx W) := .ofCore _
 
-
+/-- Real part of the inner product. -/
+lemma inner_re (x y : Cx W) :
+    RCLike.re (inner ℂ x y) = inner ℝ x.re y.re + inner ℝ x.im y.im := rfl
 
 
 
@@ -152,8 +154,8 @@ noncomputable instance : InnerProductSpace ℂ (Cx W) := .ofCore _
 /-- The canonical embedding of the real form `W ↪ Cx W`, `w ↦ w + i·0`. -/
 def ofReal (w : W) : Cx W := ⟨w, 0⟩
 
-
-
+@[simp] lemma ofReal_re (w : W) : (ofReal w).re = w := rfl
+@[simp] lemma ofReal_im (w : W) : (ofReal w).im = 0 := rfl
 
 
 
@@ -184,7 +186,7 @@ noncomputable def cxConj : Cx W ≃ₗᵢ⋆[ℂ] Cx W :=
       change RCLike.re (cxInner (cxConjLE x) (cxConjLE x)) = RCLike.re (cxInner x x)
       simp [cxConjLE, cxInner, inner_neg_left, inner_neg_right] }
 
-
+@[simp] lemma cxConj_apply (x : Cx W) : cxConj x = ⟨x.re, -x.im⟩ := rfl
 
 
 
@@ -237,9 +239,11 @@ noncomputable def cxMap (m : W →L[ℝ] W) : Cx W →L[ℂ] Cx W :=
       rw [← mul_pow]; exact pow_le_pow_left₀ (norm_nonneg _) (m.le_opNorm x.im) 2
     nlinarith [h1, h2])
 
+@[simp] lemma cxMap_apply (m : W →L[ℝ] W) (x : Cx W) : cxMap m x = ⟨m x.re, m x.im⟩ := rfl
 
-
-
+/-- Complexification preserves the identity. -/
+@[simp] lemma cxMap_one : cxMap (1 : W →L[ℝ] W) = 1 := by
+  ext x <;> simp
 
 
 

@@ -50,8 +50,3 @@ def cnv (u ρ : Vd d → ℂ) : Vd d → ℂ :=
 
 
 
-
-
-end
-
-end BookProof.ConvolutionCalc

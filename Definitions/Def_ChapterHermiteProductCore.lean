@@ -714,14 +714,3 @@ def hermiteMv (a : Fin d →₀ ℕ) : MvPolynomial (Fin d) ℂ := ∏ i, hermit
 
 
 
-
-
-
-
-
-
-
-
-end
-
-end BookProof.HermiteProductCore

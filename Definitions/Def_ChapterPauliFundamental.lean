@@ -115,12 +115,13 @@ def stepT (μ : Fin 4) (T : Finset (Fin 4)) : Finset (Fin 4) :=
 
 
 
-
+theorem sel_empty : sel ∅ = [] := by decide
 
 /-- The ordered product of the generators indexed by `T`. -/
 noncomputable def gpF (A : Fin 4 → M4) (T : Finset (Fin 4)) : M4 := gp A (sel T)
 
-
+@[simp] theorem gpF_empty (A : Fin 4 → M4) : gpF A ∅ = 1 := by
+  rw [gpF, sel_empty]; rfl
 
 /-- The sign produced when a generator is moved through an ordered product.  It depends only
 on the index data, not on the Clifford set. -/

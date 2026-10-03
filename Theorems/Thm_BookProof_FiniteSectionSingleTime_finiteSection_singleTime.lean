@@ -20,7 +20,7 @@ open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 
 variable {ι : Type*} [DecidableEq ι]

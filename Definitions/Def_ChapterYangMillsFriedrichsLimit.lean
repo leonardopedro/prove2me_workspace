@@ -107,8 +107,4 @@ section Weyl
 
 open BookProof.ChapterH5 BookProof.ChapterH9
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F⟩
-
-end Weyl
-
-end BookProof.YangMillsFriedrichsLimit
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F

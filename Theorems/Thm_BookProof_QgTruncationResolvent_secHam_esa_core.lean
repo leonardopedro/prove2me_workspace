@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -24,4 +25,4 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 noncomputable section
 
 
-theorem BookProof.QgTruncationResolvent.secHam_esa_core : EssentiallySelfAdjointOn (secCore (ι := ι)) (secHam W Q) := by sorry
+theorem BookProof.QgTruncationResolvent.secHam_esa_core : EssentiallySelfAdjointOn (secCore (ι := by sorry

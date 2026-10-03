@@ -209757,3 +209757,6 @@ inst✝¹ : NormedA)
 17:28:10 sync: checked 175 pending solution(s), 5 already Proved
 17:28:10 sync: checked 200 pending solution(s), 5 already Proved
 17:28:10 sync: marked 0 already-published item(s) and 5 already-proved solution(s) done
+18:56:41 retry-failed: re-armed 0 item(s)
+18:56:41 summary: 1799 done, 172 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1812 out-of-order orphans ignored)
+18:56:41 chunk: 0 item(s) resolved in 0s

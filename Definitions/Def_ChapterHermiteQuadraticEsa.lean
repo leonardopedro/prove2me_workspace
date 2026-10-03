@@ -181,9 +181,3 @@ def sectorQuadW (M alpha mu : ℝ) (x : Vd 2) : ℝ := confV M alpha (x 0) + mu 
 
 
 
-im rw [div_lt_iff₀ (by positivity : (0 : ℝ) < 24 * alpha)]
-  linarith
-
-end
-
-end BookProof.HermiteQuadraticEsa

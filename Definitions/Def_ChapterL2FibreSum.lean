@@ -81,7 +81,8 @@ noncomputable def projCLM (μ : Measure X) {E : Set X} (hE : MeasurableSet E) :
       map_smul' := fun c f => proj_smul μ hE c f } 1
     (fun f => by simpa using norm_proj_le μ hE f)
 
-
+@[simp] theorem projCLM_apply (μ : Measure X) {E : Set X} (hE : MeasurableSet E)
+    (f : Lp K 2 μ) : projCLM μ hE f = proj μ hE f := rfl
 
 end ProjCLM
 

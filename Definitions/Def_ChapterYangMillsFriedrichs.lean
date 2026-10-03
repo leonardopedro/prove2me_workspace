@@ -875,21 +875,4 @@ def IsPositiveSelfAdjointExtension {D Dom : Submodule ℂ F} (H : D →ₗ[ℂ] 
 
 end Friedrichs
 
-/-! ## Part D — the Hashimoto/SIRK limiH v k : Submodule ℂ E) : Set E)) :
-    Filter.Tendsto (fun k : ℕ => ‖u - (krylovSpan H v k).starProjection u‖)
-      Filter.atTop (nhds 0) :=
-  krylov_bestApprox_tendsto_zero H v u hdense
-
-/- **The conjecture of `CONSOLIDATED_PLAN.md` §11.2 — recorded, not stated as a
-Lean theorem.**  *The operator recovered in the infinite Hashimoto/SIRK limit is
-the Friedrichs extension.*  Formalizing it requires the limit operator of the
-Krylov flag, which is exactly the piece that is not constructed here; the two
-theorems above are the proved facts that support it (nesting and, for a cyclic
-seed, convergence of the best-approximation error).  It is deliberately not
-written as a Lean statement, because every naive rendering of it is either
-trivially true (all extensions agree on the original domain by definition) or
-requires the unformalized limit. -/
-
-end Sirk
-
-end BookProof.YangMillsFriedrichs
+/-! ## Part D — the Hashimoto/SIRK limi

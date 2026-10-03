@@ -49,7 +49,8 @@ variable (Hs : IPSpace) (c : ℝ)
 def scalarOp : (⊤ : Submodule ℂ Hs.carrier) →ₗ[ℂ] Hs.carrier :=
   (c : ℂ) • (⊤ : Submodule ℂ Hs.carrier).subtype
 
-
+@[simp] theorem scalarOp_apply (x : (⊤ : Submodule ℂ Hs.carrier)) :
+    scalarOp Hs c x = (c : ℂ) • (x : Hs.carrier) := rfl
 
 
 

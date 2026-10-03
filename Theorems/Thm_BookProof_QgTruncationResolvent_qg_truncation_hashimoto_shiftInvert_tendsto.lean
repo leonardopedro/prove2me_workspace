@@ -1,6 +1,7 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.qg_truncation_hashimoto_shiftInvert_tendsto
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -15,7 +16,7 @@ open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {ι : Type*}

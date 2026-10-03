@@ -1,3 +1,9 @@
+import Theorems.Thm_PhysFunctionalAnalysis_exists_atomless_sphere_measure
+
+import Theorems.Thm_PhysFunctionalAnalysis_l2_separable
+
+
+import Definitions.Def_PhysFunctionalAnalysis
 import Mathlib
 
 
@@ -199,7 +205,9 @@ noncomputable def formalismOfPrior (μ : Measure Substrate)
   prior_isProb := h1
   prior_atomless := h2
 
-
+@[simp] theorem prior_formalismOfPrior (μ : Measure Substrate)
+    (h1 : IsProbabilityMeasure μ) (h2 : ∀ x, μ {x} = 0) :
+    (formalismOfPrior μ h1 h2).prior = μ := rfl
 
 
 

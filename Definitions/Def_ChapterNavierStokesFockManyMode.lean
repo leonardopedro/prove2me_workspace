@@ -48,7 +48,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace FockManyMode
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
 /-- An occupation-number configuration of the `d` field modes: `α i` quanta in
 the Hermite level of the mode `i`.  `ℓ²(Occ d)` is the Fock space of the `d`-mode
@@ -222,12 +222,3 @@ noncomputable def testState (κ : Fin d → ℝ) (i₀ : Fin d) : maxDom (fockSy
 
 
 
-
-
-/-! ## Essential self-adjointness -/
-
-
-
-end FockManyMode
-
-end BookProof.NavierStokesFlow

@@ -149,7 +149,7 @@ Hamiltonian that are invisible for `∂/∂x_i`, because the symbol `A_i` does n
 `x`.) -/
 def genU (i : Fin 3) : Module.End ℂ NSAlg := (pderiv (NSVar.u i)).toLinearMap
 
-
+theorem genU_apply (i : Fin 3) (p : NSAlg) : genU i p = pderiv (NSVar.u i) p := rfl
 
 
 

@@ -350,20 +350,3 @@ def nsDiffH : (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=
 
 
 
-
-
-
-
-/-! ## The Navier–Stokes reading of the coefficients -/
-
-/-- **The quantized Navier–Stokes quadratic symbol on `L²(du₁du₂du₃)`**,
-`∑ᵢ ½(πᵢ Aᵢ + Aᵢ πᵢ)` with `Aᵢ(u) = ∑ⱼ (grad i j) uⱼ − ν (lap i)`, `πᵢ = −i ∂/∂uᵢ`. -/
-def nsQuadraticDiffH (nu : ℝ) (grad : Matrix (Fin 3) (Fin 3) ℝ) (lap : Fin 3 → ℝ) :
-    (polyGaussCore (d := 3)) →ₗ[ℂ] (polyGaussCore (d := 3)) :=
-  nsDiffH grad (fun i => -(nu * lap i))
-
-
-
-end
-
-end BookProof.NavierStokesFlow.DifferentialL2

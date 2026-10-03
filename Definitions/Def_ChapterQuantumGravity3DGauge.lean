@@ -600,22 +600,4 @@ theorem qgKappaElliptic_nonneg (j : Fin 84) : 0 ≤ qgKappaElliptic j := by
 
 /-! ### F.8 — the elliptic sector: Friedrichs extension and Hashimoto selection -/
 
-/-- **The elliptic sector of the gravity Hamiltonian**: the same field-sp (g j)  Compression R (coreBasis e) k u)
-          Filter.atTop (nhds (R u))) ∧
-        (∀ (Dom' : Submodule ℂ (L2d 84)) (A' : Dom' →ₗ[ℂ] L2d 84),
-          IsShiftInvert A' γ R → Dom' = Dom) := by
-  rw [qg3DElliptic_eq_weylOp]
-  exact weyl_hashimoto_selects_friedrichs (coreBasis e)
-    (qgMomScaled_symmetricOn (coreRepBasis e)) (torsionOps_symmetricOn (coreRepBasis e)) hγ
-
-/-- A concrete enumeration of the monomials of `ℂ[X₀,…,X₈₃]`, so that
-`qg3DElliptic_hashimoto_selects` is not vacuous. -/
-def qgEnum : ℕ ≃ (Fin 84 →₀ ℕ) :=
-  letI : Denumerable (Fin 84 →₀ ℕ) := Denumerable.ofEncodableOfInfinite _
-  (Denumerable.eqv (Fin 84 →₀ ℕ)).symm
-
-end Gravity
-
-end
-
-end BookProof.QuantumGravity3DGauge
+/-- **The elliptic sector of the gravity Hamiltonian**: the same field-sp (g j)

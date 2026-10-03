@@ -1,5 +1,12 @@
+import Theorems.Thm_BookProof_Complexification_Cx_csmul_im
+
+import Theorems.Thm_BookProof_Complexification_Cx_csmul_re
+
+import Theorems.Thm_BookProof_Complexification_Cx_ofReal_add
+
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
+import Definitions.Def_Complexification
 import Mathlib
 
 
@@ -51,7 +58,10 @@ namespace Cx
 
 
 
-
+lemma ofReal_eq_zero {w : W} : ofReal w = 0 ↔ w = 0 := by
+  constructor
+  · intro h; have := congrArg Cx.re h; simpa using this
+  · rintro rfl; ext <;> simp
 
 
 
@@ -70,7 +80,8 @@ def complexify (Y : Submodule ℝ W) : Submodule ℂ (Cx W) where
     exact ⟨Y.sub_mem (Y.smul_mem z.re ha1) (Y.smul_mem z.im ha2),
       Y.add_mem (Y.smul_mem z.re ha2) (Y.smul_mem z.im ha1)⟩
 
-
+@[simp] lemma mem_complexify {Y : Submodule ℝ W} {x : Cx W} :
+    x ∈ complexify Y ↔ x.re ∈ Y ∧ x.im ∈ Y := Iff.rfl
 
 /-- **Real part of a complex subspace.** `realPart X` is the real subspace
 `{w : W | ofReal w ∈ X}` of `W`. -/
@@ -93,11 +104,18 @@ def realPart (X : Submodule ℂ (Cx W)) : Submodule ℝ W where
       · rw [csmul_im]; simp
     rw [this]; exact X.smul_mem _ ha
 
-
+@[simp] lemma mem_realPart {X : Submodule ℂ (Cx W)} {w : W} :
+    w ∈ realPart X ↔ ofReal w ∈ X := Iff.rfl
 
 /-! ### The two round-trips -/
 
-
+/-- `realPart (complexify Y) = Y`. -/
+@[simp] lemma realPart_complexify (Y : Submodule ℝ W) : realPart (complexify Y) = Y := by
+  ext w
+  simp only [mem_realPart, mem_complexify, ofReal_re, ofReal_im]
+  constructor
+  · rintro ⟨h, _⟩; exact h
+  · intro h; exact ⟨h, Y.zero_mem⟩
 
 /-
 If a complex subspace `X` is invariant under the conjugation `cxConj`, then
@@ -109,13 +127,22 @@ If a complex subspace `X` is invariant under the conjugation `cxConj`, then
 
 /-! ### Extremal values -/
 
+@[simp] lemma complexify_bot : complexify (⊥ : Submodule ℝ W) = ⊥ := by
+  ext x
+  simp only [mem_complexify, Submodule.mem_bot]
+  constructor
+  · rintro ⟨h1, h2⟩; ext <;> simp [h1, h2]
+  · rintro rfl; exact ⟨rfl, rfl⟩
 
+@[simp] lemma complexify_top : complexify (⊤ : Submodule ℝ W) = ⊤ := by
+  ext x; simp
 
+@[simp] lemma realPart_bot : realPart (⊥ : Submodule ℂ (Cx W)) = ⊥ := by
+  ext w
+  simp only [mem_realPart, Submodule.mem_bot, ofReal_eq_zero]
 
-
-
-
-
+@[simp] lemma realPart_top : realPart (⊤ : Submodule ℂ (Cx W)) = ⊤ := by
+  ext w; simp
 
 /-! ### `complexify` and `realPart` preserve subsystems -/
 

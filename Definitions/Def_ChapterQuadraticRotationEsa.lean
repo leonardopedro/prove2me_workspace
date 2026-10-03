@@ -134,7 +134,8 @@ def rotLin (O : Matrix (Fin d) (Fin d) ℝ) : Vd d →ₗ[ℝ] Vd d where
     rw [Finset.mul_sum]
     exact Finset.sum_congr rfl fun j _ => by ring
 
-
+@[simp] theorem rotLin_apply (O : Matrix (Fin d) (Fin d) ℝ) (x : Vd d) (i : Fin d) :
+    rotLin O x i = ∑ j, O j i * x j := rfl
 
 theorem rot_dot {O : Matrix (Fin d) (Fin d) ℝ} (hOO : O * Oᵀ = 1) (a b : Fin d → ℝ) :
     ∑ k, (∑ j, O j k * a j) * (∑ l, O l k * b l) = ∑ j, a j * b j := by
@@ -167,7 +168,8 @@ theorem rotLin_inner {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) (x y :
 def rotIso {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) : Vd d ≃ₗᵢ[ℝ] Vd d :=
   ((rotLin O).isometryOfInner (rotLin_inner hO)).toLinearIsometryEquiv rfl
 
-
+@[simp] theorem rotIso_apply {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) (x : Vd d) :
+    (rotIso hO x : Vd d) = rotLin O x := rfl
 
 
 

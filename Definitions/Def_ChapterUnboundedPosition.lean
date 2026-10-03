@@ -1067,8 +1067,4 @@ noncomputable def phaseUnitary (f : ℤ → ℝ) (t : ℝ) : L2Z ≃ₗᵢ[ℂ] 
         change phaseLin f (-t) (phaseLin f t psi) = psi
         rw [phaseLin_add, neg_add_cancel, phaseLin_zero]
       right_inv := fun psi => by
-        change phaseLin f t (phaseLin f (-t) psi) _aaseUent ndtendsto 0).comp htsum
-  refine hsqrt.congr fun t => ?_
-  rw [← hsq t, Real.sqrt_sq (norm_nonneg _)]
-
-end BookProof.ChapterUnboundedPosition
+        change phaseLin f t (phaseLin f (-t) psi) _aaseUent nd

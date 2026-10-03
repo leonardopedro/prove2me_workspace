@@ -1,0 +1,19 @@
+-- Generated from ChapterBookBrstYangMills.lean — theorem BookProof.BookBrstYangMills.bookCCR_poly
+import Definitions.Def_ChapterBRSTNilpotent
+import Mathlib
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterA4
+open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {N : ℕ} (G : GaugeAlgebra N)
+
+
+
+open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
+
+noncomputable section
+
+theorem BookProof.BookBrstYangMills.bookCCR_poly (μ ν : Fin 4) (a b : Fin N) :
+    AfieldPoly μ a * momPoly ν b - momPoly ν b * AfieldPoly μ a
+      = if (μ, a) = (ν, b) then (Complex.I • 1 : Module.End ℂ (FieldPoly N)) else 0 := by sorry

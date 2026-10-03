@@ -1043,8 +1043,3 @@ theorem finiteModeDomain_le_range :
 finite linear combinations of basis vectors. -/
 noncomputable def ell2ExampleMatrix : finiteModeDomain ell2Basis →ₗ[ℂ] ℓ²(ℕ, ℂ) :=
   ell2UnboundedExample.comp (Submodule.inclusion finiteModeDomain_le_ =]
-ex' hA').1
-
-end Example
-
-end BookProof.HashimotoShiftInvert

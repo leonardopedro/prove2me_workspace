@@ -69,9 +69,10 @@ noncomputable def fieldOp (j : Fin 2) : Module.End ℂ P := LinearMap.mulLeft �
 /-- The conjugate momentum `π_j = -i ∂_j` (`π` for `j = 0`, `π*` for `j = 1`). -/
 noncomputable def momOp (j : Fin 2) : Module.End ℂ P := (-Complex.I) • derOp j
 
+@[simp] theorem fieldOp_apply (j : Fin 2) (p : P) : fieldOp j p = X j * p := rfl
 
-
-
+@[simp] theorem momOp_apply (j : Fin 2) (p : P) :
+    momOp j p = (-Complex.I) • pderiv j p := rfl
 
 
 
@@ -87,7 +88,8 @@ noncomputable def momOp (j : Fin 2) : Module.End ℂ P := (-Complex.I) • derOp
 noncomputable def eulerOp : Module.End ℂ P :=
   (fieldOp 0).comp (derOp 0) + (fieldOp 1).comp (derOp 1)
 
-
+@[simp] theorem eulerOp_apply (p : P) :
+    eulerOp p = X 0 * pderiv 0 p + X 1 * pderiv 1 p := rfl
 
 /-- **The gauge generator of the model**, the charge operator
 `Q = π φ + π* φ*` (book 2432). -/

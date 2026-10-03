@@ -75,7 +75,7 @@ def basisVec (k : ι) : L2I ι := lp.single 2 k (1 : ℂ)
 /-- The mode basis vector, as an element of the finite-mode core. -/
 def coreVec (k : ι) : lpFiniteModes ι := ⟨basisVec k, lpSingle_mem_lpFiniteModes k 1⟩
 
-
+@[simp] theorem coreVec_coe (k : ι) : ((coreVec k : lpFiniteModes ι) : L2I ι) = basisVec k := rfl
 
 
 

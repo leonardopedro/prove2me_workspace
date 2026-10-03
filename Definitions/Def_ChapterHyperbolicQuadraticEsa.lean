@@ -197,10 +197,3 @@ def dPoly (i : Fin d) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d
 /-- The Minkowski weights `(1, −1, …, −1)`: coordinate `0` is the time. -/
 def minkowskiCoeff (n : ℕ) : Fin (1 + n) → ℝ := fun i => if i = 0 then 1 else -1
 
-
-
-
-
-end
-
-end BookProof.HyperbolicQuadratic

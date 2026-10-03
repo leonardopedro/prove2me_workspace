@@ -115,8 +115,3 @@ def ymHermCol (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 
 
 /-! ## The headline -/
 
-
-
-end
-
-end BookProof.YangMillsBandBounds

@@ -57,7 +57,6 @@ namespace BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 
@@ -112,10 +111,3 @@ def qgFiberV (M alpha : ℝ) {d : ℕ} (omega : Fin d → ℝ) : Option (Fin d) 
 
 
 
-
-
-
-
-end
-
-end BookProof.BddBelowFiberSumEsa

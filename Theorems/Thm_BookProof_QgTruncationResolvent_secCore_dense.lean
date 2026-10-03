@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
@@ -24,4 +25,4 @@ noncomputable section
 
 
 theorem BookProof.QgTruncationResolvent.secCore_dense :
-    Dense ((secCore (ι := ι) : Submodule ℂ (Sec ι)) : Set (Sec ι)) := by sorry
+    Dense ((secCore (ι := by sorry

@@ -104,9 +104,11 @@ def shiftVec (c b : Fin d → ℝ) : Vd d := (WithLp.toLp 2 (fun i => -2 * b i /
 /-- The classical equilibrium momentum `kᵢ = −b'ᵢ/(2cᵢ)`. -/
 def boostVec (c b' : Fin d → ℝ) : Vd d := (WithLp.toLp 2 (fun i => -b' i / (2 * c i)) : Vd d)
 
+@[simp] theorem shiftVec_apply (c b : Fin d → ℝ) (i : Fin d) :
+    (shiftVec c b) i = -2 * b i / c i := rfl
 
-
-
+@[simp] theorem boostVec_apply (c b' : Fin d → ℝ) (i : Fin d) :
+    (boostVec c b') i = -b' i / (2 * c i) := rfl
 
 /-- The constant produced by completing the square,
 `−∑ᵢ (b'ᵢ²/(4cᵢ) + bᵢ²/cᵢ)`. -/
@@ -147,7 +149,8 @@ def shiftedHOp (a k : Vd d) (c b b' : Fin d → ℝ) : (polyGaussCoreT a k) →�
 def dPolyT (k : Vd d) (i : Fin d) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ :=
   dPoly i + (Complex.I * ((k i : ℝ) : ℂ)) • LinearMap.id
 
-
+@[simp] theorem dPolyT_apply (k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    dPolyT k i p = dPoly i p + (Complex.I * ((k i : ℝ) : ℂ)) • p := rfl
 
 
 

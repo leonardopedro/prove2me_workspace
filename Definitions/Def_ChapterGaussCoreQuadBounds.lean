@@ -126,8 +126,3 @@ def shiftNorm (p : MvPolynomial (Fin D) ℂ) : ℝ := ‖pgLp (harmP p) + pgLp p
 
 
 
-un i => ((x i : ℝ) : ℂ)) p‖)]
-
-end
-
-end BookProof.GaussCoreQuadBounds

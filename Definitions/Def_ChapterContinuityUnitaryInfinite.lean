@@ -343,9 +343,4 @@ noncomputable def bornPMF (v : LinfZ) (t : ℝ) (psi : L2Z) (hpsi : ‖psi‖ = 
     have hns : ∀ z : ℤ, 0 ≤ ‖((evolvedState v t psi : L2Z) : ℤ → ℂ) z‖ ^ 2 := fun _ => by positivity
     have htsum : ∑' z : ℤ, ENNReal.ofReal (‖((evolvedStat ENNReal.summable.hasSum⟩
 
-@[simp] theorem borecover (v x) t (psi x) B) := by
-  refine ⟨(bornPMF (v x) t (psi x) (hpsi x)).tsum_coe, fun B => ?_⟩
-  rw [bornRecover, ENNReal.ofReal_sum_of_nonneg (fun _ _ => by positivity)]
-  exact Finset.sum_congr rfl fun z _ => bornPMF_apply _ _ _ _ z
-
-end BookProof.ChapterContinuityUnitaryInfinite
+@[simp] theorem bor

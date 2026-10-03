@@ -105,6 +105,3 @@ variable [CompleteSpace F]
 
 
 
-
-
-end BookProof.StoneBridge

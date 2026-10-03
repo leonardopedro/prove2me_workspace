@@ -122,8 +122,3 @@ noncomputable def hamiltonianSym : ℂ[X] →ₗ[ℂ] ℂ[X] :=
 
 /-! ## F1.5 — BRST bridge to the gauge layer (`ChapterG2`) -/
 
-
-
-end
-
-end BookProof.ChapterF1

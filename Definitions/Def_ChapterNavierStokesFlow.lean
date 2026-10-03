@@ -402,15 +402,3 @@ def nsOuterGen {m : ℕ} (A : Fin m → Matrix (Fin n) (Fin n) ℂ) :
     Fin m ⊕ Fin m → Matrix (Fin n) (Fin n) ℂ :=
   Sum.elim (fun k => (A k)ᴴ) A
 
-
-
-/-- **G.3** The **comparison operator** of the outer Fock layer: the number
-operator `N = ∑_k A†_k A_k`, the second-quantized `∫ 𝒩X A†[X] A[X]`. -/
-noncomputable def nsNumberOp {m : ℕ} (A : Fin m → Matrix (Fin n) (Fin n) ℂ) :
-    Matrix (Fin n) (Fin n) ℂ := ∑ k : Fin m, (A k)ᴴ * A k
-
-
-
-
-
-end BookProof.NavierStokesFlow

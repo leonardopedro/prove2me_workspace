@@ -165,7 +165,7 @@ def hlCore : Submodule ℂ HL := LinearMap.range testIncl
 /-- Test functions are in bijection with the core. -/
 def hlEquiv : testSpace ≃ₗ[ℂ] hlCore := LinearEquiv.ofInjective testIncl testIncl_injective
 
-
+@[simp] theorem hlEquiv_coe (f : testSpace) : ((hlEquiv f : hlCore) : HL) = testIncl f := rfl
 
 /-- The second derivative, as a linear map of the test-function space. -/
 def deriv2LM : testSpace →ₗ[ℂ] testSpace where

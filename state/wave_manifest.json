@@ -1,106 +1,8 @@
 [
  {
   "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.add_re",
-  "slug": "BookProof_Complexification_Cx_add_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.add_im",
-  "slug": "BookProof_Complexification_Cx_add_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.zero_re",
-  "slug": "BookProof_Complexification_Cx_zero_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.zero_im",
-  "slug": "BookProof_Complexification_Cx_zero_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.neg_re",
-  "slug": "BookProof_Complexification_Cx_neg_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.neg_im",
-  "slug": "BookProof_Complexification_Cx_neg_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.sub_re",
-  "slug": "BookProof_Complexification_Cx_sub_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.sub_im",
-  "slug": "BookProof_Complexification_Cx_sub_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.csmul_re",
-  "slug": "BookProof_Complexification_Cx_csmul_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.csmul_im",
-  "slug": "BookProof_Complexification_Cx_csmul_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.inner_def",
-  "slug": "BookProof_Complexification_Cx_inner_def",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.inner_re",
-  "slug": "BookProof_Complexification_Cx_inner_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
   "name": "BookProof.Complexification.Cx.inner_im",
   "slug": "BookProof_Complexification_Cx_inner_im",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.ofReal_re",
-  "slug": "BookProof_Complexification_Cx_ofReal_re",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.ofReal_im",
-  "slug": "BookProof_Complexification_Cx_ofReal_im",
   "plen": 0,
   "ns": "BookProof.Complexification.Cx"
  },
@@ -115,13 +17,6 @@
   "leaf": "Complexification",
   "name": "BookProof.Complexification.Cx.smul_I",
   "slug": "BookProof_Complexification_Cx_smul_I",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.cxConj_apply",
-  "slug": "BookProof_Complexification_Cx_cxConj_apply",
   "plen": 0,
   "ns": "BookProof.Complexification.Cx"
  },
@@ -151,20 +46,6 @@
   "name": "BookProof.Complexification.Cx.ofReal_fixed",
   "slug": "BookProof_Complexification_Cx_ofReal_fixed",
   "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.cxMap_apply",
-  "slug": "BookProof_Complexification_Cx_cxMap_apply",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "Complexification",
-  "name": "BookProof.Complexification.Cx.cxMap_one",
-  "slug": "BookProof_Complexification_Cx_cxMap_one",
-  "plen": 1,
   "ns": "BookProof.Complexification.Cx"
  },
  {
@@ -232,37 +113,9 @@
  },
  {
   "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.ofReal_eq_zero",
-  "slug": "BookProof_Complexification_Cx_ofReal_eq_zero",
-  "plen": 3,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
   "name": "BookProof.Complexification.Cx.eq_ofReal_add_smul",
   "slug": "BookProof_Complexification_Cx_eq_ofReal_add_smul",
   "plen": 1,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.mem_complexify",
-  "slug": "BookProof_Complexification_Cx_mem_complexify",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.mem_realPart",
-  "slug": "BookProof_Complexification_Cx_mem_realPart",
-  "plen": 0,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.realPart_complexify",
-  "slug": "BookProof_Complexification_Cx_realPart_complexify",
-  "plen": 5,
   "ns": "BookProof.Complexification.Cx"
  },
  {
@@ -277,34 +130,6 @@
   "name": "BookProof.Complexification.Cx.complexify_cxConj_invariant",
   "slug": "BookProof_Complexification_Cx_complexify_cxConj_invariant",
   "plen": 3,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.complexify_bot",
-  "slug": "BookProof_Complexification_Cx_complexify_bot",
-  "plen": 5,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.complexify_top",
-  "slug": "BookProof_Complexification_Cx_complexify_top",
-  "plen": 1,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.realPart_bot",
-  "slug": "BookProof_Complexification_Cx_realPart_bot",
-  "plen": 2,
-  "ns": "BookProof.Complexification.Cx"
- },
- {
-  "leaf": "ChapterA1b",
-  "name": "BookProof.Complexification.Cx.realPart_top",
-  "slug": "BookProof_Complexification_Cx_realPart_top",
-  "plen": 1,
   "ns": "BookProof.Complexification.Cx"
  },
  {
@@ -340,13 +165,6 @@
   "name": "BookProof.ChapterAbelianGelfandModel.isProbabilityMeasure_rieszStateMeasure",
   "slug": "BookProof_ChapterAbelianGelfandModel_isProbabilityMeasure_rieszStateMeasure",
   "plen": 10,
-  "ns": "BookProof.ChapterAbelianGelfandModel"
- },
- {
-  "leaf": "ChapterAbelianGelfandModel",
-  "name": "BookProof.ChapterAbelianGelfandModel.toC_apply",
-  "slug": "BookProof_ChapterAbelianGelfandModel_toC_apply",
-  "plen": 0,
   "ns": "BookProof.ChapterAbelianGelfandModel"
  },
  {
@@ -396,13 +214,6 @@
   "name": "BookProof.ChapterAbelianGelfandModel.norm_oneVec",
   "slug": "BookProof_ChapterAbelianGelfandModel_norm_oneVec",
   "plen": 13,
-  "ns": "BookProof.ChapterAbelianGelfandModel"
- },
- {
-  "leaf": "ChapterAbelianGelfandModel",
-  "name": "BookProof.ChapterAbelianGelfandModel.mulRepHom_apply",
-  "slug": "BookProof_ChapterAbelianGelfandModel_mulRepHom_apply",
-  "plen": 0,
   "ns": "BookProof.ChapterAbelianGelfandModel"
  },
  {
@@ -946,13 +757,6 @@
  },
  {
   "leaf": "ChapterBookBrstYangMills",
-  "name": "BookProof.BookBrstYangMills.gaussDer_X",
-  "slug": "BookProof_BookBrstYangMills_gaussDer_X",
-  "plen": 0,
-  "ns": "BookProof.BookBrstYangMills"
- },
- {
-  "leaf": "ChapterBookBrstYangMills",
   "name": "BookProof.BookBrstYangMills.gaussDer_vecComb",
   "slug": "BookProof_BookBrstYangMills_gaussDer_vecComb",
   "plen": 10,
@@ -1331,13 +1135,6 @@
  },
  {
   "leaf": "ChapterCarlemanUnboundedHop",
-  "name": "BookProof.CarlemanUnboundedHop.kernelOp_coe",
-  "slug": "BookProof_CarlemanUnboundedHop_kernelOp_coe",
-  "plen": 0,
-  "ns": "BookProof.CarlemanUnboundedHop"
- },
- {
-  "leaf": "ChapterCarlemanUnboundedHop",
   "name": "BookProof.CarlemanUnboundedHop.kernelOp_symmetric",
   "slug": "BookProof_CarlemanUnboundedHop_kernelOp_symmetric",
   "plen": 25,
@@ -1454,20 +1251,6 @@
   "slug": "BookProof_CarlemanUnboundedHop_geoHop_stone_flow",
   "plen": 3,
   "ns": "BookProof.CarlemanUnboundedHop"
- },
- {
-  "leaf": "ChapterCayleyInverse",
-  "name": "BookProof.ChapterCayleyInverse.oneSubU_apply",
-  "slug": "BookProof_ChapterCayleyInverse_oneSubU_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterCayleyInverse"
- },
- {
-  "leaf": "ChapterCayleyInverse",
-  "name": "BookProof.ChapterCayleyInverse.onePlusU_apply",
-  "slug": "BookProof_ChapterCayleyInverse_onePlusU_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterCayleyInverse"
  },
  {
   "leaf": "ChapterCayleyInverse",
@@ -1615,13 +1398,6 @@
   "slug": "BookProof_EsaPair_dGamma_essentiallySelfAdjoint_ofBounded",
   "plen": 1,
   "ns": "BookProof.EsaPair"
- },
- {
-  "leaf": "ChapterFiniteSectionSingleTime",
-  "name": "BookProof.FiniteSectionSingleTime.coreVec_coe",
-  "slug": "BookProof_FiniteSectionSingleTime_coreVec_coe",
-  "plen": 0,
-  "ns": "BookProof.FiniteSectionSingleTime"
  },
  {
   "leaf": "ChapterFiniteSectionSingleTime",
@@ -1828,20 +1604,6 @@
  },
  {
   "leaf": "ChapterGaugeMechanicsCharge",
-  "name": "BookProof.ChapterGaugeMechanicsCharge.fieldOp_apply",
-  "slug": "BookProof_ChapterGaugeMechanicsCharge_fieldOp_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterGaugeMechanicsCharge"
- },
- {
-  "leaf": "ChapterGaugeMechanicsCharge",
-  "name": "BookProof.ChapterGaugeMechanicsCharge.momOp_apply",
-  "slug": "BookProof_ChapterGaugeMechanicsCharge_momOp_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterGaugeMechanicsCharge"
- },
- {
-  "leaf": "ChapterGaugeMechanicsCharge",
   "name": "BookProof.ChapterGaugeMechanicsCharge.pderiv_comm_core",
   "slug": "BookProof_ChapterGaugeMechanicsCharge_pderiv_comm_core",
   "plen": 7,
@@ -1859,13 +1621,6 @@
   "name": "BookProof.ChapterGaugeMechanicsCharge.ccr_phi_piStar",
   "slug": "BookProof_ChapterGaugeMechanicsCharge_ccr_phi_piStar",
   "plen": 4,
-  "ns": "BookProof.ChapterGaugeMechanicsCharge"
- },
- {
-  "leaf": "ChapterGaugeMechanicsCharge",
-  "name": "BookProof.ChapterGaugeMechanicsCharge.eulerOp_apply",
-  "slug": "BookProof_ChapterGaugeMechanicsCharge_eulerOp_apply",
-  "plen": 0,
   "ns": "BookProof.ChapterGaugeMechanicsCharge"
  },
  {
@@ -2062,13 +1817,6 @@
   "name": "BookProof.HalfLineLimitCircle.hasCompactSupport_conj",
   "slug": "BookProof_HalfLineLimitCircle_hasCompactSupport_conj",
   "plen": 1,
-  "ns": "BookProof.HalfLineLimitCircle"
- },
- {
-  "leaf": "ChapterHalfLineLimitCircle",
-  "name": "BookProof.HalfLineLimitCircle.hlEquiv_coe",
-  "slug": "BookProof_HalfLineLimitCircle_hlEquiv_coe",
-  "plen": 0,
   "ns": "BookProof.HalfLineLimitCircle"
  },
  {
@@ -2304,13 +2052,6 @@
  },
  {
   "leaf": "ChapterL2FibreSum",
-  "name": "BookProof.ChapterL2FibreSum.projCLM_apply",
-  "slug": "BookProof_ChapterL2FibreSum_projCLM_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterL2FibreSum"
- },
- {
-  "leaf": "ChapterL2FibreSum",
   "name": "BookProof.ChapterL2FibreSum.coordCLM_apply",
   "slug": "BookProof_ChapterL2FibreSum_coordCLM_apply",
   "plen": 0,
@@ -2356,13 +2097,6 @@
   "name": "BookProof.NavierStokesFlow.Carleman.summable_normSq",
   "slug": "BookProof_NavierStokesFlow_Carleman_summable_normSq",
   "plen": 2,
-  "ns": "BookProof.NavierStokesFlow.Carleman"
- },
- {
-  "leaf": "ChapterNavierStokesCarleman",
-  "name": "BookProof.NavierStokesFlow.Carleman.tridiagOp_coe",
-  "slug": "BookProof_NavierStokesFlow_Carleman_tridiagOp_coe",
-  "plen": 0,
   "ns": "BookProof.NavierStokesFlow.Carleman"
  },
  {
@@ -3011,13 +2745,6 @@
  },
  {
   "leaf": "ChapterNsBrstDerivativeGauge",
-  "name": "BookProof.NsBrstDerivativeGauge.genU_apply",
-  "slug": "BookProof_NsBrstDerivativeGauge_genU_apply",
-  "plen": 0,
-  "ns": "BookProof.NsBrstDerivativeGauge"
- },
- {
-  "leaf": "ChapterNsBrstDerivativeGauge",
   "name": "BookProof.NsBrstDerivativeGauge.genU_leibniz",
   "slug": "BookProof_NsBrstDerivativeGauge_genU_leibniz",
   "plen": 1,
@@ -3347,27 +3074,6 @@
  },
  {
   "leaf": "ChapterNsScalarVectorCurry",
-  "name": "BookProof.NsScalarVectorCurry.prodTensor_tmul",
-  "slug": "BookProof_NsScalarVectorCurry_prodTensor_tmul",
-  "plen": 0,
-  "ns": "BookProof.NsScalarVectorCurry"
- },
- {
-  "leaf": "ChapterNsScalarVectorCurry",
-  "name": "BookProof.NsScalarVectorCurry.curryLI_fibTensor",
-  "slug": "BookProof_NsScalarVectorCurry_curryLI_fibTensor",
-  "plen": 1,
-  "ns": "BookProof.NsScalarVectorCurry"
- },
- {
-  "leaf": "ChapterNsScalarVectorCurry",
-  "name": "BookProof.NsScalarVectorCurry.curryLI_fibMk",
-  "slug": "BookProof_NsScalarVectorCurry_curryLI_fibMk",
-  "plen": 0,
-  "ns": "BookProof.NsScalarVectorCurry"
- },
- {
-  "leaf": "ChapterNsScalarVectorCurry",
   "name": "BookProof.NsScalarVectorCurry.curryLI_indicator_prod",
   "slug": "BookProof_NsScalarVectorCurry_curryLI_indicator_prod",
   "plen": 1,
@@ -3421,13 +3127,6 @@
   "slug": "BookProof_NsScalarVectorCurry_isSliceOf_fibMk",
   "plen": 5,
   "ns": "BookProof.NsScalarVectorCurry"
- },
- {
-  "leaf": "ChapterNsScalarVectorCurry",
-  "name": "BookProof.NsScalarVectorCurry.IsSliceOf.add",
-  "slug": "BookProof_NsScalarVectorCurry_IsSliceOf_add",
-  "plen": 8,
-  "ns": "BookProof.NsScalarVectorCurry.IsSliceOf"
  },
  {
   "leaf": "ChapterNsScalarVectorCurry",
@@ -3574,20 +3273,6 @@
   "name": "BookProof.ChapterPauliFundamental.sel_lo_length",
   "slug": "BookProof_ChapterPauliFundamental_sel_lo_length",
   "plen": 0,
-  "ns": "BookProof.ChapterPauliFundamental"
- },
- {
-  "leaf": "ChapterPauliFundamental",
-  "name": "BookProof.ChapterPauliFundamental.sel_empty",
-  "slug": "BookProof_ChapterPauliFundamental_sel_empty",
-  "plen": 0,
-  "ns": "BookProof.ChapterPauliFundamental"
- },
- {
-  "leaf": "ChapterPauliFundamental",
-  "name": "BookProof.ChapterPauliFundamental.gpF_empty",
-  "slug": "BookProof_ChapterPauliFundamental_gpF_empty",
-  "plen": 1,
   "ns": "BookProof.ChapterPauliFundamental"
  },
  {
@@ -3858,20 +3543,6 @@
  },
  {
   "leaf": "ChapterQgOuterFockEllipticFL",
-  "name": "BookProof.QgOuterFockElliptic.momD_eq",
-  "slug": "BookProof_QgOuterFockElliptic_momD_eq",
-  "plen": 0,
-  "ns": "BookProof.QgOuterFockElliptic"
- },
- {
-  "leaf": "ChapterQgOuterFockEllipticFL",
-  "name": "BookProof.QgOuterFockElliptic.mulD_eq",
-  "slug": "BookProof_QgOuterFockElliptic_mulD_eq",
-  "plen": 0,
-  "ns": "BookProof.QgOuterFockElliptic"
- },
- {
-  "leaf": "ChapterQgOuterFockEllipticFL",
   "name": "BookProof.QgOuterFockElliptic.dsCore_le_dsFriedDom",
   "slug": "BookProof_QgOuterFockElliptic_dsCore_le_dsFriedDom",
   "plen": 16,
@@ -4082,20 +3753,6 @@
  },
  {
   "leaf": "ChapterQgTruncationResolvent",
-  "name": "BookProof.QgTruncationResolvent.truncModes_sig",
-  "slug": "BookProof_QgTruncationResolvent_truncModes_sig",
-  "plen": 0,
-  "ns": "BookProof.QgTruncationResolvent"
- },
- {
-  "leaf": "ChapterQgTruncationResolvent",
-  "name": "BookProof.QgTruncationResolvent.truncModes_nbr",
-  "slug": "BookProof_QgTruncationResolvent_truncModes_nbr",
-  "plen": 0,
-  "ns": "BookProof.QgTruncationResolvent"
- },
- {
-  "leaf": "ChapterQgTruncationResolvent",
   "name": "BookProof.QgTruncationResolvent.secCore_dense",
   "slug": "BookProof_QgTruncationResolvent_secCore_dense",
   "plen": 1,
@@ -4156,27 +3813,6 @@
   "slug": "BookProof_QgTruncationResolvent_qg_truncation_hashimoto_shiftInvert_tendsto",
   "plen": 3,
   "ns": "BookProof.QgTruncationResolvent"
- },
- {
-  "leaf": "ChapterQgVielbeinModeInstance",
-  "name": "BookProof.QgVielbeinModeInstance.ofFintype_sig",
-  "slug": "BookProof_QgVielbeinModeInstance_ofFintype_sig",
-  "plen": 0,
-  "ns": "BookProof.QgVielbeinModeInstance"
- },
- {
-  "leaf": "ChapterQgVielbeinModeInstance",
-  "name": "BookProof.QgVielbeinModeInstance.ofFintype_A",
-  "slug": "BookProof_QgVielbeinModeInstance_ofFintype_A",
-  "plen": 0,
-  "ns": "BookProof.QgVielbeinModeInstance"
- },
- {
-  "leaf": "ChapterQgVielbeinModeInstance",
-  "name": "BookProof.QgVielbeinModeInstance.ofFintype_B",
-  "slug": "BookProof_QgVielbeinModeInstance_ofFintype_B",
-  "plen": 0,
-  "ns": "BookProof.QgVielbeinModeInstance"
  },
  {
   "leaf": "ChapterQgVielbeinModeInstance",
@@ -4288,20 +3924,6 @@
   "name": "BookProof.QuadraticRotation.quadPolyMat_rotPoly",
   "slug": "BookProof_QuadraticRotation_quadPolyMat_rotPoly",
   "plen": 70,
-  "ns": "BookProof.QuadraticRotation"
- },
- {
-  "leaf": "ChapterQuadraticRotationEsa",
-  "name": "BookProof.QuadraticRotation.rotLin_apply",
-  "slug": "BookProof_QuadraticRotation_rotLin_apply",
-  "plen": 0,
-  "ns": "BookProof.QuadraticRotation"
- },
- {
-  "leaf": "ChapterQuadraticRotationEsa",
-  "name": "BookProof.QuadraticRotation.rotIso_apply",
-  "slug": "BookProof_QuadraticRotation_rotIso_apply",
-  "plen": 0,
   "ns": "BookProof.QuadraticRotation"
  },
  {
@@ -4481,20 +4103,6 @@
  },
  {
   "leaf": "ChapterReducingSubspaceEsa",
-  "name": "BookProof.ReducedEsa.redIncl_coe",
-  "slug": "BookProof_ReducedEsa_redIncl_coe",
-  "plen": 0,
-  "ns": "BookProof.ReducedEsa"
- },
- {
-  "leaf": "ChapterReducingSubspaceEsa",
-  "name": "BookProof.ReducedEsa.redOp_coe",
-  "slug": "BookProof_ReducedEsa_redOp_coe",
-  "plen": 0,
-  "ns": "BookProof.ReducedEsa"
- },
- {
-  "leaf": "ChapterReducingSubspaceEsa",
   "name": "BookProof.ReducedEsa.symmetricOn_redOp",
   "slug": "BookProof_ReducedEsa_symmetricOn_redOp",
   "plen": 3,
@@ -4512,20 +4120,6 @@
   "name": "BookProof.ReducedEsa.essentiallySelfAdjointOn_red",
   "slug": "BookProof_ReducedEsa_essentiallySelfAdjointOn_red",
   "plen": 1,
-  "ns": "BookProof.ReducedEsa"
- },
- {
-  "leaf": "ChapterReducingSubspaceEsa",
-  "name": "BookProof.ReducedEsa.symProj_apply",
-  "slug": "BookProof_ReducedEsa_symProj_apply",
-  "plen": 0,
-  "ns": "BookProof.ReducedEsa"
- },
- {
-  "leaf": "ChapterReducingSubspaceEsa",
-  "name": "BookProof.ReducedEsa.asymProj_apply",
-  "slug": "BookProof_ReducedEsa_asymProj_apply",
-  "plen": 0,
   "ns": "BookProof.ReducedEsa"
  },
  {
@@ -4604,13 +4198,6 @@
   "slug": "BookProof_ReducedEsa_mem_sector_asymProj_iff",
   "plen": 7,
   "ns": "BookProof.ReducedEsa"
- },
- {
-  "leaf": "ChapterScalarDGammaEsa",
-  "name": "BookProof.ScalarDGamma.scalarOp_apply",
-  "slug": "BookProof_ScalarDGamma_scalarOp_apply",
-  "plen": 0,
-  "ns": "BookProof.ScalarDGamma"
  },
  {
   "leaf": "ChapterScalarDGammaEsa",
@@ -5062,20 +4649,6 @@
  },
  {
   "leaf": "ChapterShiftedQuadraticEsa",
-  "name": "BookProof.ShiftedQuadratic.shiftVec_apply",
-  "slug": "BookProof_ShiftedQuadratic_shiftVec_apply",
-  "plen": 0,
-  "ns": "BookProof.ShiftedQuadratic"
- },
- {
-  "leaf": "ChapterShiftedQuadraticEsa",
-  "name": "BookProof.ShiftedQuadratic.boostVec_apply",
-  "slug": "BookProof_ShiftedQuadratic_boostVec_apply",
-  "plen": 0,
-  "ns": "BookProof.ShiftedQuadratic"
- },
- {
-  "leaf": "ChapterShiftedQuadraticEsa",
   "name": "BookProof.ShiftedQuadratic.shiftedHPoly_term",
   "slug": "BookProof_ShiftedQuadratic_shiftedHPoly_term",
   "plen": 4,
@@ -5142,13 +4715,6 @@
   "name": "BookProof.ShiftedQuadratic.shiftedHOp_not_bounded",
   "slug": "BookProof_ShiftedQuadratic_shiftedHOp_not_bounded",
   "plen": 32,
-  "ns": "BookProof.ShiftedQuadratic"
- },
- {
-  "leaf": "ChapterShiftedQuadraticEsa",
-  "name": "BookProof.ShiftedQuadratic.dPolyT_apply",
-  "slug": "BookProof_ShiftedQuadratic_dPolyT_apply",
-  "plen": 0,
   "ns": "BookProof.ShiftedQuadratic"
  },
  {
@@ -5419,13 +4985,6 @@
  },
  {
   "leaf": "PhysMehler",
-  "name": "PhysMehler.prior_formalismOfPrior",
-  "slug": "PhysMehler_prior_formalismOfPrior",
-  "plen": 0,
-  "ns": "PhysMehler"
- },
- {
-  "leaf": "PhysMehler",
   "name": "PhysMehler.prior_surjective_onto_atomless",
   "slug": "PhysMehler_prior_surjective_onto_atomless",
   "plen": 1,
@@ -5614,13 +5173,6 @@
   "ns": "BookProof.ChapterSolovayCoordinates"
  },
  {
-  "leaf": "ChapterSolovayCoordinates",
-  "name": "BookProof.ChapterSolovayCoordinates.tensor_decide_apply",
-  "slug": "BookProof_ChapterSolovayCoordinates_tensor_decide_apply",
-  "plen": 0,
-  "ns": "BookProof.ChapterSolovayCoordinates"
- },
- {
   "leaf": "ChapterSolovayTailDimension",
   "name": "BookProof.ChapterSolovayTailDimension.substrateInterval_subset",
   "slug": "BookProof_ChapterSolovayTailDimension_substrateInterval_subset",
@@ -5682,13 +5234,6 @@
   "slug": "BookProof_ChapterSolovayTailDimension_tail_infinite_dimensional",
   "plen": 1,
   "ns": "BookProof.ChapterSolovayTailDimension"
- },
- {
-  "leaf": "ChapterStrichartzHermiteQG",
-  "name": "BookProof.HermiteStrichartzQG.hermiteRepr_symm_single",
-  "slug": "BookProof_HermiteStrichartzQG_hermiteRepr_symm_single",
-  "plen": 1,
-  "ns": "BookProof.HermiteStrichartzQG"
  },
  {
   "leaf": "ChapterStrichartzHermiteQG",

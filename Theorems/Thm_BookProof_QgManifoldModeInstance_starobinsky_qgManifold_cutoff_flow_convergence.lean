@@ -1,6 +1,7 @@
 -- Generated from ChapterQgManifoldModeInstance.lean — theorem BookProof.QgManifoldModeInstance.starobinsky_qgManifold_cutoff_flow_convergence
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 import Definitions.Def_ChapterEsaClosureCore
@@ -13,7 +14,7 @@ open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)

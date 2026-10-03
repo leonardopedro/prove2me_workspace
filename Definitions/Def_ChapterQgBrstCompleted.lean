@@ -340,16 +340,4 @@ theorem qgPhase_commutes :
 space with a genuinely bounded nilpotent charge. -/
 def qgBrstTransfer (t : ℝ) :
     Cohomology (qgBrstCharge sym hsym) →ₗ[ℂ] Cohomology (qgBrstCharge sym hsym) :=
-  transfer (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega) t
-
-
-
-
-
-
-
-
-
-end
-
-end BookProof.QgBrstCompleted
+  transfer (qgBrstCharge sym hsym) (qgPhase omega) (qgPhas

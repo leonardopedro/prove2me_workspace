@@ -108,7 +108,8 @@ noncomputable def tridiagOp (c : ℕ → ℂ) : lpFiniteModes ℕ →ₗ[ℂ] lp
     ext n
     simpa using tridiagFun_smul c a ((f : L2N) : ℕ → ℂ) n
 
-
+@[simp] theorem tridiagOp_coe (c : ℕ → ℂ) (f : lpFiniteModes ℕ) :
+    (((tridiagOp c f : lpFiniteModes ℕ) : L2N) : ℕ → ℂ) = tridiagFun c ((f : L2N) : ℕ → ℂ) := rfl
 
 /-- **The discrete Green identity** for the tridiagonal operator: the failure of
 symmetry on a truncated window is a pure boundary term. -/

@@ -205,12 +205,3 @@ instance krylovSpan_finiteDimensional (H : E →ₗ[ℂ] E) (v : E) (m : ℕ) :
     exact ⟨⟨i, hi⟩, rfl⟩
   exact FiniteDimensional.span_of_finite ℂ hfin
 
-
-
-
-
-end BestApprox
-
-end BookProof.ChapterH9
-
-end

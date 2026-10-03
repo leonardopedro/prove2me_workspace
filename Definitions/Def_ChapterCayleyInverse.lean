@@ -100,8 +100,8 @@ def onePlusU : H →ₗ[ℂ] H where
   map_add' x y := by simp only [map_add]; abel
   map_smul' c x := by simp only [map_smul, RingHom.id_apply, smul_add]
 
-
-
+@[simp] theorem oneSubU_apply (x : H) : oneSubU V x = x - V x := rfl
+@[simp] theorem onePlusU_apply (x : H) : onePlusU V x = x + V x := rfl
 
 /-- The domain of the inverse Cayley transform: `ran(1 - V)`. -/
 def invCayleyDomain : Submodule ℂ H := LinearMap.range (oneSubU V)

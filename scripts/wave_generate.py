@@ -142,21 +142,45 @@ class ByteText:
 
     def __init__(self, text):
         self.text = text
-        self.b2c = [0] * (len(text.encode("utf-8")) + 1)
+        # Dense: EVERY byte offset in [0, nbytes] maps to a code-point index. A
+        # multi-byte character occupies several byte offsets that the loop above
+        # never visits, so those slots kept the list's default 0 -- and
+        # `b2c[gap]` returning 0 made `slice()` read from the start of the file,
+        # which is how a @[simp] lemma went undetected. Fill the interior of each
+        # character as well, so the table is total and monotone.
+        nb = len(text.encode("utf-8"))
+        self.b2c = [0] * (nb + 1)
         b = 0
         for i, ch in enumerate(text):
-            self.b2c[b] = i
-            b += len(ch.encode("utf-8"))
-        self.b2c[b] = len(text)
+            w = len(ch.encode("utf-8"))
+            for k in range(w):
+                self.b2c[b + k] = i
+            b += w
+        self.b2c[nb] = len(text)
+        self.nbytes = b
+
+    def c2b(self, ci):
+        """Code-point index -> byte offset (inverse of b2c)."""
+        lo, hi = 0, len(self.b2c)
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if self.b2c[mid] < ci:
+                lo = mid + 1
+            else:
+                hi = mid
+        return min(lo, self.nbytes)
 
     def slice(self, bstart, bend):
         # Clamp: callers legitimately ask for a window past EOF when they are
         # searching for a token, and b2c is a dict lookup, so an out-of-range
         # offset raised IndexError instead of returning the tail.
-        keys = self.b2c
-        lo = min(bstart, max(keys))
-        hi = min(bend, max(keys))
-        return self.text[keys[lo]:keys[hi]]
+        # Clamp in BYTE space. `self.nbytes` is the last mapped byte, which is
+        # also the max CODE-PONT index -- mixing the two silently returns '' for
+        # any offset past the character count, which is how a @[simp] lemma went
+        # undetected on a chapter whose text has multi-byte characters.
+        lo = max(0, min(bstart, self.nbytes))
+        hi = max(lo, min(bend, self.nbytes))
+        return self.text[self.b2c[lo]:self.b2c[hi]]
 
 
 class Decl:
@@ -302,18 +326,74 @@ def load_decls(leaf, g):
     return facts
 
 
-def classify(decls, module_doc):
+def classify(decls, module_doc, bt=None):
     short = {d.short(): d for d in decls}
     defmat = {d for d in decls
               if not d.is_private and d.kind in ("def", "inductive")}
     defmat |= {d for d in decls if d.is_instance}
-    embedded = set()
+    # A theorem the bundle's own PROOFS need must be embedded even when it is also
+    # a publishable node. Def_Complexification omits `add_re`/`add_im`/`zero_re`
+    # ... this way and then fails 12x with `simp made no progress`, because simp
+    # has no projection lemma to fire on; the same file compiles in timepiece
+    # because everything is in scope there.
+    #
+    # The vdep closure alone cannot see this: `add_re` is referenced from a PROOF
+    # BODY (`simp [add_re]`), which appears in neither typeDeps nor valueDeps. So
+    # the closure is extended using identifiers mentioned in the text of each kept
+    # declaration's proof, matched against the chapter's theorem names.
+    proof_names = {}
+    if bt is not None:
+        for d in decls:
+            try:
+                body = bt.slice(d.vs, d.e)
+            except Exception:
+                continue
+            proof_names[id(d)] = set(re.findall(r"(?<![\w.'])([A-Za-z_][\w']*)", body))
+
+    # `@[simp]` is a DEPENDENCY DECLARED IN THE ATTRIBUTE, not in any proof body.
+    # `zero_add a := by ext <;> simp` never writes `zero_re`, but simp cannot
+    # close `re 0 = 0` without it -- and `declStart` sits AFTER the attribute, so
+    # the sketch does not record that the declaration is a simp lemma either.
+    # Read the attribute off the source text immediately above the declaration.
+    simp_lemmas = set()
+    if bt is not None:
+        for d in decls:
+            if d.kind != "theorem":
+                continue
+            try:
+                # declStart points AT the attribute when there is one, so look
+                # forward from it, not backward: reading backwards sees the
+                # PREVIOUS declaration's tail (`... := rfl`) and never matches.
+                head = bt.slice(d.s, min(d.s + 200, bt.nbytes))
+            except Exception:
+                continue
+            # Not anchored: a declaration's span often begins with its DOCSTRING
+            # (`/-- ... -/` then `@[simp] lemma cxMap_one`), so the attribute is
+            # not at position 0. Search the window, but require the attribute to be
+            # the one belonging to THIS declaration -- i.e. no intervening
+            # `lemma|theorem|def|instance` between it and the name.
+            m = re.search(r"@\[[^\]]*\bsimp\b[^\]]*\]", head)
+            if m:
+                between = head[m.end():]
+                nm = re.match(r"\s*(?:private\s+|protected\s+|noncomputable\s+)*"
+                              r"(?:lemma|theorem|def|abbrev|instance)\s+"
+                              + re.escape(d.name_text or "") + r"\b", between)
+                if nm:
+                    simp_lemmas.add(d)
+
+    def refs(d):
+        return proof_names.get(id(d), set())
+
+    # A simp lemma is load-bearing for every `simp` in the bundle, so it is always
+    # embedded even if nothing names it.
+    embedded = set(simp_lemmas)
     changed = True
     while changed:
         changed = False
         for d in list(defmat) + list(embedded):
-            for dep in d.vdeps:
-                c = short.get(dep.split(".")[-1])
+            cands = [dep.split(".")[-1] for dep in d.vdeps] + sorted(refs(d))
+            for nm in cands:
+                c = short.get(nm)
                 if c and c.kind == "theorem" and c not in defmat \
                         and c not in embedded:
                     embedded.add(c)
@@ -573,7 +653,7 @@ def the_statement(bt, d):
         # fragment is dropped instead of being emitted as the first line.
         # d.vs + 4000 can run past the end of the file, and slice() indexes
         # rather than clamping.
-        m = DECL_KEYWORD.search(bt.slice(d.s, max(bt.b2c)))
+        m = DECL_KEYWORD.search(bt.slice(d.s, bt.nbytes))
         if m is None:
             return frag
         frag = bt.slice(d.s + m.start(), d.vs)
@@ -593,7 +673,7 @@ def the_statement(bt, d):
     # puts it mid-line), and searching blindly finds the `:= sorry` we are about
     # to append, which truncates the type into `( := by sorry`. Take the first
     # `:=` after the declaration keyword, which is by construction the type's.
-    body = bt.slice(d.s, max(bt.b2c))
+    body = bt.slice(d.s, bt.nbytes)
     km = DECL_KEYWORD.match(body) or DECL_KEYWORD.search(body)
     if km is not None:
         m2 = find_term_as(body, km.end())
@@ -1590,7 +1670,7 @@ def main():
         bt = src_byte_text(leaf)
         modns = module_namespace(leaf)
         doc = module_doc(bt)
-        defmat, embedded, nodes, inline = classify(decls, doc)
+        defmat, embedded, nodes, inline = classify(decls, doc, bt)
         print(f"== {leaf}: {len(decls)} decls; defmat={len(defmat)} "
               f"embedded={len(embedded)} nodes={len(nodes)} inline={len(inline)}")
         body = build_def_file(bt, leaf, decls, defmat, embedded)

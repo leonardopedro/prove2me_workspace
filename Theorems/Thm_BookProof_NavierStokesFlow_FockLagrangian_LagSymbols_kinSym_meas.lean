@@ -1,0 +1,18 @@
+-- Generated from ChapterNavierStokesFockLagrangian.lean — theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinSym_meas
+import Mathlib
+import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow
+
+variable {X : Type*} [MeasurableSpace X]
+variable {μ : Measure X} (S : LagSymbols X μ)
+
+
+open MeasureTheory
+
+
+
+open FullEsa FockContinuum
+
+
+theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinSym_meas : Measurable S.kinSym := by sorry

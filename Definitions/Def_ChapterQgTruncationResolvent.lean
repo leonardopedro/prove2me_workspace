@@ -137,9 +137,11 @@ def truncModes (Q : QgModeData ι) (Λ : Set ι) : QgModeData ι where
     · simp only [hc, if_false, norm_zero, mul_zero]
       positivity
 
+@[simp] theorem truncModes_sig (Q : QgModeData ι) (Λ : Set ι) :
+    (truncModes Q Λ).sig = Q.sig := rfl
 
-
-
+@[simp] theorem truncModes_nbr (Q : QgModeData ι) (Λ : Set ι) :
+    (truncModes Q Λ).nbr = Q.nbr := rfl
 
 
 

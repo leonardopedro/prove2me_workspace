@@ -111,8 +111,3 @@ noncomputable def resAt (hT : IsNonnegSelfAdjoint T) (n : ℕ) : F →L[ℂ] F :
 noncomputable def yosidaAt (hT : IsNonnegSelfAdjoint T) (n : ℕ) : F →L[ℂ] F :=
   yosidaCLM hT (a := (n : ℝ) + 1) (by positivity)
 
-
-
-
-
-end BookProof.NonnegResolvent

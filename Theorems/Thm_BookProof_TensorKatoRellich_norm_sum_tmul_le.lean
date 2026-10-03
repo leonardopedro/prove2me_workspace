@@ -1,0 +1,18 @@
+-- Generated from ChapterTensorKatoRellich.lean — theorem BookProof.TensorKatoRellich.norm_sum_tmul_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Mathlib
+import Definitions.Def_ChapterTensorKatoRellich
+import Definitions.Def_ChapterA4
+
+
+
+open scoped TensorProduct
+
+noncomputable section
+
+theorem BookProof.TensorKatoRellich.norm_sum_tmul_le {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+    [NormedAddCommGroup F] [InnerProductSpace ℂ F] {ι : Type*} [Fintype ι]
+    (v : ι → E) (w : ι → F) :
+    ‖∑ i, v i ⊗ₜ[ℂ] w i‖ ≤ ∑ i, ‖v i‖ * ‖w i‖ := by sorry

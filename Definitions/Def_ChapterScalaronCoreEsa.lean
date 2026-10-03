@@ -75,7 +75,7 @@ open Filter Topology MeasureTheory SchwartzMap
 
 namespace BookProof.ScalaronEsa
 
-open BookProof.StrichartzWave BookProof.FarisLavine BookProof.Starobinsky
+open BookProof.StrichartzWave BookProof.FarisLavine BookProof
 open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierStokesFlow
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
@@ -252,12 +252,3 @@ def qgScalaronModeHamiltonian :
 
 
 
-
-
-
-
-
-
-end
-
-end BookProof.ScalaronEsa

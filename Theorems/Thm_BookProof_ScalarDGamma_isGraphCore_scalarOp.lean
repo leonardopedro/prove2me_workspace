@@ -1,0 +1,22 @@
+-- Generated from ChapterScalarDGammaEsa.lean — theorem BookProof.ScalarDGamma.isGraphCore_scalarOp
+import Definitions.Def_ChapterFarisLavine
+import Mathlib
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.GraphCore
+open BookProof.TensorCore
+
+variable (Hs : IPSpace) (c : ℝ)
+
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
+
+theorem BookProof.ScalarDGamma.isGraphCore_scalarOp {D : Submodule ℂ Hs.carrier}
+    (hdense : Dense (D : Set Hs.carrier)) : IsGraphCore D (scalarOp Hs c) := by sorry

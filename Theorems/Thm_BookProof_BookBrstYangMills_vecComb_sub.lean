@@ -1,0 +1,16 @@
+-- Generated from ChapterBookBrstYangMills.lean — theorem BookProof.BookBrstYangMills.vecComb_sub
+import Definitions.Def_ChapterBRSTNilpotent
+import Mathlib
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterA4
+
+variable {N : ℕ} (G : GaugeAlgebra N)
+
+
+
+open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
+
+noncomputable section
+
+theorem BookProof.BookBrstYangMills.vecComb_sub (α α' : ℝ) (β β' : Fin N → ℝ) (μ : Fin 4) :
+    vecComb α β μ - vecComb α' β' μ = vecComb (α - α') (fun g => β g - β' g) μ := by sorry

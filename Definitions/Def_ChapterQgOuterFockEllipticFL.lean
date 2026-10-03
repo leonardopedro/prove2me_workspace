@@ -193,9 +193,9 @@ def mulD (f : MvPolynomial (Fin D) ℂ) :
     polyGaussCore (d := D) →ₗ[ℂ] polyGaussCore (d := D) :=
   coreOp (YangMillsHermite.mulOp f)
 
+theorem momD_eq (j : Fin D) : coreOp (YangMillsHermite.momOp (d := D) j) = momD j := rfl
 
-
-
+theorem mulD_eq (f : MvPolynomial (Fin D) ℂ) : coreOp (YangMillsHermite.mulOp f) = mulD f := rfl
 
 theorem momD_symmetricOn (j : Fin D) :
     SymmetricOn (polyGaussCore (d := D)) ((polyGaussCore (d := D)).subtype.comp (momD j)) :=

@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterNsPartialFourier
 import Definitions.Def_ChapterNsScalarVectorCurry
+import Definitions.Def_ChapterA4
 import Mathlib
 
 

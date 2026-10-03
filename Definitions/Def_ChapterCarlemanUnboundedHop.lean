@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 

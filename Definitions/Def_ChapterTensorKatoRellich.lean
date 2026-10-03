@@ -1,5 +1,9 @@
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterKatoRellichRelative
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
 import Mathlib
 
 

@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterEsaPairDGamma
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 

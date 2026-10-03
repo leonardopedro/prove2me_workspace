@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterA4
 import Mathlib
 
 

@@ -209907,3 +209907,28 @@ inst✝¹ : NormedA)
 21:11:45 sync: checked 1925 pending solution(s), 1764 already Proved
 21:11:45 sync: checked 1950 pending solution(s), 1765 already Proved
 21:11:46 sync: marked 2171 already-published item(s) and 1765 already-proved solution(s) done
+23:57:45 retry-failed: re-armed 0 item(s)
+23:57:52 sync: read 806 definition publish job(s)
+23:58:14 sync: read 5945 problem publish job(s)
+23:58:20 sync: read 806 definition publish job(s)
+23:58:42 sync: read 5945 problem publish job(s)
+23:58:47 sync: read 806 definition publish job(s)
+23:59:11 sync: read 5945 problem publish job(s)
+23:59:11 submitting def:ChapterHalfLineLimitCircle (attempt 1)
+00:00:11 sync: read 806 definition publish job(s)
+00:00:36 sync: read 5945 problem publish job(s)
+00:00:52 def:ChapterHalfLineLimitCircle: accepted, waiting on the compiler
+00:24:45 def:ChapterHalfLineLimitCircle: DONE
+00:24:45 summary: 383 done, 170 pending, 0 failed, 2 unsubmittable (source missing from this checkout)
+00:24:45 chunk: 1 item(s) resolved in 1591s
+00:25:11 sync: read 807 definition publish job(s)
+00:25:34 sync: read 5945 problem publish job(s)
+00:25:37 sync: checked 25 pending solution(s), 0 already Proved
+00:25:41 sync: checked 50 pending solution(s), 0 already Proved
+00:25:42 sync: checked 75 pending solution(s), 0 already Proved
+00:25:43 sync: checked 100 pending solution(s), 0 already Proved
+00:25:43 sync: checked 125 pending solution(s), 0 already Proved
+00:25:43 sync: checked 150 pending solution(s), 0 already Proved
+00:25:43 sync: checked 175 pending solution(s), 0 already Proved
+00:25:43 sync: checked 200 pending solution(s), 0 already Proved
+00:25:43 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done

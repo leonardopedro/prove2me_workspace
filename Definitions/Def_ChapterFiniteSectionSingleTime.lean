@@ -1,6 +1,14 @@
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 
 

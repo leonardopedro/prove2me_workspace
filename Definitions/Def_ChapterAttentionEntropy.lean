@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 

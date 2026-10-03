@@ -935,6 +935,30 @@ def upstream_def_imports(source_text, leaf):
             if os.path.exists(f"{OUT_DEF}/{cand}"):
                 imports.append(f"import Definitions.{cand[:-len('.lean')]}")
                 break
+    # Finally: every `open BookProof.X` needs the bundle that DECLARES X in scope,
+    # or Lean answers `unknown namespace`. The platform index is authoritative for
+    # the namespace -> bundle mapping. 23 of the 55 candidate bundles failed this
+    # way -- including ones whose own source DID import the provider, because the
+    # source's `import BookProof.X` is stripped above and only re-added when a
+    # matching Def file happened to exist at generation time.
+    # Scan EVERY `open` line and keep the BookProof tokens, rather than requiring
+    # the line to consist only of them. `open Filter Topology
+    # BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness` is an ordinary
+    # source line; anchoring on "^open BookProof" missed all of them, which is why
+    # Def_ChapterAttentionEntropy shipped with no provider import at all.
+    opens = set()
+    for m in re.finditer(r"(?m)^open\s+(?!scoped\b)([^\n=]*)$", source_text):
+        for tok in m.group(1).split():
+            if tok.startswith("BookProof."):
+                opens.add(tok)
+    for ns in sorted(opens):
+        owner = owner_of_namespace(ns)
+        if not owner:
+            continue
+        mod = owner if owner.startswith("Def_") else f"Def_{owner}"
+        imp = f"import Definitions.{mod}"
+        if imp not in imports:
+            imports.append(imp)
     return imports
 
 

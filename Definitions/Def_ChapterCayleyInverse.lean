@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterCayleyTransform
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 

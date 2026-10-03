@@ -29457,9 +29457,74 @@
     "timepiece",
     "formalization"
    ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply": {
+   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply.lean",
+   "title": "The Lean 4 theorem `friedrichsResolvent_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFriedrichsExtension.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_invShiftOperator_apply": {
+   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_apply",
+   "chapter": "ChapterHashimotoShiftInvert",
+   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply.lean",
+   "title": "The Lean 4 theorem `invShiftOperator_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.invShiftOperator_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn": {
+   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_symmetricOn",
+   "chapter": "ChapterHashimotoShiftInvert",
+   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn.lean",
+   "title": "The Lean 4 theorem `invShiftOperator_symmetricOn` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.invShiftOperator_symmetricOn` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_preim_eq": {
+   "name": "BookProof.HashimotoShiftInvert.preim_eq",
+   "chapter": "ChapterHashimotoShiftInvert",
+   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_preim_eq.lean",
+   "title": "The Lean 4 theorem `preim_eq` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.preim_eq` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_shiftMap_apply": {
+   "name": "BookProof.HashimotoShiftInvert.shiftMap_apply",
+   "chapter": "ChapterHashimotoShiftInvert",
+   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftMap_apply.lean",
+   "title": "The Lean 4 theorem `shiftMap_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.shiftMap_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
   }
  },
  "sol_order": [
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
+  "BookProof_HashimotoShiftInvert_invShiftOperator_apply",
+  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn",
+  "BookProof_HashimotoShiftInvert_preim_eq",
+  "BookProof_HashimotoShiftInvert_shiftMap_apply",
   "BookProof_ChapterContinuityUnitary_exp_smul_I_unitary",
   "BookProof_ChapterH8_krylov_li_of_le",
   "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion",

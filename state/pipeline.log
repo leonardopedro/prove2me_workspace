@@ -209705,3 +209705,35 @@ inst✝¹ : NormedA)
 15:24:07 sync: checked 175 pending solution(s), 8 already Proved
 15:24:07 sync: checked 200 pending solution(s), 8 already Proved
 15:24:07 sync: marked 0 already-published item(s) and 8 already-proved solution(s) done
+15:37:28 retry-failed: re-armed 0 item(s)
+15:37:28 summary: 1792 done, 174 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+15:37:28 chunk: 0 item(s) resolved in 0s
+15:55:24 retry-failed: re-armed 0 item(s)
+15:55:24 submitting thm:BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply (attempt 1)
+15:56:17 thm:BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply: accepted, waiting on the compiler
+15:56:17 submitting thm:BookProof_HashimotoShiftInvert_invShiftOperator_apply (attempt 1)
+15:56:32 thm:BookProof_HashimotoShiftInvert_invShiftOperator_apply: accepted, waiting on the compiler
+15:56:32 submitting thm:BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn (attempt 1)
+15:56:46 thm:BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn: accepted, waiting on the compiler
+15:56:46 submitting thm:BookProof_HashimotoShiftInvert_preim_eq (attempt 1)
+15:56:57 thm:BookProof_HashimotoShiftInvert_preim_eq: accepted, waiting on the compiler
+15:56:57 submitting thm:BookProof_HashimotoShiftInvert_shiftMap_apply (attempt 1)
+15:57:07 thm:BookProof_HashimotoShiftInvert_shiftMap_apply: accepted, waiting on the compiler
+16:08:17 thm:BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply: DONE
+16:08:36 thm:BookProof_HashimotoShiftInvert_invShiftOperator_apply: DONE
+16:08:54 thm:BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn: DONE
+16:09:11 thm:BookProof_HashimotoShiftInvert_preim_eq: DONE
+16:09:12 thm:BookProof_HashimotoShiftInvert_shiftMap_apply: DONE
+16:09:12 summary: 1797 done, 174 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1812 out-of-order orphans ignored)
+16:09:12 chunk: 5 item(s) resolved in 828s
+16:14:38 sync: read 797 definition publish job(s)
+16:14:58 sync: read 5943 problem publish job(s)
+16:15:02 sync: checked 25 pending solution(s), 0 already Proved
+16:15:06 sync: checked 50 pending solution(s), 0 already Proved
+16:15:08 sync: checked 75 pending solution(s), 0 already Proved
+16:15:10 sync: checked 100 pending solution(s), 0 already Proved
+16:15:10 sync: checked 125 pending solution(s), 0 already Proved
+16:15:10 sync: checked 150 pending solution(s), 0 already Proved
+16:15:10 sync: checked 175 pending solution(s), 0 already Proved
+16:15:10 sync: checked 200 pending solution(s), 0 already Proved
+16:15:10 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done

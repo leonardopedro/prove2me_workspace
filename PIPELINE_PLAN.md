@@ -190,6 +190,31 @@ identifier from an unrelated chapter), **check `os.path.getmtime(cache)` against
 source before reading the stub.** A stale cache explains it without any further
 hunting.
 
+### §2.8c CORRECTION: my "already declared" duplicate test was wrong (61 theorems)
+
+I parked 61 theorem problems as *"already declared by a published def bundle"*,
+which also **parked the 39 solutions that depend on them**. The test compared the
+slug's last `_`-separated component against the index's bare `names`:
+
+```python
+parts[-1] in declared          # BookProof_..._fock_hamiltonian_eq -> "eq"
+```
+
+`"eq"` matches almost any bundle, so **61 theorems were parked that do not exist on
+the platform at all** — confirmed: `GET /theorems?q=BookProof.NavierStokesFlow.
+FockCanonical.fock_hamiltonian_eq` returns 0 hits.
+
+The premise was wrong too. A def bundle carrying a declaration does **not** make a
+*problem* out of it; `/verify` attaches a submission to a published **problem**, so
+with no problem there is nothing to attach to and the solution is unreachable.
+
+**Correct test:** compare the FULLY-QUALIFIED dotted name against what a published
+bundle actually declares, never a `_`-split fragment. Never infer "the platform
+already has this" from a local name match — ask the API.
+
+Lesson in the same shape as §2.6: I introduced a bulk state mutation, then trusted
+its own bookkeeping. Every un-parking must be justified by an API answer.
+
 ### §2.9 Rejected as unpublishable, with reasons
 
 - **`--retry-failed` exists; use it.** The loop treats `attempts >= MAX_ATTEMPTS` as

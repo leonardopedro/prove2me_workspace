@@ -209325,3 +209325,197 @@ line 22: Tactic `rewrite` failed: Did not find an occurrence of )
 01:46:22 thm:BookProof_BddBelowFiberSumEsa_dsOp_semibounded: DONE
 01:46:22 summary: 1771 done, 195 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
 01:46:22 chunk: 63 item(s) resolved in 8335s
+01:51:14 sync: read 797 definition publish job(s)
+01:51:35 sync: read 5908 problem publish job(s)
+01:51:39 sync: checked 25 pending solution(s), 0 already Proved
+01:51:44 sync: checked 50 pending solution(s), 0 already Proved
+01:51:48 sync: checked 75 pending solution(s), 0 already Proved
+01:51:54 sync: checked 100 pending solution(s), 0 already Proved
+01:51:58 sync: checked 125 pending solution(s), 0 already Proved
+01:52:00 sync: checked 150 pending solution(s), 0 already Proved
+01:52:01 sync: checked 175 pending solution(s), 0 already Proved
+01:52:01 sync: checked 200 pending solution(s), 0 already Proved
+01:52:01 sync: checked 225 pending solution(s), 0 already Proved
+01:52:01 sync: checked 250 pending solution(s), 0 already Proved
+01:52:02 sync: checked 275 pending solution(s), 0 already Proved
+01:52:02 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done
+04:14:18 retry-failed: re-armed 0 item(s)
+04:14:18 submitting sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply (attempt 1)
+04:14:23 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: accepted, waiting on the compiler
+04:14:24 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero (attempt 1)
+04:14:28 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: accepted, waiting on the compiler
+04:14:28 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe (attempt 1)
+04:14:31 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: accepted, waiting on the compiler
+04:14:32 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt (attempt 1)
+04:14:36 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: accepted, waiting on the compiler
+04:14:36 submitting sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le (attempt 1)
+04:14:39 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: accepted, waiting on the compiler
+04:14:39 submitting sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self (attempt 1)
+04:14:43 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: accepted, waiting on the compiler
+04:14:43 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe (attempt 1)
+04:14:47 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: accepted, waiting on the compiler
+04:14:47 submitting sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe (attempt 1)
+04:14:51 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: accepted, waiting on the compiler
+04:31:59 sol:BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply: DONE
+04:32:09 submitting sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn (attempt 1)
+04:32:13 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: accepted, waiting on the compiler
+04:32:13 sol:BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero: DONE
+04:32:23 submitting sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH (attempt 1)
+04:32:28 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: accepted, waiting on the compiler
+04:33:08 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_two_le: DONE
+04:33:18 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound (attempt 1)
+04:33:22 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: accepted, waiting on the compiler
+04:33:23 sol:BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt: DONE
+04:33:23 sol:BookProof_NavierStokesFlow_FockCanonical_dn_dn_self: DONE
+04:33:32 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn (attempt 1)
+04:33:36 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: accepted, waiting on the compiler
+04:33:36 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe (attempt 1)
+04:33:41 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: accepted, waiting on the compiler
+04:33:41 sol:BookProof_NavierStokesFlow_FockCanonical_cre_ann_coe: DONE
+04:33:51 submitting sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS (attempt 1)
+04:33:56 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: accepted, waiting on the compiler
+04:34:16 sol:BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe: DONE
+04:34:26 submitting sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre (attempt 1)
+04:34:29 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: accepted, waiting on the compiler
+04:34:30 sol:BookProof_NavierStokesFlow_FockCanonical_ann_ann_coe: DONE
+04:34:40 submitting sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq (attempt 1)
+04:34:44 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: accepted, waiting on the compiler
+04:48:15 sol:BookProof_NavierStokesFlow_FockManyMode_commForm_fockH: DONE
+04:48:24 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound (attempt 1)
+04:48:28 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: accepted, waiting on the compiler
+04:49:09 sol:BookProof_NavierStokesFlow_FockCanonical_modeShift_dn_dn: DONE
+04:49:19 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero (attempt 1)
+04:49:23 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: accepted, waiting on the compiler
+04:49:44 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_relative_bound: DONE
+04:49:54 submitting sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero (attempt 1)
+04:49:58 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: accepted, waiting on the compiler
+04:49:58 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_symmetricOn: DONE
+04:49:58 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe: DONE
+04:50:08 submitting sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero (attempt 4)
+04:50:12 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: accepted, waiting on the compiler
+04:50:12 submitting sol:BookProof_SqSumFarisLavine_coreEquiv_eq (attempt 2)
+04:50:12 sol:BookProof_SqSumFarisLavine_coreEquiv_eq: DONE
+04:50:12 submitting sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal (attempt 1)
+04:50:16 sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: accepted, waiting on the compiler
+04:51:07 sol:BookProof_NavierStokesFlow_FockCanonical_bracket_DS: DONE
+04:51:16 submitting sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal (attempt 1)
+04:51:20 sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: accepted, waiting on the compiler
+04:51:20 sol:BookProof_NavierStokesFlow_FockCanonical_comm_ann_cre: DONE
+04:51:21 sol:BookProof_NavierStokesFlow_FockCanonical_hop_modeData_eq: DONE
+04:51:30 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt (attempt 1)
+04:51:34 sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: accepted, waiting on the compiler
+04:51:34 submitting sol:BookProof_ScalaronEsa_qgScalaronMode_esa (attempt 1)
+04:51:38 sol:BookProof_ScalaronEsa_qgScalaronMode_esa: accepted, waiting on the compiler
+05:03:54 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero: DONE
+05:04:04 submitting sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa (attempt 1)
+05:04:08 sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: accepted, waiting on the compiler
+05:04:08 sol:BookProof_NavierStokesFlow_FockManyMode_fockH_commForm_bound: DONE
+05:04:18 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv (attempt 1)
+05:04:23 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: accepted, waiting on the compiler
+05:04:43 sol:BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero: DONE
+05:04:53 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update (attempt 1)
+05:04:58 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: accepted, waiting on the compiler
+05:05:09 sol:BookProof_NavierStokesFlow_FockManyMode_fock_commForm_ne_zero: DONE
+05:05:19 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply (attempt 1)
+05:05:23 sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: accepted, waiting on the compiler
+05:06:55 sol:BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal: DONE
+05:07:05 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply (attempt 1)
+05:07:10 sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: accepted, waiting on the compiler
+05:08:11 sol:BookProof_HyperbolicQuadratic_symmetricOn_of_diagonal: DONE
+05:08:21 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul (attempt 1)
+05:08:25 sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: accepted, waiting on the compiler
+05:08:46 sol:BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt: DONE
+05:08:56 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul (attempt 1)
+05:09:00 sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: accepted, waiting on the compiler
+05:09:21 sol:BookProof_ScalaronEsa_qgScalaronMode_esa: DONE
+05:09:31 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply (attempt 1)
+05:09:36 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: accepted, waiting on the compiler
+05:23:29 sol:BookProof_ScalaronEsa_wave_add_scalaronTruncated_esa: DONE
+05:23:39 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self (attempt 1)
+05:23:43 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self: accepted, waiting on the compiler
+05:24:03 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv: DONE
+05:24:13 submitting sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix (attempt 1)
+05:24:34 sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: accepted, waiting on the compiler
+05:24:35 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_eval_update: DONE
+05:24:44 submitting sol:BookProof_HashimotoShiftInvert_shiftMap_injective (attempt 1)
+05:24:45 sol:BookProof_HashimotoShiftInvert_shiftMap_injective: DONE
+05:24:45 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp (attempt 1)
+05:24:49 sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp: accepted, waiting on the compiler
+05:25:19 sol:BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply: DONE
+05:25:29 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe (attempt 1)
+05:25:33 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe: accepted, waiting on the compiler
+05:25:34 sol:BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply: DONE
+05:25:43 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec (attempt 1)
+05:25:48 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec: accepted, waiting on the compiler
+05:26:39 sol:BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul: DONE
+05:26:49 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef (attempt 1)
+05:26:53 sol:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef: accepted, waiting on the compiler
+05:26:53 sol:BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul: DONE
+05:27:03 submitting sol:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved (attempt 1)
+05:27:06 sol:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved: accepted, waiting on the compiler
+05:27:47 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_apply: DONE
+05:27:57 submitting sol:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined (attempt 1)
+05:28:01 sol:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined: accepted, waiting on the compiler
+05:37:48 sol:BookProof_NavierStokesFlow_DifferentialL2_sec_self: DONE
+05:37:57 submitting sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert (attempt 1)
+05:37:58 sol:BookProof_HashimotoShiftInvert_exists_isShiftInvert: DONE
+05:37:58 submitting sol:BookProof_HashimotoShiftInvert_shiftMap_surjective (attempt 1)
+05:38:02 sol:BookProof_HashimotoShiftInvert_shiftMap_surjective: accepted, waiting on the compiler
+05:39:13 sol:BookProof_NavierStokesFlow_nsDivergenceConstraint_resolution_matrix: DONE
+05:39:22 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential (attempt 1)
+05:39:26 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential: accepted, waiting on the compiler
+05:41:38 sol:BookProof_NavierStokesFlow_DifferentialL2_comm_momOp_posOp: DONE
+05:41:47 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec (attempt 1)
+05:41:51 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec: accepted, waiting on the compiler
+05:43:52 sol:BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe: DONE
+05:44:02 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian (attempt 1)
+05:44:06 sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian: accepted, waiting on the compiler
+05:44:06 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_evalSec: DONE
+05:44:16 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency (attempt 1)
+05:44:20 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency: accepted, waiting on the compiler
+05:45:00 sol:BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef: DONE
+05:45:10 submitting sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn (attempt 1)
+05:45:14 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn: accepted, waiting on the compiler
+05:45:14 sol:BookProof_NavierStokesFlow_nsFlow_groupOnEvolved: DONE
+05:45:24 submitting sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs (attempt 1)
+05:45:28 sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: accepted, waiting on the compiler
+05:45:38 sol:BookProof_NavierStokesFlow_farisLavine_holds_of_everywhereDefined: DONE
+05:45:48 submitting sol:BookProof_NavierStokesFlow_nsFlow_norm_preserving (attempt 1)
+05:45:52 sol:BookProof_NavierStokesFlow_nsFlow_norm_preserving: accepted, waiting on the compiler
+05:57:30 sol:BookProof_HashimotoShiftInvert_shiftMap_surjective: DONE
+05:57:40 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential (attempt 1)
+05:57:44 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential: accepted, waiting on the compiler
+05:58:05 sol:BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_gaussD_sec: DONE
+05:58:14 submitting sol:BookProof_NavierStokesFlow_nsFlow_noBlowup (attempt 1)
+05:58:18 sol:BookProof_NavierStokesFlow_nsFlow_noBlowup: accepted, waiting on the compiler
+05:58:29 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_coe_eq_differential: DONE
+05:58:38 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV (attempt 1)
+05:58:42 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV: accepted, waiting on the compiler
+05:59:53 sol:BookProof_NavierStokesFlow_LagrangianNS_transformed_hamiltonian_hermitian: DONE
+06:00:03 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH (attempt 1)
+06:00:07 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH: accepted, waiting on the compiler
+06:01:18 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiency: DONE
+06:01:28 submitting sol:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded (attempt 1)
+06:01:32 sol:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded: accepted, waiting on the compiler
+06:01:53 sol:BookProof_NavierStokesFlow_nsHamiltonian_hasZeroDeficiencyOn: DONE
+06:03:11 sol:BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs: DONE
+06:04:57 sol:BookProof_NavierStokesFlow_nsFlow_norm_preserving: DONE
+06:19:15 sol:BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential: DONE
+06:19:25 sol:BookProof_NavierStokesFlow_nsFlow_noBlowup: DONE
+06:21:28 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV: DONE
+06:22:11 sol:BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded: DONE
+06:22:45 sol:BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH: DONE
+06:22:45 summary: 1728 done, 236 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (1822 out-of-order orphans ignored)
+06:22:45 chunk: 56 item(s) resolved in 7706s
+06:25:16 sync: read 797 definition publish job(s)
+06:25:38 sync: read 5908 problem publish job(s)
+06:25:41 sync: checked 25 pending solution(s), 1 already Proved
+06:25:44 sync: checked 50 pending solution(s), 2 already Proved
+06:25:47 sync: checked 75 pending solution(s), 5 already Proved
+06:25:48 sync: checked 100 pending solution(s), 6 already Proved
+06:25:50 sync: checked 125 pending solution(s), 8 already Proved
+06:25:50 sync: checked 150 pending solution(s), 8 already Proved
+06:25:50 sync: checked 175 pending solution(s), 8 already Proved
+06:25:50 sync: checked 200 pending solution(s), 8 already Proved
+06:25:50 sync: checked 225 pending solution(s), 8 already Proved
+06:25:50 sync: marked 0 already-published item(s) and 8 already-proved solution(s) done

@@ -13,4 +13,5 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
- := by sorry
+theorem BookProof.ChapterUnboundedPosition.tendsto_phaseUnitary (f : ℤ → ℝ) (psi : L2Z) :
+    Filter.Tendsto (fun t : ℝ => phaseUnitary f t psi) (nhds 0) (nhds psi) := by sorry

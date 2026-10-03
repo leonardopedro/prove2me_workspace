@@ -13,9 +13,7 @@ set_option maxHeartbeats 1000000 in
     ring
 
 theorem solution (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
-
-theorem velocityLin_norm_le (v : LinfZ) (f : L2Z) : ‖velocityLin v f‖ ≤ ‖v‖ * ‖f‖ :=
+    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k :=
   _apply (v : LinfZ) (f : L2Z) (k : ℤ) :
       ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
   

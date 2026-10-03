@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 open BookProof.FriedrichsExtension
 
 

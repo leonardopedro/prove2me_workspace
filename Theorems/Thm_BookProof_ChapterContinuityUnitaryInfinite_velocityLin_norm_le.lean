@@ -10,6 +10,4 @@ open scoped ENNReal InnerProductSpace
     ring
 
 theorem BookProof.ChapterContinuityUnitaryInfinite.velocityLin_norm_le (v : LinfZ) (f : L2Z) (k : ℤ) :
-    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := rfl
-
-theorem velocityLin_norm_le (v : LinfZ) (f : L2Z) : ‖velocityLin v f‖ ≤ ‖v‖ * ‖f‖ := by sorry
+    ((velocityLin v f : L2Z) : ℤ → ℂ) k = ((v : ℤ → ℝ) k : ℂ) * (f : ℤ → ℂ) k := by sorry

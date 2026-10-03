@@ -11,9 +11,7 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
-eUnitary_zero (f : ℤ → ℝ) (psi : L2Z) : phaseUnitary f 0 psi = psi :=
-  phaseLin_zero f psi
-
-theorem solution (f : ℤ → ℝ) :=
+theorem solution (f : ℤ → ℝ) (s t : ℝ) (psi : L2Z) :
+    phaseUnitary f (s + t) psi = phaseUnitary f s (phaseUnitary f t psi) :=
   (s t : ℝ) (psi : L2Z) :
       phas

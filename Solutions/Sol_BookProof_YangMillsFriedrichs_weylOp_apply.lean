@@ -15,11 +15,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
- D →ₗ[ℂ] D) (x : D) :
-    weylOp pi Bf x
-      = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ i, ((pi i (pi i x) : D) : F)) + ∑ a, ((Bf a (Bf a x) : D) : F)) := by
-  simp [weylOp, weylOpDom]
-
-/-- The square of a symmetric operator has quadratic form `‖π x‖²`. -/
-th := 
+theorem solution {T : D →ₗ[ℂ] D}
+    (hT : SymmetricOn D (D.subtype.comp T)) (x : D) :
+    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := 

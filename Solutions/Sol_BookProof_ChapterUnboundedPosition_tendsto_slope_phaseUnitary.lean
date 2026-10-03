@@ -12,12 +12,9 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
-sto_slope.1 (hasDerivAt_phase f k)
-  refine h.congr fun t => ?_
-  simp [slope, vsub_eq_sub, phase]
-
 theorem solution (f : ℤ → ℝ) (psi : mulDomain f) :
-    Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (phaseUni :=
+    Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (phaseUnitary f t (psi : L2Z) - (psi : L2Z)))
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • mulOp f psi)) :=
   tary f t (psi : L2Z) - (psi : L2Z)))
         (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • mulOp f psi)) := by
     rw [tendsto_iff_norm_sub_tendsto_zero]
@@ -64,26 +61,4 @@ theorem solution (f : ℤ → ℝ) (psi : mulDomain f) :
                 rw [abs_mul, ← mul_assoc, inv_mul_cancel₀ (abs_ne_zero.2 ht), one_mul]
       have h1 : ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k - Complex.I * (f k : ℂ) * g k‖
           ≤ 2 * ‖(f k : ℂ) * g k‖ := by
-        have e1 : ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k‖ ≤ |f k| * ‖g k‖ := by
-          rw [norm_mul]
-          exact mul_le_mul_of_nonneg_right hph (norm_nonneg _)
-        have e2 : ‖Complex.I * (f k : ℂ) * g k‖ = |f k| * ‖g k‖ := by
-          simp [Complex.norm_real, Real.norm_eq_abs, mul_assoc]
-        have e3 : ‖(f k : ℂ) * g k‖ = |f k| * ‖g k‖ := by
-          simp [Complex.norm_real, Real.norm_eq_abs]
-        calc ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k - Complex.I * (f k : ℂ) * g k‖
-            ≤ ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k‖ + ‖Complex.I * (f k : ℂ) * g k‖ :=
-              norm_sub_le _ _
-          _ ≤ |f k| * ‖g k‖ + |f k| * ‖g k‖ := by rw [e2]; linarith
-          _ = 2 * ‖(f k : ℂ) * g k‖ := by rw [e3]; ring
-      rw [Real.norm_eq_abs, abs_of_nonneg (by positivity)]
-      nlinarith [norm_nonneg (((t⁻¹ : ℝ) • (phase f t k - 1)) * g k -
-        Complex.I * (f k : ℂ) * g k), norm_nonneg ((f k : ℂ) * g k)]
-    have htsum := tendsto_tsum_of_dominated_convergence hbound hpt
-      (Filter.Eventually.of_forall hdom)
-    rw [tsum_zero] at htsum
-    have hsqrt : Filter.Tendsto
-        (fun t : ℝ => Real.sqrt (∑' k : ℤ,
-          ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k - Complex.I * (f k : ℂ) * g k‖ ^ 2))
-        (nhdsWithin 0 {0}ᶜ) (nhds 0) := by
-      simpa using! (Real.continuous_sqrt.
+        have e1 : ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k‖ ≤ |f k| * ‖g k‖ :=

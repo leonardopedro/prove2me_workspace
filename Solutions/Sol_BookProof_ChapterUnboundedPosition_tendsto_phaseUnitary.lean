@@ -12,7 +12,8 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
- :=
+theorem solution (f : ℤ → ℝ) (psi : L2Z) :
+    Filter.Tendsto (fun t : ℝ => phaseUnitary f t psi) (nhds 0) (nhds psi) :=
   import Mathlib
   import BookProof.ChapterContinuityUnitaryInfinite
   

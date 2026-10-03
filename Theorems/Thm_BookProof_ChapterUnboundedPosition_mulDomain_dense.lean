@@ -11,6 +11,4 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-Submodule.sum_mem _ fun i _ => single_mem_mulDomain f i _
-
-theorem BookProof.ChapterUnboundedPosition.mulDomain_dense (f : ℤ → := by sorry
+theorem BookProof.ChapterUnboundedPosition.mulDomain_dense (f : ℤ → ℝ) : Dense ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by sorry

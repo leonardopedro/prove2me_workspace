@@ -14,4 +14,7 @@ open BookProof.FarisLavine
 
 
 
- := by sorry
+theorem BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn {n m : ℕ} {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
+    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
+    SymmetricOn D (weylOp pi Bf) := by sorry

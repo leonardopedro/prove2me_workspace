@@ -13,11 +13,9 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
-   simp [lp.single_apply]
-  · simp [lp.single_apply, hk]
-
 theorem solution :
-    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField, :=
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ :=
      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
     rintro ⟨C, hC⟩
     obtain ⟨n, hn⟩ := exists_nat_gt C

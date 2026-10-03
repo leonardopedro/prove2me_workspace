@@ -13,8 +13,6 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-fun k => ?_)
-  exact ((mulOp_adjoint_apply f h).1 k).symm
-
 theorem BookProof.ChapterUnboundedPosition.position_not_boundedOperator :
-    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain po := by sorry
+    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
+      mulOp positionField psi = T (psi : L2Z) := by sorry

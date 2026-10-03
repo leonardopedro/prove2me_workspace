@@ -11,7 +11,5 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-omplex.conj_ofReal]
-  ring
-
-theorem BookProof.ChapterUnboundedPosition.single_mem_mulDomain (f : ℤ → ℝ) := by sorry
+theorem BookProof.ChapterUnboundedPosition.single_mem_mulDomain (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    lp.single 2 n c ∈ mulDomain f := by sorry

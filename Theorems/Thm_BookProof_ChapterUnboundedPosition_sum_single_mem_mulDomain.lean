@@ -11,8 +11,5 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
- ≠ n := by simpa using hj
-  simp [lp.single_apply, hjn]
-
 theorem BookProof.ChapterUnboundedPosition.sum_single_mem_mulDomain (f : ℤ → ℝ) (psi : L2Z) (s : Finset ℤ) :
-    (∑ i ∈ := by sorry
+    (∑ i ∈ s, lp.single 2 i ((psi : ℤ → ℂ) i)) ∈ mulDomain f := by sorry

@@ -15,9 +15,7 @@ open BookProof.FarisLavine
 
 
 
- : SymmetricOn D H)
-    (hpos : ∀ x : D, 0 ≤ quadForm H x) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H A :=
-  friedrichs D H hdense hsym hpos
-
-theorem BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable (H : ( := by sorry
+theorem BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable (H : (⊤ : Submodule ℂ F) →ₗ[ℂ] F)
+    (hsym : SymmetricOn (⊤ : Submodule ℂ F) H)
+    (hpos : ∀ x : (⊤ : Submodule ℂ F), 0 ≤ quadForm H x) :
+    IsPositiveSelfAdjointExtension H H := by sorry

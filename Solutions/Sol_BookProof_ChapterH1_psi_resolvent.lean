@@ -14,17 +14,8 @@ noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
-ty `φ_k(A) =
-ψ_{k,γ}(X)`.
--/
 theorem solution (k : ℕ) (γ z : ℂ) (_hz : γ - z ≠ 0) :
-    psi k γ (γ - z)⁻¹ = phi k z := by
-  unfold psi; aesop;
-
-/-
-**H1.5** (resolvent eigenvector, the spectral bridge): if `A v = z v` and
-`γ − z` is invertible, then `v` is an eigenvector of the resolvent
-`X = (γI − A)⁻¹` :=
+    psi k γ (γ - z)⁻¹ = phi k z :=
   with eigenvalue `(γ − z)⁻¹`, i.e. `X v = (γ − z)⁻¹ • v`.
   This is the per-component reduction underlying the CFC identity of H1.5.
   -/

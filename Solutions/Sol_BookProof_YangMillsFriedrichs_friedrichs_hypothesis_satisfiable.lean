@@ -16,12 +16,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
- : SymmetricOn D H)
-    (hpos : ∀ x : D, 0 ≤ quadForm H x) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H A :=
-  friedrichs D H hdense hsym hpos
-
-theorem solution (H : ( :=
+theorem solution (H : (⊤ : Submodule ℂ F) →ₗ[ℂ] F)
+    (hsym : SymmetricOn (⊤ : Submodule ℂ F) H)
+    (hpos : ∀ x : (⊤ : Submodule ℂ F), 0 ≤ quadForm H x) :
+    IsPositiveSelfAdjointExtension H H :=
   ⊤ : Submodule ℂ F) →ₗ[ℂ] F)
       (hsym : SymmetricOn (⊤ : Submodule ℂ F) H)
       (hpos : ∀ x : (⊤ : Submodule ℂ F), 0 ≤ quadForm H x) :

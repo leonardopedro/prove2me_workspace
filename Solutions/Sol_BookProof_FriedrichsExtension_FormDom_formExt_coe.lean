@@ -23,12 +23,7 @@ set_option maxHeartbeats 1000000 in
   (incl P).extend UniformSpace.Completion.toComplL
 
 theorem solution (P : PosSymOp F) (x : FormDom P) :
-    formExt P (x : FormSpace P) = toAmbient x := by
-  have := ContinuousLinearMap.extend_eq (incl P) (denseRange_toComplL P)
-    (isUniformInducing_toComplL P) x
-  simpa [formExt, UniformSpace.Completion.coe_toComplL] using this
-
-theorem norm_formExt_le (P : PosSymOp F) : ‖formExt P‖ ≤ 1 :=
+    formExt P (x : FormSpace P) = toAmbient x :=
   mDom P) :
       formExt P (x : FormSpace P) = toAmbient x := by
     have := ContinuousLinearMap.extend_eq (incl P) (denseRange_toComplL P)

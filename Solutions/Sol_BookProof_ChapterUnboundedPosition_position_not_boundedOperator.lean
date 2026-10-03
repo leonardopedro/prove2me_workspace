@@ -12,8 +12,6 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
-fun k => ?_)
-  exact ((mulOp_adjoint_apply f h).1 k).symm
-
 theorem solution :
-    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain po := 
+    ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
+      mulOp positionField psi = T (psi : L2Z) := 

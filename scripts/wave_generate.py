@@ -494,8 +494,16 @@ def structural_preamble(bt, upto_byte):
     return res
 
 
+# Must also allow an attribute prefix (`@[simp] theorem ...`) and a `omit … in` /
+# `set_option … in` wrapper, or a perfectly ordinary declaration looks like it
+# does not start at position 0. That sent `Thm/Sol_..._shiftMap_apply` down the
+# re-slice path, which then found the `:=` of its own one-line `:= rfl` body and
+# emitted an EMPTY statement -- a stub with no `theorem` in it at all, for any
+# attributed single-line declaration.
 DECL_KEYWORD = re.compile(
-    r"(?m)^[ \t]*(?:private\s+|protected\s+|noncomputable\s+|unsafe\s+)*"
+    r"(?m)^[ \t]*(?:@\[[^\]]*\][ \t]*)?"
+    r"(?:(?:omit\s+[^\n]*?|set_option\s+[^\n]*?)\s+in\s+)?"
+    r"(?:(?:private|protected|noncomputable|unsafe|partial)\s+)*"
     r"(?:theorem|lemma|def|abbrev)\s")
 
 

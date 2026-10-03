@@ -13,8 +13,6 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-   simp [lp.single_apply]
-  · simp [lp.single_apply, hk]
-
 theorem BookProof.ChapterUnboundedPosition.position_unbounded :
-    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField, := by sorry
+    ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by sorry

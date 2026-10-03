@@ -19,4 +19,6 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
- := by sorry
+theorem BookProof.HashimotoShiftInvert.invShiftOperator_apply (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ)
+    (y : LinearMap.range (R : F →ₗ[ℂ] F)) :
+    invShiftOperator R hinj γ y = preim R y - (γ : ℂ) • (y : F) := by sorry

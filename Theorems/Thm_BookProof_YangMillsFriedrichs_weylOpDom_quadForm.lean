@@ -14,9 +14,8 @@ open BookProof.FarisLavine
 
 
 
-inner ℂ ((x : D) : F) ((Bf a (Bf a y) : D) : F) := fun a => hsq (Bf a) (hB a)
-  rw [Finset.sum_congr rfl fun i _ => hpisum i, Finset.sum_congr rfl fun a _ => hBsum a,
-    Complex.conj_ofReal]
-
 theorem BookProof.YangMillsFriedrichs.weylOpDom_quadForm {n m : ℕ} {pi : Fin n → D →ₗ[ℂ] D} {Bf : Fin m → D →ₗ[ℂ] D}
-    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i))) := by sorry
+    (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))
+    (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) (x : D) :
+    quadForm (weylOp pi Bf) x
+      = 1 / 2 * (∑ i, ‖((pi i x : D) : F)‖ ^ 2) + 1 / 2 * ∑ a, ‖((Bf a x : D) : F)‖ ^ 2 := by sorry

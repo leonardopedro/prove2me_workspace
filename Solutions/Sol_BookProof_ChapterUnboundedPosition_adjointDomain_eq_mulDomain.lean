@@ -13,10 +13,8 @@ open scoped ENNReal InnerProductSpace
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
- ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ}
-
 theorem solution (f : ℤ → ℝ) :
-    adjoi :=
+    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) :=
   ntDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
     ext phi
     constructor

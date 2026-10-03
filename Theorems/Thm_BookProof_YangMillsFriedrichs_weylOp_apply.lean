@@ -13,11 +13,6 @@ open BookProof.FarisLavine
 
 
 
- D →ₗ[ℂ] D) (x : D) :
-    weylOp pi Bf x
-      = ((1 / 2 : ℝ) : ℂ)
-        • ((∑ i, ((pi i (pi i x) : D) : F)) + ∑ a, ((Bf a (Bf a x) : D) : F)) := by
-  simp [weylOp, weylOpDom]
-
-/-- The square of a symmetric operator has quadratic form `‖π x‖²`. -/
-th := by sorry
+theorem BookProof.YangMillsFriedrichs.weylOp_apply {T : D →ₗ[ℂ] D}
+    (hT : SymmetricOn D (D.subtype.comp T)) (x : D) :
+    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by sorry

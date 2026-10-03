@@ -12,8 +12,5 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-dsto 0).comp htsum
-  refine hsqrt.congr fun t => ?_
-  rw [← hsq t, Real.sqrt_sq (norm_nonneg _)]
-
-theorem BookProof.ChapterUnboundedPosition.hasDerivAt_phase := by sorry
+theorem BookProof.ChapterUnboundedPosition.hasDerivAt_phase (f : ℤ → ℝ) (k : ℤ) :
+    HasDerivAt (fun t : ℝ => phase f t k) (Complex.I * f k) 0 := by sorry

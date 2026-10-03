@@ -20,9 +20,7 @@ variable {D : ℕ}
 variable {D : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (q : MvPolynomial (Fin D) ℂ) (x : Vd D) :
-    (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (cpoly q * q)).re
-      = ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q‖ ^ 2 := by
+ := by
 
   rw [map_mul, ← conj_polyEval]
   set z := MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q with hz

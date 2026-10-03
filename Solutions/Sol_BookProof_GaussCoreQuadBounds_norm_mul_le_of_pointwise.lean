@@ -23,11 +23,7 @@ variable {D : ℕ}
 variable {D : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {f g : MvPolynomial (Fin D) ℂ} {lam : ℝ} (hlam : 0 ≤ lam)
-    (h : ∀ x : Vd D, ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) f‖
-      ≤ lam * ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) g‖)
-    (p : MvPolynomial (Fin D) ℂ) :
-    ‖pgLp (f * p)‖ ≤ lam * ‖pgLp (g * p)‖ := by
+ := by
 
   have hsq : ‖pgLp (f * p)‖ ^ 2 ≤ (lam * ‖pgLp (g * p)‖) ^ 2 := by
     have hmono : (gaussInt (cpoly (f * p) * (f * p))).re

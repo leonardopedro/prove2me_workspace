@@ -16,4 +16,5 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
- := by sorry
+theorem BookProof.HashimotoShiftInvert.shiftMap_apply (A : Dom →ₗ[ℂ] F) (γ : ℝ) (x : Dom) :
+    shiftMap A γ x = A x + (γ : ℂ) • (x : F) := by sorry

@@ -482,6 +482,51 @@ candidates themselves. That is a different shape of work from the rest of the
 session: it is a topological publication order over chapters, and each unblocked
 provider typically releases 1–3 candidates.
 
+### §2.7a 18 published def bundles are HOLLOW and always will be
+
+`state/published_bundles/Def_<Chapter>.lean` for **18 of the 381** published bundles
+contains **no declarations at all** — 10 to 38 lines of module docstring and
+`import Mathlib`, nothing else:
+
+```
+Def_ChapterCarlemanTwoStep.lean   10 lines
+Def_ChapterEsaClosure.lean         10 lines
+Def_ChapterCarlemanSimplex.lean    17 lines
+```
+
+Their names are in `namespace_owner`, so they *look* published and every lookup
+succeeds. But `BookProof.CarlemanTwoStep.deg` does not exist on the platform, so a
+theorem stub that references it fails with
+
+```
+Function expected at
+  deg
+but this term has type ?m.1
+```
+
+and **no amount of adding imports will fix it** — there is nothing to import. The
+provider-import logic I added correctly returns "no owner" here and moves on; the
+failure then surfaces far from its cause, as a `Function expected at` in an
+unrelated chapter.
+
+Two consequences:
+
+1. These 18 cannot be repaired by re-publishing. The platform accepted the bundle,
+   so a corrected version is rejected as a duplicate (§2.8d) unless the existing one
+   is deprecated first (`references/contribute.md`).
+2. **The dependable test for "is this name available on the platform" is to grep the
+   published bundle TEXT for a declaration**, not to ask `namespace_owner`. The index
+   answers "who declares this namespace", which a hollow bundle answers anyway.
+
+Check a candidate provider before building on it:
+
+```bash
+grep -qE "^ *((def|theorem|lemma|abbrev|structure)| *(instance|class)) " state/published_bundles/Def_<Chapter>.lean
+     state/published_bundles/Def_<Chapter>.lean
+```
+
+The 18 are listed in `/tmp/hollow_bundles.txt`.
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

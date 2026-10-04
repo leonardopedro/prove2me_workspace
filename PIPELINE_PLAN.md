@@ -554,6 +554,18 @@ typeclass obligation.
 
 ### §2.11 Execution order from here
 
+**Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`
+rejects the local key:
+
+```
+ERROR: Permission to leonardopedro/prove2me_workspace.git denied to marialapedro.
+```
+
+The work is **committed locally** (2 commits ahead of `origin/main`), so nothing is
+lost; it just is not on the remote. Fix before assuming a push landed — check
+`git log origin/main..HEAD --oneline | wc -l` rather than trusting the exit code,
+because several runs in this session reported "pushed" from a stale message.
+
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift
    (`ring`/`ring_nf` need `noncomm_ring`; `grind` regressions; missing
    `LieRing.ofAssociativeRing` local instance — `§2.1` of the translation plan).

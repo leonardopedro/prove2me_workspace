@@ -630,22 +630,28 @@ embed their proofs in the citing bundle.
 `num_solved_prob` reads 846, but as §2.6 says the per-theorem `status` is the
 reliable signal and the profile counter lags.
 
-**Git push is still failing** (§2.11) — the work is committed locally, ~8 commits
-ahead of `origin/main`.
+All work is pushed; see §2.11 for the SSH key this repo needs.
 
 ### §2.11 Execution order from here
 
-**Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`
-rejects the local key:
+**Git push: use `~/.ssh/id_ed25519_leo`.** The default key authenticates as
+`marialapedro` and is rejected:
 
 ```
 ERROR: Permission to leonardopedro/prove2me_workspace.git denied to marialapedro.
 ```
 
-The work is **committed locally** (2 commits ahead of `origin/main`), so nothing is
-lost; it just is not on the remote. Fix before assuming a push landed — check
-`git log origin/main..HEAD --oneline | wc -l` rather than trusting the exit code,
-because several runs in this session reported "pushed" from a stale message.
+This is now fixed repo-locally, so it should not recur:
+
+```bash
+git config core.sshCommand "ssh -i ~/.ssh/id_ed25519_leo -o IdentitiesOnly=yes"
+```
+
+Verified: `ssh -i ~/.ssh/id_ed25519_leo -T git@github.com` reports
+`Hi leonardopedro!`. Everything is pushed (`git log origin/main..HEAD` is empty).
+
+Still worth checking that rather than trusting an exit code — several runs in this
+session reported "pushed" off a stale message while 8 commits sat unpushed.
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift
    (`ring`/`ring_nf` need `noncomm_ring`; `grind` regressions; missing

@@ -64,6 +64,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--targets", required=True)
     ap.add_argument("--report", default=None)
+    ap.add_argument("--thm-out", default=None,
+                    help="also write the theorem stubs that compiled, as bare slugs")
     a = ap.parse_args()
 
     targets = [l.strip() for l in open(a.targets) if l.strip()]
@@ -119,37 +121,68 @@ def main():
 
     thm_mods = sorted({f[:-5] for f in os.listdir(f"{MIRROR}/Theorems")
                        if f.endswith(".lean")})
-    thm_res = compile_in("Theorems", thm_mods)
+    tdeps = {m: [x for x in imports_of(f"{MIRROR}/Theorems/{m}.lean", "Definitions")
+                 if x in all_defs] for m in thm_mods}
+
+    # ONE topological pass over Definitions u Theorems.
+    #
+    # The previous version compiled every Theorems stub first, then the defs. But a
+    # theorem stub IMPORTS the Definitions it needs, so on a cold mirror all 112
+    # failed with `object file .../Definitions/Def_X.olean not found` and 0/112
+    # compiled -- which then marked 43 def bundles BLOCKED for no reason. The real
+    # dependency graph is three-way (def->def, thm->def, def->thm), so sort all of
+    # it together and compile in that order.
+    universe = {("D", m) for m in all_defs} | {("T", m) for m in thm_mods}
+    udeps = {}
+    for kind, mods in (("D", all_defs), ("T", thm_mods)):
+        src = "Definitions" if kind == "D" else "Theorems"
+        for m in mods:
+            p = f"{MIRROR}/{src}/{m}.lean"
+            udeps[(kind, m)] = [
+                (("T", x) for x in imports_of(p, "Theorems") if x in thm_mods)
+            ] + ([(("D", x) for x in (ddeps if kind == "D" else tdeps)[m])])
+
+    dres, thm_res = {}, {}
+    for kind, m in topo(sorted(universe), lambda k: udeps[k]):
+        src = "Definitions" if kind == "D" else "Theorems"
+        p = f"{MIRROR}/{src}/{m}.lean"
+        if not os.path.exists(p):
+            (dres if kind == "D" else thm_res)[m] = "NOSRC"
+            continue
+        r = subprocess.run([lean, "-o", f"{src}/{m}.olean", f"{src}/{m}.lean"],
+                           cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
+                           capture_output=True, text=True, timeout=1800)
+        out = r.stdout + r.stderr
+        res = "OK" if r.returncode == 0 else (
+            "FAIL " + next((l for l in out.splitlines() if "error" in l), "")[:100])
+        if kind == "D":
+            dres[m] = res
+        else:
+            thm_res[m] = res
     ok_thm = {m for m, v in thm_res.items() if v == "OK"}
     print(f"Theorems: {len(ok_thm)}/{len(thm_mods)} compiled")
 
-    # defs, deps-first, skipping ones whose theorem imports did not build
-    dres, order = {}, topo(sorted(all_defs), lambda m: ddeps[m])
-    for m in order:
-        p = f"{MIRROR}/Definitions/{m}.lean"
-        if not os.path.exists(p):
-            dres[m] = "NOSRC"
+    # A def whose theorem import did not build is BLOCKED, not FAILed: different
+    # problem, and conflating them hid the real errors.
+    for m in all_defs:
+        if dres.get(m) in (None, "NOSRC"):
             continue
-        missing = [t for t in imports_of(p, "Theorems") if t not in ok_thm]
+        missing = [t for t in imports_of(f"{MIRROR}/Definitions/{m}.lean", "Theorems")
+                   if t not in ok_thm]
         if missing:
             dres[m] = f"BLOCKED by {missing[0]}"
-            continue
-        r = subprocess.run([lean, "-o", f"Definitions/{m}.olean",
-                            f"Definitions/{m}.lean"], cwd=MIRROR,
-                           env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
-                           capture_output=True, text=True, timeout=1800)
-        out = r.stdout + r.stderr
-        dres[m] = "OK" if r.returncode == 0 else (
-            "FAIL " + next((l for l in out.splitlines() if "error" in l),
-                           "")[:100])
 
     ok = sorted(m[len("Def_"):] for m in cand if dres.get(m) == "OK")
+    # The theorem stubs that DID build are publishable in their own right.
+    okth = sorted(ok_thm)
     print(f"candidate defs OK: {len(ok)}/{len(targets)}")
     if a.report:
         with open(a.report, "w") as fh:
             for t in targets:
                 fh.write(f"{dres.get('Def_' + t, 'NOSRC')}\t{t}\n")
     open("/tmp/cand_ok.txt", "w").write("\n".join(ok) + "\n")
+    if a.thm_out:
+        open(a.thm_out, "w").write("\n".join(okth) + "\n")
 
 
 if __name__ == "__main__":

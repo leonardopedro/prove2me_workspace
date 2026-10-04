@@ -552,6 +552,29 @@ Measured: `Function expected at <name>` on a theorem stub goes from universal to
 resolved for the namespace cause; what remains (`Membership F ?m`) is a genuine
 typeclass obligation.
 
+### §2.10g The candidate build must sort Definitions u Theorems TOGETHER
+
+`build_candidate_mirror.py` compiled all 112 theorem stubs first, then the defs. But a
+theorem stub **imports** the Definitions it needs, so on a cold mirror every one of
+them failed with
+
+```
+object file '/tmp/def_candidate/Definitions/Def_X.olean' not found
+```
+
+— **0/112 compiled**, which then marked **43 def bundles BLOCKED** for no reason at
+all. The build reported a number that looked like a content problem and was entirely
+an ordering problem.
+
+The real graph is three-way: `def -> def`, `thm -> def`, and `def -> thm` (§1s). All
+three now go into one topological sort over `Definitions u Theorems` and compile in
+that order. `--thm-out` additionally reports the theorem stubs that built, since they
+are publishable in their own right and 43 defs are waiting on them.
+
+Worth stating plainly: **0/112 with a plausible-looking error message is the most
+dangerous kind of result.** I spent a long stretch treating that number as "these
+stubs are broken" when the stubs were fine and the harness was wrong.
+
 ### §2.11 Execution order from here
 
 **Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`

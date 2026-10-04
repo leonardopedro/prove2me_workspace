@@ -527,6 +527,31 @@ grep -qE "^ *((def|theorem|lemma|abbrev|structure)| *(instance|class)) " state/p
 
 The 18 are listed in `/tmp/hollow_bundles.txt`.
 
+### §2.8g A stub must open its OWN module namespace, and the index cannot see it
+
+Two cooperating defects made every theorem stub in an unpublished chapter fail:
+
+1. `imports_for` never emitted `open <module namespace>`. `opens_for` returns the
+   node's PARENT namespace, which for a top-level theorem *is* the module namespace
+   -- but nothing put it in the header. `Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem`
+   opened only its dependencies and failed `Function expected at UnitaryRep`.
+
+2. Adding it was then undone by `drop_undeclared_opens`, whose rule is "drop an open
+   no bundle declares". The platform index only contains **published** chapters, so
+   for an unpublished one `BookProof.GroupAverage` looks undeclared and the filter
+   deleted the very open the stub cannot do without — including the module's own
+   namespace.
+
+The fix in (2) is to treat local `Definitions/Def_*.lean` as authoritative too: a stub
+is destined for publication, so its own chapter's namespaces are legitimate even
+though the index has never heard of them. This is the same lesson as §2.8c and
+§2.7a — **the platform index is not a complete picture of what is legitimate**, and
+a filter built on it will delete correct output.
+
+Measured: `Function expected at <name>` on a theorem stub goes from universal to
+resolved for the namespace cause; what remains (`Membership F ?m`) is a genuine
+typeclass obligation.
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

@@ -1071,6 +1071,13 @@ def imports_for(leaf, node, modns):
             seen.add(ln)
             imports.append(ln)
     opens = [l for l in dep_def_imports(leaf, node) if l.startswith("open ")]
+    # The stub's OWN module namespace must be open, or the statement's unqualified
+    # names do not resolve. `opens_for` only returns the node's PARENT namespace,
+    # which for a top-level theorem is the module namespace -- but nothing emitted
+    # it, so Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem opened only its
+    # dependencies and then failed `Function expected at UnitaryRep`.
+    if modns and f"open {modns}" not in opens:
+        opens.append(f"open {modns}")
     for ns in opens_for(node, modns):
         line = f"open {ns}"
         if line not in opens:
@@ -1478,6 +1485,20 @@ def drop_undeclared_opens(text, leaf=None):
     submittable solutions over it.
     """
     known = set(namespace_to_owner())
+    # Namespaces declared by LOCAL bundles count as declared. The platform index
+    # only knows chapters that are PUBLISHED, so for an unpublished chapter
+    # `BookProof.GroupAverage` looks undeclared and this filter deletes the open --
+    # including the module's own namespace, which is the one open a stub cannot do
+    # without. The stub is going to be published, so its own chapter's namespaces
+    # are legitimate.
+    for f in os.listdir(OUT_DEF):
+        if not (f.startswith("Def_") and f.endswith(".lean")):
+            continue
+        try:
+            t = open(f"{OUT_DEF}/{f}", encoding="utf-8", errors="ignore").read()
+        except OSError:
+            continue
+        known.update(re.findall(r"(?m)^namespace\s+([\w.]+)", t))
     out, dropped = [], []
     for ln in text.split("\n"):
         st = ln.strip()

@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -159,9 +160,10 @@ def permOp : ∀ (n : ℕ), Equiv.Perm (Fin n) → ((E.pow n).carrier ≃ₗᵢ[
 
 /-! ## The equations of the two recursions -/
 
+@[simp] theorem swap0_one (p : Fin 1) : swap0 E 1 p = LinearIsometryEquiv.refl ℂ _ := rfl
 
-
-
+@[simp] theorem swap0_zero (n : ℕ) :
+    swap0 E (n + 2) 0 = LinearIsometryEquiv.refl ℂ _ := rfl
 
 theorem swap0_succ (n : ℕ) (j : Fin (n + 1)) :
     swap0 E (n + 2) j.succ = (liftTail E (swap0 E (n + 1) j)).trans
@@ -363,7 +365,8 @@ def permRep (n : ℕ) : UnitaryRep (Equiv.Perm (Fin n)) ((E.pow n).carrier) wher
     rw [h1, permOp_mul]
   act_inner g x y := permOp_inner E n g⁻¹ x y
 
-
+@[simp] theorem permRep_act (n : ℕ) (σ : Equiv.Perm (Fin n)) (x : (E.pow n).carrier) :
+    (permRep E n).act σ x = permOp E n σ⁻¹ x := rfl
 
 /-- **The sign twist of the permutation action.**  Its invariant sector is the antisymmetric
 (fermionic) part of `E^{⊗n}`. -/
@@ -386,7 +389,8 @@ def signRep (n : ℕ) : UnitaryRep (Equiv.Perm (Fin n)) ((E.pow n).carrier) wher
       rcases Int.units_eq_one_or (Equiv.Perm.sign g) with h | h <;> simp [h]
     rcases this with h | h <;> simp [h]
 
-
+@[simp] theorem signRep_act (n : ℕ) (σ : Equiv.Perm (Fin n)) (x : (E.pow n).carrier) :
+    (signRep E n).act σ x = ((Equiv.Perm.sign σ : ℤ) : ℂ) • permOp E n σ⁻¹ x := rfl
 
 end
 

@@ -6,6 +6,7 @@ import Definitions.Def_ChapterYangMillsGhostSector
 import Definitions.Def_ChapterA4
 open BookProof.BRSTNilpotent
 open BookProof.YangMillsGhost
+open BookProof.BookBrstYangMills
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 

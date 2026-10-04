@@ -1,4 +1,12 @@
+import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_of_selfAdjoint
+
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+
 import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -78,9 +86,11 @@ def pair (E F : EsaOp) : EsaOp :=
     esa := essentiallySelfAdjointOn_cpairDom_esa E.op F.op E.dense F.dense E.sym F.sym
       E.esa F.esa }
 
+@[simp] theorem pair_space (E F : EsaOp) :
+    (pair E F).space = ⟨ctensor E.space F.space⟩ := rfl
 
-
-
+@[simp] theorem pair_dom (E F : EsaOp) :
+    (pair E F).dom = cpairDom E.space F.space E.dom F.dom := rfl
 
 
 
@@ -89,9 +99,10 @@ def chain : EsaOp → List EsaOp → EsaOp
   | E, [] => E
   | E, (F :: rest) => pair E (chain F rest)
 
+@[simp] theorem chain_singleton (E : EsaOp) : chain E [] = E := rfl
 
-
-
+@[simp] theorem chain_cons (E F : EsaOp) (L : List EsaOp) :
+    chain E (F :: L) = pair E (chain F L) := rfl
 
 
 

@@ -12,6 +12,7 @@ import Definitions.Def_ChapterA4
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterSirkEndToEnd
+open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}

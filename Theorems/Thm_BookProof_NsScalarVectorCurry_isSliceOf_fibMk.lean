@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
 import Definitions.Def_ChapterA4
+open BookProof.NsScalarVectorCurry
 
 variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
   {μ : Measure V} {ν : Measure W}

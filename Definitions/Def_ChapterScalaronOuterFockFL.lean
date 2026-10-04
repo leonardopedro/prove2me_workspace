@@ -15,6 +15,12 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_isGraphCore_of_esa
 
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterWallEsaSemibounded
 import Mathlib
 
 
@@ -47,6 +53,7 @@ namespace BookProof.ScalaronOuterFockFL
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -283,7 +290,8 @@ theorem secN_isGraphCore : IsGraphCore (secN W Q) (secCore (ι := ι)) :=
 /-- The fibre of a core vector, as an element of the compactly supported smooth core. -/
 def fibOf (x : secCore (ι := ι)) (a : ι) : ccDomain ℝ := ⟨(x : Sec ι) a, x.2.2 a⟩
 
-
+@[simp] theorem fibOf_coe (x : secCore (ι := ι)) (a : ι) :
+    ((fibOf x a : ccDomain ℝ) : L2R) = (x : Sec ι) a := rfl
 
 theorem fibOf_eq_zero {x : secCore (ι := ι)} {a : ι} (h : (x : Sec ι) a = 0) :
     fibOf x a = 0 := Subtype.ext h
@@ -667,9 +675,10 @@ def secData : CoreData (Sec ι) where
     rw [secN_core W Q p]
     exact secHam_rel W Q p
 
+@[simp] theorem secData_C : (secData W Q).C = secN W Q := rfl
 
-
-
+@[simp] theorem secData_coreN (p : secCore (ι := ι)) :
+    (secData W Q).coreN p = secDiag W Q p := secN_core W Q p
 
 
 

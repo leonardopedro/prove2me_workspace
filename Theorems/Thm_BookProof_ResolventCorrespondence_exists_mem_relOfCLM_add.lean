@@ -1,0 +1,18 @@
+-- Generated from ChapterResolventCorrespondence.lean — theorem BookProof.ResolventCorrespondence.exists_mem_relOfCLM_add
+import Definitions.Def_ChapterClosureUniqueness
+import Mathlib
+import Definitions.Def_ChapterResolventCorrespondence
+import Definitions.Def_ChapterA4
+open BookProof.ResolventCorrespondence
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
+
+
+
+open BookProof.NonnegSquareRoot
+open scoped ComplexOrder
+
+
+theorem BookProof.ResolventCorrespondence.exists_mem_relOfCLM_add (R : F →L[ℂ] F) (h : F) :
+    ∃ p ∈ relOfCLM R, p.1 + p.2 = h := by sorry

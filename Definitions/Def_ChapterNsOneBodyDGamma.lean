@@ -1,5 +1,37 @@
+import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
+
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
+
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
+
+import Theorems.Thm_BookProof_YangMillsHermite_momOp_polySym
+
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
+
+import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
+
+import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
+
+import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_quadForm_nonneg
+
+
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
+
 import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -93,7 +125,6 @@ namespace BookProof.NsOneBody
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.QgOuterFockFL
-open BookProof.NsFullEuler BookProof.FockSecondQuantization BookProof.FockSchur
 open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
@@ -109,11 +140,26 @@ def spFormPoly (nu : ℝ) (k : Fin 3 → ℝ) (r : Fin 7) : MvPolynomial (Fin 6)
   else if h2 : r.val < 6 then fourierAdvect k ⟨r.val - 3, by omega⟩
   else fourierMomentum k
 
+@[simp] theorem spFormPoly_re (nu : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    spFormPoly nu k (reIdx7 i) = fourierVisc nu k i := by
+  have h : (reIdx7 i).val < 3 := i.isLt
+  rw [spFormPoly, dif_pos h]
 
+@[simp] theorem spFormPoly_im (nu : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    spFormPoly nu k (imIdx7 i) = fourierAdvect k i := by
+  have hi : i.val < 3 := i.isLt
+  have hv : (imIdx7 i).val = 3 + i.val := rfl
+  have h1 : ¬ (imIdx7 i).val < 3 := by omega
+  have h2 : (imIdx7 i).val < 6 := by omega
+  have hsub : (imIdx7 i).val - 3 = i.val := by omega
+  rw [spFormPoly, dif_neg h1, dif_pos h2]
+  simp only [hsub, Fin.eta]
 
-
-
-
+@[simp] theorem spFormPoly_div (nu : ℝ) (k : Fin 3 → ℝ) :
+    spFormPoly nu k divIdx7 = fourierMomentum k := by
+  have h1 : ¬ (divIdx7).val < 3 := by norm_num
+  have h2 : ¬ (divIdx7).val < 6 := by norm_num
+  rw [spFormPoly, dif_neg h1, dif_neg h2]
 
 /-- **Every one-parcel form is real-coefficient**, hence its multiplication operator is symmetric
 and its square is a positive summand of the generator. -/
@@ -150,11 +196,21 @@ def spFieldVisc (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) (r : Fin 7) : 
 def spFieldAdv (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) (r : Fin 7) : D →ₗ[ℂ] D :=
   if 3 ≤ r.val ∧ r.val < 6 then spField Φ nu k r else 0
 
+@[simp] theorem spFieldAdv_im (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    spFieldAdv Φ nu k (imIdx7 i) = Φ.op (mulOp (fourierAdvect k i)) := by
+  have hv : (imIdx7 i).val = 3 + i.val := rfl
+  have hi : i.val < 3 := i.isLt
+  rw [spFieldAdv, if_pos (by omega), spField, spFormPoly_im]
 
+@[simp] theorem spFieldVisc_re (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    spFieldVisc Φ nu k (reIdx7 i) = Φ.op (mulOp (fourierVisc nu k i)) := by
+  have hv : (reIdx7 i).val = i.val := rfl
+  have hi : i.val < 3 := i.isLt
+  rw [spFieldVisc, if_neg (by omega), spField, spFormPoly_re]
 
-
-
-
+@[simp] theorem spFieldVisc_div (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) :
+    spFieldVisc Φ nu k divIdx7 = Φ.op (mulOp (fourierMomentum k)) := by
+  rw [spFieldVisc, if_neg (by norm_num), spField, spFormPoly_div]
 
 /-- **The one-body generator** `H_sp = ½ Σ_m π_m² + ½ Σ_r (mulOp Φ_r)²` of the eliminated
 Eulerian sector, on a core representation of the Gauss–polynomial core of `L²(ℝ⁶)`. -/

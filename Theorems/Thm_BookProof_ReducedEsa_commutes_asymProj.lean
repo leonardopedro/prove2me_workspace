@@ -7,6 +7,7 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA4
 open BookProof.ChapterA
 open BookProof.ChapterA.System
+open BookProof.ReducedEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {P : F →ₗ[ℂ] F}

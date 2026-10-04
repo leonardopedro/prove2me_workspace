@@ -4,6 +4,7 @@ import Definitions.Def_ChapterWignerSymmetryInfinite
 import Definitions.Def_ChapterWignerSymmetry
 import Definitions.Def_ChapterA4
 open BookProof.ChapterWignerSymmetry
+open BookProof.ChapterWignerSymmetryInfinite
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

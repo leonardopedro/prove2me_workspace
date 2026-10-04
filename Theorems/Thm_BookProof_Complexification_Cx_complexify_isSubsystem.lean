@@ -5,6 +5,7 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA4
 open BookProof.ChapterA
 open BookProof.ChapterA
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 variable [CompleteSpace W]

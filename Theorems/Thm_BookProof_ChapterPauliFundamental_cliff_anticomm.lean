@@ -5,6 +5,7 @@ import Definitions.Def_ChapterA3
 import Definitions.Def_ChapterA3b
 import Definitions.Def_ChapterA4
 open BookProof.ChapterA3
+open BookProof.ChapterPauliFundamental
 
 variable {A : Fin 4 → M4}
 

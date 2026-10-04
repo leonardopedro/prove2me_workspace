@@ -1,5 +1,9 @@
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterScalaronCoreEsa
 import Mathlib
 
 
@@ -55,7 +59,11 @@ scalaron core to the scalaron line. -/
 def oneParticleOp (a b : ι) : ccDomain ℝ →ₗ[ℂ] L2R :=
   (if a = b then W.ham (Q.sig b) else 0) + Q.A a b • (ccDomain ℝ).subtype + Q.B a b • xCc
 
-
+@[simp] theorem oneParticleOp_apply (a b : ι) (u : ccDomain ℝ) :
+    oneParticleOp W Q a b u
+      = (if a = b then W.ham (Q.sig b) u else 0) + Q.A a b • (u : L2R) + Q.B a b • xCc u := by
+  simp only [oneParticleOp, LinearMap.add_apply, LinearMap.smul_apply, Submodule.subtype_apply]
+  by_cases h : a = b <;> simp [h]
 
 
 

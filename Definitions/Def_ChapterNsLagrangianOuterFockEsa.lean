@@ -3,6 +3,17 @@ import Definitions.Def_ChapterNsLagrangianDetFarisLavine
 import Definitions.Def_ChapterFockStatisticsEsa
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -50,10 +61,7 @@ namespace BookProof.NsLagrangianOuterFock
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-open BookProof.FockStatistics BookProof.PermSector BookProof.ReducedEsa
-open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
-open BookProof.YangMillsNonAbelianEsa
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LagrangianCanonical
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato
@@ -94,7 +102,6 @@ def lagOneOp (nu : ℝ) (hnu : 0 < nu) (f : Fin 3 → ℝ) :
 
 section Koopman
 
-open BookProof.NsLagrangianDetFL
 
 variable {K : Type*} [Fintype K] (S : LagNsData K)
 

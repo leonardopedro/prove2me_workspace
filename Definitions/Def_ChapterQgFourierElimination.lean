@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 
 
@@ -56,7 +59,6 @@ open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.QgBrstDerivativeGauge
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
-open BookProof.QgVielbeinScalaronGaugeFL
 
 noncomputable section
 
@@ -132,9 +134,11 @@ def elimConfig (k : Mom) (z : Fin 3 × Fin 3 → ℂ) : Comp → ℂ
   | Sum.inl (nu, i) => z (nu, i)
   | Sum.inr (mu, nu, i) => Complex.I * ((k mu : ℤ) : ℂ) * z (nu, i)
 
+@[simp] theorem elimConfig_e (k : Mom) (z : Fin 3 × Fin 3 → ℂ) (nu i : Fin 3) :
+    elimConfig k z (eIdx nu i) = z (nu, i) := rfl
 
-
-
+@[simp] theorem elimConfig_d (k : Mom) (z : Fin 3 × Fin 3 → ℂ) (mu nu i : Fin 3) :
+    elimConfig k z (dIdx mu nu i) = Complex.I * ((k mu : ℤ) : ℂ) * z (nu, i) := rfl
 
 
 

@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterNonnegSemigroup
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -37,8 +39,6 @@ strong continuity at `0`.  This chapter supplies the three items that chapter le
 
 namespace BookProof.NonnegSemigroupGenerator
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
-open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemigroup
 open Filter Topology NormedSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

@@ -30035,9 +30035,152 @@
     "timepiece",
     "formalization"
    ]
+  },
+  "BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer": {
+   "name": "BookProof.ChapterMackeyGeneralBase.cocycle_mem_stabilizer",
+   "chapter": "ChapterMackeyGeneralBase",
+   "file": "Theorems/Thm_BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer.lean",
+   "title": "The Lean 4 theorem `cocycle_mem_stabilizer` in the `ChapterMackeyGeneralBase` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterMackeyGeneralBase.cocycle_mem_stabilizer` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime": {
+   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ext_prime",
+   "chapter": "ChapterStoneTheorem",
+   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime.lean",
+   "title": "The Lean 4 theorem `ext_prime` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ext_prime` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq",
+   "chapter": "ChapterStoneTheorem",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq.lean",
+   "title": "The Lean 4 theorem `gen_stoneGroup_eq` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_mulDomain_dense": {
+   "name": "BookProof.ChapterUnboundedPosition.mulDomain_dense",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_mulDomain_dense.lean",
+   "title": "The Lean 4 theorem `mulDomain_dense` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.mulDomain_dense` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_single_mem_mulDomain": {
+   "name": "BookProof.ChapterUnboundedPosition.single_mem_mulDomain",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain.lean",
+   "title": "The Lean 4 theorem `single_mem_mulDomain` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.single_mem_mulDomain` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary": {
+   "name": "BookProof.ChapterUnboundedPosition.tendsto_phaseUnitary",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary.lean",
+   "title": "The Lean 4 theorem `tendsto_phaseUnitary` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.tendsto_phaseUnitary` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff": {
+   "name": "BookProof.GroupAverage.UnitaryRep.mem_range_avgProj_iff",
+   "chapter": "ChapterGroupAverageEsa",
+   "file": "Theorems/Thm_BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff.lean",
+   "title": "The Lean 4 theorem `mem_range_avgProj_iff` in the `ChapterGroupAverageEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.GroupAverage.UnitaryRep.mem_range_avgProj_iff` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_le",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le.lean",
+   "title": "The Lean 4 theorem `memLpTwo_of_le` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_le` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_summable_normSq": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.summable_normSq",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq.lean",
+   "title": "The Lean 4 theorem `summable_normSq` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.summable_normSq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_orthonormal_rotHermiteLp": {
+   "name": "BookProof.QuadraticRotation.orthonormal_rotHermiteLp",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_orthonormal_rotHermiteLp.lean",
+   "title": "The Lean 4 theorem `orthonormal_rotHermiteLp` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.orthonormal_rotHermiteLp` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_span_rotHermiteLp": {
+   "name": "BookProof.QuadraticRotation.span_rotHermiteLp",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_span_rotHermiteLp.lean",
+   "title": "The Lean 4 theorem `span_rotHermiteLp` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.span_rotHermiteLp` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
   }
  },
  "sol_order": [
+  "BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer",
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq",
+  "BookProof_ChapterUnboundedPosition_mulDomain_dense",
+  "BookProof_ChapterUnboundedPosition_single_mem_mulDomain",
+  "BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary",
+  "BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff",
+  "BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le",
+  "BookProof_NavierStokesFlow_IkebeKato_summable_normSq",
+  "BookProof_QuadraticRotation_orthonormal_rotHermiteLp",
+  "BookProof_QuadraticRotation_span_rotHermiteLp",
   "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
   "BookProof_HashimotoShiftInvert_invShiftOperator_apply",
   "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn",

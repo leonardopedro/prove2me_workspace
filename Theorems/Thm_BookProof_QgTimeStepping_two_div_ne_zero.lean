@@ -7,6 +7,7 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 import Definitions.Def_ChapterA4
+open BookProof.QgTimeStepping
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
@@ -15,6 +16,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 

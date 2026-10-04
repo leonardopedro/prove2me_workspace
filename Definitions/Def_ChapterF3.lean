@@ -80,7 +80,7 @@ equations of the CFM training problem decouple, giving the `O(M)` solution.
 (`../unfer` `ProjectOnto`). -/
 def projOnto (ψ : E) : E →L[ℂ] E := (innerSL ℂ ψ).smulRight ψ
 
-
+@[simp] theorem projOnto_apply (ψ s : E) : projOnto ψ s = (inner (𝕜 := ℂ) ψ s) • ψ := rfl
 
 /-
 **F2.6** (idempotency): for a unit vector `ψ`, `projOnto ψ` is idempotent

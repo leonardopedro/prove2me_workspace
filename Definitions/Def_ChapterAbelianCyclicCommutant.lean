@@ -1,5 +1,8 @@
 import Definitions.Def_ChapterAbelianCyclicModel
 import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 
 
@@ -61,7 +64,10 @@ def conjRep (S : Lp ℂ 2 (repMeasure pi xi) →L[ℂ] Lp ℂ 2 (repMeasure pi x
   ((cyclicRepUnitary pi xi hcyc).toLinearIsometry.toContinuousLinearMap).comp
     (S.comp ((cyclicRepUnitary pi xi hcyc).symm.toLinearIsometry.toContinuousLinearMap))
 
-
+@[simp] theorem conjRep_apply
+    (S : Lp ℂ 2 (repMeasure pi xi) →L[ℂ] Lp ℂ 2 (repMeasure pi xi)) (v : H) :
+    conjRep pi xi hcyc S v
+      = cyclicRepUnitary pi xi hcyc (S ((cyclicRepUnitary pi xi hcyc).symm v)) := rfl
 
 /-- Conjugation of an operator on `H` back to `L²(μ)`. -/
 def conjRepSymm (S : H →L[ℂ] H) :
@@ -69,7 +75,9 @@ def conjRepSymm (S : H →L[ℂ] H) :
   ((cyclicRepUnitary pi xi hcyc).symm.toLinearIsometry.toContinuousLinearMap).comp
     (S.comp ((cyclicRepUnitary pi xi hcyc).toLinearIsometry.toContinuousLinearMap))
 
-
+@[simp] theorem conjRepSymm_apply (S : H →L[ℂ] H) (u : Lp ℂ 2 (repMeasure pi xi)) :
+    conjRepSymm pi xi hcyc S u
+      = (cyclicRepUnitary pi xi hcyc).symm (S (cyclicRepUnitary pi xi hcyc u)) := rfl
 
 
 

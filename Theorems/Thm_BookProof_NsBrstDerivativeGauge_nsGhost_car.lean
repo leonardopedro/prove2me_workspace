@@ -6,6 +6,7 @@ import Definitions.Def_ChapterNsBrstDerivativeGauge
 import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterA4
 open BookProof.BRSTNilpotent
+open BookProof.NsBrstDerivativeGauge
 
 
 

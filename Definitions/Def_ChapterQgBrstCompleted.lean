@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -131,7 +132,7 @@ def wshiftL : L2 ι →ₗ[ℂ] L2 ι where
   map_add' f g := by ext i; simp only [lp.coeFn_add, Pi.add_apply, mul_add]
   map_smul' c f := by ext i; simp [mul_left_comm]
 
-
+@[simp] theorem wshiftL_apply (f : L2 ι) (i : ι) : (wshiftL w e hw hinj f) i = w i * f (e i) := rfl
 
 theorem wshiftL_norm_le (f : L2 ι) : ‖wshiftL w e hw hinj f‖ ≤ ‖f‖ := by
   have hp : (0 : ℝ) < ((2 : ℝ≥0∞)).toReal := by norm_num
@@ -148,7 +149,7 @@ def wshift : L2 ι →L[ℂ] L2 ι :=
   LinearMap.mkContinuous (wshiftL w e hw hinj) 1 fun f => by
     simpa using wshiftL_norm_le w e hw hinj f
 
-
+@[simp] theorem wshift_apply (f : L2 ι) (i : ι) : (wshift w e hw hinj f) i = w i * f (e i) := rfl
 
 
 
@@ -313,7 +314,8 @@ def qgPhaseFull (omega g : ℕ → ℝ) (t : ℝ) : QGH →L[ℂ] QGH :=
   wshift (fullPhaseWeight omega g t) id (fullPhaseWeight_norm_le omega g t)
     (id_injOn_full omega g t)
 
-
+@[simp] theorem qgPhaseFull_apply (omega g : ℕ → ℝ) (t : ℝ) (f : QGH) (p : GradedIdx) :
+    (qgPhaseFull omega g t f) p = fullPhaseWeight omega g t p * f p := rfl
 
 
 
@@ -340,4 +342,16 @@ theorem qgPhase_commutes :
 space with a genuinely bounded nilpotent charge. -/
 def qgBrstTransfer (t : ℝ) :
     Cohomology (qgBrstCharge sym hsym) →ₗ[ℂ] Cohomology (qgBrstCharge sym hsym) :=
-  transfer (qgBrstCharge sym hsym) (qgPhase omega) (qgPhas
+  transfer (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega) t
+
+
+
+
+
+
+
+
+
+end
+
+end BookProof.QgBrstCompleted

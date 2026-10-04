@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -33,7 +35,6 @@ manifestly non-negative.
 
 namespace BookProof.ResolventCorrespondence
 
-open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
 

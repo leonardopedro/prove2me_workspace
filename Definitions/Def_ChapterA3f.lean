@@ -44,7 +44,9 @@ variable {n : ℕ}
 noncomputable def detExpPath (A : Matrix (Fin n) (Fin n) ℝ) (t : ℝ) : ℝ :=
     (NormedSpace.exp (t • A)).det
 
-
+@[simp] theorem detExpPath_zero (A : Matrix (Fin n) (Fin n) ℝ) :
+    detExpPath A 0 = 1 := by
+  simp [detExpPath]
 
 /-
 The one-parameter group property: `f (s + t) = f s * f t`.

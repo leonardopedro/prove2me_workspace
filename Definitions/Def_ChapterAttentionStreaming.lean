@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -36,7 +38,6 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionStreaming
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterObservableExpectation BookProof.ChapterAttentionOutput
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

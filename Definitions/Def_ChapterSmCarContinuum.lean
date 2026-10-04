@@ -1,4 +1,13 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
+
+
+
+
 import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -64,7 +73,6 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.SmCarContinuum
 
-open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
@@ -112,7 +120,8 @@ def flipOcc (i : ℕ) : Finset ℕ ≃ Finset ℕ :=
     · simp [h, Finset.insert_erase h]
     · simp [h, Finset.erase_insert h])
 
-
+@[simp] theorem flipOcc_apply (i : ℕ) (S : Finset ℕ) :
+    flipOcc i S = if i ∈ S then S.erase i else insert i S := rfl
 
 /-- The coordinates of `a_i ψ`. -/
 def annFun (i : ℕ) (ψ : CFock) : Finset ℕ → ℂ :=
@@ -177,9 +186,11 @@ def cCreL (i : ℕ) : CFock →ₗ[ℂ] CFock where
     refine lp.ext (funext fun S => ?_)
     by_cases h : i ∈ S <;> simp [creFun, h, mul_left_comm]
 
+@[simp] theorem cAnnL_apply (i : ℕ) (ψ : CFock) (S : Finset ℕ) :
+    (cAnnL i ψ) S = if i ∈ S then 0 else jwSign i S * ψ (insert i S) := rfl
 
-
-
+@[simp] theorem cCreL_apply (i : ℕ) (ψ : CFock) (S : Finset ℕ) :
+    (cCreL i ψ) S = if i ∈ S then jwSign i S * ψ (S.erase i) else 0 := rfl
 
 theorem norm_cAnnL_le (i : ℕ) (ψ : CFock) : ‖cAnnL i ψ‖ ≤ 1 * ‖ψ‖ := by
   rw [one_mul]
@@ -210,9 +221,11 @@ def cAnn (i : ℕ) : CFock →L[ℂ] CFock := (cAnnL i).mkContinuous 1 (norm_cAn
 /-- **The creation operator** `a†_i` of a single mode. -/
 def cCre (i : ℕ) : CFock →L[ℂ] CFock := (cCreL i).mkContinuous 1 (norm_cCreL_le i)
 
+@[simp] theorem cAnn_apply (i : ℕ) (ψ : CFock) (S : Finset ℕ) :
+    (cAnn i ψ) S = if i ∈ S then 0 else jwSign i S * ψ (insert i S) := rfl
 
-
-
+@[simp] theorem cCre_apply (i : ℕ) (ψ : CFock) (S : Finset ℕ) :
+    (cCre i ψ) S = if i ∈ S then jwSign i S * ψ (S.erase i) else 0 := rfl
 
 
 

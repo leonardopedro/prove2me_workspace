@@ -3,6 +3,7 @@ import Definitions.Def_ChapterMackeyQuasiInvariant
 import Mathlib
 import Definitions.Def_ChapterL2FibreSum
 import Definitions.Def_ChapterA4
+open BookProof.ChapterL2FibreSum
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
 variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]

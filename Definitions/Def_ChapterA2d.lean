@@ -58,7 +58,9 @@ equivalence `α : V ≃ₗᵢ[ℂ] W`, giving `α ∘ m ∘ α⁻¹ : W →L[ℂ
 noncomputable def conjCLM (α : V ≃ₗᵢ[ℂ] W) (m : V →L[ℂ] V) : W →L[ℂ] W :=
   (α : V →L[ℂ] W) ∘L m ∘L (α.symm : W →L[ℂ] V)
 
-
+omit [CompleteSpace V] [CompleteSpace W] in
+@[simp] lemma conjCLM_apply (α : V ≃ₗᵢ[ℂ] W) (m : V →L[ℂ] V) (w : W) :
+    conjCLM α m w = α (m (α.symm w)) := rfl
 
 /-- A **system isometry** between complex systems `(M, V)` and `(N, W)`: the
 `ℂ`-linear isometric equivalence `α` carries `M` onto `N` by conjugation. -/
@@ -72,7 +74,9 @@ anti-unitary `θ` of `V` along a `ℂ`-linear isometric equivalence `α : V ≃�
 noncomputable def conjAU (α : V ≃ₗᵢ[ℂ] W) (θ : AntiUnitary V) : AntiUnitary W :=
   (α.symm.trans θ).trans α
 
-
+omit [CompleteSpace V] [CompleteSpace W] in
+@[simp] lemma conjAU_apply (α : V ≃ₗᵢ[ℂ] W) (θ : AntiUnitary V) (w : W) :
+    conjAU α θ w = α (θ (α.symm w)) := rfl
 
 /-- Multiplication by a unit-modulus complex number is a `ℂ`-linear isometric
 equivalence. -/
@@ -87,7 +91,9 @@ noncomputable def unitScaleEquiv (c : ℂ) (hc : ‖c‖ = 1) : W ≃ₗᵢ[ℂ]
       right_inv := by intro x; simp [smul_smul, hcne] }
     norm_map' := by intro x; simp [norm_smul, hc] }
 
-
+omit [CompleteSpace W] in
+@[simp] lemma unitScaleEquiv_apply (c : ℂ) (hc : ‖c‖ = 1) (x : W) :
+    unitScaleEquiv c hc x = c • x := rfl
 
 /-
 Every unit-modulus complex number has a unit-modulus complex square root.

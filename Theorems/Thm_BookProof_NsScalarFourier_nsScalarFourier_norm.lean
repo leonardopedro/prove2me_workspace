@@ -3,6 +3,7 @@ import Definitions.Def_ChapterNsPartialFourier
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
 import Definitions.Def_ChapterA4
+open BookProof.NsScalarFourier
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
@@ -14,6 +15,7 @@ variable (V W) in
 open MeasureTheory
 
 
+open BookProof.NsPartialFourier BookProof.NsScalarVectorCurry
 
 noncomputable section
 

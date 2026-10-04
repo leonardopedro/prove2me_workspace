@@ -4,6 +4,7 @@ import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterA4
 open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterAbelianGelfandModel
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]

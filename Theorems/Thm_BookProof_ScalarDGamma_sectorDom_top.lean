@@ -6,6 +6,7 @@ import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterA4
 open BookProof.TensorCore
+open BookProof.ScalarDGamma
 
 variable (Hs : IPSpace) (c : ℝ)
 

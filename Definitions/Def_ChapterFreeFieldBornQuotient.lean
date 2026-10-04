@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -39,8 +40,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
-open BookProof.ChapterFreeFieldBornCont
 
 namespace BookProof.ChapterFreeFieldBornQuotient
 
@@ -52,7 +51,9 @@ noncomputable def bornMapSphere (n : ℕ) :
     ↥(Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) → ↥(stdSimplex ℝ (Fin n)) :=
   fun x => ⟨bornMap x, bornMap_mem_stdSimplex x.2⟩
 
-
+@[simp] theorem bornMapSphere_coe
+    (x : ↥(Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1)) :
+    (bornMapSphere n x : Fin n → ℝ) = bornMap x := rfl
 
 
 

@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -34,7 +35,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldGaussian
 
 namespace BookProof.ChapterFreeFieldSphere
 

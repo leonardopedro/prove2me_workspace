@@ -9,6 +9,7 @@ import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
+open BookProof.ScalarDGamma
 
 variable (Hs : IPSpace) (c : ℝ)
 

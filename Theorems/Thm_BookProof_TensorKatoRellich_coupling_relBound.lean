@@ -6,6 +6,7 @@ import Definitions.Def_ChapterTensorKatoRellich
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterA4
 open BookProof.TensorCore
+open BookProof.TensorKatoRellich
 
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
 variable {ι : Type*} [Fintype ι]
@@ -13,6 +14,7 @@ variable {ι : Type*} [Fintype ι]
 
 
 open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
 
 noncomputable section
 

@@ -1,5 +1,10 @@
+import Theorems.Thm_BookProof_ChapterPvmMeasure_pvmMeasure_eq_zero_iff
+
+import Theorems.Thm_BookProof_ChapterPvmMeasure_Pvm_add_of_disjoint
+
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -114,7 +119,8 @@ noncomputable def projL (μ : Measure X) {E : Set X} (hE : MeasurableSet E) :
       map_smul' := fun c f => proj_smul μ hE c f } 1
     (fun f => by simpa using norm_proj_le μ hE f)
 
-
+@[simp] theorem projL_apply (μ : Measure X) {E : Set X} (hE : MeasurableSet E)
+    (f : Lp ℂ 2 μ) : projL μ hE f = proj μ hE f := rfl
 
 /-! ## The projection-valued measure as an additive set function -/
 
@@ -242,7 +248,8 @@ noncomputable def swLin :
   map_add' := swSimple_add P ψ
   map_smul' := swSimple_smul P ψ
 
-
+@[simp] theorem swLin_apply (F : Lp.simpleFunc ℂ 2 (pvmMeasure P ψ)) :
+    swLin P ψ F = swSimple P ψ F := rfl
 
 /-- The value of the intertwiner on the indicator of a measurable set. -/
 theorem swSimple_indicatorConst {E : Set X} (hE : MeasurableSet E) :
@@ -319,7 +326,8 @@ theorem swIsom_surjective (hcyc : IsCyclic P ψ) : Function.Surjective (swIsom P
 noncomputable def swEquiv (hcyc : IsCyclic P ψ) : Lp ℂ 2 (pvmMeasure P ψ) ≃ₗᵢ[ℂ] H :=
   LinearIsometryEquiv.ofSurjective (swIsom P ψ) (swIsom_surjective P ψ hcyc)
 
-
+@[simp] theorem swEquiv_apply (hcyc : IsCyclic P ψ) (v : Lp ℂ 2 (pvmMeasure P ψ)) :
+    swEquiv P ψ hcyc v = swCLM P ψ v := rfl
 
 /-! ## The intertwining of the projections -/
 

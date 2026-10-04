@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterSpectralMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 
 
@@ -111,7 +113,10 @@ def conjSpectral (S : Lp ℂ 2 (spectralMeasure T hT xi) →L[ℂ] Lp ℂ 2 (spe
   ((spectralUnitary T hT xi hcyc).toLinearIsometry.toContinuousLinearMap).comp
     (S.comp ((spectralUnitary T hT xi hcyc).symm.toLinearIsometry.toContinuousLinearMap))
 
-
+@[simp] theorem conjSpectral_apply
+    (S : Lp ℂ 2 (spectralMeasure T hT xi) →L[ℂ] Lp ℂ 2 (spectralMeasure T hT xi)) (v : H) :
+    conjSpectral T hT xi hcyc S v
+      = spectralUnitary T hT xi hcyc (S ((spectralUnitary T hT xi hcyc).symm v)) := rfl
 
 /-- Conjugation of an operator on `H` back to `L²(μ)`. -/
 def conjSpectralSymm (S : H →L[ℂ] H) :
@@ -119,7 +124,10 @@ def conjSpectralSymm (S : H →L[ℂ] H) :
   ((spectralUnitary T hT xi hcyc).symm.toLinearIsometry.toContinuousLinearMap).comp
     (S.comp ((spectralUnitary T hT xi hcyc).toLinearIsometry.toContinuousLinearMap))
 
-
+@[simp] theorem conjSpectralSymm_apply (S : H →L[ℂ] H)
+    (u : Lp ℂ 2 (spectralMeasure T hT xi)) :
+    conjSpectralSymm T hT xi hcyc S u
+      = (spectralUnitary T hT xi hcyc).symm (S (spectralUnitary T hT xi hcyc u)) := rfl
 
 
 

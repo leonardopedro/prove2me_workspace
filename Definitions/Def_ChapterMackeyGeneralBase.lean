@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterMackeyImprimitivity
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -43,7 +44,6 @@ open scoped InnerProductSpace
 
 namespace BookProof.ChapterMackeyGeneralBase
 
-open BookProof.ChapterOrthogonalSums
 
 variable {G : Type*} [Group G] {X : Type*} [MulAction G X]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]

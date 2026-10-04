@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 

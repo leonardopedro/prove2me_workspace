@@ -1,4 +1,7 @@
+import Theorems.Thm_BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map
+
 import Definitions.Def_ChapterSolovayCoordinates
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -76,7 +79,8 @@ def prodProdProdCommEquiv : (A × B) × (C × D) ≃ᵐ (A × C) × (B × D) :=
             (γ := D))).trans
           (MeasurableEquiv.prodAssoc (α := A) (β := C) (γ := B × D)).symm)
 
-
+@[simp] theorem prodProdProdCommEquiv_apply (z : (A × B) × (C × D)) :
+    prodProdProdCommEquiv z = ((z.1.1, z.2.1), (z.1.2, z.2.2)) := rfl
 
 /-- The shuffle is measure preserving for products of s-finite measures. -/
 theorem measurePreserving_prodProdProdComm (μA : Measure A) (μB : Measure B)

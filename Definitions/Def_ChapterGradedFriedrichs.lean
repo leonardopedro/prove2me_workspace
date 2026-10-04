@@ -1,4 +1,14 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
 import Definitions.Def_ChapterGradedFock
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -61,7 +71,8 @@ variable {γ : Type*}
 def toL2 (u : γ →₀ ℂ) : L2I γ :=
   ⟨fun g => u g, memLpTwo_of_finite_support u.finite_support⟩
 
-
+@[simp] theorem toL2_apply (u : γ →₀ ℂ) (g : γ) :
+    ((toL2 u : L2I γ) : γ → ℂ) g = u g := rfl
 
 /-- The transport map is linear. -/
 def toL2L : (γ →₀ ℂ) →ₗ[ℂ] L2I γ where
@@ -69,7 +80,7 @@ def toL2L : (γ →₀ ℂ) →ₗ[ℂ] L2I γ where
   map_add' u v := by refine lp.ext (funext fun g => ?_); rfl
   map_smul' c u := by refine lp.ext (funext fun g => ?_); simp [toL2]
 
-
+@[simp] theorem toL2L_apply (u : γ →₀ ℂ) : toL2L u = toL2 u := rfl
 
 theorem toL2_mem (u : γ →₀ ℂ) : toL2 u ∈ lpFiniteModes γ := u.finite_support
 
@@ -115,7 +126,8 @@ def algEquivL2 : (γ →₀ ℂ) ≃ₗ[ℂ] lpFiniteModes γ := by
       exact hx.mem_toFinset.mpr hg
     · exact Subtype.ext (lp.ext (funext fun _ => rfl))
 
-
+@[simp] theorem coe_algEquivL2 (u : γ →₀ ℂ) :
+    ((algEquivL2 u : lpFiniteModes γ) : L2I γ) = toL2 u := rfl
 
 
 

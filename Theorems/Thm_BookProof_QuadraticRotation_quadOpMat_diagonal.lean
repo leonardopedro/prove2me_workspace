@@ -10,6 +10,7 @@ import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QuadraticRotation
 
 variable {d : ℕ}
 

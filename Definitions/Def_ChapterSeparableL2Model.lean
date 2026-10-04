@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 
 
@@ -40,7 +42,6 @@ open MeasureTheory TopologicalSpace
 namespace BookProof.ChapterSeparableL2Model
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
-open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
 
 /-! ## 1. A countable dense family of continuous functions -/

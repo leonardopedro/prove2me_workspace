@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -52,7 +53,8 @@ noncomputable def signFlip (s : Fin n → ℝ) (x : EuclideanSpace ℝ (Fin n)) 
     EuclideanSpace ℝ (Fin n) :=
   (WithLp.equiv 2 (Fin n → ℝ)).symm (fun k => s k * x k)
 
-
+@[simp] theorem signFlip_apply (s : Fin n → ℝ) (x : EuclideanSpace ℝ (Fin n)) (k : Fin n) :
+    signFlip s x k = s k * x k := rfl
 
 
 

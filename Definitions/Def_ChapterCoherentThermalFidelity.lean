@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterThermalTemperatureCore
 import Definitions.Def_ChapterCoherentFidelity
 import Definitions.Def_ChapterDisplacedThermalOverlap
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterCoherentTemperature
 import Mathlib
 
 

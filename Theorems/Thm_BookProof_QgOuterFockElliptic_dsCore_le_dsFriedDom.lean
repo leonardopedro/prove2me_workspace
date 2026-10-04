@@ -17,6 +17,7 @@ open BookProof.DirectSumEsa
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL
+open BookProof.QgOuterFockElliptic
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {D : ℕ}

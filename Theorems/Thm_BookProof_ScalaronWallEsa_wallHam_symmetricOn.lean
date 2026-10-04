@@ -10,6 +10,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
+import Theorems.Thm_BookProof_ScalaronEsa_symmetricOn_inclusion
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 

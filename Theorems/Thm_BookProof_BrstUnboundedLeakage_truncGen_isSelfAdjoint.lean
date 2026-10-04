@@ -9,6 +9,7 @@ import Definitions.Def_ChapterA4
 open BookProof.BrstLeakage
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.BrstUnboundedLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)

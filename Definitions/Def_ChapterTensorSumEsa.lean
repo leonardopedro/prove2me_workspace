@@ -1,6 +1,11 @@
 import Definitions.Def_ChapterFlowDGammaEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -80,7 +85,8 @@ domains into the algebraic tensor product of the two spaces. -/
 def inclPair : (DA ⊗[ℂ] DB) →ₗᵢ[ℂ] (Hs.carrier ⊗[ℂ] Ks.carrier) :=
   TensorProduct.mapIsometry DA.subtypeₗᵢ DB.subtypeₗᵢ
 
-
+@[simp] theorem inclPair_tmul (a : DA) (b : DB) :
+    inclPair Hs Ks DA DB (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] (b : Ks.carrier) := rfl
 
 variable (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
 
@@ -88,7 +94,9 @@ variable (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
 def sumPoly : (DA ⊗[ℂ] DB) →ₗ[ℂ] (Hs.carrier ⊗[ℂ] Ks.carrier) :=
   TensorProduct.map A DB.subtype + TensorProduct.map DA.subtype B
 
-
+@[simp] theorem sumPoly_tmul (a : DA) (b : DB) :
+    sumPoly Hs Ks DA DB A B (a ⊗ₜ[ℂ] b)
+      = (A a) ⊗ₜ[ℂ] (b : Ks.carrier) + (a : Hs.carrier) ⊗ₜ[ℂ] (B b) := rfl
 
 /-- The image of `D_A ⊗ D_B` inside `H ⊗ K`: the domain of the tensor sum. -/
 def pairDom : Submodule ℂ (Hs.carrier ⊗[ℂ] Ks.carrier) :=
@@ -170,7 +178,10 @@ local instance : Module ℝ (Hs.carrier ⊗[ℂ] Ks.carrier) := NormedSpace.comp
 def pflow (t : ℝ) : (DA ⊗[ℂ] DB) →ₗ[ℂ] (DA ⊗[ℂ] DB) :=
   TensorProduct.map (OneParticleFlow.dmap P t) (OneParticleFlow.dmap Q t)
 
-
+@[simp] theorem pflow_tmul (t : ℝ) (a : DA) (b : DB) :
+    pflow P Q t (a ⊗ₜ[ℂ] b)
+      = (OneParticleFlow.dmap P t a) ⊗ₜ[ℂ] (OneParticleFlow.dmap Q t b) :=
+  TensorProduct.map_tmul _ _ _ _
 
 
 
@@ -190,7 +201,9 @@ def porbit (x : DA ⊗[ℂ] DB) (t : ℝ) : cpairDom Hs Ks DA DB :=
     mem_pushDom (pairEmb Hs Ks)
       (⟨inclPair Hs Ks DA DB (pflow P Q t x), ⟨pflow P Q t x, rfl⟩⟩ : pairDom Hs Ks DA DB)⟩
 
-
+@[simp] theorem porbit_coe (x : DA ⊗[ℂ] DB) (t : ℝ) :
+    ((porbit P Q x t : cpairDom Hs Ks DA DB) : ctensor Hs Ks)
+      = pairEmb Hs Ks (inclPair Hs Ks DA DB (pflow P Q t x)) := rfl
 
 
 
@@ -232,7 +245,9 @@ def graphPair :
     (DA ⊗[ℂ] DB) →ₗ[ℂ] (Hs.carrier ⊗[ℂ] Ks.carrier) × (Hs.carrier ⊗[ℂ] Ks.carrier) :=
   (inclPair Hs Ks DA DB).toLinearMap.prod (sumPoly Hs Ks DA DB A B)
 
-
+@[simp] theorem graphPair_apply (x : DA ⊗[ℂ] DB) :
+    graphPair Hs Ks DA DB A B x
+      = (inclPair Hs Ks DA DB x, sumPoly Hs Ks DA DB A B x) := rfl
 
 
 

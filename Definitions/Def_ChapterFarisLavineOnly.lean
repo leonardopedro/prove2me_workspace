@@ -1,4 +1,12 @@
 import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -145,7 +153,8 @@ def constFamily (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) : SqFamily whe
   row_le := fun _ r => row_le_totalMass v r
   col_le := fun _ I => col_le_totalMass v I
 
-
+@[simp] theorem constFamily_secHam (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (n : ℕ) :
+    (constFamily kappa v).secHam n = sqSumOp kappa v := rfl
 
 
 

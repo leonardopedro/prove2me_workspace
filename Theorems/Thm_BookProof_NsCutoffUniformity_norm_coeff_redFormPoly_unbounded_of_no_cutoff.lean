@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
 import Definitions.Def_ChapterA4
+open BookProof.NsCutoffUniformity
 
 variable {n : ℕ}
 variable {ι : Type*}

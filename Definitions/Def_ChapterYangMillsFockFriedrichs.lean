@@ -2,6 +2,13 @@ import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -84,9 +91,11 @@ def ypart {n : ℕ} (I : Fin (n * 99)) : Fin n := (finProdFinEquiv.symm I).1
 /-- The field-space direction of a global coordinate. -/
 def ymode {n : ℕ} (I : Fin (n * 99)) : Fin 99 := (finProdFinEquiv.symm I).2
 
+@[simp] theorem ypart_ycoord {n : ℕ} (p : Fin n) (i : Fin 99) : ypart (ycoord p i) = p := by
+  simp [ypart, ycoord]
 
-
-
+@[simp] theorem ymode_ycoord {n : ℕ} (p : Fin n) (i : Fin 99) : ymode (ycoord p i) = i := by
+  simp [ymode, ycoord]
 
 /-! ## 2. The magnetic field and the 3D gauge-fixing forms of each particle -/
 

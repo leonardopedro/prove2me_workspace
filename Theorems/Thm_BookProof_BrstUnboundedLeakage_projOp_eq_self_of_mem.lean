@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
 import Definitions.Def_ChapterA4
+open BookProof.BrstUnboundedLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)

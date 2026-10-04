@@ -7,6 +7,7 @@ import Definitions.Def_ChapterNavierStokesGaugeY2
 import Definitions.Def_ChapterA4
 open BookProof.NavierStokesGaugeY
 open BookProof.NavierStokesGaugeY2
+open BookProof.NsBrstDerivativeGauge
 
 
 

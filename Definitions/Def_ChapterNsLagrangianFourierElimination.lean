@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -100,9 +103,11 @@ def lagElimHom (l : Fin 3 → ℝ) (n : ℕ) :
   MvPolynomial.eval₂Hom (MvPolynomial.C)
     (fun s => lagLift (finProdFinEquiv.symm s).1 (lagElimCoord l (finProdFinEquiv.symm s).2))
 
+@[simp] theorem lagLift_X (p : Fin n) (j : Fin 12) : lagLift p (X j) = X (lRedIdx p j) :=
+  MvPolynomial.eval₂Hom_X' _ _ j
 
-
-
+@[simp] theorem lagLift_C (p : Fin n) (c : ℂ) : lagLift p (C c) = C c := by
+  rw [lagLift, MvPolynomial.eval₂Hom_C]
 
 
 
@@ -110,15 +115,70 @@ def lagElimHom (l : Fin 3 → ℝ) (n : ℕ) :
 
 /-! ## 2. The coordinate values of `σ` -/
 
+@[simp] theorem lagElimCoord_xiIdx (l : Fin 3 → ℝ) (i : Fin 3) :
+    lagElimCoord l (xiIdx i) = X (xiIdx12 i) := by
+  have h : (xiIdx i).val < 3 := i.isLt
+  rw [lagElimCoord, dif_pos h]
+  rfl
 
+@[simp] theorem lagElimCoord_vIdx (l : Fin 3 → ℝ) (i : Fin 3) :
+    lagElimCoord l (vIdx i) = X (vIdx12 i) := by
+  have hv : (vIdx i).val = 3 + i.val := rfl
+  have h1 : ¬ (vIdx i).val < 3 := by rw [hv]; omega
+  have h2 : (vIdx i).val < 6 := by rw [hv]; omega
+  have hlt : (vIdx i).val - 3 < 3 := by omega
+  rw [lagElimCoord, dif_neg h1, dif_pos h2]
+  have hx : (⟨(vIdx i).val - 3, hlt⟩ : Fin 3) = i := by
+    apply Fin.ext
+    change (vIdx i).val - 3 = i.val
+    rw [hv]; omega
+  simp only [hx]
 
+@[simp] theorem lagElimCoord_accIdx (l : Fin 3 → ℝ) (i : Fin 3) :
+    lagElimCoord l (accIdx i) = X (accIdx12 i) := by
+  have hv : (accIdx i).val = 6 + i.val := rfl
+  have h1 : ¬ (accIdx i).val < 3 := by rw [hv]; omega
+  have h2 : ¬ (accIdx i).val < 6 := by rw [hv]; omega
+  have h3 : (accIdx i).val < 9 := by rw [hv]; omega
+  have hlt : (accIdx i).val - 6 < 3 := by omega
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_pos h3]
+  have hx : (⟨(accIdx i).val - 6, hlt⟩ : Fin 3) = i := by
+    apply Fin.ext
+    change (accIdx i).val - 6 = i.val
+    rw [hv]; omega
+  simp only [hx]
 
+@[simp] theorem lagElimCoord_qIdx (l : Fin 3 → ℝ) (i : Fin 3) :
+    lagElimCoord l (qIdx i) = X (qIdx12 i) := by
+  have hv : (qIdx i).val = 30 + i.val := rfl
+  have h1 : ¬ (qIdx i).val < 3 := by rw [hv]; omega
+  have h2 : ¬ (qIdx i).val < 6 := by rw [hv]; omega
+  have h3 : ¬ (qIdx i).val < 9 := by rw [hv]; omega
+  have h4 : ¬ (qIdx i).val < 18 := by rw [hv]; omega
+  have h5 : ¬ (qIdx i).val < 27 := by rw [hv]; omega
+  have h6 : ¬ (qIdx i).val < 30 := by rw [hv]; omega
+  have h7 : (qIdx i).val < 33 := by rw [hv]; omega
+  have hlt : (qIdx i).val - 30 < 3 := by omega
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4, dif_neg h5, dif_neg h6,
+    dif_pos h7]
+  have hx : (⟨(qIdx i).val - 30, hlt⟩ : Fin 3) = i := by
+    apply Fin.ext
+    change (qIdx i).val - 30 = i.val
+    rw [hv]; omega
+  simp only [hx]
 
-
-
-
-
-
+@[simp] theorem lagElimCoord_yIdx (l : Fin 3 → ℝ) (j : Fin 3) :
+    lagElimCoord l (yIdx j) = 0 := by
+  have hv : (yIdx j).val = 33 + j.val := rfl
+  have h1 : ¬ (yIdx j).val < 3 := by rw [hv]; omega
+  have h2 : ¬ (yIdx j).val < 6 := by rw [hv]; omega
+  have h3 : ¬ (yIdx j).val < 9 := by rw [hv]; omega
+  have h4 : ¬ (yIdx j).val < 18 := by rw [hv]; omega
+  have h5 : ¬ (yIdx j).val < 27 := by rw [hv]; omega
+  have h6 : ¬ (yIdx j).val < 30 := by rw [hv]; omega
+  have h7 : ¬ (yIdx j).val < 33 := by rw [hv]; omega
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4, dif_neg h5, dif_neg h6,
+    dif_neg h7]
 
 
 

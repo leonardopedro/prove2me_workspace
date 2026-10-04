@@ -15,6 +15,7 @@ import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.StrichartzWave
+open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (W : WallPot) (s : ℝ)

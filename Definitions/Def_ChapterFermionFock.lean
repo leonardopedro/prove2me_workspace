@@ -1,7 +1,14 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
 
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -110,9 +117,17 @@ def annF (j : ℕ) : FermiAlg →ₗ[ℂ] FermiAlg :=
   Finsupp.lsum ℂ fun S => LinearMap.toSpanSingleton ℂ FermiAlg
     (if j ∈ S then Finsupp.single (S.erase j) (fsign j S) else 0)
 
+@[simp] theorem creF_single (j : ℕ) (S : FConf) (c : ℂ) :
+    creF j (Finsupp.single S c)
+      = c • (if j ∈ S then 0 else Finsupp.single (insert j S) (fsign j S)) := by
+  classical
+  simp [creF, LinearMap.toSpanSingleton]
 
-
-
+@[simp] theorem annF_single (j : ℕ) (S : FConf) (c : ℂ) :
+    annF j (Finsupp.single S c)
+      = c • (if j ∈ S then Finsupp.single (S.erase j) (fsign j S) else 0) := by
+  classical
+  simp [annF, LinearMap.toSpanSingleton]
 
 
 
@@ -145,7 +160,8 @@ def modesF (u : FermiAlg) : Finset ℕ := u.support.biUnion id
 def toLpF (u : FermiAlg) : FermiFock :=
   ⟨fun S => u S, memLpTwo_of_finite_support u.finite_support⟩
 
-
+@[simp] theorem toLpF_apply (u : FermiAlg) (S : FConf) :
+    ((toLpF u : FermiFock) : FConf → ℂ) S = u S := rfl
 
 /-- The transport map is linear. -/
 def toLpFL : FermiAlg →ₗ[ℂ] FermiFock where
@@ -158,7 +174,7 @@ def toLpFL : FermiAlg →ₗ[ℂ] FermiFock where
     refine lp.ext (funext fun S => ?_)
     simp [toLpF]
 
-
+@[simp] theorem toLpFL_apply (u : FermiAlg) : toLpFL u = toLpF u := rfl
 
 theorem toLpF_mem (u : FermiAlg) : toLpF u ∈ lpFiniteModes FConf := u.finite_support
 
@@ -207,7 +223,8 @@ def fermiEquiv : FermiAlg ≃ₗ[ℂ] lpFiniteModes FConf := by
       exact hx.mem_toFinset.mpr hS
     · exact Subtype.ext (lp.ext (funext fun _ => rfl))
 
-
+@[simp] theorem coe_fermiEquiv (u : FermiAlg) :
+    ((fermiEquiv u : lpFiniteModes FConf) : FermiFock) = toLpF u := rfl
 
 
 
@@ -227,7 +244,10 @@ def dGammaF (col : ℕ → (ℕ →₀ ℂ)) : FermiAlg →ₗ[ℂ] FermiAlg :=
 
 
 
-
+@[simp] theorem dGammaF_single (col : ℕ → (ℕ →₀ ℂ)) (S : FConf) (c : ℂ) :
+    dGammaF col (Finsupp.single S c)
+      = c • ∑ k ∈ S, creVecF (col k) (annF k (Finsupp.single S 1)) := by
+  simp [dGammaF, LinearMap.toSpanSingleton]
 
 
 
@@ -239,7 +259,7 @@ def dGammaF (col : ℕ → (ℕ →₀ ℂ)) : FermiAlg →ₗ[ℂ] FermiAlg :=
 
 /-! ### Symmetry and positivity of the fermionic second quantization -/
 
-
+@[simp] theorem toLpF_zero : toLpF (0 : FermiAlg) = 0 := map_zero toLpFL
 
 
 
@@ -292,7 +312,18 @@ def parityF : FermiAlg →ₗ[ℂ] FermiAlg :=
   Finsupp.lsum ℂ fun S => LinearMap.toSpanSingleton ℂ FermiAlg
     (Finsupp.single S ((-1 : ℂ) ^ S.card))
 
-
+@[simp] theorem parityF_apply (u : FermiAlg) (S : FConf) :
+    parityF u S = (-1 : ℂ) ^ S.card * u S := by
+  classical
+  induction u using Finsupp.induction_linear with
+  | zero => simp
+  | add f g hf hg => simp only [map_add, Finsupp.add_apply, hf, hg, mul_add]
+  | single T c =>
+    rw [parityF, Finsupp.lsum_single, LinearMap.toSpanSingleton_apply,
+      Finsupp.smul_apply, Finsupp.single_apply, Finsupp.single_apply, smul_eq_mul]
+    by_cases h : T = S
+    · subst h; rw [if_pos rfl, if_pos rfl]; ring
+    · rw [if_neg h, if_neg h, mul_zero, mul_zero]
 
 
 

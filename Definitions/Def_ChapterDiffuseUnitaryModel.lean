@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -29,7 +30,6 @@ open MeasureTheory ProbabilityTheory Filter
 
 namespace BookProof.ChapterDiffuseUnitaryModel
 
-open BookProof.ChapterDiffuseCdfModel BookProof.ChapterLinftyMultiplication
 
 /-! ## 1. The uniform measure on the unit interval -/
 
@@ -91,9 +91,86 @@ theorem cdfComp_indicatorConstLp {B : Set ℝ} (hB : MeasurableSet B) (c : ℂ) 
         =ᵐ[mu] ((cdf mu) ⁻¹' B).indicator (fun _ => c) :=
     indicatorConstLp_coeFn
   filter_upwards [h1, h3, h4] with x hx1 hx3 hx4
- bDiff_def]
+  rw [hx1, hx4]
+  have hx3' := hx3
+  simp only [Function.comp_apply] at hx3'
+  rw [hx3']
+  rfl
+
+/-! ## 3. Half lines are `F`-preimages up to a null set -/
+
+/-- The sublevel sets of the distribution function, for every level in `[0, 1]`. -/
+theorem measure_cdf_le' {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1) :
+    mu {x | cdf mu x ≤ t} = ENNReal.ofReal t := by
+  rcases lt_or_eq_of_le ht1 with h | h
+  · exact measure_cdf_le mu ht0 h
+  · have huniv : {x : ℝ | cdf mu x ≤ t} = Set.univ := by
+      ext x
+      simp only [Set.mem_ofPred_eq, Set.mem_univ, iff_true]
+      rw [h]
+      exact cdf_le_one mu x
+    rw [huniv, measure_univ, h]
+    simp
+
+/-- **Every half line agrees with an `F`-preimage up to a null set.** -/
+theorem measure_symmDiff_Iic (x : ℝ) :
+    mu (symmDiff (Set.Iic x) ((cdf mu) ⁻¹' Set.Iic (cdf mu x))) = 0 := by
+  have hpre : (cdf mu) ⁻¹' Set.Iic (cdf mu x) = {y : ℝ | cdf mu y ≤ cdf mu x} := rfl
+  have hsub : Set.Iic x ⊆ {y : ℝ | cdf mu y ≤ cdf mu x} := fun y hy => (cdf mu).mono hy
+  have hmeas : mu {y : ℝ | cdf mu y ≤ cdf mu x} = mu (Set.Iic x) := by
+    rw [measure_cdf_le' mu (cdf_nonneg mu x) (cdf_le_one mu x), ofReal_cdf]
+  rw [hpre]
+  have hsymm : symmDiff (Set.Iic x) {y : ℝ | cdf mu y ≤ cdf mu x}
+      = {y : ℝ | cdf mu y ≤ cdf mu x} \ Set.Iic x := by
+    rw [Set.symmDiff_def]
     simp [Set.diff_eq_empty.2 hsub]
-  rw [hsymm, measure_diff hsub measu`-sum bra : mu.MeasureDense (cdfAlgebra mu) :=
+  rw [hsymm, measure_diff hsub measurableSet_Iic.nullMeasurableSet (measure_ne_top mu _),
+    hmeas, tsub_self]
+
+/-! ## 4. The measure-dense algebra of sets that are `F`-preimages mod null -/
+
+/-- The measurable sets that agree with an `F`-preimage up to a `μ`-null set. -/
+def cdfAlgebra : Set (Set ℝ) :=
+  {s | MeasurableSet s ∧ ∃ B : Set ℝ, MeasurableSet B ∧
+    mu (symmDiff s ((cdf mu) ⁻¹' B)) = 0}
+
+omit [IsProbabilityMeasure mu] [NullSingletonClass mu] in
+theorem isSetAlgebra_cdfAlgebra : IsSetAlgebra (cdfAlgebra mu) where
+  empty_mem := ⟨MeasurableSet.empty, ∅, MeasurableSet.empty, by simp⟩
+  compl_mem := by
+    rintro s ⟨hs, B, hB, hsB⟩
+    refine ⟨hs.compl, Bᶜ, hB.compl, ?_⟩
+    have : (cdf mu) ⁻¹' Bᶜ = ((cdf mu) ⁻¹' B)ᶜ := rfl
+    rw [this, compl_symmDiff_compl]
+    exact hsB
+  union_mem := by
+    rintro s t ⟨hs, B, hB, hsB⟩ ⟨ht, C, hC, htC⟩
+    refine ⟨hs.union ht, B ∪ C, hB.union hC, ?_⟩
+    have hpre : (cdf mu) ⁻¹' (B ∪ C) = ((cdf mu) ⁻¹' B) ∪ ((cdf mu) ⁻¹' C) := rfl
+    rw [hpre]
+    refine le_antisymm ?_ zero_le
+    calc mu (symmDiff (s ∪ t) (((cdf mu) ⁻¹' B) ∪ ((cdf mu) ⁻¹' C)))
+        ≤ mu (symmDiff s ((cdf mu) ⁻¹' B) ∪ symmDiff t ((cdf mu) ⁻¹' C)) :=
+          measure_mono Set.union_symmDiff_union_subset
+      _ ≤ mu (symmDiff s ((cdf mu) ⁻¹' B)) + mu (symmDiff t ((cdf mu) ⁻¹' C)) :=
+          measure_union_le _ _
+      _ = 0 := by rw [hsB, htC]; simp
+
+theorem generateFrom_cdfAlgebra :
+    (inferInstance : MeasurableSpace ℝ) = MeasurableSpace.generateFrom (cdfAlgebra mu) := by
+  refine le_antisymm ?_ ?_
+  · have hb : (inferInstance : MeasurableSpace ℝ)
+        = MeasurableSpace.generateFrom (Set.range (Set.Iic : ℝ → Set ℝ)) := by
+      rw [BorelSpace.measurable_eq (α := ℝ)]
+      exact borel_eq_generateFrom_Iic ℝ
+    rw [hb]
+    refine MeasurableSpace.generateFrom_le ?_
+    rintro s ⟨x, rfl⟩
+    refine MeasurableSpace.measurableSet_generateFrom ?_
+    exact ⟨measurableSet_Iic, Set.Iic (cdf mu x), measurableSet_Iic, measure_symmDiff_Iic mu x⟩
+  · exact MeasurableSpace.generateFrom_le fun s hs => hs.1
+
+theorem measureDense_cdfAlgebra : mu.MeasureDense (cdfAlgebra mu) :=
   Measure.MeasureDense.of_generateFrom_isSetAlgebra_finite mu (isSetAlgebra_cdfAlgebra mu)
     (generateFrom_cdfAlgebra mu)
 
@@ -146,11 +223,19 @@ theorem cdfRange_eq_top : cdfRange mu = ⊤ := by
 
 /-- **The unitary of the diffuse model**: `L²` of the uniform measure on `[0, 1]` is
 unitarily `L²(μ)`, through composition with the distribution function. -/
-def cdfUnitary : Lp ℂ 2 (volume.restrict (Set.Icc (0 : ℝ) 1)) ≃ₗᵢ[c
- mu fun x => g (cdf mu x) * (U u : ℝ → ℂ) x := by
-  refine ⟨cdfUnitary mu, fun g hg u => ?_⟩
-  rw [cdfUnitary_intertwines mu hg u]
-  exact multOp_coeFn _ _ _
+def cdfUnitary : Lp ℂ 2 (volume.restrict (Set.Icc (0 : ℝ) 1)) ≃ₗᵢ[ℂ] Lp ℂ 2 mu :=
+  LinearIsometryEquiv.ofSurjective (cdfComp mu) (by
+    intro u
+    have h : u ∈ cdfRange mu := by rw [cdfRange_eq_top]; trivial
+    exact h)
+
+
+
+
+
+
+
+
 
 end BookProof.ChapterDiffuseUnitaryModel
 

@@ -8,6 +8,7 @@ import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionOutput
 
 variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 

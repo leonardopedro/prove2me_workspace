@@ -1,0 +1,23 @@
+-- Generated from ChapterTwoParticleSectorEsa.lean — theorem BookProof.TwoParticleSector.swapH_inner
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Mathlib
+import Definitions.Def_ChapterTwoParticleSectorEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.TensorCore
+open BookProof.TwoParticleSector
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+
+noncomputable section
+
+theorem BookProof.TwoParticleSector.swapH_inner (t s : (Hs.pow 2).carrier) :
+    (inner ℂ (swapH Hs t) (swapH Hs s) : ℂ) = inner ℂ t s := by sorry

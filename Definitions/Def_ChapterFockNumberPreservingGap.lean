@@ -1,4 +1,8 @@
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 

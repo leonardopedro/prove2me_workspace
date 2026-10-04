@@ -1,6 +1,11 @@
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterBrstReducedTransfer
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
 
 
@@ -64,8 +69,6 @@ Everything in this module is `sorry`-free and `axiom`-free.
 namespace BookProof.QgPhysicalSectorIdentity
 
 open BookProof.GaugeFixing
-open BookProof.FockQuadratic
-open BookProof.OperatorSeries
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
@@ -113,7 +116,11 @@ noncomputable def matrixModel : DerivativeVariableFixingSystem (fun _ => Mat2) w
     change (x : Mat2) * 0 = 0
     exact Matrix.mul_zero x
 
-Th## 3. The QG-3.2(a) statement of record (honest boundary) -/
+
+
+
+
+/-! ## 3. The QG-3.2(a) statement of record (honest boundary) -/
 
 /-!
 The concrete QG statement, following the pattern above:
@@ -225,13 +232,27 @@ noncomputable def creIdx (i : ι) : Idx ι := Finsupp.single i 1
 /-- The single-annihilation occupation index `aⱼ`: `1` at mode `j`, elsewhere `0`. -/
 noncomputable def annIdx (j : ι) : Idx ι := Finsupp.single j 1
 
-/-- ThThThTh## 4.2 — the mode-exchange monomial is quadratic -/
 
-/-- Th## 4.3 — the weighted summability of the coupling family -/
 
-/-- **## 4.4 — the full operator is essentially self-adjoint (Faris–Lavine / `fockH`) -/
 
-/-- **## 4.5 — axiom audit -/
+
+
+
+
+
+/-! ## 4.2 — the mode-exchange monomial is quadratic -/
+
+
+
+/-! ## 4.3 — the weighted summability of the coupling family -/
+
+
+
+/-! ## 4.4 — the full operator is essentially self-adjoint (Faris–Lavine / `fockH`) -/
+
+
+
+/-! ## 4.5 — axiom audit -/
 
 #print axioms coupling_essentiallySelfAdjointOn_core
 

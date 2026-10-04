@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 import Mathlib
 
 

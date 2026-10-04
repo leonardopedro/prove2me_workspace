@@ -1,6 +1,8 @@
 import Theorems.Thm_BookProof_EsaClosure_clGraph_isClosed
 
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -239,7 +241,8 @@ noncomputable def frExt (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym
     have := Submodule.smul_mem (factorRel A) c (frFun_spec A x)
     simpa using this
 
-
+@[simp] theorem frExt_apply (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
+    (hsym : SymmetricOn D A) (x : frDom A) : frExt A hdense hsym x = frFun A x := rfl
 
 
 

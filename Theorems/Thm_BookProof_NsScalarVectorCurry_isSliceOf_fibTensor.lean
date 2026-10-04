@@ -5,6 +5,7 @@ import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterA4
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
+open BookProof.NsScalarVectorCurry
 
 variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
   {μ : Measure V} {ν : Measure W}

@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornFiberCard
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -35,10 +36,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
-open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSignGauge
-open BookProof.ChapterFreeFieldBornSignFiber BookProof.ChapterFreeFieldBornSectionBij
-open BookProof.ChapterFreeFieldBornQuotient BookProof.ChapterFreeFieldBornFiberCard
 
 namespace BookProof.ChapterFreeFieldBornFiberCardGeneral
 
@@ -145,7 +142,8 @@ noncomputable def bornFiberEquivGeneral {p : ↥(stdSimplex ℝ (Fin n))} :
 consists of exactly `2^(#positive coordinates)` wave functions.  This is the
 general form of `bornFiber_card`: the `{±1}ⁿ` sign gauge acts freely on the
 positive support (and trivially at vanishing coordinates), so each fiber is a
-full orbit of the sign group restricted to thai ]
-  norm_num
+full orbit of the sign group restricted to that support.
+-/
+
 
 end BookProof.ChapterFreeFieldBornFiberCardGeneral

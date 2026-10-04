@@ -1,4 +1,20 @@
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
+
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
+
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff
+
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj
+
+
+
+
 import Definitions.Def_ChapterFockStatisticsEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -64,7 +80,9 @@ theorem norm_act (rep : UnitaryRep G F) (g : G) (x : F) : ‖rep.act g x‖ = �
 def actL (rep : UnitaryRep G F) (g : G) : F →L[ℂ] F :=
   LinearMap.mkContinuous (rep.act g) 1 (fun x => by rw [rep.norm_act, one_mul])
 
-
+omit [Fintype G] in
+@[simp] theorem actL_apply (rep : UnitaryRep G F) (g : G) (x : F) :
+    rep.actL g x = rep.act g x := rfl
 
 /-- **A unitary representation of a finite group extends to the completion.** -/
 def completionRep (rep : UnitaryRep G F) : UnitaryRep G (UniformSpace.Completion F) where

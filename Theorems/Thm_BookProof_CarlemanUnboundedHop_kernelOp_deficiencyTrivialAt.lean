@@ -6,6 +6,7 @@ import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterA4
 open BookProof.KernelBound
+open BookProof.CarlemanUnboundedHop
 
 variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 

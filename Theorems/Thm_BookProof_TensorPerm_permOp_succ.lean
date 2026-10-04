@@ -1,0 +1,22 @@
+-- Generated from ChapterTensorPermutation.lean — theorem BookProof.TensorPerm.permOp_succ
+import Mathlib
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.ChapterGaugeUnconstrainedSpectrum
+open BookProof.TensorCore
+open BookProof.TensorPerm
+
+variable (E : BookProof.TensorCore.IPSpace)
+
+
+
+open scoped TensorProduct
+open BookProof.TensorCore BookProof.GroupAverage
+
+noncomputable section
+
+theorem BookProof.TensorPerm.permOp_succ (n : ℕ) (σ : Equiv.Perm (Fin (n + 1))) :
+    permOp E (n + 1) σ = (swap0 E (n + 1) (Equiv.Perm.decomposeFin σ).1).trans
+      (liftTail E (permOp E n (Equiv.Perm.decomposeFin σ).2)) := by sorry

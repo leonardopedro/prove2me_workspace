@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -12,8 +13,6 @@ in positive dimension the first isomorphism theorem identifies the quotient
 with `Bool`.
 -/
 
-open BookProof.ChapterFreeFieldBornSignHom
-open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
 namespace BookProof.ChapterFreeFieldBornSignOrientationQuotient
 
@@ -25,7 +24,9 @@ def orientationCharacter (n : ℕ) : (Fin n → Bool) →+ Bool where
     intro b₁ b₂
     simp [Finset.sum_add_distrib]
 
-
+@[simp] theorem orientationCharacter_apply {n : ℕ} (b : Fin n → Bool) :
+    orientationCharacter n b = ∑ k, b k :=
+  rfl
 
 /-
 The boolean parity sum vanishes exactly when the Hamming weight is even.
@@ -90,8 +91,9 @@ noncomputable def orientationQuotientEquiv (n : ℕ) :
       (orientationCharacter (n + 1)) (orientationCharacter_surjective n))
 
 /-
-Th:= by
-  convert QuotientAddGroup.kerLift_mk (orientationCharacter (n + 1)) b using 1
-  rfl
+The quotient equivalence sends the class of a sign choice to its parity
+character.
+-/
+
 
 end BookProof.ChapterFreeFieldBornSignOrientationQuotient

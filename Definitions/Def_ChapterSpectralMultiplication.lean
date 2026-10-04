@@ -1,4 +1,7 @@
+import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
+
 import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -65,7 +68,8 @@ noncomputable def vectorState : C(spectrum ℂ T, ℂ) →ₗ[ℂ] ℂ where
   map_add' f g := by simp
   map_smul' c f := by simp
 
-
+@[simp] theorem vectorState_apply (f : C(spectrum ℂ T, ℂ)) :
+    vectorState T hT xi f = inner ℂ xi (cfcHom hT f xi) := rfl
 
 /-- `⟪ξ, (f̄f)(T)ξ⟫ = ‖f(T)ξ‖²`: the vector state is **positive**. -/
 theorem vectorState_star_mul_self (f : C(spectrum ℂ T, ℂ)) :
@@ -113,7 +117,8 @@ noncomputable def cfcVec : C(spectrum ℂ T, ℂ) →ₗ[ℂ] H where
   map_add' f g := by simp
   map_smul' c f := by simp
 
-
+@[simp] theorem cfcVec_apply (f : C(spectrum ℂ T, ℂ)) :
+    cfcVec T hT xi f = cfcHom hT f xi := rfl
 
 /-- **The key isometry**: `‖f(T)ξ‖` is the `L²(μ)` norm of `f`. -/
 theorem norm_cfcHom_apply (f : C(spectrum ℂ T, ℂ)) :
@@ -159,7 +164,10 @@ noncomputable def spectralUnitary : Lp ℂ 2 (spectralMeasure T hT xi) ≃ₗᵢ
     hcyc
     (fun f => norm_cfcHom_apply T hT xi f)
 
-
+@[simp] theorem spectralUnitary_toLp (f : C(spectrum ℂ T, ℂ)) :
+    spectralUnitary T hT xi hcyc (ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ f)
+      = cfcHom hT f xi :=
+  LinearEquiv.extendOfIsometry_eq _ _ _ _ _ _ f
 
 /-- The coordinate function `z ↦ z` on the spectrum. -/
 noncomputable def coordFn : C(spectrum ℂ T, ℂ) :=

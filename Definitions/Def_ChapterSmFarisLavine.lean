@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
 
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
 
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
+
 import Theorems.Thm_BookProof_YangMillsFriedrichs_inner_sq_eq_normSq
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
@@ -20,6 +22,14 @@ import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 
 import Definitions.Def_ChapterSmComparison
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 

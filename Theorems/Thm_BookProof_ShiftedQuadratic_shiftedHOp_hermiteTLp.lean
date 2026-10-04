@@ -15,6 +15,7 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.ShiftedHermiteCore
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

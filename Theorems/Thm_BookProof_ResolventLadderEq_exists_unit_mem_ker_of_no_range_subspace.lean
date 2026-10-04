@@ -1,0 +1,24 @@
+-- Generated from ChapterResolventMinMaxEquality.lean — theorem BookProof.ResolventLadderEq.exists_unit_mem_ker_of_no_range_subspace
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterClosureUniqueness
+import Mathlib
+import Definitions.Def_ChapterResolventMinMaxEquality
+import Definitions.Def_ChapterA4
+open BookProof.ResolventLadderEq
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+
+noncomputable section
+
+
+open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
+open Filter Topology
+
+
+theorem BookProof.ResolventLadderEq.exists_unit_mem_ker_of_no_range_subspace (P : F →L[ℂ] F) {k : ℕ}
+    (hex : ¬ ∃ S₀ : Submodule ℂ F,
+      Module.finrank ℂ S₀ = k + 1 ∧ (S₀ : Set F) ⊆ Set.range P)
+    {W : Submodule ℂ F} (hW : Module.finrank ℂ W = k + 1) :
+    ∃ x ∈ W, ‖x‖ = 1 ∧ P x = 0 := by sorry

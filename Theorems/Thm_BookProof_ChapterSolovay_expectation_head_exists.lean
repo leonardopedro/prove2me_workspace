@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovay
 import Definitions.Def_ChapterA4
+open BookProof.ChapterSolovay
 
 
 open MeasureTheory ProbabilityTheory

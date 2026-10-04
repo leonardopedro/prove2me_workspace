@@ -4,6 +4,7 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Mathlib
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterA4
+open BookProof.ReducedEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {P : F →ₗ[ℂ] F}

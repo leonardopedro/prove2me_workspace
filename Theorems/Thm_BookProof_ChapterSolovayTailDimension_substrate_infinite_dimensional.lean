@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSolovayTailDimension
 import Definitions.Def_PhysMeasureBasis
 import Definitions.Def_ChapterA4
 open PhysMeasureBasis
+open BookProof.ChapterSolovayTailDimension
 
 
 noncomputable section

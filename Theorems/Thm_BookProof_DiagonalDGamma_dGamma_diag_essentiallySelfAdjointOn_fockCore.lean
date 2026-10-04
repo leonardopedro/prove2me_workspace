@@ -12,6 +12,7 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
+open BookProof.DiagonalDGamma
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)

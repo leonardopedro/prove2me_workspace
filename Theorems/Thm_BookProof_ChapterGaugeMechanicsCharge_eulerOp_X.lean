@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
 import Definitions.Def_ChapterA4
+open BookProof.ChapterGaugeMechanicsCharge
 
 
 

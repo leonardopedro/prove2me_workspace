@@ -4,6 +4,7 @@ import Definitions.Def_ChapterAttentionOVCircuit
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionOVCircuit
 
 variable {d n p m : ℕ}
 

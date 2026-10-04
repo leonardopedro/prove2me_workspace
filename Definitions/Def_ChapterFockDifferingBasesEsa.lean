@@ -1,3 +1,10 @@
+import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
+
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
 
 
@@ -93,7 +100,6 @@ Everything in this module is `sorry`-free and `axiom`-free.
 namespace BookProof.FockDifferingBases
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
 
@@ -120,7 +126,8 @@ def xIdx (p : ι) : Idx ι := Finsupp.single p 1
 
 @[simp] theorem deg_xIdx (p : ι) : deg (xIdx p) = 1 := deg_single p 1
 
-
+@[simp] theorem wsum_xIdx (ω : ι → ℝ) (p : ι) : wsum ω (xIdx p) = ω p := by
+  simp [xIdx, wsum_single]
 
 theorem deg_xIdx_add (p q : ι) : deg (xIdx q) + deg (xIdx p) = 2 := by simp
 

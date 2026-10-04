@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSectionBij
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -41,8 +42,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
-open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSectionBij
 
 namespace BookProof.ChapterFreeFieldBornHomeo
 
@@ -72,7 +71,9 @@ noncomputable def bornEquiv (n : ℕ) :
   left_inv x := Subtype.ext (bornSection_bornMap x.2.2)
   right_inv p := Subtype.ext (bornMap_bornSection p.2)
 
-
+@[simp] theorem bornEquiv_apply_coe
+    (x : ↥(Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1 ∩ nonnegOrthant n)) :
+    (bornEquiv n x : Fin n → ℝ) = bornMap x := rfl
 
 /-- The `Equiv` `bornEquiv` is continuous (its forward map is the Born map,
 restricted to the subtype). -/
@@ -94,6 +95,8 @@ noncomputable def bornHomeo (n : ℕ) :
     isCompact_iff_compactSpace.mp isCompact_sphere_inter_nonnegOrthant
   Continuous.homeoOfEquivCompactToT2 (f := bornEquiv n) continuous_bornEquiv
 
-
+@[simp] theorem bornHomeo_apply_coe
+    (x : ↥(Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1 ∩ nonnegOrthant n)) :
+    (bornHomeo n x : Fin n → ℝ) = bornMap x := rfl
 
 end BookProof.ChapterFreeFieldBornHomeo

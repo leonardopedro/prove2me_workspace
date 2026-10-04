@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterAbelianClassificationList
 import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 
 
@@ -39,9 +41,7 @@ open MeasureTheory
 
 namespace BookProof.ChapterStandardBorelClassification
 
-open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
-open BookProof.ChapterAbelianClassificationList
 
 /-! ## 1. Transporting along a measurable equivalence -/
 
@@ -147,7 +147,6 @@ def RealizesStandardType {X : Type*} [MeasurableSpace X] [MeasurableSingletonCla
 
 section GeneralModel
 
-open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianDirectSum
 
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
   [TopologicalSpace.MetrizableSpace Y] [MeasurableSpace Y] [BorelSpace Y]
@@ -161,8 +160,6 @@ end GeneralModel
 
 section Normal
 
-open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
-open BookProof.ChapterSpectralDirectSum
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

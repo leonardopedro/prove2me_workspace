@@ -13,6 +13,7 @@ import Definitions.Def_ChapterShiftedHermiteCore
 import Definitions.Def_ChapterA4
 open BookProof.HyperbolicQuadratic
 open BookProof.ShiftedHermiteCore
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -37,11 +38,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn
-open BookProof.ChapterFreeFieldBornQuotient
-open BookProof.ChapterFreeFieldBornSignGauge
-open BookProof.ChapterFreeFieldBornFiberCardGeneral
-open BookProof.ChapterFreeFieldBornFiberBounds
 
 namespace BookProof.ChapterFreeFieldBornFiberStabilizer
 
@@ -60,30 +56,34 @@ noncomputable def signStab (x : EuclideanSpace ℝ (Fin n)) : Finset (Fin n → 
 /-
 A sign flip fixes `x` iff it is `+1` on every nonzero coordinate of `x`.
 -/
-e := by simpa using hb
-          have hz0 : x.ofLp k = 0 := by linarith [h hbf]
-          exact absurd hz0 hk;
-      · ext k; by_cases hk : x.ofLp k = 0 <;> simp_all [ boolSign ] ;
+
 
 /-
-The stabili        · intro hb; use Finset.univ.filter (fun k => b k = false); simp_all ;
-          intro k hkb
-          simp at hkb
-          by_contra hnz
-          s`2 ^ (#nonzero coordinates)` equals the order `2 ^ n` of the diagonal sign
+The stabilizer of `x` under the sign gauge has `2 ^ (#zero coordinates)`
+elements: the sign choices on the vanishing coordinates are free, while the
+nonzero coordinates are forced to `+1`.
+-/
+
+
+/-
+**Orbit–stabilizer (arithmetic form).** The stabilizer size times
+`2 ^ (#nonzero coordinates)` equals the order `2 ^ n` of the diagonal sign
 group.
 -/
-theorem signStab_card_mul_two_pow_nonzero (x : Ero coordinates of `x`
+
+
+/-
+`posSupport (bornMap x)` is exactly the set of nonzero coordinates of `x`
 (since `bornMap x k = (x k)² > 0 ↔ x k ≠ 0`).
 -/
-theorem posSupport_bornMap (x : EuclideanSpace ℝ (Fin n)) :
-    posSupport (bornMap x) = Finset.univ.filter (fun k => x k ≠ 0) := by
-      ext k; simp only [posSupport, FinsignStab_card
-    (x : ↥(Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1)) :
-    Nat.card ↥(bornMapSphere n ⁻¹' {bornMapSphere n x}) *
-        (signStab (x : EuclideanSpace ℝ (Fin n))).card = 2 ^ n := by
-  rw [mul_comm, ← signStab_card_mul_two_pow_nonzero]
-  congr 1
-  rw [bornFiber_card_general, bornMapSphere_coe, posSupport_bornMap]
+
+
+/-
+**Headline (orbit–stabilizer).** For a wave function `x` on the unit sphere,
+the Born fiber over `bornMapSphere x` (the orbit of the sign gauge) times the
+sign-gauge stabilizer of `x` equals the order `2 ^ n` of the whole diagonal sign
+group.
+-/
+
 
 end BookProof.ChapterFreeFieldBornFiberStabilizer

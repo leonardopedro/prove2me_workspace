@@ -1,0 +1,48 @@
+-- Generated from ChapterTruncationGapLift.lean — theorem BookProof.TruncationGapLift.ym_fock_gap_of_band_and_tail
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Mathlib
+import Definitions.Def_ChapterTruncationGapLift
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterA4
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
+open BookProof.TruncationGapLift
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
+
+
+noncomputable section
+
+
+open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.BandEnclosure
+open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
+open BookProof.YangMillsHermite BookProof.HermiteProductCore
+
+
+theorem BookProof.TruncationGapLift.ym_fock_gap_of_band_and_tail {m : ℕ} {mu eps lo hi : ℝ}
+    (heps : 0 ≤ eps) (hmueps : 0 ≤ mu - eps)
+    (hband : ritzInf (ymHamiltonian (coreRepBasis e) fabc) (galerkinSpan (coreBasis e) m)
+      ∈ Set.Icc lo hi)
+    (hlo : mu ≤ lo)
+    (htail : ∀ w : finiteModeDomain (coreBasis e), (w : L2d 99) ∈ tailSpan (coreBasis e) m →
+      mu * ‖(w : L2d 99)‖ ^ 2 ≤ quadForm (ymHamiltonian (coreRepBasis e) fabc) w)
+    (hcoup : ∀ x w : finiteModeDomain (coreBasis e),
+      (x : L2d 99) ∈ galerkinSpan (coreBasis e) m → (w : L2d 99) ∈ tailSpan (coreBasis e) m →
+      |(inner ℂ (x : L2d 99) (ymHamiltonian (coreRepBasis e) fabc w) : ℂ).re|
+        ≤ eps * ‖(x : L2d 99)‖ * ‖(w : L2d 99)‖) :
+    dGamma (ymFockCol e fabc) vac = 0 ∧
+      ∀ u : FockAlg, u 0 = 0 →
+        (mu - eps) * ‖toLp u‖ ^ 2
+          ≤ (inner ℂ (toLp u) (toLp (dGamma (ymFockCol e fabc) u)) : ℂ).re := by sorry

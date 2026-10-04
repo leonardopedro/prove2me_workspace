@@ -25,6 +25,15 @@ import Theorems.Thm_BookProof_YangMillsHermite_starP_C
 import Theorems.Thm_BookProof_YangMillsHermite_momOp_polySym
 
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -128,33 +137,103 @@ def nsElimHom (k : Fin 3 → ℝ) (n : ℕ) :
 
 /-! ## 2. One-parcel coordinate facts for `σ` -/
 
+@[simp] theorem nsElimCoord_uIdx (k : Fin 3 → ℝ) (i : Fin 3) :
+    nsElimCoord k (uIdx i) = X (ruIdx6 i) := by
+  have h : (uIdx i).val < 3 := i.isLt
+  rw [nsElimCoord, dif_pos h]
+  rfl
 
+theorem nsElimCoord_dIdx (k : Fin 3 → ℝ) (i j : Fin 3) :
+    nsElimCoord k (dIdx i j)
+      = C (Complex.I * (((k j : ℝ)) : ℂ)) * X (ruIdx6 i) := by
+  have hi : i.val < 3 := i.isLt
+  have hj : j.val < 3 := j.isLt
+  have hv : (dIdx i j).val = 3 + 3 * i.val + j.val := rfl
+  have h1 : ¬ (dIdx i j).val < 3 := by omega
+  have h2 : (dIdx i j).val < 12 := by omega
+  have hv' : (↑(dIdx i j) - 3) = 3 * i.val + j.val := by omega
+  have hmod : (3 * i.val + j.val) % 3 = j.val := by
+    rw [Nat.mul_add_mod, Nat.mod_eq_of_lt hj]
+  have hdiv : (3 * i.val + j.val) / 3 = i.val := by
+    rw [Nat.mul_add_div (by norm_num : 0 < 3), Nat.div_eq_of_lt hj, Nat.add_zero]
+  rw [nsElimCoord, dif_neg h1, dif_pos h2]
+  have hk : (⟨(↑(dIdx i j) - 3) % 3, Nat.mod_lt _ (by norm_num)⟩ : Fin 3) = j := by
+    apply Fin.ext
+    change (↑(dIdx i j) - 3) % 3 = j.val
+    rw [hv', hmod]
+  have hx : (⟨(↑(dIdx i j) - 3) / 3, by omega⟩ : Fin 6) = ruIdx6 i := by
+    apply Fin.ext
+    change (↑(dIdx i j) - 3) / 3 = i.val
+    rw [hv', hdiv]
+  simp only [hk, hx]
 
+@[simp] theorem nsElimCoord_wIdx (k : Fin 3 → ℝ) (i : Fin 3) :
+    nsElimCoord k (wIdx i) = -C (((∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ) * X (ruIdx6 i) := by
+  have h1 : ¬ (wIdx i).val < 3 := by rw [show (wIdx i).val = 12 + i.val from rfl]; omega
+  have h2 : ¬ (wIdx i).val < 12 := by rw [show (wIdx i).val = 12 + i.val from rfl]; omega
+  have h3 : (wIdx i).val < 15 := by rw [show (wIdx i).val = 12 + i.val from rfl]; omega
+  have hv : (wIdx i).val = 12 + i.val := rfl
+  rw [nsElimCoord, dif_neg h1, dif_neg h2, dif_pos h3]
+  have hx : (⟨↑(wIdx i) - 12, by omega⟩ : Fin 6) = ruIdx6 i := by
+    apply Fin.ext; simp only [hv]; omega
+  simp only [hx]
 
+@[simp] theorem nsElimCoord_qIdx (k : Fin 3 → ℝ) (i : Fin 3) :
+    nsElimCoord k (qIdx i) = X (rqIdx6 i) := by
+  have h1 : ¬ (qIdx i).val < 3 := by rw [show (qIdx i).val = 15 + i.val from rfl]; omega
+  have h2 : ¬ (qIdx i).val < 12 := by rw [show (qIdx i).val = 15 + i.val from rfl]; omega
+  have h3 : ¬ (qIdx i).val < 15 := by rw [show (qIdx i).val = 15 + i.val from rfl]; omega
+  have h4 : (qIdx i).val < 18 := by rw [show (qIdx i).val = 15 + i.val from rfl]; omega
+  have hv : (qIdx i).val = 15 + i.val := rfl
+  rw [nsElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_pos h4]
+  have hx : (⟨3 + (↑(qIdx i) - 15), by omega⟩ : Fin 6) = rqIdx6 i := by
+    apply Fin.ext; simp only [hv]; omega
+  simp only [hx]
 
-
-
-
-
-
+@[simp] theorem nsElimCoord_yIdx (k : Fin 3 → ℝ) (j : Fin 3) :
+    nsElimCoord k (yIdx j) = 0 := by
+  have h1 : ¬ (yIdx j).val < 3 := by rw [show (yIdx j).val = 18 + j.val from rfl]; omega
+  have h2 : ¬ (yIdx j).val < 12 := by rw [show (yIdx j).val = 18 + j.val from rfl]; omega
+  have h3 : ¬ (yIdx j).val < 15 := by rw [show (yIdx j).val = 18 + j.val from rfl]; omega
+  have h4 : ¬ (yIdx j).val < 18 := by rw [show (yIdx j).val = 18 + j.val from rfl]; omega
+  rw [nsElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4]
 
 /-! ## 3. The lifted substitution on the coordinate ring -/
 
+@[simp] theorem liftParcel_X (p : Fin n) (j : Fin 6) : liftParcel p (X j) = X (redIdx p j) :=
+  MvPolynomial.eval₂Hom_X' _ _ j
 
+@[simp] theorem liftParcel_C (p : Fin n) (c : ℂ) : liftParcel p (C c) = C c := by
+  rw [liftParcel, MvPolynomial.eval₂Hom_C]
 
+theorem nsElimHom_X (k : Fin 3 → ℝ) (n : ℕ) (s : Fin (n * 21)) :
+    nsElimHom k n (X s)
+      = liftParcel (finProdFinEquiv.symm s).1 (nsElimCoord k (finProdFinEquiv.symm s).2) :=
+  MvPolynomial.eval₂Hom_X' _ _ s
 
+@[simp] theorem nsElimHom_X_u (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (X (ycoord p (uIdx i))) = X (ruIdx p i) := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_uIdx, liftParcel_X, ruIdx]
 
+@[simp] theorem nsElimHom_X_d (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i j : Fin 3) :
+    nsElimHom k n (X (ycoord p (dIdx i j)))
+      = C (Complex.I * (((k j : ℝ)) : ℂ)) * X (ruIdx p i) := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_dIdx, map_mul,
+    liftParcel_C, liftParcel_X, ruIdx]
 
+@[simp] theorem nsElimHom_X_w (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (X (ycoord p (wIdx i)))
+      = -C (((∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ) * X (ruIdx p i) := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_wIdx, map_mul, map_neg,
+    liftParcel_C, liftParcel_X, ruIdx]
 
+@[simp] theorem nsElimHom_X_q (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (X (ycoord p (qIdx i))) = X (rqIdx p i) := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_qIdx, liftParcel_X, rqIdx]
 
-
-
-
-
-
-
-
-
+@[simp] theorem nsElimHom_X_y (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (j : Fin 3) :
+    nsElimHom k n (X (ycoord p (yIdx j))) = 0 := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_yIdx, map_zero]
 
 /-! ## 4. The substitution `σ` on the residual and on the divergence
 
@@ -305,11 +384,26 @@ def redFormPoly (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (r : Fin 7)
   else if h2 : r.val < 6 then redAdvectPoly k n p ⟨r.val - 3, by omega⟩
   else redMomentumPoly k n p
 
+@[simp] theorem redFormPoly_re (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redFormPoly nu k n p (reIdx7 i) = redVisc nu k n p i := by
+  have h : (reIdx7 i).val < 3 := i.isLt
+  rw [redFormPoly, dif_pos h]
 
+@[simp] theorem redFormPoly_im (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redFormPoly nu k n p (imIdx7 i) = redAdvectPoly k n p i := by
+  have hi : i.val < 3 := i.isLt
+  have hv : (imIdx7 i).val = 3 + i.val := rfl
+  have h1 : ¬ (imIdx7 i).val < 3 := by omega
+  have h2 : (imIdx7 i).val < 6 := by omega
+  have hsub : (imIdx7 i).val - 3 = i.val := by omega
+  rw [redFormPoly, dif_neg h1, dif_pos h2]
+  simp only [hsub, Fin.eta]
 
-
-
-
+@[simp] theorem redFormPoly_div (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    redFormPoly nu k n p divIdx7 = redMomentumPoly k n p := by
+  have h1 : ¬ (divIdx7).val < 3 := by norm_num
+  have h2 : ¬ (divIdx7).val < 6 := by norm_num
+  rw [redFormPoly, dif_neg h1, dif_neg h2]
 
 /-- **Every member of the reduced family is real-coefficient**, hence its multiplication operator is
 symmetric and its square is a positive summand of the Hamiltonian. -/

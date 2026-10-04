@@ -6,6 +6,7 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionEntropy
 
 variable {m : ℕ}
 

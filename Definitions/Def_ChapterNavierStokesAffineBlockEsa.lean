@@ -147,7 +147,10 @@ noncomputable def affBlockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (hc : �
     rw [hFun_smul, hFun_smul]
     ring
 
-
+@[simp] theorem affBlockH_coe (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (hc : ∀ j, 0 ≤ c j)
+    (x : lpFiniteModes (ℕ × J)) (p : ℕ × J) :
+    ((affBlockH κ c hκ hc x : L2I (ℕ × J)) : ℕ × J → ℂ) p
+      = affFun κ c hκ hc (((x : L2I (ℕ × J))) : ℕ × J → ℂ) p := rfl
 
 /-! ## The block identification -/
 

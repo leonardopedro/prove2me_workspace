@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterA4
+open BookProof.ChapterAttentionEntropy
 
 variable {m : ℕ}
 

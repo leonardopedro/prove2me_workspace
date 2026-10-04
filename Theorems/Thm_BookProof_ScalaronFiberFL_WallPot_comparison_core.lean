@@ -17,6 +17,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronEsa
+open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (W : WallPot) (s : ℝ)

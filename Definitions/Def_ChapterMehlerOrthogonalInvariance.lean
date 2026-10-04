@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterSolovayCoordinates
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -88,7 +89,9 @@ def orthEquiv {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ) (hO : Oᵀ * O = 1) :
   simpa [PiLp.inner_apply, dotProduct] using
     dotProduct_mulVec_orthogonal hO (WithLp.ofLp y) (WithLp.ofLp x)
 
-
+@[simp] theorem orthEquiv_apply {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ) (hO : Oᵀ * O = 1)
+    (x : EuclideanSpace ℝ (Fin k)) :
+    orthEquiv O hO x = WithLp.toLp 2 (O *ᵥ (WithLp.ofLp x)) := rfl
 
 
 

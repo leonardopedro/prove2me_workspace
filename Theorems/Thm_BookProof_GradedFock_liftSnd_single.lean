@@ -1,0 +1,22 @@
+-- Generated from ChapterGradedFock.lean — theorem BookProof.GradedFock.liftSnd_single
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterSuperBracket
+import Mathlib
+import Definitions.Def_ChapterGradedFock
+import Definitions.Def_ChapterA4
+open BookProof.GradedFock
+
+variable {α β : Type*}
+
+
+
+open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.FockSecondQuantization BookProof.FermionFock
+open BookProof.ChapterSuperBracket
+
+noncomputable section
+
+theorem BookProof.GradedFock.liftSnd_single (S : (β →₀ ℂ) →ₗ[ℂ] (β →₀ ℂ)) (a : α) (b : β) (c : ℂ) :
+    liftSnd (α := by sorry

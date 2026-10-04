@@ -55,9 +55,9 @@ noncomputable def annih : ℂ[X] →ₗ[ℂ] ℂ[X] := Polynomial.derivative
 (`../unfer`: `a†` is multiplication by the coordinate). -/
 noncomputable def creat : ℂ[X] →ₗ[ℂ] ℂ[X] := LinearMap.mulLeft ℂ (X : ℂ[X])
 
+@[simp] theorem annih_apply (p : ℂ[X]) : annih p = derivative p := rfl
 
-
-
+@[simp] theorem creat_apply (p : ℂ[X]) : creat p = X * p := rfl
 
 
 
@@ -122,3 +122,8 @@ noncomputable def hamiltonianSym : ℂ[X] →ₗ[ℂ] ℂ[X] :=
 
 /-! ## F1.5 — BRST bridge to the gauge layer (`ChapterG2`) -/
 
+
+
+end
+
+end BookProof.ChapterF1

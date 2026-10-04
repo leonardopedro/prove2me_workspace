@@ -11,6 +11,7 @@ import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.FockSecondQuantization
 open BookProof.TensorCore
+open BookProof.EsaPair
 
 variable {Hs : IPSpace} (P : ESAPair Hs)
 

@@ -67,6 +67,7 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.BookBrstGaugeFixing
 
+open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
 
 noncomputable section

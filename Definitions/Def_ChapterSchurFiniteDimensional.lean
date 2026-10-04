@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterA2b
+import Definitions.Def_ChapterA
 import Mathlib
 
 
@@ -59,7 +60,8 @@ noncomputable def antiSq (θ : AntiUnitary V) : V →L[ℂ] V where
   map_smul' c x := by rw [map_smulₛₗ, map_smulₛₗ]; simp
   cont := θ.continuous.comp θ.continuous
 
-
+omit [CompleteSpace V] in
+@[simp] theorem antiSq_apply (θ : AntiUnitary V) (x : V) : antiSq θ x = θ (θ x) := rfl
 
 
 

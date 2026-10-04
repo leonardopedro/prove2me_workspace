@@ -1,3 +1,5 @@
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -29,7 +31,6 @@ noncomputable section
 
 namespace BookProof.ChapterSinusoidalPosition
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterAttentionRetrieval
 
 variable {n : ℕ}

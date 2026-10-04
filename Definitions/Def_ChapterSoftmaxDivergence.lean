@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterSoftmaxMaxEntropy
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -50,7 +52,12 @@ def klDiv (p q : Fin m → ℝ) : ℝ := ∑ j, p j * Real.log (p j / q j)
 
 
 
-
+/-- A distribution is at zero divergence from itself. -/
+@[simp] theorem klDiv_self (p : Fin m → ℝ) : klDiv p p = 0 := by
+  refine Finset.sum_eq_zero fun j _ => ?_
+  rcases eq_or_ne (p j) 0 with h | h
+  · simp [h]
+  · rw [div_self h]; simp
 
 /-! ## The divergence between two attention temperatures -/
 

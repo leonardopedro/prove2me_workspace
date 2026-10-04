@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterA4c
 import Definitions.Def_ChapterA4d
 import Definitions.Def_ChapterA4e
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA5
 import Mathlib
 
 

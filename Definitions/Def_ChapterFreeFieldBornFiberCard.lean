@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterFreeFieldBornQuotient
 import Definitions.Def_ChapterFreeFieldBornSectionBij
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -35,10 +36,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
-open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSignGauge
-open BookProof.ChapterFreeFieldBornSignFiber BookProof.ChapterFreeFieldBornSectionBij
-open BookProof.ChapterFreeFieldBornQuotient
 
 namespace BookProof.ChapterFreeFieldBornFiberCard
 
@@ -136,7 +133,9 @@ noncomputable def bornFiberEquiv {p : ↥(stdSimplex ℝ (Fin n))}
 **Headline.** Over a strictly-positive probability distribution `p`, the Born
 fiber consists of exactly `2ⁿ` wave functions — one for each coordinate-wise
 sign choice.  This is the quantitative form of `bornMap_eq_iff_signFlip`: on the
-strictly-positive locus the `t Nat.card_congr (bornFiberEquiv hp |> Equiv.symm) using 1
-  norm_num [Nat.card_pi]
+strictly-positive locus the `{±1}ⁿ` sign gauge acts freely, so each fiber is a
+full orbit of size `2ⁿ`.
+-/
+
 
 end BookProof.ChapterFreeFieldBornFiberCard

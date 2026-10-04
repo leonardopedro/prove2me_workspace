@@ -1,3 +1,7 @@
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -50,7 +54,6 @@ No invariance of the domain is used.
 namespace BookProof.PolarPartialIsometry
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}
@@ -92,13 +95,13 @@ noncomputable def preIsomL : LinearMap.range P →L[ℂ] F :=
     rw [norm_preIsom, one_mul]
     rfl)
 
-
+@[simp] theorem preIsomL_apply (z : LinearMap.range P) : preIsomL P Q h z = preIsom P Q h z := rfl
 
 /-- The inclusion of `ran P` into its closure, as a continuous linear map. -/
 noncomputable def inclL : LinearMap.range P →L[ℂ] initSpace P :=
   (Submodule.inclusion (range_le_initSpace P)).mkContinuous 1 (by intro z; simp)
 
-
+@[simp] theorem inclL_coe (z : LinearMap.range P) : ((inclL P z : initSpace P) : F) = (z : F) := rfl
 
 
 

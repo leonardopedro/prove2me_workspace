@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSignOrientationQuotient
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -11,11 +12,6 @@ special-orthogonal preimage is exactly the multiplicative copy of the
 orientation-preserving additive subgroup.
 -/
 
-open BookProof.ChapterFreeFieldBornSignAction
-open BookProof.ChapterFreeFieldBornSignHom
-open BookProof.ChapterFreeFieldBornSignMatrix
-open BookProof.ChapterFreeFieldBornSignOrientation
-open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
 namespace BookProof.ChapterFreeFieldBornSignRepresentation
 
@@ -40,7 +36,9 @@ def flipRepresentation (n : ℕ) :
       cases b₁.toAdd k <;> cases b₂.toAdd k <;> rfl
     rw [hadd, flipMatrix_xor]
 
-
+@[simp] theorem flipRepresentation_apply (b : Multiplicative (Fin n → Bool)) :
+    (flipRepresentation n b : Matrix (Fin n) (Fin n) ℝ) = flipMatrix b.toAdd :=
+  rfl
 
 /-
 Equality of diagonal sign matrices recovers the underlying sign choice.

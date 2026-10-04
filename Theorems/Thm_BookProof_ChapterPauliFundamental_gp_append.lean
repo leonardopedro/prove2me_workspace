@@ -3,6 +3,7 @@ import Definitions.Def_ChapterA3
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Definitions.Def_ChapterA4
+open BookProof.ChapterPauliFundamental
 
 
 open Matrix Finset

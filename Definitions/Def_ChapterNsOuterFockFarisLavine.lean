@@ -1,5 +1,12 @@
 import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -193,17 +200,35 @@ def nsVec (n : ℕ) (r : Fin n × NsLoc) (I : Fin (n * 18)) : ℝ :=
 
 /-! ### Reading off the Hamiltonian -/
 
+/-- The advection coefficient of the Navier–Stokes constraint form. -/
+@[simp] theorem nsVec_advection {n : ℕ} (p : Fin n) (i j : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locU i) (coordOf p (locD i j)) = bv j := by
+  simp [nsVec, locU, locD, sameVec]
 
+/-- The viscous coefficient of the Navier–Stokes constraint form. -/
+@[simp] theorem nsVec_viscous {n : ℕ} (p : Fin n) (i : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locU i) (coordOf p (locL i)) = -nu := by
+  simp [nsVec, locU, locL, sameVec]
 
+/-- The derivative gauge-fixing form contains the derivative variable it fixes. -/
+@[simp] theorem nsVec_tie_self {n : ℕ} (p : Fin n) (i j : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locD i j) (coordOf p (locD i j)) = lam := by
+  simp [nsVec, locD, sameVec]
 
+/-- …and the velocity of its own parcel. -/
+@[simp] theorem nsVec_tie_velocity {n : ℕ} (p : Fin n) (i j : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locD i j) (coordOf p (locU i)) = lam := by
+  simp [nsVec, locD, locU, sameVec]
 
+/-- The Laplacian gauge-fixing form contains the Laplacian variable it fixes. -/
+@[simp] theorem nsVec_lap_self {n : ℕ} (p : Fin n) (i : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locL i) (coordOf p (locL i)) = mu := by
+  simp [nsVec, locL, sameVec]
 
-
-
-
-
-
-
+/-- The `y`-gauge-fixing form is the gauge condition `y_j = 0`. -/
+@[simp] theorem nsVec_gaugeY {n : ℕ} (p : Fin n) (j : Fin 3) :
+    nsVec bv nu lam mu gg n (p, locY j) (coordOf p (locY j)) = gg := by
+  simp [nsVec, locY, sameVec]
 
 
 

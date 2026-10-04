@@ -1,0 +1,25 @@
+-- Generated from ChapterSmGaugeRepresentation.lean — theorem BookProof.SmGaugeRep.sm_brst_nilpotent_of_su3_relations
+import Mathlib
+import Definitions.Def_ChapterSmGaugeRepresentation
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterA4
+open BookProof.SmBrstGhost
+open BookProof.SmCar
+open BookProof.YangMillsSU3
+open BookProof.SmGaugeRep
+
+variable {S3 : Fin 8 → Matrix (Fin 3) (Fin 3) ℂ} {f3 : Fin 8 → Fin 8 → Fin 8 → ℝ}
+
+
+
+open Matrix Kronecker
+open BookProof.YangMillsSU3 BookProof.SmBrstGhost
+
+noncomputable section
+
+theorem BookProof.SmGaugeRep.sm_brst_nilpotent_of_su3_relations {m : ℕ} {T : Fin 12 → Matrix (Fin m) (Fin m) ℂ}
+    (hS3 : TraceOrthonormal S3) (hf3 : ClosesWithStructureConstants S3 f3)
+    (hT : ClosesWithStructureConstants T (smStruct f3)) :
+    smBrstCharge m T f3 * smBrstCharge m T f3 = 0 := by sorry

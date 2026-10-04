@@ -1,0 +1,27 @@
+-- Generated from ChapterAbelianCyclicCommutant.lean — theorem BookProof.ChapterAbelianCyclicCommutant.conjRep_mul
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Mathlib
+import Definitions.Def_ChapterAbelianCyclicCommutant
+import Definitions.Def_ChapterA4
+open BookProof.ChapterAbelianCyclicCommutant
+
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H) (hcyc : DenseRange (repVec pi xi))
+
+
+noncomputable section
+
+open MeasureTheory Complex WeakDual
+
+
+open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
+open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralCommutant
+open BookProof.ChapterAbelianCyclicModel
+
+
+
+theorem BookProof.ChapterAbelianCyclicCommutant.conjRep_mul (A B : Lp ℂ 2 (repMeasure pi xi) →L[ℂ] Lp ℂ 2 (repMeasure pi xi)) :
+    conjRep pi xi hcyc (A * B) = conjRep pi xi hcyc A * conjRep pi xi hcyc B := by sorry

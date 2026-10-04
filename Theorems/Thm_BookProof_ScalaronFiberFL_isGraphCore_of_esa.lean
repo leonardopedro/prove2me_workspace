@@ -16,6 +16,7 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterA4
 open BookProof.GraphCore
 open BookProof.QgOuterFockFL
+open BookProof.ScalaronFiberFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

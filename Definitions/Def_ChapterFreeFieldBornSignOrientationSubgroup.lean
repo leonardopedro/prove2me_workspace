@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -12,9 +13,6 @@ recording closure as separate propositions.
 
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
-open BookProof.ChapterFreeFieldBornSignOrientation
-open BookProof.ChapterFreeFieldBornSignOrientationKernel
-open BookProof.ChapterFreeFieldBornSignOrientationCard
 
 namespace BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
@@ -40,8 +38,18 @@ def orientationPreservingSigns (n : ℕ) : AddSubgroup (Fin n → Bool) where
     intro b hb
     exact hb
 
-@[simpMeTwn positive dimension, the orientation-preserving subgroup has index two.
+@[simp] theorem mem_orientationPreservingSigns_iff (b : Fin n → Bool) :
+    b ∈ orientationPreservingSigns n ↔
+      flipMatrix b ∈ Matrix.specialOrthogonalGroup (Fin n) ℝ :=
+  Iff.rfl
+
+
+
+
+
+/-
+In positive dimension, the orientation-preserving subgroup has index two.
 -/
-theoren]
+
 
 end BookProof.ChapterFreeFieldBornSignOrientationSubgroup

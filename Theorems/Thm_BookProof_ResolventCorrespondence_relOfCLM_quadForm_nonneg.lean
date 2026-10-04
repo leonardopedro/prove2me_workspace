@@ -1,0 +1,18 @@
+-- Generated from ChapterResolventCorrespondence.lean — theorem BookProof.ResolventCorrespondence.relOfCLM_quadForm_nonneg
+import Definitions.Def_ChapterClosureUniqueness
+import Mathlib
+import Definitions.Def_ChapterResolventCorrespondence
+import Definitions.Def_ChapterA4
+open BookProof.ResolventCorrespondence
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
+
+
+
+open BookProof.NonnegSquareRoot
+open scoped ComplexOrder
+
+
+theorem BookProof.ResolventCorrespondence.relOfCLM_quadForm_nonneg (h0 : 0 ≤ R) (h1 : R ≤ 1) {p : F × F} (hp : p ∈ relOfCLM R) :
+    0 ≤ (inner ℂ p.1 p.2 : ℂ).re := by sorry

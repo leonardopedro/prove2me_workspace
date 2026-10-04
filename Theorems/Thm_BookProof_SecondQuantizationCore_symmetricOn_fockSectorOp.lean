@@ -8,6 +8,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterA4
 open BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
   (D : Submodule ℂ Hs.carrier)

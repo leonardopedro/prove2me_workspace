@@ -1,0 +1,30 @@
+-- Generated from ChapterPermutationSectorEsa.lean — theorem BookProof.PermSector.essentiallySelfAdjointOn_bosonic
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Mathlib
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.TensorCore
+open BookProof.PermSector
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
+
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.GroupAverage BookProof.TensorPerm
+
+noncomputable section
+
+theorem BookProof.PermSector.essentiallySelfAdjointOn_bosonic (n : ℕ)
+    (hesa : EssentiallySelfAdjointOn (sectorDom Hs D₂ n) (sectorOp Hs D₂ A n)) :
+    EssentiallySelfAdjointOn
+      (redDom (bosonicProj Hs n) (sectorDom Hs D₂ n))
+      (redOp (sectorOp Hs D₂ A n) (isReducingProjection_bosonicProj Hs n)
+        ((permRep Hs n).commutes_avgProj
+          (hD := permRep_mem_sectorDom Hs D₂ n)
+          (permRep_commutes_sectorDom Hs D₂ A n))) := by sorry

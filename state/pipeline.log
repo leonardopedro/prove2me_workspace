@@ -210192,3 +210192,261 @@ inst✝¹ : NormedA)
 11:14:02 sync: checked 1925 pending solution(s), 1767 already Proved
 11:14:02 sync: checked 1950 pending solution(s), 1768 already Proved
 11:14:02 sync: marked 2173 already-published item(s) and 1768 already-proved solution(s) done
+15:22:30 retry-failed: re-armed 0 item(s)
+15:22:30 submitting thm:Thm_BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer (attempt 1)
+15:22:32 thm:Thm_BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:32 submitting thm:Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime (attempt 1)
+15:22:33 thm:Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:33 submitting thm:Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+15:22:33 thm:Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:33 submitting thm:Thm_BookProof_ChapterUnboundedPosition_mulDomain_dense (attempt 1)
+15:22:34 thm:Thm_BookProof_ChapterUnboundedPosition_mulDomain_dense: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:34 submitting thm:Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain (attempt 1)
+15:22:35 thm:Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:35 submitting thm:Thm_BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary (attempt 1)
+15:22:36 thm:Thm_BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:36 submitting thm:Thm_BookProof_FarisLavine_quadForm_im (attempt 1)
+15:22:37 thm:Thm_BookProof_FarisLavine_quadForm_im: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:37 submitting thm:Thm_BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff (attempt 1)
+15:22:37 thm:Thm_BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:37 submitting thm:Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension (attempt 1)
+15:22:38 thm:Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:38 submitting thm:Thm_BookProof_HermiteCore_hermiteBasis_apply (attempt 1)
+15:22:39 thm:Thm_BookProof_HermiteCore_hermiteBasis_apply: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:39 submitting thm:Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply (attempt 1)
+15:22:40 thm:Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:40 submitting thm:Thm_BookProof_HermiteRelative_coreOp_add (attempt 1)
+15:22:41 thm:Thm_BookProof_HermiteRelative_coreOp_add: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:41 submitting thm:Thm_BookProof_HermiteRelative_coreOp_comp (attempt 1)
+15:22:41 thm:Thm_BookProof_HermiteRelative_coreOp_comp: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:41 submitting thm:Thm_BookProof_HermiteRelative_coreOp_smul (attempt 1)
+15:22:42 thm:Thm_BookProof_HermiteRelative_coreOp_smul: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:42 submitting thm:Thm_BookProof_HermiteRelative_coreOp_sum (attempt 1)
+15:22:43 thm:Thm_BookProof_HermiteRelative_coreOp_sum: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:43 submitting thm:Thm_BookProof_NavierStokesFlow_FockOfFock_fockDom_dense (attempt 1)
+15:22:44 thm:Thm_BookProof_NavierStokesFlow_FockOfFock_fockDom_dense: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:44 submitting thm:Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom (attempt 1)
+15:22:45 thm:Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:45 submitting thm:Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le (attempt 1)
+15:22:46 thm:Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:46 submitting thm:Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq (attempt 1)
+15:22:47 thm:Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:47 submitting thm:Thm_BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded (attempt 1)
+15:22:47 thm:Thm_BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:47 submitting thm:Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense (attempt 1)
+15:22:48 thm:Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:48 submitting thm:Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential (attempt 1)
+15:22:49 thm:Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:49 submitting thm:Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential (attempt 1)
+15:22:50 thm:Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:50 submitting thm:Thm_BookProof_QuadraticRotation_orthonormal_rotHermiteLp (attempt 1)
+15:22:51 thm:Thm_BookProof_QuadraticRotation_orthonormal_rotHermiteLp: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:51 submitting thm:Thm_BookProof_QuadraticRotation_span_rotHermiteLp (attempt 1)
+15:22:52 thm:Thm_BookProof_QuadraticRotation_span_rotHermiteLp: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:52 submitting thm:Thm_BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg (attempt 1)
+15:22:53 thm:Thm_BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:53 submitting thm:Thm_BookProof_ScalaronEsa_ccDomain_dense (attempt 1)
+15:22:54 thm:Thm_BookProof_ScalaronEsa_ccDomain_dense: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:54 submitting thm:Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong (attempt 1)
+15:22:55 thm:Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:55 submitting thm:Thm_BookProof_ScalaronEsa_contDiff_scalaronFullPotential (attempt 1)
+15:22:56 thm:Thm_BookProof_ScalaronEsa_contDiff_scalaronFullPotential: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:56 submitting thm:Thm_BookProof_ScalaronEsa_contDiff_starobinskyV (attempt 1)
+15:22:57 thm:Thm_BookProof_ScalaronEsa_contDiff_starobinskyV: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:57 submitting thm:Thm_BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint (attempt 1)
+15:22:57 thm:Thm_BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:57 submitting thm:Thm_BookProof_ScalaronEsa_smoothPotential_symmetric (attempt 1)
+15:22:58 thm:Thm_BookProof_ScalaronEsa_smoothPotential_symmetric: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:58 submitting thm:Thm_BookProof_Starobinsky_starobinskyV_nonneg (attempt 1)
+15:22:59 thm:Thm_BookProof_Starobinsky_starobinskyV_nonneg: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:22:59 submitting thm:Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op (attempt 1)
+15:23:00 thm:Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:00 submitting thm:Thm_BookProof_YangMillsHermite_RealCoeff_add (attempt 1)
+15:23:01 thm:Thm_BookProof_YangMillsHermite_RealCoeff_add: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:01 submitting thm:Thm_BookProof_YangMillsHermite_RealCoeff_mul (attempt 1)
+15:23:02 thm:Thm_BookProof_YangMillsHermite_RealCoeff_mul: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:02 submitting thm:Thm_BookProof_YangMillsHermite_RealCoeff_smul (attempt 1)
+15:23:03 thm:Thm_BookProof_YangMillsHermite_RealCoeff_smul: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:03 submitting thm:Thm_BookProof_YangMillsHermite_RealCoeff_sum (attempt 1)
+15:23:04 thm:Thm_BookProof_YangMillsHermite_RealCoeff_sum: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:04 submitting thm:Thm_BookProof_YangMillsHermite_momOp_polySym (attempt 1)
+15:23:05 thm:Thm_BookProof_YangMillsHermite_momOp_polySym: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:05 submitting thm:Thm_BookProof_YangMillsHermite_mulOp_polySym (attempt 1)
+15:23:06 thm:Thm_BookProof_YangMillsHermite_mulOp_polySym: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:06 submitting thm:Thm_BookProof_YangMillsHermite_realCoeff_X (attempt 1)
+15:23:06 thm:Thm_BookProof_YangMillsHermite_realCoeff_X: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:06 submitting thm:Thm_BookProof_YangMillsHermite_starP_C (attempt 1)
+15:23:07 thm:Thm_BookProof_YangMillsHermite_starP_C: FAIL (local compile failed: no such file or directory (error code: 4294967294)
+  file: /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/Th)
+15:23:07 summary: 1798 done, 215 pending, 0 failed, 2 unsubmittable (source missing from this checkout)
+15:23:07 chunk: 42 item(s) resolved in 37s
+15:28:57 retry-failed: re-armed 0 item(s)
+15:28:57 submitting thm:BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer (attempt 1)
+15:29:35 thm:BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer: accepted, waiting on the compiler
+15:29:35 submitting thm:BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime (attempt 1)
+15:29:43 thm:BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime: FAIL (submit-problem rejected: {"jobs": [], "errors": ["theorem_name must be a valid Lean identifier (identifier segments separated by '.' for namespaces)"])
+15:29:43 submitting thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+15:29:50 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: accepted, waiting on the compiler
+15:29:50 submitting thm:BookProof_ChapterUnboundedPosition_mulDomain_dense (attempt 1)
+15:30:14 thm:BookProof_ChapterUnboundedPosition_mulDomain_dense: accepted, waiting on the compiler
+15:30:14 submitting thm:BookProof_ChapterUnboundedPosition_single_mem_mulDomain (attempt 1)
+15:30:30 thm:BookProof_ChapterUnboundedPosition_single_mem_mulDomain: accepted, waiting on the compiler
+15:30:30 submitting thm:BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary (attempt 1)
+15:30:41 thm:BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary: accepted, waiting on the compiler
+15:30:41 submitting thm:BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff (attempt 1)
+15:30:53 thm:BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff: accepted, waiting on the compiler
+15:30:53 submitting thm:BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le (attempt 1)
+15:31:02 thm:BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le: accepted, waiting on the compiler
+15:31:02 submitting thm:BookProof_NavierStokesFlow_IkebeKato_summable_normSq (attempt 1)
+15:31:14 thm:BookProof_NavierStokesFlow_IkebeKato_summable_normSq: accepted, waiting on the compiler
+15:49:45 thm:BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer: DONE
+15:49:46 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: DONE
+15:49:55 submitting thm:BookProof_QuadraticRotation_orthonormal_rotHermiteLp (attempt 1)
+15:50:07 thm:BookProof_QuadraticRotation_orthonormal_rotHermiteLp: accepted, waiting on the compiler
+15:50:07 submitting thm:BookProof_QuadraticRotation_span_rotHermiteLp (attempt 1)
+15:50:18 thm:BookProof_QuadraticRotation_span_rotHermiteLp: accepted, waiting on the compiler
+15:51:11 thm:BookProof_ChapterUnboundedPosition_mulDomain_dense: DONE
+15:51:21 submitting thm:BookProof_YangMillsHermite_starP_C (attempt 1)
+15:51:33 thm:BookProof_YangMillsHermite_starP_C: REUSING existing BookProof.YangMillsHermite.starP_C (Proved) 91591f4a-016f-4557-9bea-d7b1fcc0b37e
+15:51:33 thm:BookProof_YangMillsHermite_starP_C: DONE
+15:51:33 submitting thm:BookProof_YangMillsHermite_realCoeff_X (attempt 1)
+15:51:52 thm:BookProof_YangMillsHermite_realCoeff_X: DONE
+15:51:52 submitting thm:BookProof_YangMillsHermite_RealCoeff_add (attempt 1)
+15:52:02 thm:BookProof_YangMillsHermite_RealCoeff_add: REUSING existing BookProof.YangMillsHermite.RealCoeff.add (Proved) 4f828d4b-41ad-4b62-b1c3-387a7bbeb277
+15:52:02 thm:BookProof_YangMillsHermite_RealCoeff_add: DONE
+15:52:02 submitting thm:BookProof_YangMillsHermite_RealCoeff_mul (attempt 1)
+15:52:14 thm:BookProof_YangMillsHermite_RealCoeff_mul: REUSING existing BookProof.YangMillsHermite.RealCoeff.mul (Proved) fc74158e-1e2e-4194-bb7e-5d0a034ad57c
+15:52:14 thm:BookProof_YangMillsHermite_RealCoeff_mul: DONE
+15:52:14 submitting thm:BookProof_YangMillsHermite_mulOp_polySym (attempt 1)
+15:52:22 thm:BookProof_YangMillsHermite_mulOp_polySym: REUSING existing BookProof.YangMillsHermite.mulOp_polySym (Proved) eee93cf7-b8f8-4736-a194-55d2717177be
+15:52:22 thm:BookProof_YangMillsHermite_mulOp_polySym: DONE
+15:52:22 submitting thm:BookProof_YangMillsHermite_RealCoeff_sum (attempt 1)
+15:52:34 thm:BookProof_YangMillsHermite_RealCoeff_sum: REUSING existing BookProof.YangMillsHermite.RealCoeff.sum (Proved) 1a9f7222-aaeb-4e9b-a837-212cbf5a4e7d
+15:52:34 thm:BookProof_YangMillsHermite_RealCoeff_sum: DONE
+15:52:34 submitting thm:BookProof_YangMillsHermite_CoreRep_symmetricOn_op (attempt 1)
+15:52:43 thm:BookProof_YangMillsHermite_CoreRep_symmetricOn_op: REUSING existing BookProof.YangMillsHermite.CoreRep.symmetricOn_op (Proved) 2e3cfa53-078b-4c70-8a3a-3526c4baba0a
+15:52:43 thm:BookProof_YangMillsHermite_CoreRep_symmetricOn_op: DONE
+15:52:43 submitting thm:BookProof_YangMillsHermite_RealCoeff_smul (attempt 1)
+15:52:53 thm:BookProof_YangMillsHermite_RealCoeff_smul: REUSING existing BookProof.YangMillsHermite.RealCoeff.smul (Proved) 154f790b-185e-4122-ba0c-1cca7fa410e4
+15:52:53 thm:BookProof_YangMillsHermite_RealCoeff_smul: DONE
+15:52:53 submitting thm:BookProof_YangMillsHermite_momOp_polySym (attempt 1)
+15:53:02 thm:BookProof_YangMillsHermite_momOp_polySym: REUSING existing BookProof.YangMillsHermite.momOp_polySym (Proved) f1413666-1bc6-4c9c-83ed-78cf09176736
+15:53:02 thm:BookProof_YangMillsHermite_momOp_polySym: DONE
+15:53:02 submitting thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense (attempt 1)
+15:53:12 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense: REUSING existing BookProof.NavierStokesFlow.FockOfFock.fockDom_dense (Proved) 2077994a-502e-4ce7-a9b0-25e254857d9b
+15:53:12 thm:BookProof_NavierStokesFlow_FockOfFock_fockDom_dense: DONE
+15:53:12 submitting thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom (attempt 1)
+15:53:23 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom: REUSING existing BookProof.NavierStokesFlow.FockOfFock.lpDiag_isSymmetricDom (Proved) ba97b0af-dc1e-426b-a2e1-2a1602599aec
+15:53:23 thm:BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom: DONE
+15:53:23 submitting thm:BookProof_QgHermiteCore_continuous_scalaronSectorPotential (attempt 1)
+15:53:29 thm:BookProof_QgHermiteCore_continuous_scalaronSectorPotential: REUSING existing BookProof.QgHermiteCore.continuous_scalaronSectorPotential (Proved) bc21b245-c7ff-4df1-bd45-0341c151b23a
+15:53:29 thm:BookProof_QgHermiteCore_continuous_scalaronSectorPotential: DONE
+15:53:29 submitting thm:BookProof_QgHermiteCore_expBounded_scalaronSectorPotential (attempt 1)
+15:53:36 thm:BookProof_QgHermiteCore_expBounded_scalaronSectorPotential: REUSING existing BookProof.QgHermiteCore.expBounded_scalaronSectorPotential (Proved) 55ba85da-a403-45bc-b5d5-b2e41a93db0f
+15:53:36 thm:BookProof_QgHermiteCore_expBounded_scalaronSectorPotential: DONE
+15:53:36 submitting thm:BookProof_HermiteCore_hermiteBasis_apply (attempt 1)
+15:53:46 thm:BookProof_HermiteCore_hermiteBasis_apply: REUSING existing BookProof.HermiteCore.hermiteBasis_apply (Proved) e1265d1b-a283-45f6-ac7d-cdc4aabb1c78
+15:53:46 thm:BookProof_HermiteCore_hermiteBasis_apply: DONE
+15:53:46 submitting thm:BookProof_HermiteProductBasis_hermiteMvBasis_apply (attempt 1)
+15:53:55 thm:BookProof_HermiteProductBasis_hermiteMvBasis_apply: REUSING existing BookProof.HermiteProductBasis.hermiteMvBasis_apply (Proved) a4959304-21fc-4518-8921-a1daab4a9aae
+15:53:55 thm:BookProof_HermiteProductBasis_hermiteMvBasis_apply: DONE
+15:53:55 submitting thm:BookProof_HermiteRelative_coreOp_add (attempt 1)
+15:54:03 thm:BookProof_HermiteRelative_coreOp_add: REUSING existing BookProof.HermiteRelative.coreOp_add (Proved) 8a04ab2b-c2b0-4d1b-98e3-14491e33eb03
+15:54:03 thm:BookProof_HermiteRelative_coreOp_add: DONE
+15:54:03 submitting thm:BookProof_HermiteRelative_coreOp_comp (attempt 1)
+15:54:10 thm:BookProof_HermiteRelative_coreOp_comp: REUSING existing BookProof.HermiteRelative.coreOp_comp (Proved) f7fdab07-88b8-4bcf-a16e-fb0fd9be6839
+15:54:10 thm:BookProof_HermiteRelative_coreOp_comp: DONE
+15:54:10 submitting thm:BookProof_HermiteRelative_coreOp_smul (attempt 1)
+15:54:19 thm:BookProof_HermiteRelative_coreOp_smul: REUSING existing BookProof.HermiteRelative.coreOp_smul (Proved) a02b61a4-aca1-4647-b8f2-e0d1de6e6c31
+15:54:19 thm:BookProof_HermiteRelative_coreOp_smul: DONE
+15:54:19 submitting thm:BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded (attempt 1)
+15:54:39 thm:BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.NavierStokesFlow.eq_zero_of_hasDerivAt_smul_of_bounded\" alr)
+15:54:39 submitting thm:BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense (attempt 1)
+15:54:58 thm:BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.NavierStokesFlow.eq_zero_of_inner_right_eq_zero_on_dense\" a)
+15:54:59 submitting thm:BookProof_Starobinsky_starobinskyV_nonneg (attempt 1)
+15:55:05 thm:BookProof_Starobinsky_starobinskyV_nonneg: REUSING existing BookProof.Starobinsky.starobinskyV_nonneg (Proved) 990fe988-fd8d-43b4-93c6-7d3ab36aaa72
+15:55:05 thm:BookProof_Starobinsky_starobinskyV_nonneg: DONE
+15:55:05 submitting thm:BookProof_HermiteRelative_coreOp_sum (attempt 1)
+15:55:14 thm:BookProof_HermiteRelative_coreOp_sum: REUSING existing BookProof.HermiteRelative.coreOp_sum (Proved) d4398a16-ce4e-4614-9db6-9ba22df418ea
+15:55:14 thm:BookProof_HermiteRelative_coreOp_sum: DONE
+15:55:14 submitting thm:BookProof_FarisLavine_quadForm_im (attempt 1)
+15:55:27 thm:BookProof_FarisLavine_quadForm_im: REUSING existing BookProof.FarisLavine.quadForm_im (Proved) d0a0889b-5d7f-45c1-8d2d-24c29bfe18c0
+15:55:27 thm:BookProof_FarisLavine_quadForm_im: DONE
+15:55:27 submitting thm:BookProof_ScalaronEsa_contDiff_starobinskyV (attempt 1)
+15:55:38 thm:BookProof_ScalaronEsa_contDiff_starobinskyV: REUSING existing BookProof.ScalaronEsa.contDiff_starobinskyV (Proved) 45df48ff-f419-4353-a7f9-a3d835b13dab
+15:55:38 thm:BookProof_ScalaronEsa_contDiff_starobinskyV: DONE
+15:55:38 submitting thm:BookProof_ScalaronEsa_contDiff_scalaronAlong (attempt 1)
+15:55:58 thm:BookProof_ScalaronEsa_contDiff_scalaronAlong: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ScalaronEsa.contDiff_scalaronAlong\" already exists"], "mess)
+15:55:58 submitting thm:BookProof_ScalaronEsa_ccDomain_dense (attempt 1)
+15:56:17 thm:BookProof_ScalaronEsa_ccDomain_dense: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ScalaronEsa.ccDomain_dense\" already exists"], "message": "0)
+15:56:17 submitting thm:BookProof_ScalaronEsa_contDiff_scalaronFullPotential (attempt 1)
+15:56:37 thm:BookProof_ScalaronEsa_contDiff_scalaronFullPotential: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ScalaronEsa.contDiff_scalaronFullPotential\" already exists")
+15:56:37 submitting thm:BookProof_ScalaronEsa_smoothPotential_symmetric (attempt 1)
+15:56:57 thm:BookProof_ScalaronEsa_smoothPotential_symmetric: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ScalaronEsa.smoothPotential_symmetric\" already exists"], "m)
+15:56:57 submitting thm:BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint (attempt 1)
+15:57:17 thm:BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.ScalaronEsa.smoothPotential_essentiallySelfAdjoint\" already)
+15:57:17 submitting thm:BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension (attempt 1)
+15:57:39 thm:BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.HashimotoShiftInvert.ell2Example_isPositiveSelfAdjointExtens)
+15:57:39 submitting thm:BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg (attempt 1)
+15:57:59 thm:BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg: FAIL (submit-problem rejected: {"jobs": [], "errors": ["A theorem with theorem_name \"BookProof.QuantumGravity3DGauge.qgKappaElliptic_nonneg\" already exist)
+15:57:59 thm:BookProof_ChapterUnboundedPosition_single_mem_mulDomain: DONE
+15:58:00 thm:BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary: DONE
+15:58:00 thm:BookProof_GroupAverage_UnitaryRep_mem_range_avgProj_iff: DONE
+15:58:00 thm:BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le: DONE
+15:58:01 thm:BookProof_NavierStokesFlow_IkebeKato_summable_normSq: DONE
+16:08:55 thm:BookProof_QuadraticRotation_orthonormal_rotHermiteLp: DONE
+16:10:02 thm:BookProof_QuadraticRotation_span_rotHermiteLp: DONE
+16:10:02 summary: 1799 done, 183 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (42 out-of-order orphans ignored)
+16:10:02 chunk: 42 item(s) resolved in 2465s
+16:11:09 sync: read 833 definition publish job(s)
+16:11:36 sync: read 5955 problem publish job(s)
+16:11:40 sync: checked 25 pending solution(s), 0 already Proved
+16:11:46 sync: checked 50 pending solution(s), 0 already Proved
+16:11:48 sync: checked 75 pending solution(s), 0 already Proved
+16:11:49 sync: checked 100 pending solution(s), 0 already Proved
+16:11:49 sync: checked 125 pending solution(s), 0 already Proved
+16:11:49 sync: checked 150 pending solution(s), 0 already Proved
+16:11:49 sync: checked 175 pending solution(s), 0 already Proved
+16:11:49 sync: checked 200 pending solution(s), 0 already Proved
+16:11:49 sync: marked 35 already-published item(s) and 0 already-proved solution(s) done

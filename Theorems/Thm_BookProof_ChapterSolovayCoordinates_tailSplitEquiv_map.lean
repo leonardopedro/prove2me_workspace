@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovayCoordinates
 import Definitions.Def_ChapterA4
+open BookProof.ChapterSolovayCoordinates
 
 
 open MeasureTheory ProbabilityTheory

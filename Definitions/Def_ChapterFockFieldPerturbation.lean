@@ -1,3 +1,6 @@
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 
 
@@ -58,7 +61,6 @@ noncomputable section
 namespace BookProof.FockFieldPerturbation
 
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
-open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 
 /-! ## 1. The annihilation operator of a one-particle vector -/
 

@@ -14,6 +14,7 @@ open BookProof.FockSecondQuantization
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
+open BookProof.EsaPair
 
 variable {Hs : IPSpace} (P : ESAPair Hs)
 

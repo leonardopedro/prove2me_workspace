@@ -6,12 +6,14 @@ import Definitions.Def_ChapterSmBrstGhost
 import Definitions.Def_ChapterA4
 open BookProof.BRSTNilpotent
 open BookProof.SmBrstGhost
+open BookProof.BookBrstGaugeFixing
 
 variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
 variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
 
 
 
+open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
 
 noncomputable section

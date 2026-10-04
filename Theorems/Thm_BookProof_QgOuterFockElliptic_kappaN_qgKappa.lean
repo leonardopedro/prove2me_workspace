@@ -15,6 +15,7 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterA4
 open BookProof.QgOuterFock
 open BookProof.QuantumGravity3DGauge
+open BookProof.QgOuterFockElliptic
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {D : ℕ}

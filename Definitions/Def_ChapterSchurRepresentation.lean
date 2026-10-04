@@ -2,6 +2,7 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA2
 import Definitions.Def_ChapterA2b
 import Definitions.Def_ChapterSchurIrreducible
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -40,7 +41,7 @@ open scoped ComplexConjugate InnerProductSpace
 
 namespace BookProof.ChapterSchurRepresentation
 
-open BookProof.ChapterA BookProof.ChapterA.System BookProof.ChapterSchurIrreducible
+open BookProof.ChapterA BookProof.ChapterA BookProof.ChapterSchurIrreducible
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
@@ -50,7 +51,8 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteS
 noncomputable def uCLM (f : V ≃ₗᵢ[ℂ] V) : V →L[ℂ] V :=
   f.toContinuousLinearEquiv.toContinuousLinearMap
 
-
+omit [CompleteSpace V] in
+@[simp] theorem uCLM_apply (f : V ≃ₗᵢ[ℂ] V) (x : V) : uCLM f x = f x := rfl
 
 
 

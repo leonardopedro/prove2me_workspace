@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterF1
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -48,7 +49,6 @@ open scoped BigOperators
 
 namespace BookProof.ChapterF2
 
-open BookProof.ChapterF1
 
 noncomputable section
 

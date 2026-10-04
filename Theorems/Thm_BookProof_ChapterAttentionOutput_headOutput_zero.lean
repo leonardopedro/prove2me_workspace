@@ -4,6 +4,7 @@ import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionOutput
 
 variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 

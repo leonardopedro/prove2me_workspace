@@ -1,4 +1,12 @@
 import Definitions.Def_ChapterQgFourierElimination
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 
 
@@ -58,7 +66,6 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 
@@ -122,7 +129,10 @@ def elimCoef (k : Mom) : FormIdx → EComp → ℂ
   | Sum.inr (Sum.inl _), _ => 0
   | Sum.inr (Sum.inr i), c => ∑ mu : Fin 3, Complex.I * ((k mu : ℤ) : ℂ) * eind c (mu, i)
 
-
+@[simp] theorem elimCoef_torsion (k : Mom) (mu nu i : Fin 3) (c : EComp) :
+    elimCoef k (torsionF mu nu i) c
+      = Complex.I * ((k mu : ℤ) : ℂ) * eind c (nu, i)
+          - Complex.I * ((k nu : ℤ) : ℂ) * eind c (mu, i) := rfl
 
 /-- **The derivative-gauge forms disappear**: after the elimination they are the zero form, which
 is the formal statement that the twenty-seven constraints are solved by construction. -/
@@ -328,13 +338,13 @@ def qgElimFullModes (g : ℝ) : QgModeData EGMode :=
       rw [hcs, sub_self, abs_zero]
       linarith)
 
+@[simp] theorem qgElimFullModes_sig (g : ℝ) : (qgElimFullModes g).sig = eSig := rfl
 
+@[simp] theorem qgElimFullModes_A (g : ℝ) : (qgElimFullModes g).A = eGram := rfl
 
+@[simp] theorem qgElimFullModes_B (g : ℝ) : (qgElimFullModes g).B = eCoupling g := rfl
 
-
-
-
-
+@[simp] theorem qgElimFullModes_nbr (g : ℝ) : (qgElimFullModes g).nbr = eNbr := rfl
 
 /-! ## 6. Essential self-adjointness of the rebuilt Hamiltonian, by Faris–Lavine -/
 

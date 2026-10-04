@@ -10,6 +10,7 @@ import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
+open BookProof.QgTruncationResolvent
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {ι : Type*}
@@ -19,6 +20,7 @@ variable {ι : Type*}
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section

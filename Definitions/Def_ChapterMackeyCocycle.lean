@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterMackeyQuasiInvariant
 import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -193,7 +194,9 @@ noncomputable def tmapL (hqi : QuasiInvariant μ G) (g : G) {w : X → ℂ} (hwm
       map_smul' := tmap_smul hqi g hwmeas hdens } 1
     (fun f => by simpa using le_of_eq (norm_tmap hqi g hwmeas hdens f))
 
-
+@[simp] theorem tmapL_apply (hqi : QuasiInvariant μ G) (g : G) {w : X → ℂ}
+    (hwmeas : Measurable w) (hdens : dens μ g =ᵐ[μ] fun x => ‖w x‖ₑ ^ 2) (f : Lp ℂ 2 μ) :
+    tmapL hqi g hwmeas hdens f = tmap hqi g hwmeas hdens f := rfl
 
 end Operator
 

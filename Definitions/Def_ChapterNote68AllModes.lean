@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterSolidHarmonic
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSphericalBessel
 import Mathlib
 
 
@@ -33,8 +35,6 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 namespace BookProof.ChapterNote68AllModes
 
 open Laplacian InnerProductSpace Polynomial
-open BookProof.ChapterSphericalBessel BookProof.ChapterBesselHarmonic
-open BookProof.ChapterSolidHarmonic
 open scoped RealInnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]

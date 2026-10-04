@@ -1,4 +1,10 @@
 import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -54,8 +60,6 @@ namespace BookProof.ScalaronFockGapChain
 
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
-open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
-open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
 

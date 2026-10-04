@@ -44,6 +44,13 @@ import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -133,9 +140,14 @@ noncomputable section
 /-- The global coordinate of the `i`-th field-space direction of the `p`-th parcel. -/
 def ycoord {n : ℕ} (p : Fin n) (i : Fin 36) : Fin (n * 36) := finProdFinEquiv (p, i)
 
+theorem ycoord_injective {n : ℕ} (p : Fin n) : Function.Injective (ycoord p) := by
+  intro i i' h
+  have := finProdFinEquiv.injective h
+  simpa using congrArg Prod.snd this
 
-
-
+@[simp] theorem ycoord_inj_iff {n : ℕ} (p : Fin n) (i j : Fin 36) :
+    ycoord p i = ycoord p j ↔ i = j :=
+  ⟨fun h => ycoord_injective p h, fun h => by rw [h]⟩
 
 /-- The material position `ξ_i`. -/
 def xiIdx (i : Fin 3) : Fin 36 := ⟨i.val, by have := i.isLt; omega⟩

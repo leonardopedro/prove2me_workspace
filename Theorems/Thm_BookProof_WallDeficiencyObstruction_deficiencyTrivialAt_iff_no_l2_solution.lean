@@ -12,6 +12,7 @@ open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.WeakSecondDeriv
 open BookProof.WeakSecondDeriv.IsTestFun
+open BookProof.WallDeficiencyObstruction
 
 
 

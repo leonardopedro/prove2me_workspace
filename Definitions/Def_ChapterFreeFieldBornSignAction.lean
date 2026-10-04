@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -49,8 +50,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldBorn
-open BookProof.ChapterFreeFieldBornSignGauge
 
 namespace BookProof.ChapterFreeFieldBornSignAction
 
@@ -66,7 +65,8 @@ noncomputable def boolFlip (b : Fin n → Bool) (x : EuclideanSpace ℝ (Fin n))
     EuclideanSpace ℝ (Fin n) :=
   signFlip (flipVec b) x
 
-
+@[simp] theorem boolFlip_apply (b : Fin n → Bool) (x : EuclideanSpace ℝ (Fin n)) (k : Fin n) :
+    boolFlip b x k = (if b k then -1 else 1) * x k := rfl
 
 
 
@@ -80,30 +80,30 @@ The all-`false` boolean vector acts as the identity.
 `b₁` is the single flip by the coordinate-wise `xor` `b₁ ⊕ b₂`; this exhibits
 `boolFlip` as an action of the elementary abelian 2-group `(Fin n → Bool, ⊕)`.
 -/
-ply]
-  cases h₁ : b₁ k <;> cases h₂  : xSpace ℝ (Fin n)) :
-    bornMap (boolFlip b x) = bornMap x :=
-  bornMap_signFlip (flipVec_pm b) x
+
 
 /-
-`boolFlip b x = x` exactly when `b` is `false` o?_⟩
-  · intro k hk
-    cases hb : b k
-    · rfl
-    · have hval : (if b k then -1 else 1) * x k = x k := by
-        rw [← boolFlip_apply]
-        exact congrArg (fun y : EuclideanSpace ℝ (Fin n) => y k) h
-      simp [hb] at hval
-      have hk2 : x k ≠ 0 := by simpa using hk
-      have : x k = 0 := by linarith
-     diagonal sign action is free: `boolFlip b x = x`
+Every sign flip is an involution.
+-/
+
+
+
+
+
+
+/-
+`boolFlip b x = x` exactly when `b` is `false` on every nonzero coordinate of
+`x` (the flip may act arbitrarily on the vanishing coordinates).
+-/
+
+
+/-
+**Headline (free action on the strictly positive sphere).** If every
+coordinate of `x` is nonzero, the diagonal sign action is free: `boolFlip b x = x`
 forces `b` to be the identity `fun _ => false`. This is the group-theoretic
 reason the Born fiber over a strictly positive distribution has the full `2ⁿ`
 elements.
 -/
-theorem boolFlip_free_of_pos {b : Fin n → Bool} {x : EuclideanSpace ℝ (Fin n)}
-    (hx : ∀ k, x k ≠ 0) :
-    boolFlip b x = x ↔ b = (fun _ => false) := by
-  rw [boolFlip_eq_self_iff]; aesop
+
 
 end BookProof.ChapterFreeFieldBornSignAction

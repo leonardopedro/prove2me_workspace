@@ -14,6 +14,7 @@ import Definitions.Def_ChapterA4
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

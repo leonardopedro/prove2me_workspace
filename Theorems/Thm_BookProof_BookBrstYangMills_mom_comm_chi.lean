@@ -9,6 +9,7 @@ import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsGhost
+open BookProof.BookBrstYangMills
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 

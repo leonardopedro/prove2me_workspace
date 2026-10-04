@@ -103,7 +103,8 @@ noncomputable def blockVec (w : L2I (ℕ × J)) (j : J) : L2I ℕ :=
       simpa using hab
     exact hs.comp_injective hinj⟩
 
-
+@[simp] theorem blockVec_coe (w : L2I (ℕ × J)) (j : J) (n : ℕ) :
+    ((blockVec w j : L2I ℕ) : ℕ → ℂ) n = (w : ℕ × J → ℂ) (n, j) := rfl
 
 open scoped Classical in
 /-- The coordinates of the embedding of a velocity-fiber state into the block
@@ -111,7 +112,8 @@ open scoped Classical in
 noncomputable def embFun (j : J) (a : ℕ → ℂ) : ℕ × J → ℂ :=
   fun p => if p.2 = j then a p.1 else 0
 
-
+@[simp] theorem embFun_self (j : J) (a : ℕ → ℂ) (n : ℕ) : embFun j a (n, j) = a n := by
+  simp [embFun]
 
 
 
@@ -134,7 +136,9 @@ noncomputable def blockEmb (j : J) (u : lpFiniteModes ℕ) : lpFiniteModes (ℕ 
   ⟨⟨embFun j (((u : L2I ℕ)) : ℕ → ℂ), memLpTwo_of_finite_support (embFun_finite_support j u)⟩,
     embFun_finite_support j u⟩
 
-
+@[simp] theorem blockEmb_coe (j : J) (u : lpFiniteModes ℕ) (p : ℕ × J) :
+    (((blockEmb j u : lpFiniteModes (ℕ × J)) : L2I (ℕ × J)) : ℕ × J → ℂ) p
+      = embFun j (((u : L2I ℕ)) : ℕ → ℂ) p := rfl
 
 
 
@@ -194,7 +198,9 @@ noncomputable def bilH (κ : J → ℝ) : lpFiniteModes (ℕ × J) →ₗ[ℂ] L
       bilFun, hFun, shift2]
     by_cases h : 2 ≤ p.1 <;> simp [h] <;> ring
 
-
+@[simp] theorem bilH_coe (κ : J → ℝ) (x : lpFiniteModes (ℕ × J)) (p : ℕ × J) :
+    ((bilH κ x : L2I (ℕ × J)) : ℕ × J → ℂ) p
+      = bilFun κ (((x : L2I (ℕ × J))) : ℕ × J → ℂ) p := rfl
 
 
 

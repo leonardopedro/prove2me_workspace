@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterA4
 import Mathlib
 
 import Mathlib.Analysis.SpecialFunctions.Exponential
@@ -78,7 +80,6 @@ here; the group is built from the *bounded* Yosida approximants only.
 
 namespace BookProof.NonnegUnitaryGroup
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open BookProof.NonnegResolvent
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
@@ -251,7 +252,8 @@ theorem isSelfAdjoint_yosidaAt (hT : IsNonnegSelfAdjoint T) (n : ℕ) :
 noncomputable def approxU (hT : IsNonnegSelfAdjoint T) (n : ℕ) (t : ℝ) : F →L[ℂ] F :=
   expU (yosidaAt hT n) t
 
-
+@[simp] theorem approxU_zero (hT : IsNonnegSelfAdjoint T) (n : ℕ) : approxU hT n 0 = 1 :=
+  expU_zero _
 
 
 
@@ -349,13 +351,25 @@ noncomputable def unitaryU (hT : IsNonnegSelfAdjoint T)
     simp only [unitaryLinear, LinearMap.coe_mk, AddHom.coe_mk, one_mul]
     exact le_of_eq (norm_unitaryFun hT hsv t x))
 
+@[simp] theorem unitaryU_apply (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) (t : ℝ) (x : F) :
+    unitaryU hT hsv t x = unitaryFun hT t x := rfl
+
+theorem tendsto_unitaryU (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) (t : ℝ) (x : F) :
+    Tendsto (fun n : ℕ => approxU hT n t x) atTop (𝓝 (unitaryU hT hsv t x)) :=
+  tendsto_unitaryFun hT hsv t x
 
 
 
-
-
-
-
+@[simp] theorem unitaryU_zero (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) : unitaryU hT hsv 0 = 1 := by
+  ext x
+  refine tendsto_nhds_unique (tendsto_unitaryU hT hsv 0 x) ?_
+  have h : (fun n : ℕ => approxU hT n 0 x) = fun _ : ℕ => x := by
+    funext n; simp
+  rw [h]
+  simp
 
 
 

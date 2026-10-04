@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -37,7 +39,6 @@ noncomputable section
 
 namespace BookProof.ChapterSoftmaxFluctuation
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 variable {m : ℕ}
 

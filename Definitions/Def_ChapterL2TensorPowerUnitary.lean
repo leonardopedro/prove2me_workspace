@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterNsScalarVectorCurry
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -56,7 +59,6 @@ the occupation-number (`ℓ²`) spelling `dGammaOp (nsSpCol …)`.
 namespace BookProof.L2TensorPower
 
 open MeasureTheory BookProof.TensorCore BookProof.NsScalarVectorCurry
-open BookProof.SecondQuantizationCore
 open scoped TensorProduct
 
 noncomputable section
@@ -84,7 +86,8 @@ variable (μ ν) in
 def prodTensorₗᵢ : TensorProduct ℂ (Lp ℂ 2 μ) (Lp ℂ 2 ν) →ₗᵢ[ℂ] Lp ℂ 2 (μ.prod ν) :=
   (prodTensor (μ := μ) (ν := ν)).isometryOfInner inner_prodTensor
 
-
+@[simp] theorem prodTensorₗᵢ_apply (s : TensorProduct ℂ (Lp ℂ 2 μ) (Lp ℂ 2 ν)) :
+    prodTensorₗᵢ μ ν s = prodTensor s := rfl
 
 /-- `c ↦ prodMk a c` is continuous. -/
 theorem continuous_prodMk_right (a : Lp ℂ 2 μ) :

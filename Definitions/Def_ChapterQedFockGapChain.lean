@@ -1,4 +1,11 @@
 import Definitions.Def_ChapterFockDiagonalGapChain
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -49,9 +56,7 @@ noncomputable section
 namespace BookProof.QedFockGapChain
 
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
-open BookProof.FockNumberPreservingGap BookProof.FarisLavine
 open BookProof.HermiteGalerkin BookProof.HermiteCore
-open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
 open MeasureTheory
 
 section General

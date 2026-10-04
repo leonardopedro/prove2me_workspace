@@ -1,6 +1,20 @@
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
+
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
+
+
+
+
+
+
+
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 

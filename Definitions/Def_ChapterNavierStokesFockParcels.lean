@@ -124,7 +124,8 @@ theorem fockMeasure_sector (μ : Measure Ω) [SigmaFinite μ] {n : ℕ} {B : Set
 `n`-parcel sector it is the total value `∑ₖ s(ξₖ)`. -/
 def secondQuant (s : Ω → ℝ) : ParcelConf Ω → ℝ := fun c => ∑ k : Fin c.1, s (c.2 k)
 
-
+@[simp] theorem secondQuant_apply (s : Ω → ℝ) (n : ℕ) (ξ : Fin n → Ω) :
+    secondQuant s (⟨n, ξ⟩ : ParcelConf Ω) = ∑ k : Fin n, s (ξ k) := rfl
 
 theorem secondQuant_measurable {s : Ω → ℝ} (hs : Measurable s) :
     Measurable (secondQuant s) :=

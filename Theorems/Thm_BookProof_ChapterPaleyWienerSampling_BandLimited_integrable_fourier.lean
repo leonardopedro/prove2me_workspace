@@ -3,6 +3,7 @@ import Definitions.Def_ChapterShannonSampling
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Definitions.Def_ChapterA4
+open BookProof.ChapterPaleyWienerSampling
 
 variable {T : ℝ} {f g : ℝ → ℂ}
 

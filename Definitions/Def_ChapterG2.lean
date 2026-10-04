@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -76,7 +77,6 @@ discontinuous.
 
 section BRST
 
-open BookProof.ChapterG
 
 variable {A : Type*} [CommRing A] (Q : A)
 
@@ -220,30 +220,54 @@ gauge-mechanics model splits as the gauge-invariant states (`ker (·Q)`) in the
 ghost-0 sector times the coinvariants (`A ⧸ (Q)`) in the ghost-1 sector. -/
 noncomputable def brstCohomology_equiv :
     brstCohomology Q ≃ₗ[A]
-    T-closed iff it is
-annihilated by the gauge generator: physical states are the gauge-invariant
-ones. -/
-theorem brst_physical_iff_gauge_invariant (a : A) :
-    (![a, 0] ∈ brstKer Q) ↔ Q * a = 0 := by
-  convert mem_brstKer_iff Q _
-  simp
+      (LinearMap.ker (LinearMap.mulLeft A Q) × (A ⧸ Ideal.span {Q})) :=
+  LinearEquiv.ofLinear
+    (Submodule.liftQ _ (brstFwd Q) (brstFwd_ker Q))
+    (brstGinv Q)
+    (brstCohomology_equiv_right Q)
+    (brstCohomology_equiv_left Q)
+
+
 
 end BRST
 
-/-! ## G.12 — Haar averagingμtsymmetric)
-    (h_comm : ∀ i j, i ≠ j → Commute (T i) (T j)) :
-    ⨆ (χ : ι → ℂ), ⨅ i, Module.End.eigenspace (T i) (χ i) = ⊤ :=
-  LinearMap.IsSymmetric.iSup_iInf_eq_top_of_commute h_symm
-    (fun i j hij => h_comm i j hij)
+/-! ## G.12 — Haar averaging is the invariant projection -/
+
+section Haar
+
+
+variable {G : Type*} [Group G] [MeasurableSpace G]
+variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
+variable {X : Type*} [MulAction G X]
+
+
+
+
+
+
+
+end Haar
+
+/-! ## G.16 — Simultaneous diagonalization of bounded commuting normal operators
+
+From book.tex line 2358: "bounded commuting normal operators can always be
+simultaneously diagonalized." This is the spectral theorem for commuting
+normal operators.
+-/
+
+
 
 /-! ## G.17 — Haar measure for locally compact gauge groups
 
 From book.tex lines 2392–2394: "for a locally compact gauge group (a Lie group,
-for instance), a constant measure (Haar meaype*)
-    [MeasurableSpace G] [TopologicalSpace G] [LocallyCompactSpace G] [Group G]
-    [BorelSpace G] [IsTopologicalGroup G] :
-    ∃ (μ : Measure G), μ.IsHaarMeasure := by
-  refine ⟨MeasureTheory.Measure.haar, ?_⟩
-  infer_instance
+for instance), a constant measure (Haar measure) always exists which allows
+to create a functional which is gauge invariant."
+
+This is already formalized in `ChapterG.lean` via `haarAverage` and the
+Haar measure construction. We state the headline theorem here for
+completeness.
+-/
+
+
 
 end BookProof.ChapterG2

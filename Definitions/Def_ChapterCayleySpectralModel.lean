@@ -1,5 +1,8 @@
 import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -61,7 +64,7 @@ variable (T : UnboundedSelfAdjoint H)
 /-- The Cayley transform as a bounded operator. -/
 noncomputable def cayleyCLM : H →L[ℂ] H := (cayley T).toContinuousLinearEquiv
 
-
+@[simp] theorem cayleyCLM_apply (y : H) : cayleyCLM T y = cayley T y := rfl
 
 
 
@@ -77,9 +80,13 @@ the unbounded operator. -/
 noncomputable def opSymbol : C(spectrum ℂ (cayleyCLM T), ℂ) :=
   (2 : ℂ)⁻¹ • (1 + coordFn (cayleyCLM T))
 
+@[simp] theorem resSymbol_apply (z : spectrum ℂ (cayleyCLM T)) :
+    resSymbol T z = (1 - (z : ℂ)) / (2 * Complex.I) := by
+  simp [resSymbol, coordFn, div_eq_inv_mul]
 
-
-
+@[simp] theorem opSymbol_apply (z : spectrum ℂ (cayleyCLM T)) :
+    opSymbol T z = (1 + (z : ℂ)) / 2 := by
+  simp [opSymbol, coordFn, div_eq_inv_mul, mul_add]
 
 
 

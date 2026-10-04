@@ -6,6 +6,11 @@ import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_symmetric
 
 import Definitions.Def_ChapterSmComparison
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 
 

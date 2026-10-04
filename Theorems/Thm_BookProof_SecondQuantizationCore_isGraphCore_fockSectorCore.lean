@@ -9,6 +9,7 @@ import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
   (D : Submodule ℂ Hs.carrier)

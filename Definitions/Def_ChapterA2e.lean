@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map
+
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
 import Definitions.Def_ChapterA1c
@@ -62,14 +64,17 @@ equivalence. -/
 noncomputable def betaR (β : V ≃ₗᵢ[ℝ] W) : V →L[ℝ] W :=
   β.toContinuousLinearEquiv.toContinuousLinearMap
 
-
+omit [CompleteSpace V] [CompleteSpace W] in
+@[simp] lemma betaR_apply (β : V ≃ₗᵢ[ℝ] W) (x : V) : betaR β x = β x := rfl
 
 /-- Conjugation of an `ℝ`-linear operator `m : V →L[ℝ] V` by an `ℝ`-linear
 isometric equivalence `β : V ≃ₗᵢ[ℝ] W`, giving `β ∘ m ∘ β⁻¹ : W →L[ℝ] W`. -/
 noncomputable def conjClmR (β : V ≃ₗᵢ[ℝ] W) (m : V →L[ℝ] V) : W →L[ℝ] W :=
   (betaR β) ∘L m ∘L (betaR β.symm)
 
-
+omit [CompleteSpace V] [CompleteSpace W] in
+@[simp] lemma conjClmR_apply (β : V ≃ₗᵢ[ℝ] W) (m : V →L[ℝ] V) (w : W) :
+    conjClmR β m w = β (m (β.symm w)) := rfl
 
 /-- A **realification system isometry** between complex systems `(M, V)` and
 `(N, W)`: the `ℝ`-linear isometric equivalence `β` carries the realified `M` onto
@@ -92,7 +97,10 @@ def CAntilinear (β : V ≃ₗᵢ[ℝ] W) : Prop := ∀ x, β (Complex.I • x) 
 operator on `W`. -/
 noncomputable def transK (β : V ≃ₗᵢ[ℝ] W) : W →L[ℝ] W := conjClmR β mulI
 
-
+omit [CompleteSpace V] [CompleteSpace W] in
+@[simp] lemma transK_apply (β : V ≃ₗᵢ[ℝ] W) (w : W) :
+    transK β w = β (Complex.I • β.symm w) := by
+  simp [transK, conjClmR_apply, mulI_apply]
 
 
 
@@ -196,7 +204,10 @@ noncomputable def rotEquiv (θ : AntiUnitary H) (hθ : ∀ x, θ (θ x) = -x) (p
   exact ⟨rot θ (conj p) (-s) w, by
     have := congr_arg (fun T : H →L[ℝ] H => T w) hinvR; simpa using this⟩
 
-
+omit [CompleteSpace H] in
+@[simp] lemma rotEquiv_apply (θ : AntiUnitary H) (hθ : ∀ x, θ (θ x) = -x) (p s : ℂ)
+    (hps : ‖p‖ ^ 2 + ‖s‖ ^ 2 = 1) (w : H) : rotEquiv θ hθ p s hps w = p • w + s • θ w := by
+  change (rot θ p s) w = _; rw [rot_apply]
 
 
 

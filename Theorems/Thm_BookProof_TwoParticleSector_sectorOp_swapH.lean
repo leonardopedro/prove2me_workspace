@@ -1,0 +1,27 @@
+-- Generated from ChapterTwoParticleSectorEsa.lean — theorem BookProof.TwoParticleSector.sectorOp_swapH
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Mathlib
+import Definitions.Def_ChapterTwoParticleSectorEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.TensorCore
+open BookProof.TwoParticleSector
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+variable (A : D₂ →ₗ[ℂ] Hs.carrier)
+variable (D : Submodule ℂ Hs.carrier)
+
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+
+noncomputable section
+
+theorem BookProof.TwoParticleSector.sectorOp_swapH (x : sectorDom Hs D₂ 2) :
+    sectorOp Hs D₂ A 2 ⟨swapH Hs (x : (Hs.pow 2).carrier),
+        swapH_mem_sectorDom Hs D₂ x.2⟩
+      = swapH Hs (sectorOp Hs D₂ A 2 x) := by sorry

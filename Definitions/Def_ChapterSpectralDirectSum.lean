@@ -1,4 +1,7 @@
+import Theorems.Thm_BookProof_ChapterCyclicDecomposition_cfcHom_apply_mem_cyclicSubspace
+
 import Definitions.Def_ChapterCyclicDirectSum
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -66,7 +69,8 @@ theorem cyclicSubspace_eq_closure_range :
 def cfcVecTo : C(spectrum ℂ T, ℂ) →ₗ[ℂ] cyclicSubspace T hT xi :=
   LinearMap.codRestrict _ (cfcVec T hT xi) (cfcHom_apply_mem_cyclicSubspace T hT xi)
 
-
+@[simp] theorem cfcVecTo_apply (f : C(spectrum ℂ T, ℂ)) :
+    (cfcVecTo T hT xi f : H) = cfcHom hT f xi := rfl
 
 theorem denseRange_cfcVecTo : DenseRange (cfcVecTo T hT xi) := by
   change Dense (Set.range (cfcVecTo T hT xi))
@@ -94,16 +98,23 @@ def cyclicUnitary : Lp ℂ 2 (spectralMeasure T hT xi) ≃ₗᵢ[ℂ] cyclicSubs
     (fun f => by
       simpa using (norm_cfcHom_apply T hT xi f))
 
-
+@[simp] theorem cyclicUnitary_toLp (f : C(spectrum ℂ T, ℂ)) :
+    cyclicUnitary T hT xi (ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ f)
+      = cfcVecTo T hT xi f :=
+  LinearEquiv.extendOfIsometry_eq _ _ _ _ _ _ f
 
 /-- The model read inside the ambient space: an isometric embedding of `L²(μ_ξ)` into
 `H` with range the cyclic subspace of `ξ`. -/
 def cyclicEmbedding : Lp ℂ 2 (spectralMeasure T hT xi) →ₗᵢ[ℂ] H :=
   (cyclicSubspace T hT xi).subtypeₗᵢ.comp (cyclicUnitary T hT xi).toLinearIsometry
 
+@[simp] theorem cyclicEmbedding_apply (u : Lp ℂ 2 (spectralMeasure T hT xi)) :
+    cyclicEmbedding T hT xi u = (cyclicUnitary T hT xi u : H) := rfl
 
-
-
+@[simp] theorem cyclicEmbedding_toLp (f : C(spectrum ℂ T, ℂ)) :
+    cyclicEmbedding T hT xi (ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ f)
+      = cfcHom hT f xi := by
+  simp [cyclicEmbedding]
 
 
 

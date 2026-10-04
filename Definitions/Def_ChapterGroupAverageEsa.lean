@@ -39,6 +39,7 @@ Nothing is assumed: the module contains no `axiom` and no `sorry`.
 
 namespace BookProof.GroupAverage
 
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa
 
 noncomputable section
 

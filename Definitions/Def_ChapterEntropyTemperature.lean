@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterSoftmaxMaxEntropy
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 

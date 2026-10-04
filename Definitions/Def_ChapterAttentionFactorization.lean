@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -31,7 +33,6 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionFactorization
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterAttentionEntropy
 
 variable {m₁ m₂ : ℕ}

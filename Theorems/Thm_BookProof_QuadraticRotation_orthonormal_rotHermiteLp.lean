@@ -9,6 +9,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterA4
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
+open BookProof.QuadraticRotation
 
 variable {d : ℕ}
 

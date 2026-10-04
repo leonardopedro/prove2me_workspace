@@ -1,0 +1,31 @@
+-- Generated from ChapterCayleySpectralModel.lean — theorem BookProof.ChapterCayleySpectralModel.unbounded_spectral_multiplication_model
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterCayleyTransform
+import Mathlib
+import Definitions.Def_ChapterCayleySpectralModel
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterA4
+open BookProof.ChapterCayleySpectralModel
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
+variable (xi : H)
+
+
+open scoped InnerProductSpace
+open MeasureTheory
+
+
+open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
+open BookProof.ChapterCayleyTransform BookProof.ChapterAbelianGelfandModel
+open BookProof.ChapterSpectralMultiplication
+
+
+theorem BookProof.ChapterCayleySpectralModel.unbounded_spectral_multiplication_model (hxi : ‖xi‖ = 1)
+    (hcyc : DenseRange (cfcVec (cayleyCLM T) (isStarNormal_cayleyCLM T) xi)) :
+    ∃ (mu : Measure (spectrum ℂ (cayleyCLM T))) (_ : IsProbabilityMeasure mu)
+      (U : Lp ℂ 2 mu ≃ₗᵢ[ℂ] H),
+      (∀ u : Lp ℂ 2 mu, ∃ hmem : U (mulRep mu (resSymbol T) u) ∈ T.domain,
+        T.op ⟨U (mulRep mu (resSymbol T) u), hmem⟩ = U (mulRep mu (opSymbol T) u)) ∧
+      (∀ x : T.domain, ∃ u : Lp ℂ 2 mu, U (mulRep mu (resSymbol T) u) = (x : H)) := by sorry

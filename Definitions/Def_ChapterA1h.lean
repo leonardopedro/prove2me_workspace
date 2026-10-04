@@ -2,6 +2,8 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
 import Definitions.Def_ChapterA1c
 import Definitions.Def_ChapterA1d
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -95,7 +97,9 @@ operator on `Cx W`. -/
 noncomputable def rImagCx (J : W ≃ₗᵢ[ℝ] W) : Cx W →L[ℂ] Cx W :=
   Cx.cxMap (J.toContinuousLinearEquiv.toContinuousLinearMap)
 
-
+omit [CompleteSpace W] in
+@[simp] lemma rImagCx_apply (J : W ≃ₗᵢ[ℝ] W) (x : Cx W) :
+    rImagCx J x = ⟨J x.re, J x.im⟩ := rfl
 
 
 

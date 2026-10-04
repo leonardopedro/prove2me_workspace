@@ -1,14 +1,16 @@
+import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosure
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
-import Mathlib
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterYangMillsFriedrichs
 
 /-!
 # `dΓ(A)` for a Schur-class one-particle matrix: the number bound and essential
@@ -75,7 +77,6 @@ Everything in this module is `sorry`-free and `axiom`-free.
 
 namespace BookProof.FockSchur
 
-open BookProof.FockSecondQuantization BookProof.CoreBounds
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs

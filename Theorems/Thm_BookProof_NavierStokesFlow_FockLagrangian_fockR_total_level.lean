@@ -1,0 +1,19 @@
+-- Generated from ChapterNavierStokesFockParcels.lean — theorem BookProof.NavierStokesFlow.FockLagrangian.fockR_total_level
+import Mathlib
+import Definitions.Def_ChapterNavierStokesFockParcels
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+
+variable {Ω : Type*} [MeasurableSpace Ω]
+
+
+open MeasureTheory
+
+
+
+open FullEsa FockContinuum
+
+theorem BookProof.NavierStokesFlow.FockLagrangian.fockR_total_level {r : ℝ} (hr : r ≠ 0) :
+    fockR {x | momFock.total x = r} = 0 := by sorry

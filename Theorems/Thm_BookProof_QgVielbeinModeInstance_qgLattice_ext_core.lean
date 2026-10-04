@@ -6,6 +6,7 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterA4
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.QgVielbeinModeInstance
 
 variable {ι : Type*}
 variable [Fintype ι] [DecidableEq ι]
@@ -13,6 +14,7 @@ variable (L : ℕ) [NeZero L]
 
 
 
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

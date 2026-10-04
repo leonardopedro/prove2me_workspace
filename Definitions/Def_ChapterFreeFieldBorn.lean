@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -39,8 +40,6 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
-open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
-open BookProof.ChapterFreeFieldSphereSupport
 
 namespace BookProof.ChapterFreeFieldBorn
 
@@ -74,6 +73,6 @@ unit sphere (`sphereGaussian_sphere_eq_one`), and the Born map sends the sphere
 into the simplex (`bornMap_mem_stdSimplex`), so the preimage of the simplex has
 full mass.
 -/
-x hx
+
 
 end BookProof.ChapterFreeFieldBorn

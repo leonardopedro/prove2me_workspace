@@ -1,6 +1,20 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_confEnergy_zero
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -122,9 +136,11 @@ def jwSign (j : ℕ) (α : FermConf) : ℂ := (-1) ^ jwCount j α
 
 
 
+@[simp] theorem jwSign_insert_self (j : ℕ) (β : FermConf) : jwSign j (insert j β) = jwSign j β := by
+  simp [jwSign, jwCount, Finset.filter_insert]
 
-
-
+@[simp] theorem jwSign_erase_self (j : ℕ) (β : FermConf) : jwSign j (β.erase j) = jwSign j β := by
+  simp [jwSign, jwCount, Finset.filter_erase]
 
 
 
@@ -159,9 +175,15 @@ def fermCre (j : ℕ) : FermAlg →ₗ[ℂ] FermAlg :=
   Finsupp.lsum ℂ fun β => LinearMap.toSpanSingleton ℂ FermAlg
     (if j ∈ β then 0 else Finsupp.single (insert j β) (jwSign j β))
 
+@[simp] theorem fermAnn_single (j : ℕ) (β : FermConf) (c : ℂ) :
+    fermAnn j (Finsupp.single β c)
+      = c • (if j ∈ β then Finsupp.single (β.erase j) (jwSign j β) else 0) := by
+  simp [fermAnn, LinearMap.toSpanSingleton]
 
-
-
+@[simp] theorem fermCre_single (j : ℕ) (β : FermConf) (c : ℂ) :
+    fermCre j (Finsupp.single β c)
+      = c • (if j ∈ β then 0 else Finsupp.single (insert j β) (jwSign j β)) := by
+  simp [fermCre, LinearMap.toSpanSingleton]
 
 
 
@@ -188,11 +210,14 @@ abbrev FermFock := lp (fun _ : FermConf => ℂ) 2
 def fermToLp (u : FermAlg) : FermFock :=
   ⟨fun α => u α, memLpTwo_of_finite_support u.finite_support⟩
 
+@[simp] theorem fermToLp_apply (u : FermAlg) (α : FermConf) :
+    ((fermToLp u : FermFock) : FermConf → ℂ) α = u α := rfl
 
 
 
-
-
+@[simp] theorem fermToLp_zero : fermToLp (0 : FermAlg) = 0 := by
+  refine lp.ext (funext fun α => ?_)
+  simp [fermToLp]
 
 
 
@@ -209,7 +234,9 @@ def fermGrade : FermAlg →ₗ[ℂ] FermAlg :=
   Finsupp.lsum ℂ fun β => LinearMap.toSpanSingleton ℂ FermAlg
     (Finsupp.single β ((-1 : ℂ) ^ β.card))
 
-
+@[simp] theorem fermGrade_single (β : FermConf) (c : ℂ) :
+    fermGrade (Finsupp.single β c) = Finsupp.single β (((-1 : ℂ) ^ β.card) * c) := by
+  simp [fermGrade, LinearMap.toSpanSingleton, Finsupp.smul_single, mul_comm]
 
 
 
@@ -256,9 +283,11 @@ def bosOp (A : BoseAlg →ₗ[ℂ] BoseAlg) : QGGraded →ₗ[ℂ] QGGraded :=
 def ghostOp (B : FermAlg →ₗ[ℂ] FermAlg) : QGGraded →ₗ[ℂ] QGGraded :=
   TensorProduct.map LinearMap.id B
 
+@[simp] theorem bosOp_tmul (A : BoseAlg →ₗ[ℂ] BoseAlg) (x : BoseAlg) (y : FermAlg) :
+    bosOp A (x ⊗ₜ[ℂ] y) = (A x) ⊗ₜ[ℂ] y := rfl
 
-
-
+@[simp] theorem ghostOp_tmul (B : FermAlg →ₗ[ℂ] FermAlg) (x : BoseAlg) (y : FermAlg) :
+    ghostOp B (x ⊗ₜ[ℂ] y) = x ⊗ₜ[ℂ] (B y) := rfl
 
 
 
@@ -302,7 +331,8 @@ abbrev GradedIdx := BoseConf × FermConf
 /-- The total ghost energy of a ghost configuration. -/
 def ghostEnergy (g : ℕ → ℝ) (α : FermConf) : ℝ := ∑ a ∈ α, g a
 
-
+@[simp] theorem ghostEnergy_empty (g : ℕ → ℝ) : ghostEnergy g (∅ : FermConf) = 0 := by
+  simp [ghostEnergy]
 
 
 
@@ -313,7 +343,10 @@ indefinite. -/
 def qgGradedSymbol (omega g : ℕ → ℝ) : GradedIdx → ℝ :=
   fun p => BookProof.NavierStokesFlow.FockOfFock.confEnergy omega p.1 + ghostEnergy g p.2
 
-
+/-- The vacuum has zero energy. -/
+@[simp] theorem qgGradedSymbol_vacuum (omega g : ℕ → ℝ) :
+    qgGradedSymbol omega g (0, (∅ : FermConf)) = 0 := by
+  simp [qgGradedSymbol, BookProof.NavierStokesFlow.FockOfFock.confEnergy_zero]
 
 
 

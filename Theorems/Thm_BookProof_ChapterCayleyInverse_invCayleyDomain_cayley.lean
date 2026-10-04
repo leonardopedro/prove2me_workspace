@@ -7,6 +7,7 @@ import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterA4
 open BookProof.ChapterCayleyTransform
+open BookProof.ChapterCayleyInverse
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (V : H ≃ₗᵢ[ℂ] H)

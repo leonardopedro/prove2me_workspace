@@ -178,7 +178,10 @@ def main():
 
     ok = sorted(m[len("Def_"):] for m in cand if dres.get(m) == "OK")
     # The theorem stubs that DID build are publishable in their own right.
-    okth = sorted(ok_thm)
+    # Write SLUGS, not module ids. Writing `Thm_<slug>` made every --only-file
+    # round produce `Thm_Thm_<slug>`, and all 42 failed on `no such file` --
+    # a harness bug reported as 42 content failures.
+    okth = sorted(m[len("Thm_"):] if m.startswith("Thm_") else m for m in ok_thm)
     print(f"candidate defs OK: {len(ok)}/{len(targets)}")
     if a.report:
         with open(a.report, "w") as fh:

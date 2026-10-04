@@ -3,6 +3,7 @@ import Definitions.Def_ChapterA
 import Mathlib
 import Definitions.Def_ChapterA1b
 import Definitions.Def_ChapterA4
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

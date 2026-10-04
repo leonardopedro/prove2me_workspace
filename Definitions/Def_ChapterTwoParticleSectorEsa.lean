@@ -1,5 +1,8 @@
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -56,7 +59,9 @@ def swapTwo : X ⊗[ℂ] (X ⊗[ℂ] ℂ) ≃ₗᵢ[ℂ] X ⊗[ℂ] (X ⊗[ℂ] 
     ((TensorProduct.congrIsometry (TensorProduct.commIsometry ℂ X X)
       (LinearIsometryEquiv.refl ℂ ℂ)).trans (TensorProduct.assocIsometry ℂ X X ℂ))
 
-
+@[simp] theorem swapTwo_tmul (x y : X) (c : ℂ) :
+    swapTwo X (x ⊗ₜ[ℂ] (y ⊗ₜ[ℂ] c)) = y ⊗ₜ[ℂ] (x ⊗ₜ[ℂ] c) := by
+  simp [swapTwo, TensorProduct.congrIsometry]
 
 variable {X}
 
@@ -76,9 +81,14 @@ def swapH : (Hs.pow 2).carrier →ₗ[ℂ] (Hs.pow 2).carrier :=
 def swapDom : ((domSpace Hs D₂).pow 2).carrier →ₗ[ℂ] ((domSpace Hs D₂).pow 2).carrier :=
   (swapTwo (X := D₂)).toLinearEquiv.toLinearMap
 
+@[simp] theorem swapH_tmul (x y : Hs.carrier) (c : ℂ) :
+    swapH Hs (x ⊗ₜ[ℂ] (y ⊗ₜ[ℂ] c) : (Hs.pow 2).carrier) = y ⊗ₜ[ℂ] (x ⊗ₜ[ℂ] c) :=
+  swapTwo_tmul Hs.carrier x y c
 
-
-
+@[simp] theorem swapDom_tmul (a b : D₂) (c : ℂ) :
+    swapDom Hs D₂ (a ⊗ₜ[ℂ] (b ⊗ₜ[ℂ] c) : ((domSpace Hs D₂).pow 2).carrier)
+      = b ⊗ₜ[ℂ] (a ⊗ₜ[ℂ] c) :=
+  swapTwo_tmul (D₂ : Type) a b c
 
 
 

@@ -1,8 +1,23 @@
+import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
+
 import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumOp_le
 
 import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_le_of_schur
 
 import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
 
 
@@ -217,7 +232,7 @@ theorem nextPart_injective {n : ℕ} : Function.Injective (nextPart (n := n)) :=
 def nextEquiv {n : ℕ} : Fin n ≃ Fin n :=
   Equiv.ofBijective nextPart (Finite.injective_iff_bijective.mp nextPart_injective)
 
-
+@[simp] theorem nextEquiv_apply {n : ℕ} (p : Fin n) : nextEquiv p = nextPart p := rfl
 
 theorem sum_comp_nextPart {n : ℕ} {M : Type*} [AddCommMonoid M] (f : Fin n → M) :
     ∑ p : Fin n, f (nextPart p) = ∑ p : Fin n, f p :=

@@ -7,6 +7,7 @@ import Definitions.Def_ChapterWeakSecondDerivative
 import Mathlib
 import Definitions.Def_ChapterWallDeficiencyObstruction
 import Definitions.Def_ChapterA4
+open BookProof.WallDeficiencyObstruction
 
 
 

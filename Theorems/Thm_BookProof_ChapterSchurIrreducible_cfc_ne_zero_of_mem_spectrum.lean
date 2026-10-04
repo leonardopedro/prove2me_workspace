@@ -1,0 +1,19 @@
+-- Generated from ChapterSchurIrreducible.lean — theorem BookProof.ChapterSchurIrreducible.cfc_ne_zero_of_mem_spectrum
+import Definitions.Def_ChapterA
+import Mathlib
+import Definitions.Def_ChapterSchurIrreducible
+import Definitions.Def_ChapterA4
+open BookProof.ChapterSchurIrreducible
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+
+
+open scoped ComplexConjugate InnerProductSpace
+
+
+open BookProof.ChapterA BookProof.ChapterA.System
+
+
+theorem BookProof.ChapterSchurIrreducible.cfc_ne_zero_of_mem_spectrum [Nontrivial V] {T : V →L[ℂ] V} (hT : IsSelfAdjoint T)
+    {f : ℝ → ℝ} (hf : Continuous f) {p : ℝ} (hp : p ∈ spectrum ℝ T) (hfp : f p ≠ 0) :
+    cfc f T ≠ 0 := by sorry

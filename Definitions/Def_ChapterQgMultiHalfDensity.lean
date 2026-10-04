@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterScalaronDensitizedTransfer
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterQuantumGravityHalfDensity
 import Mathlib
 
 
@@ -182,7 +184,10 @@ def multiHalfDensityUnitary :
 
 
 
-
+@[simp] theorem multiHalfDensityUnitary_norm
+    (g : Lp ℂ 2 (BookProof.ScalaronDensitized.physMeasure.prod mu)) :
+    ‖multiHalfDensityUnitary mu g‖ = ‖g‖ :=
+  (multiHalfDensityUnitary mu).norm_map g
 
 
 

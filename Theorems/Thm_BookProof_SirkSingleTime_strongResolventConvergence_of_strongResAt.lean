@@ -8,6 +8,7 @@ import Definitions.Def_ChapterA4
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
+open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}

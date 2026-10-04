@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -71,8 +72,13 @@ instance noAtoms_restrict_compl_atomSet : NullSingletonClass (mu.restrict (atomS
     simp [hempty]
   · refine le_antisymm ?_ zero_le
     exact le_trans (Measure.restrict_apply_le _ _)
-      (le_of_eq (measure_singleton_eq_zero_of_notMem_atomSet muheSe mu).compl]
-  simp
+      (le_of_eq (measure_singleton_eq_zero_of_notMem_atomSet mu hx))
+
+
+
+
+
+
 
 end AtomSet
 
@@ -81,11 +87,12 @@ end AtomSet
 section Model
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
-open BookProof.ChapterAbelianDirectSum
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [_diffuse_decomposition (mu x)
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+
 
 end Model
 

@@ -10,6 +10,7 @@ import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.StrichartzWave
+open BookProof.WallDeficiencyObstruction
 
 
 

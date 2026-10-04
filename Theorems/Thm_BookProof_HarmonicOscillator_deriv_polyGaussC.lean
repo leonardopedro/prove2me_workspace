@@ -5,6 +5,7 @@ import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterA4
 open BookProof.HermiteCore
+open BookProof.HarmonicOscillator
 
 
 

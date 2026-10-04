@@ -1,5 +1,15 @@
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterFarisLavineOnly
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -110,11 +120,12 @@ gauge-fixing families. -/
 def qgFullVec : (Fin 64) ⊕ ((Fin 4) ⊕ (Fin 4 × Fin 4)) → Fin 84 → ℝ :=
   Sum.elim torsionVec qgGaugeVec
 
+@[simp] theorem qgFullVec_torsion (m : Fin 64) : qgFullVec (Sum.inl m) = torsionVec m := rfl
 
+@[simp] theorem qgFullVec_div3 (a : Fin 4) : qgFullVec (Sum.inr (Sum.inl a)) = div3Vec a := rfl
 
-
-
-
+@[simp] theorem qgFullVec_timeDeriv (q : Fin 4 × Fin 4) :
+    qgFullVec (Sum.inr (Sum.inr q)) = timeDerivVec q := rfl
 
 
 

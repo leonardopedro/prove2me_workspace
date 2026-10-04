@@ -5,6 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterA4
+open BookProof.HarmonicOscillator
 
 
 

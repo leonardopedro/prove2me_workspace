@@ -1,4 +1,14 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_add
+
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_smul
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
+
 import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
+
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le
+
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_support_hFun
 
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Mathlib
@@ -54,7 +64,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace SignFlip
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
 
 /-! ## Essential self-adjointness is a unitary invariant -/
 
@@ -100,7 +110,8 @@ noncomputable def flipMap (p : ι → ℕ) : L2I ι →ₗ[ℂ] L2I ι where
     simp only [flipFun, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, RingHom.id_apply]
     ring
 
-
+@[simp] theorem flipMap_coe (p : ι → ℕ) (x : L2I ι) (β : ι) :
+    ((flipMap p x : L2I ι) : ι → ℂ) β = (-1 : ℂ) ^ p β * ((x : ι → ℂ) β) := rfl
 
 theorem flipMap_flipMap (p : ι → ℕ) (x : L2I ι) : flipMap p (flipMap p x) = x := by
   refine lp.ext (funext fun β => ?_)
@@ -126,7 +137,8 @@ noncomputable def flipU (p : ι → ℕ) : L2I ι ≃ₗᵢ[ℂ] L2I ι where
       (LinearMap.ext fun x => flipMap_flipMap p x) (LinearMap.ext fun x => flipMap_flipMap p x)
   norm_map' := norm_flipMap p
 
-
+@[simp] theorem flipU_coe (p : ι → ℕ) (x : L2I ι) (β : ι) :
+    ((flipU p x : L2I ι) : ι → ℂ) β = (-1 : ℂ) ^ p β * ((x : ι → ℂ) β) := rfl
 
 
 
@@ -147,9 +159,10 @@ noncomputable def flipU (p : ι → ℕ) : L2I ι ≃ₗᵢ[ℂ] L2I ι where
 /-- The sign of the constant part of the fiber field, as a scalar. -/
 noncomputable def esgn (c : ℝ) : ℂ := if c < 0 then -1 else 1
 
+@[simp] theorem esgn_of_nonneg {c : ℝ} (hc : 0 ≤ c) : esgn c = 1 := by
+  simp [esgn, not_lt.mpr hc]
 
-
-
+@[simp] theorem esgn_of_neg {c : ℝ} (hc : c < 0) : esgn c = -1 := by simp [esgn, hc]
 
 
 
@@ -250,7 +263,10 @@ noncomputable def sblockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
     rw [hFun_smul, hFun_smul]
     ring
 
-
+@[simp] theorem sblockH_coe (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (x : lpFiniteModes (ℕ × J))
+    (q : ℕ × J) :
+    ((sblockH κ c hκ x : L2I (ℕ × J)) : ℕ × J → ℂ) q
+      = sblockFun κ c hκ (((x : L2I (ℕ × J))) : ℕ × J → ℂ) q := rfl
 
 
 

@@ -2,10 +2,25 @@ import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bou
 
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense
 
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
+
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
+
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
+
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+
 import Definitions.Def_ChapterDiagonalDGammaEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneGenerator
 import Definitions.Def_ChapterStoneSeparable
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -156,7 +171,8 @@ def tmulL : E₁ →L[ℝ] E₂ →L[ℝ] (E₁ ⊗[ℂ] E₂) :=
 
 variable {E₁ E₂}
 
-
+@[simp]
+lemma tmulL_apply (a : E₁) (b : E₂) : tmulL E₁ E₂ a b = a ⊗ₜ[ℂ] b := rfl
 
 local instance : ContinuousSMul ℝ (E₁ ⊗[ℂ] E₂) := by
   have h : IsBoundedSMul ℝ (E₁ ⊗[ℂ] E₂) := NormedSpace.toIsBoundedSMul

@@ -1,5 +1,9 @@
 import Definitions.Def_ChapterFermionFock
 import Definitions.Def_ChapterSuperBracket
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 
 
@@ -70,11 +74,14 @@ def otimes (v : α →₀ ℂ) (w : β →₀ ℂ) : (α × β) →₀ ℂ :=
     exact Finset.mem_product.mpr
       ⟨Finsupp.mem_support_iff.mpr h1, Finsupp.mem_support_iff.mpr h2⟩)
 
+@[simp] theorem otimes_apply (v : α →₀ ℂ) (w : β →₀ ℂ) (p : α × β) :
+    otimes v w p = v p.1 * w p.2 := rfl
 
+@[simp] theorem otimes_zero_left (w : β →₀ ℂ) : otimes (0 : α →₀ ℂ) w = 0 := by
+  ext p; simp
 
-
-
-
+@[simp] theorem otimes_zero_right (v : α →₀ ℂ) : otimes v (0 : β →₀ ℂ) = 0 := by
+  ext p; simp
 
 
 

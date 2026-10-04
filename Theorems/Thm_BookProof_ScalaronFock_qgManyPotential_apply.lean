@@ -12,6 +12,7 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.Starobinsky
+open BookProof.ScalaronFock
 
 variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
   [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]

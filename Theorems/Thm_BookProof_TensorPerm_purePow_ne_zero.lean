@@ -1,0 +1,19 @@
+-- Generated from ChapterTensorPermutation.lean — theorem BookProof.TensorPerm.purePow_ne_zero
+import Mathlib
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.TensorCore
+open BookProof.TensorPerm
+
+variable (E : BookProof.TensorCore.IPSpace)
+
+
+
+open scoped TensorProduct
+open BookProof.TensorCore BookProof.GroupAverage
+
+noncomputable section
+
+theorem BookProof.TensorPerm.purePow_ne_zero {n : ℕ} {f : Fin n → E.carrier} (hf : ∀ i, f i ≠ 0) :
+    purePow E n f ≠ 0 := by sorry

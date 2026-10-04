@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterLegendrePolynomial
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterRadialLaplacian
 import Mathlib
 
 
@@ -45,8 +47,6 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 namespace BookProof.ChapterSolidHarmonic
 
 open Laplacian InnerProductSpace Polynomial
-open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
-open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
@@ -57,7 +57,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 noncomputable def nullCLM (u v : E) : E →L[ℝ] ℂ :=
   Complex.ofRealCLM.comp (innerCLM E u) + Complex.I • (Complex.ofRealCLM.comp (innerCLM E v))
 
-
+@[simp] theorem nullCLM_apply (u v x : E) :
+    nullCLM u v x = (⟪u, x⟫_ℝ : ℂ) + Complex.I * (⟪v, x⟫_ℝ : ℂ) := rfl
 
 
 

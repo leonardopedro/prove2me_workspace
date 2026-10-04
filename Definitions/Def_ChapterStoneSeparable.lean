@@ -1,16 +1,21 @@
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext'
+import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime
 
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_gen_stoneU_eq
 
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq
 
-import Theorems.Thm_BookProof_ChapterUnboundedPosition_mulDomain_dense
+import Theorems.Thm_BookProof_ChapterUnboundedPosition_tendsto_phaseUnitary
 
-import Theorems.Thm_BookProof_ChapterUnboundedPosition_mulOp_symmetric
+import Theorems.Thm_BookProof_ChapterUnboundedPosition_mulDomain_dense
 
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_mulOp_isSelfAdjointOn
 
 import Definitions.Def_ChapterStoneTheorem
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -74,9 +79,11 @@ noncomputable def stoneEquiv :
   left_inv T := T.gen_stoneGroup_eq
   right_inv G := WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)
 
+@[simp] theorem stoneEquiv_apply_U (T : UnboundedSelfAdjoint H) (t : ℝ) :
+    (stoneEquiv T).U t = T.stoneU t := rfl
 
-
-
+@[simp] theorem stoneEquiv_symm_apply (G : WeakMeasurableUnitaryGroup H) :
+    stoneEquiv.symm G = G.gen := rfl
 
 end Abstract
 
@@ -121,7 +128,8 @@ noncomputable def mulSA (f : ℤ → ℝ) : UnboundedSelfAdjoint L2Z where
 noncomputable def phaseCLM (f : ℤ → ℝ) (t : ℝ) : L2Z →L[ℂ] L2Z :=
   (phaseUnitary f (-t)).toLinearIsometry.toContinuousLinearMap
 
-
+@[simp] theorem phaseCLM_apply (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) :
+    phaseCLM f t psi = phaseUnitary f (-t) psi := rfl
 
 /-- The phase group is strongly continuous in `t`, not merely at `0`. -/
 theorem continuous_phaseUnitary (f : ℤ → ℝ) (psi : L2Z) :

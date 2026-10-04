@@ -67,7 +67,8 @@ open Matrix
 /-- A Rademacher sign from a bit. -/
 def sgn (b : Bool) : ℝ := if b then 1 else -1
 
-
+@[simp] theorem sgn_sq (b : Bool) : sgn b ^ 2 = 1 := by
+  cases b <;> simp [sgn]
 
 variable {d k : ℕ}
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterA1b
 import Definitions.Def_ChapterA1c
 import Definitions.Def_ChapterA1d
 import Definitions.Def_ChapterA1e
+import Definitions.Def_Complexification
 import Mathlib
 
 
@@ -53,7 +54,8 @@ noncomputable def conjFixed (θ : AntiUnitary V) : Submodule ℝ V where
     have : (r : ℝ) • v = ((r : ℝ) : ℂ) • v := by simp [Complex.coe_smul]
     rw [this, θ.map_smulₛₗ, hv]; simp
 
-
+omit [CompleteSpace V] in
+@[simp] lemma mem_conjFixed {θ : AntiUnitary V} {v : V} : v ∈ conjFixed θ ↔ θ v = v := Iff.rfl
 
 
 

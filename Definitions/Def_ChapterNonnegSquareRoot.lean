@@ -1,3 +1,7 @@
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -55,8 +59,6 @@ Two further consequences are recorded.
 namespace BookProof.NonnegSquareRoot
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
-open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
@@ -152,7 +154,8 @@ noncomputable def sqrtRel (hT : IsNonnegSelfAdjoint T) : Submodule ℂ (F × F) 
 def smulSnd (c : ℝ) : (F × F) →ₗ[ℂ] (F × F) :=
   (LinearMap.fst ℂ F F).prod ((c : ℂ) • LinearMap.snd ℂ F F)
 
-
+omit [CompleteSpace F] in
+@[simp] theorem smulSnd_apply (c : ℝ) (p : F × F) : smulSnd c p = (p.1, (c : ℂ) • p.2) := rfl
 
 /-- The scaled relation `c T = {(x, c z) : (x, z) ∈ T}`, for a real scalar `c`. -/
 def smulRel (c : ℝ) (T : Submodule ℂ (F × F)) : Submodule ℂ (F × F) := T.map (smulSnd c)
@@ -163,8 +166,8 @@ theorem mem_smulRel_iff {c : ℝ} (hc : c ≠ 0) {p : F × F} :
   have hc' : (c : ℂ) ≠ 0 := by exact_mod_cast hc
   constructor
   · rintro ⟨q, hq, rfl⟩
-    convert hq using 2
-    rw [smulSnd_apply, smul_smul, inv_mul_cancel₀ hc', one_smul]
+    simp only [smulSnd_apply, smul_smul, inv_mul_cancel₀ hc', one_smul]
+    exact hq
   · intro hp
     refine ⟨(p.1, ((c : ℂ))⁻¹ • p.2), hp, ?_⟩
     simp [smul_smul, mul_inv_cancel₀ hc']

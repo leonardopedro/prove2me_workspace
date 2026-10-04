@@ -1,0 +1,19 @@
+-- Generated from ChapterSpectralMultiplication.lean — theorem BookProof.ChapterSpectralMultiplication.cfcHom_coordFn
+import Mathlib
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterA4
+open BookProof.ChapterSpectralMultiplication
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
+variable (hcyc : DenseRange (cfcVec T hT xi))
+
+
+open MeasureTheory Complex
+open scoped ComplexOrder
+
+
+open BookProof.ChapterAbelianGelfandModel
+
+
+theorem BookProof.ChapterSpectralMultiplication.cfcHom_coordFn : cfcHom hT (coordFn T) = T := by sorry

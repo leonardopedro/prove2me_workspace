@@ -14,6 +14,7 @@ import Definitions.Def_ChapterA4
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

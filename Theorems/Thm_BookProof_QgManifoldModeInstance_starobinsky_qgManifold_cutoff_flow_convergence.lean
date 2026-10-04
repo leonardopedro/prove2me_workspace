@@ -15,6 +15,7 @@ open BookProof.FockSecondQuantization
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
+open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)
@@ -24,6 +25,9 @@ variable (S : VielbeinSpectrum ι)
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
 
 noncomputable section
 

@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 
 
@@ -50,3 +52,8 @@ def cnv (u ρ : Vd d → ℂ) : Vd d → ℂ :=
 
 
 
+
+
+end
+
+end BookProof.ConvolutionCalc

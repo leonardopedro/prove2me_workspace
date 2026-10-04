@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterA4
 import Mathlib
 
 import Mathlib.Analysis.SpecialFunctions.Exponential
@@ -52,8 +54,6 @@ Its rate of convergence on the domain is `‖e^{-tT}h − e^{-tT_m}h‖ ≤ t �
 
 namespace BookProof.NonnegSemigroup
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegResolvent
-open BookProof.NonnegUnitaryGroup
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 
@@ -71,7 +71,8 @@ noncomputable def expNeg (A : F →L[ℂ] F) (t : ℝ) : F →L[ℂ] F :=
 @[simp] theorem expNeg_zero (A : F →L[ℂ] F) : expNeg A 0 = 1 := by
   simp [expNeg]
 
-
+@[simp] theorem expNeg_zero_op (t : ℝ) : expNeg (0 : F →L[ℂ] F) t = 1 := by
+  simp [expNeg]
 
 
 
@@ -213,7 +214,8 @@ theorem yosidaAt_nonneg (hT : IsNonnegSelfAdjoint T) (n : ℕ) : 0 ≤ yosidaAt 
 noncomputable def approxS (hT : IsNonnegSelfAdjoint T) (n : ℕ) (t : ℝ) : F →L[ℂ] F :=
   expNeg (yosidaAt hT n) t
 
-
+@[simp] theorem approxS_zero (hT : IsNonnegSelfAdjoint T) (n : ℕ) : approxS hT n 0 = 1 :=
+  expNeg_zero _
 
 
 
@@ -331,13 +333,25 @@ noncomputable def semigroupS (hT : IsNonnegSelfAdjoint T)
     simp only [semigroupLinear, LinearMap.coe_mk, AddHom.coe_mk, one_mul]
     exact norm_semigroupFun_le hT hsv ht x)
 
+@[simp] theorem semigroupS_apply (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) {t : ℝ} (ht : 0 ≤ t) (x : F) :
+    semigroupS hT hsv ht x = semigroupFun hT t x := rfl
+
+theorem tendsto_semigroupS (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) {t : ℝ} (ht : 0 ≤ t) (x : F) :
+    Tendsto (fun n : ℕ => approxS hT n t x) atTop (𝓝 (semigroupS hT hsv ht x)) :=
+  tendsto_semigroupFun hT hsv ht x
 
 
 
-
-
-
-
+@[simp] theorem semigroupS_zero (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) : semigroupS hT hsv (le_refl (0 : ℝ)) = 1 := by
+  ext x
+  refine tendsto_nhds_unique (tendsto_semigroupS hT hsv (le_refl (0 : ℝ)) x) ?_
+  have h : (fun n : ℕ => approxS hT n 0 x) = fun _ : ℕ => x := by
+    funext n; simp
+  rw [h]
+  simp
 
 
 

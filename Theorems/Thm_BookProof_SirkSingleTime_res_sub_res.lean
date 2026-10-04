@@ -5,6 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterA4
+open BookProof.SirkSingleTime
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

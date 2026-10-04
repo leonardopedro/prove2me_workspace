@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterLorentzRealRepSum
 import Definitions.Def_ChapterLorentzRealRepFull
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
 import Mathlib
 
 

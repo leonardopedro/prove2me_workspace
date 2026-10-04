@@ -4,8 +4,16 @@ import Theorems.Thm_BookProof_EsaClosure_clExt_symmetricOn
 
 import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
 
+import Theorems.Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain
+
 import Definitions.Def_ChapterFlowDGammaEsa
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
 
@@ -112,9 +120,15 @@ def closureSelfAdjoint (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set H
       exact ⟨clExt A hdense hsym ⟨phi, hphi⟩,
         fun psi => clExt_symmetricOn A hdense hsym psi ⟨phi, hphi⟩⟩
 
+@[simp] theorem closureSelfAdjoint_domain (A : D →ₗ[ℂ] Hs.carrier)
+    (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
+    (hesa : EssentiallySelfAdjointOn D A) :
+    (closureSelfAdjoint A hdense hsym hesa).domain = clDom A := rfl
 
-
-
+@[simp] theorem closureSelfAdjoint_op (A : D →ₗ[ℂ] Hs.carrier)
+    (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
+    (hesa : EssentiallySelfAdjointOn D A) :
+    (closureSelfAdjoint A hdense hsym hesa).op = clExt A hdense hsym := rfl
 
 end Closure
 

@@ -1,6 +1,15 @@
 import Definitions.Def_ChapterSmOuterFock
 import Definitions.Def_ChapterSmComparisonEsa
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 
@@ -42,11 +51,8 @@ Nothing is assumed: the module contains no `axiom` and no `sorry`.
 namespace BookProof.SmFockEsa
 
 open MvPolynomial
-open BookProof.SmOneParticle BookProof.SmHamiltonian BookProof.SmOuterFock
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.TensorCore BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa
 
 noncomputable section
 

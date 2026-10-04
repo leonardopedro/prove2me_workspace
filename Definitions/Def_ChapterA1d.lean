@@ -2,6 +2,7 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
 import Definitions.Def_ChapterA1b
 import Definitions.Def_ChapterA1c
+import Definitions.Def_Complexification
 import Mathlib
 
 
@@ -53,7 +54,7 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V]
 `ℝ`-linear bounded operator (restriction of scalars). -/
 noncomputable def rxMap (m : V →L[ℂ] V) : V →L[ℝ] V := m.restrictScalars ℝ
 
-
+@[simp] lemma rxMap_apply (m : V →L[ℂ] V) (x : V) : rxMap m x = m x := rfl
 
 /-- **Realification of a complex system.** `rxSystem M` has as operators the
 realifications of the operators of `M`. -/
@@ -73,7 +74,7 @@ noncomputable def Jmap : V ≃ₗᵢ[ℝ] V where
   right_inv x := by dsimp; rw [smul_smul]; simp
   norm_map' x := by dsimp; rw [norm_smul]; simp
 
-
+@[simp] lemma Jmap_apply (x : V) : Jmap x = (Complex.I : ℂ) • x := rfl
 
 
 
@@ -85,9 +86,14 @@ noncomputable def Jmap : V ≃ₗᵢ[ℝ] V where
 subspace of `V^r` (restriction of scalars). -/
 noncomputable def realSub (X : Submodule ℂ V) : Submodule ℝ V := X.restrictScalars ℝ
 
+@[simp] lemma mem_realSub {X : Submodule ℂ V} {x : V} : x ∈ realSub X ↔ x ∈ X :=
+  Submodule.restrictScalars_mem ℝ X x
 
-
-
+/-- `realSub X` is `J`-invariant. -/
+lemma realSub_Jinvariant (X : Submodule ℂ V) : ∀ x ∈ realSub X, Jmap x ∈ realSub X := by
+  intro x hx
+  rw [mem_realSub] at *
+  exact X.smul_mem _ hx
 
 /-- **Complexification of a `J`-invariant real subspace.** A real subspace `Y`
 closed under `J = i·` is automatically a complex subspace. -/
@@ -108,17 +114,26 @@ noncomputable def cplxSub (Y : Submodule ℝ V) (hJ : ∀ y ∈ Y, (Complex.I : 
     rw [hz]
     exact Y.add_mem (Y.smul_mem _ hy) (Y.smul_mem _ (hJ y hy))
 
+@[simp] lemma mem_cplxSub {Y : Submodule ℝ V} {hJ : ∀ y ∈ Y, (Complex.I : ℂ) • y ∈ Y}
+    {x : V} : x ∈ cplxSub Y hJ ↔ x ∈ Y := Iff.rfl
 
+/-- Round-trip: `realSub (cplxSub Y hJ) = Y`. -/
+@[simp] lemma realSub_cplxSub (Y : Submodule ℝ V) (hJ : ∀ y ∈ Y, (Complex.I : ℂ) • y ∈ Y) :
+    realSub (cplxSub Y hJ) = Y := by
+  ext x; simp [mem_realSub]
 
-
-
-
+/-- Round-trip: `cplxSub (realSub X) _ = X`. -/
+@[simp] lemma cplxSub_realSub (X : Submodule ℂ V) :
+    cplxSub (realSub X) (realSub_Jinvariant X) = X := by
+  ext x; exact mem_cplxSub.trans mem_realSub
 
 /-! ### Extremal values -/
 
+@[simp] lemma realSub_bot : realSub (⊥ : Submodule ℂ V) = ⊥ := by
+  ext x; simp [mem_realSub]
 
-
-
+@[simp] lemma realSub_top : realSub (⊤ : Submodule ℂ V) = ⊤ := by
+  ext x; simp
 
 /-! ### Subsystem preservation -/
 

@@ -6,6 +6,7 @@ import Definitions.Def_ChapterBrstTruncationLeakage
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterA4
 open BookProof.BrstLeakage
+open BookProof.BrstUnboundedLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)

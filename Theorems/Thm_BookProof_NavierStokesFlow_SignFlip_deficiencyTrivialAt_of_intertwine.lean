@@ -1,0 +1,20 @@
+-- Generated from ChapterNavierStokesSignFlip.lean — theorem BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_of_intertwine
+import Mathlib
+import Definitions.Def_ChapterNavierStokesSignFlip
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+open BookProof.NavierStokesFlow
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
+
+open scoped ENNReal
+
+
+
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+theorem BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_of_intertwine (U : F ≃ₗᵢ[ℂ] F) (T T' : D →ₗ[ℂ] F)
+    (hU : ∀ v : D, U (v : F) ∈ D)
+    (hcomm : ∀ v : D, U (T v) = T' ⟨U (v : F), hU v⟩) (z : ℂ)
+    (hT : DeficiencyTrivialAt D T z) : DeficiencyTrivialAt D T' z := by sorry

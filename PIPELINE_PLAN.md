@@ -593,6 +593,26 @@ Both directions are now real lists. The lesson is not new but keeps paying: **a
 container that accepts a generator in place of a sequence will silently accept the
 wrong thing**, and the symptom appears far away, as a change in an unrelated count.
 
+### §2.7b The server rejects `_prime` too, not just `'`
+
+The apostrophe migration (§6.1) rewrote `'` to `_prime`. That is fine as a
+**slug** and fine in a `theorem_name` only if the server accepts it — it does not:
+
+```
+submit-problem rejected: theorem_name must be a valid Lean identifier
+(identifier segments separated by '.' for namespaces)
+```
+
+for `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ext_prime`.
+
+So **`_prime` is a local-only convention.** The declaration inside the stub can be
+named anything the *Lean* side accepts; the *submitted* `theorem_name` must be a
+valid identifier, which `_prime` is not. Park such items rather than retrying, and
+keep slug and submitted name as two separate fields — conflating them is what put
+`_prime` into the name in the first place.
+
+One item hit this in the 42-theorem batch; it is parked.
+
 ### §2.11 Execution order from here
 
 **Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`

@@ -1,0 +1,31 @@
+-- Generated from ChapterFermionFock.lean — theorem BookProof.FermionFock.ghostCAR_creF_annF
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Mathlib
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterA4
+open BookProof.BRSTNilpotent
+open BookProof.FermionFock
+
+variable {ι : Type*} [DecidableEq ι]
+
+
+
+open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.FriedrichsExtension
+open BookProof.YangMillsFriedrichs
+open BookProof.HashimotoShiftInvert
+open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
+
+noncomputable section
+
+theorem BookProof.FermionFock.ghostCAR_creF_annF (n : ℕ) :
+    BookProof.BRSTNilpotent.GhostCAR (ghostChi n) (ghostBeta n) where
+  chichi a b := by sorry

@@ -10,6 +10,7 @@ import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
+open BookProof.EsaPair
 
 variable {Hs : IPSpace} (P : ESAPair Hs)
 

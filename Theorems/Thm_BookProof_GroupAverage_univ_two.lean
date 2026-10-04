@@ -4,6 +4,7 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterA4
+open BookProof.GroupAverage
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {G : Type*} [Group G] [Fintype G]
@@ -14,6 +15,7 @@ variable {T : D →ₗ[ℂ] F}
 
 
 
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa
 
 noncomputable section
 

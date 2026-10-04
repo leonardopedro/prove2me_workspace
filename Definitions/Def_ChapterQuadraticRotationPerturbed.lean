@@ -1,7 +1,22 @@
+import Theorems.Thm_BookProof_QuadraticRotation_orthonormal_rotHermiteLp
+
+import Theorems.Thm_BookProof_QuadraticRotation_span_rotHermiteLp
+
+
+
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 
@@ -69,11 +84,9 @@ open MeasureTheory MvPolynomial Matrix
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.NavierStokesFlow.SignFlip
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 open BookProof.QuadraticRotation
-open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
@@ -92,7 +105,9 @@ def rotHermiteBasis {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) :
       rw [Submodule.dense_iff_topologicalClosure_eq_top] at hd
       rw [hd])
 
-
+@[simp] theorem rotHermiteBasis_apply {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1)
+    (a : Fin d →₀ ℕ) : rotHermiteBasis hO a = rotHermiteLp O a := by
+  rw [rotHermiteBasis, HilbertBasis.coe_mk]
 
 /-- **The rotation unitary of `L²(ℝᵈ)`**: the unitary carrying the plain product Hermite
 basis onto the rotated one. -/

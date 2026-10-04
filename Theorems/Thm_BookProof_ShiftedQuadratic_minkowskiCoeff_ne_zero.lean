@@ -12,6 +12,7 @@ import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterA4
 open BookProof.HyperbolicQuadratic
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

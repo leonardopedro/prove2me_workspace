@@ -12,6 +12,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
+open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]
 variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
@@ -23,6 +24,7 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

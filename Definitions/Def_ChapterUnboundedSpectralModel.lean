@@ -1,5 +1,8 @@
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -97,7 +100,8 @@ def cayleyFn (T : UnboundedSelfAdjoint H) : C(spectrum ℂ (resOp T), ℂ) where
   toFun z := ((z.1.im - ‖z.1‖ ^ 2 : ℝ) : ℂ)
   continuous_toFun := by fun_prop
 
-
+@[simp] theorem cayleyFn_apply (T : UnboundedSelfAdjoint H) (z : spectrum ℂ (resOp T)) :
+    cayleyFn T z = ((z.1.im - ‖z.1‖ ^ 2 : ℝ) : ℂ) := rfl
 
 
 

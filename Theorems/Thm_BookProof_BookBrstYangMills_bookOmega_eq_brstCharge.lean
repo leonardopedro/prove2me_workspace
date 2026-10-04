@@ -10,6 +10,7 @@ open BookProof.BRSTNilpotent
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.SmBrstGhost
 open BookProof.YangMillsGhost
+open BookProof.BookBrstYangMills
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 

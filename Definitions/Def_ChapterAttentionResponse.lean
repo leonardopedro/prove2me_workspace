@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -37,7 +39,6 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionResponse
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterSoftmaxFluctuation BookProof.ChapterObservableExpectation
   BookProof.ChapterAttentionOutput BookProof.ChapterSoftmaxTemperatureMonotone
 

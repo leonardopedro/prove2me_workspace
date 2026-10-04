@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 

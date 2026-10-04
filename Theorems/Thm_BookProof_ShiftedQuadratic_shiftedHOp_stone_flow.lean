@@ -16,6 +16,7 @@ open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 open BookProof.StoneBridge
+open BookProof.ShiftedQuadratic
 
 variable {d : ℕ}
 

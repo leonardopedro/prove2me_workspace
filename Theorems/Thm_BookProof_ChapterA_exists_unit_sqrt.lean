@@ -1,0 +1,16 @@
+-- Generated from ChapterA2d.lean — theorem BookProof.ChapterA.exists_unit_sqrt
+import Mathlib
+import Definitions.Def_ChapterA2d
+import Definitions.Def_ChapterA
+open BookProof.ChapterA
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℂ W] [CompleteSpace W]
+
+
+open scoped ComplexConjugate InnerProductSpace
+
+
+
+theorem BookProof.ChapterA.exists_unit_sqrt (c : ℂ) (hc : ‖c‖ = 1) :
+    ∃ l : ℂ, l ^ 2 = c ∧ ‖l‖ = 1 := by sorry

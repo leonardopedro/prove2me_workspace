@@ -1,4 +1,9 @@
 import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
 import Mathlib
 
 
@@ -130,7 +135,7 @@ def LadderOrd (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ
 def mulL (q : MvPolynomial (Fin d) ℂ) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ :=
   LinearMap.mulLeft ℂ q
 
-
+@[simp] theorem mulL_apply (q p : MvPolynomial (Fin d) ℂ) : mulL q p = q * p := rfl
 
 
 

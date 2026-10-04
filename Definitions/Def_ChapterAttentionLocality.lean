@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterAttentionSparse
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
 
@@ -35,7 +37,6 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionLocality
 
-open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterAttentionMasking BookProof.ChapterAttentionMarkov
   BookProof.ChapterObservableExpectation BookProof.ChapterAttentionOutput
   BookProof.ChapterAttentionSparse

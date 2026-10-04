@@ -27,6 +27,12 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdj
 
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 

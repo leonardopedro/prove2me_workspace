@@ -12,6 +12,7 @@ import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
+open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)
@@ -21,6 +22,9 @@ variable (S : VielbeinSpectrum ι)
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
 
 noncomputable section
 

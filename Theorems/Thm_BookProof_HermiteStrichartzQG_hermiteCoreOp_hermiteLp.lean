@@ -7,6 +7,7 @@ import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterA4
 open BookProof.FarisLavine
 open BookProof.HermiteCore
+open BookProof.HermiteStrichartzQG
 
 
 

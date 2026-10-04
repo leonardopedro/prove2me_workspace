@@ -16,6 +16,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
+open BookProof.QgOuterFockElliptic
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {D : ℕ}

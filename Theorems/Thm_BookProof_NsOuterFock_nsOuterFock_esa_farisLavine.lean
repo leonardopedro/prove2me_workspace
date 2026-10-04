@@ -1,0 +1,47 @@
+-- Generated from ChapterNsOuterFockFarisLavine.lean — theorem BookProof.NsOuterFock.nsOuterFock_esa_farisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Mathlib
+import Definitions.Def_ChapterNsOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterA4
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFockFL
+open BookProof.NsOuterFock
+
+variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
+variable {bv nu lam mu gg}
+variable {B : ℝ} (hB : 0 ≤ B) (hbv : ∀ j, |bv j| ≤ B) (hnu : |nu| ≤ B) (hlam : |lam| ≤ B)
+  (hmu : |mu| ≤ B) (hgg : |gg| ≤ B)
+
+
+
+open Finset MvPolynomial
+open BookProof.FarisLavine BookProof.DirectSumEsa
+open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
+open BookProof.QgOuterFock BookProof.QgOuterFockFL
+open BookProof.QgOuterFockInteractionFL
+open BookProof.SqSumOuterFamily
+
+noncomputable section
+
+theorem BookProof.NsOuterFock.nsOuterFock_esa_farisLavine :
+    EssentiallySelfAdjointOn
+        (outerFriedDom (nsFamily hB hbv hnu hlam hmu hgg).dim)
+        (dsFibOp (fun n : ℕ => harmFried ((nsFamily hB hbv hnu hlam hmu hgg).dim n))
+          (nsFamily hB hbv hnu hlam hmu hgg).secExt
+          (nsFamily hB hbv hnu hlam hmu hgg).flK
+          (nsFamily hB hbv hnu hlam hmu hgg).secExt_rel) ∧
+      ∀ x : outerCore (nsFamily hB hbv hnu hlam hmu hgg).dim,
+        ∃ h : (x : outerFock (nsFamily hB hbv hnu hlam hmu hgg).dim)
+            ∈ outerFriedDom (nsFamily hB hbv hnu hlam hmu hgg).dim,
+          dsFibOp (fun n : ℕ => harmFried ((nsFamily hB hbv hnu hlam hmu hgg).dim n))
+              (nsFamily hB hbv hnu hlam hmu hgg).secExt
+              (nsFamily hB hbv hnu hlam hmu hgg).flK
+              (nsFamily hB hbv hnu hlam hmu hgg).secExt_rel
+              ⟨(x : outerFock (nsFamily hB hbv hnu hlam hmu hgg).dim), h⟩
+            = (nsFamily hB hbv hnu hlam hmu hgg).outerHam x := by sorry

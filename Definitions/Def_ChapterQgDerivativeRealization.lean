@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
 
 
@@ -105,7 +107,6 @@ namespace BookProof.QgDerivativeRealization
 open MvPolynomial
 open BookProof.GaugeFixing
 open BookProof.QuantumGravity3DGauge
-open BookProof.QgPhysicalSectorIdentity
 
 /-! ## 1. Polynomial tetrad fields and the 84-dimensional configuration point -/
 
@@ -147,11 +148,29 @@ the tetrad field at `x`. -/
 noncomputable def jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) : Fin 84 → ℂ :=
   configPoint T (jetDeriv T) x
 
+@[simp] theorem configPoint_idxX (T : TetradConfig) (E : DerivFields) (x : Fin 4 → ℝ)
+    (mu : Fin 4) : configPoint T E x (idxX mu) = ((x mu : ℝ) : ℂ) := by
+  have hv : ((idxX mu : Fin 84) : ℕ) = mu.val := rfl
+  simp only [configPoint, hv, dif_pos mu.isLt]
 
+@[simp] theorem configPoint_idxE (T : TetradConfig) (E : DerivFields) (x : Fin 4 → ℝ)
+    (mu a : Fin 4) :
+    configPoint T E x (idxE mu a) = ((MvPolynomial.eval x (T.comp mu a) : ℝ) : ℂ) := by
+  have hv : ((idxE mu a : Fin 84) : ℕ) = 4 + 4 * mu.val + a.val := rfl
+  have hmu := mu.isLt
+  have ha := a.isLt
+  rw [configPoint, dif_neg (by omega), dif_pos (by omega)]
+  congr 3 <;> · apply Fin.ext; simp only [hv]; omega
 
-
-
-
+@[simp] theorem configPoint_idxDE (T : TetradConfig) (E : DerivFields) (x : Fin 4 → ℝ)
+    (mu nu a : Fin 4) :
+    configPoint T E x (idxDE mu nu a) = ((MvPolynomial.eval x (E mu nu a) : ℝ) : ℂ) := by
+  have hv : ((idxDE mu nu a : Fin 84) : ℕ) = 20 + 16 * mu.val + 4 * nu.val + a.val := rfl
+  have hmu := mu.isLt
+  have hnu := nu.isLt
+  have ha := a.isLt
+  rw [configPoint, dif_neg (by omega), dif_neg (by omega)]
+  congr 3 <;> · apply Fin.ext; simp only [hv]; omega
 
 
 

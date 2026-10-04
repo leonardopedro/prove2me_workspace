@@ -77,19 +77,23 @@ noncomputable def toRealCLM (f : V →SL[starRingEnd ℂ] V) : V →L[ℝ] V whe
       simpa [Complex.coe_smul, Complex.conj_ofReal] using this }
   cont := f.continuous
 
-
+omit [CompleteSpace V] in
+@[simp] lemma toRealCLM_apply (f : V →SL[starRingEnd ℂ] V) (x : V) :
+    toRealCLM f x = f x := rfl
 
 /-- The real-linear operator underlying an anti-unitary `θ`. -/
 noncomputable def thetaR (θ : AntiUnitary V) : V →L[ℝ] V :=
   toRealCLM (θ.toContinuousLinearEquiv.toContinuousLinearMap)
 
-
+omit [CompleteSpace V] in
+@[simp] lemma thetaR_apply (θ : AntiUnitary V) (x : V) : thetaR θ x = θ x := rfl
 
 /-- Multiplication by `i`, as a real-linear continuous operator. -/
 noncomputable def mulI : V →L[ℝ] V :=
   ContinuousLinearMap.restrictScalars ℝ ((Complex.I : ℂ) • (1 : V →L[ℂ] V))
 
-
+omit [CompleteSpace V] in
+@[simp] lemma mulI_apply (x : V) : (mulI : V →L[ℝ] V) x = (Complex.I : ℂ) • x := rfl
 
 omit [CompleteSpace V] in
 lemma mulI_mul_mulI : (mulI : V →L[ℝ] V) * mulI = -1 := by
@@ -129,7 +133,9 @@ complex scalars viewed as real operators. -/
 noncomputable def cembed : ℂ →ₐ[ℝ] (V →L[ℝ] V) :=
   Complex.lift ⟨mulI, mulI_mul_mulI⟩
 
-
+omit [CompleteSpace V] in
+@[simp] lemma cembed_I : cembed (Complex.I : ℂ) = (mulI : V →L[ℝ] V) := by
+  rw [cembed, Complex.lift_apply, Complex.liftAux_apply]; simp
 
 
 
@@ -190,7 +196,9 @@ noncomputable def cplxify (T : V →L[ℝ] V)
         _ = c • T x := by rw [smul_smul, ← add_smul, Complex.re_add_im] }
   cont := T.continuous
 
-
+omit [CompleteSpace V] in
+@[simp] lemma cplxify_apply (T : V →L[ℝ] V)
+    (hT : ∀ x, T (Complex.I • x) = Complex.I • T x) (x : V) : cplxify T hT x = T x := rfl
 
 
 

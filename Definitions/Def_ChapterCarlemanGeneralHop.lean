@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterHermiteCarlemanEsa
 import Mathlib
 
 

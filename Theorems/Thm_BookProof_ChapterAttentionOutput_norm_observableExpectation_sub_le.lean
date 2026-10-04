@@ -5,6 +5,7 @@ import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
+open BookProof.ChapterAttentionOutput
 
 variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 

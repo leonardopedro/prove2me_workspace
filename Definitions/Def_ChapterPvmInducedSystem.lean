@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterMackeyQuasiInvariant
 import Mathlib
 
 
@@ -40,7 +42,6 @@ namespace BookProof.ChapterPvmInducedSystem
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
-open BookProof.ChapterHilbertSumIntertwine
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
@@ -80,7 +81,8 @@ noncomputable def conjPvm (P : Pvm X H) (W : K ≃ₗᵢ[ℂ] H) : Pvm X K where
     exact h.map (W.symm.toContinuousLinearEquiv.toContinuousLinearMap.toLinearMap.toAddMonoidHom)
       (W.symm.continuous)
 
-
+@[simp] theorem conjPvm_apply (P : Pvm X H) (W : K ≃ₗᵢ[ℂ] H) {E : Set X} (u : K) :
+    (conjPvm P W).p E u = W.symm (P.p E (W u)) := rfl
 
 /-! ## The range of the model of a cyclic piece -/
 

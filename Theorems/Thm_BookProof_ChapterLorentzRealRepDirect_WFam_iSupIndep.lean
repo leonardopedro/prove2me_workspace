@@ -1,0 +1,17 @@
+-- Generated from ChapterLorentzRealRepDirect.lean — theorem BookProof.ChapterLorentzRealRepDirect.WFam_iSupIndep
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRepFull
+import Mathlib
+import Definitions.Def_ChapterLorentzRealRepDirect
+import Definitions.Def_ChapterA4
+open BookProof.ChapterLorentzRealRepDirect
+
+
+open Matrix Module
+
+
+open BookProof.ChapterLorentzRealRep BookProof.ChapterLorentzRealRepSum
+open BookProof.ChapterLorentzRealRepFull
+
+theorem BookProof.ChapterLorentzRealRepDirect.WFam_iSupIndep : iSupIndep WFam := by sorry

@@ -8,6 +8,7 @@ import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QuadraticRotation
 
 variable {d : ℕ}
 

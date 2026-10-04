@@ -1,4 +1,7 @@
+import Theorems.Thm_BookProof_ChapterSolovayHilbertTensor_inner_tensorLp
+
 import Definitions.Def_ChapterSolovayHilbertTensor
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -465,7 +468,8 @@ def tensorRight (u : Lp ℂ 2 μ) : Lp ℂ 2 ν →L[ℂ] Lp ℂ 2 (μ.prod ν) 
       map_smul' := fun c v => tensorOf_smul_right c u v } ‖u‖
     (fun v => le_of_eq (norm_tensorOf u v))
 
-
+@[simp] theorem tensorRight_apply (u : Lp ℂ 2 μ) (v : Lp ℂ 2 ν) :
+    tensorRight u v = tensorOf u v := rfl
 
 /-- Tensoring with a fixed second factor, as a continuous linear map. -/
 def tensorLeft (v : Lp ℂ 2 ν) : Lp ℂ 2 μ →L[ℂ] Lp ℂ 2 (μ.prod ν) :=
@@ -475,7 +479,8 @@ def tensorLeft (v : Lp ℂ 2 ν) : Lp ℂ 2 μ →L[ℂ] Lp ℂ 2 (μ.prod ν) :
       map_smul' := fun c u => tensorOf_smul_left c u v } ‖v‖
     (fun u => le_of_eq ((norm_tensorOf u v).trans (mul_comm _ _)))
 
-
+@[simp] theorem tensorLeft_apply (u : Lp ℂ 2 μ) (v : Lp ℂ 2 ν) :
+    tensorLeft v u = tensorOf u v := rfl
 
 omit [IsFiniteMeasure μ] in
 /-- Every pure tensor is an element-level pure tensor. -/
@@ -561,7 +566,10 @@ def tensorHilbertBasis (b : HilbertBasis ι ℂ (Lp ℂ 2 μ)) (c : HilbertBasis
     (by
       rw [tensorFamily_span_eq_top b.dense_span c.dense_span])
 
-
+@[simp] theorem coe_tensorHilbertBasis
+    (b : HilbertBasis ι ℂ (Lp ℂ 2 μ)) (c : HilbertBasis κ ℂ (Lp ℂ 2 ν)) :
+    ⇑(tensorHilbertBasis b c) = fun p : ι × κ => tensorOf (b p.1) (c p.2) :=
+  HilbertBasis.coe_mk _ _
 
 
 

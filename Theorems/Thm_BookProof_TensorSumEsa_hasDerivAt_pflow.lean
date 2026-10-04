@@ -1,0 +1,30 @@
+-- Generated from ChapterTensorSumEsa.lean — theorem BookProof.TensorSumEsa.hasDerivAt_pflow
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Mathlib
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterA4
+open BookProof.TensorCore
+open BookProof.TensorSumEsa
+
+variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
+variable (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
+variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
+  (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
+variable {Hs Ks : IPSpace} {DA : Submodule ℂ Hs.carrier} {DB : Submodule ℂ Ks.carrier}
+  {A : DA →ₗ[ℂ] Hs.carrier} {B : DB →ₗ[ℂ] Ks.carrier}
+variable (P : OneParticleFlow Hs DA A) (Q : OneParticleFlow Ks DB B)
+
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
+theorem BookProof.TensorSumEsa.hasDerivAt_pflow (x : DA ⊗[ℂ] DB) (t : ℝ) :
+    @HasDerivAt ℝ _ (Hs.carrier ⊗[ℂ] Ks.carrier)
+      TensorProduct.instNormedAddCommGroup.toAddCommGroup (NormedSpace.complexToReal.toModule)
+      _ _ (fun s : ℝ => inclPair Hs Ks DA DB (pflow P Q s x))
+      ((-Complex.I) • sumPoly Hs Ks DA DB A B (pflow P Q t x)) t := by sorry

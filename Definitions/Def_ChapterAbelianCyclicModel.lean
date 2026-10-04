@@ -1,4 +1,7 @@
+import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
+
 import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -61,7 +64,9 @@ noncomputable def repState : C(X, ℂ) →ₗ[ℂ] ℂ where
   map_add' f g := by simp
   map_smul' c f := by simp
 
-
+omit [T2Space X] [MeasurableSpace X] [BorelSpace X] in
+@[simp] theorem repState_apply (f : C(X, ℂ)) :
+    repState pi xi f = inner ℂ xi (pi f xi) := rfl
 
 omit [T2Space X] [MeasurableSpace X] [BorelSpace X] in
 /-- `⟪ξ, π(f̄f)ξ⟫ = ‖π(f)ξ‖²`: the vector state is **positive**. -/
@@ -109,7 +114,8 @@ noncomputable def repVec : C(X, ℂ) →ₗ[ℂ] H where
   map_add' f g := by simp
   map_smul' c f := by simp
 
-
+omit [T2Space X] [MeasurableSpace X] [BorelSpace X] in
+@[simp] theorem repVec_apply (f : C(X, ℂ)) : repVec pi xi f = pi f xi := rfl
 
 /-- **The key isometry**: `‖π(f)ξ‖` is the `L²(μ)` norm of `f`. -/
 theorem norm_rep_apply (f : C(X, ℂ)) :
@@ -152,7 +158,10 @@ noncomputable def cyclicRepUnitary : Lp ℂ 2 (repMeasure pi xi) ≃ₗᵢ[ℂ] 
     hcyc
     (fun f => norm_rep_apply pi xi f)
 
-
+@[simp] theorem cyclicRepUnitary_toLp (f : C(X, ℂ)) :
+    cyclicRepUnitary pi xi hcyc (ContinuousMap.toLp 2 (repMeasure pi xi) ℂ f)
+      = pi f xi :=
+  LinearEquiv.extendOfIsometry_eq _ _ _ _ _ _ f
 
 
 
@@ -175,7 +184,9 @@ noncomputable def gelfandRep (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) :
     C(characterSpace ℂ A, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H) :=
   rho.comp ((gelfandModel A).symm : C(characterSpace ℂ A, ℂ) →⋆ₐ[ℂ] A)
 
-
+@[simp] theorem gelfandRep_gelfandModel (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) (a : A) :
+    gelfandRep rho (gelfandModel A a) = rho a := by
+  simp [gelfandRep]
 
 
 

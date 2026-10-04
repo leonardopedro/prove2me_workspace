@@ -1,0 +1,28 @@
+-- Generated from ChapterNsFieldMomentumInverse.lean — theorem BookProof.NsFieldMomentumInverse.isMomInverse_momentumOp
+import Mathlib
+import Definitions.Def_ChapterNsFieldMomentumInverse
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterA4
+open BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
+open BookProof.NsSpatialMultiplier
+open BookProof.StrichartzWave
+open BookProof.NsFieldMomentumInverse
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDimensional ℝ W]
+  [MeasurableSpace W] [BorelSpace W]
+
+
+
+open MeasureTheory SchwartzMap FourierTransform
+open BookProof.NsSpatialMultiplier BookProof.FourierMultiplierEsa BookProof.StrichartzWave
+
+noncomputable section
+
+
+theorem BookProof.NsFieldMomentumInverse.isMomInverse_momentumOp (m : W) (f : 𝓢(W, ℂ)) :
+    IsMomInverse m (l2Fourier W (opL2 (momentumOp m) (schwartzEquiv W f)))
+      (l2Fourier W (f.toLp 2 (volume : Measure W))) := by sorry

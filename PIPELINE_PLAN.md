@@ -575,6 +575,24 @@ Worth stating plainly: **0/112 with a plausible-looking error message is the mos
 dangerous kind of result.** I spent a long stretch treating that number as "these
 stubs are broken" when the stubs were fine and the harness was wrong.
 
+**And the first attempt at the fix made it worse** (35 -> 9 bundles OK) because of a
+one-character class of mistake:
+
+```python
+udeps[(kind, m)] = [
+    (("T", x) for x in ...)        # a GENERATOR inside a list
+] + [ ... ]
+```
+
+That is a list whose first element is a generator object. `topo` iterates it, gets
+the generator, compares it to tuples, finds no match, and drops the edge — so the
+def->thm dependencies vanished and bundles that should have been BLOCKED became
+FAIL. A generator is iterable, so nothing complains.
+
+Both directions are now real lists. The lesson is not new but keeps paying: **a
+container that accepts a generator in place of a sequence will silently accept the
+wrong thing**, and the symptom appears far away, as a change in an unrelated count.
+
 ### §2.11 Execution order from here
 
 **Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`

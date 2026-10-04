@@ -138,9 +138,13 @@ def main():
         src = "Definitions" if kind == "D" else "Theorems"
         for m in mods:
             p = f"{MIRROR}/{src}/{m}.lean"
-            udeps[(kind, m)] = [
-                (("T", x) for x in imports_of(p, "Theorems") if x in thm_mods)
-            ] + ([(("D", x) for x in (ddeps if kind == "D" else tdeps)[m])])
+            # A GENERATOR inside a list is a list holding one useless element,
+            # so the def->thm edges were silently dropped and 26 bundles
+            # regressed from OK to FAIL. Both directions must be real lists.
+            udeps[(kind, m)] = (
+                [("T", x) for x in imports_of(p, "Theorems") if x in thm_mods]
+                + [("D", x) for x in (ddeps if kind == "D" else tdeps)[m]]
+            )
 
     dres, thm_res = {}, {}
     for kind, m in topo(sorted(universe), lambda k: udeps[k]):

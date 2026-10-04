@@ -613,6 +613,26 @@ keep slug and submitted name as two separate fields — conflating them is what 
 
 One item hit this in the 42-theorem batch; it is parked.
 
+### §2.10h State at the end of this run (2026-10-04)
+
+| Kind | done | pending | parked | failed |
+| --- | ---: | ---: | ---: | ---: |
+| def | 417 | 6 | 0 | 0 |
+| thm | 1808 | 0 | 1 | 0 |
+| sol | 1769 | 0 | 0 | 0 |
+
+**Zero failures in every category.** The 6 remaining defs are all the §5a class --
+each cites a theorem that is published but not yet *Proved*
+(`theorem dependency not proved yet`). That is the only outstanding shape on the
+definition side, and it is genuine mathematics: either prove those theorems or
+embed their proofs in the citing bundle.
+
+`num_solved_prob` reads 846, but as §2.6 says the per-theorem `status` is the
+reliable signal and the profile counter lags.
+
+**Git push is still failing** (§2.11) — the work is committed locally, ~8 commits
+ahead of `origin/main`.
+
 ### §2.11 Execution order from here
 
 **Git push is currently failing** — `git@github.com:leonardopedro/prove2me_workspace.git`

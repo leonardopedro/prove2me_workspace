@@ -210660,3 +210660,29 @@ inst✝¹ : NormedA)
 17:10:27 sync: checked 175 pending solution(s), 0 already Proved
 17:10:27 sync: checked 200 pending solution(s), 0 already Proved
 17:10:27 sync: marked 4 already-published item(s) and 0 already-proved solution(s) done
+17:17:23 retry-failed: re-armed 0 item(s)
+17:17:30 sync: read 841 definition publish job(s)
+17:17:55 sync: read 5955 problem publish job(s)
+17:18:03 sync: read 841 definition publish job(s)
+17:18:30 sync: read 5955 problem publish job(s)
+17:18:37 sync: read 841 definition publish job(s)
+17:19:03 sync: read 5955 problem publish job(s)
+17:19:03 submitting def:ChapterPermutationSectorEsa (attempt 1)
+17:19:14 sync: read 841 definition publish job(s)
+17:19:38 sync: read 5955 problem publish job(s)
+17:19:55 def:ChapterPermutationSectorEsa: accepted, waiting on the compiler
+17:35:49 def:ChapterPermutationSectorEsa: DONE
+17:35:49 summary: 417 done, 176 pending, 0 failed, 2 unsubmittable (source missing from this checkout)
+17:35:49 waiting on unpublished def bundle(s): ChapterFreeFieldBornSignHom (1 item(s)), ChapterStrichartzHermiteQG (1 item(s)), open BookProof.ChapterFreeFieldBornSignHom (owner ChapterFreeFieldBornSignHom) (1 item(s))
+17:35:49 chunk: 1 item(s) resolved in 1074s
+17:36:43 sync: read 842 definition publish job(s)
+17:37:10 sync: read 5955 problem publish job(s)
+17:37:14 sync: checked 25 pending solution(s), 0 already Proved
+17:37:19 sync: checked 50 pending solution(s), 1 already Proved
+17:37:21 sync: checked 75 pending solution(s), 1 already Proved
+17:37:22 sync: checked 100 pending solution(s), 1 already Proved
+17:37:22 sync: checked 125 pending solution(s), 1 already Proved
+17:37:22 sync: checked 150 pending solution(s), 1 already Proved
+17:37:22 sync: checked 175 pending solution(s), 1 already Proved
+17:37:22 sync: checked 200 pending solution(s), 1 already Proved
+17:37:22 sync: marked 0 already-published item(s) and 1 already-proved solution(s) done

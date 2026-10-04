@@ -210450,3 +210450,213 @@ inst✝¹ : NormedA)
 16:11:49 sync: checked 175 pending solution(s), 0 already Proved
 16:11:49 sync: checked 200 pending solution(s), 0 already Proved
 16:11:49 sync: marked 35 already-published item(s) and 0 already-proved solution(s) done
+16:13:22 retry-failed: re-armed 0 item(s)
+16:13:29 sync: read 833 definition publish job(s)
+16:13:57 sync: read 5955 problem publish job(s)
+16:14:05 sync: read 833 definition publish job(s)
+16:14:32 sync: read 5955 problem publish job(s)
+16:14:39 sync: read 833 definition publish job(s)
+16:15:06 sync: read 5955 problem publish job(s)
+16:15:06 submitting def:ChapterNavierStokesFockEsa (attempt 1)
+16:15:14 sync: read 833 definition publish job(s)
+16:15:42 sync: read 5955 problem publish job(s)
+16:15:42 def:ChapterNavierStokesFockEsa: FAIL (theorem dependency not proved yet: BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom, BookProof_NavierStokesFlow_FockOfFock_fockDom_dense)
+16:15:42 submitting def:ChapterA3f (attempt 1)
+16:15:51 sync: read 833 definition publish job(s)
+16:16:17 sync: read 5955 problem publish job(s)
+16:16:33 def:ChapterA3f: REUSING existing Definition node 08f24f45-77a5-4c5d-a7aa-486535c4f06b
+16:16:33 def:ChapterA3f: DONE
+16:16:33 submitting def:ChapterA3h (attempt 1)
+16:16:42 sync: read 833 definition publish job(s)
+16:17:08 sync: read 5955 problem publish job(s)
+16:17:42 def:ChapterA3h: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterA3h\" already exists"})
+16:17:42 submitting def:ChapterA4h (attempt 1)
+16:17:50 sync: read 833 definition publish job(s)
+16:18:13 sync: read 5955 problem publish job(s)
+16:18:18 def:ChapterA4h: REUSING existing Definition node 9dbbb849-507f-4a05-a49b-3c5657983326
+16:18:18 def:ChapterA4h: DONE
+16:18:18 submitting def:ChapterQuantumGravityBrstCharge (attempt 1)
+16:18:28 sync: read 833 definition publish job(s)
+16:18:53 sync: read 5955 problem publish job(s)
+16:18:57 def:ChapterQuantumGravityBrstCharge: REUSING existing Definition node 161223f6-a9f5-475b-b15e-3f400bb4eb3a
+16:18:57 def:ChapterQuantumGravityBrstCharge: DONE
+16:18:57 submitting def:ChapterBookBrstYangMills (attempt 1)
+16:19:06 sync: read 833 definition publish job(s)
+16:19:28 sync: read 5955 problem publish job(s)
+16:19:38 def:ChapterBookBrstYangMills: accepted, waiting on the compiler
+16:19:38 submitting def:ChapterBrstUnboundedLeakage (attempt 1)
+16:19:45 sync: read 834 definition publish job(s)
+16:20:08 sync: read 5955 problem publish job(s)
+16:20:13 def:ChapterBrstUnboundedLeakage: REUSING existing Definition node 745b4ede-decc-4a97-9843-6d88c3d41fc0
+16:20:13 def:ChapterBrstUnboundedLeakage: DONE
+16:20:13 submitting def:ChapterCarlemanUnboundedHop (attempt 1)
+16:20:23 sync: read 834 definition publish job(s)
+16:20:46 sync: read 5955 problem publish job(s)
+16:20:50 def:ChapterCarlemanUnboundedHop: REUSING existing Definition node becbc63c-252b-45a9-929d-15785b923ab2
+16:20:50 def:ChapterCarlemanUnboundedHop: DONE
+16:20:50 submitting def:ChapterReducingSubspaceEsa (attempt 1)
+16:20:58 sync: read 834 definition publish job(s)
+16:21:19 sync: read 5955 problem publish job(s)
+16:21:23 def:ChapterReducingSubspaceEsa: REUSING existing Definition node 48d24fa7-b091-4052-a47d-5b5f3e2f8d7f
+16:21:23 def:ChapterReducingSubspaceEsa: DONE
+16:21:23 submitting def:ChapterGroupAverageEsa (attempt 1)
+16:21:30 sync: read 834 definition publish job(s)
+16:21:51 sync: read 5955 problem publish job(s)
+16:21:55 def:ChapterGroupAverageEsa: REUSING existing Definition node 8c903fab-cf16-4fd4-9b39-05b6cfc856e7
+16:21:55 def:ChapterGroupAverageEsa: DONE
+16:21:55 submitting def:ChapterHalfLineLimitCircle (attempt 1)
+16:22:08 sync: read 834 definition publish job(s)
+16:22:28 sync: read 5955 problem publish job(s)
+16:22:32 def:ChapterHalfLineLimitCircle: REUSING existing Definition node 54f4a931-4f6d-4d5c-a6c9-0e61127ee78c
+16:22:32 def:ChapterHalfLineLimitCircle: DONE
+16:22:32 submitting def:ChapterStrichartzHermiteQG (attempt 1)
+16:22:38 sync: read 834 definition publish job(s)
+16:23:00 sync: read 5955 problem publish job(s)
+16:23:00 def:ChapterStrichartzHermiteQG: FAIL (theorem dependency not proved yet: BookProof_HermiteCore_hermiteBasis_apply)
+16:23:00 submitting def:ChapterNavierStokesCarleman (attempt 1)
+16:23:07 sync: read 834 definition publish job(s)
+16:23:29 sync: read 5955 problem publish job(s)
+16:23:32 def:ChapterNavierStokesCarleman: REUSING existing Definition node 5573cf3d-da2f-438d-b479-c21ed51f90fb
+16:23:32 def:ChapterNavierStokesCarleman: DONE
+16:23:32 submitting def:ChapterNsScalarVectorCurry (attempt 1)
+16:23:50 sync: read 834 definition publish job(s)
+16:24:11 sync: read 5955 problem publish job(s)
+16:24:14 def:ChapterNsScalarVectorCurry: REUSING existing Definition node 97c06a0b-1eba-413a-964b-c02a4f8f2c75
+16:24:14 def:ChapterNsScalarVectorCurry: DONE
+16:24:14 submitting def:ChapterNsScalarFourier (attempt 1)
+16:24:22 sync: read 834 definition publish job(s)
+16:24:43 sync: read 5955 problem publish job(s)
+16:24:54 def:ChapterNsScalarFourier: accepted, waiting on the compiler
+16:24:55 submitting def:ChapterTensorPermutation (attempt 1)
+16:25:02 sync: read 835 definition publish job(s)
+16:25:27 sync: read 5955 problem publish job(s)
+16:25:36 def:ChapterTensorPermutation: accepted, waiting on the compiler
+16:25:36 submitting def:ChapterTwoParticleSectorEsa (attempt 1)
+16:25:43 sync: read 836 definition publish job(s)
+16:26:05 sync: read 5955 problem publish job(s)
+16:26:12 def:ChapterTwoParticleSectorEsa: accepted, waiting on the compiler
+16:26:12 submitting def:ChapterQuadraticRotationEsa (attempt 1)
+16:26:20 sync: read 837 definition publish job(s)
+16:26:42 sync: read 5955 problem publish job(s)
+16:26:46 def:ChapterQuadraticRotationEsa: REUSING existing Definition node a80ba498-6de4-471c-85fd-8963cd71e23e
+16:26:46 def:ChapterQuadraticRotationEsa: DONE
+16:26:46 submitting def:ChapterScalaronFockEsa (attempt 1)
+16:26:53 sync: read 837 definition publish job(s)
+16:27:15 sync: read 5955 problem publish job(s)
+16:27:15 def:ChapterScalaronFockEsa: FAIL (theorem dependency not proved yet: BookProof_ScalaronEsa_contDiff_scalaronFullPotential)
+16:27:15 submitting def:ChapterShiftedQuadraticEsa (attempt 1)
+16:27:22 sync: read 837 definition publish job(s)
+16:27:45 sync: read 5955 problem publish job(s)
+16:27:49 def:ChapterShiftedQuadraticEsa: REUSING existing Definition node 7c894458-d6fd-45d1-81c1-b9d5a4ebf17c
+16:27:49 def:ChapterShiftedQuadraticEsa: DONE
+16:27:49 submitting def:ChapterAttentionMasking (attempt 1)
+16:27:56 sync: read 837 definition publish job(s)
+16:28:17 sync: read 5955 problem publish job(s)
+16:28:21 def:ChapterAttentionMasking: REUSING existing Definition node 59fcf20e-4001-4c5e-9694-0b0b7bf13b59
+16:28:21 def:ChapterAttentionMasking: DONE
+16:28:21 submitting def:ChapterA4g (attempt 1)
+16:28:28 sync: read 837 definition publish job(s)
+16:28:51 sync: read 5955 problem publish job(s)
+16:28:54 def:ChapterA4g: REUSING existing Definition node 66443a65-84e1-4d75-8204-d9d8f60220fd
+16:28:54 def:ChapterA4g: DONE
+16:28:54 submitting def:ChapterCayleyInverse (attempt 1)
+16:29:01 sync: read 837 definition publish job(s)
+16:29:21 sync: read 5955 problem publish job(s)
+16:29:25 def:ChapterCayleyInverse: REUSING existing Definition node da6ac5de-7a56-47b0-a756-f94c08dd9d4b
+16:29:25 def:ChapterCayleyInverse: DONE
+16:29:25 submitting def:ChapterCoherentFidelity (attempt 1)
+16:29:32 sync: read 837 definition publish job(s)
+16:29:55 sync: read 5955 problem publish job(s)
+16:29:59 def:ChapterCoherentFidelity: REUSING existing Definition node f75abff3-1638-4c2e-b235-3ea208168878
+16:29:59 def:ChapterCoherentFidelity: DONE
+16:29:59 submitting def:ChapterNsFieldMomentumInverse (attempt 1)
+16:30:06 sync: read 837 definition publish job(s)
+16:30:27 sync: read 5955 problem publish job(s)
+16:30:31 def:ChapterNsFieldMomentumInverse: REUSING existing Definition node 303675d6-bff6-49ea-977c-e1113db1eda7
+16:30:31 def:ChapterNsFieldMomentumInverse: DONE
+16:30:31 submitting def:ChapterSmGaugeRepresentation (attempt 1)
+16:30:38 sync: read 837 definition publish job(s)
+16:31:00 sync: read 5955 problem publish job(s)
+16:31:05 def:ChapterSmGaugeRepresentation: REUSING existing Definition node d865aebf-f14e-4f00-a0fb-1e0d2f12ba5b
+16:31:05 def:ChapterSmGaugeRepresentation: DONE
+16:31:05 submitting def:ChapterCoherentDynamics (attempt 1)
+16:31:12 sync: read 837 definition publish job(s)
+16:31:35 sync: read 5955 problem publish job(s)
+16:31:46 def:ChapterCoherentDynamics: accepted, waiting on the compiler
+16:31:46 submitting def:ChapterGravityInvMetric (attempt 1)
+16:31:52 sync: read 838 definition publish job(s)
+16:32:16 sync: read 5955 problem publish job(s)
+16:32:19 def:ChapterGravityInvMetric: REUSING existing Definition node 36c25ff4-be93-4e12-9ba1-df0503535e5b
+16:32:19 def:ChapterGravityInvMetric: DONE
+16:32:19 submitting def:ChapterLorentzRealRepDirect (attempt 1)
+16:32:27 sync: read 838 definition publish job(s)
+16:32:49 sync: read 5955 problem publish job(s)
+16:32:53 def:ChapterLorentzRealRepDirect: REUSING existing Definition node 85266551-63c3-43e6-9d7e-1780ac2d5403
+16:32:53 def:ChapterLorentzRealRepDirect: DONE
+16:32:53 submitting def:ChapterCoherentThermalFidelity (attempt 1)
+16:33:00 sync: read 838 definition publish job(s)
+16:33:24 sync: read 5955 problem publish job(s)
+16:33:32 def:ChapterCoherentThermalFidelity: accepted, waiting on the compiler
+16:39:14 def:ChapterBookBrstYangMills: DONE
+16:39:23 submitting def:ChapterA3m (attempt 1)
+16:39:30 sync: read 839 definition publish job(s)
+16:39:56 sync: read 5955 problem publish job(s)
+16:40:10 def:ChapterA3m: REUSING existing Definition node c6188d0b-9f67-4484-9aa4-265c60eb85a9
+16:40:10 def:ChapterA3m: DONE
+16:40:10 submitting def:ChapterA3q (attempt 1)
+16:40:18 sync: read 839 definition publish job(s)
+16:40:41 sync: read 5955 problem publish job(s)
+16:40:46 def:ChapterA3q: REUSING existing Definition node 06a80769-99d3-4c2c-bfe4-e96043d2eaa7
+16:40:46 def:ChapterA3q: DONE
+16:40:46 submitting def:ChapterA3w (attempt 1)
+16:40:53 sync: read 839 definition publish job(s)
+16:41:18 sync: read 5955 problem publish job(s)
+16:41:33 def:ChapterA3w: accepted, waiting on the compiler
+16:46:06 def:ChapterNsScalarFourier: DONE
+16:46:16 submitting def:ChapterA3x (attempt 1)
+16:46:24 sync: read 840 definition publish job(s)
+16:46:53 sync: read 5955 problem publish job(s)
+16:47:27 def:ChapterA3x: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterA3x\" already exists"})
+16:47:27 submitting def:ChapterFreeFieldBorn (attempt 1)
+16:47:36 sync: read 840 definition publish job(s)
+16:48:01 sync: read 5955 problem publish job(s)
+16:48:35 def:ChapterFreeFieldBorn: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterFreeFieldBorn\" already exists"})
+16:48:35 submitting def:ChapterFreeFieldBornSurj (attempt 1)
+16:48:45 sync: read 840 definition publish job(s)
+16:49:12 sync: read 5955 problem publish job(s)
+16:49:29 def:ChapterFreeFieldBornSurj: accepted, waiting on the compiler
+16:49:30 def:ChapterTensorPermutation: DONE
+16:49:30 def:ChapterTwoParticleSectorEsa: DONE
+16:49:30 def:ChapterCoherentDynamics: DONE
+16:49:39 submitting def:ChapterMackeyGeneralBase (attempt 1)
+16:49:47 sync: read 841 definition publish job(s)
+16:50:12 sync: read 5955 problem publish job(s)
+16:50:46 def:ChapterMackeyGeneralBase: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterMackeyGeneralBase\" already exists"})
+16:50:46 def:ChapterCoherentThermalFidelity: DONE
+16:58:48 sync: read 841 definition publish job(s)
+16:59:11 sync: read 5955 problem publish job(s)
+16:59:16 sync: checked 25 pending solution(s), 0 already Proved
+16:59:21 sync: checked 50 pending solution(s), 0 already Proved
+16:59:23 sync: checked 75 pending solution(s), 0 already Proved
+16:59:24 sync: checked 100 pending solution(s), 0 already Proved
+16:59:24 sync: checked 125 pending solution(s), 0 already Proved
+16:59:24 sync: checked 150 pending solution(s), 0 already Proved
+16:59:24 sync: checked 175 pending solution(s), 0 already Proved
+16:59:24 sync: checked 200 pending solution(s), 0 already Proved
+16:59:24 sync: marked 4 already-published item(s) and 0 already-proved solution(s) done
+17:00:48 def:ChapterA3w: DONE
+17:09:24 def:ChapterFreeFieldBornSurj: DONE
+17:09:24 summary: 412 done, 181 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (42 out-of-order orphans ignored)
+17:09:24 waiting on unpublished def bundle(s): ChapterFreeFieldBornSignHom (1 item(s)), ChapterStrichartzHermiteQG (1 item(s)), ChapterTensorPermutation (1 item(s)), open BookProof.ChapterFreeFieldBornFiberCardGeneral (owner ChapterFreeFieldBornFiberCardGeneral) (1 item(s)), open BookProof.ChapterFreeFieldBornSignHom (owner ChapterFreeFieldBornSignHom) (1 item(s))
+17:09:24 chunk: 37 item(s) resolved in 3327s
+17:09:50 sync: read 841 definition publish job(s)
+17:10:15 sync: read 5955 problem publish job(s)
+17:10:19 sync: checked 25 pending solution(s), 0 already Proved
+17:10:24 sync: checked 50 pending solution(s), 0 already Proved
+17:10:26 sync: checked 75 pending solution(s), 0 already Proved
+17:10:27 sync: checked 100 pending solution(s), 0 already Proved
+17:10:27 sync: checked 125 pending solution(s), 0 already Proved
+17:10:27 sync: checked 150 pending solution(s), 0 already Proved
+17:10:27 sync: checked 175 pending solution(s), 0 already Proved
+17:10:27 sync: checked 200 pending solution(s), 0 already Proved
+17:10:27 sync: marked 4 already-published item(s) and 0 already-proved solution(s) done

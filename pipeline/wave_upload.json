@@ -7358,6 +7358,524 @@
     "formalization",
     "definitions"
    ]
+  },
+  "ChapterQuantumGravityBrstCharge": {
+   "definition_name": "ChapterQuantumGravityBrstCharge",
+   "namespace": "BookProof.QuantumGravityBrstCharge",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQuantumGravityBrstCharge.lean",
+   "title": "Chapter QuantumGravityBrstCharge",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQuantumGravityBrstCharge.lean`): generated def bundle for ChapterQuantumGravityBrstCharge. See BookProof/ChapterQuantumGravityBrstCharge.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravityBrstCharge.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterA3h": {
+   "definition_name": "ChapterA3h",
+   "namespace": "BookProof.ChapterA3",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterA3h.lean",
+   "title": "Chapter A3h",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterA3h.lean`): generated def bundle for ChapterA3h. See BookProof/ChapterA3h.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterA3h.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterA3m": {
+   "definition_name": "ChapterA3m",
+   "namespace": "BookProof.ChapterA3m",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterA3m.lean",
+   "title": "Chapter A3m",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterA3m.lean`): generated def bundle for ChapterA3m. See BookProof/ChapterA3m.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterA3m.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterA3q": {
+   "definition_name": "ChapterA3q",
+   "namespace": "BookProof.ChapterA3q",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterA3q.lean",
+   "title": "Chapter A3q",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterA3q.lean`): generated def bundle for ChapterA3q. See BookProof/ChapterA3q.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterA3q.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterA3w": {
+   "definition_name": "ChapterA3w",
+   "namespace": "BookProof.ChapterA3w",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterA3w.lean",
+   "title": "Chapter A3w",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterA3w.lean`): generated def bundle for ChapterA3w. See BookProof/ChapterA3w.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterA3w.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterA3x": {
+   "definition_name": "ChapterA3x",
+   "namespace": "BookProof.ChapterA3x",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterA3x.lean",
+   "title": "Chapter A3x",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterA3x.lean`): generated def bundle for ChapterA3x. See BookProof/ChapterA3x.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterA3x.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterCarlemanGeneralHop": {
+   "definition_name": "ChapterCarlemanGeneralHop",
+   "namespace": "BookProof.CarlemanGeneralHop",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterCarlemanGeneralHop.lean",
+   "title": "Chapter CarlemanGeneralHop",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterCarlemanGeneralHop.lean`): generated def bundle for ChapterCarlemanGeneralHop. See BookProof/ChapterCarlemanGeneralHop.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterCarlemanGeneralHop.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterDegSchrodingerCore": {
+   "definition_name": "ChapterDegSchrodingerCore",
+   "namespace": "BookProof.DegSchrodinger",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterDegSchrodingerCore.lean",
+   "title": "Chapter DegSchrodingerCore",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterDegSchrodingerCore.lean`): generated def bundle for ChapterDegSchrodingerCore. See BookProof/ChapterDegSchrodingerCore.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterDegSchrodingerCore.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterDiffuseUnitaryModel": {
+   "definition_name": "ChapterDiffuseUnitaryModel",
+   "namespace": "BookProof.ChapterDiffuseUnitaryModel",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterDiffuseUnitaryModel.lean",
+   "title": "Chapter DiffuseUnitaryModel",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterDiffuseUnitaryModel.lean`): generated def bundle for ChapterDiffuseUnitaryModel. See BookProof/ChapterDiffuseUnitaryModel.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterDiffuseUnitaryModel.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFockDifferingBasesEsa": {
+   "definition_name": "ChapterFockDifferingBasesEsa",
+   "namespace": "BookProof.FockDifferingBases",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockDifferingBasesEsa.lean",
+   "title": "Chapter FockDifferingBasesEsa",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFockDifferingBasesEsa.lean`): generated def bundle for ChapterFockDifferingBasesEsa. See BookProof/ChapterFockDifferingBasesEsa.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFockDifferingBasesEsa.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFockFieldPerturbation": {
+   "definition_name": "ChapterFockFieldPerturbation",
+   "namespace": "BookProof.FockFieldPerturbation",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockFieldPerturbation.lean",
+   "title": "Chapter FockFieldPerturbation",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFockFieldPerturbation.lean`): generated def bundle for ChapterFockFieldPerturbation. See BookProof/ChapterFockFieldPerturbation.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFockFieldPerturbation.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFockPairPerturbation": {
+   "definition_name": "ChapterFockPairPerturbation",
+   "namespace": "BookProof.FockPairPerturbation",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFockPairPerturbation.lean",
+   "title": "Chapter FockPairPerturbation",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFockPairPerturbation.lean`): generated def bundle for ChapterFockPairPerturbation. See BookProof/ChapterFockPairPerturbation.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFockPairPerturbation.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBorn": {
+   "definition_name": "ChapterFreeFieldBorn",
+   "namespace": "BookProof.ChapterFreeFieldBorn",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldBorn.lean",
+   "title": "Chapter FreeFieldBorn",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldBorn.lean`): generated def bundle for ChapterFreeFieldBorn. See BookProof/ChapterFreeFieldBorn.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldBorn.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBornFiberSpectrum": {
+   "definition_name": "ChapterFreeFieldBornFiberSpectrum",
+   "namespace": "BookProof.ChapterFreeFieldBornFiberSpectrum",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldBornFiberSpectrum.lean",
+   "title": "Chapter FreeFieldBornFiberSpectrum",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldBornFiberSpectrum.lean`): generated def bundle for ChapterFreeFieldBornFiberSpectrum. See BookProof/ChapterFreeFieldBornFiberSpectrum.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldBornFiberSpectrum.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBornSignGauge": {
+   "definition_name": "ChapterFreeFieldBornSignGauge",
+   "namespace": "BookProof.ChapterFreeFieldBornSignGauge",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldBornSignGauge.lean",
+   "title": "Chapter FreeFieldBornSignGauge",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldBornSignGauge.lean`): generated def bundle for ChapterFreeFieldBornSignGauge. See BookProof/ChapterFreeFieldBornSignGauge.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldBornSignGauge.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBornSignOrientationSubgroup": {
+   "definition_name": "ChapterFreeFieldBornSignOrientationSubgroup",
+   "namespace": "BookProof.ChapterFreeFieldBornSignOrientationSubgroup",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldBornSignOrientationSubgroup.lean",
+   "title": "Chapter FreeFieldBornSignOrientationSubgroup",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldBornSignOrientationSubgroup.lean`): generated def bundle for ChapterFreeFieldBornSignOrientationSubgroup. See BookProof/ChapterFreeFieldBornSignOrientationSubgroup.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldBornSignOrientationSubgroup.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBornSurj": {
+   "definition_name": "ChapterFreeFieldBornSurj",
+   "namespace": "BookProof.ChapterFreeFieldBornSurj",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldBornSurj.lean",
+   "title": "Chapter FreeFieldBornSurj",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldBornSurj.lean`): generated def bundle for ChapterFreeFieldBornSurj. See BookProof/ChapterFreeFieldBornSurj.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldBornSurj.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldSphere": {
+   "definition_name": "ChapterFreeFieldSphere",
+   "namespace": "BookProof.ChapterFreeFieldSphere",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterFreeFieldSphere.lean",
+   "title": "Chapter FreeFieldSphere",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFreeFieldSphere.lean`): generated def bundle for ChapterFreeFieldSphere. See BookProof/ChapterFreeFieldSphere.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFreeFieldSphere.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterG2": {
+   "definition_name": "ChapterG2",
+   "namespace": "BookProof.ChapterG2",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterG2.lean",
+   "title": "Chapter G2",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterG2.lean`): generated def bundle for ChapterG2. See BookProof/ChapterG2.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterG2.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterHermiteLadderOrder": {
+   "definition_name": "ChapterHermiteLadderOrder",
+   "namespace": "BookProof.HermiteLadder",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterHermiteLadderOrder.lean",
+   "title": "Chapter HermiteLadderOrder",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHermiteLadderOrder.lean`): generated def bundle for ChapterHermiteLadderOrder. See BookProof/ChapterHermiteLadderOrder.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteLadderOrder.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterMackeyGeneralBase": {
+   "definition_name": "ChapterMackeyGeneralBase",
+   "namespace": "BookProof.ChapterMackeyGeneralBase",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterMackeyGeneralBase.lean",
+   "title": "Chapter MackeyGeneralBase",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterMackeyGeneralBase.lean`): generated def bundle for ChapterMackeyGeneralBase. See BookProof/ChapterMackeyGeneralBase.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMackeyGeneralBase.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterMeasureAtomicDiffuse": {
+   "definition_name": "ChapterMeasureAtomicDiffuse",
+   "namespace": "BookProof.ChapterMeasureAtomicDiffuse",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterMeasureAtomicDiffuse.lean",
+   "title": "Chapter MeasureAtomicDiffuse",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterMeasureAtomicDiffuse.lean`): generated def bundle for ChapterMeasureAtomicDiffuse. See BookProof/ChapterMeasureAtomicDiffuse.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterMeasureAtomicDiffuse.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterNonnegSquareRoot": {
+   "definition_name": "ChapterNonnegSquareRoot",
+   "namespace": "BookProof.NonnegSquareRoot",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNonnegSquareRoot.lean",
+   "title": "Chapter NonnegSquareRoot",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNonnegSquareRoot.lean`): generated def bundle for ChapterNonnegSquareRoot. See BookProof/ChapterNonnegSquareRoot.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNonnegSquareRoot.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterNsNonlinearFarisLavine": {
+   "definition_name": "ChapterNsNonlinearFarisLavine",
+   "namespace": "BookProof.NsNonlinearFarisLavine",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterNsNonlinearFarisLavine.lean",
+   "title": "Chapter NsNonlinearFarisLavine",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNsNonlinearFarisLavine.lean`): generated def bundle for ChapterNsNonlinearFarisLavine. See BookProof/ChapterNsNonlinearFarisLavine.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNsNonlinearFarisLavine.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterPvmInducedSystem": {
+   "definition_name": "ChapterPvmInducedSystem",
+   "namespace": "BookProof.ChapterPvmInducedSystem",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterPvmInducedSystem.lean",
+   "title": "Chapter PvmInducedSystem",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterPvmInducedSystem.lean`): generated def bundle for ChapterPvmInducedSystem. See BookProof/ChapterPvmInducedSystem.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterPvmInducedSystem.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterPvmScalarMeasure": {
+   "definition_name": "ChapterPvmScalarMeasure",
+   "namespace": "BookProof.ChapterPvmScalarMeasure",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterPvmScalarMeasure.lean",
+   "title": "Chapter PvmScalarMeasure",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterPvmScalarMeasure.lean`): generated def bundle for ChapterPvmScalarMeasure. See BookProof/ChapterPvmScalarMeasure.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterPvmScalarMeasure.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterQgFourierElimination": {
+   "definition_name": "ChapterQgFourierElimination",
+   "namespace": "BookProof.QgFourierElim",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgFourierElimination.lean",
+   "title": "Chapter QgFourierElimination",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgFourierElimination.lean`): generated def bundle for ChapterQgFourierElimination. See BookProof/ChapterQgFourierElimination.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgFourierElimination.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterQgFullEliminated": {
+   "definition_name": "ChapterQgFullEliminated",
+   "namespace": "BookProof.QgFullEliminated",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgFullEliminated.lean",
+   "title": "Chapter QgFullEliminated",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgFullEliminated.lean`): generated def bundle for ChapterQgFullEliminated. See BookProof/ChapterQgFullEliminated.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgFullEliminated.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterQuadraticRotationPerturbed": {
+   "definition_name": "ChapterQuadraticRotationPerturbed",
+   "namespace": "BookProof.QuadraticRotationPerturbed",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQuadraticRotationPerturbed.lean",
+   "title": "Chapter QuadraticRotationPerturbed",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQuadraticRotationPerturbed.lean`): generated def bundle for ChapterQuadraticRotationPerturbed. See BookProof/ChapterQuadraticRotationPerturbed.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuadraticRotationPerturbed.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterRelationShiftInvert": {
+   "definition_name": "ChapterRelationShiftInvert",
+   "namespace": "BookProof.RelationShiftInvert",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterRelationShiftInvert.lean",
+   "title": "Chapter RelationShiftInvert",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterRelationShiftInvert.lean`): generated def bundle for ChapterRelationShiftInvert. See BookProof/ChapterRelationShiftInvert.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterRelationShiftInvert.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterResolventCorrespondence": {
+   "definition_name": "ChapterResolventCorrespondence",
+   "namespace": "BookProof.ResolventCorrespondence",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterResolventCorrespondence.lean",
+   "title": "Chapter ResolventCorrespondence",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterResolventCorrespondence.lean`): generated def bundle for ChapterResolventCorrespondence. See BookProof/ChapterResolventCorrespondence.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterResolventCorrespondence.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterResolventMinMaxEquality": {
+   "definition_name": "ChapterResolventMinMaxEquality",
+   "namespace": "BookProof.ResolventLadderEq",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterResolventMinMaxEquality.lean",
+   "title": "Chapter ResolventMinMaxEquality",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterResolventMinMaxEquality.lean`): generated def bundle for ChapterResolventMinMaxEquality. See BookProof/ChapterResolventMinMaxEquality.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterResolventMinMaxEquality.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterScalaronFockGapChain": {
+   "definition_name": "ChapterScalaronFockGapChain",
+   "namespace": "BookProof.ScalaronFockGapChain",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterScalaronFockGapChain.lean",
+   "title": "Chapter ScalaronFockGapChain",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterScalaronFockGapChain.lean`): generated def bundle for ChapterScalaronFockGapChain. See BookProof/ChapterScalaronFockGapChain.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterScalaronFockGapChain.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterSeparableL2Model": {
+   "definition_name": "ChapterSeparableL2Model",
+   "namespace": "BookProof.ChapterSeparableL2Model",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSeparableL2Model.lean",
+   "title": "Chapter SeparableL2Model",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterSeparableL2Model.lean`): generated def bundle for ChapterSeparableL2Model. See BookProof/ChapterSeparableL2Model.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSeparableL2Model.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterShiftedQuadraticDegenerate": {
+   "definition_name": "ChapterShiftedQuadraticDegenerate",
+   "namespace": "BookProof.ShiftedQuadraticDegenerate",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterShiftedQuadraticDegenerate.lean",
+   "title": "Chapter ShiftedQuadraticDegenerate",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterShiftedQuadraticDegenerate.lean`): generated def bundle for ChapterShiftedQuadraticDegenerate. See BookProof/ChapterShiftedQuadraticDegenerate.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterShiftedQuadraticDegenerate.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterSolidHarmonic": {
+   "definition_name": "ChapterSolidHarmonic",
+   "namespace": "BookProof.ChapterSolidHarmonic",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSolidHarmonic.lean",
+   "title": "Chapter SolidHarmonic",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterSolidHarmonic.lean`): generated def bundle for ChapterSolidHarmonic. See BookProof/ChapterSolidHarmonic.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSolidHarmonic.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterSqSumOuterSingleTime": {
+   "definition_name": "ChapterSqSumOuterSingleTime",
+   "namespace": "BookProof.SqSumOuterFamily",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterSqSumOuterSingleTime.lean",
+   "title": "Chapter SqSumOuterSingleTime",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterSqSumOuterSingleTime.lean`): generated def bundle for ChapterSqSumOuterSingleTime. See BookProof/ChapterSqSumOuterSingleTime.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterSqSumOuterSingleTime.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterTruncationGapLift": {
+   "definition_name": "ChapterTruncationGapLift",
+   "namespace": "BookProof.TruncationGapLift",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterTruncationGapLift.lean",
+   "title": "Chapter TruncationGapLift",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterTruncationGapLift.lean`): generated def bundle for ChapterTruncationGapLift. See BookProof/ChapterTruncationGapLift.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterTruncationGapLift.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterYangMillsCertificateSeam": {
+   "definition_name": "ChapterYangMillsCertificateSeam",
+   "namespace": "BookProof.YangMillsCertificateSeam",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterYangMillsCertificateSeam.lean",
+   "title": "Chapter YangMillsCertificateSeam",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterYangMillsCertificateSeam.lean`): generated def bundle for ChapterYangMillsCertificateSeam. See BookProof/ChapterYangMillsCertificateSeam.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsCertificateSeam.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFreeFieldBornSignMatrix": {
+   "name": "ChapterFreeFieldBornSignMatrix",
+   "chapter": "ChapterFreeFieldBornSignMatrix",
+   "file": "Definitions/Def_ChapterFreeFieldBornSignMatrix.lean",
+   "title": "ChapterFreeFieldBornSignMatrix",
+   "nl": "",
+   "source": "",
+   "tags": [
+    "timepiece"
+   ]
   }
  },
  "thms": {

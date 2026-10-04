@@ -137,7 +137,7 @@
 {"const":"cfc_const","end":{"col":13,"line":139,"offset":7045},"kind":"ref","start":{"col":4,"line":139,"offset":7036}}
 {"const":"Real","end":{"col":21,"line":139,"offset":7055},"kind":"ref","start":{"col":20,"line":139,"offset":7052}}
 {"const":"BookProof.MinMaxSpectrum.re_inner_mono_of_le","end":{"col":34,"line":140,"offset":7103},"kind":"ref","start":{"col":15,"line":140,"offset":7084}}
-{"const":"algebraMap","end":{"col":26,"line":141,"offset":7136},"kind":"ref","start":{"col":16,"line":141,"offset":7126}}
+{"const":"Algebra.algebraMap","end":{"col":26,"line":141,"offset":7136},"kind":"ref","start":{"col":16,"line":141,"offset":7126}}
 {"const":"Real","end":{"col":28,"line":141,"offset":7140},"kind":"ref","start":{"col":27,"line":141,"offset":7137}}
 {"const":"Complex","end":{"col":36,"line":141,"offset":7152},"kind":"ref","start":{"col":35,"line":141,"offset":7149}}
 {"const":"cfc","end":{"col":53,"line":141,"offset":7169},"kind":"ref","start":{"col":50,"line":141,"offset":7166}}

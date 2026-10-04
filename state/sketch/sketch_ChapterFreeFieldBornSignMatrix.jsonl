@@ -44,6 +44,7 @@
 {"const":"BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix","end":{"col":72,"line":56,"offset":1946},"kind":"ref","start":{"col":62,"line":56,"offset":1936}}
 {"const":"BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix","end":{"col":46,"line":58,"offset":2014},"kind":"ref","start":{"col":36,"line":58,"offset":2004}}
 {"const":"BookProof.ChapterFreeFieldBornSignAction.flipVec","end":{"col":55,"line":58,"offset":2023},"kind":"ref","start":{"col":48,"line":58,"offset":2016}}
+{"const":"Lean.Grind.Config.splitImp","end":{"col":17,"line":59,"offset":2042},"kind":"ref","start":{"col":9,"line":59,"offset":2034}}
 {"const":"BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix_sq","end":{"col":21,"line":64,"offset":2114},"kind":"ref","start":{"col":8,"line":64,"offset":2101}}
 {"const":"Fin","end":{"col":30,"line":64,"offset":2123},"kind":"ref","start":{"col":27,"line":64,"offset":2120}}
 {"const":"Bool","end":{"col":39,"line":64,"offset":2134},"kind":"ref","start":{"col":35,"line":64,"offset":2130}}

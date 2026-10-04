@@ -209932,3 +209932,263 @@ inst✝¹ : NormedA)
 00:25:43 sync: checked 175 pending solution(s), 0 already Proved
 00:25:43 sync: checked 200 pending solution(s), 0 already Proved
 00:25:43 sync: marked 0 already-published item(s) and 0 already-proved solution(s) done
+09:12:46 retry-failed: re-armed 0 item(s)
+09:12:52 sync: read 807 definition publish job(s)
+09:13:15 sync: read 5945 problem publish job(s)
+09:13:20 sync: read 807 definition publish job(s)
+09:13:42 sync: read 5945 problem publish job(s)
+09:13:47 sync: read 807 definition publish job(s)
+09:14:10 sync: read 5945 problem publish job(s)
+09:14:10 submitting def:ChapterA3f (attempt 1)
+09:14:18 sync: read 807 definition publish job(s)
+09:14:40 sync: read 5945 problem publish job(s)
+09:14:47 def:ChapterA3f: accepted, waiting on the compiler
+09:14:47 submitting def:ChapterA3h (attempt 1)
+09:14:54 sync: read 808 definition publish job(s)
+09:15:20 sync: read 5945 problem publish job(s)
+09:15:27 def:ChapterA3h: accepted, waiting on the compiler
+09:15:27 submitting def:ChapterA4h (attempt 1)
+09:15:34 sync: read 809 definition publish job(s)
+09:15:57 sync: read 5945 problem publish job(s)
+09:16:10 def:ChapterA4h: accepted, waiting on the compiler
+09:16:10 submitting def:ChapterQuantumGravityBrstCharge (attempt 1)
+09:16:57 sync: read 810 definition publish job(s)
+09:17:19 sync: read 5945 problem publish job(s)
+09:17:30 def:ChapterQuantumGravityBrstCharge: accepted, waiting on the compiler
+09:17:30 submitting def:ChapterBrstUnboundedLeakage (attempt 1)
+09:17:39 sync: read 811 definition publish job(s)
+09:18:01 sync: read 5945 problem publish job(s)
+09:18:04 def:ChapterBrstUnboundedLeakage: REUSING existing Definition node 745b4ede-decc-4a97-9843-6d88c3d41fc0
+09:18:04 def:ChapterBrstUnboundedLeakage: DONE
+09:18:04 submitting def:ChapterCarlemanUnboundedHop (attempt 1)
+09:18:22 sync: read 811 definition publish job(s)
+09:18:43 sync: read 5945 problem publish job(s)
+09:18:47 def:ChapterCarlemanUnboundedHop: REUSING existing Definition node becbc63c-252b-45a9-929d-15785b923ab2
+09:18:47 def:ChapterCarlemanUnboundedHop: DONE
+09:18:47 submitting def:ChapterReducingSubspaceEsa (attempt 1)
+09:18:54 sync: read 811 definition publish job(s)
+09:19:15 sync: read 5945 problem publish job(s)
+09:19:19 def:ChapterReducingSubspaceEsa: REUSING existing Definition node 48d24fa7-b091-4052-a47d-5b5f3e2f8d7f
+09:19:19 def:ChapterReducingSubspaceEsa: DONE
+09:19:19 submitting def:ChapterGroupAverageEsa (attempt 1)
+09:19:27 sync: read 811 definition publish job(s)
+09:19:46 sync: read 5945 problem publish job(s)
+09:19:53 def:ChapterGroupAverageEsa: accepted, waiting on the compiler
+09:19:53 submitting def:ChapterHalfLineLimitCircle (attempt 1)
+09:20:18 sync: read 812 definition publish job(s)
+09:20:40 sync: read 5945 problem publish job(s)
+09:20:44 def:ChapterHalfLineLimitCircle: REUSING existing Definition node 54f4a931-4f6d-4d5c-a6c9-0e61127ee78c
+09:20:44 def:ChapterHalfLineLimitCircle: DONE
+09:20:44 submitting def:ChapterNavierStokesCarleman (attempt 1)
+09:20:51 sync: read 812 definition publish job(s)
+09:21:13 sync: read 5945 problem publish job(s)
+09:21:16 def:ChapterNavierStokesCarleman: REUSING existing Definition node 5573cf3d-da2f-438d-b479-c21ed51f90fb
+09:21:16 def:ChapterNavierStokesCarleman: DONE
+09:21:16 submitting def:ChapterNsScalarVectorCurry (attempt 1)
+09:21:35 sync: read 812 definition publish job(s)
+09:21:56 sync: read 5945 problem publish job(s)
+09:22:00 def:ChapterNsScalarVectorCurry: REUSING existing Definition node 97c06a0b-1eba-413a-964b-c02a4f8f2c75
+09:22:00 def:ChapterNsScalarVectorCurry: DONE
+09:22:00 submitting def:ChapterQuadraticRotationEsa (attempt 1)
+09:22:07 sync: read 812 definition publish job(s)
+09:22:29 sync: read 5945 problem publish job(s)
+09:22:33 def:ChapterQuadraticRotationEsa: REUSING existing Definition node a80ba498-6de4-471c-85fd-8963cd71e23e
+09:22:33 def:ChapterQuadraticRotationEsa: DONE
+09:22:33 submitting def:ChapterShiftedQuadraticEsa (attempt 1)
+09:22:40 sync: read 812 definition publish job(s)
+09:22:59 sync: read 5945 problem publish job(s)
+09:23:07 def:ChapterShiftedQuadraticEsa: accepted, waiting on the compiler
+09:30:46 def:ChapterA3f: DONE
+09:30:55 submitting def:ChapterAttentionMasking (attempt 1)
+09:31:03 sync: read 813 definition publish job(s)
+09:31:24 sync: read 5945 problem publish job(s)
+09:31:31 def:ChapterAttentionMasking: accepted, waiting on the compiler
+09:32:10 def:ChapterA3h: DONE
+09:32:20 submitting def:ChapterA4g (attempt 1)
+09:32:27 sync: read 814 definition publish job(s)
+09:32:49 sync: read 5945 problem publish job(s)
+09:32:58 def:ChapterA4g: accepted, waiting on the compiler
+09:35:34 def:ChapterA4h: DONE
+09:35:44 submitting def:ChapterCayleyInverse (attempt 1)
+09:35:51 sync: read 815 definition publish job(s)
+09:36:14 sync: read 5945 problem publish job(s)
+09:36:39 def:ChapterCayleyInverse: DONE
+09:36:39 submitting def:ChapterCoherentFidelity (attempt 1)
+09:36:46 sync: read 815 definition publish job(s)
+09:37:08 sync: read 5945 problem publish job(s)
+09:37:16 def:ChapterCoherentFidelity: accepted, waiting on the compiler
+09:37:16 def:ChapterQuantumGravityBrstCharge: DONE
+09:37:26 submitting def:ChapterNsFieldMomentumInverse (attempt 1)
+09:37:33 sync: read 816 definition publish job(s)
+09:37:53 sync: read 5945 problem publish job(s)
+09:38:03 def:ChapterNsFieldMomentumInverse: accepted, waiting on the compiler
+09:41:14 def:ChapterGroupAverageEsa: DONE
+09:41:23 submitting def:ChapterSmGaugeRepresentation (attempt 1)
+09:41:30 sync: read 817 definition publish job(s)
+09:41:51 sync: read 5945 problem publish job(s)
+09:41:59 def:ChapterSmGaugeRepresentation: accepted, waiting on the compiler
+09:43:44 def:ChapterShiftedQuadraticEsa: DONE
+09:43:54 submitting def:ChapterGravityInvMetric (attempt 1)
+09:44:01 sync: read 818 definition publish job(s)
+09:44:23 sync: read 5945 problem publish job(s)
+09:44:31 def:ChapterGravityInvMetric: accepted, waiting on the compiler
+09:51:13 def:ChapterAttentionMasking: DONE
+09:51:23 submitting def:ChapterLorentzRealRepDirect (attempt 1)
+09:51:29 sync: read 819 definition publish job(s)
+09:51:50 sync: read 5945 problem publish job(s)
+09:52:03 def:ChapterLorentzRealRepDirect: accepted, waiting on the compiler
+09:52:04 def:ChapterA4g: DONE
+09:52:13 submitting def:ChapterA3m (attempt 1)
+09:52:20 sync: read 820 definition publish job(s)
+09:52:43 sync: read 5945 problem publish job(s)
+09:52:56 def:ChapterA3m: accepted, waiting on the compiler
+09:56:09 def:ChapterCoherentFidelity: DONE
+09:56:18 submitting def:ChapterA3q (attempt 1)
+09:56:26 sync: read 821 definition publish job(s)
+09:56:49 sync: read 5945 problem publish job(s)
+09:57:06 def:ChapterA3q: accepted, waiting on the compiler
+09:57:06 def:ChapterNsFieldMomentumInverse: DONE
+09:57:16 submitting def:ChapterA3x (attempt 1)
+09:57:23 sync: read 822 definition publish job(s)
+09:57:47 sync: read 5945 problem publish job(s)
+09:58:04 def:ChapterA3x: accepted, waiting on the compiler
+10:01:26 def:ChapterSmGaugeRepresentation: DONE
+10:01:36 submitting def:ChapterCarlemanGeneralHop (attempt 1)
+10:01:45 sync: read 823 definition publish job(s)
+10:02:09 sync: read 5945 problem publish job(s)
+10:02:26 def:ChapterCarlemanGeneralHop: accepted, waiting on the compiler
+10:06:18 def:ChapterGravityInvMetric: DONE
+10:06:27 submitting def:ChapterFreeFieldBorn (attempt 1)
+10:06:35 sync: read 824 definition publish job(s)
+10:06:58 sync: read 5945 problem publish job(s)
+10:07:16 def:ChapterFreeFieldBorn: accepted, waiting on the compiler
+10:10:46 def:ChapterLorentzRealRepDirect: DONE
+10:10:56 submitting def:ChapterFreeFieldBornFiberSpectrum (attempt 1)
+10:11:03 sync: read 825 definition publish job(s)
+10:11:26 sync: read 5945 problem publish job(s)
+10:11:39 def:ChapterFreeFieldBornFiberSpectrum: accepted, waiting on the compiler
+10:11:39 def:ChapterA3m: DONE
+10:11:49 submitting def:ChapterFreeFieldBornSignGauge (attempt 1)
+10:11:55 sync: read 826 definition publish job(s)
+10:12:16 sync: read 5945 problem publish job(s)
+10:12:24 def:ChapterFreeFieldBornSignGauge: accepted, waiting on the compiler
+10:17:14 def:ChapterA3q: DONE
+10:17:23 submitting def:ChapterFreeFieldBornSignOrientationSubgroup (attempt 1)
+10:17:32 sync: read 827 definition publish job(s)
+10:17:57 sync: read 5945 problem publish job(s)
+10:18:14 def:ChapterFreeFieldBornSignOrientationSubgroup: accepted, waiting on the compiler
+10:18:15 def:ChapterA3x: DONE
+10:18:24 submitting def:ChapterMackeyGeneralBase (attempt 1)
+10:18:33 sync: read 828 definition publish job(s)
+10:19:00 sync: read 5945 problem publish job(s)
+10:19:17 def:ChapterMackeyGeneralBase: accepted, waiting on the compiler
+10:24:38 def:ChapterCarlemanGeneralHop: DONE
+10:24:47 submitting def:ChapterMeasureAtomicDiffuse (attempt 1)
+10:24:55 sync: read 829 definition publish job(s)
+10:25:17 sync: read 5945 problem publish job(s)
+10:25:25 def:ChapterMeasureAtomicDiffuse: accepted, waiting on the compiler
+10:29:44 def:ChapterFreeFieldBorn: DONE
+10:29:53 submitting def:ChapterSeparableL2Model (attempt 1)
+10:30:01 sync: read 830 definition publish job(s)
+10:30:27 sync: read 5945 problem publish job(s)
+10:30:41 def:ChapterSeparableL2Model: accepted, waiting on the compiler
+10:35:58 def:ChapterFreeFieldBornFiberSpectrum: DONE
+10:36:08 submitting def:ChapterShiftedQuadraticDegenerate (attempt 1)
+10:36:44 sync: read 831 definition publish job(s)
+10:37:07 sync: read 5945 problem publish job(s)
+10:37:20 def:ChapterShiftedQuadraticDegenerate: accepted, waiting on the compiler
+10:37:21 def:ChapterFreeFieldBornSignGauge: DONE
+10:37:30 submitting def:ChapterYangMillsCertificateSeam (attempt 1)
+10:37:41 sync: read 832 definition publish job(s)
+10:38:04 sync: read 5945 problem publish job(s)
+10:38:15 def:ChapterYangMillsCertificateSeam: accepted, waiting on the compiler
+10:42:34 def:ChapterFreeFieldBornSignOrientationSubgroup: FAIL (publish FAILED: definition does not compile: line 22: Unknown identifier `flipMatrix`; line 34: Unknown identifier `orientationPreserving_xor`; line 2)
+10:43:21 def:ChapterMackeyGeneralBase: DONE
+10:46:14 def:ChapterMeasureAtomicDiffuse: DONE
+10:52:51 def:ChapterSeparableL2Model: DONE
+11:04:05 def:ChapterShiftedQuadraticDegenerate: DONE
+11:04:55 def:ChapterYangMillsCertificateSeam: DONE
+11:04:55 summary: 33 done, 559 pending, 0 failed, 2 unsubmittable (source missing from this checkout)
+11:04:55 waiting on unpublished def bundle(s): ChapterA3q (1 item(s)), ChapterCoherentFidelity (2 item(s)), ChapterFreeFieldBorn (1 item(s)), ChapterQuantumGravityBrstCharge (1 item(s))
+11:04:55 chunk: 34 item(s) resolved in 6700s
+11:05:41 sync: read 833 definition publish job(s)
+11:06:05 sync: read 5945 problem publish job(s)
+11:06:10 sync: checked 25 pending solution(s), 17 already Proved
+11:06:16 sync: checked 50 pending solution(s), 40 already Proved
+11:06:23 sync: checked 75 pending solution(s), 65 already Proved
+11:06:29 sync: checked 100 pending solution(s), 90 already Proved
+11:06:35 sync: checked 125 pending solution(s), 115 already Proved
+11:06:41 sync: checked 150 pending solution(s), 140 already Proved
+11:06:48 sync: checked 175 pending solution(s), 165 already Proved
+11:06:54 sync: checked 200 pending solution(s), 190 already Proved
+11:07:01 sync: checked 225 pending solution(s), 215 already Proved
+11:07:07 sync: checked 250 pending solution(s), 240 already Proved
+11:07:14 sync: checked 275 pending solution(s), 265 already Proved
+11:07:20 sync: checked 300 pending solution(s), 290 already Proved
+11:07:26 sync: checked 325 pending solution(s), 315 already Proved
+11:07:32 sync: checked 350 pending solution(s), 340 already Proved
+11:07:39 sync: checked 375 pending solution(s), 365 already Proved
+11:07:45 sync: checked 400 pending solution(s), 390 already Proved
+11:07:52 sync: checked 425 pending solution(s), 415 already Proved
+11:07:59 sync: checked 450 pending solution(s), 440 already Proved
+11:08:05 sync: checked 475 pending solution(s), 465 already Proved
+11:08:12 sync: checked 500 pending solution(s), 490 already Proved
+11:08:18 sync: checked 525 pending solution(s), 515 already Proved
+11:08:25 sync: checked 550 pending solution(s), 540 already Proved
+11:08:31 sync: checked 575 pending solution(s), 565 already Proved
+11:08:38 sync: checked 600 pending solution(s), 590 already Proved
+11:08:48 sync: checked 625 pending solution(s), 614 already Proved
+11:08:54 sync: checked 650 pending solution(s), 639 already Proved
+11:09:01 sync: checked 675 pending solution(s), 664 already Proved
+11:09:07 sync: checked 700 pending solution(s), 689 already Proved
+11:09:14 sync: checked 725 pending solution(s), 714 already Proved
+11:09:20 sync: checked 750 pending solution(s), 739 already Proved
+11:09:27 sync: checked 775 pending solution(s), 764 already Proved
+11:09:32 sync: checked 800 pending solution(s), 789 already Proved
+11:09:38 sync: checked 825 pending solution(s), 814 already Proved
+11:09:45 sync: checked 850 pending solution(s), 838 already Proved
+11:09:51 sync: checked 875 pending solution(s), 862 already Proved
+11:09:57 sync: checked 900 pending solution(s), 886 already Proved
+11:10:03 sync: checked 925 pending solution(s), 911 already Proved
+11:10:10 sync: checked 950 pending solution(s), 936 already Proved
+11:10:17 sync: checked 975 pending solution(s), 961 already Proved
+11:10:24 sync: checked 1000 pending solution(s), 986 already Proved
+11:10:31 sync: checked 1025 pending solution(s), 1011 already Proved
+11:10:37 sync: checked 1050 pending solution(s), 1036 already Proved
+11:10:44 sync: checked 1075 pending solution(s), 1061 already Proved
+11:10:50 sync: checked 1100 pending solution(s), 1086 already Proved
+11:10:56 sync: checked 1125 pending solution(s), 1109 already Proved
+11:11:03 sync: checked 1150 pending solution(s), 1134 already Proved
+11:11:10 sync: checked 1175 pending solution(s), 1159 already Proved
+11:11:17 sync: checked 1200 pending solution(s), 1184 already Proved
+11:11:24 sync: checked 1225 pending solution(s), 1209 already Proved
+11:11:31 sync: checked 1250 pending solution(s), 1233 already Proved
+11:11:38 sync: checked 1275 pending solution(s), 1258 already Proved
+11:11:45 sync: checked 1300 pending solution(s), 1282 already Proved
+11:11:51 sync: checked 1325 pending solution(s), 1307 already Proved
+11:11:57 sync: checked 1350 pending solution(s), 1331 already Proved
+11:12:03 sync: checked 1375 pending solution(s), 1355 already Proved
+11:12:10 sync: checked 1400 pending solution(s), 1376 already Proved
+11:12:16 sync: checked 1425 pending solution(s), 1400 already Proved
+11:12:23 sync: checked 1450 pending solution(s), 1422 already Proved
+11:12:30 sync: checked 1475 pending solution(s), 1447 already Proved
+11:12:37 sync: checked 1500 pending solution(s), 1472 already Proved
+11:12:44 sync: checked 1525 pending solution(s), 1497 already Proved
+11:12:51 sync: checked 1550 pending solution(s), 1520 already Proved
+11:12:58 sync: checked 1575 pending solution(s), 1543 already Proved
+11:13:03 sync: checked 1600 pending solution(s), 1562 already Proved
+11:13:09 sync: checked 1625 pending solution(s), 1587 already Proved
+11:13:16 sync: checked 1650 pending solution(s), 1612 already Proved
+11:13:22 sync: checked 1675 pending solution(s), 1635 already Proved
+11:13:28 sync: checked 1700 pending solution(s), 1659 already Proved
+11:13:34 sync: checked 1725 pending solution(s), 1675 already Proved
+11:13:40 sync: checked 1750 pending solution(s), 1695 already Proved
+11:13:46 sync: checked 1775 pending solution(s), 1715 already Proved
+11:13:50 sync: checked 1800 pending solution(s), 1729 already Proved
+11:13:57 sync: checked 1825 pending solution(s), 1749 already Proved
+11:14:02 sync: checked 1850 pending solution(s), 1766 already Proved
+11:14:02 sync: checked 1875 pending solution(s), 1767 already Proved
+11:14:02 sync: checked 1900 pending solution(s), 1767 already Proved
+11:14:02 sync: checked 1925 pending solution(s), 1767 already Proved
+11:14:02 sync: checked 1950 pending solution(s), 1768 already Proved
+11:14:02 sync: marked 2173 already-published item(s) and 1768 already-proved solution(s) done

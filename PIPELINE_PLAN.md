@@ -437,6 +437,51 @@ different name form (`ChapterFoo` / `Def_ChapterFoo` / `Thm_ChapterFoo`) and eve
 mismatch produced a silent `NOSRC`, a doubled `Def_`, or a doubled `Thm_` — all of
 which read as "the bundle is broken" rather than "the list is malformed".
 
+### §2.6b Never carry a work list as a text file — derive it from files that exist
+
+The candidate target list was corrupted three times in one session, each time
+silently, and each corruption looked like a *missing bundle* rather than a
+malformed list:
+
+1. `printf "A\nB" > f` — no trailing newline, so a later `cat f g` produced
+   `ChapterWignerSymmetryInfiniteChapterQuantumGravityBrstCharge`. One entry, two
+   chapters, neither built.
+2. `sort -u` could not fix it, because it was already one token.
+3. My repair then stripped prefixes by suffix-matching and produced `terSymmetryRep`,
+   `terWallDeficiencyObstruction` — **worse**, and it silently dropped the chapter
+   I was trying to add.
+
+**Rule: a name is valid iff its file exists.** Derive lists from the filesystem,
+never from a hand-maintained text file, and never "repair" a list by string surgery
+on names you cannot verify:
+
+```python
+have = {f[4:-5] for f in os.listdir("Definitions") if f.startswith("Def_")}
+targets = sorted(candidate_set & have)      # intersection, not filtering
+```
+
+Three separate passes in this session concluded "this bundle is missing" when the
+bundle existed and the list entry was malformed. That is the same failure shape as
+§2.8c and §2.8f: a silent wrong answer instead of an error.
+
+### §2.10f State of the def layer (2026-10-04)
+
+**383 def bundles published** (373 at the start of this run). Of the 55 originally
+screened, **12 verify and are published**; the ordered build
+(`debug/build_candidate_mirror.py`) reports the rest as:
+
+| Class | Cause | Fixable by |
+| ---: | :--- | :--- |
+| 15 | `object file not found` | a provider bundle that itself failed — secondary, not a root |
+| ~10 | `unknown namespace BookProof.X` | the declaring chapter has **no published bundle** |
+| ~6 | `Unknown identifier <name>` | the declaring chapter is absent from `namespace_owner` entirely |
+| 1 | `unexpected identifier; expected command` | generator extraction defect |
+
+So the def backlog is now gated on **publishing the provider chapters**, not on the
+candidates themselves. That is a different shape of work from the rest of the
+session: it is a topological publication order over chapters, and each unblocked
+provider typically releases 1–3 candidates.
+
 ### §2.11 Execution order from here
 
 1. **thm backlog (32).** Per §2.4, one first-error at a time. Most are v4.33 drift

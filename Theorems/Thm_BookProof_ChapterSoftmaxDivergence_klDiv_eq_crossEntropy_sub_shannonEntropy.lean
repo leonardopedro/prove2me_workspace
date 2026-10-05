@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxDivergence.lean — theorem BookProof.ChapterSoftmaxDivergence.klDiv_eq_crossEntropy_sub_shannonEntropy
+import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxDivergence
 
 variable {m : ℕ}

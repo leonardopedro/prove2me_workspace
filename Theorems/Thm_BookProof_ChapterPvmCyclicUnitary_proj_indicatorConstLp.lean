@@ -1,9 +1,9 @@
 -- Generated from ChapterPvmCyclicUnitary.lean — theorem BookProof.ChapterPvmCyclicUnitary.proj_indicatorConstLp
+import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterMackeyQuasiInvariant
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterElectroweakFieldStrength
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmCyclicUnitary
 

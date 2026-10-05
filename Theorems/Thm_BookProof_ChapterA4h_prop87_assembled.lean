@@ -6,7 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterA4h
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterWeylCauchyRiemann
-import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.WeylCauchyRiemann
 open BookProof.ChapterA4h

@@ -10,7 +10,7 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.NsFullEuler
 
 variable {n : ℕ}

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterYangMillsBandBounds
 import Theorems.Thm_BookProof_YangMillsBandBounds_ymHermCol_eq
 import Theorems.Thm_BookProof_YangMillsBandBounds_isBandR4_ymPoly
 import Theorems.Thm_BookProof_YangMillsBandBounds_gradedBand_of_isBandR
+open BookProof.YangMillsBandBounds
 
 
 
@@ -15,6 +16,7 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
+open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 set_option maxHeartbeats 1000000 in

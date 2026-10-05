@@ -14,7 +14,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian

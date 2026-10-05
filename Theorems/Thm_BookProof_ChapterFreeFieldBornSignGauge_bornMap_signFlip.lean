@@ -1,7 +1,7 @@
 -- Generated from ChapterFreeFieldBornSignGauge.lean — theorem BookProof.ChapterFreeFieldBornSignGauge.bornMap_signFlip
+import Definitions.Def_ChapterFreeFieldBorn
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignGauge
-import Definitions.Def_ChapterA4
 open BookProof.ChapterFreeFieldBornSignGauge
 
 variable {n : ℕ}

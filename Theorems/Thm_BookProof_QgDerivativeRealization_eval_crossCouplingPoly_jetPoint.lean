@@ -1,0 +1,18 @@
+-- Generated from ChapterQgDerivativeRealization.lean — theorem BookProof.QgDerivativeRealization.eval_crossCouplingPoly_jetPoint
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Mathlib
+import Definitions.Def_ChapterQgDerivativeRealization
+import Definitions.Def_ChapterQuantumGravity3DGauge
+open BookProof.QuantumGravity3DGauge
+open BookProof.QgDerivativeRealization
+
+
+
+open MvPolynomial
+open BookProof.GaugeFixing
+open BookProof.QuantumGravity3DGauge
+open BookProof.QgPhysicalSectorIdentity
+
+theorem BookProof.QgDerivativeRealization.eval_crossCouplingPoly_jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) :
+    MvPolynomial.eval (jetPoint T x) crossCouplingPoly = couplingValue T x := by sorry

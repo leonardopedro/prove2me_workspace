@@ -3,13 +3,15 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterE4
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterA4
 open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime

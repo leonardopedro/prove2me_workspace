@@ -1,6 +1,15 @@
+import Theorems.Thm_BookProof_NonnegResolvent_isSelfAdjoint_yosidaCLM
+
+import Theorems.Thm_BookProof_NonnegResolvent_invCLMAt_comm
+
+import Theorems.Thm_BookProof_NonnegResolvent_dense_domain
+
+import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
+
 import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterClosureUniqueness
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterPositiveSquareRootUnique
 import Mathlib
 
 import Mathlib.Analysis.SpecialFunctions.Exponential
@@ -80,6 +89,7 @@ here; the group is built from the *bounded* Yosida approximants only.
 
 namespace BookProof.NonnegUnitaryGroup
 
+open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open BookProof.NonnegResolvent
 open Filter Topology NormedSpace
 open scoped InnerProductSpace

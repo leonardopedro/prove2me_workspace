@@ -1,11 +1,12 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — solution of BookProof.FiniteSectionSingleTime.secOp_isSelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
-import Theorems.Thm_BookProof_FiniteSectionSingleTime_coreVec_coe
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec
-import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec_prime
+import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec'
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_projW_apply
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_secOp_apply
+import Theorems.Thm_BookProof_FiniteSectionSingleTime_coreVec_coe
+open BookProof.FiniteSectionSingleTime
 
 
 
@@ -15,6 +16,7 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

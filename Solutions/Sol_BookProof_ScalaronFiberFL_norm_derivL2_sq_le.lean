@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_integral_deriv_le_quadForm
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_derivL2_sq
+open BookProof.ScalaronFiberFL
 
 
 

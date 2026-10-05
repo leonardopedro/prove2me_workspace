@@ -14,7 +14,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockFullFL

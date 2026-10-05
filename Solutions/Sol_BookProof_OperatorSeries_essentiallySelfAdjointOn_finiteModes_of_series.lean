@@ -5,12 +5,9 @@ import Theorems.Thm_BookProof_OperatorSeries_seriesOp_symmetricOn
 import Theorems.Thm_BookProof_OperatorSeries_seriesOp_norm_le
 import Theorems.Thm_BookProof_OperatorSeries_seriesOp_commForm_le
 import Theorems.Thm_BookProof_OperatorSeries_essentiallySelfAdjointOn_finiteModes_of_bounds
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_nonneg
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.OperatorSeries
-
-
-
-
-
 
 
 
@@ -20,31 +17,10 @@ open BookProof.NavierStokesFlow.LpNat
 
 noncomputable section
 
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
 variable {ι κ : Type*} {c : ι → ℝ}
-
 variable (T : κ → (maxDom c →ₗ[ℂ] L2I ι)) (a : κ → ℝ)
-
-
-
 variable {T} {a}
-
-
-
-
-
-
-
-
-
 variable {ι : Type*} {c : ι → ℝ}
 
 set_option maxHeartbeats 1000000 in

@@ -6,7 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterHashimotoShiftInvert
-import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.FriedrichsCanonical

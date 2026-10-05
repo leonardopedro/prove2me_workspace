@@ -6,7 +6,9 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterWallEsaBddBelow
+import Definitions.Def_ChapterTensorSumChain
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterStoneBridge
@@ -17,7 +19,6 @@ import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite

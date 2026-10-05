@@ -1,4 +1,5 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — theorem BookProof.SirkSingleTime.qgOuterFock_singleTime_shiftInvert_convergence
+import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
@@ -7,7 +8,6 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterSirkTrotterKato

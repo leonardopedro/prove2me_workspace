@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_neg
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_pos_of_pos
+open BookProof.SirkSingleTime
 
 
 

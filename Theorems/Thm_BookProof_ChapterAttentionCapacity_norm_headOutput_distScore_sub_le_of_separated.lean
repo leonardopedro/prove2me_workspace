@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionCapacity.lean — theorem BookProof.ChapterAttentionCapacity.norm_headOutput_distScore_sub_le_of_separated
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionCapacity
 
 variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -15,6 +15,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionCapacity.norm_headOutput_distScore_sub_le_of_separated

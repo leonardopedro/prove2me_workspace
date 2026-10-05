@@ -2,19 +2,44 @@ import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
 
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
 
+import Theorems.Thm_BookProof_PermSector_isReducingProjection_fermionicProj
+
+import Theorems.Thm_BookProof_PermSector_signRep_commutes_sectorDom
+
+import Theorems.Thm_BookProof_PermSector_signRep_mem_sectorDom
+
+
+
+import Theorems.Thm_BookProof_PermSector_isReducingProjection_bosonicProj
+
+import Theorems.Thm_BookProof_PermSector_permRep_commutes_sectorDom
+
+import Theorems.Thm_BookProof_PermSector_permRep_mem_sectorDom
 
 
 
 
+import Theorems.Thm_BookProof_PermSector_permRep_commutes_sectorCore
 
+import Theorems.Thm_BookProof_PermSector_permRep_mem_sectorCore
+
+
+
+
+import Theorems.Thm_BookProof_PermSector_signRep_commutes_sectorCore
+
+import Theorems.Thm_BookProof_PermSector_signRep_mem_sectorCore
 
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterDirectSumEsa
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorPermutation
 import Mathlib
 
 

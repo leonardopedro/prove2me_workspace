@@ -1,9 +1,9 @@
 -- Generated from ChapterAttentionMixing.lean — theorem BookProof.ChapterAttentionMixing.eq_of_stationary
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 import Definitions.Def_ChapterDutchBook
-import Definitions.Def_ChapterA4
 open BookProof.ChapterDutchBook
 open BookProof.ChapterAttentionMixing
 
@@ -17,6 +17,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionMixing.eq_of_stationary {P : Fin m → Fin m → ℝ} {p q : Fin m → ℝ} {eps : ℝ}

@@ -6,7 +6,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.EsaOneParticle

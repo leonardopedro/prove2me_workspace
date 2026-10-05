@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_one_le_pot
 import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable
 import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable_sq
 import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
+open BookProof.ScalaronFiberFL
 
 
 

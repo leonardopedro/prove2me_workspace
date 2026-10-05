@@ -1,0 +1,32 @@
+-- Generated from ChapterAttentionSparse.lean — solution of BookProof.ChapterAttentionSparse.norm_headOutput_masked_sub_le
+import Mathlib
+import Definitions.Def_ChapterAttentionSparse
+import Theorems.Thm_BookProof_ChapterAttentionSparse_l1dist_maskedSoftmax_eq
+import Theorems.Thm_BookProof_ChapterAttentionOutput_norm_observableExpectation_sub_le
+open BookProof.ChapterAttentionSparse
+
+
+
+open scoped BigOperators
+
+noncomputable section
+
+
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (beta : ℝ) (s : Fin m → ℝ) {S : Finset (Fin m)}
+    (hS : S.Nonempty) (i : Fin m) {v : Fin m → E} {C : ℝ} (hv : ∀ j, ‖v j‖ ≤ C) :
+    ‖observableExpectation (maskedSoftmax beta s S) v - headOutput beta s v‖
+      ≤ 2 * (1 - attendedMass beta s S) * C := by
+
+  have h := norm_observableExpectation_sub_le (E := E) (maskedSoftmax beta s S)
+    (scoreSoftmax beta s) hv
+  have hl1 : (∑ j, |maskedSoftmax beta s S j - scoreSoftmax beta s j|)
+      = 2 * (1 - attendedMass beta s S) := l1dist_maskedSoftmax_eq beta s hS i
+  rw [hl1] at h
+  exact h

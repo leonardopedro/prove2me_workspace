@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_ham_eq_toLp
 import Theorems.Thm_BookProof_ScalaronFiberFL_xCc_eq_toLp
 import Theorems.Thm_BookProof_ScalaronFiberFL_inner_toLp_toLp
 import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
+open BookProof.ScalaronFiberFL
 
 
 

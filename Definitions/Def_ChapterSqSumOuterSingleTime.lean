@@ -6,7 +6,9 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
 

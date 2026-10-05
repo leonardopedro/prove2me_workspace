@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterA4
 open BookProof.ClosureUniqueness
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup

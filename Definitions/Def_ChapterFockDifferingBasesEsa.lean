@@ -1,10 +1,13 @@
+import Theorems.Thm_BookProof_FockQuadratic_wsum_single
+
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
 
+import Definitions.Def_ChapterFockQuadraticEsa
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
 import Mathlib
 
 
@@ -100,6 +103,7 @@ Everything in this module is `sorry`-free and `axiom`-free.
 namespace BookProof.FockDifferingBases
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
 

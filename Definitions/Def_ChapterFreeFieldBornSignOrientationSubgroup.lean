@@ -1,4 +1,12 @@
-import Definitions.Def_ChapterA4
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignOrientationKernel_orientationPreserving_false
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignOrientationKernel_orientationPreserving_xor
+
+import Definitions.Def_ChapterFreeFieldBornSignOrientationKernel
+import Definitions.Def_ChapterFreeFieldBornSignHom
+import Definitions.Def_ChapterFreeFieldBornSignMatrix
+import Definitions.Def_ChapterFreeFieldBornSignOrientation
+import Definitions.Def_ChapterFreeFieldBornSignOrientationCard
 import Mathlib
 
 
@@ -13,6 +21,9 @@ recording closure as separate propositions.
 
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
+open BookProof.ChapterFreeFieldBornSignOrientation
+open BookProof.ChapterFreeFieldBornSignOrientationKernel
+open BookProof.ChapterFreeFieldBornSignOrientationCard
 
 namespace BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 

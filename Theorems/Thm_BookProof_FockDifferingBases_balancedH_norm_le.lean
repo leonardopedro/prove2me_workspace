@@ -2,11 +2,12 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFockQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterFockDifferingBasesEsa
 import Definitions.Def_ChapterA3n
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockDifferingBases
@@ -16,6 +17,7 @@ variable {ι κ : Type*} {ω : ι → ℝ}
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
 

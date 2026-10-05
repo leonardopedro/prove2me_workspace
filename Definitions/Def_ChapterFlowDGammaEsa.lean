@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded
 
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense
@@ -17,7 +19,6 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneGenerator
 import Definitions.Def_ChapterStoneSeparable
 import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore

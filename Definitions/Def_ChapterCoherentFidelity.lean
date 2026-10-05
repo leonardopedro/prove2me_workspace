@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterCoherentOverlapComplex
+import Definitions.Def_ChapterCoherentGeometry
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 

@@ -6,7 +6,6 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.FriedrichsCanonical
 

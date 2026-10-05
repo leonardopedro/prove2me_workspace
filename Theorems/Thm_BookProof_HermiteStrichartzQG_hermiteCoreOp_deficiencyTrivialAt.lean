@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteFunctions
-import Definitions.Def_ChapterA4
 open BookProof.HermiteCore
 open BookProof.HermiteStrichartzQG
 

@@ -1,8 +1,8 @@
 -- Generated from ChapterMackeyCocycle.lean — theorem BookProof.ChapterMackeyCocycle.vmap_eq_tmap
+import Definitions.Def_ChapterPvmCyclicUnitary
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Definitions.Def_ChapterMackeyQuasiInvariant
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle
 

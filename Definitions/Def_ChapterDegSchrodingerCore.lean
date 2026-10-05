@@ -1,12 +1,12 @@
 import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 
+import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStrichartzWave
 import Mathlib
@@ -41,6 +41,7 @@ namespace BookProof.DegSchrodinger
 open MeasureTheory SchwartzMap MvPolynomial
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
 
 noncomputable section
 

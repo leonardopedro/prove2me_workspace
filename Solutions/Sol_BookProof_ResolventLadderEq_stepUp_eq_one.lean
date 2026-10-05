@@ -1,0 +1,25 @@
+-- Generated from ChapterResolventMinMaxEquality.lean — solution of BookProof.ResolventLadderEq.stepUp_eq_one
+import Mathlib
+import Definitions.Def_ChapterResolventMinMaxEquality
+open BookProof.ResolventLadderEq
+
+
+
+noncomputable section
+
+
+open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum
+open BookProof.ResolventLadder
+open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
+open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
+open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+set_option maxHeartbeats 1000000 in
+theorem solution {c δ t : ℝ} (hδ : 0 < δ) (h : c ≤ t) : stepUp c δ t = 1 := by
+
+  have h1 : c - δ / 2 + δ / 2 ≤ t := by linarith
+  rw [stepUp, cocutoff, cutoff_eq_zero (by linarith) h1, sub_zero]

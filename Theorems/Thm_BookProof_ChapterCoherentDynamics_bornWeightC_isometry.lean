@@ -1,8 +1,8 @@
 -- Generated from ChapterCoherentDynamics.lean — theorem BookProof.ChapterCoherentDynamics.bornWeightC_isometry
+import Definitions.Def_ChapterCoherentFidelity
 import Mathlib
 import Definitions.Def_ChapterCoherentDynamics
 import Definitions.Def_ChapterCoherentOverlapComplex
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentDynamics
 

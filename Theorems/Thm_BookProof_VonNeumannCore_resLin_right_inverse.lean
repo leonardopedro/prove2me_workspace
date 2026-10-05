@@ -2,10 +2,10 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.VonNeumannCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

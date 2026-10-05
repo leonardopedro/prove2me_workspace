@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_SchrodingerCutoff_integral_deriv_eq_zero_of_hasCompactSupport
+open BookProof.ScalaronFiberFL
 
 
 

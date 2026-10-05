@@ -3,7 +3,6 @@ import Definitions.Def_ChapterA3
 import Mathlib
 import Definitions.Def_ChapterA4g
 import Definitions.Def_ChapterA4c
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA4g
 
 

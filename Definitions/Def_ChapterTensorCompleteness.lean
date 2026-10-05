@@ -1,7 +1,6 @@
 import Theorems.Thm_BookProof_ChapterSolovayHilbertTensor_inner_tensorLp
 
 import Definitions.Def_ChapterSolovayHilbertTensor
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

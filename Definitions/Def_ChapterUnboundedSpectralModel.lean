@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSpectralDirectSum
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib

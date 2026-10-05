@@ -1,7 +1,9 @@
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterPositiveSquareRootUnique
 import Mathlib
 
 
@@ -42,6 +44,7 @@ group.
 
 namespace BookProof.RelationShiftInvert
 
+open BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot BookProof.NonnegResolvent
 open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

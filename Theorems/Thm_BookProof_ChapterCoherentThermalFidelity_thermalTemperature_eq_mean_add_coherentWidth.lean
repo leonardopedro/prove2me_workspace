@@ -1,10 +1,10 @@
 -- Generated from ChapterCoherentThermalFidelity.lean — theorem BookProof.ChapterCoherentThermalFidelity.thermalTemperature_eq_mean_add_coherentWidth
 import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterCoherentFidelity
 import Definitions.Def_ChapterDisplacedThermalOverlap
 import Mathlib
 import Definitions.Def_ChapterCoherentThermalFidelity
 import Definitions.Def_ChapterCoherentTemperature
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentThermalFidelity
 

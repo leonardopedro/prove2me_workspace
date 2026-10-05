@@ -1,7 +1,6 @@
 -- Generated from ChapterGaugeMechanicsCharge.lean — theorem BookProof.ChapterGaugeMechanicsCharge.chargeQ_not_commute_field
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
-import Definitions.Def_ChapterA4
 open BookProof.ChapterGaugeMechanicsCharge
 
 

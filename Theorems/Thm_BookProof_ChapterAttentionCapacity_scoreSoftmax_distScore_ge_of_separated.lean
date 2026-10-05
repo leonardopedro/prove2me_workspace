@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionCapacity.lean — theorem BookProof.ChapterAttentionCapacity.scoreSoftmax_distScore_ge_of_separated
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionCapacity
 
@@ -16,6 +16,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionCapacity.scoreSoftmax_distScore_ge_of_separated {k : Fin m → EuclideanSpace ℝ (Fin n)}

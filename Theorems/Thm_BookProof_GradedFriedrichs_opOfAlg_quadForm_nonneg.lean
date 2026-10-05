@@ -5,12 +5,13 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterGradedFock
 import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.GradedFriedrichs
 

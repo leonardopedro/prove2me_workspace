@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionOutput.lean — theorem BookProof.ChapterAttentionOutput.headOutput_eq_sum
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionOutput
 
@@ -16,6 +16,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionOutput.headOutput_eq_sum (beta : ℝ) (s : Fin m → ℝ) (v : Fin m → E) :

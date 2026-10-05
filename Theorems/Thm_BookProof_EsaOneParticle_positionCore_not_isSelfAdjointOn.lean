@@ -7,7 +7,6 @@ import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterA4
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport

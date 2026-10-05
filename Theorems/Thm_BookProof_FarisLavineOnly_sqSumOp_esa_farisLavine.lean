@@ -3,13 +3,14 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterSqSumOuterFamily
 import Mathlib
 import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockCoreFL

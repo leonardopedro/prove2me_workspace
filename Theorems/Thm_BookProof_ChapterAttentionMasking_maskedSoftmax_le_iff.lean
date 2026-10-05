@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionMasking.lean — theorem BookProof.ChapterAttentionMasking.maskedSoftmax_le_iff
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMasking
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionMasking
 
 variable {m : ℕ}
@@ -13,6 +13,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionMasking.maskedSoftmax_le_iff {beta : ℝ} (hbeta : 0 < beta) (s : Fin m → ℝ)

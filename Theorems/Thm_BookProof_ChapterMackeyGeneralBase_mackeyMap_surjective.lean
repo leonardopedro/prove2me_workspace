@@ -1,8 +1,8 @@
 -- Generated from ChapterMackeyGeneralBase.lean — theorem BookProof.ChapterMackeyGeneralBase.mackeyMap_surjective
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyGeneralBase
@@ -17,6 +17,7 @@ variable {S x₀ s}
 open scoped InnerProductSpace
 
 
+open BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterMackeyGeneralBase.mackeyMap_surjective [CompleteSpace E] (hs : ∀ x, s x • x₀ = x) {f : X → E}

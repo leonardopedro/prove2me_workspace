@@ -1,9 +1,10 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — theorem BookProof.BookBrstGaugeFixing.brstCharge_gf_anticomm
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterSmBrstGhost
-import Definitions.Def_ChapterA4
 open BookProof.BRSTNilpotent
 open BookProof.SmBrstGhost
 open BookProof.BookBrstGaugeFixing

@@ -1,7 +1,7 @@
 import Definitions.Def_ChapterFlowDGammaEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterStoneBridge
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneSeparable
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer

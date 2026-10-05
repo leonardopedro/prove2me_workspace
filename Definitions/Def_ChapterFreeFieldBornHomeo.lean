@@ -1,5 +1,20 @@
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSectionBij_bornSection_bornMap
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSectionBij_bornSection_nonneg
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSurj_bornMap_bornSection
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSurj_bornSection_mem_sphere
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBorn_bornMap_mem_stdSimplex
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornCont_continuous_bornMap
+
+
 import Definitions.Def_ChapterFreeFieldBornSectionBij
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
 import Mathlib
 
 
@@ -42,6 +57,8 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
+open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSectionBij
 
 namespace BookProof.ChapterFreeFieldBornHomeo
 

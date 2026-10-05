@@ -8,7 +8,6 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.HermiteProductCore

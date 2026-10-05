@@ -6,7 +6,6 @@ import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneMeasurable
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneSeparable

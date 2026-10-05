@@ -7,6 +7,14 @@ history seeded from `git log --date=short`.
 
 ## [Unreleased]
 
+- Cross-project review & plan rev. 3 (`PROJECT_REVIEW_AND_PLAN.md`): measured
+  gate status (two red gates found — doc-index staleness in cwd + timepiece,
+  82 vs 11 citation-drift in timepiece's gitbook gate), repair phase P7, and
+  new adapted items: typos-inspired T6–T9 (taskctl step timeouts, doc-index
+  `--graph` export, `--rename` reference rewrite, import-gate reconciliation
+  report) and ax-inspired A6–A9 (run conditions + `describe`, `watch`
+  transitions, `/healthz` vs `/readyz` strict mode, `taskctl validate`), plus
+  in-family S1 `verify_invariants.py`.
 - Cross-project review & plan rev. 2 (`PROJECT_REVIEW_AND_PLAN.md`), typos/ax-inspired
   tooling: doc index + backlinks (`scripts/doc_index.py`, incl. `--backlinks`/
   `--search` queries), debounced watcher (`scripts/watch_check.py`), ax-style task

@@ -1,9 +1,9 @@
 -- Generated from ChapterHarmonicOscillatorEsa.lean — theorem BookProof.HarmonicOscillator.harmonicOscOp_apply_eq_differential
+import Definitions.Def_ChapterStrichartzHermiteQG
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Definitions.Def_ChapterHermiteFunctions
-import Definitions.Def_ChapterA4
 open BookProof.HermiteCore
 open BookProof.HarmonicOscillator
 

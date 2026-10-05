@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterPinDoubleCover
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLorentzRealRep
 open BookProof.ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRepDirect

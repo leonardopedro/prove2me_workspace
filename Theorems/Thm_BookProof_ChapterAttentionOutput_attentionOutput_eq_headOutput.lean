@@ -1,10 +1,10 @@
 -- Generated from ChapterAttentionOutput.lean — theorem BookProof.ChapterAttentionOutput.attentionOutput_eq_headOutput
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxBorn
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
@@ -20,6 +20,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionOutput.attentionOutput_eq_headOutput (q : EuclideanSpace ℝ (Fin n))

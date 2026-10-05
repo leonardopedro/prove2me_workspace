@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_QgTimeStepping_norm_iterate_cnStep_apply
 import Theorems.Thm_BookProof_QgTimeStepping_norm_iterate_cnStep_sub_stoneU_le
 import Theorems.Thm_BookProof_QgTimeStepping_exists_domain_two_approx
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+open BookProof.QgTimeStepping
 
 
 
@@ -13,6 +14,8 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_st
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 

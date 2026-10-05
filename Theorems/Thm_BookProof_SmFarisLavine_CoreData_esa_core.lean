@@ -11,7 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterA4
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.SmFarisLavine

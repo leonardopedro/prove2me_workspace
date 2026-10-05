@@ -1,7 +1,6 @@
 -- Generated from ChapterMeasureAtomicDiffuse.lean — theorem BookProof.ChapterMeasureAtomicDiffuse.abelian_multiplication_model_atomic_diffuse
 import Mathlib
 import Definitions.Def_ChapterMeasureAtomicDiffuse
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMeasureAtomicDiffuse
 
 variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α] (mu : Measure α)

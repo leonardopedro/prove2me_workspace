@@ -1332,13 +1332,28 @@ def def_imports(path):
 
 
 def thm_imports(path):
-    """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems."""
+    """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems.
+
+    Returned in the DOTTED form the platform uses for `theorem_name`, because that is
+    what `published_theorems()` holds. It used to return the module slug
+    (`BookProof_HermiteCore_hermiteBasis_apply`), so the dependency gate compared a
+    slug against dotted names and could never match -- every def bundle citing a
+    Proved theorem was refused with "theorem dependency not proved yet" no matter how
+    many theorems had been proved. Six defs were blocked on this alone.
+    """
     try:
         txt = open(path, encoding="utf-8").read()
     except OSError:
         return []
-    return [m[len("Theorems.Thm_"):].replace(".lean", "")
-            for m in re.findall(r"(?m)^import\s+(Theorems\.Thm_\S+)", txt)]
+    out = []
+    for m in re.findall(r"(?m)^import\s+(Theorems\.Thm_\S+)", txt):
+        slug = m[len("Theorems.Thm_"):].replace(".lean", "")
+        # Resolve through the wave spec, which is authoritative for slug -> name.
+        # Splitting on "_" instead turns `hermiteBasis_apply` into
+        # `hermiteBasis.apply`, which matches nothing.
+        rec = WAVE_THMS.get(slug) or {}
+        out.append(rec.get("name") or slug.replace("_prime", "'"))
+    return out
 
 
 def def_imports(path):

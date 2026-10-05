@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
+open BookProof.ScalaronFiberFL
 
 
 

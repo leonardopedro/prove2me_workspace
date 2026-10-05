@@ -2,10 +2,10 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
 import Definitions.Def_ChapterWeakSecondDerivative
 import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
-import Definitions.Def_ChapterA4
 open BookProof.BddBelowWallEsa
 
 variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}

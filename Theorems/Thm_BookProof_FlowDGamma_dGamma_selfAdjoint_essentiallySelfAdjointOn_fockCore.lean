@@ -8,7 +8,6 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.ChapterStoneMeasurable

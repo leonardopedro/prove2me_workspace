@@ -1,5 +1,8 @@
+import Theorems.Thm_BookProof_ChapterFreeFieldBorn_bornMap_mem_stdSimplex
+
+import Definitions.Def_ChapterFreeFieldBornCont
 import Definitions.Def_ChapterFreeFieldBornSurj
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBorn
 import Mathlib
 
 
@@ -40,6 +43,8 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
+open BookProof.ChapterFreeFieldBornCont
 
 namespace BookProof.ChapterFreeFieldBornQuotient
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_quadForm_secDiag_eq
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -9,6 +10,7 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_quadForm_secDiag_eq
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -20,7 +22,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := ι)) : 0 ≤ quadForm (secDiag W Q) x := by
+theorem solution (x : secCore (ι := by
 
   obtain ⟨P, hP1, _⟩ := exists_band Q x
   rw [quadForm_secDiag_eq W Q x hP1]

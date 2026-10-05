@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 import Theorems.Thm_BookProof_QgTimeStepping_norm_cnStep_sub_taylor_le
 import Theorems.Thm_BookProof_QgTimeStepping_norm_stoneU_sub_taylor_le
+open BookProof.QgTimeStepping
 
 
 
@@ -10,6 +11,8 @@ import Theorems.Thm_BookProof_QgTimeStepping_norm_stoneU_sub_taylor_le
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 

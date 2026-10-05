@@ -7,7 +7,6 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.KernelBound
 open BookProof.NavierStokesFlow.DiagonalEsa

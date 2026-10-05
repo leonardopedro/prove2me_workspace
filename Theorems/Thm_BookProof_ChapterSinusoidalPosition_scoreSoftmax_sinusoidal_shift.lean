@@ -1,8 +1,8 @@
 -- Generated from ChapterSinusoidalPosition.lean — theorem BookProof.ChapterSinusoidalPosition.scoreSoftmax_sinusoidal_shift
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterSinusoidalPosition
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSinusoidalPosition
 
@@ -14,6 +14,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterSinusoidalPosition.scoreSoftmax_sinusoidal_shift {m : ℕ} (beta : ℝ) (w : Fin n → ℝ) (p t : ℝ)

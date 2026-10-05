@@ -1,0 +1,28 @@
+-- Generated from ChapterSchurIrreducible.lean — solution of BookProof.ChapterSchurIrreducible.isIrreducible_iff_schur
+import Mathlib
+import Definitions.Def_ChapterSchurIrreducible
+import Theorems.Thm_BookProof_ChapterSchurIrreducible_selfAdjoint_commutant_scalar
+open BookProof.ChapterSchurIrreducible
+
+
+
+open scoped ComplexConjugate InnerProductSpace
+
+
+open BookProof.ChapterA BookProof.ChapterA.System
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (M : System ℂ V) (hM : M.IsNormal) :
+    M.IsIrreducible ↔
+      ∀ S : V →L[ℂ] V, M.Commutes S → IsSelfAdjoint S → ∃ c : ℂ, S = c • (1 : V →L[ℂ] V) := by
+
+  constructor
+  · intro hirr S hS hsa
+    obtain ⟨r, hr⟩ := selfAdjoint_commutant_scalar M hirr hsa hS
+    exact ⟨(r : ℂ), hr⟩
+  · intro hSchur
+    exact System.schur_normal_irreducible M hM hSchur

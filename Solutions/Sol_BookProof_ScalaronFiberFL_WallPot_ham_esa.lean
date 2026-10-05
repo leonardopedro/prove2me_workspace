@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.WallPot.ham_esa
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+open BookProof.ScalaronFiberFL
 
 
 

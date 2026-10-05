@@ -7,7 +7,6 @@ import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsCanonical

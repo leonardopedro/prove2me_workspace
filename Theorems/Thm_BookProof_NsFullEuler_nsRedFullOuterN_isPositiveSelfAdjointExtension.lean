@@ -10,7 +10,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL

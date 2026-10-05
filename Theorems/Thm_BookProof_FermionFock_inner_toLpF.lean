@@ -10,7 +10,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 import Definitions.Def_ChapterFermionFock
 import Definitions.Def_ChapterSmCarAlgebra
-import Definitions.Def_ChapterA4
 open BookProof.SmCar
 open BookProof.FermionFock
 

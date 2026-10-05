@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterGaussCoreQuadBounds
@@ -15,7 +16,6 @@ import Definitions.Def_ChapterMajoranaClifford
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterSqSumFarisLavine
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.MajoranaClifford
 open BookProof.QgHermiteOscillator

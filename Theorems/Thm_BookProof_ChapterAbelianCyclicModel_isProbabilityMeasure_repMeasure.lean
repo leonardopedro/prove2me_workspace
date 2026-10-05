@@ -1,7 +1,7 @@
 -- Generated from ChapterAbelianCyclicModel.lean — theorem BookProof.ChapterAbelianCyclicModel.isProbabilityMeasure_repMeasure
+import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAbelianCyclicModel
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

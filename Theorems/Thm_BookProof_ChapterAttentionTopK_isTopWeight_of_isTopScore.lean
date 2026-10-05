@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionTopK.lean — theorem BookProof.ChapterAttentionTopK.isTopWeight_of_isTopScore
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionTopK
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionTopK
 
@@ -14,6 +14,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionTopK.isTopWeight_of_isTopScore {beta : ℝ} (hbeta : 0 < beta) (s : Fin m → ℝ)

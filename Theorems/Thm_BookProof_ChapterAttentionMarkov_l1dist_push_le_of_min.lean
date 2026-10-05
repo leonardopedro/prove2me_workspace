@@ -1,9 +1,9 @@
 -- Generated from ChapterAttentionMarkov.lean — theorem BookProof.ChapterAttentionMarkov.l1dist_push_le_of_min
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
 import Definitions.Def_ChapterDutchBook
-import Definitions.Def_ChapterA4
 open BookProof.ChapterDutchBook
 open BookProof.ChapterAttentionMarkov
 
@@ -15,6 +15,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionMarkov.l1dist_push_le_of_min {P : Fin m → Fin m → ℝ} {p q : Fin m → ℝ} {eps : ℝ}

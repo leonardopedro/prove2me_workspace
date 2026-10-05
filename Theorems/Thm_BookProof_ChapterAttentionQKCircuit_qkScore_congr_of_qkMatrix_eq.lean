@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionQKCircuit.lean — theorem BookProof.ChapterAttentionQKCircuit.qkScore_congr_of_qkMatrix_eq
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionQKCircuit
 
 variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

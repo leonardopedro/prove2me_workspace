@@ -1,5 +1,5 @@
 import Definitions.Def_ChapterSoftmaxFluctuation
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
@@ -43,6 +43,7 @@ noncomputable section
 
 namespace BookProof.ChapterSoftmaxJacobian
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}

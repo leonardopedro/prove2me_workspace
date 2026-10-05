@@ -1,7 +1,6 @@
 -- Generated from ChapterG2.lean — theorem BookProof.ChapterG2.translation_invariant_l2_eq_zero
 import Mathlib
 import Definitions.Def_ChapterG2
-import Definitions.Def_ChapterA4
 open BookProof.ChapterG2
 
 variable {Ω : Type*} [MeasurableSpace Ω]

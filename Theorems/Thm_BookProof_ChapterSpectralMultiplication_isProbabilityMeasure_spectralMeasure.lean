@@ -1,7 +1,7 @@
 -- Generated from ChapterSpectralMultiplication.lean — theorem BookProof.ChapterSpectralMultiplication.isProbabilityMeasure_spectralMeasure
+import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSpectralMultiplication
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

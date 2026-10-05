@@ -1,9 +1,11 @@
 -- Generated from ChapterAbelianCyclicCommutant.lean — theorem BookProof.ChapterAbelianCyclicCommutant.centralizer_repSet
 import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicModel
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicCommutant
 import Definitions.Def_ChapterLinftyMultiplication
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianCyclicCommutant
 

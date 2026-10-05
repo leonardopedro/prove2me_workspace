@@ -9,7 +9,6 @@ import Definitions.Def_ChapterScalaronFockEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterA4
 open BookProof.FarisLavine
 open BookProof.QuantumGravityDensitized
 open BookProof.ScalaronEsa

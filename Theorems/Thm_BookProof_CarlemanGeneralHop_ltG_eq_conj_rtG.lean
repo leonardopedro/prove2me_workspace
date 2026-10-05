@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — theorem BookProof.CarlemanGeneralHop.ltG_eq_conj_rtG
 import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
-import Definitions.Def_ChapterA4
 open BookProof.CarlemanGeneralHop
 
 variable {d : ℕ}

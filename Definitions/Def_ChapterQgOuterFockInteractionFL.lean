@@ -15,7 +15,6 @@ import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib

@@ -1,11 +1,12 @@
 import Definitions.Def_ChapterDegSchrodingerCore
 import Definitions.Def_ChapterConvolutionCalc
 import Definitions.Def_ChapterDegEnergyEstimate
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterMollifierL2
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStrichartzWave
 import Mathlib
@@ -50,6 +51,8 @@ namespace BookProof.DegKatoEsa
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
+open BookProof.QgOneParticleCc BookProof.DegSchrodinger
+open BookProof.ConvolutionCalc BookProof.DegEnergy BookProof.MollifierL2
 
 noncomputable section
 

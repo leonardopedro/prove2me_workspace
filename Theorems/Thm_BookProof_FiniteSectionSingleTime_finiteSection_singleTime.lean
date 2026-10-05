@@ -1,5 +1,9 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.finiteSection_singleTime
+import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
@@ -14,7 +18,6 @@ import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.IkebeKato

@@ -1,0 +1,35 @@
+-- Generated from ChapterStoneSeparable.lean — solution of BookProof.ChapterStoneSeparable.gen_eq_of_hasDerivAt
+import Mathlib
+import Definitions.Def_ChapterStoneSeparable
+import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_mem_genDomain_of_hasDerivAt
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+open BookProof.ChapterStoneSeparable
+
+
+
+open scoped InnerProductSpace
+open Filter Topology
+
+
+open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (T : UnboundedSelfAdjoint H) (G : WeakMeasurableUnitaryGroup H)
+    (h : ∀ x : T.domain, HasDerivAt (fun t : ℝ => G.U t (x : H)) ((-Complex.I) • T.op x) 0) :
+    G.gen = T := by
+
+  have hdom : T.domain ≤ G.genDomain := fun x hx => G.mem_genDomain_of_hasDerivAt (h ⟨x, hx⟩)
+  have hop : ∀ x : T.domain, G.genOp ⟨(x : H), hdom x.2⟩ = T.op x := fun x =>
+    G.genOp_eq_of_hasDerivAt (x := ⟨(x : H), hdom x.2⟩) (h x)
+  refine UnboundedSelfAdjoint.ext' (le_antisymm ?_ hdom) ?_
+  · intro x hx
+    refine T.mem_domain_of_inner (eta := G.genOp ⟨x, hx⟩) ?_
+    intro psi
+    rw [← hop psi]
+    exact G.symmetric ⟨(psi : H), hdom psi.2⟩ ⟨x, hx⟩
+  · intro x _ hx'
+    exact hop ⟨x, hx'⟩

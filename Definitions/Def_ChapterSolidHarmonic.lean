@@ -1,5 +1,6 @@
+import Definitions.Def_ChapterSolidHarmonicTools
 import Definitions.Def_ChapterLegendrePolynomial
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLaplacianProduct
 import Definitions.Def_ChapterRadialLaplacian
 import Mathlib
 
@@ -47,6 +48,8 @@ Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
 namespace BookProof.ChapterSolidHarmonic
 
 open Laplacian InnerProductSpace Polynomial
+open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
+open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]

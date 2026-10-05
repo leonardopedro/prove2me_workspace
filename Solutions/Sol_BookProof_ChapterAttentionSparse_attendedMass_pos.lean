@@ -1,0 +1,25 @@
+-- Generated from ChapterAttentionSparse.lean — solution of BookProof.ChapterAttentionSparse.attendedMass_pos
+import Mathlib
+import Definitions.Def_ChapterAttentionSparse
+open BookProof.ChapterAttentionSparse
+
+
+
+open scoped BigOperators
+
+noncomputable section
+
+
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (beta : ℝ) (s : Fin m → ℝ) {S : Finset (Fin m)} (hS : S.Nonempty) :
+    0 < attendedMass beta s S := by
+
+  obtain ⟨i, hi⟩ := hS
+  exact Finset.sum_pos' (fun l _ => (scoreSoftmax_pos beta s l).le)
+    ⟨i, hi, scoreSoftmax_pos beta s i⟩

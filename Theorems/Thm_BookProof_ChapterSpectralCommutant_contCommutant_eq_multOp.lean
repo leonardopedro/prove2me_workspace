@@ -1,9 +1,10 @@
 -- Generated from ChapterSpectralCommutant.lean — theorem BookProof.ChapterSpectralCommutant.contCommutant_eq_multOp
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Definitions.Def_ChapterLinftyMultiplication
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterSpectralCommutant

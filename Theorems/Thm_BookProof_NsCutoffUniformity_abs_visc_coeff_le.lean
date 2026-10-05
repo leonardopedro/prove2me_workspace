@@ -1,7 +1,7 @@
 -- Generated from ChapterNsCutoffUniformity.lean — theorem BookProof.NsCutoffUniformity.abs_visc_coeff_le
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
-import Definitions.Def_ChapterA4
 open BookProof.NsCutoffUniformity
 
 variable {n : ℕ}

@@ -1,13 +1,18 @@
+import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_mul_self
+
+import Theorems.Thm_BookProof_QuantumGravityFock_jw_swap_mixed
+
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 
 
 
 
+import Theorems.Thm_BookProof_QuantumGravityFock_conj_jwSign
+
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -73,6 +78,7 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.SmCarContinuum
 
+open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal

@@ -1,12 +1,13 @@
 -- Generated from ChapterGroupAverageEsa.lean — theorem BookProof.GroupAverage.UnitaryRep.commutes_avgProj
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterWignerLittleGroup
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockStatisticsCompletion
 open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ChapterMaschkeFiniteGroup

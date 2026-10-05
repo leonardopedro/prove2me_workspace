@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_inner_toLp_toLp
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+open BookProof.ScalaronFiberFL
 
 
 

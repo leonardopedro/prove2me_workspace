@@ -13,7 +13,6 @@ import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.StoneBridge

@@ -1,7 +1,8 @@
 -- Generated from ChapterFreeFieldBornSignMatrix.lean — theorem BookProof.ChapterFreeFieldBornSignMatrix.det_flipMatrix
+import Definitions.Def_ChapterFreeFieldBornSignAction
+import Definitions.Def_ChapterFreeFieldBornSignHom
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignMatrix
-import Definitions.Def_ChapterA4
 open BookProof.ChapterFreeFieldBornSignMatrix
 
 variable {n : ℕ}

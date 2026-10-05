@@ -1,12 +1,12 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — theorem BookProof.TwoParticleSector.essentiallySelfAdjointOn_bosonic_core
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore

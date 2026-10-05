@@ -1,8 +1,8 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — theorem BookProof.ChapterWignerSymmetryInfinite.coord_norm
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
 import Definitions.Def_ChapterWignerSymmetry
-import Definitions.Def_ChapterA4
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
@@ -14,6 +14,7 @@ variable {b : HilbertBasis ι ℂ E} {o : ι}
 open scoped InnerProductSpace ComplexConjugate
 
 
+open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterWignerSymmetryInfinite.coord_norm (hT : IsWignerSymmetry T) (k : ι) (x : E) :

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Definitions.Def_ChapterShannonSampling
-import Definitions.Def_ChapterA4
 open BookProof.ChapterShannonSampling
 open BookProof.ChapterPaleyWienerSampling
 

@@ -1,9 +1,11 @@
 -- Generated from ChapterAbelianCyclicCommutant.lean — theorem BookProof.ChapterAbelianCyclicCommutant.conjRep_mul
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicModel
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicCommutant
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAbelianCyclicCommutant
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

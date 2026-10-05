@@ -1,7 +1,6 @@
 -- Generated from ChapterGaugeMechanicsCharge.lean — theorem BookProof.ChapterGaugeMechanicsCharge.mul_commutes_chargeQ_iff_euler_zero
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
-import Definitions.Def_ChapterA4
 open BookProof.ChapterGaugeMechanicsCharge
 
 

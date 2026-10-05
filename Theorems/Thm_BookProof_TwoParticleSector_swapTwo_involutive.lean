@@ -1,10 +1,10 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — theorem BookProof.TwoParticleSector.swapTwo_involutive
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
-import Definitions.Def_ChapterA4
 open BookProof.TwoParticleSector
 
 variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]

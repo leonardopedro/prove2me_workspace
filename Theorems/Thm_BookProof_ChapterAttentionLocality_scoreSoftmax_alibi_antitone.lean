@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionLocality.lean — theorem BookProof.ChapterAttentionLocality.scoreSoftmax_alibi_antitone
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionLocality
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionLocality
 
@@ -14,6 +14,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionLocality.scoreSoftmax_alibi_antitone {beta gamma : ℝ} (hb : 0 ≤ beta) (hg : 0 ≤ gamma)

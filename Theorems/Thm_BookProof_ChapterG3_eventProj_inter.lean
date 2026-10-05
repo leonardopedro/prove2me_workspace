@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterG3
 import Definitions.Def_ChapterConservativeDiagonal
-import Definitions.Def_ChapterA4
 open BookProof.ConservativeDiagonal
 open BookProof.ChapterG3
 

@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.TensorCore
 open BookProof.EsaOneParticle

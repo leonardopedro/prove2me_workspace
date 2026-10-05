@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterSpectralMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 

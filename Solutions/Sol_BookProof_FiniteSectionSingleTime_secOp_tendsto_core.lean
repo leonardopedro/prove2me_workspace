@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFiniteSectionSingleTime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_core_eq_sum
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_secOp_tendsto_basis
 import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
+open BookProof.FiniteSectionSingleTime
 
 
 
@@ -13,6 +14,7 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

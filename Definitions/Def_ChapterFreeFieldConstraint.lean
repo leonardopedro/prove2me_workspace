@@ -54,13 +54,18 @@ is the algebraic form of the commutator of operators used throughout the free-fi
 chapter. -/
 def bracket (a b : R) : R := a * b - b * a
 
+@[simp] theorem bracket_self (a : R) : bracket a a = 0 := by
+  simp [bracket]
 
 
 
+/-- `⁅a, 0⁆ = 0`. -/
+@[simp] theorem bracket_zero_right (a : R) : bracket a (0 : R) = 0 := by
+  simp [bracket]
 
-
-
-
+/-- `⁅0, a⁆ = 0`. -/
+@[simp] theorem bracket_zero_left (a : R) : bracket (0 : R) a = 0 := by
+  simp [bracket]
 
 
 

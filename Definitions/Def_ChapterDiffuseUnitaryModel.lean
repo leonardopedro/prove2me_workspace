@@ -1,5 +1,9 @@
+import Theorems.Thm_BookProof_ChapterDiffuseCdfModel_measure_cdf_le
+
+import Theorems.Thm_BookProof_ChapterDiffuseCdfModel_map_cdf_eq_volume_Icc
+
+import Definitions.Def_ChapterDiffuseCdfModel
 import Definitions.Def_ChapterLinftyMultiplication
-import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -30,6 +34,7 @@ open MeasureTheory ProbabilityTheory Filter
 
 namespace BookProof.ChapterDiffuseUnitaryModel
 
+open BookProof.ChapterDiffuseCdfModel BookProof.ChapterLinftyMultiplication
 
 /-! ## 1. The uniform measure on the unit interval -/
 

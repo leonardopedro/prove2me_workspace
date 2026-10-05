@@ -1,11 +1,11 @@
 -- Generated from ChapterGroupAverageEsa.lean — theorem BookProof.GroupAverage.avgProj_repOfInvolution
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterWignerLittleGroup
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.ChapterWignerLittleGroup
 open BookProof.GroupAverage

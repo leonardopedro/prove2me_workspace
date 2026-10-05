@@ -1,10 +1,10 @@
 -- Generated from ChapterCoherentThermalFidelity.lean — theorem BookProof.ChapterCoherentThermalFidelity.fidelityC_width
 import Definitions.Def_ChapterCoherentOccupation
 import Definitions.Def_ChapterCoherentTemperature
+import Definitions.Def_ChapterCoherentFidelity
 import Definitions.Def_ChapterDisplacedThermalOverlap
 import Mathlib
 import Definitions.Def_ChapterCoherentThermalFidelity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCoherentThermalFidelity
 
 variable {nbar lam : ℝ}

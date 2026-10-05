@@ -1,12 +1,9 @@
 -- Generated from ChapterOperatorSeriesEsa.lean — solution of BookProof.OperatorSeries.essentiallySelfAdjointOn_finiteModes_of_bounds
 import Mathlib
 import Definitions.Def_ChapterOperatorSeriesEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.OperatorSeries
-
-
-
-
-
 
 
 
@@ -16,31 +13,10 @@ open BookProof.NavierStokesFlow.LpNat
 
 noncomputable section
 
-
-
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
-
-
-
-
-
 variable {ι κ : Type*} {c : ι → ℝ}
-
 variable (T : κ → (maxDom c →ₗ[ℂ] L2I ι)) (a : κ → ℝ)
-
-
-
 variable {T} {a}
-
-
-
-
-
-
-
-
-
 variable {ι : Type*} {c : ι → ℝ}
 
 set_option maxHeartbeats 1000000 in

@@ -1,9 +1,12 @@
 -- Generated from ChapterSeparableL2Model.lean — theorem BookProof.ChapterSeparableL2Model.continuous_coordMap
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianDirectSum
 import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterStandardBorelClassification
 import Mathlib
 import Definitions.Def_ChapterSeparableL2Model
 import Definitions.Def_ChapterWignerSymmetry
-import Definitions.Def_ChapterA4
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterSeparableL2Model
 
@@ -19,6 +22,7 @@ open MeasureTheory TopologicalSpace
 
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
+open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
 
 omit [CompactSpace Y] [MeasurableSpace Y] [BorelSpace Y] [Countable D] in

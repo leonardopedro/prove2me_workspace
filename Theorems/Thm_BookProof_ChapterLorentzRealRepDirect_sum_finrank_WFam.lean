@@ -4,7 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterLorentzRealRepFull
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepFull
 open BookProof.ChapterLorentzRealRepDirect

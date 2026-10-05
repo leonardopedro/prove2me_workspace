@@ -1,7 +1,6 @@
 -- Generated from ChapterGaugeMechanicsCharge.lean — theorem BookProof.ChapterGaugeMechanicsCharge.euler_comm_bilinear
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
-import Definitions.Def_ChapterA4
 open BookProof.ChapterGaugeMechanicsCharge
 
 

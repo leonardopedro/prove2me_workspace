@@ -1,4 +1,10 @@
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberTwo
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornSurj
 import Mathlib
 
 
@@ -42,7 +48,10 @@ Everything is intended to be `sorry`-free and axiom-clean.
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
+open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornQuotient
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
+open BookProof.ChapterFreeFieldBornFiberTwo
+open BookProof.ChapterFreeFieldBornFiberBounds
 
 namespace BookProof.ChapterFreeFieldBornFiberSpectrum
 

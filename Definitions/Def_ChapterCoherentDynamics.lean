@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterCoherentOverlapComplex
 import Definitions.Def_ChapterCoherentFidelity
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

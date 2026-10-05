@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

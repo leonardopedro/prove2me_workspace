@@ -1,10 +1,10 @@
 -- Generated from ChapterVonNeumannCore.lean — theorem BookProof.VonNeumannCore.factorRel_witness
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterA4
 open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.VonNeumannCore

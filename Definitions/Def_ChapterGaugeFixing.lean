@@ -1,5 +1,6 @@
 import Mathlib
 
+
 /-!
 # Method B: BRST doublets and the Gauge-Fixing Fermion
 
@@ -83,9 +84,9 @@ abbrev BiDegree : Type := ℤ × ℤ
 /-- Addition of bidegrees: the bidegree of a product. -/
 def addDeg (a b : BiDegree) : BiDegree := (a.1 + b.1, a.2 + b.2)
 
+@[simp] theorem addDeg_fst (a b : BiDegree) : (addDeg a b).1 = a.1 + b.1 := rfl
 
-
-
+@[simp] theorem addDeg_snd (a b : BiDegree) : (addDeg a b).2 = a.2 + b.2 := rfl
 
 /-! ## E.6.2/E.6.3 — the gauge-fixing system -/
 

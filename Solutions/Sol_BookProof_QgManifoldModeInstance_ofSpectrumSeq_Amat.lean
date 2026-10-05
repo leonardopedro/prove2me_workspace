@@ -1,6 +1,7 @@
 -- Generated from ChapterQgManifoldModeInstance.lean — solution of BookProof.QgManifoldModeInstance.ofSpectrumSeq_Amat
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
+open BookProof.QgManifoldModeInstance
 
 
 
@@ -8,6 +9,9 @@ import Definitions.Def_ChapterQgManifoldModeInstance
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
 
 noncomputable section
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
 import Theorems.Thm_BookProof_QgTruncationResolvent_momWindow_exhausts
+open BookProof.SirkSingleTime
 
 
 

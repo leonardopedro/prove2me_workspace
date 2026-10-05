@@ -1,9 +1,9 @@
 -- Generated from ChapterL2FibreSum.lean — theorem BookProof.ChapterL2FibreSum.fibreEmb_proj
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
 import Mathlib
 import Definitions.Def_ChapterL2FibreSum
 import Definitions.Def_ChapterElectroweakFieldStrength
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterL2FibreSum
 
@@ -16,6 +16,7 @@ open MeasureTheory
 open scoped InnerProductSpace
 
 
+open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterHilbertSumIntertwine
 
 
 theorem BookProof.ChapterL2FibreSum.fibreEmb_proj (μ : Measure X) (i : ι) {E : Set X} (hE : MeasurableSet E)

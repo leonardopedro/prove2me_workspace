@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — theorem BookProof.CarlemanGeneralHop.in_mem_ibd
+import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterA4
 open BookProof.HermiteCarleman
 open BookProof.CarlemanGeneralHop
 

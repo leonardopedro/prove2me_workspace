@@ -9,7 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStarobinskyPotential
-import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.Starobinsky
 open BookProof.ScalaronFock

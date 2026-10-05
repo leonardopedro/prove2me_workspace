@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxJacobian.lean — theorem BookProof.ChapterSoftmaxJacobian.hasDerivAt_partition_score
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxJacobian
 
 variable {m : ℕ}
@@ -13,6 +13,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterSoftmaxJacobian.hasDerivAt_partition_score (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

@@ -3,7 +3,6 @@ import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterAttentionSink
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionSink
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

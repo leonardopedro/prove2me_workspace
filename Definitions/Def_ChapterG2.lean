@@ -1,4 +1,4 @@
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterG
 import Mathlib
 
 
@@ -77,6 +77,7 @@ discontinuous.
 
 section BRST
 
+open BookProof.ChapterG
 
 variable {A : Type*} [CommRing A] (Q : A)
 
@@ -235,6 +236,7 @@ end BRST
 
 section Haar
 
+open BookProof.ChapterG
 
 variable {G : Type*} [Group G] [MeasurableSpace G]
 variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]

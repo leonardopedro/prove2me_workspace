@@ -1,8 +1,8 @@
 -- Generated from ChapterSchurRepresentation.lean — theorem BookProof.ChapterSchurRepresentation.adjoint_uCLM
 import Definitions.Def_ChapterA
+import Definitions.Def_ChapterSchurIrreducible
 import Mathlib
 import Definitions.Def_ChapterSchurRepresentation
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSchurRepresentation
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]

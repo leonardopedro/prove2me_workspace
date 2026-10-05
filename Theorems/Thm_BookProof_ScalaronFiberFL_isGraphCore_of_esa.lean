@@ -13,7 +13,6 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterA4
 open BookProof.GraphCore
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronFiberFL

@@ -7,7 +7,6 @@ import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.DirectSumEsa
 open BookProof.TensorCore

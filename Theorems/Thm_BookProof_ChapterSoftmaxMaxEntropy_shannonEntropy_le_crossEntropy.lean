@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxMaxEntropy.lean — theorem BookProof.ChapterSoftmaxMaxEntropy.shannonEntropy_le_crossEntropy
+import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxMaxEntropy
 
 variable {m : ℕ}

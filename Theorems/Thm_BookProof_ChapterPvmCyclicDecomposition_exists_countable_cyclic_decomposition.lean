@@ -1,7 +1,7 @@
 -- Generated from ChapterPvmCyclicDecomposition.lean — theorem BookProof.ChapterPvmCyclicDecomposition.exists_countable_cyclic_decomposition
+import Definitions.Def_ChapterPvmMeasure
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
-import Definitions.Def_ChapterA4
 open BookProof.ChapterPvmCyclicDecomposition
 
 variable {X : Type*} [MeasurableSpace X]

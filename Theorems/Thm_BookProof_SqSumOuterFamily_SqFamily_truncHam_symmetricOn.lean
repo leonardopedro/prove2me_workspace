@@ -4,12 +4,15 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterSingleTime
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSqSumOuterFamily
 open BookProof.HermiteProductCore
 open BookProof.SqSumOuterFamily
 

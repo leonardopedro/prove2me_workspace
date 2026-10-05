@@ -1,8 +1,8 @@
 -- Generated from ChapterMackeyCocycle.lean — theorem BookProof.ChapterMackeyCocycle.norm_ucocycle
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmCyclicUnitary
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyCocycle
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]

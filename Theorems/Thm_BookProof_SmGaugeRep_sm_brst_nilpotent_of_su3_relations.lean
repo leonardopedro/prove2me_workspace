@@ -4,7 +4,6 @@ import Definitions.Def_ChapterSmGaugeRepresentation
 import Definitions.Def_ChapterSmBrstGhost
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterYangMillsSU3
-import Definitions.Def_ChapterA4
 open BookProof.SmBrstGhost
 open BookProof.SmCar
 open BookProof.YangMillsSU3

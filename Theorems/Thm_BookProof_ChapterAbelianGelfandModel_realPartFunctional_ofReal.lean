@@ -3,7 +3,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterA3b
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAbelianGelfandModel
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

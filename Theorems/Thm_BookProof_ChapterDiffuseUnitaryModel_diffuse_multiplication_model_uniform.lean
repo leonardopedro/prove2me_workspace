@@ -1,8 +1,8 @@
 -- Generated from ChapterDiffuseUnitaryModel.lean — theorem BookProof.ChapterDiffuseUnitaryModel.diffuse_multiplication_model_uniform
+import Definitions.Def_ChapterDiffuseCdfModel
 import Mathlib
 import Definitions.Def_ChapterDiffuseUnitaryModel
 import Definitions.Def_ChapterLinftyMultiplication
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterDiffuseUnitaryModel
 
@@ -14,6 +14,7 @@ noncomputable section
 open MeasureTheory ProbabilityTheory Filter
 
 
+open BookProof.ChapterDiffuseCdfModel BookProof.ChapterLinftyMultiplication
 
 theorem BookProof.ChapterDiffuseUnitaryModel.diffuse_multiplication_model_uniform :
     ∃ U : Lp ℂ 2 (volume.restrict (Set.Icc (0 : ℝ) 1)) ≃ₗᵢ[ℂ] Lp ℂ 2 mu,

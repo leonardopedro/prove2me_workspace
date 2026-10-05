@@ -1,5 +1,7 @@
+import Theorems.Thm_BookProof_ChapterOrthogonalSums_hasSum_smul_of_hasSum_norm_sq
+
 import Definitions.Def_ChapterWignerSymmetry
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 
 
@@ -46,6 +48,7 @@ open scoped InnerProductSpace ComplexConjugate
 
 namespace BookProof.ChapterWignerSymmetryInfinite
 
+open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

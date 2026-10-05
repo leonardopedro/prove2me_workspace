@@ -1,7 +1,7 @@
 -- Generated from ChapterTensorCompleteness.lean — theorem BookProof.ChapterTensorCompleteness.exists_tensor_approx
+import Definitions.Def_ChapterSolovayHilbertTensor
 import Mathlib
 import Definitions.Def_ChapterTensorCompleteness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterTensorCompleteness
 
 variable {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]

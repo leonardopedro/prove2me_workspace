@@ -907,7 +907,7 @@
 {"const":"spectrum","end":{"col":45,"line":658,"offset":34150},"kind":"ref","start":{"col":37,"line":658,"offset":34142}}
 {"const":"Real","end":{"col":47,"line":658,"offset":34154},"kind":"ref","start":{"col":46,"line":658,"offset":34151}}
 {"const":"spectrum.mem_iff","end":{"col":22,"line":659,"offset":34185},"kind":"ref","start":{"col":6,"line":659,"offset":34169}}
-{"const":"algebraMap","end":{"col":27,"line":661,"offset":34235},"kind":"ref","start":{"col":17,"line":661,"offset":34225}}
+{"const":"Algebra.algebraMap","end":{"col":27,"line":661,"offset":34235},"kind":"ref","start":{"col":17,"line":661,"offset":34225}}
 {"const":"Real","end":{"col":29,"line":661,"offset":34239},"kind":"ref","start":{"col":28,"line":661,"offset":34236}}
 {"const":"Complex","end":{"col":37,"line":661,"offset":34251},"kind":"ref","start":{"col":36,"line":661,"offset":34248}}
 {"const":"Algebra.algebraMap_eq_smul_one","end":{"col":40,"line":662,"offset":34316},"kind":"ref","start":{"col":10,"line":662,"offset":34286}}

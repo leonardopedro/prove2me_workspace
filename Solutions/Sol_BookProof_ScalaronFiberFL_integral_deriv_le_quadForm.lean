@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.integral_deriv_le_quadForm
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+open BookProof.ScalaronFiberFL
 
 
 

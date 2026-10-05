@@ -14,7 +14,6 @@ import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterSqSumFarisLavine
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_convergence
 import Theorems.Thm_BookProof_QgTruncationResolvent_isShiftInvertC_neg_resCLM
+open BookProof.QgTruncationResolvent
 
 
 
@@ -10,6 +11,7 @@ import Theorems.Thm_BookProof_QgTruncationResolvent_isShiftInvertC_neg_resCLM
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section

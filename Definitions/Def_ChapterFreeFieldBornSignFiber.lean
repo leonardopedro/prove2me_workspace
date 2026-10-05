@@ -1,0 +1,7 @@
+import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBorn
+import Mathlib
+
+namespace BookProof.ChapterFreeFieldBornSignFiber
+
+end BookProof.ChapterFreeFieldBornSignFiber

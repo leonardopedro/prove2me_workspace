@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterFreeFieldConstraint
-import Definitions.Def_ChapterA4
 open BookProof.BRSTNilpotent
 open BookProof.FreeFieldConstraint
 open BookProof.QuantumGravityBrstCharge

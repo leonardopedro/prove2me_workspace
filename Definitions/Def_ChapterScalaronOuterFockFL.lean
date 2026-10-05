@@ -19,7 +19,6 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterWallEsaSemibounded
 import Mathlib
 

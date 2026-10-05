@@ -3,10 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_commForm_le
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_coreN
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
+import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_coreN
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -14,6 +15,7 @@ import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section

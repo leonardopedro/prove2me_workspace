@@ -15,7 +15,6 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockEsa
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFockCoreFL

@@ -1,7 +1,7 @@
 -- Generated from ChapterMehlerOrthogonalInvariance.lean — theorem BookProof.ChapterMehlerOrthogonalInvariance.gaussianHead_map_orthogonal
+import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMehlerOrthogonalInvariance
 
 

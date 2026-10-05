@@ -1,7 +1,6 @@
 -- Generated from ChapterSolovayTailDimension.lean — theorem BookProof.ChapterSolovayTailDimension.substrateIntervals_disjoint
 import Mathlib
 import Definitions.Def_ChapterSolovayTailDimension
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovayTailDimension
 
 

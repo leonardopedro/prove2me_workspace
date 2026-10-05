@@ -11,7 +11,7 @@ import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite

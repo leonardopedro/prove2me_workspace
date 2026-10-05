@@ -4,7 +4,6 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
-import Definitions.Def_ChapterA4
 open BookProof.EsaOneParticle
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

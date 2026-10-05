@@ -11,7 +11,6 @@ import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterShiftedHermiteCore
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic

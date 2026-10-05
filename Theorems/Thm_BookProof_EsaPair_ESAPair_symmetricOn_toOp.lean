@@ -6,7 +6,6 @@ import Definitions.Def_ChapterEsaPairDGamma
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore

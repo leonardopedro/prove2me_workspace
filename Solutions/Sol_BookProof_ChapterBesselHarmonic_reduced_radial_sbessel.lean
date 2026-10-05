@@ -1,0 +1,46 @@
+-- Generated from ChapterBesselHarmonic.lean — solution of BookProof.ChapterBesselHarmonic.reduced_radial_sbessel
+import Mathlib
+import Definitions.Def_ChapterBesselHarmonic
+import Theorems.Thm_BookProof_ChapterBesselHarmonic_reduced_from_radial
+open BookProof.ChapterBesselHarmonic
+
+
+
+
+open Filter Laplacian InnerProductSpace
+open BookProof.ChapterSphericalBessel BookProof.ChapterSphericalBesselODE
+open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
+open scoped InnerProductSpace RealInnerProductSpace
+
+set_option maxHeartbeats 1000000 in
+theorem solution (l : ℕ) {p r : ℝ} (hp : p ≠ 0) (hr : r ≠ 0) :
+    deriv (deriv fun s => sbessel l (p * s) / s ^ l) r
+        + ((2 + 2 * (l : ℝ)) / r) * deriv (fun s => sbessel l (p * s) / s ^ l) r
+      = -(p ^ 2) * (sbessel l (p * r) / r ^ l) := by
+
+  have hpr : p * r ≠ 0 := mul_ne_zero hp hr
+  have hR : DifferentiableAt ℝ (fun s => sbessel l (p * s)) r :=
+    (hasDerivAt_sbessel_scaled l hp hr).differentiableAt
+  have hRev : ∀ᶠ s in nhds r, DifferentiableAt ℝ (fun s => sbessel l (p * s)) s := by
+    filter_upwards [isOpen_ne.mem_nhds hr] with s hs using
+      (hasDerivAt_sbessel_scaled l hp hs).differentiableAt
+  have hR' : DifferentiableAt ℝ (deriv fun s => sbessel l (p * s)) r := by
+    have hEq : (deriv fun s => sbessel l (p * s)) =ᶠ[nhds r]
+        fun s => deriv (sbessel l) (p * s) * p := by
+      filter_upwards [isOpen_ne.mem_nhds hr] with s hs using
+        (hasDerivAt_sbessel_scaled l hp hs).deriv
+    have hmul : DifferentiableAt ℝ (fun s : ℝ => p * s) r :=
+      (differentiableAt_const p).mul differentiableAt_id
+    have hcomp : DifferentiableAt ℝ (fun s : ℝ => deriv (sbessel l) (p * s)) r :=
+      (diffAt_deriv_sbessel l hpr).comp r hmul
+    exact (hcomp.mul_const p).congr_of_eventuallyEq hEq
+  have hode : deriv (deriv fun s => sbessel l (p * s)) r
+      + (2 / r) * deriv (fun s => sbessel l (p * s)) r
+      + (p ^ 2 - (l : ℝ) * (l + 1) / r ^ 2) * sbessel l (p * r) = 0 := by
+    have h := sbessel_radial_eigen l hp hr
+    have hexp : (p ^ 2 - (l : ℝ) * (l + 1) / r ^ 2) * sbessel l (p * r)
+        = p ^ 2 * sbessel l (p * r) - ((l : ℝ) * (l + 1) / r ^ 2) * sbessel l (p * r) := by
+      ring
+    rw [hexp]
+    linarith [h]
+  exact reduced_from_radial hr hR hR' hRev hode

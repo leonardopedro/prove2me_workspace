@@ -12,7 +12,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.IkebeKato

@@ -1,9 +1,12 @@
 -- Generated from ChapterPvmInducedSystem.lean — theorem BookProof.ChapterPvmInducedSystem.pvm_direct_sum_model
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
 import Definitions.Def_ChapterElectroweakFieldStrength
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmInducedSystem
 
@@ -19,6 +22,7 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
+open BookProof.ChapterHilbertSumIntertwine
 
 
 theorem BookProof.ChapterPvmInducedSystem.pvm_direct_sum_model (P : Pvm X H) :

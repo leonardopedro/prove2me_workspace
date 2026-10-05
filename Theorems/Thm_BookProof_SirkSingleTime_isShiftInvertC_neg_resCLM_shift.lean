@@ -6,7 +6,6 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterStoneMeasurable

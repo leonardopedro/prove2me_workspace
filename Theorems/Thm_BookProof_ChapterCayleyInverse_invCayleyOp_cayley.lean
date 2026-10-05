@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCayleyInverse
 import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCayleyTransform
 open BookProof.ChapterCayleyInverse
 

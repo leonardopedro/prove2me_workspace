@@ -1,12 +1,12 @@
 -- Generated from ChapterBddBelowWallEsa.lean — theorem BookProof.BddBelowWallEsa.wallHam_essentiallySelfAdjoint_of_bddBelow'
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
 import Definitions.Def_ChapterWeakSecondDerivative
 import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
-import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.BddBelowWallEsa

@@ -12,7 +12,6 @@ import Definitions.Def_ChapterQgOuterFockEllipticFL
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.YangMillsFriedrichs

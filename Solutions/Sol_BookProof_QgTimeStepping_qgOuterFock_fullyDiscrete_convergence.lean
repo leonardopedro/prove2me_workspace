@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 import Theorems.Thm_BookProof_QgTimeStepping_tendsto_iterate_cnStep
 import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_convergence
+open BookProof.QgTimeStepping
 
 
 
@@ -10,6 +11,8 @@ import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 

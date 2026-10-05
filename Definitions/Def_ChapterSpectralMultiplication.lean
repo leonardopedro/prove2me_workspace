@@ -1,7 +1,6 @@
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
 
 import Definitions.Def_ChapterAbelianGelfandModel
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

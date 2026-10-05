@@ -1,9 +1,9 @@
 -- Generated from ChapterHarmonicOscillatorEsa.lean — theorem BookProof.HarmonicOscillator.deriv_const_mul_fun
 import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStrichartzHermiteQG
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
-import Definitions.Def_ChapterA4
 open BookProof.HarmonicOscillator
 
 

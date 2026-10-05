@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQuantumGravityDensitized
-import Definitions.Def_ChapterA4
 open BookProof.QuantumGravityDensitized
 open BookProof.HermiteStrichartzQG
 

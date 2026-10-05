@@ -13,6 +13,7 @@ import Theorems.Thm_BookProof_SirkSingleTime_isShiftInvertC_neg_resCLM_shift
 import Theorems.Thm_BookProof_SirkSingleTime_singleTime_flow_tendsto_of_strongResAt
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_ne_zero
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+open BookProof.FiniteSectionSingleTime
 
 
 
@@ -22,6 +23,7 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 

@@ -2,7 +2,7 @@ import Definitions.Def_ChapterA3
 import Definitions.Def_ChapterA3j
 import Definitions.Def_ChapterA3n
 import Definitions.Def_ChapterA3o
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterA3p
 import Mathlib
 
 
@@ -58,6 +58,7 @@ open scoped BigOperators
 namespace BookProof.ChapterA3x
 
 open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3n BookProof.ChapterA3o
+open BookProof.ChapterA3p
 
 /-- The **mixed-symmetry projector** on `V^{⊗N}`: whatever the symmetrizer and
 the antisymmetrizer leave over. -/

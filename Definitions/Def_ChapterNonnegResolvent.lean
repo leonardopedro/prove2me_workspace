@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterClosureUniqueness
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterPositiveSquareRootUnique
 import Mathlib
 
 
@@ -38,6 +38,7 @@ where the *strong* convergence statements need a dense domain.
 
 namespace BookProof.NonnegResolvent
 
+open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

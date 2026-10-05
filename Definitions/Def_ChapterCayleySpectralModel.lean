@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterSpectralMultiplication
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib

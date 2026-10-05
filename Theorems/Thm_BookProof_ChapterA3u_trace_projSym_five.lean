@@ -1,0 +1,21 @@
+-- Generated from ChapterA3u.lean — theorem BookProof.ChapterA3u.trace_projSym_five
+import Definitions.Def_ChapterA3o
+import Definitions.Def_ChapterA3q
+import Definitions.Def_ChapterA3r
+import Mathlib
+import Definitions.Def_ChapterA3u
+import Definitions.Def_ChapterA3l
+import Definitions.Def_ChapterA3n
+open BookProof.ChapterA3l
+open BookProof.ChapterA3n
+open BookProof.ChapterA3u
+
+
+open Matrix
+open scoped BigOperators
+
+
+open BookProof.ChapterA3n BookProof.ChapterA3o BookProof.ChapterA3q
+open BookProof.ChapterA3r
+
+theorem BookProof.ChapterA3u.trace_projSym_five : Matrix.trace (projSym 5) = 56 := by sorry

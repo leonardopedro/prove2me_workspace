@@ -1,10 +1,12 @@
 -- Generated from ChapterPermutationSectorEsa.lean — theorem BookProof.PermSector.purePow_mem_corePow
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.TensorCore
 open BookProof.PermSector
 

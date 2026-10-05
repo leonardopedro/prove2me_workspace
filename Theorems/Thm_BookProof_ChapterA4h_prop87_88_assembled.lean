@@ -5,7 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterA4h
 import Definitions.Def_ChapterA4e
 import Definitions.Def_ChapterWeylCauchyRiemann
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA4e
 open BookProof.WeylCauchyRiemann
 open BookProof.ChapterA4h

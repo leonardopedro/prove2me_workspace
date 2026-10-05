@@ -11,7 +11,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.FockSecondQuantization
 open BookProof.SmCar
 open BookProof.YangMillsFriedrichs

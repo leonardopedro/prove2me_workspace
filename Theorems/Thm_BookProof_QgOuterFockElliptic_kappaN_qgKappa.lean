@@ -12,7 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEllipticFL
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
-import Definitions.Def_ChapterA4
 open BookProof.QgOuterFock
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgOuterFockElliptic

@@ -4,7 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterCoherentFidelity
 import Definitions.Def_ChapterCoherentOverlapComplex
 import Definitions.Def_ChapterSoftmaxBorn
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentFidelity

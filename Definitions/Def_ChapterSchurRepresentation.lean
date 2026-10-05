@@ -2,7 +2,6 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA2
 import Definitions.Def_ChapterA2b
 import Definitions.Def_ChapterSchurIrreducible
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

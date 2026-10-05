@@ -7,7 +7,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterWeakSecondDerivative
-import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.WeakSecondDeriv

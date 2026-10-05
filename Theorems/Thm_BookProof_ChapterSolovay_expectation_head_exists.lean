@@ -1,7 +1,6 @@
 -- Generated from ChapterSolovay.lean — theorem BookProof.ChapterSolovay.expectation_head_exists
 import Mathlib
 import Definitions.Def_ChapterSolovay
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovay
 
 

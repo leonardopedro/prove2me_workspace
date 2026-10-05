@@ -1,10 +1,11 @@
 -- Generated from ChapterScalaronOuterFockFL.lean — solution of BookProof.ScalaronOuterFockFL.secHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_fibOf_coe
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_xCc_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_exists_band₂
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_inner_secHam_expand
+import Theorems.Thm_BookProof_ScalaronOuterFockFL_fibOf_coe
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -12,6 +13,7 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_inner_secHam_expand
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -23,7 +25,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : SymmetricOn (secCore (ι := ι)) (secHam W Q) := by
+theorem solution : SymmetricOn (secCore (ι := by
 
   intro x y
   obtain ⟨P, hx1, hx2, hy1, hy2⟩ := exists_band₂ Q x y

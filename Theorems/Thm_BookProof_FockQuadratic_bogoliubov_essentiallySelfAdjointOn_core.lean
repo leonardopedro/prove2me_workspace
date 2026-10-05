@@ -1,0 +1,40 @@
+-- Generated from ChapterFockQuadraticEsa.lean — theorem BookProof.FockQuadratic.bogoliubov_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Mathlib
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.ChapterA3n
+open BookProof.DirectSumEsa
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.FockQuadratic
+
+variable {ι : Type*}
+variable {ω : ι → ℝ}
+variable {κ : Type*}
+
+
+open scoped ENNReal
+
+
+open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
+
+noncomputable section
+
+
+theorem BookProof.FockQuadratic.bogoliubov_essentiallySelfAdjointOn_core (hω : ∀ i, 0 ≤ ω i) (m n : κ → ι) (g : κ → ℂ)
+    (hsum : Summable fun k => ‖g k‖ * (ω (m k) + ω (n k) + 2)) :
+    EssentiallySelfAdjointOn (lpFiniteModes (Idx ι))
+      ((fockH hω (fun k => pairIdx (m k) (n k)) (fun _ => (0 : Idx ι)) g
+          (fun k => by simp)
+          (by
+            refine hsum.congr fun k => ?_
+            simp [wsum_pairIdx])).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (sig ω)))) := by sorry

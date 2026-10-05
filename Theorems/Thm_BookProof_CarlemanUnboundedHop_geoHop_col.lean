@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Definitions.Def_ChapterNavierStokesDeficiency
-import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat

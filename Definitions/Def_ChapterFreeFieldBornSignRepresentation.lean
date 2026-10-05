@@ -1,5 +1,15 @@
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignMatrix_flipMatrix_false
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignMatrix_flipMatrix_xor
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignOrientation_flipMatrix_mem_orthogonalGroup
+
 import Definitions.Def_ChapterFreeFieldBornSignOrientationQuotient
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBornSignAction
+import Definitions.Def_ChapterFreeFieldBornSignHom
+import Definitions.Def_ChapterFreeFieldBornSignMatrix
+import Definitions.Def_ChapterFreeFieldBornSignOrientation
+import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
 import Mathlib
 
 
@@ -12,6 +22,11 @@ special-orthogonal preimage is exactly the multiplicative copy of the
 orientation-preserving additive subgroup.
 -/
 
+open BookProof.ChapterFreeFieldBornSignAction
+open BookProof.ChapterFreeFieldBornSignHom
+open BookProof.ChapterFreeFieldBornSignMatrix
+open BookProof.ChapterFreeFieldBornSignOrientation
+open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
 namespace BookProof.ChapterFreeFieldBornSignRepresentation
 

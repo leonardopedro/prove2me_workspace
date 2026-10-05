@@ -1,7 +1,7 @@
 -- Generated from ChapterSolovayHilbertTensor.lean — theorem BookProof.ChapterSolovayHilbertTensor.inner_tensorLp
+import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
 import Definitions.Def_ChapterSolovayHilbertTensor
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovayHilbertTensor
 
 variable {A B C D : Type*} [MeasurableSpace A] [MeasurableSpace B] [MeasurableSpace C]

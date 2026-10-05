@@ -1,6 +1,7 @@
 -- Generated from ChapterQg3DGaugeFarisLavine.lean — theorem BookProof.Qg3DGaugeFL.qgGaugeOuterHam_sector
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterYangMillsHermite
@@ -11,7 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.Qg3DGaugeFL

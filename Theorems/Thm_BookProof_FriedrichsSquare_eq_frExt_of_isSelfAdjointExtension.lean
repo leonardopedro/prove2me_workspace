@@ -5,7 +5,6 @@ import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare

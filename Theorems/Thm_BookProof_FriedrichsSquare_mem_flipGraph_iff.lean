@@ -4,7 +4,6 @@ import Definitions.Def_ChapterClosureUniqueness
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterEsaClosureCore
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare
 

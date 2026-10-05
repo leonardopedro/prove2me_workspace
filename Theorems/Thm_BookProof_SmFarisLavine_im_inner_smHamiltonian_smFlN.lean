@@ -11,7 +11,6 @@ import Definitions.Def_ChapterSmFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
-import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian

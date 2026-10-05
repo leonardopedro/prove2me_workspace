@@ -1,10 +1,10 @@
 -- Generated from ChapterA3w.lean — theorem BookProof.ChapterA3w.lemma52_parity_gluing
+import Definitions.Def_ChapterA3q
 import Mathlib
 import Definitions.Def_ChapterA3w
 import Definitions.Def_ChapterA3
 import Definitions.Def_ChapterA3j
 import Definitions.Def_ChapterA3k
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA3
 open BookProof.ChapterA3j
 open BookProof.ChapterA3k

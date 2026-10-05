@@ -14,7 +14,6 @@ import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsAbelianEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -80,6 +79,7 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
+open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 /-! ## The polynomial-level Hamiltonian for arbitrary structure constants -/

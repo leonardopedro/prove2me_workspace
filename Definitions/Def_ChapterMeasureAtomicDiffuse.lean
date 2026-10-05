@@ -1,4 +1,6 @@
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
 
 
@@ -87,6 +89,7 @@ end AtomSet
 section Model
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
+open BookProof.ChapterAbelianDirectSum
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]

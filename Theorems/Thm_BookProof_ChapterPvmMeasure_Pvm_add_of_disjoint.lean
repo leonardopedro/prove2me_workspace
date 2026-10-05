@@ -1,7 +1,6 @@
 -- Generated from ChapterPvmMeasure.lean — theorem BookProof.ChapterPvmMeasure.Pvm.add_of_disjoint
 import Mathlib
 import Definitions.Def_ChapterPvmMeasure
-import Definitions.Def_ChapterA4
 open BookProof.ChapterPvmMeasure
 
 variable {X : Type*} [MeasurableSpace X]

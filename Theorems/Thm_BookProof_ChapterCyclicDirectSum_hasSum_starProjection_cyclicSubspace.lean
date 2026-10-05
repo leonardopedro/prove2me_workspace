@@ -1,7 +1,7 @@
 -- Generated from ChapterCyclicDirectSum.lean — theorem BookProof.ChapterCyclicDirectSum.hasSum_starProjection_cyclicSubspace
+import Definitions.Def_ChapterCyclicDecomposition
 import Mathlib
 import Definitions.Def_ChapterCyclicDirectSum
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCyclicDirectSum
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

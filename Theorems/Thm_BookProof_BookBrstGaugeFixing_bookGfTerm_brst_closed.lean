@@ -1,9 +1,10 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — theorem BookProof.BookBrstGaugeFixing.bookGfTerm_brst_closed
 import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterYangMillsGhostSector
-import Definitions.Def_ChapterA4
 open BookProof.YangMillsGhost
 open BookProof.BookBrstGaugeFixing
 

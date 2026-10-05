@@ -6,7 +6,6 @@ import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.YangMillsFriedrichs

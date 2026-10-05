@@ -1,9 +1,9 @@
 -- Generated from ChapterPauliFundamental.lean — theorem BookProof.ChapterPauliFundamental.gp_push
 import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Definitions.Def_ChapterA3b
-import Definitions.Def_ChapterA4
 open BookProof.ChapterPauliFundamental
 
 variable {A : Fin 4 → M4}
@@ -12,6 +12,7 @@ variable {A : Fin 4 → M4}
 open Matrix Finset
 
 
+open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
 
 theorem BookProof.ChapterPauliFundamental.gp_push (hA : IsCliffordC A) (μ : Fin 4) :
     ∀ l : List (Fin 4), (∀ ν ∈ l, ν ≠ μ) →

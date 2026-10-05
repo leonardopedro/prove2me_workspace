@@ -1,9 +1,9 @@
 -- Generated from ChapterAttentionTopK.lean — theorem BookProof.ChapterAttentionTopK.norm_headOutput_topk_sub_le_of_isTop
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionTopK
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionTopK
@@ -16,6 +16,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionTopK.norm_headOutput_topk_sub_le_of_isTop (beta : ℝ) (s : Fin m → ℝ)

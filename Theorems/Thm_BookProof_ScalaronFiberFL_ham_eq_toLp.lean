@@ -11,7 +11,6 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.StrichartzWave

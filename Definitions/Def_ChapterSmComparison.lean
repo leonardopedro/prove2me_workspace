@@ -20,7 +20,7 @@ import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib

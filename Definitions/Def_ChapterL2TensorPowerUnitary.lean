@@ -2,7 +2,6 @@ import Definitions.Def_ChapterNsScalarVectorCurry
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 
@@ -59,6 +58,7 @@ the occupation-number (`ℓ²`) spelling `dGammaOp (nsSpCol …)`.
 namespace BookProof.L2TensorPower
 
 open MeasureTheory BookProof.TensorCore BookProof.NsScalarVectorCurry
+open BookProof.SecondQuantizationCore
 open scoped TensorProduct
 
 noncomputable section

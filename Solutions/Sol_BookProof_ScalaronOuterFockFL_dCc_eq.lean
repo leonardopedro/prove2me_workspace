@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronOuterFockFL.lean — solution of BookProof.ScalaronOuterFockFL.dCc_eq
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -8,6 +9,7 @@ import Definitions.Def_ChapterScalaronOuterFockFL
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section

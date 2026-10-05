@@ -3,7 +3,6 @@ import Definitions.Def_ChapterObservableExpectation
 import Mathlib
 import Definitions.Def_ChapterAttentionSink
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionSink
 

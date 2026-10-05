@@ -5,7 +5,6 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFourierMultiplierEsa
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_ChapterA4
 open BookProof.FarisLavine
 open BookProof.FourierMultiplierEsa
 open BookProof.NsSpatialMultiplier

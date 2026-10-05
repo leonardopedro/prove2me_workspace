@@ -16,7 +16,6 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 
@@ -84,9 +83,11 @@ open MeasureTheory MvPolynomial Matrix
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.NavierStokesFlow.SignFlip
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 open BookProof.QuadraticRotation
+open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

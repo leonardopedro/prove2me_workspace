@@ -1,6 +1,7 @@
 -- Generated from ChapterQg3DGaugeFarisLavine.lean — theorem BookProof.Qg3DGaugeFL.qgGauge_stone_flow
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterYangMillsHermite
@@ -12,7 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock

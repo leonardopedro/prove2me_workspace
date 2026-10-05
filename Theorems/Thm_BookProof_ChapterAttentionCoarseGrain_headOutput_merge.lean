@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCoarseGrain
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionCoarseGrain

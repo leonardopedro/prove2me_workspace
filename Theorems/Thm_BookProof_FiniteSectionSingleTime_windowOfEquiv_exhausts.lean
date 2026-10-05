@@ -3,12 +3,14 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
-import Definitions.Def_ChapterA4
 open BookProof.FiniteSectionSingleTime
 
 variable {ι : Type*} [DecidableEq ι]

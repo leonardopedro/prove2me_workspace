@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
 
@@ -107,6 +106,7 @@ namespace BookProof.QgDerivativeRealization
 open MvPolynomial
 open BookProof.GaugeFixing
 open BookProof.QuantumGravity3DGauge
+open BookProof.QgPhysicalSectorIdentity
 
 /-! ## 1. Polynomial tetrad fields and the 84-dimensional configuration point -/
 

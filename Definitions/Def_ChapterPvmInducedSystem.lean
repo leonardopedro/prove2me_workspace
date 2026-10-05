@@ -1,7 +1,8 @@
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterPvmCyclicUnitary
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterHilbertSumIntertwine
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmMeasure
 import Mathlib
 
 
@@ -42,6 +43,7 @@ namespace BookProof.ChapterPvmInducedSystem
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
+open BookProof.ChapterHilbertSumIntertwine
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

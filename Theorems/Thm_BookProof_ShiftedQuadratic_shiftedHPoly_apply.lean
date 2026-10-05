@@ -10,7 +10,6 @@ import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterShiftedHermiteCore
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore

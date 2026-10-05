@@ -1,0 +1,24 @@
+-- Generated from ChapterAttentionMixture.lean — solution of BookProof.ChapterAttentionMixture.le_shannonEntropy_multiHead
+import Mathlib
+import Definitions.Def_ChapterAttentionMixture
+import Theorems.Thm_BookProof_ChapterAttentionMixture_le_shannonEntropy_mixture
+open BookProof.ChapterAttentionMixture
+
+
+
+open scoped BigOperators
+
+noncomputable section
+
+
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m H : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+variable {m H : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+set_option maxHeartbeats 1000000 in
+theorem solution {w : Fin H → ℝ} (hw0 : ∀ h, 0 ≤ w h) (hw : ∑ h, w h = 1)
+    (beta : Fin H → ℝ) (s : Fin H → Fin m → ℝ) :
+    ∑ h, w h * shannonEntropy (scoreSoftmax (beta h) (s h))
+      ≤ shannonEntropy (multiHead w beta s) := le_shannonEntropy_mixture hw0 hw (fun h j => scoreSoftmax_nonneg (beta h) (s h) j)

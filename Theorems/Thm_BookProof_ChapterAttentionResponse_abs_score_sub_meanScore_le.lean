@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionResponse.lean — theorem BookProof.ChapterAttentionResponse.abs_score_sub_meanScore_le
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionResponse
 
@@ -14,6 +14,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionResponse.abs_score_sub_meanScore_le {s : Fin m → ℝ} {a b : ℝ} (ha : ∀ l, a ≤ s l)

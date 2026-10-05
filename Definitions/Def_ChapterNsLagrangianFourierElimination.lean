@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 

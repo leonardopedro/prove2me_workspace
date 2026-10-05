@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+open BookProof.ScalaronFiberFL
 
 
 

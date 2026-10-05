@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
+open BookProof.QgManifoldModeInstance
 
 
 
@@ -9,6 +10,9 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointO
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
 
 noncomputable section
 

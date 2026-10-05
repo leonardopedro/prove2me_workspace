@@ -1,9 +1,9 @@
 -- Generated from ChapterLayerNorm.lean — theorem BookProof.ChapterLayerNorm.scoreSoftmax_layerNorm_ge
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterLayerNorm
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterTotalVariance
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open ChapterTotalVariance
 open BookProof.ChapterLayerNorm
@@ -16,6 +16,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterLayerNorm.scoreSoftmax_layerNorm_ge {m : ℕ} {beta : ℝ} (hb : 0 ≤ beta) (hd : 0 < d)

@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.cc_integrable
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+open BookProof.ScalaronFiberFL
 
 
 

@@ -13,7 +13,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEllipticFL
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFriedrichsExtension
-import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockElliptic

@@ -1,11 +1,13 @@
 -- Generated from ChapterPolarPartialIsometry.lean — theorem BookProof.PolarPartialIsometry.absOn_eq_zero_iff
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
 import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.PolarPartialIsometry
 
@@ -20,6 +22,7 @@ variable [CompleteSpace F] {D : Submodule ℂ F} (A : D →ₗ[ℂ] F) (hdense :
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
 
 
 theorem BookProof.PolarPartialIsometry.absOn_eq_zero_iff (x : clDom A) :

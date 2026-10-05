@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterMackeyImprimitivity
 import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyInducedSystem
 
 variable {G : Type*} [Group G] {X : Type*} [Fintype X] [DecidableEq X] [MulAction G X]

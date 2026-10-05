@@ -1,3 +1,7 @@
+import Theorems.Thm_BookProof_ChapterOrthogonalSums_hasSum_norm_sq_of_hasSum
+
+
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 
 

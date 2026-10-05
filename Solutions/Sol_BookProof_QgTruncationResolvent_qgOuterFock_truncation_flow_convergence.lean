@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+open BookProof.QgTruncationResolvent
 
 
 
@@ -16,6 +17,7 @@ import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section

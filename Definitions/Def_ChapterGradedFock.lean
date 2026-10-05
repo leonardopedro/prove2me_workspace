@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterFermionFock
 import Definitions.Def_ChapterSuperBracket
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato

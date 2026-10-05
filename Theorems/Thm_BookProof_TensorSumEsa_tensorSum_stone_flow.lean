@@ -8,7 +8,6 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.ChapterStoneMeasurable

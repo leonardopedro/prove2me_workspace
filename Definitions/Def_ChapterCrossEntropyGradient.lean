@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterSoftmaxJacobian
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterLogPartitionConvex
+import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
@@ -42,6 +43,7 @@ noncomputable section
 
 namespace BookProof.ChapterCrossEntropyGradient
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterSoftmaxFluctuation BookProof.ChapterSoftmaxJacobian
   BookProof.ChapterLogPartitionConvex
 

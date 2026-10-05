@@ -4,7 +4,6 @@ import Definitions.Def_ChapterCarlemanUnboundedHop
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterA4
 open BookProof.KernelBound
 open BookProof.CarlemanUnboundedHop
 

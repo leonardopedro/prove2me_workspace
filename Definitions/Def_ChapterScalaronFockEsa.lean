@@ -72,7 +72,7 @@ open Filter Topology MeasureTheory SchwartzMap
 
 namespace BookProof.ScalaronFock
 
-open BookProof.FarisLavine BookProof BookProof.ScalaronEsa
+open BookProof.FarisLavine BookProof.Starobinsky BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.QuantumGravityDensitized BookProof.ChapterStoneResolvent
 

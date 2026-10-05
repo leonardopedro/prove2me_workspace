@@ -1,13 +1,17 @@
 -- Generated from ChapterFreeFieldBorn.lean — theorem BookProof.ChapterFreeFieldBorn.bornMap_sum_of_mem_sphere
+import Definitions.Def_ChapterFreeFieldGaussian
+import Definitions.Def_ChapterFreeFieldSphere
+import Definitions.Def_ChapterFreeFieldSphereSupport
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBorn
-import Definitions.Def_ChapterA4
 open BookProof.ChapterFreeFieldBorn
 
 variable {n : ℕ}
 
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
+open BookProof.ChapterFreeFieldSphereSupport
 
 
 

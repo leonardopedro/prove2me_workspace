@@ -1,9 +1,11 @@
 -- Generated from ChapterMackeyConverse.lean — theorem BookProof.ChapterMackeyConverse.mackey_converse_continuous
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterMackeyCocycle
 import Mathlib
 import Definitions.Def_ChapterMackeyConverse
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterMackeyQuasiInvariant
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyConverse

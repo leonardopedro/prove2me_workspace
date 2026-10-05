@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSolovay
 import Definitions.Def_PhysMeasureBasis
-import Definitions.Def_ChapterA4
 open PhysMeasureBasis
 open BookProof.ChapterSolovay
 

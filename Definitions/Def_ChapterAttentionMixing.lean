@@ -1,5 +1,5 @@
 import Definitions.Def_ChapterAttentionMarkov
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 
@@ -31,6 +31,7 @@ noncomputable section
 
 namespace BookProof.ChapterAttentionMixing
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
   BookProof.ChapterAttentionRetrieval BookProof.ChapterAttentionMarkov
 
 variable {m : ℕ}

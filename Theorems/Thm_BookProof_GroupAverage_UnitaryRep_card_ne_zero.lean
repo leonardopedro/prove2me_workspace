@@ -1,9 +1,10 @@
 -- Generated from ChapterGroupAverageEsa.lean — theorem BookProof.GroupAverage.UnitaryRep.card_ne_zero
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFockStatisticsCompletion
 open BookProof.GroupAverage
 open BookProof.GroupAverage
 

@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterConvolutionCalc
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterDegSchrodingerCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOneParticleCcEsa
 import Mathlib
 
 
@@ -28,6 +29,8 @@ and no regularity of `G` beyond continuity.
 namespace BookProof.DegEnergy
 
 open MeasureTheory
+open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
+open BookProof.ConvolutionCalc
 
 noncomputable section
 

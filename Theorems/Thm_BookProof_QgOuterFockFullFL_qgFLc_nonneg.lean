@@ -14,7 +14,6 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFullFL
-import Definitions.Def_ChapterA4
 open BookProof.QgOuterFockFullFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

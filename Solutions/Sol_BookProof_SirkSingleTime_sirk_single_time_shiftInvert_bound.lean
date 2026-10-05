@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end
+open BookProof.SirkSingleTime
 
 
 

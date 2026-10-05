@@ -1,9 +1,12 @@
 -- Generated from ChapterPvmScalarMeasure.lean — theorem BookProof.ChapterPvmScalarMeasure.exists_induced_system_in_measure_class
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterMackeyConverse
+import Definitions.Def_ChapterPvmInducedSystem
 import Mathlib
 import Definitions.Def_ChapterPvmScalarMeasure
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterMackeyQuasiInvariant
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterPvmScalarMeasure

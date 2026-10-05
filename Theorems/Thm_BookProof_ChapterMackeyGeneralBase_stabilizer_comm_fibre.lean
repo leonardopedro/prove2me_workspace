@@ -1,8 +1,8 @@
 -- Generated from ChapterMackeyGeneralBase.lean — theorem BookProof.ChapterMackeyGeneralBase.stabilizer_comm_fibre
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyGeneralBase
@@ -17,6 +17,7 @@ variable {S x₀ s}
 open scoped InnerProductSpace
 
 
+open BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterMackeyGeneralBase.stabilizer_comm_fibre {h : G} (hh : h ∈ MulAction.stabilizer G x₀) (v : E) :

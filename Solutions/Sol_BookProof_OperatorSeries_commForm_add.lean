@@ -7,17 +7,10 @@ open BookProof.OperatorSeries
 
 
 
-
-
-
-
-
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat
 
 noncomputable section
-
-
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 

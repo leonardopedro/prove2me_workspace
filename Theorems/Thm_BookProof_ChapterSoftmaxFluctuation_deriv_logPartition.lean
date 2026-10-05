@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — theorem BookProof.ChapterSoftmaxFluctuation.deriv_logPartition
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
@@ -13,6 +13,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterSoftmaxFluctuation.deriv_logPartition (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

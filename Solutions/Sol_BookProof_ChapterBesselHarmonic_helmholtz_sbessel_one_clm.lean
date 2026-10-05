@@ -1,0 +1,25 @@
+-- Generated from ChapterBesselHarmonic.lean — solution of BookProof.ChapterBesselHarmonic.helmholtz_sbessel_one_clm
+import Mathlib
+import Definitions.Def_ChapterBesselHarmonic
+import Theorems.Thm_BookProof_ChapterBesselHarmonic_helmholtz_sbessel_harmonic
+import Theorems.Thm_BookProof_ChapterLaplacianProduct_euler_clm
+import Theorems.Thm_BookProof_ChapterLaplacianProduct_harmonic_clm
+open BookProof.ChapterBesselHarmonic
+
+
+
+
+open Filter Laplacian InnerProductSpace
+open BookProof.ChapterSphericalBessel BookProof.ChapterSphericalBesselODE
+open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
+open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+
+set_option maxHeartbeats 1000000 in
+theorem solution [FiniteDimensional ℝ E] (h3 : Module.finrank ℝ E = 3)
+    (L : E →L[ℝ] ℝ) {x : E} {p : ℝ} (hp : p ≠ 0) (hx : x ≠ 0) :
+    -(Δ fun y : E => (sbessel 1 (p * ‖y‖) / ‖y‖ ^ 1) * L y) x
+      = p ^ 2 * ((sbessel 1 (p * ‖x‖) / ‖x‖ ^ 1) * L x) :=
+  helmholtz_sbessel_harmonic h3 hp hx
+      (L.contDiff (n := 2)).contDiffAt (harmonic_clm L x) (euler_clm L x)

@@ -3,7 +3,6 @@ import Definitions.Def_ChapterGravityMetric
 import Mathlib
 import Definitions.Def_ChapterGravityInvMetric
 import Definitions.Def_ChapterGravityProjector
-import Definitions.Def_ChapterA4
 open BookProof.ChapterGravityProjector
 open BookProof.ChapterGravityInvMetric
 

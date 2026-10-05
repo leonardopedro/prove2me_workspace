@@ -1,7 +1,6 @@
 -- Generated from ChapterSolovay.lean — theorem BookProof.ChapterSolovay.mehler_concentrates_on_unit_sphere
 import Mathlib
 import Definitions.Def_ChapterSolovay
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovay
 
 

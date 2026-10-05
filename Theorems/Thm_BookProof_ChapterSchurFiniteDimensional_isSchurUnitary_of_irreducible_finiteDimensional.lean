@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSchurFiniteDimensional
 import Definitions.Def_ChapterA
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterSchurFiniteDimensional

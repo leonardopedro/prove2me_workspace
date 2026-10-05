@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_toLp_norm_sq
+open BookProof.ScalaronFiberFL
 
 
 

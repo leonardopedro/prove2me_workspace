@@ -1,7 +1,7 @@
 -- Generated from ChapterPvmCyclicDecomposition.lean — theorem BookProof.ChapterPvmCyclicDecomposition.inner_eq_zero_of_orthOrbit
+import Definitions.Def_ChapterPvmMeasure
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
-import Definitions.Def_ChapterA4
 open BookProof.ChapterPvmCyclicDecomposition
 
 variable {X : Type*} [MeasurableSpace X]

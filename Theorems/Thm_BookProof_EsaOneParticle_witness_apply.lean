@@ -5,7 +5,6 @@ import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterTempleSeparationNecessary
-import Definitions.Def_ChapterA4
 open BookProof.TempleSeparationNecessary
 open BookProof.EsaOneParticle
 

@@ -7,12 +7,12 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterMajoranaClifford
-import Definitions.Def_ChapterA4
 open BookProof.MajoranaClifford
 open BookProof.SqSumOuterFamily
 

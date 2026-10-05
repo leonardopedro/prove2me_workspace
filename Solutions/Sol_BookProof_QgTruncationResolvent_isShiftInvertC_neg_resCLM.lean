@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse
+open BookProof.QgTruncationResolvent
 
 
 
@@ -10,6 +12,7 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInvers
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section

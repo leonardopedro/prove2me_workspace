@@ -1,9 +1,10 @@
 -- Generated from ChapterSolidHarmonic.lean — theorem BookProof.ChapterSolidHarmonic.solidHarmonic_spherical
 import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Definitions.Def_ChapterLegendrePolynomial
-import Definitions.Def_ChapterA4
 open BookProof.ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
@@ -14,6 +15,8 @@ variable {u v e : E} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (he : ‖e‖ = 1)
 
 
 open Laplacian InnerProductSpace Polynomial
+open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
+open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
 
 

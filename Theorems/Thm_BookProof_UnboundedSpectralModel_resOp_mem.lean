@@ -1,10 +1,12 @@
 -- Generated from ChapterUnboundedSpectralModel.lean — theorem BookProof.UnboundedSpectralModel.resOp_mem
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterSpectralDirectSum
 import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.UnboundedSpectralModel
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

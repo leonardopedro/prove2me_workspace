@@ -1,8 +1,8 @@
 -- Generated from ChapterMackeyGeneralBase.lean — theorem BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem.U_mul_apply
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyGeneralBase
@@ -15,6 +15,7 @@ variable (S : ImprimitivitySystem G X E)
 open scoped InnerProductSpace
 
 
+open BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem.U_mul_apply (g h : G) (ψ : E) : S.U g (S.U h ψ) = S.U (g * h) ψ := by sorry

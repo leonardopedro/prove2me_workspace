@@ -4,6 +4,7 @@ import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_ham_eq_ham_zero_add
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_double_sum_amgm
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_norm_sub_conj_eq
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -11,6 +12,7 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_norm_sub_conj_eq
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -22,10 +24,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := ι)) (P : Finset ι) :
-    |(∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.A a b) *
-        (inner ℂ ((fibOf x b : ccDomain ℝ) : L2R) (W.ham (Q.sig a) (fibOf x a)) : ℂ)).im|
-      ≤ (1 / 2) * Q.K * ∑ a ∈ P, quadForm (W.ham (Q.sig a)) (fibOf x a) := by
+theorem solution (x : secCore (ι := by
 
   classical
   set u : ι → ccDomain ℝ := fun a => fibOf x a with hu

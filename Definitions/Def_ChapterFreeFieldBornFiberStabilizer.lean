@@ -1,5 +1,8 @@
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 import Definitions.Def_ChapterFreeFieldBornSignGauge
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornQuotient
 import Mathlib
 
 
@@ -38,6 +41,11 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldBorn
+open BookProof.ChapterFreeFieldBornQuotient
+open BookProof.ChapterFreeFieldBornSignGauge
+open BookProof.ChapterFreeFieldBornFiberCardGeneral
+open BookProof.ChapterFreeFieldBornFiberBounds
 
 namespace BookProof.ChapterFreeFieldBornFiberStabilizer
 

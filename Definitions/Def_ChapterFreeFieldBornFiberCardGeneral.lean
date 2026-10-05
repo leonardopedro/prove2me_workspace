@@ -1,5 +1,22 @@
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignFiber_bornMap_eq_iff_signFlip
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSurj_bornMap_bornSection
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignGauge_bornMap_signFlip
+
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignGauge_signFlip_mem_sphere
+
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSurj_bornSection_mem_sphere
+
 import Definitions.Def_ChapterFreeFieldBornFiberCard
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornSectionBij
+import Definitions.Def_ChapterFreeFieldBornSignFiber
+import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBornSurj
 import Mathlib
 
 
@@ -36,6 +53,10 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
+open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSignGauge
+open BookProof.ChapterFreeFieldBornSignFiber BookProof.ChapterFreeFieldBornSectionBij
+open BookProof.ChapterFreeFieldBornQuotient BookProof.ChapterFreeFieldBornFiberCard
 
 namespace BookProof.ChapterFreeFieldBornFiberCardGeneral
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterG3.lean — theorem BookProof.ChapterG3.free_remnant_moves_every_point
 import Mathlib
 import Definitions.Def_ChapterG3
-import Definitions.Def_ChapterA4
 open BookProof.ChapterG3
 
 variable {X : Type*}

@@ -1,7 +1,13 @@
+import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
+
+import Theorems.Thm_BookProof_NonnegResolvent_yosidaCLM_nonneg
+
+import Theorems.Thm_BookProof_NonnegResolvent_dense_domain
+
 import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterClosureUniqueness
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterPositiveSquareRootUnique
 import Mathlib
 
 import Mathlib.Analysis.SpecialFunctions.Exponential
@@ -54,6 +60,8 @@ Its rate of convergence on the domain is `‖e^{-tT}h − e^{-tT_m}h‖ ≤ t �
 
 namespace BookProof.NonnegSemigroup
 
+open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegResolvent
+open BookProof.NonnegUnitaryGroup
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
 import Definitions.Def_ChapterSirkFinitePrecision
-import Definitions.Def_ChapterA4
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NsScalarVectorCurry

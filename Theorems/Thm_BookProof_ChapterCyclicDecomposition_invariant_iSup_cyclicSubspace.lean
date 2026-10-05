@@ -1,7 +1,7 @@
 -- Generated from ChapterCyclicDecomposition.lean — theorem BookProof.ChapterCyclicDecomposition.invariant_iSup_cyclicSubspace
+import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
 import Definitions.Def_ChapterCyclicDecomposition
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCyclicDecomposition
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

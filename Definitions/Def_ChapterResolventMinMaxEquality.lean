@@ -1,6 +1,10 @@
+import Definitions.Def_ChapterResolventMinMaxLadder
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterSirkRitzMinMax
 import Mathlib
 
@@ -66,6 +70,9 @@ noncomputable section
 
 namespace BookProof.ResolventLadderEq
 
+open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.MinMaxSpectrum
+open BookProof.ResolventLadder
+open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 

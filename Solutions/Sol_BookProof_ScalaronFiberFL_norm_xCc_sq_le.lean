@@ -4,6 +4,7 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_sq_div_four_le_pot
 import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_xCc_sq
+open BookProof.ScalaronFiberFL
 
 
 

@@ -6,7 +6,6 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
@@ -58,6 +57,7 @@ generator.
 namespace BookProof.NsFullLagrangianEsa
 
 open MvPolynomial
+open BookProof.NsFullLagrangian BookProof.YangMillsNonAbelianEsa BookProof.YangMillsHermite
 open BookProof.YangMillsFriedrichs BookProof.HermiteProductCore BookProof.DirectSumEsa
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.EsaClosure
 

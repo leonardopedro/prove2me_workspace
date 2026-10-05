@@ -7,7 +7,6 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.FockSecondQuantization
 open BookProof.TensorCore

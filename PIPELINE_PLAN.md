@@ -5442,3 +5442,196 @@ registered. `../timepiece` has the sources (`decl_graph.jsonl` with 15,095 recor
    `PIPELINE_PLAN.md` front section §1 references 0.10.3 — update stale version references.
 
 **Git commit:** `build_one.sh`, `build_all_ordered.py`, PIPELINE_PLAN.md §1k update.
+
+---
+
+# §2. CURRENT — Session 39 (2026-10-05) — FreeField chain drained; alternating-layer procedure
+
+Supersedes §1 (historical). Authoritative state below; `--sync` and per-item status are the
+only truth, never `num_solved_prob` (lagged: reports 850 while the real count is higher).
+
+## 1. Mission
+
+Publish **everything** in `../timepiece331` (which compiles clean, 9,789 targets, 0 errors).
+Three item kinds, in this order per chapter:
+
+1. `def:`   — `Definitions/Def_<Chapter>.lean` → `POST /submit-definition`
+2. `thm:`   — `Theorems/Thm_<slug>.lean` (ends `by sorry`) → `POST /submit-problem`
+3. `sol:`   — `Solutions/Sol_<slug>.lean` (declares `theorem solution`) → `POST /verify`
+
+## 2. Authoritative state (2026-10-05)
+
+| layer | done | pending | other |
+| :--- | ---: | ---: | :--- |
+| `def` | 432 | 11 | — |
+| `thm` | 1870 | 44 | 1 parked |
+| `sol` | 1784 | 47 | — |
+
+- `Definitions/` holds **749** chapters; `pipeline/wave_upload.json` registers only **640**
+  `defs` and **2081** `thms`. **109 chapters still have no plan entry** — register them
+  (§4 step 1) or they are silently skipped forever.
+- Platform: skill and platform both now **0.11.8** (was 0.11.6; SKILL.md re-synced from
+  upstream `main`, which changed no API shapes).
+- `licensing: accepted`.
+
+## 3. The seven generator bugs fixed this session
+
+All were found by reading the *first server compiler error* (§5d) and reproducing locally.
+
+1. **`owner_of_namespace` longest-prefix fallback returned the wrong chapter.**
+   `state/defs_index.json`'s `namespace_owner` is empty for a chapter published after the
+   last index refresh, so `BookProof.ChapterFreeFieldBorn` missed, fell through to the
+   longest *declared prefix*, matched bare `BookProof`, and returned `ChapterA4`. The
+   consuming bundle then imported A4 instead → `unknown namespace`.
+   Fix: `_bundle_text_namespaces()` scans real bundle text (`state/published_bundles/` +
+   `Definitions/`) and is consulted **before** the index.
+
+2. **`drop_undeclared_opens` deleted a whole `open` line when one namespace was undeclared.**
+   `open BookProof.A BookProof.B` lost `A` because `B` had no bundle. **140 bundles affected.**
+   Fix: keep the declared namespaces, drop the line only if none remain.
+
+3. **`drop_shadowing_opens` matched prose inside docstrings.**
+   The test is `last <arg>`; a module docstring full of "`ChapterA3j` shows …" matched and
+   rewrote `open BookProof.ChapterA3j` → `open BookProof`, destroying bare-name scope.
+   Fix: new `strip_lean_comments()` blanks `/-! -/`, `/-- -/` and `--` before the test.
+
+4. **Chapters with zero definitions produced no bundle at all.**
+   `ChapterFreeFieldBornCont` is 5 theorems / 0 definitions, so `build_def_file` returned
+   `None` — but six downstream chapters `open BookProof.ChapterFreeFieldBornCont`, which then
+   failed with `unknown namespace`.
+   Fix: `build_ns_anchor()` emits upstream `Def` imports + an empty namespace.
+
+5. **`build_ns_anchor` put the docstring before the imports** — `invalid 'import' command, it
+   must be used at the top of the file`. Imports now precede the docstring.
+   *When adding this helper, insert it **after** `build_def_file`'s body: splicing it into the
+   middle orphaned the rest of `build_def_file` under the helper's `return`, so every chapter
+   **with** definitions silently produced no bundle. Symptom: bundles stop changing after a
+   "harmless" generator patch. Always re-measure after editing the generator.*
+
+6. **`ORDER` is built from `wave_upload.json`'s `sol_order`, not from `WAVE_THMS`.**
+   Registering a theorem in `thms` alone makes it an orphan — invisible to the pipeline and
+   wiped from state by the next sync. Any new theorem must be appended to `sol_order`.
+
+7. **`thm_imports` compared slugs to dotted names**, so no theorem dependency ever matched and
+   every def importing a proved theorem was submitted with a missing import.
+   Fix: resolve the slug through `WAVE_THMS[slug]["name"]`.
+
+Also: a hand-written wave entry needs `title` **and** `nl` or the uploader dies with
+`KeyError: 'title'`; build them from the statement in `Theorems/Thm_<slug>.lean`, matching
+with `(?m)^theorem\s+<name>` — a plain `find` hits the `-- Generated from … theorem <name>`
+header comment and swallows the imports into the title.
+
+## 4. Execution plan — drain the layers ALTERNATINGLY
+
+The def, thm and sol layers are **mutually dependent** and must be pumped in a loop; a single
+kind never converges:
+
+- a `def` bundle that uses a lemma imports `Theorems.Thm_<slug>`, and the server rejects it
+  unless that theorem is **Proved** (`Imported platform theorems must be Proved at submission
+  time … status=Open`);
+- a `thm` stub imports its own chapter's `Def` bundle, so it cannot be submitted until that
+  def is **PUBLISHED**;
+- a `sol` stub imports sibling `Thm_` stubs, so it needs those **Proved**.
+
+So repeat until nothing moves:
+
+```bash
+cd /media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+export PROVE2ME_WS=$PWD
+export PATH=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH
+python3 pipeline/upload_pipeline.py --sync                      # reconcile first
+# then, for kind in def thm sol:
+#   requeue everything not done, then:
+python3 pipeline/upload_pipeline.py --kind def --only-file /tmp/ff_def2.txt \
+    --retry-failed --parallel 7 --max-items 14 --job-timeout 3000
+```
+
+1. **Register the 109 unregistered chapters** so they enter `ORDER` (`defs` + `thms` +
+   `sol_order`). Use `debug/publish_all_defs.py --apply --refresh --include-published` to
+   write bundles, then register from `state/wave_manifest.json` — and append every slug to
+   `sol_order` (bug 6).
+2. **Drain def → thm → sol** repeatedly, requeueing the remainder each pass, until a pass
+   resolves 0 items.
+3. **Repair compile failures** one per server error (bugs 1–5 above are the catalogue).
+4. **`--parallel 7` is safe and ~2× faster than 3.** Measured 2026-10-05: parallel 3 gave
+   ~6 compiles/hour, parallel 7 gave ~26/hour, with **zero** rate-limit errors across
+   ~200 submissions. Raise further only while `FAIL` stays 0 — a 429 would burn one of the
+   5 attempts per item.
+5. **Long polls, not tight ones.** A server compile is ~2–5 min; poll with
+   `for i in $(seq 1 70); do grep -q 'EXIT ' log && break; sleep 25; done`.
+
+### Known non-bugs
+
+- **Mathlib drift.** A few copied proofs reference Mathlib identifiers whose signature differs
+  on the platform, e.g. `ProbabilityTheory.map_pi_eq_stdGaussian` is
+  `(ℕ) → EuclideanSpace ℝ (Fin _) → E` (a *function*), so `rw [map_pi_eq_stdGaussian]` gives
+  `Invalid simp theorem: Expected a proposition`. `timepiece331` compiles against its own
+  Mathlib pin; the platform's differs. Not fixable by regenerating — needs a per-proof
+  rewrite, and these are off the critical path.
+- **2 chapters cannot be sketched**: `ChapterMinMaxSpectrum`, `ChapterUnboundedPolar` report
+  `10/36` and similar misaligned spans and write no bundle. Re-extract the sketch
+  (`ensure_sketch(force=True)`) before concluding they are unpublishable.
+- **`local_compile()` is not a usable gate** for defs: it skips any bundle whose dependency is
+  not built in this checkout. Use a fresh candidate mirror
+  (`debug/build_candidate_mirror.py`, topological over Definitions ∪ Theorems) or trust the
+  server. Only 278 of 2512 `Theorems/*.olean` exist locally, so full local verification of the
+  thm/sol layer is impractical — the server is the oracle.
+
+## 5. Results this session
+
+`ChapterFreeFieldBornSignMatrix` published → **5 of the 6 originally-pending definitions are
+now done**. The sixth, `ChapterFreeFieldBornSignOrientationSubgroup`, is blocked on 15
+theorems of which 11 already have published problems awaiting solutions.
+
+FreeField family: **16/27 defs**, **62/106 thms**, **15/106 sols** published.
+
+## 6. Second wave of generator bugs (found while draining)
+
+Ordered by blast radius. The first three each broke *hundreds* of bundles at once.
+
+8. **`drop_undeclared_opens` was generation-ORDER dependent.** It decided whether a
+   namespace was "declared" by scanning bundles that already existed on disk, so a chapter
+   generated before its provider's bundle lost the open and nothing ever put it back.
+   26 bundles failed at once with `Unknown identifier hermBasisN` — the source opened
+   `BookProof.QuadFockEsa`, declared by an already-published chapter.
+   Fix: also trust the **source** tree, which is complete up front. Generation is now
+   order-independent and idempotent. Always re-run the generator after adding a provider.
+
+9. **The source scan was not recursive.** `BookProof/` has per-chapter subdirectories
+   (`ChapterQgVielbeinScalaronGaugeFL/Part1.lean`, …). `os.listdir` missed every one of
+   them, so those namespaces read as undeclared.
+   Fix: `os.walk`.
+
+10. **Nested namespaces were recorded unqualified.** A flat `^namespace\s+([\w.]+)` scan
+    sees `namespace System` inside `namespace BookProof.ChapterA` as the bare `System`, so a
+    consumer's `open BookProof.ChapterA.System` looked undeclared and the open was deleted.
+    Fix: `declared_namespaces()` tracks the `namespace`/`end` stack and emits fully-qualified
+    names. A `section X` is deliberately not pushed — it creates no namespace.
+
+11. **`structural_preamble` silently dropped every `open … in`.**
+    `if s.endswith(" in"): continue` discarded all scoped opens. Most are per-declaration
+    wrappers whose span really does contain them, but a *file-level* `open X in` sits
+    outside every decl span, so the stub lost the names it provided —
+    `ChapterH8` lost all five `open ContinuousLinearMap in`, and 7 theorems failed with
+    `Unknown identifier adjoint`. Fix: de-scope `open X in` to `open X` (wider, but
+    `drop_shadowing_opens` runs afterwards); still drop `omit`/`set_option`/`include … in`.
+
+12. **`debug/reconcile_duplicates.py`** (new). A chapter published in an earlier session sits
+    `pending` locally; resubmitting is rejected with `… already exists`, spending one of the
+    5 attempts, and `--sync` cannot repair it because `sync_state` never reads a failure
+    reason. Run it after each pass.
+
+### Measurement traps when auditing "missing opens"
+
+Two false-positive sources, both of which make a bundle look broken when it is fine:
+
+- an `open` legitimately **rewritten to an ancestor** by `drop_shadowing_opens`
+  (`ChapterA.System` → `BookProof.ChapterA`) still provides the names;
+- a **namespace anchor** (`build_ns_anchor`, zero declarations) has no opens by design.
+
+Audit only bundles that actually declare something, and accept an ancestor open as coverage.
+
+### Throughput
+
+`--parallel 10` is safe: ~200 submissions, **zero** 429s. Keep `FAIL` at 0 before raising it —
+a rate-limit response burns an attempt, and 5 attempts makes an item permanently un-runnable.

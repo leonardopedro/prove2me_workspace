@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -9,6 +10,7 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -20,10 +22,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution {P : Finset ι} {x : secCore (ι := ι)}
-    (hP1 : ∀ a, a ∉ P → (x : Sec ι) a = 0)
-    (hP2 : ∀ a, a ∉ P → ∀ b ∈ Q.nbr a, (x : Sec ι) b = 0) (a : ι) (ha : a ∉ P) :
-    (secHam W Q x : Sec ι) a = 0 := by
+theorem solution {P : Finset ι} {x : secCore (ι := by
 
   rw [secHam_apply]
   have h1 : W.ham (Q.sig a) (fibOf x a) = 0 := by

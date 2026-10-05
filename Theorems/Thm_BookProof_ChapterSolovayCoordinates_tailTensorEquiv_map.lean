@@ -1,7 +1,6 @@
 -- Generated from ChapterSolovayCoordinates.lean — theorem BookProof.ChapterSolovayCoordinates.tailTensorEquiv_map
 import Mathlib
 import Definitions.Def_ChapterSolovayCoordinates
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovayCoordinates
 
 

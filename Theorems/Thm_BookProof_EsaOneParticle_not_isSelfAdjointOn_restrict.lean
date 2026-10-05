@@ -8,7 +8,6 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterUnitaryTransport
-import Definitions.Def_ChapterA4
 open BookProof.GraphCore
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup

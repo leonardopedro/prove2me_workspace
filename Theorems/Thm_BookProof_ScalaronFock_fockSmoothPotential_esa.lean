@@ -10,7 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterA4
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFock
 

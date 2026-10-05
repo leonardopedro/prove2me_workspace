@@ -1,121 +1,162 @@
-# Cross-project review & improvement plan — 2026-09-24 (rev. 2, deep pass)
+# Cross-project review & improvement plan — 2026-09-26 (rev. 3, whole-project deep pass)
 
 Scope: the six sibling repos of this workspace — `../unfer/`, `../australVM/`,
 `../velysterm/`, `../timepiece`, `../dynamic-arctic`, `../test/` — plus this repo
 (`prove2me_workspace`, the cross-repo driver). Studied for inspiration:
-`../typos/` and `../ax/`, both **Apache-2.0**, so adapting their *patterns* is
-license-safe; every adapted artifact carries an attribution comment naming the
-source project and license. No Lean 4 proof code is written here — that stays
-with the LLM-Lean4-specialist (per `timepiece/CONSOLIDATED_PLAN.md` §2026-09-24a).
+`../typos/` and `../ax/`, both **Apache-2.0**. Copyright policy (see §3): we
+adapt *patterns*, never copy source files or license headers; every adapted
+artifact carries an attribution comment naming the source project, file, and
+license, and §3 is the register. No Lean 4 proof code is written here — that
+stays with the LLM-Lean4-specialist (per `timepiece/CONSOLIDATED_PLAN.md`
+§2026-09-24a); `lakefile.toml` / `COMPONENT_NAMES` truth also stays with that
+specialist unless explicitly delegated.
 
-Rev. 2 (same day): the review in §1 was re-verified file-by-file against the
-working trees, the typos/ax sources were read in full for the patterns worth
-adapting (§1.3), and the plan gained four new adapted items (T5, A5, H6, H7)
-plus per-item acceptance results (§4).
+**Rev. 3 (2026-09-26):** the whole tree was re-surveyed file-by-file (the repos
+moved since rev. 2 — timepiece landed the *Aristotle wave* and a Book
+deepening, `test/` landed the 2026-09-25 BookProof wave and the NS-Lagrangian
+record, `unfer` landed the NS-Lagrangian suite), every gate in §1.2 was
+**run**, not read, and the typos/ax sources were re-mined for patterns that
+improve **existing** features (§1.4 → phases P8–P9). New in rev. 3:
+
+- **Phase P7 (repairs)** — the survey found the health contract red *right
+  now*: both doc-index gates fail and the timepiece CI `docs` job is red on
+  HEAD. Repairs precede features because they are regressions of existing
+  features, not new work.
+- **Phases P8/P9 (typos/ax adaptations)** — nine items, all improvements of
+  existing features (taskctl, doc index, import gate, health), each with the
+  source pattern named.
+- **Phase P10 (in-family)** — the `verify-invariants` pattern from
+  `unfer`/`velysterm` (their PLAN_HARNESS H1 gate), justified below.
+- **Rev. 2's completed work** is preserved as the record in §2 "Phases P0–P6
+  (done)" and §4; the attribution register (§3) is cumulative.
 
 **Execution constraints (hard):**
-- No `lake build` / no Lean compilation. Allowed gate:
-  `python3 scripts/import_components.py BookProof --check`.
-- No `cargo build`/`go build` of siblings (toolchain files and docs only).
+- No `lake build` / no Lean compilation, and **no Lean 4 source edits** (the
+  specialist's lane). Allowed gate: `python3 scripts/import_components.py
+  BookProof --check`. Markdown/YAML/Python/shell/toolchain files are in scope.
+- No `cargo build`/`go build`/`dune build` of siblings (toolchain files and
+  docs only).
 - Commit per repo with the Codebuff trailer; push only the established sync
-  targets: `timepiece`, `test`, `prove2me_workspace` (unfer unchanged — no
-  commit). `australVM`, `dynamic-arctic`, `velysterm` get local commits only
-  (not established push targets).
+  targets: `timepiece`, `test`, `prove2me_workspace` (all three currently in
+  sync with their origins — verify `git status -sb` before pushing).
+  `australVM`, `dynamic-arctic`, `velysterm`, `unfer` get local commits only
+  when a change is made (none planned in rev. 3).
 
 ---
 
-## 1. Whole-project review — findings (rev. 2, re-verified)
+## 1. Whole-project review — findings (rev. 3, re-verified 2026-09-26)
 
-### 1.1 Per-repo state (as found → after this plan)
+### 1.1 Per-repo state (as found today)
 
-| Repo | What it is | CI | AGENTS.md | LICENSE | Gaps as found → addressed here |
+| Repo | What it is | CI | AGENTS.md | LICENSE | State as found today (rev. 3) |
 |---|---|---|---|---|---|
-| `timepiece` | Lean 4 proof tree (Book/ BookProof/ ~900 modules, CONSOLIDATED_PLAN ~15.4k l) | `ci.yml` | ✓ | Apache-2.0 | no doc index/CHANGELOG/health entry point → **now** `scripts/doc_index.py` + `DOC_INDEX.md` + `CHANGELOG.md` + `scripts/health.sh`; findings kept: tracked bytecode file, backlink graph has 0 links (see §1.4) |
-| `prove2me_workspace` (cwd) | Skill + upload pipeline (SKILL.md v0.10.9, PIPELINE_PLAN 4790 l, ~25 scripts) | `lean_action_ci.yml` | **was missing → now ✓** | missing (owner decision) | README 1-line stub → expanded; no doc index/CHANGELOG/tasks → now `DOC_INDEX.md`, `references/INDEX.md`, `CHANGELOG.md`, `tasks/`+`taskctl.py`, `watch_check.py`; `state/` ignore swallowed the versioned indexes → H7 |
-| `unfer` | Rust probability kernel + Cadabra modules, PLAN A (A1–A10) | `ci.yml` | ✓ | Apache-2.0 | healthy as found; clean tree; no changes needed (no CHANGELOG — flagged only) |
-| `australVM` | OCaml Austral compiler + Rust cranelift bridge | `build-and-test.yml`, `build-macos.yml` | ✓ | ✓ | **pin was missing** although dynamic-arctic's pin file + README claim a shared 1.97.1 → **now** root `rust-toolchain.toml` (H1); verified: both Cargo workspaces sit one level below root, so rustup's walk-up resolves the pin from either |
-| `velysterm` | Rust editor/agent workspace | `rust.yml` | ✓ | MIT/Apache-2.0 | best-in-class already (CHANGELOG, PROGRESS, docs/) — used as the in-family model; untouched |
-| `dynamic-arctic` | Rust Arctic threshold-signature crate | `ci.yml` (SHA-pinned) | **was missing → now ✓** | MIT (Ian Goldberg) | AGENTS.md added from README+CI (H4) |
-| `test` | GitBook-style docs site (SUMMARY.md 69 l, 50 pages) | **was missing → now ✓** | **was missing → now ✓** | missing (owner decision) | no CI, no checker, no agent guide, no .gitignore → **now** `scripts/check_site.py` + `.github/workflows/site-check.yml` (SHA-pin copied from dynamic-arctic's verified pin; branch `master` matches `origin/HEAD`) + `AGENTS.md` + `.gitignore` (H6); **`node_modules` untracked on owner's call (2026-09-24a): 1070 files dropped from the index, files kept on disk, now ignored** |
+| `timepiece` | Lean 4 proof tree (Book/ 48 modules, BookProof/ 879 files, CONSOLIDATED_PLAN 16.1k l) | `ci.yml` (incl. P6a `docs` job) | ✓ | Apache-2.0 | Aristotle wave (`65d3963`, +20 proof chapters) + Book deepening (`a68130e`) landed **without an index rebuild** → `doc_index.py --check` exits 1, **CI `docs` job red on HEAD**; index now covers 62 docs (0 cross-links, still); tree otherwise clean |
+| `prove2me_workspace` (cwd) | Skill + upload pipeline (SKILL.md v0.10.9, PIPELINE_PLAN 4.8k l, ~25 scripts, 3 task manifests) | `lean_action_ci.yml` | ✓ | missing (owner decision) | `taskctl health` exit 1 (docs.index-check stale — caused by an **uncommitted edit to `DISK_CLEANUP_PLAN.md`**); PIPELINE_PLAN version banner stale (§1.3 F3); in sync with origin |
+| `unfer` | Rust probability kernel + Cadabra modules + PLAN_HARNESS gates | `ci.yml` (`verify-invariants` H1, coverage H11) | ✓ | Apache-2.0 | healthy; NS-Lagrangian suite green (`5e1a572`); clean tree; `scripts/verify-invariants` is the family's best health pattern (→ P10-S1) |
+| `australVM` | OCaml Austral compiler + Rust cranelift bridge | `build-and-test.yml`, `build-macos.yml` | ✓ | ✓ | H1 pin committed (`4fa732e4`); nothing new needed |
+| `velysterm` | Rust editor/agent workspace | `rust.yml` + `scripts/verify-invariants` | ✓ | MIT/Apache-2.0 | still the in-family docs model (CHANGELOG 835 l, PROGRESS, docs/); untouched |
+| `dynamic-arctic` | Rust Arctic threshold-signature crate | `ci.yml` (SHA-pinned) | ✓ (H4 committed `e242ef4`) | MIT (Ian Goldberg) | healthy; nothing new needed |
+| `test` | GitBook-style docs site (SUMMARY.md) | `site-check.yml` | ✓ | missing (owner decision) | **grew to 59 pages / 279 internal links** (2026-09-25 wave: `ca9ac2a`, `c3996f6`); `check_site.py` exits 0 (SUMMARY consistent, 0 broken links) but reports **1 orphan + 16 dead-end pages**, and the new NS-Lagrangian/ESA prose is what blows the citation-drift baseline in timepiece's gate (§1.3 F2) |
 
-### 1.2 cross-cutting findings → status
+### 1.2 Gate status measured today (commands run, exit codes read)
 
-1. **Toolchain pin gap** (australVM) → **fixed** (H1); all four Rust repos now
-   pin `channel = "1.97.1"` (re-verified by reading each `rust-toolchain.toml`).
-2. **CI gaps** → **fixed**: `test/` now runs `check_site.py` as CI
-   (SUMMARY drift, broken links, backlink report). Pin
-   `actions/checkout@3d3c42e5…` reuses dynamic-arctic's known-good SHA.
-3. **AGENTS.md coverage** → **complete** across all seven repos after H2/H4/H6.
-4. **README stub** (cwd) → **fixed** (H3). Workspace-root `../README.md` is out
-   of scope (root git repo has no commits).
-5. **License ambiguity** (`prove2me_workspace`, `test`) → **flagged, NOT
-   executed**: requires the owner.
-6. **No machine-readable index/backlinks** → **fixed** where it mattered:
-   cwd + timepiece get `doc_index.py` (versioned JSON, (source,target) dedup,
-   incremental `--file`, `--check` freshness), test gets the check_site
-   backlink graph. *New finding:* timepiece's graph has **0 links — the prose
-   corpus genuinely doesn't cross-link** its 61 docs; we do not force links
-   (content decision for the maintainers; the index will pick them up as they
-   appear). Query surface added in T5 so the graph is actually usable.
-7. **Changelog discipline** → cwd + timepiece + velysterm keep CHANGELOGs;
-   unfer/australVM/dynamic-arctic flagged (their release flow is CI-driven,
-   no changelog habit — not imposed).
-8. **Health fragmentation** → **unified per repo, no logic moved**:
-   cwd `taskctl.py health` (aggregates docs/pipeline/timepiece steps),
-   timepiece `scripts/health.sh` (doc index + imports + gitbook drift with
-   recorded baselines), test `check_site.py` (also CI). unfer / dynamic-arctic
-   / australVM / velysterm keep their native cargo gates as their health
-   surface — *justified*: duplicating `cargo test` wrappers adds nothing.
+| Gate | Command | Result today |
+|---|---|---|
+| timepiece doc index | `python3 scripts/doc_index.py --check` | **exit 1** — `[stale]` both renders (was green at rev. 2) |
+| timepiece health | `bash scripts/health.sh` | **exit 1** — `1 pass, 0 warn, 0 gap, 2 fail` (doc index; gitbook drift **82** lean misses vs baseline 11) |
+| timepiece import gate | `python3 scripts/import_components.py BookProof --check` | pass at baseline (6 unnamed comps, 86 stale roots — unchanged) |
+| timepiece CI | `.github/workflows/ci.yml` `docs` job runs the stale check | **red on HEAD** |
+| cwd doc index | `python3 scripts/doc_index.py --check` | **exit 1** — stale (DISK_CLEANUP_PLAN.md edit) |
+| cwd references index | `doc_index.py --check --scan references …` | `[fresh]` (17 docs, 52 links) |
+| cwd task health | `python3 scripts/taskctl.py health` | **exit 1** — `docs.index-check` + `timepiece.health` fail; `docs.site-check` + `pipeline.status` pass |
+| test site | `python3 scripts/check_site.py` | exit 0 — `59 pages, 279 internal links, 213 unique pairs`, 1 orphan, 16 dead-end |
+| pipeline | `upload_pipeline.py --status` | exit 0 — plan 4059 items; state `3334 done / 574 pending / 151 failed (1822 orphans ignored)` |
 
-### 1.3 What `../typos` and `../ax` offer — adapted vs. deliberately not adapted
+### 1.3 New findings from the rev. 3 deep pass
 
-**Adapted (implemented, attribution in each artifact):**
+- **F1 — doc-index staleness ×2 (regression, blocks CI).** The Aristotle wave
+  and Book deepening changed timepiece's docs without rebuilding
+  `DOC_INDEX.md`/`state/doc_index.json`; the cwd index is stale only because
+  of the uncommitted `DISK_CLEANUP_PLAN.md` ledger edit. → **P7-R1/R2.**
+- **F2 — GitBook citation drift blew its baseline (82 vs 11).** The 2026-09-25
+  NS-Lagrangian/ESA pages in `test/` cite Lean identifiers that do not (yet)
+  exist under those names — e.g. `det_deformation_corr`, `det_deformation_corr3`,
+  `commForm_eq_leray_advect`, `add_right_imp`, `classical_series_converges_at_s0`,
+  `conditional_convergence_is_null`, `BookProof.ChapterEuler`,
+  `ChapterQgFockComparisonEsa.lean`. Either the prose cites planned/renamed
+  decls or the Aristotle wave renamed them. **Gate red is correct** — these
+  citations really are wrong today. Truth about decl names is the
+  specialist's; citation fixes are docs edits. → **P7-R4** (triage list first,
+  then owner/specialist decision per class).
+- **F3 — version-banner drift in `PIPELINE_PLAN.md`.** Line 12 still says
+  "Current skill/platform versions: 0.10.8 / 0.10.8 (updated 2026-09-22)"
+  while `SKILL.md` is **0.10.9** (`d49883a`, 2026-09-23). §-notes at lines
+  3965/4704/4787 are historical session records and stay as history; the
+  banner and the "current" note must track `SKILL.md`. → **P7-R3**, and
+  P10-S1 makes the equality a machine check so it cannot rot again.
+- **F4 — `test/` orphan + dead-end pages.** 1 page with no incoming links, 16
+  with no outgoing. Consistent with rev. 2's stance: we do **not** force
+  links (content decision for the maintainers); `check_site.py` already
+  reports them each run. → **flagged (P7-R5)**, not executed.
+- **F5 — pipeline runbook banner vs live state.** PIPELINE_PLAN "Live state,
+  2026-09-22" banner (`3336 done / 2087 pending`) no longer matches `--status`
+  (`3334 done / 574 pending / 151 failed, 1822 orphans ignored`); the runbook
+  itself says the live backlog *is* `--status`, so this is documentation
+  staleness only. → **P7-R6** (docs-only banner refresh, or a pointer).
+- **F6 — workspace hygiene backlog unchanged.** Root `build_*.sh`/`start_*.sh`
+  helpers, `scripts/*.bak`, `Definitions.backup_20260918_154238/`, and the
+  `DISK_CLEANUP_PLAN.md` ledger's uncommitted edit all remain owner-call
+  items (rev. 2 §1.4). The ledger edit itself looks like the owner's own
+  "PARTIALLY EXECUTED" update — **committing it is the owner's call**, and it
+  is the trigger for R2. One stale vim swap file (`timepiece/.prompts.swp`,
+  untracked editor noise) was removed during the survey.
+- **F7 — timepiece still has zero cross-links** (62 docs, 0 links). Rev. 2's
+  finding holds after the new wave; the index will pick links up whenever the
+  maintainers add them. T8 below makes renames safe so that future linking
+  does not immediately orphan.
 
-| Source pattern | Where it landed |
-|---|---|
-| typos `index.rs`: full rebuild + per-file incremental update + dedup by (source,target) + versioned JSON with `generated_at` | `doc_index.py` (cwd + timepiece), `check_site.py` graph |
-| typos `graph.rs`/`query.rs`: backlink graph, `backlinks()` / `search()` queries | DOC_INDEX backlink tables, `check_site.py --backlinks`, **new in rev. 2:** `doc_index.py --backlinks/--search` (T5) |
-| typos `watch.rs`: extension filter, 200 ms settle/drain, compile-once-per-settle, initial run before watch | `scripts/watch_check.py` (stdlib polling, same semantics, no new deps) |
-| typos changelog practice (README "Recent changes" + Keep-a-Changelog) | `CHANGELOG.md` in cwd + timepiece |
-| ax `/healthz`: one plain probe, one exit code | `timepiece/scripts/health.sh`, `taskctl.py health`, `check_site.py` |
-| ax manifests: `apiVersion/kind/metadata/spec` YAML applied by a small CLI | `tasks/*.yaml` + `scripts/taskctl.py` (**new docs in rev. 2:** A5) |
-| ax docs split (README/development/manifests) + SHA-pinned actions | `AGENTS.md`, `README.md`, test workflow pin |
+### 1.4 What `../typos` and `../ax` offer at rev. 3 — new adaptations vs. still-not-adapted
 
-**Not adapted — with justification (recorded so nobody re-proposes them):**
+Already adapted in rev. 2 (kept, see §3): index rebuild/incremental/dedup/
+versioned JSON (`index.rs`), backlinks + search (`query.rs`), watch debounce
+(`watch.rs`), changelog discipline, `/healthz` single-probe contract, manifest
+subset + `apply`-style CLI, docs split + SHA-pinned actions.
 
-- *ax* control plane (CRDs, Redis, streams, Gateway/egress, Workspace/Model
-  kinds, `ax ssh`): infrastructure these repos don't have. `taskctl.py` is
-  deliberately a ~200-line wrapper; the manifest subset is enough.
-- *ax* Makefile: `taskctl list|run|health` already is the single entry layer;
-  a Makefile would be a second entry layer over the same commands.
-- *typos* Typst AST / `vault.typ` typed metadata: our corpora are Markdown;
-  regex extraction at index time is sufficient and dependency-free.
-- *typos* CSV registry + `sync.rs` reconciliation: our "registry" *is* the
-  filesystem; `--check` (stored index vs. fresh rebuild) detects drift with
-  fewer moving parts than maintaining a path registry.
-- *typos* graph visualization / Tauri app: no web UI exists in these repos;
-  rendered tables + `--backlinks` queries cover the need.
+**New in rev. 3 — every one improves an EXISTING feature (the brief's
+priority rule); new-from-scratch items are marked and justified:**
 
-### 1.4 New findings from the rev. 2 deep pass
+| Source pattern | Adapted as | Improves |
+|---|---|---|
+| typos `compiler.rs`: subprocess compile with a hard timeout (`wait_timeout::ChildExt`, 10 s) | P8-T6 `taskctl` per-step `timeout` + process-group kill; `watch_check.py --timeout` | taskctl / watch_check |
+| typos `graph.rs`: `graph_data()` → serializable `{nodes, edges}` | P8-T7 `doc_index.py --graph` JSON export (deterministic order) | doc index |
+| typos `note.rs`: `rename_note()` — rename **and rewrite all references** (incl. children) | P8-T8 `doc_index.py --rename OLD NEW` (dry-run → `--apply`), Markdown references only | doc index (read-only today) |
+| typos `sync.rs` + `csv_registry.rs`: registry↔filesystem reconciliation reporting `(added, removed)` then reindex | P8-T9 reconciliation **report** on the existing import gate (report-only; `lakefile.toml`/`COMPONENT_NAMES` edits stay with the specialist) | import_components gate |
+| ax `describe` + `status.conditions` (TYPE/STATUS/REASON/MESSAGE, `Ready`/`WorkspaceReady`) | P9-A6 per-run status JSON in `state/tasks/` + `taskctl describe` + last-run column in `list` | taskctl |
+| ax `watch`: stream condition **transitions** as they happen | P9-A7 `taskctl watch` — interval re-run of health steps printing only transitions (+ `--max-iter` for bounded use) | taskctl health |
+| ax `/healthz` (liveness) vs `/readyz` (readiness) split | P9-A8 `taskctl health` (warn-at-baseline = live) vs `taskctl health --strict` / `health.sh --strict` (warn promotes to fail = ready to commit/push) | health contract |
+| ax server-side manifest validation + `applyOutcome` (created/updated/unchanged) | P9-A9 `taskctl validate` — schema check over `tasks/*.yaml` ("documented, not validated yet" → validated), wired as a health step | task manifests |
+| (in-family) `unfer`/`velysterm` `scripts/verify-invariants` — AGENTS.md checklist as machine checks, `[pass]/[FAIL]/[gap]` discipline | P10-S1 `scripts/verify_invariants.py` over THIS workspace's own rules (credentials never tracked, no build commands in manifests, attribution comments present, version equality, tracked index JSONs) | taskctl health / AGENTS.md rules |
 
-- `test/` tracked **1070 `node_modules` files** — was flagged in rev. 2;
-  **untracked 2026-09-24b on the owner's explicit call** (`git rm -r
-  --cached node_modules`): files remain on disk for local GitBook builds,
-  now git-ignored; `test/AGENTS.md` rule 4 updated to match.
-- `timepiece` tracks a **compiled bytecode file**
-  (`scripts/__pycache__/import_components.cpython-312.pyc`) — flagged, not
-  removed (pre-existing; `__pycache__/` now ignored so no *new* ones land).
-- cwd root clutter: 8 one-off `build_*.sh`/`start_*.sh`, several `.bak`
-  files, `Definitions.backup_20260918_154238/` — **not deleted**: the backup
-  dir contains Lean sources (specialist/owner decides) and the shell helpers
-  are referenced by PIPELINE_PLAN sessions.
-- cwd `state/` is ignored wholesale, which would have hidden the versioned
-  doc-index JSON → H7 keeps logs ignored but tracks the two index JSONs, so
-  `doc_index.py --check` works on a fresh clone (typos versioned-index
-  discipline). timepiece's `state/doc_index.json` is committed for the same
-  reason (its health gate must not fail right after clone).
-- timepiece has a local uncommitted edit to `prompts` (the operator's prompt
-  log) — **left untouched and not committed** (not our change to make).
+**Not adapted — with justification (kept from rev. 2; nobody should
+re-propose them):**
+
+- *ax* control plane (CRDs, Redis/streams, Gateway/egress, Workspace/Model
+  kinds, `ax ssh`, task-runner contract, tunnel): infrastructure these repos
+  don't have. `taskctl.py` stays a small wrapper.
+- *ax* Makefile: `taskctl list|run|health` is already the single entry layer;
+  a Makefile would be a second layer over the same commands.
+- *ax* `examples/` dir + CONTRIBUTING/CLA: `tasks/README.md` already carries a
+  worked example and the schema; AGENTS.md covers contribution rules for
+  agents. Revisit only if external contributors appear.
+- *typos* Typst AST / `vault.typ` typed metadata / note-type registry: our
+  corpora are Markdown; regex extraction at index time is sufficient and
+  dependency-free.
+- *typos* CSV registry as the source of truth (as opposed to the reconciliation
+  *report* in T9): our "registry" *is* the filesystem; `--check` detects drift
+  with fewer moving parts.
+- *typos* graph visualization / Tauri app / LSP integration: no web UI or
+  editor exists in these repos; JSON export (T7) + rendered tables cover the
+  need.
 
 ---
 
@@ -123,124 +164,217 @@ plus per-item acceptance results (§4).
 
 Priority rule from the brief: **adapt/improve existing features inspired by
 typos/ax first; new-from-scratch only with justification.** Items marked
-[TYPOS] and [AX] carry attribution comments in the artifact itself.
+[TYPOS]/[AX] carry attribution comments in the artifact itself (§3).
+Legend: ✅ done & accepted · 🔄 in progress · ⏳ planned (rev. 3) · ⛔ flagged,
+deliberately not executed (owner/specialist call).
 
-Legend: ✅ done & accepted · 🔄 in progress · ⛔ flagged, deliberately not executed.
+### Phases P0–P6 (done in rev. 2 — record kept, details in §4)
 
-### Phase P0 — plan (this document)
-- ✅ **P0** `PROJECT_REVIEW_AND_PLAN.md` — rev. 2 (this file), execution log
-  in §4.
+- ✅ **P0** plan rev. 2; **P1-H1..H7** hygiene (australVM toolchain pin, cwd
+  AGENTS/README, dynamic-arctic AGENTS, test AGENTS+gitignore, versioned
+  index tracking + bytecode hygiene); **P2-T1..T5** typos adaptations
+  (doc_index ×2, references INDEX, CHANGELOGs, watch_check, `--backlinks`/
+  `--search`); **P3-A1..A5** ax adaptations (timepiece health.sh, test
+  check_site+CI, cwd taskctl+manifests+schema docs, pipeline health docs);
+  **P4** verification battery; **P5** per-repo commits + pushes to sync
+  targets (verified: all four repos in sync with origin today); **P6a**
+  doc-index freshness wired into timepiece CI; **P6b** test `node_modules`
+  untracked (owner call). ⛔ **H5** LICENSE decisions remain owner-only.
 
-### Phase P1 — cross-repo hygiene (existing gaps)
-- ✅ **H1 [australVM]** Root `rust-toolchain.toml` pinning `1.97.1`.
-  *Accept:* file exists with `channel = "1.97.1"`; rustup walk-up verified
-  against both workspace dirs; no build run.
-- ✅ **H2 [cwd]** `AGENTS.md` — ax `docs/development.md` shape (prereqs,
-  layout map, health entry points, rules). *Accept:* covers layout + gates +
-  health; ≤ ~120 lines (60 l).
-- ✅ **H3 [cwd]** `README.md` expanded (ax README shape). *Accept:* ≥ ~40 l,
-  no secrets (49 l; credentials section names only the gitignored file).
-- ✅ **H4 [dynamic-arctic]** Compact `AGENTS.md` derived from README + CI.
-  *Accept:* ≤ ~60 l, accurate vs. `ci.yml` (40 l; commands match `ci.yml`).
-- ✅ **H6 [test]** *(rev. 2)* `AGENTS.md` — layout, SUMMARY discipline, checker
-  + CI commands, license/pin notes; plus `.gitignore` for Python bytecode.
-  *Accept:* ≤ ~60 l, commands run as written; no tracked-file changes.
-- ✅ **H7 [cwd, timepiece, test]** *(rev. 2)* versioned-index tracking +
-  bytecode hygiene: cwd `state/` ignore converted to `state/*` + negations
-  for the two doc-index JSONs; timepiece `state/doc_index.json` committed and
-  `__pycache__/` ignored; test `.gitignore` (with H6).
-  *Accept:* fresh-clone `--check` paths documented; `git status` shows no
-  `__pycache__` noise after a compile check.
-- ⛔ **H5** LICENSE decisions for `prove2me_workspace` and `test` — owner only.
+### Phase P7 — repair the red gates (regressions found today)
 
-### Phase P2 — typos-inspired adaptations to EXISTING features
-- ✅ **T1 [timepiece]** `scripts/doc_index.py` + `DOC_INDEX.md` (typos
-  `index.rs` semantics: rebuild, `--file` incremental, (source,target) dedup,
-  versioned `state/doc_index.json`, `--check` freshness).
-  *Accept:* runs in-repo; twice → byte-identical; no Lean files edited.
-- ✅ **T2 [cwd]** `references/INDEX.md` via the same generator
-  (`--scan references`). *Accept:* every `references/*.md` appears; links
-  resolve (17 docs, 52 links).
-- ✅ **T3 [cwd, timepiece]** `CHANGELOG.md` seeded from `git log`.
-  *Accept:* newest entries match git log head (`a22cd81` / `8901a58`).
-- ✅ **T4 [cwd]** `scripts/watch_check.py` (typos `watch.rs` debounce).
-  *Accept:* `--help` works; a burst of 6 rapid changes fires **once** after
-  the settle window (measured: initial run + 1 settle fire under `--max-fires 2`).
-- ✅ **T5 [cwd, timepiece]** *(rev. 2)* query surface on the index —
-  `doc_index.py --backlinks PATH` and `--search TEXT`, adapted from typos
-  `query.rs` (`backlinks()` = incoming edges; `search()` = title → id/path →
-  headings → content, case-insensitive). *Justification:* the index already
-  exists but had no way to *ask* it anything except by reading DOC_INDEX.md.
-  *Accept:* `--backlinks README.md` lists incoming/outgoing; `--search health`
-  ranks content matches; `--check` still passes afterwards (render unchanged).
+- ⏳ **R1 [timepiece]** Rebuild the doc index and commit it together with the
+  regenerated `state/doc_index.json` (62 docs, 0 links; render only — no Lean
+  file is touched). *Accept:* `python3 scripts/doc_index.py --check` exits 0;
+  the CI `docs` job green on the next push; two rebuilds byte-identical.
+- ⏳ **R2 [cwd]** Once the owner's `DISK_CLEANUP_PLAN.md` ledger edit is
+  committed (owner call — F6), rebuild both indexes (`DOC_INDEX.md` +
+  `state/doc_index.json`, `references/INDEX.md` + `state/references_index.json`)
+  and commit. This plan file itself re-stales the index, so R2 runs **after**
+  this document lands. *Accept:* `taskctl health`'s `docs.index-check` step
+  green; `--check` exit 0 for both scans.
+- ⏳ **R3 [cwd]** Fix the stale version banner in `PIPELINE_PLAN.md` (line 12
+  and the "current" note at line ~4787: 0.10.8 → **0.10.9**, date 2026-09-23);
+  historical session sections (lines ~3965/4704) stay as history. *Accept:*
+  banner == `SKILL.md` `metadata.version`; no other PIPELINE_PLAN edits.
+- ⏳ **R4 [test ↔ timepiece]** Citation-drift triage (F2). (a) Produce the
+  grouped miss list from `scripts/check-gitbook-drift` (identifier class →
+  page → candidate real decl) — output appended to this plan's §4 or a short
+  `test/` note; (b) **owner/specialist decision** per class: fix the prose
+  citation (docs edit, in scope) vs. the decl lands later (then the baseline
+  stays 11 and the gate stays red — correct); a temporary baseline raise is
+  only acceptable with a documented expiry note in `health.sh`. *Accept:*
+  triage list complete; either drift ≤ 11 again or an explicit, dated owner
+  decision recorded. ⛔ the actual citation fixes are **not** executed here
+  without that decision (they assert mathematical naming truth).
+- ⛔ **R5 [test]** Orphan/dead-end pages (F4) — content review by the
+  maintainers; `check_site.py` keeps reporting them. Not executed.
+- ⏳ **R6 [cwd]** Refresh or replace the PIPELINE_PLAN "Live state" banner
+  (F5): either re-run `--status` into the banner or replace the numbers with
+  "live backlog = `python3 pipeline/upload_pipeline.py --status`" so it can
+  never rot again (preferred). *Accept:* banner no longer contradicts
+  `--status`.
 
-### Phase P3 — ax-inspired adaptations to EXISTING features
-- ✅ **A1 [timepiece]** `scripts/health.sh` — one command over the *existing*
-  checks (doc index freshness, import gate, gitbook drift) with recorded
-  baselines; exit 0 iff healthy; never runs `lake build`.
-  *Accept:* runs from repo root; this tree → `1 pass, 2 warn, 0 fail`, exit 0;
-  `bash -n` clean.
-- ✅ **A2 [test]** `scripts/check_site.py` + `.github/workflows/site-check.yml`
-  (SUMMARY drift, broken links, backlink report; SHA-pinned checkout).
-  *Accept:* exits 0 on the current tree (`50 pages, 178 internal links`);
-  workflow YAML parses; `branches: [master]` matches the repo's default branch.
-- ✅ **A3 [cwd]** `tasks/*.yaml` + `scripts/taskctl.py` — ax-style manifest
-  subset (`apiVersion/kind/metadata/spec.steps[]` with `run/cwd/health`),
-  `list` / `run --dry-run` / `health`, logs under `state/tasks/`.
-  *Justification (new-from-scratch):* the existing "feature" was a 4790-line
-  prose runbook plus ~25 undiscoverable scripts — no runnable entry point to
-  improve. Manifests only *wrap* existing commands.
-  *Accept:* `list` shows 3 tasks; `run --all --dry-run` prints exact commands;
-  real `health` runs all health steps end-to-end, exit 0.
-- ✅ **A4 [cwd]** pipeline `--status/--check/--sync` documented as the
-  pipeline's health endpoint (README/AGENTS). *Accept:* `--status` runs
-  (4059 plan items, exit 0); no behavior change.
-- ✅ **A5 [cwd]** *(rev. 2)* `tasks/README.md` — the manifest schema documented
-  the way ax documents its kinds (`docs/manifests.md`): fields, `health`
-  semantics, exit-code contract, worked example. *Justification:* manifests
-  without schema docs rot; ax's docs-set is the pattern to copy, not invent.
-  *Accept:* every field `taskctl.py` actually reads is documented; example
-  YAML parses.
+### Phase P8 — [TYPOS] improvements to existing features
 
-### Phase P4 — verification (no compilation anywhere)
-- ✅ `python3 -m py_compile` on every new/modified `.py` (7 files: doc_index ×2,
-  taskctl, watch_check, check_site — plus import gate untouched).
-- ✅ `doc_index.py` run twice in cwd **and** timepiece → byte-identical
-  (idempotent); `--check` exits 0 in both.
-- ✅ `taskctl.py list` / `run --all --dry-run` / real `health` → exit 0.
-- ✅ `watch_check.py --help`; debounce burst test fires once per settle.
-- ✅ `bash -n timepiece/scripts/health.sh`; real run → exit 0 (baselines warn).
-- ✅ `check_site.py` → exit 0; workflow YAML parses (`yaml.safe_load`).
-- ✅ Gate `python3 scripts/import_components.py BookProof --check` still
-  runs inside health.sh (warn-at-baseline, exit 0).
-- ✅ Task manifests parse (PyYAML 6.0.1); `bash -n` on new shell scripts (none
-  beyond health.sh, pre-existing).
-- ✅ `taskctl health` after rev.-2 edits → all steps pass, exit 0.
+- ⏳ **T6** Step timeouts in `scripts/taskctl.py` (from typos `compiler.rs`
+  `COMPILE_TIMEOUT` + `wait_timeout`): new `spec.steps[].timeout` field
+  (seconds; default 300; `0` = unlimited), enforced by running the step in
+  its own session and killing the **process group** on expiry; the step
+  reports `[timeout]` in its log and fails. Same default added to
+  `watch_check.py` re-checks (`--timeout`). *Justification (improvement, not
+  new):* `health` must always answer (the `/healthz` contract A1 adopted);
+  today a wedged step (e.g. the imports gate on a huge diff) hangs
+  `taskctl health` forever. *Accept:* a manifest with `run: sleep 1000` and
+  `timeout: 2` fails in ~2 s with no surviving `sleep`; the real health
+  battery behaves exactly as before; `tasks/README.md` documents the field.
+- ⏳ **T7** Graph export in `scripts/doc_index.py` (from typos `graph.rs`
+  `graph_data()`): `--graph OUT.json` emits
+  `{version, generated_at, nodes:[{id,label,kind}], edges:[{source,target}]}`
+  with deterministic ordering, from the already-deduped link set; the same
+  shape from `test/scripts/check_site.py --graph` for the site graph.
+  *Justification:* the graph already exists as rendered tables; downstream
+  tooling (and the future T8 dry-run) needs a machine-readable form — a
+  ~30-line addition to an existing feature. *Accept:* output parses
+  (`json.load`), nodes == indexed docs, edges == unique pairs (213 for test/);
+  `--check` still passes (render untouched); two runs byte-identical.
+- ⏳ **T8** Reference-safe rename in `scripts/doc_index.py` (from typos
+  `note.rs::rename_note`, "rename and update all references"):
+  `--rename OLD NEW [--apply]` — after a doc has been `git mv`'d, report every
+  remaining Markdown reference to OLD (link targets incl. `#anchors`,
+  case-sensitive, exact-path) as `file:line` hits (dry-run default); `--apply`
+  rewrites them and rebuilds the index. Refuses if NEW already exists in the
+  index; exits 0 with "no inbound references" when nothing points at OLD.
+  Markdown only — never touches Lean files. *Justification:* docs are renamed
+  between waves and today that silently orphans backlinks (test/ already has
+  1 orphan); the link graph makes the rewrites precise instead of
+  regex-guessing. *Accept:* dry-run lists exactly the (file,line) hits
+  `--backlinks` would predict; `--apply` on a scratch copy rewrites only those
+  hits; `--check` passes afterwards; works in both cwd and timepiece copies.
+- ⏳ **T9** Reconciliation report on the existing import gate (from typos
+  `sync.rs` `(added, removed)` + reindex semantics): a report-only mode on
+  `timepiece/scripts/import_components.py` (e.g. `--reconcile`) printing the
+  drift as three buckets — `missing_name` (module on disk without a
+  COMPONENT_NAMES entry), `stale_root` (lakefile root with no module),
+  `orphan_module` (module not referenced by any root) — with counts and a
+  `--json` form, surfaced as one line in `health.sh`'s import-gate summary.
+  *Justification:* health.sh currently *baselines away* 6+86 known drifts;
+  a reconciliation view is what lets the split-wave owners burn those
+  baselines down incrementally (the typos sync story: report diff → fix →
+  rebuild). **Report only** — editing `lakefile.toml`/`COMPONENT_NAMES` is
+  the specialist's. *Accept:* counts match the current gate's (6, 86, +0);
+  exit 0 always (report); `health.sh` unchanged verdicts; JSON parses.
 
-### Phase P5 — commit & sync
-- ⏳ Per-repo commits (Codebuff trailer) for: `prove2me_workspace` (all cwd
-  artifacts), `timepiece` (doc index + health + changelog + index JSON +
-  gitignore), `test` (checker + CI + AGENTS + gitignore), `dynamic-arctic`
-  (AGENTS), `australVM` (rust-toolchain). No commit: `unfer`, `velysterm`
-  (untouched).
-- ⏳ Push only established sync targets: `prove2me_workspace`, `timepiece`,
-  `test`. `australVM` / `dynamic-arctic` stay local-only (per constraint).
+### Phase P9 — [AX] improvements to existing features
+
+- ⏳ **A6** Run status + conditions in `scripts/taskctl.py` (from ax
+  `describe` + `status.conditions`): after every `run`/`health`, write
+  `state/tasks/<task>.json` — `{task, phase: pass|fail, finished_at, steps:
+  [{name, status, reason, duration_s, log}]}` (regenerable state, not
+  committed — consistent with H7); add `taskctl describe NAME` printing the
+  manifest summary plus a TYPE/STATUS/REASON condition table of the last run,
+  and a last-run column in `taskctl list`. *Justification:* today runs leave
+  only per-step logs; the conditions model is ax's answer to "what happened
+  last time" without log archaeology. *Accept:* run → describe agrees with
+  the observed exit codes; JSON parses; `list` shows last-run; existing
+  subcommands' behavior unchanged.
+- ⏳ **A7** `taskctl watch [--interval 60] [--max-iter N] [--strict]` (from ax
+  `watch` condition-transition streaming): re-runs the health steps on an
+  interval and prints **only transitions** (`docs.index-check pass→fail`,
+  …), plus one heartbeat line per iteration; bounded runs exit 0 at
+  `--max-iter` (the chunked-runbook discipline). *Justification:* the
+  PIPELINE_PLAN workflow leaves an operator polling gates between upload
+  chunks; a transition feed is the missing watch surface over A6's status
+  JSON — it reuses health steps + A6, nothing new underneath. *Accept:* on a
+  stable tree every iteration prints "no change"; a deliberately flipped step
+  prints exactly one transition block; `--max-iter 2 --interval 1` returns
+  deterministically in ~2 s.
+- ⏳ **A8** Liveness/readiness split (from ax `/healthz` vs `/readyz`):
+  `taskctl health --strict` and `bash scripts/health.sh --strict` promote
+  `warn` (baseline notices) to `fail`; the plain commands keep today's
+  semantics exactly. Document in `tasks/README.md` + AGENTS.md as the "ready
+  to commit/push" gate; CI may adopt `--strict` once the baselines are
+  cleared (post-R4). *Accept:* plain `health` output byte-identical to today;
+  `--strict` fails on this tree while baselines exist (asserted, then
+  documented); `bash -n` clean.
+- ⏳ **A9** `taskctl validate` (from ax server-side manifest validation +
+  `applyOutcome`): schema-check every `tasks/*.yaml` against the documented
+  fields (`apiVersion`, `kind: Task`, unique `metadata.name`,
+  `spec.steps[].run`, known keys only — unknown keys warn), reporting
+  `ok/skip/error` per file and a summary line; wired as a new `docs` task
+  step `manifests-validate` (`health: true`). *Justification:* `tasks/README`
+  currently says "documented, not validated yet" — validation is the
+  improvement of the existing manifest feature that ax pairs with apply.
+  *Accept:* current 3 manifests pass; a deliberately broken copy fails with a
+  precise message naming file + field; `health` stays green.
+
+### Phase P10 — in-family patterns & cross-cutting (priority 2, justified)
+
+- ⏳ **S1 [cwd]** `scripts/verify_invariants.py` (from `unfer`/
+  `velysterm` `scripts/verify-invariants`, their PLAN_HARNESS H1 — in-family,
+  same organization, no third-party license involved; still note the origin
+  in the header): turn THIS repo's own AGENTS.md/plan promises into
+  machine checks with `[pass]/[FAIL]/[gap]` output — (1) `credentials.json`
+  gitignored **and** untracked; (2) no `lake build`/`cargo build` in
+  `tasks/*.yaml`; (3) attribution comment present in every artifact listed in
+  §3; (4) `state/` ignore negations intact (the two index JSONs tracked);
+  (5) version equality: `SKILL.md` `metadata.version` == newest CHANGELOG
+  release == PIPELINE_PLAN banner (the F3 class, made un-regressable);
+  (6) doc-index freshness for both scans. One new `workspace` task manifest
+  step, `health: true`. *Justification (in-family over typos/ax):* the
+  pattern is the family's established health idiom and it *improves* the
+  existing health surface rather than inventing a parallel one; typos/ax have
+  nothing comparable to adapt. *Accept:* green on the tree after P7; each
+  check demonstrably fails when its rule is deliberately broken (spot-test
+  3 of the 6); `py_compile` clean.
+- ⛔ **S2** LICENSE decisions for `prove2me_workspace` and `test` — owner
+  only (carried over, unchanged). Until then, adapted Apache-2.0 *patterns*
+  are fine (§3), but do not copy any source file text verbatim.
+
+### Phase P11 — verification & sync (no compilation anywhere)
+
+- ⏳ `python3 -m py_compile` on every new/modified `.py`.
+- ⏳ `doc_index.py` twice in cwd and timepiece → byte-identical; `--check`
+  exit 0 in both after R1/R2; `--graph` outputs parse and are stable.
+- ⏳ `taskctl` battery: `list`, `describe`, `validate`, `run --all --dry-run`,
+  real `health`, `health --strict` (expected fail while baselines exist),
+  `watch --max-iter 2`; T6 timeout test with a `sleep` step.
+- ⏳ `bash -n timepiece/scripts/health.sh` (incl. `--strict`); real run →
+  exit 0 with warnings at baseline after R4's outcome.
+- ⏳ `check_site.py` (+ `--graph`) exit 0; workflow YAMLs still parse.
+- ⏳ Gate `python3 scripts/import_components.py BookProof --check` still the
+  only Lean-side command used, inside `health.sh` (warn-at-baseline).
+- ⏳ Commit per repo (Codebuff trailer): `prove2me_workspace` (this plan,
+  taskctl/doc_index/watch_check updates, verify_invariants, task manifests,
+  README/AGENTS touch-ups, CHANGELOG), `timepiece` (index rebuild R1,
+  health.sh `--strict` + T9 surface), `test` (check_site `--graph`, any R4a
+  triage note). Push only `prove2me_workspace`, `timepiece`, `test`, after
+  `git status -sb` confirms the sync targets.
 
 ---
 
-## 3. Attribution register
+## 3. Attribution & copyright register (cumulative)
+
+**Policy:** `../typos` and `../ax` are Apache-2.0. We adapt *patterns and
+semantics* (file roles, CLI shapes, contracts), never copy source files,
+identifiers wholesale, or the "Copyright 2026 Google LLC" headers from `ax`.
+Every adapted artifact opens with a comment naming the source project, the
+source file/doc, and the license (e.g. `# Pattern adapted from ../typos
+notes-core/src/watch.rs (Apache-2.0)`). This register is the central record;
+P10-S1 check 3 verifies the per-artifact comments stay in place.
 
 | Artifact | Adapted pattern | Source (license) |
 |---|---|---|
-| `prove2me_workspace/scripts/doc_index.py`, `timepiece/scripts/doc_index.py` | index rebuild, incremental update, link dedup, versioned JSON; `--backlinks/--search` queries | `typos` notes-core `index.rs`, `query.rs` (Apache-2.0) |
+| `prove2me_workspace/scripts/doc_index.py`, `timepiece/scripts/doc_index.py` | index rebuild, incremental update, link dedup, versioned JSON; `--backlinks/--search`; **(rev. 3)** `--graph` export, `--rename` reference rewrite | `typos` notes-core `index.rs`, `query.rs`, `graph.rs`, `note.rs` (Apache-2.0) |
 | `prove2me_workspace/DOC_INDEX.md`, `timepiece/DOC_INDEX.md`, `references/INDEX.md` | rendered TOC + backlink tables | `typos` index/graph render ideas (Apache-2.0) |
-| `prove2me_workspace/scripts/watch_check.py` | debounce window, extension filter, re-run on settle, initial run before watch | `typos` notes-core `watch.rs` (Apache-2.0) |
-| `prove2me_workspace/CHANGELOG.md`, `timepiece/CHANGELOG.md` | changelog discipline | `typos` README "Recent changes" practice / velysterm |
-| `timepiece/scripts/health.sh` | single health endpoint over existing checks, exit-0 contract | `ax` `/healthz` (Apache-2.0) |
-| `test/scripts/check_site.py` + `.github/workflows/site-check.yml` | health check as CI, SHA-pinned action, drift/status reporting + backlink graph | `ax` health/CI (Apache-2.0) + `typos` index/graph |
-| `prove2me_workspace/tasks/*.yaml`, `scripts/taskctl.py` | declarative Task manifests, list/run/health CLI | `ax` manifests + `ax apply` CLI (Apache-2.0) |
-| `prove2me_workspace/tasks/README.md` | manifest schema reference docs | `ax` `docs/manifests.md` (Apache-2.0) |
+| `prove2me_workspace/scripts/watch_check.py` | debounce window, extension filter, re-run on settle, initial run before watch; **(rev. 3)** check timeout | `typos` notes-core `watch.rs`, `compiler.rs` (Apache-2.0) |
+| `prove2me_workspace/CHANGELOG.md`, `timepiece/CHANGELOG.md` | changelog discipline | `typos` README "Recent changes" practice / velysterm (Apache-2.0) |
+| `timepiece/scripts/health.sh` | single health endpoint over existing checks, exit-0 contract; **(rev. 3)** `--strict` readiness mode | `ax` `/healthz` + `/readyz` split (Apache-2.0) |
+| `timepiece/scripts/import_components.py --reconcile` **(rev. 3)** | registry↔filesystem reconciliation report `(added, removed)` | `typos` `sync.rs` (Apache-2.0) |
+| `test/scripts/check_site.py` + `.github/workflows/site-check.yml` | health check as CI, SHA-pinned action, drift/status reporting + backlink graph; **(rev. 3)** `--graph` export | `ax` health/CI (Apache-2.0) + `typos` index/graph |
+| `prove2me_workspace/tasks/*.yaml`, `scripts/taskctl.py`, `tasks/README.md` | declarative Task manifests, list/run/health CLI, schema docs; **(rev. 3)** per-step timeout, run conditions + describe, watch transitions, validate | `ax` manifests, `ax apply`/`describe`/`watch` CLI, `docs/manifests.md`, runner timeout posture (Apache-2.0) |
 | `prove2me_workspace/AGENTS.md`, `README.md`, `test/AGENTS.md`, `dynamic-arctic/AGENTS.md` | development docs structure (prereqs / commands / layout) | `ax` `docs/development.md`, `README.md` (Apache-2.0) |
+| `prove2me_workspace/scripts/verify_invariants.py` **(rev. 3)** | AGENTS.md checklist → machine-checkable invariants, `[pass]/[FAIL]/[gap]` discipline | in-family: `unfer`/`velysterm` `scripts/verify-invariants` (PLAN_HARNESS H1) |
 
 ---
 
@@ -248,46 +382,31 @@ Legend: ✅ done & accepted · 🔄 in progress · ⛔ flagged, deliberately not
 
 Each entry: item → files touched → acceptance result.
 
-- **P0** — plan written; rev. 2 replaces it same day after the deep pass. ✓
-- **H1** — `australVM/rust-toolchain.toml` (new, 10 l) → `channel = "1.97.1"`;
-  both workspace dirs verified one level deep (rustup resolves). ✓
-- **H2** — `AGENTS.md` (new, 60 l) → layout/gates/rules covered. ✓
-- **H3** — `README.md` (1 → 49 l) → what/why, quickstart, docs links, no
-  secrets. ✓
-- **H4** — `dynamic-arctic/AGENTS.md` (new, 40 l) → commands match `ci.yml`. ✓
-- **H6** — `test/AGENTS.md` (new) + `test/.gitignore` (new) → checker/CI
-  commands run as written; bytecode ignored. ✓
-- **H7** — cwd `.gitignore` (`state/` → `state/*` + `!state/doc_index.json`,
-  `!state/references_index.json`); timepiece `state/doc_index.json` added,
-  timepiece `.gitignore` += `__pycache__/` → `--check` works on fresh clones,
-  no bytecode noise. ✓
-- **T1** — `timepiece/scripts/doc_index.py`, `DOC_INDEX.md`,
-  `state/doc_index.json` → 61 docs indexed; two runs byte-identical;
-  `--check` exit 0. ✓
-- **T2** — `references/INDEX.md` → 17 docs, 52 links, all targets resolve. ✓
-- **T3** — `CHANGELOG.md` (cwd, timepiece) → newest entries match `git log`. ✓
-- **T4** — `scripts/watch_check.py` → `--help` OK; burst test: 6 rapid edits →
-  exactly 1 settle-fire (plus the documented initial run). ✓
-- **T5** — `scripts/doc_index.py` + timepiece copy: `--backlinks PATH`,
-  `--search TEXT` query modes → README backlinks print incoming+outgoing;
-  content search matches; `--check` still fresh (render untouched). ✓
-- **A1** — `timepiece/scripts/health.sh` → real run: `1 pass, 2 warn, 0 fail`,
-  exit 0; `bash -n` clean; baselines (6/86/11) hold against HEAD 8901a58. ✓
-- **A2** — `test/scripts/check_site.py`, `test/.github/workflows/site-check.yml`
-  → exit 0 (`50 pages, 178 links, 149 unique pairs`); YAML parses; branch
-  `master` correct; checkout SHA identical to dynamic-arctic's verified pin. ✓
-- **A3** — `tasks/{docs,pipeline,timepiece}.yaml`, `scripts/taskctl.py` →
-  `list` (3 tasks), `run --all --dry-run` (exact commands), real `health`
-  runs all 4 health steps end-to-end, exit 0. ✓
-- **A4** — README + AGENTS document `--status/--check/--sync`; `--status`
-  runs exit 0 (4059 items / 3334 done). ✓
-- **A5** — `tasks/README.md` → schema fields ↔ `taskctl.py` reader match;
-  example YAML parses. ✓
-- **P4** — full verification battery (listed in §2 Phase P4) — all green. ✓
-- **P5** — commits per repo; pushes limited to established sync targets. ✓
-- **P6a (owner request, 2026-09-24b)** — doc-index freshness wired into
-  `timepiece/.github/workflows/ci.yml` as a third `docs` job (plain probe,
-  Python stdlib, SHA-pinned checkout, same shape as test's site-check). ✓
-- **P6b (owner request, 2026-09-24b)** — `test` `node_modules` untracked from
-  the index (1070 deletions recorded), kept on disk, added to `.gitignore`,
-  AGENTS rule updated. ✓
+**Rev. 2 (2026-09-24) — completed and accepted (record kept):** P0 plan
+rev. 2 · H1 `australVM/rust-toolchain.toml` (1.97.1) · H2 cwd `AGENTS.md` ·
+H3 cwd `README.md` · H4 `dynamic-arctic/AGENTS.md` · H6 `test/AGENTS.md` +
+`.gitignore` · H7 versioned-index tracking (cwd `state/*` + negations,
+timepiece `state/doc_index.json`, `__pycache__/` ignored) · T1 timepiece
+`doc_index.py`+`DOC_INDEX.md` · T2 `references/INDEX.md` · T3 CHANGELOGs ·
+T4 `watch_check.py` · T5 `--backlinks/--search` · A1 timepiece `health.sh`
+(then `1 pass, 2 warn, 0 fail`) · A2 `check_site.py` + `site-check.yml`
+(then `50 pages, 178 links`) · A3 `tasks/*.yaml` + `taskctl.py` · A4
+pipeline health docs (`--status` 4059 items) · A5 `tasks/README.md` · P4
+verification battery all green · P5 per-repo commits + pushes (all four
+targets in sync — re-verified today) · P6a doc-index freshness in timepiece
+CI · P6b test `node_modules` untracked (owner call).
+
+**Rev. 3 (2026-09-26) — survey actions:**
+- Ran every gate in §1.2; results recorded there (two red gates found: F1,
+  F2-class drift found: 82 vs 11).
+- Rebuilt timepiece's index in a scratch check to count the corpus (62 docs,
+  0 links) and **restored the tree afterwards** (`git checkout -- DOC_INDEX.md
+  state/doc_index.json`) so the repair stays an explicit, reviewable commit
+  (R1).
+- Removed one stale untracked editor artifact (`timepiece/.prompts.swp`).
+- No repo-modifying action taken: R1–R4, R6, T6–T9, A6–A9, S1 are **planned
+  (⏳)** and will be logged here on execution.
+
+**Open owner/specialist decisions carried into rev. 3:** H5/S2 licenses ·
+F6 `DISK_CLEANUP_PLAN.md` ledger commit + root-clutter tiers · R4 citation
+truth (specialist names vs. prose) · R5 test/ link content.

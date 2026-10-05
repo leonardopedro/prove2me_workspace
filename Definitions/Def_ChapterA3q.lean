@@ -2,7 +2,7 @@ import Definitions.Def_ChapterA3
 import Definitions.Def_ChapterA3j
 import Definitions.Def_ChapterA3n
 import Definitions.Def_ChapterA3o
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterA3p
 import Mathlib
 
 
@@ -57,6 +57,7 @@ open scoped BigOperators
 namespace BookProof.ChapterA3q
 
 open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3n BookProof.ChapterA3o
+open BookProof.ChapterA3p
 
 /-- The **mixed-symmetry complement** `projMixed N = 1 − projSym N − projAnti N`
 on the tensor power `V^{⊗N}`.  For `N = 2` it vanishes; for `N ≥ 3` it carries

@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionOVCircuit.lean — theorem BookProof.ChapterAttentionOVCircuit.ovOutput_gauge
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionOVCircuit
 
 variable {d n p m : ℕ}

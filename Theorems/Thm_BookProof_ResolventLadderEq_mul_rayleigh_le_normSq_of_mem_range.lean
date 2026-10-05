@@ -1,10 +1,14 @@
 -- Generated from ChapterResolventMinMaxEquality.lean — theorem BookProof.ResolventLadderEq.mul_rayleigh_le_normSq_of_mem_range
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterResolventMinMaxLadder
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterClosureUniqueness
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxEquality
 import Definitions.Def_ChapterSirkRitzMinMax
-import Definitions.Def_ChapterA4
 open BookProof.RitzMinMax
 open BookProof.ResolventLadderEq
 
@@ -14,6 +18,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 noncomputable section
 
 
+open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum
+open BookProof.ResolventLadder
+open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 

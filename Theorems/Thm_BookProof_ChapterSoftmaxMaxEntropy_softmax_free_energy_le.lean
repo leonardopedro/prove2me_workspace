@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxMaxEntropy.lean — theorem BookProof.ChapterSoftmaxMaxEntropy.softmax_free_energy_le
+import Definitions.Def_ChapterAttentionEntropy
 import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxMaxEntropy
 

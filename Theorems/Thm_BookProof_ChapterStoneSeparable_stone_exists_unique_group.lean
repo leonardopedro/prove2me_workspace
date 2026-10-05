@@ -6,7 +6,6 @@ import Definitions.Def_ChapterStoneSeparable
 import Definitions.Def_ChapterStoneMeasurable
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneTheorem
-import Definitions.Def_ChapterA4
 open BookProof.ChapterStoneTheorem
 open BookProof.ChapterStoneSeparable
 

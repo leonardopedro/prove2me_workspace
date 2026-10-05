@@ -1,7 +1,9 @@
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_cfcHom_apply_mem_cyclicSubspace
 
 import Definitions.Def_ChapterCyclicDirectSum
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
 
 

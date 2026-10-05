@@ -1,13 +1,15 @@
 -- Generated from ChapterPermutationSectorEsa.lean — theorem BookProof.PermSector.mem_fermionicSector_iff
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
-import Definitions.Def_ChapterA4
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.TensorCore

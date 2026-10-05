@@ -2,8 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse
+open BookProof.SirkSingleTime
 
 
 

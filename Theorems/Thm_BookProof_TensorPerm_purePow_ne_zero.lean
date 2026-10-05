@@ -1,8 +1,8 @@
 -- Generated from ChapterTensorPermutation.lean — theorem BookProof.TensorPerm.purePow_ne_zero
+import Definitions.Def_ChapterGroupAverageEsa
 import Mathlib
 import Definitions.Def_ChapterTensorPermutation
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.TensorCore
 open BookProof.TensorPerm
 

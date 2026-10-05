@@ -1,5 +1,4 @@
 import Definitions.Def_ChapterSpectralMultiplication
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

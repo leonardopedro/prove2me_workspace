@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_imA_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_imB_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_quadForm_secDiag_eq
 import Theorems.Thm_BookProof_FarisLavine_commForm_eq
+open BookProof.ScalaronOuterFockFL
 
 
 
@@ -13,6 +14,7 @@ import Theorems.Thm_BookProof_FarisLavine_commForm_eq
 open MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
@@ -24,8 +26,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := ι)) :
-    |commForm (secHam W Q) (secDiag W Q) x| ≤ (6 * Q.K) * quadForm (secDiag W Q) x := by
+theorem solution (x : secCore (ι := by
 
   classical
   obtain ⟨P, hP1, hP2⟩ := exists_band Q x

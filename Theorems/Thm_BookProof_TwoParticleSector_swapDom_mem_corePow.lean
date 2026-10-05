@@ -1,10 +1,10 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — theorem BookProof.TwoParticleSector.swapDom_mem_corePow
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.TensorCore
 open BookProof.TwoParticleSector
 

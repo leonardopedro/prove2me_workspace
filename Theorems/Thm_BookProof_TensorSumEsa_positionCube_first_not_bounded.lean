@@ -6,7 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterUnboundedPosition
-import Definitions.Def_ChapterA4
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 open BookProof.TensorSumEsa

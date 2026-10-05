@@ -4,7 +4,6 @@ import Definitions.Def_ChapterA4f
 import Mathlib
 import Definitions.Def_ChapterA4h
 import Definitions.Def_ChapterA5
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA5
 open BookProof.ChapterA4h
 

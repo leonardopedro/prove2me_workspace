@@ -5,7 +5,6 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Definitions.Def_ChapterSmBrstGhost
-import Definitions.Def_ChapterA4
 open BookProof.SmBrstGhost
 open BookProof.QuantumGravityBrstCharge
 

@@ -1,9 +1,9 @@
 -- Generated from ChapterMackeyGeneralBase.lean — theorem BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem.inner_pvm_eq_zero
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
 import Definitions.Def_ChapterStoneConverse
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterStoneMeasurable
@@ -18,6 +18,7 @@ variable (S : ImprimitivitySystem G X E)
 open scoped InnerProductSpace
 
 
+open BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem.inner_pvm_eq_zero {x y : X} (hxy : x ≠ y) (ψ φ : E) :

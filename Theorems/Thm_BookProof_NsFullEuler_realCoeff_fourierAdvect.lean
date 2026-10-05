@@ -11,7 +11,7 @@ import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite

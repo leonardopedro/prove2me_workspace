@@ -1,8 +1,11 @@
 -- Generated from ChapterPvmInducedSystem.lean — theorem BookProof.ChapterPvmInducedSystem.orthogonalFamily_swIsom
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
-import Definitions.Def_ChapterA4
 open BookProof.ChapterPvmInducedSystem
 
 variable {X : Type*} [MeasurableSpace X]
@@ -17,6 +20,7 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
+open BookProof.ChapterHilbertSumIntertwine
 
 
 theorem BookProof.ChapterPvmInducedSystem.orthogonalFamily_swIsom {P : Pvm X H} {S : Set H} (hS : OrthCyclicFamily P S) :

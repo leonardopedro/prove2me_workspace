@@ -1,8 +1,8 @@
 -- Generated from ChapterResidualStream.lean — theorem BookProof.ChapterResidualStream.norm_residual_sub_self_le
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionOutput
 import Mathlib
 import Definitions.Def_ChapterResidualStream
-import Definitions.Def_ChapterA4
 open BookProof.ChapterResidualStream
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]

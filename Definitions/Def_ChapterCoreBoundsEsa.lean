@@ -11,7 +11,6 @@ import Definitions.Def_ChapterOperatorSeriesEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -49,6 +48,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.CoreBounds
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.OperatorSeries
 open Filter Topology
 
 noncomputable section

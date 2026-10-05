@@ -1,9 +1,9 @@
 -- Generated from ChapterGroupAverageEsa.lean — theorem BookProof.GroupAverage.univ_two
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
-import Definitions.Def_ChapterA4
 open BookProof.GroupAverage
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

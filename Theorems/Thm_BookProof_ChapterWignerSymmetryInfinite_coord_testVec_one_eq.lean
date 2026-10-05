@@ -1,9 +1,9 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — theorem BookProof.ChapterWignerSymmetryInfinite.coord_testVec_one_eq
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
 import Definitions.Def_ChapterNsLagrangianDetConvolution
 import Definitions.Def_ChapterWignerSymmetry
-import Definitions.Def_ChapterA4
 open BookProof.NsLagrangianDet
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
@@ -16,6 +16,7 @@ variable {b : HilbertBasis ι ℂ E} {o : ι}
 open scoped InnerProductSpace ComplexConjugate
 
 
+open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterWignerSymmetryInfinite.coord_testVec_one_eq (hT : IsWignerSymmetry T) {i : ι} (hi : i ≠ o) :

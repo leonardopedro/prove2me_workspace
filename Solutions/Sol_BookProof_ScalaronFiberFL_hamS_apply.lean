@@ -1,7 +1,7 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.hamS_apply
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
-import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
+open BookProof.ScalaronFiberFL
 
 
 

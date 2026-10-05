@@ -1,0 +1,12 @@
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Mathlib
+
+namespace BookProof.HermiteLadder
+
+end BookProof.HermiteLadder

@@ -1,7 +1,6 @@
 import Theorems.Thm_BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map
 
 import Definitions.Def_ChapterSolovayCoordinates
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

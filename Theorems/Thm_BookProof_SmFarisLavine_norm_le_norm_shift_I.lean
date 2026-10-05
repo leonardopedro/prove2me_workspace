@@ -12,7 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
 open BookProof.SmFarisLavine
 

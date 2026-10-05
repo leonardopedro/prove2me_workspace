@@ -1,9 +1,10 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.exists_ne_zero_cbosonic
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.GroupAverage.UnitaryRep

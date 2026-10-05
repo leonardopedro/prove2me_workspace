@@ -4,6 +4,9 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterGradedFock
+import Definitions.Def_ChapterGradedFriedrichs
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
@@ -14,7 +17,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterYangMillsGhostSector
-import Definitions.Def_ChapterA4
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.IkebeKato

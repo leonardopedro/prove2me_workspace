@@ -1,9 +1,9 @@
 -- Generated from ChapterAttentionLocality.lean — theorem BookProof.ChapterAttentionLocality.norm_headOutput_window_sub_le
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionLocality
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionLocality
@@ -16,6 +16,7 @@ open scoped BigOperators
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionLocality.norm_headOutput_window_sub_le {beta gamma Delta R : ℝ} (hb : 0 ≤ beta)

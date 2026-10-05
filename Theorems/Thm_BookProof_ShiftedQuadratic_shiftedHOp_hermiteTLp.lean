@@ -10,7 +10,6 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterShiftedHermiteCore
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic

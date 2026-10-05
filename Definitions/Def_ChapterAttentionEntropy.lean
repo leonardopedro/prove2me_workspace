@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxBorn
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib

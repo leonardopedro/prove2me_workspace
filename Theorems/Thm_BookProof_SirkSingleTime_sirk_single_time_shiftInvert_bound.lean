@@ -8,7 +8,6 @@ import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterSirkEndToEnd
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterSirkEndToEnd

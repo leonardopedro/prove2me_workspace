@@ -4,7 +4,6 @@ import Definitions.Def_ChapterFourierMultiplierEsa
 import Definitions.Def_ChapterStrichartzWave
 import Mathlib
 import Definitions.Def_ChapterNsFieldMomentumInverse
-import Definitions.Def_ChapterA4
 open BookProof.NsFieldMomentumInverse
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDimensional ℝ W]

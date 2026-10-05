@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_WallEsaSemibounded_inner_toLp_self
+open BookProof.ScalaronFiberFL
 
 
 

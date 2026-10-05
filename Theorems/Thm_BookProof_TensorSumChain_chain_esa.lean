@@ -1,10 +1,10 @@
 -- Generated from ChapterTensorSumChain.lean — theorem BookProof.TensorSumChain.chain_esa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.TensorSumChain
 
 

@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_gcSeq
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_ext_tendsto
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_tendsto
+open BookProof.QgTruncationResolvent
 
 
 
@@ -12,6 +13,7 @@ import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_tendsto
 open Filter Topology
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section

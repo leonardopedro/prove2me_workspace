@@ -3,7 +3,6 @@ import Definitions.Def_ChapterA1
 import Definitions.Def_ChapterA1c
 import Definitions.Def_ChapterA1d
 import Definitions.Def_Complexification
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

@@ -1,4 +1,5 @@
 -- Generated from ChapterQg3DGaugeFarisLavine.lean — theorem BookProof.Qg3DGaugeFL.qgSigned_eq_sqSumOp
+import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterStoneBridge
@@ -12,7 +13,6 @@ import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.FullQuadratic
 open BookProof.HermiteProductCore
 open BookProof.Qg3DGaugeEsa

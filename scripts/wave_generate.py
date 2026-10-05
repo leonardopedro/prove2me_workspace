@@ -561,7 +561,21 @@ def structural_preamble(bt, upto_byte):
             continue
         in_variable = False
         if s.endswith(" in"):
-            # per-declaration wrapper: belongs to its own declaration's span
+            # Per-declaration wrapper (`omit ... in`, `set_option ... in`,
+            # `include ... in`): it belongs to its own declaration's span, so
+            # hoisting it would attach it to the wrong declaration. Drop it.
+            #
+            # `open X in` is different: it is the one wrapper whose loss is
+            # SILENT and fatal. A file-level `open ContinuousLinearMap in` near
+            # the top of `ChapterH8` sits outside every decl span, so dropping it
+            # left the stubs unable to see `adjoint` -- 7 theorems failed with
+            # `Unknown identifier adjoint`. De-scope it to `open X` instead: that
+            # is wider than the original, but the stub is a fresh module whose
+            # only consumer is its own theorem, and `drop_shadowing_opens` runs
+            # afterwards to undo any shadowing the widening causes.
+            mo = re.match(r"^open\s+(scoped\s+)?(.+?)\s+in$", s)
+            if mo:
+                out.append("open " + (mo.group(1) or "") + mo.group(2))
             continue
         if re.match(r"^(open |open scoped |variable |include "
                     r"|omit |set_option |noncomputable section|universe "
@@ -787,6 +801,8 @@ _THM_INDEX = None
 _NAME_OWNER = None
 _NS_OWNER = None
 _NS_TO_OWNER = None
+_BUNDLE_NS = None
+_SOURCE_NS = None
 
 
 def thm_node_index():
@@ -984,15 +1000,55 @@ def owner_of_namespace(ns):
     of it then fails with `unknown namespace` because nothing imported the
     bundle. Fall back to the longest declared prefix.
     """
-    table = namespace_to_owner()
+    # Prefer an EXACT match in real bundle text over the platform index.
+    #
+    # The index is not authoritative here: `namespace_owner` is empty for a chapter
+    # published after the last index refresh, so `BookProof.ChapterFreeFieldBorn`
+    # fell through to the longest-prefix branch, which matched the bare `BookProof`
+    # entry and returned `ChapterA4`. The consuming bundle then imported A4 instead
+    # of FreeFieldBorn and died on `unknown namespace BookProof.ChapterFreeFieldBorn`.
+    table = _bundle_text_namespaces()
     if ns in table:
         return table[ns]
+    index = namespace_to_owner()
+    if ns in index:
+        return index[ns]
     parts = ns.split(".")
     for k in range(len(parts) - 1, 0, -1):
         prefix = ".".join(parts[:k])
         if prefix in table:
             return table[prefix]
+    for k in range(len(parts) - 1, 0, -1):
+        prefix = ".".join(parts[:k])
+        if prefix in index:
+            return index[prefix]
     return None
+
+
+def _bundle_text_namespaces():
+    """namespace -> bundle, scanned from the actual bundle files.
+
+    Published text first (authoritative for what the platform has), then the local
+    `Definitions/` tree (authoritative for what we are about to publish).
+    """
+    global _BUNDLE_NS
+    if _BUNDLE_NS is not None:
+        return _BUNDLE_NS
+    _BUNDLE_NS = {}
+    for root in (f"{WS}/state/published_bundles", OUT_DEF):
+        if not os.path.isdir(root):
+            continue
+        for f in os.listdir(root):
+            if not (f.startswith("Def_") and f.endswith(".lean")):
+                continue
+            try:
+                t = open(f"{root}/{f}", encoding="utf-8", errors="ignore").read()
+            except OSError:
+                continue
+            ch = f[4:-5]
+            for ns in declared_namespaces(t):
+                _BUNDLE_NS.setdefault(ns, ch)
+    return _BUNDLE_NS
 
 
 def namespace_owner_map():
@@ -1164,6 +1220,40 @@ def extract_namespace_variables(bt, upto_line=None):
     return "\n".join(out)
 
 
+def scoped_opens_before(pre):
+    """The contiguous run of `open ... in` lines ending the preamble.
+
+    `structural_preamble` deliberately does not hoist per-declaration wrappers
+    ending in `in`, because Stage 2's decl span is supposed to contain them. But
+    the span starts at the docstring, so an `open X in` written ABOVE the
+    docstring falls in the gap and is lost from the stub -- and the stub then
+    fails with `Unknown identifier` for every name that open provided.
+    `ChapterH8` lost all five of its `open ContinuousLinearMap in` lines this
+    way, which is why its `adjoint_aeval` stub could not see `adjoint`.
+
+    So return that trailing run and re-attach it to the declaration it scopes,
+    rather than hoisting every `... in` in the file.
+    """
+    lines = pre.rstrip("\n").split("\n")
+    # Trailing blank lines are padding, not part of the run.
+    while lines and lines[-1].strip() == "":
+        lines.pop()
+    out = []
+    for ln in reversed(lines):
+        st = ln.strip()
+        if st.startswith("open ") and st.endswith(" in"):
+            out.append(ln)
+            continue
+        if st == "":
+            # A blank line inside the run would end it, but allow blanks that
+            # merely pad the block by looking one further back first.
+            if out:
+                out.append(ln)
+                continue
+        break
+    return list(reversed(out))
+
+
 def build_thm(bt, leaf, decls, node, modns):
     ctx = structural_preamble(bt, node.s)
     stmt = fmt_name(the_statement(bt, node), node.uname)
@@ -1180,6 +1270,11 @@ def build_thm(bt, leaf, decls, node, modns):
             print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
     
     if ctx:
+        # Read the RAW text before the node: `structural_preamble` has already
+        # stripped the `open ... in` lines from `ctx`, so scanning `ctx` cannot
+        # recover them.
+        scoped = scoped_opens_before(bt.slice(0, node.s).decode("utf-8", "ignore"))
+        head.append("\n".join(scoped) + "\n" if scoped else "")
         head.append(ctx + "\n")
     head.append("\n")
     # PIPELINE_PLAN 6.1: the server rejects `'` in a theorem_name --
@@ -1303,6 +1398,74 @@ def drop_rebound_variables(text, stmt):
     return "\n".join(out)
 
 
+def declared_namespaces(text):
+    """Fully-qualified namespaces a Lean file declares, tracking nesting.
+
+    A flat namespace scan misses nested ones:
+    `namespace BookProof` followed by `namespace ChapterA` then
+    `namespace System` declares `BookProof.ChapterA.System`, which the flat scan
+    records as the bare `System` -- so a consumer's
+    `open BookProof.ChapterA.System` looks undeclared and the open is deleted,
+    giving `Unknown identifier` for every name it would have brought into scope.
+    `section X` is deliberately NOT pushed: a section introduces no namespace.
+
+    Comment text is blanked first so a docstring mentioning `namespace Foo` does
+    not push a phantom frame.
+    """
+    text = strip_lean_comments(text)
+    stack, out = [], set()
+    for ln in text.split("\n"):
+        st = ln.strip()
+        m = re.match(r"^namespace\s+([\w.]+)", st)
+        if m:
+            name = m.group(1)
+            full = name if name.startswith("BookProof") else ".".join(
+                stack + [name]) if stack else name
+            out.add(full)
+            stack.append(name)
+            continue
+        m = re.match(r"^end\s+([\w.]+)", st)
+        if m:
+            if stack:
+                stack.pop()
+    return out
+
+
+def strip_lean_comments(text):
+    """Blank out docstrings and line comments, preserving line structure.
+
+    Used to keep identifier heuristics off prose. Replaces comment characters
+    with spaces instead of deleting them so that `stmt` offsets still line up and
+    a `\n`-based scan sees the same number of lines.
+    """
+    out = list(text)
+    i, n = 0, len(text)
+    def blank(a, b):
+        for k in range(a, min(b, n)):
+            if out[k] != "\n":
+                out[k] = " "
+    while i < n:
+        if text.startswith("/-", i):
+            depth, j = 0, i
+            while j < n:
+                if text.startswith("/-", j):
+                    depth += 1; j += 2
+                elif text.startswith("-/", j):
+                    depth -= 1; j += 2
+                    if depth == 0:
+                        break
+                else:
+                    j += 1
+            blank(i, j); i = j
+        elif text.startswith("--", i):
+            j = text.find("\n", i)
+            j = n if j < 0 else j
+            blank(i, j); i = j
+        else:
+            i += 1
+    return "".join(out)
+
+
 def drop_shadowing_opens(text, stmt=None):
     """Drop an `open NS` whose last segment shadows a name the statement uses.
 
@@ -1324,6 +1487,11 @@ def drop_shadowing_opens(text, stmt=None):
     # Only an APPLIED name shadows usefully: the failure is `ShiftData ι`
     # where `ShiftData` is a structure. A bare mention of the name is harmless,
     # so matching on application avoids rewriting legitimate opens.
+    # Match only CODE. The shadowing test is `last <arg>`, and a module docstring
+    # is full of prose like "`ChapterA3j` shows ...", which matched and rewrote
+    # `open BookProof.ChapterA3j` to `open BookProof` -- dropping the bare-name
+    # scope the bundle body needs and producing `Unknown identifier` en masse.
+    stmt = strip_lean_comments(stmt)
     out, rewritten = [], []
     for ln in text.split("\n"):
         st = ln.strip()
@@ -1498,15 +1666,71 @@ def drop_undeclared_opens(text, leaf=None):
             t = open(f"{OUT_DEF}/{f}", encoding="utf-8", errors="ignore").read()
         except OSError:
             continue
+        known |= declared_namespaces(t)
+    # ALSO trust the namespaces of already-PUBLISHED bundles, read from the live
+    # platform text rather than from the index. `namespace_owner` is empty for a
+    # chapter whose namespace only became real at its most recent publication, so
+    # `BookProof.ChapterFreeFieldBornSignGauge` looked undeclared and the source's
+    # `open BookProof.ChapterFreeFieldBornSignGauge` was deleted -- leaving the
+    # consuming bundle with `Unknown identifier signFlip`.
+    for f in os.listdir(f"{WS}/state/published_bundles"):
+        if not (f.startswith("Def_") and f.endswith(".lean")):
+            continue
+        try:
+            t = open(f"{WS}/state/published_bundles/{f}", encoding="utf-8",
+                     errors="ignore").read()
+        except OSError:
+            continue
         known.update(re.findall(r"(?m)^namespace\s+([\w.]+)", t))
+    # ALSO trust the SOURCE tree. Every chapter source is present up front, so a
+    # namespace is declared the moment we know which chapter owns it -- whereas
+    # reading only the generated bundles makes the output depend on GENERATION
+    # ORDER: a chapter generated before its provider's bundle existed had the
+    # open silently deleted, and nothing regenerated it later. That produced
+    # `Unknown identifier hermBasisN` on 26 bundles at once (the source opened
+    # `BookProof.QuadFockEsa`, declared by an already-published chapter, and the
+    # bundle had lost the open). Reading the sources makes generation
+    # order-independent and idempotent.
+    global _SOURCE_NS
+    if _SOURCE_NS is None:
+        _SOURCE_NS = set()
+        bp = f"{PROJ}/BookProof"
+        for root, _dirs, files in os.walk(bp):
+            for f in files:
+                if not f.endswith(".lean"):
+                    continue
+                try:
+                    t = open(os.path.join(root, f), encoding="utf-8",
+                             errors="ignore").read()
+                except OSError:
+                    continue
+                _SOURCE_NS |= declared_namespaces(t)
+    known |= _SOURCE_NS
     out, dropped = [], []
     for ln in text.split("\n"):
         st = ln.strip()
         if st.startswith("open BookProof."):
-            bad = [one for one in st.split()[1:]
+            toks = st.split()
+            bad = [one for one in toks[1:]
                    if one.startswith("BookProof.") and one not in known]
+            good = [one for one in toks[1:]
+                    if one.startswith("BookProof.") and one in known]
             if bad:
                 dropped.extend(bad)
+                # Keep the namespaces that ARE declared. Dropping the whole line
+                # when only one of several is undeclared took valid opens with it:
+                # `open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder`
+                # lost ChapterSoftmaxSharpness (whose bundle exists) because
+                # ChapterSoftmaxOrder had none -- 140 bundles were affected.
+                if not good:
+                    continue
+                # Preserve a trailing scope keyword. `open A B in` is a SCOPED
+                # open; rewriting it to `open A B` widens it to the whole file
+                # and silently changes which names resolve where.
+                tail = ""
+                if toks[-1] in ("in", "in",):
+                    tail = " in"
+                out.append("open " + " ".join(good) + tail)
                 continue
         elif st.startswith("open ") and "BookProof." not in st:
             # Qualify a bare namespace with `BookProof.` when that namespace
@@ -1603,7 +1827,14 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
 def build_def_file(bt, leaf, decls, defmat, embedded):
     keep = defmat | embedded
     if not keep:
-        return None
+        # A chapter whose declarations are ALL theorems has nothing to publish as
+        # a Definition body -- but other chapters `open BookProof.<leaf>`, and that
+        # open fails with `unknown namespace` unless SOME bundle declares the
+        # namespace and imports its prerequisites. `ChapterFreeFieldBornCont` (5
+        # theorems, 0 definitions) blocked 6 downstream chapters this way. Emit a
+        # namespace anchor: the upstream Def imports plus an empty namespace.
+        return build_ns_anchor(bt, leaf)
+
     graph = load_graph()
     # Lightweight stand-ins for the graph rows. `Decl` cannot take a graph row:
     # it reads `declStart`/`declEnd`, which only the sketch has, so building one
@@ -1677,6 +1908,24 @@ def build_def_file(bt, leaf, decls, defmat, embedded):
     text = drop_undeclared_opens(text, leaf)
     text = drop_shadowing_opens(text, text)
     return text
+
+
+def build_ns_anchor(bt, leaf):
+    """Imports + empty namespace, so `open BookProof.<leaf>` resolves."""
+    ns = module_namespace(leaf) or f"BookProof.{leaf}"
+    upstream = upstream_def_imports(bt.text, leaf)
+    head = ["import Mathlib"]
+    if upstream:
+        head = upstream + head
+    body = dedupe_imports("\n".join(head) + "\n\n")
+    doc = module_doc(bt)
+    if doc.strip():
+        # AFTER the imports: Lean rejects `invalid 'import' command, it must be
+        # used at the top of the file` when a docstring precedes them.
+        body += f"/-!\n{doc.strip()}\n-/\n"
+    body += f"namespace {ns}\n\nend {ns}\n"
+    body = drop_undeclared_opens(body)
+    return body
 
 
 def dedupe_imports(text):

@@ -1,7 +1,9 @@
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterVonNeumannCore
 import Mathlib
 
 
@@ -54,6 +56,7 @@ No invariance of the domain is used.
 namespace BookProof.PolarPartialIsometry
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

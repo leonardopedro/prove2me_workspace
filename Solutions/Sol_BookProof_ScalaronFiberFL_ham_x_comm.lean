@@ -4,6 +4,7 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_integral_x_wronskian
 import Theorems.Thm_BookProof_ScalaronFiberFL_inner_xCc_ham
 import Theorems.Thm_BookProof_ScalaronFiberFL_inner_derivL2
+open BookProof.ScalaronFiberFL
 
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_FarisLavine_inner_apply_self_im
+open BookProof.ScalaronFiberFL
 
 
 

@@ -1,5 +1,4 @@
 import Definitions.Def_ChapterDegSchrodingerCore
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore

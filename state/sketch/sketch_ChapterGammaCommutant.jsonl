@@ -2,7 +2,7 @@
 {"declEnd":{"col":44,"line":50,"offset":2142},"declStart":{"col":0,"line":42,"offset":1673},"docstring":null,"kind":"decl","nameText":"offdiag_zero_of_commutes_diagonal","privateTok":{"end":{"col":7,"line":42,"offset":1680},"start":{"col":0,"line":42,"offset":1673}},"valKind":"simple","valStart":{"col":14,"line":44,"offset":1886}}
 {"declEnd":{"col":14,"line":112,"offset":5650},"declStart":{"col":0,"line":52,"offset":2144},"docstring":{"end":{"col":35,"line":54,"offset":2333},"start":{"col":0,"line":52,"offset":2144}},"kind":"decl","nameText":"gamma_commutant_scalar","privateTok":null,"valKind":"simple","valStart":{"col":47,"line":57,"offset":2499}}
 {"declEnd":{"col":73,"line":124,"offset":6120},"declStart":{"col":0,"line":114,"offset":5652},"docstring":{"end":{"col":12,"line":115,"offset":5741},"start":{"col":0,"line":114,"offset":5652}},"kind":"decl","nameText":"gamma_commutant_eq_scalars","privateTok":null,"valKind":"simple","valStart":{"col":62,"line":118,"offset":5926}}
-{"declEnd":{"col":50,"line":142,"offset":7023},"declStart":{"col":0,"line":126,"offset":6122},"docstring":{"end":{"col":79,"line":127,"offset":6282},"start":{"col":0,"line":126,"offset":6122}},"kind":"decl","nameText":"gamma_intertwiner_unique","privateTok":null,"valKind":"simple","valStart":{"col":23,"line":130,"offset":6498}}
+{"declEnd":{"col":50,"line":142,"offset":6994},"declStart":{"col":0,"line":126,"offset":6122},"docstring":{"end":{"col":79,"line":127,"offset":6282},"start":{"col":0,"line":126,"offset":6122}},"kind":"decl","nameText":"gamma_intertwiner_unique","privateTok":null,"valKind":"simple","valStart":{"col":23,"line":130,"offset":6498}}
 {"const":"_private.0.BookProof.ChapterGammaCommutant.diag_of_int","end":{"col":27,"line":35,"offset":1390},"kind":"ref","start":{"col":16,"line":35,"offset":1379}}
 {"const":"Fin","end":{"col":36,"line":35,"offset":1399},"kind":"ref","start":{"col":33,"line":35,"offset":1396}}
 {"const":"Int","end":{"col":42,"line":35,"offset":1409},"kind":"ref","start":{"col":41,"line":35,"offset":1406}}
@@ -170,9 +170,7 @@
 {"const":"BookProof.ChapterGammaCommutant.gamma_commutant_scalar","end":{"col":34,"line":134,"offset":6754},"kind":"ref","start":{"col":12,"line":134,"offset":6732}}
 {"const":"zero_smul","end":{"col":17,"line":137,"offset":6825},"kind":"ref","start":{"col":8,"line":137,"offset":6816}}
 {"const":"Matrix.det_zero","end":{"col":23,"line":139,"offset":6871},"kind":"ref","start":{"col":8,"line":139,"offset":6856}}
-{"const":"Nonempty","end":{"col":39,"line":139,"offset":6891},"kind":"ref","start":{"col":31,"line":139,"offset":6883}}
-{"const":"Fin","end":{"col":44,"line":139,"offset":6896},"kind":"ref","start":{"col":41,"line":139,"offset":6893}}
-{"const":"absurd","end":{"col":16,"line":140,"offset":6924},"kind":"ref","start":{"col":10,"line":140,"offset":6918}}
-{"const":"not_isUnit_zero","end":{"col":35,"line":140,"offset":6943},"kind":"ref","start":{"col":20,"line":140,"offset":6928}}
-{"const":"smul_smul","end":{"col":25,"line":142,"offset":6996},"kind":"ref","start":{"col":16,"line":142,"offset":6987}}
-{"const":"div_mul_cancel₀","end":{"col":42,"line":142,"offset":7015},"kind":"ref","start":{"col":27,"line":142,"offset":6998}}
+{"const":"absurd","end":{"col":16,"line":140,"offset":6895},"kind":"ref","start":{"col":10,"line":140,"offset":6889}}
+{"const":"not_isUnit_zero","end":{"col":35,"line":140,"offset":6914},"kind":"ref","start":{"col":20,"line":140,"offset":6899}}
+{"const":"smul_smul","end":{"col":25,"line":142,"offset":6967},"kind":"ref","start":{"col":16,"line":142,"offset":6958}}
+{"const":"div_mul_cancel₀","end":{"col":42,"line":142,"offset":6986},"kind":"ref","start":{"col":27,"line":142,"offset":6969}}

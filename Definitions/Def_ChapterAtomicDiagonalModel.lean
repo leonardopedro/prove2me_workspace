@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Definitions.Def_ChapterLinftyMultiplication
-import Definitions.Def_ChapterA4
 import Mathlib
 
 
@@ -32,6 +31,7 @@ open MeasureTheory
 
 namespace BookProof.ChapterAtomicDiagonalModel
 
+open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterLinftyMultiplication
 
 variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
   (mu : Measure α) [IsFiniteMeasure mu]

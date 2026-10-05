@@ -1,9 +1,9 @@
 -- Generated from ChapterAttentionOutput.lean — theorem BookProof.ChapterAttentionOutput.norm_observableExpectation_sub_le
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterObservableExpectation
-import Definitions.Def_ChapterA4
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionOutput
 
@@ -17,6 +17,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionOutput.norm_observableExpectation_sub_le (p q : Fin m → ℝ) {v : Fin m → E} {C : ℝ}

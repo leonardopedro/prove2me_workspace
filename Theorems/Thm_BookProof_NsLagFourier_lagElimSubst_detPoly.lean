@@ -1,9 +1,9 @@
 -- Generated from ChapterNsLagrangianFourierElimination.lean — theorem BookProof.NsLagFourier.lagElimSubst_detPoly
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianFourierElimination
-import Definitions.Def_ChapterA4
 open BookProof.NsLagFourier
 
 variable {n : ℕ}

@@ -1,6 +1,6 @@
 import Definitions.Def_ChapterDegSchrodingerCore
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOneParticleCcEsa
 import Mathlib
 
 
@@ -22,6 +22,7 @@ pairing of `u` with the test function `y ↦ ρ (x − y)`.
 namespace BookProof.ConvolutionCalc
 
 open MeasureTheory
+open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
 
 noncomputable section
 

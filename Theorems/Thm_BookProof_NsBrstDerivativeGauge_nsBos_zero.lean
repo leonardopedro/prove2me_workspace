@@ -1,10 +1,10 @@
 -- Generated from ChapterNsBrstDerivativeGauge.lean — theorem BookProof.NsBrstDerivativeGauge.nsBos_zero
 import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Definitions.Def_ChapterNavierStokesGaugeY2
 import Mathlib
 import Definitions.Def_ChapterNsBrstDerivativeGauge
 import Definitions.Def_ChapterNavierStokesGaugeY
-import Definitions.Def_ChapterA4
 open BookProof.NavierStokesGaugeY
 open BookProof.NsBrstDerivativeGauge
 

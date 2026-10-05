@@ -2,10 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_ext_core
+open BookProof.QgVielbeinModeInstance
 
 
 
 
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section
@@ -18,7 +20,4 @@ variable (L : ℕ) [NeZero L]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (W : WallPot) (sig : VMode L → ℝ) (hsig : ∀ a, 1 ≤ sig a) (g : ℝ)
-    (p : secCore (ι := VMode L)) :
-    (secData W (qgLatticeModes L sig hsig g)).ext
-        ⟨(p : Sec (VMode L)), (secData W (qgLatticeModes L sig hsig g)).gc.le p.2⟩
-      = secHam W (qgLatticeModes L sig hsig g) p := secData_ext_core W _ p
+    (p : secCore (ι := secData_ext_core W _ p

@@ -6,7 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.EsaOneParticle
 

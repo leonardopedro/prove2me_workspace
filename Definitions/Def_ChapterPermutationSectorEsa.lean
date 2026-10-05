@@ -2,7 +2,8 @@ import Definitions.Def_ChapterTensorPermutation
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 

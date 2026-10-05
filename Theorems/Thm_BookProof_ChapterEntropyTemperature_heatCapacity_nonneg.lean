@@ -1,8 +1,8 @@
 -- Generated from ChapterEntropyTemperature.lean — theorem BookProof.ChapterEntropyTemperature.heatCapacity_nonneg
+import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterEntropyTemperature
-import Definitions.Def_ChapterA4
 open BookProof.ChapterEntropyTemperature
 
 variable {m : ℕ}

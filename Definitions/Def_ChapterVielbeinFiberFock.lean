@@ -7,7 +7,6 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
@@ -64,7 +63,7 @@ open Filter Topology MeasureTheory
 
 namespace BookProof.VielbeinFock
 
-open BookProof BookProof.ScalaronEsa BookProof.ScalaronFock
+open BookProof.Starobinsky BookProof.ScalaronEsa BookProof.ScalaronFock
 open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.FarisLavine BookProof.ChapterStoneResolvent
 

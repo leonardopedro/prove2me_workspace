@@ -3,7 +3,6 @@ import Definitions.Def_ChapterCoreBoundsEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosure
 import Definitions.Def_ChapterSirkTrotterKato
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
@@ -77,6 +76,7 @@ Everything in this module is `sorry`-free and `axiom`-free.
 
 namespace BookProof.FockSchur
 
+open BookProof.FockSecondQuantization BookProof.CoreBounds
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs

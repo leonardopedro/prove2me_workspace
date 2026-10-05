@@ -5,17 +5,21 @@ import Theorems.Thm_BookProof_YmAbelianFock_coreRep_op_comp
 import Theorems.Thm_BookProof_YmAbelianFock_coreRep_op_add
 import Theorems.Thm_BookProof_YmAbelianFock_coreRep_op_smul
 import Theorems.Thm_BookProof_YmAbelianFock_coreRep_op_sum
+open BookProof.YmAbelianFock
 
 
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.HermiteBand BookProof.GradedBandSchur BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
 open BookProof.YangMillsFriedrichs
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
+open BookProof.FiniteSectionSingleTime BookProof.QgTimeIndependent
 
 noncomputable section
 
@@ -24,9 +28,6 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- the `L²` coercions of the Gauss–polynomial core, and the `24` Weyl-ordered squares of the
--- Yang–Mills Hamiltonian, make the defeq checks of this identification expensive
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
     ymAbelianHermOp e = (coreRepHerm e).op ymAbelianPoly := by
 

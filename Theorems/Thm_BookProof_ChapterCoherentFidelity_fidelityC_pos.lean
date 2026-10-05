@@ -3,7 +3,6 @@ import Definitions.Def_ChapterCoherentOverlapComplex
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterCoherentFidelity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCoherentFidelity
 
 variable {n m : ℕ}

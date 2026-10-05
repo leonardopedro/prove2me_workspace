@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Definitions.Def_ChapterA4
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ChapterGaugeMechanicsCharge
 

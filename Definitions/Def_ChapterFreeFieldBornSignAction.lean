@@ -1,5 +1,5 @@
 import Definitions.Def_ChapterFreeFieldBornSignGauge
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBorn
 import Mathlib
 
 
@@ -50,6 +50,8 @@ Everything is intended to be `sorry`-free and axiom-clean.
 -/
 
 open MeasureTheory
+open BookProof.ChapterFreeFieldBorn
+open BookProof.ChapterFreeFieldBornSignGauge
 
 namespace BookProof.ChapterFreeFieldBornSignAction
 

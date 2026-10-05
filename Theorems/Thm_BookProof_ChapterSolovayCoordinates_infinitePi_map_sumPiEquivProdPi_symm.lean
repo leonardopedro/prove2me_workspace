@@ -1,7 +1,6 @@
 -- Generated from ChapterSolovayCoordinates.lean — theorem BookProof.ChapterSolovayCoordinates.infinitePi_map_sumPiEquivProdPi_symm
 import Mathlib
 import Definitions.Def_ChapterSolovayCoordinates
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSolovayCoordinates
 
 

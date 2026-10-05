@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxDivergence.lean — theorem BookProof.ChapterSoftmaxDivergence.klDiv_scoreSoftmax
+import Definitions.Def_ChapterAttentionEntropy
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxDivergence
 

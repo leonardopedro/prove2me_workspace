@@ -1,9 +1,9 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — theorem BookProof.ChapterWignerSymmetryInfinite.phase_self
 import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
 import Definitions.Def_ChapterNsLagrangianDetConvolution
-import Definitions.Def_ChapterA4
 open BookProof.NsLagrangianDet
 open BookProof.ChapterWignerSymmetryInfinite
 
@@ -15,6 +15,7 @@ variable {b : HilbertBasis ι ℂ E} {o : ι}
 open scoped InnerProductSpace ComplexConjugate
 
 
+open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterWignerSymmetryInfinite.phase_self : phase b T o o = 1 := by sorry

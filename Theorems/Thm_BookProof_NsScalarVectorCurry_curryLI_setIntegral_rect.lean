@@ -1,7 +1,6 @@
 -- Generated from ChapterNsScalarVectorCurry.lean — theorem BookProof.NsScalarVectorCurry.curryLI_setIntegral_rect
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
-import Definitions.Def_ChapterA4
 open BookProof.NsScalarVectorCurry
 
 variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]

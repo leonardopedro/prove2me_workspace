@@ -5,7 +5,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesEsa
-import Definitions.Def_ChapterA4
 open BookProof.KernelBound
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency

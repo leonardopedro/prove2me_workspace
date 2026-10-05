@@ -8,7 +8,6 @@ import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
 import Mathlib
 
 

@@ -1,8 +1,8 @@
 -- Generated from ChapterSchurRepresentation.lean — theorem BookProof.ChapterSchurRepresentation.schur_imprimitivity
+import Definitions.Def_ChapterSchurIrreducible
 import Mathlib
 import Definitions.Def_ChapterSchurRepresentation
 import Definitions.Def_ChapterA
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ChapterSchurRepresentation

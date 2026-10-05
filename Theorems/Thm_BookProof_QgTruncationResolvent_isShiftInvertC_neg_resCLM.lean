@@ -4,6 +4,8 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -12,7 +14,6 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.HashimotoShiftInvert
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterStoneMeasurable

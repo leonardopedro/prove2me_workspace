@@ -1,9 +1,9 @@
 -- Generated from ChapterMackeyCocycle.lean — theorem BookProof.ChapterMackeyCocycle.vmap_indSet_eq_tmap
+import Definitions.Def_ChapterPvmCyclicUnitary
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterMackeyQuasiInvariant
-import Definitions.Def_ChapterA4
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle

@@ -3,7 +3,6 @@ import Definitions.Def_ChapterSoftmaxBorn
 import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionEntropy
 

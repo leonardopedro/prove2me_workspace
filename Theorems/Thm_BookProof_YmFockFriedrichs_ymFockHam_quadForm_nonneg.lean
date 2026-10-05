@@ -6,12 +6,12 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterYangMillsFockFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.YmFockFriedrichs
 

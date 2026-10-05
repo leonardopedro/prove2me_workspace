@@ -1,10 +1,10 @@
 -- Generated from ChapterTensorKatoRellich.lean — theorem BookProof.TensorKatoRellich.pairLiftDom_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorSumEsa
 import Mathlib
 import Definitions.Def_ChapterTensorKatoRellich
 import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterA4
 open BookProof.TensorCore
 open BookProof.TensorKatoRellich
 

@@ -1,7 +1,11 @@
 -- Generated from ChapterFreeFieldBornSignOrientationSubgroup.lean — theorem BookProof.ChapterFreeFieldBornSignOrientationSubgroup.mem_orientationPreservingSigns_iff_even
+import Definitions.Def_ChapterFreeFieldBornSignHom
+import Definitions.Def_ChapterFreeFieldBornSignMatrix
+import Definitions.Def_ChapterFreeFieldBornSignOrientation
+import Definitions.Def_ChapterFreeFieldBornSignOrientationKernel
+import Definitions.Def_ChapterFreeFieldBornSignOrientationCard
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
-import Definitions.Def_ChapterA4
 open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
 variable {n : ℕ}
@@ -9,6 +13,9 @@ variable {n : ℕ}
 
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
+open BookProof.ChapterFreeFieldBornSignOrientation
+open BookProof.ChapterFreeFieldBornSignOrientationKernel
+open BookProof.ChapterFreeFieldBornSignOrientationCard
 
 
 

@@ -1,11 +1,12 @@
 -- Generated from ChapterCayleySpectralModel.lean — theorem BookProof.ChapterCayleySpectralModel.res_neg_one_eq_cayley
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
 import Definitions.Def_ChapterCayleySpectralModel
 import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.ChapterCayleyTransform
 open BookProof.ChapterCayleySpectralModel
 

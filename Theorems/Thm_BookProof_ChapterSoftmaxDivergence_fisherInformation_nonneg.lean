@@ -1,8 +1,8 @@
 -- Generated from ChapterSoftmaxDivergence.lean — theorem BookProof.ChapterSoftmaxDivergence.fisherInformation_nonneg
+import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSoftmaxDivergence
 
 variable {m : ℕ}

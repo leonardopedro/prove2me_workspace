@@ -2,10 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
+open BookProof.QgVielbeinModeInstance
 
 
 
 
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

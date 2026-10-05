@@ -3,7 +3,7 @@ import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
@@ -44,8 +44,10 @@ Nothing is assumed: the module contains no `axiom` and no `sorry`.
 namespace BookProof.NsReducedCoreEsa
 
 open MvPolynomial
+open BookProof.NsFullEuler
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
+open BookProof.YangMillsNonAbelianEsa
 
 noncomputable section
 

@@ -1,5 +1,7 @@
+import Theorems.Thm_BookProof_ChapterFreeFieldBornSignOrientationSubgroup_mem_orientationPreservingSigns_iff_even
+
 import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFreeFieldBornSignHom
 import Mathlib
 
 
@@ -13,6 +15,8 @@ in positive dimension the first isomorphism theorem identifies the quotient
 with `Bool`.
 -/
 
+open BookProof.ChapterFreeFieldBornSignHom
+open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
 namespace BookProof.ChapterFreeFieldBornSignOrientationQuotient
 

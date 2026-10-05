@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
+open BookProof.ScalaronFiberFL
 
 
 

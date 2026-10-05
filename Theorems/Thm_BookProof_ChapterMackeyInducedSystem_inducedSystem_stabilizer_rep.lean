@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
 import Definitions.Def_ChapterMackeyImprimitivity
-import Definitions.Def_ChapterA4
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity.ImprimitivitySystem
 open BookProof.ChapterMackeyInducedSystem

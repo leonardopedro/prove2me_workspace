@@ -12,7 +12,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterQgOuterFockFarisLavine
-import Definitions.Def_ChapterA4
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.GraphCore

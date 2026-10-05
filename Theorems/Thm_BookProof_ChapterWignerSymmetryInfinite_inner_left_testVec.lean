@@ -1,8 +1,8 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — theorem BookProof.ChapterWignerSymmetryInfinite.inner_left_testVec
 import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
-import Definitions.Def_ChapterA4
 open BookProof.ChapterWignerSymmetryInfinite
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
@@ -13,6 +13,7 @@ variable {b : HilbertBasis ι ℂ E} {o : ι}
 open scoped InnerProductSpace ComplexConjugate
 
 
+open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
 
 theorem BookProof.ChapterWignerSymmetryInfinite.inner_left_testVec (i : ι) (z : ℂ) (x : E) :

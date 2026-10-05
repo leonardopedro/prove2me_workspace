@@ -1,7 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.flux_identity
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
-import Definitions.Def_ChapterA4
 open BookProof.CarlemanUnboundedHop
 
 

@@ -3,9 +3,13 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgContinuumModeInstance
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
 
@@ -66,6 +70,7 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
+open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 

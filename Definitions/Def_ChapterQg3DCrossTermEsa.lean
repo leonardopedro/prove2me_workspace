@@ -11,7 +11,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQuantumGravity3DGauge
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterYangMillsHermite
@@ -83,6 +83,8 @@ open BookProof.FullQuadratic
 open BookProof.QuantumGravity3DGauge
 open BookProof.Qg3DGaugeEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
+open BookProof.YangMillsNonAbelianEsa BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
 

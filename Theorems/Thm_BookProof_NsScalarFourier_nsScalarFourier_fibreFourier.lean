@@ -1,8 +1,8 @@
 -- Generated from ChapterNsScalarFourier.lean — theorem BookProof.NsScalarFourier.nsScalarFourier_fibreFourier
+import Definitions.Def_ChapterNsScalarVectorCurry
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
 import Definitions.Def_ChapterNsPartialFourier
-import Definitions.Def_ChapterA4
 open BookProof.NsPartialFourier
 open BookProof.NsScalarFourier
 

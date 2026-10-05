@@ -10,7 +10,6 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.FarisLavine
 open BookProof.StoneBridge

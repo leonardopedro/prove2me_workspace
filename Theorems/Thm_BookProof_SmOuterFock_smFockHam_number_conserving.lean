@@ -12,7 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterSmOuterFock
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.SmOuterFock

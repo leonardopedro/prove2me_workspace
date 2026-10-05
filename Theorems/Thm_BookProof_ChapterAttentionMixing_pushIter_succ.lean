@@ -1,8 +1,8 @@
 -- Generated from ChapterAttentionMixing.lean — theorem BookProof.ChapterAttentionMixing.pushIter_succ
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMixing
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAttentionMixing
 
 variable {m : ℕ}
@@ -15,6 +15,7 @@ open Filter Topology
 noncomputable section
 
 
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 
 
 theorem BookProof.ChapterAttentionMixing.pushIter_succ (P : Fin m → Fin m → ℝ) (n : ℕ) (p : Fin m → ℝ) :

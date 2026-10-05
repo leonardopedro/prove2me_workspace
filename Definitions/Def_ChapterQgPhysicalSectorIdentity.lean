@@ -1,11 +1,12 @@
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterBrstReducedTransfer
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterFockQuadraticEsa
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
 import Mathlib
 
 
@@ -69,6 +70,8 @@ Everything in this module is `sorry`-free and `axiom`-free.
 namespace BookProof.QgPhysicalSectorIdentity
 
 open BookProof.GaugeFixing
+open BookProof.FockQuadratic
+open BookProof.OperatorSeries
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato

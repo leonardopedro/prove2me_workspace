@@ -1,0 +1,28 @@
+-- Generated from ChapterPolarPartialIsometry.lean — solution of BookProof.PolarPartialIsometry.polarIsom_apply_of_mem
+import Mathlib
+import Definitions.Def_ChapterPolarPartialIsometry
+import Theorems.Thm_BookProof_PolarPartialIsometry_polarIsom_apply
+open BookProof.PolarPartialIsometry
+
+
+
+
+open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {Dom : Submodule ℂ F}
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {Dom : Submodule ℂ F}
+variable (P Q : Dom →ₗ[ℂ] F)
+  (h : ∀ x y : Dom, (inner ℂ (P x) (P y) : ℂ) = inner ℂ (Q x) (Q y))
+variable [CompleteSpace F]
+
+set_option maxHeartbeats 1000000 in
+theorem solution {z : F} (hz : z ∈ initSpace P) :
+    polarIsom P Q h z = (preIsomL P Q h).extend (inclL P) ⟨z, hz⟩ := by
+
+  rw [polarIsom_apply]
+  congr 1
+  exact Submodule.orthogonalProjection_mem_subspace_eq_self ⟨z, hz⟩

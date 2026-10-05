@@ -7,8 +7,10 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgContinuumModeInstance
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Mathlib
 
 

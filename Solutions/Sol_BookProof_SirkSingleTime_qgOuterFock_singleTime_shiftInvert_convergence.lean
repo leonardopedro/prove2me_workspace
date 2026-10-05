@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_ne_zero
 import Theorems.Thm_BookProof_SirkSingleTime_isShiftInvertC_neg_resCLM_shift
 import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_convergence
+open BookProof.SirkSingleTime
 
 
 

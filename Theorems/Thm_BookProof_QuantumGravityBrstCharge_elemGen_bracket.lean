@@ -4,7 +4,6 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.YangMillsHermite
 open BookProof.QuantumGravityBrstCharge
 

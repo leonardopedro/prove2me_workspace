@@ -1,7 +1,10 @@
 -- Generated from ChapterSpectralDirectSum.lean — theorem BookProof.ChapterSpectralDirectSum.inner_eq_zero_of_le_orthogonal
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterCyclicDirectSum
 import Mathlib
 import Definitions.Def_ChapterSpectralDirectSum
-import Definitions.Def_ChapterA4
 open BookProof.ChapterSpectralDirectSum
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

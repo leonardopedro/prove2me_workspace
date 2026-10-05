@@ -7,7 +7,6 @@ import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterA4
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsFriedrichs

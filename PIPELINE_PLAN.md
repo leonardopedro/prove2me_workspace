@@ -5725,3 +5725,39 @@ more declarations than the local file, so a clash invisible locally is a guarant
 The platform holds **2,042 published problems** and ~997 definition jobs; `--sync` reconciles
 against those, so the local `pending` counts are the genuinely-new work. There are **0 exact
 duplicate Lean names** across all 9,533 nodes, so chapters sharing a namespace is safe.
+
+## 10. Fourth wave — the same declaration was emitted into BOTH layers
+
+19. **`classify` could place one declaration in a chapter's Def bundle *and* emit a theorem
+    stub for it.** The stub imports its own chapter's bundle, so the name is already declared
+    and the platform refuses it:
+
+    ```
+    formal statement does not compile: line 16:
+    `BookProof.ChapterH1.phi_zero_apply` has already been declared
+    ```
+
+    **185 stubs were in that state** — every one a guaranteed rejection, each also burning one
+    of 5 attempts per pass. This was the largest single source of `thm` failures after the
+    shared-namespace discovery, and it was invisible locally: `Def_ChapterComplexShiftCore`
+    *uses* `closed_of_selfAdjointCriterion` at line 440 and never declares it, so a
+    name-frequency check says "fine" while the platform says otherwise. Only an
+    exactly-qualified, namespace-aware **declaration** scan finds it.
+
+    Fix in `wave_generate.py`: skip a node whose declaration is in `defmat | embedded`.
+    `debug/prune_def_owned_nodes.py` (new) removes the 185 already emitted, taking the plan
+    from 9,533 to **9,448** nodes. The `thm`/`sol` done counts *fell* by ~64 as a result —
+    correct, not a regression: those nodes were marked done against a platform that had never
+    accepted them.
+
+### Why three separate "clash" detectors were needed
+
+They catch different things and none subsumes the others:
+
+| detector | catches | count |
+| :--- | :--- | ---: |
+| `park_name_clashes.py` | name provided by a **Def bundle** (local **or** already published) | 203 |
+| `prune_def_owned_nodes.py` | name provided by the stub's **own** chapter bundle | 185 |
+| shared-namespace audit | chapters declaring into one `BookProof.*` namespace | 95 chapters / 18 namespaces |
+
+All three need namespace-aware matching; a plain substring or frequency check misses every case.

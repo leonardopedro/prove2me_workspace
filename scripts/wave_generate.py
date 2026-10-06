@@ -1974,7 +1974,18 @@ def main():
             print(f"   -> Definitions/Def_{leaf}.lean")
         if defs_only:
             continue
+        # A declaration that `classify` placed in this chapter's Def bundle
+        # (defmat / embedded) must NOT also get a theorem stub. The stub imports
+        # its own chapter's bundle, so the name is already declared and the
+        # server refuses the stub with
+        #   `X.phi_zero_apply` has already been declared
+        # 185 stubs were generated in that state -- every one a guaranteed
+        # rejection that also burned one of 5 attempts per pass.
+        owned = {getattr(d, "uname", None) for d in (defmat | embedded)}
+        owned.discard(None)
         for node in sorted(nodes, key=lambda x: x.s):
+            if node.uname in owned:
+                continue
             slug = node.uname.replace(".", "_")
             with open(f"{OUT_THM}/Thm_{slug}.lean", "w", encoding="utf-8") as f:
                 f.write(build_thm(bt, leaf, decls, node, modns))

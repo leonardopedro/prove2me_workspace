@@ -10145,78 +10145,6 @@
     "yang-mills"
    ]
   },
-  "BookProof_YangMillsHermite_mulOp_apply": {
-   "name": "BookProof.YangMillsHermite.mulOp_apply",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_mulOp_apply.lean",
-   "title": "(f p : MvPolynomial (Fin d) \u2102) : mulOp f p = f * p",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.mulOp_apply` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_C": {
-   "name": "BookProof.YangMillsHermite.starP_C",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_C.lean",
-   "title": "(c : \u2102) : starP (C c : MvPolynomial (Fin d) \u2102) = C ((starRingEnd \u2102) c)",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_C` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_X": {
-   "name": "BookProof.YangMillsHermite.starP_X",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_X.lean",
-   "title": "(j : Fin d) : starP (X j : MvPolynomial (Fin d) \u2102) = X j",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_X` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_add": {
-   "name": "BookProof.YangMillsHermite.starP_add",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_add.lean",
-   "title": "(p q : MvPolynomial (Fin d) \u2102) : starP (p + q) = starP p + starP q",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_add` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_mul": {
-   "name": "BookProof.YangMillsHermite.starP_mul",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_mul.lean",
-   "title": "(p q : MvPolynomial (Fin d) \u2102) : starP (p * q) = starP p * starP q",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_mul` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_neg": {
-   "name": "BookProof.YangMillsHermite.starP_neg",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_neg.lean",
-   "title": "(p : MvPolynomial (Fin d) \u2102) : starP (-p) = -starP p",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_neg` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
   "BookProof_YangMillsHermite_starP_pderiv": {
    "name": "BookProof.YangMillsHermite.starP_pderiv",
    "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_pderiv.lean",
@@ -10229,35 +10157,11 @@
     "yang-mills"
    ]
   },
-  "BookProof_YangMillsHermite_starP_sub": {
-   "name": "BookProof.YangMillsHermite.starP_sub",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_sub.lean",
-   "title": "(p q : MvPolynomial (Fin d) \u2102) : starP (p - q) = starP p - starP q",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_sub` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
   "BookProof_YangMillsHermite_starP_sum": {
    "name": "BookProof.YangMillsHermite.starP_sum",
    "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_sum.lean",
    "title": "{\u03b9 : Type*} (s : Finset \u03b9) (f : \u03b9 \u2192 MvPolynomial (Fin d) \u2102) : starP (\u2211 i \u2208 s, f i) = \u2211 i \u2208 s, starP (f i)",
    "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_sum` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
-   "tags": [
-    "timepiece",
-    "qym",
-    "yang-mills"
-   ]
-  },
-  "BookProof_YangMillsHermite_starP_zero": {
-   "name": "BookProof.YangMillsHermite.starP_zero",
-   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_zero.lean",
-   "title": ": starP (0 : MvPolynomial (Fin d) \u2102) = 0",
-   "nl": "Lean 4 theorem `BookProof.YangMillsHermite.starP_zero` (module `BookProof.YangMillsHermite`), source chapter `BookProof/ChapterYangMillsHermite.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsHermite.lean",
    "tags": [
     "timepiece",
@@ -10589,18 +10493,6 @@
     "spectral-theory"
    ]
   },
-  "BookProof_ChapterSirkEndToEnd_sirkApprox_apply": {
-   "name": "BookProof.ChapterSirkEndToEnd.sirkApprox_apply",
-   "file": "Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirkApprox_apply.lean",
-   "title": "(V : F \u2192L[\u2102] E) (psiB : F \u2192L[\u2102] F) (v : E) : sirkApprox V psiB v = V (psiB (V.adjoint v))",
-   "nl": "Lean 4 theorem `BookProof.ChapterSirkEndToEnd.sirkApprox_apply` (module `BookProof.ChapterSirkEndToEnd`), source chapter `BookProof/ChapterChapterSirkEndToEnd.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkEndToEnd.lean",
-   "tags": [
-    "timepiece",
-    "sirk",
-    "spectral-theory"
-   ]
-  },
   "BookProof_ChapterSirkEndToEnd_sirkApprox_id": {
    "name": "BookProof.ChapterSirkEndToEnd.sirkApprox_id",
    "file": "Theorems/Thm_BookProof_ChapterSirkEndToEnd_sirkApprox_id.lean",
@@ -10762,18 +10654,6 @@
    "file": "Theorems/Thm_BookProof_ChapterSirkWhitening_rangeProj_adjoint.lean",
    "title": "(V : F \u2192L[\u2102] E) : ContinuousLinearMap.adjoint (rangeProj V) = rangeProj V",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.rangeProj_adjoint` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
-   "tags": [
-    "timepiece",
-    "sirk",
-    "spectral-theory"
-   ]
-  },
-  "BookProof_ChapterSirkWhitening_rangeProj_apply": {
-   "name": "BookProof.ChapterSirkWhitening.rangeProj_apply",
-   "file": "Theorems/Thm_BookProof_ChapterSirkWhitening_rangeProj_apply.lean",
-   "title": "(V : F \u2192L[\u2102] E) (u : E) : rangeProj V u = V (V.adjoint u)",
-   "nl": "Lean 4 theorem `BookProof.ChapterSirkWhitening.rangeProj_apply` (module `BookProof.ChapterSirkWhitening`), source chapter `BookProof/ChapterChapterSirkWhitening.lean`.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterChapterSirkWhitening.lean",
    "tags": [
     "timepiece",
@@ -11218,16 +11098,6 @@
    "file": "Theorems/Thm_BookProof_ChapterH1_phi_zero.lean",
    "title": ": phi 0 = Complex.exp",
    "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_zero` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterH1_phi_zero_apply": {
-   "name": "BookProof.ChapterH1.phi_zero_apply",
-   "file": "Theorems/Thm_BookProof_ChapterH1_phi_zero_apply.lean",
-   "title": "(z : \u2102) : phi 0 z = Complex.exp z",
-   "nl": "Lean 4 theorem `BookProof.ChapterH1.phi_zero_apply` (module `BookProof.ChapterH1`), source chapter `BookProof/ChapterChapterH1.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterH1.lean",
    "tags": [
     "timepiece"
@@ -12299,18 +12169,6 @@
     "spectral-theory"
    ]
   },
-  "BookProof_ChapterSirkGramWhitening_synthesis_apply": {
-   "name": "BookProof.ChapterSirkGramWhitening.synthesis_apply",
-   "file": "Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_apply.lean",
-   "title": "{m : \u2115} (w : Fin m \u2192 E) (c : EuclideanSpace \u2102 (Fin m)) : synthesis w c = \u2211 i, c i \u2022 w i",
-   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.synthesis_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
-   "tags": [
-    "timepiece",
-    "sirk",
-    "spectral-theory"
-   ]
-  },
   "BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent": {
    "name": "BookProof.ChapterSirkGramWhitening.synthesis_injective_of_linearIndependent",
    "file": "Theorems/Thm_BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent.lean",
@@ -12340,18 +12198,6 @@
    "file": "Theorems/Thm_BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self.lean",
    "title": "{m : \u2115} (w : Fin m \u2192 E) {T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)} (hT : IsWhitening w T) : (ContinuousLinearMap.adjoint (whitened w T)).comp (whitened w T) = ContinuousLinearMap.id \u2102 (EuclideanSpace \u2102 (Fin m))",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.whitened_adjoint_comp_self` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
-   "tags": [
-    "timepiece",
-    "sirk",
-    "spectral-theory"
-   ]
-  },
-  "BookProof_ChapterSirkGramWhitening_whitened_apply": {
-   "name": "BookProof.ChapterSirkGramWhitening.whitened_apply",
-   "file": "Theorems/Thm_BookProof_ChapterSirkGramWhitening_whitened_apply.lean",
-   "title": "{m : \u2115} (w : Fin m \u2192 E) (T : EuclideanSpace \u2102 (Fin m) \u2192L[\u2102] EuclideanSpace \u2102 (Fin m)) (c : EuclideanSpace \u2102 (Fin m)) : whitened w T c = synthesis w (T c)",
-   "nl": "Lean 4 theorem `BookProof.ChapterSirkGramWhitening.whitened_apply` (module `BookProof.ChapterSirkGramWhitening`), source chapter `BookProof/ChapterChapterSirkGramWhitening.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkGramWhitening.lean",
    "tags": [
     "timepiece",
@@ -12820,18 +12666,6 @@
    "file": "Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_succ.lean",
    "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) (k : \u2115) : multiShiftSeq H z v (k + 1) = H (multiShiftSeq H z v k) - z k \u2022 multiShiftSeq H z v k",
    "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_succ` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
-   "tags": [
-    "timepiece",
-    "sirk",
-    "spectral-theory"
-   ]
-  },
-  "BookProof_ChapterSirkMultiShift_multiShiftSeq_zero": {
-   "name": "BookProof.ChapterSirkMultiShift.multiShiftSeq_zero",
-   "file": "Theorems/Thm_BookProof_ChapterSirkMultiShift_multiShiftSeq_zero.lean",
-   "title": "(H : E \u2192\u2097[K] E) (z : \u2115 \u2192 K) (v : E) : multiShiftSeq H z v 0 = v",
-   "nl": "Lean 4 theorem `BookProof.ChapterSirkMultiShift.multiShiftSeq_zero` (module `BookProof.ChapterSirkMultiShift`), source chapter `BookProof/ChapterChapterSirkMultiShift.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterChapterSirkMultiShift.lean",
    "tags": [
     "timepiece",
@@ -13947,78 +13781,6 @@
     "timepiece"
    ]
   },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_sym",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym.lean",
-   "title": ": S.maj.sym = sym",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_sym` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_shift",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift.lean",
-   "title": ": S.maj.shift = S.shift",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_shift` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_amp",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp.lean",
-   "title": ": S.maj.amp = S.bnd",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_amp` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_K",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K.lean",
-   "title": ": S.maj.K = S.K",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_K` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_step",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step.lean",
-   "title": ": S.maj.step = S.step",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.maj_step` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe.lean",
-   "title": "(x : maxDom sym) (\u03b2 : \u03b9) : ((hopH S x : L2I \u03b9) : \u03b9 \u2192 \u2102) \u03b2 = S.hFun ((x : L2I \u03b9) : \u03b9 \u2192 \u2102) \u03b2",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le": {
    "name": "BookProof.NavierStokesFlow.SignedShift.SignedHop.norm_crossA_le",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le.lean",
@@ -14175,30 +13937,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_SignedShift_listH_nil": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.listH_nil",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_listH_nil.lean",
-   "title": ": listH ([] : List (SignedHop \u03b9 sym)) = 0",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.listH_nil` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_SignedShift_listH_cons": {
-   "name": "BookProof.NavierStokesFlow.SignedShift.listH_cons",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_listH_cons.lean",
-   "title": "(S : SignedHop \u03b9 sym) (L : List (SignedHop \u03b9 sym)) : listH (S :: L) = SignedHop.hopH S + listH L",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.SignedShift.listH_cons` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn": {
    "name": "BookProof.NavierStokesFlow.SignedShift.listH_symmetricOn",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn.lean",
@@ -14319,18 +14057,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe": {
-   "name": "BookProof.NavierStokesFlow.HermiteCanonical.ann_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_coe.lean",
-   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((ann x : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (Real.sqrt (n + 1) : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) (n + 1)",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe": {
    "name": "BookProof.NavierStokesFlow.HermiteCanonical.ann_cre_coe",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_ann_cre_coe.lean",
@@ -14420,18 +14146,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_ann_coe.lean",
    "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((cre (ann x) : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (n : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) n",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_HermiteCanonical_cre_coe": {
-   "name": "BookProof.NavierStokesFlow.HermiteCanonical.cre_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteCanonical_cre_coe.lean",
-   "title": "(x : lpFiniteModes \u2115) (n : \u2115) : (((cre x : lpFiniteModes \u2115) : L2I \u2115) : \u2115 \u2192 \u2102) n = (Real.sqrt n : \u2102) * ((x : L2I \u2115) : \u2115 \u2192 \u2102) (n - 1)",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.HermiteCanonical.cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -14987,16 +14701,6 @@
     "timepiece"
    ]
   },
-  "BookProof_FockSecondQuantization_annA_single": {
-   "name": "BookProof.FockSecondQuantization.annA_single",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_annA_single.lean",
-   "title": "(j : \u2115) (\u03b2 : Conf) (c : \u2102) : annA j (Finsupp.single \u03b2 c) = c \u2022 Finsupp.single (dn j \u03b2) ((Real.sqrt (\u03b2 j) : \u211d) : \u2102)",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.annA_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FockSecondQuantization_ccr_annA_annA": {
    "name": "BookProof.FockSecondQuantization.ccr_annA_annA",
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_ccr_annA_annA.lean",
@@ -15047,16 +14751,6 @@
     "timepiece"
    ]
   },
-  "BookProof_FockSecondQuantization_coe_fockEquiv": {
-   "name": "BookProof.FockSecondQuantization.coe_fockEquiv",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_coe_fockEquiv.lean",
-   "title": "(u : FockAlg) : ((fockEquiv u : lpFiniteModes Conf) : Fock) = toLp u",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.coe_fockEquiv` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FockSecondQuantization_coe_fockEquiv_symm": {
    "name": "BookProof.FockSecondQuantization.coe_fockEquiv_symm",
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm.lean",
@@ -15102,16 +14796,6 @@
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_creA_apply.lean",
    "title": "(j : \u2115) (u : FockAlg) (\u03b1 : Conf) : creA j u \u03b1 = ((Real.sqrt (\u03b1 j) : \u211d) : \u2102) * u (dn j \u03b1)",
    "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.creA_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_creA_single": {
-   "name": "BookProof.FockSecondQuantization.creA_single",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_creA_single.lean",
-   "title": "(j : \u2115) (\u03b2 : Conf) (c : \u2102) : creA j (Finsupp.single \u03b2 c) = c \u2022 Finsupp.single (up j \u03b2) ((Real.sqrt ((\u03b2 j : \u211d) + 1) : \u211d) : \u2102)",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.creA_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
    "tags": [
     "timepiece"
@@ -15217,51 +14901,11 @@
     "timepiece"
    ]
   },
-  "BookProof_FockSecondQuantization_dGamma_single": {
-   "name": "BookProof.FockSecondQuantization.dGamma_single",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dGamma_single.lean",
-   "title": "(col : \u2115 \u2192 (\u2115 \u2192\u2080 \u2102)) (\u03b2 : Conf) (c : \u2102) : dGamma col (Finsupp.single \u03b2 c) = c \u2022 \u2211 k \u2208 \u03b2.support, creVec (col k) (annA k (Finsupp.single \u03b2 1))",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dGamma_single` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FockSecondQuantization_dn_dn_comm": {
    "name": "BookProof.FockSecondQuantization.dn_dn_comm",
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_dn_comm.lean",
    "title": "(j k : \u2115) (\u03b1 : Conf) : dn k (dn j \u03b1) = dn j (dn k \u03b1)",
    "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_dn_comm` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_dn_of_ne": {
-   "name": "BookProof.FockSecondQuantization.dn_of_ne",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_of_ne.lean",
-   "title": "{i j : \u2115} (\u03b1 : Conf) (h : i \u2260 j) : dn j \u03b1 i = \u03b1 i",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_of_ne` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_dn_self": {
-   "name": "BookProof.FockSecondQuantization.dn_self",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_self.lean",
-   "title": "(j : \u2115) (\u03b1 : Conf) : dn j \u03b1 j = \u03b1 j - 1",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_self` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_dn_up": {
-   "name": "BookProof.FockSecondQuantization.dn_up",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_up.lean",
-   "title": "(j : \u2115) (\u03b1 : Conf) : dn j (up j \u03b1) = \u03b1",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.dn_up` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
    "tags": [
     "timepiece"
@@ -15517,16 +15161,6 @@
     "timepiece"
    ]
   },
-  "BookProof_FockSecondQuantization_toLp_apply": {
-   "name": "BookProof.FockSecondQuantization.toLp_apply",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_toLp_apply.lean",
-   "title": "(u : FockAlg) (\u03b1 : Conf) : ((toLp u : Fock) : Conf \u2192 \u2102) \u03b1 = u \u03b1",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.toLp_apply` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_FockSecondQuantization_toLp_zero": {
    "name": "BookProof.FockSecondQuantization.toLp_zero",
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_toLp_zero.lean",
@@ -15562,26 +15196,6 @@
    "file": "Theorems/Thm_BookProof_FockSecondQuantization_up_injective.lean",
    "title": "(j : \u2115) : Function.Injective (up j)",
    "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_injective` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_up_of_ne": {
-   "name": "BookProof.FockSecondQuantization.up_of_ne",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_up_of_ne.lean",
-   "title": "{i j : \u2115} (\u03b1 : Conf) (h : i \u2260 j) : up j \u03b1 i = \u03b1 i",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_of_ne` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_FockSecondQuantization_up_self": {
-   "name": "BookProof.FockSecondQuantization.up_self",
-   "file": "Theorems/Thm_BookProof_FockSecondQuantization_up_self.lean",
-   "title": "(j : \u2115) (\u03b1 : Conf) : up j \u03b1 j = \u03b1 j + 1",
-   "nl": "Lean 4 theorem `BookProof.FockSecondQuantization.up_self` (module `BookProof.FockSecondQuantization`), source chapter `BookProof/ChapterFockSecondQuantization.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterFockSecondQuantization.lean",
    "tags": [
     "timepiece"
@@ -17549,35 +17163,11 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp": {
-   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp.lean",
-   "title": "(i : Fin 3) (x : lpFiniteModes Vel) : crd (numOp i x) = fun \u03b2 => ((\u03b2 i : \u211d) : \u2102) * crd x \u03b2",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.crd_numOp` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq": {
    "name": "BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq.lean",
    "title": "(hnu : 0 < nu) (i : Fin 3) : (1 / 2 : \u2102) \u2022 (lagP nu i).comp (lagP nu i) + ((nu : \u211d) : \u2102) \u2022 (lagQ nu i).comp (lagQ nu i) = ((omega nu : \u211d) : \u2102) \u2022 numOp i + ((omega nu / 2 : \u211d) : \u2102) \u2022 LinearMap.id",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.half_lagPSq_add_nu_lagQSq` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive": {
-   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive.lean",
-   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : (lagCanData nu hnu f).drive = (lagCanData nu hnu f).P",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCanData_drive` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -17626,18 +17216,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_secondOrder_hasZeroDeficiencyOn.lean",
    "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : HasZeroDeficiencyOn (lagCanData nu hnu f).D (secondOrder (lagCanData nu hnu f))",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_hasZeroDeficiencyOn` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow": {
-   "name": "BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow.lean",
-   "title": "(hnu : 0 < nu) (f : Fin 3 \u2192 \u211d) : \u2203 (T : UnboundedSelfAdjoint (L2I Vel)) (U : \u211d \u2192 (L2I Vel \u2192L[\u2102] L2I Vel)), IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op \u2227 IsStoneFlow T U",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_stone_flow` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -18693,18 +18271,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_FockCanonical_ann_coe": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.ann_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_ann_coe.lean",
-   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((ann i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (Real.sqrt ((\u03b1 i : \u211d) + 1) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (up i \u03b1)",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.ann_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe": {
    "name": "BookProof.NavierStokesFlow.FockCanonical.ann_cre_coe",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_ann_cre_coe.lean",
@@ -18789,18 +18355,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_FockCanonical_cre_coe": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.cre_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_coe.lean",
-   "title": "(i : Fin d) (x : lpFiniteModes (Occ d)) (\u03b1 : Occ d) : (((cre i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d \u2192 \u2102) \u03b1 = (Real.sqrt (\u03b1 i : \u211d) : \u2102) * ((x : L2I (Occ d)) : Occ d \u2192 \u2102) (dn i \u03b1)",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.cre_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt": {
    "name": "BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_lt",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_cre_cre_coe_of_lt.lean",
@@ -18830,42 +18384,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_dn_self.lean",
    "title": "(i : Fin d) (\u03b2 : Occ d) : (dn i (dn i \u03b2)) i = \u03b2 i - 2",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_dn_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockCanonical_dn_self": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.dn_self",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self.lean",
-   "title": "(i : Fin d) (\u03b1 : Occ d) : dn i \u03b1 i = \u03b1 i - 1",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockCanonical_dn_up": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.dn_up",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_dn_up.lean",
-   "title": "(i : Fin d) (\u03b1 : Occ d) : dn i (up i \u03b1) = \u03b1",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.dn_up` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core.lean",
-   "title": "(h\u03ba : \u2200 i, 0 \u2264 \u03ba i) : EssentiallySelfAdjointOn (lpFiniteModes (Occ d)) ((lpFiniteModes (Occ d)).subtype.comp (\u2211 i, ((1 : \u2102) / 2) \u2022 ((mom \u03ba i).comp (drift \u03ba i) + (drift \u03ba i).comp (mom \u03ba i))))",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -18981,18 +18499,6 @@
     "operator-algebras"
    ]
   },
-  "BookProof_NavierStokesFlow_FockCanonical_up_self": {
-   "name": "BookProof.NavierStokesFlow.FockCanonical.up_self",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_up_self.lean",
-   "title": "(i : Fin d) (\u03b1 : Occ d) : up i \u03b1 i = \u03b1 i + 1",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockCanonical.up_self` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
   "BookProof_NavierStokesFlow_FockCanonical_up_up": {
    "name": "BookProof.NavierStokesFlow.FockCanonical.up_up",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_up_up.lean",
@@ -19070,18 +18576,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_ccr_same.lean",
    "title": "(m : M) : (annih m).comp (creat m) - (creat m).comp (annih m) = LinearMap.id (R",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.ccr_same` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe": {
-   "name": "BookProof.NavierStokesFlow.FockOfFock.coeffOp_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe.lean",
-   "title": "(T : (\u03b9 \u2192 \u2102) \u2192 \u03b9 \u2192 \u2102) (hsupp) (hadd) (hsmul) (f : lpFiniteModes \u03b9) : (((coeffOp T hsupp hadd hsmul f : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) = T ((f : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102)",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.coeffOp_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -19298,18 +18792,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis.lean",
    "title": "[DecidableEq \u03b9] (i : \u03b9) : \u2016lpBasis (\u03b9",
    "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.norm_lpBasis` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
-   "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
-   "tags": [
-    "timepiece",
-    "navier-stokes",
-    "operator-algebras"
-   ]
-  },
-  "BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe": {
-   "name": "BookProof.NavierStokesFlow.FockOfFock.ofCoeff_coe",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe.lean",
-   "title": "(\u03c6 : \u03b9 \u2192 \u2102) (h : (Function.support \u03c6).Finite) : (((ofCoeff \u03c6 h : lpFiniteModes \u03b9) : lp (fun _ : \u03b9 => \u2102) 2) : \u03b9 \u2192 \u2102) = \u03c6",
-   "nl": "Lean 4 theorem `BookProof.NavierStokesFlow.FockOfFock.ofCoeff_coe` (module `BookProof.NavierStokesFlow`), source chapter `BookProof/ChapterNavierStokesFlow.lean`.",
    "source": "https://github.com/leonardopedrio/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFlow.lean",
    "tags": [
     "timepiece",
@@ -19802,17 +19284,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HashimotoShiftInvert_exists_isShiftInvertC": {
-   "name": "BookProof.HashimotoShiftInvert.exists_isShiftInvertC",
-   "chapter": "ChapterHashimotoComplexShifts",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC.lean",
-   "title": "The Lean 4 theorem `exists_isShiftInvertC` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `exists_isShiftInvertC` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HashimotoShiftInvert_hashimoto_multishift_selects_friedrichs": {
    "name": "BookProof.HashimotoShiftInvert.hashimoto_multishift_selects_friedrichs",
    "chapter": "ChapterHashimotoComplexShifts",
@@ -19830,39 +19301,6 @@
    "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_hashimoto_multishift_unbounded_example.lean",
    "title": "The Lean 4 theorem `hashimoto_multishift_unbounded_example` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `hashimoto_multishift_unbounded_example` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_neg_of_isShiftInvert": {
-   "name": "BookProof.HashimotoShiftInvert.isShiftInvertC_neg_of_isShiftInvert",
-   "chapter": "ChapterHashimotoComplexShifts",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_neg_of_isShiftInvert.lean",
-   "title": "The Lean 4 theorem `isShiftInvertC_neg_of_isShiftInvert` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `isShiftInvertC_neg_of_isShiftInvert` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse": {
-   "name": "BookProof.HashimotoShiftInvert.isShiftInvertC_of_rightInverse",
-   "chapter": "ChapterHashimotoComplexShifts",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse.lean",
-   "title": "The Lean 4 theorem `isShiftInvertC_of_rightInverse` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `isShiftInvertC_of_rightInverse` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_unique": {
-   "name": "BookProof.HashimotoShiftInvert.isShiftInvertC_unique",
-   "chapter": "ChapterHashimotoComplexShifts",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_unique.lean",
-   "title": "The Lean 4 theorem `isShiftInvertC_unique` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `isShiftInvertC_unique` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
    "tags": [
     "timepiece"
@@ -19940,17 +19378,6 @@
    "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftInvertC_comp_one_sub.lean",
    "title": "The Lean 4 theorem `shiftInvertC_comp_one_sub` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `shiftInvertC_comp_one_sub` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_shiftInvertC_determines": {
-   "name": "BookProof.HashimotoShiftInvert.shiftInvertC_determines",
-   "chapter": "ChapterHashimotoComplexShifts",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftInvertC_determines.lean",
-   "title": "The Lean 4 theorem `shiftInvertC_determines` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `shiftInvertC_determines` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoComplexShifts.lean",
    "tags": [
     "timepiece"
@@ -20693,17 +20120,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HermiteRelative_apply_sum_of_diagonal": {
-   "name": "BookProof.HermiteRelative.apply_sum_of_diagonal",
-   "chapter": "ChapterHermiteRelativeBound",
-   "file": "Theorems/Thm_BookProof_HermiteRelative_apply_sum_of_diagonal.lean",
-   "title": "The Lean 4 theorem `apply_sum_of_diagonal` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `apply_sum_of_diagonal` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HermiteRelative_coreOp_add": {
    "name": "BookProof.HermiteRelative.coreOp_add",
    "chapter": "ChapterHermiteRelativeBound",
@@ -21012,17 +20428,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HermiteRelative_re_inner_diagonal_le": {
-   "name": "BookProof.HermiteRelative.re_inner_diagonal_le",
-   "chapter": "ChapterHermiteRelativeBound",
-   "file": "Theorems/Thm_BookProof_HermiteRelative_re_inner_diagonal_le.lean",
-   "title": "The Lean 4 theorem `re_inner_diagonal_le` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `re_inner_diagonal_le` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HermiteRelative_re_inner_oscL_eq": {
    "name": "BookProof.HermiteRelative.re_inner_oscL_eq",
    "chapter": "ChapterHermiteRelativeBound",
@@ -21040,17 +20445,6 @@
    "file": "Theorems/Thm_BookProof_HermiteRelative_re_inner_oscL_le_quadOp.lean",
    "title": "The Lean 4 theorem `re_inner_oscL_le_quadOp` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `re_inner_oscL_le_quadOp` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteRelative_re_inner_sum_of_diagonal": {
-   "name": "BookProof.HermiteRelative.re_inner_sum_of_diagonal",
-   "chapter": "ChapterHermiteRelativeBound",
-   "file": "Theorems/Thm_BookProof_HermiteRelative_re_inner_sum_of_diagonal.lean",
-   "title": "The Lean 4 theorem `re_inner_sum_of_diagonal` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `re_inner_sum_of_diagonal` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteRelativeBound.lean",
    "tags": [
     "timepiece"
@@ -25588,17 +24982,6 @@
     "timepiece"
    ]
   },
-  "BookProof_WallEsaSemibounded_wallHam_nonneg_form": {
-   "name": "BookProof.WallEsaSemibounded.wallHam_nonneg_form",
-   "chapter": "ChapterWallEsaSemibounded",
-   "file": "Theorems/Thm_BookProof_WallEsaSemibounded_wallHam_nonneg_form.lean",
-   "title": "The Lean 4 theorem `wallHam_nonneg_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `wallHam_nonneg_form` in the `ChapterWallEsaSemibounded` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterWallEsaSemibounded.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_ChapterH9_compress_compress": {
    "name": "BookProof.ChapterH9.compress_compress",
    "chapter": "ChapterH9",
@@ -26996,17 +26379,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HashimotoShiftInvert_norm_shiftMap_ge": {
-   "name": "BookProof.HashimotoShiftInvert.norm_shiftMap_ge",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_norm_shiftMap_ge.lean",
-   "title": "The Lean 4 theorem `norm_shiftMap_ge` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `norm_shiftMap_ge` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_HashimotoShiftInvert_norm_single_one": {
    "name": "BookProof.HashimotoShiftInvert.norm_single_one",
    "chapter": "ChapterHashimotoShiftInvert",
@@ -27024,17 +26396,6 @@
    "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftInvert_determines.lean",
    "title": "The Lean 4 theorem `shiftInvert_determines` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `shiftInvert_determines` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_shiftMap_injective": {
-   "name": "BookProof.HashimotoShiftInvert.shiftMap_injective",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftMap_injective.lean",
-   "title": "The Lean 4 theorem `shiftMap_injective` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `shiftMap_injective` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
    "tags": [
     "timepiece"
@@ -30010,28 +29371,6 @@
     "timepiece"
    ]
   },
-  "BookProof_QuantumGravity3DGauge_ccr_poly": {
-   "name": "BookProof.QuantumGravity3DGauge.ccr_poly",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_ccr_poly.lean",
-   "title": "The Lean 4 theorem `ccr_poly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `ccr_poly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_commute_mom_mom": {
-   "name": "BookProof.QuantumGravity3DGauge.commute_mom_mom",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_commute_mom_mom.lean",
-   "title": "The Lean 4 theorem `commute_mom_mom` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `commute_mom_mom` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_QuantumGravity3DGauge_commute_mul_mul": {
    "name": "BookProof.QuantumGravity3DGauge.commute_mul_mul",
    "chapter": "ChapterQuantumGravity3DGauge",
@@ -30054,111 +29393,12 @@
     "timepiece"
    ]
   },
-  "BookProof_QuantumGravity3DGauge_derOp_comm": {
-   "name": "BookProof.QuantumGravity3DGauge.derOp_comm",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_derOp_comm.lean",
-   "title": "The Lean 4 theorem `derOp_comm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `derOp_comm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxDE_injective": {
-   "name": "BookProof.QuantumGravity3DGauge.idxDE_injective",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxDE_injective.lean",
-   "title": "The Lean 4 theorem `idxDE_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxDE_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxE_injective": {
-   "name": "BookProof.QuantumGravity3DGauge.idxE_injective",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxE_injective.lean",
-   "title": "The Lean 4 theorem `idxE_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxE_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxE_ne_idxDE": {
-   "name": "BookProof.QuantumGravity3DGauge.idxE_ne_idxDE",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxE_ne_idxDE.lean",
-   "title": "The Lean 4 theorem `idxE_ne_idxDE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxE_ne_idxDE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxX_injective": {
-   "name": "BookProof.QuantumGravity3DGauge.idxX_injective",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxX_injective.lean",
-   "title": "The Lean 4 theorem `idxX_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxX_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxX_ne_idxDE": {
-   "name": "BookProof.QuantumGravity3DGauge.idxX_ne_idxDE",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxX_ne_idxDE.lean",
-   "title": "The Lean 4 theorem `idxX_ne_idxDE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxX_ne_idxDE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_idxX_ne_idxE": {
-   "name": "BookProof.QuantumGravity3DGauge.idxX_ne_idxE",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxX_ne_idxE.lean",
-   "title": "The Lean 4 theorem `idxX_ne_idxE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `idxX_ne_idxE` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_pderiv_comm_poly": {
-   "name": "BookProof.QuantumGravity3DGauge.pderiv_comm_poly",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_pderiv_comm_poly.lean",
-   "title": "The Lean 4 theorem `pderiv_comm_poly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `pderiv_comm_poly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_QuantumGravity3DGauge_qg3DDensity_densitized": {
    "name": "BookProof.QuantumGravity3DGauge.qg3DDensity_densitized",
    "chapter": "ChapterQuantumGravity3DGauge",
    "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_qg3DDensity_densitized.lean",
    "title": "The Lean 4 theorem `qg3DDensity_densitized` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `qg3DDensity_densitized` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_qg3DDensity_singular": {
-   "name": "BookProof.QuantumGravity3DGauge.qg3DDensity_singular",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_qg3DDensity_singular.lean",
-   "title": "The Lean 4 theorem `qg3DDensity_singular` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `qg3DDensity_singular` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
    "tags": [
     "timepiece"
@@ -30351,28 +29591,6 @@
     "timepiece"
    ]
   },
-  "BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym": {
-   "name": "BookProof.QuantumGravity3DGauge.qgWeylProd_coord_mom_polySym",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym.lean",
-   "title": "The Lean 4 theorem `qgWeylProd_coord_mom_polySym` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `qgWeylProd_coord_mom_polySym` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_qgWeylProd_polySym": {
-   "name": "BookProof.QuantumGravity3DGauge.qgWeylProd_polySym",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_qgWeylProd_polySym.lean",
-   "title": "The Lean 4 theorem `qgWeylProd_polySym` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `qgWeylProd_polySym` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_QuantumGravity3DGauge_qgWeylProd_symmetricOn": {
    "name": "BookProof.QuantumGravity3DGauge.qgWeylProd_symmetricOn",
    "chapter": "ChapterQuantumGravity3DGauge",
@@ -30390,72 +29608,6 @@
    "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_realCoeff_torsionPoly.lean",
    "title": "The Lean 4 theorem `realCoeff_torsionPoly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `realCoeff_torsionPoly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_signedOp_apply": {
-   "name": "BookProof.QuantumGravity3DGauge.signedOp_apply",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_apply.lean",
-   "title": "The Lean 4 theorem `signedOp_apply` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `signedOp_apply` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp": {
-   "name": "BookProof.QuantumGravity3DGauge.signedOp_eq_weylOp",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp.lean",
-   "title": "The Lean 4 theorem `signedOp_eq_weylOp` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `signedOp_eq_weylOp` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_signedOp_quadForm": {
-   "name": "BookProof.QuantumGravity3DGauge.signedOp_quadForm",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm.lean",
-   "title": "The Lean 4 theorem `signedOp_quadForm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `signedOp_quadForm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg": {
-   "name": "BookProof.QuantumGravity3DGauge.signedOp_quadForm_nonneg",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg.lean",
-   "title": "The Lean 4 theorem `signedOp_quadForm_nonneg` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `signedOp_quadForm_nonneg` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_signedOp_symmetricOn": {
-   "name": "BookProof.QuantumGravity3DGauge.signedOp_symmetricOn",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_symmetricOn.lean",
-   "title": "The Lean 4 theorem `signedOp_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `signedOp_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_QuantumGravity3DGauge_smul_symmetricOn": {
-   "name": "BookProof.QuantumGravity3DGauge.smul_symmetricOn",
-   "chapter": "ChapterQuantumGravity3DGauge",
-   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_smul_symmetricOn.lean",
-   "title": "The Lean 4 theorem `smul_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `smul_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravity3DGauge.lean",
    "tags": [
     "timepiece"
@@ -30802,17 +29954,6 @@
     "timepiece"
    ]
   },
-  "BookProof_YangMillsFriedrichs_inner_sq_eq_normSq": {
-   "name": "BookProof.YangMillsFriedrichs.inner_sq_eq_normSq",
-   "chapter": "ChapterYangMillsFriedrichs",
-   "file": "Theorems/Thm_BookProof_YangMillsFriedrichs_inner_sq_eq_normSq.lean",
-   "title": "The Lean 4 theorem `inner_sq_eq_normSq` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `inner_sq_eq_normSq` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichs.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm": {
    "name": "BookProof.YangMillsFriedrichs.weylOpDom_quadForm",
    "chapter": "ChapterYangMillsFriedrichs",
@@ -30846,29 +29987,6 @@
     "timepiece"
    ]
   },
-  "BookProof_YangMillsFriedrichs_weylOp_apply": {
-   "name": "BookProof.YangMillsFriedrichs.weylOp_apply",
-   "chapter": "ChapterYangMillsFriedrichs",
-   "file": "Theorems/Thm_BookProof_YangMillsFriedrichs_weylOp_apply.lean",
-   "title": "The Lean 4 theorem `weylOp_apply` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `weylOp_apply` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichs.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterContinuityUnitary_exp_smul_I_unitary": {
-   "name": "BookProof.ChapterContinuityUnitary.exp_smul_I_unitary",
-   "chapter": "ChapterContinuityUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterContinuityUnitary_exp_smul_I_unitary.lean",
-   "title": "exp_smul_I_unitary",
-   "nl": "Formal statement of `BookProof.ChapterContinuityUnitary.exp_smul_I_unitary` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterContinuityUnitary.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterContinuityUnitary.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
   "BookProof_ChapterH8_krylov_li_of_le": {
    "name": "BookProof.ChapterH8.krylov_li_of_le",
    "chapter": "ChapterH8Bases",
@@ -30893,18 +30011,6 @@
     "formalization"
    ]
   },
-  "BookProof_HermiteCore_gint_ibp": {
-   "name": "BookProof.HermiteCore.gint_ibp",
-   "chapter": "ChapterHermiteFunctions",
-   "file": "Theorems/Thm_BookProof_HermiteCore_gint_ibp.lean",
-   "title": "gint_ibp",
-   "nl": "Formal statement of `BookProof.HermiteCore.gint_ibp` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHermiteFunctions.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteFunctions.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
   "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core": {
    "name": "BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core",
    "chapter": "ChapterNavierStokesCanonicalVector",
@@ -30924,18 +30030,6 @@
    "title": "canH_not_bounded",
    "nl": "Formal statement of `BookProof.NavierStokesFlow.CanonicalVector.canH_not_bounded` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesCanonicalVector.lean`).",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesCanonicalVector.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core": {
-   "name": "BookProof.NavierStokesFlow.DifferentialL2.velUnitary_mem_core",
-   "chapter": "ChapterNavierStokesDifferentialL2",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core.lean",
-   "title": "velUnitary_mem_core",
-   "nl": "Formal statement of `BookProof.NavierStokesFlow.DifferentialL2.velUnitary_mem_core` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesDifferentialL2.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesDifferentialL2.lean",
    "tags": [
     "timepiece",
     "formalization"
@@ -31032,30 +30126,6 @@
    "title": "qgModeHamiltonian_essentiallySelfAdjoint",
    "nl": "Formal statement of `BookProof.QuantumGravityDensitized.qgModeHamiltonian_essentiallySelfAdjoint` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQuantumGravityDensitized.lean`).",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQuantumGravityDensitized.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "ell2Basis_apply": {
-   "name": "ell2Basis_apply",
-   "chapter": "?",
-   "file": "Theorems/Thm_ell2Basis_apply.lean",
-   "title": "ell2Basis_apply",
-   "nl": "Formal statement of `ell2Basis_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/?.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/?.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "ell2ShiftInvert_injective": {
-   "name": "ell2ShiftInvert_injective",
-   "chapter": "?",
-   "file": "Theorems/Thm_ell2ShiftInvert_injective.lean",
-   "title": "ell2ShiftInvert_injective",
-   "nl": "Formal statement of `ell2ShiftInvert_injective` from the timepiece Lean 4 formalization (source chapter `BookProof/?.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/?.lean",
    "tags": [
     "timepiece",
     "formalization"
@@ -31181,18 +30251,6 @@
    "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_preim_eq.lean",
    "title": "The Lean 4 theorem `preim_eq` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
    "nl": "Formal statement of `BookProof.HashimotoShiftInvert.preim_eq` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_shiftMap_apply": {
-   "name": "BookProof.HashimotoShiftInvert.shiftMap_apply",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_shiftMap_apply.lean",
-   "title": "The Lean 4 theorem `shiftMap_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.shiftMap_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
    "tags": [
     "timepiece",
@@ -93596,21 +92654,6 @@
     "theorems"
    ]
   },
-  "BookProof_NavierStokesFlow_AffineFiber_affH_domain_dense": {
-   "name": "BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense",
-   "chapter": "ChapterNavierStokesAffineFiberEsa",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_AffineFiber_affH_domain_dense.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_AffineFiber_affH_domain_dense.lean",
-   "ns": "BookProof.NavierStokesFlow.AffineFiber",
-   "plen": 1,
-   "title": "`BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense` : Dense ((lpFiniteModes \u2115 : Submodule \u2102 (L2I \u2115)) : Set (L2I \u2115))",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesAffineFiberEsa`.\n\n`BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense` : Dense ((lpFiniteModes \u2115 : Submodule \u2102 (L2I \u2115)) : Set (L2I \u2115))\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne": {
    "name": "BookProof.NavierStokesFlow.BilinearEsa.embFun_of_ne",
    "chapter": "ChapterNavierStokesBilinearEsa",
@@ -94550,21 +93593,6 @@
    "plen": 6,
    "title": "`BookProof.NavierStokesFlow.DiagonalEsa.diagOp_not_bounded` (c : \u2115 \u2192 \u211d) (hc : \u2200 C : \u211d, \u2203 n, C < |c n|) : \u00ac \u2203 C : \u211d, \u2200 f : lpFiniteModes \u2115, \u2016diagOp c f\u2016 \u2264 C * \u2016f\u2016",
    "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.DiagonalEsa.diagOp_not_bounded` (c : \u2115 \u2192 \u211d) (hc : \u2200 C : \u211d, \u2203 n, C < |c n|) : \u00ac \u2203 C : \u211d, \u2200 f : lpFiniteModes \u2115, \u2016diagOp c f\u2016 \u2264 C * \u2016f\u2016\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.DiagonalEsa.diagOp_not_bounded`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn": {
-   "name": "BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn",
-   "chapter": "ChapterNavierStokesDeficiency",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn.lean",
-   "ns": "BookProof.NavierStokesFlow.DiagonalEsa",
-   "plen": 1,
-   "title": "`BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn` (c : \u2115 \u2192 \u211d) : HasZeroDeficiencyOn (lpFiniteModes \u2115) (diagOp c)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn` (c : \u2115 \u2192 \u211d) : HasZeroDeficiencyOn (lpFiniteModes \u2115) (diagOp c)\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -144718,14 +143746,10 @@
   "BookProof_HashimotoShiftInvert_invShiftOperator_apply",
   "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn",
   "BookProof_HashimotoShiftInvert_preim_eq",
-  "BookProof_HashimotoShiftInvert_shiftMap_apply",
-  "BookProof_ChapterContinuityUnitary_exp_smul_I_unitary",
   "BookProof_ChapterH8_krylov_li_of_le",
   "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion",
-  "BookProof_HermiteCore_gint_ibp",
   "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded",
-  "BookProof_NavierStokesFlow_DifferentialL2_velUnitary_mem_core",
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne_prime",
   "BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
   "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom",
@@ -144735,8 +143759,6 @@
   "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn",
   "BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt",
   "BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint",
-  "ell2Basis_apply",
-  "ell2ShiftInvert_injective",
   "BookProof_ScalaronFiberFL_norm_sub_I_sq",
   "BookProof_ScalaronFiberFL_isGraphCore_of_esa",
   "BookProof_ChapterBaryonAsymmetry_matter_satisfies_continuity",
@@ -144809,7 +143831,6 @@
   "BookProof_ChapterSirkDiffusiveDecay_norm_heatFlow_compress_apply_le",
   "BookProof_ChapterSirkDiffusiveDecay_norm_heatFlow_le",
   "BookProof_ChapterSirkEndToEnd_crouzeix_domain_transfer",
-  "BookProof_ChapterSirkEndToEnd_sirkApprox_apply",
   "BookProof_ChapterSirkEndToEnd_sirkApprox_id",
   "BookProof_ChapterSirkEndToEnd_sirkReconstruction_isIdempotent",
   "BookProof_ChapterSirkEndToEnd_sirkReconstruction_isSelfAdjoint",
@@ -144824,7 +143845,6 @@
   "BookProof_ChapterSirkWhitening_compress_reconstruct_eq",
   "BookProof_ChapterSirkWhitening_embedding_comp_whiteningEquiv",
   "BookProof_ChapterSirkWhitening_rangeProj_adjoint",
-  "BookProof_ChapterSirkWhitening_rangeProj_apply",
   "BookProof_ChapterSirkWhitening_rangeProj_comp_embedding",
   "BookProof_ChapterSirkWhitening_rangeProj_comp_self",
   "BookProof_YangMillsHermite_CoreRep_coe_symm",
@@ -144837,16 +143857,8 @@
   "BookProof_YangMillsHermite_idxA_injective",
   "BookProof_YangMillsHermite_levi_values",
   "BookProof_YangMillsHermite_momOp_apply",
-  "BookProof_YangMillsHermite_mulOp_apply",
-  "BookProof_YangMillsHermite_starP_C",
-  "BookProof_YangMillsHermite_starP_X",
-  "BookProof_YangMillsHermite_starP_add",
-  "BookProof_YangMillsHermite_starP_mul",
-  "BookProof_YangMillsHermite_starP_neg",
   "BookProof_YangMillsHermite_starP_pderiv",
-  "BookProof_YangMillsHermite_starP_sub",
   "BookProof_YangMillsHermite_starP_sum",
-  "BookProof_YangMillsHermite_starP_zero",
   "BookProof_YangMillsHermite_ymHamiltonian_apply",
   "BookProof_ChapterSirkEndToEnd_crouzeix_domain_uniform",
   "BookProof_ChapterSirkEndToEnd_norm_sirkApprox_apply_le",
@@ -144893,16 +143905,8 @@
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_hFun_mul",
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_mul_hFun",
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_hFun_single",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_K",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_amp",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_shift",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_step",
-  "BookProof_NavierStokesFlow_SignedShift_SignedHop_maj_sym",
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossA_le",
   "BookProof_NavierStokesFlow_SignedShift_SignedHop_norm_crossB_le",
-  "BookProof_NavierStokesFlow_SignedShift_listH_cons",
-  "BookProof_NavierStokesFlow_SignedShift_listH_nil",
   "BookProof_RitzMinMax_abs_rayleighVal_le",
   "BookProof_RitzMinMax_exists_le_finrank_eq",
   "BookProof_RitzMinMax_exists_uniform_proj_bound",
@@ -145036,7 +144040,6 @@
   "BookProof_ChapterH1_phi_at_zero",
   "BookProof_ChapterH1_phi_succ_apply",
   "BookProof_ChapterH1_phi_zero",
-  "BookProof_ChapterH1_phi_zero_apply",
   "BookProof_ChapterH1_psi_resolvent",
   "BookProof_ChapterH1_resolvent_eigenvector",
   "BookProof_ChapterH1_resolvent_identity",
@@ -145071,14 +144074,11 @@
   "BookProof_ChapterSirkGramWhitening_range_onbEmbedding",
   "BookProof_ChapterSirkGramWhitening_range_synthesis",
   "BookProof_ChapterSirkGramWhitening_sum_norm_coord_le",
-  "BookProof_ChapterSirkGramWhitening_synthesis_apply",
   "BookProof_ChapterSirkGramWhitening_synthesis_injective_of_linearIndependent",
   "BookProof_ChapterSirkGramWhitening_whitened_adjoint_comp_self",
-  "BookProof_ChapterSirkGramWhitening_whitened_apply",
   "BookProof_ChapterSirkMultiShift_mem_seqSpan",
   "BookProof_ChapterSirkMultiShift_multiShiftSeq_const",
   "BookProof_ChapterSirkMultiShift_multiShiftSeq_succ",
-  "BookProof_ChapterSirkMultiShift_multiShiftSeq_zero",
   "BookProof_ChapterSirkMultiShift_seqSpan_le_krylovSpan",
   "BookProof_ChapterSirkMultiShift_seqSpan_mono",
   "BookProof_ChapterSirkRestart_comp_pow_of_comm",
@@ -145131,26 +144131,18 @@
   "BookProof_FockOneParticleGap_le_of_band",
   "BookProof_FockOneParticleGap_one_particle_edge_ge_of_parity_certificate",
   "BookProof_FockOneParticleGap_qcdG2M4_lower_eq",
-  "BookProof_FockSecondQuantization_annA_single",
   "BookProof_FockSecondQuantization_coe_dGammaOp",
-  "BookProof_FockSecondQuantization_coe_fockEquiv",
   "BookProof_FockSecondQuantization_coe_ymOnePart",
   "BookProof_FockSecondQuantization_col_support_subset_closure",
   "BookProof_FockSecondQuantization_coordFinsupp_apply",
-  "BookProof_FockSecondQuantization_creA_single",
   "BookProof_FockSecondQuantization_creVec_apply",
-  "BookProof_FockSecondQuantization_dn_of_ne",
-  "BookProof_FockSecondQuantization_dn_self",
   "BookProof_FockSecondQuantization_finiteOccupation_dense",
   "BookProof_FockSecondQuantization_inner_toLp_of_subset",
   "BookProof_FockSecondQuantization_modes_left_subset_closure",
   "BookProof_FockSecondQuantization_modes_right_subset_closure",
   "BookProof_FockSecondQuantization_support_subset_modes",
   "BookProof_FockSecondQuantization_toLpL_apply",
-  "BookProof_FockSecondQuantization_toLp_apply",
   "BookProof_FockSecondQuantization_toLp_zero",
-  "BookProof_FockSecondQuantization_up_of_ne",
-  "BookProof_FockSecondQuantization_up_self",
   "BookProof_FriedrichsFormGap_formSpace_norm_bound",
   "BookProof_GaussCoreQuadBounds_coreD_comm",
   "BookProof_GaussCoreQuadBounds_coreD_mul",
@@ -145186,16 +144178,11 @@
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq",
   "BookProof_NavierStokesFlow_FarisLavineLift_sum_nEx_vEx",
   "BookProof_NavierStokesFlow_FarisLavineLift_vEx_apply",
-  "BookProof_NavierStokesFlow_FockCanonical_ann_coe",
   "BookProof_NavierStokesFlow_FockCanonical_anti_DS",
   "BookProof_NavierStokesFlow_FockCanonical_coe_sum_apply",
-  "BookProof_NavierStokesFlow_FockCanonical_cre_coe",
-  "BookProof_NavierStokesFlow_FockCanonical_dn_self",
-  "BookProof_NavierStokesFlow_FockCanonical_dn_up",
   "BookProof_NavierStokesFlow_FockCanonical_sq_diff",
   "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_mul_inv",
   "BookProof_NavierStokesFlow_FockCanonical_sqrt_half_sq",
-  "BookProof_NavierStokesFlow_FockCanonical_up_self",
   "BookProof_NavierStokesFlow_FockCanonical_up_up",
   "BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero",
   "BookProof_NavierStokesFlow_FockManyMode_fockH_apply",
@@ -145207,7 +144194,6 @@
   "BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single",
   "BookProof_NavierStokesFlow_FockOfFock_annih_coe",
   "BookProof_NavierStokesFlow_FockOfFock_ccr_ne",
-  "BookProof_NavierStokesFlow_FockOfFock_coeffOp_coe",
   "BookProof_NavierStokesFlow_FockOfFock_creat_coe",
   "BookProof_NavierStokesFlow_FockOfFock_fockDom_dense",
   "BookProof_NavierStokesFlow_FockOfFock_lpBasis_coe",
@@ -145216,11 +144202,8 @@
   "BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom",
   "BookProof_NavierStokesFlow_FockOfFock_lpFiniteModes_ne_top",
   "BookProof_NavierStokesFlow_FockOfFock_norm_lpBasis",
-  "BookProof_NavierStokesFlow_FockOfFock_ofCoeff_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_amp_eq_sqrt_mul",
-  "BookProof_NavierStokesFlow_HermiteCanonical_ann_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_anti_DS",
-  "BookProof_NavierStokesFlow_HermiteCanonical_cre_coe",
   "BookProof_NavierStokesFlow_HermiteCanonical_drift_eq",
   "BookProof_NavierStokesFlow_HermiteCanonical_sq_diff",
   "BookProof_NavierStokesFlow_HermiteCanonical_sqrt_half_mul_inv",
@@ -145229,8 +144212,6 @@
   "BookProof_NavierStokesFlow_LagrangianCanonical_comm_lagP_lagQ_of_ne",
   "BookProof_NavierStokesFlow_LagrangianCanonical_coreState_total",
   "BookProof_NavierStokesFlow_LagrangianCanonical_crd_coreState",
-  "BookProof_NavierStokesFlow_LagrangianCanonical_crd_numOp",
-  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCanData_drive",
   "BookProof_NavierStokesFlow_LagrangianCanonical_norm_coreState",
   "BookProof_NavierStokesFlow_LagrangianCanonical_omega_pos",
   "BookProof_NavierStokesFlow_LagrangianCanonical_omega_sq",
@@ -145337,14 +144318,12 @@
   "BookProof_FockOneParticleGap_norm_toLp_sq",
   "BookProof_FockOneParticleGap_dGamma_diagCol_single",
   "BookProof_FockOneParticleGap_sInf_nonvacuumEnergies",
-  "BookProof_FockSecondQuantization_dGamma_single",
   "BookProof_FockSecondQuantization_coe_fockEquiv_symm",
   "BookProof_FockSecondQuantization_opCol_apply",
   "BookProof_FockSecondQuantization_dn_dn_comm",
   "BookProof_FockSecondQuantization_support_dn",
   "BookProof_FockSecondQuantization_inner_toLp",
   "BookProof_FockSecondQuantization_support_up",
-  "BookProof_FockSecondQuantization_dn_up",
   "BookProof_FockSecondQuantization_up_dn",
   "BookProof_FockSecondQuantization_up_dn_comm",
   "BookProof_FockSecondQuantization_up_up_comm",
@@ -145595,7 +144574,6 @@
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_relative_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_symmetricOn",
   "BookProof_NavierStokesFlow_DiffFarisLavine_quadForm_nsDiffN_embedCore",
-  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa",
   "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_hFull_hasZeroDeficiencyOn",
   "BookProof_QgHermiteCore_integral_scalaronHamiltonian_symm",
@@ -145610,7 +144588,6 @@
   "BookProof_GaussCoreQuadBounds_norm_kinPoly_le_shiftNorm",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffH_commForm_bound",
   "BookProof_NavierStokesFlow_DiffFarisLavine_nsDiffN_quadForm_ge_norm_sq",
-  "BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_stone_flow",
   "BookProof_ChapterSirkRitzSpectrum_galerkin_ritz_tendsto_sInf_spectrum_of_selected",
   "BookProof_FockSecondQuantization_inner_dGamma_left",
   "BookProof_FockSecondQuantization_inner_dGamma_right",
@@ -145646,8 +144623,6 @@
   "BookProof_HashimotoShiftInvert_diagCLMC_apply",
   "BookProof_HashimotoShiftInvert_diagLinC_apply",
   "BookProof_HashimotoShiftInvert_ell2Example_symmetricOn",
-  "BookProof_HashimotoShiftInvert_exists_isShiftInvertC",
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse",
   "BookProof_HashimotoShiftInvert_rkSpan_mono",
   "BookProof_HashimotoShiftInvert_rkVec_succ",
   "BookProof_HashimotoShiftInvert_rkVec_zero",
@@ -145688,7 +144663,6 @@
   "BookProof_HermiteProductBasis_pderiv_aeval_self",
   "BookProof_HermiteProductBasis_pgMap_apply",
   "BookProof_HermiteProductCore_pgFun_zero",
-  "BookProof_HermiteRelative_apply_sum_of_diagonal",
   "BookProof_HermiteRelative_coreOp_add",
   "BookProof_HermiteRelative_coreOp_apply_prime",
   "BookProof_HermiteRelative_coreOp_comp",
@@ -145840,8 +144814,6 @@
   "BookProof_HashimotoShiftInvert_IsShiftInvertC_injective",
   "BookProof_HashimotoShiftInvert_IsShiftInvertC_inner_adjoint",
   "BookProof_HashimotoShiftInvert_IsShiftInvertC_norm_apply_le",
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_neg_of_isShiftInvert",
-  "BookProof_HashimotoShiftInvert_isShiftInvertC_unique",
   "BookProof_HashimotoShiftInvert_shiftInvertC_resolvent_identity",
   "BookProof_HashimotoShiftInvert_rkProj_tendsto",
   "BookProof_HashimotoShiftInvert_ell2ShiftInvert_resolventPre",
@@ -145855,7 +144827,6 @@
   "BookProof_HermiteProductBasis_hermiteMvNorm_add_single",
   "BookProof_HermiteProductBasis_pderiv_hermiteFactor_other",
   "BookProof_HermiteProductBasis_pderiv_hermiteFactor_self",
-  "BookProof_HermiteRelative_re_inner_sum_of_diagonal",
   "BookProof_HermiteRelative_coreOp_sum",
   "BookProof_HermiteRelative_oscOp_eq",
   "BookProof_HermiteRelative_polySym_zero",
@@ -145909,7 +144880,6 @@
   "BookProof_FarisLavine_mulHamiltonian_essentiallySelfAdjoint",
   "BookProof_FarisLavine_norm_sub_smul_sq",
   "BookProof_FarisLavine_quadForm_im",
-  "BookProof_HashimotoShiftInvert_shiftInvertC_determines",
   "BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le",
   "BookProof_HashimotoShiftInvert_shiftInvertC_commute",
   "BookProof_HashimotoShiftInvert_shiftInvertC_comp_one_sub",
@@ -145922,7 +144892,6 @@
   "BookProof_HermiteGalerkin_norm_resolvent_apply_le",
   "BookProof_HermiteProductBasis_hermiteMvNorm_sub_single",
   "BookProof_HermiteProductBasis_pderiv_hermiteMv",
-  "BookProof_HermiteRelative_re_inner_diagonal_le",
   "BookProof_HermiteRelative_foOp_apply",
   "BookProof_HermiteRelative_polySym_sum",
   "BookProof_HermiteRelative_momL_symmetric",
@@ -146191,7 +145160,6 @@
   "BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint",
   "BookProof_StrichartzWave_wave_symmetric",
   "BookProof_StrichartzWave_constCoeffOp_deficiencyTrivial",
-  "BookProof_WallEsaSemibounded_wallHam_nonneg_form",
   "BookProof_ScalaronWallEsa_starobinskyWall_esa",
   "BookProof_StrichartzWave_constCoeffOp_essentiallySelfAdjoint",
   "BookProof_ScalaronWallEsa_starobinskyWall_stone_flow",
@@ -146291,7 +145259,6 @@
   "BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply",
   "BookProof_HashimotoShiftInvert_diagCLM_norm_apply_le",
   "BookProof_HashimotoShiftInvert_diagCLM_symmetric",
-  "BookProof_HashimotoShiftInvert_norm_shiftMap_ge",
   "BookProof_HashimotoShiftInvert_norm_single_one",
   "BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one",
   "BookProof_HermiteProductBasis_hermiteMvLp_mem_core",
@@ -146363,7 +145330,6 @@
   "BookProof_HashimotoShiftInvert_isShiftInvert_unique",
   "BookProof_HashimotoShiftInvert_diagCLM_isSelfAdjoint",
   "BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le",
-  "BookProof_HashimotoShiftInvert_shiftMap_injective",
   "BookProof_HashimotoShiftInvert_shiftRange_isClosed",
   "BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded",
   "BookProof_HashimotoShiftInvert_invShiftOperator_selfAdjointCriterion",
@@ -146531,27 +145497,15 @@
   "BookProof_QgOuterFock_sum_single_block",
   "BookProof_QgOuterFock_triple_swap_prime",
   "BookProof_QgOuterFock_weylProd_self_prime",
-  "BookProof_QuantumGravity3DGauge_ccr_poly",
   "BookProof_QuantumGravity3DGauge_commute_mul_mul",
   "BookProof_QuantumGravity3DGauge_coreRep_commutator",
-  "BookProof_QuantumGravity3DGauge_idxDE_injective",
-  "BookProof_QuantumGravity3DGauge_idxE_injective",
-  "BookProof_QuantumGravity3DGauge_idxE_ne_idxDE",
-  "BookProof_QuantumGravity3DGauge_idxX_injective",
-  "BookProof_QuantumGravity3DGauge_idxX_ne_idxDE",
-  "BookProof_QuantumGravity3DGauge_idxX_ne_idxE",
-  "BookProof_QuantumGravity3DGauge_pderiv_comm_poly",
   "BookProof_QuantumGravity3DGauge_qg3DDensity_densitized",
-  "BookProof_QuantumGravity3DGauge_qg3DDensity_singular",
   "BookProof_QuantumGravity3DGauge_qgCoord_symmetricOn",
   "BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg",
   "BookProof_QuantumGravity3DGauge_qgKappa_conformal_neg",
   "BookProof_QuantumGravity3DGauge_qgKappa_spatial_pos",
   "BookProof_QuantumGravity3DGauge_qgMom_symmetricOn",
-  "BookProof_QuantumGravity3DGauge_qgWeylProd_polySym",
   "BookProof_QuantumGravity3DGauge_realCoeff_torsionPoly",
-  "BookProof_QuantumGravity3DGauge_signedOp_apply",
-  "BookProof_QuantumGravity3DGauge_smul_symmetricOn",
   "BookProof_QuantumGravity3DGauge_torsionPoly_antisymm",
   "BookProof_SchrodingerCutoff_Vexp_continuous",
   "BookProof_SchrodingerCutoff_chi_contDiff",
@@ -146564,8 +145518,6 @@
   "BookProof_SchrodingerCutoff_integral_deriv_eq_zero_of_hasCompactSupport",
   "BookProof_SchrodingerCutoff_schrodingerOp_apply",
   "BookProof_SchrodingerCutoff_two_le_Vexp",
-  "BookProof_YangMillsFriedrichs_inner_sq_eq_normSq",
-  "BookProof_YangMillsFriedrichs_weylOp_apply",
   "BookProof_ChapterH6_krylovRetainsDominantSpectrum",
   "BookProof_ChapterH8_sirk_band_contained",
   "BookProof_ChapterH8_sirk_band_contained_le",
@@ -146591,20 +145543,15 @@
   "BookProof_QgOuterFock_linForm_qgTorsionVecN",
   "BookProof_QgOuterFock_gramQ_quadratic_eq",
   "BookProof_QuantumGravity3DGauge_qgCCR",
-  "BookProof_QuantumGravity3DGauge_derOp_comm",
   "BookProof_QuantumGravity3DGauge_qgKappa_indefinite",
-  "BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym",
   "BookProof_QuantumGravity3DGauge_torsionOps_symmetricOn",
   "BookProof_QuantumGravity3DGauge_qg3D_apply",
-  "BookProof_QuantumGravity3DGauge_signedOp_symmetricOn",
   "BookProof_QuantumGravity3DGauge_qgMomScaled_symmetricOn",
   "BookProof_SchrodingerCutoff_chi_continuous",
   "BookProof_SchrodingerCutoff_chi_differentiable",
   "BookProof_SchrodingerCutoff_deriv_chi_continuous",
   "BookProof_SchrodingerCutoff_deriv_chi_eq_zero",
   "BookProof_SchrodingerCutoff_integral_conj_secondDeriv_comm",
-  "BookProof_QuantumGravity3DGauge_signedOp_quadForm",
-  "BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp",
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm",
   "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn",
   "BookProof_ChapterH8_sirk_nested_orders",
@@ -146625,7 +145572,6 @@
   "BookProof_QgOuterFock_qgSectorPoly_eq_sum_particles",
   "BookProof_QgOuterFock_sqSumPoly_eq_fqPoly",
   "BookProof_QuantumGravity3DGauge_qgCCR_tetrad",
-  "BookProof_QuantumGravity3DGauge_commute_mom_mom",
   "BookProof_QuantumGravity3DGauge_qgWeylProd_symmetricOn",
   "BookProof_QuantumGravity3DGauge_qg3DElliptic_symmetricOn",
   "BookProof_QuantumGravity3DGauge_qg3D_symmetricOn",
@@ -146633,7 +145579,6 @@
   "BookProof_SchrodingerCutoff_exists_scaled_cutoff",
   "BookProof_SchrodingerCutoff_schrodingerOp_symmetric",
   "BookProof_QuantumGravity3DGauge_qg3D_quadForm",
-  "BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg",
   "BookProof_QuantumGravity3DGauge_qg3DElliptic_eq_weylOp",
   "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg",
   "BookProof_ChapterH8_compress_aeval_comp_intertwine",
@@ -150831,7 +149776,6 @@
   "BookProof_NavierStokesFlow_AffineFiber_affH_ne_zero_of_pos_shear",
   "BookProof_NavierStokesFlow_AffineFiber_le_amp",
   "BookProof_NavierStokesFlow_AffineFiber_affH_not_bounded",
-  "BookProof_NavierStokesFlow_AffineFiber_affH_domain_dense",
   "BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne",
   "BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_supported",
   "BookProof_NavierStokesFlow_BilinearEsa_blockVec_bilH_apply",
@@ -150895,7 +149839,6 @@
   "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_basis",
   "BookProof_NavierStokesFlow_DiagonalEsa_basis_total",
   "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded",
-  "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn",
   "BookProof_NavierStokesEulerian_dirDeriv_eq",
   "BookProof_NavierStokesEulerian_dirDeriv_coord",
   "BookProof_NavierStokesEulerian_dirDeriv_dirDeriv",

@@ -1,0 +1,23 @@
+-- Generated from ChapterDeepLearningMAP.lean — solution of BookProof.ChapterDeepLearningMAP.logObjective_le_iff
+import Mathlib
+import Definitions.Def_ChapterDeepLearningMAP
+import Theorems.Thm_BookProof_ChapterDeepLearningMAP_exp_logObjective
+open BookProof.ChapterDeepLearningMAP
+
+
+
+
+variable {Model Data : Type*}
+
+variable {Model Data : Type*}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (prior : Model → ℝ)
+    (likelihood : Model → Data → ℝ) (d : Data)
+    (hprior : ∀ m, 0 < prior m) (hlike : ∀ m, 0 < likelihood m d)
+    (a b : Model) :
+    logObjective prior likelihood d a ≤ logObjective prior likelihood d b ↔
+      posteriorWeight prior likelihood d a ≤ posteriorWeight prior likelihood d b := by
+
+  rw [← exp_logObjective _ _ _ hprior hlike,
+    ← exp_logObjective _ _ _ hprior hlike, Real.exp_le_exp]

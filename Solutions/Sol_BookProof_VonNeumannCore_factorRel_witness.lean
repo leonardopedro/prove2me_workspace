@@ -1,6 +1,7 @@
 -- Generated from ChapterVonNeumannCore.lean — solution of BookProof.VonNeumannCore.factorRel_witness
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
+import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_adjPairs_clGraph
 open BookProof.VonNeumannCore
 
 

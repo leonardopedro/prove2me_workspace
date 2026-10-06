@@ -1,6 +1,7 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — solution of BookProof.TwoParticleSector.swapDom_mem_corePow
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
+import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
 open BookProof.TwoParticleSector
 
 

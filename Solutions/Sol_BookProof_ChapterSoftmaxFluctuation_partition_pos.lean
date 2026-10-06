@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — solution of BookProof.ChapterSoftmaxFluctuation.partition_pos
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterSoftmaxFluctuation
 
 

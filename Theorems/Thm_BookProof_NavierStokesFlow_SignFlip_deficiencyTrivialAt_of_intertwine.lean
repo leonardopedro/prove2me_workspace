@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 

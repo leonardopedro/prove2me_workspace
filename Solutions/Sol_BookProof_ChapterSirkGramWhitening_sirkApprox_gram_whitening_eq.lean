@@ -20,8 +20,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-nsequences for the reduction -/
-
 theorem solution {m : ℕ} (w : Fin m → E) (X : E →L[ℂ] E)
     {T₁ T₂ : EuclideanSpace ℂ (Fin m) →L[ℂ] EuclideanSpace ℂ (Fin m)}
     (hT₁ : IsWhitening w T₁) (hT₂ : IsWhitening w T₂)
@@ -29,7 +27,7 @@ theorem solution {m : ℕ} (w : Fin m → E) (X : E →L[ℂ] E)
     (whitened w T₁).comp ((compress (whitened w T₁) X).comp
         (ContinuousLinearMap.adjoint (whitened w T₁)))
       = (whitened w T₂).comp ((compress (whitened w T₂) X).comp
-        (ContinuousLinea :=
+        (ContinuousLinearMap.adjoint (whitened w T₂))) :=
   rMap.adjoint (whitened w T₂))) := by
     have hr₁ := range_whitened w hs₁
     have hr₂ := range_whitened w hs₂

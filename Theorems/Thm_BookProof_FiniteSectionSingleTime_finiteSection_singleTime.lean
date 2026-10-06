@@ -1,5 +1,4 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — theorem BookProof.FiniteSectionSingleTime.finiteSection_singleTime
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterSirkSingleTimeShift

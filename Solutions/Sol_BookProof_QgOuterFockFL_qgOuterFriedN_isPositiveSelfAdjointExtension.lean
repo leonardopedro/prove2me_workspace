@@ -32,8 +32,6 @@ variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
 variable {C H}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 2000000 in
--- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
 theorem solution :
     IsPositiveSelfAdjointExtension qgOuterN qgOuterFriedN :=
   qgOuterComparison.isPositiveSelfAdjointExtension qgOuterN (fun x => by

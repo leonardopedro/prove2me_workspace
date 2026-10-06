@@ -20,6 +20,4 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-hpos _
-
-theorem BookProof.FockSecondQuantization.finiteOccupation_dense : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Se := by sorry
+theorem BookProof.FockSecondQuantization.finiteOccupation_dense : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Set Fock) := by sorry

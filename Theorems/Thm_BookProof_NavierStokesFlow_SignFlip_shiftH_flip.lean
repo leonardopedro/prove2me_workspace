@@ -11,6 +11,7 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {ι : Type*}

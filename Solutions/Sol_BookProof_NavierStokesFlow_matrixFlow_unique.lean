@@ -12,15 +12,9 @@ open scoped BigOperators Matrix Matrix.Norms.Operator
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-<;> (first
-      | rfl
-      | (change A *ᵥ (matrixFlow A t *ᵥ x) = (matrixFlow A t * A) *ᵥ x
-          <;> rw [matrixFlow_comm, ← Matrix.mulVec_mulVec])
-      | simp [applyVecCLM, matrixFlow_comm, Matrix.mulVec_mulVec])
-
-/-- **Uniqueness for the linear Cauchy problem.**  Any differentiable curve with
-`ẏ(t) = A y(t)` for every `t` and `y(0) = x` is the orbit of the flow.  The
-proof is the classical one: `t ↦ e^{−tA} y(t)` has vanishing derivative, hence :=
+theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (x : Fin n → ℂ) (y : ℝ → Fin n → ℂ)
+    (hy : ∀ t, HasDerivAt y (A *ᵥ y t) t) (hy0 : y 0 = x) (t : ℝ) :
+    y t = matrixFlow A t *ᵥ x :=
    is
   constant. -/
   theorem matrixFlow_unique (A : Matrix (Fin n) (Fin n) ℂ) (x : Fin n → ℂ) (y : ℝ → Fin n → ℂ)

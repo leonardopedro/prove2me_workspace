@@ -10,7 +10,5 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
-  simp
-
 theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_not_hasZeroDeficiencyOn :
-    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) j := by sorry
+    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp := by sorry

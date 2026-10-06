@@ -27,9 +27,14 @@ def collapseKernels : List (S → S → ℝ) → (S → S → ℝ)
   | [] => idKernel
   | k :: ks => compKernel k (collapseKernels ks)
 
+@[simp] theorem collapseKernels_nil :
+    collapseKernels ([] : List (S → S → ℝ)) = idKernel := by
+  rfl
 
-
-
+@[simp] theorem collapseKernels_cons (k : S → S → ℝ)
+    (ks : List (S → S → ℝ)) :
+    collapseKernels (k :: ks) = compKernel k (collapseKernels ks) := by
+  rfl
 
 
 

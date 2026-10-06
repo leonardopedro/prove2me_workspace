@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
 import Theorems.Thm_BookProof_ChapterAttentionEntropy_shannonEntropy_le_log_card
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionEntropy
 
 

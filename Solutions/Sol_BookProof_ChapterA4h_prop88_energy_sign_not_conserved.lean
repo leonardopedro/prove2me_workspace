@@ -1,6 +1,7 @@
 -- Generated from ChapterA4h.lean — solution of BookProof.ChapterA4h.prop88_energy_sign_not_conserved
 import Mathlib
 import Definitions.Def_ChapterA4h
+import Theorems.Thm_BookProof_ChapterA4e_energy_sign_not_conserved
 open BookProof.ChapterA4h
 
 

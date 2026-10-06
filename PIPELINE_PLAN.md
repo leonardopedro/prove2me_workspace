@@ -5635,3 +5635,54 @@ Audit only bundles that actually declare something, and accept an ancestor open 
 
 `--parallel 10` is safe: ~200 submissions, **zero** 429s. Keep `FAIL` at 0 before raising it —
 a rate-limit response burns an attempt, and 5 attempts makes an item permanently un-runnable.
+
+## 7. Third wave — the corpus was only half-extracted
+
+13. **538 of 686 registered chapters had produced ZERO theorem nodes.** They had a source,
+    a sketch and a published Def bundle, but `wave_generate.py` had never been run for their
+    theorem layer, so their theorems were invisible to the plan and silently unpublished.
+    Generating them produced **6,757 new nodes** (7,370 written, some already present):
+    `thm` went from 2,776 to **9,533**. Audit for this class with:
+
+    ```python
+    # registered defs with a sketch+source but no thm nodes
+    have = {v['chapter'] for v in w['thms'].values()}
+    [c for c in w['defs'] if c not in have
+     and os.path.exists(f'state/sketch/sketch_{c}.jsonl')]
+    ```
+
+    Note `wave_generate.py`'s `index_register` only updates an **in-memory** index so a later
+    chapter can import an earlier stub — it never writes `wave_upload.json`. Registering the
+    manifest into `thms` + `sol_order` is a separate, mandatory step.
+
+14. **`module_namespace` reads the FIRST `namespace` in the source, and chapters SHARE
+    namespaces.** `ChapterA1.lean` opens `namespace BookProof.ChapterA` — the same namespace
+    as `ChapterA.lean`; `BookProof.NavierStokesFlow` is shared by **35** chapters. 95 chapters
+    across 18 namespaces collide this way, which is why 61 of the 60 theorem failures
+    clustered in 14 NavierStokes/ChapterA3/ChapterStone chapters.
+    Good news: of 9,533 nodes there are **0 exact duplicate Lean names**, so chapters sharing a
+    namespace is fine as long as their declaration names differ.
+
+15. **87 nodes are permanently unpublishable as problems** — the name is provided by a Def
+    bundle, so the stub is rejected with `` `X` has already been declared ``. The name is
+    fixed by the source, the Def bundle is already PUBLISHED, and renaming would break every
+    consumer. `debug/park_name_clashes.py` (new) parks them with that reason so each pass
+    stops spending one of 5 attempts on a guaranteed rejection.
+
+16. **`build_thm` regression I introduced and caught:** `scoped_opens_before(bt.slice(...))`
+    called `.decode()` on what is already a `str`, so *every* stub generation raised
+    `AttributeError`. Symptom: `wave_generate.py` prints `manifest: N nodes` and writes
+    **no** `Theorems/Thm_*.lean` files. Always assert on the file count, not the manifest.
+
+### Honest sizing
+
+The full corpus is now `686 defs + 9,533 thms + 9,533 sols ≈ 19,750` items. Measured
+throughput is ~26 server compiles/hour at `--parallel 10` with no rate limiting, i.e. **~760
+hours** to drain everything, before any repair tail. Publication is therefore
+*throughput-bound, not blocked*: `drain_all.sh` will keep making progress unattended, but
+"everything published" is not reachable in one session. The practical levers, in order:
+
+1. keep `--parallel` as high as `FAIL`/429 stays 0 (attempts are the scarce resource);
+2. fix generator classes that unblock many items at once — each of bugs 8–11 was worth
+   tens to hundreds of bundles, far more than any per-chapter repair;
+3. accept that ~87 parked nodes and the Mathlib-drift proofs will never publish.

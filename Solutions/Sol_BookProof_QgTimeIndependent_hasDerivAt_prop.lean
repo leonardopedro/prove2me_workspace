@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
+open BookProof.QgTimeIndependent
 
 
 

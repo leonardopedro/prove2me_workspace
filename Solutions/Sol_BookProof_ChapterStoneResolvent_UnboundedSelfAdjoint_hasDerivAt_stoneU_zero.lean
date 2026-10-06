@@ -23,12 +23,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
- (Set.right_mem_uIcc)
-  have hg0 : g 0 = 0 := by simp [hg]
-  rw [hg0, sub_zero, sub_zero, Real.norm_eq_abs] at hmvt
-  exact hmvt
-
-/-- **Stone's equation at `t = 0`**: the generator of `e^{-itA}` is `-iA`. :=
+theorem solution (x : T.domain) :
+    HasDerivAt (fun t : ℝ => T.stoneU t (x : H)) ((-Complex.I) • T.op x) 0 :=
   -/
   theorem hasDerivAt_stoneU_zero (x : T.domain) :
       HasDerivAt (fun t : ℝ => T.stoneU t (x : H)) ((-Complex.I) • T.op x) 0 := by

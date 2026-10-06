@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_core
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

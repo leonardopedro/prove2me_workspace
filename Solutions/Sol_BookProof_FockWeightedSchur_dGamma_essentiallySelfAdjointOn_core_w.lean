@@ -5,17 +5,9 @@ import Theorems.Thm_BookProof_FockWeightedSchur_wSym_nonneg
 import Theorems.Thm_BookProof_FockWeightedSchur_wcomm_nonneg
 import Theorems.Thm_BookProof_FockWeightedSchur_dGammaOp_coreRelBound_w
 import Theorems.Thm_BookProof_FockWeightedSchur_dGammaOp_commForm_bound_w
+import Theorems.Thm_BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds
+import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -26,27 +18,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

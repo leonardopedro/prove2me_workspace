@@ -1,6 +1,7 @@
 -- Generated from ChapterYangMillsFockFriedrichs.lean — solution of BookProof.YmFockFriedrichs.ymFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterYangMillsFockFriedrichs
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.YmFockFriedrichs
 
 

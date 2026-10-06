@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ChapterPauliFundamental_clifford_key
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_orthogonal
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_inv
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_isUnit
+import Theorems.Thm_BookProof_ChapterA3_mgamma_clifford
 open BookProof.ChapterPauliFundamental
 
 

@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterCoherentTemperature
 import Mathlib
 
 

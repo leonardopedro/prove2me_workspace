@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.lc1_shift
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+open BookProof.CarlemanTwoStep
 
 
 

@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_deficiencyTrivialAt_a
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 
 

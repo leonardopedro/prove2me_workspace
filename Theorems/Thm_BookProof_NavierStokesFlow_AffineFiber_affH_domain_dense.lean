@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -16,15 +16,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
- : ℝ) := hn
-  have hmul : 2 * (|C| + 1) < κ * (n : ℝ) := by
-    rw [div_lt_iff₀ hκ] at hgt
-    linarith [hgt]
-  have hC : C ≤ |C| := le_abs_self C
-  nlinarith
-
-/-- The finite-mode core is dense, so the affine fiber Hamiltonian is a densely
-defined operator a := by sorry
+theorem BookProof.NavierStokesFlow.AffineFiber.affH_domain_dense :
+    Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) := by sorry

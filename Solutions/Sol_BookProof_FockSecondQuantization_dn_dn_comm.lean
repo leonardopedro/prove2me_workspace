@@ -1,8 +1,8 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.dn_dn_comm
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_dn_self
 import Theorems.Thm_BookProof_FockSecondQuantization_dn_of_ne
+import Theorems.Thm_BookProof_FockSecondQuantization_dn_self
 open BookProof.FockSecondQuantization
 
 

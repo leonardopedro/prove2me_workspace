@@ -5,7 +5,7 @@ import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.FullEsa.NSFullData
+open BookProof.NavierStokesFlow.FullEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

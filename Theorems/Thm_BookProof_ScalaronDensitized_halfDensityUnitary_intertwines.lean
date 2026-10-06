@@ -1,0 +1,38 @@
+-- Generated from ChapterScalaronDensitizedTransfer.lean — theorem BookProof.ScalaronDensitized.halfDensityUnitary_intertwines
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Mathlib
+import Definitions.Def_ChapterScalaronDensitizedTransfer
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterStarobinskyPotential
+open BookProof.ChapterLinftyMultiplication
+open BookProof.NavierStokesFlow.FockContinuum
+open BookProof.QuantumGravityHalfDensity
+open BookProof.Starobinsky
+open BookProof.ScalaronDensitized
+
+variable (M alpha : ℝ)
+
+
+
+open MeasureTheory Set Filter Topology
+open BookProof.Starobinsky BookProof.QuantumGravityDensitized
+open BookProof.QuantumGravityHalfDensity
+open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FockContinuum
+open BookProof.FarisLavine BookProof.StoneBridge
+open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+
+noncomputable section
+
+theorem BookProof.ScalaronDensitized.halfDensityUnitary_intertwines (x : physConfCore M alpha) :
+    ((densConfOp M alpha ⟨halfDensityUnitary (x : Lp ℂ 2 physMeasure),
+        halfDensityUnitary_mem_densConfCore M alpha x⟩ : densConfCore M alpha) :
+          Lp ℂ 2 qgSrcMeasure)
+      = halfDensityUnitary ((physConfOp M alpha x : physConfCore M alpha) :
+          Lp ℂ 2 physMeasure) := by sorry

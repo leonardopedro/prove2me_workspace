@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCarleman
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 open scoped ENNReal

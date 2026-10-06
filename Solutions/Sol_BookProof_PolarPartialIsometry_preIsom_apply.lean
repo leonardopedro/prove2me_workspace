@@ -1,13 +1,14 @@
 -- Generated from ChapterPolarPartialIsometry.lean — solution of BookProof.PolarPartialIsometry.preIsom_apply
 import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
+import Theorems.Thm_BookProof_ClosureUniqueness_exists_linearIsometry_of_inner_eq
 open BookProof.PolarPartialIsometry
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

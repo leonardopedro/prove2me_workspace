@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_FockStatistics_exists_ne_zero_cbosonic
+import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 

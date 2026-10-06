@@ -17,10 +17,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-Equiv]
-
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (lpFiniteModes Conf) (dGamma :=
+    SymmetricOn (lpFiniteModes Conf) (dGammaOp col) :=
   Op col) := by
     intro x y
     rw [coe_dGammaOp, coe_dGammaOp, coe_fockEquiv_symm x, coe_fockEquiv_symm y]

@@ -1,4 +1,11 @@
+import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
+
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -79,7 +86,8 @@ variable {ι : Type*}
 
 
 
-
+@[simp] theorem creVec_zero (x : FockAlg) : creVec (0 : ℕ →₀ ℂ) x = 0 := by
+  simp [creVec_apply]
 
 
 

@@ -17,12 +17,10 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
- f) y
-
 theorem solution (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K)
     (y : transportDomain W (mulDomain f)) :
     Filter.Tendsto
       (fun t : ℝ => (t⁻¹ : ℝ) • (transportUnitary W (phaseUnitary f t) (y : K) - (y : K)))
-      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W (mulDomain f) (mulOp :=
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W (mulDomain f) (mulOp f) y)) :=
   f) y)) :=
     tendsto_slope_transportUnitary W _ _ (phaseUnitary f) (tendsto_slope_phaseUnita

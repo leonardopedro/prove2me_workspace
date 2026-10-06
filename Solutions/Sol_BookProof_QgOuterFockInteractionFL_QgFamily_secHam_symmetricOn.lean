@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_symmetricOn
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

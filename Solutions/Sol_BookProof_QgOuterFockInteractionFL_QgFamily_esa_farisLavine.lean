@@ -11,6 +11,7 @@ import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_fib
 import Theorems.Thm_BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom
 import Theorems.Thm_BookProof_QgOuterFockFL_qgOuterCore_le_friedDom
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

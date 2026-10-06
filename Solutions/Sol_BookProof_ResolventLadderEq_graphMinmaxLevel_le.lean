@@ -22,7 +22,7 @@ open BookProof.ResolventLadderEq
 noncomputable section
 
 
-open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum
+open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.MinMaxSpectrum
 open BookProof.ResolventLadder
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness

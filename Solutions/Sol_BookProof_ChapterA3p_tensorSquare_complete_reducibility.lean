@@ -4,6 +4,8 @@ import Definitions.Def_ChapterA3p
 import Theorems.Thm_BookProof_ChapterA3p_projSym_mul_projAnti
 import Theorems.Thm_BookProof_ChapterA3p_projAnti_mul_projSym
 import Theorems.Thm_BookProof_ChapterA3p_projSym_add_projAnti_two
+import Theorems.Thm_BookProof_ChapterA3n_projSym_idem
+import Theorems.Thm_BookProof_ChapterA3o_projAnti_idem
 open BookProof.ChapterA3p
 
 

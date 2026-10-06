@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
 import Theorems.Thm_BookProof_ChapterMackeyInducedSystem_inducedSystem_fibre
 import Theorems.Thm_BookProof_ChapterMackeyInducedSystem_inducedSystem_stabilizer_rep
+import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_mackey_imprimitivity
 open BookProof.ChapterMackeyInducedSystem
 
 

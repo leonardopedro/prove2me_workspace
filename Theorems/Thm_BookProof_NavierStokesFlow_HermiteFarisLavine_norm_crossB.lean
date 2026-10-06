@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.norm_crossB (hκ : 0 ≤ κ) (X Y : ℕ → ℂ) (n : ℕ) :
     ‖crossB κ X Y n‖ = amp κ n * ‖X (n + 2)‖ * ‖Y n‖ := by sorry

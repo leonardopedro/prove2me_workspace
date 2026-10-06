@@ -13,7 +13,6 @@ open scoped BigOperators
 
 noncomputable section
 
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem BookProof.ChapterH4.compress_inv_transfer (V : F →L[ℂ] E)
     (qX qXinv : E →L[ℂ] E) (qB qBinv : F →L[ℂ] F)
     (hintertwine : qX.comp V = V.comp qB)

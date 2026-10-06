@@ -15,7 +15,5 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
-(L2Z)
-
 theorem solution (f : ℤ → ℝ) :
-    adjointDomain (mulDomain f) (mulOp f) = BookProof.ChapterUnboundedPosition.adjointDo := main f :
+    adjointDomain (mulDomain f) (mulOp f) = BookProof.ChapterUnboundedPosition.adjointDomain f := main f :

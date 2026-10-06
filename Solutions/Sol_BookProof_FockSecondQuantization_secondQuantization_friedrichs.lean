@@ -19,13 +19,11 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-act hq
-
 theorem solution (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
     (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A))
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
     ∃ (Dom : Submodule ℂ Fock) (A' : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (opCol b :=
+      IsPositiveSelfAdjointExtension (dGammaOp (opCol b A)) A' :=
    A)) A' :=
     dGamma_friedrichs_extension (isHermCol_opCol hA) (isPosCol_opC

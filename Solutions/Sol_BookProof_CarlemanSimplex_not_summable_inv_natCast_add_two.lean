@@ -2,11 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

@@ -5,7 +5,7 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 
@@ -18,7 +18,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 
 theorem BookProof.NavierStokesFlow.SignedShift.listH_coe {sym : ι → ℝ} (L : List (SignedHop ι sym)) (x : maxDom sym) (γ : ι) :

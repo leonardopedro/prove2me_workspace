@@ -5,9 +5,9 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift.SignedHop
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignedShift
 
 variable {ι : Type*}
 variable {sym : ι → ℝ} (S : SignedHop ι sym)
@@ -17,7 +17,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 
 theorem BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_essentiallySelfAdjointOn_core :

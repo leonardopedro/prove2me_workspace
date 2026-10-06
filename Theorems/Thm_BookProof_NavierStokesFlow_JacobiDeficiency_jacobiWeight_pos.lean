@@ -8,6 +8,4 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
-Weight n + 2
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_pos (n : ℕ) : 0 < j := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_pos (n : ℕ) : 0 < jacobiWeight n := by sorry

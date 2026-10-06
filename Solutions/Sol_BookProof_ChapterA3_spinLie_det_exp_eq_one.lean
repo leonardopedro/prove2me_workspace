@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA3f
 import Theorems.Thm_BookProof_ChapterA3_det_exp_eq_exp_trace
+import Theorems.Thm_BookProof_ChapterA3_spinLie_traceless
 open BookProof.ChapterA3
 
 

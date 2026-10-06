@@ -14,9 +14,7 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- _ hx)
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) :
-    modes v ⊆ closureModes :=
+    modes v ⊆ closureModes col u v :=
   col u v := fun _ hx =>
     Finset.mem_union_left _ (Finset.mem_union_rig

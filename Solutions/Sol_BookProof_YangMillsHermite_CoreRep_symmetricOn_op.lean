@@ -21,8 +21,6 @@ variable {d : ℕ}
 variable {D : Submodule ℂ (L2d d)}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions in the rewrite chain need more than the default budget
 theorem solution (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
     (hT : PolySym T) : SymmetricOn D (D.subtype.comp (Φ.op T)) := by
 

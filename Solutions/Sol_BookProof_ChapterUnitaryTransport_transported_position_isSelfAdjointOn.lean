@@ -17,9 +17,7 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
-ain f
-
 theorem solution (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) :
-    IsSelfAdjointOn (transportDomain W (mulDomain f)) (transportOp W (mulDomain f) (mul :=
+    IsSelfAdjointOn (transportDomain W (mulDomain f)) (transportOp W (mulDomain f) (mulOp f)) :=
   Op f)) :=
     transport_isSelfAdjointOn W _ _ (mulOp_isSelfAdjoi

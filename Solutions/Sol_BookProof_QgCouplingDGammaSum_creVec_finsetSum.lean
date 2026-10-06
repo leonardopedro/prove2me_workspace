@@ -1,8 +1,8 @@
 -- Generated from ChapterQgCouplingDGammaSum.lean — solution of BookProof.QgCouplingDGammaSum.creVec_finsetSum
 import Mathlib
 import Definitions.Def_ChapterQgCouplingDGammaSum
-import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_zero
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_add
+import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_zero
 open BookProof.QgCouplingDGammaSum
 
 

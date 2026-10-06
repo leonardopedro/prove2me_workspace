@@ -12,11 +12,9 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
-  ring
-
 theorem solution (v : lpFiniteModes ℕ) :
     (inner ℂ ((jacobiOp v : lpFiniteModes ℕ) : L2N) defState : ℂ)
-      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • de :=
+      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • defState) :=
   fState) := by
     obtain ⟨N, hN⟩ := exists_tail_zero v.2
     have hlhs := inner_eq_sum_range (f := ((jacobiOp v : lpFiniteModes ℕ) : L2N))

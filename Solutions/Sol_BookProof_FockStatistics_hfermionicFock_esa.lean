@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_FockStatistics_essentiallySelfAdjointOn_cfermionic
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 

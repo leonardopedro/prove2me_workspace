@@ -107,9 +107,10 @@ commutative von Neumann algebra of the gauge-fixing, i.e. when it is diagonal in
 the basis. -/
 def IsFunctionOfSpectrum (T : Op X) : Prop := ∃ d : X → ℂ, T = diagOp d
 
+@[simp] theorem diagOp_apply (d f : X → ℂ) (x : X) : diagOp d f x = d x * f x := rfl
 
-
-
+@[simp] theorem permOp_apply (σ : Equiv.Perm X) (f : X → ℂ) (x : X) :
+    permOp σ f x = f (σ.symm x) := rfl
 
 
 
@@ -159,7 +160,8 @@ def shiftPerm : Multiplicative ℤ →* Equiv.Perm ℤ where
     ext k
     simp [Equiv.addRight, add_comm, add_left_comm]
 
-
+@[simp] theorem shiftPerm_apply (m : Multiplicative ℤ) (k : ℤ) :
+    shiftPerm m k = k + Multiplicative.toAdd m := rfl
 
 
 

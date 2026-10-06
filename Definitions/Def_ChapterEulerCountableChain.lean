@@ -67,7 +67,8 @@ def stickTail (c : ℕ → ℝ) (N : ℕ) : ℝ := ∏ k ∈ Finset.range N, (1 
 the probability of outcome `n` in the book's chain. -/
 def stickProb (c : ℕ → ℝ) (n : ℕ) : ℝ := stickTail c n * c n
 
-
+@[simp] theorem stickTail_zero (c : ℕ → ℝ) : stickTail c 0 = 1 := by
+  simp [stickTail]
 
 
 

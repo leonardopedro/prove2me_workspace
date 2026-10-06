@@ -17,4 +17,6 @@ open Filter Topology
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 
- := by sorry
+theorem BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
+    (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) :
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsSelfAdjointExtension T A := by sorry

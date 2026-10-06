@@ -1,4 +1,4 @@
-import Theorems.Thm_BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer
+import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_cocycle_mem_stabilizer
 
 
 

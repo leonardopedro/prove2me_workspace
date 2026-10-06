@@ -18,7 +18,7 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
 

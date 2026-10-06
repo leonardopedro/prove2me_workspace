@@ -18,9 +18,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (G : WeakMeasurableUnitaryGroup H)
 
 set_option maxHeartbeats 1000000 in
-## Von Neumann's theorem: weak measurability implies strong continuity -/
-
-theorem solution [CompleteSpace H] [TopologicalSpace.Separabl :=
+theorem solution [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) :
+    Tendsto (fun s : ℝ => G.U s x) (𝓝 0) (𝓝 x) :=
   eSpace H] (x : H) :
       Tendsto (fun s : ℝ => G.U s x) (𝓝 0) (𝓝 x) := by
     rw [Metric.tendsto_nhds]

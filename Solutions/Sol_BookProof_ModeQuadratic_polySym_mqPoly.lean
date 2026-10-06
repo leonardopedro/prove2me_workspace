@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
 import Theorems.Thm_BookProof_ModeQuadratic_polySym_mqQuadPoly
 import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
+import Theorems.Thm_polySym_foPoly
+open BookProof.ModeQuadratic
 
 
 
@@ -13,6 +15,8 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

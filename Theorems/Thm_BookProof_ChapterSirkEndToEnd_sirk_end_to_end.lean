@@ -1,15 +1,17 @@
 -- Generated from ChapterSirkEndToEnd.lean — theorem BookProof.ChapterSirkEndToEnd.sirk_end_to_end
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH9
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+open BookProof.ChapterH4
+open BookProof.ChapterH6
 open BookProof.ChapterSirkEndToEnd
 
-
-
-
-
-
-
-
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
@@ -19,9 +21,6 @@ open Filter Topology
 
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH8 BookProof.ChapterH9
 
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterSirkEndToEnd.sirk_end_to_end
     (V : F →L[ℂ] E) (X qX qXinv : E →L[ℂ] E) (qBinv : F →L[ℂ] F) (p : Polynomial ℂ)

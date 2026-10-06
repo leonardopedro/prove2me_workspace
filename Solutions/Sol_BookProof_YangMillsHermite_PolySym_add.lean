@@ -1,8 +1,8 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.PolySym.add
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-import Theorems.Thm_BookProof_YangMillsHermite_starP_add
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+import Theorems.Thm_BookProof_YangMillsHermite_starP_add
 open BookProof.YangMillsHermite
 
 

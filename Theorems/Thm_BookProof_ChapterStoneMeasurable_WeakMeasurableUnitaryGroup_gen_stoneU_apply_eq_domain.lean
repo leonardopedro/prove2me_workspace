@@ -9,7 +9,7 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
@@ -21,7 +21,5 @@ open Filter Topology MeasureTheory
 
 
 
-] H).inner_map_map a b
-
 theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_apply_eq_domain (t : ℝ) (x : G.genDomain) :
-    G.gen.stoneU t := by sorry
+    G.gen.stoneU t (x : H) = G.U t (x : H) := by sorry

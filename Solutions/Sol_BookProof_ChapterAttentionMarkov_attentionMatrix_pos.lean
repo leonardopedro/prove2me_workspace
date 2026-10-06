@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionMarkov.lean — solution of BookProof.ChapterAttentionMarkov.attentionMatrix_pos
 import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterAttentionMarkov
 
 

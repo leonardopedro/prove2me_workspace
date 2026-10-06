@@ -78,7 +78,8 @@ variable {E F : Type*}
 def sirkApprox (V : F →L[ℂ] E) (psiB : F →L[ℂ] F) : E →L[ℂ] E :=
   V.comp (psiB.comp V.adjoint)
 
-
+@[simp] theorem sirkApprox_apply (V : F →L[ℂ] E) (psiB : F →L[ℂ] F) (v : E) :
+    sirkApprox V psiB v = V (psiB (V.adjoint v)) := rfl
 
 /-- The **reconstruction operator** `V ∘ V∗`. -/
 def sirkReconstruction (V : F →L[ℂ] E) : E →L[ℂ] E := V.comp V.adjoint

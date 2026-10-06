@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.qgOuterFock_truncation_flow_convergence
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterScalaronFiberFL

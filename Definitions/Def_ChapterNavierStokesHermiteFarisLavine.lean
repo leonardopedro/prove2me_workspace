@@ -1,7 +1,5 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
-
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
 
 import Definitions.Def_ChapterNavierStokesIkebeKato
@@ -72,7 +70,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace HermiteFarisLavine
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 /-! ## Shifting a sequence by two -/
 
@@ -84,9 +82,9 @@ def shift2 {M : Type*} [Zero M] (g : ℕ → M) : ℕ → M := fun m => if 2 ≤
     shift2 g (n + 2) = g n := by
   simp [shift2]
 
+@[simp] theorem shift2_zero_apply {M : Type*} [Zero M] (g : ℕ → M) : shift2 g 0 = 0 := rfl
 
-
-
+@[simp] theorem shift2_one_apply {M : Type*} [Zero M] (g : ℕ → M) : shift2 g 1 = 0 := rfl
 
 theorem hasSum_shift2_iff {M : Type*} [AddCommGroup M] [TopologicalSpace M]
     [IsTopologicalAddGroup M] {g : ℕ → M} {s : M} : HasSum (shift2 g) s ↔ HasSum g s := by
@@ -287,7 +285,8 @@ noncomputable def nsH (κ : ℝ) (hκ : 0 ≤ κ) : maxDom (oscSymbol κ) →ₗ
       hFun, shift2]
     by_cases h : 2 ≤ m <;> simp [h] <;> ring
 
-
+@[simp] theorem nsH_coe (hκ : 0 ≤ κ) (x : maxDom (oscSymbol κ)) (m : ℕ) :
+    ((nsH κ hκ x : L2I ℕ) : ℕ → ℂ) m = hFun κ ((x : L2I ℕ) : ℕ → ℂ) m := rfl
 
 
 /-! ## The inner products of the Hamiltonian

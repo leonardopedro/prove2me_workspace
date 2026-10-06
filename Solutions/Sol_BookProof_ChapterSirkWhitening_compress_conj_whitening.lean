@@ -3,13 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkWhitening
 import Theorems.Thm_BookProof_ChapterSirkWhitening_adjoint_comp_rangeProj
 import Theorems.Thm_BookProof_ChapterSirkWhitening_embedding_comp_whiteningEquiv
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
-
-
-
-
-
 
 
 
@@ -17,6 +11,11 @@ noncomputable section
 
 
 open BookProof.ChapterH4
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

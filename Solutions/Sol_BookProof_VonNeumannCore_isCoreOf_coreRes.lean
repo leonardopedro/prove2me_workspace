@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_coreRes_apply
 import Theorems.Thm_BookProof_VonNeumannCore_clGraph_coreRes
+import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_clExt
 import Theorems.Thm_BookProof_FriedrichsSquare_frDom_le_clDom
 open BookProof.VonNeumannCore
 

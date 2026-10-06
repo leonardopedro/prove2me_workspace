@@ -22,9 +22,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-ain b)
-
 theorem BookProof.FockSecondQuantization.opCol_apply (b : HilbertBasis ℕ ℂ F) (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
     (k j : ℕ) :
     opCol b A k j
-      = inner ℂ (b j) ((A ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ : finiteModeDomain := by sorry
+      = inner ℂ (b j) ((A ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ : finiteModeDomain b) : F) := by sorry

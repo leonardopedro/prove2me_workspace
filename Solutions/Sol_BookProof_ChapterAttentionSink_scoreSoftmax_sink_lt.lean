@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSink
 import Theorems.Thm_BookProof_ChapterAttentionSink_sinkWeight_pos
 import Theorems.Thm_BookProof_ChapterAttentionSink_scoreSoftmax_sink_succ
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterAttentionSink
 
 

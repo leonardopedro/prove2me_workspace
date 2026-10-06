@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterStoneMeasurable
 import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (G : WeakMeasurableUnitaryGroup H)

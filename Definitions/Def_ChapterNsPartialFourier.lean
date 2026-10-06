@@ -70,7 +70,12 @@ def postcompCLM (T : F →L[ℂ] G) : 𝓢(V, F) →L[ℂ] 𝓢(V, G) :=
   SchwartzMap.bilinLeftCLM (((ContinuousLinearMap.lsmul ℂ ℂ : ℂ →L[ℂ] G →L[ℂ] G).flip).comp T)
     (g := fun _ : V => (1 : ℂ)) (Function.HasTemperateGrowth.const _)
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] theorem postcompCLM_apply (T : F →L[ℂ] G) (f : 𝓢(V, F)) (x : V) :
+    postcompCLM T f x = T (f x) := by
+  change (((ContinuousLinearMap.lsmul ℂ ℂ : ℂ →L[ℂ] G →L[ℂ] G).flip).comp T) (f x) (1 : ℂ)
+    = T (f x)
+  simp
 
 
 
@@ -93,7 +98,8 @@ variable (V F) in
 def partialFourier : (Lp F 2 (volume : Measure V)) ≃ₗᵢ[ℂ] (Lp F 2 (volume : Measure V)) :=
   MeasureTheory.Lp.fourierTransformₗᵢ V F
 
-
+@[simp] theorem partialFourier_apply (v : Lp F 2 (volume : Measure V)) :
+    partialFourier V F v = 𝓕 v := rfl
 
 
 
@@ -115,7 +121,9 @@ def fibreOp (T : F →L[ℂ] G) :
 def vecMomentumOp (m : V) : 𝓢(V, F) →L[ℂ] 𝓢(V, F) :=
   (-Complex.I) • lineDerivOpCLM ℂ 𝓢(V, F) m
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] [CompleteSpace F] in
+@[simp] theorem vecMomentumOp_apply (m : V) (f : 𝓢(V, F)) :
+    vecMomentumOp m f = (-Complex.I) • (∂_{m} f : 𝓢(V, F)) := rfl
 
 
 

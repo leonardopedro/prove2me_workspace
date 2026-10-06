@@ -17,12 +17,10 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-b).2 j
-
 theorem solution {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A)) :
-    IsHermCol (opC :=
+    IsHermCol (opCol b A) :=
   ol b A) := by
     intro j k
     have h := hA ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ ⟨b j, Submodule.subset_span ⟨j, rfl⟩⟩

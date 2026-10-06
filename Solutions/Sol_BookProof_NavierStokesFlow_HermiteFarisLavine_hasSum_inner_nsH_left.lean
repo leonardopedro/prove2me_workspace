@@ -1,10 +1,10 @@
 -- Generated from ChapterNavierStokesHermiteFarisLavine.lean — solution of BookProof.NavierStokesFlow.HermiteFarisLavine.hasSum_inner_nsH_left
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
-import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_summable_crossA
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_summable_crossB
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_conj_hFun_mul
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
@@ -15,7 +15,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 variable {κ : ℝ}
 variable {x : maxDom (oscSymbol κ)}

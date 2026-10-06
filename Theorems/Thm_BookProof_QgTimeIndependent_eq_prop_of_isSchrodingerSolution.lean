@@ -5,11 +5,11 @@ import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
+open BookProof.QgTimeIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

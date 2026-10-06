@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
@@ -14,8 +14,5 @@ open Filter Topology MeasureTheory
 
 
 
-up of its generator -/
-
-omit [CompleteSpace H] [TopologicalSpace.SeparableSpace H] in
 theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.eq_of_inner_eq_on_dense {D : Set H} (hD : Dense D) {v w : H}
-    (h : ∀ z ∈ D, ⟪z, v⟫_ℂ = := by sorry
+    (h : ∀ z ∈ D, ⟪z, v⟫_ℂ = ⟪z, w⟫_ℂ) : v = w := by sorry

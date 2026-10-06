@@ -1,6 +1,7 @@
 -- Generated from ChapterKatoRellichDeficiency.lean — solution of BookProof.KatoRellich.deficiencyTrivialAt_of_dense
 import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
+open BookProof.KatoRellich
 
 
 

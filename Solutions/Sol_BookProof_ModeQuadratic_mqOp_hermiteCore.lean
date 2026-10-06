@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_ModeQuadratic_ascend2_Lp
 import Theorems.Thm_BookProof_ModeQuadratic_descend2_Lp
 import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
+import Theorems.Thm_BookProof_QuadratureEsa_foOp_hermiteCore
+open BookProof.ModeQuadratic
 
 
 
@@ -16,6 +18,8 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
@@ -25,8 +29,6 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1600000 in
--- the core coercions make the elaboration of this transport expensive
 theorem solution (p q s b b' : Fin d → ℝ) (a : Fin d →₀ ℕ) :
     mqOp p q s b b' (hermiteCore a)
       = ((mqSymbol p q a : ℝ) : ℂ) • hermiteMvLp a

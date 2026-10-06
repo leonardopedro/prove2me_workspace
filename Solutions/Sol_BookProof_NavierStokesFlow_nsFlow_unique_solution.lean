@@ -13,13 +13,9 @@ variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
-s : ℝ => nsFlowUnitary d s *ᵥ psi)
-      ((Complex.I • nsHamiltonian d) *ᵥ (nsFlowUnitary d t *ᵥ psi)) t := by
-  rw [nsFlowUnitary_eq_matrixFlow']
-  exact matrixFlow_vec_hasDerivAt (Complex.I • nsHamiltonian d) psi t
-
-/-- **D.10 (headline)** *The solution is unique*: any differentiable curve
-solving `ẏ(t) = i H_N y(t)` with `y(0) = ψ` is the flow orbit `t ↦ U(t) ψ :=
+theorem solution (psi : Fin n → ℂ) (y : ℝ → Fin n → ℂ)
+    (hy : ∀ t, HasDerivAt y ((Complex.I • nsHamiltonian d) *ᵥ y t) t) (hy0 : y 0 = psi)
+    (t : ℝ) : y t = nsFlowUnitary d t *ᵥ psi :=
   `. -/
   theorem nsFlow_unique_solution (psi : Fin n → ℂ) (y : ℝ → Fin n → ℂ)
       (hy : ∀ t, HasDerivA

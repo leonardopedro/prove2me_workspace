@@ -15,7 +15,7 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgFourierElim
+open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 

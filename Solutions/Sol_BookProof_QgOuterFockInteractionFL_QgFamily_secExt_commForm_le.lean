@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Theorems.Thm_BookProof_QgOuterFockInteractionFL_QgFamily_secData_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_commForm_le
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

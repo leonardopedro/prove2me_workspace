@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesSignFlip
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

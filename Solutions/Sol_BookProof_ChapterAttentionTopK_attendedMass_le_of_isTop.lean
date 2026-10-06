@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionTopK
 import Theorems.Thm_BookProof_ChapterAttentionTopK_sum_le_sum_of_isTop
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 open BookProof.ChapterAttentionTopK
 
 

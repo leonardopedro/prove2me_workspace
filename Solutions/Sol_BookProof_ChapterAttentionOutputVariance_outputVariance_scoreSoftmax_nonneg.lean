@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionOutputVariance
 import Theorems.Thm_BookProof_ChapterAttentionOutputVariance_outputVariance_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 open BookProof.ChapterAttentionOutputVariance
 
 

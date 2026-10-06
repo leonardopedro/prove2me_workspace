@@ -6,7 +6,7 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)
@@ -19,11 +19,6 @@ open Filter Topology NormedSpace
 
 
 
- : H) := by
-    funext s
-    rw [T.stoneU_apply_stoneU]
-    have hts : t + (s - t) = s := by ring
-    rw [hts]
-  rwa [heq] at h3
-
-theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_stoneU_op (x : T.domain) (t : ℝ) : := by sorry
+theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_stoneU_op (x : T.domain) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => T.stoneU s (x : H))
+      ((-Complex.I) • T.op ⟨T.stoneU t (x : H), T.stoneU_mem_domain t x⟩) t := by sorry

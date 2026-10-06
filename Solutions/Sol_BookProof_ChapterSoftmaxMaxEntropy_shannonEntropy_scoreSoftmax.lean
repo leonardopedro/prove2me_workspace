@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
 import Theorems.Thm_BookProof_ChapterSoftmaxMaxEntropy_log_scoreSoftmax
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterSoftmaxMaxEntropy
 
 

@@ -17,6 +17,7 @@ open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 variable (dim : ℕ → ℕ)
 variable (F : SqFamily)

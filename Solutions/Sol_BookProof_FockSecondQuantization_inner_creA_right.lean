@@ -15,10 +15,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-  ring
-
 theorem solution (j : ℕ) (u v : FockAlg) :
-    (inner ℂ (toLp u) (toLp (creA j v)) : ℂ) = inner ℂ (toLp (annA j u)) ( :=
+    (inner ℂ (toLp u) (toLp (creA j v)) : ℂ) = inner ℂ (toLp (annA j u)) (toLp v) :=
   toLp v) := by
     have h := inner_creA_left j v u
     have := congrArg (starRingEnd ℂ) h

@@ -7,6 +7,7 @@ import Definitions.Def_Complexification
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.Complexification
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

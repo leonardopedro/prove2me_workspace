@@ -1,6 +1,7 @@
 -- Generated from ChapterA4h.lean — solution of BookProof.ChapterA4h.cor1_energy_sectors_swapped
 import Mathlib
 import Definitions.Def_ChapterA4h
+import Theorems.Thm_BookProof_ChapterA4e_spatialOp_swaps_pos
 open BookProof.ChapterA4h
 
 

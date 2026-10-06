@@ -30,11 +30,15 @@ open scoped InnerProductSpace
 
 namespace BookProof.ChapterGaugeShiftExample
 
-open ChapterContinuityUnitaryInfinite
+open BookProof.ChapterContinuityUnitaryInfinite
 
 
 
-
+/-- The zero translation is the identity. -/
+@[simp] theorem shiftOp_zero : shiftOp 0 = (1 : L2Z →L[ℂ] L2Z) := by
+  ext f k
+  change ((shiftOp 0 f : L2Z) : ℤ → ℂ) k = ((f : L2Z) : ℤ → ℂ) k
+  simp
 
 
 

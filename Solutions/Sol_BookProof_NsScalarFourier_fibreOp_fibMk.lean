@@ -1,6 +1,7 @@
 -- Generated from ChapterNsScalarFourier.lean — solution of BookProof.NsScalarFourier.fibreOp_fibMk
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
+import Theorems.Thm_BookProof_NsPartialFourier_fibreOp_apply
 open BookProof.NsScalarFourier
 
 

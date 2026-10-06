@@ -1,6 +1,7 @@
 -- Generated from ChapterFockStatisticsEsa.lean — solution of BookProof.FockStatistics.fermionicFock_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 import Theorems.Thm_BookProof_PermSector_symmetricOn_fermionic
 open BookProof.FockStatistics
 

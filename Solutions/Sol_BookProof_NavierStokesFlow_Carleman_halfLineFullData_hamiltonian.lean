@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiagOp_sum
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_weyl_momOp_diagOp
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_halfLineFullData_advection
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

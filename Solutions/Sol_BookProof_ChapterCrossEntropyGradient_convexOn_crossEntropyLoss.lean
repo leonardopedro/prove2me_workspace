@@ -1,6 +1,7 @@
 -- Generated from ChapterCrossEntropyGradient.lean — solution of BookProof.ChapterCrossEntropyGradient.convexOn_crossEntropyLoss
 import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
+import Theorems.Thm_BookProof_ChapterLogPartitionConvex_convexOn_logPartition
 open BookProof.ChapterCrossEntropyGradient
 
 

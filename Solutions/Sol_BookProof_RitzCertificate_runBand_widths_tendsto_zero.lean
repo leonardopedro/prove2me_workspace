@@ -3,22 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterRitzCertificate
 import Theorems.Thm_BookProof_RitzCertificate_mem_runBand
 import Theorems.Thm_BookProof_RitzCertificate_runBand_width_le
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
-import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -32,19 +17,6 @@ open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

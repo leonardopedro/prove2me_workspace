@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.qg_truncation_hashimoto_shiftInvert_tendsto
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterQgOuterFockCoreFL

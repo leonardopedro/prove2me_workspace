@@ -10,6 +10,5 @@ variable {n : ℕ} (d : NSTruncation n)
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-- The flow of `A` commutes with everything `A` commutes with. -/
-theorem BookProof.NavierStokesFlow.matrixFlow_commute_of_commute (A B : Matrix (Fin n) (Fin n) ℂ) (h : Commute A B)
-    (t : ℝ) : Commute (matrixFlow A := by sorry
+theorem BookProof.NavierStokesFlow.matrixFlow_commute_of_commute (t : ℝ) :
+    nsFlowUnitary d t * nsHamiltonian d = nsHamiltonian d * nsFlowUnitary d t := by sorry

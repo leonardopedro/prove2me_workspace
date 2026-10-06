@@ -1,4 +1,5 @@
 -- Generated from ChapterQuadraticFockEsa.lean — theorem BookProof.QuadFockEsa.hermCol_eq_coef
+import Definitions.Def_ChapterGradedBandSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
@@ -21,6 +22,7 @@ variable {d : ℕ}
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.HermiteBand BookProof.GradedBandSchur
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

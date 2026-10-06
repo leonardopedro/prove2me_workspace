@@ -13,4 +13,4 @@ variable {ι : Type*}
 
 open FullEsa
 
-theorem BookProof.NavierStokesFlow.FockOfFock.norm_lpBasis [DecidableEq ι] (i : ι) : ‖lpBasis (ι := ι) i‖ = 1 := by sorry
+theorem BookProof.NavierStokesFlow.FockOfFock.norm_lpBasis [DecidableEq ι] (i : ι) : ‖lpBasis (ι := by sorry

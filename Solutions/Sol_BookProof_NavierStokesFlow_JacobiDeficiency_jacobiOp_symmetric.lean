@@ -11,11 +11,9 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
-tor -/
-
 theorem solution (x y : lpFiniteModes ℕ) :
     (inner ℂ ((jacobiOp x : lpFiniteModes ℕ) : L2N) ((y : lpFiniteModes ℕ) : L2N) : ℂ)
-      = inner ℂ ((x : lpFiniteModes ℕ) : L2N) ((jacobiOp y : lpFiniteModes ℕ) :=
+      = inner ℂ ((x : lpFiniteModes ℕ) : L2N) ((jacobiOp y : lpFiniteModes ℕ) : L2N) :=
    : L2N) := by
     obtain ⟨Nx, hNx⟩ := exists_tail_zero x.2
     obtain ⟨Ny, hNy⟩ := exists_tail_zero y.2

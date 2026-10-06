@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_SecondQuantizationCore_essentiallySelfAdjointOn_fockSectorCore
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.SecondQuantizationCore
 
 

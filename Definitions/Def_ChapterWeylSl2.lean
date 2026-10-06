@@ -109,11 +109,14 @@ def restr (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) : Sl2Rep ↥W wh
     have h := congrArg (fun T : Module.End ℂ V => T (x : V)) R.hef
     simpa [LinearMap.restrict_coe_apply] using h
 
+@[simp] theorem restr_E_coe (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (x : ↥W) :
+    ((R.restr W hW).E x : V) = R.E (x : V) := rfl
 
+@[simp] theorem restr_F_coe (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (x : ↥W) :
+    ((R.restr W hW).F x : V) = R.F (x : V) := rfl
 
-
-
-
+@[simp] theorem restr_H_coe (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (x : ↥W) :
+    ((R.restr W hW).H x : V) = R.H (x : V) := rfl
 
 /-- The quotient representation on `V ⧸ W` for an invariant subspace `W`. -/
 def quot (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) : Sl2Rep (V ⧸ W) where
@@ -142,11 +145,14 @@ def quot (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) : Sl2Rep (V ⧸ W
     simp only [Submodule.Quotient.mk''_eq_mk, Module.End.mul_apply, LinearMap.sub_apply,
       Submodule.mapQ_apply, ← Submodule.Quotient.mk_sub, h]
 
+@[simp] theorem quot_E_mk (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (v : V) :
+    (R.quot W hW).E (Submodule.Quotient.mk v) = Submodule.Quotient.mk (R.E v) := rfl
 
+@[simp] theorem quot_F_mk (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (v : V) :
+    (R.quot W hW).F (Submodule.Quotient.mk v) = Submodule.Quotient.mk (R.F v) := rfl
 
-
-
-
+@[simp] theorem quot_H_mk (R : Sl2Rep V) (W : Submodule ℂ V) (hW : R.IsInv W) (v : V) :
+    (R.quot W hW).H (Submodule.Quotient.mk v) = Submodule.Quotient.mk (R.H v) := rfl
 
 /-! ### Weights, highest-weight vectors and `sl₂`-strings -/
 
@@ -241,11 +247,14 @@ def adRep (R : Sl2Rep V) : Sl2Rep (Module.End ℂ V) where
   hf := by rw [ad_bracket, R.hf, ad_neg, ad_two_nsmul]
   hef := by rw [ad_bracket, R.hef]
 
+@[simp] theorem adRep_E (R : Sl2Rep V) (f : Module.End ℂ V) :
+    (adRep R).E f = R.E * f - f * R.E := ad_apply _ _
 
+@[simp] theorem adRep_F (R : Sl2Rep V) (f : Module.End ℂ V) :
+    (adRep R).F f = R.F * f - f * R.F := ad_apply _ _
 
-
-
-
+@[simp] theorem adRep_H (R : Sl2Rep V) (f : Module.End ℂ V) :
+    (adRep R).H f = R.H * f - f * R.H := ad_apply _ _
 
 /-- The operators that map `V` into `W` and act on `W` by a scalar. -/
 def scalarOps (W : Submodule ℂ V) : Submodule ℂ (Module.End ℂ V) where

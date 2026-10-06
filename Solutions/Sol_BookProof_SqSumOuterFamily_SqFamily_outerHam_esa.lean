@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secHam_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

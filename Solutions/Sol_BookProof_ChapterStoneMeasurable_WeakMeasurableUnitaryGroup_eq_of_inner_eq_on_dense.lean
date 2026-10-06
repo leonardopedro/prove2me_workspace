@@ -17,11 +17,8 @@ variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
 variable (G : WeakMeasurableUnitaryGroup H)
 
 set_option maxHeartbeats 1000000 in
-up of its generator -/
-
-omit [CompleteSpace H] [TopologicalSpace.SeparableSpace H] in
 theorem solution {D : Set H} (hD : Dense D) {v w : H}
-    (h : ∀ z ∈ D, ⟪z, v⟫_ℂ = :=
+    (h : ∀ z ∈ D, ⟪z, v⟫_ℂ = ⟪z, w⟫_ℂ) : v = w :=
   ⟪z, w⟫_ℂ) : v = w := by
     have hcont1 : Continuous fun z : H => ⟪z, v⟫_ℂ := continuous_id.inner continuous_const
     have hcont2 : Continuous fun z : H => ⟪z, w⟫_ℂ := continuous_id.inner continuous_const

@@ -5,7 +5,7 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.FockManyMode
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
@@ -17,7 +17,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.testState_coe (κ : ℝ) (n : ℕ) :
     ((testState κ : L2I ℕ) : ℕ → ℂ) n = if n = 0 then 1 else if n = 2 then 1 else 0 := by sorry

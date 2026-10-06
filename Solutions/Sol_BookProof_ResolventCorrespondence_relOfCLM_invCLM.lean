@@ -11,7 +11,7 @@ open BookProof.ResolventCorrespondence
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot
+open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
 

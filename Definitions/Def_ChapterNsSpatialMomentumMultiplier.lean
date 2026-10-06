@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 import Mathlib
 
 
@@ -62,7 +63,8 @@ transform as a linear isometry equivalence. -/
 def l2Fourier : (Lp ℂ 2 (volume : Measure V)) ≃ₗᵢ[ℂ] (Lp ℂ 2 (volume : Measure V)) :=
   MeasureTheory.Lp.fourierTransformₗᵢ V ℂ
 
-
+@[simp] theorem l2Fourier_apply (v : Lp ℂ 2 (volume : Measure V)) :
+    l2Fourier V v = 𝓕 v := rfl
 
 
 

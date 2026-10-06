@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.mem_faceK
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+open BookProof.CarlemanTwoStep
 
 
 

@@ -11,9 +11,7 @@ open ContinuousLinearMap
 open scoped BigOperators
 
 
-hB : ∀ a, IsSelfAdjoint (B a)) (x : H) :
-    0 ≤ RCLike.re (inner ℂ ((weylHamiltonian π B) x) x) :=
-  (weylHamiltonian_isPositive π B hπ hB).2 x
-
 theorem BookProof.WeylHamiltonian.weylHamiltonian_isSelfAdjoint {n m : ℕ}
-    (π : Fin n → H →L[ := by sorry
+    (π : Fin n → H →L[ℂ] H) (B : Fin m → H →L[ℂ] H)
+    (hπ : ∀ i, IsSelfAdjoint (π i)) (hB : ∀ a, IsSelfAdjoint (B a)) :
+    IsSelfAdjoint (weylHamiltonian π B) := by sorry

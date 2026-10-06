@@ -11,6 +11,7 @@ import Definitions.Def_ChapterQgTimeStepping
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 open BookProof.QgManifoldModeInstance
+open BookProof.QgManifoldModeInstance
 
 variable {ι : Type*}
 variable (S : VielbeinSpectrum ι)

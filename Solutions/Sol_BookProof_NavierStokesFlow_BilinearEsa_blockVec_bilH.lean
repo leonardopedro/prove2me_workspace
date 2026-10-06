@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesBilinearEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_mem_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

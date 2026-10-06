@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_congr
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_add
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

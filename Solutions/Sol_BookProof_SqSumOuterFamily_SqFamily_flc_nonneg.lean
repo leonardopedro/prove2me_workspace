@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

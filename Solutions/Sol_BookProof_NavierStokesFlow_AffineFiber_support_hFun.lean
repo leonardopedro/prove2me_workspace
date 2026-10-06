@@ -11,7 +11,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
@@ -19,7 +19,6 @@ variable {ι : Type*}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-open ShiftHamiltonian in
 theorem solution (S : ShiftData ι) (X : ι → ℂ) :
     Function.support (S.hFun X)
       ⊆ S.shift '' Function.support X ∪ S.shift ⁻¹' Function.support X := by

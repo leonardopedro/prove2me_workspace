@@ -19,14 +19,12 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
-, map_zero]
-
 theorem solution (U S Om : E →L[ℂ] E) (eps : ℝ)
     (hU : ∀ w : E, ‖U w‖ ≤ ‖w‖) (hS : ∀ w : E, ‖S w‖ ≤ ‖w‖)
     (hstep : ∀ w : E, ‖U w - S w‖ ≤ eps * ‖w‖)
     (hcomm : Om.comp U = U.comp Om)
     (n : ℕ) (v : E) (hv : Om v = 0) :
-    ‖Om ((S ^ n) v)‖ ≤ ‖Om‖ * (n * ep :=
+    ‖Om ((S ^ n) v)‖ ≤ ‖Om‖ * (n * eps * ‖v‖) :=
   s * ‖v‖) := by
     have hexact : Om ((U ^ n) v) = 0 := brst_leakage_zero_of_exact U Om hcomm n v hv
     have hsplit : Om ((S ^ n) v) = -(Om ((U ^ n) v - (S ^ n) v)) := by

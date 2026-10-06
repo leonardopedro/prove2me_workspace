@@ -16,7 +16,5 @@ open Filter Topology
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 
-e hsym x = clFun T x := rfl
-
 theorem BookProof.EsaClosure.clExt_extends (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
-    (v : D) : clExt T hdense hsym ⟨(v : F) := by sorry
+    (v : D) : clExt T hdense hsym ⟨(v : F), coe_mem_clDom T v⟩ = T v := by sorry

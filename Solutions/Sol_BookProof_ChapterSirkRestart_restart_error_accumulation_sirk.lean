@@ -18,12 +18,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
-   linarith
-
 theorem solution (U S : E →L[ℂ] E) (C Dmin h : ℝ) (m : ℕ)
     (hU : ∀ w : E, ‖U w‖ ≤ ‖w‖) (hS : ∀ w : E, ‖S w‖ ≤ ‖w‖)
     (hstep : ∀ w : E, ‖U w - S w‖ ≤ sirkBound C Dmin h 1 m * ‖w‖)
     (n : ℕ) (v : E) :
-    ‖(U ^ n) v - (S ^ n) v‖ ≤ n * sirkBound C Dmin h 1 :=
+    ‖(U ^ n) v - (S ^ n) v‖ ≤ n * sirkBound C Dmin h 1 m * ‖v‖ :=
    m * ‖v‖ :=
     restart_error_accumulation U S _ hU

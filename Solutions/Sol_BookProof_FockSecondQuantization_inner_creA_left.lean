@@ -1,14 +1,14 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.inner_creA_left
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_up_self
-import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
 import Theorems.Thm_BookProof_FockSecondQuantization_up_injective
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_creA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_support_creA
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp_of_subset
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp
+import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
+import Theorems.Thm_BookProof_FockSecondQuantization_up_self
 open BookProof.FockSecondQuantization
 
 
@@ -22,10 +22,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-l _) v
-
 theorem solution (j : ℕ) (u v : FockAlg) :
-    (inner ℂ (toLp (creA j u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (ann :=
+    (inner ℂ (toLp (creA j u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (annA j v)) :=
   A j v)) := by
     rw [inner_toLp_of_subset (support_creA j u) v, inner_toLp u (annA j v),
       Finset.sum_image (fun x _ y _ h => up_injective j h)]

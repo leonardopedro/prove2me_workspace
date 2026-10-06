@@ -20,9 +20,7 @@ open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 
-of the spectrum -/
-
 theorem BookProof.ChapterSirkRitzSpectrum.ritzInf_tendsto_sInf_spectrum [Nontrivial F] (A : F →L[ℂ] F) (hsa : IsSelfAdjoint A)
     (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re) (b : HilbertBasis ℕ ℂ F) :
     Tendsto (fun m : ℕ => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop
-      (nhds (sInf := by sorry
+      (nhds (sInf (spectrum ℝ A))) := by sorry

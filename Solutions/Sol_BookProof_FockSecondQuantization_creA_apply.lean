@@ -1,11 +1,11 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.creA_apply
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_up_self
-import Theorems.Thm_BookProof_FockSecondQuantization_dn_self
-import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
 import Theorems.Thm_BookProof_FockSecondQuantization_up_dn
 import Theorems.Thm_BookProof_FockSecondQuantization_creA_single
+import Theorems.Thm_BookProof_FockSecondQuantization_dn_self
+import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
+import Theorems.Thm_BookProof_FockSecondQuantization_up_self
 open BookProof.FockSecondQuantization
 
 

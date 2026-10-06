@@ -15,9 +15,7 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-_closed_born a
-
-theorem solution (f : Fin 2) : finalProb H H :=
+theorem solution (f : Fin 2) : finalProb H H psi0 f = 1 / 2 :=
    psi0 f = 1 / 2 := by
     unfold finalProb jointProb
     fin_cases f <;> norm_num [midProb

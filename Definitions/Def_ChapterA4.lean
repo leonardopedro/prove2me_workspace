@@ -67,7 +67,14 @@ noncomputable def LinearIsometryEquiv.restrictScalarsₗᵢ
   toLinearEquiv := f.toLinearEquiv.restrictScalars R
   norm_map' := f.norm_map'
 
-
+@[simp]
+theorem LinearIsometryEquiv.restrictScalarsₗᵢ_apply
+    (R : Type*) {S E E' : Type*} [Semiring R] [Semiring S]
+    [SeminormedAddCommGroup E] [SeminormedAddCommGroup E']
+    [Module R E] [Module S E] [Module R E'] [Module S E']
+    [LinearMap.CompatibleSMul E E' R S] [LinearMap.CompatibleSMul E' E R S]
+    (f : E ≃ₗᵢ[S] E') (x : E) :
+    LinearIsometryEquiv.restrictScalarsₗᵢ R f x = f x := rfl
 
 section Conjugation
 
@@ -82,13 +89,20 @@ unitary. -/
 noncomputable def conjugateₗᵢ (Θ : E ≃ₗᵢ[R] E') (A : E ≃ₗᵢ[R] E) : E' ≃ₗᵢ[R] E' :=
   Θ.symm.trans (A.trans Θ)
 
+@[simp]
+theorem conjugateₗᵢ_apply (Θ : E ≃ₗᵢ[R] E') (A : E ≃ₗᵢ[R] E) (x : E') :
+    conjugateₗᵢ Θ A x = Θ (A (Θ.symm x)) := rfl
 
 
 
 
 
-
-
+/-- Conjugation of the identity is the identity. -/
+@[simp]
+theorem conjugateₗᵢ_refl (Θ : E ≃ₗᵢ[R] E') :
+    conjugateₗᵢ Θ (LinearIsometryEquiv.refl R E) = LinearIsometryEquiv.refl R E' := by
+  ext x
+  simp [conjugateₗᵢ]
 
 end Conjugation
 
@@ -120,7 +134,10 @@ noncomputable def majoranaFourier
 
 
 
-
+@[simp]
+theorem majoranaFourier_apply
+    (Θ : (Lp F 2 (volume : Measure E)) ≃ₗᵢ[ℝ] P) (x : P) :
+    majoranaFourier E F Θ x = Θ (pauliFourier E F (Θ.symm x)) := rfl
 
 /-- **Prop 76 (book): the Energy transform `𝓔` is unitary.**  Modelled by the
 same conjugation principle: `𝓔 := Θ ∘ 𝓕_P(time) ∘ Θ⁻¹`, the `Θ`-conjugate of a

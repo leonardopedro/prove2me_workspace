@@ -6,17 +6,14 @@ import Theorems.Thm_BookProof_FockWeightedSchur_sum_wsq_normSq_annA
 import Theorems.Thm_BookProof_FockWeightedSchur_w_pos
 import Theorems.Thm_BookProof_FockWeightedSchur_wrow_le
 import Theorems.Thm_BookProof_FockWeightedSchur_wcol_le
+import Theorems.Thm_BookProof_FockSchur_dGamma_inSector
+import Theorems.Thm_BookProof_FockSchur_schur_test
+import Theorems.Thm_BookProof_FockSchur_sum_normSq_annA_of_sector
+import Theorems.Thm_BookProof_FockSecondQuantization_col_support_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_left
+import Theorems.Thm_BookProof_FockSecondQuantization_modes_left_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_modes_right_subset_closure
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -27,27 +24,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

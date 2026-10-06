@@ -1273,7 +1273,7 @@ def build_thm(bt, leaf, decls, node, modns):
         # Read the RAW text before the node: `structural_preamble` has already
         # stripped the `open ... in` lines from `ctx`, so scanning `ctx` cannot
         # recover them.
-        scoped = scoped_opens_before(bt.slice(0, node.s).decode("utf-8", "ignore"))
+        scoped = scoped_opens_before(bt.slice(0, node.s))
         head.append("\n".join(scoped) + "\n" if scoped else "")
         head.append(ctx + "\n")
     head.append("\n")

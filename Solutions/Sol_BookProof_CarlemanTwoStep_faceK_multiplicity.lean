@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_faceK
+open BookProof.CarlemanTwoStep
 
 
 

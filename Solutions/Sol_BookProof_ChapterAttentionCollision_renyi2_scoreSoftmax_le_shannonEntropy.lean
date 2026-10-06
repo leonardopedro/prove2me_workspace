@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionCollision
 import Theorems.Thm_BookProof_ChapterAttentionCollision_renyi2_le_shannonEntropy
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionCollision
 
 

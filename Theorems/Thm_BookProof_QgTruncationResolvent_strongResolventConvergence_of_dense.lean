@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.strongResolventConvergence_of_dense
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

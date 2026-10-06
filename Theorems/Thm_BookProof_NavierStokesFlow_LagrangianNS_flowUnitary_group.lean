@@ -4,7 +4,7 @@ import Definitions.Def_ChapterNavierStokesCauchy
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.LagrangianNS
+open BookProof.NavierStokesFlow
 
 variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
@@ -13,7 +13,5 @@ variable (L : LagrangianNS n)
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-flowUnitary t)ᴴ * L.flowUnitary t = 1 := by
-  have h := BookProof.ChapterContinuityUnitary.exp_smul_I_unitary L.hFull
-    L.transformed_hamiltonian_hermitian t
-  rwa [flowUni := by sorry
+theorem BookProof.NavierStokesFlow.LagrangianNS.flowUnitary_group (s t : ℝ) :
+    L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t := by sorry

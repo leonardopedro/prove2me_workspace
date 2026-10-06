@@ -18,9 +18,6 @@ open Filter Topology
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 
-h0
-  linear_combination -h0
-
 theorem BookProof.EsaClosure.clShift_surjective (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
     (hesa : EssentiallySelfAdjointOn D T) :
-    Function.Surjective (cshiftMap (clE := by sorry
+    Function.Surjective (cshiftMap (clExt T hdense hsym) Complex.I) := by sorry

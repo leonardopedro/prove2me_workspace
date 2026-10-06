@@ -1,6 +1,8 @@
 -- Generated from ChapterFockStatisticsEsa.lean — solution of BookProof.FockStatistics.fermionicFockOp_single
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_single
+import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
 open BookProof.FockStatistics
 
 

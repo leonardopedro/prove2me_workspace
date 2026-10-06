@@ -4,6 +4,7 @@ import Definitions.Def_ChapterTwoParticleSectorEsa
 import Theorems.Thm_BookProof_TwoParticleSector_inclPow_swapDom
 import Theorems.Thm_BookProof_TwoParticleSector_derPow_swapDom
 import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorDom
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 open BookProof.TwoParticleSector
 
 

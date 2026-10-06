@@ -1,11 +1,11 @@
 -- Generated from ChapterNavierStokesSignedShift.lean — solution of BookProof.NavierStokesFlow.SignedShift.SignedHop.hasSum_inner_hopH_left
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
-import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossA
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_summable_crossB
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_conj_hFun_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
+import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_SignedHop_hopH_coe
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
 
@@ -15,7 +15,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
 

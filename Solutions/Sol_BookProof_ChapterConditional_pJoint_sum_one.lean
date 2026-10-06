@@ -1,0 +1,23 @@
+-- Generated from ChapterConditional.lean — solution of BookProof.ChapterConditional.pJoint_sum_one
+import Mathlib
+import Definitions.Def_ChapterConditional
+open BookProof.ChapterConditional
+
+
+
+open scoped BigOperators Matrix
+open Finset
+
+
+variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X]
+variable {𝕜 : Type*} [RCLike 𝕜]
+
+variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X]
+variable {𝕜 : Type*} [RCLike 𝕜]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (B : Matrix Y X 𝕜)
+    (hB : ∑ x, ∑ y, ‖B y x‖ ^ 2 = 1) :
+    ∑ x, ∑ y, pJoint B x y = 1 := by
+
+  exact hB

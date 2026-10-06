@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSqSumOuterSingleTime
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_truncHam_eq_of_support
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

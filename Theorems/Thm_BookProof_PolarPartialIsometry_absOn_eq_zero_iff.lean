@@ -22,7 +22,7 @@ variable [CompleteSpace F] {D : Submodule ℂ F} (A : D →ₗ[ℂ] F) (hdense :
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 
 theorem BookProof.PolarPartialIsometry.absOn_eq_zero_iff (x : clDom A) :

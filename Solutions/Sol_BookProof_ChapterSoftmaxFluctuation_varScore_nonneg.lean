@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — solution of BookProof.ChapterSoftmaxFluctuation.varScore_nonneg
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 open BookProof.ChapterSoftmaxFluctuation
 
 

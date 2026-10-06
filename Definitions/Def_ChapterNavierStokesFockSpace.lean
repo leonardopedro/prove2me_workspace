@@ -66,7 +66,8 @@ coefficients. -/
 def ofCoeff (φ : ι → ℂ) (h : (Function.support φ).Finite) : lpFiniteModes ι :=
   ⟨⟨φ, memℓpTwo_of_finite_support h⟩, h⟩
 
-
+@[simp] theorem ofCoeff_coe (φ : ι → ℂ) (h : (Function.support φ).Finite) :
+    (((ofCoeff φ h : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ) = φ := rfl
 
 /-- A coefficientwise linear operator on the finite-mode domain of `ℓ²(ι)`. -/
 def coeffOp (T : (ι → ℂ) → ι → ℂ)
@@ -89,7 +90,9 @@ def coeffOp (T : (ι → ℂ) → ι → ℂ)
       ext j; simp
     simp [ofCoeff, hsmul]
 
-
+@[simp] theorem coeffOp_coe (T : (ι → ℂ) → ι → ℂ) (hsupp) (hadd) (hsmul) (f : lpFiniteModes ι) :
+    (((coeffOp T hsupp hadd hsmul f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ)
+      = T ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) := rfl
 
 /-- The canonical basis state `e_i` of the finite-mode domain. -/
 noncomputable def lpBasis [DecidableEq ι] (i : ι) : lpFiniteModes ι :=
@@ -126,7 +129,9 @@ noncomputable def lpDiag (c : ι → ℝ) : lpFiniteModes ι →ₗ[ℂ] lpFinit
     (fun φ ψ => by funext i; simp [diagCoeff]; ring)
     (fun a φ => by funext i; simp [diagCoeff]; ring)
 
-
+@[simp] theorem lpDiag_coe (c : ι → ℝ) (f : lpFiniteModes ι) (i : ι) :
+    (((lpDiag c f : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i
+      = (c i : ℂ) * ((f : lp (fun _ : ι => ℂ) 2) : ι → ℂ) i := rfl
 
 
 
@@ -228,9 +233,15 @@ noncomputable def creat (m : M) : FockDom M →ₗ[ℂ] FockDom M :=
     (fun φ ψ => by funext n; simp [creatCoeff]; ring)
     (fun a φ => by funext n; simp [creatCoeff]; ring)
 
+omit [DecidableEq M] in
+@[simp] theorem annih_coe (m : M) (f : FockDom M) (n : Conf M) :
+    (((annih m f : FockDom M) : FockL2 M) : Conf M → ℂ) n
+      = (Real.sqrt (n m + 1) : ℂ) * ((f : FockL2 M) : Conf M → ℂ) (n + Finsupp.single m 1) := rfl
 
-
-
+omit [DecidableEq M] in
+@[simp] theorem creat_coe (m : M) (f : FockDom M) (n : Conf M) :
+    (((creat m f : FockDom M) : FockL2 M) : Conf M → ℂ) n
+      = (Real.sqrt (n m) : ℂ) * ((f : FockL2 M) : Conf M → ℂ) (n - Finsupp.single m 1) := rfl
 
 
 

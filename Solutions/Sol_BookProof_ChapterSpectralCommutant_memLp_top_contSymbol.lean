@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
 import Theorems.Thm_BookProof_ChapterSpectralCommutant_contSymbol_ae_norm_le
+import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_stronglyMeasurable_symbol
 open BookProof.ChapterSpectralCommutant
 
 

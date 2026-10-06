@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionOutput.lean — solution of BookProof.ChapterAttentionOutput.headOutput_const
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionOutput
 
 

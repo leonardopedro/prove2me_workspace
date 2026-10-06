@@ -27,7 +27,7 @@ open BookProof.ChapterH4
 open BookProof.ChapterH9
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.LagrangianEsa
-open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
+open BookProof.NavierStokesFlow.LagrangianEsa
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.ChapterSirkPerSystem
 

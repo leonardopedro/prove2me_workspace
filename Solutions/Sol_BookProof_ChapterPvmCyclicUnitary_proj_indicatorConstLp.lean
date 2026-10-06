@@ -1,6 +1,7 @@
 -- Generated from ChapterPvmCyclicUnitary.lean — solution of BookProof.ChapterPvmCyclicUnitary.proj_indicatorConstLp
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
 open BookProof.ChapterPvmCyclicUnitary
 
 

@@ -52,7 +52,10 @@ event (subset) `S ⊆ {1, …, n}`, in the measurement basis. -/
 noncomputable def eventProj (S : Finset n) : Matrix n n ℂ :=
   Matrix.diagonal (fun k => if k ∈ S then (1 : ℂ) else 0)
 
-
+omit [Fintype n] in
+@[simp] theorem eventProj_apply (S : Finset n) (k l : n) :
+    eventProj S k l = if k = l then (if k ∈ S then (1 : ℂ) else 0) else 0 := by
+  simp [eventProj, Matrix.diagonal_apply]
 
 
 

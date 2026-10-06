@@ -10,6 +10,7 @@ import Theorems.Thm_BookProof_EsaClosure_clExt_extends
 import Theorems.Thm_BookProof_EsaOneParticle_esa_graph_le
 import Theorems.Thm_BookProof_EsaOneParticle_isGraphCore_clDom
 import Theorems.Thm_BookProof_EsaOneParticle_le_clDom
+import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 open BookProof.TensorSumEsa
 
 

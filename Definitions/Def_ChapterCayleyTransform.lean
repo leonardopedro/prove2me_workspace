@@ -1,6 +1,8 @@
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
 
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -84,7 +86,7 @@ theorem cayleyMap_surjective : Function.Surjective (cayleyMap T) := by
 noncomputable def cayley : H ≃ₗᵢ[ℂ] H :=
   LinearIsometryEquiv.ofSurjective ⟨cayleyMap T, norm_cayleyMap T⟩ (cayleyMap_surjective T)
 
-
+@[simp] theorem cayley_apply (y : H) : cayley T y = cayleyMap T y := rfl
 
 
 

@@ -21,12 +21,9 @@ variable (T : UnboundedSelfAdjoint H)
 variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
-t, inner_smul_right, hsym]
-  simp [Complex.conj_I]
-
 theorem solution {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0) (y : H) :
     ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H)
-      = ((T. :=
+      = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H) :=
   res m ((T.res l y : T.domain) : H) : T.domain) : H) := by
     set a : T.domain := T.res l ((T.res m y : T.domain) : H) with ha
     set b : T.domain := T.res m ((T.res l y : T.domain) : H) with hb

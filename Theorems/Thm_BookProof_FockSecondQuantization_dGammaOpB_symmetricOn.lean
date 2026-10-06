@@ -24,7 +24,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-earMap
-
 theorem BookProof.FockSecondQuantization.dGammaOpB_symmetricOn {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB := by sorry
+    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB ε col) := by sorry

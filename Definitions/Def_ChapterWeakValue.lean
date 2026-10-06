@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterTrajectory
+import Definitions.Def_ChapterDoubleSlit
 import Mathlib
 
 

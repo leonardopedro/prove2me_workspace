@@ -93,9 +93,11 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 /-- The flow `e^{-i t A}` of a bounded generator `A`. -/
 noncomputable def flow (A : E →L[ℂ] E) (t : ℝ) : E →L[ℂ] E := exp (t • ((-Complex.I) • A))
 
+@[simp] lemma flow_zero (A : E →L[ℂ] E) : flow A 0 = 1 := by
+  simp [flow]
 
-
-
+@[simp] lemma flow_apply_zero (A : E →L[ℂ] E) (x : E) : flow A 0 x = x := by
+  simp [flow]
 
 
 
@@ -117,7 +119,10 @@ noncomputable def flow (A : E →L[ℂ] E) (t : ℝ) : E →L[ℂ] E := exp (t �
 
 
 
-
+@[simp] lemma flow_neg_gen (A : E →L[ℂ] E) (t : ℝ) : flow (-A) t = flow A (-t) := by
+  simp only [flow]
+  congr 1
+  module
 
 
 
@@ -156,7 +161,8 @@ noncomputable def leakageIter (B : ℕ → E →L[ℂ] E) (τ : ℝ) (x : E) : �
   | 0 => x
   | n + 1 => flow (B n) τ (leakageIter B τ x n)
 
-
+@[simp] lemma leakageIter_zero (B : ℕ → E →L[ℂ] E) (τ : ℝ) (x : E) :
+    leakageIter B τ x 0 = x := rfl
 
 
 

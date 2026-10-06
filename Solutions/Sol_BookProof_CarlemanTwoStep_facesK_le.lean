@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_faceK_multiplicity
+open BookProof.CarlemanTwoStep
 
 
 

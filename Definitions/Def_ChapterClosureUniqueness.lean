@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -202,7 +203,8 @@ def sqOp (A : D →ₗ[ℂ] F) (hstab : ∀ v : D, (A v : F) ∈ D) : D →ₗ[�
       apply Subtype.ext; simp
     rw [this, map_smul]; rfl
 
-
+@[simp] theorem sqOp_apply (A : D →ₗ[ℂ] F) (hstab : ∀ v : D, (A v : F) ∈ D) (v : D) :
+    sqOp A hstab v = A ⟨A v, hstab v⟩ := rfl
 
 
 

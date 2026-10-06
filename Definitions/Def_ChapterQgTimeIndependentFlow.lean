@@ -1,6 +1,17 @@
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterQgManifoldModeInstance
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
 import Mathlib
 
 
@@ -74,11 +85,14 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 Hamiltonian carrying no time argument. -/
 def prop (T : UnboundedSelfAdjoint E) (t s : ℝ) : E →L[ℂ] E := T.stoneU (t - s)
 
+@[simp] theorem prop_apply (T : UnboundedSelfAdjoint E) (t s : ℝ) (x : E) :
+    prop T t s x = T.stoneU (t - s) x := rfl
 
+@[simp] theorem prop_zero_right (T : UnboundedSelfAdjoint E) (t : ℝ) :
+    prop T t 0 = T.stoneU t := by simp [prop]
 
-
-
-
+@[simp] theorem prop_self (T : UnboundedSelfAdjoint E) (t : ℝ) : prop T t t = 1 := by
+  simp [prop]
 
 
 

@@ -15,7 +15,5 @@ open scoped InnerProductSpace
 
 
 
-On f)
-
 theorem BookProof.ChapterUnitaryTransport.transported_position_domain_dense (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) :
-    Dense ((transportDomain W (mulDomain f) : Submodule ℂ K) : := by sorry
+    Dense ((transportDomain W (mulDomain f) : Submodule ℂ K) : Set K) := by sorry

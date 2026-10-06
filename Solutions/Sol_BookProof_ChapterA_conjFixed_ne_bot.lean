@@ -1,6 +1,7 @@
 -- Generated from ChapterA1f.lean — solution of BookProof.ChapterA.conjFixed_ne_bot
 import Mathlib
 import Definitions.Def_ChapterA1f
+import Theorems.Thm_BookProof_ChapterA_conjugation_avg_fixed
 open BookProof.ChapterA
 
 

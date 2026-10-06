@@ -16,7 +16,5 @@ open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 
- hone
-
 theorem BookProof.ChapterSirkGramWhitening.isWhiteningMatrix_one_of_orthonormal {m : ℕ} {w : Fin m → E}
-    (hw : Orthonorma := by sorry
+    (hw : Orthonormal ℂ w) : IsWhiteningMatrix w 1 := by sorry

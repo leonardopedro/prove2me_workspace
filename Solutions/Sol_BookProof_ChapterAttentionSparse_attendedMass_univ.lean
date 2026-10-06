@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionSparse.lean — solution of BookProof.ChapterAttentionSparse.attendedMass_univ
 import Mathlib
 import Definitions.Def_ChapterAttentionSparse
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionSparse
 
 

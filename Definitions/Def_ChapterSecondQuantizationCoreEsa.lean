@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_GraphCore_pushDom_mono
+
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_norm_le
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

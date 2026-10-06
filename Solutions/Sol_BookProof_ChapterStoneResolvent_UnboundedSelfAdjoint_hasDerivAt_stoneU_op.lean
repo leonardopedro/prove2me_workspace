@@ -22,13 +22,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
- : H) := by
-    funext s
-    rw [T.stoneU_apply_stoneU]
-    have hts : t + (s - t) = s := by ring
-    rw [hts]
-  rwa [heq] at h3
-
-theorem solution (x : T.domain) (t : ℝ) : :=
+theorem solution (x : T.domain) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => T.stoneU s (x : H))
+      ((-Complex.I) • T.op ⟨T.stoneU t (x : H), T.stoneU_mem_domain t x⟩) t :=
    HasDerivAt (fun s : ℝ => T.stoneU s (x : H))
         ((-Complex.I) • T.op ⟨T.stoneU

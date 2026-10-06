@@ -4,6 +4,7 @@ import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_continuous_ofReal
 import Theorems.Thm_BookProof_Complexification_Cx_mem_realPart
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 
 

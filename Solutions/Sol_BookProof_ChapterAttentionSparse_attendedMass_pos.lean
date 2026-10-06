@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionSparse.lean — solution of BookProof.ChapterAttentionSparse.attendedMass_pos
 import Mathlib
 import Definitions.Def_ChapterAttentionSparse
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterAttentionSparse
 
 

@@ -9,6 +9,7 @@ open BookProof.ChapterA
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.Complexification
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 variable [CompleteSpace W]

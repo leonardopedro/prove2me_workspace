@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_d
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_not_bounded
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

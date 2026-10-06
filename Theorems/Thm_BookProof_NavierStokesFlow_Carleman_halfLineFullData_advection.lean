@@ -14,6 +14,7 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 open scoped ENNReal

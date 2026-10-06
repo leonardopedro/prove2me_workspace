@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
 import Theorems.Thm_BookProof_ChapterAttentionCapacity_distScore_margin_of_separated
+import Theorems.Thm_BookProof_ChapterAttentionRetrieval_norm_headOutput_sub_le_of_margin
 open BookProof.ChapterAttentionCapacity
 
 

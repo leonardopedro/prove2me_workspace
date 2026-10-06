@@ -1,6 +1,7 @@
 -- Generated from ChapterNonnegResolvent.lean — solution of BookProof.NonnegResolvent.invCLMAt_nonneg
 import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_mem
 import Theorems.Thm_BookProof_PositiveSquareRoot_inner_im_eq_zero
 open BookProof.NonnegResolvent

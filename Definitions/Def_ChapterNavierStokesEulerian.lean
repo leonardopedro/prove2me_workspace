@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 

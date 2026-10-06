@@ -15,6 +15,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_viscous_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_drift_eq
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
 
 

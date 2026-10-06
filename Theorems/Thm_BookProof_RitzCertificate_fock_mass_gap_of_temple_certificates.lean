@@ -1,18 +1,16 @@
 -- Generated from ChapterRitzCertificate.lean — theorem BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates
+import Definitions.Def_ChapterSirkRitzSpectrum
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+open BookProof.BandEnclosure
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
 open BookProof.RitzCertificate
 
-
-
-
-
-
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
@@ -22,47 +20,8 @@ open Filter Topology
 
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
-open BookProof.FockOneParticleGap
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.RitzCertificate.fock_mass_gap_of_temple_certificates [Nontrivial F] {A : F →L[ℂ] F}
     (hA : IsSelfAdjoint A) {bas : HilbertBasis ℕ ℂ F} {e : ℕ → ℝ}

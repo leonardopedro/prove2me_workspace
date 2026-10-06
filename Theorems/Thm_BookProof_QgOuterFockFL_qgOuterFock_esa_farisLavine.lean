@@ -38,8 +38,6 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
-set_option maxHeartbeats 2000000 in
--- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
 theorem BookProof.QgOuterFockFL.qgOuterFock_esa_farisLavine
     (H : ∀ n : ℕ, (harmFried (n * 84)).dom →ₗ[ℂ] L2d (n * 84))
     (hsym : ∀ n : ℕ, SymmetricOn (harmFried (n * 84)).dom (H n))

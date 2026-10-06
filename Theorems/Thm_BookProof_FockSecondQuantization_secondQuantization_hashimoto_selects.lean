@@ -25,8 +25,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-).symm
-
 theorem BookProof.FockSecondQuantization.secondQuantization_hashimoto_selects {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] (ε : ℕ ≃ Conf) (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
@@ -43,4 +41,4 @@ theorem BookProof.FockSecondQuantization.secondQuantization_hashimoto_selects {F
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A'' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A'' γ R →
           Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'),
-            A'' ⟨x, hx'⟩ = A' ⟨x, := by sorry
+            A'' ⟨x, hx'⟩ = A' ⟨x, hx⟩) := by sorry

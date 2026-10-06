@@ -1,3 +1,12 @@
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
 import Mathlib
 
 

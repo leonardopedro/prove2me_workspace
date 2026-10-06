@@ -8,6 +8,4 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
-:= rfl
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_ne_zero : defStat := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_ne_zero : defState ≠ 0 := by sorry

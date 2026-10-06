@@ -1,0 +1,20 @@
+-- Generated from ChapterAngularMomentum.lean — solution of BookProof.ChapterAngularMomentum.circHarm_rotate
+import Mathlib
+import Definitions.Def_ChapterAngularMomentum
+open BookProof.ChapterAngularMomentum
+
+
+
+
+open Complex
+
+set_option maxHeartbeats 1000000 in
+theorem solution (μ : ℕ) (t : ℝ) (z : ℂ) :
+    circHarm μ (Complex.exp ((t : ℂ) * Complex.I) * z)
+      = Complex.exp ((μ : ℂ) * (t : ℂ) * Complex.I) * circHarm μ z := by
+
+  have hnorm : ‖Complex.exp ((t : ℂ) * Complex.I) * z‖ = ‖z‖ := by
+    rw [norm_mul, Complex.norm_exp]
+    simp
+  rw [circHarm, circHarm, hnorm, mul_div_assoc, mul_pow, ← Complex.exp_nat_mul]
+  ring_nf

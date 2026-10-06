@@ -15,6 +15,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSqSumOuterFamily
 open BookProof.HermiteProductCore
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

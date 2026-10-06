@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFockEsa.lean — solution of BookProof.ScalaronFock.qgScalaronModeFock_esa
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_ScalaronEsa_qgScalaronMode_esa
 open BookProof.ScalaronFock
 

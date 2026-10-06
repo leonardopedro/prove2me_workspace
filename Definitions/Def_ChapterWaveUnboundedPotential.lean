@@ -74,9 +74,15 @@ holds for every polynomial; no boundedness is required. -/
 noncomputable def potentialOp (W : V → ℝ) : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ) :=
   SchwartzMap.smulLeftCLM ℂ (fun x => (W x : ℂ))
 
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+lemma hasTemperateGrowth_ofReal {W : V → ℝ} (hW : Function.HasTemperateGrowth W) :
+    Function.HasTemperateGrowth (fun x => (W x : ℂ)) := by
+  exact Function.HasTemperateGrowth.comp Complex.ofRealCLM.hasTemperateGrowth hW
 
-
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma potentialOp_apply {W : V → ℝ} (hW : Function.HasTemperateGrowth W)
+    (f : 𝓢(V, ℂ)) (x : V) : potentialOp W f x = (W x : ℂ) * f x := by
+  simp [potentialOp, SchwartzMap.smulLeftCLM_apply_apply (hasTemperateGrowth_ofReal hW)]
 
 
 

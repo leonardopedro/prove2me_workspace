@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime
 import Theorems.Thm_BookProof_QgBrstDerivativeGauge_gaugeReduce_gram
 import Theorems.Thm_BookProof_QgTruncationResolvent_momWindow_exhausts
+open BookProof.QgTimeIndependent
 
 
 

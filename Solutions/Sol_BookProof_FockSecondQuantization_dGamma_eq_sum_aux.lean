@@ -1,9 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.dGamma_eq_sum_aux
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
+import Theorems.Thm_BookProof_FockSecondQuantization_sum_creVec_annA_subset
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_single
 import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_single
-import Theorems.Thm_BookProof_FockSecondQuantization_sum_creVec_annA_subset
 open BookProof.FockSecondQuantization
 
 
@@ -17,10 +17,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-_zero]
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u : FockAlg) :
-    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (an :=
+    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) :=
   nA k u) := by
     classical
     induction u using Finsupp.induction_linear with

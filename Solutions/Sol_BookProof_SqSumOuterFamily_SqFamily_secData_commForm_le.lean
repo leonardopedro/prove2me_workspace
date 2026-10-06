@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
 import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

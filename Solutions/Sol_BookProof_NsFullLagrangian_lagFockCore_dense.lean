@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFullLagrangianFock.lean — solution of BookProof.NsFullLagrangian.lagFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.NsFullLagrangian
 
 

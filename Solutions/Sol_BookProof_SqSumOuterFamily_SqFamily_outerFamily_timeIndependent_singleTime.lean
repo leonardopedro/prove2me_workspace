@@ -17,6 +17,7 @@ import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_outerHam_symmetricOn
 import Theorems.Thm_BookProof_SqSumOuterFamily_outerCore_dense
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

@@ -11,9 +11,8 @@ variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
-- The flow of `A` commutes with everything `A` commutes with. -/
-theorem solution (A B : Matrix (Fin n) (Fin n) ℂ) (h : Commute A B)
-    (t : ℝ) : Commute (matrixFlow A :=
+theorem solution (t : ℝ) :
+    nsFlowUnitary d t * nsHamiltonian d = nsHamiltonian d * nsFlowUnitary d t :=
   t) B :=
     (h.smul_left t).exp_left
   

@@ -1,0 +1,15 @@
+-- Generated from ChapterPauliLorentz.lean — solution of BookProof.ChapterPauliLorentz.σ1_sq
+import Mathlib
+import Definitions.Def_ChapterPauliLorentz
+open BookProof.ChapterPauliLorentz
+
+
+
+open Matrix
+open scoped BigOperators
+
+set_option maxHeartbeats 1000000 in
+theorem solution : σ1 * σ1 = 1 := by
+
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [σ1, Matrix.mul_apply, Fin.sum_univ_two]

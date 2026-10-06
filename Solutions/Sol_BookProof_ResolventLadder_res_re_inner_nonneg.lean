@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Theorems.Thm_BookProof_ResolventLadder_res_mem
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 open BookProof.ResolventLadder
 
 

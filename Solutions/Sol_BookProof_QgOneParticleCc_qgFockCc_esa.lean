@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Theorems.Thm_BookProof_QgOneParticleCc_qgNParticleCc_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.QgOneParticleCc
 
 

@@ -28,9 +28,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
- _ k j
-
 theorem BookProof.FockSecondQuantization.ym_fock_friedrichs_extension (e : ℕ ≃ (Fin 99 →₀ ℕ))
     (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e f := by sorry
+      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) A := by sorry

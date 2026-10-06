@@ -1,10 +1,10 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.mem_cfermionicSector_iff
-import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.TensorCore
 open BookProof.ChapterWignerLittleGroup
 open BookProof.GroupAverage.UnitaryRep

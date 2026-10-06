@@ -6,6 +6,7 @@ import Definitions.Def_Complexification
 open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 variable [CompleteSpace W]

@@ -22,7 +22,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 set_option maxHeartbeats 1000000 in
-omit [CompleteSpace E] [CompleteSpace F] [CompleteSpace G] in
 theorem solution (V : F →L[ℂ] E) (W : G →L[ℂ] F)
     (hV : ∀ x : F, ‖V x‖ = ‖x‖) (hW : ∀ x : G, ‖W x‖ = ‖x‖) (x : G) :
     ‖(V.comp W) x‖ = ‖x‖ := by

@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 
 

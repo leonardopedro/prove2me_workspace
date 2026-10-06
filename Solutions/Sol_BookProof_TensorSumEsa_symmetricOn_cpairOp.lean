@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_symmetricOn_pairOp
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_pushOp
 open BookProof.TensorSumEsa
 
 

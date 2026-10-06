@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_hFun_flip
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

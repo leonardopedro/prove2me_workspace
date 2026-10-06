@@ -371,7 +371,9 @@ noncomputable def inducedRep [SigmaFinite μ] (h : QuasiInvariant μ G)
     rw [vmap_mul h hL g g⁻¹ f, mul_inv_cancel, vmap_one h hL]
   norm_map' := vmap_norm h hL g
 
-
+@[simp] theorem inducedRep_apply [SigmaFinite μ] (h : QuasiInvariant μ G)
+    (hL : UnitaryCocycle μ L) (g : G) (f : Lp K 2 μ) :
+    inducedRep h hL g f = vmap h hL g f := rfl
 
 /-! ## Invariant measures are quasi-invariant -/
 

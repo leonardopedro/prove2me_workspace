@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFockEsa.lean — solution of BookProof.ScalaronFock.qgScalaronModeFock_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_deficiencyTrivialAt
 import Theorems.Thm_BookProof_ScalaronEsa_qgScalaronMode_deficiencyTrivialAt
 open BookProof.ScalaronFock
 

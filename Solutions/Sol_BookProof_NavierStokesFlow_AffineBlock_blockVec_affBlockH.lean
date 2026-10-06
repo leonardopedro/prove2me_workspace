@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom'
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_coe
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 
 

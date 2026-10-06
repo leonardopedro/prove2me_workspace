@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Theorems.Thm_BookProof_TwoParticleSector_mem_fermionic_iff
+import Theorems.Thm_BookProof_TensorCore_inner_tmul_pow
+import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
 open BookProof.TwoParticleSector
 
 

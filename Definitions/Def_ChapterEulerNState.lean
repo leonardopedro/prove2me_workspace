@@ -53,7 +53,8 @@ namespace BookProof.ChapterEulerNState
 noncomputable def tailProd (θ : ℕ → ℝ) (m : ℕ) : ℝ :=
   ∏ i ∈ Finset.range m, Real.sin (θ i) ^ 2
 
-
+@[simp] theorem tailProd_zero (θ : ℕ → ℝ) : tailProd θ 0 = 1 := by
+  simp [tailProd]
 
 
 

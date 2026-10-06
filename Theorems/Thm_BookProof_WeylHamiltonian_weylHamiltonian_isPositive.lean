@@ -11,4 +11,7 @@ open ContinuousLinearMap
 open scoped BigOperators
 
 
- := by sorry
+theorem BookProof.WeylHamiltonian.weylHamiltonian_isPositive {n m : ℕ}
+    (π : Fin n → H →L[ℂ] H) (B : Fin m → H →L[ℂ] H)
+    (hπ : ∀ i, IsSelfAdjoint (π i)) (hB : ∀ a, IsSelfAdjoint (B a)) :
+    (weylHamiltonian π B).IsPositive := by sorry

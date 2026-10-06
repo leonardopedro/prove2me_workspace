@@ -19,8 +19,6 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-ε) x)
-
 theorem solution (ε : ℕ ≃ Conf) {col : ℕ → (ℕ →₀ ℂ)}
     (hherm : IsHermCol col) (hpos : IsPosCol col) {γ : ℝ} (hγ : 0 < γ) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock) (R : Fock →L[ℂ] Fock),
@@ -32,7 +30,7 @@ theorem solution (ε : ℕ ≃ Conf) {col : ℕ → (ℕ →₀ ℂ)}
           Tendsto (fun k : ℕ => resolvent (galerkinCompression R (fockBasisN ε) k) z u) atTop
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A' γ R →
-          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, :=
+          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) :=
    hx⟩) :=
     friedrichs_hashimoto_selects (fockBasisN ε) (dGammaOpB ε col)
       (dGammaOpB_symmetricOn hherm) (dGammaOpB_quadForm_nonneg h

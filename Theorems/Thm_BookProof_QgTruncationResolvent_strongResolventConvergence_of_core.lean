@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.strongResolventConvergence_of_core
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterQgOuterFockCoreFL

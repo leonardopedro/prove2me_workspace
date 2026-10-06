@@ -1,6 +1,7 @@
 -- Generated from ChapterCrossEntropyGradient.lean — solution of BookProof.ChapterCrossEntropyGradient.crossEntropyGradient_target_nonpos
 import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_one
 open BookProof.ChapterCrossEntropyGradient
 
 

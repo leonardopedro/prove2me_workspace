@@ -1,6 +1,8 @@
 -- Generated from ChapterCoherentThermalFidelity.lean — solution of BookProof.ChapterCoherentThermalFidelity.coherentThermalFidelity_hasSum
 import Mathlib
 import Definitions.Def_ChapterCoherentThermalFidelity
+import Theorems.Thm_BookProof_ChapterCoherentOccupation_coherentOccupation_eq
+import Theorems.Thm_BookProof_ChapterCoherentOccupation_hasSum_expSeries
 open BookProof.ChapterCoherentThermalFidelity
 
 

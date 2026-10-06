@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_SecondQuantizationCore_symmetricOn_fockSectorOp
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_restrictOp
 open BookProof.SecondQuantizationCore
 
 

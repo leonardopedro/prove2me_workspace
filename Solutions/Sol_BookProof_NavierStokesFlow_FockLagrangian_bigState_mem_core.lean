@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesFockParcels
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_scale
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

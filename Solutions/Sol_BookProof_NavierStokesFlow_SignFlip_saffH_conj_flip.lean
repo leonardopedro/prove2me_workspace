@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_hFun_flip
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_coe
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

@@ -1,7 +1,9 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.sum_simplex_hop_im
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
-import Definitions.Def_ChapterA4
+open BookProof.CarlemanSimplex
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
@@ -9,6 +11,7 @@ variable {u : (Fin d →₀ ℕ) → ℂ}
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

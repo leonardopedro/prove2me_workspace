@@ -22,7 +22,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-else 0
-
 theorem BookProof.FockSecondQuantization.coordFinsupp_apply {b : HilbertBasis ℕ ℂ F} {x : F} (hx : x ∈ finiteModeDomain b)
-    (j : ℕ) : coordFinsupp b x j = inner ℂ := by sorry
+    (j : ℕ) : coordFinsupp b x j = inner ℂ (b j) x := by sorry

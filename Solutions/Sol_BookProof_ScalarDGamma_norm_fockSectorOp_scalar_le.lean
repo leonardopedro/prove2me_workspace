@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
 import Theorems.Thm_BookProof_ScalarDGamma_sectorOp_scalar
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
 open BookProof.ScalarDGamma
 
 

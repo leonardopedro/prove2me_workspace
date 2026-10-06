@@ -1,6 +1,7 @@
 -- Generated from ChapterSmOuterFock.lean — solution of BookProof.SmOuterFock.smFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterSmOuterFock
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.SmOuterFock
 
 

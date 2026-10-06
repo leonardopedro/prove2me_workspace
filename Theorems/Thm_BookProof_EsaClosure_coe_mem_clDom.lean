@@ -15,6 +15,4 @@ open Filter Topology
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 
-exact ⟨(x, y), hy, rfl⟩
-
-theorem BookProof.EsaClosure.coe_mem_clDom (T : D →ₗ[ℂ] F) ( := by sorry
+theorem BookProof.EsaClosure.coe_mem_clDom (T : D →ₗ[ℂ] F) (v : D) : (v : F) ∈ clDom T := by sorry

@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom'
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

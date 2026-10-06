@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense
+
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Mathlib
 

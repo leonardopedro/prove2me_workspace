@@ -78,7 +78,10 @@ variable {U : ℝ → ℝ → H → H}
 def howland (U : ℝ → ℝ → H → H) (σ : ℝ) (ψ : ℝ → H) : ℝ → H :=
   fun t => U t (t - σ) (ψ (t - σ))
 
-
+@[simp] theorem howland_zero (hU : IsPropagator U) (ψ : ℝ → H) :
+    howland U 0 ψ = ψ := by
+  funext t
+  simp [howland, hU.refl]
 
 
 

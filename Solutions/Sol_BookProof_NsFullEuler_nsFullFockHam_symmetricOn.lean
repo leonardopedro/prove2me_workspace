@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFullEulerianFock.lean — solution of BookProof.NsFullEuler.nsFullFockHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.NsFullEuler
 
 

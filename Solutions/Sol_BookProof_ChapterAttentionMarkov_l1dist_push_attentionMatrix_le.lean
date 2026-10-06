@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_attentionMatrix_isStochastic
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_l1dist_push_le_of_min
+import Theorems.Thm_BookProof_ChapterAttentionRetrieval_scoreSoftmax_ge_of_spread
 open BookProof.ChapterAttentionMarkov
 
 

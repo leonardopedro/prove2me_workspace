@@ -1,22 +1,7 @@
 -- Generated from ChapterRitzCertificate.lean — solution of BookProof.RitzCertificate.temple_width_tendsto_zero
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
-import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -30,19 +15,6 @@ open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

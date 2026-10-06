@@ -10,7 +10,7 @@ open BookProof.PolarPartialIsometry
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

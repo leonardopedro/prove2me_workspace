@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -66,7 +67,8 @@ def diagOp (d : Finset (Fin n) → ℝ) : FermiFock n →ₗ[ℂ] FermiFock n wh
   map_add' x y := by ext S; simp [mul_add]
   map_smul' c x := by ext S; simp [mul_left_comm]
 
-
+@[simp] theorem diagOp_apply (d : Finset (Fin n) → ℝ) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (diagOp d ψ) S = (d S : ℂ) * ψ S := rfl
 
 
 
@@ -146,7 +148,8 @@ abbrev fullDom (n : ℕ) : Submodule ℂ (FermiFock n) := ⊤
 def onFull (T : FermiFock n →ₗ[ℂ] FermiFock n) : fullDom n →ₗ[ℂ] FermiFock n :=
   T ∘ₗ (fullDom n).subtype
 
-
+@[simp] theorem onFull_apply (T : FermiFock n →ₗ[ℂ] FermiFock n) (x : fullDom n) :
+    onFull T x = T (x : FermiFock n) := rfl
 
 variable {hD M : Matrix (Fin n) (Fin n) ℂ} {z : ℂ} {om : Fin n → ℝ} {c0 : ℝ}
 

@@ -18,7 +18,7 @@ variable [CompleteSpace F]
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 
 theorem BookProof.PolarPartialIsometry.inner_eq_of_norm_eq_clm (S T : F →L[ℂ] F) (hnorm : ∀ z, ‖S z‖ = ‖T z‖) (z w : F) :

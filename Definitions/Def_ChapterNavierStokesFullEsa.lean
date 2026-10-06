@@ -1,10 +1,5 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric
 
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
-
-
-import Theorems.Thm_BookProof_NavierStokesFlow_shiftOp_mem_finiteModes
-
 import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range
 
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_isSymmetric
@@ -13,10 +8,9 @@ import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSymm
 
 import Theorems.Thm_BookProof_NavierStokesFlow_finiteModes_dense
 
-import Theorems.Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes
-
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Mathlib
 
 
@@ -132,7 +126,8 @@ noncomputable def restrictCLM (A : F →L[ℂ] F) (D : Submodule ℂ F) (h : ∀
     D →ₗ[ℂ] D :=
   LinearMap.codRestrict D ((A : F →ₗ[ℂ] F).comp D.subtype) h
 
-
+@[simp] theorem restrictCLM_apply (A : F →L[ℂ] F) (D : Submodule ℂ F)
+    (h : ∀ v : D, A (v : F) ∈ D) (x : D) : ((restrictCLM A D h x : D) : F) = A (x : F) := rfl
 
 
 
@@ -269,7 +264,7 @@ noncomputable def latticeFullData (v : Fin 15 → LinfZ) (nu : ℝ) : NSFullData
 noncomputable def constField (r : ℝ) : LinfZ :=
   ⟨fun _ => r, memℓp_infty ⟨|r|, by rintro s ⟨k, rfl⟩; simp⟩⟩
 
-
+@[simp] theorem constField_apply (r : ℝ) (k : ℤ) : ((constField r : LinfZ) : ℤ → ℝ) k = r := rfl
 
 
 

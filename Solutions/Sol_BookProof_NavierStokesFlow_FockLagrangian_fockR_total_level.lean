@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_total
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

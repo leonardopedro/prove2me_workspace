@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_mem_maxDom
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_bilH
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_symmetricOn
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

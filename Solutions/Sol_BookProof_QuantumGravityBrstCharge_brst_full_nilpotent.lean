@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_glin_sq
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_glin_mul_Q_add_Q_mul_glin
-import Theorems.Thm_BookProof_GhostField_brst_charge_nilpotent
+import Theorems.Thm_BookProof_BRSTNilpotent_brst_charge_nilpotent
 open BookProof.QuantumGravityBrstCharge
 
 

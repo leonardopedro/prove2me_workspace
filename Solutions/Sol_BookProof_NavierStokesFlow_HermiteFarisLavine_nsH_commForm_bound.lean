@@ -16,7 +16,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 variable {κ : ℝ}
 variable {x : maxDom (oscSymbol κ)}

@@ -83,7 +83,10 @@ def mulOp (v : ℝ → ℝ) (hv : Function.HasTemperateGrowth (fun x => (v x : �
     𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
   SchwartzMap.bilinLeftCLM (ContinuousLinearMap.mul ℂ ℂ) hv
 
-
+@[simp] theorem mulOp_apply (v : ℝ → ℝ)
+    (hv : Function.HasTemperateGrowth (fun x => (v x : ℂ))) (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    (mulOp v hv f) x = f x * (v x : ℂ) := by
+  simp [mulOp, SchwartzMap.bilinLeftCLM_apply]
 
 
 
@@ -101,7 +104,9 @@ def position : 𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
 def momentum : 𝓢(ℝ, ℂ) →L[ℂ] 𝓢(ℝ, ℂ) :=
   (-Complex.I) • SchwartzMap.derivCLM ℂ ℂ
 
-
+@[simp] theorem momentum_apply (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    (momentum f) x = -Complex.I * deriv (f : ℝ → ℂ) x := by
+  simp [momentum, SchwartzMap.derivCLM_apply]
 
 
 

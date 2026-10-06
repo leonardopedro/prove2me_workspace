@@ -15,9 +15,7 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-o_mul]
-
 theorem solution (u v : FockAlg) :
-    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ u.support, (starRingEnd ℂ) (u α) :=
+    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ u.support, (starRingEnd ℂ) (u α) * v α :=
    * v α :=
     inner_toLp_of_subset (Finset.Subset.r

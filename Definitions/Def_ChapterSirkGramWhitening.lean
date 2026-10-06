@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterSirkWhitening
 import Definitions.Def_ChapterSirkDiffusiveDecay
 import Definitions.Def_ChapterSirkTruncation
+import Definitions.Def_ChapterH4
 import Mathlib
 
 
@@ -78,7 +79,9 @@ def synthesis {m : ℕ} (w : Fin m → E) : EuclideanSpace ℂ (Fin m) →L[ℂ]
       map_add' := by intro a b; simp [add_smul, Finset.sum_add_distrib]
       map_smul' := by intro r a; simp [smul_smul, Finset.smul_sum] }
 
-
+omit [CompleteSpace E] in
+@[simp] theorem synthesis_apply {m : ℕ} (w : Fin m → E) (c : EuclideanSpace ℂ (Fin m)) :
+    synthesis w c = ∑ i, c i • w i := rfl
 
 
 
@@ -122,7 +125,10 @@ def whitened {m : ℕ} (w : Fin m → E)
     EuclideanSpace ℂ (Fin m) →L[ℂ] E :=
   (synthesis w).comp T
 
-
+omit [CompleteSpace E] in
+@[simp] theorem whitened_apply {m : ℕ} (w : Fin m → E)
+    (T : EuclideanSpace ℂ (Fin m) →L[ℂ] EuclideanSpace ℂ (Fin m))
+    (c : EuclideanSpace ℂ (Fin m)) : whitened w T c = synthesis w (T c) := rfl
 
 
 

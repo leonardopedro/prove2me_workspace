@@ -13,22 +13,14 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)
 
 set_option maxHeartbeats 1000000 in
-s Vel) (lagT nu) :=
-  hasZeroDeficiencyOn_of_total_eigenvectors _ _ coreState (lagLam nu)
-    (lagT_coreState nu) coreState_total
-
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
-    HasZeroDeficiencyOn (lagCanData nu hnu f).D (secondOrder (lagCanData nu hnu f)) := by
-  rw [lagCan_secondOrder_eq nu hnu f]
-  exact lagT_hasZeroDeficiencyOn nu
-
-/-- **The full trans :=
+    EssentiallySelfAdjointOn (lagCanData nu hnu f).D (lagrangianCore (lagCanData nu hnu f)) :=
   formed (Lagrangian) Navier–Stokes Hamiltonian is essentially
   self-adjoint on the trajectory-space Hermite core**, by the Kato–Rellich
   relative bound: the drift `∑ fᵢ Pᵢ` is controlled by the positive second-order

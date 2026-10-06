@@ -17,6 +17,7 @@ open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.QgBrstDerivativeGauge
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
+open BookProof.QgVielbeinScalaronGaugeFL
 
 noncomputable section
 

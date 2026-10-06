@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionFactorization.lean — solution of BookProof.ChapterAttentionFactorization.prodSoftmax_eq_mul
 import Mathlib
 import Definitions.Def_ChapterAttentionFactorization
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterAttentionFactorization
 
 

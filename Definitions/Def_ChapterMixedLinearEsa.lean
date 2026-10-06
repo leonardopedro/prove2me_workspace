@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterFourierMultiplierEsa
 import Definitions.Def_ChapterWaveUnboundedPotential
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
 import Mathlib
 
 
@@ -50,13 +52,19 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 
 /-! ## 1. The position operator -/
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+lemma hasTemperateGrowth_innerC (b : V) :
+    (fun x : V => ((inner ℝ x b : ℝ) : ℂ)).HasTemperateGrowth :=
+  Complex.ofRealCLM.hasTemperateGrowth.comp ((innerSL ℝ).flip b).hasTemperateGrowth
 
 /-- Multiplication by the real linear function `x ↦ ⟪x, b⟫` on Schwartz space. -/
 noncomputable def posOp (b : V) : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ) :=
   smulLeftCLM ℂ (fun x => ((inner ℝ x b : ℝ) : ℂ))
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma posOp_apply (b : V) (f : 𝓢(V, ℂ)) (x : V) :
+    (posOp b f) x = ((inner ℝ x b : ℝ) : ℂ) * f x := by
+  simp [posOp, smulLeftCLM_apply_apply (hasTemperateGrowth_innerC b)]
 
 
 
@@ -90,7 +98,10 @@ noncomputable def cutSchwartz (g : V → ℝ) (hg : ContDiff ℝ ((⊤ : ℕ∞)
   ((hgcs.comp_left (g := fun r : ℝ => (r : ℂ)) (by simp)).mul_right).toSchwartzMap
     ((Complex.ofRealCLM.contDiff.comp hg).mul (f.smooth ⊤))
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma cutSchwartz_apply (g : V → ℝ) (hg : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) g)
+    (hgcs : HasCompactSupport g) (f : 𝓢(V, ℂ)) (x : V) :
+    cutSchwartz g hg hgcs f x = ((g x : ℝ) : ℂ) * f x := rfl
 
 
 
@@ -143,7 +154,10 @@ noncomputable def gaugeSchwartz (b m : V) (φ : 𝓢(V, ℂ))
   (hφ.mul_left (f := gaugeFun b m)).toSchwartzMap
     ((contDiff_gaugeFun b m).mul (φ.smooth ⊤))
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma gaugeSchwartz_apply (b m : V) (φ : 𝓢(V, ℂ))
+    (hφ : HasCompactSupport (φ : V → ℂ)) (x : V) :
+    gaugeSchwartz b m φ hφ x = gaugeFun b m x * φ x := rfl
 
 
 
@@ -174,7 +188,11 @@ noncomputable def potMomOp (W : V → ℝ) (m : V) : 𝓢(V, ℂ) →L[ℂ] 𝓢
 noncomputable def phaseFun (θ : V → ℝ) (x : V) : ℂ :=
   Complex.exp (Complex.I * ((θ x : ℝ) : ℂ))
 
-
+omit [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma norm_phaseFun (θ : V → ℝ) (x : V) : ‖phaseFun θ x‖ = 1 := by
+  rw [phaseFun, mul_comm]
+  exact Complex.norm_exp_ofReal_mul_I _
 
 omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
 lemma contDiff_phaseFun {θ : V → ℝ} (hθ : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) θ) :
@@ -190,7 +208,10 @@ noncomputable def phaseSchwartz {θ : V → ℝ} (hθ : ContDiff ℝ ((⊤ : ℕ
     (φ : 𝓢(V, ℂ)) (hφ : HasCompactSupport (φ : V → ℂ)) : 𝓢(V, ℂ) :=
   (hφ.mul_left (f := phaseFun θ)).toSchwartzMap ((contDiff_phaseFun hθ).mul (φ.smooth ⊤))
 
-
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+@[simp] lemma phaseSchwartz_apply {θ : V → ℝ} (hθ : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) θ)
+    (φ : 𝓢(V, ℂ)) (hφ : HasCompactSupport (φ : V → ℂ)) (x : V) :
+    phaseSchwartz hθ φ hφ x = phaseFun θ x * φ x := rfl
 
 
 

@@ -39,7 +39,5 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
-set_option maxHeartbeats 2000000 in
--- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
 theorem BookProof.QgOuterFockFL.qgOuterFriedN_isPositiveSelfAdjointExtension :
     IsPositiveSelfAdjointExtension qgOuterN qgOuterFriedN := by sorry

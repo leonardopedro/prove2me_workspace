@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_map_real_smul
-import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportEquiv_coe
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportOp_apply
+import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportEquiv_coe
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportUnitary_apply
 open BookProof.ChapterUnitaryTransport
 
@@ -19,16 +19,13 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
-ymm_apply] at h1
-  exact h1
-
 theorem solution (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A : D →ₗ[ℂ] H)
     (U : ℝ → H ≃ₗᵢ[ℂ] H)
     (h : ∀ x : D, Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (U t (x : H) - (x : H)))
       (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • A x)))
     (y : transportDomain W D) :
     Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (transportUnitary W (U t) (y : K) - (y : K)))
-      (nhdsWithin 0 {0}ᶜ) (nhds (Complex :=
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W D A y)) :=
   .I • transportOp W D A y)) := by
     obtain ⟨a, rfl⟩ := (transportEquiv W D).surjective y
     rw [transportOp_apply]

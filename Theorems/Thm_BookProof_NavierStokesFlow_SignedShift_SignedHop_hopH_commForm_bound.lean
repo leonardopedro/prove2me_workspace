@@ -8,11 +8,11 @@ import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.SignedShift.SignedHop
+open BookProof.NavierStokesFlow.SignedShift
 
 variable {ι : Type*}
 variable {sym : ι → ℝ} (S : SignedHop ι sym)
@@ -22,7 +22,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 
 theorem BookProof.NavierStokesFlow.SignedShift.SignedHop.hopH_commForm_bound (x : maxDom sym) :

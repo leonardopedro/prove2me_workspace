@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_mem_flipGraph_iff
+import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_adjPairs_clGraph
 open BookProof.FriedrichsSquare
 
 

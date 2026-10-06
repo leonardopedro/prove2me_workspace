@@ -17,6 +17,4 @@ open scoped InnerProductSpace
 
 
 
-  rfl
-
-theorem BookProof.ChapterUnitaryTransport.mulOp_isSelfAdjointOn (f : ℤ → ℝ) : IsSelfAdjointOn (mulDomain f) (mu := by sorry
+theorem BookProof.ChapterUnitaryTransport.mulOp_isSelfAdjointOn (f : ℤ → ℝ) : IsSelfAdjointOn (mulDomain f) (mulOp f) := by sorry

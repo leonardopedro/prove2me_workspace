@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 
@@ -111,9 +112,11 @@ noncomputable def genY (j : Fin 3) : Module.End ℂ NSAlg :=
     - ∑ i : Fin 3, (LinearMap.mulLeft ℂ (X (NSVar.uD i j) : NSAlg)) ∘ₗ
         (pderiv (NSVar.u i)).toLinearMap
 
+@[simp] theorem genX_apply (j : Fin 3) (p : NSAlg) : genX j p = pderiv (NSVar.x j) p := rfl
 
-
-
+theorem genY_apply (j : Fin 3) (p : NSAlg) :
+    genY j p = pderiv (NSVar.y j) p - ∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p := by
+  simp [genY]
 
 
 
@@ -129,9 +132,13 @@ noncomputable def genY (j : Fin 3) : Module.End ℂ NSAlg :=
 
 
 
+/-- The derivative modes themselves are gauge invariant. -/
+@[simp] theorem genY_X_uD (i j k : Fin 3) : genY k (X (NSVar.uD i j)) = 0 := by
+  simp [genY_apply]
 
-
-
+/-- The second-derivative modes are gauge invariant. -/
+@[simp] theorem genY_X_uL (i k : Fin 3) : genY k (X (NSVar.uL i)) = 0 := by
+  simp [genY_apply]
 
 /-! ### The gauge invariance of the field -/
 
@@ -179,13 +186,16 @@ noncomputable def setYZero : NSAlg →ₐ[ℂ] NSAlg :=
     | NSVar.y _ => 0
     | v => X v
 
+@[simp] theorem setYZero_X_y (j : Fin 3) : setYZero (X (NSVar.y j)) = 0 := by simp [setYZero]
 
+@[simp] theorem setYZero_X_u (i : Fin 3) : setYZero (X (NSVar.u i)) = X (NSVar.u i) := by
+  simp [setYZero]
 
+@[simp] theorem setYZero_X_uD (i j : Fin 3) :
+    setYZero (X (NSVar.uD i j)) = X (NSVar.uD i j) := by simp [setYZero]
 
-
-
-
-
+@[simp] theorem setYZero_X_uL (i : Fin 3) : setYZero (X (NSVar.uL i)) = X (NSVar.uL i) := by
+  simp [setYZero]
 
 
 

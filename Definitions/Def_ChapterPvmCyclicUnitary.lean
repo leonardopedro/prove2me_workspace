@@ -1,6 +1,10 @@
 import Theorems.Thm_BookProof_ChapterOrthogonalSums_norm_sum_sq_of_orthogonal
 
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
+
+
 import Theorems.Thm_BookProof_ChapterPvmMeasure_pvmMeasure_eq_zero_iff
+
 
 import Theorems.Thm_BookProof_ChapterPvmMeasure_Pvm_add_of_disjoint
 

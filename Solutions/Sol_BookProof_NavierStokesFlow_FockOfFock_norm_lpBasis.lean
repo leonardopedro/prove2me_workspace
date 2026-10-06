@@ -13,7 +13,7 @@ open FullEsa
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-theorem solution [DecidableEq ι] (i : ι) : ‖lpBasis (ι := ι) i‖ = 1 := by
+theorem solution [DecidableEq ι] (i : ι) : ‖lpBasis (ι := by
 
   have : ‖((lpBasis i : lpFiniteModes ι) : lp (fun _ : ι => ℂ) 2)‖ = ‖(1 : ℂ)‖ :=
     lp.norm_single (by norm_num) i 1

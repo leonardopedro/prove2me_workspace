@@ -17,10 +17,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
- hone
-
 theorem solution {m : ℕ} {w : Fin m → E}
-    (hw : Orthonorma :=
+    (hw : Orthonormal ℂ w) : IsWhiteningMatrix w 1 :=
   l ℂ w) : IsWhiteningMatrix w 1 := by
     have hG : gramMatrix w = 1 := by
       ext i j

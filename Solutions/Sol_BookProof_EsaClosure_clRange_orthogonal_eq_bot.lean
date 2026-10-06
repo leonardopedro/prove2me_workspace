@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
-import Theorems.Thm_BookProof_EsaClosure_clExt_apply
 import Theorems.Thm_BookProof_EsaClosure_clExt_extends
+import Theorems.Thm_BookProof_EsaClosure_clExt_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 open BookProof.EsaClosure
 
@@ -22,12 +22,9 @@ variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-, clExt_apply, hval]
-  abel
-
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) :
-    (cshiftRange (clExt T hden :=
+    (cshiftRange (clExt T hdense hsym) Complex.I)ᗮ = ⊥ :=
   se hsym) Complex.I)ᗮ = ⊥ := by
     rw [Submodule.eq_bot_iff]
     intro w hw

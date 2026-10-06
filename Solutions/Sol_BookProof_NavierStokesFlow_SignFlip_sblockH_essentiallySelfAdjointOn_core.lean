@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdj
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

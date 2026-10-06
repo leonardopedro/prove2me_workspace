@@ -17,7 +17,7 @@ variable (P Q : Dom →ₗ[ℂ] F)
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 
 theorem BookProof.PolarPartialIsometry.norm_inclL (z : LinearMap.range P) : ‖inclL P z‖ = ‖z‖ := by sorry

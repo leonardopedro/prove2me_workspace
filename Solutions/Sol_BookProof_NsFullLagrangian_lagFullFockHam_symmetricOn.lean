@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFullLagrangianFock.lean — solution of BookProof.NsFullLagrangian.lagFullFockHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.NsFullLagrangian
 
 

@@ -1,3 +1,6 @@
+import Theorems.Thm_BookProof_ClosureUniqueness_exists_linearIsometry_of_inner_eq
+
+
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine

@@ -78,7 +78,8 @@ def multiShiftSeq (H : E →ₗ[K] E) (z : ℕ → K) (v : E) : ℕ → E
   | 0 => v
   | (k + 1) => (H - z k • 1) (multiShiftSeq H z v k)
 
-
+@[simp] theorem multiShiftSeq_zero (H : E →ₗ[K] E) (z : ℕ → K) (v : E) :
+    multiShiftSeq H z v 0 = v := rfl
 
 
 

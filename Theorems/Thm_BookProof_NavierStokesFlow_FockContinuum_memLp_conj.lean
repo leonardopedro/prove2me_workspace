@@ -15,4 +15,5 @@ open MeasureTheory
 open FullEsa
 
 
- := by sorry
+theorem BookProof.NavierStokesFlow.FockContinuum.memLp_conj {μ : Measure X} {F : X → ℂ} (h : MemLp F 2 μ) :
+    MemLp (fun x => (starRingEnd ℂ) (F x)) 2 μ := by sorry

@@ -2,9 +2,10 @@
 import Mathlib
 import Definitions.Def_Complexification
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Definitions.Def_ChapterA4
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

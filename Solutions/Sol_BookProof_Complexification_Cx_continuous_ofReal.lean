@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA1b
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavineOnly
 import Theorems.Thm_BookProof_FarisLavineOnly_secHam_esa_fl
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.QgOuterFockCoreFL
 open BookProof.FarisLavineOnly
 

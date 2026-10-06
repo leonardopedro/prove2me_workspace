@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_proj_indicatorConstLp
-import Theorems.Thm_BookProof_ChapterParityMajoranaQuant_proj_add
+import Theorems.Thm_BookProof_ChapterGravityPolymomentum_proj_smul
 open BookProof.ChapterPvmCyclicUnitary
 
 

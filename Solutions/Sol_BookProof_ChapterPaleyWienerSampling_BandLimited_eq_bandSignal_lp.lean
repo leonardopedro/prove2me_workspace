@@ -4,6 +4,7 @@ import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal
 open BookProof.ChapterPaleyWienerSampling
+open BookProof.ChapterPaleyWienerSampling.BandLimited
 
 
 

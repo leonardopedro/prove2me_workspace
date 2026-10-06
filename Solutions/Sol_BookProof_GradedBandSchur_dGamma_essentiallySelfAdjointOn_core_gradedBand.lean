@@ -5,12 +5,8 @@ import Theorems.Thm_BookProof_GradedBandSchur_degW_ge_one
 import Theorems.Thm_BookProof_GradedBandSchur_wRow_of_gradedBand
 import Theorems.Thm_BookProof_GradedBandSchur_wCol_of_gradedBand
 import Theorems.Thm_BookProof_GradedBandSchur_wComm_of_gradedBand
+import Theorems.Thm_BookProof_FockWeightedSchur_dGamma_essentiallySelfAdjointOn_core_w
 open BookProof.GradedBandSchur
-
-
-
-
-
 
 
 
@@ -19,6 +15,8 @@ open BookProof.FockSecondQuantization BookProof.FockSchur BookProof.FockWeighted
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
 
 variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
 

@@ -3,6 +3,7 @@ import Definitions.Def_ChapterCPTHamiltonian
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterSmDiracYukawa
 import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -89,9 +90,15 @@ def conn (g : ℝ) (T : Fin d → Matrix (Fin N) (Fin N) ℂ) (A : Fin d → Fin
 
 
 
+/-- At zero coupling the connection vanishes. -/
+@[simp] theorem conn_zero_coupling (T : Fin d → Matrix (Fin N) (Fin N) ℂ)
+    (A : Fin d → Fin 3 → ℝ) (j : Fin 3) : conn 0 T A j = 0 := by
+  simp [conn]
 
-
-
+/-- At zero field the connection vanishes. -/
+@[simp] theorem conn_zero_field (g : ℝ) (T : Fin d → Matrix (Fin N) (Fin N) ℂ) (j : Fin 3) :
+    conn g T (fun _ _ => (0 : ℝ)) j = 0 := by
+  simp [conn]
 
 /-! ## 2. The covariant derivative -/
 

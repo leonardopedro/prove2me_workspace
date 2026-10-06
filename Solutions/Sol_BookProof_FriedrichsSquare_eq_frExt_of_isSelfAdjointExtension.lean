@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_isFriedrichsSqExtension_iff_eq_factorRel
 import Theorems.Thm_BookProof_FriedrichsSquare_opGraph_frExt
+import Theorems.Thm_BookProof_ClosureUniqueness_eq_of_opGraph_eq
 open BookProof.FriedrichsSquare
 
 

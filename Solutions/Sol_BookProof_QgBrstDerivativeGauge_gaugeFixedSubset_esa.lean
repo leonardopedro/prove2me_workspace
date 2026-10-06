@@ -2,10 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
 import Theorems.Thm_BookProof_QgBrstDerivativeGauge_restrict_essentiallySelfAdjointOn
+open BookProof.QgBrstDerivativeGauge
 
 
 
 
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 
 noncomputable section

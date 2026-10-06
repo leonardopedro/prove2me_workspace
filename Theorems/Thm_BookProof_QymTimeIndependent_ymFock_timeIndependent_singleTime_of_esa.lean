@@ -2,6 +2,11 @@
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
@@ -22,6 +27,7 @@ open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.QymTimeIndependent
 
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
@@ -30,18 +36,14 @@ variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 →
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime BookProof.QgTimeIndependent
+open BookProof.FiniteSectionSingleTime BookProof.YangMillsFriedrichs
 open BookProof.FockSecondQuantization BookProof.QgCouplingDGammaSum
 open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow
 
 noncomputable section
 
-
-rodingerSolution T y → ∀ t s : ℝ, y t = prop T t s (y s)) := by
-  refine ⟨fun x => ymHamiltonian_quadForm (coreRepBasis e) fabc x, ?_⟩
-  obtain ⟨Dom, A, hA⟩ := ym_fock_friedrichs_extension e fabc
-  exact timeIndependent_of_selfAdjointExtension finiteOccupation_dense
-    (isSelfAdjointExtension_of_positive hA)
 
 theorem BookProof.QymTimeIndependent.ymFock_timeIndependent_singleTime_of_esa (en : ℕ ≃ Conf)
     (hesa : EssentiallySelfAdjointOn (lpFiniteModes Conf) (dGammaOp (ymFockCol e fabc))) :
@@ -55,4 +57,8 @@ theorem BookProof.QymTimeIndependent.ymFock_timeIndependent_singleTime_of_esa (e
         (∀ (t s r : ℝ) (x : Fock), prop T t s (prop T s r x) = prop T t r x) ∧
         (∀ t s u : ℝ, prop T (t + u) (s + u) = prop T t s) ∧
         (∀ y : ℝ → Fock, IsSchrodingerSolution T y → ∀ t s : ℝ, y t = prop T t s (y s)) ∧
-        (∀ l : ℝ, l ≠ := by sorry
+        (∀ l : ℝ, l ≠ 0 →
+          IsShiftInvertC T.op (((l : ℝ) : ℂ) * Complex.I) (-(T.resCLM l)) ∧
+            (∀ n, IsShiftInvertC (S n).op (((l : ℝ) : ℂ) * Complex.I) (-((S n).resCLM l))) ∧
+            ∀ u : Fock, Tendsto (fun n => -((S n).resCLM l u)) atTop (𝓝 (-(T.resCLM l u)))) ∧
+        ∀ (v : Fock) (t : ℝ), Tendsto (fun n => (S n).stoneU t v) atTop (𝓝 (T.stoneU t v)) := by sorry

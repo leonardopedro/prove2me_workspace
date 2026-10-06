@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_vanish
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_vanish
+open BookProof.CarlemanTwoStep
 
 
 

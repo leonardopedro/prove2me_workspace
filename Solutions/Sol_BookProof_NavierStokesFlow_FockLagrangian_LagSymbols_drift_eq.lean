@@ -8,6 +8,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul'
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
 
 

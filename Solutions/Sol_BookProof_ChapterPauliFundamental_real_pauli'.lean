@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_pauliFundamental
+import Theorems.Thm_BookProof_ChapterA3_real_pauli
 open BookProof.ChapterPauliFundamental
 
 

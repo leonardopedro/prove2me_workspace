@@ -56,7 +56,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace SignedShift
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 variable {ι : Type*}
 
@@ -111,11 +111,11 @@ noncomputable def maj : ShiftData ι where
   amp_le := fun _ => le_rfl
   sym_step := S.sym_step
 
-
-
-
-
-
+@[simp] theorem maj_sym : S.maj.sym = sym := rfl
+@[simp] theorem maj_shift : S.maj.shift = S.shift := rfl
+@[simp] theorem maj_amp : S.maj.amp = S.bnd := rfl
+@[simp] theorem maj_K : S.maj.K = S.K := rfl
+@[simp] theorem maj_step : S.maj.step = S.step := rfl
 
 theorem abs_amp_le_bnd (β : ι) : |S.amp β| ≤ S.bnd β := S.abs_amp_le β
 
@@ -202,7 +202,8 @@ noncomputable def hopH : maxDom sym →ₗ[ℂ] L2I ι where
         Submodule.coe_smul, hFun, ShiftData.hop_eq_zero _ _ hb]
       ring
 
-
+@[simp] theorem hopH_coe (x : maxDom sym) (β : ι) :
+    ((hopH S x : L2I ι) : ι → ℂ) β = S.hFun ((x : L2I ι) : ι → ℂ) β := rfl
 
 /-! ## Symmetry -/
 
@@ -256,9 +257,10 @@ the symbol. -/
 noncomputable def listH (L : List (SignedHop ι sym)) : maxDom sym →ₗ[ℂ] L2I ι :=
   (L.map SignedHop.hopH).sum
 
+@[simp] theorem listH_nil : listH ([] : List (SignedHop ι sym)) = 0 := rfl
 
-
-
+@[simp] theorem listH_cons (S : SignedHop ι sym) (L : List (SignedHop ι sym)) :
+    listH (S :: L) = SignedHop.hopH S + listH L := rfl
 
 
 

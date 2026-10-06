@@ -16,10 +16,7 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-Vec]
-  exact h
-
-theorem solution (f a : Fin 2) : condProb H H p :=
+theorem solution (f a : Fin 2) : condProb H H psi0 f a = 1 / 2 :=
   si0 f a = 1 / 2 := by
     fin_cases f <;> fin_cases a <;>
       simp [condProb, jointProb, midProb_H, transProb_H,

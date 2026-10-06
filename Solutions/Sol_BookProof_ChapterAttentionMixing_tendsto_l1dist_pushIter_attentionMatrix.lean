@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 import Theorems.Thm_BookProof_ChapterAttentionMixing_tendsto_l1dist_pushIter
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_attentionMatrix_isStochastic
+import Theorems.Thm_BookProof_ChapterAttentionRetrieval_scoreSoftmax_ge_of_spread
 open BookProof.ChapterAttentionMixing
 
 

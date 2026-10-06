@@ -1,0 +1,32 @@
+-- Generated from ChapterWaveUnboundedPotential.lean — solution of BookProof.StrichartzWave.multiplierOp_symmetric
+import Mathlib
+import Definitions.Def_ChapterWaveUnboundedPotential
+import Theorems.Thm_BookProof_StrichartzWave_fourier_multiplierOp_apply
+import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_eq_integral_fourier
+import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+open BookProof.StrichartzWave
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (m : V → ℝ) (hm : Function.HasTemperateGrowth m) :
+    BookProof.FarisLavine.SymmetricOn (schwartzDomain V) (opL2 (multiplierOp m)) := by
+
+  intro x y
+  obtain ⟨f, rfl⟩ := (schwartzEquiv V).surjective x
+  obtain ⟨g, rfl⟩ := (schwartzEquiv V).surjective y
+  rw [opL2_apply, opL2_apply, schwartzEquiv_coe, schwartzEquiv_coe,
+    inner_toLp_eq_integral_fourier, inner_toLp_eq_integral_fourier]
+  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+  simp only [fourier_multiplierOp_apply hm, map_mul, Complex.conj_ofReal]
+  ring

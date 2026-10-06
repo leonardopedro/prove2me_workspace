@@ -63,7 +63,11 @@ noncomputable def hermOfMom (p : Fin 4 → ℝ) : Matrix (Fin 2) (Fin 2) ℂ :=
   !![(p 0 : ℂ) + (p 3 : ℂ), (p 1 : ℂ) - I * (p 2 : ℂ);
      (p 1 : ℂ) + I * (p 2 : ℂ), (p 0 : ℂ) - (p 3 : ℂ)]
 
-
+@[simp] theorem hermOfMom_conjTranspose (p : Fin 4 → ℝ) :
+    (hermOfMom p)ᴴ = hermOfMom p := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [hermOfMom, Matrix.conjTranspose_apply, Complex.ext_iff]
 
 
 

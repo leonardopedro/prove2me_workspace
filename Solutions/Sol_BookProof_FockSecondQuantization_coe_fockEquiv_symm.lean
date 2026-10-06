@@ -15,9 +15,7 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-:= rfl
-
 theorem solution (x : lpFiniteModes Conf) :
-    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv. :=
+    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) :=
   symm x) := by
     rw [← coe_fockEquiv, LinearEquiv.apply_sym

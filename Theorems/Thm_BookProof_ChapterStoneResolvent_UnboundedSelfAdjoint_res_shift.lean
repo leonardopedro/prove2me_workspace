@@ -20,7 +20,4 @@ open Filter Topology
 open BookProof.ChapterUnitaryTransport
 
 
-g hl]
-  exact (T.shiftEquiv hl).apply_symm_apply y
-
-theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift {l : ℝ} (hl : := by sorry
+theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by sorry

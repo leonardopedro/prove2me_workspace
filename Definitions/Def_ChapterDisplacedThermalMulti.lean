@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterDisplacedThermalOverlap
+import Definitions.Def_ChapterCoherentGeometry
 import Mathlib
 
 

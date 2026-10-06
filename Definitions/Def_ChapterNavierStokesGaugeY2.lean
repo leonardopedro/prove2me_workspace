@@ -112,27 +112,51 @@ noncomputable def genY2 (j : Fin 3) : Module.End ℂ NSAlg :=
     - ∑ i : Fin 3, (LinearMap.mulLeft ℂ (X (NSVar.uL i) : NSAlg)) ∘ₗ
         (pderiv (NSVar.uD i j)).toLinearMap
 
+theorem genY2_apply (j : Fin 3) (p : NSAlg) :
+    genY2 j p = pderiv (NSVar.y j) p
+      - (∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p)
+      - ∑ i : Fin 3, X (NSVar.uL i) * pderiv (NSVar.uD i j) p := by
+  simp [genY2]
 
 
 
+@[simp] theorem genY2_C (j : Fin 3) (c : ℂ) : genY2 j (C c) = 0 := by
+  simp [genY2_apply]
 
+@[simp] theorem genY2_one (j : Fin 3) : genY2 j (1 : NSAlg) = 0 := by
+  simpa using genY2_C j 1
 
-
-
-
-
+@[simp] theorem genX_one (j : Fin 3) : genX j (1 : NSAlg) = 0 := by
+  simp [genX_apply]
 
 /-! ### The action on the canonical variables -/
 
+@[simp] theorem genY2_X_x (j m : Fin 3) : genY2 j (X (NSVar.x m)) = 0 := by
+  simp [genY2_apply, pderiv_X]
 
+@[simp] theorem genY2_X_y (j m : Fin 3) :
+    genY2 j (X (NSVar.y m)) = if j = m then 1 else 0 := by
+  by_cases h : j = m
+  · subst h; simp [genY2_apply, pderiv_X]
+  · simp [genY2_apply, pderiv_X, h, Ne.symm h]
 
+/-- Translating `y` shifts each velocity mode by its first derivative. -/
+@[simp] theorem genY2_X_u (j i : Fin 3) :
+    genY2 j (X (NSVar.u i)) = -X (NSVar.uD i j) := by
+  simp [genY2_apply, pderiv_X, Pi.single_apply, apply_ite]
 
+/-- **The new ingredient**: translating `y` shifts each first-derivative mode by
+the corresponding Laplacian mode. -/
+@[simp] theorem genY2_X_uD (j i m : Fin 3) :
+    genY2 j (X (NSVar.uD i m)) = if j = m then -X (NSVar.uL i) else 0 := by
+  by_cases h : j = m
+  · subst h
+    simp [genY2_apply, pderiv_X, Pi.single_apply, apply_ite, eq_comm]
+  · simp [genY2_apply, pderiv_X, h, Ne.symm h]
 
-
-
-
-
-
+/-- The Laplacian modes are gauge invariant. -/
+@[simp] theorem genY2_X_uL (j i : Fin 3) : genY2 j (X (NSVar.uL i)) = 0 := by
+  simp [genY2_apply, pderiv_X]
 
 /-! ## Gauge invariance of the second-order field -/
 
@@ -179,9 +203,12 @@ noncomputable def nsSymbol2 (nu : ℂ) (i : Fin 3) : NSAlg :=
 
 /-! ## The initial state `y = 0` -/
 
+@[simp] theorem setYZero_uField2 (i : Fin 3) : setYZero (uField2 i) = X (NSVar.u i) := by
+  simp [uField2]
 
-
-
+@[simp] theorem setYZero_uDField (i j : Fin 3) :
+    setYZero (uDField i j) = X (NSVar.uD i j) := by
+  simp [uDField]
 
 
 

@@ -51,9 +51,15 @@ def rotaryEncode (omega : Fin n → ℝ) (p : ℝ) (q : EuclideanSpace ℂ (Fin 
     EuclideanSpace ℂ (Fin n) :=
   WithLp.toLp 2 fun i => Complex.exp ((p * omega i : ℝ) * Complex.I) * q i
 
+theorem rotaryEncode_apply (omega : Fin n → ℝ) (p : ℝ) (q : EuclideanSpace ℂ (Fin n))
+    (i : Fin n) :
+    rotaryEncode omega p q i = Complex.exp ((p * omega i : ℝ) * Complex.I) * q i := rfl
 
-
-
+@[simp] theorem rotaryEncode_zero (omega : Fin n → ℝ) (q : EuclideanSpace ℂ (Fin n)) :
+    rotaryEncode omega 0 q = q := by
+  ext i
+  rw [rotaryEncode_apply]
+  norm_num
 
 
 

@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore

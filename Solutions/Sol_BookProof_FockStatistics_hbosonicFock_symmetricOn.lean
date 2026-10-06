@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_FockStatistics_symmetricOn_cbosonic
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 

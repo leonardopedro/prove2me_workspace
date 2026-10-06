@@ -1,10 +1,10 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.hfermionicFock_symmetricOn
-import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.TensorCore
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics

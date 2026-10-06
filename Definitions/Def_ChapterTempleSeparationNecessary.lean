@@ -38,7 +38,7 @@ abbrev E2 := EuclideanSpace ℂ (Fin 2)
 /-- The rank-one orthogonal projection onto `ℂ ∙ x`, for a unit vector `x`. -/
 def proj (x : E2) : E2 →L[ℂ] E2 := (innerSL ℂ x).smulRight x
 
-
+@[simp] theorem proj_apply (x y : E2) : proj x y = (inner ℂ x y : ℂ) • x := rfl
 
 /-- The witness operator: `−M` on the orthogonal complement of `x`, and `0` on `ℂ ∙ x`. -/
 def witness (M : ℝ) (x : E2) : E2 →L[ℂ] E2 :=

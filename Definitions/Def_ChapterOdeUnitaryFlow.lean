@@ -78,7 +78,8 @@ open scoped Topology ENNReal
 /-- Equation 1 of the chapter: the solution of `ẋ = x²` with `x(0) = x₀`. -/
 noncomputable def classicalSol (x₀ t : ℝ) : ℝ := x₀ / (1 - t * x₀)
 
-
+@[simp] theorem classicalSol_zero (x₀ : ℝ) : classicalSol x₀ 0 = x₀ := by
+  simp [classicalSol]
 
 
 
@@ -94,7 +95,7 @@ noncomputable def mob (t x : ℝ) : ℝ := x / (1 + t * x)
 
 
 
-
+@[simp] theorem mob_zero (x : ℝ) : mob 0 x = x := by simp [mob]
 
 /-- The set of points at which the flow map at time `t` is defined. -/
 def flowDom (t : ℝ) : Set ℝ := {x : ℝ | 1 + t * x ≠ 0}
@@ -122,7 +123,8 @@ field, `(e^{-iHt}ψ)(x) = ψ(x/(1+tx))/(1+tx)`. -/
 noncomputable def odeKoop (t : ℝ) (ψ : ℝ → ℂ) (x : ℝ) : ℂ :=
   ((1 + t * x : ℝ) : ℂ)⁻¹ * ψ (mob t x)
 
-
+@[simp] theorem odeKoop_zero (ψ : ℝ → ℂ) (x : ℝ) : odeKoop 0 ψ x = ψ x := by
+  simp [odeKoop]
 
 
 

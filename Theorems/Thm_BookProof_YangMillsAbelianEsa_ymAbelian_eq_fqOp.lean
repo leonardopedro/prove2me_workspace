@@ -35,7 +35,5 @@ open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMill
 
 noncomputable section
 
-set_option maxHeartbeats 4000000 in
--- the `L²` coercions of the Gauss–polynomial core make these defeq checks expensive
 theorem BookProof.YangMillsAbelianEsa.ymAbelian_eq_fqOp :
     ymHamiltonian (coreRepPoly 99) 0 = fqOp ymFqP ymFqQ 0 0 0 := by sorry

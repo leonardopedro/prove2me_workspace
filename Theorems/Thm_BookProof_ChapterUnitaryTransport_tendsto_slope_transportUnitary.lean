@@ -11,13 +11,10 @@ open scoped InnerProductSpace
 
 
 
-ymm_apply] at h1
-  exact h1
-
 theorem BookProof.ChapterUnitaryTransport.tendsto_slope_transportUnitary (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A : D →ₗ[ℂ] H)
     (U : ℝ → H ≃ₗᵢ[ℂ] H)
     (h : ∀ x : D, Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (U t (x : H) - (x : H)))
       (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • A x)))
     (y : transportDomain W D) :
     Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (transportUnitary W (U t) (y : K) - (y : K)))
-      (nhdsWithin 0 {0}ᶜ) (nhds (Complex := by sorry
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W D A y)) := by sorry

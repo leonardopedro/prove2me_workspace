@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.tsum_shift_le {f : ℕ → ℝ} (hf : Summable f) (hnn : ∀ n, 0 ≤ f n) :
     (∑' n, f (n + 2)) ≤ ∑' n, f n := by sorry

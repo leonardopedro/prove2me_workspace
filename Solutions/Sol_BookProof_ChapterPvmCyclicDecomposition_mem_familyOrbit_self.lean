@@ -1,6 +1,7 @@
 -- Generated from ChapterPvmCyclicDecomposition.lean — solution of BookProof.ChapterPvmCyclicDecomposition.mem_familyOrbit_self
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_univ
 open BookProof.ChapterPvmCyclicDecomposition
 
 

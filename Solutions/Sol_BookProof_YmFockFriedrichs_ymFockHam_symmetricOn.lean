@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFockFriedrichs
 import Theorems.Thm_BookProof_YmFockFriedrichs_ymSectorHam_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.YmFockFriedrichs
 
 

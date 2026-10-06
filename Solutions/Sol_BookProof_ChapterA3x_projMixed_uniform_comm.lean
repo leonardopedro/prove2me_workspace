@@ -1,6 +1,8 @@
 -- Generated from ChapterA3x.lean — solution of BookProof.ChapterA3x.projMixed_uniform_comm
 import Mathlib
 import Definitions.Def_ChapterA3x
+import Theorems.Thm_BookProof_ChapterA3n_projSym_uniform_comm
+import Theorems.Thm_BookProof_ChapterA3o_projAnti_uniform_comm
 open BookProof.ChapterA3x
 
 

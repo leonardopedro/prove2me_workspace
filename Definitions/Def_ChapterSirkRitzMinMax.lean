@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 
 

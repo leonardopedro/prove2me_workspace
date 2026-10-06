@@ -3,17 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wgt_apply
 import Theorems.Thm_BookProof_FockWeightedSchur_support_wgt_subset
+import Theorems.Thm_BookProof_FockSchur_normSq_toLp_of_subset
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -24,27 +15,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

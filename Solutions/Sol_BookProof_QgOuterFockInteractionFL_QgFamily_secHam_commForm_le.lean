@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Theorems.Thm_BookProof_SqSumFarisLavine_commForm_sqSumOp_le
 import Theorems.Thm_BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

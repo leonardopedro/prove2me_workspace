@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Theorems.Thm_BookProof_Qg3DGaugeFL_qgGaugeSectorHam_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.Qg3DGaugeFL
 
 

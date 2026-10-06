@@ -19,9 +19,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-_left]
-
 theorem BookProof.FockSecondQuantization.inner_annA_creVec (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) (j : ℕ) {L : Finset ℕ}
     (h : (col j).support ⊆ L) :
     (inner ℂ (toLp u) (toLp (creVec (col j) (annA j v))) : ℂ)
-      = ∑ k ∈ L, (col j) k * inner ℂ (toLp (annA k u)) (toLp (ann := by sorry
+      = ∑ k ∈ L, (col j) k * inner ℂ (toLp (annA k u)) (toLp (annA j v)) := by sorry

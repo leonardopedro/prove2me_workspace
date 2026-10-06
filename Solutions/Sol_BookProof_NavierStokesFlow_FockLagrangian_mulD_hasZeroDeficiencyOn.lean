@@ -1,7 +1,9 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.mulD_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_memLp_conj
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

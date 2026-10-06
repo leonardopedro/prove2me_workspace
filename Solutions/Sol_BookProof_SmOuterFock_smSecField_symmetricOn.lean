@@ -1,6 +1,7 @@
 -- Generated from ChapterSmOuterFock.lean — solution of BookProof.SmOuterFock.smSecField_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterSmOuterFock
+import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
 open BookProof.SmOuterFock

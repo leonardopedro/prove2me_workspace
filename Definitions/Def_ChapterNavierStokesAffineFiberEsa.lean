@@ -2,8 +2,6 @@ import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
-
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Mathlib
@@ -88,7 +86,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace AffineFiber
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
@@ -185,12 +183,12 @@ variable (P : PairShift ι)
   amp_le := P.amp₂_le
   sym_step := P.sym_step₂
 
-
-
-
-
-
-
+@[simp] theorem fst_sym : P.fst.sym = P.sym := rfl
+@[simp] theorem snd_sym : P.snd.sym = P.sym := rfl
+@[simp] theorem fst_shift : P.fst.shift = P.shift₁ := rfl
+@[simp] theorem snd_shift : P.snd.shift = P.shift₂ := rfl
+@[simp] theorem fst_amp : P.fst.amp = P.amp₁ := rfl
+@[simp] theorem snd_amp : P.snd.amp = P.amp₂ := rfl
 
 /-- **The two-shift Hamiltonian**: the sum of the two shift Hamiltonians, on the
 maximal domain of the common comparison symbol. -/
@@ -301,7 +299,8 @@ noncomputable def affData {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) : PairShi
   sym_step₁ := fun n => oscSymbol_step n
   sym_step₂ := fun n => by unfold oscSymbol; push_cast; ring
 
-
+@[simp] theorem affData_sym {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).sym = oscSymbol (affMu κ c) := rfl
 
 /-- **The affine Navier–Stokes fiber Hamiltonian** `H = ½(π V + V π)` for the
 affine advection field `V(u) = κ u + c`, in the Hermite basis of `ℓ²(ℕ)`: the
@@ -317,13 +316,17 @@ noncomputable def affH {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
 
 /-! ## The `±1`-hopping is genuinely present -/
 
+@[simp] theorem affData_shift₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).shift₁ = fun n : ℕ => n + 2 := rfl
 
+@[simp] theorem affData_shift₂ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).shift₂ = fun n : ℕ => n + 1 := rfl
 
+@[simp] theorem affData_amp₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).amp₁ = amp κ := rfl
 
-
-
-
-
+@[simp] theorem affData_amp₂ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).amp₂ = shear c := rfl
 
 /-- The Hermite basis vector `eₙ`, as an element of the maximal domain of the
 comparison operator. -/
@@ -334,7 +337,9 @@ noncomputable def basisState (κ c : ℝ) (n : ℕ) : maxDom (oscSymbol (affMu �
 
 
 
- L^ (njointness is the statement it should
+h Lshear
+    positivity
+  have hz : ((shear c 0 : ^ (njointness is the statement it should
 be. -/
 theorem affH_domain_dense :
     Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) :=

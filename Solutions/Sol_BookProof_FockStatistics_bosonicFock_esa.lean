@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsEsa
 import Theorems.Thm_BookProof_FockStatistics_essentiallySelfAdjointOn_bosonic_of_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.FockStatistics
 
 

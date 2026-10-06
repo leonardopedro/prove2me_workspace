@@ -1,0 +1,11 @@
+-- Generated from ChapterLorentzGroup.lean — theorem BookProof.LorentzGroup.lorentz_det_ne_zero
+import Mathlib
+import Definitions.Def_ChapterLorentzGroup
+open BookProof.LorentzGroup
+
+
+
+open Matrix
+
+theorem BookProof.LorentzGroup.lorentz_det_ne_zero {l : Matrix (Fin 4) (Fin 4) ℝ} (h : IsLorentz l) :
+    l.det ≠ 0 := by sorry

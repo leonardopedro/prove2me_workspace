@@ -4,6 +4,10 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_
 
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply
 
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_zero
+
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero
+
 
 import Definitions.Def_ChapterStoneEvolution
 import Mathlib
@@ -127,13 +131,21 @@ noncomputable def stoneU (t : ℝ) : H →L[ℂ] H :=
     simp only [stoneLinear, LinearMap.coe_mk, AddHom.coe_mk, one_mul]
     exact le_of_eq (T.norm_stoneFun t x))
 
+@[simp] theorem stoneU_apply (t : ℝ) (x : H) : T.stoneU t x = T.stoneFun t x := rfl
+
+theorem tendsto_stoneU (t : ℝ) (x : H) :
+    Tendsto (fun k : ℕ => T.approxU ((k : ℝ) + 1) t x) atTop (𝓝 (T.stoneU t x)) :=
+  T.tendsto_stoneFun t x
 
 
 
-
-
-
-
+@[simp] theorem stoneU_zero : T.stoneU 0 = 1 := by
+  ext x
+  refine tendsto_nhds_unique (T.tendsto_stoneU 0 x) ?_
+  have h : (fun k : ℕ => T.approxU ((k : ℝ) + 1) 0 x) = fun _ : ℕ => x := by
+    funext k; simp
+  rw [h]
+  simp
 
 
 
@@ -145,7 +157,8 @@ noncomputable def stoneU (t : ℝ) : H →L[ℂ] H :=
 
 /-! ## Strong continuity -/
 
-
+@[simp] theorem approxU_zero_param (t : ℝ) : T.approxU 0 t = 1 := by
+  simp [approxU, yosidaGen]
 
 
 

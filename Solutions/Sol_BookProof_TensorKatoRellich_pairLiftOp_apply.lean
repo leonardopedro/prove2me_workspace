@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTensorKatoRellich
 import Theorems.Thm_BookProof_TensorKatoRellich_pairLiftDom_apply
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
 open BookProof.TensorKatoRellich
 
 

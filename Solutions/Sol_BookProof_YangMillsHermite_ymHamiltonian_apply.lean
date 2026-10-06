@@ -1,6 +1,7 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.ymHamiltonian_apply
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 open BookProof.YangMillsHermite
 
 

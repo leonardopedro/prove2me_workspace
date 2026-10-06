@@ -1,6 +1,7 @@
 -- Generated from ChapterFriedrichsSquareFactorization.lean — solution of BookProof.FriedrichsSquare.le_factorRel_of_symmetric_extension
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Theorems.Thm_BookProof_ClosureUniqueness_mem_adjGraph_iff
 open BookProof.FriedrichsSquare
 
 

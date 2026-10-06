@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_deficiencyTrivialAt_b
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

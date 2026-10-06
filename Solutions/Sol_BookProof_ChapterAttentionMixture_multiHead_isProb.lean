@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionMixture
 import Theorems.Thm_BookProof_ChapterAttentionMixture_mixture_isProb
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionMixture
 
 

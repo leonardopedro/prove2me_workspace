@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Mathlib
 
 
@@ -78,7 +79,8 @@ noncomputable def transportEquiv (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) 
     D ≃ₗ[ℂ] transportDomain W D :=
   W.toLinearEquiv.submoduleMap D
 
-
+@[simp] theorem transportEquiv_coe (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (x : D) :
+    ((transportEquiv W D x : transportDomain W D) : K) = W (x : H) := rfl
 
 /-- The **transported operator** `W A W⁻¹`, defined on `W(D)`. -/
 noncomputable def transportOp (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A : D →ₗ[ℂ] H) :
@@ -103,7 +105,8 @@ noncomputable def transportOp (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A 
 noncomputable def transportUnitary (W : H ≃ₗᵢ[ℂ] K) (U : H ≃ₗᵢ[ℂ] H) : K ≃ₗᵢ[ℂ] K :=
   (W.symm.trans U).trans W
 
-
+@[simp] theorem transportUnitary_apply (W : H ≃ₗᵢ[ℂ] K) (U : H ≃ₗᵢ[ℂ] H) (y : K) :
+    transportUnitary W U y = W (U (W.symm y)) := rfl
 
 
 

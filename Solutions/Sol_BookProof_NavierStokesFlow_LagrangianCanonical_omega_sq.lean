@@ -10,7 +10,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)

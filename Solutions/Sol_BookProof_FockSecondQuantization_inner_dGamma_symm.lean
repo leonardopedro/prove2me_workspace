@@ -19,10 +19,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-hi⟩)
-
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) (u v : FockAlg) :
-    (inner ℂ (toLp (dGamma col u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (dGamma :=
+    (inner ℂ (toLp (dGamma col u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (dGamma col v)) :=
   col v)) := by
     rw [inner_dGamma_left col u v (modes_left_subset_closure col u v)
         (col_support_subset_closure col u v),

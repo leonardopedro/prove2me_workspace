@@ -19,10 +19,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-
-  simp [IsWhiteningMatrix, hG]
-
 theorem solution {m : ℕ} {w : Fin m → E} (hw : Orthonormal ℂ w) :
-    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := ℂ) ( :=
+    IsWhitening w (Matrix.toEuclideanCLM (𝕜 :=
   1 : Matrix (Fin m) (Fin m) ℂ)) :=
     isWhitening_of_matrix w (isWhite

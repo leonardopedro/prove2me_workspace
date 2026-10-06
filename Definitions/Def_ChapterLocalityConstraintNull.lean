@@ -54,7 +54,10 @@ def graphSet (f : α → ℝ) : Set (α × ℝ) := {p : α × ℝ | p.2 = f p.1}
 
 
 
-
+omit [MeasurableSpace α] in
+@[simp] theorem preimage_mk_graphSet (f : α → ℝ) (x : α) :
+    Prod.mk x ⁻¹' graphSet f = {f x} := by
+  ext v; simp [graphSet]
 
 
 

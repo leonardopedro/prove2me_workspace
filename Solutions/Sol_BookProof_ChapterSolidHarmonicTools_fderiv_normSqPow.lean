@@ -1,6 +1,7 @@
 -- Generated from ChapterSolidHarmonicTools.lean — solution of BookProof.ChapterSolidHarmonicTools.fderiv_normSqPow
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonicTools
+import Theorems.Thm_BookProof_ChapterRadialLaplacian_fderiv_comp_normSq
 open BookProof.ChapterSolidHarmonicTools
 
 

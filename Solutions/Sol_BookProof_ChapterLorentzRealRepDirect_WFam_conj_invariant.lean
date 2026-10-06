@@ -1,6 +1,9 @@
 -- Generated from ChapterLorentzRealRepDirect.lean — solution of BookProof.ChapterLorentzRealRepDirect.WFam_conj_invariant
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
+import Theorems.Thm_BookProof_ChapterLorentzRealRep_W10_invariant
+import Theorems.Thm_BookProof_ChapterLorentzRealRep_WHalf_invariant
+import Theorems.Thm_BookProof_ChapterLorentzRealRep_WPs_invariant
 open BookProof.ChapterLorentzRealRepDirect
 
 

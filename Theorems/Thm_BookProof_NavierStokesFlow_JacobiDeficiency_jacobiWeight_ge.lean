@@ -8,6 +8,4 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
-t]; linarith
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ j := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge (n : ℕ) : (2 : ℝ) * 4 ^ n ≤ jacobiWeight n := by sorry

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_tmul_mem_pairCorePoly
+import Theorems.Thm_BookProof_TensorCore_norm_tmul_sub_le
 open BookProof.TensorSumEsa
 
 

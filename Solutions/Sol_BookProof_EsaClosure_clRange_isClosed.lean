@@ -21,12 +21,9 @@ variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-
-variable [CompleteSpace F]
-
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
     {γ : ℂ} (hγ : γ.im ≠ 0) :
-    IsClosed ((cshiftRange (clExt T hdense hsym) γ :=
+    IsClosed ((cshiftRange (clExt T hdense hsym) γ : Submodule ℂ F) : Set F) :=
    : Submodule ℂ F) : Set F) := by
     have hpos : 0 < |γ.im| := abs_pos.mpr hγ
     set A := clExt T hdense hsym with hA

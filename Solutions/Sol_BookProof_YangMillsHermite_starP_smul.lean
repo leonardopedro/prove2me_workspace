@@ -1,8 +1,8 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.starP_smul
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-import Theorems.Thm_BookProof_YangMillsHermite_starP_mul
 import Theorems.Thm_BookProof_YangMillsHermite_starP_C
+import Theorems.Thm_BookProof_YangMillsHermite_starP_mul
 open BookProof.YangMillsHermite
 
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier
 import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_integrable
 open BookProof.ChapterPaleyWienerSampling
+open BookProof.ChapterPaleyWienerSampling.BandLimited
 
 
 

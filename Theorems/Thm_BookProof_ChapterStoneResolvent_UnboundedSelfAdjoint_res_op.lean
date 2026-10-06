@@ -18,8 +18,5 @@ open Filter Topology
 open BookProof.ChapterUnitaryTransport
 
 
-‖ ≤ (1 / |l|) * ‖y‖ :=
-  T.norm_res_le l y
-
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op {l : ℝ} (hl : l ≠ 0) (x : T.domain) :
-    ((T.res l := by sorry
+    ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) := by sorry

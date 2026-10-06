@@ -21,13 +21,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
-1 hb2) hb3
-      _ ≤ c * ‖h‖ := by
-          rw [Real.norm_eq_abs]
-          nlinarith [abs_nonneg h]
-  simpa using hfinal
-
-theorem solution :=
+theorem solution (x : T.domain) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => T.stoneU s (x : H)) (T.stoneU t ((-Complex.I) • T.op x)) t :=
   vAt_stoneU (x : T.domain) (t : ℝ) :
       HasDerivAt (fun s : ℝ => T.stoneU s (x : H)) (T.stoneU t ((-Complex.I) • T.op x)) t := by
     have hz : HasDerivAt (fun u : ℝ => T.stoneU u (x : H)) ((-Complex.I) • T.op x) (t - t) := by

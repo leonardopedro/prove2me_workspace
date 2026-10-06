@@ -22,13 +22,10 @@ variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-top]; trivial
-  exact hmem
-
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) (w u : F)
     (hw : ∀ v : clDom T, (inner ℂ (clExt T hdense hsym v) w : ℂ) = inner ℂ (v : F) u) :
-    ∃ h : w ∈ clDom T, clExt T :=
+    ∃ h : w ∈ clDom T, clExt T hdense hsym ⟨w, h⟩ = u :=
    hdense hsym ⟨w, h⟩ = u := by
     set A := clExt T hdense hsym with hAdef
     obtain ⟨x, hx⟩ := clShift_surjective T hdense hsym hesa (Complex.I • w - u)

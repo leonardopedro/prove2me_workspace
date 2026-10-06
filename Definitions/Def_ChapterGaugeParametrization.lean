@@ -61,9 +61,11 @@ def fiberGauge (π : X → Y) : Subgroup (Equiv.Perm X) where
     have h := ha (a⁻¹ x)
     simpa using h.symm
 
+@[simp] theorem mem_fiberGauge {π : X → Y} {σ : Equiv.Perm X} :
+    σ ∈ fiberGauge π ↔ ∀ x, π (σ x) = π x := Iff.rfl
 
-
-
+@[simp] theorem fiberGauge_smul (π : X → Y) (σ : fiberGauge π) (x : X) :
+    ((σ • x : X)) = (σ : Equiv.Perm X) x := rfl
 
 
 

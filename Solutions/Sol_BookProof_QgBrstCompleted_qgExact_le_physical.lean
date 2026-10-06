@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Theorems.Thm_BookProof_QgBrstCompleted_qgBrstCharge_nilpotent
-import Theorems.Thm_BookProof_BookBrstGaugeFixing_exactStates_le_physicalStates
+import Theorems.Thm_BookProof_BrstReducedTransfer_exactStates_le_physicalStates
 open BookProof.QgBrstCompleted
 
 

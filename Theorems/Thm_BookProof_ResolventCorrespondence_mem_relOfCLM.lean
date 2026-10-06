@@ -12,7 +12,7 @@ variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot
+open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
 

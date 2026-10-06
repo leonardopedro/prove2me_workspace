@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFullEulerianFock.lean — solution of BookProof.NsFullEuler.nsFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.NsFullEuler
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_clGraph_coreRes
+import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_eq_of_clGraph_eq
 open BookProof.VonNeumannCore
 
 

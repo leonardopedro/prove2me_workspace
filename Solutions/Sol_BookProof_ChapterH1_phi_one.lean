@@ -13,7 +13,8 @@ open intervalIntegral
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {z : ℂ} (hz : z ≠ 0) : phi 1 z = (Complex.exp z - 1) / z :=
+noncomputable def phiOp1 {n : ℕ} (M : Matrix (Fin n) (Fin n) ℂ) (g : Fin n → ℂ) :
+    Fin n → ℂ :=
   t.factorial_zero, Nat.cast_one, div_one] at h
     field_simp
     lin

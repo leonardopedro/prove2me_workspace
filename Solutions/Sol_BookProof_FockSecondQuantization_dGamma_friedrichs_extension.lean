@@ -18,12 +18,10 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-_dense
-
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col)
     (hpos : IsPosCol col) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp :=
+      IsPositiveSelfAdjointExtension (dGammaOp col) A :=
    col) A :=
     friedrichs_extension_exists
       ⟨lpFiniteModes Conf, dGammaOp col, dGammaOp_symmetricOn hherm,

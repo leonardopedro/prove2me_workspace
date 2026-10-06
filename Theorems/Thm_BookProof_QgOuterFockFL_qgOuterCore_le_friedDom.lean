@@ -38,6 +38,4 @@ open BookProof.HermiteProductCore
 
 noncomputable section
 
-set_option maxHeartbeats 1600000 in
--- the lifted domain is built from the Friedrichs completion, so unfolding it is costly
 theorem BookProof.QgOuterFockFL.qgOuterCore_le_friedDom : qgOuterCore ≤ qgOuterFriedDom := by sorry

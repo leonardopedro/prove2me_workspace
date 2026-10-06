@@ -20,6 +20,7 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 variable (F : QgFamily)
 

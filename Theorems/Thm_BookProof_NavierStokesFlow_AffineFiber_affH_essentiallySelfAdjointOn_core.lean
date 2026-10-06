@@ -5,8 +5,8 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
-open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -19,7 +19,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
 theorem BookProof.NavierStokesFlow.AffineFiber.affH_essentiallySelfAdjointOn_core {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :

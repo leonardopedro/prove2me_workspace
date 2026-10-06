@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.rc2_nonneg
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+open BookProof.CarlemanTwoStep
 
 
 

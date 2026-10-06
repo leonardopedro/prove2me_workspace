@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionFactorization
 import Theorems.Thm_BookProof_ChapterAttentionFactorization_prodSoftmax_eq_mul
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterAttentionFactorization
 
 

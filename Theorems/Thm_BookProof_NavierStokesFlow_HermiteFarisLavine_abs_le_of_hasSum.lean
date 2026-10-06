@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.abs_le_of_hasSum {f g : ℕ → ℝ} {S T : ℝ} (hf : HasSum f S) (hg : HasSum g T)
     (h : ∀ n, |f n| ≤ g n) : |S| ≤ T := by sorry

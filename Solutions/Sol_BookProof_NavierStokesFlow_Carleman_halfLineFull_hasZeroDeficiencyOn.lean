@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesCarleman
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiag_hasZeroDeficiencyOn_of_carleman
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_halfLineFullData_hamiltonian
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

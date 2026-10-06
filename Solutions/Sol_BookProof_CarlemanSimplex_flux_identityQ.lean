@@ -7,13 +7,15 @@ import Theorems.Thm_BookProof_CarlemanSimplex_sum_mterm_im
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_pvec
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_shift
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_vanish
-import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish_prime
+import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish'
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

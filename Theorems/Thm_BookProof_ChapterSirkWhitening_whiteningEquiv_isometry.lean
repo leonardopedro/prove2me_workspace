@@ -1,12 +1,13 @@
 -- Generated from ChapterSirkWhitening.lean — theorem BookProof.ChapterSirkWhitening.whiteningEquiv_isometry
+import Definitions.Def_ChapterH4
 import Mathlib
 import Definitions.Def_ChapterSirkWhitening
 open BookProof.ChapterSirkWhitening
 
-
-
-
-
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 noncomputable section
@@ -14,10 +15,6 @@ noncomputable section
 
 open BookProof.ChapterH4
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 theorem BookProof.ChapterSirkWhitening.whiteningEquiv_isometry (V₁ : F →L[ℂ] E) (V₂ : G →L[ℂ] E)
     (hV₁ : ∀ y : F, ‖V₁ y‖ = ‖y‖) (hV₂ : ∀ z : G, ‖V₂ z‖ = ‖z‖)

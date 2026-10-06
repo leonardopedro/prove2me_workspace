@@ -1,0 +1,26 @@
+-- Generated from ChapterDutchBook.lean — solution of BookProof.ChapterDutchBook.Coherent.represents_singleton
+import Mathlib
+import Definitions.Def_ChapterDutchBook
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_empty
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_additive
+open BookProof.ChapterDutchBook
+
+
+
+open scoped BigOperators
+open Finset
+
+
+variable {Ω : Type*} [DecidableEq Ω]
+
+variable {Ω : Type*} [DecidableEq Ω]
+
+set_option maxHeartbeats 1000000 in
+theorem solution {Pr : Finset Ω → ℝ} (h : Coherent Pr)
+    (A : Finset Ω) : Pr A = ∑ ω ∈ A, Pr {ω} := by
+
+  refine Finset.induction_on A ?_ ?_
+  · simp [h.empty]
+  · intro a s ha ih
+    rw [Finset.sum_insert ha, Finset.insert_eq,
+        h.additive (Finset.disjoint_singleton_left.mpr ha), ih]

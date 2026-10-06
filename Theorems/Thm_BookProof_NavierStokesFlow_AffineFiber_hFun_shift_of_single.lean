@@ -4,9 +4,9 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterStoneResolvent
-open BookProof.NavierStokesFlow.HermiteFarisLavine
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
-open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -18,10 +18,9 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
-open ShiftHamiltonian in
 theorem BookProof.NavierStokesFlow.AffineFiber.hFun_shift_of_single (S : ShiftData ι) {X : ι → ℂ} {o : ι}
     (hXo : X o = 1) (hnext : X (S.shift (S.shift o)) = 0) :
     S.hFun X (S.shift o) = Complex.I * ((S.amp o : ℝ) : ℂ) := by sorry

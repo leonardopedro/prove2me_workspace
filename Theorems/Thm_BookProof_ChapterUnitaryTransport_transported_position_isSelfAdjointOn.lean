@@ -17,7 +17,5 @@ open scoped InnerProductSpace
 
 
 
-ain f
-
 theorem BookProof.ChapterUnitaryTransport.transported_position_isSelfAdjointOn (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) :
-    IsSelfAdjointOn (transportDomain W (mulDomain f)) (transportOp W (mulDomain f) (mul := by sorry
+    IsSelfAdjointOn (transportDomain W (mulDomain f)) (transportOp W (mulDomain f) (mulOp f)) := by sorry

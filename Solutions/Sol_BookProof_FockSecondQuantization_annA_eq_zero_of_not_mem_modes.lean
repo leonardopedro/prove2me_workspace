@@ -1,9 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.annA_eq_zero_of_not_mem_modes
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_up_self
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_support_subset_modes
+import Theorems.Thm_BookProof_FockSecondQuantization_up_self
 open BookProof.FockSecondQuantization
 
 

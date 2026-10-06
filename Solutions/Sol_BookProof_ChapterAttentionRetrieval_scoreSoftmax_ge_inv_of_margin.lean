@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionRetrieval
 import Theorems.Thm_BookProof_ChapterAttentionRetrieval_card_erase_cast
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterAttentionRetrieval
 
 

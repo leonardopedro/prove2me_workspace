@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesBilinearEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

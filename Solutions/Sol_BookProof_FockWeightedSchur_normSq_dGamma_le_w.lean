@@ -4,17 +4,11 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_nonneg
 import Theorems.Thm_BookProof_FockWeightedSchur_ndeg_le_wdeg
 import Theorems.Thm_BookProof_FockWeightedSchur_normSq_dGamma_le_of_sector
+import Theorems.Thm_BookProof_FockSchur_dGamma_inSector
+import Theorems.Thm_BookProof_FockSchur_normSq_sum_of_sectors
+import Theorems.Thm_BookProof_FockSchur_sectorPart_apply
+import Theorems.Thm_BookProof_FockSchur_sum_sectorPart
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -25,27 +19,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

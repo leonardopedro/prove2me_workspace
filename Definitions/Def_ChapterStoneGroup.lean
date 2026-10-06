@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -42,9 +43,13 @@ noncomputable def yosida (n : ℝ) : H →L[ℂ] H :=
 
 
 
+/-- The resolvent vanishes at the meaningless parameter `0`. -/
+@[simp] theorem resCLM_zero : T.resCLM (0 : ℝ) = 0 := by
+  ext y
+  simp [resCLM, res]
 
-
-
+@[simp] theorem yosida_zero : T.yosida (0 : ℝ) = 0 := by
+  simp [yosida]
 
 /-! ## Symmetry of the Yosida approximation -/
 

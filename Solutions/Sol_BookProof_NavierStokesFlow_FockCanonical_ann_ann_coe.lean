@@ -1,9 +1,9 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — solution of BookProof.NavierStokesFlow.FockCanonical.ann_ann_coe
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
-import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_self
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_up
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_ann_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_self
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 

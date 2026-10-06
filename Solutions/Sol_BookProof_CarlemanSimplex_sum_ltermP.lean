@@ -2,16 +2,18 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_add
-import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
+import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le'
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_tsub_of_le
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_simplexF
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_sInn
 import Theorems.Thm_BookProof_CarlemanSimplex_ltermP_shift
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

@@ -9,9 +9,7 @@ open BookProof.NavierStokesFlow.DiagonalEsa
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
-n 1⟩
-
-theorem solution (c : ℕ → ℝ) (n : ℕ) : diagOp c (basis n) = ((c n : ℂ)) • :=
+theorem solution (c : ℕ → ℝ) (n : ℕ) : diagOp c (basis n) = ((c n : ℂ)) • basis n :=
   basis n := by
     ext m
     by_cases hmn : m = n

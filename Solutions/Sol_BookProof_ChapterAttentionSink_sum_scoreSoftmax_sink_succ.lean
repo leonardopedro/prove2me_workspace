@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionSink
 import Theorems.Thm_BookProof_ChapterAttentionSink_scoreSoftmax_sink_succ
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionSink
 
 

@@ -42,7 +42,13 @@ a finitely-supported sequence is the (finite) sum of its coordinate atoms. -/
 noncomputable def ofCore (v : DenseCore) : Ell2 :=
   ∑ i ∈ v.support, lp.single 2 i (v i)
 
-
+/-- The embedding does not change the coordinates. -/
+@[simp] theorem ofCore_apply (v : DenseCore) (j : ℕ) : (ofCore v : ℕ → ℝ) j = v j := by
+  rw [ofCore, lp.coeFn_sum]
+  simp only [Finset.sum_apply, lp.single_apply, Pi.single_apply, Finset.sum_ite_eq]
+  by_cases hj : j ∈ v.support
+  · simp [hj]
+  · rw [if_neg hj, (Finsupp.notMem_support_iff).mp hj]
 
 
 

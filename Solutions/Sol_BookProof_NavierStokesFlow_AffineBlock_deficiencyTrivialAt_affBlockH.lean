@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_affFun_embFun
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_supported
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 
 

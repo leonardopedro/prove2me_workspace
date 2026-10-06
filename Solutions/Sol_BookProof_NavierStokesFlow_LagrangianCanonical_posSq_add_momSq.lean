@@ -12,7 +12,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 set_option maxHeartbeats 1000000 in

@@ -1,6 +1,7 @@
 -- Generated from ChapterA3x.lean — solution of BookProof.ChapterA3x.projSym_mul_projMixed
 import Mathlib
 import Definitions.Def_ChapterA3x
+import Theorems.Thm_BookProof_ChapterA3n_projSym_idem
 import Theorems.Thm_BookProof_ChapterA3p_projSym_mul_projAnti
 open BookProof.ChapterA3x
 

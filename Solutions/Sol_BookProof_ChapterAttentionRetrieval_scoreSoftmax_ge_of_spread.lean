@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionRetrieval.lean — solution of BookProof.ChapterAttentionRetrieval.scoreSoftmax_ge_of_spread
 import Mathlib
 import Definitions.Def_ChapterAttentionRetrieval
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterAttentionRetrieval
 
 

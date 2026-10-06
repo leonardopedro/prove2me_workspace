@@ -17,12 +17,10 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
- fabc)
-
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (k j : ℕ) :
     ymFockCol e fabc k j
       = inner ℂ (coreBasis e j)
           (ymHamiltonian (coreRepBasis e) fabc
-            ⟨coreBasis e k, Submodule.subset_span ⟨k, rfl :=
+            ⟨coreBasis e k, Submodule.subset_span ⟨k, rfl⟩⟩) :=
   ⟩⟩) :=
     opCol_apply

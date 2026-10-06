@@ -50,7 +50,8 @@ def diagonalStarAlgHom : (n → ℂ) →⋆ₐ[ℂ] Matrix n n ℂ :=
       change diagonal (star d) = star (diagonal d)
       rw [Matrix.star_eq_conjTranspose, Matrix.diagonal_conjTranspose] }
 
-
+@[simp] theorem diagonalStarAlgHom_apply (d : n → ℂ) :
+    (diagonalStarAlgHom : (n → ℂ) →⋆ₐ[ℂ] Matrix n n ℂ) d = diagonal d := rfl
 
 
 
@@ -60,7 +61,8 @@ def conjDiagonal (U : Matrix.unitaryGroup n ℂ) : (n → ℂ) →⋆ₐ[ℂ] Ma
   ((Unitary.conjStarAlgAut ℂ (Matrix n n ℂ) U : Matrix n n ℂ ≃⋆ₐ[ℂ] Matrix n n ℂ) :
       Matrix n n ℂ →⋆ₐ[ℂ] Matrix n n ℂ).comp diagonalStarAlgHom
 
-
+@[simp] theorem conjDiagonal_apply (U : Matrix.unitaryGroup n ℂ) (d : n → ℂ) :
+    conjDiagonal U d = (Unitary.conjStarAlgAut ℂ (Matrix n n ℂ) U) (diagonal d) := rfl
 
 
 

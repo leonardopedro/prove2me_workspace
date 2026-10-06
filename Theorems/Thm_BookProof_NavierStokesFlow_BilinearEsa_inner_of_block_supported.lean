@@ -5,6 +5,7 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 variable {J : Type*}
 

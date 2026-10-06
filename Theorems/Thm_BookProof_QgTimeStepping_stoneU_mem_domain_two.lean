@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTimeStepping.lean — theorem BookProof.QgTimeStepping.stoneU_mem_domain_two
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

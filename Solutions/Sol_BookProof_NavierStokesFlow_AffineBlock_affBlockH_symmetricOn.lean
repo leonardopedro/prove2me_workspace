@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_affBlockH
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_symmetricOn
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 
 

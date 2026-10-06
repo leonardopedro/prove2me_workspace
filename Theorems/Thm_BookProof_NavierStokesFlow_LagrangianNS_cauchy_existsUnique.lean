@@ -4,7 +4,7 @@ import Definitions.Def_ChapterNavierStokesCauchy
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.LagrangianNS
+open BookProof.NavierStokesFlow
 
 variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
@@ -13,10 +13,6 @@ variable (L : LagrangianNS n)
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-Complex.I • L.hFull)) :=
-    ((Commute.refl (Complex.I • L.hFull)).smul_left s).smul_right t
-  rw [flowUnitary, flowUnitary, flowUnitary, matrixFlow, matrixFlow, matrixFlow, add_smul,
-    Matrix.exp_add_of_commute _ _ hcomm]
-
-/-- **B (truncated completeness)** *The Cauchy problem of the transformed
-Lagrangian operator has exactly one g := by sorry
+theorem BookProof.NavierStokesFlow.LagrangianNS.cauchy_existsUnique (psi : Fin n → ℂ) :
+    ∃! y : ℝ → Fin n → ℂ,
+      y 0 = psi ∧ ∀ t, HasDerivAt y ((Complex.I • L.hFull) *ᵥ y t) t := by sorry

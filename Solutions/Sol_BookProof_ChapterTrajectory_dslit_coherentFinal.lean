@@ -14,10 +14,8 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-, transProb_H]
-
 theorem solution :
-    coherentFinal H H psi0 0 = 1 ∧ coherentFinal :=
+    coherentFinal H H psi0 0 = 1 ∧ coherentFinal H H psi0 1 = 0 :=
    H H psi0 1 = 0 := by
     have h := slit_open_born
     unfold coherentFinal

@@ -5,7 +5,7 @@ import Definitions.Def_ChapterWignerSymmetry
 import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable (G : WeakMeasurableUnitaryGroup H)
@@ -16,6 +16,5 @@ open Filter Topology MeasureTheory
 
 
 
-## Von Neumann's theorem: weak measurability implies strong continuity -/
-
-theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero [CompleteSpace H] [TopologicalSpace.Separabl := by sorry
+theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) :
+    Tendsto (fun s : ℝ => G.U s x) (𝓝 0) (𝓝 x) := by sorry

@@ -23,7 +23,5 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 noncomputable section
 
 
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions in the rewrite chain need more than the default budget
 theorem BookProof.YangMillsHermite.CoreRep.symmetricOn_op (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
     (hT : PolySym T) : SymmetricOn D (D.subtype.comp (Φ.op T)) := by sorry

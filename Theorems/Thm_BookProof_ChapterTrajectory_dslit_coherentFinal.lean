@@ -12,7 +12,5 @@ open scoped BigOperators Matrix
 
 
 
-, transProb_H]
-
 theorem BookProof.ChapterTrajectory.dslit_coherentFinal :
-    coherentFinal H H psi0 0 = 1 ∧ coherentFinal := by sorry
+    coherentFinal H H psi0 0 = 1 ∧ coherentFinal H H psi0 1 = 0 := by sorry

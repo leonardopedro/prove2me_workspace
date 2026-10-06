@@ -17,9 +17,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-  fun i j => ⟪w i, w j⟫_ℂ
-
-theorem solution {m : ℕ} (w : Fin m → E) : :=
+theorem solution {m : ℕ} (w : Fin m → E) :
+    (gramMatrix w)ᴴ = gramMatrix w :=
   (gramMatrix w)ᴴ = gramMatrix w := by
     ext i j
     simp [gramMa

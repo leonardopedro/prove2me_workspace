@@ -20,8 +20,6 @@ open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 
-_left (sum_norm_coord_le c) hd0
-
 theorem BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram {m d : ℕ} (w : Fin m → E)
     (V : EuclideanSpace ℂ (Fin d) →L[ℂ] E)
     (rX : E →L[ℂ] E) (rB : EuclideanSpace ℂ (Fin d) →L[ℂ] EuclideanSpace ℂ (Fin d))
@@ -42,4 +40,4 @@ theorem BookProof.ChapterSirkGramWhitening.sirk_end_to_end_truncated_gram {m d :
     ‖flow (synthesis w c)
         - BookProof.ChapterSirkEndToEnd.sirkApprox V psiB (synthesis w c)‖
       ≤ BookProof.ChapterH6.sirkBound C Dmin hrate ‖synthesis w c‖ k
-        + ‖rX‖ * ( := by sorry
+        + ‖rX‖ * (delta * (Real.sqrt m * ‖c‖)) := by sorry

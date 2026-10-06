@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc
 open BookProof.ChapterPaleyWienerSampling
+open BookProof.ChapterPaleyWienerSampling.BandLimited
 
 
 

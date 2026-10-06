@@ -14,9 +14,7 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- col))
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (x : lpFiniteModes Conf) :
-    dGammaOp col x = toLp (dGamma col (fockEquiv.s :=
+    dGammaOp col x = toLp (dGamma col (fockEquiv.symm x)) :=
   ymm x)) := by
     simp [dGammaOp, LinearEquiv.conj_apply, coe_fo

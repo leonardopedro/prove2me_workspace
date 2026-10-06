@@ -55,7 +55,8 @@ variable {Ω : Type*} [DecidableEq Ω]
 /-- Indicator of an event as a real number: `1` if `ω ∈ A`, else `0`. -/
 def betIndicator (A : Finset Ω) (ω : Ω) : ℝ := if ω ∈ A then 1 else 0
 
-
+@[simp] lemma betIndicator_empty (ω : Ω) : betIndicator (∅ : Finset Ω) ω = 0 := by
+  simp [betIndicator]
 
 /-- Total payoff to the bettor of a finite family of gambles (events `A i`,
 stakes `s i`) in state `ω`. -/

@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterSphericalBesselODE
+import Definitions.Def_ChapterSphericalBessel
 import Mathlib
 
 
@@ -51,7 +52,7 @@ noncomputable def innerCLM (E : Type*) [NormedAddCommGroup E] [InnerProductSpace
     E →L[ℝ] (E →L[ℝ] ℝ) :=
   (innerₗ E).mkContinuous₂ 1 (fun x y => by simpa using abs_real_inner_le_norm x y)
 
-
+@[simp] theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
 
 
 

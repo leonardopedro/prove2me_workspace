@@ -1,5 +1,4 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.cfermionicProj_sectorEmb
-import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
@@ -7,6 +6,7 @@ import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.TensorCore

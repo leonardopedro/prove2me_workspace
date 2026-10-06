@@ -4,6 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterA4
+open BookProof.KatoRellich
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 

@@ -1,6 +1,8 @@
 -- Generated from Complexification.lean — solution of BookProof.Complexification.Cx.cxConj_involutive
 import Mathlib
 import Definitions.Def_Complexification
+open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 
 

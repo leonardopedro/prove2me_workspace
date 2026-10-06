@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_eq_zero_iff
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterSoftmaxFluctuation
 
 

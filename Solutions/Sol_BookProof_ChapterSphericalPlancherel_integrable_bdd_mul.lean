@@ -1,0 +1,21 @@
+-- Generated from ChapterSphericalPlancherel.lean — solution of BookProof.ChapterSphericalPlancherel.integrable_bdd_mul
+import Mathlib
+import Definitions.Def_ChapterSphericalPlancherel
+open BookProof.ChapterSphericalPlancherel
+
+
+
+
+open MeasureTheory Set Real SchwartzMap
+open scoped FourierTransform ContDiff
+open BookProof.ChapterSphericalBessel
+
+set_option maxHeartbeats 1000000 in
+theorem solution (G : ℝ → ℂ) (hG : Integrable G) (u : ℝ → ℝ) (hu : Continuous u)
+    (hb : ∀ x, |u x| ≤ 1) : Integrable (fun x : ℝ => (u x : ℂ) * G x) := by
+
+  refine Integrable.bdd_mul (c := 1) hG
+    ((Complex.continuous_ofReal.comp hu).aestronglyMeasurable) ?_
+  filter_upwards with x
+  rw [Complex.norm_real]
+  exact hb x

@@ -1,6 +1,7 @@
 -- Generated from ChapterQgOuterFockOneParticle.lean — solution of BookProof.QgOuterFockOneParticle.single_mem_secCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockOneParticle
+import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
 open BookProof.QgOuterFockOneParticle
 
 

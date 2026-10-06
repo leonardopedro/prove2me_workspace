@@ -17,13 +17,11 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- toLpL
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) (k : ℕ) {L : Finset ℕ}
     (h : (col k).support ⊆ L) :
     (inner ℂ (toLp (creVec (col k) (annA k u))) (toLp v) : ℂ)
       = ∑ j ∈ L, (starRingEnd ℂ) ((col k) j)
-          * inner ℂ (toLp (annA k u)) (toLp (ann :=
+          * inner ℂ (toLp (annA k u)) (toLp (annA j v)) :=
   A j v)) := by
     have hexp : toLp (creVec (col k) (annA k u))
         = ∑ j ∈ (col k).support, (col k) j • toLp (creA j (annA k u)) := by

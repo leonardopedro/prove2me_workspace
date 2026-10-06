@@ -12,7 +12,5 @@ open scoped BigOperators Matrix
 
 
 
-lit_finalProb]
-
 theorem BookProof.ChapterTrajectory.dslit_interference :
-    finalProb H H psi0 0 ≠ coherentF := by sorry
+    finalProb H H psi0 0 ≠ coherentFinal H H psi0 0 := by sorry

@@ -63,7 +63,8 @@ namespace BookProof.ChapterDisplacedThermalOverlap
 `τ = n̄ + ½`, the thermal variance plus the zero-point half. -/
 def tauNN (nbar : ℝ≥0) : ℝ≥0 := nbar + 1 / 2
 
-
+@[simp] theorem tauNN_coe (nbar : ℝ≥0) : ((tauNN nbar : ℝ≥0) : ℝ) = (nbar : ℝ) + 1 / 2 := by
+  simp [tauNN]
 
 
 

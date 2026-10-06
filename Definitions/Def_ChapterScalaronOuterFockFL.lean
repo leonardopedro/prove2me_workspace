@@ -1,5 +1,7 @@
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_core_le_dom
 
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_xCc_sq_le
 
 import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable
@@ -8,6 +10,8 @@ import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
 
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_comparison_core
 
+
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_ham_esa
 

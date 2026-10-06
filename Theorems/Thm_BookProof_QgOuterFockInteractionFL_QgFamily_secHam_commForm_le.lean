@@ -22,6 +22,7 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 variable (F : QgFamily)
 

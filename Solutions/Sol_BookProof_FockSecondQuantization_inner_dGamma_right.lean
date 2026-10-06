@@ -19,14 +19,12 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-  simp
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) {L : Finset ℕ}
     (hv : modes v ⊆ L)
     (hL : ∀ k ∈ modes u ∪ modes v, (col k).support ⊆ L) :
     (inner ℂ (toLp u) (toLp (dGamma col v)) : ℂ)
       = ∑ j ∈ L, ∑ k ∈ L,
-        (col j) k * inner ℂ (toLp (annA k u)) (toLp (ann :=
+        (col j) k * inner ℂ (toLp (annA k u)) (toLp (annA j v)) :=
   A j v)) := by
     have hsum : toLp (dGamma col v) = ∑ j ∈ L, toLp (creVec (col j) (annA j v)) := by
       rw [dGamma_eq_sum col hv, ← toLpL_apply, map_sum]

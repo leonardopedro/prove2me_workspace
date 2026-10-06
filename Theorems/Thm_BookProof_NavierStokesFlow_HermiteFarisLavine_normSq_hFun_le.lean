@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.normSq_hFun_le (hκ : 0 ≤ κ) (X : ℕ → ℂ) (m : ℕ) :
     ‖hFun κ X m‖ ^ 2

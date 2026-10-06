@@ -7,43 +7,13 @@ open BookProof.FockWeightedSchur
 
 
 
-
-
-
-
-
-
-
-
-
-
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

@@ -10,6 +10,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sqQ_dom
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
 
 

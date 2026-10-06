@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_le_amp
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 
 

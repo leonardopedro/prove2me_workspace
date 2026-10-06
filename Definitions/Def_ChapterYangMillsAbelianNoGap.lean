@@ -1,5 +1,9 @@
 import Definitions.Def_ChapterSqueezedGaussStates
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 
 

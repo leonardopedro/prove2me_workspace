@@ -19,15 +19,12 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
- A b]
-  exact hlim
-
 theorem solution [Nontrivial F] (A : F →L[ℂ] F)
     (hsa : IsSelfAdjoint A) (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re)
     (b : HilbertBasis ℕ ℂ F) :
     IsPositiveSelfAdjointExtension (finiteModeRestrict A b) (topRestrict A) ∧
       Tendsto (fun m : ℕ => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop
-        (nhds (sInf :=
+        (nhds (sInf (spectrum ℝ A))) :=
    (spectrum ℝ A))) :=
     ⟨(finiteModeRestrict_selects_operator A hsa hpos b).1,
       ritzInf_tendsto_sInf_spec

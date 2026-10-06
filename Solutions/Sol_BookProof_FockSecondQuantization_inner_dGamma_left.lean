@@ -19,14 +19,12 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-right]
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) {L : Finset ℕ}
     (hu : modes u ⊆ L)
     (hL : ∀ k ∈ modes u ∪ modes v, (col k).support ⊆ L) :
     (inner ℂ (toLp (dGamma col u)) (toLp v) : ℂ)
       = ∑ k ∈ L, ∑ j ∈ L,
-        (starRingEnd ℂ) ((col k) j) * inner ℂ (toLp (annA k u)) (toLp (ann :=
+        (starRingEnd ℂ) ((col k) j) * inner ℂ (toLp (annA k u)) (toLp (annA j v)) :=
   A j v)) := by
     have hsum : toLp (dGamma col u) = ∑ k ∈ L, toLp (creVec (col k) (annA k u)) := by
       rw [dGamma_eq_sum col hu, ← toLpL_apply, map_sum]

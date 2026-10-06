@@ -11,6 +11,7 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineBlock
 
 variable {J : Type*}
 

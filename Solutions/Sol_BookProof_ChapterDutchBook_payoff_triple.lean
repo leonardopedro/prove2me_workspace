@@ -1,0 +1,23 @@
+-- Generated from ChapterDutchBook.lean — solution of BookProof.ChapterDutchBook.payoff_triple
+import Mathlib
+import Definitions.Def_ChapterDutchBook
+open BookProof.ChapterDutchBook
+
+
+
+open scoped BigOperators
+open Finset
+
+
+variable {Ω : Type*} [DecidableEq Ω]
+
+variable {Ω : Type*} [DecidableEq Ω]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (Pr : Finset Ω → ℝ) (A₀ A₁ A₂ : Finset Ω)
+    (s₀ s₁ s₂ : ℝ) (ω : Ω) :
+    payoff Pr ![A₀, A₁, A₂] ![s₀, s₁, s₂] ω =
+      s₀ * (betIndicator A₀ ω - Pr A₀) + s₁ * (betIndicator A₁ ω - Pr A₁)
+        + s₂ * (betIndicator A₂ ω - Pr A₂) := by
+
+  simp [payoff, Fin.sum_univ_three]

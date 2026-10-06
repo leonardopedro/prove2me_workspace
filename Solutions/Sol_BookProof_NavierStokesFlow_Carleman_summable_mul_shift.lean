@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCarleman
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_summable_normSq
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

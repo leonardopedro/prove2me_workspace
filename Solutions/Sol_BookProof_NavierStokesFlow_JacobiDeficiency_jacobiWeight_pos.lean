@@ -9,9 +9,7 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
-Weight n + 2
-
-theorem solution (n : ℕ) : 0 < j :=
+theorem solution (n : ℕ) : 0 < jacobiWeight n :=
   acobiWeight n := by
     induction n with
     | zero => norm_num [jacobiWeight]

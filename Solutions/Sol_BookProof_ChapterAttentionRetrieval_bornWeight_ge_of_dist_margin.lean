@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionRetrieval
 import Theorems.Thm_BookProof_ChapterAttentionRetrieval_scoreSoftmax_ge_of_margin
+import Theorems.Thm_BookProof_ChapterCoherentGeometry_bornWeight_eq_scoreSoftmax_neg_dist_sq
 open BookProof.ChapterAttentionRetrieval
 
 

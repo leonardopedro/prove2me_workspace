@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterStoneGenerator
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 
 
@@ -117,7 +118,11 @@ def reducedMap (f : H →L[ℂ] H) (hp : ∀ x ∈ physicalStates Om, f x ∈ ph
     Cohomology Om →ₗ[ℂ] Cohomology Om :=
   Submodule.mapQ _ _ ((f : H →ₗ[ℂ] H).restrict hp) fun _ hx => he _ hx
 
-
+@[simp] theorem reducedMap_mk (f : H →L[ℂ] H)
+    (hp : ∀ x ∈ physicalStates Om, f x ∈ physicalStates Om)
+    (he : ∀ x ∈ exactStates Om, f x ∈ exactStates Om) (x : physicalStates Om) :
+    reducedMap Om f hp he (Submodule.Quotient.mk x)
+      = Submodule.Quotient.mk ⟨f x, hp x x.2⟩ := rfl
 
 section Group
 
@@ -128,7 +133,9 @@ descends to BRST cohomology. -/
 def transfer (t : ℝ) : Cohomology Om →ₗ[ℂ] Cohomology Om :=
   reducedMap Om (U t) (physicalStates_invariant (hcomm t)) (exactStates_invariant (hcomm t))
 
-
+@[simp] theorem transfer_mk (t : ℝ) (x : physicalStates Om) :
+    transfer Om U hcomm t (Submodule.Quotient.mk x)
+      = Submodule.Quotient.mk ⟨U t x, physicalStates_invariant (hcomm t) x x.2⟩ := rfl
 
 
 

@@ -20,6 +20,7 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 variable (F : QgFamily)
 

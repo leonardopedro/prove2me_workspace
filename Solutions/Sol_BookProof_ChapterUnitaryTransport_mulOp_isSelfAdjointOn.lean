@@ -17,9 +17,7 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
-  rfl
-
-theorem solution (f : ℤ → ℝ) : IsSelfAdjointOn (mulDomain f) (mu :=
+theorem solution (f : ℤ → ℝ) : IsSelfAdjointOn (mulDomain f) (mulOp f) :=
   lOp f) := by
     rw [IsSelfAdjointOn, adjointDomain_mulOp]
     exact adjointDomain_eq_mulD

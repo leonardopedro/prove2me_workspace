@@ -1,8 +1,8 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — solution of BookProof.NavierStokesFlow.FockCanonical.cre_cre_coe_of_lt
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
-import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_cre_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 

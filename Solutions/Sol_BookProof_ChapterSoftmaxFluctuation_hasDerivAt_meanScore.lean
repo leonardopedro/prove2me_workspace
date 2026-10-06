@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_scoreSoftmax
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_eq_sub_sq
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterSoftmaxFluctuation
 
 

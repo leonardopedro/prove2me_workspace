@@ -18,11 +18,9 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
-rw [h1, h2]
-
 theorem solution (U Om : E →L[ℂ] E)
     (hcomm : Om.comp U = U.comp Om) (n : ℕ) (v : E) (hv : Om v = 0) :
-    Om ((U :=
+    Om ((U ^ n) v) = 0 :=
    ^ n) v) = 0 := by
     have h : Om ((U ^ n) v) = (U ^ n) (Om v) :=
       congrArg (fun f : E →L[ℂ] E => f v) (comp_pow_of_comm U Om hcomm n)

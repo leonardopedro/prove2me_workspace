@@ -5,7 +5,7 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterLinftyMultiplication
-open BookProof.NavierStokesFlow.FullEsa
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
@@ -20,4 +20,5 @@ open MeasureTheory
 open FullEsa
 
 
- := by sorry
+theorem BookProof.NavierStokesFlow.FockContinuum.multOp_isSymmetricDom (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :
+    IsSymmetricDom (multOp μ hg) := by sorry

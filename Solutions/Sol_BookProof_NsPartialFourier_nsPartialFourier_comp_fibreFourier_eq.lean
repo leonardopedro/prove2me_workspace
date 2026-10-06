@@ -1,0 +1,35 @@
+-- Generated from ChapterNsPartialFourier.lean — solution of BookProof.NsPartialFourier.nsPartialFourier_comp_fibreFourier_eq
+import Mathlib
+import Definitions.Def_ChapterNsPartialFourier
+import Theorems.Thm_BookProof_NsPartialFourier_nsPartialFourier_fibreFourier
+open BookProof.NsPartialFourier
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform LineDeriv
+
+noncomputable section
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
+  [NormedAddCommGroup G] [NormedSpace ℂ G]
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+variable (V F) in
+variable (V) in
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDimensional ℝ W]
+  [MeasurableSpace W] [BorelSpace W]
+variable (V W) in
+variable (W) in
+
+set_option maxHeartbeats 1000000 in
+theorem solution :
+    ((nsPartialFourier V W).toLinearIsometry.toContinuousLinearMap).comp
+        (fibreOp V (fibreFourierCLM W))
+      = (fibreOp V (fibreFourierCLM W)).comp
+        ((nsPartialFourier V W).toLinearIsometry.toContinuousLinearMap) := ContinuousLinearMap.ext fun f => nsPartialFourier_fibreFourier f

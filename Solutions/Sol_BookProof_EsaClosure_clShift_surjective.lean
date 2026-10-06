@@ -20,12 +20,9 @@ variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-h0
-  linear_combination -h0
-
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
     (hesa : EssentiallySelfAdjointOn D T) :
-    Function.Surjective (cshiftMap (clE :=
+    Function.Surjective (cshiftMap (clExt T hdense hsym) Complex.I) :=
   xt T hdense hsym) Complex.I) := by
     have hclosed : IsClosed ((cshiftRange (clExt T hdense hsym) Complex.I : Submodule ℂ F) : Set F) :=
       clRange_isClosed T hdense hsym (by simp)

@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterA4
 open BookProof.HermiteCarleman
+open BookProof.CarlemanTwoStep
 
 variable {d : ℕ}
 

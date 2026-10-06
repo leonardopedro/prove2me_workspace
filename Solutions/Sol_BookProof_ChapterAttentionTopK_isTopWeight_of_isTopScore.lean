@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionTopK.lean — solution of BookProof.ChapterAttentionTopK.isTopWeight_of_isTopScore
 import Mathlib
 import Definitions.Def_ChapterAttentionTopK
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_iff
 open BookProof.ChapterAttentionTopK
 
 

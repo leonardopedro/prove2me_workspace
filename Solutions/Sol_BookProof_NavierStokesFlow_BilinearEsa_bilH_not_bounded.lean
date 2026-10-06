@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesBilinearEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_bilH_apply
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

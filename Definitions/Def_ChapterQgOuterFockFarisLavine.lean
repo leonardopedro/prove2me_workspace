@@ -18,6 +18,12 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
 
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -285,7 +291,8 @@ def dsCompOp : dsDom C →ₗ[ℂ] lp G 2 where
     simp only [SetLike.val_smul, lp.coeFn_smul, Pi.smul_apply, RingHom.id_apply]
     exact opTot_smul _ a (x.2.1 i)
 
-
+@[simp] theorem dsCompOp_coe (x : dsDom C) (i : ι) :
+    ((dsCompOp C x : lp G 2) : ∀ i, G i) i = opTot (C i).op ((x : lp G 2) i) := rfl
 
 /-- The fibre of a domain vector, as an element of the fibre domain. -/
 def fib (x : dsDom C) (i : ι) : (C i).dom := ⟨(x : lp G 2) i, x.2.1 i⟩
@@ -414,7 +421,11 @@ def dsFibOp (K : ℝ) (hrel : ∀ (i : ι) (u : (C i).dom), ‖H i u‖ ≤ K * 
 
 variable {C H}
 
-
+@[simp] theorem dsFibOp_fib {K : ℝ}
+    (hrel : ∀ (i : ι) (u : (C i).dom), ‖H i u‖ ≤ K * ‖(C i).op u + (u : G i)‖)
+    (x : dsDom C) (i : ι) :
+    ((dsFibOp C H K hrel x : lp G 2) : ∀ i, G i) i = H i (fib C x i) :=
+  opTot_of_mem _ (x.2.1 i)
 
 
 

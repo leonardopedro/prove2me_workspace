@@ -18,15 +18,12 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-tivity
-  nlinarith [h4, h3, h5]
-
 theorem solution {m d : ℕ} (w : Fin m → E)
     (V : EuclideanSpace ℂ (Fin d) →L[ℂ] E) {delta : ℝ}
     (hdelta : ∀ i, ‖w i - V (ContinuousLinearMap.adjoint V (w i))‖ ≤ delta)
     (c : EuclideanSpace ℂ (Fin m)) :
     ‖synthesis w c - V (ContinuousLinearMap.adjoint V (synthesis w c))‖
-      ≤ :=
+      ≤ delta * (Real.sqrt m * ‖c‖) :=
    delta * (Real.sqrt m * ‖c‖) := by
     rcases Nat.eq_zero_or_pos m with hm | hm
     · subst hm

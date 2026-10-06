@@ -15,8 +15,6 @@ open Filter Topology
 open BookProof.ChapterH6
 
 
-rw [h1, h2]
-
 theorem BookProof.ChapterSirkRestart.brst_leakage_zero_of_exact (U Om : E →L[ℂ] E)
     (hcomm : Om.comp U = U.comp Om) (n : ℕ) (v : E) (hv : Om v = 0) :
-    Om ((U := by sorry
+    Om ((U ^ n) v) = 0 := by sorry

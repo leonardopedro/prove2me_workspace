@@ -54,9 +54,11 @@ def sirkKrylov (X : ℕ → Module.End ℂ E) (v : E) : ℕ → E
   | 0 => v
   | (j + 1) => X (j + 1) (sirkKrylov X v j)
 
+@[simp] theorem sirkKrylov_zero (X : ℕ → Module.End ℂ E) (v : E) :
+    sirkKrylov X v 0 = v := rfl
 
-
-
+@[simp] theorem sirkKrylov_succ (X : ℕ → Module.End ℂ E) (v : E) (j : ℕ) :
+    sirkKrylov X v (j + 1) = X (j + 1) (sirkKrylov X v j) := rfl
 
 /-
 **H1.7** (rational-Krylov ⊆ rational functions of `Xₘ`, eq. 11): let `Xm` be the

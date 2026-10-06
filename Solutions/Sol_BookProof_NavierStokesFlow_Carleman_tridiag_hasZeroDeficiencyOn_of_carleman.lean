@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiag_recursion_of_def
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_sum_normSq_le
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_summable_mul_shift
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

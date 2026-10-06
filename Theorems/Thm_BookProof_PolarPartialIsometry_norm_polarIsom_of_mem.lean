@@ -18,7 +18,7 @@ variable [CompleteSpace F]
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 
 theorem BookProof.PolarPartialIsometry.norm_polarIsom_of_mem {z : F} (hz : z ∈ initSpace P) : ‖polarIsom P Q h z‖ = ‖z‖ := by sorry

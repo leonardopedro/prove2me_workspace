@@ -19,12 +19,10 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
- _ k j
-
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ))
     (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e f :=
+      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) A :=
   abc)) A :=
     secondQuantization_friedrichs (coreBasis e) (ymOnePart e fabc)
       (ymHamiltonian_symmetricOn (coreRepBasis e) fabc)

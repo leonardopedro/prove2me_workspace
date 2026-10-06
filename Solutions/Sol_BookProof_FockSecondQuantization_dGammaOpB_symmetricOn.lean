@@ -17,10 +17,8 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-earMap
-
 theorem solution {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB :=
+    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB ε col) :=
   ε col) := by
     intro x y
     exact dGammaOp_symmetricOn hherm

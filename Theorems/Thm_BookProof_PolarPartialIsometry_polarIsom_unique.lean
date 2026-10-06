@@ -18,7 +18,7 @@ variable [CompleteSpace F]
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
 
 theorem BookProof.PolarPartialIsometry.polarIsom_unique (V : F →L[ℂ] F) (hV : ∀ x : Dom, V (P x) = Q x)

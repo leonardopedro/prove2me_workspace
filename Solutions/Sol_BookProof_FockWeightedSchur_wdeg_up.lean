@@ -2,17 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_eq_sum
+import Theorems.Thm_BookProof_FockSecondQuantization_support_up
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -22,9 +13,6 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
 
 variable {w : ℕ → ℝ}
 

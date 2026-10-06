@@ -3,11 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_sBd_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

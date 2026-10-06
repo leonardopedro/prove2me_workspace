@@ -1,5 +1,4 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.symmetricOn_cfermionic
-import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
@@ -7,6 +6,7 @@ import Definitions.Def_ChapterA
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ChapterMaschkeFiniteGroup

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmMeasure
+open BookProof.ChapterPvmMeasure
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

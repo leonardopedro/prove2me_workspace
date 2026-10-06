@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA3p
 import Theorems.Thm_BookProof_ChapterA3p_sum_signC_eq_zero
+import Theorems.Thm_BookProof_ChapterA3n_permMat_mul
 open BookProof.ChapterA3p
 
 

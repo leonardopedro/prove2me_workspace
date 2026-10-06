@@ -4,9 +4,9 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
-open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.AffineFiber.PairShift
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineFiber
 
 variable {ι : Type*}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
@@ -17,7 +17,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_essentiallySelfAdjointOn_core :

@@ -20,7 +20,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-:= rfl
-
 theorem BookProof.FockSecondQuantization.coe_fockEquiv_symm (x : lpFiniteModes Conf) :
-    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv. := by sorry
+    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) := by sorry

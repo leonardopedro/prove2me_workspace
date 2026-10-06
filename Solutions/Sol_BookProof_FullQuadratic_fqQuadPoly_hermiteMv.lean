@@ -13,6 +13,10 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
+open BookProof.CarlemanSimplex
+open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
@@ -22,8 +26,6 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1600000 in
--- expanding the quadratic symbol over all mode pairs makes this rewrite chain expensive
 theorem solution (P Q S : Fin d → Fin d → ℝ) (a : Fin d →₀ ℕ) :
     fqQuadPoly P Q S (hermiteMv a)
       = ((fqSymbol P Q : ℝ) : ℂ) • hermiteMv a

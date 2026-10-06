@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Theorems.Thm_BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
 open BookProof.UnboundedSpectralModel
 
 

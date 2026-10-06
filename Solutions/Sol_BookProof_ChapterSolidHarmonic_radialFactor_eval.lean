@@ -1,6 +1,8 @@
 -- Generated from ChapterSolidHarmonic.lean — solution of BookProof.ChapterSolidHarmonic.radialFactor_eval
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
+import Theorems.Thm_BookProof_ChapterLegendrePolynomial_legendre_deriv_coeff_eq_zero
+import Theorems.Thm_BookProof_ChapterLegendrePolynomial_legendre_deriv_coeff_parity
 open BookProof.ChapterSolidHarmonic
 
 

@@ -1,5 +1,4 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — theorem BookProof.SirkSingleTime.strongResolventConvergence_of_strongResAt
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift

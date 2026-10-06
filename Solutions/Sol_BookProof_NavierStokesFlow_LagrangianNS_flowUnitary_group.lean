@@ -13,10 +13,8 @@ variable {n : ℕ} (d : NSTruncation n)
 variable (L : LagrangianNS n)
 
 set_option maxHeartbeats 1000000 in
-flowUnitary t)ᴴ * L.flowUnitary t = 1 := by
-  have h := BookProof.ChapterContinuityUnitary.exp_smul_I_unitary L.hFull
-    L.transformed_hamiltonian_hermitian t
-  rwa [flowUni :=
+theorem solution (s t : ℝ) :
+    L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t :=
   tary, matrixFlow, ← smul_assoc, Complex.real_smul]
   
   /-- The transformed flow is a one-parameter group: it is **complete**. -/

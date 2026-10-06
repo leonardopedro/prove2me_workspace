@@ -6,7 +6,7 @@ import Definitions.Def_ChapterStoneEvolution
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)

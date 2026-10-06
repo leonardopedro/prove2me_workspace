@@ -16,6 +16,7 @@ variable {d : ℕ} (S : NsSystem d)
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
+open BookProof.NsKoopman
 
 noncomputable section
 

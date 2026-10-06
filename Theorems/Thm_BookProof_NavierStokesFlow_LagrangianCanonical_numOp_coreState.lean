@@ -5,8 +5,8 @@ import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
@@ -17,12 +17,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
-_sum, Finset.smul_sum, Finset.smul_sum]
-  rw [← Finset.sum_add_distrib]
-  rw [Finset.sum_congr rfl fun i _ => hmode i]
-  rw [Finset.sum_add_distrib, hcnt, hbridge]
-
-/-! ## Diagonaliz := by sorry
+theorem BookProof.NavierStokesFlow.LagrangianCanonical.numOp_coreState (i : Fin 3) (β : Vel) :
+    numOp i (coreState β) = ((β i : ℝ) : ℂ) • coreState β := by sorry

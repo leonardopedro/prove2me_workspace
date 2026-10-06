@@ -4,6 +4,7 @@ import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_innK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_add_singleK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_singleK_apply
+open BookProof.CarlemanTwoStep
 
 
 

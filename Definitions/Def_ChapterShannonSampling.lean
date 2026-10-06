@@ -69,9 +69,16 @@ open scoped Real ComplexConjugate
 /-- The normalized cardinal sine `sinc u = sin (π u) / (π u)`, with value `1` at `u = 0`. -/
 noncomputable def sinc (u : ℝ) : ℝ := if u = 0 then 1 else Real.sin (π * u) / (π * u)
 
+@[simp] theorem sinc_zero : sinc 0 = 1 := by simp [sinc]
 
-
-
+/-- The interpolation property: the cardinal sine vanishes at every nonzero integer. -/
+@[simp] theorem sinc_intCast (n : ℤ) (hn : n ≠ 0) : sinc (n : ℝ) = 0 := by
+  have hn' : (n : ℝ) ≠ 0 := Int.cast_ne_zero.mpr hn
+  rw [sinc, if_neg hn']
+  have : Real.sin (π * n) = 0 := by
+    rw [mul_comm]
+    simp
+  simp [this]
 
 
 

@@ -1,0 +1,24 @@
+-- Generated from ChapterParityZ4.lean — solution of BookProof.ChapterParityZ4.combinedParity_sq
+import Mathlib
+import Definitions.Def_ChapterParityZ4
+import Theorems.Thm_BookProof_ChapterParityQL_QLParity_sq
+import Theorems.Thm_BookProof_ChapterParity_higgsParity_sq
+import Theorems.Thm_BookProof_ChapterParity_mgamma0_sq
+open BookProof.ChapterParityZ4
+
+
+
+open Matrix
+
+
+open BookProof.ChapterParity
+open BookProof.ChapterParityQL
+open BookProof.ChapterA3
+
+set_option maxHeartbeats 1000000 in
+theorem solution :
+    combinedParity ^ 2 = (-1, -1, -1, -1) := by
+
+  simp only [combinedParity, Fin.isValue, Prod.pow_mk, Prod.mk.injEq, and_self];
+  exact ⟨ by simpa [ sq ] using higgsParity_sq, by simpa [ sq ] using QLParity_sq,
+                                                   by simpa [ sq ] using mgamma0_sq ⟩

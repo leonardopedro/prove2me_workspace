@@ -12,6 +12,4 @@ open scoped BigOperators Matrix
 
 
 
-_closed_born a
-
-theorem BookProof.ChapterTrajectory.dslit_finalProb (f : Fin 2) : finalProb H H := by sorry
+theorem BookProof.ChapterTrajectory.dslit_finalProb (f : Fin 2) : finalProb H H psi0 f = 1 / 2 := by sorry

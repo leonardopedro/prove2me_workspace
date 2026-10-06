@@ -1,4 +1,8 @@
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 

@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 

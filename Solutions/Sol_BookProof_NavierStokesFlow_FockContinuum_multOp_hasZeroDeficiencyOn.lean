@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_memLp_conj
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
@@ -18,20 +19,8 @@ variable {X : Type*} [MeasurableSpace X]
 variable {X : Type*} [MeasurableSpace X]
 
 set_option maxHeartbeats 1000000 in
-)) 2 μ := by
-  refine ⟨Complex.continuous_conj.comp_aestronglyMeasurable h.1, ?_⟩
-  have heq : eLpNorm (fun x => (starRingEnd ℂ) (F x)) 2 μ = eLpNorm F 2 μ := by
-    refine eLpNorm_congr_norm_ae ?_
-    filter_upwards with x
-    simp
-  rw [heq]
-  exact h.2
-
-/-! ## Essential self-adjointness -/
-
-/-- **Multiplication by a real measurable function is essentially self-adjoint on
-the bounded-energy core.**  This is the continuum counterpart of the
-occupation-number statement: the operator he :=
+theorem solution (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :
+    HasZeroDeficiencyOn (boundedEnergyCore μ g) (multOp μ hg) :=
   re has *no* eigenvectors in general
   — its spectrum is the essential range of `g`, typically an interval — and it is
   unbounded whenever `g` is. -/

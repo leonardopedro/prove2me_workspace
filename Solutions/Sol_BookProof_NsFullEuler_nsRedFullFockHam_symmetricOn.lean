@@ -1,6 +1,7 @@
 -- Generated from ChapterNsFourierElimination.lean — solution of BookProof.NsFullEuler.nsRedFullFockHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.NsFullEuler
 
 

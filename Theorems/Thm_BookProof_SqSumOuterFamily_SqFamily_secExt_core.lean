@@ -15,6 +15,7 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 variable (dim : ℕ → ℕ)
 variable (F : SqFamily)

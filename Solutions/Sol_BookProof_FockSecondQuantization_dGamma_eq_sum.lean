@@ -15,9 +15,7 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-_smul]
-
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) {u : FockAlg} {K : Finset ℕ} (hK : modes u ⊆ K) :
-    dGamma col u = ∑ k ∈ K, creVec (col k) (an :=
+    dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) :=
   nA k u) :=
     dGamma_eq_sum_aux co

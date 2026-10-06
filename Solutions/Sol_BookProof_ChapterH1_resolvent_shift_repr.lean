@@ -34,4 +34,6 @@ theorem solution (a : A) (N h : ℂ) (j m : ℂ) (Xj Xm : A)
       [Invertible (1 + (h * (m - j)) • Xm)] :
       Xj = ⅟(1 + (h * (m - j)) • Xm) * Xm := by
     -- By definition of $u$, we know that $u * Xm = Xm * u$.
-    have hu_comm : (1 +
+    have hu_comm : (1 + (h * (m - j)) • Xm) * Xm = Xm * (1 + (h * (m - j)) • Xm) := by
+      simp [ mul_add, add_mul ];
+    have hu_inv_comm : Xm *

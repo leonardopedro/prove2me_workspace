@@ -1,0 +1,24 @@
+-- Generated from ChapterEulerCountableChain.lean — solution of BookProof.ChapterEulerCountableChain.stick_hasSum_one
+import Mathlib
+import Definitions.Def_ChapterEulerCountableChain
+import Theorems.Thm_BookProof_ChapterEulerCountableChain_stickProb_nonneg
+import Theorems.Thm_BookProof_ChapterEulerCountableChain_partial_sum
+open BookProof.ChapterEulerCountableChain
+
+
+
+open scoped BigOperators
+open Filter Topology
+
+set_option maxHeartbeats 1000000 in
+theorem solution (c : ℕ → ℝ) (hc : ∀ n, 0 ≤ c n ∧ c n ≤ 1)
+    (htail : Tendsto (stickTail c) atTop (𝓝 0)) :
+    HasSum (stickProb c) 1 := by
+
+  rw [hasSum_iff_tendsto_nat_of_nonneg (stickProb_nonneg c hc) 1]
+  have heq : (fun n => ∑ i ∈ Finset.range n, stickProb c i)
+      = (fun n => 1 - stickTail c n) := funext (partial_sum c)
+  rw [heq]
+  have h0 : Tendsto (fun n => 1 - stickTail c n) atTop (𝓝 (1 - 0)) :=
+    tendsto_const_nhds.sub htail
+  simpa using h0

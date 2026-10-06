@@ -8,6 +8,7 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 open scoped ENNReal

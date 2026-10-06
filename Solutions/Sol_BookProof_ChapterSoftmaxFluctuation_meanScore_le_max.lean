@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — solution of BookProof.ChapterSoftmaxFluctuation.meanScore_le_max
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterSoftmaxFluctuation
 
 

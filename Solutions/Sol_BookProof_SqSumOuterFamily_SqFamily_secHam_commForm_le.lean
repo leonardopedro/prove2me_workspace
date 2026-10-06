@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_SqSumFarisLavine_commForm_sqSumOp_le
 import Theorems.Thm_BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

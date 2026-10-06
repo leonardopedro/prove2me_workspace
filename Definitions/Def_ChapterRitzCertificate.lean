@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 
 

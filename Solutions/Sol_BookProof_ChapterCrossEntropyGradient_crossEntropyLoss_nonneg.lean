@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterCrossEntropyGradient_crossEntropyLoss_eq_neg_log
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_one
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 open BookProof.ChapterCrossEntropyGradient
 
 

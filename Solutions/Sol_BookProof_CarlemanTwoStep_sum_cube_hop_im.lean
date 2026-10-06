@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_cube_splitK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_ltermG
+open BookProof.CarlemanTwoStep
 
 
 

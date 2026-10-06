@@ -1,8 +1,10 @@
 -- Generated from ChapterSqSumOuterSingleTime.lean — solution of BookProof.SqSumOuterFamily.SqFamily.truncHam_esa
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterSingleTime
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secHam_essentiallySelfAdjointOn
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

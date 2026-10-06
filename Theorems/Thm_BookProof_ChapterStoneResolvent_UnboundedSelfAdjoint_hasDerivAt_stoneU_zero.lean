@@ -7,7 +7,7 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
-open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
+open BookProof.ChapterStoneResolvent
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)
@@ -20,9 +20,5 @@ open Filter Topology NormedSpace
 
 
 
- (Set.right_mem_uIcc)
-  have hg0 : g 0 = 0 := by simp [hg]
-  rw [hg0, sub_zero, sub_zero, Real.norm_eq_abs] at hmvt
-  exact hmvt
-
-/-- **Stone's equation at `t = 0`**: the generator of `e^{-itA}` is `-iA`. := by sorry
+theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_stoneU_zero (x : T.domain) :
+    HasDerivAt (fun t : ℝ => T.stoneU t (x : H)) ((-Complex.I) • T.op x) 0 := by sorry

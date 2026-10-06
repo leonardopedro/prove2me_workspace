@@ -19,7 +19,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-o_mul]
-
 theorem BookProof.FockSecondQuantization.inner_toLp (u v : FockAlg) :
-    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ u.support, (starRingEnd ℂ) (u α) := by sorry
+    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ u.support, (starRingEnd ℂ) (u α) * v α := by sorry

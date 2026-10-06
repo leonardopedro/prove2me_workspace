@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsBandBounds
 import Theorems.Thm_BookProof_YangMillsBandBounds_isBandR2_magMulOp
+import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_isBandDeg
 open BookProof.YangMillsBandBounds
 
 

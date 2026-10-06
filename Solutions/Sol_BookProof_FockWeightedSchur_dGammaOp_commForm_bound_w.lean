@@ -3,17 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_im_inner_dGamma_wgt_bound
 import Theorems.Thm_BookProof_FockWeightedSchur_diagMax_wSym_eq
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -24,27 +16,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

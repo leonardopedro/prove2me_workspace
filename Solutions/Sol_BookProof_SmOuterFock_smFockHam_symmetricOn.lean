@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmOuterFock
 import Theorems.Thm_BookProof_SmOuterFock_smSectorHam_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.SmOuterFock
 
 

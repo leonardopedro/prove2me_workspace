@@ -3,17 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wgt_apply
 import Theorems.Thm_BookProof_FockWeightedSchur_support_wgt_subset
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp_of_subset
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -23,9 +14,6 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
 
 variable {w : ℕ → ℝ}
 

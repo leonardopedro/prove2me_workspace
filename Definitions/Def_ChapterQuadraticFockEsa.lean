@@ -1,6 +1,14 @@
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterGradedBandSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 

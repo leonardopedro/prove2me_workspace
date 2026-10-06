@@ -15,7 +15,5 @@ open Filter Topology
 open BookProof.ChapterH6
 
 
- leakage -/
-
 theorem BookProof.ChapterSirkRestart.comp_pow_of_comm (U Om : E →L[ℂ] E) (hcomm : Om.comp U = U.comp Om) (n : ℕ) :
-    Om.comp (U ^ n) = (U := by sorry
+    Om.comp (U ^ n) = (U ^ n).comp Om := by sorry

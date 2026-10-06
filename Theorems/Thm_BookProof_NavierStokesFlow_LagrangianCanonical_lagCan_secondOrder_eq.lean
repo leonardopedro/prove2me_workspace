@@ -12,11 +12,11 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.BRSTNilpotent
 open BookProof.ChapterF7
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.LagrangianEsa
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
-open BookProof.NavierStokesFlow.LagrangianKatoRellich
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
@@ -27,7 +27,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 theorem BookProof.NavierStokesFlow.LagrangianCanonical.lagCan_secondOrder_eq (hnu : 0 < nu) (f : Fin 3 → ℝ) :

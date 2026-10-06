@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_basisState_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

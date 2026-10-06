@@ -9,9 +9,7 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
-:= rfl
-
-theorem solution : defStat :=
+theorem solution : defState ≠ 0 :=
   e ≠ 0 := by
     intro h
     have h0 : ((defState : L2N) : ℕ → ℂ) 0 = 0 := by rw [h]; simp

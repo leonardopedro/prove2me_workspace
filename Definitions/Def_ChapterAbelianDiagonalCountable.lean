@@ -114,7 +114,8 @@ a bounded operator on `ℓ²(ℕ)`, of norm at most `‖d‖`. -/
 def diagOp (d : EllInf) : Ell2C →L[ℂ] Ell2C :=
   LinearMap.mkContinuous (diagLin d) ‖d‖ (fun f => norm_diagLin_le d f)
 
-
+@[simp] theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
 
 
 
@@ -139,7 +140,9 @@ def diagOp (d : EllInf) : Ell2C →L[ℂ] Ell2C :=
 /-- The coordinate atom `eᵢ ∈ ℓ²(ℕ)`. -/
 def atom (i : ℕ) : Ell2C := lp.single 2 i (1 : ℂ)
 
-
+@[simp] theorem norm_atom (i : ℕ) : ‖atom i‖ = 1 := by
+  rw [atom, lp.norm_single (by norm_num)]
+  simp
 
 /-- The coordinate projection, as a diagonal operator. -/
 def coordUnit (i : ℕ) : EllInf := lp.single ∞ i (1 : ℂ)

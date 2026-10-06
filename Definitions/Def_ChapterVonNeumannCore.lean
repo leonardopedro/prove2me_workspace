@@ -1,5 +1,7 @@
 import Theorems.Thm_BookProof_FriedrichsSquare_frDom_le_clDom
 
+import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_quadForm
+
 import Theorems.Thm_BookProof_FriedrichsSquare_exists_mem_factorRel_add
 
 

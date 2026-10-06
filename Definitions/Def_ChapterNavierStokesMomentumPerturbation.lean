@@ -33,7 +33,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace MomentumPerturbation
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 variable {ι : Type*}
 
@@ -48,7 +48,8 @@ noncomputable def rankTwo (u w : L2I ι) : L2I ι →ₗ[ℂ] L2I ι where
   map_smul' a x := by
     simp only [inner_smul_right, smul_smul, RingHom.id_apply, smul_add]
 
-
+@[simp] theorem rankTwo_apply (u w : L2I ι) (x : L2I ι) :
+    rankTwo u w x = (inner ℂ u x : ℂ) • w + (inner ℂ w x : ℂ) • u := rfl
 
 
 
@@ -60,7 +61,8 @@ noncomputable def rankTwo (u w : L2I ι) : L2I ι →ₗ[ℂ] L2I ι where
 noncomputable def pertHam (c : ι → ℝ) (u w : L2I ι) : maxDom c →ₗ[ℂ] L2I ι :=
   diagMax c + (rankTwo u w).comp (maxDom c).subtype
 
-
+@[simp] theorem pertHam_apply (c : ι → ℝ) (u w : L2I ι) (x : maxDom c) :
+    pertHam c u w x = diagMax c x + rankTwo u w (x : L2I ι) := rfl
 
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFockEsa.lean — solution of BookProof.ScalaronFock.nestedCore_dense
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.ScalaronFock
 

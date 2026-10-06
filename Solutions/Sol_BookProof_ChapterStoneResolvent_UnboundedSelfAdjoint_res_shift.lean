@@ -19,9 +19,6 @@ variable (T : UnboundedSelfAdjoint H)
 variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
-g hl]
-  exact (T.shiftEquiv hl).apply_symm_apply y
-
-theorem solution {l : ℝ} (hl : :=
+theorem solution {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x :=
   l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
     rw [res, dif_

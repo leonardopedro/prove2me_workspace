@@ -52,7 +52,7 @@ noncomputable def isom (t : ℝ) : H →ₗᵢ[ℂ] H :=
 
 
 
-
+@[simp] theorem apply_zero (x : H) : G.U 0 x = x := by rw [G.map_zero]; rfl
 
 
 
@@ -174,7 +174,7 @@ def avgSpan [CompleteSpace H] : Submodule ℂ H := Submodule.span ℂ G.avgSet
   rw [h2] at this
   simpa using this
 
-/-! un t => ?_
+/-!  un t => ?_
   simp only [Function.comp_apply]
   rw [G.apply_apply]
   ring_nf

@@ -11,6 +11,4 @@ open BookProof.NavierStokesFlow.DiagonalEsa
 
 open scoped ENNReal
 
-n 1⟩
-
-theorem BookProof.NavierStokesFlow.DiagonalEsa.diagOp_basis (c : ℕ → ℝ) (n : ℕ) : diagOp c (basis n) = ((c n : ℂ)) • := by sorry
+theorem BookProof.NavierStokesFlow.DiagonalEsa.diagOp_basis (c : ℕ → ℝ) (n : ℕ) : diagOp c (basis n) = ((c n : ℂ)) • basis n := by sorry

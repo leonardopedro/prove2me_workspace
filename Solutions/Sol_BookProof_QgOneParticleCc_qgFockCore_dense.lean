@@ -1,6 +1,7 @@
 -- Generated from ChapterQgOneParticleCcEsa.lean — solution of BookProof.QgOneParticleCc.qgFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.QgOneParticleCc
 

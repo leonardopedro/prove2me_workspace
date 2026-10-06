@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Theorems.Thm_BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Theorems.Thm_BookProof_ModeQuadratic_mqOp_hermiteCore
 import Theorems.Thm_BookProof_CarlemanTwoStep_ladder2_eq_zero
 import Theorems.Thm_BookProof_HyperbolicQuadratic_hermiteMvLp_total
+open BookProof.ModeQuadratic
 
 
 
@@ -14,6 +15,8 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
@@ -23,8 +26,6 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1600000 in
--- the core coercions make the elaboration of the deficiency computation expensive
 theorem solution (p q s b b' : Fin d → ℝ) {z : ℂ} (hz : z.im ≠ 0) :
     DeficiencyTrivialAt (polyGaussCore (d := d)) (mqOp p q s b b') z := by
 

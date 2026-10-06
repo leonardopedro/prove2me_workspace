@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTimeStepping.lean — theorem BookProof.QgTimeStepping.norm_iterate_cnStep_sub_stoneU_le
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

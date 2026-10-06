@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
@@ -25,10 +26,8 @@ variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
 variable (G : WeakMeasurableUnitaryGroup H)
 
 set_option maxHeartbeats 1000000 in
-] H).inner_map_map a b
-
 theorem solution (t : ℝ) (x : G.genDomain) :
-    G.gen.stoneU t :=
+    G.gen.stoneU t (x : H) = G.U t (x : H) :=
   (x : H) = G.U t (x : H) := by
     refine eq_of_inner_eq_on_dense G.denseDomain ?_
     rintro z hz

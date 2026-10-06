@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_Complexification
 import Theorems.Thm_BookProof_Complexification_Cx_cxConj_involutive
 import Theorems.Thm_BookProof_Complexification_Cx_cxConj_comm_cxMap
+open BookProof.Complexification
 
 
 

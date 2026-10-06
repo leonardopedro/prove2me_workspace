@@ -9,4 +9,5 @@ open BookProof.NavierStokesFlow.DiagonalEsa
 
 open scoped ENNReal
 
- := by sorry
+theorem BookProof.NavierStokesFlow.DiagonalEsa.basis_total (w : L2N) (hw : ∀ n, (inner ℂ ((basis n : lpFiniteModes ℕ) : L2N) w : ℂ) = 0) :
+    w = 0 := by sorry

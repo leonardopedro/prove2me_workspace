@@ -25,4 +25,6 @@ open BookProof.QgOuterFock
 noncomputable section
 
 
- := by sorry
+theorem BookProof.GaussCoreQuadBounds.eval_cpoly_self_re (q : MvPolynomial (Fin D) ℂ) (x : Vd D) :
+    (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (cpoly q * q)).re
+      = ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q‖ ^ 2 := by sorry

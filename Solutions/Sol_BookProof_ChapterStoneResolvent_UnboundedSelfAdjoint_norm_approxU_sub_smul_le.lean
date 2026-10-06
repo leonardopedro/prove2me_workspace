@@ -27,6 +27,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (n h : ℝ) (x : H) :
     ‖T.approxU n h x - x - h • T.yosidaGen n x‖
       ≤ (|h| * ‖T.yosida n (T.yosidaGen n x)‖) * |h| := by
+  set v : H := by
 
   set v : H := T.yosidaGen n x with hv
   set M : ℝ := ‖T.yosida n v‖ with hM

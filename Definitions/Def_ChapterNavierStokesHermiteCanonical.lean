@@ -44,7 +44,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace HermiteCanonical
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
 
 /-! ## The core, and states given by their coordinates -/
 
@@ -53,7 +53,8 @@ core. -/
 noncomputable def mkCore {X : ℕ → ℂ} (h : (Function.support X).Finite) : lpFiniteModes ℕ :=
   ⟨⟨X, memLpTwo_of_finite_support h⟩, h⟩
 
-
+@[simp] theorem mkCore_coe {X : ℕ → ℂ} (h : (Function.support X).Finite) (n : ℕ) :
+    (((mkCore h : lpFiniteModes ℕ) : L2I ℕ) : ℕ → ℂ) n = X n := rfl
 
 theorem support_finite (x : lpFiniteModes ℕ) :
     (Function.support (((x : L2I ℕ) : ℕ → ℂ))).Finite := x.2
@@ -116,9 +117,13 @@ noncomputable def cre : lpFiniteModes ℕ →ₗ[ℂ] lpFiniteModes ℕ where
       smul_eq_mul, RingHom.id_apply]
     ring
 
+@[simp] theorem ann_coe (x : lpFiniteModes ℕ) (n : ℕ) :
+    (((ann x : lpFiniteModes ℕ) : L2I ℕ) : ℕ → ℂ) n
+      = (Real.sqrt (n + 1) : ℂ) * ((x : L2I ℕ) : ℕ → ℂ) (n + 1) := rfl
 
-
-
+@[simp] theorem cre_coe (x : lpFiniteModes ℕ) (n : ℕ) :
+    (((cre x : lpFiniteModes ℕ) : L2I ℕ) : ℕ → ℂ) n
+      = (Real.sqrt n : ℂ) * ((x : L2I ℕ) : ℕ → ℂ) (n - 1) := rfl
 
 
 

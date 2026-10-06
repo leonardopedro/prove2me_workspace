@@ -1,4 +1,8 @@
 import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 
 

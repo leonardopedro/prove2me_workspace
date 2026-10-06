@@ -11,7 +11,7 @@ open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat
-open BookProof.NavierStokesFlow.FarisLavineLift
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant

@@ -1,6 +1,7 @@
 -- Generated from ChapterSqSumOuterFamily.lean — solution of BookProof.SqSumOuterFamily.outerCore_dense
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.SqSumOuterFamily
 
 

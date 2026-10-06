@@ -24,7 +24,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-ε) y)
-
 theorem BookProof.FockSecondQuantization.dGammaOpB_quadForm_nonneg {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col)
-    (x : finiteModeDomain (fockBasisN ε)) : 0 ≤ quadForm (dGammaOpB ε := by sorry
+    (x : finiteModeDomain (fockBasisN ε)) : 0 ≤ quadForm (dGammaOpB ε col) x := by sorry

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
 import Theorems.Thm_BookProof_NsScalarFourier_nsScalarFourier_apply
 import Theorems.Thm_BookProof_NsScalarFourier_scalarFibreOp_apply
+import Theorems.Thm_BookProof_NsPartialFourier_nsPartialFourier_fibreOp
 open BookProof.NsScalarFourier
 
 

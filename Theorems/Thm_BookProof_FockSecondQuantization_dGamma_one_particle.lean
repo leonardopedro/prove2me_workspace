@@ -19,8 +19,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-u K hK
-
 theorem BookProof.FockSecondQuantization.dGamma_one_particle (col : ℕ → (ℕ →₀ ℂ)) (k : ℕ) :
     dGamma col (Finsupp.single (Finsupp.single k 1) 1)
-      = ∑ j ∈ (col k).support, (col k) j • Finsupp.single (Finsupp.single j 1) (1 := by sorry
+      = ∑ j ∈ (col k).support, (col k) j • Finsupp.single (Finsupp.single j 1) (1 : ℂ) := by sorry

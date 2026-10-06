@@ -1,6 +1,8 @@
 -- Generated from ChapterA3q.lean — solution of BookProof.ChapterA3q.projMixed_diagGen_comm
 import Mathlib
 import Definitions.Def_ChapterA3q
+import Theorems.Thm_BookProof_ChapterA3n_projSym_diagGen_comm
+import Theorems.Thm_BookProof_ChapterA3o_projAnti_diagGen_comm
 open BookProof.ChapterA3q
 
 

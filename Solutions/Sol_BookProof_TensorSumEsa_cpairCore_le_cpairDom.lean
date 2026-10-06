@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_pairCore_le_pairDom
+import Theorems.Thm_BookProof_GraphCore_pushDom_mono
 open BookProof.TensorSumEsa
 
 

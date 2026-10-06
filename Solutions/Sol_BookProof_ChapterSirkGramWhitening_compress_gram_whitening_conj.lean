@@ -20,16 +20,13 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-hmem
-    exact ⟨y, hy.symm⟩
-
 theorem solution {m : ℕ} (w : Fin m → E) (X : E →L[ℂ] E)
     {T₁ T₂ : EuclideanSpace ℂ (Fin m) →L[ℂ] EuclideanSpace ℂ (Fin m)}
     (hT₂ : IsWhitening w T₂) (hs₁ : Function.Surjective T₁) (hs₂ : Function.Surjective T₂) :
     compress (whitened w T₁) X
       = (whiteningEquiv (whitened w T₂) (whitened w T₁)).comp
         ((compress (whitened w T₂) X).comp
-          (whiteningEquiv (whit :=
+          (whiteningEquiv (whitened w T₁) (whitened w T₂))) :=
   ened w T₁) (whitened w T₂))) := by
     have hr₁ := range_whitened w hs₁
     have hr₂ := range_whitened w hs₂

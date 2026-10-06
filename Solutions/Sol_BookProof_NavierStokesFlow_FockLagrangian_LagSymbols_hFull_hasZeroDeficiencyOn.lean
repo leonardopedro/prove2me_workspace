@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_m
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_mulD
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
 
 

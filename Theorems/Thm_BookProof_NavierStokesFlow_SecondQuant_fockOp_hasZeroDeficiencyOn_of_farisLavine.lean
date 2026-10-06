@@ -8,7 +8,7 @@ import Definitions.Def_ChapterNavierStokesFullEsa
 import Definitions.Def_ChapterNavierStokesSecondQuant
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.DirectSumEsa
-open BookProof.NavierStokesFlow.FarisLavineLift
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.NavierStokesFlow.FullEsa
 open BookProof.NavierStokesFlow.FullEsa.NSFullData

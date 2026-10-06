@@ -7,11 +7,13 @@ import Theorems.Thm_BookProof_CarlemanSimplex_deg_shiftm
 import Theorems.Thm_BookProof_CarlemanSimplex_shiftm_apply_self
 import Theorems.Thm_BookProof_CarlemanSimplex_shiftm_shiftm
 import Theorems.Thm_BookProof_CarlemanSimplex_rcm_shiftm
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

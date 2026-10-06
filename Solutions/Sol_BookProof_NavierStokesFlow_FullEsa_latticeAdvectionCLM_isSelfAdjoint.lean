@@ -1,7 +1,7 @@
 -- Generated from ChapterNavierStokesFullEsa.lean — solution of BookProof.NavierStokesFlow.FullEsa.latticeAdvectionCLM_isSelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
-import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint
+import Theorems.Thm_BookProof_ChapterGaugeShiftExample_velocityOp_commute
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 

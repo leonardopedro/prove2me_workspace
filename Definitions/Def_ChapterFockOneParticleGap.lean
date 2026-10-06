@@ -2,6 +2,8 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterSirkCertifiedGap
 import Definitions.Def_ChapterSirkRitzSpectrum
 import Definitions.Def_ChapterSpectralGapStability
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 

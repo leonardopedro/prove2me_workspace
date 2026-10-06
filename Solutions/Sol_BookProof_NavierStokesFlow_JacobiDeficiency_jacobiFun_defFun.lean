@@ -9,9 +9,7 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
- at h0
-
-theorem solution (n : ℕ) : jacobiFun defFun n = Complex.I * d :=
+theorem solution (n : ℕ) : jacobiFun defFun n = Complex.I * defFun n :=
   efFun n := by
     cases n with
     | zero =>

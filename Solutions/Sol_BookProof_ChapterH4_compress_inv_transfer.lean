@@ -15,7 +15,6 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-omit [CompleteSpace E] [CompleteSpace F] in
 theorem solution (V : F →L[ℂ] E)
     (qX qXinv : E →L[ℂ] E) (qB qBinv : F →L[ℂ] F)
     (hintertwine : qX.comp V = V.comp qB)

@@ -52,7 +52,8 @@ variable {E F G : Type*}
 /-- The reconstruction operator `V ∘ V∗` of an isometric embedding. -/
 def rangeProj (V : F →L[ℂ] E) : E →L[ℂ] E := V.comp V.adjoint
 
-
+@[simp] theorem rangeProj_apply (V : F →L[ℂ] E) (u : E) :
+    rangeProj V u = V (V.adjoint u) := rfl
 
 
 

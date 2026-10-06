@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_QgTimeIndependent_prop_apply_prop
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_time_translation
 import Theorems.Thm_BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
+open BookProof.QgTimeIndependent
 
 
 

@@ -17,12 +17,10 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-_symm]
-
 theorem solution {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
-    IsPosCol (opC :=
+    IsPosCol (opCol b A) :=
   ol b A) := by
     intro S c
     classical

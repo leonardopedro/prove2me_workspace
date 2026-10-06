@@ -1,6 +1,7 @@
 -- Generated from ChapterNsBrstDerivativeGauge.lean — solution of BookProof.NsBrstDerivativeGauge.nsGaugeConstraint_comm
 import Mathlib
 import Definitions.Def_ChapterNsBrstDerivativeGauge
+import Theorems.Thm_BookProof_NavierStokesGaugeY_genY_genY_commute
 open BookProof.NsBrstDerivativeGauge
 
 

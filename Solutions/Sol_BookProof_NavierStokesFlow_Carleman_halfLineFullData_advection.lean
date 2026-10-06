@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_real_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sub
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

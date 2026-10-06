@@ -3,10 +3,14 @@ import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
 
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_lower_raise
 
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_cFun_aFun_self
+
 
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 
 
@@ -89,7 +93,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace LagrangianCanonical
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 /-! ## The adjoint relation between the ladder operators -/
@@ -195,7 +199,10 @@ theorem mom_isSymmetricDom (i : Fin 3) : IsSymmetricDom (mom i) := by
 noncomputable def numOp (i : Fin 3) : lpFiniteModes Vel →ₗ[ℂ] lpFiniteModes Vel :=
   (cre i).comp (ann i)
 
-
+@[simp] theorem crd_numOp (i : Fin 3) (x : lpFiniteModes Vel) :
+    crd (numOp i x) = fun β => ((β i : ℝ) : ℂ) * crd x β := by
+  simp only [numOp, LinearMap.comp_apply, crd_cre, crd_ann]
+  exact cFun_aFun_self i (crd x)
 
 
 
@@ -258,14 +265,16 @@ noncomputable def lagCanData (nu : ℝ) (hnu : 0 < nu) (f : Fin 3 → ℝ) :
   constraint_symm := by intro x y; simp
   nu_nonneg := le_of_lt hnu
 
-
+@[simp] theorem lagCanData_drive (hnu : 0 < nu) (f : Fin 3 → ℝ) :
+    (lagCanData nu hnu f).drive = (lagCanData nu hnu f).P := rfl
 
 /-- The Lagrangian second-order part in its diagonal form: `ω(N + 3/2)`. -/
 noncomputable def lagT (nu : ℝ) : lpFiniteModes Vel →ₗ[ℂ] lpFiniteModes Vel :=
   ((omega nu : ℝ) : ℂ) • (∑ i : Fin 3, numOp i)
     + ((3 * omega nu / 2 : ℝ) : ℂ) • LinearMap.id
 
-ulPissta
+ 3, ((omega nu : ℝ) : ℂ) • numOp i)
+      = ulPissta
   edeen).D
       (secondOrder (lagCanData nu hnu f))).mpr (lagCan_etang the Schrödinger equation on the domain. -/
 theorem lagCan_stone_flow (hnu : 0 < nu) (f : Fin 3 → ℝ) :

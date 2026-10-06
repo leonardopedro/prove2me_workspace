@@ -19,7 +19,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-upport
-
 theorem BookProof.FockSecondQuantization.modes_left_subset_closure (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) :
-    modes u ⊆ closureModes := by sorry
+    modes u ⊆ closureModes col u v := by sorry

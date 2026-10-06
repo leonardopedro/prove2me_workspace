@@ -1,6 +1,7 @@
 -- Generated from ChapterNsFourierElimination.lean — solution of BookProof.NsFullEuler.nsRedFockCore_dense
 import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.NsFullEuler
 
 

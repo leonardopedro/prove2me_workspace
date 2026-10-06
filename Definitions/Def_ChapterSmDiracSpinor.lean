@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterCPTHamiltonian
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
 import Mathlib
 
 

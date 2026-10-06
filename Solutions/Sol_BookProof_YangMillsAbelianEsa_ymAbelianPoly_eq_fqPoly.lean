@@ -23,8 +23,6 @@ open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMill
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 2000000 in
--- the 99×99 double sums over the Weyl-ordered pairs make this identification expensive
 theorem solution : ymAbelianPoly = fqPoly ymFqP ymFqQ 0 0 0 := by
 
   refine LinearMap.ext fun p => ?_

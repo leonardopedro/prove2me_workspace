@@ -1,6 +1,7 @@
 -- Generated from ChapterTensorSumEsa.lean — solution of BookProof.TensorSumEsa.dense_pairDom
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
+import Theorems.Thm_BookProof_TensorCore_norm_tmul_sub_le
 open BookProof.TensorSumEsa
 
 

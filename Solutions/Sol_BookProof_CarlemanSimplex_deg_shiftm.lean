@@ -4,11 +4,13 @@ import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_add
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_tsub_of_le
+open BookProof.CarlemanSimplex
 
 
 
 
 open Finset
+open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
 

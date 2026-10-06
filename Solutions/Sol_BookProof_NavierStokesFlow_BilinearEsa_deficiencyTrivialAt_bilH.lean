@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_suppor
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_bilFun_embFun
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

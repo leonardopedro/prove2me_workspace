@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
 
 
@@ -130,7 +132,8 @@ def dsOp (H : ∀ i, D i →ₗ[ℂ] G i) : dsCore D →ₗ[ℂ] lp G 2 where
     simp only [RingHom.id_apply, SetLike.val_smul, lp.coeFn_smul, Pi.smul_apply]
     exact map_smul (H i) c ⟨((x : lp G 2)) i, x.2.2 i⟩
 
-
+@[simp] theorem dsOp_coe (H : ∀ i, D i →ₗ[ℂ] G i) (x : dsCore D) (i : ι) :
+    ((dsOp H x : lp G 2) : ∀ i, G i) i = H i ⟨(x : lp G 2) i, x.2.2 i⟩ := rfl
 
 /-! ## The single-fibre states -/
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterFriedrichsSquareFactorization.lean — solution of BookProof.FriedrichsSquare.frExt_quadForm_nonneg
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_quadForm_nonneg
 open BookProof.FriedrichsSquare
 
 

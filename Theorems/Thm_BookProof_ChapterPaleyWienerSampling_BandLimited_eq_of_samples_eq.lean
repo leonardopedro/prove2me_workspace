@@ -4,6 +4,7 @@ import Definitions.Def_ChapterPaleyWienerSampling
 import Definitions.Def_ChapterShannonSampling
 open BookProof.ChapterShannonSampling
 open BookProof.ChapterPaleyWienerSampling
+open BookProof.ChapterPaleyWienerSampling
 
 variable {T : ℝ} {f g : ℝ → ℂ}
 variable {T : ℝ} [hT : Fact (0 < T)] {f g : ℝ → ℂ}

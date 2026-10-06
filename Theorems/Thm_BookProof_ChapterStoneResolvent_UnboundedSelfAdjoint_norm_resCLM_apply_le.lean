@@ -18,6 +18,4 @@ open Filter Topology
 open BookProof.ChapterUnitaryTransport
 
 
- : H) : T.resCLM l y ∈ T.domain := (T.res l y).2
-
-theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le (l : ℝ) ( := by sorry
+theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le (l : ℝ) (y : H) : ‖T.resCLM l y‖ ≤ (1 / |l|) * ‖y‖ := by sorry

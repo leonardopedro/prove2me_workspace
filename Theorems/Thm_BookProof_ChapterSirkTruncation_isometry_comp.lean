@@ -20,7 +20,6 @@ open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkWhitening
 
 
-omit [CompleteSpace E] [CompleteSpace F] [CompleteSpace G] in
 theorem BookProof.ChapterSirkTruncation.isometry_comp (V : F →L[ℂ] E) (W : G →L[ℂ] F)
     (hV : ∀ x : F, ‖V x‖ = ‖x‖) (hW : ∀ x : G, ‖W x‖ = ‖x‖) (x : G) :
     ‖(V.comp W) x‖ = ‖x‖ := by sorry

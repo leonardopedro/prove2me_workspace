@@ -1,13 +1,7 @@
 -- Generated from ChapterSirkWhitening.lean — solution of BookProof.ChapterSirkWhitening.compress_reconstruct_eq
 import Mathlib
 import Definitions.Def_ChapterSirkWhitening
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkWhitening
-
-
-
-
-
 
 
 
@@ -15,6 +9,11 @@ noncomputable section
 
 
 open BookProof.ChapterH4
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

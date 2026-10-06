@@ -66,7 +66,7 @@ variable {L : Type*} [LieRing L]
 representation: `δ_θ X = ⁅X, θ⁆`. -/
 def adjVar (θ X : L) : L := ⁅X, θ⁆
 
-
+@[simp] theorem adjVar_apply (θ X : L) : adjVar θ X = ⁅X, θ⁆ := rfl
 
 
 

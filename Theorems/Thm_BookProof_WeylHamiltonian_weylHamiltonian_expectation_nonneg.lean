@@ -11,9 +11,7 @@ open ContinuousLinearMap
 open scoped BigOperators
 
 
- i))
-  · refine smul_nonneg_isPositive _ ?_ (by norm_num)
-    exact ContinuousLinearMap.isPositive_sum _ (fun a _ => selfAdjoint_sq_isPositive _ (hB a))
-
 theorem BookProof.WeylHamiltonian.weylHamiltonian_expectation_nonneg {n m : ℕ}
-    (π : Fin n → H →L[ℂ] H) (B : Fin m → H → := by sorry
+    (π : Fin n → H →L[ℂ] H) (B : Fin m → H →L[ℂ] H)
+    (hπ : ∀ i, IsSelfAdjoint (π i)) (hB : ∀ a, IsSelfAdjoint (B a)) (x : H) :
+    0 ≤ RCLike.re (inner ℂ ((weylHamiltonian π B) x) x) := by sorry

@@ -18,9 +18,6 @@ open Filter Topology
 open BookProof.ChapterUnitaryTransport
 
 
-t, inner_smul_right, hsym]
-  simp [Complex.conj_I]
-
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0) (y : H) :
     ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H)
-      = ((T. := by sorry
+      = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H) := by sorry

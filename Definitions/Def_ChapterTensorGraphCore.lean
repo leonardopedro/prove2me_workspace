@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -75,7 +76,8 @@ def inclPow : ∀ n : ℕ, ((domSpace Hs D₂).pow n) →ₗᵢ[ℂ] (Hs.pow n)
   | 0 => LinearIsometry.id
   | (n + 1) => TensorProduct.mapIsometry D₂.subtypeₗᵢ (inclPow n)
 
-
+@[simp] theorem inclPow_tmul (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
 
 variable (A : D₂ →ₗ[ℂ] Hs.carrier)
 
@@ -87,9 +89,11 @@ def derPow : ∀ n : ℕ, ((domSpace Hs D₂).pow n) →ₗ[ℂ] (Hs.pow n)
   | (n + 1) => TensorProduct.map A (inclPow Hs D₂ n).toLinearMap
       + TensorProduct.map D₂.subtype (derPow n)
 
+@[simp] theorem derPow_zero (x : ((domSpace Hs D₂).pow 0)) : derPow Hs D₂ A 0 x = 0 := rfl
 
-
-
+@[simp] theorem derPow_tmul (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
+      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
 
 variable (D : Submodule ℂ Hs.carrier)
 
@@ -110,7 +114,8 @@ def corePow : ∀ n : ℕ, Submodule ℂ ((domSpace Hs D₂).pow n)
 def graphPow (n : ℕ) : ((domSpace Hs D₂).pow n) →ₗ[ℂ] (Hs.pow n) × (Hs.pow n) :=
   (inclPow Hs D₂ n).toLinearMap.prod (derPow Hs D₂ A n)
 
-
+@[simp] theorem graphPow_apply (n : ℕ) (x : ((domSpace Hs D₂).pow n)) :
+    graphPow Hs D₂ A n x = (inclPow Hs D₂ n x, derPow Hs D₂ A n x) := rfl
 
 
 

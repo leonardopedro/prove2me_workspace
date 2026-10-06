@@ -1,6 +1,7 @@
 -- Generated from ChapterA3m.lean — solution of BookProof.ChapterA3m.swap12_sq
 import Mathlib
 import Definitions.Def_ChapterA3m
+import Theorems.Thm_BookProof_ChapterA3l_swap_sq
 open BookProof.ChapterA3m
 
 

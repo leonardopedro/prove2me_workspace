@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_esgn_eq
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.SignFlip
 
 
 

@@ -15,7 +15,5 @@ open scoped InnerProductSpace
 
 
 
-s t y
-
 theorem BookProof.ChapterUnitaryTransport.tendsto_transported_position_unitary (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) (y : K) :
-    Filter.Tendsto (fun t : ℝ => transportUnitary W (phaseUnitary f t) y) (nhds 0) (n := by sorry
+    Filter.Tendsto (fun t : ℝ => transportUnitary W (phaseUnitary f t) y) (nhds 0) (nhds y) := by sorry

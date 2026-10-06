@@ -2,19 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
 import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end
-import Definitions.Def_ChapterH9
-import Definitions.Def_ChapterH8
-import Definitions.Def_ChapterH6
-import Definitions.Def_ChapterH4
 open BookProof.ChapterSirkEndToEnd
-
-
-
-
-
-
-
-
 
 
 
@@ -24,6 +12,10 @@ open Filter Topology
 
 
 open BookProof.ChapterH4 BookProof.ChapterH6 BookProof.ChapterH8 BookProof.ChapterH9
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -43,7 +35,7 @@ theorem solution
     (ContinuousLinearMap.id ℂ F) (Polynomial.X : Polynomial ℂ) X X (compress V X) 1 1 1 m
     hVV hViso hVadj hinvX (fun x => ⟨x, rfl⟩) (by ext x; simp) ?_ rfl ?_ ?_ v hv
   · have hcid : compress V (ContinuousLinearMap.id ℂ E) = ContinuousLinearMap.id ℂ F := by
-      ext x; simpa using congrArg (fun f : F →L[ℂ] F => f x) hVV
+      ext x; simpa [compress] using congrArg (fun f : F →L[ℂ] F => f x) hVV
     rw [hcid]; ext x; simp
   · have : (Polynomial.aeval X (Polynomial.X : Polynomial ℂ) : E →L[ℂ] E).comp
         (ContinuousLinearMap.id ℂ E) = X := by ext x; simp
@@ -52,4 +44,4 @@ theorem solution
   · have : (Polynomial.aeval (compress V X) (Polynomial.X : Polynomial ℂ) : F →L[ℂ] F).comp
         (ContinuousLinearMap.id ℂ F) = compress V X := by ext x; simp
     rw [this, sub_self, norm_zero]
-    positivity
+   

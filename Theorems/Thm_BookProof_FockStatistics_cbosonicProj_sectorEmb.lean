@@ -1,11 +1,11 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — theorem BookProof.FockStatistics.cbosonicProj_sectorEmb
-import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.TensorCore
 open BookProof.ChapterWignerLittleGroup

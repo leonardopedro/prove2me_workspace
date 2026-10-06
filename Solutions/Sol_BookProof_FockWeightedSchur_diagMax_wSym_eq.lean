@@ -1,17 +1,9 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.diagMax_wSym_eq
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -22,27 +14,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

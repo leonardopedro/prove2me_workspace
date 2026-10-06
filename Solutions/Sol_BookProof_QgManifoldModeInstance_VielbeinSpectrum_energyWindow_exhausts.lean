@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 open BookProof.QgManifoldModeInstance
+open BookProof.QgManifoldModeInstance.VielbeinSpectrum
 
 
 

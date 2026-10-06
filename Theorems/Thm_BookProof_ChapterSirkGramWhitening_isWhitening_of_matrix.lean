@@ -16,9 +16,6 @@ open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 
-=
-  Mᴴ * gramMatrix w * M = 1
-
 theorem BookProof.ChapterSirkGramWhitening.isWhitening_of_matrix {m : ℕ} (w : Fin m → E) {M : Matrix (Fin m) (Fin m) ℂ}
     (hM : IsWhiteningMatrix w M) :
-    IsWhitening w (Matrix := by sorry
+    IsWhitening w (Matrix.toEuclideanCLM (𝕜 := by sorry

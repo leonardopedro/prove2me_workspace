@@ -1,7 +1,6 @@
 -- Generated from ChapterFockOneParticleGap.lean — solution of BookProof.FockOneParticleGap.qcdG2M4_lower_eq
 import Mathlib
 import Definitions.Def_ChapterFockOneParticleGap
-import Theorems.Thm_BookProof_SirkCertifiedGap_qcdG2M4_lower
 open BookProof.FockOneParticleGap
 
 

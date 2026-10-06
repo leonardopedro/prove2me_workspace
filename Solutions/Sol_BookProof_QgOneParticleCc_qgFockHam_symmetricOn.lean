@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Theorems.Thm_BookProof_QgOneParticleCc_ccHam_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.QgOneParticleCc
 
 

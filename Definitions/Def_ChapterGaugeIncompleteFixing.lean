@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterG
 import Mathlib
 
 
@@ -131,7 +132,8 @@ noncomputable def physicalSubalgebra : Subalgebra ℝ (X → ℝ) where
   add_mem' hf hg g x := by simp only [Pi.add_apply, hf g x, hg g x]
   algebraMap_mem' _ _ _ := rfl
 
-
+@[simp] theorem mem_physicalSubalgebra {f : X → ℝ} :
+    f ∈ physicalSubalgebra G ↔ IsPhysicalObservable G f := Iff.rfl
 
 
 

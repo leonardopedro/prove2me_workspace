@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_linearFullData_symbol
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_norm_nsCoupling_linear
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiagOp_not_bounded
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

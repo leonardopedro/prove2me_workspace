@@ -1,6 +1,10 @@
 -- Generated from ChapterA3w.lean — solution of BookProof.ChapterA3w.lemma52_parity_gluing
 import Mathlib
 import Definitions.Def_ChapterA3w
+import Theorems.Thm_BookProof_ChapterA3j_chirality_not_parity_invariant
+import Theorems.Thm_BookProof_ChapterA3j_parity_swaps_chirL
+import Theorems.Thm_BookProof_ChapterA3k_parity_swaps_LL_RR
+import Theorems.Thm_BookProof_ChapterA3k_projLL_not_parity_invariant
 open BookProof.ChapterA3w
 
 

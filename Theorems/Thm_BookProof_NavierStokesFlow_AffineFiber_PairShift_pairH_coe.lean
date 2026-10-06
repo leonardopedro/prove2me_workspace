@@ -4,12 +4,12 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
-open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ShiftHamiltonian
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
-open BookProof.NavierStokesFlow.AffineFiber.PairShift
+open BookProof.NavierStokesFlow.AffineFiber
 
 variable {ι : Type*}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
@@ -20,7 +20,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_coe (x : maxDom P.sym) (β : ι) :

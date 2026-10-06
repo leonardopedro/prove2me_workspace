@@ -11,22 +11,14 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)
 
 set_option maxHeartbeats 1000000 in
-ical
-  refine crd_injective ?_
-  funext γ
-  rw [crd_numOp, crd_smul]
-  by_cases hγ : γ = β
-  · subst hγ
-    simp [crd_coreState]
-  · simp [crd_coreState, hγ]
-
-/-- The eigenvalue o :=
+theorem solution (β : Vel) :
+    lagT nu (coreState β) = ((lagLam nu β : ℝ) : ℂ) • coreState β :=
   f the second-order part at the Hermite state `e_β`:
   `ω(|β| + 3/2)`. -/
   noncomputable def lagLam (nu : ℝ) (β : Vel) : ℝ :=

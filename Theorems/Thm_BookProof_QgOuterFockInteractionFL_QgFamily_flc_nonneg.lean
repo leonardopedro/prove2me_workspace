@@ -17,6 +17,7 @@ import Definitions.Def_ChapterQgOuterFockInteractionFL
 import Definitions.Def_ChapterMajoranaClifford
 open BookProof.MajoranaClifford
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 variable (F : QgFamily)
 

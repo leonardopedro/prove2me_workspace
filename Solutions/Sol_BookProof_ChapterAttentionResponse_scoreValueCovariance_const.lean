@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionResponse.lean — solution of BookProof.ChapterAttentionResponse.scoreValueCovariance_const
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterAttentionResponse
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesBilinearEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.BilinearEsa
 
 variable {J : Type*}
 

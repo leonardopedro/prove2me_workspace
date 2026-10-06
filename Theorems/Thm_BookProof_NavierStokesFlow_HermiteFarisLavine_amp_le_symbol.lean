@@ -12,7 +12,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.amp_le_symbol (hκ : 0 ≤ κ) (n : ℕ) :
     amp κ n ≤ (1 / 4 + κ / 2) * oscSymbol κ n := by sorry

@@ -1,17 +1,19 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — theorem BookProof.FockWeightedSchur.wSym_nonneg
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-
-
-
-
-
-
-
-
-
+variable {w : ℕ → ℝ}
 
 
 
@@ -20,10 +22,5 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
-
-
-
-
-variable {w : ℕ → ℝ}
 
 theorem BookProof.FockWeightedSchur.wSym_nonneg (α : Conf) : 0 ≤ wSym w α := by sorry

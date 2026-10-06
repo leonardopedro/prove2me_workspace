@@ -12,7 +12,4 @@ open scoped BigOperators Matrix
 
 
 
-Vec]
-  exact h
-
-theorem BookProof.ChapterTrajectory.dslit_condProb (f a : Fin 2) : condProb H H p := by sorry
+theorem BookProof.ChapterTrajectory.dslit_condProb (f a : Fin 2) : condProb H H psi0 f a = 1 / 2 := by sorry

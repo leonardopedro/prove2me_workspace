@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_KatoRellich_deficiencyTrivialAt_of_dense
 import Theorems.Thm_BookProof_KatoRellich_dense_range_add_bounded
 import Theorems.Thm_BookProof_FarisLavine_deficiencyTrivialAt_of_dense_range
 import Theorems.Thm_BookProof_FarisLavine_dense_range_of_deficiencyTrivialAt
+open BookProof.KatoRellich
 
 
 

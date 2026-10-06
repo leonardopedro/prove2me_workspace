@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_TwoParticleSector_isReducingProjection_fermionicPr
 import Theorems.Thm_BookProof_ReducedEsa_asymProj_mem
 import Theorems.Thm_BookProof_ReducedEsa_commutes_asymProj
 import Theorems.Thm_BookProof_ReducedEsa_symmetricOn_redOp
+import Theorems.Thm_BookProof_TensorCore_symmetricOn_sectorOp
 open BookProof.TwoParticleSector
 
 

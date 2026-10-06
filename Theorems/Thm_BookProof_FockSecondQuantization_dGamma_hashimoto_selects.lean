@@ -24,8 +24,6 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-ε) x)
-
 theorem BookProof.FockSecondQuantization.dGamma_hashimoto_selects (ε : ℕ ≃ Conf) {col : ℕ → (ℕ →₀ ℂ)}
     (hherm : IsHermCol col) (hpos : IsPosCol col) {γ : ℝ} (hγ : 0 < γ) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock) (R : Fock →L[ℂ] Fock),
@@ -37,4 +35,4 @@ theorem BookProof.FockSecondQuantization.dGamma_hashimoto_selects (ε : ℕ ≃ 
           Tendsto (fun k : ℕ => resolvent (galerkinCompression R (fockBasisN ε) k) z u) atTop
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A' γ R →
-          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, := by sorry
+          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) := by sorry

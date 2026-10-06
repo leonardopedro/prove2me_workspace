@@ -9,17 +9,12 @@ import Theorems.Thm_BookProof_FockWeightedSchur_w_pos
 import Theorems.Thm_BookProof_FockWeightedSchur_wcomm_nonneg
 import Theorems.Thm_BookProof_FockWeightedSchur_wcomm_row_le
 import Theorems.Thm_BookProof_FockWeightedSchur_wcomm_col_le
+import Theorems.Thm_BookProof_FockSchur_schur_test
+import Theorems.Thm_BookProof_FockSecondQuantization_col_support_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_left
+import Theorems.Thm_BookProof_FockSecondQuantization_modes_left_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_toLpL_apply
 open BookProof.FockWeightedSchur
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -30,27 +25,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-
-
-
 variable {w : ℕ → ℝ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in

@@ -18,10 +18,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-_conj]
-
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col) (u : FockAlg) :
-    0 ≤ (inner ℂ (toLp u) (toLp (dGamma col u)) : :=
+    0 ≤ (inner ℂ (toLp u) (toLp (dGamma col u)) : ℂ).re :=
   ℂ).re := by
     classical
     set L := closureModes col u u with hLdef

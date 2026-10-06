@@ -30,8 +30,6 @@ variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
 variable {C H}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1600000 in
--- the lifted domain is built from the Friedrichs completion, so unfolding it is costly
 theorem solution : qgOuterCore ≤ qgOuterFriedDom := by
 
   intro x hx

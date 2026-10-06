@@ -4,7 +4,7 @@ import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneMeasurable
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneMeasurable
-open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneMeasurable
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
@@ -16,6 +16,4 @@ open Filter Topology MeasureTheory
 
 
 
-ans (hconst.trans ht))
-
-theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_eq (t : ℝ) : := by sorry
+theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_eq (t : ℝ) : G.gen.stoneU t = G.U t := by sorry

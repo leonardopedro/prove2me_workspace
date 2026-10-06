@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxJacobian.lean — solution of BookProof.ChapterSoftmaxJacobian.softmaxJacobian_diag_nonneg
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_one
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterSoftmaxJacobian
 
 

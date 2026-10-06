@@ -15,8 +15,6 @@ open scoped InnerProductSpace
 
 
 
-se f)
-
 theorem BookProof.ChapterUnitaryTransport.transported_position_group (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) (s t : ℝ) (y : K) :
     transportUnitary W (phaseUnitary f (s + t)) y
-      = transportUnitary W (phaseUnitary f s) (transportUnitary W (phaseUnitary f := by sorry
+      = transportUnitary W (phaseUnitary f s) (transportUnitary W (phaseUnitary f t) y) := by sorry

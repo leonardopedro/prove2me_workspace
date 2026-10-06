@@ -2,6 +2,10 @@ import Theorems.Thm_BookProof_HermiteProductCore_span_range_coreBasis
 
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -57,15 +61,19 @@ variable {d : ℕ}
 /-- Complex conjugation of the coefficients of a polynomial. -/
 def starP (p : MvPolynomial (Fin d) ℂ) : MvPolynomial (Fin d) ℂ := map (starRingEnd ℂ) p
 
+@[simp] theorem starP_add (p q : MvPolynomial (Fin d) ℂ) :
+    starP (p + q) = starP p + starP q := map_add _ _ _
 
+@[simp] theorem starP_mul (p q : MvPolynomial (Fin d) ℂ) :
+    starP (p * q) = starP p * starP q := map_mul _ _ _
 
+@[simp] theorem starP_X (j : Fin d) : starP (X j : MvPolynomial (Fin d) ℂ) = X j := by
+  simp [starP]
 
+@[simp] theorem starP_C (c : ℂ) : starP (C c : MvPolynomial (Fin d) ℂ) = C ((starRingEnd ℂ) c) := by
+  simp [starP]
 
-
-
-
-
-
+@[simp] theorem starP_zero : starP (0 : MvPolynomial (Fin d) ℂ) = 0 := map_zero _
 
 
 
@@ -127,7 +135,7 @@ def weylProd (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
 def mulOp (f : MvPolynomial (Fin d) ℂ) : Module.End ℂ (MvPolynomial (Fin d) ℂ) :=
   LinearMap.mulLeft ℂ f
 
-
+@[simp] theorem mulOp_apply (f p : MvPolynomial (Fin d) ℂ) : mulOp f p = f * p := rfl
 
 
 
@@ -147,9 +155,10 @@ def momOp (j : Fin d) : Module.End ℂ (MvPolynomial (Fin d) ℂ) := (-Complex.I
 
 
 
+@[simp] theorem starP_neg (p : MvPolynomial (Fin d) ℂ) : starP (-p) = -starP p := map_neg _ _
 
-
-
+@[simp] theorem starP_sub (p q : MvPolynomial (Fin d) ℂ) :
+    starP (p - q) = starP p - starP q := map_sub _ _ _
 
 
 

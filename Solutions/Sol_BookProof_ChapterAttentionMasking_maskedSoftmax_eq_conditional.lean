@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMasking
 import Theorems.Thm_BookProof_ChapterAttentionMasking_maskedDenom_pos
 import Theorems.Thm_BookProof_ChapterAttentionMasking_maskedSoftmax_of_mem
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterAttentionMasking
 
 

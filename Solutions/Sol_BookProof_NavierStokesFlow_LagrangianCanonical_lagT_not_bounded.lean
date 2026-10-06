@@ -13,17 +13,15 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
+open LpNat BookProof.FarisLavine IkebeKato FullEsa LagrangianEsa LagrangianKatoRellich
 open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)
 
 set_option maxHeartbeats 1000000 in
-q_P (lagCanData nu hnu f) rfl le_rfl
-    (fun v => by simp only [lagCanData]; simp; first | rfl | exact? | done)
-    (lagCan_secondOrder_hasZeroDeficiencyOn nu hnu f)
-
-theorem solution (β : Vel) : ‖((coreState β : lpF :=
+theorem solution (hnu : 0 < nu) :
+    ¬ ∃ C : ℝ, ∀ v : lpFiniteModes Vel,
+      ‖(lagT nu v : L2I Vel)‖ ≤ C * ‖(v : L2I Vel)‖ :=
   initeModes Vel) : L2I Vel)‖ = 1 := by
     have : ‖((coreState β : lpFiniteModes Vel) : L2I Vel)‖ = ‖(1 : ℂ)‖ :=
       lp.norm_single (by norm_num) β 1

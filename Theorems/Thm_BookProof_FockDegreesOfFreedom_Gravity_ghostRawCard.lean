@@ -1,0 +1,11 @@
+-- Generated from ChapterFockDegreesOfFreedom.lean — theorem BookProof.FockDegreesOfFreedom.Gravity.ghostRawCard
+import Mathlib
+import Definitions.Def_ChapterFockDegreesOfFreedom
+open BookProof.FockDegreesOfFreedom
+open BookProof.FockDegreesOfFreedom.Gravity
+
+
+
+open Fintype
+
+theorem BookProof.FockDegreesOfFreedom.Gravity.ghostRawCard : Fintype.card GhostRaw = 19 + 1 := by sorry

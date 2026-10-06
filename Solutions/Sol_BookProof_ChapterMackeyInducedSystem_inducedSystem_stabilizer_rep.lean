@@ -1,7 +1,7 @@
 -- Generated from ChapterMackeyInducedSystem.lean — solution of BookProof.ChapterMackeyInducedSystem.inducedSystem_stabilizer_rep
 import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
-import Theorems.Thm_BookProof_ChapterMackeyGeneralBase_cocycle_mem_stabilizer
+import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_cocycle_mem_stabilizer
 open BookProof.ChapterMackeyInducedSystem
 
 

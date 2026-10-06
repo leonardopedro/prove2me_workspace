@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
 
 
@@ -187,7 +189,11 @@ noncomputable def halfDensityUnitary :
 
 
 
-
+/-- The change of variables preserves the `L²` norm — the reason the weight
+`2y` (i.e. the square of the half-density factor) is the right one. -/
+@[simp] theorem halfDensityUnitary_norm (g : Lp ℂ 2 (volume.restrict (Set.Ioi (0 : ℝ)))) :
+    ‖halfDensityUnitary g‖ = ‖g‖ :=
+  halfDensityUnitary.norm_map g
 
 
 

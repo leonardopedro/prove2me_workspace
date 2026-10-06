@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 
 

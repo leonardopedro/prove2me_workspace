@@ -1,0 +1,29 @@
+-- Generated from ChapterFourierMultiplierEsa.lean — solution of BookProof.FourierMultiplierEsa.momentumOp_essentiallySelfAdjoint
+import Mathlib
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Theorems.Thm_BookProof_FourierMultiplierEsa_firstOrderOp_essentiallySelfAdjoint
+open BookProof.FourierMultiplierEsa
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+open BookProof.StrichartzWave
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (m : V) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain V)
+      (opL2 (momentumOp m)) := by
+
+  have h : momentumOp m = firstOrderOp (fun _ : Fin 1 => (1 : ℝ)) (fun _ => m) := by
+    simp [firstOrderOp]
+  rw [h]
+  exact firstOrderOp_essentiallySelfAdjoint _ _

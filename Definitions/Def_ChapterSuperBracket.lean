@@ -60,9 +60,10 @@ both parities are odd (`true`), and `+1` otherwise.  `false` models an even
 (bosonic) degree, `true` an odd (fermionic) degree. -/
 def eps (p q : Bool) : ℤ := if (p && q) then -1 else 1
 
-
-
-
+@[simp] lemma eps_false_left (q : Bool) : eps false q = 1 := rfl
+@[simp] lemma eps_false_right (p : Bool) : eps p false = 1 := by
+  cases p <;> rfl
+@[simp] lemma eps_true_true : eps true true = -1 := rfl
 
 
 

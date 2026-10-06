@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNsBrstDerivativeGauge
 import Theorems.Thm_BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL
+import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_swap
+import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_u_mul_uD
 open BookProof.NsBrstDerivativeGauge
 
 

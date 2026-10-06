@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_cpairCore_le_cpairDom
 import Theorems.Thm_BookProof_TensorSumEsa_isGraphCore_cpairCore
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
 open BookProof.TensorSumEsa
 
 

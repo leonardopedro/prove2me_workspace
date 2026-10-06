@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_eq_ofReal_add_smul
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 
 

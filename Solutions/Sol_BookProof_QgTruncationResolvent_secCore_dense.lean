@@ -1,6 +1,7 @@
 -- Generated from ChapterQgTruncationResolvent.lean — solution of BookProof.QgTruncationResolvent.secCore_dense
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.QgTruncationResolvent
 

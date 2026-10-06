@@ -15,6 +15,7 @@ import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterMajoranaClifford
 open BookProof.MajoranaClifford
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 variable (dim : ℕ → ℕ)
 variable (F : SqFamily)

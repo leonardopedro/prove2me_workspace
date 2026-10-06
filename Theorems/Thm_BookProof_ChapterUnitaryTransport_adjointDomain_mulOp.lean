@@ -17,7 +17,5 @@ open scoped InnerProductSpace
 
 
 
-(L2Z)
-
 theorem BookProof.ChapterUnitaryTransport.adjointDomain_mulOp (f : ℤ → ℝ) :
-    adjointDomain (mulDomain f) (mulOp f) = BookProof.ChapterUnboundedPosition.adjointDo := by sorry
+    adjointDomain (mulDomain f) (mulOp f) = BookProof.ChapterUnboundedPosition.adjointDomain f := by sorry

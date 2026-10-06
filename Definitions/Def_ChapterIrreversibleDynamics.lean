@@ -87,7 +87,7 @@ open scoped ENNReal
 square). -/
 noncomputable def dissipative : ℝ → ℝ := fun x => x / 2
 
-
+@[simp] theorem dissipative_apply (x : ℝ) : dissipative x = x / 2 := rfl
 
 
 

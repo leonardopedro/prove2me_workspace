@@ -25,4 +25,8 @@ open BookProof.QgOuterFock
 noncomputable section
 
 
- := by sorry
+theorem BookProof.GaussCoreQuadBounds.norm_mul_le_of_pointwise {f g : MvPolynomial (Fin D) ℂ} {lam : ℝ} (hlam : 0 ≤ lam)
+    (h : ∀ x : Vd D, ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) f‖
+      ≤ lam * ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) g‖)
+    (p : MvPolynomial (Fin D) ℂ) :
+    ‖pgLp (f * p)‖ ≤ lam * ‖pgLp (g * p)‖ := by sorry

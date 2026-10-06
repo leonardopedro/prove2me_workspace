@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian
 
 
 

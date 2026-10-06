@@ -3,13 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Theorems.Thm_BookProof_PositiveSquareRoot_inner_im_eq_zero
 import Theorems.Thm_BookProof_PositiveSquareRoot_invCLM_mem
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 open BookProof.PositiveSquareRoot
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

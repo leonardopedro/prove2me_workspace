@@ -1,6 +1,7 @@
 -- Generated from ChapterSmGaugeRepresentation.lean — solution of BookProof.SmGaugeRep.sm_brst_nilpotent_of_su3_relations
 import Mathlib
 import Definitions.Def_ChapterSmGaugeRepresentation
+import Theorems.Thm_BookProof_SmBrstGhost_smBrstCharge_nilpotent
 import Theorems.Thm_BookProof_YangMillsSU3_structureConstant_antisymm_swap
 import Theorems.Thm_BookProof_YangMillsSU3_structureConstant_jacobi
 open BookProof.SmGaugeRep

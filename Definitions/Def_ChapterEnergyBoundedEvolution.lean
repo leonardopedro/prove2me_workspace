@@ -61,7 +61,10 @@ spectral window `|E| ≤ Emax`. -/
 def EnergyLimited (E : X → ℝ) (μ : Measure X) (Emax : ℝ) (f : X → ℂ) : Prop :=
   ∀ᵐ x ∂μ, f x ≠ 0 → |E x| ≤ Emax
 
-
+omit [MeasurableSpace X] in
+@[simp] theorem evol_zero (f : X → ℂ) : evol E 0 f = f := by
+  funext x
+  simp [evol]
 
 
 

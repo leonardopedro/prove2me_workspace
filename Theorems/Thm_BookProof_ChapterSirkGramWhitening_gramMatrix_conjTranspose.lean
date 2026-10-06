@@ -16,6 +16,5 @@ open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 
-  fun i j => ⟪w i, w j⟫_ℂ
-
-theorem BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose {m : ℕ} (w : Fin m → E) : := by sorry
+theorem BookProof.ChapterSirkGramWhitening.gramMatrix_conjTranspose {m : ℕ} (w : Fin m → E) :
+    (gramMatrix w)ᴴ = gramMatrix w := by sorry

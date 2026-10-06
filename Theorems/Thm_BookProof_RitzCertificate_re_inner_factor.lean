@@ -1,18 +1,13 @@
 -- Generated from ChapterRitzCertificate.lean — theorem BookProof.RitzCertificate.re_inner_factor
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterBandEnclosure
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
 open BookProof.RitzCertificate
 
-
-
-
-
-
-
-
-
-
-
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 noncomputable section
@@ -24,7 +19,6 @@ open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
 
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.RitzCertificate.re_inner_factor {A : F →L[ℂ] F} (hA : IsSelfAdjoint A) (l b : ℝ) (x : F) :
     (inner ℂ x ((((A - (l : ℝ) • (1 : F →L[ℂ] F)) *

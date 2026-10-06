@@ -4,6 +4,10 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
@@ -24,12 +28,14 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
+open BookProof.QuadratureEsa
+open BookProof.CarlemanTwoStep
+open BookProof.CarlemanSimplex
+open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
 
-set_option maxHeartbeats 1600000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
 theorem BookProof.FullQuadratic.fqOp_symmetric (P Q S : Fin d → Fin d → ℝ) (b b' : Fin d → ℝ) :
     SymmetricOn (polyGaussCore (d := d)) (fqOp P Q S b b') := by sorry

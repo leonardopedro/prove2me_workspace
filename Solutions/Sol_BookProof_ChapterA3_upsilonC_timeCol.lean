@@ -1,0 +1,18 @@
+-- Generated from ChapterA4c.lean — solution of BookProof.ChapterA3.upsilonC_timeCol
+import Mathlib
+import Definitions.Def_ChapterA4c
+open BookProof.ChapterA3
+
+
+
+open Matrix
+open scoped ComplexConjugate
+
+set_option maxHeartbeats 1000000 in
+theorem solution (T : Matrix (Fin 2) (Fin 2) ℂ) (μ : Fin 4) :
+    UpsilonC T μ 0 = pauliCoeff (Tᴴ * T) μ := by
+
+  unfold UpsilonC
+  have h0 : pauliσ 0 = (1 : Matrix (Fin 2) (Fin 2) ℂ) := by
+    ext i j; fin_cases i <;> fin_cases j <;> simp [pauliσ]
+  simp [h0]

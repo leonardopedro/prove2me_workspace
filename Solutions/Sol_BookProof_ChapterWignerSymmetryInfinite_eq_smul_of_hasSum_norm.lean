@@ -1,6 +1,7 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.eq_smul_of_hasSum_norm
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_eq_norm_of_re_eq_norm
 open BookProof.ChapterWignerSymmetryInfinite
 
 

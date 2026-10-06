@@ -10,11 +10,8 @@ open scoped BigOperators Matrix Matrix.Norms.Operator
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
- 1
-    <;> (first | rfl | simp)
-
 theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (t : ℝ) :
-    matrix :=
+    matrixFlow A t * matrixFlow A (-t) = 1 :=
   Flow A t * matrixFlow A (-t) = 1 := by
     have h : matrixFlow A t * matrixFlow A (-t) = NormedSpace.exp ((t • A) + ((-t) • A)) := by
       rw [Matrix.exp_add_of_commute _ _ (((Commute.refl A).smul_left t).smul_right (-t))]

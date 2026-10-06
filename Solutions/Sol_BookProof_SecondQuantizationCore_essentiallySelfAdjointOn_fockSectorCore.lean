@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_SecondQuantizationCore_isGraphCore_fockSectorCore
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
 open BookProof.SecondQuantizationCore
 
 

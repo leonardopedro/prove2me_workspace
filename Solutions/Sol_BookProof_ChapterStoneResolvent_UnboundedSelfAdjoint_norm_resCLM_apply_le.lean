@@ -19,6 +19,4 @@ variable (T : UnboundedSelfAdjoint H)
 variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
- : H) : T.resCLM l y ∈ T.domain := (T.res l y).2
-
-theorem solution (l : ℝ) ( := y : H) : ‖T.resCLM l
+theorem solution (l : ℝ) (y : H) : ‖T.resCLM l y‖ ≤ (1 / |l|) * ‖y‖ := y : H) : ‖T.resCLM l

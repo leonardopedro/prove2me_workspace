@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_factorRel_witness
 import Theorems.Thm_BookProof_VonNeumannCore_mem_coreLp_iff
+import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_adjPairs_clGraph
 import Theorems.Thm_BookProof_FriedrichsSquare_exists_mem_factorRel_add
 open BookProof.VonNeumannCore
 

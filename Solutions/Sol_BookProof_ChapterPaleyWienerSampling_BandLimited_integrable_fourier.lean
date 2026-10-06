@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 open BookProof.ChapterPaleyWienerSampling
+open BookProof.ChapterPaleyWienerSampling.BandLimited
 
 
 

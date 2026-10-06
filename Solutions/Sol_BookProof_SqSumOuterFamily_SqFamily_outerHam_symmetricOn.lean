@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secHam_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

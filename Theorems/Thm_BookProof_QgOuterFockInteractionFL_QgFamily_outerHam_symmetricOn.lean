@@ -18,6 +18,7 @@ import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockInteractionFL
+open BookProof.QgOuterFockInteractionFL.QgFamily
 
 variable (F : QgFamily)
 

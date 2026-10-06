@@ -1,9 +1,9 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — solution of BookProof.NavierStokesFlow.FockCanonical.modeShift_dn_dn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
-import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_up_up
 import Theorems.Thm_BookProof_FockSecondQuantization_up_dn
+import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_dn_self
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 

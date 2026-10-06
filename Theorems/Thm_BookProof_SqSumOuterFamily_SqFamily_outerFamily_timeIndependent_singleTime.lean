@@ -1,5 +1,4 @@
 -- Generated from ChapterSqSumOuterSingleTime.lean — theorem BookProof.SqSumOuterFamily.SqFamily.outerFamily_timeIndependent_singleTime
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
@@ -24,6 +23,7 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

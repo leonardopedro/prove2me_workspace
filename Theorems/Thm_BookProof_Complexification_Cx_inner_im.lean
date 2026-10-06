@@ -1,7 +1,8 @@
 -- Generated from Complexification.lean — theorem BookProof.Complexification.Cx.inner_im
 import Mathlib
 import Definitions.Def_Complexification
-import Definitions.Def_ChapterA4
+open BookProof.Complexification
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

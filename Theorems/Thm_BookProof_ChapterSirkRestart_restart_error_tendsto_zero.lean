@@ -16,7 +16,5 @@ open Filter Topology
 open BookProof.ChapterH6
 
 
-m_nonneg _)
-
 theorem BookProof.ChapterSirkRestart.restart_error_tendsto_zero (C Dmin h nv : ℝ) (n : ℕ) (hh : 0 < h) :
-    Tendsto (fun m : ℕ => (n : ℝ) * sirkBound C Dmin h nv m) at := by sorry
+    Tendsto (fun m : ℕ => (n : ℝ) * sirkBound C Dmin h nv m) atTop (𝓝 0) := by sorry

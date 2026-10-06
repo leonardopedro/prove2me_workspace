@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sum_range_of_multiplicity
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+open BookProof.CarlemanTwoStep
 
 
 

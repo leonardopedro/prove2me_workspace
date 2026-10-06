@@ -64,7 +64,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace MomentumEsa
 
-open LpNat FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
 
 /-! ## Transfer to the deficiency predicate of the Navier–Stokes chapters -/
 
@@ -106,7 +106,8 @@ the occupation-number representation, by the total-energy symbol
 `Σ(α) = ∑ₖ α(k) n(k) + 1`. -/
 def fockSymbol (n : ℕ → ℝ) : Config → ℝ := fun a => (a.sum fun k m => (m : ℝ) * n k) + 1
 
-
+@[simp] theorem fockSymbol_zero (n : ℕ → ℝ) : fockSymbol n 0 = 1 := by
+  simp [fockSymbol]
 
 
 

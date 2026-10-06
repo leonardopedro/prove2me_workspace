@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Theorems.Thm_BookProof_Qg3DGaugeFL_qgGauge_sector_esa_fl
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.Qg3DGaugeFL
 
 

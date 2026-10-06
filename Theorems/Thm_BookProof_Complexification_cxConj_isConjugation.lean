@@ -3,10 +3,10 @@ import Mathlib
 import Definitions.Def_Complexification
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
-import Definitions.Def_ChapterA4
 open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA.AntiUnitary
+open BookProof.Complexification
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

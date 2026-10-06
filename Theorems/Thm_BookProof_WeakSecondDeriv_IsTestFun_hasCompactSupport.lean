@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WeakSecondDeriv
-open BookProof.WeakSecondDeriv.IsTestFun
+open BookProof.WeakSecondDeriv
 
 
 

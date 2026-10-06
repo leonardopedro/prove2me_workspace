@@ -1,5 +1,10 @@
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Mathlib
 
 
@@ -126,3 +131,8 @@ def shiftNorm (p : MvPolynomial (Fin D) ℂ) : ℝ := ‖pgLp (harmP p) + pgLp p
 
 
 
+un i => ((x i : ℝ) : ℂ)) p‖)]
+
+end
+
+end BookProof.GaussCoreQuadBounds

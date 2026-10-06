@@ -1,0 +1,37 @@
+-- Generated from ChapterHermiteBandCalculusHigher.lean — solution of BookProof.HermiteBandHigher.isBandDeg_mulOp_monomial
+import Mathlib
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_smul
+import Theorems.Thm_BookProof_HermiteBandHigher_IsBandDeg_smul
+import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_smul
+import Theorems.Thm_BookProof_HermiteBandHigher_isBandDeg_mulOp_multiset
+import Theorems.Thm_BookProof_HermiteBandHigher_prod_toMultiset_X
+open BookProof.HermiteBandHigher
+
+
+
+
+noncomputable section
+
+open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.HermiteBand BookProof.YangMillsHermite
+open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
+
+variable {d : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (s : Fin d →₀ ℕ) (c : ℂ) :
+    IsBandDeg s.degree (mulOp (monomial s c : MvPolynomial (Fin d) ℂ)) := by
+
+  classical
+  have hmon : (monomial s c : MvPolynomial (Fin d) ℂ)
+      = c • ((s.toMultiset.map (fun i => (X i : MvPolynomial (Fin d) ℂ))).prod) := by
+    rw [prod_toMultiset_X, MvPolynomial.monomial_eq, smul_eq_C_mul]
+  have hcard : Multiset.card s.toMultiset = s.degree := by
+    rw [Finsupp.card_toMultiset]
+    simp [Finsupp.degree, Finsupp.sum]
+    first | rfl | done
+  rw [hmon, mulOp_smul]
+  exact IsBandDeg.smul c (hcard ▸ isBandDeg_mulOp

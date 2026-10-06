@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxTemperatureMonotone
 import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_scoreSoftmax_max_ge_of_le
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_scoreSoftmax_zero
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 

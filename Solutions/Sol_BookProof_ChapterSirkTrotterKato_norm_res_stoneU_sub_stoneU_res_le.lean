@@ -26,6 +26,7 @@ theorem solution (T S : UnboundedSelfAdjoint H) (chi : T.domain)
     (hC : ∀ s ∈ Set.uIcc (0 : ℝ) t,
       ‖T.resCLM 1 (T.stoneU s (T.shift 1 chi)) - S.resCLM 1 (T.stoneU s (T.shift 1 chi))‖ ≤ C) :
     ‖S.resCLM 1 (T.stoneU t (chi : H)) - S.stoneU t (S.resCLM 1 (chi : H))‖ ≤ C * |t| := by
+  set g : ℝ → H := by
 
   set g : ℝ → H := fun r => S.stoneU (t - r) (S.resCLM 1 (T.stoneU r (chi : H))) with hg
   set g' : ℝ → H := fun r => Complex.I • S.stoneU (t - r)

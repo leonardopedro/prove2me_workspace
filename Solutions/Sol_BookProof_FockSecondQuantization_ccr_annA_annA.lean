@@ -1,9 +1,9 @@
 -- Generated from ChapterFockSecondQuantization.lean — solution of BookProof.FockSecondQuantization.ccr_annA_annA
 import Mathlib
 import Definitions.Def_ChapterFockSecondQuantization
-import Theorems.Thm_BookProof_FockSecondQuantization_up_of_ne
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_up_up_comm
+import Theorems.Thm_BookProof_FockSecondQuantization_up_of_ne
 open BookProof.FockSecondQuantization
 
 

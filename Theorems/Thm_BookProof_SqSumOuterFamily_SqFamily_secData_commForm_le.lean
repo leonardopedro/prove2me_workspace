@@ -18,6 +18,7 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 variable (dim : ℕ → ℕ)
 variable (F : SqFamily)

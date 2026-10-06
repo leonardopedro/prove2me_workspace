@@ -84,7 +84,7 @@ noncomputable def wave (θ : ℕ → ℝ) : ℕ → ℕ → (ℕ → ℝ)
   | s, (d + 1) =>
       fun i => Real.cos (θ s) * basisVec s i + Real.sin (θ s) * wave θ (s + 1) d i
 
-
+@[simp] theorem wave_zero (θ : ℕ → ℝ) (s : ℕ) : wave θ s 0 = basisVec s := rfl
 
 
 

@@ -34,6 +34,4 @@ open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMill
 
 noncomputable section
 
-set_option maxHeartbeats 2000000 in
--- the 99×99 double sums over the Weyl-ordered pairs make this identification expensive
 theorem BookProof.YangMillsAbelianEsa.ymAbelianPoly_eq_fqPoly : ymAbelianPoly = fqPoly ymFqP ymFqQ 0 0 0 := by sorry

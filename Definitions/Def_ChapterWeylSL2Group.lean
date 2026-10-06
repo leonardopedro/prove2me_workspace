@@ -59,9 +59,9 @@ def uPlus (t : ℂ) : Matrix.SpecialLinearGroup (Fin 2) ℂ :=
 def uMinus (t : ℂ) : Matrix.SpecialLinearGroup (Fin 2) ℂ :=
   ⟨!![1, 0; t, 1], by simp [Matrix.det_fin_two_of]⟩
 
+@[simp] theorem uPlus_coe (t : ℂ) : (uPlus t : Matrix (Fin 2) (Fin 2) ℂ) = !![1, t; 0, 1] := rfl
 
-
-
+@[simp] theorem uMinus_coe (t : ℂ) : (uMinus t : Matrix (Fin 2) (Fin 2) ℂ) = !![1, 0; t, 1] := rfl
 
 
 

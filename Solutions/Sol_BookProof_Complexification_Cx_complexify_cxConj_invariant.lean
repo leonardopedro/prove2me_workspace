@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_mem_complexify
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 
 

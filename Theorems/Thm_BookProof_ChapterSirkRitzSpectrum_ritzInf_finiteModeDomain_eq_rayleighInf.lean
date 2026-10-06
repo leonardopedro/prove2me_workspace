@@ -20,8 +20,6 @@ open BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology RCLike ContinuousLinearMap ComplexOrder Pointwise
 
 
-).comp hutend) hle
-
 theorem BookProof.ChapterSirkRitzSpectrum.ritzInf_finiteModeDomain_eq_rayleighInf [Nontrivial F] (A : F →L[ℂ] F)
     (b : HilbertBasis ℕ ℂ F) :
-    ritzInf (finiteModeRestrict A b) (finiteModeDomain := by sorry
+    ritzInf (finiteModeRestrict A b) (finiteModeDomain b) = rayleighInf A := by sorry

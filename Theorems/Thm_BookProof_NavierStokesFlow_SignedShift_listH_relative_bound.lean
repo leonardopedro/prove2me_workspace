@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 
@@ -16,7 +16,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
 
 
 theorem BookProof.NavierStokesFlow.SignedShift.listH_relative_bound (L : List (SignedHop ι sym)) :

@@ -4,6 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterA1b
 import Definitions.Def_Complexification
 open BookProof.Complexification
+open BookProof.Complexification.Cx
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 

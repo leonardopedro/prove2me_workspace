@@ -17,10 +17,8 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-rm _ _
-
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col)
-    (x : lpFiniteModes Conf) : 0 ≤ quadForm (dGammaOp :=
+    (x : lpFiniteModes Conf) : 0 ≤ quadForm (dGammaOp col) x :=
    col) x := by
     rw [quadForm, coe_dGammaOp, coe_fockEquiv_symm x]
     exact inner_dGamma_nonne

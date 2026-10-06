@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_symmetricOn
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

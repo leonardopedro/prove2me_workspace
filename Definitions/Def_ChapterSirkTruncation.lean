@@ -1,16 +1,9 @@
-import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
 import Definitions.Def_ChapterSirkWhitening
-
-/-!
-# Chapter ChapterSirkTruncation
-
-Generated def bundle for ChapterSirkTruncation. See BookProof/ChapterSirkTruncation.lean for full context.
--/
-
-noncomputable section
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Mathlib
 
 namespace BookProof.ChapterSirkTruncation
-
 
 end BookProof.ChapterSirkTruncation

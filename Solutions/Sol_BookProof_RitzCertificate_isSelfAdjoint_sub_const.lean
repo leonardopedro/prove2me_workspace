@@ -1,22 +1,7 @@
 -- Generated from ChapterRitzCertificate.lean — solution of BookProof.RitzCertificate.isSelfAdjoint_sub_const
 import Mathlib
 import Definitions.Def_ChapterRitzCertificate
-import Definitions.Def_ChapterSirkRitzSpectrum
-import Definitions.Def_ChapterFockSecondQuantization
-import Definitions.Def_ChapterFockOneParticleGap
-import Definitions.Def_ChapterBandEnclosure
 open BookProof.RitzCertificate
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -28,6 +13,8 @@ open Filter Topology
 open BookProof.FockOneParticleGap BookProof.FockSecondQuantization
 open BookProof.ChapterSirkRitzSpectrum BookProof.BandEnclosure
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

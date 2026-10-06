@@ -1,6 +1,7 @@
 -- Generated from ChapterSolidHarmonic.lean — solution of BookProof.ChapterSolidHarmonic.legendre_rec_factored
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
+import Theorems.Thm_BookProof_ChapterLegendrePolynomial_legendre_deriv_coeff_rec
 open BookProof.ChapterSolidHarmonic
 
 

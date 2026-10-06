@@ -72,11 +72,13 @@ noncomputable def mg (k : ℕ) (s : List α) : α →₀ ℕ := mgT k 0 s
 /-- The total mass stored in a table. -/
 noncomputable def mgSum (T : α →₀ ℕ) : ℕ := T.sum (fun _ n => n)
 
+omit [DecidableEq α] in
+@[simp] theorem mgT_nil (k : ℕ) (T : α →₀ ℕ) : mgT k T [] = T := rfl
 
 
 
-
-
+omit [DecidableEq α] in
+@[simp] theorem mgD_nil (k : ℕ) (T : α →₀ ℕ) : mgD k T [] = 0 := rfl
 
 
 

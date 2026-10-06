@@ -23,9 +23,7 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-_symm]
-
 theorem BookProof.FockSecondQuantization.isPosCol_opCol {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
-    IsPosCol (opC := by sorry
+    IsPosCol (opCol b A) := by sorry

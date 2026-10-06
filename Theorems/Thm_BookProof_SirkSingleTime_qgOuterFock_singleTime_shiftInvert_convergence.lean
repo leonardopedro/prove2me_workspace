@@ -1,5 +1,4 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — theorem BookProof.SirkSingleTime.qgOuterFock_singleTime_shiftInvert_convergence
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift

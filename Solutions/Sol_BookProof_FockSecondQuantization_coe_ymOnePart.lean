@@ -16,9 +16,7 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
- fabc)
-
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
     (x : finiteModeDomain (coreBasis e)) :
     ((ymOnePart e fabc x : finiteModeDomain (coreBasis e)) : L2d 99)
-      = ymHamiltonian (coreRepBasis e) := fabc
+      = ymHamiltonian (coreRepBasis e) fabc x := fabc

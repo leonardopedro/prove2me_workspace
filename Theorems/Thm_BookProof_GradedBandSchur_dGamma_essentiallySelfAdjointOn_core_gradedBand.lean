@@ -1,12 +1,17 @@
 -- Generated from ChapterGradedBandSchurEsa.lean — theorem BookProof.GradedBandSchur.dGamma_essentiallySelfAdjointOn_core_gradedBand
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesEsa
+open BookProof.FockSecondQuantization
 open BookProof.GradedBandSchur
 
-
-
-
-
+variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
 
 
 
@@ -15,7 +20,6 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 noncomputable section
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
 
 theorem BookProof.GradedBandSchur.dGamma_essentiallySelfAdjointOn_core_gradedBand (hC : 0 ≤ C) (hherm : IsHermCol col)
     (hcard : ∀ k, (col k).support.card ≤ M)

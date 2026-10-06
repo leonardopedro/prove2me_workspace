@@ -1,6 +1,7 @@
 -- Generated from ChapterScalaronFockEsa.lean — solution of BookProof.ScalaronFock.fockSmoothPotential_symmetric
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_symmetric
 open BookProof.ScalaronFock
 

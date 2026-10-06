@@ -16,7 +16,5 @@ open Matrix
 open BookProof.ChapterH4 BookProof.ChapterSirkWhitening
 
 
-w much a reduced state loses -/
-
 theorem BookProof.ChapterSirkGramWhitening.sum_norm_coord_le {m : ℕ} (c : EuclideanSpace ℂ (Fin m)) :
-    ∑ i, ‖ := by sorry
+    ∑ i, ‖c i‖ ≤ Real.sqrt m * ‖c‖ := by sorry

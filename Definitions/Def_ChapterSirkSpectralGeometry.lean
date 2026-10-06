@@ -2,6 +2,10 @@ import Definitions.Def_ChapterH9
 import Definitions.Def_ChapterSirkEndToEnd
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 
 

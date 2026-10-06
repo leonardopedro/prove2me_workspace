@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Theorems.Thm_BookProof_ResolventLadder_one_le_add_mul_rayleigh_of_unit
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 open BookProof.ResolventLadder
 
 

@@ -17,7 +17,7 @@ variable {a : ℝ}
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
 

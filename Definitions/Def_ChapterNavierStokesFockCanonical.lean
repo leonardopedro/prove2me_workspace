@@ -56,9 +56,9 @@ def up (i : Fin d) (α : Occ d) : Occ d := Function.update α i (α i + 1)
 empty). -/
 def dn (i : Fin d) (α : Occ d) : Occ d := Function.update α i (α i - 1)
 
+@[simp] theorem up_self (i : Fin d) (α : Occ d) : up i α i = α i + 1 := by simp [up]
 
-
-
+@[simp] theorem dn_self (i : Fin d) (α : Occ d) : dn i α i = α i - 1 := by simp [dn]
 
 theorem up_injective (i : Fin d) : Function.Injective (up i : Occ d → Occ d) := by
   intro α β h
@@ -71,7 +71,11 @@ theorem up_injective (i : Fin d) : Function.Injective (up i : Occ d → Occ d) :
   · have hji := congrFun h j
     simpa [up, hj] using hji
 
-
+@[simp] theorem dn_up (i : Fin d) (α : Occ d) : dn i (up i α) = α := by
+  funext j
+  by_cases hj : j = i
+  · subst hj; simp [up, dn]
+  · simp [up, dn, hj]
 
 theorem up_dn (i : Fin d) {α : Occ d} (h : 1 ≤ α i) : up i (dn i α) = α := by
   funext j
@@ -151,9 +155,14 @@ noncomputable def cre (i : Fin d) : lpFiniteModes (Occ d) →ₗ[ℂ] lpFiniteMo
       smul_eq_mul, RingHom.id_apply]
     ring
 
+@[simp] theorem ann_coe (i : Fin d) (x : lpFiniteModes (Occ d)) (α : Occ d) :
+    (((ann i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
+      = (Real.sqrt ((α i : ℝ) + 1) : ℂ)
+        * ((x : L2I (Occ d)) : Occ d → ℂ) (up i α) := rfl
 
-
-
+@[simp] theorem cre_coe (i : Fin d) (x : lpFiniteModes (Occ d)) (α : Occ d) :
+    (((cre i x : lpFiniteModes (Occ d)) : L2I (Occ d)) : Occ d → ℂ) α
+      = (Real.sqrt (α i : ℝ) : ℂ) * ((x : L2I (Occ d)) : Occ d → ℂ) (dn i α) := rfl
 
 /-! ### The quadratic expressions -/
 
@@ -214,4 +223,31 @@ noncomputable def drift (κ : Fin d → ℝ) (i : Fin d) :
 
 
 
-βi)
+βi)m (fockSym κ)) x) :
+        L2I (Occ d)) : Occ d → ℂ) β
+      = ∑ i, ((ShiftData.shiftH (modeData hκ i)
+          (Submodule.inclusion (finiteModes_le_maxDom (fockSym κ)) x) :
+            L2I (Occ d)) : Occ d → ℂ) β := by
+    rw [fockH_apply]
+    induction (Finset.univ : Finset (Fin d)) using Finset.induction with
+    | empty => simp
+    | insert i s hi ih =>
+        rw [Finset.sum_insert hi, Finset.sum_insert hi, ← ih]
+        rfl
+  simp only [LinearMap.comp_apply, Submodule.subtype_apply]
+  rw [hsumleft, hsumright]
+  exact Finset.sum_congr rfl fun i _ => hmode i
+
+/-- **The canonically written many-mode Navier–Stokes Hamiltonian
+`∑ᵢ ½(πᵢVᵢ + Vᵢπᵢ)` is essentially self-adjoint on the finite-configuration
+core of the Fock space.** -/
+theorem fock_canonical_essentiallySelfAdjointOn_core (hκ : ∀ i, 0 ≤ κ i) :
+    EssentiallySelfAdjointOn (lpFiniteModes (Occ d))
+      ((lpFiniteModes (Occ d)).subtype.comp
+        (∑ i, ((1 : ℂ) / 2) • ((mom κ i).comp (drift κ i) + (drift κ i).comp (mom κ i)))) := by
+  rw [fock_hamiltonian_eq hκ]
+  exact fockH_essentiallySelfAdjointOn_core hκ
+
+end FockCanonical
+
+end BookProof.NavierStokesFlow

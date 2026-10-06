@@ -18,8 +18,5 @@ open Filter Topology
 open BookProof.ChapterUnitaryTransport
 
 
-g hl]
-  exact (T.shiftEquiv hl).symm_apply_apply x
-
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res {l : ℝ} (hl : l ≠ 0) (y : H) :
-    T.op (T.res l y) = y + ((l : := by sorry
+    T.op (T.res l y) = y + ((l : ℂ) * Complex.I) • ((T.res l y : T.domain) : H) := by sorry

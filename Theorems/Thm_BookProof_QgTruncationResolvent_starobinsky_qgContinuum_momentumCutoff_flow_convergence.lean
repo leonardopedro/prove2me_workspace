@@ -1,5 +1,4 @@
 -- Generated from ChapterQgTruncationResolvent.lean — theorem BookProof.QgTruncationResolvent.starobinsky_qgContinuum_momentumCutoff_flow_convergence
-import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterQgOuterFockCoreFL

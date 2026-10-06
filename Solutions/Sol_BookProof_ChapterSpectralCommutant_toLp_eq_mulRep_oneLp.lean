@@ -1,6 +1,7 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.toLp_eq_mulRep_oneLp
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
+import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_oneLp_coeFn
 open BookProof.ChapterSpectralCommutant
 
 

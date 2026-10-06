@@ -92,9 +92,12 @@ def jwSign (i : Fin n) (S : Finset (Fin n)) : ℂ :=
 
 
 
+@[simp] theorem conj_jwSign (i : Fin n) (S : Finset (Fin n)) :
+    (starRingEnd ℂ) (jwSign i S) = jwSign i S := by
+  simp [jwSign]
 
-
-
+@[simp] theorem norm_jwSign (i : Fin n) (S : Finset (Fin n)) : ‖jwSign i S‖ = 1 := by
+  simp [jwSign]
 
 
 
@@ -113,9 +116,11 @@ noncomputable def creat (i : Fin n) : FermiFock n →ₗ[ℂ] FermiFock n where
   map_add' x y := by ext S; by_cases h : i ∈ S <;> simp [h, mul_add]
   map_smul' c x := by ext S; by_cases h : i ∈ S <;> simp [h, mul_left_comm]
 
+@[simp] theorem annih_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (annih i ψ) S = if i ∈ S then 0 else jwSign i S * ψ (insert i S) := rfl
 
-
-
+@[simp] theorem creat_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (creat i ψ) S = if i ∈ S then jwSign i (S.erase i) * ψ (S.erase i) else 0 := rfl
 
 /-! ## 3. The canonical anticommutation relations -/
 
@@ -137,7 +142,8 @@ def flipOcc (i : Fin n) : Finset (Fin n) ≃ Finset (Fin n) :=
     · simp [h, Finset.insert_erase h]
     · simp [h, Finset.erase_insert h])
 
-
+@[simp] theorem flipOcc_apply (i : Fin n) (S : Finset (Fin n)) :
+    flipOcc i S = if i ∈ S then S.erase i else insert i S := rfl
 
 
 

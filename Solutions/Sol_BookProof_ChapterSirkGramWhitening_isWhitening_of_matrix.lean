@@ -18,12 +18,9 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-=
-  Mᴴ * gramMatrix w * M = 1
-
 theorem solution {m : ℕ} (w : Fin m → E) {M : Matrix (Fin m) (Fin m) ℂ}
     (hM : IsWhiteningMatrix w M) :
-    IsWhitening w (Matrix :=
+    IsWhitening w (Matrix.toEuclideanCLM (𝕜 :=
   .toEuclideanCLM (𝕜 := ℂ) M) := by
     have hstar : ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM (𝕜 := ℂ) M)
         = Matrix.toEuclideanCLM (𝕜 := ℂ) Mᴴ := by

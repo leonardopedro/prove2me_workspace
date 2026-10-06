@@ -1,0 +1,12 @@
+-- Generated from ChapterA3.lean — solution of BookProof.ChapterA3.mgamma5Z_sq
+import Mathlib
+import Definitions.Def_ChapterA3
+open BookProof.ChapterA3
+
+
+
+open Matrix
+
+set_option maxHeartbeats 1000000 in
+theorem solution : mgamma5Z * mgamma5Z = -1 := by
+ decide

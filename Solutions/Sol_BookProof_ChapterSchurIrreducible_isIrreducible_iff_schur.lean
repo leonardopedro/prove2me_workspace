@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSchurIrreducible
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_selfAdjoint_commutant_scalar
+import Theorems.Thm_BookProof_ChapterA_System_schur_normal_irreducible
 open BookProof.ChapterSchurIrreducible
 
 

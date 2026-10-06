@@ -7,7 +7,7 @@ open BookProof.PositiveSquareRoot
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

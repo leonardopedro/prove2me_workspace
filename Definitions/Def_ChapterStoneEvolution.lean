@@ -42,7 +42,8 @@ noncomputable def approxU (n t : ℝ) : H →L[ℂ] H := exp (t • T.yosidaGen 
 
 
 
-
+@[simp] theorem approxU_zero (n : ℝ) : T.approxU n 0 = 1 := by
+  simp [approxU]
 
 
 

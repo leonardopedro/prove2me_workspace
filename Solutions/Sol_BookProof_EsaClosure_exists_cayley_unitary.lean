@@ -22,12 +22,10 @@ variable [CompleteSpace F]
 variable [CompleteSpace F] {Dom : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-eg (A x - Complex.I • (x : F))]
-
 theorem solution {A : Dom →ₗ[ℂ] F} (hsym : SymmetricOn Dom A)
     (hsa : ∀ w u : F, (∀ v : Dom, (inner ℂ (A v) w : ℂ) = inner ℂ (v : F) u) →
       ∃ h : w ∈ Dom, A ⟨w, h⟩ = u) :
-    ∃ U : F ≃ₗᵢ[ℂ] F, ∀ x : Dom, U (A x + Complex.I • (x : :=
+    ∃ U : F ≃ₗᵢ[ℂ] F, ∀ x : Dom, U (A x + Complex.I • (x : F)) = A x - Complex.I • (x : F) :=
    F)) = A x - Complex.I • (x : F) := by
     classical
     set p : Dom →ₗ[ℂ] F := -cshiftMap A (-Complex.I) with hp

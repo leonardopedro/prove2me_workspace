@@ -1,7 +1,7 @@
 -- Generated from ChapterStoneGroup.lean — solution of BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_sub_domain
 import Mathlib
 import Definitions.Def_ChapterStoneGroup
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le_prime
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le'
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le
 open BookProof.ChapterStoneResolvent
@@ -26,6 +26,9 @@ variable (T : UnboundedSelfAdjoint H)
 set_option maxHeartbeats 1000000 in
 theorem solution {n : ℝ} (hn : n ≠ 0) (x : T.domain) :
     ‖T.jn n (x : H) - (x : H)‖ ≤ 2 * ‖T.op x‖ / |n| := by
+  have habs : 0 < |n| := abs_pos.mpr hn
+  have hid : T.jn n (x : H) - (x : H)
+      = -T.resCLM n (T.op x) + ((n : ℂ) * Complex.I) • T.resCLM n (T.resCLM (-n) (T.op x)) := by
 
   have habs : 0 < |n| := abs_pos.mpr hn
   have hid : T.jn n (x : H) - (x : H)

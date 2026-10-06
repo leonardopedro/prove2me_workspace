@@ -40,7 +40,7 @@ open BookProof.YangMillsFriedrichs
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
-open BookProof.FiniteSectionSingleTime BookProof.QgTimeIndependent
+open BookProof.FiniteSectionSingleTime BookProof.QymTimeIndependent BookProof.QgTimeIndependent
 
 noncomputable section
 

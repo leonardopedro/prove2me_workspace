@@ -1,6 +1,7 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.prop_time_translation
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
+open BookProof.QgTimeIndependent
 
 
 

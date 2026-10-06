@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_adjPairs_factorRel
+import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_symmetric
+import Theorems.Thm_BookProof_ClosureUniqueness_mem_factorGraph_sqOp
 open BookProof.FriedrichsSquare
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionLocality.lean — solution of BookProof.ChapterAttentionLocality.scoreSoftmax_alibi_le
 import Mathlib
 import Definitions.Def_ChapterAttentionLocality
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
 open BookProof.ChapterAttentionLocality
 
 

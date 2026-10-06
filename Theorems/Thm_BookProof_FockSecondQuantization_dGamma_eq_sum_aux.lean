@@ -19,7 +19,5 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
-_zero]
-
 theorem BookProof.FockSecondQuantization.dGamma_eq_sum_aux (col : ℕ → (ℕ →₀ ℂ)) (u : FockAlg) :
-    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (an := by sorry
+    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) := by sorry

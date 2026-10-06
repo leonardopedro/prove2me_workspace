@@ -9,8 +9,6 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
-  ring
-
 theorem BookProof.NavierStokesFlow.JacobiDeficiency.defState_deficiency (v : lpFiniteModes ℕ) :
     (inner ℂ ((jacobiOp v : lpFiniteModes ℕ) : L2N) defState : ℂ)
-      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • de := by sorry
+      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • defState) := by sorry

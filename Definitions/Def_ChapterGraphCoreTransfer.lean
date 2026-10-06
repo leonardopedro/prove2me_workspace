@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -50,7 +51,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 def restrictOp {D₁ D₂ : Submodule ℂ F} (T : D₂ →ₗ[ℂ] F) (h : D₁ ≤ D₂) : D₁ →ₗ[ℂ] F :=
   T ∘ₗ Submodule.inclusion h
 
-
+@[simp] theorem restrictOp_apply {D₁ D₂ : Submodule ℂ F} (T : D₂ →ₗ[ℂ] F) (h : D₁ ≤ D₂)
+    (x : D₁) : restrictOp T h x = T ⟨(x : F), h x.2⟩ := rfl
 
 
 

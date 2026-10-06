@@ -18,10 +18,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
-ix, Matrix.conjTranspose_apply]
-
 theorem solution {m : ℕ} (w : Fin m → E) :
-    gramOp w = Matrix.toEuclidean :=
+    gramOp w = Matrix.toEuclideanCLM (𝕜 :=
   CLM (𝕜 := ℂ) (gramMatrix w) := by
     ext c i
     simpa [gramMatrix, Matrix.ofLp_toEuclideanCLM, Matrix.mulVec, dotProd

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesFockLagrangian
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_sum
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
 
 

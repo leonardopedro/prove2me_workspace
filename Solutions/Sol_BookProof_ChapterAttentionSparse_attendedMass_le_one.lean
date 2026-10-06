@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterAttentionSparse_attendedMass_univ
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 open BookProof.ChapterAttentionSparse
 
 

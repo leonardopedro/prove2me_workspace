@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Theorems.Thm_BookProof_QgBrstCompleted_qgPhase_group
+import Theorems.Thm_BookProof_BrstReducedTransfer_transfer_comp
 open BookProof.QgBrstCompleted
 
 

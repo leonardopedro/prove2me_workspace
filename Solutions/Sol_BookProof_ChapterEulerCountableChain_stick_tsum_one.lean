@@ -1,0 +1,15 @@
+-- Generated from ChapterEulerCountableChain.lean — solution of BookProof.ChapterEulerCountableChain.stick_tsum_one
+import Mathlib
+import Definitions.Def_ChapterEulerCountableChain
+import Theorems.Thm_BookProof_ChapterEulerCountableChain_stick_hasSum_one
+open BookProof.ChapterEulerCountableChain
+
+
+
+open scoped BigOperators
+open Filter Topology
+
+set_option maxHeartbeats 1000000 in
+theorem solution (c : ℕ → ℝ) (hc : ∀ n, 0 ≤ c n ∧ c n ≤ 1)
+    (htail : Tendsto (stickTail c) atTop (𝓝 0)) :
+    ∑' n, stickProb c n = 1 := (stick_hasSum_one c hc htail).tsum_eq

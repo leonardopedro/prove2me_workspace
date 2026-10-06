@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxJacobian.lean — solution of BookProof.ChapterSoftmaxJacobian.softmaxJacobian_row_sum_zero
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 open BookProof.ChapterSoftmaxJacobian
 
 

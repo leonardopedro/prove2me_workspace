@@ -8,6 +8,4 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
- at h0
-
-theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiFun_defFun (n : ℕ) : jacobiFun defFun n = Complex.I * d := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiFun_defFun (n : ℕ) : jacobiFun defFun n = Complex.I * defFun n := by sorry

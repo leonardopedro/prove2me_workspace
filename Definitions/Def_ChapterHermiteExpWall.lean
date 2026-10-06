@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterStarobinskyPotential
 import Mathlib
 
 
@@ -134,6 +137,6 @@ noncomputable def aCoef (m : ℕ) : ℝ := ((m : ℝ) + 2) + 1 / 2
 /-- The coefficient of `x^m`: `N(N−1)` with `N = m + 2`. -/
 noncomputable def bCoef (m : ℕ) : ℝ := ((m : ℝ) + 2) * ((m : ℝ) + 1)
 
-theorererere`(: : hi(m(m: :  bound -/
+theorererere``(: : hi(m(m: :  bound -/
 
 /-- **The abstract obsttetermiteExpWall

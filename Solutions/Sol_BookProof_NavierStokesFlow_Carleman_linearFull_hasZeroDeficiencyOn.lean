@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_halfLineFull_hasZeroDefi
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_linearFullData_symbol
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_not_summable_nsCoupling_linear
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.Carleman
 
 
 

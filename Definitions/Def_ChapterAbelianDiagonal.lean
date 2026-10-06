@@ -46,7 +46,8 @@ noncomputable def diagonalStarAlgHom : (n → ℂ) →⋆ₐ[ℂ] Matrix n n ℂ
   map_star' d := by
     simp [Matrix.star_eq_conjTranspose]
 
-
+@[simp] theorem diagonalStarAlgHom_apply (d : n → ℂ) :
+    (diagonalStarAlgHom d : Matrix n n ℂ) = Matrix.diagonal d := rfl
 
 
 

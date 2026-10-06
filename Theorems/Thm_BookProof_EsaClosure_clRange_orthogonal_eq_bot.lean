@@ -18,9 +18,6 @@ open Filter Topology
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 
-, clExt_apply, hval]
-  abel
-
 theorem BookProof.EsaClosure.clRange_orthogonal_eq_bot (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) :
-    (cshiftRange (clExt T hden := by sorry
+    (cshiftRange (clExt T hdense hsym) Complex.I)ᗮ = ⊥ := by sorry

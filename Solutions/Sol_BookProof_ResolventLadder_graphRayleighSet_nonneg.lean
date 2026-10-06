@@ -1,6 +1,7 @@
 -- Generated from ChapterResolventMinMaxLadder.lean — solution of BookProof.ResolventLadder.graphRayleighSet_nonneg
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 open BookProof.ResolventLadder
 
 

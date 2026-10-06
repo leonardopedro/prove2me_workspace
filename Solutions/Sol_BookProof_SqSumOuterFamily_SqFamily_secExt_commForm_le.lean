@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSqSumOuterFamily
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secData_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_commForm_le
 open BookProof.SqSumOuterFamily
+open BookProof.SqSumOuterFamily.SqFamily
 
 
 

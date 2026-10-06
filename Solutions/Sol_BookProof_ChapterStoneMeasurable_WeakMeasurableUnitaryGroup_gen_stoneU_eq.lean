@@ -18,9 +18,7 @@ variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
 variable (G : WeakMeasurableUnitaryGroup H)
 
 set_option maxHeartbeats 1000000 in
-ans (hconst.trans ht))
-
-theorem solution (t : ℝ) : :=
+theorem solution (t : ℝ) : G.gen.stoneU t = G.U t :=
    G.gen.stoneU t = G.U t := by
     have hall := Continuous.ext_on G.denseDomain (G.gen.stoneU t).continuous (G.U t).continuous
       (fun y hy => G.gen_stoneU_apply_eq_domain t ⟨y, hy⟩)

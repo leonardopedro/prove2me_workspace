@@ -13,7 +13,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.conj_mul_hFun (κ : ℝ) (X Y : ℕ → ℂ) (m : ℕ) :
     (starRingEnd ℂ) (X m) * hFun κ Y m

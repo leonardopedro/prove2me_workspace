@@ -37,7 +37,18 @@ def def_provided_names():
     pat = re.compile(
         r"^\s*(?:@\[[^\]]*\]\s*)?(?:noncomputable\s+)?"
         r"(?:def|abbrev|instance|structure|theorem|lemma)\s+([A-Za-z_]\w*)")
-    for f in glob.glob(os.path.join(WS, "Definitions", "Def_Chapter*.lean")):
+    # Scan BOTH the local tree and the PUBLISHED bundle cache. The platform
+    # compiles a stub against what is actually published, and several chapters
+    # were published from older generator versions whose bundles carry more
+    # declarations than the local file does -- so a clash invisible locally is a
+    # guaranteed server-side `has already been declared`.
+    files = glob.glob(os.path.join(WS, "Definitions", "Def_Chapter*.lean"))
+    files += glob.glob(os.path.join(WS, "state", "published_bundles", "Def_*.lean"))
+    seen_files = set()
+    for f in files:
+        if f in seen_files:
+            continue
+        seen_files.add(f)
         ns = []
         for ln in open(f, encoding="utf-8", errors="ignore"):
             m = re.match(r"^namespace\s+([\w.]+)", ln)

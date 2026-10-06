@@ -23,6 +23,20 @@ export PATH=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH
 MAX_PASSES="${1:-8}"
 PARALLEL="${2:-10}"
 
+# Single-instance guard. Two drains each hold their own copy of state and
+# overwrite it wholesale, so whichever writes second REGRESSES the done counts
+# -- observed thm done 2034 -> 1890. A `pgrep -f drain_all.sh` guard cannot work
+# here: it matches this script's own command line and always fires, which made
+# every pass abort with "published nothing". An exclusive lock on a file is the
+# reliable test.
+LOCK="$(mktemp -u /tmp/drain_all.XXXXXX.lock)"
+exec 9>"$LOCK"
+if ! flock -n 9; then
+  echo "another drain_all.sh holds $LOCK; refusing to run two drains"
+  exit 3
+fi
+echo "lock: $LOCK"
+
 requeue() {  # requeue <kind> <outfile>
   python3 - "$1" "$2" <<'PY'
 import json, sys
@@ -37,7 +51,13 @@ for name in src:
     if rec.get('status') != 'done':
         items[it] = {'status': 'pending', 'attempts': 0}
         todo.append(name)
-json.dump({'items': items}, open('state/pipeline.json', 'w'), indent=1)
+# Atomic write. A plain `json.dump` truncates the file first, so a concurrent
+# reader can see half-written state.
+import os as _os
+_tmp = 'state/pipeline.json.tmp'
+with open(_tmp, 'w', encoding='utf-8') as _f:
+    json.dump({'items': items}, _f, indent=1)
+_os.replace(_tmp, 'state/pipeline.json')
 open(out, 'w').write('\n'.join(todo) + ('\n' if todo else ''))
 print(f"{kind}: {len(todo)} queued", flush=True)
 PY

@@ -5686,3 +5686,42 @@ hours** to drain everything, before any repair tail. Publication is therefore
 2. fix generator classes that unblock many items at once — each of bugs 8–11 was worth
    tens to hundreds of bundles, far more than any per-chapter repair;
 3. accept that ~87 parked nodes and the Mathlib-drift proofs will never publish.
+
+## 8. Two concurrency bugs in my own drain harness
+
+Both were invisible in the logs and one silently destroyed work. Recording them because
+either would be easy to reintroduce.
+
+17. **Two concurrent drains REGRESSED the done counts.** A cleanup script
+    (`pkill -f upload_pipeline.py`) left 2 processes alive, so a second `drain_all.sh` was
+    running alongside the first. Each holds its own in-memory copy of `state/pipeline.json`
+    and rewrites the whole file, so whichever wrote last won: `thm` done went
+    **2034 → 1890** and `sol` **1953 → 1820**. Nothing errored; the plan simply got worse.
+    Two lessons: the state file is the single point of contention, and **a `kill` helper must
+    verify the kill** (`pgrep -c` afterwards, not just fire `pkill`) — `pkill -f` also matches
+    the helper's own command line, which is how the launcher got killed the first time.
+
+18. **A `pgrep -f drain_all.sh` single-instance guard always fires**, because it matches the
+    drain's *own* command line. Symptom was baffling: every pass logged
+    `published nothing; stopping` within seconds, and `--max-items` received the literal
+    string `drain_all.sh` (the guard's own message, parsed by `awk '{print $2}'`).
+    Fix: `flock -n` on a `mktemp -u` lockfile held on fd 9 for the whole run. Also made the
+    requeue write atomic (`write .tmp` + `os.replace`) — a plain `json.dump` truncates the
+    file before writing, so a concurrent reader can observe half-written state.
+
+Also widened `debug/park_name_clashes.py` to scan `state/published_bundles/` as well as the
+local tree: several chapters were published from older generator versions whose bundles carry
+more declarations than the local file, so a clash invisible locally is a guaranteed server
+`has already been declared`. That raised the parked set **87 → 203**.
+
+## 9. Measured platform position (2026-10-06)
+
+| layer | done | pending | parked |
+| :--- | ---: | ---: | ---: |
+| `def` | 489 / 686 | 197 | – |
+| `thm` | 2,035 / 9,533 | 7,365 | 133 |
+| `sol` | 1,954 / 9,533 | 7,579 | – |
+
+The platform holds **2,042 published problems** and ~997 definition jobs; `--sync` reconciles
+against those, so the local `pending` counts are the genuinely-new work. There are **0 exact
+duplicate Lean names** across all 9,533 nodes, so chapters sharing a namespace is safe.

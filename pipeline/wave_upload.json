@@ -26445,127 +26445,6 @@
     "timepiece"
    ]
   },
-  "BookProof_HermiteProductBasis_hermiteMvLp_mem_core": {
-   "name": "BookProof.HermiteProductBasis.hermiteMvLp_mem_core",
-   "chapter": "ChapterHermiteProductBasis",
-   "file": "Theorems/Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core.lean",
-   "title": "The Lean 4 theorem `hermiteMvLp_mem_core` in the `ChapterHermiteProductBasis` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteMvLp_mem_core` in the `ChapterHermiteProductBasis` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductBasis.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_derivative_hermiteZ": {
-   "name": "BookProof.HermiteProductCore.derivative_hermiteZ",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_derivative_hermiteZ.lean",
-   "title": "The Lean 4 theorem `derivative_hermiteZ` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `derivative_hermiteZ` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussInt_pderiv": {
-   "name": "BookProof.HermiteProductCore.gaussInt_pderiv",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_pderiv.lean",
-   "title": "The Lean 4 theorem `gaussInt_pderiv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussInt_pderiv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussInt_smul": {
-   "name": "BookProof.HermiteProductCore.gaussInt_smul",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_smul.lean",
-   "title": "The Lean 4 theorem `gaussInt_smul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussInt_smul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussInt_sum": {
-   "name": "BookProof.HermiteProductCore.gaussInt_sum",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_sum.lean",
-   "title": "The Lean 4 theorem `gaussInt_sum` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussInt_sum` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussMoment_succ": {
-   "name": "BookProof.HermiteProductCore.gaussMoment_succ",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussMoment_succ.lean",
-   "title": "The Lean 4 theorem `gaussMoment_succ` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussMoment_succ` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussWD_eq_sq": {
-   "name": "BookProof.HermiteProductCore.gaussWD_eq_sq",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussWD_eq_sq.lean",
-   "title": "The Lean 4 theorem `gaussWD_eq_sq` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussWD_eq_sq` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteMv_X_mul": {
-   "name": "BookProof.HermiteProductCore.hermiteMv_X_mul",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteMv_X_mul.lean",
-   "title": "The Lean 4 theorem `hermiteMv_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteMv_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_mul_X_mem_span_hermiteMv": {
-   "name": "BookProof.HermiteProductCore.mul_X_mem_span_hermiteMv",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_mul_X_mem_span_hermiteMv.lean",
-   "title": "The Lean 4 theorem `mul_X_mem_span_hermiteMv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `mul_X_mem_span_hermiteMv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_polyGaussCore_eq_hermiteSpan": {
-   "name": "BookProof.HermiteProductCore.polyGaussCore_eq_hermiteSpan",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_polyGaussCore_eq_hermiteSpan.lean",
-   "title": "The Lean 4 theorem `polyGaussCore_eq_hermiteSpan` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `polyGaussCore_eq_hermiteSpan` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_span_hermiteMv": {
-   "name": "BookProof.HermiteProductCore.span_hermiteMv",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_span_hermiteMv.lean",
-   "title": "The Lean 4 theorem `span_hermiteMv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `span_hermiteMv` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_KatoRellich_dense_range_add_relBounded": {
    "name": "BookProof.KatoRellich.dense_range_add_relBounded",
    "chapter": "ChapterKatoRellichRelative",
@@ -27941,28 +27820,6 @@
     "timepiece"
    ]
   },
-  "BookProof_ChapterContinuityUnitaryInfinite_shiftOp_apply": {
-   "name": "BookProof.ChapterContinuityUnitaryInfinite.shiftOp_apply",
-   "chapter": "ChapterContinuityUnitaryInfinite",
-   "file": "Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_shiftOp_apply.lean",
-   "title": "The Lean 4 theorem `shiftOp_apply` in the `ChapterContinuityUnitaryInfinite` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `shiftOp_apply` in the `ChapterContinuityUnitaryInfinite` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterContinuityUnitaryInfinite.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_apply": {
-   "name": "BookProof.ChapterContinuityUnitaryInfinite.velocityOp_apply",
-   "chapter": "ChapterContinuityUnitaryInfinite",
-   "file": "Theorems/Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityOp_apply.lean",
-   "title": "The Lean 4 theorem `velocityOp_apply` in the `ChapterContinuityUnitaryInfinite` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `velocityOp_apply` in the `ChapterContinuityUnitaryInfinite` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterContinuityUnitaryInfinite.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
   "BookProof_ChapterH6_generation_at_zero": {
    "name": "BookProof.ChapterH6.generation_at_zero",
    "chapter": "ChapterH6",
@@ -28410,182 +28267,6 @@
    "title": "The Lean 4 theorem `sirk_nested_orders_le` in the `ChapterH8` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `sirk_nested_orders_le` in the `ChapterH8` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterH8.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussInt_add": {
-   "name": "BookProof.HermiteProductCore.gaussInt_add",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_add.lean",
-   "title": "The Lean 4 theorem `gaussInt_add` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussInt_add` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussInt_monomial": {
-   "name": "BookProof.HermiteProductCore.gaussInt_monomial",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_monomial.lean",
-   "title": "The Lean 4 theorem `gaussInt_monomial` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussInt_monomial` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gaussWD_eq_prod": {
-   "name": "BookProof.HermiteProductCore.gaussWD_eq_prod",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussWD_eq_prod.lean",
-   "title": "The Lean 4 theorem `gaussWD_eq_prod` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gaussWD_eq_prod` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_gwFun_eq": {
-   "name": "BookProof.HermiteProductCore.gwFun_eq",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_gwFun_eq.lean",
-   "title": "The Lean 4 theorem `gwFun_eq` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `gwFun_eq` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteCx_X_mul": {
-   "name": "BookProof.HermiteProductCore.hermiteCx_X_mul",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteCx_X_mul.lean",
-   "title": "The Lean 4 theorem `hermiteCx_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteCx_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteCx_zero": {
-   "name": "BookProof.HermiteProductCore.hermiteCx_zero",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteCx_zero.lean",
-   "title": "The Lean 4 theorem `hermiteCx_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteCx_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteFactor_X_mul": {
-   "name": "BookProof.HermiteProductCore.hermiteFactor_X_mul",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteFactor_X_mul.lean",
-   "title": "The Lean 4 theorem `hermiteFactor_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteFactor_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteFactor_zero": {
-   "name": "BookProof.HermiteProductCore.hermiteFactor_zero",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteFactor_zero.lean",
-   "title": "The Lean 4 theorem `hermiteFactor_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteFactor_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteMv_erase": {
-   "name": "BookProof.HermiteProductCore.hermiteMv_erase",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteMv_erase.lean",
-   "title": "The Lean 4 theorem `hermiteMv_erase` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteMv_erase` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteMv_zero": {
-   "name": "BookProof.HermiteProductCore.hermiteMv_zero",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteMv_zero.lean",
-   "title": "The Lean 4 theorem `hermiteMv_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteMv_zero` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_hermiteZ_X_mul": {
-   "name": "BookProof.HermiteProductCore.hermiteZ_X_mul",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_hermiteZ_X_mul.lean",
-   "title": "The Lean 4 theorem `hermiteZ_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `hermiteZ_X_mul` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_integrable_gwFun": {
-   "name": "BookProof.HermiteProductCore.integrable_gwFun",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_integrable_gwFun.lean",
-   "title": "The Lean 4 theorem `integrable_gwFun` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `integrable_gwFun` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_integral_prod_coord": {
-   "name": "BookProof.HermiteProductCore.integral_prod_coord",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_integral_prod_coord.lean",
-   "title": "The Lean 4 theorem `integral_prod_coord` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `integral_prod_coord` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_norm_sq_eq_sum": {
-   "name": "BookProof.HermiteProductCore.norm_sq_eq_sum",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_norm_sq_eq_sum.lean",
-   "title": "The Lean 4 theorem `norm_sq_eq_sum` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `norm_sq_eq_sum` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_pgMap_apply": {
-   "name": "BookProof.HermiteProductCore.pgMap_apply",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_pgMap_apply.lean",
-   "title": "The Lean 4 theorem `pgMap_apply` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `pgMap_apply` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
-   "tags": [
-    "timepiece"
-   ]
-  },
-  "BookProof_HermiteProductCore_span_range_coreBasis": {
-   "name": "BookProof.HermiteProductCore.span_range_coreBasis",
-   "chapter": "ChapterHermiteProductCore",
-   "file": "Theorems/Thm_BookProof_HermiteProductCore_span_range_coreBasis.lean",
-   "title": "The Lean 4 theorem `span_range_coreBasis` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `span_range_coreBasis` in the `ChapterHermiteProductCore` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHermiteProductCore.lean",
    "tags": [
     "timepiece"
    ]
@@ -29999,18 +29680,6 @@
     "formalization"
    ]
   },
-  "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion": {
-   "name": "BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion",
-   "chapter": "ChapterComplexShiftCore",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion.lean",
-   "title": "closed_of_selfAdjointCriterion",
-   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.closed_of_selfAdjointCriterion` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterComplexShiftCore.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterComplexShiftCore.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
   "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core": {
    "name": "BookProof.NavierStokesFlow.CanonicalVector.canH_essentiallySelfAdjointOn_core",
    "chapter": "ChapterNavierStokesCanonicalVector",
@@ -30041,18 +29710,6 @@
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds.lean",
    "title": "essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
    "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesIkebeKato.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesIkebeKato.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom": {
-   "name": "BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom",
-   "chapter": "ChapterNavierStokesIkebeKato",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom.lean",
-   "title": "finiteModes_le_maxDom",
-   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesIkebeKato.lean`).",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesIkebeKato.lean",
    "tags": [
     "timepiece",
@@ -30204,54 +29861,6 @@
    "title": "The Lean 4 theorem `modeShift_shift_ne_prime` in the `ChapterNavierStokesFockManyMode` chapter of the timepiece formalization",
    "nl": "Formal statement of `BookProof.NavierStokesFlow.FockManyMode.modeShift_shift_ne'` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesFockManyMode.lean`).",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFockManyMode.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply": {
-   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
-   "chapter": "ChapterFriedrichsExtension",
-   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply.lean",
-   "title": "The Lean 4 theorem `friedrichsResolvent_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
-   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFriedrichsExtension.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsExtension.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_invShiftOperator_apply": {
-   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_apply",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply.lean",
-   "title": "The Lean 4 theorem `invShiftOperator_apply` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.invShiftOperator_apply` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn": {
-   "name": "BookProof.HashimotoShiftInvert.invShiftOperator_symmetricOn",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn.lean",
-   "title": "The Lean 4 theorem `invShiftOperator_symmetricOn` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.invShiftOperator_symmetricOn` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
-   "tags": [
-    "timepiece",
-    "formalization"
-   ]
-  },
-  "BookProof_HashimotoShiftInvert_preim_eq": {
-   "name": "BookProof.HashimotoShiftInvert.preim_eq",
-   "chapter": "ChapterHashimotoShiftInvert",
-   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_preim_eq.lean",
-   "title": "The Lean 4 theorem `preim_eq` in the `ChapterHashimotoShiftInvert` chapter of the timepiece formalization",
-   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.preim_eq` from the timepiece Lean 4 formalization (source chapter `BookProof/ChapterHashimotoShiftInvert.lean`).",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterHashimotoShiftInvert.lean",
    "tags": [
     "timepiece",
     "formalization"
@@ -66959,246 +66568,6 @@
     "theorems"
    ]
   },
-  "BookProof_EsaClosure_mem_opGraph": {
-   "name": "BookProof.EsaClosure.mem_opGraph",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_mem_opGraph.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_mem_opGraph.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 0,
-   "title": "`BookProof.EsaClosure.mem_opGraph` (T : D \u2192\u2097[\u2102] F) (v : D) : ((v : F), T v) \u2208 opGraph T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.mem_opGraph` (T : D \u2192\u2097[\u2102] F) (v : D) : ((v : F), T v) \u2208 opGraph T\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.mem_opGraph`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_opGraph_le_clGraph": {
-   "name": "BookProof.EsaClosure.opGraph_le_clGraph",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_opGraph_le_clGraph.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_opGraph_le_clGraph.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 1,
-   "title": "`BookProof.EsaClosure.opGraph_le_clGraph` (T : D \u2192\u2097[\u2102] F) : opGraph T \u2264 clGraph T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.opGraph_le_clGraph` (T : D \u2192\u2097[\u2102] F) : opGraph T \u2264 clGraph T\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.opGraph_le_clGraph`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_mem_clGraph_of_mem_opGraph": {
-   "name": "BookProof.EsaClosure.mem_clGraph_of_mem_opGraph",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_mem_clGraph_of_mem_opGraph.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_mem_clGraph_of_mem_opGraph.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 0,
-   "title": "`BookProof.EsaClosure.mem_clGraph_of_mem_opGraph` {T : D \u2192\u2097[\u2102] F} {p : F \u00d7 F} (hp : p \u2208 opGraph T) : p \u2208 clGraph T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.mem_clGraph_of_mem_opGraph` {T : D \u2192\u2097[\u2102] F} {p : F \u00d7 F} (hp : p \u2208 opGraph T) : p \u2208 clGraph T\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.mem_clGraph_of_mem_opGraph`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clGraph_isClosed": {
-   "name": "BookProof.EsaClosure.clGraph_isClosed",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clGraph_isClosed.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clGraph_isClosed.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 1,
-   "title": "`BookProof.EsaClosure.clGraph_isClosed` (T : D \u2192\u2097[\u2102] F) : IsClosed ((clGraph T : Submodule \u2102 (F \u00d7 F)) : Set (F \u00d7 F))",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clGraph_isClosed` (T : D \u2192\u2097[\u2102] F) : IsClosed ((clGraph T : Submodule \u2102 (F \u00d7 F)) : Set (F \u00d7 F))\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clGraph_isClosed`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clGraph_inner_pair": {
-   "name": "BookProof.EsaClosure.clGraph_inner_pair",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clGraph_inner_pair.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clGraph_inner_pair.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 3,
-   "title": "`BookProof.EsaClosure.clGraph_inner_pair` {T : D \u2192\u2097[\u2102] F} (hsym : SymmetricOn D T) {p q : F \u00d7 F} (hp : p \u2208 clGraph T) (hq : q \u2208 clGraph T) : (inner \u2102 p.2 q.1 : \u2102) = inner \u2102 p.1 q.2",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clGraph_inner_pair` {T : D \u2192\u2097[\u2102] F} (hsym : SymmetricOn D T) {p q : F \u00d7 F} (hp : p \u2208 clGraph T) (hq : q \u2208 clGraph T) : (inner \u2102 p.2 q.1 : \u2102) = inner \u2102 p.1 q.2\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clGraph_inner_pair`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_coe_mem_clDom": {
-   "name": "BookProof.EsaClosure.coe_mem_clDom",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_coe_mem_clDom.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_coe_mem_clDom.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 1,
-   "title": "`BookProof.EsaClosure.coe_mem_clDom` (T : D \u2192\u2097[\u2102] F) (v : D) : (v : F) \u2208 clDom T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.coe_mem_clDom` (T : D \u2192\u2097[\u2102] F) (v : D) : (v : F) \u2208 clDom T\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.coe_mem_clDom`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clExt_extends": {
-   "name": "BookProof.EsaClosure.clExt_extends",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clExt_extends.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clExt_extends.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 1,
-   "title": "`BookProof.EsaClosure.clExt_extends` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (v : D) : clExt T hdense hsym \u27e8(v : F), coe_mem_clDom T v\u27e9 = T v",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clExt_extends` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (v : D) : clExt T hdense hsym \u27e8(v : F), coe_mem_clDom T v\u27e9 = T v\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clExt_extends`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clExt_symmetricOn": {
-   "name": "BookProof.EsaClosure.clExt_symmetricOn",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clExt_symmetricOn.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clExt_symmetricOn.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 1,
-   "title": "`BookProof.EsaClosure.clExt_symmetricOn` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) : SymmetricOn (clDom T) (clExt T hdense hsym)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clExt_symmetricOn` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) : SymmetricOn (clDom T) (clExt T hdense hsym)\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clExt_symmetricOn`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_mem_clGraph_of_tendsto": {
-   "name": "BookProof.EsaClosure.mem_clGraph_of_tendsto",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_mem_clGraph_of_tendsto.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_mem_clGraph_of_tendsto.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 4,
-   "title": "`BookProof.EsaClosure.mem_clGraph_of_tendsto` {T : D \u2192\u2097[\u2102] F} {\u03b9 : Type*} {l : Filter \u03b9} [l.NeBot] {x : \u03b9 \u2192 clDom T} {p q : F} (hx : Tendsto (fun n => ((x n : F))) l (nhds p)) (hA ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.mem_clGraph_of_tendsto` {T : D \u2192\u2097[\u2102] F} {\u03b9 : Type*} {l : Filter \u03b9} [l.NeBot] {x : \u03b9 \u2192 clDom T} {p q : F} (hx : Tendsto (fun n => ((x n : F))) l (nhds p)) (hA : Tendsto (fun n => clFun T (x n)) l (nhds q)) : (p, q) \u2208 clGraph T\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.mem_clGraph_of_tendsto`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clRange_isClosed": {
-   "name": "BookProof.EsaClosure.clRange_isClosed",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clRange_isClosed.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clRange_isClosed.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 37,
-   "title": "`BookProof.EsaClosure.clRange_isClosed` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : IsClosed ((cshiftRange (clExt T hdense hsym)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clRange_isClosed` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) {\u03b3 : \u2102} (h\u03b3 : \u03b3.im \u2260 0) : IsClosed ((cshiftRange (clExt T hdense hsym) \u03b3 : Submodule \u2102 F) : Set F)\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clRange_isClosed`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clRange_orthogonal_eq_bot": {
-   "name": "BookProof.EsaClosure.clRange_orthogonal_eq_bot",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clRange_orthogonal_eq_bot.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clRange_orthogonal_eq_bot.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 13,
-   "title": "`BookProof.EsaClosure.clRange_orthogonal_eq_bot` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : (cshiftRange (clExt T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clRange_orthogonal_eq_bot` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : (cshiftRange (clExt T hdense hsym) Complex.I)\u15ee = \u22a5\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clRange_orthogonal_eq_bot`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clShift_surjective": {
-   "name": "BookProof.EsaClosure.clShift_surjective",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clShift_surjective.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clShift_surjective.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 10,
-   "title": "`BookProof.EsaClosure.clShift_surjective` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : Function.Surjective (cshiftM",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clShift_surjective` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : Function.Surjective (cshiftMap (clExt T hdense hsym) Complex.I)\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clShift_surjective`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_clExt_selfAdjointCriterion": {
-   "name": "BookProof.EsaClosure.clExt_selfAdjointCriterion",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_clExt_selfAdjointCriterion.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_clExt_selfAdjointCriterion.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 36,
-   "title": "`BookProof.EsaClosure.clExt_selfAdjointCriterion` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) (w u : F) (hw : \u2200 v : ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.clExt_selfAdjointCriterion` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) (w u : F) (hw : \u2200 v : clDom T, (inner \u2102 (clExt T hdense hsym v) w : \u2102) = inner \u2102 (v : F) u) : \u2203 h : w \u2208 clDom T, clExt T hdense hsym \u27e8w, h\u27e9 = u\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.clExt_selfAdjointCriterion`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa": {
-   "name": "BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 4,
-   "title": "`BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : \u2203 (Dom : S",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa` (T : D \u2192\u2097[\u2102] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) : \u2203 (Dom : Submodule \u2102 F) (A : Dom \u2192\u2097[\u2102] F), IsSelfAdjointExtension T A\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.exists_isSelfAdjointExtension_of_esa`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_selfAdjointExtension_eq_adjoint": {
-   "name": "BookProof.EsaClosure.selfAdjointExtension_eq_adjoint",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_selfAdjointExtension_eq_adjoint.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_selfAdjointExtension_eq_adjoint.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 35,
-   "title": "`BookProof.EsaClosure.selfAdjointExtension_eq_adjoint` {Dom : Submodule \u2102 F} {T : D \u2192\u2097[\u2102] F} {A : Dom \u2192\u2097[\u2102] F} (hesa : EssentiallySelfAdjointOn D T) (hA : IsSelfAdjointExtension T ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.selfAdjointExtension_eq_adjoint` {Dom : Submodule \u2102 F} {T : D \u2192\u2097[\u2102] F} {A : Dom \u2192\u2097[\u2102] F} (hesa : EssentiallySelfAdjointOn D T) (hA : IsSelfAdjointExtension T A) (w u : F) : ((\u2200 v : D, (inner \u2102 (T v) w : \u2102) = inner \u2102 (v : F) u) \u2194 \u2203 h : w \u2208 Dom, A \u27e8w, h\u27e9 = u)\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.selfAdjointExtension_eq_adjoint`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa": {
-   "name": "BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa",
-   "chapter": "ChapterEsaClosureCore",
-   "file": "Theorems/Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa.lean",
-   "sol": "Solutions/Sol_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa.lean",
-   "ns": "BookProof.EsaClosure",
-   "plen": 15,
-   "title": "`BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa` {Dom\u2081 Dom\u2082 : Submodule \u2102 F} {T : D \u2192\u2097[\u2102] F} {A\u2081 : Dom\u2081 \u2192\u2097[\u2102] F} {A\u2082 : Dom\u2082 \u2192\u2097[\u2102] F} (hesa : EssentiallySelfAdjointOn D T",
-   "nl": "Prove the following Lean 4 theorem from `ChapterEsaClosureCore`.\n\n`BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa` {Dom\u2081 Dom\u2082 : Submodule \u2102 F} {T : D \u2192\u2097[\u2102] F} {A\u2081 : Dom\u2081 \u2192\u2097[\u2102] F} {A\u2082 : Dom\u2082 \u2192\u2097[\u2102] F} (hesa : EssentiallySelfAdjointOn D T) (h\u2081 : IsSelfAdjointExtension T A\u2081) (h\u2082 : IsSelfAdjointExtension T A\u2082) : Dom\u2081 = Dom\u2082 \u2227 \u2200 (x : F) (h : x \u2208 Dom\u2081) (h' : x \u2208 Dom\u2082), A\u2081 \u27e8x, h\u27e9 = A\u2082 \u27e8x, h'\u27e9\n\nFormalization note: Lean 4 identifier `BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_EsaClosure_norm_add_I_eq_norm_sub_I": {
    "name": "BookProof.EsaClosure.norm_add_I_eq_norm_sub_I",
    "chapter": "ChapterEsaClosureCore",
@@ -93404,21 +92773,6 @@
     "theorems"
    ]
   },
-  "BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range": {
-   "name": "BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range",
-   "chapter": "ChapterNavierStokesDeficiency",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range.lean",
-   "ns": "BookProof.NavierStokesFlow.LpNat",
-   "plen": 8,
-   "title": "`BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range` {f g : L2N} {N : \u2115} (hf : \u2200 n, N \u2264 n \u2192 (f : \u2115 \u2192 \u2102) n = 0) : (inner \u2102 f g : \u2102) = \u2211 n \u2208 Finset.range N, starRingEnd \u2102 ((f : \u2115 \u2192 ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range` {f g : L2N} {N : \u2115} (hf : \u2200 n, N \u2264 n \u2192 (f : \u2115 \u2192 \u2102) n = 0) : (inner \u2102 f g : \u2102) = \u2211 n \u2208 Finset.range N, starRingEnd \u2102 ((f : \u2115 \u2192 \u2102) n) * (g : \u2115 \u2192 \u2102) n\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_pos": {
    "name": "BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_pos",
    "chapter": "ChapterNavierStokesDeficiency",
@@ -93443,36 +92797,6 @@
    "plen": 3,
    "title": "`BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge` (n : \u2115) : (2 : \u211d) * 4 ^ n \u2264 jacobiWeight n",
    "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge` (n : \u2115) : (2 : \u211d) * 4 ^ n \u2264 jacobiWeight n\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.JacobiDeficiency.jacobiWeight_ge`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian": {
-   "name": "BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian",
-   "chapter": "ChapterNavierStokesDeficiency",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian.lean",
-   "ns": "BookProof.NavierStokesFlow.JacobiDeficiency",
-   "plen": 8,
-   "title": "`BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian` (x y : \u2115 \u2192 \u2102) (N : \u2115) : \u2211 n \u2208 Finset.range (N + 1), (starRingEnd \u2102 (jacobiFun x n) * y n - starRingEnd \u2102 (x n) * jaco",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian` (x y : \u2115 \u2192 \u2102) (N : \u2115) : \u2211 n \u2208 Finset.range (N + 1), (starRingEnd \u2102 (jacobiFun x n) * y n - starRingEnd \u2102 (x n) * jacobiFun y n) = (jacobiWeight N : \u2102) * (starRingEnd \u2102 (x (N + 1)) * y N - starRingEnd \u2102 (x N) * y (N + 1))\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric": {
-   "name": "BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric",
-   "chapter": "ChapterNavierStokesDeficiency",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric.lean",
-   "ns": "BookProof.NavierStokesFlow.JacobiDeficiency",
-   "plen": 18,
-   "title": "`BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric` (x y : lpFiniteModes \u2115) : (inner \u2102 ((jacobiOp x : lpFiniteModes \u2115) : L2N) ((y : lpFiniteModes \u2115) : L2N) : \u2102) = inne",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesDeficiency`.\n\n`BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric` (x y : lpFiniteModes \u2115) : (inner \u2102 ((jacobiOp x : lpFiniteModes \u2115) : L2N) ((y : lpFiniteModes \u2115) : L2N) : \u2102) = inner \u2102 ((x : lpFiniteModes \u2115) : L2N) ((jacobiOp y : lpFiniteModes \u2115) : L2N)\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -97073,21 +96397,6 @@
    "plen": 1,
    "title": "`BookProof.NavierStokesGaugeY2.setYZero_nsSymbol2` (nu : \u2102) (i : Fin 3) : setYZero (nsSymbol2 nu i) = nsSymbolPoint nu i",
    "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesGaugeY2`.\n\n`BookProof.NavierStokesGaugeY2.setYZero_nsSymbol2` (nu : \u2102) (i : Fin 3) : setYZero (nsSymbol2 nu i) = nsSymbolPoint nu i\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesGaugeY2.setYZero_nsSymbol2`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step": {
-   "name": "BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step",
-   "chapter": "ChapterNavierStokesHermiteFarisLavine",
-   "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step.lean",
-   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step.lean",
-   "ns": "BookProof.NavierStokesFlow.HermiteFarisLavine",
-   "plen": 3,
-   "title": "`BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step` (n : \u2115) : oscSymbol \u03ba (n + 2) = oscSymbol \u03ba n + 4 * \u03ba",
-   "nl": "Prove the following Lean 4 theorem from `ChapterNavierStokesHermiteFarisLavine`.\n\n`BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step` (n : \u2115) : oscSymbol \u03ba (n + 2) = oscSymbol \u03ba n + 4 * \u03ba\n\nFormalization note: Lean 4 identifier `BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -131624,231 +130933,6 @@
     "theorems"
    ]
   },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_mem_skewAdjoint": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_mem_skewAdjoint",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_mem_skewAdjoint.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_mem_skewAdjoint.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_mem_skewAdjoint` (n : \u211d) : T.yosidaGen n \u2208 skewAdjoint (H \u2192L[\u2102] H)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_mem_skewAdjoint` (n : \u211d) : T.yosidaGen n \u2208 skewAdjoint (H \u2192L[\u2102] H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_mem_skewAdjoint`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_smul_yosidaGen_mem_skewAdjoint": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.smul_yosidaGen_mem_skewAdjoint",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_smul_yosidaGen_mem_skewAdjoint.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_smul_yosidaGen_mem_skewAdjoint.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 3,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.smul_yosidaGen_mem_skewAdjoint` (n t : \u211d) : t \u2022 T.yosidaGen n \u2208 skewAdjoint (H \u2192L[\u2102] H)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.smul_yosidaGen_mem_skewAdjoint` (n t : \u211d) : t \u2022 T.yosidaGen n \u2208 skewAdjoint (H \u2192L[\u2102] H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.smul_yosidaGen_mem_skewAdjoint`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_mem_unitary": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_mem_unitary",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_mem_unitary.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_mem_unitary.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_mem_unitary` (n t : \u211d) : T.approxU n t \u2208 unitary (H \u2192L[\u2102] H)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_mem_unitary` (n t : \u211d) : T.approxU n t \u2208 unitary (H \u2192L[\u2102] H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_mem_unitary`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_add": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_add",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_add.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_add.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_add` (n s t : \u211d) : T.approxU n (s + t) = T.approxU n s * T.approxU n t",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_add` (n s t : \u211d) : T.approxU n (s + t) = T.approxU n s * T.approxU n t\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_add`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 9,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply` (n t : \u211d) (x : H) : \u2016T.approxU n t x\u2016 = \u2016x\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply` (n t : \u211d) (x : H) : \u2016T.approxU n t x\u2016 = \u2016x\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_gen_commute": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_gen_commute",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_gen_commute.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_gen_commute.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_gen_commute` (n m : \u211d) : Commute (T.yosidaGen n) (T.yosidaGen m)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_gen_commute` (n m : \u211d) : Commute (T.yosidaGen n) (T.yosidaGen m)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_gen_commute`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_gen": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_gen",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_gen.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_gen.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_gen` (n m s : \u211d) : Commute (T.yosidaGen n) (T.approxU m s)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_gen` (n m s : \u211d) : Commute (T.yosidaGen n) (T.approxU m s)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_gen`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute` (n m s t : \u211d) : Commute (T.approxU n s) (T.approxU m t)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute` (n m s t : \u211d) : Commute (T.approxU n s) (T.approxU m t)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU` (n t : \u211d) : HasDerivAt (fun s : \u211d => T.approxU n s) (T.approxU n t * T.yosidaGen n) t",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU` (n t : \u211d) : HasDerivAt (fun s : \u211d => T.approxU n s) (T.approxU n t * T.yosidaGen n) t\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply` (n t : \u211d) (x : H) : HasDerivAt (fun s : \u211d => T.approxU n s x) ((T.approxU n t * T.yosidaGen n) x) t",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply` (n t : \u211d) (x : H) : HasDerivAt (fun s : \u211d => T.approxU n s x) ((T.approxU n t * T.yosidaGen n) x) t\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le",
-   "chapter": "ChapterStoneEvolution",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 51,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le` (n m t : \u211d) (x : H) : \u2016T.approxU n t x - T.approxU m t x\u2016 \u2264 |t| * \u2016T.yosida n x - T.yosida m x\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneEvolution`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le` (n m t : \u211d) (x : H) : \u2016T.approxU n t x - T.approxU m t x\u2016 \u2264 |t| * \u2016T.yosida n x - T.yosida m x\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_commute_resCLM": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_commute_resCLM",
-   "chapter": "ChapterStoneGenerator",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_commute_resCLM.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_commute_resCLM.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 7,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_commute_resCLM` (n l : \u211d) : Commute (T.yosidaGen n) (T.resCLM l)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGenerator`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_commute_resCLM` (n l : \u211d) : Commute (T.yosidaGen n) (T.resCLM l)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosidaGen_commute_resCLM`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_resCLM": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_resCLM",
-   "chapter": "ChapterStoneGenerator",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_resCLM.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_resCLM.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_resCLM` (n t l : \u211d) : Commute (T.approxU n t) (T.resCLM l)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGenerator`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_resCLM` (n t l : \u211d) : Commute (T.approxU n t) (T.resCLM l)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_commute_resCLM`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM",
-   "chapter": "ChapterStoneGenerator",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 11,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM` (t l : \u211d) (y : H) : T.stoneU t (T.resCLM l y) = T.resCLM l (T.stoneU t y)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGenerator`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM` (t l : \u211d) (y : H) : T.stoneU t (T.resCLM l y) = T.resCLM l (T.stoneU t y)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain",
-   "chapter": "ChapterStoneGenerator",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 8,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain` (t : \u211d) (x : T.domain) : T.stoneU t (x : H) \u2208 T.domain",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGenerator`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain` (t : \u211d) (x : T.domain) : T.stoneU t (x : H) \u2208 T.domain\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op": {
    "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_op",
    "chapter": "ChapterStoneGenerator",
@@ -131924,126 +131008,6 @@
     "theorems"
    ]
   },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_sub": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_sub",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_sub.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_sub.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 26,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_sub` {l m : \u211d} (hl : l \u2260 0) (hm : m \u2260 0) (y : H) : T.resCLM l y - T.resCLM m y = (((l : \u2102) - (m : \u2102)) * Complex.I) \u2022 T.res",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_sub` {l m : \u211d} (hl : l \u2260 0) (hm : m \u2260 0) (y : H) : T.resCLM l y - T.resCLM m y = (((l : \u2102) - (m : \u2102)) * Complex.I) \u2022 T.resCLM l (T.resCLM m y)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_sub`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 0,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply` (n : \u211d) (y : H) : T.yosida n y = ((n : \u2102) ^ 2) \u2022 T.resCLM (-n) y + (((n : \u2102) ^ 3) * Complex.I) \u2022 T.resCLM n (T.r",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply` (n : \u211d) (y : H) : T.yosida n y = ((n : \u2102) ^ 2) \u2022 T.resCLM (-n) y + (((n : \u2102) ^ 3) * Complex.I) \u2022 T.resCLM n (T.resCLM (-n) y)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_eq_op": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_eq_op",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_eq_op.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_eq_op.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 6,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_eq_op` {n : \u211d} (hn : n \u2260 0) (y : H) : T.yosida n y = ((n : \u2102) ^ 2) \u2022 T.op (T.res n (T.resCLM (-n) y))",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_eq_op` {n : \u211d} (hn : n \u2260 0) (y : H) : T.yosida n y = ((n : \u2102) ^ 2) \u2022 T.op (T.res n (T.resCLM (-n) y))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_eq_op`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_inner": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_inner",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_inner.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_inner.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 25,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_inner` (n : \u211d) (y z : H) : \u27ea T.yosida n y, z \u27eb_\u2102 = \u27ea y, T.yosida n z \u27eb_\u2102",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_inner` (n : \u211d) (y z : H) : \u27ea T.yosida n y, z \u27eb_\u2102 = \u27ea y, T.yosida n z \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_inner`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_isSelfAdjoint": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_isSelfAdjoint",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_isSelfAdjoint.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_isSelfAdjoint.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_isSelfAdjoint` (n : \u211d) : IsSelfAdjoint (T.yosida n)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_isSelfAdjoint` (n : \u211d) : IsSelfAdjoint (T.yosida n)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_isSelfAdjoint`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_commute": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_commute",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_commute.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_commute.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 6,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_commute` (l m : \u211d) : Commute (T.resCLM l) (T.resCLM m)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_commute` (l m : \u211d) : Commute (T.resCLM l) (T.resCLM m)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_commute`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_commute": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_commute",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_commute.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_commute.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 9,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_commute` (n m : \u211d) : Commute (T.yosida n) (T.yosida m)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_commute` (n m : \u211d) : Commute (T.yosida n) (T.yosida m)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_commute`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 0,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply` (n : \u211d) (y : H) : T.jn n y = ((n : \u2102) ^ 2) \u2022 T.resCLM n (T.resCLM (-n) y)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply` (n : \u211d) (y : H) : T.jn n y = ((n : \u2102) ^ 2) \u2022 T.resCLM n (T.resCLM (-n) y)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le'": {
    "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le'",
    "chapter": "ChapterStoneGroup",
@@ -132053,96 +131017,6 @@
    "plen": 1,
    "title": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le'",
    "nl": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le'",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_apply_le": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_apply_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_apply_le.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 16,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le` (n : \u211d) (y : H) : \u2016T.jn n y\u2016 \u2264 \u2016y\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le` (n : \u211d) (y : H) : \u2016T.jn n y\u2016 \u2264 \u2016y\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_apply_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply_domain": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply_domain",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply_domain.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply_domain.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 25,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : T.jn n (x : H) = (x : H) - T.resCLM n (T.op x) + ((n : \u2102) * Complex.I) ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : T.jn n (x : H) = (x : H) - T.resCLM n (T.op x) + ((n : \u2102) * Complex.I) \u2022 T.resCLM n (T.resCLM (-n) (T.op x))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_apply_domain`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_sub_domain": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_sub_domain",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_sub_domain.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_sub_domain.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 26,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_sub_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : \u2016T.jn n (x : H) - (x : H)\u2016 \u2264 2 * \u2016T.op x\u2016 / |n| := by have habs : 0 ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_sub_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : \u2016T.jn n (x : H) - (x : H)\u2016 \u2264 2 * \u2016T.op x\u2016 / |n| := by have habs : 0 < |n| := abs_pos.mpr hn have hid : T.jn n (x : H) - (x : H) = -T.resCLM n (T.op x) + ((n : \u2102) * Complex.I) \u2022 T.resCLM n (T.resCLM (-n) (T.op x))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_jn_sub_domain`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_tendsto": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_tendsto",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_tendsto.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_tendsto.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 42,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_tendsto` (y : H) : Tendsto (fun k : \u2115 => T.jn ((k : \u211d) + 1) y) atTop (\ud835\udcdd y)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_tendsto` (y : H) : Tendsto (fun k : \u2115 => T.jn ((k : \u211d) + 1) y) atTop (\ud835\udcdd y)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.jn_tendsto`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply_domain": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply_domain",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply_domain.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply_domain.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 10,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : T.yosida n (x : H) = T.jn n (T.op x)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply_domain` {n : \u211d} (hn : n \u2260 0) (x : T.domain) : T.yosida n (x : H) = T.jn n (T.op x)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply_domain`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto",
-   "chapter": "ChapterStoneGroup",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 5,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto` (x : T.domain) : Tendsto (fun k : \u2115 => T.yosida ((k : \u211d) + 1) (x : H)) atTop (\ud835\udcdd (T.op x))",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneGroup`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto` (x : T.domain) : Tendsto (fun k : \u2115 => T.yosida ((k : \u211d) + 1) (x : H)) atTop (\ud835\udcdd (T.op x))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -132164,51 +131038,6 @@
     "theorems"
    ]
   },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map` (t : \u211d) (x y : H) : \u27ea G.U t x, G.U t y \u27eb_\u2102 = \u27ea x, y \u27eb_\u2102",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map` (t : \u211d) (x y : H) : \u27ea G.U t x, G.U t y \u27eb_\u2102 = \u27ea x, y \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply` (s t : \u211d) (x : H) : G.U s (G.U t x) = G.U (s + t) x",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply` (s t : \u211d) (x : H) : G.U s (G.U t x) = G.U (s + t) x\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_surjective": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.surjective",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_surjective.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_surjective.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 4,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.surjective` (t : \u211d) : Function.Surjective (G.U t)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.surjective` (t : \u211d) : Function.Surjective (G.U t)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.surjective`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_left_shift": {
    "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_left_shift",
    "chapter": "ChapterStoneMeasurable",
@@ -132218,306 +131047,6 @@
    "plen": 5,
    "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_left_shift` (s t : \u211d) (x y : H) : \u27ea y, G.U s (G.U t x) \u27eb_\u2102 = \u27ea G.U (-s) y, G.U t x \u27eb_\u2102",
    "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_left_shift` (s t : \u211d) (x y : H) : \u27ea y, G.U s (G.U t x) \u27eb_\u2102 = \u27ea G.U (-s) y, G.U t x \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_left_shift`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_avgVec": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_avgVec",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_avgVec.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_avgVec.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 5,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_avgVec` [CompleteSpace H] (x : H) (a : \u211d) (y : H) : \u27ea y, G.avgVec x a \u27eb_\u2102 = \u222b t in (0 : \u211d)..a, \u27ea y, G.U t x \u27eb_\u2102",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_avgVec` [CompleteSpace H] (x : H) (a : \u211d) (y : H) : \u27ea y, G.avgVec x a \u27eb_\u2102 = \u222b t in (0 : \u211d)..a, \u27ea y, G.U t x \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_avgVec`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_adjoint": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_adjoint",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_adjoint.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_adjoint.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 4,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_adjoint` (s : \u211d) (y v : H) : \u27ea y, G.U s v \u27eb_\u2102 = \u27ea G.U (-s) y, v \u27eb_\u2102",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_adjoint` (s : \u211d) (y v : H) : \u27ea y, G.U s v \u27eb_\u2102 = \u27ea G.U (-s) y, v \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_adjoint`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_apply_avgVec": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_apply_avgVec",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_apply_avgVec.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_apply_avgVec.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 9,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_apply_avgVec` [CompleteSpace H] (s a : \u211d) (x y : H) : \u27ea y, G.U s (G.avgVec x a) \u27eb_\u2102 = \u222b t in s..(s + a), \u27ea y, G.U",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_apply_avgVec` [CompleteSpace H] (s a : \u211d) (x y : H) : \u27ea y, G.U s (G.avgVec x a) \u27eb_\u2102 = \u222b t in s..(s + a), \u27ea y, G.U t x \u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_apply_avgVec`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_inner_apply_avgVec_sub_le": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_inner_apply_avgVec_sub_le",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_inner_apply_avgVec_sub_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_inner_apply_avgVec_sub_le.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 28,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_inner_apply_avgVec_sub_le` [CompleteSpace H] (s a : \u211d) (x y : H) : \u2016\u27ea y, G.U s (G.avgVec x a) - G.avgVec x a \u27eb_\u2102\u2016 ",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_inner_apply_avgVec_sub_le` [CompleteSpace H] (s a : \u211d) (x y : H) : \u2016\u27ea y, G.U s (G.avgVec x a) - G.avgVec x a \u27eb_\u2102\u2016 \u2264 2 * |s| * \u2016x\u2016 * \u2016y\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_inner_apply_avgVec_sub_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_apply_avgVec_sub_le": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_apply_avgVec_sub_le",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_apply_avgVec_sub_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_apply_avgVec_sub_le.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_apply_avgVec_sub_le` [CompleteSpace H] (s a : \u211d) (x : H) : \u2016G.U s (G.avgVec x a) - G.avgVec x a\u2016 \u2264 2 * |s| * \u2016x\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_apply_avgVec_sub_le` [CompleteSpace H] (s a : \u211d) (x : H) : \u2016G.U s (G.avgVec x a) - G.avgVec x a\u2016 \u2264 2 * |s| * \u2016x\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.norm_apply_avgVec_sub_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_avgVec": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_avgVec",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_avgVec.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_avgVec.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 5,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_avgVec` [CompleteSpace H] (x : H) (a : \u211d) : Tendsto (fun s : \u211d => G.U s (G.avgVec x a)) (\ud835\udcdd 0) (\ud835\udcdd (G.avgVe",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_avgVec` [CompleteSpace H] (x : H) (a : \u211d) : Tendsto (fun s : \u211d => G.U s (G.avgVec x a)) (\ud835\udcdd 0) (\ud835\udcdd (G.avgVec x a))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_avgVec`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_mem_contSubmodule_iff": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.mem_contSubmodule_iff",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_mem_contSubmodule_iff.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_mem_contSubmodule_iff.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 0,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.mem_contSubmodule_iff` (v : H) : v \u2208 G.contSubmodule \u2194 Tendsto (fun s : \u211d => G.U s v) (\ud835\udcdd 0) (\ud835\udcdd v)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.mem_contSubmodule_iff` (v : H) : v \u2208 G.contSubmodule \u2194 Tendsto (fun s : \u211d => G.U s v) (\ud835\udcdd 0) (\ud835\udcdd v)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.mem_contSubmodule_iff`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_le_contSubmodule": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_le_contSubmodule",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_le_contSubmodule.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_le_contSubmodule.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 3,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_le_contSubmodule` [CompleteSpace H] : G.avgSpan \u2264 G.contSubmodule",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_le_contSubmodule` [CompleteSpace H] : G.avgSpan \u2264 G.contSubmodule\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_le_contSubmodule`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_locallyIntegrable_of_bounded": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.locallyIntegrable_of_bounded",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_locallyIntegrable_of_bounded.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_locallyIntegrable_of_bounded.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 4,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.locallyIntegrable_of_bounded` {f : \u211d \u2192 \u211d} (hm : Measurable f) {M : \u211d} (hb : \u2200 t, \u2016f t\u2016 \u2264 M) : LocallyIntegrable f volum",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.locallyIntegrable_of_bounded` {f : \u211d \u2192 \u211d} (hm : Measurable f) {M : \u211d} (hb : \u2200 t, \u2016f t\u2016 \u2264 M) : LocallyIntegrable f volume\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.locallyIntegrable_of_bounded`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ae_inner_eq_zero": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ae_inner_eq_zero",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ae_inner_eq_zero.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ae_inner_eq_zero.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 27,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ae_inner_eq_zero` (z x : H) (h : \u2200 a : \u211d, (\u222b t in (0:\u211d)..a, \u27ea z, G.U t x \u27eb_\u2102) = 0) : \u2200\u1d50 t : \u211d, \u27ea z, G.U t x \u27eb_\u2102 = 0",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ae_inner_eq_zero` (z x : H) (h : \u2200 a : \u211d, (\u222b t in (0:\u211d)..a, \u27ea z, G.U t x \u27eb_\u2102) = 0) : \u2200\u1d50 t : \u211d, \u27ea z, G.U t x \u27eb_\u2102 = 0\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ae_inner_eq_zero`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_orthogonal_eq_bot": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_orthogonal_eq_bot",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_orthogonal_eq_bot.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_orthogonal_eq_bot.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 24,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_orthogonal_eq_bot` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] : G.avgSpan\u15ee = \u22a5",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_orthogonal_eq_bot` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] : G.avgSpan\u15ee = \u22a5\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.avgSpan_orthogonal_eq_bot`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_dense_avgSpan": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.dense_avgSpan",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_dense_avgSpan.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_dense_avgSpan.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 5,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.dense_avgSpan` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] : Dense (G.avgSpan : Set H)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.dense_avgSpan` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] : Dense (G.avgSpan : Set H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.dense_avgSpan`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_zero": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_zero.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_zero.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 16,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) : Tendsto (fun s : \u211d => G.U s x) (\ud835\udcdd 0",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) : Tendsto (fun s : \u211d => G.U s x) (\ud835\udcdd 0) (\ud835\udcdd x)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.tendsto_apply_zero`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_continuous_apply": {
-   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.continuous_apply",
-   "chapter": "ChapterStoneMeasurable",
-   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_continuous_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_continuous_apply.lean",
-   "ns": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup",
-   "plen": 12,
-   "title": "`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.continuous_apply` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) : Continuous fun t : \u211d => G.U t x",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneMeasurable`.\n\n`BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.continuous_apply` [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (x : H) : Continuous fun t : \u211d => G.U t x\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.continuous_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift` {l : \u211d} (hl : l \u2260 0) (x : T.domain) : T.res l (T.shift l x) = x",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift` {l : \u211d} (hl : l \u2260 0) (x : T.domain) : T.res l (T.shift l x) = x\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 3,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res` {l : \u211d} (hl : l \u2260 0) (y : H) : T.op (T.res l y) = y + ((l : \u2102) * Complex.I) \u2022 ((T.res l y : T.domain) : H)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res` {l : \u211d} (hl : l \u2260 0) (y : H) : T.op (T.res l y) = y + ((l : \u2102) * Complex.I) \u2022 ((T.res l y : T.domain) : H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le` (l : \u211d) (y : H) : \u2016T.resCLM l y\u2016 \u2264 (1 / |l|) * \u2016y\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le` (l : \u211d) (y : H) : \u2016T.resCLM l y\u2016 \u2264 (1 / |l|) * \u2016y\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 16,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op` {l : \u211d} (hl : l \u2260 0) (x : T.domain) : ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H))",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op` {l : \u211d} (hl : l \u2260 0) (x : T.domain) : ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_op`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 15,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res` {l : \u211d} (hl : l \u2260 0) (y z : H) : \u27ea((T.res l y : T.domain) : H), z\u27eb_\u2102 = \u27eay, ((T.res (-l) z : T.domain) : H)\u27eb_\u2102",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res` {l : \u211d} (hl : l \u2260 0) (y z : H) : \u27ea((T.res l y : T.domain) : H), z\u27eb_\u2102 = \u27eay, ((T.res (-l) z : T.domain) : H)\u27eb_\u2102\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm",
-   "chapter": "ChapterStoneResolvent",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 20,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm` {l m : \u211d} (hl : l \u2260 0) (hm : m \u2260 0) (y : H) : ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H) = ((T.res m ((",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneResolvent`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm` {l m : \u211d} (hl : l \u2260 0) (hm : m \u2260 0) (y : H) : ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H) = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -132629,51 +131158,6 @@
     "theorems"
    ]
   },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 0,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply` (t : \u211d) (x : H) : \u2016T.stoneU t x\u2016 = \u2016x\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply` (t : \u211d) (x : H) : \u2016T.stoneU t x\u2016 = \u2016x\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_add": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_add",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_add.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_add.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 34,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_add` (s t : \u211d) : T.stoneU (s + t) = T.stoneU s * T.stoneU t",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_add` (s t : \u211d) : T.stoneU (s + t) = T.stoneU s * T.stoneU t\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_add`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU` (s t : \u211d) (x : H) : T.stoneU s (T.stoneU t x) = T.stoneU (s + t) x",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU` (s t : \u211d) (x : H) : T.stoneU s (T.stoneU t x) = T.stoneU (s + t) x\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_surjective": {
    "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_surjective",
    "chapter": "ChapterStoneUnitary",
@@ -132698,96 +131182,6 @@
    "plen": 22,
    "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_unitary` (t : \u211d) : T.stoneU t \u2208 unitary (H \u2192L[\u2102] H)",
    "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_unitary` (t : \u211d) : T.stoneU t \u2208 unitary (H \u2192L[\u2102] H)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_unitary`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 9,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le` (k : \u211d) (t : \u211d) (x : T.domain) : \u2016T.stoneU t (x : H) - T.approxU k t (x : H)\u2016 \u2264 |t| * \u2016T.op x - T.",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le` (k : \u211d) (t : \u211d) (x : T.domain) : \u2016T.stoneU t (x : H) - T.approxU k t (x : H)\u2016 \u2264 |t| * \u2016T.op x - T.yosida k (x : H)\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 2,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain` (t : \u211d) (x : T.domain) : \u2016T.stoneU t (x : H) - (x : H)\u2016 \u2264 |t| * \u2016T.op x\u2016",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain` (t : \u211d) (x : T.domain) : \u2016T.stoneU t (x : H) - (x : H)\u2016 \u2264 |t| * \u2016T.op x\u2016\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_tendsto_stoneU_zero": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.tendsto_stoneU_zero",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_tendsto_stoneU_zero.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_tendsto_stoneU_zero.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 25,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.tendsto_stoneU_zero` (x : H) : Tendsto (fun t : \u211d => T.stoneU t x) (\ud835\udcdd 0) (\ud835\udcdd x)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.tendsto_stoneU_zero` (x : H) : Tendsto (fun t : \u211d => T.stoneU t x) (\ud835\udcdd 0) (\ud835\udcdd x)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.tendsto_stoneU_zero`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuousAt_stoneU_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuousAt_stoneU_apply",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuousAt_stoneU_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuousAt_stoneU_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 14,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuousAt_stoneU_apply` (x : H) (t\u2080 : \u211d) : ContinuousAt (fun t : \u211d => T.stoneU t x) t\u2080",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuousAt_stoneU_apply` (x : H) (t\u2080 : \u211d) : ContinuousAt (fun t : \u211d => T.stoneU t x) t\u2080\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuousAt_stoneU_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuous_stoneU_apply": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuous_stoneU_apply",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuous_stoneU_apply.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuous_stoneU_apply.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuous_stoneU_apply` (x : H) : Continuous (fun t : \u211d => T.stoneU t x)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuous_stoneU_apply` (x : H) : Continuous (fun t : \u211d => T.stoneU t x)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.continuous_stoneU_apply`.",
-   "source": "",
-   "tags": [
-    "timepiece",
-    "theorems"
-   ]
-  },
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_measurable_inner_stoneU": {
-   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.measurable_inner_stoneU",
-   "chapter": "ChapterStoneUnitary",
-   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_measurable_inner_stoneU.lean",
-   "sol": "Solutions/Sol_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_measurable_inner_stoneU.lean",
-   "ns": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint",
-   "plen": 1,
-   "title": "`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.measurable_inner_stoneU` (x y : H) : Measurable (fun t : \u211d => \u27ea y, T.stoneU t x \u27eb_\u2102)",
-   "nl": "Prove the following Lean 4 theorem from `ChapterStoneUnitary`.\n\n`BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.measurable_inner_stoneU` (x y : H) : Measurable (fun t : \u211d => \u27ea y, T.stoneU t x \u27eb_\u2102)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.measurable_inner_stoneU`.",
    "source": "",
    "tags": [
     "timepiece",
@@ -143742,17 +142136,11 @@
   "BookProof_NavierStokesFlow_IkebeKato_summable_normSq",
   "BookProof_QuadraticRotation_orthonormal_rotHermiteLp",
   "BookProof_QuadraticRotation_span_rotHermiteLp",
-  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
-  "BookProof_HashimotoShiftInvert_invShiftOperator_apply",
-  "BookProof_HashimotoShiftInvert_invShiftOperator_symmetricOn",
-  "BookProof_HashimotoShiftInvert_preim_eq",
   "BookProof_ChapterH8_krylov_li_of_le",
-  "BookProof_HashimotoShiftInvert_closed_of_selfAdjointCriterion",
   "BookProof_NavierStokesFlow_CanonicalVector_canH_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded",
   "BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne_prime",
   "BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds",
-  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom",
   "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm",
   "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_commForm_bound",
   "BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_relative_bound",
@@ -145261,11 +143649,6 @@
   "BookProof_HashimotoShiftInvert_diagCLM_symmetric",
   "BookProof_HashimotoShiftInvert_norm_single_one",
   "BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one",
-  "BookProof_HermiteProductBasis_hermiteMvLp_mem_core",
-  "BookProof_HermiteProductCore_derivative_hermiteZ",
-  "BookProof_HermiteProductCore_gaussInt_smul",
-  "BookProof_HermiteProductCore_gaussMoment_succ",
-  "BookProof_HermiteProductCore_gaussWD_eq_sq",
   "BookProof_KatoRellich_norm_le_of_relBound",
   "BookProof_KatoRellich_symmetricOn_add",
   "BookProof_NavierStokesFlow_DifferentialL2_Intertwined_add",
@@ -145381,25 +143764,19 @@
   "BookProof_NavierStokesFlow_nsFlow_norm_preserving",
   "BookProof_FriedrichsExtension_FormDom_dom_le_range",
   "BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_unbounded_example",
-  "BookProof_HermiteProductCore_hermiteMv_X_mul",
-  "BookProof_HermiteProductCore_gaussInt_sum",
   "BookProof_NavierStokesFlow_DifferentialL2_intertwined_mom",
   "BookProof_NavierStokesFlow_DifferentialL2_intertwined_pos",
   "BookProof_NavierStokesFlow_DifferentialL2_momOp_apply_eq_differential",
   "BookProof_NavierStokesFlow_nsFlow_noBlowup",
   "BookProof_FriedrichsExtension_friedrichs_extension_exists",
-  "BookProof_HermiteProductCore_mul_X_mem_span_hermiteMv",
-  "BookProof_HermiteProductCore_gaussInt_pderiv",
   "BookProof_NavierStokesFlow_DifferentialL2_intertwined_fieldV",
   "BookProof_FriedrichsExtension_friedrichs_extension_of_semibounded_below",
   "BookProof_FriedrichsExtension_friedrichs_hashimoto_selects",
   "BookProof_FriedrichsExtension_friedrichs_hypothesis_holds",
   "BookProof_FriedrichsExtension_unbounded_friedrichs_example",
   "BookProof_FriedrichsExtension_weyl_friedrichs_extension_unconditional",
-  "BookProof_HermiteProductCore_span_hermiteMv",
   "BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH",
   "BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs",
-  "BookProof_HermiteProductCore_polyGaussCore_eq_hermiteSpan",
   "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core",
   "BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_not_bounded",
   "BookProof_NavierStokesFlow_DifferentialL2_nsQuadraticDiffH_essentiallySelfAdjointOn_core",
@@ -145434,8 +143811,6 @@
   "BookProof_ScalaronEdge_starobinskyEdge_quadForm",
   "BookProof_ChapterParityMajoranaQuant_J_unitary_prime",
   "BookProof_HermiteRelative_coreOp_apply_prime",
-  "BookProof_ChapterContinuityUnitaryInfinite_shiftOp_apply",
-  "BookProof_ChapterContinuityUnitaryInfinite_velocityOp_apply",
   "BookProof_ChapterH6_generation_at_zero",
   "BookProof_ChapterH6_generation_semigroup",
   "BookProof_ChapterH6_generation_single_exponential",
@@ -145457,14 +143832,6 @@
   "BookProof_ChapterH8_sirk_compression_block_le",
   "BookProof_ChapterH8_sirk_compression_block_op",
   "BookProof_ChapterH8_sirk_krylov_tower",
-  "BookProof_HermiteProductCore_gwFun_eq",
-  "BookProof_HermiteProductCore_hermiteCx_zero",
-  "BookProof_HermiteProductCore_hermiteMv_erase",
-  "BookProof_HermiteProductCore_hermiteZ_X_mul",
-  "BookProof_HermiteProductCore_integral_prod_coord",
-  "BookProof_HermiteProductCore_norm_sq_eq_sum",
-  "BookProof_HermiteProductCore_pgMap_apply",
-  "BookProof_HermiteProductCore_span_range_coreBasis",
   "BookProof_HyperbolicQuadratic_momPoly_apply_prime",
   "BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded_prime",
   "BookProof_Qg3DGaugeEsa_coreRepPoly_equiv",
@@ -145527,10 +143894,6 @@
   "BookProof_ChapterH8_sirk_band_refinement_rational",
   "BookProof_ChapterH8_sirk_compression_submatrix",
   "BookProof_ChapterH8_sirk_compression_submatrix_le",
-  "BookProof_HermiteProductCore_integrable_gwFun",
-  "BookProof_HermiteProductCore_hermiteFactor_zero",
-  "BookProof_HermiteProductCore_hermiteCx_X_mul",
-  "BookProof_HermiteProductCore_gaussWD_eq_prod",
   "BookProof_Qg3DGaugeEsa_pgLp_qgSignedPoly",
   "BookProof_Qg3DGaugeEsa_sum_torsionVec_X",
   "BookProof_QgOuterFockCoreFL_CoreData_coreRange_denseRange",
@@ -145560,10 +143923,6 @@
   "BookProof_ChapterH8_compress_pow_comp_intertwine",
   "BookProof_ChapterH8_sirk_band_refinement_poly",
   "BookProof_ChapterH8_sirk_band_refinement_proj",
-  "BookProof_HermiteProductCore_gaussInt_add",
-  "BookProof_HermiteProductCore_hermiteMv_zero",
-  "BookProof_HermiteProductCore_hermiteFactor_X_mul",
-  "BookProof_HermiteProductCore_gaussInt_monomial",
   "BookProof_Qg3DGaugeEsa_qgFqQ_quadratic_eq",
   "BookProof_QgOuterFockCoreFL_CoreData_ext_core",
   "BookProof_QgOuterFockCoreFL_CoreData_norm_extCLM_le",
@@ -148063,22 +146422,6 @@
   "BookProof_ChapterEntropyTemperature_attentionEntropy_antitoneOn",
   "BookProof_ChapterEntropyTemperature_attentionEntropy_le_at_zero",
   "BookProof_ChapterEntropyTemperature_attentionEntropy_le_log_card",
-  "BookProof_EsaClosure_mem_opGraph",
-  "BookProof_EsaClosure_opGraph_le_clGraph",
-  "BookProof_EsaClosure_mem_clGraph_of_mem_opGraph",
-  "BookProof_EsaClosure_clGraph_isClosed",
-  "BookProof_EsaClosure_clGraph_inner_pair",
-  "BookProof_EsaClosure_coe_mem_clDom",
-  "BookProof_EsaClosure_clExt_extends",
-  "BookProof_EsaClosure_clExt_symmetricOn",
-  "BookProof_EsaClosure_mem_clGraph_of_tendsto",
-  "BookProof_EsaClosure_clRange_isClosed",
-  "BookProof_EsaClosure_clRange_orthogonal_eq_bot",
-  "BookProof_EsaClosure_clShift_surjective",
-  "BookProof_EsaClosure_clExt_selfAdjointCriterion",
-  "BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa",
-  "BookProof_EsaClosure_selfAdjointExtension_eq_adjoint",
-  "BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa",
   "BookProof_EsaClosure_norm_add_I_eq_norm_sub_I",
   "BookProof_EsaClosure_exists_cayley_unitary",
   "BookProof_EsaClosure_exists_selfAdjointExtension_and_cayley_of_esa",
@@ -149826,11 +148169,8 @@
   "BookProof_NavierStokesFlow_nsFlow_energy_conserved",
   "BookProof_NavierStokesFlow_LagrangianNS_flowUnitary_group",
   "BookProof_NavierStokesFlow_LagrangianNS_cauchy_existsUnique",
-  "BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range",
   "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_pos",
   "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_ge",
-  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian",
-  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric",
   "BookProof_NavierStokesFlow_JacobiDeficiency_defState_ne_zero",
   "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiFun_defFun",
   "BookProof_NavierStokesFlow_JacobiDeficiency_defState_deficiency",
@@ -150071,7 +148411,6 @@
   "BookProof_NavierStokesGaugeY2_genY2_nsSymbol2",
   "BookProof_NavierStokesGaugeY2_genX_nsSymbol2",
   "BookProof_NavierStokesGaugeY2_setYZero_nsSymbol2",
-  "BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step",
   "BookProof_NavierStokesFlow_HermiteFarisLavine_amp_le_symbol",
   "BookProof_NavierStokesFlow_HermiteFarisLavine_tsum_ampSeq_sq_le",
   "BookProof_NavierStokesFlow_HermiteFarisLavine_norm_crossA",
@@ -152374,66 +150713,14 @@
   "BookProof_StoneEigenflow_stoneFlow_apply_core_eigenvector",
   "BookProof_StoneEigenflow_exists_diagonal_stone_flow",
   "BookProof_ChapterStoneResolvent_hasDerivAt_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_mem_skewAdjoint",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_smul_yosidaGen_mem_skewAdjoint",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_mem_unitary",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_add",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_gen_commute",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_gen",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosidaGen_commute_resCLM",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_commute_resCLM",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_smul_le",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_zero",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_sub",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_eq_op",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_inner",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_isSelfAdjoint",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_commute",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_commute",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le'",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_apply_le",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_apply_domain",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_jn_sub_domain",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_jn_tendsto",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_apply_domain",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto",
   "BookProof_ChapterStoneMeasurable_norm_le_of_inner_self_bound",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_surjective",
   "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_left_shift",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_avgVec",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_adjoint",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_apply_avgVec",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_inner_apply_avgVec_sub_le",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_norm_apply_avgVec_sub_le",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_avgVec",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_mem_contSubmodule_iff",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_le_contSubmodule",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_locallyIntegrable_of_bounded",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ae_inner_eq_zero",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_avgSpan_orthogonal_eq_bot",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_dense_avgSpan",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_zero",
-  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_continuous_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_op",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm",
   "BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt",
   "BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt",
   "BookProof_ChapterStoneSeparable_stone_exists_unique_group",
@@ -152441,17 +150728,8 @@
   "BookProof_ChapterStoneSeparable_mulSA_position_unbounded",
   "BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup",
   "BookProof_ChapterStoneSeparable_stoneU_mulSA",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_add",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_surjective",
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_unitary",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_tendsto_stoneU_zero",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuousAt_stoneU_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_continuous_stoneU_apply",
-  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_measurable_inner_stoneU",
   "BookProof_HermiteStrichartzQG_inner_hermiteLp_eq_zero_iff",
   "BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore",
   "BookProof_HermiteStrichartzQG_hermiteCore_dense",

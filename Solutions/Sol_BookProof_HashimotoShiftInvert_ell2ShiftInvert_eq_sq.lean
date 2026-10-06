@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one
-open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -19,12 +18,12 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution (x : ℓ²(ℕ, ℂ)) :
-    ell2ShiftInvert x = diagCLM sqrtInvCoeff_abs_le_one (diagCLM sqrtInvCoeff_abs_le_one x) :=
-  _one x) := by
-    apply lp.ext
-    funext n
-    rw [ell2ShiftInvert, diagCLM_apply, diagCLM_apply, diagCLM_apply, ← mul_assoc]
-    congr 1
-    rw [← Complex.ofReal_mul]
-    norm_cast
-    rw [sqrtInvCoeff, Real.mul_self_sqrt (invCoeff_po
+    ell2ShiftInvert x = diagCLM sqrtInvCoeff_abs_le_one (diagCLM sqrtInvCoeff_abs_le_one x) := by
+
+  apply lp.ext
+  funext n
+  rw [ell2ShiftInvert, diagCLM_apply, diagCLM_apply, diagCLM_apply, ← mul_assoc]
+  congr 1
+  rw [← Complex.ofReal_mul]
+  norm_cast
+  rw [sqrtInvCoeff, Real.mul_self_sqrt (invCoeff_pos n).le]

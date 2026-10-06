@@ -1,8 +1,8 @@
 -- Generated from ChapterQgOuterFockCoreFL.lean — solution of BookProof.QgOuterFockCoreFL.CoreData.coreN_gcSeq
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_coreN_apply
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_coreN_apply
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

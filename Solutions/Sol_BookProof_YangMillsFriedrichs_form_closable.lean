@@ -103,4 +103,9 @@ theorem solution {H : D →ₗ[ℂ] F} (hsym : SymmetricOn D H)
     intro m
     rw [Function.comp_apply, hform]
     simp
-  have hle : formNormSq H (x n) - ε / 2 ≤
+  have hle : formNormSq H (x n) - ε / 2 ≤ 0 := by
+    refine ge_of_tendsto hlim ?_
+    filter_upwards [Filter.eventually_ge_atTop (max N₀ N₁)] with m hm
+    exact hkey m hm
+  rw [Real.dist_eq, sub_zero, abs_of_nonneg hnn]
+  linarith

@@ -7,7 +7,6 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
-open scoped lp
 open BookProof.HermiteGalerkin
 open BookProof.QgOuterFockFL
 open BookProof.HashimotoShiftInvert

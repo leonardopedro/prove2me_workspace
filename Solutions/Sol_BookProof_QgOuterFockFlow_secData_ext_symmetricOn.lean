@@ -3,11 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
+open BookProof.QgOuterFockFlow
 
 
 
 
 open Filter Topology
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato

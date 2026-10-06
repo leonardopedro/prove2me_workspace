@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
-import Theorems.Thm_BookProof_YangMillsFriedrichs_friedrichs_extension_of_semibounded
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
+import Theorems.Thm_BookProof_YangMillsFriedrichs_friedrichs_extension_of_semibounded
 open BookProof.YangMillsFriedrichs
 
 
@@ -29,6 +29,5 @@ theorem solution {D : Submodule ℂ F} {n m : ℕ}
     (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
       IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
-   (D.subtype.comp (pi i)))
-      (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
-      ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
+  friedrichs_extension_of_semibounded (weylOp pi Bf) friedrichs hdense
+      (weylOpDom_symmetricOn hpi hB) (weylOpDom_quadForm_nonneg hpi hB)

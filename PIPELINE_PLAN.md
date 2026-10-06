@@ -5761,3 +5761,42 @@ They catch different things and none subsumes the others:
 | shared-namespace audit | chapters declaring into one `BookProof.*` namespace | 95 chapters / 18 namespaces |
 
 All three need namespace-aware matching; a plain substring or frequency check misses every case.
+
+## 11. Where the drain actually stands, and what is left
+
+`def 509/686 · thm 1968/9,332 · sol 1885/9,332` — **14,986 items** not done or parked.
+
+Defects fixed across these passes, all from reading the first server error:
+thirteen generator bugs (§3 §6 §7 §10), two concurrency bugs in my own drain harness (§8),
+one duplicate-reconciler and one name-clash pruner, and 4 stale sketches re-extracted.
+
+What the remaining failures are, by class:
+
+- **waiting, not broken** — `theorem dependency not proved yet` (20 of 33 def failures) and
+  `waiting on unpublished def bundle(s)`. These clear as the thm/sol layers advance; the
+  alternating drain exists precisely for this.
+- **stale sketches** — `ChapterH8` still reports misaligned spans after re-extraction, so a few
+  node offsets precede the `open … in` they need and the stub cannot see `adjoint`. Per-chapter,
+  not systemic; `ensure_sketch(force=True)` fixes most such chapters (it fixed 4 of 5 here) but
+  not all, which suggests the *extractor* mis-handles some declaration shapes rather than the
+  cache simply being old. Worth a dedicated look.
+- **genuine Mathlib drift** — `timepiece331` pins its own Mathlib; the platform's differs, so
+  some copied proofs cannot compile there at all (`map_pi_eq_stdGaussian` is a function on the
+  platform, so `rw [...]` is `Invalid simp theorem`). Needs a per-proof rewrite, or nothing.
+- **unfixable** — 2 parked nodes, plus any name that a published Def bundle already provides.
+
+### Throughput is the binding constraint
+
+~20 publishes/hour at `--parallel 14`, no rate limiting across ~1,000 submissions. 14,986 items
+is therefore **~750 hours** of wall clock. Nothing is blocked; the work is simply serialised by
+the server's compiler. Two honest conclusions:
+
+1. Raising `--parallel` further is the only throughput lever left, and it is bounded by the
+   5-attempts-per-item budget: a 429 would convert a slow item into a dead one.
+2. The remaining per-chapter repair tail (~9 failures per pass, each a distinct chapter) will
+   not be cleared inside any session. The generator-class fixes were worth orders of magnitude
+   more than individual repairs — bugs 8–11 and 19 between them rescued well over 1,000 items.
+
+Recommendation: leave `drain_all.sh` running unattended and revisit only when the done counts
+have moved substantially. Repairing individual chapters is lower value than letting the drain
+work the waiting backlog.

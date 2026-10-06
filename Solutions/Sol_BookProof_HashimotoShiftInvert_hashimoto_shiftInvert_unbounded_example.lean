@@ -6,8 +6,14 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2UnboundedExample_isShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded
-open scoped lp
 open BookProof.HashimotoShiftInvert
+
+
+
+
+open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
+open BookProof.HermiteGalerkin
+open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

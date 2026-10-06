@@ -2,11 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
-import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_norm_single_one
+import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 import Theorems.Thm_ell2Basis_apply
 import Theorems.Thm_ell2ShiftInvert_injective
-open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

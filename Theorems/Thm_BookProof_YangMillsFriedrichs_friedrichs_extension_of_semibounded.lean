@@ -1,4 +1,5 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — theorem BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
@@ -6,6 +7,13 @@ open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+
+
+open BookProof.FarisLavine
+
+
+
 
 theorem BookProof.YangMillsFriedrichs.friedrichs_extension_of_semibounded {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (friedrichs : ∀ (D' : Submodule ℂ F) (H' : D' →ₗ[ℂ] F), Dense (D' : Set F) →

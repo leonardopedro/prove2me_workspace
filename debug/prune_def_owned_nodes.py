@@ -40,7 +40,15 @@ THEOREM = re.compile(r"(?m)^theorem\s+([\w.]+)")
 def def_provided():
     """Fully-qualified names declared by any local Def bundle, namespace-aware."""
     out = {}
-    for f in glob.glob(os.path.join(WS, "Definitions", "Def_Chapter*.lean")):
+    # Scan the PUBLISHED bundle cache too, not just the local tree. Several
+    # chapters were published from older generator versions, and the platform
+    # compiles a stub against what is PUBLISHED: `Def_ChapterComplexShiftCore`
+    # as published declares `closed_of_selfAdjointCriterion`, while the current
+    # local bundle no longer does. A local-only scan therefore keeps the stub,
+    # which the platform then rejects as `has already been declared`.
+    files = glob.glob(os.path.join(WS, "Definitions", "Def_Chapter*.lean"))
+    files += glob.glob(os.path.join(WS, "state", "published_bundles", "Def_*.lean"))
+    for f in files:
         ns = []
         for ln in open(f, encoding="utf-8", errors="ignore"):
             m = re.match(r"^namespace\s+([\w.]+)", ln)

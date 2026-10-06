@@ -1,4 +1,11 @@
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 
@@ -123,7 +130,8 @@ variable (d : CoreData F)
 /-- The comparison operator restricted to the core. -/
 def coreN : d.C₀ →ₗ[ℂ] F := d.C.op.comp (Submodule.inclusion d.gc.le)
 
-
+@[simp] theorem coreN_apply (p : d.C₀) :
+    d.coreN p = d.C.op ⟨(p : F), d.gc.le p.2⟩ := rfl
 
 /-- The shift `N + 1` restricted to the core. -/
 def coreShift : d.C₀ →ₗ[ℂ] F := (shiftOp d.C).comp (Submodule.inclusion d.gc.le)

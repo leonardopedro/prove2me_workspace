@@ -13,6 +13,7 @@ open BookProof.FarisLavine
 
 
 
-theorem BookProof.YangMillsFriedrichs.weylOp_apply {T : D →ₗ[ℂ] D}
-    (hT : SymmetricOn D (D.subtype.comp T)) (x : D) :
-    (inner ℂ (x : F) ((T (T x) : D) : F) : ℂ) = ((‖((T x : D) : F)‖ ^ 2 : ℝ) : ℂ) := by sorry
+theorem BookProof.YangMillsFriedrichs.weylOp_apply {n m : ℕ} (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) (x : D) :
+    weylOp pi Bf x
+      = ((1 / 2 : ℝ) : ℂ)
+        • ((∑ i, ((pi i (pi i x) : D) : F)) + ∑ a, ((Bf a (Bf a x) : D) : F)) := by sorry

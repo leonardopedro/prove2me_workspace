@@ -4,6 +4,15 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Theorems.Thm_BookProof_ChapterH9_krylov_bestApprox_tendsto_zero
 open BookProof.YangMillsFriedrichs
 
+
+
+
+open BookProof.FarisLavine
+
+
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]

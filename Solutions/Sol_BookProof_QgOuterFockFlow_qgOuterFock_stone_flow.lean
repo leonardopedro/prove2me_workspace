@@ -5,11 +5,14 @@ import Theorems.Thm_BookProof_QgOuterFockFlow_secN_dom_dense
 import Theorems.Thm_BookProof_QgOuterFockFlow_secData_ext_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+open BookProof.QgOuterFockFlow
 
 
 
 
 open Filter Topology
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato

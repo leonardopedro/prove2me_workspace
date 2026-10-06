@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 
+
+
+
+open BookProof.FarisLavine
+
+
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
@@ -13,4 +22,4 @@ theorem solution {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
       ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H' A)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D H)
     (hpos : ∀ x : D, 0 ≤ quadForm H x) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H A := (hdense : Dense (D : Set F)) (hs
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension H A := friedrichs D H hdense hsym hpos

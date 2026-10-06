@@ -22,7 +22,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 set_option maxHeartbeats 1000000 in
 theorem solution :
     IsPositiveSelfAdjointExtension ell2ExampleMatrix ell2UnboundedExample :=
-  Example :=
-    invShiftOperator_isPositiveSelfAdjointExtension ell2ShiftInvert ell2ShiftInvert_injective 1
+  invShiftOperator_isPositiveSelfAdjointExtension ell2ShiftInvert ell2ShiftInvert_injective 1
       ell2ShiftInvert_isSelfAdjoint ell2ShiftInvert_le_one finiteModeDomain_le_range
-      ell2ExampleMatrix (fun _
+      ell2ExampleMatrix (fun _ => rfl)

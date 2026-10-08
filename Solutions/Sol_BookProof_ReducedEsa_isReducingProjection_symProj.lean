@@ -25,8 +25,6 @@ set_option maxHeartbeats 1000000 in
 theorem solution (hU2 : ∀ x, U (U x) = x)
     (hUi : ∀ x y : F, (inner ℂ (U x) (U y) : ℂ) = inner ℂ x y) :
     IsReducingProjection (symProj U) where
-  idem x :=
-  where
     idem x := by
       simp only [symProj_apply, map_smul, map_add, hU2]
       rw [smul_add, smul_smul]

@@ -1928,6 +1928,68 @@ the 4 corrupted bundles.
   chapter** (`../timepiece331/BookProof/<Chapter>.lean`), not from the
   local bundle.
 
+### 2.21-H. Session 2026-10-08 (late) — wave 5: ambiguous + syntax classes repaired
+
+**A. The 201 own-thm-done FAIL sols, classified by first error** (the new
+400-char verdicts make the classes reliable):
+
+| n | class | action & result |
+| ---: | :--- | :--- |
+| 74 | unknown-ident | fixer rounds 3–4 (§2.21-G): 20 fixed, rest content-gap-blocked |
+| 63 | object-file | sibling statement-olean gap (recompute withholds; queue statement build) |
+| 18 | unsolved-goals | proof-level hand work |
+| **17** | **Ambiguous** | **16 fixed this wave, 1 residual** |
+| **11** | **syntax/generator span** | **11/11 fixed this wave** |
+| 15 | type-mismatch / instance / misc | proof-level, later |
+
+**B. Ambiguous fixes (16/17).** Compiled each sol to get Lean's own
+"Possible interpretations", then qualified the bare name with the FQ
+BookProof name (regex `(?<![\w.])name(?!...)`, header comments protected
+by the lookbehind):
+- 13× `ChapterA3l_*`: `swap` collided with `Matrix.swap` →
+  `BookProof.ChapterA3l.swap`;
+- 2× `BrstUnboundedLeakage`: `truncGen` (BrstLeakage vs
+  BrstUnboundedLeakage) → FQ own-ns;
+- `SqSumFarisLavine`: `sqSumPoly` (QgOuterFock vs SqSum) → FQ;
+- `QuantumGravity3DGauge_qgKappa_indefinite`: `qgKappaElliptic` (root vs
+  ns) → FQ.  NOTE: that stub's formal_statement is
+  `(j : Fin 84) : 0 ≤ qgKappaElliptic j` (a statement/name mix-up from
+  generation, but the thm is already DONE on the platform) — the sol must
+  match the STUB, not the source; rebuilt as
+  `norm_num [BookProof.QuantumGravity3DGauge.qgKappaElliptic]`.
+- Residual: `SqSumFarisLavine_commForm_eq_im` — parses, then `unsolved
+  goals` where the goal shows `QgHermiteOscillator.harmPoly` on one side
+  and `GaussCoreQuadBounds.harmPoly` on the other (only GaussCore declares
+  `harmP/harmPoly`; the LHS unfolds to a namespace we could not locate in
+  the bundles — proof-level, joins the 18 unsolved-goals backlog).
+
+**C. Syntax/generator-span fixes (11/11).** Five shapes, all repaired and
+compiler-verified:
+1. dangling trailing `omit [...] in` after a complete proof (5 sols) —
+   dropped the trailing line;
+2. duplicated structure-instance header `idem x :=` + `where` (2
+   ReducedEsa sols) — deleted the 2 stray lines;
+3. duplicated statement fragment (Friedrichs `→ₗ[ℂ] F)… := by`,
+   Schrodinger `)) ((n : ℝ) + 1)…`) — kept one conclusion + `by`;
+4. **truncated mid-proof** (Schrodinger `cutoff_energy_core`, then two
+   more found at recheck): complete the tail from the SOURCE chapter —
+   match the source line by the truncated prefix (take the LAST match —
+   the FIRST-match splice duplicated bullets and broke Friedrichs once),
+   append to end-of-theorem, drop any trailing `/-- … -/` docstring;
+5. total garbage (Qg3D `torsionOps_symmetricOn`: a `def` header, `% 4,
+   by omega⟩))`, a truncated `theorem torsionOps_symmetri`) — rebuilt:
+   preamble + `theorem solution` from the STUB statement + source proof.
+   Where stub statement ≠ source (qgKappa_indefinite), STUB wins.
+   Friedrichs + Schrodinger then failed `unsolved goals` from mixed 2/4/6
+   indentation after partial splices — final fix was rebuilding the whole
+   theorem section verbatim from source lines 471–527 / 125–140 with the
+   name swapped to `solution` (both now **ok**).
+
+**Wave-5 result: 27/28 rechecked ok** (25 in fix5 + 2 rebuilt in fix7),
+1 residual.  Session-wide sol repairs to fresh-ok: 20 (fixer 3+4) + 27 =
+**47**.  Chunks: t31 +31 (0 failed); t32 running with the recomputed ready
+set.  `git log`: `0d1a5b6e` pushed earlier this session.
+
 ---
 
 ## 1. CURRENT TASK — upstream-def publication wave + pending thm/sol backlog

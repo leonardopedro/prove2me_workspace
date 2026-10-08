@@ -13,9 +13,9 @@ open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3k
 
 set_option maxHeartbeats 1000000 in
 theorem solution (A B : Matrix (Fin 4) (Fin 4) ℂ) :
-    swap * (A ⊗ₖ B) = (B ⊗ₖ A) * swap := by
+    BookProof.ChapterA3l.swap * (A ⊗ₖ B) = (B ⊗ₖ A) * BookProof.ChapterA3l.swap := by
 
-  ext ⟨ i, j ⟩ ⟨ k, l ⟩ ; simp only [swap, mul_apply, of_apply, kroneckerMap_apply, ite_mul,
+  ext ⟨ i, j ⟩ ⟨ k, l ⟩ ; simp only [BookProof.ChapterA3l.swap, mul_apply, of_apply, kroneckerMap_apply, ite_mul,
       one_mul, zero_mul, mul_ite, mul_one, mul_zero];
   rw [ ← Finset.sum_filter ] ; rw [ ← Finset.sum_filter ] ;
   rw [ show ( Finset.univ.filter fun a : Fin 4 × Fin 4 => i = a.2 ∧ j = a.1 ) = { ( j, i ) } from

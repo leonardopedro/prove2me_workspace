@@ -21,7 +21,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-def qg3DHamiltonian (Φ : CoreRep 84 D) : D →ₗ[ℂ] L2d 84 :=
-   % 4, by omega⟩))
-  
-  theorem torsionOps_symmetri
+theorem solution (Φ : CoreRep 84 D) (m : Fin 64) :
+    SymmetricOn D (D.subtype.comp (torsionOps Φ m)) :=
+  Φ.symmetricOn_op (mulOp_polySym (realCoeff_torsionPoly _ _ _))

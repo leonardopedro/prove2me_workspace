@@ -21,5 +21,3 @@ theorem solution (B : Matrix Y X 𝕜)
     ∑ x, ∑ y, pJoint B x y = 1 := by
 
   exact hB
-
-omit [DecidableEq X] in

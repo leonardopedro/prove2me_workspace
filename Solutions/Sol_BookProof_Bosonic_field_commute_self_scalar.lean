@@ -23,5 +23,3 @@ theorem solution (hJ : ∀ v w : V, ⟪J v, w⟫ = -⟪v, J w⟫) (v : V) :
     algebraMap ℂ R (Complex.I * (⟪v, J v⟫ : ℂ)) = 0 := by
 
   rw [symplectic_self hJ v]; simp
-
-omit [IsScalarTower ℝ ℂ R] [StarModule ℂ R] in

@@ -182,4 +182,4 @@ theorem solution
   have hfinal4 : (4 : ℝ) * (C ^ 2 / R ^ 2 * (∫ x, ‖u x‖ ^ 2)) =
       4 * C ^ 2 / R ^ 2 * (∫ x, ‖u x‖ ^ 2) := by ring
   exact ⟨by linarith [hlhs1, hT3le, hQle, hfinal2],
-    by 
+    by linarith [hlhs2, hT2le, hQle, hfinal4]⟩

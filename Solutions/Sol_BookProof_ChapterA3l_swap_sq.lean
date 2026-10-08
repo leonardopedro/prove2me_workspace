@@ -12,8 +12,8 @@ open scoped Kronecker
 open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3k
 
 set_option maxHeartbeats 1000000 in
-theorem solution : swap * swap = 1 := by
+theorem solution : BookProof.ChapterA3l.swap * BookProof.ChapterA3l.swap = 1 := by
 
   ext ⟨i, j⟩ ⟨k, l⟩
-  simp only [swap, mul_apply, of_apply, mul_ite, mul_one, mul_zero];
+  simp only [BookProof.ChapterA3l.swap, mul_apply, of_apply, mul_ite, mul_one, mul_zero];
   rw [ Finset.sum_eq_single ( l, k ) ] <;> aesop

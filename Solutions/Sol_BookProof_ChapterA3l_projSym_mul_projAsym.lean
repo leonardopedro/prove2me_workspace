@@ -17,7 +17,7 @@ theorem solution : projSym * projAsym = 0 := by
 
   unfold projSym projAsym
   rw [Matrix.smul_mul, Matrix.mul_smul, smul_smul]
-  have key : (1 + swap) * (1 - swap) = 0 := by
+  have key : (1 + BookProof.ChapterA3l.swap) * (1 - BookProof.ChapterA3l.swap) = 0 := by
     rw [add_mul, one_mul, mul_sub, mul_one, swap_sq]
     abel
   rw [key, smul_zero]

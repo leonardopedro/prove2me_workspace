@@ -13,7 +13,7 @@ open scoped Kronecker
 open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3k
 
 set_option maxHeartbeats 1000000 in
-theorem solution : swap * parityDiag = parityDiag * swap := by
+theorem solution : BookProof.ChapterA3l.swap * parityDiag = parityDiag * BookProof.ChapterA3l.swap := by
 
   unfold parityDiag
   rw [swap_kronecker]

@@ -25,5 +25,3 @@ theorem solution (μ : Measure X) {q : X → X} (hq : Measurable q)
 
   rw [integral_map hq.aemeasurable hf]
   simp only [hinv]
-
-omit [MeasurableSpace X] in

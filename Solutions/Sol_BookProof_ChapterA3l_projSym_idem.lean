@@ -17,7 +17,7 @@ theorem solution : projSym * projSym = projSym := by
 
   unfold projSym
   rw [Matrix.smul_mul, Matrix.mul_smul, smul_smul]
-  have key : (1 + swap) * (1 + swap) = (2 : ℂ) • (1 + swap) := by
+  have key : (1 + BookProof.ChapterA3l.swap) * (1 + BookProof.ChapterA3l.swap) = (2 : ℂ) • (1 + BookProof.ChapterA3l.swap) := by
     rw [add_mul, mul_add, mul_add, one_mul, one_mul, mul_one, swap_sq]
     module
   rw [key, smul_smul]

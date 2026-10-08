@@ -21,7 +21,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {D : Submodule ℂ (L2d 84)}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j : Fin 84) : 0 ≤ qgKappaElliptic j :=
-  appa, hj]
-  
-  /-- **The signature is
+theorem solution (j : Fin 84) :
+    0 ≤ BookProof.QuantumGravity3DGauge.qgKappaElliptic j := by
+  norm_num [BookProof.QuantumGravity3DGauge.qgKappaElliptic]

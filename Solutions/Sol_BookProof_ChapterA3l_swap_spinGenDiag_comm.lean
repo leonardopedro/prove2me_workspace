@@ -14,7 +14,7 @@ open BookProof.ChapterA3 BookProof.ChapterA3j BookProof.ChapterA3k
 
 set_option maxHeartbeats 1000000 in
 theorem solution (μ ν : Fin 4) :
-    swap * spinGenDiag μ ν = spinGenDiag μ ν * swap := by
+    BookProof.ChapterA3l.swap * spinGenDiag μ ν = spinGenDiag μ ν * BookProof.ChapterA3l.swap := by
 
   unfold spinGenDiag
   rw [mul_add, add_mul, swap_kronecker, swap_kronecker, add_comm]

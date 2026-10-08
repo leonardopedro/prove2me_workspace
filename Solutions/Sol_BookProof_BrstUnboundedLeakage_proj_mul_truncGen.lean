@@ -20,8 +20,8 @@ variable (T : UnboundedSelfAdjoint H)
 variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : projOp V * truncGen T V hV = truncGen T V hV := by
+theorem solution : projOp V * BookProof.BrstUnboundedLeakage.truncGen T V hV = BookProof.BrstUnboundedLeakage.truncGen T V hV := by
 
   ext x
-  simp [truncGen, ContinuousLinearMap.mul_apply,
+  simp [BookProof.BrstUnboundedLeakage.truncGen, ContinuousLinearMap.mul_apply,
     projOp_eq_self_of_mem V (projOp_apply_mem V _)]

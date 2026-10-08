@@ -21,5 +21,3 @@ set_option maxHeartbeats 1000000 in
 theorem solution (v : V) : ann a J v + cre a J v = a v + a v := by
 
   unfold ann cre; abel
-
-omit [IsScalarTower ℝ ℂ R] [StarModule ℂ R] in

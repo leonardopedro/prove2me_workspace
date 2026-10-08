@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
 import Theorems.Thm_BookProof_ChapterG_BRST_nilpotent
+import Theorems.Thm_BookProof_ChapterG_BRST_nilpotent
+import Theorems.Thm_BookProof_ChapterG_BRST_nilpotent
+import Theorems.Thm_BookProof_ChapterG_BRST_nilpotent
+open BookProof
 open BookProof.ChapterGaugeMechanicsCharge
 
 

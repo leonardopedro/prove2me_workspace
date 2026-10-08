@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSignedPoly_apply
+import Theorems.Thm_BookProof_Qg3DGaugeEsa_pgLp_eq_pgMap
 open BookProof.Qg3DGaugeEsa
 
 

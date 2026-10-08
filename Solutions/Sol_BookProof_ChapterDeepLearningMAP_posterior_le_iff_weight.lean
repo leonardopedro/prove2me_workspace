@@ -1,6 +1,9 @@
 -- Generated from ChapterDeepLearningMAP.lean — solution of BookProof.ChapterDeepLearningMAP.posterior_le_iff_weight
 import Mathlib
 import Definitions.Def_ChapterDeepLearningMAP
+import Definitions.Def_ChapterBayesInference
+open BookProof
+open BookProof.ChapterBayesInference
 open BookProof.ChapterDeepLearningMAP
 
 

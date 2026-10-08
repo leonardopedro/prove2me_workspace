@@ -1,6 +1,5 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.bookGfTerm_mem_physicalStates
 import Mathlib
-import Definitions.Def_ChapterBookBrstGaugeFixing
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_bookGfTerm_brst_closed
 open BookProof.BookBrstGaugeFixing
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionMixture.lean — solution of BookProof.ChapterAttentionMixture.shannonEntropy_eq_sum_negMulLog
 import Mathlib
 import Definitions.Def_ChapterAttentionMixture
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionMixture
 
 

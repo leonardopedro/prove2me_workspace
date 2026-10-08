@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
 
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib

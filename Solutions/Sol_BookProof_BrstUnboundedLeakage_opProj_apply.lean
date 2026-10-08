@@ -1,6 +1,7 @@
 -- Generated from ChapterBrstUnboundedLeakage.lean — solution of BookProof.BrstUnboundedLeakage.opProj_apply
 import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
+import Theorems.Thm_BookProof_BrstUnboundedLeakage_projOp_apply_mem
 open BookProof.BrstUnboundedLeakage
 
 

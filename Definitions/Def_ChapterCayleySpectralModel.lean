@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
+import Theorems.Thm_BookProof_ChapterCayleyTransform_sub_cayley_shift
+import Theorems.Thm_BookProof_ChapterCayleyTransform_cayley_shift
 
 
 /-!

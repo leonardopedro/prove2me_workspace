@@ -2,6 +2,7 @@ import Definitions.Def_ChapterAbelianCyclicModel
 import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_isProbabilityMeasure_repMeasure
+import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_mulRep_toLp
 
 
 /-!

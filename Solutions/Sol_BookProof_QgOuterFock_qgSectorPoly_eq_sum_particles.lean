@@ -4,6 +4,10 @@ import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_qgKappaN_pcoord
 import Theorems.Thm_BookProof_QgOuterFock_sum_reindex_particles
 import Theorems.Thm_BookProof_QgOuterFock_linForm_qgTorsionVecN
+import Definitions.Def_ChapterGaugeMechanicsCharge
+import Definitions.Def_ChapterYangMillsHermite
+open BookProof
+open BookProof.ChapterGaugeMechanicsCharge
 open BookProof.QgOuterFock
 
 

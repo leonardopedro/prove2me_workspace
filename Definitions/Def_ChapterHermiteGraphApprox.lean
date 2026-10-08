@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
 
 import Definitions.Def_ChapterDegKatoEsa
 import Definitions.Def_ChapterHermiteLadderOrder

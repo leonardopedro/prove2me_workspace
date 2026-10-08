@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOutputVariance
 import Theorems.Thm_BookProof_ChapterAttentionOutputVariance_outputVariance_eq_zero_iff_of_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOutputVariance
 
 

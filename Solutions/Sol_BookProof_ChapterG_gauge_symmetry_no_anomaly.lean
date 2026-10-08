@@ -1,6 +1,7 @@
 -- Generated from ChapterG.lean — solution of BookProof.ChapterG.gauge_symmetry_no_anomaly
 import Mathlib
 import Definitions.Def_ChapterG
+open MeasureTheory
 open BookProof.ChapterG
 
 

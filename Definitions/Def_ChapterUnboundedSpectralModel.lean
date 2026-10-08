@@ -5,6 +5,8 @@ import Definitions.Def_ChapterSpectralMultiplication
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
+import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general
 
 
 /-!

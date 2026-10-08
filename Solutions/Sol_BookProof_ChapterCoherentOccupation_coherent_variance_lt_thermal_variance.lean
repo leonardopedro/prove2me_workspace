@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOccupation
 import Theorems.Thm_BookProof_ChapterCoherentOccupation_coherentOccupation_variance
 import Theorems.Thm_BookProof_ChapterCoherentTemperature_thermalProb_variance
+import Definitions.Def_ChapterCoherentTemperature
+open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentOccupation
 
 

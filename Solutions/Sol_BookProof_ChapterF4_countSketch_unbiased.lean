@@ -1,6 +1,7 @@
 -- Generated from ChapterF4.lean — solution of BookProof.ChapterF4.countSketch_unbiased
 import Mathlib
 import Definitions.Def_ChapterF4
+open MeasureTheory
 open BookProof.ChapterF4
 
 

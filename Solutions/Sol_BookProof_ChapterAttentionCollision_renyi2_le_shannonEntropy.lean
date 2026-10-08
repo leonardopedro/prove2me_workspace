@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCollision
 import Theorems.Thm_BookProof_ChapterAttentionCollision_collisionProb_pos
 import Theorems.Thm_BookProof_ChapterAttentionCollision_log_le_div_add_log_sub_one
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionCollision
 
 

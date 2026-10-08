@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 
 import Theorems.Thm_BookProof_QgHermiteCore_memLp_mul_pgFun_of_expBounded
 

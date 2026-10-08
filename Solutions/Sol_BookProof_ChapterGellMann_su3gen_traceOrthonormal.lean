@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterGellMann
 import Theorems.Thm_BookProof_ChapterGellMann_gellMann_trace_orthonormal
+import Definitions.Def_ChapterYangMillsSU3
+open BookProof
+open BookProof.YangMillsSU3
 open BookProof.ChapterGellMann
 
 

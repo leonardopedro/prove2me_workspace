@@ -18,14 +18,12 @@ import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
 
 import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
 
-import Theorems.Thm_BookProof_YangMillsFriedrichs_inner_sq_eq_normSq
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
 
 
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 
 
 

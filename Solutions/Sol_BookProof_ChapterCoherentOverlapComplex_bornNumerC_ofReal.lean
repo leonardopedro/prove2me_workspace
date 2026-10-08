@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOverlapComplex
 import Theorems.Thm_BookProof_ChapterCoherentOverlapComplex_coherentOverlapC_ofReal
 import Theorems.Thm_BookProof_ChapterCoherentOverlap_coherentOverlap_pos
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterCoherentOverlapComplex
 
 

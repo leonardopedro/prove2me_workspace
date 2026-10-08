@@ -1,10 +1,6 @@
-import Theorems.Thm_BookProof_NonnegResolvent_isSelfAdjoint_yosidaCLM
 
-import Theorems.Thm_BookProof_NonnegResolvent_invCLMAt_comm
 
-import Theorems.Thm_BookProof_NonnegResolvent_dense_domain
 
-import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
 
 import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterClosureUniqueness

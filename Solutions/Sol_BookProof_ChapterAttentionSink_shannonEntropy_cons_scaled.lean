@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionSink.lean — solution of BookProof.ChapterAttentionSink.shannonEntropy_cons_scaled
 import Mathlib
 import Definitions.Def_ChapterAttentionSink
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionSink
 
 

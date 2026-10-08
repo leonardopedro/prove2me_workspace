@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionOVCircuit.lean — solution of BookProof.ChapterAttentionOVCircuit.ovOutput_mem_range
 import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
 
 

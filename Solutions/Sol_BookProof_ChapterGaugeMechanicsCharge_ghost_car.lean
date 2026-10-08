@@ -1,6 +1,8 @@
 -- Generated from ChapterGaugeMechanicsCharge.lean — solution of BookProof.ChapterGaugeMechanicsCharge.ghost_car
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
+import Theorems.Thm_BookProof_ChapterG_ghost_car
+open BookProof
 open BookProof.ChapterGaugeMechanicsCharge
 
 

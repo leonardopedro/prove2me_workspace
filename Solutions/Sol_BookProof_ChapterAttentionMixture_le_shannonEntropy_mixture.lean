@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixture
 import Theorems.Thm_BookProof_ChapterAttentionMixture_shannonEntropy_eq_sum_negMulLog
 import Theorems.Thm_BookProof_ChapterAttentionMixture_le_negMulLog_mixture
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionMixture
 
 

@@ -1,6 +1,5 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.brst_exact_comm
 import Mathlib
-import Definitions.Def_ChapterBookBrstGaugeFixing
 open BookProof.BookBrstGaugeFixing
 
 

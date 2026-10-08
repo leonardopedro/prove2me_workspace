@@ -1,6 +1,5 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.continuous_zeta
 import Mathlib
-import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_zeta
 open BookProof.BddBelowWallEsa
 

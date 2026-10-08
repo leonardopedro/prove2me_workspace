@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCoherentOccupation
 import Theorems.Thm_BookProof_ChapterCoherentTemperature_norm_thermalRatio_lt_one
+import Definitions.Def_ChapterCoherentTemperature
+open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentOccupation
 
 

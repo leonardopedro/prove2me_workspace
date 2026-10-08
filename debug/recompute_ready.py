@@ -9,9 +9,14 @@ SOL ready = own thm:<slug> done
             PUBLISHED (API-verified; the submission guard checks exactly this
             in unpublished_sibling_imports).  Requiring the sibling's sol too
             held 437 sols hostage for nothing.
-          ∧ every import Definitions.Def_M has def:<slug> done
+          ∧ every import Definitions.Def_M is PUBLISHED ON THE PLATFORM
+            (manifest.json ∪ live published_defs(); PIPELINE_PLAN §2.18 --
+            state `done` lagged platform truth for 5 chapters whose publish
+            jobs landed after the last cache refresh, and recompute emitted
+            15 args that the runtime guard would only defer.  If neither
+            source is available, falls back to the old state-done check.)
 THM ready = fresh-ok thm verdict
-          ∧ every import Definitions.Def_M done
+          ∧ every import Definitions.Def_M platform-published (as above)
           ∧ every Theorems.Thm_M sibling has thm done AND sol done
             (a STATEMENT needs the sibling Proved: `Imported platform theorems
             must be Proved at submission time`)
@@ -23,11 +28,13 @@ breakdown of what blocks the rest.
 import json
 import os
 import re
+import sys
 from collections import Counter
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OFF = os.path.join(WS, "state", "offline_pending_check.json")
 STATE = os.path.join(WS, "state", "pipeline.json")
+MANIFEST = os.path.join(WS, "state", "published_bundles", "manifest.json")
 
 IMPORT_THM = re.compile(r"^import\s+Theorems\.Thm_(\S+)", re.M)
 IMPORT_DEF = re.compile(r"^import\s+Definitions\.Def_(\S+)", re.M)
@@ -47,6 +54,30 @@ def thm_spellings(mod: str):
 
 def def_slugs(mod: str):
     return [mod[4:]] if mod.startswith("Def_") else [mod]
+
+
+def platform_published_defs():
+    """Bare chapter names of defs the platform has PUBLISHED.
+
+    Sources, in order: the cached manifest (offline, may lag a refresh) UNION
+    the live `published_defs()` catalogue (authoritative, network).  Returns
+    None when neither source yields anything so callers can fall back to the
+    old state-done check instead of declaring everything blocked.
+    """
+    pubs = set()
+    try:
+        man = json.load(open(MANIFEST, encoding="utf-8"))
+        if isinstance(man, dict):
+            pubs.update(man)
+    except (OSError, ValueError):
+        pass
+    try:
+        sys.path.insert(0, os.path.join(WS, "pipeline"))
+        import upload_pipeline as up  # side-effect-free import (verified)
+        pubs.update(up.published_defs())
+    except Exception:
+        pass
+    return pubs or None
 
 
 def main():
@@ -101,9 +132,15 @@ def main():
                 return False
         return True
 
+    pub_defs = platform_published_defs()
+
     def defs_ok(def_mods):
         for m in def_mods:
-            if not any(done("def", s) for s in def_slugs(m)):
+            slugs = def_slugs(m)
+            if pub_defs is None:
+                if not any(done("def", s) for s in slugs):
+                    return False
+            elif not any(s in pub_defs for s in slugs):
                 return False
         return True
 

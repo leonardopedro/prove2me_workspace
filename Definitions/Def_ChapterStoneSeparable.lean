@@ -17,6 +17,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
+import Theorems.Thm_BookProof_ChapterUnboundedPosition_mulOp_symmetric
 
 
 /-!

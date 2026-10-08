@@ -1,6 +1,7 @@
 -- Generated from ChapterG.lean — solution of BookProof.ChapterG.no_shift_invariant_probabilityMeasure
 import Mathlib
 import Definitions.Def_ChapterG
+open MeasureTheory
 open BookProof.ChapterG
 
 

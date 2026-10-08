@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterAttentionSparse_l1dist_maskedSoftmax_eq
+import Definitions.Def_ChapterAttentionMarkov
+import Definitions.Def_ChapterAttentionMasking
+open BookProof.ChapterAttentionMasking
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionSparse
 
 

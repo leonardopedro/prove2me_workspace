@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixture
 import Theorems.Thm_BookProof_ChapterAttentionMixture_le_shannonEntropy_mixture
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionMixture
 
 

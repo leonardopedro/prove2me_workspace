@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterAttentionResponse_hasDerivAt_headOutput
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionResponse
 
 

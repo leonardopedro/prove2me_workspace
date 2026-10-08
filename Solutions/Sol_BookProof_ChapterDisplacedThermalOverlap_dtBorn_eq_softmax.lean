@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDisplacedThermalOverlap
 import Theorems.Thm_BookProof_ChapterDisplacedThermalOverlap_dtOverlap_eq
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterDisplacedThermalOverlap
 
 

@@ -1,6 +1,5 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.wallHam_deficiencyTrivialAt_of_bddBelow
 import Mathlib
-import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_ode_solution_eq_zero_of_bddBelow
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq
 open BookProof.BddBelowWallEsa

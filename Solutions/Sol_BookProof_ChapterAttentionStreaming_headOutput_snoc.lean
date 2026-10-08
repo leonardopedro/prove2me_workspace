@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionStreaming
 import Theorems.Thm_BookProof_ChapterAttentionStreaming_scoreSoftmax_snoc_castSucc
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionStreaming
 
 

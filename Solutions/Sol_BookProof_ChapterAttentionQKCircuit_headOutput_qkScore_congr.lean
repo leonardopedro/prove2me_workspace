@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
 import Theorems.Thm_BookProof_ChapterAttentionQKCircuit_qkScore_congr_of_qkMatrix_eq
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionQKCircuit
 
 

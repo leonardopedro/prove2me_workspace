@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterAttentionTopK
 import Theorems.Thm_BookProof_ChapterAttentionTopK_attendedMass_le_of_isTop
 import Theorems.Thm_BookProof_ChapterAttentionSparse_l1dist_maskedSoftmax_eq
+import Definitions.Def_ChapterAttentionMarkov
+import Definitions.Def_ChapterAttentionMasking
+import Theorems.Thm_BookProof_ChapterAttentionSparse_l1dist_maskedSoftmax_eq
+open BookProof.ChapterAttentionSparse
+open BookProof.ChapterAttentionMasking
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionTopK
 
 

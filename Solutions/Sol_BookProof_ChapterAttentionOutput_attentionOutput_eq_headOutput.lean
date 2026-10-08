@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAttentionOutput
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
 import Theorems.Thm_BookProof_ChapterSoftmaxBorn_coherentBorn_eq_softmax
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_softmax_eq_scoreSoftmax
+import Definitions.Def_ChapterObservableExpectation
+open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionOutput
 
 

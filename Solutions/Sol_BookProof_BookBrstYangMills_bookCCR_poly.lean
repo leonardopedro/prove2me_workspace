@@ -1,6 +1,7 @@
 -- Generated from ChapterBookBrstYangMills.lean — solution of BookProof.BookBrstYangMills.bookCCR_poly
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
+import Theorems.Thm_BookProof_BookBrstYangMills_AfieldPoly_apply
 open BookProof.BookBrstYangMills
 
 

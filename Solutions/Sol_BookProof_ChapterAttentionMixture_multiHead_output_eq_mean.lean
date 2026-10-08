@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionMixture
 import Theorems.Thm_BookProof_ChapterAttentionMixture_observableExpectation_mixture
+import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
+open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionMixture
 
 

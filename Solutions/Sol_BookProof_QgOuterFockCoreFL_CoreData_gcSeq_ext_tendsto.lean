@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_tendsto
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_op_tendsto
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_apply
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

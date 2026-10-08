@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterAttentionResponse
 
 

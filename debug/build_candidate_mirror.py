@@ -75,7 +75,16 @@ def main():
     os.makedirs(f"{MIRROR}/Definitions", exist_ok=True)
     os.makedirs(f"{MIRROR}/Theorems", exist_ok=True)
 
-    # stage: published bundles + candidates
+    # stage: (1) EVERY workspace definition -- a bundle that is neither
+    # published nor a target still must exist for importers to resolve;
+    # mirrors used to rely on leftovers from earlier runs, so a fresh mirror
+    # produced `object file ... not found` cascades.  (2) published bundles
+    # OVERWRITE with the platform's verbatim text (authoritative for
+    # dependents).  (3) targets last: the bundles under validation keep their
+    # WS text even when a published copy exists.
+    for f in sorted(os.listdir(f"{WS}/Definitions")):
+        if f.endswith(".lean"):
+            open(f"{MIRROR}/Definitions/{f}", "w").write(open(f"{WS}/Definitions/{f}").read())
     for f in os.listdir(PUB_DEFS):
         if f.endswith(".lean"):
             open(f"{MIRROR}/Definitions/{f}", "w").write(open(f"{PUB_DEFS}/{f}").read())
@@ -90,10 +99,30 @@ def main():
                  if x in all_defs] for m in all_defs}
     def_order = topo(all_defs, lambda m: ddeps[m])
 
-    # theorem stubs the candidates need
+    # theorem stubs any staged def (or staged stub) imports -- the closure,
+    # not just the targets': the topo pass compiles EVERY staged def, and one
+    # unresolvable `import Theorems.Thm_X` fails that bundle and cascades.
     need_thm = set()
-    for m in cand:
-        need_thm.update(imports_of(f"{MIRROR}/Definitions/{m}.lean", "Theorems"))
+    changed = True
+    while changed:
+        changed = False
+        for f in os.listdir(f"{MIRROR}/Definitions"):
+            if f.endswith(".lean"):
+                for m in imports_of(f"{MIRROR}/Definitions/{f}", "Theorems"):
+                    if m not in need_thm:
+                        need_thm.add(m)
+                        changed = True
+        for m in sorted(need_thm):
+            src = f"{WS}/Theorems/{m}.lean"
+            if os.path.exists(src):
+                mp = f"{MIRROR}/Theorems/{m}.lean"
+                if not os.path.exists(mp):
+                    open(mp, "w").write(open(src).read())
+                    changed = True
+                for n in imports_of(mp, "Theorems"):
+                    if n not in need_thm:
+                        need_thm.add(n)
+                        changed = True
     for t in sorted(need_thm):
         src = f"{WS}/Theorems/{t}.lean"
         if os.path.exists(src):
@@ -149,6 +178,13 @@ def main():
                 + [("D", x) for x in (ddeps if kind == "D" else tdeps)[m]]
             )
 
+    # Full compiler output per bundle. The TSV cell used to be truncated at
+    # 100 chars, which cut off the failing identifier (`unknown identifier
+    # 'multOp_comm'` etc.) and made content FAILs undebuggable from the report
+    # alone -- every one had to be recompiled by hand to see what broke.
+    logdir = (a.report + ".logs") if a.report else "/tmp/build_candidate_logs"
+    os.makedirs(logdir, exist_ok=True)
+
     dres, thm_res = {}, {}
     for kind, m in topo(sorted(universe), lambda k: udeps[k]):
         src = "Definitions" if kind == "D" else "Theorems"
@@ -160,8 +196,14 @@ def main():
                            cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
                            capture_output=True, text=True, timeout=1800)
         out = r.stdout + r.stderr
-        res = "OK" if r.returncode == 0 else (
-            "FAIL " + next((l for l in out.splitlines() if "error" in l), "")[:100])
+        if r.returncode == 0:
+            res = "OK"
+        else:
+            errline = next((l for l in out.splitlines() if "error" in l), "")
+            # Single-line cell, no tabs (TSV); identifier-visible width.
+            res = "FAIL " + errline.strip().replace("\t", " ")[:300]
+            with open(f"{logdir}/{m}.log", "w") as fh:
+                fh.write(out)
         if kind == "D":
             dres[m] = res
         else:
@@ -178,6 +220,17 @@ def main():
                    if t not in ok_thm]
         if missing:
             dres[m] = f"BLOCKED by {missing[0]}"
+
+    # ...and a def whose DEF import did not build is BLOCKED too.  Without
+    # this, build133 reported 68 `object file ... not found` rows that were
+    # pure cascade from 19 root content failures -- noise that hid the real
+    # error list.  Any non-OK dep (FAIL or BLOCKED) blocks the dependent.
+    for m in sorted(all_defs, reverse=True):
+        if dres.get(m) in (None, "NOSRC"):
+            continue
+        bad = [d for d in ddeps.get(m, []) if dres.get(d) != "OK"]
+        if bad:
+            dres[m] = f"BLOCKED by {bad[0]}"
 
     ok = sorted(m[len("Def_"):] for m in cand if dres.get(m) == "OK")
     # The theorem stubs that DID build are publishable in their own right.

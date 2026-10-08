@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
 import Theorems.Thm_BookProof_ChapterAttentionOVCircuit_mulVec_headOutput
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
 
 

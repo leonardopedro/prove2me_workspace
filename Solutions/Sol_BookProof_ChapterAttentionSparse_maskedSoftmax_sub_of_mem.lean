@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterAttentionSparse_attendedMass_pos
 import Theorems.Thm_BookProof_ChapterAttentionMasking_maskedSoftmax_eq_conditional
+import Definitions.Def_ChapterAttentionMasking
+open BookProof.ChapterAttentionMasking
 open BookProof.ChapterAttentionSparse
 
 

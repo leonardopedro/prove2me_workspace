@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterAttentionSparse_l1dist_maskedSoftmax_eq
 import Theorems.Thm_BookProof_ChapterAttentionOutput_norm_observableExpectation_sub_le
+import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterAttentionMasking
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
+open BookProof.ChapterAttentionMasking
+open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionSparse
 
 

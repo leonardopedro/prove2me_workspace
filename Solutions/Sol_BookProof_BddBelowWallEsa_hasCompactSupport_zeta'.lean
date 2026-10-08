@@ -1,6 +1,5 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.hasCompactSupport_zeta'
 import Mathlib
-import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_zeta
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta
 open BookProof.BddBelowWallEsa

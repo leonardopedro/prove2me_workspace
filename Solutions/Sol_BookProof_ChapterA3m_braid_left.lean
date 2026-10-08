@@ -1,6 +1,9 @@
 -- Generated from ChapterA3m.lean — solution of BookProof.ChapterA3m.braid_left
 import Mathlib
 import Definitions.Def_ChapterA3m
+import Definitions.Def_ChapterA3l
+open BookProof
+open BookProof.ChapterA3l
 open BookProof.ChapterA3m
 
 

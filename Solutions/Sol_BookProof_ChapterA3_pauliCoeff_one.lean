@@ -1,6 +1,7 @@
 -- Generated from ChapterA4c.lean — solution of BookProof.ChapterA3.pauliCoeff_one
 import Mathlib
 import Definitions.Def_ChapterA4c
+import Definitions.Def_ChapterA3h
 open BookProof.ChapterA3
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterF6
 import Theorems.Thm_BookProof_ChapterF6_mgT_cons
 import Theorems.Thm_BookProof_ChapterF6_mgStep_le_apply_add
+import Theorems.Thm_BookProof_ChapterF6_mgD_cons
 open BookProof.ChapterF6
 
 

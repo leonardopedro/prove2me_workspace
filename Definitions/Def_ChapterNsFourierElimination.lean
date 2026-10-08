@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 
@@ -14,7 +13,6 @@ import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
 
 
 
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 
 
 

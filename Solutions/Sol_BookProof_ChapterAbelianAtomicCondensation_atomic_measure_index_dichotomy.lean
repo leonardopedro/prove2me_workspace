@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianAtomicCondensation
 import Theorems.Thm_BookProof_ChapterAtomicDecomposition_atoms_countable
+import Definitions.Def_ChapterAtomicDecomposition
+open BookProof.ChapterAtomicDecomposition
+open MeasureTheory
 open BookProof.ChapterAbelianAtomicCondensation
 
 

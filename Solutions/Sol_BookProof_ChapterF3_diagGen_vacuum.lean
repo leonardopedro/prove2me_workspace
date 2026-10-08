@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterF3
 import Theorems.Thm_BookProof_ChapterF1_numberOp_monomial
+import Definitions.Def_ChapterF1
+open BookProof
+open BookProof.ChapterF1
 open BookProof.ChapterF3
 
 

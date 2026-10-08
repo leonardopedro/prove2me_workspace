@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterSirkSingleTimeShift
@@ -12,6 +11,7 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterStoneUnitary
 import Mathlib
 
 

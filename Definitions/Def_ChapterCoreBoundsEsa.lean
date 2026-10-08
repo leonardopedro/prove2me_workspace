@@ -2,10 +2,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_sum_single_mem_finiteMo
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_coe_sum_single
 
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
 
 
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 
 import Definitions.Def_ChapterOperatorSeriesEsa
 import Definitions.Def_ChapterFarisLavine

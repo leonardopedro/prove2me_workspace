@@ -1,8 +1,8 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 
 import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
 
 import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 
 

@@ -1,6 +1,5 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.bookOmega_comm_multOp
 import Mathlib
-import Definitions.Def_ChapterBookBrstGaugeFixing
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_bookOmega_comm_of_comm
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_gaussGen_comm_multOp
 import Theorems.Thm_BookProof_BookBrstYangMills_bosOpN_ghostOpN_comm

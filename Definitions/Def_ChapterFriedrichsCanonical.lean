@@ -10,7 +10,6 @@ import Theorems.Thm_BookProof_QgHermiteFriedrichs_scalaronW_nonneg
 
 import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
 
@@ -33,6 +32,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
 
 

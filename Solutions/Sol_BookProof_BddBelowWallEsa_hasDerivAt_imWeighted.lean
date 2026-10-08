@@ -1,6 +1,5 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.hasDerivAt_imWeighted
 import Mathlib
-import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_zeta
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_wronsk
 import Theorems.Thm_BookProof_BddBelowWallEsa_wronsk_deriv_im

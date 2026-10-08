@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
 
 

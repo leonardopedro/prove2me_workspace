@@ -1,8 +1,5 @@
-import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
 
-import Theorems.Thm_BookProof_NonnegResolvent_yosidaCLM_nonneg
 
-import Theorems.Thm_BookProof_NonnegResolvent_dense_domain
 
 import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterNonnegUnitaryGroup

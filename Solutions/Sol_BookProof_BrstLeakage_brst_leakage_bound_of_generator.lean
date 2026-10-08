@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_BrstLeakage_norm_flow_apply
 import Theorems.Thm_BookProof_BrstLeakage_omega_flow_apply
 import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_le_cycle
 import Theorems.Thm_BookProof_ChapterSirkRestart_brst_leakage_bound
+import Theorems.Thm_BookProof_ChapterSirkRestart_brst_leakage_bound
+open BookProof
 open BookProof.BrstLeakage
 
 

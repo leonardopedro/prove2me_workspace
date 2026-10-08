@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterG
 import Theorems.Thm_BookProof_ChapterG_swap_mem_gaugeGroup
+open MeasureTheory
 open BookProof.ChapterG
 
 

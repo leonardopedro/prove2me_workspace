@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 import Theorems.Thm_BookProof_ChapterAttentionMixing_pushIter_succ
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_push_isProb
+import Definitions.Def_ChapterAttentionMarkov
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
 
 

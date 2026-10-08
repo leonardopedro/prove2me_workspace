@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionStreaming
 import Theorems.Thm_BookProof_ChapterAttentionStreaming_newWeight_pos
 import Theorems.Thm_BookProof_ChapterAttentionStreaming_headOutput_snoc
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionStreaming
 
 

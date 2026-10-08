@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_scoreSoftmax
+import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxFluctuation
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionResponse
 
 

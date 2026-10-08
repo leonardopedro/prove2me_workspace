@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionMixture.lean — solution of BookProof.ChapterAttentionMixture.observableExpectation_mixture
 import Mathlib
 import Definitions.Def_ChapterAttentionMixture
+import Definitions.Def_ChapterObservableExpectation
+open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionMixture
 
 

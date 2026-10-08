@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterF7
 import Theorems.Thm_BookProof_ChapterF7_schwartz_integration_by_parts
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply
+import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply
+open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterF7
 
 

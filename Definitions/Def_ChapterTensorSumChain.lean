@@ -1,10 +1,6 @@
-import Theorems.Thm_BookProof_TensorSumEsa_dense_cpairDom
 
-import Theorems.Thm_BookProof_TensorSumEsa_essentiallySelfAdjointOn_cpairDom_esa
 
-import Theorems.Thm_BookProof_TensorSumEsa_symmetricOn_cpairOp
 
-import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_of_selfAdjoint
 
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 
@@ -13,6 +9,7 @@ import Definitions.Def_ChapterStoneSeparable
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterEsaOneParticleDGamma
 import Mathlib
 
 

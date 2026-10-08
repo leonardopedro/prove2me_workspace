@@ -2,15 +2,14 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_add
 
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_smul
 
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
 
-import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le
 
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_support_hFun
 
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
+import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
 
 

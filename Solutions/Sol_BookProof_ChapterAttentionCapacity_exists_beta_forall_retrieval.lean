@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
 import Theorems.Thm_BookProof_ChapterAttentionCapacity_norm_headOutput_distScore_sub_le_of_separated
 import Theorems.Thm_BookProof_ChapterAttentionCapacity_tendsto_capacityError
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionCapacity
 
 

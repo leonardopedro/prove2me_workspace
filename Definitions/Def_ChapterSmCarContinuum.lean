@@ -1,13 +1,10 @@
-import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_mul_self
 
-import Theorems.Thm_BookProof_QuantumGravityFock_jw_swap_mixed
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 
 
 
 
-import Theorems.Thm_BookProof_QuantumGravityFock_conj_jwSign
 
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa

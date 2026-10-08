@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_hasDerivAt_logPartition_score
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_scorePerturb_of_ne
+import Definitions.Def_ChapterSoftmaxJacobian
+open BookProof.ChapterSoftmaxJacobian
 open BookProof.ChapterCrossEntropyGradient
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_apply
 import Theorems.Thm_BookProof_BookBrstYangMills_pderiv_X_mul
+import Theorems.Thm_BookProof_BookBrstYangMills_AfieldPoly_apply
 open BookProof.BookBrstYangMills
 
 

@@ -1,12 +1,11 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
 
-import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 
 
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
 
 

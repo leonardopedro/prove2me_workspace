@@ -1,8 +1,5 @@
-import Theorems.Thm_BookProof_EsaClosure_clExt_selfAdjointCriterion
 
-import Theorems.Thm_BookProof_EsaClosure_clExt_symmetricOn
 
-import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
 
 import Theorems.Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain
 

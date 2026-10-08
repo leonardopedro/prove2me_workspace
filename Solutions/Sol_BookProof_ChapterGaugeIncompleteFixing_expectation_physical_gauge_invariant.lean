@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeIncompleteFixing
 import Theorems.Thm_BookProof_ChapterG_expectation_gauge_invariant
+import Theorems.Thm_BookProof_ChapterG_expectation_gauge_invariant
+open BookProof
 open BookProof.ChapterGaugeIncompleteFixing
 
 

@@ -128,8 +128,16 @@ def first_error(out):
         loc = first.split("error", 1)[0].strip()[-60:] if first else ""
         return f"unknown identifier `{m.group(1)}` {loc}"[:200]
     if first:
-        return first[:200]
-    return (out or "").strip().split("\n")[0][:200] if out.strip() else "nonzero exit, no error line"
+        # Drop the scratch path before slicing: `/media/.../work/Chk_x.lean:`
+        # eats ~140 of the 200 chars, so the identifier in
+        # `Unknown identifier `bornWeight_eq_scoreSoftmax_neg_dist_sq``
+        # arrived truncated (or entirely cut) and the fixer could not match it.
+        short = re.sub(r"^.*?\.lean:", "L:", first)
+        return short[:400]
+    if out.strip():
+        short = re.sub(r"^.*?\.lean:", "L:", out.strip().split("\n")[0])
+        return short[:400]
+    return "nonzero exit, no error line"
 
 
 def compile_one(lean, env, src, workdir, olean=None):

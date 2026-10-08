@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_norm_off
+import Definitions.Def_ChapterNavierStokesDeficiency
+open BookProof.NavierStokesFlow.LpNat
 open BookProof.CarlemanUnboundedHop
 
 

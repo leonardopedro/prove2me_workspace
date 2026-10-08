@@ -12,13 +12,9 @@ import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 
 import Definitions.Def_ChapterDiagonalDGammaEsa
 import Definitions.Def_ChapterNavierStokesEsa
@@ -28,6 +24,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterStoneUnitary
 import Mathlib
 
 

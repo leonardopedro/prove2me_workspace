@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterHermiteProductBasis

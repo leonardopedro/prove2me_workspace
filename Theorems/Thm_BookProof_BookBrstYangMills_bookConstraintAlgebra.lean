@@ -17,3 +17,5 @@ variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.bookConstraintAlgebra : ConstraintAlgebra G.f (gaussGen G) chiOp betaOp where
   comm_chi _ _ := by sorry
+  comm_beta _ _ := by sorry
+  bracket a b := by sorry

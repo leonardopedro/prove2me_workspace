@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAttentionMixing
 import Theorems.Thm_BookProof_ChapterAttentionMixing_mul_min_le_one
 import Theorems.Thm_BookProof_ChapterAttentionMixing_l1dist_pushIter_le
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_l1dist_nonneg
+import Definitions.Def_ChapterAttentionMarkov
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
 
 

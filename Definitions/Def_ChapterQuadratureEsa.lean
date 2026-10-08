@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
 
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 

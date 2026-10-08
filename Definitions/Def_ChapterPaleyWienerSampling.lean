@@ -2,6 +2,7 @@ import Theorems.Thm_BookProof_ChapterShannonSampling_exists_rep
 
 import Definitions.Def_ChapterShannonSampling
 import Mathlib
+import Theorems.Thm_BookProof_ChapterShannonSampling_half_add_period
 
 
 /-!

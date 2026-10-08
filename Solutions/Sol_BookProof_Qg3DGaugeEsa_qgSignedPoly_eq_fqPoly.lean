@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgFqQ_quadratic_eq
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_weylProd_self
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSignedPoly_apply
 import Theorems.Thm_BookProof_HermiteRelative_momPoly_eq_ymMomOp
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
 open BookProof.Qg3DGaugeEsa
 
 

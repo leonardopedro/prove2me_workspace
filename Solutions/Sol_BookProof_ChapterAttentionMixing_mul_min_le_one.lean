@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionMixing.lean — solution of BookProof.ChapterAttentionMixing.mul_min_le_one
 import Mathlib
 import Definitions.Def_ChapterAttentionMixing
+import Definitions.Def_ChapterAttentionMarkov
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
 
 

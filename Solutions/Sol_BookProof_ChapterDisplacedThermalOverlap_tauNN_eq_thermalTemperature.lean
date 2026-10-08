@@ -1,6 +1,7 @@
 -- Generated from ChapterDisplacedThermalOverlap.lean — solution of BookProof.ChapterDisplacedThermalOverlap.tauNN_eq_thermalTemperature
 import Mathlib
 import Definitions.Def_ChapterDisplacedThermalOverlap
+import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterDisplacedThermalOverlap
 
 

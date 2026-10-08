@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_l1dist_nonneg
 import Theorems.Thm_BookProof_ChapterAttentionMarkov_l1dist_push_le_of_min
+import Definitions.Def_ChapterAttentionMarkov
+open BookProof.ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
 
 

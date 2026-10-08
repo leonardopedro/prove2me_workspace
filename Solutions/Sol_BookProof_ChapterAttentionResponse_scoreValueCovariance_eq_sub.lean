@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
+open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterAttentionResponse
 
 

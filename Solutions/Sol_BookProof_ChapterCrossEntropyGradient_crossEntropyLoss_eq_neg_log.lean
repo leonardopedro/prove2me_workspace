@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_partition_ne_zero
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_scoreSoftmax_eq_div
+import Definitions.Def_ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterCrossEntropyGradient
 
 

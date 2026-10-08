@@ -13,7 +13,6 @@ import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
 
 
 
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 
 
 import Theorems.Thm_BookProof_YangMillsHermite_momOp_polySym
@@ -27,7 +26,6 @@ import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 
 
 
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 
 import Theorems.Thm_BookProof_YangMillsHermite_starP_C
 

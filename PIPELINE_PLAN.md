@@ -9,8 +9,11 @@ the transplant of the **timepiece** Lean 4 project onto **prove2.me**.
 - **Authoritative references**: `SKILL.md` (API schemas, upload policy, three basic
   rules), `references/prove2me-lean4.33-translation/PLAN_LEAN4_33_TRANSLATION.md`
   (v4.28→v4.33.1 drift catalogue), `references/upload_full_project.md` (phases 0–6).
-- **Current skill/platform versions**: **0.11.9 / 0.11.9** (updated 2026-10-07). Earlier
-  sections reference 0.10.3–0.10.8; **§2 is the current runbook** and supersedes §1's
+- **Current skill/platform versions**: **skill 0.11.9 / platform 0.12.2**
+  (checked 2026-10-08: `auth_probe` reports 0.12.2; the 0.11.9 skill text
+  was re-read in full this session — `/verify`, `/publish-jobs`,
+  `/submissions` and the guard rules are unchanged). Earlier sections
+  reference 0.10.3–0.10.8; **§2 is the current runbook** and supersedes §1's
   status tables wherever they disagree.
 
 ---
@@ -1659,6 +1662,271 @@ parallel 10) → `--sync`. Next after that: re-run `cache_published_bundles.py`
 for the 5 missing texts (incl. SecondQuantizationCoreEsa, which EsaPairDGamma
 now imports), point `recompute_ready`'s def-import check at platform truth, and
 the §2.17 backlog (12 cycles, 4 declaration-less sols, ~71 object-file). 
+
+### 2.19. Session 2026-10-08 (afternoon) — platform truth closed, root-cause
+of the object-file class, chunk t24
+
+**A. Drain state.** Chunk t24 (thm+sol, parallel 10, 600 s): `summary: 5955
+done, 12727 pending, 0 failed` (was 5901 after t23 → **+54**; 46 resolved
+inside the window + 9 in flight, re-polled next run). Chunks t1–t24 all end
+`0 failed`. `--sync` for t24 runs at write time (2750+ pending sols checked,
+0 already-Proved — the 9 in-flight verdicts are what it reconciles).
+
+**B. §2.18-C is SUPERSEDED: the 5 “missing” chapters were never missing.**
+Live `published_defs()` = **519** = manifest 514 ∪ exactly {DiffuseUnitaryModel,
+MackeyInducedSystem, PvmMeasure, **SecondQuantizationCoreEsa**, SymmetryRep},
+published 2026-10-07T15:31–16:37 UTC with FULL text (10.5/10.0/5.2/4.4/3.3 KB;
+247/255/133/109/78 lines). The manifest was simply **stale** — its last refresh
+predated those publishes; `manifest − platform` = ∅ either way. Consequence:
+the “15 ready-arg items import not-platform-published defs” count of §2.18-C
+was measured against the stale cache — **those 15 are legitimate ready args**.
+Fix applied: re-ran `debug/cache_published_bundles.py` → manifest now 519,
+all 5 texts cached (also unblocks mirror builds that import them, e.g.
+EsaPairDGamma ← SecondQuantizationCoreEsa).
+
+**C. `recompute_ready` now keys def-imports on platform truth.** New
+`platform_published_defs()` = manifest.json ∪ live `published_defs()`, with a
+degradation chain (network fail → manifest-only; no manifest → old
+state-done check), so a stale cache can no longer emit doomed args and a
+missing cache can no longer hold back published ones. Validated run:
+`sol_ready=978 thm_ready=2596 union 3574` (46 s, includes the live fetch).
+
+**D. build133 (134 targets) → 15 OK / 34 BLOCKED / 68 object-file / 17
+content FAIL.** New OK vs build132 (+9): FockFieldPerturbation, L2FibreSum,
+NsNonlinearFarisLavine, PvmInducedSystem, PvmScalarMeasure, ScalarDGammaEsa,
+SpectralMultiplication, TruncationGapLift, YangMillsFockGapChain — i.e. the
+§2.18-A repairs landed. Content errors moved DEEPER after the fixes rather
+than disappearing (EsaPairDGamma 47→113, NavierStokesFockLagrangian
+625→837 `invalid field`, NsLinearKoopmanEsa 81→124 `unsolved goals`,
+PhysMehler 47→127 `unsolved goals`, StoneSeparable 80→73): embeds resolved
+the unknown names, leaving proof-term work behind them.
+
+**E. Root cause of the `object file … not found` class (corrects §2.18-E):
+it is cascade, not staleness.** The mirror was NEVER missing sources —
+`WS-only = ∅` (staging accumulates across runs; only 3 stale `Def_Test*`
+leftovers). All 68 object-file rows are downstream: 177 imports had their
+`.lean` staged but no `.olean` because **the dep itself failed to compile**.
+New `debug/root_failures.py` splits 168 olean-less defs into **19 ROOT
+failures** — 17 target content FAILs + 2 dep-only roots (`Def_ChapterG3`,
+`Def_ChapterPaleyWienerSampling`) — and 149 cascades; thm-stub failures feed
+it too (`Def_ChapterA1b` ← `Thm_BookProof_Complexification_Cx_csmul_im`).
+**Fixing the 19 roots should clear ~115 of the 119 non-OK rows.** New
+`debug/compile_roots.py` compiles each root in the mirror and saves FULL
+error text to `/tmp/root_errors/<module>.log` (the report’s 100-char cell
+cut every failing identifier — the original reason content errors looked
+“unknown”).
+
+**F. Script hardening shipped this session (`debug/build_candidate_mirror.py`):**
+1. full compiler output per module → `<report>.logs/<module>.log`; report
+   cell widened 100 → 300 chars, tab-sanitized (TSV-safe);
+2. staging made deterministic: ALL WS defs first → published overwrite →
+   targets last (no longer depends on mirror leftovers; fresh mirrors work);
+3. thm-stub staging widened from targets-only to the import CLOSURE over all
+   staged defs and stubs (was 224, union is 266);
+4. def→def `BLOCKED by Def_X` labeling after the existing thm-BLOCKED pass,
+   so future reports separate the ~19 real errors from cascade noise.
+Also new: `debug/root_failures.py`, `debug/compile_roots.py`.
+
+**G. Still open:** fix the 19 roots from `/tmp/root_errors` → build134 with
+the hardened script (verify report ≈ 19 rows); chunk t25; StoneSeparable
+`ext'` dep removal (line 73 now); 2 dep-only roots (G3, PaleyWienerSampling)
+have no target row so they were invisible in every report until now.
+
+### 2.20. Session 2026-10-08 (evening) — sol-failure anatomy and repair waves
+
+**A. Drain results this session:** t24 +54 → 5955, t25 +58 → 6013, t26
++45 → **6058 done / 12624 pending / 0 failed** (chunks t1–t26 all end
+`0 failed`).  `--sync` after t24 marked +10; def wave-1 chunk (15 gate-OK
+pending bundles): `summary: 517 done, 170 pending, 0 failed` —
+ChapterFockFieldPerturbation landed (attempt 2); the other 14 defer free
+until their own def-imports publish (layered: FockFieldPerturbation →
+YangMillsFockGapChain → TruncationGapLift; AbelianGelfandModel →
+SpectralMultiplication → CyclicDecomposition → …).
+
+**B. The sol-failure anatomy (the “many failed sols” question, answered
+with numbers).**  There is NO `failed` status in state (0 sol / 2 thm
+parked) and the newest-100 platform window shows 97 ACCEPTED / 1 FAILED —
+the “failed sols” are the OFFLINE verdicts (`state/offline_pending_check.json`):
+3871 FAIL of 7445 checked.  Sliced by the only population that matters —
+pending sols **whose own thm is DONE** (1454):
+
+| verdict | n | meaning / action |
+| :--- | ---: | :--- |
+| ok | 1141 | fresh-ok → already flowing through chunks |
+| FAIL, imports all published (`fixableA`) | **313** | THE repair set (below) |
+| FAIL, imports ≥1 unpublished def | 0 | (all B-class sols have pending thms) |
+| own thm not done | 5585 | unblock = thm drain (thm_ready 2534 in chunks) |
+
+fixableA taxonomy: 179 `Unknown identifier` + 4 `unknown namespace`,
+69 `object file`, 17 Ambiguous, 17 unsolved-goals/Tactic, 11 unexpected,
+~10 type-mismatch, remainder blocked-on-unpublished-decls.
+
+**C. Repairs shipped (wave 1 = 106 files, recheck in flight):**
+- `debug/fix_sol_offline_errors.py` — driven by OFFLINE verdicts (not state
+  errors): locates each unknown identifier in PUBLISHED def text / PUBLISHED
+  stubs (namespace-aware via `restore_opens.scan`), adds
+  `import Definitions.Def_X` / `import Theorems.Thm_X` + `open <ns>`;
+  BLOCKED when the decl lives only in unpublished local text (report
+  histogram: Measure 17, adjoint 16, able 5, SoftmaxOrder ns 4, …).
+  **88 planned + applied**.
+- Mathlib-open class: 17 sols missing `open MeasureTheory` (`Measure`),
+  1 missing `open Topology` (`Tendsto`) — **18 applied**.
+- `debug/drop_unpub_sol_imports.py` — wave 2 for the 2675 B-sols (sols
+  importing ≥1 unpublished def bundle): blind-drop + backup
+  (`/tmp/sols_drop_backup/` + drops.json) + `--restore-failed` after the
+  recheck.  40-file sample in flight; B-sols are mostly own-thm-pending, so
+  this wave is secondary to the thm drain.
+
+**D. The 69 object-file sols decompose as: 58 sibling-statement-pending**
+(the drain publishes them; recompute’s sibling guard already withholds
+those sols — nothing manual), **9 done-sibling-but-no-olean** (mirror gap:
+`/tmp/published_mirror/Theorems/` holds 8697 statement sources but only
+1659 oleans; a done statement can still fail a local rebuild because the
+platform text ≠ local regen — e.g. `Thm_…_opProj_apply` dies on
+`projOp_apply_mem`), and 2 misc.  Remedy for the 9: a statement-olean build
+pass over done-but-unmirrored thms (queue after build134).
+
+**E. Def-layer root repairs (build133 follow-ups):**
+- `debug/fix_stub_import_dups.py --apply --verify` — 73 blocked stub
+  imports across 42 bundles (52 drop / 20 replace / 1 skip): 0
+  `already been declared` in the recheck (the dup class is gone); remaining
+  FAILs are pure dep-olean cascade, fixed by the next topo build.
+- `debug/add_missing_stub_imports.py --apply` — 54 missing
+  `import Theorems.Thm_*` across 14 root bundles (exact-FQ match for dotted
+  errors, opened-namespace-preferred suffix match for bare ones; skips
+  never-publishable stubs).  Mirrors the platform rule: `do_wave_def`’s
+  thm_deps gate defers free until each stub publishes.
+- `Def_ChapterNavierStokesHashimoto` corruption repaired: a duplicated body
+  (copy A + unfenced prose + stray `-/` at 167) — deleted lines 71–167,
+  keeping the complete copy B; `debug/check_comment_depth.py` exists but
+  produces many false positives (comment-internal `/-`/`-/` mentions), so
+  Lean’s own `unexpected identifier` line + source-diff is the reliable
+  detector.  The other 4 “unexpected identifier” bundles
+  (FockSecondQuantization, NavierStokesDifferentialL2, FockCanonical,
+  ShiftHamiltonian) still need the same treatment.
+- `debug/root_failures.py` + `debug/compile_roots.py` — root-vs-cascade
+  classifier + full-error capture into `/tmp/root_errors/*.log`;
+  `debug/root_repair_plan.py` and `debug/hunt_idents.py` map each unknown
+  identifier to stubs/def decls/source.
+
+**F. Sequence in flight:** fix1 recheck (106 sols) → B-sample recheck →
+recompute → t27 (SOL-HEAVY: `--kind sol` from `/tmp/ready_sols.txt`,
+addressing the published-thm:sol ≈ 4:1 gap) → build134 report (expect ~19
+root rows) → statement-olean pass for the 9 → remaining root content
+errors + the 4 corrupted bundles.
+
+### 2.21. Session 2026-10-08 (night) — t27/t27b drain, fixer round 3, build134, THE content-gap finding
+
+**A. Uploads (user: “upload what you can”):** recompute → `sol_ready=1146
+thm_ready=2478 union 3624` (sol_ready 1024 → 1146 as the fix waves feed
+it; sol blockers now `own thm not done 5574 / not fresh-ok 228 / sibling
+91`).  Chunk **t27** `--kind sol --parallel 10 --max-seconds 600` →
+**29 sols DONE, 0 failed**; **t27b** (same args, re-polls in-flight) →
+**44 more sols DONE**.  73 sols landed this session, all guarded/fresh-ok.
+**t28def** then launched: the 26 pending bundles that build134 verified OK
+(`--kind def --parallel 6 --max-seconds 900`, args `/tmp/def28_args.txt`).
+
+**B. check_fix2 (148 rechecked slugs): 86 ok / 62 FAIL.**  The 62 split
+exactly by state:
+
+| n | class | meaning / action |
+| ---: | :--- | :--- |
+| 40 | own thm **pending** + def bundle pending (BddBelowWallEsa 27, BookBrstGaugeFixing 13) | not sol-fixable: gated on def publication (see E) |
+| 21 | `Unknown identifier` / `unknown namespace`, own thm done | round-3 fixer set |
+| 1 | `unsolved goals` (ChapterF7_momentum_l2Symmetric) | proof-level, hand work |
+
+**C. Fixer round 3 — two defects found and fixed, 21 files edited.**
+1. **The offline verdict truncated at 205 chars** (`first_error` sliced the
+   raw line whose scratch path `/media/…/Chk_x.lean:` eats ~140): 3153
+   FAIL verdicts cut the identifier mid-name (`bornWeight_eq_scoreSoftmax_
+neg_dist_`) or before it, so the fixer's backtick regex matched nothing.
+   `first_error` now strips the path (`L:`) and slices at **400**.
+2. **FQ-identifier rule, settled empirically** (lean against
+   `/tmp/published_mirror`): for `ChapterF1.numberOp` at top level,
+   `open BookProof.ChapterF1` does NOT resolve it (t1 fails) — Lean resolves
+   only the FIRST component of a dotted name, so `open BookProof` (t2) is
+   the fix; bare `numberOp` works with the child open (t3).  The fixer now
+   (a) matches an FQ ident to the bundle whose decl **namespace** equals the
+   ident's ns-hint (fixes `YangMillsHermite.momOp` picking
+   GaugeMechanicsCharge before), (b) adds the **parent** open via
+   word-exact `has_open` (so `open BookProof.ChapterF1` no longer counts as
+   `open BookProof`), (c) accepts prefix-truncated idents with unique-match
+   resolution.
+   Round-3 plan over the full own-thm-done FAIL set (**228**, = the
+   §2.20-B `not fresh-ok` slice): **21 planned+applied**, 77 blocked
+   (top: `adjoint` 16, `able` 5, `ns BookProof.ChapterSoftmaxOrder` 4,
+   `hcomm` 3, `shiftPerm_apply` 3, `momPoly_apply` 2 … — all declared only
+   in unpublished local bundles).
+
+**D. build134 (hardened script): 134 targets → 27 OK / 83 BLOCKED /
+24 root FAIL — the root-vs-cascade labeling worked.** +12 OK vs build133
+(A1b, A1c, A2, A2b, A2c, AbelianDirectSum, AbelianGelfandModel,
+CayleySpectralModel, CyclicDecomposition, CyclicDirectSum,
+FriedrichsSquareFactorization, MackeyCocycle, MackeyConverse,
+NavierStokesAffineBlockEsa, NavierStokesBilinearEsa, PvmInducedSystem,
+QgPhysicalSectorIdentity, SpectralCommutant, SpectralDirectSum …), of
+which **26 were still pending → t28def**.  Two chains matter for sols:
+`Def_ChapterWallDeficiencyObstruction` root-FAILs on `kinOpR_apply` →
+`ChapterBddBelowWallEsa` BLOCKED → **27 sols gated**; thm stub
+`Thm_…_bookConstraintAlgebra` fails → `ChapterBookBrstGaugeFixing`
+BLOCKED → **13 sols gated**.
+
+**E. THE content-gap finding (structural, sizes the def/thm/sol block).**
+A fresh read-only re-cache of all 520 published bundles
+(`debug/cache_published_bundles.py`) vs the local `Definitions/` tree:
+**258 of ~500 comparable bundles declare fewer names on the platform than
+locally — 3,895 missing decls in total** (top: FockWeightedSchurEsa 54,
+HermiteBandCalculusHigher 48, SmBrstGhost 47, NSDifferentialL2 45,
+BookBrstYangMills 43 …).  The platform holds the **pre-regen** content
+(e.g. `Def_ChapterScalaronWallEsa`: platform 132 lines/4 decls vs local
+772/15 — `kinOpR_apply`, `wallHam_*` absent → exactly the
+WallDeficiencyObstruction root above).  In-place update is impossible
+(`submit-definition` rejects an existing name, §2.13), so the remedy is
+the §2.13 new-name route: publish the missing decls under a second
+`definition_name` and add that import to the root importers — but ONLY
+after per-root triage, since an importer may also depend on old-vs-local
+signature drift of decls that exist in both.  This one class explains
+most of: the 24 root FAILs, a large share of the thm `not fresh-ok` 3091,
+and the fixer's `only in unpublished` blocks.  Manifest dump:
+`/tmp/content_gaps.json` (module → missing decls).
+
+**F. Sequence in flight:** t28def (26 bundles) → offline recheck of the 21
+round-3 edits + re-verdict the 228 under the new 400-char cap → fixer
+round 4 on whatever remains ident-shaped → recompute → t29 sol chunk →
+content-gap per-root triage (which of the 24 roots needs which gap
+bundle); then the statement-olean pass for the 9 done-sibling gaps and
+the 4 corrupted bundles.
+
+**G. Round-3/4 outcomes and one more generator defect (measured).**
+- Round-3 recheck of the 21 edits: **13 flipped ok**; re-verdict of all
+  228 under the new 400-char cap gave `ok 21 / FAIL 208`.
+- Round 4 (fixer on the 208, now seeing full identifiers): 9 planned+applied
+  → recheck **7 flipped ok**; **20 sols repaired by the fixer this session**.
+  The 2 residuals are outside its reach: `tauNN_coe` (declared only in the
+  LOCAL `Def_ChapterDisplacedThermalOverlap` — platform copy is a
+  content-gap bundle, §2.21-E) and `QgOuterFock_sqSumPoly_eq_fqPoly`
+  (`unsolved goals` at line 86 — proof-level hand work).
+- **The structure-instance `where`-block generator defect is real and
+  broader than the one instance:** stubs whose theorem is a `where`
+  instance emitted only the FIRST field.  Found 2 by a full scan of all
+  `Thm_*.lean` vs their local `structure` declarations and fixed both:
+  `Thm_…_bookConstraintAlgebra` (missing `comm_beta`, `bracket`) and
+  `Thm_…_UnitaryRep_isReducingProjection_avgProj` (missing `symm`) — both
+  compile RC=0 in the build134 mirror afterwards.  The first was
+  **BLOCKING `ChapterBookBrstGaugeFixing`, i.e. 13 gated sols**.  A scan
+  found no other instance of this class.
+- The ~60 failed thm-stub logs (`/tmp/build134_report.tsv.logs/Thm_*.log`)
+  classify as: ~25 `has already been declared` (§2.8d dup class — the
+  guard parks them), ~20 object-file cascade, 2 fields-missing (fixed),
+  3 unknown-namespace (CarlemanSimplex/GradedBandSchur/KatoRellich
+  providers), 2 unknown-identifier (`permRep_mem_sectorCore`,
+  `signRep_mem_sectorCore`), 1 `overloaded`.
+- **Local gap files are themselves regen-corrupted**: `Def_ChapterScalaron
+  WallEsa.lean` (772 lines) contains 4 overlapping namespace copies of the
+  same material (namespace at L62/124/288/476, decls duplicated ×3, only
+  2 `end`s).  So the §2.21-E remedy must extract from the **source
+  chapter** (`../timepiece331/BookProof/<Chapter>.lean`), not from the
+  local bundle.
 
 ---
 

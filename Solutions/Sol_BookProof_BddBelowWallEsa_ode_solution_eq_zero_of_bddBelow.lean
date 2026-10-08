@@ -1,6 +1,5 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.ode_solution_eq_zero_of_bddBelow
 import Mathlib
-import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_continuous_zeta
 import Theorems.Thm_BookProof_BddBelowWallEsa_continuous_zeta_prime
 import Theorems.Thm_BookProof_BddBelowWallEsa_zeta_nonneg

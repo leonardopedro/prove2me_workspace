@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCoherentOccupation
 import Theorems.Thm_BookProof_ChapterCoherentOccupation_thermalOccupation_energy
+import Definitions.Def_ChapterCoherentTemperature
+open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentOccupation
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionOutput.lean — solution of BookProof.ChapterAttentionOutput.norm_observableExpectation_sub_le
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterObservableExpectation
+open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionOutput
 
 

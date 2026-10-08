@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterEntropyTemperature
 import Theorems.Thm_BookProof_ChapterSoftmaxMaxEntropy_shannonEntropy_scoreSoftmax
+import Definitions.Def_ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterEntropyTemperature
 
 

@@ -25,3 +25,4 @@ variable (G) in
 
 theorem BookProof.GroupAverage.UnitaryRep.isReducingProjection_avgProj : IsReducingProjection rep.avgProj where
   idem x := by sorry
+  symm x y := by sorry

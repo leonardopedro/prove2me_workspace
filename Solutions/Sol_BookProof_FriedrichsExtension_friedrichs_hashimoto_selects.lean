@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
 import Theorems.Thm_BookProof_HashimotoShiftInvert_hashimoto_shiftInvert_selects_friedrichs
 import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeDomain_dense
+open Topology
 open BookProof.FriedrichsExtension
 
 

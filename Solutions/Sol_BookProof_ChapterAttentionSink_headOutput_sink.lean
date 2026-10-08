@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSink
 import Theorems.Thm_BookProof_ChapterAttentionSink_scoreSoftmax_sink_succ
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionSink
 
 

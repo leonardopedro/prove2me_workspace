@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterLogPartitionConvex_convexOn_logPartition
+import Definitions.Def_ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterCrossEntropyGradient
 
 

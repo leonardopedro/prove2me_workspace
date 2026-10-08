@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOutputVariance
 import Theorems.Thm_BookProof_ChapterAttentionOutputVariance_observableExpectation_minimizes
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOutputVariance
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionCoarseGrain
 import Theorems.Thm_BookProof_ChapterAttentionCoarseGrain_observableExpectation_merge
+import Definitions.Def_ChapterAttentionOutput
+open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionCoarseGrain
 
 

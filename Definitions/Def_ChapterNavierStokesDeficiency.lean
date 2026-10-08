@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
 
 import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib

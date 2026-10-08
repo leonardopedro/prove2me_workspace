@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
 import Theorems.Thm_BookProof_ChapterGaugeMechanicsCharge_chargeQ_ne_zero
+open BookProof
 open BookProof.ChapterGaugeMechanicsCharge
 
 

@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_kernelOp_deficiencyTrivialAt
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+open BookProof.NavierStokesFlow
+open BookProof.FarisLavine
 open BookProof.CarlemanUnboundedHop
 
 

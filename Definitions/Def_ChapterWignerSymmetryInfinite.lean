@@ -3,6 +3,8 @@ import Theorems.Thm_BookProof_ChapterOrthogonalSums_hasSum_smul_of_hasSum_norm_s
 import Definitions.Def_ChapterWignerSymmetry
 import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_eq_norm_of_re_eq_norm
 
 
 /-!

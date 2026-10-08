@@ -2423,6 +2423,10 @@ def main(argv=None):
     # anything importing an unpublished bundle is a guaranteed FAILED.  Waiting
     # costs nothing; a wasted submission costs one of the 5 attempts.
     published = set() if args.no_preflight else published_defs()
+    # Seed the submission_guard def-import cache from the preflight result: same
+    # catalogue, one fetch per process instead of two (and under
+    # --no-preflight the empty set keeps the explicit escape-hatch semantics).
+    globals()["_PUB_DEFS_CACHE"] = published
     if args.parallel > 1:
         return run_chunk_pipelined(st, miss, kinds, published, args.parallel,
                                    args.max_items, args.max_seconds)

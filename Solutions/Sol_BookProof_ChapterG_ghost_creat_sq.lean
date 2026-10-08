@@ -1,6 +1,7 @@
 -- Generated from ChapterG.lean — solution of BookProof.ChapterG.ghost_creat_sq
 import Mathlib
 import Definitions.Def_ChapterG
+open MeasureTheory
 open BookProof.ChapterG
 
 

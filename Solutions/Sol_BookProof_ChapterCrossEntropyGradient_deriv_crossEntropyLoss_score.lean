@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterCrossEntropyGradient_hasDerivAt_crossEntropyLoss_score
+import Definitions.Def_ChapterSoftmaxJacobian
+open BookProof.ChapterSoftmaxJacobian
 open BookProof.ChapterCrossEntropyGradient
 
 

@@ -4,6 +4,11 @@ import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_gramQ_quadratic_eq
 import Theorems.Thm_BookProof_QgOuterFock_weylProd_self_prime
 import Theorems.Thm_BookProof_HermiteRelative_momPoly_eq_ymMomOp
+import Definitions.Def_ChapterGaugeMechanicsCharge
+import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
+open BookProof
+open BookProof.ChapterGaugeMechanicsCharge
 open BookProof.QgOuterFock
 
 

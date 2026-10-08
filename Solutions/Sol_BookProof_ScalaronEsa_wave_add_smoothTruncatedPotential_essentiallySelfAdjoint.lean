@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Theorems.Thm_BookProof_StrichartzWave_memLp_top_of_continuous_of_hasCompactSupport
 import Theorems.Thm_BookProof_StrichartzWave_wave_add_boundedPotentialOp_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 open BookProof.ScalaronEsa
 
 

@@ -2,7 +2,6 @@ import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
 
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmCore_hermiteMvLp
 

@@ -1,6 +1,5 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.brstCharge_gf_anticomm
 import Mathlib
-import Definitions.Def_ChapterBookBrstGaugeFixing
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_glin_gf_anticomm
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_Q_gf_anticomm
 open BookProof.BookBrstGaugeFixing

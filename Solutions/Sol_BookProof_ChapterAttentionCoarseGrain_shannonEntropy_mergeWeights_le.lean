@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCoarseGrain
 import Theorems.Thm_BookProof_ChapterAttentionCoarseGrain_le_mergeWeights
 import Theorems.Thm_BookProof_ChapterAttentionCoarseGrain_sum_mergeWeights_log
+import Definitions.Def_ChapterAttentionEntropy
+open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionCoarseGrain
 
 

@@ -1,6 +1,5 @@
 import Theorems.Thm_BookProof_ClosureUniqueness_mem_adjGraph_iff
 
-import Theorems.Thm_BookProof_EsaClosure_clGraph_isClosed
 
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore

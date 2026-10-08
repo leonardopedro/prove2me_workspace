@@ -1,6 +1,7 @@
 -- Generated from ChapterG.lean — solution of BookProof.ChapterG.gauge_generator_excluded_from_algebra
 import Mathlib
 import Definitions.Def_ChapterG
+open MeasureTheory
 open BookProof.ChapterG
 
 

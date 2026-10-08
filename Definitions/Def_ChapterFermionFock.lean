@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support
 
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterBRSTNilpotent

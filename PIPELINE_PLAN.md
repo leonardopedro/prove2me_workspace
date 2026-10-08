@@ -1526,6 +1526,142 @@ must not run concurrently with a chunk).
 
 ---
 
+### §2.18 Missing-declaration repairs + unpublished-def guard (2026-10-08, session 2)
+
+Goal unchanged: **shrink failed ÷ successful submissions**. This session attacked
+the largest remaining content-FAIL class — pending bundles/solutions referencing
+declarations the platform's PUBLISHED text does not carry — plus the def-import
+blind spot on the script side.
+
+**A. Lean repairs applied (all edit-verified; compile-verified via build133):
+all under `Definitions/` and `Solutions/` in prove2me_workspace:**
+
+1. **NsKoopman embed.** There is no `Definitions.Def_ChapterNsKoopman` bundle,
+   yet `open BookProof.NsKoopman` failed at line 81 in BOTH
+   `Def_ChapterNsNonlinearFarisLavine` and `Def_ChapterNsLinearKoopmanEsa`
+   (build132 content FAILs). Embedded the consumed core verbatim into
+   `Def_ChapterNsNonlinearFarisLavine` inside `namespace BookProof.NsKoopman`:
+   `advOf`, `structure NsSystem`, `drift`, `kvnPoly`, `energyPoly`, `energyOp`,
+   `nsKoopmanOp`, `nsEnergyOp` (definitions only — every source lemma those two
+   bundles name appears in a docstring alone). Then added
+   `import Definitions.Def_ChapterNsNonlinearFarisLavine` to
+   `Def_ChapterNsLinearKoopmanEsa`. Cycle check: False both ways; the embed names
+   are unique repo-wide (the other `drift`s live in unopened NavierStokes*
+   namespaces).
+2. **TensorCore tmul equations.** The platform's published
+   `Def_ChapterTensorGraphCore` (164 lines) defines `inclPow`/`derPow`/`
+   domSpace` but carries **none** of `inclPow_tmul` / `derPow_zero` /
+   `derPow_tmul` (the `rfl` equations; source has them, WS copy has them 4×
+   duplicated — never republishable, bundle is `done`). Repaired by embedding
+   the three statements **with fully explicit binders** in each consumer's OWN
+   namespace:
+   - pending bundles: `Def_ChapterDiagonalDGammaEsa`,
+     `Def_ChapterEsaOneParticleDGamma`, `Def_ChapterFlowDGammaEsa`,
+     `Def_ChapterScalarDGammaEsa` (fixes build132 `ScalarDGammaEsa:104`
+     `derPow_tmul`/`inclPow_tmul` and pre-empts the same failure at
+     Diagonal:166/169, EsaOneParticle:114/117, Flow:330/351/358);
+   - 6 solutions whose target bundle is **already published without them**
+     (`Sol_..._PermSector_{good_liftTail,good_swapFirst,inclPow_purePow}`,
+     `Sol_..._TensorCore_{derPow_symm_tmul,exists_ne_zero_mem_sectorCore_one}`,
+     `Sol_..._TwoParticleSector_derPow_two_tmul`) — a solution compiles against
+     the platform's stored text, so only a local embed works; inserted right
+     after `noncomputable section`, before `theorem solution` (SKILL rule 1 only
+     requires a top-level `theorem solution`; 0 of 10 059 existing sols carry
+     pre-solution decls, so this is a new-but-legal pattern — watch the first
+     submission).
+   The `ScalarDGamma`/`EsaOneParticle` sols instead resolve the names once their
+   (now-embedded) bundle publishes; they already `open BookProof.<own ns>`.
+3. **§5d import fixes (cycle-checked False):** Qg sector identity ←
+   `Thm_BookProof_GaugeFixing_int_L_gf_eq_zero`; EsaPairDGamma ←
+   `Def_ChapterSecondQuantizationCoreEsa` + `Def_ChapterDirectSumEsa` (dropped
+   the BoundedDGamma open); NavierStokesFockLagrangian ←
+   `Def_ChapterNavierStokesLagrangianEsa`; L2FibreSum ←
+   `Thm_..._HilbertSumIntertwine_linearIsometryEquiv_intertwine` **plus removed
+   two `omit [InnerProductSpace ℂ K] in` lines** (they caused the
+   synthInstanceFailed errors at 54:62/54:43/54:18/77:18 — the `omit` dropped
+   the very instance the statements need); SolovayCoordinates ←
+   `Def_PhysMehler`.
+4. **PhysHSGaussian embed** into `Def_PhysMehler`: no `Def_PhysHSGaussian`
+   bundle exists, so `gammaMeasure`, `gammaMeasure_isProbability`, `normSq`,
+   `gaussian_concentration_sphere` are embedded verbatim (source
+   `BookProof/PhysHSGaussian/Part3.lean:196-260`) before `namespace PhysMehler`.
+5. **42 `#print axioms` audit lines removed across 8 bundles** (ConformalFiber-
+   Deficiency 4, FockCubicUnbounded 7, FockDiagonalGapChain 8, LimitCircle-
+   Example 5, QgPhysicalSectorIdentity 1, SchurGershgorinGap 1, StoneSeparable
+   4, TruncationGapLift 12) — every named decl exists ONLY in the bundle's own
+   Thm stubs, i.e. unresolvable without an import cycle; FockFieldPerturbation's
+   8-line audit block replaced with an explanatory comment.
+
+**B. Lean resolution facts verified by `lake env lean` probes this session**
+(use these when placing future embeds):
+
+- a declaration in the CURRENT namespace shadows an `open`ed same-name decl;
+- two `open`ed namespaces both providing the name ⇒ **`Ambiguous term` error**
+  (so never rely on cross-open resolution when >1 opened provider exists —
+  EsaOneParticle opens FlowDGamma which opens DiagonalDGamma);
+- a theorem binder shadows an ambient section `variable` of the same name, and
+  unmentioned ambient variables are NOT auto-included (explicit binders are the
+  safe choice for embeds placed before/independent of a file's `variable` block).
+
+**C. Manifest discovery (platform truth vs state):**
+
+- `state/published_bundles/manifest.json` = **514 entries, ALL PUBLISHED**.
+  `sha` is the sha of the SUBMITTED source, not of the cached text (cache =
+  platform's stored text) — never compare them directly.
+- **5 chapters are state-`done` but have NO cached published text:**
+  ChapterDiffuseUnitaryModel, ChapterMackeyInducedSystem, ChapterPvmMeasure,
+  **ChapterSecondQuantizationCoreEsa**, ChapterSymmetryRep (`cache_published_
+  bundles` fetched 514; the publish-jobs catalogue missed these 5).
+- **15 ready-arg items import not-platform-published defs** (MackeyInducedSystem
+  ×3, PvmMeasure ×5, SymmetryRep ×1, SecondQuantizationCoreEsa ×6 …):
+  `recompute_ready` reads STATE, not platform truth. Until
+  `cache_published_bundles.py` is re-run (and/or recompute keys off
+  `manifest.json ∪ published_defs()`), those 15 would defer at runtime under the
+  new §C-guard instead of burning — an intended, self-correcting defer, but it
+  makes the ready list over-optimistic.
+
+**D. Script guard added + unit-tested (`pipeline/upload_pipeline.py`):**
+
+- `unpublished_def_imports(path)` + `_published_def_set()` (lazy cache over
+  `published_defs()`): `submission_guard` now defers **every kind** whose
+  `import Definitions.Def_X` has no PUBLISHED definition job — reason
+  `def bundle not published on the platform: X (+N more)`.
+- Motivation: **211 `unknown import: Definitions.*` lines in
+  `state/pipeline.log`** (Def_ChapterH4 ×12; SirkWhitening/SirkDiffusiveDecay/
+  SirkEndToEnd ×56/32/28) — def imports were NEVER guarded for thm/sol; the
+  sibling guard covered only `Theorems.Thm_*`. `blocked_by` checks the same set
+  but only inside the two fill loops and only when the preflight catalogue was
+  readable (`--no-preflight` runs blind).
+- Fail-open: unreadable catalogue ⇒ empty set ⇒ no defer (never gate on a
+  guessed dependency fact); defer is transient (`guard defer:` ∈
+  TRANSIENT_ERRORS) so waiting costs no attempt.
+- Tests: `py_compile` OK; module imports side-effect-free; thm file importing
+  unpublished def ⇒ `defer`; conformant sol file ⇒ `defer`; published import ⇒
+  no verdict from this check; empty catalogue ⇒ fail-open. All pass.
+
+**E. build132 report classes (132 targets → 6 OK / 37 BLOCKED / 71 object-file
+/ 18 content FAIL):** the 71 `object file /tmp/def_candidate/... not found` are
+mirror **staleness** (only target copies are refreshed from WS; non-target
+published deps stay whatever an earlier run left) — remedy = widen the target
+closure (§2.17 backlog item 3), not a content bug. The 18 content FAILs are the
+repairs in §A plus two publish-order items: `AbelianDirectSum:368`
+(`mulRep_toLp` — thm pending 0, stub exists, bundle already imports the def
+provider: fix = submit the thm stub first) and `UnboundedSpectralModel:265`
+(`multOp_eq_zero_iff` via `BookProof.ChapterLinftyMultiplication` — same class:
+`Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff` pending 0).
+Also `def:ChapterStoneSeparable` stays **permanently blocked** by thm `ext'`
+(apostrophe name → parked, never proves); it needs the `ext'` usage removed or
+the dependency dropped — separate repair, not covered here.
+
+**F. Sequence:** build133 (134 targets: build132 ∪ every edited bundle, running
+at write time) → verify report → `recompute_ready` → chunk t22 (thm+sol,
+parallel 10) → `--sync`. Next after that: re-run `cache_published_bundles.py`
+for the 5 missing texts (incl. SecondQuantizationCoreEsa, which EsaPairDGamma
+now imports), point `recompute_ready`'s def-import check at platform truth, and
+the §2.17 backlog (12 cycles, 4 declaration-less sols, ~71 object-file). 
+
+---
+
 ## 1. CURRENT TASK — upstream-def publication wave + pending thm/sol backlog
 
 The wave has grown to **4059 items** (158 defs / 1943 thms / 1943 sols). The original

@@ -1438,6 +1438,20 @@ def submission_guard(kind, name, path, theorem_name=None):
             extra = f" (+{len(sibs) - 3} more)" if len(sibs) > 3 else ""
             return ("defer", "sibling theorem not published on the platform: "
                     + ", ".join(sibs[:3]) + extra)
+    # The def-import twin of the sibling guard, for EVERY kind: the server
+    # answers `unknown import: Definitions.Def_X ... No such definition exists`
+    # and burns an attempt, and 211 such lines are already in
+    # state/pipeline.log (Def_ChapterH4 12x; SirkWhitening/SirkDiffusiveDecay/
+    # SirkEndToEnd 56/32/28x).  `blocked_by` checks the same set but only inside
+    # the two fill loops and only when the preflight catalogue was readable, so
+    # a `--no-preflight` run (or any path that skips the fill loop) submits
+    # blind.  Defer is transient ("guard defer:" is in TRANSIENT_ERRORS), so
+    # waiting for the dependency to publish costs no attempt.
+    miss = unpublished_def_imports(path)
+    if miss:
+        extra = f" (+{len(miss) - 3} more)" if len(miss) > 3 else ""
+        return ("defer", "def bundle not published on the platform: "
+                + ", ".join(miss[:3]) + extra)
     reason = stub_sanity(path, kind)
     if reason:
         return "defer", "stub sanity: " + reason
@@ -1799,6 +1813,38 @@ def def_imports(path):
         return []
     return [m[len("Definitions.Def_"):] for m in
             re.findall(r"(?m)^import\s+(Definitions\.Def_\S+)", txt)]
+
+
+_PUB_DEFS_CACHE = None
+
+
+def _published_def_set():
+    """Lazily-cached platform PUBLISHED definition names (bare, `Def_`-stripped),
+    the same set `blocked_by` is handed.  An empty set means `published_defs()`
+    refused (catalogue unreadable) -- fail open, exactly like a fill loop with
+    `published` empty: never defer on a guessed dependency fact."""
+    global _PUB_DEFS_CACHE
+    if _PUB_DEFS_CACHE is None:
+        try:
+            _PUB_DEFS_CACHE = published_defs()
+        except Exception:
+            _PUB_DEFS_CACHE = set()
+    return _PUB_DEFS_CACHE
+
+
+def unpublished_def_imports(path):
+    """Bare names of `import Definitions.Def_X` lines in `path` whose bundle has
+    no PUBLISHED definition job.  Unlike Theorem imports (`unpublished_sibling_
+    imports`), def imports were never guarded for thm/sol submissions -- the
+    historical burn class behind the 211 `unknown import: Definitions.*` lines
+    in state/pipeline.log."""
+    deps = def_imports(path)
+    if not deps:
+        return []
+    pub = _published_def_set()
+    if not pub:
+        return []
+    return [d for d in deps if d not in pub]
 
 
 def item_source(item):

@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
 open BookProof.ChapterSoftmaxDivergence
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxDivergence.fisherInformation_nonneg (beta : ℝ) (s : Fin m → ℝ) :

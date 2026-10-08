@@ -3,9 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterA4
 open BookProof
 
-variable {R E E' : Type*} [Semiring R]
-    [SeminormedAddCommGroup E] [SeminormedAddCommGroup E'] [Module R E] [Module R E']
-
 
 
 open MeasureTheory
@@ -13,6 +10,9 @@ open MeasureTheory
 
 
 
+variable {R E E' : Type*} [Semiring R]
+    [SeminormedAddCommGroup E] [SeminormedAddCommGroup E'] [Module R E] [Module R E']
 
-theorem BookProof.conjugateₗᵢ_symm (Θ : E ≃ₗᵢ[R] E') (A : E ≃ₗᵢ[R] E) :
+
+theorem BookProof.conjugateli_symm (Θ : E ≃ₗᵢ[R] E') (A : E ≃ₗᵢ[R] E) :
     (conjugateₗᵢ Θ A).symm = conjugateₗᵢ Θ A.symm := by sorry

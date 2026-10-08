@@ -13,8 +13,6 @@ import Definitions.Def_ChapterScalaronDensitizedTransfer
 import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-
 
 
 open MeasureTheory Set Filter Topology
@@ -25,6 +23,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.physConf_hasZeroDeficiencyOn_transfer :
     HasZeroDeficiencyOn (physConfCore M alpha) (physConfOp M alpha) := by sorry

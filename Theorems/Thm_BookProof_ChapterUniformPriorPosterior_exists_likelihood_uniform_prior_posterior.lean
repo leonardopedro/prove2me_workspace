@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterUniformPriorPosterior
 
-variable {Hyp : Type*} [Fintype Hyp] [DecidableEq Hyp]
-
 
 open scoped BigOperators
 
+
+variable {Hyp : Type*} [Fintype Hyp] [DecidableEq Hyp]
 
 
 theorem BookProof.ChapterUniformPriorPosterior.exists_likelihood_uniform_prior_posterior (q : Hyp → ℝ)

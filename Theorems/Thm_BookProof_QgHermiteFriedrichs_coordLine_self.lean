@@ -10,9 +10,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -21,5 +18,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.coordLine_self (x : Vd d) (j : Fin d) (s : ℝ) : (coordLine x j s) j = s := by sorry

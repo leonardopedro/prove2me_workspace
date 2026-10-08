@@ -1,8 +1,8 @@
-import Theorems.Thm_BookProof_BddBelowWallEsa_wallHam_essentiallySelfAdjoint_of_bddBelow
-
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
+
+import Theorems.Thm_BookProof_WallEsaBddBelow_wallHam_essentiallySelfAdjoint_of_bddBelow
 
 
 
@@ -132,14 +132,26 @@ def smConfPoly : SmConf → MvPolynomial (Fin 163) ℂ
   | Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inl (i, j))))) => X (smDB i j)
   | Sum.inr (Sum.inr (Sum.inr (Sum.inr (Sum.inr (a, j))))) => X (smDPhi a j)
 
-
+theorem realCoeff_smConfPoly (s : SmConf) : RealCoeff (smConfPoly s) := by
+  rcases s with (⟨a, i⟩ | ⟨k, i⟩ | a) | i | (⟨a, i, j⟩ | ⟨k, i, j⟩ | ⟨i, j⟩ | ⟨a, j⟩)
+  · exact (realCoeff_X _).mul (realCoeff_X _)
+  · exact (realCoeff_X _).mul (realCoeff_X _)
+  · exact (realCoeff_X _).mul (realCoeff_X _)
+  · exact realCoeff_X _
+  · exact realCoeff_X _
+  · exact realCoeff_X _
+  · exact realCoeff_X _
+  · exact realCoeff_X _
 
 /-- The confining multiplication operators on the Gauss–polynomial core. -/
 def smConfField (s : Fin 160) :
     (polyGaussCore (d := 163)) →ₗ[ℂ] (polyGaussCore (d := 163)) :=
   (coreRepPoly 163).op (mulOp (smConfPoly (smConfFin.symm s)))
 
-
+theorem smConfField_symmetricOn (s : Fin 160) :
+    SymmetricOn (polyGaussCore (d := 163))
+      ((polyGaussCore (d := 163)).subtype.comp (smConfField s)) :=
+  (coreRepPoly 163).symmetricOn_op (mulOp_polySym (realCoeff_smConfPoly _))
 
 /-! ## 2. The comparison operator -/
 
@@ -150,13 +162,61 @@ for the derivative coordinates — and the shift `c₀`. -/
 def smComparison (c0 : ℝ) : (polyGaussCore (d := 163)) →ₗ[ℂ] L2d 163 :=
   (2 : ℂ) • weylOp smPi smConfField + ((c0 : ℝ) : ℂ) • (polyGaussCore (d := 163)).subtype
 
+theorem smComparison_symmetricOn (c0 : ℝ) :
+    SymmetricOn (polyGaussCore (d := 163)) (smComparison c0) := by
+  intro x y
+  have hw := weylOpDom_symmetricOn smPi_symmetricOn smConfField_symmetricOn x y
+  simp only [smComparison, LinearMap.add_apply, LinearMap.smul_apply, Submodule.subtype_apply,
+    inner_add_left, inner_add_right, inner_smul_left, inner_smul_right, Complex.conj_ofReal,
+    map_ofNat]
+  rw [hw]
 
+/-- The quadratic form of the comparison operator: the sum of the squares plus `c₀‖x‖²`. -/
+theorem smComparison_quadForm (c0 : ℝ) (x : polyGaussCore (d := 163)) :
+    quadForm (smComparison c0) x
+      = 2 * quadForm (weylOp smPi smConfField) x + c0 * ‖((x : polyGaussCore (d := 163)) :
+          L2d 163)‖ ^ 2 := by
+  have h1 : (inner ℂ ((x : polyGaussCore (d := 163)) : L2d 163) (smComparison c0 x) : ℂ)
+      = (2 : ℂ) * inner ℂ ((x : polyGaussCore (d := 163)) : L2d 163)
+          (weylOp smPi smConfField x)
+        + ((c0 : ℝ) : ℂ) * inner ℂ ((x : polyGaussCore (d := 163)) : L2d 163)
+          ((x : polyGaussCore (d := 163)) : L2d 163) := by
+    simp [smComparison, LinearMap.add_apply, LinearMap.smul_apply, smul_apply, map_smul,
+      inner_add_left, inner_add_right, inner_smul_left, inner_smul_right, Complex.conj_ofReal,
+      inner_self_eq_norm_sq_to_K, real_inner_self_eq_norm_sq, map_ofNat]
+    show inner ℂ ((x : polyGaussCore (d := 163)) : L2d 163)
+        (((c0 : ℝ) : ℂ) • ((x : polyGaussCore (d := 163)) : L2d 163))
+      = ((c0 : ℝ) : ℂ) * (‖((x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 : ℂ)
+    rw [inner_smul_right, inner_self_eq_norm_sq_to_K]
+    rfl
+  have h2 : (inner ℂ ((x : polyGaussCore (d := 163)) : L2d 163)
+      ((x : polyGaussCore (d := 163)) : L2d 163) : ℂ)
+      = ((‖((x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 : ℝ) : ℂ) := by
+    rw [inner_self_eq_norm_sq_to_K]
+    norm_cast
+  rw [quadForm, h1, h2, quadForm]
+  simp only [Complex.ofReal_pow, Complex.add_re, Complex.mul_re, Complex.re_ofNat,
+    Complex.im_ofNat, zero_mul, sub_zero, Complex.ofReal_re, Complex.ofReal_im, add_right_inj,
+    mul_eq_mul_left_iff]
+  left
+  norm_cast
 
+/-- **`N ≥ 1` (CHECK 9c).**  Every summand of `N₀` is a square of a symmetric operator, so
+the quadratic form of `N` is at least `c₀‖x‖²`; for `c₀ ≥ 1` the comparison operator is
+bounded below by the identity, which is the positivity the Faris–Lavine criterion asks
+of it. -/
+theorem sm_N_positive {c0 : ℝ} (hc0 : 1 ≤ c0) (x : polyGaussCore (d := 163)) :
+    ‖((x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 ≤ quadForm (smComparison c0) x := by
+  have hnn : 0 ≤ quadForm (weylOp smPi smConfField) x :=
+    weylOpDom_quadForm_nonneg smPi_symmetricOn smConfField_symmetricOn x
+  have hx : (0 : ℝ) ≤ ‖((x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 := by positivity
+  rw [smComparison_quadForm]
+  nlinarith
 
-
-
-
-
+/-- In particular the comparison operator is positive. -/
+theorem sm_N_quadForm_nonneg {c0 : ℝ} (hc0 : 1 ≤ c0) (x : polyGaussCore (d := 163)) :
+    0 ≤ quadForm (smComparison c0) x :=
+  le_trans (by positivity) (sm_N_positive hc0 x)
 
 /-! ## 3. The confining one-dimensional factors, and their tensor sum -/
 
@@ -199,9 +259,21 @@ def quadraticEsaOp : EsaOp where
 def smDynChain : EsaOp :=
   chain quarticEsaOp (List.replicate 36 quarticEsaOp ++ List.replicate 3 quadraticEsaOp)
 
+/-- **The dynamical part of the Standard-Model comparison operator is essentially
+self-adjoint.**  The `40` uncoupled confining degrees of freedom of `N₀` — `π² + q⁴` on the
+non-abelian and Higgs coordinates, `π² + q²` on the abelian one — form a tensor sum, and a
+tensor sum of essentially self-adjoint operators is essentially self-adjoint on the
+algebraic tensor product of the domains. -/
+theorem sm_N_dyn_esa :
+    EssentiallySelfAdjointOn smDynChain.dom smDynChain.op :=
+  chain_esa quarticEsaOp _
 
-
-
+/-- The unitary group generated by the dynamical part of the comparison operator. -/
+theorem sm_N_dyn_stone_flow :
+    ∃ (G : UnboundedSelfAdjoint smDynChain.space.carrier)
+      (U : ℝ → (smDynChain.space.carrier →L[ℂ] smDynChain.space.carrier)),
+      IsSelfAdjointExtension smDynChain.op G.op ∧ IsStoneFlow G U :=
+  chain_stone_flow quarticEsaOp _
 
 end
 

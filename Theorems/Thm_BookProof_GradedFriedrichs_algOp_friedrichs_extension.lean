@@ -15,8 +15,6 @@ open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.YangMillsFriedrichs
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -25,6 +23,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.algOp_friedrichs_extension {T : Module.End ℂ (γ →₀ ℂ)}
     (hsym : IsSymAlg T) (hpos : IsPosAlg T) :

@@ -14,10 +14,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteOscillator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -26,6 +22,10 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
 
 theorem BookProof.QgHermiteOscillator.harmonicCore_essentiallySelfAdjoint :
     EssentiallySelfAdjointOn (polyGaussCore (d := d)) harmCore := by sorry

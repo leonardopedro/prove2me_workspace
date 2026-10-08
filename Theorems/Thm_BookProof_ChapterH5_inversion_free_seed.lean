@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterH5
 open BookProof.ChapterH5
 
-variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-variable {H : E →ₗ[K] E} {v : E}
-
 
 noncomputable section
 
 
 
+variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
+
+variable {H : E →ₗ[K] E} {v : E}
 
 theorem BookProof.ChapterH5.inversion_free_seed (S R : E →ₗ[K] E) (v₀ : E) (m : ℕ)
     (hR : R.comp S = LinearMap.id) :

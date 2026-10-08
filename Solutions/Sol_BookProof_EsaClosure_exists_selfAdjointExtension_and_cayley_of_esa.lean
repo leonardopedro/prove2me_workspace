@@ -26,9 +26,9 @@ theorem solution (T : D →ₗ[ℂ] F)
     (hesa : EssentiallySelfAdjointOn D T) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F) (U : F ≃ₗᵢ[ℂ] F),
       IsSelfAdjointExtension T A ∧
-      ∀ x : Dom, U (A x + Complex.I • (x : F)) = A x - Complex.I • (x : F) :=
-   F)) = A x - Complex.I • (x : F) := by
-    obtain ⟨Dom, A, hA⟩ := exists_isSelfAdjointExtension_of_esa T hdense hsym hesa
-    obtain ⟨hext, hsymA, hsa⟩ := hA
-    obtain ⟨U, hU⟩ := exists_cayley_unitary hsymA hsa
-    exact ⟨Dom,
+      ∀ x : Dom, U (A x + Complex.I • (x : F)) = A x - Complex.I • (x : F) := by
+
+  obtain ⟨Dom, A, hA⟩ := exists_isSelfAdjointExtension_of_esa T hdense hsym hesa
+  obtain ⟨hext, hsymA, hsa⟩ := hA
+  obtain ⟨U, hU⟩ := exists_cayley_unitary hsymA hsa
+  exact ⟨Dom, A, U, ⟨hext, hsymA, hsa⟩, hU⟩

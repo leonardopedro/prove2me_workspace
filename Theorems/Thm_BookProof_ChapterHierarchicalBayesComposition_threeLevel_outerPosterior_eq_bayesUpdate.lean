@@ -7,13 +7,13 @@ open BookProof.ChapterHierarchicalBayes
 open BookProof.ChapterSequentialBayes
 open BookProof.ChapterHierarchicalBayesComposition
 
-variable {A B C D : Type*}
-  [Fintype A] [Fintype B] [Fintype C] [Fintype D]
-  [DecidableEq A] [DecidableEq B] [DecidableEq C] [DecidableEq D]
-
 
 open scoped BigOperators
 
+
+variable {A B C D : Type*}
+  [Fintype A] [Fintype B] [Fintype C] [Fintype D]
+  [DecidableEq A] [DecidableEq B] [DecidableEq C] [DecidableEq D]
 
 
 theorem BookProof.ChapterHierarchicalBayesComposition.threeLevel_outerPosterior_eq_bayesUpdate (outer : A → ℝ)

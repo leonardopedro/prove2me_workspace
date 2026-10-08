@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 
-variable {d : ℕ}
-
 
 
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBand.g1_nonneg (n : ℕ) : 0 ≤ g1 n := by sorry

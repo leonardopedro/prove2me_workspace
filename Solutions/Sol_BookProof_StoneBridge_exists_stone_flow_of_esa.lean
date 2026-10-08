@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
 import Theorems.Thm_BookProof_StoneBridge_isStoneFlow_stoneU
+import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
 open BookProof.StoneBridge
 
 
@@ -22,7 +23,8 @@ set_option maxHeartbeats 1000000 in
 theorem solution {D : Submodule ℂ F} (Hc : D →ₗ[ℂ] F)
     (hdense : Dense ((D : Submodule ℂ F) : Set F)) (hsym : SymmetricOn D Hc)
     (hesa : EssentiallySelfAdjointOn D Hc) :
-    ∃ (T : UnboundedSelfAdjoint F) (U : ℝ → ( := by
+    ∃ (T : UnboundedSelfAdjoint F) (U : ℝ → (F →L[ℂ] F)),
+      IsSelfAdjointExtension Hc T.op ∧ IsStoneFlow T U := by
 
   obtain ⟨Dom, A, hA⟩ := exists_isSelfAdjointExtension_of_esa Hc hdense hsym hesa
   exact ⟨unboundedSelfAdjointOf hdense hA, _, hA,

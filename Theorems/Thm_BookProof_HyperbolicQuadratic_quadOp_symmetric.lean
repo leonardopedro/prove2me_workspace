@@ -10,9 +10,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -21,6 +18,9 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.quadOp_symmetric (c : Fin d → ℝ) :
     SymmetricOn (polyGaussCore (d := d)) (quadOp c) := by sorry

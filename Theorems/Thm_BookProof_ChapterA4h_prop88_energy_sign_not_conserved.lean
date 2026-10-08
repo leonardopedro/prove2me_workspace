@@ -7,13 +7,13 @@ import Definitions.Def_ChapterA4e
 open BookProof.ChapterA4e
 open BookProof.ChapterA4h
 
-variable (R : Type*)
-
 
 open Matrix
 
 
 open BookProof.ChapterA4e BookProof.ChapterA4f BookProof.ChapterA5
+
+variable (R : Type*)
 
 theorem BookProof.ChapterA4h.prop88_energy_sign_not_conserved :
     ¬ ∀ j : Fin 3, projPos * spatialOp j = spatialOp j * projPos := by sorry

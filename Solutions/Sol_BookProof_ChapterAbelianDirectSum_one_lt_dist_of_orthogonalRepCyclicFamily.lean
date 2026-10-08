@@ -27,7 +27,6 @@ variable {pi}
 variable (pi)
 
 set_option maxHeartbeats 1000000 in
-omit [CompactSpace X] [T2Space X] [MeasurableSpace X] [BorelSpace X] in
 theorem solution {S : Set H}
     (hS : OrthogonalRepCyclicFamily pi S) {x y : H} (hx : x ∈ S) (hy : y ∈ S) (hxy : x ≠ y) :
     1 < dist x y := by
@@ -41,3 +40,5 @@ theorem solution {S : Set H}
     norm_num
   have hd : dist x y = ‖x + -y‖ := by rw [dist_eq_norm, sub_eq_add_neg]
   nlinarith [norm_nonneg (x + -y), hd, h2]
+
+omit [CompactSpace X] [T2Space X] [MeasurableSpace X] [BorelSpace X] in

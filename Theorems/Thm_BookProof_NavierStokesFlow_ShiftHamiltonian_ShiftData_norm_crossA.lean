@@ -8,14 +8,14 @@ open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
 
-variable {ι : Type*} (S : ShiftData ι)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*} (S : ShiftData ι)
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.norm_crossA (X Y : ι → ℂ) (β : ι) :
     ‖S.crossA X Y β‖ = S.ampSeq X β * ‖Y (S.shift β)‖ := by sorry

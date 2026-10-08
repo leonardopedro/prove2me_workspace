@@ -11,9 +11,6 @@ open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpScaleMeasure
 open BookProof.ChapterAbelianClassificationList
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
-variable (nu : Measure ℝ) [IsFiniteMeasure nu] [NullSingletonClass nu]
-
 
 noncomputable section
 
@@ -23,6 +20,9 @@ open MeasureTheory ProbabilityTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterDiffuseUnitaryModel BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit BookProof.ChapterLpScaleMeasure
+
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
+variable (nu : Measure ℝ) [IsFiniteMeasure nu] [NullSingletonClass nu]
 
 theorem BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model (hne : nu Set.univ ≠ 0) :
     ∃ U : Lp ℂ 2 (volume.restrict (Set.Icc (0 : ℝ) 1)) ≃ₗᵢ[ℂ] Lp ℂ 2 nu,

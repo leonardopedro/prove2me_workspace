@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_SmFarisLavine_CoreData_esa_core
 import Theorems.Thm_BookProof_SmFarisLavine_sm_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 open BookProof.SmFarisLavine
 
 

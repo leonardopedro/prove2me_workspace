@@ -6,16 +6,16 @@ import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.GraphCore
 open BookProof.TensorCore
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-variable (A : D₂ →ₗ[ℂ] Hs.carrier)
-variable (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+variable (A : D₂ →ₗ[ℂ] Hs.carrier)
+variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TensorCore.exists_core_approx (hcore : IsGraphCore D A) (n : ℕ)
     (x : ((domSpace Hs D₂).pow n)) {ε : ℝ} (hε : 0 < ε) :

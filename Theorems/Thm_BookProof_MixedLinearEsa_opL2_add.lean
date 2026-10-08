@@ -7,13 +7,13 @@ import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
 
 theorem BookProof.MixedLinearEsa.opL2_add (A B : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ)) : opL2 (A + B) = opL2 A + opL2 B := by sorry

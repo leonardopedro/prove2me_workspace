@@ -10,9 +10,6 @@ open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyConverse
 
-variable {G X H : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-variable [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -20,6 +17,9 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterPvmCyclicUnitary BookProof.ChapterMackeyCocycle
+
+variable {G X H : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
+variable [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterMackeyConverse.mackey_converse_continuous (S : ContinuousImprimitivitySystem G X H) (ψ : H)

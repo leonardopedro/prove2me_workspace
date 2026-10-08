@@ -10,16 +10,16 @@ open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-variable {Ω : Type*} [MeasurableSpace Ω] {F : Type*} [NormedAddCommGroup F]
-  [InnerProductSpace ℂ F]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {Ω : Type*} [MeasurableSpace Ω] {F : Type*} [NormedAddCommGroup F]
+  [InnerProductSpace ℂ F]
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.nsFullData_hasZeroDeficiencyOn_of_continuumFock (d : FullEsa.NSFullData F)
     (μ : Measure Ω) {p q dr : Fin 3 → Ω → ℝ} {cf : Ω → ℝ} (hp : ∀ i, Measurable (p i))

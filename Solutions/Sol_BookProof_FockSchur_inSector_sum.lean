@@ -1,8 +1,8 @@
 -- Generated from ChapterFockSchurEsa.lean — solution of BookProof.FockSchur.inSector_sum
 import Mathlib
 import Definitions.Def_ChapterFockSchurEsa
-import Theorems.Thm_BookProof_FockSchur_inSector_zero_op
 import Theorems.Thm_BookProof_FockSchur_inSector_add
+import Theorems.Thm_BookProof_FockSchur_inSector_zero_op
 open BookProof.FockSchur
 
 

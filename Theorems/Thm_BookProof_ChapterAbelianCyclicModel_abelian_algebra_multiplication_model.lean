@@ -4,13 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianCyclicModel
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
-variable (hcyc : DenseRange (repVec pi xi))
-variable {A : Type*} [CommCStarAlgebra A]
-
 
 open MeasureTheory Complex WeakDual
 open scoped ComplexOrder
@@ -19,6 +12,13 @@ open scoped ComplexOrder
 open BookProof.ChapterAbelianGelfandModel
 
 
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
+
+variable (hcyc : DenseRange (repVec pi xi))
+variable {A : Type*} [CommCStarAlgebra A]
 
 theorem BookProof.ChapterAbelianCyclicModel.abelian_algebra_multiplication_model (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
     (hxi : ‖xi‖ = 1) (hcyc : DenseRange fun a : A => rho a xi) :

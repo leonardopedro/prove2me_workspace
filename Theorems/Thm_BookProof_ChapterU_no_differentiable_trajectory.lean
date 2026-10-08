@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterU
 open BookProof.ChapterU
 
-variable {X : Type*} [MeasurableSpace X]
-variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
-  [AddCommGroup N] [Module R N]
-
 
 open MeasureTheory
 open scoped ENNReal ProbabilityTheory TensorProduct
+
+variable {X : Type*} [MeasurableSpace X]
+variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
+  [AddCommGroup N] [Module R N]
 
 theorem BookProof.ChapterU.no_differentiable_trajectory {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     [IsProbabilityMeasure P] (path : Ω → ℝ → ℝ)

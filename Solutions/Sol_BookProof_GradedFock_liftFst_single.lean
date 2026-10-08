@@ -16,6 +16,7 @@ variable {α β : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : (α →₀ ℂ) →ₗ[ℂ] (α →₀ ℂ)) (a : α) (b : β) (c : ℂ) :
-    liftFst (β := by
-
-  rw [liftFst, Finsupp.lsum_single, LinearMap.toSpanSingleton_apply]
+    liftFst (β :=
+  β) T (Finsupp.single (a, b) c)
+        = c • otimes (T (Finsupp.single a 1)) (Finsupp.single b (1 : ℂ)) := by
+    rw [liftFst, Finsupp.lsum_single, LinearMap.toSpanSingleton_apply]

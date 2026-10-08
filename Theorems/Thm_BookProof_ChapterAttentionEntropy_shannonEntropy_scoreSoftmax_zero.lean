@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionEntropy
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open Filter Topology BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionEntropy.shannonEntropy_scoreSoftmax_zero (s : Fin m → ℝ) (hm : 0 < m) :

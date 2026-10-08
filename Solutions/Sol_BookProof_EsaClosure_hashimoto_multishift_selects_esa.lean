@@ -1,6 +1,7 @@
 -- Generated from ChapterEsaClosure.lean — solution of BookProof.EsaClosure.hashimoto_multishift_selects_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
+import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_dom_eq_range
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective

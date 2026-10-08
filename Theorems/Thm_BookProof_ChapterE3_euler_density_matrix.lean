@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterE3
 open BookProof.ChapterE3
 
-variable {n : ℕ}
-
 
 open scoped Matrix BigOperators
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterE3.euler_density_matrix (l w : Fin n → ℝ) (θ : ℝ) :

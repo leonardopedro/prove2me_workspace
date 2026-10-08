@@ -9,15 +9,15 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.hasSum_inner_nsH_right (hκ : 0 ≤ κ) (x y : maxDom (oscSymbol κ)) :
     HasSum (fun n => -Complex.I * crossA κ ((x : L2I ℕ) : ℕ → ℂ) (((y : L2I ℕ) : ℕ → ℂ)) n

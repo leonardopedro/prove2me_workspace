@@ -14,8 +14,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.commPoly_eq (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (p : MvPolynomial (Fin D) ℂ) :

@@ -15,8 +15,6 @@ open BookProof.QgHermiteCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.DegSchrodinger
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegSchrodinger.hamCoreS_coeFn (W : Vd d → ℝ) (hWc : Continuous W) (hWb : ExpBounded W)

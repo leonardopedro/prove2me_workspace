@@ -11,17 +11,17 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NsLagrangianDetFL
 
-variable {K : Type*} [Fintype K]
-variable (S : LagNsData K)
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
 
+variable {K : Type*} [Fintype K]
+
+variable (S : LagNsData K)
 
 theorem BookProof.NsLagrangianDetFL.lagKoopmanOp_symmetricOn :
     SymmetricOn (polyGaussCore (d := lagDim K)) (lagKoopmanOp S) := by sorry

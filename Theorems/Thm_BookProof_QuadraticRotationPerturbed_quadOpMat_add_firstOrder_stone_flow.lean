@@ -5,7 +5,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterQuadraticRotationEsa
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationPerturbed
@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.HermiteRelative
 open BookProof.StoneBridge
 open BookProof.QuadraticRotationPerturbed
-
-variable {d : ℕ}
 
 
 
@@ -36,6 +34,8 @@ open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadraticRotationPerturbed.quadOpMat_add_firstOrder_stone_flow {A : Matrix (Fin d) (Fin d) ℝ} (hA : A.PosDef)

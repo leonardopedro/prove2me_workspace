@@ -1,8 +1,8 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.re_inner_oscL_eq
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
-import Theorems.Thm_BookProof_HermiteRelative_posL_symmetric
 import Theorems.Thm_BookProof_HermiteRelative_momL_symmetric
+import Theorems.Thm_BookProof_HermiteRelative_posL_symmetric
 import Theorems.Thm_BookProof_HermiteRelative_oscOp_eq
 open BookProof.HermiteRelative
 
@@ -21,8 +21,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
 theorem solution (i : Fin d) (u : polyGaussCore (d := d)) :
     (inner ℂ (u : L2d d) (oscL i u) : ℂ).re
       = ‖momL i u‖ ^ 2 + ‖posL i u‖ ^ 2 / 4 := by

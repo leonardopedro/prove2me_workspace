@@ -14,9 +14,6 @@ open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.TensorCore
 open BookProof.PermSector
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
@@ -24,6 +21,9 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.Te
 open BookProof.GroupAverage BookProof.TensorPerm
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.PermSector.exists_ne_zero_bosonic (n : ℕ) (hD : D ≤ D₂) {a : Hs.carrier} (haD : a ∈ D)
     (ha0 : a ≠ 0) : ∃ x : redDom (bosonicProj Hs n) (sectorCore Hs D₂ D n), x ≠ 0 := by sorry

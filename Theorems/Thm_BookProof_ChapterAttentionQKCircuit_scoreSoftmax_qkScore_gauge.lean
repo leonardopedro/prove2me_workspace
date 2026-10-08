@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionQKCircuit
 
-variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open Matrix BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionQKCircuit.scoreSoftmax_qkScore_gauge (beta : ℝ) {A B : Matrix (Fin d) (Fin d) ℝ}

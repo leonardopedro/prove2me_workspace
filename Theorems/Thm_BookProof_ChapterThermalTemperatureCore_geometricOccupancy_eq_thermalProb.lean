@@ -7,14 +7,14 @@ import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterThermalTemperatureCore
 
-variable {r : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {r : ℝ}
 
 theorem BookProof.ChapterThermalTemperatureCore.geometricOccupancy_eq_thermalProb (h0 : 0 ≤ r) (h1 : r < 1) (n : ℕ) :
     geometricOccupancy r n = thermalProb (geometricMean r) n := by sorry

@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -26,6 +24,8 @@ open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.TruncationGapLift.inner_eq_zero_of_mem_galerkin_tail (b : HilbertBasis ℕ ℂ F) {m : ℕ}

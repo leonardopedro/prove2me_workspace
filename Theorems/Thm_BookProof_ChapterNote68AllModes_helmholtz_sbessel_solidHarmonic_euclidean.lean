@@ -7,14 +7,14 @@ import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBessel
 open BookProof.ChapterNote68AllModes
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterSphericalBessel BookProof.ChapterBesselHarmonic
 open BookProof.ChapterSolidHarmonic
 open scoped RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 theorem BookProof.ChapterNote68AllModes.helmholtz_sbessel_solidHarmonic_euclidean {l μ : ℕ} (hμ : μ ≤ l)

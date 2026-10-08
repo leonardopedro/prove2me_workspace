@@ -10,16 +10,16 @@ open BookProof.SmBrstGhost
 open BookProof.YangMillsGhost
 open BookProof.BookBrstGaugeFixing
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstGaugeFixing.bookGfTerm_eq :
     bookGfTerm G

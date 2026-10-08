@@ -7,14 +7,14 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroup
 open BookProof.NonnegSemigroup
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegResolvent
 open BookProof.NonnegUnitaryGroup
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.NonnegSemigroup.expNeg_add (A : F →L[ℂ] F) (s t : ℝ) :

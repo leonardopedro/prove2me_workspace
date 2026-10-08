@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -36,6 +34,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.sqSumOp_eq_fqOp {R : Type*} [Fintype R] (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) :
     sqSumOp kappa v = fqOp (diagP kappa) (gramQ v) 0 0 0 := by sorry

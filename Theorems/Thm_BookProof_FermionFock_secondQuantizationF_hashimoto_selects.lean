@@ -19,8 +19,6 @@ open BookProof.SmCar
 open BookProof.YangMillsFriedrichs
 open BookProof.FermionFock
 
-variable {ι : Type*} [DecidableEq ι]
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -30,6 +28,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FermionFock.secondQuantizationF_hashimoto_selects {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] (ε : ℕ ≃ FConf) (b : HilbertBasis ℕ ℂ F)

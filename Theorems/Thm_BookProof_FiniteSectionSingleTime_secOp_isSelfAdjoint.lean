@@ -18,9 +18,6 @@ open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -34,6 +31,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.secOp_isSelfAdjoint {W : Finset ι} (hsym : SymmetricOn (lpFiniteModes ι) H) :
     IsSelfAdjoint (secOp H W) := by sorry

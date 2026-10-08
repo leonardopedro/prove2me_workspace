@@ -14,11 +14,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.SirkSingleTime
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-variable {ι : Type*}
-
 
 open scoped InnerProductSpace
 
@@ -29,6 +24,11 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 theorem BookProof.SirkSingleTime.qgOuterFock_singleTime_shiftInvert_convergence (W : WallPot) (Q : QgModeData ι)
     (Λ : ℕ → Set ι) (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

@@ -9,14 +9,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
-variable {d : ℕ} {κ : Fin d → ℝ}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply_prime (s : Finset (Fin d)) (v : Fin d → L2I (Occ d)) (α : Occ d) :

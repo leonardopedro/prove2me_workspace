@@ -13,9 +13,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 open BookProof.ScalaronFiberFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (W : WallPot) (s : ℝ)
-
 
 
 open MeasureTheory SchwartzMap
@@ -26,6 +23,9 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
 
 theorem BookProof.ScalaronFiberFL.inner_toLp_toLp (g h : 𝓢(ℝ, ℂ)) :
     (inner ℂ (g.toLp 2 (volume : Measure ℝ)) (h.toLp 2 (volume : Measure ℝ)) : ℂ)

@@ -7,14 +7,14 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.EsaPair
 
-variable {Hs : IPSpace} (P : ESAPair Hs)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {Hs : IPSpace} (P : ESAPair Hs)
 
 theorem BookProof.EsaPair.ESAPair.norm_sub_smul_sq (d : ℝ) (x : P.coreDomain) :
     ‖P.toOp x - ((d : ℂ) * Complex.I) • (x : Hs.carrier)‖ ^ 2

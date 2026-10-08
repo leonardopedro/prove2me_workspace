@@ -12,9 +12,6 @@ import Definitions.Def_ChapterA3n
 open BookProof.ChapterA3n
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-variable {ι : Type*}
-
 
 
 open BookProof.GaugeFixing
@@ -24,5 +21,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
+variable {ι : Type*}
 
 theorem BookProof.QgPhysicalSectorIdentity.wsum_annIdx (ω : ι → ℝ) (j : ι) : wsum ω (annIdx j) = ω j := by sorry

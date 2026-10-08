@@ -5,12 +5,12 @@ import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
-variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
-variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
+variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
 
 theorem BookProof.ChapterGaugeComprehensiveFixing.not_isPhysicalObservable_indicator [Nontrivial G] [Nonempty X]
     (hcomp : IsComprehensiveGaugeFixing G S) (hcompl : IsCompleteGaugeFixing' G S)

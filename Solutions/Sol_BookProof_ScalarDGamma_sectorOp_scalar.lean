@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
 import Theorems.Thm_BookProof_ScalarDGamma_derPow_scalar
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 open BookProof.ScalarDGamma
 
 

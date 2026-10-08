@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignAction
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSignGauge
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignAction.flipVec_pm (b : Fin n → Bool) (k : Fin n) :

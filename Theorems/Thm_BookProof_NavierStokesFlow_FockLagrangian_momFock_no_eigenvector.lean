@@ -9,14 +9,14 @@ open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.momFock_no_eigenvector {lam : ℂ} (hlam : lam ≠ 0) (v : momFock.core)
     (hv : ((momFock.data.hFull v : momFock.core) : Lp ℂ 2 fockR)

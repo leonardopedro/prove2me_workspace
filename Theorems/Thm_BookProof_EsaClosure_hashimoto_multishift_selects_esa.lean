@@ -14,10 +14,6 @@ open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.HermiteGalerkin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 open Filter Topology
 
@@ -26,6 +22,10 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.HashimotoShiftIn
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.hashimoto_multishift_selects_esa (b : HilbertBasis ℕ ℂ F) (T : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T)

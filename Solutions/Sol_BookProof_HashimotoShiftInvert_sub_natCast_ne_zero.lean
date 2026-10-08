@@ -14,9 +14,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-sing h
-
-theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) : γ - (n : ℂ :=
+theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) : γ - (n : ℂ) ≠ 0 :=
   ) ≠ 0 := by
     intro h
     have := norm_sub_natCast_ge γ n

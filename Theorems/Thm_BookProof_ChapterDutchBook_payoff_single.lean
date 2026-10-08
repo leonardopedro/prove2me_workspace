@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterDutchBook
 
-variable {Ω : Type*} [DecidableEq Ω]
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {Ω : Type*} [DecidableEq Ω]
 
 
 theorem BookProof.ChapterDutchBook.payoff_single (Pr : Finset Ω → ℝ) (A₀ : Finset Ω) (s₀ : ℝ) (ω : Ω) :

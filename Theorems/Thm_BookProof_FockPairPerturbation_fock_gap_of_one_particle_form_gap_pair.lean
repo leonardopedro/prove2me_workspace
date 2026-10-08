@@ -12,8 +12,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.FockPairPerturbation
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -21,6 +19,8 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.FockPairPerturbation.fock_gap_of_one_particle_form_gap_pair (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b) {mu : ℝ} (hmu : 0 < mu)

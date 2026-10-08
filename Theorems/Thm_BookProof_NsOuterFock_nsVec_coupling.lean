@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterNsOuterFockFarisLavine
 open BookProof.NsOuterFock
 
-variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
-
 
 
 open Finset MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.QgOuterFockInteractionFL
 open BookProof.SqSumOuterFamily
 
 noncomputable section
+
+variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
 
 theorem BookProof.NsOuterFock.nsVec_coupling {n : ℕ} (p : Fin n) (i j : Fin 3) (hne : nextPart p ≠ p) :
     nsVec bv nu lam mu gg n (p, locD i j) (coordOf (nextPart p) (locU i)) = -lam := by sorry

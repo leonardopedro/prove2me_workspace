@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine
 
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 theorem BookProof.YangMillsFriedrichs.weylOp_apply {n m : ℕ} (pi : Fin n → D →ₗ[ℂ] D) (Bf : Fin m → D →ₗ[ℂ] D) (x : D) :

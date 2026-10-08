@@ -1,6 +1,7 @@
 -- Generated from ChapterCayleyInverse.lean — solution of BookProof.ChapterCayleyInverse.cayley_ofUnitary
 import Mathlib
 import Definitions.Def_ChapterCayleyInverse
+import Theorems.Thm_BookProof_ChapterCayleyTransform_cayley_shift
 open BookProof.ChapterCayleyInverse
 
 

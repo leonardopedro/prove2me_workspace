@@ -17,5 +17,5 @@ open scoped InnerProductSpace
 
 
 
-theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.ext' : ∀ {T S : UnboundedSelfAdjoint H}, T.domain = S.domain →
+theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.ext_prime : ∀ {T S : UnboundedSelfAdjoint H}, T.domain = S.domain →
     (∀ (x : H) (hx : x ∈ T.domain) (hx' : x ∈ S.domain), T.op ⟨x, hx⟩ = S.op ⟨x, hx'⟩) → T = S := by sorry

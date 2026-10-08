@@ -11,13 +11,13 @@ open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
 open BookProof.EsaPair
 
-variable {Hs : IPSpace} (P : ESAPair Hs)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {Hs : IPSpace} (P : ESAPair Hs)
 
 theorem BookProof.EsaPair.ESAPair.symmetricOn_toOp : SymmetricOn P.coreDomain P.toOp := by sorry

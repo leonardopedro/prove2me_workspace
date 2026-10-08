@@ -9,15 +9,15 @@ open BookProof.BRSTNilpotent
 open BookProof.SmBrstGhost
 open BookProof.BookBrstGaugeFixing
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
-
 
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
 
 theorem BookProof.BookBrstGaugeFixing.brstCharge_gf_anticomm (hCAR : GhostCAR χ β) (hf12 : ∀ a b c, f a b c = -f b a c)
     (hGβ : ∀ a b, Gc a * β b = β b * Gc a)

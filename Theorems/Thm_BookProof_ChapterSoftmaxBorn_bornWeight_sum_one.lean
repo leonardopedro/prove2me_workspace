@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxBorn
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -13,6 +11,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxBorn.bornWeight_sum_one (q : EuclideanSpace ℝ (Fin n))

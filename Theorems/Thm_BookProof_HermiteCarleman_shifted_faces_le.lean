@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -27,6 +24,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.HermiteCarleman.shifted_faces_le {B : ℝ}
     (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ F, ‖u a‖ ^ 2 ≤ B) (i : Fin d) (M : ℕ) :

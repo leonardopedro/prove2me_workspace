@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmYukawaCoupling
 import Theorems.Thm_BookProof_SmYukawaCoupling_fermiBilin_smul
+import Theorems.Thm_BookProof_SmDiracYukawa_fermiBilin_add
 open BookProof.SmYukawaCoupling
 
 

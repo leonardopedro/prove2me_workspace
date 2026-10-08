@@ -18,9 +18,8 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
- A' (γ j) (X j) →
-        Dom' = Dom ∧ ∀ (x : L2N) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) :=
-  lagrangian_hashimoto_selects diagKR diagKR_hFull_essentiallySelfAdjoi :=
+theorem solution {D : Submodule ℂ F} (hd : Dense (D : Set F)) :
+    HasZeroDeficiencyOn D (0 : D →ₗ[ℂ] D) :=
   ntOn l2NatBasis γ hγ
   
   end Instance

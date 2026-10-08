@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
@@ -20,6 +18,8 @@ open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornSignGauge
 open BookProof.ChapterFreeFieldBornSignFiber BookProof.ChapterFreeFieldBornSectionBij
 open BookProof.ChapterFreeFieldBornQuotient BookProof.ChapterFreeFieldBornFiberCard
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general {p : ↥(stdSimplex ℝ (Fin n))} :

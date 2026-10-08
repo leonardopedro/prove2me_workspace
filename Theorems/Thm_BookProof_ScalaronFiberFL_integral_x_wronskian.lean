@@ -13,8 +13,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 open BookProof.ScalaronFiberFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MeasureTheory SchwartzMap
@@ -25,6 +23,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ScalaronFiberFL.integral_x_wronskian (f g : ℝ → ℂ)
     (hf : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) f) (hg : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) g)

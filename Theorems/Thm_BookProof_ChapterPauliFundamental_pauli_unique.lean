@@ -7,13 +7,13 @@ import Definitions.Def_ChapterA3b
 open BookProof.ChapterA3
 open BookProof.ChapterPauliFundamental
 
-variable {A : Fin 4 → M4}
-
 
 open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+
+variable {A : Fin 4 → M4}
 
 theorem BookProof.ChapterPauliFundamental.pauli_unique {B : Fin 4 → M4} (hA : IsCliffordC A)
     (S T : M4) (hS : IsUnit S.det) (hT : IsUnit T.det)

@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
-variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}
-
 
 
 open MeasureTheory Metric Filter Topology Set
@@ -17,6 +15,8 @@ open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
 
 noncomputable section
+
+variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}
 
 theorem BookProof.BddBelowWallEsa.wronsk_deriv_im (x : ℝ) :
     ((starRingEnd ℂ) (W' x) * W' x

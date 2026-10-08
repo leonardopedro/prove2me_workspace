@@ -7,6 +7,8 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -58,7 +60,8 @@ noncomputable def stoneGroup (T : UnboundedSelfAdjoint H) : WeakMeasurableUnitar
   norm_map := T.norm_stoneU_apply
   weaklyMeasurable := fun x y => T.measurable_inner_stoneU x y
 
-
+@[simp] theorem stoneGroup_U (T : UnboundedSelfAdjoint H) (t : ℝ) :
+    T.stoneGroup.U t = T.stoneU t := rfl
 
 /-! ## The generator of `e^{-itA}` is `A` -/
 

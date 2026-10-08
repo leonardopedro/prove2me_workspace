@@ -4,6 +4,7 @@ import Definitions.Def_ChapterMackeyGeneralBase
 import Theorems.Thm_BookProof_ChapterMackeyGeneralBase_ImprimitivitySystem_inner_pvm_eq_zero
 import Theorems.Thm_BookProof_ChapterOrthogonalSums_hasSum_norm_sq_of_hasSum
 open BookProof.ChapterMackeyGeneralBase
+open BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem
 
 
 

@@ -7,9 +7,9 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterE4
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 
+
+
 variable {X : Type*}
-
-
 
 
 theorem BookProof.ChapterGaugeUnconstrainedSpectrum.permOp_isFunctionOfSpectrum_iff (σ : Equiv.Perm X) :

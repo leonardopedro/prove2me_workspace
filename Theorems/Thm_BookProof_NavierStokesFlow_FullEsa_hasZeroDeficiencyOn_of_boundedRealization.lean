@@ -6,11 +6,11 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 open scoped ENNReal
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 theorem BookProof.NavierStokesFlow.FullEsa.hasZeroDeficiencyOn_of_boundedRealization {D : Submodule ℂ F} (H : D →ₗ[ℂ] D)
     (A : F →L[ℂ] F) (hsym : (A : F →ₗ[ℂ] F).IsSymmetric) (hdense : Dense (D : Set F))

@@ -11,9 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -24,10 +21,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-simp_rw [hx]
-  push_cast
-  rw [Finset.sum_mul]
-  exact Finset.sum_congr rfl fun i _ => by ring
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HermiteRelative.harmonicOsc_add_linearPotential_essentiallySelfAdjoint (b : Fin d → ℝ) :
-    E := by sorry
+    EssentiallySelfAdjointOn (polyGaussCore (d := d))
+      (quadOp (fun _ => (1 : ℝ)) + foOp b 0) := by sorry

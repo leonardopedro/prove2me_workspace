@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterLocalityConstraintNull
 open BookProof.LocalityConstraint
 
-variable {α : Type*} [MeasurableSpace α]
-
 
 
 open MeasureTheory ProbabilityTheory
 open scoped NNReal
+
+variable {α : Type*} [MeasurableSpace α]
 
 
 theorem BookProof.LocalityConstraint.restrict_graphSet_eq_zero (μ : Measure α) (ν : Measure ℝ) [SFinite ν] [NullSingletonClass ν]

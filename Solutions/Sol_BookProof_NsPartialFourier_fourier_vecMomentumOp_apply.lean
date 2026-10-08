@@ -19,7 +19,6 @@ variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
   [NormedAddCommGroup G] [NormedSpace ℂ G]
 variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-variable (V F) in
 variable (V) in
 
 set_option maxHeartbeats 1000000 in

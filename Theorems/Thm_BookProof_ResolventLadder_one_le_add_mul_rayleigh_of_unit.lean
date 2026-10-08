@@ -12,9 +12,6 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.RitzMinMax
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 noncomputable section
 
@@ -24,6 +21,9 @@ open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.ResolventLadder.one_le_add_mul_rayleigh_of_unit (hT : IsNonnegSelfAdjoint T) {y z : F}
     (hyz : (y, z) ∈ T) (hy : ‖y‖ = 1) :

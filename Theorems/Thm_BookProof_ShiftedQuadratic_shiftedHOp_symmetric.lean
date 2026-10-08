@@ -16,8 +16,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadratic.shiftedHOp_symmetric (c b b' : Fin d → ℝ) (hc : ∀ i, c i ≠ 0) :

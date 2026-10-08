@@ -7,10 +7,10 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA.AntiUnitary
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 theorem BookProof.ChapterA.IsCReal.hasCommutingAntiUnitary {M : System ℂ V} (h : IsCReal M) :
     HasCommutingAntiUnitary M := by sorry

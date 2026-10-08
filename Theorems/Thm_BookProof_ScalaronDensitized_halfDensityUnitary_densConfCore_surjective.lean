@@ -14,8 +14,6 @@ open BookProof.QuantumGravityHalfDensity
 open BookProof.Starobinsky
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-
 
 
 open MeasureTheory Set Filter Topology
@@ -26,6 +24,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.halfDensityUnitary_densConfCore_surjective (h : densConfCore M alpha) :
     ∃ x : physConfCore M alpha,

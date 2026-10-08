@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
 open BookProof.SymmetryEntropy
 
-variable {n : ℕ}
-
 
 
 open Finset
 open BookProof.ChapterMarkovEntropy (entropy)
 open BookProof.ChapterReconstruct (IsDeterministicCol)
+
+variable {n : ℕ}
 
 
 theorem BookProof.SymmetryEntropy.negMulLog_eq_zero_iff {x : ℝ} (h0 : 0 ≤ x) (h1 : x ≤ 1) :

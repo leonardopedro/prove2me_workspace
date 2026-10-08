@@ -9,15 +9,15 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ClosureUniqueness
 open BookProof.VonNeumannCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.VonNeumannCore.factorGraph_coreRes (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D A) : factorGraph (coreRes A hdense hsym) = factorGraph A := by sorry

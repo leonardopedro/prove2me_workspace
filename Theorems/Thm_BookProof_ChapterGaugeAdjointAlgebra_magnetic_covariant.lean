@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterGaugeAdjointAlgebra
 open BookProof.ChapterGaugeAdjointAlgebra
 
-variable {L : Type*} [LieRing L]
-
 
 
 
 open Finset
+
+variable {L : Type*} [LieRing L]
 
 
 theorem BookProof.ChapterGaugeAdjointAlgebra.magnetic_covariant (A dθ : Fin 3 → L) (dA : Fin 3 → Fin 3 → L)

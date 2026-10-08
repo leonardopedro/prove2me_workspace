@@ -74,4 +74,7 @@ theorem solution {V : ℝ → ℝ} (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.r
     change ‖W x‖ ^ 2 = (W x).re ^ 2 + (W x).im ^ 2
     rw [← Complex.normSq_eq_norm_sq, Complex.normSq_apply]; ring
   intro x
-  have hzero := eq_zero_of_convexOn_nonneg_integrable hFconv 
+  have hzero := eq_zero_of_convexOn_nonneg_integrable hFconv hFnn hFint x
+  have hn : Complex.normSq (W x) = 0 := by
+    rw [Complex.normSq_apply]; nlinarith [hzero]
+  exact Complex.normSq_eq_zero.1 hn

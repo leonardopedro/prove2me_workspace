@@ -17,7 +17,6 @@ variable {N : ℕ} (G : GaugeAlgebra N)
 set_option maxHeartbeats 1000000 in
 theorem solution : ConstraintAlgebra G.f (gaussGen G) chiOp betaOp where
   comm_chi _ _ :=
-  where
-    comm_chi _ _ := bosOpN_ghostOpN_comm _ _
+  bosOpN_ghostOpN_comm _ _
     comm_beta _ _ := bosOpN_ghostOpN_comm _ _
     bracket a b := gaussGen_bracket G a b

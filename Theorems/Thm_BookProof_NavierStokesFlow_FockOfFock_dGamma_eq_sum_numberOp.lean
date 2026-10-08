@@ -12,14 +12,14 @@ open BookProof.GhostField
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.dGamma_eq_sum_numberOp (ω : M → ℝ) {n : Conf M} {S : Finset M} (hS : n.support ⊆ S) :
     dGamma ω (fockBasis n) = ∑ m ∈ S, ((ω m : ℝ) : ℂ) • numberOp m (fockBasis n) := by sorry

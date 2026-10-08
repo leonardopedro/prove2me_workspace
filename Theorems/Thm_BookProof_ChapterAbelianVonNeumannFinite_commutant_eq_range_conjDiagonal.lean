@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterAbelianVonNeumannFinite
 open BookProof.ChapterAbelianVonNeumannFinite
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 open Matrix
 
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.ChapterAbelianVonNeumannFinite.commutant_eq_range_conjDiagonal {A : Matrix n n ℂ} (hA : A.IsHermitian)

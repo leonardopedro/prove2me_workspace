@@ -90,6 +90,118 @@ The complexification of a real Clifford set is a complex Clifford set.
 -/
 
 
+/-rop 37)
+
+This file continues the concrete `4×4` Majorana / gamma-matrix model of
+`BookProof/ChapterA3.lean` (work-package **N4** of `FORMALIZATION_ROADMAP.md`,
+book §A.3, line 5196), adding the two next deliverables of the queue:
+
+* **Lemma 40 (charge conjugation `Θ`).**  In the Majorana basis, *entrywise
+  complex conjugation* `Θ` on `ℂ⁴` is an anti-linear involution commuting with
+  every Majorana matrix `iγ^μ` (this is the finite-dimensional instance of the
+  C-conjugation of §A.0 Def 8).  Fully concrete — needs no external input,
+  because the Majorana matrices are real (`ChapterA3.mgamma_map_conj`).
+
+* **Prop 37 (real Pauli theorem).**  Two real Clifford sets `α^μ`, `β^μ`
+  (`4×4` real matrices with `{α^μ,α^ν} = -2 η^{μν}`, same for `β`) are related
+  by a **real** matrix `S` with `|det S| = 1`, `β^μ = S α^μ S⁻¹`, unique up to
+  sign.  Proved from the **Pauli fundamental theorem** (Note 36, cited
+  `Good1955Properties`), introduced as the EXTERNAL named hypothesis
+  `PauliFundamental` — never an `axiom`, matching the design of §A.2/§A.3.
+
+  *Proof.*  Complexify: by the fundamental theorem there is an invertible complex
+  `T` with `β^μ = T α^μ T⁻¹`, unique up to a nonzero scalar.  Since `α, β` are
+  real, entrywise conjugation `T̄` conjugates them the same way, so `T̄ = c·T`
+  with `c ≠ 0`; conjugating again gives `c̄ c = 1`, i.e. `|c| = 1`.  Rescale
+  `S := a·T` with `a = |det T|^{-1/4} · exp(i·arg c/2)`: then `S` is real
+  (`S̄ = S`) and `|det S| = 1`.  Uniqueness up to sign follows from the
+  same uniqueness clause applied to two real solutions.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`); the sole external input is the named hypothesis
+`PauliFundamental`.
+-/
+
+open Matrix
+open scoped ComplexConjugate
+
+namespace BookProof.ChapterA3
+
+/-! ## Lemma 40 — charge conjugation `Θ` (entrywise complex conjugation) -/
+
+/-- **Charge conjugation** `Θ` on Majorana spinors `ℂ⁴`: entrywise complex
+conjugation (Lemma 40; the finite-dimensional C-conjugation of §A.0 Def 8). -/
+def chargeConj (v : Fin 4 → ℂ) : Fin 4 → ℂ := fun i => conj (v i)
+
+/-- `Θ` is an involution. -/
+theorem chargeConj_involutive : Function.Involutive chargeConj := by
+  intro v; funext i; simp [chargeConj]
+
+/-- `Θ` is additive. -/
+theorem chargeConj_add (u v : Fin 4 → ℂ) :
+    chargeConj (u + v) = chargeConj u + chargeConj v := by
+  funext i; simp [chargeConj]
+
+/-- `Θ` is anti-linear: `Θ (c • v) = c̄ • Θ v`. -/
+theorem chargeConj_smul (c : ℂ) (v : Fin 4 → ℂ) :
+    chargeConj (c • v) = conj c • chargeConj v := by
+  funext i; simp [chargeConj]
+
+/-- **Lemma 40 (commuting).** `Θ` commutes with every Majorana matrix `iγ^μ`. -/
+theorem chargeConj_mgamma_commutes (μ : Fin 4) (v : Fin 4 → ℂ) :
+    chargeConj (mgamma μ *ᵥ v) = mgamma μ *ᵥ chargeConj v := by
+  funext i
+  simp only [chargeConj, mulVec, dotProduct, map_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  rw [map_mul]
+  congr 1
+  have := congrFun (congrFun (mgamma_map_conj μ) i) j
+  simpa [Matrix.map_apply] using this
+
+/-! ## Prop 37 — the real Pauli theorem -/
+
+/-- The Minkowski metric over `ℝ`. -/
+def minkowskiR (μ ν : Fin 4) : ℝ := (minkowskiZ μ ν : ℝ)
+
+/-- A **complex Clifford set**: four `4×4` complex matrices satisfying
+`{A^μ, A^ν} = -2 η^{μν}`. -/
+def IsCliffordC (A : Fin 4 → Matrix (Fin 4) (Fin 4) ℂ) : Prop :=
+  ∀ μ ν, A μ * A ν + A ν * A μ = (-2 * minkowski μ ν) • (1 : Matrix (Fin 4) (Fin 4) ℂ)
+
+/-- A **real Clifford set**: four `4×4` real matrices satisfying
+`{A^μ, A^ν} = -2 η^{μν}`. -/
+def IsCliffordR (A : Fin 4 → Matrix (Fin 4) (Fin 4) ℝ) : Prop :=
+  ∀ μ ν, A μ * A ν + A ν * A μ = (-2 * minkowskiR μ ν) • (1 : Matrix (Fin 4) (Fin 4) ℝ)
+
+/-- Complexification of a real matrix (entrywise cast `ℝ → ℂ`). -/
+def toC (M : Matrix (Fin 4) (Fin 4) ℝ) : Matrix (Fin 4) (Fin 4) ℂ :=
+  M.map (Complex.ofReal)
+
+/-- **Pauli fundamental theorem** (Note 36), taken as an EXTERNAL named
+hypothesis (cite `Good1955Properties`; not re-proved).  Two complex Clifford
+sets are conjugate by an invertible matrix, unique up to a nonzero scalar. -/
+def PauliFundamental : Prop :=
+  ∀ (A B : Fin 4 → Matrix (Fin 4) (Fin 4) ℂ), IsCliffordC A → IsCliffordC B →
+    (∃ S : Matrix (Fin 4) (Fin 4) ℂ, IsUnit S.det ∧ ∀ μ, B μ = S * A μ * S⁻¹) ∧
+    (∀ S T : Matrix (Fin 4) (Fin 4) ℂ, IsUnit S.det → IsUnit T.det →
+      (∀ μ, B μ = S * A μ * S⁻¹) → (∀ μ, B μ = T * A μ * T⁻¹) →
+      ∃ c : ℂ, c ≠ 0 ∧ T = c • S)
+
+/-! ### Helper lemmas for the complexification bookkeeping -/
+
+/-
+The complexification of a real Clifford set is a complex Clifford set.
+-/
+theorem isCliffordC_toC {A : Fin 4 → Matrix (Fin 4) (Fin 4) ℝ} (hA : IsCliffordR A) :
+    IsCliffordC (fun μ => toC (A μ)) := by
+  intro μ ν; specialize hA μ ν; simp_all only [neg_mul, neg_smul, ← ext_iff,
+      Matrix.add_apply, Matrix.mul_apply] ;
+  convert hA using 3;
+  simp [ ← Complex.ofReal_inj, minkowski, minkowskiR, toC ];
+  simp [ Matrix.one_apply ];
+  split_ifs <;> norm_num
+
 /-
 Complexification is a ring homomorphism on `4×4` matrices: it preserves
 products.
@@ -99,7 +211,9 @@ products.
 /-
 Complexification preserves the identity.
 -/
-
+theorem toC_one : toC (1 : Matrix (Fin 4) (Fin 4) ℝ) = 1 := by
+  ext i j; by_cases hij : i = j <;> simp [ hij, toC ] ;
+  simp [ hij, Matrix.one_apply ]
 
 /-
 The determinant of a complexified matrix is the cast of the determinant.

@@ -4,6 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianGelfandModel
 
+
+open MeasureTheory Complex WeakDual CompactlySupported CompactlySupportedContinuousMap
+open scoped ComplexOrder
+
+
+open BookProof.ChapterLinftyMultiplication
+
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]
 variable {X : Type*} [TopologicalSpace X]
@@ -13,13 +20,6 @@ variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
 variable {X : Type*} [MeasurableSpace X] (mu : Measure X)
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X]
   [MeasurableSpace X] [BorelSpace X] (mu : Measure X)
-
-
-open MeasureTheory Complex WeakDual CompactlySupported CompactlySupportedContinuousMap
-open scoped ComplexOrder
-
-
-open BookProof.ChapterLinftyMultiplication
 
 theorem BookProof.ChapterAbelianGelfandModel.inner_oneVec_mulRep [IsFiniteMeasure mu] (f : C(X, ℂ)) :
     inner ℂ (oneVec mu) (mulRep mu f (oneVec mu)) = ∫ x, f x ∂mu := by sorry

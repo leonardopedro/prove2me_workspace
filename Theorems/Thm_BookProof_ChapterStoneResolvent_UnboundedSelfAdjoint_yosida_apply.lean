@@ -7,9 +7,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open scoped InnerProductSpace
 open Filter Topology
@@ -17,7 +14,10 @@ open Filter Topology
 
 open BookProof.ChapterUnitaryTransport
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+
+variable (T : UnboundedSelfAdjoint H)
 
 
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_apply (n : ℝ) (y : H) :

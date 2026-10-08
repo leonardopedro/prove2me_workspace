@@ -10,14 +10,14 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsSquare.IsFriedrichsSqExtension.symmetric {A : D →ₗ[ℂ] F} {hstab : ∀ v : D, (A v : F) ∈ D}
     {R : Submodule ℂ (F × F)} (h : IsFriedrichsSqExtension A hstab R) :

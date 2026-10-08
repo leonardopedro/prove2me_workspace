@@ -10,6 +10,13 @@ open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.EsaOneParticle
 
+
+
+open scoped TensorProduct ENNReal
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A₂ : D₂ →ₗ[ℂ] Hs.carrier)
   (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier) (hle : D ≤ D₂)
@@ -19,13 +26,6 @@ variable [CompleteSpace Hs.carrier]
 variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
-
-
-
-open scoped TensorProduct ENNReal
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-
-noncomputable section
 
 theorem BookProof.EsaOneParticle.symmetricOn_dGammaCoreOp_of_esa :
     SymmetricOn (dsCore (fun n : ℕ => fockSectorCore Hs D D n)) (dGammaCoreOp Hs D A D) := by sorry

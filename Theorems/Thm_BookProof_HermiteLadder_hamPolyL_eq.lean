@@ -9,8 +9,6 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteLadder
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -19,6 +17,8 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodin
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteLadder.hamPolyL_eq (S : Finset (Fin d)) (q : MvPolynomial (Fin d) ℂ) :

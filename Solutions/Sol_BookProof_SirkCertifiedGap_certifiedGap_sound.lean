@@ -19,15 +19,13 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDim
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 set_option maxHeartbeats 1000000 in
- m ≥ m0, 0 < certifiedGap thetaE thetaO deltaE deltaO m := by
-  have h := certifiedGap_tendsto hE hO hdE hdO
-  have hev := h.eventually (eventually_gt_nhds hmu)
-  rcases (eventually_atTop.mp hev) with ⟨m0, hm0⟩
-  exact ⟨m0, hm0⟩
-
 theorem solution {T P : E →ₗ[ℂ] E} {thetaE thetaO deltaE deltaO : ℕ → ℝ} {m : ℕ}
     (hEven : sectorGround T P 1 ≤ thetaE m + deltaE m)
-    (hOdd : thetaO m - deltaO m ≤ :=
+    (hOdd : thetaO m - deltaO m ≤ sectorGround T P (-1))
+    (hpos : 0 < certifiedGap thetaE thetaO deltaE deltaO m) :
+    certifiedGap thetaE thetaO deltaE deltaO m
+        ≤ sectorGround T P (-1) - sectorGround T P 1
+      ∧ sectorGround T P 1 < sectorGround T P (-1) :=
   sectorGround T P (-1))
       (hpos : 0 < certifiedGap thetaE thetaO deltaE deltaO m) :
       certifiedGap the

@@ -1,6 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_of_lagrangian_katoRellich
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
@@ -10,15 +10,12 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.FullEsa
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
-open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
 
 
 open Filter Topology
@@ -27,6 +24,9 @@ open Filter Topology
 
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.hasZeroDeficiencyOn_of_lagrangian_katoRellich
     {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]

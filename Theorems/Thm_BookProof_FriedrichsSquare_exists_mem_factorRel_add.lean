@@ -8,14 +8,14 @@ open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsSquare.exists_mem_factorRel_add (A : D →ₗ[ℂ] F) (h : F) :
     ∃ p : F × F, p ∈ factorRel A ∧ p.1 + p.2 = h := by sorry

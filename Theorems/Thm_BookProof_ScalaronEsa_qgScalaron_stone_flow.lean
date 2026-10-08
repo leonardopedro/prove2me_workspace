@@ -16,10 +16,6 @@ open BookProof.QuantumGravityDensitized
 open BookProof.StoneBridge
 open BookProof.ScalaronEsa
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -30,6 +26,10 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 theorem BookProof.ScalaronEsa.qgScalaron_stone_flow :
     ∃ (T : UnboundedSelfAdjoint L2Nat) (U : ℝ → (L2Nat →L[ℂ] L2Nat)),

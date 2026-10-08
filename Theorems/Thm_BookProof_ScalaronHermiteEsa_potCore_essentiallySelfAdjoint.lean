@@ -16,8 +16,6 @@ open BookProof.QgHermiteCore
 open BookProof.QgHermiteOscillator
 open BookProof.ScalaronHermiteEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial FourierTransform
@@ -26,6 +24,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ScalaronHermiteEsa.potCore_essentiallySelfAdjoint {W : Vd d → ℝ} (hWc : Continuous W)

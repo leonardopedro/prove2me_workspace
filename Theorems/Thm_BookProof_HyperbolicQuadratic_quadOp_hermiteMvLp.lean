@@ -13,9 +13,6 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -24,6 +21,9 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.quadOp_hermiteMvLp (c : Fin d → ℝ) (a : Fin d →₀ ℕ)
     (h : hermiteMvLp a ∈ polyGaussCore (d := d)) :

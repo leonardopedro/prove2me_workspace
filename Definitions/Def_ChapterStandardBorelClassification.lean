@@ -93,26 +93,78 @@ theorem transportIsom_surjective : Function.Surjective (transportIsom e mu) := b
 def transportUnitary : Lp ℂ 2 (Measure.map e mu) ≃ₗᵢ[ℂ] Lp ℂ 2 mu :=
   LinearIsometryEquiv.ofSurjective (transportIsom e mu) (transportIsom_surjective e mu)
 
-
+theorem transportUnitary_apply (v : Lp ℂ 2 (Measure.map e mu)) :
+    transportUnitary e mu v = transportIsom e mu v := rfl
 
 theorem memLp_top_comp_equiv {g : Y → ℂ} (hg : MemLp g ⊤ (Measure.map e mu)) :
     MemLp (fun x => g (e x)) ⊤ mu :=
   hg.comp_measurePreserving (measurePreserving_measurableEquiv e mu)
 
-
+/-- **The transport unitary intertwines the multiplication operators.** -/
+theorem transportUnitary_intertwines {g : Y → ℂ} (hg : MemLp g ⊤ (Measure.map e mu))
+    (v : Lp ℂ 2 (Measure.map e mu)) :
+    transportUnitary e mu (multOp g hg v)
+      = multOp (fun x => g (e x)) (memLp_top_comp_equiv e mu hg) (transportUnitary e mu v) := by
+  refine Lp.ext ?_
+  have h1 := transportIsom_coeFn e mu (multOp g hg v)
+  have h2 := (measurePreserving_measurableEquiv e mu).quasiMeasurePreserving.ae_eq_comp
+    (multOp_coeFn (μ := Measure.map e mu) g hg v)
+  have h3 := multOp_coeFn (μ := mu) (fun x => g (e x)) (memLp_top_comp_equiv e mu hg)
+    (transportIsom e mu v)
+  have h4 := transportIsom_coeFn e mu v
+  filter_upwards [h1, h2, h3, h4] with x hx1 hx2 hx3 hx4
+  simp only [Function.comp_apply] at hx2
+  rw [transportUnitary_apply, transportUnitary_apply, hx1, hx2, hx3, hx4]
 
 end Transport
 
 /-! ## 2. A measure on a countable space is purely atomic -/
 
-
+theorem purelyAtomic_of_countable {X : Type*} [MeasurableSpace X]
+    [MeasurableSingletonClass X] [Countable X] (mu : Measure X) :
+    mu (atomSet mu)ᶜ = 0 := by
+  have hcount : ((atomSet mu)ᶜ).Countable := Set.to_countable _
+  have hsub : (atomSet mu)ᶜ ⊆ ⋃ x ∈ (atomSet mu)ᶜ, ({x} : Set X) := by
+    intro x hx
+    exact Set.mem_biUnion hx rfl
+  refine measure_mono_null hsub ?_
+  rw [measure_biUnion_null_iff hcount]
+  intro x hx
+  simpa [atomSet] using hx
 
 /-! ## 3. The classification on a standard Borel space -/
 
 variable {X : Type*} [MeasurableSpace X] [StandardBorelSpace X]
   (mu : Measure X) [IsProbabilityMeasure mu]
 
-
+/-- **HEADLINE (transport to the line).**  For a Borel probability measure on an
+arbitrary standard Borel space, either the space is countable — and then the measure
+is carried by its atoms, so multiplication is *diagonal* in the orthonormal basis of
+normalised point masses, the `Iₙ` / `ℓ∞(ℕ)` types — or the space is Borel isomorphic
+to the line and the measure is carried over to a Borel probability measure on `ℝ` by a
+unitary which turns multiplication by `g` into multiplication by `g ∘ e`.  So no
+generality is lost by stating the classification list for measures on the line. -/
+theorem standardBorel_multiplication_model_transport :
+    (Countable X ∧ ∃ B : HilbertBasis (atomSet mu) ℂ (Lp ℂ 2 mu),
+        ∀ (g : X → ℂ) (hg : MemLp g ⊤ mu) (a : atomSet mu),
+          multOp g hg (B a) = g (a : X) • B a) ∨
+      (∃ e : X ≃ᵐ ℝ, IsProbabilityMeasure (Measure.map e mu) ∧
+        ∃ U : Lp ℂ 2 (Measure.map e mu) ≃ₗᵢ[ℂ] Lp ℂ 2 mu,
+          ∀ (g : ℝ → ℂ) (hg : MemLp g ⊤ (Measure.map e mu))
+            (v : Lp ℂ 2 (Measure.map e mu)),
+            U (multOp g hg v)
+              = multOp (fun x => g (e x)) (memLp_top_comp_equiv e mu hg) (U v)) := by
+  by_cases hcount : Countable X
+  · refine Or.inl ⟨hcount, ?_⟩
+    exact atomic_multiplication_model_diagonal mu (purelyAtomic_of_countable mu)
+  · have huncount : ¬ Countable ℝ := by simp
+    refine Or.inr ⟨PolishSpace.measurableEquivOfNotCountable hcount huncount, ?_, ?_⟩
+    · constructor
+      rw [Measure.map_apply
+        (PolishSpace.measurableEquivOfNotCountable hcount huncount).measurable
+        MeasurableSet.univ]
+      simp
+    · exact ⟨transportUnitary _ mu, fun g hg v => transportUnitary_intertwines _ mu hg v⟩
 
 /-- **The property of realising one of the five standard types.**  Either the space
 is countable, and multiplication is diagonal in the orthonormal basis of normalised
@@ -147,7 +199,15 @@ def RealizesStandardType {X : Type*} [MeasurableSpace X] [MeasurableSingletonCla
           (atomSet (Measure.map e mu)).Infinite ∧
           Nonempty (atomSet (Measure.map e mu) ≃ ℕ)))
 
-
+/-- **HEADLINE (the classification list, on any standard Borel space).**  Combining
+the transport with `vonNeumann_abelian_classification_list`: a Borel probability
+measure on an arbitrary standard Borel space realises one of the five standard types
+of the manuscript's list. -/
+theorem standardBorel_classification_list : RealizesStandardType mu := by
+  rcases standardBorel_multiplication_model_transport mu with h | ⟨e, hprob, hU⟩
+  · exact Or.inl h
+  · haveI := hprob
+    exact Or.inr ⟨e, hprob, hU, vonNeumann_abelian_classification_list (Measure.map e mu)⟩
 
 /-! ## 4. Every summand of the general abelian model is classified -/
 
@@ -159,7 +219,26 @@ variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
   [TopologicalSpace.MetrizableSpace Y] [MeasurableSpace Y] [BorelSpace Y]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
-
+/-- **HEADLINE (the abelian model, fully classified).**  Every abelian algebra of
+operators on a complex Hilbert space — a unital `*`-representation `π` of `C(Y, ℂ)`
+for a compact *metrizable* `Y` — is a direct sum of multiplication algebras
+`L∞(μₓ)` on `L²(μₓ)`, and **each summand realises one of the five standard types** of
+the classification list.  This is the exhaustiveness statement, modulo the choice of
+a metrizable model of the spectrum. -/
+theorem abelian_multiplication_model_classified (pi : C(Y, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) :
+    ∃ (S : Set H) (mu : S → Measure Y) (V : ∀ x : S, Lp ℂ 2 (mu x) →ₗᵢ[ℂ] H),
+      (∀ x : S, IsProbabilityMeasure (mu x)) ∧
+      IsHilbertSum ℂ (fun x : S => Lp ℂ 2 (mu x)) V ∧
+      (∀ (x : S) (g : C(Y, ℂ)) (u : Lp ℂ 2 (mu x)),
+        V x (mulRep (mu x) g u) = pi g (V x u)) ∧
+      (∀ x : S, ∃ _ : IsProbabilityMeasure (mu x), RealizesStandardType (mu x)) := by
+  letI := TopologicalSpace.metrizableSpaceMetric Y
+  haveI : PolishSpace Y := inferInstance
+  haveI : StandardBorelSpace Y := inferInstance
+  obtain ⟨S, mu, V, hprob, hsum, hint⟩ := abelian_multiplication_model_general pi
+  refine ⟨S, mu, V, hprob, hsum, hint, fun x => ?_⟩
+  haveI := hprob x
+  exact ⟨hprob x, standardBorel_classification_list (mu x)⟩
 
 end GeneralModel
 

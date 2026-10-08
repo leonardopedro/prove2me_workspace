@@ -1,6 +1,7 @@
 -- Generated from ChapterSmComparisonEsa.lean — solution of BookProof.SmComparisonEsa.realCoeff_smPhi
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
+import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
 open BookProof.SmComparisonEsa
 
 

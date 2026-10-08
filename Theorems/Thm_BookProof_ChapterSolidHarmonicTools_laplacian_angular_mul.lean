@@ -6,9 +6,6 @@ import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonicTools
 
-variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
@@ -16,6 +13,9 @@ open BookProof.ChapterLaplacianProduct
 open scoped RealInnerProductSpace
 
 
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 theorem BookProof.ChapterSolidHarmonicTools.laplacian_angular_mul {A B : E → ℝ} {x : E} {α β : ℝ} {e : E} {μ : ℕ}
     (hA : ContDiffAt ℝ 2 A x) (hB : ContDiffAt ℝ 2 B x)

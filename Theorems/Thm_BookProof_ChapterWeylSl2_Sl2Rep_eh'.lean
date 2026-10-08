@@ -8,13 +8,13 @@ open BookProof.ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.eh_prime : R.E * R.H - R.H * R.E = -(2 • R.E) := by sorry

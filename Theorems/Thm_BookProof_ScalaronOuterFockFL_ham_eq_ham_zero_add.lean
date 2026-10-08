@@ -11,9 +11,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-
 
 
 open MeasureTheory SchwartzMap
@@ -23,6 +20,9 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
 
 theorem BookProof.ScalaronOuterFockFL.ham_eq_ham_zero_add (u : ccDomain ℝ) :
     W.ham s u = W.ham 0 u + (s : ℂ) • (u : L2R) := by sorry

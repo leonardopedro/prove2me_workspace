@@ -17,8 +17,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.ScalaronFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -29,6 +27,8 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.ScalaronFockGapChain.const_isPosCol_shiftCol (b : HilbertBasis ℕ ℂ F) (m : ℝ) :
     IsPosCol (shiftCol (opCol b (constOnePart b m)) m) := by sorry

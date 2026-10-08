@@ -8,8 +8,6 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterSirkTrotterKato.strongResolventConvergence_ofBounded {A : ℕ → H →L[ℂ] H} {Alim : H →L[ℂ] H}

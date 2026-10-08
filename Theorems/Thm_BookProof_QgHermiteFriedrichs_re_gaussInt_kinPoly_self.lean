@@ -10,9 +10,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -21,6 +18,9 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.re_gaussInt_kinPoly_self (p : MvPolynomial (Fin d) ℂ) :
     (gaussInt (cpoly p * kinPoly p)).re = ∑ j : Fin d, ‖pgLp (coreD j p)‖ ^ 2 := by sorry

@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterU
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 open scoped ENNReal ProbabilityTheory TensorProduct
+
+variable {X : Type*} [MeasurableSpace X]
 
 theorem BookProof.ChapterU.born_conditioning (Ψ : X → ℂ) (μ : Measure X) (E : Set X)
     (hE : MeasurableSet E) (hpos : bornMeasure Ψ μ E ≠ 0)

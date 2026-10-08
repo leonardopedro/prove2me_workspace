@@ -1,4 +1,4 @@
--- Generated from ChapterScalaronOuterFockFL.lean — solution of BookProof.ScalaronOuterFockFL.exists_band₂
+-- Generated from ChapterScalaronOuterFockFL.lean — solution of BookProof.ScalaronOuterFockFL.exists_band2
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 open BookProof.ScalaronOuterFockFL

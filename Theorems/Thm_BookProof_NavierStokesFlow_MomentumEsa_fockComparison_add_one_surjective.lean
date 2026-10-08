@@ -7,12 +7,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.fockComparison_add_one_surjective (n : ℕ → ℝ) (hn : ∀ k, 0 ≤ n k) (f : L2I Config) :
     ∃ x : maxDom (fockSymbol n), (diagMax (fockSymbol n) x : L2I Config) + (x : L2I Config) = f := by sorry

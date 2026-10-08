@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_vmap_indSet
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_mem_smul_image_iff
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
 open BookProof.ChapterMackeyCocycle
 
 

@@ -3,17 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterNsPartialFourier
 open BookProof.NsPartialFourier
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
-  [NormedAddCommGroup G] [NormedSpace ℂ G]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform LineDeriv
 
 noncomputable section
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
+  [NormedAddCommGroup G] [NormedSpace ℂ G]
 
 theorem BookProof.NsPartialFourier.fourier_postcompCLM [CompleteSpace F] [CompleteSpace G] (T : F →L[ℂ] G) (f : 𝓢(V, F)) :
     (𝓕 (postcompCLM T f) : 𝓢(V, G)) = postcompCLM T (𝓕 f : 𝓢(V, F)) := by sorry

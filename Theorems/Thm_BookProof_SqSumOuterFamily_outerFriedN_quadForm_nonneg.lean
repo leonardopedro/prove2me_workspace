@@ -18,8 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.SqSumOuterFamily
 
-variable (dim : ℕ → ℕ)
-
 
 
 open Finset MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
 
 theorem BookProof.SqSumOuterFamily.outerFriedN_quadForm_nonneg (x : outerFriedDom dim) :
     0 ≤ quadForm (outerFriedN dim) x := by sorry

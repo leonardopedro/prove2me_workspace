@@ -1,7 +1,6 @@
 -- Generated from ChapterSmComparisonEsa.lean — solution of BookProof.SmComparisonEsa.realCoeff_C_ofReal
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
-import Theorems.Thm_BookProof_HermiteGraphApprox_realCoeff_C_real'
 open BookProof.SmComparisonEsa
 
 
@@ -18,4 +17,4 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution {d : ℕ} (c : ℝ) :
-    RealCoeff (C ((c : ℝ) : ℂ) : MvPolynomial (Fin d) ℂ) := realCoeff_C_real' c
+    RealCoeff (C ((c : ℝ) : ℂ) : MvPolynomial (Fin d) ℂ) := realCoeff_C_real_prime c

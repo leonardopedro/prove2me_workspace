@@ -5,11 +5,11 @@ import Definitions.Def_ChapterAbelianDiagonal
 open BookProof.AbelianDiagonal
 open BookProof.ChapterAbelianVonNeumannFinite
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 open Matrix
 
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.ChapterAbelianVonNeumannFinite.diagonalStarAlgHom_injective :

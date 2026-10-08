@@ -92,7 +92,15 @@ theorem trunc_smul [DecidableEq ι] (c : ι → ℝ) (a : ℂ) (x : maxDom c) (S
   have hax := trunc_coe c (a • x) S k
   by_cases hk : k ∈ S <;> simp [hax, hx, hk]
 
-
+/-- The truncations converge to the state in `ℓ²`. -/
+theorem tendsto_trunc [DecidableEq ι] (c : ι → ℝ) (x : maxDom c) :
+    Tendsto (fun S : Finset ι => ((trunc c x S : lpFiniteModes ι) : L2I ι)) atTop
+      (𝓝 ((x : L2I ι))) := by
+  classical
+  have h : HasSum (fun i : ι => lp.single 2 i (((x : L2I ι) : ι → ℂ) i)) ((x : L2I ι)) :=
+    lp.hasSum_single (by norm_num) _
+  simp [trunc]
+  exact h
 
 /-- The truncations converge in the graph norm of the comparison operator. -/
 theorem tendsto_diag_trunc [DecidableEq ι] (c : ι → ℝ) (x : maxDom c) :
@@ -166,7 +174,27 @@ theorem tendsto_coreExt [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes 
     Tendsto (fun S : Finset ι => H₀ (trunc c x S)) atTop (𝓝 (coreExtFun c H₀ x)) :=
   (cauchySeq_coreExt hA x).tendsto_limUnder
 
-
+/-- The extension agrees with the given operator on the core. -/
+theorem coreExt_core [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι} {A : ℝ}
+    (hA : CoreRelBound c H₀ A) (u : lpFiniteModes ι) :
+    coreExtFun c H₀ (inclC c u) = H₀ u := by
+  classical
+  have hfin : (Function.support ((u : L2I ι) : ι → ℂ)).Finite := u.2
+  have heq : ∀ S : Finset ι, hfin.toFinset ⊆ S → trunc c (inclC c u) S = u := by
+    intro S hS
+    ext k
+    rw [trunc_coe]
+    by_cases hk : k ∈ S
+    · simp [hk]
+    · have : ((u : L2I ι) : ι → ℂ) k = 0 := by
+        by_contra hne
+        exact hk (hS (by simpa [Set.Finite.mem_toFinset, Function.mem_support] using hne))
+      simp [hk, this]
+  have : Tendsto (fun S : Finset ι => H₀ (trunc c (inclC c u) S)) atTop (𝓝 (H₀ u)) := by
+    refine Tendsto.congr' ?_ tendsto_const_nhds
+    filter_upwards [Filter.eventually_ge_atTop hfin.toFinset] with S hS
+    rw [heq S hS]
+  exact tendsto_nhds_unique (tendsto_coreExt hA (inclC c u)) this
 
 /-- The extension is linear. -/
 def coreExt [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι} {A : ℝ}
@@ -189,17 +217,95 @@ def coreExt [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[�
 @[simp] theorem coreExt_apply [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι}
     {A : ℝ} (hA : CoreRelBound c H₀ A) (x : maxDom c) : coreExt hA x = coreExtFun c H₀ x := rfl
 
+/-- The extension inherits the relative bound. -/
+theorem norm_coreExt_le [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι} {A : ℝ}
+    (hA : CoreRelBound c H₀ A) (x : maxDom c) :
+    ‖coreExt hA x‖ ≤ A * ‖(diagMax c x : L2I ι)‖ := by
+  have h1 : Tendsto (fun S : Finset ι => ‖H₀ (trunc c x S)‖) atTop (𝓝 ‖coreExt hA x‖) :=
+    (tendsto_coreExt hA x).norm
+  have h2 : Tendsto (fun S : Finset ι =>
+      A * ‖(diagMax c (inclC c (trunc c x S)) : L2I ι)‖) atTop
+      (𝓝 (A * ‖(diagMax c x : L2I ι)‖)) := ((tendsto_diag_trunc c x).norm).const_mul A
+  exact le_of_tendsto_of_tendsto' h1 h2 fun S => hA _
 
+/-- The extension inherits symmetry. -/
+theorem coreExt_symmetricOn [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι}
+    {A : ℝ} (hA : CoreRelBound c H₀ A)
+    (hsym : ∀ u v : lpFiniteModes ι,
+      (inner ℂ (H₀ u) ((v : L2I ι)) : ℂ) = inner ℂ ((u : L2I ι)) (H₀ v)) :
+    SymmetricOn (maxDom c) (coreExt hA) := by
+  intro x y
+  have hL : Tendsto (fun S : Finset ι =>
+      (inner ℂ (H₀ (trunc c x S)) ((trunc c y S : lpFiniteModes ι) : L2I ι) : ℂ)) atTop
+      (𝓝 (inner ℂ (coreExt hA x) ((y : L2I ι)) : ℂ)) :=
+    ((tendsto_coreExt hA x).inner (tendsto_trunc c y))
+  have hR : Tendsto (fun S : Finset ι =>
+      (inner ℂ ((trunc c x S : lpFiniteModes ι) : L2I ι) (H₀ (trunc c y S)) : ℂ)) atTop
+      (𝓝 (inner ℂ ((x : L2I ι)) (coreExt hA y) : ℂ)) :=
+    ((tendsto_trunc c x).inner (tendsto_coreExt hA y))
+  refine tendsto_nhds_unique hL (hR.congr fun S => ?_)
+  exact (hsym (trunc c x S) (trunc c y S)).symm
 
-
-
-
+/-- The extension inherits the commutator bound. -/
+theorem coreExt_commForm_le [DecidableEq ι] {c : ι → ℝ} {H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι}
+    {A B : ℝ} (hA : CoreRelBound c H₀ A)
+    (hcomm : ∀ u : lpFiniteModes ι,
+      |(-2 : ℝ) * (inner ℂ (H₀ u) ((diagMax c (inclC c u) : L2I ι)) : ℂ).im|
+        ≤ B * (inner ℂ ((u : L2I ι)) ((diagMax c (inclC c u) : L2I ι)) : ℂ).re)
+    (x : maxDom c) :
+    |commForm (coreExt hA) (diagMax c) x| ≤ B * quadForm (diagMax c) x := by
+  have hL : Tendsto (fun S : Finset ι =>
+      |(-2 : ℝ) * (inner ℂ (H₀ (trunc c x S))
+        ((diagMax c (inclC c (trunc c x S)) : L2I ι)) : ℂ).im|) atTop
+      (𝓝 |(-2 : ℝ) * (inner ℂ (coreExt hA x) ((diagMax c x : L2I ι)) : ℂ).im|) := by
+    have h := Filter.Tendsto.inner (𝕜 := ℂ) (tendsto_coreExt hA x) (tendsto_diag_trunc c x)
+    exact ((Complex.continuous_im.tendsto _).comp h).const_mul (-2 : ℝ) |>.abs
+  have hR : Tendsto (fun S : Finset ι =>
+      B * (inner ℂ ((trunc c x S : lpFiniteModes ι) : L2I ι)
+        ((diagMax c (inclC c (trunc c x S)) : L2I ι)) : ℂ).re) atTop
+      (𝓝 (B * (inner ℂ ((x : L2I ι)) ((diagMax c x : L2I ι)) : ℂ).re)) := by
+    have h := Filter.Tendsto.inner (𝕜 := ℂ) (tendsto_trunc c x) (tendsto_diag_trunc c x)
+    exact ((Complex.continuous_re.tendsto _).comp h).const_mul B
+  have hlim := le_of_tendsto_of_tendsto' hL hR fun S => hcomm (trunc c x S)
+  rw [commForm_eq_neg_two_im, quadForm]
+  exact hlim
 
 /-! ## 3. The instrument -/
 
+/-- **Essential self-adjointness from bounds checked on the finite-mode core.**  A
+symmetric operator `H` defined on the finite-mode core of `ℓ²(ι)`, with the relative bound
+`‖H u‖ ≤ A‖N u‖` and the commutator bound `|⟪u, i[H, N]u⟫| ≤ B⟪u, N u⟫` against the
+comparison operator `N` — multiplication by a non-negative symbol — **both checked on the
+core only**, is essentially self-adjoint on that core. -/
+theorem essentiallySelfAdjointOn_finiteModes_of_core_bounds
+    (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) (H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι) (A B : ℝ) (hB : 0 ≤ B)
+    (hsym : ∀ u v : lpFiniteModes ι,
+      (inner ℂ (H₀ u) ((v : L2I ι)) : ℂ) = inner ℂ ((u : L2I ι)) (H₀ v))
+    (hA : CoreRelBound c H₀ A)
+    (hcomm : ∀ u : lpFiniteModes ι,
+      |(-2 : ℝ) * (inner ℂ (H₀ u) ((diagMax c (inclC c u) : L2I ι)) : ℂ).im|
+        ≤ B * (inner ℂ ((u : L2I ι)) ((diagMax c (inclC c u) : L2I ι)) : ℂ).re) :
+    EssentiallySelfAdjointOn (lpFiniteModes ι) H₀ := by
+  classical
+  have hkey := essentiallySelfAdjointOn_finiteModes_of_bounds c hc (coreExt hA) A B hB
+    (coreExt_symmetricOn hA hsym) (norm_coreExt_le hA) (coreExt_commForm_le hA hcomm)
+  have hres : (coreExt hA).comp (Submodule.inclusion (finiteModes_le_maxDom c)) = H₀ :=
+    LinearMap.ext fun u => coreExt_core hA u
+  rwa [hres] at hkey
 
-
-
+/-- The number-conserving case: the commutator form vanishes on the core. -/
+theorem essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm
+    (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) (H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι) (A : ℝ)
+    (hsym : ∀ u v : lpFiniteModes ι,
+      (inner ℂ (H₀ u) ((v : L2I ι)) : ℂ) = inner ℂ ((u : L2I ι)) (H₀ v))
+    (hA : CoreRelBound c H₀ A)
+    (hcomm : ∀ u : lpFiniteModes ι,
+      (inner ℂ (H₀ u) ((diagMax c (inclC c u) : L2I ι)) : ℂ).im = 0) :
+    EssentiallySelfAdjointOn (lpFiniteModes ι) H₀ := by
+  refine essentiallySelfAdjointOn_finiteModes_of_core_bounds c hc H₀ A 0 le_rfl hsym hA ?_
+  intro u
+  rw [hcomm u]
+  simp
 
 end
 

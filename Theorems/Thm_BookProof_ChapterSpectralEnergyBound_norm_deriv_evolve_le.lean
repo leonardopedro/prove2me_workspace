@@ -7,9 +7,9 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
 
+
+
 variable {n : Type*} [Fintype n]
-
-
 
 
 theorem BookProof.ChapterSpectralEnergyBound.norm_deriv_evolve_le (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)

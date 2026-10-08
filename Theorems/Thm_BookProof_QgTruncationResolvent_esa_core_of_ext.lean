@@ -15,8 +15,6 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Filter Topology
@@ -26,6 +24,8 @@ open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOut
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.QgTruncationResolvent.esa_core_of_ext (d : CoreData F) (hesa : EssentiallySelfAdjointOn d.C.dom d.ext) :

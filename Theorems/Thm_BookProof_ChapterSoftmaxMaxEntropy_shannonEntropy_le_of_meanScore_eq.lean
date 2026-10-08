@@ -3,10 +3,9 @@ import Definitions.Def_ChapterAttentionEntropy
 import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxMaxEntropy
-
-variable {m : ℕ}
 
 
 open scoped BigOperators
@@ -15,6 +14,9 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxMaxEntropy.shannonEntropy_le_of_meanScore_eq (beta : ℝ) (s : Fin m → ℝ) (i : Fin m)

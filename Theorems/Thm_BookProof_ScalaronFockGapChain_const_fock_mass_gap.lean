@@ -20,8 +20,6 @@ open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.ScalaronFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -32,6 +30,8 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.ScalaronFockGapChain.const_fock_mass_gap (b : HilbertBasis ℕ ℂ F) {m : ℝ} (hm : 0 < m) :
     (∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),

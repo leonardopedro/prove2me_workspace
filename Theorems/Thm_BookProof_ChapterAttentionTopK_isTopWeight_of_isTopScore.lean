@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionTopK
 
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionTopK.isTopWeight_of_isTopScore {beta : ℝ} (hbeta : 0 < beta) (s : Fin m → ℝ)

@@ -10,9 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 noncomputable section
 
@@ -22,6 +19,9 @@ open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.ResolventLadder.graphRayleighSet_bddAbove (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0)
     {S : Submodule ℂ F} [FiniteDimensional ℂ S] (hdom : InDomain T S) :

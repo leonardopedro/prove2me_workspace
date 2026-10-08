@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -26,5 +24,7 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.pgLp_smul (c : ℂ) (p : MvPolynomial (Fin d) ℂ) : pgLp (c • p) = c • pgLp p := by sorry

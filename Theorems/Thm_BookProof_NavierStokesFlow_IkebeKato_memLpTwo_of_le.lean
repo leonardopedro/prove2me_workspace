@@ -11,14 +11,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 
-variable {ι : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine
+
+variable {ι : Type*}
 
 
 theorem BookProof.NavierStokesFlow.IkebeKato.memLpTwo_of_le (f : L2I ι) {g : ι → ℂ} (h : ∀ k, ‖g k‖ ≤ ‖(f : ι → ℂ) k‖) :

@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.spField_sq_split (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) (r : Fin 7) :
     (spField Φ nu k r).comp (spField Φ nu k r)

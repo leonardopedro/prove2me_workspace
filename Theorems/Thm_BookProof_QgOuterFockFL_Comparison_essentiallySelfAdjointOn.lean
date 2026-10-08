@@ -14,8 +14,6 @@ import Definitions.Def_ChapterNavierStokesCanonicalVector
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -31,6 +29,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOuterFockFL.Comparison.essentiallySelfAdjointOn [CompleteSpace F] (C : Comparison F)
     (H : C.dom →ₗ[ℂ] F) (hH : SymmetricOn C.dom H) (c : ℝ) (hc : 0 ≤ c)

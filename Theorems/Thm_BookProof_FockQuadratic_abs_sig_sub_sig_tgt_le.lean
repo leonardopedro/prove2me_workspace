@@ -10,9 +10,6 @@ import Definitions.Def_ChapterA3n
 open BookProof.ChapterA3n
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-
 
 open scoped ENNReal
 
@@ -22,6 +19,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
 
 theorem BookProof.FockQuadratic.abs_sig_sub_sig_tgt_le (hω : ∀ i, 0 ≤ ω i) {P Q b : Idx ι} (hPQ : deg P + deg Q ≤ 2)
     (h : P ≤ b) : |sig ω b - sig ω (tgt P Q b)| ≤ wsum ω P + wsum ω Q + 2 := by sorry

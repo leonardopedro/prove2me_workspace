@@ -1,5 +1,6 @@
 -- Generated from ChapterDirectSumEsa.lean — theorem BookProof.DirectSumEsa.dsOpD_stone_flow
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterEsaClosureCore
@@ -13,11 +14,6 @@ open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.StoneBridge
 open BookProof.DirectSumEsa
 
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)]
-variable {D : ∀ i, Submodule ℂ (G i)}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -26,6 +22,12 @@ open BookProof.FarisLavine
 
 noncomputable section
 
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
+
+variable {D : ∀ i, Submodule ℂ (G i)}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FullEsa
 
 theorem BookProof.DirectSumEsa.dsOpD_stone_flow [∀ i, CompleteSpace (G i)] (A : ∀ i, D i →ₗ[ℂ] D i)
     (hdense : ∀ i, Dense ((D i : Submodule ℂ (G i)) : Set (G i)))

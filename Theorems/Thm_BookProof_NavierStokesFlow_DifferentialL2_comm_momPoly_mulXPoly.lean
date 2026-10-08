@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.comm_momPoly_mulXPoly (i k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momPoly i (mulXPoly k p) - mulXPoly k (momPoly i p)

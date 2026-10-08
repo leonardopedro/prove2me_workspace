@@ -5,15 +5,15 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.norm_crossB (hκ : 0 ≤ κ) (X Y : ℕ → ℂ) (n : ℕ) :
     ‖crossB κ X Y n‖ = amp κ n * ‖X (n + 2)‖ * ‖Y n‖ := by sorry

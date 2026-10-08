@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 
-variable {nbar : ℝ}
-
 
 noncomputable section
 
 
 
+
+variable {nbar : ℝ}
 
 
 theorem BookProof.ChapterCoherentTemperature.thermalTemperature_eq_mean_add_half (h : 0 ≤ nbar) :

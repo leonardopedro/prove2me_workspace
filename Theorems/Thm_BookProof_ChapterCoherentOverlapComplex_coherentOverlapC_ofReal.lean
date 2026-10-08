@@ -5,13 +5,13 @@ import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.coherentOverlapC_ofReal (q k : EuclideanSpace ℝ (Fin n)) :

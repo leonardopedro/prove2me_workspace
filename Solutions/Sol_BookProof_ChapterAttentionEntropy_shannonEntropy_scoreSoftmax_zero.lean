@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
 import Theorems.Thm_BookProof_ChapterAttentionEntropy_shannonEntropy_uniform
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_scoreSoftmax_zero
 open BookProof.ChapterAttentionEntropy
 
 

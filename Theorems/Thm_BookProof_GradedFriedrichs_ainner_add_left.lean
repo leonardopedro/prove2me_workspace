@@ -13,8 +13,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,5 +21,7 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.ainner_add_left (u v w : γ →₀ ℂ) : ainner (u + v) w = ainner u w + ainner v w := by sorry

@@ -87,7 +87,8 @@ theorem one_le_cSig (x : CMode) : 1 ≤ cSig x := by
   simp only [cSig]
   linarith
 
-
+theorem cSig_nonneg (x : CMode) : 0 ≤ cSig x :=
+  le_trans zero_le_one (one_le_cSig x)
 
 /-- The band of a mode: the nine components at the same momentum.  Momentum conservation is
 what makes the mode matrices banded. -/
@@ -284,20 +285,44 @@ def qgContinuumModes (g : ℝ) : QgModeData CMode :=
       rw [hcs, sub_self, abs_zero]
       linarith)
 
+/-- **Essential self-adjointness of the continuum quantum-gravity Hamiltonian on the outer
+Fock space.**  Infinitely many exact Fourier modes, no lattice discretization of the spatial
+derivatives, the complete torsion self-interaction of the vielbein, the scalaron–vielbein
+coupling at arbitrary coupling constant `g` and an arbitrary smooth non-negative wall for
+the scalaron. -/
+theorem qgContinuum_essentiallySelfAdjointOn (W : WallPot) (g : ℝ) :
+    EssentiallySelfAdjointOn (secN W (qgContinuumModes g)).dom
+      (secData W (qgContinuumModes g)).ext :=
+  secHam_essentiallySelfAdjointOn W _
 
-
-
+/-- The self-adjoint realization restricts to the Hamiltonian on the finite-particle core. -/
+theorem qgContinuum_ext_core (W : WallPot) (g : ℝ) (p : secCore (ι := CMode)) :
+    (secData W (qgContinuumModes g)).ext
+        ⟨(p : Sec CMode), (secData W (qgContinuumModes g)).gc.le p.2⟩
+      = secHam W (qgContinuumModes g) p :=
+  secData_ext_core W _ p
 
 /-! ## 5. Non-vacuity -/
 
-
+/-- The mode set is infinite: no truncation to finitely many modes. -/
+theorem infinite_cmode : Infinite CMode := inferInstance
 
 /-- A unit momentum in the first spatial direction. -/
 def unitMom : Mom := fun j => if j = 0 then 1 else 0
 
+/-- The torsion self-interaction really is present: its Gram matrix is not the zero
+matrix. -/
+theorem contTorsionGram_ne_zero :
+    contTorsionGram ((unitMom, 1, 0) : CMode) (unitMom, 1, 0) ≠ 0 := by
+  simp only [contTorsionGram, torsionCoef, Fin.sum_univ_three, unitMom]
+  norm_num [Fin.ext_iff]
 
-
-
+/-- The scalaron–vielbein coupling really is present whenever the coupling constant is
+non-zero. -/
+theorem contCoupling_ne_zero (g : ℝ) (hg : g ≠ 0) (k : Mom) :
+    contCoupling g ((k, 0, 0) : CMode) (k, 0, 0) ≠ 0 := by
+  simp only [contCoupling, cTrace]
+  norm_num [hg]
 
 
 

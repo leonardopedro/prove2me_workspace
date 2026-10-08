@@ -13,14 +13,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+
+variable {J : Type*}
 
 
 theorem BookProof.NavierStokesFlow.AffineBlock.affBlockH_essentiallySelfAdjointOn_core (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j)

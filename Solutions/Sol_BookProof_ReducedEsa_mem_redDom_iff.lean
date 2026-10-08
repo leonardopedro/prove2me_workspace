@@ -14,8 +14,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in

@@ -17,8 +17,6 @@ open BookProof.GraphCore
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronFiberFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MeasureTheory SchwartzMap
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ScalaronFiberFL.isGraphCore_of_esa (C : Comparison F) (C₀ : Submodule ℂ F) (hle : C₀ ≤ C.dom)
     (P : C₀ →ₗ[ℂ] F) (hext : ∀ p : C₀, C.op ⟨(p : F), hle p.2⟩ = P p)

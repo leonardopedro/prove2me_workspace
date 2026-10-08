@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDiagonalDGammaEsa
 import Theorems.Thm_BookProof_DiagonalDGamma_dGamma_diag_essentiallySelfAdjointOn_fockCore
+import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
 open BookProof.DiagonalDGamma
 
 

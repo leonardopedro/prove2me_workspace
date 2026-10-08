@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterUniformPrior
 
-variable {Hyp Data : Type*}
-
 
 open scoped BigOperators
 
+
+variable {Hyp Data : Type*}
 
 
 theorem BookProof.ChapterUniformPrior.uniform_prior_posterior_le_iff [Fintype Hyp]

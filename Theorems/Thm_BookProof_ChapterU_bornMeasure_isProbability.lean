@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterU
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 open scoped ENNReal ProbabilityTheory TensorProduct
+
+variable {X : Type*} [MeasurableSpace X]
 
 theorem BookProof.ChapterU.bornMeasure_isProbability (Ψ : X → ℂ) (μ : Measure X)
     (hΨ : MemLp Ψ 2 μ) (hnorm : ∫ x, ‖Ψ x‖ ^ 2 ∂μ = 1) :

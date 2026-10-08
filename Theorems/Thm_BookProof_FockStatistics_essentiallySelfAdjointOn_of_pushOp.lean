@@ -16,9 +16,6 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 open BookProof.GraphCore
 open BookProof.FockStatistics
 
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-
 
 
 open scoped TensorProduct ENNReal
@@ -27,6 +24,9 @@ open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_of_pushOp (U : F →ₗᵢ[ℂ] G) {D : Submodule ℂ F}
     (T : D →ₗ[ℂ] F) (h : EssentiallySelfAdjointOn (pushDom U D) (pushOp U T)) :

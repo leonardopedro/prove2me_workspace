@@ -18,11 +18,9 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
- = 0 := by
-    rw [← MeasureTheory.Lp.norm_fourier_eq u, hg0, norm_zero]
-  exact norm_eq_zero.mp hnorm
-
-theorem solution (c : ι → ℝ) (w : ι → V) (κ : ℝ) : :=
+theorem solution (c : ι → ℝ) (w : ι → V) (κ : ℝ) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain V)
+      (opL2 (constCoeffOp c w κ)) :=
   
       BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain V)
         (opL2 (constCoeffOp c w κ)) :=

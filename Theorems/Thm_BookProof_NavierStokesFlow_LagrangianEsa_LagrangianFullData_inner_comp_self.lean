@@ -8,13 +8,13 @@ open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-
 
 
 
 open FullEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
 
 theorem BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData.inner_comp_self {D : Submodule ℂ F} {A : D →ₗ[ℂ] D} (hA : IsSymmetricDom A) (v : D) :
     (inner ℂ (v : F) ((A.comp A) v : F) : ℂ) = ((‖(A v : F)‖ ^ 2 : ℝ) : ℂ) := by sorry

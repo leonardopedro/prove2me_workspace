@@ -8,14 +8,14 @@ open BookProof.ChapterA
 open BookProof.ChapterA.AntiUnitary
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open RCLike
 
 
 set_option linter.unusedSectionVars false
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.cxConj_isConjugation [CompleteSpace W] (M : System ℝ W) :

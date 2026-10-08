@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignGauge
 open BookProof.ChapterFreeFieldBornSignGauge
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignGauge.bornMap_signFlip {s : Fin n → ℝ} (hs : ∀ k, s k = 1 ∨ s k = -1)

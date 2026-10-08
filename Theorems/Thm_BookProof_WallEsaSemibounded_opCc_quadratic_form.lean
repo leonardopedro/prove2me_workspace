@@ -5,7 +5,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
-import Definitions.Def_BookProof.ChapterClosureUniqueness
+import Definitions.Def_ChapterClosureUniqueness
 
 open BookProof.WallEsaSemibounded
 

@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignOrientation
 open BookProof.ChapterFreeFieldBornSignOrientation
 
-variable {n : ℕ}
-
 
 open BookProof.ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignOrientation.det_flipMatrix_eq_one_iff (b : Fin n → Bool) :

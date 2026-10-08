@@ -11,8 +11,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.HermiteLadder
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -21,6 +19,8 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodin
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteLadder.exists_ladderOrd_mulL (q : MvPolynomial (Fin d) ℂ) : ∃ n, LadderOrd (mulL q) n := by sorry

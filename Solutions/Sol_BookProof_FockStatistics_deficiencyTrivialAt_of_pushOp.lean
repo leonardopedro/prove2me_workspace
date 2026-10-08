@@ -1,6 +1,7 @@
 -- Generated from ChapterFockStatisticsEsa.lean — solution of BookProof.FockStatistics.deficiencyTrivialAt_of_pushOp
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsEsa
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
 open BookProof.FockStatistics
 
 

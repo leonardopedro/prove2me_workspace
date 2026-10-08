@@ -9,8 +9,6 @@ import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 open BookProof.HermiteBandHigher
 
-variable {d : ℕ}
-
 
 
 noncomputable section
@@ -18,6 +16,8 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteBand BookProof.YangMillsHermite
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBandHigher.gpow_one : gpow 1 = (g1 : ℕ → ℝ) := by sorry

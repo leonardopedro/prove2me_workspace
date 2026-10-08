@@ -1,6 +1,7 @@
 -- Generated from ChapterCoherentGeometry.lean — solution of BookProof.ChapterCoherentGeometry.neg_two_mul_log_coherentOverlap
 import Mathlib
 import Definitions.Def_ChapterCoherentGeometry
+import Theorems.Thm_BookProof_ChapterCoherentOverlap_coherentOverlap_eq_gaussian
 open BookProof.ChapterCoherentGeometry
 
 

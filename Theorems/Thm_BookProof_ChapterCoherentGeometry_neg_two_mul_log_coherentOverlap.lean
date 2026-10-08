@@ -6,8 +6,6 @@ import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterCoherentGeometry
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap BookProof.ChapterSoftmaxBorn
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentGeometry.neg_two_mul_log_coherentOverlap (q k : EuclideanSpace ℝ (Fin n)) :

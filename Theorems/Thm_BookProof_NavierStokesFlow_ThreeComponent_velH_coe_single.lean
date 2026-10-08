@@ -7,20 +7,20 @@ import Definitions.Def_ChapterNavierStokesSignedShift
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.HermiteFarisLavine
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.SignedShift
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian SignedShift
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.ThreeComponent.velH_coe_single (β γ : Vel) :
     ((velH A c (velState A c β) : L2I Vel) : Vel → ℂ) γ

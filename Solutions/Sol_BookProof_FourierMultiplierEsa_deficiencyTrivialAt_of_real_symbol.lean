@@ -1,7 +1,7 @@
 -- Generated from ChapterFourierMultiplierEsa.lean — solution of BookProof.FourierMultiplierEsa.deficiencyTrivialAt_of_real_symbol
 import Mathlib
 import Definitions.Def_ChapterFourierMultiplierEsa
-import Theorems.Thm_BookProof_FourierMultiplierEsa_integral_conj_mul_symbol_sub_eq_zero'
+import Theorems.Thm_BookProof_FourierMultiplierEsa_integral_conj_mul_symbol_sub_eq_zero_prime
 open BookProof.FourierMultiplierEsa
 
 
@@ -46,7 +46,7 @@ theorem solution (P : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ)) (σ : V → ℝ)
     obtain ⟨ψ, hψcoe⟩ : ∃ ψ : 𝓢(V, ℂ), (ψ : V → ℂ) =
         fun x => (χ x : ℂ) * (((σ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹ :=
       ⟨hsupp.toSchwartzMap hsmooth, rfl⟩
-    have key := integral_conj_mul_symbol_sub_eq_zero' P σ hP z u hu ψ
+    have key := integral_conj_mul_symbol_sub_eq_zero_prime P σ hP z u hu ψ
     rw [← key]
     refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
     have hpx : ψ x = (χ x : ℂ) * (((σ x : ℝ) : ℂ) - (starRingEnd ℂ) z)⁻¹ :=

@@ -10,12 +10,6 @@ import Definitions.Def_ChapterH8Bases
 open BookProof.ChapterH4
 open BookProof.ChapterH9
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 noncomputable section
 
@@ -25,6 +19,12 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 theorem BookProof.ChapterH9.sirk_numRange_nested_orders {m n : ℕ} (hmn : m ≤ n) (X : E →L[ℂ] E)
     (w : Fin m → E) (w' : Fin n → E) (hw : Orthonormal ℂ w) (hw' : Orthonormal ℂ w')

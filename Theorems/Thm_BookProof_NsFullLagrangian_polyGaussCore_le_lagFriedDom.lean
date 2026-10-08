@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.polyGaussCore_le_lagFriedDom (lam lam' mu gg : ℝ) (n : ℕ) :
     (polyGaussCore (d := n * 36)) ≤ (lagFried lam lam' mu gg n).dom := by sorry

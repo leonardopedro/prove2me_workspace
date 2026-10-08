@@ -17,9 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.norm_cutFun_sub_le (W : Vd d → ℝ) {K R : ℝ} (hK1 : 1 ≤ K)
     (p : MvPolynomial (Fin d) ℂ) (z : Vd d) :

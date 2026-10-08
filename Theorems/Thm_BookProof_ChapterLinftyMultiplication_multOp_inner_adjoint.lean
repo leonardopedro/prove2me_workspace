@@ -1,15 +1,16 @@
 -- Generated from ChapterLinftyMultiplication.lean — theorem BookProof.ChapterLinftyMultiplication.multOp_inner_adjoint
 import Mathlib
 import Definitions.Def_ChapterLinftyMultiplication
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_memLp_top_conj
 open BookProof.ChapterLinftyMultiplication
-
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 noncomputable section
 
 open MeasureTheory ENNReal Complex
 
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 theorem BookProof.ChapterLinftyMultiplication.multOp_inner_adjoint (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) (f g : Lp ℂ 2 μ) :

@@ -12,17 +12,17 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
-variable {J K : Type*} [DecidableEq J] [DecidableEq K]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
+variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.nsFullData_hasZeroDeficiencyOn_of_fockLagrangian (d : FullEsa.NSFullData F) (nu : ℝ)
     (hnu : 0 ≤ nu) (p q dr : Fin 3 → M → ℝ) (force : Fin 3 → ℝ) (cst : M → ℝ)

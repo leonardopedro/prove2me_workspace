@@ -7,7 +7,4 @@ open BookProof.SchrodingerCutoff
 
 open MeasureTheory Filter Complex
 
-uous Vexp := by
-  unfold Vexp; fun_prop
-
-theo := by sorry
+theorem BookProof.SchrodingerCutoff.two_le_Vexp (x : ℝ) : 2 ≤ Vexp x := by sorry

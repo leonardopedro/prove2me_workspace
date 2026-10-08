@@ -5,11 +5,11 @@ import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeParametrization
 
-variable {X Y : Type*}
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X Y : Type*}
 
 
 theorem BookProof.ChapterGaugeParametrization.isCompleteGaugeFixing_prime_iff_injOn (π : X → Y) (S : Set X) :

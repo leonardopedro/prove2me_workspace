@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
 open BookProof.QuadratureEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial FourierTransform
@@ -23,6 +21,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadratureEsa.norm_foPhase (b b' : Fin d → ℝ) (i : Fin d) : ‖foPhase b b' i‖ = 1 := by sorry

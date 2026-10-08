@@ -1,7 +1,7 @@
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.momPoly_sq
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply'
+import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply_prime
 open BookProof.HyperbolicQuadratic
 
 
@@ -29,10 +29,10 @@ theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     simp [smul_eq_mul]
     ring
   set q : MvPolynomial (Fin d) ℂ := pderiv i p - (1/2 : ℂ) • (X i * p) with hq
-  have h1 : momPoly i p = (-Complex.I) • q := momPoly_apply' i p
+  have h1 : momPoly i p = (-Complex.I) • q := momPoly_apply_prime i p
   have h2 : momPoly i ((-Complex.I) • q) = (-Complex.I) • (momPoly i q) := map_smul _ _ _
   have h3 : momPoly i q = (-Complex.I) • (pderiv i q - (1/2 : ℂ) • (X i * q)) :=
-    momPoly_apply' i q
+    momPoly_apply_prime i q
   have hdq : pderiv i q = pderiv i (pderiv i p) - (1/2 : ℂ) • (p + X i * pderiv i p) := by
     rw [hq, map_sub, Derivation.map_smul_of_tower, hlei]
   have hxq : X i * q = X i * pderiv i p - (1/2 : ℂ) • (X i * (X i * p)) := by

@@ -5,13 +5,13 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.GaussCoordCombo
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.GaussCoordCombo.gaussInt_hermiteFactor_mul (i : Fin d) (m n : ℕ) {R : MvPolynomial (Fin d) ℂ}

@@ -8,15 +8,15 @@ open BookProof.ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-variable {R : Sl2Rep V}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
+variable {R : Sl2Rep V}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.ops_zero_of_minimal_cas_zero [FiniteDimensional ℂ V] {W : Submodule ℂ V}
     (hW : R.IsInv W) (hne : W ≠ ⊥) (hmin : ∀ U ≤ W, R.IsInv U → U = ⊥ ∨ U = W)

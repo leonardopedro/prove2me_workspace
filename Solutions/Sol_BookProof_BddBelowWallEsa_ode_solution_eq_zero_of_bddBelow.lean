@@ -2,14 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
 import Theorems.Thm_BookProof_BddBelowWallEsa_continuous_zeta
-import Theorems.Thm_BookProof_BddBelowWallEsa_continuous_zeta'
+import Theorems.Thm_BookProof_BddBelowWallEsa_continuous_zeta_prime
 import Theorems.Thm_BookProof_BddBelowWallEsa_zeta_nonneg
 import Theorems.Thm_BookProof_BddBelowWallEsa_zeta_le_one
 import Theorems.Thm_BookProof_BddBelowWallEsa_zeta_one
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta_sq
-import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq
-import Theorems.Thm_BookProof_BddBelowWallEsa_abs_zeta'_le
+import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta_prime_sq
+import Theorems.Thm_BookProof_BddBelowWallEsa_abs_zeta_prime_le
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_reWeighted
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_imWeighted
 open BookProof.BddBelowWallEsa
@@ -75,16 +75,16 @@ theorem solution {V : ℝ → ℝ} (hVc : Continuous V) {K : ℝ}
         (((continuous_zeta r).pow 2).mul (hVc.mul (hWc.norm.pow 2))) hsuppZ2.mul_right
     have iE : Integrable (fun x => (zeta' r x) ^ 2 * ‖W x‖ ^ 2) volume :=
       Continuous.integrable_of_hasCompactSupport
-        (((continuous_zeta' r).pow 2).mul (hWc.norm.pow 2)) hsuppZ'2.mul_right
+        (((continuous_zeta_prime r).pow 2).mul (hWc.norm.pow 2)) hsuppZ'2.mul_right
     have iJr : Integrable
         (fun x => 2 * zeta r x * zeta' r x * ((starRingEnd ℂ) (W x) * W' x).re) volume :=
       Continuous.integrable_of_hasCompactSupport
-        (((continuous_const.mul (continuous_zeta r)).mul (continuous_zeta' r)).mul hPc)
+        (((continuous_const.mul (continuous_zeta r)).mul (continuous_zeta_prime r)).mul hPc)
         ((hsuppZ.mul_left (f := fun _ => (2 : ℝ))).mul_right).mul_right
     have iJi : Integrable
         (fun x => 2 * zeta r x * zeta' r x * ((starRingEnd ℂ) (W x) * W' x).im) volume :=
       Continuous.integrable_of_hasCompactSupport
-        (((continuous_const.mul (continuous_zeta r)).mul (continuous_zeta' r)).mul hQc)
+        (((continuous_const.mul (continuous_zeta r)).mul (continuous_zeta_prime r)).mul hQc)
         ((hsuppZ.mul_left (f := fun _ => (2 : ℝ))).mul_right).mul_right
     have iFr : Integrable
         (fun x => (zeta r x) ^ 2 * ((starRingEnd ℂ) (W x) * W' x).re) volume :=

@@ -1,7 +1,7 @@
 -- Generated from ChapterSmHamiltonian.lean — solution of BookProof.SmHamiltonian.realCoeff_smMagW
 import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
-import Theorems.Thm_BookProof_SmHamiltonian_RealCoeff_sub'
+import Theorems.Thm_BookProof_SmHamiltonian_RealCoeff_sub_prime
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_smul
@@ -27,6 +27,6 @@ theorem solution (P : SmParams) (co : Fin 163 → Fin D) (m i : Fin 3) :
     RealCoeff (smMagW P co m i) := by
 
   refine RealCoeff.smul (RealCoeff.sum fun j _ => RealCoeff.sum fun k _ => RealCoeff.smul ?_)
-  refine RealCoeff.add (RealCoeff.sub' (realCoeff_X _) (realCoeff_X _)) ?_
+  refine RealCoeff.add (RealCoeff.sub_prime (realCoeff_X _) (realCoeff_X _)) ?_
   exact RealCoeff.smul (RealCoeff.sum fun b _ => RealCoeff.sum fun d _ =>
     RealCoeff.smul ((realCoeff_X _).mul (realCoeff_X _)))

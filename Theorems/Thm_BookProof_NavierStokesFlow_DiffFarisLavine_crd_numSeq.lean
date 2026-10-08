@@ -11,8 +11,8 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.Bosonic
 open BookProof.ChapterGravityProjector
-open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 
@@ -21,12 +21,9 @@ open BookProof.NavierStokesFlow.DiffFarisLavine
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
 
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
 theorem BookProof.NavierStokesFlow.DiffFarisLavine.crd_numSeq (i : Fin 3) (x : lpFiniteModes Vel) (β : Vel) :
     crd (numSeq i x) β = ((β i : ℝ) : ℂ) * crd x β := by sorry

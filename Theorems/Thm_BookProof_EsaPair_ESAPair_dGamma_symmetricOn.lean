@@ -15,14 +15,14 @@ open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
 open BookProof.EsaPair
 
-variable {Hs : IPSpace} (P : ESAPair Hs)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {Hs : IPSpace} (P : ESAPair Hs)
 
 theorem BookProof.EsaPair.ESAPair.dGamma_symmetricOn :
     SymmetricOn (dsCore (fun n : ℕ => fockSectorCore Hs P.closureDomain P.coreDomain n))

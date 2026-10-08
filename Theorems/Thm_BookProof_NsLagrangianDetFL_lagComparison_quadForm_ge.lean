@@ -12,17 +12,17 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsLagrangianDetFL
 
-variable {K : Type*} [Fintype K]
-variable (S : LagNsData K)
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
 
+variable {K : Type*} [Fintype K]
+
+variable (S : LagNsData K)
 
 theorem BookProof.NsLagrangianDetFL.lagComparison_quadForm_ge (x : polyGaussCore (d := lagDim K)) :
     ‖(x : L2d (lagDim K))‖ ^ 2 ≤ quadForm (lagComparison S) x := by sorry

@@ -9,17 +9,17 @@ import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 open BookProof.PositiveSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-variable [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
+variable [CompleteSpace F]
+variable {D : Submodule ℂ F}
 
 theorem BookProof.PositiveSquareRoot.continuous_den :
     Continuous (fun t : ℝ => 1 - t - t + t * t + t * t) := by sorry

@@ -12,9 +12,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -23,6 +20,9 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.hamCore_quadForm_nonneg (hWc : Continuous W) (hWb : ExpBounded W)
     (hW0 : ∀ x, 0 ≤ W x) (x : (polyGaussCore (d := d))) :

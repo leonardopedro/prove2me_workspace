@@ -24,4 +24,6 @@ variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    EssentiallySelfAdjointOn := qgModeHamiltonian_essentiallySelfAdjoint a b (qgScalaronModePotential M alpha Rc phi)
+    EssentiallySelfAdjointOn
+      (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))
+      (qgScalaronModeHamiltonian a b M alpha Rc phi) := qgModeHamiltonian_essentiallySelfAdjoint a b (qgScalaronModePotential M alpha Rc phi)

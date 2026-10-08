@@ -7,14 +7,14 @@ import Mathlib
 import Definitions.Def_ChapterResolventCorrespondence
 open BookProof.ResolventCorrespondence
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
-
 
 
 open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
 
 theorem BookProof.ResolventCorrespondence.relOfCLM_quadForm_nonneg (h0 : 0 ≤ R) (h1 : R ≤ 1) {p : F × F} (hp : p ∈ relOfCLM R) :

@@ -5,7 +5,10 @@ import Definitions.Def_ChapterMajoranaFourier
 open BookProof.ChapterMajoranaFourier
 open BookProof.ChapterMajoranaProp61
 
+
+
 variable {𝒜 : Type*} [Ring 𝒜] [StarRing 𝒜] [Algebra ℝ 𝒜] [StarModule ℝ 𝒜]
+
 variable (U H g E N Ni : 𝒜) (m : ℝ)
   (hU₁ : star U * U = 1) (hU₂ : U * star U = 1)
   (hg_sa : star g = g) (hg2 : g * g = 1)
@@ -20,11 +23,5 @@ variable (U H g E N Ni : 𝒜) (m : ℝ)
   (hNE : N * E = E * N)
   (hNA : N * Aop U H g = Aop U H g * N)
 
-
-
-
-set_option maxHeartbeats 2000000 in
--- the proof below is a large finite computation; the default heartbeat budget
--- is not enough to elaborate it
 theorem BookProof.ChapterMajoranaProp61.prop61_star_mul_self :
     star (Uprime U H g E Ni) * Uprime U H g E Ni = 1 := by sorry

@@ -5,15 +5,15 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.conj_hFun_mul (κ : ℝ) (X Y : ℕ → ℂ) (m : ℕ) :
     (starRingEnd ℂ) (hFun κ X m) * Y m

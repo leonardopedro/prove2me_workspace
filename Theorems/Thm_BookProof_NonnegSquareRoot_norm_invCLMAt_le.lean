@@ -10,10 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-variable {a : ℝ}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
@@ -21,6 +17,10 @@ open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPola
 open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T S : Submodule ℂ (F × F)}
+
+variable {a : ℝ}
 
 theorem BookProof.NonnegSquareRoot.norm_invCLMAt_le (hT : IsNonnegSelfAdjoint T) (ha : 0 < a) (h : F) :
     ‖invCLMAt hT ha h‖ ≤ a⁻¹ * ‖h‖ := by sorry

@@ -28,9 +28,6 @@ variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
 theorem solution (i : Fin 3) : coreOp (fieldPoly A c i) = fieldOp A c i := by
 
   rw [fieldPoly, fieldOp, coreOp_add, coreOp_smul, coreOp_id, coreOp_sum]

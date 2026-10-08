@@ -13,14 +13,14 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.StoneEigenflow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterUnitaryTransport BookProof.EsaClosure BookProof.FarisLavine
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.StoneEigenflow.stoneFlow_apply_eigenvector {T : UnboundedSelfAdjoint F} {U : ℝ → (F →L[ℂ] F)}

@@ -6,12 +6,12 @@ import Definitions.Def_ChapterEsaClosureCore
 open BookProof.EsaClosure
 open BookProof.ClosureUniqueness
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
 
 
 theorem BookProof.ClosureUniqueness.factorGraph_quadForm_nonneg {A : D →ₗ[ℂ] F} {p : F × F} (hp : p ∈ factorGraph A) :

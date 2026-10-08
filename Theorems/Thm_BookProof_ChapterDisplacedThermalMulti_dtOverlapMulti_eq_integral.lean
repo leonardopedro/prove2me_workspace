@@ -5,8 +5,6 @@ import Definitions.Def_ChapterDisplacedThermalOverlap
 open BookProof.ChapterDisplacedThermalOverlap
 open BookProof.ChapterDisplacedThermalMulti
 
-variable {n m : ℕ}
-
 
 noncomputable section
 
@@ -15,6 +13,8 @@ open scoped NNReal
 
 
 open BookProof.ChapterDisplacedThermalOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterDisplacedThermalMulti.dtOverlapMulti_eq_integral (nbar : ℝ≥0) (a b : EuclideanSpace ℝ (Fin n)) :

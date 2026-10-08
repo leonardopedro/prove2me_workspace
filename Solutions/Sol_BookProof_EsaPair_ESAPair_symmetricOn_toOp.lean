@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEsaPairDGamma
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_restrictOp
 open BookProof.EsaPair
 
 

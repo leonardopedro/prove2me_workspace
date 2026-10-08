@@ -8,13 +8,13 @@ open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterTimeTranslation
 open BookProof.ChapterDeterministic
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct BookProof.ChapterTimeTranslation
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterDeterministic.measOpSet_eq_sum (U : Matrix (Fin n) (Fin n) ℂ) (B : Finset (Fin n)) :

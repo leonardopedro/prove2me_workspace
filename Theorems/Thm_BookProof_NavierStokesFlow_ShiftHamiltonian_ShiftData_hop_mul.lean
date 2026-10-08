@@ -6,14 +6,14 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
 
-variable {ι : Type*} (S : ShiftData ι)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*} (S : ShiftData ι)
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.hop_mul (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
     S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by sorry

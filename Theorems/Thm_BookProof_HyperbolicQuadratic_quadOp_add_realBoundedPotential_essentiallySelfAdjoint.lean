@@ -10,9 +10,6 @@ import Definitions.Def_ChapterWaveBoundedPotential
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -21,6 +18,10 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+open scoped ENNReal
 
 theorem BookProof.HyperbolicQuadratic.quadOp_add_realBoundedPotential_essentiallySelfAdjoint (c : Fin d → ℝ)
     (W : Vd d → ℝ)

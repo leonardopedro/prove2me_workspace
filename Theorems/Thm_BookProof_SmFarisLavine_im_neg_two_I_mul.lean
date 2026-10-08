@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -25,5 +22,8 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.im_neg_two_I_mul (z : ℂ) : (((-2 : ℂ) * Complex.I) * z).im = -2 * z.re := by sorry

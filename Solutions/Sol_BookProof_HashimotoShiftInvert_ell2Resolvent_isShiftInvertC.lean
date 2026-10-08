@@ -9,7 +9,6 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
 import Theorems.Thm_ell2ShiftInvert_injective
-open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -23,10 +22,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-d_simp
-
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) :
-    IsShiftInvertC ell2UnboundedExample γ (ell2Resolve :=
+    IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) :=
   nt hγ) := by
     refine isShiftInvertC_of_rightInverse ell2Example_symmetricOn hγ ?_
     intro u

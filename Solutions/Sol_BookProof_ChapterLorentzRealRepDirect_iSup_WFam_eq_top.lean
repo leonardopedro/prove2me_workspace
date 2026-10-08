@@ -1,6 +1,7 @@
 -- Generated from ChapterLorentzRealRepDirect.lean — solution of BookProof.ChapterLorentzRealRepDirect.iSup_WFam_eq_top
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
+import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_decomposition_top
 open BookProof.ChapterLorentzRealRepDirect
 
 

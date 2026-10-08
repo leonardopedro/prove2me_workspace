@@ -3,12 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterG
 open BookProof.ChapterG
 
+
+open scoped ComplexConjugate InnerProductSpace Matrix
+open MeasureTheory
+
 variable {G : Type*} [Group G] [MeasurableSpace G]
 variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
 variable {X : Type*} [MulAction G X]
-
-
-open scoped ComplexConjugate InnerProductSpace Matrix
 
 theorem BookProof.ChapterG.gauge_constraint_pushforward_full_measure
     {X : Type*} [MeasurableSpace X] (μ : Measure X) [IsProbabilityMeasure μ]

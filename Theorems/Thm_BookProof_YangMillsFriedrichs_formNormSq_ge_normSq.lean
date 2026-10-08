@@ -5,13 +5,13 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine
 
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 theorem BookProof.YangMillsFriedrichs.formNormSq_ge_normSq {H : D →ₗ[ℂ] F} (hpos : ∀ x : D, 0 ≤ quadForm H x) (x : D) :

@@ -1,7 +1,9 @@
 -- Generated from ChapterNavierStokesLagrangianEsa.lean — solution of BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData.hasZeroDeficiencyOn_of_boundedRealization
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_hasZeroDeficiencyOn_of_boundedRealization
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.LagrangianEsa
 open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 
 

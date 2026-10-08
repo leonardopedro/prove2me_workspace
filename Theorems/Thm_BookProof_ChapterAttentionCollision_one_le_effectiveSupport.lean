@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCollision
 open BookProof.ChapterAttentionCollision
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionCollision.one_le_effectiveSupport {p : Fin m → ℝ} (hp0 : ∀ j, 0 ≤ p j) (hp1 : ∀ j, p j ≤ 1)

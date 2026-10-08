@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterG3
 open BookProof.ChapterG3
 
-variable {X : Type*}
-
 
 open MeasureTheory
 open scoped ENNReal
 
 
+
+variable {X : Type*}
 
 
 theorem BookProof.ChapterG3.free_remnant_moves_every_point {G Y : Type*} [Group G] [MulAction G Y]

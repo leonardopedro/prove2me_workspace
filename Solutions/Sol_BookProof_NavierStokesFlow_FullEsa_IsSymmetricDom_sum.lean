@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

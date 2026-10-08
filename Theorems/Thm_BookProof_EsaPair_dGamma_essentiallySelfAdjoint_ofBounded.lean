@@ -11,14 +11,14 @@ open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.EsaPair
 
-variable {Hs : IPSpace} (P : ESAPair Hs)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {Hs : IPSpace} (P : ESAPair Hs)
 
 theorem BookProof.EsaPair.dGamma_essentiallySelfAdjoint_ofBounded (Hs : IPSpace)
     (B : (⊤ : Submodule ℂ Hs.carrier) →ₗ[ℂ] Hs.carrier) (hB : SymmetricOn ⊤ B) {C : ℝ}

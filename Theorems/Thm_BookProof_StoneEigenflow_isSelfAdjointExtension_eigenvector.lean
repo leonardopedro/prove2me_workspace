@@ -10,14 +10,14 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 open BookProof.StoneEigenflow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterUnitaryTransport BookProof.EsaClosure BookProof.FarisLavine
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.StoneEigenflow.isSelfAdjointExtension_eigenvector {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}

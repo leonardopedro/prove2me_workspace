@@ -10,8 +10,6 @@ import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
 open BookProof.BookBrstInstances
 
-variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
-
 
 
 open BookProof.BookBrstYangMills BookProof.BookBrstGaugeFixing BookProof.SmBrstGhost
@@ -19,6 +17,8 @@ open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 open MvPolynomial
 
 noncomputable section
+
+variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
 
 
 theorem BookProof.BookBrstInstances.su2_bookGfTerm_eq_zero_of_Afield0 (x : Fin 4 → Fin 3 → ℝ)

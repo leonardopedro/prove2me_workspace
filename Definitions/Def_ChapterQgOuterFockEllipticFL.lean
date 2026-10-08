@@ -252,11 +252,46 @@ def dsFriedComparison (S : ∀ i, PosSymOp (G i)) (hd : ∀ i, Dense ((S i).dom 
     Comparison (lp G 2) :=
   dsComparison fun i => friedrichsComparison (S i) (hd i)
 
+/-- The algebraic direct sum of the fibre domains sits inside the domain of the lifted
+Friedrichs operator. -/
+theorem dsCore_le_dsFriedDom (S : ∀ i, PosSymOp (G i))
+    (hd : ∀ i, Dense ((S i).dom : Set (G i))) :
+    dsCore (fun i => (S i).dom) ≤ (dsFriedComparison S hd).dom := by
+  intro x hx
+  refine ⟨fun i =>
+    (friedrichsComparison_extends (S i) (hd i) ⟨(x : lp G 2) i, hx.2 i⟩).choose, ?_⟩
+  have hfun : (fun i => opTot (friedrichsComparison (S i) (hd i)).op ((x : lp G 2) i))
+      = fun i => ((S i).op ⟨(x : lp G 2) i, hx.2 i⟩ : G i) := by
+    funext i
+    rw [opTot_of_mem _
+      (friedrichsComparison_extends (S i) (hd i) ⟨(x : lp G 2) i, hx.2 i⟩).choose]
+    exact (friedrichsComparison_extends (S i) (hd i) ⟨(x : lp G 2) i, hx.2 i⟩).choose_spec
+  rw [hfun]
+  refine memLp_of_finite_support (Set.Finite.subset hx.1 fun i hi => ?_)
+  simp only [Set.mem_setOf_eq] at hi ⊢
+  intro h0
+  refine hi ?_
+  have hz : (⟨(x : lp G 2) i, hx.2 i⟩ : (S i).dom) = 0 := Subtype.ext h0
+  rw [hz, map_zero]
 
+/-- **The lifted Friedrichs operator is a positive self-adjoint extension of the direct sum
+of the fibre operators.** -/
+theorem dsFriedComparison_isPositiveSelfAdjointExtension (S : ∀ i, PosSymOp (G i))
+    (hd : ∀ i, Dense ((S i).dom : Set (G i))) :
+    IsPositiveSelfAdjointExtension (dsOp fun i => (S i).op) (dsFriedComparison S hd).op :=
+  (dsFriedComparison S hd).isPositiveSelfAdjointExtension (dsOp fun i => (S i).op) fun x => by
+    refine ⟨dsCore_le_dsFriedDom S hd x.2, ?_⟩
+    refine lp.ext (funext fun i => ?_)
+    refine Eq.trans (dsCompOp_fib (fun i => friedrichsComparison (S i) (hd i))
+      ⟨(x : lp G 2), dsCore_le_dsFriedDom S hd x.2⟩ i) ?_
+    exact (friedrichsComparison_extends (S i) (hd i) ⟨(x : lp G 2) i, x.2.2 i⟩).choose_spec
 
-
-
-
+/-- **The lifted Friedrichs operator is essentially self-adjoint on its domain** — the
+`H = N`, `c = 0` case of the Faris–Lavine criterion. -/
+theorem dsFriedComparison_esa (S : ∀ i, PosSymOp (G i))
+    (hd : ∀ i, Dense ((S i).dom : Set (G i))) :
+    EssentiallySelfAdjointOn (dsFriedComparison S hd).dom (dsFriedComparison S hd).op :=
+  (dsFriedComparison S hd).esa_self
 
 end GenericLift
 
@@ -271,9 +306,12 @@ def sectorHam (kappa : Fin 84 → ℝ) (n : ℕ) :
     (polyGaussCore (d := n * 84)) →ₗ[ℂ] L2d (n * 84) :=
   sqSumOp (kappaN kappa n) (qgTorsionVecN n)
 
+theorem kappaN_qgKappa (n : ℕ) : kappaN qgKappa n = qgKappaN n := rfl
 
-
-
+/-- The physical signature gives back the sector Hamiltonian of
+`BookProof.ChapterQgOuterFockEsa`. -/
+theorem sectorHam_qgKappa (n : ℕ) : sectorHam qgKappa n = qgSectorHam n := by
+  rw [sectorHam, kappaN_qgKappa, qgSectorHam]
 
 theorem sectorHam_symmetricOn (kappa : Fin 84 → ℝ) (n : ℕ) :
     SymmetricOn (polyGaussCore (d := n * 84)) (sectorHam kappa n) :=
@@ -297,7 +335,10 @@ Fock space. -/
 def outerHam (kappa : Fin 84 → ℝ) : qgOuterCore →ₗ[ℂ] qgOuterFock :=
   dsOp fun n : ℕ => sectorHam kappa n
 
-
+set_option maxHeartbeats 1200000 in
+-- identifying two direct sums of core operators is a costly defeq check
+theorem outerHam_qgKappa : outerHam qgKappa = qgOuterHam :=
+  congrArg dsOp (funext fun n => sectorHam_qgKappa n)
 
 /-- **The lifted Friedrichs comparison operator of the gravity Hamiltonian itself**, for a
 nonnegative signature: the Friedrichs extension of the positive `n`-particle operator,
@@ -305,9 +346,19 @@ lifted to the outer Fock space. -/
 def outerComparison {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) : Comparison qgOuterFock :=
   dsFriedComparison (fun n : ℕ => sectorPosSym hk n) fun _ => polyGaussCore_dense
 
+/-- **Essential self-adjointness on the outer Fock space, by Faris–Lavine.** -/
+theorem outer_esa_farisLavine {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) :
+    EssentiallySelfAdjointOn (outerComparison hk).dom (outerComparison hk).op :=
+  dsFriedComparison_esa _ _
 
-
-
+set_option maxHeartbeats 1200000 in
+-- the Friedrichs domains are ranges of completion-built resolvents: defeq checks are costly
+/-- **The lifted operator is a positive self-adjoint extension of the outer Fock
+Hamiltonian on the finite-particle core.** -/
+theorem outer_isPositiveSelfAdjointExtension {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) :
+    IsPositiveSelfAdjointExtension (outerHam kappa) (outerComparison hk).op :=
+  dsFriedComparison_isPositiveSelfAdjointExtension (fun n : ℕ => sectorPosSym hk n)
+    fun _ => polyGaussCore_dense
 
 /-! ## 5. The elliptic gravity Hamiltonian -/
 
@@ -325,7 +376,21 @@ abbrev qgOuterEllipticDom : Submodule ℂ qgOuterFock := qgOuterEllipticComparis
 /-- The lifted elliptic gravity Hamiltonian on the outer Fock space. -/
 abbrev qgOuterEllipticH : qgOuterEllipticDom →ₗ[ℂ] qgOuterFock := qgOuterEllipticComparison.op
 
+set_option maxHeartbeats 1200000 in
+-- the Friedrichs domains are ranges of completion-built resolvents: defeq checks are costly
+/-- **The elliptic gravity Hamiltonian on the outer Fock space is essentially self-adjoint,
+by the Faris–Lavine strategy.**
 
+The `n`-particle Hamiltonian `Σ_p h^{(p)}` is positive for the elliptic signature
+(`sectorHam_quadForm_nonneg`), so it has a Friedrichs extension, which is a Faris–Lavine
+comparison operator on the sector; the lift of that family to the `ℓ²`-direct sum
+`𝔉 = ⊕ₙ L²(ℝ^{84n})` is again one (`dsFriedComparison`), and Theorem 1 of Faris–Lavine
+applies on `𝔉` with `c = 0`.  The resulting operator extends the outer Fock Hamiltonian on
+the finite-particle core, and is positive and self-adjoint there. -/
+theorem qgOuterEllipticFock_esa_farisLavine :
+    EssentiallySelfAdjointOn qgOuterEllipticDom qgOuterEllipticH ∧
+      IsPositiveSelfAdjointExtension qgOuterEllipticHam qgOuterEllipticH :=
+  ⟨outer_esa_farisLavine _, outer_isPositiveSelfAdjointExtension _⟩
 
 end
 

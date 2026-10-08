@@ -1,8 +1,8 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — solution of BookProof.TwoParticleSector.isReducingProjection_fermionicProj
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
-import Theorems.Thm_BookProof_TwoParticleSector_swapH_involutive
 import Theorems.Thm_BookProof_TwoParticleSector_swapH_inner
+import Theorems.Thm_BookProof_TwoParticleSector_swapH_involutive
 import Theorems.Thm_BookProof_ReducedEsa_isReducingProjection_asymProj
 open BookProof.TwoParticleSector
 

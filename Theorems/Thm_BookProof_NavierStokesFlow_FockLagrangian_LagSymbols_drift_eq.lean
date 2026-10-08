@@ -11,9 +11,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-variable {μ : Measure X} (S : LagSymbols X μ)
-
 
 open MeasureTheory
 
@@ -21,5 +18,8 @@ open MeasureTheory
 
 open FullEsa FockContinuum
 
+variable {X : Type*} [MeasurableSpace X]
+
+variable {μ : Measure X} (S : LagSymbols X μ)
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.drift_eq : S.data.drift = mulD μ S.driSym_meas S.driSym_dom := by sorry

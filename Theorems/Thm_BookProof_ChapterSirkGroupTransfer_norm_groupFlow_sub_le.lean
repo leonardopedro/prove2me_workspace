@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterSirkGroupTransfer
 open BookProof.ChapterSirkGroupTransfer
 
-variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
-
 
 noncomputable section
 
 
 open NormedSpace
+
+variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
 
 theorem BookProof.ChapterSirkGroupTransfer.norm_groupFlow_sub_le {a b : A} {M : ℝ} (ha : ‖a‖ ≤ M) (hb : ‖b‖ ≤ M) (t : ℝ) :

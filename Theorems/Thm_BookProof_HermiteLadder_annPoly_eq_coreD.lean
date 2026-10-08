@@ -10,8 +10,6 @@ open BookProof.HermiteProductBasis
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteLadder
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -20,6 +18,8 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodin
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteLadder.annPoly_eq_coreD (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :

@@ -18,8 +18,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
 open BookProof.NsLinearKoopmanEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial
@@ -28,10 +26,13 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
+open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.NsLinearKoopmanEsa.subtype_comp_coreRepPoly_op (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :

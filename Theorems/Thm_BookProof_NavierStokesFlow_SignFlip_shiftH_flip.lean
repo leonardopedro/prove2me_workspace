@@ -13,15 +13,15 @@ open BookProof.NavierStokesFlow.ShiftHamiltonian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {ι : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.SignFlip.shiftH_flip (S : ShiftData ι) (p : ι → ℕ) (k : ℕ)
     (hp : ∀ β, p (S.shift β) = p β + k) (x : maxDom S.sym) :

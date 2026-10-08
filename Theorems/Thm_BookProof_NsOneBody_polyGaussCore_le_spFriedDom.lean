@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.polyGaussCore_le_spFriedDom (nu : ℝ) (k : Fin 3 → ℝ) :
     (polyGaussCore (d := 6)) ≤ (spFried nu k).dom := by sorry

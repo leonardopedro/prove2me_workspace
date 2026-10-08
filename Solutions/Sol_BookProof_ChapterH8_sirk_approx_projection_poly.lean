@@ -42,3 +42,5 @@ theorem solution (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)
     rw [hsplit]
     rfl
   rw [h1, h2, h3]
+
+omit [CompleteSpace F] [CompleteSpace G] in

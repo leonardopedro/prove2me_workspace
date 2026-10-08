@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_PermSector_tensor_triple_induction
+import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
 open BookProof.PermSector
 
 
@@ -12,6 +13,25 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.Te
 open BookProof.GroupAverage BookProof.TensorPerm
 
 noncomputable section
+
+
+/-! Helper: the elementary-tensor equations of `inclPow` / `derPow`.  The platform's
+published `Def_ChapterTensorGraphCore` carries the definitions but not these three `rfl`
+equations, and a solution may not rely on unpublished declarations, so they are stated
+locally (this file is standalone: top-level `theorem solution` still follows). -/
+
+@[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
+    (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
+
+@[simp] theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
+    derPow Hs D₂ A 0 x = 0 := rfl
+
+@[simp] theorem derPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
+      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
 
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
   (D : Submodule ℂ Hs.carrier)

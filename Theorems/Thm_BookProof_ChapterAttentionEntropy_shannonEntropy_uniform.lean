@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
 open BookProof.ChapterAttentionEntropy
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open Filter Topology BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionEntropy.shannonEntropy_uniform (hm : 0 < m) :

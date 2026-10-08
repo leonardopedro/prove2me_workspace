@@ -6,7 +6,7 @@ open BookProof.NavierStokesFlow
 
 
 
-open scoped Matrix lp
+open scoped Matrix
 
 
 
@@ -16,11 +16,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-tice finite-mode domain is dense. -/
-theorem solution : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=
-  lpFiniteModes_dense
-
-/-- The finite-mode domain is a **proper** subspa :=
+theorem solution : finiteModes ≠ (⊤ : Submodule ℂ L2Z) :=
   ce: the `ℓ²` state
   `k ↦ 1/k` has infinitely many excited modes. -/
   theorem finiteModes_ne_top : finiteModes ≠ (⊤ : Submodule ℂ L2Z) := by

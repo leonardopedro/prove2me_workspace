@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
 import Theorems.Thm_BookProof_NsScalarVectorCurry_eLpNorm_two_sq
-import Theorems.Thm_BookProof_NsScalarVectorCurry_eLpNorm_two_sq'
+import Theorems.Thm_BookProof_NsScalarVectorCurry_eLpNorm_two_sq_prime
 import Theorems.Thm_BookProof_NsScalarVectorCurry_lintegral_eLpNorm_slice_sq
 import Theorems.Thm_BookProof_NsScalarVectorCurry_enn_tendsto_zero_of_sq
 import Theorems.Thm_BookProof_NsScalarVectorCurry_ae_tendsto_zero_of_tsum_lintegral_ne_top
@@ -68,7 +68,7 @@ theorem solution (f : Lp (Lp ℂ 2 ν) 2 μ) : IsSliceOf f (curryLI f) := by
   -- the fibred error tends to zero almost everywhere
   have hint₁ : ∀ k, ∫⁻ x, (φ₁ k x) ^ 2 ∂μ = ‖w k - f‖ₑ ^ 2 := by
     intro k
-    rw [Lp.enorm_def, eLpNorm_two_sq']
+    rw [Lp.enorm_def, eLpNorm_two_sq_prime]
   have hmeas₁ : ∀ k, AEMeasurable (fun x => (φ₁ k x) ^ 2) μ := fun k =>
     (((Lp.aestronglyMeasurable (w k - f)).enorm :
       AEMeasurable (fun x => ‖((w k - f : Lp (Lp ℂ 2 ν) 2 μ) : V → Lp ℂ 2 ν) x‖ₑ) μ).pow_const _)

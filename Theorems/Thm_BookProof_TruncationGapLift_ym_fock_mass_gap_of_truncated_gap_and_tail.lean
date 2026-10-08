@@ -22,10 +22,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
 
 noncomputable section
 
@@ -36,6 +32,10 @@ open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {D : Submodule ℂ F}
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.TruncationGapLift.ym_fock_mass_gap_of_truncated_gap_and_tail {m : ℕ} {mu eps : ℝ}
     (heps : 0 ≤ eps) (hmueps : eps < mu)

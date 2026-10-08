@@ -12,9 +12,6 @@ open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-
 
 open scoped ENNReal
 
@@ -24,6 +21,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
 
 theorem BookProof.FockQuadratic.norm_hopT (P Q : Idx ι) (x : Idx ι → ℂ) (b : Idx ι) :
     ‖hopT P Q x b‖ = amp P Q b * ‖x (tgt P Q b)‖ * ‖x b‖ := by sorry

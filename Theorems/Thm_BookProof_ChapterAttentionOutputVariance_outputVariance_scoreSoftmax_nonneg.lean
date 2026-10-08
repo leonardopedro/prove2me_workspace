@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionOutputVariance
 
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 open scoped BigOperators RealInnerProductSpace
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionOutputVariance.outputVariance_scoreSoftmax_nonneg (beta : ℝ) (s : Fin m → ℝ) (v : Fin m → E) :

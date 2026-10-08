@@ -20,8 +20,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open Filter Topology
 
@@ -36,10 +34,9 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
+
 theorem BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_shiftInvert_selects {γ : ℂ} (hγ : γ.im ≠ 0) :
     ∃ (Dom : Submodule ℂ (L2d 3)) (G : Dom →ₗ[ℂ] L2d 3) (X : L2d 3 →L[ℂ] L2d 3),
       IsSelfAdjointExtension ((polyGaussCore (d := 3)).subtype.comp (nsDiffH A c)) G ∧

@@ -13,8 +13,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.FockInteractionStability
 
-variable {E : Type*} [NormedAddCommGroup E]
-
 
 noncomputable section
 
@@ -24,6 +22,8 @@ open BookProof.FockNumberPreservingGap
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 
+
+variable {E : Type*} [NormedAddCommGroup E]
 
 
 theorem BookProof.FockInteractionStability.fock_gap_of_one_particle_form_gap_interaction

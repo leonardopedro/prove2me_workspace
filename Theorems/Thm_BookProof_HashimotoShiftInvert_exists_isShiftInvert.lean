@@ -9,15 +9,15 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  {Dom : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
 
 theorem BookProof.HashimotoShiftInvert.exists_isShiftInvert {A : Dom →ₗ[ℂ] F} (hpos : ∀ x : Dom, 0 ≤ quadForm A x)
     {γ : ℝ} (hγ : 0 < γ) (hsurj : Function.Surjective (shiftMap A γ)) :

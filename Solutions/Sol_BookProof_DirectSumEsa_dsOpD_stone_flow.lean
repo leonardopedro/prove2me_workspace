@@ -19,6 +19,7 @@ noncomputable section
 
 variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
   [∀ i, InnerProductSpace ℂ (G i)]
+open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FullEsa
 
 variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
   [∀ i, InnerProductSpace ℂ (G i)]

@@ -4,11 +4,11 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionMasking
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionSparse
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -17,6 +17,10 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionMasking
+open BookProof.ChapterAttentionOutput
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionSparse.norm_headOutput_masked_sub_le (beta : ℝ) (s : Fin m → ℝ) {S : Finset (Fin m)}

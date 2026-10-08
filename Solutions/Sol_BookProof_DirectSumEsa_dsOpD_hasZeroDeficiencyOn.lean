@@ -38,3 +38,5 @@ theorem solution (A : ∀ i, D i →ₗ[ℂ] D i)
     have hv : (inner ℂ ((A i v : G i)) w : ℂ) = -Complex.I * inner ℂ ((v : G i)) w := hw v
     rw [inner_neg_right, inner_smul_right, hv]
     ring
+
+open BookProof.NavierStokesFlow.FullEsa in

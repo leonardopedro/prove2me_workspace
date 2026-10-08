@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphere
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldGaussian
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldSphere.sphereGaussian_map_linearIsometryEquiv

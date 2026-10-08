@@ -9,6 +9,7 @@ open BookProof.KoopmanLyapunov
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
+open BookProof.NsKoopman
 
 noncomputable section
 

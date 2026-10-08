@@ -15,14 +15,12 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    Function.Injective (fun q : Fin 4 × Fin 4 × Fin 4 => idxDE q.1 q.2.1 q.2.2) :=
-   `∂_μ e_ν^a`. -/
-  def idxDE (mu nu a : Fin 4) : Fin 84 := ⟨20 + 16 * mu.val + 4 * nu.val + a.val, by omega⟩
-  
-  theorem idxX_injective : Function.Injective idxX := by
-    intro mu mu' h
-    have := congrArg Fin.val h
-    simp only [idxX] at this
-    exact Fin.ext this
-  
-  theorem idxE_in
+    Function.Injective (fun q : Fin 4 × Fin 4 × Fin 4 => idxDE q.1 q.2.1 q.2.2) := by
+
+  rintro ⟨mu, nu, a⟩ ⟨mu', nu', a'⟩ h
+  have h' := congrArg Fin.val h
+  simp only [idxDE] at h'
+  have hmu : mu.val = mu'.val := by omega
+  have hnu : nu.val = nu'.val := by omega
+  have ha : a.val = a'.val := by omega
+  simp [Prod.ext_iff, Fin.ext_iff, hmu, hnu, ha]

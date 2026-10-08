@@ -19,11 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.YangMillsNonAbelianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-variable {d : ℕ}
-variable {d k r : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -34,6 +29,11 @@ open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {D : Submodule ℂ F}
+variable {d : ℕ}
+variable {d k r : ℕ}
 
 theorem BookProof.YangMillsNonAbelianEsa.ymHamiltonian_eq_weylPoly (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     ymHamiltonian (coreRepPoly 99) fabc = weylPoly ymIdx (ymMag fabc) := by sorry

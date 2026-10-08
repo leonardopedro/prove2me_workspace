@@ -20,8 +20,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -35,6 +33,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.polySym_mqPoly (p q s b b' : Fin d → ℝ) :

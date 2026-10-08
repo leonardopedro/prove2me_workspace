@@ -6,13 +6,13 @@ import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.GaussCoordCombo
 open BookProof.SqueezedGaussStates
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.GaussCoordCombo
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.SqueezedGaussStates.exists_position_small {ε : ℝ} (hε : 0 < ε) :

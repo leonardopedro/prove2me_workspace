@@ -5,14 +5,14 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockContinuum.boundedEnergyCore_dense (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_eq_sum
+import Theorems.Thm_BookProof_FockSchur_up_apply_prime
 import Theorems.Thm_BookProof_FockSecondQuantization_support_up
 open BookProof.FockWeightedSchur
 
@@ -27,7 +28,7 @@ theorem solution (j : ℕ) (α : Conf) : wdeg w (up j α) = wdeg w α + w j ^ 2 
       w i ^ 2 * (((up j α) i : ℕ) : ℝ)
         = w i ^ 2 * ((α i : ℕ) : ℝ) + (if i = j then w j ^ 2 else 0) := by
     intro i _
-    rw [up_apply' j α i]
+    rw [up_apply_prime j α i]
     by_cases h : i = j
     · subst h; push_cast; simp; ring
     · simp [h]

@@ -9,15 +9,15 @@ import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 open BookProof.PositiveSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
+variable [CompleteSpace F]
 
 theorem BookProof.PositiveSquareRoot.invCLM_mem (hT : IsNonnegSelfAdjoint T) (h : F) : (invCLM hT h, h - invCLM hT h) ∈ T := by sorry

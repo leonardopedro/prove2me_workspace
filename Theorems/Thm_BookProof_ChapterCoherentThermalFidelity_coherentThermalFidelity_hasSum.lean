@@ -9,8 +9,6 @@ open BookProof.ChapterCoherentOccupation
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentThermalFidelity
 
-variable {nbar lam : ℝ}
-
 
 noncomputable section
 
@@ -18,6 +16,8 @@ noncomputable section
 open BookProof.ChapterCoherentOccupation BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentFidelity BookProof.ChapterDisplacedThermalOverlap
 open Real
+
+variable {nbar lam : ℝ}
 
 
 theorem BookProof.ChapterCoherentThermalFidelity.coherentThermalFidelity_hasSum (h : 0 ≤ nbar) (lam : ℝ) :

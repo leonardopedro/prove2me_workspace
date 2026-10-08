@@ -5,12 +5,12 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.YangMillsBianchi
 
-variable {R : Type*} [Ring R]
-
 
 open BigOperators
 
 
+
+variable {R : Type*} [Ring R]
 
 
 theorem BookProof.YangMillsBianchi.bianchi_fieldStrength (D : Fin 3 → R) :

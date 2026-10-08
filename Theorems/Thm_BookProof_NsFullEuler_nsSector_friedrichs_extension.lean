@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsSector_friedrichs_extension (nu lam mu gg : ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 21))) (A : Dom →ₗ[ℂ] L2d (n * 21)),

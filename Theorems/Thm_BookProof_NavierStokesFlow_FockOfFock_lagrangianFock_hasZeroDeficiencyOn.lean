@@ -11,16 +11,16 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
-variable {J K : Type*} [DecidableEq J] [DecidableEq K]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
+variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.lagrangianFock_hasZeroDeficiencyOn (nu : ℝ) (hnu : 0 ≤ nu) (p q dr : Fin 3 → M → ℝ)
     (force : Fin 3 → ℝ) (cst : M → ℝ) :

@@ -19,8 +19,6 @@ open BookProof.StoneBridge
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsFullFock_stone_flow (nu lam mu gg : ℝ) :
     ∃ (T : UnboundedSelfAdjoint nsFockSpace) (U : ℝ → (nsFockSpace →L[ℂ] nsFockSpace)),

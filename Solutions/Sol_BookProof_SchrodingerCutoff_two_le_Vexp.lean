@@ -9,10 +9,7 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-uous Vexp := by
-  unfold Vexp; fun_prop
-
-theo :=
+theorem solution (x : ℝ) : 2 ≤ Vexp x :=
   rem two_le_Vexp (x : ℝ) : 2 ≤ Vexp x := by
     have hp : 0 < Real.exp x := Real.exp_pos x
     have hcancel : Real.exp x * (Real.exp x)⁻¹ = 1 := mul_inv_cancel₀ (ne_of_gt hp)

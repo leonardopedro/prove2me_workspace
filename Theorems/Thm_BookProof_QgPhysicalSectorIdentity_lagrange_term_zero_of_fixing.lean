@@ -14,8 +14,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-
 
 
 open BookProof.GaugeFixing
@@ -25,6 +23,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 
 theorem BookProof.QgPhysicalSectorIdentity.lagrange_term_zero_of_fixing
     (hfix : gaugeField S.toGaugeFixingSystem = S.toGaugeFixingSystem.zero (1, 0)) :

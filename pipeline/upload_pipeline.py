@@ -37,6 +37,11 @@ import urllib.parse
 WS = (os.environ.get("PROVE2ME_WS")
       or os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PIPE = f"{WS}/pipeline"
+# Published-content mirror: Definitions/Theorems sources as the PLATFORM holds
+# them (verified byte-identical against the API `definition` payload).  The
+# local Definitions/ copy runs ahead of what is published, so any guard that
+# asks "does the published bundle already declare X?" must read the mirror.
+MIRROR = os.environ.get("PROVE2ME_MIRROR", "/tmp/published_mirror")
 CANONICAL_WS = "/home/leo/prove2me_workspace"
 
 # Lean gate: LAKE_BIN override, else `lake` on PATH, else the elan v4.33.1
@@ -185,7 +190,16 @@ def _declared_theorems(path):
             txt = f.read()
     except OSError:
         return []
-    return re.findall(r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_'.]*)", txt)
+    # The identifier class MUST be Unicode-aware.  The old ASCII-only class
+    # `[A-Za-z0-9_'.]*` stopped at the first non-ASCII char, so
+    # `theorem BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ` was read
+    # as `...mem` and `reconcile_thm_names` adopted the TRUNCATED name -- the
+    # pipeline then submitted `theorem_name: ...mem` against a statement that
+    # declares `...memℓp_one_div_succ`.  This local truncation is the true root
+    # of the §2.7 "server truncates the name" class (same defect as the
+    # generator's `fmt_name`, §2.8 fix 1).  Lean identifiers contain arbitrary
+    # Unicode letters, so match everything up to a delimiter instead.
+    return re.findall(r"(?m)^theorem\s+([^\s:({⟨\[⦃,]+)", txt)
 
 
 def _name_shape(name):
@@ -467,7 +481,22 @@ def find_related(name, formal):
 # "not published yet" is the sol-side equivalent: a solution's target theorem
 # may still be pending, which is a wait, not a failure of the solution.
 TRANSIENT_ERRORS = ("still in flight", "poll timeout", "not published yet",
-                    BUDGET_WAIT)
+                    # do_wave_def's dependency gate runs BEFORE submit-definition:
+                    # it never reaches the server, so a visit that ends here
+                    # spends nothing.  Without this entry every visit burned an
+                    # attempt (def:ChapterAbelianGelfandModel sat at attempts=2
+                    # on this string alone) and 5 visits would park a bundle
+                    # whose cited theorem simply proved later.
+                    "not proved yet",
+                    BUDGET_WAIT, "guard defer:", "guard park:",
+                    # api() answers None for any non-JSON body (proxy blip,
+                    # 5xx HTML, empty reply): an infrastructure failure, not a
+                    # verdict. A real submit-problem rejection is JSON
+                    # ("already exists", name restrictions), so retrying costs
+                    # nothing but a poll round -- while NOT retrying recorded a
+                    # bare `rejected: null` with no diagnosis and spent an
+                    # attempt (ChapterAttentionSparse_l1dist_maskedSoftmax_eq).
+                    "submit-problem rejected: null")
 
 
 def is_transient(err):
@@ -566,7 +595,12 @@ def poll_job(job_id):
             return p
         if p is None:
             continue
-    return {"status": "FAILED", "error_message": "poll timeout"}
+    # A poll timeout is NOT a verdict.  Returning FAILED here made slow publish
+    # jobs (the runbook records jobs sitting PENDING for many minutes) fall
+    # through every handler's terminal-FAILED branch and RE-SUBMIT, creating a
+    # duplicate publish job per timeout -- an error-rate amplifier.  Report the
+    # job as still in flight so the caller re-polls on the next pass instead.
+    return {"status": "PENDING", "error_message": "poll timeout"}
 
 
 def _do_legacy_def(st, item):
@@ -759,6 +793,9 @@ def do_wave_def(st, item, chapter):
             return None
         if p.get("status") in ("PENDING", "COMPILING", None):
             return "def job still in flight"
+    gerr = apply_guard(st, item, "def", chapter, path)
+    if gerr:
+        return gerr
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
@@ -829,6 +866,9 @@ def do_wave_thm(st, item, slug):
             return None
         if p.get("status") in ("PENDING", "COMPILING", None):
             return "theorem job still in flight"
+    gerr = apply_guard(st, item, "thm", slug, path, meta.get("name"))
+    if gerr:
+        return gerr
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
@@ -979,6 +1019,9 @@ def do_wave_sol(st, item, slug):
                     "reused_status": "Proved",
                     "skipped": "theorem already Proved on platform"})
         return None
+    gerr = apply_guard(st, item, "sol", slug, path)
+    if gerr:
+        return gerr
     ok, err = local_compile(path)
     if not ok:
         return f"local compile failed: {err[:200]}"
@@ -1018,6 +1061,405 @@ def do_wave_sol(st, item, slug):
         if s and s not in ("PENDING", "COMPILING"):
             return f"verdict {s}: {(p or {}).get('error_message', '')[:200]}"
     return "verify poll timeout"
+
+
+# ---------------------------------------------------------------------------
+# Pre-submit guard (PIPELINE_PLAN §2.12).
+#
+# `../timepiece331` compiles every proof body we publish, so a platform failure
+# is never "the mathematics is hard": it is an adaptation defect in the stub --
+# a mis-sliced statement span, a missing `variable`/`open`, a name the server
+# rejects, a declaration a published bundle already carries.  Every class in
+# debug/failure_taxonomy.py's top ten is detectable BEFORE submission, either
+# from the stub text or from the published-mirror verdict that
+# debug/check_pending_offline.py records.  A predictably-doomed submission
+# burns one of the item's five attempts and adds one more FAILED publish job,
+# so the guard refuses it here instead.
+#
+# Verdicts: "park"   terminal-unpublishable (§2.7 name restrictions, §2.8d
+#                    duplicate declarations): mark `parked`, never submit.
+#           "defer"  fixable (regenerate/repair the stub first): costs nothing.
+# Both are TRANSIENT so no attempt is consumed on either.
+# ---------------------------------------------------------------------------
+
+OFFLINE_CHECK = f"{WS}/state/offline_pending_check.json"
+# Unicode-aware on purpose (same lesson as `_declared_theorems`): a Lean
+# identifier may contain any Unicode letter (`memℓp_one_div_succ`).  What is NOT
+# allowed here is whitespace and empty dot-segments; `'` is rejected separately.
+_IDENT = re.compile(r"^[^\s.]+(\.[^\s.]+)*$")
+_CMD_START = re.compile(
+    r"^(import |open |open scoped |scoped |variable |include |omit |noncomputable |"
+    r"section|namespace |end |theorem |lemma |def |abbrev |instance |structure |"
+    r"class |inductive |universe |attribute |set_option |local |example |#)")
+
+
+def name_guard(theorem_name):
+    """Server-enforced name restrictions (§2.7).  Both are fatal and both are
+    cheap to detect locally: park instead of burning a submission.
+
+    CORRECTION to §2.7b (2026-10-06, API-verified): `_prime` is NOT fatal.
+    platform_jobs() holds 8 PUBLISHED names containing `_prime` (e.g.
+    `BookProof.ChapterParityMajoranaQuant.J_unitary_prime`) and zero
+    "not a valid Lean identifier" rejections.  The old plan rule would have
+    parked 111 submittable items -- same lesson as §2.8c: never park a class
+    without an API answer.
+
+    CORRECTION to §2.7 (2026-10-06): the "server truncates the name at the char"
+    story was OUR OWN loader -- `_declared_theorems`'s ASCII-only identifier
+    regex truncated `memℓp_one_div_succ` to `mem` and `reconcile_thm_names`
+    adopted it (fixed above).  But the fatality is real and server-side:
+    `submit-problem` answered, for the full name
+    `BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ`, the rejection
+    `theorem_name must be a valid Lean identifier (identifier segments separated
+    by '.' for namespaces)` -- the server's identifier class is ASCII-only, same
+    as the apostrophe class.  So non-ASCII theorem names are PARKED (API-verified
+    2026-10-06), and the way to recover those items is an ASCII transliteration
+    of the DECLARATION name at generation time, not a submission retry."""
+    if not theorem_name or not theorem_name.isascii():
+        return ("non-ASCII theorem_name (server: theorem_name must be a valid "
+                "Lean identifier; park and transliterate the declaration name)")
+    if "'" in theorem_name:
+        return "apostrophe theorem_name (server: not a valid Lean identifier, §6.1)"
+    if not _IDENT.match(theorem_name):
+        return "theorem_name is not a plain dotted Lean identifier (§2.7)"
+    return None
+
+
+def strip_lean_comments(txt):
+    """Crude comment stripper (block + line) for sorry scans."""
+    out, i, n = [], 0, len(txt)
+    while i < n:
+        if txt.startswith("/-", i):
+            depth, j = 1, i + 2
+            while j < n and depth:
+                if txt.startswith("/-", j):
+                    depth += 1; j += 2
+                elif txt.startswith("-/", j):
+                    depth -= 1; j += 2
+                else:
+                    j += 1
+            out.append(" ")
+            i = j
+        elif txt.startswith("--", i):
+            j = txt.find("\n", i)
+            i = n if j < 0 else j
+        else:
+            out.append(txt[i])
+            i += 1
+    return "".join(out)
+
+
+def stub_sanity(path, kind):
+    """Static span checks that catch the §2.8b mis-slicing class without a
+    compiler.  Returns a reason string or None."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError as e:
+        return f"cannot read stub: {e}"
+    lines = [l for l in txt.splitlines() if l.strip()]
+    if not lines:
+        return "empty stub"
+    first = lines[0].strip()
+    if first.startswith("--") or first.startswith("/-"):
+        pass
+    elif first.endswith("-/") and not first.startswith("/-"):
+        return "stub starts mid-comment (mis-sliced span)"
+    elif not _CMD_START.match(first):
+        return f"stub does not start at a command (first line: {first[:60]!r})"
+    code = strip_lean_comments(txt)
+    if kind == "thm":
+        # The statement was cut mid-expression and `:= by sorry` glued on
+        # (`∑ := by sorry`, `:= e := by sorry`) -- the valStart mis-slice class.
+        tail = txt.rstrip()
+        if tail.count(":= by sorry") != 1 or not tail.endswith(":= by sorry"):
+            return "stub does not end with exactly one `:= by sorry`"
+        head = tail[:-len(":= by sorry")].rstrip()
+        if head.endswith((":=", "∑", "∏", "∫", "√", "(", ",", "+", "*", "-", "/",
+                          "↦", "→", "∀", "∃", "fun", "λ", "∈", "<", "≤", "=")):
+            return "statement looks truncated before `:= by sorry`"
+        # `‖` is a legitimate statement-final token (`... ≤ ‖d‖ := by sorry`),
+        # so only an ODD count of the delimiter means the span was cut inside
+        # a norm term.  Without this the guard defer-blocked every norm_bound
+        # statement whose offline verdict was already `ok`.
+        if head.count("‖") % 2:
+            return "statement looks truncated (unbalanced `‖`) before `:= by sorry`"
+    else:
+        # Solutions and def bundles must carry real proofs/definitions (rule 3).
+        if re.search(r"\bsorry\b", code):
+            return f"{kind} stub contains `sorry`"
+    return None
+
+
+def offline_fail(kind, name, path):
+    """Fresh FAIL verdict from debug/check_pending_offline.py, if any.
+
+    The verdict describes the platform's world (published mirror + the exact
+    preamble/formal split the uploader submits), so a FAIL here is a wasted
+    attempt.  A verdict older than the stub file says nothing about the stub's
+    current text and is ignored (regeneration makes every old verdict stale)."""
+    try:
+        res = json.load(open(OFFLINE_CHECK))
+    except (OSError, ValueError):
+        return None
+    ent = ((res.get(kind) or {}).get("items") or {}).get(name)
+    if not ent or not ent.startswith("FAIL:"):
+        return None
+    try:
+        if os.path.getmtime(OFFLINE_CHECK) < os.path.getmtime(path):
+            return None
+    except OSError:
+        pass
+    return ent[5:300]
+
+
+def _state_snapshot():
+    """Cached read of state/pipeline.json (refreshed on mtime change) -- the
+    sibling-import guard below runs per submission and the file is ~2.5 MB."""
+    global _STATE_CACHE
+    try:
+        mt = os.path.getmtime(f"{WS}/state/pipeline.json")
+    except OSError:
+        return {}
+    if _STATE_CACHE and _STATE_CACHE[0] == mt:
+        return _STATE_CACHE[1]
+    try:
+        data = json.load(open(f"{WS}/state/pipeline.json", encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    _STATE_CACHE = (mt, data)
+    return data
+
+
+_STATE_CACHE = None
+
+
+def _thm_slugs_for(mod):
+    """State/wave spellings to try for an imported `Thm_<mod>` module.
+
+    State and the wave spec keep the source slug's apostrophe
+    (`BookProof_X'`) while the platform module is named from the declaration
+    (`BookProof_X_prime`) after the `_prime` rename wave, so a lookup keyed by
+    the import text must also try the sibling spelling.  Order = preference:
+    the import text first, then the apostrophe slug."""
+    out = [mod]
+    if mod.endswith("_prime"):
+        out.append(mod[:-6] + "'")
+    if "_prime" in mod:
+        out.append(mod.replace("_prime", "'"))
+    return list(dict.fromkeys(out))
+
+
+def unpublished_sibling_imports(path):
+    """`import Theorems.Thm_<slug>` in a solution or statement needs that
+    sibling PUBLISHED, and (API-verified 2026-10-07) for a statement also
+    *Proved*: the server answers `Imported platform theorems must be Proved at
+    submission time` for a sibling whose own solution is not yet accepted --
+    publishing all 25 statement modules was not enough, 6 attempts were spent
+    on exactly that before this was understood.  Returns the unpublished
+    siblings (empty when the file imports no Theorems modules)."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    mods = re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt)
+    if not mods:
+        return []
+    items = (_state_snapshot() or {}).get("items", {})
+    return [m for m in mods
+            if not any((items.get("thm:" + s) or {}).get("status") == "done"
+                       for s in _thm_slugs_for(m))]
+
+
+def unproved_sibling_imports(path):
+    """Published-but-not-Proved siblings imported by a STATEMENT file.
+
+    A statement's formal statement is re-compiled by the server in the
+    platform's world, where `import Theorems.Thm_X` must refer to a theorem
+    whose solution is already accepted: `Imported platform theorems must be
+    Proved at submission time`.  Only kind==thm hits this -- a solution is
+    compiled against the statement it solves (circular otherwise)."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return []
+    mods = re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt)
+    if not mods:
+        return []
+    items = (_state_snapshot() or {}).get("items", {})
+    unproved = []
+    for m in mods:
+        slugs = _thm_slugs_for(m)
+        if not any((items.get("thm:" + s) or {}).get("status") == "done"
+                   for s in slugs):
+            continue                      # unpublished: unpublished_ handles it
+        if not any((items.get("sol:" + s) or {}).get("status") == "done"
+                   for s in slugs):
+            unproved.append(m)
+    return unproved
+
+
+def sol_rules_broken(name, path):
+    """SKILL three basic rules that a solution file can violate statically.
+
+    Rule 1 (top-level `theorem solution`) and rule 2 (never import your own
+    target) are fatal server-side rejections that burn one of the 5 attempts;
+    neither is caught by the offline compiler verdict -- a file with no
+    `theorem solution` at all still COMPILES clean (measured: 4 such pending
+    solutions, e.g. Sol_BookProof_ChapterConditional_pJoint_nonneg.lean which
+    contains no declaration whatsoever).  Returns a reason string or None."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError as e:
+        return f"cannot read solution: {e}"
+    m = re.search(r"(?m)^theorem\s+solution\b", txt) \
+        or re.search(r"(?m)^set_option[^\n]*\bin\s+theorem\s+solution\b", txt)
+    if not m:
+        return "no top-level `theorem solution` declaration (rule 1)"
+    ns = re.search(r"(?m)^namespace\b", txt)
+    if ns and ns.start() < m.start():
+        return "`theorem solution` is wrapped in a namespace (rule 1)"
+    for mod in re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt):
+        if name in _thm_slugs_for(mod):
+            return f"imports its own target theorem Thm_{mod} (rule 2)"
+    return None
+
+
+def def_import_cycle(chapter, path):
+    """Module name of a `Thm_*` stub this def bundle imports that imports the
+    bundle BACK, or None.  An import cycle compiles nowhere: neither the bundle
+    nor the stub can ever be published (learned on Def_ChapterMackeyCocycle,
+    whose own node stub imports it because its statement cites kept decls).
+    Cross-chapter stub imports are the legitimate pattern (§2.16's 8-import
+    ClassificationList bundle: intersection with its reverse set = 0)."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return None
+    for m in re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt):
+        try:
+            stub = open(f"{WS}/Theorems/Thm_{m}.lean", encoding="utf-8").read()
+        except OSError:
+            continue
+        if re.search(r"(?m)^\s*import Definitions\.Def_" + re.escape(chapter)
+                     + r"\b", stub):
+            return m
+    return None
+
+
+def thm_import_cycle(slug, path):
+    """Sibling statement stub that imports THIS statement module back.
+    Same deadlock as def_import_cycle; thm<->thm is currently 0 across the
+    tree but the guard must not depend on that staying true."""
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return None
+    own = set(_thm_slugs_for(slug))
+    for m in re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt):
+        try:
+            stub = open(f"{WS}/Theorems/Thm_{m}.lean", encoding="utf-8").read()
+        except OSError:
+            continue
+        for back in re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", stub):
+            if back in own:
+                return m
+    return None
+
+
+def def_gate_fresh(chapter, path):
+    """Durable candidate-build verdict for a def bundle (state/def_gate.json,
+    written by debug/build_candidate_mirror.py).  Returns None when the gate
+    is fresh and OK, else a reason to defer.
+
+    The bundle's own compile check is the one gate the pipeline cannot do
+    itself: `local_compile` degrades to a skip for every file whose imports
+    are not built in this checkout, and check_pending_offline covers thm/sol
+    only.  Without this, a `--kind def` chunk would submit the 66-FAIL class
+    straight into the 5-attempt budget (§2.10e: the compiler is the only
+    reliable oracle)."""
+    try:
+        gate = json.load(open(f"{WS}/state/def_gate.json"))
+    except (OSError, ValueError):
+        return "no def build gate (state/def_gate.json) -- run " \
+               "debug/build_candidate_mirror.py first"
+    ent = gate.get(chapter)
+    if not isinstance(ent, dict):
+        return "chapter not covered by the last def build -- rerun " \
+               "build_candidate_mirror with it in --targets"
+    if ent.get("stamp") != file_stamp(path):
+        return "bundle edited since the last def build -- rebuild before submitting"
+    if ent.get("status") != "OK":
+        return "candidate build: " + str(ent.get("status"))[:140]
+    return None
+
+
+def submission_guard(kind, name, path, theorem_name=None):
+    """(verdict, reason) -- verdict in {"park", "defer"}, or (None, None)."""
+    if kind == "thm" and theorem_name:
+        reason = name_guard(theorem_name)
+        if reason:
+            return "park", "name restriction: " + reason
+    if kind == "sol":
+        reason = sol_rules_broken(name, path)
+        if reason:
+            # Both are deterministic file defects, not environment facts: the
+            # submission can never be accepted as-is.  Defer (not park) so a
+            # regenerated file is picked up without a state edit.
+            return "defer", "sol rules: " + reason
+    if kind == "def":
+        cyc = def_import_cycle(name, path)
+        if cyc:
+            return "defer", ("import cycle: Thm_%s imports this bundle back "
+                             "(neither module can compile)" % cyc)
+        reason = def_gate_fresh(name, path)
+        if reason:
+            return "defer", "def gate: " + reason
+    if kind in ("sol", "thm"):
+        # For a thm stub the same rule applies to cross-statement imports the
+        # stage-2 repair added: the server answers `unknown import ... No such
+        # theorem exists` for an unpublished sibling and burns an attempt
+        # (learned 2026-10-07 on BrstUnboundedLeakage_opProj_apply and two more
+        # in one chunk, 3 attempts, all importing state-pending siblings).
+        # The statement cannot import itself, so exclude the own slug -- an
+        # own-slug match would defer the item forever.
+        sibs = unpublished_sibling_imports(path)
+        if kind == "thm":
+            sibs = [s for s in sibs if s != name]
+            # Stronger, same day: a published sibling whose SOLUTION is still
+            # pending also dies server-side (`must be Proved at submission
+            # time`), 6 attempts in chunk batch_next.  For a sol this does not
+            # apply (it is compiled against its own statement).
+            sibs += [s for s in unproved_sibling_imports(path) if s != name]
+            cyc = thm_import_cycle(name, path)
+            if cyc:
+                return "defer", ("import cycle: Thm_%s imports this statement "
+                                 "back" % cyc)
+        if sibs:
+            extra = f" (+{len(sibs) - 3} more)" if len(sibs) > 3 else ""
+            return ("defer", "sibling theorem not published on the platform: "
+                    + ", ".join(sibs[:3]) + extra)
+    reason = stub_sanity(path, kind)
+    if reason:
+        return "defer", "stub sanity: " + reason
+    reason = offline_fail(kind, name, path)
+    if reason:
+        # §2.8d: a declaration a published def bundle already carries can never
+        # become a problem -- park rather than defer.
+        if "has already been declared" in reason:
+            return "park", "duplicate declaration: " + reason
+        return "defer", "offline mirror: " + reason
+    return None, None
+
+
+def apply_guard(st, item, kind, name, path, theorem_name=None):
+    """Run submission_guard, recording park verdicts in state.  Returns a
+    TRANSIENT error string on any non-submit verdict, else None."""
+    verdict, reason = submission_guard(kind, name, path, theorem_name)
+    if not verdict:
+        return None
+    if verdict == "park":
+        st["items"][item] = {"status": "parked", "error": reason[:300]}
+    return f"guard {verdict}: {reason[:200]}"
 
 
 def do_def(st, item):
@@ -1231,7 +1673,7 @@ def plan_progress(st, miss=(), kinds=None):
         in_plan = {i for i in in_plan if i.partition(":")[0] in kinds}
     by_kind = {}
     for i in in_plan:
-        if i in miss or recs.get(i, {}).get("status") in ("done", "failed"):
+        if i in miss or recs.get(i, {}).get("status") in ("done", "failed", "parked"):
             continue
         k = i.partition(":")[0]
         by_kind[k] = by_kind.get(k, 0) + 1
@@ -1239,6 +1681,7 @@ def plan_progress(st, miss=(), kinds=None):
         "in_plan": len(in_plan),
         "done": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "done"),
         "failed": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "failed"),
+        "parked": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "parked"),
         "pending": sum(by_kind.values()),
         "pending_by_kind": by_kind,
         "orphans": len(recs) - len(set(recs) & set(ORDER)),
@@ -1277,10 +1720,11 @@ def cmd_status():
     print(f"plan : {p['in_plan']} items ({len(WAVE_DEFS)} defs, "
           f"{len(WAVE_THMS)} thms, {len(WAVE_THMS)} sols)")
     print(f"state: {p['done']} done / {p['pending']} pending / {p['failed']} failed"
+          f" / {p['parked']} parked"
           + (f" ({p['orphans']} orphans ignored)" if p["orphans"] else ""))
     print(f"pending by kind: {p['pending_by_kind']}")
     nxt = [i for i in ORDER if i not in miss
-           and st["items"].get(i, {}).get("status") not in ("done", "failed")][:8]
+           and st["items"].get(i, {}).get("status") not in ("done", "failed", "parked")][:8]
     print(f"next : {', '.join(nxt) if nxt else '(nothing pending)'}")
     if miss:
         chaps = sorted({k.split(":", 1)[1].split("_")[1] for k in miss if "_" in k})
@@ -1321,16 +1765,6 @@ def published_theorems():
             if j.get("kind") == "problem" and j.get("status") == "PUBLISHED"}
 
 
-def def_imports(path):
-    """`import Definitions.Def_X` names a source file depends on."""
-    try:
-        txt = open(path, encoding="utf-8").read()
-    except OSError:
-        return []
-    return [m[len("Definitions.Def_"):] for m in
-            re.findall(r"(?m)^import\s+(Definitions\.Def_\S+)", txt)]
-
-
 def thm_imports(path):
     """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems.
 
@@ -1351,7 +1785,8 @@ def thm_imports(path):
         # Resolve through the wave spec, which is authoritative for slug -> name.
         # Splitting on "_" instead turns `hermiteBasis_apply` into
         # `hermiteBasis.apply`, which matches nothing.
-        rec = WAVE_THMS.get(slug) or {}
+        rec = WAVE_THMS.get(slug) or WAVE_THMS.get(slug.replace("_prime", "'")) \
+            or {}
         out.append(rec.get("name") or slug.replace("_prime", "'"))
     return out
 
@@ -1383,7 +1818,9 @@ def def_opens(path):
         txt = open(path, encoding="utf-8").read()
     except OSError:
         return []
-    return re.findall(r"(?m)^open\s+(BookProof\.[A-Za-z0-9_.]+)", txt)
+    # Unicode-aware: an `open` line's namespace may contain non-ASCII segments
+    # (same lesson as `_declared_theorems`); the ASCII-only class truncated them.
+    return re.findall(r"(?m)^open\s+(BookProof\.[^\s]+)", txt)
 
 
 _NS_OWNERS = None
@@ -1557,9 +1994,20 @@ def target_declared_in_published_def(item):
     # inside a bundle that actually opens that namespace.
     ns, _, leafname = name.rpartition(".")
     for leaf in _PUB_DEF_DECLS:
-        try:
-            dtxt = open(f"{WS}/Definitions/Def_{leaf}.lean", encoding="utf-8").read()
-        except OSError:
+        # Mirror first: it is what the platform will actually re-compile the
+        # statement against.  Reading the local file gated
+        # thm:..._fermiCreate1_eq as a dup of ChapterSpinStatistics even though
+        # the published bundle declares only the six `def`s -- the local copy
+        # carries the theorems the platform never received.
+        dtxt = None
+        for cand in (f"{MIRROR}/Definitions/Def_{leaf}.lean",
+                     f"{WS}/Definitions/Def_{leaf}.lean"):
+            try:
+                dtxt = open(cand, encoding="utf-8").read()
+                break
+            except OSError:
+                continue
+        if dtxt is None:
             continue
         if ns and not re.search(r"(?m)^namespace\s+" + re.escape(ns) + r"\b", dtxt):
             continue
@@ -1730,7 +2178,10 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
                     continue
             rec = st["items"].get(item, {"status": "pending", "attempts": 0})
             st["items"][item] = rec
-            if rec["status"] == "done":
+            # `parked` (guard verdict) and `failed` (attempts exhausted) are
+            # never dispatched: re-submitting them burns attempts on outcomes
+            # that are already known (§2.12).
+            if rec["status"] in ("done", "parked", "failed"):
                 continue
             if rec.get("attempts", 0) >= MAX_ATTEMPTS:
                 rec["status"] = "failed"
@@ -1952,7 +2403,8 @@ def main(argv=None):
             break
         rec = st["items"].get(item, {"status": "pending", "attempts": 0})
         st["items"][item] = rec
-        if rec["status"] == "done":
+        # See run_chunk_pipelined: parked/failed items are never dispatched.
+        if rec["status"] in ("done", "parked", "failed"):
             continue
         if rec.get("attempts", 0) >= MAX_ATTEMPTS:
             rec["status"] = "failed"

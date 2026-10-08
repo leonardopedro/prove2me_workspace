@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_core_eq_pgLp
 import Theorems.Thm_BookProof_SqSumFarisLavine_abs_im_gaussInt_le
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_self
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
@@ -153,4 +154,21 @@ theorem solution {kappa : Fin D → ℝ} {v : R → Fin D → ℝ} {km M : ℝ}
           ≤ (∑ k : Fin D, (g k) ^ 2) / (2 * M) + 2 * M * ∑ k : Fin D, (a k) ^ 2 := by
         rw [Finset.mul_sum, Finset.sum_div, Finset.mul_sum, ← Finset.sum_add_distrib]
         exact Finset.sum_le_sum fun k _ => hyoung k
-      have hdiv : (∑ k : Fin D, (g k) ^ 2) / 
+      have hdiv : (∑ k : Fin D, (g k) ^ 2) / (2 * M) ≤ (M / 2) * ∑ k : Fin D, (b k) ^ 2 := by
+        rw [div_le_iff₀ h2M]
+        nlinarith [hg2]
+      have hexp : ∑ j : Fin D, ((a j) ^ 2 + (b j) ^ 2 / 4)
+          = (∑ j : Fin D, (a j) ^ 2) + (∑ j : Fin D, (b j) ^ 2) / 4 := by
+        rw [Finset.sum_add_distrib, Finset.sum_div]
+      rw [hexp]
+      nlinarith [hstep, hdiv]
+  have hbound2 : |2 * ∑ k : Fin D, (gaussInt (cpoly (gradPoly v k * p) * coreD k p)).im|
+      ≤ 2 * M * ∑ j : Fin D, ((a j) ^ 2 + (b j) ^ 2 / 4) := by
+    rw [abs_mul, abs_of_nonneg (by norm_num : (0:ℝ) ≤ (2:ℝ))]
+    have h1 : |∑ k : Fin D, (gaussInt (cpoly (gradPoly v k * p) * coreD k p)).im|
+        ≤ ∑ k : Fin D, (g k * a k) :=
+      le_trans (Finset.abs_sum_le_sum_abs _ _) (Finset.sum_le_sum fun k _ => hS k)
+    linarith [hsum2]
+  rw [abs_neg, him]
+  refine le_trans (abs_add_le _ _) ?_
+  nlinarith [hbound1, hbound2]

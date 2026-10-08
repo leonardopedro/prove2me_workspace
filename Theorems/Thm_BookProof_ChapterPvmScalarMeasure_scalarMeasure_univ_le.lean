@@ -8,9 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterPvmScalarMeasure
 open BookProof.ChapterPvmScalarMeasure
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -19,6 +16,9 @@ open scoped InnerProductSpace
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicDecomposition
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterMackeyConverse
 open BookProof.ChapterPvmInducedSystem
+
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
 
 theorem BookProof.ChapterPvmScalarMeasure.scalarMeasure_univ_le (P : Pvm X H) {S : Set H} {n : S → ℕ}

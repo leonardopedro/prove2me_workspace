@@ -69,9 +69,84 @@ noncomputable def hermiteRepr : L2R ≃ₗᵢ[ℂ] L2Nat := hermiteBasis.repr
 
 /-- **The Hermite core**: the finite linear combinations of Hermite functions,
 i.e. the polynomials times the Gaussian `e^{-x²/4}`, as a submodule of `L²(ℝ)`. -/
+noncomputable def hermiteCore : Submodule ℂ L2R := Submodule.span ℂ (Set.range hermiteLp)arisLavine
+
+/-!
+# The Hermite core, and a Strichartz-type theorem on it
+
+This chapter joins the two strands of the project.
+
+`BookProof.ChapterHermiteFunctions` builds the genuine Hermite orthonormal basis
+`hermiteBasis` of `L²(ℝ)` (orthogonality, completeness via Fourier uniqueness,
+and the harmonic-oscillator eigenvalue equation).  This chapter defines the
+**Hermite core**
+
+`hermiteCore = span_ℂ { ψ₀, ψ₁, ψ₂, … } ⊆ L²(ℝ)`,
+
+the finite linear combinations of Hermite functions — i.e. the polynomials times
+the Gaussian `e^{-x²/4}` — and proves that a **diagonal operator** in the Hermite
+basis, with an arbitrary real symbol `lam : ℕ → ℝ`, is
+
+* symmetric on the core (`hermiteCoreOp_symmetric`),
+* has **trivial deficiency at every non-real `z`** (`hermiteCoreOp_deficiencyTrivialAt`),
+  which is precisely the Strichartz "finite speed / unique continuation" input, and
+* is therefore **essentially self-adjoint on the core**
+  (`hermiteCoreOp_essentiallySelfAdjoint`), via the *proved* route
+  `BookProof.QuantumGravityDensitized.strichartz_esa_of_finiteSpeed`.
+
+The core is dense (`hermiteCore_dense`), so this is a genuine essential
+self-adjointness statement, and the operator is genuinely unbounded whenever the
+symbol is (`hermiteCoreOp_not_bounded`).
+
+Finally the result is instantiated with the **3D gauge-fixed quantum-gravity mode
+symbol**: after gauge fixing and densitization, the principal symbol of the
+gravity Hamiltonian is the hyperbolic form
+`qgSymbol ξ ξ_y = (1/16) Σ_{a<3} ξ_a² − (1/24) ξ_y²`
+of `BookProof.ChapterQuantumGravityDensitized`, and mode by mode one gets
+`qg3DModeSymbol`.  The conclusion is
+`qg3D_essentiallySelfAdjoint_on_hermiteCore`: the 3D gauge-fixed quantum-gravity
+mode Hamiltonian is essentially self-adjoint on the Hermite core of `L²(ℝ)`.
+-/
+
+namespace BookProof.HermiteStrichartzQG
+
+open MeasureTheory BookProof.HermiteCore BookProof.FarisLavine
+open BookProof.QuantumGravityDensitized
+
+/-- `L²(ℝ)` with the Lebesgue measure. -/
+noncomputable abbrev L2R := Lp ℂ 2 (volume : Measure ℝ)
+
+/-- The unitary `L²(ℝ) ≃ ℓ²(ℕ)` given by the Hermite basis. -/
+noncomputable def hermiteRepr : L2R ≃ₗᵢ[ℂ] L2Nat := hermiteBasis.repr
+
+@[simp] theorem hermiteRepr_hermiteLp (n : ℕ) :
+    hermiteRepr (hermiteLp n) = lp.single 2 n (1 : ℂ) := by
+  rw [hermiteRepr, ← hermiteBasis_apply, HilbertBasis.repr_self]
+
+@[simp] theorem hermiteRepr_symm_single (n : ℕ) :
+    hermiteRepr.symm (lp.single 2 n (1 : ℂ)) = hermiteLp n := by
+  rw [hermiteRepr, HilbertBasis.repr_symm_single, hermiteBasis_apply]
+
+theorem inner_hermiteLp_eq_zero_iff {w : L2R} :
+    (∀ n : ℕ, (inner ℂ (hermiteLp n) w : ℂ) = 0) ↔ w = 0 := by
+  constructor
+  · intro h
+    have hrep : hermiteRepr w = 0 := by
+      ext n
+      simpa [hermiteRepr, HilbertBasis.repr_apply_apply] using h n
+    have := congrArg hermiteRepr.symm hrep
+    simpa using this
+  · rintro rfl n
+    simp
+
+/-! ## The Hermite core -/
+
+/-- **The Hermite core**: the finite linear combinations of Hermite functions,
+i.e. the polynomials times the Gaussian `e^{-x²/4}`, as a submodule of `L²(ℝ)`. -/
 noncomputable def hermiteCore : Submodule ℂ L2R := Submodule.span ℂ (Set.range hermiteLp)
 
-
+theorem hermiteLp_mem_hermiteCore (n : ℕ) : hermiteLp n ∈ hermiteCore :=
+  Submodule.subset_span ⟨n, rfl⟩
 
 
 

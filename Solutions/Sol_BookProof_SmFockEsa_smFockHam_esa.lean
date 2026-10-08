@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmFockEsa
 import Theorems.Thm_BookProof_SmFockEsa_smSectorHam_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.SmFockEsa
 
 

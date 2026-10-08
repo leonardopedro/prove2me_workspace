@@ -15,8 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
 
 noncomputable section
+
+variable {n : ℕ}
 
 
 theorem BookProof.NsFullEuler.nsRedOuterN_apply (nu : ℝ) (k : Fin 3 → ℝ) (x : (nsRedOuterComparison nu k).dom)

@@ -7,8 +7,6 @@ import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterDutchBook
 open BookProof.ChapterAttentionMarkov
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMarkov.l1dist_push_le_of_min {P : Fin m → Fin m → ℝ} {p q : Fin m → ℝ} {eps : ℝ}

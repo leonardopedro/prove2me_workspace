@@ -1,6 +1,8 @@
 -- Generated from ChapterFiniteBayesHierarchy.lean — solution of BookProof.ChapterFiniteBayesHierarchy.collapseKernels_normalized
 import Mathlib
 import Definitions.Def_ChapterFiniteBayesHierarchy
+import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_compKernel_normalized
+import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_idKernel_normalized
 open BookProof.ChapterFiniteBayesHierarchy
 
 

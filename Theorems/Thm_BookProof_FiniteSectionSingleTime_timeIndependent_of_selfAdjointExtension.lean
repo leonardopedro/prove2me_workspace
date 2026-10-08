@@ -17,9 +17,6 @@ open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -33,6 +30,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.timeIndependent_of_selfAdjointExtension {F : Type*} [NormedAddCommGroup F]
     [InnerProductSpace ℂ F] [CompleteSpace F] {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}

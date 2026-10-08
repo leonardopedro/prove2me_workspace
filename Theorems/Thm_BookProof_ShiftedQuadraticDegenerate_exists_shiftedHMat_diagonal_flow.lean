@@ -22,8 +22,6 @@ open BookProof.ShiftedHermiteCore
 open BookProof.StoneBridge
 open BookProof.ShiftedQuadraticDegenerate
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -38,6 +36,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticDegenerate.exists_shiftedHMat_diagonal_flow {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1)

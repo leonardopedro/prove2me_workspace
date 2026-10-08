@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterSmHiggsVacuum
 open BookProof.SmHiggsVacuum
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Finset
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.SmHiggsVacuum.higgsV_eq_min_iff {lam mu2 : ℝ} (hlam : 0 < lam) (phi : E) :

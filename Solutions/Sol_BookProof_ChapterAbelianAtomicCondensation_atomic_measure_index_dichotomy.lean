@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianAtomicCondensation.lean — solution of BookProof.ChapterAbelianAtomicCondensation.atomic_measure_index_dichotomy
 import Mathlib
 import Definitions.Def_ChapterAbelianAtomicCondensation
+import Theorems.Thm_BookProof_ChapterAtomicDecomposition_atoms_countable
 open BookProof.ChapterAbelianAtomicCondensation
 
 

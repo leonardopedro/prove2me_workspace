@@ -16,8 +16,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Filter Topology
@@ -27,6 +25,8 @@ open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOut
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.QgTruncationResolvent.strongResolventConvergence_of_dense {T : UnboundedSelfAdjoint F}

@@ -4,9 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 open BookProof.DirectSumEsa
 
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)]
-
 
 open scoped ENNReal
 
@@ -14,6 +11,9 @@ open scoped ENNReal
 open BookProof.FarisLavine
 
 noncomputable section
+
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
 
 
 theorem BookProof.DirectSumEsa.mem_dsCore {D : ∀ i, Submodule ℂ (G i)} {f : lp G 2} :

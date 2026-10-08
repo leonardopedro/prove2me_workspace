@@ -12,8 +12,6 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.coreD_sum {ι : Type*} (s : Finset ι) (j : Fin D) (f : ι → MvPolynomial (Fin D) ℂ) :

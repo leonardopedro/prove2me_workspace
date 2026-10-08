@@ -20,11 +20,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-ySym_mulXPoly i)).add
-      (BookProof.YangMillsHermite.PolySym.real_smul (polySym_momPoly i))
-
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
-theor :=
+theorem solution (b b' : Fin d → ℝ) :
+    SymmetricOn (polyGaussCore (d := d)) (foOp b b') :=
   em foOp_symmetric (b b' : Fin d → ℝ) :
       Sy

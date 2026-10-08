@@ -14,8 +14,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.smPi_symmetricOn (m : Fin 40) :
     SymmetricOn (polyGaussCore (d := 163))

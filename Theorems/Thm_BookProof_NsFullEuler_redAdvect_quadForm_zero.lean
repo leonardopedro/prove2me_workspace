@@ -18,8 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
 
 noncomputable section
+
+variable {n : ℕ}
 
 
 theorem BookProof.NsFullEuler.redAdvect_quadForm_zero (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 3))

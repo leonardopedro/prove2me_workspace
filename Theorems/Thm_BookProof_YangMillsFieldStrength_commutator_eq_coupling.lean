@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFieldStrength
 open BookProof.YangMillsFieldStrength
 
-variable {R : Type*} [Ring R]
-variable {R : Type*} [Ring R] [Algebra ℂ R]
-
 
 open Complex
 
 
 
+variable {R : Type*} [Ring R]
+
+variable {R : Type*} [Ring R] [Algebra ℂ R]
 
 theorem BookProof.YangMillsFieldStrength.commutator_eq_coupling
     (δ : Fin 3 → R → R) (g : ℝ) (A : Fin 3 → R)

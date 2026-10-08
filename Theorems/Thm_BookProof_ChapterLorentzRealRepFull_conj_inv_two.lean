@@ -7,7 +7,6 @@ import Definitions.Def_ChapterLorentzRealRepFull
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRep
-open BookProof.ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRepFull
 
 

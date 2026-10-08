@@ -22,10 +22,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-drive le_rfl
-    diagKR_constraint_bound
-    ((essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn diagKR.D (secondOrder diagKR)).mpr
-      diagKR_secondOrder_hasZero :=
+noncomputable def l2NatBasis : HilbertBasis ℕ ℂ L2N :=
   DeficiencyOn)
   
   theorem diagKR_hFull_hasZeroDeficiencyOn :

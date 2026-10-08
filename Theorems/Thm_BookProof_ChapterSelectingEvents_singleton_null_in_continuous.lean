@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterSelectingEvents
 open BookProof.ChapterSelectingEvents
 
-variable (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 open scoped BigOperators
 open MeasureTheory ProbabilityTheory
 
+
+variable (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterSelectingEvents.singleton_null_in_continuous {α : Type*} [MeasurableSpace α]

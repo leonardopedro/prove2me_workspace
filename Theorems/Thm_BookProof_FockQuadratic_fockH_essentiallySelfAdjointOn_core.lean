@@ -15,10 +15,6 @@ open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-variable {κ : Type*}
-
 
 open scoped ENNReal
 
@@ -28,6 +24,10 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
+variable {κ : Type*}
 
 theorem BookProof.FockQuadratic.fockH_essentiallySelfAdjointOn_core (hω : ∀ i, 0 ≤ ω i) (P Q : κ → Idx ι) (g : κ → ℂ)
     (hPQ : ∀ k, deg (P k) + deg (Q k) ≤ 2)

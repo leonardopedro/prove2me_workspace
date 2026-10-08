@@ -18,8 +18,6 @@ open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.NSHashimoto
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open Filter Topology
 
@@ -29,6 +27,8 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert BookProof.EsaClosure
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 theorem BookProof.NavierStokesFlow.NSHashimoto.ns_hashimoto_selects (b : HilbertBasis ℕ ℂ (L2I Vel)) (γ : ℕ → ℂ)

@@ -8,8 +8,6 @@ import Definitions.Def_ChapterCPTHamiltonian
 open BookProof.ChapterCPTHamiltonian
 open BookProof.SmDiracSpinor
 
-variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
-
 
 
 open Matrix
@@ -17,6 +15,8 @@ open BookProof.ChapterCPTHamiltonian BookProof.SmCar BookProof.SmDiracYukawa
 open BookProof.FarisLavine
 
 noncomputable section
+
+variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
 
 
 theorem BookProof.SmDiracSpinor.diracOneParticle_sq :

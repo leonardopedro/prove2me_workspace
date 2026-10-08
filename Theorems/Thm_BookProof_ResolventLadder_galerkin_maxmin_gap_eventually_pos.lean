@@ -11,9 +11,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 noncomputable section
 
@@ -23,6 +20,9 @@ open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.ResolventLadder.galerkin_maxmin_gap_eventually_pos (R : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F)
     (hgap : maxminLevel R 1 < maxminLevel R 0) :

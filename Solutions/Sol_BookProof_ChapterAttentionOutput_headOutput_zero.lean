@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_scoreSoftmax_zero
 open BookProof.ChapterAttentionOutput
 
 

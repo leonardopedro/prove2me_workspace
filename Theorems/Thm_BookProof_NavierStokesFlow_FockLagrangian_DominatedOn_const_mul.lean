@@ -7,14 +7,14 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.const_mul {μ : Measure X} {g h : X → ℝ} (r : ℝ) (d : DominatedOn μ g h) :

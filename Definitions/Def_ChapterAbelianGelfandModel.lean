@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+
 import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 
@@ -105,9 +107,31 @@ instance instIsFiniteMeasureRieszStateMeasure (L : C(X, ℝ) →ₗ[ℝ] ℝ)
   unfold rieszStateMeasure
   infer_instance
 
+/-- **Riesz–Markov–Kakutani.**  The functional is integration against its Riesz measure. -/
+theorem integral_rieszStateMeasure (L : C(X, ℝ) →ₗ[ℝ] ℝ)
+    (hL : ∀ f : C(X, ℝ), 0 ≤ f → 0 ≤ L f) (f : C(X, ℝ)) :
+    ∫ x, f x ∂(rieszStateMeasure L hL) = L f := by
+  have h := RealRMK.integral_rieszMeasure (positiveCcMap L hL)
+    (CompactlySupportedContinuousMap.continuousMapEquiv f)
+  have hΛ : positiveCcMap L hL (CompactlySupportedContinuousMap.continuousMapEquiv f) = L f :=
+    rfl
+  rw [rieszStateMeasure]
+  exact hΛ ▸ h
 
-
-
+/-- A *unital* positive functional gives a **probability** measure. -/
+theorem isProbabilityMeasure_rieszStateMeasure (L : C(X, ℝ) →ₗ[ℝ] ℝ)
+    (hL : ∀ f : C(X, ℝ), 0 ≤ f → 0 ≤ L f) (hone : L 1 = 1) :
+    IsProbabilityMeasure (rieszStateMeasure L hL) := by
+  constructor
+  have h : ∫ _x : X, (1 : ℝ) ∂(rieszStateMeasure L hL) = 1 := by
+    have h1 := integral_rieszStateMeasure L hL 1
+    simpa [hone] using h1
+  have h' : ((rieszStateMeasure L hL) Set.univ).toReal = 1 := by
+    have h2 : (rieszStateMeasure L hL).real Set.univ = 1 := by
+      rw [← h, integral_const]
+      simp
+    simpa [Measure.real] using h2
+  exact (ENNReal.toReal_eq_one_iff _).mp h'
 
 end Riesz
 
@@ -164,7 +188,27 @@ theorem realPartFunctional_nonneg (psi : C(X, ℂ) →ₗ[ℂ] ℂ)
     0 ≤ realPartFunctional psi f :=
   (psi_nonneg_of_nonneg psi hpos f hf).1
 
-
+/-- A positive functional takes **real** values on real functions (`f = f⁺ - f⁻`). -/
+theorem realPartFunctional_ofReal (psi : C(X, ℂ) →ₗ[ℂ] ℂ)
+    (hpos : ∀ g : C(X, ℂ), 0 ≤ psi (star g * g)) (f : C(X, ℝ)) :
+    psi (toC f) = (realPartFunctional psi f : ℂ) := by
+  have hp : (0 : C(X, ℝ)) ≤ f ⊔ 0 := le_sup_right
+  have hm : (0 : C(X, ℝ)) ≤ (-f) ⊔ 0 := le_sup_right
+  have hsub : toC f = toC (f ⊔ 0) - toC ((-f) ⊔ 0) := by
+    ext x
+    simp only [toC_apply, ContinuousMap.sub_apply, ContinuousMap.sup_apply,
+      ContinuousMap.zero_apply, ContinuousMap.neg_apply]
+    rw [← Complex.ofReal_sub]
+    congr 1
+    rcases le_total (f x) 0 with h | h
+    · rw [max_eq_right h, max_eq_left (by linarith)]
+      ring
+    · rw [max_eq_left h, max_eq_right (by linarith)]
+      ring
+  have him : (psi (toC f)).im = 0 := by
+    rw [hsub, map_sub]
+    simp [(psi_nonneg_of_nonneg psi hpos _ hp).2, (psi_nonneg_of_nonneg psi hpos _ hm).2]
+  exact Complex.ext (by simp [realPartFunctional]) (by simp [him])
 
 end ComplexState
 

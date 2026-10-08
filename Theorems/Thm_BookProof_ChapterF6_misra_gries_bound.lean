@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterF6
 open BookProof.ChapterF6
 
-variable {α : Type*} [DecidableEq α]
-
 
 open scoped BigOperators
 
+
+variable {α : Type*} [DecidableEq α]
 
 
 theorem BookProof.ChapterF6.misra_gries_bound (k : ℕ) (hk : 1 ≤ k) (s : List α) (x : α) :

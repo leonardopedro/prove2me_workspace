@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_selfAdjoint
 open BookProof.ChapterMackeyGeneralBase
+open BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem
 
 
 

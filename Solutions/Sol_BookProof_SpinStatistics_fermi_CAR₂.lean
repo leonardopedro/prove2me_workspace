@@ -1,4 +1,4 @@
--- Generated from ChapterSpinStatistics.lean — solution of BookProof.SpinStatistics.fermi_CAR₂
+-- Generated from ChapterSpinStatistics.lean — solution of BookProof.SpinStatistics.fermi_CAR2
 import Mathlib
 import Definitions.Def_ChapterSpinStatistics
 import Theorems.Thm_BookProof_SpinStatistics_fermiCreate2_eq

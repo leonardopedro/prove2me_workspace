@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterEulerGenericDensity
 open BookProof.ChapterEulerGenericDensity
 
-variable {d : ℕ}
-
 
 open scoped Matrix
 open Matrix
 
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterEulerGenericDensity.density_idempotent (θ : ℝ) (l w : Fin d → ℝ)

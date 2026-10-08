@@ -62,13 +62,6 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
   [TopologicalSpace.SeparableSpace H]
 
 
-
-
-
-
-
-
-
 /-- **The general Stone theorem on a separable Hilbert space.**  `A ↦ (t ↦ e^{-itA})` is a
 bijection from unbounded self-adjoint operators onto weakly measurable one-parameter
 unitary groups, with inverse the infinitesimal generator. -/
@@ -123,7 +116,6 @@ noncomputable def mulSA (f : ℤ → ℝ) : UnboundedSelfAdjoint L2Z where
   selfAdjoint := mulOp_isSelfAdjointOn f
 
 
-
 /-- The phase group as a family of bounded operators: `(U t ψ)_k = e^{-i t f k} ψ_k`. -/
 noncomputable def phaseCLM (f : ℤ → ℝ) (t : ℝ) : L2Z →L[ℂ] L2Z :=
   (phaseUnitary f (-t)).toLinearIsometry.toContinuousLinearMap
@@ -169,9 +161,6 @@ noncomputable def phaseGroup (f : ℤ → ℝ) : WeakMeasurableUnitaryGroup L2Z 
     exact hc.measurable
 
 
-
-
-
 end Concrete
 
 end BookProof.ChapterStoneSeparable
@@ -182,10 +171,6 @@ section Audit
 
 open BookProof.ChapterStoneTheorem
 
-#print axioms BookProof.ChapterStoneSeparable.stone_exists_unique_group
-#print axioms BookProof.ChapterStoneSeparable.stone_exists_unique_generator
 #print axioms BookProof.ChapterStoneSeparable.stoneEquiv
-#print axioms BookProof.ChapterStoneSeparable.stoneU_mulSA
-#print axioms BookProof.ChapterStoneTheorem.stone_bijection
 
 end Audit

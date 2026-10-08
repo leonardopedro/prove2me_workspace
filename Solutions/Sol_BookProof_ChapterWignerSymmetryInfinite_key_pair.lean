@@ -5,7 +5,7 @@ import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_modulus_add
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_exists_zeta
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex
-import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex'
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex_prime
 open BookProof.ChapterWignerSymmetryInfinite
 
 
@@ -39,7 +39,7 @@ theorem solution (hT : IsWignerSymmetry T) {i : ι} (hi : i ≠ o) :
     exact h
   · right
     intro x
-    refine key_complex' (coord b T o o x) (coord b T o i x) ⟪b o, x⟫_ℂ ⟪b i, x⟫_ℂ
+    refine key_complex_prime (coord b T o o x) (coord b T o i x) ⟪b o, x⟫_ℂ ⟪b i, x⟫_ℂ
       (coord_norm hT o x) (coord_norm hT i x) (modulus_add hT hi x) ?_
     have h := hrel x
     rw [hz] at h

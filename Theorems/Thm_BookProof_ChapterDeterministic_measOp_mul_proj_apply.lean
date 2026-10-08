@@ -4,17 +4,16 @@ import Mathlib
 import Definitions.Def_ChapterDeterministic
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterTimeTranslation
-open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterTimeTranslation
 open BookProof.ChapterDeterministic
-
-variable {n : ℕ}
 
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct BookProof.ChapterTimeTranslation
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterDeterministic.measOp_mul_proj_apply (U : Matrix (Fin n) (Fin n) ℂ) (a b i j : Fin n) :

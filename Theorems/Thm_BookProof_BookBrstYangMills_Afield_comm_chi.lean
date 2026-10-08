@@ -7,13 +7,13 @@ import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.Afield_comm_chi (μ : Fin 4) (a b : Fin N) :
     Afield (N := N) μ a * chiOp b = chiOp b * Afield μ a := by sorry

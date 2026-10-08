@@ -8,8 +8,6 @@ open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentFidelity
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -17,6 +15,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex BookProof.ChapterSoftmaxSharpness
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentFidelity.fidelityC_ofReal (q k : EuclideanSpace ℝ (Fin n)) :

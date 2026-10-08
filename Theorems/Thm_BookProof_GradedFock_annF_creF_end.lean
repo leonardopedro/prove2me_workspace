@@ -8,9 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFock
 open BookProof.GradedFock
 
-variable {α β : Type*}
-variable (T T' : Module.End ℂ (α →₀ ℂ)) (S S' : Module.End ℂ (β →₀ ℂ))
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -18,6 +15,9 @@ open BookProof.FockSecondQuantization BookProof.FermionFock
 open BookProof.ChapterSuperBracket
 
 noncomputable section
+
+variable {α β : Type*}
+variable (T T' : Module.End ℂ (α →₀ ℂ)) (S S' : Module.End ℂ (β →₀ ℂ))
 
 theorem BookProof.GradedFock.annF_creF_end (j : ℕ) :
     (annF j) * (creF j) + (creF j) * (annF j) = (1 : Module.End ℂ FermiAlg) := by sorry

@@ -5,16 +5,16 @@ import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-variable (A : D₂ →ₗ[ℂ] Hs.carrier)
-variable (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+variable (A : D₂ →ₗ[ℂ] Hs.carrier)
+variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TensorCore.tmul_mem_corePow {n : ℕ} {a : D₂} (ha : (a : Hs.carrier) ∈ D)
     {b : ((domSpace Hs D₂).pow n)} (hb : b ∈ corePow Hs D₂ D n) :

@@ -8,10 +8,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
-variable {ι : Type*}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (P : PairShift ι)
-
 
 open scoped ENNReal
 
@@ -19,6 +15,10 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
+variable {ι : Type*}
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (P : PairShift ι)
 
 theorem BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_essentiallySelfAdjointOn_core :
     EssentiallySelfAdjointOn (lpFiniteModes ι)

@@ -18,8 +18,6 @@ open BookProof.Qg3DGaugeEsa
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockInteractionFL
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -32,6 +30,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.qgInt_coupling_nontrivial {lam : ℝ} (hlam : lam ≠ 0) {n : ℕ} (hn : 2 ≤ n) :
     ∃ (r : (Fin n × Fin 64) ⊕ (Fin n × Fin 64)) (I J : Fin (n * 84)),

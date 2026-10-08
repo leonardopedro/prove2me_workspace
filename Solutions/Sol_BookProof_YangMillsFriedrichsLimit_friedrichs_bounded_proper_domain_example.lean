@@ -4,7 +4,6 @@ import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_nontrivial_example
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ
-open scoped lp
 open BookProof.YangMillsFriedrichsLimit
 
 

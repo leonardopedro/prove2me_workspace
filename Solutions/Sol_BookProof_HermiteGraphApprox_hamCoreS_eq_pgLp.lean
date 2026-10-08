@@ -32,4 +32,4 @@ theorem solution {q : MvPolynomial (Fin d) ℂ} (hq : RealCoeff q) (S : Finset (
     hamCoreS (polyW q) (continuous_polyW q) (expBounded_polyW q) S ⟨pgLp p, pgLp_mem_core p⟩
       = pgLp (hamPolyL S q p) := by
 
-  rw [hamCoreS_pgLp, hamPolyS, potLp_polyW_eq hq, hamPolyL_apply, pgLp_add']
+  rw [hamCoreS_pgLp, hamPolyS, potLp_polyW_eq hq, hamPolyL_apply, pgLp_add_prime]

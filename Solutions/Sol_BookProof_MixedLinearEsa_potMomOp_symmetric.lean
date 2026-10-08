@@ -4,6 +4,7 @@ import Definitions.Def_ChapterMixedLinearEsa
 import Theorems.Thm_BookProof_MixedLinearEsa_opL2_add
 import Theorems.Thm_BookProof_FourierMultiplierEsa_fourier_momentumOp_apply
 import Theorems.Thm_BookProof_FourierMultiplierEsa_symmetricOn_of_real_symbol
+import Theorems.Thm_BookProof_StrichartzWave_potentialOp_symmetric
 open BookProof.MixedLinearEsa
 
 

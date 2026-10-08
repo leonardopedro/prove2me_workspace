@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.QuadratureEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteCarleman.mem_face {d N : ℕ} {i : Fin d} {a : Fin d →₀ ℕ} :

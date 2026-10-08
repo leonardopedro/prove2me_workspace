@@ -12,8 +12,6 @@ open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
-variable {d : ℕ} {κ : Fin d → ℝ}
-
 
 open scoped ENNReal
 
@@ -21,6 +19,8 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 theorem BookProof.NavierStokesFlow.FockManyMode.fockH_relative_bound (hκ : ∀ i, 0 ≤ κ i) (x : maxDom (fockSym κ)) :

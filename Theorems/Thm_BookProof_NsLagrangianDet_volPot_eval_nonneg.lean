@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterNsLagrangianDetConvolution
 open BookProof.NsLagrangianDet
 
-variable {K : Type*} [Fintype K]
-
 
 
 open MvPolynomial Matrix
 
 noncomputable section
+
+variable {K : Type*} [Fintype K]
 
 
 theorem BookProof.NsLagrangianDet.volPot_eval_nonneg {kappa : ℝ} (hk : 0 ≤ kappa) (kv : K → Fin 3 → ℝ)

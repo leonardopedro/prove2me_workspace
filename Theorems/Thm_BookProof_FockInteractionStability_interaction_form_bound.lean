@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFockInteractionStability
 open BookProof.FockInteractionStability
 
-variable {E : Type*} [NormedAddCommGroup E]
-
 
 noncomputable section
 
@@ -19,6 +17,8 @@ open BookProof.FockNumberPreservingGap
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 
+
+variable {E : Type*} [NormedAddCommGroup E]
 
 
 theorem BookProof.FockInteractionStability.interaction_form_bound [InnerProductSpace ℂ E] (V : E →L[ℂ] E) (x : E) :

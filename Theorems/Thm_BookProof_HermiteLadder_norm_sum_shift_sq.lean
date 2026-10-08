@@ -11,8 +11,6 @@ import Definitions.Def_ChapterHermiteLadderShift
 import Definitions.Def_ChapterHermiteLadderOrder
 open BookProof.HermiteLadder
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
 
 
 open MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
 
 theorem BookProof.HermiteLadder.norm_sum_shift_sq (v : ι → E) (hv : Orthonormal ℂ v) (σ : ι → ι) (S : Finset ι)
     (hinj : ∀ a ∈ S, ∀ b ∈ S, σ a = σ b → a = b) (g : ι → ℂ) :

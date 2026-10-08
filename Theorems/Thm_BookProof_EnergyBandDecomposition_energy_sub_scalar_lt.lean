@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEnergyBandDecomposition
 open BookProof.EnergyBandDecomposition
 
-variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
-
 
 
 open MeasureTheory
+
+variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
 
 
 theorem BookProof.EnergyBandDecomposition.energy_sub_scalar_lt (hε : 0 < ε) (hx : x ∈ band E ε k) :

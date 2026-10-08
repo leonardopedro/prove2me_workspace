@@ -7,9 +7,6 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 open scoped ENNReal
 
@@ -19,7 +16,10 @@ noncomputable section
 open BookProof.FarisLavine
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+
+variable (d : CoreData F)
 
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.esa_on_core (hsym : SymmetricOn d.C₀ d.H₀) {c : ℝ} (hc : 0 ≤ c)

@@ -18,8 +18,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -35,5 +33,7 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.qgOuterHam_symmetricOn : SymmetricOn qgOuterCore qgOuterHam := by sorry

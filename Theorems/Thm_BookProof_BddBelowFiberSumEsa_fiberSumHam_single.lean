@@ -1,6 +1,6 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — theorem BookProof.BddBelowFiberSumEsa.fiberSumHam_single
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterBddBelowWallEsa
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -11,14 +11,15 @@ open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.BddBelowFiberSumEsa
 
-variable {ι : Type*}
-
 
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.BddBelowFiberSumEsa.fiberSumHam_single [DecidableEq ι] (V : ι → ℝ → ℝ)

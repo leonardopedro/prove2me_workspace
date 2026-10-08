@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.fermiBilin_symmetric {h : Matrix (Fin n) (Fin n) ℂ} (hh : h.conjTranspose = h)

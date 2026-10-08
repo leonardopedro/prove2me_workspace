@@ -7,14 +7,14 @@ import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.FockOneParticleGap
 open BookProof.QgBrstCompleted
 
-variable {ι : Type*}
-variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
-
 
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
 
 noncomputable section
+
+variable {ι : Type*}
+variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
 
 theorem BookProof.QgBrstCompleted.qgPhase_zero (omega : ℕ → ℝ) (f : QGH) : qgPhase omega 0 f = f := by sorry

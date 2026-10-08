@@ -11,13 +11,6 @@ open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterSeparableL2Model
 
-variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
-  [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
-variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
-  [BorelSpace Y] (D : Set C(Y, ℂ)) [Countable D]
-variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
-  [BorelSpace Y] (mu : Measure Y) [IsProbabilityMeasure mu] [mu.WeaklyRegular]
-
 
 noncomputable section
 
@@ -27,6 +20,13 @@ open MeasureTheory TopologicalSpace
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
+
+variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
+  [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
+variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
+  [BorelSpace Y] (D : Set C(Y, ℂ)) [Countable D]
+variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
+  [BorelSpace Y] (mu : Measure Y) [IsProbabilityMeasure mu] [mu.WeaklyRegular]
 
 theorem BookProof.ChapterSeparableL2Model.separable_Lp_realizes_standard_type [SeparableSpace (Lp ℂ 2 mu)] :
     ∃ (Z : Type u) (_ : MeasurableSpace Z) (_ : StandardBorelSpace Z)

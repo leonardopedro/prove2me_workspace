@@ -8,9 +8,6 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -19,6 +16,9 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.momPoly_sq_eq_dPoly (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momPoly i (momPoly i p) = -(dPoly i (dPoly i p)) := by sorry

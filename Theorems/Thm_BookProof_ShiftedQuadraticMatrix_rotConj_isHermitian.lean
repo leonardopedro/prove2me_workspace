@@ -14,8 +14,6 @@ import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.ShiftedQuadraticMatrix
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -29,6 +27,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticMatrix.rotConj_isHermitian (O : Matrix (Fin d) (Fin d) ℝ) (c : Fin d → ℝ) :

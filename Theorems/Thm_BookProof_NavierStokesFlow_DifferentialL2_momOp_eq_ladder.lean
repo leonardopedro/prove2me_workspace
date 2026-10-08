@@ -14,8 +14,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder (i : Fin 3) :
     momOp i = (Complex.I / 2) • (creOp i - annOp i) := by sorry

@@ -15,8 +15,6 @@ open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.core_ext {M : Type*} [AddCommGroup M] [Module ℂ M]
     {F G : lpFiniteModes Vel →ₗ[ℂ] M} (h : ∀ b, F (coreState b) = G (coreState b)) : F = G := by sorry

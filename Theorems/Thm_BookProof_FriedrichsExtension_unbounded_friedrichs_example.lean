@@ -11,15 +11,15 @@ open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsExtension
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.unbounded_friedrichs_example :
     (∃ (Dom : Submodule ℂ (ℓ²(ℕ, ℂ))) (A : Dom →ₗ[ℂ] ℓ²(ℕ, ℂ)),

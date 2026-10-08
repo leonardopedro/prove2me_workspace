@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterDiffuseUnitaryModel
 open BookProof.ChapterDiffuseUnitaryModel
 
-variable (mu : Measure ℝ) [IsProbabilityMeasure mu] [NullSingletonClass mu]
-
 
 noncomputable section
 
@@ -14,6 +12,8 @@ open MeasureTheory ProbabilityTheory Filter
 
 
 open BookProof.ChapterDiffuseCdfModel BookProof.ChapterLinftyMultiplication
+
+variable (mu : Measure ℝ) [IsProbabilityMeasure mu] [NullSingletonClass mu]
 
 theorem BookProof.ChapterDiffuseUnitaryModel.memLp_top_comp_cdf {g : ℝ → ℂ}
     (hg : MemLp g ⊤ (volume.restrict (Set.Icc (0 : ℝ) 1))) :

@@ -7,14 +7,14 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.DirectSumEsa
 open BookProof.DirectSumEdge
 
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
-
 
 
 open BookProof.FarisLavine BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
 
 
 theorem BookProof.DirectSumEdge.dsOp_edge_of_fibre_edges_le (H : ∀ i, D i →ₗ[ℂ] G i) (nu : ℝ) (nus : ι → ℝ)

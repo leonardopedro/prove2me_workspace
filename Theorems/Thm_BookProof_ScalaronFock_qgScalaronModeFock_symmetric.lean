@@ -14,10 +14,6 @@ open BookProof.FarisLavine
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFock
 
-variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
-  [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]
-variable (a b : ℕ → ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℕ → ℝ)
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -27,6 +23,10 @@ open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.QuantumGravityDensitized BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
+  [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]
+variable (a b : ℕ → ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℕ → ℝ)
 
 theorem BookProof.ScalaronFock.qgScalaronModeFock_symmetric :
     SymmetricOn (modeFockCore a b M alpha Rc phi)

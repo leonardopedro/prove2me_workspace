@@ -9,18 +9,18 @@ import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 open BookProof.PositiveSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-variable [CompleteSpace F]
-variable {D : Submodule ℂ F}
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
+variable [CompleteSpace F]
+variable {D : Submodule ℂ F}
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.PositiveSquareRoot.cfc_den (C : H →L[ℂ] H) (hC : 0 ≤ C) :
     cfc (fun t : ℝ => 1 - t - t + t * t + t * t) C

@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterAbelianDiagonal
 open BookProof.AbelianDiagonal
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.AbelianDiagonal.diagonal_commute (d e : n → ℂ) :

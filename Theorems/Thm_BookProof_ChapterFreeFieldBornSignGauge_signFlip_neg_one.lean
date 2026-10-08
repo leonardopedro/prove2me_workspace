@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignGauge
 open BookProof.ChapterFreeFieldBornSignGauge
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignGauge.signFlip_neg_one (x : EuclideanSpace ℝ (Fin n)) :

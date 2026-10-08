@@ -4,9 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterObservableExpectation
 
-variable {m n : ℕ}
-variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
 
 open scoped BigOperators
 
@@ -14,6 +11,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxBorn
+
+variable {m n : ℕ}
+variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 
 theorem BookProof.ChapterObservableExpectation.observableExpectation_add_left (p q : Fin m → ℝ) (v : Fin m → E) :

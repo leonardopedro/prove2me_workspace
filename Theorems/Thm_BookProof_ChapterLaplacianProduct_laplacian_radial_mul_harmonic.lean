@@ -5,12 +5,12 @@ import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterLaplacianProduct.laplacian_radial_mul_harmonic [FiniteDimensional ℝ E] {g : ℝ → ℝ} {H : E → ℝ} {x : E}

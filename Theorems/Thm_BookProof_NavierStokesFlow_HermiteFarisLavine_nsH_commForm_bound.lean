@@ -8,15 +8,15 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.nsH_commForm_bound (hκ : 0 ≤ κ) (x : maxDom (oscSymbol κ)) :
     |commForm (nsH κ hκ) (diagMax (oscSymbol κ)) x|

@@ -1,4 +1,4 @@
--- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ
+-- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.memLp_one_div_succ
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 open BookProof.YangMillsFriedrichsLimit

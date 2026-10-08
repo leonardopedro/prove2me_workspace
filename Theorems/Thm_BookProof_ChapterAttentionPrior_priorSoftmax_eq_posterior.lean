@@ -7,8 +7,6 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterAttentionPrior
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionPrior.priorSoftmax_eq_posterior (w : Fin m → ℝ) (beta : ℝ) (s : Fin m → ℝ) (j : Fin m) :

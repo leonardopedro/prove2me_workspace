@@ -9,13 +9,13 @@ open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.occupation_occ {N : ℕ} (i : Fin N) (S : Finset (Fin N)) :
     creat i (annih i (occ S)) = if i ∈ S then occ S else 0 := by sorry

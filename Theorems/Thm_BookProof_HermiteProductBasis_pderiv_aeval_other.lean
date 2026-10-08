@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteProductBasis
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteProductBasis.pderiv_aeval_other {i j : Fin d} (h : j ≠ i) (q : Polynomial ℂ) :

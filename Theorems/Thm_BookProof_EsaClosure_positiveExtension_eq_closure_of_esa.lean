@@ -11,10 +11,6 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.EsaClosure
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 open Filter Topology
 
@@ -23,6 +19,10 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.HashimotoShiftIn
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.positiveExtension_eq_closure_of_esa {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)

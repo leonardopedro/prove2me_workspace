@@ -12,9 +12,6 @@ import Definitions.Def_ChapterQgTimeStepping
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.QgTimeStepping
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 
 open Filter Topology
@@ -25,6 +22,9 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.QgTimeStepping.norm_cnStep_sub_taylor_le {tau : ℝ} (htau : 0 < tau) (x : T.domain)
     (hx : T.op x ∈ T.domain) :

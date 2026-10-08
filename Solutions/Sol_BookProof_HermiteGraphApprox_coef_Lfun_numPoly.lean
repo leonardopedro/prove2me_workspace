@@ -34,7 +34,7 @@ theorem solution (a : Fin d →₀ ℕ) {g : Vd d → ℂ}
 
   rw [coef_eq_inner_pgLp, coef_eq_inner_pgLp,
     ← inner_pgLp_hamPolyL Finset.univ realCoeff_numPoly (hermiteMv a) hg hgc hv hw,
-    hamPolyL_numPoly_hermiteMv, pgLp_smul', inner_smul_left]
+    hamPolyL_numPoly_hermiteMv, pgLp_smul_prime, inner_smul_left]
   have h : (starRingEnd ℂ) ((a.degree : ℂ) + 1) = (a.degree : ℂ) + 1 := by simp
   rw [h]
   ring

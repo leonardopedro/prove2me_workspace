@@ -5,13 +5,13 @@ import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterDoubleSlit
 open BookProof.ChapterObservableOperator
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterObservableOperator.bornProb_nonneg (k : Fin m → EuclideanSpace ℂ (Fin n))

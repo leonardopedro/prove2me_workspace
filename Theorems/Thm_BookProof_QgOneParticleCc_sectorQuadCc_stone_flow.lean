@@ -21,9 +21,6 @@ open BookProof.ScalaronEsa
 open BookProof.StoneBridge
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -34,6 +31,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.sectorQuadCc_stone_flow (M alpha mu : ℝ) (ha0 : 0 < alpha) (ha2 : alpha < 1 / 2)
     (hm0 : 0 < mu) (hm2 : mu < 1 / 2) :

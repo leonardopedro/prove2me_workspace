@@ -5,14 +5,14 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockContinuum.memLp_conj {μ : Measure X} {F : X → ℂ} (h : MemLp F 2 μ) :

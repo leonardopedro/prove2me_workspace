@@ -9,16 +9,16 @@ import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HermiteGalerkin
 open BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.HashimotoShiftInvert.hashimoto_shiftInvert_unbounded_example :
     IsShiftInvert ell2UnboundedExample 1 ell2ShiftInvert ∧

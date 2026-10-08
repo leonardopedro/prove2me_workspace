@@ -9,9 +9,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -20,5 +17,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HyperbolicQuadratic.sec_sec (i : Fin d) (x : Vd d) (t s : ℝ) : sec i (sec i x t) s = sec i x s := by sorry

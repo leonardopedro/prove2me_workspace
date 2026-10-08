@@ -10,8 +10,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QuadraticRotation
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -21,6 +19,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadraticRotation.span_rotHermiteLp {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) :

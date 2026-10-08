@@ -19,9 +19,6 @@ open BookProof.SqueezedGaussStates
 open BookProof.YangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -30,6 +27,9 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.exists_core_state_small_energy (e : ℕ ≃ (Fin 99 →₀ ℕ)) {ε : ℝ} (hε : 0 < ε) :
     ∃ x : finiteModeDomain (coreBasis e), ((x : L2d 99) ≠ 0) ∧

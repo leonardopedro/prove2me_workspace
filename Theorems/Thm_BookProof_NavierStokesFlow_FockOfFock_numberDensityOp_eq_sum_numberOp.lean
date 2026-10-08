@@ -10,15 +10,15 @@ open BookProof.GhostField
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
+variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.numberDensityOp_eq_sum_numberOp (dens : M → Ω → ℝ) (ξ : Ω) {n : Conf M} {S : Finset M}
     (hS : n.support ⊆ S) :

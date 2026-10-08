@@ -18,9 +18,6 @@ import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.YangMillsNonAbelianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open MeasureTheory MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {D : Submodule ℂ F}
 
 theorem BookProof.YangMillsNonAbelianEsa.essentiallySelfAdjointOn_affine (K : D →ₗ[ℂ] F) (hK : SymmetricOn D K)
     (hesa : EssentiallySelfAdjointOn D K) {a : ℝ} (ha : 0 < a) (b : ℝ) :

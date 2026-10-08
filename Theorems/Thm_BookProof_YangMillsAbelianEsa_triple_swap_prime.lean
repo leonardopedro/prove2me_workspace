@@ -28,6 +28,6 @@ open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMill
 
 noncomputable section
 
-theorem BookProof.YangMillsAbelianEsa.triple_swap' {α : Type*} [AddCommMonoid α] {N D : ℕ} (F : Fin N → Fin D → Fin D → α) :
+theorem BookProof.YangMillsAbelianEsa.triple_swap_prime {α : Type*} [AddCommMonoid α] {N D : ℕ} (F : Fin N → Fin D → Fin D → α) :
     ∑ i : Fin D, ∑ j : Fin D, ∑ m : Fin N, F m i j
       = ∑ m : Fin N, ∑ i : Fin D, ∑ j : Fin D, F m i j := by sorry

@@ -21,7 +21,6 @@ variable {G : Type*} [Group G] [Fintype G]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {G : Type*} [Group G] [Fintype G]
 variable (rep : UnitaryRep G F)
-variable (G) in
 variable {D : Submodule ℂ F}
 variable {T : D →ₗ[ℂ] F}
 

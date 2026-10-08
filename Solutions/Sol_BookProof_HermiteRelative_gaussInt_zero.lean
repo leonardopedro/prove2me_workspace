@@ -19,5 +19,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-ply, LinearMap.smul_apply,
-    Submodule.coe_sum, Submodule.coe_add, := 
+theorem solution : gaussInt (0 : MvPolynomial (Fin d) ℂ) = 0 :=
+   Submodule.coe_smul]
+    rfl
+  
+  theorem gaussInt_zero : gaussInt (0 : MvPolynomial (Fin d)

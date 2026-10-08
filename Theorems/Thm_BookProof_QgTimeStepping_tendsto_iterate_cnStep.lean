@@ -13,9 +13,6 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeStepping
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 
 open Filter Topology
@@ -26,6 +23,9 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.QgTimeStepping.tendsto_iterate_cnStep {t : ℝ} (ht : 0 < t) (v : H) :
     Tendsto (fun k : ℕ => (cnStep T (t / (k + 1)))^[k + 1] v) atTop

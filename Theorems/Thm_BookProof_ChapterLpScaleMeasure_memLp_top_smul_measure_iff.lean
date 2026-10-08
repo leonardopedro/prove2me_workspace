@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterLpScaleMeasure
 open BookProof.ChapterLpScaleMeasure
 
-variable {α : Type*} [MeasurableSpace α] {nu : Measure α} {c : ENNReal}
-
 
 noncomputable section
 
@@ -13,6 +11,8 @@ open MeasureTheory ENNReal
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {nu : Measure α} {c : ENNReal}
 
 
 theorem BookProof.ChapterLpScaleMeasure.memLp_top_smul_measure_iff (hc0 : c ≠ 0) {f : α → ℂ} :

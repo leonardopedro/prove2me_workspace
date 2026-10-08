@@ -17,8 +17,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -32,6 +30,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.mqOp_deficiencyTrivialAt (p q s b b' : Fin d → ℝ) {z : ℂ} (hz : z.im ≠ 0) :

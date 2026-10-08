@@ -5,11 +5,11 @@ import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeParametrization
 
-variable {X Y : Type*}
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X Y : Type*}
 
 
 theorem BookProof.ChapterGaugeParametrization.isPhysicalObservable_iff_factors_through (π : X → Y) (f : X → ℝ) :

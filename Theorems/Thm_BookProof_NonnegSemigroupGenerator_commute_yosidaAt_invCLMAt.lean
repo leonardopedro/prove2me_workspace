@@ -9,15 +9,15 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
 open BookProof.NonnegSemigroupGenerator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemigroup
 open Filter Topology NormedSpace
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.NonnegSemigroupGenerator.commute_yosidaAt_invCLMAt (hT : IsNonnegSelfAdjoint T) (n : ℕ) {b : ℝ} (hb : 0 < b) :
     Commute (yosidaAt hT n) (invCLMAt hT hb) := by sorry

@@ -15,13 +15,13 @@ open BookProof.NavierStokesFlow.LpNat
 open BookProof.StoneBridge
 open BookProof.CarlemanUnboundedHop
 
-variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
-
 
 
 open Finset
 
 noncomputable section
+
+variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 theorem BookProof.CarlemanUnboundedHop.kernelOp_stone_flow {a : ℕ → ℕ → ℂ} {A θ Θ : ℕ → ℝ} (hk : IsL2Kernel a)
     (hθ0 : ∀ r, 0 ≤ θ r) (hΘ : ∀ j, HasSum (fun i => θ (i + j + 1)) (Θ j))

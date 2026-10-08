@@ -7,13 +7,13 @@ import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
 
 theorem BookProof.MixedLinearEsa.integral_conj_mul_pos_sub_eq_zero (b : V) (z : ℂ) (u : Lp ℂ 2 (volume : Measure V))

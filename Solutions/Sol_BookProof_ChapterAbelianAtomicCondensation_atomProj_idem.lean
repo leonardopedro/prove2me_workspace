@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianAtomicCondensation.lean — solution of BookProof.ChapterAbelianAtomicCondensation.atomProj_idem
 import Mathlib
 import Definitions.Def_ChapterAbelianAtomicCondensation
+import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_mul
 open BookProof.ChapterAbelianAtomicCondensation
 
 

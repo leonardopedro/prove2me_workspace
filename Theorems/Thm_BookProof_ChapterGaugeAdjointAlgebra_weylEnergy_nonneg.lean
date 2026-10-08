@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterGaugeAdjointAlgebra
 open BookProof.ChapterGaugeAdjointAlgebra
 
-variable {L : Type*} [LieRing L]
-
 
 
 
 open Finset
+
+variable {L : Type*} [LieRing L]
 
 
 theorem BookProof.ChapterGaugeAdjointAlgebra.weylEnergy_nonneg {M : Type*} {κ : M → M → ℝ} (hpos : ∀ x : M, 0 ≤ κ x x)

@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_QuantumGravity3DGauge_idxE_injective
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgCCR
 open BookProof.QuantumGravity3DGauge
 
+
+
+
+open MeasureTheory Complex MvPolynomial Filter Topology
+open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
+open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerkin
+open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
+
+noncomputable section
+
 variable {d : ℕ}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {D : Submodule ℂ (L2d 84)}

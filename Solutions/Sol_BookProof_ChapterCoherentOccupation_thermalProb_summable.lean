@@ -1,6 +1,7 @@
 -- Generated from ChapterCoherentOccupation.lean — solution of BookProof.ChapterCoherentOccupation.thermalProb_summable
 import Mathlib
 import Definitions.Def_ChapterCoherentOccupation
+import Theorems.Thm_BookProof_ChapterCoherentTemperature_norm_thermalRatio_lt_one
 open BookProof.ChapterCoherentOccupation
 
 

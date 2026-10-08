@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.hasDerivAt_gaussD_sec (i : Fin d) (x : Vd d) (t : ℝ) :
     HasDerivAt (fun s : ℝ => gaussD (sec i x s)) (-(t / 2) * gaussD (sec i x t)) t := by sorry

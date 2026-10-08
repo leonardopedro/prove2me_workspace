@@ -6,11 +6,6 @@ import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.HermiteCarleman
 open BookProof.CarlemanGeneralHop
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {ι : Type*} [Fintype ι] {lam : (Fin d →₀ ℕ) → ℝ} {p m : ι → (Fin d →₀ ℕ)}
-  {c c' : ι → (Fin d →₀ ℕ) → ℝ} {w : ι → ℂ} {z : ℂ}
-
 
 
 open Finset
@@ -19,6 +14,11 @@ open BookProof.CarlemanTwoStep
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {ι : Type*} [Fintype ι] {lam : (Fin d →₀ ℕ) → ℝ} {p m : ι → (Fin d →₀ ℕ)}
+  {c c' : ι → (Fin d →₀ ℕ) → ℝ} {w : ι → ℂ} {z : ℂ}
 
 theorem BookProof.CarlemanGeneralHop.flux_identityH
     (hcomp : ∀ (h : ι) (b : Fin d →₀ ℕ), (∀ k, m h k ≤ b k) →

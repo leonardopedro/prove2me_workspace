@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 
-variable {nbar : ℝ}
-
 
 noncomputable section
 
 
 
+
+variable {nbar : ℝ}
 
 
 theorem BookProof.ChapterCoherentTemperature.tsum_choose_two (h : 0 ≤ nbar) :

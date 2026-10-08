@@ -8,12 +8,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.fockComparison_quadForm_ge (n : ℕ → ℝ) (hn : ∀ k, 0 ≤ n k)
     (x : maxDom (fockSymbol n)) :

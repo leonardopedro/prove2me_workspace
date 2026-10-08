@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_KatoRellich_dense_range_add_relBounded
 import Theorems.Thm_BookProof_FarisLavine_deficiencyTrivialAt_of_dense_range
 import Theorems.Thm_BookProof_FarisLavine_dense_range_of_deficiencyTrivialAt
 import Theorems.Thm_BookProof_KatoRellich_deficiencyTrivialAt_of_dense
+open BookProof.KatoRellich
 
 
 
@@ -75,4 +76,5 @@ theorem solution [CompleteSpace F] (H B : D →ₗ[ℂ] F)
     simpa [hKapply] using hdenseK (-e) hneg
   have hdenseKe : Dense (Set.range fun x : D => K x - ((e : ℂ) * Complex.I) • (x : F)) := by
     simpa [hKapply] using hdenseK e hself
-  exact ⟨deficiencyTrivialAt_of_dense_range K hKsymm e he0 Compl
+  exact ⟨deficiencyTrivialAt_of_dense_range K hKsymm e he0 Complex.I (by simp) hdenseKe hdefK,
+    deficiencyTrivialAt_of_dense_range K hKsymm e he0 (-Complex.I) (by simp) hdenseKe hdefK⟩

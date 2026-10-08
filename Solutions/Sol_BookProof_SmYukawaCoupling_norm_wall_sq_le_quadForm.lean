@@ -1,6 +1,7 @@
 -- Generated from ChapterSmYukawaCoupling.lean — solution of BookProof.SmYukawaCoupling.norm_wall_sq_le_quadForm
 import Mathlib
 import Definitions.Def_ChapterSmYukawaCoupling
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_quadForm
 open BookProof.SmYukawaCoupling
 
 

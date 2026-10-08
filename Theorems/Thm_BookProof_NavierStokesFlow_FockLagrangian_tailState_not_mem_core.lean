@@ -6,13 +6,13 @@ import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.tailState_not_mem_core : tailState ∉ momFock.core := by sorry

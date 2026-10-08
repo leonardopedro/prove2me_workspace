@@ -21,8 +21,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_mom (i : Fin 3) :
     Intertwined (mom i) (((Real.sqrt 2 : ℝ) : ℂ) • momOp i) := by sorry

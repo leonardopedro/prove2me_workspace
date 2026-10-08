@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterAbelianVonNeumannFinite
 open BookProof.ChapterAbelianVonNeumannFinite
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 open Matrix
 
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.ChapterAbelianVonNeumannFinite.abelian_commutant_isomorphic_ellInfty {A : Matrix n n ℂ} (hA : A.IsHermitian)

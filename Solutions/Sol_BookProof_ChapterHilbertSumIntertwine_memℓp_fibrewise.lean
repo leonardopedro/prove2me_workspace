@@ -1,4 +1,4 @@
--- Generated from ChapterHilbertSumIntertwine.lean — solution of BookProof.ChapterHilbertSumIntertwine.memℓp_fibrewise
+-- Generated from ChapterHilbertSumIntertwine.lean — solution of BookProof.ChapterHilbertSumIntertwine.memLp_fibrewise
 import Mathlib
 import Definitions.Def_ChapterHilbertSumIntertwine
 open BookProof.ChapterHilbertSumIntertwine

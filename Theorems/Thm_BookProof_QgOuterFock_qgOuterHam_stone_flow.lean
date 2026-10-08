@@ -20,8 +20,6 @@ open BookProof.HermiteProductCore
 open BookProof.StoneBridge
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -37,6 +35,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.qgOuterHam_stone_flow :
     ∃ (T : UnboundedSelfAdjoint qgOuterFock) (U : ℝ → (qgOuterFock →L[ℂ] qgOuterFock)),

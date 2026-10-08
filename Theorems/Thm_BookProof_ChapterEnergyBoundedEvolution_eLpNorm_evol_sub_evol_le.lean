@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterEnergyBoundedEvolution
 open BookProof.ChapterEnergyBoundedEvolution
 
-variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X → ℂ}
-
 
 
 open MeasureTheory Complex
 open scoped ENNReal
 open BookProof.EnergyBandDecomposition
+
+variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X → ℂ}
 
 
 theorem BookProof.ChapterEnergyBoundedEvolution.eLpNorm_evol_sub_evol_le {Emax : ℝ} (h : EnergyLimited E μ Emax f) (s t : ℝ) :

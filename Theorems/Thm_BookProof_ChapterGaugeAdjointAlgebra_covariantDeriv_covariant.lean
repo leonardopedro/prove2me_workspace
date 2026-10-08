@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterGaugeAdjointAlgebra
 open BookProof.ChapterGaugeAdjointAlgebra
 
-variable {L : Type*} [LieRing L]
-
 
 
 
 open Finset
+
+variable {L : Type*} [LieRing L]
 
 
 theorem BookProof.ChapterGaugeAdjointAlgebra.covariantDeriv_covariant (A dX dθ : Fin 3 → L) (X θ : L) (i : Fin 3) :

@@ -7,11 +7,10 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
 
 
 
@@ -21,12 +20,7 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 open scoped ENNReal
 
-alse
-by `not_farisLavine_criterion_of_relative_bound`). -/
-
-section NavierStokesTieIn
-
-open BookProof.NavierStokesFlow
 
 theorem BookProof.FarisLavine.essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
-    (D : := by sorry
+    (D : Submodule ℂ F) (H : D →ₗ[ℂ] D) :
+    EssentiallySelfAdjointOn D (D.subtype.comp H) ↔ HasZeroDeficiencyOn D H := by sorry

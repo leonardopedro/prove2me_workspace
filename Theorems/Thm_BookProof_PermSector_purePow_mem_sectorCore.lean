@@ -12,9 +12,6 @@ open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.PermSector
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
@@ -22,6 +19,9 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.Te
 open BookProof.GroupAverage BookProof.TensorPerm
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.PermSector.purePow_mem_sectorCore (n : ℕ) (f : Fin n → Hs.carrier) (hD : D ≤ D₂)
     (hf : ∀ i, f i ∈ D) : purePow Hs n f ∈ sectorCore Hs D₂ D n := by sorry

@@ -5,11 +5,11 @@ import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterDoubleSlit
 open BookProof.ChapterTrajectory
 
-variable {n : ℕ}
-
 
 open scoped BigOperators Matrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterTrajectory.dslit_interference :

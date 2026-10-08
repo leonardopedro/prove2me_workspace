@@ -17,9 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.coordLine_add_smul (x : Vd d) (j : Fin d) (t : ℝ) :
     x + t • kinDir d j = coordLine x j (x j + t) := by sorry

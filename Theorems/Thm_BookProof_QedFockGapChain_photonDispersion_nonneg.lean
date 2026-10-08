@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQedFockGapChain
 open BookProof.QedFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -23,6 +21,8 @@ open BookProof.HermiteGalerkin BookProof.HermiteCore
 open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
 open MeasureTheory
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.QedFockGapChain.photonDispersion_nonneg (p : ℕ → ℝ) (k : ℕ) : 0 ≤ photonDispersion p k := by sorry

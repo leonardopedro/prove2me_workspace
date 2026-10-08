@@ -5,8 +5,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit
 
-variable {α : Type*} [MeasurableSpace α] {mu : Measure α}
-
 
 noncomputable section
 
@@ -14,6 +12,8 @@ open MeasureTheory
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {mu : Measure α}
 
 
 theorem BookProof.ChapterLpRestrictSplit.restrictEmbed_intertwines {A : Set α} (hA : MeasurableSet A) {g : α → ℂ}

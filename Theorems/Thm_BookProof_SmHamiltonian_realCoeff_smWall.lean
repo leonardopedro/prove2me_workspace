@@ -14,8 +14,6 @@ open BookProof.SmOneParticle
 open BookProof.YangMillsHermite
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -25,5 +23,7 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.realCoeff_smWall (P : SmParams) (co : Fin 163 → Fin D) : RealCoeff (smWall P co) := by sorry

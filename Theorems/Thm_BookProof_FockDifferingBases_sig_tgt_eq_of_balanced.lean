@@ -11,14 +11,14 @@ import Definitions.Def_ChapterA3n
 open BookProof.ChapterA3n
 open BookProof.FockDifferingBases
 
-variable {ι κ : Type*} {ω : ι → ℝ}
-
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
+
+variable {ι κ : Type*} {ω : ι → ℝ}
 
 
 theorem BookProof.FockDifferingBases.sig_tgt_eq_of_balanced {P Q : Idx ι} (h : Balanced ω P Q) {b : Idx ι} (hb : P ≤ b) :

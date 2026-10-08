@@ -4,9 +4,9 @@ import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_add
 import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_smul
 import Theorems.Thm_BookProof_ShiftedHermiteCore_deriv_pgFunT_sec
-import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 import Theorems.Thm_BookProof_HyperbolicQuadratic_dPoly_apply
 import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply
+import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 open BookProof.ShiftedHermiteCore
 
 
@@ -29,6 +29,6 @@ theorem solution (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd
       = -Complex.I * deriv (fun t : ℝ => pgFunT a k p (sec i x t)) (x i) := by
 
   rw [deriv_pgFunT_sec, momTPoly_apply, pgFunT_apply_add, pgFunT_apply_smul,
-    momPoly_apply' i p, pgFunT_apply_smul]
+    momPoly_apply_prime i p, pgFunT_apply_smul]
   rw [← dPoly_apply]
   linear_combination (((k i : ℝ) : ℂ) * pgFunT a k p x) * Complex.I_mul_I

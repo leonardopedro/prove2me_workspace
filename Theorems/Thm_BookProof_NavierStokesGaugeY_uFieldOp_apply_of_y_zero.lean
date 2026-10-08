@@ -4,11 +4,11 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 open BookProof.NavierStokesGaugeY
 
-variable {E : Type*} [AddCommGroup E] [Module ℂ E]
-
 
 
 open MvPolynomial BookProof.NavierStokesFlow
+
+variable {E : Type*} [AddCommGroup E] [Module ℂ E]
 
 theorem BookProof.NavierStokesGaugeY.uFieldOp_apply_of_y_zero (u : Fin 3 → E →ₗ[ℂ] E) (uD : Fin 3 → Fin 3 → E →ₗ[ℂ] E)
     (Y : Fin 3 → E →ₗ[ℂ] E) (v : E) (hv : ∀ j, Y j v = 0) (i : Fin 3) :

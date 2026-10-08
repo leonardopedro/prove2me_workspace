@@ -10,12 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-variable {ι : Type*}
-variable (Q : QgModeData ι)
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open MeasureTheory SchwartzMap
@@ -26,4 +20,10 @@ open BookProof.WallEsaSemibounded
 
 noncomputable section
 
-theorem BookProof.ScalaronOuterFockFL.exists_band₂ (x y : secCore (ι := by sorry
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
+
+theorem BookProof.ScalaronOuterFockFL.exists_band2 (x y : secCore (ι := by sorry

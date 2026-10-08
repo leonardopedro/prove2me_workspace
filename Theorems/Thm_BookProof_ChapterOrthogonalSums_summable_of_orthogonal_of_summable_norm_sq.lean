@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterOrthogonalSums
 open BookProof.ChapterOrthogonalSums
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 theorem BookProof.ChapterOrthogonalSums.summable_of_orthogonal_of_summable_norm_sq [CompleteSpace E] {ι : Type*} {v : ι → E}

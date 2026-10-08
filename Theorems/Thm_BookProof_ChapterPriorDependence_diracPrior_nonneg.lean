@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterPriorDependence
 open BookProof.ChapterPriorDependence
 
-variable {Hyp Data : Type*} [DecidableEq Hyp]
-
 
 open scoped BigOperators
 
+
+variable {Hyp Data : Type*} [DecidableEq Hyp]
 
 
 theorem BookProof.ChapterPriorDependence.diracPrior_nonneg (a x : Hyp) : 0 ≤ diracPrior a x := by sorry

@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockFlow
 
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -24,5 +22,7 @@ open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgOuterFockFlow.secN_dom_dense : Dense (((secN W Q).dom : Submodule ℂ (Sec ι)) : Set (Sec ι)) := by sorry

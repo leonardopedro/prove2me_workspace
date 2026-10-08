@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBorn
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphereSupport
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBorn.measurable_bornMap : Measurable (bornMap : EuclideanSpace ℝ (Fin n) → _) := by sorry

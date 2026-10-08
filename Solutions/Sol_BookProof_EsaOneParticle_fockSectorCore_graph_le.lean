@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_sectorCore_graph_le
+import Theorems.Thm_BookProof_GraphCore_mem_pushDom
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 open BookProof.EsaOneParticle
 
 

@@ -9,5 +9,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 theorem BookProof.ChapterPinDoubleCover.LamZ_neg : ∀ S ∈ Omega, LamZ S = LamZ (-S) := by sorry

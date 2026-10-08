@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFullFL
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -30,5 +28,7 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgFLc_nonneg : 0 ≤ qgFLc := by sorry

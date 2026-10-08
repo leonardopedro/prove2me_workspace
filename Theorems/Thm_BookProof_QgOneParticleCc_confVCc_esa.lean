@@ -19,9 +19,6 @@ open BookProof.HermiteQuadraticEsa
 open BookProof.ScalaronEsa
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -32,6 +29,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.confVCc_esa (M alpha : ℝ) (h0 : 0 < alpha) (h2 : alpha < 1 / 2) :
     EssentiallySelfAdjointOn (ccDomain (Vd 1)) (ccHam (confW M alpha) (contDiff_confW M alpha)) := by sorry

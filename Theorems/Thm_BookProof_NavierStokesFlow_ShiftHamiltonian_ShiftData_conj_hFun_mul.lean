@@ -8,14 +8,14 @@ open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
 
-variable {ι : Type*} (S : ShiftData ι)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*} (S : ShiftData ι)
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.conj_hFun_mul (X Y : ι → ℂ) (β : ι) :
     (starRingEnd ℂ) (S.hFun X β) * Y β

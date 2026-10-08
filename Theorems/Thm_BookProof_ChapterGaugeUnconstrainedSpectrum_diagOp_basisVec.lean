@@ -7,9 +7,9 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterE4
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 
+
+
 variable {X : Type*}
-
-
 
 
 theorem BookProof.ChapterGaugeUnconstrainedSpectrum.diagOp_basisVec [DecidableEq X] (d : X → ℂ) (y : X) :

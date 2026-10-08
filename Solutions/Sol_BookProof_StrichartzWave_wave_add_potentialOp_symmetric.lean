@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_potentialOp_symmetric
 import Theorems.Thm_BookProof_StrichartzWave_opL2_add
+import Theorems.Thm_BookProof_StrichartzWave_wave_symmetric
 open BookProof.StrichartzWave
 
 

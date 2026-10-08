@@ -17,8 +17,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.FullQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.FullQuadratic.smul_shiftm_diag (c : ℂ) (a : Fin d →₀ ℕ) (i : Fin d) :

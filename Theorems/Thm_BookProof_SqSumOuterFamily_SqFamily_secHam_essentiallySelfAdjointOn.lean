@@ -17,9 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
-variable (dim : ℕ → ℕ)
-variable (F : SqFamily)
-
 
 
 open Finset MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
+variable (F : SqFamily)
 
 theorem BookProof.SqSumOuterFamily.SqFamily.secHam_essentiallySelfAdjointOn (n : ℕ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := F.dim n)) (F.secHam n) := by sorry

@@ -1,6 +1,7 @@
 -- Generated from ChapterKatoRellichRelative.lean — solution of BookProof.KatoRellich.symmetricOn_add
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
+open BookProof.KatoRellich
 
 
 

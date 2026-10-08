@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgSectorExt_commForm_le (n : ℕ) (u : (harmFried (n * 84)).dom) :
     |commForm (qgSectorExt n) (harmFried (n * 84)).op u|

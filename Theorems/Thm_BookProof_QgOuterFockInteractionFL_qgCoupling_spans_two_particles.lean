@@ -18,8 +18,6 @@ open BookProof.Qg3DGaugeEsa
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockInteractionFL
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -32,6 +30,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.qgCoupling_spans_two_particles (lam : ℝ) {n : ℕ} (p : Fin n)
     (hp : nextPart p ≠ p) {m : Fin 64} (hm : torsionMu m ≠ torsionNu m) :

@@ -8,11 +8,6 @@ import Definitions.Def_ChapterStoneUnitary
 open BookProof.BrstLeakage
 open BookProof.BrstUnboundedLeakage
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
-variable (Vs : ℕ → Submodule ℂ H) [∀ i, FiniteDimensional ℂ (Vs i)] (hVs : ∀ i, Vs i ≤ T.domain)
-
 
 open NormedSpace Filter Topology
 open scoped InnerProductSpace
@@ -20,6 +15,11 @@ open scoped InnerProductSpace
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
+variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
+variable (Vs : ℕ → Submodule ℂ H) [∀ i, FiniteDimensional ℂ (Vs i)] (hVs : ∀ i, Vs i ≤ T.domain)
 
 theorem BookProof.BrstUnboundedLeakage.restart_leakage_le {Om : H →L[ℂ] H}
     (hcomm : ∀ (s : ℝ) (y : H), Om (T.stoneU s y) = T.stoneU s (Om y))

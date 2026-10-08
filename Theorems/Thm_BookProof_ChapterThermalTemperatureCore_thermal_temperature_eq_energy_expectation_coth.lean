@@ -8,14 +8,14 @@ open BookProof.ChapterBoseEinstein
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterThermalTemperatureCore
 
-variable {r : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {r : ℝ}
 
 theorem BookProof.ChapterThermalTemperatureCore.thermal_temperature_eq_energy_expectation_coth {x : ℝ} (hx : 0 < x) :
     Real.cosh (x / 2) / (2 * Real.sinh (x / 2))

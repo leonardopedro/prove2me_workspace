@@ -5,11 +5,11 @@ import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QuantumGravityDensitized
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open Filter Topology BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QuantumGravityDensitized.strichartz_esa_of_finiteSpeed {D : Submodule ℂ F} (H : D →ₗ[ℂ] F)
     (finiteSpeed : ∀ z : ℂ, z.im ≠ 0 → DeficiencyTrivialAt D H z) :

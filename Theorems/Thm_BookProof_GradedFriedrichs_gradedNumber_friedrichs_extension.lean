@@ -16,9 +16,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsGhost
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -27,6 +24,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.gradedNumber_friedrichs_extension :
     ∃ (Dom : Submodule ℂ GFock) (A : Dom →ₗ[ℂ] GFock),

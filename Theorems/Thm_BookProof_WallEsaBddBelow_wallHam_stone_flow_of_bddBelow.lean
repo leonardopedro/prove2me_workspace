@@ -1,6 +1,6 @@
 -- Generated from ChapterWallEsaBddBelow.lean — theorem BookProof.WallEsaBddBelow.wallHam_stone_flow_of_bddBelow
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterWallEsaBddBelow

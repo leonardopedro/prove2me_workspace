@@ -16,8 +16,6 @@ open BookProof.ScalaronEsa
 open BookProof.StrichartzWave
 open BookProof.DegSchrodinger
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegSchrodinger.kinCcS_symmetricOn (S : Finset (Fin d)) : SymmetricOn (ccDomain (Vd d)) (kinCcS S) := by sorry

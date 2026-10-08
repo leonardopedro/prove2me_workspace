@@ -10,11 +10,6 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmInducedSystem
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
-variable [CompleteSpace H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -24,6 +19,11 @@ open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterHilbertSumIntertwine
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
+
+variable [CompleteSpace H]
 
 theorem BookProof.ChapterPvmInducedSystem.pvm_induced_system_conj (P : Pvm X H) :
     ∃ (S : Set H) (W : H ≃ₗᵢ[ℂ] lp (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) 2),

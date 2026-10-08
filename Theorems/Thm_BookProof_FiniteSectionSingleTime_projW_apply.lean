@@ -16,8 +16,6 @@ open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-
 
 open scoped InnerProductSpace
 
@@ -30,6 +28,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 
 theorem BookProof.FiniteSectionSingleTime.projW_apply (W : Finset ι) (y : L2I ι) :

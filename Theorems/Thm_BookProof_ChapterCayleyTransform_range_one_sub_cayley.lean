@@ -6,15 +6,15 @@ import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 
 theorem BookProof.ChapterCayleyTransform.range_one_sub_cayley :

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSmFockEsa
 import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Theorems.Thm_BookProof_SmComparisonEsa_sm_h_esa
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 open BookProof.SmFockEsa
 
 

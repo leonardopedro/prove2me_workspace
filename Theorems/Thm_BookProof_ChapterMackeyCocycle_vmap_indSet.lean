@@ -7,14 +7,14 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyCocycle
 
-variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+
+variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 
 theorem BookProof.ChapterMackeyCocycle.vmap_indSet {μ : Measure X} [IsFiniteMeasure μ]

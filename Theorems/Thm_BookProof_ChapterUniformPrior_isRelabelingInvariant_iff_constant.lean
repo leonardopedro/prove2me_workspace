@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterUniformPrior
 open BookProof.ChapterUniformPrior
 
-variable {Hyp Data : Type*}
-
 
 open scoped BigOperators
 
+
+variable {Hyp Data : Type*}
 
 
 theorem BookProof.ChapterUniformPrior.isRelabelingInvariant_iff_constant (p : Hyp → ℝ) :

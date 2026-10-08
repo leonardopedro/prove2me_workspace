@@ -7,4 +7,4 @@ open BookProof.SpinStatistics
 
 open Matrix
 
-theorem BookProof.SpinStatistics.fermiNumber₁_hermitian : fermiNumber1ᴴ = fermiNumber1 := by sorry
+theorem BookProof.SpinStatistics.fermiNumber1_hermitian : fermiNumber1ᴴ = fermiNumber1 := by sorry

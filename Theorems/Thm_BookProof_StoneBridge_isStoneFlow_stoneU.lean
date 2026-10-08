@@ -13,9 +13,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 open Filter Topology
 open scoped InnerProductSpace
@@ -24,5 +21,8 @@ open scoped InnerProductSpace
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.StoneBridge.isStoneFlow_stoneU (T : UnboundedSelfAdjoint F) : IsStoneFlow T T.stoneU := by sorry

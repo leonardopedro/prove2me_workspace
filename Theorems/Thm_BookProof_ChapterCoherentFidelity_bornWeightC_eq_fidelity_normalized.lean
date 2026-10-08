@@ -6,8 +6,6 @@ import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentFidelity
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex BookProof.ChapterSoftmaxSharpness
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentFidelity.bornWeightC_eq_fidelity_normalized (q : EuclideanSpace ℂ (Fin n))

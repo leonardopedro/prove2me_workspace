@@ -9,8 +9,6 @@ import Definitions.Def_ChapterUnboundedSpectralModel
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.UnboundedSpectralModel
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -21,6 +19,8 @@ open scoped InnerProductSpace
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterSpectralDirectSum
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.UnboundedSpectralModel.resOp_mem (T : UnboundedSelfAdjoint H) (y : H) : resOp T y ∈ T.domain := by sorry

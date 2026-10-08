@@ -13,6 +13,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs

@@ -1,6 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_shiftInvert_selects
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
@@ -13,14 +13,10 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
-open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 open Filter Topology
@@ -29,6 +25,10 @@ open Filter Topology
 
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_shiftInvert_selects
     (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L)) {γ : ℂ} (hγ : γ.im ≠ 0) :

@@ -7,6 +7,7 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel
 open BookProof.EsaClosure
 open BookProof.KernelBound
 open BookProof.NavierStokesFlow.DiagonalEsa
@@ -15,13 +16,13 @@ open BookProof.NavierStokesFlow.LpNat
 open BookProof.StoneBridge
 open BookProof.CarlemanUnboundedHop
 
-variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
-
 
 
 open Finset
 
 noncomputable section
+
+variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 theorem BookProof.CarlemanUnboundedHop.geoHop_stone_flow (b : ℕ → ℝ) {rho : ℝ} (hrho : 0 ≤ rho) (hrho1 : rho < 1) :
     ∃ (T : ChapterStoneResolvent.UnboundedSelfAdjoint L2N) (U : ℝ → (L2N →L[ℂ] L2N)),

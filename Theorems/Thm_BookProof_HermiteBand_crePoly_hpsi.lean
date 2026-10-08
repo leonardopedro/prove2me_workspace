@@ -7,13 +7,13 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HermiteBand
 
-variable {d : ℕ}
-
 
 
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBand.crePoly_hpsi (i : Fin d) (α : Fin d →₀ ℕ) :

@@ -101,7 +101,26 @@ def nsGhostCre (a : Fin 3) : Module.End ℂ nsGhostSpace :=
 def nsGhostAnn (a : Fin 3) : Module.End ℂ nsGhostSpace :=
   CliffordAlgebra.contractLeft (LinearMap.proj a)
 
-
+/-- **The ghosts obey the canonical anticommutation relations.** -/
+theorem nsGhost_car : GhostCAR nsGhostCre nsGhostAnn := by
+  constructor
+  · intro a b
+    refine LinearMap.ext fun x => ?_
+    simp only [nsGhostCre, LinearMap.add_apply, Module.End.mul_apply, LinearMap.mulLeft_apply,
+      LinearMap.zero_apply, ← mul_assoc]
+    rw [← add_mul, CliffordAlgebra.ι_mul_ι_add_swap]
+    simp [QuadraticMap.polar]
+  · intro a b
+    refine LinearMap.ext fun x => ?_
+    simp only [nsGhostAnn, LinearMap.add_apply, Module.End.mul_apply, LinearMap.zero_apply]
+    rw [CliffordAlgebra.contractLeft_comm, neg_add_cancel]
+  · intro a b
+    refine LinearMap.ext fun x => ?_
+    simp only [nsGhostCre, nsGhostAnn, LinearMap.add_apply, Module.End.mul_apply,
+      LinearMap.mulLeft_apply, CliffordAlgebra.contractLeft_ι_mul]
+    by_cases h : a = b
+    · subst h; simp
+    · simp [h]
 
 /-! ## 2. The graded state space -/
 
@@ -120,15 +139,18 @@ def nsGh (T : Module.End ℂ nsGhostSpace) : Module.End ℂ NSGraded :=
 theorem nsBos_mul (S T : Module.End ℂ NSAlg) : nsBos (S * T) = nsBos S * nsBos T := by
   simp [nsBos, Module.End.mul_eq_comp, LinearMap.rTensor_comp]
 
+theorem nsBos_zero : nsBos 0 = 0 := by simp [nsBos]
 
+theorem nsGh_mul (S T : Module.End ℂ nsGhostSpace) : nsGh (S * T) = nsGh S * nsGh T := by
+  simp [nsGh, Module.End.mul_eq_comp, LinearMap.lTensor_comp]
 
+theorem nsGh_add (S T : Module.End ℂ nsGhostSpace) : nsGh (S + T) = nsGh S + nsGh T := by
+  simp [nsGh]
 
+theorem nsGh_one : nsGh 1 = 1 := by
+  simp [nsGh, Module.End.one_eq_id, LinearMap.lTensor_id]
 
-
-
-
-
-
+theorem nsGh_zero : nsGh 0 = 0 := by simp [nsGh]
 
 /-- **Bosonic and ghost operators commute** on the graded space. -/
 theorem nsBos_nsGh_comm (S : Module.End ℂ NSAlg) (T : Module.End ℂ nsGhostSpace) :
@@ -142,7 +164,19 @@ def nsChi (a : Fin 3) : Module.End ℂ NSGraded := nsGh (nsGhostCre a)
 /-- The ghost annihilation operators on the graded space. -/
 def nsBeta (a : Fin 3) : Module.End ℂ NSGraded := nsGh (nsGhostAnn a)
 
-
+/-- **The CAR hold on the graded state space.** -/
+theorem nsGradedGhostCar : GhostCAR nsChi nsBeta := by
+  classical
+  constructor
+  · intro a b
+    rw [nsChi, nsChi, ← nsGh_mul, ← nsGh_mul, ← nsGh_add, nsGhost_car.chichi a b, nsGh_zero]
+  · intro a b
+    rw [nsBeta, nsBeta, ← nsGh_mul, ← nsGh_mul, ← nsGh_add, nsGhost_car.betabeta a b, nsGh_zero]
+  · intro a b
+    rw [nsBeta, nsChi, ← nsGh_mul, ← nsGh_mul, ← nsGh_add, nsGhost_car.betachi a b]
+    by_cases h : a = b
+    · simp [h, nsGh_one]
+    · simp [h, nsGh_zero]
 
 /-! ## 3. The Navier–Stokes Hamiltonian in the gauge-fixed variables -/
 

@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEnergyBandDecomposition
 open BookProof.EnergyBandDecomposition
 
-variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
-
 
 
 open MeasureTheory
+
+variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
 
 
 theorem BookProof.EnergyBandDecomposition.norm_evolution_sub_scalar_le_prime {a : ℝ} (t c : ℝ) (z : ℂ) (h : |a - c| ≤ ε) :

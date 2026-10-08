@@ -4,6 +4,7 @@ import Definitions.Def_ChapterCarlemanGeneralHop
 import Theorems.Thm_BookProof_CarlemanGeneralHop_hshift_apply
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_hopB
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_ibd
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
 open BookProof.CarlemanGeneralHop
 
 

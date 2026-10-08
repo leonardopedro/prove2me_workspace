@@ -9,8 +9,6 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteBandHigher
 
-variable {d : ℕ}
-
 
 
 noncomputable section
@@ -18,6 +16,8 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteBand BookProof.YangMillsHermite
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBandHigher.isBandDeg1_momPoly (i : Fin d) : IsBandDeg 1 (momPoly i) := by sorry

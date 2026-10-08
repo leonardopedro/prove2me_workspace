@@ -1,6 +1,7 @@
 -- Generated from ChapterCoherentThermalFidelity.lean — solution of BookProof.ChapterCoherentThermalFidelity.dtOverlap_coherentParameter
 import Mathlib
 import Definitions.Def_ChapterCoherentThermalFidelity
+import Theorems.Thm_BookProof_ChapterDisplacedThermalOverlap_dtOverlap_eq
 open BookProof.ChapterCoherentThermalFidelity
 
 

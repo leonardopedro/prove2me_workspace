@@ -13,8 +13,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.abs_im_gaussInt_le (q w : MvPolynomial (Fin D) ℂ) :

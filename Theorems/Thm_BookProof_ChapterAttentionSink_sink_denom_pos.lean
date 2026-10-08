@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSink
 open BookProof.ChapterAttentionSink
 
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionSink.sink_denom_pos (beta s0 : ℝ) (s : Fin m → ℝ) :

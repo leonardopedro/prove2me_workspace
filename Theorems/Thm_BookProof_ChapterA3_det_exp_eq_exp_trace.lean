@@ -4,12 +4,12 @@ import Definitions.Def_ChapterA3f
 import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
-variable {n : ℕ}
-
 
 open Matrix NormedSpace
 open scoped Norms.Operator
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterA3.det_exp_eq_exp_trace (A : Matrix (Fin n) (Fin n) ℝ) :

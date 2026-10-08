@@ -22,8 +22,8 @@ theorem solution (f : ℝ → ℂ) (hf : f ∈ testSpace) (w : ℝ → ℂ)
 
   classical
   have hfc := contDiff_of_mem_testSpace hf
-  have hf' := (contDiff_infty_iff_deriv.mp hfc).2
-  have hf'' := (contDiff_infty_iff_deriv.mp hf').2
+  have hf_prime := (contDiff_infty_iff_deriv.mp hfc).2
+  have hf'' := (contDiff_infty_iff_deriv.mp hf_prime).2
   have hw' := (contDiff_infty_iff_deriv.mp hw).2
   have hw'' := (contDiff_infty_iff_deriv.mp hw').2
   -- the antiderivative of the difference
@@ -35,7 +35,7 @@ theorem solution (f : ℝ → ℂ) (hf : f ∈ testSpace) (w : ℝ → ℂ)
     intro x
     have h1 : HasDerivAt (fun y => (starRingEnd ℂ) (deriv f y))
         ((starRingEnd ℂ) (deriv (deriv f) x)) x :=
-      ((hf'.differentiable (by simp)).differentiableAt.hasDerivAt).star
+      ((hf_prime.differentiable (by simp)).differentiableAt.hasDerivAt).star
     have h2 : HasDerivAt w (deriv w x) x :=
       (hw.differentiable (by simp)).differentiableAt.hasDerivAt
     have h3 : HasDerivAt (fun y => (starRingEnd ℂ) (f y)) ((starRingEnd ℂ) (deriv f x)) x :=
@@ -60,7 +60,7 @@ theorem solution (f : ℝ → ℂ) (hf : f ∈ testSpace) (w : ℝ → ℂ)
         (hasCompactSupport_conj (hasCompactSupport_of_mem_testSpace hf))
   have hFcont : Continuous F := by
     refine Continuous.sub (Continuous.mul ?_ hw.continuous) (Continuous.mul ?_ hw'.continuous)
-    · exact Complex.continuous_conj.comp hf'.continuous
+    · exact Complex.continuous_conj.comp hf_prime.continuous
     · exact Complex.continuous_conj.comp hfc.continuous
   have hGcont : Continuous G := by
     refine Continuous.sub (Continuous.mul ?_ hw.continuous) (Continuous.mul ?_ hw''.continuous)

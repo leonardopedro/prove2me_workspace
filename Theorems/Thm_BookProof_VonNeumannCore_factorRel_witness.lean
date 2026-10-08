@@ -9,13 +9,13 @@ open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.VonNeumannCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 theorem BookProof.VonNeumannCore.factorRel_witness {A : D →ₗ[ℂ] F} {p : F × F} (hp : p ∈ factorRel A) :

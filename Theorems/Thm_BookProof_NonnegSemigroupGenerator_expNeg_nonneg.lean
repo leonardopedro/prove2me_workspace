@@ -9,13 +9,13 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
 open BookProof.NonnegSemigroupGenerator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemigroup
 open Filter Topology NormedSpace
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.NonnegSemigroupGenerator.expNeg_nonneg {A : F →L[ℂ] F} (hA : IsSelfAdjoint A) (t : ℝ) : 0 ≤ expNeg A t := by sorry

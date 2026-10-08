@@ -3,9 +3,8 @@ import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterAttentionCoarseGrain
+import Definitions.Def_ChapterAttentionEntropy
 open BookProof.ChapterAttentionCoarseGrain
-
-variable {m r : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -14,6 +13,9 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionEntropy
+
+variable {m r : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionCoarseGrain.shannonEntropy_mergeWeights_le {f : Fin m → Fin r} {p : Fin m → ℝ}

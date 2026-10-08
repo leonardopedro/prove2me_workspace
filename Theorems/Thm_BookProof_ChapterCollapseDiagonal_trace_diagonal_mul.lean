@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterCollapseDiagonal
 open BookProof.ChapterCollapseDiagonal
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Matrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterCollapseDiagonal.trace_diagonal_mul (ρ O : Matrix (Fin n) (Fin n) ℂ) (hρ : IsDiagonal ρ) :

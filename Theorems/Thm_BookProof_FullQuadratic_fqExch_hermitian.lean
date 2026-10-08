@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.FullQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.FullQuadratic.fqExch_hermitian (P Q S : Fin d → Fin d → ℝ) (i j : Fin d) :

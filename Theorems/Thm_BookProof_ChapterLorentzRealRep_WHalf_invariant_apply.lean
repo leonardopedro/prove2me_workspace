@@ -4,7 +4,6 @@ import Definitions.Def_ChapterPinOmega
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterPinDoubleCover
-open BookProof.ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRep
 
 

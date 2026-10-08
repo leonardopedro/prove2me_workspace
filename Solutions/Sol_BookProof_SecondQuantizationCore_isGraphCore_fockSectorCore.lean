@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_GraphCore_isGraphCore_pushOp
+import Theorems.Thm_BookProof_TensorCore_isGraphCore_sectorCore
 open BookProof.SecondQuantizationCore
 
 

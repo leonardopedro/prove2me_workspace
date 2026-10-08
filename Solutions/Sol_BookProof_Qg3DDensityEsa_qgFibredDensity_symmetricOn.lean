@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DDensityEsa
 import Theorems.Thm_BookProof_Qg3DDensityEsa_qg3DDensity_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
 open BookProof.Qg3DDensityEsa
 
 

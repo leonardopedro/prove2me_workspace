@@ -6,14 +6,14 @@ import Mathlib
 import Definitions.Def_ChapterNote68AllModes
 open BookProof.ChapterNote68AllModes
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterSphericalBessel BookProof.ChapterBesselHarmonic
 open BookProof.ChapterSolidHarmonic
 open scoped RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 theorem BookProof.ChapterNote68AllModes.norm_stdVec (i : Fin 3) : ‖stdVec i‖ = 1 := by sorry

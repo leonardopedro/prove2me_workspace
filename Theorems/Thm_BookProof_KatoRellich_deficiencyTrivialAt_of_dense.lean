@@ -3,14 +3,13 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
 open BookProof.KatoRellich
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 theorem BookProof.KatoRellich.deficiencyTrivialAt_of_dense (T : D →ₗ[ℂ] F) (z : ℂ)

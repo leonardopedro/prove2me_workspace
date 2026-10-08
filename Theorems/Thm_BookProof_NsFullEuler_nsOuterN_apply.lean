@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsOuterN_apply (nu lam mu gg : ℝ) (x : (nsOuterComparison nu lam mu gg).dom) (n : ℕ) :
     (((nsOuterComparison nu lam mu gg).op x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n

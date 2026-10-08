@@ -12,9 +12,6 @@ import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgHermiteOscillator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -23,6 +20,9 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
 
 theorem BookProof.QgHermiteOscillator.deficiencyTrivialAt_of_eigenbasis (T : D →ₗ[ℂ] F) (b : HilbertBasis ι ℂ F)
     (lam : ι → ℝ) (hmem : ∀ i, (b i : F) ∈ D)

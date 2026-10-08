@@ -23,12 +23,8 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-ine diagOp_not_bounded _ fun C => ?_
-  refine ⟨⌈|C|⌉₊ + 1, ?_⟩
-  have hn : |C| ≤ (⌈|C|⌉₊ : ℝ) := Nat.le_ceil _
-  have hc : C ≤ |C| := le_abs_self C
-  have h0 : (0 : ℝ) ≤ (⌈|C|⌉₊ : ℝ) := Nat.cast_nonneg _
-  have habs : |3 * ((⌈|C|⌉₊ + 1 : ℕ) : ℝ)| = 3 * ((⌈|C|⌉ :=
+theorem solution :
+    EssentiallySelfAdjointOn diagKR.D (lagrangianCore diagKR) :=
   ₊ : ℝ) + 1) := by
       push_cast
       rw [abs_of_nonneg (by positivity)]

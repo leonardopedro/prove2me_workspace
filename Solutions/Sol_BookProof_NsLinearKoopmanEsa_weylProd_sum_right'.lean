@@ -1,7 +1,7 @@
 -- Generated from ChapterNsLinearKoopmanEsa.lean — solution of BookProof.NsLinearKoopmanEsa.weylProd_sum_right'
 import Mathlib
 import Definitions.Def_ChapterNsLinearKoopmanEsa
-import Theorems.Thm_BookProof_NsLinearKoopmanEsa_weylProd_add_right'
+import Theorems.Thm_BookProof_NsLinearKoopmanEsa_weylProd_add_right_prime
 open BookProof.NsLinearKoopmanEsa
 
 
@@ -13,6 +13,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
+open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
@@ -32,4 +33,4 @@ theorem solution {ι : Type*} (s : Finset ι) (S : Module.End ℂ (MvPolynomial 
   | empty =>
       simp [weylProd]
   | insert a s ha ih =>
-      rw [Finset.sum_insert ha, Finset.sum_insert ha, weylProd_add_right', ih]
+      rw [Finset.sum_insert ha, Finset.sum_insert ha, weylProd_add_right_prime, ih]

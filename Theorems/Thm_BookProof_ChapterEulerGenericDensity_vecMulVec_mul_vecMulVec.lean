@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterEulerGenericDensity
 open BookProof.ChapterEulerGenericDensity
 
-variable {d : ℕ}
-
 
 open scoped Matrix
 open Matrix
 
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterEulerGenericDensity.vecMulVec_mul_vecMulVec (u v x y : Fin d → ℝ) :

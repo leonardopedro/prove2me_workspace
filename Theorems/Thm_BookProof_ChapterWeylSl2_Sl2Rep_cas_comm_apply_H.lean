@@ -6,14 +6,14 @@ open BookProof.ChapterDoubleSlit
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-variable {R : Sl2Rep V}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
+variable {R : Sl2Rep V}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.cas_comm_apply_H (v : V) : R.cas (R.H v) = R.H (R.cas v) := by sorry

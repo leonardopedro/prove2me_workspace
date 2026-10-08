@@ -18,9 +18,8 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
- => (n : ℝ)) = diagOp fun n => 3 * (n : ℝ)
-  simp only [diagOp_real_smul, diagOp_sum]
-  refine cong :=
+theorem solution :
+    HasZeroDeficiencyOn diagKR.D (secondOrder diagKR) :=
   rArg diagOp ?_
     funext n
     simp only [Fin.sum_univ_three]

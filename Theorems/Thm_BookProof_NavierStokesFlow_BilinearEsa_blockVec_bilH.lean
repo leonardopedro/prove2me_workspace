@@ -10,14 +10,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.BilinearEsa
 
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
+
+variable {J : Type*}
 
 
 theorem BookProof.NavierStokesFlow.BilinearEsa.blockVec_bilH (κ : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (v : lpFiniteModes (ℕ × J)) (j : J) :

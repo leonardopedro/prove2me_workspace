@@ -1,6 +1,7 @@
 -- Generated from ChapterA4h.lean — solution of BookProof.ChapterA4h.localizable_iff_massShell
 import Mathlib
 import Definitions.Def_ChapterA4h
+import Theorems.Thm_BookProof_ChapterA5_energySymbolR_sq
 open BookProof.ChapterA4h
 
 

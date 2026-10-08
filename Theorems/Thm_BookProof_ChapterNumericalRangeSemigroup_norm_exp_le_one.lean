@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNumericalRangeSemigroup
 open BookProof.ChapterNumericalRangeSemigroup
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.ChapterNumericalRangeSemigroup.norm_exp_le_one {A : E →L[ℂ] E} (h : NumReLE A 0) {t : ℝ} (ht : 0 ≤ t) :

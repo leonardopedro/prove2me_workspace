@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
 open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
-variable {n : ℕ}
-
 
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
@@ -17,6 +15,8 @@ open BookProof.ChapterFreeFieldBornSignOrientation
 open BookProof.ChapterFreeFieldBornSignOrientationKernel
 open BookProof.ChapterFreeFieldBornSignOrientationCard
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignOrientationSubgroup.mem_orientationPreservingSigns_iff_even (b : Fin n → Bool) :

@@ -1,6 +1,7 @@
 -- Generated from ChapterSmBrstGhost.lean — solution of BookProof.SmBrstGhost.annih_mul_annih
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
+import Theorems.Thm_BookProof_SmCar_car_annih_annih
 open BookProof.SmBrstGhost
 
 

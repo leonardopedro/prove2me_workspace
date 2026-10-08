@@ -11,27 +11,24 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.HermiteProductCore
-open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
 
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 theorem BookProof.NavierStokesFlow.DiffFarisLavine.commForm_embedCore (x : lpFiniteModes Vel) :
     commForm ((polyGaussCore (d := 3)).subtype.comp (nsDiffH A c))
         ((polyGaussCore (d := 3)).subtype.comp (nsDiffN (velMu A (seqConst c)))) (embedCore x)

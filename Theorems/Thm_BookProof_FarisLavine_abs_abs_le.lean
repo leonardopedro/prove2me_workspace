@@ -5,11 +5,10 @@ import Mathlib
 import Definitions.Def_ChapterFarisLavine
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
 
 
 
@@ -19,7 +18,5 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 open scoped ENNReal
 
-e (lam : ℕ → ℝ) : ∀ n, |(|lam n|)| ≤ |lam n| := fun n => by simp
 
-/-- The comparison operator `N = |lam|`. -/
-noncomputable de := by sorry
+noncomputable def mulComparison (lam : ℕ → ℝ) : mulSymbolDomain lam →ₗ[ℂ] L2Nat := by sorry

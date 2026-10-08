@@ -6,13 +6,13 @@ open BookProof.ChapterSirkGroupTransfer
 open BookProof.ChapterStatementOperator
 open BookProof.ChapterStatementOperator
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (S : ModelStatement H) (ψ : H)
-
 
 
 open ContinuousLinearMap
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (S : ModelStatement H) (ψ : H)
 
 theorem BookProof.ChapterStatementOperator.ModelStatement.truthValue_and_le_left (S T : ModelStatement H)
     (hcomm : S.op ∘L T.op = T.op ∘L S.op) :

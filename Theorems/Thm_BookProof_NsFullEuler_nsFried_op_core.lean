@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsFried_op_core (nu lam mu gg : ℝ) (n : ℕ) (p : polyGaussCore (d := n * 21))
     (h : (p : L2d (n * 21)) ∈ (nsFried nu lam mu gg n).dom) :

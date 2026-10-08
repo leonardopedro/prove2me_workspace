@@ -15,8 +15,6 @@ open BookProof.HermiteCore
 open BookProof.HermiteProductCore
 open BookProof.QuadratureEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial FourierTransform
@@ -26,6 +24,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadratureEsa.ae_eq_zero_of_moments_prime {v : Vd d → ℂ}

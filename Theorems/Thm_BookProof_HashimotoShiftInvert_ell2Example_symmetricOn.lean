@@ -8,12 +8,8 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterComplexShiftCore
-open scoped lp
 open BookProof.HermiteGalerkin
 open BookProof.HashimotoShiftInvert
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 
@@ -21,8 +17,9 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFrie
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-e hγ)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.HashimotoShiftInvert.ell2Example_symmetricOn :
     SymmetricOn (LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)))
-      ell2Unbounded := by sorry
+      ell2UnboundedExample := by sorry

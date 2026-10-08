@@ -6,14 +6,14 @@ import Mathlib
 import Definitions.Def_ChapterThermalTemperatureCore
 open BookProof.ChapterThermalTemperatureCore
 
-variable {r : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {r : ℝ}
 
 theorem BookProof.ChapterThermalTemperatureCore.geometricOccupancy_nonneg (h0 : 0 ≤ r) (h1 : r < 1) (n : ℕ) :
     0 ≤ geometricOccupancy r n := by sorry

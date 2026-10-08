@@ -18,11 +18,6 @@ open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockElliptic
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {D : ℕ}
-variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
-
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite
@@ -37,6 +32,11 @@ open BookProof.FriedrichsExtension
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : ℕ}
+variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
 
 theorem BookProof.QgOuterFockElliptic.dsCore_le_dsFriedDom (S : ∀ i, PosSymOp (G i))
     (hd : ∀ i, Dense ((S i).dom : Set (G i))) :

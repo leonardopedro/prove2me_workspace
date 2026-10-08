@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterDiffuseCdfModel
 open BookProof.ChapterDiffuseCdfModel
 
-variable (mu : Measure ℝ)
-
 
 noncomputable section
 
 open MeasureTheory ProbabilityTheory Filter
 
+
+variable (mu : Measure ℝ)
 
 
 theorem BookProof.ChapterDiffuseCdfModel.continuous_cdf_of_noAtoms [IsProbabilityMeasure mu] [NullSingletonClass mu] :

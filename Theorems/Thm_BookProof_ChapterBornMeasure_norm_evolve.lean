@@ -7,12 +7,12 @@ open BookProof.ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterBornMeasure
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 open MeasureTheory
 open scoped ENNReal
 
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 theorem BookProof.ChapterBornMeasure.norm_evolve (H : Lp ℂ 2 μ →L[ℂ] Lp ℂ 2 μ) (hH : IsSelfAdjoint H) (t : ℝ)

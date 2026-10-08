@@ -10,15 +10,13 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-  funext x
-  simpa [hu0] using hconst x
-
 theorem solution (z : ℂ) (hz : z.re ≤ 0)
     (u u' u'' : ℝ → ℂ)
     (h1 : ∀ x, HasDerivAt u (u' x) x)
     (h2 : ∀ x, HasDerivAt u' (u'' x) x)
     (heq : ∀ x, -u'' x = z * u x)
-    (hL2 : Integr :=
+    (hL2 : Integrable fun x => ‖u x‖ ^ 2) :
+    u = 0 :=
   able fun x => ‖u x‖ ^ 2) :
       u = 0 :=
     l2_classical_solution_eq_zero_of_nonneg (fun _ => 0) continuous_const z u u' u''

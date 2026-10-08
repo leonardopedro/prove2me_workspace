@@ -8,8 +8,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterSpectralCommutant
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 noncomputable section
 
@@ -18,6 +16,8 @@ open MeasureTheory ENNReal Complex
 
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 theorem BookProof.ChapterSpectralCommutant.multOp_mem_multAlgebra (ψ : α → ℂ) (hψ : MemLp ψ ⊤ μ) :
     multOp ψ hψ ∈ multAlgebra μ := by sorry

@@ -5,10 +5,10 @@ import Definitions.Def_ChapterScaledDotProduct
 open BookProof.ChapterScaledDotProduct
 open BookProof.ChapterF4
 
-variable {d k : ℕ}
-
 
 open scoped BigOperators Matrix
+
+variable {d k : ℕ}
 
 theorem BookProof.ChapterF4.csketch_smul (h : Fin d → Fin k) (ω : Fin d → Bool) (a : ℝ) (x : Fin d → ℝ) :
     csketch h ω (a • x) = a • csketch h ω x := by sorry

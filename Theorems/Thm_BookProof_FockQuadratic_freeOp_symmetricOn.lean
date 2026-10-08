@@ -12,9 +12,6 @@ open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-
 
 open scoped ENNReal
 
@@ -24,6 +21,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
 
 theorem BookProof.FockQuadratic.freeOp_symmetricOn (hω : ∀ i, 0 ≤ ω i) :
     SymmetricOn (maxDom (sig ω)) (freeOp hω) := by sorry

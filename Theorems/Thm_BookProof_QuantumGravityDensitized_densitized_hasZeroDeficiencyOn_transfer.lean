@@ -5,14 +5,14 @@ import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.QuantumGravityDensitized
 
+
+
+open Filter Topology BookProof.FarisLavine
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-
-
-
-open Filter Topology BookProof.FarisLavine
 
 theorem BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer (W : F ≃ₗᵢ[ℂ] G) {D : Submodule ℂ F}
     {D' : Submodule ℂ G} {H : D →ₗ[ℂ] D} {H' : D' →ₗ[ℂ] D'}

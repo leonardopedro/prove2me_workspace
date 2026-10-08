@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteBandCalculusHigher.lean — solution of BookProof.HermiteBandHigher.mulOp_sum
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
-import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_add'
+import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_add_prime
 open BookProof.HermiteBandHigher
 
 
@@ -24,4 +24,4 @@ theorem solution {ι : Type*} (s : Finset ι) (F : ι → MvPolynomial (Fin d) �
   classical
   induction s using Finset.induction_on with
   | empty => refine LinearMap.ext fun p => ?_; simp [mulOp]
-  | insert a s ha ih => rw [Finset.sum_insert ha, mulOp_add', ih, Finset.sum_insert ha]
+  | insert a s ha ih => rw [Finset.sum_insert ha, mulOp_add_prime, ih, Finset.sum_insert ha]

@@ -15,8 +15,6 @@ open BookProof.QgHermiteOscillator
 open BookProof.Starobinsky
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le (M alpha mu : ℝ) (x : Vd 2) :

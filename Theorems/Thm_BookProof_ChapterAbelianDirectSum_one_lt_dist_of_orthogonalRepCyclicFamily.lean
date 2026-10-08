@@ -5,14 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
 open BookProof.ChapterAbelianDirectSum
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H))
-variable (xi : H)
-variable {pi}
-variable (pi)
-
 
 noncomputable section
 
@@ -21,8 +13,15 @@ open MeasureTheory Complex WeakDual
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
 
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H))
 
-omit [CompactSpace X] [T2Space X] [MeasurableSpace X] [BorelSpace X] in
+variable (xi : H)
+variable {pi}
+variable (pi)
+
 theorem BookProof.ChapterAbelianDirectSum.one_lt_dist_of_orthogonalRepCyclicFamily {S : Set H}
     (hS : OrthogonalRepCyclicFamily pi S) {x y : H} (hx : x ∈ S) (hy : y ∈ S) (hxy : x ≠ y) :
     1 < dist x y := by sorry

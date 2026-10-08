@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSmComparison
 import Theorems.Thm_BookProof_SmComparison_smConfField_symmetricOn
 import Theorems.Thm_BookProof_SmComparison_smComparison_quadForm
+import Theorems.Thm_BookProof_SmHamiltonian_smPi_symmetricOn
 import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 open BookProof.SmComparison
 

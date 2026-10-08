@@ -17,8 +17,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsFullFockHam_quadForm_nonneg (nu lam mu gg : ℝ) (x : nsFockCore) :
     0 ≤ quadForm (nsFullFockHam nu lam mu gg) x := by sorry

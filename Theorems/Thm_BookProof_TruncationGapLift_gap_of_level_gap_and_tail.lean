@@ -16,9 +16,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 noncomputable section
 
@@ -29,6 +26,9 @@ open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.TruncationGapLift.gap_of_level_gap_and_tail (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn _ H) {m : ℕ} {mu eps : ℝ}

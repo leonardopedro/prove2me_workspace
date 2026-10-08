@@ -1,7 +1,7 @@
 -- Generated from ChapterBrstTruncationLeakage.lean — solution of BookProof.BrstLeakage.norm_flow_sub_flow_le
 import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
-import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le'
+import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le_prime
 open BookProof.BrstLeakage
 
 
@@ -19,7 +19,7 @@ theorem solution {A B : E →L[ℂ] E} (hA : IsSelfAdjoint A)
     ‖flow A t - flow B t‖ ≤ ‖A - B‖ * t := by
 
   refine ContinuousLinearMap.opNorm_le_bound _ (by positivity) fun x => ?_
-  have h := norm_flow_sub_flow_apply_le' hA hB t ht x
+  have h := norm_flow_sub_flow_apply_le_prime hA hB t ht x
   have hrw : ‖(flow A t - flow B t) x‖ = ‖flow B t x - flow A t x‖ := by
     rw [ContinuousLinearMap.sub_apply, ← norm_neg, neg_sub]
   rw [hrw]

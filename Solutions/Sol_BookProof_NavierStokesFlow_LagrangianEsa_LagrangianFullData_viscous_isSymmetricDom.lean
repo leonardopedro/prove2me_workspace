@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sum
 import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.LagrangianEsa
 open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 
 

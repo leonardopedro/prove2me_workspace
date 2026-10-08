@@ -8,14 +8,14 @@ open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle
 
-variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+
+variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 
 theorem BookProof.ChapterMackeyCocycle.dens_eq_enorm_sq {μ : Measure X} [IsFiniteMeasure μ]

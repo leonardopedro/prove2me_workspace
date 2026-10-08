@@ -4,10 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterTensorCompleteness
 open BookProof.ChapterTensorCompleteness
 
-variable {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
-  {μ : Measure α} {ν : Measure β} [IsFiniteMeasure μ] [IsFiniteMeasure ν]
-variable {ι κ : Type*}
-
 
 noncomputable section
 
@@ -16,6 +12,10 @@ open MeasureTheory ENNReal Complex Filter Topology
 
 open BookProof.ChapterSolovayHilbertTensor
 
+variable {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
+  {μ : Measure α} {ν : Measure β} [IsFiniteMeasure μ] [IsFiniteMeasure ν]
+
+variable {ι κ : Type*}
 
 theorem BookProof.ChapterTensorCompleteness.hasSum_sq_norm_inner_tensorHilbertBasis
     (b : HilbertBasis ι ℂ (Lp ℂ 2 μ)) (c : HilbertBasis κ ℂ (Lp ℂ 2 ν))

@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
 import Theorems.Thm_BookProof_HermiteLadder_hn_zero_vec
-import Theorems.Thm_BookProof_HermiteLadder_pgLp_zero'
+import Theorems.Thm_BookProof_HermiteLadder_pgLp_zero_prime
 open BookProof.HermiteLadder
 
 
@@ -20,4 +20,4 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (n : ℕ) : LadderOrd (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] _) n := fun _ => ⟨0, ENNReal.zero_ne_top, fun p => by simp [pgLp_zero', hn_zero_vec]⟩
+theorem solution (n : ℕ) : LadderOrd (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] _) n := fun _ => ⟨0, ENNReal.zero_ne_top, fun p => by simp [pgLp_zero_prime, hn_zero_vec]⟩

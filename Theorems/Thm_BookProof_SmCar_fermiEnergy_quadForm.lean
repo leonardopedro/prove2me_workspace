@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.fermiEnergy_quadForm (m : Fin n → ℝ) (ψ : FermiFock n) :

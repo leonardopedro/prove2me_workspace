@@ -7,4 +7,4 @@ open BookProof.SpinStatistics
 
 open Matrix
 
-theorem BookProof.SpinStatistics.fermiNumber₁_idem : fermiNumber1 * fermiNumber1 = fermiNumber1 := by sorry
+theorem BookProof.SpinStatistics.fermiNumber1_idem : fermiNumber1 * fermiNumber1 = fermiNumber1 := by sorry

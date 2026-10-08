@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterRadialLaplacian
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_laplacian_radial
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_contDiffAt_sbessel_zero
+import Theorems.Thm_BookProof_ChapterSphericalBesselODE_sbessel_radial_eigen
 open BookProof.ChapterRadialLaplacian
 
 

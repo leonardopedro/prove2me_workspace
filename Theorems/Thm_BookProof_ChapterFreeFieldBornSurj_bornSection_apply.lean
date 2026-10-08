@@ -7,13 +7,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSurj
 open BookProof.ChapterFreeFieldBornSurj
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphereSupport BookProof.ChapterFreeFieldBorn
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSurj.bornSection_apply (p : Fin n → ℝ) (k : Fin n) :

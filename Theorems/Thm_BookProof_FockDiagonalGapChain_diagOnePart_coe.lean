@@ -16,8 +16,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.FockDiagonalGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -30,6 +28,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerk
 open BookProof.HermiteCore BookProof.ScalaronFockGapChain
 open Module
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.FockDiagonalGapChain.diagOnePart_coe (b : HilbertBasis ℕ ℂ F) (w : ℕ → ℝ) (x : finiteModeDomain b) :

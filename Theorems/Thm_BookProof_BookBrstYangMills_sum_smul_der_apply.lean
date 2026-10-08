@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.sum_smul_der_apply {n : ℕ} (k : Fin n → ℂ)
     (D : Fin n → Derivation ℂ (FieldPoly N) (FieldPoly N)) (p : FieldPoly N) :

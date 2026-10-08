@@ -19,8 +19,6 @@ open BookProof.ShiftedHermiteCore
 open BookProof.StoneBridge
 open BookProof.ShiftedQuadraticMatrix
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -34,6 +32,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_stone_flow {A : Matrix (Fin d) (Fin d) ℝ}

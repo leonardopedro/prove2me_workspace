@@ -14,8 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.expBounded_sectorQuadW (M alpha mu : ℝ) : ExpBounded (sectorQuadW M alpha mu) := by sorry

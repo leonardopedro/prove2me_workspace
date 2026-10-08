@@ -1,12 +1,9 @@
 -- Generated from ChapterSirkFinitePrecision.lean — solution of BookProof.SirkFinitePrecision.CertInterval.mem_neg
 import Mathlib
 import Definitions.Def_ChapterSirkFinitePrecision
+import Theorems.Thm_BookProof_HermiteLadder_LadderOrd_neg
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
-
-
-
-
 
 
 
@@ -15,6 +12,9 @@ noncomputable section
 
 open scoped InnerProductSpace
 open Finset
+
+variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  [FiniteDimensional ℂ E]
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]

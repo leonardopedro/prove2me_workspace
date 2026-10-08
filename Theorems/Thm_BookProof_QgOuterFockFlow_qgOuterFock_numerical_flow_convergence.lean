@@ -21,8 +21,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 open BookProof.QgOuterFockFlow
 
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -33,6 +31,8 @@ open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgOuterFockFlow.qgOuterFock_numerical_flow_convergence :
     ∃ (T : UnboundedSelfAdjoint (Sec ι)) (U : ℝ → (Sec ι →L[ℂ] Sec ι)),

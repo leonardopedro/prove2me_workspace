@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterFockSchurEsa
 open BookProof.FockSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds
@@ -22,5 +20,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
 
 theorem BookProof.FockSchur.hopCol_not_summable : ¬ Summable fun k : ℕ => ‖(hopCol k) (k + 1)‖ := by sorry

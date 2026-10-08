@@ -8,8 +8,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.HermiteGalerkin
 open BookProof.ChapterSirkTrotterKato
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterSirkTrotterKato.galerkin_flow_transfer {A : H →L[ℂ] H} (hA : IsSelfAdjoint A)

@@ -7,11 +7,11 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace Quaternion
 
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.qembed_realCommutes {M : System ℂ V} {θ : AntiUnitary V} (hθ : ∀ x, θ (θ x) = -x)

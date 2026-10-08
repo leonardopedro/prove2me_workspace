@@ -7,13 +7,13 @@ open BookProof.ChapterF7
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-
 
 
 
 open FullEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
 
 theorem BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData.kinetic_inner (v : L.D) :
     (inner ℂ (v : F) (L.kinetic v : F) : ℂ)

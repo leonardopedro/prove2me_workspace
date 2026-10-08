@@ -9,8 +9,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.HermiteLadder
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -19,6 +17,8 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodin
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteLadder.hn_add_le (m : ℕ) (v w : L2d d) : hn m (v + w) ≤ 2 * hn m v + 2 * hn m w := by sorry

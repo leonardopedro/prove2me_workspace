@@ -16,8 +16,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteCore
 open BookProof.ScalaronFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -28,6 +26,8 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.ScalaronFockGapChain.scalaron_fock_cubic_quartic_bounded_below {alpha : ℝ} (halpha : 0 < alpha)
     (S : Finset ℕ) (lam : ℝ) (u : FockAlg) :

@@ -9,12 +9,12 @@ open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 theorem BookProof.FriedrichsSquare.clGraph_le_adjGraph {A : D →ₗ[ℂ] F} (hsym : SymmetricOn D A) :

@@ -18,8 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.StoneBridge
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.mqOp_stone_flow (p q s b b' : Fin d → ℝ) :

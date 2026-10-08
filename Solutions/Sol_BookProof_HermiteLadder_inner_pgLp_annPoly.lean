@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
 import Theorems.Thm_BookProof_HermiteLadder_annPoly_eq_coreD
 import Theorems.Thm_BookProof_HermiteLadder_crePoly_eq_coreD
-import Theorems.Thm_BookProof_HermiteLadder_gaussInt_sub'
+import Theorems.Thm_BookProof_HermiteLadder_gaussInt_sub_prime
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_C
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
@@ -32,7 +32,7 @@ theorem solution (i : Fin d) (p q : MvPolynomial (Fin d) ℂ) :
     (inner ℂ (pgLp q) (pgLp (annPoly i p)) : ℂ) = inner ℂ (pgLp (crePoly i q)) (pgLp p) := by
 
   rw [inner_pgLp_pgLp, inner_pgLp_pgLp, annPoly_eq_coreD, crePoly_eq_coreD, mul_add,
-    gaussInt_add, cpoly_sub, sub_mul, gaussInt_sub']
+    gaussInt_add, cpoly_sub, sub_mul, gaussInt_sub_prime]
   have h1 : gaussInt (cpoly q * coreD i p) = -gaussInt (cpoly (coreD i q) * p) := by
     rw [gaussInt_coreD, neg_neg]
   have hhalf : (starRingEnd ℂ) (1 / 2 : ℂ) = 1 / 2 := by norm_num [Complex.ext_iff]

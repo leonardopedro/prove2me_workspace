@@ -11,13 +11,13 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 
 theorem BookProof.HashimotoShiftInvert.shiftInvertC_resolvent_identity {A : Dom →ₗ[ℂ] F} {γ δ : ℂ} {X Y : F →L[ℂ] F}
     (hX : IsShiftInvertC A γ X) (hY : IsShiftInvertC A δ Y) (u : F) :

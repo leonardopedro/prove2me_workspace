@@ -15,9 +15,6 @@ open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-variable {X : Type*} [MeasurableSpace X]
-
 
 
 open MeasureTheory Set Filter Topology
@@ -28,6 +25,9 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
+variable {X : Type*} [MeasurableSpace X]
 
 theorem BookProof.ScalaronDensitized.physConf_stone_flow :
     ∃ (T : UnboundedSelfAdjoint (Lp ℂ 2 physMeasure))

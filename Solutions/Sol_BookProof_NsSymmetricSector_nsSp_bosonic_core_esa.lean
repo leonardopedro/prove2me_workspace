@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNsSymmetricSector
 import Theorems.Thm_BookProof_NsSymmetricSector_nsSpOp_symmetricOn
 import Theorems.Thm_BookProof_NsSymmetricSector_nsSpOp_esa
 import Theorems.Thm_BookProof_FockStatistics_essentiallySelfAdjointOn_bosonic_core_of_esa
+import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
 open BookProof.NsSymmetricSector
 
 

@@ -3,10 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterF4
 open BookProof.ChapterF4
 
-variable {d k : ℕ}
-
 
 open scoped BigOperators Matrix
+
+variable {d k : ℕ}
 
 theorem BookProof.ChapterF4.observable_matrix_identity {dd kk : ℕ} (W : Matrix (Fin dd) (Fin kk) ℂ)
     (a : Fin dd) (r s : Fin kk) :

@@ -9,11 +9,6 @@ import Definitions.Def_ChapterUnboundedSpectralModel
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.UnboundedSpectralModel
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H) {mu : Measure (spectrum ℂ (resOp T))}
-  (V : Lp ℂ 2 mu →ₗᵢ[ℂ] H)
-  (hV : ∀ u : Lp ℂ 2 mu, V (mulRep mu (coordFn (resOp T)) u) = resOp T (V u))
-
 
 noncomputable section
 
@@ -25,5 +20,10 @@ open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterSpectralDirectSum
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H) {mu : Measure (spectrum ℂ (resOp T))}
+  (V : Lp ℂ 2 mu →ₗᵢ[ℂ] H)
+  (hV : ∀ u : Lp ℂ 2 mu, V (mulRep mu (coordFn (resOp T)) u) = resOp T (V u))
 
 theorem BookProof.UnboundedSpectralModel.model_ae_ne_zero [IsFiniteMeasure mu] : ∀ᵐ z ∂mu, z.1 ≠ 0 := by sorry

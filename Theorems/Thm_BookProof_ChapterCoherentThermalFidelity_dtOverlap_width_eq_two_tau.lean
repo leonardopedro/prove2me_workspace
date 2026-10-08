@@ -8,8 +8,6 @@ import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentThermalFidelity
 
-variable {nbar lam : ℝ}
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ noncomputable section
 open BookProof.ChapterCoherentOccupation BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentFidelity BookProof.ChapterDisplacedThermalOverlap
 open Real
+
+variable {nbar lam : ℝ}
 
 
 theorem BookProof.ChapterCoherentThermalFidelity.dtOverlap_width_eq_two_tau (nb : NNReal) :

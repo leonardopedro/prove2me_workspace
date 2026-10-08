@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_apply_le_deg
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
 open BookProof.CarlemanSimplex
 
 

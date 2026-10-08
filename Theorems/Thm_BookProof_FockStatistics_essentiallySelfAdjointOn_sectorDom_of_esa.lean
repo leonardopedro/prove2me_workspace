@@ -16,12 +16,6 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 open BookProof.TensorCore
 open BookProof.FockStatistics
 
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
-  (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
-  (hesa : EssentiallySelfAdjointOn D A)
-
 
 
 open scoped TensorProduct ENNReal
@@ -30,6 +24,12 @@ open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
+variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
+  (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
+  (hesa : EssentiallySelfAdjointOn D A)
 
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_sectorDom_of_esa (n : ℕ) :
     EssentiallySelfAdjointOn (sectorDom Hs D n) (sectorOp Hs D A n) := by sorry

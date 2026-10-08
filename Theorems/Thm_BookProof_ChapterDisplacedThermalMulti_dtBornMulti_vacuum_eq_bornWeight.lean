@@ -9,8 +9,6 @@ open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterDisplacedThermalMulti
 
-variable {n m : ℕ}
-
 
 noncomputable section
 
@@ -19,6 +17,8 @@ open scoped NNReal
 
 
 open BookProof.ChapterDisplacedThermalOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterDisplacedThermalMulti.dtBornMulti_vacuum_eq_bornWeight (q : EuclideanSpace ℝ (Fin n))

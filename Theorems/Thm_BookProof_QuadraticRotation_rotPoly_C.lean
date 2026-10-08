@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 open BookProof.QuadraticRotation
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -19,6 +17,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadraticRotation.rotPoly_C (O : Matrix (Fin d) (Fin d) ℝ) (z : ℂ) : rotPoly O (C z) = C z := by sorry

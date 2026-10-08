@@ -5,10 +5,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 
 
-
-
-
-
 noncomputable section
 
 
@@ -17,6 +13,7 @@ open Finset
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]
+
 
 theorem BookProof.SirkFinitePrecision.CertInterval.dist_le_width {I : CertInterval} {x y : ℝ} (hx : I.Mem x) (hy : I.Mem y) :
     |x - y| ≤ I.width := by sorry

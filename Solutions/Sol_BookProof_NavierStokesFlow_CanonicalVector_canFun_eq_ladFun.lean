@@ -20,9 +20,6 @@ open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian Signe
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- Both sides expand into the same several-dozen-term ladder polynomial; normalising it
--- with `ring` exceeds the default heartbeat budget.
 theorem solution (X : Vel → ℂ) (γ : Vel) :
     canFun A c X γ = ladFun A c X γ := by
 

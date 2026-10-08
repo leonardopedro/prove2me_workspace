@@ -5,12 +5,13 @@ import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterTrajectory
 open BookProof.ChapterWeakValue
 
-variable {n : ℕ}
-
 
 open scoped BigOperators Matrix
 
 
+variable {n : ℕ}
+
+open BookProof.ChapterTrajectory
 
 theorem BookProof.ChapterWeakValue.jointProb_eq_normSq_weakNumerator (U V : Matrix (Fin n) (Fin n) ℂ)
     (psi : Fin n → ℂ) (f a : Fin n) :

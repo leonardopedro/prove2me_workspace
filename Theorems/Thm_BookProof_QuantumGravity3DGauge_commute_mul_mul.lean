@@ -13,8 +13,6 @@ import Definitions.Def_ChapterF7
 open BookProof.ChapterF7
 open BookProof.QuantumGravity3DGauge
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -23,6 +21,8 @@ open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerk
 open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
+
+variable {d : ℕ}
 
 def qgWeylProd (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
     Module.End ℂ (MvPolynomial (Fin d) ℂ) := by sorry

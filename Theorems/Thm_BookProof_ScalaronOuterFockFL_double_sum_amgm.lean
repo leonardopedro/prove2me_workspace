@@ -10,12 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-variable {ι : Type*}
-variable (Q : QgModeData ι)
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open MeasureTheory SchwartzMap
@@ -25,6 +19,12 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.ScalaronOuterFockFL.double_sum_amgm (P : Finset ι) (w : ι → ι → ℝ) (f g r : ι → ℝ)
     (hw : ∀ a b, 0 ≤ w a b)

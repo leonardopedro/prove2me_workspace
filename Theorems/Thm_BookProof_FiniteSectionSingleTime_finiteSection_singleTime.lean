@@ -26,9 +26,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -42,6 +39,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.finiteSection_singleTime (hsym : SymmetricOn (lpFiniteModes ι) H)
     (hesa : EssentiallySelfAdjointOn (lpFiniteModes ι) H)

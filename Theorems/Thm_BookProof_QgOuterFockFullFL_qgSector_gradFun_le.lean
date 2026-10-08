@@ -19,8 +19,6 @@ open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgSector_gradFun_le (n : ℕ) (x : Vd (n * 84)) :
     ∑ k : Fin (n * 84), (gradFun (qgTorsionVecN n) k x) ^ 2 ≤ (128 : ℝ) ^ 2 * ‖x‖ ^ 2 := by sorry

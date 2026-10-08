@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
 open BookProof.BrstLeakage
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.truncGen_isSelfAdjoint {P H : E →L[ℂ] E} (hP : IsSelfAdjoint P)

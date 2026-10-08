@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteProductBasis
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -30,6 +28,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.hermiteMvNorm_add_two (i : Fin d) (a : Fin d →₀ ℕ) :

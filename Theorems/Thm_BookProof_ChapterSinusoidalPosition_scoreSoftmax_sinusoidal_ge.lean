@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSinusoidalPosition
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterSinusoidalPosition.scoreSoftmax_sinusoidal_ge {m : ℕ} {beta : ℝ} (hb : 0 ≤ beta) (w : Fin n → ℝ)

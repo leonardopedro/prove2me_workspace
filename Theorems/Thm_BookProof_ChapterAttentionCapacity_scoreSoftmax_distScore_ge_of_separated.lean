@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionCapacity
 
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -17,6 +15,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionCapacity.scoreSoftmax_distScore_ge_of_separated {k : Fin m → EuclideanSpace ℝ (Fin n)}

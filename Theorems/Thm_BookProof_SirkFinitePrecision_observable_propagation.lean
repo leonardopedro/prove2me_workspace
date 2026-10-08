@@ -4,10 +4,6 @@ import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 
 
-
-
-
-
 noncomputable section
 
 
@@ -16,6 +12,7 @@ open Finset
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]
+
 
 theorem BookProof.SirkFinitePrecision.observable_propagation {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
     (O : F →L[ℂ] F) (u w : F) :

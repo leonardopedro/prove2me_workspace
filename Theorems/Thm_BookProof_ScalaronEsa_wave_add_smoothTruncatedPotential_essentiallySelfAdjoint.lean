@@ -14,9 +14,6 @@ import Definitions.Def_ChapterWaveUnboundedPotential
 open BookProof.StrichartzWave
 open BookProof.ScalaronEsa
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -26,6 +23,9 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierSt
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 theorem BookProof.ScalaronEsa.wave_add_smoothTruncatedPotential_essentiallySelfAdjoint (n : ℕ)

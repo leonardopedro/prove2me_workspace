@@ -11,16 +11,16 @@ open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.DiagonalDGamma
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  {ι : Type*} (e : ι → D₂) (lam : ι → ℝ)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  {ι : Type*} (e : ι → D₂) (lam : ι → ℝ)
 
 theorem BookProof.DiagonalDGamma.dGamma_diagonal_essentiallySelfAdjointOn_fockCore
     (heig : ∀ i, A (e i) = (lam i : ℂ) • (e i : Hs.carrier))

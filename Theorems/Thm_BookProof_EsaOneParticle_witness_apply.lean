@@ -8,6 +8,13 @@ import Definitions.Def_ChapterTempleSeparationNecessary
 open BookProof.TempleSeparationNecessary
 open BookProof.EsaOneParticle
 
+
+
+open scoped TensorProduct ENNReal
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A₂ : D₂ →ₗ[ℂ] Hs.carrier)
   (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier) (hle : D ≤ D₂)
@@ -18,12 +25,5 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 variable {Hs : IPSpace}
-
-
-
-open scoped TensorProduct ENNReal
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-
-noncomputable section
 
 theorem BookProof.EsaOneParticle.witness_apply (k : ℤ) : (witness : ℤ → ℂ) k = witnessFun k := by sorry

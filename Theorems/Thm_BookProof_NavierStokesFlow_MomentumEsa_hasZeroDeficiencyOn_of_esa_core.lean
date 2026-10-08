@@ -10,12 +10,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.hasZeroDeficiencyOn_of_esa_core {c : ι → ℝ} (H : maxDom c →ₗ[ℂ] L2I ι)
     (Hc : lpFiniteModes ι →ₗ[ℂ] lpFiniteModes ι)

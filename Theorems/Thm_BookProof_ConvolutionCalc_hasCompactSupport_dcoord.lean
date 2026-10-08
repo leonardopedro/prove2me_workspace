@@ -7,14 +7,14 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.ConvolutionCalc
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ConvolutionCalc.hasCompactSupport_dcoord {ρ : Vd d → ℂ}

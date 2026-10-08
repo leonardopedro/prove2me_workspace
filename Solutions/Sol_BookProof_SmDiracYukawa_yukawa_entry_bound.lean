@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_isMixing_mul
+import Theorems.Thm_BookProof_SmOneParticle_unitary_entry_norm_le_one
 open BookProof.SmDiracYukawa
 
 
@@ -13,6 +14,7 @@ open BookProof.SmCar BookProof.FarisLavine
 variable {n : ℕ}
 
 noncomputable section
+open BookProof.SmOneParticle
 
 variable {n : ℕ}
 

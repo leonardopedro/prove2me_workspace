@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionCollision
 import Theorems.Thm_BookProof_ChapterAttentionCollision_effectiveSupport_uniform
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_scoreSoftmax_zero
 open BookProof.ChapterAttentionCollision
 
 

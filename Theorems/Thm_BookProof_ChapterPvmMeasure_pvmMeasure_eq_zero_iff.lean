@@ -3,16 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmMeasure
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable (P : Pvm X H)
-variable (P : Pvm X H) (ψ : H)
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+variable (P : Pvm X H)
+variable (P : Pvm X H) (ψ : H)
 
 theorem BookProof.ChapterPvmMeasure.pvmMeasure_eq_zero_iff {E : Set X} (hE : MeasurableSet E) :
     pvmMeasure P ψ E = 0 ↔ P.p E ψ = 0 := by sorry

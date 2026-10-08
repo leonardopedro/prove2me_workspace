@@ -10,8 +10,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -20,6 +18,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedHermiteCore.deriv_pgFunT_sec (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :

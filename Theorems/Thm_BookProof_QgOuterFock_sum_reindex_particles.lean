@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.sum_reindex_particles {n : ℕ} {α : Type*} [AddCommMonoid α] (F : Fin (n * 84) → α) :
     ∑ I : Fin (n * 84), F I = ∑ p : Fin n, ∑ j : Fin 84, F (pcoord p j) := by sorry

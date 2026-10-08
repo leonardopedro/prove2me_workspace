@@ -7,7 +7,6 @@ import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_le
 import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_monoR
 import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_smul
 import Theorems.Thm_BookProof_HermiteBandHigher_IsBandR_sum
-import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_add'
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_eq_mulXPoly
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_mul
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_smul
@@ -37,7 +36,7 @@ theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (i : Fin 3) (a : Fin
   refine IsBandR.sum _ _ fun k _ => ?_
   rw [mulOp_smul]
   refine IsBandR.smul _ ?_
-  rw [mulOp_add']
+  rw [mulOp_add_prime]
   refine IsBandR.add ?_ ?_
   · rw [mulOp_eq_mulXPoly]
     exact ((isBandR1_mulXPoly _).le (by norm_num)).monoR (by norm_num)

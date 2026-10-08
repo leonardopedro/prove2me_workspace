@@ -20,6 +20,5 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
-omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
 theorem solution (a c : ι → ℝ) (w : ι → V) (κ : ℝ) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (mixedSymbolFn a c w κ) := (contDiff_symbolFn c w κ).add (contDiff_foSymbolFn a w)

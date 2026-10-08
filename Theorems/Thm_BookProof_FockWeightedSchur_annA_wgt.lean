@@ -13,8 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-variable {w : ℕ → ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
@@ -22,6 +20,8 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {w : ℕ → ℝ}
 
 theorem BookProof.FockWeightedSchur.annA_wgt (j : ℕ) (u : FockAlg) :
     annA j (wgt w u) = wgt w (annA j u) + ((w j ^ 2 : ℝ) : ℂ) • annA j u := by sorry

@@ -352,9 +352,21 @@ theorem tensorSpan_eq_top : tensorSpan μ ν = ⊤ := by
     exact Submodule.add_mem _ hgm hhm
   · exact isClosed_tensorSpan
 
+/-- **Density form.**  Finite sums of products of one-variable functions are
+dense in `L²(μ ⊗ ν)`. -/
+theorem pureTensors_dense :
+    Dense ((Submodule.span ℂ (pureTensors μ ν)) : Set (Lp ℂ 2 (μ.prod ν))) := by
+  rw [Submodule.dense_iff_topologicalClosure_eq_top]
+  exact tensorSpan_eq_top
 
-
-
+/-- **Separation of variables.**  Every `L²` function of two variables is an
+`L²`-limit of finite sums of products of one-variable functions: for every
+`ε > 0` there is an element of the span of the pure tensors within `ε`. -/
+theorem exists_tensor_approx (v : Lp ℂ 2 (μ.prod ν)) {ε : ℝ} (hε : 0 < ε) :
+    ∃ w ∈ Submodule.span ℂ (pureTensors μ ν), ‖v - w‖ < ε := by
+  obtain ⟨w, hw, hlt⟩ := Metric.mem_closure_iff.mp
+    ((pureTensors_dense (μ := μ) (ν := ν)) v) ε hε
+  exact ⟨w, hw, by rwa [← dist_eq_norm]⟩
 
 /-! ## Product orthonormal families
 
@@ -369,7 +381,9 @@ section ProductBasis
 def tensorOf (u : Lp ℂ 2 μ) (v : Lp ℂ 2 ν) : Lp ℂ 2 (μ.prod ν) :=
   tensorLp (Lp.memLp u) (Lp.memLp v)
 
-
+theorem tensorOf_mem_pureTensors (u : Lp ℂ 2 μ) (v : Lp ℂ 2 ν) :
+    tensorOf u v ∈ pureTensors μ ν :=
+  ⟨_, _, Lp.memLp u, Lp.memLp v, rfl⟩
 
 /-- The inner product of two element-level pure tensors multiplies. -/
 theorem inner_tensorOf (u₁ u₂ : Lp ℂ 2 μ) (v₁ v₂ : Lp ℂ 2 ν) :
@@ -574,7 +588,29 @@ def tensorHilbertBasis (b : HilbertBasis ι ℂ (Lp ℂ 2 μ)) (c : HilbertBasis
 
 
 
-
+/-- **Parseval for the product basis.**  The squared `L²` norm of a function of two
+variables is the sum of the squared moduli of its two-variable Fourier
+coefficients. -/
+theorem hasSum_sq_norm_inner_tensorHilbertBasis
+    (b : HilbertBasis ι ℂ (Lp ℂ 2 μ)) (c : HilbertBasis κ ℂ (Lp ℂ 2 ν))
+    (F : Lp ℂ 2 (μ.prod ν)) :
+    HasSum (fun p : ι × κ => ‖(inner ℂ (tensorOf (b p.1) (c p.2)) F : ℂ)‖ ^ 2) (‖F‖ ^ 2) := by
+  have h := (tensorHilbertBasis b c).hasSum_inner_mul_inner F F
+  rw [← Complex.hasSum_ofReal]
+  have hcast : ∀ p : ι × κ,
+      ((‖(inner ℂ (tensorOf (b p.1) (c p.2)) F : ℂ)‖ ^ 2 : ℝ) : ℂ)
+        = (inner ℂ F ((tensorHilbertBasis b c) p) : ℂ)
+            * (inner ℂ ((tensorHilbertBasis b c) p) F : ℂ) := by
+    intro p
+    rw [coe_tensorHilbertBasis, ← inner_conj_symm (𝕜 := ℂ) (tensorOf (b p.1) (c p.2)) F,
+      RCLike.norm_conj]
+    push_cast
+    exact (RCLike.mul_conj (K := ℂ) (inner ℂ F (tensorOf (b p.1) (c p.2)))).symm
+  have h2 : ((‖F‖ ^ 2 : ℝ) : ℂ) = (inner ℂ F F : ℂ) := by
+    rw [inner_self_eq_norm_sq_to_K (𝕜 := ℂ)]
+    norm_cast
+  rw [h2]
+  simpa only [hcast] using h
 
 end ProductHilbertBasis
 

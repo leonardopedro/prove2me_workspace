@@ -24,14 +24,13 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-tCc_apply {g : ℝ → ℝ} (hg : IsTestFun g) (x : ℝ) :
-    ((testCc hg : 𝓢(ℝ, ℂ)) : ℝ → ℂ) x = ((g x : ℝ) : ℂ) := rfl
-
 theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) (z : ℂ)
     (u : Lp ℂ 2 (volume : Measure ℝ))
     (hu : ∀ v : ccDomain ℝ,
       (inner ℂ (wallHam V hV v) u : ℂ) = z * inner ℂ (v : Lp ℂ 2 _) u)
-    {g : ℝ → ℝ} (hg :=
+    {g : ℝ → ℝ} (hg : IsTestFun g) :
+    ∫ x, ((deriv (deriv g) x : ℝ) : ℂ) * u x
+      = ∫ x, ((g x : ℝ) : ℂ) * ((((V x : ℝ) : ℂ) - z) * u x) :=
    : IsTestFun g) :
       ∫ x, ((deriv (deriv g) x : ℝ) : ℂ) * u x
         = ∫ x, ((g x : ℝ) : ℂ) * ((((V x : ℝ) : ℂ) - z) * u x) := by

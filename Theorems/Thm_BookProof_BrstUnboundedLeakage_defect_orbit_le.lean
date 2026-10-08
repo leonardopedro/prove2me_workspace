@@ -4,12 +4,9 @@ import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
 import Definitions.Def_ChapterBrstTruncationLeakage
 import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_BrstUnboundedLeakage_flow_truncGen_mem_domain
 open BookProof.BrstLeakage
 open BookProof.BrstUnboundedLeakage
-
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
 
 
 open NormedSpace Filter Topology
@@ -18,6 +15,10 @@ open scoped InnerProductSpace
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
+variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
 
 theorem BookProof.BrstUnboundedLeakage.defect_orbit_le {x : H} (hx : x ∈ V) (s : ℝ) :
     ‖T.op ⟨flow (truncGen T V hV) s x, flow_truncGen_mem_domain T V hV s hx⟩

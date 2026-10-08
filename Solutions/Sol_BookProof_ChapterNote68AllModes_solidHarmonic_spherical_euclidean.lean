@@ -1,8 +1,8 @@
 -- Generated from ChapterNote68AllModes.lean — solution of BookProof.ChapterNote68AllModes.solidHarmonic_spherical_euclidean
 import Mathlib
 import Definitions.Def_ChapterNote68AllModes
-import Theorems.Thm_BookProof_ChapterNote68AllModes_norm_stdVec
 import Theorems.Thm_BookProof_ChapterNote68AllModes_inner_stdVec
+import Theorems.Thm_BookProof_ChapterNote68AllModes_norm_stdVec
 import Theorems.Thm_BookProof_ChapterSolidHarmonic_solidHarmonic_spherical
 open BookProof.ChapterNote68AllModes
 

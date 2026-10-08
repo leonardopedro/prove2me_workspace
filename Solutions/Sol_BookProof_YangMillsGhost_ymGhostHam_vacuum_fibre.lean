@@ -1,9 +1,9 @@
 -- Generated from ChapterYangMillsGhostSector.lean — solution of BookProof.YangMillsGhost.ymGhostHam_vacuum_fibre
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
-import Theorems.Thm_BookProof_YangMillsGhost_ghostEnergy_empty
 import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_apply
 import Theorems.Thm_BookProof_YangMillsGhost_ymGhostHam_fibre
+import Theorems.Thm_BookProof_YangMillsGhost_ghostEnergy_empty
 open BookProof.YangMillsGhost
 
 
@@ -13,6 +13,7 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
+open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
 variable {K : ℕ}

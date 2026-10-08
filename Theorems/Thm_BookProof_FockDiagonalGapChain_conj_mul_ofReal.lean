@@ -15,8 +15,6 @@ import Mathlib
 import Definitions.Def_ChapterFockDiagonalGapChain
 open BookProof.FockDiagonalGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -29,6 +27,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerk
 open BookProof.HermiteCore BookProof.ScalaronFockGapChain
 open Module
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.FockDiagonalGapChain.conj_mul_ofReal (z : ℂ) : (starRingEnd ℂ) z * z = ((‖z‖ ^ 2 : ℝ) : ℂ) := by sorry

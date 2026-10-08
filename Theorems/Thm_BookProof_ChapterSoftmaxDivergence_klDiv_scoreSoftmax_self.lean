@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxDivergence
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxDivergence.klDiv_scoreSoftmax_self (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

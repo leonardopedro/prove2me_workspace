@@ -1,8 +1,8 @@
 -- Generated from ChapterSchrodingerCutoffEsa.lean — solution of BookProof.SchrodingerCutoff.schrodingerOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterSchrodingerCutoffEsa
-import Theorems.Thm_BookProof_SchrodingerCutoff_schrodingerOp_apply
 import Theorems.Thm_BookProof_SchrodingerCutoff_integral_conj_secondDeriv_comm
+import Theorems.Thm_BookProof_SchrodingerCutoff_schrodingerOp_apply
 open BookProof.SchrodingerCutoff
 
 
@@ -11,8 +11,6 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-_combination (norm := module) hk0 - hm0
-
 theorem solution (V : ℝ → ℝ) (hV : Continuous V)
     (f g f' f'' g' g'' : ℝ → ℂ)
     (hf1 : ∀ x, HasDerivAt f (f' x) x) (hf2 : ∀ x, HasDerivAt f' (f'' x) x)
@@ -20,7 +18,7 @@ theorem solution (V : ℝ → ℝ) (hV : Continuous V)
     (hf''c : Continuous f'') (hg''c : Continuous g'')
     (hfs : HasCompactSupport f) (hgs : HasCompactSupport g) :
     (∫ x, (starRingEnd ℂ) (schrodingerOp V f x) * g x)
-      = ∫ x, (star :=
+      = ∫ x, (starRingEnd ℂ) (f x) * schrodingerOp V g x :=
   RingEnd ℂ) (f x) * schrodingerOp V g x := by
     have hfd : Differentiable ℝ f := fun x => (hf1 x).differentiableAt
     have hgd : Differentiable ℝ g := fun x => (hg1 x).differentiableAt

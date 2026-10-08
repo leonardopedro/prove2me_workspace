@@ -59,7 +59,10 @@ noncomputable section
 
 variable {n : ℕ}
 
-
+/-- The scalar `−1 ∈ ℝ ⊆ ℂ` as a polynomial coefficient is the polynomial `−1`. -/
+theorem C_neg_one_real (n : ℕ) :
+    (C (((-1 : ℝ) : ℂ)) : MvPolynomial (Fin (n * 12)) ℂ) = -1 := by
+  rw [show (((-1 : ℝ) : ℂ)) = -(1 : ℂ) by norm_num, C_neg, C_1]
 
 /-! ## 1. The reduced coordinates and the substitution `σ` -/
 
@@ -108,9 +111,15 @@ def lagElimHom (l : Fin 3 → ℝ) (n : ℕ) :
 @[simp] theorem lagLift_C (p : Fin n) (c : ℂ) : lagLift p (C c) = C c := by
   rw [lagLift, MvPolynomial.eval₂Hom_C]
 
+theorem lagElimHom_X (l : Fin 3 → ℝ) (n : ℕ) (s : Fin (n * 36)) :
+    lagElimHom l n (X s)
+      = lagLift (finProdFinEquiv.symm s).1 (lagElimCoord l (finProdFinEquiv.symm s).2) :=
+  MvPolynomial.eval₂Hom_X' _ _ s
 
-
-
+theorem lagElimHom_C (l : Fin 3 → ℝ) (n : ℕ) (c : ℂ) :
+    lagElimHom l n (C c : MvPolynomial (Fin (n * 36)) ℂ)
+      = (C c : MvPolynomial (Fin (n * 12)) ℂ) :=
+  MvPolynomial.eval₂Hom_C _ _ c
 
 /-! ## 2. The coordinate values of `σ` -/
 
@@ -179,45 +188,157 @@ def lagElimHom (l : Fin 3 → ℝ) (n : ℕ) :
   rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4, dif_neg h5, dif_neg h6,
     dif_neg h7]
 
+/-- **The deformation gradient becomes the rank-one matrix `ℓ ⊗ ξ`** — the source of the degeneracy
+proved in §4. -/
+theorem lagElimCoord_fIdx (l : Fin 3 → ℝ) (i j : Fin 3) :
+    lagElimCoord l (fIdx i j) = C (Complex.I * (((l j : ℝ)) : ℂ)) * X (xiIdx12 i) := by
+  have hi : i.val < 3 := i.isLt
+  have hj : j.val < 3 := j.isLt
+  have hv : (fIdx i j).val = 9 + 3 * i.val + j.val := rfl
+  have h1 : ¬ (fIdx i j).val < 3 := by omega
+  have h2 : ¬ (fIdx i j).val < 6 := by omega
+  have h3 : ¬ (fIdx i j).val < 9 := by omega
+  have h4 : (fIdx i j).val < 18 := by omega
+  have hsub : ((fIdx i j).val - 9) = 3 * i.val + j.val := by omega
+  have hmod : (3 * i.val + j.val) % 3 = j.val := by
+    rw [Nat.mul_add_mod, Nat.mod_eq_of_lt hj]
+  have hdiv : (3 * i.val + j.val) / 3 = i.val := by
+    rw [Nat.mul_add_div (by norm_num : 0 < 3), Nat.div_eq_of_lt hj, Nat.add_zero]
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_pos h4]
+  simp only [hsub, hmod, hdiv, Fin.eta]
 
+/-- **The velocity gradient becomes `i ℓ_j v_i`.** -/
+theorem lagElimCoord_vgIdx (l : Fin 3 → ℝ) (i j : Fin 3) :
+    lagElimCoord l (vgIdx i j) = C (Complex.I * (((l j : ℝ)) : ℂ)) * X (vIdx12 i) := by
+  have hi : i.val < 3 := i.isLt
+  have hj : j.val < 3 := j.isLt
+  have hv : (vgIdx i j).val = 18 + 3 * i.val + j.val := rfl
+  have h1 : ¬ (vgIdx i j).val < 3 := by omega
+  have h2 : ¬ (vgIdx i j).val < 6 := by omega
+  have h3 : ¬ (vgIdx i j).val < 9 := by omega
+  have h4 : ¬ (vgIdx i j).val < 18 := by omega
+  have h5 : (vgIdx i j).val < 27 := by omega
+  have hsub : ((vgIdx i j).val - 18) = 3 * i.val + j.val := by omega
+  have hmod : (3 * i.val + j.val) % 3 = j.val := by
+    rw [Nat.mul_add_mod, Nat.mod_eq_of_lt hj]
+  have hdiv : (3 * i.val + j.val) / 3 = i.val := by
+    rw [Nat.mul_add_div (by norm_num : 0 < 3), Nat.div_eq_of_lt hj, Nat.add_zero]
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4, dif_pos h5]
+  simp only [hsub, hmod, hdiv, Fin.eta]
 
-
-
-
+/-- **The viscous coordinate becomes `−|ℓ|² v_i`.** -/
+theorem lagElimCoord_sIdx (l : Fin 3 → ℝ) (i : Fin 3) :
+    lagElimCoord l (sIdx i)
+      = -C (((∑ j : Fin 3, (l j) ^ 2 : ℝ)) : ℂ) * X (vIdx12 i) := by
+  have hv : (sIdx i).val = 27 + i.val := rfl
+  have h1 : ¬ (sIdx i).val < 3 := by rw [hv]; omega
+  have h2 : ¬ (sIdx i).val < 6 := by rw [hv]; omega
+  have h3 : ¬ (sIdx i).val < 9 := by rw [hv]; omega
+  have h4 : ¬ (sIdx i).val < 18 := by rw [hv]; omega
+  have h5 : ¬ (sIdx i).val < 27 := by rw [hv]; omega
+  have h6 : (sIdx i).val < 30 := by rw [hv]; omega
+  have hlt3 : (sIdx i).val - 27 < 3 := by omega
+  rw [lagElimCoord, dif_neg h1, dif_neg h2, dif_neg h3, dif_neg h4, dif_neg h5, dif_pos h6]
+  have hx : (⟨(sIdx i).val - 27, hlt3⟩ : Fin 3) = i := by
+    apply Fin.ext
+    change (sIdx i).val - 27 = i.val
+    rw [hv]; omega
+  simp only [hx]
 
 /-! ## 3. The lifted substitution on the coordinates -/
 
+theorem lagElimHom_X_xiIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (X (ycoord p (xiIdx i))) = X (lRedIdx p (xiIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_xiIdx, lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_vIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (X (ycoord p (vIdx i))) = X (lRedIdx p (vIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_vIdx, lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_accIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (X (ycoord p (accIdx i))) = X (lRedIdx p (accIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_accIdx, lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_qIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (X (ycoord p (qIdx i))) = X (lRedIdx p (qIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_qIdx, lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_fIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i j : Fin 3) :
+    lagElimHom l n (X (ycoord p (fIdx i j)))
+      = C (Complex.I * (((l j : ℝ)) : ℂ)) * X (lRedIdx p (xiIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_fIdx, map_mul, lagLift_C,
+    lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_vgIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i j : Fin 3) :
+    lagElimHom l n (X (ycoord p (vgIdx i j)))
+      = C (Complex.I * (((l j : ℝ)) : ℂ)) * X (lRedIdx p (vIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_vgIdx, map_mul, lagLift_C,
+    lagLift_X, lRedIdx]
 
+theorem lagElimHom_X_sIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (X (ycoord p (sIdx i)))
+      = -C (((∑ j : Fin 3, (l j) ^ 2 : ℝ)) : ℂ) * X (lRedIdx p (vIdx12 i)) := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_sIdx, map_mul, map_neg,
+    lagLift_C, lagLift_X, lRedIdx]
 
-
-
-
-
-
-
-
-
+theorem lagElimHom_X_yIdx (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (j : Fin 3) :
+    lagElimHom l n (X (ycoord p (yIdx j))) = 0 := by
+  simp only [lagElimHom_X, ycoord, Equiv.symm_apply_apply, lagElimCoord_yIdx, map_zero]
 
 /-! ## 4. The degeneracy: rank one kills the cofactor and the determinant -/
 
+/-- **The `2 × 2` minors of a rank-one matrix vanish**: with `F_{rc} = b_c ζ_r`,
+`b_{c₁}ζ_{r₁}·b_{c₂}ζ_{r₂} − b_{c₂}ζ_{r₁}·b_{c₁}ζ_{r₂} = 0`. -/
+theorem rankOne_cof_zero (b ζ : Fin 3 → MvPolynomial (Fin (n * 12)) ℂ) (i j : Fin 3) :
+    (b (cyc j 1) * ζ (cyc i 1)) * (b (cyc j 2) * ζ (cyc i 2))
+      + (-1) * ((b (cyc j 2) * ζ (cyc i 1)) * (b (cyc j 1) * ζ (cyc i 2))) = 0 := by
+  ring
 
+/-- **The eliminated cofactor is zero.** -/
+theorem lagElimSubst_cofPoly (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i j : Fin 3) :
+    lagElimHom l n (cofPoly p i j) = 0 := by
+  have h := rankOne_cof_zero (n := n) (fun c => C (Complex.I * (((l c : ℝ)) : ℂ)))
+    (fun r => X (lRedIdx p (xiIdx12 r))) i j
+  simpa only [cofPoly, map_add, map_mul, lagElimHom_C, lagElimHom_X_fIdx,
+    C_neg_one_real n] using h
 
+/-- **The Piola pressure term is annihilated by the elimination** — the pressure coupling of the
+material momentum equation does not survive it. -/
+theorem lagElimSubst_piola (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (∑ j : Fin 3, cofPoly p j i * X (ycoord p (qIdx j))) = 0 := by
+  rw [map_sum]
+  refine Finset.sum_eq_zero fun j _ => ?_
+  rw [map_mul, lagElimSubst_cofPoly, zero_mul]
 
+/-- **The determinant of the rank-one deformation gradient vanishes.** -/
+theorem lagElimSubst_detPoly (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    lagElimHom l n (detPoly p) = 0 := by
+  rw [detPoly, map_sum]
+  refine Finset.sum_eq_zero fun j _ => ?_
+  rw [map_mul, lagElimSubst_cofPoly, mul_zero]
 
+/-- **The volume constraint collapses to the constant `−1`**: `σ(det F − 1) = −1`, a constraint with
+no field content. -/
+theorem lagElimSubst_volumePoly (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    lagElimHom l n (volumePoly p) = -1 := by
+  rw [volumePoly, map_add, lagElimSubst_detPoly, zero_add, lagElimHom_C, C_neg_one_real n]
 
+/-- Hence the eliminated volume square is the constant `1`: no Friedrichs square can be built from
+it, and it cannot be the source of the pressure. -/
+theorem lagElimSubst_volumePoly_sq (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    (lagElimHom l n (volumePoly p)) ^ 2 = 1 := by
+  rw [lagElimSubst_volumePoly]
+  ring
 
-
-
-
-
-
-
-
+/-- **The eliminated momentum equation**: with the Piola term gone, `σ(R_i) = a_i + |ℓ|² v_i` — the
+material acceleration plus the viscous term, and no pressure. -/
+theorem lagElimSubst_lagResPoly (l : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    lagElimHom l n (lagResPoly p i)
+      = X (lRedIdx p (accIdx12 i))
+        + C (((∑ j : Fin 3, (l j) ^ 2 : ℝ)) : ℂ) * X (lRedIdx p (vIdx12 i)) := by
+  simp only [lagResPoly, map_add, map_mul, lagElimHom_C, C_neg_one_real n,
+    lagElimHom_X_accIdx, lagElimHom_X_sIdx, lagElimSubst_piola, add_zero]
+  ring
 
 end
 

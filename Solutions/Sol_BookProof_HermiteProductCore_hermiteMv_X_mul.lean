@@ -31,4 +31,9 @@ theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :
     intro j hj; simp [hj]
   have hsub : ∀ j : Fin d, j ≠ i → (a - Finsupp.single i 1 : Fin d →₀ ℕ) j = a j := by
     intro j hj; simp [Finsupp.tsub_apply, hj]
-  have hai : (a + Finsupp.single i 1 : Fin d →₀ ℕ
+  have hai : (a + Finsupp.single i 1 : Fin d →₀ ℕ) i = a i + 1 := by simp
+  have hsi : (a - Finsupp.single i 1 : Fin d →₀ ℕ) i = a i - 1 := by simp [Finsupp.tsub_apply]
+  rw [hermiteMv_erase i a, hermiteMv_erase i (a + Finsupp.single i 1),
+    hermiteMv_erase i (a - Finsupp.single i 1), hrest _ hadd, hrest _ hsub, hai, hsi,
+    ← mul_assoc, hermiteFactor_X_mul i (a i)]
+  rw [add_mul, smul_mul_assoc]

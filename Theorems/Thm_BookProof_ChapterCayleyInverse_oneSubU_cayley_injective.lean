@@ -8,12 +8,6 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform
 open BookProof.ChapterCayleyInverse
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable (V : H ≃ₗᵢ[ℂ] H)
-variable (hinj : Function.Injective (oneSubU V))
-variable [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open scoped InnerProductSpace
 
@@ -21,5 +15,11 @@ open scoped InnerProductSpace
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+variable (V : H ≃ₗᵢ[ℂ] H)
+variable (hinj : Function.Injective (oneSubU V))
+variable [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.ChapterCayleyInverse.oneSubU_cayley_injective : Function.Injective (oneSubU (cayley T)) := by sorry

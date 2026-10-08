@@ -16,6 +16,6 @@ variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    finalProb H H psi0 0 ≠ coherentFinal H H psi0 0 :=
-  inal H H psi0 0 := by
-    rw [dslit_finalProb, (dslit_coherentFin
+    finalProb H H psi0 0 ≠ coherentFinal H H psi0 0 := by
+
+  rw [dslit_finalProb, (dslit_coherentFinal).1]; norm_num

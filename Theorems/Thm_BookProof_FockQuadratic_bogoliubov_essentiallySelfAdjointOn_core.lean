@@ -10,14 +10,11 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Theorems.Thm_BookProof_FockQuadratic_wsum_pairIdx
 open BookProof.ChapterA3n
 open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockQuadratic
-
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-variable {κ : Type*}
 
 
 open scoped ENNReal
@@ -28,6 +25,10 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
+variable {κ : Type*}
 
 theorem BookProof.FockQuadratic.bogoliubov_essentiallySelfAdjointOn_core (hω : ∀ i, 0 ≤ ω i) (m n : κ → ι) (g : κ → ℂ)
     (hsum : Summable fun k => ‖g k‖ * (ω (m k) + ω (n k) + 2)) :

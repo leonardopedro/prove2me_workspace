@@ -6,11 +6,10 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
-
 
 
 
@@ -20,10 +19,6 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 open scoped ENNReal
 
-= ((g : L2Nat) : ℕ → ℂ) n
-  rw [hfn]
-  field_simp
-  push_cast
-  ring
 
-theorem BookProof.FarisLavine.mulHamiltonian_essentiallySelfAdjoint (lam : ℕ → ℝ := by sorry
+theorem BookProof.FarisLavine.mulHamiltonian_essentiallySelfAdjoint (lam : ℕ → ℝ) :
+    EssentiallySelfAdjointOn (mulSymbolDomain lam) (mulHamiltonian lam) := by sorry

@@ -6,14 +6,14 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 theorem BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_of_intertwine (U : F ≃ₗᵢ[ℂ] F) (T T' : D →ₗ[ℂ] F)
     (hU : ∀ v : D, U (v : F) ∈ D)

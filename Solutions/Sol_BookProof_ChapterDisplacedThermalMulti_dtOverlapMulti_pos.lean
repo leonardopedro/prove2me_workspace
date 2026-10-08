@@ -1,6 +1,7 @@
 -- Generated from ChapterDisplacedThermalMulti.lean — solution of BookProof.ChapterDisplacedThermalMulti.dtOverlapMulti_pos
 import Mathlib
 import Definitions.Def_ChapterDisplacedThermalMulti
+import Theorems.Thm_BookProof_ChapterDisplacedThermalOverlap_dtOverlap_pos
 open BookProof.ChapterDisplacedThermalMulti
 
 

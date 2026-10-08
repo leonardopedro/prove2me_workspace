@@ -9,9 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -20,5 +17,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.conj_mul_self (z : ℂ) : (starRingEnd ℂ) z * z = ((‖z‖ ^ 2 : ℝ) : ℂ) := by sorry

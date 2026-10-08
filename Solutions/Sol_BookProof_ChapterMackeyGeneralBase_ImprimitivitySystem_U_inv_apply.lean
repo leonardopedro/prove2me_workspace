@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 open BookProof.ChapterMackeyGeneralBase
+open BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem
 
 
 

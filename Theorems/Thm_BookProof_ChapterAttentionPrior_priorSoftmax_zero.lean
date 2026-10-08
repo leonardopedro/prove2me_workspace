@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionPrior
 open BookProof.ChapterAttentionPrior
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionPrior.priorSoftmax_zero (w : Fin m → ℝ) (s : Fin m → ℝ) (j : Fin m) :

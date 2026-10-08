@@ -3,11 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 open BookProof.ChapterMeasureAtomicDiffuse
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α] (mu : Measure α)
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -15,6 +10,11 @@ open MeasureTheory Complex
 
 
 
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α] (mu : Measure α)
+
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterMeasureAtomicDiffuse.abelian_multiplication_model_atomic_diffuse
     (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) :

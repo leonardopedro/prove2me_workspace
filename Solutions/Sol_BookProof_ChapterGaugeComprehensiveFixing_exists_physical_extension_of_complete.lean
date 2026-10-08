@@ -1,6 +1,7 @@
 -- Generated from ChapterGaugeComprehensiveFixing.lean — solution of BookProof.ChapterGaugeComprehensiveFixing.exists_physical_extension_of_complete
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
+import Theorems.Thm_BookProof_ChapterGaugeIncompleteFixing_exists_physical_extension
 open BookProof.ChapterGaugeComprehensiveFixing
 
 

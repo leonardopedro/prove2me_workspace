@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterG2
 open BookProof.ChapterG2
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory ProbabilityTheory
 open scoped ProbabilityTheory
+
+variable {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.ChapterG2.no_translation_invariant_probabilityMeasure {G : Type*} [Group G]
     [Countable G] [Infinite G] [MeasurableSpace G] [MeasurableSingletonClass G] :

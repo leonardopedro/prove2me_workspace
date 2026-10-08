@@ -7,8 +7,6 @@ open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentGeometry
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap BookProof.ChapterSoftmaxBorn
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentGeometry.bornWeight_le_iff_dist_le (q : EuclideanSpace ℝ (Fin n))

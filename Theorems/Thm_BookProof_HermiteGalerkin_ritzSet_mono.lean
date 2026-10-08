@@ -7,13 +7,13 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HermiteGalerkin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 theorem BookProof.HermiteGalerkin.ritzSet_mono (H : D →ₗ[ℂ] F) {V W : Submodule ℂ F} (hVW : V ≤ W) :
     ritzSet H V ⊆ ritzSet H W := by sorry

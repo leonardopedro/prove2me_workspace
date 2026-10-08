@@ -14,8 +14,6 @@ open BookProof.FockSecondQuantization
 open BookProof.YangMillsFriedrichs
 open BookProof.QgCouplingDGammaSum
 
-variable {ι : Type*}
-
 
 
 open BookProof.FockSecondQuantization
@@ -23,6 +21,8 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.QgCouplingDGammaSum.comparison_friedrichs {s : Finset ι} {cols : ι → ℕ → (ℕ →₀ ℂ)}

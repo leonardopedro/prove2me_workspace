@@ -6,15 +6,15 @@ open BookProof.ChapterDoubleSlit
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-variable {R : Sl2Rep V}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
+variable {R : Sl2Rep V}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.H_pow_F {w : V} {lam : ℂ} (h : R.H w = lam • w) (k : ℕ) :
     R.H ((R.F ^ k) w) = (lam - 2 * k) • (R.F ^ k) w := by sorry

@@ -9,11 +9,11 @@ open BookProof.ChapterDutchBook
 open BookProof.ChapterIrreversible
 open BookProof.ChapterMaxEntropy
 
-variable {α : Type*} [Fintype α]
-
 
 open Real BigOperators Finset
 
+
+variable {α : Type*} [Fintype α]
 
 
 theorem BookProof.ChapterMaxEntropy.entropy_le_entropy_uniform [Nonempty α] {p : α → ℝ} (hp : IsProb p) :

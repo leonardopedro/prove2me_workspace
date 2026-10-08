@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterTrajectory
 
-variable {n : ℕ}
-
 
 open scoped BigOperators Matrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterTrajectory.jointProb_sum_final_eq_midProb (U V : Matrix (Fin n) (Fin n) ℂ)

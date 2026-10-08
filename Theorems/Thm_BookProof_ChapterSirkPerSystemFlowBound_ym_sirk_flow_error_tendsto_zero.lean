@@ -35,10 +35,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.ChapterSirkPerSystemFlowBound
 
-variable {E G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-
 
 noncomputable section
 
@@ -56,6 +52,10 @@ open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.NSHashimoto
 open BookProof.NavierStokesFlow.DiffHashimoto BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow.LagrangianEsa BookProof.NavierStokesFlow.LagrangianKatoRellich
+
+variable {E G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 theorem BookProof.ChapterSirkPerSystemFlowBound.ym_sirk_flow_error_tendsto_zero (e : ℕ ≃ (Fin 99 →₀ ℕ))

@@ -7,4 +7,4 @@ open BookProof.ChapterPauliLorentz
 open Matrix
 open scoped BigOperators
 
-theorem BookProof.ChapterPauliLorentz.σ3_sq : σ3 * σ3 = 1 := by sorry
+theorem BookProof.ChapterPauliLorentz.sigma3_sq : σ3 * σ3 = 1 := by sorry

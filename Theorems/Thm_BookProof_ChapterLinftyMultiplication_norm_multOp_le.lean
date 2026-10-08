@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 noncomputable section
 
 open MeasureTheory ENNReal Complex
 
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 theorem BookProof.ChapterLinftyMultiplication.norm_multOp_le (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) :

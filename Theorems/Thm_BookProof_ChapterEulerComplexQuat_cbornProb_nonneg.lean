@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEulerComplexQuat
 open BookProof.ChapterEulerComplexQuat
 
-variable {n : ℕ}
-
 
 open scoped Quaternion BigOperators
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterEulerComplexQuat.cbornProb_nonneg (v : Fin n → ℂ) (k : Fin n) : 0 ≤ cbornProb v k := by sorry

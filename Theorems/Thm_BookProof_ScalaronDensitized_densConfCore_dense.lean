@@ -13,8 +13,6 @@ import Definitions.Def_ChapterQuantumGravityHalfDensity
 open BookProof.QuantumGravityHalfDensity
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-
 
 
 open MeasureTheory Set Filter Topology
@@ -25,6 +23,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.densConfCore_dense :
     Dense ((densConfCore M alpha : Submodule ℂ (Lp ℂ 2 qgSrcMeasure)) :

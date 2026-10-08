@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.fermiEnergy_eq_sum (m : Fin n → ℝ) (ψ : FermiFock n) :

@@ -9,6 +9,7 @@ noncomputable section
 
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+open ContinuousLinearMap
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {E F G : Type*}

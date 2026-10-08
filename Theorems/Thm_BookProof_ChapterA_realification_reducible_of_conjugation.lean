@@ -7,13 +7,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 attribute [local instance] InnerProductSpace.rclikeToReal
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.realification_reducible_of_conjugation [Nontrivial V] (M : System ℂ V)

@@ -16,8 +16,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {κ : Type*}
 
 set_option maxHeartbeats 1000000 in
-: Fin 2) : E2 →ₗ[ℂ] E2 :=
-  LinearMap.smulRight (EuclideanSpace.projₗ (𝕜 := ℂ) k) (EuclideanSp :=
+noncomputable def vEx : E2 :=
   ace.single k (1 : ℂ))
   
   theorem norm_hEx (k : Fin 2) (x : E2) : ‖hEx k x‖ = ‖x k‖ :=

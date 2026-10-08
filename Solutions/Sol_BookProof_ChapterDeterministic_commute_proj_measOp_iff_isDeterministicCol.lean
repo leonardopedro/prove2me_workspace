@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterDeterministic
 import Theorems.Thm_BookProof_ChapterDeterministic_proj_mul_measOp_apply
 import Theorems.Thm_BookProof_ChapterDeterministic_measOp_mul_proj_apply
+import Theorems.Thm_BookProof_ChapterTimeTranslation_measOp_apply
 open BookProof.ChapterDeterministic
 
 

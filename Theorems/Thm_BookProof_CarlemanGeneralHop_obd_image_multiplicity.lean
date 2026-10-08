@@ -5,9 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 open BookProof.CarlemanGeneralHop
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-
 
 
 open Finset
@@ -16,6 +13,9 @@ open BookProof.CarlemanTwoStep
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ}
 
 theorem BookProof.CarlemanGeneralHop.obd_image_multiplicity (p m : Fin d →₀ ℕ) (hp : ∀ k, p k ≤ 2) (y : Fin d →₀ ℕ)
     (M : ℕ) :

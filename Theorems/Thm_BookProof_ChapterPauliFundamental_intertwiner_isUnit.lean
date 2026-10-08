@@ -6,13 +6,13 @@ import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 open BookProof.ChapterPauliFundamental
 
-variable {A : Fin 4 → M4}
-
 
 open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+
+variable {A : Fin 4 → M4}
 
 theorem BookProof.ChapterPauliFundamental.intertwiner_isUnit {S : M4} (hS0 : S ≠ 0) (hSint : ∀ μ, A μ * S = S * mgamma μ) :
     IsUnit S.det := by sorry

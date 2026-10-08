@@ -5,12 +5,12 @@ import Definitions.Def_ChapterYangMillsFieldStrength
 open BookProof.YangMillsFieldStrength
 open BookProof.FreeEMField
 
-variable {R : Type*} [Ring R]
-
 
 
 open BookProof.YangMillsFieldStrength
 
+
+variable {R : Type*} [Ring R]
 
 
 theorem BookProof.FreeEMField.fieldStrengthMul_eq_emFieldStrength_of_commute

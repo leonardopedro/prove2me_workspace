@@ -7,9 +7,6 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.BrstUnboundedLeakage
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open NormedSpace Filter Topology
 open scoped InnerProductSpace
@@ -17,6 +14,9 @@ open scoped InnerProductSpace
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.BrstUnboundedLeakage.norm_omega_stoneU_eq {Om : H →L[ℂ] H}
     (hcomm : ∀ (s : ℝ) (y : H), Om (T.stoneU s y) = T.stoneU s (Om y)) (t : ℝ) (x : H) :

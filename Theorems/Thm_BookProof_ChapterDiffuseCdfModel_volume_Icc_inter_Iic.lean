@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterDiffuseCdfModel
 open BookProof.ChapterDiffuseCdfModel
 
-variable (mu : Measure ℝ)
-
 
 noncomputable section
 
 open MeasureTheory ProbabilityTheory Filter
 
+
+variable (mu : Measure ℝ)
 
 
 theorem BookProof.ChapterDiffuseCdfModel.volume_Icc_inter_Iic {t : ℝ} (ht1 : t ≤ 1) :

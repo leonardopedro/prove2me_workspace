@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.annih_occ_single : (annih (0 : Fin 2) (occ {0})) ∅ = 1 := by sorry

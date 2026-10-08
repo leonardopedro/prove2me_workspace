@@ -7,13 +7,13 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.bookCCR_poly (μ ν : Fin 4) (a b : Fin N) :
     AfieldPoly μ a * momPoly ν b - momPoly ν b * AfieldPoly μ a

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FullEsa
 
 
 

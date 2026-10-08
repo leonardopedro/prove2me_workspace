@@ -5,15 +5,15 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine
 
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFriedrichs.friedrichs_hypothesis_satisfiable (H : (⊤ : Submodule ℂ F) →ₗ[ℂ] F)
     (hsym : SymmetricOn (⊤ : Submodule ℂ F) H)

@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSpectralGapStability
 open BookProof.SpectralGapStability
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
 
 open scoped InnerProductSpace
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.SpectralGapStability.gapAt_perturb {A B : F →L[ℂ] F} {lam d eps : ℝ}

@@ -13,10 +13,6 @@ import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -27,5 +23,9 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgTruncationResolvent.secHam_esa_core : EssentiallySelfAdjointOn (secCore (ι := by sorry

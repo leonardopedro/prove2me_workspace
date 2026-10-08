@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldConstraint
 open BookProof.FreeFieldConstraint
 
+
+
 variable {R : Type*} [Ring R]
-
-
 
 
 theorem BookProof.FreeFieldConstraint.constraint_preserved_under_bracket (D H A : R)

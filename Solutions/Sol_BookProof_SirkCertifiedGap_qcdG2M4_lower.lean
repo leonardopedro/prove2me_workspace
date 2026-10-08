@@ -17,10 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDim
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 set_option maxHeartbeats 1000000 in
-gap := 1.9875
-  width := 0.0555
-  width_nonneg := by norm_num
-
-/-- The certified lower bound of the `g = 2`, `m = 4` c :=
+theorem solution : 0 < qcdG2M4.lower :=
   ertificate is `1.932`. -/
   theorem qc

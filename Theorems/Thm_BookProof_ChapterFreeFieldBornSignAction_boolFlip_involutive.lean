@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignAction
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSignGauge
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignAction.boolFlip_involutive (b : Fin n → Bool) (x : EuclideanSpace ℝ (Fin n)) :

@@ -1,6 +1,7 @@
 -- Generated from ChapterLorentzRealRepDirect.lean — solution of BookProof.ChapterLorentzRealRepDirect.WFam_conj_invariant
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
+import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_WTwo_invariant
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_W10_invariant
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_WHalf_invariant
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_WPs_invariant
@@ -13,6 +14,7 @@ open Matrix Module
 
 open BookProof.ChapterLorentzRealRep BookProof.ChapterLorentzRealRepSum
 open BookProof.ChapterLorentzRealRepFull
+open BookProof.ChapterA3 BookProof.ChapterPinOmega
 
 set_option maxHeartbeats 1000000 in
 theorem solution (S : Matrix (Fin 4) (Fin 4) ℤ) (hS : S ∈ Omega) (i : Fin 4) :

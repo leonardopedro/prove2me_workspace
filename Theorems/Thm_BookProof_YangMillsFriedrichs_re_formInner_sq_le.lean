@@ -5,13 +5,13 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.YangMillsFriedrichs
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine
 
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 theorem BookProof.YangMillsFriedrichs.re_formInner_sq_le {H : D →ₗ[ℂ] F} (hsym : SymmetricOn D H)

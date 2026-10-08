@@ -10,14 +10,14 @@ open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
 
-variable (Hs : IPSpace) (c : ℝ)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (c : ℝ)
 
 
 theorem BookProof.ScalarDGamma.dGamma_scalar_essentiallySelfAdjointOn_fockCore {D : Submodule ℂ Hs.carrier}

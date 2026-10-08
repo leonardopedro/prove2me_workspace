@@ -8,12 +8,12 @@ open BookProof.BRSTNilpotent
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.smGhostCAR (m : ℕ) : GhostCAR (ghostCre m) (ghostAnn m) := by sorry

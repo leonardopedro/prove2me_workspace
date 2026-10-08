@@ -18,9 +18,6 @@ open BookProof.ScalaronEsa
 open BookProof.StrichartzWave
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.kinCc_apply (f : ccSchwartz (Vd d)) :
     kinCc d (ccEquiv (Vd d) f)

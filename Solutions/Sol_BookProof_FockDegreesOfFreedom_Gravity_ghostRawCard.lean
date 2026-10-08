@@ -10,5 +10,5 @@ open BookProof.FockDegreesOfFreedom.Gravity
 open Fintype
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Fintype.card GhostRaw = 19 + 1 := by
+theorem solution : Fintype.card GhostRaw = 3 + 1 := by
  simp

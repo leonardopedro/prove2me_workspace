@@ -1,7 +1,7 @@
 -- Generated from ChapterWignerSymmetry.lean — solution of BookProof.ChapterWignerSymmetry.modulus_add
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetry
-import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_pair'
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_pair_prime
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_S_zero
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
 open BookProof.ChapterWignerSymmetry
@@ -33,7 +33,7 @@ theorem solution (hS : WignerCoord S o) {i : ι} (hi : i ≠ o) (v : ι → ℂ)
     intro k h1 h2; simp [hu, pairCoord, h1, h2]
   have hSu : ∀ k, k ≠ o → k ≠ i → S u k = 0 := fun k h1 h2 => S_zero hS (huk k h1 h2)
   have h := hS.inner_norm v u
-  rw [sum_pair' hi hSu, sum_pair' hi huk] at h
+  rw [sum_pair_prime hi hSu, sum_pair_prime hi huk] at h
   rw [hS.normalized i hi] at h
   have hnorm : ‖S u i‖ = 1 := by rw [hS.coord_norm u i, hui]; simp
   rw [huo, hui] at h

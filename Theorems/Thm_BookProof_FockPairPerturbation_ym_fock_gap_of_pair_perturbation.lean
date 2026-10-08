@@ -16,9 +16,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.FockPairPerturbation
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
 
 noncomputable section
 
@@ -26,6 +23,9 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.FockPairPerturbation.ym_fock_gap_of_pair_perturbation {mu : ℝ} (hmu : 0 < mu)
     (hgap : ∀ x : finiteModeDomain (coreBasis e),

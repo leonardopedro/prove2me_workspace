@@ -17,9 +17,6 @@ open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.QgManifoldModeInstance
 
-variable {ι : Type*}
-variable (S : VielbeinSpectrum ι)
-
 
 
 open Filter Topology
@@ -31,6 +28,9 @@ open BookProof.QgTimeStepping
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable (S : VielbeinSpectrum ι)
 
 theorem BookProof.QgManifoldModeInstance.starobinsky_qgManifold_fullyDiscrete_convergence (M alpha : ℝ) (halpha : 0 < alpha)
     (S : VielbeinSpectrum ι) (g : ℝ) :

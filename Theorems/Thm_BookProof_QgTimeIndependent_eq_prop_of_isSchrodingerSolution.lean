@@ -11,14 +11,14 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.QgTimeIndependent
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.QgTimeIndependent.eq_prop_of_isSchrodingerSolution (T : UnboundedSelfAdjoint E) {y : ℝ → E}

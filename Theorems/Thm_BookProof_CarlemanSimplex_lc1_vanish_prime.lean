@@ -14,5 +14,5 @@ open Finset
 noncomputable section
 
 
-theorem BookProof.CarlemanSimplex.lc1_vanish' (i : Fin d) (a : Fin d →₀ ℕ) (h : ¬ Finsupp.single i 1 ≤ a) :
+theorem BookProof.CarlemanSimplex.lc1_vanish_prime (i : Fin d) (a : Fin d →₀ ℕ) (h : ¬ Finsupp.single i 1 ≤ a) :
     lc1 a i = 0 := by sorry

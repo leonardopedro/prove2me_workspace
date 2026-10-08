@@ -21,8 +21,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.spVisc_symmetricOn (Φ : CoreRep 6 D) (nu : ℝ) (k : Fin 3 → ℝ) :
     SymmetricOn D (spVisc Φ nu k) := by sorry

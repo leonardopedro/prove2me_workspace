@@ -9,11 +9,6 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 open BookProof.ChapterH9
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-
 
 noncomputable section
 
@@ -22,6 +17,11 @@ open BookProof.ChapterH1 BookProof.ChapterH4 BookProof.ChapterH5 BookProof.Chapt
 open BookProof.ChapterH8
 open ContinuousLinearMap
 
+
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 theorem BookProof.ChapterH9.norm_compress_mono (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)

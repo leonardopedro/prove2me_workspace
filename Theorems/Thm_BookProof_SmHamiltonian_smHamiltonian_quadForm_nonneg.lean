@@ -12,8 +12,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.smHamiltonian_quadForm_nonneg (P : SmParams) (x : polyGaussCore (d := 163)) :
     0 ≤ quadForm (smHamiltonian P) x := by sorry

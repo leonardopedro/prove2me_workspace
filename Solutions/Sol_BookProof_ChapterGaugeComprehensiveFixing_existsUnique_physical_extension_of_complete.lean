@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_exists_physical_extension_of_complete
+import Theorems.Thm_BookProof_ChapterGaugeIncompleteFixing_physical_ext_of_comprehensive
 open BookProof.ChapterGaugeComprehensiveFixing
 
 
@@ -20,5 +21,5 @@ theorem solution
 
   obtain ⟨f, hf, hfS⟩ := exists_physical_extension_of_complete hcomp hcompl h
   refine ⟨f, ⟨hf, hfS⟩, ?_⟩
-  rintro f' ⟨hf', hf'S⟩
-  exact physical_ext_of_comprehensive G hcomp hf' hf (fun s hs => by rw [hf'S s hs, hfS s hs])
+  rintro f' ⟨hf_prime, hf'S⟩
+  exact physical_ext_of_comprehensive G hcomp hf_prime hf (fun s hs => by rw [hf'S s hs, hfS s hs])

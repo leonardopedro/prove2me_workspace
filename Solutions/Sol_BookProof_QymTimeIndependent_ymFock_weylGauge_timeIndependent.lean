@@ -39,8 +39,9 @@ theorem solution :
           (∀ (t s : ℝ) (x : Fock), ‖prop T t s x‖ = ‖x‖) ∧
           (∀ (t s r : ℝ) (x : Fock), prop T t s (prop T s r x) = prop T t r x) ∧
           (∀ t s u : ℝ, prop T (t + u) (s + u) = prop T t s) ∧
-          (∀ y : ℝ → Fock, IsSchrodingerSolution T y → ∀ t s : ℝ, y t = prop T t s (y s)) :=
-        (∀ t s : ℝ, prop T t s = T.stoneU (t - s)) ∧
-            (∀ (t s : ℝ) (x : Fock), ‖prop T t s x‖ = ‖x‖) ∧
-            (∀ (t s r : ℝ) (x : Fock), prop T t s (prop T s r x) = prop T t r x) ∧
-            (∀ t s u : ℝ, prop T (t + u)
+          (∀ y : ℝ → Fock, IsSchrodingerSolution T y → ∀ t s : ℝ, y t = prop T t s (y s)) := by
+
+  refine ⟨fun x => ymHamiltonian_quadForm (coreRepBasis e) fabc x, ?_⟩
+  obtain ⟨Dom, A, hA⟩ := ym_fock_friedrichs_extension e fabc
+  exact timeIndependent_of_selfAdjointExtension finiteOccupation_dense
+    (isSelfAdjointExtension_of_positive hA)

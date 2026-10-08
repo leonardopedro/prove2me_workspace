@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxOrder
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxOrder.scoreSoftmax_denom_pos (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterFarisLavine
 import Mathlib
 
 
@@ -58,7 +61,8 @@ extension. -/
 noncomputable def topRestrict (A : F →L[ℂ] F) : (⊤ : Submodule ℂ F) →ₗ[ℂ] F :=
   A.toLinearMap.comp (⊤ : Submodule ℂ F).subtype
 
-
+@[simp] theorem topRestrict_apply (A : F →L[ℂ] F) (x : (⊤ : Submodule ℂ F)) :
+    topRestrict A x = A (x : F) := rfl
 
 
 
@@ -107,4 +111,8 @@ section Weyl
 
 open BookProof.ChapterH5 BookProof.ChapterH9
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F⟩
+
+end Weyl
+
+end BookProof.YangMillsFriedrichsLimit

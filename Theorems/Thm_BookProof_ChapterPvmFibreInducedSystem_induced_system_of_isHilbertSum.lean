@@ -12,9 +12,6 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmFibreInducedSystem
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -24,6 +21,9 @@ open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterPvmInducedSystem
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterL2FibreSum
 open BookProof.ChapterHilbertSumIntertwine
+
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterPvmFibreInducedSystem.induced_system_of_isHilbertSum {ι : Type*} [Countable ι]

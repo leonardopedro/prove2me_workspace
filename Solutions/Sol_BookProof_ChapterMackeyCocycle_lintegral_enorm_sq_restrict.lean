@@ -1,6 +1,7 @@
 -- Generated from ChapterMackeyCocycle.lean — solution of BookProof.ChapterMackeyCocycle.lintegral_enorm_sq_restrict
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
 open BookProof.ChapterMackeyCocycle
 
 

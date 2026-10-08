@@ -1,5 +1,4 @@
 -- Generated from ChapterFarisLavine.lean — theorem BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesDeficiency
@@ -10,14 +9,12 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 
-
-
-open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
-  BookProof.NavierStokesFlow.JacobiDeficiency in
 theorem BookProof.FarisLavine.not_farisLavine_criterion_of_relative_bound :
     ¬ (∀ (D' : Submodule ℂ L2N) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),
         Dense (D' : Set L2N) →

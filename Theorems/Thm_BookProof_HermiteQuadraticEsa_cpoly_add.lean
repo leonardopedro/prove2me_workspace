@@ -13,8 +13,6 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.cpoly_add (p q : MvPolynomial (Fin d) ℂ) : cpoly (p + q) = cpoly p + cpoly q := by sorry

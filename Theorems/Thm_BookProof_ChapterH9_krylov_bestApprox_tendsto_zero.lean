@@ -9,13 +9,6 @@ import Definitions.Def_ChapterH5
 open BookProof.ChapterH5
 open BookProof.ChapterH9
 
-variable {E F G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 noncomputable section
 
@@ -25,6 +18,13 @@ open BookProof.ChapterH8
 open ContinuousLinearMap
 
 
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.ChapterH9.krylov_bestApprox_tendsto_zero (H : E →ₗ[ℂ] E) (v u : E)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan H v n : Submodule ℂ E) : Set E)) :

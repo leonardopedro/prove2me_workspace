@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 
-variable {d : ℕ}
-
 
 
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBand.degree_add_single (α : Fin d →₀ ℕ) (i : Fin d) :

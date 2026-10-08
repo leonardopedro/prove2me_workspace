@@ -1,7 +1,7 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.bumpM_nonneg
 import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
-import Theorems.Thm_BookProof_BddBelowWallEsa_abs_bumpG'_le
+import Theorems.Thm_BookProof_BddBelowWallEsa_abs_bumpG_prime_le
 open BookProof.BddBelowWallEsa
 
 

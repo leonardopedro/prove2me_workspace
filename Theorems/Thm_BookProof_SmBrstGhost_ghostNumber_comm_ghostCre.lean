@@ -11,13 +11,13 @@ open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.ghostNumber_comm_ghostCre (m : ℕ) (a : Fin 12) :
     ghostNumber m * ghostCre m a - ghostCre m a * ghostNumber m = ghostCre m a := by sorry

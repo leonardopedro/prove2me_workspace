@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterLocalityConstraintNull
 open BookProof.LocalityConstraint
 
-variable {α : Type*} [MeasurableSpace α]
-
 
 
 open MeasureTheory ProbabilityTheory
 open scoped NNReal
+
+variable {α : Type*} [MeasurableSpace α]
 
 
 theorem BookProof.LocalityConstraint.graphSet_gaussian_null (m₁ m₂ : ℝ) (v₁ : ℝ≥0) (v₂ : ℝ≥0) (hv₂ : v₂ ≠ 0)

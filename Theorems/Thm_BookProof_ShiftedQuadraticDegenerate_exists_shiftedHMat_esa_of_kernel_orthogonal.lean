@@ -21,8 +21,6 @@ open BookProof.ShiftedHermiteCore
 open BookProof.StoneBridge
 open BookProof.ShiftedQuadraticDegenerate
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -37,6 +35,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticDegenerate.exists_shiftedHMat_esa_of_kernel_orthogonal {A : Matrix (Fin d) (Fin d) ℝ}

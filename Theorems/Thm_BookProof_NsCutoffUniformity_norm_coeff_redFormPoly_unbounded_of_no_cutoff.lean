@@ -4,15 +4,15 @@ import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
 open BookProof.NsCutoffUniformity
 
-variable {n : ℕ}
-variable {ι : Type*}
-
 
 
 open MvPolynomial BookProof.NsFullEuler
 
 noncomputable section
 
+variable {n : ℕ}
+
+variable {ι : Type*}
 
 theorem BookProof.NsCutoffUniformity.norm_coeff_redFormPoly_unbounded_of_no_cutoff (nu : ℝ) (C₀ : ℝ) :
     ∃ (k : Fin 3 → ℝ) (m : Fin (1 * 6) →₀ ℕ) (p : Fin 1) (r : Fin 7),

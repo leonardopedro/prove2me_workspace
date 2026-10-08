@@ -8,14 +8,14 @@ import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ClosureUniqueness
 open BookProof.ResolventCorrespondence
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
-
 
 
 open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
 
 theorem BookProof.ResolventCorrespondence.adjPairs_relOfCLM (hR : IsSelfAdjoint R) : adjPairs (relOfCLM R) = relOfCLM R := by sorry

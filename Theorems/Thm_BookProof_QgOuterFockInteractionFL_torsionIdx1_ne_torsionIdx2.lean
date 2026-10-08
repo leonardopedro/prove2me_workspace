@@ -17,8 +17,6 @@ import Definitions.Def_ChapterQg3DGaugeEsa
 open BookProof.Qg3DGaugeEsa
 open BookProof.QgOuterFockInteractionFL
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.torsionIdx1_ne_torsionIdx2 {m : Fin 64} (hm : torsionMu m ≠ torsionNu m) :
     torsionIdx1 m ≠ torsionIdx2 m := by sorry

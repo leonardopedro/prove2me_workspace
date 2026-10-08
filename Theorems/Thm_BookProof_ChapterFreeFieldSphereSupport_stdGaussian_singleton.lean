@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldSphereSupport
 open BookProof.ChapterFreeFieldSphereSupport
 
-variable {n : ℕ}
-
 
 open MeasureTheory ProbabilityTheory
 open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldSphereSupport.stdGaussian_singleton (hn : 0 < n) (x : EuclideanSpace ℝ (Fin n)) :

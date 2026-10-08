@@ -10,12 +10,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.nsComparison_selfAdjoint_maxDom (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     EssentiallySelfAdjointOn (maxDom (nsSymbol d p q)) (diagMax (nsSymbol d p q)) := by sorry

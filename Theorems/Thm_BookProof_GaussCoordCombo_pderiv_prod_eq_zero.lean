@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.GaussCoordCombo
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.GaussCoordCombo.pderiv_prod_eq_zero {S : Finset (Fin d)} {W : Fin d → MvPolynomial (Fin d) ℂ}

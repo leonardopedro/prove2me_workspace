@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.QgOuterFockInteractionFL
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -30,5 +28,7 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.nextPart_ne {n : ℕ} (hn : 2 ≤ n) (p : Fin n) (hp : p.val = 0) : nextPart p ≠ p := by sorry

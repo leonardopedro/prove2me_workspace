@@ -19,10 +19,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-) = 0 := by
-  have h := gaussInt_smul (0 : ℂ) (0 : MvPolynomial (Fin d) ℂ)
-  simpa using h
-
-theorem solution : BookProof.Y :=
+theorem solution : BookProof.YangMillsHermite.PolySym
+    (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) :=
   angMillsHermite.PolySym
       (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPo

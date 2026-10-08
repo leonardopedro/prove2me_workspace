@@ -4,16 +4,15 @@ import Definitions.Def_ChapterReconstruct
 import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
 import Definitions.Def_ChapterIrreversible
-open BookProof.ChapterIrreversible
 open BookProof.SymmetryEntropy
-
-variable {n : ℕ}
 
 
 
 open Finset
 open BookProof.ChapterMarkovEntropy (entropy)
 open BookProof.ChapterReconstruct (IsDeterministicCol)
+
+variable {n : ℕ}
 
 
 theorem BookProof.SymmetryEntropy.entropy_pointMass (a : Fin n) :

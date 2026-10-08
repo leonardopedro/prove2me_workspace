@@ -10,15 +10,15 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.eq_stoneU_of_hasDerivAt (T : UnboundedSelfAdjoint H) (G : WeakMeasurableUnitaryGroup H)
     (h : ∀ x : T.domain, HasDerivAt (fun t : ℝ => G.U t (x : H)) ((-Complex.I) • T.op x) 0)

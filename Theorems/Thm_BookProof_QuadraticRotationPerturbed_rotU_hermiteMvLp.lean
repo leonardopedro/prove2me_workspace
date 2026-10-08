@@ -5,7 +5,7 @@ import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadraticRotationEsa
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
@@ -16,8 +16,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QuadraticRotationPerturbed
-
-variable {d : ℕ}
 
 
 
@@ -33,6 +31,8 @@ open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadraticRotationPerturbed.rotU_hermiteMvLp {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1) (a : Fin d →₀ ℕ) :

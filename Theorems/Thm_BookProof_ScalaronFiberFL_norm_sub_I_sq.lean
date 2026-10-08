@@ -16,8 +16,6 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HashimotoShiftInvert
 open BookProof.ScalaronFiberFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MeasureTheory SchwartzMap
@@ -28,6 +26,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ScalaronFiberFL.norm_sub_I_sq {D : Submodule ℂ F} (N : D →ₗ[ℂ] F) (hsym : SymmetricOn D N) (u : D) :
     ‖N u - Complex.I • (u : F)‖ ^ 2 = ‖N u‖ ^ 2 + ‖(u : F)‖ ^ 2 := by sorry

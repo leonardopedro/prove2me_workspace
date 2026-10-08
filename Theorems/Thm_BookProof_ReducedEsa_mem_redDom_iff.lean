@@ -5,17 +5,15 @@ import Mathlib
 import Definitions.Def_ChapterReducingSubspaceEsa
 open BookProof.ReducedEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {P : F →ₗ[ℂ] F}
+variable {D : Submodule ℂ F}
 
 theorem BookProof.ReducedEsa.mem_redDom_iff {x : sector P} : x ∈ redDom P D ↔ (x : F) ∈ D := by sorry

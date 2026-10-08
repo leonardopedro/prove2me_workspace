@@ -8,9 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-variable (S : Finset (Fin d))
-
 
 
 open MeasureTheory
@@ -19,6 +16,9 @@ open BookProof.ConvolutionCalc
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (S : Finset (Fin d))
 
 theorem BookProof.DegEnergy.energy_bound {z : ℂ} (hz : z.re = 0) {v G : Vd d → ℂ}
     (hv : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) v) (hG : Continuous G)

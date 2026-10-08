@@ -1,7 +1,7 @@
 -- Generated from ChapterWignerSymmetry.lean — solution of BookProof.ChapterWignerSymmetry.exists_zeta
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetry
-import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_pair'
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_pair_prime
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_S_zero
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_modulus_add
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
@@ -66,7 +66,7 @@ theorem solution (hS : WignerCoord S o) {i : ι} (hi : i ≠ o) :
     · right; apply Complex.ext <;> simp [hζre, h]
   refine ⟨conj P * Q, hζ, fun v => ?_⟩
   have h := hS.inner_norm v w
-  rw [sum_pair' hi hSw, sum_pair' hi hwk, hwo, hwi] at h
+  rw [sum_pair_prime hi hSw, sum_pair_prime hi hwk, hwo, hwi] at h
   have hPP : P * conj P = 1 := by
     rw [Complex.mul_conj]
     have hsq : Complex.normSq P = ‖P‖ ^ 2 := by rw [Complex.sq_norm]

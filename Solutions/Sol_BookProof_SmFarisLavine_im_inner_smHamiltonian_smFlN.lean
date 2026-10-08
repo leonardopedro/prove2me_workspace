@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 import Theorems.Thm_BookProof_FarisLavine_inner_apply_self_im
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 open BookProof.SmFarisLavine
 
 

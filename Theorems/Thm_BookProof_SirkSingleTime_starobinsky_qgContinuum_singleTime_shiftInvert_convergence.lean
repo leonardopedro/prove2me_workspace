@@ -11,11 +11,6 @@ open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.SirkSingleTime
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-variable {ι : Type*}
-
 
 open scoped InnerProductSpace
 
@@ -26,6 +21,11 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
+variable {ι : Type*}
 
 theorem BookProof.SirkSingleTime.starobinsky_qgContinuum_singleTime_shiftInvert_convergence (M alpha : ℝ)
     (halpha : 0 < alpha) (g : ℝ) :

@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.gramQ_quadratic_eq {R : Type*} [Fintype R] (v : R → Fin D → ℝ) :
     ∑ i : Fin D, ∑ j : Fin D, ((gramQ v i j : ℝ) : ℂ)

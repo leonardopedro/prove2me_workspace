@@ -8,15 +8,15 @@ open BookProof.ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-variable {R : Sl2Rep V}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
+variable {R : Sl2Rep V}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.codim_one : ∀ (n : ℕ) {V : Type u} [AddCommGroup V] [Module ℂ V]
     [FiniteDimensional ℂ V] (R : Sl2Rep V) (phi : V →ₗ[ℂ] ℂ) (v0 : V), phi v0 = 1 →

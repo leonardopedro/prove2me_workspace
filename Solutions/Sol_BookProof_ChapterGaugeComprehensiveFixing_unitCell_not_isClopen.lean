@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isComprehensiveGaugeFixing
-import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing'
+import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing_prime
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_shift_no_clopen_complete_gaugeFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
@@ -19,4 +19,4 @@ variable (X : Type*) (G : Type*) [Group G] [MulAction G X]
 set_option maxHeartbeats 1000000 in
 theorem solution : ¬ IsClopen unitCell :=
   shift_no_clopen_complete_gaugeFixing unitCell_isComprehensiveGaugeFixing
-      unitCell_isCompleteGaugeFixing'
+      unitCell_isCompleteGaugeFixing_prime

@@ -11,15 +11,15 @@ open BookProof.ChapterF7
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.hasDerivAt_phaseGroup (f : ℤ → ℝ) (x : (mulSA f).domain) :
     HasDerivAt (fun t : ℝ => (phaseGroup f).U t (x : L2Z))

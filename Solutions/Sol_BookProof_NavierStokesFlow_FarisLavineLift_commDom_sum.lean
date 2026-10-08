@@ -16,16 +16,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {κ : Type*}
 
 set_option maxHeartbeats 1000000 in
-_apply (A B : D →ₗ[ℂ] D) (v : D) :
-    commDom A B v = A (B v) - B (A v) := rfl
-
-theorem solution (A B : D →ₗ[ℂ] D) :
-    commDom A (B + LinearMap.id) = commDom A B := by
-  ext v
-  simp [commDom]
-
-/-- **The commutator of second-quantized operators is the second quantization of
-the commutators**: if operators belonging to differe :=
+theorem solution (s : Finset κ) (h n : κ → (D →ₗ[ℂ] D))
+    (hcomm : ∀ k ∈ s, ∀ l ∈ s, k ≠ l → (h k).comp (n l) = (n l).comp (h k)) :
+    commDom (∑ k ∈ s, h k) (∑ k ∈ s, n k) = ∑ k ∈ s, commDom (h k) (n k) :=
   nt particles commute, then
   `[∑ₖ hₖ, ∑ₗ nₗ] = ∑ₖ [hₖ, nₖ]`. -/
   theorem commDom_sum (s : Finset κ) (h n : κ → (D →ₗ[ℂ] D))

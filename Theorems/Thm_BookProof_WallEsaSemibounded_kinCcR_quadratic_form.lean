@@ -11,8 +11,6 @@ open BookProof.ScalaronWallEsa
 open BookProof.StrichartzWave
 open BookProof.WallEsaSemibounded
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open MeasureTheory SchwartzMap
@@ -21,13 +19,10 @@ open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
-      = -∫ x, (starRingEnd ℂ) (deriv (deriv f) x) * f x := by
-    rw [← integral_neg]
-    refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp
-  rw [hneg]
-  linear_combination -hzero
-
-theorem BookProof.WallEsaSemibounded.kinCcR_quadratic_form (g : 𝓢 := by sorry
+theorem BookProof.WallEsaSemibounded.kinCcR_quadratic_form (f : ccSchwartz ℝ) :
+    (inner ℂ (kinCcR (ccEquiv ℝ f))
+        ((ccEquiv ℝ f : ccDomain ℝ) : Lp ℂ 2 (volume : Measure ℝ)) : ℂ)
+      = ((∫ x, ‖deriv ((f : 𝓢(ℝ, ℂ)) : ℝ → ℂ) x‖ ^ 2 : ℝ) : ℂ) := by sorry

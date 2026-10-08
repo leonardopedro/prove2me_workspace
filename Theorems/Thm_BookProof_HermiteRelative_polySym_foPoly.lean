@@ -14,9 +14,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -27,7 +24,7 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-i (Finset.mem_insert_self i s)).add
-        (ih fun j hj => h j (Finset.mem_insert_of_mem hj))
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
-t := by sorry
+theorem BookProof.HermiteRelative.polySym_foPoly (b b' : Fin d → ℝ) : BookProof.YangMillsHermite.PolySym (foPoly b b') := by sorry

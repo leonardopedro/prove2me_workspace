@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense
 open BookProof.DirectSumEsa
 
 

@@ -1,7 +1,7 @@
 -- Generated from ChapterQuadratureEsa.lean — solution of BookProof.QuadratureEsa.momL_hermiteCore
 import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
-import Theorems.Thm_BookProof_QuadratureEsa_pgLp_sub'
+import Theorems.Thm_BookProof_QuadratureEsa_pgLp_sub_prime
 import Theorems.Thm_BookProof_QuadratureEsa_momPoly_eq_cre_sub_ann
 import Theorems.Thm_BookProof_QuadratureEsa_momL_coe
 import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_hermiteMvLp
@@ -32,4 +32,4 @@ theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :
             - ((Real.sqrt ((a i : ℝ)) : ℝ) : ℂ) • hermiteMvLp (a - Finsupp.single i 1)) := by
 
   rw [hermiteCore, momL_coe, map_smul, momPoly_eq_cre_sub_ann, smul_comm, smul_sub, pgLp_smul,
-    pgLp_sub', pgLp_smul, pgLp_smul, crePoly_hermiteMvLp, annPoly_hermiteMvLp]
+    pgLp_sub_prime, pgLp_smul, pgLp_smul, crePoly_hermiteMvLp, annPoly_hermiteMvLp]

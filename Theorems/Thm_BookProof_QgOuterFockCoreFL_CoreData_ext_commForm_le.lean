@@ -13,9 +13,6 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 
 open BookProof.FarisLavine
@@ -29,6 +26,9 @@ open BookProof.HermiteProductCore
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.ext_commForm_le {c : ℝ}
     (hcomm : ∀ p : d.C₀, |commForm d.H₀ d.coreN p| ≤ c * quadForm d.coreN p)

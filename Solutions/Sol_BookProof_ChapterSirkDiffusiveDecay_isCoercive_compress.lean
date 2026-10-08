@@ -6,18 +6,15 @@ open BookProof.ChapterSirkDiffusiveDecay
 
 
 
-
-
-
-
-
-
-
 noncomputable section
 
 
 open BookProof.ChapterH4
 open Filter Topology NormedSpace
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

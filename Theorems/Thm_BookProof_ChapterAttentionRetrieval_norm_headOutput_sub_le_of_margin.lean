@@ -3,10 +3,9 @@ import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionRetrieval
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionRetrieval
-
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -15,6 +14,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionOutput
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionRetrieval.norm_headOutput_sub_le_of_margin {beta delta C : ℝ} (hb : 0 ≤ beta)

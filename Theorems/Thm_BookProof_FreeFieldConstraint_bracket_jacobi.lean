@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldConstraint
 open BookProof.FreeFieldConstraint
 
+
+
 variable {R : Type*} [Ring R]
-
-
 
 
 theorem BookProof.FreeFieldConstraint.bracket_jacobi (a b c : R) :

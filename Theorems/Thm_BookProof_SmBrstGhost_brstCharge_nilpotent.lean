@@ -7,14 +7,14 @@ import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BRSTNilpotent
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
 
 theorem BookProof.SmBrstGhost.brstCharge_nilpotent (f : Fin n → Fin n → Fin n → ℝ) (χ β G : Fin n → R)
     (hCAR : GhostCAR χ β)

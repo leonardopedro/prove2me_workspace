@@ -13,9 +13,6 @@ open BookProof.ChapterSuperBracket
 open BookProof.YangMillsGhost
 open BookProof.GradedFock
 
-variable {α β : Type*}
-variable (T T' : Module.End ℂ (α →₀ ℂ)) (S S' : Module.End ℂ (β →₀ ℂ))
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,6 +20,9 @@ open BookProof.FockSecondQuantization BookProof.FermionFock
 open BookProof.ChapterSuperBracket
 
 noncomputable section
+
+variable {α β : Type*}
+variable (T T' : Module.End ℂ (α →₀ ℂ)) (S S' : Module.End ℂ (β →₀ ℂ))
 
 theorem BookProof.GradedFock.sbracket_odd_even (a b : Module.End ℂ GradedAlg) :
     sbracket true false a b = a * b - b * a := by sorry

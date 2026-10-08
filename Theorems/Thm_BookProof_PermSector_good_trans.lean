@@ -13,9 +13,6 @@ open BookProof.FriedrichsExtension.FormDom
 open BookProof.TensorCore
 open BookProof.PermSector
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
@@ -23,6 +20,9 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.Te
 open BookProof.GroupAverage BookProof.TensorPerm
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.PermSector.good_trans {n : ℕ}
     {uD vD : ((domSpace Hs D₂).pow n).carrier ≃ₗᵢ[ℂ] ((domSpace Hs D₂).pow n).carrier}

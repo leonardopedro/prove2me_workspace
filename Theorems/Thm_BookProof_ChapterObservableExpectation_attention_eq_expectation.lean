@@ -5,9 +5,6 @@ import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterObservableExpectation
 
-variable {m n : ℕ}
-variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
 
 open scoped BigOperators
 
@@ -15,6 +12,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxBorn
+
+variable {m n : ℕ}
+variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 
 theorem BookProof.ChapterObservableExpectation.attention_eq_expectation (q : EuclideanSpace ℝ (Fin n))

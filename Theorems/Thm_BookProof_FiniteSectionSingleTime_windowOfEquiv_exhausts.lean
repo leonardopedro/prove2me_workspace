@@ -13,9 +13,6 @@ import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -29,5 +26,8 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.windowOfEquiv_exhausts (en : ℕ ≃ ι) : Exhausts (windowOfEquiv en) := by sorry

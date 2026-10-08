@@ -75,7 +75,8 @@ noncomputable def innerBilin : LinearMap.BilinForm ℝ V :=
 book's complex Clifford C\*-algebra `C(V)` is `CliffordAlgebra Q`. -/
 noncomputable def Qform : QuadraticForm ℝ V := (innerBilin (V := V)).toQuadraticMap
 
-
+@[simp] lemma Qform_apply (v : V) : Qform v = ⟪v, v⟫ := by
+  simp [Qform, innerBilin, LinearMap.BilinMap.toQuadraticMap]
 
 
 
@@ -83,11 +84,13 @@ noncomputable def Qform : QuadraticForm ℝ V := (innerBilin (V := V)).toQuadrat
 Clifford algebra `C(V)` associated to `v ∈ V`. -/
 noncomputable def a (v : V) : CliffordAlgebra (Qform (V := V)) := ι (Qform) v
 
+@[simp] lemma a_add (v w : V) : a (v + w) = a v + a w := by
+  simp [a, map_add]
 
+@[simp] lemma a_smul (c : ℝ) (v : V) : a (c • v) = c • a v := by
+  simp [a, map_smul]
 
-
-
-
+@[simp] lemma a_zero : a (0 : V) = 0 := by simp [a]
 
 
 

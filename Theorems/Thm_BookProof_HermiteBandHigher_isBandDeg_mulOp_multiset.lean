@@ -11,8 +11,6 @@ open BookProof.ChapterF7
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteBandHigher
 
-variable {d : ℕ}
-
 
 
 noncomputable section
@@ -20,6 +18,8 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteBand BookProof.YangMillsHermite
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBandHigher.isBandDeg_mulOp_multiset (s : Multiset (Fin d)) :

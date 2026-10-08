@@ -34,4 +34,4 @@ theorem solution (s : Fin d →₀ ℕ) (c : ℂ) :
     simp [Finsupp.degree, Finsupp.sum]
     first | rfl | done
   rw [hmon, mulOp_smul]
-  exact IsBandDeg.smul c (hcard ▸ isBandDeg_mulOp
+  exact IsBandDeg.smul c (hcard ▸ isBandDeg_mulOp_multiset s.toMultiset)

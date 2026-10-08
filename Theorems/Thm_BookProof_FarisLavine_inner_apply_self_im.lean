@@ -6,10 +6,10 @@ import Definitions.Def_ChapterFarisLavine
 open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
 
 
 theorem BookProof.FarisLavine.inner_apply_self_im (T : D →ₗ[ℂ] F) (hT : SymmetricOn D T) (x : D) :

@@ -4,11 +4,11 @@ import Mathlib
 import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.GraphCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.GraphCore.IsGraphCore.trans {D₁ D₂ D₃ : Submodule ℂ F} {T : D₃ →ₗ[ℂ] F}

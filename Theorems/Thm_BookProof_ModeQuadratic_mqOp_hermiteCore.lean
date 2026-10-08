@@ -18,8 +18,6 @@ open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.mqOp_hermiteCore (p q s b b' : Fin d → ℝ) (a : Fin d →₀ ℕ) :

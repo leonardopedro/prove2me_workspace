@@ -17,14 +17,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {κ : Type*}
 
 set_option maxHeartbeats 1000000 in
-   refine Finset.sum_le_sum fun k hk => ?_
-    rw [Finset.mul_sum]
-    exact Finset.sum_le_sum fun l hl => le_trans (le_abs_self _) (hpair k hk l hl)
-  nlinarith [norm_nonneg (((∑ k ∈ s, h k) v : D) : F),
-    norm_nonneg (((∑ k ∈ s, n k) v : D) : F),
-    mul_nonneg hc (norm_nonneg (((∑ k ∈ s, n k) v : D) : F))]
-
-/-- Adding the identi :=
+theorem solution (N : D →ₗ[ℂ] D) (v : D)
+    (hpos : 0 ≤ (inner ℂ ((N v : D) : F) ((v : F)) : ℂ).re) :
+    ‖((N v : D) : F)‖ ≤ ‖((((N + LinearMap.id : D →ₗ[ℂ] D)) v : D) : F)‖ :=
   ty to the comparison operator can only help, provided the
   comparison operator is non-negative on the state. -/
   theorem norm_le_norm_add_id (N : D →ₗ[ℂ] D) (v : D)

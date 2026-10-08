@@ -15,9 +15,6 @@ import Definitions.Def_ChapterDirectSumEsa
 open BookProof.DirectSumEsa
 open BookProof.Qg3DGaugeFL
 
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
-
 
 
 open BookProof.QuantumGravity3DGauge BookProof.Qg3DGaugeEsa
@@ -27,6 +24,9 @@ open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
 
 theorem BookProof.Qg3DGaugeFL.dsOp_number_conserving (H : ∀ i, D i →ₗ[ℂ] G i) (x : dsCore D) {n : ι}
     (hx : ∀ i, i ≠ n → ((x : lp G 2) : ∀ i, G i) i = 0) (i : ι) (hi : i ≠ n) :

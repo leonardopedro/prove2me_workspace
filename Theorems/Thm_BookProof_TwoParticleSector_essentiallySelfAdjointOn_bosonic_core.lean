@@ -7,16 +7,11 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.TwoParticleSector
-
-variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
-variable {X}
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-variable (A : D₂ →ₗ[ℂ] Hs.carrier)
-variable (D : Submodule ℂ Hs.carrier)
 
 
 
@@ -24,6 +19,12 @@ open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 
 noncomputable section
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+variable (A : D₂ →ₗ[ℂ] Hs.carrier)
+variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TwoParticleSector.essentiallySelfAdjointOn_bosonic_core (hcore : IsGraphCore D A)
     (hesa : EssentiallySelfAdjointOn (sectorDom Hs D₂ 2) (sectorOp Hs D₂ A 2)) :

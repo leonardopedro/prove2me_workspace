@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_ham_esa
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_core_le_dom
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_comparison_core
 open BookProof.ScalaronFiberFL
+open BookProof.ScalaronFiberFL.WallPot
 
 
 

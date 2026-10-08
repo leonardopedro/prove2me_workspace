@@ -8,14 +8,14 @@ import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBessel
 open BookProof.ChapterBesselHarmonic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace
 open BookProof.ChapterSphericalBessel BookProof.ChapterSphericalBesselODE
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 theorem BookProof.ChapterBesselHarmonic.helmholtz_sbessel_harmonic [FiniteDimensional ℝ E] (h3 : Module.finrank ℝ E = 3)
     {l : ℕ} {H : E → ℝ} {x : E} {p : ℝ} (hp : p ≠ 0) (hx : x ≠ 0)

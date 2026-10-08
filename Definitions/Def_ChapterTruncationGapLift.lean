@@ -100,15 +100,9 @@ def tailSpan (b : HilbertBasis ℕ ℂ F) (m : ℕ) : Submodule ℂ F :=
   Submodule.span ℂ (b '' {i | m ≤ i})
 
 
-
-
-
-
-
-
-
-
-
+theorem tailSpan_le_finiteModeDomain (b : HilbertBasis ℕ ℂ F) (m : ℕ) :
+    tailSpan b m ≤ finiteModeDomain b :=
+  Submodule.span_mono (by rintro x ⟨i, _, rfl⟩; exact ⟨i, rfl⟩)
 
 
 /-! ## 2. The block expansion of the energy form -/
@@ -116,13 +110,7 @@ def tailSpan (b : HilbertBasis ℕ ℂ F) (m : ℕ) : Submodule ℂ F :=
 variable {D : Submodule ℂ F}
 
 
-
 /-! ## 3. The lift -/
-
-
-
-
-
 
 
 /-! ## 4. The truncated input in Ritz form
@@ -131,35 +119,15 @@ A certificate delivers a *Ritz* bound at level `m`, not a form bound.  These two
 convert. -/
 
 
-
-
-
 /-! ## 5. The Yang–Mills instantiation: truncated gap ⇒ final Hamiltonian -/
 
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
-
-
-
-
 
 
 /-! ## 6. Axiom audit -/
 
 section Audit
 
-#print axioms galerkinSpan_sup_tailSpan
-#print axioms inner_eq_zero_of_mem_galerkin_tail
-#print axioms exists_galerkin_tail_decomp
-#print axioms quadForm_add_of_symmetricOn
-#print axioms gap_of_uniform_truncated_gap
-#print axioms gap_of_level_gap_and_tail
-#print axioms gap_of_level_gap_and_tail_decoupled
-#print axioms quadForm_ge_of_le_ritzInf_on
-#print axioms gap_of_le_ritzInf_and_tail
-#print axioms ym_fock_gap_of_truncated_gap_and_tail
-#print axioms ym_fock_mass_gap_of_truncated_gap_and_tail
-#print axioms ym_fock_gap_of_band_and_tail
 
 end Audit
 

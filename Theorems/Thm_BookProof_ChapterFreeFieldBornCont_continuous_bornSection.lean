@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornCont
 open BookProof.ChapterFreeFieldBornCont
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornCont.continuous_bornSection :

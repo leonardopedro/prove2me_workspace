@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension
-open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -16,10 +15,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-e hγ)
-
 theorem solution :
     SymmetricOn (LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)))
-      ell2Unbounded :=
+      ell2UnboundedExample :=
   Example :=
     ell2Example_isPositiveSelfAdjointExten

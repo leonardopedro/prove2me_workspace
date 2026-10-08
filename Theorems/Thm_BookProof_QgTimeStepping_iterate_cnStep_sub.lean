@@ -12,8 +12,6 @@ import Definitions.Def_ChapterQgTimeStepping
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.QgTimeStepping
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 
 open Filter Topology
@@ -23,6 +21,8 @@ open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.QgTimeStepping.iterate_cnStep_sub (T : UnboundedSelfAdjoint H) (tau : ℝ) (k : ℕ) (u w : H) :

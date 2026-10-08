@@ -19,7 +19,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-theorem BookProof.QgOuterFock.triple_swap' {R : Type*} [Fintype R] {α : Type*} [AddCommMonoid α]
+theorem BookProof.QgOuterFock.triple_swap_prime {R : Type*} [Fintype R] {α : Type*} [AddCommMonoid α]
     (F : R → Fin D → Fin D → α) :
     ∑ i : Fin D, ∑ j : Fin D, ∑ r : R, F r i j
       = ∑ r : R, ∑ i : Fin D, ∑ j : Fin D, F r i j := by sorry

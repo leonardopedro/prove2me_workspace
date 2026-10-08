@@ -1,10 +1,10 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.cpoly_coreD
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_C
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_pderiv
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_C
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sub
 open BookProof.QgHermiteFriedrichs
 

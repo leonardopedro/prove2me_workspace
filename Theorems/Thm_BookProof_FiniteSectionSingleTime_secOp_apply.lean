@@ -17,9 +17,6 @@ open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -33,6 +30,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.secOp_apply (W : Finset ι) (x : L2I ι) :
     secOp H W x = ∑ a ∈ W, ((x : ι → ℂ) a) • projW W (H (coreVec a)) := by sorry

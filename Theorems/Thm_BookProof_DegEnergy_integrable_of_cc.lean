@@ -8,8 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory
@@ -17,6 +15,8 @@ open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodi
 open BookProof.ConvolutionCalc
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegEnergy.integrable_of_cc {f : Vd d → ℂ} (hf : Continuous f) (hc : HasCompactSupport f) :

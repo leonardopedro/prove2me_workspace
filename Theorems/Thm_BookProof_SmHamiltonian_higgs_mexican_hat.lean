@@ -9,8 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -20,6 +18,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.higgs_mexican_hat (lam mu q : ℝ) (hlam : 0 < lam) :
     lam / 4 * (q - mu ^ 2 / lam) ^ 2

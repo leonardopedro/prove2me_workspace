@@ -3,16 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterMollifierL2
 open BookProof.MollifierL2
 
-variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E] {μ : Measure E} [μ.IsAddHaarMeasure]
-  [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 
 open MeasureTheory Filter ENNReal Pointwise
 open scoped NNReal Topology
 
 noncomputable section
+
+variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E] {μ : Measure E} [μ.IsAddHaarMeasure]
+  [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 
 theorem BookProof.MollifierL2.tendsto_mollify_L2 {ι : Type*} {l : Filter ι} (u : E → ℂ) (hu : StronglyMeasurable u)

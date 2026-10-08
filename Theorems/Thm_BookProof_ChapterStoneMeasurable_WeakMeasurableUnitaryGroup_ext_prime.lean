@@ -13,5 +13,5 @@ open scoped InnerProductSpace
 
 
 
-theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ext' :
+theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.ext_prime :
     ∀ {G G' : WeakMeasurableUnitaryGroup H}, (∀ t, G.U t = G'.U t) → G = G' := by sorry

@@ -17,9 +17,6 @@ open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-variable {ι : Type*}
-
 
 
 open BookProof.GaugeFixing
@@ -29,6 +26,9 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
+variable {ι : Type*}
 
 theorem BookProof.QgPhysicalSectorIdentity.coupling_essentiallySelfAdjointOn_core {ω : ι → ℝ} (hω : ∀ i, 0 ≤ ω i)
     (h : ι × ι → ℂ)

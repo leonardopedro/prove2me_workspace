@@ -14,8 +14,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-
 
 
 open MeasureTheory Set Filter Topology
@@ -26,6 +24,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.physConfOp_symmetricOn :
     SymmetricOn (physConfCore M alpha)

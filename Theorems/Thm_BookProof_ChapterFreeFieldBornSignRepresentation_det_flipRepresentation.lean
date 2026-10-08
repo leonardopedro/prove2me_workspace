@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignRepresentation
 open BookProof.ChapterFreeFieldBornSignRepresentation
 
-variable {n : ℕ}
-
 
 open BookProof.ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignHom
@@ -17,6 +15,8 @@ open BookProof.ChapterFreeFieldBornSignMatrix
 open BookProof.ChapterFreeFieldBornSignOrientation
 open BookProof.ChapterFreeFieldBornSignOrientationSubgroup
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignRepresentation.det_flipRepresentation (b : Multiplicative (Fin n → Bool)) :

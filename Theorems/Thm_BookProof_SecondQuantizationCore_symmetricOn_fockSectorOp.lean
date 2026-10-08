@@ -9,15 +9,15 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.SecondQuantizationCore
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.DirectSumEsa
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
 
 
 theorem BookProof.SecondQuantizationCore.symmetricOn_fockSectorOp (hA : SymmetricOn D₂ A) (n : ℕ) :

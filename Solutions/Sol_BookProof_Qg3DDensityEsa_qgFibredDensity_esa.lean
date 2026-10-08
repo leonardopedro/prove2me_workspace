@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DDensityEsa
 import Theorems.Thm_BookProof_Qg3DDensityEsa_qg3DDensity_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.Qg3DDensityEsa
 
 

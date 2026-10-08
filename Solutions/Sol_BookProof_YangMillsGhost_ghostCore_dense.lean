@@ -1,6 +1,7 @@
 -- Generated from ChapterYangMillsGhostSector.lean — solution of BookProof.YangMillsGhost.ghostCore_dense
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.YangMillsGhost
 
 
@@ -10,6 +11,7 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
+open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
 variable {K : ℕ}

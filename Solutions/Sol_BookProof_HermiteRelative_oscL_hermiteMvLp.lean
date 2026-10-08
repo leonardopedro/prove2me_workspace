@@ -23,8 +23,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
 theorem solution (i : Fin d) (a : Fin d →₀ ℕ)
     (h : hermiteMvLp a ∈ polyGaussCore (d := d)) :
     oscL i ⟨hermiteMvLp a, h⟩ = (((a i : ℝ) + 1/2 : ℝ) : ℂ) • hermiteMvLp a := by

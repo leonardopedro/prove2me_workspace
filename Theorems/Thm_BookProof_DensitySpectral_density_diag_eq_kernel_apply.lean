@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDensityMarginalConditional
 open BookProof.DensitySpectral
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
 open scoped BigOperators ComplexOrder
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.DensitySpectral.density_diag_eq_kernel_apply (U : Matrix n n ℂ) (d : n → ℝ) (i : n) :

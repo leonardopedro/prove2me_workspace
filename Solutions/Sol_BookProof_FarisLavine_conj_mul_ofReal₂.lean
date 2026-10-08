@@ -21,13 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
- * z) by ring,
-    ← Complex.normSq_eq_conj_mul_self]
-  push_cast
-  ring
-
-theorem solution₂ (a b : ℝ) (z : ℂ) :
-    (b : ℂ) * z * ( :=
+theorem solution (a b : ℝ) (z : ℂ) :
+    (b : ℂ) * z * (starRingEnd ℂ) ((a : ℂ) * z) = ((a * b * Complex.normSq z : ℝ) : ℂ) :=
   starRingEnd ℂ) ((a : ℂ) * z) = ((a * b * Complex.normSq z : ℝ) : ℂ) := by
     rw [map_mul, Complex.conj_ofReal,
       show (b : ℂ) * z * ((a : ℂ) * (starRingEnd ℂ) z)

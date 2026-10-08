@@ -17,8 +17,6 @@ import Definitions.Def_ChapterF7
 open BookProof.ChapterF7
 open BookProof.NsLinearKoopmanEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial
@@ -27,10 +25,13 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
+open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.NsLinearKoopmanEsa.mulOp_C_prime (a : ℂ) : mulOp (C a : MvPolynomial (Fin d) ℂ) = a • LinearMap.id := by sorry

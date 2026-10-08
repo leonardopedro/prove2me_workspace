@@ -7,13 +7,13 @@ open BookProof.ChapterDoubleSlit
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterObservableOperator
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterObservableOperator.observable_expectation_born (b : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin n)))

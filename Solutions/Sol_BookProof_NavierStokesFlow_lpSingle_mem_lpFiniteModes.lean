@@ -15,10 +15,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-rem mem_lpFiniteModes {f : lp (fun _ : ι => ℂ) 2} :
-    f ∈ lpFiniteModes ι ↔ (Function.support ((f : ι → ℂ))).Finite := Iff.rfl
-
-/-- Each canonical basis state :=
+theorem solution [DecidableEq ι] (k : ι) (c : ℂ) :
+    lp.single 2 k c ∈ lpFiniteModes ι :=
   `e_k` has finite support. -/
   theorem lpSingle_mem_lpFiniteModes [DecidableEq ι] (k : ι) (c : ℂ) :
       lp.single 2 k c ∈ lpFiniteModes ι := by

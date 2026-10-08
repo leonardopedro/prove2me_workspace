@@ -1,5 +1,9 @@
 import Definitions.Def_ChapterWallEsaBddBelow
 import Definitions.Def_ChapterSchrodingerCutoffEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterStrichartzWave
 import Mathlib
 
 

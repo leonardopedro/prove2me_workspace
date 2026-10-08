@@ -10,9 +10,6 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform
 open BookProof.ChapterCayleySpectralModel
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open scoped InnerProductSpace
 open MeasureTheory
@@ -21,6 +18,9 @@ open MeasureTheory
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform BookProof.ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : UnboundedSelfAdjoint H)
 
 
 theorem BookProof.ChapterCayleySpectralModel.cfcHom_opSymbol (y : H) :

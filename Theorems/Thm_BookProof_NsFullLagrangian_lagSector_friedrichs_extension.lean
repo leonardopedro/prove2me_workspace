@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.lagSector_friedrichs_extension (lam lam' mu gg : ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 36))) (A : Dom →ₗ[ℂ] L2d (n * 36)),

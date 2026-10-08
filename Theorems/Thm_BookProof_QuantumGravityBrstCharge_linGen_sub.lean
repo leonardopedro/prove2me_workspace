@@ -6,16 +6,16 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.QuantumGravityBrstCharge
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
+variable {d : ℕ}
 
 theorem BookProof.QuantumGravityBrstCharge.linGen_sub (A B : Matrix (Fin d) (Fin d) ℝ) :
     linGen (A - B) = linGen A - linGen B := by sorry

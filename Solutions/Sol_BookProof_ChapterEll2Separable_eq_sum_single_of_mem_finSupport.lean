@@ -1,6 +1,7 @@
 -- Generated from ChapterEll2Separable.lean — solution of BookProof.ChapterEll2Separable.eq_sum_single_of_mem_finSupport
 import Mathlib
 import Definitions.Def_ChapterEll2Separable
+import Theorems.Thm_BookProof_ChapterRieszFischer_riesz_fischer_hasSum
 open BookProof.ChapterEll2Separable
 
 

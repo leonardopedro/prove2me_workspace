@@ -10,15 +10,15 @@ open BookProof.NavierStokesFlow.SignedShift.SignedHop
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
-variable {κ : ℝ}
-variable {x : maxDom (oscSymbol κ)}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {κ : ℝ}
+variable {x : maxDom (oscSymbol κ)}
 
 theorem BookProof.NavierStokesFlow.HermiteFarisLavine.nsH_relative_bound (hκ : 0 ≤ κ) (x : maxDom (oscSymbol κ)) :
     ‖(nsH κ hκ x : L2I ℕ)‖ ^ 2

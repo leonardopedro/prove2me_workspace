@@ -18,8 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadraticDegenerate
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -34,6 +32,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticDegenerate.shiftedHMatOp_essentiallySelfAdjoint_of_equilibrium {A : Matrix (Fin d) (Fin d) ℝ}

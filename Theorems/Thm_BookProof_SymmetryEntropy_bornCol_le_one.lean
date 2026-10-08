@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
 open BookProof.SymmetryEntropy
 
-variable {n : ℕ}
-
 
 
 open Finset
 open BookProof.ChapterMarkovEntropy (entropy)
 open BookProof.ChapterReconstruct (IsDeterministicCol)
+
+variable {n : ℕ}
 
 
 theorem BookProof.SymmetryEntropy.bornCol_le_one {U : Fin n → Fin n → ℂ} {a : Fin n}

@@ -1,6 +1,7 @@
 -- Generated from ChapterSmDiracYukawa.lean — solution of BookProof.SmDiracYukawa.isMixing_mul
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
+import Theorems.Thm_BookProof_SmOneParticle_IsMixing_conjTranspose_mul
 open BookProof.SmDiracYukawa
 
 
@@ -12,6 +13,7 @@ open BookProof.SmCar BookProof.FarisLavine
 variable {n : ℕ}
 
 noncomputable section
+open BookProof.SmOneParticle
 
 variable {n : ℕ}
 

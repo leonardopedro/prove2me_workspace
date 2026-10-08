@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCoherentFidelity
 import Theorems.Thm_BookProof_ChapterCoherentFidelity_fidelityC_eq_bornNumerC
+import Theorems.Thm_BookProof_ChapterCoherentOverlapComplex_bornNumerC_eq
 open BookProof.ChapterCoherentFidelity
 
 

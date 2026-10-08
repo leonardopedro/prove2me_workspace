@@ -8,14 +8,14 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSectionBij
 open BookProof.ChapterFreeFieldBornSectionBij
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphereSupport BookProof.ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSurj
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSectionBij.bornSection_nonneg (p : Fin n → ℝ) : bornSection p ∈ nonnegOrthant n := by sorry

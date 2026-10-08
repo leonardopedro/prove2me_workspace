@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.jwSign_insert {i j : Fin n} {S : Finset (Fin n)} (hj : j ∉ S) :

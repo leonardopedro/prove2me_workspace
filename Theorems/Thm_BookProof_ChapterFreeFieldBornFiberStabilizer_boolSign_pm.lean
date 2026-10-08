@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
 open BookProof.ChapterFreeFieldBornFiberStabilizer
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
@@ -18,6 +16,8 @@ open BookProof.ChapterFreeFieldBornSignGauge
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
 open BookProof.ChapterFreeFieldBornFiberBounds
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm (b : Fin n → Bool) (k : Fin n) :

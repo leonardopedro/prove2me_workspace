@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterConservative
 open BookProof.ChapterConservative
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 open scoped Matrix
 
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.ChapterConservative.timeEvo_commute (H : Matrix n n ℂ) (s t : ℝ) :

@@ -15,8 +15,6 @@ import Mathlib
 import Definitions.Def_ChapterFockDiagonalGapChain
 open BookProof.FockDiagonalGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -29,6 +27,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerk
 open BookProof.HermiteCore BookProof.ScalaronFockGapChain
 open Module
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.FockDiagonalGapChain.freeDispersion_ge {m : ℝ} (hm : 0 ≤ m) (p : ℕ → ℝ) (k : ℕ) :

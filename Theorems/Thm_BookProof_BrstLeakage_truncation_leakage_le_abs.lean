@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
 open BookProof.BrstLeakage
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.truncation_leakage_le_abs {P H Om : E →L[ℂ] E} (hPi : IsIdempotentElem P)

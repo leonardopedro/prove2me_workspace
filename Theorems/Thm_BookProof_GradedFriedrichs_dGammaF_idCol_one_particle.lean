@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,6 +20,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.dGammaF_idCol_one_particle (k : ℕ) :
     dGammaF idCol (Finsupp.single ({k} : FConf) 1)

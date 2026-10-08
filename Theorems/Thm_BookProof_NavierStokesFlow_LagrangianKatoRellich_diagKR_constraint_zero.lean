@@ -1,6 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_constraint_zero
 import Mathlib
-import Definitions.Def_Chapter
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterNavierStokesIkebeKatoNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.NavierStokesFlow

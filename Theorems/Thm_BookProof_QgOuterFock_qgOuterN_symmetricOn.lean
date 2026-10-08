@@ -21,8 +21,6 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -38,5 +36,7 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.qgOuterN_symmetricOn : SymmetricOn qgOuterCore qgOuterN := by sorry

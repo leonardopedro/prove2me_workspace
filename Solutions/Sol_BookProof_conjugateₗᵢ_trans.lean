@@ -1,4 +1,4 @@
--- Generated from ChapterA4.lean — solution of BookProof.conjugateₗᵢ_trans
+-- Generated from ChapterA4.lean — solution of BookProof.conjugateli_trans
 import Mathlib
 import Definitions.Def_ChapterA4
 open BookProof

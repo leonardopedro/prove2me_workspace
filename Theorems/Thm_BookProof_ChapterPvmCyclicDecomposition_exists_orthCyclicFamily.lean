@@ -4,15 +4,15 @@ import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
 open BookProof.ChapterPvmCyclicDecomposition
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterPvmMeasure
+
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
 
 theorem BookProof.ChapterPvmCyclicDecomposition.exists_orthCyclicFamily [CompleteSpace H] (P : Pvm X H) :

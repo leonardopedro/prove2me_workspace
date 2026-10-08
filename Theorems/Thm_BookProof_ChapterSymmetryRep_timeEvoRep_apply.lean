@@ -5,13 +5,13 @@ import Definitions.Def_ChapterConservative
 open BookProof.ChapterConservative
 open BookProof.ChapterSymmetryRep
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 open scoped Matrix
 
 
 open BookProof.ChapterConservative
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.ChapterSymmetryRep.timeEvoRep_apply (H : Matrix n n ℂ) (hH : H.IsHermitian) (t : ℝ) :

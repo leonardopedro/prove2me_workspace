@@ -7,14 +7,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.CanonicalVector.canFun_eq_sum (X : Vel → ℂ) (γ : Vel) :
     canFun A c X γ

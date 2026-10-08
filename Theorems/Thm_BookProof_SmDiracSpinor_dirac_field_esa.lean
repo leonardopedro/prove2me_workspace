@@ -10,8 +10,6 @@ open BookProof.SmCar
 open BookProof.SmDiracYukawa
 open BookProof.SmDiracSpinor
 
-variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
-
 
 
 open Matrix
@@ -19,6 +17,8 @@ open BookProof.ChapterCPTHamiltonian BookProof.SmCar BookProof.SmDiracYukawa
 open BookProof.FarisLavine
 
 noncomputable section
+
+variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
 
 
 theorem BookProof.SmDiracSpinor.dirac_field_esa {om : Fin 4 → ℝ} {c0 : ℝ} (hom : ∀ i, 0 ≤ om i) (hc0 : 1 ≤ c0) :

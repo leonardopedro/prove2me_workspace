@@ -18,7 +18,6 @@ variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
 
 variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
   {μ : Measure V} {ν : Measure W} [SigmaFinite μ] [SigmaFinite ν]
-variable (μ ν) in
 variable {V : Type} [MeasurableSpace V] (μ : Measure V) [SigmaFinite μ]
 
 set_option maxHeartbeats 1000000 in

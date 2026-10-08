@@ -9,14 +9,14 @@ open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.EsaPair
 
-variable {Hs : IPSpace} (P : ESAPair Hs)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable {Hs : IPSpace} (P : ESAPair Hs)
 
 theorem BookProof.EsaPair.ESAPair.exists_ne_zero_mem_domain {a : Hs.carrier} (haD : a ∈ P.coreDomain)
     (ha0 : a ≠ 0) :

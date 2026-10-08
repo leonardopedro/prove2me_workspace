@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 open BookProof.CarlemanGeneralHop
 
-variable {d : ℕ}
-
 
 
 open Finset
@@ -14,6 +12,8 @@ open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.CarlemanGeneralHop.hshift_le {p m a : Fin d →₀ ℕ} (h : ∀ k, m k ≤ a k) (k : Fin d) :

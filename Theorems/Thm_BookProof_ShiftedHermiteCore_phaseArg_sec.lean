@@ -9,8 +9,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -19,6 +17,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedHermiteCore.phaseArg_sec (k x : Vd d) (i : Fin d) (t : ℝ) :

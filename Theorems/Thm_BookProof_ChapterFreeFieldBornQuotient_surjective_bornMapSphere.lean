@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornQuotient
 open BookProof.ChapterFreeFieldBornQuotient
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
 open BookProof.ChapterFreeFieldBornCont
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornQuotient.surjective_bornMapSphere : Function.Surjective (bornMapSphere n) := by sorry

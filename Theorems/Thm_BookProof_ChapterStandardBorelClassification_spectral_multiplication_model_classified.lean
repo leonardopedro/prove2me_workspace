@@ -7,14 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
 open BookProof.ChapterStandardBorelClassification
 
-variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
-  (mu : Measure X)
-variable {X : Type*} [MeasurableSpace X] [StandardBorelSpace X]
-  (mu : Measure X) [IsProbabilityMeasure mu]
-variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
-  [TopologicalSpace.MetrizableSpace Y] [MeasurableSpace Y] [BorelSpace Y]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -24,6 +16,14 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+
+variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
+  (mu : Measure X)
+variable {X : Type*} [MeasurableSpace X] [StandardBorelSpace X]
+  (mu : Measure X) [IsProbabilityMeasure mu]
+variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
+  [TopologicalSpace.MetrizableSpace Y] [MeasurableSpace Y] [BorelSpace Y]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterStandardBorelClassification.spectral_multiplication_model_classified (T : H →L[ℂ] H) (hT : IsStarNormal T) :
     ∃ (S : Set H) (mu : S → Measure (spectrum ℂ T))

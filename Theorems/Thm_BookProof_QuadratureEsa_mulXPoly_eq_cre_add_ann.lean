@@ -14,8 +14,6 @@ open BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QuadratureEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial FourierTransform
@@ -25,6 +23,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadratureEsa.mulXPoly_eq_cre_add_ann (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :

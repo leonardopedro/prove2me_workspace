@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDisplacedThermalMulti
 import Theorems.Thm_BookProof_ChapterDisplacedThermalMulti_norm_sq_eq_sum
+import Theorems.Thm_BookProof_ChapterDisplacedThermalOverlap_dtOverlap_eq
 open BookProof.ChapterDisplacedThermalMulti
 
 

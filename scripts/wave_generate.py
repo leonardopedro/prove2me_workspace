@@ -914,7 +914,10 @@ def module_namespace(leaf):
     from the first `namespace` command in the source."""
     with open(src_path_for(leaf), encoding="utf-8") as f:
         text = f.read()
-    m = re.search(r"^namespace (BookProof\.[A-Za-z0-9_'.]+)", text, re.M)
+    # Unicode-aware identifier class (same lesson as `_declared_theorems` in
+    # pipeline/upload_pipeline.py and `fmt_name` above): an ASCII-only class
+    # silently truncates any non-ASCII identifier it meets.
+    m = re.search(r"^namespace (BookProof\.[^\s:({⟨\[⦃,]+)", text, re.M)
     if m:
         return m.group(1)
     return f"BookProof.{leaf.removeprefix('Chapter')}"
@@ -1220,6 +1223,84 @@ def extract_namespace_variables(bt, upto_line=None):
     return "\n".join(out)
 
 
+def node_span_is_sane(bt, node):
+    """Is the sketch's recorded span actually usable for this declaration?
+
+    The sketch's `declStart.offset` is wrong for ~7% of nodes: it points into the
+    middle of the PREVIOUS declaration (so the span opens on a bare `)` or
+    `, map_mul] at hc`), or past the end of the file. `the_statement` then either
+    slices a fragment into the stub or cannot find `:=` at all -- the
+    `cannot split formal_statement` and `Invalid field` failure classes.
+
+    The line-based `look misaligned` warning cannot see this: it compares
+    recorded LINES, and it is advisory-only by design.
+    """
+    nbytes = len(bt.text.encode("utf-8"))
+    if node.s < 0 or node.s >= nbytes:
+        return False
+    head = bt.text[node.s:node.s + 400]
+    first = next((l.strip() for l in head.split("\n") if l.strip()), "")
+    if not first:
+        return False
+    if first[:1] in (")", ",", "]", "}", "|"):
+        return False
+    # The span must contain the declaration's own `:=`, in code.
+    t = find_term_as(bt.text, node.s)
+    return t is not None
+
+
+_DECL_HEAD = (
+    r"(?m)^[ \t]*(?:@\[[^\]]*\][ \t]*)?"
+    r"(?:(?:omit|set_option)[^\n]*?\s+in\s+)?"
+    r"(?:(?:private|protected|noncomputable|nonrec|unsafe|partial)\s+)*"
+    r"(?:theorem|lemma|def|abbrev|instance|structure|example|opaque)\s+"
+)
+
+
+def realign_node(bt, node):
+    """Re-point a node at its own declaration, found by NAME. True if repaired.
+
+    Only ever called when `node_span_is_sane` says the recorded offset is
+    unusable, so the 8,000-odd healthy nodes are never touched.
+    """
+    short = (node.short() if hasattr(node, "short") else node.uname.split(".")[-1])
+    quoted = "\u00ab" + short + "\u00bb"
+    for name in (short, quoted):
+        m = re.search(_DECL_HEAD + re.escape(name) + r"\b", bt.text)
+        if m:
+            node.s = m.start()
+            node.sl = bt.text[:m.start()].count("\n") + 1
+            node.e = getattr(node, "el", None) or node.sl
+            return True
+    return False
+
+
+def scoped_open_at(bt, pos):
+    """The de-scoped `open X` when a declaration's span STARTS with `open X in`.
+
+    `structural_preamble` takes `slice(0, node.s)`, an EXCLUSIVE bound, so it only
+    ever sees wrappers that sit BEFORE the declaration. But the sketch frequently
+    records `declStart` ON the declaration's own `open X in` line -- in
+    `ChapterH8` all five `open ContinuousLinearMap in` lines are exactly a node's
+    `declStart` (e.g. `adjoint_comp_self_of_nested` has `s == 5901` and the open at
+    line 121 is byte 5901). `find_term_as` then skips past the open to reach the
+    `theorem`, and the open is dropped from the generated stub entirely: 14
+    theorems failed with `Unknown identifier adjoint` because
+    `ContinuousLinearMap.adjoint` was never in scope.
+
+    So handle the wrapper that begins exactly at `pos`. De-scoping to `open X` is
+    safe here: the stub is a fresh module whose only content is this one theorem.
+    """
+    head = bt.slice(pos, min(pos + 400, len(bt.text.encode("utf-8"))))
+    for ln in head.split("\n"):
+        st = ln.strip()
+        if not st:
+            continue
+        m = re.match(r"^open\s+(scoped\s+)?(.+?)\s+in$", st)
+        return ("open " + (m.group(1) or "") + m.group(2)) if m else None
+    return None
+
+
 def scoped_opens_before(pre):
     """The contiguous run of `open ... in` lines ending the preamble.
 
@@ -1260,6 +1341,22 @@ def build_thm(bt, leaf, decls, node, modns):
     head = [f"-- Generated from {leaf}.lean — theorem {node.uname}\n"]
     head.append(imports_for(leaf, node, modns) + "\n")
     
+    # ORDER MATTERS: the preamble (`open ...`) must come BEFORE any `variable`
+    # line, because a variable binder can name something the open provides.
+    # Emitting `variable {α} [MeasurableSpace α] (mu : Measure α)` above
+    # `open MeasureTheory` gives
+    #   line 9: It is not possible to treat `Measure` as an implicitly
+    #           quantified type
+    # which is unrepairable from the stub side. The source has the opens first,
+    # so mirror that order rather than hoisting variables to the top.
+    if ctx:
+        # Read the RAW text before the node: `structural_preamble` has already
+        # stripped the `open ... in` lines from `ctx`, so scanning `ctx` cannot
+        # recover them.
+        scoped = scoped_opens_before(bt.slice(0, node.s))
+        head.append("\n".join(scoped) + "\n" if scoped else "")
+        head.append(ctx + "\n")
+
     # Add namespace-level variables if any
     try:
         ns_vars = extract_namespace_variables(bt, getattr(node, "sl", None))
@@ -1268,14 +1365,10 @@ def build_thm(bt, leaf, decls, node, modns):
     except Exception as e:
         # Log but don't fail
             print(f"WARNING: extract_namespace_variables failed for {leaf}: {e}", file=sys.stderr)
-    
-    if ctx:
-        # Read the RAW text before the node: `structural_preamble` has already
-        # stripped the `open ... in` lines from `ctx`, so scanning `ctx` cannot
-        # recover them.
-        scoped = scoped_opens_before(bt.slice(0, node.s))
-        head.append("\n".join(scoped) + "\n" if scoped else "")
-        head.append(ctx + "\n")
+
+    at_node = scoped_open_at(bt, node.s)
+    if at_node:
+        head.append(at_node + "\n")
     head.append("\n")
     # PIPELINE_PLAN 6.1: the server rejects `'` in a theorem_name --
     # "theorem_name must be a valid Lean identifier". Observed directly:
@@ -1773,6 +1866,11 @@ def build_sol(bt, leaf, decls, nodes, inline, node, modns):
         parts.append(f"open {ns}\n")
     if ctx:
         parts.append("\n" + ctx + "\n")
+    # A declaration whose span STARTS with `open X in` needs that open too --
+    # see scoped_open_at for why the preamble cannot supply it.
+    at_node = scoped_open_at(bt, node.s)
+    if at_node:
+        parts.append(at_node + "\n")
     # The `variable` declarations, bounded to this theorem. Same omission the
     # theorem stubs had: `Sol_...IsShiftInvert_mem` states
     # `theorem solution {A : Dom ->L[] F} ... : R u ∈ Dom`, and `Dom` is only
@@ -1965,6 +2063,18 @@ def main():
         modns = module_namespace(leaf)
         doc = module_doc(bt)
         defmat, embedded, nodes, inline = classify(decls, doc, bt)
+        # Repair sketch offsets that point into the previous declaration or past
+        # EOF, by locating each declaration again by name. Verified on the corpus:
+        # 352/354 `no_term_as` and 297/301 `fragment_start` nodes have their name
+        # in THIS SAME source file, so the name lookup succeeds and the span is
+        # recoverable. Without this the stub is a fragment or unparseable.
+        fixed = 0
+        for nd in nodes:
+            if not node_span_is_sane(bt, nd) and realign_node(bt, nd):
+                fixed += 1
+        if fixed:
+            print(f"   realigned {fixed}/{len(nodes)} node span(s) by name",
+                  file=sys.stderr)
         print(f"== {leaf}: {len(decls)} decls; defmat={len(defmat)} "
               f"embedded={len(embedded)} nodes={len(nodes)} inline={len(inline)}")
         body = build_def_file(bt, leaf, decls, defmat, embedded)
@@ -1997,7 +2107,9 @@ def main():
                              "ns": node.parent_ns()})
             print(f"   -> node {node.uname} (plen {node.plen})")
     if not defs_only:
-        with open(f"{WS}/state/wave_manifest.json", "w") as f:
+        mpath = os.environ.get("WAVE_MANIFEST_OUT",
+                               f"{WS}/state/wave_manifest.json")
+        with open(mpath, "w") as f:
             json.dump(manifest, f, indent=1)
         print(f"\nmanifest: {len(manifest)} nodes")
 

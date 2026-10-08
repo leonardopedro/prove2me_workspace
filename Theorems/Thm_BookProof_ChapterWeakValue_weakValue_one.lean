@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterWeakValue
 open BookProof.ChapterWeakValue
 
-variable {n : ℕ}
-
 
 open scoped BigOperators Matrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterWeakValue.weakValue_one (i f : Fin n → ℂ) (h : ip f i ≠ 0) :

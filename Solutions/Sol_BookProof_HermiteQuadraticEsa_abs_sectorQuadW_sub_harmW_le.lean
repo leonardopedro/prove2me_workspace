@@ -1,8 +1,8 @@
 -- Generated from ChapterHermiteQuadraticEsa.lean — solution of BookProof.HermiteQuadraticEsa.abs_sectorQuadW_sub_harmW_le
 import Mathlib
 import Definitions.Def_ChapterHermiteQuadraticEsa
-import Theorems.Thm_BookProof_HermiteQuadraticEsa_norm_sq_two
 import Theorems.Thm_BookProof_HermiteQuadraticEsa_abs_coord_zero_le_norm_two
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_norm_sq_two
 open BookProof.HermiteQuadraticEsa
 
 

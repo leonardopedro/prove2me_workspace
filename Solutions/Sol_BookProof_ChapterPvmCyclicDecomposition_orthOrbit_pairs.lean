@@ -1,6 +1,7 @@
 -- Generated from ChapterPvmCyclicDecomposition.lean — solution of BookProof.ChapterPvmCyclicDecomposition.orthOrbit_pairs
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
+import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
 open BookProof.ChapterPvmCyclicDecomposition
 
 

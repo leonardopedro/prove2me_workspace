@@ -20,8 +20,6 @@ open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgOuterFock_esa_farisLavine_full :
     EssentiallySelfAdjointOn qgOuterFriedDom

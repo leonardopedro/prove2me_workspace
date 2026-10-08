@@ -12,9 +12,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsCanonical
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
@@ -22,6 +19,9 @@ open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.FriedrichsCanonical.qgOneParticleHermite_friedrichs_canonical (M alpha : ℝ) (hM : 0 < M) (halpha : 0 < alpha) :
     IsPositiveSelfAdjointExtension

@@ -7,14 +7,14 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-variable [CompleteSpace W]
-
 
 open scoped RealInnerProductSpace
 open BookProof.ChapterA
 
 
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
+
+variable [CompleteSpace W]
 
 theorem BookProof.Complexification.irreducible_iff_no_conj_subsystem [CompleteSpace W] (M : System ℝ W) :
     M.IsIrreducible ↔

@@ -56,9 +56,68 @@ noncomputable def bornDensity (psi : Lp ℂ 2 μ) : α → ℝ≥0∞ := fun x =
 `P(B) = ∫_B |Ψ x|² dμ x`.  Being a `Measure`, it is countably additive by
 construction — the continuum counterpart of the finite additivity proved for the
 lattice Born weights. -/
+noncomputable def bornMeasure (psi : Lp ℂ 2 μ) : Measure α := μ.withDensity (bornDensity psi)e
+
+/-!
+# The Born law on a continuum: `P(B) = ∫_B |Ψ|²` is a probability *measure*
+
+Source: the `ConditionalUnitary` chapter's *"A Less Arbitrary Construction"*
+section (`Book/ConditionalUnitary.lean`) and proof plan appendix §E
+(`Book/ProofPlans.lean`), whose *Boundary* paragraph defers "the analytic
+integrability of `∫_B |Ψ₁|² dν`" to the finite/discretized level.
+
+`BookProof.ChapterContinuityUnitary` recovers the conditional law as a *finite*
+sum `∑_{z ∈ B} |Ψ_t z|²` on the cyclic lattice, and
+`BookProof.ChapterContinuityUnitaryInfinite` upgrades it to a countable sum on
+`ℓ²(ℤ)`.  This module removes the discretization altogether: on an arbitrary
+measure space `(α, μ)` and for a state `Ψ ∈ L²(μ)`, the Born prescription
+
+  `P(B) = ∫_B ‖Ψ x‖² dμ x`
+
+is defined as a genuine *measure* (`bornMeasure`, the density measure
+`μ.withDensity ‖Ψ ·‖ₑ²`), so countable additivity is automatic; it is a
+*probability* measure exactly when `Ψ` is normalized
+(`isProbabilityMeasure_bornMeasure`), and it is absolutely continuous with
+respect to the background measure `μ` (`bornMeasure_absolutelyContinuous`) — no
+mass appears where `μ` sees none.
+
+The dynamical statement is the capstone `condProb_of_bounded_dynamics`: for a
+*bounded self-adjoint* generator `H` on `L²(μ)` and the unitary group
+`U t = exp (i t H)` (the same construction as in the two lattice chapters, via
+`ChapterContinuityUnitaryInfinite.exp_smul_I_unitary`), the evolved state
+`Ψ_t = U t Ψ` carries a Born law that is a probability measure on the continuum
+for every time `t`, absolutely continuous with respect to `μ`.
+
+What is *not* claimed: unbounded generators (the continuum Laplacian) still lie
+outside the statement; that is the book's standing open layer.
+
+Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
+`Quot.sound`).
+-/
+
+open MeasureTheory
+open scoped ENNReal
+
+namespace BookProof.ChapterBornMeasure
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
+
+/-! ## The Born density and the Born measure -/
+
+/-- The Born density `x ↦ |Ψ x|²` of a state `Ψ ∈ L²(μ)`, as an `ℝ≥0∞`-valued
+function (so that the resulting measure needs no integrability side condition). -/
+noncomputable def bornDensity (psi : Lp ℂ 2 μ) : α → ℝ≥0∞ := fun x => ‖(psi : α → ℂ) x‖ₑ ^ 2
+
+/-- **The Born law of a state on a continuum**, as a measure:
+`P(B) = ∫_B |Ψ x|² dμ x`.  Being a `Measure`, it is countably additive by
+construction — the continuum counterpart of the finite additivity proved for the
+lattice Born weights. -/
 noncomputable def bornMeasure (psi : Lp ℂ 2 μ) : Measure α := μ.withDensity (bornDensity psi)
 
-
+theorem bornMeasure_apply (psi : Lp ℂ 2 μ) {s : Set α} (hs : MeasurableSet s) :
+    bornMeasure psi s = ∫⁻ x in s, ‖(psi : α → ℂ) x‖ₑ ^ 2 ∂μ := by
+  rw [bornMeasure, withDensity_apply _ hs]
+  rfl
 
 
 

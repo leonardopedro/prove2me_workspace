@@ -15,7 +15,6 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterQgTimeIndependentFlow
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsFriedrichs
@@ -90,13 +89,31 @@ variable {d : ℕ}
 
 /-! ## The transport of a polynomial operator is multiplicative -/
 
+theorem coreRep_op_comp {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
+    (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
+    Φ.op (S.comp T) = (Φ.op S).comp (Φ.op T) := by
+  refine LinearMap.ext fun x => ?_
+  simp [CoreRep.op_apply]
 
+theorem coreRep_op_add {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D)
+    (S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
+    Φ.op (S + T) = Φ.op S + Φ.op T := by
+  refine LinearMap.ext fun x => ?_
+  simp [CoreRep.op_apply]
 
+theorem coreRep_op_smul {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D) (c : ℂ)
+    (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
+    Φ.op (c • T) = c • Φ.op T := by
+  refine LinearMap.ext fun x => ?_
+  simp [CoreRep.op_apply]
 
-
-
-
-
+theorem coreRep_op_sum {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D) {ι : Type*} (s : Finset ι)
+    (F : ι → Module.End ℂ (MvPolynomial (Fin d) ℂ)) :
+    Φ.op (∑ i ∈ s, F i) = ∑ i ∈ s, Φ.op (F i) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => refine LinearMap.ext fun x => ?_; simp [CoreRep.op_apply]
+  | insert a s ha ih => rw [Finset.sum_insert ha, coreRep_op_add, ih, Finset.sum_insert ha]
 
 /-! ## The abelian Yang–Mills Hamiltonian on the Hermite core -/
 
@@ -106,25 +123,66 @@ def ymAbelianHermOp (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
     finiteModeDomain (hermBasisN e) →ₗ[ℂ] finiteModeDomain (hermBasisN e) :=
   weylOpDom (piOps (coreRepHerm e)) (magOps (coreRepHerm e) 0)
 
-
+set_option maxHeartbeats 4000000 in
+-- the `L²` coercions of the Gauss–polynomial core, and the `24` Weyl-ordered squares of the
+-- Yang–Mills Hamiltonian, make the defeq checks of this identification expensive
+/-- It is the transport of the polynomial-level Hamiltonian. -/
+theorem ymAbelianHermOp_eq (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    ymAbelianHermOp e = (coreRepHerm e).op ymAbelianPoly := by
+  have h1 : (∑ m : Fin 24, (piOps (coreRepHerm e) m).comp (piOps (coreRepHerm e) m))
+      = ∑ m : Fin 24, (coreRepHerm e).op
+          ((YangMillsHermite.momOp (ymMomIdx m)).comp (YangMillsHermite.momOp (ymMomIdx m))) :=
+    Finset.sum_congr rfl fun m _ => by rw [coreRep_op_comp]; rfl
+  have h2 : (∑ m : Fin 24, (magOps (coreRepHerm e) 0 m).comp (magOps (coreRepHerm e) 0 m))
+      = ∑ m : Fin 24, (coreRepHerm e).op
+          ((mulOp (magPoly 0 (decodeSpace m) (decodeColor m))).comp
+            (mulOp (magPoly 0 (decodeSpace m) (decodeColor m)))) :=
+    Finset.sum_congr rfl fun m _ => by rw [coreRep_op_comp]; rfl
+  rw [ymAbelianHermOp, weylOpDom, ymAbelianPoly, coreRep_op_smul, coreRep_op_add,
+    coreRep_op_sum, coreRep_op_sum, h1, h2]
 
 /-- Its matrix in the product Hermite basis. -/
 def ymAbelianHermCol (e : ℕ ≃ (Fin 99 →₀ ℕ)) : ℕ → (ℕ →₀ ℂ) :=
   opCol (hermBasisN e) (ymAbelianHermOp e)
 
+theorem ymAbelianHermCol_eq (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    ymAbelianHermCol e = hermCol e ymAbelianPoly := by
+  rw [ymAbelianHermCol, ymAbelianHermOp_eq, hermCol]
 
-
-
+/-- The Yang–Mills Hamiltonian of the chapter, on the Hermite core, is this operator. -/
+theorem ymHamiltonian_hermCore_eq (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    ymHamiltonian (coreRepHerm e) 0
+      = (finiteModeDomain (hermBasisN e)).subtype.comp (ymAbelianHermOp e) := rfl
 
 /-! ## Essential self-adjointness of the second quantization -/
 
+/-- **The second quantization of the abelian gauge-fixed Yang–Mills Hamiltonian is
+essentially self-adjoint on the finite-occupation core.** -/
+theorem dGamma_ymAbelian_essentiallySelfAdjointOn_core (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    EssentiallySelfAdjointOn (lpFiniteModes Conf) (dGammaOp (ymAbelianHermCol e)) := by
+  rw [ymAbelianHermCol_eq]
+  refine dGamma_hermCol_essentiallySelfAdjointOn_core e ?_ ?_
+  · rw [ymAbelianPoly_eq_fqPoly]
+    exact polySym_fqPoly _ _ _ _ _
+  · rw [ymAbelianPoly_eq_fqPoly]
+    exact isBand2_fqPoly _ _ _ _ _
 
+theorem isHermCol_ymAbelianHermCol (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    IsHermCol (ymAbelianHermCol e) :=
+  isHermCol_opCol (ymHamiltonian_symmetricOn (coreRepHerm e) 0)
 
+theorem dGammaOp_ymAbelianHermCol_symmetricOn (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    SymmetricOn (lpFiniteModes Conf) (dGammaOp (ymAbelianHermCol e)) :=
+  dGammaOp_symmetricOn (isHermCol_ymAbelianHermCol e)
 
-
-
-
-
+/-- The second-quantized abelian Yang–Mills Hamiltonian has a positive self-adjoint
+(Friedrichs) extension. -/
+theorem ymAbelianFock_friedrichs_extension (e : ℕ ≃ (Fin 99 →₀ ℕ)) :
+    ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
+      IsPositiveSelfAdjointExtension (dGammaOp (ymAbelianHermCol e)) A :=
+  secondQuantization_friedrichs (hermBasisN e) (ymAbelianHermOp e)
+    (ymHamiltonian_symmetricOn (coreRepHerm e) 0)
+    (ymHamiltonian_quadForm_nonneg (coreRepHerm e) 0)
 
 
 

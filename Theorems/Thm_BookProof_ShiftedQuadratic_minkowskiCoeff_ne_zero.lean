@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 open BookProof.HyperbolicQuadratic
 open BookProof.ShiftedQuadratic
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadratic.minkowskiCoeff_ne_zero (n : ℕ) (i : Fin (1 + n)) : minkowskiCoeff n i ≠ 0 := by sorry

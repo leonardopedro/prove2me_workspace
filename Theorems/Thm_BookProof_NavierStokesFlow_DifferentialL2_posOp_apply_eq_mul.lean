@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.posOp_apply_eq_mul (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
     pgFun (mulXPoly i p) x = ((x i : ℝ) : ℂ) * pgFun p x := by sorry

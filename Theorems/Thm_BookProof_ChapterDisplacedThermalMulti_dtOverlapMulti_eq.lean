@@ -7,8 +7,6 @@ open BookProof.ChapterDisplacedThermalOverlap
 open BookProof.HermiteProductCore
 open BookProof.ChapterDisplacedThermalMulti
 
-variable {n m : ℕ}
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ open scoped NNReal
 
 
 open BookProof.ChapterDisplacedThermalOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterDisplacedThermalMulti.dtOverlapMulti_eq (nbar : ℝ≥0) (a b : EuclideanSpace ℝ (Fin n)) :

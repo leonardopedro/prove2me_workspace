@@ -1,6 +1,8 @@
 -- Generated from ChapterObservableExpectation.lean — solution of BookProof.ChapterObservableExpectation.attention_eq_expectation
 import Mathlib
 import Definitions.Def_ChapterObservableExpectation
+import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_sum_one
 open BookProof.ChapterObservableExpectation
 
 

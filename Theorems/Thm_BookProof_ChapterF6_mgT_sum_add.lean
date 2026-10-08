@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterF6
 open BookProof.ChapterF6
 
-variable {α : Type*} [DecidableEq α]
-
 
 open scoped BigOperators
 
+
+variable {α : Type*} [DecidableEq α]
 
 
 theorem BookProof.ChapterF6.mgT_sum_add (k : ℕ) (T : α →₀ ℕ) (s : List α) (hT : T.support.card ≤ k) :

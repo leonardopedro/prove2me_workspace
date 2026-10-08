@@ -10,9 +10,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -21,6 +18,9 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.norm_bigP_sq :
     ‖pgLp (bigP vf Mf)‖ ^ 2 = (∏ j, facS vf Mf j) * (Real.sqrt (2 * Real.pi)) ^ d := by sorry

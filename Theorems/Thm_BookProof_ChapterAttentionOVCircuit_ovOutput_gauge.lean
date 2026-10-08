@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
 open BookProof.ChapterAttentionOVCircuit
 
-variable {d n p m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open Matrix BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d n p m : ℕ}
 
 
 theorem BookProof.ChapterAttentionOVCircuit.ovOutput_gauge (beta : ℝ) (s : Fin m → ℝ) {A B : Matrix (Fin d) (Fin d) ℝ}

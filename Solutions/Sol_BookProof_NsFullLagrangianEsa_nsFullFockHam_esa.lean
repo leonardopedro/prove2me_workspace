@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsFullLagrangianFockEsa
 import Theorems.Thm_BookProof_NsFullLagrangianEsa_nsSectorHam_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.NsFullLagrangianEsa
 
 

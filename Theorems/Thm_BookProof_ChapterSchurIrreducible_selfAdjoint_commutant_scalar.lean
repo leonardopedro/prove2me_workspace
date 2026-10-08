@@ -6,13 +6,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterSchurIrreducible
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurIrreducible.selfAdjoint_commutant_scalar (M : System ℂ V) (hirr : M.IsIrreducible)

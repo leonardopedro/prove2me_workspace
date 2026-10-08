@@ -4,11 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianCyclicModel
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
-
 
 open MeasureTheory Complex WeakDual
 open scoped ComplexOrder
@@ -16,6 +11,11 @@ open scoped ComplexOrder
 
 open BookProof.ChapterAbelianGelfandModel
 
+
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
 
 
 omit [T2Space X] [MeasurableSpace X] [BorelSpace X] in

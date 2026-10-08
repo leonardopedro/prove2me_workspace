@@ -13,8 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-variable {w : ℕ → ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
@@ -22,5 +20,7 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {w : ℕ → ℝ}
 
 theorem BookProof.FockWeightedSchur.wgt_apply (u : FockAlg) (α : Conf) : wgt w u α = (wSym w α : ℂ) * u α := by sorry

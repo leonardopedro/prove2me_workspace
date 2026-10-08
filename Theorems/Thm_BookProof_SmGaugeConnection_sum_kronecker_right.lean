@@ -9,8 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
 open BookProof.SmGaugeConnection
 
-variable {N d : ℕ}
-
 
 
 open Matrix Kronecker
@@ -18,6 +16,8 @@ open BookProof.YangMillsSU3 BookProof.ChapterCPTHamiltonian BookProof.SmCar
 open BookProof.SmDiracYukawa BookProof.SmDiracSpinor BookProof.FarisLavine
 
 noncomputable section
+
+variable {N d : ℕ}
 
 
 theorem BookProof.SmGaugeConnection.sum_kronecker_right {n : ℕ} (F : Fin 3 → Matrix (Fin 4) (Fin 4) ℂ)

@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterIrreversible
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterIrreversible.bornDist_sum (v : Fin n → ℂ) (hv : ∑ a, ‖v a‖ ^ 2 = 1) :

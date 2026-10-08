@@ -8,18 +8,18 @@ open BookProof.ChapterH5
 open BookProof.ChapterH6
 open BookProof.ChapterH8
 
+
+noncomputable section
+
+
+open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {E F G : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
-
-noncomputable section
-
-
-open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
 
 theorem BookProof.ChapterH8.sirk_nested_orders {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
     (H : E →ₗ[K] E) (v : E) (C Dmin h nv : ℝ)

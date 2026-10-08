@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -22,6 +20,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.isPosAlg_add {T S : Module.End ℂ (γ →₀ ℂ)} (hT : IsPosAlg T) (hS : IsPosAlg S) :
     IsPosAlg (T + S) := by sorry

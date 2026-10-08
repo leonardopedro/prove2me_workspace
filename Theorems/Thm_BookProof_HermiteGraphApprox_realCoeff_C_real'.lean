@@ -18,8 +18,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.HermiteGraphApprox
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -32,6 +30,8 @@ open BookProof.ConvolutionCalc
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteGraphApprox.realCoeff_C_real_prime (c : ℝ) : RealCoeff (C ((c : ℝ) : ℂ) : MvPolynomial (Fin d) ℂ) := by sorry

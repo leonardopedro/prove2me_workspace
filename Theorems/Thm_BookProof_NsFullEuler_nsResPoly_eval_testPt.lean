@@ -15,8 +15,6 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsResPoly_eval_testPt (nu : ℝ) (p : Fin n) (t : ℝ) :
     eval (testPt p t) (nsResPoly nu p 0) = (t : ℂ) * (t : ℂ) := by sorry

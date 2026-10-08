@@ -1,4 +1,4 @@
--- Generated from ChapterPauliLorentz.lean — solution of BookProof.ChapterPauliLorentz.σ1σ2_anti
+-- Generated from ChapterPauliLorentz.lean — solution of BookProof.ChapterPauliLorentz.sigma1sigma2_anti
 import Mathlib
 import Definitions.Def_ChapterPauliLorentz
 open BookProof.ChapterPauliLorentz

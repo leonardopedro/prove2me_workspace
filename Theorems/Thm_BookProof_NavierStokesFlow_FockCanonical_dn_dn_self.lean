@@ -9,14 +9,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
-variable {d : ℕ} {κ : Fin d → ℝ}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 theorem BookProof.NavierStokesFlow.FockCanonical.dn_dn_self (i : Fin d) (β : Occ d) : (dn i (dn i β)) i = β i - 2 := by sorry

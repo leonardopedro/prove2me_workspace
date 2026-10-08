@@ -5,11 +5,11 @@ import Definitions.Def_ChapterSequentialBayes
 open BookProof.ChapterSequentialBayes
 open BookProof.ChapterHierarchicalBayes
 
-variable {A B : Type*} [Fintype A] [Fintype B]
-
 
 open scoped BigOperators
 
+
+variable {A B : Type*} [Fintype A] [Fintype B]
 
 
 theorem BookProof.ChapterHierarchicalBayes.outerPosterior_eq_bayesUpdate (outer : A → ℝ) (inner : A → B → ℝ)

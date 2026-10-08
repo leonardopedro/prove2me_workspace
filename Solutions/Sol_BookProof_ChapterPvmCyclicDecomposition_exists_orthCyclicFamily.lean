@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_mem_familyOrbit_self
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_pvm_mem_familyOrbit
+import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
 open BookProof.ChapterPvmCyclicDecomposition
 
 

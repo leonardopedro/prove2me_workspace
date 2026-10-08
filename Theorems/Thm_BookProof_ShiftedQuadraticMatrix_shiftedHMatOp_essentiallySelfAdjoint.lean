@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadraticMatrix
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -32,6 +30,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_essentiallySelfAdjoint {A : Matrix (Fin d) (Fin d) ℝ}

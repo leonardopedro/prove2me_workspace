@@ -19,8 +19,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HermiteGraphApprox
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -33,6 +31,8 @@ open BookProof.ConvolutionCalc
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteGraphApprox.tendsto_htrunc (v : L2d d) : Tendsto (htrunc v) atTop (𝓝 v) := by sorry

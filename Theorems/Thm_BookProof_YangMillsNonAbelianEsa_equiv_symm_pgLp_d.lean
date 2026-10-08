@@ -19,10 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.YangMillsNonAbelianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -33,6 +29,10 @@ open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {D : Submodule ℂ F}
+variable {d : ℕ}
 
 theorem BookProof.YangMillsNonAbelianEsa.equiv_symm_pgLp_d (p : MvPolynomial (Fin d) ℂ) :
     (coreRepPoly d).equiv.symm ⟨pgLp p, pgLp_mem_core p⟩ = p := by sorry

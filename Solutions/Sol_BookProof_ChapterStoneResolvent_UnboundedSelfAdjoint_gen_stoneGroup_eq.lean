@@ -22,6 +22,6 @@ variable [TopologicalSpace.SeparableSpace H]
 set_option maxHeartbeats 1000000 in
 theorem solution (T : UnboundedSelfAdjoint H) : T.stoneGroup.gen = T := by
 
-  refine ext' T.genDomain_eq_domain ?_
+  refine ext_prime T.genDomain_eq_domain ?_
   intro x _ hx'
   exact T.genOp_eq_op ⟨x, hx'⟩

@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLimitCircleExample
 import Theorems.Thm_BookProof_LimitCircleExample_hasDerivAt_lcSol
 import Theorems.Thm_BookProof_LimitCircleExample_lcLog_ode
-import Theorems.Thm_BookProof_LimitCircleExample_hasDerivAt_lcLog'
+import Theorems.Thm_BookProof_LimitCircleExample_hasDerivAt_lcLog_prime
 open BookProof.LimitCircleExample
 
 
@@ -20,7 +20,7 @@ theorem solution (x : ℝ) :
     HasDerivAt (fun y => lcLog' y * lcSol y)
       ((((lcV x : ℝ) : ℂ) - Complex.I) * lcSol x) x := by
 
-  have h := (hasDerivAt_lcLog' x).mul (hasDerivAt_lcSol x)
+  have h := (hasDerivAt_lcLog_prime x).mul (hasDerivAt_lcSol x)
   have hval : (((lcP'' x : ℝ) : ℂ) + Complex.I * ((-x : ℝ) : ℂ)) * lcSol x
       + lcLog' x * (lcLog' x * lcSol x)
       = (((lcV x : ℝ) : ℂ) - Complex.I) * lcSol x := by

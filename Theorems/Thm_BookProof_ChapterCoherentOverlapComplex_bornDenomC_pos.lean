@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.bornDenomC_pos (q : EuclideanSpace ℂ (Fin n)) (k : Fin m → EuclideanSpace ℂ (Fin n))

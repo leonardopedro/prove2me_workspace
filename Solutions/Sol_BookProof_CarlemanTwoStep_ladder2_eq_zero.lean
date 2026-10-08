@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_CarlemanTwoStep_flux_boundG
 import Theorems.Thm_BookProof_CarlemanTwoStep_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_shifted_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
 open BookProof.CarlemanTwoStep
 
 

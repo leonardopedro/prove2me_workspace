@@ -6,15 +6,15 @@ import Mathlib
 import Definitions.Def_ChapterNsFieldMomentumInverse
 open BookProof.NsFieldMomentumInverse
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDimensional ℝ W]
-  [MeasurableSpace W] [BorelSpace W]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform
 open BookProof.NsSpatialMultiplier BookProof.FourierMultiplierEsa BookProof.StrichartzWave
 
 noncomputable section
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDimensional ℝ W]
+  [MeasurableSpace W] [BorelSpace W]
 
 
 theorem BookProof.NsFieldMomentumInverse.isMomInverse_smul {m : W} (c : ℂ) {f g : Lp ℂ 2 (volume : Measure W)}

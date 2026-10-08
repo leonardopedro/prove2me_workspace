@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.coherentBornC_eq_softmax_of_unit_keys (q : EuclideanSpace ℂ (Fin n))

@@ -131,14 +131,10 @@ def numberQuad (u : FockAlg) : ℝ :=
 
 section Audit
 
-#print axioms norm_annVec_le
-#print axioms abs_re_inner_fieldVec_le
-#print axioms number_le_dGamma_quadForm
-#print axioms fieldVec_relative_form_bound
-#print axioms fock_gap_of_field_perturbation
-#print axioms fock_gap_of_field_perturbation_pos
-#print axioms fieldVec_vac
-#print axioms fieldVec_unbounded
+-- The audited declarations live in this chapter's `Theorems.Thm_*` stubs, which
+-- import this bundle back: the bundle cannot import them (cycle), and none of
+-- the names is declared here, so every `#print axioms` line was an
+-- `Unknown constant` server FAILED.  Audit dropped (2026-10-08, §5d).
 
 end Audit
 

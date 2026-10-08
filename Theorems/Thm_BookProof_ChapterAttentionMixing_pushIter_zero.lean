@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 open BookProof.ChapterAttentionMixing
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMixing.pushIter_zero (P : Fin m → Fin m → ℝ) (p : Fin m → ℝ) : pushIter P 0 p = p := by sorry

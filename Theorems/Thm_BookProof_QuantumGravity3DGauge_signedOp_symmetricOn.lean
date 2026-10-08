@@ -12,9 +12,6 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QuantumGravity3DGauge
 
-variable {d : ℕ}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -23,6 +20,9 @@ open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerk
 open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
+
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 theorem BookProof.QuantumGravity3DGauge.signedOp_symmetricOn {n m : ℕ} {kappa : Fin n → ℝ} {pi : Fin n → D →ₗ[ℂ] D}
     {Bf : Fin m → D →ₗ[ℂ] D} (hpi : ∀ i, SymmetricOn D (D.subtype.comp (pi i)))

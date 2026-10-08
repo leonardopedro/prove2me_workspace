@@ -5,8 +5,6 @@ import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterRotaryPosition
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterRotaryPosition.coherentOverlapC_rotaryEncode (omega : Fin n → ℝ) (a b : ℝ)

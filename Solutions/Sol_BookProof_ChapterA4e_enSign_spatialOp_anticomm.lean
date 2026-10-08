@@ -1,6 +1,7 @@
 -- Generated from ChapterA4e.lean — solution of BookProof.ChapterA4e.enSign_spatialOp_anticomm
 import Mathlib
 import Definitions.Def_ChapterA4e
+import Theorems.Thm_BookProof_ChapterA5_coeffBoostZ_mass1_anticomm
 open BookProof.ChapterA4e
 
 

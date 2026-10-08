@@ -10,15 +10,15 @@ open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.SecondQuantizationCore
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.DirectSumEsa
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
+  (D : Submodule ℂ Hs.carrier)
 
 
 theorem BookProof.SecondQuantizationCore.essentiallySelfAdjointOn_fockSectorCore (hcore : IsGraphCore D A) (n : ℕ)

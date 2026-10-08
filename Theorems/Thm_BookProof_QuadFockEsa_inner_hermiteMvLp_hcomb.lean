@@ -17,8 +17,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QuadFockEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -29,6 +27,8 @@ open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadFockEsa.inner_hermiteMvLp_hcomb (f : (Fin d →₀ ℕ) →₀ ℂ) (β : Fin d →₀ ℕ) :

@@ -14,10 +14,6 @@ open BookProof.FarisLavine
 open BookProof.QuantumGravityDensitized
 open BookProof.ScalaronEsa
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -28,6 +24,10 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
+
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc phi : ℕ → ℝ)
 
 theorem BookProof.ScalaronEsa.qgScalaronMode_deficiencyTrivialAt {z : ℂ} (hz : z.im ≠ 0) :
     DeficiencyTrivialAt

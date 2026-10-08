@@ -10,14 +10,14 @@ open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockContinuum.sectorHamiltonian_hasZeroDeficiencyOn {w : ℝ → ℝ} (hw : Measurable w) (n : ℕ) :

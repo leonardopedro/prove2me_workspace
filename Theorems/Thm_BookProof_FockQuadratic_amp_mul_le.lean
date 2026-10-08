@@ -12,9 +12,6 @@ open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-
 
 open scoped ENNReal
 
@@ -24,6 +21,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
 
 theorem BookProof.FockQuadratic.amp_mul_le (hω : ∀ i, 0 ≤ ω i) {P Q : Idx ι} (hPQ : deg P + deg Q ≤ 2) (b : Idx ι)
     (p r : ℝ) :

@@ -9,15 +9,15 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.mulSA_position_unbounded :
     ¬ ∃ C : ℝ, ∀ x : (mulSA positionField).domain,

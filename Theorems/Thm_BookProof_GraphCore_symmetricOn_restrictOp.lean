@@ -5,11 +5,11 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.GraphCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.GraphCore.symmetricOn_restrictOp {D₁ D₂ : Submodule ℂ F} (T : D₂ →ₗ[ℂ] F) (h : D₁ ≤ D₂)

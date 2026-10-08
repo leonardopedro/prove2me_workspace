@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
 open BookProof.ChapterAttentionQKCircuit
 
-variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open Matrix BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionQKCircuit.qkScore_congr_of_qkMatrix_eq {WQ₁ WK₁ WQ₂ WK₂ : Matrix (Fin d) (Fin n) ℝ}

@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 import Theorems.Thm_BookProof_WallEsaSemibounded_integral_conj_neg_deriv2_mul
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
-import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 open BookProof.WallEsaSemibounded
@@ -22,15 +21,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-
-      = -∫ x, (starRingEnd ℂ) (deriv (deriv f) x) * f x := by
-    rw [← integral_neg]
-    refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    simp
-  rw [hneg]
-  linear_combination -hzero
-
-theorem solution (g : 𝓢 :=
+theorem solution (f : ccSchwartz ℝ) :
+    (inner ℂ (kinCcR (ccEquiv ℝ f))
+        ((ccEquiv ℝ f : ccDomain ℝ) : Lp ℂ 2 (volume : Measure ℝ)) : ℂ)
+      = ((∫ x, ‖deriv ((f : 𝓢(ℝ, ℂ)) : ℝ → ℂ) x‖ ^ 2 : ℝ) : ℂ) :=
   (ℝ, ℂ)) :
       (inner ℂ (g.toLp 2 (volume : Measure ℝ)) (g.toLp 2 (volume : Measure ℝ)) : ℂ)
         = ((∫ x, ‖g x‖ ^ 2 : ℝ) : ℂ) := by

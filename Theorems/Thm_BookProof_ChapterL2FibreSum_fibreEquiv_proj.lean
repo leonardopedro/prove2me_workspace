@@ -7,10 +7,6 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterL2FibreSum
 
-variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
-variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
-variable {ι : Type*} [DecidableEq ι]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -18,6 +14,10 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterHilbertSumIntertwine
 
+variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
+
+variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
+variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.ChapterL2FibreSum.fibreEquiv_proj [Countable ι] (μ : Measure X) {E : Set X} (hE : MeasurableSet E)
     (v : Lp (Fibre ι) 2 μ) (i : ι) :

@@ -1,14 +1,9 @@
 -- Generated from ChapterSirkDiffusiveDecay.lean — theorem BookProof.ChapterSirkDiffusiveDecay.isCoercive_compress
 import Mathlib
 import Definitions.Def_ChapterSirkDiffusiveDecay
+import Definitions.Def_ChapterH4
+open BookProof.ChapterH4
 open BookProof.ChapterSirkDiffusiveDecay
-
-
-
-
-
-
-
 
 
 noncomputable section
@@ -20,6 +15,7 @@ open Filter Topology NormedSpace
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
 
 theorem BookProof.ChapterSirkDiffusiveDecay.isCoercive_compress (V : F →L[ℂ] E) (A : E →L[ℂ] E) {mu : ℝ}
     (hVV : V.adjoint.comp V = ContinuousLinearMap.id ℂ F) (hA : IsCoercive A mu) :

@@ -5,8 +5,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpScaleMeasure
 
-variable {α : Type*} [MeasurableSpace α] {nu : Measure α} {c : ENNReal}
-
 
 noncomputable section
 
@@ -14,6 +12,8 @@ open MeasureTheory ENNReal
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {nu : Measure α} {c : ENNReal}
 
 
 theorem BookProof.ChapterLpScaleMeasure.normalized_multiplication_model [IsFiniteMeasure nu] (hne : nu Set.univ ≠ 0) :

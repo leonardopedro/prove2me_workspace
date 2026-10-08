@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_exists_physical_ne_agreeing_of_not_comprehensive
+import Theorems.Thm_BookProof_ChapterGaugeIncompleteFixing_physical_ext_of_comprehensive
 open BookProof.ChapterGaugeComprehensiveFixing
 
 
@@ -21,8 +22,8 @@ theorem solution :
   constructor
   · intro hext
     by_contra hS
-    obtain ⟨f, f', hf, hf', hagree, hne⟩ :=
+    obtain ⟨f, f', hf, hf_prime, hagree, hne⟩ :=
       exists_physical_ne_agreeing_of_not_comprehensive hS
-    exact hne (hext f f' hf hf' hagree)
-  · intro hS f f' hf hf' hagree
-    exact physical_ext_of_comprehensive G hS hf hf' hagree
+    exact hne (hext f f' hf hf_prime hagree)
+  · intro hS f f' hf hf_prime hagree
+    exact physical_ext_of_comprehensive G hS hf hf_prime hagree

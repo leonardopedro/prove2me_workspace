@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.FullQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.FullQuadratic.pvec_comm (i j : Fin d) : pvec (d := d) i j = pvec j i := by sorry

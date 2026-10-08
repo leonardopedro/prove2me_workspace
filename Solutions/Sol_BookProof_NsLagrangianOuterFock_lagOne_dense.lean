@@ -1,6 +1,7 @@
 -- Generated from ChapterNsLagrangianOuterFockEsa.lean — solution of BookProof.NsLagrangianOuterFock.lagOne_dense
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianOuterFockEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.NsLagrangianOuterFock
 
 

@@ -10,9 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-variable {ι : Type*}
-
 
 
 open BookProof.GaugeFixing
@@ -22,6 +19,9 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
+variable {ι : Type*}
 
 theorem BookProof.QgPhysicalSectorIdentity.coupling_weighted_summable {ω : ι → ℝ} (h : ι × ι → ℂ)
     (hsum : Summable fun k : ι × ι => ‖h k‖ * (ω k.1 + ω k.2 + 2)) :

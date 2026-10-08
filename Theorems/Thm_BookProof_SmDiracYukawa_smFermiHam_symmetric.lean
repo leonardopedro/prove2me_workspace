@@ -6,15 +6,15 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.SmDiracYukawa
 
-variable {n : ℕ}
-
 
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
 
+variable {n : ℕ}
 
 noncomputable section
+
 
 theorem BookProof.SmDiracYukawa.smFermiHam_symmetric {hD M : Matrix (Fin n) (Fin n) ℂ} (z : ℂ)
     (hh : hD.conjTranspose = hD) (ψ φ : FermiFock n) :

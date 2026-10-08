@@ -1,6 +1,7 @@
 -- Generated from ChapterA4e.lean — solution of BookProof.ChapterA4e.enSign_sq
 import Mathlib
 import Definitions.Def_ChapterA4e
+import Theorems.Thm_BookProof_ChapterA5_coeffMass1Z_sq
 open BookProof.ChapterA4e
 
 

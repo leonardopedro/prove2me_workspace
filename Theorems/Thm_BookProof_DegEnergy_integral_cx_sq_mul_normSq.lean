@@ -8,9 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-variable (S : Finset (Fin d))
-
 
 
 open MeasureTheory
@@ -19,6 +16,9 @@ open BookProof.ConvolutionCalc
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (S : Finset (Fin d))
 
 theorem BookProof.DegEnergy.integral_cx_sq_mul_normSq {χ : Vd d → ℝ} (v : Vd d → ℂ) :
     ∀ x : Vd d, cx χ x ^ 2 * (starRingEnd ℂ) (v x) * v x

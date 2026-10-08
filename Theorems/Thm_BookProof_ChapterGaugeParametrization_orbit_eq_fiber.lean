@@ -4,11 +4,11 @@ import Mathlib
 import Definitions.Def_ChapterGaugeParametrization
 open BookProof.ChapterGaugeParametrization
 
-variable {X Y : Type*}
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X Y : Type*}
 
 
 theorem BookProof.ChapterGaugeParametrization.orbit_eq_fiber (π : X → Y) (x : X) :

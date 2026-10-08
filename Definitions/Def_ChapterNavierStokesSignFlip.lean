@@ -72,11 +72,48 @@ section Transfer
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
+/-- **Unitary transfer of the deficiency condition.**  If the unitary `U`
+preserves the domain `D` and intertwines `T` with `T'`, then triviality of the
+deficiency space of `T` at `z` implies that of `T'`. -/
+theorem deficiencyTrivialAt_of_intertwine (U : F ≃ₗᵢ[ℂ] F) (T T' : D →ₗ[ℂ] F)
+    (hU : ∀ v : D, U (v : F) ∈ D)
+    (hcomm : ∀ v : D, U (T v) = T' ⟨U (v : F), hU v⟩) (z : ℂ)
+    (hT : DeficiencyTrivialAt D T z) : DeficiencyTrivialAt D T' z := by
+  intro w hw
+  have hw' : ∀ v : D, (inner ℂ (T v) (U.symm w) : ℂ) = z * inner ℂ (v : F) (U.symm w) := by
+    intro v
+    have h1 : (inner ℂ (T v) (U.symm w) : ℂ) = inner ℂ (U (T v)) w := by
+      rw [← U.inner_map_map (T v) (U.symm w), U.apply_symm_apply]
+    have h2 : (inner ℂ ((v : F)) (U.symm w) : ℂ) = inner ℂ (U (v : F)) w := by
+      rw [← U.inner_map_map (v : F) (U.symm w), U.apply_symm_apply]
+    rw [h1, h2, hcomm v]
+    exact hw ⟨U (v : F), hU v⟩
+  have hzero : U.symm w = 0 := hT _ hw'
+  have := congrArg U hzero
+  rwa [U.apply_symm_apply, map_zero] at this
 
+/-- **Essential self-adjointness is a unitary invariant.** -/
+theorem essentiallySelfAdjointOn_of_intertwine (U : F ≃ₗᵢ[ℂ] F) (T T' : D →ₗ[ℂ] F)
+    (hU : ∀ v : D, U (v : F) ∈ D)
+    (hcomm : ∀ v : D, U (T v) = T' ⟨U (v : F), hU v⟩)
+    (hT : EssentiallySelfAdjointOn D T) : EssentiallySelfAdjointOn D T' :=
+  ⟨deficiencyTrivialAt_of_intertwine U T T' hU hcomm Complex.I hT.1,
+   deficiencyTrivialAt_of_intertwine U T T' hU hcomm (-Complex.I) hT.2⟩
 
-
-
-
+/-- **Unitary transfer of symmetry.** -/
+theorem symmetricOn_of_intertwine (U : F ≃ₗᵢ[ℂ] F) (T T' : D →ₗ[ℂ] F)
+    (hU : ∀ v : D, U (v : F) ∈ D) (hUsurj : ∀ v : D, ∃ u : D, U (u : F) = (v : F))
+    (hcomm : ∀ v : D, U (T v) = T' ⟨U (v : F), hU v⟩)
+    (hT : SymmetricOn D T) : SymmetricOn D T' := by
+  intro x y
+  obtain ⟨a, ha⟩ := hUsurj x
+  obtain ⟨b, hb⟩ := hUsurj y
+  have hx : x = ⟨U (a : F), hU a⟩ := Subtype.ext ha.symm
+  have hy : y = ⟨U (b : F), hU b⟩ := Subtype.ext hb.symm
+  subst hx
+  subst hy
+  rw [← hcomm a, ← hcomm b]
+  simpa [U.inner_map_map] using hT a b
 
 end Transfer
 
@@ -140,19 +177,58 @@ noncomputable def flipU (p : ι → ℕ) : L2I ι ≃ₗᵢ[ℂ] L2I ι where
 @[simp] theorem flipU_coe (p : ι → ℕ) (x : L2I ι) (β : ι) :
     ((flipU p x : L2I ι) : ι → ℂ) β = (-1 : ℂ) ^ p β * ((x : ι → ℂ) β) := rfl
 
+theorem flipU_apply (p : ι → ℕ) (x : L2I ι) : flipU p x = flipMap p x := rfl
 
+/-- The sign-flip unitary preserves the finite-mode core. -/
+theorem flipU_mem_finiteModes (p : ι → ℕ) {x : L2I ι} (hx : x ∈ lpFiniteModes ι) :
+    flipU p x ∈ lpFiniteModes ι := by
+  refine mem_lpFiniteModes.mpr (Set.Finite.subset (mem_lpFiniteModes.mp hx) fun β hβ => ?_)
+  simp only [Function.mem_support, flipU_coe, ne_eq, mul_eq_zero, not_or] at hβ
+  exact hβ.2
 
-
-
-
+/-- The sign-flip unitary preserves every maximal domain. -/
+theorem flipU_mem_maxDom (p : ι → ℕ) (s : ι → ℝ) {x : L2I ι} (hx : x ∈ maxDom s) :
+    flipU p x ∈ maxDom s := by
+  refine memLpTwo_of_le (⟨fun k => (s k : ℂ) * (x : ι → ℂ) k, hx⟩ : L2I ι) fun k => ?_
+  simp [flipU_coe]
 
 /-! ## Conjugating a shift Hamiltonian -/
 
+/-- The sign of a parity shift is `±1`. -/
+theorem negOne_pow_eq (k : ℕ) : (-1 : ℂ) ^ k = 1 ∨ (-1 : ℂ) ^ k = -1 := by
+  rcases Nat.even_or_odd k with hk | hk
+  · exact Or.inl hk.neg_one_pow
+  · exact Or.inr hk.neg_one_pow
 
+/-- **The conjugation rule.**  If the shift raises the parity by `k`, the
+sign-flip unitary conjugates the shift Hamiltonian into `(−1)^k` times
+itself. -/
+theorem hFun_flip (S : ShiftData ι) (p : ι → ℕ) (k : ℕ)
+    (hp : ∀ β, p (S.shift β) = p β + k) (X : ι → ℂ) (β : ι) :
+    S.hFun (flipFun p X) β = (-1 : ℂ) ^ k * ((-1 : ℂ) ^ p β * S.hFun X β) := by
+  rcases negOne_pow_eq k with hB | hB <;>
+  · by_cases hb : ∃ α, S.shift α = β
+    · obtain ⟨α, rfl⟩ := hb
+      simp only [ShiftData.hFun, ShiftData.hop_shift, flipFun, hp α, hp (S.shift α),
+        pow_add, hB]
+      ring
+    · have hz : ∀ g : ι → ℂ, S.hop g β = 0 := fun g => ShiftData.hop_eq_zero S g hb
+      simp only [ShiftData.hFun, hz, flipFun, hp β, pow_add, hB]
+      ring
 
-
-
-
+/-- The operator form of the conjugation rule. -/
+theorem shiftH_flip (S : ShiftData ι) (p : ι → ℕ) (k : ℕ)
+    (hp : ∀ β, p (S.shift β) = p β + k) (x : maxDom S.sym) :
+    (flipU p (ShiftData.shiftH S x) : L2I ι)
+      = (-1 : ℂ) ^ k • (ShiftData.shiftH S ⟨flipU p (x : L2I ι),
+          flipU_mem_maxDom p S.sym x.2⟩ : L2I ι) := by
+  refine lp.ext (funext fun β => ?_)
+  have hX : ((⟨flipU p (x : L2I ι), flipU_mem_maxDom p S.sym x.2⟩ :
+      maxDom S.sym) : L2I ι) = flipU p (x : L2I ι) := rfl
+  simp only [flipU_coe, ShiftData.shiftH_coe, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul]
+  have hfun : ((flipU p (x : L2I ι) : L2I ι) : ι → ℂ) = flipFun p ((x : L2I ι) : ι → ℂ) := rfl
+  rw [hfun, hFun_flip S p k hp]
+  rcases negOne_pow_eq k with hB | hB <;> rw [hB] <;> ring
 
 /-! ## The affine fiber Hamiltonian with a constant of arbitrary sign -/
 
@@ -164,11 +240,24 @@ noncomputable def esgn (c : ℝ) : ℂ := if c < 0 then -1 else 1
 
 @[simp] theorem esgn_of_neg {c : ℝ} (hc : c < 0) : esgn c = -1 := by simp [esgn, hc]
 
+theorem esgn_eq (c : ℝ) : esgn c = 1 ∨ esgn c = -1 := by
+  rcases lt_or_ge c 0 with h | h
+  · exact Or.inr (esgn_of_neg h)
+  · exact Or.inl (esgn_of_nonneg h)
 
+theorem conj_esgn (c : ℝ) : (starRingEnd ℂ) (esgn c) = esgn c := by
+  rcases esgn_eq c with h | h <;> simp [h]
 
-
-
-
+/-- The signed `±1`-hopping amplitude: `esgn c` times the amplitude of `|c|` is
+the amplitude of `c` itself. -/
+theorem esgn_mul_shear (c : ℝ) (n : ℕ) :
+    esgn c * ((shear |c| n : ℝ) : ℂ) = ((shear c n : ℝ) : ℂ) := by
+  rcases lt_or_ge c 0 with h | h
+  · rw [esgn_of_neg h, abs_of_neg h]
+    simp only [shear]
+    push_cast
+    ring
+  · rw [esgn_of_nonneg h, abs_of_nonneg h, one_mul]
 
 /-- **The affine Navier–Stokes fiber Hamiltonian for an arbitrary real
 constant** `c`: the `±2`-hopping `(κ/2)√((n+1)(n+2))` of the linear part plus the
@@ -179,23 +268,152 @@ noncomputable def saffH {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) :
   ShiftData.shiftH (affData hκ (abs_nonneg c)).fst
     + esgn c • ShiftData.shiftH (affData hκ (abs_nonneg c)).snd
 
+theorem saffH_coe {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (x : maxDom (oscSymbol (affMu κ |c|)))
+    (β : ℕ) :
+    ((saffH hκ c x : L2I ℕ) : ℕ → ℂ) β
+      = (affData hκ (abs_nonneg c)).fst.hFun ((x : L2I ℕ) : ℕ → ℂ) β
+        + esgn c * (affData hκ (abs_nonneg c)).snd.hFun ((x : L2I ℕ) : ℕ → ℂ) β := by
+  simp only [saffH, LinearMap.add_apply, LinearMap.smul_apply, lp.coeFn_add, lp.coeFn_smul,
+    Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+  rfl
 
+/-- For a non-negative constant the signed Hamiltonian is the one of
+`ChapterNavierStokesAffineFiberEsa`. -/
+theorem saffH_eq_affH {κ : ℝ} (hκ : 0 ≤ κ) {c : ℝ} (hc : 0 ≤ c) :
+    saffH hκ c = affH hκ (abs_nonneg c) := by
+  simp only [saffH, esgn_of_nonneg hc, one_smul]
+  rfl
 
+/-- **The affine fiber Hamiltonian is symmetric for every real constant.** -/
+theorem saffH_symmetricOn {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) :
+    SymmetricOn (maxDom (oscSymbol (affMu κ |c|))) (saffH hκ c) := by
+  intro x y
+  have h₁ := ShiftData.shiftH_symmetricOn (affData hκ (abs_nonneg c)).fst x y
+  have h₂ := ShiftData.shiftH_symmetricOn (affData hκ (abs_nonneg c)).snd x y
+  change (inner ℂ (saffH hκ c x : L2I ℕ) (y : L2I ℕ) : ℂ)
+    = inner ℂ (x : L2I ℕ) (saffH hκ c y : L2I ℕ)
+  change (inner ℂ ((affData hκ (abs_nonneg c)).fst.shiftH x
+      + esgn c • (affData hκ (abs_nonneg c)).snd.shiftH x) (y : L2I ℕ) : ℂ)
+    = inner ℂ (x : L2I ℕ) ((affData hκ (abs_nonneg c)).fst.shiftH y
+      + esgn c • (affData hκ (abs_nonneg c)).snd.shiftH y)
+  simp only [inner_add_left, inner_add_right, inner_smul_left, inner_smul_right, conj_esgn]
+  first | linear_combination h₁ + esgn c * h₂ | trace_state
 
+/-- **The sign-flip unitary conjugates the `|c|` fiber Hamiltonian into the `c`
+fiber Hamiltonian**, for `c < 0`: it preserves the `±2`-hopping of the linear
+part and reverses the `±1`-hopping of the constant part. -/
+theorem saffH_conj_flip {κ : ℝ} (hκ : 0 ≤ κ) {c : ℝ} (hc : c < 0)
+    (x : maxDom (oscSymbol (affMu κ |c|))) :
+    (flipU (fun n : ℕ => n) (affH hκ (abs_nonneg c) x) : L2I ℕ)
+      = (saffH hκ c ⟨flipU (fun n : ℕ => n) (x : L2I ℕ),
+          flipU_mem_maxDom _ (oscSymbol (affMu κ |c|)) x.2⟩ : L2I ℕ) := by
+  refine lp.ext (funext fun β => ?_)
+  have hx : ((⟨flipU (fun n : ℕ => n) (x : L2I ℕ),
+      flipU_mem_maxDom _ (oscSymbol (affMu κ |c|)) x.2⟩ :
+        maxDom (oscSymbol (affMu κ |c|))) : L2I ℕ) = flipU (fun n : ℕ => n) (x : L2I ℕ) := rfl
+  have hfun : ((flipU (fun n : ℕ => n) (x : L2I ℕ) : L2I ℕ) : ℕ → ℂ)
+      = flipFun (fun n : ℕ => n) ((x : L2I ℕ) : ℕ → ℂ) := rfl
+  have hp₁ : ∀ β : ℕ, (affData hκ (abs_nonneg c)).fst.shift β = β + 2 := fun _ => rfl
+  have hp₂ : ∀ β : ℕ, (affData hκ (abs_nonneg c)).snd.shift β = β + 1 := fun _ => rfl
+  rw [saffH_coe, hx, hfun, hFun_flip _ (fun n : ℕ => n) 2 hp₁,
+    hFun_flip _ (fun n : ℕ => n) 1 hp₂]
+  have hcoord : ((affH hκ (abs_nonneg c) x : L2I ℕ) : ℕ → ℂ) β
+      = (affData hκ (abs_nonneg c)).fst.hFun ((x : L2I ℕ) : ℕ → ℂ) β
+        + (affData hκ (abs_nonneg c)).snd.hFun ((x : L2I ℕ) : ℕ → ℂ) β :=
+    PairShift.pairH_coe (affData hκ (abs_nonneg c)) x β
+  rw [flipU_coe, hcoord, esgn_of_neg hc]
+  ring
 
-
-
-
-
-
+/-- **The headline for one fiber.**  For every `κ ≥ 0` and **every real** `c`,
+the affine Navier–Stokes fiber Hamiltonian `½(π V + V π)` with `V(u) = κ u + c`
+is essentially self-adjoint on the finite-mode core of `ℓ²(ℕ)`.  The hypothesis
+`c ≥ 0` of `AffineFiber.affH_essentiallySelfAdjointOn_core` is gone: for `c < 0`
+the operator is the conjugate of the one for `|c|` by the sign-flip unitary. -/
+theorem saffH_essentiallySelfAdjointOn_core {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) :
+    EssentiallySelfAdjointOn (lpFiniteModes ℕ)
+      ((saffH hκ c).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (oscSymbol (affMu κ |c|))))) := by
+  rcases lt_or_ge c 0 with hc | hc
+  · refine essentiallySelfAdjointOn_of_intertwine (flipU (fun n : ℕ => n))
+      ((affH hκ (abs_nonneg c)).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (oscSymbol (affMu κ |c|))))) _
+      (fun v => flipU_mem_finiteModes _ v.2) (fun v => ?_)
+      (affH_essentiallySelfAdjointOn_core hκ (abs_nonneg c))
+    exact saffH_conj_flip hκ hc _
+  · rw [saffH_eq_affH hκ hc]
+    exact affH_essentiallySelfAdjointOn_core hκ (abs_nonneg c)
 
 /-! ## The signed `±1`-hopping is genuinely present -/
 
+/-- The coordinate of `H eₙ` at Hermite level `n + 1` is the **signed**
+`±1`-hopping amplitude `(c/√2)√(n+1)`. -/
+theorem saffH_coord_succ {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (n : ℕ) :
+    ((saffH hκ c (basisState κ |c| n) : L2I ℕ) : ℕ → ℂ) (n + 1)
+      = Complex.I * ((shear c n : ℝ) : ℂ) := by
+  have hX := basisState_coe κ |c| n
+  have hfst : (affData hκ (abs_nonneg c)).fst.hFun
+      ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ) (n + 1) = 0 := by
+    refine hFun_eq_zero _ (fun α hα => ?_) ?_
+    · simp only [affData_shift₁] at hα
+      rw [hX]
+      have : α ≠ n := by omega
+      simp [this]
+    · simp only [PairShift.fst_shift, affData_shift₁, hX]
+      norm_num
+      omega
+  have hsnd : (affData hκ (abs_nonneg c)).snd.hFun
+      ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ) (n + 1)
+      = Complex.I * ((shear |c| n : ℝ) : ℂ) := by
+    have h := hFun_shift_of_single (affData hκ (abs_nonneg c)).snd
+      (X := ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ)) (o := n)
+      (by simp [hX]) (by simp [hX]; omega)
+    simpa using h
+  rw [saffH_coe, hfst, hsnd, zero_add, ← mul_assoc, mul_comm (esgn c) Complex.I, mul_assoc,
+    esgn_mul_shear]
 
+/-- The coordinate of `H eₙ` at Hermite level `n + 2` is the `±2`-hopping
+amplitude `(κ/2)√((n+1)(n+2))` of the linear part, unchanged. -/
+theorem saffH_coord_succ_succ {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (n : ℕ) :
+    ((saffH hκ c (basisState κ |c| n) : L2I ℕ) : ℕ → ℂ) (n + 2)
+      = Complex.I * ((amp κ n : ℝ) : ℂ) := by
+  have hX := basisState_coe κ |c| n
+  have hsnd : (affData hκ (abs_nonneg c)).snd.hFun
+      ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ) (n + 2) = 0 := by
+    refine hFun_eq_zero _ (fun α hα => ?_) ?_
+    · simp only [affData_shift₂] at hα
+      rw [hX]
+      have : α ≠ n := by omega
+      simp [this]
+    · simp only [PairShift.snd_shift, affData_shift₂, hX]
+      norm_num
+      omega
+  have hfst : (affData hκ (abs_nonneg c)).fst.hFun
+      ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ) (n + 2)
+      = Complex.I * ((amp κ n : ℝ) : ℂ) := by
+    have h := hFun_shift_of_single (affData hκ (abs_nonneg c)).fst
+      (X := ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ)) (o := n)
+      (by simp [hX]) (by simp [hX]; omega)
+    simpa using h
+  rw [saffH_coe, hfst, hsnd, mul_zero, add_zero]
 
-
-
-
+/-- With a non-zero constant part — **of either sign** — the affine fiber
+Hamiltonian does not vanish on the ground state. -/
+theorem saffH_ne_zero_of_shear {κ : ℝ} (hκ : 0 ≤ κ) {c : ℝ} (hc : c ≠ 0) :
+    saffH hκ c (basisState κ |c| 0) ≠ 0 := by
+  intro h0
+  have hcoord := saffH_coord_succ hκ c 0
+  rw [h0] at hcoord
+  simp only [lp.coeFn_zero, Pi.zero_apply] at hcoord
+  have hshear : shear c 0 ≠ 0 := by
+    have h2 : (0 : ℝ) < Real.sqrt 2 := by rw [Real.sqrt_pos]; norm_num
+    have h1 : (0 : ℝ) < Real.sqrt (((0 : ℕ) : ℝ) + 1) := by rw [Real.sqrt_pos]; norm_num
+    simp only [shear, ne_eq, mul_eq_zero, div_eq_zero_iff, not_or]
+    exact ⟨⟨hc, ne_of_gt h2⟩, ne_of_gt h1⟩
+  have hz : ((shear c 0 : ℝ) : ℂ) = 0 := by
+    have h := hcoord.symm
+    field_simp at h
+    simpa using h
+  exact hshear (by exact_mod_cast hz)
 
 /-! ## The block assembly with constants of arbitrary sign -/
 
@@ -268,17 +486,102 @@ noncomputable def sblockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
     ((sblockH κ c hκ x : L2I (ℕ × J)) : ℕ × J → ℂ) q
       = sblockFun κ c hκ (((x : L2I (ℕ × J))) : ℕ × J → ℂ) q := rfl
 
+/-- The generator preserves the blocks, acting on the block `j` by the signed
+affine fiber Hamiltonian. -/
+theorem sblockFun_embFun (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (j : J) (a : ℕ → ℂ) :
+    sblockFun κ c hκ (embFun j a)
+      = embFun j (fun n => (affData (hκ j) (abs_nonneg (c j))).fst.hFun a n
+          + esgn (c j) * (affData (hκ j) (abs_nonneg (c j))).snd.hFun a n) := by
+  funext q
+  obtain ⟨m, j'⟩ := q
+  by_cases hj : j' = j
+  · subst hj
+    simp only [sblockFun, embFun_self]
+  · simp only [sblockFun, hFun_zero, mul_zero, add_zero, embFun_of_ne _ _ hj]
 
+/-- The block of the image is the signed affine fiber Hamiltonian applied to the
+block. -/
+theorem blockVec_sblockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (v : lpFiniteModes (ℕ × J)) (j : J) :
+    blockVec ((sblockH κ c hκ v : L2I (ℕ × J))) j
+      = saffH (hκ j) (c j)
+          ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom' _ v j⟩ := by
+  refine lp.ext (funext fun n => ?_)
+  rw [show ((saffH (hκ j) (c j)
+      ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom' _ v j⟩ :
+        L2I ℕ) : ℕ → ℂ) n = _ from saffH_coe (hκ j) (c j) _ n]
+  rfl
 
+/-- **The generator is symmetric** on the finite-mode core. -/
+theorem sblockH_symmetricOn (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
+    SymmetricOn (lpFiniteModes (ℕ × J)) (sblockH κ c hκ) := by
+  intro x y
+  have h1 := hasSum_inner_blocks ((sblockH κ c hκ x : L2I (ℕ × J))) ((y : L2I (ℕ × J)))
+  have h2 := hasSum_inner_blocks ((x : L2I (ℕ × J))) ((sblockH κ c hκ y : L2I (ℕ × J)))
+  have heq : ∀ j : J,
+      (inner ℂ (blockVec ((sblockH κ c hκ x : L2I (ℕ × J))) j)
+          (blockVec ((y : L2I (ℕ × J))) j) : ℂ)
+        = inner ℂ (blockVec ((x : L2I (ℕ × J))) j)
+            (blockVec ((sblockH κ c hκ y : L2I (ℕ × J))) j) := by
+    intro j
+    rw [blockVec_sblockH κ c hκ x j, blockVec_sblockH κ c hκ y j]
+    exact saffH_symmetricOn (hκ j) (c j) ⟨_, AffineBlock.blockVec_mem_maxDom' _ x j⟩
+      ⟨_, AffineBlock.blockVec_mem_maxDom' _ y j⟩
+  simp only [heq] at h1
+  exact h1.unique h2
 
+/-- **Block reduction of the deficiency problem** for the signed generator. -/
+theorem deficiencyTrivialAt_sblockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (z : ℂ)
+    (hblk : ∀ j, DeficiencyTrivialAt (lpFiniteModes ℕ)
+      ((saffH (hκ j) (c j)).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (oscSymbol (affMu (κ j) |c j|))))) z) :
+    DeficiencyTrivialAt (lpFiniteModes (ℕ × J)) (sblockH κ c hκ) z := by
+  intro w hw
+  have hb : ∀ j, blockVec w j = 0 := by
+    intro j
+    refine hblk j (blockVec w j) ?_
+    intro u
+    have hv := hw (blockEmb j u)
+    have hHcoe : ∀ q : ℕ × J,
+        ((sblockH κ c hκ (blockEmb j u) : L2I (ℕ × J)) : ℕ × J → ℂ) q
+          = embFun j (((((saffH (hκ j) (c j))
+              (Submodule.inclusion
+                (finiteModes_le_maxDom (oscSymbol (affMu (κ j) |c j|))) u) :
+                L2I ℕ)) : ℕ → ℂ)) q := by
+      intro q
+      have hb0 : ((sblockH κ c hκ (blockEmb j u) : L2I (ℕ × J)) : ℕ × J → ℂ)
+          = sblockFun κ c hκ (embFun j (((u : L2I ℕ)) : ℕ → ℂ)) := rfl
+      rw [hb0, sblockFun_embFun]
+      congr 1
+    have h1 := inner_of_block_supported j
+      ((sblockH κ c hκ (blockEmb j u) : L2I (ℕ × J)))
+      (((saffH (hκ j) (c j))
+        (Submodule.inclusion
+          (finiteModes_le_maxDom (oscSymbol (affMu (κ j) |c j|))) u) : L2I ℕ)) hHcoe w
+    have h2 := inner_of_block_supported j
+      (((blockEmb j u : lpFiniteModes (ℕ × J)) : L2I (ℕ × J))) ((u : L2I ℕ))
+      (fun _ => rfl) w
+    rw [h1, h2] at hv
+    exact hv
+  refine lp.ext (funext fun q => ?_)
+  obtain ⟨n, j⟩ := q
+  have hz := congrArg (fun v : L2I ℕ => ((v : ℕ → ℂ)) n) (hb j)
+  simpa using hz
 
+/-- **The headline over the strain-rate spectrum.**  The Navier–Stokes generator
+whose fiber fields are the affine `V(u) = κ_j u + c_j` is essentially
+self-adjoint on the finite-mode core of `ℓ²(ℕ × J)` for arbitrary families
+`κ ≥ 0` and `c : J → ℝ` **of arbitrary sign**. -/
+theorem sblockH_essentiallySelfAdjointOn_core (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
+    EssentiallySelfAdjointOn (lpFiniteModes (ℕ × J)) (sblockH κ c hκ) :=
+  ⟨deficiencyTrivialAt_sblockH κ c hκ Complex.I
+      fun j => (saffH_essentiallySelfAdjointOn_core (hκ j) (c j)).1,
+   deficiencyTrivialAt_sblockH κ c hκ (-Complex.I)
+      fun j => (saffH_essentiallySelfAdjointOn_core (hκ j) (c j)).2⟩
 
-
-
-
-
-
-
+/-- The finite-mode core is dense, so the generator is densely defined. -/
+theorem sblockH_domain_dense :
+    Dense ((lpFiniteModes (ℕ × J) : Submodule ℂ (L2I (ℕ × J))) : Set (L2I (ℕ × J))) :=
+  lpFiniteModes_dense
 
 end Block
 

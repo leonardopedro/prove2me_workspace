@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
 import Theorems.Thm_BookProof_SmBrstGhost_fermiBilin_eq4
-import Theorems.Thm_BookProof_SmBrstGhost_fermiBilin_add'
+import Theorems.Thm_BookProof_SmBrstGhost_fermiBilin_add_prime
 open BookProof.SmBrstGhost
 
 
@@ -29,4 +29,4 @@ theorem solution {ι : Type*} (s : Finset ι) (M : ι → Matrix (Fin N) (Fin N)
       simp
   | insert a s ha ih =>
       rw [Finset.sum_insert ha, Finset.sum_insert ha, ← ih]
-      exact fermiBilin_add' (M a) (∑ t ∈ s, M t)
+      exact fermiBilin_add_prime (M a) (∑ t ∈ s, M t)

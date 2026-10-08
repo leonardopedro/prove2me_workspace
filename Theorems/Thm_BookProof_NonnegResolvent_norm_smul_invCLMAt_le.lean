@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)} {a b : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T : Submodule ℂ (F × F)} {a b : ℝ}
 
 
 theorem BookProof.NonnegResolvent.norm_smul_invCLMAt_le (hT : IsNonnegSelfAdjoint T) (ha : 0 < a) (h : F) :

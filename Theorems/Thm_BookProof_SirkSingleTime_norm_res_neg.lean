@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.SirkSingleTime
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open scoped InnerProductSpace
 
@@ -17,6 +15,8 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.SirkSingleTime.norm_res_neg (T : UnboundedSelfAdjoint E) {l : ℝ} (hl : l ≠ 0) (y : E) :

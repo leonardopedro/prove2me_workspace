@@ -5,15 +5,15 @@ import Definitions.Def_ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
-variable (G : WeakMeasurableUnitaryGroup H)
-
 
 open scoped InnerProductSpace
 open Filter Topology MeasureTheory
 
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+variable [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
+variable (G : WeakMeasurableUnitaryGroup H)
 
 theorem BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.genOp_bAvg (x : H) (a : ℝ) :
     G.genOp ⟨G.bAvg x a, G.bAvg_mem_genDomain x a⟩ = Complex.I • (G.U a x - x) := by sorry

@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 open BookProof.QgManifoldModeInstance
 
-variable {ι : Type*}
-variable (S : VielbeinSpectrum ι)
-
 
 
 open Filter Topology
@@ -26,6 +23,9 @@ open BookProof.QgTimeStepping
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable (S : VielbeinSpectrum ι)
 
 theorem BookProof.QgManifoldModeInstance.ofSpectrumSeq_Amat (mu : ℕ → ℝ) (hmu : ∀ a, 0 ≤ mu a) (a : ℕ) :
     (ofSpectrumSeq mu hmu).Amat a a = ((mu a : ℝ) : ℂ) := by sorry

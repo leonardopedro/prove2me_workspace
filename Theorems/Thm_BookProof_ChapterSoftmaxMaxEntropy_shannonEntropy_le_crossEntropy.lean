@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
 open BookProof.ChapterSoftmaxMaxEntropy
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxMaxEntropy.shannonEntropy_le_crossEntropy {p q : Fin m → ℝ} (hp0 : ∀ j, 0 ≤ p j)

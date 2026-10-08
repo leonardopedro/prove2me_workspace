@@ -7,11 +7,11 @@ open BookProof.ChapterA3n
 open BookProof.ChapterDutchBook
 open BookProof.ChapterMaxEntropy
 
-variable {α : Type*} [Fintype α]
-
 
 open Real BigOperators Finset
 
+
+variable {α : Type*} [Fintype α]
 
 
 theorem BookProof.ChapterMaxEntropy.isProb_uniform [Nonempty α] : IsProb (uniform α) := by sorry

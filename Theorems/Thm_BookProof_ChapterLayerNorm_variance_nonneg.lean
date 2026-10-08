@@ -7,8 +7,6 @@ import Definitions.Def_ChapterTotalVariance
 open ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
-variable {d : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterLayerNorm.variance_nonneg (x : Fin d → ℝ) : 0 ≤ variance x := by sorry

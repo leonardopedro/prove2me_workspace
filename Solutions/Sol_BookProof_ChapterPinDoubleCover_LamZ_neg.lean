@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 set_option maxHeartbeats 1000000 in
 theorem solution : ∀ S ∈ Omega, LamZ S = LamZ (-S) := by

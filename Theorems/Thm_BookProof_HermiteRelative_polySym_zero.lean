@@ -11,9 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -24,8 +21,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-) = 0 := by
-  have h := gaussInt_smul (0 : ℂ) (0 : MvPolynomial (Fin d) ℂ)
-  simpa using h
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
-theorem BookProof.HermiteRelative.polySym_zero : BookProof.Y := by sorry
+theorem BookProof.HermiteRelative.polySym_zero : BookProof.YangMillsHermite.PolySym
+    (0 : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ) := by sorry

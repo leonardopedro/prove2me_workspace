@@ -1,4 +1,4 @@
--- Generated from ChapterA4.lean — solution of BookProof.conjugateₗᵢ_symm
+-- Generated from ChapterA4.lean — solution of BookProof.conjugateli_symm
 import Mathlib
 import Definitions.Def_ChapterA4
 open BookProof

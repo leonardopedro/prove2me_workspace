@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,5 +20,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.sliceSnd_apply (a : α) (u : (α × β) →₀ ℂ) (b : β) : sliceSnd a u b = u (a, b) := by sorry

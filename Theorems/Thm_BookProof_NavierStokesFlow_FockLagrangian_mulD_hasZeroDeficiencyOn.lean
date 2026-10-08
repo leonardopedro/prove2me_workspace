@@ -8,14 +8,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.mulD_hasZeroDeficiencyOn (μ : Measure X) {g h : X → ℝ} (hg : Measurable g)

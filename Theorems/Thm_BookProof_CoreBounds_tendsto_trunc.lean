@@ -9,8 +9,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.CoreBounds
 
-variable {ι : Type*} {c : ι → ℝ}
-
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -18,6 +16,8 @@ open BookProof.OperatorSeries
 open Filter Topology
 
 noncomputable section
+
+variable {ι : Type*} {c : ι → ℝ}
 
 
 theorem BookProof.CoreBounds.tendsto_trunc [DecidableEq ι] (c : ι → ℝ) (x : maxDom c) :

@@ -11,8 +11,6 @@ import Definitions.Def_ChapterHermiteLadderShift
 import Definitions.Def_ChapterHermiteLadderOrder
 open BookProof.HermiteLadder
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
 
 
 open MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
 
 theorem BookProof.HermiteLadder.norm_shift_le_of_diagonal (v : ι → E) (hv : Orthonormal ℂ v) {D : Submodule ℂ E}
     (hD : Submodule.span ℂ (Set.range v) = D)

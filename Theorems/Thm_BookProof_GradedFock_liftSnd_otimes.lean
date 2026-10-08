@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFock
 open BookProof.GradedFock
 
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -17,6 +15,8 @@ open BookProof.FockSecondQuantization BookProof.FermionFock
 open BookProof.ChapterSuperBracket
 
 noncomputable section
+
+variable {α β : Type*}
 
 theorem BookProof.GradedFock.liftSnd_otimes (S : (β →₀ ℂ) →ₗ[ℂ] (β →₀ ℂ)) (v : α →₀ ℂ) (w : β →₀ ℂ) :
     liftSnd S (otimes v w) = otimes v (S w) := by sorry

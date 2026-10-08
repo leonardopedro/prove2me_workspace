@@ -7,15 +7,15 @@ import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 open BookProof.VonNeumannCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.VonNeumannCore.resLin_left_inverse (A : D →ₗ[ℂ] F) (x : frDom A) :
     resLin A ((x : F) + frFun A x) = (x : F) := by sorry

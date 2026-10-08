@@ -10,12 +10,19 @@ import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgPr
 
 import Theorems.Thm_BookProof_PermSector_signRep_mem_sectorDom
 
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+
 import Theorems.Thm_BookProof_PermSector_permRep_commutes_sectorDom
+
 
 
 
 import Theorems.Thm_BookProof_PermSector_signRep_commutes_sectorDom
 
+
+import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_mul
+
+import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_one
 
 
 
@@ -180,7 +187,8 @@ section Complete
 
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 
-
+theorem sectorEmb_apply (n : ℕ) (x : (Hs.pow n).carrier) :
+    sectorEmb Hs n x = (x : fockSector Hs n) := rfl
 
 /-- The permutation action on the completed `n`-particle sector. -/
 def cpermRep (n : ℕ) : UnitaryRep (Equiv.Perm (Fin n)) (fockSector Hs n) :=
@@ -215,13 +223,34 @@ instance completeSpace_cfermionicSector (n : ℕ) :
     CompleteSpace (sector (cfermionicProj Hs n)) :=
   (signRep Hs n).completeSpace_sector_completionRep
 
+/-- The symmetric part of the complete sector consists of the tensors fixed by the whole
+action. -/
+theorem mem_cbosonicSector_iff (n : ℕ) {x : fockSector Hs n} :
+    x ∈ sector (cbosonicProj Hs n) ↔ ∀ σ : Equiv.Perm (Fin n), (cpermRep Hs n).act σ x = x :=
+  (cpermRep Hs n).mem_range_avgProj_iff
 
+/-- The antisymmetric part of the complete sector consists of the tensors on which the
+sign-twisted action is trivial. -/
+theorem mem_cfermionicSector_iff (n : ℕ) {x : fockSector Hs n} :
+    x ∈ sector (cfermionicProj Hs n) ↔ ∀ σ : Equiv.Perm (Fin n), (csignRep Hs n).act σ x = x :=
+  (csignRep Hs n).mem_range_avgProj_iff
 
+/-- The completed symmetrizer extends the symmetrizer of the algebraic tensor power. -/
+theorem cbosonicProj_sectorEmb (n : ℕ) (x : (Hs.pow n).carrier) :
+    cbosonicProj Hs n (sectorEmb Hs n x) = sectorEmb Hs n (bosonicProj Hs n x) := by
+  rw [cbosonicProj, UnitaryRep.avgProj_apply, bosonicProj, UnitaryRep.avgProj_apply,
+    map_smul, map_sum]
+  congr 1
+  exact Finset.sum_congr rfl (fun g _ => (permRep Hs n).completionRep_act_coe g x)
 
-
-
-
-
+/-- The completed antisymmetrizer extends the antisymmetrizer of the algebraic tensor
+power. -/
+theorem cfermionicProj_sectorEmb (n : ℕ) (x : (Hs.pow n).carrier) :
+    cfermionicProj Hs n (sectorEmb Hs n x) = sectorEmb Hs n (fermionicProj Hs n x) := by
+  rw [cfermionicProj, UnitaryRep.avgProj_apply, fermionicProj, UnitaryRep.avgProj_apply,
+    map_smul, map_sum]
+  congr 1
+  exact Finset.sum_congr rfl (fun g _ => (signRep Hs n).completionRep_act_coe g x)
 
 /-! ### The action preserves the domain and commutes with the derivation -/
 
@@ -314,13 +343,43 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 
+omit [CompleteSpace Hs.carrier] in
+include hsym in
+/-- `dΓ(A)⁽ⁿ⁾` is symmetric on the symmetric part of the complete `n`-particle sector. -/
+theorem symmetricOn_cbosonic (n : ℕ) :
+    SymmetricOn (redDom (cbosonicProj Hs n) (fockSectorDom Hs D n))
+      (cbosonicSectorOp Hs D A n) :=
+  symmetricOn_redOp _ _
+    (symmetricOn_pushOp (sectorEmb Hs n) (sectorOp Hs D A n)
+      (symmetricOn_sectorOp Hs D A hsym n))
 
+omit [CompleteSpace Hs.carrier] in
+include hsym in
+/-- `dΓ(A)⁽ⁿ⁾` is symmetric on the antisymmetric part of the complete `n`-particle sector. -/
+theorem symmetricOn_cfermionic (n : ℕ) :
+    SymmetricOn (redDom (cfermionicProj Hs n) (fockSectorDom Hs D n))
+      (cfermionicSectorOp Hs D A n) :=
+  symmetricOn_redOp _ _
+    (symmetricOn_pushOp (sectorEmb Hs n) (sectorOp Hs D A n)
+      (symmetricOn_sectorOp Hs D A hsym n))
 
+include hdense hsym hesa in
+/-- **`dΓ(A)⁽ⁿ⁾` is essentially self-adjoint on the symmetric part of the complete
+`n`-particle sector.** -/
+theorem essentiallySelfAdjointOn_cbosonic (n : ℕ) :
+    EssentiallySelfAdjointOn (redDom (cbosonicProj Hs n) (fockSectorDom Hs D n))
+      (cbosonicSectorOp Hs D A n) :=
+  essentiallySelfAdjointOn_red _ _
+    (essentiallySelfAdjointOn_fockSectorDom_esa A hdense hsym hesa n)
 
-
-
-
-
+include hdense hsym hesa in
+/-- **`dΓ(A)⁽ⁿ⁾` is essentially self-adjoint on the antisymmetric part of the complete
+`n`-particle sector.** -/
+theorem essentiallySelfAdjointOn_cfermionic (n : ℕ) :
+    EssentiallySelfAdjointOn (redDom (cfermionicProj Hs n) (fockSectorDom Hs D n))
+      (cfermionicSectorOp Hs D A n) :=
+  essentiallySelfAdjointOn_red _ _
+    (essentiallySelfAdjointOn_fockSectorDom_esa A hdense hsym hesa n)
 
 end CompleteEsa
 
@@ -367,13 +426,34 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 
+omit [CompleteSpace Hs.carrier] in
+include hsym in
+/-- `dΓ(A)` is symmetric on the bosonic Fock space. -/
+theorem hbosonicFock_symmetricOn :
+    SymmetricOn (hbosonicFockDom Hs D) (hbosonicFockOp Hs D A) :=
+  dsOp_symmetricOn _ (fun n => symmetricOn_cbosonic A hsym n)
 
+omit [CompleteSpace Hs.carrier] in
+include hsym in
+/-- `dΓ(A)` is symmetric on the fermionic Fock space. -/
+theorem hfermionicFock_symmetricOn :
+    SymmetricOn (hfermionicFockDom Hs D) (hfermionicFockOp Hs D A) :=
+  dsOp_symmetricOn _ (fun n => symmetricOn_cfermionic A hsym n)
 
+include hdense hsym hesa in
+/-- **`dΓ(A)` is essentially self-adjoint on the bosonic Fock space** — the Hilbert space
+direct sum over all particle numbers of the symmetric sectors. -/
+theorem hbosonicFock_esa :
+    EssentiallySelfAdjointOn (hbosonicFockDom Hs D) (hbosonicFockOp Hs D A) :=
+  dsOp_essentiallySelfAdjointOn _
+    (fun n => essentiallySelfAdjointOn_cbosonic A hdense hsym hesa n)
 
-
-
-
-
+include hdense hsym hesa in
+/-- **`dΓ(A)` is essentially self-adjoint on the fermionic Fock space.** -/
+theorem hfermionicFock_esa :
+    EssentiallySelfAdjointOn (hfermionicFockDom Hs D) (hfermionicFockOp Hs D A) :=
+  dsOp_essentiallySelfAdjointOn _
+    (fun n => essentiallySelfAdjointOn_cfermionic A hdense hsym hesa n)
 
 end HilbertFockEsa
 
@@ -383,13 +463,62 @@ section NonVacuous
 
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier)
 
+/-- A symmetric tensor of the algebraic power is a symmetric tensor of the complete
+sector. -/
+theorem sectorEmb_mem_cbosonicSector (n : ℕ) {x : (Hs.pow n).carrier}
+    (hx : x ∈ sector (bosonicProj Hs n)) : sectorEmb Hs n x ∈ sector (cbosonicProj Hs n) :=
+  ⟨sectorEmb Hs n x, by
+    rw [cbosonicProj_sectorEmb]
+    exact congrArg (sectorEmb Hs n) ((isReducingProjection_bosonicProj Hs n).apply_of_mem_range hx)⟩
 
+/-- An antisymmetric tensor of the algebraic power is an antisymmetric tensor of the
+complete sector. -/
+theorem sectorEmb_mem_cfermionicSector (n : ℕ) {x : (Hs.pow n).carrier}
+    (hx : x ∈ sector (fermionicProj Hs n)) :
+    sectorEmb Hs n x ∈ sector (cfermionicProj Hs n) :=
+  ⟨sectorEmb Hs n x, by
+    rw [cfermionicProj_sectorEmb]
+    exact congrArg (sectorEmb Hs n)
+      ((isReducingProjection_fermionicProj Hs n).apply_of_mem_range hx)⟩
 
+/-- **The bosonic statement is not vacuous**: the `n`-th power `a ⊗ ⋯ ⊗ a` of a nonzero
+vector of the one-particle domain is a nonzero vector of the symmetric part of the complete
+`n`-particle sector. -/
+theorem exists_ne_zero_cbosonic (n : ℕ) {a : Hs.carrier} (haD : a ∈ D) (ha0 : a ≠ 0) :
+    ∃ x : redDom (cbosonicProj Hs n) (fockSectorDom Hs D n), x ≠ 0 := by
+  obtain ⟨y, hy0⟩ := exists_ne_zero_bosonic Hs D D n le_rfl haD ha0
+  set v : (Hs.pow n).carrier := ((y : sector (bosonicProj Hs n)) : (Hs.pow n).carrier) with hv
+  have hvsec : v ∈ sector (bosonicProj Hs n) := (y : sector (bosonicProj Hs n)).2
+  have hvdom : v ∈ sectorDom Hs D n := sectorCore_le_sectorDom Hs D D n y.2
+  have hv0 : v ≠ 0 := by
+    intro h
+    exact hy0 (Subtype.ext (Subtype.ext h))
+  refine ⟨⟨⟨sectorEmb Hs n v, sectorEmb_mem_cbosonicSector Hs n hvsec⟩,
+    ⟨v, hvdom, rfl⟩⟩, ?_⟩
+  intro h
+  refine hv0 ((sectorEmb Hs n).injective ?_)
+  have := congrArg Subtype.val (congrArg Subtype.val h)
+  simpa using this
 
-
-
-
-
+/-- **The fermionic statement is not vacuous**: the Slater determinant of `n` pairwise
+orthogonal nonzero vectors of the one-particle domain is a nonzero vector of the
+antisymmetric part of the complete `n`-particle sector. -/
+theorem exists_ne_zero_cfermionic (n : ℕ) (f : Fin n → Hs.carrier) (hfD : ∀ i, f i ∈ D)
+    (hf0 : ∀ i, f i ≠ 0) (hortho : ∀ i j, i ≠ j → (inner ℂ (f i) (f j) : ℂ) = 0) :
+    ∃ x : redDom (cfermionicProj Hs n) (fockSectorDom Hs D n), x ≠ 0 := by
+  obtain ⟨y, hy0⟩ := exists_ne_zero_fermionic Hs D D n le_rfl f hfD hf0 hortho
+  set v : (Hs.pow n).carrier := ((y : sector (fermionicProj Hs n)) : (Hs.pow n).carrier) with hv
+  have hvsec : v ∈ sector (fermionicProj Hs n) := (y : sector (fermionicProj Hs n)).2
+  have hvdom : v ∈ sectorDom Hs D n := sectorCore_le_sectorDom Hs D D n y.2
+  have hv0 : v ≠ 0 := by
+    intro h
+    exact hy0 (Subtype.ext (Subtype.ext h))
+  refine ⟨⟨⟨sectorEmb Hs n v, sectorEmb_mem_cfermionicSector Hs n hvsec⟩,
+    ⟨v, hvdom, rfl⟩⟩, ?_⟩
+  intro h
+  refine hv0 ((sectorEmb Hs n).injective ?_)
+  have := congrArg Subtype.val (congrArg Subtype.val h)
+  simpa using this
 
 
 

@@ -1,7 +1,9 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.WallPot.sq_div_four_le_pot
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 open BookProof.ScalaronFiberFL
+open BookProof.ScalaronFiberFL.WallPot
 
 
 

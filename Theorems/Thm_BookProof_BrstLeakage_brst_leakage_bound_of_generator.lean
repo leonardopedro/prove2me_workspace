@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
 open BookProof.BrstLeakage
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.brst_leakage_bound_of_generator {H B Om : E →L[ℂ] E} (hH : IsSelfAdjoint H)

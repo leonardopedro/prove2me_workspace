@@ -10,6 +10,7 @@ open BookProof.FarisLavine BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
+open ContinuousLinearMap
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}

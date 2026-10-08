@@ -1,6 +1,7 @@
 -- Generated from ChapterAttentionOutputVariance.lean — solution of BookProof.ChapterAttentionOutputVariance.outputVariance_const
 import Mathlib
 import Definitions.Def_ChapterAttentionOutputVariance
+import Theorems.Thm_BookProof_ChapterObservableExpectation_observableExpectation_const
 open BookProof.ChapterAttentionOutputVariance
 
 

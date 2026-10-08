@@ -5,12 +5,12 @@ import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterIrreversible
 open BookProof.ChapterMarkovEntropy
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterMarkovEntropy.entropy_applyMarkov_permMatrix (σ : Equiv.Perm (Fin n)) (p : Fin n → ℝ) :

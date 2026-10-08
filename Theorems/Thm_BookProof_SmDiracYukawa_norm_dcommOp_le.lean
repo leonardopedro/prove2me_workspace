@@ -6,16 +6,16 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.SmDiracYukawa
 
-variable {n : ℕ}
-variable {hD M : Matrix (Fin n) (Fin n) ℂ} {z : ℂ} {om : Fin n → ℝ} {c0 : ℝ}
-
 
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
 
+variable {n : ℕ}
 
 noncomputable section
+
+variable {hD M : Matrix (Fin n) (Fin n) ℂ} {z : ℂ} {om : Fin n → ℝ} {c0 : ℝ}
 
 theorem BookProof.SmDiracYukawa.norm_dcommOp_le {H N : FermiFock n →ₗ[ℂ] FermiFock n} {K Om : ℝ}
     (hK : ∀ ψ, ‖H ψ‖ ≤ K * ‖ψ‖) (hN : ∀ ψ, ‖N ψ‖ ≤ Om * ‖ψ‖) (hKn : 0 ≤ K) (hOn : 0 ≤ Om)

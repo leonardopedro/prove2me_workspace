@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
 open BookProof.ChapterAttentionMarkov
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMarkov.attentionMatrix_isStochastic (beta : ℝ) (S : Fin m → Fin m → ℝ) :

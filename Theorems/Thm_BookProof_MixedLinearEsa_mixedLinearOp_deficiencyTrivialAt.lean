@@ -9,13 +9,13 @@ open BookProof.FourierMultiplierEsa
 open BookProof.StrichartzWave
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
 
 theorem BookProof.MixedLinearEsa.mixedLinearOp_deficiencyTrivialAt (b m : V) {z : ℂ} (hz : z.im ≠ 0) :

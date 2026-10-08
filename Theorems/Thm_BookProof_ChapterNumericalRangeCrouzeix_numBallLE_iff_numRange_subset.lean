@@ -5,11 +5,11 @@ import Definitions.Def_ChapterH9
 open BookProof.ChapterH9
 open BookProof.ChapterNumericalRangeCrouzeix
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 theorem BookProof.ChapterNumericalRangeCrouzeix.numBallLE_iff_numRange_subset [CompleteSpace E] (A : E →L[ℂ] E) (c : ℂ) {r : ℝ} :

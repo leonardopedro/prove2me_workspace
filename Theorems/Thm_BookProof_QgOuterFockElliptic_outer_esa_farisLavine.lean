@@ -17,11 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockElliptic
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {D : ℕ}
-variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
-
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite
@@ -36,6 +31,11 @@ open BookProof.FriedrichsExtension
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : ℕ}
+variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
 
 theorem BookProof.QgOuterFockElliptic.outer_esa_farisLavine {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) :
     EssentiallySelfAdjointOn (outerComparison hk).dom (outerComparison hk).op := by sorry

@@ -15,8 +15,6 @@ import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.FockSecondQuantization
 open BookProof.FockSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds
@@ -25,6 +23,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
 
 theorem BookProof.FockSchur.dGamma_essentiallySelfAdjointOn_core (hK : SchurBound col K) (hherm : IsHermCol col)
     (hK0 : 0 ≤ K) :

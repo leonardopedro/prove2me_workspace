@@ -8,4 +8,4 @@ open BookProof.FockDegreesOfFreedom.Gravity
 
 open Fintype
 
-theorem BookProof.FockDegreesOfFreedom.Gravity.ghostRawCard : Fintype.card GhostRaw = 19 + 1 := by sorry
+theorem BookProof.FockDegreesOfFreedom.Gravity.ghostRawCard : Fintype.card GhostRaw = 3 + 1 := by sorry

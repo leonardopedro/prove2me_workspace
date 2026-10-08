@@ -1,9 +1,9 @@
 -- Generated from ChapterQgOneParticleCcEsa.lean — solution of BookProof.QgOneParticleCc.exists_cut_derivative_bounds
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
+import Theorems.Thm_BookProof_QgOneParticleCc_fderiv_cut
 import Theorems.Thm_BookProof_QgOneParticleCc_norm_scaleCLM_le
 import Theorems.Thm_BookProof_QgOneParticleCc_dcoord_ofReal
-import Theorems.Thm_BookProof_QgOneParticleCc_fderiv_cut
 import Theorems.Thm_BookProof_QgOneParticleCc_fderiv_fderiv_cut
 open BookProof.QgOneParticleCc
 

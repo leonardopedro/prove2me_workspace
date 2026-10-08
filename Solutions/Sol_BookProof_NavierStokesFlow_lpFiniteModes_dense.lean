@@ -6,7 +6,7 @@ open BookProof.NavierStokesFlow
 
 
 
-open scoped Matrix lp
+open scoped Matrix
 
 
 
@@ -16,13 +16,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-.mem_support] at hj
-  by_contra hne
-  have hjk : j ≠ k := by simpa using hne
-  exact hj (by simp [lp.single_apply, Pi.single_eq_of_ne hjk])
-
-/-- **The finite-mode domain is dense**: every `ℓ²` state is the limit of its
-finite truncations. -/ :=
+theorem solution :
+    Dense ((lpFiniteModes ι : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) :
+      Set (lp (fun _ : ι => ℂ) 2)) :=
   theorem lpFiniteModes_dense :
       Dense ((lpFiniteModes ι : Submodule ℂ (lp (fun _ : ι => ℂ) 2)) :
         Set (lp (fun _ : ι => ℂ) 2)) := by

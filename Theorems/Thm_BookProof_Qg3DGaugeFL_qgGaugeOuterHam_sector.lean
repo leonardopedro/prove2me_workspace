@@ -16,9 +16,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.Qg3DGaugeFL
 
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
-
 
 
 open BookProof.QuantumGravity3DGauge BookProof.Qg3DGaugeEsa
@@ -28,6 +25,9 @@ open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
 
 theorem BookProof.Qg3DGaugeFL.qgGaugeOuterHam_sector (x : qgOuterCore) (n : ℕ) :
     ((qgGaugeOuterHam x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n

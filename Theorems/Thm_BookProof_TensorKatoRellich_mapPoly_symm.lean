@@ -9,14 +9,14 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.TensorKatoRellich
 
-variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
 
 noncomputable section
+
+variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
 
 theorem BookProof.TensorKatoRellich.mapPoly_symm (V : DA →ₗ[ℂ] Hs.carrier) (Y : DB →ₗ[ℂ] Ks.carrier)
     (hV : SymmetricOn DA V) (hY : SymmetricOn DB Y) :

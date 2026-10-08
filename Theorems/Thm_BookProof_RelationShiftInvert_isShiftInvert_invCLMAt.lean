@@ -11,13 +11,13 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
 open BookProof.RelationShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-
 
 
 open BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot BookProof.NonnegResolvent
 open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
 
 
 theorem BookProof.RelationShiftInvert.isShiftInvert_invCLMAt (hT : IsNonnegSelfAdjoint T)

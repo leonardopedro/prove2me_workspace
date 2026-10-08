@@ -7,11 +7,11 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.commuting_antiUnitary_scalar_multiple (M : System ℂ V) (hSchur : IsSchurUnitary M)

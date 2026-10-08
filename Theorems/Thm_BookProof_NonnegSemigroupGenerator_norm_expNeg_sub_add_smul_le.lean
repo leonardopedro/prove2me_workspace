@@ -9,15 +9,15 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
 open BookProof.NonnegSemigroupGenerator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemigroup
 open Filter Topology NormedSpace
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.NonnegSemigroupGenerator.norm_expNeg_sub_add_smul_le {A : F →L[ℂ] F} (hA : 0 ≤ A) {t : ℝ} (ht : 0 ≤ t)
     (h k : F) {M : ℝ} (hM : ∀ s ∈ Set.Icc (0 : ℝ) t, ‖expNeg A s k - k‖ ≤ M) :

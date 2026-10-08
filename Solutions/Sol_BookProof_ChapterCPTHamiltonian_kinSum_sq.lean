@@ -1,8 +1,8 @@
 -- Generated from ChapterCPTHamiltonian.lean — solution of BookProof.ChapterCPTHamiltonian.kinSum_sq
 import Mathlib
 import Definitions.Def_ChapterCPTHamiltonian
-import Theorems.Thm_BookProof_ChapterCPTHamiltonian_Kin_sq
 import Theorems.Thm_BookProof_ChapterCPTHamiltonian_Kin_anticomm
+import Theorems.Thm_BookProof_ChapterCPTHamiltonian_Kin_sq
 open BookProof.ChapterCPTHamiltonian
 
 

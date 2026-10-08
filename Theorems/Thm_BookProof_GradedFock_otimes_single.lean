@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFock
 open BookProof.GradedFock
 
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -17,6 +15,8 @@ open BookProof.FockSecondQuantization BookProof.FermionFock
 open BookProof.ChapterSuperBracket
 
 noncomputable section
+
+variable {α β : Type*}
 
 theorem BookProof.GradedFock.otimes_single (a : α) (b : β) (x y : ℂ) :
     otimes (Finsupp.single a x) (Finsupp.single b y) = Finsupp.single (a, b) (x * y) := by sorry

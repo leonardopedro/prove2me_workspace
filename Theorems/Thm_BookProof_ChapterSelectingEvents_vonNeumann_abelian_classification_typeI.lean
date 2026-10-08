@@ -5,14 +5,14 @@ import Definitions.Def_ChapterAbelianDiagonal
 open BookProof.AbelianDiagonal
 open BookProof.ChapterSelectingEvents
 
-variable (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable {Ω Data : Type*} [MeasurableSpace Ω]
-
 
 open scoped BigOperators
 open MeasureTheory ProbabilityTheory
 
 
+variable (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable {Ω Data : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.ChapterSelectingEvents.vonNeumann_abelian_classification_typeI
     {ι : Type*} [Fintype ι] [DecidableEq ι] :

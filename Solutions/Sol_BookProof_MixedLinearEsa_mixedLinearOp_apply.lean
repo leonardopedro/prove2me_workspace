@@ -17,7 +17,6 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 
 set_option maxHeartbeats 1000000 in
-omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
 theorem solution (b m : V) (f : 𝓢(V, ℂ)) (x : V) :
     (mixedLinearOp b m f) x
       = ((inner ℝ x b : ℝ) : ℂ) * f x + (-Complex.I) * (fderiv ℝ f x m) := by

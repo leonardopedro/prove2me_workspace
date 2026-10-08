@@ -21,9 +21,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-bolDomain lam →ₗ[ℂ] L2Nat :=
-  mulSymbolOp lam lam (fun _ => le_rfl)
-
-theorem solution (b : ℝ) (z : ℂ) : :=
+theorem solution (b : ℝ) (z : ℂ) :
+    (b : ℂ) * z * (starRingEnd ℂ) z = ((b * Complex.normSq z : ℝ) : ℂ) :=
    (b : ℂ) * z * (starRingEnd ℂ) z = ((b * Complex.normSq z : ℝ) : ℂ) := by
     rw [show (b : ℂ) * z * (starRingEnd ℂ) z = (b : ℂ) * ((starRingEnd ℂ)

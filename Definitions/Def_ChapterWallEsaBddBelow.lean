@@ -3,7 +3,6 @@ import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStoneBridge
 import Mathlib

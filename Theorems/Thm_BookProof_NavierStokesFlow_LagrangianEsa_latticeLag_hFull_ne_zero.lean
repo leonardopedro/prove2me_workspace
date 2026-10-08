@@ -10,15 +10,15 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-
 
 
 
 open FullEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 theorem BookProof.NavierStokesFlow.LagrangianEsa.latticeLag_hFull_ne_zero :
     (latticeLagData (fun _ => zeroField) zeroField (fun _ => 0) (le_refl (0 : ℝ))).hFull ≠ 0 := by sorry

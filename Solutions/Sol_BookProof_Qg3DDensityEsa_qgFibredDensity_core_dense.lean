@@ -1,6 +1,7 @@
 -- Generated from ChapterQg3DDensityEsa.lean — solution of BookProof.Qg3DDensityEsa.qgFibredDensity_core_dense
 import Mathlib
 import Definitions.Def_ChapterQg3DDensityEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.Qg3DDensityEsa
 
 

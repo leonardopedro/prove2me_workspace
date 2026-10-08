@@ -16,8 +16,6 @@ import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOneParticleCc.deficiencyTrivialAt_of_graphApprox {D₁ D₂ : Submodule ℂ F}
     (T₁ : D₁ →ₗ[ℂ] F) (T₂ : D₂ →ₗ[ℂ] F) {z : ℂ}

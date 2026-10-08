@@ -14,9 +14,6 @@ open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.ScalaronFock
 
-variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
-  [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -26,6 +23,9 @@ open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.QuantumGravityDensitized BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
+  [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]
 
 theorem BookProof.ScalaronFock.fockSmoothPotential_stone_flow (W : ∀ n, E n → ℝ)
     (hW : ∀ n, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (W n)) :

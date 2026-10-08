@@ -13,8 +13,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-
 
 
 open MeasureTheory Set Filter Topology
@@ -25,6 +23,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.physConfCore_dense :
     Dense ((physConfCore M alpha : Submodule ℂ (Lp ℂ 2 physMeasure)) :

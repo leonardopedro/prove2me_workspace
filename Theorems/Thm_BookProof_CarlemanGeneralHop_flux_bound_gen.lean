@@ -5,9 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 open BookProof.CarlemanGeneralHop
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-
 
 
 open Finset
@@ -16,6 +13,9 @@ open BookProof.CarlemanTwoStep
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ}
 
 theorem BookProof.CarlemanGeneralHop.flux_bound_gen {w : ℂ} {c : (Fin d →₀ ℕ) → ℝ} {p m : Fin d →₀ ℕ}
     (F G : Finset (Fin d →₀ ℕ)) (hzero : ∀ a ∈ F, a ∉ G → c a = 0)

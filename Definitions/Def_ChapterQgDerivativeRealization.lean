@@ -172,11 +172,29 @@ noncomputable def jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) : Fin 84 → �
   rw [configPoint, dif_neg (by omega), dif_neg (by omega)]
   congr 3 <;> · apply Fin.ext; simp only [hv]; omega
 
+theorem jetPoint_idxE (T : TetradConfig) (x : Fin 4 → ℝ) (mu a : Fin 4) :
+    jetPoint T x (idxE mu a) = ((MvPolynomial.eval x (T.comp mu a) : ℝ) : ℂ) :=
+  configPoint_idxE T (jetDeriv T) x mu a
 
+theorem jetPoint_idxDE (T : TetradConfig) (x : Fin 4 → ℝ) (mu nu a : Fin 4) :
+    jetPoint T x (idxDE mu nu a)
+      = ((MvPolynomial.eval x (pderiv mu (T.comp nu a)) : ℝ) : ℂ) :=
+  configPoint_idxDE T (jetDeriv T) x mu nu a
 
-
-
-
+/-- The three index families exhaust the `84` coordinates: `4 + 16 + 64 = 84`.
+A point of the coordinate space is exactly a spacetime point, a tetrad value
+and a family of derivative values. -/
+theorem idx_cases (j : Fin 84) :
+    (∃ mu, j = idxX mu) ∨ (∃ mu a, j = idxE mu a) ∨ (∃ mu nu a, j = idxDE mu nu a) := by
+  rcases lt_or_ge (j : ℕ) 4 with h | h
+  · exact Or.inl ⟨⟨(j : ℕ), h⟩, Fin.ext rfl⟩
+  · rcases lt_or_ge (j : ℕ) 20 with h2 | h2
+    · exact Or.inr (Or.inl ⟨⟨((j : ℕ) - 4) / 4, by omega⟩, ⟨((j : ℕ) - 4) % 4, by omega⟩,
+        Fin.ext (by simp only [idxE]; omega)⟩)
+    · have hj := j.isLt
+      exact Or.inr (Or.inr ⟨⟨((j : ℕ) - 20) / 16, by omega⟩,
+        ⟨(((j : ℕ) - 20) / 4) % 4, by omega⟩, ⟨(j : ℕ) % 4, by omega⟩,
+        Fin.ext (by simp only [idxDE]; omega)⟩)
 
 /-! ## 2. The concrete gauge field `v − dφ` and its zero locus -/
 
@@ -192,17 +210,53 @@ noncomputable def gaugeFieldPoly (T : TetradConfig) (E : DerivFields) (mu nu a :
 def Fixed (T : TetradConfig) (E : DerivFields) : Prop :=
   ∀ mu nu a, gaugeFieldPoly T E mu nu a = 0
 
+/-- The fixing is realized: the actual derivative fields satisfy it, so the
+surface is non-empty. -/
+theorem jetDeriv_fixed (T : TetradConfig) : Fixed T (jetDeriv T) := by
+  intro mu nu a
+  simp [gaugeFieldPoly, jetDeriv]
 
+/-- The fixing is equivalent to the derivative fields *being* the derivatives. -/
+theorem fixed_iff (T : TetradConfig) (E : DerivFields) :
+    Fixed T E ↔ ∀ mu nu a, E mu nu a = pderiv mu (T.comp nu a) := by
+  constructor
+  · intro h mu nu a
+    have := h mu nu a
+    rw [gaugeFieldPoly, sub_eq_zero] at this
+    exact this
+  · intro h mu nu a
+    rw [gaugeFieldPoly, h, sub_self]
 
+/-- The fixing is not automatic: for the zero tetrad and the constant
+derivative field `1` the gauge field is `1 ≠ 0`. -/
+theorem exists_not_fixed : ∃ (T : TetradConfig) (E : DerivFields), ¬ Fixed T E := by
+  refine ⟨⟨fun _ _ => 0⟩, fun _ _ _ => 1, ?_⟩
+  intro h
+  have h0 := (fixed_iff _ _).1 h 0 0 0
+  simp only [map_zero] at h0
+  exact one_ne_zero h0
 
-
-
-
-
+/-- On the fixing surface the coordinate point is the 1-jet of the tetrad
+field: the `64` derivative coordinates carry no information beyond `e` and its
+derivatives. -/
+theorem configPoint_eq_jetPoint_of_fixed (T : TetradConfig) (E : DerivFields)
+    (hE : Fixed T E) (x : Fin 4 → ℝ) : configPoint T E x = jetPoint T x := by
+  funext j
+  rcases idx_cases j with ⟨mu, rfl⟩ | ⟨mu, a, rfl⟩ | ⟨mu, nu, a, rfl⟩
+  · simp [jetPoint]
+  · simp [jetPoint]
+  · rw [configPoint_idxDE, jetPoint_idxDE, (fixed_iff T E).1 hE mu nu a]
 
 /-! ## 3. The couplings on the fixing surface reduce to field values -/
 
-
+/-- On the fixing surface the torsion coordinate polynomial of
+`ChapterQuantumGravity3DGauge` evaluates to the actual antisymmetrized tetrad
+derivative. -/
+theorem eval_torsionPoly_jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) (mu nu a : Fin 4) :
+    MvPolynomial.eval (jetPoint T x) (torsionPoly mu nu a)
+      = ((MvPolynomial.eval x (pderiv mu (T.comp nu a)) : ℝ) : ℂ)
+        - ((MvPolynomial.eval x (pderiv nu (T.comp mu a)) : ℝ) : ℂ) := by
+  simp [torsionPoly, jetPoint_idxDE]
 
 /-- The tetrad–torsion cross coupling on the coordinate algebra: the shape of
 the `book.tex 8190` cross terms `½S·E + ⅓P·E − e(…)`, a tetrad coordinate
@@ -220,13 +274,42 @@ noncomputable def couplingValue (T : TetradConfig) (x : Fin 4 → ℝ) : ℂ :=
       (((MvPolynomial.eval x (pderiv mu (T.comp nu a)) : ℝ) : ℂ)
         - ((MvPolynomial.eval x (pderiv nu (T.comp mu a)) : ℝ) : ℂ))
 
+/-- **The coupling reduces to field values.**  On the fixing surface the cross
+coupling is a function of the tetrad field and its derivatives alone. -/
+theorem eval_crossCouplingPoly_jetPoint (T : TetradConfig) (x : Fin 4 → ℝ) :
+    MvPolynomial.eval (jetPoint T x) crossCouplingPoly = couplingValue T x := by
+  simp only [crossCouplingPoly, couplingValue, map_sum, map_mul, eval_C, eval_X,
+    eval_torsionPoly_jetPoint, jetPoint_idxE]
 
+/-- **No new independent modes.**  On the fixing surface the value of *every*
+polynomial in the `84` coordinates is determined by the tetrad field: two
+configurations with the same tetrad field — whatever derivative fields they
+carry, as long as both are fixed — give the same value. -/
+theorem eval_eq_of_fixed_of_comp_eq {T T' : TetradConfig} {E E' : DerivFields}
+    (hE : Fixed T E) (hE' : Fixed T' E') (hcomp : T.comp = T'.comp) (x : Fin 4 → ℝ)
+    (p : MvPolynomial (Fin 84) ℂ) :
+    MvPolynomial.eval (configPoint T E x) p = MvPolynomial.eval (configPoint T' E' x) p := by
+  have hT : T = T' := by cases T; cases T'; simpa using hcomp
+  subst hT
+  rw [configPoint_eq_jetPoint_of_fixed T E hE x, configPoint_eq_jetPoint_of_fixed T E' hE' x]
 
+/-- The same statement for the concrete cross coupling. -/
+theorem crossCoupling_eq_of_fixed {T T' : TetradConfig} {E E' : DerivFields}
+    (hE : Fixed T E) (hE' : Fixed T' E') (hcomp : T.comp = T'.comp) (x : Fin 4 → ℝ) :
+    MvPolynomial.eval (configPoint T E x) crossCouplingPoly
+      = MvPolynomial.eval (configPoint T' E' x) crossCouplingPoly :=
+  eval_eq_of_fixed_of_comp_eq hE hE' hcomp x crossCouplingPoly
 
-
-
-
-
+/-- The cross coupling is not the zero polynomial: there is a configuration on
+the fixing surface where it does not vanish, so the reduction is not vacuous.
+The witness is the tetrad `e_0^a = x^1`, `e_ν^a = 0` for `ν ≠ 0`, at the point
+`x = (0, 1, 0, 0)`. -/
+theorem couplingValue_ne_zero :
+    ∃ (T : TetradConfig) (x : Fin 4 → ℝ), couplingValue T x ≠ 0 := by
+  classical
+  refine ⟨⟨fun nu _ => if nu = 0 then X 1 else 0⟩, fun i => if i = 1 then 1 else 0, ?_⟩
+  simp only [couplingValue, Fin.sum_univ_four]
+  norm_num [pderiv_X, Pi.single_apply, Fin.ext_iff]
 
 /-! ## 4. The concrete gauge-fixing system on the field algebra -/
 
@@ -278,9 +361,17 @@ theorem sMatR_smul_one (f : SpacetimePoly) : sMatR 0 (f • (1 : Mat2R)) = 0 := 
   ext i j
   fin_cases i <;> fin_cases j <;> simp [sMatR, QmR]
 
+theorem dMatR_smul_one (mu : Fin 4) (f : SpacetimePoly) :
+    dMatR mu (f • (1 : Mat2R)) = (pderiv mu f) • (1 : Mat2R) := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [dMatR, Matrix.smul_apply]
 
-
-
+theorem smul_one_eq_zero_iff (f : SpacetimePoly) : f • (1 : Mat2R) = 0 ↔ f = 0 := by
+  constructor
+  · intro h
+    have h00 := congrFun (congrFun h 0) 0
+    simpa [Matrix.smul_apply, Matrix.one_apply] using h00
+  · rintro rfl; simp
 
 theorem sMatR_PmR : sMatR (-1) PmR = 1 := by
   have hneg : ((-1 : ℝ) ^ (-1 : ℤ)) = -1 := by norm_num
@@ -329,13 +420,34 @@ noncomputable def qgFixingSystem (mu : Fin 4) (f w : SpacetimePoly) :
   mul_zero_left := fun x => Matrix.zero_mul x
   mul_zero_right := fun x => Matrix.mul_zero x
 
+/-- The system's gauge field is the concrete constraint `w − ∂_μ f`, times the
+identity matrix. -/
+theorem qgFixing_gaugeField (mu : Fin 4) (f w : SpacetimePoly) :
+    gaugeField (qgFixingSystem mu f w).toGaugeFixingSystem
+      = (w - pderiv mu f) • (1 : Mat2R) := by
+  change (w • (1 : Mat2R)) - dMatR mu (f • (1 : Mat2R)) = _
+  rw [dMatR_smul_one, sub_smul]
 
+/-- **The concrete `v = dφ`.**  The system's gauge field vanishes exactly when
+the promoted derivative field is the actual derivative. -/
+theorem qgFixing_gaugeField_eq_zero_iff (mu : Fin 4) (f w : SpacetimePoly) :
+    gaugeField (qgFixingSystem mu f w).toGaugeFixingSystem = 0 ↔ w = pderiv mu f := by
+  rw [qgFixing_gaugeField, smul_one_eq_zero_iff, sub_eq_zero]
 
+/-- Off the fixing surface the constraint is genuinely non-zero. -/
+theorem qgFixing_gaugeField_ne_zero_of_not_fixed (mu : Fin 4) (f w : SpacetimePoly)
+    (h : w ≠ pderiv mu f) :
+    gaugeField (qgFixingSystem mu f w).toGaugeFixingSystem ≠ 0 := by
+  rw [Ne, qgFixing_gaugeField_eq_zero_iff]
+  exact h
 
-
-
-
-
+/-- The Nakanishi–Lautrup field of the concrete system is non-zero, so the
+Lagrange-multiplier term is not vacuous. -/
+theorem qgFixing_B_ne_zero (mu : Fin 4) (f w : SpacetimePoly) :
+    ((qgFixingSystem mu f w).B : Mat2R) ≠ 0 := by
+  intro h
+  have h00 := congrFun (congrFun h 0) 0
+  simp [qgFixingSystem] at h00
 
 /-- The system attached to a tetrad configuration and its promoted derivative
 fields: `φ = e_ν^a`, `v = E_{μν}^a`. -/
@@ -343,10 +455,38 @@ noncomputable def qgSystemOf (T : TetradConfig) (E : DerivFields) (mu nu a : Fin
     DerivativeVariableFixingSystem (fun _ => Mat2R) :=
   qgFixingSystem mu (T.comp nu a) (E mu nu a)
 
+/-- On the fixing surface `E = ∂e` the concrete gauge field vanishes: the
+hypothesis of the abstract theorems of `ChapterQgPhysicalSectorIdentity` is
+*discharged*, not assumed. -/
+theorem qgSystemOf_gaugeField_eq_zero (T : TetradConfig) (E : DerivFields)
+    (hE : Fixed T E) (mu nu a : Fin 4) :
+    gaugeField (qgSystemOf T E mu nu a).toGaugeFixingSystem
+      = (qgSystemOf T E mu nu a).toGaugeFixingSystem.zero (1, 0) := by
+  change gaugeField (qgFixingSystem mu (T.comp nu a) (E mu nu a)).toGaugeFixingSystem = 0
+  rw [qgFixing_gaugeField_eq_zero_iff]
+  exact (fixed_iff T E).1 hE mu nu a
 
+/-- **The Lagrange-multiplier term vanishes on the concrete fixing surface** —
+`lagrange_term_zero_of_fixing` of `ChapterQgPhysicalSectorIdentity`, run on the
+concrete 84-dimensional data with the hypothesis proved. -/
+theorem qgFixing_lagrange_term_zero (T : TetradConfig) (E : DerivFields)
+    (hE : Fixed T E) (mu nu a : Fin 4) :
+    (qgSystemOf T E mu nu a).mul (1, 0) (1, 0) (qgSystemOf T E mu nu a).B
+        (gaugeField (qgSystemOf T E mu nu a).toGaugeFixingSystem)
+      = (qgSystemOf T E mu nu a).zero (2, 0) :=
+  lagrange_term_zero_of_fixing (qgSystemOf T E mu nu a)
+    (qgSystemOf_gaugeField_eq_zero T E hE mu nu a)
 
-
-
-
+/-- **The gauge-fixing Lagrangian on the concrete fixing surface** reduces to
+the ghost term alone — `L_gf_constraint_surface`, run on the concrete data. -/
+theorem qgFixing_L_gf_constraint_surface (T : TetradConfig) (E : DerivFields)
+    (hE : Fixed T E) (mu nu a : Fin 4) :
+    (qgSystemOf T E mu nu a).s (p := 2) (g := -1)
+        (Psi (qgSystemOf T E mu nu a).toGaugeFixingSystem)
+      = (qgSystemOf T E mu nu a).sub (2, 0) ((qgSystemOf T E mu nu a).zero (2, 0))
+          ((qgSystemOf T E mu nu a).mul (1, -1) (1, 1) (qgSystemOf T E mu nu a).c_bar
+            (qgSystemOf T E mu nu a).c) :=
+  L_gf_constraint_surface (qgSystemOf T E mu nu a)
+    (qgSystemOf_gaugeField_eq_zero T E hE mu nu a)
 
 end BookProof.QgDerivativeRealization

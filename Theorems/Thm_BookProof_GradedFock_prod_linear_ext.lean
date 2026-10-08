@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFock
 open BookProof.GradedFock
 
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -17,6 +15,8 @@ open BookProof.FockSecondQuantization BookProof.FermionFock
 open BookProof.ChapterSuperBracket
 
 noncomputable section
+
+variable {α β : Type*}
 
 theorem BookProof.GradedFock.prod_linear_ext {N : Type*} [AddCommGroup N] [Module ℂ N]
     {f g : ((α × β) →₀ ℂ) →ₗ[ℂ] N}

@@ -14,15 +14,15 @@ open BookProof.ChapterWignerLittleGroup
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
-variable {G : Type*} [Group G] [Fintype G] {F : Type*} [NormedAddCommGroup F]
-  [InnerProductSpace ℂ F]
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
-
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
 
 noncomputable section
+
+variable {G : Type*} [Group G] [Fintype G] {F : Type*} [NormedAddCommGroup F]
+  [InnerProductSpace ℂ F]
+variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 
 theorem BookProof.FockStatistics.cfermionicProj_sectorEmb (n : ℕ) (x : (Hs.pow n).carrier) :
     cfermionicProj Hs n (sectorEmb Hs n x) = sectorEmb Hs n (fermionicProj Hs n x) := by sorry

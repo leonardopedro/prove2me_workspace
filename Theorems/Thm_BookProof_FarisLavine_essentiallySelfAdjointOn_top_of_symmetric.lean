@@ -6,10 +6,10 @@ import Definitions.Def_ChapterFarisLavine
 open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine
 
+
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-
 
 
 theorem BookProof.FarisLavine.essentiallySelfAdjointOn_top_of_symmetric [CompleteSpace F]

@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.SqSumOuterFamily
 
-variable (dim : ℕ → ℕ)
-
 
 
 open Finset MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
 
 theorem BookProof.SqSumOuterFamily.outerFriedN_surj (f : outerFock dim) :
     ∃ x : outerFriedDom dim, outerFriedN dim x + (x : outerFock dim) = f := by sorry

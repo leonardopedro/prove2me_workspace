@@ -18,8 +18,6 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QuadFockEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -30,6 +28,8 @@ open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadFockEsa.symm_equiv_hermBasisN (e : ℕ ≃ (Fin d →₀ ℕ)) (k : ℕ) :

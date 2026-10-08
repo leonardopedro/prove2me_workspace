@@ -22,3 +22,5 @@ theorem solution (b : HilbertBasis ℕ ℂ H) (v : H) : ‖carCre b v‖ ≤ ‖
   rw [carCre]
   calc ‖cCreS (b.repr v)‖ ≤ ‖b.repr v‖ := norm_cCreS_le _
     _ = ‖v‖ := b.repr.norm_map v
+
+omit [CompleteSpace H] in

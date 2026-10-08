@@ -5,13 +5,13 @@ import Definitions.Def_ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 attribute [local instance] InnerProductSpace.rclikeToReal
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.realification_splits (M : System ℂ V) (h : M.IsIrreducible)

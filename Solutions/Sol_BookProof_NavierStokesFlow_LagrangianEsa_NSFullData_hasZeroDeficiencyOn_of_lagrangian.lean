@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_hasZeroDeficiencyOn_of_linearIsometryEquiv
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.LagrangianEsa
 
 
 

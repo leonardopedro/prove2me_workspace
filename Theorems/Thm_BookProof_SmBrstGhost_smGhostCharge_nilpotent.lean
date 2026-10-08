@@ -7,13 +7,13 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.smGhostCharge_nilpotent (m : ℕ) {f3 : Fin 8 → Fin 8 → Fin 8 → ℝ}
     (h3anti : ∀ a b c, f3 a b c = -f3 b a c)

@@ -7,4 +7,4 @@ open BookProof.SpinStatistics
 
 open Matrix
 
-theorem BookProof.SpinStatistics.fermiAnnih₁_sq : fermiAnnih1 * fermiAnnih1 = 0 := by sorry
+theorem BookProof.SpinStatistics.fermiAnnih1_sq : fermiAnnih1 * fermiAnnih1 = 0 := by sorry

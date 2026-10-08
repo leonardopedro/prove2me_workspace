@@ -16,7 +16,7 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterFiniteSectionSingleTime
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQymTimeIndependentFlow
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
@@ -25,8 +25,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.YmAbelianFock
-
-variable {d : ℕ}
 
 
 
@@ -42,6 +40,8 @@ open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
 open BookProof.FiniteSectionSingleTime BookProof.QymTimeIndependent BookProof.QgTimeIndependent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.YmAbelianFock.coreRep_op_sum {D : Submodule ℂ (L2d d)} (Φ : CoreRep d D) {ι : Type*} (s : Finset ι)

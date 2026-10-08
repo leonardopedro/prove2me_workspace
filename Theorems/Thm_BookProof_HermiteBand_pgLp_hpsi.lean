@@ -7,13 +7,13 @@ open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.HermiteBand
 
-variable {d : ℕ}
-
 
 
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBand.pgLp_hpsi (α : Fin d →₀ ℕ) : pgLp (hpsi α) = hermiteMvLp α := by sorry

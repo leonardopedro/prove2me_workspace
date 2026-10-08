@@ -13,10 +13,6 @@ open BookProof.ChapterH6
 open BookProof.ChapterSirkEndToEnd
 open BookProof.SirkSingleTime
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
-
 
 open scoped InnerProductSpace
 
@@ -27,6 +23,10 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
+variable {Fin' : Type*} [NormedAddCommGroup Fin'] [InnerProductSpace ℂ Fin'] [CompleteSpace Fin']
 
 theorem BookProof.SirkSingleTime.sirk_single_time_shiftInvert_bound
     (A : UnboundedSelfAdjoint E) (l t : ℝ)

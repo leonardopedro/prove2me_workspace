@@ -1,6 +1,9 @@
 -- Generated from ChapterNsFieldMomentumInverse.lean — solution of BookProof.NsFieldMomentumInverse.isMomInverse_momentumOp
 import Mathlib
 import Definitions.Def_ChapterNsFieldMomentumInverse
+import Theorems.Thm_BookProof_NsSpatialMultiplier_fourier_opL2_momentumOp
+import Theorems.Thm_BookProof_NsSpatialMultiplier_hasTemperateGrowth_foSymbol
+import Theorems.Thm_BookProof_NsSpatialMultiplier_mulSymbolOp_apply
 open BookProof.NsFieldMomentumInverse
 
 

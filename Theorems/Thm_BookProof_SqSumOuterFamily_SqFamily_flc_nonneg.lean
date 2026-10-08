@@ -17,9 +17,6 @@ open BookProof.MajoranaClifford
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
-variable (dim : ℕ → ℕ)
-variable (F : SqFamily)
-
 
 
 open Finset MvPolynomial
@@ -31,5 +28,8 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
+variable (F : SqFamily)
 
 theorem BookProof.SqSumOuterFamily.SqFamily.flc_nonneg : 0 ≤ F.flc := by sorry

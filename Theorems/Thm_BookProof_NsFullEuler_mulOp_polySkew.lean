@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
 
 noncomputable section
+
+variable {n : ℕ}
 
 
 theorem BookProof.NsFullEuler.mulOp_polySkew {f : MvPolynomial (Fin d) ℂ} (hf : RealCoeff f) :

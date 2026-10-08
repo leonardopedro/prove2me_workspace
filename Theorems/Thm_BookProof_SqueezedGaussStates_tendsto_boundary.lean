@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 open BookProof.SqueezedGaussStates
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.GaussCoordCombo
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.SqueezedGaussStates.tendsto_boundary (ρ : ℝ) (h0 : 0 ≤ ρ) (h1 : ρ < 1) :

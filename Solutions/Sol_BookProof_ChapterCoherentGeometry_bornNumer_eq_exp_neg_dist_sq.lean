@@ -1,6 +1,7 @@
 -- Generated from ChapterCoherentGeometry.lean — solution of BookProof.ChapterCoherentGeometry.bornNumer_eq_exp_neg_dist_sq
 import Mathlib
 import Definitions.Def_ChapterCoherentGeometry
+import Theorems.Thm_BookProof_ChapterCoherentOverlap_coherentOverlap_eq_gaussian
 open BookProof.ChapterCoherentGeometry
 
 

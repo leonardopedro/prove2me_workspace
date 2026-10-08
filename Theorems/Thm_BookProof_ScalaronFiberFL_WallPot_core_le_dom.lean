@@ -17,10 +17,7 @@ open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (W : WallPot) (s : ℝ)
-variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
+open BookProof.ScalaronFiberFL.WallPot
 
 
 
@@ -32,5 +29,9 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
+variable (W : WallPot) (s : ℝ) (hs : 0 ≤ s)
 
 theorem BookProof.ScalaronFiberFL.WallPot.core_le_dom : ccDomain ℝ ≤ (W.comparison s hs).dom := by sorry

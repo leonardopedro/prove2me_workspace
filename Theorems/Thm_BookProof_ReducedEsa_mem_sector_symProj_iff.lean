@@ -5,24 +5,20 @@ import Mathlib
 import Definitions.Def_ChapterReducingSubspaceEsa
 open BookProof.ReducedEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
-variable {D : Submodule ℂ F}
-variable (P D) in
-variable (T : D →ₗ[ℂ] F)
-variable {T}
-variable (T) in
-variable (U : F →ₗ[ℂ] F)
-variable {U}
-
 
 
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {P : F →ₗ[ℂ] F}
+variable {D : Submodule ℂ F}
+variable (T : D →ₗ[ℂ] F)
+variable {T}
+variable (U : F →ₗ[ℂ] F)
+variable {U}
 
 theorem BookProof.ReducedEsa.mem_sector_symProj_iff (hU2 : ∀ x, U (U x) = x) {x : F} :
     x ∈ sector (symProj U) ↔ U x = x := by sorry

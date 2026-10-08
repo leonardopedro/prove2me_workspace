@@ -11,15 +11,15 @@ import Definitions.Def_ChapterComplexShiftCore
 open BookProof.QgOuterFockFL
 open BookProof.HashimotoShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-  {Dom : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+  {Dom : Submodule ℂ F}
 
 theorem BookProof.HashimotoShiftInvert.shiftRange_orthogonal_eq_bot {A : Dom →ₗ[ℂ] F}
     (hpos : ∀ x : Dom, 0 ≤ quadForm A x)

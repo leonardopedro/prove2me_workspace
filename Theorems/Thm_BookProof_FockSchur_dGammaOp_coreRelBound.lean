@@ -15,8 +15,6 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds
@@ -25,6 +23,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
 
 theorem BookProof.FockSchur.dGammaOp_coreRelBound (hK : SchurBound col K) (hherm : IsHermCol col) (hK0 : 0 ≤ K) :
     CoreRelBound numSym (dGammaOp col) K := by sorry

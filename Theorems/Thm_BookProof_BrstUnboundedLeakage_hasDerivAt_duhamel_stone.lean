@@ -8,9 +8,6 @@ import Definitions.Def_ChapterStoneUnitary
 open BookProof.BrstLeakage
 open BookProof.BrstUnboundedLeakage
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open NormedSpace Filter Topology
 open scoped InnerProductSpace
@@ -18,6 +15,9 @@ open scoped InnerProductSpace
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
 
 theorem BookProof.BrstUnboundedLeakage.hasDerivAt_duhamel_stone (B : H →L[ℂ] H) (t : ℝ) (x : H)
     (hdom : ∀ s : ℝ, flow B s x ∈ T.domain) (s : ℝ) :

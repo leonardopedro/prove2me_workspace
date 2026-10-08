@@ -1,6 +1,7 @@
 -- Generated from ChapterGravityInvMetric.lean — solution of BookProof.ChapterGravityInvMetric.invSpatialMetric_mulVec_lower_self
 import Mathlib
 import Definitions.Def_ChapterGravityInvMetric
+import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_mulVec_self
 open BookProof.ChapterGravityInvMetric
 
 

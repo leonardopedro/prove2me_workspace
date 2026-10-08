@@ -9,16 +9,16 @@ import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 open BookProof.PositiveSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-variable [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
+variable [CompleteSpace F]
+variable {D : Submodule ℂ F}
 
 theorem BookProof.PositiveSquareRoot.psi_gFun {t : ℝ} (ht : t ∈ Set.Icc (0 : ℝ) 1) : psiFun (gFun t) = t := by sorry

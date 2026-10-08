@@ -12,9 +12,6 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 
 open BookProof.FarisLavine
@@ -28,5 +25,8 @@ open BookProof.HermiteProductCore
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.ext_norm_le (x : d.C.dom) : ‖d.ext x‖ ≤ d.K * ‖d.C.op x + (x : F)‖ := by sorry

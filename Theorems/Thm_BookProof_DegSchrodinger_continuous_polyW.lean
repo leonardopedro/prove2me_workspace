@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegSchrodinger
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegSchrodinger.continuous_polyW (q : MvPolynomial (Fin d) ℂ) : Continuous (polyW q) := by sorry

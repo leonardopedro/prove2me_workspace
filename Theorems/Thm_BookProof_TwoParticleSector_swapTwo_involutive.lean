@@ -7,14 +7,14 @@ import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 open BookProof.TwoParticleSector
 
-variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
-variable {X}
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 
 noncomputable section
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
 
 theorem BookProof.TwoParticleSector.swapTwo_involutive (t : X ⊗[ℂ] (X ⊗[ℂ] ℂ)) : swapTwo X (swapTwo X t) = t := by sorry

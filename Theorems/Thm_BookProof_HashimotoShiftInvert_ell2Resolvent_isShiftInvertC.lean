@@ -11,16 +11,14 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.HashimotoShiftInvert
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
 
-d_simp
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.HashimotoShiftInvert.ell2Resolvent_isShiftInvertC {γ : ℂ} (hγ : γ.im ≠ 0) :
-    IsShiftInvertC ell2UnboundedExample γ (ell2Resolve := by sorry
+    IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) := by sorry

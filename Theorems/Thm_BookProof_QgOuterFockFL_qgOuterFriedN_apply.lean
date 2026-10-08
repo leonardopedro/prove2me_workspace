@@ -13,13 +13,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)]
-variable (C : ∀ i, Comparison (G i))
-variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
-variable {C H}
-
 
 open scoped ENNReal
 
@@ -35,6 +28,13 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
+variable (C : ∀ i, Comparison (G i))
+variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
+variable {C H}
 
 theorem BookProof.QgOuterFockFL.qgOuterFriedN_apply (x : qgOuterFriedDom) (n : ℕ) :
     ((qgOuterFriedN x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n

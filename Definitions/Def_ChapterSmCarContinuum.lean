@@ -233,9 +233,15 @@ def cCre (i : ℕ) : CFock →L[ℂ] CFock := (cCreL i).mkContinuous 1 (norm_cCr
 @[simp] theorem cCre_apply (i : ℕ) (ψ : CFock) (S : Finset ℕ) :
     (cCre i ψ) S = if i ∈ S then jwSign i S * ψ (S.erase i) else 0 := rfl
 
+theorem norm_cAnn_le (i : ℕ) (ψ : CFock) : ‖cAnn i ψ‖ ≤ ‖ψ‖ := by
+  have h := norm_cAnnL_le i ψ
+  rw [one_mul] at h
+  exact h
 
-
-
+theorem norm_cCre_le (i : ℕ) (ψ : CFock) : ‖cCre i ψ‖ ≤ ‖ψ‖ := by
+  have h := norm_cCreL_le i ψ
+  rw [one_mul] at h
+  exact h
 
 /-! ## 2. The canonical anticommutation relations -/
 
@@ -250,9 +256,49 @@ theorem car_cAnn_cCre_self (i : ℕ) (ψ : CFock) :
   · simp only [if_neg h, add_zero, if_pos (Finset.mem_insert_self i S), jwSign_insert_self,
       Finset.erase_insert h, ← mul_assoc, jwSign_mul_self, one_mul]
 
+/-- **`{a_i, a_j} = 0`** — in particular `a_i² = 0`, the Pauli principle. -/
+theorem car_cAnn_cAnn (i j : ℕ) (ψ : CFock) :
+    cAnn i (cAnn j ψ) + cAnn j (cAnn i ψ) = 0 := by
+  refine lp.ext (funext fun S => ?_)
+  simp only [lp.coeFn_add, Pi.add_apply, lp.coeFn_zero, Pi.zero_apply, cAnn_apply]
+  rcases eq_or_ne i j with rfl | h
+  · by_cases hi : i ∈ S
+    · simp [hi]
+    · rw [if_neg hi, if_pos (Finset.mem_insert_self i S)]
+      ring
+  · by_cases hi : i ∈ S
+    · rw [if_pos hi, if_pos (Finset.mem_insert_of_mem hi)]
+      split <;> ring
+    · by_cases hj : j ∈ S
+      · rw [if_neg hi, if_pos hj, if_pos (Finset.mem_insert_of_mem hj)]
+        ring
+      · rw [if_neg hi, if_neg hj, if_neg (by simp [hj, Ne.symm h]), if_neg (by simp [hi, h]),
+          Finset.insert_comm j i S, ← mul_assoc, ← mul_assoc, jw_swap_insert h hi hj]
+        ring
 
-
-
+/-- **`{a†_i, a†_j} = 0`.** -/
+theorem car_cCre_cCre (i j : ℕ) (ψ : CFock) :
+    cCre i (cCre j ψ) + cCre j (cCre i ψ) = 0 := by
+  refine lp.ext (funext fun S => ?_)
+  simp only [lp.coeFn_add, Pi.add_apply, lp.coeFn_zero, Pi.zero_apply, cCre_apply]
+  rcases eq_or_ne i j with rfl | h
+  · by_cases hi : i ∈ S
+    · rw [if_pos hi, if_neg (Finset.notMem_erase i S)]
+      ring
+    · simp [hi]
+  · by_cases hi : i ∈ S
+    · by_cases hj : j ∈ S
+      · rw [if_pos hi, if_pos hj, if_pos (by simp [hj, Ne.symm h] : j ∈ S.erase i),
+          if_pos (by simp [hi, h] : i ∈ S.erase j), Finset.erase_right_comm (a := i) (b := j),
+          ← mul_assoc, ← mul_assoc, jw_swap_erase h hi hj]
+        ring
+      · rw [if_pos hi, if_neg hj, if_neg (by simp [hj] : j ∉ S.erase i)]
+        ring
+    · by_cases hj : j ∈ S
+      · rw [if_neg hi, if_pos hj, if_neg (by simp [hi] : i ∉ S.erase j)]
+        ring
+      · rw [if_neg hi, if_neg hj]
+        ring
 
 /-- **`{a_i, a†_j} = 0` for `i ≠ j`.** -/
 theorem car_cAnn_cCre_of_ne {i j : ℕ} (h : i ≠ j) (ψ : CFock) :
@@ -292,7 +338,13 @@ theorem inner_cCre_left (i : ℕ) (ψ φ : CFock) :
     simp only [RCLike.inner_apply, cCre_apply, cAnn_apply, flipOcc_apply, if_neg h, if_pos h1,
       map_zero, zero_mul, mul_zero]
 
-
+/-- **`a_i` is the adjoint of `a†_i`.** -/
+theorem inner_cAnn_left (i : ℕ) (ψ φ : CFock) :
+    (inner ℂ (cAnn i ψ) φ : ℂ) = inner ℂ ψ (cCre i φ) := by
+  have h := inner_cCre_left i φ ψ
+  have h2 := congrArg (starRingEnd ℂ) h
+  rw [inner_conj_symm, inner_conj_symm] at h2
+  exact h2.symm
 
 /-! ## 4. Smearing a finitely supported test vector -/
 
@@ -456,35 +508,183 @@ theorem cCreS_smul (c : ℂ) (f : Ell2) : cCreS (c • f) = c • cCreS f := by
     smul_eq_mul, Finset.mul_sum]
   exact Finset.sum_congr rfl fun i _ => by ring
 
+theorem cCreS_sub (f g : Ell2) : cCreS (f - g) = cCreS f - cCreS g := by
+  refine ContinuousLinearMap.ext fun ψ => lp.ext (funext fun S => ?_)
+  simp only [cCreS_apply, ContinuousLinearMap.sub_apply, lp.coeFn_sub, Pi.sub_apply,
+    ← Finset.sum_sub_distrib]
+  exact Finset.sum_congr rfl fun i _ => by ring
 
+theorem norm_cCreS_le (f : Ell2) : ‖cCreS f‖ ≤ ‖f‖ :=
+  LinearMap.mkContinuous_norm_le _ (norm_nonneg f) _
 
+theorem norm_cAnnS_le (f : Ell2) : ‖cAnnS f‖ ≤ ‖f‖ := by
+  rw [cAnnS, LinearIsometryEquiv.norm_map ContinuousLinearMap.adjoint (cCreS f)]
+  exact norm_cCreS_le f
 
+theorem cAnnS_sub (f g : Ell2) : cAnnS (f - g) = cAnnS f - cAnnS g := by
+  simp only [cAnnS, cCreS_sub, map_sub]
 
+/-- The single-mode creation operator is the smearing of a basis vector. -/
+theorem cCreS_single (i : ℕ) : cCreS (lp.single 2 i (1 : ℂ)) = cCre i := by
+  refine ContinuousLinearMap.ext fun ψ => lp.ext (funext fun S => ?_)
+  rw [cCreS_apply, cCre_apply]
+  by_cases h : i ∈ S
+  · rw [if_pos h, Finset.sum_eq_single i]
+    · simp
+    · intro j _ hj
+      simp [lp.single_apply, hj]
+    · intro hi
+      exact absurd h hi
+  · rw [if_neg h]
+    refine Finset.sum_eq_zero fun j hj => ?_
+    have hne : j ≠ i := fun e => h (e ▸ hj)
+    simp [lp.single_apply, hne]
 
+/-- **`{a†(f), a†(g)} = 0`.** -/
+theorem car_cCreS_cCreS (f g : Ell2) (ψ : CFock) :
+    cCreS f (cCreS g ψ) + cCreS g (cCreS f ψ) = 0 := by
+  refine lp.ext (funext fun S => ?_)
+  simp only [lp.coeFn_add, Pi.add_apply, lp.coeFn_zero, Pi.zero_apply, cCreS_apply]
+  have expand : ∀ u v : Ell2,
+      (∑ i ∈ S, (u : ℕ → ℂ) i * (jwSign i S *
+          ∑ j ∈ S.erase i, (v : ℕ → ℂ) j * (jwSign j (S.erase i) * ψ ((S.erase i).erase j))))
+        = ∑ i ∈ S, ∑ j ∈ S.erase i,
+            (u : ℕ → ℂ) i * jwSign i S * ((v : ℕ → ℂ) j * jwSign j (S.erase i))
+              * ψ ((S.erase i).erase j) := by
+    intro u v
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [Finset.mul_sum, Finset.mul_sum]
+    exact Finset.sum_congr rfl fun j _ => by ring
+  rw [expand f g, expand g f]
+  rw [Finset.sum_comm' (s := S) (t := fun i => S.erase i) (t' := S) (s' := fun j => S.erase j)
+    (fun x y => by
+      constructor
+      · rintro ⟨hx, hy⟩
+        exact ⟨Finset.mem_erase.mpr ⟨fun h => (Finset.mem_erase.mp hy).1 h.symm, hx⟩,
+          (Finset.mem_erase.mp hy).2⟩
+      · rintro ⟨hx, hy⟩
+        exact ⟨(Finset.mem_erase.mp hx).2,
+          Finset.mem_erase.mpr ⟨fun h => (Finset.mem_erase.mp hx).1 h.symm, hy⟩⟩)]
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_eq_zero fun i hi => ?_
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_eq_zero fun j hj => ?_
+  have hji : j ≠ i := (Finset.mem_erase.mp hj).1
+  have hjS : j ∈ S := (Finset.mem_erase.mp hj).2
+  have hsign : jwSign j S * jwSign i (S.erase j) = -(jwSign i S * jwSign j (S.erase i)) :=
+    jw_swap_erase hji hjS hi
+  rw [(Finset.erase_right_comm : (S.erase j).erase i = (S.erase i).erase j)]
+  have hkey : (f : ℕ → ℂ) j * jwSign j S * ((g : ℕ → ℂ) i * jwSign i (S.erase j))
+      = - ((g : ℕ → ℂ) i * jwSign i S * ((f : ℕ → ℂ) j * jwSign j (S.erase i))) := by
+    calc (f : ℕ → ℂ) j * jwSign j S * ((g : ℕ → ℂ) i * jwSign i (S.erase j))
+        = ((f : ℕ → ℂ) j * (g : ℕ → ℂ) i) * (jwSign j S * jwSign i (S.erase j)) := by ring
+      _ = ((f : ℕ → ℂ) j * (g : ℕ → ℂ) i) * (-(jwSign i S * jwSign j (S.erase i))) := by
+            rw [hsign]
+      _ = - ((g : ℕ → ℂ) i * jwSign i S * ((f : ℕ → ℂ) j * jwSign j (S.erase i))) := by ring
+  rw [hkey]
+  ring
 
+/-- On a finite mode set the smeared creation operator is the finite smearing. -/
+theorem cCreS_eq_cCreFin {f : Ell2} {J : Finset ℕ} (h : ∀ i, (f : ℕ → ℂ) i ≠ 0 → i ∈ J) :
+    cCreS f = cCreFin J (fun i => f i) := by
+  refine ContinuousLinearMap.ext fun ψ => lp.ext (funext fun S => ?_)
+  rw [cCreS_apply, cCreFin_apply, Finset.sum_ite_mem]
+  refine (Finset.sum_subset Finset.inter_subset_right ?_).symm
+  intro i hiS hi
+  have hz : (f : ℕ → ℂ) i = 0 := by
+    by_contra hne
+    exact hi (Finset.mem_inter.mpr ⟨h i hne, hiS⟩)
+  rw [hz, zero_mul]
 
+/-- On a finite mode set the smeared annihilation operator is the finite smearing. -/
+theorem cAnnS_eq_cAnnFin {f : Ell2} {J : Finset ℕ} (h : ∀ i, (f : ℕ → ℂ) i ≠ 0 → i ∈ J) :
+    cAnnS f = cAnnFin J (fun i => f i) := by
+  rw [cAnnS, cCreS_eq_cCreFin h]
+  symm
+  rw [ContinuousLinearMap.eq_adjoint_iff]
+  intro x y
+  have h1 := inner_cCreFin_left J (fun i => (f : ℕ → ℂ) i) y x
+  have h2 := congrArg (starRingEnd ℂ) h1
+  rw [inner_conj_symm, inner_conj_symm] at h2
+  exact h2.symm
 
+/-- The one-particle inner product of a finitely supported vector is a finite sum. -/
+theorem inner_eq_finsum {f g : Ell2} {J : Finset ℕ} (hf : ∀ i, (f : ℕ → ℂ) i ≠ 0 → i ∈ J) :
+    (inner ℂ f g : ℂ) = ∑ i ∈ J, (starRingEnd ℂ) ((f : ℕ → ℂ) i) * (g : ℕ → ℂ) i := by
+  rw [lp.inner_eq_tsum]
+  rw [tsum_eq_sum (s := J) (f := fun i => (inner ℂ ((f : ℕ → ℂ) i) ((g : ℕ → ℂ) i) : ℂ))
+    (fun i hi => by
+      have hz : (f : ℕ → ℂ) i = 0 := by
+        by_contra hne; exact hi (hf i hne)
+      simp [RCLike.inner_apply, hz])]
+  exact Finset.sum_congr rfl fun i _ => by simp [RCLike.inner_apply, mul_comm]
 
+/-- `f ↦ a(f)` is a contraction, hence continuous. -/
+theorem lipschitz_cAnnS : LipschitzWith 1 (fun f : Ell2 => cAnnS f) := by
+  refine LipschitzWith.of_dist_le_mul fun x y => ?_
+  rw [dist_eq_norm, dist_eq_norm, ← cAnnS_sub, NNReal.coe_one, one_mul]
+  exact norm_cAnnS_le (x - y)
 
+/-- `f ↦ a†(f)` is a contraction, hence continuous. -/
+theorem lipschitz_cCreS : LipschitzWith 1 (fun f : Ell2 => cCreS f) := by
+  refine LipschitzWith.of_dist_le_mul fun x y => ?_
+  rw [dist_eq_norm, dist_eq_norm, ← cCreS_sub, NNReal.coe_one, one_mul]
+  exact norm_cCreS_le (x - y)
 
+/-- The continuum CAR for finitely supported test vectors, where both operators reduce to
+finite smearings. -/
+theorem car_smeared_of_finite {f g : Ell2}
+    (hf : f ∈ lpFiniteModes ℕ) (hg : g ∈ lpFiniteModes ℕ) (ψ : CFock) :
+    cAnnS f (cCreS g ψ) + cCreS g (cAnnS f ψ) = (inner ℂ f g : ℂ) • ψ := by
+  classical
+  have hf' : (Function.support ((f : ℕ → ℂ))).Finite := hf
+  have hg' : (Function.support ((g : ℕ → ℂ))).Finite := hg
+  set J := hf'.toFinset ∪ hg'.toFinset with hJ
+  have hfJ : ∀ i, (f : ℕ → ℂ) i ≠ 0 → i ∈ J := fun i hi =>
+    Finset.mem_union_left _ (hf'.mem_toFinset.mpr hi)
+  have hgJ : ∀ i, (g : ℕ → ℂ) i ≠ 0 → i ∈ J := fun i hi =>
+    Finset.mem_union_right _ (hg'.mem_toFinset.mpr hi)
+  rw [cAnnS_eq_cAnnFin hfJ, cCreS_eq_cCreFin hgJ, inner_eq_finsum (g := g) hfJ]
+  exact car_cCreFin J _ _ ψ
 
+/-- The continuum CAR for a finitely supported `g` and an arbitrary `f`, by density of the
+finite-mode vectors. -/
+theorem car_smeared_of_finite_right {g : Ell2} (hg : g ∈ lpFiniteModes ℕ) (ψ : CFock)
+    (f : Ell2) :
+    cAnnS f (cCreS g ψ) + cCreS g (cAnnS f ψ) = (inner ℂ f g : ℂ) • ψ := by
+  have hcont1 : Continuous fun f : Ell2 => cAnnS f (cCreS g ψ) + cCreS g (cAnnS f ψ) :=
+    ((ContinuousLinearMap.apply ℂ CFock (cCreS g ψ)).continuous.comp
+        lipschitz_cAnnS.continuous).add
+      ((cCreS g).continuous.comp
+        ((ContinuousLinearMap.apply ℂ CFock ψ).continuous.comp lipschitz_cAnnS.continuous))
+  have hcont2 : Continuous fun f : Ell2 => (inner ℂ f g : ℂ) • ψ := by fun_prop
+  exact congrFun (Continuous.ext_on lpFiniteModes_dense hcont1 hcont2
+    (fun x hx => car_smeared_of_finite hx hg ψ)) f
 
+/-- **The continuum canonical anticommutation relation** `{a(f), a†(g)} = ⟪f, g⟫ · 1`, for
+arbitrary one-particle vectors `f, g ∈ ℓ²(ℕ)`. -/
+theorem car_smeared (f g : Ell2) (ψ : CFock) :
+    cAnnS f (cCreS g ψ) + cCreS g (cAnnS f ψ) = (inner ℂ f g : ℂ) • ψ := by
+  have hcont1 : Continuous fun g : Ell2 => cAnnS f (cCreS g ψ) + cCreS g (cAnnS f ψ) :=
+    ((cAnnS f).continuous.comp
+        ((ContinuousLinearMap.apply ℂ CFock ψ).continuous.comp lipschitz_cCreS.continuous)).add
+      ((ContinuousLinearMap.apply ℂ CFock (cAnnS f ψ)).continuous.comp
+        lipschitz_cCreS.continuous)
+  have hcont2 : Continuous fun g : Ell2 => (inner ℂ f g : ℂ) • ψ := by fun_prop
+  exact congrFun (Continuous.ext_on lpFiniteModes_dense hcont1 hcont2
+    (fun x hx => car_smeared_of_finite_right hx ψ f)) g
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/-- **`{a(f), a(g)} = 0`**, the adjoint relation of `car_cCreS_cCreS`. -/
+theorem car_cAnnS_cAnnS (f g : Ell2) (ψ : CFock) :
+    cAnnS f (cAnnS g ψ) + cAnnS g (cAnnS f ψ) = 0 := by
+  have hop : (cCreS g).comp (cCreS f) + (cCreS f).comp (cCreS g) = 0 := by
+    refine ContinuousLinearMap.ext fun φ => ?_
+    simpa using car_cCreS_cCreS g f φ
+  have hadj := congrArg ContinuousLinearMap.adjoint hop
+  rw [map_add, ContinuousLinearMap.adjoint_comp, ContinuousLinearMap.adjoint_comp,
+    map_zero] at hadj
+  have h2 := congrArg (fun T : CFock →L[ℂ] CFock => T ψ) hadj
+  simpa [cAnnS] using h2
 
 /-! ## 6. The one-particle subspace -/
 
@@ -536,7 +736,16 @@ def oneParticleIsometry : Ell2 →ₗᵢ[ℂ] CFock where
     rfl
   norm_map' := norm_oneParticle
 
-
+/-- `‖a†(f)‖ = ‖f‖`: the smearing map is isometric. -/
+theorem norm_cCreS_eq (f : Ell2) : ‖cCreS f‖ = ‖f‖ := by
+  refine le_antisymm (norm_cCreS_le f) ?_
+  have hvac : ‖vac‖ = 1 := by
+    rw [vac, lp.norm_single (by norm_num)]
+    simp
+  have hle := (cCreS f).le_opNorm vac
+  rw [hvac, mul_one] at hle
+  rw [← norm_oneParticle f]
+  exact hle
 
 /-! ## 7. The CAR algebra over an arbitrary separable one-particle space -/
 
@@ -551,11 +760,28 @@ def carCre (b : HilbertBasis ℕ ℂ H) (v : H) : CFock →L[ℂ] CFock := cCreS
 def carAnn (b : HilbertBasis ℕ ℂ H) (v : H) : CFock →L[ℂ] CFock :=
   ContinuousLinearMap.adjoint (carCre b v)
 
+omit [CompleteSpace H] in
+/-- **The canonical anticommutation relations over an arbitrary separable one-particle
+space**: `{a(v), a†(w)} = ⟪v, w⟫ · 1`. -/
+theorem car_hilbert (b : HilbertBasis ℕ ℂ H) (v w : H) (ψ : CFock) :
+    carAnn b v (carCre b w ψ) + carCre b w (carAnn b v ψ) = (inner ℂ v w : ℂ) • ψ := by
+  have hv : carAnn b v = cAnnS (b.repr v) := rfl
+  have hinner : (inner ℂ (b.repr v) (b.repr w) : ℂ) = inner ℂ v w := b.repr.inner_map_map v w
+  rw [hv, carCre, ← hinner]
+  exact car_smeared _ _ ψ
 
+omit [CompleteSpace H] in
+/-- `‖a†(v)‖ ≤ ‖v‖` over an arbitrary separable one-particle space. -/
+theorem norm_carCre_le (b : HilbertBasis ℕ ℂ H) (v : H) : ‖carCre b v‖ ≤ ‖v‖ := by
+  rw [carCre]
+  calc ‖cCreS (b.repr v)‖ ≤ ‖b.repr v‖ := norm_cCreS_le _
+    _ = ‖v‖ := b.repr.norm_map v
 
-
-
-
+omit [CompleteSpace H] in
+/-- `{a†(v), a†(w)} = 0` over an arbitrary separable one-particle space. -/
+theorem car_hilbert_cre (b : HilbertBasis ℕ ℂ H) (v w : H) (ψ : CFock) :
+    carCre b v (carCre b w ψ) + carCre b w (carCre b v ψ) = 0 :=
+  car_cCreS_cCreS (b.repr v) (b.repr w) ψ
 
 end
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterMackeyCocycle.lean — solution of BookProof.ChapterMackeyCocycle.proj_eq_zero_of_measure_zero
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
 open BookProof.ChapterMackeyCocycle
 
 

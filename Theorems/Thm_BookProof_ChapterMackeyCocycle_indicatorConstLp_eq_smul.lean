@@ -5,9 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 open BookProof.ChapterMackeyCocycle
 
-variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-variable {μ : Measure X} [IsFiniteMeasure μ]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -15,6 +12,9 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
 
+variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
+
+variable {μ : Measure X} [IsFiniteMeasure μ]
 
 theorem BookProof.ChapterMackeyCocycle.indicatorConstLp_eq_smul {E : Set X} (hE : MeasurableSet E) (hμE : μ E ≠ ⊤) (c : ℂ) :
     indicatorConstLp 2 hE hμE c = c • indSet μ hE := by sorry

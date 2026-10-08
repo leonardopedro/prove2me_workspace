@@ -1,6 +1,8 @@
 -- Generated from ChapterCayleySpectralModel.lean — solution of BookProof.ChapterCayleySpectralModel.res_one_eq_cayley
 import Mathlib
 import Definitions.Def_ChapterCayleySpectralModel
+import Theorems.Thm_BookProof_ChapterCayleyTransform_cayley_shift
+import Theorems.Thm_BookProof_ChapterCayleyTransform_sub_cayley_shift
 open BookProof.ChapterCayleySpectralModel
 
 

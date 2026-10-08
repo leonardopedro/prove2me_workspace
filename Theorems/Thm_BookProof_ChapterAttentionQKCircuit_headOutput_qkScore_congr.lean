@@ -3,9 +3,8 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionQKCircuit
-
-variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -14,6 +13,9 @@ noncomputable section
 
 
 open Matrix BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionOutput
+
+variable {d n m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionQKCircuit.headOutput_qkScore_congr (beta : ℝ) {WQ₁ WK₁ WQ₂ WK₂ : Matrix (Fin d) (Fin n) ℝ}

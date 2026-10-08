@@ -11,9 +11,6 @@ open BookProof.GaussCoordCombo
 open BookProof.SqueezedGaussStates
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -22,5 +19,8 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.coordFactor_facW (j : Fin d) : CoordFactor j (facW vf Mf j) (facS vf Mf j) := by sorry

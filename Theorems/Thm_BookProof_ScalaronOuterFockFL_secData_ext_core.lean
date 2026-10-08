@@ -12,12 +12,6 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-variable {ι : Type*}
-variable (Q : QgModeData ι)
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open MeasureTheory SchwartzMap
@@ -27,5 +21,11 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.ScalaronOuterFockFL.secData_ext_core (p : secCore (ι := by sorry

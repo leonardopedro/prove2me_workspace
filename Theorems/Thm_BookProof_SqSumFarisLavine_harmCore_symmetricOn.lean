@@ -14,8 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteOscillator
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -26,6 +24,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.harmCore_symmetricOn : SymmetricOn (polyGaussCore (d := D)) (harmCore (d := D)) := by sorry

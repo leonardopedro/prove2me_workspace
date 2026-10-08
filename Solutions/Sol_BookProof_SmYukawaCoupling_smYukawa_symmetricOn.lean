@@ -1,6 +1,7 @@
 -- Generated from ChapterSmYukawaCoupling.lean — solution of BookProof.SmYukawaCoupling.smYukawa_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterSmYukawaCoupling
+import Theorems.Thm_BookProof_SmCar_fermiBilin_symmetric
 open BookProof.SmYukawaCoupling
 
 

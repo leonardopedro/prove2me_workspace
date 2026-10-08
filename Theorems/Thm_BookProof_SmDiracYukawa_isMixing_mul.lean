@@ -7,15 +7,16 @@ import Definitions.Def_ChapterSmOneParticle
 open BookProof.SmOneParticle
 open BookProof.SmDiracYukawa
 
-variable {n : ℕ}
-
 
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
 
+variable {n : ℕ}
 
 noncomputable section
+
+open BookProof.SmOneParticle
 
 theorem BookProof.SmDiracYukawa.isMixing_mul {A B : Matrix (Fin 3) (Fin 3) ℂ} (hA : IsMixing A) (hB : IsMixing B) :
     IsMixing (A * B.conjTranspose) := by sorry

@@ -14,9 +14,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (W : WallPot) (s : ℝ)
+open BookProof.ScalaronFiberFL.WallPot
 
 
 
@@ -28,5 +26,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
 
 theorem BookProof.ScalaronFiberFL.WallPot.ham_esa (hs : 0 ≤ s) : EssentiallySelfAdjointOn (ccDomain ℝ) (W.ham s) := by sorry

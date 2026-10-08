@@ -6,12 +6,12 @@ import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.ghostMode_injective (m : ℕ) : Function.Injective (ghostMode m) := by sorry

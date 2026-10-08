@@ -9,12 +9,12 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.Complexification
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open BookProof.ChapterA
 
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.Cx.complexify_realPart_of_invariant {X : Submodule ℂ (Cx W)}

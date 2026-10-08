@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldGaussian
 open BookProof.ChapterFreeFieldGaussian
 
-variable {n : ℕ}
-
 
 open MeasureTheory ProbabilityTheory Complex WithLp
 open scoped RealInnerProductSpace ENNReal
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldGaussian.stdGaussian_map_linearIsometryEquiv

@@ -8,14 +8,14 @@ open BookProof.BRSTNilpotent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.momFock_scale (c : ParcelConf ℝ) :
     momFock.scale c = 3 * |∑ k : Fin c.1, c.2 k| := by

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_qgSectorHam_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.QgOuterFock
 
 

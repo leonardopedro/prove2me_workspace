@@ -32,3 +32,5 @@ theorem solution (c : ι → ℝ) (w : ι → V) (f : 𝓢(V, ℂ)) (x : V) :
     fourier_momentumOp_apply, foSymbolFn, Complex.ofReal_sum, Complex.ofReal_mul,
     Complex.ofReal_ofNat, Finset.sum_mul]
   exact Finset.sum_congr rfl fun i _ => by ring
+
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in

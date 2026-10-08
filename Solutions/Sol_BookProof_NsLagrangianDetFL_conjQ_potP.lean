@@ -1,6 +1,7 @@
 -- Generated from ChapterNsLagrangianDetFarisLavine.lean — solution of BookProof.NsLagrangianDetFL.conjQ_potP
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianDetFarisLavine
+import Theorems.Thm_BookProof_NsLagrangianDet_conjP_volPot
 open BookProof.NsLagrangianDetFL
 
 
@@ -8,7 +9,7 @@ open BookProof.NsLagrangianDetFL
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
 

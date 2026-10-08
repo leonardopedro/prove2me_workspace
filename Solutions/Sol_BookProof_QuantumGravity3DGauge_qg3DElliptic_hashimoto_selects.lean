@@ -32,4 +32,4 @@ theorem solution (e : ℕ ≃ (Fin 84 →₀ ℕ)) {γ : ℝ} (hγ : 0 < γ) :
           IsShiftInvert A' γ R → Dom' = Dom) :=
   te-mode domain of the orthonormal basis
   adapted to the Gauss–polynomial core. -/
-  theorem qg3DElliptic_hashimoto_sele
+  theorem qg3DElliptic_hashimoto_selects (e : ℕ ≃ (Fin 84 →₀ ℕ)) {γ : ℝ} (hγ : 0 < γ) :

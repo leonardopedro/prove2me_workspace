@@ -16,14 +16,11 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-ve himag := congrArg Complex.im hi
-    simp at himag
-
 theorem solution (A : F →L[ℂ] F)
     (hsym : (A : F →ₗ[ℂ] F).IsSymmetric) (D : Submodule ℂ F) (hdense : Dense (D : Set F))
     (hinv : ∀ v : D, A (v : F) ∈ D) :
     HasZeroDeficiencyOn D
-      (LinearMap.codRestrict D (( :=
+      (LinearMap.codRestrict D ((A : F →ₗ[ℂ] F).comp D.subtype) fun v => hinv v) :=
   A : F →ₗ[ℂ] F).comp D.subtype) fun v => hinv v) := by
     have key : ∀ (c : ℂ) (w : F), (∀ v : D, (inner ℂ (A (v : F)) w : ℂ) = inner ℂ (v : F) (c • w)) →
         A w = c • w := by

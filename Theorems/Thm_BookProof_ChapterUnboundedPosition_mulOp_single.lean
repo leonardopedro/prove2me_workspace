@@ -13,4 +13,5 @@ open scoped ENNReal InnerProductSpace
 
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
-def positionField : ℤ → ℝ := by sorry
+theorem BookProof.ChapterUnboundedPosition.mulOp_single (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
+    mulOp f ⟨lp.single 2 n c, single_mem_mulDomain f n c⟩ = lp.single 2 n ((f n : ℂ) * c) := by sorry

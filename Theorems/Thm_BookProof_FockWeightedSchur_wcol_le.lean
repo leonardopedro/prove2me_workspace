@@ -13,9 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-variable {w : ℕ → ℝ}
-variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
@@ -23,6 +20,9 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {w : ℕ → ℝ}
+variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 theorem BookProof.FockWeightedSchur.wcol_le (hw : ∀ k, 1 ≤ w k) (hherm : IsHermCol col) (hK : WColBound w col K) (j : ℕ)
     (L : Finset ℕ) : ∑ k ∈ L, ‖(col k) j‖ / w k ≤ K := by sorry

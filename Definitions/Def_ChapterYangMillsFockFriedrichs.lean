@@ -82,7 +82,10 @@ noncomputable section
 /-- The global coordinate of the `i`-th field-space direction of the `p`-th particle. -/
 def ycoord {n : ℕ} (p : Fin n) (i : Fin 99) : Fin (n * 99) := finProdFinEquiv (p, i)
 
-
+theorem ycoord_injective {n : ℕ} (p : Fin n) : Function.Injective (ycoord p) := by
+  intro i i' h
+  have := finProdFinEquiv.injective h
+  simpa using congrArg Prod.snd this
 
 /-- The particle carrying a global coordinate. -/
 def ypart {n : ℕ} (I : Fin (n * 99)) : Fin n := (finProdFinEquiv.symm I).1
@@ -108,7 +111,12 @@ def magPolyN (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) {n : ℕ} (p : Fin n) (i
     (X (ycoord p (idxD j k a)) + ∑ b : Fin 8, ∑ c : Fin 8,
       ((fabc a b c : ℝ) : ℂ) • (X (ycoord p (idxA j b)) * X (ycoord p (idxA k c))))
 
-
+theorem realCoeff_magPolyN (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) {n : ℕ} (p : Fin n) (i : Fin 3)
+    (a : Fin 8) : RealCoeff (magPolyN fabc p i a) := by
+  refine RealCoeff.sum fun j _ => RealCoeff.sum fun k _ => RealCoeff.smul ?_
+  refine RealCoeff.add (realCoeff_X _) ?_
+  exact RealCoeff.sum fun b _ => RealCoeff.sum fun c _ =>
+    RealCoeff.smul ((realCoeff_X _).mul (realCoeff_X _))
 
 /-- **The 3D gauge-fixing form of the `p`-th particle**, `Σ_j ∂_j A_{j,a}` — the transverse
 (Coulomb) gauge condition on the spatial slice, written in the independent coordinates that
@@ -116,9 +124,22 @@ represent the spatial derivatives of the gauge field. -/
 def gaussPolyN {n : ℕ} (p : Fin n) (a : Fin 8) : MvPolynomial (Fin (n * 99)) ℂ :=
   ∑ j : Fin 3, X (ycoord p (idxD j j a))
 
+theorem realCoeff_gaussPolyN {n : ℕ} (p : Fin n) (a : Fin 8) : RealCoeff (gaussPolyN p a) :=
+  RealCoeff.sum fun _ _ => realCoeff_X _
 
-
-
+/-- The 3D gauge-fixing form is not vacuous: it really involves the derivative
+coordinates. -/
+theorem gaussPolyN_eval {n : ℕ} (p : Fin n) (a : Fin 8) :
+    eval (fun I => if I = ycoord p (idxD 0 0 a) then (1 : ℂ) else 0) (gaussPolyN p a) = 1 := by
+  have h1 : (idxD 1 1 a : Fin 99) ≠ idxD 0 0 a := by
+    simp [idxD, Fin.ext_iff]
+  have h2 : (idxD 2 2 a : Fin 99) ≠ idxD 0 0 a := by
+    simp [idxD, Fin.ext_iff]
+  have hy1 : ycoord p (idxD 1 1 a) ≠ ycoord p (idxD 0 0 a) := fun h =>
+    h1 (ycoord_injective p h)
+  have hy2 : ycoord p (idxD 2 2 a) ≠ ycoord p (idxD 0 0 a) := fun h =>
+    h2 (ycoord_injective p h)
+  simp [gaussPolyN, Fin.sum_univ_three, hy1, hy2]
 
 /-! ## 3. The `n`-particle Hamiltonian -/
 
@@ -151,11 +172,24 @@ def ymFieldN (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ) (m : Fin (n * 
     (polyGaussCore (d := n * 99)) →ₗ[ℂ] (polyGaussCore (d := n * 99)) :=
   ymFieldSum fabc n (finSumFinEquiv.symm m)
 
+theorem ymPiN_symmetricOn (n : ℕ) (m : Fin (n * 24)) :
+    SymmetricOn (polyGaussCore (d := n * 99))
+      ((polyGaussCore (d := n * 99)).subtype.comp (ymPiN n m)) :=
+  (coreRepPoly (n * 99)).symmetricOn_op (momOp_polySym _)
 
+theorem ymFieldSum_symmetricOn (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ)
+    (s : Fin (n * 24) ⊕ Fin (n * 8)) :
+    SymmetricOn (polyGaussCore (d := n * 99))
+      ((polyGaussCore (d := n * 99)).subtype.comp (ymFieldSum fabc n s)) := by
+  rcases s with m₁ | m₂
+  · exact (coreRepPoly (n * 99)).symmetricOn_op (mulOp_polySym (realCoeff_magPolyN _ _ _ _))
+  · exact (coreRepPoly (n * 99)).symmetricOn_op (mulOp_polySym (realCoeff_gaussPolyN _ _))
 
-
-
-
+theorem ymFieldN_symmetricOn (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ)
+    (m : Fin (n * 24 + n * 8)) :
+    SymmetricOn (polyGaussCore (d := n * 99))
+      ((polyGaussCore (d := n * 99)).subtype.comp (ymFieldN fabc n m)) :=
+  ymFieldSum_symmetricOn fabc n (finSumFinEquiv.symm m)
 
 /-- **The `n`-particle gauge-fixed Yang–Mills Hamiltonian** on the Gauss–polynomial core of
 `L²(ℝ^{99n})`: the kinetic term of every particle, the full magnetic energy (quartic in the
@@ -164,11 +198,26 @@ def ymSectorHam (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ) :
     (polyGaussCore (d := n * 99)) →ₗ[ℂ] L2d (n * 99) :=
   weylOp (ymPiN n) (ymFieldN fabc n)
 
+theorem ymSectorHam_symmetricOn (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ) :
+    SymmetricOn (polyGaussCore (d := n * 99)) (ymSectorHam fabc n) :=
+  weylOpDom_symmetricOn (ymPiN_symmetricOn n) (ymFieldN_symmetricOn fabc n)
 
+/-- **The `n`-particle Yang–Mills Hamiltonian is bounded below** — its quadratic form is a
+sum of squares, hence non-negative.  This is the hypothesis of the Friedrichs extension
+theorem, and it is what makes a Faris–Lavine commutator certificate unnecessary here. -/
+theorem ymSectorHam_quadForm_nonneg (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ)
+    (x : polyGaussCore (d := n * 99)) : 0 ≤ quadForm (ymSectorHam fabc n) x :=
+  weylOpDom_quadForm_nonneg (ymPiN_symmetricOn n) (ymFieldN_symmetricOn fabc n) x
 
-
-
-
+/-- **The `n`-particle gauge-fixed Yang–Mills Hamiltonian has a positive self-adjoint
+(Friedrichs) extension**, for every family of real structure constants. -/
+theorem ymSector_friedrichs_extension (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ) :
+    ∃ (Dom : Submodule ℂ (L2d (n * 99))) (A : Dom →ₗ[ℂ] L2d (n * 99)),
+      IsPositiveSelfAdjointExtension (ymSectorHam fabc n) A :=
+  friedrichs_extension_exists
+    ⟨polyGaussCore, ymSectorHam fabc n, ymSectorHam_symmetricOn fabc n,
+      ymSectorHam_quadForm_nonneg fabc n⟩
+    polyGaussCore_dense
 
 /-! ## 4. The nested Fock space -/
 
@@ -178,26 +227,68 @@ abbrev ymFockSpace := lp (fun n : ℕ => L2d (n * 99)) 2
 /-- The finite-particle core: finitely many sectors, each in its Gauss–polynomial core. -/
 def ymFockCore : Submodule ℂ ymFockSpace := dsCore (fun n : ℕ => polyGaussCore (d := n * 99))
 
-
+theorem ymFockCore_dense :
+    Dense ((ymFockCore : Submodule ℂ ymFockSpace) : Set ymFockSpace) :=
+  dsCore_dense fun _ => polyGaussCore_dense
 
 /-- **The Yang–Mills Hamiltonian on the nested Fock space**: one copy of the one-particle
 Hamiltonian per particle, in every number sector. -/
 def ymFockHam (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) : ymFockCore →ₗ[ℂ] ymFockSpace :=
   dsOp (fun n : ℕ => ymSectorHam fabc n)
 
+theorem ymFockHam_symmetricOn (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
+    SymmetricOn ymFockCore (ymFockHam fabc) :=
+  dsOp_symmetricOn _ fun n => ymSectorHam_symmetricOn fabc n
 
+/-- **The outer Yang–Mills Hamiltonian is bounded below**: positivity is fibrewise, so it
+lifts from the one-particle Hilbert space to the nested Fock space. -/
+theorem ymFockHam_quadForm_nonneg (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (x : ymFockCore) :
+    0 ≤ quadForm (ymFockHam fabc) x :=
+  dsOp_quadForm_nonneg _ (fun n u => ymSectorHam_quadForm_nonneg fabc n u) x
 
+/-- **The Yang–Mills Hamiltonian on the nested Fock space has a positive self-adjoint
+(Friedrichs) extension** — for every family of real structure constants, the non-abelian ones
+included.
 
+This is the Yang–Mills counterpart of the Faris–Lavine route used for the other threads: the
+Hamiltonian is bounded below, so the Friedrichs extension applies directly, and — like the
+Faris–Lavine certificate — the two data it needs (symmetry and positivity of the form) are
+fibrewise and therefore lift from the one-particle Hilbert space to the outer Fock space. -/
+theorem ymFock_friedrichs_extension (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
+    ∃ (Dom : Submodule ℂ ymFockSpace) (A : Dom →ₗ[ℂ] ymFockSpace),
+      IsPositiveSelfAdjointExtension (ymFockHam fabc) A :=
+  friedrichs_extension_exists
+    ⟨ymFockCore, ymFockHam fabc, ymFockHam_symmetricOn fabc, ymFockHam_quadForm_nonneg fabc⟩
+    ymFockCore_dense
 
-
-
-
+set_option maxHeartbeats 1000000 in
+-- unfolding the `lp` instances of the Fock space in the Stone construction exceeds the
+-- default budget
+/-- **The unitary time evolution of the outer Yang–Mills Hamiltonian**: the Friedrichs
+extension is self-adjoint, and Stone's theorem gives the flow it generates. -/
+theorem ymFock_stone_flow (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
+    ∃ (T : UnboundedSelfAdjoint ymFockSpace) (U : ℝ → (ymFockSpace →L[ℂ] ymFockSpace)),
+      IsStoneFlow T U := by
+  obtain ⟨Dom, A, hA⟩ := ymFock_friedrichs_extension fabc
+  obtain ⟨T, U, _, _, hflow⟩ := exists_stone_flow_of_positive ymFockCore_dense hA
+  exact ⟨T, U, hflow⟩
 
 /-! ## 5. Particle-number conservation — why no lattice is needed -/
 
+/-- The restriction of the outer Hamiltonian to the `n`-particle sector is the `n`-particle
+Hamiltonian. -/
+theorem ymFockHam_sector (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (x : ymFockCore) (n : ℕ) :
+    ((ymFockHam fabc x : ymFockSpace) : ∀ n : ℕ, L2d (n * 99)) n
+      = ymSectorHam fabc n
+        ⟨((x : ymFockSpace) : ∀ n : ℕ, L2d (n * 99)) n, x.2.2 n⟩ := rfl
 
-
-
+/-- **The outer Yang–Mills Hamiltonian conserves the particle number.**  It is block diagonal
+in the number sectors; the sectors, not a spatial lattice, are what decomposes the
+problem. -/
+theorem ymFockHam_number_conserving (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (x : ymFockCore)
+    {n : ℕ} (hx : ∀ m, m ≠ n → ((x : ymFockSpace) : ∀ m : ℕ, L2d (m * 99)) m = 0) (m : ℕ)
+    (hm : m ≠ n) : ((ymFockHam fabc x : ymFockSpace) : ∀ m : ℕ, L2d (m * 99)) m = 0 :=
+  dsOp_number_conserving _ x hx m hm
 
 end
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_PermSector_inclPow_permOp
 import Theorems.Thm_BookProof_PermSector_derPow_permOp
 import Theorems.Thm_BookProof_PermSector_permOp_mem_sectorDom
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 open BookProof.PermSector
 
 

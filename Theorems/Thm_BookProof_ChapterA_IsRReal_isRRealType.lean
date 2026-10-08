@@ -6,13 +6,13 @@ import Definitions.Def_ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 open BookProof.Complexification
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
 
 
 theorem BookProof.ChapterA.IsRReal.isRRealType [Nontrivial W] {M : System ℝ W} (h : IsRReal M) :

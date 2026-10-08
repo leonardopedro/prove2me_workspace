@@ -19,8 +19,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockInteractionFL
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.qgInteracting_esa_core (lam : ℝ) :
     EssentiallySelfAdjointOn qgOuterCore (qgIntFamily lam).outerHam := by sorry

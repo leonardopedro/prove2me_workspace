@@ -10,15 +10,15 @@ open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.stoneU_mulSA (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) :
     (mulSA f).stoneU t psi = phaseUnitary f (-t) psi := by sorry

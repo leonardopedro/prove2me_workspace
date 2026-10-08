@@ -9,11 +9,11 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
+
+open scoped ENNReal
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
-
-
-open scoped ENNReal
 
 theorem BookProof.NavierStokesFlow.FullEsa.NSFullData.advection_isSymmetricDom (i : Fin 3) : IsSymmetricDom (d.advection i) := by sorry

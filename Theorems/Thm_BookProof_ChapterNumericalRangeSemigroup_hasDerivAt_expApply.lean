@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNumericalRangeSemigroup
 open BookProof.ChapterNumericalRangeSemigroup
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.ChapterNumericalRangeSemigroup.hasDerivAt_expApply (A : E →L[ℂ] E) (x : E) (t : ℝ) :

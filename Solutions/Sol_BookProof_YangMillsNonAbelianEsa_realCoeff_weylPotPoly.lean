@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsNonAbelianEsa.lean — solution of BookProof.YangMillsNonAbelianEsa.realCoeff_weylPotPoly
 import Mathlib
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
-import Theorems.Thm_BookProof_HermiteGraphApprox_realCoeff_C_real'
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
@@ -26,4 +25,4 @@ variable {d k r : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {Φ : Fin r → MvPolynomial (Fin d) ℂ} (hΦ : ∀ j, RealCoeff (Φ j)) :
-    RealCoeff (weylPotPoly Φ) := (RealCoeff.sum fun j _ => (hΦ j).mul (hΦ j)).add (realCoeff_C_real' 1)
+    RealCoeff (weylPotPoly Φ) := (RealCoeff.sum fun j _ => (hΦ j).mul (hΦ j)).add (realCoeff_C_real_prime 1)

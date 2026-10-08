@@ -6,13 +6,13 @@ open BookProof.ChapterDoubleSlit
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.hf_prime : R.H * R.F = R.F * R.H - 2 • R.F := by sorry

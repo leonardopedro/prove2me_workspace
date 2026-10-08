@@ -1,9 +1,9 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.cpoly_kinPoly
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_neg
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_coreD
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_neg
 open BookProof.QgHermiteFriedrichs
 
 

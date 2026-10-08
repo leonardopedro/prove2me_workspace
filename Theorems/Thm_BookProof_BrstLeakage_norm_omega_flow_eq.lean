@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
 open BookProof.BrstLeakage
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.norm_omega_flow_eq {A Om : E →L[ℂ] E} (hA : IsSelfAdjoint A) (h : Commute A Om)

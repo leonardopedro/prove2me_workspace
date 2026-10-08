@@ -5,19 +5,19 @@ import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterA3b
 open BookProof.ChapterAbelianGelfandModel
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {X : Type*} [TopologicalSpace X]
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-  (psi : C(X, ℂ) →ₗ[ℂ] ℂ) (hpos : ∀ g : C(X, ℂ), 0 ≤ psi (star g * g))
-
 
 open MeasureTheory Complex WeakDual CompactlySupported CompactlySupportedContinuousMap
 open scoped ComplexOrder
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {X : Type*} [TopologicalSpace X]
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+  (psi : C(X, ℂ) →ₗ[ℂ] ℂ) (hpos : ∀ g : C(X, ℂ), 0 ≤ psi (star g * g))
 
 theorem BookProof.ChapterAbelianGelfandModel.isProbabilityMeasure_stateMeasure (hone : psi 1 = 1) :
     IsProbabilityMeasure (stateMeasure psi hpos) := by sorry

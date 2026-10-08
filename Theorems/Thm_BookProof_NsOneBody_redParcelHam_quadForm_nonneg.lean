@@ -20,9 +20,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -33,6 +30,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.redParcelHam_quadForm_nonneg (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n)
     (x : polyGaussCore (d := n * 6)) : 0 ≤ quadForm (redParcelHam nu k n p) x := by sorry

@@ -1,8 +1,8 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — solution of BookProof.NavierStokesFlow.CanonicalVector.diagHop_hFun
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_lower_raise
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_hFun_eq_of_incoming
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_lower_raise
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 

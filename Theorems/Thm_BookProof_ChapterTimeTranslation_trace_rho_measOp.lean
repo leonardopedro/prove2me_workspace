@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterTimeTranslation
 open BookProof.ChapterTimeTranslation
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterTimeTranslation.trace_rho_measOp (U : Matrix (Fin n) (Fin n) ℂ) (a : Fin n) (Ψ : Fin n → ℂ) :

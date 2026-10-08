@@ -9,8 +9,6 @@ import Definitions.Def_ChapterSmBrstGhost
 open BookProof.SmBrstGhost
 open BookProof.BookBrstInstances
 
-variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
-
 
 
 open BookProof.BookBrstYangMills BookProof.BookBrstGaugeFixing BookProof.SmBrstGhost
@@ -18,6 +16,8 @@ open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 open MvPolynomial
 
 noncomputable section
+
+variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
 
 
 theorem BookProof.BookBrstInstances.su2_gaussVec_value :

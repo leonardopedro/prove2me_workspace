@@ -19,8 +19,6 @@ open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.nsSpCol_apply (e : ℕ ≃ (Fin 6 →₀ ℕ)) (nu : ℝ) (k : Fin 3 → ℝ) (m j : ℕ) :
     nsSpCol e nu k m j

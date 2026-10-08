@@ -62,7 +62,9 @@ structure IsNonnegSelfAdjoint (T : Submodule ℂ (F × F)) : Prop where
 
 variable {T T₁ T₂ : Submodule ℂ (F × F)}
 
-
+theorem symm_inner (hT : IsNonnegSelfAdjoint T) {p q : F × F} (hp : p ∈ T) (hq : q ∈ T) :
+    (inner ℂ q.2 p.1 : ℂ) = inner ℂ q.1 p.2 :=
+  (hT.adj.ge hp) q hq
 
 /-- `‖x‖² + ‖T x‖² ≤ ‖x + T x‖²`. -/
 theorem norm_sq_add_le (hT : IsNonnegSelfAdjoint T) {p : F × F} (hp : p ∈ T) :
@@ -199,7 +201,14 @@ theorem exists_add_eq (hT : IsNonnegSelfAdjoint T) (h : F) :
   obtain ⟨p, hp, hps⟩ := Submodule.mem_map.1 hmem
   exact ⟨p, hp, hps⟩
 
-
+omit [CompleteSpace F] in
+/-- The quadratic form of a non-negative self-adjoint relation is real. -/
+theorem inner_im_eq_zero (hT : IsNonnegSelfAdjoint T) {p : F × F} (hp : p ∈ T) :
+    (inner ℂ p.1 p.2 : ℂ).im = 0 := by
+  have h := symm_inner hT hp hp
+  have h2 : (starRingEnd ℂ) (inner ℂ p.1 p.2 : ℂ) = inner ℂ p.1 p.2 := by
+    rw [inner_conj_symm]; exact h
+  exact Complex.conj_eq_iff_im.1 h2
 
 /-- The unique solution pair of `x + T x = h`. -/
 noncomputable def invPair (hT : IsNonnegSelfAdjoint T) (h : F) : F × F :=
@@ -234,9 +243,15 @@ noncomputable def invLin (hT : IsNonnegSelfAdjoint T) : F →ₗ[ℂ] F where
       rw [invPair_add]
     rw [hpair]; rfl
 
+theorem invLin_apply (hT : IsNonnegSelfAdjoint T) (h : F) : invLin hT h = (invPair hT h).1 := rfl
 
-
-
+theorem invLin_mem (hT : IsNonnegSelfAdjoint T) (h : F) : (invLin hT h, h - invLin hT h) ∈ T := by
+  have hmem := invPair_mem hT h
+  have hsum := invPair_add hT h
+  have heq : (invLin hT h, h - invLin hT h) = invPair hT h := by
+    rw [invLin_apply, Prod.ext_iff]
+    exact ⟨rfl, (eq_sub_of_add_eq' hsum).symm⟩
+  rw [heq]; exact hmem
 
 theorem norm_invLin_le (hT : IsNonnegSelfAdjoint T) (h : F) : ‖invLin hT h‖ ≤ ‖h‖ := by
   have := norm_fst_le hT (invPair_mem hT h)
@@ -248,25 +263,131 @@ noncomputable def invCLM (hT : IsNonnegSelfAdjoint T) : F →L[ℂ] F :=
 
 @[simp] theorem invCLM_apply (hT : IsNonnegSelfAdjoint T) (h : F) : invCLM hT h = invLin hT h := rfl
 
+theorem invCLM_mem (hT : IsNonnegSelfAdjoint T) (h : F) : (invCLM hT h, h - invCLM hT h) ∈ T :=
+  invLin_mem hT h
 
+theorem invCLM_eq_of_mem (hT : IsNonnegSelfAdjoint T) {x h : F} (hx : (x, h - x) ∈ T) :
+    invCLM hT h = x := by
+  have hp := invPair_unique hT hx (show x + (h - x) = h by abel)
+  rw [invCLM_apply, invLin_apply, hp]
 
+theorem inner_invCLM_left (hT : IsNonnegSelfAdjoint T) (h k : F) :
+    (inner ℂ (invCLM hT h) k : ℂ) = inner ℂ h (invCLM hT k) := by
+  have h1 : (invCLM hT h, h - invCLM hT h) ∈ T := invCLM_mem hT h
+  have h2 : (invCLM hT k, k - invCLM hT k) ∈ T := invCLM_mem hT k
+  have hs : (inner ℂ (k - invCLM hT k) (invCLM hT h) : ℂ)
+      = inner ℂ (invCLM hT k) (h - invCLM hT h) := symm_inner hT h1 h2
+  have e3 : (inner ℂ (invCLM hT h) (k - invCLM hT k) : ℂ)
+      = inner ℂ (h - invCLM hT h) (invCLM hT k) := by
+    have := congrArg (starRingEnd ℂ) hs
+    rwa [inner_conj_symm, inner_conj_symm] at this
+  have e1 : (inner ℂ (invCLM hT h) k : ℂ)
+      = inner ℂ (invCLM hT h) (invCLM hT k) + inner ℂ (invCLM hT h) (k - invCLM hT k) := by
+    rw [← inner_add_right]; congr 1; abel
+  have e2 : (inner ℂ h (invCLM hT k) : ℂ)
+      = inner ℂ (invCLM hT h) (invCLM hT k) + inner ℂ (h - invCLM hT h) (invCLM hT k) := by
+    rw [← inner_add_left]; congr 1; abel
+  rw [e1, e2, e3]
 
+/-- `(1 + T)⁻¹` is self-adjoint. -/
+theorem isSelfAdjoint_invCLM (hT : IsNonnegSelfAdjoint T) : IsSelfAdjoint (invCLM hT) := by
+  rw [ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric]
+  intro x y
+  exact inner_invCLM_left hT x y
 
+/-- **`(1 + T)⁻¹ ≥ 0`.** -/
+theorem invCLM_nonneg (hT : IsNonnegSelfAdjoint T) : 0 ≤ invCLM hT := by
+  rw [ContinuousLinearMap.nonneg_iff_isPositive, ContinuousLinearMap.isPositive_iff_complex]
+  intro h
+  have hmem := invCLM_mem hT h
+  have hre := hT.nonneg _ hmem
+  have him := inner_im_eq_zero hT hmem
+  simp only at hre him
+  have hsplit : (inner ℂ (invCLM hT h) h : ℂ)
+      = inner ℂ (invCLM hT h) (invCLM hT h) + inner ℂ (invCLM hT h) (h - invCLM hT h) := by
+    rw [← inner_add_right]; congr 1; abel
+  have hxx : (inner ℂ (invCLM hT h) (invCLM hT h) : ℂ) = ((‖invCLM hT h‖ ^ 2 : ℝ) : ℂ) := by
+    rw [inner_self_eq_norm_sq_to_K]; norm_cast
+  rw [hsplit, hxx]
+  constructor
+  · apply Complex.ext
+    · simp only [RCLike.re_to_complex, Complex.ofReal_re]
+    · simp only [RCLike.re_to_complex, Complex.ofReal_im, Complex.add_im, him, add_zero]
+  · simp only [RCLike.re_to_complex, Complex.add_re, Complex.ofReal_re]
+    have hsq : (0:ℝ) ≤ ‖invCLM hT h‖ ^ 2 := by positivity
+    linarith
 
+/-- **`(1 + T)⁻¹ ≤ 1`.** -/
+theorem invCLM_le_one (hT : IsNonnegSelfAdjoint T) : invCLM hT ≤ 1 := by
+  rw [← sub_nonneg, ContinuousLinearMap.nonneg_iff_isPositive,
+    ContinuousLinearMap.isPositive_iff_complex]
+  intro h
+  have hmem := invCLM_mem hT h
+  have hre := hT.nonneg _ hmem
+  have him := inner_im_eq_zero hT hmem
+  simp only at hre him
+  have happ : ((1 : F →L[ℂ] F) - invCLM hT) h = h - invCLM hT h := rfl
+  have hs : (inner ℂ (h - invCLM hT h) (invCLM hT h) : ℂ)
+      = inner ℂ (invCLM hT h) (h - invCLM hT h) := symm_inner hT hmem hmem
+  have hsplit : (inner ℂ (h - invCLM hT h) h : ℂ)
+      = inner ℂ (h - invCLM hT h) (invCLM hT h)
+        + inner ℂ (h - invCLM hT h) (h - invCLM hT h) := by
+    rw [← inner_add_right]; congr 1; abel
+  have hww : (inner ℂ (h - invCLM hT h) (h - invCLM hT h) : ℂ)
+      = ((‖h - invCLM hT h‖ ^ 2 : ℝ) : ℂ) := by
+    rw [inner_self_eq_norm_sq_to_K]; norm_cast
+  rw [happ, hsplit, hs, hww]
+  constructor
+  · apply Complex.ext
+    · simp only [RCLike.re_to_complex, Complex.ofReal_re]
+    · simp only [RCLike.re_to_complex, Complex.ofReal_im, Complex.add_im, him, add_zero]
+  · simp only [RCLike.re_to_complex, Complex.add_re, Complex.ofReal_re]
+    have hsq : (0:ℝ) ≤ ‖h - invCLM hT h‖ ^ 2 := by positivity
+    linarith
 
-
-
-
-
-
-
-
+/-- **The relation is recovered from its resolvent.** -/
+theorem rel_eq_of_invCLM_eq (hT₁ : IsNonnegSelfAdjoint T₁) (hT₂ : IsNonnegSelfAdjoint T₂)
+    (heq : invCLM hT₁ = invCLM hT₂) : T₁ = T₂ := by
+  have key : ∀ {S₁ S₂ : Submodule ℂ (F × F)} (h1 : IsNonnegSelfAdjoint S₁)
+      (h2 : IsNonnegSelfAdjoint S₂), invCLM h1 = invCLM h2 → S₁ ≤ S₂ := by
+    intro S₁ S₂ h1 h2 he p hp
+    have hx : invCLM h1 (p.1 + p.2) = p.1 := invCLM_eq_of_mem h1 (by simpa using hp)
+    have hmem := invCLM_mem h2 (p.1 + p.2)
+    rw [← he, hx] at hmem
+    simpa using hmem
+  exact le_antisymm (key hT₁ hT₂ heq) (key hT₂ hT₁ heq.symm)
 
 /-! ## Part 2 — the bounded identity forced by `T T ⊆ A* Ā` -/
 
 variable {D : Submodule ℂ F}
 
-
+/-- **The bounded identity.**  If `T T ⊆ A* Ā` then, with `C = (1 + T)⁻¹` and
+`R = (1 + A* Ā)⁻¹`, `R (1 − 2C + 2C²) = C²`. -/
+theorem resCLM_mul_den (A : D →ₗ[ℂ] F) (hT : IsNonnegSelfAdjoint T)
+    (hsq : ∀ p : F × F, (∃ w, (p.1, w) ∈ T ∧ (w, p.2) ∈ T) → p ∈ factorRel A) :
+    resCLM A * (1 - invCLM hT - invCLM hT + invCLM hT * invCLM hT + invCLM hT * invCLM hT)
+      = invCLM hT * invCLM hT := by
+  refine ContinuousLinearMap.ext fun h => ?_
+  have h1 : (invCLM hT h, h - invCLM hT h) ∈ T := invCLM_mem hT h
+  have h2 : (invCLM hT (invCLM hT h), invCLM hT h - invCLM hT (invCLM hT h)) ∈ T :=
+    invCLM_mem hT (invCLM hT h)
+  have h3 : (invCLM hT h - invCLM hT (invCLM hT h),
+      (h - invCLM hT h) - (invCLM hT h - invCLM hT (invCLM hT h))) ∈ T := by
+    have := T.sub_mem h1 h2
+    simpa using this
+  have h4 : (invCLM hT (invCLM hT h),
+      (h - invCLM hT h) - (invCLM hT h - invCLM hT (invCLM hT h))) ∈ factorRel A :=
+    hsq _ ⟨invCLM hT h - invCLM hT (invCLM hT h), h2, h3⟩
+  have hsum : invCLM hT (invCLM hT h)
+      + ((h - invCLM hT h) - (invCLM hT h - invCLM hT (invCLM hT h)))
+      = h - invCLM hT h - invCLM hT h + invCLM hT (invCLM hT h)
+        + invCLM hT (invCLM hT h) := by abel
+  have hres := resPair_unique (A := A) h4 hsum
+  have hval : resCLM A (h - invCLM hT h - invCLM hT h + invCLM hT (invCLM hT h)
+      + invCLM hT (invCLM hT h)) = invCLM hT (invCLM hT h) := by
+    rw [resCLM_apply, resLin_apply, hres]
+  simpa [ContinuousLinearMap.mul_apply, ContinuousLinearMap.add_apply,
+    ContinuousLinearMap.sub_apply, ContinuousLinearMap.one_apply] using hval
 
 /-! ## Part 3 — the functional calculus: `C = ψ(R)` -/
 
@@ -277,43 +398,154 @@ noncomputable def gFun : ℝ → ℝ := fun t => t * t / (1 - t - t + t * t + t 
 /-- `ψ r = √r / (√r + √(1 − r))`, the inverse of `g` on `[0, 1]`. -/
 noncomputable def psiFun : ℝ → ℝ := fun r => Real.sqrt r / (Real.sqrt r + Real.sqrt (1 - r))
 
+theorem den_pos (t : ℝ) : 0 < 1 - t - t + t * t + t * t := by
+  nlinarith [sq_nonneg (t - 1), sq_nonneg t]
 
+@[fun_prop] theorem continuous_den :
+    Continuous (fun t : ℝ => 1 - t - t + t * t + t * t) := by fun_prop
 
+@[fun_prop] theorem continuous_gFun : Continuous gFun := by
+  refine Continuous.div (by fun_prop) (by fun_prop) fun t => ne_of_gt (den_pos t)
 
+theorem psi_den_pos (r : ℝ) : 0 < Real.sqrt r + Real.sqrt (1 - r) := by
+  rcases le_or_gt r 0 with hr | hr
+  · have : 0 < Real.sqrt (1 - r) := Real.sqrt_pos.2 (by linarith)
+    have := Real.sqrt_nonneg r
+    linarith
+  · have : 0 < Real.sqrt r := Real.sqrt_pos.2 hr
+    have := Real.sqrt_nonneg (1 - r)
+    linarith
 
+@[fun_prop] theorem continuous_psiFun : Continuous psiFun := by
+  refine Continuous.div (Real.continuous_sqrt) ?_ fun r => ne_of_gt (psi_den_pos r)
+  exact Real.continuous_sqrt.add (Real.continuous_sqrt.comp (by fun_prop))
 
-
-
-
-
-
-
+/-- `ψ (g t) = t` on `[0, 1]`. -/
+theorem psi_gFun {t : ℝ} (ht : t ∈ Set.Icc (0 : ℝ) 1) : psiFun (gFun t) = t := by
+  obtain ⟨ht0, ht1⟩ := ht
+  have hd : 0 < 1 - t - t + t * t + t * t := den_pos t
+  have hdne : (1 - t - t + t * t + t * t) ≠ 0 := ne_of_gt hd
+  have hsd : 0 < Real.sqrt (1 - t - t + t * t + t * t) := Real.sqrt_pos.2 hd
+  have hs : Real.sqrt (1 - t - t + t * t + t * t) ≠ 0 := ne_of_gt hsd
+  have hsq : Real.sqrt (1 - t - t + t * t + t * t) ^ 2 = 1 - t - t + t * t + t * t :=
+    Real.sq_sqrt hd.le
+  have h1 : Real.sqrt (gFun t) = t / Real.sqrt (1 - t - t + t * t + t * t) := by
+    have hrw : gFun t = (t / Real.sqrt (1 - t - t + t * t + t * t)) ^ 2 := by
+      rw [div_pow, hsq, gFun, sq]
+    rw [hrw]
+    exact Real.sqrt_sq (by positivity)
+  have h2 : Real.sqrt (1 - gFun t) = (1 - t) / Real.sqrt (1 - t - t + t * t + t * t) := by
+    have hval : 1 - gFun t = (1 - t) * (1 - t) / (1 - t - t + t * t + t * t) := by
+      rw [gFun, eq_div_iff hdne, sub_mul, div_mul_cancel₀ _ hdne]
+      ring
+    have hrw : 1 - gFun t = ((1 - t) / Real.sqrt (1 - t - t + t * t + t * t)) ^ 2 := by
+      rw [div_pow, hsq, hval, sq]
+    rw [hrw]
+    refine Real.sqrt_sq ?_
+    have h1t : (0:ℝ) ≤ 1 - t := by linarith
+    positivity
+  rw [psiFun, h1, h2, ← add_div, show t + (1 - t) = 1 by ring, one_div, div_div,
+    mul_inv_cancel₀ hs, div_one]
 
 section Cfc
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+/-- `1 − 2C + 2C²` as a continuous functional calculus expression. -/
+theorem cfc_den (C : H →L[ℂ] H) (hC : 0 ≤ C) :
+    cfc (fun t : ℝ => 1 - t - t + t * t + t * t) C
+      = 1 - C - C + C * C + C * C := by
+  have hsa : IsSelfAdjoint C := hC.isSelfAdjoint
+  rw [cfc_add (R := ℝ) C (fun t : ℝ => 1 - t - t + t * t) (fun t : ℝ => t * t),
+    cfc_add (R := ℝ) C (fun t : ℝ => 1 - t - t) (fun t : ℝ => t * t),
+    cfc_sub (R := ℝ) (fun t : ℝ => 1 - t) (fun t : ℝ => t) C,
+    cfc_sub (R := ℝ) (fun _ : ℝ => 1) (fun t : ℝ => t) C,
+    cfc_mul (R := ℝ) (fun t : ℝ => t) (fun t : ℝ => t) C,
+    cfc_const_one ℝ C, cfc_id' ℝ C]
 
+theorem isUnit_den (C : H →L[ℂ] H) (hC : 0 ≤ C) :
+    IsUnit (1 - C - C + C * C + C * C : H →L[ℂ] H) := by
+  have hsa : IsSelfAdjoint C := hC.isSelfAdjoint
+  rw [← cfc_den C hC,
+    isUnit_cfc_iff (R := ℝ) (fun t : ℝ => 1 - t - t + t * t + t * t) C
+      continuous_den.continuousOn hsa]
+  intro t _
+  exact ne_of_gt (den_pos t)
 
+theorem cfc_gFun_mul_den (C : H →L[ℂ] H) (hC : 0 ≤ C) :
+    cfc gFun C * (1 - C - C + C * C + C * C) = C * C := by
+  have hsa : IsSelfAdjoint C := hC.isSelfAdjoint
+  have hmul : cfc (fun t : ℝ => gFun t * (1 - t - t + t * t + t * t)) C
+      = cfc gFun C * cfc (fun t : ℝ => 1 - t - t + t * t + t * t) C := by
+    rw [cfc_mul (R := ℝ) _ _ C]
+  have hcongr : cfc (fun t : ℝ => gFun t * (1 - t - t + t * t + t * t)) C
+      = cfc (fun t : ℝ => t * t) C := by
+    refine cfc_congr fun t _ => ?_
+    rw [gFun, div_mul_cancel₀ _ (ne_of_gt (den_pos t))]
+  have hsquare : cfc (fun t : ℝ => t * t) C = C * C := by
+    rw [cfc_mul (R := ℝ) (fun t : ℝ => t) (fun t : ℝ => t) C, cfc_id' ℝ C]
+  rw [← cfc_den C hC, ← hmul, hcongr, hsquare]
 
+/-- The bounded identity `R (1 − 2C + 2C²) = C²` forces `R = g(C)`. -/
+theorem eq_cfc_gFun (C R : H →L[ℂ] H) (hC : 0 ≤ C)
+    (hid : R * (1 - C - C + C * C + C * C) = C * C) : R = cfc gFun C := by
+  have hcancel : R * (1 - C - C + C * C + C * C)
+      = cfc gFun C * (1 - C - C + C * C + C * C) := by
+    rw [hid, cfc_gFun_mul_den C hC]
+  exact (isUnit_den C hC).mul_right_cancel hcancel
 
-
-
-
-
-
+/-- Hence `C = ψ(R)`: the inverse of `1 + T` is determined by `R`. -/
+theorem eq_cfc_psiFun (C R : H →L[ℂ] H) (hC : 0 ≤ C) (hC1 : C ≤ 1)
+    (hid : R * (1 - C - C + C * C + C * C) = C * C) : C = cfc psiFun R := by
+  have hsa : IsSelfAdjoint C := hC.isSelfAdjoint
+  have hg := eq_cfc_gFun C R hC hid
+  have hcomp : cfc (psiFun ∘ gFun) C = cfc psiFun (cfc gFun C) :=
+    cfc_comp psiFun gFun C hsa continuous_psiFun.continuousOn continuous_gFun.continuousOn
+  have hspec := UnboundedPolar.spectrum_subset_Icc hC hC1
+  have hcongr : cfc (psiFun ∘ gFun) C = cfc (id : ℝ → ℝ) C :=
+    cfc_congr fun t ht => psi_gFun (hspec ht)
+  rw [cfc_id ℝ C] at hcongr
+  rw [hg, ← hcomp, hcongr]
 
 end Cfc
 
 /-! ## Part 4 — uniqueness of the non-negative square root -/
 
+/-- With `T T ⊆ A* Ā`, the resolvent of `T` is `ψ` of the resolvent of `A* Ā`. -/
+theorem invCLM_eq_cfc (A : D →ₗ[ℂ] F) (hT : IsNonnegSelfAdjoint T)
+    (hsq : ∀ p : F × F, (∃ w, (p.1, w) ∈ T ∧ (w, p.2) ∈ T) → p ∈ factorRel A) :
+    invCLM hT = cfc psiFun (resCLM A) :=
+  eq_cfc_psiFun (invCLM hT) (resCLM A) (invCLM_nonneg hT) (invCLM_le_one hT)
+    (resCLM_mul_den A hT hsq)
+
+/-- `|Ā|` is a non-negative self-adjoint relation. -/
+theorem isNonnegSelfAdjoint_absRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (absRel A) where
+  adj := adjPairs_absRel A
+  nonneg := by
+    intro p hp
+    have h := absRel_quadForm_nonneg A hp
+    have hre : 0 ≤ (inner ℂ p.2 p.1 : ℂ).re := by
+      have := Complex.le_def.1 h
+      simpa using this.1
+    have hconj : (inner ℂ p.2 p.1 : ℂ) = (starRingEnd ℂ) (inner ℂ p.1 p.2 : ℂ) :=
+      (inner_conj_symm _ _).symm
+    rwa [hconj, Complex.conj_re] at hre
 
 
 
-
-
-
-
+/-- **`|Ā| = (A* Ā)^{1/2}` is the unique non-negative self-adjoint square root.** -/
+theorem absRel_unique_nonneg_sqrt (A : D →ₗ[ℂ] F) :
+    IsNonnegSelfAdjoint (absRel A) ∧
+      {p : F × F | ∃ w, (p.1, w) ∈ absRel A ∧ (w, p.2) ∈ absRel A}
+        = (factorRel A : Set (F × F)) ∧
+      ∀ T : Submodule ℂ (F × F), IsNonnegSelfAdjoint T →
+        {p : F × F | ∃ w, (p.1, w) ∈ T ∧ (w, p.2) ∈ T} = (factorRel A : Set (F × F)) →
+        T = absRel A := by
+  refine ⟨isNonnegSelfAdjoint_absRel A, absRel_comp_self A, fun S hS hsq => ?_⟩
+  refine eq_absRel_of_isNonnegSelfAdjoint A hS fun p hp => ?_
+  have hmem : p ∈ {q : F × F | ∃ w, (q.1, w) ∈ S ∧ (w, q.2) ∈ S} := hp
+  rw [hsq] at hmem
+  exact hmem
 
 end Complete
 

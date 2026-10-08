@@ -8,9 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-variable (S : Finset (Fin d))
-
 
 
 open MeasureTheory
@@ -19,6 +16,9 @@ open BookProof.ConvolutionCalc
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (S : Finset (Fin d))
 
 theorem BookProof.DegEnergy.norm_cx (χ : Vd d → ℝ) (x : Vd d) : ‖cx χ x‖ = |χ x| := by
   simp [cx]

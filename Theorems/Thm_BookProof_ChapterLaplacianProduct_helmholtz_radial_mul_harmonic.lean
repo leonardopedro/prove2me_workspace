@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
 open BookProof.ChapterLaplacianProduct
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterLaplacianProduct.helmholtz_radial_mul_harmonic [FiniteDimensional ℝ E] {g : ℝ → ℝ} {H : E → ℝ} {x : E}

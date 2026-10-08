@@ -16,6 +16,8 @@ import Theorems.Thm_BookProof_GradedFock_annF_creF_end
 import Theorems.Thm_BookProof_GradedFock_annF_creF_end_of_ne
 import Theorems.Thm_BookProof_GradedFock_sbracket_even_odd
 import Theorems.Thm_BookProof_GradedFock_sbracket_odd_even
+import Theorems.Thm_BookProof_ChapterSuperBracket_sbracket_even_even
+import Theorems.Thm_BookProof_ChapterSuperBracket_sbracket_odd_odd
 open BookProof.GradedFock
 
 

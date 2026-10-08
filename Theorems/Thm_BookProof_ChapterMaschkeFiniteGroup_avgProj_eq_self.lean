@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterMaschkeFiniteGroup
 open BookProof.ChapterMaschkeFiniteGroup
 
+
+
 variable {G : Type*} [Group G] {V : Type*} [AddCommGroup V] [Module ℂ V]
-
-
 
 
 theorem BookProof.ChapterMaschkeFiniteGroup.avgProj_eq_self [Fintype G] {ρ : Representation ℂ G V} {W : Submodule ℂ V}

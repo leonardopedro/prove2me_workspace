@@ -4,19 +4,21 @@ import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_viscous_isSymmetricDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 
 
 
 open FullEsa
+open BookProof.NavierStokesFlow.LagrangianEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 theorem BookProof.NavierStokesFlow.LagrangianEsa.NSFullData.hasZeroDeficiencyOn_of_lagrangian (d : FullEsa.NSFullData F)
     (L : LagrangianFullData G) (W : F ≃ₗᵢ[ℂ] G) (hmap : ∀ x : d.D, W (x : F) ∈ L.D)

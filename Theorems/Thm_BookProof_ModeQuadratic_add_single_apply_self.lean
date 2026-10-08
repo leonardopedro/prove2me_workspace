@@ -14,8 +14,6 @@ import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
 open BookProof.ModeQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ModeQuadratic.add_single_apply_self (i : Fin d) (a : Fin d →₀ ℕ) :

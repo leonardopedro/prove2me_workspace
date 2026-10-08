@@ -10,8 +10,6 @@ open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.FockPairPerturbation
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -19,5 +17,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.FockPairPerturbation.annVec_vac (f : ℕ →₀ ℂ) : annVec f vac = 0 := by sorry

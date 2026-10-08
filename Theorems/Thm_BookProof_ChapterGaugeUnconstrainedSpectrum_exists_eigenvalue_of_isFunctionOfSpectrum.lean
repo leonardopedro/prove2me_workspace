@@ -7,9 +7,9 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterE4
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 
+
+
 variable {X : Type*}
-
-
 
 
 theorem BookProof.ChapterGaugeUnconstrainedSpectrum.exists_eigenvalue_of_isFunctionOfSpectrum [DecidableEq X] {T : Op X}

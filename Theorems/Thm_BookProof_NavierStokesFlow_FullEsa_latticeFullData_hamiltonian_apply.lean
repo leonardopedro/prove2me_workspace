@@ -11,12 +11,12 @@ open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
+
+open scoped ENNReal
+
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
-
-
-open scoped ENNReal
 
 theorem BookProof.NavierStokesFlow.FullEsa.latticeFullData_hamiltonian_apply (v : Fin 15 → LinfZ) (nu : ℝ)
     (x : (latticeFullData v nu).D) :

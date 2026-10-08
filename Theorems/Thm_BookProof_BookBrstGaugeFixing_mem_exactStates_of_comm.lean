@@ -10,17 +10,17 @@ open BookProof.BrstReducedTransfer
 open BookProof.YangMillsGhost
 open BookProof.BookBrstGaugeFixing
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
-variable {N : ℕ} (G : GaugeAlgebra N)
-variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β : Fin n → R}
-
 
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
+variable {N : ℕ} (G : GaugeAlgebra N)
+variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β : Fin n → R}
 
 theorem BookProof.BookBrstGaugeFixing.mem_exactStates_of_comm {T : Module.End ℂ (BookState N)}
     (hG : ∀ a, gaussGen G a * T = T * gaussGen G a)

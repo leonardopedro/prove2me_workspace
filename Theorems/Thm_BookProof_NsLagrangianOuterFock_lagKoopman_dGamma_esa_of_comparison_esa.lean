@@ -22,8 +22,6 @@ open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.NsLagrangianOuterFock
 
-variable {K : Type*} [Fintype K] (S : LagNsData K)
-
 
 
 open scoped TensorProduct
@@ -37,6 +35,8 @@ open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
+
+variable {K : Type*} [Fintype K] (S : LagNsData K)
 
 theorem BookProof.NsLagrangianOuterFock.lagKoopman_dGamma_esa_of_comparison_esa
     (hN : EssentiallySelfAdjointOn (polyGaussCore (d := lagDim K)) (lagComparison S)) :

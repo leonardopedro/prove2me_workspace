@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.inner_annih_left (i : Fin n) (ψ φ : FermiFock n) :

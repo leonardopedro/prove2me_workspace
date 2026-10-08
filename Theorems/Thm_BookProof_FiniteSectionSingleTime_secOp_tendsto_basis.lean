@@ -17,9 +17,6 @@ open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime
 
-variable {ι : Type*} [DecidableEq ι]
-variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
-
 
 open scoped InnerProductSpace
 
@@ -33,6 +30,9 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
+variable {ι : Type*} [DecidableEq ι]
+
+variable (H : lpFiniteModes ι →ₗ[ℂ] L2I ι)
 
 theorem BookProof.FiniteSectionSingleTime.secOp_tendsto_basis {W : ℕ → Finset ι} (hW : Exhausts W) (k : ι) :
     Tendsto (fun n => secOp H (W n) (basisVec k)) atTop (𝓝 (H (coreVec k))) := by sorry

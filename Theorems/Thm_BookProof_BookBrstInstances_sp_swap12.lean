@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstInstances
 open BookProof.BookBrstInstances
 
-variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
-
 
 
 open BookProof.BookBrstYangMills BookProof.BookBrstGaugeFixing BookProof.SmBrstGhost
@@ -17,6 +15,8 @@ open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 open MvPolynomial
 
 noncomputable section
+
+variable {N : ℕ} (f : Fin N → Fin N → Fin N → ℝ)
 
 
 theorem BookProof.BookBrstInstances.sp_swap12 (hanti : ∀ a b c, f a b c = -f b a c) (p q r s : Fin N) :

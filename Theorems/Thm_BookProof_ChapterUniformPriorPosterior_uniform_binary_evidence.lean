@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterUniformPriorPosterior
 
-variable {Hyp : Type*} [Fintype Hyp] [DecidableEq Hyp]
-
 
 open scoped BigOperators
 
+
+variable {Hyp : Type*} [Fintype Hyp] [DecidableEq Hyp]
 
 
 theorem BookProof.ChapterUniformPriorPosterior.uniform_binary_evidence (q : Hyp → ℝ) (hq_sum : ∑ x, q x = 1)

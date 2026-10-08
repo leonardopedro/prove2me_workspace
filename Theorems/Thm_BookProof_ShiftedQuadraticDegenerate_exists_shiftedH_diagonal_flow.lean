@@ -21,8 +21,6 @@ open BookProof.ShiftedHermiteCore
 open BookProof.StoneBridge
 open BookProof.ShiftedQuadraticDegenerate
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -37,6 +35,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticDegenerate.exists_shiftedH_diagonal_flow (c b b' : Fin d → ℝ) (hc : ∀ i, c i ≠ 0) :

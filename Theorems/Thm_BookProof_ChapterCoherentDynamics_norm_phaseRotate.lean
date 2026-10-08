@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCoherentDynamics
 open BookProof.ChapterCoherentDynamics
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex BookProof.ChapterCoherentFidelity
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentDynamics.norm_phaseRotate (theta : ℝ) (q : EuclideanSpace ℂ (Fin n)) :

@@ -12,9 +12,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-
 
 
 open MeasureTheory SchwartzMap
@@ -24,6 +21,9 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
 
 theorem BookProof.ScalaronOuterFockFL.norm_sq_le_quadForm_cc (hs : 1 ≤ s) (u : ccDomain ℝ) :
     ‖(u : L2R)‖ ^ 2 ≤ quadForm (W.ham s) u := by sorry

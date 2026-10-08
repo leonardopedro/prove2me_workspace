@@ -8,11 +8,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
 
-variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
-  (mu : Measure X)
-variable {X : Type*} [MeasurableSpace X] [StandardBorelSpace X]
-  (mu : Measure X) [IsProbabilityMeasure mu]
-
 
 noncomputable section
 
@@ -22,5 +17,10 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+
+variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
+  (mu : Measure X)
+variable {X : Type*} [MeasurableSpace X] [StandardBorelSpace X]
+  (mu : Measure X) [IsProbabilityMeasure mu]
 
 theorem BookProof.ChapterStandardBorelClassification.standardBorel_classification_list : RealizesStandardType mu := by sorry

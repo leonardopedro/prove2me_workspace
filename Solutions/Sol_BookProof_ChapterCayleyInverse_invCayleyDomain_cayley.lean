@@ -1,6 +1,7 @@
 -- Generated from ChapterCayleyInverse.lean — solution of BookProof.ChapterCayleyInverse.invCayleyDomain_cayley
 import Mathlib
 import Definitions.Def_ChapterCayleyInverse
+import Theorems.Thm_BookProof_ChapterCayleyTransform_range_one_sub_cayley
 open BookProof.ChapterCayleyInverse
 
 
@@ -22,6 +23,6 @@ variable (T : UnboundedSelfAdjoint H)
 set_option maxHeartbeats 1000000 in
 theorem solution : invCayleyDomain (cayley T) = T.domain := by
 
-  apply SetLike.ext'
+  apply SetLike.ext_prime
   rw [invCayleyDomain, LinearMap.coe_range]
   exact range_one_sub_cayley T

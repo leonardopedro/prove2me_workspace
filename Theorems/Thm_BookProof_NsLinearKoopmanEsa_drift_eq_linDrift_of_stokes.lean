@@ -16,8 +16,6 @@ import Definitions.Def_ChapterNsLinearKoopmanEsa
 import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NsLinearKoopmanEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial
@@ -26,10 +24,13 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
+open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.NsLinearKoopmanEsa.drift_eq_linDrift_of_stokes (S : NsSystem d) (hB : S.bcoef = 0) (i : Fin d) :

@@ -12,8 +12,6 @@ open BookProof.FarisLavine
 open BookProof.QuantumGravityDensitized
 open BookProof.Starobinsky
 
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
-
 
 open Filter Topology
 
@@ -23,6 +21,8 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
 
 theorem BookProof.Starobinsky.qgR2Mode_deficiencyTrivialAt {z : ℂ} (hz : z.im ≠ 0) :
     DeficiencyTrivialAt (mulSymbolDomain (qgModeSymbol a b (qgR2ModePotential M alpha Rc)))

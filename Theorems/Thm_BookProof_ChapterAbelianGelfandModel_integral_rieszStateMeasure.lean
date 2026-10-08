@@ -4,15 +4,15 @@ import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianGelfandModel
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-
 
 open MeasureTheory Complex WeakDual CompactlySupported CompactlySupportedContinuousMap
 open scoped ComplexOrder
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
 
 theorem BookProof.ChapterAbelianGelfandModel.integral_rieszStateMeasure (L : C(X, ℝ) →ₗ[ℝ] ℝ)
     (hL : ∀ f : C(X, ℝ), 0 ≤ f → 0 ≤ L f) (f : C(X, ℝ)) :

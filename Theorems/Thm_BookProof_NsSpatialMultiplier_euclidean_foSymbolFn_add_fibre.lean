@@ -6,11 +6,6 @@ import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.FourierMultiplierEsa
 open BookProof.NsSpatialMultiplier
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-variable {ι : Type*} [Fintype ι]
-variable (V) in
-
 
 
 open MeasureTheory SchwartzMap FourierTransform
@@ -18,6 +13,11 @@ open BookProof.StrichartzWave BookProof.FourierMultiplierEsa
 
 noncomputable section
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+variable {ι : Type*} [Fintype ι]
+
+variable (V) in
 
 theorem BookProof.NsSpatialMultiplier.euclidean_foSymbolFn_add_fibre {n : ℕ} (c : ι → ℝ) (s : ι → Fin n) (j : Fin n)
     (hj : ∀ i, s i ≠ j) (x : EuclideanSpace ℝ (Fin n)) (t : ℝ) :

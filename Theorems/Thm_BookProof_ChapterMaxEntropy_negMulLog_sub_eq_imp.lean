@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterMaxEntropy
 open BookProof.ChapterMaxEntropy
 
-variable {α : Type*} [Fintype α]
-
 
 open Real BigOperators Finset
 
+
+variable {α : Type*} [Fintype α]
 
 
 theorem BookProof.ChapterMaxEntropy.negMulLog_sub_eq_imp (n : ℕ) (hn : 0 < n) {x : ℝ} (hx : 0 ≤ x)

@@ -8,13 +8,13 @@ import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
 open BookProof.RelationShiftInvert
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-
 
 
 open BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot BookProof.NonnegResolvent
 open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T T₁ T₂ : Submodule ℂ (F × F)}
 
 
 theorem BookProof.RelationShiftInvert.unitaryU_eq_of_invCLM_eq (hT₁ : IsNonnegSelfAdjoint T₁) (hT₂ : IsNonnegSelfAdjoint T₂)

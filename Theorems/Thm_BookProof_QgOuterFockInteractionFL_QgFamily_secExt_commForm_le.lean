@@ -20,8 +20,6 @@ open BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
 open BookProof.QgOuterFockInteractionFL.QgFamily
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.QgFamily.secExt_commForm_le (n : ℕ) (u : (harmFried (n * 84)).dom) :
     |commForm (F.secExt n) (harmFried (n * 84)).op u|

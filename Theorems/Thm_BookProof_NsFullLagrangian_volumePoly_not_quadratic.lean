@@ -15,8 +15,6 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.volumePoly_not_quadratic (p : Fin n) :
     ¬ ∃ a b c : ℂ, ∀ t : ℝ,

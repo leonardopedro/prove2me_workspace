@@ -14,9 +14,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -29,6 +26,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.HermiteCarleman.mixOp_essentiallySelfAdjoint (c b b' : Fin d → ℝ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := d)) (mixOp c b b') := by sorry

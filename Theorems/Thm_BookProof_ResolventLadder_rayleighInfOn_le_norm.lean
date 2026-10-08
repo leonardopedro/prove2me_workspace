@@ -11,9 +11,6 @@ import Definitions.Def_ChapterSirkRitzMinMax
 open BookProof.RitzMinMax
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)}
-
 
 noncomputable section
 
@@ -23,6 +20,9 @@ open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {T : Submodule ℂ (F × F)}
 
 theorem BookProof.ResolventLadder.rayleighInfOn_le_norm (R : F →L[ℂ] F) {S : Submodule ℂ F}
     (hS : 0 < Module.finrank ℂ S) : rayleighInfOn R S ≤ ‖R‖ := by sorry

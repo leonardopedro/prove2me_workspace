@@ -2,8 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
-import Theorems.Thm_kinetic_isSymmetricDom
-import Theorems.Thm_viscous_isSymmetricDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 

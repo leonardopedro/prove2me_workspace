@@ -1,10 +1,10 @@
 -- Generated from ChapterQgOuterFockEsa.lean — solution of BookProof.QgOuterFock.linForm_qgTorsionVecN
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
-import Theorems.Thm_BookProof_QgOuterFock_partOf_pcoord
-import Theorems.Thm_BookProof_QgOuterFock_modeOf_pcoord
 import Theorems.Thm_BookProof_QgOuterFock_sum_reindex_particles
 import Theorems.Thm_BookProof_QgOuterFock_sum_single_block
+import Theorems.Thm_BookProof_QgOuterFock_modeOf_pcoord
+import Theorems.Thm_BookProof_QgOuterFock_partOf_pcoord
 open BookProof.QgOuterFock
 
 

@@ -21,8 +21,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
 theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
     (i : Fin d) (u : polyGaussCore (d := d)) :
     c0 * (inner ℂ (u : L2d d) (oscL i u) : ℂ).re

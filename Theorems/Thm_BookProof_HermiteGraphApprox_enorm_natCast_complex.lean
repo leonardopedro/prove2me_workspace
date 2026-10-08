@@ -17,8 +17,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
 open BookProof.HermiteGraphApprox
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -31,6 +29,8 @@ open BookProof.ConvolutionCalc
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteGraphApprox.enorm_natCast_complex (m : ℕ) : ‖(m : ℂ)‖ₑ = (m : ℝ≥0∞) := by sorry

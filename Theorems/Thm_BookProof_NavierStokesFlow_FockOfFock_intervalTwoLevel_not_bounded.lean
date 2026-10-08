@@ -10,18 +10,18 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
-variable {J K : Type*} [DecidableEq J] [DecidableEq K]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {K : Type*} [DecidableEq K]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
+variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
+variable {J K : Type*} [DecidableEq J] [DecidableEq K]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {K : Type*} [DecidableEq K]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.intervalTwoLevel_not_bounded (eps : K → ℝ) :
     ¬ ∃ C : ℝ, ∀ f : FockOfFockDom ℕ K,

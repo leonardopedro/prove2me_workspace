@@ -9,8 +9,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockInteractionStability
 
-variable {E : Type*} [NormedAddCommGroup E]
-
 
 noncomputable section
 
@@ -20,6 +18,8 @@ open BookProof.FockNumberPreservingGap
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 
+
+variable {E : Type*} [NormedAddCommGroup E]
 
 
 theorem BookProof.FockInteractionStability.fock_gap_of_bounded_interaction {col : ℕ → (ℕ →₀ ℂ)} {mu delta : ℝ} (hmu : 0 ≤ mu)

@@ -20,8 +20,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-
-      + (((0 : ℝ) : ℂ) • ∑ i, diagOp fun n => (0 : ℝ) * (0 :=
+theorem solution : diagKR.drift = diagOp (fun n => 3 * (n : ℝ)) :=
   : ℝ)))
         = diagOp fun n => (3 / 2 : ℝ) * (n : ℝ) ^ 2
     simp only [diagOp_sum, diagOp_real_smul, diagOp_add]

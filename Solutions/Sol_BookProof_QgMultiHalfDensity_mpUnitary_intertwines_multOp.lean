@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_apply
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_mem_boundedEnergyCore
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.QgMultiHalfDensity
 
 

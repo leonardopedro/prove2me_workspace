@@ -11,11 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)]
-variable (C : ∀ i, Comparison (G i))
-
 
 open scoped ENNReal
 
@@ -31,6 +26,11 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)]
+variable (C : ∀ i, Comparison (G i))
 
 theorem BookProof.QgOuterFockFL.mem_dsDom {x : lp G 2} :
     x ∈ dsDom C ↔ (∀ i, (x : ∀ i, G i) i ∈ (C i).dom) ∧

@@ -12,17 +12,17 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsLagrangianDetFL
 
-variable {K : Type*} [Fintype K]
-variable (S : LagNsData K)
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
 
+variable {K : Type*} [Fintype K]
+
+variable (S : LagNsData K)
 
 theorem BookProof.NsLagrangianDetFL.lagComparison_commForm (x : polyGaussCore (d := lagDim K)) :
     commForm (lagKoopmanOp S) (lagComparison S) x

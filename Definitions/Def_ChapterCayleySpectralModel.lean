@@ -55,9 +55,26 @@ variable (T : UnboundedSelfAdjoint H)
 
 /-! ## The resolvents in terms of the Cayley transform -/
 
+/-- `(A + i)⁻¹ = (2i)⁻¹(1 - V)`. -/
+theorem res_neg_one_eq_cayley (y : H) :
+    ((T.res (-1) y : T.domain) : H) = (2 * Complex.I)⁻¹ • (y - cayley T y) := by
+  have h2 : (2 * Complex.I : ℂ) ≠ 0 := by simp [Complex.I_ne_zero]
+  have hy : T.shift (-1) (T.res (-1) y) = y := T.shift_res (by norm_num) y
+  have h := sub_cayley_shift T (T.res (-1) y)
+  rw [hy] at h
+  rw [h, smul_smul, inv_mul_cancel₀ h2, one_smul]
 
-
-
+/-- `(A - i)⁻¹ = (2i)⁻¹(V⁻¹ - 1)`. -/
+theorem res_one_eq_cayley (y : H) :
+    ((T.res 1 y : T.domain) : H) = (2 * Complex.I)⁻¹ • ((cayley T).symm y - y) := by
+  have h2 : (2 * Complex.I : ℂ) ≠ 0 := by simp [Complex.I_ne_zero]
+  have hy : T.shift 1 (T.res 1 y) = y := T.shift_res (by norm_num) y
+  have hu : cayley T (T.shift (-1) (T.res 1 y)) = y := by rw [cayley_shift, hy]
+  have husym := congrArg (cayley T).symm hu
+  rw [LinearIsometryEquiv.symm_apply_apply] at husym
+  have h := sub_cayley_shift T (T.res 1 y)
+  rw [husym, LinearIsometryEquiv.apply_symm_apply] at h
+  rw [h, smul_smul, inv_mul_cancel₀ h2, one_smul]
 
 /-! ## The Cayley transform as a bounded normal operator -/
 
@@ -66,7 +83,21 @@ noncomputable def cayleyCLM : H →L[ℂ] H := (cayley T).toContinuousLinearEqui
 
 @[simp] theorem cayleyCLM_apply (y : H) : cayleyCLM T y = cayley T y := rfl
 
-
+/-- A unitary is a normal operator, so the continuous functional calculus applies
+to the Cayley transform. -/
+theorem isStarNormal_cayleyCLM : IsStarNormal (cayleyCLM T) := by
+  have hadj : star (cayleyCLM T) = ((cayley T).symm.toContinuousLinearEquiv : H →L[ℂ] H) := by
+    symm
+    rw [ContinuousLinearMap.star_eq_adjoint, ContinuousLinearMap.eq_adjoint_iff]
+    intro x y
+    change ⟪(cayley T).symm x, y⟫_ℂ = ⟪x, cayley T y⟫_ℂ
+    rw [← (cayley T).inner_map_map ((cayley T).symm x) y,
+      LinearIsometryEquiv.apply_symm_apply]
+  constructor
+  rw [hadj]
+  ext x
+  change (cayley T).symm (cayley T x) = cayley T ((cayley T).symm x)
+  rw [LinearIsometryEquiv.apply_symm_apply, LinearIsometryEquiv.symm_apply_apply]
 
 /-! ## The two bounded symbols -/
 
@@ -88,9 +119,15 @@ noncomputable def opSymbol : C(spectrum ℂ (cayleyCLM T), ℂ) :=
     opSymbol T z = (1 + (z : ℂ)) / 2 := by
   simp [opSymbol, coordFn, div_eq_inv_mul, mul_add]
 
+theorem cfcHom_resSymbol_eq :
+    cfcHom (isStarNormal_cayleyCLM T) (resSymbol T)
+      = (2 * Complex.I)⁻¹ • (1 - cayleyCLM T) := by
+  rw [resSymbol, map_smul, map_sub, map_one, cfcHom_coordFn]
 
-
-
+theorem cfcHom_opSymbol_eq :
+    cfcHom (isStarNormal_cayleyCLM T) (opSymbol T)
+      = (2 : ℂ)⁻¹ • (1 + cayleyCLM T) := by
+  rw [opSymbol, map_smul, map_add, map_one, cfcHom_coordFn]
 
 
 

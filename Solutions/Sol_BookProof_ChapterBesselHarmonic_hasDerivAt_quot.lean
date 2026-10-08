@@ -1,6 +1,7 @@
 -- Generated from ChapterBesselHarmonic.lean — solution of BookProof.ChapterBesselHarmonic.hasDerivAt_quot
 import Mathlib
 import Definitions.Def_ChapterBesselHarmonic
+import Theorems.Thm_BookProof_ChapterSphericalBesselODE_pow_pred_coef
 open BookProof.ChapterBesselHarmonic
 
 

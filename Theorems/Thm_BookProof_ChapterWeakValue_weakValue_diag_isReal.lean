@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterWeakValue
 open BookProof.ChapterWeakValue
 
-variable {n : ℕ}
-
 
 open scoped BigOperators Matrix
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterWeakValue.weakValue_diag_isReal (i : Fin n → ℂ) (A : Matrix (Fin n) (Fin n) ℂ)

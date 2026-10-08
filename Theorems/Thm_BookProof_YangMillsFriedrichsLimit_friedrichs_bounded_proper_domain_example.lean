@@ -3,15 +3,14 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterYangMillsFriedrichs
-open scoped lp
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_proper_domain_example :
     ∃ (D : Submodule ℂ (ℓ²(ℕ, ℂ))) (A : ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ)),

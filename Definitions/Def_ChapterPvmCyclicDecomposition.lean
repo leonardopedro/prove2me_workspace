@@ -60,7 +60,12 @@ the generators are `P(E) ψ` and `P(F) φ`, and `⟪P(E) ψ, P(F) φ⟫ = ⟪ψ,
 def OrthOrbit (P : Pvm X H) (ψ φ : H) : Prop :=
   ∀ E : Set X, MeasurableSet E → ⟪ψ, P.p E φ⟫_ℂ = 0
 
-
+theorem orthOrbit_pairs {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ)
+    {E F : Set X} (hE : MeasurableSet E) (hF : MeasurableSet F) :
+    ⟪P.p E ψ, P.p F φ⟫_ℂ = 0 := by
+  have h1 : ⟪P.p E ψ, P.p F φ⟫_ℂ = ⟪ψ, P.p E (P.p F φ)⟫_ℂ := P.symm hE _ _
+  rw [h1, P.inter hE hF]
+  exact h _ (hE.inter hF)
 
 theorem OrthOrbit.symm {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ) : OrthOrbit P φ ψ := by
   intro E hE
@@ -69,16 +74,24 @@ theorem OrthOrbit.symm {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ) : OrthO
   have h3 := congrArg (starRingEnd ℂ) h2
   rwa [inner_conj_symm, map_zero] at h3
 
-
+/-- Two cyclic-orthogonal vectors are in particular orthogonal (take `E = univ`). -/
+theorem inner_eq_zero_of_orthOrbit {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ) :
+    ⟪ψ, φ⟫_ℂ = 0 := by
+  have := h Set.univ MeasurableSet.univ
+  rwa [P.univ] at this
 
 /-! ## Families with pairwise orthogonal cyclic subspaces -/
 
 /-- The union of the orbits of a family of vectors. -/
 def familyOrbit (P : Pvm X H) (S : Set H) : Set H := ⋃ ψ ∈ S, pvmOrbit P ψ
 
+theorem mem_familyOrbit_self {P : Pvm X H} {S : Set H} {ψ : H} (hψ : ψ ∈ S) :
+    ψ ∈ familyOrbit P S :=
+  Set.mem_biUnion hψ ⟨Set.univ, MeasurableSet.univ, (P.univ ψ).symm⟩
 
-
-
+theorem pvm_mem_familyOrbit {P : Pvm X H} {S : Set H} {ψ : H} (hψ : ψ ∈ S)
+    {E : Set X} (hE : MeasurableSet E) : P.p E ψ ∈ familyOrbit P S :=
+  Set.mem_biUnion hψ ⟨E, hE, rfl⟩
 
 /-- A family of unit vectors with pairwise orthogonal cyclic subspaces. -/
 structure OrthCyclicFamily (P : Pvm X H) (S : Set H) : Prop where
@@ -87,11 +100,80 @@ structure OrthCyclicFamily (P : Pvm X H) (S : Set H) : Prop where
   /-- distinct members generate orthogonal cyclic subspaces -/
   orth : ∀ ψ ∈ S, ∀ φ ∈ S, ψ ≠ φ → OrthOrbit P ψ φ
 
-
+/-- Such a family is orthonormal. -/
+theorem orthonormal_of_orthCyclicFamily {P : Pvm X H} {S : Set H}
+    (h : OrthCyclicFamily P S) : Orthonormal ℂ ((↑) : S → H) := by
+  constructor
+  · intro i; exact h.unit i.1 i.2
+  · intro i j hij
+    exact inner_eq_zero_of_orthOrbit
+      (h.orth i.1 i.2 j.1 j.2 (by simpa [Subtype.ext_iff] using hij))
 
 /-! ## Zorn's lemma: a maximal family is total -/
 
-
+/-- **Cyclic decomposition of a projection-valued measure.**  Every projection-valued
+measure on a complete complex inner-product space has a family of unit vectors whose
+cyclic subspaces are mutually orthogonal and whose orbits together span a dense
+subspace. -/
+theorem exists_orthCyclicFamily [CompleteSpace H] (P : Pvm X H) :
+    ∃ S : Set H, OrthCyclicFamily P S ∧
+      Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H) := by
+  have hub : ∀ c ⊆ {S : Set H | OrthCyclicFamily P S}, IsChain (· ⊆ ·) c →
+      ∃ ub ∈ {S : Set H | OrthCyclicFamily P S}, ∀ s ∈ c, s ⊆ ub := by
+    intro c hc hchain
+    refine ⟨⋃₀ c, ⟨?_, ?_⟩, fun s hs => Set.subset_sUnion_of_mem hs⟩
+    · rintro ψ ⟨s, hs, hψ⟩
+      exact (hc hs).unit ψ hψ
+    · rintro ψ ⟨s, hs, hψ⟩ φ ⟨t, ht, hφ⟩ hne
+      rcases hchain.total hs ht with hst | hts
+      · exact (hc ht).orth ψ (hst hψ) φ hφ hne
+      · exact (hc hs).orth ψ hψ φ (hts hφ) hne
+  obtain ⟨S, hSmax⟩ := zorn_subset {S : Set H | OrthCyclicFamily P S} hub
+  have hS : OrthCyclicFamily P S := hSmax.1
+  refine ⟨S, hS, ?_⟩
+  set K : Submodule ℂ H := Submodule.span ℂ (familyOrbit P S) with hK
+  rw [Submodule.dense_iff_topologicalClosure_eq_top, Submodule.topologicalClosure_eq_top_iff]
+  by_contra hne
+  obtain ⟨w, hwK, hw0⟩ := K.orthogonal.ne_bot_iff.mp hne
+  -- normalize
+  set u : H := (‖w‖ : ℂ)⁻¹ • w with hu
+  have hwnorm : ‖w‖ ≠ 0 := by simpa using hw0
+  have hunorm : ‖u‖ = 1 := by
+    rw [hu, norm_smul, norm_inv, Complex.norm_real, Real.norm_eq_abs, abs_norm,
+      inv_mul_cancel₀ hwnorm]
+  have huK : u ∈ Kᗮ := Submodule.smul_mem _ _ hwK
+  -- the cyclic subspace of `u` is orthogonal to every member of the family
+  have horth : ∀ ψ ∈ S, OrthOrbit P ψ u := by
+    intro ψ hψ E hE
+    have h1 : ⟪ψ, P.p E u⟫_ℂ = ⟪P.p E ψ, u⟫_ℂ := (P.symm hE _ _).symm
+    have h2 : P.p E ψ ∈ K := Submodule.subset_span (pvm_mem_familyOrbit hψ hE)
+    rw [h1]
+    exact (Submodule.mem_orthogonal K u).mp huK _ h2
+  -- `u` is not already in the family
+  have hunotS : u ∉ S := by
+    intro hmem
+    have huu : ⟪u, u⟫_ℂ = 0 :=
+      (Submodule.mem_orthogonal K u).mp huK u (Submodule.subset_span (mem_familyOrbit_self hmem))
+    have h0 : u = 0 := inner_self_eq_zero.mp huu
+    rw [h0] at hunorm
+    simp at hunorm
+  -- so the family was not maximal
+  have hbig : OrthCyclicFamily P (insert u S) := by
+    constructor
+    · intro ψ hψ
+      rcases hψ with rfl | hψ
+      · exact hunorm
+      · exact hS.unit ψ hψ
+    · intro ψ hψ φ hφ hne'
+      rcases hψ with rfl | hψ
+      · rcases hφ with rfl | hφ
+        · exact absurd rfl hne'
+        · exact (horth φ hφ).symm
+      · rcases hφ with rfl | hφ
+        · exact horth ψ hψ
+        · exact hS.orth ψ hψ φ hφ hne'
+  have hfin := hSmax.2 hbig (Set.subset_insert _ _)
+  exact hunotS (hfin (Set.mem_insert _ _))
 
 /-! ## Restriction to a closed invariant subspace -/
 
@@ -99,7 +181,9 @@ structure OrthCyclicFamily (P : Pvm X H) (S : Set H) : Prop where
 noncomputable def cyclicSubspace (P : Pvm X H) (ψ : H) : Submodule ℂ H :=
   (Submodule.span ℂ (pvmOrbit P ψ)).topologicalClosure
 
-
+theorem mem_cyclicSubspace_self (P : Pvm X H) (ψ : H) : ψ ∈ cyclicSubspace P ψ := by
+  refine Submodule.le_topologicalClosure _ ?_
+  exact Submodule.subset_span ⟨Set.univ, MeasurableSet.univ, (P.univ ψ).symm⟩
 
 theorem cyclicSubspace_invariant (P : Pvm X H) (ψ : H) {E : Set X} (hE : MeasurableSet E)
     {v : H} (hv : v ∈ cyclicSubspace P ψ) : P.p E v ∈ cyclicSubspace P ψ := by
@@ -170,7 +254,11 @@ noncomputable def restrictSub (P : Pvm X H) (V : Submodule ℂ H) [CompleteSpace
     rw [restrictMap_apply hU]
     exact hH.congr_fun (fun i => restrictMap_apply (hf i) u)
 
-
+theorem restrictSub_apply (P : Pvm X H) (V : Submodule ℂ H) [CompleteSpace V]
+    (hV : ∀ E : Set X, MeasurableSet E → ∀ v ∈ V, P.p E v ∈ V) {E : Set X}
+    (hE : MeasurableSet E) (v : V) :
+    (((restrictSub P V hV).p E v : V) : H) = P.p E (v : H) :=
+  restrictMap_apply (hV := hV) hE v
 
 /-- The restriction of `P` to the cyclic subspace generated by `ψ`. -/
 noncomputable def restrictCyclic [CompleteSpace H] (P : Pvm X H) (ψ : H) :
@@ -179,22 +267,110 @@ noncomputable def restrictCyclic [CompleteSpace H] (P : Pvm X H) (ψ : H) :
     (Submodule.isClosed_topologicalClosure _).completeSpace_coe
   restrictSub P (cyclicSubspace P ψ) (fun _ hE _ hv => cyclicSubspace_invariant P ψ hE hv)
 
+theorem restrictCyclic_apply [CompleteSpace H] (P : Pvm X H) (ψ : H)
+    {E : Set X} (hE : MeasurableSet E) (v : cyclicSubspace P ψ) :
+    (((restrictCyclic P ψ).p E v : cyclicSubspace P ψ) : H) = P.p E (v : H) := by
+  haveI : CompleteSpace (cyclicSubspace P ψ) :=
+    (Submodule.isClosed_topologicalClosure _).completeSpace_coe
+  exact restrictSub_apply P _ (fun _ hE _ hv => cyclicSubspace_invariant P ψ hE hv) hE v
 
+/-- The orbit of `ψ` inside its cyclic subspace maps onto the orbit of `ψ`. -/
+theorem image_orbit_restrictCyclic [CompleteSpace H] (P : Pvm X H) (ψ : H) :
+    (Subtype.val '' pvmOrbit (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩)
+      = pvmOrbit P ψ := by
+  ext y
+  constructor
+  · rintro ⟨z, ⟨E, hE, rfl⟩, rfl⟩
+    exact ⟨E, hE, restrictCyclic_apply P ψ hE _⟩
+  · rintro ⟨E, hE, rfl⟩
+    exact ⟨(restrictCyclic P ψ).p E ⟨ψ, mem_cyclicSubspace_self P ψ⟩, ⟨E, hE, rfl⟩,
+      restrictCyclic_apply P ψ hE _⟩
 
+/-- **On the cyclic subspace it generates, `ψ` is a cyclic vector** for the restricted
+projection-valued measure. -/
+theorem isCyclic_restrictCyclic [CompleteSpace H] (P : Pvm X H) (ψ : H) :
+    IsCyclic (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩ := by
+  have hmap : Submodule.map (cyclicSubspace P ψ).subtype
+      (Submodule.span ℂ (pvmOrbit (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩))
+      = Submodule.span ℂ (pvmOrbit P ψ) := by
+    rw [Submodule.map_span, Submodule.coe_subtype, image_orbit_restrictCyclic]
+  intro x
+  rw [Metric.mem_closure_iff]
+  intro ε hε
+  have hx : (x : H) ∈ closure ((Submodule.span ℂ (pvmOrbit P ψ) : Submodule ℂ H) : Set H) := by
+    have hx2 : (x : H) ∈
+        (((Submodule.span ℂ (pvmOrbit P ψ)).topologicalClosure : Submodule ℂ H) : Set H) := x.2
+    rwa [Submodule.topologicalClosure_coe] at hx2
+  obtain ⟨y, hy, hdist⟩ := Metric.mem_closure_iff.mp hx ε hε
+  rw [← hmap] at hy
+  obtain ⟨z, hz, rfl⟩ := hy
+  refine ⟨z, hz, ?_⟩
+  rw [Subtype.dist_eq]
+  exact hdist
 
-
-
-
-
+/-- The scalar measure of the restricted system is the original one, so the `L²` model of
+`BookProof.ChapterPvmCyclicUnitary` for the piece is the `L²` space of `pvmMeasure P ψ`. -/
+theorem pvmMeasure_restrictCyclic [CompleteSpace H] (P : Pvm X H) (ψ : H) :
+    pvmMeasure (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩ = pvmMeasure P ψ := by
+  refine Measure.ext_iff.mpr ?_
+  intro E hE
+  rw [pvmMeasure_apply _ _ hE, pvmMeasure_apply _ _ hE]
+  have hnorm : ‖(restrictCyclic P ψ).p E ⟨ψ, mem_cyclicSubspace_self P ψ⟩‖ = ‖P.p E ψ‖ := by
+    rw [← restrictCyclic_apply P ψ hE ⟨ψ, mem_cyclicSubspace_self P ψ⟩]
+    rfl
+  rw [hnorm]
 
 /-! ## The decomposition -/
 
-
+/-- **Every projection-valued measure is an orthogonal sum of cyclic ones.**  There is a
+family `S` of unit vectors with mutually orthogonal cyclic subspaces, spanning a dense
+subspace, and on the cyclic subspace of each member the restricted projection-valued
+measure has that member as a cyclic vector — so each piece is, by
+`BookProof.ChapterPvmCyclicUnitary.pvm_cyclic_unitary`, multiplication by indicators on the
+`L²` space of the finite measure `pvmMeasure P ψ`. -/
+theorem exists_cyclic_decomposition [CompleteSpace H] (P : Pvm X H) :
+    ∃ S : Set H, OrthCyclicFamily P S ∧
+      Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H) ∧
+      ∀ ψ ∈ S, IsCyclic (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩ := by
+  obtain ⟨S, hS, hdense⟩ := exists_orthCyclicFamily P
+  exact ⟨S, hS, hdense, fun ψ _ => isCyclic_restrictCyclic P ψ⟩
 
 /-! ## Countability in a separable space -/
 
+/-- Distinct members of the family are at distance `√2`, so in a **separable** space the
+family is countable: the open balls of radius `1/2` around its members are pairwise
+disjoint. -/
+theorem countable_of_orthCyclicFamily [TopologicalSpace.SeparableSpace H] {P : Pvm X H}
+    {S : Set H} (h : OrthCyclicFamily P S) : S.Countable := by
+  have hdist : ∀ x ∈ S, ∀ y ∈ S, x ≠ y → 1 < dist x y := by
+    intro x hx y hy hxy
+    have hortho : (inner ℂ x y : ℂ) = 0 := inner_eq_zero_of_orthOrbit (h.orth x hx y hy hxy)
+    have hnx : ‖x‖ = 1 := h.unit x hx
+    have hny : ‖y‖ = 1 := h.unit y hy
+    have hsq : ‖x - y‖ ^ 2 = 2 := by
+      rw [@norm_sub_sq ℂ, hnx, hny, hortho]
+      norm_num
+    have hnn : 0 ≤ ‖x - y‖ := norm_nonneg _
+    have : 1 < ‖x - y‖ := by nlinarith [hsq, hnn]
+    simpa [dist_eq_norm] using this
+  have hpd : S.PairwiseDisjoint (fun x => Metric.ball x (1 / 2)) := by
+    intro x hx y hy hxy
+    refine Set.disjoint_iff_inter_eq_empty.mpr ?_
+    have hb : Disjoint (Metric.ball x (1 / 2)) (Metric.ball y (1 / 2)) := by
+      refine Metric.ball_disjoint_ball ?_
+      have := hdist x hx y hy hxy
+      linarith
+    simpa [Set.disjoint_iff_inter_eq_empty] using hb
+  exact hpd.countable_of_isOpen (fun x _ => Metric.isOpen_ball)
+    (fun x _ => ⟨x, Metric.mem_ball_self (by norm_num)⟩)
 
-
-
+/-- On a **separable** Hilbert space the cyclic decomposition is *countable*. -/
+theorem exists_countable_cyclic_decomposition [CompleteSpace H]
+    [TopologicalSpace.SeparableSpace H] (P : Pvm X H) :
+    ∃ S : Set H, S.Countable ∧ OrthCyclicFamily P S ∧
+      Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H) ∧
+      ∀ ψ ∈ S, IsCyclic (restrictCyclic P ψ) ⟨ψ, mem_cyclicSubspace_self P ψ⟩ := by
+  obtain ⟨S, hS, hdense, hcyc⟩ := exists_cyclic_decomposition P
+  exact ⟨S, countable_of_orthCyclicFamily hS, hS, hdense, hcyc⟩
 
 end BookProof.ChapterPvmCyclicDecomposition

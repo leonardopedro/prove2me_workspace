@@ -1,6 +1,7 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — solution of BookProof.BddBelowFiberSumEsa.fiberCore_dense
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 open BookProof.BddBelowFiberSumEsa
 
@@ -9,6 +10,7 @@ open BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

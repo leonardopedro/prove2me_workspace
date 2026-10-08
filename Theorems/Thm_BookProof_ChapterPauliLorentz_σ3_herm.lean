@@ -7,4 +7,4 @@ open BookProof.ChapterPauliLorentz
 open Matrix
 open scoped BigOperators
 
-theorem BookProof.ChapterPauliLorentz.σ3_herm : σ3ᴴ = σ3 := by sorry
+theorem BookProof.ChapterPauliLorentz.sigma3_herm : σ3ᴴ = σ3 := by sorry

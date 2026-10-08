@@ -1,6 +1,7 @@
 -- Generated from ChapterPaleyWienerSampling.lean — solution of BookProof.ChapterPaleyWienerSampling.bandSignal_congr_ae
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
+import Theorems.Thm_BookProof_ChapterShannonSampling_half_add_period
 open BookProof.ChapterPaleyWienerSampling
 
 

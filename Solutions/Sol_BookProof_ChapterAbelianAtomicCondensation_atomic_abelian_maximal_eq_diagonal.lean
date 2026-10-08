@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianAtomicCondensation
 import Theorems.Thm_BookProof_ChapterAbelianAtomicCondensation_atomic_abelian_subset_diagonal
+import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_comm
 open BookProof.ChapterAbelianAtomicCondensation
 
 

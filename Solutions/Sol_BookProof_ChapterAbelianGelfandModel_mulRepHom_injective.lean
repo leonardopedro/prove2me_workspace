@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianGelfandModel.lean — solution of BookProof.ChapterAbelianGelfandModel.mulRepHom_injective
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
 open BookProof.ChapterAbelianGelfandModel
 
 

@@ -11,9 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -24,8 +21,10 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
- u‖ + K * (2 / (c0 * e)) * ‖(u : L2d d)‖ := by ring
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HermiteRelative.hermiteMvBasis_repr_quadOp (c : Fin d → ℝ) (u : polyGaussCore (d := d))
     (a : Fin d →₀ ℕ) :
-    hermiteMvBasis := by sorry
+    hermiteMvBasis.repr (quadOp c u) a
+      = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by sorry

@@ -7,13 +7,13 @@ import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.bosOpN_ghostOpN_comm (S : Module.End ℂ (FieldPoly N)) (T : Module.End ℂ (GhostSpace N)) :
     bosOpN S * ghostOpN T = ghostOpN T * bosOpN S := by sorry

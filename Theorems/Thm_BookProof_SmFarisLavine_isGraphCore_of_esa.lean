@@ -18,10 +18,6 @@ open BookProof.GraphCore
 open BookProof.QgOuterFockFL
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -32,6 +28,10 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.isGraphCore_of_esa (P : PosSymOp F) (hdense : Dense (P.dom : Set F))
     (hesa : EssentiallySelfAdjointOn P.dom P.op) :

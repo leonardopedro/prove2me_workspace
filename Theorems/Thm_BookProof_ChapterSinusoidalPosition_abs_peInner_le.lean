@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSinusoidalPosition
 open BookProof.ChapterSinusoidalPosition
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterSinusoidalPosition.abs_peInner_le (w : Fin n → ℝ) (p q : ℝ) : |peInner w p q| ≤ (n : ℝ) := by sorry

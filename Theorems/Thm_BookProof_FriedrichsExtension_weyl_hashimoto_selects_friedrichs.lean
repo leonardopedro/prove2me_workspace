@@ -11,17 +11,15 @@ open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsExtension
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
-open FormDom
-open Filter Topology
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.weyl_hashimoto_selects_friedrichs (b : HilbertBasis ℕ ℂ F) {n m : ℕ}
     {pi : Fin n → finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}

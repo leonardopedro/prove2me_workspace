@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterSmHiggsVacuum
 open BookProof.SmHiggsVacuum
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Finset
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.SmHiggsVacuum.gaugeMassForm_smul (X : Fin 3 → Matrix (Fin 4) (Fin 4) ℝ) (u : Fin 4 → ℝ) (c : ℝ) :

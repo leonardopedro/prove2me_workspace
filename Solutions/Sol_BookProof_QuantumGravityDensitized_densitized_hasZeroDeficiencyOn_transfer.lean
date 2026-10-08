@@ -1,6 +1,7 @@
 -- Generated from ChapterQuantumGravityDensitized.lean — solution of BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityDensitized
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_hasZeroDeficiencyOn_of_linearIsometryEquiv
 open BookProof.QuantumGravityDensitized
 
 

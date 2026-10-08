@@ -21,12 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-) : ℕ → ℂ)) 2
-    rw [hval]
-    exact (lp.memℓp _).const_smul _⟩
-
 theorem solution (lam : ℕ → ℝ) (hlam : ∀ C : ℝ, ∃ n, C < |lam n|) :
-    ¬ ∃ C : ℝ, ∀ f :=
+    ¬ ∃ C : ℝ, ∀ f : mulSymbolDomain lam, ‖mulHamiltonian lam f‖ ≤ C * ‖(f : L2Nat)‖ :=
   : mulSymbolDomain lam, ‖mulHamiltonian lam f‖ ≤ C * ‖(f : L2Nat)‖ := by
     rintro ⟨C, hC⟩
     obtain ⟨n, hn⟩ := hlam C

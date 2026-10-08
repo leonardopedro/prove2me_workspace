@@ -15,9 +15,6 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -28,6 +25,9 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.CoreData.esa_core (d : CoreData F) (hsym : SymmetricOn d.C₀ d.H₀) {c : ℝ}
     (hc : 0 ≤ c) (hcomm : ∀ p : d.C₀, |commForm d.H₀ d.coreN p| ≤ c * quadForm d.coreN p) :

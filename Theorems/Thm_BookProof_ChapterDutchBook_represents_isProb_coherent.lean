@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterDutchBook
 
-variable {Ω : Type*} [DecidableEq Ω]
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {Ω : Type*} [DecidableEq Ω]
 
 
 theorem BookProof.ChapterDutchBook.represents_isProb_coherent [Fintype Ω] {Pr : Finset Ω → ℝ} {p : Ω → ℝ}

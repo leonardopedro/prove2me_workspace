@@ -4,7 +4,7 @@ import Definitions.Def_ChapterQuadraticRotationEsa
 import Theorems.Thm_BookProof_QuadraticRotation_rotPoly_mulXPoly
 import Theorems.Thm_BookProof_QuadraticRotation_rotPoly_momPoly
 import Theorems.Thm_BookProof_QuadraticRotation_quadPolyMat_apply
-import Theorems.Thm_BookProof_QuadraticRotation_quadPoly_apply'
+import Theorems.Thm_BookProof_QuadraticRotation_quadPoly_apply_prime
 open BookProof.QuadraticRotation
 
 
@@ -89,7 +89,7 @@ theorem solution {O : Matrix (Fin d) (Fin d) ℝ} (hO : Oᵀ * O = 1)
     intro f
     rw [Finset.sum_comm]
     exact Finset.sum_congr rfl fun k _ => Finset.sum_comm
-  rw [quadPoly_apply', map_sum, Finset.sum_congr rfl fun i _ => hboth i, hswap,
+  rw [quadPoly_apply_prime, map_sum, Finset.sum_congr rfl fun i _ => hboth i, hswap,
     quadPolyMat_apply]
   refine Finset.sum_congr rfl fun k _ => Finset.sum_congr rfl fun l _ => ?_
   rw [← Finset.sum_smul]

@@ -6,17 +6,17 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.QuantumGravityBrstCharge
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
-variable {d : ℕ}
-variable {α : Type*}
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
+variable {d : ℕ}
+variable {α : Type*}
 
 theorem BookProof.QuantumGravityBrstCharge.qgBRST_nilpotent (M : Fin 19 → Matrix (Fin 84) (Fin 84) ℝ)
     (f : Fin 19 → Fin 19 → Fin 19 → ℝ)

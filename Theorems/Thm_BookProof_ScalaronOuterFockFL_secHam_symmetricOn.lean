@@ -12,12 +12,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable (W : WallPot) (s : ℝ)
-variable {ι : Type*}
-variable (Q : QgModeData ι)
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open MeasureTheory SchwartzMap
@@ -27,5 +21,11 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable (W : WallPot) (s : ℝ)
+variable {ι : Type*}
+variable (Q : QgModeData ι)
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.ScalaronOuterFockFL.secHam_symmetricOn : SymmetricOn (secCore (ι := by sorry

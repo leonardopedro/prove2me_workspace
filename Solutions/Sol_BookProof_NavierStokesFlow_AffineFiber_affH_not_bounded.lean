@@ -24,19 +24,22 @@ variable (P : PairShift ι)
 set_option maxHeartbeats 1000000 in
 theorem solution {κ c : ℝ} (hκ : 0 < κ) (hc : 0 ≤ c) (C : ℝ) :
     ∃ n : ℕ, ‖(basisState κ c n : L2I ℕ)‖ = 1
-      ∧ C < ‖(affH hκ.le hc (basisState κ c n) : L2I ℕ)‖ :=
-  ℝ} (hκ : 0 < κ) (hc : 0 ≤ c) (C : ℝ) :
-      ∃ n : ℕ, ‖(basisState κ c n : L2I ℕ)‖ = 1
-        ∧ C < ‖(affH hκ.le hc (basisState κ c n) : L2I ℕ)‖ := by
-    obtain ⟨n, hn⟩ := exists_nat_gt (2 * (|C| + 1) / κ)
-    refine ⟨n, norm_basisState κ c n, ?_⟩
-    have hb : ‖((affH hκ.le hc (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 2)‖
-        ≤ ‖(affH hκ.le hc (basisState κ c n) : L2I ℕ)‖ :=
-      lp.norm_apply_le_norm (by norm_num) _ _
-    rw [affH_coord_succ_succ] at hb
-    have hnv : ‖Complex.I * ((amp κ n : ℝ) : ℂ)‖ = amp κ n := by
-      rw [norm_mul, Complex.norm_I, one_mul, Complex.norm_real, Real.norm_eq_abs,
-        abs_of_nonneg (amp_nonneg hκ.le n)]
-    rw [hnv] at hb
-    have hlow := le_amp hκ.le n
-    have hgt : 2 * (|C| + 1) / κ <
+      ∧ C < ‖(affH hκ.le hc (basisState κ c n) : L2I ℕ)‖ := by
+
+  obtain ⟨n, hn⟩ := exists_nat_gt (2 * (|C| + 1) / κ)
+  refine ⟨n, norm_basisState κ c n, ?_⟩
+  have hb : ‖((affH hκ.le hc (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 2)‖
+      ≤ ‖(affH hκ.le hc (basisState κ c n) : L2I ℕ)‖ :=
+    lp.norm_apply_le_norm (by norm_num) _ _
+  rw [affH_coord_succ_succ] at hb
+  have hnv : ‖Complex.I * ((amp κ n : ℝ) : ℂ)‖ = amp κ n := by
+    rw [norm_mul, Complex.norm_I, one_mul, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_nonneg (amp_nonneg hκ.le n)]
+  rw [hnv] at hb
+  have hlow := le_amp hκ.le n
+  have hgt : 2 * (|C| + 1) / κ < (n : ℝ) := hn
+  have hmul : 2 * (|C| + 1) < κ * (n : ℝ) := by
+    rw [div_lt_iff₀ hκ] at hgt
+    linarith [hgt]
+  have hC : C ≤ |C| := le_abs_self C
+  nlinarith

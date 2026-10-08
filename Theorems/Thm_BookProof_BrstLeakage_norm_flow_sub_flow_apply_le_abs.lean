@@ -1,13 +1,14 @@
 -- Generated from ChapterBrstTruncationLeakage.lean — theorem BookProof.BrstLeakage.norm_flow_sub_flow_apply_le_abs
 import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
+import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le
 open BookProof.BrstLeakage
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.norm_flow_sub_flow_apply_le_abs {A B : E →L[ℂ] E} (hA : IsSelfAdjoint A)

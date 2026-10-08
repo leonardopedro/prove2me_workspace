@@ -13,10 +13,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -27,5 +23,9 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgTruncationResolvent.secHam_truncate_eq_of_band (Λ : Set ι) {x : secCore (ι := by sorry

@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFieldStrength
 open BookProof.YangMillsFieldStrength
 
-variable {R : Type*} [Ring R]
-
 
 open Complex
 
 
+
+variable {R : Type*} [Ring R]
 
 
 theorem BookProof.YangMillsFieldStrength.nonabelian_fieldStrength

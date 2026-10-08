@@ -12,9 +12,6 @@ open BookProof.QgHermiteCore
 open BookProof.Starobinsky
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -23,5 +20,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.expBounded_scalaronW (M alpha : ℝ) (hM : 0 < M) : ExpBounded (scalaronW M alpha) := by sorry

@@ -5,14 +5,14 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 open BookProof.CarlemanSimplex
 
-variable {d : ℕ}
-
 
 
 open Finset
 open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.CarlemanSimplex.mem_sBd {d N k : ℕ} {a : Fin d →₀ ℕ} :

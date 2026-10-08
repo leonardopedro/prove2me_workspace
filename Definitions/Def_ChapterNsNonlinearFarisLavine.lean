@@ -74,6 +74,78 @@ Faris–Lavine, `FarisLavine.essentiallySelfAdjointOn_of_square_comparison`.
   statements here are for every finite set of modes, with the exact nonlinearity on those modes.
 -/
 
+/-! ## Embedded `BookProof.NsKoopman` core
+
+There is no `Definitions.Def_ChapterNsKoopman` bundle, so the handful of declarations these
+bundles consume from `BookProof.ChapterNsKoopman.Part1/Part2` are embedded verbatim here
+(they need only Mathlib plus `Def_ChapterYangMillsHermite` / `Def_ChapterHermiteProductCore`,
+both already imported).  `Def_ChapterNsLinearKoopmanEsa` imports this bundle in turn.  Only
+definitions are embedded — every lemma that lives in the source `ChapterNsKoopman` files and
+is referenced from these two bundles does so from a docstring alone. -/
+
+namespace BookProof.NsKoopman
+
+open MvPolynomial
+open BookProof.HermiteProductCore BookProof.YangMillsHermite
+
+noncomputable section
+
+variable {d : ℕ}
+
+/-- The advection field `B_i(u,u) = Σ_{j,k} b_{ijk} u_j u_k` of a Galerkin form of the
+incompressible Navier–Stokes equation: the exact quadratic term, with the pressure already
+eliminated by the Leray projection. -/
+def advOf (b : Fin d → Fin d → Fin d → ℝ) (i : Fin d) : MvPolynomial (Fin d) ℂ :=
+  ∑ j, ∑ k, ((b i j k : ℝ) : ℂ) • (X j * X k)
+
+/-- **The mainstream incompressible Navier–Stokes system** in the functional form
+`u̇ = −νAu + B(u,u)`: `nu` is the viscosity, `lam i = |k_i|²` the Stokes eigenvalues in the
+divergence-free Fourier basis, and `bcoef` the structure constants of the exact quadratic
+advection.  `leray` and `liouville` are the two structural identities of the incompressible
+equation. -/
+structure NsSystem (d : ℕ) where
+  /-- The kinematic viscosity `ν`. -/
+  nu : ℝ
+  /-- The Stokes eigenvalues `λ_i = |k_i|²`. -/
+  lam : Fin d → ℝ
+  /-- The structure constants of the advection `B_i(u,u) = Σ_{j,k} b_{ijk}u_ju_k`. -/
+  bcoef : Fin d → Fin d → Fin d → ℝ
+  nu_nonneg : 0 ≤ nu
+  lam_nonneg : ∀ i, 0 ≤ lam i
+  /-- **Leray's energy identity** `⟨u, B(u,u)⟩ = 0`. -/
+  leray : ∑ i, X i * advOf bcoef i = (0 : MvPolynomial (Fin d) ℂ)
+  /-- **The Liouville identity** `div_u B = 0`. -/
+  liouville : ∑ i, pderiv i (advOf bcoef i) = (0 : MvPolynomial (Fin d) ℂ)
+
+variable (S : NsSystem d)
+
+/-- The **drift field** `F_i(u) = −ν λ_i u_i + B_i(u,u)` of the mainstream system. -/
+def drift (i : Fin d) : MvPolynomial (Fin d) ℂ :=
+  -(((S.nu * S.lam i : ℝ) : ℂ) • X i) + advOf S.bcoef i
+
+/-- The **Navier–Stokes Hamiltonian** `H_NS = ½ Σ_m (π_m F_m + F_m π_m)`: the Weyl-ordered
+Koopman–von Neumann generator of the mainstream Navier–Stokes flow. -/
+def kvnPoly : Module.End ℂ (MvPolynomial (Fin d) ℂ) :=
+  ∑ i, weylProd (momOp i) (mulOp (drift S i))
+
+/-- The **Leray energy** `E(u) = 1 + ‖u‖²`, the comparison observable. -/
+def energyPoly (d : ℕ) : MvPolynomial (Fin d) ℂ := 1 + ∑ i, X i * X i
+
+/-- **The comparison operator `N_E`**: multiplication by the Leray energy. -/
+def energyOp (d : ℕ) : Module.End ℂ (MvPolynomial (Fin d) ℂ) := mulOp (energyPoly d)
+
+/-- **The Navier–Stokes Hamiltonian on the Gauss–polynomial core of `L²(ℝᵈ)`.** -/
+def nsKoopmanOp : (polyGaussCore (d := d)) →ₗ[ℂ] L2d d :=
+  (polyGaussCore (d := d)).subtype.comp ((coreRepPoly d).op (kvnPoly S))
+
+/-- **The comparison operator on the Gauss–polynomial core of `L²(ℝᵈ)`.** -/
+def nsEnergyOp : (polyGaussCore (d := d)) →ₗ[ℂ] L2d d :=
+  (polyGaussCore (d := d)).subtype.comp ((coreRepPoly d).op (energyOp d))
+
+end
+
+end BookProof.NsKoopman
+
 namespace BookProof.NsNonlinearFarisLavine
 
 open MvPolynomial

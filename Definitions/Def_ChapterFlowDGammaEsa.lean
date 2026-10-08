@@ -1,8 +1,14 @@
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_hasDerivAt_smul_of_bounded
 
 import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on_dense
+
+import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
 
@@ -73,6 +79,25 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
   BookProof.TensorOpBound BookProof.DiagonalDGamma
 
 noncomputable section
+
+/-! ## The elementary-tensor equations of `inclPow` / `derPow`
+
+The platform's published `Def_ChapterTensorGraphCore` carries the definitions but not these
+three `rfl` equations, so each consumer states them itself.  The local declaration shadows the
+same name opened from `BookProof.DiagonalDGamma` (local always wins over `open`). -/
+
+@[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
+    (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
+
+@[simp] theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
+    derPow Hs D₂ A 0 x = 0 := rfl
+
+@[simp] theorem derPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
+      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
 
 /-! ## Nelson's criterion, in orbit form -/
 
@@ -471,7 +496,15 @@ theorem essentiallySelfAdjointOn_fockSectorDom_flow (hdense : Dense (D₂ : Set 
   exact essentiallySelfAdjointOn_of_orbits _ (fun x => fockOrbit P n x)
     (fun x t => norm_fockOrbit P n x t) (fun x t => hasDerivAt_fockOrbit P n x t) hdense'
 
-
+include P in
+/-- **Main theorem for a one-particle operator with a unitary flow.**  `dΓ(A)` is essentially
+self-adjoint on the finite-particle domain built from any graph-norm core `D` of `A`. -/
+theorem dGamma_flow_essentiallySelfAdjointOn_fockCore (hdense : Dense (D₂ : Set Hs.carrier))
+    (D : Submodule ℂ Hs.carrier) (hcore : IsGraphCore D A) :
+    EssentiallySelfAdjointOn (dsCore (fun n : ℕ => fockSectorCore Hs D₂ D n))
+      (dGammaCoreOp Hs D₂ A D) :=
+  dGamma_essentiallySelfAdjointOn_fockCore Hs D₂ A D hcore
+    (essentiallySelfAdjointOn_fockSectorDom_flow P hdense)
 
 end OneParticleFlow
 
@@ -497,7 +530,18 @@ def ofSelfAdjoint (T : UnboundedSelfAdjoint Hs.carrier) :
   mem_domain t x := T.stoneU_mem_domain t x
   hasDerivAt_U x t := T.hasDerivAt_stoneU_op x t
 
-
+/-- **The theorem, with no hypothesis left over.**  For every self-adjoint one-particle
+operator `A` — unbounded, with arbitrary spectrum, no positivity — and every graph-norm core
+`D` of `A`, the second quantization `dΓ(A)` is essentially self-adjoint on the finite-particle
+domain `𝓕_fin(D)` built from `D` alone.  `D` is only a core: it is not invariant under the
+unitary group, and no resolvent of `A` on `D` is used. -/
+theorem dGamma_selfAdjoint_essentiallySelfAdjointOn_fockCore
+    (T : UnboundedSelfAdjoint Hs.carrier) (D : Submodule ℂ Hs.carrier)
+    (hcore : IsGraphCore D T.op) :
+    EssentiallySelfAdjointOn (dsCore (fun n : ℕ => fockSectorCore Hs T.domain D n))
+      (dGammaCoreOp Hs T.domain T.op D) :=
+  OneParticleFlow.dGamma_flow_essentiallySelfAdjointOn_fockCore (ofSelfAdjoint T)
+    T.denseDomain D hcore
 
 /-- The sectorwise input of the packaged theorem, for a self-adjoint one-particle
 operator. -/
@@ -541,9 +585,23 @@ def L2ZSpace : IPSpace := ⟨BookProof.ChapterContinuityUnitaryInfinite.L2Z⟩
 instance : CompleteSpace L2ZSpace.carrier :=
   inferInstanceAs (CompleteSpace (BookProof.ChapterContinuityUnitaryInfinite.L2Z))
 
+/-- **Second quantization of the position operator.**  `A` is multiplication by `k` on
+`ℓ²(ℤ)` — self-adjoint and unbounded above and below — and `D` is any graph-norm core of it.
+Then `dΓ(A)` is essentially self-adjoint on the finite-particle domain over `D`. -/
+theorem dGamma_position_essentiallySelfAdjointOn_fockCore
+    (D : Submodule ℂ L2ZSpace.carrier)
+    (hcore : IsGraphCore D (mulSA positionField).op) :
+    EssentiallySelfAdjointOn
+      (dsCore (fun n : ℕ => fockSectorCore L2ZSpace (mulSA positionField).domain D n))
+      (dGammaCoreOp L2ZSpace (mulSA positionField).domain (mulSA positionField).op D) :=
+  dGamma_selfAdjoint_essentiallySelfAdjointOn_fockCore (Hs := L2ZSpace) (mulSA positionField)
+    D hcore
 
-
-
+/-- The one-particle operator of the previous theorem is genuinely unbounded. -/
+theorem position_not_bounded :
+    ¬ ∃ C : ℝ, ∀ x : (mulSA positionField).domain,
+      ‖(mulSA positionField).op x‖ ≤ C * ‖(x : BookProof.ChapterContinuityUnitaryInfinite.L2Z)‖ :=
+  mulSA_position_unbounded
 
 end Position
 

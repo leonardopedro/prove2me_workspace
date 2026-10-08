@@ -3,10 +3,9 @@ import Definitions.Def_ChapterAttentionEntropy
 import Mathlib
 import Definitions.Def_ChapterLogPartitionConvex
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterLogPartitionConvex
-
-variable {m : ℕ}
 
 
 open scoped BigOperators
@@ -15,6 +14,9 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterLogPartitionConvex.logPartition_isGreatest (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

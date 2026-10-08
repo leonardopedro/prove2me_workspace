@@ -20,10 +20,8 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-inarith [sq_nonneg (e * A), sq_nonneg ((2 / (c0 * e)) * B), h, hcross]
-  nlinarith [hsq, hrhs]
-
 theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
-    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCo :=
+    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCore (d := d)) :
+    ‖posL i u‖ ≤ e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ :=
   re (d := d)) :
       ‖posL i u‖ ≤ e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ :=

@@ -1,8 +1,8 @@
 -- Generated from ChapterQuadratureEsa.lean — solution of BookProof.QuadratureEsa.phaseU_foOp_hermiteCore
 import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
-import Theorems.Thm_BookProof_QuadratureEsa_foAmp_real
 import Theorems.Thm_BookProof_QuadratureEsa_foOp_hermiteCore
+import Theorems.Thm_BookProof_QuadratureEsa_foAmp_real
 import Theorems.Thm_BookProof_QuadratureEsa_norm_foPhase
 import Theorems.Thm_BookProof_QuadratureEsa_foMod_mul_foPhase
 import Theorems.Thm_BookProof_QuadratureEsa_foMod_eq_conj_mul_foPhase

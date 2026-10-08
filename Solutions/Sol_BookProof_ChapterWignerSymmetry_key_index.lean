@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetry
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex
-import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex'
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex_prime
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_modulus_add
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_exists_zeta
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
@@ -46,4 +46,4 @@ theorem solution (hS : WignerCoord S o) {i : ι} (hi : i ≠ o) :
     have h3 : ‖S v o + S v i‖ = ‖v o + v i‖ := modulus_add hS hi v
     have h4 := hrel v
     rw [hζ] at h4
-    exact key_complex' (S v o) (S v i) (v o) (v i) h1 h2 h3 h4
+    exact key_complex_prime (S v o) (S v i) (v o) (v i) h1 h2 h3 h4

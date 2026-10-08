@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterGaugeAdjointAlgebra
 open BookProof.ChapterGaugeAdjointAlgebra
 
-variable {L : Type*} [LieRing L]
-
 
 
 
 open Finset
+
+variable {L : Type*} [LieRing L]
 
 
 theorem BookProof.ChapterGaugeAdjointAlgebra.inner_adjVar_self_eq_zero {κ : L → L → ℝ}

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_of_selfAdjoint
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
 open BookProof.EsaOneParticle
 
 

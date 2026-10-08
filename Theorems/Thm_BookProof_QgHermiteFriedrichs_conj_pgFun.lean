@@ -10,8 +10,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -19,6 +17,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QgHermiteFriedrichs.conj_pgFun (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :

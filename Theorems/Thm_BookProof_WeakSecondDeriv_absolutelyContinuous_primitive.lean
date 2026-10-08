@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WeakSecondDeriv
 
-variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
 
 
 open MeasureTheory Filter Topology intervalIntegral Set
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
 
 theorem BookProof.WeakSecondDeriv.absolutelyContinuous_primitive {G : ℝ → ℝ} (hG : LocallyIntegrable G volume)
     {a b c : ℝ} (hc : c ∈ uIcc a b) :

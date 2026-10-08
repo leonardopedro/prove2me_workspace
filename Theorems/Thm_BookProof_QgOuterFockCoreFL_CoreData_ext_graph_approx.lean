@@ -6,9 +6,6 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 open scoped ENNReal
 
@@ -18,7 +15,10 @@ noncomputable section
 open BookProof.FarisLavine
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+
+variable (d : CoreData F)
 
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.ext_graph_approx (x : d.C.dom) (ε : ℝ) (hε : 0 < ε) :

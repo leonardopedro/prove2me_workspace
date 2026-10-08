@@ -18,9 +18,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.realCoeff_liftParcel_spFormPoly (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (r : Fin 7) :
     RealCoeff (liftParcel p (spFormPoly nu k r) : MvPolynomial (Fin (n * 6)) ℂ) := by sorry

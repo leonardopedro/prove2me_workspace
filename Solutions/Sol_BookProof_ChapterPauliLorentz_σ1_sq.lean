@@ -1,4 +1,4 @@
--- Generated from ChapterPauliLorentz.lean — solution of BookProof.ChapterPauliLorentz.σ1_sq
+-- Generated from ChapterPauliLorentz.lean — solution of BookProof.ChapterPauliLorentz.sigma1_sq
 import Mathlib
 import Definitions.Def_ChapterPauliLorentz
 open BookProof.ChapterPauliLorentz

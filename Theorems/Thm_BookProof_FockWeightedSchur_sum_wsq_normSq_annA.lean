@@ -13,8 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-variable {w : ℕ → ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
@@ -22,6 +20,8 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {w : ℕ → ℝ}
 
 theorem BookProof.FockWeightedSchur.sum_wsq_normSq_annA {u : FockAlg} {L : Finset ℕ} (hL : modes u ⊆ L) :
     ∑ k ∈ L, w k ^ 2 * ‖toLp (annA k u)‖ ^ 2 = ∑ α ∈ u.support, wdeg w α * ‖u α‖ ^ 2 := by sorry

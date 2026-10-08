@@ -339,7 +339,15 @@ theorem lagSectorHam_quadForm_nonneg (lam lam' mu gg : ℝ) (n : ℕ)
     (x : polyGaussCore (d := n * 36)) : 0 ≤ quadForm (lagSectorHam lam lam' mu gg n) x :=
   weylOpDom_quadForm_nonneg (lagPiN_symmetricOn n) (lagFieldN_symmetricOn lam lam' mu gg n) x
 
-
+/-- **The `n`-parcel Lagrangian Hamiltonian has a positive self-adjoint (Friedrichs)
+extension.** -/
+theorem lagSector_friedrichs_extension (lam lam' mu gg : ℝ) (n : ℕ) :
+    ∃ (Dom : Submodule ℂ (L2d (n * 36))) (A : Dom →ₗ[ℂ] L2d (n * 36)),
+      IsPositiveSelfAdjointExtension (lagSectorHam lam lam' mu gg n) A :=
+  friedrichs_extension_exists
+    ⟨polyGaussCore, lagSectorHam lam lam' mu gg n, lagSectorHam_symmetricOn lam lam' mu gg n,
+      lagSectorHam_quadForm_nonneg lam lam' mu gg n⟩
+    polyGaussCore_dense
 
 /-! ## 4. The nested Fock space -/
 
@@ -349,19 +357,44 @@ abbrev lagFockSpace := lp (fun n : ℕ => L2d (n * 36)) 2
 /-- The finite-parcel core. -/
 def lagFockCore : Submodule ℂ lagFockSpace := dsCore (fun n : ℕ => polyGaussCore (d := n * 36))
 
-
+theorem lagFockCore_dense :
+    Dense ((lagFockCore : Submodule ℂ lagFockSpace) : Set lagFockSpace) :=
+  dsCore_dense fun _ => polyGaussCore_dense
 
 /-- **The full Lagrangian Navier–Stokes Hamiltonian on the nested Fock space.** -/
 def lagFullFockHam (lam lam' mu gg : ℝ) : lagFockCore →ₗ[ℂ] lagFockSpace :=
   dsOp (fun n : ℕ => lagSectorHam lam lam' mu gg n)
 
+theorem lagFullFockHam_symmetricOn (lam lam' mu gg : ℝ) :
+    SymmetricOn lagFockCore (lagFullFockHam lam lam' mu gg) :=
+  dsOp_symmetricOn _ fun n => lagSectorHam_symmetricOn lam lam' mu gg n
 
+/-- **The outer Lagrangian auxiliary sum-of-squares operator is bounded below** — positivity is
+fibrewise.  (The NS Hamiltonian itself is not bounded below:
+`BookProof.NsKoopman.nsKoopmanOp_not_bounded_below`.) -/
+theorem lagFullFockHam_quadForm_nonneg (lam lam' mu gg : ℝ) (x : lagFockCore) :
+    0 ≤ quadForm (lagFullFockHam lam lam' mu gg) x :=
+  dsOp_quadForm_nonneg _ (fun n u => lagSectorHam_quadForm_nonneg lam lam' mu gg n u) x
 
+/-- **The full Lagrangian Navier–Stokes Hamiltonian on the nested Fock space has a positive
+self-adjoint (Friedrichs) extension.** -/
+theorem lagFullFock_friedrichs_extension (lam lam' mu gg : ℝ) :
+    ∃ (Dom : Submodule ℂ lagFockSpace) (A : Dom →ₗ[ℂ] lagFockSpace),
+      IsPositiveSelfAdjointExtension (lagFullFockHam lam lam' mu gg) A :=
+  friedrichs_extension_exists
+    ⟨lagFockCore, lagFullFockHam lam lam' mu gg, lagFullFockHam_symmetricOn lam lam' mu gg,
+      lagFullFockHam_quadForm_nonneg lam lam' mu gg⟩
+    lagFockCore_dense
 
-
-
-
-
+set_option maxHeartbeats 1000000 in
+-- unfolding the `lp` instances of the Fock space in the Stone construction is costly
+/-- **The unitary time evolution of the outer Lagrangian Hamiltonian** (Stone). -/
+theorem lagFullFock_stone_flow (lam lam' mu gg : ℝ) :
+    ∃ (T : UnboundedSelfAdjoint lagFockSpace) (U : ℝ → (lagFockSpace →L[ℂ] lagFockSpace)),
+      IsStoneFlow T U := by
+  obtain ⟨Dom, A, hA⟩ := lagFullFock_friedrichs_extension lam lam' mu gg
+  obtain ⟨T, U, _, _, hflow⟩ := exists_stone_flow_of_positive lagFockCore_dense hA
+  exact ⟨T, U, hflow⟩
 
 /-! ## 5. Faris–Lavine on the outer Fock space -/
 
@@ -377,27 +410,80 @@ operator.** -/
 def lagFried (lam lam' mu gg : ℝ) (n : ℕ) : Comparison (L2d (n * 36)) :=
   friedrichsComparison (lagPosSym lam lam' mu gg n) polyGaussCore_dense
 
+theorem polyGaussCore_le_lagFriedDom (lam lam' mu gg : ℝ) (n : ℕ) :
+    (polyGaussCore (d := n * 36)) ≤ (lagFried lam lam' mu gg n).dom := fun v hv =>
+  (friedrichsComparison_extends (lagPosSym lam lam' mu gg n) polyGaussCore_dense ⟨v, hv⟩).choose
 
-
-
+theorem lagFried_op_core (lam lam' mu gg : ℝ) (n : ℕ) (p : polyGaussCore (d := n * 36))
+    (h : (p : L2d (n * 36)) ∈ (lagFried lam lam' mu gg n).dom) :
+    (lagFried lam lam' mu gg n).op ⟨(p : L2d (n * 36)), h⟩ = lagSectorHam lam lam' mu gg n p :=
+  (friedrichsComparison_extends (lagPosSym lam lam' mu gg n) polyGaussCore_dense p).choose_spec
 
 /-- **The lift of the comparison operator to the outer Fock space.** -/
 def lagOuterComparison (lam lam' mu gg : ℝ) : Comparison lagFockSpace :=
   dsComparison (fun n : ℕ => lagFried lam lam' mu gg n)
 
+/-- The lifted comparison operator, fibrewise. -/
+theorem lagOuterN_apply (lam lam' mu gg : ℝ) (x : (lagOuterComparison lam lam' mu gg).dom)
+    (n : ℕ) :
+    (((lagOuterComparison lam lam' mu gg).op x : lagFockSpace) : ∀ n : ℕ, L2d (n * 36)) n
+      = (lagFried lam lam' mu gg n).op
+          ⟨((x : lagFockSpace) : ∀ n : ℕ, L2d (n * 36)) n, x.2.1 n⟩ :=
+  dsCompOp_fib _ x n
 
+/-- **Faris–Lavine on the outer Fock space**: the lifted realization of the full Lagrangian
+Navier–Stokes Hamiltonian is essentially self-adjoint on its domain — the `H = N`, `c = 0`
+case of the criterion, with the lifted Friedrichs extension as comparison operator. -/
+theorem lagFullOuterN_esa (lam lam' mu gg : ℝ) :
+    EssentiallySelfAdjointOn (lagOuterComparison lam lam' mu gg).dom
+      (lagOuterComparison lam lam' mu gg).op :=
+  Comparison.esa_self _
 
+set_option maxHeartbeats 1600000 in
+-- the lifted domain is built from the Friedrichs completion, so unfolding it is costly
+/-- The finite-parcel core sits inside the domain of the lifted comparison operator. -/
+theorem lagFockCore_le_friedDom (lam lam' mu gg : ℝ) :
+    lagFockCore ≤ (lagOuterComparison lam lam' mu gg).dom := by
+  intro x hx
+  refine ⟨fun n => polyGaussCore_le_lagFriedDom lam lam' mu gg n (hx.2 n), ?_⟩
+  have hfun : (fun n : ℕ => opTot (lagFried lam lam' mu gg n).op ((x : lagFockSpace) n))
+      = fun n : ℕ =>
+        (lagSectorHam lam lam' mu gg n ⟨(x : lagFockSpace) n, hx.2 n⟩ : L2d (n * 36)) := by
+    funext n
+    rw [opTot_of_mem _ (polyGaussCore_le_lagFriedDom lam lam' mu gg n (hx.2 n)),
+      lagFried_op_core lam lam' mu gg n ⟨(x : lagFockSpace) n, hx.2 n⟩]
+  rw [hfun]
+  refine memLp_of_finite_support (Set.Finite.subset hx.1 fun n hn => ?_)
+  simp only [Set.mem_setOf_eq] at hn ⊢
+  intro h0
+  refine hn ?_
+  have hz : (⟨(x : lagFockSpace) n, hx.2 n⟩ : polyGaussCore (d := n * 36)) = 0 :=
+    Subtype.ext h0
+  rw [hz, map_zero]
 
-
-
-
-
+set_option maxHeartbeats 2000000 in
+-- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
+/-- **The lifted Friedrichs realization is a positive self-adjoint extension of the full
+Lagrangian Navier–Stokes Hamiltonian defined on the finite-parcel core.** -/
+theorem lagFullOuterN_isPositiveSelfAdjointExtension (lam lam' mu gg : ℝ) :
+    IsPositiveSelfAdjointExtension (lagFullFockHam lam lam' mu gg)
+      (lagOuterComparison lam lam' mu gg).op :=
+  (lagOuterComparison lam lam' mu gg).isPositiveSelfAdjointExtension
+    (lagFullFockHam lam lam' mu gg) (fun x => by
+      refine ⟨lagFockCore_le_friedDom lam lam' mu gg x.2, ?_⟩
+      refine lp.ext (funext fun n => ?_)
+      rw [lagOuterN_apply, lagFried_op_core lam lam' mu gg n ⟨(x : lagFockSpace) n, x.2.2 n⟩]
+      exact (dsOp_coe (fun n : ℕ => lagSectorHam lam lam' mu gg n) x n).symm)
 
 /-! ## 6. Particle-number conservation — why no lattice is needed -/
 
 
 
-
+/-- **The outer Lagrangian Hamiltonian conserves the parcel number.** -/
+theorem lagFullFockHam_number_conserving (lam lam' mu gg : ℝ) (x : lagFockCore) {n : ℕ}
+    (hx : ∀ m, m ≠ n → ((x : lagFockSpace) : ∀ m : ℕ, L2d (m * 36)) m = 0) (m : ℕ) (hm : m ≠ n) :
+    ((lagFullFockHam lam lam' mu gg x : lagFockSpace) : ∀ m : ℕ, L2d (m * 36)) m = 0 :=
+  dsOp_number_conserving _ x hx m hm
 
 /-! ## 7. The incompressibility constraint is genuinely cubic -/
 

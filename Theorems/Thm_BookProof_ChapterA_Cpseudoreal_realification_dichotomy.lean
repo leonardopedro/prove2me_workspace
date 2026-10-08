@@ -7,14 +7,14 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℂ W] [CompleteSpace W]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℂ W] [CompleteSpace W]
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterA.Cpseudoreal_realification_dichotomy [Nontrivial W]
     {M : System ℂ V} {N : System ℂ W} (hSchurN : IsSchurFull N)

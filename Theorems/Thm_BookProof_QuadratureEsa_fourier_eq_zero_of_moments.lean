@@ -13,8 +13,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.QuadratureEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial FourierTransform
@@ -24,6 +22,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadratureEsa.fourier_eq_zero_of_moments {v : Vd d → ℂ}

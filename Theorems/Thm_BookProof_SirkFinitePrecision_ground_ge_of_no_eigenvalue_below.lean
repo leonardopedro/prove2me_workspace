@@ -4,10 +4,6 @@ import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 
 
-
-
-
-
 noncomputable section
 
 
@@ -16,6 +12,7 @@ open Finset
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]
+
 
 theorem BookProof.SirkFinitePrecision.ground_ge_of_no_eigenvalue_below {T : E →ₗ[ℂ] E} {lam0 θ r : ℝ}
     (hlam0 : HasRealEigenvalue T lam0)

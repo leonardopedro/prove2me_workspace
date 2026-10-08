@@ -7,11 +7,6 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmCyclicUnitary
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable (P : Pvm X H) (ψ : H)
-variable [CompleteSpace H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -21,6 +16,11 @@ open BookProof.ChapterPvmMeasure BookProof.ChapterMackeyQuasiInvariant
 
 attribute [local instance] Lp.simpleFunc.module Lp.simpleFunc.normedSpace
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+variable (P : Pvm X H) (ψ : H)
+variable [CompleteSpace H]
 
 theorem BookProof.ChapterPvmCyclicUnitary.proj_indicatorConstLp {E F : Set X} (hE : MeasurableSet E) (hF : MeasurableSet F) :
     proj (pvmMeasure P ψ) hE

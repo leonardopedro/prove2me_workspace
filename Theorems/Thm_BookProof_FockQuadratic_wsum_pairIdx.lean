@@ -10,10 +10,6 @@ import Definitions.Def_ChapterA3n
 open BookProof.ChapterA3n
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-variable {κ : Type*}
-
 
 open scoped ENNReal
 
@@ -23,5 +19,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
+variable {κ : Type*}
 
 theorem BookProof.FockQuadratic.wsum_pairIdx (ω : ι → ℝ) (m n : ι) : wsum ω (pairIdx m n) = ω m + ω n := by sorry

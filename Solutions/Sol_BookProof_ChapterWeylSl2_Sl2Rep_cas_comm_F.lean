@@ -1,7 +1,7 @@
 -- Generated from ChapterWeylSl2.lean — solution of BookProof.ChapterWeylSl2.Sl2Rep.cas_comm_F
 import Mathlib
 import Definitions.Def_ChapterWeylSl2
-import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_fh'
+import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_fh_prime
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
 
@@ -26,6 +26,6 @@ theorem solution : R.cas * R.F = R.F * R.cas := by
           + ((R.F * R.F - R.F * R.F) * R.E + R.F * (R.F * R.E - R.E * R.F)))
         + ((R.F * R.H - R.H * R.F) * R.H + R.H * (R.F * R.H - R.H * R.F)) := by
     simp only [cas]; noncomm_ring
-  rw [k1, k2, fh'] at key
+  rw [k1, k2, fh_prime] at key
   have h0 : R.F * R.cas - R.cas * R.F = 0 := by rw [key]; noncomm_ring
   exact (sub_eq_zero.mp h0).symm

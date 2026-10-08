@@ -6,12 +6,12 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 
+
+open scoped BigOperators Matrix Matrix.Norms.Operator
+
 variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
 variable (L : LagrangianNS n)
-
-
-open scoped BigOperators Matrix Matrix.Norms.Operator
 
 theorem BookProof.NavierStokesFlow.LagrangianNS.flowUnitary_group (s t : ℝ) :
     L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t := by sorry

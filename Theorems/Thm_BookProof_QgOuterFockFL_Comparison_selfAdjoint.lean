@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -28,6 +26,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOuterFockFL.Comparison.selfAdjoint (C : Comparison F) (w u : F)
     (hw : ∀ v : C.dom, (inner ℂ (C.op v) w : ℂ) = inner ℂ (v : F) u) :

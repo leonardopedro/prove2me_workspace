@@ -11,9 +11,6 @@ import Definitions.Def_ChapterStoneUnitary
 open BookProof.EsaClosure
 open BookProof.StoneBridge
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 open Filter Topology
 open scoped InnerProductSpace
@@ -22,6 +19,9 @@ open scoped InnerProductSpace
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.StoneBridge.exists_stone_flow_of_selfAdjointExtension {D Dom : Submodule ℂ F} {Hc : D →ₗ[ℂ] F}
     {A : Dom →ₗ[ℂ] F} (hdense : Dense ((D : Submodule ℂ F) : Set F))

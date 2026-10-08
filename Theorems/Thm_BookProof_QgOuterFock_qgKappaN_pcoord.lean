@@ -17,8 +17,6 @@ import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.qgKappaN_pcoord {n : ℕ} (p : Fin n) (i : Fin 84) :
     qgKappaN n (pcoord p i) = qgKappa i := by sorry

@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterRadialLaplacian
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterRadialLaplacian.diffAt_deriv_of_contDiffAt_two {G : ℝ → ℝ} {q : ℝ} (h : ContDiffAt ℝ 2 G q) :

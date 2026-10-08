@@ -16,8 +16,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadratic.oscTPoly_apply (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :

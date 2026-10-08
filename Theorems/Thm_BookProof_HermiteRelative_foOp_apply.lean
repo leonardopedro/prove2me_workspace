@@ -10,9 +10,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -23,9 +20,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
- (d := d)) →ₗ[ℂ] L2d d :=
-  (polyGaussCore (d := d)).subtype ∘ₗ coreOp (foPoly b b')
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
-theorem BookProof.HermiteRelative.foOp_apply (b b' : Fin d → ℝ) (u : polyGaussCore (d := d)) : := by sorry
+theorem BookProof.HermiteRelative.foOp_apply (b b' : Fin d → ℝ) (u : polyGaussCore (d := d)) :
+    foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) := by sorry

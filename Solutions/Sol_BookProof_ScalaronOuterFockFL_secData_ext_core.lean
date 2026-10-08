@@ -22,4 +22,7 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (p : secCore (ι := (secData W Q).ext_core p
+theorem solution (p : secCore (ι :=
+  ι)) :
+      (secData W Q).ext ⟨(p : Sec ι), (secData W Q).gc.le p.2⟩ = secHam W Q p :=
+    (secData W Q).ext_core p

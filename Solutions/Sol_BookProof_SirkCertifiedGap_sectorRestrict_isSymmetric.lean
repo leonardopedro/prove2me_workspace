@@ -23,3 +23,5 @@ theorem solution {T P : E →ₗ[ℂ] E} {s : ℝ}
 
   intro x y
   simpa [sectorRestrict, Submodule.coe_inner] using hT x.val y.val
+
+omit [FiniteDimensional ℂ E] in

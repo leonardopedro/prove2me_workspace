@@ -11,8 +11,6 @@ import Definitions.Def_ChapterHermiteLadderShift
 import Definitions.Def_ChapterHermiteLadderOrder
 open BookProof.HermiteLadder
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-
 
 
 open MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
 
 theorem BookProof.HermiteLadder.apply_sum_of_shift (v : ι → E) (σ : ι → ι) (s : ι → ℂ) {D : Submodule ℂ E}
     (hvD : ∀ a, v a ∈ D) (T : D →ₗ[ℂ] E)

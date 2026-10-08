@@ -17,8 +17,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadraticMatrix
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -32,6 +30,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticMatrix.foTPoly_apply_expand (a k : Vd d) (b b' : Fin d → ℝ) (f : MvPolynomial (Fin d) ℂ) :

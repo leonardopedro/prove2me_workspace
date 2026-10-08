@@ -7,13 +7,13 @@ open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.bornNumerC_ofReal (q k : EuclideanSpace ℝ (Fin n)) :

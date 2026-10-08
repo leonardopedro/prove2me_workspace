@@ -15,15 +15,15 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 open BookProof.NavierStokesFlow.SignFlip
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {ι : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.SignFlip.saffH_symmetricOn {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) :
     SymmetricOn (maxDom (oscSymbol (affMu κ |c|))) (saffH hκ c) := by sorry

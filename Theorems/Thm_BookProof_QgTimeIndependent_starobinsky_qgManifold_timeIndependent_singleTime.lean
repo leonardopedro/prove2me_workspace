@@ -12,9 +12,6 @@ open BookProof.FockSecondQuantization
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.QgTimeIndependent
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {ι : Type*}
-
 
 
 open Filter Topology
@@ -22,6 +19,9 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {ι : Type*}
 
 theorem BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime (M alpha : ℝ)
     (halpha : 0 < alpha) (Sp : VielbeinSpectrum ι) (g : ℝ) :

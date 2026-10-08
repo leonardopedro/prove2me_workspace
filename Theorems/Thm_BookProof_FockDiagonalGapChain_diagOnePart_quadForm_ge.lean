@@ -19,8 +19,6 @@ open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.FockDiagonalGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -33,6 +31,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerk
 open BookProof.HermiteCore BookProof.ScalaronFockGapChain
 open Module
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.FockDiagonalGapChain.diagOnePart_quadForm_ge (b : HilbertBasis ℕ ℂ F) (w : ℕ → ℝ) {m : ℝ}

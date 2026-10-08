@@ -6,9 +6,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAtomicDiagonalModel
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
-  (mu : Measure α) [IsFiniteMeasure mu]
-
 
 noncomputable section
 
@@ -16,6 +13,9 @@ open MeasureTheory
 
 
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
+  (mu : Measure α) [IsFiniteMeasure mu]
 
 
 theorem BookProof.ChapterAtomicDiagonalModel.multOp_atomVec {g : α → ℂ} (hg : MemLp g ⊤ mu) (a : atomSet mu) :

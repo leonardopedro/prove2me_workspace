@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_not_isPhysicalObservable_indicator
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isComprehensiveGaugeFixing
-import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing'
+import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing_prime
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_shift_movesEveryPointOfSpectrum
 open BookProof.ChapterGaugeComprehensiveFixing
 
@@ -22,4 +22,4 @@ theorem solution :
     ¬ IsPhysicalObservable (Multiplicative ℤ)
         (unitCell.indicator (fun _ => (1 : ℝ))) :=
   not_isPhysicalObservable_indicator unitCell_isComprehensiveGaugeFixing
-      unitCell_isCompleteGaugeFixing' shift_movesEveryPointOfSpectrum
+      unitCell_isCompleteGaugeFixing_prime shift_movesEveryPointOfSpectrum

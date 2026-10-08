@@ -6,12 +6,12 @@ import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open BookProof.ChapterA
 
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.Cx.complexify_cxConj_invariant (Y : Submodule ℝ W) :

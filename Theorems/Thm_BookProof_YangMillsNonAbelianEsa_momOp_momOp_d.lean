@@ -20,10 +20,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsNonAbelianEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -34,6 +30,10 @@ open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {D : Submodule ℂ F}
+variable {d : ℕ}
 
 theorem BookProof.YangMillsNonAbelianEsa.momOp_momOp_d (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momOp j (momOp j p) = -coreD j (coreD j p) := by sorry

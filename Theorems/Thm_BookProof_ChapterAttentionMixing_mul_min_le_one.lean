@@ -3,9 +3,8 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMixing
+import Definitions.Def_ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
-
-variable {m : ℕ}
 
 
 open scoped BigOperators
@@ -16,6 +15,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionMarkov
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMixing.mul_min_le_one {P : Fin m → Fin m → ℝ} {eps : ℝ} (hP : IsStochastic P)

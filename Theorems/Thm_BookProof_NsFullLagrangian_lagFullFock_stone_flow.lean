@@ -19,8 +19,6 @@ open BookProof.StoneBridge
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.lagFullFock_stone_flow (lam lam' mu gg : ℝ) :
     ∃ (T : UnboundedSelfAdjoint lagFockSpace) (U : ℝ → (lagFockSpace →L[ℂ] lagFockSpace)),

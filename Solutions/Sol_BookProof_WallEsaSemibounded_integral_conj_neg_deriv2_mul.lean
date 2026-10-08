@@ -20,7 +20,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℝ → ℂ)
     (h1 : ∀ x, HasDerivAt f (deriv f x) x)
-    (h2 : ∀ x, Ha :=
+    (h2 : ∀ x, HasDerivAt (deriv f) (deriv (deriv f) x) x) (x : ℝ) :
+    HasDerivAt (fun t : ℝ => (starRingEnd ℂ) (deriv f t) * f t)
+      ((starRingEnd ℂ) (deriv (deriv f) x) * f x + ((‖deriv f x‖ ^ 2 : ℝ) : ℂ)) x :=
   sDerivAt (deriv f) (deriv (deriv f) x) x) (x : ℝ) :
       HasDerivAt (fun t : ℝ => (starRingEnd ℂ) (deriv f t) * f t)
         ((starRingEnd ℂ) (deriv (deriv f) x) * f x + ((‖deriv f x‖ ^ 2 : ℝ) : ℂ)) x := by

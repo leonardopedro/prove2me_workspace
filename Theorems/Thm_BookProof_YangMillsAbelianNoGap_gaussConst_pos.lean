@@ -9,8 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial MeasureTheory
@@ -18,6 +16,8 @@ open BookProof.HermiteProductCore BookProof.GaussCoordCombo BookProof.SqueezedGa
 open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.YangMillsAbelianNoGap.gaussConst_pos : (0 : ℝ) < (Real.sqrt (2 * Real.pi)) ^ d := by sorry

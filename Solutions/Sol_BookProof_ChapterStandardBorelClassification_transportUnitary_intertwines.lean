@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
 import Theorems.Thm_BookProof_ChapterStandardBorelClassification_transportUnitary_apply
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.ChapterStandardBorelClassification
 
 

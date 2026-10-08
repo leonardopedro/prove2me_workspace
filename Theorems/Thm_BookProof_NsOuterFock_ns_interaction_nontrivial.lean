@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterNsOuterFockFarisLavine
 open BookProof.NsOuterFock
 
-variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
-
 
 
 open Finset MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.QgOuterFockInteractionFL
 open BookProof.SqSumOuterFamily
 
 noncomputable section
+
+variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
 
 theorem BookProof.NsOuterFock.ns_interaction_nontrivial {n : ℕ} (hn : 2 ≤ n) (hlam : lam ≠ 0) :
     ∃ (r : Fin n × NsLoc) (I : Fin (n * 18)),

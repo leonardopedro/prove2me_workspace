@@ -12,9 +12,6 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 
 open BookProof.FarisLavine
@@ -28,6 +25,9 @@ open BookProof.HermiteProductCore
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.ext_gcSeq (x : d.C.dom) (k : ℕ) :
     d.ext (d.gcSeq x k) = d.H₀ ⟨((d.gcSeq x k : d.C.dom) : F), d.gcSeq_mem x k⟩ := by sorry

@@ -9,15 +9,15 @@ open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {N : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {N : ℕ}
 
 theorem BookProof.SmBrstGhost.matterGen_comm_ghostCre (m : ℕ) (T : Fin 12 → Matrix (Fin m) (Fin m) ℂ) (a b : Fin 12) :
     matterGen m T a * ghostCre m b = ghostCre m b * matterGen m T a := by sorry

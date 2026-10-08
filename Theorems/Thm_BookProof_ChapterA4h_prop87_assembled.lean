@@ -10,13 +10,13 @@ open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.WeylCauchyRiemann
 open BookProof.ChapterA4h
 
-variable (R : Type*)
-
 
 open Matrix
 
 
 open BookProof.ChapterA4e BookProof.ChapterA4f BookProof.ChapterA5
+
+variable (R : Type*)
 
 theorem BookProof.ChapterA4h.prop87_assembled (Mk : MackeyImprimitivity R)
     (Wg : WignerClassification R Mk) (ρ : R) :

@@ -5,11 +5,11 @@ import Definitions.Def_ChapterMaschkeFiniteGroup
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.ChapterUnitaryCompleteReducibility
 
-variable {G : Type*} [Group G] {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V]
-
 
 
 open Submodule
+
+variable {G : Type*} [Group G] {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V]
 
 
 theorem BookProof.ChapterUnitaryCompleteReducibility.unitary_complete_reducibility [FiniteDimensional ℂ V]

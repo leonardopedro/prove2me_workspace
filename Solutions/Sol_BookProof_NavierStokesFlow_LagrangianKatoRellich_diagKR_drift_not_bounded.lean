@@ -20,14 +20,8 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-orem diagKR_constraint_zero : diagKR.constraintOp = 0 := diagOp_zero_symbol
-
-theorem solution (v : diagKR.D) :
-    ‖(diagKR.constraintOp v : L2N)‖ ≤ 0 * ‖(v : L2N)‖ := by
-  rw [diagKR_constraint_zero]
-  simp
-
-theorem diagKR_secondOrder_hasZeroDeficiencyOn :=
+theorem solution :
+    ¬ ∃ C : ℝ, ∀ f : diagKR.D, ‖diagKR.drift f‖ ≤ C * ‖f‖ :=
   :
       HasZeroDeficiencyOn diagKR.D (secondOrder diagKR) := by
     rw [diagKR_secondOrder]

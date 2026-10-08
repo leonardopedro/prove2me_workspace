@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterDisplacedThermalMulti
 open BookProof.ChapterDisplacedThermalMulti
 
-variable {n m : ℕ}
-
 
 noncomputable section
 
@@ -14,6 +12,8 @@ open scoped NNReal
 
 
 open BookProof.ChapterDisplacedThermalOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterDisplacedThermalMulti.norm_sq_eq_sum (a b : EuclideanSpace ℝ (Fin n)) :

@@ -4,9 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterCyclicDecomposition
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : H →L[ℂ] H) (hT : IsStarNormal T)
-
 
 noncomputable section
 
@@ -14,6 +11,9 @@ open MeasureTheory Complex
 
 
 open BookProof.ChapterSpectralMultiplication
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : H →L[ℂ] H) (hT : IsStarNormal T)
 
 
 theorem BookProof.ChapterCyclicDecomposition.self_mem_cyclicSubspace (xi : H) : xi ∈ cyclicSubspace T hT xi := by sorry

@@ -12,14 +12,14 @@ open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL
 open BookProof.FriedrichsCanonical
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.FriedrichsCanonical.friedrichsOp_resolvent (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) (u : F) :

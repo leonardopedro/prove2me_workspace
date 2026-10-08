@@ -13,9 +13,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -26,10 +23,10 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-nomial (Fin d) ℂ) := by
-  intro p q
-  simp [BookProof.YangMillsHermite.starP, gaussInt_zero]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HermiteRelative.polySym_sum {ι : Type*} (s : Finset ι)
     (T : ι → MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
-    (h : ∀ i ∈ s, BookPr := by sorry
+    (h : ∀ i ∈ s, BookProof.YangMillsHermite.PolySym (T i)) :
+    BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) := by sorry

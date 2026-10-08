@@ -1,6 +1,8 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — solution of BookProof.BddBelowFiberSumEsa.fiberSumHam_single
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_single
+import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
 open BookProof.BddBelowFiberSumEsa
 
 
@@ -8,6 +10,7 @@ open BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

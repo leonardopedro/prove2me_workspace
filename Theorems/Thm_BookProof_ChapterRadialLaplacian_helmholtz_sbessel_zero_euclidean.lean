@@ -5,12 +5,12 @@ import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBessel
 open BookProof.ChapterRadialLaplacian
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterRadialLaplacian.helmholtz_sbessel_zero_euclidean {p : ℝ} {x : EuclideanSpace ℝ (Fin 3)}

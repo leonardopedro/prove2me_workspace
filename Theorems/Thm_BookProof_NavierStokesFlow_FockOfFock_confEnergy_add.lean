@@ -10,14 +10,14 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
-variable {M : Type*} [DecidableEq M]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.confEnergy_add (ω₁ ω₂ : M → ℝ) (n : Conf M) :
     confEnergy (ω₁ + ω₂) n = confEnergy ω₁ n + confEnergy ω₂ n := by sorry

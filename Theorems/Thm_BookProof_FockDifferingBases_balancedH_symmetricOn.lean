@@ -13,14 +13,14 @@ open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockDifferingBases
 
-variable {ι κ : Type*} {ω : ι → ℝ}
-
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
+
+variable {ι κ : Type*} {ω : ι → ℝ}
 
 
 theorem BookProof.FockDifferingBases.balancedH_symmetricOn (hω : ∀ i, 0 ≤ ω i) (P Q : κ → Idx ι) (g : κ → ℂ)

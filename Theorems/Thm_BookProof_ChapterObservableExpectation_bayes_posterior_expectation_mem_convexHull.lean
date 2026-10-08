@@ -6,10 +6,6 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterObservableExpectation
 
-variable {m n : ℕ}
-variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-variable {Y : Type*}
-
 
 open scoped BigOperators
 
@@ -18,6 +14,10 @@ noncomputable section
 
 open BookProof.ChapterSoftmaxBorn
 
+variable {m n : ℕ}
+variable {E : Type*} [AddCommGroup E] [Module ℝ E]
+
+variable {Y : Type*}
 
 theorem BookProof.ChapterObservableExpectation.bayes_posterior_expectation_mem_convexHull
     (prior : Fin m → ℝ) (L : Fin m → Y → ℝ) (y : Y)

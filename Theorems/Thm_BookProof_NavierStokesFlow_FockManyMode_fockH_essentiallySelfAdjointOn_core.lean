@@ -11,8 +11,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
-variable {d : ℕ} {κ : Fin d → ℝ}
-
 
 open scoped ENNReal
 
@@ -20,6 +18,8 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 theorem BookProof.NavierStokesFlow.FockManyMode.fockH_essentiallySelfAdjointOn_core (hκ : ∀ i, 0 ≤ κ i) :

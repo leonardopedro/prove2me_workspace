@@ -13,8 +13,6 @@ import Definitions.Def_ChapterGradedFriedrichs
 import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,6 +21,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.coe_algEquivL2_symm (x : lpFiniteModes γ) :
     ((x : lpFiniteModes γ) : L2I γ) = toL2 (algEquivL2.symm x) := by sorry

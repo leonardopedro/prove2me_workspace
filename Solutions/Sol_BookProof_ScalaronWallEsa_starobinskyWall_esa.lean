@@ -18,10 +18,9 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-⟨wallHam_deficiencyTrivialAt V hV hVnn (by simp),
-    wallHam_deficiencyTrivialAt V hV hVnn (by simp)⟩
-
-theorem solution {M alpha : ℝ} (halpha : 0 < alpha :=
+theorem solution {M alpha : ℝ} (halpha : 0 < alpha) :
+    EssentiallySelfAdjointOn (ccDomain ℝ)
+      (wallHam (fun phi : ℝ => starobinskyV M alpha phi) (contDiff_starobinskyV M alpha)) :=
   ) :
       EssentiallySelfAdjointOn (ccDomain ℝ)
         (wallHam (fun phi : ℝ => st

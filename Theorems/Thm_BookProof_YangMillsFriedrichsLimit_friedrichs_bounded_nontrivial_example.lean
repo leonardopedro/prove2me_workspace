@@ -7,11 +7,11 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_nontrivial_example [CompleteSpace F] (D : Submodule ℂ F)
     (hdense : Dense (D : Set F)) :

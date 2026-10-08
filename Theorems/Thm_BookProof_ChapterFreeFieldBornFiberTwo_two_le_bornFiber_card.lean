@@ -8,14 +8,14 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberTwo
 open BookProof.ChapterFreeFieldBornFiberTwo
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
 open BookProof.ChapterFreeFieldBornCont BookProof.ChapterFreeFieldBornQuotient
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornFiberTwo.two_le_bornFiber_card {p : ↥(stdSimplex ℝ (Fin n))} :

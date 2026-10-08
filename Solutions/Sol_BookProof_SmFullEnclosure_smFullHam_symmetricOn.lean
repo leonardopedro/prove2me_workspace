@@ -1,6 +1,8 @@
 -- Generated from ChapterSmFullEnclosure.lean — solution of BookProof.SmFullEnclosure.smFullHam_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
+import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_symmetricOn
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 import Theorems.Thm_BookProof_TensorSumEsa_symmetricOn_cpairOp
 open BookProof.SmFullEnclosure
 

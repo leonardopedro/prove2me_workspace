@@ -1,3 +1,11 @@
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+
+import Theorems.Thm_BookProof_GraphCore_mem_pushDom
+
+import Theorems.Thm_BookProof_TensorCore_norm_tmul_sub_le
+
 import Definitions.Def_ChapterEsaPairDGamma
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
@@ -53,6 +61,26 @@ open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
   BookProof.SecondQuantizationCore BookProof.DirectSumEsa BookProof.EsaPair
 
 noncomputable section
+
+/-! ## The elementary-tensor equations of `inclPow` / `derPow`
+
+The platform's published `Def_ChapterTensorGraphCore` carries the definitions but not these
+three `rfl` equations (they exist only in the source `ChapterTensorGraphCore.lean`).  Every
+consumer therefore states them itself; the local declaration also shadows nothing, because no
+imported bundle provides the name. -/
+
+@[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
+    (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
+
+@[simp] theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
+    derPow Hs D₂ A 0 x = 0 := rfl
+
+@[simp] theorem derPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
+      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
 
 /-! ## The eigenvector criterion for essential self-adjointness -/
 
@@ -362,7 +390,20 @@ theorem essentiallySelfAdjointOn_fockSectorDom_diagonal
 
 /-! ## The main theorem -/
 
-
+/-- **Second quantization over a core, for an unbounded hermitian one-particle operator with
+pure point spectrum.**  `A` is symmetric on `D₂`, has a total family of eigenvectors with real
+eigenvalues (no bound on them: `A` may be unbounded above and below), and `D ≤ D₂` is a
+graph-norm core.  Then `dΓ(A)` is essentially self-adjoint on the finite-particle domain
+`𝓕_fin(D)` built from `D` alone. -/
+theorem dGamma_diagonal_essentiallySelfAdjointOn_fockCore
+    (heig : ∀ i, A (e i) = (lam i : ℂ) • (e i : Hs.carrier))
+    (hdense : Dense (Submodule.span ℂ (Set.range fun i => (e i : Hs.carrier)) :
+      Set Hs.carrier))
+    (D : Submodule ℂ Hs.carrier) (hcore : IsGraphCore D A) :
+    EssentiallySelfAdjointOn (dsCore (fun n : ℕ => fockSectorCore Hs D₂ D n))
+      (dGammaCoreOp Hs D₂ A D) :=
+  dGamma_essentiallySelfAdjointOn_fockCore Hs D₂ A D hcore
+    (essentiallySelfAdjointOn_fockSectorDom_diagonal Hs D₂ A e lam heig hdense)
 
 /-- The packaged form: an `ESAPair` whose sectorwise input is **proved**, for an unbounded
 hermitian one-particle operator with a total family of eigenvectors. -/
@@ -396,33 +437,81 @@ def diagDomain (E : ι → Hs.carrier) : Submodule ℂ Hs.carrier := Submodule.s
 /-- The basis of `diagDomain` given by the orthonormal family. -/
 def diagBasis : Module.Basis ι ℂ (diagDomain E) := Module.Basis.span hE.linearIndependent
 
-
+theorem diagBasis_apply (i : ι) : (diagBasis hE i : Hs.carrier) = E i :=
+  Module.Basis.coe_span_apply hE.linearIndependent i
 
 /-- **Multiplication by an arbitrary real family along an orthonormal family**: the diagonal
 one-particle operator, on the algebraic span of the family. -/
 def diagOp (lam : ι → ℝ) : diagDomain E →ₗ[ℂ] Hs.carrier :=
   (diagBasis hE).constr ℂ fun i => (lam i : ℂ) • E i
 
-
+theorem diagOp_apply_basis (lam : ι → ℝ) (i : ι) :
+    diagOp hE lam (diagBasis hE i) = (lam i : ℂ) • E i := by
+  rw [diagOp, Module.Basis.constr_basis]
 
 /-- The eigenvectors of the diagonal operator, as elements of its domain. -/
 def diagVec (i : ι) : diagDomain E := diagBasis hE i
 
+theorem diagOp_eig (lam : ι → ℝ) (i : ι) :
+    diagOp hE lam (diagVec hE i) = (lam i : ℂ) • ((diagVec hE i : Hs.carrier)) := by
+  rw [diagVec, diagOp_apply_basis, diagBasis_apply]
+
+theorem diagVec_coe (i : ι) : ((diagVec hE i : Hs.carrier)) = E i := diagBasis_apply hE i
+
+theorem range_diagVec :
+    (Set.range fun i => ((diagVec hE i : Hs.carrier))) = Set.range E := by
+  have hfun : (fun i => ((diagVec hE i : Hs.carrier))) = E := funext fun i => diagVec_coe hE i
+  rw [hfun]
+
+/-- The diagonal operator is **hermitian** on its domain: the eigenvalues are real and the
+eigenvectors are orthogonal. -/
+theorem symmetricOn_diagOp (lam : ι → ℝ) : SymmetricOn (diagDomain E) (diagOp hE lam) := by
+  classical
+  intro x y
+  have hx := (diagBasis hE).linearCombination_repr x
+  have hy := (diagBasis hE).linearCombination_repr y
+  rw [← hx, ← hy]
+  simp only [Finsupp.linearCombination_apply, Finsupp.sum, map_sum, map_smul,
+    inner_sum, sum_inner, inner_smul_left, inner_smul_right, Submodule.coe_sum,
+    Submodule.coe_smul, diagOp_apply_basis, diagBasis_apply, Finset.mul_sum,
+    Complex.conj_ofReal]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  refine Finset.sum_congr rfl fun j _ => ?_
+  rcases eq_or_ne j i with rfl | hji
+  · ring
+  · rw [hE.2 hji]; ring
+
+/-- The diagonal operator is **essentially self-adjoint** on the algebraic span of the family,
+by the eigenvector criterion — for any real eigenvalues, bounded or not. -/
+theorem essentiallySelfAdjointOn_diagOp (lam : ι → ℝ)
+    (hdense : Dense (Submodule.span ℂ (Set.range E) : Set Hs.carrier)) :
+    EssentiallySelfAdjointOn (diagDomain E) (diagOp hE lam) :=
+  essentiallySelfAdjointOn_of_dense_eigenvectors _ (diagVec hE) lam (diagOp_eig hE lam)
+    (by rw [range_diagVec hE]; exact hdense)
+
+/-- **The diagonal operator is genuinely unbounded** whenever the eigenvalues are: there is no
+constant `C` with `‖A x‖ ≤ C ‖x‖`. -/
+theorem not_bounded_diagOp (lam : ι → ℝ) (hlam : ∀ C : ℝ, ∃ i, C < |lam i|) :
+    ¬ ∃ C : ℝ, ∀ x : diagDomain E, ‖diagOp hE lam x‖ ≤ C * ‖(x : Hs.carrier)‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨i, hi⟩ := hlam C
+  have hnorm : ‖E i‖ = 1 := hE.1 i
+  have h1 : ‖diagOp hE lam (diagVec hE i)‖ = |lam i| := by
+    rw [diagOp_eig, norm_smul, diagVec_coe, hnorm, mul_one, Complex.norm_real, Real.norm_eq_abs]
+  have h2 := hC (diagVec hE i)
+  rw [h1, diagVec_coe, hnorm, mul_one] at h2
+  linarith
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/-- The domain itself is a core, so the theorem applies with no side condition at all. -/
+theorem dGamma_diag_essentiallySelfAdjointOn_fockCore_self (lam : ι → ℝ)
+    (hdense : Dense (Submodule.span ℂ (Set.range E) : Set Hs.carrier)) :
+    EssentiallySelfAdjointOn
+      (dsCore (fun n : ℕ => fockSectorCore Hs (diagDomain E) (diagDomain E) n))
+      (dGammaCoreOp Hs (diagDomain E) (diagOp hE lam) (diagDomain E)) :=
+  dGamma_diag_essentiallySelfAdjointOn_fockCore hE lam hdense (diagDomain E)
+    (IsGraphCore.refl _)
 
 end Diagonal
 

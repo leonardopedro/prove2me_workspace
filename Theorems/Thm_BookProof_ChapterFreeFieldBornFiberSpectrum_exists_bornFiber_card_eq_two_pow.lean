@@ -10,8 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberSpectrum
 open BookProof.ChapterFreeFieldBornFiberSpectrum
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSurj
@@ -20,6 +18,8 @@ open BookProof.ChapterFreeFieldBornFiberCardGeneral
 open BookProof.ChapterFreeFieldBornFiberTwo
 open BookProof.ChapterFreeFieldBornFiberBounds
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornFiberSpectrum.exists_bornFiber_card_eq_two_pow {k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :

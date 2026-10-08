@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Theorems.Thm_BookProof_FarisLavine_norm_sub_smul_sq
+open BookProof.KatoRellich
 
 
 

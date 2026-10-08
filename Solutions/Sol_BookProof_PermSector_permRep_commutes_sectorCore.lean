@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_PermSector_restrictOp_sectorOp_permOp
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 open BookProof.PermSector
 
 

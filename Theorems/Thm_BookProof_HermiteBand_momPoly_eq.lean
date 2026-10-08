@@ -8,13 +8,13 @@ open BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteBand
 
-variable {d : ℕ}
-
 
 
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBand.momPoly_eq (i : Fin d) :

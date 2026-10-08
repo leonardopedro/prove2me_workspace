@@ -8,9 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-variable (S : Finset (Fin d))
-
 
 
 open MeasureTheory
@@ -19,6 +16,9 @@ open BookProof.ConvolutionCalc
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (S : Finset (Fin d))
 
 theorem BookProof.DegEnergy.contDiff_cx {χ : Vd d → ℝ} (hχ : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) χ) :
     ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (cx χ) := by sorry

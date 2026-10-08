@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
 open BookProof.ChapterScaledDotProduct
 
-variable {d : ℕ}
-
 
 open scoped BigOperators
 
@@ -13,6 +11,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterScaledDotProduct.sum_sgn_mul_self (i : Fin d) :

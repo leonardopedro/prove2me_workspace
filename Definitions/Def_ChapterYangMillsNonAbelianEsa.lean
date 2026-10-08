@@ -64,9 +64,40 @@ section Abstract
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {D : Submodule ℂ F}
 
+/-- For a symmetric operator on a Hilbert space, essential self-adjointness (trivial
+deficiency at `± i`) gives trivial deficiency at **every** non-real point. -/
+theorem deficiencyTrivialAt_of_esa (K : D →ₗ[ℂ] F) (hK : SymmetricOn D K)
+    (hesa : EssentiallySelfAdjointOn D K) {σ : ℂ} (hσ : σ.im ≠ 0) :
+    DeficiencyTrivialAt D K σ := by
+  have hI : ((1 : ℝ) : ℂ) * Complex.I = Complex.I := by simp
+  have hdense : Dense (Set.range fun x : D => K x - (((1 : ℝ) : ℂ) * Complex.I) • (x : F)) := by
+    rw [hI]
+    refine dense_range_of_deficiencyTrivialAt K Complex.I ?_
+    rw [Complex.conj_I]
+    exact hesa.2
+  refine deficiencyTrivialAt_of_dense_range K hK 1 one_ne_zero σ hσ hdense ?_
+  rw [hI]
+  exact hesa.1
 
-
-
+/-- **A positive affine image of an essentially self-adjoint operator is essentially
+self-adjoint**: `a • K + b` for real `a > 0` and real `b`. -/
+theorem essentiallySelfAdjointOn_affine (K : D →ₗ[ℂ] F) (hK : SymmetricOn D K)
+    (hesa : EssentiallySelfAdjointOn D K) {a : ℝ} (ha : 0 < a) (b : ℝ) :
+    EssentiallySelfAdjointOn D ((a : ℂ) • K + (b : ℂ) • D.subtype) := by
+  have key : ∀ z : ℂ, z.im ≠ 0 → DeficiencyTrivialAt D ((a : ℂ) • K + (b : ℂ) • D.subtype) z := by
+    intro z hz w hw
+    have hσ : ((z - b) / a).im ≠ 0 := by
+      rw [Complex.div_ofReal_im, Complex.sub_im, Complex.ofReal_im, sub_zero]
+      exact div_ne_zero hz ha.ne'
+    refine deficiencyTrivialAt_of_esa K hK hesa hσ w fun v => ?_
+    have hv := hw v
+    rw [LinearMap.add_apply, LinearMap.smul_apply, LinearMap.smul_apply, inner_add_left,
+      inner_smul_left, inner_smul_left, Complex.conj_ofReal, Complex.conj_ofReal,
+      Submodule.subtype_apply] at hv
+    have ha' : (a : ℂ) ≠ 0 := Complex.ofReal_ne_zero.2 ha.ne'
+    field_simp
+    linear_combination hv
+  exact ⟨key _ (by simp), key _ (by simp)⟩
 
 end Abstract
 
@@ -76,11 +107,18 @@ section Transport
 
 variable {d : ℕ}
 
+theorem equiv_pgLp_d (p : MvPolynomial (Fin d) ℂ) :
+    (coreRepPoly d).equiv p = ⟨pgLp p, pgLp_mem_core p⟩ :=
+  Subtype.ext ((coreRepPoly d).coe_equiv p)
 
+theorem equiv_symm_pgLp_d (p : MvPolynomial (Fin d) ℂ) :
+    (coreRepPoly d).equiv.symm ⟨pgLp p, pgLp_mem_core p⟩ = p := by
+  rw [← equiv_pgLp_d p, LinearEquiv.symm_apply_apply]
 
-
-
-
+theorem op_pgLp_d (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (p : MvPolynomial (Fin d) ℂ) :
+    (coreRepPoly d).op T ⟨pgLp p, pgLp_mem_core p⟩ = ⟨pgLp (T p), pgLp_mem_core _⟩ := by
+  refine Subtype.ext ?_
+  rw [CoreRep.coe_op, equiv_symm_pgLp_d]
 
 
 

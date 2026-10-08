@@ -6,13 +6,13 @@ import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterReconstruct
 open BookProof.SymmetryEntropy
 
-variable {n : ℕ}
-
 
 
 open Finset
 open BookProof.ChapterMarkovEntropy (entropy)
 open BookProof.ChapterReconstruct (IsDeterministicCol)
+
+variable {n : ℕ}
 
 
 theorem BookProof.SymmetryEntropy.exists_eq_one_of_isDeterministicCol {U : Fin n → Fin n → ℂ} {a : Fin n}

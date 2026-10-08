@@ -6,14 +6,14 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignHom
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSignGauge
 open BookProof.ChapterFreeFieldBornSignAction
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignHom.flipVec_prod (b : Fin n → Bool) :

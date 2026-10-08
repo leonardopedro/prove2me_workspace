@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsBianchi
 open BookProof.YangMillsBianchi
 
-variable {R : Type*} [Ring R]
-
 
 open BigOperators
 
 
+
+variable {R : Type*} [Ring R]
 
 
 theorem BookProof.YangMillsBianchi.fieldStrength_antisymm (D : Fin 3 → R) (j k : Fin 3) :

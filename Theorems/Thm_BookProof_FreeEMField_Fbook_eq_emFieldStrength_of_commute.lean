@@ -5,14 +5,14 @@ import Definitions.Def_ChapterYangMillsFieldStrength
 open BookProof.YangMillsFieldStrength
 open BookProof.FreeEMField
 
-variable {R : Type*} [Ring R]
-variable {R : Type*} [Ring R] [Algebra ℂ R]
-
 
 
 open BookProof.YangMillsFieldStrength
 
 
+variable {R : Type*} [Ring R]
+
+variable {R : Type*} [Ring R] [Algebra ℂ R]
 
 theorem BookProof.FreeEMField.Fbook_eq_emFieldStrength_of_commute
     (δ : Fin 3 → R → R) (g : ℝ) (A : Fin 3 → R)

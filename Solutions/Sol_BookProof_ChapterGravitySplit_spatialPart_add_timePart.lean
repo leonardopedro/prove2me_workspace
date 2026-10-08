@@ -1,6 +1,7 @@
 -- Generated from ChapterGravitySplit.lean — solution of BookProof.ChapterGravitySplit.spatialPart_add_timePart
 import Mathlib
 import Definitions.Def_ChapterGravitySplit
+import Theorems.Thm_BookProof_ChapterGravityTimeProj_spatialProj_add_timeProj
 open BookProof.ChapterGravitySplit
 
 

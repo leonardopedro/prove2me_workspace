@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteProductBasis
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteProductBasis.hermiteMvNorm_sub_single {i : Fin d} {a : Fin d →₀ ℕ} (h : 1 ≤ a i) :

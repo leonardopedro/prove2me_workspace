@@ -24,9 +24,6 @@ variable (U H g E N Ni : 𝒜) (m : ℝ)
   (hNA : N * Aop U H g = Aop U H g * N)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 2000000 in
--- the proof below is a large finite computation; the default heartbeat budget
--- is not enough to elaborate it
 theorem solution :
     star (Uprime U H g E Ni) * Uprime U H g E Ni = 1 := by
 

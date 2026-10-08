@@ -7,16 +7,15 @@ import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.FourierMultiplierEsa
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
-omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+
 theorem BookProof.MixedLinearEsa.mixedLinearOp_apply (b m : V) (f : 𝓢(V, ℂ)) (x : V) :
     (mixedLinearOp b m f) x
       = ((inner ℝ x b : ℝ) : ℂ) * f x + (-Complex.I) * (fderiv ℝ f x m) := by sorry

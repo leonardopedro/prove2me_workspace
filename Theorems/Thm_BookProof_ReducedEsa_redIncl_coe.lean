@@ -7,8 +7,6 @@ import Definitions.Def_ChapterA4
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
 variable {D : Submodule ℂ F}
 variable (P D) in
 

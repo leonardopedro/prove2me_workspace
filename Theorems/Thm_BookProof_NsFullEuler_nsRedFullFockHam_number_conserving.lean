@@ -14,8 +14,6 @@ import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.HermiteProductCore
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
 
 noncomputable section
+
+variable {n : ℕ}
 
 
 theorem BookProof.NsFullEuler.nsRedFullFockHam_number_conserving (nu : ℝ) (k : Fin 3 → ℝ) (x : nsRedFockCore)

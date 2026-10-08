@@ -14,10 +14,13 @@ Usage:
   python3 debug/build_candidate_mirror.py --targets targets.txt [--jobs N]
 """
 import argparse
+import hashlib
+import json
 import os
 import re
 import subprocess
 import sys
+import time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ = os.environ.get("TIMEPIECE_PROJ", os.path.join(WS, "..", "timepiece331"))
@@ -108,7 +111,7 @@ def main():
             if not os.path.exists(full):
                 res[m] = "NOSRC"
                 continue
-            r = subprocess.run([lean, "-o", f"{kind}/{m}.olean", p], cwd=MIRROR,
+            r = subprocess.run([lean, "-DautoImplicit=false", "-o", f"{kind}/{m}.olean", p], cwd=MIRROR,
                                env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
                                capture_output=True, text=True, timeout=1200)
             out = r.stdout + r.stderr
@@ -153,7 +156,7 @@ def main():
         if not os.path.exists(p):
             (dres if kind == "D" else thm_res)[m] = "NOSRC"
             continue
-        r = subprocess.run([lean, "-o", f"{src}/{m}.olean", f"{src}/{m}.lean"],
+        r = subprocess.run([lean, "-DautoImplicit=false", "-o", f"{src}/{m}.olean", f"{src}/{m}.lean"],
                            cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
                            capture_output=True, text=True, timeout=1800)
         out = r.stdout + r.stderr
@@ -190,6 +193,35 @@ def main():
     open("/tmp/cand_ok.txt", "w").write("\n".join(ok) + "\n")
     if a.thm_out:
         open(a.thm_out, "w").write("\n".join(okth) + "\n")
+
+    # Durable per-bundle gate for upload_pipeline.def_gate_fresh: the pipeline
+    # cannot compile a def bundle itself (local_compile degrades to a skip when
+    # its imports are not built in this checkout), so without this file a
+    # `--kind def` chunk submits compile-FAIL bundles straight into the
+    # 5-attempt budget.  stamp = sha1 of the WS bundle, the same fingerprint
+    # upload_pipeline.file_stamp computes, so an edit after the build invalidates
+    # the gate.  Merge, don't replace: a later build with fewer targets must not
+    # erase verdicts for chapters it never covered.
+    gate_path = os.path.join(WS, "state", "def_gate.json")
+    try:
+        gate = json.load(open(gate_path))
+        if not isinstance(gate, dict):
+            gate = {}
+    except (OSError, ValueError):
+        gate = {}
+    for t in targets:
+        p = f"{WS}/Definitions/Def_{t}.lean"
+        try:
+            stamp = hashlib.sha1(open(p, "rb").read()).hexdigest()[:16]
+        except OSError:
+            stamp = None
+        gate[t] = {"status": dres.get("Def_" + t, "NOSRC"), "stamp": stamp}
+    gate["_meta"] = {"generated": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                     "run_targets": len(targets)}
+    json.dump(gate, open(gate_path, "w"), indent=1)
+    okb = sum(1 for t in targets
+              if (gate.get(t) or {}).get("status") == "OK")
+    print(f"def gate written: {gate_path} ({okb}/{len(targets)} targets OK)")
 
 
 if __name__ == "__main__":

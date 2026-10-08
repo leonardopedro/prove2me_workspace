@@ -8,8 +8,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.SirkCertifiedGap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
-
 
 noncomputable section
 
@@ -18,9 +16,7 @@ open scoped InnerProductSpace
 open Finset Filter Topology
 open BookProof.SirkFinitePrecision
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
-gap := 1.9875
-  width := 0.0555
-  width_nonneg := by norm_num
 
-/-- The certified lower bound of the `g = 2`, `m = 4` c := by sorry
+theorem BookProof.SirkCertifiedGap.qcdG2M4_lower : 0 < qcdG2M4.lower := by sorry

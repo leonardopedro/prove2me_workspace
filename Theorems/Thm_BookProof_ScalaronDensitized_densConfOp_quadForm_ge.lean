@@ -14,9 +14,6 @@ import Definitions.Def_ChapterQuantumGravityHalfDensity
 open BookProof.QuantumGravityHalfDensity
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-variable {X : Type*} [MeasurableSpace X]
-
 
 
 open MeasureTheory Set Filter Topology
@@ -27,6 +24,9 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
+variable {X : Type*} [MeasurableSpace X]
 
 theorem BookProof.ScalaronDensitized.densConfOp_quadForm_ge (halpha : 0 < alpha) (f : densConfCore M alpha) :
     -(M ^ 4 / (16 * alpha)) * ‖(f : Lp ℂ 2 qgSrcMeasure)‖ ^ 2

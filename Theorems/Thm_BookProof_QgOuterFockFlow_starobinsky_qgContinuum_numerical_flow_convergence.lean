@@ -21,8 +21,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 open BookProof.QgOuterFockFlow
 
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -33,6 +31,8 @@ open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgOuterFockFlow.starobinsky_qgContinuum_numerical_flow_convergence (M alpha : ℝ) (halpha : 0 < alpha)
     (g : ℝ) :

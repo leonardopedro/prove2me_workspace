@@ -13,16 +13,16 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {ι : Type*}
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {ι : Type*}
+variable {J : Type*}
 
 theorem BookProof.NavierStokesFlow.SignFlip.sblockH_symmetricOn (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
     SymmetricOn (lpFiniteModes (ℕ × J)) (sblockH κ c hκ) := by sorry

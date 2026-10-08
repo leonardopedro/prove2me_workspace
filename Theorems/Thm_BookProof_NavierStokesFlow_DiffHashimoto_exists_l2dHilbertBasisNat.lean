@@ -15,8 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open Filter Topology
 
@@ -30,6 +28,8 @@ open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 theorem BookProof.NavierStokesFlow.DiffHashimoto.exists_l2dHilbertBasisNat (e : ℕ ≃ (Fin 3 →₀ ℕ)) :

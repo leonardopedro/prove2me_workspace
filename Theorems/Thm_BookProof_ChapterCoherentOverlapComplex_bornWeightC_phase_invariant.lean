@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.bornWeightC_phase_invariant (q : EuclideanSpace ℂ (Fin n))

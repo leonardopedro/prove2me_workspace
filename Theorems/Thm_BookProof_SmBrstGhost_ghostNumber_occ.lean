@@ -9,13 +9,13 @@ open BookProof.NavierStokes
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
 
 theorem BookProof.SmBrstGhost.ghostNumber_occ (m : ℕ) (S : Finset (Fin (m + 12))) :
     ghostNumber m (occ S)

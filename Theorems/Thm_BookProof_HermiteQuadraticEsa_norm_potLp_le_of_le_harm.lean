@@ -18,8 +18,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.norm_potLp_le_of_le_harm {V : Vd d → ℝ} (hVc : Continuous V) (hVb : ExpBounded V)

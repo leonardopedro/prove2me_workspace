@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeEMField
 open BookProof.FreeEMField
 
-variable {R : Type*} [Ring R]
-
 
 
 open BookProof.YangMillsFieldStrength
 
+
+variable {R : Type*} [Ring R]
 
 
 theorem BookProof.FreeEMField.emFieldStrength_gauge_invariant

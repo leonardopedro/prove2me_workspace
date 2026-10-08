@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNumericalRangeCrouzeix
 open BookProof.ChapterNumericalRangeCrouzeix
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 theorem BookProof.ChapterNumericalRangeCrouzeix.inner_sub_const_smul (A : E →L[ℂ] E) (c : ℂ) (x : E) :

@@ -10,8 +10,6 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-narith [hlhs2, hT2le, hQle, hfinal4]⟩
-
 theorem solution
     (V : ℝ → ℝ) (hV : Continuous V) (z : ℂ)
     (u u' u'' : ℝ → ℂ)
@@ -22,7 +20,7 @@ theorem solution
     (hL2 : Integrable fun x => ‖u x‖ ^ 2)
     {C : ℝ} (hC : ∀ y, |deriv chi y| ≤ C)
     {R : ℝ} (hR : 0 < R) :
-    ∫ x in Set.Icc (-R) R, ‖u x‖ ^ 2 ≤ :=
+    ∫ x in Set.Icc (-R) R, ‖u x‖ ^ 2 ≤ 2 * C ^ 2 / R ^ 2 * ∫ x, ‖u x‖ ^ 2 :=
   2 * C ^ 2 / R ^ 2 * ∫ x, ‖u x‖ ^ 2 := by
     have hud : Differentiable ℝ u := fun x => (h1 x).differentiableAt
     have hucont : Continuous u := hud.continuous

@@ -214,6 +214,30 @@ def mirror_theorems():
                     if os.path.exists(stale):
                         os.remove(stale)
             names.append(mod)
+    # A published def bundle can import a Theorems module that no solution
+    # imports and that the skeleton cache has never recorded -- the FreeFieldBorn
+    # family and NavierStokesFlow_FockOfFock are in that position today. With
+    # Solutions/cache staging only, the mirror fails the *bundle* on
+    # `object file ... does not exist`, which reads as a broken bundle rather
+    # than an unstaged import. Take these from the local stub: what a
+    # Definitions-layer import needs is the name, and the local stub declares it.
+    for f in sorted(os.listdir(os.path.join(MIRROR, "Definitions"))):
+        if not (f.startswith("Def_") and f.endswith(".lean")):
+            continue
+        txt = open(os.path.join(MIRROR, "Definitions", f), errors="ignore").read()
+        for mod in re.findall(r"^import Theorems\.(Thm_\S+)", txt, re.M):
+            src = os.path.join(local, f"{mod}.lean")
+            dst = os.path.join(d, f"{mod}.lean")
+            if mod in seen or not os.path.exists(src):
+                continue
+            seen.add(mod)
+            if not (os.path.exists(dst)
+                    and os.path.getmtime(dst) >= os.path.getmtime(src)):
+                shutil.copy2(src, dst)
+                for stale in (dst[:-5] + ".olean", dst[:-5] + ".ilean"):
+                    if os.path.exists(stale):
+                        os.remove(stale)
+            names.append(mod)
     if not os.path.isdir(cached):
         return names, 0
     for f in sorted(os.listdir(cached)):

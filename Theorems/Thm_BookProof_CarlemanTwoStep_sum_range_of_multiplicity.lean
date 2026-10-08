@@ -4,10 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanTwoStep
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset
@@ -15,6 +11,10 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.CarlemanTwoStep.sum_range_of_multiplicity {B : ℝ} (m : ℕ)
     (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ F, ‖u a‖ ^ 2 ≤ B)

@@ -53,24 +53,64 @@ variable {n : ℕ}
 
 variable {ι : Type*}
 
+theorem norm_coeff_X_le (a : ι) (m : ι →₀ ℕ) : ‖coeff m (X a : MvPolynomial ι ℂ)‖ ≤ 1 := by
+  classical
+  rw [coeff_X']
+  split <;> simp
 
+theorem norm_coeff_C_mul_X_le (c : ℂ) (a : ι) (m : ι →₀ ℕ) :
+    ‖coeff m (C c * X a : MvPolynomial ι ℂ)‖ ≤ ‖c‖ := by
+  classical
+  rw [coeff_C_mul, norm_mul, coeff_X']
+  split <;> simp
 
-
-
-
+theorem norm_coeff_C_mul_X_mul_X_le (c : ℂ) (a b : ι) (m : ι →₀ ℕ) :
+    ‖coeff m (C c * (X a * X b) : MvPolynomial ι ℂ)‖ ≤ ‖c‖ := by
+  classical
+  have hx : (X a * X b : MvPolynomial ι ℂ)
+      = monomial (Finsupp.single a 1 + Finsupp.single b 1) 1 := by
+    rw [X, X, monomial_mul, one_mul]
+  rw [hx, coeff_C_mul, norm_mul, coeff_monomial]
+  split <;> simp
 
 /-! ## 2. The cutoff bound -/
 
 /-- The uniform bound on the coefficients of the reduced forms under the cutoff `|k_j| ≤ Λ`. -/
 def cutoffBound (nu Λ : ℝ) : ℝ := 1 + 3 * Λ + 3 * |nu| * Λ ^ 2
 
+theorem cutoffBound_nonneg (nu : ℝ) {Λ : ℝ} (hΛ : 0 ≤ Λ) : 0 ≤ cutoffBound nu Λ := by
+  unfold cutoffBound
+  positivity
 
-
-
+/-- Under the cutoff the viscous coefficient `ν |k|²` is bounded by `3 |ν| Λ²`. -/
+theorem abs_visc_coeff_le {nu Λ : ℝ} {k : Fin 3 → ℝ} (hΛ : 0 ≤ Λ) (hk : ∀ j, |k j| ≤ Λ) :
+    |nu * ∑ j : Fin 3, (k j) ^ 2| ≤ 3 * |nu| * Λ ^ 2 := by
+  have hsum : ∑ j : Fin 3, (k j) ^ 2 ≤ 3 * Λ ^ 2 := by
+    have hbound : ∀ j : Fin 3, (k j) ^ 2 ≤ Λ ^ 2 := by
+      intro j
+      have := hk j
+      nlinarith [abs_nonneg (k j), sq_abs (k j)]
+    calc ∑ j : Fin 3, (k j) ^ 2 ≤ ∑ _j : Fin 3, Λ ^ 2 := Finset.sum_le_sum fun j _ => hbound j
+      _ = 3 * Λ ^ 2 := by simp [Finset.sum_const]
+  have hnonneg : 0 ≤ ∑ j : Fin 3, (k j) ^ 2 := Finset.sum_nonneg fun j _ => sq_nonneg _
+  rw [abs_mul, abs_of_nonneg hnonneg]
+  calc |nu| * ∑ j : Fin 3, (k j) ^ 2 ≤ |nu| * (3 * Λ ^ 2) := by
+        exact mul_le_mul_of_nonneg_left hsum (abs_nonneg nu)
+    _ = 3 * |nu| * Λ ^ 2 := by ring
 
 /-! ## 3. The coefficient bounds of the reduced forms -/
 
-
+/-- The real residual form has coefficients bounded by `1 + 3|ν|Λ²`. -/
+theorem norm_coeff_redVisc_le (nu : ℝ) {Λ : ℝ} {k : Fin 3 → ℝ} (hΛ : 0 ≤ Λ)
+    (hk : ∀ j, |k j| ≤ Λ) (p : Fin n) (i : Fin 3) (m : Fin (n * 6) →₀ ℕ) :
+    ‖coeff m (redVisc nu k n p i)‖ ≤ 1 + 3 * |nu| * Λ ^ 2 := by
+  rw [redVisc, coeff_add]
+  refine (norm_add_le _ _).trans ?_
+  gcongr
+  · exact norm_coeff_X_le _ _
+  · refine (norm_coeff_C_mul_X_le _ _ _).trans ?_
+    rw [Complex.norm_real, Real.norm_eq_abs]
+    exact abs_visc_coeff_le hΛ hk
 
 
 

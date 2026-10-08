@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 open BookProof.UnboundedSpectralModel
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -20,6 +18,8 @@ open scoped InnerProductSpace
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterSpectralDirectSum
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.UnboundedSpectralModel.cayley_real_multiplier {w : ℂ} (h : ‖w‖ ^ 2 = w.im) (hw : w ≠ 0) :

@@ -15,10 +15,6 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HashimotoShiftInvert
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -29,6 +25,10 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.norm_le_norm_shift_I {D : Submodule ℂ F} (A : D →ₗ[ℂ] F) (hA : SymmetricOn D A)
     (z : D) : ‖(z : F)‖ ≤ ‖A z - (-Complex.I) • (z : F)‖ := by sorry

@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEulerComplexQuat
 open BookProof.ChapterEulerComplexQuat
 
-variable {n : ℕ}
-
 
 open scoped Quaternion BigOperators
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterEulerComplexQuat.complex_realification_norm (v : Fin n → ℂ) :

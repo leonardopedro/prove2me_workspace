@@ -12,8 +12,6 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-f_eq volume hf continuous_const).mp hae
-
 theorem solution
     (V : ℝ → ℝ) (hV : Continuous V) (z : ℂ)
     (u u' u'' : ℝ → ℂ)
@@ -21,7 +19,8 @@ theorem solution
     (h2 : ∀ x, HasDerivAt u' (u'' x) x)
     (heq : ∀ x, -u'' x + (V x : ℂ) * u x = z * u x)
     (hVz : ∀ x, 0 ≤ V x - z.re)
-    (hL2 : Integr :=
+    (hL2 : Integrable fun x => ‖u x‖ ^ 2) :
+    u = 0 :=
   able fun x => ‖u x‖ ^ 2) :
       u = 0 := by
     obtain ⟨C, hC0, hC⟩ := exists_deriv_chi_bound

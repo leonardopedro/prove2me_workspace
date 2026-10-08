@@ -11,5 +11,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 theorem BookProof.ChapterPinDoubleCover.LamZ_surjective : Delta = Omega.image LamZ := by sorry

@@ -16,8 +16,6 @@ open BookProof.HermiteCore
 open BookProof.YangMillsFriedrichs
 open BookProof.QedFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -28,6 +26,8 @@ open BookProof.HermiteGalerkin BookProof.HermiteCore
 open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
 open MeasureTheory
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.QedFockGapChain.irPhoton_fock_mass_gap {mu : ℝ} (hmu : 0 < mu) (p : ℕ → ℝ) :

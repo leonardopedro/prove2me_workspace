@@ -15,8 +15,6 @@ open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFockFlow
 
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -27,6 +25,8 @@ open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgOuterFockFlow.secData_ext_symmetricOn :
     SymmetricOn (secN W Q).dom (secData W Q).ext := by sorry

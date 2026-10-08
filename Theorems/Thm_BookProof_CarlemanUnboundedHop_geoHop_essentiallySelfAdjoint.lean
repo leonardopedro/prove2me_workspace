@@ -7,13 +7,15 @@ import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.KernelBound
 open BookProof.CarlemanUnboundedHop
 
-variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
-
 
 
 open Finset
+open BookProof.FarisLavine
+open BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 theorem BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint (b : ℕ → ℝ) {rho : ℝ} (hrho : 0 ≤ rho)
     (hrho1 : rho < 1) :

@@ -15,9 +15,6 @@ import Definitions.Def_ChapterTruncationGapLift
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 noncomputable section
 
@@ -28,6 +25,9 @@ open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.TruncationGapLift.quadForm_add_of_symmetricOn (H : D →ₗ[ℂ] F) (hsym : SymmetricOn D H) (x w : D) :
     quadForm H (x + w) = quadForm H x + quadForm H w

@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.occupation_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :

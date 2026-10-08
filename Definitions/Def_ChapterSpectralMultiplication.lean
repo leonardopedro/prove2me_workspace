@@ -2,6 +2,7 @@ import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
 
 import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
+import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_isProbabilityMeasure_stateMeasure
 
 
 /-!
@@ -87,7 +88,9 @@ theorem vectorState_pos (f : C(spectrum ℂ T, ℂ)) :
   rw [vectorState_star_mul_self]
   simp [Complex.zero_le_real]
 
-
+theorem vectorState_one (hxi : ‖xi‖ = 1) : vectorState T hT xi 1 = 1 := by
+  simp only [vectorState_apply, map_one]
+  simp [inner_self_eq_norm_sq_to_K, hxi]
 
 /-! ## 2. The spectral measure -/
 
@@ -104,9 +107,14 @@ instance instRegularSpectralMeasure : (spectralMeasure T hT xi).Regular := by
   unfold spectralMeasure
   infer_instance
 
+theorem isProbabilityMeasure_spectralMeasure (hxi : ‖xi‖ = 1) :
+    IsProbabilityMeasure (spectralMeasure T hT xi) :=
+  isProbabilityMeasure_stateMeasure _ _ (vectorState_one T hT xi hxi)
 
-
-
+/-- **The spectral measure represents the vector state**: `⟪ξ, f(T)ξ⟫ = ∫ f dμ`. -/
+theorem integral_spectralMeasure (f : C(spectrum ℂ T, ℂ)) :
+    inner ℂ xi (cfcHom hT f xi) = ∫ z, f z ∂(spectralMeasure T hT xi) :=
+  integral_stateMeasure (vectorState T hT xi) (vectorState_pos T hT xi) f
 
 /-! ## 3. The isometry `f ↦ f(T)ξ` -/
 
@@ -172,14 +180,71 @@ noncomputable def spectralUnitary : Lp ℂ 2 (spectralMeasure T hT xi) ≃ₗᵢ
 noncomputable def coordFn : C(spectrum ℂ T, ℂ) :=
   ContinuousMap.restrict (spectrum ℂ T) (ContinuousMap.id ℂ)
 
+theorem cfcHom_coordFn : cfcHom hT (coordFn T) = T := cfcHom_id hT
 
+/-- Multiplication of a continuous function inside `L²`. -/
+theorem mulRep_toLp (g f : C(spectrum ℂ T, ℂ)) :
+    mulRep (spectralMeasure T hT xi) g
+        (ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ f)
+      = ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ (g * f) := by
+  set mu := spectralMeasure T hT xi with hmu
+  refine Lp.ext ?_
+  filter_upwards [mulRep_coeFn mu g (ContinuousMap.toLp 2 mu ℂ f),
+    ContinuousMap.coeFn_toLp (p := 2) mu (𝕜 := ℂ) f,
+    ContinuousMap.coeFn_toLp (p := 2) mu (𝕜 := ℂ) (g * f)] with z h1 h2 h3
+  rw [h1, h2, h3]
+  simp
 
+/-- **The unitary carries the multiplication algebra into the functional calculus.**
+For every continuous symbol `g`, `U M_g = g(T) U`: the whole abelian algebra
+`{g(T)}` is unitarily the algebra of multiplication operators by continuous
+functions on `L²(μ)`. -/
+theorem spectralUnitary_intertwines_cfc (g : C(spectrum ℂ T, ℂ))
+    (u : Lp ℂ 2 (spectralMeasure T hT xi)) :
+    spectralUnitary T hT xi hcyc (mulRep (spectralMeasure T hT xi) g u)
+      = cfcHom hT g (spectralUnitary T hT xi hcyc u) := by
+  have hdense : DenseRange
+      ((ContinuousMap.toLp 2 (spectralMeasure T hT xi) ℂ).toLinearMap :
+        C(spectrum ℂ T, ℂ) → Lp ℂ 2 (spectralMeasure T hT xi)) :=
+    ContinuousMap.toLp_denseRange ℂ _ (μ := spectralMeasure T hT xi) (by simp)
+  have hcont₁ : Continuous fun v : Lp ℂ 2 (spectralMeasure T hT xi) =>
+      spectralUnitary T hT xi hcyc (mulRep (spectralMeasure T hT xi) g v) :=
+    (spectralUnitary T hT xi hcyc).continuous.comp
+      (mulRep (spectralMeasure T hT xi) g).continuous
+  have hcont₂ : Continuous fun v : Lp ℂ 2 (spectralMeasure T hT xi) =>
+      cfcHom hT g (spectralUnitary T hT xi hcyc v) :=
+    (cfcHom hT g).continuous.comp (spectralUnitary T hT xi hcyc).continuous
+  have hfun : (fun v : Lp ℂ 2 (spectralMeasure T hT xi) =>
+        spectralUnitary T hT xi hcyc (mulRep (spectralMeasure T hT xi) g v))
+      = fun v : Lp ℂ 2 (spectralMeasure T hT xi) =>
+        cfcHom hT g (spectralUnitary T hT xi hcyc v) := by
+    refine hdense.equalizer hcont₁ hcont₂ (funext fun f => ?_)
+    simp only [Function.comp_apply, ContinuousLinearMap.coe_coe]
+    rw [mulRep_toLp T hT xi g f, spectralUnitary_toLp, spectralUnitary_toLp, map_mul]
+    rfl
+  exact congrFun hfun u
 
+/-- **The unitary intertwines multiplication by `z` with `T`.** -/
+theorem spectralUnitary_intertwines (u : Lp ℂ 2 (spectralMeasure T hT xi)) :
+    spectralUnitary T hT xi hcyc (mulRep (spectralMeasure T hT xi) (coordFn T) u)
+      = T (spectralUnitary T hT xi hcyc u) := by
+  rw [spectralUnitary_intertwines_cfc T hT xi hcyc (coordFn T) u, cfcHom_coordFn]
 
-
-
-
-
-
+include hT hcyc in
+/-- **HEADLINE (the spectral theorem in multiplication form).**  A normal operator `T`
+on a complex Hilbert space with a cyclic unit vector is unitarily equivalent to
+multiplication by the coordinate function `z` on `L²(μ)`, where `μ` is a Borel
+probability measure on the spectrum of `T`. -/
+theorem spectral_multiplication_model (hxi : ‖xi‖ = 1) :
+    ∃ (mu : Measure (spectrum ℂ T)) (_ : IsProbabilityMeasure mu)
+      (U : Lp ℂ 2 mu ≃ₗᵢ[ℂ] H),
+      (∀ u : Lp ℂ 2 mu, U (mulRep mu (coordFn T) u) = T (U u)) ∧
+      (∀ v : H, U.symm (T v) = mulRep mu (coordFn T) (U.symm v)) := by
+  refine ⟨spectralMeasure T hT xi, isProbabilityMeasure_spectralMeasure T hT xi hxi,
+    spectralUnitary T hT xi hcyc, spectralUnitary_intertwines T hT xi hcyc, ?_⟩
+  intro v
+  have h := spectralUnitary_intertwines T hT xi hcyc ((spectralUnitary T hT xi hcyc).symm v)
+  rw [LinearIsometryEquiv.apply_symm_apply] at h
+  rw [← h, LinearIsometryEquiv.symm_apply_apply]
 
 end BookProof.ChapterSpectralMultiplication

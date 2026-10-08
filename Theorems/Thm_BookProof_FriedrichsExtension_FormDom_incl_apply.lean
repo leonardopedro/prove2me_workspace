@@ -8,13 +8,13 @@ import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.FriedrichsExtension.FormDom.incl_apply (P : PosSymOp F) : ‖incl P‖ ≤ 1 := by sorry

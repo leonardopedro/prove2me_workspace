@@ -11,15 +11,15 @@ open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsExtension
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.friedrichs_hashimoto_selects (b : HilbertBasis ℕ ℂ F)
     (H : finiteModeDomain b →ₗ[ℂ] F) (hsym : SymmetricOn (finiteModeDomain b) H)

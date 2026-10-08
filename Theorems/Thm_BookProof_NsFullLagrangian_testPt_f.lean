@@ -15,8 +15,6 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.testPt_f (p : Fin n) (t : ℝ) (i j : Fin 3) :
     testPt p t (ycoord p (fIdx i j)) = if i = j then (t : ℂ) else 0 := by sorry

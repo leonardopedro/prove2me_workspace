@@ -14,9 +14,9 @@ theorem solution {f : (Fin 3 → ℝ) → ℝ} {L : (Fin 3 → ℝ) →L[ℝ] �
 
   have h : HasDerivAt (fun t : ℝ => x + t • evec j) (evec j) 0 := by
     simpa using ((hasDerivAt_id (0 : ℝ)).smul_const (evec j)).const_add x
-  have hf' : HasFDerivAt f L (x + (0 : ℝ) • evec j) := by simpa using hf
+  have hf_prime : HasFDerivAt f L (x + (0 : ℝ) • evec j) := by simpa using hf
   first
-    | exact (hf'.comp_hasDerivAt 0 h).deriv
-    | (simp only [dirDeriv]; exact (hf'.comp_hasDerivAt 0 h).deriv)
-    | (simp only [dirDeriv] <;> convert (hf'.comp_hasDerivAt 0 h).deriv using 1
+    | exact (hf_prime.comp_hasDerivAt 0 h).deriv
+    | (simp only [dirDeriv]; exact (hf_prime.comp_hasDerivAt 0 h).deriv)
+    | (simp only [dirDeriv] <;> convert (hf_prime.comp_hasDerivAt 0 h).deriv using 1
         <;> (first | rfl | simp))

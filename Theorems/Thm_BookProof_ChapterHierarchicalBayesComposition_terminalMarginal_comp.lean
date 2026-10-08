@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterHierarchicalBayesComposition
 open BookProof.ChapterHierarchicalBayesComposition
 
-variable {A B C D : Type*}
-  [Fintype A] [Fintype B] [Fintype C] [Fintype D]
-  [DecidableEq A] [DecidableEq B] [DecidableEq C] [DecidableEq D]
-
 
 open scoped BigOperators
 
+
+variable {A B C D : Type*}
+  [Fintype A] [Fintype B] [Fintype C] [Fintype D]
+  [DecidableEq A] [DecidableEq B] [DecidableEq C] [DecidableEq D]
 
 
 theorem BookProof.ChapterHierarchicalBayesComposition.terminalMarginal_comp (k₁ : A → B → ℝ) (k₂ : B → C → ℝ)

@@ -10,12 +10,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.fock_ns_hamiltonian_hasZeroDeficiencyOn (n : ℕ → ℝ) (hn : ∀ k, 0 ≤ n k)
     (H : maxDom (fockSymbol n) →ₗ[ℂ] L2I Config)

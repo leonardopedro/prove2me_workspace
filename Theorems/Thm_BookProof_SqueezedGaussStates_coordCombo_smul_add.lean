@@ -7,13 +7,13 @@ open BookProof.GaussCoordCombo
 open BookProof.HermiteProductCore
 open BookProof.SqueezedGaussStates
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.GaussCoordCombo
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.SqueezedGaussStates.coordCombo_smul_add (i : Fin d) (c₁ c₂ : ℕ → ℝ) (α γ : ℝ) (p K : ℕ) :

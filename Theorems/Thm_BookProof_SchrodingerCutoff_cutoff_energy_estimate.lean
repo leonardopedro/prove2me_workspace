@@ -9,8 +9,6 @@ open BookProof.SchrodingerCutoff
 
 open MeasureTheory Filter Complex
 
-narith [hlhs2, hT2le, hQle, hfinal4]⟩
-
 theorem BookProof.SchrodingerCutoff.cutoff_energy_estimate
     (V : ℝ → ℝ) (hV : Continuous V) (z : ℂ)
     (u u' u'' : ℝ → ℂ)
@@ -21,4 +19,4 @@ theorem BookProof.SchrodingerCutoff.cutoff_energy_estimate
     (hL2 : Integrable fun x => ‖u x‖ ^ 2)
     {C : ℝ} (hC : ∀ y, |deriv chi y| ≤ C)
     {R : ℝ} (hR : 0 < R) :
-    ∫ x in Set.Icc (-R) R, ‖u x‖ ^ 2 ≤ := by sorry
+    ∫ x in Set.Icc (-R) R, ‖u x‖ ^ 2 ≤ 2 * C ^ 2 / R ^ 2 * ∫ x, ‖u x‖ ^ 2 := by sorry

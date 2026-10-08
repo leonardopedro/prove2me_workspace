@@ -10,8 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
@@ -20,6 +18,8 @@ open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGal
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.ResolventLadder.posForm_cauchy_schwarz {R : F →L[ℂ] F} (hsa : IsSelfAdjoint R)

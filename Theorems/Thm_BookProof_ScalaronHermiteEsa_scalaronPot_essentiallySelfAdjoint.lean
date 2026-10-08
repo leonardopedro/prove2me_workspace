@@ -11,11 +11,10 @@ import Definitions.Def_ChapterScalaronHermiteEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Theorems.Thm_BookProof_ScalaronHermiteEsa_continuous_scalaronPot
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteOscillator
 open BookProof.ScalaronHermiteEsa
-
-variable {d : ℕ}
 
 
 
@@ -25,6 +24,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ScalaronHermiteEsa.scalaronPot_essentiallySelfAdjoint (M alpha : ℝ) (hM : 0 < M) :

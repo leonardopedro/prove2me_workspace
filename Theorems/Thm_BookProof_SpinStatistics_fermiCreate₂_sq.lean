@@ -7,4 +7,4 @@ open BookProof.SpinStatistics
 
 open Matrix
 
-theorem BookProof.SpinStatistics.fermiCreate₂_sq : fermiCreate2 * fermiCreate2 = 0 := by sorry
+theorem BookProof.SpinStatistics.fermiCreate2_sq : fermiCreate2 * fermiCreate2 = 0 := by sorry

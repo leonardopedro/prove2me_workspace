@@ -5,8 +5,6 @@ import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxBorn.bornNumer_pos (q k : EuclideanSpace ℝ (Fin n)) : 0 < bornNumer q k := by sorry

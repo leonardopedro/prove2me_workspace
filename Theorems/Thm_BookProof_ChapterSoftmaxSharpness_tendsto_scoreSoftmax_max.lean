@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -13,6 +11,8 @@ noncomputable section
 
 
 open Filter Topology BookProof.ChapterSoftmaxBorn
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxSharpness.tendsto_scoreSoftmax_max (s : Fin m → ℝ) (j : Fin m)

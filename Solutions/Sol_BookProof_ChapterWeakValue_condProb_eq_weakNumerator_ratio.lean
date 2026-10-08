@@ -10,6 +10,7 @@ open scoped BigOperators Matrix
 
 
 variable {n : ℕ}
+open BookProof.ChapterTrajectory
 
 variable {n : ℕ}
 

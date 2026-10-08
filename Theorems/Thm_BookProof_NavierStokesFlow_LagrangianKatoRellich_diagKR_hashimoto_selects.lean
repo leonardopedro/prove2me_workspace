@@ -1,6 +1,6 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_selects
 import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
@@ -18,10 +18,6 @@ open BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 open Filter Topology
 
@@ -30,9 +26,9 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
- HasZeroDeficiencyOn diagKR.D diagKR.hFull :=
-  hFull_hasZeroDeficiencyOn_of_drive_eq_P diagKR diagKR_drive le_rfl diagKR_constraint_bound
-    diagKR_secondOrder_hasZeroDeficiencyOn
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (L : LagrangianFullData F)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_selects (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
     ∃ (Dom : Submodule ℂ L2N) (A : Dom →ₗ[ℂ] L2N) (X : ℕ → L2N →L[ℂ] L2N),
@@ -43,4 +39,8 @@ theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_hashimoto_select
       (∀ j k u, X j u - X k u = (γ k - γ j) • X j (X k u)) ∧
       (∀ j k, X j ∘L X k = X k ∘L X j) ∧
       (∀ j m, X j ∘L (ContinuousLinearMap.id ℂ L2N - (γ m - γ j) • X m) = X m) ∧
-      (∀ := by sorry
+      (∀ m v k, sirkDen (X m) (fun i => γ m - γ i) k (rkVec X v k) = (X m ^ k) v) ∧
+      (∀ j u, Tendsto (fun n : ℕ => galerkinCompression (X j) l2NatBasis n u) atTop
+        (nhds (X j u))) ∧
+      (∀ j (Dom' : Submodule ℂ L2N) (A' : Dom' →ₗ[ℂ] L2N), IsShiftInvertC A' (γ j) (X j) →
+        Dom' = Dom ∧ ∀ (x : L2N) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) := by sorry

@@ -12,14 +12,14 @@ open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.StoneEigenflow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterUnitaryTransport BookProof.EsaClosure BookProof.FarisLavine
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.StoneEigenflow.exists_diagonal_stone_flow [CompleteSpace F] {D : Submodule ℂ F} (Hc : D →ₗ[ℂ] F)

@@ -1,6 +1,7 @@
 -- Generated from ChapterQgOuterFockEsa.lean — solution of BookProof.QgOuterFock.qgOuterN_esa
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_essentiallySelfAdjoint
 open BookProof.QgOuterFock
 

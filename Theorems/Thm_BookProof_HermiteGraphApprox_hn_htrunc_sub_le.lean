@@ -18,8 +18,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.HermiteGraphApprox
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -32,6 +30,8 @@ open BookProof.ConvolutionCalc
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteGraphApprox.hn_htrunc_sub_le (v : L2d d) (n : ℕ) {F₀ F F' : Finset (Fin d →₀ ℕ)} (hF : F₀ ≤ F)

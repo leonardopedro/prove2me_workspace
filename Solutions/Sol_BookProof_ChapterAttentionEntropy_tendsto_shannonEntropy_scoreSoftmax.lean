@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionEntropy.lean — solution of BookProof.ChapterAttentionEntropy.tendsto_shannonEntropy_scoreSoftmax
 import Mathlib
 import Definitions.Def_ChapterAttentionEntropy
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_max
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_ne
 open BookProof.ChapterAttentionEntropy
 
 

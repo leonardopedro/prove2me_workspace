@@ -9,17 +9,17 @@ import Mathlib
 import Definitions.Def_ChapterNsLagrangianDetFarisLavine
 open BookProof.NsLagrangianDetFL
 
-variable {K : Type*} [Fintype K]
-variable (S : LagNsData K)
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
 
+variable {K : Type*} [Fintype K]
+
+variable (S : LagNsData K)
 
 theorem BookProof.NsLagrangianDetFL.conjQ_pderiv (i : PIdx K) (p : MvPolynomial (PIdx K) ℂ) :
     conjQ (pderiv i p) = pderiv i (conjQ p) := by sorry

@@ -17,8 +17,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.StoneBridge
 open BookProof.QgOuterFockFlow
 
-variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -29,6 +27,8 @@ open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 
 noncomputable section
+
+variable {ι : Type*} (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgOuterFockFlow.starobinsky_qgContinuum_stone_flow (M alpha : ℝ) (halpha : 0 < alpha) (g : ℝ) :
     ∃ (T : UnboundedSelfAdjoint (Sec CMode)) (U : ℝ → (Sec CMode →L[ℂ] Sec CMode)),

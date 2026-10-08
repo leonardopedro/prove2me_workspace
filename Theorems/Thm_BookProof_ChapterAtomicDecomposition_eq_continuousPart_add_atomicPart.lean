@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterAtomicDecomposition
 
-variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
-
 
 open MeasureTheory
 
+
+variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
 
 
 theorem BookProof.ChapterAtomicDecomposition.eq_continuousPart_add_atomicPart (mu : Measure X) [SFinite mu] :

@@ -5,11 +5,11 @@ import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.norm_annih_le (i : Fin n) (ψ : FermiFock n) : ‖annih i ψ‖ ≤ ‖ψ‖ := by sorry

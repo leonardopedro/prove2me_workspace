@@ -1,4 +1,14 @@
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_quadForm_nonneg
+
 import Theorems.Thm_BookProof_FarisLavine_quadForm_im
+
+import Theorems.Thm_BookProof_SmHamiltonian_smField_symmetricOn
+
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_quadForm
+
+
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
+
 
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
 
@@ -19,6 +29,8 @@ import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 
 
 
+
+import Theorems.Thm_BookProof_SmHamiltonian_smPi_symmetricOn
 
 import Definitions.Def_ChapterSmComparison
 import Definitions.Def_ChapterQgOuterFockCoreFL
@@ -137,7 +149,48 @@ theorem norm_add_sq_re (u v : F) :
 
 variable [CompleteSpace F]
 
-
+/-- **Faris–Lavine on the graph core.**  `CoreData.ext_essentiallySelfAdjointOn` gives
+essential self-adjointness of the *extension* on the whole domain of the comparison
+operator.  The relative bound transports the graph-norm approximation of the core from `N`
+to the extension, so the restriction back to the core — which is the original operator
+`H₀`, by `CoreData.ext_core` — is essentially self-adjoint as well.  This is the step that
+turns the abstract criterion into a statement about the operator one started with. -/
+theorem CoreData.esa_core (d : CoreData F) (hsym : SymmetricOn d.C₀ d.H₀) {c : ℝ}
+    (hc : 0 ≤ c) (hcomm : ∀ p : d.C₀, |commForm d.H₀ d.coreN p| ≤ c * quadForm d.coreN p) :
+    EssentiallySelfAdjointOn d.C₀ d.H₀ := by
+  have hD : EssentiallySelfAdjointOn d.C.dom d.ext :=
+    d.ext_essentiallySelfAdjointOn hsym hc hcomm
+  have hcore : ∀ (x : d.C.dom) (ε : ℝ), 0 < ε → ∃ y : d.C.dom, (y : F) ∈ d.C₀ ∧
+      ‖(y : F) - (x : F)‖ < ε ∧ ‖d.ext y - d.ext x‖ < ε := by
+    intro x ε hε
+    have hK : 0 ≤ d.K := d.hK
+    set δ : ℝ := min ε (ε / (2 * d.K + 1)) with hδdef
+    have hpos : (0 : ℝ) < 2 * d.K + 1 := by positivity
+    have hδ : 0 < δ := lt_min hε (by positivity)
+    obtain ⟨y, hyC, hy1, hy2⟩ := d.gc.approx x δ hδ
+    refine ⟨y, hyC, lt_of_lt_of_le hy1 (min_le_left _ _), ?_⟩
+    have hlin : d.ext y - d.ext x = d.ext (y - x) := by rw [map_sub]
+    have hcoe : ((y - x : d.C.dom) : F) = (y : F) - (x : F) := rfl
+    have hop : d.C.op (y - x) = d.C.op y - d.C.op x := by rw [map_sub]
+    have hbd := d.ext_norm_le (y - x)
+    rw [hop, hcoe] at hbd
+    have htri : ‖(d.C.op y - d.C.op x) + ((y : F) - (x : F))‖
+        ≤ ‖d.C.op y - d.C.op x‖ + ‖(y : F) - (x : F)‖ := norm_add_le _ _
+    have hsum : ‖d.C.op y - d.C.op x‖ + ‖(y : F) - (x : F)‖ ≤ 2 * δ := by linarith
+    have hfin : ‖d.ext (y - x)‖ ≤ d.K * (2 * δ) :=
+      hbd.trans (mul_le_mul_of_nonneg_left (htri.trans hsum) hK)
+    have hδ2 : δ ≤ ε / (2 * d.K + 1) := min_le_right _ _
+    have h1 : (2 * d.K + 1) * δ ≤ ε := by
+      rw [le_div_iff₀ hpos] at hδ2
+      linarith
+    have hlt : d.K * (2 * δ) < ε := by nlinarith
+    rw [hlin]
+    exact lt_of_le_of_lt hfin hlt
+  have hres := essentiallySelfAdjointOn_restrict_of_graph_core d.gc.le d.ext hcore hD
+  have hid : d.ext.comp (Submodule.inclusion d.gc.le) = d.H₀ := by
+    refine LinearMap.ext fun p => ?_
+    simpa only [LinearMap.comp_apply, Submodule.inclusion_apply] using d.ext_core p
+  rwa [hid] at hres
 
 end Abstract
 
@@ -445,12 +498,28 @@ theorem inner_smHamiltonian (P : SmParams) (x : polyGaussCore (d := 163)) (w : L
   rw [hval, inner_smul_left, Complex.conj_ofReal, inner_add_left, sum_inner, sum_inner]
 
 
-
+theorem im_neg_two_I_mul (z : ℂ) : (((-2 : ℂ) * Complex.I) * z).im = -2 * z.re := by
+  simp [Complex.mul_im, Complex.mul_re]
 
 theorem re_neg_two_I_mul (z : ℂ) : (((-2 : ℂ) * Complex.I) * z).re = 2 * z.im := by
   simp [Complex.mul_re, Complex.mul_im]
 
-
+set_option maxHeartbeats 2000000 in
+-- the `L²`-coercion unifications of the 163-dimensional core exceed the default budget
+/-- The imaginary part of `⟪h x, Q x⟫` — the whole content of the commutator form. -/
+theorem im_inner_smHamiltonian_smQL (P : SmParams) (x : polyGaussCore (d := 163)) :
+    (inner ℂ (smHamiltonian P x) (smQL x) : ℂ).im
+      = 1 / 2 * ∑ m : Fin 40, (-2) *
+          (inner ℂ ((smPi m x : polyGaussCore (d := 163)) : L2d 163)
+            ((smMomField m x : polyGaussCore (d := 163)) : L2d 163) : ℂ).re := by
+  rw [inner_smHamiltonian,
+    Finset.sum_congr rfl fun m (_ : m ∈ Finset.univ) => inner_smPi_sq_smQ m x,
+    Finset.sum_congr rfl fun r (_ : r ∈ Finset.univ) => inner_smField_sq_smQ P r x,
+    Complex.mul_im]
+  simp only [Complex.ofReal_re, Complex.ofReal_im, zero_mul, add_zero]
+  rw [Complex.add_im, Complex.im_sum, Complex.im_sum]
+  simp only [Complex.add_im, Complex.ofReal_im, zero_add, im_neg_two_I_mul,
+    Finset.sum_const_zero, add_zero]
 
 set_option maxHeartbeats 2000000 in
 -- the `L²`-coercion unifications of the 163-dimensional core exceed the default budget
@@ -469,9 +538,35 @@ theorem re_inner_smHamiltonian_smQL (P : SmParams) (x : polyGaussCore (d := 163)
   rw [Complex.add_re, Complex.re_sum, Complex.re_sum]
   simp only [Complex.add_re, Complex.ofReal_re, re_neg_two_I_mul]
 
+set_option maxHeartbeats 2000000 in
+-- the `L²`-coercion unifications of the 163-dimensional core exceed the default budget
+/-- Only the harmonic summand of the comparison operator contributes to the commutator. -/
+theorem im_inner_smHamiltonian_smFlN (P : SmParams) (c0 : ℝ)
+    (x : polyGaussCore (d := 163)) :
+    (inner ℂ (smHamiltonian P x) (smFlN P c0 x) : ℂ).im
+      = (inner ℂ (smHamiltonian P x) (smQL x) : ℂ).im := by
+  have h1 : (inner ℂ (smHamiltonian P x) (smHamiltonian P x) : ℂ).im = 0 := by
+    rw [inner_self_eq_norm_sq_to_K]
+    norm_cast
+  have h2 : (inner ℂ (smHamiltonian P x)
+      ((x : polyGaussCore (d := 163)) : L2d 163) : ℂ).im = 0 :=
+    inner_apply_self_im (smHamiltonian P) (smHamiltonian_symmetricOn P) x
+  rw [smFlN_apply, inner_add_right, inner_add_right, inner_smul_right, inner_smul_right,
+    Complex.add_im, Complex.add_im, Complex.mul_im, Complex.mul_im, h1, h2]
+  simp
 
-
-
+/-- The Cauchy–Schwarz estimate of one cross term. -/
+theorem abs_re_inner_smPi_smMom_le (m : Fin 40) (x : polyGaussCore (d := 163)) :
+    |(inner ℂ ((smPi m x : polyGaussCore (d := 163)) : L2d 163)
+        ((smMomField m x : polyGaussCore (d := 163)) : L2d 163) : ℂ).re|
+      ≤ 1 / 2 * (‖((smPi m x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2
+        + ‖((smMomField m x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2) := by
+  have h := (Complex.abs_re_le_norm
+    (inner ℂ ((smPi m x : polyGaussCore (d := 163)) : L2d 163)
+      ((smMomField m x : polyGaussCore (d := 163)) : L2d 163) : ℂ)).trans
+    (norm_inner_le_norm _ _)
+  nlinarith [sq_nonneg (‖((smPi m x : polyGaussCore (d := 163)) : L2d 163)‖
+    - ‖((smMomField m x : polyGaussCore (d := 163)) : L2d 163)‖)]
 
 /-- The same estimate for the imaginary part. -/
 theorem abs_im_inner_smPi_smMom_le (m : Fin 40) (x : polyGaussCore (d := 163)) :
@@ -486,7 +581,39 @@ theorem abs_im_inner_smPi_smMom_le (m : Fin 40) (x : polyGaussCore (d := 163)) :
   nlinarith [sq_nonneg (‖((smPi m x : polyGaussCore (d := 163)) : L2d 163)‖
     - ‖((smMomField m x : polyGaussCore (d := 163)) : L2d 163)‖)]
 
-
+set_option maxHeartbeats 2000000 in
+-- the `L²`-coercion unifications of the 163-dimensional core exceed the default budget
+/-- **Faris–Lavine hypothesis (ii) for the Standard Model.**  With the comparison operator
+`N = 2h + Σ_m q_m² + c₀` the commutator form is bounded by the quadratic form of `N` with
+the absolute constant `c = 1`, for every set of couplings, structure constants and
+electroweak generators and every `c₀ ≥ 0`. -/
+theorem sm_commForm_le (P : SmParams) {c0 : ℝ} (hc0 : 0 ≤ c0)
+    (x : polyGaussCore (d := 163)) :
+    |commForm (smHamiltonian P) (smFlN P c0) x| ≤ 1 * quadForm (smFlN P c0) x := by
+  set kin : ℝ := ∑ m : Fin 40,
+    ‖((smPi m x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 with hkin
+  set har : ℝ := ∑ m : Fin 40,
+    ‖((smMomField m x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 with hhar
+  set S : ℝ := ∑ m : Fin 40, (inner ℂ ((smPi m x : polyGaussCore (d := 163)) : L2d 163)
+    ((smMomField m x : polyGaussCore (d := 163)) : L2d 163) : ℂ).re with hS
+  have hform : commForm (smHamiltonian P) (smFlN P c0) x = 2 * S := by
+    rw [commForm_eq, im_inner_smHamiltonian_smFlN, im_inner_smHamiltonian_smQL, hS,
+      ← Finset.mul_sum]
+    ring
+  have hSbound : |S| ≤ 1 / 2 * (kin + har) := by
+    refine (Finset.abs_sum_le_sum_abs _ _).trans ?_
+    rw [hkin, hhar, ← Finset.sum_add_distrib, Finset.mul_sum]
+    exact Finset.sum_le_sum fun m _ => abs_re_inner_smPi_smMom_le m x
+  have hquad : kin + har ≤ quadForm (smFlN P c0) x := by
+    rw [smFlN_quadForm, smHamiltonian_quadForm P, smQL_quadForm]
+    have hf : (0 : ℝ) ≤ ∑ r : Fin 49,
+        ‖((smField P r x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 :=
+      Finset.sum_nonneg fun _ _ => by positivity
+    have hx : (0 : ℝ) ≤ c0 * ‖((x : polyGaussCore (d := 163)) : L2d 163)‖ ^ 2 := by positivity
+    rw [hkin, hhar]
+    linarith
+  rw [hform, one_mul, abs_mul, abs_two]
+  linarith [hSbound]
 
 set_option maxHeartbeats 2000000 in
 -- the `L²`-coercion unifications of the 163-dimensional core exceed the default budget
@@ -644,7 +771,26 @@ def smCoreData (P : SmParams) {c0 : ℝ} (hc0 : 0 ≤ c0)
     rw [hpt]
     exact sm_norm_le_shift P hc0 p
 
-
+/-- **The Standard-Model one-particle Hamiltonian is essentially self-adjoint on the
+Gauss–polynomial core, given the graph-core property of the Faris–Lavine comparison
+operator.**  Both Faris–Lavine inequalities are proved above with absolute constants; the
+hypothesis `hgc` — that the Gauss–polynomial core is dense in the graph norm of the
+Friedrichs extension of `N = 2h + Σ_m q_m² + c₀` — is the one analytic input that the
+criterion cannot supply by itself. -/
+theorem sm_h_esa_of_graph_core (P : SmParams) {c0 : ℝ} (hc0 : 0 ≤ c0)
+    (hgc : IsGraphCore (smFlComparison P hc0) (polyGaussCore (d := 163))) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 163)) (smHamiltonian P) := by
+  refine CoreData.esa_core (smCoreData P hc0 hgc) (smHamiltonian_symmetricOn P)
+    zero_le_one fun p => ?_
+  obtain ⟨h, hx⟩ := smFlComparison_extends P hc0 p
+  have hcoreN : (smCoreData P hc0 hgc).coreN p = smFlN P c0 p := hx
+  have h1 : commForm (smCoreData P hc0 hgc).H₀ (smCoreData P hc0 hgc).coreN p
+      = commForm (smHamiltonian P) (smFlN P c0) p :=
+    commForm_congr _ _ _ _ _ _ rfl hcoreN
+  have h2 : quadForm (smCoreData P hc0 hgc).coreN p = quadForm (smFlN P c0) p :=
+    quadForm_congr _ _ _ _ rfl hcoreN
+  rw [h1, h2]
+  exact sm_commForm_le P hc0 p
 
 
 /-! ## 8. Removing the graph-core hypothesis in favour of essential self-adjointness of `N` -/
@@ -653,13 +799,100 @@ section GraphCoreFromEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+omit [CompleteSpace F] in
+/-- For a symmetric operator, the shift by `i` is bounded below: `‖z‖ ≤ ‖A z + i z‖`. -/
+theorem norm_le_norm_shift_I {D : Submodule ℂ F} (A : D →ₗ[ℂ] F) (hA : SymmetricOn D A)
+    (z : D) : ‖(z : F)‖ ≤ ‖A z - (-Complex.I) • (z : F)‖ := by
+  have hre : (inner ℂ (A z) ((z : F)) : ℂ).im = 0 := inner_apply_self_im A hA z
+  have hrw : A z - (-Complex.I) • (z : F) = A z + Complex.I • (z : F) := by module
+  have hcross : (inner ℂ (A z) (Complex.I • (z : F)) : ℂ).re = 0 := by
+    rw [inner_smul_right, Complex.mul_re, Complex.I_re, Complex.I_im, hre]
+    ring
+  have hnorm : ‖Complex.I • (z : F)‖ = ‖(z : F)‖ := by
+    rw [norm_smul]
+    simp
+  have hexp : ‖A z - (-Complex.I) • (z : F)‖ ^ 2 = ‖A z‖ ^ 2 + ‖(z : F)‖ ^ 2 := by
+    rw [hrw, norm_add_sq_re, hcross, hnorm]
+    ring
+  nlinarith [norm_nonneg (A z), norm_nonneg ((z : F)),
+    norm_nonneg (A z - (-Complex.I) • (z : F)), hexp]
 
-
-
+/-- **A core of an essentially self-adjoint positive operator is a graph core of its
+Friedrichs comparison operator.**  If `P` is essentially self-adjoint on its domain then
+`P + i` has dense range there, and the bound `‖z‖ ≤ ‖(N + i)z‖` for the symmetric Friedrichs
+extension `N` transports that density back to the graph norm of `N`. -/
+theorem isGraphCore_of_esa (P : PosSymOp F) (hdense : Dense (P.dom : Set F))
+    (hesa : EssentiallySelfAdjointOn P.dom P.op) :
+    IsGraphCore (friedrichsComparison P hdense) P.dom := by
+  set C : Comparison F := friedrichsComparison P hdense with hC
+  have hle : P.dom ≤ C.dom := fun _ hv => FormDom.dom_le_range P hv
+  have hext : ∀ y : P.dom, C.op ⟨(y : F), hle y.2⟩ = P.op y := by
+    intro y
+    obtain ⟨h, hh⟩ := friedrichsComparison_extends P hdense y
+    exact hh
+  refine ⟨hle, ?_⟩
+  intro x ε hε
+  have hconj : (starRingEnd ℂ) (-Complex.I) = Complex.I := by simp
+  have hdr : Dense (Set.range fun y : P.dom => P.op y - (-Complex.I) • (y : F)) :=
+    dense_range_of_deficiencyTrivialAt P.op (-Complex.I) (by rw [hconj]; exact hesa.1)
+  obtain ⟨g, hgball, y, hy⟩ :=
+    Metric.dense_iff.mp hdr (C.op x - (-Complex.I) • (x : F)) (ε / 2) (by positivity)
+  have hdist : ‖g - (C.op x - (-Complex.I) • (x : F))‖ < ε / 2 := by
+    have hball := Metric.mem_ball.mp hgball
+    rwa [dist_eq_norm] at hball
+  refine ⟨⟨(y : F), hle y.2⟩, y.2, ?_, ?_⟩
+  · have hb := norm_le_norm_shift_I C.op C.sym (⟨(y : F), hle y.2⟩ - x)
+    have hkey : C.op (⟨(y : F), hle y.2⟩ - x)
+        - (-Complex.I) • ((⟨(y : F), hle y.2⟩ - x : C.dom) : F)
+        = g - (C.op x - (-Complex.I) • (x : F)) := by
+      have hcoe : ((⟨(y : F), hle y.2⟩ - x : C.dom) : F) = (y : F) - (x : F) := rfl
+      rw [map_sub, hext y, hcoe, ← hy]
+      module
+    rw [hkey] at hb
+    have hb' : ‖((y : F)) - (x : F)‖ ≤ ‖g - (C.op x - (-Complex.I) • (x : F))‖ := hb
+    linarith
+  · have hkey : C.op (⟨(y : F), hle y.2⟩ - x)
+        - (-Complex.I) • ((⟨(y : F), hle y.2⟩ - x : C.dom) : F)
+        = g - (C.op x - (-Complex.I) • (x : F)) := by
+      have hcoe : ((⟨(y : F), hle y.2⟩ - x : C.dom) : F) = (y : F) - (x : F) := rfl
+      rw [map_sub, hext y, hcoe, ← hy]
+      module
+    have hb := norm_le_norm_shift_I C.op C.sym (⟨(y : F), hle y.2⟩ - x)
+    rw [hkey] at hb
+    have hb' : ‖((y : F)) - (x : F)‖ ≤ ‖g - (C.op x - (-Complex.I) • (x : F))‖ := hb
+    have hmapsub : C.op (⟨(y : F), hle y.2⟩ - x)
+        = C.op ⟨(y : F), hle y.2⟩ - C.op x := map_sub _ _ _
+    rw [hmapsub] at hkey
+    have hsplit : C.op ⟨(y : F), hle y.2⟩ - C.op x
+        = (g - (C.op x - (-Complex.I) • (x : F)))
+          + (-Complex.I) • (((y : F)) - (x : F)) := by
+      have hcoe : ((⟨(y : F), hle y.2⟩ - x : C.dom) : F) = (y : F) - (x : F) := rfl
+      rw [hcoe] at hkey
+      exact sub_eq_iff_eq_add.mp hkey
+    have hns : ‖(-Complex.I) • (((y : F)) - (x : F))‖ = ‖((y : F)) - (x : F)‖ := by
+      rw [norm_smul]
+      simp
+    calc ‖C.op ⟨(y : F), hle y.2⟩ - C.op x‖
+        ≤ ‖g - (C.op x - (-Complex.I) • (x : F))‖
+          + ‖(-Complex.I) • (((y : F)) - (x : F))‖ := by
+          rw [hsplit]; exact norm_add_le _ _
+      _ = ‖g - (C.op x - (-Complex.I) • (x : F))‖ + ‖((y : F)) - (x : F)‖ := by rw [hns]
+      _ < ε := by linarith
 
 end GraphCoreFromEsa
 
-
+/-- **The Standard-Model one-particle Hamiltonian is essentially self-adjoint on the
+Gauss–polynomial core as soon as its Faris–Lavine comparison operator is.**  This is the
+sharpest unconditional reduction the criterion allows: the two Faris–Lavine inequalities are
+theorems, and the only remaining input is essential self-adjointness of
+`N = 2h + Σ_m q_m² + c₀` on the same core.  Since `N` is itself a Schrödinger operator with
+a coupled quartic potential in `163` variables, that input is of Kato type and is *not*
+supplied by Faris–Lavine. -/
+theorem sm_h_esa_of_comparison_esa (P : SmParams) {c0 : ℝ} (hc0 : 0 ≤ c0)
+    (hN : EssentiallySelfAdjointOn (polyGaussCore (d := 163)) (smFlN P c0)) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 163)) (smHamiltonian P) :=
+  sm_h_esa_of_graph_core P hc0
+    (isGraphCore_of_esa (smFlPosSymOp P hc0) polyGaussCore_dense hN)
 
 end
 

@@ -13,9 +13,6 @@ open BookProof.NavierStokesFlow.HermiteFarisLavine
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-
 
 open scoped ENNReal
 
@@ -25,6 +22,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
 
 theorem BookProof.FockQuadratic.hopOp_pairing (hω : ∀ i, 0 ≤ ω i) {P Q : Idx ι} (hPQ : deg P + deg Q ≤ 2)
     (hQP : deg Q + deg P ≤ 2) (x y : maxDom (sig ω)) :

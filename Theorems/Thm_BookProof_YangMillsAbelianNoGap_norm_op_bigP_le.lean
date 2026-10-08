@@ -12,9 +12,6 @@ open BookProof.HermiteProductCore
 open BookProof.SqueezedGaussStates
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -23,6 +20,9 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.norm_op_bigP_le (c : Fin d) (α γ ε : ℝ)
     (h : coordComboSum (opCoef α γ (vf c) (Mf c)) 1 (Mf c) ≤ ε * facS vf Mf c) :

@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ClosureUniqueness
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
 
 
 theorem BookProof.ClosureUniqueness.eqOn_topologicalClosure_range_of_eqOn_range (B : D →ₗ[ℂ] F) (U V : F →L[ℂ] F)

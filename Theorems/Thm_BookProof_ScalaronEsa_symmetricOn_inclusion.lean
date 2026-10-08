@@ -12,9 +12,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ScalaronEsa
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -24,6 +21,9 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierSt
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 theorem BookProof.ScalaronEsa.symmetricOn_inclusion {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

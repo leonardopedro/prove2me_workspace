@@ -16,8 +16,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.lagFullFockHam_sector (lam lam' mu gg : ℝ) (x : lagFockCore) (n : ℕ) :
     ((lagFullFockHam lam lam' mu gg x : lagFockSpace) : ∀ n : ℕ, L2d (n * 36)) n

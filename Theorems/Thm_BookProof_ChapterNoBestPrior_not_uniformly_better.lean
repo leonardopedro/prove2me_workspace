@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNoBestPrior
 open BookProof.ChapterNoBestPrior
 
-variable {Hyp : Type*} [Fintype Hyp]
-
 
 open scoped BigOperators
 
+
+variable {Hyp : Type*} [Fintype Hyp]
 
 
 theorem BookProof.ChapterNoBestPrior.not_uniformly_better (p q : Hyp → ℝ) (hpq : p ≠ q) :

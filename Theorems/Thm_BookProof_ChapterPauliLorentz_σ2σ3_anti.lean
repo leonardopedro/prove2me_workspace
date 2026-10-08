@@ -7,4 +7,4 @@ open BookProof.ChapterPauliLorentz
 open Matrix
 open scoped BigOperators
 
-theorem BookProof.ChapterPauliLorentz.σ2σ3_anti : σ2 * σ3 + σ3 * σ2 = 0 := by sorry
+theorem BookProof.ChapterPauliLorentz.sigma2sigma3_anti : σ2 * σ3 + σ3 * σ2 = 0 := by sorry

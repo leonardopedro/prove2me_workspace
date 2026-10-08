@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterDiffuseUnitaryModel
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_cdfUnitary_apply
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_memLp_top_comp_cdf
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.ChapterDiffuseUnitaryModel
 
 

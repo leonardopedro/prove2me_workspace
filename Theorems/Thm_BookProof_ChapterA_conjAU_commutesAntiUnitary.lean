@@ -7,12 +7,12 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℂ W] [CompleteSpace W]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℂ W] [CompleteSpace W]
 
 
 theorem BookProof.ChapterA.conjAU_commutesAntiUnitary {M : System ℂ V} {N : System ℂ W} {α : V ≃ₗᵢ[ℂ] W}

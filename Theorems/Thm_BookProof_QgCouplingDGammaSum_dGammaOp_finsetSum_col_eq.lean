@@ -11,8 +11,6 @@ import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.FockSecondQuantization
 open BookProof.QgCouplingDGammaSum
 
-variable {ι : Type*}
-
 
 
 open BookProof.FockSecondQuantization
@@ -20,6 +18,8 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.QgCouplingDGammaSum.dGammaOp_finsetSum_col_eq (s : Finset ι) (cols : ι → ℕ → (ℕ →₀ ℂ)) :

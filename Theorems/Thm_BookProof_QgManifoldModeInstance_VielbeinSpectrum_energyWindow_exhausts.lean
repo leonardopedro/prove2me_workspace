@@ -13,9 +13,6 @@ import Definitions.Def_ChapterQgManifoldModeInstance
 open BookProof.QgManifoldModeInstance
 open BookProof.QgManifoldModeInstance
 
-variable {ι : Type*}
-variable (S : VielbeinSpectrum ι)
-
 
 
 open Filter Topology
@@ -27,6 +24,9 @@ open BookProof.QgTimeStepping
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable (S : VielbeinSpectrum ι)
 
 theorem BookProof.QgManifoldModeInstance.VielbeinSpectrum.energyWindow_exhausts (F : Finset ι) :
     ∀ᶠ n : ℕ in atTop, ∀ a ∈ F, a ∈ S.energyWindow n := by sorry

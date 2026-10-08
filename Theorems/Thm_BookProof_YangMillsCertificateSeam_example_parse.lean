@@ -14,8 +14,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsCertificateSeam
 open BookProof.YangMillsCertificateSeam
 
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
 
 noncomputable section
 
@@ -26,5 +24,7 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.TruncationGapLift
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.YangMillsCertificateSeam.example_parse : parseMatrixBounds exampleNdjson = some exampleRecord := by sorry

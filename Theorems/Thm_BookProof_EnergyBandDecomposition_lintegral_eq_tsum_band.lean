@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEnergyBandDecomposition
 open BookProof.EnergyBandDecomposition
 
-variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
-
 
 
 open MeasureTheory
+
+variable {X : Type*} {E : X → ℝ} {ε : ℝ} {k : ℤ} {x : X}
 
 
 theorem BookProof.EnergyBandDecomposition.lintegral_eq_tsum_band [MeasurableSpace X] {μ : Measure X} (hε : 0 < ε)

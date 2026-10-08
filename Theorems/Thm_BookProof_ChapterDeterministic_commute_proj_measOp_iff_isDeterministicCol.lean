@@ -4,18 +4,17 @@ import Definitions.Def_ChapterDeterministic
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterReconstruct
 import Definitions.Def_ChapterTimeTranslation
-open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 open BookProof.ChapterDeterministic
-
-variable {n : ℕ}
 
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct BookProof.ChapterTimeTranslation
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterDeterministic.commute_proj_measOp_iff_isDeterministicCol

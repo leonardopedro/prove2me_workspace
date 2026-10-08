@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxFluctuation
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxFluctuation.hasDerivAt_partition (beta : ℝ) (s : Fin m → ℝ) :

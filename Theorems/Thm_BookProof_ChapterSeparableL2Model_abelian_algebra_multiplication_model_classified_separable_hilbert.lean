@@ -9,6 +9,16 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterSeparableL2Model
 
+
+noncomputable section
+
+open MeasureTheory TopologicalSpace
+
+
+open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
+open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterStandardBorelClassification
+
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
@@ -19,16 +29,6 @@ variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [Measura
   [BorelSpace Y]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable {A : Type v} [CommCStarAlgebra A]
-
-
-noncomputable section
-
-open MeasureTheory TopologicalSpace
-
-
-open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
-open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
-open BookProof.ChapterStandardBorelClassification
 
 theorem BookProof.ChapterSeparableL2Model.abelian_algebra_multiplication_model_classified_separable_hilbert
     [TopologicalSpace.SeparableSpace H] (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) :

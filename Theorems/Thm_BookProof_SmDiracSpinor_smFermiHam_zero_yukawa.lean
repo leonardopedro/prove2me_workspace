@@ -9,8 +9,6 @@ open BookProof.SmCar
 open BookProof.SmDiracYukawa
 open BookProof.SmDiracSpinor
 
-variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
-
 
 
 open Matrix
@@ -18,6 +16,8 @@ open BookProof.ChapterCPTHamiltonian BookProof.SmCar BookProof.SmDiracYukawa
 open BookProof.FarisLavine
 
 noncomputable section
+
+variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
 
 
 theorem BookProof.SmDiracSpinor.smFermiHam_zero_yukawa (hD : Matrix (Fin 4) (Fin 4) ℂ) :

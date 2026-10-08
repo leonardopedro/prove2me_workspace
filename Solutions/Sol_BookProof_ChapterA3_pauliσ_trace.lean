@@ -1,4 +1,4 @@
--- Generated from ChapterA3h.lean — solution of BookProof.ChapterA3.pauliσ_trace
+-- Generated from ChapterA3h.lean — solution of BookProof.ChapterA3.paulisigma_trace
 import Mathlib
 import Definitions.Def_ChapterA3h
 open BookProof.ChapterA3

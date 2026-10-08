@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSmFockEsa
 import Theorems.Thm_BookProof_SmFockEsa_smSecMomIdx_injective
 import Theorems.Thm_BookProof_SmFockEsa_smSectorHam_eq_weylPoly
+import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
 import Theorems.Thm_BookProof_YangMillsNonAbelianEsa_weylPoly_esa
 open BookProof.SmFockEsa
 

@@ -17,8 +17,6 @@ import Definitions.Def_ChapterQg3DGaugeEsa
 open BookProof.Qg3DGaugeEsa
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.linForm_qgTorsionVecN {n : ℕ} (p : Fin n) (m : Fin 64) :
     linForm (qgTorsionVecN n (p, m))

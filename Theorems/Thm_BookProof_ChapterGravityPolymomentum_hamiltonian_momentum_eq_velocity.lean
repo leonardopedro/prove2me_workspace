@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterGravityPolymomentum
 open BookProof.ChapterGravityPolymomentum
 
-variable {e T : ℝ} {S Tc : Matrix (Fin 4) (Fin 4) ℝ} {u v : Fin 4 → ℝ}
-
 
 
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+
+variable {e T : ℝ} {S Tc : Matrix (Fin 4) (Fin 4) ℝ} {u v : Fin 4 → ℝ}
 
 theorem BookProof.ChapterGravityPolymomentum.hamiltonian_momentum_eq_velocity (he : e ≠ 0) (Scal E : Matrix (Fin 4) (Fin 4) ℝ)
     (P trE R : ℝ) (hS : Scal = (2 * e) • S) (hP : P = -4 * e * T) :

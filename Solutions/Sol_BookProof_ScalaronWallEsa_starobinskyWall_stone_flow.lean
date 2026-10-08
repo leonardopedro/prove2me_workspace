@@ -20,12 +20,10 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-obinskyV M alpha phi) (contDiff_starobinskyV M alpha)) :=
-  wallHam_essentiallySelfAdjoint _ _ (fun phi => starobinskyV_nonneg halpha phi)
-
 theorem solution {M alpha : ℝ} (halpha : 0 < alpha) :
     ∃ (T : UnboundedSelfAdjoint (Lp ℂ 2 (volume : Measure ℝ)))
       (U : ℝ → (Lp ℂ 2 (volume : Measure ℝ) →L[ℂ] Lp ℂ 2 (volume : Measure ℝ))),
-      IsSelfAdjointExtension :=
-           (wallHam (fun phi : ℝ => starobinskyV M alpha phi)
-              (contDiff_starobinskyV M al
+      IsSelfAdjointExtension
+          (wallHam (fun phi : ℝ => starobinskyV M alpha phi)
+            (contDiff_starobinskyV M alpha)) T.op ∧
+        IsStoneFlow T U := exists_stone_flow_of_esa _ ccDomain_dense (wallHam_symmetricOn _ _) (starobinskyWall_esa halpha)

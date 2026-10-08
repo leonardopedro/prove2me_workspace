@@ -11,14 +11,14 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.dGamma_hasZeroDeficiencyOn (ω : M → ℝ) :
     HasZeroDeficiencyOn (FockDom M) (dGamma ω) := by sorry

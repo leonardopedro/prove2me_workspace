@@ -8,14 +8,14 @@ open BookProof.ChapterBoseEinstein
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterThermalMaxEntropy
 
-variable {nbar : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {nbar : ℝ}
 
 
 theorem BookProof.ChapterThermalMaxEntropy.thermalEntropy_boseEinstein {x : ℝ} (hx : 0 < x) :

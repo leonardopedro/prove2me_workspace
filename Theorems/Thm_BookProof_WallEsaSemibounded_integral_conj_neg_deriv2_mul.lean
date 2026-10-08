@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 open BookProof.WallEsaSemibounded
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open MeasureTheory SchwartzMap
@@ -18,7 +16,11 @@ open BookProof.ScalaronWallEsa BookProof.WallEsaBddBelow
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
 
 theorem BookProof.WallEsaSemibounded.integral_conj_neg_deriv2_mul (f : ℝ → ℂ)
     (h1 : ∀ x, HasDerivAt f (deriv f x) x)
-    (h2 : ∀ x, Ha := by sorry
+    (h2 : ∀ x, HasDerivAt (deriv f) (deriv (deriv f) x) x) (x : ℝ) :
+    HasDerivAt (fun t : ℝ => (starRingEnd ℂ) (deriv f t) * f t)
+      ((starRingEnd ℂ) (deriv (deriv f) x) * f x + ((‖deriv f x‖ ^ 2 : ℝ) : ℂ)) x := by sorry

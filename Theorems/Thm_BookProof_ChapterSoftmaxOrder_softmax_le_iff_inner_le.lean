@@ -7,8 +7,6 @@ open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxOrder
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxBorn BookProof.ChapterSoftmaxSharpness
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxOrder.softmax_le_iff_inner_le {n : ℕ} {beta : ℝ} (hbeta : 0 < beta)

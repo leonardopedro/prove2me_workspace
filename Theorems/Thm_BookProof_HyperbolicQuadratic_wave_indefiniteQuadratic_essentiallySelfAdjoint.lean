@@ -9,9 +9,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -21,4 +18,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
-theorem BookProof.HyperbolicQuadratic.wave_indefiniteQuadratic_essentiallySelfAdjoint := by sorry
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
+theorem BookProof.HyperbolicQuadratic.wave_indefiniteQuadratic_essentiallySelfAdjoint (n : ℕ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 1 + n)) (quadOp (minkowskiCoeff n)) := by sorry

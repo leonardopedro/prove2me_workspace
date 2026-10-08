@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 
 
@@ -44,7 +46,7 @@ namespace BookProof.EsaPair
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-  BookProof.SecondQuantizationCore BookProof.DirectSumEsa BookProof.BoundedDGamma
+  BookProof.SecondQuantizationCore BookProof.DirectSumEsa
 
 noncomputable section
 

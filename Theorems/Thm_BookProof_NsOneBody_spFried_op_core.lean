@@ -20,8 +20,6 @@ open BookProof.QgOuterFockFL
 open BookProof.YangMillsHermite
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -32,6 +30,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.spFried_op_core (nu : ℝ) (k : Fin 3 → ℝ) (p : polyGaussCore (d := 6))
     (h : (p : L2d 6) ∈ (spFried nu k).dom) :

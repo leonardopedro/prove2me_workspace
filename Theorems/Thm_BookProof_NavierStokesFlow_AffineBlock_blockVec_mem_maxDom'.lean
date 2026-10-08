@@ -8,14 +8,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+
+variable {J : Type*}
 
 
 theorem BookProof.NavierStokesFlow.AffineBlock.blockVec_mem_maxDom_prime (s : ℕ → ℝ) (v : lpFiniteModes (ℕ × J)) (j : J) :

@@ -25,10 +25,6 @@ import Mathlib
 import Definitions.Def_ChapterSirkPerSystemFlowBound
 open BookProof.ChapterSirkPerSystemFlowBound
 
-variable {E G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-
 
 noncomputable section
 
@@ -46,6 +42,10 @@ open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.NSHashimoto
 open BookProof.NavierStokesFlow.DiffHashimoto BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow.LagrangianEsa BookProof.NavierStokesFlow.LagrangianKatoRellich
+
+variable {E G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 theorem BookProof.ChapterSirkPerSystemFlowBound.adjoint_comp_self_of_isometry (V : G →L[ℂ] E) (hV : ∀ x : G, ‖V x‖ = ‖x‖) :

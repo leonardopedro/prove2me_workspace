@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeShiftExample
 import Theorems.Thm_BookProof_ChapterGaugeShiftExample_shiftOp_commute
-import Theorems.Thm_BookProof_ChapterGaugeShiftExample_no_shift_invariant_unit_vector'
+import Theorems.Thm_BookProof_ChapterGaugeShiftExample_no_shift_invariant_unit_vector_prime
 import Theorems.Thm_BookProof_ChapterGaugeShiftExample_shift_gauge_fixing_incomplete
 import Theorems.Thm_BookProof_ChapterGaugeShiftExample_expectation_shift_invariant
 open BookProof.ChapterGaugeShiftExample
@@ -22,6 +22,6 @@ theorem solution :
     (∀ A : L2Z →L[ℂ] L2Z, (∀ m : ℤ, A * shiftOp m = shiftOp m * A) →
       ∀ (m : ℤ) (f : L2Z), ⟪shiftOp m f, A (shiftOp m f)⟫_ℂ = ⟪f, A f⟫_ℂ) :=
   ⟨fun _ hm _ hf => shift_gauge_fixing_incomplete hf hm,
-      no_shift_invariant_unit_vector',
+      no_shift_invariant_unit_vector_prime,
       shiftOp_commute,
       fun _ hA => expectation_shift_invariant hA⟩

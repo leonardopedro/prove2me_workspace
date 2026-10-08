@@ -9,17 +9,17 @@ import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
 open BookProof.PolarPartialIsometry
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {Dom : Submodule ℂ F}
-variable (P Q : Dom →ₗ[ℂ] F)
-  (h : ∀ x y : Dom, (inner ℂ (P x) (P y) : ℂ) = inner ℂ (Q x) (Q y))
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {Dom : Submodule ℂ F}
+
+variable (P Q : Dom →ₗ[ℂ] F)
+  (h : ∀ x y : Dom, (inner ℂ (P x) (P y) : ℂ) = inner ℂ (Q x) (Q y))
+variable [CompleteSpace F]
 
 theorem BookProof.PolarPartialIsometry.norm_extend (w : initSpace P) :
     ‖(preIsomL P Q h).extend (inclL P) w‖ = ‖w‖ := by sorry

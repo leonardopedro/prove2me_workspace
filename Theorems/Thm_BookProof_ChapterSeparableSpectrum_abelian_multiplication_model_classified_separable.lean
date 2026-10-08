@@ -6,11 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterSeparableSpectrum
 open BookProof.ChapterSeparableSpectrum
 
-variable (Y : Type*) [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
-variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
-  [SeparableSpace C(Y, ℂ)] [MeasurableSpace Y] [BorelSpace Y]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -19,6 +14,11 @@ open MeasureTheory TopologicalSpace WeakDual
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianDirectSum
 open BookProof.ChapterStandardBorelClassification
+
+variable (Y : Type*) [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
+variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y]
+  [SeparableSpace C(Y, ℂ)] [MeasurableSpace Y] [BorelSpace Y]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.ChapterSeparableSpectrum.abelian_multiplication_model_classified_separable (pi : C(Y, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) :
     ∃ (S : Set H) (mu : S → Measure Y) (V : ∀ x : S, Lp ℂ 2 (mu x) →ₗᵢ[ℂ] H),

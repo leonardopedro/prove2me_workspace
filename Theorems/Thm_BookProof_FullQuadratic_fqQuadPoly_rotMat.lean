@@ -19,8 +19,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
 open BookProof.FullQuadratic
 
-variable {d : ℕ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -36,6 +34,8 @@ open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.FullQuadratic.fqQuadPoly_rotMat (k l : Fin d) :

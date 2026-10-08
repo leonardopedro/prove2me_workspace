@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignMatrix
 open BookProof.ChapterFreeFieldBornSignMatrix
 
-variable {n : ℕ}
-
 
 open BookProof.ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignHom
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignMatrix.flipMatrix_sq (b : Fin n → Bool) :

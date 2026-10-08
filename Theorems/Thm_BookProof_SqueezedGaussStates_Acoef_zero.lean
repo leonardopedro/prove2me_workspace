@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 open BookProof.SqueezedGaussStates
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.GaussCoordCombo
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.SqueezedGaussStates.Acoef_zero (v : ℝ) : Acoef v 0 = 1 := by sorry

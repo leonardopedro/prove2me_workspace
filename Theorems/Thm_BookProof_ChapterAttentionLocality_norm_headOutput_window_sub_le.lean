@@ -4,11 +4,11 @@ import Mathlib
 import Definitions.Def_ChapterAttentionLocality
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionMasking
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionLocality
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -17,6 +17,10 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionMasking
+open BookProof.ChapterAttentionOutput
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionLocality.norm_headOutput_window_sub_le {beta gamma Delta R : ℝ} (hb : 0 ≤ beta)

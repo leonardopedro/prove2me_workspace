@@ -1,8 +1,8 @@
 -- Generated from ChapterHermiteProductCore.lean — solution of BookProof.HermiteProductCore.span_hermiteMv
 import Mathlib
 import Definitions.Def_ChapterHermiteProductCore
-import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_zero
 import Theorems.Thm_BookProof_HermiteProductCore_mul_X_mem_span_hermiteMv
+import Theorems.Thm_BookProof_HermiteProductCore_hermiteMv_zero
 open BookProof.HermiteProductCore
 
 

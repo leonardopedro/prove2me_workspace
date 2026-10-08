@@ -336,12 +336,61 @@ noncomputable def swEquiv (hcyc : IsCyclic P ψ) : Lp ℂ 2 (pvmMeasure P ψ) �
 
 /-! ## The intertwining of the projections -/
 
+omit [CompleteSpace H] in
+theorem proj_indicatorConstLp {E F : Set X} (hE : MeasurableSet E) (hF : MeasurableSet F) :
+    proj (pvmMeasure P ψ) hE
+        (indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ))
+      = indicatorConstLp 2 (hE.inter hF) (measure_ne_top (pvmMeasure P ψ) (E ∩ F)) (1 : ℂ) := by
+  refine Lp.ext ?_
+  filter_upwards [proj_coeFn (pvmMeasure P ψ) hE
+      (indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ)),
+    indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := F)
+      (hs := hF) (hμs := measure_ne_top (pvmMeasure P ψ) F) (c := (1 : ℂ)),
+    indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := E ∩ F)
+      (hs := hE.inter hF) (hμs := measure_ne_top (pvmMeasure P ψ) (E ∩ F)) (c := (1 : ℂ))]
+    with x e1 e2 e3
+  rw [e1, e3]
+  by_cases hx : x ∈ E <;> by_cases hy : x ∈ F <;>
+    simp [Set.indicator_apply, e2, hx, hy]
 
-
-
+theorem swCLM_proj {E : Set X} (hE : MeasurableSet E) (f : Lp ℂ 2 (pvmMeasure P ψ)) :
+    swCLM P ψ (proj (pvmMeasure P ψ) hE f) = P.p E (swCLM P ψ f) := by
+  refine Lp.induction (p := 2) (by simp)
+    (fun f => swCLM P ψ (proj (pvmMeasure P ψ) hE f) = P.p E (swCLM P ψ f)) ?_ ?_ ?_ f
+  · intro c F hF hμF
+    rw [Lp.simpleFunc.coe_indicatorConst]
+    have hcsmul : indicatorConstLp 2 hF hμF.ne c
+        = c • indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ) := by
+      refine Lp.ext ?_
+      filter_upwards [indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := F)
+          (hs := hF) (hμs := hμF.ne) (c := c),
+        Lp.coeFn_smul c (indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ)),
+        indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := F)
+          (hs := hF) (hμs := measure_ne_top (pvmMeasure P ψ) F) (c := (1 : ℂ))] with x e1 e2 e3
+      simp only [Pi.smul_apply] at e2
+      rw [e1, e2, e3]
+      by_cases hx : x ∈ F <;> simp [hx]
+    rw [hcsmul, proj_smul, map_smul, map_smul, proj_indicatorConstLp P ψ hE hF,
+      swCLM_indicator P ψ (hE.inter hF), swCLM_indicator P ψ hF, map_smul, P.inter hE hF]
+  · intro g h hg hh _ hPg hPh
+    rw [proj_add, map_add, map_add, hPg, hPh, map_add]
+  · exact isClosed_eq
+      ((swCLM P ψ).continuous.comp (projL (pvmMeasure P ψ) hE).continuous)
+      ((P.p E).continuous.comp (swCLM P ψ).continuous)
 
 /-! ## The headline -/
 
-
+/-- **The spectral theorem for a cyclic projection-valued measure.**  For a cyclic vector
+`ψ` of a projection-valued measure `P` on `X`, the Hilbert space is unitarily `L²(X, μ)`
+with `μ = ‖P(·)ψ‖²`, by a unitary sending the indicator of `E` to `P(E) ψ` and intertwining
+multiplication by indicators with the projections of `P`. -/
+theorem pvm_cyclic_unitary (P : Pvm X H) (ψ : H) (hcyc : IsCyclic P ψ) :
+    ∃ W : Lp ℂ 2 (pvmMeasure P ψ) ≃ₗᵢ[ℂ] H,
+      (∀ (E : Set X) (hE : MeasurableSet E),
+          W (indicatorConstLp 2 hE (measure_ne_top (pvmMeasure P ψ) E) (1 : ℂ)) = P.p E ψ) ∧
+      (∀ (E : Set X) (hE : MeasurableSet E) (f : Lp ℂ 2 (pvmMeasure P ψ)),
+          W (proj (pvmMeasure P ψ) hE f) = P.p E (W f)) :=
+  ⟨swEquiv P ψ hcyc, fun _ hE => swCLM_indicator P ψ hE,
+    fun _ hE f => swCLM_proj P ψ hE f⟩
 
 end BookProof.ChapterPvmCyclicUnitary

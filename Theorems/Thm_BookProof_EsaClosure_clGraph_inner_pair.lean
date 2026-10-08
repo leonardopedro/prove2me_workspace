@@ -6,14 +6,14 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 open Filter Topology
 
 
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 theorem BookProof.EsaClosure.clGraph_inner_pair {T : D →ₗ[ℂ] F} (hsym : SymmetricOn D T) {p q : F × F}

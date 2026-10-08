@@ -7,8 +7,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockManyMode
 
-variable {d : ℕ} {κ : Fin d → ℝ}
-
 
 open scoped ENNReal
 
@@ -16,6 +14,8 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian
 
+
+variable {d : ℕ} {κ : Fin d → ℝ}
 
 
 theorem BookProof.NavierStokesFlow.FockManyMode.testState_coe_zero (i₀ : Fin d) :

@@ -6,18 +6,15 @@ open BookProof.ChapterSirkDiffusiveDecay
 
 
 
-
-
-
-
-
-
-
 noncomputable section
 
 
 open BookProof.ChapterH4
 open Filter Topology NormedSpace
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -43,7 +40,4 @@ theorem solution (A : E →L[ℂ] E) (v : E) (t : ℝ) :
         = inner ℂ (A (heatFlow A t v)) (heatFlow A t v) := inner_conj_symm _ _
     rw [← h3, Complex.conj_re]
   simp only [hnorm, hcomm] at h2
-  convert h2 using 1
-  · rfl
-  · rfl
-  · ring
+  convert h2 using 1 <;> (first | rfl | ring)

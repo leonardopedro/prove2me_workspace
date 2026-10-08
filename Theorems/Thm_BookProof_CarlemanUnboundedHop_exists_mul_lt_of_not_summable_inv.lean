@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 open BookProof.CarlemanUnboundedHop
 
-variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
-
 
 
 open Finset
 
 noncomputable section
+
+variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 theorem BookProof.CarlemanUnboundedHop.exists_mul_lt_of_not_summable_inv {A S : ℕ → ℝ} (hA : ∀ n, 0 < A n)
     (hSsum : Summable S) (hcar : ¬ Summable fun n => (A n)⁻¹) :

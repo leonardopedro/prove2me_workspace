@@ -7,12 +7,12 @@ open BookProof.ChapterSphericalBessel
 open BookProof.ChapterSphericalBesselODE
 open BookProof.ChapterRadialLaplacian
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterRadialLaplacian.contDiffAt_sbessel_zero {r : ℝ} (hr : r ≠ 0) : ContDiffAt ℝ 2 (sbessel 0) r := by sorry

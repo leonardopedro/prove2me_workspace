@@ -13,10 +13,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
-variable {d : ℕ}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {D : Submodule ℂ (L2d 84)}
-
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -25,5 +21,9 @@ open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerk
 open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
+
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
 
 theorem BookProof.QuantumGravity3DGauge.qg3D_apply (Φ : CoreRep 84 D) : SymmetricOn D (qg3DHamiltonian Φ) := by sorry

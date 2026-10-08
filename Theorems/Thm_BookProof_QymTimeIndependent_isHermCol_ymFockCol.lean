@@ -9,20 +9,18 @@ import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
+import Definitions.Def_ChapterA4
 import Mathlib
 import Definitions.Def_ChapterQymTimeIndependentFlow
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.QymTimeIndependent
-
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 
 
@@ -33,6 +31,8 @@ open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime BookProof.QgTimeInd
 open BookProof.FiniteSectionSingleTime BookProof.YangMillsFriedrichs
 open BookProof.FockSecondQuantization BookProof.QgCouplingDGammaSum
 open BookProof.YangMillsHermite BookProof.HermiteGalerkin
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.QymTimeIndependent.isHermCol_ymFockCol :
     SymmetricOn (lpFiniteModes Conf) (dGammaOp (ymFockCol e fabc)) := by sorry

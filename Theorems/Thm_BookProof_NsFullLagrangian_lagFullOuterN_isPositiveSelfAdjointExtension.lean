@@ -19,8 +19,6 @@ open BookProof.QgOuterFockFL
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullLagrangian
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullLagrangian.lagFullOuterN_isPositiveSelfAdjointExtension (lam lam' mu gg : ℝ) :
     IsPositiveSelfAdjointExtension (lagFullFockHam lam lam' mu gg)

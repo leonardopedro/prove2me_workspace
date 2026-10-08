@@ -28,5 +28,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     momTPoly k i p = (-Complex.I) • dPolyT k i p := by
 
-  rw [momTPoly_apply, dPolyT_apply, momPoly_apply' i p, ← dPoly_apply]
+  rw [momTPoly_apply, dPolyT_apply, momPoly_apply_prime i p, ← dPoly_apply]
   match_scalars <;> (ring_nf; all_goals (rw [Complex.I_sq]; ring))

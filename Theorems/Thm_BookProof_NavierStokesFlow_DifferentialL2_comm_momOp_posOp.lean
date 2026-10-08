@@ -15,8 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.MixedLinearEsa
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.comm_momOp_posOp (i k : Fin d) :
     (momOp i).comp (posOp k) - (posOp k).comp (momOp i)

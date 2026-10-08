@@ -11,15 +11,15 @@ import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ClosureUniqueness
 open BookProof.NonnegSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T S : Submodule ℂ (F × F)}
 
 
 theorem BookProof.NonnegSquareRoot.sqrtRel_isClosed (hT : IsNonnegSelfAdjoint T) :

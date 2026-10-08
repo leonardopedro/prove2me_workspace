@@ -29,4 +29,4 @@ theorem solution :
   · intro T S h
     have h' : T.stoneGroup = S.stoneGroup := h
     rw [← T.gen_stoneGroup_eq, ← S.gen_stoneGroup_eq, h']
-  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)⟩
+  · exact fun G => ⟨G.gen, WeakMeasurableUnitaryGroup.ext_prime (fun t => G.gen_stoneU_eq t)⟩

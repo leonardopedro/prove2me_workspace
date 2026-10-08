@@ -15,9 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.HermiteCarleman.wave_indefiniteQuadratic_firstOrder_essentiallySelfAdjoint (n : ℕ)
     (b b' : Fin (1 + n) → ℝ) :

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.nsFlowEuclidean_hasDerivAt
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_nsFlow_solves_schrodinger
 open BookProof.NavierStokesFlow
 
 
@@ -16,11 +17,9 @@ variable {ι : Type*}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
-eorem nsFlowEuclidean_zero (psi : EuclideanSpace ℂ (Fin n)) :
-    nsFlowEuclidean d 0 psi = psi := by
-  simp [nsFlowEuclidean, nsFlow_zero]
-
-theorem solution (psi : EuclideanSpace ℂ (Fin n)) (t : ℝ) : :=
+theorem solution (psi : EuclideanSpace ℂ (Fin n)) (t : ℝ) :
+    HasDerivAt (fun s : ℝ => nsFlowEuclidean d s psi)
+      (Complex.I • Matrix.toEuclideanLin (nsHamiltonian d) (nsFlowEuclidean d t psi)) t :=
    HasDerivAt (fun s : ℝ => nsFlowEuclidean d s psi)
         (Complex.I • Matrix.toEuclideanLin (nsHamiltonian d) (nsFlowEuclidean d t psi)) t := by
     have h := nsFlow_solves_schrodinger d (WithLp.ofLp psi) t

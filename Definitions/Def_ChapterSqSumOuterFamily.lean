@@ -96,7 +96,9 @@ cores. -/
 def outerCore : Submodule ℂ (outerFock dim) :=
   dsCore (fun n : ℕ => polyGaussCore (d := dim n))
 
-
+theorem outerCore_dense :
+    Dense ((outerCore dim : Submodule ℂ (outerFock dim)) : Set (outerFock dim)) :=
+  dsCore_dense fun _ => polyGaussCore_dense
 
 /-- **The lifted comparison operator** `dΓ(N₁)`, `N₁ = −Δ + ‖x‖²/4`, in its Friedrichs
 realization: positive, self-adjoint, and with `N + 1` onto the outer Fock space. -/
@@ -109,15 +111,40 @@ abbrev outerFriedDom : Submodule ℂ (outerFock dim) := (outerComparison dim).do
 /-- The lifted comparison operator on the outer Fock space. -/
 abbrev outerFriedN : outerFriedDom dim →ₗ[ℂ] outerFock dim := (outerComparison dim).op
 
+theorem outerFriedN_symmetricOn : SymmetricOn (outerFriedDom dim) (outerFriedN dim) :=
+  (outerComparison dim).sym
 
+theorem outerFriedN_quadForm_nonneg (x : outerFriedDom dim) :
+    0 ≤ quadForm (outerFriedN dim) x := (outerComparison dim).pos x
 
+/-- `N + 1` is onto the outer Fock space. -/
+theorem outerFriedN_surj (f : outerFock dim) :
+    ∃ x : outerFriedDom dim, outerFriedN dim x + (x : outerFock dim) = f :=
+  (outerComparison dim).surj f
 
+/-- The lifted comparison operator is essentially self-adjoint on its own domain. -/
+theorem outerFriedN_esa : EssentiallySelfAdjointOn (outerFriedDom dim) (outerFriedN dim) :=
+  (outerComparison dim).esa_self
 
-
-
-
-
-
+set_option maxHeartbeats 1600000 in
+-- the lifted domain is built from the Friedrichs completion, so unfolding it is costly
+/-- The finite-particle core sits inside the domain of the lifted comparison operator. -/
+theorem outerCore_le_friedDom : outerCore dim ≤ outerFriedDom dim := by
+  intro x hx
+  refine ⟨fun n => polyGaussCore_le_harmFriedDom (dim n) (hx.2 n), ?_⟩
+  have hfun : (fun n : ℕ => opTot (harmFried (dim n)).op ((x : outerFock dim) n))
+      = fun n : ℕ => (harmCore ⟨(x : outerFock dim) n, hx.2 n⟩ : L2d (dim n)) := by
+    funext n
+    rw [opTot_of_mem _ (polyGaussCore_le_harmFriedDom (dim n) (hx.2 n)),
+      harmFried_op_core (dim n) ⟨(x : outerFock dim) n, hx.2 n⟩]
+  rw [hfun]
+  refine memLp_of_finite_support (Set.Finite.subset hx.1 fun n hn => ?_)
+  simp only [Set.mem_setOf_eq] at hn ⊢
+  intro h0
+  refine hn ?_
+  have hz : (⟨(x : outerFock dim) n, hx.2 n⟩ : polyGaussCore (d := dim n)) = 0 :=
+    Subtype.ext h0
+  rw [hz, map_zero]
 
 /-! ## 2. Uniform families -/
 
@@ -167,16 +194,23 @@ theorem flK_nonneg : 0 ≤ F.flK := by
   have := F.km_nonneg
   rw [flK]; linarith
 
-
+theorem flc_nonneg : 0 ≤ F.flc := by
+  have h := F.ab_nonneg
+  have := F.km_nonneg
+  rw [flc]; linarith
 
 /-- **The `n`-particle Hamiltonian of the family**, on the Gauss–polynomial core of
 `L²(ℝ^{dim n})`. -/
 def secHam (n : ℕ) : polyGaussCore (d := F.dim n) →ₗ[ℂ] L2d (F.dim n) :=
   sqSumOp (F.kap n) (F.vv n)
 
+theorem secHam_symmetricOn (n : ℕ) :
+    SymmetricOn (polyGaussCore (d := F.dim n)) (F.secHam n) :=
+  sqSumOp_symmetricOn _ _
 
-
-
+theorem secHam_essentiallySelfAdjointOn (n : ℕ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := F.dim n)) (F.secHam n) :=
+  sqSumOp_essentiallySelfAdjointOn _ _
 
 /-- **The relative bound**, with a constant uniform in the particle number. -/
 theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
@@ -189,7 +223,16 @@ theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
   rw [secHam, ← heq]
   exact norm_sqSumOp_le F.km_nonneg (F.kap_le n) hB0 hB u
 
-
+/-- **The Faris–Lavine commutator bound**, with a constant uniform in the particle
+number. -/
+theorem secHam_commForm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
+    |commForm (F.secHam n) harmCore u| ≤ F.flc * quadForm harmCore u := by
+  have hM : ∀ x : Vd (F.dim n),
+      ∑ k : Fin (F.dim n), (gradFun (F.vv n) k x) ^ 2 ≤ (F.a * F.b) ^ 2 * ‖x‖ ^ 2 :=
+    fun x => sum_gradFun_sq_le_of_schur F.a_nonneg F.b_nonneg (F.row_le n) (F.col_le n) x
+  have heq : F.km / 2 + 2 * (F.a * F.b) = F.flc := by rw [flc]
+  rw [secHam, ← heq]
+  exact commForm_sqSumOp_le F.km_nonneg (F.kap_le n) F.ab_nonneg hM u
 
 /-! ### The Hamiltonian on the outer Fock space -/
 
@@ -197,9 +240,13 @@ theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
 space.** -/
 def outerHam : outerCore F.dim →ₗ[ℂ] outerFock F.dim := dsOp (fun n : ℕ => F.secHam n)
 
+theorem outerHam_symmetricOn : SymmetricOn (outerCore F.dim) F.outerHam :=
+  dsOp_symmetricOn _ fun n => F.secHam_symmetricOn n
 
-
-
+/-- The Carleman route applies sector by sector: the Hamiltonian is essentially
+self-adjoint already on the finite-particle core. -/
+theorem outerHam_esa : EssentiallySelfAdjointOn (outerCore F.dim) F.outerHam :=
+  dsOp_essentiallySelfAdjointOn _ fun n => F.secHam_essentiallySelfAdjointOn n
 
 /-- The Faris–Lavine core data of the `n`-particle Hamiltonian. -/
 def secData (n : ℕ) : CoreData (L2d (F.dim n)) where
@@ -218,11 +265,15 @@ def secData (n : ℕ) : CoreData (L2d (F.dim n)) where
 domain of the sector comparison operator. -/
 def secExt (n : ℕ) : (harmFried (F.dim n)).dom →ₗ[ℂ] L2d (F.dim n) := (F.secData n).ext
 
+theorem secExt_symmetricOn (n : ℕ) :
+    SymmetricOn (harmFried (F.dim n)).dom (F.secExt n) :=
+  (F.secData n).ext_symmetricOn (F.secHam_symmetricOn n)
 
 
 
-
-
+theorem secExt_rel : ∀ (n : ℕ) (u : (harmFried (F.dim n)).dom),
+    ‖F.secExt n u‖ ≤ F.flK * ‖(harmFried (F.dim n)).op u + (u : L2d (F.dim n))‖ :=
+  fun n u => (F.secData n).ext_norm_le u
 
 
 

@@ -14,4 +14,8 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 set_option maxHeartbeats 1000000 in
 theorem solution :
     ¬ ∃ T : L2Z →L[ℂ] L2Z, ∀ psi : mulDomain positionField,
-      mulOp positionField psi = T (psi : L2Z) := 
+      mulOp positionField psi = T (psi : L2Z) :=
+  sitionField,
+        mulOp positionField psi = T (psi : L2Z) := by
+    rintro ⟨T, hT⟩
+    refine position_unbounded ⟨

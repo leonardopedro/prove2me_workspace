@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSequentialBayes
 open BookProof.ChapterSequentialBayes
 
-variable {X : Type*} [Fintype X]
-
 
 open scoped BigOperators
 
+
+variable {X : Type*} [Fintype X]
 
 
 theorem BookProof.ChapterSequentialBayes.bayesUpdate_sum_one {prior ℓ : X → ℝ} (hpos : 0 < totEvidence prior ℓ) :

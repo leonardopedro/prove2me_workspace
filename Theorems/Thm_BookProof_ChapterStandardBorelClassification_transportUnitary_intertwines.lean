@@ -10,9 +10,6 @@ open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterUnitaryTransport
 open BookProof.ChapterStandardBorelClassification
 
-variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
-  (mu : Measure X)
-
 
 noncomputable section
 
@@ -22,6 +19,9 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+
+variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
+  (mu : Measure X)
 
 theorem BookProof.ChapterStandardBorelClassification.transportUnitary_intertwines {g : Y → ℂ} (hg : MemLp g ⊤ (Measure.map e mu))
     (v : Lp ℂ 2 (Measure.map e mu)) :

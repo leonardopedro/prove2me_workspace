@@ -8,15 +8,15 @@ open BookProof.NsLagrangianDet
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
-variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-  [CompleteSpace E] {T : E → E}
-variable {b : HilbertBasis ι ℂ E} {o : ι}
-
 
 open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
+variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  [CompleteSpace E] {T : E → E}
+
+variable {b : HilbertBasis ι ℂ E} {o : ι}
 
 theorem BookProof.ChapterWignerSymmetryInfinite.phase_ne_zero (hT : IsWignerSymmetry T) (i : ι) : phase b T o i ≠ 0 := by sorry

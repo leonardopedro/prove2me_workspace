@@ -9,14 +9,14 @@ open BookProof.SmCar
 open BookProof.YangMillsSU3
 open BookProof.SmGaugeRep
 
-variable {S3 : Fin 8 → Matrix (Fin 3) (Fin 3) ℂ} {f3 : Fin 8 → Fin 8 → Fin 8 → ℝ}
-
 
 
 open Matrix Kronecker
 open BookProof.YangMillsSU3 BookProof.SmBrstGhost
 
 noncomputable section
+
+variable {S3 : Fin 8 → Matrix (Fin 3) (Fin 3) ℂ} {f3 : Fin 8 → Fin 8 → Fin 8 → ℝ}
 
 theorem BookProof.SmGaugeRep.sm_brst_nilpotent_rep (hS3 : TraceOrthonormal S3)
     (hf3 : ClosesWithStructureConstants S3 f3) (y : ℝ) :

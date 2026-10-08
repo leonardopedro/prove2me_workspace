@@ -14,9 +14,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-
 
 
 open BookProof.FarisLavine
@@ -30,5 +27,8 @@ open BookProof.HermiteProductCore
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (d : CoreData F)
 
 theorem BookProof.QgOuterFockCoreFL.CoreData.ext_core (p : d.C₀) : d.ext ⟨(p : F), d.gc.le p.2⟩ = d.H₀ p := by sorry

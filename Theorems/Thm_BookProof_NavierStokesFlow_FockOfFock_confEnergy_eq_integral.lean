@@ -10,15 +10,15 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
-variable {M : Type*} [DecidableEq M]
-variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
+variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.confEnergy_eq_integral (μ : Measure Ω) (w : Ω → ℝ) (dens : M → Ω → ℝ)
     (hint : ∀ m, Integrable (fun ξ => w ξ * dens m ξ) μ) (n : Conf M) :

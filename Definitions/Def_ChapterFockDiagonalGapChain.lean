@@ -75,9 +75,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 /-! ## 0. Two small coercion helpers -/
 
 
-
-
-
 /-! ## 1. The finite-mode core as a free module -/
 
 /-- The finite-mode core `finiteModeDomain b = span ℂ (range b)` of an orthonormal basis,
@@ -88,7 +85,6 @@ def modeBasis (b : HilbertBasis ℕ ℂ F) : Basis ℕ ℂ (finiteModeDomain b) 
 @[simp] theorem modeBasis_coe (b : HilbertBasis ℕ ℂ F) (i : ℕ) :
     ((modeBasis b i : finiteModeDomain b) : F) = b i :=
   Basis.coe_span_apply _ i
-
 
 
 /-! ## 2. The diagonal one-particle operator -/
@@ -104,25 +100,7 @@ def diagOnePart (b : HilbertBasis ℕ ℂ F) (w : ℕ → ℝ) :
   (modeBasis b).constr_basis ℂ _ i
 
 
-
-
-
-
-
-
-
-
-
 /-! ## 3. The chain -/
-
-
-
-
-
-
-
-
-
 
 
 end General
@@ -134,21 +112,10 @@ end General
 def freeDispersion (m : ℝ) (p : ℕ → ℝ) (k : ℕ) : ℝ := Real.sqrt ((p k) ^ 2 + m ^ 2)
 
 
-
-
-
 /-! ## 5. Axiom audit -/
 
 section Audit
 
-#print axioms diagOnePart_inner
-#print axioms diagOnePart_symmetricOn
-#print axioms diagOnePart_quadForm_ge
-#print axioms diag_fock_gap
-#print axioms diag_fock_mass_gap
-#print axioms diag_fock_gap_of_field_perturbation
-#print axioms diag_fock_cubic_quartic_bounded_below
-#print axioms freeField_fock_mass_gap
 
 end Audit
 

@@ -8,14 +8,14 @@ import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 theorem BookProof.ChapterSolidHarmonic.contDiff_radialFactor (e : E) (l μ : ℕ) : ContDiff ℝ 2 (radialFactor e l μ) := by sorry

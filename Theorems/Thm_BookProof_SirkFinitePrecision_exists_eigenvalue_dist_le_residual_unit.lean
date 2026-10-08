@@ -4,10 +4,6 @@ import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 
 
-
-
-
-
 noncomputable section
 
 
@@ -16,6 +12,7 @@ open Finset
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]
+
 
 theorem BookProof.SirkFinitePrecision.exists_eigenvalue_dist_le_residual_unit {T : E →ₗ[ℂ] E} (hT : T.IsSymmetric)
     (hn : Module.finrank ℂ E = n) {x : E} (hx : ‖x‖ = 1) (θ : ℝ) :

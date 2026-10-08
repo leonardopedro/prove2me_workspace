@@ -7,16 +7,16 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 open Filter Topology
 
 
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.selfAdjointExtension_eq_adjoint {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F} {A : Dom →ₗ[ℂ] F}
     (hesa : EssentiallySelfAdjointOn D T) (hA : IsSelfAdjointExtension T A) (w u : F) :

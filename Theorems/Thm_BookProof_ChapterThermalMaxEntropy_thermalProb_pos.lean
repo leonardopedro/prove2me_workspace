@@ -7,14 +7,14 @@ import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterThermalMaxEntropy
 
-variable {nbar : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {nbar : ℝ}
 
 
 theorem BookProof.ChapterThermalMaxEntropy.thermalProb_pos (h : 0 < nbar) (n : ℕ) : 0 < thermalProb nbar n := by sorry

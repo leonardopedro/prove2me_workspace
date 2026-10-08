@@ -10,9 +10,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -21,5 +18,8 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.vsel_idxD (v₁ v₂ : ℝ) (j k : Fin 3) (a : Fin 8) : vsel v₁ v₂ (idxD j k a) = v₂ := by sorry

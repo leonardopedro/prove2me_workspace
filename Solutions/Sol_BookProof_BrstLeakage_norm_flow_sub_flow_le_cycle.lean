@@ -1,7 +1,7 @@
 -- Generated from ChapterBrstTruncationLeakage.lean — solution of BookProof.BrstLeakage.norm_flow_sub_flow_le_cycle
 import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
-import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le'
+import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le_prime
 open BookProof.BrstLeakage
 
 
@@ -19,7 +19,7 @@ theorem solution {H B : E →L[ℂ] E} (hH : IsSelfAdjoint H)
     ‖flow H tau w - flow B tau w‖ ≤ (‖H - B‖ * tau) * ‖w‖ := by
 
   rw [← norm_neg]
-  have := norm_flow_sub_flow_apply_le' hH hB tau htau w
+  have := norm_flow_sub_flow_apply_le_prime hH hB tau htau w
   calc ‖-(flow H tau w - flow B tau w)‖ = ‖flow B tau w - flow H tau w‖ := by
         rw [neg_sub]
     _ ≤ ‖H - B‖ * ‖w‖ * tau := this

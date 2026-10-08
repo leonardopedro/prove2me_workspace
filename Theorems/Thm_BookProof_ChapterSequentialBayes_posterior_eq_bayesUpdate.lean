@@ -5,11 +5,11 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterSequentialBayes
 
-variable {X : Type*} [Fintype X]
-
 
 open scoped BigOperators
 
+
+variable {X : Type*} [Fintype X]
 
 
 theorem BookProof.ChapterSequentialBayes.posterior_eq_bayesUpdate {Y : Type*}

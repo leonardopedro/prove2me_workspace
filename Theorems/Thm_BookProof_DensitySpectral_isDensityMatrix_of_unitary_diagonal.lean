@@ -6,12 +6,12 @@ import Definitions.Def_ChapterDensityMarginalConditional
 open BookProof.ChapterB4
 open BookProof.DensitySpectral
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
 open scoped BigOperators ComplexOrder
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.DensitySpectral.isDensityMatrix_of_unitary_diagonal

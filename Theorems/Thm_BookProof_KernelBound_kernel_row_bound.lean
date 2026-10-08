@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterKernelBound
 open BookProof.KernelBound
 
-variable {𝕜 : Type*} [RCLike 𝕜]
-variable {ιx ιy : Type*} [Fintype ιx] [Fintype ιy]
-
 
 
 open Finset
+
+variable {𝕜 : Type*} [RCLike 𝕜]
+variable {ιx ιy : Type*} [Fintype ιx] [Fintype ιy]
 
 
 theorem BookProof.KernelBound.kernel_row_bound (Ψ : ιy → ιx → 𝕜) (Φ : ιx → 𝕜) (y : ιy) :

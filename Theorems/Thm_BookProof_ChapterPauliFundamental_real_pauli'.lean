@@ -6,13 +6,13 @@ import Definitions.Def_ChapterPauliFundamental
 import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
-variable {A : Fin 4 → M4}
-
 
 open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+
+variable {A : Fin 4 → M4}
 
 theorem BookProof.ChapterPauliFundamental.real_pauli_prime (α β : Fin 4 → Matrix (Fin 4) (Fin 4) ℝ)
     (hα : IsCliffordR α) (hβ : IsCliffordR β) :

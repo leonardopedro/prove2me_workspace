@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterBornMeasure
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 open MeasureTheory
 open scoped ENNReal
 
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 theorem BookProof.ChapterBornMeasure.bornMeasure_iUnion (psi : Lp ℂ 2 μ) {s : ℕ → Set α}

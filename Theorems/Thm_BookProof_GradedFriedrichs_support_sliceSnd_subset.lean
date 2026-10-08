@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,6 +20,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.support_sliceSnd_subset {u : (α × β) →₀ ℂ} {A : Finset α} {B : Finset β}
     (hu : u.support ⊆ A ×ˢ B) (a : α) : (sliceSnd a u).support ⊆ B := by sorry

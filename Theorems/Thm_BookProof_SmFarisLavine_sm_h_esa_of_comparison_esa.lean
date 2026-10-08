@@ -15,10 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -29,6 +25,10 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.sm_h_esa_of_comparison_esa (P : SmParams) {c0 : ℝ} (hc0 : 0 ≤ c0)
     (hN : EssentiallySelfAdjointOn (polyGaussCore (d := 163)) (smFlN P c0)) :

@@ -9,14 +9,14 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.FriedrichsCanonical
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.FriedrichsCanonical.resolvent_mem_friedrichsDomain (P : PosSymOp F) (u : F) :

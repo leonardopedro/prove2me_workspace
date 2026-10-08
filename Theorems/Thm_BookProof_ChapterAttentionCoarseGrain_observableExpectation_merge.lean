@@ -6,8 +6,6 @@ import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionCoarseGrain
 
-variable {m r : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+
+variable {m r : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionCoarseGrain.observableExpectation_merge (f : Fin m → Fin r) (p : Fin m → ℝ) (v : Fin r → E) :

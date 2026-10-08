@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA3i
 import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3h
 open BookProof.ChapterA3
 
 

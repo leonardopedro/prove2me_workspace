@@ -8,14 +8,14 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.TensorKatoRellich
 
-variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
 
 noncomputable section
+
+variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
 
 theorem BookProof.TensorKatoRellich.pairLiftDom_apply (L : (DA ⊗[ℂ] DB) →ₗ[ℂ] (Hs.carrier ⊗[ℂ] Ks.carrier))
     (x : pairDom Hs Ks DA DB) (x₀ : DA ⊗[ℂ] DB)

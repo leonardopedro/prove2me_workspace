@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNumericalRangeCrouzeix
 open BookProof.ChapterNumericalRangeCrouzeix
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 theorem BookProof.ChapterNumericalRangeCrouzeix.sum_pearcyVec {A : E →L[ℂ] E} {w : ℂ} {n : ℕ} (hn : 0 < n)

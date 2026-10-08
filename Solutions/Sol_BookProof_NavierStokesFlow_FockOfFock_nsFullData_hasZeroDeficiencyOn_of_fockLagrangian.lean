@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lagrangianFock_hasZeroDeficiencyOn
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_NSFullData_hasZeroDeficiencyOn_of_lagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

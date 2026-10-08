@@ -6,12 +6,12 @@ import Definitions.Def_ChapterEsaClosureCore
 open BookProof.EsaClosure
 open BookProof.ClosureUniqueness
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
 
 
 theorem BookProof.ClosureUniqueness.eq_of_opGraph_eq {A : Dom₁ →ₗ[ℂ] F} {B : Dom₂ →ₗ[ℂ] F} (h : opGraph A = opGraph B) :

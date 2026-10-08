@@ -17,8 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -30,5 +28,7 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_cre (i : Fin 3) : Intertwined (cre i) (creOp i) := by sorry

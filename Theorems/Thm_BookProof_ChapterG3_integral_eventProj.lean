@@ -5,13 +5,13 @@ import Definitions.Def_ChapterConservativeDiagonal
 open BookProof.ConservativeDiagonal
 open BookProof.ChapterG3
 
-variable {X : Type*}
-
 
 open MeasureTheory
 open scoped ENNReal
 
 
+
+variable {X : Type*}
 
 
 theorem BookProof.ChapterG3.integral_eventProj [MeasurableSpace X] (μ : Measure X)

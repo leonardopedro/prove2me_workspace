@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterSchurIrreducible
 open BookProof.ChapterSchurIrreducible
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurIrreducible.cfc_ne_zero_of_mem_spectrum [Nontrivial V] {T : V →L[ℂ] V} (hT : IsSelfAdjoint T)

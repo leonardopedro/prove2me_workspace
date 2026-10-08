@@ -5,11 +5,11 @@ import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
-variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
 
 theorem BookProof.ChapterGaugeComprehensiveFixing.orbitRepresentatives_isComprehensiveGaugeFixing :
     IsComprehensiveGaugeFixing G (orbitRepresentatives (X := X) G) := by sorry

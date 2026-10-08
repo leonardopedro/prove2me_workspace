@@ -16,12 +16,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-ite.subset (hf.image fun k => k - m) ?_
-  intro k hk
-  simp only [Function.mem_support, shiftOp_apply] at hk
-  exact ⟨k + m, hk, by ring⟩
-
-/-- Multiplication by a bounded velocity field preserves the :=
+theorem solution (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
+    velocityOp v f ∈ finiteModes :=
    finite-mode
   domain. -/
   theorem velocityOp_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :

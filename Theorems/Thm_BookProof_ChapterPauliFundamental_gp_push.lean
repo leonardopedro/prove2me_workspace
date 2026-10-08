@@ -6,13 +6,13 @@ import Definitions.Def_ChapterPauliFundamental
 import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
-variable {A : Fin 4 → M4}
-
 
 open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+
+variable {A : Fin 4 → M4}
 
 theorem BookProof.ChapterPauliFundamental.gp_push (hA : IsCliffordC A) (μ : Fin 4) :
     ∀ l : List (Fin 4), (∀ ν ∈ l, ν ≠ μ) →

@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxEquality
 open BookProof.ResolventLadderEq
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
@@ -22,6 +20,8 @@ open BookProof.ResolventLadder
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.ResolventLadderEq.stepUp_nonneg (c δ t : ℝ) : 0 ≤ stepUp c δ t := by sorry

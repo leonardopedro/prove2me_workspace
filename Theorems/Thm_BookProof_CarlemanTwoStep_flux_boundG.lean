@@ -4,10 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanTwoStep
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ}
-variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset
@@ -15,6 +11,10 @@ open BookProof.HermiteCarleman
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ}
+variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.CarlemanTwoStep.flux_boundG {w : ℂ} {rc : (Fin d →₀ ℕ) → Fin d → ℝ} (N : ℕ) (i : Fin d) (k : ℕ)
     {Cn : ℝ} (hCn : 0 ≤ Cn) (hC : ∀ a ∈ faceK d N i k, |rc a i| ≤ Cn) :

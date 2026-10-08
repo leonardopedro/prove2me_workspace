@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterMarkovEntropy
 open BookProof.ChapterMarkovEntropy
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterMarkovEntropy.permMatrix_doublyStochastic (σ : Equiv.Perm (Fin n)) :

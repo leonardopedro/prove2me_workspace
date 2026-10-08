@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
 open BookProof.QuadratureEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial FourierTransform
@@ -23,6 +21,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadratureEsa.foAmp_real (r : Fin d → ℝ) (i : Fin d) : foAmp r 0 i = ((r i : ℝ) : ℂ) := by sorry

@@ -17,18 +17,11 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {κ : Type*}
 
 set_option maxHeartbeats 1000000 in
-: Fin 2) (1 : ℂ)
+theorem solution :
+    (hEx 0 + hEx 1) vEx = (2 : ℂ) • EuclideanSpace.single (0 : Fin 2) (1 : ℂ) := by
 
-theorem solution (i : Fin 2) : vEx i = 1 := by
-  fin_cases i <;> simp [vEx, Euclidean :=
-  Space.single_apply]
-  
-  theorem norm_vEx_sq : ‖vEx‖ ^ 2 = 2 := by
-    rw [EuclideanSpace.norm_eq, Real.sq_sqrt (by positivity)]
-    simp [vEx_apply]
-  
-  theorem sum_nEx_vEx : (nEx 0 + nEx 1) vEx = vEx := by
-    simp [nEx, vEx]
-  
-  theorem sum_hEx_vEx :
-      (hEx 0 + hEx 1) vEx = (2 : ℂ) • Euclid
+  simp only [LinearMap.add_apply, hEx, LinearMap.smulRight_apply, ← add_smul]
+  rw [show (EuclideanSpace.projₗ (𝕜 := ℂ) (0 : Fin 2)) vEx = vEx 0 from rfl,
+    show (EuclideanSpace.projₗ (𝕜 := ℂ) (1 : Fin 2)) vEx = vEx 1 from rfl,
+    vEx_apply, vEx_apply]
+  norm_num

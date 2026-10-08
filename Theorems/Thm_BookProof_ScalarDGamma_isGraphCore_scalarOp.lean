@@ -8,14 +8,14 @@ open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
 
-variable (Hs : IPSpace) (c : ℝ)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (c : ℝ)
 
 
 theorem BookProof.ScalarDGamma.isGraphCore_scalarOp {D : Submodule ℂ Hs.carrier}

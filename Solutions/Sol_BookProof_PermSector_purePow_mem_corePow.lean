@@ -1,6 +1,7 @@
 -- Generated from ChapterPermutationSectorEsa.lean — solution of BookProof.PermSector.purePow_mem_corePow
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
 open BookProof.PermSector
 
 

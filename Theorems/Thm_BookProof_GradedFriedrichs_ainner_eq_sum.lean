@@ -13,8 +13,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -23,6 +21,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.ainner_eq_sum {u : γ →₀ ℂ} {s : Finset γ} (hs : u.support ⊆ s) (v : γ →₀ ℂ) :
     ainner u v = ∑ g ∈ s, (starRingEnd ℂ) (u g) * v g := by sorry

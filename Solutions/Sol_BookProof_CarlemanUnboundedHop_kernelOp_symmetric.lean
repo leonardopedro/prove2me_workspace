@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.kernelOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
+import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range
 open BookProof.CarlemanUnboundedHop
 
 

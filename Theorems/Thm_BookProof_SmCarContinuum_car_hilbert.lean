@@ -7,8 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
 open BookProof.SmCarContinuum
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 
 open BookProof.QuantumGravityFock
@@ -17,6 +15,8 @@ open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
 
 noncomputable section
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 theorem BookProof.SmCarContinuum.car_hilbert (b : HilbertBasis ℕ ℂ H) (v w : H) (ψ : CFock) :
     carAnn b v (carCre b w ψ) + carCre b w (carAnn b v ψ) = (inner ℂ v w : ℂ) • ψ := by sorry

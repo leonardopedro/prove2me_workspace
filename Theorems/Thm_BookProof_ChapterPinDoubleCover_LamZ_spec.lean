@@ -10,6 +10,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 theorem BookProof.ChapterPinDoubleCover.LamZ_spec :
     ∀ S ∈ Omega, ∀ μ : Fin 4,

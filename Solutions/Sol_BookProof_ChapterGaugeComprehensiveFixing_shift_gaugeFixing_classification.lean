@@ -3,9 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_shift_smul_def
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isComprehensiveGaugeFixing
-import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing'
+import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_unitCell_isCompleteGaugeFixing_prime
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_shift_movesEveryPointOfSpectrum
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_shift_smul_ne_half
+import Theorems.Thm_BookProof_ChapterGaugeIncompleteFixing_unconstrained_gauge_fixing_incomplete
+import Theorems.Thm_BookProof_ChapterGaugeIncompleteFixing_univ_isComprehensiveGaugeFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
 
@@ -29,7 +31,7 @@ theorem solution :
     (¬ IsComprehensiveGaugeFixing (Multiplicative ℤ) ({0, 1} : Set ℝ) ∧
       ¬ IsCompleteGaugeFixing' (Multiplicative ℤ) ({0, 1} : Set ℝ)) := by
 
-  refine ⟨⟨unitCell_isComprehensiveGaugeFixing, unitCell_isCompleteGaugeFixing'⟩,
+  refine ⟨⟨unitCell_isComprehensiveGaugeFixing, unitCell_isCompleteGaugeFixing_prime⟩,
     ⟨univ_isComprehensiveGaugeFixing _,
       unconstrained_gauge_fixing_incomplete _ shift_movesEveryPointOfSpectrum⟩,
     ⟨?_, ?_⟩, ⟨?_, ?_⟩⟩

@@ -19,8 +19,6 @@ open BookProof.FullQuadratic
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -36,6 +34,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.sqSumOp_symmetricOn {R : Type*} [Fintype R] (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) :
     SymmetricOn (polyGaussCore (d := D)) (sqSumOp kappa v) := by sorry

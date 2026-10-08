@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_comp_of_commute
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.LagrangianEsa
 open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 
 

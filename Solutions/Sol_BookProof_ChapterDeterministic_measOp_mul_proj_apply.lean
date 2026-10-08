@@ -1,6 +1,7 @@
 -- Generated from ChapterDeterministic.lean — solution of BookProof.ChapterDeterministic.measOp_mul_proj_apply
 import Mathlib
 import Definitions.Def_ChapterDeterministic
+import Theorems.Thm_BookProof_ChapterTimeTranslation_measOp_apply
 open BookProof.ChapterDeterministic
 
 

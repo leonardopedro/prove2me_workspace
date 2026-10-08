@@ -6,13 +6,13 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.WeakSecondDeriv
 
-variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
 
 
 open MeasureTheory Filter Topology intervalIntegral Set
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
 
 theorem BookProof.WeakSecondDeriv.ae_eq_const_of_integral_deriv_smul_eq_zero {r : ℝ → F}
     (hr : LocallyIntegrable r volume)

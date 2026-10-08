@@ -7,14 +7,14 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.Complexification
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open RCLike
 
 
 set_option linter.unusedSectionVars false
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.Cx.smul_I (x : Cx W) : (Complex.I : ℂ) • x = ⟨-x.im, x.re⟩ := by sorry

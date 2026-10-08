@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMasking
 open BookProof.ChapterAttentionMasking
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMasking.causalMask_nonempty (i : Fin m) : (causalMask m i).Nonempty := by sorry

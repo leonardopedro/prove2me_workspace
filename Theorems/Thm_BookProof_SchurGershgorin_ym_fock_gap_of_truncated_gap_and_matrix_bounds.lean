@@ -18,9 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.SchurGershgorin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
 
 noncomputable section
 
@@ -30,6 +27,9 @@ open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.SchurGershgorin.ym_fock_gap_of_truncated_gap_and_matrix_bounds {m : ℕ} {mu eps : ℝ}
     (heps : 0 ≤ eps) (hmueps : 0 ≤ mu - eps) (d r : ℕ → ℝ)

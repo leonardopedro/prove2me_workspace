@@ -16,11 +16,6 @@ open BookProof.QgOuterFock
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgOuterFockElliptic
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {D : ℕ}
-variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
-
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite
@@ -35,5 +30,10 @@ open BookProof.FriedrichsExtension
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : ℕ}
+variable {I : Type*} {G : I → Type*} [∀ i, NormedAddCommGroup (G i)]
+  [∀ i, InnerProductSpace ℂ (G i)] [∀ i, CompleteSpace (G i)]
 
 theorem BookProof.QgOuterFockElliptic.kappaN_qgKappa (n : ℕ) : kappaN qgKappa n = qgKappaN n := by sorry

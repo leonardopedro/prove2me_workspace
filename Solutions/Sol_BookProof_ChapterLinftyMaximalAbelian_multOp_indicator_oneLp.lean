@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_oneLp_coeFn
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.ChapterLinftyMaximalAbelian
 
 

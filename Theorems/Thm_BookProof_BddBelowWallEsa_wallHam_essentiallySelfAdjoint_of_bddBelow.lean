@@ -11,8 +11,6 @@ open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.BddBelowWallEsa
 
-variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}
-
 
 
 open MeasureTheory Metric Filter Topology Set
@@ -20,6 +18,8 @@ open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
 
 noncomputable section
+
+variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}
 
 theorem BookProof.BddBelowWallEsa.wallHam_essentiallySelfAdjoint_of_bddBelow (V : ℝ → ℝ)
     (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) {K : ℝ} (hVK : ∀ x, -K ≤ V x) :

@@ -14,8 +14,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteCore
 open BookProof.QedFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -26,6 +24,8 @@ open BookProof.HermiteGalerkin BookProof.HermiteCore
 open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
 open MeasureTheory
 
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.QedFockGapChain.photon_fock_positivity (p : ℕ → ℝ) :

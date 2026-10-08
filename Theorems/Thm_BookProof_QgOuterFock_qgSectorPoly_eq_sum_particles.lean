@@ -21,8 +21,6 @@ open BookProof.Qg3DGaugeEsa
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -38,6 +36,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.qgSectorPoly_eq_sum_particles (n : ℕ) :
     sqSumPoly (qgKappaN n) (qgTorsionVecN n)

@@ -1,7 +1,9 @@
 -- Generated from ChapterNavierStokesFullEsa.lean — solution of BookProof.NavierStokesFlow.FullEsa.NSFullData.hasZeroDeficiencyOn_of_completeUnitaryFlow
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_completeUnitaryFlow
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.FullEsa
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 

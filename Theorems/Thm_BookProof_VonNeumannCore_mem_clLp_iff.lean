@@ -8,15 +8,15 @@ import Definitions.Def_ChapterEsaClosureCore
 open BookProof.EsaClosure
 open BookProof.VonNeumannCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.VonNeumannCore.mem_clLp_iff {A : D →ₗ[ℂ] F} {p : WithLp 2 (F × F)} :
     p ∈ clLp A ↔ WithLp.ofLp p ∈ clGraph A := by sorry

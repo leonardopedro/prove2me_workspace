@@ -1,6 +1,8 @@
 -- Generated from ChapterGroupAverageEsa.lean — solution of BookProof.GroupAverage.UnitaryRep.inner_act_left
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
+import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_mul
+import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_one
 open BookProof.GroupAverage
 open BookProof.GroupAverage.UnitaryRep
 

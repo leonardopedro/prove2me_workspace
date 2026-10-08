@@ -5,13 +5,13 @@ import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterAtomicDecomposition
 open BookProof.ChapterMixedPrior
 
-variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
-
 
 open MeasureTheory ProbabilityTheory
 
 
 open BookProof.ChapterAtomicDecomposition
+
+variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
 
 
 theorem BookProof.ChapterMixedPrior.continuousPart_eq_zero_of_isPurelyAtomic {mu : Measure X} (h : IsPurelyAtomic mu) :

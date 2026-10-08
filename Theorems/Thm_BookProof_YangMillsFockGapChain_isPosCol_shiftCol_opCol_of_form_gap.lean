@@ -17,8 +17,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -29,6 +27,8 @@ open BookProof.FockFieldPerturbation
 open BookProof.FarisLavine BookProof.HermiteGalerkin
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.BandEnclosure
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFockGapChain.isPosCol_shiftCol_opCol_of_form_gap (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b) {mu : ℝ}

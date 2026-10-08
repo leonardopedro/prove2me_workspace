@@ -5,10 +5,10 @@ import Definitions.Def_ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 theorem BookProof.ChapterA.cType_exhaustive (M : System ℂ V) :
     IsCReal M ∨ IsCPseudoreal M ∨ IsCComplex M := by sorry

@@ -1,7 +1,7 @@
 -- Generated from ChapterYangMillsAbelianEsa.lean — solution of BookProof.YangMillsAbelianEsa.gramWeyl_eq
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianEsa
-import Theorems.Thm_BookProof_YangMillsAbelianEsa_triple_swap'
+import Theorems.Thm_BookProof_YangMillsAbelianEsa_triple_swap_prime
 open BookProof.YangMillsAbelianEsa
 
 
@@ -39,7 +39,7 @@ theorem solution {d N : ℕ} (v : Fin N → Fin d → ℝ)
       rw [Finset.mul_sum]
       exact Finset.sum_congr rfl fun m _ => by ring
     rw [hc, Finset.sum_smul]
-  rw [hL, triple_swap', Finset.smul_sum]
+  rw [hL, triple_swap_prime, Finset.smul_sum]
   refine Finset.sum_congr rfl fun m _ => ?_
   -- the Weyl symmetrization is absorbed by the symmetry of the coefficients
   have hexp : (∑ i : Fin d, ((v m i : ℝ) : ℂ) • T i)

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsOpD_hasZeroDeficiencyOn
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_hasZeroDeficiencyOn
 open BookProof.DirectSumEsa
 
 

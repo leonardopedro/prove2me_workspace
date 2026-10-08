@@ -17,12 +17,8 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
- + opCc V hV
-
-theorem solution : SymmetricOn (ccDomain ℝ) kinCcR :=
-  symmetricOn_inclusion _ _ (constCoeffOp_symmetric _ _ _)
-
-theorem wa :=
+theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
+    SymmetricOn (ccDomain ℝ) (wallHam V hV) :=
   llHam_symmetricOn (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
       SymmetricOn (ccDomain ℝ) (wallHam V hV) := by
     intro x y

@@ -7,10 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 open BookProof.NonnegUnitaryGroup
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {B C : F →L[ℂ] F} {s t : ℝ}
-variable {T : Submodule ℂ (F × F)} {a b : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
@@ -18,6 +14,10 @@ open BookProof.NonnegResolvent
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {B C : F →L[ℂ] F} {s t : ℝ}
+variable {T : Submodule ℂ (F × F)} {a b : ℝ}
 
 theorem BookProof.NonnegUnitaryGroup.norm_unitaryU_apply (hT : IsNonnegSelfAdjoint T)
     (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) (t : ℝ) (x : F) :

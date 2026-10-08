@@ -22,8 +22,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFockInteractionFL
 open BookProof.QgOuterFockInteractionFL.QgFamily
 
-variable (F : QgFamily)
-
 
 
 open Finset MvPolynomial
@@ -36,6 +34,8 @@ open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (F : QgFamily)
 
 theorem BookProof.QgOuterFockInteractionFL.QgFamily.secData_commForm_le (n : ℕ) (p : (F.secData n).C₀) :
     |commForm (F.secData n).H₀ (F.secData n).coreN p|

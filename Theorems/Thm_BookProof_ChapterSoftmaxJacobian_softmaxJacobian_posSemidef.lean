@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
 open BookProof.ChapterSoftmaxJacobian
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterSoftmaxJacobian.softmaxJacobian_posSemidef {beta : ℝ} (hb : 0 ≤ beta) (s x : Fin m → ℝ) (i : Fin m) :

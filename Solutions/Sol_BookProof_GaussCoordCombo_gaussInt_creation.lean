@@ -1,8 +1,8 @@
 -- Generated from ChapterGaussCoordCombo.lean — solution of BookProof.GaussCoordCombo.gaussInt_creation
 import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
-import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_leibniz'
-import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_sub'
+import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_leibniz_prime
+import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_sub_prime
 open BookProof.GaussCoordCombo
 
 
@@ -20,7 +20,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin d) (p q : MvPolynomial (Fin d) ℂ) :
     gaussInt ((X i * p - pderiv i p) * q) = gaussInt (p * pderiv i q) := by
 
-  have hleib := gaussInt_leibniz' i p q
+  have hleib := gaussInt_leibniz_prime i p q
   have h1 : (X i * p - pderiv i p) * q = X i * (p * q) - pderiv i p * q := by ring
-  rw [h1, gaussInt_sub']
+  rw [h1, gaussInt_sub_prime]
   linear_combination -hleib

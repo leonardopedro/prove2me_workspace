@@ -3,10 +3,9 @@ import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionFactorization
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionEntropy
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionFactorization
-
-variable {m₁ m₂ : ℕ}
 
 
 open scoped BigOperators
@@ -15,6 +14,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionEntropy
+
+variable {m₁ m₂ : ℕ}
 
 
 theorem BookProof.ChapterAttentionFactorization.shannonEntropy_prodSoftmax (beta : ℝ) (s₁ : Fin m₁ → ℝ) (s₂ : Fin m₂ → ℝ)

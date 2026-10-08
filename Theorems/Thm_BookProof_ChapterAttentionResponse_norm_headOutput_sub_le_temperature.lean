@@ -3,9 +3,8 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionResponse
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -14,6 +13,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionOutput
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionResponse.norm_headOutput_sub_le_temperature {s : Fin m → ℝ} {v : Fin m → E} {C a b : ℝ}

@@ -20,9 +20,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
-variable (dim : ℕ → ℕ)
-variable (F : SqFamily)
-
 
 
 open Finset MvPolynomial
@@ -34,6 +31,9 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
+variable (F : SqFamily)
 
 theorem BookProof.SqSumOuterFamily.SqFamily.secData_commForm_le (n : ℕ) (p : (F.secData n).C₀) :
     |commForm (F.secData n).H₀ (F.secData n).coreN p|

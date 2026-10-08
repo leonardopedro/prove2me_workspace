@@ -27,3 +27,5 @@ theorem solution :
     (cfcSet T hT).centralizer.centralizer = multModel T hT xi hcyc := by
 
   rw [centralizer_cfcSet, centralizer_multModel]
+
+include hcyc in

@@ -5,8 +5,6 @@ import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMaximalAbelian
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α} [IsFiniteMeasure μ]
-
 
 noncomputable section
 
@@ -14,6 +12,8 @@ open MeasureTheory ENNReal Complex
 
 
 open BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α} [IsFiniteMeasure μ]
 
 
 theorem BookProof.ChapterLinftyMaximalAbelian.multOp_algebra_maximal_abelian (T : Lp ℂ 2 μ →L[ℂ] Lp ℂ 2 μ)

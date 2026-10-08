@@ -10,9 +10,6 @@ open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -23,8 +20,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-inarith [sq_nonneg (e * A), sq_nonneg ((2 / (c0 * e)) * B), h, hcross]
-  nlinarith [hsq, hrhs]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
 theorem BookProof.HermiteRelative.norm_posL_le (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
-    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCo := by sorry
+    {e : ℝ} (he : 0 < e) (i : Fin d) (u : polyGaussCore (d := d)) :
+    ‖posL i u‖ ≤ e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ := by sorry

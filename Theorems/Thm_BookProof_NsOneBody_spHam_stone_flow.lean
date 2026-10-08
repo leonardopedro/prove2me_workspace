@@ -21,8 +21,6 @@ open BookProof.HermiteProductCore
 open BookProof.StoneBridge
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.spHam_stone_flow (nu : ℝ) (k : Fin 3 → ℝ) :
     ∃ (T : UnboundedSelfAdjoint (L2d 6)) (U : ℝ → (L2d 6 →L[ℂ] L2d 6)),

@@ -10,15 +10,15 @@ import Definitions.Def_ChapterNsLagrangianDetConvolution
 open BookProof.NsLagrangianDet
 open BookProof.NsLagrangianDetFL
 
-variable {K : Type*} [Fintype K]
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
 
 noncomputable section
+
+variable {K : Type*} [Fintype K]
 
 
 theorem BookProof.NsLagrangianDetFL.dispVar_injective : Function.Injective (dispVar (K := K)) := by sorry

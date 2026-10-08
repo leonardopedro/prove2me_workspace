@@ -15,9 +15,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-variable {μ : Measure X} (S : LagSymbols X μ)
-
 
 open MeasureTheory
 
@@ -25,5 +22,8 @@ open MeasureTheory
 
 open FullEsa FockContinuum
 
+variable {X : Type*} [MeasurableSpace X]
+
+variable {μ : Measure X} (S : LagSymbols X μ)
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.hFull_eq_mulD : S.data.hFull = mulD μ S.total_meas S.total_dom := by sorry

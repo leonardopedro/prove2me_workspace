@@ -5,13 +5,13 @@ import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.bornWeightC_ofReal (q : EuclideanSpace ℝ (Fin n))

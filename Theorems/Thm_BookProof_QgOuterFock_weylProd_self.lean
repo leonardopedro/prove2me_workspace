@@ -19,5 +19,5 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
-theorem BookProof.QgOuterFock.weylProd_self' (S : MvPolynomial (Fin D) ℂ →ₗ[ℂ] MvPolynomial (Fin D) ℂ)
+theorem BookProof.QgOuterFock.weylProd_self_prime (S : MvPolynomial (Fin D) ℂ →ₗ[ℂ] MvPolynomial (Fin D) ℂ)
     (p : MvPolynomial (Fin D) ℂ) : weylProd S S p = S (S p) := by sorry

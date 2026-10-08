@@ -18,8 +18,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadraticMatrix
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial Matrix
@@ -33,6 +31,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadraticMatrix.shiftedHMatOp_rotConj_deficiencyTrivialAt {O : Matrix (Fin d) (Fin d) ℝ}

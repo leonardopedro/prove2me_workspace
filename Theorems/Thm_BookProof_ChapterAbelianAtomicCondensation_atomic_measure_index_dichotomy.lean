@@ -13,6 +13,7 @@ noncomputable section
 
 
 open BookProof.ChapterAbelianDiagonalCountable
+open MeasureTheory
 
 theorem BookProof.ChapterAbelianAtomicCondensation.atomic_measure_index_dichotomy {X : Type*} [MeasurableSpace X]
     [MeasurableSingletonClass X] (mu : Measure X) [IsProbabilityMeasure mu] :

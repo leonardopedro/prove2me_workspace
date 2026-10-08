@@ -7,13 +7,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA.AntiUnitary
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 attribute [local instance] InnerProductSpace.rclikeToReal
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.isCReal_realification_reducible [Nontrivial V] (M : System ℂ V)

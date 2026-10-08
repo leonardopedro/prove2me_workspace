@@ -21,7 +21,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-e (lam : ℕ → ℝ) : ∀ n, |(|lam n|)| ≤ |lam n| := fun n => by simp
-
-/-- The comparison operator `N = |lam|`. -/
-noncomputable de := f mulComparison (lam : ℕ → ℝ) : mulSymbolDomain la
+noncomputable def mulComparison (lam : ℕ → ℝ) : mulSymbolDomain lam →ₗ[ℂ] L2Nat := f mulComparison (lam : ℕ → ℝ) : mulSymbolDomain la

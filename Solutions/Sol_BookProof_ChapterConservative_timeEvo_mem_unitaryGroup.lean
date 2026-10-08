@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterConservative
 import Theorems.Thm_BookProof_ChapterConservative_timeEvo_unitary
-import Theorems.Thm_BookProof_ChapterConservative_timeEvo_unitary'
+import Theorems.Thm_BookProof_ChapterConservative_timeEvo_unitary_prime
 open BookProof.ChapterConservative
 
 
@@ -21,5 +21,5 @@ theorem solution (H : Matrix n n ℂ) (hH : H.IsHermitian) (t : ℝ) :
   constructor
   · convert timeEvo_unitary H hH t using 1
     rw [Matrix.star_eq_conjTranspose]
-  · convert timeEvo_unitary' H hH t using 1
+  · convert timeEvo_unitary_prime H hH t using 1
     rw [Matrix.star_eq_conjTranspose]

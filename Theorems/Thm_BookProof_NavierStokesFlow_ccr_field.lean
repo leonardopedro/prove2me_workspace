@@ -4,10 +4,10 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
-
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
+
+variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 
 theorem BookProof.NavierStokesFlow.ccr_field {σ : Type*} [DecidableEq σ] (a b : σ) (p : MvPolynomial σ ℂ) :
     (MvPolynomial.pderiv a) (MvPolynomial.X b * p)

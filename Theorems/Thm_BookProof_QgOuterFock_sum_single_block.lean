@@ -16,8 +16,6 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -33,6 +31,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.sum_single_block {n : ℕ} (p : Fin n) (c : Fin 84) :
     ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ)

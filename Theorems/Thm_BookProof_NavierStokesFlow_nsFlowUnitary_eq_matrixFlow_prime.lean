@@ -13,6 +13,6 @@ open scoped BigOperators Matrix Matrix.Norms.Operator
 
 lex.real_smul]
 
-theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow' :
+theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow_prime :
     nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
   funext (nsFlowUnitary_eq_matrixFl := by sorry

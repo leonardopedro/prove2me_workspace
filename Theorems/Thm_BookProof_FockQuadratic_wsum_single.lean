@@ -8,10 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFockQuadraticEsa
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-variable {ω : ι → ℝ}
-variable {κ : Type*}
-
 
 open scoped ENNReal
 
@@ -21,5 +17,9 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
 
+variable {ι : Type*}
+
+variable {ω : ι → ℝ}
+variable {κ : Type*}
 
 theorem BookProof.FockQuadratic.wsum_single (ω : ι → ℝ) (i : ι) (k : ℕ) : wsum ω (Finsupp.single i k) = ω i * k := by sorry

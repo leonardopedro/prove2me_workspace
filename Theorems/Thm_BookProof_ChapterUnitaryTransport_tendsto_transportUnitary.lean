@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterUnitaryTransport
 
-variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
-
 
 open scoped InnerProductSpace
 
+
+variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+  [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 
 theorem BookProof.ChapterUnitaryTransport.tendsto_transportUnitary (W : H ≃ₗᵢ[ℂ] K) (U : ℝ → H ≃ₗᵢ[ℂ] H)

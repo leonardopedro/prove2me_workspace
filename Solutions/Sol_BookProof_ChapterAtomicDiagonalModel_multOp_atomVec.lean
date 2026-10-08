@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAtomicDiagonalModel
 import Theorems.Thm_BookProof_ChapterAtomicDiagonalModel_atomVec_coeFn
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 open BookProof.ChapterAtomicDiagonalModel
 
 

@@ -10,11 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-variable {a : ℝ}
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
@@ -22,6 +17,11 @@ open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPola
 open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T S : Submodule ℂ (F × F)}
+
+variable {a : ℝ}
+variable {D : Submodule ℂ F}
 
 theorem BookProof.NonnegSquareRoot.absRel_eq_sqrtRel (A : D →ₗ[ℂ] F) :
     absRel A = sqrtRel (isNonnegSelfAdjoint_factorRel A) := by sorry

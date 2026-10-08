@@ -18,7 +18,6 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
-Lavine.SymmetricOn (schwartzDomain (SpaceTime n)) (opL2 (waveOp n κ)) :=
-  constCoeffOp_symmetric _ _ _
-
-theorem solution (n : ℕ) (κ : ℝ) : := BookProof.FarisLavine.EssentiallySelfAdjointO
+theorem solution (n : ℕ) (κ : ℝ) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain (SpaceTime n))
+      (opL2 (waveOp n κ)) := constCoeffOp_essentiallySelfAdjoint _ _ _

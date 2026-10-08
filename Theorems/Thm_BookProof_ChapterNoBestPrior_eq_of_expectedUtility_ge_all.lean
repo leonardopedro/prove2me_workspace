@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNoBestPrior
 open BookProof.ChapterNoBestPrior
 
-variable {Hyp : Type*} [Fintype Hyp]
-
 
 open scoped BigOperators
 
+
+variable {Hyp : Type*} [Fintype Hyp]
 
 
 theorem BookProof.ChapterNoBestPrior.eq_of_expectedUtility_ge_all (p q : Hyp → ℝ)

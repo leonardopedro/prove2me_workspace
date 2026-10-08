@@ -4,14 +4,14 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanTwoStep
 
-variable {d : ℕ}
-
 
 
 open Finset
 open BookProof.HermiteCarleman
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.CarlemanTwoStep.sub_add_singleK {d : ℕ} {i : Fin d} {k : ℕ} {a : Fin d →₀ ℕ} (h : k ≤ a i) :

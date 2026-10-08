@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -27,6 +24,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.HermiteCarleman.flux_identity (hrec : LadderRec u lam amp z) (N : ℕ) :
     z.im * (∑ a ∈ cube d N, ‖u a‖ ^ 2)

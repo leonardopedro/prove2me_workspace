@@ -10,15 +10,15 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegSquareRoot
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
 open BookProof.PositiveSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T S : Submodule ℂ (F × F)}
 
 
 theorem BookProof.NonnegSquareRoot.invCLM_eq_cfc_of_sq (hT : IsNonnegSelfAdjoint T) (hS : IsNonnegSelfAdjoint S)

@@ -10,9 +10,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -23,7 +20,8 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-r_apply_apply, hermiteMvBasis_apply]
-  exact hsym.symm
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
 
-theorem BookProof.HermiteRelative.foOp_linear_apply_eq_mul (b : Fin d → ℝ) (p : MvPolynomial (Fin := by sorry
+theorem BookProof.HermiteRelative.foOp_linear_apply_eq_mul (b : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    pgFun (foPoly b 0 p) x = ((∑ i, b i * x i : ℝ) : ℂ) * pgFun p x := by sorry

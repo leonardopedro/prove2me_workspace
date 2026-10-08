@@ -23,12 +23,15 @@ import Theorems.Thm_BookProof_PermSector_permRep_commutes_sectorCore
 
 import Theorems.Thm_BookProof_PermSector_permRep_mem_sectorCore
 
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+
 
 
 
 import Theorems.Thm_BookProof_PermSector_signRep_commutes_sectorCore
 
 import Theorems.Thm_BookProof_PermSector_signRep_mem_sectorCore
+
 
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma

@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.mem_obd
 import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
 open BookProof.CarlemanGeneralHop
 
 

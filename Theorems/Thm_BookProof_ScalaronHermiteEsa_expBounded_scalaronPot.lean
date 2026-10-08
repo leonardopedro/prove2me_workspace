@@ -15,8 +15,6 @@ open BookProof.QgHermiteCore
 open BookProof.Starobinsky
 open BookProof.ScalaronHermiteEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial FourierTransform
@@ -25,6 +23,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ScalaronHermiteEsa.expBounded_scalaronPot (M alpha : ℝ) (hM : 0 < M) : ExpBounded (scalaronPot M alpha) := by sorry

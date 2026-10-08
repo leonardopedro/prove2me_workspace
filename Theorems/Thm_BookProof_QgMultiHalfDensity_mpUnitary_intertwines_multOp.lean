@@ -8,10 +8,6 @@ open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QgMultiHalfDensity
 
-variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
-  {mu : Measure X} {nu : Measure Y} {Phi : X → Y} {Psi : Y → X}
-variable {g : Y → ℝ}
-
 
 
 open MeasureTheory Set
@@ -19,6 +15,10 @@ open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
 
 noncomputable section
+
+variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
+  {mu : Measure X} {nu : Measure Y} {Phi : X → Y} {Psi : Y → X}
+variable {g : Y → ℝ}
 
 theorem BookProof.QgMultiHalfDensity.mpUnitary_intertwines_multOp (hPhi : MeasurePreserving Phi mu nu)
     (hPsi : MeasurePreserving Psi nu mu) (hinv : ∀ᵐ x ∂mu, Psi (Phi x) = x)

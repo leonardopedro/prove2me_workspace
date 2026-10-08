@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.GraphCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-
 
 
 open BookProof.FarisLavine
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 theorem BookProof.GraphCore.mem_pushDom (U : F →ₗᵢ[ℂ] G) {D : Submodule ℂ F} (x : D) :
     U (x : F) ∈ pushDom U D := by sorry

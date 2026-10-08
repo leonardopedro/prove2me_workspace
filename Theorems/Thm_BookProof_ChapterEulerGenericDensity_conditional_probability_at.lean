@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterEulerGenericDensity
 open BookProof.ChapterEulerGenericDensity
 
-variable {d : ℕ}
-
 
 open scoped Matrix
 open Matrix
 
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterEulerGenericDensity.conditional_probability_at (θ : ℝ) (l w : Fin d → ℝ)

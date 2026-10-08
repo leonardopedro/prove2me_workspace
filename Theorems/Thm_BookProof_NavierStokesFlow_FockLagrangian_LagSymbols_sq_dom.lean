@@ -8,9 +8,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-variable {μ : Measure X} (S : LagSymbols X μ)
-
 
 open MeasureTheory
 
@@ -18,5 +15,8 @@ open MeasureTheory
 
 open FullEsa FockContinuum
 
+variable {X : Type*} [MeasurableSpace X]
+
+variable {μ : Measure X} (S : LagSymbols X μ)
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.sq_dom (i : Fin 3) : DominatedOn μ S.scale (fun x => (S.P i x) ^ 2) := by sorry

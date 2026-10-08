@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Theorems.Thm_BookProof_PositiveSquareRoot_continuous_gFun
-import Theorems.Thm_BookProof_PositiveSquareRoot_continuous_psiFun
 import Theorems.Thm_BookProof_PositiveSquareRoot_psi_gFun
+import Theorems.Thm_BookProof_PositiveSquareRoot_continuous_psiFun
 import Theorems.Thm_BookProof_PositiveSquareRoot_eq_cfc_gFun
 open BookProof.PositiveSquareRoot
 

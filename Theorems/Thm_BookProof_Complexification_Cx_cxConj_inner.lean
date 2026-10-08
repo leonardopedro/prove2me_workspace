@@ -4,14 +4,14 @@ import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open RCLike
 
 
 set_option linter.unusedSectionVars false
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.Cx.cxConj_inner (x y : Cx W) :

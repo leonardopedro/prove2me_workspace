@@ -5,14 +5,14 @@ import Definitions.Def_ChapterH4
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 
-variable {E F : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
 open Filter Topology
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.ChapterH6.krylovRetainsDominantSpectrum (V : F →L[ℂ] E) (X : E →L[ℂ] E)
     (hViso : ∀ x : F, ‖V x‖ = ‖x‖) (lam : ℂ) (y : F) (hy : ‖y‖ = 1)

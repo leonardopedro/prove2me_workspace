@@ -1,6 +1,7 @@
 -- Generated from ChapterGravityProjDirectSum.lean — solution of BookProof.ChapterGravityProjDirectSum.mulVecLin_time_comp_spatial
 import Mathlib
 import Definitions.Def_ChapterGravityProjDirectSum
+import Theorems.Thm_BookProof_ChapterGravityTimeProj_timeProj_mul_spatialProj
 open BookProof.ChapterGravityProjDirectSum
 
 

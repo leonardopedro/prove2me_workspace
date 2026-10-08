@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_multi_hasZeroDeficiencyOn_transfer
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_hasZeroDeficiencyOn
 open BookProof.QgMultiHalfDensity
 
 

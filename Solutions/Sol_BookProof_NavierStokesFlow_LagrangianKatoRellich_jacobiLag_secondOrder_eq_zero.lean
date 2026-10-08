@@ -18,11 +18,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
- have h := hw v
-    simp only [LinearMap.zero_apply, ZeroMemClass.coe_zero, inner_zero_left, inner_smul_right] at h
-    exact (mul_eq_zero.mp h.symm).resolve_left Complex.I_ne_zero
-  · have h := hw v
-    simp only [LinearMap.zero_apply, ZeroMemClass.coe_zero, inner_zero_left, inner_neg_ri :=
+theorem solution : secondOrder jacobiLagData = 0 :=
   ght,
         inner_smul_right] at h
       exact (mul_eq_zero.mp (neg_eq_zero.mp h.symm)).resolve_left Complex.I_ne_zero

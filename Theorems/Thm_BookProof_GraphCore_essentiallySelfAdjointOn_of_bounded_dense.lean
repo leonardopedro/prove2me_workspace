@@ -5,11 +5,11 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.GraphCore
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.GraphCore.essentiallySelfAdjointOn_of_bounded_dense {D : Submodule ℂ F} (T : D →ₗ[ℂ] F)

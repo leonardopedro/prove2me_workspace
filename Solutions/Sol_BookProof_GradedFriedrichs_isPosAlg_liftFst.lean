@@ -21,13 +21,13 @@ variable {α β : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {T : Module.End ℂ (α →₀ ℂ)} (hT : IsPosAlg T) :
-    IsPosAlg (liftFst (β := by
-
-  classical
-  intro u
-  rw [ainner_eq_sum_sliceFst (u := u) (v := liftFst (β := β) T u)
-    (subset_rect (s := u.support))]
-  rw [Complex.re_sum]
-  refine Finset.sum_nonneg fun b _ => ?_
-  rw [sliceFst_liftFst]
-  exact hT _
+    IsPosAlg (liftFst (β :=
+  β) T) := by
+    classical
+    intro u
+    rw [ainner_eq_sum_sliceFst (u := u) (v := liftFst (β := β) T u)
+      (subset_rect (s := u.support))]
+    rw [Complex.re_sum]
+    refine Finset.sum_nonneg fun b _ => ?_
+    rw [sliceFst_liftFst]
+    exact hT _

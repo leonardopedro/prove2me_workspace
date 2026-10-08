@@ -1,6 +1,8 @@
 -- Generated from ChapterPaFreeCompletion.lean — solution of riesz_fischer
 import Mathlib
 import Definitions.Def_ChapterPaFreeCompletion
+import Theorems.Thm_BookProof_ChapterRieszFischer_ell2_completeSpace
+import Theorems.Thm_BookProof_ChapterRieszFischer_riesz_fischer_hasSum
 
 
 

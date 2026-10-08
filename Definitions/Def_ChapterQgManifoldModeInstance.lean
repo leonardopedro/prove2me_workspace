@@ -62,61 +62,6 @@ claim beyond the flow convergence is made.
 Everything is `sorry`-free and `axiom`-free.
 -/
 
-namespace BookProof.QgManifoldModeInstance
-
-open Filter Topology
-open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
-open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
-open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
-open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
-open BookProof.QgTimeStepping
-
-noncomputable section
-
-variable {ι : Type*}
-
-/-! ## 1. The geometric mode data on a general spatial manifold -/
-
-/-- **The vielbein mode spectrum of a general spatial manifold.**
-
-`mu a` is the Laplace-type eigenvalue of the mode `a` (the mode energy is `σ_a = 1 + μ_a`);
-`lam a` is the eigenvalue of the torsion form `δd` on that mode, which by the Hodge
-decomposition is diagonal in this basis and bounded by `μ_a`; `block a` is the finite set of
-modes the scalaron–vielbein coupling connects `a` to, and `tr a` is the trace weight of the
-mode, through which the scalaron couples.  The two sums are the Schur bounds the
-Faris–Lavine theorem needs; on the periodic box they hold with `W = 9`, on a general
-manifold they hold whenever the coupling blocks are summable against the trace weights. -/
-structure VielbeinSpectrum (ι : Type*) where
-  /-- The Laplace-type eigenvalue of the mode. -/
-  mu : ι → ℝ
-  /-- The eigenvalues are non-negative. -/
-  mu_nonneg : ∀ a, 0 ≤ mu a
-  /-- The torsion (`δd`) eigenvalue of the mode. -/
-  lam : ι → ℝ
-  /-- Torsion eigenvalues are non-negative: `δd` is a positive operator. -/
-  lam_nonneg : ∀ a, 0 ≤ lam a
-  /-- Torsion eigenvalues are dominated by the Hodge eigenvalues. -/
-  lam_le_mu : ∀ a, lam a ≤ mu a
-  /-- The finite block of modes the scalaron coupling connects a mode to. -/
-  block : ι → Finset ι
-  /-- Blocks are symmetric. -/
-  mem_block_comm : ∀ a b, b ∈ block a ↔ a ∈ block b
-  /-- Every mode lies in its own block. -/
-  self_mem_block : ∀ a, a ∈ block a
-  /-- The trace weight of the mode. -/
-  tr : ι → ℝ
-  /-- The trace weights are normalized. -/
-  abs_tr_le_one : ∀ a, |tr a| ≤ 1
-  /-- The Schur constant of the coupling blocks. -/
-  W : ℝ
-  /-- The Schur constant is non-negative. -/
-  W_nonneg : 0 ≤ W
-  /-- Schur bound: the trace weights are summable across each block. -/
-  tr_sum : ∀ a, ∑ b ∈ block a, |tr b| ≤ W
-  /-- Schur bound for the commutator: the energy spread across a block, weighted by the
-  trace weights, is bounded. -/
-  tr_spread : ∀ a, ∑ b ∈ block a, |mu a - mu b| * |tr b| ≤ W
-
 namespace VielbeinSpectrum
 
 variable (S : VielbeinSpectrum ι)
@@ -286,23 +231,78 @@ def modes (g : ℝ) : QgModeData ι where
 `n`.  On the periodic box this is the momentum cutoff `|k|² ≤ n`. -/
 def energyWindow (n : ℕ) : Set ι := {a | S.mu a ≤ (n : ℝ)}
 
-
+/-- The spectral cutoffs exhaust the modes. -/
+theorem energyWindow_exhausts (F : Finset ι) :
+    ∀ᶠ n : ℕ in atTop, ∀ a ∈ F, a ∈ S.energyWindow n := by
+  classical
+  refine eventually_atTop.mpr ⟨F.sup fun a => ⌈S.mu a⌉₊, fun n hn a ha => ?_⟩
+  have h1 : S.mu a ≤ ((⌈S.mu a⌉₊ : ℕ) : ℝ) := Nat.le_ceil _
+  have h2 : (⌈S.mu a⌉₊ : ℕ) ≤ F.sup fun a => ⌈S.mu a⌉₊ :=
+    Finset.le_sup (f := fun a : ι => ⌈S.mu a⌉₊) ha
+  have h3 : ((⌈S.mu a⌉₊ : ℕ) : ℝ) ≤ ((F.sup fun a => ⌈S.mu a⌉₊ : ℕ) : ℝ) := Nat.cast_le.mpr h2
+  have h4 : ((F.sup fun a => ⌈S.mu a⌉₊ : ℕ) : ℝ) ≤ (n : ℝ) := Nat.cast_le.mpr hn
+  simp only [energyWindow, Set.mem_setOf_eq]
+  linarith
 
 end VielbeinSpectrum
 
 /-! ## 3. Essential self-adjointness on a general manifold -/
 
+/-- **The quantum-gravity Hamiltonian over a general spatial manifold is essentially
+self-adjoint on the outer Fock space.**  The manifold enters only through the spectral data:
+any spectrum, any coupling blocks, arbitrary coupling constant, and an arbitrary smooth
+non-negative wall for the scalaron. -/
+theorem qgManifold_essentiallySelfAdjointOn (W : WallPot) (S : VielbeinSpectrum ι) (g : ℝ) :
+    EssentiallySelfAdjointOn (secN W (S.modes g)).dom (secData W (S.modes g)).ext :=
+  secHam_essentiallySelfAdjointOn W _
 
-
-
+/-- **The physical instance on a general manifold**: the full exponential Einstein-frame
+Starobinsky wall. -/
+theorem starobinsky_qgManifold_esa (M alpha : ℝ) (halpha : 0 < alpha)
+    (S : VielbeinSpectrum ι) (g : ℝ) :
+    EssentiallySelfAdjointOn (secN (starobinskyWall M alpha halpha) (S.modes g)).dom
+      (secData (starobinskyWall M alpha halpha) (S.modes g)).ext :=
+  qgManifold_essentiallySelfAdjointOn (starobinskyWall M alpha halpha) S g
 
 /-! ## 4. The spectrally truncated flows converge -/
 
-
+/-- **The spectral cutoff converges on a general manifold.**  The Hamiltonians with the
+scalaron–vielbein interactions switched off above the spectral cutoff `μ_a ≤ n` have unique
+self-adjoint realizations whose flows converge to the exact quantum-gravity flow, uniformly
+on every compact time interval. -/
+theorem starobinsky_qgManifold_cutoff_flow_convergence (M alpha : ℝ) (halpha : 0 < alpha)
+    (S : VielbeinSpectrum ι) (g : ℝ) :
+    ∃ (T : UnboundedSelfAdjoint (Sec ι)) (Sn : ℕ → UnboundedSelfAdjoint (Sec ι)),
+      IsSelfAdjointExtension (secHam (starobinskyWall M alpha halpha) (S.modes g)) T.op ∧
+        (∀ n, IsSelfAdjointExtension (secHam (starobinskyWall M alpha halpha)
+          (truncModes (S.modes g) (S.energyWindow n))) (Sn n).op) ∧
+        StrongResolventConvergence T Sn ∧
+        ∀ (v : Sec ι) (T₀ : ℝ), 0 ≤ T₀ →
+          TendstoUniformlyOn (fun n t => (Sn n).stoneU t v) (fun t => T.stoneU t v) atTop
+              (Set.Icc (-T₀) T₀) ∧
+            ∀ t : ℝ, Tendsto (fun n => (Sn n).stoneU t v) atTop (𝓝 (T.stoneU t v)) :=
+  qgOuterFock_truncation_flow_convergence (starobinskyWall M alpha halpha) (S.modes g)
+    S.energyWindow S.energyWindow_exhausts
 
 /-! ## 5. The fully discrete evolution on a general manifold -/
 
-
+/-- **The fully discrete quantum-gravity evolution on a general spatial manifold.**  Both
+halves of a concrete scheme: the spectral (mode) cutoff in space, and the Crank–Nicolson
+(Cayley) step in time.  For every initial state and every time there is a number of time
+steps per cutoff for which the fully discrete unitary evolution converges to the exact
+quantum-gravity flow. -/
+theorem starobinsky_qgManifold_fullyDiscrete_convergence (M alpha : ℝ) (halpha : 0 < alpha)
+    (S : VielbeinSpectrum ι) (g : ℝ) :
+    ∃ (T : UnboundedSelfAdjoint (Sec ι)) (Sn : ℕ → UnboundedSelfAdjoint (Sec ι)),
+      IsSelfAdjointExtension (secHam (starobinskyWall M alpha halpha) (S.modes g)) T.op ∧
+        (∀ n, IsSelfAdjointExtension (secHam (starobinskyWall M alpha halpha)
+          (truncModes (S.modes g) (S.energyWindow n))) (Sn n).op) ∧
+        ∀ (v : Sec ι) (t : ℝ), 0 < t →
+          ∃ k : ℕ → ℕ, (∀ n, 0 < k n) ∧
+            Tendsto (fun n => (cnStep (Sn n) (t / (k n)))^[k n] v) atTop
+              (𝓝 (T.stoneU t v)) :=
+  qgOuterFock_fullyDiscrete_convergence (starobinskyWall M alpha halpha) (S.modes g)
+    S.energyWindow S.energyWindow_exhausts
 
 /-! ## 6. Non-vacuity: an arbitrary spectrum is admissible -/
 
@@ -327,7 +327,11 @@ def ofSpectrumSeq (mu : ℕ → ℝ) (hmu : ∀ a, 0 ≤ mu a) : VielbeinSpectru
   tr_sum := fun a => by simp
   tr_spread := fun a => by simp
 
-
+/-- The mode set of such an instance is infinite, and the torsion self-interaction is
+present at every mode with a non-zero eigenvalue. -/
+theorem ofSpectrumSeq_Amat (mu : ℕ → ℝ) (hmu : ∀ a, 0 ≤ mu a) (a : ℕ) :
+    (ofSpectrumSeq mu hmu).Amat a a = ((mu a : ℝ) : ℂ) := by
+  simp [VielbeinSpectrum.Amat, ofSpectrumSeq]
 
 end
 

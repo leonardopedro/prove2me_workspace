@@ -7,14 +7,14 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.Complexification
 open BookProof.Complexification
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
-
 
 open scoped RealInnerProductSpace
 open RCLike
 
 
 set_option linter.unusedSectionVars false
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
 
 
 theorem BookProof.Complexification.Cx.cxConj_comm_cxMap (m : W →L[ℝ] W) (x : Cx W) :

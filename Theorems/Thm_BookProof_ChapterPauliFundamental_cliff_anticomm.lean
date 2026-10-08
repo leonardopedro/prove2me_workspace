@@ -7,13 +7,13 @@ import Definitions.Def_ChapterA3b
 open BookProof.ChapterA3
 open BookProof.ChapterPauliFundamental
 
-variable {A : Fin 4 → M4}
-
 
 open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+
+variable {A : Fin 4 → M4}
 
 theorem BookProof.ChapterPauliFundamental.cliff_anticomm (hA : IsCliffordC A) {μ ν : Fin 4} (h : μ ≠ ν) :
     A μ * A ν = -(A ν * A μ) := by sorry

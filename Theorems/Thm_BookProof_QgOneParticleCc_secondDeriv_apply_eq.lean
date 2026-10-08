@@ -17,9 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.StrichartzWave
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.secondDeriv_apply_eq (m : Vd d) (f : 𝓢(Vd d, ℂ)) (x : Vd d) :
     (secondDeriv m f) x = fderiv ℝ (fun y => fderiv ℝ (f : Vd d → ℂ) y m) x m := by sorry

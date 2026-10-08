@@ -5,13 +5,13 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.GaussCoordCombo
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.GaussCoordCombo.pderiv_coordCombo_of_ne {i j : Fin d} (h : j ≠ i) (c : ℕ → ℝ) (p K : ℕ) :

@@ -11,8 +11,6 @@ import Definitions.Def_ChapterSirkRitzMinMax
 open BookProof.RitzMinMax
 open BookProof.ResolventLadder
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
@@ -21,6 +19,8 @@ open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGal
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.ResolventLadder.normSq_sq_le_rayleigh_mul {R : F →L[ℂ] F} (hsa : IsSelfAdjoint R)

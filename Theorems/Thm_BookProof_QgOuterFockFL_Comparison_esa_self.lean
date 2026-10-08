@@ -12,8 +12,6 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -29,6 +27,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOuterFockFL.Comparison.esa_self [CompleteSpace F] (C : Comparison F) :
     EssentiallySelfAdjointOn C.dom C.op := by sorry

@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 
-variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X] [DecidableEq Y]
-variable {prior : X → ℝ} {L : X → Y → ℝ}
-
 
 open scoped BigOperators
 
 
+variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X] [DecidableEq Y]
+
+variable {prior : X → ℝ} {L : X → Y → ℝ}
 
 theorem BookProof.ChapterBayesInference.exists_unitary_reproduces_posterior
     (hprior : ∀ x, 0 ≤ prior x) (hprior_sum : ∑ x, prior x = 1)

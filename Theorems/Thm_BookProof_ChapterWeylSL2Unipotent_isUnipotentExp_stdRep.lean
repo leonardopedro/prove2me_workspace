@@ -6,6 +6,13 @@ import Definitions.Def_ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Unipotent
 
+
+
+open BookProof.ChapterWeylSl2 BookProof.ChapterWeylSL2Group
+open Polynomial
+
+universe u
+
 variable {M : Type*} [AddCommGroup M] [Module ℂ M]
 variable {V : Type u} [AddCommGroup V] [Module ℂ V]
 variable {rho : Representation ℂ (Matrix.SpecialLinearGroup (Fin 2) ℂ) V}
@@ -13,13 +20,6 @@ variable {rho : Representation ℂ (Matrix.SpecialLinearGroup (Fin 2) ℂ) V}
 variable (hU : ∀ t : ℂ, rho (uPlus t) = expSum E n t)
   (hL : ∀ t : ℂ, rho (uMinus t) = expSum F n t)
 variable {N : ℕ}
-
-
-
-open BookProof.ChapterWeylSl2 BookProof.ChapterWeylSL2Group
-open Polynomial
-
-universe u
 
 theorem BookProof.ChapterWeylSL2Unipotent.isUnipotentExp_stdRep :
     IsUnipotentExp stdRep (Matrix.toLin' eMat) (Matrix.toLin' fMat) 2 where

@@ -6,10 +6,6 @@ import Definitions.Def_ChapterBrstUnboundedLeakage
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstUnboundedLeakage
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
-
 
 open NormedSpace Filter Topology
 open scoped InnerProductSpace
@@ -17,6 +13,10 @@ open scoped InnerProductSpace
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
+variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
 
 theorem BookProof.BrstUnboundedLeakage.opProj_apply_of_mem {x : H} (hx : x ∈ V) :
     opProj T V hV x = T.op ⟨x, hV hx⟩ := by sorry

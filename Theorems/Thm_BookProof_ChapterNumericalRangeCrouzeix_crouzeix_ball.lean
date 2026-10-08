@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNumericalRangeCrouzeix
 open BookProof.ChapterNumericalRangeCrouzeix
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped InnerProductSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 
 theorem BookProof.ChapterNumericalRangeCrouzeix.crouzeix_ball [CompleteSpace E] {A : E →L[ℂ] E} {c : ℂ} {r M R : ℝ} (hr : 0 ≤ r)

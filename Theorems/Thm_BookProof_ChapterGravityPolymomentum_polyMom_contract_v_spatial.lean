@@ -5,13 +5,13 @@ import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
-variable {e T : ℝ} {S Tc : Matrix (Fin 4) (Fin 4) ℝ} {u v : Fin 4 → ℝ}
-
 
 
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+
+variable {e T : ℝ} {S Tc : Matrix (Fin 4) (Fin 4) ℝ} {u v : Fin 4 → ℝ}
 
 theorem BookProof.ChapterGravityPolymomentum.polyMom_contract_v_spatial (hv : minkSq v = -1) (hS : IsSpatial v S)
     (hTc : IsSpatial v Tc) :

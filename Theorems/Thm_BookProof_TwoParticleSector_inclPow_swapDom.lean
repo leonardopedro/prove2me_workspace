@@ -8,16 +8,16 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.TwoParticleSector
 
-variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
-variable {X}
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 
 noncomputable section
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TwoParticleSector.inclPow_swapDom (t : ((domSpace Hs D₂).pow 2).carrier) :
     inclPow Hs D₂ 2 (swapDom Hs D₂ t) = swapH Hs (inclPow Hs D₂ 2 t) := by sorry

@@ -1,6 +1,7 @@
 -- Generated from ChapterSmFullEnclosure.lean — solution of BookProof.SmFullEnclosure.smFullHam_fermi_block
 import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
+import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_eq
 open BookProof.SmFullEnclosure
 
 

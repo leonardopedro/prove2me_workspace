@@ -18,8 +18,6 @@ import Definitions.Def_ChapterFarisLavineCore
 open BookProof.DirectSumEsa
 open BookProof.QgOuterFock
 
-variable {D : ℕ}
-
 
 
 open Finset MvPolynomial
@@ -35,6 +33,8 @@ open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.QgOuterFock.dsOp_quadForm_nonneg {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
     [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)} (H : ∀ i, D i →ₗ[ℂ] G i)

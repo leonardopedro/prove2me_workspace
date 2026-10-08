@@ -10,9 +10,6 @@ open BookProof.NavierStokesFlow.ShiftHamiltonian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
-variable {ι : Type*}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-
 
 open scoped ENNReal
 
@@ -20,6 +17,10 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
+variable {ι : Type*}
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+open ShiftHamiltonian
 
 theorem BookProof.NavierStokesFlow.AffineFiber.support_hFun (S : ShiftData ι) (X : ι → ℂ) :
     Function.support (S.hFun X)

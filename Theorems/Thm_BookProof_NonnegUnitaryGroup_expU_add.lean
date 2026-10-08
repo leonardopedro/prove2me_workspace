@@ -7,9 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 open BookProof.NonnegUnitaryGroup
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {B C : F →L[ℂ] F} {s t : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
@@ -17,5 +14,8 @@ open BookProof.NonnegResolvent
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {B C : F →L[ℂ] F} {s t : ℝ}
 
 theorem BookProof.NonnegUnitaryGroup.expU_add (B : F →L[ℂ] F) (s t : ℝ) : expU B (s + t) = expU B s * expU B t := by sorry

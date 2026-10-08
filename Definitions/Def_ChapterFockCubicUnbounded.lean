@@ -74,26 +74,12 @@ open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
 def confAt (k m : ℕ) : Conf := Finsupp.single k m
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## 2. The cubic field term -/
 
 /-- **The single-mode cubic field term** `C_k = (a_k†)³ + (a_k)³`: it is unbounded and
 changes the particle number by three. -/
 def cubeA (k : ℕ) : FockAlg →ₗ[ℂ] FockAlg :=
   (creA k).comp ((creA k).comp (creA k)) + (annA k).comp ((annA k).comp (annA k))
-
-
-
 
 
 /-! ## 3. The two-term trial states -/
@@ -103,27 +89,10 @@ def trial (k n : ℕ) (c : ℝ) : FockAlg :=
   Finsupp.single (confAt k n) 1 + Finsupp.single (confAt k (n + 3)) ((c : ℝ) : ℂ)
 
 
-
-
-
-
-
-
-
-
-
 /-! ## 4. The three quantities on a trial state -/
 
 
-
-
-
-
-
 /-! ## 5. No relative form bound at degree three -/
-
-
-
 
 
 /-! ## 6. The quartic term restores a lower bound on the same witnesses -/
@@ -134,22 +103,10 @@ def quartA (k : ℕ) : FockAlg →ₗ[ℂ] FockAlg :=
   (creA k).comp ((creA k).comp ((annA k).comp (annA k)))
 
 
-
-
-
-
-
 /-! ## 7. Axiom audit -/
 
 section Audit
 
-#print axioms trial_numberQuad
-#print axioms trial_cubic_form
-#print axioms cubic_no_relative_form_bound
-#print axioms fock_gap_fails_for_cubic
-#print axioms quartA_single_confAt
-#print axioms trial_quartic_form
-#print axioms trial_cubic_quartic_bounded_below
 
 end Audit
 

@@ -8,12 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterAbelianCyclicCommutant
 open BookProof.ChapterAbelianCyclicCommutant
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H) (hcyc : DenseRange (repVec pi xi))
-variable {A : Type*} [CommCStarAlgebra A]
-
 
 noncomputable section
 
@@ -25,6 +19,12 @@ open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralCommutant
 open BookProof.ChapterAbelianCyclicModel
 
 
+variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
+  [MeasurableSpace X] [BorelSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H) (hcyc : DenseRange (repVec pi xi))
+
+variable {A : Type*} [CommCStarAlgebra A]
 
 theorem BookProof.ChapterAbelianCyclicCommutant.abelian_algebra_maximal_abelian_of_cyclic (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
     (hcyc : DenseRange fun a : A => rho a xi) :

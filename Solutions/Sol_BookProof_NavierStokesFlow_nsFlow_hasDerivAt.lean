@@ -43,5 +43,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (t : ℝ) :
     HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by
 
-  rw [nsFlowUnitary_eq_matrixFlow']
+  rw [nsFlowUnitary_eq_matrixFlow_prime]
   exact matrixFlow_hasDerivAt (Complex.I • nsHamiltonian d) t

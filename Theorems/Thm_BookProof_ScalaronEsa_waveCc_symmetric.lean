@@ -13,9 +13,6 @@ import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 open BookProof.ScalaronEsa
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-  [MeasurableSpace E] [BorelSpace E]
-
 
 open Filter Topology MeasureTheory SchwartzMap
 
@@ -25,6 +22,9 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierSt
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+  [MeasurableSpace E] [BorelSpace E]
 
 
 theorem BookProof.ScalaronEsa.waveCc_symmetric (n : ℕ) : SymmetricOn (ccDomain (SpaceTime n)) (waveCc n) := by sorry

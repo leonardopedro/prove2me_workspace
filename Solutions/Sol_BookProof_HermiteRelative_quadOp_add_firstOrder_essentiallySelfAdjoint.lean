@@ -23,11 +23,9 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-|b i| + |b' i|) * R := by ring
-    _ = (∑ i, (|b i| + |b' i|)) * R := by rw [Finset.sum_mul]
-
 theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0)
-    (hc : ∀ i, c0 ≤ c i) (b b' :=
+    (hc : ∀ i, c0 ≤ c i) (b b' : Fin d → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c + foOp b b') :=
   : Fin d → ℝ) :
       EssentiallySelfAdjointOn (polyGaussCore (d := d)) (quadOp c + foOp b b') := by
     classical

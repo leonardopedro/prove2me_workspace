@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegKatoEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -26,6 +24,8 @@ open BookProof.QgOneParticleCc BookProof.DegSchrodinger
 open BookProof.ConvolutionCalc BookProof.DegEnergy BookProof.MollifierL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegKatoEsa.norm_lt_of_mol_ne_zero {n : ℕ} {y : Vd d} (hy : mol d n y ≠ 0) :

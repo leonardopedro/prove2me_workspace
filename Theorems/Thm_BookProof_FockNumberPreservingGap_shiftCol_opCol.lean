@@ -10,14 +10,14 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.FockNumberPreservingGap
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
 
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FarisLavine BookProof.NavierStokesFlow
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.FockNumberPreservingGap.shiftCol_opCol (b : HilbertBasis ℕ ℂ F)
     (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b) (mu : ℝ) :

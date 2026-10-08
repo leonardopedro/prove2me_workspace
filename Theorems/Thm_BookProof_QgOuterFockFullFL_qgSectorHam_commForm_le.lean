@@ -20,8 +20,6 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -34,6 +32,8 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgSectorHam_commForm_le (n : ℕ) (u : polyGaussCore (d := n * 84)) :
     |commForm (qgSectorHam n) harmCore u| ≤ qgFLc * quadForm harmCore u := by sorry

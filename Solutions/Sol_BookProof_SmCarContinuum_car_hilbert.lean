@@ -24,3 +24,5 @@ theorem solution (b : HilbertBasis ℕ ℂ H) (v w : H) (ψ : CFock) :
   have hinner : (inner ℂ (b.repr v) (b.repr w) : ℂ) = inner ℂ v w := b.repr.inner_map_map v w
   rw [hv, carCre, ← hinner]
   exact car_smeared _ _ ψ
+
+omit [CompleteSpace H] in

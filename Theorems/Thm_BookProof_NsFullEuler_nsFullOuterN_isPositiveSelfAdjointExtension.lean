@@ -19,8 +19,6 @@ open BookProof.QgOuterFockFL
 open BookProof.YangMillsFriedrichs
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +29,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsFullOuterN_isPositiveSelfAdjointExtension (nu lam mu gg : ℝ) :
     IsPositiveSelfAdjointExtension (nsFullFockHam nu lam mu gg)

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Theorems.Thm_BookProof_KatoRellich_norm_le_of_relBound
+open BookProof.KatoRellich
 
 
 

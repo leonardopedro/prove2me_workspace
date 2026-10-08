@@ -21,8 +21,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NsLagrangianOuterFock
 
-variable {K : Type*} [Fintype K] (S : LagNsData K)
-
 
 
 open scoped TensorProduct
@@ -36,6 +34,8 @@ open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
+
+variable {K : Type*} [Fintype K] (S : LagNsData K)
 
 theorem BookProof.NsLagrangianOuterFock.lagKoopman_bosonicFock_esa_of_comparison_esa
     (hN : EssentiallySelfAdjointOn (polyGaussCore (d := lagDim K)) (lagComparison S)) :

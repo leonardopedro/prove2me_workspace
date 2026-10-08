@@ -1,6 +1,7 @@
 -- Generated from ChapterSmFullEnclosure.lean — solution of BookProof.SmFullEnclosure.smFullHam_tmul
 import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
+import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_eq
 import Theorems.Thm_BookProof_TensorSumEsa_cpairOp_apply
 open BookProof.SmFullEnclosure
 

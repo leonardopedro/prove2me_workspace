@@ -7,16 +7,16 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.QuantumGravityBrstCharge
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
+variable {d : ℕ}
 
 theorem BookProof.QuantumGravityBrstCharge.derOp_mulOp (k l : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     derOp k (X l * p) = X l * derOp k p + (if k = l then p else 0) := by sorry

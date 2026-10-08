@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterDeepLearningMAP
 open BookProof.ChapterDeepLearningMAP
 
+
+
 variable {Model Data : Type*}
-
-
 
 
 theorem BookProof.ChapterDeepLearningMAP.exp_logObjective (prior : Model → ℝ) (likelihood : Model → Data → ℝ)

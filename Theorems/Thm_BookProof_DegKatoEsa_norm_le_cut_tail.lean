@@ -16,8 +16,6 @@ open BookProof.HermiteProductCore
 open BookProof.ScalaronEsa
 open BookProof.DegKatoEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -27,6 +25,8 @@ open BookProof.QgOneParticleCc BookProof.DegSchrodinger
 open BookProof.ConvolutionCalc BookProof.DegEnergy BookProof.MollifierL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegKatoEsa.norm_le_cut_tail (W : Vd d → ℝ) (hWs : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W)

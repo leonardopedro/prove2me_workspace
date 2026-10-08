@@ -48,11 +48,38 @@ noncomputable def indSet (μ : Measure X) [IsFiniteMeasure μ] {E : Set X}
     (hE : MeasurableSet E) : Lp ℂ 2 μ :=
   indicatorConstLp 2 hE (measure_ne_top μ E) (1 : ℂ)
 
+theorem norm_indSet_sq (μ : Measure X) [IsFiniteMeasure μ] {E : Set X} (hE : MeasurableSet E) :
+    ‖indSet μ hE‖ ^ 2 = (μ E).toReal := by
+  rw [indSet, norm_indicatorConstLp (by norm_num) (by norm_num), norm_one, one_mul,
+    show ((2 : ENNReal).toReal) = (2 : ℝ) by norm_num, ← Real.rpow_natCast _ 2,
+    ← Real.rpow_mul measureReal_nonneg]
+  norm_num
+  simp [measureReal_def]
 
+theorem proj_eq_zero_of_measure_zero (μ : Measure X) {E : Set X} (hE : MeasurableSet E)
+    (h0 : μ E = 0) (f : Lp ℂ 2 μ) : proj μ hE f = 0 := by
+  have hae : ∀ᵐ x ∂μ, x ∉ E := by
+    rw [ae_iff]
+    simpa using h0
+  rw [Lp.eq_zero_iff_ae_eq_zero]
+  filter_upwards [proj_coeFn μ hE f, hae] with x e1 e3
+  simp [e1, Set.indicator_of_notMem e3]
 
-
-
-
+theorem proj_indSet_univ (μ : Measure X) [IsFiniteMeasure μ] {E : Set X}
+    (hE : MeasurableSet E) :
+    proj μ hE (indSet μ (MeasurableSet.univ (α := X))) = indSet μ hE := by
+  refine Lp.ext ?_
+  filter_upwards [proj_coeFn μ hE (indSet μ (MeasurableSet.univ (α := X))),
+    indicatorConstLp_coeFn (μ := μ) (p := 2) (s := (Set.univ : Set X))
+      (hs := MeasurableSet.univ) (hμs := measure_ne_top μ Set.univ) (c := (1 : ℂ)),
+    indicatorConstLp_coeFn (μ := μ) (p := 2) (s := E)
+      (hs := hE) (hμs := measure_ne_top μ E) (c := (1 : ℂ))] with x e1 e2 e3
+  rw [indSet, indSet]
+  rw [indSet] at e1
+  rw [e1, e3]
+  by_cases hx : x ∈ E
+  · simp only [Set.indicator_of_mem hx, e2, Set.indicator_of_mem (Set.mem_univ x)]
+  · simp only [Set.indicator_of_notMem hx]
 
 /-! ## The set-up: a covariant unitary representation -/
 
@@ -69,19 +96,113 @@ def Covariant (μ : Measure X) (hm : ∀ g : G, Measurable fun x : X => g • x)
   ∀ (g : G) (E : Set X) (hE : MeasurableSet E) (f : Lp ℂ 2 μ),
     V g (proj μ hE f) = proj μ (measurableSet_smul_image hm hE g) (V g f)
 
+/-- Covariance moves the indicator of `E` to the indicator of `g·E` times `V g 1`. -/
+theorem vmap_indSet {μ : Measure X} [IsFiniteMeasure μ]
+    {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) (g : G)
+    {E : Set X} (hE : MeasurableSet E) :
+    V g (indSet μ hE)
+      = proj μ (measurableSet_smul_image hm hE g)
+          (V g (indSet μ (MeasurableSet.univ (α := X)))) := by
+  rw [← proj_indSet_univ μ hE, hcov g E hE]
 
+theorem image_preimage_smul (g : G) (F : Set X) :
+    (fun x : X => g • x) '' ((fun x : X => g • x) ⁻¹' F) = F := by
+  ext y
+  constructor
+  · rintro ⟨x, hx, rfl⟩
+    exact hx
+  · intro hy
+    exact ⟨g⁻¹ • y, by simpa [smul_smul] using hy, by simp [smul_smul]⟩
 
+/-- **The measure is automatically quasi-invariant.** -/
+theorem quasiInvariant_of_covariant {μ : Measure X} [IsFiniteMeasure μ]
+    {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) :
+    QuasiInvariant μ G := by
+  refine ⟨hm, fun g => Measure.AbsolutelyContinuous.mk fun E hE h0 => ?_⟩
+  have hFmeas : MeasurableSet ((fun x : X => g • x) ⁻¹' E) := (hm g) hE
+  have hsub : (fun x : X => g • x) '' ((fun x : X => g • x) ⁻¹' E) ⊆ E := by
+    rintro _ ⟨x, hx, rfl⟩
+    exact hx
+  have h0' : μ ((fun x : X => g • x) '' ((fun x : X => g • x) ⁻¹' E)) = 0 :=
+    measure_mono_null hsub h0
+  have hzero : proj μ (measurableSet_smul_image hm hFmeas g)
+      (V g (indSet μ (MeasurableSet.univ (α := X)))) = 0 :=
+    proj_eq_zero_of_measure_zero μ _ h0' _
+  have hnorm : ‖indSet μ hFmeas‖ = 0 := by
+    have h1 : ‖V g (indSet μ hFmeas)‖ = ‖indSet μ hFmeas‖ := (V g).norm_map _
+    rw [vmap_indSet hcov g hFmeas, hzero, norm_zero] at h1
+    exact h1.symm
+  have hsq : (μ ((fun x : X => g • x) ⁻¹' E)).toReal = 0 := by
+    rw [← norm_indSet_sq μ hFmeas, hnorm]
+    norm_num
+  have hzero' : μ ((fun x : X => g • x) ⁻¹' E) = 0 :=
+    (ENNReal.toReal_eq_zero_iff _).mp hsq |>.resolve_right (measure_ne_top μ _)
+  rw [Measure.map_apply (hm g) hE]
+  exact hzero'
 
-
-
-
-
+/-- The multiplication projection depends on the set only, not on the measurability proof. -/
+theorem proj_congr_set (μ : Measure X) {E F : Set X} (hE : MeasurableSet E)
+    (hF : MeasurableSet F) (h : E = F) (f : Lp ℂ 2 μ) : proj μ hE f = proj μ hF f := by
+  subst h
+  rfl
 
 /-! ## The Radon–Nikodym cocycle is the modulus squared of `V g 1` -/
 
+/-- The `L²`-norm of a localized function as a set-integral. -/
+theorem lintegral_enorm_sq_restrict (μ : Measure X) {F : Set X} (hF : MeasurableSet F)
+    (u : Lp ℂ 2 μ) :
+    ∫⁻ x in F, ‖(u : X → ℂ) x‖ₑ ^ 2 ∂μ = ENNReal.ofReal (‖proj μ hF u‖ ^ 2) := by
+  have hnorm : ‖proj μ hF u‖ ^ 2 = ∫ x in F, ‖(u : X → ℂ) x‖ ^ 2 ∂μ := by
+    rw [lp2_norm_sq_eq_integral μ (proj μ hF u)]
+    rw [← integral_indicator hF]
+    refine integral_congr_ae ?_
+    filter_upwards [proj_coeFn μ hF u] with x e1
+    rw [e1]
+    by_cases hx : x ∈ F
+    · simp [Set.indicator_of_mem hx]
+    · simp [Set.indicator_of_notMem hx]
+  rw [hnorm]
+  have hint : Integrable (fun x => ‖(u : X → ℂ) x‖ ^ 2) (μ.restrict F) :=
+    (integrable_norm_sq μ u).restrict
+  rw [ofReal_integral_eq_lintegral_ofReal hint (by filter_upwards with x; positivity)]
+  refine lintegral_congr fun x => ?_
+  rw [← ofReal_norm_eq_enorm, ← ENNReal.ofReal_pow (norm_nonneg _)]
 
-
-
+/-- The Radon–Nikodym cocycle of the measure is the modulus squared of `V g 1`. -/
+theorem dens_eq_enorm_sq {μ : Measure X} [IsFiniteMeasure μ]
+    {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) (g : G)
+    {w : X → ℂ} (hwmeas : Measurable w)
+    (hw : w =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ)) :
+    dens μ g =ᵐ[μ] fun x => ‖w x‖ₑ ^ 2 := by
+  have hmeasw : Measurable fun x => ‖w x‖ₑ ^ 2 := (hwmeas.enorm.pow_const 2)
+  have hmap : (μ.map fun x : X => g • x) = μ.withDensity (fun x => ‖w x‖ₑ ^ 2) := by
+    refine Measure.ext fun F hF => ?_
+    have hEmeas : MeasurableSet ((fun x : X => g • x) ⁻¹' F) := (hm g) hF
+    -- the norm identity coming from unitarity and covariance
+    have hV0 := vmap_indSet hcov g hEmeas
+    have hV : V g (indSet μ hEmeas)
+        = proj μ hF (V g (indSet μ (MeasurableSet.univ (α := X)))) := by
+      rw [hV0]
+      exact proj_congr_set μ _ hF (image_preimage_smul g F) _
+    have hnormV : ‖proj μ hF (V g (indSet μ (MeasurableSet.univ (α := X))))‖
+        = ‖indSet μ hEmeas‖ := by
+      rw [← hV]
+      exact (V g).norm_map _
+    have hsq : ‖proj μ hF (V g (indSet μ (MeasurableSet.univ (α := X))))‖ ^ 2
+        = (μ ((fun x : X => g • x) ⁻¹' F)).toReal := by
+      rw [hnormV, norm_indSet_sq μ hEmeas]
+    have hlin : ∫⁻ x in F, ‖w x‖ₑ ^ 2 ∂μ
+        = ∫⁻ x in F, ‖((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ) x‖ₑ ^ 2 ∂μ := by
+      refine lintegral_congr_ae ?_
+      exact ae_restrict_of_ae (hw.mono fun x hx => by simp only [hx])
+    rw [withDensity_apply _ hF, hlin,
+      lintegral_enorm_sq_restrict μ hF (V g (indSet μ (MeasurableSet.univ (α := X)))), hsq,
+      ENNReal.ofReal_toReal (measure_ne_top μ _), Measure.map_apply (hm g) hF]
+  rw [dens, hmap]
+  exact Measure.rnDeriv_withDensity μ hmeasw
 
 /-! ## The multiplication–translation operator -/
 
@@ -205,13 +326,69 @@ section Identify
 
 variable {μ : Measure X} [IsFiniteMeasure μ]
 
+theorem mem_smul_image_iff (g : G) (E : Set X) (x : X) :
+    x ∈ (fun y : X => g • y) '' E ↔ g⁻¹ • x ∈ E := by
+  constructor
+  · rintro ⟨y, hy, rfl⟩
+    simpa [smul_smul] using hy
+  · intro h
+    exact ⟨g⁻¹ • x, h, by simp [smul_smul]⟩
 
+/-- On indicators, `V g` is multiplication by `w = V g 1` after translation by `g⁻¹`. -/
+theorem vmap_indSet_eq_tmap {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V)
+    (hqi : QuasiInvariant μ G) (g : G) {w : X → ℂ} (hwmeas : Measurable w)
+    (hw : w =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ))
+    (hdens : dens μ g =ᵐ[μ] fun x => ‖w x‖ₑ ^ 2)
+    {E : Set X} (hE : MeasurableSet E) :
+    V g (indSet μ hE) = tmap hqi g hwmeas hdens (indSet μ hE) := by
+  have h1 := vmap_indSet hcov g hE
+  refine Lp.ext ?_
+  filter_upwards [tmap_coeFn hqi g hwmeas hdens (indSet μ hE),
+    proj_coeFn μ (measurableSet_smul_image hm hE g)
+      (V g (indSet μ (MeasurableSet.univ (α := X)))), hw,
+    (quasiMeasurePreserving hqi g⁻¹).ae_eq_comp
+      (indicatorConstLp_coeFn (μ := μ) (p := 2) (s := E) (hs := hE)
+        (hμs := measure_ne_top μ E) (c := (1 : ℂ)))] with x a1 a2 a3 a4
+  rw [h1, a2, a1, tfun]
+  simp only [Function.comp_apply] at a4
+  have ha4 : ((indSet μ hE : Lp ℂ 2 μ) : X → ℂ) (g⁻¹ • x)
+      = E.indicator (fun _ => (1 : ℂ)) (g⁻¹ • x) := a4
+  rw [ha4]
+  by_cases hx : g⁻¹ • x ∈ E
+  · have hmem : x ∈ (fun y : X => g • y) '' E := (mem_smul_image_iff g E x).mpr hx
+    rw [Set.indicator_of_mem hmem, Set.indicator_of_mem hx, ← a3, mul_one]
+  · have hmem : x ∉ (fun y : X => g • y) '' E := fun h => hx ((mem_smul_image_iff g E x).mp h)
+    rw [Set.indicator_of_notMem hmem, Set.indicator_of_notMem hx, mul_zero]
 
+/-- A constant multiple of an indicator, in `L²`. -/
+theorem indicatorConstLp_eq_smul {E : Set X} (hE : MeasurableSet E) (hμE : μ E ≠ ⊤) (c : ℂ) :
+    indicatorConstLp 2 hE hμE c = c • indSet μ hE := by
+  refine Lp.ext ?_
+  filter_upwards [indicatorConstLp_coeFn (μ := μ) (p := 2) (s := E) (hs := hE)
+      (hμs := hμE) (c := c),
+    Lp.coeFn_smul c (indSet μ hE),
+    indicatorConstLp_coeFn (μ := μ) (p := 2) (s := E) (hs := hE)
+      (hμs := measure_ne_top μ E) (c := (1 : ℂ))] with x e1 e2 e3
+  simp only [Pi.smul_apply] at e2
+  rw [e1, e2, indSet, e3]
+  by_cases hx : x ∈ E <;> simp [hx]
 
-
-
-
-
+/-- **`V g` is the multiplication–translation operator.** -/
+theorem vmap_eq_tmap {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V)
+    (hqi : QuasiInvariant μ G) (g : G) {w : X → ℂ} (hwmeas : Measurable w)
+    (hw : w =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ))
+    (hdens : dens μ g =ᵐ[μ] fun x => ‖w x‖ₑ ^ 2) (f : Lp ℂ 2 μ) :
+    V g f = tmap hqi g hwmeas hdens f := by
+  refine Lp.induction (p := 2) (by simp)
+    (fun f => V g f = tmap hqi g hwmeas hdens f) ?_ ?_ ?_ f
+  · intro c F hF hμF
+    rw [Lp.simpleFunc.coe_indicatorConst, indicatorConstLp_eq_smul hF hμF.ne c,
+      map_smul, tmap_smul, vmap_indSet_eq_tmap hcov hqi g hwmeas hw hdens hF]
+  · intro f₁ f₂ _ _ _ h₁ h₂
+    rw [map_add, tmap_add, h₁, h₂]
+  · exact isClosed_eq (V g).continuous (tmapL hqi g hwmeas hdens).continuous
 
 end Identify
 
@@ -225,19 +402,63 @@ variable {μ : Measure X} [IsFiniteMeasure μ]
 noncomputable def wrep (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) : X → ℂ :=
   (Lp.aestronglyMeasurable (V g (indSet μ (MeasurableSet.univ (α := X))))).mk _
 
+theorem measurable_wrep (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) :
+    Measurable (wrep V g) :=
+  (Lp.aestronglyMeasurable
+    (V g (indSet μ (MeasurableSet.univ (α := X))))).stronglyMeasurable_mk.measurable
 
-
-
+theorem wrep_ae (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) :
+    wrep V g =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ) :=
+  (Lp.aestronglyMeasurable _).ae_eq_mk.symm
 
 /-- The modulus-one cocycle obtained by normalizing `V g 1`. -/
 noncomputable def ucocycle (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) (x : X) : ℂ :=
   if wrep V g x = 0 then 1 else wrep V g x / (‖wrep V g x‖ : ℂ)
 
+theorem norm_ucocycle (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) (x : X) :
+    ‖ucocycle V g x‖ = 1 := by
+  rw [ucocycle]
+  split_ifs with h
+  · simp
+  · rw [norm_div, Complex.norm_real, norm_norm, div_self]
+    simpa using h
 
+theorem measurable_ucocycle (V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)) (g : G) :
+    Measurable (ucocycle V g) := by
+  refine Measurable.ite ?_ measurable_const
+    ((measurable_wrep V g).div (Complex.measurable_ofReal.comp (measurable_wrep V g).norm))
+  exact measurableSet_eq_fun (measurable_wrep V g) measurable_const
 
-
-
-
+/-- **A covariant unitary representation of `G` on `L²(X, μ)` is induced.**  The measure is
+automatically quasi-invariant, and there is a measurable modulus-one cocycle `u` with
+`(V g f)(x) = u g x · √(dens μ g x) · f(g⁻¹ x)` almost everywhere: exactly the form of the
+induced representation of `BookProof.ChapterMackeyQuasiInvariant`. -/
+theorem covariant_unitary_is_induced {hm : ∀ g : G, Measurable fun x : X => g • x}
+    {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) :
+    QuasiInvariant μ G ∧
+      ∃ u : G → X → ℂ, (∀ g x, ‖u g x‖ = 1) ∧ (∀ g, Measurable (u g)) ∧
+        ∀ (g : G) (f : Lp ℂ 2 μ), ((V g f : Lp ℂ 2 μ) : X → ℂ) =ᵐ[μ]
+          fun x => u g x * (sqrtDens μ g x : ℂ) * (f : X → ℂ) (g⁻¹ • x) := by
+  have hqi : QuasiInvariant μ G := quasiInvariant_of_covariant hcov
+  refine ⟨hqi, ucocycle V, norm_ucocycle V, measurable_ucocycle V, ?_⟩
+  intro g f
+  have hdens : dens μ g =ᵐ[μ] fun x => ‖wrep V g x‖ₑ ^ 2 :=
+    dens_eq_enorm_sq hcov g (measurable_wrep V g) (wrep_ae V g)
+  have hsqrt : ∀ᵐ x ∂μ, sqrtDens μ g x = ‖wrep V g x‖ := by
+    filter_upwards [hdens] with x hx
+    rw [sqrtDens, hx, ← ofReal_norm_eq_enorm, ← ENNReal.ofReal_pow (norm_nonneg _),
+      ENNReal.toReal_ofReal (by positivity), Real.sqrt_sq (norm_nonneg _)]
+  have hV := vmap_eq_tmap hcov hqi g (measurable_wrep V g) (wrep_ae V g) hdens f
+  rw [hV]
+  filter_upwards [tmap_coeFn hqi g (measurable_wrep V g) hdens f, hsqrt] with x a1 a2
+  rw [a1, a2, tfun]
+  congr 1
+  rw [ucocycle]
+  split_ifs with h
+  · rw [h]
+    simp
+  · rw [div_mul_cancel₀]
+    simpa using h
 
 end Headline
 

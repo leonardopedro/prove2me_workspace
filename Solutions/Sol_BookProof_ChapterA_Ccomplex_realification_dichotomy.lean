@@ -1,8 +1,8 @@
 -- Generated from ChapterA2e.lean — solution of BookProof.ChapterA.Ccomplex_realification_dichotomy
 import Mathlib
 import Definitions.Def_ChapterA2e
-import Theorems.Thm_BookProof_ChapterA_transK_beta
 import Theorems.Thm_BookProof_ChapterA_transK_sq
+import Theorems.Thm_BookProof_ChapterA_transK_beta
 import Theorems.Thm_BookProof_ChapterA_transK_realCommutes
 import Theorems.Thm_BookProof_ChapterA_Rcomplex_realCommutant_eq_complex
 import Theorems.Thm_BookProof_ChapterA_cembed_apply

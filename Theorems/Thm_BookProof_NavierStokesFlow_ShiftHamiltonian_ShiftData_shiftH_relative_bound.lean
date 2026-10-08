@@ -13,14 +13,14 @@ open BookProof.NavierStokesFlow.SignedShift.SignedHop
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ShiftHamiltonian
 
-variable {ι : Type*} (S : ShiftData ι)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*} (S : ShiftData ι)
 
 theorem BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_relative_bound (x : maxDom S.sym) :
     ‖(shiftH S x : L2I ι)‖ ^ 2

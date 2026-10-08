@@ -14,11 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
 open BookProof.NsOuterFock
 
-variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
-variable {bv nu lam mu gg}
-variable {B : ℝ} (hB : 0 ≤ B) (hbv : ∀ j, |bv j| ≤ B) (hnu : |nu| ≤ B) (hlam : |lam| ≤ B)
-  (hmu : |mu| ≤ B) (hgg : |gg| ≤ B)
-
 
 
 open Finset MvPolynomial
@@ -29,6 +24,11 @@ open BookProof.QgOuterFockInteractionFL
 open BookProof.SqSumOuterFamily
 
 noncomputable section
+
+variable (bv : Fin 3 → ℝ) (nu lam mu gg : ℝ)
+variable {bv nu lam mu gg}
+variable {B : ℝ} (hB : 0 ≤ B) (hbv : ∀ j, |bv j| ≤ B) (hnu : |nu| ≤ B) (hlam : |lam| ≤ B)
+  (hmu : |mu| ≤ B) (hgg : |gg| ≤ B)
 
 theorem BookProof.NsOuterFock.nsOuterFock_esa_farisLavine :
     EssentiallySelfAdjointOn

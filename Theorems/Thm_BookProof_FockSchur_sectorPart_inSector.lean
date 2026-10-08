@@ -13,8 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds
@@ -23,5 +21,7 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
 
 theorem BookProof.FockSchur.sectorPart_inSector (n : ℕ) (u : FockAlg) : InSector n (sectorPart n u) := by sorry

@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterStatementOperator
 open BookProof.ChapterStatementOperator
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (S : ModelStatement H) (ψ : H)
-
 
 
 open ContinuousLinearMap
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (S : ModelStatement H) (ψ : H)
 
 theorem BookProof.ChapterStatementOperator.approximate_proof_error (S : ModelStatement H) (A : H →L[ℂ] H) (ε : ℝ)
     (hA : ‖A - S.op‖ ≤ ε) (ψ : H) :

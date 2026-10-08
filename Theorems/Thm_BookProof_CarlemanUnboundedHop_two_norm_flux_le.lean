@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 open BookProof.CarlemanUnboundedHop
 
-variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
-
 
 
 open Finset
 
 noncomputable section
+
+variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 theorem BookProof.CarlemanUnboundedHop.two_norm_flux_le (hu : Summable fun n => ‖u n‖ ^ 2)
     (hθ0 : ∀ r, 0 ≤ θ r) (hΘ : ∀ j, HasSum (fun i => θ (i + j + 1)) (Θ j))

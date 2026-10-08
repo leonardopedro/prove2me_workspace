@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 open BookProof.ChapterAttentionSparse
 
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionSparse.attendedMass_univ (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :

@@ -7,12 +7,11 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_resolvent_identi
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_commute
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_comp_one_sub
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sirkDen_rkVec
-import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_symmetricOn
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Resolvent_isShiftInvertC
+import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
-open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -26,8 +25,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-  ring
-
 theorem solution (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
     ∃ X : ℕ → ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ),
       (∀ j u n, ((X j u : ℓ²(ℕ, ℂ)) : ℕ → ℂ) n = (u : ℕ → ℂ) n / (γ j - (n : ℂ))) ∧
@@ -43,7 +40,7 @@ theorem solution (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
         IsShiftInvertC A' (γ j) (X j) →
         Dom' = LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ))) ∧
       (∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
-        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatri :=
+        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖) :=
   x x‖) := by
     refine ⟨fun j => ell2Resolvent (hγ j), ?_, fun j => ell2Resolvent_isShiftInvertC (hγ j), ?_, ?_,
       ?_, ?_, ?_, fun j u => galerkinCompression_tendsto _ ell2Basis u, ?_,

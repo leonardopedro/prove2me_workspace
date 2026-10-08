@@ -4,8 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterRotaryPosition
 open BookProof.ChapterRotaryPosition
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -13,6 +11,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterRotaryPosition.inner_rotaryEncode_shift (omega : Fin n → ℝ) (a b c : ℝ)

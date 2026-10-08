@@ -3,9 +3,8 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionCapacity
-
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -16,6 +15,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionOutput
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionCapacity.norm_headOutput_distScore_sub_le_of_separated

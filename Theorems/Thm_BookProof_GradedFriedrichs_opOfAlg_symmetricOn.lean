@@ -15,8 +15,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -25,6 +23,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.opOfAlg_symmetricOn {T : Module.End ℂ (γ →₀ ℂ)} (hT : IsSymAlg T) :
     SymmetricOn (lpFiniteModes γ) (opOfAlg T) := by sorry

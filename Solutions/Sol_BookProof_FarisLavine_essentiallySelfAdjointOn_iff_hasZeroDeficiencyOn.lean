@@ -21,15 +21,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-alse
-by `not_farisLavine_criterion_of_relative_bound`). -/
-
-section NavierStokesTieIn
-
-open BookProof.NavierStokesFlow
-
 theorem solution
-    (D : :=
+    (D : Submodule ℂ F) (H : D →ₗ[ℂ] D) :
+    EssentiallySelfAdjointOn D (D.subtype.comp H) ↔ HasZeroDeficiencyOn D H :=
    Submodule ℂ F) (H : D →ₗ[ℂ] D) :
       EssentiallySelfAdjointOn D (D.subtype.comp H) ↔ HasZeroDeficiencyOn D H := by
     have key : ∀ (w : F) (z : ℂ),

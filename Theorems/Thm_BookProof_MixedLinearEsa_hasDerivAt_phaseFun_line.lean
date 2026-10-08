@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
 
 theorem BookProof.MixedLinearEsa.hasDerivAt_phaseFun_line {W θ : V → ℝ} {m : V}

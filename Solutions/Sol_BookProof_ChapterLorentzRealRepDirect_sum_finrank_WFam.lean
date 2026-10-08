@@ -1,6 +1,7 @@
 -- Generated from ChapterLorentzRealRepDirect.lean — solution of BookProof.ChapterLorentzRealRepDirect.sum_finrank_WFam
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
+import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_finrank_full_eq_add
 open BookProof.ChapterLorentzRealRepDirect
 
 

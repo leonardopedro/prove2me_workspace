@@ -10,8 +10,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.QgCouplingDGammaSum
 
-variable {ι : Type*}
-
 
 
 open BookProof.FockSecondQuantization
@@ -19,6 +17,8 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.QgCouplingDGammaSum.creVec_eq_sum {v : ℕ →₀ ℂ} {L : Finset ℕ} (hL : v.support ⊆ L) (x : FockAlg) :

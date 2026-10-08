@@ -7,14 +7,14 @@ import Definitions.Def_ChapterCoherentOccupation
 open BookProof.ChapterCoherentOccupation
 open BookProof.ChapterThermalTemperatureCore
 
-variable {r : ℝ}
-
 
 noncomputable section
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
 open BookProof.ChapterBoseEinstein
+
+variable {r : ℝ}
 
 theorem BookProof.ChapterThermalTemperatureCore.half_integer_floor_coherent {lam : ℝ} (h : 0 ≤ lam) :
     1 / 2 ≤ ∑' n : ℕ, ((n : ℝ) + 1 / 2) * coherentOccupation lam n := by sorry

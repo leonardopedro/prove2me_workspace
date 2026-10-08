@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sum_sgn_mul_eq_zero
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sum_sgn_mul_self
-import Theorems.Thm_BookProof_ChapterScaledDotProduct_two_pow_ne_zero'
+import Theorems.Thm_BookProof_ChapterScaledDotProduct_two_pow_ne_zero_prime
 open BookProof.ChapterScaledDotProduct
 
 
@@ -47,4 +47,4 @@ theorem solution (k : Fin d → ℝ) :
     · intro hi
       exact absurd (Finset.mem_univ i) hi
   rw [rademacherMean, hswap, Finset.sum_congr rfl fun i (_ : i ∈ Finset.univ) => hinner i,
-    ← Finset.mul_sum, mul_comm, mul_div_assoc, div_self two_pow_ne_zero', mul_one]
+    ← Finset.mul_sum, mul_comm, mul_div_assoc, div_self two_pow_ne_zero_prime, mul_one]

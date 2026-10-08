@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterFockInteractionStability
 open BookProof.FockInteractionStability
 
-variable {E : Type*} [NormedAddCommGroup E]
-
 
 noncomputable section
 
@@ -19,6 +17,8 @@ open BookProof.FockNumberPreservingGap
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 
+
+variable {E : Type*} [NormedAddCommGroup E]
 
 
 theorem BookProof.FockInteractionStability.gap_persists_pos {mu a b : ℝ} (hmu : 0 < mu) (ha : a < 1) (hb : b < (1 - a) * mu) :

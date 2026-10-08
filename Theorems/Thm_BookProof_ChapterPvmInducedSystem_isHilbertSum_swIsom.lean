@@ -8,11 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
 open BookProof.ChapterPvmInducedSystem
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
-variable [CompleteSpace H]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -22,6 +17,11 @@ open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterHilbertSumIntertwine
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
+
+variable [CompleteSpace H]
 
 theorem BookProof.ChapterPvmInducedSystem.isHilbertSum_swIsom {P : Pvm X H} {S : Set H} (hS : OrthCyclicFamily P S)
     (hdense : Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H)) :

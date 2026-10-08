@@ -9,8 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -18,6 +16,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QgHermiteFriedrichs.cpoly_kinPoly (p : MvPolynomial (Fin d) ℂ) :

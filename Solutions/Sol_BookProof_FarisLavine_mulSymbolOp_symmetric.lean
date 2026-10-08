@@ -21,12 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
- * z) by ring,
-    ← Complex.normSq_eq_conj_mul_self]
-  push_cast
-  ring
-
-theorem solution (lam s : ℕ → ℝ) (hs : ∀ n, |s n| :=
+theorem solution (lam s : ℕ → ℝ) (hs : ∀ n, |s n| ≤ |lam n|) :
+    SymmetricOn (mulSymbolDomain lam) (mulSymbolOp lam s hs) :=
   ≤ |lam n|) :
       SymmetricOn (mulSymbolDomain lam) (mulSymbolOp lam s hs) := by
     intro x y

@@ -12,14 +12,15 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.KoopmanLyapunov
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
+open BookProof.NsKoopman
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.KoopmanLyapunov.quadForm_mulCoreOp (E : MvPolynomial (Fin d) ℂ) (x : polyGaussCore (d := d)) :

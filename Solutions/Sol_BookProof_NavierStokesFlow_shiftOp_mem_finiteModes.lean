@@ -16,10 +16,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-pa [hgdef, Function.mem_support] using one_div_ne_zero hkC
-  exact (Set.infinite_univ.diff (Set.finite_singleton (0 : ℤ))) (hg.subset hsub)
-
-/-- The lattice translation prese :=
+theorem solution (m : ℤ) {f : L2Z} (hf : f ∈ finiteModes) :
+    shiftOp m f ∈ finiteModes :=
   rves the finite-mode domain. -/
   theorem shiftOp_mem_finiteModes (m : ℤ) {f : L2Z} (hf : f ∈ finiteModes) :
       shiftOp m f ∈ finiteModes := by

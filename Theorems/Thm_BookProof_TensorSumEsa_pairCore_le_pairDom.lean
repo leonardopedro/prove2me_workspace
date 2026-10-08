@@ -7,6 +7,13 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.TensorSumEsa
 
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
 variable (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
@@ -18,12 +25,5 @@ variable {Hs Ks : IPSpace} [CompleteSpace Hs.carrier] [CompleteSpace Ks.carrier]
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
   (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
   (CA : Submodule ℂ Hs.carrier) (CB : Submodule ℂ Ks.carrier)
-
-
-
-open scoped TensorProduct
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-
-noncomputable section
 
 theorem BookProof.TensorSumEsa.pairCore_le_pairDom : pairCore Hs Ks DA DB CA CB ≤ pairDom Hs Ks DA DB := by sorry

@@ -7,12 +7,12 @@ import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 theorem BookProof.FriedrichsSquare.coe_factorRel (A : D →ₗ[ℂ] F) : (factorRel A : Set (F × F)) = factorGraph A := by sorry

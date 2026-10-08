@@ -14,8 +14,6 @@ import Mathlib
 import Definitions.Def_ChapterTruncationGapLift
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -25,6 +23,8 @@ open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.TruncationGapLift.basis_mem_tailSpan (b : HilbertBasis ℕ ℂ F) {i m : ℕ} (him : m ≤ i) :

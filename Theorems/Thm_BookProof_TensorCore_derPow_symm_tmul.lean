@@ -6,16 +6,16 @@ import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TensorCore
 
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-variable (A : D₂ →ₗ[ℂ] Hs.carrier)
-variable (D : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+variable (A : D₂ →ₗ[ℂ] Hs.carrier)
+variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TensorCore.derPow_symm_tmul (hA : SymmetricOn D₂ A) (n : ℕ)
     (ih : ∀ x y : ((domSpace Hs D₂).pow n),

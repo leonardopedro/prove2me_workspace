@@ -20,7 +20,6 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
@@ -28,8 +27,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.QymTimeIndependent
-
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 
 
@@ -43,6 +40,8 @@ open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProdu
 open BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 
 theorem BookProof.QymTimeIndependent.ymFock_weylGauge_timeIndependent :

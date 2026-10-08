@@ -17,8 +17,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.harmonic_add_linearGrowth_essentiallySelfAdjoint {V : Vd d → ℝ} {Ccoef B : ℝ}

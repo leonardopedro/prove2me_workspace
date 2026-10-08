@@ -13,8 +13,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.cpoly_linForm (v : Fin D → ℝ) : cpoly (linForm v) = linForm v := by sorry

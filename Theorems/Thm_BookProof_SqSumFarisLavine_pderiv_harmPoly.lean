@@ -12,8 +12,6 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.GaussCoreQuadBounds
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.pderiv_harmPoly (j : Fin D) :

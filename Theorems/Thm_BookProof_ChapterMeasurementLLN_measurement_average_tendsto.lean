@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterMeasurementLLN
 open BookProof.ChapterMeasurementLLN
 
-variable {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} [IsProbabilityMeasure μ]
-variable {k : ℕ}
-
 
 open MeasureTheory ProbabilityTheory
 open scoped ENNReal
 
+
+variable {Ω : Type*} [MeasurableSpace Ω] {μ : Measure Ω} [IsProbabilityMeasure μ]
+variable {k : ℕ}
 
 
 theorem BookProof.ChapterMeasurementLLN.measurement_average_tendsto (M : ℕ → Ω → Fin k) (f : Fin k → ℝ)

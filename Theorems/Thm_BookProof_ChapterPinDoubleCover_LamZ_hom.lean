@@ -9,5 +9,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 theorem BookProof.ChapterPinDoubleCover.LamZ_hom : ∀ S ∈ Omega, ∀ T ∈ Omega, LamZ (S * T) = LamZ S * LamZ T := by sorry

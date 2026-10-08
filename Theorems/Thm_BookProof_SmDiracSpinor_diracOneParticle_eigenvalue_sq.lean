@@ -7,8 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterSmDiracSpinor
 open BookProof.SmDiracSpinor
 
-variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
-
 
 
 open Matrix
@@ -16,6 +14,8 @@ open BookProof.ChapterCPTHamiltonian BookProof.SmCar BookProof.SmDiracYukawa
 open BookProof.FarisLavine
 
 noncomputable section
+
+variable {k : Fin 3 → ℝ} {m1 m2 : ℝ}
 
 
 theorem BookProof.SmDiracSpinor.diracOneParticle_eigenvalue_sq {v : Fin 4 → ℂ} {mu : ℂ} (hv : v ≠ 0)

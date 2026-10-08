@@ -9,11 +9,6 @@ open BookProof.HermiteProductCore
 open BookProof.TensorCore
 open BookProof.L2TensorPower
 
-variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
-  {μ : Measure V} {ν : Measure W} [SigmaFinite μ] [SigmaFinite ν]
-variable (μ ν) in
-variable {V : Type} [MeasurableSpace V] (μ : Measure V) [SigmaFinite μ]
-
 
 
 open MeasureTheory BookProof.TensorCore BookProof.NsScalarVectorCurry
@@ -23,6 +18,10 @@ open scoped TensorProduct
 noncomputable section
 
 
+variable {V W : Type*} [MeasurableSpace V] [MeasurableSpace W]
+  {μ : Measure V} {ν : Measure W} [SigmaFinite μ] [SigmaFinite ν]
+
+variable {V : Type} [MeasurableSpace V] (μ : Measure V) [SigmaFinite μ]
 
 theorem BookProof.L2TensorPower.l2dSpace_eq (d : ℕ) :
     BookProof.YangMillsNonAbelianEsa.L2dSpace d = L2Space (volume : Measure (Vd d)) := by sorry

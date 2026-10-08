@@ -84,15 +84,36 @@ noncomputable section
 
 /-! ## 1. The one-particle Hamiltonian as a kinetic-plus-squares operator -/
 
+theorem qgFqP_eq_diagP (kappa : Fin 84 → ℝ) : qgFqP kappa = diagP kappa := rfl
 
+theorem qgFqQ_eq_gramQ : qgFqQ = gramQ torsionVec := rfl
 
+/-- **The gravity Hamiltonian is a kinetic-plus-squares operator**: for every real signature
+`κ`, `½ Σ_j κ_j π_j² + ½ Σ_m T_m²` is `sqSumOp κ torsionVec`, the operator whose family of
+linear forms is the sixty-four torsion forms. -/
+theorem qgSigned_eq_sqSumOp (kappa : Fin 84 → ℝ) :
+    signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))
+      = sqSumOp kappa torsionVec := by
+  rw [qgSigned_eq_fqOp, sqSumOp_eq_fqOp, qgFqP_eq_diagP, qgFqQ_eq_gramQ]
 
+/-- **Essential self-adjointness of the gravity Hamiltonian on the Gauss–polynomial core, by
+Faris–Lavine**, for every real signature — in particular with no positivity, ellipticity or
+definiteness assumption on the kinetic term.  Unlike
+`BookProof.Qg3DGaugeEsa.qgSigned_essentiallySelfAdjointOn_core`, whose proof is the Carleman
+flux criterion, this proof is Theorem 1 of Faris–Lavine against the Friedrichs extension of
+`N₁ = −Δ + ‖x‖²/4`: the certificate that lifts to the outer Fock space. -/
+theorem qgSigned_esa_fl (kappa : Fin 84 → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84))
+      (signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))) := by
+  rw [qgSigned_eq_sqSumOp kappa]
+  exact sqSumOp_esa_farisLavine kappa torsionVec
 
-
-
-
-
-
+/-- The physical, *hyperbolic* instance: the densitized, Weyl-ordered 3D gauge-fixed gravity
+Hamiltonian is essentially self-adjoint on the Gauss–polynomial core of `L²(ℝ⁸⁴)`, by
+Faris–Lavine. -/
+theorem qg3D_esa_fl :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qg3DHamiltonian (coreRepPoly 84)) :=
+  qgSigned_esa_fl qgKappa
 
 /-! ## 2. The gauge-fixing forms -/
 
@@ -126,9 +147,19 @@ def qgFullVec : (Fin 64) ⊕ ((Fin 4) ⊕ (Fin 4 × Fin 4)) → Fin 84 → ℝ :
 @[simp] theorem qgFullVec_timeDeriv (q : Fin 4 × Fin 4) :
     qgFullVec (Sum.inr (Sum.inr q)) = timeDerivVec q := rfl
 
+/-- The gauge-fixing forms are not vacuous: the 3D gauge condition really involves the
+derivative coordinates. -/
+theorem div3Vec_ne_zero (a : Fin 4) : div3Vec a (idxDE (spatial 0) (spatial 0) a) = 1 := by
+  rw [div3Vec, Fin.sum_univ_three]
+  have h1 : idxDE (spatial 0) (spatial 0) a ≠ idxDE (spatial 1) (spatial 1) a := by
+    simp [idxDE, spatial, Fin.ext_iff]
+  have h2 : idxDE (spatial 0) (spatial 0) a ≠ idxDE (spatial 2) (spatial 2) a := by
+    simp [idxDE, spatial, Fin.ext_iff]
+  simp [h1, h2]
 
-
-
+/-- The gauge fixing of a derivative coordinate really involves that coordinate. -/
+theorem timeDerivVec_ne_zero (q : Fin 4 × Fin 4) : timeDerivVec q (idxDE 0 q.1 q.2) = 1 := by
+  simp [timeDerivVec]
 
 /-- **The complete 3D gauge-fixed gravity Hamiltonian on the one-particle space**:
 `½ Σ_j κ_j π_j² + ½ Σ_m T_m² + ½ Σ (gauge-fixing forms)²`, with the independent coordinates
@@ -136,7 +167,11 @@ for the spatial derivatives of the tetrad, the 3D gauge condition and the gauge 
 the derivative coordinates. -/
 def qg3DGaugeFixedHam : (polyGaussCore (d := 84)) →ₗ[ℂ] L2d 84 := sqSumOp qgKappa qgFullVec
 
-
+/-- **Essential self-adjointness of the complete gauge-fixed gravity Hamiltonian on the
+Gauss–polynomial core, by Faris–Lavine.** -/
+theorem qg3DGaugeFixed_esa_fl :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) qg3DGaugeFixedHam :=
+  sqSumOp_esa_farisLavine qgKappa qgFullVec
 
 /-! ## 3. The nested Fock space -/
 
@@ -154,17 +189,39 @@ def qgGaugeSectorHam (n : ℕ) : (polyGaussCore (d := n * 84)) →ₗ[ℂ] L2d (
 /-- **The gauge-fixed gravity Hamiltonian on the nested Fock space.** -/
 def qgGaugeOuterHam : qgOuterCore →ₗ[ℂ] qgOuterFock := dsOp (fun n : ℕ => qgGaugeSectorHam n)
 
+/-- Each sector is essentially self-adjoint on its Gauss–polynomial core, by
+Faris–Lavine. -/
+theorem qgGauge_sector_esa_fl (n : ℕ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := n * 84)) (qgGaugeSectorHam n) :=
+  sqSumOp_esa_farisLavine _ _
 
+theorem qgGaugeSectorHam_symmetricOn (n : ℕ) :
+    SymmetricOn (polyGaussCore (d := n * 84)) (qgGaugeSectorHam n) :=
+  sqSumOp_symmetricOn _ _
 
+/-- **The gauge-fixed gravity Hamiltonian is essentially self-adjoint on the
+finite-particle core of the nested Fock space, by Faris–Lavine.** -/
+theorem qgGauge_outerHam_esa_fl : EssentiallySelfAdjointOn qgOuterCore qgGaugeOuterHam :=
+  dsOp_essentiallySelfAdjointOn _ fun n => qgGauge_sector_esa_fl n
 
+theorem qgGaugeOuterHam_symmetricOn : SymmetricOn qgOuterCore qgGaugeOuterHam :=
+  dsOp_symmetricOn _ fun n => qgGaugeSectorHam_symmetricOn n
 
+/-- **The unitary flow of the gauge-fixed gravity Hamiltonian on the nested Fock space.**
+Essential self-adjointness on the dense finite-particle core gives a unique self-adjoint
+realization, and Stone's theorem gives the time evolution it generates. -/
+theorem qgGauge_stone_flow :
+    ∃ (T : UnboundedSelfAdjoint qgOuterFock) (U : ℝ → (qgOuterFock →L[ℂ] qgOuterFock)),
+      IsSelfAdjointExtension qgGaugeOuterHam T.op ∧ IsStoneFlow T U :=
+  exists_stone_flow_of_esa _ qgOuterCore_dense qgGaugeOuterHam_symmetricOn
+    qgGauge_outerHam_esa_fl
 
-
-
-
-
-
-
+/-- The unitary flow of the one-particle gauge-fixed gravity Hamiltonian. -/
+theorem qg3DGaugeFixed_stone_flow :
+    ∃ (T : UnboundedSelfAdjoint (L2d 84)) (U : ℝ → (L2d 84 →L[ℂ] L2d 84)),
+      IsSelfAdjointExtension qg3DGaugeFixedHam T.op ∧ IsStoneFlow T U :=
+  exists_stone_flow_of_esa _ polyGaussCore_dense (sqSumOp_symmetricOn _ _)
+    qg3DGaugeFixed_esa_fl
 
 /-! ## 4. Particle-number conservation -/
 
@@ -173,15 +230,34 @@ section Number
 variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
   [∀ i, InnerProductSpace ℂ (G i)] {D : ∀ i, Submodule ℂ (G i)}
 
+/-- The direct-sum operator acts sector by sector. -/
+theorem dsOp_sector (H : ∀ i, D i →ₗ[ℂ] G i) (x : dsCore D) (i : ι) :
+    ((dsOp H x : lp G 2) : ∀ i, G i) i = H i ⟨((x : lp G 2) : ∀ i, G i) i, x.2.2 i⟩ := rfl
 
-
-
+/-- **The outer Hamiltonian conserves the particle number.**  A direct-sum operator is block
+diagonal: a core vector living in the `n`-particle sector is mapped to a vector living in the
+same sector.  Nothing is truncated and no lattice is involved — the particle-number sectors
+are what decompose the problem. -/
+theorem dsOp_number_conserving (H : ∀ i, D i →ₗ[ℂ] G i) (x : dsCore D) {n : ι}
+    (hx : ∀ i, i ≠ n → ((x : lp G 2) : ∀ i, G i) i = 0) (i : ι) (hi : i ≠ n) :
+    ((dsOp H x : lp G 2) : ∀ i, G i) i = 0 := by
+  rw [dsOp_sector]
+  have hz : (⟨((x : lp G 2) : ∀ i, G i) i, x.2.2 i⟩ : D i) = 0 := Subtype.ext (hx i hi)
+  rw [hz, map_zero]
 
 end Number
 
+/-- The restriction of the outer Hamiltonian to the `n`-particle sector is the `n`-particle
+Hamiltonian. -/
+theorem qgGaugeOuterHam_sector (x : qgOuterCore) (n : ℕ) :
+    ((qgGaugeOuterHam x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n
+      = qgGaugeSectorHam n ⟨((x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n, x.2.2 n⟩ := rfl
 
-
-
+/-- **The gauge-fixed gravity Hamiltonian conserves the particle number.** -/
+theorem qgGauge_number_conserving (x : qgOuterCore) {n : ℕ}
+    (hx : ∀ m, m ≠ n → ((x : qgOuterFock) : ∀ m : ℕ, L2d (m * 84)) m = 0) (m : ℕ) (hm : m ≠ n) :
+    ((qgGaugeOuterHam x : qgOuterFock) : ∀ m : ℕ, L2d (m * 84)) m = 0 :=
+  dsOp_number_conserving _ x hx m hm
 
 end
 

@@ -17,12 +17,9 @@ open BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-ongr_ae (Filter.Eventually.of_forall fun x => ?_)
-    ring
-  rw [hsplit]
-  linear_combination -h1
-
-theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ :=
+theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V)
+    (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.re = 0) :
+    DeficiencyTrivialAt (ccDomain ℝ) (wallHam V hV) z :=
   ∞) : WithTop ℕ∞) V)
       (hVnn : ∀ x, 0 ≤ V x) {z : ℂ} (hz : z.re = 0) :
       DeficiencyTrivialAt (ccDomain ℝ) (wallHam V hV) z := by

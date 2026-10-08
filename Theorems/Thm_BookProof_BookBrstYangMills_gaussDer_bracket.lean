@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.gaussDer_bracket (c e : Fin N) :
     ⁅gaussDer G c, gaussDer G e⁆

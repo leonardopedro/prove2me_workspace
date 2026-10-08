@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMasking
 open BookProof.ChapterAttentionMasking
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMasking.maskedSoftmax_le_iff {beta : ℝ} (hbeta : 0 < beta) (s : Fin m → ℝ)

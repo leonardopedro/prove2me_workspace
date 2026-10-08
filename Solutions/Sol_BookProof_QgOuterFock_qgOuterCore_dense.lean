@@ -1,6 +1,7 @@
 -- Generated from ChapterQgOuterFockEsa.lean — solution of BookProof.QgOuterFock.qgOuterCore_dense
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 open BookProof.QgOuterFock
 
 

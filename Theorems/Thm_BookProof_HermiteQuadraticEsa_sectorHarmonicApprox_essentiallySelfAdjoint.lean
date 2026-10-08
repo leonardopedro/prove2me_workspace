@@ -11,13 +11,9 @@ import Definitions.Def_ChapterHermiteQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
-import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW
-import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteQuadraticEsa
-
-variable {d : ℕ}
 
 
 
@@ -27,6 +23,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.sectorHarmonicApprox_essentiallySelfAdjoint (M alpha : ℝ) (hM : M ≠ 0)

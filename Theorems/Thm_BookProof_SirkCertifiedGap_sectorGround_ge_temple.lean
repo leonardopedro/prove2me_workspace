@@ -6,8 +6,6 @@ import Definitions.Def_ChapterRitzCertificate
 open BookProof.RitzCertificate
 open BookProof.SirkCertifiedGap
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
-
 
 noncomputable section
 
@@ -15,6 +13,8 @@ noncomputable section
 open scoped InnerProductSpace
 open Finset Filter Topology
 open BookProof.SirkFinitePrecision
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
 
 
 theorem BookProof.SirkCertifiedGap.sectorGround_ge_temple {T P : E →ₗ[ℂ] E} {s : ℝ}

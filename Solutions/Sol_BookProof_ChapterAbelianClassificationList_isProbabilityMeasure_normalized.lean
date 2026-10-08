@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianClassificationList.lean — solution of BookProof.ChapterAbelianClassificationList.isProbabilityMeasure_normalized
 import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
+import Theorems.Thm_BookProof_ChapterLpScaleMeasure_isProbabilityMeasure_inv_smul
 open BookProof.ChapterAbelianClassificationList
 
 

@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterBornMeasure
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 open MeasureTheory
 open scoped ENNReal
 
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 
 theorem BookProof.ChapterBornMeasure.isProbabilityMeasure_bornMeasure_isometry (U : Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)

@@ -4,9 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterSpectralMultiplication
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
-
 
 open MeasureTheory Complex
 open scoped ComplexOrder
@@ -14,6 +11,9 @@ open scoped ComplexOrder
 
 open BookProof.ChapterAbelianGelfandModel
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
 
 theorem BookProof.ChapterSpectralMultiplication.integral_spectralMeasure (f : C(spectrum ℂ T, ℂ)) :
     inner ℂ xi (cfcHom hT f xi) = ∫ z, f z ∂(spectralMeasure T hT xi) := by sorry

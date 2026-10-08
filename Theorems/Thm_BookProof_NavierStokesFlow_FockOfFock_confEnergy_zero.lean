@@ -10,13 +10,13 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
-variable {M : Type*} [DecidableEq M]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.confEnergy_zero (ω : M → ℝ) : confEnergy ω (0 : Conf M) = 0 := by sorry

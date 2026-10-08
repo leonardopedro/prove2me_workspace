@@ -1,8 +1,8 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — solution of BookProof.TwoParticleSector.restrictOp_sectorOp_swapH
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
-import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorCore
 import Theorems.Thm_BookProof_TwoParticleSector_sectorOp_swapH
+import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorCore
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 open BookProof.TwoParticleSector
 

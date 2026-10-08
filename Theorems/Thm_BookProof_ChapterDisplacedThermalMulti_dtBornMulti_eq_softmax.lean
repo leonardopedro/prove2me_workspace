@@ -7,8 +7,6 @@ open BookProof.ChapterDisplacedThermalOverlap
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterDisplacedThermalMulti
 
-variable {n m : ℕ}
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ open scoped NNReal
 
 
 open BookProof.ChapterDisplacedThermalOverlap
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterDisplacedThermalMulti.dtBornMulti_eq_softmax (nbar : ℝ≥0) (q : EuclideanSpace ℝ (Fin n))

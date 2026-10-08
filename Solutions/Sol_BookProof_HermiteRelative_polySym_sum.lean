@@ -20,13 +20,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-nomial (Fin d) ℂ) := by
-  intro p q
-  simp [BookProof.YangMillsHermite.starP, gaussInt_zero]
-
 theorem solution {ι : Type*} (s : Finset ι)
     (T : ι → MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
-    (h : ∀ i ∈ s, BookPr :=
+    (h : ∀ i ∈ s, BookProof.YangMillsHermite.PolySym (T i)) :
+    BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) :=
   oof.YangMillsHermite.PolySym (T i)) :
       BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) := by
     classical

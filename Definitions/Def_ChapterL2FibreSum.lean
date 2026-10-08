@@ -1,3 +1,8 @@
+import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
+import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine
+
+
+
 import Definitions.Def_ChapterMackeyQuasiInvariant
 import Definitions.Def_ChapterHilbertSumIntertwine
 import Mathlib
@@ -43,7 +48,6 @@ section ProjCLM
 
 variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
-omit [InnerProductSpace ℂ K] in
 theorem proj_add (μ : Measure X) {E : Set X} (hE : MeasurableSet E) (f g : Lp K 2 μ) :
     proj μ hE (f + g) = proj μ hE f + proj μ hE g := by
   refine Lp.ext ?_
@@ -66,7 +70,6 @@ theorem proj_smul (μ : Measure X) {E : Set X} (hE : MeasurableSet E) (c : ℂ) 
   · simp only [Set.indicator_of_mem hx, e3]
   · simp only [Set.indicator_of_notMem hx, smul_zero]
 
-omit [InnerProductSpace ℂ K] in
 theorem norm_proj_le (μ : Measure X) {E : Set X} (hE : MeasurableSet E) (f : Lp K 2 μ) :
     ‖proj μ hE f‖ ≤ ‖f‖ := by
   refine Lp.norm_le_norm_of_ae_le ?_
@@ -134,7 +137,7 @@ noncomputable def coordCLM (i : ι) : Fibre ι →L[ℂ] ℂ :=
       rw [one_mul]
       exact lp.norm_apply_le_norm (by norm_num) w i)
 
-
+theorem coordCLM_apply (i : ι) (w : Fibre ι) : coordCLM i w = w i := rfl
 
 end Coord
 
@@ -239,8 +242,24 @@ noncomputable def fibreEquiv [Countable ι] (μ : Measure X) :
 
 /-! ## Multiplication by indicators -/
 
+/-- The embeddings intertwine multiplication by `1_E` on the scalar `L²` with multiplication
+by `1_E` on the vector-valued `L²`. -/
+theorem fibreEmb_proj (μ : Measure X) (i : ι) {E : Set X} (hE : MeasurableSet E)
+    (f : Lp ℂ 2 μ) :
+    fibreEmb μ i (proj μ hE f) = proj μ hE (fibreEmb μ i f) := by
+  refine Lp.ext ?_
+  filter_upwards [fibreEmb_coeFn μ i (proj μ hE f), proj_coeFn μ hE f,
+    proj_coeFn (K := Fibre ι) μ hE (fibreEmb μ i f), fibreEmb_coeFn μ i f] with x e1 e2 e3 e4
+  rw [e1, e2, e3]
+  by_cases hx : x ∈ E <;> simp [hx, e4]
 
-
-
+/-- **Under the unitary, the fibrewise multiplication operators of the `ℓ²`-sum are exactly
+the multiplication operator of the induced system.** -/
+theorem fibreEquiv_proj [Countable ι] (μ : Measure X) {E : Set X} (hE : MeasurableSet E)
+    (v : Lp (Fibre ι) 2 μ) (i : ι) :
+    fibreEquiv μ (proj μ hE v) i = proj μ hE (fibreEquiv μ v i) :=
+  linearIsometryEquiv_intertwine (isHilbertSum_fibreEmb μ) (projCLM μ hE)
+    (fun _ : ι => projCLM μ hE) (fun _ u => norm_proj_le μ hE u)
+    (fun i u => fibreEmb_proj μ i hE u) v i
 
 end BookProof.ChapterL2FibreSum

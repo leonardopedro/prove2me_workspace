@@ -1,8 +1,8 @@
 -- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.pderiv_potPoly
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
-import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_linForm
 import Theorems.Thm_BookProof_SqSumFarisLavine_C_two_eq
+import Theorems.Thm_BookProof_SqSumFarisLavine_pderiv_linForm
 open BookProof.SqSumFarisLavine
 
 

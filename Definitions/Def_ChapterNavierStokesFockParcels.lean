@@ -153,9 +153,29 @@ noncomputable def fockLagSymbols (μ : Measure Ω) {p q dr : Fin 3 → Ω → �
   Dr_meas i := secondQuant_measurable (hd i)
   c_meas := secondQuant_measurable hc
 
+/-- **The transformed Navier–Stokes Hamiltonian on the whole continuum Fock
+space is essentially self-adjoint.**
 
+This is the second-quantized statement of the Lagrangian change of variables: all
+parcel-number sectors at once (not one sector at a time), arbitrary measurable
+one-parcel symbols, no boundedness anywhere, and in general purely continuous
+spectrum. -/
+theorem fockLagrangian_hasZeroDeficiencyOn (μ : Measure Ω) {p q dr : Fin 3 → Ω → ℝ}
+    {cf : Ω → ℝ} (hp : ∀ i, Measurable (p i)) (hq : ∀ i, Measurable (q i))
+    (hd : ∀ i, Measurable (dr i)) (hc : Measurable cf) (force : Fin 3 → ℝ) {nu : ℝ}
+    (hnu : 0 ≤ nu) :
+    HasZeroDeficiencyOn (fockLagSymbols μ hp hq hd hc force hnu).data.D
+      (fockLagSymbols μ hp hq hd hc force hnu).data.hFull :=
+  LagSymbols.hFull_hasZeroDeficiencyOn _
 
-
+/-- The domain really is a dense subspace of the continuum Fock space. -/
+theorem fockLagrangian_dense (μ : Measure Ω) {p q dr : Fin 3 → Ω → ℝ}
+    {cf : Ω → ℝ} (hp : ∀ i, Measurable (p i)) (hq : ∀ i, Measurable (q i))
+    (hd : ∀ i, Measurable (dr i)) (hc : Measurable cf) (force : Fin 3 → ℝ) {nu : ℝ}
+    (hnu : 0 ≤ nu) :
+    Dense (((fockLagSymbols μ hp hq hd hc force hnu).data.D :
+      Submodule ℂ (Lp ℂ 2 (fockMeasure μ))) : Set (Lp ℂ 2 (fockMeasure μ))) :=
+  (fockLagSymbols μ hp hq hd hc force hnu).core_dense
 
 end Fock
 
@@ -174,9 +194,18 @@ noncomputable def momFock : LagSymbols (ParcelConf ℝ) fockR :=
     (fun _ => measurable_const) (fun _ => measurable_const) measurable_const (fun _ => 0)
     (le_refl 0)
 
+theorem momFock_scale (c : ParcelConf ℝ) :
+    momFock.scale c = 3 * |∑ k : Fin c.1, c.2 k| := by
+  simp only [LagSymbols.scale, momFock, fockLagSymbols, secondQuant, Fin.sum_univ_three]
+  simp
+  ring
 
-
-
+/-- The total symbol of this realization is the (total) kinetic energy. -/
+theorem momFock_total (c : ParcelConf ℝ) :
+    momFock.total c = (3 / 2) * (∑ k : Fin c.1, c.2 k) ^ 2 := by
+  simp only [LagSymbols.total, momFock, fockLagSymbols, secondQuant, Fin.sum_univ_three]
+  simp
+  ring
 
 /-- The one-parcel momentum box `[K, K+1]`. -/
 def bigBox (K : ℝ) : Set (Fin 1 → ℝ) := Set.univ.pi fun _ => Set.Icc K (K + 1)
@@ -203,7 +232,10 @@ noncomputable def bigState (K : ℝ) : Lp ℂ 2 fockR :=
   (memLp_indicator_const 2 (bigSet_measurable K) (1 : ℂ)
     (Or.inr (by rw [fockMeasure_bigSet K]; exact ENNReal.one_ne_top))).toLp _
 
-
+theorem bigState_coeFn (K : ℝ) :
+    ((bigState K : Lp ℂ 2 fockR) : ParcelConf ℝ → ℂ)
+      =ᵐ[fockR] (bigSet K).indicator (fun _ => (1 : ℂ)) :=
+  MemLp.coeFn_toLp _
 
 
 

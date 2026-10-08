@@ -8,12 +8,12 @@ open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
 
 
 theorem BookProof.FriedrichsSquare.fst_mem_clDom_of_mem_factorRel {A : D →ₗ[ℂ] F} {p : F × F} (hp : p ∈ factorRel A) :

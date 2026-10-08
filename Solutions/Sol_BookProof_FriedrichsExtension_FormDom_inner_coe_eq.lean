@@ -1,6 +1,7 @@
 -- Generated from ChapterFriedrichsExtension.lean — solution of BookProof.FriedrichsExtension.FormDom.inner_coe_eq
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
+import Theorems.Thm_BookProof_Complexification_Cx_inner_def
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom

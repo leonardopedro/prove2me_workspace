@@ -3,13 +3,14 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterA4
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+import Definitions.Def_ChapterKatoRellichDeficiency
+open BookProof.KatoRellich
 
 
 
 open BookProof.FarisLavine
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 
 theorem BookProof.KatoRellich.dense_range_add_relBounded (H B : D →ₗ[ℂ] F) (hH : SymmetricOn D H) {a b e : ℝ}

@@ -6,17 +6,17 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.QuantumGravityBrstCharge
 
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
-variable {d : ℕ}
-variable {α : Type*}
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
 noncomputable section
+
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
+variable {d : ℕ}
+variable {α : Type*}
 
 theorem BookProof.QuantumGravityBrstCharge.affF_jacobi (a b c h : Fin 19) :
     ∑ e, (affF a b e * affF e c h + affF b c e * affF e a h + affF c a e * affF e b h) = 0 := by sorry

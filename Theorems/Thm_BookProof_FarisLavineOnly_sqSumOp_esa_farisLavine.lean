@@ -16,10 +16,6 @@ open BookProof.QgOuterFock
 open BookProof.QgOuterFockCoreFL
 open BookProof.FarisLavineOnly
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
-variable {D : ℕ} {R : Type} [Fintype R]
-
 
 open scoped ENNReal
 
@@ -29,8 +25,10 @@ noncomputable section
 open BookProof.FarisLavine
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
+variable (d : CoreData F)
 
 
 
@@ -43,6 +41,8 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL BookProof.SqSumOuterFamily
+
+variable {D : ℕ} {R : Type} [Fintype R]
 
 theorem BookProof.FarisLavineOnly.sqSumOp_esa_farisLavine (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) :
     EssentiallySelfAdjointOn (polyGaussCore (d := D)) (sqSumOp kappa v) := by sorry

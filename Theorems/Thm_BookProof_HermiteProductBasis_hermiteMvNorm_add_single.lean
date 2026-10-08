@@ -6,13 +6,13 @@ import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteCore
 open BookProof.HermiteProductBasis
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteProductBasis.hermiteMvNorm_add_single (i : Fin d) (a : Fin d →₀ ℕ) :

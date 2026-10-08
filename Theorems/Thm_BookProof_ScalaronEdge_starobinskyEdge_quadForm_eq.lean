@@ -14,8 +14,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronEdge
 
-variable (M alpha : ℝ)
-
 
 
 open Complex Real MeasureTheory Function SchwartzMap ComplexOrder
@@ -29,6 +27,8 @@ open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 
+
+variable (M alpha : ℝ)
 
 
 theorem BookProof.ScalaronEdge.starobinskyEdge_quadForm_eq (f : ccSchwartz ℝ) :

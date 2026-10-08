@@ -13,8 +13,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 open BookProof.ScalaronEdge
 
-variable (M alpha : ℝ)
-
 
 
 open Complex Real MeasureTheory Function SchwartzMap ComplexOrder
@@ -28,6 +26,8 @@ open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 
+
+variable (M alpha : ℝ)
 
 
 theorem BookProof.ScalaronEdge.starobinskyV_lt_shelf_bounded (hM : 0 < M) (halpha : 0 < alpha) (c : ℝ) (hc : 0 < c)

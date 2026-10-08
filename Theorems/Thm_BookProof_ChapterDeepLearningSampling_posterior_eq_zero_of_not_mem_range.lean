@@ -5,14 +5,12 @@ import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterBayesInference
 open BookProof.ChapterDeepLearningSampling
 
-variable {Seed Model Data : Type*}
-variable [Fintype Seed] [DecidableEq Model]
-variable [Fintype Model]
-
 
 open scoped BigOperators
 
 
+variable {Seed Model Data : Type*}
+variable [Fintype Seed] [DecidableEq Model]
 
 
 
@@ -20,6 +18,8 @@ open scoped BigOperators
 
 
 
+
+variable [Fintype Model]
 
 
 theorem BookProof.ChapterDeepLearningSampling.posterior_eq_zero_of_not_mem_range (seedProb : Seed → ℝ)

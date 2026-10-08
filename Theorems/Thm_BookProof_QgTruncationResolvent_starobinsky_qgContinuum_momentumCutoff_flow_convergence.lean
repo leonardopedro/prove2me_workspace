@@ -18,10 +18,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -32,6 +28,10 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgTruncationResolvent.starobinsky_qgContinuum_momentumCutoff_flow_convergence (M alpha : ℝ)
     (halpha : 0 < alpha) (g : ℝ) :

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_dGamma_basis
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_total
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_hasZeroDeficiencyOn_of_commonEigenvectors
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -32,3 +33,5 @@ theorem solution (nu : ℝ) (hnu : 0 ≤ nu) (p q dr : Fin 3 → M → ℝ)
     (fun i n => dGamma_basis (p i) n) (fun i n => dGamma_basis (q i) n)
     (fun i n => dGamma_basis (dr i) n) (fun n => dGamma_basis cst n)
     lpBasis_total
+
+omit [DecidableEq M] in

@@ -2,7 +2,7 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterBddBelowWallEsa
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterDirectSumEsa
@@ -11,14 +11,15 @@ open BookProof.DirectSumEsa
 open BookProof.WallEsaSemibounded
 open BookProof.BddBelowFiberSumEsa
 
-variable {ι : Type*}
-
 
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.BddBelowFiberSumEsa.dsOp_semibounded {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]

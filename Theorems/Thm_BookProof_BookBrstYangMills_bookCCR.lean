@@ -11,13 +11,13 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsGhost
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.bookCCR (μ ν : Fin 4) (a b : Fin N) :
     Afield μ a * mom ν b - mom ν b * Afield μ a

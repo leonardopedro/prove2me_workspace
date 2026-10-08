@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEnergyBoundedEvolution
 import Theorems.Thm_BookProof_ChapterEnergyBoundedEvolution_phase_split
-import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le'
+import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le_prime
 open BookProof.ChapterEnergyBoundedEvolution
 
 
@@ -44,6 +44,6 @@ theorem solution {Emax : ℝ} (h : EnergyLimited E μ Emax f) (s t : ℝ) :
         ring
       rw [h, Complex.norm_exp_I_mul_ofReal]
     rw [hphase, one_mul]
-    have hbound := norm_evolution_sub_scalar_le' (ε := Emax) (a := E x) (t - s) 0 (f x)
+    have hbound := norm_evolution_sub_scalar_le_prime (ε := Emax) (a := E x) (t - s) 0 (f x)
       (by simpa using hE)
     simpa using hbound

@@ -1,6 +1,7 @@
 -- Generated from ChapterFiniteBayesHierarchy.lean — solution of BookProof.ChapterFiniteBayesHierarchy.nestedMarginal_eq_terminalMarginal
 import Mathlib
 import Definitions.Def_ChapterFiniteBayesHierarchy
+import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_terminalMarginal_comp
 open BookProof.ChapterFiniteBayesHierarchy
 
 

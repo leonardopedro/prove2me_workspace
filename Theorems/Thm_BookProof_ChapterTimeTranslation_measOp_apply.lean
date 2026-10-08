@@ -6,13 +6,13 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterTimeTranslation
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterTimeTranslation.measOp_apply (U : Matrix (Fin n) (Fin n) ℂ) (a : Fin n) (k l : Fin n) :

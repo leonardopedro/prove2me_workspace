@@ -16,10 +16,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -28,6 +24,10 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
 
 theorem BookProof.QgHermiteOscillator.kinPoly_add_harmPoly_hermiteMv (a : Fin d →₀ ℕ) :
     kinPoly (hermiteMv a) + harmPoly * hermiteMv a

@@ -23,9 +23,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.YangMillsFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
-
 
 noncomputable section
 
@@ -36,6 +33,9 @@ open BookProof.FockFieldPerturbation
 open BookProof.FarisLavine BookProof.HermiteGalerkin
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.BandEnclosure
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 theorem BookProof.YangMillsFockGapChain.ym_fock_gap_of_nested_ritz_bands {mu : ℝ} (hmu : 0 ≤ mu)
     {lo hi : ℕ → ℝ} (hnest : NestedBands lo hi)

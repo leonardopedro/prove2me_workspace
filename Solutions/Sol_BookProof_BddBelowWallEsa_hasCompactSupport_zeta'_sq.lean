@@ -1,7 +1,7 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.hasCompactSupport_zeta'_sq
 import Mathlib
 import Definitions.Def_ChapterBddBelowWallEsa
-import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta'
+import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta_prime
 open BookProof.BddBelowWallEsa
 
 
@@ -18,6 +18,6 @@ theorem solution {r : ℝ} (hr : 0 < r) :
     @HasCompactSupport ℝ ℝ _ instMulZeroClassOfSemiring.toZero
       (fun x => (zeta' r x) ^ 2) := by
 
-  have h := (hasCompactSupport_zeta' hr).mul_right (f' := zeta' r)
+  have h := (hasCompactSupport_zeta_prime hr).mul_right (f' := zeta' r)
   convert h using 1
   funext y; simp [pow_two]

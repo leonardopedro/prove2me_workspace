@@ -9,11 +9,10 @@ open BookProof.SchrodingerCutoff
 open MeasureTheory Filter Complex
 
 set_option maxHeartbeats 1000000 in
-olume hucont continuous_const).mp hu_ae
-
 theorem solution {f : ℝ → ℝ} (hf : Continuous f)
     (h0 : ∀ x, 0 ≤ f x)
-    (h : ∀ n : ℕ, ∫ x in Set.Icc (-((n : ℝ) + 1 :=
+    (h : ∀ n : ℕ, ∫ x in Set.Icc (-((n : ℝ) + 1)) ((n : ℝ) + 1), f x = 0) :
+    f = 0 :=
   )) ((n : ℝ) + 1), f x = 0) :
       f = 0 := by
     have key : ∀ n : ℕ, ∀ᵐ x, x ∈ Set.Icc (-((n : ℝ) + 1)) ((n : ℝ) + 1) → f x = 0 := by

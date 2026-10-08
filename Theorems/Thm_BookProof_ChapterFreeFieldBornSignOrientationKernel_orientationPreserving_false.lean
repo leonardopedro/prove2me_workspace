@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignOrientationKernel
 open BookProof.ChapterFreeFieldBornSignOrientationKernel
 
-variable {n : ℕ}
-
 
 open BookProof.ChapterFreeFieldBornSignHom
 open BookProof.ChapterFreeFieldBornSignMatrix
 open BookProof.ChapterFreeFieldBornSignOrientation
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignOrientationKernel.orientationPreserving_false :

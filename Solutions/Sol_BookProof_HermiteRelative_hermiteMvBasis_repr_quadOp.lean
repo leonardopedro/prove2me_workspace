@@ -22,11 +22,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
- u‖ + K * (2 / (c0 * e)) * ‖(u : L2d d)‖ := by ring
-
 theorem solution (c : Fin d → ℝ) (u : polyGaussCore (d := d))
     (a : Fin d →₀ ℕ) :
-    hermiteMvBasis :=
+    hermiteMvBasis.repr (quadOp c u) a
+      = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a :=
   .repr (quadOp c u) a
         = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by
     have hmem : hermiteMvLp a ∈ polyGaussCore (d := d) := hermiteMvLp_mem_core a

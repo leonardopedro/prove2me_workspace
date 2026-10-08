@@ -7,8 +7,6 @@ import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterDutchBook
 open BookProof.ChapterAttentionMarkov
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMarkov.push_isProb {P : Fin m → Fin m → ℝ} {p : Fin m → ℝ} (hP : IsStochastic P)

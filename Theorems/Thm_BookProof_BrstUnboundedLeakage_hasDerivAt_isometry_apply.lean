@@ -5,14 +5,14 @@ import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
 open BookProof.BrstUnboundedLeakage
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 open NormedSpace Filter Topology
 open scoped InnerProductSpace
 
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.BrstUnboundedLeakage.hasDerivAt_isometry_apply {U : ℝ → H →L[ℂ] H} {f : ℝ → H} {f' : H}

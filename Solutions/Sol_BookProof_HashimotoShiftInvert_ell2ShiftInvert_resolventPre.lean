@@ -1,9 +1,8 @@
 -- Generated from ChapterHashimotoComplexShifts.lean — solution of BookProof.HashimotoShiftInvert.ell2ShiftInvert_resolventPre
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
-import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sub_natCast_ne_zero
-open scoped lp
+import Theorems.Thm_BookProof_HashimotoShiftInvert_diagCLMC_apply
 open BookProof.HashimotoShiftInvert
 
 
@@ -17,10 +16,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
-on.2.1
-
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (u : ℓ²(ℕ, ℂ)) :
-    ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolven :=
+    ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolvent hγ u :=
   t hγ u := by
     apply lp.ext
     funext n

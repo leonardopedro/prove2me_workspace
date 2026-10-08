@@ -16,8 +16,6 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open Filter Topology
 
@@ -31,6 +29,8 @@ open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 theorem BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique {Dom₁ Dom₂ : Submodule ℂ (L2d 3)}

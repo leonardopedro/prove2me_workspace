@@ -5,6 +5,7 @@ import Theorems.Thm_PhysFunctionalAnalysis_l2_separable
 
 import Definitions.Def_PhysFunctionalAnalysis
 import Mathlib
+import Definitions.Def_PhysMeasureBasis
 
 
 /-!
@@ -40,6 +41,99 @@ open MeasureTheory Set Filter TopologicalSpace
 open scoped ENNReal Topology BigOperators
 
 noncomputable section
+
+/-! ## The Gaussian core (embedded from `BookProof/PhysHSGaussian`)
+
+There is no `Def_PhysHSGaussian` bundle on the platform, so the namespace
+`PhysHSGaussian` would be unknown (server FAILED: `unknown namespace
+PhysHSGaussian`).  The few declarations this bundle and its dependents need
+(`gammaMeasure`, `normSq`, the concentration law) are embedded here instead;
+other bundles reach them through `import Definitions.Def_PhysMehler` (§5a). -/
+
+namespace PhysHSGaussian
+
+/-- The infinite product of standard Gaussians (the law of an i.i.d. Gaussian
+    sequence). -/
+def gammaMeasure : Measure (ℕ → ℝ) :=
+  Measure.infinitePi (fun _ : ℕ => ProbabilityTheory.gaussianReal 0 1)
+
+instance gammaMeasure_isProbability : IsProbabilityMeasure gammaMeasure := by
+  unfold gammaMeasure; infer_instance
+
+/-- Empirical squared norm of the first `k` coordinates. -/
+def normSq (k : ℕ) (ω : ℕ → ℝ) : ℝ := ∑ i ∈ Finset.range k, (ω i)^2
+
+theorem gaussian_concentration_sphere :
+    ∀ᵐ ω ∂gammaMeasure,
+      Filter.Tendsto (fun k => normSq k ω / k) Filter.atTop (𝓝 1) := by
+  convert ProbabilityTheory.strong_law_ae _ _ _ _ using 1;
+  case convert_4 => exact ℝ;
+  case convert_10 => exact fun i ω => ( ω i ) ^ 2;
+  all_goals try infer_instance;
+  · have h_integral : ∫ x : ℕ → ℝ, x 0 ^ 2 ∂gammaMeasure = 1 := by
+      have h_gauss : ∫ x : ℝ, x ^ 2 ∂(ProbabilityTheory.gaussianReal 0 1) = 1 := by
+        have := @ProbabilityTheory.variance_id_gaussianReal 0 1;
+        rw [ ProbabilityTheory.variance, ProbabilityTheory.evariance_eq_lintegral_ofReal, ←
+          MeasureTheory.integral_eq_lintegral_of_nonneg_ae ] at this <;> norm_num at *;
+        · exact this;
+        · exact Filter.Eventually.of_forall fun x => sq_nonneg x;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      have h_gauss : ∫ x : ℕ → ℝ, x 0 ^ 2 ∂gammaMeasure = ∫ x : ℝ, x ^ 2
+        ∂(ProbabilityTheory.gaussianReal 0 1) := by
+        have h_map : MeasureTheory.Measure.map (fun x : ℕ → ℝ => x 0) gammaMeasure =
+          ProbabilityTheory.gaussianReal 0 1 := by
+          convert MeasureTheory.Measure.infinitePi_map_eval _ _ using 1
+          <;> (first | rfl | infer_instance);
+        rw [ ← h_map, MeasureTheory.integral_map ];
+        · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      linarith;
+    simp_all +decide [ div_eq_inv_mul, normSq ];
+  · have h_integrable : MeasureTheory.Integrable (fun x : ℝ => x^2) (ProbabilityTheory.gaussianReal
+    0 1) := by
+      have h_gauss_integrable : ∫ x, x ^ 2 ∂(ProbabilityTheory.gaussianReal 0 1) = 1 := by
+        have := @ProbabilityTheory.variance_id_gaussianReal 0 1;
+        rw [ ProbabilityTheory.variance, ProbabilityTheory.evariance_eq_lintegral_ofReal, ←
+          MeasureTheory.integral_eq_lintegral_of_nonneg_ae ] at this <;> norm_num at *;
+        · exact this;
+        · exact Filter.Eventually.of_forall fun x => sq_nonneg x;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      exact ( by contrapose! h_gauss_integrable; rw [ MeasureTheory.integral_undef
+          h_gauss_integrable ] ; norm_num );
+    have h_integrable : MeasureTheory.Integrable (fun ω : ℕ → ℝ => ω 0 ^ 2) (Measure.infinitePi (fun
+      _ : ℕ => ProbabilityTheory.gaussianReal 0 1)) := by
+      have h_map : (Measure.infinitePi (fun _ : ℕ => ProbabilityTheory.gaussianReal 0 1)).map (fun ω
+        : ℕ → ℝ => ω 0) = ProbabilityTheory.gaussianReal 0 1 := by
+        convert MeasureTheory.Measure.infinitePi_map_eval _ _ using 1;
+        exact fun _ => inferInstance
+      rw [ ← h_map ] at h_integrable;
+      rwa [ MeasureTheory.integrable_map_measure ] at h_integrable;
+      · exact h_integrable.1;
+      · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+    exact h_integrable;
+  · have h_indep : ProbabilityTheory.iIndepFun (fun i : ℕ => fun ω : ℕ → ℝ => ω i) gammaMeasure
+    := by
+      convert ProbabilityTheory.iIndepFun_infinitePi ( fun i => measurable_id ) using 1
+      <;> (first | rfl | infer_instance);
+    exact fun i j hij => h_indep.indepFun hij |> fun h => h.comp ( measurable_id.pow_const 2 ) (
+      measurable_id.pow_const 2 );
+  · intro i
+    have h_ident : ProbabilityTheory.IdentDistrib (fun ω : ℕ → ℝ => ω i) (fun ω : ℕ → ℝ => ω 0)
+      gammaMeasure gammaMeasure := by
+      constructor;
+      · exact measurable_pi_apply i |> Measurable.aemeasurable;
+      · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+      · have h_map : ∀ i : ℕ, Measure.map (fun ω : ℕ → ℝ => ω i) gammaMeasure =
+        ProbabilityTheory.gaussianReal 0 1 := by
+        intro i
+        generalize_proofs at *; (
+        convert MeasureTheory.Measure.infinitePi_map_eval ( fun _ =>
+          ProbabilityTheory.gaussianReal 0 1 ) i using 1 <;> (first | rfl | infer_instance));
+        rw [ h_map i, h_map 0 ]
+    generalize_proofs at *; (
+    exact h_ident.comp ( measurable_id.pow_const 2 ))
+
+end PhysHSGaussian
 
 namespace PhysMehler
 
@@ -87,13 +181,26 @@ theorem substrate_decidable_skeleton : ∃ D : Set Substrate, D.Countable ∧ De
     space — Mehler's 1866 limit of the uniform measure on the `√k`-sphere. -/
 abbrev MehlerPrior : Measure (ℕ → ℝ) := gammaMeasure
 
+theorem mehler_isProbability : IsProbabilityMeasure MehlerPrior :=
+  gammaMeasure_isProbability
 
-
-
+/-- The Mehler prior "lives on the infinite-dimensional sphere": the normalized
+    empirical squared norm concentrates at `1` almost surely (Poincaré–Borel /
+    the strong law). -/
+theorem mehler_concentrates_on_sphere :
+    ∀ᵐ ω ∂MehlerPrior, Tendsto (fun k => normSq k ω / k) atTop (𝓝 1) :=
+  gaussian_concentration_sphere
 
 /-! ## The atomless prior layer -/
 
-
+/-- Every separable inner-product space carrying two orthonormal vectors admits an
+    atomless probability prior concentrated on the unit sphere — the abstract
+    realization of the Mehler "uncertainty" layer on any Kopperman substrate. -/
+theorem admits_atomless_prior (E : Type*)
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
+    [MeasurableSpace E] [BorelSpace E] (e₀ e₁ : E) (h : Orthonormal ℝ ![e₀, e₁]) :
+    ∃ μ : Measure E, IsProbabilityMeasure μ ∧ (∀ x, μ {x} = 0) ∧ ∀ᵐ v ∂μ, ‖v‖ = 1 :=
+  exists_atomless_sphere_measure E e₀ e₁ h
 
 /-! ## K-model: "choosing a measure = choosing a model of the formalism"
 
@@ -132,7 +239,12 @@ arithmetic sentence from "SAT ∉ P" — `model_vs_clay_disjointness` (T5) is th
 that the two are disjoint (`σ` is blind to any individual decidable language). See
 `PNP_IMPLEMENTATION_PLAN.md` Part 11 (K-model). -/
 
-
+/-- **K-model.0** (projection): every model of the formalism carries an atomless
+probability measure. (True by construction — `prior` is a field.) -/
+theorem model_has_prior {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
+    [CompleteSpace H] [MeasurableSpace H] (F : Formalism H) :
+    IsProbabilityMeasure F.prior ∧ ∀ x, F.prior {x} = 0 :=
+  ⟨F.prior_isProb, F.prior_atomless⟩
 
 /-- An explicit orthonormal pair in the substrate `L²([0,1])`: the `√2`-scaled
 indicators of the two halves `[0,½]` and `(½,1]`. -/
@@ -209,9 +321,18 @@ noncomputable def formalismOfPrior (μ : Measure Substrate)
     (h1 : IsProbabilityMeasure μ) (h2 : ∀ x, μ {x} = 0) :
     (formalismOfPrior μ h1 h2).prior = μ := rfl
 
+/-- The prior-projection is surjective onto the atomless probability measures:
+with the substrate (and a canonical skeleton) fixed, choosing such a measure is
+exactly choosing a model. -/
+theorem prior_surjective_onto_atomless (μ : Measure Substrate)
+    (h1 : IsProbabilityMeasure μ) (h2 : ∀ x, μ {x} = 0) :
+    ∃ F : Formalism Substrate, F.prior = μ :=
+  ⟨formalismOfPrior μ h1 h2, rfl⟩
 
-
-
+/-- **K-ext:** the substrate admits a model of the formalism. -/
+theorem nonempty_formalism_substrate : Nonempty (Formalism Substrate) := by
+  obtain ⟨μ, h1, h2⟩ := exists_atomless_prob_substrate
+  exact ⟨formalismOfPrior μ h1 h2⟩
 
 /-- The canonical atomless probability measure on the Kopperman substrate, used as
 the substrate prior of the bounded-prior model.  It is the shared analytic datum
@@ -223,7 +344,8 @@ def rcpPriorOnSubstrate : Measure Substrate := Classical.choose exists_atomless_
 instance rcpPriorOnSubstrate_isProb : IsProbabilityMeasure rcpPriorOnSubstrate :=
   (Classical.choose_spec exists_atomless_prob_substrate).1
 
-
+theorem rcpPriorOnSubstrate_atomless : ∀ x : Substrate, rcpPriorOnSubstrate {x} = 0 :=
+  (Classical.choose_spec exists_atomless_prob_substrate).2
 
 /-- A concrete model of the Kopperman formalism on the substrate `L²([0,1])`. -/
 noncomputable def koppermanSubstrate : Formalism Substrate :=
@@ -278,10 +400,33 @@ def interpPi02 {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
     [CompleteSpace H] [MeasurableSpace H]
     (p : ℕ → ℕ → Bool) (_F : Formalism H) (_z : ZFSet) : Prop := Pi02 p
 
+/-- **T-conserv** (`Π⁰₂`-invariance / conservativity, Part 11 step (c)): the
+truth of a `Π⁰₂` arithmetical sentence is invariant under any choice of
+`Formalism` (the prior/model) **and** under any choice of `ZFSet` foundation —
+the parameters drop out. This is the checked core of "no prior, no foundation
+moves an arithmetic truth"; it is a proxy for, not an internal proof of, the
+meta-logical co-consistency/standardness claims (see the section docstring and
+Part 11 fences). -/
+theorem arith_truth_invariant {H : Type*} [NormedAddCommGroup H]
+    [InnerProductSpace ℝ H] [CompleteSpace H] [MeasurableSpace H]
+    (p : ℕ → ℕ → Bool) (F₁ F₂ : Formalism H) (z₁ z₂ : ZFSet) :
+    interpPi02 p F₁ z₁ ↔ interpPi02 p F₂ z₂ := Iff.rfl
 
+/-- Specialisation of `arith_truth_invariant` to a fixed foundation: the truth of
+a `Π⁰₂` sentence does not depend on which model (`Formalism`) realises it. -/
+theorem pi02_invariant_of_formalism {H : Type*} [NormedAddCommGroup H]
+    [InnerProductSpace ℝ H] [CompleteSpace H] [MeasurableSpace H]
+    (p : ℕ → ℕ → Bool) (F₁ F₂ : Formalism H) (z : ZFSet) :
+    interpPi02 p F₁ z ↔ interpPi02 p F₂ z :=
+  arith_truth_invariant p F₁ F₂ z z
 
-
-
-
+/-- The interpreted truth coincides with the plain arithmetic sentence: the
+formalism/foundation wrapping is content-free. (The geometric refinement
+`interpPi02_geom_iff` of Part 12 proves the *same* coincidence with a non-trivial
+vector-identity witness instead of `Iff.rfl`.) -/
+theorem interpPi02_eq {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
+    [CompleteSpace H] [MeasurableSpace H]
+    (p : ℕ → ℕ → Bool) (F : Formalism H) (z : ZFSet) :
+    interpPi02 p F z ↔ Pi02 p := Iff.rfl
 
 end PhysMehler

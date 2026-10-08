@@ -5,12 +5,12 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.fockSymbol_nonneg (n : ℕ → ℝ) (hn : ∀ k, 0 ≤ n k) (a : Config) :
     0 ≤ fockSymbol n a := by sorry

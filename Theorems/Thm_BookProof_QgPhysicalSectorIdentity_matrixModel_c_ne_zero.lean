@@ -11,8 +11,6 @@ import Definitions.Def_ChapterGaugeFixing
 open BookProof.GaugeFixing
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-
 
 
 open BookProof.GaugeFixing
@@ -22,5 +20,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 
 theorem BookProof.QgPhysicalSectorIdentity.matrixModel_c_ne_zero : (matrixModel.c : Mat2) ≠ 0 := by sorry

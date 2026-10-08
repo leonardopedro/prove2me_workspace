@@ -8,9 +8,6 @@ import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterStoneEvolution
 open BookProof.NonnegUnitaryGroup
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {B C : F →L[ℂ] F} {s t : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
@@ -18,6 +15,9 @@ open BookProof.NonnegResolvent
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {B C : F →L[ℂ] F} {s t : ℝ}
 
 theorem BookProof.NonnegUnitaryGroup.hasDerivAt_expU_apply (B : F →L[ℂ] F) (t : ℝ) (x : F) :
     HasDerivAt (fun s : ℝ => expU B s x) ((expU B t) (((-Complex.I) • B) x)) t := by sorry

@@ -86,17 +86,6 @@ asymptotically `−x⁴/4`. -/
 def lcV : ℝ → ℝ := fun x => (2 * x ^ 2 - 4 * x) / (1 + x ^ 2) ^ 2 - (1 + x ^ 2) ^ 2 / 4
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## 2. The solution -/
 
 /-- **The deficiency vector** `W = e^{p + iq}`. -/
@@ -106,37 +95,10 @@ def lcSol : ℝ → ℂ := fun x => Complex.exp (((lcP x : ℝ) : ℂ) + Complex
 def lcLog' : ℝ → ℂ := fun x => ((lcP' x : ℝ) : ℂ) + Complex.I * ((lcQ' x : ℝ) : ℂ)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## 3. Square integrability -/
 
 
-
-
-
-
-
-
-
 /-! ## 4. The conclusion -/
-
-
-
-
-
-
-
-
-
 
 
 end
@@ -145,11 +107,6 @@ end
 
 section Audit
 
-#print axioms lcSol_isL2Ode
-#print axioms lcV_not_deficiencyTrivialAt_I
-#print axioms lcV_not_deficiencyTrivialAt_negI
-#print axioms lcV_not_essentiallySelfAdjoint
-#print axioms exists_smooth_potential_not_essentiallySelfAdjoint
 
 end Audit
 

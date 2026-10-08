@@ -18,9 +18,6 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichs
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.weylOpDom_block_sum {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
     {D : Submodule ℂ F} {a b c : ℕ} (pi : Fin (a * b) → D →ₗ[ℂ] D)

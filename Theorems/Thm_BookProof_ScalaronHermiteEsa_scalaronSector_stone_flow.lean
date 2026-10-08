@@ -11,14 +11,13 @@ import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.QgHermiteOscillator
 open BookProof.StoneBridge
 open BookProof.ScalaronHermiteEsa
-
-variable {d : ℕ}
 
 
 
@@ -28,6 +27,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ScalaronHermiteEsa.scalaronSector_stone_flow (M alpha : ℝ) (hM : 0 < M) (V3 : Polynomial ℝ) :

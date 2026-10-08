@@ -5,14 +5,14 @@ import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 
-variable {d : ℕ}
-
 
 
 open Finset
 open BookProof.HermiteCarleman
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.CarlemanTwoStep.mem_faceK {d N : ℕ} {i : Fin d} {k : ℕ} {a : Fin d →₀ ℕ} :

@@ -7,15 +7,15 @@ import Definitions.Def_ChapterNsLagrangianDetConvolution
 open BookProof.NsLagrangianDet
 open BookProof.ChapterWignerSymmetryInfinite
 
-variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-  [CompleteSpace E] {T : E → E}
-variable {b : HilbertBasis ι ℂ E} {o : ι}
-
 
 open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
+variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  [CompleteSpace E] {T : E → E}
+
+variable {b : HilbertBasis ι ℂ E} {o : ι}
 
 theorem BookProof.ChapterWignerSymmetryInfinite.phase_self : phase b T o o = 1 := by sorry

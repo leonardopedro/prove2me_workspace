@@ -9,14 +9,14 @@ import Mathlib
 import Definitions.Def_ChapterFockDifferingBasesEsa
 open BookProof.FockDifferingBases
 
-variable {ι κ : Type*} {ω : ι → ℝ}
-
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
 
 noncomputable section
+
+variable {ι κ : Type*} {ω : ι → ℝ}
 
 
 theorem BookProof.FockDifferingBases.summable_specAmp {lam : κ → ℝ} {v : κ → ι → ℂ}

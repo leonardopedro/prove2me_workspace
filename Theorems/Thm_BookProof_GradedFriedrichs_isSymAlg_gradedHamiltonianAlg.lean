@@ -15,9 +15,6 @@ open BookProof.FockSecondQuantization
 open BookProof.YangMillsGhost
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -26,6 +23,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.isSymAlg_gradedHamiltonianAlg {colB colF : ℕ → (ℕ →₀ ℂ)}
     (hb : IsHermCol colB) (hf : IsHermCol colF) :

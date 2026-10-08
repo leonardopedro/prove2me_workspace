@@ -20,5 +20,7 @@ variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
   [BorelSpace Y] (D : Set C(Y, ℂ)) [Countable D]
 
 set_option maxHeartbeats 1000000 in
-omit [CompactSpace Y] [MeasurableSpace Y] [BorelSpace Y] [Countable D] in
-theorem solution : Continuous (coordMap D) := continuous_pi fun d => (d : C(Y, ℂ)).continuous
+theorem solution : Continuous (coordMap D) :=
+  continuous_pi fun d => (d : C(Y, ℂ)).continuous
+  
+  omit [CompactSpace Y] in

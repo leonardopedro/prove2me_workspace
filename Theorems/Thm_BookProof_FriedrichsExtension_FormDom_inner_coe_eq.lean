@@ -10,15 +10,15 @@ open BookProof.QgOuterFockFL
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsExtension.FormDom.inner_coe_eq (P : PosSymOp F) (x : FormDom P) (k : FormSpace P) :
     (inner ℂ (x : FormSpace P) k : ℂ)

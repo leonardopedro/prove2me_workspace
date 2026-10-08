@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDensityMarginalConditional
 open BookProof.DensitySpectral
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
 open scoped BigOperators ComplexOrder
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.DensitySpectral.bornKernel_col_sum (U : Matrix.unitaryGroup n ℂ) (j : n) :

@@ -8,12 +8,6 @@ open BookProof.QuantumGravityHalfDensity
 open BookProof.ScalaronDensitized
 open BookProof.QgMultiHalfDensity
 
-variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
-  {mu : Measure X} {nu : Measure Y} {Phi : X → Y} {Psi : Y → X}
-variable {g : Y → ℝ}
-variable {X : Type*} [MeasurableSpace X] (mu : Measure X)
-variable [SFinite mu]
-
 
 
 open MeasureTheory Set
@@ -21,6 +15,12 @@ open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
 
 noncomputable section
+
+variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
+  {mu : Measure X} {nu : Measure Y} {Phi : X → Y} {Psi : Y → X}
+variable {g : Y → ℝ}
+variable {X : Type*} [MeasurableSpace X] (mu : Measure X)
+variable [SFinite mu]
 
 theorem BookProof.QgMultiHalfDensity.exists_field_halfDensity_unitary (n : ℕ) :
     ∃ _W : Lp ℂ 2 (BookProof.ScalaronDensitized.physMeasure.prod

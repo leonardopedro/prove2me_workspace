@@ -15,8 +15,6 @@ open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds
@@ -25,6 +23,8 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {K : ℝ}
 
 theorem BookProof.FockSchur.diagMax_numSym_eq (x : lpFiniteModes Conf) :
     (diagMax numSym (inclC numSym x) : Fock) = toLp (numWeight (fockEquiv.symm x)) := by sorry

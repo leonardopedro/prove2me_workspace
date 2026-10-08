@@ -5,13 +5,13 @@ import Definitions.Def_ChapterGhostField
 open BookProof.GhostField
 open BookProof.ChapterF3
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-
 
 open scoped BigOperators
 open Polynomial
 
 
 noncomputable section
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 theorem BookProof.ChapterF3.diagGen_vacuum (a : ℂ) : (a • ChapterF1.numberOp) (1 : ℂ[X]) = 0 := by sorry

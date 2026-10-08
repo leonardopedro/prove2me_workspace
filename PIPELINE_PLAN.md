@@ -9,7 +9,7 @@ the transplant of the **timepiece** Lean 4 project onto **prove2.me**.
 - **Authoritative references**: `SKILL.md` (API schemas, upload policy, three basic
   rules), `references/prove2me-lean4.33-translation/PLAN_LEAN4_33_TRANSLATION.md`
   (v4.28→v4.33.1 drift catalogue), `references/upload_full_project.md` (phases 0–6).
-- **Current skill/platform versions**: **0.11.6 / 0.11.6** (updated 2026-10-03). Earlier
+- **Current skill/platform versions**: **0.11.9 / 0.11.9** (updated 2026-10-07). Earlier
   sections reference 0.10.3–0.10.8; **§2 is the current runbook** and supersedes §1's
   status tables wherever they disagree.
 
@@ -665,6 +665,864 @@ session reported "pushed" off a stale message while 8 commits sat unpushed.
 
 Throughput is bound by the **platform compiler queue** (18 jobs sat PENDING; a
 63-item sweep took ~2h at `--parallel 10`), not by local throughput.
+
+---
+
+### §2.12 Error-rate reduction (2026-10-06) — taxonomy, root causes, and the pre-submit guard
+
+Goal of the session: reduce the fraction of failed vs successful submissions to
+prove2.me. `../timepiece331` compiles every proof body we publish (§2.1), so
+every platform failure is an **adaptation** defect in a stub, a name, or the
+pipeline itself. Ground truth: `debug/failure_taxonomy.py` (new) dumps every
+FAILED publish job fine-grained by error shape; `--dump /tmp/fails.json` for
+offline work.
+
+**Failure taxonomy (all historical FAILED jobs, 5046 records):** problems 4471 —
+UNKNOWN_IDENTIFIER 1451 (`F` 973, `d` 821, `adjoint` 361, `ℝ` 256, `E` 228,
+`Occ`/`Dom`/`n`/`ι`/`Measure`… = section `variable`s and notation never emitted
+into the stub), SYNTAX_ERROR 1433 (`line 1: unexpected identifier` = mis-sliced
+statement spans), DUPLICATE_DECL 465 (§2.8d class), UNKNOWN_NAMESPACE 438
+(`BookProof.HyperbolicQuadratic` 121, `FarisLavine` 86…), DUPLICATE 226,
+UNKNOWN_IMPORT 212, plus long tail. Definitions 570 — unknown identifier 29,
+unknown import 8, rest scattered.
+
+**Root causes found and fixed this session (all in `pipeline/upload_pipeline.py`):**
+
+1. **The §2.7 "server truncates the name" class was OUR OWN loader.**
+   `_declared_theorems` used the ASCII-only identifier class
+   `[A-Za-z0-9_'.]*`, so `theorem BookProof.YangMillsFriedrichsLimit.
+   memℓp_one_div_succ` was read as `...mem`, and `reconcile_thm_names` then
+   ADOPTED the truncated name ("the file is authoritative" — but the regex
+   misread the file). The pipeline submitted `theorem_name: ...mem` against a
+   statement declaring `...memℓp_one_div_succ`, which is exactly the recorded
+   failure `Unknown constant BookProof.YangMillsFriedrichsLimit.mem`. Same
+   defect shape as the generator's `fmt_name` (§2.8 fix 1) — an ASCII-only
+   identifier regex. Fixed (Unicode-aware class); `REPAIRED_THM_NAMES` now
+   reports **74** spec names corrected from the files at load time (also fixes
+   spec-side name mangling, e.g. `conj_mul_ofReal₂₂` → `conj_mul_ofReal₂`).
+   `_IDENT` in the name guard got the same treatment.
+2. **Poll timeout re-submitted duplicates.** `poll_job` returned
+   `{"status": "FAILED", "error_message": "poll timeout"}`, and every handler's
+   terminal-FAILED branch fell through to a FRESH submit — one duplicate publish
+   job per slow compile (the runbook records jobs sitting PENDING for minutes;
+   `--job-timeout 60` made this common). Now returns `PENDING` (still in
+   flight), so the next pass re-polls without consuming an attempt.
+3. **`parked` items were re-dispatched.** Both run loops only skipped `done`;
+   a parked item was submitted again on every pass. `parked`/`failed` are now
+   skipped, and `--status` reports parked separately.
+4. **Pre-submit guard** (`submission_guard` / `apply_guard`, called from the
+   three wave handlers before `local_compile`): three layers, cheapest first —
+   * name restrictions → `park` (never submit): apostrophe (§6.1) and
+     non-ASCII `theorem_name`; **live-verified this session**: the server
+     answers `theorem_name must be a valid Lean identifier (identifier segments
+     separated by '.' for namespaces)` for `...memℓp_one_div_succ`, so its
+     identifier class is ASCII-only. (One attempt spent to settle it.)
+   * static stub span sanity → `defer`: stub must start at a command keyword,
+     not mid-comment; thm stubs must end in exactly one `:= by sorry` and not be
+     a truncated expression (`∑ := by sorry`, `:= e := by sorry`); sol/def
+     stubs must contain no `sorry`. Catches the mis-slicing class without a
+     compiler.
+   * `debug/check_pending_offline.py` verdict → `defer` (or `park` for
+     `has already been declared`, §2.8d): a fresh `FAIL:` in
+     `state/offline_pending_check.json` (newer than the stub file) is the
+     platform's own world saying "this burns an attempt". Stale verdicts are
+     ignored — regeneration invalidates them all.
+   Both non-submit verdicts are TRANSIENT: no attempt, no chunk budget.
+   Verified end-to-end through the real interface (park smoke: WAIT logged,
+   zero API POSTs, state `parked`).
+
+**Corrections to earlier sections (API-verified 2026-10-06, same discipline as
+§2.8c/§2.6):**
+
+- **§2.7b is WRONG about `_prime`.** `platform_jobs()` holds 8 PUBLISHED names
+  containing `_prime` (`BookProof.ChapterParityMajoranaQuant.J_unitary_prime`,
+  `BookProof.QgOuterFock.weylProd_self_prime`, …) and zero
+  "not a valid Lean identifier" rejections. The rule as written would have
+  parked 111 submittable items. `_prime` names are allowed; do not park them.
+- **§2.7 non-ASCII:** the fatality is real (server-side, see fix 1) but the
+  mechanism was ours. Recovery for those items is an **ASCII transliteration of
+  the declaration name at generation time** (e.g. `memℓp`→`memLp`, `₂`→`2`),
+  not retries — the mathematics is unaffected by the node's display name.
+  Not yet implemented; it is the single largest parked class to recover.
+- The claim that the server truncates names at the non-ASCII char should be
+  retired: the published `BookProof.FarisLavine.conj_mul_ofReal` was submitted
+  by us already truncated.
+
+**What the taxonomy says is still generator work (post-regen):** the UNKNOWN-
+IDENTIFIER variable/notation class (the current generator already emits
+`variable` lines and namespace opens — verify on regenerated stubs with the
+offline sweep), UNKNOWN_NAMESPACE provider imports, and the §2.8b span garbage
+(the `run_parregen.sh` full regeneration running since 15:54 re-extracts with
+the fixed generator + `resolve_by_name`). After the regen completes:
+(1) `debug/build_published_mirror.py` refresh if new modules landed, (2) run
+`debug/check_pending_offline.py --kind thm --jobs 4` and `--kind sol`, (3) fix
+the top residual classes by hand per §5d (one first-error at a time), (4) submit
+in bounded chunks — the guard now enforces that only guard-passing stubs reach
+the platform.
+
+**New execution order (supersedes §2.11 where counts disagree):**
+
+1. Wait for `/tmp/run_parregen.sh` to merge `state/wave_manifest.json`
+   (`ALL_PROCESSES_DONE` in its log); never submit from a half-regenerated tree.
+2. Offline sweep (`check_pending_offline`) → repair/defer FAILs (§5d method).
+3. Bounded guarded chunks (`--parallel 10 --max-seconds 600`, local gate on);
+   `--status` now separates `parked` so the backlog stays honest.
+4. Transliteration wave for non-ASCII declaration names (recovers the §2.7
+   parked class as publishable problems).
+5. def backlog per §5a as their cited theorems reach Proved.
+
+---
+
+### §2.13 Post-regen sweep results + two pipeline defects (2026-10-07, early)
+
+Executed §2.12's order. Everything below was measured, not inferred.
+
+**thm offline sweep (post-regen, `--kind thm --jobs 4`, 7293 items, 2h55m):**
+
+| verdict | count | meaning |
+|---|---:|---|
+| `ok` | 3991 | submittable (see the autoImplicit caveat below — rechecked) |
+| `FAIL: unpublished def import <chapter>` | 2870 | static pre-check; **all** blockers are the 176 plan-pending def bundles |
+| compile `FAIL:` | 426 | 184 import a *published-but-empty* def bundle, 242 are statement defects (§5d) |
+| `SKIP:` | 6 | no local file / no declaration found |
+
+Top compile-FAIL classes: `Function expected at` 155 (autoImplicit masking an
+unknown identifier — the hint text says so explicitly), `unknown namespace
+BookProof.CarlemanTwoStep` 46 / `CarlemanSimplex` 33 / `KatoRellich` 9 /
+`GradedBandSchur` 8 / `QgTimeIndependent` 6 (all stub-def-blocked),
+`Ambiguous term` 35, `redundant binder annotation update` 29, `invalid binder
+annotation` 20.
+
+**Defect 1 — the local gate ate a whole chunk (fixed).** `local_compile` runs
+`lake env lean` with a 600 s timeout; this checkout has a `lakefile.toml` but 0
+oleans, so the run does not hit the `object file ... does not exist` early-out —
+it just burns the full 600 s and returns `local compile failed: local compile
+timeout`. Chunk 1 therefore processed **1 item in 672 s**. With a completed
+offline sweep the mirror is the strictly better oracle, so bounded chunks now run
+with `PROVE2ME_SKIP_LOCAL_COMPILE=1` (the existing escape hatch at
+`local_compile`). Chunk 2 under that env: 39 submissions / several `DONE` per
+~5 min.
+
+**Defect 2 — the offline oracle lied about `autoImplicit` (fixed, recheck
+running).** The platform compiles formal statements with `autoImplicit=false`
+(Mathlib's setting); `check_pending_offline` ran plain `lean`, where a stub whose
+binder list omits a variable auto-binds it and reports `ok`. Head-to-head
+reproduction on `BookProof.QuantumGravity3DGauge.qgMom_symmetricOn` and
+`BookProof.ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite`:
+`ok` by default, the platform's exact `Unknown identifier \`D\`` / ``\`X\`` with
+`-DautoImplicit=false`. Both had already been submitted → 2 wasted attempts
+(`Unknown identifier` is the historical 1451-record UNKNOWN_IDENTIFIER class).
+`compile_one` now passes `-DautoImplicit=false`, and
+`check_pending_offline --kind thm --recheck-ok` re-runs only the items currently
+marked `ok` (3966), keeping the FAIL/SKIP verdicts. `build_candidate_mirror.py`
+gets the same flag. The in-flight sol sweep was restarted under the fix — phase-1
+oleans built with autoImplicit on would have made every sol verdict a false ok.
+`first_error` also now pulls the identifier out of autoImplicit's
+``The identifier `X` is unknown`` hint, so the 156 `Function expected at` records
+stop reading like 156 unrelated shape errors.
+
+**Repairs landed this session (20 files, all either already `done` or not plan
+items — no attempt cost):**
+
+- 9 Thm stubs carried a truncated `import Definitions.Def_Chapter` (module does
+  not exist → `unknown module prefix`, and it surfaced as the guard's
+  `waiting on unpublished def bundle(s): Chapter (6 item(s))`). Replaced with
+  `Definitions.Def_ChapterNavierStokesFarisLavineLift` (dropped where already
+  imported).
+- 13 Thm stubs carried the malformed `import Definitions.Def_BookProof.
+  ChapterClosureUniqueness` (namespace glued onto the module name — the §2.8-era
+  generation defect; the WallEsa one fixed yesterday was 1 of 14). Rewritten to
+  `import Definitions.Def_ChapterClosureUniqueness`. 0 such lines remain
+  repo-wide.
+- Re-verified all 20 offline: 2 `ok`, 8 blocked on unpublished def bundles
+  (def backlog), 7 open a namespace whose published bundle does not declare it,
+  1 statement defect.
+
+**New root-cause class — 7 published-but-EMPTY def bundles that have content
+locally.** Of the 514 PUBLISHED def bundles, 45 contain no declaration at all
+(9–45 lines of `import Mathlib` + module doc + `noncomputable section`), but only
+**7** of those have declarations locally — the rest are empty in both worlds
+(aggregation/namespace-only bundles such as `ChapterSirkPerSystem`, §5c, or
+chapters whose def material never existed). The 7 with a real content gap:
+`CarlemanSimplex` 16→433 lines, `CarlemanTwoStep` 9→273, `FockWeightedSchurEsa`
+9→2841, `GradedBandSchurEsa` 15→283, `ModeQuadraticEsa` 16→1481,
+`QgBrstDerivativeGauge` 9→381, `QgTimeIndependentFlow` 9→235.
+
+Cross-tab of the 426 thm compile FAILs by what their preamble imports:
+
+| bucket | count | reading |
+|---|---:|---|
+| imports nothing empty | 250 | genuine statement defects → §5d |
+| imports one of the 7 content-gap bundles | 96 | `unknown namespace` 46+33+8+6 … — unblocks only if content can be published |
+| imports an empty-in-both bundle | 88 | the bundle never had the names the stub expects; needs upstream imports, not republishing |
+
+**`submit-definition` cannot update content.** `POST` with an existing name is
+rejected — `definition_name … with name "ChapterX" already exists` (the exact
+message is already encoded in `debug/reconcile_duplicates.py`, and 3 FAILED
+jobs in `platform_def_index.py` carry it) — and `PATCH /theorems/:id` only
+accepts `natural_language_statement` / `source` / `tags`, never the Lean body.
+So the 96 cannot be repaired by re-submitting. The viable route is publish the
+content under a **new** `definition_name` (`ChapterCarlemanTwoStepCore`, … — the
+name only fixes the module path; the `open BookProof.CarlemanTwoStep` namespace
+comes from the content) and rewrite the `import Definitions.Def_…` lines in the
+importing stubs. Sized here, not yet executed.
+
+**Def backlog sizing (running).** `build_candidate_mirror.py --targets
+/tmp/def_targets.txt` compiles the 176 pending local def bundles in topological
+order against the published set — the precise oracle for step 5 (which of them
+are submittable, and the first error of the rest).
+
+**Chunk/sync behaviour worth remembering:** `sync_state` had already marked the
+`already published` thm items done (21 pending thm items still have a published
+target — 2 of them are the parked name-clash pair); the 542 occurrences of that
+reason in chunk 1's one-line `waiting` report are the fill loop re-counting the
+same few items once per poll, not 542 items. And **background jobs must be
+launched with the tool's BACKGROUND mode**: `cmd > log &` inside a SYNC shell is
+killed with the shell (three launches died silently this session, log 0 bytes).
+
+**Statement-defect classes awaiting §5d (top of the 250):** `Function expected
+at` 156 (unknown identifier under autoImplicit — the improved `first_error`
+will name them), `Ambiguous term` 35 (two opened namespaces both provide the
+constant, e.g. `brstCharge` in `QuantumGravityBrstCharge` vs `SmBrstGhost` →
+qualify), orphan `variable (V F) in` lines 29 (generator span garbage in the
+NsPartialFourier family — deleting the orphan lines and de-duplicating the
+two `variable {F G : Type*}` blocks is statement-neutral), `invalid binder
+annotation` 20 (same autoImplicit mask: `[MeasurableSingletonClass X]` with the
+class unresolved), `unexpected token … expected 'private', 'scoped'`
+11, `Application type mismatch` 9.
+
+**§2.7 transliteration wave — exact procedure (step 4, ready to run).** The 27
+pending thms whose *declared* name is non-ASCII (the guard parks them):
+`ChapterA3.pauliσ_herm/_trace`, `conjugateₗᵢ_symm/_trans`,
+`ChapterHilbertSumIntertwine.memℓp_fibrewise`, `ChapterPauliLorentz.σ1..3_herm/
+_sq/σ1σ2_anti/σ2σ3_anti/σ1σ3_anti` (9), `ScalaronOuterFockFL.exists_band₂`,
+`SpinStatistics.fermi_CAR₁/_₂`, `fermiAnnih₁_sq/_₂_sq`, `fermiCreate₁_sq/_₂_sq`,
+`fermiNumber₁_eq/_₂_eq/_₁_hermitian/_₂_hermitian/_₁_idem/_₂_idem` (11).
+Procedure per item: (1) map to ASCII (`σ`→`sigma`, `ℓ`→`L`, `ₗ`→`l`, `ᵢ`→`i`,
+`₁`→`1`, `₂`→`2`, `μ/τ…` likewise — result must match `[A-Za-z0-9_]+`, no
+trailing prime), (2) rewrite the `theorem <name>` line in `Theorems/Thm_<slug>`,
+the `solution of <name>` line in `Solutions/Sol_<slug>`, and
+`WAVE_THMS[slug]["name"]` in `pipeline/wave_upload.json`, (3) un-park the item
+(`status: parked` → `pending`; the runner skips parked forever), (4) re-verify
+offline (the edit makes the stored verdict stale, which is what we want) and
+merge the fresh verdict, (5) submit. File/slug names keep their non-ASCII
+character — only `theorem_name` is sent to the server. The apostrophe item
+(`…WeakMeasurableUnitaryGroup.ext'`) is the §6.1 class and stays parked: the
+server rejects `'` outright.
+
+---
+
+### §2.14 Repair waves + bounded guarded drain (2026-10-07, this session)
+
+Executed §2.12's order steps 2–4 continuously. Session start: thm **2277 done /
+7063 pending**, sol **1920 / 7418**; end of the chunks below: thm **2308 / 7032**,
+sol **1958 / 7382**, **0 failed in every category**. All numbers from chunk logs
+(`/tmp/chunk_*.log`) and `state/pipeline.json`.
+
+**Chunk ledger (all `PROVE2ME_SKIP_LOCAL_COMPILE=1`, parallel 4–10, bounded):**
+
+| chunk | kind | items | result |
+| :--- | :---: | ---: | :--- |
+| sibsq, t13, t2, t4, smbrst | thm | 30 | 30 DONE, 0 FAIL |
+| t3 | thm | 2 | 1 DONE, 1 WAIT (sibling `must be Proved` — cleared by t4 after sol landed) |
+| s2 | sol | 13 | 13 DONE |
+| s3 | sol | 5 | 4 DONE, 1 WAIT (own thm not yet published) |
+| s4 | sol | 4 | 3 DONE (incl. the `viscous` blocker), 1 WAIT → cleared in s5 |
+| s5 | sol | 2 | 2 DONE |
+| broad1 (no `--only`) | sol | 20 budget | 16 DONE + 4 FAIL (see guard note below) |
+| amb (5 families) | thm | ≤40 | in flight at time of writing |
+
+**Repairs landed — 60 files, every one compiler-rechecked offline before submit:**
+
+1. **Solution `open`/import defect — 20 `Solutions/` files.** Generated sols omitted
+   the namespace that declares the type they name, or imported sibling `Theorems.*`
+   whose declarations actually live in published Def bundles:
+   `IsSymmetricDom_*` needed `open BookProof.NavierStokesFlow.FullEsa`; the
+   `LagrangianFullData_*` family needed `open ...LagrangianEsa`; the `NSFullData_*`
+   family needed `FullEsa` too; the 2 MomentumPerturbation sols dropped
+   `Thm_..._IkebeKato_finiteModes_le_maxDom` / `Thm_..._lpSingle_mem_lpFiniteModes`
+   (both declared in published `Def_ChapterNavierStokesIkebeKato`/`Esa`); the
+   `hasZeroDeficiencyOn_*` sols gained the sibling Thm imports their bodies call
+   (`Thm_..._hasZeroDeficiencyOn_of_completeUnitaryFlow`/`_total_eigenvectors` are
+   thm+sol done; `Thm_..._FullEsa_..._boundedRealization` chains through its own
+   wave). Scoped re-verify: all `ok`.
+2. **Thm `Ambiguous term` class — 40 files, pending count 40 → 0.** Root cause:
+   the stub preamble opens EVERY imported chapter (`opens_for`), including one that
+   declares the same constant the statement uses. The source opens only its own
+   providers, so the fix per family is to delete exactly the competing open line,
+   then let the compiler decide (scoped `--only` re-runs matching items regardless
+   of their stored verdict — that is what makes post-edit re-verification sound):
+
+   | family | n | deleted open (competes with the source's) |
+   | :--- | ---: | :--- |
+   | SmBrstGhost (`annih`/`creat`/`fermiBilin`) | 12 | `open BookProof.NavierStokesFlow.FockOfFock` |
+   | LorentzRealRep* (`Omega`) | 12 | `open BookProof.ChapterPinDoubleCover` |
+   | SymmetryEntropy (`entropy`) | 6 | `open BookProof.ChapterIrreversible` |
+   | AttentionMixing (`IsProb`) | 5 | `open BookProof.ChapterDutchBook` |
+   | Deterministic (`proj`) | 4 | `open BookProof.ChapterElectroweakFieldStrength` |
+   | BookBrstYangMills (`brstCharge`) | 1 | `open BookProof.SmBrstGhost` |
+
+   Family recheck: **140/141 ok, 0 ambiguous**; the residual
+   `BookBrstYangMills_bookConstraintAlgebra` is a different class
+   (`Fields missing: comm_beta` — genuine statement defect, §5d next).
+
+**§2.12 step 4 (transliteration wave) executed — MOOT.** §2.13's list of 27
+pending non-ASCII thms is stale: **29 non-ASCII thm items are already `done`**
+(the server accepts non-ASCII; only `name_guard`'s apostrophe rule still parks),
+1 pending (`ScalaronOuterFockFL.exists_band₂`, blocked on unpublished
+`ChapterScalaronOuterFockFL`), 2 parked apostrophe items stay parked (§6.1), and
+10 untracked orphan stubs remain (4 AffineFiber `affData_amp/shift` carrying the
+§2.8 doubled-name defect `amp₁₁`, 2 SpinStatistics with ASCII slugs / non-ASCII
+declared names) — that is registration work, not transliteration.
+
+**Wave ordering is forced by the `must be Proved` rule.** thm X → sol X → sol of
+everything importing X. Exercised end-to-end: (thm add, comp_of_commute) →
+(sol add, comp_of_commute) → (sol sum, sq) → sol viscous; and (thm congr) →
+(sol congr) → (sol bounded×2). t3's WAIT cleared on its own once the sibling's
+sol landed — defers cost no attempts.
+
+**Guard/pipeline notes:**
+
+- The sol re-poll branch (`rec.submission_id` present) runs BEFORE `apply_guard`,
+  by design (a verdict must be read to completion). broad1's 4 `unknown import:
+  Theorems.Thm_X` FAILs were the verdicts of submissions made BEFORE the sibling
+  guard existed — the chunk only collected them (attempts 0→1);
+  `unpublished_sibling_imports` defers all 4 today, so no re-burn is possible.
+- Those 4 siblings are **untracked** (`QuadraticRotation_inner_rotHermiteLp`,
+  `QuadraticRotation_rotPoly_surjective`, `CanonicalVector_canH_eq_velH`,
+  `IkebeKato_diagMax_symmetricOn` + friends): Thm stubs exist, no state entry.
+  Registering them is the unblocking lever for the 4 deferred sols.
+- Broad guarded chunks are safe and cheap: `fill()` walks ORDER, and
+  offline-FAIL / blocked items return transient WAIT without consuming budget or
+  attempts (broad1: 129 `do_sol` calls → 20 budget items resolved).
+- Transliteration finding above supersedes §2.13 step 4's 27-item list.
+
+**Next in order:** (1) keep broad sol chunks draining the ~2600 fresh-ok sols;
+(2) classify the 4266 sol `object file missing` verdicts — refresh the mirror for
+newly published def bundles, then scoped re-sweep (stale vs genuinely def-blocked);
+(3) §2.10c/§2.13 def backlog; (4) register the orphan stubs; (5) §5d on the
+`Function expected at` (unknown-identifier) thm class.
+
+---
+
+### §2.15 The `_prime` module defect class + def-chain completion (2026-10-07, evening)
+
+Session start: thm **2403 / 6937**, sol **1971 / 7369**, def **511 / 176**, 0 failed.
+§2.12 order continued: stale sol resweep (1568 items) finished **ok 843 / FAIL 725**
+(`/tmp/resweep_stale.log`), then the def chain and a new defect class were worked.
+
+**Def chain executed — all 5 candidate defs DONE (def 515 → 516, 0 failed):**
+
+| def | unblocked by | chunk log |
+| :--- | :--- | :--- |
+| ChapterMackeyInducedSystem, ChapterPvmMeasure, ChapterSecondQuantizationCoreEsa | 8 enabling thm+sol (§2.14) | `/tmp/chunk_def3.log` |
+| ChapterDiffuseUnitaryModel | sol `map_cdf_eq_volume_Icc` | `/tmp/chunk_def4.log` |
+| ChapterSymmetryRep | sol `timeEvo_mem_unitaryGroup` (2nd attempt) | `/tmp/chunk_def5.log` |
+
+**THE NEW DEFECT CLASS — the apostrophe/`_prime` split (costs attempts if unfixed).**
+After the 15:25 `_prime` rename wave, three artifacts disagree:
+
+- the **slug/state key** keeps the source apostrophe (`...timeEvo_unitary'`),
+- the **stub declaration** (and therefore the platform `theorem_name` and the
+  server's module `Theorems.Thm_..._timeEvo_unitary_prime`) uses `_prime`,
+- the **mirror** stages modules under the SLUG name (apostrophe).
+
+Consequences, all verified this session:
+
+1. **Sols importing `Thm_..._unitary'` pass offline (mirror has that module) but
+   die server-side** with `unknown import: Theorems.Thm_...unitary'. No such
+   theorem exists` — 1 real attempt burned (`timeEvo_mem_unitaryGroup`, attempt 1)
+   before the class was understood. Platform holds **0** apostrophe theorem names
+   (all 4355 publish-job names checked), so every `Thm_...'` import is wrong.
+2. **Fix (files):** 100 import lines in 80 `Solutions/` files rewritten
+   `Thm_<slug>'` → `Thm_<decl with ' → _prime>`; validated: every rewritten module
+   resolves to a stub whose declaration flattens to the imported name (107/107).
+3. **Fix (offline checker):** `check_pending_offline.run_sol.build` now resolves the
+   phase-1 stub **by declaration** (`_stub_declaring`), not by file name — an
+   untracked `Thm_X_prime.lean` twin holding the UN-renamed `X'` is skipped in
+   favour of `Thm_X'.lean` declaring `X_prime`.
+4. **Fix (guard):** `upload_pipeline._thm_slugs_for` — every state lookup for an
+   imported `Thm_<m>` also tries the sibling spelling (`_prime` ↔ `'`), in
+   `unpublished_sibling_imports` and `unproved_sibling_imports`; `thm_imports`
+   (the def dependency gate) falls back to `WAVE_THMS[slug.replace('_prime', "'")]`
+   so a def citing a `_prime` module compares dotted names correctly.
+5. **Stale BODY references:** sol/stub bodies still referenced the OLD declaration
+   (`norm_flow_sub_flow_apply_le'` → server `Unknown identifier`). 133 references in
+   90 files rewritten (61 renamed leaves, token-bounded, non-comment lines only),
+   excluding the 2 leaves declared INSIDE published def bundles
+   (`tsub_add_cancel_of_le'`, `norm_resCLM_apply_le'` — embedded helpers; refs stay
+   apostrophe and resolve via the def module). All 68 renamed-import sols + 71 thm
+   statements re-verified offline afterwards (`/tmp/reverify80.log`,
+   `/tmp/reverify_leaf.log`: sol 28 ok after rename vs 5 before).
+6. Verified end-to-end: `timeEvo_mem_unitaryGroup` FAIL (attempt 1) → import fix →
+   offline `ok` → attempt 2 **DONE**.
+
+**The ready-list must include the sol's OWN target thm.** d3 walked 1588 "ready"
+sols and resolved 0: 1491 hit transient `WAIT (theorem not published yet)` because
+the first script checked only sibling/def imports, never `thm:<own slug>` (no
+attempt burned — transient waits are free). Recomputed with the own-thm check:
+**SOL ready = 37, THM ready = 3815** — the bottleneck had flipped to the thm layer,
+so chunks now run `--kind thm --kind sol` over `/tmp/drain2_args.txt` (union list,
+deps-first ORDER submits thms ahead of their sols in the same chunk).
+
+**Chunk ledger (this session, all 0 failed):**
+
+| chunk | kind | result |
+| :--- | :--- | :--- |
+| en8/sib1 (§2.14) | thm | 15 DONE |
+| s1/s2 (§2.14) | sol | 13 DONE |
+| def3 | def | 3 DONE (MackeyInducedSystem, PvmMeasure, SecondQuantizationCoreEsa) |
+| s3 | sol | 1 DONE, 1 FAIL→fixed→s4 DONE (map_cdf, timeEvo_mem) |
+| def4, def5 | def | 1 + 1 DONE (DiffuseUnitaryModel, SymmetryRep) |
+| d1, d2 | sol | 101 + 29 DONE |
+| d3 | sol | 0 resolved — own-thm-pending hole found (see above) |
+| t1 | thm+sol | 52 DONE, 0 FAIL, 7 in flight |
+| t2–t5 | thm+sol | 38 + 40 + 39 + 39 DONE, 0 FAIL |
+| t6–t8 | thm+sol | 59 + 43 + 53 DONE, 0 FAIL |
+| t9 | thm+sol | 35 DONE, 0 FAIL (6 guard defers, see below) |
+| t10 | thm+sol | 45 DONE, 0 FAIL, 5 in flight |
+| t11 | thm+sol | 40 DONE, 0 FAIL, 9 in flight (`summary: 4989 done`) |
+| t12 | thm+sol | 47 DONE, 0 FAIL (`5036 done`) |
+| t13 | thm+sol | killed by session end mid-submit — partial DONEs kept, no summary line |
+| t14 | thm+sol | 40 DONE, 0 FAIL (`5126 done`) |
+| t15 | thm+sol | **104 DONE (record)**, 0 FAIL (`5230 done`) |
+| `--sync` 00:42 | sync | **+253 free dones** (57 already-published + 196 already-Proved
+  solutions sitting in `pending`) — each also unlocks siblings |
+| t16 | thm+sol | 49 DONE, 0 FAIL (`5532 done`) |
+| t17 | thm+sol | 50 DONE, 0 FAIL (`5582 done`) |
+| t18 | thm+sol | 47 DONE, 0 FAIL (`5629 done`, 9 in flight) |
+| `--sync` 05:03 | sync | +20 free dones (17 published + 3 already-Proved) |
+| t19 | thm+sol | 42 DONE, 0 FAIL (`5691 done`, 9 in flight) |
+| t20 | thm+sol | 45 DONE, 0 FAIL (`5736 done`, 9 in flight) |
+| `--sync` 06:04 | sync | +18 free dones (already-published) |
+
+State after t17: thm+sol done **5582**, def **516**, **0 failed** everywhere.
+Verbatim state read this session: thm **3283 done / 6057 pending / 2 parked**,
+sol **2299 done / 7042 pending**, def **516 done / 171 pending** → totals done
+**6098**, pending **13270**, parked 2, **0 failed**. Every chunk is
+`PROVE2ME_SKIP_LOCAL_COMPILE=1 --parallel 10 --max-seconds 600` over a freshly
+recomputed union list — **40–55 DONE per 600 s (t15's 104 was the outlier),
+0 FAIL, at zero attempt cost** (deferred/in-flight items are re-polled next run).
+
+Latest recompute: `sol_ready 304, thm_ready 2955`, union **3259**
+(`/tmp/drain2_args.txt`); thm blocked-by breakdown: `not fresh-ok 3098,
+sibling not done 4`; sol: `own thm not done 6058, sibling not done 437,
+not fresh-ok 243`. The thm layer remains the bottleneck.
+
+**New tooling this session (all in `debug/`):**
+
+1. **`debug/recompute_ready.py`** — the ready-list formula as a file (it had
+   been an inline snippet). Writes the union `--only` list to
+   `/tmp/drain2_args.txt` plus `/tmp/ready_{thms,sols}.txt` and a blocker
+   breakdown. Freshness = offline verdict `ok` AND file mtime ≤ offline json
+   mtime; sibling spellings `_prime` ↔ `'` both tried.
+2. **Guard false positive FIXED (`upload_pipeline.stub_sanity`)** — the
+   truncation heuristic ended the statement headswith `‖`, but
+   `... ‖d‖ := by sorry` is a complete norm bound. 6–7 fresh-ok thm stubs were
+   deferred every chunk forever (no attempt cost, but no throughput either).
+   Now `‖` only trips on an ODD delimiter count; verified: the 6 deferred
+   stubs pass, genuine truncations (`≤ :=`, `x + :=`, unbalanced `‖`) still
+   block. **Run-length proof: t9 had 6 such defers, t10 1 (old code still in
+   t10's process), t11 onward uses the fixed guard.**
+3. **`debug/stage_def_mirror.py`** — a newly-published def bundle is NOT in
+   `/tmp/published_mirror`, so its importers keep a stale
+   `FAIL:unpublished def import <chapter>` verdict forever (the static
+   pre-check tests `mirror/Definitions/Def_X.lean`, not state). 125 thm
+   verdicts were stale this way for the 5 defs published this session
+   (SecondQuantizationCoreEsa 58, PvmMeasure 53, DiffuseUnitaryModel 10,
+   MackeyInducedSystem 3, SymmetryRep 1). The script stages the missing defs
+   **and** any missing `Theorems.Thm_*` they import, deps-first, pruned at
+   mirror oleans (never touches existing mirror files — §6.4). All 5 defs +
+   4 Thm deps built; the 125-thm resweep follows.
+
+**Sizing note for the next layers** (from the offline verdicts, pending thm
+6558): ok 3440 → ready after sibling/def checks ~3450; def-blocked 2703
+(live, gated on the 171 pending defs — the §2.13 cross-tab classes);
+compile-FAIL ~400 (§5d). Pending sols with own thm done: 663 → ready 149,
+310 blocked on siblings, 204 on own verdicts (35 object-file = sibling stubs
+that never landed, 169 genuine §5d defects). The thm layer is THE bottleneck:
+~45 items/chunk ⇒ ~75 chunks to drain THM-ready.
+
+**Next in order:** (1) keep `--kind thm --kind sol` chunks cycling over a freshly
+recomputed union list until THM ready empties (~3450 now); each cycle: recompute
+→ chunk → (between chunks) scoped resweep of verdicts that went stale (published
+defs now in the mirror, thm-stub repairs);
+
+**Chunk launcher (USE THIS EXACTLY — the `eval` form BREAKS).** 27 apostrophe
+slugs (`...unitary'`) are in the ready list; `eval "set -- ${A[*]}"` parses the
+`'` as an open quote and bash dies with ``unexpected EOF while looking for
+matching ` `'`` (exit=2, chunk log never created — observed 00:43, cost 10
+minutes). Word-split WITHOUT quote parsing:
+
+```bash
+python3 debug/recompute_ready.py            # writes /tmp/drain2_args.txt
+export PATH="$HOME/.elan/bin:$PATH"
+mapfile -t A < /tmp/drain2_args.txt
+set -f; ARGS=(); for l in "${A[@]}"; do ARGS+=($l); done; set +f   # glob off
+PROVE2ME_SKIP_LOCAL_COMPILE=1 PROVE2ME_MAX_SECONDS=640 \
+  python3 pipeline/upload_pipeline.py --kind thm --kind sol \
+    --parallel 10 --max-seconds 600 "${ARGS[@]}" > /tmp/chunk_tN.log 2>&1
+```
+
+Run it BACKGROUND (SYNC `&` dies with the shell); never two `upload_pipeline`
+processes at once — `--sync` counts as one. **Run `--sync` between chunk waves**
+(~20 min): it found 57 already-published + 196 already-Proved items sitting in
+`pending` (00:42 run) — each is a free `done` that also unlocks siblings.
+
+Back to the loop: (2) each recompute unlocks a wave of
+sols — drain them the same way; (3) §5d on the residual offline-FAIL thm classes
+(`Function expected at` ~155, `unknown namespace` CarlemanSimplex/
+CarlemanGeneralHop families, def-blocked sols); (4) reopen the 4 parked items
+whose name-guard cause is now repaired (decl renamed to `_prime`); (5) def
+backlog per §5a — `build_candidate_mirror` sizing (04:45 report): of 176, 5 OK
+(published), 41 BLOCKED by thm stub, 109 object-file (provider chain), 21
+genuine generator defects; when a def publishes, run `stage_def_mirror.py` so
+the oracle can see it.
+
+---
+
+### §2.16 The duplicate-region def-bundle defect + its repair recipe (2026-10-07, late)
+
+**Class.** Some generated `Definitions/Def_<Ch>.lean` bundles contain the whole
+chapter body **2–3 times**, separated by fragments of the module docstring
+(spliced WITHOUT their `/-!` opener — orphan prose ending in a stray `-/`) and
+by repeated header blocks (`open`/`namespace`/`variable`). Symptoms, all from
+the 04:45 candidate report: `unexpected token '*'`, `unexpected identifier;
+expected command`, `unterminated comment`, `unexpected token ':'`. Caches were
+checked FIRST per §2.8b — all three were fresh, so this is a generator span
+defect, not staleness.
+
+**Detection (verified 3/3, cheap):**
+1. `grep -c '^namespace BookProof.<Ch>'` > `grep -c '^end BookProof.<Ch>'` (an
+   unbalanced repeated namespace), and/or `^open MeasureTheory` ≥ 2;
+2. orphan doc prose = top-level line not starting with a command, followed
+   later by a line starting with `-/`;
+3. compiler (`debug/_one_def2.sh <chapter>`) confirms the first error.
+A blunt first pass (any duplicate top-level decl name + any comment imbalance)
+flags 97/171 pending bundles — too many false positives (decls legitimately
+repeat ACROSS namespace spans; `--` comments and strings unbalance a naive
+`/- … -/` scan). The header-repeat signature flags 96; use it as a CANDIDATE
+list, then verify per file: **the LAST copy must have exactly the source's
+declaration list** (`diff` of `^(noncomputable )?(def|theorem) <name>` against
+`../timepiece331/BookProof/<Ch>.lean`).
+
+**Repair (§5d, one file at a time, compiler-gated):** keep `lines[:doc_end]`
+(imports + module doc) + `lines[last_header-1:]`, delete everything between —
+then re-gate. If the last copy is MISSING the source's final decl(s), append
+them from source before the closing `end`. If the compiler then reports
+`Unknown identifier` for a helper: check whether a `Theorems/Thm_*` stub exists
+(state + fresh-ok verdict) and add `import Theorems.Thm_<helper>` (the §1s
+def→thm import pattern) — a def's own submission will WAIT (free) until those
+thm+sol land, which the drain loop does.
+
+**Repaired and gated OK this session (3):**
+
+| bundle | cut | extra |
+| :--- | :--- | :--- |
+| `ChapterPvmCyclicDecomposition` | 815 → 376 lines (deleted 45–483) | last copy == source 25 decls |
+| `ChapterPvmCyclicUnitary` | 716 → 396 (deleted 42–361) | last copy == source 31 decls |
+| `ChapterAbelianClassificationList` | 259 → ~186 (deleted 40–120) | + 8 `Theorems.Thm_*` imports for node helpers; the source's last decl `vonNeumann_abelian_classification_list` is a NODE (its `Thm_*` stub exists, pending) so the bundle correctly omits it — nothing in the bundle references it, verified by the clean gate |
+
+`Thm_...cdfUnitary_intertwines` also gained
+`import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_memLp_top_comp_cdf`
+(its statement cited the node without importing it); its verdict is now the
+CORRECT gate `FAIL:unpublished sibling import ...memLp_top_comp_cdf` and flips
+ok by scoped resweep once that thm+sol land.
+
+**Their def submissions wait on (all flowing through the drain):**
+`DutchBook_Coherent_univ` (Decomposition); 4 Pvm/OrthogonalSums/Mackey thms
+(Unitary); 8 node helpers (ClassificationList, 7 pending + 1 done). After the
+helpers are Proved, run a `--kind def` chunk for the three — the drain loop
+only runs `--kind thm --kind sol`.
+
+**Next wave — AUTOMATED (`debug/fix_dup_regions.py`).** Candidate list:
+header-repeat signature over pending defs → 96 hits (`/tmp/dupcand.txt`).
+Workflow:
+
+```bash
+# 1. dry run: verify last-copy decl list vs source (nodes may be omitted)
+python3 debug/fix_dup_regions.py $(cat /tmp/dupcand.txt)
+# 2. apply: cut + write-verify, backup per file at /tmp/Def_<Ch>.dupcut.bak
+python3 debug/fix_dup_regions.py --apply $(cat /tmp/dupcand.txt)
+# 3. compile oracle: ONE ordered deps-first pass (§2.10e — the only right tool)
+python3 debug/build_candidate_mirror.py --targets /tmp/dupcut_targets.txt \
+    --report /tmp/dupcut_report.tsv
+```
+
+Verifier rules: kept decl list must equal source's EXCEPT (a) decls that have
+their own `Theorems/Thm_*_<name>.lean` stub (nodes — correctly omitted, §2.8d)
+and (b) extra decls (embedded helpers, §2.8f, warned only). Namespace match is
+ANY `^namespace` (bundles drop the `Chapter` prefix:
+`Def_ChapterTensorSumEsa.lean` → `namespace BookProof.TensorSumEsa`).
+
+**Session result: 89/96 cut (verify-clean, backups kept), 7 need manual**
+(`ScalaronOuterFockFL`, `FlowDGammaEsa`, `NavierStokesFockLagrangian`,
+`SqSumOuterFamily`, `FockStatisticsCompletion`, `HermiteLadderOrder`,
+`AbelianDirectSum` — the last copy loses non-node decls, so the region layout
+is different; diagnose individually). Ordered build of the 89 launched
+(`/tmp/dupcut_build.log`, report `/tmp/dupcut_report.tsv`): expect `OK` /
+`BLOCKED by <provider>` / `FAIL <first error>`; **restore any FAIL from its
+`/tmp/Def_<Ch>.dupcut.bak`** and diagnose per §5d (a FAIL after a verified cut
+means stray prose in the kept region or a genuine statement defect).
+
+**Build result (finished 01:19, ~70 min): 1 OK / 22 BLOCKED / 66 FAIL.**
+Theorems side: **125/211 compiled** (the 86 thm-stub failures are what
+`BLOCKED by Thm_*` reports — 17 distinct stubs, e.g.
+`Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_finite_support` ×4,
+`Thm_..._YangMillsFriedrichs_weylOpDom_quadForm_nonneg` ×2,
+`Thm_..._HermiteProductBasis_hermiteMvLp_mem_core` ×2).
+
+- **OK: `ChapterAbelianGelfandModel` only** (`/tmp/cand_ok.txt`; one of the
+  biggest thm-blockers, 138 thms) — publish via a `--kind def` chunk, then
+  `stage_def_mirror.py ChapterAbelianGelfandModel`, then scoped resweep.
+- **66 FAIL: 55 are `object file not found` at line 1:0 = missing provider
+  olean, NOT content errors.** The candidate mirror holds 507
+  `Definitions/*.olean` (published_mirror has 519); these bundles import at
+  least one bundle whose olean was absent at compile time — a provider-chain
+  gap (§2.10f), not a dup-cut defect. Which provider is missing per bundle is
+  NOT recoverable from the TSV (84-char cut) — the re-gate below shows it.
+  Do NOT restore these 55 from backup (the cut is verified correct; restore
+  would bring the duplicate region back). Fix = add the missing provider
+  chapter to a target list and rebuild deps-first, or publish the provider
+  first.
+- **11 FAIL are genuine content errors** (first-error, §5d): unknown
+  identifier ×7 (`ChapterBookBrstGaugeFixing:156`, `ChapterNsBrstDerivativeGauge:248`,
+  `ChapterScalarDGammaEsa:103`, `ChapterWallDeficiencyObstruction:168`,
+  `ChapterWignerSymmetryInfinite:335`, `ChapterSpectralMultiplication:111`,
+  `ChapterMackeyCocycle:433`, `ChapterPvmInducedSystem:242`,
+  `ChapterL2FibreSum:54` synthInstance), unknown namespace ×2
+  (`PhysMehler` → `PhysHSGaussian`, `ChapterNsLinearKoopmanEsa` →
+  `BookProof.NsKoopman`), and 1 more. These may be missing-`open`/missing-
+  import classes (§2.10b) before they are treated as statement defects.
+
+A follow-up re-gate of all 66 FAILs with `debug/_one_def2.sh` (full first
+error, not the report's 84-char truncation) runs to
+`/tmp/dupfail_recheck.log`. **Caveat for future report readers:** the TSV
+cuts each error at 84 chars, so `object file '/tmp/def_candidate/Def…` is
+unreadable past the path prefix — re-gate to see WHICH provider is missing.
+Also: a provider-table derived from `have={f[:-5]}` is wrong (it strips the
+trailing dot too — `'Def_X.olean'[:-5]` ≠ `Def_X`), which produced a bogus
+170-row "missing provider" list once; compare with `f[:-len('.olean')]`.
+
+**Re-gate result (66/66): 0 OK, 55 object-file, 11 content.** Distinct
+missing providers: **39** — 36 pending defs, 3 published-but-olean-missing.
+Closure walk from the 89 targets: **54 missing = 42 pending defs + 12
+published with olean gap** (FreeFieldBornFiberCard, GaussCoreQuadBounds,
+QgOuterFockEsa, SmHamiltonian, ScalaronFiberFL … — staged as `.lean` but
+never produced an olean in the candidate pass). Targets list:
+`/tmp/build132_targets.txt` = 89 cut + 42 closure + FockStatisticsCompletion.
+
+**Two more candidate-mirror defects found and fixed this session:**
+
+1. **Stale `Theorems/*.lean` copies in `/tmp/def_candidate`.** The build only
+   refreshes stubs imported by *targets*; stubs imported by *published*
+   bundles were frozen at their last staging. **16 differed from the
+   workspace copy — workspace newer in ALL 16** (e.g.
+   `Thm_..._WallEsaSemibounded_kinCcR_quadratic_form` mirror Oct 4 held a
+   mangled `(g : 𝓢 := by sorry` truncation; workspace Oct 6 is a clean
+   statement). That single stale stub is what broke
+   `Def_ChapterScalaronFiberFL` → `Def_ChapterSmHamiltonian`'s olean chain.
+   Fixed by copying all 16 back from the workspace. **Refresh rule: before
+   any build, sync `/tmp/def_candidate/Theorems/*.lean` ← `Theorems/` for
+   every file that differs.**
+2. **`fix_dup_regions.py` (§2.16 tool) had two bugs — both fixed:**
+   (a) `is_node` globbed `Thm_*_<raw name>.lean`, but stub filenames flatten
+   namespace dots (`LadderOrd.norm_sq_le` → `..._LadderOrd_norm_sq_le.lean`),
+   so real nodes looked lost; now tries both spellings.
+   (b) `header_start` took the LAST `namespace` line, which in 7 bundles is
+   an empty trailing fragment (`Def_ChapterAbelianDirectSum` line 1109: opens
+   + `end` only) → kept=0 decls → DECL-MISMATCH. Now
+   `header_candidates` yields namespace starts LAST-to-FIRST and the first
+   one whose kept decl list verifies is used.
+   Result: **all 7 former "manual" bundles verify WOULD-CUT** (AbelianDirectSum
+   1120→492, FlowDGammaEsa 1595→591, HermiteLadderOrder 959→431,
+   NavierStokesFockLagrangian 4061→841, ScalaronOuterFockFL 3456→2011,
+   SqSumOuterFamily 484→288, FockStatisticsCompletion 876→531); the 3
+   previously hand-repaired bundles still report NO-DUP (no regression).
+
+**The 7 applied (`--apply`, backups `/tmp/Def_<Ch>.dupcut.bak`); gate outcome
+splits two ways:**
+- 4–5 failed ONLY on `object file` for their own staged thm stubs (mirror
+  closure, expected — per-file gate can't do the ordered build, §2.10e);
+- 2 failed `Unknown identifier` for **node helpers from other chapters** —
+  `isProbabilityMeasure_repMeasure` (AbelianDirectSum ← AbelianCyclicModel)
+  and `memLp_conj` (NavierStokesFockLagrangian ← FockContinuum). Both have
+  PENDING `Thm_*` stubs, so per §2.16 the bundle imports
+  `Theorems.Thm_<helper>` and WAITs free until the drain lands them — imports
+  added; the bundles were restored by the gate and re-cut cleanly after.
+
+Staging the 16 missing stubs individually re-hit the same wall (11/16 need
+`Def_ChapterQgOuterFock*` oleans = the provider gap again), confirming the
+rule: **never per-file your way through a provider chain — run the ONE
+ordered build** (`build_candidate_mirror --targets /tmp/build132_targets.txt
+--report /tmp/build132_report.tsv`, launched this session, ~70–90 min).
+4 stub content errors seen on the way (§5d backlog, will resurface in the
+build): 4× `unknown namespace BookProof.ChapterStoneResolvent` (its bundle
+is unpublished → provider gap), `overloaded, errors` + `Fields missing:
+'symm'` on the 2 `GroupAverage_UnitaryRep_*` stubs.
+
+**§5d batch on the 11 content FAILs — 6 fixed by ONE missing import each
+(compiler-confirmed + stub-verified, added to WS AND atomically to the
+candidate mirror mid-build so this round picks them up):**
+
+| bundle | added import | dep olean ready this round? |
+| :--- | :--- | :--- |
+| ChapterBookBrstGaugeFixing | `Thm_..._BookBrstYangMills_bookOmega_nilpotent` | compiled it manually OK |
+| PhysMehler | `Definitions.Def_PhysMeasureBasis` (published, declares `unitMeasure`) | yes (existed) |
+| ChapterScalarDGammaEsa | `Thm_..._TensorCore_sectorOp_apply` | yes (existed) |
+| ChapterSpectralMultiplication | `Thm_..._AbelianGelfandModel_isProbabilityMeasure_stateMeasure` | compiled it manually OK |
+| ChapterPvmInducedSystem | `Thm_..._HilbertSumIntertwine_linearIsometryEquiv_intertwine` | **stub itself FAILs** — `Application type mismatch` at 24:35 in the statement (§5d, still open) |
+| ChapterMackeyCocycle | see cycle case below — import REVERTED | — |
+
+**THE IMPORT-CYCLE RULE (learned the hard way, check before every bundle
+←→ stub import):** a bundle may import a `Thm_*` stub **only if that stub
+does NOT import the bundle back**. A chapter's own node stubs import the
+bundle (their statements reference kept decls), so a bundle importing its
+OWN node = import cycle = neither module can ever compile. Cross-chapter is
+fine — verified on the §2.16 precedent: ClassificationList's 8 imports vs
+the 13 stubs importing it, **intersection = 0**.
+If a kept decl's proof references an own-chapter node, the fix is NOT an
+import — it is **§2.8e embed**: declare the node inside the bundle.
+
+**ChapterMackeyCocycle repaired that way.** `covariant_unitary_is_induced`
+references `norm_ucocycle` + `measurable_ucocycle`; the bundle had a
+6-blank-line hole between `ucocycle` and the next docstring (§2.8f's
+signature) where both were dropped; both are own-chapter nodes whose stubs
+import the bundle. Embedded both from source (455→465 lines, WS+CAND). The
+two node problems `thm:..._norm_ucocycle` / `..._measurable_ucocycle` become
+**duplicates once the bundle publishes** → their offline verdict flips to
+`has already been declared` → guard PARKS them (free). Resweep them after
+`stage_def_mirror`, do not submit blind.
+
+The biggest thm-blockers among the candidates (QgOneParticleCcEsa 176,
+FermionFock 162, AbelianGelfandModel 138, ScalaronOuterFockFL 133,
+QuantumGravityFock 106, QuadratureEsa 105 …) are the top of the 2703 live
+def-blocked thm verdicts; after the build passes: publish (a `--kind def`
+chunk), then **`python3 debug/stage_def_mirror.py <Chapter>`** so the offline
+oracle sees them, then re-sweep their importers' `unpublished def import`
+verdicts (scoped `check_pending_offline --kind thm --only ...`).
+
+---
+
+### §2.17 Error-rate hardening — guard additions, def compile gate, stub repairs (2026-10-08)
+
+Goal of this session: **shrink failed ÷ successful submissions**. Every change
+below is motivated by a *measured* landmine (something that would have burned
+an attempt if the guard had missed it), and every one is unit-tested against
+the real files that exhibit the defect.
+
+**A. `submission_guard` gained three branches (`pipeline/upload_pipeline.py`):**
+
+1. **sol rule-1 / rule-2 (`sol_rules_broken`).** SKILL's three rules are
+   fatal server rejections, and the offline compiler does NOT catch them:
+   `run_sol` only compiles, so a solution file with no `theorem solution` at
+   all compiles *clean* and gets verdict `ok`. **Measured: 4 pending sols
+   have zero declaration** (`BookProof_ChapterConditional_pJoint_nonneg`
+   contains no declaration whatsoever — first `solution` hit is the header
+   comment), plus 1 sol whose file has a `^namespace` block. The guard now
+   defers: no top-level `theorem solution`, `theorem solution` wrapped in a
+   namespace, or `import Theorems.Thm_<own target>` (rule 2 — **0 files
+   currently violate it**, pure insurance against regeneration).
+2. **def import-cycle (`def_import_cycle`).** A bundle importing a `Thm_*`
+   stub that imports the bundle back is an import cycle: neither module can
+   compile, ever. **Measured: 12 such cycles exist** — `ChapterStoneConverse`
+   (6 stubs), `ChapterQgOuterFockFarisLavine` (4),
+   `ChapterNavierStokesAffineFiberEsa` (2); `ChapterMackeyCocycle` was the
+   13th and was repaired this session by EMBEDDING the node (§2.16). The
+   cycle rule: **own-chapter node stubs import the bundle (their statements
+   cite kept decls), so a bundle may import its own chapter's nodes NEVER —
+   embed instead; cross-chapter imports are the legitimate pattern**
+   (ClassificationList's 8 imports ∩ 13 reverse-importers = 0).
+3. **thm import-cycle (`thm_import_cycle`)** — same check statement-to-
+   statement. **Measured: 0 thm↔thm cycles**; kept as insurance.
+
+All three return `defer`, which `is_transient` classifies as WAIT (no
+attempt). Verified: `py_compile` clean, 10/10 unit assertions pass (synthetic
+namespace-wrap, synthetic self-import, real cycle bundle, repaired bundle,
+no-gate bundle, good sol passes, transient strings).
+
+**B. The def compile gate — `state/def_gate.json`.** The def path had NO
+compile oracle: `local_compile` degrades to a skip whenever imports are not
+built in this checkout (documented in its own code), and
+`check_pending_offline` covers thm/sol only. A `--kind def` chunk would have
+submitted the 89-FAIL class straight into the 5-attempt budget. Now:
+
+- `debug/build_candidate_mirror.py` **writes the gate at the end of every
+  run** (merge, not replace): `{chapter: {status, stamp}}`, `stamp =
+  sha1(bundle bytes)[:16]` — the same fingerprint `file_stamp()` computes,
+  so **editing a bundle invalidates its gate**;
+- `submission_guard(def)` defers when: gate file missing, chapter absent
+  from the gate, stamp mismatch, or status ≠ `OK`.
+
+The running build132 predated the writer, so the gate was **hand-seeded**
+from `/tmp/build132_report.tsv`, excluding the 6 bundles edited mid-build
+(BookBrstGaugeFixing, PhysMehler, ScalarDGammaEsa, SpectralMultiplication,
+PvmInducedSystem, MackeyCocycle — their report rows may describe an earlier
+text; they defer until the next build re-covers them).
+
+**C. `recompute_ready.py` — sol sibling relaxation (+~437 throughput, 0 new
+error risk).** The SOL layer demanded every imported sibling have thm done
+**AND sol done**; the API rule (and `unpublished_sibling_imports`, the live
+guard) only requires the sibling to be **PUBLISHED** — a solution compiles
+against its own statement, imported Open children with `sorry` are fine.
+Sibling-sol-done is the *Proved* requirement, which belongs to the THM layer
+alone (`Imported platform theorems must be Proved at submission time`) and
+stays there. Sols blocked on `sibling not done`: **437** — most now flow.
+
+**D. Cleanup:** removed the duplicate `def_imports` definition (two identical
+copies ~40 lines apart; the second silently shadowed the first).
+
+**E. `build132` outcome (132 targets = 89 cut + 42 closure + FockStatistics-
+Completion, finished 06:35): 6 OK / 37 BLOCKED / 89 FAIL; thms 134/213.**
+The provider chain largely resolved (BLOCKED replaced most object-file
+FAILs — the wall moved from *defs* to *thm stubs*). Content-FAILs are now 18
+(the rest of the 89 are still object-file = providers outside this target
+set). The 6 OK: AbelianGelfandModel, CyclicDecomposition, CyclicDirectSum,
+MackeyCocycle, MackeyConverse, SpectralDirectSum — the first 5
+(MackeyCocycle excluded, mid-build edit) passed the new guard and went into a
+`--kind def` chunk (`/tmp/chunk_def_gate5.log`).
+
+**F. Lean repairs — the merged-variable-block statement defect (7 stubs).**
+The generator splices TWO sections' `variable` headers into one stub. When
+the duplicated binder is captured by a dependent variable in the earlier
+block (`variable {ι}` / `variable {G : ι → ...}` / then `variable {ι} {H}`),
+the theorem's `ι` and `G`'s `ι` are different fvars → `Application type
+mismatch` / `synthInstanceFailed` in the statement. Repaired this session
+(**all compile clean now, `sorry` warning only**):
+
+| stub | fix |
+| :--- | :--- |
+| `Thm_..._ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine` | dropped stale `{ι}`+`{G}` pair, kept source's `{ι}{H}[CompleteSpace]`+`{G}` section |
+| 4× `Thm_..._ChapterGaugeComprehensiveFixing_*` (`physical_ext_iff_comprehensive`, `physical_extension_iff_complete`, `exists_not_extendable_of_not_complete`, `exists_physical_ne_agreeing_of_not_comprehensive`) | replaced 3 spliced variable blocks with the source's enclosing-section variables |
+| 2× `Thm_BookProof_HashimotoShiftInvert_galerkin{Compression,Resolvent}_shiftInvert_tendsto` | same |
+
+**Repair recipe (reusable):** take the variable groups from the SOURCE
+between the nearest enclosing `section/namespace/end` and the theorem line;
+delete every `variable` group (line + 2-space continuations) from the stub;
+insert the source's groups immediately before `^theorem`; compile-gate in the
+candidate mirror. **Detection scan:** duplicate binders in the preamble = 353
+files (over-flags — type-identical redeclarations compile fine); dependent-
+binder redeclaration = 134; **intersect with offline compile-FAIL = the real
+targets** (the 6 fixed; the rest of the intersection is `unpublished def
+import`, a provider verdict, not a compile error).
+
+**Sequence used (still the order to run):** repair → compile-gate in
+`/tmp/def_candidate` → scoped `check_pending_offline --kind thm --only ...`
+to flip the verdict fresh-ok → the item enters the next chunk's ready list.
+The 7 stubs above are staged and compiled but **NOT yet re-swept** (a sweep
+must not run concurrently with a chunk).
+
+**Backlog created by §2.17 measurements:**
+
+1. 12 cycle bundles (§A.2) — repair by embedding the own-chapter node (the
+   MackeyCocycle pattern) or dropping the import if an imported bundle
+   already provides the name; then the cycle guard stops deferring them.
+2. 4 declaration-less sols (§A.1) — regenerate from source (the §2.2 orphan
+   class WITH a state entry); until then the guard holds them at zero cost.
+3. ~71 object-file FAIL bundles — extend the target closure (same recipe as
+   build132: compute missing providers, add to targets, rebuild).
+4. The 6 mid-build-edited bundles — covered by the next build; then re-seed
+   their gate entries (the writer does it automatically from now on).
 
 ---
 

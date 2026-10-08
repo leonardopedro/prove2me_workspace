@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSirkGroupTransfer
 open BookProof.ChapterSirkGroupTransfer
 
-variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
-
 
 noncomputable section
 
 
 open NormedSpace
 
+variable {A : Type*} [NormedRing A] [NormOn
 
-omit [NormedAlgebra ℂ A] [CompleteSpace A] in
+variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
+
 theorem BookProof.ChapterSirkGroupTransfer.norm_pow_le_of_le {a : A} {M : ℝ} (ha : ‖a‖ ≤ M) (n : ℕ) : ‖a ^ n‖ ≤ M ^ n := by sorry

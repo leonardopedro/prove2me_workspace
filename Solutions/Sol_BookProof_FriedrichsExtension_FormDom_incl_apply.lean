@@ -16,4 +16,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (P : PosSymOp F) : ‖incl P‖ ≤ 1 := LinearMap.mkContinuous_norm_le _ zero_le_one _
+theorem solution (P : PosSymOp F) : ‖incl P‖ ≤ 1 := orem norm_incl_le (P : PosSymOp F) : ‖incl P‖

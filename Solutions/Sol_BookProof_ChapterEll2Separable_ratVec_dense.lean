@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterEll2Separable
 import Theorems.Thm_BookProof_ChapterEll2Separable_sum_single_rat_mem_range
 import Theorems.Thm_BookProof_ChapterEll2Separable_eq_sum_single_of_mem_finSupport
+import Theorems.Thm_BookProof_ChapterRieszFischer_finSupport_dense
 open BookProof.ChapterEll2Separable
 
 

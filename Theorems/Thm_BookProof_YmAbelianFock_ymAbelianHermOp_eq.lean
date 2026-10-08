@@ -12,7 +12,7 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterFiniteSectionSingleTime
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQymTimeIndependentFlow
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
@@ -34,8 +34,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.YmAbelianFock
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -50,6 +48,8 @@ open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
 open BookProof.FiniteSectionSingleTime BookProof.QymTimeIndependent BookProof.QgTimeIndependent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.YmAbelianFock.ymAbelianHermOp_eq (e : ℕ ≃ (Fin 99 →₀ ℕ)) :

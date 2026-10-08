@@ -1,9 +1,9 @@
 -- Generated from ChapterFriedrichsExtension.lean — solution of BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_shift
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_inner_coe_eq
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply
+import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 

@@ -3,9 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterMaschkeFiniteGroup
 open BookProof.ChapterMaschkeFiniteGroup
 
+
+
 variable {G : Type*} [Group G] {V : Type*} [AddCommGroup V] [Module ℂ V]
-
-
 
 
 theorem BookProof.ChapterMaschkeFiniteGroup.maschke_invariant_complement [Finite G] [FiniteDimensional ℂ V]

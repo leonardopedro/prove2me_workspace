@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSequentialBayes
 open BookProof.ChapterSequentialBayes
 
-variable {X : Type*} [Fintype X]
-
 
 open scoped BigOperators
 
+
+variable {X : Type*} [Fintype X]
 
 
 theorem BookProof.ChapterSequentialBayes.bayesUpdate_nonneg {prior ℓ : X → ℝ} (hprior : ∀ x, 0 ≤ prior x)

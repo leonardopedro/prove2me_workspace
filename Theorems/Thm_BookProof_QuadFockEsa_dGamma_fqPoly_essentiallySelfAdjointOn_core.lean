@@ -18,8 +18,6 @@ open BookProof.FockSecondQuantization
 open BookProof.FullQuadratic
 open BookProof.QuadFockEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -30,6 +28,8 @@ open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadFockEsa.dGamma_fqPoly_essentiallySelfAdjointOn_core (e : ℕ ≃ (Fin d →₀ ℕ))

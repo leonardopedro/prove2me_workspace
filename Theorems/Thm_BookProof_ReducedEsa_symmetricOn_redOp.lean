@@ -9,22 +9,18 @@ open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ReducedEsa
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
-variable {D : Submodule ℂ F}
-variable (P D) in
-variable (T : D →ₗ[ℂ] F)
-variable {T}
-variable (T) in
-
 
 
 open BookProof.FarisLavine BookProof.GraphCore
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {P : F →ₗ[ℂ] F}
+variable {D : Submodule ℂ F}
+variable (T : D →ₗ[ℂ] F)
+variable {T}
 
 theorem BookProof.ReducedEsa.symmetricOn_redOp (hP : IsReducingProjection P) {hPD : ∀ x ∈ D, P x ∈ D}
     (hC : Commutes T hPD) (hT : SymmetricOn D T) :

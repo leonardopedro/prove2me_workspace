@@ -6,16 +6,13 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*}
-
 
 open scoped Matrix
 
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-).Finite := Iff.rfl
+variable {ι : Type*}
 
-theorem BookProof.NavierStokesFlow.mem_finiteModes (k : ℤ) (c : ℂ) : lp.single 2 k c ∈ finiteModes :=
-  lpSingle_mem_lpFi := by sorry
+theorem BookProof.NavierStokesFlow.mem_finiteModes : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) := by sorry

@@ -8,6 +8,7 @@ open BookProof.NavierStokesEulerian
 
 
 open BookProof.NavierStokesFlow Matrix
+open BookProof.NavierStokesFlow
 
 set_option maxHeartbeats 1000000 in
 theorem solution {n : ℕ} (d : NSTruncation n) (h : nsDivergence d ≠ 0) :

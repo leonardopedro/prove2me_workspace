@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSpectralGapStability
 open BookProof.SpectralGapStability
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 noncomputable section
 
 
 open scoped InnerProductSpace
 open Filter Topology
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.SpectralGapStability.notMem_spectrum_of_gapAt {A : F →L[ℂ] F} (hA : IsSelfAdjoint A) {lam d : ℝ}

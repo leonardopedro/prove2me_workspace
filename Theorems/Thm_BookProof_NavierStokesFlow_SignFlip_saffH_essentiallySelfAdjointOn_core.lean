@@ -13,15 +13,15 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {ι : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.SignFlip.saffH_essentiallySelfAdjointOn_core {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) :
     EssentiallySelfAdjointOn (lpFiniteModes ℕ)

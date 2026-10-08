@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignFiber
 open BookProof.ChapterFreeFieldBornSignFiber
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSignGauge
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignFiber.bornMap_eq_iff_signFlip (x y : EuclideanSpace ℝ (Fin n)) :

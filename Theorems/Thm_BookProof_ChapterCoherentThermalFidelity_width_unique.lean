@@ -7,8 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterCoherentThermalFidelity
 open BookProof.ChapterCoherentThermalFidelity
 
-variable {nbar lam : ℝ}
-
 
 noncomputable section
 
@@ -16,6 +14,8 @@ noncomputable section
 open BookProof.ChapterCoherentOccupation BookProof.ChapterCoherentTemperature
 open BookProof.ChapterCoherentFidelity BookProof.ChapterDisplacedThermalOverlap
 open Real
+
+variable {nbar lam : ℝ}
 
 
 theorem BookProof.ChapterCoherentThermalFidelity.width_unique (h : 0 ≤ nbar) {w : ℝ} (hw : 0 < w)

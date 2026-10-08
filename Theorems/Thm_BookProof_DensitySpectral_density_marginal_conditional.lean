@@ -5,12 +5,12 @@ import Definitions.Def_ChapterB4
 open BookProof.ChapterB4
 open BookProof.DensitySpectral
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
 open scoped BigOperators ComplexOrder
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.DensitySpectral.density_marginal_conditional {ρ : Matrix n n ℂ} (h : IsDensityMatrix ρ) :

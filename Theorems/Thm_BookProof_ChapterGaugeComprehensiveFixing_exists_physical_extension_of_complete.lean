@@ -5,12 +5,12 @@ import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
-variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
-variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
-
 
 
 open BookProof.ChapterGaugeIncompleteFixing
+
+variable {X : Type*} (G : Type*) [Group G] [MulAction G X]
+variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
 
 theorem BookProof.ChapterGaugeComprehensiveFixing.exists_physical_extension_of_complete
     (hcomp : IsComprehensiveGaugeFixing G S) (hcompl : IsCompleteGaugeFixing' G S)

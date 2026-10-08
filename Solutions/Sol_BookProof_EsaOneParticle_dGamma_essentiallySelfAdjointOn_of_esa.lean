@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_fockSectorDom_esa
+import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
 import Theorems.Thm_BookProof_SecondQuantizationCore_dGamma_essentiallySelfAdjointOn_fockCore
 open BookProof.EsaOneParticle
 

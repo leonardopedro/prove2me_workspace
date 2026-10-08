@@ -10,8 +10,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsNonlinearFarisLavine
 
-variable {d : ℕ} (S : NsSystem d)
-
 
 
 open MvPolynomial
@@ -19,6 +17,8 @@ open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavi
 open BookProof.NsKoopman
 
 noncomputable section
+
+variable {d : ℕ} (S : NsSystem d)
 
 
 theorem BookProof.NsNonlinearFarisLavine.nsSquareComparison_commForm (x : polyGaussCore (d := d)) :

@@ -10,14 +10,14 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-
 
 open MeasureTheory
 
 
 
 open FullEsa FockContinuum
+
+variable {X : Type*} [MeasurableSpace X]
 
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.mulD_comp_prime (μ : Measure X) {g h₁ h₂ h : X → ℝ} (hh₁ : Measurable h₁)

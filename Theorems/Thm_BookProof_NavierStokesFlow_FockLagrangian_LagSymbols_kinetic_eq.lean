@@ -12,9 +12,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
-variable {X : Type*} [MeasurableSpace X]
-variable {μ : Measure X} (S : LagSymbols X μ)
-
 
 open MeasureTheory
 
@@ -22,5 +19,8 @@ open MeasureTheory
 
 open FullEsa FockContinuum
 
+variable {X : Type*} [MeasurableSpace X]
+
+variable {μ : Measure X} (S : LagSymbols X μ)
 
 theorem BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinetic_eq : S.data.kinetic = mulD μ S.kinSym_meas S.kinSym_dom := by sorry

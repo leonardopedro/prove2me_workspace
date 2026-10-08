@@ -20,10 +20,6 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -34,6 +30,10 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgTruncationResolvent.isShiftInvertC_neg_resCLM (T : UnboundedSelfAdjoint F) :
     IsShiftInvertC T.op Complex.I (-(T.resCLM 1)) := by sorry

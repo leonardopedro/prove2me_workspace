@@ -7,9 +7,9 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
 
+
+
 variable {n : Type*} [Fintype n]
-
-
 
 
 theorem BookProof.ChapterSpectralEnergyBound.evolve_lipschitz (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)

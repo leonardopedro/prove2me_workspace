@@ -19,12 +19,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.nsComparison_restrict_eq (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     (diagMax (nsSymbol d p q)).comp

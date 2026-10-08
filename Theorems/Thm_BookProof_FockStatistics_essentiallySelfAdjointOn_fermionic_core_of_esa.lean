@@ -18,15 +18,6 @@ open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.FockStatistics
 
-variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
-variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
-  (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
-  (hesa : EssentiallySelfAdjointOn D A)
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
-variable (D₀ : Submodule ℂ Hs.carrier)
-variable {D₀ : Submodule ℂ Hs.carrier}
-
 
 
 open scoped TensorProduct ENNReal
@@ -35,6 +26,15 @@ open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G]
+variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
+  (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
+  (hesa : EssentiallySelfAdjointOn D A)
+variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
+variable (D₀ : Submodule ℂ Hs.carrier)
+variable {D₀ : Submodule ℂ Hs.carrier}
 
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_fermionic_core_of_esa (hcore : IsGraphCore D₀ A) (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (fermionicProj Hs n) (sectorCore Hs D D₀ n))

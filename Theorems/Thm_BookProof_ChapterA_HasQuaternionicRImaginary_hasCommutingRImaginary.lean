@@ -8,13 +8,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterA.AntiUnitary
 
-variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 open BookProof.Complexification
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
 
 
 theorem BookProof.ChapterA.HasQuaternionicRImaginary.hasCommutingRImaginary {M : System ℝ W}

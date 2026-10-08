@@ -15,8 +15,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -25,6 +23,8 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
 
 theorem BookProof.GradedFriedrichs.opOfAlg_quadForm_nonneg {T : Module.End ℂ (γ →₀ ℂ)} (hT : IsPosAlg T)
     (x : lpFiniteModes γ) : 0 ≤ quadForm (opOfAlg T) x := by sorry

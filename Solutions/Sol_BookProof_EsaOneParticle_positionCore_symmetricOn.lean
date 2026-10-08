@@ -1,6 +1,7 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.positionCore_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_restrictOp
 open BookProof.EsaOneParticle
 
 

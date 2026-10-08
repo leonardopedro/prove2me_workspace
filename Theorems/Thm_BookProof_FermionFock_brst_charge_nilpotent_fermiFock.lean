@@ -13,8 +13,6 @@ import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BRSTNilpotent
 open BookProof.FermionFock
 
-variable {ι : Type*} [DecidableEq ι]
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -24,6 +22,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FermionFock.brst_charge_nilpotent_fermiFock {n : ℕ} (f : Fin n → Fin n → Fin n → ℝ)
     (hf12 : ∀ a b c, f a b c = -f b a c)

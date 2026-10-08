@@ -4,14 +4,14 @@ import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmMeasure
 open BookProof.ChapterPvmMeasure
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-variable (P : Pvm X H)
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+variable (P : Pvm X H)
 
 theorem BookProof.ChapterPvmMeasure.Pvm.norm_sq_nonneg (E : Set X) (u : H) : 0 ≤ ‖P.p E u‖ ^ 2 := by sorry

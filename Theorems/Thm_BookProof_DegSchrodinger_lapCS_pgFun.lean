@@ -14,8 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.DegSchrodinger
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial
@@ -24,6 +22,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegSchrodinger.lapCS_pgFun (S : Finset (Fin d)) (p : MvPolynomial (Fin d) ℂ) :

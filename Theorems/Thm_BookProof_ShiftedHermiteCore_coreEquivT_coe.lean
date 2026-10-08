@@ -8,8 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -18,6 +16,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedHermiteCore.coreEquivT_coe (a k : Vd d) (p : MvPolynomial (Fin d) ℂ) :

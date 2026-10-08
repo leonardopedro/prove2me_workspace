@@ -22,14 +22,11 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterA4
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.QymTimeIndependent
-
-variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 
 
@@ -43,6 +40,8 @@ open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProdu
 open BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 
 theorem BookProof.QymTimeIndependent.ymFock_timeIndependent_singleTime_of_esa (en : ℕ ≃ Conf)

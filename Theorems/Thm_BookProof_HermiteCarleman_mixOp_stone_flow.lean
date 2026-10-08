@@ -16,9 +16,6 @@ open BookProof.HermiteProductCore
 open BookProof.StoneBridge
 open BookProof.HermiteCarleman
 
-variable {d : ℕ}
-variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
-
 
 
 open Finset MeasureTheory MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable {u : (Fin d →₀ ℕ) → ℂ} {lam : (Fin d →₀ ℕ) → ℝ} {amp : Fin d → ℂ} {z : ℂ}
 
 theorem BookProof.HermiteCarleman.mixOp_stone_flow (c b b' : Fin d → ℝ) :
     ∃ (T : UnboundedSelfAdjoint (L2d d)) (U : ℝ → (L2d d →L[ℂ] L2d d)),

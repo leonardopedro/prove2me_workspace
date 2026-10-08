@@ -10,12 +10,11 @@ noncomputable section
 
 open NormedSpace
 
-variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
+variable {A : Type*} [NormedRing A] [NormOn
 
 variable {A : Type*} [NormedRing A] [NormOneClass A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
 set_option maxHeartbeats 1000000 in
-omit [NormedAlgebra ℂ A] [CompleteSpace A] in
 theorem solution {a : A} {M : ℝ} (ha : ‖a‖ ≤ M) (n : ℕ) : ‖a ^ n‖ ≤ M ^ n := by
 
   have hM : 0 ≤ M := le_trans (norm_nonneg _) ha
@@ -26,3 +25,5 @@ theorem solution {a : A} {M : ℝ} (ha : ‖a‖ ≤ M) (n : ℕ) : ‖a ^ n‖ 
       _ ≤ ‖a‖ * ‖a ^ n‖ := norm_mul_le _ _
       _ ≤ M * M ^ n := by gcongr
       _ = M ^ (n + 1) := by ring
+
+omit [NormedAlgebra ℂ A] [CompleteSpace A] in

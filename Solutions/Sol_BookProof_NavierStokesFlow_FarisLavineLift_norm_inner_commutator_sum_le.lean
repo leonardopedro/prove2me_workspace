@@ -19,22 +19,15 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {κ : Type*}
 
 set_option maxHeartbeats 1000000 in
-   intro k hk
-    rw [Finset.sum_eq_single_of_mem k hk]
-    · simp [commDom]
-    · intro l hl hlk
-      have := hcomm k hk l hl (Ne.symm hlk)
-      have happ := congrArg (fun T : D →ₗ[ℂ] D => T v) this
-      simp only [LinearMap.comp_apply] at happ
-      rw [happ]
-      simp
-  rw [Finset.sum_congr rfl hdiag]
-  simp
-
 theorem solution (s : Finset κ) (h n : κ → (D →ₗ[ℂ] D)) (c₂ : ℝ)
     (hc₂ : 0 ≤ c₂) (v : D)
     (hcomm : ∀ k ∈ s, ∀ l ∈ s, k ≠ l → (h k).comp (n l) = (n l).comp (h k))
-    (hbound : ∀ k ∈ s, ‖(inner ℂ ((v : F)) ((commDom (h k) (n k) v : D) : F) :=
+    (hbound : ∀ k ∈ s, ‖(inner ℂ ((v : F)) ((commDom (h k) (n k) v : D) : F) : ℂ)‖
+      ≤ c₂ * (inner ℂ ((v : F)) ((n k v : D) : F) : ℂ).re) :
+    ‖(inner ℂ ((v : F))
+        ((commDom (∑ k ∈ s, h k) ((∑ k ∈ s, n k) + LinearMap.id) v : D) : F) : ℂ)‖
+      ≤ c₂ * (inner ℂ ((v : F))
+        ((((∑ k ∈ s, n k) + LinearMap.id : D →ₗ[ℂ] D) v : D) : F) : ℂ).re :=
   : ℂ)‖
         ≤ c₂ * (inner ℂ ((v : F)) ((n k v : D) : F) : ℂ).re) :
       ‖(inner ℂ ((v : F))

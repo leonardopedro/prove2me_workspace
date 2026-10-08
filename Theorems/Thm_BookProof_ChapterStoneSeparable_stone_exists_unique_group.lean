@@ -9,15 +9,15 @@ import Definitions.Def_ChapterStoneTheorem
 open BookProof.ChapterStoneTheorem
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.stone_exists_unique_group (T : UnboundedSelfAdjoint H) :
     ∃! G : WeakMeasurableUnitaryGroup H,

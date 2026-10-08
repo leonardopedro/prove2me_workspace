@@ -7,15 +7,14 @@ open BookProof.SirkFinitePrecision.CertInterval
 
 
 
-
-
-
-
 noncomputable section
 
 
 open scoped InnerProductSpace
 open Finset
+
+variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  [FiniteDimensional ℂ E]
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [FiniteDimensional ℂ E]

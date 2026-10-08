@@ -7,8 +7,6 @@ open BookProof.ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentGeometry
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap BookProof.ChapterSoftmaxBorn
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentGeometry.bornNumer_eq_exp_neg_dist_sq (q k : EuclideanSpace ℝ (Fin n)) :

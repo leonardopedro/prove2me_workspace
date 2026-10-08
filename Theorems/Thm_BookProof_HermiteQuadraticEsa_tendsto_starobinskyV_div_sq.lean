@@ -13,8 +13,6 @@ import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.Starobinsky
 open BookProof.HermiteQuadraticEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -23,6 +21,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteQuadraticEsa.tendsto_starobinskyV_div_sq (M alpha : ℝ) :

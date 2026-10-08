@@ -27,13 +27,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-= ((g : L2Nat) : ℕ → ℂ) n
-  rw [hfn]
-  field_simp
-  push_cast
-  ring
-
-theorem solution (lam : ℕ → ℝ :=
+theorem solution (lam : ℕ → ℝ) :
+    EssentiallySelfAdjointOn (mulSymbolDomain lam) (mulHamiltonian lam) :=
   ) :
       EssentiallySelfAdjointOn (mulSymbolDomain lam) (mulHamiltonian lam) :=
     essentiallySelfAdjointOn_of_farisLavine (mulHamiltonian lam) (mulComparison lam) 0

@@ -12,8 +12,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -22,6 +20,8 @@ open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerk
 open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.QuantumGravity3DGauge.derOp_comm (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     derOp j (derOp k p) = derOp k (derOp j p) := by sorry

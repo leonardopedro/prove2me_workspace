@@ -6,8 +6,6 @@ import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxBorn
 open BookProof.ChapterCoherentGeometry
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlap BookProof.ChapterSoftmaxBorn
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentGeometry.bornWeight_lt_of_nearest (q : EuclideanSpace ℝ (Fin n))

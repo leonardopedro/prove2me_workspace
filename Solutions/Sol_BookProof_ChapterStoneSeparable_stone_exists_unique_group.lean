@@ -23,4 +23,4 @@ theorem solution (T : UnboundedSelfAdjoint H) :
       ∀ x : T.domain, HasDerivAt (fun t : ℝ => G.U t (x : H)) ((-Complex.I) • T.op x) 0 := by
 
   refine ⟨T.stoneGroup, fun x => T.hasDerivAt_stoneU_zero x, fun G hG => ?_⟩
-  exact WeakMeasurableUnitaryGroup.ext' (fun t => eq_stoneU_of_hasDerivAt T G hG t)
+  exact WeakMeasurableUnitaryGroup.ext_prime (fun t => eq_stoneU_of_hasDerivAt T G hG t)

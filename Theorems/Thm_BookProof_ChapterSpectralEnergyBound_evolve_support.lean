@@ -5,9 +5,9 @@ import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
 
+
+
 variable {n : Type*} [Fintype n]
-
-
 
 
 theorem BookProof.ChapterSpectralEnergyBound.evolve_support (f : n → ℝ) (t : ℝ) (v : EuclideanSpace ℂ n) (i : n)

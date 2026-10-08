@@ -10,8 +10,6 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.SmGaugeConnection
 
-variable {N d : ℕ}
-
 
 
 open Matrix Kronecker
@@ -19,6 +17,8 @@ open BookProof.YangMillsSU3 BookProof.ChapterCPTHamiltonian BookProof.SmCar
 open BookProof.SmDiracYukawa BookProof.SmDiracSpinor BookProof.FarisLavine
 
 noncomputable section
+
+variable {N d : ℕ}
 
 
 theorem BookProof.SmGaugeConnection.diracGaugeField_symmetric {k : Fin 3 → ℝ} {m1 m2 g : ℝ}

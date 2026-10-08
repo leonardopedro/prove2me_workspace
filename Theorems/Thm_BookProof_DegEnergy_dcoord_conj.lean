@@ -8,8 +8,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory
@@ -17,6 +15,8 @@ open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodi
 open BookProof.ConvolutionCalc
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.DegEnergy.dcoord_conj {v : Vd d → ℂ} (hv : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) v) (j : Fin d)

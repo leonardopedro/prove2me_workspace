@@ -7,7 +7,7 @@ import Theorems.Thm_BookProof_CarlemanSimplex_sum_mterm_im
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_pvec
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_shift
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_vanish
-import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish'
+import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish_prime
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
 open BookProof.CarlemanSimplex
 
@@ -125,7 +125,7 @@ theorem solution (hM : ∀ i j, M j i = (starRingEnd ℂ) (M i j))
   · refine Finset.sum_congr rfl fun i _ => ?_
     have h := sum_simplex_hop_im (u := u) (w := w i) (rc := fun b => rc1 b i)
       (lc := fun b => lc1 b i) (P := Finsupp.single i 1)
-      (fun a => lc1_shift i a) (fun a ha => lc1_vanish' i a ha) N
+      (fun a => lc1_shift i a) (fun a ha => lc1_vanish_prime i a ha) N
     rwa [deg_single] at h
   · refine Finset.sum_congr rfl fun i _ => ?_
     rw [Complex.im_sum]

@@ -1,6 +1,7 @@
 -- Generated from ChapterCayleyInverse.lean — solution of BookProof.ChapterCayleyInverse.oneSubU_cayley_injective
 import Mathlib
 import Definitions.Def_ChapterCayleyInverse
+import Theorems.Thm_BookProof_ChapterCayleyTransform_one_sub_cayley_injective
 open BookProof.ChapterCayleyInverse
 
 

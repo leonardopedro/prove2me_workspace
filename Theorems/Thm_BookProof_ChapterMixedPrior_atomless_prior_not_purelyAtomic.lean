@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterMixedPrior
 open BookProof.ChapterMixedPrior
 
-variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
-
 
 open MeasureTheory ProbabilityTheory
 
 
 open BookProof.ChapterAtomicDecomposition
+
+variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
 
 
 theorem BookProof.ChapterMixedPrior.atomless_prior_not_purelyAtomic (mu : Measure X) [IsProbabilityMeasure mu]

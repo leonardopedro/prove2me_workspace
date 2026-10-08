@@ -1,6 +1,7 @@
 -- Generated from ChapterWeylSL2Group.lean — solution of BookProof.ChapterWeylSL2Group.pow_mem_of_mem
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
+import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_pow_succ_apply
 open BookProof.ChapterWeylSL2Group
 
 

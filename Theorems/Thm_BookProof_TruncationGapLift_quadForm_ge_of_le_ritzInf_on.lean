@@ -16,9 +16,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.TruncationGapLift
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 
 noncomputable section
 
@@ -29,6 +26,9 @@ open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.TruncationGapLift.quadForm_ge_of_le_ritzInf_on (H : D →ₗ[ℂ] F)
     (hpos : ∀ x : D, 0 ≤ quadForm H x) {V : Submodule ℂ F} {mu : ℝ}

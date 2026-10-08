@@ -21,9 +21,6 @@ open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 
 open MeasureTheory MvPolynomial
@@ -35,6 +32,9 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.intertwined_fieldV (i : Fin 3) :
     Intertwined (fieldV A c i)

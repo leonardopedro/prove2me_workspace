@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionRetrieval
 open BookProof.ChapterAttentionRetrieval
 
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionRetrieval.card_erase_cast (j : Fin m) :

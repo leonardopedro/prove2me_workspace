@@ -5,9 +5,9 @@ import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterSuperBracket
 
+
+
 variable {R : Type*} [Ring R]
-
-
 
 
 theorem BookProof.ChapterSuperBracket.sbracket_graded_antisymm (p q : Bool) (a b : R) :

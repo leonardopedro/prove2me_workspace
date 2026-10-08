@@ -22,9 +22,6 @@ open BookProof.SqSumFarisLavine
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
-variable (dim : ℕ → ℕ)
-variable (F : SqFamily)
-
 
 
 open Finset MvPolynomial
@@ -36,6 +33,9 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
+variable (F : SqFamily)
 
 theorem BookProof.SqSumOuterFamily.SqFamily.secHam_commForm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
     |commForm (F.secHam n) harmCore u| ≤ F.flc * quadForm harmCore u := by sorry

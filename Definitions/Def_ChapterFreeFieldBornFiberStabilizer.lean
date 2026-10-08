@@ -54,7 +54,9 @@ variable {n : ℕ}
 /-- The `±1` sign vector determined by a boolean choice on each coordinate. -/
 def boolSign (b : Fin n → Bool) : Fin n → ℝ := fun k => if b k then 1 else -1
 
-
+theorem boolSign_pm (b : Fin n → Bool) (k : Fin n) :
+    boolSign b k = 1 ∨ boolSign b k = -1 := by
+  unfold boolSign; split_ifs <;> simp
 
 /-- The **stabilizer** of `x` in the diagonal `{±1}ⁿ` sign group, indexed by
 boolean sign choices: those sign flips that fix `x`. -/
@@ -64,7 +66,17 @@ noncomputable def signStab (x : EuclideanSpace ℝ (Fin n)) : Finset (Fin n → 
 /-
 A sign flip fixes `x` iff it is `+1` on every nonzero coordinate of `x`.
 -/
-
+theorem mem_signStab {x : EuclideanSpace ℝ (Fin n)} {b : Fin n → Bool} :
+    b ∈ signStab x ↔ ∀ k, x k ≠ 0 → b k = true := by
+      simp only [signStab, Finset.mem_filter, Finset.mem_univ, true_and, ne_eq];
+      constructor <;> intro h <;> simp_all only [signFlip, WithLp.equiv_symm_apply];
+      · intro k hk; replace h := congr_arg ( fun f => f k ) h; simp_all [ boolSign ] ;
+        by_cases hb : b k = true
+        · exact hb
+        · have hbf : b k = false := by simpa using hb
+          have hz0 : x.ofLp k = 0 := by linarith [h hbf]
+          exact absurd hz0 hk;
+      · ext k; by_cases hk : x.ofLp k = 0 <;> simp_all [ boolSign ] ;
 
 /-
 The stabilizer of `x` under the sign gauge has `2 ^ (#zero coordinates)`

@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBell
 open BookProof.ChapterBell
 
-variable {Ω : Type*} [MeasurableSpace Ω]
-
 
 open scoped BigOperators
 open MeasureTheory
+
+variable {Ω : Type*} [MeasurableSpace Ω]
 
 theorem BookProof.ChapterBell.chsh_local
     (μ : Measure Ω) [IsProbabilityMeasure μ]

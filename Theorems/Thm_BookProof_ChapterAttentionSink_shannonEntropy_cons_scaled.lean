@@ -3,9 +3,8 @@ import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
 import Definitions.Def_ChapterAttentionSink
+import Definitions.Def_ChapterAttentionEntropy
 open BookProof.ChapterAttentionSink
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 open scoped BigOperators
@@ -14,6 +13,9 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionEntropy
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionSink.shannonEntropy_cons_scaled {w : ℝ} (hw1 : w < 1) {p : Fin m → ℝ}

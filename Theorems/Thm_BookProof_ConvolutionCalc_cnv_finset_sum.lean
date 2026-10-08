@@ -7,14 +7,14 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.ConvolutionCalc
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ConvolutionCalc.cnv_finset_sum {ι : Type*} (s : Finset ι) {u : Vd d → ℂ} {g : ι → Vd d → ℂ}

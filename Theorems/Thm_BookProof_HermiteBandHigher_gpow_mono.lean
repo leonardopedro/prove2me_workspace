@@ -8,8 +8,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
 open BookProof.HermiteBandHigher
 
-variable {d : ℕ}
-
 
 
 noncomputable section
@@ -17,6 +15,8 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteBand BookProof.YangMillsHermite
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBandHigher.gpow_mono {m m' : ℕ} (h : m ≤ m') (n : ℕ) : gpow m n ≤ gpow m' n := by sorry

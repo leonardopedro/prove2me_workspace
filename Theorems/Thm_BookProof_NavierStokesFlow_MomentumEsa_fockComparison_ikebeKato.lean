@@ -9,12 +9,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+
+variable {ι : Type*}
 
 theorem BookProof.NavierStokesFlow.MomentumEsa.fockComparison_ikebeKato (n : ℕ → ℝ) (hn : ∀ k, 0 ≤ n k) :
     EssentiallySelfAdjointOn (lpFiniteModes Config)

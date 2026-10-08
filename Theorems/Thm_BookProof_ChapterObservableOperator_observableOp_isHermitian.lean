@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterObservableOperator
 open BookProof.ChapterObservableOperator
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterObservableOperator.observableOp_isHermitian (k : Fin m → EuclideanSpace ℂ (Fin n)) (v : Fin m → ℝ) :

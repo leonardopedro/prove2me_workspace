@@ -10,9 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 open BookProof.QgPhysicalSectorIdentity
 
-variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
-variable {ι : Type*}
-
 
 
 open BookProof.GaugeFixing
@@ -22,5 +19,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+
+variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
+variable {ι : Type*}
 
 theorem BookProof.QgPhysicalSectorIdentity.deg_creIdx (i : ι) : deg (creIdx i) = 1 := by sorry

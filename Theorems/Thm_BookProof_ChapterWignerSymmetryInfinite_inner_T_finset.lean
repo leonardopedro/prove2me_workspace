@@ -6,16 +6,16 @@ import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
-variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-  [CompleteSpace E] {T : E → E}
-variable {b : HilbertBasis ι ℂ E} {o : ι}
-
 
 open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
 
+variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  [CompleteSpace E] {T : E → E}
+
+variable {b : HilbertBasis ι ℂ E} {o : ι}
 
 theorem BookProof.ChapterWignerSymmetryInfinite.inner_T_finset (hT : IsWignerSymmetry T) (s : Finset ι) (w : E)
     (hw : ∀ k ∉ s, ⟪b k, w⟫_ℂ = 0) (x : E) :

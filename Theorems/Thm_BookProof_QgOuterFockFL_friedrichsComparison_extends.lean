@@ -14,8 +14,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -31,6 +29,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOuterFockFL.friedrichsComparison_extends [CompleteSpace F] (P : PosSymOp F)
     (hdense : Dense (P.dom : Set F)) (x : P.dom) :

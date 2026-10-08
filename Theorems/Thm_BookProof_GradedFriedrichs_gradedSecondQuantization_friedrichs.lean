@@ -19,9 +19,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsGhost
 open BookProof.GradedFriedrichs
 
-variable {γ : Type*}
-variable {α β : Type*}
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -30,6 +27,9 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+
+variable {γ : Type*}
+variable {α β : Type*}
 
 theorem BookProof.GradedFriedrichs.gradedSecondQuantization_friedrichs {F G : Type*}
     [NormedAddCommGroup F] [InnerProductSpace ℂ F]

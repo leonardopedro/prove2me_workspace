@@ -24,8 +24,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution :
     IsUnipotentExp stdRep (Matrix.toLin' eMat) (Matrix.toLin' fMat) 2 where
   two_le :=
-  where
-    two_le := le_rfl
+  le_rfl
     nilpotent_E := by
       have hm : eMat * eMat = 0 := by
         ext i j

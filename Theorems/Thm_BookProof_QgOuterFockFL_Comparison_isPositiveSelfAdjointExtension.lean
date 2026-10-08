@@ -18,8 +18,6 @@ open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.YangMillsFriedrichs
 open BookProof.QgOuterFockFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 open scoped ENNReal
 
@@ -35,6 +33,8 @@ open BookProof.QgHermiteOscillator
 open BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.QgOuterFockFL.Comparison.isPositiveSelfAdjointExtension (C : Comparison F) {D : Submodule ℂ F}
     (H : D →ₗ[ℂ] F) (hHD : ∀ x : D, ∃ h : (x : F) ∈ C.dom, C.op ⟨(x : F), h⟩ = H x) :

@@ -1,7 +1,7 @@
 -- Generated from ChapterQuadratureEsa.lean — solution of BookProof.QuadratureEsa.foOp_pos_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
-import Theorems.Thm_BookProof_QuadratureEsa_ae_eq_zero_of_moments'
+import Theorems.Thm_BookProof_QuadratureEsa_ae_eq_zero_of_moments_prime
 import Theorems.Thm_BookProof_QuadratureEsa_eval_linPoly
 import Theorems.Thm_BookProof_QuadratureEsa_abs_linSymb_le
 import Theorems.Thm_BookProof_QuadratureEsa_foOp_coe
@@ -138,7 +138,7 @@ theorem solution (b : Fin d → ℝ) {z : ℂ} (hz : z.im ≠ 0) :
     rw [hsplit, h]
     ring
   -- conclude
-  have hzero := ae_eq_zero_of_moments' hmeas hexp hmom
+  have hzero := ae_eq_zero_of_moments_prime hmeas hexp hmom
   have hWzero : ∀ᵐ x : Vd d, W x = 0 := by
     filter_upwards [hzero] with x hx
     have hg : ((gaussD x : ℝ) : ℂ) ≠ 0 := by

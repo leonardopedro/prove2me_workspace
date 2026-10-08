@@ -7,8 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
 open BookProof.ChapterSpectralCommutant
 
-variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
 
 noncomputable section
 
@@ -17,6 +15,8 @@ open MeasureTheory ENNReal Complex
 
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
+
+variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 
 theorem BookProof.ChapterSpectralCommutant.bicommutant_multAlgebra [IsFiniteMeasure μ] :
     (multAlgebra μ).centralizer.centralizer = multAlgebra μ := by sorry

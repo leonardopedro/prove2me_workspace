@@ -6,16 +6,16 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 open Filter Topology
 
 
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.EsaClosure.isSelfAdjointExtension_unique_of_esa {Dom₁ Dom₂ : Submodule ℂ F} {T : D →ₗ[ℂ] F}
     {A₁ : Dom₁ →ₗ[ℂ] F} {A₂ : Dom₂ →ₗ[ℂ] F} (hesa : EssentiallySelfAdjointOn D T)

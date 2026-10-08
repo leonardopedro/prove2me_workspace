@@ -1,8 +1,8 @@
 -- Generated from ChapterHermiteRelativeBound.lean — solution of BookProof.HermiteRelative.norm_foOp_le
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
-import Theorems.Thm_BookProof_HermiteRelative_norm_posL_le
 import Theorems.Thm_BookProof_HermiteRelative_norm_momL_le
+import Theorems.Thm_BookProof_HermiteRelative_norm_posL_le
 import Theorems.Thm_BookProof_HermiteRelative_foOp_apply
 open BookProof.HermiteRelative
 
@@ -21,12 +21,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-etricOn (polyGaussCore (d := d)) (foOp b b') :=
-  symmetricOn_of_polySym (polySym_foPoly b b')
-
 theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 ≤ c i)
     (b b' : Fin d → ℝ) {e : ℝ} (he : 0 < e) (u : polyGaussCore (d := d)) :
-    ‖foOp b b' u‖ :=
+    ‖foOp b b' u‖
+      ≤ (∑ i, (|b i| + |b' i|)) * (e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖) :=
       ≤ (∑ i, (|b i| + |b' i|)) * (e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖) := by
     classical
     set R : ℝ := e * ‖quadOp c u‖ + (2 / (c0 * e)) * ‖(u : L2d d)‖ with hR

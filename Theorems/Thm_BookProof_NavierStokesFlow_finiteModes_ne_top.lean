@@ -6,17 +6,13 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*}
-
 
 open scoped Matrix
 
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-tice finite-mode domain is dense. -/
-theorem BookProof.NavierStokesFlow.finiteModes_ne_top : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=
-  lpFiniteModes_dense
+variable {ι : Type*}
 
-/-- The finite-mode domain is a **proper** subspa := by sorry
+theorem BookProof.NavierStokesFlow.finiteModes_ne_top : finiteModes ≠ (⊤ : Submodule ℂ L2Z) := by sorry

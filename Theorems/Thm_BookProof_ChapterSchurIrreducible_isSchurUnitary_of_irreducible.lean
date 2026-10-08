@@ -6,13 +6,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterSchurIrreducible
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurIrreducible.isSchurUnitary_of_irreducible [Nontrivial V] (M : System ℂ V) (hM : M.IsNormal)

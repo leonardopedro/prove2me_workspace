@@ -18,11 +18,9 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-l_eq_mul_div, le_div_iff₀ hc0]
-  nlinarith [mul_le_mul_of_nonneg_left h1 hc0.le, h2, h3, h4]
-
 theorem solution {t A B c0 e : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
-    (hc0 : :=
+    (hc0 : 0 < c0) (he : 0 < e) (h : t ^ 2 ≤ (4 / c0) * (B * A)) :
+    t ≤ e * A + (2 / (c0 * e)) * B :=
    0 < c0) (he : 0 < e) (h : t ^ 2 ≤ (4 / c0) * (B * A)) :
       t ≤ e * A + (2 / (c0 * e)) * B := by
     have hrhs : 0 ≤ e * A + (2 / (c0 * e)) * B := by positivity

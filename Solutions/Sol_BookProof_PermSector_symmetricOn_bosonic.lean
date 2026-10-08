@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_PermSector_permRep_commutes_sectorDom
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
 import Theorems.Thm_BookProof_ReducedEsa_symmetricOn_redOp
+import Theorems.Thm_BookProof_TensorCore_symmetricOn_sectorOp
 open BookProof.PermSector
 
 

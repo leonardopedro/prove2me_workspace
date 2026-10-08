@@ -10,14 +10,14 @@ open BookProof.GhostField
 open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.NavierStokesFlow
 
-variable {M : Type*} [DecidableEq M]
-
 
 open MeasureTheory
 
 
 
 open FullEsa LagrangianEsa
+
+variable {M : Type*} [DecidableEq M]
 
 theorem BookProof.NavierStokesFlow.FockOfFock.numberOp_basis (m : M) (n : Conf M) :
     numberOp m (fockBasis n) = ((n m : ℝ) : ℂ) • fockBasis n := by sorry

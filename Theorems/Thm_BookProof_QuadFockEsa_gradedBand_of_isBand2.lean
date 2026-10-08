@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBand
 open BookProof.QuadFockEsa
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -27,6 +25,8 @@ open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadFockEsa.gradedBand_of_isBand2 (e : ℕ ≃ (Fin d →₀ ℕ))

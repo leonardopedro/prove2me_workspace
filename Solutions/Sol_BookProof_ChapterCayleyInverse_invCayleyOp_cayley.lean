@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCayleyInverse
 import Theorems.Thm_BookProof_ChapterCayleyInverse_oneSubU_cayley_injective
+import Theorems.Thm_BookProof_ChapterCayleyTransform_add_cayley_shift
+import Theorems.Thm_BookProof_ChapterCayleyTransform_sub_cayley_shift
 open BookProof.ChapterCayleyInverse
 
 

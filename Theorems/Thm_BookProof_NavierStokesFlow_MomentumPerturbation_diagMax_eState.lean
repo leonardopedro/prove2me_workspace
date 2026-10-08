@@ -3,16 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumPerturbation
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_eState_mem_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
-
-variable {ι : Type*}
 
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*}
 
 
 theorem BookProof.NavierStokesFlow.MomentumPerturbation.diagMax_eState (k : ℕ) :

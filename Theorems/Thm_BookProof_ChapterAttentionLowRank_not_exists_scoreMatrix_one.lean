@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterAttentionLowRank
 open BookProof.ChapterAttentionLowRank
 
-variable {m d : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {m d : ℕ}
 
 
 theorem BookProof.ChapterAttentionLowRank.not_exists_scoreMatrix_one (hd : d < m) :

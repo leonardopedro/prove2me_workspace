@@ -6,14 +6,14 @@ import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterWaveBoundedPotential
 open BookProof.StrichartzWave
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-variable {ι : Type*} [Fintype ι]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {ι : Type*} [Fintype ι]
 
 theorem BookProof.StrichartzWave.wave_add_boundedPotentialOp_essentiallySelfAdjoint (n : ℕ) (W : SpaceTime n → ℝ)
     (hW : Function.HasTemperateGrowth W)

@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sum_cube_splitK
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
 open BookProof.CarlemanTwoStep
 
 

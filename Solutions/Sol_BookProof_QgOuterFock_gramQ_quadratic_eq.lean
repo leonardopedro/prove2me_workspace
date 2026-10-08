@@ -55,4 +55,4 @@ theorem solution {R : Type*} [Fintype R] (v : R → Fin D → ℝ) :
     rw [smul_mul_smul_comm, smul_smul]
     congr 1
     ring
-  rw [hL, hR, triple_swap']
+  rw [hL, hR, triple_swap_prime]

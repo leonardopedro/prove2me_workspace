@@ -20,8 +20,6 @@ open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsHermite
 open BookProof.HermiteGraphApprox
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap MvPolynomial Filter Topology
@@ -34,6 +32,8 @@ open BookProof.ConvolutionCalc
 open scoped ENNReal
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteGraphApprox.hamCoreS_eq_pgLp {q : MvPolynomial (Fin d) ℂ} (hq : RealCoeff q) (S : Finset (Fin d))

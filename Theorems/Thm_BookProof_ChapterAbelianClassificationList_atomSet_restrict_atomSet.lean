@@ -9,8 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
 open BookProof.ChapterAbelianClassificationList
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
-
 
 noncomputable section
 
@@ -20,6 +18,8 @@ open MeasureTheory ProbabilityTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterDiffuseUnitaryModel BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit BookProof.ChapterLpScaleMeasure
+
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
 
 theorem BookProof.ChapterAbelianClassificationList.atomSet_restrict_atomSet (mu : Measure α) [IsFiniteMeasure mu] :
     atomSet (mu.restrict (atomSet mu)) = atomSet mu := by sorry

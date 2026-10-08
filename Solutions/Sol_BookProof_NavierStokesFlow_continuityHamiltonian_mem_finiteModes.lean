@@ -17,11 +17,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
- refine hf.subset fun k hk => ?_
-  simp only [Function.mem_support, velocityOp_apply] at hk
-  exact fun hzero => hk (by rw [hzero, mul_zero])
-
-/-- The continuity generator preserves the finite-mode domain. - :=
+theorem solution (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
+    continuityHamiltonian v f ∈ finiteModes :=
   /
   theorem continuityHamiltonian_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
       continuityHamiltonian v f ∈ finiteModes := by

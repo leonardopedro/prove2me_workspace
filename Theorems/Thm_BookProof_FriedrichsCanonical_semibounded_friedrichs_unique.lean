@@ -10,9 +10,6 @@ open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.FriedrichsCanonical
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
@@ -20,6 +17,9 @@ open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.FriedrichsCanonical.semibounded_friedrichs_unique (H : D →ₗ[ℂ] F) (hsym : SymmetricOn D H) (c : ℝ)
     (hbelow : ∀ x : D, -c * ‖(x : F)‖ ^ 2 ≤ quadForm H x) (hdense : Dense (D : Set F))

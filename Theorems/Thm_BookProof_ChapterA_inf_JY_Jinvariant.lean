@@ -4,13 +4,13 @@ import Definitions.Def_ChapterA1e
 import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 attribute [local instance] InnerProductSpace.rclikeToReal
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterA.inf_JY_Jinvariant (Y : Submodule ℝ V) :

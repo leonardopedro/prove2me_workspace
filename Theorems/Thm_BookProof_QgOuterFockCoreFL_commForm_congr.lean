@@ -12,8 +12,6 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOuterFockCoreFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine
@@ -27,6 +25,8 @@ open BookProof.HermiteProductCore
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockCoreFL.commForm_congr {D D' : Submodule ℂ F} (H N : D →ₗ[ℂ] F) (H' N' : D' →ₗ[ℂ] F)
     (x : D) (x' : D') (hH : H x = H' x') (hN : N x = N' x') :

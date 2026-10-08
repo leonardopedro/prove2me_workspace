@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionOutput.lean — solution of BookProof.ChapterAttentionOutput.tendsto_headOutput
 import Mathlib
 import Definitions.Def_ChapterAttentionOutput
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_max
+import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_ne
 open BookProof.ChapterAttentionOutput
 
 

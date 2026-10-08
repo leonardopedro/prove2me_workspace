@@ -9,14 +9,14 @@ open BookProof.ClosureUniqueness
 open BookProof.EsaClosure
 open BookProof.FriedrichsSquare
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-variable [CompleteSpace F]
-
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {D : Submodule ℂ F}
+
+variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsSquare.le_factorRel_of_symmetric_extension {A : D →ₗ[ℂ] F} (hsym : SymmetricOn D A)
     {hstab : ∀ v : D, (A v : F) ∈ D} {R : Submodule ℂ (F × F)}

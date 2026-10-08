@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterF6
 open BookProof.ChapterF6
 
-variable {α : Type*} [DecidableEq α]
-
 
 open scoped BigOperators
 
+
+variable {α : Type*} [DecidableEq α]
 
 
 theorem BookProof.ChapterF6.mgStep_apply_le (k : ℕ) (T : α →₀ ℕ) (x y : α) :

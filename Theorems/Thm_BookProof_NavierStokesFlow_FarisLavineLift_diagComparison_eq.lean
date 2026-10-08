@@ -13,18 +13,18 @@ open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat
-open BookProof.NavierStokesFlow.FullEsa
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ} (c : ComparisonData F d)
 
 
 
 
 open FullEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ} (c : ComparisonData F d)
 
 theorem BookProof.NavierStokesFlow.FarisLavineLift.diagComparison_eq (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     (diagComparisonData d p q).comparison

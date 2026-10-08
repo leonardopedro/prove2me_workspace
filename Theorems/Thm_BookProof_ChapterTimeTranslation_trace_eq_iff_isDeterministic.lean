@@ -5,13 +5,13 @@ import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterTimeTranslation.trace_eq_iff_isDeterministic (U : Matrix (Fin n) (Fin n) ℂ) :

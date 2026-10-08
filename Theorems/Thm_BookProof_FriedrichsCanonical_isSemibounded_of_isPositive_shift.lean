@@ -11,9 +11,6 @@ open BookProof.FriedrichsExtension.FormDom
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsCanonical
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {D : Submodule ℂ F}
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
@@ -21,6 +18,9 @@ open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {D : Submodule ℂ F}
 
 theorem BookProof.FriedrichsCanonical.isSemibounded_of_isPositive_shift {Dom : Submodule ℂ F} (H : D →ₗ[ℂ] F) (c : ℝ)
     (A : Dom →ₗ[ℂ] F)

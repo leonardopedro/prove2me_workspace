@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCapacity
 open BookProof.ChapterAttentionCapacity
 
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionCapacity.distScore_margin_of_separated {k : Fin m → EuclideanSpace ℝ (Fin n)} {r : ℝ}

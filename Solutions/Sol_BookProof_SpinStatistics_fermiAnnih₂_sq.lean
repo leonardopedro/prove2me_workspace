@@ -1,4 +1,4 @@
--- Generated from ChapterSpinStatistics.lean — solution of BookProof.SpinStatistics.fermiAnnih₂_sq
+-- Generated from ChapterSpinStatistics.lean — solution of BookProof.SpinStatistics.fermiAnnih2_sq
 import Mathlib
 import Definitions.Def_ChapterSpinStatistics
 open BookProof.SpinStatistics

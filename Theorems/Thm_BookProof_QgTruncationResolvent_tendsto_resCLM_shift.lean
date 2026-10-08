@@ -13,8 +13,6 @@ import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterStoneResolvent
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Filter Topology
@@ -24,6 +22,8 @@ open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOut
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 
 theorem BookProof.QgTruncationResolvent.tendsto_resCLM_shift (T : UnboundedSelfAdjoint F) (S : ℕ → UnboundedSelfAdjoint F)

@@ -1,13 +1,14 @@
 -- Generated from ChapterBrstTruncationLeakage.lean — theorem BookProof.BrstLeakage.norm_leakageIter
 import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
+import Theorems.Thm_BookProof_BrstLeakage_leakageIter_succ
 open BookProof.BrstLeakage
-
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 open NormedSpace
 
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 
 theorem BookProof.BrstLeakage.norm_leakageIter {B : ℕ → E →L[ℂ] E} (hB : ∀ i, IsSelfAdjoint (B i)) (τ : ℝ) (x : E) :

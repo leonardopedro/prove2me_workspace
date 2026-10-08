@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterObservableExpectation
 import Theorems.Thm_BookProof_ChapterObservableExpectation_prob_weighted_sum_mem_convexHull
+import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_sum_one
 open BookProof.ChapterObservableExpectation
 
 

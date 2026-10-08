@@ -8,12 +8,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*}
 
 
 theorem BookProof.NavierStokesFlow.MomentumPerturbation.pertHam_commForm_bound (c : ι → ℝ) (hc : ∀ k, 1 ≤ c k) (u w : maxDom c)

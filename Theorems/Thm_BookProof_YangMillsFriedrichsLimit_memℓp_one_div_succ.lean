@@ -5,10 +5,10 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 open BookProof.YangMillsFriedrichsLimit
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
-theorem BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by sorry
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+theorem BookProof.YangMillsFriedrichsLimit.memLp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by sorry

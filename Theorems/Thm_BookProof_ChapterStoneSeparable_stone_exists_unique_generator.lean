@@ -12,15 +12,15 @@ open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneTheorem
 open BookProof.ChapterStoneSeparable
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-  [TopologicalSpace.SeparableSpace H]
-
 
 open scoped InnerProductSpace
 open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+  [TopologicalSpace.SeparableSpace H]
 
 theorem BookProof.ChapterStoneSeparable.stone_exists_unique_generator (G : WeakMeasurableUnitaryGroup H) :
     ∃! T : UnboundedSelfAdjoint H, ∀ t : ℝ, T.stoneU t = G.U t := by sorry

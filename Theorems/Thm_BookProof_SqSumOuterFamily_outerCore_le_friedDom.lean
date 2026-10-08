@@ -18,8 +18,6 @@ open BookProof.QgHermiteOscillator
 open BookProof.QgOuterFockFL
 open BookProof.SqSumOuterFamily
 
-variable (dim : ℕ → ℕ)
-
 
 
 open Finset MvPolynomial
@@ -31,5 +29,7 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
 
 theorem BookProof.SqSumOuterFamily.outerCore_le_friedDom : outerCore dim ≤ outerFriedDom dim := by sorry

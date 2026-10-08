@@ -165,6 +165,10 @@ general form of `bornFiber_card`: the `{±1}ⁿ` sign gauge acts freely on the
 positive support (and trivially at vanishing coordinates), so each fiber is a
 full orbit of the sign group restricted to that support.
 -/
-
+theorem bornFiber_card_general {p : ↥(stdSimplex ℝ (Fin n))} :
+    Nat.card ↥(bornMapSphere n ⁻¹' {p}) = 2 ^ (posSupport (p : Fin n → ℝ)).card := by
+  convert Nat.card_congr ( bornFiberEquivGeneral.symm ) using 1
+  rw [ Nat.card_eq_fintype_card, Fintype.card_pi ]
+  norm_num
 
 end BookProof.ChapterFreeFieldBornFiberCardGeneral

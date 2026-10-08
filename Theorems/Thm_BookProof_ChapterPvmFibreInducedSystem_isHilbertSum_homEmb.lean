@@ -10,10 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterPvmFibreInducedSystem
 open BookProof.ChapterPvmFibreInducedSystem
 
-variable {X : Type*} [MeasurableSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable {P : Pvm X H} {S : Set H} {μ : Measure X}
-
 
 open MeasureTheory
 open scoped InnerProductSpace
@@ -24,6 +20,10 @@ open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterPvmInducedSystem
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterL2FibreSum
 open BookProof.ChapterHilbertSumIntertwine
 
+variable {X : Type*} [MeasurableSpace X]
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable {P : Pvm X H} {S : Set H} {μ : Measure X}
 
 theorem BookProof.ChapterPvmFibreInducedSystem.isHilbertSum_homEmb (hS : OrthCyclicFamily P S)
     (hdense : Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H))

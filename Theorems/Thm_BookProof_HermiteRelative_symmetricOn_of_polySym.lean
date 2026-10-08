@@ -16,9 +16,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.YangMillsHermite
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -29,8 +26,9 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 theorem BookProof.HermiteRelative.symmetricOn_of_polySym {T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ}
     (hT : BookProof.YangMillsHermite.PolySym T) :
     SymmetricOn (polyGaussCore (d := d))

@@ -10,8 +10,6 @@ import Definitions.Def_ChapterA3n
 open BookProof.ChapterA3n
 open BookProof.FockQuadratic
 
-variable {ι : Type*}
-
 
 open scoped ENNReal
 
@@ -20,6 +18,8 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
 noncomputable section
+
+variable {ι : Type*}
 
 
 theorem BookProof.FockQuadratic.sig_tgt {ω : ι → ℝ} {P Q a : Idx ι} (h : P ≤ a) :

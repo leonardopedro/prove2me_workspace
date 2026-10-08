@@ -15,6 +15,15 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 open BookProof.TensorCore
 open BookProof.FockStatistics
 
+
+
+open scoped TensorProduct ENNReal
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
+open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
+
+noncomputable section
+
 variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
@@ -25,15 +34,6 @@ variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
   (D₀ : Submodule ℂ Hs.carrier)
-
-
-
-open scoped TensorProduct ENNReal
-open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
-open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
-open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
-
-noncomputable section
 
 theorem BookProof.FockStatistics.fermionicFockOp_single (n : ℕ)
     (u : redDom (fermionicProj Hs n) (sectorDom Hs D n)) :

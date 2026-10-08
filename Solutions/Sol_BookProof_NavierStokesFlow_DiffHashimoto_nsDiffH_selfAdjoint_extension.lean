@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_nsDiffH_symmetricOn
+import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_domain_dense
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core
 open BookProof.NavierStokesFlow
@@ -27,9 +28,6 @@ variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
 theorem solution :
     ∃ (Dom : Submodule ℂ (L2d 3)) (G : Dom →ₗ[ℂ] L2d 3),
       IsSelfAdjointExtension ((polyGaussCore (d := 3)).subtype.comp (nsDiffH A c)) G :=

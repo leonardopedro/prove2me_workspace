@@ -5,9 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAtomicDiagonalModel
 open BookProof.ChapterAtomicDiagonalModel
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
-  (mu : Measure α) [IsFiniteMeasure mu]
-
 
 noncomputable section
 
@@ -15,6 +12,9 @@ open MeasureTheory
 
 
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterLinftyMultiplication
+
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
+  (mu : Measure α) [IsFiniteMeasure mu]
 
 
 theorem BookProof.ChapterAtomicDiagonalModel.coe_atomBasis (hpure : mu (atomSet mu)ᶜ = 0) :

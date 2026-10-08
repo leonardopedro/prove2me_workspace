@@ -12,9 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronDensitizedTransfer
 open BookProof.ScalaronDensitized
 
-variable (M alpha : ℝ)
-variable {X : Type*} [MeasurableSpace X]
-
 
 
 open MeasureTheory Set Filter Topology
@@ -25,6 +22,9 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
+variable {X : Type*} [MeasurableSpace X]
 
 theorem BookProof.ScalaronDensitized.integral_norm_sq_eq_norm_sq (mu : Measure X) (f : Lp ℂ 2 mu) :
     ∫ a, ‖(f : X → ℂ) a‖ ^ 2 ∂mu = ‖f‖ ^ 2 := by sorry

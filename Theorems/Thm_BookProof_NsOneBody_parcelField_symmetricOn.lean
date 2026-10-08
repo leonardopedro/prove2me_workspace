@@ -22,9 +22,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -35,6 +32,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.parcelField_symmetricOn (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (r : Fin 7) :
     SymmetricOn (polyGaussCore (d := n * 6))

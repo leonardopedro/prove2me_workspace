@@ -16,8 +16,6 @@ open BookProof.MixedLinearEsa
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -29,6 +27,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadratic.pgFunT_apply_zero (a k : Vd d) (x : Vd d) : pgFunT a k 0 x = 0 := by sorry

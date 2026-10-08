@@ -8,8 +8,6 @@ open BookProof.ChapterSoftmaxSharpness
 open ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
-variable {d : ℕ}
-
 
 open scoped BigOperators
 
@@ -17,6 +15,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterLayerNorm.scoreSoftmax_layerNorm_ge {m : ℕ} {beta : ℝ} (hb : 0 ≤ beta) (hd : 0 < d)

@@ -12,9 +12,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 open BookProof.ScalaronFiberFL
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (W : WallPot) (s : ℝ)
+open BookProof.ScalaronFiberFL.WallPot
 
 
 
@@ -26,5 +24,8 @@ open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.SchrodingerCutoff BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (W : WallPot) (s : ℝ)
 
 theorem BookProof.ScalaronFiberFL.WallPot.one_le_pot (hs : 1 ≤ s) (x : ℝ) : 1 ≤ W.pot s x := by sorry

@@ -17,10 +17,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.QgTimeStepping
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-variable {ι : Type*}
-
 
 
 open Filter Topology
@@ -31,6 +27,10 @@ open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+variable (T : UnboundedSelfAdjoint H)
+variable {ι : Type*}
 
 theorem BookProof.QgTimeStepping.qgOuterFock_fullyDiscrete_convergence (W : WallPot) (Q : QgModeData ι) (Λ : ℕ → Set ι)
     (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

@@ -18,8 +18,6 @@ import Definitions.Def_ChapterNsOneBodyDGamma
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-
 
 
 open MvPolynomial
@@ -30,6 +28,8 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
 
 theorem BookProof.NsOneBody.quadForm_add {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
     {D' : Submodule ℂ F} (A B : D' →ₗ[ℂ] F) (x : D') :

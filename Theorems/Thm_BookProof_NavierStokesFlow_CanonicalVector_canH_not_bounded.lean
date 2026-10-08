@@ -10,14 +10,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.CanonicalVector.canH_not_bounded (hA : A 0 0 ≠ 0) (C : ℝ) :
     ∃ x : lpFiniteModes Vel, ‖(x : L2I Vel)‖ = 1

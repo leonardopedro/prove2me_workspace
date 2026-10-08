@@ -15,8 +15,6 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 open scoped ENNReal
 
@@ -24,9 +22,8 @@ open scoped ENNReal
 
 open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian SignedShift
 
-set_option maxHeartbeats 2000000 in
--- The four hopping families expand into twenty-odd ladder terms whose coordinatewise
--- matching is a single large `ring` normalisation; the default budget is not enough.
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
+
 theorem BookProof.NavierStokesFlow.CanonicalVector.velH_crd (x : lpFiniteModes Vel) (γ : Vel) :
     ((velH A c (Submodule.inclusion (finiteModes_le_maxDom (velSym (velMu A c))) x) :
         L2I Vel) : Vel → ℂ) γ

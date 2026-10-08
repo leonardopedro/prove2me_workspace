@@ -26,7 +26,5 @@ theorem solution {D : Submodule ℂ F} {n m : ℕ}
     (hB : ∀ a, SymmetricOn D (D.subtype.comp (Bf a))) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F),
       IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
-  ,
-        IsPositiveSelfAdjointExtension (weylOp pi Bf) A :=
-    friedrichs_extension_exists
-      ⟨D, weylOp pi Bf, weylOpDom_symmet
+  friedrichs_extension_exists
+      ⟨D, weylOp pi Bf, weylOpDom_symmetricOn hpi hB, weylOpDom_quadForm_nonneg hpi hB⟩ hdense

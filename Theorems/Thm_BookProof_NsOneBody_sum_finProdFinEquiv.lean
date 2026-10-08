@@ -17,9 +17,6 @@ import Mathlib
 import Definitions.Def_ChapterNsOneBodyDGamma
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.sum_finProdFinEquiv {M : Type*} [AddCommMonoid M] {a b : ℕ} (f : Fin (a * b) → M) :
     ∑ x, f x = ∑ p : Fin a, ∑ i : Fin b, f (finProdFinEquiv (p, i)) := by sorry

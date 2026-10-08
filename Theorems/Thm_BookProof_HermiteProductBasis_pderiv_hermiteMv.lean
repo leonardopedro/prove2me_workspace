@@ -6,13 +6,13 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.HermiteProductBasis
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial BookProof.HermiteCore BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteProductBasis.pderiv_hermiteMv (i : Fin d) (a : Fin d →₀ ℕ) :

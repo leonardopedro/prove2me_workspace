@@ -10,9 +10,6 @@ open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.QgTimeIndependent
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {ι : Type*}
-
 
 
 open Filter Topology
@@ -20,6 +17,9 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {ι : Type*}
 
 theorem BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime (W : WallPot) (Q : QgModeData ι)
     (Λ : ℕ → Set ι) (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

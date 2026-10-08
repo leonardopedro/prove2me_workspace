@@ -4,13 +4,13 @@ import Mathlib
 import Definitions.Def_ChapterMixedPrior
 open BookProof.ChapterMixedPrior
 
-variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
-
 
 open MeasureTheory ProbabilityTheory
 
 
 open BookProof.ChapterAtomicDecomposition
+
+variable {X : Type*} [MeasurableSpace X] [MeasurableSingletonClass X]
 
 
 theorem BookProof.ChapterMixedPrior.exists_continuous_prior_beyond_atomic (mu : Measure X) [IsProbabilityMeasure mu]

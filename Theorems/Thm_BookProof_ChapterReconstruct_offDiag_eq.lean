@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterReconstruct
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterReconstruct.offDiag_eq (U : Fin n → Fin n → ℂ) (a : Fin n) (Ψ : Fin n → ℂ) :

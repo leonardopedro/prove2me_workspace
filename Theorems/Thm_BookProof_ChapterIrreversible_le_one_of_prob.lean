@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterIrreversible
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterIrreversible.le_one_of_prob (p : Fin n → ℝ) (hnn : ∀ a, 0 ≤ p a)

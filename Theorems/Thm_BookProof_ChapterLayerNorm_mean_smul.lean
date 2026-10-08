@@ -7,8 +7,6 @@ import Definitions.Def_ChapterTotalVariance
 open ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
-variable {d : ℕ}
-
 
 open scoped BigOperators
 
@@ -16,6 +14,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {d : ℕ}
 
 
 theorem BookProof.ChapterLayerNorm.mean_smul (a : ℝ) (x : Fin d → ℝ) : mean (fun i => a * x i) = a * mean x := by sorry

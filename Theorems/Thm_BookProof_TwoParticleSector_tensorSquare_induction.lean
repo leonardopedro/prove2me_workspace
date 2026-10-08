@@ -7,16 +7,16 @@ import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 open BookProof.TwoParticleSector
 
-variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
-variable {X}
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 
 noncomputable section
+
+variable (X : Type) [NormedAddCommGroup X] [InnerProductSpace ℂ X]
+variable {X}
+variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TwoParticleSector.tensorSquare_induction {Y : Type} [NormedAddCommGroup Y] [InnerProductSpace ℂ Y]
     {P : Y ⊗[ℂ] (Y ⊗[ℂ] ℂ) → Prop} (hzero : P 0)

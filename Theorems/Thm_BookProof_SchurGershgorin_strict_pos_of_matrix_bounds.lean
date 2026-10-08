@@ -14,8 +14,6 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.SchurGershgorin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -24,6 +22,8 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.TruncationGapLift
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.SchurGershgorin.strict_pos_of_matrix_bounds (b : HilbertBasis ℕ ℂ F)

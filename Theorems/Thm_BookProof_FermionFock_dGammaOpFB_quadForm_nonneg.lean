@@ -16,8 +16,6 @@ open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FermionFock
 
-variable {ι : Type*} [DecidableEq ι]
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -27,6 +25,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FermionFock.dGammaOpFB_quadForm_nonneg {ε : ℕ ≃ FConf} {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col)
     (x : finiteModeDomain (l2BasisN ε)) : 0 ≤ quadForm (dGammaOpFB ε col) x := by sorry

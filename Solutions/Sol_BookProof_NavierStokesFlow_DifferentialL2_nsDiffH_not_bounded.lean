@@ -1,9 +1,9 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_not_bounded
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_intertwined_canH
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_canH_not_bounded
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -34,4 +34,6 @@ theorem solution (hA : A 0 0 ≠ 0) (K : ℝ) :
   refine ⟨embedCore x, ?_, ?_⟩
   · rw [embedCore_coe, velUnitary.norm_map, hx1]
   · have h := intertwined_canH A (fun j => c j / Real.sqrt 2) x
-    rw [hc] at
+    rw [hc] at h
+    rw [h, embedCore_coe, velUnitary.norm_map]
+    exact hx2

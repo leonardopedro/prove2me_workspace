@@ -7,12 +7,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*}
 
 
 theorem BookProof.NavierStokesFlow.MomentumPerturbation.rankTwo_symmetric (u w x y : L2I ι) :

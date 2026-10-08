@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesMomentumPerturbation.lean — solution of BookProof.NavierStokesFlow.MomentumPerturbation.eState_mem_maxDom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumPerturbation
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 

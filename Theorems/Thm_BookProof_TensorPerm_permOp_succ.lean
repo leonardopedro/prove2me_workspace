@@ -8,14 +8,14 @@ open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.TensorCore
 open BookProof.TensorPerm
 
-variable (E : BookProof.TensorCore.IPSpace)
-
 
 
 open scoped TensorProduct
 open BookProof.TensorCore BookProof.GroupAverage
 
 noncomputable section
+
+variable (E : BookProof.TensorCore.IPSpace)
 
 theorem BookProof.TensorPerm.permOp_succ (n : ℕ) (σ : Equiv.Perm (Fin (n + 1))) :
     permOp E (n + 1) σ = (swap0 E (n + 1) (Equiv.Perm.decomposeFin σ).1).trans

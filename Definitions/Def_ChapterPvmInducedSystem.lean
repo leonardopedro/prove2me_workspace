@@ -1,11 +1,14 @@
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_univ
 
+import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
+
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterHilbertSumIntertwine
 import Definitions.Def_ChapterMackeyQuasiInvariant
 import Definitions.Def_ChapterPvmMeasure
 import Mathlib
+import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine
 
 
 /-!
@@ -92,36 +95,196 @@ noncomputable def conjPvm (P : Pvm X H) (W : K ≃ₗᵢ[ℂ] H) : Pvm X K where
 
 variable [CompleteSpace H]
 
+/-- The model map of the piece of `ψ` takes values in the cyclic subspace of `ψ`. -/
+theorem swCLM_mem_cyclicSubspace (P : Pvm X H) (ψ : H) (f : Lp ℂ 2 (pvmMeasure P ψ)) :
+    swCLM P ψ f ∈ cyclicSubspace P ψ := by
+  refine Lp.induction (p := 2) (by simp)
+    (fun f => swCLM P ψ f ∈ cyclicSubspace P ψ) ?_ ?_ ?_ f
+  · intro c F hF hμF
+    rw [Lp.simpleFunc.coe_indicatorConst]
+    have hcsmul : indicatorConstLp 2 hF hμF.ne c
+        = c • indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ) := by
+      refine Lp.ext ?_
+      filter_upwards [indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := F)
+          (hs := hF) (hμs := hμF.ne) (c := c),
+        Lp.coeFn_smul c (indicatorConstLp 2 hF (measure_ne_top (pvmMeasure P ψ) F) (1 : ℂ)),
+        indicatorConstLp_coeFn (μ := pvmMeasure P ψ) (p := 2) (s := F)
+          (hs := hF) (hμs := measure_ne_top (pvmMeasure P ψ) F) (c := (1 : ℂ))] with x e1 e2 e3
+      simp only [Pi.smul_apply] at e2
+      rw [e1, e2, e3]
+      by_cases hx : x ∈ F <;> simp [hx]
+    rw [hcsmul, map_smul, swCLM_indicator P ψ hF]
+    exact Submodule.smul_mem _ _
+      (Submodule.le_topologicalClosure _ (Submodule.subset_span ⟨F, hF, rfl⟩))
+  · intro g h hg hh _ hPg hPh
+    rw [map_add]
+    exact Submodule.add_mem _ hPg hPh
+  · exact IsClosed.preimage (swCLM P ψ).continuous
+      (Submodule.isClosed_topologicalClosure _)
 
+/-- The range of the model map of the piece of `ψ` is exactly the cyclic subspace of `ψ`. -/
+theorem range_swIsom (P : Pvm X H) (ψ : H) :
+    LinearMap.range (swIsom P ψ).toLinearMap = cyclicSubspace P ψ := by
+  refine le_antisymm ?_ ?_
+  · rintro _ ⟨f, rfl⟩
+    exact swCLM_mem_cyclicSubspace P ψ f
+  · have hclosed : IsClosed (Set.range (swIsom P ψ)) :=
+      (swIsom P ψ).isometry.isClosedEmbedding.isClosed_range
+    have hle : (Submodule.span ℂ (pvmOrbit P ψ))
+        ≤ LinearMap.range (swIsom P ψ).toLinearMap := by
+      refine Submodule.span_le.mpr ?_
+      rintro _ ⟨E, hE, rfl⟩
+      exact ⟨indicatorConstLp 2 hE (measure_ne_top (pvmMeasure P ψ) E) (1 : ℂ),
+        swCLM_indicator P ψ hE⟩
+    intro v hv
+    have hv' : v ∈ closure ((Submodule.span ℂ (pvmOrbit P ψ) : Submodule ℂ H) : Set H) := by
+      have : v ∈ (((Submodule.span ℂ (pvmOrbit P ψ)).topologicalClosure : Submodule ℂ H) :
+          Set H) := hv
+      rwa [Submodule.topologicalClosure_coe] at this
+    exact closure_minimal (fun w hw => hle hw) hclosed hv'
 
-
-
-
+theorem swIsom_mem_cyclicSubspace (P : Pvm X H) (ψ : H) (f : Lp ℂ 2 (pvmMeasure P ψ)) :
+    swIsom P ψ f ∈ cyclicSubspace P ψ :=
+  swCLM_mem_cyclicSubspace P ψ f
 
 /-! ## Orthogonality of the pieces -/
 
+omit [CompleteSpace H] in
+/-- Two cyclic-orthogonal vectors generate orthogonal cyclic subspaces. -/
+theorem cyclicSubspace_le_orthogonal {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ) :
+    cyclicSubspace P ψ ≤ (cyclicSubspace P φ)ᗮ := by
+  refine Submodule.topologicalClosure_minimal _ ?_ (Submodule.isClosed_orthogonal _)
+  rw [Submodule.span_le]
+  rintro _ ⟨E, hE, rfl⟩
+  -- `P(E) ψ` is orthogonal to the whole cyclic subspace of `φ`
+  have hstep : cyclicSubspace P φ ≤ (Submodule.span ℂ {P.p E ψ})ᗮ := by
+    refine Submodule.topologicalClosure_minimal _ ?_ (Submodule.isClosed_orthogonal _)
+    rw [Submodule.span_le]
+    rintro _ ⟨F, hF, rfl⟩
+    rw [SetLike.mem_coe, Submodule.mem_orthogonal]
+    intro w hw
+    rw [Submodule.mem_span_singleton] at hw
+    obtain ⟨c, rfl⟩ := hw
+    rw [inner_smul_left, orthOrbit_pairs h hE hF, mul_zero]
+  rw [SetLike.mem_coe, Submodule.mem_orthogonal]
+  intro w hw
+  have hz := (Submodule.mem_orthogonal _ w).mp (hstep hw) (P.p E ψ)
+    (Submodule.mem_span_singleton_self _)
+  have hc := congrArg (starRingEnd ℂ) hz
+  rwa [inner_conj_symm, map_zero] at hc
 
+theorem inner_swIsom_eq_zero {P : Pvm X H} {ψ φ : H} (h : OrthOrbit P ψ φ)
+    (u : Lp ℂ 2 (pvmMeasure P ψ)) (v : Lp ℂ 2 (pvmMeasure P φ)) :
+    ⟪swIsom P ψ u, swIsom P φ v⟫_ℂ = 0 := by
+  have hu : swIsom P ψ u ∈ (cyclicSubspace P φ)ᗮ :=
+    cyclicSubspace_le_orthogonal h (swIsom_mem_cyclicSubspace P ψ u)
+  exact (Submodule.mem_orthogonal' _ _).mp hu _ (swIsom_mem_cyclicSubspace P φ v)
 
-
-
-
+theorem orthogonalFamily_swIsom {P : Pvm X H} {S : Set H} (hS : OrthCyclicFamily P S) :
+    OrthogonalFamily ℂ (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H)))
+      (fun ψ : S => swIsom P (ψ : H)) := by
+  intro x y hxy u v
+  exact inner_swIsom_eq_zero
+    (hS.orth (x : H) x.2 (y : H) y.2 (Subtype.coe_injective.ne hxy)) u v
 
 /-! ## The Hilbert sum -/
 
-
+theorem isHilbertSum_swIsom {P : Pvm X H} {S : Set H} (hS : OrthCyclicFamily P S)
+    (hdense : Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H)) :
+    IsHilbertSum ℂ (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H)))
+      (fun ψ : S => swIsom P (ψ : H)) := by
+  refine IsHilbertSum.mk (orthogonalFamily_swIsom hS) ?_
+  have hsub : Submodule.span ℂ (familyOrbit P S)
+      ≤ ⨆ ψ : S, LinearMap.range (swIsom P (ψ : H)).toLinearMap := by
+    rw [Submodule.span_le]
+    rintro v hv
+    obtain ⟨ψ, hψ, hv⟩ := Set.mem_iUnion₂.mp hv
+    obtain ⟨E, hE, rfl⟩ := hv
+    refine Submodule.mem_iSup_of_mem ⟨ψ, hψ⟩ ?_
+    exact ⟨indicatorConstLp 2 hE (measure_ne_top (pvmMeasure P ψ) E) (1 : ℂ),
+      swCLM_indicator P ψ hE⟩
+  intro v _
+  have hv : v ∈ closure ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H) :=
+    hdense v
+  have hmono : closure ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H)
+      ⊆ closure ((⨆ ψ : S, LinearMap.range (swIsom P (ψ : H)).toLinearMap : Submodule ℂ H) :
+        Set H) := closure_mono (fun w hw => hsub hw)
+  have := hmono hv
+  rwa [← Submodule.topologicalClosure_coe] at this
 
 /-! ## The headline: the direct-sum model -/
 
-
+/-- **Every projection-valued measure is a direct sum of multiplication systems.**  There
+is a family `S` of unit vectors and isometries `Vψ : L²(X, μ_ψ) → H`, `μ_ψ = ‖P(·)ψ‖²`,
+which exhibit `H` as the Hilbert sum of the fibres `L²(X, μ_ψ)` and carry multiplication by
+the indicator of `E` to `P(E)`. -/
+theorem pvm_direct_sum_model (P : Pvm X H) :
+    ∃ (S : Set H) (V : ∀ ψ : S, Lp ℂ 2 (pvmMeasure P (ψ : H)) →ₗᵢ[ℂ] H),
+      (∀ ψ ∈ S, ‖ψ‖ = 1) ∧
+      IsHilbertSum ℂ (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) V ∧
+      (∀ (ψ : S) (E : Set X) (hE : MeasurableSet E) (f : Lp ℂ 2 (pvmMeasure P (ψ : H))),
+        V ψ (proj (pvmMeasure P (ψ : H)) hE f) = P.p E (V ψ f)) := by
+  obtain ⟨S, hS, hdense⟩ := exists_orthCyclicFamily P
+  exact ⟨S, fun ψ => swIsom P (ψ : H), hS.unit, isHilbertSum_swIsom hS hdense,
+    fun ψ E hE f => swCLM_proj P (ψ : H) hE f⟩
 
 /-! ## The fibrewise form: a single induced system -/
 
+/-- **The unitary of the Hilbert sum carries `P(E)` to fibrewise multiplication by the
+indicator of `E`.**  Multiplication by an indicator is a contraction of each fibre and is
+carried by the model of the piece to `P(E)`, so the general fibrewise principle of
+`BookProof.ChapterHilbertSumIntertwine` applies. -/
+theorem linearIsometryEquiv_swIsom_pvm {P : Pvm X H} {S : Set H} (hS : OrthCyclicFamily P S)
+    (hdense : Dense ((Submodule.span ℂ (familyOrbit P S) : Submodule ℂ H) : Set H))
+    {E : Set X} (hE : MeasurableSet E) (v : H) (ψ : S) :
+    (isHilbertSum_swIsom hS hdense).linearIsometryEquiv (P.p E v) ψ
+      = proj (pvmMeasure P (ψ : H)) hE
+          ((isHilbertSum_swIsom hS hdense).linearIsometryEquiv v ψ) :=
+  linearIsometryEquiv_intertwine (isHilbertSum_swIsom hS hdense) (P.p E)
+    (fun ψ : S => projL (pvmMeasure P (ψ : H)) hE)
+    (fun ψ u => norm_proj_le (pvmMeasure P (ψ : H)) hE u)
+    (fun ψ u => swCLM_proj P (ψ : H) hE u) v ψ
 
+/-- **The induced system with a multiplicity space.**  For every projection-valued measure
+`P` on a complete space there is a multiplicity index set `S` of unit vectors, with fibre
+measures `μ_ψ = ‖P(·)ψ‖²`, and a single unitary
+`W : H ≃ ℓ²-⨁_{ψ ∈ S} L²(X, μ_ψ)` under which `P(E)` becomes multiplication by the
+indicator of `E` **in every fibre at once**.  This is the assembly of the cyclic pieces of
+`BookProof.ChapterPvmCyclicDecomposition` into one system. -/
+theorem pvm_induced_system (P : Pvm X H) :
+    ∃ (S : Set H) (W : H ≃ₗᵢ[ℂ] lp (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) 2),
+      (∀ ψ ∈ S, ‖ψ‖ = 1) ∧
+      (∀ (E : Set X) (hE : MeasurableSet E) (v : H) (ψ : S),
+        W (P.p E v) ψ = proj (pvmMeasure P (ψ : H)) hE (W v ψ)) := by
+  obtain ⟨S, hS, hdense⟩ := exists_orthCyclicFamily P
+  exact ⟨S, (isHilbertSum_swIsom hS hdense).linearIsometryEquiv, hS.unit,
+    fun E hE v ψ => linearIsometryEquiv_swIsom_pvm hS hdense hE v ψ⟩
 
+/-- The transported projection-valued measure of the induced system: `W P(·) W⁻¹` is a
+projection-valued measure on the `ℓ²`-sum of the fibres, acting fibrewise as multiplication
+by the indicator. -/
+theorem pvm_induced_system_conj (P : Pvm X H) :
+    ∃ (S : Set H) (W : H ≃ₗᵢ[ℂ] lp (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) 2),
+      (∀ ψ ∈ S, ‖ψ‖ = 1) ∧
+      (∀ (E : Set X) (hE : MeasurableSet E)
+          (w : lp (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) 2) (ψ : S),
+        (conjPvm P W.symm).p E w ψ = proj (pvmMeasure P (ψ : H)) hE (w ψ)) := by
+  obtain ⟨S, W, hunit, hfib⟩ := pvm_induced_system P
+  refine ⟨S, W, hunit, ?_⟩
+  intro E hE w ψ
+  have h : (conjPvm P W.symm).p E w = W (P.p E (W.symm w)) := by
+    simp [conjPvm_apply]
+  rw [h, hfib E hE (W.symm w) ψ, LinearIsometryEquiv.apply_symm_apply]
 
-
-
-
-
+/-- **The separable case**: the multiplicity index set is countable. -/
+theorem pvm_induced_system_separable [TopologicalSpace.SeparableSpace H] (P : Pvm X H) :
+    ∃ (S : Set H) (W : H ≃ₗᵢ[ℂ] lp (fun ψ : S => Lp ℂ 2 (pvmMeasure P (ψ : H))) 2),
+      S.Countable ∧ (∀ ψ ∈ S, ‖ψ‖ = 1) ∧
+      (∀ (E : Set X) (hE : MeasurableSet E) (v : H) (ψ : S),
+        W (P.p E v) ψ = proj (pvmMeasure P (ψ : H)) hE (W v ψ)) := by
+  obtain ⟨S, hS, hdense⟩ := exists_orthCyclicFamily P
+  exact ⟨S, (isHilbertSum_swIsom hS hdense).linearIsometryEquiv,
+    countable_of_orthCyclicFamily hS, hS.unit,
+    fun E hE v ψ => linearIsometryEquiv_swIsom_pvm hS hdense hE v ψ⟩
 
 end BookProof.ChapterPvmInducedSystem

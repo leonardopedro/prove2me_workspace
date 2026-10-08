@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterIPin
 open BookProof.ChapterIPin
 
-variable {P V : Type*} [Group P] [AddCommGroup V] (Λ : P →* Multiplicative (AddAut V))
-
 
 
 open Multiplicative
+
+variable {P V : Type*} [Group P] [AddCommGroup V] (Λ : P →* Multiplicative (AddAut V))
 
 
 theorem BookProof.ChapterIPin.ipin_right (Λ : P →* Multiplicative (AddAut V)) (x y : IPin Λ) :

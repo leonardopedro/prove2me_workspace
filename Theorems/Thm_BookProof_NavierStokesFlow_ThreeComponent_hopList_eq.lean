@@ -3,19 +3,19 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
-open BookProof.NavierStokesFlow.SignedShift
+open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift.SignedHop
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 
 open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
+open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian SignedShift
+
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.ThreeComponent.hopList_eq : hopList A c =
     [diagHop A c 0, shearHop A c 0,

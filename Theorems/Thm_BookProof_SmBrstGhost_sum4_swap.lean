@@ -7,15 +7,15 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {N : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {N : ℕ}
 
 theorem BookProof.SmBrstGhost.sum4_swap (F : Fin N → Fin N → Fin N → Fin N → Module.End ℂ (FermiFock N)) :
     ∑ k : Fin N, ∑ l : Fin N, ∑ i : Fin N, ∑ j : Fin N, F i j k l

@@ -5,13 +5,13 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.GaussCoordCombo
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.GaussCoordCombo.gaussInt_leibniz_prime (i : Fin d) (P Q : MvPolynomial (Fin d) ℂ) :

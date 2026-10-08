@@ -19,10 +19,6 @@ open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
 open BookProof.QgTruncationResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {ι : Type*}
-variable (W : WallPot) (Q : QgModeData ι)
-
 
 
 open Filter Topology
@@ -33,6 +29,10 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+variable {ι : Type*}
+variable (W : WallPot) (Q : QgModeData ι)
 
 theorem BookProof.QgTruncationResolvent.qgOuterFock_truncation_flow_convergence (Λ : ℕ → Set ι)
     (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) :

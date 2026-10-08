@@ -10,9 +10,6 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.CoreBounds
 
-variable {ι : Type*} {c : ι → ℝ}
-variable (H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι) (A : ℝ)
-
 
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -21,6 +18,9 @@ open Filter Topology
 
 noncomputable section
 
+variable {ι : Type*} {c : ι → ℝ}
+
+variable (H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι) (A : ℝ)
 
 theorem BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm
     (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) (H₀ : lpFiniteModes ι →ₗ[ℂ] L2I ι) (A : ℝ)

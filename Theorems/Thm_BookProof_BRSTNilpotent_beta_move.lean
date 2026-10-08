@@ -3,10 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BRSTNilpotent
 
+
+
 variable {R : Type*} [Ring R] [Algebra ℝ R]
 variable {n : ℕ}
-
-
 
 
 theorem BookProof.BRSTNilpotent.beta_move (χ β : Fin n → R) (hCAR : GhostCAR χ β) (e d g : Fin n) :

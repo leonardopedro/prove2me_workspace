@@ -9,11 +9,11 @@ open BookProof.ChapterH5
 open BookProof.ChapterH9
 open BookProof.YangMillsFriedrichsLimit
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.YangMillsFriedrichsLimit.sirk_compression_tendsto (A : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F)) (u : F) :

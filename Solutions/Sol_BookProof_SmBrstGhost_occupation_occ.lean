@@ -1,6 +1,7 @@
 -- Generated from ChapterSmBrstGhost.lean — solution of BookProof.SmBrstGhost.occupation_occ
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
+import Theorems.Thm_BookProof_SmCar_occupation_apply
 open BookProof.SmBrstGhost
 
 

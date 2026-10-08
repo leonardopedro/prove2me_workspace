@@ -11,9 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -24,6 +21,7 @@ open BookProof.HyperbolicQuadratic
 
 noncomputable section
 
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions of the Gauss–polynomial core make this defeq check expensive
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}
+variable {d : ℕ}
+
 theorem BookProof.HermiteRelative.posL_symmetric (i : Fin d) : SymmetricOn (polyGaussCore (d := d)) (posL i) := by sorry

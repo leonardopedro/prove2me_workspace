@@ -14,9 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.SmFarisLavine
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable [CompleteSpace F]
-
 
 
 open MvPolynomial
@@ -27,6 +24,9 @@ open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable [CompleteSpace F]
 
 theorem BookProof.SmFarisLavine.abs_re_inner_smPi_smMom_le (m : Fin 40) (x : polyGaussCore (d := 163)) :
     |(inner ℂ ((smPi m x : polyGaussCore (d := 163)) : L2d 163)

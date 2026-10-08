@@ -6,8 +6,6 @@ import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterSirkTrotterKato
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 noncomputable section
 
@@ -15,6 +13,8 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterUnitaryTransport
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.ChapterSirkTrotterKato.flow_transfer_of_strong_tendsto {A : ℕ → H →L[ℂ] H} {Alim : H →L[ℂ] H}

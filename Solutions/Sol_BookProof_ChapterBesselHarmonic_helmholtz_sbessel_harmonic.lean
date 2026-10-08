@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterBesselHarmonic
 import Theorems.Thm_BookProof_ChapterBesselHarmonic_reduced_radial_sbessel
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_helmholtz_radial_mul_harmonic
+import Theorems.Thm_BookProof_ChapterSphericalBesselODE_contDiffAt_sbessel
 open BookProof.ChapterBesselHarmonic
 
 

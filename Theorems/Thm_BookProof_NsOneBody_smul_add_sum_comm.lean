@@ -17,9 +17,6 @@ import Mathlib
 import Definitions.Def_ChapterNsOneBodyDGamma
 open BookProof.NsOneBody
 
-variable {D : Submodule ℂ (L2d 6)}
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable {D : Submodule ℂ (L2d 6)}
+variable {n : ℕ}
 
 theorem BookProof.NsOneBody.smul_add_sum_comm {M : Type*} [AddCommMonoid M] [Module ℂ M] {ι : Type*} [Fintype ι]
     (c : ℂ) (A C : ι → M) : c • ((∑ p, A p) + ∑ p, C p) = ∑ p, c • (A p + C p) := by sorry

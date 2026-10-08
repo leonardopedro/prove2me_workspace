@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignAction
 open BookProof.ChapterFreeFieldBornSignAction
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSignGauge
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignAction.boolFlip_free_of_pos {b : Fin n → Bool} {x : EuclideanSpace ℝ (Fin n)}

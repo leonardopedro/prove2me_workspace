@@ -150,9 +150,23 @@ def wshift : L2 ι →L[ℂ] L2 ι :=
 
 @[simp] theorem wshift_apply (f : L2 ι) (i : ι) : (wshift w e hw hinj f) i = w i * f (e i) := rfl
 
+theorem wshift_norm_le (f : L2 ι) : ‖wshift w e hw hinj f‖ ≤ ‖f‖ := wshiftL_norm_le w e hw hinj f
 
-
-
+/-- If the weight has modulus one everywhere and the reindexing is the identity, the
+weighted shift is an isometry. -/
+theorem wshift_norm_eq (hw1 : ∀ i, ‖w i‖ = 1) (hid : e = id) (f : L2 ι) :
+    ‖wshift w e hw hinj f‖ = ‖f‖ := by
+  have hp : (0 : ℝ) < ((2 : ℝ≥0∞)).toReal := by norm_num
+  have h1 := lp.norm_rpow_eq_tsum hp (wshift w e hw hinj f)
+  have h2 := lp.norm_rpow_eq_tsum hp f
+  rw [show ((2 : ℝ≥0∞)).toReal = 2 by norm_num] at h1 h2
+  have hpt : ∀ i, ‖(wshift w e hw hinj f) i‖ ^ (2 : ℝ) = ‖f i‖ ^ (2 : ℝ) := by
+    intro i
+    rw [wshift_apply, norm_mul, hw1, one_mul, hid, id_eq]
+  refine le_antisymm (le_of_rpow_two_le (norm_nonneg f) ?_)
+    (le_of_rpow_two_le (norm_nonneg _) ?_)
+  · rw [h1, h2]; exact le_of_eq (tsum_congr hpt)
+  · rw [h1, h2]; exact le_of_eq (tsum_congr fun i => (hpt i).symm)
 
 end WeightedShift
 
@@ -205,11 +219,49 @@ def brstTerm (sym : ℕ → BoseConf → ℂ) (hsym : ∀ a n, ‖sym a n‖ ≤
     (brstTerm sym hsym a f) p =
       (if a ∈ p.2 then sym a p.1 * jwSign a p.2 else 0) * f (p.1, p.2.erase a) := rfl
 
+theorem brstTerm_norm_le {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a n, ‖sym a n‖ ≤ 1) (a : ℕ)
+    (f : QGH) : ‖brstTerm sym hsym a f‖ ≤ ‖f‖ :=
+  wshift_norm_le _ _ _ _ f
 
+/-- **The Pauli principle on the completed space**: `(C_aΨ†_a)² = 0`. -/
+theorem brstTerm_comp_self {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a n, ‖sym a n‖ ≤ 1) (a : ℕ)
+    (f : QGH) : brstTerm sym hsym a (brstTerm sym hsym a f) = 0 := by
+  ext p
+  rw [brstTerm_apply]
+  by_cases ha : a ∈ p.2
+  · rw [if_pos ha, brstTerm_apply, if_neg (Finset.notMem_erase a p.2)]
+    simp
+  · rw [if_neg ha]
+    simp
 
-
-
-
+/-- **The anticommutation relation on the completed space**: distinct dressed ghost
+creations anticommute. -/
+theorem brstTerm_anticomm {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a n, ‖sym a n‖ ≤ 1) {a b : ℕ}
+    (hab : a ≠ b) (f : QGH) :
+    brstTerm sym hsym a (brstTerm sym hsym b f) + brstTerm sym hsym b (brstTerm sym hsym a f)
+      = 0 := by
+  ext p
+  obtain ⟨n, α⟩ := p
+  simp only [lp.coeFn_add, lp.coeFn_zero, Pi.add_apply, Pi.zero_apply, brstTerm_apply]
+  by_cases ha : a ∈ α
+  · by_cases hb : b ∈ α
+    · have hbe : b ∈ α.erase a := Finset.mem_erase.mpr ⟨(Ne.symm hab), hb⟩
+      have hae : a ∈ α.erase b := Finset.mem_erase.mpr ⟨hab, ha⟩
+      rw [if_pos ha, if_pos hb, if_pos hbe, if_pos hae]
+      have hsw : jwSign a α * jwSign b (α.erase a) = -(jwSign b α * jwSign a (α.erase b)) :=
+        jw_swap_erase hab ha hb
+      have herase : (α.erase a).erase b = (α.erase b).erase a := Finset.erase_right_comm
+      rw [herase]
+      linear_combination (sym a n * sym b n * f (n, (α.erase b).erase a)) * hsw
+    · have hbe : b ∉ α.erase a := fun h => hb (Finset.mem_of_mem_erase h)
+      rw [if_pos ha, if_neg hb, if_neg hbe]
+      simp
+  · by_cases hb : b ∈ α
+    · have hae : a ∉ α.erase b := fun h => ha (Finset.mem_of_mem_erase h)
+      rw [if_neg ha, if_pos hb, if_neg hae]
+      simp
+    · rw [if_neg ha, if_neg hb]
+      simp
 
 /-! ## The bounded nilpotent BRST charge -/
 
@@ -223,18 +275,74 @@ theorem qgBrstCharge_apply_eq_sum {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a
     qgBrstCharge sym hsym f = ∑ a ∈ Finset.range qgGhostModes, brstTerm sym hsym a f := by
   rw [qgBrstCharge, ContinuousLinearMap.sum_apply]
 
+/-- In a complex vector space an element equal to its own negative vanishes. -/
+theorem eq_zero_of_eq_neg_self {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] {x : E}
+    (h : x = -x) : x = 0 := by
+  have h2 : (2 : ℂ) • x = 0 := by
+    rw [two_smul]
+    nth_rewrite 2 [h]
+    simp
+  simpa using h2
 
-
-
+/-- **Nilpotency of the BRST charge**, `Ω² = 0`, on the *completed* Hilbert space. -/
+theorem qgBrstCharge_nilpotent {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a n, ‖sym a n‖ ≤ 1)
+    (f : QGH) : qgBrstCharge sym hsym (qgBrstCharge sym hsym f) = 0 := by
+  classical
+  have hanti : ∀ a b : ℕ, brstTerm sym hsym a (brstTerm sym hsym b f)
+      + brstTerm sym hsym b (brstTerm sym hsym a f) = 0 := by
+    intro a b
+    by_cases hab : a = b
+    · subst hab
+      simp [brstTerm_comp_self hsym a f]
+    · exact brstTerm_anticomm hsym hab f
+  have hS : qgBrstCharge sym hsym (qgBrstCharge sym hsym f)
+      = ∑ a ∈ Finset.range qgGhostModes, ∑ b ∈ Finset.range qgGhostModes,
+          brstTerm sym hsym a (brstTerm sym hsym b f) := by
+    rw [qgBrstCharge_apply_eq_sum, qgBrstCharge_apply_eq_sum]
+    exact Finset.sum_congr rfl fun a _ => map_sum _ _ _
+  rw [hS]
+  refine eq_zero_of_eq_neg_self ?_
+  calc ∑ a ∈ Finset.range qgGhostModes, ∑ b ∈ Finset.range qgGhostModes,
+          brstTerm sym hsym a (brstTerm sym hsym b f)
+      = ∑ a ∈ Finset.range qgGhostModes, ∑ b ∈ Finset.range qgGhostModes,
+          -brstTerm sym hsym a (brstTerm sym hsym b f) := by
+        rw [Finset.sum_comm]
+        exact Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun b _ =>
+          eq_neg_of_add_eq_zero_left (hanti b a)
+    _ = -∑ a ∈ Finset.range qgGhostModes, ∑ b ∈ Finset.range qgGhostModes,
+          brstTerm sym hsym a (brstTerm sym hsym b f) := by
+        simp
 
 /-- The undressed (unit-symbol) BRST charge. -/
 def oneSym : ℕ → BoseConf → ℂ := fun _ _ => 1
 
+theorem oneSym_norm_le (a : ℕ) (n : BoseConf) : ‖oneSym a n‖ ≤ 1 := by simp [oneSym]
 
+/-- The charge sends the ghost vacuum component to the one-ghost component of mode `0`. -/
+theorem qgBrstCharge_one_ghost_zero (f : QGH) (n : BoseConf) :
+    (qgBrstCharge oneSym oneSym_norm_le f) (n, ({0} : FermConf)) = f (n, (∅ : FermConf)) := by
+  classical
+  rw [qgBrstCharge_apply_eq_sum, lp.coeFn_sum, Finset.sum_apply, Finset.sum_eq_single 0]
+  · rw [brstTerm_apply]
+    have herase : ({0} : FermConf).erase 0 = ∅ := by simp
+    rw [if_pos (by simp : (0 : ℕ) ∈ ({0} : FermConf))]
+    simp only [herase, oneSym, jwSign, jwCount]
+    norm_num
+  · intro a _ hane
+    rw [brstTerm_apply]
+    have ha0 : a ∉ ({0} : FermConf) := by simpa using hane
+    simp [ha0]
+  · intro h
+    exact absurd (Finset.mem_range.mpr (by norm_num [qgGhostModes])) h
 
-
-
-
+/-- The BRST charge is **not** the zero operator: it moves the ghost vacuum over a boson
+configuration into the one-ghost sector. -/
+theorem qgBrstCharge_ne_zero : qgBrstCharge oneSym oneSym_norm_le ≠ 0 := by
+  classical
+  intro hzero
+  have hval := qgBrstCharge_one_ghost_zero (lp.single 2 ((0 : BoseConf), (∅ : FermConf)) 1) 0
+  rw [hzero] at hval
+  simp at hval
 
 /-! ## An explicit unitary group commuting with the charge -/
 
@@ -265,13 +373,38 @@ def qgPhase (omega : ℕ → ℝ) (t : ℝ) : QGH →L[ℂ] QGH :=
 @[simp] theorem qgPhase_apply (omega : ℕ → ℝ) (t : ℝ) (f : QGH) (p : GradedIdx) :
     (qgPhase omega t f) p = phaseWeight omega t p * f p := rfl
 
+theorem qgPhase_zero (omega : ℕ → ℝ) (f : QGH) : qgPhase omega 0 f = f := by
+  ext p
+  simp [phaseWeight]
 
+theorem qgPhase_group (omega : ℕ → ℝ) (s t : ℝ) (f : QGH) :
+    qgPhase omega s (qgPhase omega t f) = qgPhase omega (s + t) f := by
+  ext p
+  simp only [qgPhase_apply, phaseWeight, ← mul_assoc, ← Complex.exp_add]
+  congr 2
+  push_cast
+  ring
 
+theorem qgPhase_isometry (omega : ℕ → ℝ) (t : ℝ) (f : QGH) : ‖qgPhase omega t f‖ = ‖f‖ :=
+  wshift_norm_eq _ _ _ _ (phaseWeight_norm omega t) rfl f
 
-
-
-
-
+/-- On an occupation basis vector the group acts by the phase of the graded Fock symbol with
+vanishing ghost energy — it *is* the second-quantized evolution of
+`ChapterQuantumGravityFock`. -/
+theorem qgPhase_single (omega : ℕ → ℝ) (t : ℝ) (p : GradedIdx) (c : ℂ) :
+    qgPhase omega t (lp.single 2 p c)
+      = Complex.exp (-(t * qgGradedSymbol omega (fun _ => 0) p) * Complex.I) •
+          lp.single 2 p c := by
+  classical
+  ext q
+  rw [qgPhase_apply, lp.coeFn_smul, Pi.smul_apply, smul_eq_mul]
+  by_cases hq : q = p
+  · subst hq
+    rw [phaseWeight]
+    congr 3
+    rw [qgGradedSymbol]
+    simp [ghostEnergy]
+  · simp [lp.single_apply, hq]
 
 /-- The evolution commutes with the BRST charge: the phase depends only on the boson
 occupation, which the ghost ladder does not change. -/
@@ -316,9 +449,37 @@ def qgPhaseFull (omega g : ℕ → ℝ) (t : ℝ) : QGH →L[ℂ] QGH :=
 @[simp] theorem qgPhaseFull_apply (omega g : ℕ → ℝ) (t : ℝ) (f : QGH) (p : GradedIdx) :
     (qgPhaseFull omega g t f) p = fullPhaseWeight omega g t p * f p := rfl
 
+theorem qgPhaseFull_isometry (omega g : ℕ → ℝ) (t : ℝ) (f : QGH) :
+    ‖qgPhaseFull omega g t f‖ = ‖f‖ :=
+  wshift_norm_eq _ _ _ _ (fullPhaseWeight_norm omega g t) rfl f
 
-
-
+/-- **The ghost-energy obstruction is real, not a stylistic restriction.**  If some ghost
+energy is nonzero, the evolution it generates does *not* commute with the BRST charge, so
+it does not descend to the BRST cohomology.  This is why the group used above carries no
+ghost energy. -/
+theorem qgPhaseFull_not_comm_brst (omega g : ℕ → ℝ) (hg : g 0 ≠ 0) :
+    ¬ ∀ (t : ℝ) (y : QGH), qgPhaseFull omega g t (qgBrstCharge oneSym oneSym_norm_le y)
+      = qgBrstCharge oneSym oneSym_norm_le (qgPhaseFull omega g t y) := by
+  classical
+  intro hcomm
+  set t : ℝ := Real.pi / g 0 with ht
+  set f : QGH := lp.single 2 ((0 : BoseConf), (∅ : FermConf)) 1 with hf
+  have hfv : f ((0 : BoseConf), (∅ : FermConf)) = 1 := by
+    rw [hf]; simp
+  have h := congrArg (fun z : QGH => z ((0 : BoseConf), ({0} : FermConf))) (hcomm t f)
+  simp only [qgPhaseFull_apply, qgBrstCharge_one_ghost_zero] at h
+  rw [hfv, mul_one] at h
+  -- the vacuum has zero energy, the one-ghost state has energy `g 0`
+  have hg0 : ((g 0 : ℝ) : ℂ) ≠ 0 := by exact_mod_cast hg
+  have hpi : ((t : ℂ) * ((g 0 : ℝ) : ℂ)) = ((Real.pi : ℝ) : ℂ) := by
+    rw [ht]
+    push_cast
+    field_simp
+  rw [fullPhaseWeight, fullPhaseWeight, qgGradedSymbol_oneGhost, qgGradedSymbol_vacuum,
+    hpi] at h
+  rw [show (-((Real.pi : ℝ) : ℂ)) * Complex.I = -(((Real.pi : ℝ) : ℂ) * Complex.I) by ring,
+    Complex.exp_neg, Complex.exp_pi_mul_I] at h
+  norm_num at h
 
 /-! ## The join: the BRST-reduced transfer on the completed graded space -/
 
@@ -331,11 +492,26 @@ theorem qgPhase_commutes :
       = qgBrstCharge sym hsym (qgPhase omega t y) :=
   fun t y => qgPhase_comm_brst hsym omega t y
 
+include hsym in
+/-- The exact states are physical: the cohomology of the completed space is defined. -/
+theorem qgExact_le_physical :
+    exactStates (qgBrstCharge sym hsym) ≤ physicalStates (qgBrstCharge sym hsym) :=
+  exactStates_le_physicalStates _ (qgBrstCharge_nilpotent hsym)
 
+include hsym in
+/-- **The §10.3 caveat, on the completed space**: the evolution maps physical (BRST-closed)
+states to physical states. -/
+theorem qgPhase_mem_physicalStates (t : ℝ) {x : QGH}
+    (hx : x ∈ physicalStates (qgBrstCharge sym hsym)) :
+    qgPhase omega t x ∈ physicalStates (qgBrstCharge sym hsym) :=
+  physicalStates_invariant (Om := qgBrstCharge sym hsym) (qgPhase_commutes hsym omega t) x hx
 
-
-
-
+include hsym in
+/-- The evolution maps BRST-exact states to BRST-exact states. -/
+theorem qgPhase_mem_exactStates (t : ℝ) {x : QGH}
+    (hx : x ∈ exactStates (qgBrstCharge sym hsym)) :
+    qgPhase omega t x ∈ exactStates (qgBrstCharge sym hsym) :=
+  exactStates_invariant (Om := qgBrstCharge sym hsym) (qgPhase_commutes hsym omega t) x hx
 
 /-- **The BRST-reduced transfer of §10.6.2 item 4**, now on the completed graded Hilbert
 space with a genuinely bounded nilpotent charge. -/
@@ -343,13 +519,26 @@ def qgBrstTransfer (t : ℝ) :
     Cohomology (qgBrstCharge sym hsym) →ₗ[ℂ] Cohomology (qgBrstCharge sym hsym) :=
   transfer (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega) t
 
+theorem qgBrstTransfer_zero : qgBrstTransfer hsym omega 0 = LinearMap.id :=
+  transfer_zero (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega)
+    (qgPhase_zero omega)
 
+theorem qgBrstTransfer_comp (s t : ℝ) :
+    (qgBrstTransfer hsym omega s).comp (qgBrstTransfer hsym omega t)
+      = qgBrstTransfer hsym omega (s + t) :=
+  transfer_comp (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega)
+    (qgPhase_group omega) s t
 
+theorem qgBrstTransfer_bijective (t : ℝ) : Function.Bijective (qgBrstTransfer hsym omega t) :=
+  transfer_bijective (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega)
+    (qgPhase_zero omega) (qgPhase_group omega) t
 
-
-
-
-
+/-- **The BRST (quotient) norm is preserved** by the reduced transfer. -/
+theorem qgBrstTransfer_infDist (t : ℝ) (x : QGH) :
+    Metric.infDist (qgPhase omega t x) (exactStates (qgBrstCharge sym hsym))
+      = Metric.infDist x (exactStates (qgBrstCharge sym hsym)) :=
+  infDist_exactStates_eq (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega)
+    (qgPhase_zero omega) (qgPhase_group omega) (qgPhase_isometry omega) t x
 
 end
 

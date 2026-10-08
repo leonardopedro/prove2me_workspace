@@ -5,6 +5,10 @@ import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterFriedrichsFormGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 
 

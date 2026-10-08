@@ -11,14 +11,14 @@ import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.FockSecondQuantization
 open BookProof.GradedBandSchur
 
-variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.FockSchur BookProof.FockWeightedSchur
 open BookProof.FarisLavine BookProof.NavierStokesFlow
 
 noncomputable section
+
+variable {col : ℕ → (ℕ →₀ ℂ)} {deg : ℕ → ℕ} {D M : ℕ} {C : ℝ}
 
 
 theorem BookProof.GradedBandSchur.dGamma_essentiallySelfAdjointOn_core_gradedBand (hC : 0 ≤ C) (hherm : IsHermCol col)

@@ -7,13 +7,13 @@ import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.FourierMultiplierEsa
 open BookProof.MixedLinearEsa
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-  [MeasurableSpace V] [BorelSpace V]
-
 
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
 
 
 theorem BookProof.MixedLinearEsa.potMomOp_gauge {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W) {m : V}

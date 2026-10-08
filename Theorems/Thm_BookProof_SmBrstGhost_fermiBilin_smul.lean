@@ -9,15 +9,15 @@ open BookProof.NavierStokesFlow.FockOfFock
 open BookProof.SmCar
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {N : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {N : ℕ}
 
 theorem BookProof.SmBrstGhost.fermiBilin_smul (c : ℂ) (M : Matrix (Fin N) (Fin N) ℂ) :
     (fermiBilin (c • M) : Module.End ℂ (FermiFock N)) = c • fermiBilin M := by sorry

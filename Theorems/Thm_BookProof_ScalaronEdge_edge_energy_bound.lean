@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronEdge
 open BookProof.ScalaronEdge
 
-variable (M alpha : ℝ)
-
 
 
 open Complex Real MeasureTheory Function SchwartzMap ComplexOrder
@@ -27,6 +25,8 @@ open BookProof.FriedrichsFormGap
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 
+
+variable (M alpha : ℝ)
 
 
 theorem BookProof.ScalaronEdge.edge_energy_bound {A B c : ℝ} (hA : 0 < A) (hB : 0 < B) (hc : 0 < c)

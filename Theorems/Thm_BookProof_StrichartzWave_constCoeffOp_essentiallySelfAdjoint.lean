@@ -4,17 +4,15 @@ import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.StrichartzWave
 
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
 
-
-open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
-
-
- = 0 := by
-    rw [← MeasureTheory.Lp.norm_fourier_eq u, hg0, norm_zero]
-  exact norm_eq_zero.mp hnorm
-
-theorem BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint (c : ι → ℝ) (w : ι → V) (κ : ℝ) : := by sorry
+theorem BookProof.StrichartzWave.constCoeffOp_essentiallySelfAdjoint (c : ι → ℝ) (w : ι → V) (κ : ℝ) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain V)
+      (opL2 (constCoeffOp c w κ)) := by sorry

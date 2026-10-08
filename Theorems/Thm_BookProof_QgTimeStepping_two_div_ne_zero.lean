@@ -11,8 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
 open BookProof.QgTimeStepping
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
 
 
 open Filter Topology
@@ -22,6 +20,8 @@ open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
 
 noncomputable section
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 
 theorem BookProof.QgTimeStepping.two_div_ne_zero {tau : ℝ} (h : tau ≠ 0) : (2 / tau : ℝ) ≠ 0 := by sorry

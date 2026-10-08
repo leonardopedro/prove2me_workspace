@@ -9,13 +9,13 @@ open BookProof.ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 open BookProof.ChapterDeterministic
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset Matrix
 open BookProof.ChapterReconstruct BookProof.ChapterTimeTranslation
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterDeterministic.commute_projSet_measOpSet_iff_isDeterministic

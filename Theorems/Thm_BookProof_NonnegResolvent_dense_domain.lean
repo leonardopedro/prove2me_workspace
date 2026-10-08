@@ -7,13 +7,13 @@ import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ClosureUniqueness
 open BookProof.NonnegResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)} {a b : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T : Submodule ℂ (F × F)} {a b : ℝ}
 
 
 theorem BookProof.NonnegResolvent.dense_domain (hT : IsNonnegSelfAdjoint T)

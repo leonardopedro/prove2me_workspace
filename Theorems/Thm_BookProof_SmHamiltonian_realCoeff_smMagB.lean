@@ -11,8 +11,6 @@ open BookProof.SmOneParticle
 open BookProof.YangMillsHermite
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -22,5 +20,7 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.realCoeff_smMagB (co : Fin 163 → Fin D) (i : Fin 3) : RealCoeff (smMagB co i) := by sorry

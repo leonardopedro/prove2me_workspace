@@ -4,10 +4,10 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
-variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
-
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
+
+variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 
 theorem BookProof.NavierStokesFlow.secondDerivativeField_momentum (i j k l m n : Fin 3)
     (p : MvPolynomial (Fin 3 × Fin 3 × Fin 3) ℂ) :

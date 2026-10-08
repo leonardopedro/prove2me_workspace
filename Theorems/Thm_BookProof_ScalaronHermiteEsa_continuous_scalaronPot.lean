@@ -14,8 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.Starobinsky
 open BookProof.ScalaronHermiteEsa
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial FourierTransform
@@ -24,6 +22,8 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine BookProof.Starobinsky
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ScalaronHermiteEsa.continuous_scalaronPot (M alpha : ℝ) : Continuous (scalaronPot M alpha) := by sorry

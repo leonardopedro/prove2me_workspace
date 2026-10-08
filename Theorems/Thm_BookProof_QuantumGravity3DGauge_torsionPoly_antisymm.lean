@@ -11,10 +11,6 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravity3DGauge
 
-variable {d : ℕ}
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
-variable {D : Submodule ℂ (L2d 84)}
-
 
 
 open MeasureTheory Complex MvPolynomial Filter Topology
@@ -23,6 +19,10 @@ open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.HermiteGalerk
 open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
+
+variable {d : ℕ}
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+variable {D : Submodule ℂ (L2d 84)}
 
 theorem BookProof.QuantumGravity3DGauge.torsionPoly_antisymm (Φ : CoreRep 84 D) (m : Fin 64) :
     SymmetricOn D (D.subtype.comp (torsionOps Φ m)) := by sorry

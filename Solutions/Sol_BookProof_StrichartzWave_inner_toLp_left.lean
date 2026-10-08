@@ -17,10 +17,9 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
- Lp ℂ 2 (volume : Measure V))
-      = f.toLp 2 (volume : Measure V) := rfl
-
-theorem solution (f : 𝓢(V, ℂ)) (u : Lp ℂ 2 (volume : :=
+theorem solution (f : 𝓢(V, ℂ)) (u : Lp ℂ 2 (volume : Measure V)) :
+    (inner ℂ (f.toLp 2 (volume : Measure V)) u : ℂ)
+      = ∫ x, (starRingEnd ℂ) (f x) * (u x) :=
   Measure V)) :
       (inner ℂ (f.toLp 2 (volume : Measure V)) u : ℂ)
         = ∫ x, (starRingEnd ℂ) (f x) * (u x) := by

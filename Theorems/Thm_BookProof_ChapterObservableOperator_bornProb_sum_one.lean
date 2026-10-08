@@ -5,13 +5,13 @@ import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterDoubleSlit
 open BookProof.ChapterObservableOperator
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterObservableOperator.bornProb_sum_one (b : OrthonormalBasis (Fin m) ℂ (EuclideanSpace ℂ (Fin n)))

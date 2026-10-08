@@ -14,14 +14,11 @@ open BookProof.NavierStokesFlow.DiffFarisLavine
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open LpNat FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
+open LpNat BookProof.FarisLavine IkebeKato ThreeComponent CanonicalVector DifferentialL2
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 4000000 in
--- The core operators unfold through several linear equivalences on a submodule of `L²(ℝ³)`,
--- so the default heartbeat budget is not enough.
 theorem solution (mu : ℝ) (x : lpFiniteModes Vel) :
     ((velNcore mu x : lpFiniteModes Vel) : L2I Vel)
       = (diagMax (velSym mu)

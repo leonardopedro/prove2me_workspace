@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesLagrangianEsa.lean — solution of BookProof.NavierStokesFlow.LagrangianEsa.latticeLagData_hFull_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
 

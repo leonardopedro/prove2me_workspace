@@ -9,8 +9,6 @@ import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronEsa
 open BookProof.QgOuterFockOneParticle
 
-variable {ι : Type*} [DecidableEq ι] (W : WallPot) (Q : QgModeData ι)
-
 
 
 open MeasureTheory
@@ -18,6 +16,8 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι] (W : WallPot) (Q : QgModeData ι)
 
 
 theorem BookProof.QgOuterFockOneParticle.starobinsky_qgContinuum_matrix_element (M alpha : ℝ) (halpha : 0 < alpha) (g : ℝ)

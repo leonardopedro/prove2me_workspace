@@ -9,14 +9,14 @@ open BookProof.ChapterLegendrePolynomial
 open BookProof.ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 theorem BookProof.ChapterSolidHarmonic.hasFDerivAt_radialFactor (e : E) (l μ : ℕ) (x : E) :

@@ -13,8 +13,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.SqSumFarisLavine
 
-variable {D : ℕ} {R : Type*} [Fintype R]
-
 
 
 open Finset MvPolynomial
@@ -25,6 +23,8 @@ open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
 noncomputable section
+
+variable {D : ℕ} {R : Type*} [Fintype R]
 
 
 theorem BookProof.SqSumFarisLavine.eval_potPoly (v : R → Fin D → ℝ) (x : Vd D) :

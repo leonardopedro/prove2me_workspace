@@ -17,9 +17,6 @@ open BookProof.HermiteProductCore
 open BookProof.StrichartzWave
 open BookProof.QgOneParticleCc
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {d : ℕ}
-
 
 
 open MeasureTheory SchwartzMap Complex MvPolynomial
@@ -30,6 +27,9 @@ open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {d : ℕ}
 
 theorem BookProof.QgOneParticleCc.kinOp_apply_eq (f : 𝓢(Vd d, ℂ)) (x : Vd d) :
     (kinOp d f) x = -lapC (f : Vd d → ℂ) x := by sorry

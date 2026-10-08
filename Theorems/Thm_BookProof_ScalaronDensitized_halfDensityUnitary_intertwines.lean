@@ -11,13 +11,12 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterQuantumGravityHalfDensity
 import Definitions.Def_ChapterStarobinskyPotential
+import Theorems.Thm_BookProof_ScalaronDensitized_halfDensityUnitary_mem_densConfCore
 open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
 open BookProof.Starobinsky
 open BookProof.ScalaronDensitized
-
-variable (M alpha : ℝ)
 
 
 
@@ -29,6 +28,8 @@ open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (M alpha : ℝ)
 
 theorem BookProof.ScalaronDensitized.halfDensityUnitary_intertwines (x : physConfCore M alpha) :
     ((densConfOp M alpha ⟨halfDensityUnitary (x : Lp ℂ 2 physMeasure),

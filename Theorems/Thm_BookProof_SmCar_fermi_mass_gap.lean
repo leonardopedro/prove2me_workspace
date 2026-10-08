@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.fermi_mass_gap {m : Fin n → ℝ} {mu : ℝ} (hmu : 0 ≤ mu) (hm : ∀ i, mu ≤ m i)

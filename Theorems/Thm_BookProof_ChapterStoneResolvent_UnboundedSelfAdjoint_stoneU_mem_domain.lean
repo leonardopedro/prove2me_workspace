@@ -8,15 +8,15 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : UnboundedSelfAdjoint H)
-
 
 open scoped InnerProductSpace
 open Filter Topology NormedSpace
 
 
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
+
+variable (T : UnboundedSelfAdjoint H)
 
 
 theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain (t : ℝ) (x : T.domain) : T.stoneU t (x : H) ∈ T.domain := by sorry

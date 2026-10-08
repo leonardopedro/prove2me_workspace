@@ -7,9 +7,6 @@ import Mathlib
 import Definitions.Def_ChapterSpectralDirectSum
 open BookProof.ChapterSpectralDirectSum
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
-
 
 noncomputable section
 
@@ -18,6 +15,9 @@ open MeasureTheory Complex
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterCyclicDecomposition BookProof.ChapterCyclicDirectSum
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
 
 
 theorem BookProof.ChapterSpectralDirectSum.cyclicEmbedding_intertwines (u : Lp ℂ 2 (spectralMeasure T hT xi)) :

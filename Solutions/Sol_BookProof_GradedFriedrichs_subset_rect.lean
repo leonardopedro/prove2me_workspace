@@ -12,6 +12,7 @@ open BookProof.HermiteGalerkin
 open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
 
 noncomputable section
+open Classical
 
 variable {γ : Type*}
 variable {α β : Type*}

@@ -8,17 +8,14 @@ open BookProof.ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.NavierStokesFlow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*}
-
 
 open scoped Matrix
 
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
- refine hf.subset fun k hk => ?_
-  simp only [Function.mem_support, velocityOp_apply] at hk
-  exact fun hzero => hk (by rw [hzero, mul_zero])
+variable {ι : Type*}
 
-/-- The continuity generator preserves the finite-mode domain. - := by sorry
+theorem BookProof.NavierStokesFlow.continuityHamiltonian_mem_finiteModes (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
+    continuityHamiltonian v f ∈ finiteModes := by sorry

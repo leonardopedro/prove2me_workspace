@@ -7,15 +7,15 @@ import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 open BookProof.QgBrstCompleted
 
-variable {ι : Type*}
-variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
-
 
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
 
 noncomputable section
+
+variable {ι : Type*}
+variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
 
 theorem BookProof.QgBrstCompleted.brstTerm_anticomm {sym : ℕ → BoseConf → ℂ} (hsym : ∀ a n, ‖sym a n‖ ≤ 1) {a b : ℕ}
     (hab : a ≠ b) (f : QGH) :

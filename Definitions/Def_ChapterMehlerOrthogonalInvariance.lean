@@ -57,11 +57,43 @@ instance stdGaussianEuclidean_isProbability (k : ℕ) :
   rw [stdGaussianEuclidean]
   exact Measure.isProbabilityMeasure_map (by fun_prop)
 
+/-- The characteristic function transforms contravariantly under a linear
+isometry of the underlying space. -/
+theorem charFun_map_isometryEquiv {E : Type*} [NormedAddCommGroup E]
+    [InnerProductSpace ℝ E] [MeasurableSpace E] [BorelSpace E]
+    (mu : Measure E) (L : E ≃ₗᵢ[ℝ] E) (t : E) :
+    charFun (mu.map L) t = charFun mu (L.symm t) := by
+  rw [charFun_apply, charFun_apply, integral_map (by fun_prop) (by fun_prop)]
+  congr 1
+  ext x
+  congr 2
+  simpa using L.inner_map_map x (L.symm t)
 
+/-- **The characteristic function of the standard `k`-dimensional Gaussian.**
+It is `exp (-‖t‖²/2)`, a function of the norm of `t` alone — the analytic reason
+for rotation invariance. -/
+theorem charFun_stdGaussianEuclidean (k : ℕ) (t : EuclideanSpace ℝ (Fin k)) :
+    charFun (stdGaussianEuclidean k) t = Complex.exp (-(‖t‖ ^ 2 : ℝ) / 2) := by
+  rw [stdGaussianEuclidean, gaussianHead, charFun_pi]
+  simp only [standardGaussian, charFun_gaussianReal]
+  rw [← Complex.exp_sum]
+  congr 1
+  have h : ‖t‖ ^ 2 = ∑ i, (t i) ^ 2 := by
+    rw [EuclideanSpace.norm_eq, Real.sq_sqrt (by positivity)]
+    simp [sq_abs]
+  rw [h]
+  push_cast
+  simp [Finset.sum_div, neg_div]
 
-
-
-
+/-- **Rotation invariance of the standard Gaussian.**  The standard
+`k`-dimensional Gaussian measure is invariant under every linear isometry of
+`ℝᵏ`, that is, under the whole orthogonal group `O(k)`. -/
+theorem stdGaussianEuclidean_map_isometry (k : ℕ)
+    (L : EuclideanSpace ℝ (Fin k) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin k)) :
+    (stdGaussianEuclidean k).map L = stdGaussianEuclidean k := by
+  refine Measure.ext_of_charFun (funext fun t => ?_)
+  rw [charFun_map_isometryEquiv, charFun_stdGaussianEuclidean,
+    charFun_stdGaussianEuclidean, L.symm.norm_map]
 
 /-! ## 2. Orthogonal matrices as isometries -/
 
@@ -92,7 +124,21 @@ def orthEquiv {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ) (hO : Oᵀ * O = 1) :
     (x : EuclideanSpace ℝ (Fin k)) :
     orthEquiv O hO x = WithLp.toLp 2 (O *ᵥ (WithLp.ofLp x)) := rfl
 
-
+/-- **Orthogonal invariance of the finite Gaussian head, in coordinates.**  For
+an orthogonal matrix `O`, the finite product of standard Gaussians is invariant
+under `x ↦ O *ᵥ x`. -/
+theorem gaussianHead_map_orthogonal {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ)
+    (hO : Oᵀ * O = 1) :
+    (gaussianHead k).map (fun x => O *ᵥ x) = gaussianHead k := by
+  refine (MeasurableEquiv.toLp 2 (Fin k → ℝ)).map_measurableEquiv_injective ?_
+  have hmeas : Measurable fun x : Fin k → ℝ => O *ᵥ x := by fun_prop
+  rw [MeasurableEquiv.coe_toLp, Measure.map_map (by fun_prop) hmeas]
+  have hcomp : (WithLp.toLp 2) ∘ (fun x : Fin k → ℝ => O *ᵥ x)
+      = (orthEquiv O hO) ∘ (WithLp.toLp 2) := by
+    ext x i
+    simp
+  rw [hcomp, ← Measure.map_map (by fun_prop) (by fun_prop)]
+  exact stdGaussianEuclidean_map_isometry k (orthEquiv O hO)
 
 /-! ## 3. The infinite Mehler prior under a finite-rank rotation -/
 
@@ -102,10 +148,40 @@ def headRotation (k : ℕ) (O : Matrix (Fin k) (Fin k) ℝ) :
     CoordinateTail → CoordinateTail :=
   fun x => (tailSplitEquiv k).symm (Prod.map (fun h => O *ᵥ h) id ((tailSplitEquiv k) x))
 
+theorem measurable_headRotation (k : ℕ) (O : Matrix (Fin k) (Fin k) ℝ) :
+    Measurable (headRotation k O) := by
+  unfold headRotation
+  exact (tailSplitEquiv k).symm.measurable.comp
+    (((by fun_prop : Measurable fun h : Fin k → ℝ => O *ᵥ h).comp measurable_fst).prodMk
+      (measurable_id.comp measurable_snd) |>.comp (tailSplitEquiv k).measurable)
 
+/-- **Headline (coordinate-level Mehler invariance).**  The infinite Mehler
+coordinate prior — the countable product of standard Gaussians — is invariant
+under a finite-rank orthogonal transformation: rotating the first `k`
+coordinates by any orthogonal matrix leaves the law unchanged. -/
+theorem coordinateTailMeasure_map_headRotation {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ)
+    (hO : Oᵀ * O = 1) :
+    coordinateTailMeasure.map (headRotation k O) = coordinateTailMeasure := by
+  have hmeasO : Measurable fun h : Fin k → ℝ => O *ᵥ h := by fun_prop
+  have hprod : Measurable (Prod.map (fun h : Fin k → ℝ => O *ᵥ h) (id : CoordinateTail → _)) :=
+    (hmeasO.comp measurable_fst).prodMk (measurable_id.comp measurable_snd)
+  have hab : Measurable ((tailSplitEquiv k).symm ∘ Prod.map (fun h : Fin k → ℝ => O *ᵥ h) id) :=
+    (tailSplitEquiv k).symm.measurable.comp hprod
+  unfold headRotation
+  rw [← Function.comp_def, ← Function.comp_def, ← Function.comp_assoc,
+    ← Measure.map_map hab (tailSplitEquiv k).measurable, tailSplitEquiv_map,
+    ← Measure.map_map (tailSplitEquiv k).symm.measurable hprod,
+    ← Measure.map_prod_map _ _ hmeasO measurable_id, gaussianHead_map_orthogonal O hO,
+    Measure.map_id, ← tailSplitEquiv_map,
+    Measure.map_map (tailSplitEquiv k).symm.measurable (tailSplitEquiv k).measurable]
+  simp
 
-
-
-
+/-- The finite-rank rotation is measure preserving for the Mehler coordinate
+prior, i.e. it is an admissible finite orthogonal tail symmetry in the sense of
+the abstract chapter. -/
+theorem measurePreserving_headRotation {k : ℕ} (O : Matrix (Fin k) (Fin k) ℝ)
+    (hO : Oᵀ * O = 1) :
+    MeasurePreserving (headRotation k O) coordinateTailMeasure coordinateTailMeasure :=
+  ⟨measurable_headRotation k O, coordinateTailMeasure_map_headRotation O hO⟩
 
 end BookProof.ChapterMehlerOrthogonalInvariance

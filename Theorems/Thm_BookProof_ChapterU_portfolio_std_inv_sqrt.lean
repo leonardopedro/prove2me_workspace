@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterU
 open BookProof.ChapterU
 
+
+open MeasureTheory
+open scoped ENNReal ProbabilityTheory TensorProduct
+
 variable {X : Type*} [MeasurableSpace X]
 variable (R M N : Type*) [CommRing R] [AddCommGroup M] [Module R M]
   [AddCommGroup N] [Module R N]
 variable {Ω : Type*} [MeasurableSpace Ω]
-
-
-open MeasureTheory
-open scoped ENNReal ProbabilityTheory TensorProduct
 
 theorem BookProof.ChapterU.portfolio_std_inv_sqrt {n : ℕ} (hn : 0 < n) (X : Fin n → Ω → ℝ) (σ : ℝ)
     (hσ : 0 ≤ σ) (P : Measure Ω) [IsProbabilityMeasure P]

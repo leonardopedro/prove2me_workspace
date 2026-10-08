@@ -3,14 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 open BookProof.ChapterMeasureAtomicDiffuse
 
-variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α] (mu : Measure α)
-
 
 noncomputable section
 
 open MeasureTheory Complex
 
 
+
+variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α] (mu : Measure α)
 
 
 theorem BookProof.ChapterMeasureAtomicDiffuse.exists_atomic_diffuse_decomposition [IsFiniteMeasure mu] :

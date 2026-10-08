@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
 import Theorems.Thm_BookProof_HermiteLadder_hn_smul
-import Theorems.Thm_BookProof_HermiteLadder_pgLp_smul'
+import Theorems.Thm_BookProof_HermiteLadder_pgLp_smul_prime
 open BookProof.HermiteLadder
 
 
@@ -26,6 +26,6 @@ theorem solution {T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) 
   intro m
   obtain ⟨C, hC, h⟩ := hT m
   refine ⟨‖c‖ₑ ^ 2 * C, by finiteness, fun p => ?_⟩
-  rw [LinearMap.smul_apply, pgLp_smul', hn_smul, mul_assoc]
+  rw [LinearMap.smul_apply, pgLp_smul_prime, hn_smul, mul_assoc]
   gcongr
   exact h p

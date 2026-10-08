@@ -9,15 +9,15 @@ open BookProof.FockOneParticleGap
 open BookProof.YangMillsGhost
 open BookProof.QgBrstCompleted
 
-variable {ι : Type*}
-variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
-
 
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
 
 noncomputable section
+
+variable {ι : Type*}
+variable (w : ι → ℂ) (e : ι → ι) (hw : ∀ i, ‖w i‖ ≤ 1) (hinj : Set.InjOn e {i | w i ≠ 0})
 
 theorem BookProof.QgBrstCompleted.qgPhase_single (omega : ℕ → ℝ) (t : ℝ) (p : GradedIdx) (c : ℂ) :
     qgPhase omega t (lp.single 2 p c)

@@ -73,7 +73,9 @@ noncomputable def ofSectors (g : ∀ m, S m) (h : (Function.support fun m => ‖
     lp S 2 :=
   ⟨g, memℓp_of_finite_support h⟩
 
-
+omit [∀ m, InnerProductSpace ℂ (S m)] in
+@[simp] theorem ofSectors_apply (g : ∀ m, S m) (h : (Function.support fun m => ‖g m‖).Finite)
+    (m : ι) : (ofSectors g h : ∀ m, S m) m = g m := rfl
 
 variable (D : ∀ m, Submodule ℂ (S m))
 
@@ -110,7 +112,10 @@ def fockCore : Submodule ℂ (lp S 2) where
 
 variable {D}
 
-
+@[simp] theorem mem_fockCore {f : lp S 2} :
+    f ∈ fockCore D ↔
+      (Function.support fun m => ‖(f : ∀ m, S m) m‖).Finite ∧ ∀ m, (f : ∀ m, S m) m ∈ D m :=
+  Iff.rfl
 
 
 
@@ -156,7 +161,8 @@ noncomputable def fockOp (A : ∀ m, D m →ₗ[ℂ] D m) : fockCore D →ₗ[�
     funext m
     exact congrArg Subtype.val ((A m).map_smul c ⟨(f : lp S 2) m, (f.2).2 m⟩)
 
-
+@[simp] theorem fockOp_apply (A : ∀ m, D m →ₗ[ℂ] D m) (f : fockCore D) (m : ι) :
+    ((fockOp A f : lp S 2) : ∀ m, S m) m = ((A m ⟨(f : lp S 2) m, (f.2).2 m⟩ : D m) : S m) := rfl
 
 
 

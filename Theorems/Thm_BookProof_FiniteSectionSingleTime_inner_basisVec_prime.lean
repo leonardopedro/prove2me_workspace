@@ -28,5 +28,5 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 noncomputable section
 
 
-theorem BookProof.FiniteSectionSingleTime.inner_basisVec' (k : ι) (y : L2I ι) :
+theorem BookProof.FiniteSectionSingleTime.inner_basisVec_prime (k : ι) (y : L2I ι) :
     (inner ℂ y (basisVec k) : ℂ) = (starRingEnd ℂ) ((y : ι → ℂ) k) := by sorry

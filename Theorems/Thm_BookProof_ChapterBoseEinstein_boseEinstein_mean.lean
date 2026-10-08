@@ -6,8 +6,6 @@ import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterCoherentTemperature
 open BookProof.ChapterBoseEinstein
 
-variable {x : ℝ}
-
 
 noncomputable section
 
@@ -15,6 +13,8 @@ open Filter Topology
 
 
 open BookProof.ChapterCoherentTemperature BookProof.ChapterCoherentOccupation
+
+variable {x : ℝ}
 
 
 theorem BookProof.ChapterBoseEinstein.boseEinstein_mean (hx : 0 < x) :

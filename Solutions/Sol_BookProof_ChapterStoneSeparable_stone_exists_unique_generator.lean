@@ -22,5 +22,5 @@ theorem solution (G : WeakMeasurableUnitaryGroup H) :
     ∃! T : UnboundedSelfAdjoint H, ∀ t : ℝ, T.stoneU t = G.U t := by
 
   refine ⟨G.gen, fun t => G.gen_stoneU_eq t, fun T hT => ?_⟩
-  have hgroup : T.stoneGroup = G := WeakMeasurableUnitaryGroup.ext' hT
+  have hgroup : T.stoneGroup = G := WeakMeasurableUnitaryGroup.ext_prime hT
   rw [← T.gen_stoneGroup_eq, hgroup]

@@ -13,10 +13,6 @@ open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.QgHermiteOscillator
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-  {ι : Type*} {D : Submodule ℂ F}
-variable {d : ℕ}
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -25,5 +21,9 @@ open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+  {ι : Type*} {D : Submodule ℂ F}
+variable {d : ℕ}
 
 theorem BookProof.QgHermiteOscillator.expBounded_of_bounded {B : Vd d → ℝ} {M : ℝ} (hM : ∀ x, |B x| ≤ M) : ExpBounded B := by sorry

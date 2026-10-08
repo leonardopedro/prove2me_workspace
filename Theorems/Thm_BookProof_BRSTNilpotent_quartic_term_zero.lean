@@ -3,10 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BRSTNilpotent
 
+
+
 variable {R : Type*} [Ring R] [Algebra ℝ R]
 variable {n : ℕ}
-
-
 
 
 theorem BookProof.BRSTNilpotent.quartic_term_zero (f : Fin n → Fin n → Fin n → ℝ) (χ β : Fin n → R)

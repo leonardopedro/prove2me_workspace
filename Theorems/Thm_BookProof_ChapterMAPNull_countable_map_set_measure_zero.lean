@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterMAPNull
 open BookProof.ChapterMAPNull
 
-variable {α : Type*} [MeasurableSpace α]
-
 
 open MeasureTheory
 
+
+variable {α : Type*} [MeasurableSpace α]
 
 
 theorem BookProof.ChapterMAPNull.countable_map_set_measure_zero (μ : Measure α) [NullSingletonClass μ]

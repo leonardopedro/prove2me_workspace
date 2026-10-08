@@ -21,9 +21,6 @@ open LpNat BookProof.FarisLavine IkebeKato ThreeComponent ShiftHamiltonian Signe
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
-set_option maxHeartbeats 2000000 in
--- The four hopping families expand into twenty-odd ladder terms whose coordinatewise
--- matching is a single large `ring` normalisation; the default budget is not enough.
 theorem solution (x : lpFiniteModes Vel) (γ : Vel) :
     ((velH A c (Submodule.inclusion (finiteModes_le_maxDom (velSym (velMu A c))) x) :
         L2I Vel) : Vel → ℂ) γ

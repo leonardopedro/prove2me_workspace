@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterLocalOperators
 open BookProof.LocalOperators
 
-variable {d : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 
 open MeasureTheory
+
+variable {d : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.LocalOperators.localIntegral_translation_invariant (l : LocalField d E) (y : Fin d → ℝ) :

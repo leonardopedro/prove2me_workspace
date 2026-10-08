@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFullEsa.lean — solution of BookProof.NavierStokesFlow.FullEsa.latticeAdvectionCLM_mem_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 

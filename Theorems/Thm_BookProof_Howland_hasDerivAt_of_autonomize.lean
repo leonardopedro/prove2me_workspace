@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHowlandAutonomization
 open BookProof.Howland
 
-variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 
 open MeasureTheory
+
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 theorem BookProof.Howland.hasDerivAt_of_autonomize (f : ℝ → E → E) (x : ℝ → E) (t : ℝ)
     (h : HasDerivAt (fun s : ℝ => ((s, x s) : ℝ × E)) (autonomize f (t, x t)) t) :

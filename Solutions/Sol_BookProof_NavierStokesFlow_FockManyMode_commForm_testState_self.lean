@@ -6,7 +6,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_testState_coe_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne
-import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne'
+import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_modeShift_shift_ne_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_commTerm_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_hasSum_commForm
 open BookProof.NavierStokesFlow
@@ -47,7 +47,7 @@ theorem solution (hκ : ∀ i, 0 ≤ κ i) (i₀ : Fin d) :
     refine commTerm_eq_zero hκ i₀ i₀ β ?_
     rw [hshift]
     rcases eq_or_ne β (modeShift i₀ 0) with rfl | h1
-    · rw [testState_coe_eq_zero i₀ (modeShift_shift_ne i₀ i₀) (modeShift_shift_ne' i₀ i₀),
+    · rw [testState_coe_eq_zero i₀ (modeShift_shift_ne i₀ i₀) (modeShift_shift_ne_prime i₀ i₀),
         mul_zero]
     · rw [testState_coe_eq_zero i₀ hβ h1, zero_mul]
   simp only [modeData_sym]

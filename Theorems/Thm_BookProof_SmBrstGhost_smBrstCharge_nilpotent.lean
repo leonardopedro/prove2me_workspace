@@ -8,15 +8,15 @@ open BookProof.SmCar
 open BookProof.YangMillsSU3
 open BookProof.SmBrstGhost
 
-variable {m : ℕ}
-variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
-variable {N : ℕ}
-
 
 
 open BookProof.SmCar BookProof.BRSTNilpotent BookProof.YangMillsSU3
 
 noncomputable section
+
+variable {m : ℕ}
+variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
+variable {N : ℕ}
 
 theorem BookProof.SmBrstGhost.smBrstCharge_nilpotent {m : ℕ} {T : Fin 12 → Matrix (Fin m) (Fin m) ℂ}
     {f3 : Fin 8 → Fin 8 → Fin 8 → ℝ} (hT : ClosesWithStructureConstants T (smStruct f3))

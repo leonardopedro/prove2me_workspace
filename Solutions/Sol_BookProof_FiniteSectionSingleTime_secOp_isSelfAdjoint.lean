@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec
-import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec'
+import Theorems.Thm_BookProof_FiniteSectionSingleTime_inner_basisVec_prime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_projW_apply
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_secOp_apply
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_coreVec_coe
@@ -62,7 +62,7 @@ theorem solution {W : Finset ι} (hsym : SymmetricOn (lpFiniteModes ι) H) :
     refine Finset.sum_congr rfl fun a _ => ?_
     rw [inner_smul_right, projW_apply, inner_sum, Finset.mul_sum]
     refine Finset.sum_congr rfl fun c _ => ?_
-    rw [inner_smul_right, inner_basisVec']
+    rw [inner_smul_right, inner_basisVec_prime]
     ring
   have hcomm : ∑ a ∈ W, ∑ c ∈ W, (starRingEnd ℂ) ((x : ι → ℂ) c)
         * (((H (coreVec a) : L2I ι) : ι → ℂ) c) * ((y : ι → ℂ) a)

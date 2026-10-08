@@ -17,9 +17,6 @@ open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
-
 
 
 open MeasureTheory MvPolynomial
@@ -31,6 +28,9 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
+variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.nsDiffH_not_bounded (hA : A 0 0 ≠ 0) (K : ℝ) :
     ∃ f : polyGaussCore (d := 3), ‖(f : L2d 3)‖ = 1

@@ -7,14 +7,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.BilinearEsa
 
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine
+
+variable {J : Type*}
 
 
 theorem BookProof.NavierStokesFlow.BilinearEsa.inner_of_block_supported (j : J) (x : L2I (ℕ × J)) (a : L2I ℕ)

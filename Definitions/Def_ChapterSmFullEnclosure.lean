@@ -86,19 +86,51 @@ def smFullHam (P : SmParams) {n : ℕ} (hD M : Matrix (Fin n) (Fin n) ℂ) (z : 
   cpairOp (L2dSpace 163) (smFermiSpace n) (polyGaussCore (d := 163)) (fullDom n)
     (smHamiltonian P) (onFull (smFermiHam hD M z))
 
+/-- The fermionic block is exactly Dirac plus Yukawa. -/
+theorem smFullHam_fermi_block {n : ℕ} (hD M : Matrix (Fin n) (Fin n) ℂ) (z : ℂ) :
+    onFull (smFermiHam hD M z) = onFull (smDirac hD + smYukawa M z) := by
+  rw [smFermiHam_eq]
 
-
-
+set_option maxRecDepth 20000 in
+/-- On elementary tensors, `h_full (u ⊗ ψ) = (h_B u) ⊗ ψ + u ⊗ (h_F ψ)`. -/
+theorem smFullHam_tmul (P : SmParams) {n : ℕ} (hD M : Matrix (Fin n) (Fin n) ℂ) (z : ℂ)
+    (x : ↥(smFullCore n)) (u : ↥(polyGaussCore (d := 163))) (ψ : ↥(fullDom n))
+    (hx : (x : (smFullSpace n).carrier)
+      = pairEmb (L2dSpace 163) (smFermiSpace n)
+          (inclPair (L2dSpace 163) (smFermiSpace n) (polyGaussCore (d := 163)) (fullDom n)
+            (u ⊗ₜ[ℂ] ψ : ↥(polyGaussCore (d := 163)) ⊗[ℂ] ↥(fullDom n)))) :
+    smFullHam P hD M z x
+      = pairEmb (L2dSpace 163) (smFermiSpace n)
+          ((smHamiltonian P) u ⊗ₜ[ℂ] (ψ : FermiFock n)
+            + (u : L2d 163) ⊗ₜ[ℂ] (smDirac hD + smYukawa M z) ψ) := by
+  refine (cpairOp_apply _ _ _ _ _ _ x
+    (u ⊗ₜ[ℂ] ψ : ↥(polyGaussCore (d := 163)) ⊗[ℂ] ↥(fullDom n)) hx).trans ?_
+  rw [← smFermiHam_eq]
+  rfl
 
 /-! ## 2. Essential self-adjointness of the full one-particle Hamiltonian -/
 
+theorem fullDom_dense (n : ℕ) :
+    Dense ((fullDom n : Submodule ℂ (FermiFock n)) : Set (FermiFock n)) := by
+  simp
 
+theorem smFullCore_dense (n : ℕ) :
+    Dense ((smFullCore n : Submodule ℂ (smFullSpace n).carrier) : Set (smFullSpace n).carrier) :=
+  dense_cpairDom (L2dSpace 163) (smFermiSpace n) _ _ polyGaussCore_dense (fullDom_dense n)
 
+/-- `h_full` is symmetric on its core (for a Hermitian Dirac matrix). -/
+theorem smFullHam_symmetricOn (P : SmParams) {n : ℕ} {hD : Matrix (Fin n) (Fin n) ℂ}
+    (M : Matrix (Fin n) (Fin n) ℂ) (z : ℂ) (hh : hD.conjTranspose = hD) :
+    SymmetricOn (smFullCore n) (smFullHam P hD M z) :=
+  symmetricOn_cpairOp (L2dSpace 163) (smFermiSpace n) _ _ _ _ (smHamiltonian_symmetricOn P)
+    (smFermiHam_symmetricOn (M := M) (z := z) hh)
 
-
-
-
-
+/-- The Dirac–Yukawa Hamiltonian is essentially self-adjoint on the whole fermionic space
+(`sm_fermi_esa`, with the comparison `N = 1`). -/
+theorem smFermiHam_esa {n : ℕ} {hD : Matrix (Fin n) (Fin n) ℂ}
+    (M : Matrix (Fin n) (Fin n) ℂ) (z : ℂ) (hh : hD.conjTranspose = hD) :
+    EssentiallySelfAdjointOn (fullDom n) (onFull (smFermiHam hD M z)) :=
+  sm_fermi_esa (M := M) (z := z) (om := fun _ => 0) (c0 := 1) hh (fun _ => le_rfl) le_rfl
 
 
 

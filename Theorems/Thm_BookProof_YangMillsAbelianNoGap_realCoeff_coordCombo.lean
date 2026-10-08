@@ -12,8 +12,6 @@ open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial MeasureTheory
@@ -21,6 +19,8 @@ open BookProof.HermiteProductCore BookProof.GaussCoordCombo BookProof.SqueezedGa
 open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.YangMillsAbelianNoGap.realCoeff_coordCombo (i : Fin d) (c : ℕ → ℝ) (p K : ℕ) :

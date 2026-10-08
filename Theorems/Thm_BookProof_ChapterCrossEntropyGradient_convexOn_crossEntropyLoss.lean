@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 open BookProof.ChapterCrossEntropyGradient
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterCrossEntropyGradient.convexOn_crossEntropyLoss (s : Fin m → ℝ) (y : Fin m) :

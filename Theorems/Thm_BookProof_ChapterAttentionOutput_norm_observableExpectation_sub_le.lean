@@ -7,8 +7,6 @@ import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterAttentionOutput
 
-variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 open scoped BigOperators
 
@@ -18,6 +16,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 
 theorem BookProof.ChapterAttentionOutput.norm_observableExpectation_sub_le (p q : Fin m → ℝ) {v : Fin m → E} {C : ℝ}

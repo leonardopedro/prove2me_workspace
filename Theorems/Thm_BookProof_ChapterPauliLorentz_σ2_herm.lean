@@ -7,4 +7,4 @@ open BookProof.ChapterPauliLorentz
 open Matrix
 open scoped BigOperators
 
-theorem BookProof.ChapterPauliLorentz.σ2_herm : σ2ᴴ = σ2 := by sorry
+theorem BookProof.ChapterPauliLorentz.sigma2_herm : σ2ᴴ = σ2 := by sorry

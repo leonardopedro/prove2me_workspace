@@ -7,13 +7,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ChapterSchurRepresentation
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System BookProof.ChapterSchurIrreducible
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurRepresentation.schur_imprimitivity {G : Type*} [Group G] {X : Type*}

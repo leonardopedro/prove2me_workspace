@@ -15,8 +15,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.SqSumOuterFamily
 
-variable (dim : ℕ → ℕ)
-
 
 
 open Finset MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 
 noncomputable section
+
+variable (dim : ℕ → ℕ)
 
 theorem BookProof.SqSumOuterFamily.outerCore_dense :
     Dense ((outerCore dim : Submodule ℂ (outerFock dim)) : Set (outerFock dim)) := by sorry

@@ -15,10 +15,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
-).Finite := Iff.rfl
-
-theorem solution (k : ℤ) (c : ℂ) : lp.single 2 k c ∈ finiteModes :=
-  lpSingle_mem_lpFi :=
+theorem solution : Dense ((finiteModes : Submodule ℂ L2Z) : Set L2Z) :=
   niteModes k c
   
   /-- The l

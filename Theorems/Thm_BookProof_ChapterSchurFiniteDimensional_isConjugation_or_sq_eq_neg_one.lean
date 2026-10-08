@@ -8,13 +8,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterSchurFiniteDimensional
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurFiniteDimensional.isConjugation_or_sq_eq_neg_one [FiniteDimensional ℂ V] [Nontrivial V]

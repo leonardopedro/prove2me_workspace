@@ -13,8 +13,6 @@ import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BRSTNilpotent
 open BookProof.FermionFock
 
-variable {ι : Type*} [DecidableEq ι]
-
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
@@ -24,6 +22,8 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
 
 noncomputable section
+
+variable {ι : Type*} [DecidableEq ι]
 
 theorem BookProof.FermionFock.ghostCAR_creF_annF (n : ℕ) :
     BookProof.BRSTNilpotent.GhostCAR (ghostChi n) (ghostBeta n) where

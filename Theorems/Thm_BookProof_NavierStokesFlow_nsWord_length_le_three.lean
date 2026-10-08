@@ -4,11 +4,11 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
+
+open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
+
 variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
-
-
-open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 
 theorem BookProof.NavierStokesFlow.nsWord_length_le_three (a : NSWordIndex) : (nsWord a).length ≤ 3 := by sorry

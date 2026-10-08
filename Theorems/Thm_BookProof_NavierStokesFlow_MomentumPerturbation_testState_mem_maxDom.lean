@@ -10,12 +10,12 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
-variable {ι : Type*}
-
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+
+variable {ι : Type*}
 
 
 theorem BookProof.NavierStokesFlow.MomentumPerturbation.testState_mem_maxDom : testState ∈ maxDom linSymbol := by sorry

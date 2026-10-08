@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp
+import Theorems.Thm_BookProof_ChapterShannonSampling_half_add_period
 open BookProof.ChapterPaleyWienerSampling
 open BookProof.ChapterPaleyWienerSampling.BandLimited
 

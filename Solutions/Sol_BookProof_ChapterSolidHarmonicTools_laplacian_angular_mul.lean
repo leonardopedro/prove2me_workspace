@@ -29,7 +29,7 @@ theorem solution {A B : E → ℝ} {x : E} {α β : ℝ} {e : E} {μ : ℕ}
   have hcross : ∑ i, fderiv ℝ A x ((stdOrthonormalBasis ℝ E) i)
       * fderiv ℝ B x ((stdOrthonormalBasis ℝ E) i)
       = α * fderiv ℝ A x e + β * fderiv ℝ A x x := by
-    have he' : ∑ i, ⟪e, (stdOrthonormalBasis ℝ E) i⟫_ℝ
+    have he_prime : ∑ i, ⟪e, (stdOrthonormalBasis ℝ E) i⟫_ℝ
         * fderiv ℝ A x ((stdOrthonormalBasis ℝ E) i) = fderiv ℝ A x e :=
       sum_inner_mul_apply (fderiv ℝ A x) e
     have hx' : ∑ i, ⟪x, (stdOrthonormalBasis ℝ E) i⟫_ℝ
@@ -46,6 +46,6 @@ theorem solution {A B : E → ℝ} {x : E} {α β : ℝ} {e : E} {μ : ℕ}
         smul_eq_mul, innerCLM_apply]
       ring
     simp only [hterm]
-    rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum, he', hx']
+    rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum, he_prime, hx']
   rw [hprod, hcross, hharm, haxis, heuler]
   ring

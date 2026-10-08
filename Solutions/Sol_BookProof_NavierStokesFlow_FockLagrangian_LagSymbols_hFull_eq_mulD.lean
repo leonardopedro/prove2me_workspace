@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_add'
+import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_add_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_meas
@@ -38,19 +38,19 @@ theorem solution : S.data.hFull = mulD μ S.total_meas S.total_dom := by
   have hcon : S.data.constraintOp = mulD μ S.c_meas S.c_dom := rfl
   have hfold1 : mulD μ S.kinSym_meas S.kinSym_dom + mulD μ S.visSym_meas S.visSym_dom
       = mulD μ (S.kinSym_meas.add S.visSym_meas) (S.kinSym_dom.add S.visSym_dom) :=
-    mulD_add' μ S.kinSym_meas S.visSym_meas (S.kinSym_meas.add S.visSym_meas) S.kinSym_dom
+    mulD_add_prime μ S.kinSym_meas S.visSym_meas (S.kinSym_meas.add S.visSym_meas) S.kinSym_dom
       S.visSym_dom (S.kinSym_dom.add S.visSym_dom) fun _ => rfl
   have hfold2 : mulD μ (S.kinSym_meas.add S.visSym_meas) (S.kinSym_dom.add S.visSym_dom)
         + mulD μ S.driSym_meas S.driSym_dom
       = mulD μ ((S.kinSym_meas.add S.visSym_meas).add S.driSym_meas)
           ((S.kinSym_dom.add S.visSym_dom).add S.driSym_dom) :=
-    mulD_add' μ (S.kinSym_meas.add S.visSym_meas) S.driSym_meas
+    mulD_add_prime μ (S.kinSym_meas.add S.visSym_meas) S.driSym_meas
       ((S.kinSym_meas.add S.visSym_meas).add S.driSym_meas)
       (S.kinSym_dom.add S.visSym_dom) S.driSym_dom
       ((S.kinSym_dom.add S.visSym_dom).add S.driSym_dom) fun _ => rfl
   have hfold3 : mulD μ ((S.kinSym_meas.add S.visSym_meas).add S.driSym_meas)
             ((S.kinSym_dom.add S.visSym_dom).add S.driSym_dom)
         + mulD μ S.c_meas S.c_dom = mulD μ S.total_meas S.total_dom :=
-    mulD_add' μ _ _ _ _ _ _ fun _ => rfl
+    mulD_add_prime μ _ _ _ _ _ _ fun _ => rfl
   rw [hdec, S.kinetic_eq, S.viscous_eq, S.drift_eq, hcon]
   exact hfold1 ▸ (hfold2 ▸ hfold3)

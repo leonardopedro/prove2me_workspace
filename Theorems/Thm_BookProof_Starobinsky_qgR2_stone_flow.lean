@@ -14,8 +14,6 @@ open BookProof.QuantumGravityDensitized
 open BookProof.StoneBridge
 open BookProof.Starobinsky
 
-variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
-
 
 open Filter Topology
 
@@ -25,6 +23,8 @@ open BookProof.QuantumGravityDensitized BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 
 noncomputable section
+
+variable (a b : ℕ → ℝ) (M alpha : ℝ) (Rc : ℕ → ℝ)
 
 theorem BookProof.Starobinsky.qgR2_stone_flow :
     ∃ (T : UnboundedSelfAdjoint L2Nat) (U : ℝ → (L2Nat →L[ℂ] L2Nat)),

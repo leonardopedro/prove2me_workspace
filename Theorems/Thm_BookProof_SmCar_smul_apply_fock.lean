@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmCar
 
-variable {n : ℕ}
-
 
 
 open Finset
+
+variable {n : ℕ}
 
 
 theorem BookProof.SmCar.smul_apply_fock (c : ℂ) (x : FermiFock n) (S : Finset (Fin n)) :

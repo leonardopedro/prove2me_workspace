@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldSphereSupport
 open BookProof.ChapterFreeFieldSphereSupport
 
-variable {n : ℕ}
-
 
 open MeasureTheory ProbabilityTheory
 open BookProof.ChapterFreeFieldGaussian BookProof.ChapterFreeFieldSphere
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldSphereSupport.normalize_mem_sphere {x : EuclideanSpace ℝ (Fin n)} (hx : x ≠ 0) :

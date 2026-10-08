@@ -8,14 +8,14 @@ import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 
 open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 
 theorem BookProof.ChapterSolidHarmonic.solidHarmonicIm_harmonic {u v e : E} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (he : ‖e‖ = 1)

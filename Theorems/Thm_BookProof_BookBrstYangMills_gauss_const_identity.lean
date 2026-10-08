@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstYangMills
 
-variable {N : ℕ} (G : GaugeAlgebra N)
-
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 
 noncomputable section
+
+variable {N : ℕ} (G : GaugeAlgebra N)
 
 theorem BookProof.BookBrstYangMills.gauss_const_identity (μ : Fin 4) (a c e : Fin N) :
     (∑ b, G.f a b e * (-(G.D μ c b))) - (∑ b, G.f a b c * (-(G.D μ e b)))

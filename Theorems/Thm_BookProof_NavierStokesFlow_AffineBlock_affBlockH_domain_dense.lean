@@ -8,14 +8,14 @@ open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
-variable {J : Type*}
-
 
 open scoped ENNReal
 
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+
+variable {J : Type*}
 
 
 theorem BookProof.NavierStokesFlow.AffineBlock.affBlockH_domain_dense :

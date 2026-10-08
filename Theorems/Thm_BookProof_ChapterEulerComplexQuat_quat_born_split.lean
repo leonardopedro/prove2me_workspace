@@ -3,11 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterEulerComplexQuat
 open BookProof.ChapterEulerComplexQuat
 
-variable {n : ℕ}
-
 
 open scoped Quaternion BigOperators
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterEulerComplexQuat.quat_born_split (v : Fin n → ℍ[ℝ]) (k : Fin n) :

@@ -22,8 +22,6 @@ open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockFullFL
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 
 
 open Finset MvPolynomial
@@ -36,6 +34,8 @@ open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
 open Filter Topology
 
 noncomputable section
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgSectorData_commForm_le (n : ℕ) (p : (qgSectorData n).C₀) :
     |commForm (qgSectorData n).H₀ (qgSectorData n).coreN p|

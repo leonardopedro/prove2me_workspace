@@ -1,6 +1,7 @@
 -- Generated from ChapterA4f.lean — solution of BookProof.ChapterA4f.zeroMomentum_symbol
 import Mathlib
 import Definitions.Def_ChapterA4f
+import Theorems.Thm_BookProof_ChapterA5_energySymbolR_sq
 open BookProof.ChapterA4f
 
 

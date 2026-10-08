@@ -13,8 +13,6 @@ open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial MeasureTheory
@@ -22,6 +20,8 @@ open BookProof.HermiteProductCore BookProof.GaussCoordCombo BookProof.SqueezedGa
 open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.YangMillsAbelianNoGap.realCoeff_prod {S : Finset (Fin d)} {f : Fin d → MvPolynomial (Fin d) ℂ}

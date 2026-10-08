@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 
 
@@ -67,7 +68,8 @@ def ofBounded (A : H →L[ℂ] H) (hA : IsSelfAdjoint A) : UnboundedSelfAdjoint 
     · intro phi _
       exact ⟨A phi, fun psi => (ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mp hA) _ _⟩
 
-
+@[simp] theorem ofBounded_op (A : H →L[ℂ] H) (hA : IsSelfAdjoint A) (x : H)
+    (hx : x ∈ (ofBounded A hA).domain) : (ofBounded A hA).op ⟨x, hx⟩ = A x := rfl
 
 
 

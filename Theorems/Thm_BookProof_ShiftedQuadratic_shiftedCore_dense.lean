@@ -14,8 +14,6 @@ open BookProof.HermiteProductCore
 open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -27,6 +25,8 @@ open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.ShiftedQuadratic.shiftedCore_dense (c b b' : Fin d → ℝ) :

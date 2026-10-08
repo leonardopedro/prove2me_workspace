@@ -9,9 +9,6 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 open BookProof.YangMillsAbelianNoGap
 
-variable {d : ℕ}
-variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
-
 
 
 open MvPolynomial MeasureTheory
@@ -20,6 +17,9 @@ open BookProof.YangMillsHermite BookProof.FarisLavine BookProof.HermiteGalerkin
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (vf : Fin d → ℝ) (Mf : Fin d → ℕ)
 
 theorem BookProof.YangMillsAbelianNoGap.le_of_sq_le {a t b : ℝ} (ht : 0 ≤ t) (hb : 0 ≤ b)
     (h : a ^ 2 ≤ t ^ 2 * b ^ 2) : a ≤ t * b := by sorry

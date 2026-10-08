@@ -6,12 +6,12 @@ import Definitions.Def_ChapterDensityMarginalConditional
 open BookProof.ChapterB4
 open BookProof.DensitySpectral
 
-variable {n : Type*} [Fintype n] [DecidableEq n]
-
 
 
 open Matrix
 open scoped BigOperators ComplexOrder
+
+variable {n : Type*} [Fintype n] [DecidableEq n]
 
 
 theorem BookProof.DensitySpectral.density_eigenvalues_sum_one {ρ : Matrix n n ℂ} (h : IsDensityMatrix ρ) :

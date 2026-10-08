@@ -102,16 +102,39 @@ def qgCouplingOp (Q' C : Fin 84 → Fin 84 → ℝ) (b b' : Fin 84 → ℝ) :
     (polyGaussCore (d := 84)) →ₗ[ℂ] L2d 84 :=
   (polyGaussCore (d := 84)).subtype ∘ₗ coreOp (qgCouplingPoly Q' C b b')
 
-
+/-- The coupling is absorbed into the general quadratic Hamiltonian. -/
+theorem fqPoly_add_coupling (P Q Q' C : Fin 84 → Fin 84 → ℝ) (b b' : Fin 84 → ℝ) :
+    fqPoly P Q 0 0 0 + qgCouplingPoly Q' C b b' = fqPoly P (Q + Q') C b b' := by
+  have hfo : foPoly (d := 84) 0 0 = 0 := by
+    simp only [foPoly, Pi.zero_apply, Complex.ofReal_zero, zero_smul, add_zero,
+      Finset.sum_const_zero]
+  simp only [fqPoly, qgCouplingPoly, fqQuadPoly, hfo, add_zero, Pi.add_apply, Pi.zero_apply,
+    Complex.ofReal_zero, zero_smul, Complex.ofReal_add, add_smul]
+  rw [← add_assoc, ← Finset.sum_add_distrib]
+  refine congrArg (· + foPoly b b') (Finset.sum_congr rfl fun i _ => ?_)
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  abel
 
 /-- The kinetic-plus-torsion operator with an arbitrary Weyl-ordered quadratic coupling. -/
 def qgWithCoupling (kappa : Fin 84 → ℝ) (Q' C : Fin 84 → Fin 84 → ℝ) (b b' : Fin 84 → ℝ) :
     (polyGaussCore (d := 84)) →ₗ[ℂ] L2d 84 :=
   signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84)) + qgCouplingOp Q' C b b'
 
+theorem qgWithCoupling_eq_fqOp (kappa : Fin 84 → ℝ) (Q' C : Fin 84 → Fin 84 → ℝ)
+    (b b' : Fin 84 → ℝ) :
+    qgWithCoupling kappa Q' C b b' = fqOp (qgFqP kappa) (qgFqQ + Q') C b b' := by
+  rw [qgWithCoupling, qgSigned_eq_fqOp, fqOp, qgCouplingOp, fqOp, ← LinearMap.comp_add,
+    ← coreOp_add, fqPoly_add_coupling]
 
-
-
+/-- **ESA with an arbitrary Weyl-ordered quadratic coupling.**  For every real signature `κ`
+and all real coupling data, `½ Σ κ_j π_j² + ½ Σ T_m² + coupling` is essentially self-adjoint
+on the Gauss–polynomial core. -/
+theorem qgWithCoupling_esa (kappa : Fin 84 → ℝ) (Q' C : Fin 84 → Fin 84 → ℝ)
+    (b b' : Fin 84 → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qgWithCoupling kappa Q' C b b') := by
+  rw [qgWithCoupling_eq_fqOp]
+  exact fqOp_essentiallySelfAdjoint _ _ _ _ _
 
 /-! ## 2. The book's cross terms `½ 𝒮^{ab}E_{ab} + ⅓ 𝒫 E_a{}^a` -/
 
@@ -140,9 +163,20 @@ Weyl-ordered product `½(xᵢπⱼ + πⱼxᵢ)`. -/
 def bookCrossMat (i j : Fin 84) : ℝ :=
   ∑ a : Fin 4, ∑ b : Fin 4, (1 / 2) * calSVec a b j * eVec a b i + 1 / 3 * calPVec j * eTrVec i
 
+/-- **The trace parts cancel**: `½ 𝒮^{ab}E_{ab} + ⅓ 𝒫 E_a{}^a = ½ Σ (p^{ab} + p^{ba}) E_{ab}`. -/
+theorem bookCrossMat_eq_sym (i j : Fin 84) :
+    bookCrossMat i j
+      = ∑ a : Fin 4, ∑ b : Fin 4, (1 / 2) * (pVec a b j + pVec b a j) * eVec a b i := by
+  simp only [bookCrossMat, calSVec, eTrVec, Fin.sum_univ_four]
+  simp only [Fin.isValue, ↓reduceIte, Fin.reduceEq]
+  ring
 
-
-
+/-- The cross terms are genuinely present: the coefficient of `½(x π + π x)` for the pair
+(`∂_0 e_1{}^1`, `π_{e_1{}^1}`) is `1`. -/
+theorem bookCrossMat_idx11 : bookCrossMat (idxDE 0 1 1) (idxE 1 1) = 1 := by
+  rw [bookCrossMat_eq_sym]
+  simp only [pVec, eVec, qgEta, idxE, idxDE, Fin.sum_univ_four, Fin.ext_iff]
+  norm_num
 
 /-- **The 3D gravity Hamiltonian with the book's cross terms**: hyperbolic signature
 `qgKappa`, torsion potential, Weyl-ordered `½ 𝒮·E + ⅓ 𝒫·E`, and a real quadratic bracket
@@ -151,19 +185,53 @@ def qg3DCrossHamiltonian (Q' : Fin 84 → Fin 84 → ℝ) :
     (polyGaussCore (d := 84)) →ₗ[ℂ] L2d 84 :=
   qg3DHamiltonian (coreRepPoly 84) + qgCouplingOp Q' bookCrossMat 0 0
 
+/-- The cross-term Hamiltonian is the general real quadratic Hamiltonian with kinetic matrix
+`diag(κ/2)`, coordinate matrix `qgFqQ + Q'` and cross matrix `bookCrossMat`. -/
+theorem qg3DCross_eq_fqOp (Q' : Fin 84 → Fin 84 → ℝ) :
+    qg3DCrossHamiltonian Q' = fqOp (qgFqP qgKappa) (qgFqQ + Q') bookCrossMat 0 0 := by
+  rw [← qgWithCoupling_eq_fqOp, qg3DCrossHamiltonian, qgWithCoupling, qg3DHamiltonian]
 
+/-- **ESA of the 3D gravity Hamiltonian with the cross terms included**, for every real
+quadratic bracket `Q'`. -/
+theorem qg3DCross_esa (Q' : Fin 84 → Fin 84 → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := 84)) (qg3DCrossHamiltonian Q') := by
+  rw [qg3DCross_eq_fqOp]
+  exact fqOp_essentiallySelfAdjoint _ _ _ _ _
 
-
-
-
+/-- **The complete unitary flow** of the gravity Hamiltonian with the cross terms (Stone). -/
+theorem qg3DCross_stone_flow (Q' : Fin 84 → Fin 84 → ℝ) :
+    ∃ (T : UnboundedSelfAdjoint (L2d 84)) (U : ℝ → (L2d 84 →L[ℂ] L2d 84)),
+      IsSelfAdjointExtension (qg3DCrossHamiltonian Q') T.op ∧ IsStoneFlow T U := by
+  rw [qg3DCross_eq_fqOp]
+  exact fqOp_stone_flow _ _ _ _ _
 
 /-! ## 3. Second quantization -/
 
+theorem qg3DCross_symmetricOn (Q' : Fin 84 → Fin 84 → ℝ) :
+    SymmetricOn (polyGaussCore (d := 84)) (qg3DCrossHamiltonian Q') := by
+  rw [qg3DCross_eq_fqOp]
+  exact fqOp_symmetric _ _ _ _ _
 
+/-- **The enclosure `dΓ(h)`** of the cross-term Hamiltonian (creation left / annihilation
+right, `dGammaCoreOp`) is essentially self-adjoint on the finite-particle domain over the
+Gauss–polynomial core. -/
+theorem qg3DCross_dGamma_esa (Q' : Fin 84 → Fin 84 → ℝ) :
+    EssentiallySelfAdjointOn
+      (dsCore (fun n : ℕ => fockSectorCore (L2dSpace 84) (polyGaussCore (d := 84))
+        (polyGaussCore (d := 84)) n))
+      (dGammaCoreOp (L2dSpace 84) (polyGaussCore (d := 84))
+        (qg3DCrossHamiltonian Q') (polyGaussCore (d := 84))) :=
+  EsaOneParticle.dGamma_essentiallySelfAdjointOn_of_esa (Hs := L2dSpace 84)
+    (qg3DCrossHamiltonian Q') polyGaussCore_dense (qg3DCross_symmetricOn Q')
+    (qg3DCross_esa Q')
 
-
-
-
+/-- **The same in the occupation-number spelling**: the second quantization
+`Σ_{j,k} ⟪ψ_j, h ψ_k⟫ a†_j a_k` of the cross-term Hamiltonian in the product Hermite basis is
+essentially self-adjoint on the finite-occupation core of the Fock space. -/
+theorem qg3DCross_dGammaOp_esa (e : ℕ ≃ (Fin 84 →₀ ℕ)) (Q' : Fin 84 → Fin 84 → ℝ) :
+    EssentiallySelfAdjointOn (BookProof.NavierStokesFlow.lpFiniteModes Conf)
+      (dGammaOp (hermCol e (fqPoly (qgFqP qgKappa) (qgFqQ + Q') bookCrossMat 0 0))) :=
+  dGamma_fqPoly_essentiallySelfAdjointOn_core e _ _ _ _ _
 
 end
 

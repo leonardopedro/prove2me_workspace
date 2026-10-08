@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterResidualStream
 open BookProof.ChapterResidualStream
 
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterAttentionOutput
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
 
 
 theorem BookProof.ChapterResidualStream.norm_residual_sub_self_le [NormedSpace ℝ E] (beta : ℝ) (s : Fin m → ℝ)

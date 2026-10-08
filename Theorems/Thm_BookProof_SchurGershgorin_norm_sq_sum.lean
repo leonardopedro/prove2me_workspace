@@ -12,8 +12,6 @@ import Mathlib
 import Definitions.Def_ChapterSchurGershgorinGap
 open BookProof.SchurGershgorin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -22,6 +20,8 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.TruncationGapLift
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 
 theorem BookProof.SchurGershgorin.norm_sq_sum (b : HilbertBasis ℕ ℂ F) (S : Finset ℕ) (c : ℕ → ℂ) :

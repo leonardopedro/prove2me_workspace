@@ -11,9 +11,6 @@ open BookProof.HermiteProductCore
 open BookProof.Starobinsky
 open BookProof.QgHermiteFriedrichs
 
-variable {d : ℕ}
-variable (W : Vd d → ℝ)
-
 
 
 open MeasureTheory Complex MvPolynomial
@@ -22,5 +19,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExt
 
 noncomputable section
 
+variable {d : ℕ}
+
+variable (W : Vd d → ℝ)
 
 theorem BookProof.QgHermiteFriedrichs.continuous_scalaronW (M alpha : ℝ) : Continuous (scalaronW M alpha) := by sorry

@@ -4,16 +4,14 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*}
-
 
 open scoped Matrix
 
 
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-rem mem_lpFiniteModes {f : lp (fun _ : ι => ℂ) 2} :
-    f ∈ lpFiniteModes ι ↔ (Function.support ((f : ι → ℂ))).Finite := Iff.rfl
+variable {ι : Type*}
 
-/-- Each canonical basis state := by sorry
+theorem BookProof.NavierStokesFlow.lpSingle_mem_lpFiniteModes [DecidableEq ι] (k : ι) (c : ℂ) :
+    lp.single 2 k c ∈ lpFiniteModes ι := by sorry

@@ -12,6 +12,13 @@ open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
 open BookProof.TensorSumEsa
 
+
+
+open scoped TensorProduct
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+
+noncomputable section
+
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
 variable (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
@@ -20,13 +27,6 @@ variable {Hs Ks : IPSpace} {DA : Submodule ℂ Hs.carrier} {DB : Submodule ℂ K
   {A : DA →ₗ[ℂ] Hs.carrier} {B : DB →ₗ[ℂ] Ks.carrier}
 variable (P : OneParticleFlow Hs DA A) (Q : OneParticleFlow Ks DB B)
 variable {Hs Ks : IPSpace} [CompleteSpace Hs.carrier] [CompleteSpace Ks.carrier]
-
-
-
-open scoped TensorProduct
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-
-noncomputable section
 
 theorem BookProof.TensorSumEsa.essentiallySelfAdjointOn_cpairDom_selfAdjoint (T : UnboundedSelfAdjoint Hs.carrier)
     (S : UnboundedSelfAdjoint Ks.carrier) :

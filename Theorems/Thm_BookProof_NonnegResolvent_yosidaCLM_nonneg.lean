@@ -6,13 +6,13 @@ import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegResolvent
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)} {a b : ℝ}
-
 
 
 open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable {T : Submodule ℂ (F × F)} {a b : ℝ}
 
 
 theorem BookProof.NonnegResolvent.yosidaCLM_nonneg (hT : IsNonnegSelfAdjoint T) (ha : 0 < a) : 0 ≤ yosidaCLM hT ha := by sorry

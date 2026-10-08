@@ -7,14 +7,14 @@ import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
 
-variable (Hs : IPSpace) (c : ℝ)
-
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
+
+variable (Hs : IPSpace) (c : ℝ)
 
 
 theorem BookProof.ScalarDGamma.inclPow_top_surjective (n : ℕ) : Function.Surjective (inclPow Hs ⊤ n) := by sorry

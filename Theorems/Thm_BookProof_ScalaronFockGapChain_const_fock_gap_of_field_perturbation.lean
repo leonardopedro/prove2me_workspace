@@ -15,8 +15,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.ScalaronFockGapChain
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 
 noncomputable section
 
@@ -27,6 +25,8 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.ScalaronFockGapChain.const_fock_gap_of_field_perturbation (b : HilbertBasis ℕ ℂ F) {m : ℝ} (hm : 0 < m)
     {f : ℕ →₀ ℂ} (hf : 2 * l2norm f < m) {u : FockAlg} (h0 : u 0 = 0) :

@@ -4,17 +4,16 @@ import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
 import Definitions.Def_ChapterIrreversible
 import Definitions.Def_ChapterReconstruct
-open BookProof.ChapterIrreversible
 open BookProof.ChapterReconstruct
 open BookProof.SymmetryEntropy
-
-variable {n : ℕ}
 
 
 
 open Finset
 open BookProof.ChapterMarkovEntropy (entropy)
 open BookProof.ChapterReconstruct (IsDeterministicCol)
+
+variable {n : ℕ}
 
 
 theorem BookProof.SymmetryEntropy.entropy_bornCol_pos_iff_not_isDeterministicCol {U : Fin n → Fin n → ℂ} {a : Fin n}

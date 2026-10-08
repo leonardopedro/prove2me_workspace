@@ -16,8 +16,6 @@ import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
 open BookProof.NsFullEuler
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {n : ℕ}
 
 theorem BookProof.NsFullEuler.nsFullFockHam_sector (nu lam mu gg : ℝ) (x : nsFockCore) (n : ℕ) :
     ((nsFullFockHam nu lam mu gg x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n

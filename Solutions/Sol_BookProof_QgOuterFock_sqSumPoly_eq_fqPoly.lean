@@ -37,7 +37,7 @@ theorem solution {R : Type*} [Fintype R] (kappa : Fin D → ℝ) (v : R → Fin 
             • YangMillsHermite.momOp j (YangMillsHermite.momOp j p) := by
     refine Finset.sum_congr rfl fun i _ => ?_
     rw [Finset.sum_eq_single i]
-    · rw [diagP, if_pos rfl, weylProd_self', momPoly_eq_ymMomOp]
+    · rw [diagP, if_pos rfl, weylProd_self_prime, momPoly_eq_ymMomOp]
     · intro b _ hb
       simp [diagP, Ne.symm hb]
     · intro hi

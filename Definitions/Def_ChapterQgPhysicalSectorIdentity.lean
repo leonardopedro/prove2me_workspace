@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterGaugeFixing
+import Theorems.Thm_BookProof_GaugeFixing_int_L_gf_eq_zero
 import Definitions.Def_ChapterBrstReducedTransfer
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterFockQuadraticEsa
@@ -94,13 +95,6 @@ structure DerivativeVariableFixingSystem (F : BiDegree → Type) extends GaugeFi
 variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 
 
-
-
-
-
-
-
-
 /-! ## 2. A non-degenerate model -/
 
 /-- The `2 × 2` matrix model of the fixing system: the superalgebra `M(1|1)`
@@ -118,9 +112,6 @@ noncomputable def matrixModel : DerivativeVariableFixingSystem (fun _ => Mat2) w
     intro x
     change (x : Mat2) * 0 = 0
     exact Matrix.mul_zero x
-
-
-
 
 
 /-! ## 3. The QG-3.2(a) statement of record (honest boundary) -/
@@ -236,27 +227,16 @@ noncomputable def creIdx (i : ι) : Idx ι := Finsupp.single i 1
 noncomputable def annIdx (j : ι) : Idx ι := Finsupp.single j 1
 
 
-
-
-
-
-
-
-
 /-! ## 4.2 — the mode-exchange monomial is quadratic -/
-
 
 
 /-! ## 4.3 — the weighted summability of the coupling family -/
 
 
-
 /-! ## 4.4 — the full operator is essentially self-adjoint (Faris–Lavine / `fockH`) -/
-
 
 
 /-! ## 4.5 — axiom audit -/
 
-#print axioms coupling_essentiallySelfAdjointOn_core
 
 end BookProof.QgPhysicalSectorIdentity

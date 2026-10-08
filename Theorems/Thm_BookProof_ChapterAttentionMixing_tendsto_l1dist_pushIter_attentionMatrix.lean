@@ -4,10 +4,8 @@ import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionMixing
 import Definitions.Def_ChapterDutchBook
-open BookProof.ChapterDutchBook
+import Definitions.Def_ChapterAttentionMarkov
 open BookProof.ChapterAttentionMixing
-
-variable {m : ℕ}
 
 
 open scoped BigOperators
@@ -18,6 +16,9 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionMarkov
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMixing.tendsto_l1dist_pushIter_attentionMatrix {beta D : ℝ} (hb : 0 ≤ beta)

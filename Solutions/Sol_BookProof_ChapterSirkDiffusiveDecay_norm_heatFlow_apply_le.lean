@@ -1,16 +1,9 @@
 -- Generated from ChapterSirkDiffusiveDecay.lean — solution of BookProof.ChapterSirkDiffusiveDecay.norm_heatFlow_apply_le
 import Mathlib
 import Definitions.Def_ChapterSirkDiffusiveDecay
-import Theorems.Thm_BookProof_ChapterSirkDiffusiveDecay_heatFlow_zero
 import Theorems.Thm_BookProof_ChapterSirkDiffusiveDecay_hasDerivAt_heatFlow_normSq
+import Theorems.Thm_BookProof_ChapterSirkDiffusiveDecay_heatFlow_zero
 open BookProof.ChapterSirkDiffusiveDecay
-
-
-
-
-
-
-
 
 
 
@@ -19,6 +12,10 @@ noncomputable section
 
 open BookProof.ChapterH4
 open Filter Topology NormedSpace
+
+variable {E F : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
@@ -41,11 +38,7 @@ theorem solution (A : E →L[ℂ] E) {mu : ℝ} (hA : IsCoercive A mu) (v : E)
       have := (((hasDerivAt_id s).const_mul (2 * mu)).exp)
       simpa [mul_comm, mul_left_comm, mul_assoc] using this
     have := h1.mul h2
-    convert this using 1
-    · rfl
-    · rfl
-    · rfl
-    · ring
+    convert this using 1 <;> (first | rfl | ring)
   have hnonpos : ∀ s : ℝ, deriv G s ≤ 0 := by
     intro s
     rw [(hderiv s).deriv]
@@ -57,8 +50,7 @@ theorem solution (A : E →L[ℂ] E) {mu : ℝ} (hA : IsCoercive A mu) (v : E)
   have hdiff : Differentiable ℝ G := fun s => (hderiv s).differentiableAt
   have hanti : Antitone G := antitone_of_deriv_nonpos hdiff hnonpos
   have hle : G t ≤ G 0 := hanti ht
-  have hG0 : G 0 = ‖v‖ ^ 2 := by
-    simp [hG, heatFlow]
+  have hG0 : G 0 = ‖v‖ ^ 2 := by simp [hG]
   rw [hG0] at hle
   -- undo the exponential weight
   have hexp : (0 : ℝ) < Real.exp (2 * mu * t) := Real.exp_pos _

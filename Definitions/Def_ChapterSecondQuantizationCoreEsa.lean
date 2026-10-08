@@ -1,5 +1,7 @@
 import Theorems.Thm_BookProof_GraphCore_pushDom_mono
 
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine

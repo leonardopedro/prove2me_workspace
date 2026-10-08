@@ -8,15 +8,15 @@ open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.SmCar
 open BookProof.SmDiracYukawa
 
-variable {n : ℕ}
-
 
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
 
+variable {n : ℕ}
 
 noncomputable section
+
 
 theorem BookProof.SmDiracYukawa.diagOp_inner (d : Finset (Fin n) → ℝ) (ψ : FermiFock n) :
     (inner ℂ ψ (diagOp d ψ) : ℂ)

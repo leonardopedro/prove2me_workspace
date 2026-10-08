@@ -10,8 +10,6 @@ import Definitions.Def_ChapterF7
 open BookProof.ChapterF7
 open BookProof.HermiteBandHigher
 
-variable {d : ℕ}
-
 
 
 noncomputable section
@@ -19,6 +17,8 @@ noncomputable section
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteBand BookProof.YangMillsHermite
 open BookProof.NavierStokesFlow.DifferentialL2
+
+variable {d : ℕ}
 
 
 theorem BookProof.HermiteBandHigher.mulOp_smul (c : ℂ) (f : MvPolynomial (Fin d) ℂ) : mulOp (c • f) = c • mulOp f := by sorry

@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterRadialLaplacian
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 
 open Filter Laplacian InnerProductSpace
 open scoped InnerProductSpace RealInnerProductSpace
+
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 
 theorem BookProof.ChapterRadialLaplacian.deriv_sqrt_comp {g : ℝ → ℝ} {r : ℝ} (hr : 0 < r) (hg : ContDiffAt ℝ 2 g r) :

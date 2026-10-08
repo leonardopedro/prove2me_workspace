@@ -16,7 +16,8 @@ variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X]
 variable {𝕜 : Type*} [RCLike 𝕜]
 
 set_option maxHeartbeats 1000000 in
-omit [Fintype X] [Fintype Y] [DecidableEq X] in
-theorem solution (B : Matrix Y X 𝕜) (x : X) (y : Y) : 0 ≤ pJoint B x y := by
+def pCond (B : Matrix Y X 𝕜) (x : X) (y : Y) : ℝ := by
 
   exact sq_nonneg _
+
+omit [Fintype X] [DecidableEq X] in

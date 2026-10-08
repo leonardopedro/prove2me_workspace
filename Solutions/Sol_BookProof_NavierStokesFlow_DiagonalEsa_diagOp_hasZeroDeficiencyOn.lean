@@ -13,6 +13,4 @@ open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : ℕ → ℝ) :
-    HasZeroDeficiencyOn (lpFiniteModes ℕ) (diagOp c) :=
-  al sequence `c` — bounded or not — the diagonal operator has vanishing
-  adjoint defi
+    HasZeroDeficiencyOn (lpFiniteModes ℕ) (diagOp c) := hasZeroDeficiencyOn_of_total_eigenvectors _ _ basis c (diagOp_basis c) basis_total

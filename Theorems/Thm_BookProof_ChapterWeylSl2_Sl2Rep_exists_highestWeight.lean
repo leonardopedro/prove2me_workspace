@@ -8,15 +8,15 @@ open BookProof.ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2
 
-variable {V : Type u} [AddCommGroup V] [Module ℂ V]
-variable (R : Sl2Rep V)
-variable {R}
-variable {R : Sl2Rep V}
-
 
 
 universe u
 
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable (R : Sl2Rep V)
+variable {R}
+variable {R : Sl2Rep V}
 
 theorem BookProof.ChapterWeylSl2.Sl2Rep.exists_highestWeight [FiniteDimensional ℂ V] [Nontrivial V] (R : Sl2Rep V) :
     ∃ (w : V) (lam : ℂ), w ≠ 0 ∧ R.E w = 0 ∧ R.H w = lam • w := by sorry

@@ -10,7 +10,6 @@ import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
-import Theorems.Thm_BookProof_ScalaronEsa_symmetricOn_inclusion
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 
@@ -24,9 +23,5 @@ open BookProof.WeakSecondDeriv
 
 noncomputable section
 
- + opCc V hV
-
-theorem BookProof.ScalaronWallEsa.wallHam_symmetricOn : SymmetricOn (ccDomain ℝ) kinCcR :=
-  symmetricOn_inclusion _ _ (constCoeffOp_symmetric _ _ _)
-
-theorem wa := by sorry
+theorem BookProof.ScalaronWallEsa.wallHam_symmetricOn (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) :
+    SymmetricOn (ccDomain ℝ) (wallHam V hV) := by sorry

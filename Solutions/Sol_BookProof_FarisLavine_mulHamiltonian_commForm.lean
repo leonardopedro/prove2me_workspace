@@ -23,7 +23,22 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-lex.ofReal_re]
-  exact mul_nonneg (abs_nonneg _) (Complex.normSq_nonneg _)
-
-theorem solution (lam : ℕ → ℝ) (x : mulSymb := 
+theorem solution (lam : ℕ → ℝ) (x : mulSymbolDomain lam) :
+    commForm (mulHamiltonian lam) (mulComparison lam) x = 0 :=
+  olDomain lam) :
+      commForm (mulHamiltonian lam) (mulComparison lam) x = 0 := by
+    rw [commForm_eq, lp.inner_eq_tsum, Complex.im_tsum (lp.summable_inner _ _)]
+    have hterm : ∀ n : ℕ, (inner ℂ (((mulHamiltonian lam x : L2Nat) : ℕ → ℂ) n)
+        (((mulComparison lam x : L2Nat) : ℕ → ℂ) n) : ℂ).im = 0 := by
+      intro n
+      have hn : (inner ℂ (((mulHamiltonian lam x : L2Nat) : ℕ → ℂ) n)
+          (((mulComparison lam x : L2Nat) : ℕ → ℂ) n) : ℂ)
+          = ((lam n * |lam n| * Complex.normSq (((x : L2Nat) : ℕ → ℂ) n) : ℝ) : ℂ) := by
+        simpa only [mulHamiltonian, mulComparison, mulSymbolOp_coe, mulSymbolFun,
+          RCLike.inner_apply] using conj_mul_ofReal₂ (lam n) (|lam n|) (((x : L2Nat) : ℕ → ℂ) n)
+      rw [hn, Complex.ofReal_im]
+    have hsum : ∑' n : ℕ, (inner ℂ (((mulHamiltonian lam x : L2Nat) : ℕ → ℂ) n)
+        (((mulComparison lam x : L2Nat) : ℕ → ℂ) n) : ℂ).im = 0 := by
+      calc ∑' n : ℕ, (inner ℂ (((mulHamiltonian lam x : L2Nat) : ℕ → ℂ) n)
+            (((mulComparison lam x : L2Nat) : ℕ → ℂ) n) : ℂ).im
+          = ∑' _ :

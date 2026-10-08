@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_abelian_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.YangMillsGhost
 
 
@@ -11,6 +12,7 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
+open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 
 variable {K : ℕ}

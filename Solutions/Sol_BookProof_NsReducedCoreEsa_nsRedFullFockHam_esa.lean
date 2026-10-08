@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsReducedCoreEsa
 import Theorems.Thm_BookProof_NsReducedCoreEsa_redHam_esa
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 open BookProof.NsReducedCoreEsa
 
 

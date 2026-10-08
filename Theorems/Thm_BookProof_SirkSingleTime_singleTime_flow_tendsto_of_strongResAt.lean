@@ -7,9 +7,6 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 open BookProof.SirkSingleTime
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
-
 
 open scoped InnerProductSpace
 
@@ -20,6 +17,9 @@ open BookProof.HashimotoShiftInvert
 
 noncomputable section
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+
+variable {T : UnboundedSelfAdjoint E} {S : ℕ → UnboundedSelfAdjoint E}
 
 theorem BookProof.SirkSingleTime.singleTime_flow_tendsto_of_strongResAt {l : ℝ} (hl : l ≠ 0)
     (h : StrongResAt T S l) (v : E) (t : ℝ) :

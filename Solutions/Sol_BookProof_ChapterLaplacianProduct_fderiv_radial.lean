@@ -1,6 +1,8 @@
 -- Generated from ChapterLaplacianProduct.lean — solution of BookProof.ChapterLaplacianProduct.fderiv_radial
 import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
+import Theorems.Thm_BookProof_ChapterRadialLaplacian_deriv_sqrt_comp
+import Theorems.Thm_BookProof_ChapterRadialLaplacian_fderiv_comp_normSq
 open BookProof.ChapterLaplacianProduct
 
 

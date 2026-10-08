@@ -5,14 +5,14 @@ import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 open BookProof.ChapterMackeyCocycle
 
-variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-
 
 open MeasureTheory
 open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+
+variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 
 theorem BookProof.ChapterMackeyCocycle.image_preimage_smul (g : G) (F : Set X) :

@@ -13,9 +13,6 @@ import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockSecondQuantization
 open BookProof.FockWeightedSchur
 
-variable {w : ℕ → ℝ}
-variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
-
 
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
@@ -23,6 +20,9 @@ open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {w : ℕ → ℝ}
+variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 theorem BookProof.FockWeightedSchur.im_inner_dGamma_wgt_bound (hw : ∀ k, 1 ≤ w k) (hherm : IsHermCol col)
     (hBg : WCommBound w col B) (u : FockAlg) :

@@ -20,13 +20,9 @@ variable {ι : Type*}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
-Lp.ofLp psi)) := by
-    ext i
-    simp [nsFlowEuclidean, Matrix.smul_mulVec]
-  rw [heq]
-  simpa [Function.comp_def, nsFlowEuclidean] using h2
-
-theorem solution :=
+theorem solution :
+    HasZeroDeficiencyOn (⊤ : Submodule ℂ (EuclideanSpace ℂ (Fin n)))
+      (restrictToTop (Matrix.toEuclideanLin (nsHamiltonian d))) :=
   w :
       HasZeroDeficiencyOn (⊤ : Submodule ℂ (EuclideanSpace ℂ (Fin n)))
         (restrictToTop (Matrix.toEuclideanLin (nsHamiltonian d))) :=

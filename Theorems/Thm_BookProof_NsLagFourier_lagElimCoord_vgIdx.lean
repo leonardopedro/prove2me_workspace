@@ -6,8 +6,6 @@ import Mathlib
 import Definitions.Def_ChapterNsLagrangianFourierElimination
 open BookProof.NsLagFourier
 
-variable {n : ℕ}
-
 
 
 open MvPolynomial
@@ -15,6 +13,8 @@ open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.NsFullLagrangian
 
 noncomputable section
+
+variable {n : ℕ}
 
 
 theorem BookProof.NsLagFourier.lagElimCoord_vgIdx (l : Fin 3 → ℝ) (i j : Fin 3) :

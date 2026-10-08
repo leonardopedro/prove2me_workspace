@@ -15,8 +15,6 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
-variable {d : ℕ}
-
 
 
 open MeasureTheory MvPolynomial
@@ -28,6 +26,8 @@ open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.Canoni
 open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
+
+variable {d : ℕ}
 
 theorem BookProof.NavierStokesFlow.DifferentialL2.Intertwined.add {T S T' S'} (hT : Intertwined T T') (hS : Intertwined S S') :
     Intertwined (T + S) (T' + S') := by sorry

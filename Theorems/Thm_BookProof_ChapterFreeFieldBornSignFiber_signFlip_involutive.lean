@@ -5,12 +5,12 @@ import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignFiber
 open BookProof.ChapterFreeFieldBornSignFiber
 
-variable {n : ℕ}
-
 
 open MeasureTheory
 open BookProof.ChapterFreeFieldBorn BookProof.ChapterFreeFieldBornSignGauge
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterFreeFieldBornSignFiber.signFlip_involutive {s : Fin n → ℝ} (hs : ∀ k, s k = 1 ∨ s k = -1)

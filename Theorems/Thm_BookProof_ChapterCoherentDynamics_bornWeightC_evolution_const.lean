@@ -6,8 +6,6 @@ import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentDynamics
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
@@ -15,6 +13,8 @@ noncomputable section
 
 
 open BookProof.ChapterCoherentOverlapComplex BookProof.ChapterCoherentFidelity
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentDynamics.bornWeightC_evolution_const (omega : ℝ) (q : EuclideanSpace ℂ (Fin n))

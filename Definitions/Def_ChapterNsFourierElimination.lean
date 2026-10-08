@@ -277,33 +277,104 @@ theorem realCoeff_realConst {m : ℕ} (c : ℝ) :
     RealCoeff (C ((c : ℝ) : ℂ) : MvPolynomial (Fin m) ℂ) := by
   rw [RealCoeff, starP_C, Complex.conj_ofReal]
 
+theorem realCoeff_fourierMomentum (k : Fin 3 → ℝ) : RealCoeff (fourierMomentum k) :=
+  RealCoeff.sum fun _ _ => (realCoeff_realConst (k _)).mul (realCoeff_X _)
 
+theorem realCoeff_fourierAdvect (k : Fin 3 → ℝ) (i : Fin 3) :
+    RealCoeff (fourierAdvect k i) :=
+  (realCoeff_fourierMomentum k).mul (realCoeff_X _)
 
+/-- The transfer weight `k ↦ k·u` is **linear in the momentum**. -/
+theorem fourierMomentum_add (k k' : Fin 3 → ℝ) :
+    fourierMomentum (k + k') = fourierMomentum k + fourierMomentum k' := by
+  rw [fourierMomentum, fourierMomentum, fourierMomentum, ← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  rw [Pi.add_apply, Complex.ofReal_add, map_add]
+  ring
 
+theorem fourierMomentum_smul (t : ℝ) (k : Fin 3 → ℝ) :
+    fourierMomentum (t • k) = C ((t : ℝ) : ℂ) * fourierMomentum k := by
+  rw [fourierMomentum, fourierMomentum, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  rw [Pi.smul_apply, smul_eq_mul, Complex.ofReal_mul, map_mul]
+  ring
 
+/-- **The advection symbol is the transfer-weight pairing** `Σ_j k_j (u_j u_i)`: the momentum of the
+eliminated derivative is contracted with the product of the two velocity modes — the polynomial form
+of the momentum-conservation convolution of the route. -/
+theorem fourierAdvect_eq_transfer (k : Fin 3 → ℝ) (i : Fin 3) :
+    fourierAdvect k i
+      = ∑ j : Fin 3, C (((k j : ℝ)) : ℂ) * (X (ruIdx6 j) * X (ruIdx6 i)) := by
+  rw [fourierAdvect, fourierMomentum, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  ring
 
+/-- The transfer weight is **linear in the momentum**, hence so is the advection symbol. -/
+theorem fourierAdvect_smul (t : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    fourierAdvect (t • k) i = C ((t : ℝ) : ℂ) * fourierAdvect k i := by
+  rw [fourierAdvect, fourierAdvect, fourierMomentum_smul]
+  ring
 
+theorem realCoeff_fourierVisc (nu : ℝ) (k : Fin 3 → ℝ) (i : Fin 3) :
+    RealCoeff (fourierVisc nu k i) :=
+  (realCoeff_X _).add ((realCoeff_realConst _).mul (realCoeff_X _))
 
+theorem nsElimHom_C (k : Fin 3 → ℝ) (n : ℕ) (c : ℂ) :
+    nsElimHom k n (C c : MvPolynomial (Fin (n * 21)) ℂ)
+      = (C c : MvPolynomial (Fin (n * 6)) ℂ) :=
+  MvPolynomial.eval₂Hom_C _ _ c
 
+/-- **The advection goes to `i (k·u) u_i`.** -/
+theorem nsElimSubst_advect (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (∑ j : Fin 3, X (ycoord p (uIdx j)) * X (ycoord p (dIdx i j)))
+      = C Complex.I * liftParcel p (fourierAdvect k i) := by
+  simp only [nsElimHom_X, ycoord, Equiv.symm_apply_apply, nsElimCoord_uIdx, nsElimCoord_dIdx,
+    fourierAdvect, fourierMomentum, map_sum, map_mul, liftParcel_C, liftParcel_X]
+  rw [Finset.sum_mul, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  ring
 
+/-- **The pressure gradient goes to `q_i`.** -/
+theorem nsElimSubst_pressure (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (X (ycoord p (qIdx i))) = liftParcel p (X (rqIdx6 i)) := by
+  rw [nsElimHom_X_q, liftParcel_X, rqIdx]
 
+/-- **The viscous term goes to `ν|k|² u_i`.** -/
+theorem nsElimSubst_viscous (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (C (((-nu : ℝ)) : ℂ) * X (ycoord p (wIdx i)))
+      = liftParcel p (C (((nu * ∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ) * X (ruIdx6 i)) := by
+  have hcoef : (C (((-nu : ℝ)) : ℂ) : MvPolynomial (Fin (n * 6)) ℂ)
+      * (-C (((∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ))
+      = C (((nu * ∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ) := by
+    rw [Complex.ofReal_neg, Complex.ofReal_mul, map_neg, map_mul]
+    ring
+  rw [map_mul, nsElimHom_C, nsElimHom_X_w, map_mul, liftParcel_C, liftParcel_X, ruIdx,
+    ← mul_assoc, hcoef]
 
+/-- **The elimination of the residual**: `σ(R_i) = i (k·u) u_i + q_i + ν|k|² u_i`.  The bracket is
+quadratic in the six surviving coordinates — there is no cubic symbol, which is the point of the
+substitution. -/
+theorem nsElimSubst_resPoly (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    nsElimHom k n (nsResPoly nu p i)
+      = C Complex.I * liftParcel p (fourierAdvect k i) + liftParcel p (fourierVisc nu k i) := by
+  rw [nsResPoly, map_add, map_add, nsElimSubst_advect, nsElimSubst_pressure,
+    nsElimSubst_viscous, fourierVisc, map_add]
+  ring
 
+/-- **The elimination of incompressibility**: `σ(Σ_j u_{j,j}) = i (k·u)` — linear in the reduced
+coordinates. -/
+theorem nsElimSubst_divPoly (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    nsElimHom k n (divPoly p) = liftParcel p (fourierDiv k) := by
+  rw [divPoly, map_sum, fourierDiv, fourierMomentum, map_mul, liftParcel_C, map_sum,
+    Finset.mul_sum]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  simp only [nsElimHom_X_d, map_mul, liftParcel_C, liftParcel_X, ruIdx]
+  ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/-- **`i (k·u)` is the real momentum scalar times `i`**: the divergence symbol is the momentum
+scalar, so the eliminated incompressibility is the constant-coefficient multiplier `i k·u`. -/
+theorem fourierDiv_eq (k : Fin 3 → ℝ) :
+    fourierDiv k = C Complex.I * fourierMomentum k := rfl
 
 /-! ## 5. The reduced one-particle Hamiltonian: the sums of squares, the advection included
 
@@ -329,7 +400,10 @@ def redVisc (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
     MvPolynomial (Fin (n * 6)) ℂ :=
   X (rqIdx p i) + C (((nu * ∑ j : Fin 3, (k j) ^ 2 : ℝ)) : ℂ) * X (ruIdx p i)
 
-
+/-- The reduced residual form is the real part of `σ(R_i)`: the lifted `fourierVisc`. -/
+theorem redVisc_eq_liftParcel (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redVisc nu k n p i = liftParcel p (fourierVisc nu k i) := by
+  simp only [redVisc, fourierVisc, map_add, map_mul, liftParcel_C, liftParcel_X, rqIdx, ruIdx]
 
 /-- **The reduced residual form is real-coefficient**, hence a symmetric multiplication form. -/
 theorem realCoeff_redVisc (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
@@ -348,7 +422,12 @@ theorem realCoeff_redAdvectPoly (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : F
   RealCoeff.sum fun j _ =>
     (realCoeff_realConst (k j)).mul ((realCoeff_X _).mul (realCoeff_X _))
 
-
+/-- The lifted real advection symbol is the lift of the one-parcel `fourierAdvect`. -/
+theorem redAdvectPoly_eq_liftParcel (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redAdvectPoly k n p i = liftParcel p (fourierAdvect k i) := by
+  rw [redAdvectPoly, fourierAdvect_eq_transfer, map_sum]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  simp only [map_mul, liftParcel_C, liftParcel_X, ruIdx]
 
 /-- The lifted momentum scalar `k·u` of the `p`-th parcel — the *imaginary* part of the eliminated
 incompressibility `σ(Σ_j u_{j,j}) = i (k·u)` (its real part is zero). -/
@@ -359,7 +438,12 @@ theorem realCoeff_redMomentumPoly (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
     RealCoeff (redMomentumPoly k n p) :=
   RealCoeff.sum fun j _ => (realCoeff_realConst (k j)).mul (realCoeff_X _)
 
-
+/-- The lifted momentum scalar is the lift of the one-parcel `fourierMomentum`. -/
+theorem redMomentumPoly_eq_liftParcel (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    redMomentumPoly k n p = liftParcel p (fourierMomentum k) := by
+  rw [redMomentumPoly, fourierMomentum, map_sum]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  simp only [map_mul, liftParcel_C, liftParcel_X, ruIdx]
 
 /-- Index of the real part `Re σ(R_i) = q_i + ν|k|² u_i` of the `i`-th residual among the seven
 forms of a parcel. -/
@@ -430,11 +514,24 @@ def redFieldN (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 7)) :
   (coreRepPoly (n * 6)).op
     (mulOp (redFormPoly nu k n (finProdFinEquiv.symm m).1 (finProdFinEquiv.symm m).2))
 
+/-- The real residual part `q_i + ν|k|² u_i` is one of the squared forms. -/
+theorem redFieldN_re (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redFieldN nu k n (finProdFinEquiv (p, reIdx7 i))
+      = (coreRepPoly (n * 6)).op (mulOp (redVisc nu k n p i)) := by
+  simp only [redFieldN, Equiv.symm_apply_apply, redFormPoly_re]
 
+/-- **The advection is one of the squared forms** — the reduced Hamiltonian is quartic and keeps
+the Navier–Stokes nonlinearity, no term being demoted to a perturbation. -/
+theorem redFieldN_advect (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (i : Fin 3) :
+    redFieldN nu k n (finProdFinEquiv (p, imIdx7 i))
+      = (coreRepPoly (n * 6)).op (mulOp (redAdvectPoly k n p i)) := by
+  simp only [redFieldN, Equiv.symm_apply_apply, redFormPoly_im]
 
-
-
-
+/-- The eliminated incompressibility `k·u` contributes its own square. -/
+theorem redFieldN_div (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :
+    redFieldN nu k n (finProdFinEquiv (p, divIdx7))
+      = (coreRepPoly (n * 6)).op (mulOp (redMomentumPoly k n p)) := by
+  simp only [redFieldN, Equiv.symm_apply_apply, redFormPoly_div]
 
 theorem redPiN_symmetricOn (n : ℕ) (m : Fin (n * 6)) :
     SymmetricOn (polyGaussCore (d := n * 6))
@@ -462,7 +559,14 @@ theorem redHam_quadForm_nonneg (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ)
     (x : polyGaussCore (d := n * 6)) : 0 ≤ quadForm (redHam nu k n) x :=
   weylOpDom_quadForm_nonneg (redPiN_symmetricOn n) (redFieldN_symmetricOn nu k n) x
 
-
+/-- **The reduced Hamiltonian has a positive self-adjoint (Friedrichs) extension.** -/
+theorem redHam_friedrichs_extension (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) :
+    ∃ (Dom : Submodule ℂ (L2d (n * 6))) (A : Dom →ₗ[ℂ] L2d (n * 6)),
+      IsPositiveSelfAdjointExtension (redHam nu k n) A :=
+  friedrichs_extension_exists
+    ⟨polyGaussCore, redHam nu k n, redHam_symmetricOn nu k n,
+      redHam_quadForm_nonneg nu k n⟩
+    polyGaussCore_dense
 
 /-- The reduced one-body operators as a densely defined positive symmetric operator. -/
 def redPosSym (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) : PosSymOp (L2d (n * 6)) where
@@ -476,9 +580,14 @@ candidate `N_E` of the plan, with `c = 0`. -/
 def redFried (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) : Comparison (L2d (n * 6)) :=
   friedrichsComparison (redPosSym nu k n) polyGaussCore_dense
 
+theorem polyGaussCore_le_redFriedDom (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) :
+    (polyGaussCore (d := n * 6)) ≤ (redFried nu k n).dom := fun v hv =>
+  (friedrichsComparison_extends (redPosSym nu k n) polyGaussCore_dense ⟨v, hv⟩).choose
 
-
-
+theorem redFried_op_core (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : polyGaussCore (d := n * 6))
+    (h : (p : L2d (n * 6)) ∈ (redFried nu k n).dom) :
+    (redFried nu k n).op ⟨(p : L2d (n * 6)), h⟩ = redHam nu k n p :=
+  (friedrichsComparison_extends (redPosSym nu k n) polyGaussCore_dense p).choose_spec
 
 /-! ## 6. The nested Fock space of the reduced sector
 
@@ -495,17 +604,31 @@ abbrev nsRedFockSpace := lp (fun n : ℕ => L2d (n * 6)) 2
 def nsRedFockCore : Submodule ℂ nsRedFockSpace :=
   dsCore (fun n : ℕ => polyGaussCore (d := n * 6))
 
-
+theorem nsRedFockCore_dense :
+    Dense ((nsRedFockCore : Submodule ℂ nsRedFockSpace) : Set nsRedFockSpace) :=
+  dsCore_dense fun _ => polyGaussCore_dense
 
 /-- **The reduced Hamiltonian on the nested Fock space.** -/
 def nsRedFullFockHam (nu : ℝ) (k : Fin 3 → ℝ) : nsRedFockCore →ₗ[ℂ] nsRedFockSpace :=
   dsOp (fun n : ℕ => redHam nu k n)
 
+theorem nsRedFullFockHam_symmetricOn (nu : ℝ) (k : Fin 3 → ℝ) :
+    SymmetricOn nsRedFockCore (nsRedFullFockHam nu k) :=
+  dsOp_symmetricOn _ fun n => redHam_symmetricOn nu k n
 
+/-- **The reduced Fock Hamiltonian is bounded below** — positivity is fibrewise. -/
+theorem nsRedFullFockHam_quadForm_nonneg (nu : ℝ) (k : Fin 3 → ℝ) (x : nsRedFockCore) :
+    0 ≤ quadForm (nsRedFullFockHam nu k) x :=
+  dsOp_quadForm_nonneg _ (fun n u => redHam_quadForm_nonneg nu k n u) x
 
-
-
-
+/-- **The reduced Fock Hamiltonian has a positive self-adjoint (Friedrichs) extension.** -/
+theorem nsRedFullFock_friedrichs_extension (nu : ℝ) (k : Fin 3 → ℝ) :
+    ∃ (Dom : Submodule ℂ nsRedFockSpace) (A : Dom →ₗ[ℂ] nsRedFockSpace),
+      IsPositiveSelfAdjointExtension (nsRedFullFockHam nu k) A :=
+  friedrichs_extension_exists
+    ⟨nsRedFockCore, nsRedFullFockHam nu k, nsRedFullFockHam_symmetricOn nu k,
+      nsRedFullFockHam_quadForm_nonneg nu k⟩
+    nsRedFockCore_dense
 
 /-! ## 7. The advection: the transfer weight, its skewness, and the commutator obligation
 
@@ -536,11 +659,57 @@ A Gauss-skew polynomial operator transported to the core. -/
 def PolySkew (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) : Prop :=
   PolyAdj T (-T)
 
+/-- **Multiplication by an imaginary multiple of a real polynomial is skew.** -/
+theorem mulOp_polySkew {f : MvPolynomial (Fin d) ℂ} (hf : RealCoeff f) :
+    PolySkew (mulOp (C Complex.I * f)) := by
+  intro p q
+  have hL : starP ((C Complex.I * f) * p) * q
+      = (-(C Complex.I * f)) * (starP p * q) := by
+    simp only [starP_mul, starP_C, Complex.conj_I, show starP f = f from hf, C_neg]
+    ring
+  have hR : starP p * ((-mulOp (C Complex.I * f)) q) = (-(C Complex.I * f)) * (starP p * q) := by
+    simp only [mulOp_apply, LinearMap.neg_apply, neg_mul]
+    ring
+  change gaussInt (starP ((mulOp (C Complex.I * f)) p) * q)
+      = gaussInt (starP p * (-(mulOp (C Complex.I * f))) q)
+  rw [mulOp_apply, hL, hR]
 
+set_option maxHeartbeats 1000000 in
+-- the `L²` coercions in the rewrite chain need more than the default budget
+/-- **A Gauss-skew polynomial operator transports to a skew operator on the core**: its adjoint is
+its negative, `⟪T x, y⟫ = −⟪x, T y⟫`. -/
+theorem coreRep_skewOn_op (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
+    (hT : PolySkew T) (x y : D) :
+    inner ℂ ((D.subtype.comp (Φ.op T)) x) ((y : D) : L2d d)
+      = -inner ℂ ((x : D) : L2d d) ((D.subtype.comp (Φ.op T)) y) := by
+  have hx : (D.subtype.comp (Φ.op T)) x = pgLp (T (Φ.equiv.symm x)) := Φ.coe_op T x
+  have hy : (D.subtype.comp (Φ.op T)) y = pgLp (T (Φ.equiv.symm y)) := Φ.coe_op T y
+  have hcx : ((x : D) : L2d d) = pgLp (Φ.equiv.symm x) := Φ.coe_symm x
+  have hcy : ((y : D) : L2d d) = pgLp (Φ.equiv.symm y) := Φ.coe_symm y
+  have hneg : ∀ z : MvPolynomial (Fin d) ℂ, gaussInt (-z) = -gaussInt z := by
+    intro z
+    rw [show (-z) = (-1 : ℂ) • z by module, gaussInt_smul]
+    ring
+  have h := hT (Φ.equiv.symm x) (Φ.equiv.symm y)
+  simp only [LinearMap.neg_apply, mul_neg, hneg] at h
+  rw [hx, hy, hcx, hcy, inner_pgLp_pgLp, inner_pgLp_pgLp]
+  exact h
 
-
-
-
+/-- **The quadratic form of a skew operator on the core vanishes identically.** -/
+theorem coreRep_quadForm_skew_zero (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
+    (hT : PolySkew T) (x : D) : quadForm (D.subtype.comp (Φ.op T)) x = 0 := by
+  set z : ℂ := inner ℂ ((x : D) : L2d d) ((D.subtype.comp (Φ.op T)) x) with hz
+  have h1 : (inner ℂ ((D.subtype.comp (Φ.op T)) x) ((x : D) : L2d d)) = star z :=
+    (inner_conj_symm _ _).symm
+  have h2 : star z = -z := by
+    rw [← h1]
+    exact coreRep_skewOn_op Φ hT x x
+  have h4 : z.re = 0 := by
+    have h := congrArg Complex.re h2
+    simp only [Complex.star_def, Complex.conj_re, Complex.neg_re] at h
+    linarith
+  change (inner ℂ ((x : D) : L2d d) ((D.subtype.comp (Φ.op T)) x)).re = 0
+  exact h4
 
 /-- **The advection term of the eliminated Hamiltonian**: multiplication by `i (k·u) u_i`, one for
 each residual direction of each parcel. -/
@@ -551,15 +720,40 @@ def redAdvect (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 3)) :
       (mulOp (C Complex.I * redAdvectPoly k n (finProdFinEquiv.symm m).1
         (finProdFinEquiv.symm m).2)))
 
+theorem redAdvect_polySkew (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 3)) :
+    PolySkew (mulOp
+      (C Complex.I * redAdvectPoly k n (finProdFinEquiv.symm m).1 (finProdFinEquiv.symm m).2)) :=
+  mulOp_polySkew (realCoeff_redAdvectPoly k n _ _)
 
+/-- **The advection is skew on the reduced core** — multiplication by the imaginary advection
+symbol has as adjoint its negative. -/
+theorem redAdvect_skew (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 3))
+    (x y : polyGaussCore (d := n * 6)) :
+    inner ℂ (redAdvect k n m x) (y : L2d (n * 6))
+      = -inner ℂ (x : L2d (n * 6)) (redAdvect k n m y) :=
+  coreRep_skewOn_op (coreRepPoly (n * 6)) (redAdvect_polySkew k n m) x y
 
+/-- **The advection contributes nothing to the quadratic form**: it is skew, so
+`quadForm (redAdvect …) x = 0` for every core vector.  It is therefore *not* a square and cannot be
+sourced from one; the positivity of §5 is unaffected by it. -/
+theorem redAdvect_quadForm_zero (k : Fin 3 → ℝ) (n : ℕ) (m : Fin (n * 3))
+    (x : polyGaussCore (d := n * 6)) : quadForm (redAdvect k n m) x = 0 :=
+  coreRep_quadForm_skew_zero (coreRepPoly (n * 6)) (redAdvect_polySkew k n m) x
 
+/-- The restriction of the reduced Fock Hamiltonian to the `n`-parcel sector is the reduced
+`n`-parcel Hamiltonian. -/
+theorem nsRedFullFockHam_sector (nu : ℝ) (k : Fin 3 → ℝ) (x : nsRedFockCore) (n : ℕ) :
+    ((nsRedFullFockHam nu k x : nsRedFockSpace) : ∀ n : ℕ, L2d (n * 6)) n
+      = redHam nu k n
+        ⟨((x : nsRedFockSpace) : ∀ n : ℕ, L2d (n * 6)) n, x.2.2 n⟩ := rfl
 
-
-
-
-
-
+/-- **The reduced Hamiltonian conserves the parcel number** — no lattice or finite-mode
+truncation is introduced by the elimination. -/
+theorem nsRedFullFockHam_number_conserving (nu : ℝ) (k : Fin 3 → ℝ) (x : nsRedFockCore)
+    {n : ℕ} (hx : ∀ m, m ≠ n → ((x : nsRedFockSpace) : ∀ m : ℕ, L2d (m * 6)) m = 0)
+    (m : ℕ) (hm : m ≠ n) :
+    ((nsRedFullFockHam nu k x : nsRedFockSpace) : ∀ m : ℕ, L2d (m * 6)) m = 0 :=
+  BookProof.Qg3DGaugeFL.dsOp_number_conserving _ x hx m hm
 
 /-- **The lifted comparison operator** — the `ℓ²`-direct sum of the reduced Friedrichs
 realizations.  This is the `N_E` of the plan's Fourier-elimination route (including the viscous
@@ -567,17 +761,87 @@ regularization `ν > 0` and the mode `k`). -/
 def nsRedOuterComparison (nu : ℝ) (k : Fin 3 → ℝ) : Comparison nsRedFockSpace :=
   dsComparison (fun n : ℕ => redFried nu k n)
 
+/-- The lifted comparison operator, fibrewise. -/
+theorem nsRedOuterN_apply (nu : ℝ) (k : Fin 3 → ℝ) (x : (nsRedOuterComparison nu k).dom)
+    (n : ℕ) :
+    (((nsRedOuterComparison nu k).op x : nsRedFockSpace) : ∀ n : ℕ, L2d (n * 6)) n
+      = (redFried nu k n).op
+          ⟨((x : nsRedFockSpace) : ∀ n : ℕ, L2d (n * 6)) n, x.2.1 n⟩ :=
+  dsCompOp_fib _ x n
 
+set_option maxHeartbeats 1600000 in
+-- the Friedrichs domain is built from a completion: unfolding it is costly
+/-- The finite-parcel core sits inside the domain of the lifted comparison operator — the domain
+obligation of the plan's “definition of done”. -/
+theorem nsRedFockCore_le_friedDom (nu : ℝ) (k : Fin 3 → ℝ) :
+    nsRedFockCore ≤ (nsRedOuterComparison nu k).dom := by
+  intro x hx
+  refine ⟨fun n => polyGaussCore_le_redFriedDom nu k n (hx.2 n), ?_⟩
+  have hfun : (fun n : ℕ => opTot (redFried nu k n).op ((x : nsRedFockSpace) n))
+      = fun n : ℕ =>
+        (redHam nu k n ⟨(x : nsRedFockSpace) n, hx.2 n⟩ : L2d (n * 6)) := by
+    funext n
+    rw [opTot_of_mem _ (polyGaussCore_le_redFriedDom nu k n (hx.2 n)),
+      redFried_op_core nu k n ⟨(x : nsRedFockSpace) n, hx.2 n⟩]
+  rw [hfun]
+  refine memLp_of_finite_support (Set.Finite.subset hx.1 fun n hn => ?_)
+  simp only [Set.mem_setOf_eq] at hn ⊢
+  intro h0
+  refine hn ?_
+  have hz : (⟨(x : nsRedFockSpace) n, hx.2 n⟩ : polyGaussCore (d := n * 6)) = 0 :=
+    Subtype.ext h0
+  rw [hz, map_zero]
 
+/-- **Faris–Lavine on the reduced nested Fock space**: the lifted realization of the reduced
+sector Hamiltonian is essentially self-adjoint on its domain.  This is the `H = N`, `c = 0` case
+of the criterion — the comparison is the Friedrichs realization above, so its commutator with the
+operator vanishes; the advection is *not* part of `N` (see §4) and is the perturbation the
+commutator estimate of the plan bounds against this `N`. -/
+theorem nsRedFullOuterN_esa (nu : ℝ) (k : Fin 3 → ℝ) :
+    EssentiallySelfAdjointOn (nsRedOuterComparison nu k).dom (nsRedOuterComparison nu k).op :=
+  Comparison.esa_self _
 
+set_option maxHeartbeats 2000000 in
+-- the Friedrichs domain is built from a completion: defeq checks are costly
+/-- **The lifted Friedrichs realization is a positive self-adjoint extension of the reduced
+Hamiltonian on the finite-parcel core.**  With `nsRedFullOuterN_esa` this is the full Faris–Lavine
+statement of the reduced sector: `N_E` is positive, self-adjoint, extends the eliminated
+Hamiltonian, and has the Hamiltonian essentially self-adjoint on its domain (`H = N`, `c = 0`). -/
+theorem nsRedFullOuterN_isPositiveSelfAdjointExtension (nu : ℝ) (k : Fin 3 → ℝ) :
+    IsPositiveSelfAdjointExtension (nsRedFullFockHam nu k) (nsRedOuterComparison nu k).op :=
+  (nsRedOuterComparison nu k).isPositiveSelfAdjointExtension (nsRedFullFockHam nu k)
+    (fun x => by
+      refine ⟨nsRedFockCore_le_friedDom nu k x.2, ?_⟩
+      refine lp.ext (funext fun n => ?_)
+      rw [nsRedOuterN_apply, redFried_op_core nu k n ⟨(x : nsRedFockSpace) n, x.2.2 n⟩]
+      exact (dsOp_coe (fun n : ℕ => redHam nu k n) x n).symm)
 
+/-- **Faris–Lavine on the reduced nested Fock space, with a perturbation of the reduced Hamiltonian
+as `H`**: if `H` is symmetric on the domain of the comparison operator and the commutator form is
+bounded by the comparison's quadratic form, then `H` is essentially self-adjoint there.  All the
+structural hypotheses of the criterion (positivity, symmetry and surjectivity of `N + 1` for `N_E`,
+and the extension of the reduced Hamiltonian by it) are already proved above; the **commutator bound
+is the single remaining analytic input** of the route (plan item 4) — in particular it is the only
+thing standing between the skew-adjoint advection of §7 and the eliminated generator. -/
+theorem nsRedFullFock_esa_of_commBound (nu : ℝ) (k : Fin 3 → ℝ)
+    (H : (nsRedOuterComparison nu k).dom →ₗ[ℂ] nsRedFockSpace)
+    (hH : SymmetricOn (nsRedOuterComparison nu k).dom H) {c : ℝ} (hc : 0 ≤ c)
+    (hcomm : ∀ x : (nsRedOuterComparison nu k).dom,
+      |commForm H (nsRedOuterComparison nu k).op x|
+        ≤ c * quadForm (nsRedOuterComparison nu k).op x) :
+    EssentiallySelfAdjointOn (nsRedOuterComparison nu k).dom H :=
+  (nsRedOuterComparison nu k).essentiallySelfAdjointOn H hH c hc hcomm
 
-
-
-
-
-
-
+/-- The `c = 0` case: a symmetric `H` whose commutator form against the comparison **vanishes** on
+the domain is essentially self-adjoint — the form in which the reduced Hamiltonian itself
+(`nsRedFullOuterN_esa`) and its perturbations are handled. -/
+theorem nsRedFullFock_esa_of_zero_comm (nu : ℝ) (k : Fin 3 → ℝ)
+    (H : (nsRedOuterComparison nu k).dom →ₗ[ℂ] nsRedFockSpace)
+    (hH : SymmetricOn (nsRedOuterComparison nu k).dom H)
+    (hcomm : ∀ x : (nsRedOuterComparison nu k).dom,
+      commForm H (nsRedOuterComparison nu k).op x = 0) :
+    EssentiallySelfAdjointOn (nsRedOuterComparison nu k).dom H :=
+  nsRedFullFock_esa_of_commBound nu k H hH le_rfl fun x => by rw [hcomm x]; simp
 
 end
 

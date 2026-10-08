@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterReconstruct
 
-variable {n : ℕ}
-
 
 open scoped BigOperators
 open Finset
 
+
+variable {n : ℕ}
 
 
 theorem BookProof.ChapterReconstruct.offDiag_eq_zero_iff_isDeterministic (U : Fin n → Fin n → ℂ) :

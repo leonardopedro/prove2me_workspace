@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_not_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.FarisLavine
 
 
@@ -16,8 +15,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
-  BookProof.NavierStokesFlow.JacobiDeficiency in
 theorem solution :
     ¬ (∀ (D' : Submodule ℂ L2N) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),
         Dense (D' : Set L2N) →

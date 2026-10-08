@@ -27,10 +27,6 @@ open BookProof.ChapterH9
 open BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkPerSystemFlowBound
 
-variable {E G : Type*}
-  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
-  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
-
 
 noncomputable section
 
@@ -48,6 +44,10 @@ open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato BookProof.NavierStokesFlow.NSHashimoto
 open BookProof.NavierStokesFlow.DiffHashimoto BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow.LagrangianEsa BookProof.NavierStokesFlow.LagrangianKatoRellich
+
+variable {E G : Type*}
+  [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+  [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 
 
 theorem BookProof.ChapterSirkPerSystemFlowBound.sirk_scheme_tendsto {X : E →L[ℂ] E} {S : Set ℂ} {C Dmin h : ℝ} (hh : 0 < h)

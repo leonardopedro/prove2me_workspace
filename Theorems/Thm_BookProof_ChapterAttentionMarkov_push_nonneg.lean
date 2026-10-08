@@ -5,8 +5,6 @@ import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
 open BookProof.ChapterAttentionMarkov
 
-variable {m : ℕ}
-
 
 open scoped BigOperators
 
@@ -14,6 +12,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+
+variable {m : ℕ}
 
 
 theorem BookProof.ChapterAttentionMarkov.push_nonneg {P : Fin m → Fin m → ℝ} {p : Fin m → ℝ} (hP : IsStochastic P)

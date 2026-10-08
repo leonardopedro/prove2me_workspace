@@ -5,9 +5,9 @@ import Definitions.Def_ChapterAbelianDiagonalCountable
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 
+
+
 variable {X : Type*}
-
-
 
 
 theorem BookProof.ChapterGaugeUnconstrainedSpectrum.diagOp_mul_comm (d e : X → ℂ) :

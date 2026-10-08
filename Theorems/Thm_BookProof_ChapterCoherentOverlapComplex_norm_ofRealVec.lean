@@ -3,13 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterCoherentOverlapComplex
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterCoherentOverlapComplex.norm_ofRealVec (q : EuclideanSpace ℝ (Fin n)) : ‖ofRealVec q‖ = ‖q‖ := by sorry

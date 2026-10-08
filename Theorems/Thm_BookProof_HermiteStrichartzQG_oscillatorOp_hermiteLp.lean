@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQuantumGravityDensitized
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Definitions.Def_ChapterHermiteFunctions
+import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
 open BookProof.HermiteCore
 open BookProof.HermiteStrichartzQG
 

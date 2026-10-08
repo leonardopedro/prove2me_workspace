@@ -11,6 +11,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open Classical
 
 theorem BookProof.ChapterPinDoubleCover.LamZ_fiber_card :
     ∀ d ∈ Delta, (Omega.filter (fun S => LamZ S = d)).card = 2 := by sorry

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_exists_pow_of_mem_corePow
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 open BookProof.EsaOneParticle
 
 

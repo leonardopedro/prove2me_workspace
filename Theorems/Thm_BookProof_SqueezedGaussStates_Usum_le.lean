@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 open BookProof.SqueezedGaussStates
 
-variable {d : ℕ}
-
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.GaussCoordCombo
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.SqueezedGaussStates.Usum_le (v : ℝ) (M : ℕ) :

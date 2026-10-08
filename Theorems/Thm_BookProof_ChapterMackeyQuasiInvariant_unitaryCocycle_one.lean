@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyQuasiInvariant
 
-variable {G X K : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
-variable [NormedAddCommGroup K] [InnerProductSpace ℂ K]
-
 
 open MeasureTheory Measure
 
+
+variable {G X K : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
+variable [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 
 theorem BookProof.ChapterMackeyQuasiInvariant.unitaryCocycle_one (μ : Measure X) :

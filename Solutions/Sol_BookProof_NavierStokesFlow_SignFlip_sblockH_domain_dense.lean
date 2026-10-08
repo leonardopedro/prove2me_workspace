@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.sblockH_domain_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
+import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 

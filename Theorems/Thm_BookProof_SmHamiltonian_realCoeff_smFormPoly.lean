@@ -10,8 +10,6 @@ import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsHermite
 open BookProof.SmHamiltonian
 
-variable {D : ℕ}
-
 
 
 open MvPolynomial
@@ -21,6 +19,8 @@ open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 
 noncomputable section
+
+variable {D : ℕ}
 
 theorem BookProof.SmHamiltonian.realCoeff_smFormPoly (P : SmParams) (co : Fin 163 → Fin D) (r : SmForm) :
     RealCoeff (smFormPoly P co r) := by sorry

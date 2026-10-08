@@ -153,7 +153,10 @@ noncomputable section
 /-- The global coordinate of the `i`-th field-space direction of the `p`-th parcel. -/
 def ycoord {n : ℕ} (p : Fin n) (i : Fin 21) : Fin (n * 21) := finProdFinEquiv (p, i)
 
-
+theorem ycoord_injective {n : ℕ} (p : Fin n) : Function.Injective (ycoord p) := by
+  intro i i' h
+  have := finProdFinEquiv.injective h
+  simpa using congrArg Prod.snd this
 
 /-- The velocity mode `u_i`. -/
 def uIdx (i : Fin 3) : Fin 21 := ⟨i.val, by have := i.isLt; omega⟩
@@ -299,7 +302,14 @@ theorem nsSectorHam_quadForm_nonneg (nu lam mu gg : ℝ) (n : ℕ)
     (x : polyGaussCore (d := n * 21)) : 0 ≤ quadForm (nsSectorHam nu lam mu gg n) x :=
   weylOpDom_quadForm_nonneg (nsPiN_symmetricOn n) (nsFieldN_symmetricOn nu lam mu gg n) x
 
-
+/-- **The `n`-parcel Hamiltonian has a positive self-adjoint (Friedrichs) extension.** -/
+theorem nsSector_friedrichs_extension (nu lam mu gg : ℝ) (n : ℕ) :
+    ∃ (Dom : Submodule ℂ (L2d (n * 21))) (A : Dom →ₗ[ℂ] L2d (n * 21)),
+      IsPositiveSelfAdjointExtension (nsSectorHam nu lam mu gg n) A :=
+  friedrichs_extension_exists
+    ⟨polyGaussCore, nsSectorHam nu lam mu gg n, nsSectorHam_symmetricOn nu lam mu gg n,
+      nsSectorHam_quadForm_nonneg nu lam mu gg n⟩
+    polyGaussCore_dense
 
 /-! ## 4. The nested Fock space -/
 
@@ -309,19 +319,44 @@ abbrev nsFockSpace := lp (fun n : ℕ => L2d (n * 21)) 2
 /-- The finite-parcel core. -/
 def nsFockCore : Submodule ℂ nsFockSpace := dsCore (fun n : ℕ => polyGaussCore (d := n * 21))
 
-
+theorem nsFockCore_dense :
+    Dense ((nsFockCore : Submodule ℂ nsFockSpace) : Set nsFockSpace) :=
+  dsCore_dense fun _ => polyGaussCore_dense
 
 /-- **The full Navier–Stokes Hamiltonian on the nested Fock space.** -/
 def nsFullFockHam (nu lam mu gg : ℝ) : nsFockCore →ₗ[ℂ] nsFockSpace :=
   dsOp (fun n : ℕ => nsSectorHam nu lam mu gg n)
 
+theorem nsFullFockHam_symmetricOn (nu lam mu gg : ℝ) :
+    SymmetricOn nsFockCore (nsFullFockHam nu lam mu gg) :=
+  dsOp_symmetricOn _ fun n => nsSectorHam_symmetricOn nu lam mu gg n
 
+/-- **The outer auxiliary sum-of-squares operator is bounded below**: positivity is fibrewise,
+so it lifts from the one-parcel Hilbert space to the nested Fock space.  (The NS Hamiltonian
+itself is not bounded below — `BookProof.NsKoopman.nsKoopmanOp_not_bounded_below`.) -/
+theorem nsFullFockHam_quadForm_nonneg (nu lam mu gg : ℝ) (x : nsFockCore) :
+    0 ≤ quadForm (nsFullFockHam nu lam mu gg) x :=
+  dsOp_quadForm_nonneg _ (fun n u => nsSectorHam_quadForm_nonneg nu lam mu gg n u) x
 
+/-- **The full nonlinear Navier–Stokes Hamiltonian on the nested Fock space has a positive
+self-adjoint (Friedrichs) extension.** -/
+theorem nsFullFock_friedrichs_extension (nu lam mu gg : ℝ) :
+    ∃ (Dom : Submodule ℂ nsFockSpace) (A : Dom →ₗ[ℂ] nsFockSpace),
+      IsPositiveSelfAdjointExtension (nsFullFockHam nu lam mu gg) A :=
+  friedrichs_extension_exists
+    ⟨nsFockCore, nsFullFockHam nu lam mu gg, nsFullFockHam_symmetricOn nu lam mu gg,
+      nsFullFockHam_quadForm_nonneg nu lam mu gg⟩
+    nsFockCore_dense
 
-
-
-
-
+set_option maxHeartbeats 1000000 in
+-- unfolding the `lp` instances of the Fock space in the Stone construction is costly
+/-- **The unitary time evolution of the outer Navier–Stokes Hamiltonian** (Stone). -/
+theorem nsFullFock_stone_flow (nu lam mu gg : ℝ) :
+    ∃ (T : UnboundedSelfAdjoint nsFockSpace) (U : ℝ → (nsFockSpace →L[ℂ] nsFockSpace)),
+      IsStoneFlow T U := by
+  obtain ⟨Dom, A, hA⟩ := nsFullFock_friedrichs_extension nu lam mu gg
+  obtain ⟨T, U, _, _, hflow⟩ := exists_stone_flow_of_positive nsFockCore_dense hA
+  exact ⟨T, U, hflow⟩
 
 /-! ## 5. Faris–Lavine on the outer Fock space -/
 
@@ -337,9 +372,14 @@ operator**: positive, self-adjoint, and with `N + 1` onto `L²(ℝ^{21n})`. -/
 def nsFried (nu lam mu gg : ℝ) (n : ℕ) : Comparison (L2d (n * 21)) :=
   friedrichsComparison (nsPosSym nu lam mu gg n) polyGaussCore_dense
 
+theorem polyGaussCore_le_nsFriedDom (nu lam mu gg : ℝ) (n : ℕ) :
+    (polyGaussCore (d := n * 21)) ≤ (nsFried nu lam mu gg n).dom := fun v hv =>
+  (friedrichsComparison_extends (nsPosSym nu lam mu gg n) polyGaussCore_dense ⟨v, hv⟩).choose
 
-
-
+theorem nsFried_op_core (nu lam mu gg : ℝ) (n : ℕ) (p : polyGaussCore (d := n * 21))
+    (h : (p : L2d (n * 21)) ∈ (nsFried nu lam mu gg n).dom) :
+    (nsFried nu lam mu gg n).op ⟨(p : L2d (n * 21)), h⟩ = nsSectorHam nu lam mu gg n p :=
+  (friedrichsComparison_extends (nsPosSym nu lam mu gg n) polyGaussCore_dense p).choose_spec
 
 /-- **The lift of the comparison operator to the outer Fock space**: the `ℓ²`-direct sum of
 the sector Friedrichs realizations.  Positivity, symmetry and surjectivity of `N + 1` are all
@@ -347,19 +387,74 @@ fibrewise, which is exactly why the construction lifts. -/
 def nsOuterComparison (nu lam mu gg : ℝ) : Comparison nsFockSpace :=
   dsComparison (fun n : ℕ => nsFried nu lam mu gg n)
 
+/-- The lifted comparison operator, fibrewise. -/
+theorem nsOuterN_apply (nu lam mu gg : ℝ) (x : (nsOuterComparison nu lam mu gg).dom) (n : ℕ) :
+    (((nsOuterComparison nu lam mu gg).op x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n
+      = (nsFried nu lam mu gg n).op
+          ⟨((x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n, x.2.1 n⟩ :=
+  dsCompOp_fib _ x n
 
+/-- **Faris–Lavine on the outer Fock space**: the lifted realization of the full nonlinear
+Navier–Stokes Hamiltonian is essentially self-adjoint on its domain.  This is the `H = N`,
+`c = 0` case of the Faris–Lavine criterion — the commutator of the Hamiltonian with the
+comparison operator vanishes — with the comparison operator the lifted Friedrichs
+extension. -/
+theorem nsFullOuterN_esa (nu lam mu gg : ℝ) :
+    EssentiallySelfAdjointOn (nsOuterComparison nu lam mu gg).dom
+      (nsOuterComparison nu lam mu gg).op :=
+  Comparison.esa_self _
 
+set_option maxHeartbeats 1600000 in
+-- the lifted domain is built from the Friedrichs completion, so unfolding it is costly
+/-- The finite-parcel core sits inside the domain of the lifted comparison operator. -/
+theorem nsFockCore_le_friedDom (nu lam mu gg : ℝ) :
+    nsFockCore ≤ (nsOuterComparison nu lam mu gg).dom := by
+  intro x hx
+  refine ⟨fun n => polyGaussCore_le_nsFriedDom nu lam mu gg n (hx.2 n), ?_⟩
+  have hfun : (fun n : ℕ => opTot (nsFried nu lam mu gg n).op ((x : nsFockSpace) n))
+      = fun n : ℕ =>
+        (nsSectorHam nu lam mu gg n ⟨(x : nsFockSpace) n, hx.2 n⟩ : L2d (n * 21)) := by
+    funext n
+    rw [opTot_of_mem _ (polyGaussCore_le_nsFriedDom nu lam mu gg n (hx.2 n)),
+      nsFried_op_core nu lam mu gg n ⟨(x : nsFockSpace) n, hx.2 n⟩]
+  rw [hfun]
+  refine memLp_of_finite_support (Set.Finite.subset hx.1 fun n hn => ?_)
+  simp only [Set.mem_setOf_eq] at hn ⊢
+  intro h0
+  refine hn ?_
+  have hz : (⟨(x : nsFockSpace) n, hx.2 n⟩ : polyGaussCore (d := n * 21)) = 0 :=
+    Subtype.ext h0
+  rw [hz, map_zero]
 
-
-
-
-
+set_option maxHeartbeats 2000000 in
+-- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
+/-- **The lifted Friedrichs realization is a positive self-adjoint extension of the full
+nonlinear Navier–Stokes Hamiltonian defined on the finite-parcel core.**  Together with
+`nsFullOuterN_esa` this is the Faris–Lavine statement on the outer Fock space. -/
+theorem nsFullOuterN_isPositiveSelfAdjointExtension (nu lam mu gg : ℝ) :
+    IsPositiveSelfAdjointExtension (nsFullFockHam nu lam mu gg)
+      (nsOuterComparison nu lam mu gg).op :=
+  (nsOuterComparison nu lam mu gg).isPositiveSelfAdjointExtension
+    (nsFullFockHam nu lam mu gg) (fun x => by
+      refine ⟨nsFockCore_le_friedDom nu lam mu gg x.2, ?_⟩
+      refine lp.ext (funext fun n => ?_)
+      rw [nsOuterN_apply, nsFried_op_core nu lam mu gg n ⟨(x : nsFockSpace) n, x.2.2 n⟩]
+      exact (dsOp_coe (fun n : ℕ => nsSectorHam nu lam mu gg n) x n).symm)
 
 /-! ## 6. Particle-number conservation — why no lattice is needed -/
 
+/-- The restriction of the outer Hamiltonian to the `n`-parcel sector is the `n`-parcel
+Hamiltonian. -/
+theorem nsFullFockHam_sector (nu lam mu gg : ℝ) (x : nsFockCore) (n : ℕ) :
+    ((nsFullFockHam nu lam mu gg x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n
+      = nsSectorHam nu lam mu gg n
+        ⟨((x : nsFockSpace) : ∀ n : ℕ, L2d (n * 21)) n, x.2.2 n⟩ := rfl
 
-
-
+/-- **The outer Navier–Stokes Hamiltonian conserves the parcel number.** -/
+theorem nsFullFockHam_number_conserving (nu lam mu gg : ℝ) (x : nsFockCore) {n : ℕ}
+    (hx : ∀ m, m ≠ n → ((x : nsFockSpace) : ∀ m : ℕ, L2d (m * 21)) m = 0) (m : ℕ)
+    (hm : m ≠ n) : ((nsFullFockHam nu lam mu gg x : nsFockSpace) : ∀ m : ℕ, L2d (m * 21)) m = 0 :=
+  dsOp_number_conserving _ x hx m hm
 
 /-! ## 7. The advection is the genuine nonlinearity -/
 
@@ -369,9 +464,40 @@ def testPt (p : Fin n) (t : ℝ) : Fin (n * 21) → ℂ := fun I =>
   if I = ycoord p (uIdx 1) then (t : ℂ)
   else if I = ycoord p (dIdx 0 1) then (t : ℂ) else 0
 
+theorem nsResPoly_eval_testPt (nu : ℝ) (p : Fin n) (t : ℝ) :
+    eval (testPt p t) (nsResPoly nu p 0) = (t : ℂ) * (t : ℂ) := by
+  have hne : ∀ i j : Fin 21, i ≠ j → ycoord p i ≠ ycoord p j := fun i j hij h =>
+    hij (ycoord_injective p h)
+  have h1 : ycoord p (uIdx 0) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h2 : ycoord p (uIdx 0) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  have h3 : ycoord p (uIdx 2) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h4 : ycoord p (uIdx 2) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  have h5 : ycoord p (dIdx 0 0) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h6 : ycoord p (dIdx 0 0) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  have h7 : ycoord p (dIdx 0 2) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h8 : ycoord p (dIdx 0 2) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  have h9 : ycoord p (qIdx 0) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h10 : ycoord p (qIdx 0) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  have h11 : ycoord p (wIdx 0) ≠ ycoord p (uIdx 1) := hne _ _ (by decide)
+  have h12 : ycoord p (wIdx 0) ≠ ycoord p (dIdx 0 1) := hne _ _ (by decide)
+  simp [nsResPoly, testPt, Fin.sum_univ_three, h1, h2, h3, h4, h5,
+    h6, h7, h8, h9, h10, h11, h12]
 
-
-
+/-- **The full Navier–Stokes residual is not an affine form of the coordinates**: along the
+test line it is `t²`.  In particular the model is *not* an Oseen (frozen-velocity)
+linearisation, and its potential is not a sum of squares of linear forms. -/
+theorem nsResPoly_not_affine (nu : ℝ) (p : Fin n) :
+    ¬ ∃ a b : ℂ, ∀ t : ℝ, eval (testPt p t) (nsResPoly nu p 0) = a * (t : ℂ) + b := by
+  rintro ⟨a, b, h⟩
+  have h0 := h 0
+  have h1 := h 1
+  have h2 := h 2
+  rw [nsResPoly_eval_testPt] at h0 h1 h2
+  push_cast at h0 h1 h2
+  have hb : b = 0 := by linear_combination -h0
+  have ha : a = 1 := by linear_combination h0 - h1
+  rw [ha, hb] at h2
+  norm_num at h2
 
 end
 

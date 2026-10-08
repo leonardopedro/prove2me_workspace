@@ -6,13 +6,13 @@ open BookProof.ChapterA
 open BookProof.ChapterA
 open BookProof.ChapterSchurFiniteDim
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open Module
 
 
 open BookProof.ChapterA
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurFiniteDim.schur_scalar_of_irreducible [FiniteDimensional ℂ V] [Nontrivial V]

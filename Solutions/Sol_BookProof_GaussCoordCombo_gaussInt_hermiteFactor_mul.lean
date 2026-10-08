@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
 import Theorems.Thm_BookProof_GaussCoordCombo_pderiv_hermiteFactor_self
 import Theorems.Thm_BookProof_GaussCoordCombo_hermiteFactor_succ_eq
-import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_zero'
+import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_zero_prime
 import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_creation
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_HermiteProductCore_hermiteFactor_zero
@@ -34,7 +34,7 @@ theorem solution (i : Fin d) (m n : ℕ) {R : MvPolynomial (Fin d) ℂ}
           have hstep : gaussInt (hermiteFactor i (k + 1) * R)
               = gaussInt (hermiteFactor i k * pderiv i R) := by
             rw [hermiteFactor_succ_eq, gaussInt_creation]
-          rw [hermiteFactor_zero, one_mul, hstep, hR, mul_zero, gaussInt_zero']
+          rw [hermiteFactor_zero, one_mul, hstep, hR, mul_zero, gaussInt_zero_prime]
           simp
   | succ m ih =>
       have hq : pderiv i (hermiteFactor i n * R) = pderiv i (hermiteFactor i n) * R := by
@@ -46,7 +46,7 @@ theorem solution (i : Fin d) (m n : ℕ) {R : MvPolynomial (Fin d) ℂ}
       cases n with
       | zero =>
           rw [hstep, hermiteFactor_zero]
-          simp [gaussInt_zero']
+          simp [gaussInt_zero_prime]
       | succ k =>
           rw [hstep, pderiv_hermiteFactor_self]
           simp only [smul_mul_assoc, mul_smul_comm, gaussInt_smul, ih k]

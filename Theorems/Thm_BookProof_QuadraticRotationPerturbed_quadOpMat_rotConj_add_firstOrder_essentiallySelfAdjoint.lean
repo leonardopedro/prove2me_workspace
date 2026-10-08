@@ -4,7 +4,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterQuadraticRotationEsa
-import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
@@ -18,8 +18,6 @@ open BookProof.HermiteProductCore
 open BookProof.HermiteRelative
 open BookProof.HyperbolicQuadratic
 open BookProof.QuadraticRotationPerturbed
-
-variable {d : ℕ}
 
 
 
@@ -35,6 +33,8 @@ open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section
+
+variable {d : ℕ}
 
 
 theorem BookProof.QuadraticRotationPerturbed.quadOpMat_rotConj_add_firstOrder_essentiallySelfAdjoint

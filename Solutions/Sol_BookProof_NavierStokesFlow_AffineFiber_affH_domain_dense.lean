@@ -20,4 +20,4 @@ variable (P : PairShift ι)
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) := nd its essential self-ad
+    Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) := lpFiniteModes_dense

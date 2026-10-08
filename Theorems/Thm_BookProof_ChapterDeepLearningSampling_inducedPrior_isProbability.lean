@@ -3,12 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDeepLearningSampling
 open BookProof.ChapterDeepLearningSampling
 
-variable {Seed Model Data : Type*}
-variable [Fintype Seed] [DecidableEq Model]
-
 
 open scoped BigOperators
 
+
+variable {Seed Model Data : Type*}
+variable [Fintype Seed] [DecidableEq Model]
 
 
 theorem BookProof.ChapterDeepLearningSampling.inducedPrior_isProbability [Fintype Model]

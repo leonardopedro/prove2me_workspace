@@ -5,13 +5,13 @@ import Mathlib
 import Definitions.Def_ChapterSchurRepresentation
 open BookProof.ChapterSchurRepresentation
 
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
-
 
 open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System BookProof.ChapterSchurIrreducible
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
 
 theorem BookProof.ChapterSchurRepresentation.adjoint_uCLM (f : V ≃ₗᵢ[ℂ] V) :

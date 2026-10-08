@@ -1,6 +1,7 @@
 -- Generated from ChapterReducingSubspaceEsa.lean — solution of BookProof.ReducedEsa.deficiencyTrivialAt_red
 import Mathlib
 import Definitions.Def_ChapterReducingSubspaceEsa
+import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
 open BookProof.ReducedEsa
 
 
@@ -14,10 +15,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {P : F →ₗ[ℂ] F}
-variable (P) in
-variable (P) (D : Submodule ℂ F) in
 variable {D : Submodule ℂ F}
-variable (P D) in
 variable (T : D →ₗ[ℂ] F)
 variable {T}
 variable (T) in

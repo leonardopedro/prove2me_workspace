@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Theorems.Thm_BookProof_QuadraticRotation_quadPolyMat_apply
-import Theorems.Thm_BookProof_QuadraticRotation_quadPoly_apply'
+import Theorems.Thm_BookProof_QuadraticRotation_quadPoly_apply_prime
 open BookProof.QuadraticRotation
 
 
@@ -25,7 +25,7 @@ theorem solution (c : Fin d → ℝ) :
     quadPolyMat (Matrix.diagonal c) = quadPoly c := by
 
   refine LinearMap.ext fun p => ?_
-  rw [quadPolyMat_apply, quadPoly_apply']
+  rw [quadPolyMat_apply, quadPoly_apply_prime]
   refine Finset.sum_congr rfl fun k _ => ?_
   rw [Finset.sum_eq_single k (fun l _ hl => by simp [Ne.symm hl]) (by simp)]
   simp

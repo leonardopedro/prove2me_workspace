@@ -7,13 +7,13 @@ open BookProof.ChapterDoubleSlit
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterObservableOperator
 
-variable {n m : ℕ}
-
 
 open scoped BigOperators
 
 noncomputable section
 
+
+variable {n m : ℕ}
 
 
 theorem BookProof.ChapterObservableOperator.observableOp_expectation_mem_convexHull

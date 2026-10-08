@@ -7,4 +7,4 @@ open BookProof.SpinStatistics
 
 open Matrix
 
-theorem BookProof.SpinStatistics.fermi_CAR₂ : fermiAnnih2 * fermiCreate2 + fermiCreate2 * fermiAnnih2 = 1 := by sorry
+theorem BookProof.SpinStatistics.fermi_CAR2 : fermiAnnih2 * fermiCreate2 + fermiCreate2 * fermiAnnih2 = 1 := by sorry

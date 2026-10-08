@@ -1987,8 +1987,9 @@ compiler-verified:
 
 **Wave-5 result: 27/28 rechecked ok** (25 in fix5 + 2 rebuilt in fix7),
 1 residual.  Session-wide sol repairs to fresh-ok: 20 (fixer 3+4) + 27 =
-**47**.  Chunks: t31 +31 (0 failed); t32 running with the recomputed ready
-set.  `git log`: `0d1a5b6e` pushed earlier this session.
+**47**.  Chunks: t31 +31, t32 **43 resolved (39 DONE)**, final `--sync`
++4 in-flight → **sol 2302 → 2532 (+230), 0 failed** (def 520, thm 3767).
+Commits: `0d1a5b6e`, `10890a86` — both pushed.
 
 ---
 

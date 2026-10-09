@@ -1,8 +1,7 @@
 -- Generated from ChapterGaussCoordCombo.lean — solution of BookProof.GaussCoordCombo.gaussInt_leibniz'
 import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_pderiv
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.GaussCoordCombo
 
 

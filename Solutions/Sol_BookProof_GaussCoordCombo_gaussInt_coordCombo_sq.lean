@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
 import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_hermiteFactor_mul
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.GaussCoordCombo
 
 

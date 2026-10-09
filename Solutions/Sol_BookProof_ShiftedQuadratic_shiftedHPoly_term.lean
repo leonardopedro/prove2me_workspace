@@ -4,8 +4,6 @@ import Definitions.Def_ChapterShiftedQuadraticEsa
 import Theorems.Thm_BookProof_ShiftedQuadratic_oscTPoly_apply
 import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 import Theorems.Thm_BookProof_ShiftedHermiteCore_mulXTPoly_apply
-import Theorems.Thm_BookProof_ShiftedQuadratic_boostVec_apply
-import Theorems.Thm_BookProof_ShiftedQuadratic_shiftVec_apply
 open BookProof.ShiftedQuadratic
 
 

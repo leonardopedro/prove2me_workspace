@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteExpWall.lean — solution of BookProof.HermiteExpWall.gaussMoment_step
 import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
-import Theorems.Thm_BookProof_HermiteProductCore_gaussMoment_succ
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteExpWall
 
 

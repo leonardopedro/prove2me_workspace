@@ -79,12 +79,13 @@ theorem solution {R : Type*} [Fintype R] (kappa : Fin D → ℝ) (v : R → Fin 
       Complex.ofReal_zero, zero_smul, add_zero, hfo]
     rw [← Finset.sum_add_distrib]
     exact Finset.sum_congr rfl fun i _ => Finset.sum_add_distrib
+  have hmulOp : ∀ (f q : MvPolynomial (Fin D) ℂ), mulOp f q = f * q := fun _ _ => rfl
   have hlhs : sqSumPoly kappa v p
       = ((1 / 2 : ℝ) : ℂ)
         • ((∑ j : Fin D, ((kappa j : ℝ) : ℂ)
               • YangMillsHermite.momOp j (YangMillsHermite.momOp j p))
             + ∑ r : R, linForm (v r) * (linForm (v r) * p)) := by
-    simp [sqSumPoly]
+    simp [sqSumPoly, hmulOp]
   rw [hlhs, hfq, hmom, hmul, smul_add]
   congr 1
   · rw [Finset.smul_sum]

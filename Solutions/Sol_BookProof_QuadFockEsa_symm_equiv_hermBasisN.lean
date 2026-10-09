@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQuadraticFockEsa
 import Theorems.Thm_BookProof_HermiteBand_pgLp_hpsi
-import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QuadFockEsa
 
 

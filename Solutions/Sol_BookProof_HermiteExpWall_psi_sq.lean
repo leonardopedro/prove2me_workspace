@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
 import Theorems.Thm_BookProof_HermiteExpWall_psi_apply
-import Theorems.Thm_BookProof_HermiteCore_gaussH_sq
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteExpWall
 
 

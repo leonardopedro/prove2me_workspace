@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_EsaClosure_norm_add_I_eq_norm_sub_I
-import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_injective
-import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.EsaClosure
 
 

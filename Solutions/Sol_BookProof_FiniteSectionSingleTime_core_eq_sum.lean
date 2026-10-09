@@ -1,7 +1,7 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — solution of BookProof.FiniteSectionSingleTime.core_eq_sum
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
-import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.FiniteSectionSingleTime
 
 

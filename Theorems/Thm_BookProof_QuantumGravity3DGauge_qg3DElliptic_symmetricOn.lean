@@ -12,5 +12,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {D : Submodule ℂ (L2d 84)}
+
 theorem BookProof.QuantumGravity3DGauge.qg3DElliptic_symmetricOn (Φ : CoreRep 84 D) :
     SymmetricOn D (qg3DEllipticHamiltonian Φ) := by sorry

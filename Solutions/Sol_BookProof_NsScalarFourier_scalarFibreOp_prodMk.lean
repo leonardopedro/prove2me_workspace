@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
 import Theorems.Thm_BookProof_NsScalarFourier_scalarFibreOp_apply
 import Theorems.Thm_BookProof_NsScalarFourier_fibreOp_fibMk
-import Theorems.Thm_BookProof_NsScalarVectorCurry_curryLI_fibMk
+import Definitions.Def_ChapterNsScalarVectorCurry
 open BookProof.NsScalarFourier
 
 

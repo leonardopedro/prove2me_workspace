@@ -2,9 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
 import Theorems.Thm_BookProof_RelationShiftInvert_relOp_mem
-import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftMap_apply
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_eq_of_mem
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_mem
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.RelationShiftInvert
 
 

@@ -1,10 +1,10 @@
 -- Generated from ChapterNsFourierElimination.lean — solution of BookProof.NsFullEuler.coreRep_skewOn_op
 import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
 import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.NsFullEuler
 
 

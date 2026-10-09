@@ -2,9 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_clExt
-import Theorems.Thm_BookProof_EsaClosure_clExt_extends
-import Theorems.Thm_BookProof_EsaClosure_clGraph_isClosed
-import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

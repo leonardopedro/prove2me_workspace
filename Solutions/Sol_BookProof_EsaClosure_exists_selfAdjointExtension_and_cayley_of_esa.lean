@@ -1,7 +1,6 @@
 -- Generated from ChapterEsaClosureCore.lean — solution of BookProof.EsaClosure.exists_selfAdjointExtension_and_cayley_of_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
-import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
 import Theorems.Thm_BookProof_EsaClosure_exists_cayley_unitary
 open BookProof.EsaClosure
 

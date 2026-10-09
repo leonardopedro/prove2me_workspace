@@ -1,7 +1,7 @@
 -- Generated from ChapterNsOneBodyDGamma.lean — solution of BookProof.NsOneBody.spAdvect_apply
 import Mathlib
 import Definitions.Def_ChapterNsOneBodyDGamma
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.NsOneBody
 
 

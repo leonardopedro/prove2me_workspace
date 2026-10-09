@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_core_eq_sum
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_secOp_tendsto_basis
-import Theorems.Thm_BookProof_NavierStokesFlow_mem_lpFiniteModes
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.FiniteSectionSingleTime
 
 

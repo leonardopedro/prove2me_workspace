@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_le_of_extends
-import Theorems.Thm_BookProof_EsaClosure_mem_opGraph
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

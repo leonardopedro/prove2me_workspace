@@ -1,7 +1,7 @@
 -- Generated from ChapterBornMeasure.lean — solution of BookProof.ChapterBornMeasure.norm_evolve
 import Mathlib
 import Definitions.Def_ChapterBornMeasure
-import Theorems.Thm_BookProof_ChapterContinuityUnitary_exp_smul_I_unitary
+import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterBornMeasure
 
 

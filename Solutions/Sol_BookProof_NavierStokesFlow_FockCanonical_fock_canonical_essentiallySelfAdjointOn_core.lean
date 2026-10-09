@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq
+import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 
@@ -11,7 +12,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open LpNat IkebeKato ShiftHamiltonian FockManyMode HermiteCanonical
+open BookProof.FarisLavine
 
 variable {d : ℕ} {κ : Fin d → ℝ}
 

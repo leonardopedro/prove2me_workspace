@@ -2,7 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_smul_symmetricOn
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgMom_symmetricOn
 open BookProof.QuantumGravity3DGauge
 
 
@@ -22,4 +25,5 @@ variable {D : Submodule ℂ (L2d 84)}
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 84 D) (j : Fin 84) :
     SymmetricOn D (D.subtype.comp
-      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) := signedOp_quadForm_nonneg qgKappaElliptic_nonne
+      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) :=
+  smul_symmetricOn _ (qgMom_symmetricOn Φ j)

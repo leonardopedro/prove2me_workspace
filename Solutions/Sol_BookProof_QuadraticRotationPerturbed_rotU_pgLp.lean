@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationPerturbed
 import Theorems.Thm_BookProof_QuadraticRotationPerturbed_rotU_hermiteMvLp
-import Theorems.Thm_BookProof_HermiteProductCore_span_hermiteMv
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QuadraticRotationPerturbed
 
 

@@ -1,7 +1,7 @@
 -- Generated from ChapterA4.lean — solution of BookProof.majoranaFourier_symm
 import Mathlib
 import Definitions.Def_ChapterA4
-import Theorems.Thm_BookProof_conjugateₗᵢ_symm
+import Theorems.Thm_BookProof_conjugateli_symm
 open BookProof
 
 

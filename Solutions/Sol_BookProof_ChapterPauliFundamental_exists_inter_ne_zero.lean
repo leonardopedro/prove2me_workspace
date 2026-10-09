@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_traceOrth
-import Theorems.Thm_BookProof_ChapterPauliFundamental_gpF_empty
 open BookProof.ChapterPauliFundamental
 
 

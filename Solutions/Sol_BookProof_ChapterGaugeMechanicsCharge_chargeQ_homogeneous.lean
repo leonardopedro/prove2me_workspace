@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeMechanicsCharge
 import Theorems.Thm_BookProof_ChapterGaugeMechanicsCharge_chargeQ_eq_euler
-import Theorems.Thm_BookProof_ChapterGaugeMechanicsCharge_eulerOp_apply
 open BookProof.ChapterGaugeMechanicsCharge
 
 

@@ -12,6 +12,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 theorem BookProof.QuantumGravity3DGauge.signedOp_apply {n m : ℕ} (kappa : Fin n → ℝ) (pi : Fin n → D →ₗ[ℂ] D)
     (Bf : Fin m → D →ₗ[ℂ] D) (x : D) :
     signedOp kappa pi Bf x

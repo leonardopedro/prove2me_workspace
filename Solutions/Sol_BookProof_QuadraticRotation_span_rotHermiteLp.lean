@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Theorems.Thm_BookProof_QuadraticRotation_rotPoly_surjective
-import Theorems.Thm_BookProof_HermiteProductCore_span_hermiteMv
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QuadraticRotation
 
 

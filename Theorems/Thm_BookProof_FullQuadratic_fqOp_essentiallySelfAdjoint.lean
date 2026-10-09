@@ -4,7 +4,6 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteRelativeBound
-import Definitions.Def_ChapterQuadratureEsa
 import Definitions.Def_ChapterCarlemanTwoStep
 import Definitions.Def_ChapterCarlemanSimplex
 import Definitions.Def_ChapterModeQuadraticEsa
@@ -26,10 +25,6 @@ open BookProof.FarisLavine
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
-open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
-open BookProof.CarlemanSimplex
-open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

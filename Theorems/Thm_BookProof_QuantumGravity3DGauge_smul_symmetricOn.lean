@@ -12,6 +12,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
 theorem BookProof.QuantumGravity3DGauge.smul_symmetricOn {T : D →ₗ[ℂ] D} (r : ℝ)
     (hT : SymmetricOn D (D.subtype.comp T)) :
     SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • T)) := by sorry

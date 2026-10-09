@@ -2,7 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_qg3DElliptic_symmetricOn
-import Theorems.Thm_BookProof_QuantumGravity3DGauge_qg3DElliptic_quadForm_nonneg
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgKappaElliptic_nonneg
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgMom_symmetricOn
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_torsionOps_symmetricOn
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
 open BookProof.QuantumGravity3DGauge
 
@@ -22,5 +25,7 @@ theorem solution :
       IsPositiveSelfAdjointExtension (qg3DEllipticHamiltonian (coreRepPoly 84)) A :=
   friedrichs_extension_exists
       ⟨polyGaussCore, qg3DEllipticHamiltonian (coreRepPoly 84),
-        qg3DElliptic_symmetricOn _, qg3DElliptic_quadForm_nonneg _⟩
+        qg3DElliptic_symmetricOn _,
+        fun x => signedOp_quadForm_nonneg qgKappaElliptic_nonneg (qgMom_symmetricOn _)
+          (torsionOps_symmetricOn _) x⟩
       polyGaussCore_dense

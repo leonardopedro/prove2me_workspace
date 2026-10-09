@@ -1233,6 +1233,26 @@ def _state_snapshot():
 _STATE_CACHE = None
 
 
+_ASCII_TO_ORIG = None
+
+
+def _ascii_to_orig_map():
+    global _ASCII_TO_ORIG
+    if _ASCII_TO_ORIG is None:
+        try:
+            with open(os.path.join(os.path.dirname(os.path.dirname(
+                    os.path.abspath(__file__))),
+                    "state", "ascii_to_orig_thm_map.json"),
+                    encoding="utf-8") as f:
+                _ASCII_TO_ORIG = json.load(f)
+        except OSError:
+            _ASCII_TO_ORIG = {}
+    return _ASCII_TO_ORIG
+
+
+_ASCII_TO_ORIG = _ascii_to_orig_map()
+
+
 def _thm_slugs_for(mod):
     """State/wave spellings to try for an imported `Thm_<mod>` module.
 
@@ -1240,12 +1260,23 @@ def _thm_slugs_for(mod):
     (`BookProof_X'`) while the platform module is named from the declaration
     (`BookProof_X_prime`) after the `_prime` rename wave, so a lookup keyed by
     the import text must also try the sibling spelling.  Order = preference:
-    the import text first, then the apostrophe slug."""
+    the import text first, then the apostrophe slug.
+
+    TRANSLITERATION (2026-10-08): the server identifier class is ASCII-only
+    (§2.7), so a sibling whose source slug carries non-ASCII (`pauliσ_trace`)
+    is stored on the platform under an ASCII transliteration
+    (`paulisigma_trace`).  Solutions now import the ASCII module name, but
+    state/wave keys keep the original slug -- so a lookup by import text must
+    also try the original (non-ASCII) state key via
+    state/ascii_to_orig_thm_map.json."""
     out = [mod]
     if mod.endswith("_prime"):
         out.append(mod[:-6] + "'")
     if "_prime" in mod:
         out.append(mod.replace("_prime", "'"))
+    orig = _ASCII_TO_ORIG.get(mod)
+    if orig:
+        out.append(orig)
     return list(dict.fromkeys(out))
 
 
@@ -1945,13 +1976,23 @@ _PUB_DEF_DECLS = None
 
 
 def _ambient_variables(txt):
-    """Names a def bundle leaves in scope via `variable`, in either brace form."""
+    """Names a def bundle leaves in scope via `variable`, in either brace form.
+
+    Every group on the line is read, not just the first: a stub that binds its
+    own `variable {F : Type*} [inst...] {D : Submodule ℂ F}` on one line was
+    parsed as declaring only `F`, so the ambient-variable gate fired on `D`
+    even though the statement binds it itself (measured on
+    thm:BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded, deferred
+    twice while its offline verdict was ok)."""
     names = set()
-    for m in re.finditer(r"(?m)^\s*variable\s*(\{[^}]*\}|\([^)]*\)|[^\n]*)", txt):
-        for part in m.group(1).strip("{}()").split(","):
-            mm = re.match(r"^\s*\(?\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", part)
-            if mm:
-                names.add(mm.group(1))
+    for m in re.finditer(r"(?m)^\s*variable\s*([^\n]*)", txt):
+        rest = m.group(1)
+        groups = re.findall(r"\{[^}]*\}|\([^)]*\)", rest) or [rest]
+        for grp in groups:
+            for part in grp.strip("{}()").split(","):
+                mm = re.match(r"^\s*\(?\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", part)
+                if mm:
+                    names.add(mm.group(1))
     return names
 
 
@@ -1987,8 +2028,19 @@ def statement_needs_ambient_variable(item):
     vs = _ambient_variables(bundle)
     if not vs:
         return None
-    cut = txt.index("theorem") if "theorem" in txt else 0
+    # Anchor on a line-start `theorem`: every generated stub's first line is a
+    # `-- Generated from ... — theorem ...` comment, and a bare index("theorem")
+    # landed there, so `pre` never contained the preamble the check exists to
+    # read (declared was effectively always empty).
+    mtm = re.search(r"(?m)^theorem\b", txt)
+    cut = mtm.start() if mtm else 0
     pre, stmt = txt[:cut], txt[cut:]
+    # A named argument `(d := e)` mentions the callee's parameter name, not an
+    # identifier in scope, and it also truncates the naive split(":=") sig right
+    # where the binder check needs its colon -- both false positives at once
+    # (measured on thm:BookProof_QgOuterFock_qgSectorHam_symmetricOn, whose
+    # `(d := n * 84)` gated a statement that compiles fine server-side).
+    stmt = re.sub(r"\b[\w.']+\s*:=\s*", "", stmt)
     sig = stmt.split(":=", 1)[0]
     # Names the stub's own preamble declares. Since the generator was changed to
     # emit each theorem's `variable` declarations, a statement may legitimately
@@ -1998,9 +2050,15 @@ def statement_needs_ambient_variable(item):
     for v in sorted(vs):
         if v in declared:
             continue
-        if re.search(r"(?<![\w.'])" + re.escape(v) + r"(?![\w'])", stmt) \
-                and not re.search(r"[( {]" + re.escape(v) + r"\s*:", sig):
-            return v
+        if not re.search(r"(?<![\w.'])" + re.escape(v) + r"(?![\w'])", stmt):
+            continue
+        # Bound when the binder group introduces it directly (`(d : ...`) or in
+        # a paired binder list (`{F G : Idx ι -> C}` -- F never touches a colon
+        # of its own, which is what the old single pattern missed).
+        if re.search(r"[( {]" + re.escape(v) + r"\s*[:,]", sig) or re.search(
+                r"[( {][\w'\s,]*?\b" + re.escape(v) + r"\s+[\w'\s,]*:", sig):
+            continue
+        return v
     return None
 
 

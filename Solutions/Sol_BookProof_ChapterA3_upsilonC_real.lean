@@ -1,7 +1,7 @@
 -- Generated from ChapterA3h.lean — solution of BookProof.ChapterA3.upsilonC_real
 import Mathlib
 import Definitions.Def_ChapterA3h
-import Theorems.Thm_BookProof_ChapterA3_pauliσ_herm
+import Theorems.Thm_BookProof_ChapterA3_paulisigma_herm
 open BookProof.ChapterA3
 
 
@@ -21,7 +21,7 @@ theorem solution (T : Matrix (Fin 2) (Fin 2) ℂ) (μ ν : Fin 4) :
   have htr : Matrix.trace ((pauliσ μ * (Tᴴ * pauliσ ν * T))ᴴ)
       = Matrix.trace (pauliσ μ * (Tᴴ * pauliσ ν * T)) := by
     repeat rw [Matrix.conjTranspose_mul]
-    rw [Matrix.conjTranspose_conjTranspose, pauliσ_herm μ, pauliσ_herm ν]
+    rw [Matrix.conjTranspose_conjTranspose, paulisigma_herm μ, paulisigma_herm ν]
     rw [Matrix.trace_mul_comm]
     simp [mul_assoc]
   rw [map_mul, h2, hc, htr]

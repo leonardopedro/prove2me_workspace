@@ -1,7 +1,7 @@
 -- Generated from ChapterGaugeShiftExample.lean — solution of BookProof.ChapterGaugeShiftExample.shiftOp_adjoint
 import Mathlib
 import Definitions.Def_ChapterGaugeShiftExample
-import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_inner_shiftOp_left
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterGaugeShiftExample
 
 

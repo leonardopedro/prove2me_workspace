@@ -1,8 +1,11 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — theorem BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
+open BookProof.NavierStokesFlow.FockManyMode
+open BookProof.FarisLavine
 open IkebeKato
 open LpNat
 

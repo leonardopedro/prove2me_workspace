@@ -1,8 +1,8 @@
 -- Generated from ChapterShiftedQuadraticMatrixEsa.lean — solution of BookProof.ShiftedQuadraticMatrix.span_hermiteTRLp
 import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
-import Theorems.Thm_BookProof_HermiteProductCore_span_hermiteMv
 import Theorems.Thm_BookProof_QuadraticRotation_rotPoly_surjective
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.ShiftedQuadraticMatrix
 
 

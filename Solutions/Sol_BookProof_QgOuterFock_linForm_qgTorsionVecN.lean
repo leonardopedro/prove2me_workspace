@@ -39,7 +39,7 @@ theorem solution {n : ℕ} (p : Fin n) (m : Fin 64) :
           - ((if i = torsionIdx2 m then (1 : ℝ) else 0 : ℝ) : ℂ) • X (pcoord p i) := by
       intro i
       have hcoef : qgTorsionVecN n (p, m) (pcoord p i) = torsionVec m i := by
-        simp [qgTorsionVecN]
+        simp [qgTorsionVecN, partOf_pcoord, modeOf_pcoord]
       rw [hcoef, ← sub_smul]
       congr 1
       simp [torsionVec]
@@ -48,7 +48,7 @@ theorem solution {n : ℕ} (p : Fin n) (m : Fin 64) :
   · intro q _ hq
     refine Finset.sum_eq_zero fun i _ => ?_
     have hcoef : qgTorsionVecN n (p, m) (pcoord q i) = 0 := by
-      simp [qgTorsionVecN, hq]
+      simp [qgTorsionVecN, hq, partOf_pcoord, modeOf_pcoord]
     rw [hcoef]
     simp
   · intro hp

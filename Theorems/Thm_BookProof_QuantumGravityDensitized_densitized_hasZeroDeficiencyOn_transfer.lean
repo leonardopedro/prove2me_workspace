@@ -8,6 +8,7 @@ open BookProof.QuantumGravityDensitized
 
 
 open Filter Topology BookProof.FarisLavine
+open BookProof.NavierStokesFlow
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

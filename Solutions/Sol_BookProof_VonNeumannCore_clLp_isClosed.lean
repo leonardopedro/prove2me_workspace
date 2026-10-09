@@ -1,7 +1,7 @@
 -- Generated from ChapterVonNeumannCore.lean — solution of BookProof.VonNeumannCore.clLp_isClosed
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
-import Theorems.Thm_BookProof_EsaClosure_clGraph_isClosed
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.VonNeumannCore
 
 

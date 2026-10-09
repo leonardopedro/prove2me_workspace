@@ -29854,11 +29854,11 @@
    ]
   },
   "BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le_prime": {
-   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le'",
+   "name": "BookProof.NavierStokesFlow.FarisLavineLift.norm_inner_commutator_sum_le_prime",
    "chapter": "ChapterNavierStokesFarisLavineLift",
    "file": "Theorems/Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_inner_commutator_sum_le_prime.lean",
-   "title": "The Lean 4 theorem `norm_inner_commutator_sum_le'` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `norm_inner_commutator_sum_le'` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization.",
+   "title": "The Lean 4 theorem `norm_inner_commutator_sum_le_prime` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `norm_inner_commutator_sum_le_prime` in the `ChapterNavierStokesFarisLavineLift` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesFarisLavineLift.lean",
    "tags": [
     "timepiece"
@@ -142217,6 +142217,1362 @@
     "timepiece",
     "theorems"
    ]
+  },
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH": {
+   "name": "BookProof.NavierStokesFlow.CanonicalVector.canH_eq_velH",
+   "chapter": "ChapterNavierStokesCanonicalVector",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH.lean",
+   "title": "The Lean 4 theorem `canH_eq_velH` in the `ChapterNavierStokesCanonicalVector` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.CanonicalVector.canH_eq_velH` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_symmetricOn.lean",
+   "title": "The Lean 4 theorem `diagMax_symmetricOn` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_nonneg": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_quadForm_nonneg",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_nonneg.lean",
+   "title": "The Lean 4 theorem `diagMax_quadForm_nonneg` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_quadForm_nonneg` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_add_one_surjective": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_add_one_surjective",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_add_one_surjective.lean",
+   "title": "The Lean 4 theorem `diagMax_add_one_surjective` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_add_one_surjective` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_exists_finiteModes_graph_approx": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.exists_finiteModes_graph_approx",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_exists_finiteModes_graph_approx.lean",
+   "title": "The Lean 4 theorem `exists_finiteModes_graph_approx` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.exists_finiteModes_graph_approx` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_inner_rotHermiteLp": {
+   "name": "BookProof.QuadraticRotation.inner_rotHermiteLp",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_inner_rotHermiteLp.lean",
+   "title": "The Lean 4 theorem `inner_rotHermiteLp` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.inner_rotHermiteLp` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_rotPoly_surjective": {
+   "name": "BookProof.QuadraticRotation.rotPoly_surjective",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_rotPoly_surjective.lean",
+   "title": "The Lean 4 theorem `rotPoly_surjective` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.rotPoly_surjective` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_hasSum_quadForm": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_hasSum_quadForm",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_hasSum_quadForm.lean",
+   "title": "The Lean 4 theorem `diagMax_hasSum_quadForm` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_hasSum_quadForm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiagonalEsa_norm_basis": {
+   "name": "BookProof.NavierStokesFlow.DiagonalEsa.norm_basis",
+   "chapter": "ChapterNavierStokesDeficiency",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_DiagonalEsa_norm_basis.lean",
+   "title": "The Lean 4 theorem `norm_basis` in the `ChapterNavierStokesDeficiency` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.DiagonalEsa.norm_basis` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_essentiallySelfAdjointOn",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn.lean",
+   "title": "The Lean 4 theorem `diagMax_essentiallySelfAdjointOn` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_essentiallySelfAdjointOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_ge_norm_sq": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_quadForm_ge_norm_sq",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_ge_norm_sq.lean",
+   "title": "The Lean 4 theorem `diagMax_quadForm_ge_norm_sq` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_quadForm_ge_norm_sq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QgOuterFockFL_dsFibOp_fib": {
+   "name": "BookProof.QgOuterFockFL.dsFibOp_fib",
+   "chapter": "ChapterQgOuterFockFarisLavine",
+   "file": "Theorems/Thm_BookProof_QgOuterFockFL_dsFibOp_fib.lean",
+   "title": "The Lean 4 theorem `dsFibOp_fib` in the `ChapterQgOuterFockFarisLavine` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QgOuterFockFL.dsFibOp_fib` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_densY_sq": {
+   "name": "BookProof.QuantumGravityDensitized.densY_sq",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "Theorems/Thm_BookProof_QuantumGravityDensitized_densY_sq.lean",
+   "title": "The Lean 4 theorem `densY_sq` in the `ChapterQuantumGravityDensitized` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.densY_sq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_quadPolyMat_apply": {
+   "name": "BookProof.QuadraticRotation.quadPolyMat_apply",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_quadPolyMat_apply.lean",
+   "title": "The Lean 4 theorem `quadPolyMat_apply` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.quadPolyMat_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_inner_pgLp_rotPoly": {
+   "name": "BookProof.QuadraticRotation.inner_pgLp_rotPoly",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_inner_pgLp_rotPoly.lean",
+   "title": "The Lean 4 theorem `inner_pgLp_rotPoly` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.inner_pgLp_rotPoly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_quadPolyMat_rotPoly": {
+   "name": "BookProof.QuadraticRotation.quadPolyMat_rotPoly",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_quadPolyMat_rotPoly.lean",
+   "title": "The Lean 4 theorem `quadPolyMat_rotPoly` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.quadPolyMat_rotPoly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_exists_rotConj_eigenvalues": {
+   "name": "BookProof.QuadraticRotation.exists_rotConj_eigenvalues",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_exists_rotConj_eigenvalues.lean",
+   "title": "The Lean 4 theorem `exists_rotConj_eigenvalues` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.exists_rotConj_eigenvalues` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_rotConj_eq": {
+   "name": "BookProof.QuadraticRotation.rotConj_eq",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_rotConj_eq.lean",
+   "title": "The Lean 4 theorem `rotConj_eq` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.rotConj_eq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_strichartz_esa_of_finiteSpeed": {
+   "name": "BookProof.QuantumGravityDensitized.strichartz_esa_of_finiteSpeed",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "Theorems/Thm_BookProof_QuantumGravityDensitized_strichartz_esa_of_finiteSpeed.lean",
+   "title": "The Lean 4 theorem `strichartz_esa_of_finiteSpeed` in the `ChapterQuantumGravityDensitized` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.strichartz_esa_of_finiteSpeed` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom.lean",
+   "title": "The Lean 4 theorem `finiteModes_le_maxDom` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.finiteModes_le_maxDom` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_zero",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero.lean",
+   "title": "The Lean 4 theorem `stoneU_zero` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_zero` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_GroupAverage_UnitaryRep_avgProj_mem": {
+   "name": "BookProof.GroupAverage.UnitaryRep.avgProj_mem",
+   "chapter": "ChapterGroupAverageEsa",
+   "file": "Theorems/Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem.lean",
+   "title": "The Lean 4 theorem `avgProj_mem` in the `ChapterGroupAverageEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.GroupAverage.UnitaryRep.avgProj_mem` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_GroupAverage_UnitaryRep_commutes_avgProj": {
+   "name": "BookProof.GroupAverage.UnitaryRep.commutes_avgProj",
+   "chapter": "ChapterGroupAverageEsa",
+   "file": "Theorems/Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj.lean",
+   "title": "The Lean 4 theorem `commutes_avgProj` in the `ChapterGroupAverageEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.GroupAverage.UnitaryRep.commutes_avgProj` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU.lean",
+   "title": "The Lean 4 theorem `stoneU_apply_stoneU` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_apply_stoneU` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply.lean",
+   "title": "The Lean 4 theorem `norm_stoneU_apply` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain",
+   "chapter": "ChapterStoneGenerator",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain.lean",
+   "title": "The Lean 4 theorem `stoneU_mem_domain` in the `ChapterStoneGenerator` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_mem_domain` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res.lean",
+   "title": "The Lean 4 theorem `op_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.op_res` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_coe": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.diagMax_coe",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe.lean",
+   "title": "The Lean 4 theorem `diagMax_coe` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.diagMax_coe` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift.lean",
+   "title": "The Lean 4 theorem `res_shift` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_shift` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le.lean",
+   "title": "The Lean 4 theorem `norm_resCLM_apply_le` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_resCLM_apply_le` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_of_ne": {
+   "name": "BookProof.FockSecondQuantization.up_of_ne",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_up_of_ne.lean",
+   "title": "The Lean 4 theorem `up_of_ne` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.up_of_ne` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_up_self": {
+   "name": "BookProof.FockSecondQuantization.up_self",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_up_self.lean",
+   "title": "The Lean 4 theorem `up_self` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.up_self` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_YangMillsHermite_mulOp_apply": {
+   "name": "BookProof.YangMillsHermite.mulOp_apply",
+   "chapter": "ChapterYangMillsHermite",
+   "file": "Theorems/Thm_BookProof_YangMillsHermite_mulOp_apply.lean",
+   "title": "The Lean 4 theorem `mulOp_apply` in the `ChapterYangMillsHermite` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.YangMillsHermite.mulOp_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_annA_single": {
+   "name": "BookProof.FockSecondQuantization.annA_single",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_annA_single.lean",
+   "title": "The Lean 4 theorem `annA_single` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.annA_single` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_creA_single": {
+   "name": "BookProof.FockSecondQuantization.creA_single",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_creA_single.lean",
+   "title": "The Lean 4 theorem `creA_single` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.creA_single` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_up": {
+   "name": "BookProof.FockSecondQuantization.dn_up",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_up.lean",
+   "title": "The Lean 4 theorem `dn_up` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.dn_up` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective": {
+   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective.lean",
+   "title": "The Lean 4 theorem `friedrichsResolvent_injective` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe": {
+   "name": "BookProof.NavierStokesFlow.HermiteFarisLavine.nsH_coe",
+   "chapter": "ChapterNavierStokesHermiteFarisLavine",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe.lean",
+   "title": "The Lean 4 theorem `nsH_coe` in the `ChapterNavierStokesHermiteFarisLavine` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.HermiteFarisLavine.nsH_coe` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.ikebeKato_momentum",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum.lean",
+   "title": "The Lean 4 theorem `ikebeKato_momentum` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.ikebeKato_momentum` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply",
+   "chapter": "ChapterStoneEvolution",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply.lean",
+   "title": "The Lean 4 theorem `norm_approxU_apply` in the `ChapterStoneEvolution` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_mem",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem.lean",
+   "title": "The Lean 4 theorem `resCLM_mem` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_mem` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res.lean",
+   "title": "The Lean 4 theorem `inner_res` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.inner_res` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_zero": {
+   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_zero",
+   "chapter": "ChapterStoneMeasurable",
+   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_zero.lean",
+   "title": "The Lean 4 theorem `apply_zero` in the `ChapterStoneMeasurable` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_zero` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_signedOp_apply": {
+   "name": "BookProof.QuantumGravity3DGauge.signedOp_apply",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_apply.lean",
+   "title": "The Lean 4 theorem `signedOp_apply` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.signedOp_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_signedOp_symmetricOn": {
+   "name": "BookProof.QuantumGravity3DGauge.signedOp_symmetricOn",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_symmetricOn.lean",
+   "title": "The Lean 4 theorem `signedOp_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.signedOp_symmetricOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.ext_prime",
+   "chapter": "ChapterStoneTheorem",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime.lean",
+   "title": "The Lean 4 theorem `ext_prime` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.ext_prime` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FockSecondQuantization_dn_of_ne": {
+   "name": "BookProof.FockSecondQuantization.dn_of_ne",
+   "chapter": "ChapterFockSecondQuantization",
+   "file": "Theorems/Thm_BookProof_FockSecondQuantization_dn_of_ne.lean",
+   "title": "The Lean 4 theorem `dn_of_ne` in the `ChapterFockSecondQuantization` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FockSecondQuantization.dn_of_ne` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer": {
+   "name": "BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "Theorems/Thm_BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer.lean",
+   "title": "The Lean 4 theorem `densitized_hasZeroDeficiencyOn_transfer` in the `ChapterQuantumGravityDensitized` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.densitized_hasZeroDeficiencyOn_transfer` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range": {
+   "name": "BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range",
+   "chapter": "ChapterNavierStokesDeficiency",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range.lean",
+   "title": "The Lean 4 theorem `inner_eq_sum_range` in the `ChapterNavierStokesDeficiency` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_GroupAverage_UnitaryRep_avgProj_apply": {
+   "name": "BookProof.GroupAverage.UnitaryRep.avgProj_apply",
+   "chapter": "ChapterGroupAverageEsa",
+   "file": "Theorems/Thm_BookProof_GroupAverage_UnitaryRep_avgProj_apply.lean",
+   "title": "The Lean 4 theorem `avgProj_apply` in the `ChapterGroupAverageEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.GroupAverage.UnitaryRep.avgProj_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint": {
+   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint.lean",
+   "title": "The Lean 4 theorem `friedrichsResolvent_isSelfAdjoint` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_isSelfAdjoint` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "polySym_foPoly": {
+   "name": "BookProof.HermiteRelative.polySym_foPoly",
+   "chapter": "ChapterHermiteRelativeBound",
+   "file": "Theorems/Thm_polySym_foPoly.lean",
+   "title": "The Lean 4 theorem `polySym_foPoly` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HermiteRelative.polySym_foPoly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn": {
+   "name": "BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn",
+   "chapter": "ChapterNavierStokesDeficiency",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn.lean",
+   "title": "The Lean 4 theorem `diagOp_hasZeroDeficiencyOn` in the `ChapterNavierStokesDeficiency` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.DiagonalEsa.diagOp_hasZeroDeficiencyOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le",
+   "chapter": "ChapterStoneEvolution",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le.lean",
+   "title": "The Lean 4 theorem `norm_approxU_sub_apply_le` in the `ChapterStoneEvolution` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_approxU_sub_apply_le` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_YangMillsHermite_starP_mul": {
+   "name": "BookProof.YangMillsHermite.starP_mul",
+   "chapter": "ChapterYangMillsHermite",
+   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_mul.lean",
+   "title": "The Lean 4 theorem `starP_mul` in the `ChapterYangMillsHermite` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.YangMillsHermite.starP_mul` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj": {
+   "name": "BookProof.GroupAverage.UnitaryRep.isReducingProjection_avgProj",
+   "chapter": "ChapterGroupAverageEsa",
+   "file": "Theorems/Thm_BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj.lean",
+   "title": "The Lean 4 theorem `isReducingProjection_avgProj` in the `ChapterGroupAverageEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.GroupAverage.UnitaryRep.isReducingProjection_avgProj` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse": {
+   "name": "BookProof.HashimotoShiftInvert.isShiftInvertC_of_rightInverse",
+   "chapter": "ChapterHashimotoComplexShifts",
+   "file": "Theorems/Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse.lean",
+   "title": "The Lean 4 theorem `isShiftInvertC_of_rightInverse` in the `ChapterHashimotoComplexShifts` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HashimotoShiftInvert.isShiftInvertC_of_rightInverse` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_quadOpMat_symmetric": {
+   "name": "BookProof.QuadraticRotation.quadOpMat_symmetric",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_quadOpMat_symmetric.lean",
+   "title": "The Lean 4 theorem `quadOpMat_symmetric` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.quadOpMat_symmetric` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm",
+   "chapter": "ChapterStoneResolvent",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm.lean",
+   "title": "The Lean 4 theorem `res_comm` in the `ChapterStoneResolvent` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.res_comm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_tendsto_slope_phaseUnitary": {
+   "name": "BookProof.ChapterUnboundedPosition.tendsto_slope_phaseUnitary",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_tendsto_slope_phaseUnitary.lean",
+   "title": "The Lean 4 theorem `tendsto_slope_phaseUnitary` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.tendsto_slope_phaseUnitary` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_symmetricOn": {
+   "name": "BookProof.NavierStokesFlow.NSHashimoto.velCore_symmetricOn",
+   "chapter": "ChapterNavierStokesHashimoto",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_symmetricOn.lean",
+   "title": "The Lean 4 theorem `velCore_symmetricOn` in the `ChapterNavierStokesHashimoto` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.NSHashimoto.velCore_symmetricOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_esa": {
+   "name": "BookProof.NavierStokesFlow.NSHashimoto.velCore_esa",
+   "chapter": "ChapterNavierStokesHashimoto",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_esa.lean",
+   "title": "The Lean 4 theorem `velCore_esa` in the `ChapterNavierStokesHashimoto` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.NSHashimoto.velCore_esa` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_dense": {
+   "name": "BookProof.NavierStokesFlow.NSHashimoto.velCore_dense",
+   "chapter": "ChapterNavierStokesHashimoto",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_dense.lean",
+   "title": "The Lean 4 theorem `velCore_dense` in the `ChapterNavierStokesHashimoto` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.NSHashimoto.velCore_dense` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp": {
+   "name": "BookProof.QuantumGravity3DGauge.signedOp_eq_weylOp",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp.lean",
+   "title": "The Lean 4 theorem `signedOp_eq_weylOp` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.signedOp_eq_weylOp` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg": {
+   "name": "BookProof.QuantumGravity3DGauge.signedOp_quadForm_nonneg",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg.lean",
+   "title": "The Lean 4 theorem `signedOp_quadForm_nonneg` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.signedOp_quadForm_nonneg` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_signedOp_quadForm": {
+   "name": "BookProof.QuantumGravity3DGauge.signedOp_quadForm",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm.lean",
+   "title": "The Lean 4 theorem `signedOp_quadForm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.signedOp_quadForm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_ccr_poly": {
+   "name": "BookProof.QuantumGravity3DGauge.ccr_poly",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_ccr_poly.lean",
+   "title": "The Lean 4 theorem `ccr_poly` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.ccr_poly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_smul_symmetricOn": {
+   "name": "BookProof.QuantumGravity3DGauge.smul_symmetricOn",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_smul_symmetricOn.lean",
+   "title": "The Lean 4 theorem `smul_symmetricOn` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.smul_symmetricOn` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym": {
+   "name": "BookProof.QuantumGravity3DGauge.qgWeylProd_coord_mom_polySym",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym.lean",
+   "title": "The Lean 4 theorem `qgWeylProd_coord_mom_polySym` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.qgWeylProd_coord_mom_polySym` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.genOp_eq_op",
+   "chapter": "ChapterStoneTheorem",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op.lean",
+   "title": "The Lean 4 theorem `genOp_eq_op` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.genOp_eq_op` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genDomain_eq_domain": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.genDomain_eq_domain",
+   "chapter": "ChapterStoneTheorem",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genDomain_eq_domain.lean",
+   "title": "The Lean 4 theorem `genDomain_eq_domain` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.genDomain_eq_domain` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_IkebeKato_sum_single_mem_finiteModes": {
+   "name": "BookProof.NavierStokesFlow.IkebeKato.sum_single_mem_finiteModes",
+   "chapter": "ChapterNavierStokesIkebeKato",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_IkebeKato_sum_single_mem_finiteModes.lean",
+   "title": "The Lean 4 theorem `sum_single_mem_finiteModes` in the `ChapterNavierStokesIkebeKato` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.IkebeKato.sum_single_mem_finiteModes` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_Complexification_Cx_sub_re": {
+   "name": "BookProof.Complexification.Cx.sub_re",
+   "chapter": "Complexification",
+   "file": "Theorems/Thm_BookProof_Complexification_Cx_sub_re.lean",
+   "title": "The Lean 4 theorem `sub_re` in the `Complexification` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.Complexification.Cx.sub_re` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_Complexification_Cx_sub_im": {
+   "name": "BookProof.Complexification.Cx.sub_im",
+   "chapter": "Complexification",
+   "file": "Theorems/Thm_BookProof_Complexification_Cx_sub_im.lean",
+   "title": "The Lean 4 theorem `sub_im` in the `Complexification` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.Complexification.Cx.sub_im` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_formExt_coe": {
+   "name": "BookProof.FriedrichsExtension.FormDom.formExt_coe",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe.lean",
+   "title": "The Lean 4 theorem `formExt_coe` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.formExt_coe` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos": {
+   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos.lean",
+   "title": "The Lean 4 theorem `friedrichsResolvent_pos` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_pos` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply": {
+   "name": "BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply.lean",
+   "title": "The Lean 4 theorem `friedrichsResolvent_apply` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_FriedrichsExtension_FormDom_inner_coe_eq": {
+   "name": "BookProof.FriedrichsExtension.FormDom.inner_coe_eq",
+   "chapter": "ChapterFriedrichsExtension",
+   "file": "Theorems/Thm_BookProof_FriedrichsExtension_FormDom_inner_coe_eq.lean",
+   "title": "The Lean 4 theorem `inner_coe_eq` in the `ChapterFriedrichsExtension` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.FriedrichsExtension.FormDom.inner_coe_eq` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HermiteRelative_apply_sum_of_diagonal": {
+   "name": "BookProof.HermiteRelative.apply_sum_of_diagonal",
+   "chapter": "ChapterHermiteRelativeBound",
+   "file": "Theorems/Thm_BookProof_HermiteRelative_apply_sum_of_diagonal.lean",
+   "title": "The Lean 4 theorem `apply_sum_of_diagonal` in the `ChapterHermiteRelativeBound` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HermiteRelative.apply_sum_of_diagonal` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_nsFlow_comm_hamiltonian": {
+   "name": "BookProof.NavierStokesFlow.nsFlow_comm_hamiltonian",
+   "chapter": "ChapterNavierStokesCauchy",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_nsFlow_comm_hamiltonian.lean",
+   "title": "The Lean 4 theorem `nsFlow_comm_hamiltonian` in the `ChapterNavierStokesCauchy` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.nsFlow_comm_hamiltonian` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian": {
+   "name": "BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian",
+   "chapter": "ChapterNavierStokesDeficiency",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian.lean",
+   "title": "The Lean 4 theorem `jacobi_wronskian` in the `ChapterNavierStokesDeficiency` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.JacobiDeficiency.jacobi_wronskian` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric": {
+   "name": "BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric",
+   "chapter": "ChapterNavierStokesDeficiency",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric.lean",
+   "title": "The Lean 4 theorem `jacobiOp_symmetric` in the `ChapterNavierStokesDeficiency` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_symmetric` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step": {
+   "name": "BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step",
+   "chapter": "ChapterNavierStokesHermiteFarisLavine",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step.lean",
+   "title": "The Lean 4 theorem `oscSymbol_step` in the `ChapterNavierStokesHermiteFarisLavine` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.HermiteFarisLavine.oscSymbol_step` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NsScalarVectorCurry_IsSliceOf_add": {
+   "name": "BookProof.NsScalarVectorCurry.IsSliceOf.add",
+   "chapter": "ChapterNsScalarVectorCurry",
+   "file": "Theorems/Thm_BookProof_NsScalarVectorCurry_IsSliceOf_add.lean",
+   "title": "The Lean 4 theorem `add` in the `ChapterNsScalarVectorCurry` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NsScalarVectorCurry.IsSliceOf.add` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QgCouplingDGammaSum_creVec_zero": {
+   "name": "BookProof.QgCouplingDGammaSum.creVec_zero",
+   "chapter": "ChapterQgCouplingDGammaSum",
+   "file": "Theorems/Thm_BookProof_QgCouplingDGammaSum_creVec_zero.lean",
+   "title": "The Lean 4 theorem `creVec_zero` in the `ChapterQgCouplingDGammaSum` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QgCouplingDGammaSum.creVec_zero` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_idxDE_injective": {
+   "name": "BookProof.QuantumGravity3DGauge.idxDE_injective",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_idxDE_injective.lean",
+   "title": "The Lean 4 theorem `idxDE_injective` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.idxDE_injective` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain.lean",
+   "title": "The Lean 4 theorem `norm_stoneU_sub_domain` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_domain` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_rotPoly_momPoly": {
+   "name": "BookProof.QuadraticRotation.rotPoly_momPoly",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_rotPoly_momPoly.lean",
+   "title": "The Lean 4 theorem `rotPoly_momPoly` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.rotPoly_momPoly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_rotPoly_mulXPoly": {
+   "name": "BookProof.QuadraticRotation.rotPoly_mulXPoly",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_rotPoly_mulXPoly.lean",
+   "title": "The Lean 4 theorem `rotPoly_mulXPoly` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.rotPoly_mulXPoly` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint": {
+   "name": "BookProof.QuadraticRotation.quadOpMat_essentiallySelfAdjoint",
+   "chapter": "ChapterQuadraticRotationEsa",
+   "file": "Theorems/Thm_BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint.lean",
+   "title": "The Lean 4 theorem `quadOpMat_essentiallySelfAdjoint` in the `ChapterQuadraticRotationEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuadraticRotation.quadOpMat_essentiallySelfAdjoint` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravity3DGauge_derOp_comm": {
+   "name": "BookProof.QuantumGravity3DGauge.derOp_comm",
+   "chapter": "ChapterQuantumGravity3DGauge",
+   "file": "Theorems/Thm_BookProof_QuantumGravity3DGauge_derOp_comm.lean",
+   "title": "The Lean 4 theorem `derOp_comm` in the `ChapterQuantumGravity3DGauge` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravity3DGauge.derOp_comm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ScalaronFiberFL_hamS_apply": {
+   "name": "BookProof.ScalaronFiberFL.hamS_apply",
+   "chapter": "ChapterScalaronFiberFL",
+   "file": "Theorems/Thm_BookProof_ScalaronFiberFL_hamS_apply.lean",
+   "title": "The Lean 4 theorem `hamS_apply` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ScalaronFiberFL.hamS_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ScalaronFiberFL_ham_eq_toLp": {
+   "name": "BookProof.ScalaronFiberFL.ham_eq_toLp",
+   "chapter": "ChapterScalaronFiberFL",
+   "file": "Theorems/Thm_BookProof_ScalaronFiberFL_ham_eq_toLp.lean",
+   "title": "The Lean 4 theorem `ham_eq_toLp` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ScalaronFiberFL.ham_eq_toLp` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ScalaronFiberFL_norm_sq_le_quadForm": {
+   "name": "BookProof.ScalaronFiberFL.norm_sq_le_quadForm",
+   "chapter": "ChapterScalaronFiberFL",
+   "file": "Theorems/Thm_BookProof_ScalaronFiberFL_norm_sq_le_quadForm.lean",
+   "title": "The Lean 4 theorem `norm_sq_le_quadForm` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ScalaronFiberFL.norm_sq_le_quadForm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ScalaronFiberFL_norm_derivL2_sq_le": {
+   "name": "BookProof.ScalaronFiberFL.norm_derivL2_sq_le",
+   "chapter": "ChapterScalaronFiberFL",
+   "file": "Theorems/Thm_BookProof_ScalaronFiberFL_norm_derivL2_sq_le.lean",
+   "title": "The Lean 4 theorem `norm_derivL2_sq_le` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ScalaronFiberFL.norm_derivL2_sq_le` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ScalaronFiberFL_ham_x_comm": {
+   "name": "BookProof.ScalaronFiberFL.ham_x_comm",
+   "chapter": "ChapterScalaronFiberFL",
+   "file": "Theorems/Thm_BookProof_ScalaronFiberFL_ham_x_comm.lean",
+   "title": "The Lean 4 theorem `ham_x_comm` in the `ChapterScalaronFiberFL` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ScalaronFiberFL.ham_x_comm` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HyperbolicQuadratic_momPoly_apply": {
+   "name": "BookProof.HyperbolicQuadratic.momPoly_apply_prime",
+   "chapter": "ChapterHyperbolicQuadraticEsa",
+   "file": "Theorems/Thm_BookProof_HyperbolicQuadratic_momPoly_apply.lean",
+   "title": "The Lean 4 theorem `momPoly_apply_prime` in the `ChapterHyperbolicQuadraticEsa` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HyperbolicQuadratic.momPoly_apply_prime` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM",
+   "chapter": "ChapterStoneGenerator",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM.lean",
+   "title": "The Lean 4 theorem `stoneU_commute_resCLM` in the `ChapterStoneGenerator` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.stoneU_commute_resCLM` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_zero",
+   "chapter": "ChapterStoneEvolution",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero.lean",
+   "title": "The Lean 4 theorem `approxU_zero` in the `ChapterStoneEvolution` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_zero` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero_param": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_zero_param",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero_param.lean",
+   "title": "The Lean 4 theorem `approxU_zero_param` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.approxU_zero_param` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply",
+   "chapter": "ChapterStoneEvolution",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply.lean",
+   "title": "The Lean 4 theorem `hasDerivAt_approxU_apply` in the `ChapterStoneEvolution` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_zero": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_zero",
+   "chapter": "ChapterStoneGroup",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_zero.lean",
+   "title": "The Lean 4 theorem `yosida_zero` in the `ChapterStoneGroup` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_zero` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le",
+   "chapter": "ChapterStoneUnitary",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le.lean",
+   "title": "The Lean 4 theorem `norm_stoneU_sub_approxU_le` in the `ChapterStoneUnitary` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.norm_stoneU_sub_approxU_le` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto": {
+   "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto",
+   "chapter": "ChapterStoneGroup",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto.lean",
+   "title": "The Lean 4 theorem `yosida_tendsto` in the `ChapterStoneGroup` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.yosida_tendsto` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map": {
+   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map",
+   "chapter": "ChapterStoneMeasurable",
+   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map.lean",
+   "title": "The Lean 4 theorem `inner_map_map` in the `ChapterStoneMeasurable` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.inner_map_map` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply": {
+   "name": "BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply",
+   "chapter": "ChapterStoneMeasurable",
+   "file": "Theorems/Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply.lean",
+   "title": "The Lean 4 theorem `apply_apply` in the `ChapterStoneMeasurable` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.apply_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_position_unbounded": {
+   "name": "BookProof.ChapterUnboundedPosition.position_unbounded",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_position_unbounded.lean",
+   "title": "The Lean 4 theorem `position_unbounded` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.position_unbounded` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_QuantumGravityDensitized_mulHamiltonian_mulBasis": {
+   "name": "BookProof.QuantumGravityDensitized.mulHamiltonian_mulBasis",
+   "chapter": "ChapterQuantumGravityDensitized",
+   "file": "Theorems/Thm_BookProof_QuantumGravityDensitized_mulHamiltonian_mulBasis.lean",
+   "title": "The Lean 4 theorem `mulHamiltonian_mulBasis` in the `ChapterQuantumGravityDensitized` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.QuantumGravityDensitized.mulHamiltonian_mulBasis` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnitaryTransport_transportUnitary_apply": {
+   "name": "BookProof.ChapterUnitaryTransport.transportUnitary_apply",
+   "chapter": "ChapterUnitaryTransport",
+   "file": "Theorems/Thm_BookProof_ChapterUnitaryTransport_transportUnitary_apply.lean",
+   "title": "The Lean 4 theorem `transportUnitary_apply` in the `ChapterUnitaryTransport` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnitaryTransport.transportUnitary_apply` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_ChapterUnboundedPosition_adjointDomain_eq_mulDomain": {
+   "name": "BookProof.ChapterUnboundedPosition.adjointDomain_eq_mulDomain",
+   "chapter": "ChapterUnboundedPosition",
+   "file": "Theorems/Thm_BookProof_ChapterUnboundedPosition_adjointDomain_eq_mulDomain.lean",
+   "title": "The Lean 4 theorem `adjointDomain_eq_mulDomain` in the `ChapterUnboundedPosition` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.ChapterUnboundedPosition.adjointDomain_eq_mulDomain` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_YangMillsHermite_starP_X": {
+   "name": "BookProof.YangMillsHermite.starP_X",
+   "chapter": "ChapterYangMillsHermite",
+   "file": "Theorems/Thm_BookProof_YangMillsHermite_starP_X.lean",
+   "title": "The Lean 4 theorem `starP_X` in the `ChapterYangMillsHermite` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.YangMillsHermite.starP_X` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core": {
+   "name": "BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core",
+   "chapter": "ChapterNavierStokesFockCanonical",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core.lean",
+   "title": "The Lean 4 theorem `fock_canonical_essentiallySelfAdjointOn_core` in the `ChapterNavierStokesFockCanonical` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.NavierStokesFlow.FockCanonical.fock_canonical_essentiallySelfAdjointOn_core` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
+  },
+  "BookProof_HermiteProductCore_gaussInt_add": {
+   "name": "BookProof.HermiteProductCore.gaussInt_add",
+   "chapter": "ChapterHermiteProductCore",
+   "file": "Theorems/Thm_BookProof_HermiteProductCore_gaussInt_add.lean",
+   "title": "The Lean 4 theorem `gaussInt_add` in the `ChapterHermiteProductCore` chapter of the timepiece formalization",
+   "nl": "Formal statement of `BookProof.HermiteProductCore.gaussInt_add` from the timepiece Lean 4 formalization.",
+   "source": "https://github.com/leonardopedro/timepiece",
+   "tags": [
+    "timepiece",
+    "formalization"
+   ]
   }
  },
  "sol_order": [
@@ -151555,6 +152911,119 @@
   "PhysMehler_pi02_invariant_of_formalism",
   "PhysMehler_interpPi02_eq",
   "BookProof_NavierStokesFlow_AffineFiber_affH_domain_dense",
-  "BookProof_HyperbolicQuadratic_momPoly_apply'"
+  "BookProof_HyperbolicQuadratic_momPoly_apply'",
+  "BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_symmetricOn",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_nonneg",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_add_one_surjective",
+  "BookProof_NavierStokesFlow_IkebeKato_exists_finiteModes_graph_approx",
+  "BookProof_QuadraticRotation_inner_rotHermiteLp",
+  "BookProof_QuadraticRotation_rotPoly_surjective",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_hasSum_quadForm",
+  "BookProof_NavierStokesFlow_DiagonalEsa_norm_basis",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_ge_norm_sq",
+  "BookProof_QgOuterFockFL_dsFibOp_fib",
+  "BookProof_QuantumGravityDensitized_densY_sq",
+  "BookProof_QuadraticRotation_quadPolyMat_apply",
+  "BookProof_QuadraticRotation_inner_pgLp_rotPoly",
+  "BookProof_QuadraticRotation_quadPolyMat_rotPoly",
+  "BookProof_QuadraticRotation_exists_rotConj_eigenvalues",
+  "BookProof_QuadraticRotation_rotConj_eq",
+  "BookProof_QuantumGravityDensitized_strichartz_esa_of_finiteSpeed",
+  "BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero",
+  "BookProof_GroupAverage_UnitaryRep_avgProj_mem",
+  "BookProof_GroupAverage_UnitaryRep_commutes_avgProj",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res",
+  "BookProof_NavierStokesFlow_IkebeKato_diagMax_coe",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le",
+  "BookProof_FockSecondQuantization_up_of_ne",
+  "BookProof_FockSecondQuantization_up_self",
+  "BookProof_YangMillsHermite_mulOp_apply",
+  "BookProof_FockSecondQuantization_annA_single",
+  "BookProof_FockSecondQuantization_creA_single",
+  "BookProof_FockSecondQuantization_dn_up",
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective",
+  "BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe",
+  "BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_mem",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res",
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_zero",
+  "BookProof_QuantumGravity3DGauge_signedOp_apply",
+  "BookProof_QuantumGravity3DGauge_signedOp_symmetricOn",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime",
+  "BookProof_FockSecondQuantization_dn_of_ne",
+  "BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer",
+  "BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range",
+  "BookProof_GroupAverage_UnitaryRep_avgProj_apply",
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint",
+  "polySym_foPoly",
+  "BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le",
+  "BookProof_YangMillsHermite_starP_mul",
+  "BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj",
+  "BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse",
+  "BookProof_QuadraticRotation_quadOpMat_symmetric",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm",
+  "BookProof_ChapterUnboundedPosition_tendsto_slope_phaseUnitary",
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_symmetricOn",
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_esa",
+  "BookProof_NavierStokesFlow_NSHashimoto_velCore_dense",
+  "BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp",
+  "BookProof_QuantumGravity3DGauge_signedOp_quadForm_nonneg",
+  "BookProof_QuantumGravity3DGauge_signedOp_quadForm",
+  "BookProof_QuantumGravity3DGauge_ccr_poly",
+  "BookProof_QuantumGravity3DGauge_smul_symmetricOn",
+  "BookProof_QuantumGravity3DGauge_qgWeylProd_coord_mom_polySym",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genDomain_eq_domain",
+  "BookProof_NavierStokesFlow_IkebeKato_sum_single_mem_finiteModes",
+  "BookProof_Complexification_Cx_sub_re",
+  "BookProof_Complexification_Cx_sub_im",
+  "BookProof_FriedrichsExtension_FormDom_formExt_coe",
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos",
+  "BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_apply",
+  "BookProof_FriedrichsExtension_FormDom_inner_coe_eq",
+  "BookProof_HermiteRelative_apply_sum_of_diagonal",
+  "BookProof_NavierStokesFlow_nsFlow_comm_hamiltonian",
+  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobi_wronskian",
+  "BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric",
+  "BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step",
+  "BookProof_NsScalarVectorCurry_IsSliceOf_add",
+  "BookProof_QgCouplingDGammaSum_creVec_zero",
+  "BookProof_QuantumGravity3DGauge_idxDE_injective",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_domain",
+  "BookProof_QuadraticRotation_rotPoly_momPoly",
+  "BookProof_QuadraticRotation_rotPoly_mulXPoly",
+  "BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint",
+  "BookProof_QuantumGravity3DGauge_derOp_comm",
+  "BookProof_ScalaronFiberFL_hamS_apply",
+  "BookProof_ScalaronFiberFL_ham_eq_toLp",
+  "BookProof_ScalaronFiberFL_norm_sq_le_quadForm",
+  "BookProof_ScalaronFiberFL_norm_derivL2_sq_le",
+  "BookProof_ScalaronFiberFL_ham_x_comm",
+  "BookProof_HyperbolicQuadratic_momPoly_apply",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_commute_resCLM",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero_param",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU_apply",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_zero",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_sub_approxU_le",
+  "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto",
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_map_map",
+  "BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply",
+  "BookProof_ChapterUnboundedPosition_position_unbounded",
+  "BookProof_QuantumGravityDensitized_mulHamiltonian_mulBasis",
+  "BookProof_ChapterUnitaryTransport_transportUnitary_apply",
+  "BookProof_ChapterUnboundedPosition_adjointDomain_eq_mulDomain",
+  "BookProof_YangMillsHermite_starP_X",
+  "BookProof_NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core",
+  "BookProof_HermiteProductCore_gaussInt_add"
  ]
 }

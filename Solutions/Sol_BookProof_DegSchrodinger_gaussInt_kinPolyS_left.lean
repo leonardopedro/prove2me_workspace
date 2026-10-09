@@ -1,12 +1,12 @@
 -- Generated from ChapterDegSchrodingerCore.lean — solution of BookProof.DegSchrodinger.gaussInt_kinPolyS_left
 import Mathlib
 import Definitions.Def_ChapterDegSchrodingerCore
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_coreD
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_neg
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD_raw
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_neg
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.DegSchrodinger
 
 

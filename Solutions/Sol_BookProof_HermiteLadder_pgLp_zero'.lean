@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteLadderOrder.lean — solution of BookProof.HermiteLadder.pgLp_zero'
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
-import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteLadder
 
 

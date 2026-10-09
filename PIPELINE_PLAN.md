@@ -1991,6 +1991,618 @@ compiler-verified:
 +4 in-flight → **sol 2302 → 2532 (+230), 0 failed** (def 520, thm 3767).
 Commits: `0d1a5b6e`, `10890a86` — both pushed.
 
+### 2.21-I. Session 2026-10-08 (night, cont.) — the 331-target audit: 43 real
+### targets, and the missing-sibling taxonomy that explains all 34 of them
+
+**A. From submissions to targets.** `GET /submissions?page=N&limit=100`
+(`offset` is ignored; `page` works) paginated all **3166** submissions into
+`/tmp/all_submissions.json`: ACCEPTED 1426, SKETCH_ACCEPTED 58, CE 1392,
+FAILED 263, WA 4, ERROR 23.  Joining against the platform's theorem status
+gave **331 theorems where none of our submissions was ever accepted**
+(`/tmp/fix_targets.json` → `/tmp/targets_detailed.json`, which also stores
+each target's LAST platform error verbatim):
+
+- **288 are already `Proved` by other users** — our sol would not count even
+  if it compiled; not targets, skip them.
+- **43 real targets**: 41 `Open` + 2 `Disproved`
+  (`FriedrichsExtension.friedrichs_extension_exists`,
+  `FriedrichsExtension.weyl_friedrichs_extension_unconditional`; a third
+  Disproved, `friedrichs_extension_of_semibounded_below`, attempts=4/5 —
+  excluded from every chunk).  42 have local sol keys, 1 has none
+  (`NavierStokesFlow_FockCanonical_fock_canonical_essentiallySelfAdjointOn_core`).
+
+**B. Error split of the 43.** **34 = `unknown import: Theorems.Thm_X`**
+(never-staged or pending sibling statement module), **9 = proof-level CE**
+(unknown identifier / ambiguous / unsolved goals / type mismatch) — the 9
+join the §2.21-H proof backlog; the 34 are an import-graph problem.
+
+**C. The 47 distinct missing modules, classified by what the PLATFORM holds.**
+For each missing `Thm_X`, look up the declaration's fully-qualified name
+(header of the mirror statement file) in a namespace-stack index built over
+the statement+theorem decls of all **516 published** def bundles (state
+`def:* == done`, mirror text = platform text).  Three classes:
+
+1. **BUNDLE-provided (14 modules)** — a published def bundle already declares
+   the same name, so the sol just needs `import Definitions.Def_<bundle>`
+   instead of the impossible `import Theorems.Thm_X`:
+   `HermiteProductCore_{gaussInt_add,gaussInt_smul,gaussInt_sum,norm_sq_eq_sum,
+   span_hermiteMv}` → `Def_ChapterHermiteProductCore`;
+   `NavierStokesFlow_IkebeKato_finiteModes_le_maxDom` → `Def_ChapterNavierStokesIkebeKato`
+   (6 sols import it!); `NavierStokesFlow_DifferentialL2_velUnitary_mem_core` →
+   `Def_ChapterNavierStokesDifferentialL2`;
+   `FriedrichsExtension_FormDom_friedrichsResolvent_{isSelfAdjoint,pos,injective}`
+   AND `HashimotoShiftInvert_{invShiftOperator_apply,preim_eq}` → both live in
+   `Def_ChapterQgOuterFockFarisLavine` (not in the eponymous bundles — the
+   mirror header's "Generated from" chapter is NOT the bundle that declares
+   them); `YangMillsFriedrichs_weylOpDom_{quadForm_nonneg,symmetricOn}` →
+   `Def_ChapterYangMillsFriedrichs`.
+2. **pending + in wave (~15)** — upload as `--kind thm` (§2.21-J).
+3. **NONE / never staged (~20)** — no state key at all; must be staged via
+   `POST /submit-problem` before any importing sol can ever compile:
+   `IkebeKato_{diagMax_symmetricOn,diagMax_quadForm_nonneg,diagMax_hasSum_quadForm,
+   diagMax_add_one_surjective,exists_finiteModes_graph_approx}`,
+   `CanonicalVector_canH_eq_velH`, `QuadraticRotation_{rotPoly_surjective,
+   inner_rotHermiteLp}`, `QuantumGravity3DGauge_{signedOp_apply,signedOp_eq_weylOp,
+   signedOp_quadForm_nonneg,signedOp_symmetricOn,smul_symmetricOn}`,
+   `ChapterStoneResolvent_UnboundedSelfAdjoint_{ext',genOp_eq_op,
+   genDomain_eq_domain}`, `BddBelowFiberSumEsa_contDiff_qgFiberV`.
+   Blast radius from
+   `/tmp/missing_mods.json`: **196 sol files** import the 29 headline missing
+   modules (68 import `finiteModes_le_maxDom` alone).
+
+**D. The mirror-vs-local content gap (new, important).**  Several published
+def bundles are SHORTER than the local file: `Def_ChapterQgOuterFockCoreFL`
+mirror 8068 B vs local 39222 B (platform has `def gcSeq` but NOT the later
+`gcSeq_mem/ext_gcSeq/coreN_gcSeq` lemmas), `Def_ChapterKatoRellichDeficiency`
+mirror = 200 B header only (no `namespace BookProof.KatoRellich` at all),
+`Def_ChapterQuadratureEsa` not on the platform at all (state pending).
+Consequence: a staged STATEMENT that mentions a post-publication lemma
+(`d.gcSeq_mem x k`) cannot elaborate platform-side until either the bundle is
+re-published or the lemma is staged as its own thm — this is why
+`QgOuterFockCoreFL_CoreData_{ext,coreN}_gcSeq` stay FAIL no matter what the
+sol does.  A statement-level `open` of a namespace the platform bundle never
+declared fails the same way (`KatoRellich`: `open BookProof.KatoRellich`).
+
+### 2.21-J. Session 2026-10-08 (night, cont.) — fixes applied and chunks t37/t38
+
+**A. Non-ASCII transliteration (§2.21 recap).** 7 sols rewritten to ASCII
+identifier spellings, 5 ASCII thm stubs created; platform verified Proved:
+`paulisigma_trace`, `paulisigma_herm`, `fermiNumber1_eq`, `fermiNumber2_eq`,
+`conjugateli_symm`, `memLp_fibrewise`; maps in `state/nonascii_thm_map.json`
+(29) + `state/ascii_to_orig_thm_map.json` (28); guard patches in
+`upload_pipeline.py` (`_ascii_to_orig_map`, `_thm_slugs_for` fallback) and
+`recompute_ready.py` (`thm_spellings`) — both ast-checked, in effect for this
+session's recompute.
+
+**B. Bundle-import rewrites — 11 sols edited** (drop impossible
+`Theorems.Thm_X`, add `Definitions.Def_<bundle>`, dedup import list,
+`.bak2` backups): `FriedrichsExtension_friedrichs_extension_exists` (−5),
+`SqSumFarisLavine_commForm_sqSumOp_le` (−4), `FockManyMode_fockH_…_core`,
+`IkebeKato_…_finiteModes_of_farisLavine_bounds`, `CanonicalVector_canH_…`,
+`QuadraticRotation_span_rotHermiteLp`, `OperatorSeries_…_of_{series,bounds}`,
+`FockQuadratic_fockH_…_core`, `DifferentialL2_nsDiffH_…_core`,
+`FriedrichsExtension_weyl_friedrichs_extension_unconditional` (−2).  After
+rewrites **14/43 targets have zero remaining import blockers** (some still
+carry a proof CE).
+
+**C. `statement_needs_ambient_variable` gate — 3 false positives fixed**
+(upload_pipeline.py).  Measured on the t37 skip ("ambient `F` ×1, `d` ×2"):
+(i) `cut = txt.index("theorem")` landed in the line-1 `-- Generated from …
+theorem …` comment, so `pre`/`declared` were always empty → anchor on
+`(?m)^theorem\b`; (ii) `stmt.split(":=", 1)[0]` truncated at a named argument
+`(d := n * 84)`, cutting the binder-check colon → strip `ident :=` before
+splitting; (iii) paired binders `{F G : Idx ι → ℂ}` never touch `:` after `F`
+→ added the group pattern `[( {][\w'\s,]*?\bv\s+[\w'\s,]*:`.  All three
+skipped thms now return `None` from the gate AND `None` from
+`target_declared_in_published_def`.
+
+**D. Chunks.** t37 (`--kind thm`, 5 only): 2 DONE
+(`ChapterH5_krylovSpan_mono`, `QgOuterFockFL_Comparison_essentiallySelfAdjointOn`),
+3 gated (the false positives above), 151 s.  t38 (same 5 + gate-fixed):
+**7/7 DONE in 178 s** — `FockQuadratic_tsum_hop_reindex`,
+`QgOuterFock_qgSectorHam_symmetricOn`, `QgOuterFock_qgSectorHam_essentiallySelfAdjointOn`,
+`YangMillsAbelianEsa_ymAbelian_essentiallySelfAdjointOn_core`,
+`StrichartzWave_memLp_top_of_continuous_of_hasCompactSupport`,
+`StrichartzWave_wave_add_boundedPotentialOp_essentiallySelfAdjoint`,
+`NavierStokesFlow_LagrangianEsa_hasZeroDeficiencyOn_map_of_linearIsometryEquiv`
+→ **thm 3767 → 3776, 0 failed**.
+
+**E. Thm stub repairs (4).** `qg3DElliptic_symmetricOn` + `qgMom_symmetricOn`:
+statement `(Φ : CoreRep 84 D)` used ambient `D` with no binder → added
+`variable {D : Submodule ℂ (L2d 84)}` (the chapter's `section Gravity`
+binder; `L2d` resolves via the already-open `BookProof.HermiteProductCore`).
+`KatoRellich_essentiallySelfAdjointOn_add_bounded`: dropped
+`open BookProof.KatoRellich` (namespace is empty in the local bundle and
+absent on the platform).  `FullQuadratic_fqOp_essentiallySelfAdjoint`: dropped
+`import Definitions.Def_ChapterQuadratureEsa` (never published; the statement
+only needs `fqOp`/`polyGaussCore`/`EssentiallySelfAdjointOn` from bundles that
+ARE published).
+
+**F. Offline-oracle tooling gotchas (cost this session two wasted runs).**
+`check_pending_offline.py --only` matches the bare slug
+(`BookProof_X`, NOT `Sol_BookProof_X`/`Thm_…` prefix — substring `in name`),
+and `--kind=a,b` is parsed as the single kind `"a,b"` (only the space form
+`--kind a,b` comma-splits).  `pkill -f check_pending_offline` from a shell
+whose own command line contains the pattern kills its own launcher.
+
+### 2.21-K. Session 2026-10-08 (night, cont.) — open classes and next actions
+
+| # | class | n | next action |
+| -: | :--- | -: | :--- |
+| 1 | unknown-import targets with all blockers in class BUNDLE/pending | 14 | rewritten sols → re-verdict (`--kind sol --only …`) → t39 sol chunk |
+| 2 | pending sibling thms (in wave, fresh-ok) | 7 | uploaded t38 (DONE) — sols `hopOp_pairing`, `qgOuterHam_symmetricOn`, `qgOuterFock_esa`, `qgSigned_esa`, `qg3DElliptic_friedrichs_extension`, `ext_symmetricOn`… become ready after recompute |
+| 3 | thm stubs repaired this session | 4 | re-verdict → next thm chunk (KatoRellich, fqOp, qg3D, qgMom) |
+| 4 | NONE / never-staged sibling modules | ~20 | stage via `POST /submit-problem` (needs a staging helper run; blocks ~20 sols incl. all `IkebeKato_diagMax_*`, `QuantumGravity3DGauge_signedOp_*`, `ChapterStoneResolvent_UnboundedSelfAdjoint_*`) |
+| 5 | statement needs post-publication lemma (`gcSeq_mem`) | 2 | re-publish `Def_ChapterQgOuterFockCoreFL` (state `done` → flip to pending, def chunk) or stage `gcSeq_mem` as its own thm |
+| 6 | proof-level CE targets | 9 | hand-fix, §2.21-H procedure: `friedrichs_hashimoto_selects` (Tendsto), `wave_add_smoothTruncatedPotential_…` (potentialOp), `ymGhostHam_essentiallySelfAdjointOn_core` (dsOp_…), `commForm_eq_im` (ambiguous sqSumPoly, H residual), `qg3D_stone_flow` (type mismatch), `sqSumPoly_eq_fqPoly` (YangMillsHermite.momOp…), `linForm_qgTorsionVecN` (unsolved goals), `qgFiberSum_nonneg_form` (SemiboundedBelowOn), `fock_canonical_…` (unknown ns FarisLavine) |
+| 7 | Disproved targets | 2 + 1 | never upload sols (`friedrichs_extension_exists`, `weyl_friedrichs_extension_unconditional`; `…semibounded_below` attempts 4/5) |
+| 8 | failed sols at attempts=5 (`pauliCoeff_comb`, `upsilonC_real`) | 2 | `--retry-failed --only …` after their rewrite re-verdicts ok |
+| 9 | regular sol drain | 799 ready | t39 chunk (exclude `friedrichs_extension_of_semibounded_below`) |
+
+**Counts at write time**: def 520/167, thm **3776** done / 5564 pending,
+sol 2702 done / 6637 pending / 2 failed (pre-t39), platform /me
+`num_solved_prob 1342`, user `2971852e-b5c1-45d5-9a04-1cf04a820ed1`.
+
+### 2.21-L. Session 2026-10-09 (early) — failed-sol audit, 26-statement
+### staging wave, ambient-gate fix, chunks t39/t40
+
+**A. Why "many failed sols" exist (user report + audit).** The user reported
+that many theorems carry failed sol submissions and observed that published
+theorems now outnumber solutions roughly 4×, asking for the sols to be fixed
+and re-uploaded. Audit of `state/pipeline.log`: **2905 sol FAIL lines over 967
+distinct slugs**. Class split:
+
+- `verdict FAILED: unknown import: Theorems.Thm_X` — dominant class: the
+  sibling STATEMENT was not yet published when the sol was submitted. This
+  class is now *self-healing*: t27–t38 published most of those siblings, so a
+  re-upload succeeds without touching the proof (§2.21-J/K class B/C).
+- `local compile failed` — historical host damage (missing lake manifest, no
+  toolchain at `/home/leo/.elan/...`), not a proof defect; the current local
+  gate skips under `PROVE2ME_SKIP_LOCAL_COMPILE=1` and the offline oracle is
+  authoritative.
+- `verdict CE` — genuine proof debt (the §2.21-K.6 list + chapter tails).
+- `verdict ERROR` — transient server faults (import-parser timeout, DB reset,
+  300 s module timeout); retry costs nothing once re-armed.
+- `verdict WA` — `friedrichs_extension_of_semibounded_below` only (type
+  mismatch, attempts 4/5; target excluded as Disproved-class).
+
+Live state carries only **2 `failed`** (`pauliCoeff_comb`, `upsilonC_real`,
+attempts 5, both blocked on the non-ASCII `pauliσ_*` statements) because most
+FAILs were re-armed by later `--retry-failed` runs or simply re-pended.
+
+**The 4× observation, measured.** `sol done 2732 = 2094 reused/skipped`
+(theorem already Proved by others — never our proof) `+ 667 genuine accepted
+submissions`; `thm done 3780 = 1842 published by this pipeline + 1938 reused`.
+Published-statement count over genuine accepted sols ≈ 5.7×, over total sol
+done ≈ 1.4× — either way **sols are the lagging layer**, and the failed-sol
+re-upload wave (t40) is the priority the user asked for.
+
+**B. Ready-set computation (the t40 input).** sol ∩ offline-verdict `ok` ∩
+every `Theorems.Thm_` / `Definitions.Def_` import `state==done` (with `_prime`
+↔ `'` and ASCII↔non-ASCII spelling fallbacks, `_thm_slugs_for`) ∩ no `sorry`
+= **1774 slugs** → `/tmp/ready_sols_t40.txt`, excluding the 3 Friedrichs sols
+(`friedrichs_extension_exists`, `weyl_friedrichs_extension_unconditional` are
+Disproved; `…of_semibounded_below` sits at attempts 4/5). `submission_guard`
+independently defers (transient, no attempt burn) anything stale or newly
+blocked, so the file is a pre-filter, not the gate.
+
+**C. Chunks t39/t39b (thms first, slot free).** 4 repaired stubs uploaded,
+all **DONE**: `FullQuadratic_fqOp_essentiallySelfAdjoint`,
+`QuantumGravity3DGauge_qg3DElliptic_symmetricOn`,
+`QuantumGravity3DGauge_qgMom_symmetricOn` (t39),
+`KatoRellich_essentiallySelfAdjointOn_add_bounded` (t39b, after the gate fix
+in D). thm 3776 → **3780 done**. Logs `/tmp/chunk_t39_thm.log`,
+`/tmp/chunk_t39b_thm.log`.
+
+**D. Gate fix — `_ambient_variables` reads every group on a `variable`
+line** (`pipeline/upload_pipeline.py`). The old regex captured only the first
+`{…}`/`(…)` group, so a stub binding its own
+`variable {F : Type*} [inst…] {D : Submodule ℂ F}` reported `F` only and the
+ambient-variable gate deferred it on `D` — measured false positive on
+`thm:BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded` (deferred
+twice while its offline verdict was ok). Fixed by scanning all brace/paren
+groups per line (both sides of the gate — bundle `vs` and stub `declared` —
+benefit symmetrically). Verified: the KatoRellich pair + all 5 previously
+uploaded stubs now return `None`.
+
+**E. fqOp stub final repair.** `open BookProof.CarlemanTwoStep/CarlemanSimplex/
+ModeQuadratic` — namespaces absent from the published mirror (owner bundles
+never published) → offline `unknown namespace` AND `blocked_by` defer. The
+statement only uses `polyGaussCore` (Def_ChapterHermiteProductCore), `fqOp`
+(Def_ChapterFullQuadraticEsa) and Mathlib `EssentiallySelfAdjointOn`, so the
+three opens were dropped → verdict `ok` → uploaded DONE.
+
+**F. The 26 never-staged sibling statements (root cause of the live failed
+sols).** Screened all 26 `ABSENT` thm modules imported by verdict-ok sols
+(`/tmp/absent_thm_blockers.json` + both `paulisigma_*`) through the pipeline's
+own gates (name guard, split-at-`^theorem`, `:= by sorry` ending, sibling
+published+Proved, def imports published, dup-in-bundle, `find_existing`):
+
+- **7 already exist on the platform, Proved** — including BOTH
+  `ChapterA3_paulisigma_trace/herm` (so the 2 failed pauli sols are fixable by
+  a pure reuse-recording + `--retry-failed`), plus `idxX_ne_idxE`, `dn_self`,
+  `starP_sub`, `starP_C`, `transportEquiv_coe`. Record as `thm:<slug>` done
+  (reuse) **after t40 exits** — state edits must not race the running chunk's
+  `save_state`.
+- **19 PASS** (all `IkebeKato_diagMax_*`/`exists_finiteModes_graph_approx`,
+  `CanonicalVector_canH_eq_velH`, 7 `QuadraticRotation_*`,
+  `QgOuterFockFL_dsFibOp_fib`, `QuantumGravityDensitized_*`,
+  `DiagonalEsa_norm_basis`) → merged into `pipeline/wave_upload.json`
+  (`thms` + `sol_order`, backup `.bak_stage26`), which puts them in `ORDER` so
+  the normal guard/verdict/submit flow stages them.
+
+**G. Slot discipline.** t40 (1774-sol chunk, `--parallel 14 --max-seconds
+1500`, log `/tmp/chunk_t40_sol.log`) runs alone; the offline checker, the
+staging thm chunk and the follow-up sol chunk all wait for it — never two
+upload/checker processes at once.
+
+**H. Next actions (in order).**
+1. Let t40 drain; `--sync`; record counts.
+2. State edits: record the 7 EXISTS as `thm` done (reuse) + seed the 19 new
+   `thm:` entries pending (they are in `ORDER` post-merge).
+3. Offline verdict the 19 (`--kind thm --only <each>`), then a `--kind thm`
+   chunk for the ok ones.
+4. Re-arm + upload the 2 pauli sols (`--retry-failed --only ChapterA3_pauliCoeff_comb
+   --only ChapterA3_upsilonC_real`) together with the ~30 sols unblocked by
+   steps 2–3 (IkebeKato/QuadraticRotation/CanonicalVector chains).
+5. Re-run `debug/recompute_ready.py` and cut t41 from the refreshed ready set.
+6. Remaining `ABSENT` siblings with no ok-sol consumer stay for the next
+   staging pass; proof-level CE targets stay per §2.21-K.6.
+
+### 2.21-M. Session 2026-10-09 (morning) — fresh 331-target audit,
+### batch-2 staging + t42, failed-sol fix round, def-blocker math
+
+Chunk results since §2.21-L: **t40 sol 127 DONE / 0 FAIL** (sol 2702→2829),
+**t41 sol 136 DONE / 0 FAIL + 14 re-polled** (sol → 2965; both pauli sols
+DONE, `--retry-failed` verified), staged-19 thm chunk 19/19, t39/t39b +4 thm.
+
+**A. Fresh server-side audit of the 331 previously-failing targets**
+(`/tmp/fresh_audit_failed.py` → `/tmp/failed_audit_fresh.json`; newest
+submission per tid + theorem status):
+
+- latest × thm_status: **CE/Proved 241, FAILED/Proved 45, ERROR/Proved 2,
+  FAILED/Open 15, CE/Open 8**, SKETCH_ACCEPTED/Open 15, ACCEPTED/Proved 3,
+  FAILED/Disproved 2. Failing-submission dates span 09-07..10-07.
+- `has_accepted = False` for every one of the 313 failures; a 40-target
+  sample of the Proved ones shows the accepted submission belongs to
+  **another user** (carlok, miao, Nickrobbins95, hitme development). The
+  pipeline's `--sync` had marked these sols `done: "theorem already Proved
+  on platform", synced_from: theorems` — state-done without a single
+  accepted submission of ours. That is exactly the user-visible "failed sol
+  submissions": **313 targets, of which 23 are genuinely Open** (real
+  losses) and 290 are proved-by-others (record-cleanup re-uploads).
+
+**B. The 23 Open failures — diagnosis and fixes.**
+
+- **6 unblocked by publication** (KatoRellich `add_bounded` ×2, `fqOp_esa`,
+  `qg3DElliptic_symmetricOn`, `torsionOps_symmetricOn`, `qgMom_symmetricOn`
+  now PUBLISHED) → re-upload after verdict.
+- **7 blocked on unstaged statements** → staged in batch-2 (`signedOp_*` ×5,
+  `gaussInt_add`, `ext_gcSeq`); all files existed, wave entry added for
+  `gaussInt_add`.
+- `gen_stoneGroup_eq` blocked on `ChapterStoneMeasurable…ext_prime`, which
+  is **parked stale**: the park verdict says "apostrophe theorem_name" but
+  both the file decl and the wave entry are already `_prime`-transliterated.
+  Unpark = reset status pending (same for the second parked thm
+  `FarisLavineLift…sum_le_prime`; its wave `name` STILL carries the
+  apostrophe and must be `_prime` first).
+- **CE fixes applied this session** (`.bak_fix1/2` backups):
+  - `qg3D_stone_flow` — root cause: the PUBLISHED statement of
+    `QuantumGravity3DGauge.qg3D_symmetricOn` transcribes `qg3D_quadForm`'s
+    body (source:498 says `SymmetricOn D (qg3DHamiltonian Φ)`; the platform
+    record has the pointwise quadForm identity), so it can never inhabit
+    `hsym : SymmetricOn D Hc`. Sol rewritten to the source's own route:
+    `signedOp_symmetricOn (qgMom_symmetricOn _) (torsionOps_symmetricOn _)`.
+  - `qg3DElliptic_eq_weylOp` — missing `import …signedOp_quadForm_nonneg`.
+  - `commForm_sqSumOp_le` — bare `GaussCoreQuadBounds.gaussInt_self` →
+    `BookProof.GaussCoreQuadBounds.gaussInt_self` (no `open BookProof` in
+    the file; bare name would be ambiguous with HermiteQuadraticEsa).
+  - `idxDE_injective` — staged statement had `idxX_ne_idxE`'s body and the
+    sol file was corrupted mid-splice; both rewritten from source
+    (`Function.Injective (fun q => idxDE …)`). API probe showed the
+    platform record ALREADY holds the correct statement and is Proved.
+  - already fixed pre-session, awaiting verdict: `friedrichs_hashimoto_selects`
+    (`open Filter Topology`), `fock_canonical_essentiallySelfAdjointOn_core`
+    (opens; its `sol:` state entry was MISSING → seeded).
+- **Still-broken (need fresh goal text)**: `commForm_eq_im` (unsolved L45),
+  `sqSumPoly_eq_fqPoly` (L86), `linForm_qgTorsionVecN` (L41).
+
+**C. Batch-2 verdict + statement fidelity.** Seeded 94 thm state entries
+(93 from `/tmp/stage157_added.json` incl. the 5 signedOp + gaussInt; backup
+`.bak_batch2seed_*`). Wrote `/tmp/stmt_fidelity.py`: namespace-aware diff of
+staged statement vs source — 76 verifiable, **exactly 1 body mismatch**
+(`idxDE_injective`, fixed); 23 not found by chapter-file lookup
+(spot-checked OK). Offline verdict (`--kind thm --jobs 2`, log
+`/tmp/verdict_batch2.log`): **50 ok / 49 FAIL**. FAIL classes:
+
+- **~31 `has already been declared`** — a published def bundle already
+  declares the name WITH A PROOF (e.g. `Def_ChapterStoneUnitary` contains
+  `theorem stoneU_zero`), while the platform has NO theorem record for it
+  (`GET /theorems?q=` probes: stoneU_zero/gaussInt_add/inner_eq_sum_range →
+  0 hits). The statement cannot be submitted (server would hit the duplicate
+  in env) and its sol has no target record. Next: ONE API-probe submission
+  to learn the answer before parking the class (§2.8c rule).
+- **9 missing `variable`/wrong-open — FIXED**: `signedOp_apply`,
+  `smul_symmetricOn`, `qgWeylProd_coord_mom_polySym`, `ccr_poly` (source
+  section variables dropped by the generator), `nsH_coe` (bare
+  `open … FarisLavine` → `open BookProof.FarisLavine`), `IsSliceOf_add`
+  (`open MeasureTheory` after the variable block that needs `Measure`),
+  `densitized_hasZeroDeficiencyOn_transfer` (needs
+  `open BookProof.NavierStokesFlow` — verified against the published
+  `hasZeroDeficiencyOn_of_linearIsometryEquiv` statement),
+  `fock_canonical…core` (+`import Def_ChapterFarisLavineCore` + open),
+  `polySym_foPoly` (statement was `theorem polySym_foPoly := by sorry` with
+  a mangled binder; wave entry had bare name + chapter `BookProof` — both
+  rewritten to `BookProof.HermiteRelative.polySym_foPoly`).
+- **2 `invalid field`** (`genOp_eq_op` `domain_le_genDomain`, `ext_gcSeq`
+  `gcSeq_mem`) — the PUBLISHED def bundle is older than source and lacks the
+  field → blocked on a def update, parked.
+- **1 `overloaded, errors`** (`commutes_avgProj`) — needs qualification.
+
+**D. t42 thm chunk** (`--kind thm --only-file /tmp/batch2_thm_ok.txt
+--parallel 8 --job-timeout 300`, log `/tmp/chunk_t42_thm.log`): **32
+resolved / 0 failed / 2 unsubmittable (source missing)**, thm **3806 →
+3831**; 14 items deferred as "target already published on the platform"
+(incl. `idxDE_injective`). Newly ACCEPTED statements include
+`signedOp_eq_weylOp`, `signedOp_quadForm_nonneg`, `signedOp_symmetricOn`,
+`ChapterStoneResolvent…ext_prime`, `signedOp_apply`, `avgProj_mem`.
+
+**E. State surgery after t42** (backup `.bak_surgery1_*`): seeded the
+missing `sol:…FockCanonical_fock_canonical…core`; **re-armed the 20
+synced-done group-B sols** (latest submission FAILED, import since
+published) → pending with a note.
+
+**F. Sol verdict batch** — `/tmp/solverd_batch.txt` (131 unique: 23 Open +
+20 group-B + the 111 rewritten `.bak3` sols minus verified-ok) running as
+`--kind sol --jobs 2` (log `/tmp/verdict_sol131.log`). Gotcha re-confirmed:
+`--jobs 4` was **OOM-killed silently** on this 15 GB host (first batch-2 run
+ died in 2 min, no traceback); `--jobs 2` is stable. Stale-verdict snapshot
+(`/tmp/stale_sols_prebatch2.txt`, 92 files newer than the 01:18 verdict)
+exists because the checker rewrites the verdict file wholesale at exit —
+any file edited before the rewrite would otherwise look freshly verified.
+
+**G. Why the ratio is ~4× (the user's observation) — the math.**
+
+- state: **def 520 done / 167 pending · thm 3831 done / 5621 pending ·
+  sol 2945 done / 6398 pending** (sol done dipped by the 20 re-arms).
+- Of 6398 pending sols only **815 have their thm sibling published**, and
+  verdict-ok ∧ thm-done ∧ fresh = **644** (`/tmp/ready_sols_t42.txt`, the
+  t43 input).
+- **2583 pending sols import ≥1 of the 167 unpublished def bundles** — the
+  offline verdict cannot even pass without those oleans (their verdicts are
+  all FAIL `object file … does not exist`). Top blockers: `QuantumGravityFock`
+  (61 sols), `QgOneParticleCcEsa` (58), `FermionFock` (53), `GradedFock`
+  (50), `ResolventMinMaxLadder` (48), `HermiteLadderOrder` (47),
+  `NsOneBodyDGamma` (45) …
+- Consequence: **def chunks are the unlock** (submit-definition, so they do
+  NOT count toward "published theorems" and cannot worsen the ratio), while
+  fresh thm submissions should stay limited to statements that gate sols.
+
+**H. Next actions (in order).**
+1. Finish the 133-matched sol verdict; upload = (verdict ok ∧ thm-sibling
+   done ∧ fresh ∧ not in fail-331) ∪ the 644 ready → **t43 sol chunk**
+   (`--parallel 14 --job-timeout 300 --max-seconds 1800`).
+2. One API-probe submit for the ~31 `already declared` class
+   (`thm:…stoneU_zero`) → reuse-record vs park decision.
+3. Unpark the 2 apostrophe thms (wave `name` fix for `sum_le_prime` first)
+   → `gen_stoneGroup_eq` unblocks.
+4. **Def chunks** ranked by blocked-sol count (Fock/QgOneParticle/Graded…)
+   → verdict newly-unblocked sols in waves → keep a sol chunk always
+   draining (the user's standing request: fix failed sols while uploads
+   run, then upload the fixes).
+5. Proof-level CE repairs from fresh goal text: `commForm_eq_im`,
+   `sqSumPoly_eq_fqPoly`, `linForm_qgTorsionVecN`.
+6. The 2 `invalid field` statements wait on updated def bundles.
+
+**I. t43b results + failed-sol triage with fresh goal text (morning cont.).**
+
+- **t43b sol chunk DONE** (`--only-file /tmp/ready_sols_t43.txt --parallel 14
+  --job-timeout 300 --max-seconds 5400 --retry-failed`, log
+  `/tmp/chunk_t43b_sol.log`): **460 resolved in 5401s** (hit max-seconds),
+  **sol 2945 → 3480 done / 5971 pending**; **1 FAIL** —
+  `FourierMultiplierEsa_firstOrderOp_symmetric` (verdict ERROR: *server-side
+  module compile timed out after 300s*, not a proof error → re-arm later
+  with a longer `--job-timeout`), **2 unsubmittable** (source missing from
+  this checkout), **12 in flight** (re-polled next run). First t43 run's
+  `friedrichs_extension_of_semibounded_below` remains a DEAD END (target
+  Disproved, attempts=5 — never retry).
+- **The 23 Open losses** (`/tmp/failed_audit_fresh.json`) split into:
+  - **13 `unknown import: Theorems.Thm_*` sols.** t42 closed 3 of them
+    (`signedOp_quadForm_nonneg`, `signedOp_eq_weylOp`, `signedOp_symmetricOn`
+    DONE 07:00 → sols `qg3DElliptic_quadForm_nonneg`, `qg3DElliptic_eq_weylOp`,
+    `qg3D_symmetricOn` re-verdict + re-upload); §B-claims cover 6 more
+    (KatoRellich `add_bounded` ×2, `fqOp_esa`, `qg3DElliptic_symmetricOn`,
+    `torsionOps_symmetricOn`, `qgMom_symmetricOn` → `ymGhostHam_*` ×2,
+    `qgSigned_*` ×2, `qg3DElliptic_friedrichs/hashimoto`, `qgMomScaled`).
+    **Still missing: `signedOp_apply`** (blocks `qgSigned_eq_fqOp` +
+    `qg3D_apply`), **`gaussInt_add`** (`commForm_sqSumOp_le`), **`ext_gcSeq`**
+    (invalid-field parked ×2), **`…ChapterStoneMeasurable…ext_prime`**
+    (parked stale → unpark; unblocks `gen_stoneGroup_eq`). None of these 4
+    appear in `/tmp/batch2_thm_ok.txt` or the t42 log.
+  - **8 CE**: 3 in elab repair now, 3 already fixed awaiting verdict
+    (`friedrichs_hashimoto_selects` +`open Filter Topology`,
+    `fock_canonical…core` +opens/import, `commForm_eq_im` .bak_fix4),
+    2 diagnosed below.
+- **Elab root causes (all reproduced locally with `/tmp/elab_one.sh`)**:
+  - **`build_stubs.py` path bug FIXED**: `STATEMENT_IMPORT` strips the
+    `Theorems.` prefix so `final = join(DEP_CACHE, *mod.split("."))` omitted
+    the subdir — the 8 stub oleans landed in DEP_CACHE root and
+    `elab_one.sh` still reported them missing. Moved them into
+    `/tmp/thm_dep_olean/Theorems/` and patched to
+    `join(DEP_CACHE, "Theorems", *mod.split("."))`.
+  - **`linForm_qgTorsionVecN`** — 2 unsolved goals (L41, L50). The PUBLISHED
+    `Def_ChapterQgOuterFockEsa` (8 KB mirror, single copy) has only the defs:
+    `partOf_pcoord`/`modeOf_pcoord` are Thm statements compiled WITHOUT
+    `@[simp]`, so `simp [qgTorsionVecN]` cannot reduce
+    `if partOf (pcoord p i) = p`. Fix: add explicit `partOf_pcoord,
+    modeOf_pcoord` to the simp sets at L42 and L51 (keep `hq` in L51: after
+    `partOf_pcoord` the condition becomes `q = p`, which `hq : q ≠ p)` closes).
+  - **`sqSumPoly_eq_fqPoly`** — L87 `simp [sqSumPoly]` leaves
+    `∑ x, mulOp (linForm (v x)) (mulOp (linForm (v x)) p)
+    = ∑ r, linForm (v r) * (linForm (v r) * p)`. The published
+    `Def_ChapterYangMillsHermite` mirror DIFFERS from the workspace copy —
+    it lacks `@[simp] theorem mulOp_apply (f p) : mulOp f p = f * p := rfl`
+    (workspace:138). Fix: local `have hmulOp : ∀ (f q : MvPolynomial (Fin D) ℂ),
+    mulOp f q = f * q := fun _ _ => rfl` + `simp [sqSumPoly, hmulOp]`, or the
+    termwise `Finset.sum_congr rfl fun _ _ => rfl` afterwards.
+  - **`qg3D_stone_flow`** — proof fix (.bak_fix1) unelaborated only because
+    `Thm_BookProof_Qg3DGaugeEsa_qg3D_essentiallySelfAdjointOn_core` had no
+    stub olean → run the (patched) `build_stubs.py` then re-elab.
+  - Workspace `Def_ChapterQgOuterFockEsa.lean` contains 3 concatenated
+    namespace copies (1015 lines vs source 418) — a bundling artifact;
+    harmless (the mirror olean is what counts) but it explains duplicate
+    grep hits.
+- **Counts after t43b**: def 520 done / 167 pending · thm 3831 done / 5621
+  pending · **sol 3480 done / 5971 pending**.
+- **Updated next actions**: (a) apply the 3 CE fixes + build the stone_flow
+  stub → re-elab all → offline verdict (slot-free only) → re-upload the
+  fixed sols (the user's standing request); (b) t44 = def chunk
+  (`/tmp/defs_t44.txt`, 23 gate-OK bundles → unblocks 255 sols) + the
+  missing thm statements (`signedOp_apply`, `gaussInt_add`, 22 verdict-ok)
+  — def chunks never worsen the thm:sol ratio; (c) unpark the 2 apostrophe
+  thms (wave name fix first); (d) one API-probe for the ~31
+  `already declared` class.
+
+**J. t44/t45/t46 — def WAITs, cross-splice corruption, fixed-sol uploads.**
+
+- **t44 def chunk** (`--kind def --only-file /tmp/defs_t44.txt --parallel 8
+  --job-timeout 900`): **+1 def** (`ChapterTruncationGapLift` → def 521
+  done / 166 pending), 0 failed. The other 22 gate-OK bundles came back
+  **WAIT (theorem dependency not proved yet)** — 9 unique names, e.g.
+  `Complexification.Cx.ofReal_add`, `ClosureUniqueness.mem_adjGraph_iff`,
+  `TensorCore.sectorOp_apply`, `LinftyMultiplication.multOp_coeFn`,
+  `MackeyQuasiInvariant.proj_coeFn`, `AffineFiber.hFun_add/hFun_smul`,
+  `HilbertSumIntertwine.linearIsometryEquiv_intertw`. **Def publish needs
+  those theorems PROVED → their sols uploaded.** Mapping found 6 pending,
+  verdict-ok sols → these are the highest-leverage sols in the pipeline.
+- **API check revealed the missing link**: all 6 dependency theorems have
+  **NO platform record** (`GET /theorems?q=` → total 0) — so t45's sol
+  uploads correctly came back `WAIT (theorem not published yet)`. The
+  unlock chain is: **thm statements (t46) → sols (t47) → defs publish →
+  255 sols unblock**.
+- **t45 sol chunk** (147 items: 6 def-unlockers + 4 fixed + ready-137,
+  `--parallel 14 --max-seconds 5400`): **50 DONE / 1 FAIL / 95
+  WAIT-skipped**, sol **3480 → 3530** (800 s). DONE includes the three
+  headline failed-sol repairs: **`linForm_qgTorsionVecN`,
+  `sqSumPoly_eq_fqPoly`, `commForm_eq_im`**. FAIL:
+  `BookProof_FriedrichsExtension_weyl_friedrichs_extension_unconditional`
+  (verdict WA — proof/target mismatch, diagnose later).
+- **Cross-splice corruption found in 5 QuantumGravity3DGauge sols** — and
+  the PLATFORM formal_statements are rotated the same way (statement of
+  theorem X sits on theorem Y's record): `qg3D_symmetricOn` carries
+  `qg3D_quadForm`'s statement, `qg3DElliptic_quadForm_nonneg` carries
+  `qg3DElliptic_eq_weylOp`'s, `qg3DElliptic_eq_weylOp` carries
+  `qgMomScaled_symmetricOn`'s, `qgMomScaled_symmetricOn` carries the
+  Friedrichs `∃` statement. **Fix strategy: prove the statement the
+  platform actually holds**, using whichever source theorem equals it
+  (all are true theorems of the same chapter). Rewrote all4 sols + fixed
+  `qg3DElliptic_friedrichs_extension` by replacing the rotated child
+  `qg3DElliptic_quadForm_nonneg` (its record is the weylOp identity, can
+  never supply `hpos`) with the inline
+  `fun x => signedOp_quadForm_nonneg qgKappaElliptic_nonneg (qgMom_symmetricOn _)
+  (torsionOps_symmetricOn _) x`. **All5 elaborate clean** (`.bak_fix6`).
+  `qg3DElliptic_eq_weylOp`'s sol now needs `smul_symmetricOn` published
+  (in the t46 list).
+- **fock_canonical statement**: unknown identifier `Occ` — `Occ` lives in
+  `BookProof.NavierStokesFlow.FockManyMode` (mirror Def line 55), the
+  statement only opened `FockCanonical` → added
+  `open BookProof.NavierStokesFlow.FockManyMode` (`.bak_fix6`), verdict ok.
+  Its sibling `FockManyMode_fockH_essentiallySelfAdjointOn_core` IS
+  published (API `theorem_id e3b3cb4f…` confirmed; the Oct-6 mirror simply
+  lacks it — **mirror refresh due**).
+- **Scoped re-verdict** (`--kind thm,sol --jobs 2`, log
+  `/tmp/verdict_t46prep.log`): **sol 12/12 ok** (5 repaired + fock sol +
+  6 def-unlockers), **thm 12/15 ok** → FAIL3 = `IsSliceOf_add` +
+  `gaussInt_add` (`has already been declared` — §2.8c probe class) and the
+  fock statement (fixed after).
+- **t46 thm chunk** (`--kind thm --only-file /tmp/thm_t46.txt
+  --parallel 8`, log `/tmp/chunk_t46_thm.log`): 14 statements = 6
+  def-unlockers + 6 fixed batch-2 (`signedOp_apply`, `smul_symmetricOn`,
+  `qgWeylProd_coord_mom_polySym`, `ccr_poly`, `nsH_coe`,
+  `densitized_hasZeroDeficiencyOn_transfer`) + fock_canonical + the
+  **`gaussInt_add` API probe** (documents the `already declared` class).
+- **Parked thms**: wave `name` for `…norm_inner_commutator_sum_le'` fixed
+  to `_prime` (title/nl too) and the wave-pointed `_prime.lean` was
+  **truncated garbage** (` := by sorry`, no declaration) → replaced with
+  the content of the apostrophe file (whose decl was already `_prime`),
+  backup `.bak_fix7`. `…WeakMeasurableUnitaryGroup_ext_prime` already
+  `_prime` everywhere → just needs status reset. **Both unparks + the
+  stoneU_zero probe wait for a slot-free moment** (state edits race the
+  chunk's save_state).
+- **elab tooling**: `elab_one.sh` exits 0 even on lean failure (last cmd
+  is `rm`) — grep the output, don't trust the exit code.
+
+**K. t46/t47 results — 12 statements + 12 sols, all green (10-09 late
+morning).**
+
+- **t46 thm DONE ×12** (thm 3831 → **3843**): all 6 def-unlockers
+  (`Cx.ofReal_add`, `mem_adjGraph_iff`, `sectorOp_apply`, `multOp_coeFn`,
+  `proj_coeFn`, `hFun_add`), the 6 fixed batch-2 statements
+  (`signedOp_apply`, `smul_symmetricOn`, `qgWeylProd_coord_mom_polySym`,
+  `ccr_poly`, `nsH_coe`, `densitized_hasZeroDeficiencyOn_transfer`).
+  `fock_canonical…core` deferred "target already published" → API
+  confirmed `theorem_id d3a074b4…` (it is one of the 23 Open losses; its
+  record existed all along) → state set done with id. `gaussInt_add`
+  **silently skipped: it was in the wave `thms` dict but NOT in
+  `sol_order`** — `WAVE_ORDER` iterates `sol_order` for BOTH thm and sol
+  kinds (upload_pipeline.py:293), so any manually added thm whose name is
+  absent from `sol_order` never enters `ORDER`. Fixed by appending it to
+  `sol_order` (9449 entries) — **remember this for future manual wave
+  additions**.
+- **State surgery** (backup `pipeline.json.bak_t47prep_*`): unparked
+  `…ChapterStoneMeasurable…ext_prime` (stale park) and
+  `…FarisLavineLift…sum_le_prime` (wave `name`→`_prime` + `_prime.lean`
+  content restored); set fock thm done w/ id; marked
+  `weyl_friedrichs_extension_unconditional` **failed / DEAD END** — the
+  platform record is **Disproved** (the target needs semiboundedness that
+  the statement lacks; our positive proof got WA). Note
+  `friedrichs_extension_exists` is *also* Disproved on the platform, yet
+  sols importing it still compile server-side (t47 proved it).
+- **t47 sol DONE ×12 / 0 FAIL** (sol 3530 → **3542**, 343 s): the 6
+  def-unlockers (→ their theorems now Proved → unblocks the WAIT defs),
+  **all 5 cross-splice repairs** (`qg3D_symmetricOn`,
+  `qg3DElliptic_quadForm_nonneg`, `qg3DElliptic_eq_weylOp`,
+  `qgMomScaled_symmetricOn`, `qg3DElliptic_friedrichs_extension` — the
+  inline-`hpos` trick worked, `friedrichs_extension_exists` import
+  accepted), and `fock_canonical_essentiallySelfAdjointOn_core` (audit
+  target d3a074b4 now has an accepted sol).
+- Remaining def-WAIT deps: `AffineFiber.hFun_smul` (sol+thm both pending,
+  verdict ok → next thm chunk) and
+  `HilbertSumIntertwine.linearIsometryEquiv_intertw` (**no plan entry at
+  all** — L2FibreSum stays blocked until a statement+sol are generated).
+  Ready sols after t47: **88** (`/tmp/ready_sols_t49.txt`).
+- **t48 thm chunk** (`/tmp/thm_t48.txt`, log `/tmp/chunk_t48_thm.log`):
+  the §2.8c probe `stoneU_zero` + `gaussInt_add` (now ORDER-visible) + the
+  2 freshly unparked statements.
+- **t48 RESULT — §2.8c ANSWERED**: `stoneU_zero` → **WAIT (guard park:
+  duplicate declaration)** — the pipeline's guard detected the name is
+  already declared by the published def bundle and PARKED it without
+  burning an attempt. `gaussInt_add` → "target name already declared by
+  published def bundle ChapterHermiteProductCore" (defer, attempts=0).
+  **Conclusion: the ~31 `already declared` statements can never be
+  submitted — the names live, proved, inside published def bundles.
+  Treatment: leave parked/deferred; any SOL that needs such a name must
+  drop its `Theorems.Thm_*` import and use the def-bundle decl directly
+  (`import Definitions.Def_*` + `open`) — the `commForm_sqSumOp_le` file
+  already follows this pattern and elaborates clean.**
+  `ext_prime` + `sum_le_prime` both **DONE** (thm → 3846).
+- **t49 def retry** (`/tmp/defs_t44.txt`, log `/tmp/chunk_t49_def.log`):
+  **4 DONE** — `ChapterA1b`, `ChapterFriedrichsSquareFactorization`,
+  `ChapterScalarDGammaEsa`, `ChapterAbelianGelfandModel` (def 521 →
+  **525**). Remaining WAITs: `AffineBlockEsa` (hFun_smul + support_hFun)
+  and `L2FibreSum` (`linearIsometryEquiv_intertwine` — note the full
+  name; the earlier lookup used a truncated one and mis-reported it as
+  "no plan entry").
+- **t50 thm 3/3 DONE** (`hFun_smul`, `support_hFun`,
+  `linearIsometryEquiv_intertwine`; thm → **3849**). The intertwine SOL
+  was failing on a **quadrupled `variable {ι …}` block** (generator
+  concatenated two source sections; `G` bound to one ι, `(i : ι)` to
+  another → universe mismatch `Type u_8` vs `Type u_6`) → collapsed to a
+  single variable pair (`.bak_fix8`), elab + verdict clean.
+- **t51 sol chunk** (92 items: `hFun_smul` + `support_hFun` + intertwine
+  first, then the ready set; log `/tmp/chunk_t51_sol.log`). After it:
+  def retry #3 should publish `AffineBlockEsa` + `L2FibreSum`.
+
 ---
 
 ## 1. CURRENT TASK — upstream-def publication wave + pending thm/sol backlog

@@ -12,5 +12,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+
 theorem BookProof.QuantumGravity3DGauge.qgWeylProd_coord_mom_polySym (j k : Fin d) :
     PolySym (qgWeylProd (mulOp (X j)) (momOp k)) := by sorry

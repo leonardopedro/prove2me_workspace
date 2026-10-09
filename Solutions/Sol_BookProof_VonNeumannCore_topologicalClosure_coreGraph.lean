@@ -5,7 +5,7 @@ import Theorems.Thm_BookProof_VonNeumannCore_coreGraph_le_clGraph
 import Theorems.Thm_BookProof_VonNeumannCore_mem_coreLp_iff
 import Theorems.Thm_BookProof_VonNeumannCore_mem_clLp_iff
 import Theorems.Thm_BookProof_VonNeumannCore_clLp_le_topologicalClosure_coreLp
-import Theorems.Thm_BookProof_EsaClosure_clGraph_isClosed
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.VonNeumannCore
 
 

@@ -45,7 +45,10 @@ theorem solution (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) (p : MvPolyno
       = gaussInt (cpoly p * harmP (BookProof.SqSumFarisLavine.sqSumPoly kappa v p)) := by
     have hs := harmCore_symmetricOn (D := D) ⟨pgLp p, pgLp_mem_core p⟩
       ⟨pgLp (BookProof.SqSumFarisLavine.sqSumPoly kappa v p), pgLp_mem_core (BookProof.SqSumFarisLavine.sqSumPoly kappa v p)⟩
-    rw [hHu, hs, harmCore_pgLp, inner_pgLp_pgLp, harmP]
+    rw [hHu, hs, harmCore_pgLp, inner_pgLp_pgLp]
+    simp only [BookProof.GaussCoreQuadBounds.harmP,
+      BookProof.GaussCoreQuadBounds.harmPoly,
+      BookProof.QgHermiteOscillator.harmPoly]
   have hz : gaussInt (cpoly p * commPoly kappa v p)
       = gaussInt (cpoly p * BookProof.SqSumFarisLavine.sqSumPoly kappa v (harmP p))
         - gaussInt (cpoly p * harmP (BookProof.SqSumFarisLavine.sqSumPoly kappa v p)) := by

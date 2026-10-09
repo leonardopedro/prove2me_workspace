@@ -4,7 +4,6 @@ import Definitions.Def_ChapterShiftedQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_dPoly_apply
 import Theorems.Thm_BookProof_HyperbolicQuadratic_momPoly_apply
 import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
-import Theorems.Thm_BookProof_ShiftedQuadratic_dPolyT_apply
 open BookProof.ShiftedQuadratic
 
 

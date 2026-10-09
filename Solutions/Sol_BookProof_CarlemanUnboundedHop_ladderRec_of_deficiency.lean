@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_summable_normSq_lp
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_row_summable
-import Theorems.Thm_BookProof_CarlemanUnboundedHop_kernelOp_coe
 open BookProof.CarlemanUnboundedHop
 
 

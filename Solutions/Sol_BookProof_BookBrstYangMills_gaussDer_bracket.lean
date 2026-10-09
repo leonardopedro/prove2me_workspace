@@ -7,7 +7,6 @@ import Theorems.Thm_BookProof_BookBrstYangMills_vecComb_sub
 import Theorems.Thm_BookProof_BookBrstYangMills_vecComb_sum
 import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_vecComb
 import Theorems.Thm_BookProof_BookBrstYangMills_sum_smul_der_apply
-import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_X
 open BookProof.BookBrstYangMills
 
 

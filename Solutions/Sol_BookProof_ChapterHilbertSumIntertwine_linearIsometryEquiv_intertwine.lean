@@ -1,7 +1,7 @@
 -- Generated from ChapterHilbertSumIntertwine.lean — solution of BookProof.ChapterHilbertSumIntertwine.linearIsometryEquiv_intertwine
 import Mathlib
 import Definitions.Def_ChapterHilbertSumIntertwine
-import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_memℓp_fibrewise
+import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_memLp_fibrewise
 open BookProof.ChapterHilbertSumIntertwine
 
 
@@ -10,20 +10,9 @@ open scoped InnerProductSpace
 
 
 
-variable {ι : Type*}
-variable {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)] [∀ i, InnerProductSpace ℂ (G i)]
-
-
-
-
 variable {ι : Type*} {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [CompleteSpace H]
 variable {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)] [∀ i, InnerProductSpace ℂ (G i)]
-
-variable {ι : Type*}
-variable {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)] [∀ i, InnerProductSpace ℂ (G i)]
-variable {ι : Type*} {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-  [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {V : ∀ i, G i →ₗᵢ[ℂ] H} (hsum : IsHilbertSum ℂ G V)
@@ -32,7 +21,7 @@ theorem solution {V : ∀ i, G i →ₗᵢ[ℂ] H} (hsum : IsHilbertSum ℂ G V)
     hsum.linearIsometryEquiv (A v) i = B i (hsum.linearIsometryEquiv v i) := by
 
   set w := hsum.linearIsometryEquiv v with hw
-  have hmem : Memℓp (fun i => B i (w i)) 2 := memℓp_fibrewise B hB w
+  have hmem : Memℓp (fun i => B i (w i)) 2 := memLp_fibrewise B hB w
   set w' : lp G 2 := ⟨_, hmem⟩ with hw'
   have hsymm : hsum.linearIsometryEquiv.symm w' = A v := by
     have h1 : HasSum (fun i => V i (w' i)) (hsum.linearIsometryEquiv.symm w') :=

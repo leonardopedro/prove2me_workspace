@@ -41,7 +41,11 @@ IMPORT_DEF = re.compile(r"^import\s+Definitions\.Def_(\S+)", re.M)
 
 
 def thm_spellings(mod: str):
-    """Candidate state slugs for an imported Theorems.Thm_<mod> module."""
+    """Candidate state slugs for an imported Theorems.Thm_<mod> module.
+
+    Also maps an ASCII-transliterated import (server identifier class is
+    ASCII-only, §2.7) back to the original non-ASCII state key via
+    state/ascii_to_orig_thm_map.json (2026-10-08)."""
     cands = [mod]
     if mod.endswith("_prime"):
         cands.append(mod[:-6] + "'")
@@ -49,6 +53,14 @@ def thm_spellings(mod: str):
         cands.append(mod.replace("'", "_prime"))
     if "_prime" in mod:
         cands.append(mod.replace("_prime", "'"))
+    try:
+        with open(os.path.join(WS, "state", "ascii_to_orig_thm_map.json"),
+                  encoding="utf-8") as f:
+            orig = json.load(f).get(mod)
+        if orig:
+            cands.append(orig)
+    except (OSError, ValueError):
+        pass
     return cands
 
 

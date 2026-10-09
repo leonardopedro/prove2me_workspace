@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_mem_adjGraph_iff
-import Theorems.Thm_BookProof_EsaClosure_mem_clGraph_of_mem_opGraph
-import Theorems.Thm_BookProof_EsaClosure_mem_opGraph
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

@@ -1,7 +1,7 @@
 -- Generated from ChapterQgOneParticleCcEsa.lean — solution of BookProof.QgOneParticleCc.sum_harmW_partLM
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
-import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgOneParticleCc
 
 

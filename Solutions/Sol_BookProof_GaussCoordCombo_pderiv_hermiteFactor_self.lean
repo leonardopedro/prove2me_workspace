@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
 import Theorems.Thm_BookProof_GaussCoordCombo_pderiv_aeval_self
-import Theorems.Thm_BookProof_HermiteProductCore_derivative_hermiteZ
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.GaussCoordCombo
 
 

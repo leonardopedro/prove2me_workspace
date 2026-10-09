@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOp_apply
 open BookProof.YangMillsFriedrichs
 
 

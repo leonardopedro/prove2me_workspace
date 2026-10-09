@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 import Theorems.Thm_BookProof_GaussCoordCombo_pderiv_hermiteFactor_self
-import Theorems.Thm_BookProof_HermiteProductCore_hermiteFactor_zero
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.SqueezedGaussStates
 
 

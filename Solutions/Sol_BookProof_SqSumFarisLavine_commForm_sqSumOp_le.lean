@@ -10,10 +10,7 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_abs_im_gaussInt_le
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_gaussInt_self
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_quadForm_harm_eq
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_sum_norm_sq_mul_le_of_pointwise
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
-import Theorems.Thm_BookProof_HermiteProductCore_norm_sq_eq_sum
+import Definitions.Def_ChapterHermiteProductCore
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 open BookProof.SqSumFarisLavine
@@ -66,7 +63,7 @@ theorem solution {kappa : Fin D → ℝ} {v : R → Fin D → ℝ} {km M : ℝ}
     rw [commPoly_eq, mul_add, mul_add, gaussInt_add, gaussInt_add]
     congr 1
     · congr 1
-      · rw [mul_smul_comm, gaussInt_smul, GaussCoreQuadBounds.gaussInt_self]
+      · rw [mul_smul_comm, gaussInt_smul, BookProof.GaussCoreQuadBounds.gaussInt_self]
       · rw [Finset.mul_sum, gaussInt_sum]
         refine Finset.sum_congr rfl fun j _ => ?_
         rw [mul_smul_comm, gaussInt_smul, hswapX j]

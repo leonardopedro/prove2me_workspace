@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterOperatorSeriesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.OperatorSeries
 
 

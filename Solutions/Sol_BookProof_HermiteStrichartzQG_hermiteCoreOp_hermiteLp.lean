@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
-import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteRepr_symm_single
 import Theorems.Thm_BookProof_QuantumGravityDensitized_mulHamiltonian_mulBasis
 open BookProof.HermiteStrichartzQG
 

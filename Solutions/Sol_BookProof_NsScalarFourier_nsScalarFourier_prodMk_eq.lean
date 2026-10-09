@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
 import Theorems.Thm_BookProof_NsScalarFourier_nsScalarFourier_apply
-import Theorems.Thm_BookProof_NsScalarVectorCurry_curryLI_fibMk
+import Definitions.Def_ChapterNsScalarVectorCurry
 open BookProof.NsScalarFourier
 
 

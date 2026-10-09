@@ -1,7 +1,7 @@
 -- Generated from ChapterClosureUniqueness.lean — solution of BookProof.ClosureUniqueness.eq_of_opGraph_eq
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
-import Theorems.Thm_BookProof_EsaClosure_mem_opGraph
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

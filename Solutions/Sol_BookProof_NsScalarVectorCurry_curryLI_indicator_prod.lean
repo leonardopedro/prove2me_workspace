@@ -1,7 +1,6 @@
 -- Generated from ChapterNsScalarVectorCurry.lean — solution of BookProof.NsScalarVectorCurry.curryLI_indicator_prod
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
-import Theorems.Thm_BookProof_NsScalarVectorCurry_curryLI_fibMk
 open BookProof.NsScalarVectorCurry
 
 

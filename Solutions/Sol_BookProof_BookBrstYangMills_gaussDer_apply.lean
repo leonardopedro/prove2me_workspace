@@ -1,7 +1,6 @@
 -- Generated from ChapterBookBrstYangMills.lean — solution of BookProof.BookBrstYangMills.gaussDer_apply
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
-import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_X
 open BookProof.BookBrstYangMills
 
 

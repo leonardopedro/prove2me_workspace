@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_xCc_symmetricOn
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_exists_band₂
+import Theorems.Thm_BookProof_ScalaronOuterFockFL_exists_band2
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_inner_secHam_expand
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_fibOf_coe
 open BookProof.ScalaronOuterFockFL
@@ -28,7 +28,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution : SymmetricOn (secCore (ι := by
 
   intro x y
-  obtain ⟨P, hx1, hx2, hy1, hy2⟩ := exists_band₂ Q x y
+  obtain ⟨P, hx1, hx2, hy1, hy2⟩ := exists_band2 Q x y
   have hL := inner_secHam_expand W Q x (y : Sec ι) hx1 hx2
   have hR := inner_secHam_expand W Q y (x : Sec ι) hy1 hy2
   have hconj : (inner ℂ ((x : Sec ι)) (secHam W Q y) : ℂ)

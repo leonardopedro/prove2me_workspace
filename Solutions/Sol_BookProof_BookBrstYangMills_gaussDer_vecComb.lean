@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Theorems.Thm_BookProof_BookBrstYangMills_vecComb_sum
-import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_X
 open BookProof.BookBrstYangMills
 
 

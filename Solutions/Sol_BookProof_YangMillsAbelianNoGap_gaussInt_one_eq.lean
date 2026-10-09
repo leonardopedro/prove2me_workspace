@@ -1,8 +1,8 @@
 -- Generated from ChapterYangMillsAbelianNoGap.lean — solution of BookProof.YangMillsAbelianNoGap.gaussInt_one_eq
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
-import Theorems.Thm_BookProof_HermiteCore_gint_one
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_monomial
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.YangMillsAbelianNoGap
 
 

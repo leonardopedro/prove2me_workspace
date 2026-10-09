@@ -1,7 +1,7 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.gaussDer_casimirPoly
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
-import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_X
+import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstGaugeFixing
 
 

@@ -1,10 +1,10 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.mixOp_hermiteCore
 import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 import Theorems.Thm_BookProof_QuadratureEsa_foOp_hermiteCore
 import Theorems.Thm_BookProof_QuadratureEsa_hermiteCore_eq
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteCarleman
 
 

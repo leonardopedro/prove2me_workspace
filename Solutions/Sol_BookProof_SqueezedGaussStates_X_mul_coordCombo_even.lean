@@ -1,7 +1,7 @@
 -- Generated from ChapterSqueezedGaussStates.lean — solution of BookProof.SqueezedGaussStates.X_mul_coordCombo_even
 import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
-import Theorems.Thm_BookProof_HermiteProductCore_hermiteFactor_X_mul
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.SqueezedGaussStates
 
 

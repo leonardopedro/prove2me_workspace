@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNsFullLagrangianFockEsa
 import Theorems.Thm_BookProof_NsFullLagrangianEsa_lagFullFockHam_esa
-import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa
 import Theorems.Thm_BookProof_NsFullLagrangian_lagFullOuterN_isPositiveSelfAdjointExtension
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.NsFullLagrangianEsa
 
 

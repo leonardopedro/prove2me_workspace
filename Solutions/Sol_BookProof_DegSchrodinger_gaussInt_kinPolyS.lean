@@ -1,9 +1,9 @@
 -- Generated from ChapterDegSchrodingerCore.lean — solution of BookProof.DegSchrodinger.gaussInt_kinPolyS
 import Mathlib
 import Definitions.Def_ChapterDegSchrodingerCore
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_neg
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.DegSchrodinger
 
 

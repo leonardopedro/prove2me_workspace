@@ -1,8 +1,8 @@
 -- Generated from ChapterHermiteLadderOrder.lean — solution of BookProof.HermiteLadder.gaussInt_sub'
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_neg
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteLadder
 
 

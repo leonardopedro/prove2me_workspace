@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_symmetricOn
+import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_quadForm
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_torsionOps_symmetricOn
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgMom_symmetricOn
 open BookProof.QuantumGravity3DGauge
@@ -25,5 +26,4 @@ theorem solution (Φ : CoreRep 84 D) (x : D) :
     quadForm (qg3DHamiltonian Φ) x
       = 1 / 2 * (∑ j, qgKappa j * ‖((qgMom Φ j x : D) : L2d 84)‖ ^ 2)
         + 1 / 2 * ∑ m, ‖((torsionOps Φ m x : D) : L2d 84)‖ ^ 2 :=
-  bolic) signature. -/
-  theorem qg3D_symmetricOn (Φ : CoreRep 84 D) : Symmetr
+  signedOp_quadForm (qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ) x

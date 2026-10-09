@@ -1,7 +1,7 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.le_clDom
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
-import Theorems.Thm_BookProof_EsaClosure_coe_mem_clDom
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.EsaOneParticle
 
 

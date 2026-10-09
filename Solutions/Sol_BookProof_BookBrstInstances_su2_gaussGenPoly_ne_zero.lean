@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterBookBrstInstances
 import Theorems.Thm_BookProof_BookBrstInstances_su2_gaussVec_value
-import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_X
+import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstInstances
 
 

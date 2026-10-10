@@ -7737,3 +7737,695 @@ the server's compiler. Two honest conclusions:
 Recommendation: leave `drain_all.sh` running unattended and revisit only when the done counts
 have moved substantially. Repairing individual chapters is lower value than letting the drain
 work the waiting backlog.
+
+---
+
+# §2.22. Session 41 (2026-10-09) — failed-sol triage: the header-divergence class
+
+## 1. State at session start (verified from `state/pipeline.json`, not from logs)
+
+| layer | done | pending | other |
+| :--- | ---: | ---: | :--- |
+| def | **525** | 162 | — |
+| thm | **4414** | 5047 | 1 parked |
+| sol | **3547** | 5794 | 2 failed |
+
+Platform-wide (API): 168,960 theorems / 105,751 Proved / 19,817 Open.
+My submissions: 4,113 total → 2,291 accepted, 1,392 CE, 263 FAILED, 136 sketch, 24 error, 7 WA.
+
+**Why the layers are lopsided.** The thm layer runs ahead of the sol layer because a
+sol may not be *uploaded* until two server-side conditions hold: (a) its **target thm is
+published**, and (b) every `Theorems.Thm_*` / `Definitions.Def_*` module it imports is
+published. Offline "verdict ok" only proves it compiles *locally* — it says nothing about
+those two gates. That is why t52's 2,148 verdict-ok sols all WAITed, and why the fix that
+mattered was publishing thms (t54), not re-uploading sols.
+
+## 2. Chunks this session
+
+| chunk | kind | items | result | log |
+| :--- | :--- | ---: | :--- | :--- |
+| t52 | sol | 2148 | 1 DONE, 2153 WAIT (targets unpublished) | `/tmp/chunk_t52_sol.log` |
+| t53 | sol | 87 | 0 resolved, 87 sibling-guard WAITs | `/tmp/chunk_t53_sol.log` |
+| t54 | thm | 2464 | **558 resolved / 0 FAIL / 8 in flight** (5406 s) | `/tmp/chunk_t54_thm.log` |
+| t55 | sol | 496 | launched 16:14, 123 DONE / 5 FAIL by 16:54, `--max-seconds 5400` | `/tmp/chunk_t55_sol.log` |
+
+**t55's 496 were computed, not guessed** — the first chunk this session built by
+*state arithmetic* instead of by verdict alone:
+
+```python
+# a sol is uploadable iff: pending AND local verdict ok AND target thm done
+# AND every import's provider is done
+```
+
+Reasons the other 5,298 pending sols were excluded:
+`verdict_not_ok 3647 · target_thm_not_done 1563 · blocked_import 88`.
+
+**Lesson.** After a big thm chunk, *recompute* the sol candidate set from state; do not
+re-upload the previous chunk. t54 published the siblings that t52/t53 were waiting on.
+
+## 3. THE FINDING: 88% of pending sols had a header that diverged from their own stub
+
+The sol generator emits a header (imports + opens) that is a *subset* of the stub header
+for the same node. Measured over the 5,783 pending sols that have both files on disk:
+
+- **5,089 diverged** from their stub; only **694 were aligned**.
+- Missing: **28,110 import lines** and **4,836 `open` lines** — nearly all providers
+  already published (only 2 imports pointed at a pending def bundle).
+- Top offenders: `Definitions.Def_ChapterFarisLavine` (missing from 2,222 sols),
+  `Def_ChapterHermiteProductCore` (1,160), `Def_ChapterEsaClosureCore` (911),
+  `Def_ChapterSirkTrotterKato` (894), `Def_ChapterNavierStokesAffineFiberEsa` (875);
+  opens: `open BookProof.HermiteProductCore` (701), `BookProof.FockSecondQuantization` (270).
+
+This single bug explains a whole family of "unexplained" failures that had been treated
+as separate per-chapter problems: `unknown namespace`, `unknown identifier` for a sibling
+lemma, and the `object file … does not exist` class (54 sols) — all of them just missing
+the import the stub already had.
+
+### The fix (fix15)
+
+For each pending sol, add the stub's missing `import`/`open` lines verbatim:
+imports immediately after the last existing `import`, opens after the last `open`.
+Backups `Solutions/Sol_*.lean.bak_fix15`. **5,085 files touched, 28,110 imports,
+4,836 opens.** Every edited file was then re-parsed to assert that no `import` line
+follows a non-import command (Lean requires all imports first) — 5,085/5,085 pass, the
+one failure being a pre-existing corruption (§5), which was repaired separately.
+
+**Redundant `open` lines are harmless**; the stub itself carries both a combined
+`open A B` and a single `open A`, and the generator copied only part of that.
+
+The earlier, hand-scoped `fix13` (279 sols given stub-header imports/opens) was the same
+repair applied only to the files whose first error had already been read. **It should have
+been the whole set from the start** — the correct screen is "differs from the stub", which
+is a property of the generator, not of the error text.
+
+## 4. Second finding: `_prime` vs `'` — 71 import paths that name a module that does not exist
+
+The stub generator sanitizes `'` to `_prime` in the **declaration it writes**, but the wave
+spec and the on-disk module keep the apostrophe. Sol generator output then imported the
+*sanitized* module name, which does not exist:
+
+| shape | rows | examples |
+| :--- | ---: | :--- |
+| apostrophe module published (`thm` done), sol imports `_prime` | 12 | `HermiteBandHigher_mulOp_add'`, `BrstLeakage.norm_flow_sub_flow_apply_le'` |
+| apostrophe module pending | 49 | `CarlemanSimplex.lc1_vanish'`, `YangMillsAbelianEsa.triple_swap'` |
+| `_prime` module published → sol already correct | 6 | `HyperbolicQuadratic.momPoly_apply'` |
+| `_prime` file exists **and** apostrophe file exists (duplicate, same decl) | 6 | `ChapterStoneMeasurer…norm_resCLM_apply_le'` |
+
+Checked for all 61 fixable rows: the apostrophe file declares `<short>_prime` inside, i.e.
+**the sol bodies were right and only the import path was wrong**. Fix (fix14): rewrite the
+import to the apostrophe module, never the body — **71 sol files**. 16 of them have a
+published target and become uploadable as soon as their verdict is re-run.
+
+## 5. Third finding: 30 thm stubs that never declared their own theorem
+
+Read the first bytes of a failing stub and the gen bug is plain. Four distinct shapes:
+
+1. the `theorem` line is missing entirely, leaving a bare ` := by sorry`;
+2. the declaration is a **different** declaration from the chapter (span extraction
+   drifted), often truncated mid-identifier (`def gint (p : Po := by sorry`);
+3. the declaration lost only its first characters (`orem hasDerivAt_gaussW …`);
+4. the stub contains a *proof* where the statement belongs.
+
+7 of the 30 are already `done` (published before the corruption landed in the checkout),
+**22 were rebuilt** (fix16) as header (verbatim) + `theorem <platform name> <args> := by
+sorry` taken from the source theorem, with `'` → `_prime` in the declaration to match the
+naming already proven to publish. 1 (`TensorSumEsa_instContinuousSMulRealTensorProduct…`) has
+no source theorem — still open. Note these 22 are `ABS` in state and are **absent from
+`wave_upload.json`**, so they are silently skipped by `WAVE_ORDER` (§2.21-J item 11) and
+must be registered before they can be published.
+
+## 6. Splice-corrupted sols (7) and the `:= `-gutter
+
+7 sols carry a header + `theorem solution … :=` followed by the **chapter source** (its
+imports and prose) instead of a proof. Present in git HEAD too — the generator's proof
+extraction grabbed the file. Repair = header + statement from the stub + the real proof
+from `../timepiece331/BookProof/<chapter>.lean` (all 7 theorems exist there, some behind
+`@[simp]` or a trailing `'`, which is why a naive `theorem <name>\b` search missed them —
+`\b` after `'` never matches). 2 repaired (fix16); the other 5 are blocked on their stubs
+being rebuilt first (§5) — after which the same script completes them.
+
+## 7. Repair conventions established
+
+- Backups `Solutions/Sol_*.lean.bak_fixN` / `Theorems/Thm_*.bak_fixN` before every edit;
+  the scripts skip files that already have the backup, so they are re-runnable.
+- The **stub header is the authority** for imports/opens; the **source project** is the
+  authority for statements and proofs.
+- `--only-file` takes full item slugs and is applied as a substring filter on `kind:name`
+  (`ONLY_ITEMS`, `upload_pipeline.py:2202/2276/2499`), so full slugs are exact matches.
+- Long chunks must be started with the tool's own **background** mode: a `nohup … &` inside
+  a synchronous command did **not** survive that command's cleanup (t55's first launch died
+  after its `sync:` line and had to be relaunched).
+- Token refresh: `POST /agent/refresh {api_key}` → version **0.12.3**; cache the token
+  separately from `credentials.json` to avoid racing a running uploader.
+
+## 8. Next actions, in order
+
+1. Let t55 finish (cap 17:44), then `--sync` to reconcile.
+2. Run the offline oracle over the fixed sets **only when no upload is running**
+   (`--jobs 2`; `--jobs 4` OOMs this 15 GB host):
+   `python3 debug/check_pending_offline.py --kind sol --jobs 2 --only <slugs>`
+   — first the 801 target-done sols (584 already ok, 5,085 header-fixed), then t56.
+3. Upload the newly-ok subset (expect the fix15 files to convert `object file does not
+   exist` / `unknown namespace` into ok in bulk).
+4. Register + publish the 22 rebuilt stubs (wave_upload.json + state), then their sols.
+5. Re-check `--status`; the ratio to watch is **thm done : sol done**. It only closes when
+   published thms stop outnumber published sols, i.e. steps 2–3 are the whole lever.
+
+# §2.23. Session 41, continued — t55/t56, and the "lemma that exists nowhere" class
+
+## 1. Chunks since §2.22
+
+| chunk | set | result |
+| :--- | :--- | :--- |
+| t54 thm | 2464 union (targets + 50 uploadable siblings) | **558 resolved / 0 FAIL** |
+| t55 sol | 496 sols with `ok` verdict + target thm done + all imports published | **295 resolved / 5 FAIL**, 7 in flight |
+| t56 thm | 1921 pending thms with `ok` verdict (all in `WAVE_SOL_ORDER`) | running, cap 5400s |
+
+State after t55 (`state/pipeline.json`): def 525 done / 162 pending; **thm 4414 done / 5047
+pending**; **sol 3831 done / 5510 pending** (2 failed, 1 parked). The 1921 pending thms with an
+`ok` verdict are the entire uploadable thm pool — everything else is blocked on a def bundle or
+on its own stub.
+
+## 2. THE FINDING: 64 identifiers that exist nowhere on the platform
+
+Method: for every pending sol, take `Unknown identifier \`X\`` from the offline verdict
+(`state/offline_pending_check.json`), keep `X` only if its **leaf name is absent from every
+`state/published_bundles/Def_*.lean`** (3,156 names) and present in a local `Definitions/Def_*.lean`.
+Result: **64 distinct identifiers, 118 sols** (whole distribution in `/tmp/missing_lemmas.json`).
+
+Root cause is the same stub-publish pathology as §2.22-§5, one layer down: the *definition*
+bundles published for these chapters were generated from a stub, so a lemma that every
+downstream proof needs (`genY_apply`, `diagOp_apply`, `innerCLM_apply`, `dissipative_apply`, …)
+was never published. `genY_apply` alone blocks 9 sols, `genX_apply` 6, `diagOp_apply` 5,
+`innerCLM_apply` 5.
+
+**The content can never be repaired in place.** `PATCH /api/v1/theorems/:id` (contribute.md
+**Update Your Theorem**) accepts only `natural_language_statement`, `source`, `tags`; Lean
+content of a published theorem/definition is frozen ("A published theorem is frozen";
+mission_captain.md:225). So a stale definition bundle is unfixable — the missing lemma must be
+carried by something new: either a new Thm node (a new platform item, which *worsens* the
+thm:sol ratio the user is tracking) or **inline in each affected sol**.
+
+## 3. Fix chosen: inline the helper into the sol (fix21)
+
+All 64 declarations are tiny (53 are `rfl` or a one-line `simp [X]`; the longest is 29 lines).
+The generator's own design already emits "inline helper pastes" before `theorem solution`, and
+10 sols in the corpus use `private theorem <helper>` — that is the sanctioned pattern, so:
+
+- extract the declaration verbatim from `Definitions/Def_<chapter>.lean`,
+- re-emit it as `@[simp] private theorem <name> …` (attributes preserved — several are simp
+  lemmas the proof's `simp`/`rw` silently relies on; `private` avoids any clash with the
+  published layer),
+- insert before the `set_option maxHeartbeats … in` / `theorem solution`,
+- pull in a dependency closure first when the helper's proof cites another missing lemma
+  (`genY2_C → genY2_apply`, `genY2_X_uL/_uD → genY2_apply`, `hasDerivAt_scoreSoftmax →
+  partition_ne_zero`).
+
+Applied to all **118** sols (backups `.bak_fix21`). Also fixed by import alone: the 8 leaves
+whose Thm node is already `done` (`dPoly_apply`, `diagOp_hasZeroDeficiencyOn`,
+`exists_smooth_cutoff`, `lpDiag_coe`, `momTPoly_apply`, `mulXPoly_apply`, `mulXTPoly_apply`,
+`multOp_coeFn`) — 7 sols got `import Theorems.Thm_<slug>`.
+
+⚠️ These edits **cannot be validated with the local `lake build`**: the local
+`Definitions/Def_<chapter>.lean` *does* contain the lemma, so the inline copy is a duplicate
+declaration locally while it is required on the platform. The offline oracle — which stages the
+*published* bundles — is the only valid gate for this class.
+
+## 4. Next actions, in order
+
+1. Let t56 finish (cap ~20:10); `--sync`; confirm no uploader is running.
+2. Offline oracle over the fixed sol batch, on the published state:
+   `python3 debug/check_pending_offline.py --kind sol --jobs 2 --only <fixed slugs>`
+   — this covers fix21 (118), fix15 (5,085 header-aligned), fix9/10/14 (import/prime/H8), the
+   7 splice repairs, and the 22 rebuilt stubs' sols. Repair residual first errors per §2.22-§5d.
+3. Upload the newly-`ok` subset as one sol chunk — this is the whole lever on the thm:sol ratio,
+   since a published thm only closes the gap when its sibling sol is also published.
+4. Refresh `state/published_bundles/` for thms published by t54/t56 (`debug/cache_published_bundles.py`)
+   *before* step 2, otherwise the oracle reports spurious `object file … does not exist` for
+   recently published `Thm_*` modules (the Oct-6 `/tmp/published_mirror` staleness, §2.22-§5d).
+
+# §2.24. Session 41, part 3 — why the 162 def bundles are the lever, and what actually blocks them
+
+## 1. The lever, measured
+
+The 162 pending `def:` bundles are absent from `WAVE_DEF_ORDER`-completion because every chunk so
+far ran `--kind thm` or `--kind sol`: `WAVE_ORDER` puts defs first, so `--kind` skipped them, and
+all 162 sat at `attempts: 0` / no recorded error — **never attempted**. Their chapters hold
+**2,554 pending sols + 2,554 pending thms = 5,108 items**. That is ~31 items per upload, against 1
+per thm/sol. Top chapters: ChapterQuantumGravityFock 122, ChapterQgOneParticleCcEsa 116,
+ChapterFermionFock 106, ChapterGradedFock 100, ChapterResolventMinMaxLadder 96.
+
+## 2. Trying it (t57) and what the chunk actually did
+
+`--kind def --only-file <162>` was launched, then stopped after 5 minutes: 21 submits, 18 distinct
+`WAIT (guard defer: def gate: candidate build: FAIL …)`, 0 DONE. WAITs burn no attempts, but the
+chunk also cannot make progress, so the slot was returned.
+
+## 3. Three distinct causes, all now identified
+
+1. **`theorem dependency not proved yet`** — 12 of the 162 carry this *server* error verbatim, e.g.
+   `def:ChapterQuantumGravityFock` →
+   `theorem dependency not proved yet: BookProof.NavierStokesFlow.FockOfFock.confEnergy_zero, …`.
+   The bundle's *first import* is `import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_confEnergy_zero`.
+   A Definition cannot import an unproved platform theorem. 27 distinct theorems block these 12
+   defs; **17 of the 27 are themselves still `pending` thm items** — so publishing those thms first
+   is a hard prerequisite, and t54/t55/t56 were already doing exactly that.
+2. **140 of the 162 have no recorded error at all** — they have never been submitted. Their WAITs in
+   t57 came from `def_gate_fresh()`, which reads `state/def_gate.json` (built 2026-10-08 16:38, 135
+   entries: **27 OK**, the rest `BLOCKED by Def_ChapterX` or FAIL). A `BLOCKED`/stale entry defers the
+   item forever, so a def chunk must be preceded by
+   `python3 debug/build_candidate_mirror.py --targets <list> --jobs 2`, which builds candidates
+   topologically against `state/published_bundles` (the frozen published text — the *accurate* dep
+   source) and rewrites the gate with fresh `OK`/`FAIL` + file stamps.
+3. **7 chapters publish an *empty* bundle while their local bundle is rich**
+   (`ChapterFockWeightedSchurEsa` 197 B published vs 134 KB / 186 decls local, `ChapterCarlemanSimplex`,
+   `ChapterModeQuadraticEsa`, `ChapterCarlemanTwoStep`, `ChapterQgTimeIndependentFlow`,
+   `ChapterQgBrstDerivativeGauge`, `ChapterGradedBandSchurEsa`) — 302 blocked items. The published stub
+   contains **zero declarations**, so a corrected bundle under a *new* name would conflict with nothing;
+   `debug/add_wave_def.py` registers one, and the chapter's thm/sol imports would be repointed.
+
+**The in-place repair is impossible for all three**: `PATCH /api/v1/theorems/:id` accepts only
+`natural_language_statement` / `source` / `tags`, `definition_name` is unique per environment, and
+deprecation "never deletes" a node. A stale or empty published bundle can only be superseded.
+
+## 4. Validated: the fix21 inline-helper class works offline
+
+`check_pending_offline.py --kind sol --jobs 1 --only BookProof_NavierStokesGaugeY_genY_ccr_y` →
+**`ok 1`**. The sol's proof is `rw [genY_apply, genY_apply, …]`; with the lemma absent from every
+published bundle, the inlined `private theorem genY_apply … := by simp [genY]` supplies it. This is
+the first direct evidence for §2.23-§3, and it also shows the oracle is usable per-item.
+
+## 5. Oracle operational note
+
+A 206-item `--only` run hung: 1 s CPU over 9.5 minutes, no `lean` children, `futex_do_wait` — it
+never printed a phase-1 line. The same tool answers in seconds on one item. Run it in **chunks of
+~40 with an external `timeout`** (`/tmp/run_oracle_chunks.sh`), never as one wide `--only` sweep;
+`--only` merges into `state/offline_pending_check.json`, so sequential chunks accumulate safely.
+
+# §2.25. Session 41, part 4 — t58 result, def-gate refresh, and the failed-sol taxonomy
+
+## 1. t58 (mixed thm+sol) finished: 136 DONE / 2 FAIL
+
+The mixed chunk (51 unblocking thms + 47 ready sols, `--only-file` substring-matched ~98 more)
+converted **136** items with only 2 failures — one transient (`mulOp_sum`: "Import parser timed
+out after 5s"), one real (`thm:…H8_sirk_band_refinement_krylov`: publish FAILED, formal statement
+line 25: Unknown identifier `krylov_li_of_le`). Pipeline state after: thm done 4,495 · sol done
+3,906 · def done 525 · pending sols 5,450.
+
+## 2. Def gate refreshed: 37/162 OK
+
+`build_candidate_mirror.py --targets <162> --jobs 2` rewrote `state/def_gate.json`: **37/162
+defs OK** (236/285 dependent theorems compiled), the rest carry fresh FAIL diagnostics
+(unknownIdentifier / unsolved goals / Ambiguous term / invalidField). A def chunk on the 37 OK
+defs is now unblocked — each publishes ~31 items.
+
+## 3. Failed-sol taxonomy (all of today's chunks, 31 distinct FAILs)
+
+17 already recovered (t58's substring filter re-submitted them and they passed), 2 are permanent
+dead ends, **12 sols + 1 thm remain pending**:
+
+| Class | Count | Fix |
+| :--- | :---: | :--- |
+| `CE: Ambiguous term proj` (GravityPolymomentum ×5) | 5 | qualify as `ChapterGravityPolymomentum.proj` in the sol |
+| `CE: Ambiguous term mulOp` (HermiteBandHigher ×5) | 5 | qualify as `ChapterHermiteBandHigher.mulOp` |
+| `CE` (HermiteExpWall_psi_apply) | 1 | per-item diagnostic |
+| transient `Import parser timed out` (mulOp_sum) | 1 | plain retry |
+| `thm:…H8…krylov` — statement needs `krylov_li_of_le` | 1 | statement-side: add the helper lemma to the Thm file or repoint |
+
+Dead ends (never retry): `FriedrichsExtension_friedrichs_extension_of_semibounded_below` (WA,
+type mismatch), `weyl_friedrichs_extension_unconditional` (target Disproved on record).
+
+The `ambiguous` CE class is the same two-namespace collision family seen in t55 (`mulOp`, `proj`
+declared in multiple opened namespaces); the fix is name qualification inside the sol, not an
+`open` line — adding/removing `open` shifts the collision risk (§2.23-§5b: 775 risky opens were
+reverted for exactly this reason).
+
+
+---
+
+# §2.26. Session 41, part 5 — t59/t60 results, the mulOp root cause, the apostrophe-import class
+
+Standing user directive (repeated): **fix failed sols while uploads run, then re-upload the
+fixes; published theorems now outnumber published sols ~4:1**, so every upload slot should
+carry `--kind sol` until the ratio closes.
+
+## 1. t59 finished; t60 misfiltered
+
+- **t59** (`/tmp/chunk_t59_sol.log`, 344 sols): **225 resolved / 221 DONE / 2 FAIL** in 6157 s
+  (finished 00:13). Pipeline after: thm done 4,495 · sol done 4,127 · def 525 · pending sols
+  5,216. The 122 WAITs were all `guard defer: sibling theorem not published`.
+- **t60** (120 sols, `/tmp/chunk_t60_sol.log`): **0 DONE / 3 FAIL / 119 WAIT**. My pre-filter
+  checked only the sol's OWN thm status; the guard `unpublished_sibling_imports()` requires
+  every `import Theorems.Thm_X` in the file to be done. Lesson: build upload lists with the
+  uploader's own guard functions (`up.unpublished_sibling_imports`, `up.sol_rules_broken`),
+  not a hand-rolled thm-done check. t60's 3 FAILs were the mulOp sols submitted before my
+  fix landed (files were edited mid-chunk).
+
+## 2. The mulOp root cause (a new class: qualifier points at a namespace that never had it)
+
+All `BookProof.HermiteBandHigher.mulOp*` sol failures reduced to two defects:
+
+1. **`BookProof.HermiteBandHigher.mulOp` does not exist anywhere** — not in the published
+   stub (179 B, no decls), not in the local rich bundle (which only *uses* `mulOp`), not in
+   any bundle. The real declaration is **`BookProof.YangMillsHermite.mulOp`**
+   (`Definitions/Def_ChapterYangMillsHermite.lean:135`, inside
+   `namespace BookProof.YangMillsHermite`), verified with `#check` against
+   `/tmp/published_mirror`. The generated sols fully-qualified the *theorem's* namespace
+   (`HermiteBandHigher`) instead of the *provider's* (`YangMillsHermite`); the Thm files got
+   away with it because they reference bare `mulOp` under `open BookProof.YangMillsHermite`.
+   Server verdicts said `Unknown identifier` for `add'`, `smul`, `eq_mulXPoly` and
+   `Ambiguous term` for `one`, `mul`.
+   **Fixed**: 5 sols rewritten `BookProof.HermiteBandHigher.mulOp` →
+   `BookProof.YangMillsHermite.mulOp` (statement + simp lemma args).
+2. **`mulOp_sum` imported `Thm_BookProof_HermiteBandHigher_mulOp_add'`** — the platform
+   module is named from the *declaration* (`mulOp_add_prime`), so the server answered
+   `unknown import: Theorems.Thm_BookProof_HermiteBandHigher_mulOp_add'`. Confirmed via
+   `GET /theorems/:id`: `theorem_name = BookProof.HermiteBandHigher.mulOp_add_prime`.
+   **Fixed**: import rewritten to `Thm_BookProof_HermiteBandHigher_mulOp_add_prime`.
+   The offline oracle resolves `_prime` modules back to the apostrophe stub by declaration
+   (`check_pending_offline._stub_declaring`), so offline and server agree now.
+
+Sweep rule for this class: a fully-qualified `BookProof.<Chapter>.<name>` in a generated
+sol is only valid if *that* chapter's Def bundle declares `<name>`; providers live in other
+chapters (like `mulOp`), so prefer the bare name + the file's existing `open` lines, or
+qualify with the PROVIDER namespace.
+
+## 3. The apostrophe-import class (54 pending sols, 67 imports — NOT yet rewritten)
+
+Beyond mulOp_sum, **54 pending sols import `Theorems.Thm_<slug>'`** where the local stub's
+declaration was renamed `_prime` (the `_prime` rename wave). They pass offline (the mirror
+stages the slug spelling) but the server names modules from the declaration →
+`unknown import`, exactly like mulOp_sum. 67 import instances across them (examples:
+`CarlemanSimplex_tsub_add_cancel_of_le'`, `FockSchur_up_apply'`,
+`nsFlowUnitary_eq_matrixFlow'`, `triple_swap'`). Precedent: 14 sols already import `_prime`
+modules and 6 of them are `done`.
+**Fix (pending)**: for each pending sol, rewrite `import Theorems.Thm_X'` →
+`import Theorems.Thm_X_prime` when the local stub declares `X_prime` and its thm is done;
+then oracle-validate in chunks and upload. 4 of the 71 instances have no `_prime`
+declaration — those need per-item inspection (leave alone until checked).
+
+## 4. State / next actions
+
+- Sol done **4,127** / pending **5,216**; ready-now list built with the uploader's guards is
+  tiny (`/tmp/t61_ready.txt`, 5 — includes 2 Friedrichs dead ends), because t59 consumed the
+  oracle-ok backlog. The lever order for the 4:1 directive:
+  1. oracle-check the 127 thm-done+sibs-done sols that have no `ok` verdict yet (grows the
+     ready pool without touching thm uploads);
+  2. rewrite the 54 apostrophe-import sols (§3) and oracle them;
+  3. publish the sibling thms named in t59's 117 WAIT defers (each unblocks a sol batch) —
+     thm uploads purely as a means to sol uploads;
+  4. keep one sol chunk running at all times; never launch thm/def chunks while the thm:sol
+     ratio is 4:1.
+
+---
+
+# §2.27. Session 41, part 6 — t61/t62 harvest, the ambiguous-8 root cause, fix22
+
+Standing directive (user, again): **published theorems outnumber published sols ~4:1**;
+fix failed sols while uploads run, then re-upload — every upload slot carries `--kind sol`.
+
+## 1. t61 + t62 results (all sol, 0 FAIL)
+
+- **t61** (6 mulOp sols after the `BookProof.HermiteBandHigher.mulOp` qualifier fix):
+  5 DONE + 1 transient DB-error FAIL (`mulOp_one`) which **succeeded on retry**
+  (`/tmp/chunk_t61_sol.log`, `/tmp/chunk_t61b_sol.log`).  sol done 4,127 → 4,133.
+- **t62** (23 sols whose FAIL verdicts went stale once their thms published):
+  **23 DONE / 0 FAIL** (`/tmp/chunk_t62_sol.log`).  sol done 4,133 → **4,156**.
+- Of the 124 stale-FAIL sols rechecked in 4 oracle chunks, 23 came back `ok` (uploaded as
+  t62); **101 still genuinely fail**.
+
+## 2. The 101-FAIL taxonomy (sampled) and what is actionable
+
+| Class | Count | Status |
+| :--- | ---: | :--- |
+| `Ambiguous term` at root | 8 | **fixed this round (fix22, §3)** |
+| `unfold`-missing-`by` + trailing `theo` garbage | 3 | **fixed (generator slice defect)** |
+| `hcomm` (published statement drops `include hcomm`) | 3 | deferred: statement-side defect |
+| `diagOp_apply` | 2 | deferred: per-item defects |
+| `Unknown identifier` | 29 | deferred: heterogeneous, per-item |
+| rest / mixed | 56 | deferred: per-item |
+
+The hcomm class is unfixable from the sol side (the source needs the hypothesis, the
+published statement omits it) — same shape as the qg3D class; goes to the statement-fix
+queue, not the sol queue.
+
+## 3. fix22: the ambiguous-8 root cause and the fixes (all 8)
+
+Root cause found by staging the 12 needed Thm stubs and compiling full error messages
+(`/tmp/amb8`, `/tmp/amb8b`): the source theorem lives **inside** `namespace
+BookProof.<Chapter>`, so a bare name resolves enclosing-namespace-first; the sol's
+`theorem solution` sits at **root** with the identical `open` list, so the same bare name
+becomes a genuine ambiguity between the opened namespace and a root-level inline helper.
+
+Per-file fixes:
+
+1. **`bookCCR_poly`, `gaussGenPoly_eq`** — sol had BOTH `import Thm_..._momPoly_apply`
+   (now published) AND an inline `private theorem momPoly_apply`.  Deleted the inline
+   helper; bare uses now resolve via `open BookProof.BookBrstYangMills` to the import.
+2. **`ShiftedHermiteCore_hasDerivAt_pgFunT_sec`** — same shape for `dPoly_apply`; the
+   inline copy had also been hit by the dPoly qualification pass (renaming a private decl
+   to a fully-qualified name = "non-private declaration already declared").  Deleted the
+   inline copy, kept the qualified reference (resolves against the import).
+3. **`SchrodingerCutoff_cutoff_energy_estimate`** — file was **truncated mid-tactic**
+   (ends `nlinarith [hVz x` — generator slice defect).  Completed the last line to match
+   source (`ChapterSchrodingerCutoffEsa.lean:388`): `sq_nonneg ‖u x‖, norm_nonneg (u x)`.
+4. **`LorentzRealRepFull_finrank_full_eq_add`, `..._decomposition_top`** —
+   `finrank_matrix` collided with Mathlib's `Module.finrank_matrix`; fixed by
+   fully-qualifying `BookProof.ChapterLorentzRealRepFull.finrank_matrix` (statement type
+   unchanged, so the exact-match rule holds).
+5. **`ChapterLayerNorm_scoreSoftmax_layerNorm_ge`** — verified `ok` after the
+   `_root_` qualification (first of the 8 to pass).
+6. **`bookOmega_eq_brstCharge`** — `rw [I_smul_gaussGen, sub_mul]` reports
+   `Did not find (?a - ?b) * ?c` on a goal that is visibly `(A - B) * chiOp c`.  The
+   published `Thm_..._I_smul_gaussGen` statement is byte-identical to source (verified
+   against `/tmp/amb8b/Theorems/`), and source compiles the identical proof — diagnosis
+   in flight via the oracle run (§4).
+
+Rule extracted: **never keep an inline helper whose Thm sibling is published** — the pair
+(compiled import + inline copy) is ambiguous exactly when the sol is at root.
+
+## 4. The apostrophe-import class — rewritten (supersedes §2.26-3)
+
+All **54 files / 71 import instances** rewritten `Thm_X'` → `Thm_X_prime` (0 had an
+unpublishable declaration).  All 71 currently sit behind **unpublished sibling thms**, so
+the class is sibling-blocked for now — but the imports are correct the moment each sibling
+publishes.  The oracle resolves `_prime` imports by declaration (`_stub_declaring`), so
+offline and server agree.
+
+## 5. State / next actions
+
+- thm done **4,495** / sol done **4,156** / sol pending **5,189** (state/pipeline.json).
+- Oracle run over the fix22 repair set (11 sols): `/tmp/oracle_repair11.sh`, logs
+  `/tmp/r11_<slug>.log`, runner log `/tmp/oracle_repair11.log`.
+- Next: upload oracle-ok repair slugs as **t63** (sol-only), then keep harvesting the
+  ready pool; thm uploads only as a means to unblock sol batches.
+
+---
+
+# §2.28. Session 41, part 7 — full-pool state, bookOmega verdict, t63 launched
+
+SKILL.md re-read: **v0.12.3** (matches the platform version reported at refresh).
+
+## 1. bookOmega_eq_brstCharge — the defect is in the SOURCE, not the sol
+
+The decisive experiment: compiling `timepiece331/BookProof/ChapterBookBrstYangMills.lean`
+itself (`lake env lean`, log `/tmp/src_brst.out`) fails with **the same two errors at the
+same proof steps** (source lines 660, 672; `SRC_RC=1`):
+
+- `rw [sub_mul]` — "Did not find `(?a - ?b) * ?c`" on a goal that prints as
+  `(∑ μ, ∑ a, D • mom μ a - ∑ …) * chiOp c = …`
+- `rw [Finset.sum_sub]` — "Did not find `∑ x ∈ ?m, (?f x - ?g x)`"
+
+The deep-terms probe (`/tmp/omega3.out`) shows the identical goal with the identical
+instance-elided `⋯`, in the sol's fully-qualified names.  So the sol is faithful to the
+source; the source proof is broken (the `-`/`*` instance chain in the goal does not match
+the lemma's pattern — likely a local/derived instance differing from Mathlib's
+`SubNegMonoid.toSub` path).  This is a **genuine proof repair**, not a mechanical class —
+park it as a per-item fix.
+
+## 2. Full-pool numbers (state/pipeline.json + state/offline_pending_check.json)
+
+| | |
+|---|---|
+| plan | 20,289 items = 686 def + 9,793 thm + 9,793 sol |
+| state | 9,171 done / 11,115 pending / 0 failed / 1 parked |
+| sol ledger | 4,156 done / 5,189 pending |
+| oracle sol | 3,904 ok / 3,562 FAIL (7,466 checked of 15,578 `Sol_*` files) |
+| oracle thm | 4,279 ok / 3,143 FAIL / 5 SKIP |
+| pending sols ∩ oracle | **1,660 ready (ok)** / 3,526 FAIL / 3 unchecked |
+
+Operator directive (this session): the platform now has **~4× as many published
+theorems as sols** — keep the sol upload slot busy while repairing, and re-upload every
+fixed sol.  t63 launched accordingly (see §4).
+
+## 3. The 3,526 pending-FAIL sols — revised taxonomy
+
+| class | ≈n | nature | action |
+|---|---|---|---|
+| `object file …/Definitions/Def_*.olean does not exist` | ~1,500 | **dep-blocked**: the def bundle is unpublished (def pending = 162) | publish the 162 pending defs, rebuild mirror, recheck |
+| `object file '…/containers/tmp/offline-sol-*'` (scratch shadow) | 339 | oracle artifact | recheck (scoped `--only`) |
+| other `missing-olean` (Thm modules) | 121 | oracle artifact | recheck |
+| unknown-namespace `CarlemanTwoStep`/`CarlemanSimplex` | 117 | thm stubs unpublished | unblocks when the sibling thms publish |
+| unknown-identifier | 210 | genuine per-item | fix by cluster |
+| unsolved goals | 49 | genuine proof gaps | per-item |
+| parse-error (truncated `theo`, unterminated comment, `ᴴ`) | 43 | generator slice defects | fixable mechanically |
+| type-mismatch | 33 | per-item | per-item |
+| ambiguous | 12 | fix22 class (11 done, bookOmega parked) | ✅ |
+| rewrite-failed | 7 | incl. bookOmega | per-item |
+
+Rule of thumb: **"object file does not exist" ≈ dependency wait, not a proof defect.**
+~2/3 of the FAIL pool is expected to flip to ok purely from publishing defs + a scoped
+oracle recheck, with zero proof edits.
+
+## 4. t63 launched (sol-only, oracle-vetted)
+
+- Ready list: `/tmp/ready_sol.txt` (1,660 = ledger-pending ∩ oracle-ok).
+- Chain: `/tmp/upload_chain_t63.sh` — 6 bounded chunks (`--kind sol --only-file`,
+  `--max-items 40 --parallel 50 --job-timeout 60 --max-seconds 600`), log
+  `/tmp/chunk_t63_sol.log`, stops early on a zero-progress chunk.
+- Local compile gate stays ON (`PROVE2ME_SKIP_LOCAL_COMPILE=0`).
+
+## 5. Next actions (ordered)
+
+1. While t63 runs: scoped oracle recheck of the 339 + 121 artifact-class FAILs.
+2. Fix the mechanical clusters (43 parse errors, 210 unknown-identifier grouped by name).
+3. Run the def upload (162 pending) → `build_published_mirror.py` → recheck the ~1,500
+   def-blocked sols → append them to the ready list for t64.
+4. bookOmega + the 49 unsolved-goals remain the genuinely hard per-item queue.
+
+---
+
+# §2.29. Session 42 — sequencer, corrupt-statement class, mechanical repairs
+
+## 1. The upload bottleneck moved: sols are thm-blocked
+
+- t63 (sol-only) churned on **WAIT (theorem not published yet)**: of 1,660
+  oracle-ready sols only **129** had their thm published; 1,531 were thm-pending
+  (all pending sols: 274 thm-done / 4,914 thm-pending).
+- ORDER is globally staged (all defs → all thms → all sols), so the t63 chain was
+  replaced by a **sequencer** (`/tmp/seq_upload.sh`, log `/tmp/seq_upload.log`):
+  per loop: `--kind def` chunk → `--kind thm --only-file /tmp/thm_unblock.txt`
+  (1,536 = thm-pending whose slug has an oracle-ok sol, + 14 sibling thms that
+  block other sols) → recompute ready → `--kind sol --only-file /tmp/ready_sol.txt`.
+- State facts: plan 20,289 (686 def / 9,793 thm / 9,793 sol); sol ledger 4,156 done /
+  5,189 pending; oracle sol 3,904 ok / 3,562 FAIL.  Of the 3,526 pending-FAIL sols:
+  **2,978 are stale-scratch oracle artifacts**, 65 def-blocked, 483 real defects.
+- Recheck runners: `/tmp/oracle_recheck_runner.sh` over 30 chunks of the 2,978
+  (`/tmp/oracle_recheck_000.txt`…), plus `/tmp/supervisor_recheck.sh` which waits
+  for chunk 000, kills the runner, inserts the repaired batch as `000a`, restarts.
+  Single-writer rule: **never two check_pending_offline processes at once** (the
+  per-kind replace would clobber the other's verdicts).
+
+## 2. NEW root cause: corrupt Thm stubs and duplicate-slice sols (generator defect)
+
+- **74 pending + 11 published Thm stubs had truncated statements** (`stmt_of` = None,
+  e.g. `… ‖inner (𝕜 := by sorry`).  All 87 rebuilt from the timepiece331 source by
+  decl name: preamble + `theorem <fqn> <source stmt> := by sorry` (`/tmp/thm_rebuilt.txt`).
+- **Statement-anchored sol rebuild** (name- or stmt-match to the source decl, gated on
+  thm-stmt == src-stmt) rebuilt **78 sols** (`/tmp/sol_rebuilt.txt`): fixes the
+  truncated/duplicated-slice classes (parse errors, `unexpected token`, `unterminated
+  comment`, dangling `omit … in` / `/--` fragments, prose captured as proof).
+- A second shape: **match-form theorems** (`theorem foo : T | 0 => … | n+1 => …` —
+  legitimate Lean) whose sol held a truncated copy + a full duplicate at col 0;
+  fixed for the 2 BrstLeakage sols by deleting the truncated copy.
+- **`where`-corruption** (12 sols): injected `  <field> :=` + `  where` between the
+  header and the real fields — removed mechanically.
+- **missing `by`** (5 HermiteExpWall sols): `theorem … :=` followed directly by a
+  tactic line — `by` inserted (statement unchanged).
+- Corrupt-statement scans: `stmt_of == None` over Theorems/ (the 74) and over sols
+  (the 6); `by sorry` absent = 0 (all thm stubs carry a sorry).
+
+## 3. unknown-identifier (194) — taxonomy and fixes
+
+| class | n | fix |
+|---|---|---|
+| name declared in a def bundle the sol already imports but never `open`ed | 110 | `open <ns>` added (namespace read from the def file) |
+| name in a def bundle not imported | 28 | `import Definitions.Def_X` + `open <ns>` (mirror must hold the olean) |
+| name in a **published** sibling thm | 3 | `import Theorems.Thm_<sibling>` + `open` |
+| name in a **pending** sibling thm | ~30 | unblocked when the sibling publishes (14 sibling thms added to thm_unblock) |
+| missing `variable` line (thm has it, sol doesn't — autoImplicit=false bite) | 2 | variable line copied |
+| statement-side defect (hcomm-class) / sliced words (`eal`,`tary`,`rflanslation`) / tactic words | rest | per-item park |
+
+## 4. Statement-mismatch audit (rule 1 pre-flight)
+
+`stmt_of(sol) == stmt_of(thm)` over all 5,188 pending sols: 6 unparseable (rebuilt),
+7 mismatches = **5 benign** (full qualification only — type-identical server-side)
++ 2 duplicate-slice (fixed).  Opens audit: 278 sols lacked a thm `open`, but only 2
+were FAIL-verified (the rest were already oracle-ok — thm opens are chapter-wide).
+
+## 5. Ambiguity (fix22 follow-up)
+
+- `ChapterReconstruct.offDiag_eq` resolved: **`Finset.offDiag` vs
+  `BookProof.ChapterReconstruct.offDiag`** — ambiguity fires only at bare (unapplied)
+  occurrences (`simp only [offDiag]`); applied uses in the statement elaborate fine.
+  Qualified the bare tactic-list uses in both Reconstruct sols.
+- The other 10 ambiguous sols (NsPartialFourier ×5, QgOuterFockFL ×3, ShiftedQuadratic
+  ×2) are being diagnosed with `/tmp/diag_sol.py` (full-error staging, per-file
+  timeout, log `/tmp/diag_amb12b.log`).
+- postfix-notation probe (`ᴴ`/`ᵀ` on matrices, `/tmp/postfix/`) produced no output
+  under load — the 2 SmOneParticle sols remain open questions (source compiles with
+  them; sol preamble may lack a notation-carrying `open`).
+
+## 6. Current parallel state
+
+| job | where | notes |
+|---|---|---|
+| sequencer (defs→thms→sols) | `/tmp/seq_upload.sh` → `/tmp/seq_upload.log` | 183 submissions in first 2 loops |
+| artifact recheck (2,978) | `/tmp/oracle_recheck_runner.sh` | 30 × 100 chunks, jobs=2 |
+| repaired-batch recheck (181) | inserted as chunk `000a` by supervisor | flips repaired sols into ready |
+| ambiguity diag | `/tmp/diag_sol.py` → `/tmp/diag_amb12b.log` | |
+
+Upload rule stays: **only oracle-ok ∧ ledger-pending ∧ thm-done sols** go up; the
+sequencer recomputes `/tmp/ready_sol.txt` every loop, so repaired sols join the queue
+automatically once their recheck lands ok.
+
+## 7. thm:sol imbalance, fail-class refresh, and the def-block wall (2026-10-10)
+
+The operator reported ~4× more published theorems than accepted sols and asked to fix
+failed sols while uploads run. Ground truth from the ledger (`state/pipeline.json`) +
+oracle verdicts (`state/offline_pending_check.json`):
+
+**thm:sol reconciliation.** Ledger reads thm `done`=4809 / sol `done`=4457 (≈1:1),
+which contradicts the server's ~4×. The gap is that sol `done` records a *submitted*
+submission id (`_do_legacy_sol` does poll to ACCEPTED, but the wave path and older
+runs mark `done` on submit), so server-rejected sols still read `done` locally. The
+honest denominator is **done theorems without an accepted sol = 352**: 144 have an
+oracle-ok sol (upload now), 143 have a failing sol (fix), 2 had no sol file at all.
+
+**Fail-class refresh (3553 non-ok sol verdicts).** genuine 2933 · missing-olean 503 ·
+unknown-namespace 117. The artifact classes are NOT transient-mirror drift: the
+top missing oleans (`Def_ChapterFermionFock` 53, `Def_ChapterGradedFock` 50,
+`Def_ChapterNsOneBodyDGamma` 45, …) are for **unpublished** bundles — absent from
+`state/defs_index.json` PUBLISHED (514) or FAILED. `published − mirror = 0`, i.e. the
+mirror already holds every published bundle, so a mirror rebuild recovers nothing.
+Those sols are **genuinely def-blocked**: the def must publish first. Correct lever =
+push the def pipeline (143 def pending), not rebuild the mirror.
+
+**Source-rebuild sweep (this session).** 451 pending sols rebuilt from the
+timepiece331 source (statement-gated: thm-stmt == src-stmt, proof renamed to
+`theorem solution`), covering the unsolved-goals 49, type-mismatch 32,
+unknown-identifier 198, unknown-namespace 104, plus truncated/parse/instance/
+rewrite buckets. 1 parked (`no-src-stmt-match`). Queued as 13 recheck chunks
+`/tmp/oracle_recheck_r2_*.txt` (451+2 slugs); r2 flips each repaired sol into
+`ready_sol` once its verdict lands ok. Note `rewrite-failed` (bookOmega, 7) rebuilds
+from a source proof that itself fails — recheck will keep them FAIL (honest).
+
+**2 missing sols generated.** `BookProof_ChapterA3_paulisigma_herm` and
+`_trace` had a published thm (done, ids present) but no `Solutions/` file. Both
+transplanted from source `ChapterA3h.lean` (`pauliσ_herm` fin_cases+ext+simp;
+`pauliσ_trace` fin_cases+simp+ring_nf), registered as sol-pending, verdict cleared,
+queued as `r2_012`.
+
+**Orchestrator hardening.** `nohup … &` inside a SYNC tool call is reaped with the
+launching process group (the sequencer died at LOOP 1 twice). Now launched under
+`setsid … < /dev/null & disown`, parented to init, survives the call. Chain order:
+stale-pool runner (31×100, jobs=2) → follower_000 (redo chunk 000) → follower_b
+(repaired batch) → follower_r2 (the 453 rebuilt; **skips `.done`, and only marks
+`.done` when rc≠124** so a timeout re-runs rather than silently losing slugs).
+Sequencer = `/tmp/seq_upload3.sh` (200 loops; was 12, which expired at 13:49).
+
+**Ambiguity ×12.** 2 `ChapterReconstruct.offDiag_*` already rc=0 (bare-occurrence
+qualification fixed them). Remaining 10 (NsPartialFourier ×5, QgOuterFockFL ×3,
+ShiftedQuadratic ×2) need full-error staging; the diag kept dying to process-group
+cleanup — relaunch under setsid. One (postcompCLM) is blocked on a missing
+`Thm_*_apply.olean` in the local mirror, not on ambiguity.

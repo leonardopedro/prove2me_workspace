@@ -1,6 +1,7 @@
 -- Generated from ChapterSuperBracket.lean — solution of BookProof.ChapterSuperBracket.eps_mul_self
 import Mathlib
 import Definitions.Def_ChapterSuperBracket
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterSuperBracket
 
 

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sum
 import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 
@@ -11,9 +14,13 @@ open BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 
 
 open FullEsa
+open BookProof.NavierStokesFlow.FullEsa.NSFullData
+open BookProof.NavierStokesFlow.LagrangianEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : IsSymmetricDom L.drift := IsSymmetricDom.sum Finset.univ fun i _ => (L.drive_symm i).real_smul _
+
+theorem solution : IsSymmetricDom L.drift :=
+  IsSymmetricDom.sum Finset.univ fun i _ => (L.drive_symm i).real_smul _

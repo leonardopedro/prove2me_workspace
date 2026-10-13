@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterDisplacedThermalMulti
 import Theorems.Thm_BookProof_ChapterDisplacedThermalMulti_dtBornMulti_eq_softmax
 import Theorems.Thm_BookProof_ChapterCoherentGeometry_bornWeight_eq_scoreSoftmax_neg_dist_sq
+import Definitions.Def_ChapterDisplacedThermalOverlap
+import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterDisplacedThermalMulti
 
 

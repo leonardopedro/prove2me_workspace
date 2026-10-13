@@ -1,6 +1,11 @@
 -- Generated from ChapterHermiteExpWall.lean — solution of BookProof.HermiteExpWall.psi_apply
 import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteExpWall
 
 

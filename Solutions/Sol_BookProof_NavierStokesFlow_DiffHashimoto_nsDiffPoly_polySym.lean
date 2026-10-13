@@ -4,6 +4,16 @@ import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_polySym_sum
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_fieldPoly_polySym
 import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
@@ -20,6 +30,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
+open BookProof.YangMillsHermite
 noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)

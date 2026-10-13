@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_SmCar_car_annih_annih
 import Theorems.Thm_BookProof_SmCar_car_annih_creat_of_ne
 import Theorems.Thm_BookProof_SmCar_car_annih_creat_self
 import Theorems.Thm_BookProof_SmCar_car_creat_creat
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmBrstGhost
 
 

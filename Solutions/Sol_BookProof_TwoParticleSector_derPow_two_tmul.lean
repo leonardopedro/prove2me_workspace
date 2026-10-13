@@ -1,6 +1,10 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — solution of BookProof.TwoParticleSector.derPow_two_tmul
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 
@@ -8,6 +12,7 @@ open BookProof.TwoParticleSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 
@@ -15,7 +20,12 @@ noncomputable section
 /-! Helper: the elementary-tensor equations of `inclPow` / `derPow`.  The platform's
 published `Def_ChapterTensorGraphCore` carries the definitions but not these three `rfl`
 equations, and a solution may not rely on unpublished declarations, so they are stated
-locally (this file is standalone: top-level `theorem solution` still follows). -/
+locally (this file is standalone: top-level `
+@[simp] private theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
+    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
+    derPow Hs D₂ A 0 x = 0 := rfl
+
+theorem solution` still follows). -/
 
 @[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
     (a : D₂) (b : ((domSpace Hs D₂).pow n)) :

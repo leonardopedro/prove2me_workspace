@@ -1,6 +1,20 @@
 -- Generated from ChapterYangMillsNonAbelianEsa.lean — solution of BookProof.YangMillsNonAbelianEsa.ymIdx_injective
 import Mathlib
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterDegKatoEsa
+import Definitions.Def_ChapterHermiteGraphApprox
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.YangMillsNonAbelianEsa
 
 

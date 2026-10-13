@@ -7,6 +7,8 @@ import Theorems.Thm_BookProof_CarlemanSimplex_deg_tsub_of_le
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_simplexF
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_sInn
 import Theorems.Thm_BookProof_CarlemanSimplex_ltermP_shift
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

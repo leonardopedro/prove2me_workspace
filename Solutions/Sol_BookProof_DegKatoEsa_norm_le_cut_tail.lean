@@ -8,6 +8,17 @@ import Theorems.Thm_BookProof_DegEnergy_norm_cx
 import Theorems.Thm_BookProof_QgOneParticleCc_cut_eq_one
 import Theorems.Thm_BookProof_QgOneParticleCc_cut_mem_Icc
 import Theorems.Thm_BookProof_QgOneParticleCc_norm_le_tailNorm
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterDegEnergyEstimate
+import Definitions.Def_ChapterMollifierL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.DegKatoEsa
 
 
@@ -18,6 +29,8 @@ open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc BookProof.DegSchrodinger
 open BookProof.ConvolutionCalc BookProof.DegEnergy BookProof.MollifierL2
+open BookProof.HermiteProductCore
+open BookProof.ScalaronEsa
 
 noncomputable section
 

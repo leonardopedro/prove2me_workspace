@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_contDiff_normSqPow
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_contDiff_rclmPow
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonic
 
 

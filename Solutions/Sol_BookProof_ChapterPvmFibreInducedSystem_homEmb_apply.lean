@@ -1,6 +1,13 @@
 -- Generated from ChapterPvmFibreInducedSystem.lean — solution of BookProof.ChapterPvmFibreInducedSystem.homEmb_apply
 import Mathlib
 import Definitions.Def_ChapterPvmFibreInducedSystem
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterPvmInducedSystem
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterL2FibreSum
+import Definitions.Def_ChapterHilbertSumIntertwine
 open BookProof.ChapterPvmFibreInducedSystem
 
 

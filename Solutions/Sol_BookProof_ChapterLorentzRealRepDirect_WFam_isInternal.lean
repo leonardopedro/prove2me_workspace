@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
 import Theorems.Thm_BookProof_ChapterLorentzRealRepDirect_iSup_WFam_eq_top
 import Theorems.Thm_BookProof_ChapterLorentzRealRepDirect_sum_finrank_WFam
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRepFull
 open BookProof.ChapterLorentzRealRepDirect
 
 

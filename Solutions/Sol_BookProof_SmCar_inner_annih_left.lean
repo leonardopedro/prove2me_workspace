@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_inner_creat_left
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 

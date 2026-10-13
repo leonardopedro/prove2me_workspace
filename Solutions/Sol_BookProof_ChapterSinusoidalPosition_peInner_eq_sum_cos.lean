@@ -1,6 +1,8 @@
 -- Generated from ChapterSinusoidalPosition.lean — solution of BookProof.ChapterSinusoidalPosition.peInner_eq_sum_cos
 import Mathlib
 import Definitions.Def_ChapterSinusoidalPosition
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSinusoidalPosition
 
 

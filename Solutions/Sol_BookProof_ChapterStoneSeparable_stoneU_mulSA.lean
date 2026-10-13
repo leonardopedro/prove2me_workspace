@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterStoneSeparable
 import Theorems.Thm_BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt
 import Theorems.Thm_BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterStoneSeparable
 
 
@@ -12,6 +17,8 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterUnboundedPosition
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
   [TopologicalSpace.SeparableSpace H]

@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_isSelfAdjoint
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinResolvent_tendsto
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 
@@ -18,8 +24,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {A : Dom →ₗ[ℂ] F} {γ : ℝ} {R : F →L[ℂ] F}
     (h : IsShiftInvert A γ R) (hsym : SymmetricOn Dom A) (b : HilbertBasis ℕ ℂ F)
     {z : ℂ} (hz : z.im ≠ 0) (u : F) :
     Tendsto (fun m : ℕ => resolvent (galerkinCompression R b m) z u) atTop
-      (nhds (resolvent R z u)) := galerkinResolvent_tendsto (h.isSelfAdjoint hsym) b hz u
+      (nhds (resolvent R z u)) :=
+  galerkinResolvent_tendsto (h.isSelfAdjoint hsym) b hz u

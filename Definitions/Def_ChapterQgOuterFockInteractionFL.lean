@@ -82,49 +82,6 @@ excitations, no symmetrization), and no spectrum, mass gap or continuum limit is
 Everything is `sorry`-free and `axiom`-free.
 -/
 
-namespace BookProof.QgOuterFockInteractionFL
-
-open Finset MvPolynomial
-open BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.QgHermiteOscillator BookProof.FarisLavine
-open BookProof.DirectSumEsa
-open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.QgOuterFockFullFL
-open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
-open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
-
-noncomputable section
-
-/-! ## 1. Uniform families of sector Hamiltonians -/
-
-/-- **A uniform family of kinetic-plus-squares Hamiltonians on the outer Fock sectors.**
-The `n`-particle Hamiltonian is `½ Σ_I κ_I π_I² + ½ Σ_r L_r²` with `L_r` the linear form
-of coefficient vector `vv n r`; the three bounds `km`, `a`, `b` are uniform in the
-particle number `n`.  No structural restriction whatsoever is placed on the linear forms:
-they may mix the coordinates of different particles. -/
-structure QgFamily where
-  /-- The index type of the linear forms of the `n`-particle sector. -/
-  R : ℕ → Type
-  [finR : ∀ n, Fintype (R n)]
-  /-- The signature of the kinetic term of the `n`-particle sector. -/
-  kap : ∀ n : ℕ, Fin (n * 84) → ℝ
-  /-- The coefficient vectors of the linear forms of the `n`-particle sector. -/
-  vv : ∀ n : ℕ, R n → Fin (n * 84) → ℝ
-  /-- The uniform bound on the signature. -/
-  km : ℝ
-  /-- The uniform row (`ℓ¹`-per-form) bound. -/
-  a : ℝ
-  /-- The uniform column (`ℓ¹`-per-coordinate) bound. -/
-  b : ℝ
-  km_nonneg : 0 ≤ km
-  a_nonneg : 0 ≤ a
-  b_nonneg : 0 ≤ b
-  kap_le : ∀ (n : ℕ) (I : Fin (n * 84)), |kap n I| ≤ km
-  row_le : ∀ (n : ℕ) (r : R n), ∑ I : Fin (n * 84), |vv n r I| ≤ a
-  col_le : ∀ (n : ℕ) (I : Fin (n * 84)), ∑ r : R n, |vv n r I| ≤ b
-
-attribute [instance] QgFamily.finR
-
 namespace QgFamily
 
 variable (F : QgFamily)

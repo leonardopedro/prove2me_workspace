@@ -1,6 +1,7 @@
 -- Generated from ChapterWignerLittleGroupOrbits.lean — solution of BookProof.ChapterWignerLittleGroupOrbits.posSemidef_diag2
 import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

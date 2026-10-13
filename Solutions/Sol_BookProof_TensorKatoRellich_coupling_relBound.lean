@@ -6,6 +6,10 @@ import Theorems.Thm_BookProof_TensorKatoRellich_norm_sum_tmul_le
 import Theorems.Thm_BookProof_TensorKatoRellich_pairLiftOp_apply
 import Theorems.Thm_BookProof_TensorKatoRellich_exists_pre
 import Theorems.Thm_BookProof_TensorSumEsa_cpairOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorKatoRellich
 
 
@@ -13,6 +17,7 @@ open BookProof.TensorKatoRellich
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSolidHarmonicTools.lean — solution of BookProof.ChapterSolidHarmonicTools.sum_inner_sq
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools
 
 

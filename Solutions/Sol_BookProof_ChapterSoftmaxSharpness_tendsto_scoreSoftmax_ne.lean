@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxSharpness
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_exp_mul_neg
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_denom
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
 
 

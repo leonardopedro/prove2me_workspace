@@ -12,9 +12,8 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {H : Type*} [NormedAddCommGroup H]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution : IsPropagator (fun (_ _ : ℝ) (x : H) => x) where
-  refl :=
-  where
-    refl := by intro t x; rfl
-    cocycle := by intro t s r x; rfl
-    isometry := by intro t s x; rfl
+  refl := by intro t x; rfl
+  cocycle := by intro t s r x; rfl
+  isometry := by intro t s x; rfl

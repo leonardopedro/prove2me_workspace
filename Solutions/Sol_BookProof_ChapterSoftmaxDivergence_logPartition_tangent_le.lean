@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_ChapterSoftmaxDivergence_klDiv_scoreSoftmax
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxDivergence
 
 
@@ -16,15 +19,17 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta gamma : ℝ) (s : Fin m → ℝ) (i : Fin m) :
     logPartition beta s + (gamma - beta) * meanScore beta s ≤ logPartition gamma s := by
-
   have hnn : 0 ≤ klDiv (scoreSoftmax beta s) (scoreSoftmax gamma s) :=
     klDiv_nonneg (fun j => scoreSoftmax_nonneg beta s j) (scoreSoftmax_sum_one beta s i)
       (fun j => scoreSoftmax_pos gamma s j) (le_of_eq (scoreSoftmax_sum_one gamma s i))

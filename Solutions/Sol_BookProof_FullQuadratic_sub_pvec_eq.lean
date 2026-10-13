@@ -1,6 +1,19 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.sub_pvec_eq
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FullQuadratic
 
 
@@ -25,9 +38,9 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (a : Fin d →₀ ℕ) (i j : Fin d) :
     a - Finsupp.single j 1 - Finsupp.single i 1 = a - pvec i j := by
-
   ext k
   simp only [pvec, Finsupp.tsub_apply, Finsupp.add_apply]
   omega

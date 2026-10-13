@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionCollision
 import Theorems.Thm_BookProof_ChapterAttentionCollision_collisionProb_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionCollision
 
 

@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp
 import Theorems.Thm_BookProof_ChapterH8_coordIncl_adjoint_comp
 import Theorems.Thm_BookProof_ChapterH8_orthonormalEmbedding_nested
 import Theorems.Thm_BookProof_ChapterH8_sirk_band_refinement_poly
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 open BookProof.ChapterH8
 
 

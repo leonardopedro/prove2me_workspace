@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterH3
 import Theorems.Thm_BookProof_ChapterH3_duhamel_scalar
+import Definitions.Def_ChapterH1
 open BookProof.ChapterH3
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesMomentumPerturbation.lean — solution of BookProof.NavierStokesFlow.MomentumPerturbation.linSymbol_ge_one
 import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumPerturbation
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 

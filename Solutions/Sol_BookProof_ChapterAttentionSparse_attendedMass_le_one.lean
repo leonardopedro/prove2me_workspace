@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterAttentionSparse_attendedMass_univ
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionSparse
 
 

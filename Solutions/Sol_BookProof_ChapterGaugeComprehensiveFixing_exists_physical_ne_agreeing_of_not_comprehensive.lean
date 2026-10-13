@@ -1,6 +1,7 @@
 -- Generated from ChapterGaugeComprehensiveFixing.lean — solution of BookProof.ChapterGaugeComprehensiveFixing.exists_physical_ne_agreeing_of_not_comprehensive
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
+import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
 
@@ -13,11 +14,11 @@ variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
 variable {X : Type*} [TopologicalSpace X] {G : Type*} [Group G] [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution
     (hS : ¬ IsComprehensiveGaugeFixing G S) :
     ∃ f f' : X → ℝ, IsPhysicalObservable G f ∧ IsPhysicalObservable G f' ∧
       (∀ s ∈ S, f s = f' s) ∧ f ≠ f' := by
-
   classical
   rw [IsComprehensiveGaugeFixing] at hS
   push_neg at hS

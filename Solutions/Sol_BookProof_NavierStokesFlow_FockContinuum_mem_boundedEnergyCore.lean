@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockContinuum.lean — solution of BookProof.NavierStokesFlow.FockContinuum.mem_boundedEnergyCore
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 

@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.FriedrichsExtension
 
 

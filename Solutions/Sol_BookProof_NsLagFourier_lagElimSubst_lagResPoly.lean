@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_C
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_X_accIdx
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_X_sIdx
 import Theorems.Thm_BookProof_NsLagFourier_lagElimSubst_piola
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsLagFourier
 
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesBilinearEsa.lean — solution of BookProof.NavierStokesFlow.BilinearEsa.bilH_domain_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesBilinearEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.BilinearEsa
 

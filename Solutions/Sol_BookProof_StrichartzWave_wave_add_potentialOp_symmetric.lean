@@ -4,6 +4,8 @@ import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_potentialOp_symmetric
 import Theorems.Thm_BookProof_StrichartzWave_opL2_add
 import Theorems.Thm_BookProof_StrichartzWave_wave_symmetric
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

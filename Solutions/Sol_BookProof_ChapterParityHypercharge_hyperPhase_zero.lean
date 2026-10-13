@@ -1,6 +1,7 @@
 -- Generated from ChapterParityHypercharge.lean — solution of BookProof.ChapterParityHypercharge.hyperPhase_zero
 import Mathlib
 import Definitions.Def_ChapterParityHypercharge
+import Definitions.Def_ChapterA3
 open BookProof.ChapterParityHypercharge
 
 

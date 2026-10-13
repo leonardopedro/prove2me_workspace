@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_coe_transportDomain
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transport_adjointDomain
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
 
 

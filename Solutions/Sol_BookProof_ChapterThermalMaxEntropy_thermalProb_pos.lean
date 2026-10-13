@@ -1,6 +1,9 @@
 -- Generated from ChapterThermalMaxEntropy.lean — solution of BookProof.ChapterThermalMaxEntropy.thermalProb_pos
 import Mathlib
 import Definitions.Def_ChapterThermalMaxEntropy
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterThermalMaxEntropy
 
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterPauliFundamental.lean — solution of BookProof.ChapterPauliFundamental.cliff_anticomm
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

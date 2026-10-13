@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterWeylSL2Unipotent
 import Theorems.Thm_BookProof_ChapterWeylSL2Unipotent_isExpOfSl2_of_unipotent
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_weyl_complete_reducibility_SL2
+import Definitions.Def_ChapterWeylSl2
+import Definitions.Def_ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Unipotent
 
 

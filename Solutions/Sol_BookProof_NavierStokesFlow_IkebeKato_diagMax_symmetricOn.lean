@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — solution of BookProof.NavierStokesFlow.IkebeKato.diagMax_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavineCore
+open BookProof.FarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 

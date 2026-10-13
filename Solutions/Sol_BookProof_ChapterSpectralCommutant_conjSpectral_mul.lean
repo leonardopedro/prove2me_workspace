@@ -1,6 +1,10 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.conjSpectral_mul
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterSpectralCommutant
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSymmetryEntropy.lean — solution of BookProof.SymmetryEntropy.exists_eq_one_of_isDeterministicCol
 import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
+import Definitions.Def_ChapterMarkovEntropy
+import Definitions.Def_ChapterReconstruct
 open BookProof.SymmetryEntropy
 
 

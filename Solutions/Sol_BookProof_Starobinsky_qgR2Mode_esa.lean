@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterStarobinskyPotential
 import Theorems.Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_essentiallySelfAdjoint
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQuantumGravityDensitized
 open BookProof.Starobinsky
 
 

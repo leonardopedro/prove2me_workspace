@@ -1,6 +1,7 @@
 -- Generated from ChapterObservableOperator.lean — solution of BookProof.ChapterObservableOperator.bornProb_nonneg
 import Mathlib
 import Definitions.Def_ChapterObservableOperator
+import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterObservableOperator
 
 

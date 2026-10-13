@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
 import Theorems.Thm_BookProof_ChapterSpectralMultiplication_isProbabilityMeasure_spectralMeasure
 import Theorems.Thm_BookProof_ChapterSpectralMultiplication_spectralUnitary_intertwines
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
 
 

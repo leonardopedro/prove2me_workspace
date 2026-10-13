@@ -1,6 +1,9 @@
 -- Generated from ChapterTensorSumChain.lean — solution of BookProof.TensorSumChain.chain_dense
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 open BookProof.TensorSumChain
 
 

@@ -1,7 +1,7 @@
 -- Generated from ChapterBrstTruncationLeakage.lean — solution of BookProof.BrstLeakage.norm_flow_sub_flow_le
 import Mathlib
 import Definitions.Def_ChapterBrstTruncationLeakage
-import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le_prime
+import Theorems.Thm_BookProof_BrstLeakage_norm_flow_sub_flow_apply_le'
 open BookProof.BrstLeakage
 
 

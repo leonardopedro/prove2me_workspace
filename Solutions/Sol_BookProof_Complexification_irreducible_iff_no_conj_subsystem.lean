@@ -10,6 +10,8 @@ import Theorems.Thm_BookProof_Complexification_Cx_complexify_top
 import Theorems.Thm_BookProof_Complexification_Cx_realPart_bot
 import Theorems.Thm_BookProof_Complexification_Cx_realPart_complexify
 import Theorems.Thm_BookProof_Complexification_Cx_realPart_top
+import Definitions.Def_ChapterA
+import Definitions.Def_Complexification
 open BookProof.Complexification
 
 

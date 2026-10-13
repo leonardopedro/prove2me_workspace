@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_ChapterA_Plin_commutes_mulI
 import Theorems.Thm_BookProof_ChapterA_Qanti_anticommutes_mulI
 import Theorems.Thm_BookProof_ChapterA_Plin_realCommutes
 import Theorems.Thm_BookProof_ChapterA_Qanti_realCommutes
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

@@ -3,11 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadSymbol_single
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
+
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HyperbolicQuadratic
-
-
-
 
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis

@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
 import Theorems.Thm_BookProof_NonnegSemigroup_expNeg_add
 import Theorems.Thm_BookProof_NonnegSemigroup_isSelfAdjoint_expNeg
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterNonnegSemigroup
 open BookProof.NonnegSemigroupGenerator
 
 

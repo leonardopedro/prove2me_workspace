@@ -1,6 +1,10 @@
 -- Generated from ChapterResolventCorrespondence.lean — solution of BookProof.ResolventCorrespondence.mem_relOfCLM_iff
 import Mathlib
 import Definitions.Def_ChapterResolventCorrespondence
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.ResolventCorrespondence
 
 

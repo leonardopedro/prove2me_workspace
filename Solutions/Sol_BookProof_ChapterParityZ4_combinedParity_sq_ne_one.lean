@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterParityZ4
 import Theorems.Thm_BookProof_ChapterParityZ4_combinedParity_sq
+import Definitions.Def_ChapterParity
+import Definitions.Def_ChapterParityQL
+import Definitions.Def_ChapterA3
 open BookProof.ChapterParityZ4
 
 

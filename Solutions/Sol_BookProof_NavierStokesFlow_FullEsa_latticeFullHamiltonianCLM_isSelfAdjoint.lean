@@ -3,21 +3,26 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_latticeAdvectionCLM_isSelfAdjoint
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterContinuityUnitary
+open BookProof.ChapterContinuityUnitaryInfinite
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (v : Fin 15 → LinfZ) (nu : ℝ) :
     IsSelfAdjoint (latticeFullHamiltonianCLM v nu) := by
-
   change star (latticeFullHamiltonianCLM v nu) = latticeFullHamiltonianCLM v nu
   rw [latticeFullHamiltonianCLM, star_sum]
   refine Finset.sum_congr rfl fun i _ => ?_

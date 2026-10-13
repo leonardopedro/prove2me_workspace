@@ -1,6 +1,12 @@
 -- Generated from ChapterHashimotoShiftInvert.lean — solution of BookProof.HashimotoShiftInvert.norm_shiftMap_ge
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 

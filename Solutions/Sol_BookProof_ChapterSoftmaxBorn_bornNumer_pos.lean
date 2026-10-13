@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxBorn
 import Theorems.Thm_BookProof_ChapterCoherentOverlap_coherentOverlap_pos
+import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 
 

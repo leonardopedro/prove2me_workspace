@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterGravityProjDirectSum
 import Theorems.Thm_BookProof_ChapterGravityProjDirectSum_mulVecLin_spatial_add_time
 import Theorems.Thm_BookProof_ChapterGravityProjDirectSum_mulVecLin_time_comp_spatial
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterGravityTimeProj
 open BookProof.ChapterGravityProjDirectSum
 
 

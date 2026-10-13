@@ -7,6 +7,19 @@ import Theorems.Thm_BookProof_FullQuadratic_add_sub_single_eq_shiftm
 import Theorems.Thm_BookProof_FullQuadratic_add_single_apply_ne
 import Theorems.Thm_BookProof_FullQuadratic_smul_shiftm_diag
 import Theorems.Thm_BookProof_ModeQuadratic_lop_hermiteMv
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.FullQuadratic
 
 
@@ -23,6 +36,7 @@ open BookProof.CarlemanTwoStep
 open BookProof.CarlemanSimplex
 open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
 
 noncomputable section
 

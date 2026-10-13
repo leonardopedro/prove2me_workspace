@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterGravityInvMetric
 import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_mulVec_self
+import Definitions.Def_ChapterGravityMetric
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityInvMetric
 
 

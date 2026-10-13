@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeIndependent
 
 

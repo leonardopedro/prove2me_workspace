@@ -5,12 +5,24 @@ import Theorems.Thm_BookProof_CarlemanUnboundedHop_kernelOp_symmetric
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterKernelBound
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.CarlemanUnboundedHop
 
 
 
 
 open Finset
+open BookProof.EsaClosure
+open BookProof.KernelBound
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
+open BookProof.StoneBridge
 
 noncomputable section
 

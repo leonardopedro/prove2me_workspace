@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_summable_witness_mul_sq
 import Theorems.Thm_BookProof_EsaOneParticle_witness_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterTempleSeparationNecessary
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.EsaOneParticle
 
 
@@ -10,6 +16,9 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.TempleSeparationNecessary
+open BookProof.ChapterUnboundedPosition
 
 noncomputable section
 

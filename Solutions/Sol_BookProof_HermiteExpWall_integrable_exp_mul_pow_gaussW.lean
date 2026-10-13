@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
 import Theorems.Thm_BookProof_QgHermiteCore_exp_abs_le_const_mul_exp_sq
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteExpWall
 
 

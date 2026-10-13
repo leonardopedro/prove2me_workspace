@@ -5,6 +5,13 @@ import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_isPositiveSelfAdj
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichs_unique_selfAdjoint
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2ExampleMatrix_unbounded
 import Theorems.Thm_BookProof_HermiteGalerkin_finiteModeDomain_dense
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+open scoped lp
 open BookProof.FriedrichsCanonical
 
 
@@ -12,6 +19,8 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.HermiteGalerkin
+open BookProof.YangMillsFriedrichs
 
 noncomputable section
 

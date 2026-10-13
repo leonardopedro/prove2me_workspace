@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_ReducedEsa_commutes_symProj
 import Theorems.Thm_BookProof_ReducedEsa_symProj_mem
 import Theorems.Thm_BookProof_ReducedEsa_symmetricOn_redOp
 import Theorems.Thm_BookProof_TensorCore_symmetricOn_sectorOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 
@@ -15,6 +20,7 @@ open BookProof.TwoParticleSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

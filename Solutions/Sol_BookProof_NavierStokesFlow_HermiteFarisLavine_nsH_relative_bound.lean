@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_tsum_ampSeq_sq
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_normSq_hFun_le
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_tsum_shift_le
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
@@ -15,6 +18,8 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+open BookProof.NavierStokesFlow.SignedShift
+open BookProof.NavierStokesFlow.SignedShift.SignedHop
 
 variable {κ : ℝ}
 variable {x : maxDom (oscSymbol κ)}

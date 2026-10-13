@@ -1,6 +1,8 @@
 -- Generated from ChapterSpectralEnergyBound.lean — solution of BookProof.ChapterSpectralEnergyBound.hasDerivAt_evolve
 import Mathlib
 import Definitions.Def_ChapterSpectralEnergyBound
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
 
 

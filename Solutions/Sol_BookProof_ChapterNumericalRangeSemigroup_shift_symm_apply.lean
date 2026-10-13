@@ -1,6 +1,7 @@
 -- Generated from ChapterNumericalRangeSemigroup.lean — solution of BookProof.ChapterNumericalRangeSemigroup.shift_symm_apply
 import Mathlib
 import Definitions.Def_ChapterNumericalRangeSemigroup
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterNumericalRangeSemigroup
 
 

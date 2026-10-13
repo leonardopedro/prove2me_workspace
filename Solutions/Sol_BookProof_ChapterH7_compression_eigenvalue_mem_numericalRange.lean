@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterH7
 import Theorems.Thm_BookProof_ChapterH7_inner_self_real
 import Theorems.Thm_BookProof_ChapterH6_krylovRetainsDominantSpectrum
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterH7
 
 

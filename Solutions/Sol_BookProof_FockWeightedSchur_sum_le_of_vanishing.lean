@@ -1,6 +1,15 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.sum_le_of_vanishing
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 
@@ -16,9 +25,9 @@ variable {w : ℕ → ℝ}
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {f : ℕ → ℝ} {S L : Finset ℕ} (hf : ∀ j, 0 ≤ f j)
     (hz : ∀ j, j ∉ S → f j = 0) : ∑ j ∈ L, f j ≤ ∑ j ∈ S, f j := by
-
   classical
   have h1 : ∑ j ∈ L, f j = ∑ j ∈ L ∩ S, f j := by
     refine (Finset.sum_subset Finset.inter_subset_left ?_).symm

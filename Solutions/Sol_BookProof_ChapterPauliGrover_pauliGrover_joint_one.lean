@@ -1,6 +1,7 @@
 -- Generated from ChapterPauliGrover.lean — solution of BookProof.ChapterPauliGrover.pauliGrover_joint_one
 import Mathlib
 import Definitions.Def_ChapterPauliGrover
+import Definitions.Def_ChapterConditional
 open BookProof.ChapterPauliGrover
 
 

@@ -9,6 +9,11 @@ import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_creA_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
 import Theorems.Thm_BookProof_FockSecondQuantization_up_self
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockPairPerturbation
 
 
@@ -19,6 +24,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+open BookProof.FockSecondQuantization
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

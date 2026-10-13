@@ -3,6 +3,18 @@ import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticDegenerate
 import Theorems.Thm_BookProof_QuadraticRotation_exists_rotConj_eigenvalues
 import Theorems.Thm_BookProof_QuadraticRotation_rotConj_eq
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterQuadraticRotationEsa
+import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneEigenflow
 open BookProof.ShiftedQuadraticDegenerate
 
 
@@ -26,11 +38,11 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {A : Matrix (Fin d) (Fin d) ℝ} (hA : A.IsHermitian)
     {w : Fin d → ℝ}
     (hw : ∀ v : Fin d → ℝ, (∀ i, ∑ j, A i j * v j = 0) → ∑ i, w i * v i = 0) :
     ∃ a : Fin d → ℝ, ∀ i, ∑ j, A i j * a j = w i := by
-
   classical
   obtain ⟨O, hO, hAO⟩ := exists_rotConj_eigenvalues hA
   set c := hA.eigenvalues with hc

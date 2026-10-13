@@ -1,6 +1,9 @@
 -- Generated from ChapterTensorSumEsa.lean — solution of BookProof.TensorSumEsa.pairOp_apply
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorSumEsa
 
 
@@ -8,6 +11,7 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

@@ -2,7 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterFockQuadraticEsa
 import Theorems.Thm_BookProof_FockQuadratic_wsum_add
-import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
+import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le'
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterA3n
 open BookProof.FockQuadratic
 
 
@@ -13,6 +19,7 @@ open scoped ENNReal
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
 
+open BookProof.ChapterA3n
 noncomputable section
 
 variable {ι : Type*}

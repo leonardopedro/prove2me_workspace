@@ -1,6 +1,15 @@
 -- Generated from ChapterNsFullLagrangianFockEsa.lean — solution of BookProof.NsFullLagrangianEsa.eulMomIdx_injective
 import Mathlib
 import Definitions.Def_ChapterNsFullLagrangianFockEsa
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.NsFullLagrangianEsa
 
 

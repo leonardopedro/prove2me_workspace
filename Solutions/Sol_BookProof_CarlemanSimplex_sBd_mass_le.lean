@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_sBd_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

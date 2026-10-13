@@ -14,6 +14,7 @@ Usage:
   python3 debug/build_candidate_mirror.py --targets targets.txt [--jobs N]
 """
 import argparse
+import concurrent.futures
 import hashlib
 import json
 import os
@@ -66,6 +67,9 @@ def topo(mods, deps_of):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--targets", required=True)
+    ap.add_argument("--jobs", type=int, default=1,
+                    help="compile this many modules concurrently (levels of the "
+                         "dependency DAG; the serial default is 1 process)")
     ap.add_argument("--report", default=None)
     ap.add_argument("--thm-out", default=None,
                     help="also write the theorem stubs that compiled, as bare slugs")
@@ -185,29 +189,55 @@ def main():
     logdir = (a.report + ".logs") if a.report else "/tmp/build_candidate_logs"
     os.makedirs(logdir, exist_ok=True)
 
-    dres, thm_res = {}, {}
-    for kind, m in topo(sorted(universe), lambda k: udeps[k]):
+    def compile_one(kind, m):
         src = "Definitions" if kind == "D" else "Theorems"
         p = f"{MIRROR}/{src}/{m}.lean"
         if not os.path.exists(p):
-            (dres if kind == "D" else thm_res)[m] = "NOSRC"
-            continue
-        r = subprocess.run([lean, "-DautoImplicit=false", "-o", f"{src}/{m}.olean", f"{src}/{m}.lean"],
-                           cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
-                           capture_output=True, text=True, timeout=1800)
+            return kind, m, "NOSRC"
+        try:
+            r = subprocess.run([lean, "-DautoImplicit=false", "-o", f"{src}/{m}.olean", f"{src}/{m}.lean"],
+                               cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
+                               capture_output=True, text=True, timeout=1800)
+        except subprocess.TimeoutExpired:
+            return kind, m, "TIMEOUT"
         out = r.stdout + r.stderr
         if r.returncode == 0:
-            res = "OK"
+            return kind, m, "OK"
+        errline = next((l for l in out.splitlines() if "error" in l), "")
+        # Single-line cell, no tabs (TSV); identifier-visible width.
+        with open(f"{logdir}/{m}.log", "w") as fh:
+            fh.write(out)
+        return kind, m, "FAIL " + errline.strip().replace("\t", " ")[:300]
+
+    dres, thm_res = {}, {}
+    order = topo(sorted(universe), lambda k: udeps[k])
+    # Levels, not a flat topo walk: with --jobs>1 every module at the same
+    # depth compiles at once.  A dependency that `topo` placed LATER (a cycle
+    # is broken arbitrarily) is not waited for, so a level never deadlocks on
+    # an edge the ordering could not honour -- the cycle just shows up as the
+    # usual cascade in the BLOCKED pass below.
+    pos = {x: i for i, x in enumerate(order)}
+    lvl = {}
+    for x in order:
+        deps = [d for d in udeps[x] if d in pos and pos[d] < pos[x]]
+        lvl[x] = 0 if not deps else 1 + max(lvl[d] for d in deps)
+    levels = {}
+    for x in order:
+        levels.setdefault(lvl[x], []).append(x)
+    for n in sorted(levels):
+        work = levels[n]
+        if a.jobs > 1:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=a.jobs) as ex:
+                results = list(ex.map(lambda x: compile_one(*x), work))
         else:
-            errline = next((l for l in out.splitlines() if "error" in l), "")
-            # Single-line cell, no tabs (TSV); identifier-visible width.
-            res = "FAIL " + errline.strip().replace("\t", " ")[:300]
-            with open(f"{logdir}/{m}.log", "w") as fh:
-                fh.write(out)
-        if kind == "D":
-            dres[m] = res
-        else:
-            thm_res[m] = res
+            results = [compile_one(*x) for x in work]
+        for kind, m, res in results:
+            if kind == "D":
+                dres[m] = res
+            else:
+                thm_res[m] = res
+        print(f"  level {n}: {sum(1 for _, _, r in results if r == 'OK')}/{len(work)} OK",
+              flush=True)
     ok_thm = {m for m, v in thm_res.items() if v == "OK"}
     print(f"Theorems: {len(ok_thm)}/{len(thm_mods)} compiled")
 
@@ -275,6 +305,39 @@ def main():
     okb = sum(1 for t in targets
               if (gate.get(t) or {}).get("status") == "OK")
     print(f"def gate written: {gate_path} ({okb}/{len(targets)} targets OK)")
+
+    # Theorem stubs get the SAME durable gate.  Without it the `--kind thm` chunk
+    # has no compile check at all -- `def_gate_fresh` only answers for kind==def
+    # and check_pending_offline's verdict is often a mirror artifact -- so the
+    # drain submits statements the compiler has already rejected and burns the
+    # 5-attempt budget on each.  Measured 2026-10-12: 15 such attempts in one
+    # round, all `formal statement does not compile`, 24 distinct statements
+    # carrying `Unknown identifier` for a helper the generator never stubbed.
+    # Same stamp contract as the def gate, so editing a stub invalidates it.
+    thm_gate_path = os.path.join(WS, "state", "thm_gate.json")
+    try:
+        tgate = json.load(open(thm_gate_path))
+        if not isinstance(tgate, dict):
+            tgate = {}
+    except (OSError, ValueError):
+        tgate = {}
+    for m in sorted(thm_mods):
+        p = f"{WS}/Theorems/{m}.lean"
+        try:
+            stamp = hashlib.sha1(open(p, "rb").read()).hexdigest()[:16]
+        except OSError:
+            stamp = None
+        res = thm_res.get(m, "NOTBUILT")
+        tgate[m[len("Thm_"):] if m.startswith("Thm_") else m] = {
+            "status": "OK" if res == "OK" else res,
+            "stamp": stamp,
+        }
+    tgate["_meta"] = {"generated": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                      "stubs": len(thm_mods)}
+    json.dump(tgate, open(thm_gate_path, "w"), indent=1)
+    tok = sum(1 for v in tgate.values()
+              if isinstance(v, dict) and v.get("status") == "OK")
+    print(f"thm gate written: {thm_gate_path} ({tok}/{len(thm_mods)} stubs OK)")
 
 
 if __name__ == "__main__":

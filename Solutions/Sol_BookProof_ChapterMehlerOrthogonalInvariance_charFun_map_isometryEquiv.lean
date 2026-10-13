@@ -1,6 +1,7 @@
 -- Generated from ChapterMehlerOrthogonalInvariance.lean — solution of BookProof.ChapterMehlerOrthogonalInvariance.charFun_map_isometryEquiv
 import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterMehlerOrthogonalInvariance
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmCyclicUnitary
 
 
@@ -11,6 +14,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterMackeyQuasiInvariant
+open BookProof.ChapterElectroweakFieldStrength
 
 attribute [local instance] Lp.simpleFunc.module Lp.simpleFunc.normedSpace
 

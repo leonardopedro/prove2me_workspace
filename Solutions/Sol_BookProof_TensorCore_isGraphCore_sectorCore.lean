@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TensorCore_exists_core_approx
 import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.TensorCore
 
 

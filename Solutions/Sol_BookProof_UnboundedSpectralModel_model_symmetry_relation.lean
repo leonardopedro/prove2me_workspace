@@ -4,6 +4,13 @@ import Definitions.Def_ChapterUnboundedSpectralModel
 import Theorems.Thm_BookProof_UnboundedSpectralModel_model_mem
 import Theorems.Thm_BookProof_UnboundedSpectralModel_model_apply
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.UnboundedSpectralModel
 
 
@@ -17,6 +24,8 @@ open scoped InnerProductSpace
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterSpectralDirectSum
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

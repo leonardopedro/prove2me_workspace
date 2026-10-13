@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_isProbabilityMeasure_repMeasure
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_cyclicRepUnitary_intertwines
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianCyclicModel
 
 

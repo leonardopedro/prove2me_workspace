@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeakValue
 import Theorems.Thm_BookProof_ChapterWeakValue_ip_projMat
+import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterWeakValue
 
 

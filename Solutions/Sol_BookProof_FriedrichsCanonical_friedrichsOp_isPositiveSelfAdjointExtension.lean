@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_po
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift
 import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_isPositiveSelfAdjointExtension
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.FriedrichsCanonical
 
 
@@ -15,6 +20,10 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.QgOuterFockFL
+open BookProof.YangMillsFriedrichs
 
 noncomputable section
 

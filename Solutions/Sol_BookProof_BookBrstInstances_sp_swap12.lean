@@ -1,6 +1,11 @@
 -- Generated from ChapterBookBrstInstances.lean — solution of BookProof.BookBrstInstances.sp_swap12
 import Mathlib
 import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.BookBrstInstances
 
 

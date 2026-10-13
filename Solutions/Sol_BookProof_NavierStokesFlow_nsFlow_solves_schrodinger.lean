@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_vec_hasDerivAt
 import Theorems.Thm_BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow_prime
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

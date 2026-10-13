@@ -3,7 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterFarisLavineCore
-open BookProof.KatoRellich
+
 
 
 

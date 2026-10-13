@@ -4,6 +4,10 @@ import Definitions.Def_ChapterNonnegUnitaryGroup
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_mem_unitaryU
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_hasDerivAt_unitaryU
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_inner_mem_conj_eq
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegUnitaryGroup
 
 

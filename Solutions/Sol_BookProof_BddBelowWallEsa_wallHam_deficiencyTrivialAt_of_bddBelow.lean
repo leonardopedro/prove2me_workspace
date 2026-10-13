@@ -2,6 +2,13 @@
 import Mathlib
 import Theorems.Thm_BookProof_BddBelowWallEsa_ode_solution_eq_zero_of_bddBelow
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterBddBelowWallEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.BddBelowWallEsa
 
 
@@ -10,6 +17,10 @@ open BookProof.BddBelowWallEsa
 open MeasureTheory Metric Filter Topology Set
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
+open BookProof.WeakSecondDeriv
+open BookProof.WeakSecondDeriv.IsTestFun
 
 noncomputable section
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesGaugeY_genX_leibniz
 import Theorems.Thm_BookProof_NavierStokesGaugeY_genX_uField
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

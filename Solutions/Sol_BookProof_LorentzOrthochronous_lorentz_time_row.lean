@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLorentzOrthochronous
 import Theorems.Thm_BookProof_LorentzOrthochronous_isLorentz_mul_eta_transpose
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

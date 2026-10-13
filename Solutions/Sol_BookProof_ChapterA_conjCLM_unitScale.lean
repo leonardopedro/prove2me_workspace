@@ -1,6 +1,7 @@
 -- Generated from ChapterA2d.lean — solution of BookProof.ChapterA.conjCLM_unitScale
 import Mathlib
 import Definitions.Def_ChapterA2d
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

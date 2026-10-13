@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMarkovEntropy
 import Theorems.Thm_BookProof_ChapterMarkovEntropy_applyMarkov_permMatrix
+import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterMarkovEntropy
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_norm_mulD_ge
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 

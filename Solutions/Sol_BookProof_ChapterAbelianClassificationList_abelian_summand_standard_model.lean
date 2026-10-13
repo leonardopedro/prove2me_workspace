@@ -7,6 +7,12 @@ import Theorems.Thm_BookProof_ChapterAtomicDiagonalModel_atomic_multiplication_m
 import Theorems.Thm_BookProof_ChapterLpRestrictSplit_isHilbertSum_splitEmbed
 import Theorems.Thm_BookProof_ChapterLpRestrictSplit_restrictEmbed_intertwines
 import Theorems.Thm_BookProof_ChapterMeasureAtomicDiffuse_measurableSet_atomSet
+import Definitions.Def_ChapterMeasureAtomicDiffuse
+import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterDiffuseUnitaryModel
+import Definitions.Def_ChapterLpScaleMeasure
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLpRestrictSplit
 open BookProof.ChapterAbelianClassificationList
 
 
@@ -19,6 +25,8 @@ open MeasureTheory ProbabilityTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterDiffuseUnitaryModel BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit BookProof.ChapterLpScaleMeasure
+open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterLpRestrictSplit
 
 variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
 variable (nu : Measure ℝ) [IsFiniteMeasure nu] [NullSingletonClass nu]

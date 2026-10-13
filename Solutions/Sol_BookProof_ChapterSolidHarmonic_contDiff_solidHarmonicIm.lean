@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Theorems.Thm_BookProof_ChapterSolidHarmonic_contDiff_angularIm
 import Theorems.Thm_BookProof_ChapterSolidHarmonic_contDiff_radialFactor
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
 

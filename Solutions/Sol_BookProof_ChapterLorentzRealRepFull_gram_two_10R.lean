@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_gram_two_10
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_mul
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_trace
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_transpose
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepFull
 
 

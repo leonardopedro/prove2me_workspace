@@ -1,6 +1,19 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.fqExch_hermitian
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FullQuadratic
 
 
@@ -25,8 +38,8 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (P Q S : Fin d → Fin d → ℝ) (i j : Fin d) :
     (starRingEnd ℂ) (fqExch P Q S i j) = fqExch P Q S j i := by
-
   rw [fqExch, fqExch, map_add, Complex.conj_conj]
   ring

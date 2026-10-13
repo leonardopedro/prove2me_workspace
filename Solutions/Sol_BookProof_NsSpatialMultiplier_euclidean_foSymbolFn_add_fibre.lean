@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
 import Theorems.Thm_BookProof_NsSpatialMultiplier_foSymbolFn_add_fibre
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.NsSpatialMultiplier
 
 
@@ -9,6 +11,7 @@ open BookProof.NsSpatialMultiplier
 
 open MeasureTheory SchwartzMap FourierTransform
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa
+open BookProof.FourierMultiplierEsa
 
 noncomputable section
 
@@ -22,12 +25,14 @@ variable {ι : Type*} [Fintype ι]
 variable (V) in
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {n : ℕ} (c : ι → ℝ) (s : ι → Fin n) (j : Fin n)
     (hj : ∀ i, s i ≠ j) (x : EuclideanSpace ℝ (Fin n)) (t : ℝ) :
     foSymbolFn c (fun i => EuclideanSpace.single (s i) (1 : ℝ))
         (x + t • EuclideanSpace.single j (1 : ℝ))
       = foSymbolFn c (fun i => EuclideanSpace.single (s i) (1 : ℝ)) x := by
-
   refine foSymbolFn_add_fibre c _ x _ (fun i => ?_) t
   have h : j ≠ s i := fun hh => hj i hh.symm
   simp [EuclideanSpace.inner_single_left, EuclideanSpace.single_apply, h]
+
+/-! ## 7. Essential self-adjointness of the spatial momentum family -/

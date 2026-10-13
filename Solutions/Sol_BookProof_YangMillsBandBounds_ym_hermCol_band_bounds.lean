@@ -4,6 +4,22 @@ import Definitions.Def_ChapterYangMillsBandBounds
 import Theorems.Thm_BookProof_YangMillsBandBounds_ymHermCol_eq
 import Theorems.Thm_BookProof_YangMillsBandBounds_isBandR4_ymPoly
 import Theorems.Thm_BookProof_YangMillsBandBounds_gradedBand_of_isBandR
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsAbelianFockEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.YangMillsBandBounds
 
 
@@ -18,6 +34,7 @@ open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
 open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
+open BookProof.QuadFockEsa
 
 set_option maxHeartbeats 1000000 in
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :

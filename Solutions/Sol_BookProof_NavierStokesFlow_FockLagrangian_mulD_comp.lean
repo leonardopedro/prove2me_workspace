@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -12,6 +15,8 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 variable {X : Type*} [MeasurableSpace X]
 

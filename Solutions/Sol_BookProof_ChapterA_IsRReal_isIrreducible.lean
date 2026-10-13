@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA1c
 import Theorems.Thm_BookProof_Complexification_irreducible_iff_no_conj_subsystem
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

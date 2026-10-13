@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_fockBasis_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_add_single_sub_single
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -16,6 +18,7 @@ variable {ι : Type*}
 variable {M : Type*} [DecidableEq M]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.FockSecondQuantization
 theorem solution (m : M) (n : Conf M) :
     annih m (fockBasis n) = ((Real.sqrt (n m) : ℝ) : ℂ) • fockBasis (n - Finsupp.single m 1) := by
 

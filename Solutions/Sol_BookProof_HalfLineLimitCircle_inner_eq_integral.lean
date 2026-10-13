@@ -1,6 +1,7 @@
 -- Generated from ChapterHalfLineLimitCircle.lean — solution of BookProof.HalfLineLimitCircle.inner_eq_integral
 import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

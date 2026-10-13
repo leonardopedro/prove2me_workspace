@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesCanonicalVector.lean — solution of BookProof.NavierStokesFlow.CanonicalVector.coe_inclusion_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCanonicalVector
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.CanonicalVector
 

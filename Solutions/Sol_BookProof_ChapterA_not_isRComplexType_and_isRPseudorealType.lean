@@ -1,6 +1,8 @@
 -- Generated from ChapterA1h.lean — solution of BookProof.ChapterA.not_isRComplexType_and_isRPseudorealType
 import Mathlib
 import Definitions.Def_ChapterA1h
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

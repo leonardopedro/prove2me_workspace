@@ -15,14 +15,14 @@ variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
 variable {X : Type*} [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [MeasurableSpace X] [MeasurableSMul G X]
     [MeasurableMul G]
     (μ : Measure X) [IsProbabilityMeasure μ]
     (hμ : ∀ g : G, MeasurePreserving (fun x : X => g • x) μ μ)
     (f : X → ℝ)
     (hint : Integrable (fun p : G × X => f (p.1⁻¹ • p.2)) (μG.prod μ)) :
-    ∫ x, haarAverage (μG := by
-
+    ∫ x, haarAverage (μG := μG) f x ∂μ = ∫ x, f x ∂μ := by
   simp only [haarAverage]
   rw [MeasureTheory.integral_integral_swap]
   · have hcomp : ∀ g : G, ∫ x, f (g • x) ∂μ = ∫ x, f x ∂μ := by

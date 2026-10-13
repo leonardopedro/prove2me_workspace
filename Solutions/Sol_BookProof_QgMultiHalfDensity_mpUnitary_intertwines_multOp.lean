@@ -4,6 +4,9 @@ import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_apply
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_mem_boundedEnergyCore
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFockContinuum
 open BookProof.QgMultiHalfDensity
 
 
@@ -12,6 +15,7 @@ open BookProof.QgMultiHalfDensity
 open MeasureTheory Set
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
+open BookProof.ChapterLinftyMultiplication
 
 noncomputable section
 
@@ -19,7 +23,13 @@ variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
   {mu : Measure X} {nu : Measure Y} {Phi : X → Y} {Psi : Y → X}
 variable {g : Y → ℝ}
 
+
+private theorem multOp_coeFn (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) (f : Lp ℂ 2 μ) :
+    (multOp φ hφ f : α → ℂ) =ᵐ[μ] fun x => φ x * (f : α → ℂ) x :=
+  MemLp.coeFn_toLp (mul_memLp_two hφ f)
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (hPhi : MeasurePreserving Phi mu nu)
     (hPsi : MeasurePreserving Psi nu mu) (hinv : ∀ᵐ x ∂mu, Psi (Phi x) = x)
     (hg : Measurable g) (x : boundedEnergyCore nu g) :
@@ -28,7 +38,6 @@ theorem solution (hPhi : MeasurePreserving Phi mu nu)
           mpUnitary_mem_boundedEnergyCore hPhi hPsi hinv x⟩ :
         boundedEnergyCore mu (fun t => g (Phi t))) : Lp ℂ 2 mu)
       = mpUnitary hPhi hPsi hinv ((multOp nu hg x : boundedEnergyCore nu g) : Lp ℂ 2 nu) := by
-
   refine Lp.ext ?_
   have h1 := multOp_coeFn mu (hg.comp hPhi.measurable)
     (⟨mpUnitary hPhi hPsi hinv (x : Lp ℂ 2 nu),

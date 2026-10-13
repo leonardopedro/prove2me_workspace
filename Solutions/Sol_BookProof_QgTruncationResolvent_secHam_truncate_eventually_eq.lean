@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_secHam_truncate_eq_of_band
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
 open BookProof.QgTruncationResolvent
 
 
@@ -22,9 +31,12 @@ variable {ι : Type*}
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Λ : ℕ → Set ι)
-    (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) (x : secCore (ι := by
 
+theorem solution (Λ : ℕ → Set ι)
+    (hexh : ∀ F : Finset ι, ∀ᶠ n in atTop, ∀ a ∈ F, a ∈ Λ n) (x : secCore (ι := ι)) :
+    ∀ᶠ n in atTop, secHam W (truncModes Q (Λ n)) x = secHam W Q x := by
   obtain ⟨P, hP1, hP2⟩ := exists_band Q x
   filter_upwards [hexh P] with n hn
   exact secHam_truncate_eq_of_band W Q (Λ n) hP1 hP2 hn
+
+/-! ## 4. The truncated flows converge to the exact quantum-gravity flow -/

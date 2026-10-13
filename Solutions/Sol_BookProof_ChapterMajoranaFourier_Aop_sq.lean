@@ -4,6 +4,7 @@ import Definitions.Def_ChapterMajoranaFourier
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_gamma0_sq
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_gamma0_nslash_anticomm
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_nslash_sq
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterA2c.lean — solution of BookProof.ChapterA.cplxify_commutes
 import Mathlib
 import Definitions.Def_ChapterA2c
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

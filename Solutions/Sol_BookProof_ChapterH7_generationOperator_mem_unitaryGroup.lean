@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterH7
 import Theorems.Thm_BookProof_ChapterH7_generationOperator_conjTranspose_mul
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH7
 
 

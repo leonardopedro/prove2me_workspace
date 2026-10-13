@@ -39,8 +39,18 @@ def imports_of(path):
 
 
 def local_path(mod):
-    """Local source for a Theorems.*/Definitions.* module."""
+    """Local source for a Theorems.*/Definitions.* module.
+
+    For a Definitions bundle the PLATFORM CACHE wins when it exists: the mirror
+    is the platform's world (§6.4), and a bundle published earlier may differ
+    from the regenerated local text.  The cache is refreshed by
+    debug/cache_published_bundles.py; `--local` forces the local tree.
+    """
     sub, _, name = mod.partition(".")
+    if sub == "Definitions" and USE_CACHE:
+        cached = os.path.join(WS, "state", "published_bundles", name + ".lean")
+        if os.path.exists(cached):
+            return cached
     return os.path.join(WS, sub, name + ".lean")
 
 
@@ -49,8 +59,14 @@ def mirror_has(mod, ext):
     return os.path.exists(os.path.join(MIRROR, sub, name + ext))
 
 
+USE_CACHE = True
+
+
 def main():
-    chapters = sys.argv[1:]
+    global USE_CACHE
+    args = [a for a in sys.argv[1:] if a != "--local"]
+    USE_CACHE = "--local" not in sys.argv
+    chapters = args
     if not chapters:
         print(__doc__)
         return 2

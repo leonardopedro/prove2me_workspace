@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_ScalaronDensitized_densConfV_apply
 import Theorems.Thm_BookProof_ScalaronDensitized_halfDensityUnitary_mem_densConfCore
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 import Theorems.Thm_BookProof_QuantumGravityHalfDensity_halfDensityUnitary_apply
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.ScalaronDensitized
 
 
@@ -16,19 +26,27 @@ open BookProof.QuantumGravityHalfDensity
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FockContinuum
 open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+open BookProof.ChapterLinftyMultiplication
+open BookProof.NavierStokesFlow.FockContinuum
+open BookProof.Starobinsky
 
 noncomputable section
 
 variable (M alpha : ℝ)
 
+
+private theorem multOp_coeFn (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) (f : Lp ℂ 2 μ) :
+    (multOp φ hφ f : α → ℂ) =ᵐ[μ] fun x => φ x * (f : α → ℂ) x :=
+  MemLp.coeFn_toLp (mul_memLp_two hφ f)
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (x : physConfCore M alpha) :
     ((densConfOp M alpha ⟨halfDensityUnitary (x : Lp ℂ 2 physMeasure),
         halfDensityUnitary_mem_densConfCore M alpha x⟩ : densConfCore M alpha) :
           Lp ℂ 2 qgSrcMeasure)
       = halfDensityUnitary ((physConfOp M alpha x : physConfCore M alpha) :
           Lp ℂ 2 physMeasure) := by
-
   refine Lp.ext ?_
   have h1 := multOp_coeFn qgSrcMeasure (measurable_densConfV M alpha)
     (⟨halfDensityUnitary (x : Lp ℂ 2 physMeasure),
@@ -43,3 +61,5 @@ theorem solution (x : physConfCore M alpha) :
   refine hy1.trans ?_
   rw [hy2, densConfV_apply, hy3]
   exact hy4.symm
+
+/-! ## Essential self-adjointness, and its transfer -/

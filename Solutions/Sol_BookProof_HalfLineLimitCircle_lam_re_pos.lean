@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_lam_re
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

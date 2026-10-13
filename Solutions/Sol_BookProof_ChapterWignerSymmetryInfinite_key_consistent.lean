@@ -9,6 +9,8 @@ import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_inner_tripleVec_j
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_inner_tripleVec_other
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_inner_left_tripleVec
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_sum_triple
+import Definitions.Def_ChapterOrthogonalSums
+import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
 
@@ -17,6 +19,7 @@ open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
+open BookProof.ChapterWignerSymmetry
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterWallEsaBddBelow
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.WallEsaBddBelow
 
 
@@ -12,14 +19,16 @@ open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) (c : ℝ) :
     wallHam (fun x => V x + c) (hV.add contDiff_const)
       = wallHam V hV + ((constOp c).toLinearMap ∘ₗ (ccDomain ℝ).subtype) := by
-
   refine LinearMap.ext fun x => ?_
   obtain ⟨f, rfl⟩ := (ccEquiv ℝ).surjective x
   have hpot : opCc (fun x => V x + c) (hV.add contDiff_const) (ccEquiv ℝ f)
@@ -45,4 +54,5 @@ theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop 
     push_cast
     ring
   simp only [wallHam, LinearMap.add_apply, hpot, LinearMap.coe_comp, Function.comp_apply,
-    Su
+    Submodule.subtype_apply, ContinuousLinearMap.coe_coe]
+  abel

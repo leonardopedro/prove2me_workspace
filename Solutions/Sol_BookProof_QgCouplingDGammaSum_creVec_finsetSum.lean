@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterQgCouplingDGammaSum
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_add
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_zero
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.QgCouplingDGammaSum
 
 
@@ -19,9 +25,10 @@ variable {ι : Type*}
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
+
+
 theorem solution (s : Finset ι) (f : ι → (ℕ →₀ ℂ)) (x : FockAlg) :
     creVec (∑ i ∈ s, f i) x = ∑ i ∈ s, creVec (f i) x := by
-
   classical
   induction s using Finset.induction with
   | empty => simp

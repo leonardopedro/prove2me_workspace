@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_symmetricOn
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 

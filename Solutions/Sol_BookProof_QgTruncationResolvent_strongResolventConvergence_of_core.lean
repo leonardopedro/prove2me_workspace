@@ -3,6 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_strongResolventConvergence_of_dense
 import Theorems.Thm_BookProof_QgTruncationResolvent_tendsto_resCLM_shift
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.QgTruncationResolvent
 
 
@@ -13,6 +24,9 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
+open BookProof.EsaClosure
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
 
 noncomputable section
 

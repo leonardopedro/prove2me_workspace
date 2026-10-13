@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_topologicalClosure_coreGraph
 import Theorems.Thm_BookProof_VonNeumannCore_opGraph_coreRes
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.VonNeumannCore
 
 
@@ -10,6 +15,7 @@ open BookProof.VonNeumannCore
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

@@ -1,6 +1,11 @@
 -- Generated from ChapterHermiteBandCalculusHigher.lean — solution of BookProof.HermiteBandHigher.IsBandR.isBandDeg
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.HermiteBandHigher
 
 

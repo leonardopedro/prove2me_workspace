@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_mulRep_toLp
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianCyclicModel
 
 

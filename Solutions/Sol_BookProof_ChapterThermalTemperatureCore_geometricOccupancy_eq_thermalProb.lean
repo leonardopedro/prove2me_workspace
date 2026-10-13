@@ -1,6 +1,9 @@
 -- Generated from ChapterThermalTemperatureCore.lean — solution of BookProof.ChapterThermalTemperatureCore.geometricOccupancy_eq_thermalProb
 import Mathlib
 import Definitions.Def_ChapterThermalTemperatureCore
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterThermalTemperatureCore
 
 

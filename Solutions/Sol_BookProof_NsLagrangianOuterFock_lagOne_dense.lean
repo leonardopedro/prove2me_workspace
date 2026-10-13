@@ -2,6 +2,22 @@
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianOuterFockEsa
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterFockStatisticsCompletion
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NsLagrangianOuterFock
 
 
@@ -16,6 +32,8 @@ open BookProof.YangMillsNonAbelianEsa
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LagrangianCanonical
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NavierStokesFlow.ThreeComponent
 
 noncomputable section
 

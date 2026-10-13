@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionMarkov
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterAttentionMarkov
 
 

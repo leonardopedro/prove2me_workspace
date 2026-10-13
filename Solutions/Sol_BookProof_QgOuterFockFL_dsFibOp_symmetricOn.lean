@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_fib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgOuterFockFL
 
 

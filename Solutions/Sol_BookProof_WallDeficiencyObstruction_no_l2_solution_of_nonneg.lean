@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterWallDeficiencyObstruction
 import Theorems.Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WallDeficiencyObstruction
 
 

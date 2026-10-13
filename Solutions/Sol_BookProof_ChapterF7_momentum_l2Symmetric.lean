@@ -4,6 +4,7 @@ import Definitions.Def_ChapterF7
 import Theorems.Thm_BookProof_ChapterF7_schwartz_integration_by_parts
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply
+import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterF7
 
@@ -11,13 +12,14 @@ open BookProof.ChapterF7
 
 open SchwartzMap MeasureTheory Complex
 open scoped BigOperators
+open BookProof.ChapterContinuityUnitary
 
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : IsL2Symmetric momentum := by
 
+theorem solution : IsL2Symmetric momentum := by
   intro f g
   have hL : l2pair (momentum f) g
       = Complex.I * ∫ x, (starRingEnd ℂ) (deriv (f : ℝ → ℂ) x) * g x := by

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonicTools
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_laplacian_comp_normSq
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools
 
 

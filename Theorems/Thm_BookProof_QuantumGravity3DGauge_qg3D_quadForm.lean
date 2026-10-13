@@ -12,6 +12,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {D : Submodule ℂ (L2d 84)}
+
 theorem BookProof.QuantumGravity3DGauge.qg3D_quadForm (Φ : CoreRep 84 D) (x : D) :
     quadForm (qg3DHamiltonian Φ) x
       = 1 / 2 * (∑ j, qgKappa j * ‖((qgMom Φ j x : D) : L2d 84)‖ ^ 2)

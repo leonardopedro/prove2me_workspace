@@ -6,6 +6,7 @@ import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 import Theorems.Thm_BookProof_WallEsaSemibounded_inner_toLp_self
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.WallEsaSemibounded
 
 

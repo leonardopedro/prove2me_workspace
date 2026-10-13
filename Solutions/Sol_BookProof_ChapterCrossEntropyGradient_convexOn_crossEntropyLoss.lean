@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterLogPartitionConvex_convexOn_logPartition
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Theorems.Thm_BookProof_ChapterLogPartitionConvex_convexOn_logPartition
 open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterCrossEntropyGradient
 
@@ -20,9 +23,9 @@ variable {m : ℕ}
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (s : Fin m → ℝ) (y : Fin m) :
     ConvexOn ℝ Set.univ (fun b : ℝ => crossEntropyLoss b s y) := by
-
   have hlog : ConvexOn ℝ Set.univ (fun b : ℝ => logPartition b s) :=
     convexOn_logPartition s y
   have hlin : ConvexOn ℝ Set.univ (fun b : ℝ => -(b * s y)) := by

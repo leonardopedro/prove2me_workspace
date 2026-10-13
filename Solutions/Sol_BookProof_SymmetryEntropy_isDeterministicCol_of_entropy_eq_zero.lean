@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_SymmetryEntropy_entropy_eq_zero_iff
 import Theorems.Thm_BookProof_SymmetryEntropy_bornCol_nonneg
 import Theorems.Thm_BookProof_SymmetryEntropy_bornCol_le_one
 import Theorems.Thm_BookProof_SymmetryEntropy_bornCol_eq_zero_iff
+import Definitions.Def_ChapterMarkovEntropy
+import Definitions.Def_ChapterIrreversible
+import Definitions.Def_ChapterReconstruct
 open BookProof.SymmetryEntropy
 
 

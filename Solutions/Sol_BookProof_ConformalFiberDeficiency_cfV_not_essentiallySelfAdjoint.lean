@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_ConformalFiberDeficiency_contDiff_cfV
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfSol_ne_zero
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfSol_isL2Ode
 import Theorems.Thm_BookProof_WallDeficiencyObstruction_not_essentiallySelfAdjointOn_of_l2_solution
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.ConformalFiberDeficiency
 
 
@@ -13,6 +18,8 @@ open BookProof.ConformalFiberDeficiency
 open MeasureTheory Real Filter Topology
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

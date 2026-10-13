@@ -1,6 +1,7 @@
 -- Generated from PhysMehler.lean — solution of PhysMehler.arith_truth_invariant
 import Mathlib
 import Definitions.Def_PhysMehler
+import Definitions.Def_ChapterA4
 open PhysMehler
 
 

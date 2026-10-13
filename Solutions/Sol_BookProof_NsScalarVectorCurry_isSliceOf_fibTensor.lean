@@ -2,13 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterNsScalarVectorCurry
 import Theorems.Thm_BookProof_NsScalarVectorCurry_isSliceOf_fibMk
-import Theorems.Thm_BookProof_NsScalarVectorCurry_IsSliceOf_add
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.NsScalarVectorCurry
 
 
 
 open MeasureTheory Filter Set
 open scoped ENNReal ComplexConjugate
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 
 noncomputable section

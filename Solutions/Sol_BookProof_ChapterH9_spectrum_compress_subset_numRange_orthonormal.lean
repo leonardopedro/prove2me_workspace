@@ -6,6 +6,12 @@ import Theorems.Thm_BookProof_ChapterH9_spectrum_compress_subset_numRange_compre
 import Theorems.Thm_BookProof_ChapterH9_orthonormalEmbedding_norm_map
 import Theorems.Thm_BookProof_ChapterH9_coordIncl_norm_map
 import Theorems.Thm_BookProof_ChapterH8_orthonormalEmbedding_nested
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH8Bases
 open BookProof.ChapterH9
 
 

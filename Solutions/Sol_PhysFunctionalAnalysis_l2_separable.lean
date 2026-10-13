@@ -1,6 +1,8 @@
 -- Generated from PhysFunctionalAnalysis.lean — solution of PhysFunctionalAnalysis.l2_separable
 import Mathlib
 import Definitions.Def_PhysFunctionalAnalysis
+import Definitions.Def_PhysMeasureBasis
+import Definitions.Def_ChapterA4
 open PhysFunctionalAnalysis
 
 

@@ -1,16 +1,20 @@
 -- Generated from ChapterBddBelowFiberSumEsa.lean — solution of BookProof.BddBelowFiberSumEsa.fiberSumHam_essentiallySelfAdjoint_of_bddBelow
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
-import Theorems.Thm_BookProof_BddBelowWallEsa_wallHam_essentiallySelfAdjoint_of_bddBelow
+
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowFiberSumEsa
-
-
-
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
-open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
+open BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
 noncomputable section
 

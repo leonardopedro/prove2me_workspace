@@ -14,6 +14,12 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_viscous_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_drift_eq
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
@@ -24,6 +30,11 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.ChapterF7
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {X : Type*} [MeasurableSpace X]
 

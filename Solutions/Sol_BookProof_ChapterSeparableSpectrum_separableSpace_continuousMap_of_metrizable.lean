@@ -1,6 +1,9 @@
 -- Generated from ChapterSeparableSpectrum.lean — solution of BookProof.ChapterSeparableSpectrum.separableSpace_continuousMap_of_metrizable
 import Mathlib
 import Definitions.Def_ChapterSeparableSpectrum
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterStandardBorelClassification
 open BookProof.ChapterSeparableSpectrum
 
 

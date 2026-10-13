@@ -9,6 +9,7 @@ import Definitions.Def_ChapterStrichartzWave
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.WallEsaSemibounded
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_listH_symmetricOn
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 

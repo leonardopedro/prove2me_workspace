@@ -1,6 +1,8 @@
 -- Generated from ChapterResidualStream.lean — solution of BookProof.ChapterResidualStream.norm_residual_sub_self
 import Mathlib
 import Definitions.Def_ChapterResidualStream
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterResidualStream
 
 
@@ -17,7 +19,7 @@ variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (f : E → E) (x : E) : ‖residual f x - x‖ = ‖f x‖ := by
 
+theorem solution (f : E → E) (x : E) : ‖residual f x - x‖ = ‖f x‖ := by
   rw [residual]
   simp

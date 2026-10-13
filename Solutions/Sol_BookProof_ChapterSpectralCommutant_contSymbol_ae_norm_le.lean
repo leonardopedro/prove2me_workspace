@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_ChapterSpectralCommutant_contSymbol_mul
 import Theorems.Thm_BookProof_ChapterSpectralCommutant_multOp_norm_le_of_toLp
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_stronglyMeasurable_symbol
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterSpectralCommutant
 
 
@@ -16,6 +20,8 @@ open MeasureTheory ENNReal Complex
 
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
+open BookProof.ChapterLinftyMaximalAbelian
+open BookProof.ChapterLinftyMultiplication
 
 variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

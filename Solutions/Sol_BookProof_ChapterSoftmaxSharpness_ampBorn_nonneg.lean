@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxSharpness.lean — solution of BookProof.ChapterSoftmaxSharpness.ampBorn_nonneg
 import Mathlib
 import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterSoftmaxSharpness
 
 

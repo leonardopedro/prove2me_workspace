@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterTotalVariance
 import Theorems.Thm_ChapterTotalVariance_total_variance
 import Theorems.Thm_ChapterTotalVariance_between_nonneg
+import Definitions.Def_ChapterA4
 open ChapterTotalVariance
 
 

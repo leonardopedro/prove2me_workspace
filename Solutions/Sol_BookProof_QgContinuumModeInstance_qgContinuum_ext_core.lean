@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterQgContinuumModeInstance
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_ext_core
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgContinuumModeInstance
 
 
@@ -10,8 +15,17 @@ open BookProof.QgContinuumModeInstance
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (W : WallPot) (g : ℝ) (p : secCore (ι := secData_ext_core W _ p
+
+theorem solution (W : WallPot) (g : ℝ) (p : secCore (ι := CMode)) :
+    (secData W (qgContinuumModes g)).ext
+        ⟨(p : Sec CMode), (secData W (qgContinuumModes g)).gc.le p.2⟩
+      = secHam W (qgContinuumModes g) p :=
+  secData_ext_core W _ p
+
+/-! ## 5. Non-vacuity -/

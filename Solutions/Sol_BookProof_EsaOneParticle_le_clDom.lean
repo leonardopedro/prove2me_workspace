@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 
@@ -9,6 +12,8 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.EsaClosure
+open BookProof.TensorCore
 
 noncomputable section
 

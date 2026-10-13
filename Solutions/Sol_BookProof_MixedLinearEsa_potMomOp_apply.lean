@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
 import Theorems.Thm_BookProof_MixedLinearEsa_momentumOp_apply
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterWaveUnboundedPotential
 open BookProof.MixedLinearEsa
 
 
@@ -9,6 +13,7 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
@@ -18,8 +23,12 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 
 set_option maxHeartbeats 1000000 in
 omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+
+@[simp] private theorem potentialOp_apply {W : V → ℝ} (hW : Function.HasTemperateGrowth W)
+    (f : 𝓢(V, ℂ)) (x : V) : potentialOp W f x = (W x : ℂ) * f x := by
+  simp [potentialOp, SchwartzMap.smulLeftCLM_apply_apply (hasTemperateGrowth_ofReal hW)]
+
 theorem solution {W : V → ℝ} (hW : Function.HasTemperateGrowth W) (m : V) (f : 𝓢(V, ℂ))
     (x : V) :
     (potMomOp W m f) x = ((W x : ℝ) : ℂ) * f x + (-Complex.I) * (fderiv ℝ f x m) := by
-
   simp [potMomOp, potentialOp_apply hW, momentumOp_apply]

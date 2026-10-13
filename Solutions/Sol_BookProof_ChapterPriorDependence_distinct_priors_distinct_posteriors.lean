@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPriorDependence
 import Theorems.Thm_BookProof_ChapterPriorDependence_posterior_dirac
+import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterPriorDependence
 
 

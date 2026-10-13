@@ -2,11 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterA2c
 import Theorems.Thm_BookProof_ChapterA_realCommutes_thetaR
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 
 
 open scoped ComplexConjugate InnerProductSpace Quaternion
+open BookProof.ChapterA.AntiUnitary
 
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]

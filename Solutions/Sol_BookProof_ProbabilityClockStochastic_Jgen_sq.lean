@@ -1,6 +1,7 @@
 -- Generated from ChapterProbabilityClockStochastic.lean — solution of BookProof.ProbabilityClockStochastic.Jgen_sq
 import Mathlib
 import Definitions.Def_ChapterProbabilityClockStochastic
+import Definitions.Def_ChapterEulerGenericDensity
 open BookProof.ProbabilityClockStochastic
 
 

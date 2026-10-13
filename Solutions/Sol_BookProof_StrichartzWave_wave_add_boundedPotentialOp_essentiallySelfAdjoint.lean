@@ -4,6 +4,9 @@ import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_opL2_add
 import Theorems.Thm_BookProof_StrichartzWave_opL2_potentialOp_eq_mulL2
 import Theorems.Thm_BookProof_StrichartzWave_wave_add_potential_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterWaveBoundedPotential
 open BookProof.StrichartzWave
 
 

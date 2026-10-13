@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneEvolution.lean — solution of BookProof.ChapterStoneResolvent.hasDerivAt_apply
 import Mathlib
 import Definitions.Def_ChapterStoneEvolution
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 
 

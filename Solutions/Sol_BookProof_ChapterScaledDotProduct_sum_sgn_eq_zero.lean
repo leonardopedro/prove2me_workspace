@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sgn_not
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_flipEquiv_apply_self
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 import Theorems.Thm_BookProof_GaussCoordCombo_coordFactor_coordCombo
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
 open BookProof.YangMillsAbelianNoGap
 
 

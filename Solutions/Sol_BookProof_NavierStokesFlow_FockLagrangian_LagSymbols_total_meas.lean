@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.total_meas
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
@@ -11,6 +14,9 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.BRSTNilpotent
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {X : Type*} [MeasurableSpace X]
 

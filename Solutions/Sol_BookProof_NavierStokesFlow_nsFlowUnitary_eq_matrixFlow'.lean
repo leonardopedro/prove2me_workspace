@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -12,10 +14,8 @@ variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (t : ℝ) :
-    HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t :=
-  ow d)
-  
-  /-- **D.8** The Navier–Stokes flow is differentiable in time:
-  `d/dt U(t) = U(t) · i H_N`. -/
-  th
+    HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by
+  rw [nsFlowUnitary_eq_matrixFlow']
+  exact matrixFlow_hasDerivAt (Complex.I • nsHamiltonian d) t

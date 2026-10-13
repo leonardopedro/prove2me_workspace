@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_intertwines_multOp
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterScalaronDensitizedTransfer
 open BookProof.QgMultiHalfDensity
 
 
@@ -10,6 +14,8 @@ open BookProof.QgMultiHalfDensity
 open MeasureTheory Set
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
+open BookProof.ChapterLinftyMultiplication
+open BookProof.ScalaronDensitized
 
 noncomputable section
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSmDiracYukawa.lean — solution of BookProof.SmDiracYukawa.smFermiMatrix_hermitian
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterFarisLavine
 open BookProof.SmDiracYukawa
 
 

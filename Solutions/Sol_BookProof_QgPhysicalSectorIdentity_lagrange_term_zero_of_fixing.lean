@@ -1,6 +1,14 @@
 -- Generated from ChapterQgPhysicalSectorIdentity.lean — solution of BookProof.QgPhysicalSectorIdentity.lagrange_term_zero_of_fixing
 import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.QgPhysicalSectorIdentity
 
 
@@ -13,6 +21,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 

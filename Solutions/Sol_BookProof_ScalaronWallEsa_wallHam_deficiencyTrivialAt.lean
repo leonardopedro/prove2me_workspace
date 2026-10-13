@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Theorems.Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.ScalaronWallEsa
 
 
@@ -14,6 +23,7 @@ open BookProof.Starobinsky BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
 open BookProof.WeakSecondDeriv
 
+open BookProof.WeakSecondDeriv.IsTestFun
 noncomputable section
 
 set_option maxHeartbeats 1000000 in

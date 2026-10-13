@@ -4,12 +4,18 @@ import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_swap
 import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_u_mul_uD
 import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_y_mul_uD
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 
 
 
 open MvPolynomial BookProof.NavierStokesFlow
+
+
+private theorem genY_apply (j : Fin 3) (p : NSAlg) :
+    genY j p = pderiv (NSVar.y j) p - ∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p := by
+  simp [genY]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j k : Fin 3) (p : NSAlg) :

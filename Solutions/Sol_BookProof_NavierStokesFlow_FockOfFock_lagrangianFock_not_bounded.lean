@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_dGamma_not_bounded
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

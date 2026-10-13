@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCoherentGeometry
 import Theorems.Thm_BookProof_ChapterCoherentGeometry_bornWeight_le_iff_dist_le
+import Definitions.Def_ChapterCoherentOverlap
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterCoherentGeometry
 
 

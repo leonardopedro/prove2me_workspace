@@ -2,6 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSigned_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.Qg3DGaugeEsa
 
 

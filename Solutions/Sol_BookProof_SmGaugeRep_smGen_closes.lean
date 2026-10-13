@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSmGaugeRepresentation
 import Theorems.Thm_BookProof_SmGaugeRep_smGenP_closes
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmGaugeRep
 
 

@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgHermiteOscillator
 
 

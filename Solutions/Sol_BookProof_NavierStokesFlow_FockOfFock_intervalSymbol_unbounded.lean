@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_intervalSymbol_eq
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -20,11 +22,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {K : Type*} [DecidableEq K]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     ∀ C : ℝ, ∃ j : ℕ, C < |symbolOfIntegral volume extField intervalDens j| := by
-  intro C
-  obtain ⟨j, hj⟩ := by
-
   intro C
   obtain ⟨j, hj⟩ := exists_nat_gt (max C 0)
   refine ⟨j, ?_⟩

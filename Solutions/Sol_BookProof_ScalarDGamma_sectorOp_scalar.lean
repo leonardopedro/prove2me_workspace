@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
 import Theorems.Thm_BookProof_ScalarDGamma_derPow_scalar
 import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.ScalarDGamma
 
 
@@ -10,6 +13,7 @@ open BookProof.ScalarDGamma
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

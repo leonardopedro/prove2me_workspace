@@ -13,6 +13,22 @@ import Theorems.Thm_BookProof_SirkSingleTime_isShiftInvertC_neg_resCLM_shift
 import Theorems.Thm_BookProof_SirkSingleTime_singleTime_flow_tendsto_of_strongResAt
 import Theorems.Thm_BookProof_SirkSingleTime_strongResAt_of_ne_zero
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.FiniteSectionSingleTime
 
 
@@ -26,6 +42,12 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.StoneBridge
 
 noncomputable section
 

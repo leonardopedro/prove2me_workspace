@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterA1f
 import Theorems.Thm_BookProof_ChapterA_conjFixed_isClosed
 import Theorems.Thm_BookProof_ChapterA_conjFixed_invariant
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

@@ -2,6 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsFockGapChain
 import Theorems.Thm_BookProof_FockNumberPreservingGap_dGamma_vac
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.YangMillsFockGapChain
 
 
@@ -15,6 +26,8 @@ open BookProof.FockFieldPerturbation
 open BookProof.FarisLavine BookProof.HermiteGalerkin
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.BandEnclosure
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)

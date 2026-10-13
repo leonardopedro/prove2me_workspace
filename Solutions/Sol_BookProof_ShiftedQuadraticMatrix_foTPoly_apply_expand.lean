@@ -1,6 +1,18 @@
 -- Generated from ChapterShiftedQuadraticMatrixEsa.lean — solution of BookProof.ShiftedQuadraticMatrix.foTPoly_apply_expand
 import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterQuadraticRotationEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterShiftedHermiteCore
+import Theorems.Thm_BookProof_ShiftedHermiteCore_mulXTPoly_apply
 open BookProof.ShiftedQuadraticMatrix
 
 
@@ -15,6 +27,7 @@ open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
 
 noncomputable section
 
@@ -22,12 +35,16 @@ variable {d : ℕ}
 
 variable {d : ℕ}
 
+
+@[simp] private theorem mulXTPoly_apply (a : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulXTPoly a i p = X i * p + ((a i : ℝ) : ℂ) • p := rflanslation vector
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (a k : Vd d) (b b' : Fin d → ℝ) (f : MvPolynomial (Fin d) ℂ) :
     foTPoly a k b b' f
       = ∑ i, ((b i : ℝ) : ℂ) • (X i * f) + ∑ i, ((b' i : ℝ) : ℂ) • momPoly i f
         + ((∑ i, (b i * a i + b' i * k i) : ℝ) : ℂ) • f := by
-
   have hterm : ∀ i : Fin d,
       ((b i : ℝ) : ℂ) • mulXTPoly a i f + ((b' i : ℝ) : ℂ) • momTPoly k i f
         = ((b i : ℝ) : ℂ) • (X i * f) + ((b' i : ℝ) : ℂ) • momPoly i f
@@ -42,3 +59,5 @@ theorem solution (a k : Vd d) (b b' : Fin d → ℝ) (f : MvPolynomial (Fin d) �
     ← Finset.sum_smul]
   push_cast
   ring
+
+/-! ## 2. Completing the square -/

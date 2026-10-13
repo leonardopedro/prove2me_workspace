@@ -1,6 +1,12 @@
 -- Generated from ChapterSmHamiltonian.lean — solution of BookProof.SmHamiltonian.higgs_mexican_hat
 import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.SmHamiltonian
 
 

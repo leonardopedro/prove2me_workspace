@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesCauchy.lean — solution of BookProof.NavierStokesFlow.matrixFlow_comm
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

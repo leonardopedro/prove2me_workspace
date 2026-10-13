@@ -1,6 +1,7 @@
 -- Generated from ChapterA1e.lean — solution of BookProof.ChapterA.JY_isClosed
 import Mathlib
 import Definitions.Def_ChapterA1e
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

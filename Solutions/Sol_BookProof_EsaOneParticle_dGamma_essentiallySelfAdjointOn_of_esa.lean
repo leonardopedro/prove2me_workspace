@@ -4,6 +4,11 @@ import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_fockSectorDom_esa
 import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
 import Theorems.Thm_BookProof_SecondQuantizationCore_dGamma_essentiallySelfAdjointOn_fockCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 
@@ -11,6 +16,8 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

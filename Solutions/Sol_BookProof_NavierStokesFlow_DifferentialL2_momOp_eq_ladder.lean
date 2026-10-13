@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.momOp_eq_ladder
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency

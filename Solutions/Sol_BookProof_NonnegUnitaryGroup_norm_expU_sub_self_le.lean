@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_expU_zero_op
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegUnitaryGroup
 
 

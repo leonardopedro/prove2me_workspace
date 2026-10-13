@@ -1,6 +1,7 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_sum_single_mem_finiteModes
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_coe_sum_single
+import Theorems.Thm_BookProof_OperatorSeries_commForm_eq_neg_two_im
 
 
 

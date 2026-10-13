@@ -1,6 +1,10 @@
 -- Generated from ChapterVonNeumannCore.lean — solution of BookProof.VonNeumannCore.mem_coreLp_iff
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 open BookProof.VonNeumannCore
 
 

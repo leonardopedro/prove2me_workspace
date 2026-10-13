@@ -1,6 +1,9 @@
 -- Generated from ChapterSmGaugeRepresentation.lean — solution of BookProof.SmGaugeRep.su2gen_closes
 import Mathlib
 import Definitions.Def_ChapterSmGaugeRepresentation
+import Definitions.Def_ChapterParitySU2
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmGaugeRep
 
 

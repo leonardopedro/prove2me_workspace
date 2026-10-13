@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterNsOuterFockFarisLavine
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_esa_farisLavine
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secExt_rel
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.NsOuterFock
 
 
@@ -14,6 +23,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
 open BookProof.SqSumOuterFamily
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFockFL
 
 noncomputable section
 

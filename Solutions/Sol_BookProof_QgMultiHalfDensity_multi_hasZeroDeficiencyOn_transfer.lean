@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_hasZeroDeficiencyOn_transfer
-import Theorems.Thm_BookProof_QgMultiHalfDensity_qgProd_ae_inv_prime
+import Theorems.Thm_BookProof_QgMultiHalfDensity_qgProd_ae_inv'
 open BookProof.QgMultiHalfDensity
 
 

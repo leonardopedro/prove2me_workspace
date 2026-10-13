@@ -1,6 +1,14 @@
 -- Generated from ChapterFreeFieldBornFiberCardGeneral.lean — solution of BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBornSignFiber
+import Definitions.Def_ChapterFreeFieldBornSectionBij
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornFiberCard
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
 
 

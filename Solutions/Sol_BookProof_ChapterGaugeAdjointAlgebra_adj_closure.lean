@@ -14,6 +14,9 @@ variable {L : Type*} [LieRing L]
 
 variable {L : Type*} [LieRing L]
 
+
+@[simp] private theorem adjVar_apply (θ X : L) : adjVar θ X = ⁅X, θ⁆ := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (θ η X : L) :
     adjVar η (adjVar θ X) - adjVar θ (adjVar η X) = adjVar ⁅θ, η⁆ X := by

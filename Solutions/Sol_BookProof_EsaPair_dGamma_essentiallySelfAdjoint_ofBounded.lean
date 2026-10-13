@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterEsaPairDGamma
 import Theorems.Thm_BookProof_EsaPair_ESAPair_dGamma_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaPair
 
 
@@ -9,6 +15,8 @@ open BookProof.EsaPair
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

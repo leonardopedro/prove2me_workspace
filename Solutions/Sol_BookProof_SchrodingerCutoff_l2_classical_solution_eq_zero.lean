@@ -3,12 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSchrodingerCutoffEsa
 import Theorems.Thm_BookProof_SchrodingerCutoff_exists_deriv_chi_bound
 import Theorems.Thm_BookProof_SchrodingerCutoff_cutoff_energy_estimate
+import Definitions.Def_ChapterParityChirality
 open BookProof.SchrodingerCutoff
 
 
 
 
 open MeasureTheory Filter Complex
+open BookProof.ChapterParityChirality
 
 set_option maxHeartbeats 1000000 in
 theorem solution
@@ -19,9 +21,7 @@ theorem solution
     (heq : ∀ x, -u'' x + (V x : ℂ) * u x = z * u x)
     (hVz : ∀ x, 1 ≤ V x - z.re)
     (hL2 : Integrable fun x => ‖u x‖ ^ 2) :
-    u = 0 :=
-  able fun x => ‖u x‖ ^ 2) :
-      u = 0 := by
+    u = 0 := by
     obtain ⟨C, hC0, hC⟩ := exists_deriv_chi_bound
     have hud : Differentiable ℝ u := fun x => (h1 x).differentiableAt
     have hucont : Continuous u := hud.continuous
@@ -60,4 +60,4 @@ theorem solution
       have : ‖u x‖ ^ 2 = 0 := hx
       have : ‖u x‖ = 0 := by nlinarith [norm_nonneg (u x)]
       simpa using this
-    exact (Continuous.ae_eq_iff_eq
+    exact (Continuous.ae_eq_iff_eq volume hucont continuous_const).mp hu_ae

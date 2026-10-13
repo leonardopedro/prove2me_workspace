@@ -4,6 +4,12 @@ import Definitions.Def_ChapterPvmInducedSystem
 import Theorems.Thm_BookProof_ChapterPvmInducedSystem_isHilbertSum_swIsom
 import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine
 import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_swCLM_proj
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmInducedSystem
 
 
@@ -15,6 +21,7 @@ open scoped InnerProductSpace
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterHilbertSumIntertwine
+open BookProof.ChapterElectroweakFieldStrength
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

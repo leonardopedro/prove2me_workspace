@@ -1,6 +1,10 @@
 -- Generated from ChapterLorentzRealRepFull.lean — solution of BookProof.ChapterLorentzRealRepFull.finrank_matrix
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterLorentzRealRepSum
 open BookProof.ChapterLorentzRealRepFull
 
 

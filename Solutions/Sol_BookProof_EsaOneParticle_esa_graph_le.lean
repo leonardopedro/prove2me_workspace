@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_deficiencyTrivialAt_of_graph_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaOneParticle
 
 

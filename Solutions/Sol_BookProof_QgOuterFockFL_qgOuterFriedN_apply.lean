@@ -1,6 +1,14 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — solution of BookProof.QgOuterFockFL.qgOuterFriedN_apply
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFockFL
 
 
@@ -28,10 +36,10 @@ variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
 variable {C H}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (x : qgOuterFriedDom) (n : ℕ) :
     ((qgOuterFriedN x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n
       = (harmFried (n * 84)).op ⟨((x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n, x.2.1 n⟩ :=
   dsCompOp_fib _ x n
-  
-  set_option maxHeartbeats 2000000 in
-  -- the Friedrichs domain is a range of a completion-built resolvent: defeq checks are costly
+
+set_option maxHeartbeats 2000000 in

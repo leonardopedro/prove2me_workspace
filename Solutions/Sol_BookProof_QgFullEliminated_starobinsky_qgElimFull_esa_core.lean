@@ -2,6 +2,20 @@
 import Mathlib
 import Definitions.Def_ChapterQgFullEliminated
 import Theorems.Thm_BookProof_QgFullEliminated_qgElimFull_esa_core_fl
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgFourierElimination
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgFullEliminated
 
 
@@ -17,5 +31,10 @@ open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (M alpha : ℝ) (halpha : 0 < alpha) (g : ℝ) :
-    EssentiallySelfAdjointOn (secCore (ι := qgElimFull_esa_core_fl (starobinskyWall M alpha halpha) g
+    EssentiallySelfAdjointOn (secCore (ι := EGMode))
+      (secHam (starobinskyWall M alpha halpha) (qgElimFullModes g)) :=
+  qgElimFull_esa_core_fl (starobinskyWall M alpha halpha) g
+
+/-! ## 6b. The unitary time evolution -/

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_act_inv_of_act
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_det_inv_eq_one
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerOrbitClassification
 
 

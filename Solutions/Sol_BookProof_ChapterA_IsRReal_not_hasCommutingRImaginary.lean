@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA1h
 import Theorems.Thm_BookProof_ChapterA_cxSystem_reducible_of_commuting_rImaginary
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

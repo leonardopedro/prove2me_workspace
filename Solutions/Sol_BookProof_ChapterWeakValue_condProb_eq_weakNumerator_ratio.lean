@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeakValue
 import Theorems.Thm_BookProof_ChapterWeakValue_jointProb_eq_normSq_weakNumerator
+import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterWeakValue
 
 

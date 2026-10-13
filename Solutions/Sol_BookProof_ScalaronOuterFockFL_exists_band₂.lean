@@ -1,6 +1,13 @@
 -- Generated from ChapterScalaronOuterFockFL.lean — solution of BookProof.ScalaronOuterFockFL.exists_band2
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
 open BookProof.ScalaronOuterFockFL
 
 
@@ -21,8 +28,12 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x y : secCore (ι := by
 
+theorem solution (x y : secCore (ι := ι)) :
+    ∃ P : Finset ι, (∀ a, a ∉ P → (x : Sec ι) a = 0) ∧
+      (∀ a, a ∉ P → ∀ b ∈ Q.nbr a, (x : Sec ι) b = 0) ∧
+      (∀ a, a ∉ P → (y : Sec ι) a = 0) ∧
+      (∀ a, a ∉ P → ∀ b ∈ Q.nbr a, (y : Sec ι) b = 0) := by
   classical
   obtain ⟨Px, hx1, hx2⟩ := exists_band Q x
   obtain ⟨Py, hy1, hy2⟩ := exists_band Q y

@@ -1,6 +1,9 @@
 -- Generated from ChapterQuantumGravityBrstCharge.lean — solution of BookProof.QuantumGravityBrstCharge.chi_anticomm
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.QuantumGravityBrstCharge
 
 

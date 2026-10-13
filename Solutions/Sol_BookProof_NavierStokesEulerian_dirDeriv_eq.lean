@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEulerian.lean — solution of BookProof.NavierStokesEulerian.dirDeriv_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesEulerian
 
 

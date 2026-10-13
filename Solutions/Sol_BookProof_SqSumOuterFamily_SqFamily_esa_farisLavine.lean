@@ -10,6 +10,18 @@ import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secExt_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_fib
 import Theorems.Thm_BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
@@ -23,6 +35,8 @@ open BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFockFL
 
 noncomputable section
 

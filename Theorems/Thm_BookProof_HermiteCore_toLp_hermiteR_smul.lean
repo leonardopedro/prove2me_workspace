@@ -9,9 +9,6 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-
-    (memLp_poly_mul_gaussH (p + q)).toLp _
-      = (memLp_poly_mul_gaussH p).toLp _ + (memLp_poly_mul_gaussH q).toLp _ := by
-  rw [Lp.ext_iff]
-  filter_upwards [(memLp_poly_mul_gaussH (p + q)).coeFn_toLp,
-    Lp.coeFn_add ((memLp_poly_mul_gaussH p).toLp _) ( := by sorry
+theorem BookProof.HermiteCore.toLp_hermiteR_smul (n : ℕ) (c : ℝ) :
+    (memLp_poly_mul_gaussH (C c * hermiteR n)).toLp _
+      = ((c * hermiteNorm n : ℝ) : ℂ) • hermiteLp n := by sorry

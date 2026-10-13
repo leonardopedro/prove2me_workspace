@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTotalVariance
 import Theorems.Thm_ChapterTotalVariance_crossTerm_zero
+import Definitions.Def_ChapterA4
 open ChapterTotalVariance
 
 

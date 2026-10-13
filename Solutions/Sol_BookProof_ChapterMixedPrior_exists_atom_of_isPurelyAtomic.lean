@@ -1,6 +1,7 @@
 -- Generated from ChapterMixedPrior.lean — solution of BookProof.ChapterMixedPrior.exists_atom_of_isPurelyAtomic
 import Mathlib
 import Definitions.Def_ChapterMixedPrior
+import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterMixedPrior
 
 

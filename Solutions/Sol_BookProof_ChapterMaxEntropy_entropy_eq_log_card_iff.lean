@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterMaxEntropy_negMulLog_sub_le
 import Theorems.Thm_BookProof_ChapterMaxEntropy_entropy_uniform
 import Theorems.Thm_BookProof_ChapterMaxEntropy_negMulLog_sub_eq_imp
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDutchBook
+import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterMaxEntropy
 
 

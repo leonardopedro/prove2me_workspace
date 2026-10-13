@@ -4,6 +4,17 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Theorems.Thm_BookProof_ModeQuadratic_sub_single_one_one
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_vanish
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_sub_single
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.ModeQuadratic
 
 
@@ -18,6 +29,8 @@ open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
 open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 

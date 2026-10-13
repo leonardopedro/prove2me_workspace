@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.nsHamiltonian_isPolynomial
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -12,6 +14,7 @@ variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.CanonicalVector
 theorem solution :
     nsHamiltonian d = ∑ a : NSWordIndex, nsCoeff d.nu a • ((nsWord a).map (nsGen d)).prod := by
 

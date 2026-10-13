@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_HermiteExpWall_gaussMoment_tilt_ge
 import Theorems.Thm_BookProof_HermiteExpWall_psi_sq
 import Theorems.Thm_BookProof_HermiteExpWall_gaussMoment_shift_eight
 import Theorems.Thm_BookProof_HermiteCore_gaussW_pos
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.HermiteExpWall
 
 
@@ -16,15 +21,18 @@ open BookProof.HermiteExpWall
 open MeasureTheory Polynomial
 open BookProof.HermiteCore BookProof.Starobinsky BookProof.QgHermiteCore
 open BookProof.HermiteProductCore
+open BookProof.GhostField
+open BookProof.HermiteCore
+open BookProof.Starobinsky
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (M alpha : ℝ) (hM : 0 < M) (halpha : 0 < alpha) (N : ℕ) :
     (M ^ 4 / (16 * alpha)) *
         ((8 * (Real.sqrt (2 / 3) / M) ^ 8 / 315) * (N : ℝ) ^ 4 - 1) * gaussMoment (2 * N)
       ≤ ∫ x : ℝ, starobinskyV M alpha x * psi N x ^ 2 := by
-
   set s : ℝ := Real.sqrt (2 / 3) / M with hs
   set c0 : ℝ := M ^ 4 / (16 * alpha) with hc0
   have hc0pos : 0 < c0 := by rw [hc0]; positivity
@@ -100,5 +108,3 @@ theorem solution (M alpha : ℝ) (hM : 0 < M) (halpha : 0 < alpha) (N : ℕ) :
     nlinarith [htilt, h1]
   rw [hInt, hPm]
   nlinarith [hAM, hchain, hc0pos, hmpos]
-
-/-- 

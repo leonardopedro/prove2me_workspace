@@ -3,12 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSolovay
 import Theorems.Thm_BookProof_ChapterSolovay_stateMeasure_isProbability
 import Theorems.Thm_BookProof_ChapterSolovay_only_mehler_on_tail
+import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovay
 
 
 
 open MeasureTheory ProbabilityTheory
 open scoped ENNReal Filter Topology
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution (N : ℕ)

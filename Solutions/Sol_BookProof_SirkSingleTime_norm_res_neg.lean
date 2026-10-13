@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_inner_res
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.SirkSingleTime
 
 

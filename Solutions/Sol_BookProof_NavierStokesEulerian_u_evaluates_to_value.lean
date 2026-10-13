@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
 import Theorems.Thm_BookProof_NavierStokesFlow_field_evaluates_to_value
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesEulerian
 
 

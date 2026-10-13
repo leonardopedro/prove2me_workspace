@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_derOp_mulOp
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_derOp_comm
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.QuantumGravityBrstCharge
 
 
@@ -10,12 +13,17 @@ open BookProof.QuantumGravityBrstCharge
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.YangMillsHermite
 open BookProof.QuantumGravity3DGauge
+open BookProof.YangMillsHermite
 
 noncomputable section
 
 variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
 variable {f : Fin n → Fin n → Fin n → ℝ} {G χ β : Fin n → R}
 variable {d : ℕ}
+
+
+private theorem elemGen_apply (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    elemGen j k p = X j * derOp k p := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j k l m : Fin d) :

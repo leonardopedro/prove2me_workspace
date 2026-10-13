@@ -1,6 +1,7 @@
 -- Generated from ChapterCyclicDirectSum.lean — solution of BookProof.ChapterCyclicDirectSum.starProjection_eq_of_hasSum
 import Mathlib
 import Definitions.Def_ChapterCyclicDirectSum
+import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterCyclicDirectSum
 
 

@@ -1,6 +1,17 @@
 -- Generated from ChapterModeQuadraticEsa.lean — solution of BookProof.ModeQuadratic.mulXPoly_eq_lop
 import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.ModeQuadratic
 
 
@@ -15,6 +26,7 @@ open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
 open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
 
 noncomputable section
 
@@ -23,8 +35,8 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin d) : mulXPoly (d := d) i = lop 1 i := by
 
+theorem solution (i : Fin d) : mulXPoly (d := d) i = lop 1 i := by
   refine LinearMap.ext fun p => ?_
   simp only [lop, LinearMap.add_apply, crePoly_apply, annPoly_apply,
     mulXPoly_apply, one_smul]

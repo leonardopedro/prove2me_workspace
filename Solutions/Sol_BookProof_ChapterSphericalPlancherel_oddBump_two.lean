@@ -1,6 +1,7 @@
 -- Generated from ChapterSphericalPlancherel.lean — solution of BookProof.ChapterSphericalPlancherel.oddBump_two
 import Mathlib
 import Definitions.Def_ChapterSphericalPlancherel
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalPlancherel
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCyclicDirectSum
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_invariant_orthogonal
+import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterCyclicDirectSum
 
 

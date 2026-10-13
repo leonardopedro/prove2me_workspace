@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxTemperatureMonotone
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_scoreSoftmax
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 
@@ -12,12 +15,16 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (j : Fin m) :
     deriv (fun b : ℝ => scoreSoftmax b s j) beta
-      = scoreSoftmax beta s j * (s j - meanScore beta s) := (hasDerivAt_scoreSoftmax beta s j).deriv
+      = scoreSoftmax beta s j * (s j - meanScore beta s) :=
+  (hasDerivAt_scoreSoftmax beta s j).deriv

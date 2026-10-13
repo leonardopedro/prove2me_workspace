@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_coord_succ
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 
@@ -20,16 +22,20 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable (P : PairShift ι)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 < c) :
-    affH hκ hc.le (basisState κ c 0) ≠ 0 :=
-  ift is not an artefact of the bookkeeping. -/
-  theorem affH_ne_zero_of_pos_shear {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 < c) :
-      affH hκ hc.le (basisState κ c 0) ≠ 0 := by
-    intro h0
-    have hcoord := affH_coord_succ hκ hc.le 0
-    rw [h0] at hcoord
-    simp only [lp.coeFn_zero, Pi.zero_apply] at hcoord
-    have hshear : shear c 0 ≠ 0 := by
-      have h2 : (0 : ℝ) < Real.sqrt 2 := by rw [Real.sqrt_pos]; norm_num
-      have h1 : (0 : ℝ) < Real.sqrt (((0 : ℕ) : ℝ) + 1) := by rw [Real.sqrt_pos]; norm_num
-      unfold
+    affH hκ hc.le (basisState κ c 0) ≠ 0 := by
+  intro h0
+  have hcoord := affH_coord_succ hκ hc.le 0
+  rw [h0] at hcoord
+  simp only [lp.coeFn_zero, Pi.zero_apply] at hcoord
+  have hshear : shear c 0 ≠ 0 := by
+    have h2 : (0 : ℝ) < Real.sqrt 2 := by rw [Real.sqrt_pos]; norm_num
+    have h1 : (0 : ℝ) < Real.sqrt (((0 : ℕ) : ℝ) + 1) := by rw [Real.sqrt_pos]; norm_num
+    unfold shear
+    positivity
+  have hz : ((shear c 0 : ℝ) : ℂ) = 0 := by
+    have h := hcoord.symm
+    field_simp at h
+    simpa using h
+  exact hshear (by exact_mod_cast hz)

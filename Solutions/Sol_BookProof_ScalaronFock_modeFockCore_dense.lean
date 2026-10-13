@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_Starobinsky_mulSymbolDomain_dense
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronFock
 
 

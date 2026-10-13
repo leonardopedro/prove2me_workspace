@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSequentialBayes
 import Theorems.Thm_BookProof_ChapterSequentialBayes_sequential_eq_batch
 import Theorems.Thm_BookProof_ChapterSequentialBayes_posterior_eq_bayesUpdate
+import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterSequentialBayes
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralEnergyBound
 import Theorems.Thm_BookProof_ChapterSpectralEnergyBound_norm_evolve_apply
+import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
 
 

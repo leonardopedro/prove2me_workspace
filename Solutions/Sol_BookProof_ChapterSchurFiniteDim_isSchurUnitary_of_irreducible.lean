@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSchurFiniteDim
 import Theorems.Thm_BookProof_ChapterSchurFiniteDim_schur_scalar_of_irreducible
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurFiniteDim
 
 

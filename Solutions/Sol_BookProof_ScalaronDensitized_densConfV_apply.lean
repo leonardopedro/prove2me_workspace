@@ -1,6 +1,15 @@
 -- Generated from ChapterScalaronDensitizedTransfer.lean — solution of BookProof.ScalaronDensitized.densConfV_apply
 import Mathlib
 import Definitions.Def_ChapterScalaronDensitizedTransfer
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.ScalaronDensitized
 
 

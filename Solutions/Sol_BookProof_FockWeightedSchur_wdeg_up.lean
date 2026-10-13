@@ -4,6 +4,15 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_eq_sum
 import Theorems.Thm_BookProof_FockSchur_up_apply_prime
 import Theorems.Thm_BookProof_FockSecondQuantization_support_up
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockWeightedSchur
 
 
@@ -12,6 +21,7 @@ open BookProof.FockWeightedSchur
 open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

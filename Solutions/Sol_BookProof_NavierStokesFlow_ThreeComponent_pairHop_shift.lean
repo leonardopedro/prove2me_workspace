@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesThreeComponent.lean — solution of BookProof.NavierStokesFlow.ThreeComponent.pairHop_shift
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 

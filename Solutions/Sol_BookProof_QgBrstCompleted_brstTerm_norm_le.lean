@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Theorems.Thm_BookProof_QgBrstCompleted_wshift_norm_le
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
 open BookProof.QgBrstCompleted
 
 

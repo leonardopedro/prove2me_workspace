@@ -3,6 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
 import Theorems.Thm_BookProof_HermiteGraphApprox_integral_conj_pgFun_hamPolyL
 import Theorems.Thm_BookProof_HermiteGraphApprox_inner_pgLp_ae
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterDegKatoEsa
+import Definitions.Def_ChapterDegEnergyEstimate
+import Definitions.Def_ChapterHermiteLadderOrder
+import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.HermiteGraphApprox
 
 
@@ -16,6 +30,8 @@ open BookProof.QgOneParticleCc BookProof.YangMillsHermite
 open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.DegEnergy BookProof.HermiteLadder
 open BookProof.ConvolutionCalc
 open scoped ENNReal
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 
 noncomputable section
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_hasZeroDeficiencyOn
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 

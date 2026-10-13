@@ -1,5 +1,11 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.zeta_le_one
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 
@@ -12,4 +18,5 @@ open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (r : ℝ) (x : ℝ) : zeta r x ≤ 1 := bumpG.le_one

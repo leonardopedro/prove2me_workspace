@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA1c
 import Theorems.Thm_BookProof_ChapterA_cxSystem_isCReal
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

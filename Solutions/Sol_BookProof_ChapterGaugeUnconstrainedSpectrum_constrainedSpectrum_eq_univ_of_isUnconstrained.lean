@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Theorems.Thm_BookProof_ChapterGaugeUnconstrainedSpectrum_diagOp_injective
+import Definitions.Def_ChapterAbelianDiagonalCountable
 open BookProof.ChapterGaugeUnconstrainedSpectrum
+open BookProof.ChapterAbelianDiagonalCountable
 
 
 
@@ -13,10 +15,10 @@ variable {X : Type*}
 variable {G : Type*} [Group G]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {U : G → Op X}
     (hU : IsUnconstrainedGaugeFixing U) (hU1 : U 1 = LinearMap.id) :
     constrainedSpectrum U = Set.univ := by
-
   ext x
   simp only [constrainedSpectrum, Set.mem_setOf_eq, Set.mem_univ, iff_true]
   intro g d hd

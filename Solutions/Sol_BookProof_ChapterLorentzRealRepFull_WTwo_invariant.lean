@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_conj_inv_two
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_castR_mem_WTwo
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_mul
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_conjL_apply
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRepFull
 
 

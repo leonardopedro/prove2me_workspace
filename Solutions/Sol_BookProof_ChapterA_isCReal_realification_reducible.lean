@@ -2,11 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterA1f
 import Theorems.Thm_BookProof_ChapterA_realification_reducible_of_conjugation
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+open BookProof.ChapterA.AntiUnitary
 
 
 attribute [local instance] InnerProductSpace.rclikeToReal

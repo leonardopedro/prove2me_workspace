@@ -2,6 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_sq_le_quadForm
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronOuterFockFL
 
 
@@ -12,6 +20,7 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
+open BookProof.ScalaronEsa
 
 noncomputable section
 

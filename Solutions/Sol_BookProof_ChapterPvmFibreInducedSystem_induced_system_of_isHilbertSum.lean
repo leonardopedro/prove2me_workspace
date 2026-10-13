@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterPvmFibreInducedSystem
 import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine
 import Theorems.Thm_BookProof_ChapterL2FibreSum_fibreEquiv_proj
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterPvmInducedSystem
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterL2FibreSum
+import Definitions.Def_ChapterHilbertSumIntertwine
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmFibreInducedSystem
 
 
@@ -15,6 +23,7 @@ open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicUnitary
 open BookProof.ChapterPvmCyclicDecomposition BookProof.ChapterPvmInducedSystem
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterL2FibreSum
 open BookProof.ChapterHilbertSumIntertwine
+open BookProof.ChapterElectroweakFieldStrength
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

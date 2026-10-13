@@ -8,6 +8,14 @@ import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
 import Theorems.Thm_BookProof_ReducedEsa_symmetricOn_redOp
 import Theorems.Thm_BookProof_TensorCore_symmetricOn_sectorOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.PermSector
 
 
@@ -16,6 +24,8 @@ open BookProof.PermSector
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 open BookProof.GroupAverage BookProof.TensorPerm
+open BookProof.ChapterGaugeUnconstrainedSpectrum
+open BookProof.TensorCore
 
 noncomputable section
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterPinDoubleCover.lean — solution of BookProof.ChapterPinDoubleCover.Delta_card
 import Mathlib
 import Definitions.Def_ChapterPinDoubleCover
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.ChapterPinDoubleCover
 
 

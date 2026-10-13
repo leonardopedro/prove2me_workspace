@@ -1,6 +1,17 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.jacobiLag_secondOrder_eq_zero
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 

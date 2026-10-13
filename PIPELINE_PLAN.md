@@ -8861,3 +8861,274 @@ Mitigations executed:
 5. Decide the `target name already declared` policy for the 22 collision thms.
 6. Re-poll grades for the 150 resubmits; re-derive `failed_latest.json`.
 7. Commit plan + fixes (this session's close-out — new § tombstone policy).
+
+---
+
+## §2.50 — FATAL thm-statement census: 6 real defects fixed, 3 dup-parked, rest are mirror waits
+
+*(session 50, 2026-10-13 — re-verdict of all 36 FATAL thm statements with the
+widened `first_error` capture)*
+
+**Census result** (36 FATAL thm statements re-verdicted against the published
+mirror; full error text for each now captured in
+`state/offline_pending_check.json`):
+
+| Class | Count | Action |
+|---|---|---|
+| `object file … does not exist` (missing Def olean in mirror) | 26 | mirror rebuild covers them; re-verdict after |
+| Real statement defects | 6 | fixed this session (below) |
+| Duplicate of a def-bundle proof | 3 | parked (below) |
+
+**The 6 statement fixes (all verified `ok` offline after the edit):**
+
+1. `DirectSumEsa_fockH_isSymmetricDom` — statement said
+   `FullEsa.IsSymmetricDom`, but the stub only `open`s
+   `BookProof.NavierStokesFlow.FullEsa`, so the `FullEsa.` prefix does not
+   resolve (it would need `BookProof.NavierStokesFlow` open). Dropped the
+   prefix; the source (`BookProof/ChapterDirectSumEsa.lean:407`) compiles
+   because the chapter opens the parent namespace.
+2. `ChapterContinuityUnitaryInfinite_condProb_of_continuity_infinite` —
+   `Unknown identifier X`: the generator dropped the source's
+   `variable {X : Type*}` (line 374, immediately above the capstone).
+   Restored it in the stub.
+3+4. `HashimotoShiftInvert_IsShiftInvert_shift_apply` / `_apply_eq` —
+   `Invalid field mem`: `h.mem` needs `IsShiftInvert.mem`, which the
+   **published** def bundle lacks (the local bundle has it at :241 — a stale
+   def, wave-2 republish candidate). Rewrote both statements (and both sols)
+   to the unfold-stable form `⟨R u, (h.2 u).choose⟩`, which compiles against
+   both the stale and the fresh bundle since it only needs the `IsShiftInvert`
+   def's And-unfolding. `apply_eq`'s sol now proves via
+   `eq_sub_of_add_eq (h.2 u).choose_spec` directly, dropping the sibling
+   `Thm_…_mem` / `Thm_…_shift_apply` imports it used as scaffolding.
+
+**The 3 dup-parked (not fixable):**
+`YangMillsFriedrichs_weylOpDom_{symmetricOn,quadForm,quadForm_nonneg}` — the
+published `Def_ChapterYangMillsFriedrichs` itself **declares and proves** all
+three (:372, :396, :413), so the platform rejects the thm stubs with
+`` `X` has already been declared ``. They can never publish as standalone
+thms while the def bundle carries the proofs; their 3 sols are moot (the
+math is already on the platform, inside the def bundle). Same class as the
+§2.37-5 `drop_embedded_dups` slugs.
+
+**Uploads while building:** drain58 (`debug/drain_now.sh`, LOOPS=30) launched
+against the freshly re-derived uploadable sets (def 0 / thm 31 / sol 150) —
+running concurrently with the whole-mirror rebuild and the session49
+postmirror verify chain (verify-only, single-writer rule respected).
+
+---
+
+# §2.51 — Red-sol repair campaign: 475 reds classified, 222 header repairs applied, upload kept running in parallel
+
+## 1. Live snapshot (07:40 CEST)
+
+| Process | State |
+|---|---|
+| whole-mirror rebuild (`build_published_mirror.py --reuse`) | `[3589/7481]`, still in the `Theorems/` half |
+| drain59 (`drain_now.sh`, LOOPS=30) | round 1: thm chunk done, **sol chunk in flight** (150 items) |
+| `check_sol_local` batch on the import-drop set | running (69 sols) |
+
+Pipeline totals: **12962 done / 6655 pending** (19622 tracked items).
+
+## 2. The uploadable snapshot that drain59 is working
+
+`debug/whats_uploadable.py` (07:26, after the mirror passed 3400 modules):
+
+```
+def  pending=138  uploadable=0    (every candidate: "def gate: candidate build BLOCKED by …")
+thm  pending=3109 uploadable=25
+sol  pending=3408 uploadable=150
+```
+
+* sol deferrals: 327+160+86+77+76+74+70+64+… *sibling theorem not published*, 195
+  *offline mirror*, ~125 *def bundle not published*.
+* thm deferrals: overwhelmingly *def bundle not published on the platform*.
+
+**The 25 "uploadable" thms are all dup-declaration parks.** The chunk's own
+summary (07:35:20) accounts for every one of them:
+
+```
+target name already declared by published def bundle ChapterPvmCyclicDecomposition (15)
+target name already declared by published def bundle ChapterAbelianClassificationList (5)
+… ChapterStoneEvolution (1), ChapterStoneMeasurable (1)
+target already published on the platform (1)
+statement relies on ambient variable `D` from its def bundle (3)
+```
+
+Same class as the §2.50 `weylOpDom_*` trio: the def bundle itself declares and
+proves the name, so the standalone thm stub can never publish. Expect every
+future round to keep rediscovering these until they are flipped to `parked` —
+the thm-side of the ledger is effectively **empty of real work**; all remaining
+thm pending is *"def bundle not published"*.
+
+## 3. The 475 red sols: latest-verdict census
+
+`state/failed_submissions.json` holds 475 sols with a failed latest submission —
+`CE 369 / FAILED 90 / ERROR 12 / WA 4`. Classified by the server's own message:
+
+| Class | n | Fixable here? |
+|---|---|---|
+| `Unknown identifier` | 259 | **yes** — mostly a lost `variable`/import line |
+| `unknown namespace` | 63 | **yes** — lost def-bundle import |
+| `unknown import: Theorems.Thm_… No such theorem` | 89 | **yes if unused** — module exists locally but is not published |
+| `proof fails` (`unsolved goals` / `tactic failed`) | 26 | real proof work |
+| `timeout` / heartbeat | 11 | retry with a bigger budget |
+| `unexpected token` (`²`) | 7 | **yes** — `open scoped lp` missing |
+| `invalid 'import' command, it must be used in the beginning` | 6 | **yes** — header corruption |
+| `Ambiguous term`, `simp made no progress`, type-mismatch, statement-mismatch | ~10 | individually |
+
+Top unknown identifiers: `d` (29), `Dom` (7), `F` (7), `harmCore` (6),
+`LagrangianFullData` (6), `embedCore_coe` (5), `EssentiallySelfAdjointOn` (4) …
+Top unknown namespaces: `BookProof.FarisLavine` (20), `BookProof.KatoRellich` (12),
+`BookProof.ChapterFreeFieldGaussian` (6) …
+
+## 4. Repair passes applied this session (all still subject to the local gate)
+
+1. **`debug/sync_sol_header.py` (new)** — diffs each red sol against its
+   `Theorems/Thm_<slug>.lean` stub and restores the import lines the stub
+   carries. Dry run found **153**, `--apply` wrote all 153. (0 variable fixes
+   were needed: the sols already carry the `variable` lines, which is how the
+   `Unknown identifier \`d\`` class was eventually recognised as *stale
+   verdicts* rather than file defects — see §6.)
+2. **import-drop probe (69)** — for the `unknown import` class the module exists
+   locally but is unpublished, so the import can only be removed and the proof
+   re-checked; if the proof did not actually use it, the sol becomes
+   submittable immediately. Originals backed up to `/tmp/dropimp_bak/`,
+   plan in `/tmp/dropimp_plan.json`.
+3. **`open scoped lp` (15 files)** — `ℓ²(ℕ, ℂ)` is `scoped[lp]`
+   (`Mathlib/Analysis/Normed/Lp/lpSpace.lean:387`), not `scoped
+   InnerProductSpace`; the corrupted header opened the wrong scope, hence
+   `unexpected token '²'`.
+4. **3 truncated FarisLavine sols rebuilt** from
+   `BookProof/ChapterFarisLavine.lean` (`conj_mul_ofReal`, `conj_mul_ofReal₂`,
+   `mulHamiltonian_not_bounded`), plus `inner_dGamma_left` (duplicated
+   statement tail `A j v)) := by`) and `NavierStokesFlow_FockCanonical_fock_hamiltonian_eq`
+   (no proof body at all).
+5. **2 parked as stale-def, not sol bugs**: `fiberSumHam_essentiallySelfAdjoint_of_bddBelow`
+   (needs `wallHam_essentiallySelfAdjoint_of_bddBelow`, only documented —
+   not declared — in the published `Def_ChapterWallEsaBddBelow`) and
+   `LagrangianKatoRellich_lagrangianCore_symmetricOn`
+   (`L.hFull_isSymmetricDom` absent from the published
+   `Def_ChapterNavierStokesLagrangianEsa`). Both need a def republish (§2.49).
+
+## 5. Verification results so far (against the partial mirror)
+
+* fix batch of 28: **13 ok / 15 fail**; of the 15, 6 were mirror-olean waits,
+  9 went on to be fixed in this pass.
+* fix batch of 20 (after the scope/import passes): **5 ok / 15 mirror-olean
+  waits** — i.e. the remaining `object file … does not exist` verdicts are the
+  mirror rebuild's work, not code defects.
+
+## 6. Key correction: many "red" verdicts are stale
+
+The `Unknown identifier d` / `unknown namespace` failures quote server-side
+line numbers whose text is **already correct in the working tree** — the file was
+fixed in a previous session and never resubmitted. So the red set must be
+re-verdicted locally *first* and only then resubmitted; editing on the strength
+of an old `error_message` would corrupt files that are already right. The
+header-sync passes therefore only *add* lines that the sibling thm stub has and
+the sol lacks — never a speculative rewrite.
+
+## 7. Next actions (ordered)
+
+1. Let drain59 run its 30 rounds — it re-derives the uploadable set each round,
+   so every olean the mirror finishes converts directly into uploads.
+2. When the mirror completes: run `check_sol_local` over **all 475** reds,
+   then `debug/resubmit_ok_red.py` on the `ok` slice (verification → resubmission,
+   never the reverse).
+3. Flip the 26 dup-declaration thm parks (§2.49 + §2.50 + this section's 25) to
+   `parked` so the thm chunk stops spending its budget rediscovering them.
+4. Real proof work: 26 `unsolved goals` / `tactic failed` reds.
+5. Continue the def-republish campaign for the stale bundles named in §4.5 — each
+   republish unblocks a whole thm→sol column.
+
+---
+
+# §2.52 — Pagination bug fixed, thm side exhausted, def gate is the bottleneck; red-sol verdict + drain running side by side
+
+*(session 52, 2026-10-13 12:00 CEST — snapshot, infra fix, and the 4x-gap
+strategy)*
+
+## 1. Infrastructure: `_paged` silently truncated at 10,000 jobs (FIXED)
+
+`pipeline/upload_pipeline.py::_paged` stopped after its page budget without
+consulting the envelope's `total`. The platform has **11,006 problem publish
+jobs**, so every reconcile read exactly 10,000 and the remaining **1,006 thm
+records could never be reconciled** — their sols stayed blocked at
+`sibling theorem not published yet` forever. Fixed to walk until the reported
+`total` is reached (server caps `limit` at 100 per page). `--check` now prints
+`read 11006 problem publish job(s)`.
+
+Consequence traced after the fix: only **11** of the 149 "stale thm record"
+sol-blockers were actually ledger staleness — `--sync` reconciled the rest
+without moving them, i.e. the visible defer reason was one level shallow. The
+guard's real blocker chain for sols runs through the **thm gate** and the
+**def gate** (see §3 below).
+
+## 2. Live snapshot (12:03 CEST, all jobs restarted from cold)
+
+Nothing was running: drain60 had exited, the published-mirror rebuild had
+**finished at 12:00** (4902 oleans; residual failures in
+`state/published_mirror_failures.json` — two classes: `object file … not
+found` cascade, and `unknown namespace` statement defects of the §2.50 kind).
+
+| ledger | done | pending | parked |
+|---|---|---|---|
+| def | 549 | **138** | 0 |
+| thm | 6391 | **3109** | 1 |
+| sol | 6046 | **3405** | 4 |
+
+Uploadable per the production guard (`whats_uploadable.py`):
+**sol=149, thm=25, def=0**.
+
+Gates: `state/thm_gate.json` 10-12 (293/10120 OK) — stale by a day;
+`state/def_gate.json` 02:46 today (285/688 OK).
+
+## 3. The def gate is the system bottleneck
+
+Of the 138 pending defs, **135 are deferred by blockers whose gate entry does
+not exist at all** (status `None` — the blocker is neither published nor
+covered by the last `build_candidate_mirror` run), so the guard defers the
+whole column and no def chunk ever runs. The 25 uploadable thms are all
+server-confirmed **dup parks**; of the 149 blocked thms (never submitted — no
+publish job exists for them), `--check` finds **10 SUBMIT-ready**. The thm
+side is therefore exhausted as a lever: publishing the pending defs flips the
+`unpublished def import` verdict on ~2702 thms and their sols.
+
+Lever: rerun `build_candidate_mirror.py --targets <pending-def-slugs>` to
+rewrite `state/def_gate.json` for exactly the 138 pending chapters (plus
+`thm_gate.json` for the stubs it builds).
+
+## 4. The 4x gap — published theorems vs. sols (user's observation)
+
+The platform now carries **~4x as many published theorems as sols**. The
+local ledger matches the shape: 6391 thm done vs. 6046 sol done, but a large
+slice of the sol `done`s are hidden-red (§2.44) and the 3405 pending sols are
+mostly verdict-blocked, not proof-blocked. Strategy for this session:
+
+1. **Upload what passes the guard right now** — drain61 (60 rounds) running
+   `def → thm → sol` chunks, re-deriving the uploadable set every round.
+2. **While it runs, re-verdict all 475 reds** against the freshly completed
+   mirror (`check_red_sols.py --jobs 6`, log `state/check_red_full.log`) —
+   §2.51 showed many reds are stale verdicts on files already fixed locally.
+3. Fix what genuinely fails, verify, then flip the ok slice
+   (`debug/resubmit_ok_red.py --apply`, single-writer: drain paused) and let
+   the drain resubmit.
+4. Refresh the def gate (§3) to unlock the def column that gates the rest.
+
+## 5. Jobs launched this session (tool BACKGROUND)
+
+| job | command | log |
+|---|---|---|
+| drain61 | `TAG=drain61 LOOPS=60 bash debug/drain_now.sh` | `state/drain61_$(date).log`, console `state/drain61_console.log` |
+| check_red_full | `PROVE2ME_SKIP_LOCAL_COMPILE=1 python3 debug/check_red_sols.py --jobs 6` | `state/check_red_full.log` |
+
+## 6. Next actions (ordered)
+
+1. Watch drain61 round 1 (`uploadable=` lines) — confirm sol uploads land.
+2. When `check_red_full` finishes: classify `/tmp/red_sol_fail.txt`; fix the
+   real `unsolved goals` / `tactic failed` set (proof work, §2.51 §4).
+3. Pause drain → `resubmit_ok_red.py --apply` → restart drain (fixed sols).
+4. `build_candidate_mirror --targets` over the 138 pending defs; re-run
+   `whats_uploadable` and let drain pick up the def column.
+5. Flip the ~26 dup-declaration thm parks to `parked` so thm chunks stop
+   rediscovering them (§2.49/§2.50 carry-over).

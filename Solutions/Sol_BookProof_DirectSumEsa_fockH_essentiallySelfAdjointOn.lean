@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_essentiallySelfAdjointOn_of_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_DirectSumEsa_fockH_hasZeroDeficiencyOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.DirectSumEsa
 
 

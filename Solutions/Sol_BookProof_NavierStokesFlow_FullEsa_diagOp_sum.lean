@@ -2,12 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_add
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterAbelianDiagonalCountable
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

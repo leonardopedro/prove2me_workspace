@@ -2,6 +2,7 @@ import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Mathlib
+import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_lagrange_term_zero_of_fixing
 
 
 /-!

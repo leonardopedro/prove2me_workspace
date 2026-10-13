@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_inner
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

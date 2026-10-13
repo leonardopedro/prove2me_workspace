@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_diffAt_fderiv
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_fderiv_mul_eventually
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
 

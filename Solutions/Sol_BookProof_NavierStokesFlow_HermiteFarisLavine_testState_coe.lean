@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesHermiteFarisLavine.lean — solution of BookProof.NavierStokesFlow.HermiteFarisLavine.testState_coe
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 

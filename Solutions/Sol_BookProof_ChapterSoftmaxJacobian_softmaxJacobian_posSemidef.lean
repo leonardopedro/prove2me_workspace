@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_weightedVar_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_softmaxJacobian_quadratic_form
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxJacobian
 
 

@@ -1,18 +1,16 @@
 -- Generated from ChapterSirkTrotterKato.lean — solution of BookProof.ChapterSirkTrotterKato.trotterKato_uniform_on_interval
 import Mathlib
 import Definitions.Def_ChapterSirkTrotterKato
-import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_uniform_of_mem_range
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_exists_res_domain_approx
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterSirkTrotterKato
-
-
 
 noncomputable section
 
 open Filter Topology Asymptotics
 open scoped InnerProductSpace
-
 
 open BookProof.ChapterStoneResolvent
 

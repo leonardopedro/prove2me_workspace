@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_deriv_meanScore
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxDivergence
 
 
@@ -12,11 +15,14 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :
-    deriv (fun b : ℝ => meanScore b s) beta = fisherInformation beta s := deriv_meanScore beta s i
+    deriv (fun b : ℝ => meanScore b s) beta = fisherInformation beta s :=
+  deriv_meanScore beta s i

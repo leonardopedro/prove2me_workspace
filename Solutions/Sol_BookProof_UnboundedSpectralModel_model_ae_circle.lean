@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Theorems.Thm_BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.UnboundedSpectralModel
 
 
@@ -16,6 +23,7 @@ open scoped InnerProductSpace
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
 open BookProof.ChapterSpectralDirectSum
+open BookProof.ChapterLinftyMultiplication
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

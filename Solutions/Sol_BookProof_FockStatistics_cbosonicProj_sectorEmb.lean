@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_apply
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -9,6 +14,9 @@ open BookProof.FockStatistics
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.ChapterMaschkeFiniteGroup
+open BookProof.TensorCore
+open BookProof.ChapterWignerLittleGroup
 
 noncomputable section
 

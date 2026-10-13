@@ -23,4 +23,4 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 theorem BookProof.HashimotoShiftInvert.IsShiftInvert.apply_eq {A : Dom →ₗ[ℂ] F} {γ : ℝ} {R : F →L[ℂ] F}
     (h : IsShiftInvert A γ R) (u : F) :
-    A ⟨R u, h.mem u⟩ = u - (γ : ℂ) • R u := by sorry
+    A ⟨R u, (h.2 u).choose⟩ = u - (γ : ℂ) • R u := by sorry

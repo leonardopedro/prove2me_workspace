@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 import Theorems.Thm_BookProof_TensorCore_derPow_symm
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TensorCore
 
 

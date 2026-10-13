@@ -5,6 +5,7 @@ import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 import Theorems.Thm_BookProof_YangMillsHermite_derOp_apply
+import Definitions.Def_ChapterHermiteRelativeBound
 
 
 /-!

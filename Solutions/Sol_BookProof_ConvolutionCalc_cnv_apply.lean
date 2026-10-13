@@ -1,6 +1,9 @@
 -- Generated from ChapterConvolutionCalc.lean — solution of BookProof.ConvolutionCalc.cnv_apply
 import Mathlib
 import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.ConvolutionCalc
 
 
@@ -8,6 +11,7 @@ open BookProof.ConvolutionCalc
 
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
+open BookProof.HermiteProductCore
 
 noncomputable section
 

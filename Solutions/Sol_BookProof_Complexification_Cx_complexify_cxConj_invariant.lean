@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_mem_complexify
+import Definitions.Def_ChapterA
+import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 

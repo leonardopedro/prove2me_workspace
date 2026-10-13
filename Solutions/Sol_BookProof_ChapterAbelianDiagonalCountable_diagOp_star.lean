@@ -10,9 +10,12 @@ open scoped ENNReal
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
+@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+
 theorem solution (d : EllInf) (f g : Ell2C) :
     (inner ℂ (diagOp d f) g : ℂ) = inner ℂ f (diagOp (star d) g) := by
-
   rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
   refine tsum_congr fun i => ?_
   simp [RCLike.inner_apply, map_mul, mul_comm, mul_left_comm]

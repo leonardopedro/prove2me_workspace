@@ -7,6 +7,11 @@ import Theorems.Thm_BookProof_TwoParticleSector_isReducingProjection_bosonicProj
 import Theorems.Thm_BookProof_ReducedEsa_commutes_symProj
 import Theorems.Thm_BookProof_ReducedEsa_essentiallySelfAdjointOn_red
 import Theorems.Thm_BookProof_ReducedEsa_symProj_mem
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 
@@ -14,6 +19,7 @@ open BookProof.TwoParticleSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

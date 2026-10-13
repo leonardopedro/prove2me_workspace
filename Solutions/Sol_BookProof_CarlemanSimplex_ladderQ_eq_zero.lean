@@ -13,6 +13,8 @@ import Theorems.Thm_BookProof_CarlemanSimplex_sBd_mass_le
 import Theorems.Thm_BookProof_CarlemanSimplex_shifted_sBd_mass_le
 import Theorems.Thm_BookProof_CarlemanSimplex_not_summable_inv_natCast_add_two
 import Theorems.Thm_BookProof_CarlemanTwoStep_rc1_nonneg
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

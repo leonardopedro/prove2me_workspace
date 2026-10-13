@@ -2,139 +2,16 @@ import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
+import Theorems.Thm_BookProof_ChapterObservableExpectation_observableExpectation_const
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 
 
 /-!
 # Chapter "The Coherent State of Attention": the uncertainty of the output
 
 The attention output is the expectation value of the contextual observable, so it
-carries the second moment of a measurement as well as the first.  This module
-proves the elementary facts about that spread.
-
-* `sum_dist_sq_eq` — the **bias–variance decomposition**: for any reference point
-  `c`, `∑ⱼ pⱼ‖vⱼ − c‖² = Var(p,v) + ‖o − c‖²`, where `o` is the attention output.
-* `observableExpectation_minimizes` — hence the head output is the *least-squares
-  summary* of the values it is reading: no other vector is closer to the values in
-  the attention-weighted mean-square sense.
-* `outputVariance_eq_sub` (König–Huygens) and `norm_observableExpectation_sq_le` —
-  `Var = ∑ pⱼ‖vⱼ‖² − ‖o‖² ≥ 0`, the Jensen inequality for the output norm.
-* `outputVariance_eq_zero_iff_of_pos` — at a finite temperature every weight is
-  positive, so the output carries *no* uncertainty exactly when all the values
-  agree; `outputVariance_scoreSoftmax_eq_zero_iff` states this for the head.
-
-Everything here is `sorry`-free and `axiom`-free (only `propext`,
-`Classical.choice`, `Quot.sound`).
--/
-
-open scoped BigOperators RealInnerProductSpace
-
-noncomputable section
-
-namespace BookProof.ChapterAttentionOutputVariance
-
-open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
-  BookProof.ChapterSoftmaxOrder BookProof.ChapterAttentionOutput
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-/-- The attention-weighted variance of the values around the output. -/
-def outputVariance (p : Fin m → ℝ) (v : Fin m → E) : ℝ :=
-  ∑ j, p j * ‖v j - observableExpectation p v‖ ^ 2
-
-
-
-
-
-ent State of Attention": the uncertainty of the output
-
-The attention output is the expectation value of the contextual observable, so it
-carries the second moment of a measurement as well as the first.  This module
-proves the elementary facts about that spread.
-
-* `sum_dist_sq_eq` — the **bias–variance decomposition**: for any reference point
-  `c`, `∑ⱼ pⱼ‖vⱼ − c‖² = Var(p,v) + ‖o − c‖²`, where `o` is the attention output.
-* `observableExpectation_minimizes` — hence the head output is the *least-squares
-  summary* of the values it is reading: no other vector is closer to the values in
-  the attention-weighted mean-square sense.
-* `outputVariance_eq_sub` (König–Huygens) and `norm_observableExpectation_sq_le` —
-  `Var = ∑ pⱼ‖vⱼ‖² − ‖o‖² ≥ 0`, the Jensen inequality for the output norm.
-* `outputVariance_eq_zero_iff_of_pos` — at a finite temperature every weight is
-  positive, so the output carries *no* uncertainty exactly when all the values
-  agree; `outputVariance_scoreSoftmax_eq_zero_iff` states this for the head.
-
-Everything here is `sorry`-free and `axiom`-free (only `propext`,
-`Classical.choice`, `Quot.sound`).
--/
-
-open scoped BigOperators RealInnerProductSpace
-
-noncomputable section
-
-namespace BookProof.ChapterAttentionOutputVariance
-
-open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
-  BookProof.ChapterSoftmaxOrder BookProof.ChapterAttentionOutput
-
-variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-/-- The attention-weighted variance of the values around the output. -/
-def outputVariance (p : Fin m → ℝ) (v : Fin m → E) : ℝ :=
-  ∑ j, p j * ‖v j - observableExpectation p v‖ ^ 2
-
-theorem outputVariance_nonneg {p : Fin m → ℝ} (hp0 : ∀ j, 0 ≤ p j) (v : Fin m → E) :
-    0 ≤ outputVariance p v :=
-  Finset.sum_nonneg fun j _ => mul_nonneg (hp0 j) (sq_nonneg _)
-
-/-- The mean-square spread of the values around an arbitrary reference point. -/
-theorem sum_dist_sq_expand {p : Fin m → ℝ} (hp : ∑ j, p j = 1) (v : Fin m → E) (c : E) :
-    ∑ j, p j * ‖v j - c‖ ^ 2
-      = (∑ j, p j * ‖v j‖ ^ 2) - 2 * ⟪observableExpectation p v, c⟫ + ‖c‖ ^ 2 := by
-  have hexp : ∀ j : Fin m, p j * ‖v j - c‖ ^ 2
-      = p j * ‖v j‖ ^ 2 - 2 * (p j * ⟪v j, c⟫) + p j * ‖c‖ ^ 2 := by
-    intro j
-    rw [@norm_sub_sq_real]
-    ring
-  have hinner : ⟪observableExpectation p v, c⟫ = ∑ j, p j * ⟪v j, c⟫ := by
-    rw [observableExpectation, sum_inner]
-    exact Finset.sum_congr rfl fun j _ => real_inner_smul_left _ _ _
-  rw [Finset.sum_congr rfl fun j _ => hexp j]
-  rw [Finset.sum_add_distrib, Finset.sum_sub_distrib, ← Finset.mul_sum, ← Finset.sum_mul, hp,
-    one_mul, hinner]
-
-/-- **The bias–variance decomposition of the attention output.** -/
-theorem sum_dist_sq_eq {p : Fin m → ℝ} (hp : ∑ j, p j = 1) (v : Fin m → E) (c : E) :
-    ∑ j, p j * ‖v j - c‖ ^ 2
-      = outputVariance p v + ‖observableExpectation p v - c‖ ^ 2 := by
-  have h1 := sum_dist_sq_expand hp v c
-  have h2 := sum_dist_sq_expand hp v (observableExpectation p v)
-  have h3 : ⟪observableExpectation p v, observableExpectation p v⟫
-      = ‖observableExpectation p v‖ ^ 2 := real_inner_self_eq_norm_sq _
-  have h4 : ‖observableExpectation p v - c‖ ^ 2
-      = ‖observableExpectation p v‖ ^ 2 - 2 * ⟪observableExpectation p v, c⟫ + ‖c‖ ^ 2 :=
-    norm_sub_sq_real _ _
-  rw [h1, outputVariance, h2, h3, h4]
-  ring
-
-/-- **The attention output is the least-squares summary of the values.** -/
-theorem observableExpectation_minimizes {p : Fin m → ℝ} (hp : ∑ j, p j = 1) (v : Fin m → E)
-    (c : E) :
-    ∑ j, p j * ‖v j - observableExpectation p v‖ ^ 2 ≤ ∑ j, p j * ‖v j - c‖ ^ 2 := by
-  rw [sum_dist_sq_eq hp v c, ← outputVariance]
-  nlinarith [sq_nonneg ‖observableExpectation p v - c‖]
-
-
-
-
-
-
-
-
-
-/-! ## The attention head -/
-
-
-
-attention output is the expectation value of the contextual observable, so it
 carries the second moment of a measurement as well as the first.  This module
 proves the elementary facts about that spread.
 

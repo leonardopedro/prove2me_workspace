@@ -4,6 +4,9 @@ import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_add_one_surjective
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiN_eq_diagOp
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiWeight_ge_one
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 
@@ -11,6 +14,8 @@ open BookProof.SmDiracYukawa
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.SmCar
 
 variable {n : ℕ}
 
@@ -18,6 +23,10 @@ noncomputable section
 
 variable {n : ℕ}
 variable {hD M : Matrix (Fin n) (Fin n) ℂ} {z : ℂ} {om : Fin n → ℝ} {c0 : ℝ}
+
+
+@[simp] private theorem onFull_apply (T : FermiFock n →ₗ[ℂ] FermiFock n) (x : fullDom n) :
+    onFull T x = T (x : FermiFock n) := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hom : ∀ i, 0 ≤ om i) (hc0 : 1 ≤ c0)

@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_mem
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_shift_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 
@@ -15,6 +22,7 @@ open Filter Topology
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterAbelianDiagonalCountable
 theorem solution {A : Dom →ₗ[ℂ] F} {γ : ℂ} {X : F →L[ℂ] F}
     (h : IsShiftInvertC A γ X) (u : F) :
     A ⟨X u, h.mem u⟩ = γ • X u - u := by

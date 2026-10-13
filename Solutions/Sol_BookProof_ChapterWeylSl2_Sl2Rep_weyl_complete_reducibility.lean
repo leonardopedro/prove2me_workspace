@@ -3,8 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterWeylSl2
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_codim_one
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_isInv_scalarOps
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
+open BookProof.ChapterDoubleSlit
+open BookProof.ChapterGleasonPureMixed
 
 
 
@@ -19,9 +23,9 @@ variable {R}
 variable {R : Sl2Rep V}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [FiniteDimensional ℂ V] (R : Sl2Rep V) (W : Submodule ℂ V)
     (hW : R.IsInv W) : ∃ W' : Submodule ℂ V, R.IsInv W' ∧ IsCompl W W' := by
-
   classical
   by_cases hWbot : W = ⊥
   · refine ⟨⊤, ⟨fun _ _ => trivial, fun _ _ => trivial, fun _ _ => trivial⟩, ?_⟩

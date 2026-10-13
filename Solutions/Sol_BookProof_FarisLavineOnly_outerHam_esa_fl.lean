@@ -3,6 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterFarisLavineOnly
 import Theorems.Thm_BookProof_FarisLavineOnly_secHam_esa_fl
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.FarisLavineOnly
 
@@ -32,6 +42,7 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL BookProof.SqSumOuterFamily
+open BookProof.HermiteProductCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (d : CoreData F)

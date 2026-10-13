@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOutput
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_scoreSoftmax_zero
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionOutput
 
 

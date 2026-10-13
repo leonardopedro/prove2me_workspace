@@ -10,4 +10,5 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 noncomputable section
 
  p(x) e^{-x²/2} dx`, the Gaussian-weighted integral. -/
-def gint (p : Po := by sorry
+
+theorem BookProof.HermiteCore.gint_zero : gint 0 = 0 := by sorry

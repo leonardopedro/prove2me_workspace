@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
 import Theorems.Thm_BookProof_GhostField_psiDag_eq_conjTranspose
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -13,6 +15,7 @@ variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.GhostField
 theorem solution : (nsBrstCharge d)ᴴ = nsDivergence d ⊗ₖ BookProof.GhostField.psi := by
 
   have hD : (nsDivergence d)ᴴ = nsDivergence d := by

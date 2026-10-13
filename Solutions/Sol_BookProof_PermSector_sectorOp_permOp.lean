@@ -5,6 +5,13 @@ import Theorems.Thm_BookProof_PermSector_inclPow_permOp
 import Theorems.Thm_BookProof_PermSector_derPow_permOp
 import Theorems.Thm_BookProof_PermSector_permOp_mem_sectorDom
 import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.PermSector
 
 

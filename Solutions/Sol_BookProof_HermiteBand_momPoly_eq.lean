@@ -1,11 +1,15 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.momPoly_eq
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.HermiteBand
 
 
 
 
+open BookProof.NavierStokesFlow.DifferentialL2
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis

@@ -1,6 +1,9 @@
 -- Generated from ChapterNonnegResolvent.lean — solution of BookProof.NonnegResolvent.yosidaCLM_apply
 import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegResolvent
 
 

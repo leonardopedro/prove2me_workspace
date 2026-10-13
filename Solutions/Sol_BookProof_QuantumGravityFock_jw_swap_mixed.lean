@@ -5,6 +5,19 @@ import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_insert_of_lt
 import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_insert_of_le
 import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_erase_of_lt
 import Theorems.Thm_BookProof_QuantumGravityFock_jwSign_erase_of_le
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.QuantumGravityFock
 
 
@@ -16,6 +29,7 @@ open BookProof.FarisLavine BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization
+open BookProof.SmCar
 
 noncomputable section
 

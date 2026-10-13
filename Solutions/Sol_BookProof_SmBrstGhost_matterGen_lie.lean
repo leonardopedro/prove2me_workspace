@@ -8,6 +8,9 @@ import Theorems.Thm_BookProof_SmBrstGhost_embedMatter_mul
 import Theorems.Thm_BookProof_SmBrstGhost_embedMatter_sub
 import Theorems.Thm_BookProof_SmBrstGhost_embedMatter_smul
 import Theorems.Thm_BookProof_SmBrstGhost_embedMatter_sum
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmBrstGhost
 
 

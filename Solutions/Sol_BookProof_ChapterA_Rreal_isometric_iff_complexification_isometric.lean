@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_ChapterA_conjCLM_unitScale
 import Theorems.Thm_BookProof_ChapterA_conjAU_commutesAntiUnitary
 import Theorems.Thm_BookProof_ChapterA_IsConjugation_commutesAntiUnitary
 import Theorems.Thm_BookProof_ChapterA_antiisometry_unique_up_to_phase
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

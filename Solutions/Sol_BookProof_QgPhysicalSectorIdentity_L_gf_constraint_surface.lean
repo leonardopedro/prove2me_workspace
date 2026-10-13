@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_lagrange_term_zero_of_fixing
 import Theorems.Thm_BookProof_GaugeFixing_L_gf_evaluation
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.QgPhysicalSectorIdentity
 
 
@@ -15,6 +23,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 

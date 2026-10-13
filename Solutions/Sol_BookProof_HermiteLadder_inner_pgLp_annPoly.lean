@@ -11,6 +11,10 @@ import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sub
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.HermiteLadder
 
 
@@ -20,6 +24,9 @@ open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodinger
 open scoped ENNReal
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
 
 noncomputable section
 

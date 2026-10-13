@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterStoneConverse
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_gen_stoneU_apply_eq_domain
+import Definitions.Def_ChapterStoneMeasurable
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 

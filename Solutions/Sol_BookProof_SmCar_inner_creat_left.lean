@@ -3,12 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_inner_eq_sum
 import Theorems.Thm_BookProof_QuantumGravityFock_conj_jwSign
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 
 
 
 open Finset
+open BookProof.NavierStokesFlow.FockOfFock
 
 variable {n : ℕ}
 

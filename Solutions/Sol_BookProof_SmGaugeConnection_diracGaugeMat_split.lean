@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
 import Theorems.Thm_BookProof_SmGaugeConnection_sum_kronecker_right
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmDiracSpinor
 open BookProof.SmGaugeConnection
 
 

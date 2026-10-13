@@ -1,6 +1,9 @@
 -- Generated from ChapterA1b.lean — solution of BookProof.Complexification.Cx.continuous_ofReal
 import Mathlib
 import Definitions.Def_ChapterA1b
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 
@@ -8,6 +11,8 @@ open BookProof.Complexification.Cx
 
 open scoped RealInnerProductSpace
 open BookProof.ChapterA
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_intervalDens_mul_extField_eq
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

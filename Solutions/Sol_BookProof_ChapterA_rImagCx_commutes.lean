@@ -1,6 +1,10 @@
 -- Generated from ChapterA1h.lean — solution of BookProof.ChapterA.rImagCx_commutes
 import Mathlib
 import Definitions.Def_ChapterA1h
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.ChapterA
 
 
@@ -9,6 +13,9 @@ open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 open BookProof.Complexification
+open BookProof.ChapterA.AntiUnitary
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
 

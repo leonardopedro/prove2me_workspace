@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Theorems.Thm_BookProof_ScalaronEsa_integral_conj_mul_smoothPotential_sub_eq_zero
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ScalaronEsa
 
 

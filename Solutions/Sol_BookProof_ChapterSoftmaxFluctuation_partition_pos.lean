@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_denom_pos
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxFluctuation
 
 

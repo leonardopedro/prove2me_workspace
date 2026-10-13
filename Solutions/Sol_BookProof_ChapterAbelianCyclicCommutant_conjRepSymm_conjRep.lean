@@ -1,6 +1,11 @@
 -- Generated from ChapterAbelianCyclicCommutant.lean — solution of BookProof.ChapterAbelianCyclicCommutant.conjRepSymm_conjRep
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicCommutant
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianCyclicCommutant
 
 

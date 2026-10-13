@@ -1,6 +1,13 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_drive
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 

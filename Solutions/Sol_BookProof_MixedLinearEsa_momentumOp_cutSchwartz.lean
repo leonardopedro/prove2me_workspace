@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
 import Theorems.Thm_BookProof_MixedLinearEsa_momentumOp_apply
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.MixedLinearEsa
 
 

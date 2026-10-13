@@ -9,5 +9,4 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-fine (memLp_congr_ae (Filter.Eventually.of_forall fun x => ?_)).mp h
-  simp only [hermiteC, hermiteFun, Polynomial.eval_mu := by sorry
+theorem BookProof.HermiteCore.orthonormal_hermiteLp : Orthonormal ℂ hermiteLp := by sorry

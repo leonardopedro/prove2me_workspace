@@ -1,10 +1,13 @@
 -- Generated from ChapterHyperbolicQuadraticEsa.lean — solution of BookProof.HyperbolicQuadratic.quadOp_deficiencyTrivialAt
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
-import Theorems.Thm_BookProof_HyperbolicQuadratic_deficiencyTrivialAt_of_diagonal
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 import Theorems.Thm_BookProof_HyperbolicQuadratic_hermiteMvLp_total
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HyperbolicQuadratic
 
 
@@ -14,6 +17,8 @@ open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 

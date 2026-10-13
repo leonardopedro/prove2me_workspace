@@ -3,7 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_deficiencyTrivialAt_affBlockH
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
@@ -14,6 +18,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
 variable {J : Type*}
 

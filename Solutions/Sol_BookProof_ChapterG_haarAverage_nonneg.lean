@@ -6,15 +6,16 @@ open BookProof.ChapterG
 
 
 open scoped ComplexConjugate InnerProductSpace Matrix
+open MeasureTheory
 
 variable {G : Type*} [Group G] [MeasurableSpace G]
 variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
 variable {X : Type*} [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
-theorem solution (f : X → ℝ) (hf : 0 ≤ f) :
-    0 ≤ haarAverage (μG := by
 
+theorem solution (f : X → ℝ) (hf : 0 ≤ f) :
+    0 ≤ haarAverage (μG := μG) f := by
   intro x
   simp only [haarAverage, Pi.zero_apply]
   apply integral_nonneg

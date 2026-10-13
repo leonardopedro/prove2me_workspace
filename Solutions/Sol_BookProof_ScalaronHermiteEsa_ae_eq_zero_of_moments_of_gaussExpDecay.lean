@@ -2,6 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronHermiteEsa
 import Theorems.Thm_BookProof_ScalaronHermiteEsa_fourier_gaussD_mul_eq_zero_of_gaussExpDecay
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.ScalaronHermiteEsa
 
 

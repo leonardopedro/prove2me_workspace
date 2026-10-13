@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_isProbabilityMeasure_stateMeasure
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterAbelianGelfandModel
 
 

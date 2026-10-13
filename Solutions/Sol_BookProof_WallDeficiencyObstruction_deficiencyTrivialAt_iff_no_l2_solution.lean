@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterWallDeficiencyObstruction
 import Theorems.Thm_BookProof_WallDeficiencyObstruction_not_deficiencyTrivialAt_of_l2_solution
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WallDeficiencyObstruction
 
 
@@ -12,6 +18,8 @@ open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.WeakSecondDeriv
+open BookProof.ScalaronEsa
+open BookProof.WeakSecondDeriv.IsTestFun
 
 noncomputable section
 

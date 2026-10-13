@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_LimitCircleExample_contDiff_lcV
 import Theorems.Thm_BookProof_LimitCircleExample_lcSol_ne_zero
 import Theorems.Thm_BookProof_LimitCircleExample_lcSol_isL2Ode
 import Theorems.Thm_BookProof_WallDeficiencyObstruction_not_essentiallySelfAdjointOn_of_l2_solution
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.LimitCircleExample
 
 
@@ -13,6 +18,8 @@ open BookProof.LimitCircleExample
 open MeasureTheory Real
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

@@ -13,6 +13,8 @@ import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_shift_mass_le
 import Theorems.Thm_BookProof_CarlemanGeneralHop_flux_identityH
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
 import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanGeneralHop
 
 

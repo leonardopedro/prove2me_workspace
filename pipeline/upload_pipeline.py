@@ -1653,8 +1653,24 @@ def thm_gate_fresh(slug, path):
     return None
 
 
-def submission_guard(kind, name, path, theorem_name=None):
-    """(verdict, reason) -- verdict in {"park", "defer"}, or (None, None)."""
+def submission_guard(kind, name, path, theorem_name=None, items=None):
+    """(verdict, reason) -- verdict in {"park", "defer"}, or (None, None).
+
+    `items` is the ledger item map, when the caller has it.  For a sol the
+    chunk's first gate is the ledger's OWN `thm:` record (`do_wave_sol`
+    refuses before `apply_guard` ever runs), so a caller that omits `items`
+    reports SUBMIT for sols the chunk then resolves as
+    `WAIT (theorem not published yet)` -- measured 2026-10-13: 149/149 of
+    drain61's first sol chunk.  The production call sites pass `items=None`
+    because they already checked this upstream; the verifier passes its
+    loaded state so its verdict matches the chunk exactly (§2.52)."""
+    if kind == "sol" and items is not None:
+        srec = items.get(f"sol:{name}") or {}
+        if not srec.get("submission_id"):
+            trec = items.get(f"thm:{name}") or {}
+            if trec.get("status") != "done" or not trec.get("theorem_id"):
+                return ("defer", "own theorem not published yet "
+                        f"(thm:{name} status={trec.get('status')})")
     if kind == "thm" and theorem_name:
         reason = name_guard(theorem_name)
         if reason:
@@ -1834,15 +1850,29 @@ def _list_of(payload):
     return []
 
 
-def _paged(endpoint, params, limit=100, max_pages=100):
-    """Walk a paginated list endpoint; caps at max_pages and reports nothing itself."""
+def _paged(endpoint, params, limit=100, max_pages=400):
+    """Walk a paginated list endpoint; stops at the envelope's `total`, with a
+    generous page ceiling as a guard against a server that misreports it.
+
+    The ceiling used to be 100 pages and it bit: `publish-jobs?kind=problem`
+    returned exactly 10,000 of 11,006 jobs, so the newest ~1,006 publish jobs
+    were never seen, their `thm:` records stayed `pending` forever, and every
+    sol importing one of them was refused by `do_wave_sol` with `theorem not
+    published yet` -- while `submission_guard`, which checks the platform
+    catalogue rather than this list, called those same sols uploadable.  A
+    silent page cap turns into an invisible upload stall, so `total` is now the
+    primary stop condition."""
     out = []
     for page in range(max_pages):
         p = dict(params)
         p["limit"], p["offset"] = str(limit), str(page * limit)
-        items = _list_of(api("GET", endpoint, params=p))
+        resp = api("GET", endpoint, params=p)
+        items = _list_of(resp)
         out.extend(items)
         if len(items) < limit:
+            break
+        total = resp.get("total") if isinstance(resp, dict) else None
+        if isinstance(total, int) and len(out) >= total:
             break
     return out
 
@@ -1983,7 +2013,7 @@ def cmd_check():
     print(f"  skill / platform: {skill_version()} / {version}")
     print(f"  account         : {me.get('username') or me.get('name') or me.get('id')}")
     for kind in ("definition", "problem"):
-        jobs = _paged("publish-jobs", {"kind": kind}, limit=100, max_pages=60)
+        jobs = _paged("publish-jobs", {"kind": kind}, limit=100)
         counts = {}
         for j in jobs:
             counts[j.get("status")] = counts.get(j.get("status"), 0) + 1

@@ -5,7 +5,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_symme
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_relative_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_commForm_bound
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
@@ -16,6 +18,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open BookProof.NavierStokesFlow.AffineFiber
 
 variable {ι : Type*}
 

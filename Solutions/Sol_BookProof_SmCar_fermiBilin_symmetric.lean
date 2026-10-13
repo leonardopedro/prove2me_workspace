@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_inner_creat_left
 import Theorems.Thm_BookProof_SmCar_inner_annih_left
 import Theorems.Thm_BookProof_SmCar_fermiBilin_apply
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 

@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.KoopmanLyapunov
 
 
@@ -11,6 +17,9 @@ open BookProof.KoopmanLyapunov
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
 open BookProof.NsKoopman
+open BookProof.ChapterF7
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 
 noncomputable section
 

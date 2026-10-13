@@ -16,5 +16,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+variable {D : Submodule ℂ (L2d 84)}
+
 theorem solution (Φ : CoreRep 84 D) (j : Fin 84) :
-    SymmetricOn D (D.subtype.comp (qgMom Φ j)) := Φ.symmetricOn_op (momOp_polySym j)
+    SymmetricOn D (D.subtype.comp (qgMom Φ j)) :=
+  Φ.symmetricOn_op (momOp_polySym j)

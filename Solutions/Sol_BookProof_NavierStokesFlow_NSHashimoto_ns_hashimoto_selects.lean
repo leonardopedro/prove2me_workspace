@@ -5,6 +5,15 @@ import Theorems.Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_symmetricOn
 import Theorems.Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_esa
 import Theorems.Thm_BookProof_NavierStokesFlow_NSHashimoto_velCore_dense
 import Theorems.Thm_BookProof_EsaClosure_hashimoto_multishift_selects_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.NSHashimoto
 
@@ -18,6 +27,8 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert BookProof.EsaClosure
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 

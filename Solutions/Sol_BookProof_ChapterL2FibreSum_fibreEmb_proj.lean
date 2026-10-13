@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterL2FibreSum
 import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterL2FibreSum
 
 
@@ -11,6 +14,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterHilbertSumIntertwine
+open BookProof.ChapterElectroweakFieldStrength
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
 

@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_sq
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
 import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
@@ -10,10 +10,15 @@ import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_kinPoly
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmCore_pgLp
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
 open BookProof.GaussCoreQuadBounds
-
-
-
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs

@@ -10,6 +10,8 @@ import Theorems.Thm_BookProof_ChapterA_isRealSystemIso_trans_commuting
 import Theorems.Thm_BookProof_ChapterA_rot_realCommutes
 import Theorems.Thm_BookProof_ChapterA_transK_isometry
 import Theorems.Thm_BookProof_ChapterA_Rpseudoreal_realCommutant_eq_quaternion
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

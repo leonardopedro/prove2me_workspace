@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionMasking.lean — solution of BookProof.ChapterAttentionMasking.maskedSoftmax_eq_zero_of_not_mem
 import Mathlib
 import Definitions.Def_ChapterAttentionMasking
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterAttentionMasking
 
 

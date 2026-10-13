@@ -9,6 +9,11 @@ import Theorems.Thm_BookProof_FockCubicUnbounded_trial_at_n3
 import Theorems.Thm_BookProof_FockOneParticleGap_confEnergy_one
 import Theorems.Thm_BookProof_FockOneParticleGap_dGamma_diagCol_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp_of_subset
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterTempleSeparationNecessary
 open BookProof.FockCubicUnbounded
 
 
@@ -18,6 +23,9 @@ noncomputable section
 
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
+open BookProof.TempleSeparationNecessary
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k n : ℕ) (c : ℝ) :

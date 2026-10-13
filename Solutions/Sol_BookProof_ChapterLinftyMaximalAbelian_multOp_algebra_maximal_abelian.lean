@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_memLp_top_symbol
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_commutant_eq_multOp
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMaximalAbelian
 
 

@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_ChapterAbelianClassificationList_isProbabilityMeas
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_cdfUnitary_intertwines
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_memLp_top_comp_cdf
 import Theorems.Thm_BookProof_ChapterLpScaleMeasure_scaleUnitary_intertwines
+import Definitions.Def_ChapterMeasureAtomicDiffuse
+import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterDiffuseUnitaryModel
+import Definitions.Def_ChapterLpRestrictSplit
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLpScaleMeasure
 open BookProof.ChapterAbelianClassificationList
 
 
@@ -17,6 +23,8 @@ open MeasureTheory ProbabilityTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterDiffuseUnitaryModel BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit BookProof.ChapterLpScaleMeasure
+open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterLpScaleMeasure
 
 variable {α : Type*} [MeasurableSpace α] [MeasurableSingletonClass α]
 variable (nu : Measure ℝ) [IsFiniteMeasure nu] [NullSingletonClass nu]

@@ -2,14 +2,20 @@
 import Mathlib
 import Definitions.Def_ChapterH8
 import Theorems.Thm_BookProof_ChapterH8_compress_pow_comp_intertwine
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterH8
 
 
+
+open ContinuousLinearMap
 
 noncomputable section
 
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+open BookProof.ChapterH4
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {E F G : Type*}

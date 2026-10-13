@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.ns_outer_degree_le_two
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

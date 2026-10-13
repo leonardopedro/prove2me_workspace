@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterGravitySplit
 import Theorems.Thm_BookProof_ChapterGravitySplit_timePart_eq_smul
 import Theorems.Thm_BookProof_ChapterGravitySplit_spatialPart_orthogonal
+import Definitions.Def_ChapterGravityTimeProj
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravitySplit
 
 

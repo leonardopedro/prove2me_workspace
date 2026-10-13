@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_SirkSingleTime_strongResolventConvergence_of_strongResAt
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.SirkSingleTime
 
 

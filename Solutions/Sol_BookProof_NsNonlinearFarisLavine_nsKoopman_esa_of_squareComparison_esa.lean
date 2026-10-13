@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterNsNonlinearFarisLavine
 import Theorems.Thm_BookProof_NsLagrangianDetFL_lam_nonneg
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.NsNonlinearFarisLavine
 
 
@@ -10,6 +15,7 @@ open BookProof.NsNonlinearFarisLavine
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
 open BookProof.NsKoopman
+open BookProof.HermiteProductCore
 
 noncomputable section
 

@@ -10,8 +10,11 @@ open scoped ENNReal
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
+@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+
 theorem solution (d e : EllInf) :
     (diagOp d).comp (diagOp e) = (diagOp e).comp (diagOp d) := by
-
   ext f i
   simp [mul_left_comm]

@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesCauchy.lean — solution of BookProof.NavierStokesFlow.LagrangianNS.flowUnitary_group
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 
@@ -13,11 +15,10 @@ variable {n : ℕ} (d : NSTruncation n)
 variable (L : LagrangianNS n)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (s t : ℝ) :
-    L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t :=
-  tary, matrixFlow, ← smul_assoc, Complex.real_smul]
-  
-  /-- The transformed flow is a one-parameter group: it is **complete**. -/
-  theorem flowUnitary_group (s t : ℝ) :
-      L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t := by
-    have hcomm : Commute ((s : ℝ) • (Complex.I • L.hFull)) ((t : ℝ) •
+    L.flowUnitary (s + t) = L.flowUnitary s * L.flowUnitary t := by
+  have hcomm : Commute ((s : ℝ) • (Complex.I • L.hFull)) ((t : ℝ) • (Complex.I • L.hFull)) :=
+    ((Commute.refl (Complex.I • L.hFull)).smul_left s).smul_right t
+  rw [flowUnitary, flowUnitary, flowUnitary, matrixFlow, matrixFlow, matrixFlow, add_smul,
+    Matrix.exp_add_of_commute _ _ hcomm]

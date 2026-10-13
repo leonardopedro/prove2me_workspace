@@ -1,6 +1,7 @@
 -- Generated from ChapterPauliSU2.lean — solution of BookProof.ChapterPauliSU2.spinorAction_isHermitian
 import Mathlib
 import Definitions.Def_ChapterPauliSU2
+import Definitions.Def_ChapterPauliLorentz
 open BookProof.ChapterPauliSU2
 
 

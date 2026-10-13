@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterConformalFiberDeficiency
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfSol_sq_le
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_continuous_cfSol
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
 open BookProof.ConformalFiberDeficiency
 
 

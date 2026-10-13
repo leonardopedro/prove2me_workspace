@@ -1,6 +1,7 @@
 -- Generated from ChapterSphericalBesselODE.lean — solution of BookProof.ChapterSphericalBesselODE.sbessel_eq
 import Mathlib
 import Definitions.Def_ChapterSphericalBesselODE
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBesselODE
 
 

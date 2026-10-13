@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSolidHarmonicTools
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_hasFDerivAt_rclmPow
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_fderiv_normSqPow
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_contDiff_normSqPow
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonicTools
 
 
@@ -12,6 +14,7 @@ open BookProof.ChapterSolidHarmonicTools
 open Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 open scoped RealInnerProductSpace
+open BookProof.ChapterRadialLaplacian
 
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -19,12 +22,17 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
+
+@[simp] private theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
+ radial function, and the `s`-wave form of Note 68
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (e : E) (j m : ℕ) (x : E) :
     HasFDerivAt (fun y : E => (⟪e, y⟫_ℝ) ^ j * (‖y‖ ^ 2) ^ m)
       (((j : ℝ) * (⟪e, x⟫_ℝ) ^ (j - 1) * (‖x‖ ^ 2) ^ m) • innerCLM E e
         + (2 * m * (⟪e, x⟫_ℝ) ^ j * (‖x‖ ^ 2) ^ (m - 1)) • innerCLM E x) x := by
-
   have hf : HasFDerivAt (fun y : E => (⟪e, y⟫_ℝ) ^ j)
       (((j : ℝ) * (⟪e, x⟫_ℝ) ^ (j - 1)) • (innerCLM E e)) x :=
     hasFDerivAt_rclmPow (innerCLM E e) j x

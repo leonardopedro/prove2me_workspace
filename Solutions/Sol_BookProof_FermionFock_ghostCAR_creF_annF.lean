@@ -5,6 +5,15 @@ import Theorems.Thm_BookProof_FermionFock_car_annF_creF_self
 import Theorems.Thm_BookProof_FermionFock_car_creF_creF
 import Theorems.Thm_BookProof_FermionFock_car_annF_annF
 import Theorems.Thm_BookProof_FermionFock_car_annF_creF_of_ne
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.FermionFock
 
 
@@ -15,6 +24,7 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.FriedrichsExtensi
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
+open BookProof.BRSTNilpotent
 
 noncomputable section
 

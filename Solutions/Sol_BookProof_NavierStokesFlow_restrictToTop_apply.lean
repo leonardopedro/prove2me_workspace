@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.restrictToTop_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

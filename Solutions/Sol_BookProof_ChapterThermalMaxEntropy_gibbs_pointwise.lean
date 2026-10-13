@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterThermalMaxEntropy
 import Theorems.Thm_BookProof_ChapterThermalMaxEntropy_thermalProb_pos
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterThermalMaxEntropy
 
 

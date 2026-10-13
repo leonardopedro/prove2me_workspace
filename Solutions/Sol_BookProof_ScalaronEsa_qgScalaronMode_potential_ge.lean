@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterScalaronCoreEsa
 import Theorems.Thm_BookProof_Starobinsky_confV_ge
 import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.ScalaronEsa
 
 

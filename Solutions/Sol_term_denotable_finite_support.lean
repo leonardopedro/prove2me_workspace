@@ -1,6 +1,8 @@
 -- Generated from ChapterPaFreeCompletion.lean — solution of term_denotable_finite_support
 import Mathlib
 import Definitions.Def_ChapterPaFreeCompletion
+import Definitions.Def_ChapterRieszFischer
+import Definitions.Def_ChapterA4
 
 
 

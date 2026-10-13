@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_summable_cross
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_conj_hFun_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_nsH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 
@@ -16,6 +19,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+open BookProof.ChapterContinuityUnitaryInfinite
 
 variable {κ : ℝ}
 variable {x : maxDom (oscSymbol κ)}

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
 import Theorems.Thm_BookProof_NavierStokesFlow_ccr_field
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesEulerian
 
 

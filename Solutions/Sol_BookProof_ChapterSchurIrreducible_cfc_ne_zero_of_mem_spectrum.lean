@@ -1,6 +1,7 @@
 -- Generated from ChapterSchurIrreducible.lean — solution of BookProof.ChapterSchurIrreducible.cfc_ne_zero_of_mem_spectrum
 import Mathlib
 import Definitions.Def_ChapterSchurIrreducible
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurIrreducible
 
 

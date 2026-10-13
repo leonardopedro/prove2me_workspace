@@ -5,6 +5,14 @@ import Theorems.Thm_BookProof_WallEsaBddBelow_wallHam_essentiallySelfAdjoint_of_
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.WallEsaBddBelow
 
 
@@ -14,6 +22,10 @@ open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
+open BookProof.StoneBridge
 
 noncomputable section
 

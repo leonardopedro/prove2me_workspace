@@ -2,11 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterA1d
 import Theorems.Thm_BookProof_ChapterA_Jmap_sq
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+open BookProof.ChapterA.AntiUnitary
 
 
 

@@ -1,6 +1,10 @@
 -- Generated from ChapterNsBrstDerivativeGauge.lean — solution of BookProof.NsBrstDerivativeGauge.nsGhost_car
 import Mathlib
 import Definitions.Def_ChapterNsBrstDerivativeGauge
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesGaugeY2
+import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.NsBrstDerivativeGauge
 
 
@@ -8,6 +12,7 @@ open BookProof.NsBrstDerivativeGauge
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 open BookProof.NavierStokesGaugeY BookProof.NavierStokesGaugeY2
+open BookProof.BRSTNilpotent
 
 noncomputable section
 

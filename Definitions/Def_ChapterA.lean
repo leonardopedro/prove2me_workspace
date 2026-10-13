@@ -21,17 +21,6 @@ introduced as *named hypotheses* where used — never as `axiom`s.  Here the "Sc
 property is taken as an explicit hypothesis of Lemma 27, matching Def. 13.
 -/
 
-open scoped ComplexConjugate InnerProductSpace
-
-namespace BookProof.ChapterA
-
-/-- **Def 1 (System).** A system `(M, V)`: a set `M` of bounded endomorphisms of a
-Hilbert space `V` over `𝔽`. -/
-structure System (𝔽 : Type*) [RCLike 𝔽] (V : Type*) [NormedAddCommGroup V]
-    [InnerProductSpace 𝔽 V] [CompleteSpace V] where
-  /-- The set of bounded operators comprising the system. -/
-  ops : Set (V →L[𝔽] V)
-
 namespace System
 
 variable {𝔽 : Type*} [RCLike 𝔽] {V : Type*} [NormedAddCommGroup V]

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEll2Separable
 import Theorems.Thm_BookProof_ChapterRieszFischer_riesz_fischer_hasSum
+import Definitions.Def_ChapterRieszFischer
 open BookProof.ChapterEll2Separable
 
 

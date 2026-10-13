@@ -5,6 +5,18 @@ import Theorems.Thm_BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution
 import Theorems.Thm_BookProof_QgTimeIndependent_norm_prop_apply
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_apply_prop
 import Theorems.Thm_BookProof_QgTimeIndependent_prop_time_translation
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.FiniteSectionSingleTime
 
 
@@ -18,6 +30,8 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.EsaClosure
+open BookProof.StoneBridge
 
 noncomputable section
 

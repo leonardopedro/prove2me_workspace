@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumPerturbation
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_rankTwo_symmetric
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_symmetricOn
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
@@ -15,6 +18,10 @@ open LpNat BookProof.FarisLavine IkebeKato
 variable {ι : Type*}
 
 variable {ι : Type*}
+
+
+@[simp] private theorem pertHam_apply (c : ι → ℝ) (u w : L2I ι) (x : maxDom c) :
+    pertHam c u w x = diagMax c x + rankTwo u w (x : L2I ι) := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (c : ι → ℝ) (u w : L2I ι) :

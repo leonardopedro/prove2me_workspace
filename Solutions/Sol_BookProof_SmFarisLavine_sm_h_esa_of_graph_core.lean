@@ -6,6 +6,17 @@ import Theorems.Thm_BookProof_SmFarisLavine_sm_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
 import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmFarisLavine
 
 
@@ -17,6 +28,11 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.GraphCore
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.SmHamiltonian
 
 noncomputable section
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxMaxEntropy.lean — solution of BookProof.ChapterSoftmaxMaxEntropy.shannonEntropy_le_crossEntropy
 import Mathlib
 import Definitions.Def_ChapterSoftmaxMaxEntropy
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxMaxEntropy
 
 

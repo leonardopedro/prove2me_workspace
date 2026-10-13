@@ -4,6 +4,9 @@ import Definitions.Def_ChapterStoneGenerator
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
@@ -11,6 +14,7 @@ open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 open scoped InnerProductSpace
 open Filter Topology NormedSpace
+open BookProof.ChapterSirkTrotterKato
 
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

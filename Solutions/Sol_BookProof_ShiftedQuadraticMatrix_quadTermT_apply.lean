@@ -1,6 +1,18 @@
 -- Generated from ChapterShiftedQuadraticMatrixEsa.lean — solution of BookProof.ShiftedQuadraticMatrix.quadTermT_apply
 import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterQuadraticRotationEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterShiftedHermiteCore
+import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 open BookProof.ShiftedQuadraticMatrix
 
 
@@ -15,12 +27,17 @@ open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
 
 noncomputable section
 
 variable {d : ℕ}
 
 variable {d : ℕ}
+
+
+@[simp] private theorem momTPoly_apply (k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momTPoly k i p = momPoly i p + ((k i : ℝ) : ℂ) • p := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (a k : Vd d) (A : Matrix (Fin d) (Fin d) ℝ) (p q : Fin d)
@@ -31,7 +48,6 @@ theorem solution (a k : Vd d) (A : Matrix (Fin d) (Fin d) ℝ) (p q : Fin d)
         + ((A p q * k q : ℝ) : ℂ) • momPoly p f + ((A p q * k p : ℝ) : ℂ) • momPoly q f
         + ((A p q * a q / 4 : ℝ) : ℂ) • (X p * f) + ((A p q * a p / 4 : ℝ) : ℂ) • (X q * f)
         + ((A p q * (k p * k q + a p * a q / 4) : ℝ) : ℂ) • f := by
-
   simp only [LinearMap.comp_apply, momTPoly_apply, mulXTPoly_apply, map_add, map_smul,
     mul_add]
   push_cast

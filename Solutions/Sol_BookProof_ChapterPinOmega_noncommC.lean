@@ -4,6 +4,8 @@ import Definitions.Def_ChapterPinOmega
 import Theorems.Thm_BookProof_ChapterPinOmega_qkC_eq_cast
 import Theorems.Thm_BookProof_ChapterPinOmega_qiC_qjC
 import Theorems.Thm_BookProof_ChapterPinOmega_qjC_qiC
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterPinOmega
 
 

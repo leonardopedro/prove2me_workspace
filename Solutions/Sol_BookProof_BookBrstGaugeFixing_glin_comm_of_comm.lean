@@ -1,6 +1,9 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.glin_comm_of_comm
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
 open BookProof.BookBrstGaugeFixing
 
 

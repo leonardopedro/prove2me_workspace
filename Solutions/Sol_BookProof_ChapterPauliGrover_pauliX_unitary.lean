@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPauliGrover
 import Theorems.Thm_BookProof_ChapterPauliGrover_pauliX_conjTranspose
 import Theorems.Thm_BookProof_ChapterPauliGrover_pauliX_sq
+import Definitions.Def_ChapterConditional
 open BookProof.ChapterPauliGrover
 
 

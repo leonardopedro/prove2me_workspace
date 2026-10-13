@@ -15,6 +15,15 @@ import Theorems.Thm_BookProof_ResolventLadder_rayleighSetOn_bddBelow
 import Theorems.Thm_BookProof_ResolventLadder_res_injective
 import Theorems.Thm_BookProof_ResolventLadder_res_isSelfAdjoint
 import Theorems.Thm_BookProof_ResolventLadder_res_mem
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterResolventMinMaxLadder
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ResolventLadderEq
 
 
@@ -27,6 +36,7 @@ open BookProof.ResolventLadder
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+open BookProof.RitzMinMax
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

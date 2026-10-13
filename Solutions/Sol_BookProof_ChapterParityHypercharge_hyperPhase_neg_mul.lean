@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterParityHypercharge
 import Theorems.Thm_BookProof_ChapterParityHypercharge_hyperPhase_zero
 import Theorems.Thm_BookProof_ChapterParityHypercharge_hyperPhase_add
+import Definitions.Def_ChapterA3
 open BookProof.ChapterParityHypercharge
 
 

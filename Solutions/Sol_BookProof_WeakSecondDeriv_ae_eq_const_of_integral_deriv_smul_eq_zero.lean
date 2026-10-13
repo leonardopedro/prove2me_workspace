@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_const_mul
 import Theorems.Thm_BookProof_WeakSecondDeriv_exists_unitTest
 import Theorems.Thm_BookProof_WeakSecondDeriv_exists_antideriv
 import Theorems.Thm_BookProof_WeakSecondDeriv_integrable_test_smul
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.WeakSecondDeriv
 
 

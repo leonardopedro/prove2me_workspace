@@ -1,11 +1,10 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.pgLp_hpsi
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
-import Theorems.Thm_BookProof_HermiteProductCore_pgMap_apply
+
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteBand
-
-
-
 
 noncomputable section
 

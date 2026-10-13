@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralDirectSum
 import Theorems.Thm_BookProof_ChapterSpectralDirectSum_mem_cyclicSubspace_cyclicEmbedding
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterCyclicDirectSum
 open BookProof.ChapterSpectralDirectSum
 
 

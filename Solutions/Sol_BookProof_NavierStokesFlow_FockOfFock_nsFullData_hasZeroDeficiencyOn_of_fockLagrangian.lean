@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lagrangianFock_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_NSFullData_hasZeroDeficiencyOn_of_lagrangian
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -13,6 +18,8 @@ open MeasureTheory
 
 
 open FullEsa LagrangianEsa
+open BookProof.FockSecondQuantization
+open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 variable {M : Type*} [DecidableEq M]
 variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]

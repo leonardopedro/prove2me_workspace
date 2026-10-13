@@ -4,6 +4,7 @@ import Definitions.Def_ChapterUnitaryTransport
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_inner_map_symm
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportOp_apply
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportEquiv_coe
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
 
 

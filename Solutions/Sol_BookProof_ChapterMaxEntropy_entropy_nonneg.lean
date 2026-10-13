@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterMaxEntropy
 import Theorems.Thm_BookProof_ChapterMaxEntropy_IsProb_le_one
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+import Definitions.Def_ChapterDutchBook
+import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterMaxEntropy
 
 

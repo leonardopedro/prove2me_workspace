@@ -1,6 +1,15 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.sum_pair_le
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 
@@ -16,9 +25,9 @@ variable {w : ℕ → ℝ}
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {f : ℕ → ℝ} {S : Finset ℕ} {a b : ℕ} {C : ℝ} (hS : S ⊆ {a, b})
     (hf : ∀ j, 0 ≤ f j) (hC : ∀ j, f j ≤ C) (hC0 : 0 ≤ C) : ∑ j ∈ S, f j ≤ 2 * C := by
-
   classical
   have hcard : ((({a, b} : Finset ℕ)).card : ℝ) ≤ 2 := by
     have : (({a, b} : Finset ℕ)).card ≤ 2 := (Finset.card_insert_le _ _).trans (by simp)

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterDirectSumEsa
 open BookProof.TensorCore
 
 
@@ -9,36 +12,25 @@ open BookProof.TensorCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore
+open BookProof.DirectSumEsa
 
 noncomputable section
-
-
-/-! Helper: the elementary-tensor equations of `inclPow` / `derPow`.  The platform's
-published `Def_ChapterTensorGraphCore` carries the definitions but not these three `rfl`
-equations, and a solution may not rely on unpublished declarations, so they are stated
-locally (this file is standalone: top-level `theorem solution` still follows). -/
-
-@[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
-    (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
-    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
-
-@[simp] theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
-    derPow Hs D₂ A 0 x = 0 := rfl
-
-@[simp] theorem derPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-    (A : D₂ →ₗ[ℂ] Hs.carrier) (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
-    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
-      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
 
 variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
 variable (A : D₂ →ₗ[ℂ] Hs.carrier)
 variable (D : Submodule ℂ Hs.carrier)
 
-set_option maxHeartbeats 1000000 in
+/-! Helper: the elementary-tensor equations of `inclPow` / `derPow`.  The platform's
+published `Def_ChapterTensorGraphCore` carries the definitions but not these three `rfl`
+equations, and a solution may not rely on unpublished declarations, so they are stated
+locally as `private` declarations, so the file is standalone.
+-/
+@[simp] private theorem inclPow_tmul (n : ℕ)
+    (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
+    inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
+
 theorem solution (hD : D ≤ D₂) {a : Hs.carrier} (haD : a ∈ D)
     (ha0 : a ≠ 0) : ∃ x ∈ sectorCore Hs D₂ D 1, x ≠ 0 := by
-
   refine ⟨inclPow Hs D₂ 1 ((⟨a, hD haD⟩ : D₂) ⊗ₜ[ℂ] (1 : ℂ)),
     ⟨(⟨a, hD haD⟩ : D₂) ⊗ₜ[ℂ] (1 : ℂ),
       tmul_mem_corePow Hs D₂ D (by simpa using haD) (by trivial), rfl⟩, ?_⟩

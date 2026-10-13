@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Theorems.Thm_BookProof_QuadraticRotation_inner_rotHermiteLp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QuadraticRotation
 
 

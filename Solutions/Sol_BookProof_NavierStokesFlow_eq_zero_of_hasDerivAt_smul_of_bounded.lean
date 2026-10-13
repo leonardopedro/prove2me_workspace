@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.eq_zero_of_hasDerivAt_smul_of_bounded
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

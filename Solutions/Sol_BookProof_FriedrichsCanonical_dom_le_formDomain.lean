@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_formExt_coe
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.FriedrichsCanonical
 
 
@@ -9,6 +14,9 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.QgOuterFockFL
 
 noncomputable section
 

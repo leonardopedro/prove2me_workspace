@@ -13,6 +13,12 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {H : Type*} [NormedAddCommGroup H]
 variable {U : ℝ → ℝ → H → H}
 
+
+@[simp] private theorem howland_zero (hU : IsPropagator U) (ψ : ℝ → H) :
+    howland U 0 ψ = ψ := by
+  funext t
+  simp [howland, hU.refl]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hU : IsPropagator U) (σ : ℝ) (ψ : ℝ → H) :
     howland U (-σ) (howland U σ ψ) = ψ := by

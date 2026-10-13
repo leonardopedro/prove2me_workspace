@@ -1,6 +1,10 @@
 -- Generated from ChapterLorentzRealRepFull.lean — solution of BookProof.ChapterLorentzRealRepFull.range_bFullR
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepFull
 
 

@@ -8,6 +8,20 @@ import Theorems.Thm_BookProof_HermiteGraphApprox_enorm_natCast_complex
 import Theorems.Thm_BookProof_HermiteLadder_hn_mono
 import Theorems.Thm_BookProof_HermiteLadder_hn_zero_eq
 import Theorems.Thm_BookProof_HermiteLadder_wt_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterDegKatoEsa
+import Definitions.Def_ChapterDegEnergyEstimate
+import Definitions.Def_ChapterHermiteLadderOrder
+import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteGraphApprox
 
 
@@ -21,6 +35,7 @@ open BookProof.QgOneParticleCc BookProof.YangMillsHermite
 open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.DegEnergy BookProof.HermiteLadder
 open BookProof.ConvolutionCalc
 open scoped ENNReal
+open BookProof.HermiteProductCore
 
 noncomputable section
 

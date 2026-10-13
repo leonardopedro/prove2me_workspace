@@ -5,8 +5,13 @@ import Theorems.Thm_BookProof_CoreBounds_coreExt_core
 import Theorems.Thm_BookProof_CoreBounds_norm_coreExt_le
 import Theorems.Thm_BookProof_CoreBounds_coreExt_symmetricOn
 import Theorems.Thm_BookProof_CoreBounds_coreExt_commForm_le
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 import Theorems.Thm_BookProof_OperatorSeries_essentiallySelfAdjointOn_finiteModes_of_bounds
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.CoreBounds
 
 
@@ -15,6 +20,7 @@ open BookProof.CoreBounds
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.OperatorSeries
 open Filter Topology
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

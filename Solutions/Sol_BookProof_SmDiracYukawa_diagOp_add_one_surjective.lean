@@ -1,6 +1,9 @@
 -- Generated from ChapterSmDiracYukawa.lean — solution of BookProof.SmDiracYukawa.diagOp_add_one_surjective
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 
@@ -8,6 +11,8 @@ open BookProof.SmDiracYukawa
 
 open Finset Matrix
 open BookProof.SmCar BookProof.FarisLavine
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.SmCar
 
 variable {n : ℕ}
 
@@ -16,9 +21,9 @@ noncomputable section
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {d : Finset (Fin n) → ℝ} (hd : ∀ S, 1 ≤ d S)
     (f : FermiFock n) : ∃ ψ : FermiFock n, diagOp d ψ + ψ = f := by
-
   refine ⟨WithLp.toLp 2 (fun S => f S / ((d S : ℂ) + 1)), ?_⟩
   ext S
   have hne : ((d S : ℂ) + 1) ≠ 0 := by
@@ -29,3 +34,5 @@ theorem solution {d : Finset (Fin n) → ℝ} (hd : ∀ S, 1 ≤ d S)
   have : (d S : ℂ) * (f S / ((d S : ℂ) + 1)) + f S / ((d S : ℂ) + 1) = f S := by
     field_simp
   simpa using this
+
+/-! ## 2. The fermionic comparison operator `N` of §D6b-SM.2 -/

@@ -1,6 +1,8 @@
 -- Generated from ChapterA2c.lean — solution of BookProof.ChapterA.realCommutes_thetaR
 import Mathlib
 import Definitions.Def_ChapterA2c
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

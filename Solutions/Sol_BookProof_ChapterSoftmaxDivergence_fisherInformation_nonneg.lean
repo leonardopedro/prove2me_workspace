@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_nonneg
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxDivergence
 
 
@@ -12,11 +15,18 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
+
+
+private theorem varScore_nonneg (beta : ℝ) (s : Fin m → ℝ) : 0 ≤ varScore beta s :=
+  Finset.sum_nonneg fun l _ =>
+    mul_nonneg (scoreSoftmax_nonneg beta s l) (sq_nonneg _)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) :
     0 ≤ fisherInformation beta s := varScore_nonneg beta s

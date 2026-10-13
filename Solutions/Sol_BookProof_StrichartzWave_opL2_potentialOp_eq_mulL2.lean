@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_opL2_potentialOp_apply_eq_mulL2
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterWaveBoundedPotential
 open BookProof.StrichartzWave
 
 
@@ -18,11 +20,11 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {ι : Type*} [Fintype ι]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (W : V → ℝ) (hW : Function.HasTemperateGrowth W)
     (hmem : MemLp (fun x => (W x : ℂ)) (⊤ : ℝ≥0∞) (volume : Measure V)) :
     opL2 (potentialOp W)
       = (mulL2 (hmem.toLp _)).toLinearMap ∘ₗ (schwartzDomain V).subtype := by
-
   refine LinearMap.ext fun v => ?_
   obtain ⟨f, rfl⟩ := (schwartzEquiv V).surjective v
   simpa using opL2_potentialOp_apply_eq_mulL2 W hW hmem f

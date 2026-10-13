@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterPvmScalarMeasure
 import Theorems.Thm_BookProof_ChapterPvmScalarMeasure_p_image_eq_zero
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterMackeyConverse
+import Definitions.Def_ChapterPvmInducedSystem
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterPvmScalarMeasure
 
 
@@ -13,6 +18,7 @@ open scoped InnerProductSpace
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicDecomposition
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterMackeyConverse
 open BookProof.ChapterPvmInducedSystem
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

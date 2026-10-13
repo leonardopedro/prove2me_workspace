@@ -14,5 +14,6 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (θs : Fin n → ℝ) : (∏ k : Fin n, Real.cos (θs k) ^ 2) =
     (∏ k : Fin n, Real.cos (θs k) ^ 2) := rfl

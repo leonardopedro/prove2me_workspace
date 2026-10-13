@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_span
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
 open BookProof.ChapterPauliFundamental
 
 

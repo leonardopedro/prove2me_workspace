@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
 import Theorems.Thm_BookProof_HermiteBandHigher_Band_monoR
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteBandCalculus
 open BookProof.HermiteBandHigher
 
 

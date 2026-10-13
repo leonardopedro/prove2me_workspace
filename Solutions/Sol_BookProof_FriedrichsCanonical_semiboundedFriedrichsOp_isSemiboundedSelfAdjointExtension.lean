@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_isPositiveSelfAdjointExtension
 import Theorems.Thm_BookProof_FriedrichsCanonical_isSemibounded_of_isPositive_shift
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.FriedrichsCanonical
 
 
@@ -10,6 +15,8 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
 
 noncomputable section
 

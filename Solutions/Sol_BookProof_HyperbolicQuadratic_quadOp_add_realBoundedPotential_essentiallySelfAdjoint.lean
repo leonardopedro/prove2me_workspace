@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_add_boundedPotential_essentiallySelfAdjoint
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterWaveBoundedPotential
 open BookProof.HyperbolicQuadratic
 
 

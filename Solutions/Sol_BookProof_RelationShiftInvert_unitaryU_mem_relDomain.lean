@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
 import Theorems.Thm_BookProof_RelationShiftInvert_relOp_mem
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_mem_unitaryU
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.RelationShiftInvert
 
 

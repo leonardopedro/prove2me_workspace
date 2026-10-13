@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
 import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_cocycle_mem_stabilizer
+import Definitions.Def_ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyInducedSystem
 
 
@@ -11,6 +12,7 @@ open Finset
 
 
 open BookProof.ChapterMackeyImprimitivity
+open BookProof.ChapterMackeyImprimitivity.ImprimitivitySystem
 
 variable {G : Type*} [Group G] {X : Type*} [Fintype X] [DecidableEq X] [MulAction G X]
 variable {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]

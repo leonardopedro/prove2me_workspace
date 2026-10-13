@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_YmFockFriedrichs_ymFockCore_dense
 import Theorems.Thm_BookProof_YmFockFriedrichs_ymFockHam_symmetricOn
 import Theorems.Thm_BookProof_YmFockFriedrichs_ymFockHam_quadForm_nonneg
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQg3DGaugeFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YmFockFriedrichs
 
 
@@ -15,6 +25,8 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.Friedric
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.Qg3DGaugeFL
 open BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
+open BookProof.YangMillsFriedrichs
 
 noncomputable section
 

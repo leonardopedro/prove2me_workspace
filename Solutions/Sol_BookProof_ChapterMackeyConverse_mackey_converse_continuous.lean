@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterMackeyConverse
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_covariant_unitary_is_induced
 import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_swCLM_proj
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterMackeyCocycle
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyConverse
 
 
@@ -13,6 +18,8 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterMackeyQuasiInvariant
 open BookProof.ChapterPvmCyclicUnitary BookProof.ChapterMackeyCocycle
+open BookProof.ChapterElectroweakFieldStrength
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {G X H : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 variable [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]

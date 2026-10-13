@@ -1,6 +1,8 @@
 -- Generated from ChapterGravitySplit.lean — solution of BookProof.ChapterGravitySplit.split_unique
 import Mathlib
 import Definitions.Def_ChapterGravitySplit
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterGravityTimeProj
 open BookProof.ChapterGravitySplit
 
 

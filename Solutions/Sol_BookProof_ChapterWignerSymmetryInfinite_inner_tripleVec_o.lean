@@ -1,6 +1,8 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.inner_tripleVec_o
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
+import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterOrthogonalSums
 open BookProof.ChapterWignerSymmetryInfinite
 
 

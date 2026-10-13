@@ -1,6 +1,7 @@
 -- Generated from ChapterCyclicDecomposition.lean — solution of BookProof.ChapterCyclicDecomposition.isClosed_cyclicSubspace
 import Mathlib
 import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterCyclicDecomposition
 
 

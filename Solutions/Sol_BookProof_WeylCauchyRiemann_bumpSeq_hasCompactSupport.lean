@@ -1,6 +1,7 @@
 -- Generated from ChapterWeylCauchyRiemann.lean — solution of BookProof.WeylCauchyRiemann.bumpSeq_hasCompactSupport
 import Mathlib
 import Definitions.Def_ChapterWeylCauchyRiemann
+import Definitions.Def_ChapterRadialMollifier
 open BookProof.WeylCauchyRiemann
 
 

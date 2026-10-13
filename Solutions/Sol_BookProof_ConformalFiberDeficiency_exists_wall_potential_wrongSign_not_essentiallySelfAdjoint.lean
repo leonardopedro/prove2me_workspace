@@ -7,6 +7,11 @@ import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfWall_nonneg
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfV_eq_wall
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfWall_tendsto_atBot
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cfWall_tendsto_atTop
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.ConformalFiberDeficiency
 
 
@@ -15,6 +20,8 @@ open BookProof.ConformalFiberDeficiency
 open MeasureTheory Real Filter Topology
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

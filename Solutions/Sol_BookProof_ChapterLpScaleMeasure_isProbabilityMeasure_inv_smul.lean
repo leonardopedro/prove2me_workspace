@@ -1,6 +1,7 @@
 -- Generated from ChapterLpScaleMeasure.lean — solution of BookProof.ChapterLpScaleMeasure.isProbabilityMeasure_inv_smul
 import Mathlib
 import Definitions.Def_ChapterLpScaleMeasure
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLpScaleMeasure
 
 

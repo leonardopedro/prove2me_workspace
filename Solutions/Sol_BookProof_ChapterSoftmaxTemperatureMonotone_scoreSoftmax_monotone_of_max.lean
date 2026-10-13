@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_deriv_scoreSoftm
 import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_differentiable_scoreSoftmax
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_meanScore_le_max
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 
@@ -15,15 +18,17 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (s : Fin m → ℝ) (j : Fin m) (hmax : ∀ l, s l ≤ s j) :
     Monotone fun b : ℝ => scoreSoftmax b s j := by
-
   refine monotone_of_deriv_nonneg (differentiable_scoreSoftmax s j) fun b => ?_
   rw [deriv_scoreSoftmax_beta b s j]
   have hmean : meanScore b s ≤ s j := meanScore_le_max b s j hmax

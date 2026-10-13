@@ -1,6 +1,7 @@
 -- Generated from ChapterHalfLineLimitCircle.lean — solution of BookProof.HalfLineLimitCircle.hlBumpFun_two
 import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

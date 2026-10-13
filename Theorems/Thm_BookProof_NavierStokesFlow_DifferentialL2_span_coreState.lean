@@ -29,10 +29,5 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 noncomputable section
 
-ubmodule.sum_mem _ fun b _ =>
-      Submodule.smul_mem _ _ (Submodule.subset_span ⟨b, rfl⟩)
-  · rw [Submodule.span_le]
-    rintro _ ⟨b, rfl⟩
-    exact lpSingle_mem_lpFiniteModes b 1
-
-/- := by sorry
+theorem BookProof.NavierStokesFlow.DifferentialL2.span_coreState :
+    Submodule.span ℂ (Set.range coreState) = (⊤ : Submodule ℂ (lpFiniteModes Vel)) := by sorry

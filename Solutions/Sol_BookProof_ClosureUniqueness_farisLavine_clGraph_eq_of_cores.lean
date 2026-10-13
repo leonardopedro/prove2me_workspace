@@ -4,6 +4,8 @@ import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_clGraph_eq_of_isCoreOf_pair
 import Theorems.Thm_BookProof_ClosureUniqueness_clDom_eq_of_clGraph_eq
 import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_of_clGraph_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

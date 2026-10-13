@@ -16,6 +16,20 @@ import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_outerHam_esa
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_outerHam_symmetricOn
 import Theorems.Thm_BookProof_SqSumOuterFamily_outerCore_dense
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterSqSumOuterFamily
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
@@ -28,6 +42,12 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert BookProof.SirkSingleTime
 open BookProof.QgTimeIndependent BookProof.QgTruncationResolvent
 open BookProof.DirectSumEsa BookProof.HermiteProductCore
+open BookProof.EsaClosure
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.HermiteProductCore
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.StoneBridge
 
 noncomputable section
 

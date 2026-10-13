@@ -7,6 +7,7 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
+import Theorems.Thm_BookProof_ChapterAbelianClassificationList_vonNeumann_abelian_classification_list
 
 
 /-!

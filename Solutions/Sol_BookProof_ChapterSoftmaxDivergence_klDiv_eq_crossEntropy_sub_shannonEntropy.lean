@@ -1,6 +1,9 @@
 -- Generated from ChapterSoftmaxDivergence.lean — solution of BookProof.ChapterSoftmaxDivergence.klDiv_eq_crossEntropy_sub_shannonEntropy
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxMaxEntropy
 open BookProof.ChapterSoftmaxDivergence
 
 
@@ -11,16 +14,17 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxMaxEntropy
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {p q : Fin m → ℝ}
     (hq0 : ∀ j, 0 < q j) :
     klDiv p q = crossEntropy p q - shannonEntropy p := by
-
   have hterm : ∀ j : Fin m,
       p j * Real.log (p j / q j) = -(p j * Real.log (q j)) + p j * Real.log (p j) := by
     intro j

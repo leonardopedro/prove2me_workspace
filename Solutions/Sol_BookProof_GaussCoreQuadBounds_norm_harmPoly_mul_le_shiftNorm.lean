@@ -3,7 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_harmP_le_shiftNorm
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_sqrt_dim_mul_norm_le_shiftNorm
-import Theorems.Thm_BookProof_HermiteQuadraticEsa_norm_harmPoly_mul_le
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.GaussCoreQuadBounds
 
 
@@ -14,6 +20,8 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
 open BookProof.QgOuterFock
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteFriedrichs
 
 noncomputable section
 

@@ -8,6 +8,22 @@ import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_symmetricOn
 import Theorems.Thm_BookProof_SmFullEnclosure_smFull_h_esa
 import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 import Theorems.Thm_BookProof_TensorKatoRellich_essentiallySelfAdjointOn_tensorSum_add_coupling
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterSmFullEnclosure
+import Definitions.Def_ChapterTensorKatoRellich
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmYukawaCoupling
 
 
@@ -20,6 +36,9 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteP
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
 open BookProof.YangMillsNonAbelianEsa BookProof.SmFullEnclosure BookProof.TensorKatoRellich
+open BookProof.HermiteProductCore
+open BookProof.SmDiracYukawa
+open BookProof.SmHamiltonian
 
 noncomputable section
 

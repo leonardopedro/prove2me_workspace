@@ -6,6 +6,11 @@ import Theorems.Thm_BookProof_FockFieldPerturbation_l2norm_nonneg
 import Theorems.Thm_BookProof_FockFieldPerturbation_numberQuad_nonneg
 import Theorems.Thm_BookProof_FockFieldPerturbation_number_le_dGamma_quadForm
 import Theorems.Thm_BookProof_FockNumberPreservingGap_number_quadForm_ge
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockPairPerturbation
 
 
@@ -16,6 +21,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+open BookProof.FockSecondQuantization
 
 set_option maxHeartbeats 1000000 in
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} {mu : ℝ} (hmu : 0 < mu)

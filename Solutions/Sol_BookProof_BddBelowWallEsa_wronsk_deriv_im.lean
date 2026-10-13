@@ -1,5 +1,11 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.wronsk_deriv_im
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 
@@ -14,11 +20,11 @@ noncomputable section
 variable {V : ℝ → ℝ} {z : ℂ} {W W' : ℝ → ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (x : ℝ) :
     ((starRingEnd ℂ) (W' x) * W' x
         + (starRingEnd ℂ) (W x) * ((((V x : ℝ) : ℂ) - z) * W x)).im
       = -z.im * ‖W x‖ ^ 2 := by
-
   have h1 : (starRingEnd ℂ) (W' x) * W' x = ((‖W' x‖ ^ 2 : ℝ) : ℂ) := by
     rw [Complex.conj_mul']; push_cast; ring
   have h2 : (starRingEnd ℂ) (W x) * ((((V x : ℝ) : ℂ) - z) * W x)

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterAbelianGelfandModel
 
 

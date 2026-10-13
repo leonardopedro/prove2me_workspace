@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterTensorKatoRellich
 import Theorems.Thm_BookProof_TensorKatoRellich_pairLiftDom_apply
 import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorKatoRellich
 
 
@@ -10,6 +14,7 @@ open BookProof.TensorKatoRellich
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

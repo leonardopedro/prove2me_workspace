@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_mem_cyclicSubspace_self
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_restrictCyclic_apply
+import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmCyclicDecomposition
 
 

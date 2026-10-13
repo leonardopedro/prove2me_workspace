@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_gaussGenPoly_comm_mulLeft
 import Theorems.Thm_BookProof_BookBrstYangMills_bosOpN_mul
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.BookBrstGaugeFixing
 
 
@@ -10,6 +15,8 @@ open BookProof.BookBrstGaugeFixing
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
+open BookProof.ChapterLinftyMultiplication
+open BookProof.YangMillsGhost
 
 noncomputable section
 

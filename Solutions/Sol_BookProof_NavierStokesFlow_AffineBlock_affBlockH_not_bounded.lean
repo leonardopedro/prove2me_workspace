@@ -4,6 +4,11 @@ import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_le_amp
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
@@ -14,6 +19,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
 variable {J : Type*}
 

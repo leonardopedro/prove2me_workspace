@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA2e
 import Theorems.Thm_BookProof_ChapterA_Ccomplex_realification_dichotomy
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

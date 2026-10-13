@@ -23,9 +23,6 @@ theorem solution {H Om : E →L[ℂ] E} {B : ℕ → E →L[ℂ] E} (hH : IsSelf
     ∀ n : ℕ, ‖Om (leakageIter B τ x n)‖ ≤ ‖Om x‖ + n * (‖Om‖ * (K * ‖x‖ * τ))
   | 0 => by simp
   | n + 1 => by
-      have hxn : ‖leakageIter B τ x n‖ = ‖x‖
-| 0 => by simp
-  | n + 1 => by
       have hxn : ‖leakageIter B τ x n‖ = ‖x‖ := norm_leakageIter hB τ x n
       have hstep : ∀ s ∈ Set.Icc (0 : ℝ) τ,
           ‖(H - B n) (flow (B n) s (leakageIter B τ x n))‖ ≤ K * ‖x‖ := by

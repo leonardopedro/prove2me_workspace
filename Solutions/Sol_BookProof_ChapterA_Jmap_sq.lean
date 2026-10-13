@@ -1,6 +1,7 @@
 -- Generated from ChapterA1d.lean — solution of BookProof.ChapterA.Jmap_sq
 import Mathlib
 import Definitions.Def_ChapterA1d
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

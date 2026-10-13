@@ -4,6 +4,15 @@ import Definitions.Def_ChapterFermionFock
 import Theorems.Thm_BookProof_FermionFock_annF_eq_zero_of_not_mem_modesF
 import Theorems.Thm_BookProof_FermionFock_dGammaF_eq_sum
 import Theorems.Thm_BookProof_FermionFock_inner_annF_creVecF
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.FermionFock
 
 
@@ -14,6 +23,7 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.FriedrichsExtensi
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
+open BookProof.SmCar
 
 noncomputable section
 

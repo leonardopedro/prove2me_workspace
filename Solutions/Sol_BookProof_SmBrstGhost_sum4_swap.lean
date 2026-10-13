@@ -1,6 +1,9 @@
 -- Generated from ChapterSmBrstGhost.lean — solution of BookProof.SmBrstGhost.sum4_swap
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmBrstGhost
 
 

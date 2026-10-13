@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxJacobian.lean — solution of BookProof.ChapterSoftmaxJacobian.scorePerturb_self
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxJacobian
 
 

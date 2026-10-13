@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_hasDerivAt_scoreSoftmax_score
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxJacobian
 
 

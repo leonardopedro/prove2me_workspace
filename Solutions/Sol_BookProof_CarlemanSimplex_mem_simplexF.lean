@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_apply_le_deg
 import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanSimplex
 
 
@@ -10,6 +12,7 @@ open BookProof.CarlemanSimplex
 
 open Finset
 open BookProof.HermiteCarleman BookProof.CarlemanTwoStep
+open BookProof.HermiteCarleman
 
 noncomputable section
 

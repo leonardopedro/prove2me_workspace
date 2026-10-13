@@ -1,6 +1,8 @@
 -- Generated from ChapterSchurRepresentation.lean — solution of BookProof.ChapterSchurRepresentation.adjoint_uCLM
 import Mathlib
 import Definitions.Def_ChapterSchurRepresentation
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterSchurIrreducible
 open BookProof.ChapterSchurRepresentation
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
 open BookProof.HermiteExpWall
 
 

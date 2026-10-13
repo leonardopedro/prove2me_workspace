@@ -6,6 +6,11 @@ import Theorems.Thm_BookProof_HyperbolicQuadratic_pgLp_hermiteMvLp
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.HyperbolicQuadratic
 
 
@@ -16,6 +21,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 
+open BookProof.QgOuterFockCoreFL BookProof.QgOuterFockCoreFL.CoreData
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

@@ -4,6 +4,10 @@ import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 import Theorems.Thm_BookProof_TensorCore_isGraphCore_sectorCore
 import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.TensorCore
 
 

@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_gram_half10
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_mul
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_trace
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_transpose
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 
 

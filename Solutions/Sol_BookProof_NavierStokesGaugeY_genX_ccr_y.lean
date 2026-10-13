@@ -1,12 +1,16 @@
 -- Generated from ChapterNavierStokesGaugeY.lean — solution of BookProof.NavierStokesGaugeY.genX_ccr_y
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 
 
 
 open MvPolynomial BookProof.NavierStokesFlow
+
+
+@[simp] private theorem genX_apply (j : Fin 3) (p : NSAlg) : genX j p = pderiv (NSVar.x j) p := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j k : Fin 3) (p : NSAlg) :

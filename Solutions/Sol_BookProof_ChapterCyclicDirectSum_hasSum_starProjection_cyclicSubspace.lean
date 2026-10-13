@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCyclicDirectSum
 import Theorems.Thm_BookProof_ChapterCyclicDirectSum_starProjection_eq_of_hasSum
+import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterCyclicDirectSum
 
 

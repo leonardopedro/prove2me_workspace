@@ -1,6 +1,7 @@
 -- Generated from ChapterH3.lean — solution of BookProof.ChapterH3.duhamel_scalar
 import Mathlib
 import Definitions.Def_ChapterH3
+import Definitions.Def_ChapterH1
 open BookProof.ChapterH3
 
 

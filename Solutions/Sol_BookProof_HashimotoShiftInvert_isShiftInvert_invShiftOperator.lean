@@ -1,7 +1,12 @@
 -- Generated from ChapterHashimotoShiftInvert.lean — solution of BookProof.HashimotoShiftInvert.isShiftInvert_invShiftOperator
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
-import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 
@@ -17,6 +22,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.QgOuterFockFL
 theorem solution (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ) :
     IsShiftInvert (invShiftOperator R hinj γ) γ R := by
 

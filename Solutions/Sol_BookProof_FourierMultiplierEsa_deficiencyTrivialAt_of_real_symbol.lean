@@ -1,7 +1,7 @@
 -- Generated from ChapterFourierMultiplierEsa.lean — solution of BookProof.FourierMultiplierEsa.deficiencyTrivialAt_of_real_symbol
 import Mathlib
 import Definitions.Def_ChapterFourierMultiplierEsa
-import Theorems.Thm_BookProof_FourierMultiplierEsa_integral_conj_mul_symbol_sub_eq_zero_prime
+import Theorems.Thm_BookProof_FourierMultiplierEsa_integral_conj_mul_symbol_sub_eq_zero'
 open BookProof.FourierMultiplierEsa
 
 

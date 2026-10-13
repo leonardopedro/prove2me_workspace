@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineBlock
 
@@ -13,6 +15,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber BilinearEsa
+open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
 variable {J : Type*}
 

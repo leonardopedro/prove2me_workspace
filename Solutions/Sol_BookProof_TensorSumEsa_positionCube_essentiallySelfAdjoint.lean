@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_essentiallySelfAdjointOn_cpairDom_selfAdjoint
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.TensorSumEsa
 
 
@@ -9,6 +15,8 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterUnboundedPosition
 
 noncomputable section
 

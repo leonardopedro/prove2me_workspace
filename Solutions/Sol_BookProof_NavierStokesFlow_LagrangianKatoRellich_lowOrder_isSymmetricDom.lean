@@ -2,6 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -11,11 +21,12 @@ open Filter Topology
 
 
 
-open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
+open FullEsa LagrangianEsa BookProof.FarisLavine
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.FullEsa.NSFullData BookProof.NavierStokesFlow.LagrangianEsa BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval
 theorem solution : IsSymmetricDom (lowOrder L) := L.drift_isSymmetricDom.add L.constraint_symm

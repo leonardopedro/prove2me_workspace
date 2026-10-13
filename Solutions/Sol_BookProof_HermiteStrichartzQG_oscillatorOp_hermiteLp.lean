@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteCoreOp_hermiteLp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterHermiteFunctions
+import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
 open BookProof.HermiteStrichartzQG
 
 
@@ -9,6 +13,7 @@ open BookProof.HermiteStrichartzQG
 
 open MeasureTheory BookProof.HermiteCore BookProof.FarisLavine
 open BookProof.QuantumGravityDensitized
+open BookProof.HermiteCore
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) :

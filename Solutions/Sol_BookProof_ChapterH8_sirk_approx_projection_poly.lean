@@ -3,14 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterH8
 import Theorems.Thm_BookProof_ChapterH8_adjoint_comp_nested
 import Theorems.Thm_BookProof_ChapterH8_compress_adjoint_intertwine_poly
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterH8
 
 
+
+open ContinuousLinearMap
 
 noncomputable section
 
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+open BookProof.ChapterH4
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {E F G : Type*}
@@ -20,6 +26,7 @@ variable {E F G : Type*}
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)
     (X : E →L[ℂ] E) (hJ : Vn = Vm.comp J)
     (hVm : (adjoint Vm).comp Vm = ContinuousLinearMap.id ℂ G)
@@ -28,7 +35,6 @@ theorem solution (Vn : F →L[ℂ] E) (Vm : G →L[ℂ] E) (J : F →L[ℂ] G)
     (p : Polynomial ℂ) (v : E) :
     Vn ((adjoint Vn) (Vm ((Polynomial.aeval (compress Vm X) p) ((adjoint Vm) v))))
       = Vn ((Polynomial.aeval (compress Vn X) p) ((adjoint Vn) v)) := by
-
   have hadj := compress_adjoint_intertwine_poly Vn Vm J X hJ hVm hJJ hinvadj p
   have hproj : (adjoint Vn).comp Vm = adjoint J := adjoint_comp_nested Vn Vm J hJ hVm
   have h1 : (adjoint Vn) (Vm ((Polynomial.aeval (compress Vm X) p) ((adjoint Vm) v)))

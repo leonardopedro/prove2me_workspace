@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_NonnegResolvent_invCLMAt_comm
 import Theorems.Thm_BookProof_NonnegResolvent_smul_invCLMAt_le_one
 import Theorems.Thm_BookProof_NonnegResolvent_smul_nonneg_of_nonneg
 import Theorems.Thm_BookProof_NonnegResolvent_yosidaCLM_sub
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegResolvent
 
 

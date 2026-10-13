@@ -1,6 +1,7 @@
 -- Generated from ChapterSphericalPlancherel.lean — solution of BookProof.ChapterSphericalPlancherel.integral_eq_two_smul_of_even
 import Mathlib
 import Definitions.Def_ChapterSphericalPlancherel
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalPlancherel
 
 

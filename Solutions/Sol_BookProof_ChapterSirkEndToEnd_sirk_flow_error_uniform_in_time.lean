@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
 import Theorems.Thm_BookProof_ChapterH6_sirk_error_tendsto_zero
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH9
+import Definitions.Def_ChapterH6
 open BookProof.ChapterSirkEndToEnd
 
 

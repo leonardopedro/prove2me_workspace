@@ -28,10 +28,10 @@ Here we set up the objects the converse needs.
 Everything is `sorry`-free and uses only the standard axioms.
 -/
 
+namespace BookProof.ChapterPvmMeasure
+
 open MeasureTheory
 open scoped InnerProductSpace
-
-namespace BookProof.ChapterPvmMeasure
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

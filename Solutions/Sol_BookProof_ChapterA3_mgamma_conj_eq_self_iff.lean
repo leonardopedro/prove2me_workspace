@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPauliCommutant
 import Theorems.Thm_BookProof_ChapterA3_mgamma_conjugation_unique_up_to_scalar
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

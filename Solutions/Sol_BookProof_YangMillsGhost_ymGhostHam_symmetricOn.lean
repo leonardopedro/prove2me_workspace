@@ -3,6 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_symmetricOn
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.YangMillsGhost
 
 

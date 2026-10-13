@@ -4,8 +4,12 @@ import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_add
 import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_apply_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_posOp_apply_eq_mul
 import Theorems.Thm_BookProof_ShiftedHermiteCore_mulXTPoly_apply
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.ShiftedHermiteCore
 
 
@@ -16,6 +20,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
+open BookProof.MixedLinearEsa
 noncomputable section
 
 variable {d : ℕ}

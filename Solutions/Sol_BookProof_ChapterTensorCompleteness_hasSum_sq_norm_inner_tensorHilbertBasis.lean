@@ -1,6 +1,7 @@
 -- Generated from ChapterTensorCompleteness.lean — solution of BookProof.ChapterTensorCompleteness.hasSum_sq_norm_inner_tensorHilbertBasis
 import Mathlib
 import Definitions.Def_ChapterTensorCompleteness
+import Definitions.Def_ChapterSolovayHilbertTensor
 open BookProof.ChapterTensorCompleteness
 
 

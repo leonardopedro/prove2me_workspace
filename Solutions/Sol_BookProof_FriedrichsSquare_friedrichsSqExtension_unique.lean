@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_isFriedrichsSqExtension_iff_eq_factorRel
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.FriedrichsSquare
 
 

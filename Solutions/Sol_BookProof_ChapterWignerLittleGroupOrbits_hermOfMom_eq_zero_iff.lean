@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_hermOfMom_injective
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_hermOfMom_zero
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

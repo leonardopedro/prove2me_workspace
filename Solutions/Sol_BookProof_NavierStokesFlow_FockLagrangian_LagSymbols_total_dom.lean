@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_sum
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
@@ -15,6 +19,11 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.BRSTNilpotent
+open BookProof.NavierStokesFlow.ThreeComponent
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {X : Type*} [MeasurableSpace X]
 

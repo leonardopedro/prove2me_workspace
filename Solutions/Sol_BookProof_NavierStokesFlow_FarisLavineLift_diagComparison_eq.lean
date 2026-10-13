@@ -2,14 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_diagOp_one
-import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_add
+
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift
-
-
-
-
 
 open FullEsa
 
@@ -17,6 +20,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {d : ℕ} (c : ComparisonData F d)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterAbelianDiagonalCountable BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.FullEsa.NSFullData
 theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     (diagComparisonData d p q).comparison
       = diagOp (fun k => (∑ i, p i k ^ 2) + (∑ i, q i k ^ 2) + 1) := by

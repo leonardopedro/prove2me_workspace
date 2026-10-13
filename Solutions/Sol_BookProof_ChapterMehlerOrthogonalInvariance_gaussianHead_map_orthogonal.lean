@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
 import Theorems.Thm_BookProof_ChapterMehlerOrthogonalInvariance_stdGaussianEuclidean_map_isometry
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterMehlerOrthogonalInvariance
 
 

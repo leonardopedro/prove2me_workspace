@@ -9,6 +9,10 @@ open scoped ENNReal
 
 noncomputable section
 
+
+@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : ℕ) (f : Ell2C) (j : ℕ) :
     ((diagOp (coordUnit i) f : Ell2C) : ℕ → ℂ) j = if j = i then (f : ℕ → ℂ) i else 0 := by

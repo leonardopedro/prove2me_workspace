@@ -4,6 +4,9 @@ import Definitions.Def_ChapterMackeyCocycle
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_norm_indSet_sq
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_proj_eq_zero_of_measure_zero
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_vmap_indSet
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle
 
 
@@ -13,6 +16,8 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+open BookProof.ChapterElectroweakFieldStrength
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 

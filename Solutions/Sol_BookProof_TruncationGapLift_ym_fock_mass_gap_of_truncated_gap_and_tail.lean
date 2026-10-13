@@ -4,6 +4,19 @@ import Definitions.Def_ChapterTruncationGapLift
 import Theorems.Thm_BookProof_TruncationGapLift_gap_of_level_gap_and_tail
 import Theorems.Thm_BookProof_YangMillsFockGapChain_ym_fock_mass_gap_of_one_particle_form_gap
 import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterYangMillsFockGapChain
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.TruncationGapLift
 
 
@@ -16,6 +29,12 @@ open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
+open BookProof.HermiteProductCore
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsHermite
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

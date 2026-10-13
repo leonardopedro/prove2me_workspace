@@ -2,10 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterFockNumberPreservingGap
 import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.FockNumberPreservingGap
 
 
 
+open BookProof.HermiteGalerkin
 noncomputable section
 
 

@@ -1,6 +1,10 @@
 -- Generated from ChapterSolidHarmonic.lean — solution of BookProof.ChapterSolidHarmonic.laplacian_const_mul
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
 

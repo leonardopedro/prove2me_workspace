@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure_ofReal
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterAbelianGelfandModel
 
 

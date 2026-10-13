@@ -4,6 +4,7 @@ import Definitions.Def_ChapterLorentzOrthochronous
 import Theorems.Thm_BookProof_LorentzOrthochronous_lorentz_inv_eq
 import Theorems.Thm_BookProof_LorentzGroup_eta_mul_self
 import Theorems.Thm_BookProof_LorentzGroup_lorentz_det_ne_zero
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxBorn.lean — solution of BookProof.ChapterSoftmaxBorn.softmaxDenom_pos
 import Mathlib
 import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 
 

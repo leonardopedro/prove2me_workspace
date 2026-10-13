@@ -1,10 +1,12 @@
 -- Generated from ChapterStoneTheorem.lean — solution of BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq
 import Mathlib
 import Definitions.Def_ChapterStoneTheorem
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genDomain_eq_domain
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
@@ -20,6 +22,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable [TopologicalSpace.SeparableSpace H]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.ChapterStoneResolvent
 theorem solution (T : UnboundedSelfAdjoint H) : T.stoneGroup.gen = T := by
 
   refine ext_prime T.genDomain_eq_domain ?_

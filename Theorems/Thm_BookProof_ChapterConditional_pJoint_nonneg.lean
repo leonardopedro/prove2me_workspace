@@ -11,5 +11,4 @@ open Finset
 variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X]
 variable {𝕜 : Type*} [RCLike 𝕜]
 
-
-def pCond (B : Matrix Y X 𝕜) (x : X) (y : Y) : ℝ := by sorry
+theorem BookProof.ChapterConditional.pJoint_nonneg (B : Matrix Y X 𝕜) (x : X) (y : Y) : 0 ≤ pJoint B x y := by sorry

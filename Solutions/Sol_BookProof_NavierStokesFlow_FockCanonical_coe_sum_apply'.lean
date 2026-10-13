@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesFockCanonical.lean — solution of BookProof.NavierStokesFlow.FockCanonical.coe_sum_apply'
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
+import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 

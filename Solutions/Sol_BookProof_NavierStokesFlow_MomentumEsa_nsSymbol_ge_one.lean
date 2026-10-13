@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesMomentumEsa.lean — solution of BookProof.NavierStokesFlow.MomentumEsa.nsSymbol_ge_one
 import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumEsa
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 

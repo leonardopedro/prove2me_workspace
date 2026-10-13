@@ -1,6 +1,8 @@
 -- Generated from ChapterNsSpatialMomentumMultiplier.lean — solution of BookProof.NsSpatialMultiplier.foSymbolFn_congr_of_inner_eq
 import Mathlib
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.NsSpatialMultiplier
 
 

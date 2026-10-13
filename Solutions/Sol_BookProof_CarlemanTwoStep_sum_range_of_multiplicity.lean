@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sum_range_of_multiplicity
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanTwoStep
 
 
@@ -18,13 +19,13 @@ variable {u : (Fin d →₀ ℕ) → ℂ}
 variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {B : ℝ} (m : ℕ)
     (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ F, ‖u a‖ ^ 2 ≤ B)
     (G : ℕ → Finset (Fin d →₀ ℕ))
     (hm : ∀ (a : Fin d →₀ ℕ) (M : ℕ),
       (((Finset.range M).filter (fun N => a ∈ G N)).card) ≤ m)
     (M : ℕ) : ∑ N ∈ Finset.range M, ∑ a ∈ G N, ‖u a‖ ^ 2 ≤ (m : ℝ) * B := by
-
   classical
   set T : Finset (Fin d →₀ ℕ) := (Finset.range M).biUnion G with hT
   have hsub : ∀ N ∈ Finset.range M, G N ⊆ T := by

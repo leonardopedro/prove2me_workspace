@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_stronglyMeasurable_symbol
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_symbol_ae_norm_le
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMaximalAbelian
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterLpRestrictSplit.lean — solution of BookProof.ChapterLpRestrictSplit.restrictEmbed_coeFn
 import Mathlib
 import Definitions.Def_ChapterLpRestrictSplit
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit
 
 

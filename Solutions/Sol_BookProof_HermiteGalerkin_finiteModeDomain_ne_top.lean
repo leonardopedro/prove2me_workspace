@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+open scoped InnerProductSpace
+open scoped lp
 open BookProof.HermiteGalerkin
 
 

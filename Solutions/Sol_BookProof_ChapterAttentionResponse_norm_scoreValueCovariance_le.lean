@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxFluctuation
 open BookProof.ChapterAttentionResponse
 

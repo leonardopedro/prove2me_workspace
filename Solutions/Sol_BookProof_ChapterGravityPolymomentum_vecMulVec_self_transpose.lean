@@ -1,6 +1,7 @@
 -- Generated from ChapterGravityPolymomentum.lean — solution of BookProof.ChapterGravityPolymomentum.vecMulVec_self_transpose
 import Mathlib
 import Definitions.Def_ChapterGravityPolymomentum
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 

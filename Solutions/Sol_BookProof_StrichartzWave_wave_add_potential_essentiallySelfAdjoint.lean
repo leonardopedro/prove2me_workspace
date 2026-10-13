@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWaveBoundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_wave_add_boundedPotential_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

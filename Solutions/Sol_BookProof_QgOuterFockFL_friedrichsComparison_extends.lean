@@ -4,6 +4,15 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_dom_le_range
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHashimotoShiftInvert
 open BookProof.QgOuterFockFL
 
 
@@ -30,7 +39,6 @@ theorem solution [CompleteSpace F] (P : PosSymOp F)
     (hdense : Dense (P.dom : Set F)) (x : P.dom) :
     ∃ h : (x : F) ∈ (friedrichsComparison P hdense).dom,
       (friedrichsComparison P hdense).op ⟨(x : F), h⟩ = P.op x := by
-
   have hinj : Function.Injective (friedrichsResolvent P) :=
     friedrichsResolvent_injective P hdense
   refine ⟨dom_le_range P x.2, ?_⟩

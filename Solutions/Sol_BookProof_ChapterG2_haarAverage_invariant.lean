@@ -16,5 +16,7 @@ variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
 variable {X : Type*} [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [MeasurableMul G] (f : X → ℝ) (g : G) (x : X) :
-    haarAverage (μG := haarAverage_smul f g x
+    haarAverage (μG := μG) f (g • x) = haarAverage (μG := μG) f x :=
+  haarAverage_smul f g x

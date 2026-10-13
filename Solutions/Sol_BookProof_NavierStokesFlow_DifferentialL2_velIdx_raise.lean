@@ -1,6 +1,15 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.velIdx_raise
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
 

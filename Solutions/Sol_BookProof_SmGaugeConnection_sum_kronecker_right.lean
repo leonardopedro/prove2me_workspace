@@ -1,6 +1,12 @@
 -- Generated from ChapterSmGaugeConnection.lean — solution of BookProof.SmGaugeConnection.sum_kronecker_right
 import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterFarisLavine
 open BookProof.SmGaugeConnection
 
 

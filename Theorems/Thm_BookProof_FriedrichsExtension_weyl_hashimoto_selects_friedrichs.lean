@@ -10,6 +10,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
 open BookProof.FriedrichsExtension
+open Filter
 
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeComprehensiveFixing
 import Theorems.Thm_BookProof_ChapterGaugeComprehensiveFixing_exists_not_extendable_of_not_complete
+import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeComprehensiveFixing
 
 
@@ -14,10 +15,10 @@ variable {X : Type*} {G : Type*} [Group G] [MulAction G X] {S : Set X}
 variable {X : Type*} [TopologicalSpace X] {G : Type*} [Group G] [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     (∀ h : X → ℝ, ∃ f : X → ℝ, IsPhysicalObservable G f ∧ ∀ s ∈ S, f s = h s) ↔
       IsCompleteGaugeFixing' G S := by
-
   constructor
   · intro hext
     by_contra hS

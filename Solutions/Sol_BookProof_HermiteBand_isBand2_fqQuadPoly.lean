@@ -12,11 +12,19 @@ import Theorems.Thm_BookProof_HermiteBand_IsBand2_sum
 import Theorems.Thm_BookProof_HermiteBand_isBand1_mulXPoly
 import Theorems.Thm_BookProof_HermiteBand_isBand1_momPoly
 import Theorems.Thm_BookProof_HermiteBand_isBand2_weylProd
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterYangMillsHermite
+Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.HermiteBand
 
 
 
 
+open BookProof.FullQuadratic BookProof.NavierStokesFlow.DifferentialL2 BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval BookProof.YangMillsHermite
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis

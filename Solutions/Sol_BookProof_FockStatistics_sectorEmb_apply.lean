@@ -1,6 +1,9 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — solution of BookProof.FockStatistics.sectorEmb_apply
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -8,6 +11,7 @@ open BookProof.FockStatistics
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.TensorCore
 
 noncomputable section
 

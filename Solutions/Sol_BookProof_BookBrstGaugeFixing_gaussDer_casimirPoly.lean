@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.BookBrstGaugeFixing
 
 

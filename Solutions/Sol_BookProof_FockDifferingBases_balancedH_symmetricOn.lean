@@ -4,6 +4,14 @@ import Definitions.Def_ChapterFockDifferingBasesEsa
 import Theorems.Thm_BookProof_FockQuadratic_freeOp_symmetricOn
 import Theorems.Thm_BookProof_FockQuadratic_pairOp_symmetricOn
 import Theorems.Thm_BookProof_OperatorSeries_seriesOp_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FockDifferingBases
 
 
@@ -11,6 +19,8 @@ open BookProof.FockDifferingBases
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
+open BookProof.ChapterA3n
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

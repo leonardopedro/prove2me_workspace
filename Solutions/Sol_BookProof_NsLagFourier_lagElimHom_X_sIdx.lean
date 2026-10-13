@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNsLagrangianFourierElimination
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_X
 import Theorems.Thm_BookProof_NsLagFourier_lagElimCoord_sIdx
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsLagFourier
 
 

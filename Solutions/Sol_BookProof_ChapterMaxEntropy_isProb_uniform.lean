@@ -1,6 +1,8 @@
 -- Generated from ChapterMaxEntropy.lean — solution of BookProof.ChapterMaxEntropy.isProb_uniform
 import Mathlib
 import Definitions.Def_ChapterMaxEntropy
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterMaxEntropy
 
 

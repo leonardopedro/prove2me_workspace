@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
 import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.HermiteRelative
 
 

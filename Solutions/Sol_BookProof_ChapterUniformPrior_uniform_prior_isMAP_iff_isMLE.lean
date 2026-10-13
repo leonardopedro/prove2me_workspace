@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterUniformPrior
 import Theorems.Thm_BookProof_ChapterUniformPrior_uniform_prior_posterior_le_iff
+import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterUniformPrior
 
 

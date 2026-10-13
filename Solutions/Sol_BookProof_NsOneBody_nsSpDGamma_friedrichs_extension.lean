@@ -2,6 +2,21 @@
 import Mathlib
 import Definitions.Def_ChapterNsOneBodyDGamma
 import Theorems.Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.NsOneBody
 
 
@@ -13,6 +28,11 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.QgOuterFockFL
 open BookProof.NsFullEuler BookProof.FockSecondQuantization BookProof.FockSchur
 open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
+open BookProof.HermiteProductCore
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsHermite
 
 noncomputable section
 

@@ -1,6 +1,11 @@
 -- Generated from ChapterWallDeficiencyObstruction.lean — solution of BookProof.WallDeficiencyObstruction.isL2Ode_conj
 import Mathlib
 import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWeakSecondDerivative
 open BookProof.WallDeficiencyObstruction
 
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_EsaClosure_norm_add_I_eq_norm_sub_I
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 
 
@@ -11,6 +13,7 @@ open Filter Topology
 
 
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert
+open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

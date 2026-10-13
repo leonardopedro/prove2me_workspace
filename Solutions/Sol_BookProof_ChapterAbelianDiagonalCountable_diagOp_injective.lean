@@ -10,8 +10,8 @@ open scoped ENNReal
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Function.Injective diagOp := by
 
+theorem solution : Function.Injective diagOp := by
   intro d e h
   apply lp.ext
   funext i

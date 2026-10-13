@@ -3,17 +3,24 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_basis
 import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_norm_basis
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiagonalEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterAbelianDiagonalCountable
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (c : ℕ → ℝ) (hc : ∀ C : ℝ, ∃ n, C < |c n|) :
-    ¬ ∃ C : ℝ, ∀ f : lpFiniteModes ℕ, ‖diagOp c f‖ ≤ C * ‖f‖ :=
-  sential self-adjointness on a
-  proper dense domain is not a boundedness phenomenon. -/
-  theorem diagOp_not_bounded (c : ℕ → ℝ) (hc : ∀ C : ℝ, ∃ n, C < |c n|) :
-      ¬ ∃ C : ℝ, ∀ f : lpFiniteModes
+    ¬ ∃ C : ℝ, ∀ f : lpFiniteModes ℕ, ‖diagOp c f‖ ≤ C * ‖f‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := hc C
+  have hb := hC (basis n)
+  rw [diagOp_basis, norm_smul, norm_basis] at hb
+  have hle : |c n| ≤ C := by simpa using hb
+  exact absurd hn (not_lt.mpr hle)

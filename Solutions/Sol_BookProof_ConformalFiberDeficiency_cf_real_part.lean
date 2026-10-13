@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterConformalFiberDeficiency
 import Theorems.Thm_BookProof_ConformalFiberDeficiency_cosh_half_ne_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
 open BookProof.ConformalFiberDeficiency
 
 

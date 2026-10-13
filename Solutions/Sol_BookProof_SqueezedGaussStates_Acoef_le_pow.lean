@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSqueezedGaussStates
 import Theorems.Thm_BookProof_SqueezedGaussStates_Acoef_zero
 import Theorems.Thm_BookProof_SqueezedGaussStates_Acoef_nonneg
 import Theorems.Thm_BookProof_SqueezedGaussStates_Acoef_rec
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

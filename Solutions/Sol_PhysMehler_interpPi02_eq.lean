@@ -1,6 +1,7 @@
 -- Generated from PhysMehler.lean — solution of PhysMehler.interpPi02_eq
 import Mathlib
 import Definitions.Def_PhysMehler
+import Definitions.Def_ChapterA4
 open PhysMehler
 
 

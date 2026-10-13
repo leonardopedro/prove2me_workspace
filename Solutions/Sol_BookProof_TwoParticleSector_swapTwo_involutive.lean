@@ -1,6 +1,10 @@
 -- Generated from ChapterTwoParticleSectorEsa.lean — solution of BookProof.TwoParticleSector.swapTwo_involutive
 import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 

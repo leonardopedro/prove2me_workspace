@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_ChapterMackeyCocycle_vmap_indSet
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_image_preimage_smul
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_proj_congr_set
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_lintegral_enorm_sq_restrict
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle
 
 
@@ -15,18 +18,21 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+open BookProof.ChapterElectroweakFieldStrength
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {μ : Measure X} [IsFiniteMeasure μ]
     {hm : ∀ g : G, Measurable fun x : X => g • x}
     {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) (g : G)
     {w : X → ℂ} (hwmeas : Measurable w)
-    (hw : w =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := by
-
+    (hw : w =ᵐ[μ] ((V g (indSet μ (MeasurableSet.univ (α := X)))) : X → ℂ)) :
+    dens μ g =ᵐ[μ] fun x => ‖w x‖ₑ ^ 2 := by
   have hmeasw : Measurable fun x => ‖w x‖ₑ ^ 2 := (hwmeas.enorm.pow_const 2)
   have hmap : (μ.map fun x : X => g • x) = μ.withDensity (fun x => ‖w x‖ₑ ^ 2) := by
     refine Measure.ext fun F hF => ?_
@@ -53,3 +59,5 @@ theorem solution {μ : Measure X} [IsFiniteMeasure μ]
       ENNReal.ofReal_toReal (measure_ne_top μ _), Measure.map_apply (hm g) hF]
   rw [dens, hmap]
   exact Measure.rnDeriv_withDensity μ hmeasw
+
+/-! ## The multiplication–translation operator -/

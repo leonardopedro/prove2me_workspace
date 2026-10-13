@@ -2,11 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterTrajectory
 import Theorems.Thm_BookProof_ChapterDoubleSlit_slit_closed_born
+import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterTrajectory
 
 
 
 open scoped BigOperators Matrix
+open BookProof.ChapterDoubleSlit
 
 
 variable {n : ℕ}
@@ -14,6 +16,6 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (a : Fin 2) : midProb H psi0 a = 1 / 2 := by
 
-  simpa [midProb, bornProb] using BookProof.ChapterDoubleSlit.sl
+theorem solution (a : Fin 2) : midProb H psi0 a = 1 / 2 := by
+  simpa [midProb, bornProb] using BookProof.ChapterDoubleSlit.slit_closed_born a

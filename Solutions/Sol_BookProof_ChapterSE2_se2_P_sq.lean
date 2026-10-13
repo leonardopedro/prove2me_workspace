@@ -1,6 +1,7 @@
 -- Generated from ChapterSE2.lean — solution of BookProof.ChapterSE2.se2_P_sq
 import Mathlib
 import Definitions.Def_ChapterSE2
+import Definitions.Def_ChapterA3
 open BookProof.ChapterSE2
 
 

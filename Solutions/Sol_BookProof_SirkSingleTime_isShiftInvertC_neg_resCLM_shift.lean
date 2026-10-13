@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_resCLM_
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 import Theorems.Thm_BookProof_HashimotoShiftInvert_isShiftInvertC_of_rightInverse
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.SirkSingleTime
 
 
@@ -15,6 +19,9 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert
+open `BookProof.HashimotoShiftInvert`.
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 noncomputable section
 

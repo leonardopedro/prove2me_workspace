@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockOneParticle
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.QgOuterFockOneParticle
 
 
@@ -10,6 +15,7 @@ open BookProof.QgOuterFockOneParticle
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -18,8 +24,10 @@ variable {ι : Type*} [DecidableEq ι] (W : WallPot) (Q : QgModeData ι)
 variable {ι : Type*} [DecidableEq ι] (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := by
 
+theorem solution (x : secCore (ι := ι)) (a : ι) :
+    (secHam W Q x : Sec ι) a
+      = ∑ b ∈ insert a (Q.nbr a), oneParticleOp W Q a b (fibOf x b) := by
   classical
   have key : ∀ f : ι → L2R, (∀ c, c ∉ Q.nbr a → f c = 0) →
       ∑ c ∈ insert a (Q.nbr a), f c = ∑ c ∈ Q.nbr a, f c := by
@@ -36,3 +44,5 @@ theorem solution (x : secCore (ι := by
   congr 2
   rw [Finset.sum_ite_eq (insert a (Q.nbr a)) a (fun c => W.ham (Q.sig c) (fibOf x c)),
     if_pos (Finset.mem_insert_self a (Q.nbr a))]
+
+/-! ## The physical continuum instance -/

@@ -1,6 +1,13 @@
 -- Generated from ChapterPermutationSectorEsa.lean — solution of BookProof.PermSector.permOp_two_eq_swapH
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.PermSector
 
 

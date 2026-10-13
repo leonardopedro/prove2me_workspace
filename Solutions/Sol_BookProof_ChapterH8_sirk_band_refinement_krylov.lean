@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterH8Bases
 import Theorems.Thm_BookProof_ChapterH8_sirk_band_refinement_of_orthonormal
 import Theorems.Thm_BookProof_ChapterH8_krylov_li_of_le
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
 open BookProof.ChapterH8
 
 

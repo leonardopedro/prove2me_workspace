@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesFlow_field_evaluates_to_value
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

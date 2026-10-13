@@ -14,6 +14,9 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (S : ModelStatement H) (ψ : H)
 
+
+@[simp] private theorem not_op : S.not.op = 1 - S.op := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution : S.not.truthValue ψ = ‖ψ‖ ^ 2 - S.truthValue ψ := by
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.contDiff_polyPhase
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
 open BookProof.MixedLinearEsa
 
 

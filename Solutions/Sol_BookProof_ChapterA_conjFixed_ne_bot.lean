@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA1f
 import Theorems.Thm_BookProof_ChapterA_conjugation_avg_fixed
+import Definitions.Def_ChapterA1
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterLorentzOrthochronous
 import Theorems.Thm_BookProof_LorentzOrthochronous_lorentz_time_col
 import Theorems.Thm_BookProof_LorentzOrthochronous_lorentz_time_row
 import Theorems.Thm_BookProof_LorentzOrthochronous_product_time_component
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

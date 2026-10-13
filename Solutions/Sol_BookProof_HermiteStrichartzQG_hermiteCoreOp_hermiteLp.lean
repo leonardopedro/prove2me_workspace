@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
 import Theorems.Thm_BookProof_QuantumGravityDensitized_mulHamiltonian_mulBasis
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteStrichartzQG
 
 

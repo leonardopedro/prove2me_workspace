@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLpRestrictSplit
 import Theorems.Thm_BookProof_ChapterLpRestrictSplit_restrictEmbed_coeFn
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit
 
 

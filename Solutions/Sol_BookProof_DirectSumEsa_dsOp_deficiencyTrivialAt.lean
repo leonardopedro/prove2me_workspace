@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_single
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.DirectSumEsa
 
 

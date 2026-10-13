@@ -9,6 +9,9 @@ open BookProof.IrreversibleDynamics
 open MeasureTheory Function Set
 open scoped ENNReal
 
+
+@[simp] private theorem dissipative_apply (x : ℝ) : dissipative x = x / 2 := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution : Function.Injective dissipative := by
 

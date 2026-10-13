@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_add
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgHermiteFriedrichs
 
 

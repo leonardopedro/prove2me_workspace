@@ -4,6 +4,18 @@ import Definitions.Def_ChapterScalaronFockGapChain
 import Theorems.Thm_BookProof_ScalaronFockGapChain_constOnePart_quadForm
 import Theorems.Thm_BookProof_FockNumberPreservingGap_shiftCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterFockCubicUnbounded
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.ScalaronFockGapChain
 
 
@@ -17,6 +29,8 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

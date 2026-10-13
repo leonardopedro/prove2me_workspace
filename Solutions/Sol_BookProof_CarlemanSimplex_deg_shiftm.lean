@@ -4,6 +4,8 @@ import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_add
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_tsub_of_le
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

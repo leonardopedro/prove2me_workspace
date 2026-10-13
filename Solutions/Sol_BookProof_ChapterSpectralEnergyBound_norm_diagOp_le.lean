@@ -1,7 +1,9 @@
 -- Generated from ChapterSpectralEnergyBound.lean — solution of BookProof.ChapterSpectralEnergyBound.norm_diagOp_le
 import Mathlib
 import Definitions.Def_ChapterSpectralEnergyBound
+import Definitions.Def_ChapterAbelianDiagonalCountable
 open BookProof.ChapterSpectralEnergyBound
+open BookProof.ChapterAbelianDiagonalCountable
 
 
 
@@ -11,10 +13,10 @@ variable {n : Type*} [Fintype n]
 variable {n : Type*} [Fintype n]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)
     (h : ∀ i, v i ≠ 0 → |f i| ≤ E) :
     ‖diagOp f v‖ ≤ E * ‖v‖ := by
-
   classical
   by_cases hv : ∀ i, v i = 0
   · have hz : diagOp f v = 0 := by ext i; simp [hv i]

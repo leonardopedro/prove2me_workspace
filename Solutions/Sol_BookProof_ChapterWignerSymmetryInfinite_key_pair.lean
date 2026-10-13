@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_modulus_add
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_exists_zeta
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex_prime
+import Definitions.Def_ChapterOrthogonalSums
+import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
 
@@ -14,6 +16,7 @@ open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
+open BookProof.ChapterWignerSymmetry
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

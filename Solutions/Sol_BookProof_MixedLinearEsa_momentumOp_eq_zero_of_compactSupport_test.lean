@@ -7,6 +7,9 @@ import Theorems.Thm_BookProof_FourierMultiplierEsa_fourier_momentumOp_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 
@@ -14,6 +17,8 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
+open BookProof.StrichartzWave
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]

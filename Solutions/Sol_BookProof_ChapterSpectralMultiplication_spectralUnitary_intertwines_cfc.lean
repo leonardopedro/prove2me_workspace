@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
 import Theorems.Thm_BookProof_ChapterSpectralMultiplication_mulRep_toLp
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
 
 

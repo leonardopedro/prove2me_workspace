@@ -4,6 +4,9 @@ import Definitions.Def_ChapterMixedLinearEsa
 import Theorems.Thm_BookProof_MixedLinearEsa_momentumOp_apply
 import Theorems.Thm_BookProof_MixedLinearEsa_potMomOp_apply
 import Theorems.Thm_BookProof_MixedLinearEsa_hasDerivAt_phaseFun_line
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.MixedLinearEsa
 
 
@@ -11,12 +14,18 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+
+@[simp] private theorem phaseSchwartz_apply {θ : V → ℝ} (hθ : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) θ)
+    (φ : 𝓢(V, ℂ)) (hφ : HasCompactSupport (φ : V → ℂ)) (x : V) :
+    phaseSchwartz hθ φ hφ x = phaseFun θ x * φ x := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W) {m : V}

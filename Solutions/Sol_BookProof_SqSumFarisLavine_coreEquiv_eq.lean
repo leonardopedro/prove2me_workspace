@@ -2,6 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.SqSumFarisLavine
 
 
@@ -14,6 +24,7 @@ open BookProof.HermiteQuadraticEsa
 open BookProof.QgOuterFock
 open BookProof.GaussCoreQuadBounds
 
+open BookProof.NavierStokesFlow.DifferentialL2 BookProof.QgOuterFockCoreFL BookProof.QgOuterFockCoreFL.CoreData
 noncomputable section
 
 variable {D : ℕ} {R : Type*} [Fintype R]

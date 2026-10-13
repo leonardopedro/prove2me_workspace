@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterParityHiggs
 import Theorems.Thm_BookProof_ChapterParityHiggs_pauli2_map_conj
 import Theorems.Thm_BookProof_ChapterParity_pauli2_sq
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityHiggs
 
 

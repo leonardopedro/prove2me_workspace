@@ -1,6 +1,8 @@
 -- Generated from ChapterNsScalarFourier.lean — solution of BookProof.NsScalarFourier.nsScalarFourier_norm
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
+import Definitions.Def_ChapterNsPartialFourier
+import Definitions.Def_ChapterNsScalarVectorCurry
 open BookProof.NsScalarFourier
 
 

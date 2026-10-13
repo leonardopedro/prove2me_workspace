@@ -2,8 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_hasDerivAt_duhamel_stone
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+import Definitions.Def_ChapterStoneUnitary
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstUnboundedLeakage
 
 
@@ -13,6 +16,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
+open BookProof.BrstLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_hasDerivAt_exp_score
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxJacobian
 
 
@@ -12,16 +15,17 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :
     HasDerivAt (fun t : ℝ => partition beta (scorePerturb s i t))
       (beta * Real.exp (beta * s i)) 0 := by
-
   have h : HasDerivAt (fun t : ℝ => ∑ l, Real.exp (beta * scorePerturb s i t l))
       (∑ l, if l = i then beta * Real.exp (beta * s i) else 0) 0 := by
     refine HasDerivAt.fun_sum fun l _ => ?_

@@ -1,6 +1,7 @@
 -- Generated from ChapterLorentzOrthochronous.lean — solution of BookProof.LorentzOrthochronous.product_time_component
 import Mathlib
 import Definitions.Def_ChapterLorentzOrthochronous
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

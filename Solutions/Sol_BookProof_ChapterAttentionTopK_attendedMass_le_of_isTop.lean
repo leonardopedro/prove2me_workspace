@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAttentionTopK
 import Theorems.Thm_BookProof_ChapterAttentionTopK_sum_le_sum_of_isTop
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 import Definitions.Def_ChapterAttentionSparse
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionSparse
 open BookProof.ChapterAttentionTopK
 

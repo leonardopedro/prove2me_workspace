@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
 import Theorems.Thm_BookProof_ChapterMeasureAtomicDiffuse_mem_atomSet_iff
+import Definitions.Def_ChapterMeasureAtomicDiffuse
+import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterDiffuseUnitaryModel
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLpRestrictSplit
+import Definitions.Def_ChapterLpScaleMeasure
 open BookProof.ChapterAbelianClassificationList
 
 

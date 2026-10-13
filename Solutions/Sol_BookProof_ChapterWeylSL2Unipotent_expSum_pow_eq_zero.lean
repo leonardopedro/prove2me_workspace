@@ -1,6 +1,8 @@
 -- Generated from ChapterWeylSL2Unipotent.lean — solution of BookProof.ChapterWeylSL2Unipotent.expSum_pow_eq_zero
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Unipotent
+import Definitions.Def_ChapterWeylSl2
+import Definitions.Def_ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Unipotent
 
 

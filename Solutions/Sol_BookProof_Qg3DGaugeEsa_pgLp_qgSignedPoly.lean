@@ -3,6 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSignedPoly_apply
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_pgLp_eq_pgMap
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.Qg3DGaugeEsa
 
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterScaledDotProduct
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sum_sgn_mul_eq_zero
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sum_sgn_mul_self
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_two_pow_ne_zero_prime
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_deriv_scoreSoftm
 import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_min_le_meanScore
 import Theorems.Thm_BookProof_ChapterSoftmaxTemperatureMonotone_differentiable_scoreSoftmax
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 
@@ -15,16 +18,20 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (s : Fin m → ℝ) (i : Fin m) (hmin : ∀ l, s i ≤ s l) :
     Antitone fun b : ℝ => scoreSoftmax b s i := by
-
   refine antitone_of_deriv_nonpos (differentiable_scoreSoftmax s i) fun b => ?_
   rw [deriv_scoreSoftmax_beta b s i]
   have hmean : s i ≤ meanScore b s := min_le_meanScore b s i hmin
   exact mul_nonpos_of_nonneg_of_nonpos (scoreSoftmax_nonneg b s i) (by linarith)
+
+/-! ## Comparing two temperatures -/

@@ -5,6 +5,14 @@ import Theorems.Thm_BookProof_ResolventLadder_res_isSelfAdjoint
 import Theorems.Thm_BookProof_ResolventLadder_maxminLevel_zero_eq_sSup_rayleighSet
 import Theorems.Thm_BookProof_ResolventLadder_sSup_rayleighSet_eq_sSup_spectrum
 import Theorems.Thm_BookProof_ResolventLadder_graphMinmaxLevel_zero_eq
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ResolventLadder
 
 
@@ -16,6 +24,7 @@ open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGal
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+open BookProof.ChapterSirkRitzSpectrum
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

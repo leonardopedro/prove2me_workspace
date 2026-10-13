@@ -17,5 +17,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+variable {D : Submodule ℂ (L2d 84)}
+
 theorem solution (Φ : CoreRep 84 D) :
-    SymmetricOn D (qg3DEllipticHamiltonian Φ) := signedOp_symmetricOn (qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ)
+    SymmetricOn D (qg3DEllipticHamiltonian Φ) :=
+  signedOp_symmetricOn (qgMom_symmetricOn Φ) (torsionOps_symmetricOn Φ)

@@ -1,6 +1,8 @@
 -- Generated from ChapterA2d.lean — solution of BookProof.ChapterA.conjAU_commutesAntiUnitary
 import Mathlib
 import Definitions.Def_ChapterA2d
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

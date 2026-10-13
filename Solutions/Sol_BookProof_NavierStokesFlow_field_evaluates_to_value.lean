@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFlow.lean — solution of BookProof.NavierStokesFlow.field_evaluates_to_value
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

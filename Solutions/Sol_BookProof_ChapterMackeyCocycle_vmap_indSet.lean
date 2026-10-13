@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_proj_indSet_univ
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyCocycle
 
 
@@ -11,18 +14,19 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+open BookProof.ChapterElectroweakFieldStrength
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {μ : Measure X} [IsFiniteMeasure μ]
     {hm : ∀ g : G, Measurable fun x : X => g • x}
     {V : G → (Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ)} (hcov : Covariant μ hm V) (g : G)
     {E : Set X} (hE : MeasurableSet E) :
     V g (indSet μ hE)
       = proj μ (measurableSet_smul_image hm hE g)
-          (V g (indSet μ (MeasurableSet.univ (α := by
-
+          (V g (indSet μ (MeasurableSet.univ (α := X)))) := by
   rw [← proj_indSet_univ μ hE, hcov g E hE]

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_ChapterSeparableL2Model_exists_countable_dense_con
 import Theorems.Thm_BookProof_ChapterSeparableL2Model_measurable_coordMap
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
 import Theorems.Thm_BookProof_ChapterStandardBorelClassification_standardBorel_classification_list
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterStandardBorelClassification
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterSeparableL2Model
 
 
@@ -17,6 +23,8 @@ open MeasureTheory TopologicalSpace
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
+open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterWignerSymmetry
 
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]

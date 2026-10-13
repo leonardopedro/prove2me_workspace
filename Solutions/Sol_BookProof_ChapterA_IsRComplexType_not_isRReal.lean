@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA1h
 import Theorems.Thm_BookProof_ChapterA_IsRReal_not_hasCommutingRImaginary
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterGravitySplit.lean — solution of BookProof.ChapterGravitySplit.minkForm_comm
 import Mathlib
 import Definitions.Def_ChapterGravitySplit
+import Definitions.Def_ChapterGravityTimeProj
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravitySplit
 
 

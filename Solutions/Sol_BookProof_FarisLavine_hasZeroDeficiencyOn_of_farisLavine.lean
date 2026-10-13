@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_of_farisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.FarisLavine
 
 

@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_norm_unitaryU_apply
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_unitaryU_surjective
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegUnitaryGroup
 
 

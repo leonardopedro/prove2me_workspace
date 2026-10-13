@@ -7,6 +7,18 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective
 import Theorems.Thm_BookProof_HashimotoShiftInvert_exists_isShiftInvertC
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_determines
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
@@ -23,6 +35,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
+open `BookProof.HashimotoShiftInvert`.
 noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)

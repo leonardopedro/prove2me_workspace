@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxDivergence
 import Theorems.Thm_BookProof_ChapterSoftmaxDivergence_klDiv_scoreSoftmax
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxDivergence
 
 

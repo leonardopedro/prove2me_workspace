@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionSparse
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterAttentionSparse
 
 

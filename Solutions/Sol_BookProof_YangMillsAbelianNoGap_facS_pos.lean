@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 import Theorems.Thm_BookProof_SqueezedGaussStates_Vsum_ge_one
 import Theorems.Thm_BookProof_SqueezedGaussStates_coordComboSum_sqCoef
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
 open BookProof.YangMillsAbelianNoGap
 
 

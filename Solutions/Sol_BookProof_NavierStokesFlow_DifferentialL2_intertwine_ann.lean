@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.intertwine_ann
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_velIdx_lower
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_core_ext
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_ann_coreState
@@ -10,6 +9,18 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coreStat
 import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_hermiteMvLp
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_velIdx_apply
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterBosonicCCR
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -23,6 +34,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.LagrangianEsa
 
+open BookProof.Bosonic BookProof.ChapterGravityProjector
 noncomputable section
 
 variable {d : ℕ}

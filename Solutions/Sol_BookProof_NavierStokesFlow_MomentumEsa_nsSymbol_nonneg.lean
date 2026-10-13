@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumEsa_nsSymbol_ge_one
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 

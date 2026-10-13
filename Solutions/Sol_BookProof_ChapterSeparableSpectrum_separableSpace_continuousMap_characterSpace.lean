@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSeparableSpectrum
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_gelfandModel_isometry
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterStandardBorelClassification
 open BookProof.ChapterSeparableSpectrum
 
 

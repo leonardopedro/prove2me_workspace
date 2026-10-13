@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_rademacherMean_dot_sq_of_unit_entries
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

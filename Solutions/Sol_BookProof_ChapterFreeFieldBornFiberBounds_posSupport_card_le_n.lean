@@ -1,6 +1,12 @@
 -- Generated from ChapterFreeFieldBornFiberBounds.lean — solution of BookProof.ChapterFreeFieldBornFiberBounds.posSupport_card_le_n
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberBounds
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberTwo
 open BookProof.ChapterFreeFieldBornFiberBounds
 
 

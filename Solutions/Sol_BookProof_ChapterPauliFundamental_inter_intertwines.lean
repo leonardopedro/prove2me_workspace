@@ -4,6 +4,9 @@ import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_stepT_involutive
 import Theorems.Thm_BookProof_ChapterPauliFundamental_clifford_key
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_transpose_mul
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

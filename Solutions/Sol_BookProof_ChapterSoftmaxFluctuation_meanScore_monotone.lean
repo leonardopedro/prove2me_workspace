@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSoftmaxFluctuation
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_meanScore
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_deriv_meanScore
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxFluctuation
 
 

@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterGradedFock
 import Theorems.Thm_BookProof_GradedFock_liftSnd_add
 import Theorems.Thm_BookProof_GradedFock_liftSnd_neg
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterSuperBracket
 open BookProof.GradedFock
 
 
@@ -18,6 +23,6 @@ variable {α β : Type*}
 variable (T T' : Module.End ℂ (α →₀ ℂ)) (S S' : Module.End ℂ (β →₀ ℂ))
 
 set_option maxHeartbeats 1000000 in
-theorem solution : liftSnd (α := by
 
+theorem solution : liftSnd (α := α) (S - S') = liftSnd S - liftSnd S' := by
   rw [sub_eq_add_neg, liftSnd_add, liftSnd_neg, sub_eq_add_neg]

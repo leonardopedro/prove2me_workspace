@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesGaugeY.lean — solution of BookProof.NavierStokesGaugeY.pderiv_swap
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

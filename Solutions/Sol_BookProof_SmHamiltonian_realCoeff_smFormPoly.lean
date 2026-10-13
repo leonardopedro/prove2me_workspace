@@ -6,6 +6,12 @@ import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smMagW
 import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smMagB
 import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smCovD
 import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smWall
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.SmHamiltonian
 
 

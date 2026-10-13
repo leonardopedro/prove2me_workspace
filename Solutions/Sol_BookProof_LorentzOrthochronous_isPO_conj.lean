@@ -9,6 +9,7 @@ import Theorems.Thm_BookProof_LorentzOrthochronous_orthochronous_mul
 import Theorems.Thm_BookProof_LorentzGroup_isLorentz_inv
 import Theorems.Thm_BookProof_LorentzGroup_isLorentz_mul
 import Theorems.Thm_BookProof_LorentzGroup_lorentz_det_ne_zero
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

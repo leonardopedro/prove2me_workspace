@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_pow_succ_apply
+import Definitions.Def_ChapterWeylSl2
 open BookProof.ChapterWeylSL2Group
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSmGaugeRepresentation.lean — solution of BookProof.SmGaugeRep.sum_kronecker_left
 import Mathlib
 import Definitions.Def_ChapterSmGaugeRepresentation
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterSmBrstGhost
 open BookProof.SmGaugeRep
 
 

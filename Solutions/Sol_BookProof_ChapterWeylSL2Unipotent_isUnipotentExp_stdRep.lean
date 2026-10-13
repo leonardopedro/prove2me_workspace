@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Unipotent
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_isExpOfSl2_stdRep
+import Definitions.Def_ChapterWeylSl2
+import Definitions.Def_ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Unipotent
 
 
@@ -9,6 +11,7 @@ open BookProof.ChapterWeylSL2Unipotent
 
 open BookProof.ChapterWeylSl2 BookProof.ChapterWeylSL2Group
 open Polynomial
+open BookProof.ChapterWeylSL2Group
 
 universe u
 

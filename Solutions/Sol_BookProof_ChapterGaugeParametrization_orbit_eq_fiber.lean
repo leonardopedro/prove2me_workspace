@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGaugeParametrization
 import Theorems.Thm_BookProof_ChapterGaugeParametrization_apply_eq
+import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeParametrization
 
 

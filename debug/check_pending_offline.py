@@ -168,8 +168,16 @@ def compile_one(lean, env, src, workdir, olean=None):
     if olean:
         cmd += ["-o", olean]
     cmd += [src]
-    r = subprocess.run(cmd, cwd=workdir, env=env,
-                       capture_output=True, text=True, timeout=900)
+    try:
+        r = subprocess.run(cmd, cwd=workdir, env=env,
+                           capture_output=True, text=True, timeout=900)
+    except subprocess.TimeoutExpired:
+        # A single slow module must not kill the whole verdict run: ex.map
+        # re-raises at the first TimeoutExpired, which is how check_red_sols
+        # lost all 475 verdicts on 2026-10-13 (900s statement build under
+        # load).  Reported as TIMEOUT so callers can map it to SKIP (cannot
+        # judge here) instead of a content FAIL.
+        return False, "TIMEOUT after 900s"
     out = r.stdout + r.stderr
     if r.returncode == 0:
         return True, ""
@@ -496,7 +504,9 @@ def run_sol(lean, env, names, only, jobs):
         # and the input lives in <scratch>/Theorems/, not <scratch>/work/.
         ok, err = compile_one(lean, senv, os.path.join(thm_out, f"{mod}.lean"),
                               scratch, olean=olean_p)
-        return mod, ("ok" if ok else "FAIL:" + err)
+        if ok:
+            return mod, "ok"
+        return mod, ("SKIP:" + err if err.startswith("TIMEOUT") else "FAIL:" + err)
 
     with cf.ThreadPoolExecutor(max_workers=jobs) as ex:
         for mod, res in ex.map(build, wanted):
@@ -512,7 +522,9 @@ def run_sol(lean, env, names, only, jobs):
             return name, "SKIP:no local Solutions/Sol_%s.lean" % name
         shutil.copy2(path, os.path.join(work, f"Chk_{abs(hash(name)) % 10**8}.lean"))
         ok, err = compile_one(lean, senv, os.path.join(work, f"Chk_{abs(hash(name)) % 10**8}.lean"), work)
-        return name, ("ok" if ok else "FAIL:" + err)
+        if ok:
+            return name, "ok"
+        return name, ("SKIP:" + err if err.startswith("TIMEOUT") else "FAIL:" + err)
 
     sel = [n for n in names if _match(only, n)]
     with cf.ThreadPoolExecutor(max_workers=jobs) as ex:

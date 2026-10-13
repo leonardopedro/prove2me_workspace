@@ -1,6 +1,7 @@
 -- Generated from ChapterScaledDotProduct.lean — solution of BookProof.ChapterScaledDotProduct.two_pow_ne_zero'
 import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

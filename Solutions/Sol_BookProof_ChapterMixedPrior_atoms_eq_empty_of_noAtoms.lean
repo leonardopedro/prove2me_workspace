@@ -1,6 +1,7 @@
 -- Generated from ChapterMixedPrior.lean — solution of BookProof.ChapterMixedPrior.atoms_eq_empty_of_noAtoms
 import Mathlib
 import Definitions.Def_ChapterMixedPrior
+import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterMixedPrior
 
 

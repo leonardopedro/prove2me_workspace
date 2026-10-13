@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_resLin_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 open BookProof.VonNeumannCore
 
 

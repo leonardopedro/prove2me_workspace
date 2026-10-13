@@ -1,6 +1,7 @@
 -- Generated from ChapterPaleyWienerSampling.lean — solution of BookProof.ChapterPaleyWienerSampling.BandLimited.integrable_fourier
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
+import Definitions.Def_ChapterShannonSampling
 open BookProof.ChapterPaleyWienerSampling
 open BookProof.ChapterPaleyWienerSampling.BandLimited
 

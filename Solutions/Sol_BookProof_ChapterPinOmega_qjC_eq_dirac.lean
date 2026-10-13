@@ -1,6 +1,7 @@
 -- Generated from ChapterPinOmega.lean — solution of BookProof.ChapterPinOmega.qjC_eq_dirac
 import Mathlib
 import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterA3
 open BookProof.ChapterPinOmega
 
 

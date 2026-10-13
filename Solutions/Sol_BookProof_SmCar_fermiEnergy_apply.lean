@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_SmCar_sum_apply_fock
 import Theorems.Thm_BookProof_SmCar_smul_apply_fock
 import Theorems.Thm_BookProof_SmCar_occupation_apply
 import Theorems.Thm_BookProof_SmCar_fermiEnergy_eq_sum
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 

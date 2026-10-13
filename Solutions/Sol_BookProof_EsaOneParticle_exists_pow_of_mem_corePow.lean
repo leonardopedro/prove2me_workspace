@@ -1,6 +1,9 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.exists_pow_of_mem_corePow
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 
@@ -8,6 +11,7 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

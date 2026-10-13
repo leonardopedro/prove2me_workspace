@@ -9,6 +9,12 @@ import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_countable_of_orthCyc
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_exists_orthCyclicFamily
 import Theorems.Thm_BookProof_ChapterPvmInducedSystem_isHilbertSum_swIsom
 import Theorems.Thm_BookProof_ChapterPvmInducedSystem_linearIsometryEquiv_swIsom_pvm
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterMackeyConverse
+import Definitions.Def_ChapterPvmInducedSystem
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterPvmScalarMeasure
 
 
@@ -20,6 +26,8 @@ open scoped InnerProductSpace
 open BookProof.ChapterPvmMeasure BookProof.ChapterPvmCyclicDecomposition
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterMackeyConverse
 open BookProof.ChapterPvmInducedSystem
+open BookProof.ChapterElectroweakFieldStrength
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {X : Type*} [MeasurableSpace X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

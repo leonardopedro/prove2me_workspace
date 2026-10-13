@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockParcels.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.fockMeasure_tailStep_pos
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 

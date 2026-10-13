@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_hasZeroDeficiencyOn_of_linearIsometryEquiv
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.QuantumGravityDensitized
 
 

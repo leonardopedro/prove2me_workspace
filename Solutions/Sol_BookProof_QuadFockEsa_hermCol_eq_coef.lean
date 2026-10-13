@@ -3,6 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticFockEsa
 import Theorems.Thm_BookProof_QuadFockEsa_inner_hermiteMvLp_hcomb
 import Theorems.Thm_BookProof_QuadFockEsa_hermCol_apply
+import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QuadFockEsa
 
 
@@ -14,6 +25,9 @@ open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HermiteBand
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 

@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSpectralDirectSum
 import Theorems.Thm_BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_le_orthogonal
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_self_mem_cyclicSubspace
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterCyclicDirectSum
 open BookProof.ChapterSpectralDirectSum
 
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterH7
 import Theorems.Thm_BookProof_ChapterH7_generatedState_eq_generationOperator
 import Theorems.Thm_BookProof_ChapterH7_generationOperator_conjTranspose_mul
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH7
 
 
@@ -10,6 +12,7 @@ open BookProof.ChapterH7
 noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH6
+open BookProof.ChapterH6
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_supp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronOuterFockFL
 
 
@@ -12,6 +19,7 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -22,8 +30,16 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := by
 
+theorem solution (x : secCore (ι := ι)) (z : Sec ι) {P : Finset ι}
+    (hP1 : ∀ a, a ∉ P → (x : Sec ι) a = 0)
+    (hP2 : ∀ a, a ∉ P → ∀ b ∈ Q.nbr a, (x : Sec ι) b = 0) :
+    (inner ℂ (secHam W Q x) z : ℂ)
+      = (∑ a ∈ P, (inner ℂ (W.ham (Q.sig a) (fibOf x a)) ((z : ∀ _ : ι, L2R) a) : ℂ))
+        + (∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.A a b) *
+            (inner ℂ ((fibOf x b : ccDomain ℝ) : L2R) ((z : ∀ _ : ι, L2R) a) : ℂ))
+        + ∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.B a b) *
+            (inner ℂ (xCc (fibOf x b)) ((z : ∀ _ : ι, L2R) a) : ℂ) := by
   rw [inner_eq_sum_of_supp P _ z (secHam_supp W Q hP1 hP2)]
   have hterm : ∀ a ∈ P, (inner ℂ ((secHam W Q x : Sec ι) a) ((z : ∀ _ : ι, L2R) a) : ℂ)
       = (inner ℂ (W.ham (Q.sig a) (fibOf x a)) ((z : ∀ _ : ι, L2R) a) : ℂ)

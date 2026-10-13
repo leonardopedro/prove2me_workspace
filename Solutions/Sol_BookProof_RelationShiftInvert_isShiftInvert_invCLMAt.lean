@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_RelationShiftInvert_relOp_mem
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_eq_of_mem
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_mem
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHashimotoShiftInvert
 open BookProof.RelationShiftInvert
 
 
@@ -12,6 +18,7 @@ open BookProof.RelationShiftInvert
 
 open BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot BookProof.NonnegResolvent
 open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
+open BookProof.QgOuterFockFL
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}

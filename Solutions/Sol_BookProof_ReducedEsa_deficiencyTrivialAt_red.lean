@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ReducedEsa
 
 

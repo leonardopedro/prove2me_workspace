@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_restrict_of_g
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_core
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_norm_le
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.SmFarisLavine
 
 
@@ -16,6 +26,7 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
 
 noncomputable section
 

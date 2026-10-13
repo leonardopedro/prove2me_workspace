@@ -3,6 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockGapChain
 import Theorems.Thm_BookProof_ScalaronFockGapChain_const_isPosCol_shiftCol
 import Theorems.Thm_BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation_pos
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterFockCubicUnbounded
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.ScalaronFockGapChain
 
 
@@ -16,6 +27,7 @@ open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
 open BookProof.HermiteCore
+open BookProof.FockSecondQuantization
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

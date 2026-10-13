@@ -1,8 +1,8 @@
 -- Generated from ChapterGaussCoordCombo.lean — solution of BookProof.GaussCoordCombo.gaussInt_creation
 import Mathlib
 import Definitions.Def_ChapterGaussCoordCombo
-import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_leibniz_prime
-import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_sub_prime
+import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_leibniz'
+import Theorems.Thm_BookProof_GaussCoordCombo_gaussInt_sub'
 open BookProof.GaussCoordCombo
 
 

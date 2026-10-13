@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DiffHashimoto_coreOp_id
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_add
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_smul
 import Theorems.Thm_BookProof_HermiteRelative_coreOp_sum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
@@ -21,6 +31,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
+open BookProof.MixedLinearEsa
 noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)

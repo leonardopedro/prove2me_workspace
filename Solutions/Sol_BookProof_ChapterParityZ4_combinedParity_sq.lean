@@ -4,6 +4,9 @@ import Definitions.Def_ChapterParityZ4
 import Theorems.Thm_BookProof_ChapterParityQL_QLParity_sq
 import Theorems.Thm_BookProof_ChapterParity_higgsParity_sq
 import Theorems.Thm_BookProof_ChapterParity_mgamma0_sq
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParity
+import Definitions.Def_ChapterParityQL
 open BookProof.ChapterParityZ4
 
 

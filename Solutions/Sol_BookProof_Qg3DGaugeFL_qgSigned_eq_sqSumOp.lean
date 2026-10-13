@@ -5,6 +5,18 @@ import Theorems.Thm_BookProof_Qg3DGaugeFL_qgFqP_eq_diagP
 import Theorems.Thm_BookProof_Qg3DGaugeFL_qgFqQ_eq_gramQ
 import Theorems.Thm_BookProof_Qg3DGaugeEsa_qgSigned_eq_fqOp
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_eq_fqOp
+import Definitions.Def_ChapterFarisLavineOnly
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.Qg3DGaugeFL
 
 
@@ -15,6 +27,11 @@ open BookProof.QgOuterFock BookProof.FarisLavineOnly
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.FullQuadratic
+open BookProof.HermiteProductCore
+open BookProof.Qg3DGaugeEsa
+open BookProof.QgOuterFock
+open BookProof.QuantumGravity3DGauge
 
 noncomputable section
 

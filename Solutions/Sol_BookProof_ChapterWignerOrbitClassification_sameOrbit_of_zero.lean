@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_hermOfMom_eq_zero_iff
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerOrbitClassification
 
 

@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Theorems.Thm_BookProof_NonnegUnitaryGroup_norm_expU_sub_self_le
 import Theorems.Thm_BookProof_NonnegResolvent_norm_yosidaCLM_le_of_mem
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterStoneEvolution
 open BookProof.NonnegUnitaryGroup
 
 

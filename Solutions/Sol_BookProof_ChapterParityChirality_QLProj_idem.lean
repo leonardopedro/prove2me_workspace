@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterParityChirality
 import Theorems.Thm_BookProof_ChapterParityChirality_chi_sq
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParity
+import Definitions.Def_ChapterParitySU2
 open BookProof.ChapterParityChirality
 
 

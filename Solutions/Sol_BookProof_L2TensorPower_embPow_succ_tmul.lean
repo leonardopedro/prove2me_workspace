@@ -1,6 +1,9 @@
 -- Generated from ChapterL2TensorPowerUnitary.lean — solution of BookProof.L2TensorPower.embPow_succ_tmul
 import Mathlib
 import Definitions.Def_ChapterL2TensorPowerUnitary
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterNsScalarVectorCurry
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.L2TensorPower
 
 

@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_zero_of_eigen
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -13,6 +17,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.NavierStokesFlow.ThreeComponent
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 

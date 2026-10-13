@@ -13,6 +13,7 @@ open BookProof.FriedrichsExtension
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open scoped InnerProductSpace ENNReal lp
+open scoped lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

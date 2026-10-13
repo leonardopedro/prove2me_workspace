@@ -2,6 +2,11 @@
 import Mathlib
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_glin_comm_of_comm
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_Q_comm_of_comm
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterSmBrstGhost
 open BookProof.BookBrstGaugeFixing
 
 
@@ -9,6 +14,8 @@ open BookProof.BookBrstGaugeFixing
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
+open BookProof.BRSTNilpotent
+open BookProof.SmBrstGhost
 
 noncomputable section
 

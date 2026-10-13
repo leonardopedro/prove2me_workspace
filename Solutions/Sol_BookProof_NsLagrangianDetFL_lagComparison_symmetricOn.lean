@@ -4,6 +4,13 @@ import Definitions.Def_ChapterNsLagrangianDetFarisLavine
 import Theorems.Thm_BookProof_NsLagrangianDetFL_lagG_realCoeff
 import Theorems.Thm_BookProof_NsLagrangianDetFL_lagE_realCoeff
 import Theorems.Thm_BookProof_KoopmanLyapunov_lyapunovComparison_symmetricOn
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.NsLagrangianDetFL
 
 
@@ -12,6 +19,7 @@ open BookProof.NsLagrangianDetFL
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
 open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.HermiteProductCore
 
 noncomputable section
 

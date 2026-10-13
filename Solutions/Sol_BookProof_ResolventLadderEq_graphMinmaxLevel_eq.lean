@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxEquality
 import Theorems.Thm_BookProof_ResolventLadderEq_graphMinmaxLevel_le
 import Theorems.Thm_BookProof_ResolventLadder_resolvent_ladder_lower
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterResolventMinMaxLadder
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ResolventLadderEq
 
 

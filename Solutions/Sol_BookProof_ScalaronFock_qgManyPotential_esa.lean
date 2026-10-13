@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
 import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronFock
 
 

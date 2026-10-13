@@ -1,6 +1,12 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.zeta_one
 import Mathlib
 import Theorems.Thm_BookProof_BddBelowWallEsa_bumpG_one
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 

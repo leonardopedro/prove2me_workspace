@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_continuous_re
 import Theorems.Thm_BookProof_Complexification_Cx_continuous_im
+import Definitions.Def_ChapterA
+import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 

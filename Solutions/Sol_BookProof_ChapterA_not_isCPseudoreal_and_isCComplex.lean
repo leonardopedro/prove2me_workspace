@@ -1,6 +1,7 @@
 -- Generated from ChapterA1c.lean — solution of BookProof.ChapterA.not_isCPseudoreal_and_isCComplex
 import Mathlib
 import Definitions.Def_ChapterA1c
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

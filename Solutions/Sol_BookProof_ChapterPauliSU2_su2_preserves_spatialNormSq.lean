@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPauliSU2
 import Theorems.Thm_BookProof_ChapterPauliSU2_su2_preserves_time
 import Theorems.Thm_BookProof_ChapterPauliLorentz_spinorMap_preserves_mink
+import Definitions.Def_ChapterPauliLorentz
 open BookProof.ChapterPauliSU2
 
 

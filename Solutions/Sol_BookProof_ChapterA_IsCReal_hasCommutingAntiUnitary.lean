@@ -2,11 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterA1c
 import Theorems.Thm_BookProof_ChapterA_IsConjugation_commutesAntiUnitary
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+open BookProof.ChapterA.AntiUnitary
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 

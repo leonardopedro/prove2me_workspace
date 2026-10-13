@@ -4,12 +4,18 @@ import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_adjPairs_factorRel
 import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_symmetric
 import Theorems.Thm_BookProof_ClosureUniqueness_mem_factorGraph_sqOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

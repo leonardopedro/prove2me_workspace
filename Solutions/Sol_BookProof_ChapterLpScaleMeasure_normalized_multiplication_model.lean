@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLpScaleMeasure
 import Theorems.Thm_BookProof_ChapterLpScaleMeasure_scaleUnitary_intertwines
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLpScaleMeasure
 
 

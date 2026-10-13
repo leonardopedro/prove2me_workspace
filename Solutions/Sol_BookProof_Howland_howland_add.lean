@@ -1,6 +1,7 @@
 -- Generated from ChapterHowlandAutonomization.lean — solution of BookProof.Howland.howland_add
 import Mathlib
 import Definitions.Def_ChapterHowlandAutonomization
+import Definitions.Def_ChapterMackeyImprimitivity
 open BookProof.Howland
 
 

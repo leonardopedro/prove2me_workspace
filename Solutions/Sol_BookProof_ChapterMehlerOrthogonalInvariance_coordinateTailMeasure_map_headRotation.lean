@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
 import Theorems.Thm_BookProof_ChapterMehlerOrthogonalInvariance_gaussianHead_map_orthogonal
 import Theorems.Thm_BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterMehlerOrthogonalInvariance
 
 

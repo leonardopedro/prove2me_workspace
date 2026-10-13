@@ -6,12 +6,20 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sub
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_real_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

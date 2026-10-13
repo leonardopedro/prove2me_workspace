@@ -5,6 +5,14 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_xCc_symmetricOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_exists_band2
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_inner_secHam_expand
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_fibOf_coe
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronOuterFockFL
 
 
@@ -15,6 +23,7 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -25,10 +34,10 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : SymmetricOn (secCore (ι := by
 
+theorem solution : SymmetricOn (secCore (ι := ι)) (secHam W Q) := by
   intro x y
-  obtain ⟨P, hx1, hx2, hy1, hy2⟩ := exists_band2 Q x y
+  obtain ⟨P, hx1, hx2, hy1, hy2⟩ := exists_band₂ Q x y
   have hL := inner_secHam_expand W Q x (y : Sec ι) hx1 hx2
   have hR := inner_secHam_expand W Q y (x : Sec ι) hy1 hy2
   have hconj : (inner ℂ ((x : Sec ι)) (secHam W Q y) : ℂ)
@@ -49,3 +58,5 @@ theorem solution : SymmetricOn (secCore (ι := by
     refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun b _ => ?_
     rw [← fibOf_coe y b, ← fibOf_coe x a, Q.B_herm b a, inner_conj_symm,
       xCc_symmetricOn (fibOf x a) (fibOf y b)]
+
+/-! ## 5. The commutator bound -/

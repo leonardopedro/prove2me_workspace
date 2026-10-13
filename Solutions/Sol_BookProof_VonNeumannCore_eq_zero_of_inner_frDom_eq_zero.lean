@@ -4,6 +4,10 @@ import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_factorRel_witness
 import Theorems.Thm_BookProof_ClosureUniqueness_mem_adjGraph_iff
 import Theorems.Thm_BookProof_FriedrichsSquare_exists_mem_factorRel_add
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.VonNeumannCore
 
 
@@ -11,6 +15,8 @@ open BookProof.VonNeumannCore
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
+open BookProof.ClosureUniqueness
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

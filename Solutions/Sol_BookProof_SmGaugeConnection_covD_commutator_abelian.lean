@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
 import Theorems.Thm_BookProof_SmGaugeConnection_covD_commutator
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmGaugeConnection
 
 

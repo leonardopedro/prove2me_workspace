@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — solution of BookProof.NavierStokesFlow.AffineFiber.PairShift.pairH_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
@@ -11,6 +13,8 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+open BookProof.NavierStokesFlow.AffineFiber
 
 variable {ι : Type*}
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterSpectralMultiplication.lean — solution of BookProof.ChapterSpectralMultiplication.cfcHom_coordFn
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
 
 

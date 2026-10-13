@@ -5,6 +5,14 @@ import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 import Theorems.Thm_BookProof_QuadratureEsa_foOp_hermiteCore
 import Theorems.Thm_BookProof_QuadratureEsa_hermiteCore_eq
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 open BookProof.HermiteCarleman
 
 
@@ -17,6 +25,8 @@ open BookProof.HyperbolicQuadratic
 open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 

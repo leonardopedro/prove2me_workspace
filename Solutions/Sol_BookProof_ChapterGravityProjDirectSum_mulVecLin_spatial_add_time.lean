@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterGravityProjDirectSum
 import Theorems.Thm_BookProof_ChapterGravityTimeProj_spatialProj_add_timeProj
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterGravityTimeProj
 open BookProof.ChapterGravityProjDirectSum
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — solution of BookProof.ChapterSoftmaxFluctuation.hasDerivAt_exp_mul
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxFluctuation
 
 

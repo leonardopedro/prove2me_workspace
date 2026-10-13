@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA2
 import Theorems.Thm_BookProof_ChapterA_antiisometry_unique_up_to_phase
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

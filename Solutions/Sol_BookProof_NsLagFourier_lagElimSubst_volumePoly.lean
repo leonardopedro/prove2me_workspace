@@ -4,6 +4,9 @@ import Definitions.Def_ChapterNsLagrangianFourierElimination
 import Theorems.Thm_BookProof_NsLagFourier_C_neg_one_real
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_C
 import Theorems.Thm_BookProof_NsLagFourier_lagElimSubst_detPoly
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsLagFourier
 
 

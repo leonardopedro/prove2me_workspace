@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTimeTranslation
 import Theorems.Thm_BookProof_ChapterTimeTranslation_measOp_apply
+import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 
 

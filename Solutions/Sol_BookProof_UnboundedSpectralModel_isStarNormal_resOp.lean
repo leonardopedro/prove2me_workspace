@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Theorems.Thm_BookProof_UnboundedSpectralModel_adjoint_resCLM
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_comm
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.UnboundedSpectralModel
 
 

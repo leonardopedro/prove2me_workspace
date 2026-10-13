@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_proj_indicatorConstLp
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_proj_smul
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmCyclicUnitary
 
 
@@ -12,6 +15,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterPvmMeasure BookProof.ChapterMackeyQuasiInvariant
+open BookProof.ChapterElectroweakFieldStrength
 
 attribute [local instance] Lp.simpleFunc.module Lp.simpleFunc.normedSpace
 

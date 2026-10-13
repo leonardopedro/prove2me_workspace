@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterTimeTranslation
 import Theorems.Thm_BookProof_ChapterTimeTranslation_trace_diff
 import Theorems.Thm_BookProof_ChapterReconstruct_offDiag_eq_zero_iff_isDeterministic
+import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 
 

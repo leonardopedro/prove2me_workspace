@@ -1,6 +1,7 @@
 -- Generated from ChapterLorentzOrthochronous.lean — solution of BookProof.LorentzOrthochronous.isLorentz_neg
 import Mathlib
 import Definitions.Def_ChapterLorentzOrthochronous
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

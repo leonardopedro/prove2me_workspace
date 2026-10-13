@@ -1,6 +1,12 @@
 -- Generated from ChapterNonnegSemigroupGenerator.lean — solution of BookProof.NonnegSemigroupGenerator.semigroupS_congr
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterNonnegSemigroup
 open BookProof.NonnegSemigroupGenerator
 
 

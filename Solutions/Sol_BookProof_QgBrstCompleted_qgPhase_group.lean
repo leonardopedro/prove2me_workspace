@@ -1,6 +1,9 @@
 -- Generated from ChapterQgBrstCompleted.lean — solution of BookProof.QgBrstCompleted.qgPhase_group
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterFockOneParticleGap
 open BookProof.QgBrstCompleted
 
 
@@ -8,6 +11,7 @@ open BookProof.QgBrstCompleted
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
+open BookProof.FockOneParticleGap
 
 noncomputable section
 

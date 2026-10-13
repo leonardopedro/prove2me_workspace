@@ -1,6 +1,7 @@
 -- Generated from ChapterSuperBracket.lean — solution of BookProof.ChapterSuperBracket.sbracket_graded_antisymm
 import Mathlib
 import Definitions.Def_ChapterSuperBracket
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterSuperBracket
 
 

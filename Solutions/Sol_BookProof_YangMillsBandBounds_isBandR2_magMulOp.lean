@@ -11,6 +11,24 @@ import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_eq_mulXPoly
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_mul
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_smul
 import Theorems.Thm_BookProof_HermiteBandHigher_mulOp_sum
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsAbelianFockEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsBandBounds
 
 
@@ -25,6 +43,12 @@ open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
 open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
+open BookProof.ChapterF7
+open BookProof.HermiteBandHigher
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
+open BookProof.YangMillsHermite
 
 set_option maxHeartbeats 1000000 in
 theorem solution (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (i : Fin 3) (a : Fin 8) :

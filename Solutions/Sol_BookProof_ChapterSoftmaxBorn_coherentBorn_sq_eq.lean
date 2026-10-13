@@ -1,6 +1,7 @@
 -- Generated from ChapterSoftmaxBorn.lean — solution of BookProof.ChapterSoftmaxBorn.coherentBorn_sq_eq
 import Mathlib
 import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterCoherentOverlap
 open BookProof.ChapterSoftmaxBorn
 
 

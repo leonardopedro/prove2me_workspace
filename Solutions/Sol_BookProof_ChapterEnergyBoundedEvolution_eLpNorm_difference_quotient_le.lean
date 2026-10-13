@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEnergyBoundedEvolution
 import Theorems.Thm_BookProof_ChapterEnergyBoundedEvolution_norm_evol_sub_evol_le_ae
+import Definitions.Def_ChapterEnergyBandDecomposition
 open BookProof.ChapterEnergyBoundedEvolution
 
 
@@ -14,6 +15,11 @@ open BookProof.EnergyBandDecomposition
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X → ℂ}
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X → ℂ}
+
+
+@[simp] private theorem evol_zero (f : X → ℂ) : evol E 0 f = f := by
+  funext x
+  simp [evol]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {Emax : ℝ} (h : EnergyLimited E μ Emax f) {t : ℝ}

@@ -6,8 +6,12 @@ import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_ops_zero_of_trivial
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_ops_zero_of_minimal_cas_zero
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_IsInv_inf
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_cas_apply_eq
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
+open BookProof.ChapterDoubleSlit
+open BookProof.ChapterGleasonPureMixed
 
 
 
@@ -22,12 +26,12 @@ variable {R}
 variable {R : Sl2Rep V}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution : ∀ (n : ℕ) {V : Type u} [AddCommGroup V] [Module ℂ V]
     [FiniteDimensional ℂ V] (R : Sl2Rep V) (phi : V →ₗ[ℂ] ℂ) (v0 : V), phi v0 = 1 →
     (∀ v, phi (R.E v) = 0) → (∀ v, phi (R.F v) = 0) → (∀ v, phi (R.H v) = 0) →
     Module.finrank ℂ (LinearMap.ker phi) ≤ n →
     ∃ v : V, phi v = 1 ∧ R.E v = 0 ∧ R.F v = 0 ∧ R.H v = 0 := by
-
   intro n
   induction n with
   | zero =>
@@ -205,3 +209,5 @@ theorem solution : ∀ (n : ℕ) {V : Type u} [AddCommGroup V] [Module ℂ V]
             · exact ops_zero_of_minimal_cas_zero hWinv hWbot hmin hWK
           have hall := ops_zero_of_trivial (fun v => ⟨hmapE v, hmapF v, hmapH v⟩) htriv
           exact ⟨v0, hv0, (hall v0).1, (hall v0).2.1, (hall v0).2.2⟩
+
+/-! ### The adjoint action on operators -/

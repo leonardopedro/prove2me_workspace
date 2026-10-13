@@ -1,6 +1,7 @@
 -- Generated from ChapterWaveUnboundedPotential.lean — solution of BookProof.StrichartzWave.multiplierOp_apply_eq
 import Mathlib
 import Definitions.Def_ChapterWaveUnboundedPotential
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

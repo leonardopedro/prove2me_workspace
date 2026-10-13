@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLorentzOrthochronous
 import Theorems.Thm_BookProof_LorentzOrthochronous_lorentz_time_col
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

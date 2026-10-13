@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_oneVec_coeFn
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterAbelianGelfandModel
 
 

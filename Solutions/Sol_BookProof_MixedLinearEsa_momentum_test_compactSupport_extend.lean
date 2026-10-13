@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_MixedLinearEsa_exists_cutoff_seq
 import Theorems.Thm_BookProof_MixedLinearEsa_hasCompactSupport_cutSchwartz
 import Theorems.Thm_BookProof_MixedLinearEsa_momentumOp_cutSchwartz
 import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.MixedLinearEsa
 
 
@@ -12,12 +15,18 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+
+@[simp] private theorem cutSchwartz_apply (g : V → ℝ) (hg : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) g)
+    (hgcs : HasCompactSupport g) (f : 𝓢(V, ℂ)) (x : V) :
+    cutSchwartz g hg hgcs f x = ((g x : ℝ) : ℂ) * f x := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (m : V) (z : ℂ) (w : Lp ℂ 2 (volume : Measure V))

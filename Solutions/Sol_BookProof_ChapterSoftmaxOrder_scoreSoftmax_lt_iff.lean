@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxOrder
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_iff
+import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxOrder
 
 

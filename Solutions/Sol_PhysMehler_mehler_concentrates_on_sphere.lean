@@ -1,6 +1,7 @@
 -- Generated from PhysMehler.lean — solution of PhysMehler.mehler_concentrates_on_sphere
 import Mathlib
 import Definitions.Def_PhysMehler
+import Definitions.Def_ChapterA4
 open PhysMehler
 
 

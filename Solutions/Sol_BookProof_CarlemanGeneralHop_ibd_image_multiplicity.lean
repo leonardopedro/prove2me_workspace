@@ -4,6 +4,8 @@ import Definitions.Def_ChapterCarlemanGeneralHop
 import Theorems.Thm_BookProof_CarlemanGeneralHop_hshift_hshift
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_ibd
 import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_multiplicity
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanGeneralHop
 
 

@@ -1,6 +1,11 @@
 -- Generated from ChapterSeparableL2Model.lean — solution of BookProof.ChapterSeparableL2Model.separableSpace_of_linearIsometry
 import Mathlib
 import Definitions.Def_ChapterSeparableL2Model
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterStandardBorelClassification
 open BookProof.ChapterSeparableL2Model
 
 
@@ -25,9 +30,9 @@ variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [Measura
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [SeparableSpace H] {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] (V : E →ₗᵢ[ℂ] H) : SeparableSpace E := by
-
   haveI : SecondCountableTopology H := UniformSpace.secondCountable_of_separable H
   haveI := (V.isometry.isEmbedding).secondCountableTopology
   infer_instance

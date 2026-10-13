@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ReducedEsa_essentiallySelfAdjointOn_red
 import Theorems.Thm_BookProof_ReducedEsa_isReducingProjection_asymProj
 import Theorems.Thm_BookProof_ReducedEsa_asymProj_mem
 import Theorems.Thm_BookProof_ReducedEsa_commutes_asymProj
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ReducedEsa
 
 

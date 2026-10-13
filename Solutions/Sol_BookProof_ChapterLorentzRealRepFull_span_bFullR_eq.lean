@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_range_bFullR
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepFull
 
 

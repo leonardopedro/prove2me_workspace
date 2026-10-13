@@ -4,6 +4,8 @@ import Definitions.Def_ChapterCoherentGeometry
 import Theorems.Thm_BookProof_ChapterCoherentGeometry_coherentOverlap_le_iff_dist_le
 import Theorems.Thm_BookProof_ChapterCoherentOverlap_coherentOverlap_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornDenom_pos
+import Definitions.Def_ChapterCoherentOverlap
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterCoherentGeometry
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterHierarchicalBayesComposition
 import Theorems.Thm_BookProof_ChapterHierarchicalBayes_outerPosterior_eq_bayesUpdate
+import Definitions.Def_ChapterHierarchicalBayes
+import Definitions.Def_ChapterSequentialBayes
 open BookProof.ChapterHierarchicalBayesComposition
 
 

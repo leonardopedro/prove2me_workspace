@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMarkovEntropy
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterMarkovEntropy
 
 

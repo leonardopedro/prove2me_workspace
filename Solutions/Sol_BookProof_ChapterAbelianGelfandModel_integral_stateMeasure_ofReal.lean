@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_rieszStateMeasure
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_realPartFunctional_ofReal
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterAbelianGelfandModel
 
 

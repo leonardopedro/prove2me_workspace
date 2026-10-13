@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxFluctuation.lean — solution of BookProof.ChapterSoftmaxFluctuation.scoreSoftmax_eq_div
 import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxFluctuation
 
 

@@ -2,6 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterFermionFock
 import Theorems.Thm_BookProof_FermionFock_dGammaOpF_symmetricOn
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FermionFock
 
 
@@ -12,6 +22,9 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.FriedrichsExtensi
 open BookProof.YangMillsFriedrichs
 open BookProof.HashimotoShiftInvert
 open BookProof.FockSecondQuantization (IsHermCol IsPosCol opCol isHermCol_opCol isPosCol_opCol)
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

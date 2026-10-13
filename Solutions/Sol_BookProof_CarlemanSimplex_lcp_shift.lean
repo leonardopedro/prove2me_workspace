@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.lcp_shift
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 
@@ -17,9 +19,9 @@ variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (i j : Fin d) (a : Fin d →₀ ℕ) :
     lcp (a + pvec i j) i j = rcp a i j := by
-
   classical
   by_cases hij : i = j
   · subst hij

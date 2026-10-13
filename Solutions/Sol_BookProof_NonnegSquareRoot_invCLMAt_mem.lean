@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSquareRoot
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_apply
 import Theorems.Thm_BookProof_PositiveSquareRoot_invCLM_mem
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterPositiveSquareRootUnique
 open BookProof.NonnegSquareRoot
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterQgMultiHalfDensity.lean — solution of BookProof.QgMultiHalfDensity.mpUnitary_apply
 import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterQuantumGravityHalfDensity
 open BookProof.QgMultiHalfDensity
 
 

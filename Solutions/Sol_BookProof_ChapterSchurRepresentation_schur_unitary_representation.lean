@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSchurRepresentation
 import Theorems.Thm_BookProof_ChapterSchurRepresentation_repSystem_isNormal
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_commutant_scalar_of_irreducible
+import Definitions.Def_ChapterSchurIrreducible
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurRepresentation
 
 
@@ -11,6 +13,8 @@ open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System BookProof.ChapterSchurIrreducible
+open BookProof.ChapterA
+open BookProof.ChapterA.System
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 

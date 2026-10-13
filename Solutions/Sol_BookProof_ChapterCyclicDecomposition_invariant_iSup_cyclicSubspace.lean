@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_invariant_cyclicSubspace
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterCyclicDecomposition
 
 

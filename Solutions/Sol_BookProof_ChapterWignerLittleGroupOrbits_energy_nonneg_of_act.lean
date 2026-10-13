@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_hermOfMom_posSemidef
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_hermOfMom_trace
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

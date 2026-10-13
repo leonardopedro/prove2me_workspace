@@ -2,21 +2,27 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_apply
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterContinuityUnitary
+open BookProof.ChapterContinuityUnitaryInfinite
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     latticeFullHamiltonianCLM (fun _ => constField 1) 1 ≠ 0 := by
-
   intro hzero
   have hsingle : ((lp.single 2 (0 : ℤ) (1 : ℂ) : L2Z) : ℤ → ℂ) = Pi.single 0 1 := by
     funext k

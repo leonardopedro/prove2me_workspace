@@ -1,6 +1,7 @@
 -- Generated from ChapterPvmCyclicDecomposition.lean — solution of BookProof.ChapterPvmCyclicDecomposition.restrictSub_apply
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmCyclicDecomposition
 
 

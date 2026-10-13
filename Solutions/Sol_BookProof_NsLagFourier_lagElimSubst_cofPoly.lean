@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_NsLagFourier_C_neg_one_real
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_C
 import Theorems.Thm_BookProof_NsLagFourier_lagElimHom_X_fIdx
 import Theorems.Thm_BookProof_NsLagFourier_rankOne_cof_zero
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsLagFourier
 
 

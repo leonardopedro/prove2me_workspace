@@ -1,7 +1,13 @@
 -- Generated from ChapterStoneBridge.lean — solution of BookProof.StoneBridge.exists_stone_flow_of_selfAdjointExtension
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
-import Theorems.Thm_BookProof_StoneBridge_isStoneFlow_stoneU
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.StoneBridge
 
 

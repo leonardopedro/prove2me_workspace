@@ -4,6 +4,8 @@ import Definitions.Def_ChapterAttentionOutput
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_max
 import Theorems.Thm_BookProof_ChapterSoftmaxSharpness_tendsto_scoreSoftmax_ne
 import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionOutput
 
 

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterConvolutionCalc
 import Theorems.Thm_BookProof_ConvolutionCalc_dcoord_reflect
 import Theorems.Thm_BookProof_QgOneParticleCc_contDiff_dcoord
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.ConvolutionCalc
 
 
@@ -10,6 +13,7 @@ open BookProof.ConvolutionCalc
 
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
+open BookProof.HermiteProductCore
 
 noncomputable section
 

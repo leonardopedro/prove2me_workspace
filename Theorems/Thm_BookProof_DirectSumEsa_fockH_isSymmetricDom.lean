@@ -27,4 +27,4 @@ variable {D : ∀ i, Submodule ℂ (G i)}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 theorem BookProof.DirectSumEsa.fockH_isSymmetricDom {w : ℝ → ℝ} (hw : Measurable w) :
-    FullEsa.IsSymmetricDom (fockH hw) := by sorry
+    IsSymmetricDom (fockH hw) := by sorry

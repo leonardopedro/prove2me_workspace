@@ -2,12 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Theorems.Thm_BookProof_BookBrstYangMills_AfieldPoly_apply
+import Theorems.Thm_BookProof_BookBrstYangMills_momPoly_apply
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.BookBrstYangMills
 
 
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
+open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
@@ -15,7 +20,7 @@ variable {N : ℕ} (G : GaugeAlgebra N)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (μ ν : Fin 4) (a b : Fin N) :
-    AfieldPoly μ a * momPoly ν b - momPoly ν b * AfieldPoly μ a
+    AfieldPoly μ a * BookProof.BookBrstYangMills.momPoly ν b - BookProof.BookBrstYangMills.momPoly ν b * AfieldPoly μ a
       = if (μ, a) = (ν, b) then (Complex.I • 1 : Module.End ℂ (FieldPoly N)) else 0 := by
 
   classical

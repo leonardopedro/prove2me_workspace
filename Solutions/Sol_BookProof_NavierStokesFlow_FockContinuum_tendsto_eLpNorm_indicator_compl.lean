@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockContinuum.lean — solution of BookProof.NavierStokesFlow.FockContinuum.tendsto_eLpNorm_indicator_compl
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockContinuum
 
@@ -17,12 +18,12 @@ variable {X : Type*} [MeasurableSpace X]
 variable {X : Type*} [MeasurableSpace X]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
     (f : Lp ℂ 2 μ) :
     Filter.Tendsto
       (fun n : ℕ => eLpNorm ({x | |g x| ≤ (n : ℝ)}ᶜ.indicator ((f : X → ℂ))) 2 μ)
       Filter.atTop (nhds 0) := by
-
   have hmeasS : ∀ n : ℕ, MeasurableSet ({x | |g x| ≤ (n : ℝ)}ᶜ) :=
     fun n => (measurableSet_le hg.abs measurable_const).compl
   have hrw : ∀ n : ℕ, eLpNorm ({x | |g x| ≤ (n : ℝ)}ᶜ.indicator (f : X → ℂ)) 2 μ
@@ -66,4 +67,10 @@ theorem solution (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
       hdom hbdd hae
     simpa using hdct
   have h := ((ENNReal.continuous_rpow_const (y := 1 / (2 : ℝ))).tendsto 0).comp hlim
- 
+  simp only [one_div] at h
+  rw [show (0 : ENNReal) ^ (2 : ℝ)⁻¹ = 0 from ENNReal.zero_rpow_of_pos (by norm_num)] at h
+  have hfun : ∀ I : ℕ → ENNReal,
+      (fun a : ENNReal => a ^ (2:ℝ)⁻¹) ∘ I = fun n => I n ^ (2:ℝ)⁻¹ := fun I => rfl
+  simp only [one_div]
+  rw [← hfun]
+  exact h

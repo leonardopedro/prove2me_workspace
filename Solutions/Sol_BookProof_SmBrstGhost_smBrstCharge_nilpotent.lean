@@ -8,6 +8,9 @@ import Theorems.Thm_BookProof_SmBrstGhost_brstCharge_nilpotent
 import Theorems.Thm_BookProof_SmBrstGhost_matterGen_lie
 import Theorems.Thm_BookProof_SmBrstGhost_matterGen_comm_ghostAnn
 import Theorems.Thm_BookProof_SmBrstGhost_matterGen_comm_ghostCre
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmBrstGhost
 
 

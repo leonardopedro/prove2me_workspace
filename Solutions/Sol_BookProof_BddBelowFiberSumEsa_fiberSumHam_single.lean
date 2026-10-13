@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_single
 import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterBddBelowWallEsa
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.BddBelowFiberSumEsa
 
 
@@ -11,6 +17,8 @@ open BookProof.BddBelowFiberSumEsa
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

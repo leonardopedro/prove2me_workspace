@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterRotaryPosition
 import Theorems.Thm_BookProof_ChapterRotaryPosition_coherentOverlapC_rotaryEncode
+import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterRotaryPosition
 
 

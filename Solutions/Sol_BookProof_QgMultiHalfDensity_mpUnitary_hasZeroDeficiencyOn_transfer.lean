@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_mem_boundedEnergyCore
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_boundedEnergyCore_surjective
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_intertwines_multOp
 import Theorems.Thm_BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockContinuum
 open BookProof.QgMultiHalfDensity
 
 
@@ -13,6 +17,7 @@ open BookProof.QgMultiHalfDensity
 open MeasureTheory Set
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QuantumGravityHalfDensity
+open BookProof.ChapterLinftyMultiplication
 
 noncomputable section
 

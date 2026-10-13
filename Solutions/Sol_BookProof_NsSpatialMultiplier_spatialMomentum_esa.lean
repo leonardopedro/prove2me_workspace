@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
 import Theorems.Thm_BookProof_FourierMultiplierEsa_firstOrderOp_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.NsSpatialMultiplier
 
 

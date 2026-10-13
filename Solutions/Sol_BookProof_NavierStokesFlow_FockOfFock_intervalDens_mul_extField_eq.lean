@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockEsa.lean — solution of BookProof.NavierStokesFlow.FockOfFock.intervalDens_mul_extField_eq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

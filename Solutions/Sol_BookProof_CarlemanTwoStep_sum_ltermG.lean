@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_shiftK
 import Theorems.Thm_BookProof_CarlemanTwoStep_ltermG_shift
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanTwoStep
 
 

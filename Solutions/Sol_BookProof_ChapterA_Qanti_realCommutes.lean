@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterA_realCommutes_add
 import Theorems.Thm_BookProof_ChapterA_realCommutes_mul
 import Theorems.Thm_BookProof_ChapterA_realCommutes_smul
 import Theorems.Thm_BookProof_ChapterA_realCommutes_mulI
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

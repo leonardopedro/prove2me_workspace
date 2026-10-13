@@ -1,6 +1,7 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_add
 
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_smul
+import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe
 
 
 

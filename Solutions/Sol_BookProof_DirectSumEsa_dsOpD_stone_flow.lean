@@ -6,6 +6,13 @@ import Theorems.Thm_BookProof_DirectSumEsa_essentiallySelfAdjointOn_of_hasZeroDe
 import Theorems.Thm_BookProof_DirectSumEsa_dsOpD_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
 
@@ -20,6 +27,10 @@ noncomputable section
 variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
   [∀ i, InnerProductSpace ℂ (G i)]
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FullEsa
+open BookProof.EsaClosure
+open BookProof.NavierStokesFlow.FullEsa
+open BookProof.NavierStokesFlow.FullEsa.NSFullData
+open BookProof.StoneBridge
 
 variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
   [∀ i, InnerProductSpace ℂ (G i)]

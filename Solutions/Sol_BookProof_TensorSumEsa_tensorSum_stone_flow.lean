@@ -6,6 +6,13 @@ import Theorems.Thm_BookProof_TensorSumEsa_dense_cpairDom
 import Theorems.Thm_BookProof_TensorSumEsa_essentiallySelfAdjointOn_cpairDom_selfAdjoint
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorSumEsa
 
 
@@ -13,6 +20,11 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.EsaClosure
+open BookProof.StoneBridge
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.TensorCore
 
 noncomputable section
 

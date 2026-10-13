@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
 import Theorems.Thm_BookProof_ChapterSolovaySeparableExistence_prod_disintegration
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovaySeparableExistence
 
 

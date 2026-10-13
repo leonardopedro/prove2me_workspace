@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNsFieldMomentumInverse
 import Theorems.Thm_BookProof_NsFieldMomentumInverse_momSymbol_ne_zero_ae
+import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.NsFieldMomentumInverse
 
 

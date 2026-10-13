@@ -1,6 +1,16 @@
 -- Generated from ChapterScalaronFiberFL.lean — solution of BookProof.ScalaronFiberFL.hamS_apply
 import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterWallEsaBddBelow
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterSchrodingerCutoffEsa
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.ScalaronFiberFL
 
 

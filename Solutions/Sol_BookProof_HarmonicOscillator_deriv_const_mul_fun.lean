@@ -1,6 +1,9 @@
 -- Generated from ChapterHarmonicOscillatorEsa.lean — solution of BookProof.HarmonicOscillator.deriv_const_mul_fun
 import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HarmonicOscillator
 
 

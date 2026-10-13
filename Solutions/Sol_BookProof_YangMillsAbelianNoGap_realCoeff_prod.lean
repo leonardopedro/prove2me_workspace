@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 import Theorems.Thm_BookProof_YangMillsAbelianNoGap_realCoeff_one
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
 

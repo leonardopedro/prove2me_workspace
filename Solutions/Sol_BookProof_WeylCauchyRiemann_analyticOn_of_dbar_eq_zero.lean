@@ -1,6 +1,7 @@
 -- Generated from ChapterWeylCauchyRiemann.lean — solution of BookProof.WeylCauchyRiemann.analyticOn_of_dbar_eq_zero
 import Mathlib
 import Definitions.Def_ChapterWeylCauchyRiemann
+import Definitions.Def_ChapterRadialMollifier
 open BookProof.WeylCauchyRiemann
 
 
@@ -12,10 +13,10 @@ open scoped Convolution Topology ContDiff
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {g : ℂ → ℂ} {s : Set ℂ} (hs : IsOpen s)
     (hg : ∀ z ∈ s, DifferentiableAt ℝ g z) (hdbar : ∀ z ∈ s, dbar g z = 0) :
     AnalyticOn ℂ g s := by
-
   refine BookProof.ChapterHolomorphic.cauchyRiemann_analyticOn hs hg fun z hz => ?_
   have h := hdbar z hz
   simp only [dbar] at h

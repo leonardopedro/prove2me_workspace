@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_restartGen_isSelfAdjoint
 import Theorems.Thm_BookProof_BrstLeakage_norm_leakageIter
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstUnboundedLeakage
 
 
@@ -12,6 +15,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
+open BookProof.BrstLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneMeasurable.lean — solution of BookProof.ChapterStoneMeasurable.norm_le_of_inner_self_bound
 import Mathlib
 import Definitions.Def_ChapterStoneMeasurable
+import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterStoneMeasurable
 
 

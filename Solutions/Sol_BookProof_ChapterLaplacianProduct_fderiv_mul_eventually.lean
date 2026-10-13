@@ -1,6 +1,7 @@
 -- Generated from ChapterLaplacianProduct.lean — solution of BookProof.ChapterLaplacianProduct.fderiv_mul_eventually
 import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
 

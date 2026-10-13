@@ -8,6 +8,18 @@ import Theorems.Thm_BookProof_QuadratureEsa_foOp_coe
 import Theorems.Thm_BookProof_HermiteRelative_foOp_linear_apply_eq_mul
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
 import Theorems.Thm_BookProof_YangMillsHermite_eval_starP
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.QuadratureEsa
 
 
@@ -20,6 +32,10 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteCore
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 variable {d : ℕ}
 

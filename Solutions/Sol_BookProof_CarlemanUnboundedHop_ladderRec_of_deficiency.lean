@@ -3,23 +3,30 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_summable_normSq_lp
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_row_summable
+import Definitions.Def_ChapterKernelBound
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.CarlemanUnboundedHop
 
 
 
 
 open Finset
+open BookProof.KernelBound
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
 
 noncomputable section
 
 variable {a : ℕ → ℕ → ℂ} {u : ℕ → ℂ} {A θ Θ : ℕ → ℝ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) {z : ℂ} {w : L2N}
     (hw : ∀ v : lpFiniteModes ℕ, (inner ℂ (kernelOp hk v) (w : L2N) : ℂ)
         = z * inner ℂ (v : L2N) (w : L2N)) :
     LadderRecInf a ((w : ℕ → ℂ)) z := by
-
   classical
   have hw2 := summable_normSq_lp w
   have hrow : ∀ k : ℕ, Summable fun n : ℕ => a k n * (w : ℕ → ℂ) n := by

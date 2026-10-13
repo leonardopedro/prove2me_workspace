@@ -1,12 +1,17 @@
 -- Generated from ChapterFriedrichsSquareFactorization.lean — solution of BookProof.FriedrichsSquare.fst_mem_clDom_of_mem_factorRel
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

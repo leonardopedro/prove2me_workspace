@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesGaugeY_uField_pderiv_x
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

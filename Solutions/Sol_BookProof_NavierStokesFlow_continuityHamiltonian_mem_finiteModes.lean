@@ -1,8 +1,10 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.continuityHamiltonian_mem_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
-import Theorems.Thm_BookProof_NavierStokesFlow_shiftOp_mem_finiteModes
 import Theorems.Thm_BookProof_NavierStokesFlow_velocityOp_mem_finiteModes
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -17,6 +19,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterContinuityUnitary BookProof.ChapterContinuityUnitaryInfinite
 theorem solution (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
     continuityHamiltonian v f ∈ finiteModes :=
   /

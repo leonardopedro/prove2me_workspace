@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 
@@ -12,12 +15,30 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.StrichartzWave
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+/-! `posOp_apply` and its helper exist in the source chapter but no
+`Theorems/Thm_…` stub was generated for them, so a solution may not import them.
+Both are one-line lemmas over declarations the platform DOES serve (`posOp` in
+the published bundle, `smulLeftCLM_apply_apply` from Mathlib), so they are stated
+locally as `private` and the file stays standalone.
+-/
+
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+private theorem hasTemperateGrowth_innerC' (b : V) :
+    (fun x : V => ((inner ℝ x b : ℝ) : ℂ)).HasTemperateGrowth :=
+  Complex.ofRealCLM.hasTemperateGrowth.comp ((innerSL ℝ).flip b).hasTemperateGrowth
+
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+private theorem posOp_apply' (b : V) (f : 𝓢(V, ℂ)) (x : V) :
+    (posOp b f) x = ((inner ℝ x b : ℝ) : ℂ) * f x := by
+  simp [posOp, smulLeftCLM_apply_apply (hasTemperateGrowth_innerC' b)]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b : V) (z : ℂ) (u : Lp ℂ 2 (volume : Measure V))
@@ -38,5 +59,5 @@ theorem solution (b : V) (z : ℂ) (u : Lp ℂ 2 (volume : Measure V))
     ring
   rw [← hcomb]
   refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-  simp only [posOp_apply, map_mul, Complex.conj_ofReal]
+  simp only [posOp_apply', map_mul, Complex.conj_ofReal]
   ring

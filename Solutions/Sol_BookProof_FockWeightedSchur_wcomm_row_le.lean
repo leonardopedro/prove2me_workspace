@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
 import Theorems.Thm_BookProof_FockWeightedSchur_sum_le_of_vanishing
 import Theorems.Thm_BookProof_FockWeightedSchur_w_pos
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 

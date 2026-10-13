@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMixedPrior
 import Theorems.Thm_BookProof_ChapterAtomicDecomposition_noAtoms_continuousPart
+import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterMixedPrior
 
 

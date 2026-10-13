@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Theorems.Thm_BookProof_FarisLavine_norm_sub_smul_sq
-open BookProof.KatoRellich
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterKatoRellichDeficiency
 
 
 

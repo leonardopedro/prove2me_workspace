@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_TensorKatoRellich_symmetricOn_coupling
 import Theorems.Thm_BookProof_TensorKatoRellich_coupling_relBound
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 import Theorems.Thm_BookProof_TensorSumEsa_symmetricOn_cpairOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorKatoRellich
 
 
@@ -12,6 +17,7 @@ open BookProof.TensorKatoRellich
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

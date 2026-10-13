@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_StrichartzWave_mulL2_symmetric
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
 import Theorems.Thm_BookProof_StrichartzWave_wave_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_StrichartzWave_wave_symmetric
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

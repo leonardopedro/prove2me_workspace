@@ -1,6 +1,8 @@
 -- Generated from ChapterFreeFieldSphereSupport.lean — solution of BookProof.ChapterFreeFieldSphereSupport.normalize_mem_sphere
 import Mathlib
 import Definitions.Def_ChapterFreeFieldSphereSupport
+import Definitions.Def_ChapterFreeFieldGaussian
+import Definitions.Def_ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphereSupport
 
 

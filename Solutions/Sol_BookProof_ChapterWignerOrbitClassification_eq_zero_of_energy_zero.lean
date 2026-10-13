@@ -1,6 +1,9 @@
 -- Generated from ChapterWignerOrbitClassification.lean — solution of BookProof.ChapterWignerOrbitClassification.eq_zero_of_energy_zero
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
+import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterWignerOrbitClassification
 
 

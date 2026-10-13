@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 import Theorems.Thm_BookProof_TensorCore_exists_ne_zero_mem_sectorCore_one
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.SecondQuantizationCore
 
 
@@ -10,6 +14,8 @@ open BookProof.SecondQuantizationCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.DirectSumEsa
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

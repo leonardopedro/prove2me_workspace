@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterMaxEntropy
 import Theorems.Thm_BookProof_ChapterMaxEntropy_entropy_le_log_card
 import Theorems.Thm_BookProof_ChapterMaxEntropy_entropy_uniform
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDutchBook
+import Definitions.Def_ChapterIrreversible
 open BookProof.ChapterMaxEntropy
 
 

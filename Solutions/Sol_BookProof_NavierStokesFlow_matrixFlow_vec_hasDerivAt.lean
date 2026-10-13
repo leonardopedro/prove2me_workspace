@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_hasDerivAt
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_comm
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -12,8 +13,13 @@ open scoped BigOperators Matrix Matrix.Norms.Operator
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (A : Matrix (Fin n) (Fin n) ℂ) (x : Fin n → ℂ) (t : ℝ) :
-    HasDerivAt (fun s : ℝ => matrixFlow A s *ᵥ x) (A *ᵥ (matrixFlow A t *ᵥ x)) t :=
-   *ᵥ (matrixFlow A t *ᵥ x)) t := by
-    have h := (applyVecCLM x).hasFDerivAt.comp_hasDerivAt t (matrixFlow_hasDerivAt A t)
-    convert h using 1
+    HasDerivAt (fun s : ℝ => matrixFlow A s *ᵥ x) (A *ᵥ (matrixFlow A t *ᵥ x)) t := by
+  have h := (applyVecCLM x).hasFDerivAt.comp_hasDerivAt t (matrixFlow_hasDerivAt A t)
+  convert h using 1
+    <;> (first
+      | rfl
+      | (change A *ᵥ (matrixFlow A t *ᵥ x) = (matrixFlow A t * A) *ᵥ x
+          <;> rw [matrixFlow_comm, ← Matrix.mulVec_mulVec])
+      | simp [applyVecCLM, matrixFlow_comm, Matrix.mulVec_mulVec])

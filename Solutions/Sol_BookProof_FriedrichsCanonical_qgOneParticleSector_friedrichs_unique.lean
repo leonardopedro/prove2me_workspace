@@ -6,6 +6,13 @@ import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_quadForm_ge
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.FriedrichsCanonical
 
 
@@ -13,6 +20,11 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteCore
+open BookProof.QgHermiteFriedrichs
 
 noncomputable section
 

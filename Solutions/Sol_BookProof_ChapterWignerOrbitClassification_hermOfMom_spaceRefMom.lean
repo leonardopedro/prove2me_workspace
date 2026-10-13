@@ -1,6 +1,8 @@
 -- Generated from ChapterWignerOrbitClassification.lean — solution of BookProof.ChapterWignerOrbitClassification.hermOfMom_spaceRefMom
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerOrbitClassification
 
 

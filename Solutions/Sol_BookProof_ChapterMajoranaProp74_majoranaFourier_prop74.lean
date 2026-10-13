@@ -9,6 +9,8 @@ import Theorems.Thm_BookProof_ChapterMajoranaFourier_boost_two_mul
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_gamma0_nslash_anticomm
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_gamma0_sq
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_nslash_sq
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterMajoranaFourier
 open BookProof.ChapterMajoranaProp74
 
 

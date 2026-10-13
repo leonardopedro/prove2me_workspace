@@ -1,6 +1,10 @@
 -- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.exists_cutoff_seq
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 open BookProof.MixedLinearEsa
 
 
@@ -15,7 +19,42 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
+
+private theorem exists_smooth_cutoff (R : ℝ) :
+    ∃ χ : V → ℝ, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) χ ∧ HasCompactSupport χ ∧
+      (∀ x, ‖x‖ ≤ R → χ x = 1) ∧ (∀ x, χ x ∈ Set.Icc (0 : ℝ) 1) ∧
+      (∀ x, R + 1 ≤ ‖x‖ → χ x = 0) ∧ ∃ C : ℝ, ∀ x, ‖gradient χ x‖ ≤ C := by
+  have hs : IsClosed {x : V | R + 1 ≤ ‖x‖} := isClosed_le continuous_const continuous_norm
+  have ht : IsClosed (Metric.closedBall (0 : V) R) := Metric.isClosed_closedBall
+  have hd : Disjoint {x : V | R + 1 ≤ ‖x‖} (Metric.closedBall (0 : V) R) := by
+    rw [Set.disjoint_left]
+    intro x hx hx'
+    simp only [Set.mem_setOf_eq] at hx
+    simp only [Metric.mem_closedBall, dist_zero_right] at hx'
+    linarith
+  obtain ⟨f, hf0, hf1, hfIcc⟩ :=
+    exists_contMDiffMap_zero_one_of_isClosed (modelWithCornersSelf ℝ V) hs ht hd
+  have hsmooth : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (⇑f) := contMDiff_iff_contDiff.mp f.contMDiff
+  have hcs : HasCompactSupport (⇑f) := by
+    apply HasCompactSupport.intro (isCompact_closedBall (0 : V) (R + 1))
+    intro x hx
+    apply hf0
+    simp only [Metric.mem_closedBall, dist_zero_right, not_le] at hx
+    simp only [Set.mem_setOf_eq]
+    linarith
+  refine ⟨⇑f, hsmooth, hcs, fun x hx => hf1 (by simpa [dist_zero_right] using hx), hfIcc,
+    fun x hx => hf0 hx, ?_⟩
+  have hgrad : ∀ x : V, gradient (⇑f) x = (InnerProductSpace.toDual ℝ V).symm (fderiv ℝ (⇑f) x) :=
+    fun _ => rfl
+  have hgcs : HasCompactSupport (fun x => gradient (⇑f) x) := by
+    simp only [hgrad]
+    exact (hcs.fderiv ℝ).comp_left (g := fun L => (InnerProductSpace.toDual ℝ V).symm L) (by simp)
+  have hgcont : Continuous (fun x => gradient (⇑f) x) := by
+    simp only [hgrad]
+    exact (InnerProductSpace.toDual ℝ V).symm.continuous.comp (hsmooth.continuous_fd the
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     ∃ (cut : ℕ → V → ℝ) (K : ℝ),
       (∀ n, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (cut n)) ∧
@@ -23,7 +62,6 @@ theorem solution :
       (∀ n x, ‖cut n x‖ ≤ 1) ∧
       (∀ x : V, ∀ᶠ n in Filter.atTop, cut n x = 1 ∧ fderiv ℝ (cut n) x = 0) ∧
       (∀ n x, ‖fderiv ℝ (cut n) x‖ ≤ K) := by
-
   obtain ⟨χ, hχ, hχcs, hχ1, hχIcc, hχ0, -⟩ := exists_smooth_cutoff (V := V) 1
   obtain ⟨K, hK⟩ : ∃ K : ℝ, ∀ x, ‖fderiv ℝ χ x‖ ≤ K :=
     (hχcs.fderiv ℝ).exists_bound_of_continuous (hχ.continuous_fderiv (by simp))

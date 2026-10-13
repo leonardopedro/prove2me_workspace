@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPinDoubleCover
 import Theorems.Thm_BookProof_ChapterPinDoubleCover_LamZ_spec
+import Definitions.Def_ChapterA3
 open BookProof.ChapterPinDoubleCover
 
 

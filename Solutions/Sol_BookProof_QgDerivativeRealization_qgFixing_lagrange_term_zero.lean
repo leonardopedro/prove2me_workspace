@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
 import Theorems.Thm_BookProof_QgDerivativeRealization_qgSystemOf_gaugeField_eq_zero
 import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_lagrange_term_zero_of_fixing
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.QgDerivativeRealization
 
 
@@ -12,6 +16,8 @@ open MvPolynomial
 open BookProof.GaugeFixing
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgPhysicalSectorIdentity
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : TetradConfig) (E : DerivFields)

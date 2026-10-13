@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSoftmaxFluctuation
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_eq_zero_iff
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxFluctuation
 
 

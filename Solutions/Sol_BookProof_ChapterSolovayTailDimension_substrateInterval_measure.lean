@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovayTailDimension
 import Theorems.Thm_BookProof_ChapterSolovayTailDimension_substrateInterval_subset
+import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovayTailDimension
 
 
@@ -10,6 +11,7 @@ noncomputable section
 
 open MeasureTheory Set PhysMehler PhysMeasureBasis
 open scoped ENNReal
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) :

@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_
 import Theorems.Thm_BookProof_EsaOneParticle_dense_Dfin
 import Theorems.Thm_BookProof_EsaOneParticle_positionCore_symmetricOn
 import Theorems.Thm_BookProof_EsaOneParticle_positionCore_essentiallySelfAdjoint
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaOneParticle
 
 
@@ -12,6 +17,7 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.DirectSumEsa
 
 noncomputable section
 

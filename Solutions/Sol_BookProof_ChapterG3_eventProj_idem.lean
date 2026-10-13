@@ -1,12 +1,14 @@
 -- Generated from ChapterG3.lean — solution of BookProof.ChapterG3.eventProj_idem
 import Mathlib
 import Definitions.Def_ChapterG3
+import Definitions.Def_ChapterConservativeDiagonal
 open BookProof.ChapterG3
 
 
 
 open MeasureTheory
 open scoped ENNReal
+open BookProof.ConservativeDiagonal
 
 
 

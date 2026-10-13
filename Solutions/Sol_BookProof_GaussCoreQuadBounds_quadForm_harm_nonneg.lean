@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_quadForm_nonneg
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.GaussCoreQuadBounds
 
 
@@ -13,6 +22,7 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
 open BookProof.QgOuterFock
 
+open BookProof.QgOuterFockFL
 noncomputable section
 
 variable {D : ℕ}

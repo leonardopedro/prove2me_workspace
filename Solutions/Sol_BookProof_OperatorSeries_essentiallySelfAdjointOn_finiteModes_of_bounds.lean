@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterOperatorSeriesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.OperatorSeries
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY2
 import Theorems.Thm_BookProof_NavierStokesGaugeY2_genY_genY2_bracket_X_u
+import Definitions.Def_ChapterNavierStokesGaugeY
 open BookProof.NavierStokesGaugeY2
 
 

@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Theorems.Thm_BookProof_SecondQuantizationCore_essentiallySelfAdjointOn_fockSectorCore
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.SecondQuantizationCore
 
 
@@ -10,6 +15,9 @@ open BookProof.SecondQuantizationCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.DirectSumEsa
+open BookProof.DirectSumEsa
+open BookProof.GraphCore
+open BookProof.TensorCore
 
 noncomputable section
 

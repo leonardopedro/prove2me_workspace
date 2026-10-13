@@ -4,6 +4,9 @@ import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_norm_ge
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiN_eq_diagOp
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiWeight_ge_one
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

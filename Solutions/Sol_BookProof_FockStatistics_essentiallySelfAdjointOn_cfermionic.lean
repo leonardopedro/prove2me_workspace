@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_fockSector
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
 import Theorems.Thm_BookProof_ReducedEsa_essentiallySelfAdjointOn_red
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -12,6 +18,10 @@ open BookProof.FockStatistics
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.ChapterA
+open BookProof.ChapterA.System
+open BookProof.ChapterMaschkeFiniteGroup
+open BookProof.TensorCore
 
 noncomputable section
 

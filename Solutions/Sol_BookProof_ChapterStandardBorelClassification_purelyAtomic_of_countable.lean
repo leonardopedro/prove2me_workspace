@@ -1,6 +1,10 @@
 -- Generated from ChapterStandardBorelClassification.lean — solution of BookProof.ChapterStandardBorelClassification.purelyAtomic_of_countable
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
+import Definitions.Def_ChapterMeasureAtomicDiffuse
+import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterAbelianClassificationList
 open BookProof.ChapterStandardBorelClassification
 
 

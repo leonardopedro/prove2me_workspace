@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterSchurGershgorinGap
 import Theorems.Thm_BookProof_SchurGershgorin_abs_inner_block_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTruncationGapLift
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFockGapChain
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.SchurGershgorin
 
 
@@ -13,6 +22,7 @@ open BookProof.FarisLavine BookProof.HermiteGalerkin BookProof.TruncationGapLift
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
+open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

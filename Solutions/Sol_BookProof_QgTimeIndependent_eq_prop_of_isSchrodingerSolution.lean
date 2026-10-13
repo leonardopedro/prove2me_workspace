@@ -6,6 +6,10 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_deriv
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeIndependent
 
 
@@ -13,6 +17,9 @@ open BookProof.QgTimeIndependent
 
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
 
 noncomputable section
 

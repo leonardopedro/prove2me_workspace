@@ -1,6 +1,10 @@
 -- Generated from ChapterSolidHarmonic.lean — solution of BookProof.ChapterSolidHarmonic.norm_spherePt
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
 
@@ -18,8 +22,8 @@ variable {u v e : E} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (he : ‖e‖ = 1)
   (huv : ⟪u, v⟫_ℝ = 0) (hue : ⟪u, e⟫_ℝ = 0) (hve : ⟪v, e⟫_ℝ = 0)
 
 set_option maxHeartbeats 1000000 in
-theorem solution {r : ℝ} (hr : 0 ≤ r) (θ φ : ℝ) : ‖spherePt u v e r θ φ‖ = r := by
 
+theorem solution {r : ℝ} (hr : 0 ≤ r) (θ φ : ℝ) : ‖spherePt u v e r θ φ‖ = r := by
   have hvu : ⟪v, u⟫_ℝ = 0 := by rw [real_inner_comm]; exact huv
   have heu : ⟪e, u⟫_ℝ = 0 := by rw [real_inner_comm]; exact hue
   have hev : ⟪e, v⟫_ℝ = 0 := by rw [real_inner_comm]; exact hve

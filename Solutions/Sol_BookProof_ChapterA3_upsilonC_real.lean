@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA3h
 import Theorems.Thm_BookProof_ChapterA3_paulisigma_herm
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

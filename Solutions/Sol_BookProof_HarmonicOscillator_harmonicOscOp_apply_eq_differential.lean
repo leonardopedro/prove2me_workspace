@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_HarmonicOscillator_hermiteC_oscillator
 import Theorems.Thm_BookProof_HarmonicOscillator_harmonicOscOp_hermiteLp
 import Theorems.Thm_BookProof_HarmonicOscillator_memLp_harmonicDifferential
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HarmonicOscillator
 
 
@@ -12,6 +15,7 @@ open BookProof.HarmonicOscillator
 
 open MeasureTheory Polynomial BookProof.HermiteCore BookProof.HermiteStrichartzQG
 open BookProof.FarisLavine
+open BookProof.HermiteCore
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ) :

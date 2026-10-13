@@ -7,6 +7,8 @@ import Theorems.Thm_BookProof_SmDiracYukawa_smFermiOm_nonneg
 import Theorems.Thm_BookProof_SmDiracYukawa_sm_fermi_N_norm_le
 import Theorems.Thm_BookProof_SmDiracYukawa_sm_fermi_N_norm_ge
 import Theorems.Thm_BookProof_SmDiracYukawa_norm_dcommOp_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

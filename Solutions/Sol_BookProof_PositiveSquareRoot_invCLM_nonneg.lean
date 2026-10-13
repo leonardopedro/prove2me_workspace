@@ -4,6 +4,12 @@ import Definitions.Def_ChapterPositiveSquareRootUnique
 import Theorems.Thm_BookProof_PositiveSquareRoot_inner_im_eq_zero
 import Theorems.Thm_BookProof_PositiveSquareRoot_invCLM_mem
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
 open BookProof.PositiveSquareRoot
 
 

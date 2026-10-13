@@ -1,14 +1,2 @@
--- Generated from ChapterG.lean — theorem BookProof.ChapterG.haarAverage_one
-import Mathlib
-import Definitions.Def_ChapterG
-open BookProof.ChapterG
-
-
-open scoped ComplexConjugate InnerProductSpace Matrix
-open MeasureTheory
-
-variable {G : Type*} [Group G] [MeasurableSpace G]
-variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]
-variable {X : Type*} [MulAction G X]
-
-theorem BookProof.ChapterG.haarAverage_one : haarAverage (μG := by sorry
+-- Generated from ChapterG.lean — 
+theorem BookProof.ChapterG.haarAverage_one : haarAverage (μG := μG) (X := X) (fun _ => 1) = fun _ => 1 := by sorry

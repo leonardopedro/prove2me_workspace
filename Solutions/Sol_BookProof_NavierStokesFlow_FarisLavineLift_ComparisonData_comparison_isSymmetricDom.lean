@@ -4,6 +4,11 @@ import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_add
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_comp_of_commute
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sum
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 
@@ -17,6 +22,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {d : ℕ} (c : ComparisonData F d)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.FullEsa.NSFullData BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval BookProof.NavierStokesFlow.FarisLavineLift
 theorem solution : IsSymmetricDom c.comparison := by
 
   have hid : IsSymmetricDom (LinearMap.id : c.D →ₗ[ℂ] c.D) := by

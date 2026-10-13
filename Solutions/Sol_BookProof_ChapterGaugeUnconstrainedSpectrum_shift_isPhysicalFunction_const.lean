@@ -11,6 +11,10 @@ variable {X : Type*}
 variable {X : Type*}
 variable {G : Type*} [Group G]
 
+
+@[simp] private theorem shiftPerm_apply (m : Multiplicative ℤ) (k : ℤ) :
+    shiftPerm m k = k + Multiplicative.toAdd m := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution {d : ℤ → ℂ} (hd : IsPhysicalFunction shiftPerm d)
     (k l : ℤ) : d k = d l := by

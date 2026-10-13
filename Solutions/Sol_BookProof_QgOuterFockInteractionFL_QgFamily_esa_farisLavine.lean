@@ -10,6 +10,20 @@ import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_QgOuterFockFL_dsFibOp_fib
 import Theorems.Thm_BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom
 import Theorems.Thm_BookProof_QgOuterFockFL_qgOuterCore_le_friedDom
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.QgOuterFockInteractionFL
 open BookProof.QgOuterFockInteractionFL.QgFamily
 
@@ -24,6 +38,9 @@ open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL
 open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
+open BookProof.HermiteProductCore
+open BookProof.QgOuterFock
+open BookProof.QgOuterFockFL
 
 noncomputable section
 

@@ -3,7 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterFockDifferingBasesEsa
 import Theorems.Thm_BookProof_FockDifferingBases_spectralFamily_finite_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_FockDifferingBases_summable_pairData
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FockDifferingBases
 
 
@@ -11,6 +19,8 @@ open BookProof.FockDifferingBases
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQuadratic
+open BookProof.ChapterA3n
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 
@@ -19,7 +29,16 @@ variable {ι κ : Type*} {ω : ι → ℝ}
 variable {ι κ : Type*} {ω : ι → ℝ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (lam₁ lam₂ : ℝ) (v₁ v₂ : ι → ℂ)
     (hv₁ : Summable fun p => ‖v₁ p‖) (hv₂ : Summable fun p => ‖v₂ p‖) :
     EssentiallySelfAdjointOn (lpFiniteModes (Idx ι))
-      ((exchangeH (ω := spectralFamily_finite_essentiallySelfAdjointOn_core (summable_pairData hv₁ hv₂)
+      ((exchangeH (ω := fun _ : ι => (0 : ℝ)) (fun _ => le_rfl)
+          (fun z : Fin 2 × ι × ι => z.2.1) (fun z => z.2.2)
+          (specAmp ![lam₁, lam₂] ![v₁, v₂])
+          (summable_specAmp (summable_pairData hv₁ hv₂)
+            (summable_specGate_of_finite _ _))).comp
+        (Submodule.inclusion (finiteModes_le_maxDom (sig (fun _ : ι => (0 : ℝ)))))) :=
+  spectralFamily_finite_essentiallySelfAdjointOn_core (summable_pairData hv₁ hv₂)
+
+/-! ## 7. Non-vacuity: the summands really are non-diagonal and non-commuting -/

@@ -1,6 +1,7 @@
 -- Generated from ChapterU.lean — solution of BookProof.ChapterU.born_conditioning
 import Mathlib
 import Definitions.Def_ChapterU
+import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterU
 
 

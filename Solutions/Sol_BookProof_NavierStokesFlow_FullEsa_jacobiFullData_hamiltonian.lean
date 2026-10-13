@@ -1,20 +1,29 @@
 -- Generated from ChapterNavierStokesFullEsa.lean — solution of BookProof.NavierStokesFlow.FullEsa.jacobiFullData_hamiltonian
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : jacobiFullData.hamiltonian = jacobiOp := by
 
+theorem solution : jacobiFullData.hamiltonian = jacobiOp := by
   have hvel : ∀ j : Fin 3, jacobiFullData.velocity j = 0 := by
     intro j
     have h : nsVelIdx j ≠ nsLapIdx 0 := by

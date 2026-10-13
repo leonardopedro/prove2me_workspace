@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.rcp_nonneg
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 
@@ -17,4 +19,6 @@ variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (a : Fin d →₀ ℕ) (i j : Fin d) : 0 ≤ rcp a i j := mul_nonneg (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)
+
+theorem solution (a : Fin d →₀ ℕ) (i j : Fin d) : 0 ≤ rcp a i j :=
+  mul_nonneg (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)

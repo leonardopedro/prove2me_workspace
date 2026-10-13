@@ -1,6 +1,11 @@
 -- Generated from ChapterFreeFieldBornSignRepresentation.lean — solution of BookProof.ChapterFreeFieldBornSignRepresentation.flipRepresentation_specialOrthogonal_iff
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignRepresentation
+import Definitions.Def_ChapterFreeFieldBornSignAction
+import Definitions.Def_ChapterFreeFieldBornSignHom
+import Definitions.Def_ChapterFreeFieldBornSignMatrix
+import Definitions.Def_ChapterFreeFieldBornSignOrientation
+import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
 open BookProof.ChapterFreeFieldBornSignRepresentation
 
 

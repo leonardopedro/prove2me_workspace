@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 import Theorems.Thm_BookProof_GaussCoordCombo_pderiv_hermiteFactor_self
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

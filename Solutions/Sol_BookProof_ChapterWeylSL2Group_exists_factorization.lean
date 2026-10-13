@@ -1,6 +1,7 @@
 -- Generated from ChapterWeylSL2Group.lean — solution of BookProof.ChapterWeylSL2Group.exists_factorization
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
+import Definitions.Def_ChapterWeylSl2
 open BookProof.ChapterWeylSL2Group
 
 

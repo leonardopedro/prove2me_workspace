@@ -4,6 +4,9 @@ import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_inter_intertwines
 import Theorems.Thm_BookProof_ChapterPauliFundamental_exists_inter_ne_zero
 import Theorems.Thm_BookProof_ChapterPauliFundamental_inter_isUnit
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

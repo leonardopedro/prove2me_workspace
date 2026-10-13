@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterBosonicCCR
 import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_selfAdjoint
+import Definitions.Def_ChapterStoneConverse
 open BookProof.Bosonic
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterA1e
 import Theorems.Thm_BookProof_ChapterA_mem_JY
 import Theorems.Thm_BookProof_ChapterA_Jmap_sq
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterSqSumFarisLavine.lean — solution of BookProof.SqSumFarisLavine.sqSumOp_pgLp
 import Mathlib
 import Definitions.Def_ChapterSqSumFarisLavine
-import Theorems.Thm_BookProof_SqSumFarisLavine_coreEquiv_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
 import Definitions.Def_ChapterQgHermiteCore

@@ -13,6 +13,10 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (S : ModelStatement H) (ψ : H)
 
+
+@[simp] private theorem halfUncertain_op :
+    (halfUncertain (H := H)).op = (1 / 2 : ℂ) • (1 : H →L[ℂ] H) := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (h : ∃ ψ : H, ψ ≠ 0) :
     ¬ ((halfUncertain (H := H)).op ∘L (halfUncertain (H := H)).op

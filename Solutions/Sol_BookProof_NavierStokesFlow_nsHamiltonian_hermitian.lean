@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
 import Theorems.Thm_BookProof_NavierStokesFlow_nsAdvection_hermitian
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -13,6 +15,7 @@ variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.CanonicalVector
 theorem solution : (nsHamiltonian d)ᴴ = nsHamiltonian d := by
 
   simp only [nsHamiltonian, Matrix.conjTranspose_sum, Matrix.conjTranspose_add,

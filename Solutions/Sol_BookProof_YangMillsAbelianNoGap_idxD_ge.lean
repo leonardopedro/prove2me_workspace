@@ -1,6 +1,12 @@
 -- Generated from ChapterYangMillsAbelianNoGap.lean — solution of BookProof.YangMillsAbelianNoGap.idxD_ge
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
 

@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_BddBelowFiberSumEsa_fiberSumHam_symmetricOn
 import Theorems.Thm_BookProof_BddBelowFiberSumEsa_fiberCore_dense
 import Theorems.Thm_BookProof_BddBelowFiberSumEsa_fiberSumHam_essentiallySelfAdjoint_of_bddBelow
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterBddBelowWallEsa
+Definitions.Def_ChapterStoneResolvent
 open BookProof.BddBelowFiberSumEsa
 
 
@@ -14,6 +24,7 @@ open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 
+open BookProof.EsaClosure BookProof.StoneBridge
 noncomputable section
 
 variable {ι : Type*}

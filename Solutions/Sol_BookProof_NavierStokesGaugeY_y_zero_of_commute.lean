@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesGaugeY.lean — solution of BookProof.NavierStokesGaugeY.y_zero_of_commute
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

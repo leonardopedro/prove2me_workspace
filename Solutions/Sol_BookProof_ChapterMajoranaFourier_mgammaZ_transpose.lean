@@ -1,6 +1,7 @@
 -- Generated from ChapterMajoranaFourier.lean — solution of BookProof.ChapterMajoranaFourier.mgammaZ_transpose
 import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

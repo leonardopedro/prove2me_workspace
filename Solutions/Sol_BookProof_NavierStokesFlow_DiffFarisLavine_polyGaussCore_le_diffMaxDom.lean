@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_DiffFarisLavine_embedCore_surjective
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 

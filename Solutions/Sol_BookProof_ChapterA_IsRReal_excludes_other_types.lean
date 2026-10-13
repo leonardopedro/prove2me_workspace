@@ -4,6 +4,8 @@ import Definitions.Def_ChapterA1h
 import Theorems.Thm_BookProof_ChapterA_IsRReal_isRRealType
 import Theorems.Thm_BookProof_ChapterA_IsRComplexType_not_isRReal
 import Theorems.Thm_BookProof_ChapterA_IsRPseudorealType_not_isRReal
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

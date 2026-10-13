@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesEulerian.lean — solution of BookProof.NavierStokesEulerian.eulerian_divergence_constraint
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesEulerian
 
 

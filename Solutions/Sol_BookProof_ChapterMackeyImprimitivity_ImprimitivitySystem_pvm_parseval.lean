@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMackeyImprimitivity
 import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_sum_norm_sq_of_orthogonal
 import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_selfAdjoint
+import Definitions.Def_ChapterStoneConverse
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity.ImprimitivitySystem
 

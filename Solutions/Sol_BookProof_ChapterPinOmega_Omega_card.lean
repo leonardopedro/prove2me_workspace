@@ -1,6 +1,8 @@
 -- Generated from ChapterPinOmega.lean — solution of BookProof.ChapterPinOmega.Omega_card
 import Mathlib
 import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterPinOmega
 
 

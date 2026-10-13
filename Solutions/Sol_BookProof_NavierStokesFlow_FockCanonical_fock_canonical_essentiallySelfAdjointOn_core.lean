@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FockManyMode_fockH_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockCanonical
 

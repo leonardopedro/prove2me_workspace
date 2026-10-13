@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_PhysFunctionalAnalysis
 import Theorems.Thm_PhysFunctionalAnalysis_exists_l2_iso
+import Definitions.Def_ChapterA4
 open PhysFunctionalAnalysis
 
 

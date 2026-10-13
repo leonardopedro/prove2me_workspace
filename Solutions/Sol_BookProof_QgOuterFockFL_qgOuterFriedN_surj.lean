@@ -1,6 +1,14 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — solution of BookProof.QgOuterFockFL.qgOuterFriedN_surj
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.QgOuterFockFL
 
 
@@ -28,5 +36,9 @@ variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
 variable {C H}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (f : qgOuterFock) :
-    ∃ x : qgOuterFriedDom, qgOuterFriedN x + (x : qgOuterFock) = f := qgOuterComparison.surj f
+    ∃ x : qgOuterFriedDom, qgOuterFriedN x + (x : qgOuterFock) = f :=
+  qgOuterComparison.surj f
+
+set_option maxHeartbeats 1600000 in

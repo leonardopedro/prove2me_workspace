@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_norm_apply_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 

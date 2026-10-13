@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPauliGrover
 import Theorems.Thm_BookProof_ChapterPauliGrover_pauliGrover_joint_one
 import Theorems.Thm_BookProof_ChapterPauliGrover_pauliGrover_marg_one
+import Definitions.Def_ChapterConditional
 open BookProof.ChapterPauliGrover
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterObservableExpectation
 import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxBorn_bornWeight_sum_one
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterObservableExpectation
 
 

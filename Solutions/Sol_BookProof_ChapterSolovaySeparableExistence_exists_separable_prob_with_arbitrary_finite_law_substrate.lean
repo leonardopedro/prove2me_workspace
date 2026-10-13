@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
 import Theorems.Thm_BookProof_ChapterSolovaySeparableExistence_innerSpace_separable
+import Definitions.Def_ChapterSolovayCoordinates
+import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovaySeparableExistence
 
 
@@ -12,6 +14,7 @@ open MeasureTheory ProbabilityTheory
 
 
 open BookProof.ChapterSolovayCoordinates
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution (N : ℕ)

@@ -12,6 +12,10 @@ import Theorems.Thm_BookProof_DegEnergy_dcoord_cx_sq
 import Theorems.Thm_BookProof_ConvolutionCalc_hasCompactSupport_dcoord
 import Theorems.Thm_BookProof_QgOneParticleCc_contDiff_dcoord
 import Theorems.Thm_BookProof_QgOneParticleCc_dcoord_mul
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.DegEnergy
 
 
@@ -20,6 +24,7 @@ open BookProof.DegEnergy
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
 open BookProof.ConvolutionCalc
+open BookProof.HermiteProductCore
 
 noncomputable section
 

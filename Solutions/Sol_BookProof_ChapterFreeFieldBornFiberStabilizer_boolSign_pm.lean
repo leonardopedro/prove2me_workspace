@@ -1,6 +1,11 @@
 -- Generated from ChapterFreeFieldBornFiberStabilizer.lean — solution of BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 open BookProof.ChapterFreeFieldBornFiberStabilizer
 
 

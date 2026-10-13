@@ -1,6 +1,10 @@
 -- Generated from ChapterL2TensorPowerUnitary.lean — solution of BookProof.L2TensorPower.l2dSpace_eq
 import Mathlib
 import Definitions.Def_ChapterL2TensorPowerUnitary
+import Definitions.Def_ChapterNsScalarVectorCurry
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.L2TensorPower
 
 
@@ -9,6 +13,8 @@ open BookProof.L2TensorPower
 open MeasureTheory BookProof.TensorCore BookProof.NsScalarVectorCurry
 open BookProof.SecondQuantizationCore
 open scoped TensorProduct
+open BookProof.HermiteProductCore
+open BookProof.TensorCore
 
 noncomputable section
 

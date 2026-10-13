@@ -2,11 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterHierarchicalBayes
 import Theorems.Thm_BookProof_ChapterHierarchicalBayes_evidence_eq_marginal
+import Definitions.Def_ChapterSequentialBayes
 open BookProof.ChapterHierarchicalBayes
 
 
 
 open scoped BigOperators
+open BookProof.ChapterSequentialBayes
 
 
 variable {A B : Type*} [Fintype A] [Fintype B]

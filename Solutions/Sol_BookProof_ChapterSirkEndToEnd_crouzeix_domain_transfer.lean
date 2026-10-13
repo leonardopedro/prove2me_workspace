@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSirkEndToEnd
 import Theorems.Thm_BookProof_ChapterH9_numRange_compress_subset
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH9
 open BookProof.ChapterSirkEndToEnd
 
 

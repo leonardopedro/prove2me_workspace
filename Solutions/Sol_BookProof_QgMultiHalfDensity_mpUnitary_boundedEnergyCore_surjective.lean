@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Theorems.Thm_BookProof_QgMultiHalfDensity_mpUnitary_symm_apply
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterNavierStokesFockContinuum
 open BookProof.QgMultiHalfDensity
 
 

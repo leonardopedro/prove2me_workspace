@@ -1,6 +1,8 @@
 -- Generated from ChapterA1c.lean — solution of BookProof.ChapterA.IsConjugation.commutesAntiUnitary
 import Mathlib
 import Definitions.Def_ChapterA1c
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

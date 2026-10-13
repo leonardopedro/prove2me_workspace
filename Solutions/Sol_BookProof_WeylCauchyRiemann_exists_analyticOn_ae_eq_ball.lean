@@ -15,6 +15,7 @@ import Theorems.Thm_BookProof_RadialMollifier_moll_contDiff
 import Theorems.Thm_BookProof_RadialMollifier_moll_continuous
 import Theorems.Thm_BookProof_RadialMollifier_moll_hasCompactSupport
 import Theorems.Thm_BookProof_RadialMollifier_moll_support_subset
+import Definitions.Def_ChapterRadialMollifier
 open BookProof.WeylCauchyRiemann
 
 

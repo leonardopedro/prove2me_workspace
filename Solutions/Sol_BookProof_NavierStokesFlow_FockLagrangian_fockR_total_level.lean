@@ -4,6 +4,9 @@ import Definitions.Def_ChapterNavierStokesFockParcels
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_total
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -14,6 +17,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.NavierStokesFlow.ThreeComponent
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 

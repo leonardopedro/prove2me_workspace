@@ -6,6 +6,13 @@ import Theorems.Thm_BookProof_GradedBandSchur_wRow_of_gradedBand
 import Theorems.Thm_BookProof_GradedBandSchur_wCol_of_gradedBand
 import Theorems.Thm_BookProof_GradedBandSchur_wComm_of_gradedBand
 import Theorems.Thm_BookProof_FockWeightedSchur_dGamma_essentiallySelfAdjointOn_core_w
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.GradedBandSchur
 
 
@@ -13,6 +20,7 @@ open BookProof.GradedBandSchur
 
 open BookProof.FockSecondQuantization BookProof.FockSchur BookProof.FockWeightedSchur
 open BookProof.FarisLavine BookProof.NavierStokesFlow
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

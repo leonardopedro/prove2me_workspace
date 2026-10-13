@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterParityHypercharge
 import Theorems.Thm_BookProof_ChapterA3_mgamma5_sq
+import Definitions.Def_ChapterA3
 open BookProof.ChapterParityHypercharge
 
 

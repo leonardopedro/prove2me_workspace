@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
 import Theorems.Thm_BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 open BookProof.ChapterFreeFieldBornFiberStabilizer
 
 

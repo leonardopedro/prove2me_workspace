@@ -1,6 +1,10 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.Q_gf_anticomm
 import Mathlib
 import Theorems.Thm_BookProof_BRSTNilpotent_beta_move
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.BookBrstGaugeFixing
 
 
@@ -8,6 +12,7 @@ open BookProof.BookBrstGaugeFixing
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
+open BookProof.BRSTNilpotent
 
 noncomputable section
 
@@ -15,11 +20,11 @@ variable {R : Type*} [Ring R] [Algebra ℝ R] {n : ℕ}
 variable {f : Fin n → Fin n → Fin n → ℝ} {Gc χ β B : Fin n → R}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (hCAR : GhostCAR χ β) (hf12 : ∀ a b c, f a b c = -f b a c)
     (hBχ : ∀ a b, B a * χ b = χ b * B a) (hBβ : ∀ a b, B a * β b = β b * B a) :
     Q f χ β * gfFermion β B + gfFermion β B * Q f χ β
       = ∑ a, ∑ b, ∑ c, (2 * f a b c) • (B a * (χ b * β c)) := by
-
   classical
   have hghost : ∀ a b c d : Fin n,
       (χ a * χ b * β c) * β d + β d * (χ a * χ b * β c)

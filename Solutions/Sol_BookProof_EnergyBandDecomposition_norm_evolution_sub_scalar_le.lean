@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEnergyBandDecomposition
 import Theorems.Thm_BookProof_EnergyBandDecomposition_energy_sub_scalar_lt
-import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le_prime
+import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le'
 open BookProof.EnergyBandDecomposition
 
 

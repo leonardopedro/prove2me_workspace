@@ -1,12 +1,15 @@
 -- Generated from ChapterYangMillsHermite.lean — solution of BookProof.YangMillsHermite.PolySym.add
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_add
+
 import Theorems.Thm_BookProof_YangMillsHermite_starP_add
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.YangMillsHermite
-
-
-
 
 open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs

@@ -1,6 +1,7 @@
 -- Generated from ChapterPauliCommutant.lean — solution of BookProof.ChapterA3.mgammaZ_transpose
 import Mathlib
 import Definitions.Def_ChapterPauliCommutant
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

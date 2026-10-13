@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterDegSchrodingerCore
 import Theorems.Thm_BookProof_DegSchrodinger_abs_coord_le_norm
 import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
 open BookProof.DegSchrodinger
 
 
@@ -12,6 +21,8 @@ open MeasureTheory SchwartzMap MvPolynomial
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteCore
 
 noncomputable section
 

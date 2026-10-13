@@ -7,12 +7,8 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 variable {ι : Type*} [Fintype ι]
 
-
-
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 
-
- exact congrArg (fun y => (T y).toLp 2 (volume : Measure V))
-    (LinearEquiv.symm_apply_apply (schwartzEquiv V) f)
-
-theorem BookProof.StrichartzWave.schwartzEquiv_coe (f : 𝓢(V, ℂ)) := by sorry
+theorem BookProof.StrichartzWave.schwartzEquiv_coe (f : 𝓢(V, ℂ)) :
+    ((schwartzEquiv V f : schwartzDomain V) : Lp ℂ 2 (volume : Measure V))
+      = f.toLp 2 (volume : Measure V) := by sorry

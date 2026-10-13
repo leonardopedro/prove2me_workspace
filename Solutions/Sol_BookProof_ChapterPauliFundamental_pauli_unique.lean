@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_exists_intertwiner
 import Theorems.Thm_BookProof_ChapterGammaCommutant_gamma_commutant_scalar
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

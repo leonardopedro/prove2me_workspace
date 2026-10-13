@@ -4,6 +4,10 @@ import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_inner_hermiteLp_eq_zero_iff
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteCoreOp_hermiteLp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteStrichartzQG
 
 
@@ -11,6 +15,7 @@ open BookProof.HermiteStrichartzQG
 
 open MeasureTheory BookProof.HermiteCore BookProof.FarisLavine
 open BookProof.QuantumGravityDensitized
+open BookProof.HermiteCore
 
 set_option maxHeartbeats 1000000 in
 theorem solution (lam : ℕ → ℝ) {z : ℂ} (hz : z.im ≠ 0) :

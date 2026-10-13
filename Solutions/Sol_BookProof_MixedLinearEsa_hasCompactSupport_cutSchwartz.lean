@@ -1,6 +1,9 @@
 -- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.hasCompactSupport_cutSchwartz
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
 open BookProof.MixedLinearEsa
 
 

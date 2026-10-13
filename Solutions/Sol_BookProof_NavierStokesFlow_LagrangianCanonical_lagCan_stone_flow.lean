@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_lagCan_esa
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
@@ -18,6 +25,7 @@ open CanonicalVector ThreeComponent
 variable (nu : ℝ)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.EsaClosure BookProof.StoneBridge
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     ∃ (T : UnboundedSelfAdjoint (L2I Vel)) (U : ℝ → (L2I Vel →L[ℂ] L2I Vel)),
       IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op ∧ IsStoneFlow T U :=

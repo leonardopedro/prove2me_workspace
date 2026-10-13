@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.QgTruncationResolvent
 
 
@@ -12,6 +21,7 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -22,8 +32,12 @@ variable {ι : Type*}
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (Λ : Set ι) {x : secCore (ι := by
 
+theorem solution (Λ : Set ι) {x : secCore (ι := ι)} {P : Finset ι}
+    (hP1 : ∀ a, a ∉ P → (x : Sec ι) a = 0)
+    (hP2 : ∀ a, a ∉ P → ∀ b ∈ Q.nbr a, (x : Sec ι) b = 0)
+    (hPΛ : ∀ a ∈ P, a ∈ Λ) :
+    secHam W (truncModes Q Λ) x = secHam W Q x := by
   classical
   refine lp.ext (funext fun a => ?_)
   rw [secHam_apply, secHam_apply]

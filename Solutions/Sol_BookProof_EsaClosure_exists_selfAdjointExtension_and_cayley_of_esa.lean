@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
 import Theorems.Thm_BookProof_EsaClosure_exists_cayley_unitary
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaClosure
 
 

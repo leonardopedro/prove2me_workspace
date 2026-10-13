@@ -1,6 +1,7 @@
 -- Generated from ChapterScaledDotProduct.lean — solution of BookProof.ChapterScaledDotProduct.flipEquiv_apply_self
 import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

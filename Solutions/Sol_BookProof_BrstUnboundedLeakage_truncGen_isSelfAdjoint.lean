@@ -4,6 +4,10 @@ import Definitions.Def_ChapterBrstUnboundedLeakage
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_projOp_apply_mem
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_projOp_inner
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstUnboundedLeakage
 
 
@@ -13,6 +17,9 @@ open scoped InnerProductSpace
 
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
+open BookProof.BrstLeakage
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 

@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
 import Theorems.Thm_BookProof_SchrodingerCutoff_integral_deriv_eq_zero_of_hasCompactSupport
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallEsaBddBelow
 open BookProof.WallEsaSemibounded
 
 

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSolovayTailDimension
 import Theorems.Thm_BookProof_ChapterSolovayTailDimension_substrateIntervals_disjoint
 import Theorems.Thm_BookProof_ChapterSolovayTailDimension_norm_substrateBasisVector
+import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovayTailDimension
 
 
@@ -11,6 +12,7 @@ noncomputable section
 
 open MeasureTheory Set PhysMehler PhysMeasureBasis
 open scoped ENNReal
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution : Orthonormal ℝ substrateBasisVector := by

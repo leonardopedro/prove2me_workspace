@@ -1,6 +1,8 @@
 -- Generated from ChapterPauliFundamental.lean — solution of BookProof.ChapterPauliFundamental.G_eq_map
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3
 open BookProof.ChapterPauliFundamental
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterGravityTimeProj.lean — solution of BookProof.ChapterGravityTimeProj.trace_timeProj
 import Mathlib
 import Definitions.Def_ChapterGravityTimeProj
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityTimeProj
 
 

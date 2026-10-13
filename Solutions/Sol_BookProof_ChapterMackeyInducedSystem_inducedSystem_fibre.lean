@@ -1,6 +1,7 @@
 -- Generated from ChapterMackeyInducedSystem.lean — solution of BookProof.ChapterMackeyInducedSystem.inducedSystem_fibre
 import Mathlib
 import Definitions.Def_ChapterMackeyInducedSystem
+import Definitions.Def_ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyInducedSystem
 
 

@@ -4,6 +4,15 @@ import Definitions.Def_ChapterGradedFriedrichs
 import Theorems.Thm_BookProof_GradedFriedrichs_sliceSnd_liftSnd
 import Theorems.Thm_BookProof_GradedFriedrichs_ainner_eq_sum_sliceSnd
 import Theorems.Thm_BookProof_GradedFriedrichs_subset_rect
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterGradedFock
 open BookProof.GradedFriedrichs
 
 
@@ -20,9 +29,9 @@ variable {γ : Type*}
 variable {α β : Type*}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {S : Module.End ℂ (β →₀ ℂ)} (hS : IsSymAlg S) :
-    IsSymAlg (liftSnd (α := by
 
+theorem solution {S : Module.End ℂ (β →₀ ℂ)} (hS : IsSymAlg S) :
+    IsSymAlg (liftSnd (α := α) S) := by
   classical
   intro u v
   set s : Finset (α × β) :=

@@ -1,6 +1,7 @@
 -- Generated from ChapterFreeFieldSphere.lean — solution of BookProof.ChapterFreeFieldSphere.normalize_comm
 import Mathlib
 import Definitions.Def_ChapterFreeFieldSphere
+import Definitions.Def_ChapterFreeFieldGaussian
 open BookProof.ChapterFreeFieldSphere
 
 

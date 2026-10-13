@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_repState_one
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_isProbabilityMeasure_stateMeasure
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianCyclicModel
 
 

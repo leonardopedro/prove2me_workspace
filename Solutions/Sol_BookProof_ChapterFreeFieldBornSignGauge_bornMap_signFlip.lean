@@ -1,6 +1,7 @@
 -- Generated from ChapterFreeFieldBornSignGauge.lean — solution of BookProof.ChapterFreeFieldBornSignGauge.bornMap_signFlip
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignGauge
+import Definitions.Def_ChapterFreeFieldBorn
 open BookProof.ChapterFreeFieldBornSignGauge
 
 

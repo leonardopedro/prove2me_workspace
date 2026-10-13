@@ -6,6 +6,12 @@ import Theorems.Thm_BookProof_HermiteLadder_LadderOrd_sub
 import Theorems.Thm_BookProof_HermiteLadder_ladderOrd_annPoly
 import Theorems.Thm_BookProof_HermiteLadder_ladderOrd_crePoly
 import Theorems.Thm_BookProof_HermiteLadder_coreDL_eq
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.HermiteLadder
 
 
@@ -15,6 +21,9 @@ open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.DegSchrodinger
 open scoped ENNReal
+open BookProof.HermiteProductBasis
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
 
 noncomputable section
 

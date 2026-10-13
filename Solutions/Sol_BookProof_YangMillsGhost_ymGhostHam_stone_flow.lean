@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_YangMillsGhost_ghostCore_dense
 import Theorems.Thm_BookProof_YangMillsGhost_ymGhostHam_symmetricOn
 import Theorems.Thm_BookProof_YangMillsGhost_ymGhostHam_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.YangMillsGhost
 
 
@@ -14,8 +24,11 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
-open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
+open BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
+open BookProof.HermiteProductCore
+open BookProof.StoneBridge
 
 variable {K : ℕ}
 

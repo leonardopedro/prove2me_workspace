@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deficiencyVec_ne_zero
 import Theorems.Thm_BookProof_HalfLineLimitCircle_hlKin_deficiency_identity
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HalfLineLimitCircle
 
 

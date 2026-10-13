@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_FockStatistics_exists_ne_zero_cbosonic
 import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -10,6 +13,7 @@ open BookProof.FockStatistics
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.TensorCore
 
 noncomputable section
 

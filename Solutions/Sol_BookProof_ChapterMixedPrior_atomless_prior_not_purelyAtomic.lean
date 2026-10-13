@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMixedPrior
 import Theorems.Thm_BookProof_ChapterMixedPrior_eq_zero_of_noAtoms_of_isPurelyAtomic
+import Definitions.Def_ChapterAtomicDecomposition
 open BookProof.ChapterMixedPrior
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterUnitaryCompleteReducibility.lean — solution of BookProof.ChapterUnitaryCompleteReducibility.exists_irreducible_invariant_le
 import Mathlib
 import Definitions.Def_ChapterUnitaryCompleteReducibility
+import Definitions.Def_ChapterMaschkeFiniteGroup
 open BookProof.ChapterUnitaryCompleteReducibility
 
 

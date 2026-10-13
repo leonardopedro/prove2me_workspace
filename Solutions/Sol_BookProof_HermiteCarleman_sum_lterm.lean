@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
 import Theorems.Thm_BookProof_HermiteCarleman_sum_shift
 import Theorems.Thm_BookProof_HermiteCarleman_lterm_shift
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.HermiteCarleman
 
 

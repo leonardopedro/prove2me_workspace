@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterLorentzRealRep_conj_inv_half
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_mul
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_conjL_apply
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_castR_mem_WHalf
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRep
 
 

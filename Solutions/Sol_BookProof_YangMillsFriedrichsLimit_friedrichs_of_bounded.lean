@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_symmetricOn_top_of_dense
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_quadForm_top_nonneg_of_dense
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.YangMillsFriedrichsLimit
 
 

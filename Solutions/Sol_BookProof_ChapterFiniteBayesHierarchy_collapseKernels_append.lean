@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFiniteBayesHierarchy
 import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_compKernel_assoc
 import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_idKernel_comp
+import Definitions.Def_ChapterHierarchicalBayesComposition
 open BookProof.ChapterFiniteBayesHierarchy
 
 
@@ -17,10 +18,10 @@ variable {S : Type*} [Fintype S] [DecidableEq S]
 variable {S : Type*} [Fintype S] [DecidableEq S]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (ks₁ ks₂ : List (S → S → ℝ)) :
     collapseKernels (ks₁ ++ ks₂) =
       compKernel (collapseKernels ks₁) (collapseKernels ks₂) := by
-
   induction ks₁ with
   | nil => simp [idKernel_comp]
   | cons k ks₁ ih => 

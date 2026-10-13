@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 import Theorems.Thm_BookProof_CarlemanGeneralHop_sum_hop_im
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanGeneralHop
 
 

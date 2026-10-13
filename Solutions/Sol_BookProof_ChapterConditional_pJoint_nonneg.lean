@@ -21,3 +21,8 @@ def pCond (B : Matrix Y X 𝕜) (x : X) (y : Y) : ℝ := by
   exact sq_nonneg _
 
 omit [Fintype X] [DecidableEq X] in
+
+theorem solution (B : Matrix Y X 𝕜) (x : X) (y : Y) : 0 ≤ pJoint B x y := by
+  exact sq_nonneg _
+
+omit [Fintype X] [DecidableEq X] in

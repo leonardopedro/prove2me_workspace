@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ChapterSchurIrreducible_rangeClosure_invariant
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_rangeClosure_ne_bot
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_rangeClosure_ne_top
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_cfc_ne_zero_of_mem_spectrum
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurIrreducible
 
 
@@ -14,6 +15,8 @@ open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System
+open BookProof.ChapterA
+open BookProof.ChapterA BookProof.ChapterA
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 

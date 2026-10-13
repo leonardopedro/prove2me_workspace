@@ -1,6 +1,8 @@
 -- Generated from ChapterA1f.lean — solution of BookProof.ChapterA.conjFixed_invariant
 import Mathlib
 import Definitions.Def_ChapterA1f
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

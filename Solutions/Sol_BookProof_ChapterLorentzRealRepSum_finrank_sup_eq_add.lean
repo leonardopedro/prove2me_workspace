@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_finrank_WHalf
 import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_finrank_W10
 import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_finrank_WPs
 import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_finrank_sup
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 
 

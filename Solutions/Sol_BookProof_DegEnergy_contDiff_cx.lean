@@ -1,6 +1,10 @@
 -- Generated from ChapterDegEnergyEstimate.lean — solution of BookProof.DegEnergy.contDiff_cx
 import Mathlib
 import Definitions.Def_ChapterDegEnergyEstimate
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterConvolutionCalc
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.DegEnergy
 
 
@@ -9,6 +13,7 @@ open BookProof.DegEnergy
 open MeasureTheory
 open BookProof.HermiteProductCore BookProof.QgOneParticleCc BookProof.DegSchrodinger
 open BookProof.ConvolutionCalc
+open BookProof.HermiteProductCore
 
 noncomputable section
 

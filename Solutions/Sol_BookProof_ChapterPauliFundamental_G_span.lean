@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_linearIndependent
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
 open BookProof.ChapterPauliFundamental
 
 

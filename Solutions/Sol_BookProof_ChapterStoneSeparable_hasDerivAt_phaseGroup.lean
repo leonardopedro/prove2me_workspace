@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterStoneSeparable
 import Theorems.Thm_BookProof_ChapterUnboundedPosition_tendsto_slope_phaseUnitary
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterStoneSeparable
 
 
@@ -11,6 +16,9 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterF7
+open BookProof.ChapterUnboundedPosition
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
   [TopologicalSpace.SeparableSpace H]

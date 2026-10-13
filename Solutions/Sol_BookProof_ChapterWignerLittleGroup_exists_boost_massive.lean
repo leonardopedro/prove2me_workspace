@@ -9,6 +9,13 @@ open BookProof.ChapterWignerLittleGroup
 
 open Matrix Complex
 
+
+@[simp] private theorem hermOfMom_conjTranspose (p : Fin 4 → ℝ) :
+    (hermOfMom p)ᴴ = hermOfMom p := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [hermOfMom, Matrix.conjTranspose_apply, Complex.ext_iff]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℝ} (hm : 0 < m) (p : Fin 4 → ℝ) (hp0 : 0 < p 0)
     (hshell : p 0 ^ 2 - p 1 ^ 2 - p 2 ^ 2 - p 3 ^ 2 = m ^ 2) :

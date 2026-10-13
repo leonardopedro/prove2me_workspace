@@ -6,6 +6,14 @@ import Theorems.Thm_BookProof_WallEsaBddBelow_wallHam_add_const
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.WallEsaBddBelow
 
 
@@ -15,6 +23,8 @@ open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

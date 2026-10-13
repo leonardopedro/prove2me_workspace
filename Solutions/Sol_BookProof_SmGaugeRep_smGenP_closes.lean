@@ -8,6 +8,9 @@ import Theorems.Thm_BookProof_SmGaugeRep_sum_kronecker_left
 import Theorems.Thm_BookProof_SmGaugeRep_kronecker_sum_right
 import Theorems.Thm_BookProof_SmGaugeRep_smGenP_hyp_comm
 import Theorems.Thm_BookProof_SmGaugeRep_smGenP_col_iso_comm
+import Definitions.Def_ChapterParitySU2
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmGaugeRep
 
 

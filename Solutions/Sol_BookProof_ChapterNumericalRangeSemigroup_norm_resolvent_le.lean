@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNumericalRangeSemigroup
 import Theorems.Thm_BookProof_ChapterNumericalRangeSemigroup_shift_symm_apply
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterNumericalRangeSemigroup
 
 

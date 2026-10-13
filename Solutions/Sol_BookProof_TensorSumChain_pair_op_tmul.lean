@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
 import Theorems.Thm_BookProof_TensorSumEsa_cpairOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 open BookProof.TensorSumChain
 
 

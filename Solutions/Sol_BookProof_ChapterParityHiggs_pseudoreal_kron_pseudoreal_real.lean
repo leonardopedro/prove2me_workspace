@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterParityHiggs
 import Theorems.Thm_BookProof_ChapterParityHiggs_kronecker_map_conj
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityHiggs
 
 

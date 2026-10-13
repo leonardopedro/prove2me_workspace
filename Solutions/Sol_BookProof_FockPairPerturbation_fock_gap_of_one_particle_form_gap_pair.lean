@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterFockPairPerturbation
 import Theorems.Thm_BookProof_FockPairPerturbation_fock_gap_of_pair_perturbation
 import Theorems.Thm_BookProof_YangMillsFockGapChain_isPosCol_shiftCol_opCol_of_form_gap
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.FockPairPerturbation
 
 
@@ -13,6 +20,8 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockInteractionStability
 open BookProof.FockFieldPerturbation
+open BookProof.FockSecondQuantization
+open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSmDiracSpinor
 import Theorems.Thm_BookProof_SmDiracSpinor_diracOneParticle_hermitian
 import Theorems.Thm_BookProof_SmCar_fermiBilin_symmetric
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracSpinor
 
 

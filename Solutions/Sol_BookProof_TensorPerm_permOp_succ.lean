@@ -1,6 +1,9 @@
 -- Generated from ChapterTensorPermutation.lean — solution of BookProof.TensorPerm.permOp_succ
 import Mathlib
 import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorPerm
 
 

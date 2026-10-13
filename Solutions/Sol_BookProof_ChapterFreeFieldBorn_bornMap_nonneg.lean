@@ -1,6 +1,9 @@
 -- Generated from ChapterFreeFieldBorn.lean — solution of BookProof.ChapterFreeFieldBorn.bornMap_nonneg
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldGaussian
+import Definitions.Def_ChapterFreeFieldSphere
+import Definitions.Def_ChapterFreeFieldSphereSupport
 open BookProof.ChapterFreeFieldBorn
 
 

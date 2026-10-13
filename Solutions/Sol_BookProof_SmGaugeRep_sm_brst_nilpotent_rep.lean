@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSmGaugeRepresentation
 import Theorems.Thm_BookProof_SmGaugeRep_smGen_closes
 import Theorems.Thm_BookProof_SmGaugeRep_sm_brst_nilpotent_of_su3_relations
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmGaugeRep
 
 

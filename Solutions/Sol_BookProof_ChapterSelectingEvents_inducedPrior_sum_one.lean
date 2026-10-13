@@ -1,6 +1,7 @@
 -- Generated from ChapterSelectingEvents.lean — solution of BookProof.ChapterSelectingEvents.inducedPrior_sum_one
 import Mathlib
 import Definitions.Def_ChapterSelectingEvents
+import Definitions.Def_ChapterDeepLearningSampling
 open BookProof.ChapterSelectingEvents
 
 

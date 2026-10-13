@@ -1,7 +1,7 @@
 -- Generated from ChapterEsaClosure.lean — solution of BookProof.EsaClosure.hashimoto_multishift_selects_esa
 import Mathlib
 import Definitions.Def_ChapterEsaClosure
-import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
+
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_dom_eq_range
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvertC_opNorm_le
 import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective
@@ -12,12 +12,17 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_determines
 import Theorems.Thm_BookProof_HashimotoShiftInvert_shiftInvertC_resolvent_identity
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sirkDen_rkVec
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.EsaClosure
 
-
-
 open Filter Topology
-
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
@@ -31,6 +36,7 @@ variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open `BookProof.HashimotoShiftInvert`.
 theorem solution (b : HilbertBasis ℕ ℂ F) (T : D →ₗ[ℂ] F)
     (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T)
     (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

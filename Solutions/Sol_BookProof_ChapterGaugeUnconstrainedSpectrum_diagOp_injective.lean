@@ -1,7 +1,9 @@
 -- Generated from ChapterGaugeUnconstrainedSpectrum.lean — solution of BookProof.ChapterGaugeUnconstrainedSpectrum.diagOp_injective
 import Mathlib
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterAbelianDiagonalCountable
 open BookProof.ChapterGaugeUnconstrainedSpectrum
+open BookProof.ChapterAbelianDiagonalCountable
 
 
 
@@ -11,8 +13,8 @@ variable {X : Type*}
 variable {X : Type*}
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Function.Injective (diagOp (X := X)) := by
 
+theorem solution : Function.Injective (diagOp (X := X)) := by
   intro d e h
   funext x
   have := congrArg (fun T : Op X => T (fun _ => (1 : ℂ)) x) h

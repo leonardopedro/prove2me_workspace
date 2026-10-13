@@ -1,6 +1,8 @@
 -- Generated from PhysMehler.lean — solution of PhysMehler.prior_surjective_onto_atomless
 import Mathlib
 import Definitions.Def_PhysMehler
+import Definitions.Def_PhysMeasureBasis
+import Definitions.Def_ChapterA4
 open PhysMehler
 
 
@@ -12,6 +14,7 @@ noncomputable section
 
 
 open PhysMeasureBasis PhysFunctionalAnalysis PhysHSGaussian
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution (μ : Measure Substrate)

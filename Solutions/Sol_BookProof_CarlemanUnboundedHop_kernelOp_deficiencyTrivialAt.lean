@@ -4,12 +4,18 @@ import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_ladder_eq_zero_of_carleman
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_summable_normSq_lp
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterKernelBound
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.CarlemanUnboundedHop
 
 
 
 
 open Finset
+open BookProof.KernelBound
+open BookProof.FarisLavine
+open BookProof.NavierStokesFlow
 
 noncomputable section
 

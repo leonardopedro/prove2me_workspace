@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterVielbeinFiberFock
 import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_stone_flow
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronFockEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.VielbeinFock
 
 
@@ -12,6 +21,8 @@ open Filter Topology MeasureTheory
 open BookProof.Starobinsky BookProof.ScalaronEsa BookProof.ScalaronFock
 open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.FarisLavine BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
+open BookProof.StoneBridge
 
 noncomputable section
 

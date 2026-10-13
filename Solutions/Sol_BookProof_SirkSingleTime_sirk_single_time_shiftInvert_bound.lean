@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Theorems.Thm_BookProof_ChapterSirkEndToEnd_sirk_end_to_end
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.SirkSingleTime
 
 
@@ -12,6 +19,9 @@ open scoped InnerProductSpace
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert
+open BookProof.ChapterH4
+open BookProof.ChapterH6
+open BookProof.ChapterSirkEndToEnd
 
 noncomputable section
 

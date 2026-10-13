@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_KoopmanLyapunov_kvnGenOp_symmetricOn
 import Theorems.Thm_BookProof_KoopmanLyapunov_mulCoreOp_symmetricOn
 import Theorems.Thm_BookProof_KoopmanLyapunov_quadForm_mulCoreOp_nonneg
 import Theorems.Thm_BookProof_KoopmanLyapunov_commForm_kvnGen_mul_bound
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.KoopmanLyapunov
 
 
@@ -13,6 +18,8 @@ open BookProof.KoopmanLyapunov
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
 open BookProof.NsKoopman
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 
 noncomputable section
 

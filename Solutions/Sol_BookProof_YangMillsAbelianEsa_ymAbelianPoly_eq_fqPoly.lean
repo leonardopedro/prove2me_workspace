@@ -6,6 +6,20 @@ import Theorems.Thm_BookProof_YangMillsAbelianEsa_sum_ymMomVec_mom
 import Theorems.Thm_BookProof_YangMillsAbelianEsa_sum_ymMagVec_mulX
 import Theorems.Thm_BookProof_YangMillsAbelianEsa_ymAbelianPoly_apply
 import Theorems.Thm_BookProof_HermiteRelative_momPoly_eq_ymMomOp
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaugeMechanicsCharge
 open BookProof.YangMillsAbelianEsa
 
 
@@ -19,12 +33,15 @@ open BookProof.HermiteRelative
 open BookProof.FullQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.ChapterF7
+open BookProof.YangMillsHermite
+open BookProof.ChapterGaugeMechanicsCharge
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : ymAbelianPoly = fqPoly ymFqP ymFqQ 0 0 0 := by
 
+theorem solution : ymAbelianPoly = fqPoly ymFqP ymFqQ 0 0 0 := by
   refine LinearMap.ext fun p => ?_
   have hfo : foPoly (d := 99) 0 0 p = 0 := by simp [foPoly]
   have hmom : ∑ i : Fin 99, ∑ j : Fin 99,
@@ -67,3 +84,5 @@ theorem solution : ymAbelianPoly = fqPoly ymFqP ymFqQ 0 0 0 := by
     rw [← Finset.sum_add_distrib]
     exact Finset.sum_congr rfl fun i _ => Finset.sum_add_distrib
   rw [ymAbelianPoly_apply, hfq, hmom, hmul, smul_add]
+
+/-! ## 4. Transport to the core of `L²(ℝ⁹⁹)` -/

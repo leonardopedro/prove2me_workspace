@@ -2,12 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterSolovay
 import Theorems.Thm_PhysMehler_rcpPriorOnSubstrate_atomless
+import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovay
 
 
 
 open MeasureTheory ProbabilityTheory
 open scoped ENNReal Filter Topology
+open PhysMeasureBasis
 
 set_option maxHeartbeats 1000000 in
 theorem solution : TailPriorAdmissible _root_.tailMeasure := by

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterThermalTemperatureCore
 import Theorems.Thm_BookProof_ChapterCoherentOccupation_coherentOccupation_energy
+import Definitions.Def_ChapterCoherentTemperature
+import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentOccupation
 open BookProof.ChapterThermalTemperatureCore
 
 

@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterFermionFock
 import Theorems.Thm_BookProof_FermionFock_fsign_insert_of_ne
 import Theorems.Thm_BookProof_FermionFock_annF_apply
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FermionFock
 
 

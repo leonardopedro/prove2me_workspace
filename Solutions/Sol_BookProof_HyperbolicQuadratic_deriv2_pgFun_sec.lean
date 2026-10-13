@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_deriv_pgFun_sec
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_sec_self
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.HyperbolicQuadratic
 
 

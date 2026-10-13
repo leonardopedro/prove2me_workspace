@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSelectingEvents
 import Theorems.Thm_BookProof_AbelianDiagonal_vonNeumann_abelian_typeI_case
+import Definitions.Def_ChapterAbelianDiagonal
 open BookProof.ChapterSelectingEvents
 
 

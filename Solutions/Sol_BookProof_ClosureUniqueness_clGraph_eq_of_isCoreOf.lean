@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_le_of_extends
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.ClosureUniqueness
 
 

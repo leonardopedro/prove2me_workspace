@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left_fourier
 import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

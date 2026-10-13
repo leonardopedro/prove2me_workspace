@@ -1,6 +1,10 @@
 -- Generated from ChapterTensorKatoRellich.lean — solution of BookProof.TensorKatoRellich.norm_sq_sum_tmul_orthonormal
 import Mathlib
 import Definitions.Def_ChapterTensorKatoRellich
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 open BookProof.TensorKatoRellich
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterMackeyCocycle.lean — solution of BookProof.ChapterMackeyCocycle.mem_smul_image_iff
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmCyclicUnitary
 open BookProof.ChapterMackeyCocycle
 
 

@@ -1,6 +1,10 @@
 -- Generated from ChapterTensorSumChain.lean — solution of BookProof.TensorSumChain.chain_esa
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TensorSumChain
 
 

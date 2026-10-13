@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_single_mem_dsCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.DirectSumEsa
 
 

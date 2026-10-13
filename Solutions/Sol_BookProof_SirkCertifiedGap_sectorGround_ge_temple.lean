@@ -5,10 +5,13 @@ import Theorems.Thm_BookProof_SirkCertifiedGap_sectorRestrict_isSymmetric
 import Theorems.Thm_BookProof_SirkCertifiedGap_rayleigh_sectorRestrict
 import Theorems.Thm_BookProof_SirkCertifiedGap_sectorGround_eq_inf_eigenvalues
 import Theorems.Thm_BookProof_SirkFinitePrecision_temple_lower_bound
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.SirkCertifiedGap
 
 
 
+open BookProof.RitzCertificate
 noncomputable section
 
 

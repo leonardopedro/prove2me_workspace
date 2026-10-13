@@ -1,6 +1,7 @@
 -- Generated from ChapterObservableExpectation.lean — solution of BookProof.ChapterObservableExpectation.observableExpectation_const
 import Mathlib
 import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterObservableExpectation
 
 

@@ -1,9 +1,14 @@
 -- Generated from ChapterH8.lean — solution of BookProof.ChapterH8.adjoint_aeval
 import Mathlib
 import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH8
 
 
+
+open ContinuousLinearMap
 
 noncomputable section
 

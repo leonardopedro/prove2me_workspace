@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionStreaming
 import Theorems.Thm_BookProof_ChapterAttentionStreaming_scoreSoftmax_snoc_castSucc
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionStreaming
 
 

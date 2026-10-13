@@ -1,6 +1,7 @@
 -- Generated from ChapterSchurIrreducible.lean — solution of BookProof.ChapterSchurIrreducible.mem_rangeClosure
 import Mathlib
 import Definitions.Def_ChapterSchurIrreducible
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurIrreducible
 
 

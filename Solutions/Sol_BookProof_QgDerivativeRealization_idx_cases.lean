@@ -1,6 +1,9 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.idx_cases
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QgDerivativeRealization
 
 

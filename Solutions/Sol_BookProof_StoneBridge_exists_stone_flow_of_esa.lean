@@ -2,7 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterStoneBridge
 import Theorems.Thm_BookProof_StoneBridge_isStoneFlow_stoneU
-import Theorems.Thm_BookProof_EsaClosure_exists_isSelfAdjointExtension_of_esa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.StoneBridge
 
 
@@ -13,6 +20,7 @@ open scoped InnerProductSpace
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.YangMillsFriedrichs
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

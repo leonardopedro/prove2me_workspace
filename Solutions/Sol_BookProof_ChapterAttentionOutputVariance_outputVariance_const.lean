@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionOutputVariance
 import Theorems.Thm_BookProof_ChapterObservableExpectation_observableExpectation_const
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterAttentionOutputVariance
 
 

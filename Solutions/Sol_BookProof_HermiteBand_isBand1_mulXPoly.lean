@@ -1,12 +1,15 @@
 -- Generated from ChapterHermiteBandCalculus.lean — solution of BookProof.HermiteBand.isBand1_mulXPoly
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculus
-import Theorems.Thm_BookProof_HermiteBand_Band_add
 import Theorems.Thm_BookProof_HermiteBand_IsBand1_add
 import Theorems.Thm_BookProof_HermiteBand_IsBand2_add
 import Theorems.Thm_BookProof_HermiteBand_isBand1_crePoly
 import Theorems.Thm_BookProof_HermiteBand_isBand1_annPoly
 import Theorems.Thm_BookProof_HermiteBand_mulXPoly_eq
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.HermiteBand
 
 

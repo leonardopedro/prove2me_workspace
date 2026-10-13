@@ -50,36 +50,6 @@ same shift and symbol and amplitude `¼ σ + K`, so all the transport lemmas of
   all** on `κ` and `c`.
 -/
 
-open scoped ENNReal
-
-namespace BookProof.NavierStokesFlow
-
-namespace SignedShift
-
-open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian AffineFiber
-
-variable {ι : Type*}
-
-/-- The data of a hopping term with an **arbitrary real** amplitude: an
-injective shift, a real amplitude dominated in absolute value by `¼ σ + K`, and
-a constant non-negative increment of the symbol along the shift.  Neither
-positivity nor monotonicity of the amplitude is assumed. -/
-structure SignedHop (ι : Type*) (sym : ι → ℝ) where
-  /-- The shift: the hopping `β ↦ s β`. -/
-  shift : ι → ι
-  /-- The (signed) hopping amplitude. -/
-  amp : ι → ℝ
-  /-- The additive constant in the domination of the amplitude by the symbol. -/
-  K : ℝ
-  /-- The increment of the symbol along the shift. -/
-  step : ℝ
-  shift_injective : Function.Injective shift
-  K_nonneg : 0 ≤ K
-  step_nonneg : 0 ≤ step
-  sym_ge_one : ∀ β, 1 ≤ sym β
-  abs_amp_le : ∀ β, |amp β| ≤ (1 / 4) * sym β + K
-  sym_step : ∀ β, sym (shift β) = sym β + step
-
 namespace SignedHop
 
 variable {sym : ι → ℝ} (S : SignedHop ι sym)

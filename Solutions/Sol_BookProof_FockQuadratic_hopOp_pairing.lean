@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterFockQuadraticEsa
 import Theorems.Thm_BookProof_FockQuadratic_tsum_hop_reindex
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FockQuadratic
 
 

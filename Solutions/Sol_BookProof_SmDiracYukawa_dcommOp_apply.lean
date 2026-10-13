@@ -1,6 +1,8 @@
 -- Generated from ChapterSmDiracYukawa.lean — solution of BookProof.SmDiracYukawa.dcommOp_apply
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

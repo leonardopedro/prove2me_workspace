@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_DensitySpectral_bornKernel_row_sum
 import Theorems.Thm_BookProof_DensitySpectral_bornKernel_col_sum
 import Theorems.Thm_BookProof_DensitySpectral_density_diag_eq_kernel_apply
 import Theorems.Thm_BookProof_DensitySpectral_density_iff_exists_unitary_diagonal
+import Definitions.Def_ChapterB4
 open BookProof.DensitySpectral
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_clGraph_le_opGraph_of_isClosedExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

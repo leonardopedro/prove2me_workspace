@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — solution of BookProof.NavierStokesFlow.AffineFiber.commForm_add
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 

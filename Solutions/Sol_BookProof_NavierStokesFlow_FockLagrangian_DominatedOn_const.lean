@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.const
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 

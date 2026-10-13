@@ -1,6 +1,8 @@
 -- Generated from ChapterMajoranaProp74.lean — solution of BookProof.ChapterMajoranaProp74.prop74_intertwine
 import Mathlib
 import Definitions.Def_ChapterMajoranaProp74
+import Definitions.Def_ChapterMajoranaFourier
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaProp74
 
 

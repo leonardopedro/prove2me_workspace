@@ -4,6 +4,7 @@ import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_lam_sq
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deficiencyFun_hasDerivAt
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deriv_deficiencyFun
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

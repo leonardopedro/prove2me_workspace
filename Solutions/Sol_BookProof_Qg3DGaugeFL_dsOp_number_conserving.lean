@@ -2,6 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Theorems.Thm_BookProof_Qg3DGaugeFL_dsOp_sector
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterFarisLavineOnly
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
 open BookProof.Qg3DGaugeFL
 
 
@@ -12,6 +23,7 @@ open BookProof.QgOuterFock BookProof.FarisLavineOnly
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.DirectSumEsa
 
 noncomputable section
 

@@ -3,7 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterFockQuadraticEsa
 import Theorems.Thm_BookProof_FockQuadratic_fockH_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_FockQuadratic_wsum_pairIdx
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FockQuadratic
 
 
@@ -13,6 +21,9 @@ open scoped ENNReal
 
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries
+open BookProof.ChapterA3n
+open BookProof.DirectSumEsa
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

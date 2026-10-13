@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_mem_coreGraph_iff
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.VonNeumannCore
 
 
@@ -9,6 +13,7 @@ open BookProof.VonNeumannCore
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

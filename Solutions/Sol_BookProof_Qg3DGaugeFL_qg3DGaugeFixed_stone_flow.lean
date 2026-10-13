@@ -4,6 +4,18 @@ import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Theorems.Thm_BookProof_Qg3DGaugeFL_qg3DGaugeFixed_esa_fl
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterFarisLavineOnly
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.Qg3DGaugeFL
 
 
@@ -14,6 +26,10 @@ open BookProof.QgOuterFock BookProof.FarisLavineOnly
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
+open BookProof.HermiteProductCore
+open BookProof.QuantumGravity3DGauge
+open BookProof.StoneBridge
 
 noncomputable section
 

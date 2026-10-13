@@ -1,6 +1,21 @@
 -- Generated from ChapterNsOneBodyDGamma.lean — solution of BookProof.NsOneBody.quadForm_add
 import Mathlib
 import Definitions.Def_ChapterNsOneBodyDGamma
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.NsOneBody
 
 

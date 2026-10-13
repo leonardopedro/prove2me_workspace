@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_comm
 import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_coordUnit_apply
 import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_coordUnit_eq
 import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 open BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterAbelianDiagonalCountable
 
@@ -14,10 +15,18 @@ open scoped ENNReal
 
 noncomputable section
 
+
+@[simp] private theorem norm_atom (i : ℕ) : ‖atom i‖ = 1 := by
+  rw [atom, lp.norm_single (by norm_num)]
+  simp
+
 set_option maxHeartbeats 1000000 in
+
+@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+
 theorem solution (T : Ell2C →L[ℂ] Ell2C) :
     (∀ d : EllInf, T.comp (diagOp d) = (diagOp d).comp T) ↔ ∃ d : EllInf, T = diagOp d := by
-
   constructor
   · intro hT
     -- the diagonal entries

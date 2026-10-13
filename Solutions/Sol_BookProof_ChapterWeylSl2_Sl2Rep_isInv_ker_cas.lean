@@ -4,6 +4,8 @@ import Definitions.Def_ChapterWeylSl2
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_cas_comm_apply_E
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_cas_comm_apply_F
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_cas_comm_apply_H
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
 

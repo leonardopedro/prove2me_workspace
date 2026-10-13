@@ -4,6 +4,12 @@ import Definitions.Def_ChapterPositiveSquareRootUnique
 import Theorems.Thm_BookProof_PositiveSquareRoot_den_pos
 import Theorems.Thm_BookProof_PositiveSquareRoot_continuous_gFun
 import Theorems.Thm_BookProof_PositiveSquareRoot_cfc_den
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
 open BookProof.PositiveSquareRoot
 
 

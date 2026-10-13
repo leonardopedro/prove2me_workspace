@@ -1,6 +1,7 @@
 -- Generated from ChapterPauliGrover.lean — solution of BookProof.ChapterPauliGrover.pauliX_conjTranspose
 import Mathlib
 import Definitions.Def_ChapterPauliGrover
+import Definitions.Def_ChapterConditional
 open BookProof.ChapterPauliGrover
 
 

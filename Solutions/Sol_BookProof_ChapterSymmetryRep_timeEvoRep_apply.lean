@@ -1,6 +1,7 @@
 -- Generated from ChapterSymmetryRep.lean — solution of BookProof.ChapterSymmetryRep.timeEvoRep_apply
 import Mathlib
 import Definitions.Def_ChapterSymmetryRep
+import Definitions.Def_ChapterConservative
 open BookProof.ChapterSymmetryRep
 
 

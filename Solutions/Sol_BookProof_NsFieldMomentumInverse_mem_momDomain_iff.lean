@@ -1,6 +1,9 @@
 -- Generated from ChapterNsFieldMomentumInverse.lean — solution of BookProof.NsFieldMomentumInverse.mem_momDomain_iff
 import Mathlib
 import Definitions.Def_ChapterNsFieldMomentumInverse
+import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.NsFieldMomentumInverse
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_gamma0_spatial_anticomm
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

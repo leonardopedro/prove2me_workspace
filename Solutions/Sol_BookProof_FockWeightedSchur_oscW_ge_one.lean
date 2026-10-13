@@ -1,6 +1,15 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.oscW_ge_one
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 
@@ -16,7 +25,7 @@ variable {w : ℕ → ℝ}
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (k : ℕ) : 1 ≤ oscW k := by
 
+theorem solution (k : ℕ) : 1 ≤ oscW k := by
   have : (0:ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
   simp only [oscW]; linarith

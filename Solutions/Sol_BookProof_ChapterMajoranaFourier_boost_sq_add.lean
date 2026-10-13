@@ -1,6 +1,7 @@
 -- Generated from ChapterMajoranaFourier.lean — solution of BookProof.ChapterMajoranaFourier.boost_sq_add
 import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

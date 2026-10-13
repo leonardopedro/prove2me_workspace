@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterA1b
 import Theorems.Thm_BookProof_Complexification_Cx_continuous_ofReal
 import Theorems.Thm_BookProof_Complexification_Cx_mem_realPart
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_Complexification
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 
@@ -10,6 +13,8 @@ open BookProof.Complexification.Cx
 
 open scoped RealInnerProductSpace
 open BookProof.ChapterA
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]

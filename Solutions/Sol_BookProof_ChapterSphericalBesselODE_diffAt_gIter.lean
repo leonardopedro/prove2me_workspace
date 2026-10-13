@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSphericalBesselODE
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_contDiffOn_gIter
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBesselODE
 
 

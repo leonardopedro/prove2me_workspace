@@ -5,6 +5,18 @@ import Theorems.Thm_BookProof_SmFockEsa_smSecMomIdx_injective
 import Theorems.Thm_BookProof_SmFockEsa_smSectorHam_eq_weylPoly
 import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
 import Theorems.Thm_BookProof_YangMillsNonAbelianEsa_weylPoly_esa
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterSmOuterFock
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmFockEsa
 
 
@@ -16,6 +28,8 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.TensorCore BookProof.SecondQuantizationCore
 open BookProof.YangMillsNonAbelianEsa
+open BookProof.HermiteProductCore
+open BookProof.SmHamiltonian
 
 noncomputable section
 

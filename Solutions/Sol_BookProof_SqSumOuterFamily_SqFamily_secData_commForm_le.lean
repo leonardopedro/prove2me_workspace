@@ -5,6 +5,18 @@ import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secHam_commForm_le
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
 import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.SqSumOuterFamily
 open BookProof.SqSumOuterFamily.SqFamily
 
@@ -18,6 +30,10 @@ open BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteOscillator
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 noncomputable section
 

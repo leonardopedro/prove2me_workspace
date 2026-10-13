@@ -2,7 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterBrstReducedTransfer
 import Theorems.Thm_BookProof_BrstReducedTransfer_transfer_comp
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
+import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstReducedTransfer
 
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionFactorization
 import Theorems.Thm_BookProof_ChapterAttentionFactorization_prodSoftmax_apply
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionFactorization
 
 

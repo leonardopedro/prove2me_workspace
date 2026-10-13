@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_coeff_mem_of_poly_mem
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
+import Definitions.Def_ChapterWeylSl2
 open BookProof.ChapterWeylSL2Group
 
 

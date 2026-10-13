@@ -1,6 +1,7 @@
 -- Generated from ChapterWeylCauchyRiemann.lean — solution of BookProof.WeylCauchyRiemann.mollify_comm
 import Mathlib
 import Definitions.Def_ChapterWeylCauchyRiemann
+import Definitions.Def_ChapterRadialMollifier
 open BookProof.WeylCauchyRiemann
 
 

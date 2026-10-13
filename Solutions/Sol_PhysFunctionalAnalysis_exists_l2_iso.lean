@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_PhysFunctionalAnalysis
 import Theorems.Thm_PhysFunctionalAnalysis_countable_of_separated
+import Definitions.Def_ChapterA4
 open PhysFunctionalAnalysis
 
 

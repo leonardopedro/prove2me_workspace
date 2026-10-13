@@ -3,12 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_FriedrichsSquare_exists_mem_factorRel_add
 import Theorems.Thm_BookProof_FriedrichsSquare_factorRel_le_adjPairs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

@@ -3,7 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumEsa_nsSymbol_nonneg
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumEsa_fockComparison_ikebeKato
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 
@@ -12,6 +16,7 @@ open BookProof.NavierStokesFlow.MomentumEsa
 
 
 open LpNat BookProof.FarisLavine IkebeKato FarisLavineLift DiagonalEsa
+open BookProof.NavierStokesGaugeY
 
 variable {ι : Type*}
 

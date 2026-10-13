@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesCauchy.lean — solution of BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -11,5 +13,7 @@ variable {n : ℕ}
 variable {n : ℕ} (d : NSTruncation n)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (t : ℝ) :
-    nsFlowUnitary d t = matrixFlow (Complex.I • nsHamiltonian d) t := FlowUnitary, matrixFlow, ← smul_assoc, Co
+    nsFlowUnitary d t = matrixFlow (Complex.I • nsHamiltonian d) t := by
+  rw [nsFlowUnitary, matrixFlow, ← smul_assoc, Complex.real_smul]

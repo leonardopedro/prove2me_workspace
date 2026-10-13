@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNumericalRangeCrouzeix
 import Theorems.Thm_BookProof_ChapterH9_mem_numRange
+import Definitions.Def_ChapterH9
 open BookProof.ChapterNumericalRangeCrouzeix
 
 

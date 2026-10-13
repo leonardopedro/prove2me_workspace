@@ -4,6 +4,8 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterBandEnclosure
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.FarisLavine
 
 

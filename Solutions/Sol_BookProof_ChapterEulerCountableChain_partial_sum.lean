@@ -10,11 +10,11 @@ open scoped BigOperators
 open Filter Topology
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (c : ℕ → ℝ) (N : ℕ) :
     ∑ n ∈ Finset.range N, stickProb c n = 1 - stickTail c N := by
-
   induction N with
-  | zero => simp
+  | zero => simp [stickTail]
   | succ N ih =>
       rw [Finset.sum_range_succ, ih, stickTail_succ]
       unfold stickProb

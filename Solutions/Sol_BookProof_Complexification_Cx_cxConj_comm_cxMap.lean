@@ -1,6 +1,7 @@
 -- Generated from Complexification.lean — solution of BookProof.Complexification.Cx.cxConj_comm_cxMap
 import Mathlib
 import Definitions.Def_Complexification
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.Complexification
 open BookProof.Complexification.Cx
 

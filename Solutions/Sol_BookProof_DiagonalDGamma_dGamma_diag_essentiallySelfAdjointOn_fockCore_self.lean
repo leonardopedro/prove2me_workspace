@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterDiagonalDGammaEsa
 import Theorems.Thm_BookProof_DiagonalDGamma_dGamma_diag_essentiallySelfAdjointOn_fockCore
 import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.DiagonalDGamma
 
 
@@ -10,6 +16,9 @@ open BookProof.DiagonalDGamma
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

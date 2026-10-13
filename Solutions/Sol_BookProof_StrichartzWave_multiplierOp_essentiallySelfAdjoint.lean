@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_multiplierOp_deficiencyTrivial
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

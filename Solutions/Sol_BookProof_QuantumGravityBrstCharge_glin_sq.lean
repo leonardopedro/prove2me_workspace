@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_chi_anticomm
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterFreeFieldConstraint
 open BookProof.QuantumGravityBrstCharge
 
 

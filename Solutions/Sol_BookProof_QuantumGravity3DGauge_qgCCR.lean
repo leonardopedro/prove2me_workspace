@@ -15,6 +15,8 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {D : Submodule ℂ (L2d 84)}
+
 set_option maxHeartbeats 1000000 in
 theorem solution (Φ : CoreRep 84 D) (j k : Fin 84) (x : D) :
     qgCoord Φ j (qgMom Φ k x) - qgMom Φ k (qgCoord Φ j x)

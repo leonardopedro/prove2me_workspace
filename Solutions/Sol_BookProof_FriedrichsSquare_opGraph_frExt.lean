@@ -1,12 +1,18 @@
 -- Generated from ChapterFriedrichsSquareFactorization.lean — solution of BookProof.FriedrichsSquare.opGraph_frExt
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

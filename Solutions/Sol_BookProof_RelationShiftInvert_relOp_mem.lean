@@ -1,6 +1,11 @@
 -- Generated from ChapterRelationShiftInvert.lean — solution of BookProof.RelationShiftInvert.relOp_mem
 import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.RelationShiftInvert
 
 

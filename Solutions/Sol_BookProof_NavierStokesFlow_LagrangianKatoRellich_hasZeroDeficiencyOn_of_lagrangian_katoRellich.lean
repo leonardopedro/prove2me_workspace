@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_hasZeroDeficiencyOn_of_drive_eq_P
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_NSFullData_hasZeroDeficiencyOn_of_lagrangian
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -19,6 +28,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.FullEsa.NSFullData BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution
     {G : Type*} [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
     (d : FullEsa.NSFullData F) (L' : LagrangianFullData G) (W : F ≃ₗᵢ[ℂ] G)

@@ -4,6 +4,9 @@ import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Theorems.Thm_BookProof_HarmonicOscillator_hermiteC_eq
 import Theorems.Thm_BookProof_HarmonicOscillator_deriv_deriv_hermiteC
 import Theorems.Thm_BookProof_HermiteCore_hermiteFun_oscillator
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HarmonicOscillator
 
 

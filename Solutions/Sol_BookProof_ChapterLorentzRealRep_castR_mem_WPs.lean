@@ -1,6 +1,8 @@
 -- Generated from ChapterLorentzRealRep.lean — solution of BookProof.ChapterLorentzRealRep.castR_mem_WPs
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
 open BookProof.ChapterLorentzRealRep
 
 

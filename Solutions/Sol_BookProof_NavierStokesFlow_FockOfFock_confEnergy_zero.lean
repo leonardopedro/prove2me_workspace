@@ -1,6 +1,10 @@
 -- Generated from ChapterNavierStokesFockEsa.lean — solution of BookProof.NavierStokesFlow.FockOfFock.confEnergy_zero
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

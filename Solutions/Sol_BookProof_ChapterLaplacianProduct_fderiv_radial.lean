@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_deriv_sqrt_comp
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_fderiv_comp_normSq
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
 

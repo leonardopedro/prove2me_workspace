@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_isClosed_cyclicSubspace
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_cfcHom_apply_mem_cyclicSubspace
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterCyclicDecomposition
 
 

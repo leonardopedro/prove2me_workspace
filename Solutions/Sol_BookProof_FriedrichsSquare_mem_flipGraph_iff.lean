@@ -1,12 +1,16 @@
 -- Generated from ChapterFriedrichsSquareFactorization.lean — solution of BookProof.FriedrichsSquare.mem_flipGraph_iff
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

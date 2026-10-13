@@ -1,6 +1,7 @@
 -- Generated from ChapterSolovaySeparableExistence.lean — solution of BookProof.ChapterSolovaySeparableExistence.prod_disintegration
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovaySeparableExistence
 
 

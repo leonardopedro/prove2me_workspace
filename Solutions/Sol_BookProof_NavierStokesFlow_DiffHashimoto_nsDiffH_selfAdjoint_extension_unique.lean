@@ -1,16 +1,21 @@
 -- Generated from ChapterNavierStokesDiffHashimoto.lean — solution of BookProof.NavierStokesFlow.DiffHashimoto.nsDiffH_selfAdjoint_extension_unique
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
-import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_unique_of_esa
+
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_nsDiffH_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-
-
 open Filter Topology
-
-
 
 open MvPolynomial
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert BookProof.EsaClosure

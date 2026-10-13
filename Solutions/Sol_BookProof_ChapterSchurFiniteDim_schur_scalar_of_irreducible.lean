@@ -1,6 +1,7 @@
 -- Generated from ChapterSchurFiniteDim.lean — solution of BookProof.ChapterSchurFiniteDim.schur_scalar_of_irreducible
 import Mathlib
 import Definitions.Def_ChapterSchurFiniteDim
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurFiniteDim
 
 

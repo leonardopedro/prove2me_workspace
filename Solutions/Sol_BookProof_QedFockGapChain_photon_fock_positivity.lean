@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterQedFockGapChain
 import Theorems.Thm_BookProof_QedFockGapChain_photonDispersion_nonneg
 import Theorems.Thm_BookProof_FockDiagonalGapChain_diag_fock_gap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFockDiagonalGapChain
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.QedFockGapChain
 
 
@@ -15,6 +23,9 @@ open BookProof.FockNumberPreservingGap BookProof.FarisLavine
 open BookProof.HermiteGalerkin BookProof.HermiteCore
 open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
 open MeasureTheory
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
+open BookProof.HermiteCore
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

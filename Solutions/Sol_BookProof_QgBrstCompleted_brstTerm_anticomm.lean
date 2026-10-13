@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Theorems.Thm_BookProof_QuantumGravityFock_jw_swap_erase
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.QgBrstCompleted
 
 
@@ -9,6 +12,7 @@ open BookProof.QgBrstCompleted
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
+open BookProof.SmCar
 
 noncomputable section
 

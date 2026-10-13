@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_inner_eq_zero_of_orthOrbit
+import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmCyclicDecomposition
 
 

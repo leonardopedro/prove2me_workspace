@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCarleman
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiagOp_basis_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_tridiagOp_basis_succ
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.Carleman
 

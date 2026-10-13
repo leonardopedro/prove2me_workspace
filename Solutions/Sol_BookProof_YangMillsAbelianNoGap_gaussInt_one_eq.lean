@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 open BookProof.YangMillsAbelianNoGap
 
 

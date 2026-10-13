@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterLogPartitionConvex
 import Theorems.Thm_BookProof_ChapterLogPartitionConvex_convexOn_logPartition
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterLogPartitionConvex
 
 
@@ -12,6 +15,7 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 

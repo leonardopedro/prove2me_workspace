@@ -4,6 +4,11 @@ import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_coreLp_le_clLp
 import Theorems.Thm_BookProof_VonNeumannCore_clLp_isClosed
 import Theorems.Thm_BookProof_VonNeumannCore_eq_zero_of_mem_clLp_of_orthogonal
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.VonNeumannCore
 
 

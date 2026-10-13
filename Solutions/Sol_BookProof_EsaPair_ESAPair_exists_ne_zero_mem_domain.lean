@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterEsaPairDGamma
 import Theorems.Thm_BookProof_SecondQuantizationCore_exists_ne_zero_mem_dGammaCoreDomain
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaPair
 
 
@@ -9,6 +13,8 @@ open BookProof.EsaPair
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

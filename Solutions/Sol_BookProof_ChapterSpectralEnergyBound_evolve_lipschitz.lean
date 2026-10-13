@@ -3,7 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterSpectralEnergyBound
 import Theorems.Thm_BookProof_ChapterSpectralEnergyBound_hasDerivAt_evolve
 import Theorems.Thm_BookProof_ChapterSpectralEnergyBound_norm_deriv_evolve_le
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.ChapterBornMeasure
 
 
 
@@ -13,13 +17,10 @@ variable {n : Type*} [Fintype n]
 variable {n : Type*} [Fintype n]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)
     (h : ∀ i, v i ≠ 0 → |f i| ≤ E) (s t : ℝ) :
     ‖evolve f t v - evolve f s v‖ ≤ E * ‖v‖ * |t - s| := by
-  have hderiv : ∀ x ∈ Set.uIcc s t,
-      HasDerivWithinAt (fun r : ℝ => evolve f r v)
-        (-Complex.I • diagOp f (evolve f x v)) (Set.uIcc s t) x := by
-
   have hderiv : ∀ x ∈ Set.uIcc s t,
       HasDerivWithinAt (fun r : ℝ => evolve f r v)
         (-Complex.I • diagOp f (evolve f x v)) (Set.uIcc s t) x :=

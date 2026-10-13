@@ -1,6 +1,8 @@
 -- Generated from ChapterAttentionMasking.lean — solution of BookProof.ChapterAttentionMasking.maskedSoftmax_univ
 import Mathlib
 import Definitions.Def_ChapterAttentionMasking
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionMasking
 
 
@@ -11,6 +13,7 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
 
 variable {m : ℕ}
 

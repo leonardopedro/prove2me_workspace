@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_EsaOneParticle_sectorCore_graph_le
 import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 import Theorems.Thm_BookProof_GraphCore_pushOp_apply
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 
@@ -12,6 +16,9 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.DirectSumEsa
+open BookProof.GraphCore
+open BookProof.TensorCore
 
 noncomputable section
 

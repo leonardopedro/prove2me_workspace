@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_bFullR_linearIndependent
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_span_bFullR_eq
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepFull
 
 

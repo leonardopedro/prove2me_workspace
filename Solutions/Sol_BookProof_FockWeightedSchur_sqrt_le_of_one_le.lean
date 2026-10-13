@@ -1,6 +1,15 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.sqrt_le_of_one_le
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 
@@ -16,7 +25,7 @@ variable {w : ℕ → ℝ}
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {a : ℝ} (h : 1 ≤ a) : Real.sqrt a ≤ a := by
 
+theorem solution {a : ℝ} (h : 1 ≤ a) : Real.sqrt a ≤ a := by
   have h0 : (0:ℝ) ≤ a := le_trans zero_le_one h
   nlinarith [Real.sq_sqrt h0, Real.sqrt_nonneg a, sq_nonneg (Real.sqrt a - 1)]

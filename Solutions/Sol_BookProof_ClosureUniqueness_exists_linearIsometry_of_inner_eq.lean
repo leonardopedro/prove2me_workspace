@@ -1,6 +1,8 @@
 -- Generated from ChapterClosureUniqueness.lean — solution of BookProof.ClosureUniqueness.exists_linearIsometry_of_inner_eq
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

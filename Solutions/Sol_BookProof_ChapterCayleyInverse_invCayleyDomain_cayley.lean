@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterCayleyInverse
 import Theorems.Thm_BookProof_ChapterCayleyTransform_range_one_sub_cayley
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterCayleyTransform
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterCayleyInverse
 
 
@@ -21,8 +25,8 @@ variable [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : invCayleyDomain (cayley T) = T.domain := by
 
-  apply SetLike.ext_prime
+theorem solution : invCayleyDomain (cayley T) = T.domain := by
+  apply SetLike.ext'
   rw [invCayleyDomain, LinearMap.coe_range]
   exact range_one_sub_cayley T

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepSum
 import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_gram_allR
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_linIndep_of_gram
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 
 

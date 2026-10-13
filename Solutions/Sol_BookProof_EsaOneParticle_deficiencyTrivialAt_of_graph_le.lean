@@ -1,6 +1,10 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.deficiencyTrivialAt_of_graph_le
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.EsaOneParticle
 
 

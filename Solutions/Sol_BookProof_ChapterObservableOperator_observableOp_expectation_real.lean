@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterObservableOperator
 import Theorems.Thm_BookProof_ChapterObservableOperator_observableOp_expectation
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterObservableOperator
 
 

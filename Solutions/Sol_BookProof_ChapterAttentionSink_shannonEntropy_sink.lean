@@ -7,6 +7,8 @@ import Theorems.Thm_BookProof_ChapterAttentionSink_shannonEntropy_cons_scaled
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
 import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionEntropy
 open BookProof.ChapterAttentionSink
 
@@ -18,18 +20,19 @@ noncomputable section
 
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxSharpness
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta s0 : ℝ) (s : Fin m → ℝ) (i : Fin m) :
     shannonEntropy (scoreSoftmax beta (Fin.cons s0 s))
       = (-sinkWeight beta s0 s * Real.log (sinkWeight beta s0 s)
           - (1 - sinkWeight beta s0 s) * Real.log (1 - sinkWeight beta s0 s))
         + (1 - sinkWeight beta s0 s) * shannonEntropy (scoreSoftmax beta s) := by
-
   have hcons : (scoreSoftmax beta (Fin.cons s0 s) : Fin (m + 1) → ℝ)
       = Fin.cons (sinkWeight beta s0 s)
           (fun j => (1 - sinkWeight beta s0 s) * scoreSoftmax beta s j) := by

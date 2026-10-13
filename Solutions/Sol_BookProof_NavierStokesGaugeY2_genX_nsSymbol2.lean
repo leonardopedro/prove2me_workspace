@@ -3,12 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY2
 import Theorems.Thm_BookProof_NavierStokesGaugeY2_genX_uField2
 import Theorems.Thm_BookProof_NavierStokesGaugeY_genX_leibniz
+import Definitions.Def_ChapterNavierStokesGaugeY
 open BookProof.NavierStokesGaugeY2
 
 
 
 
 open MvPolynomial BookProof.NavierStokesGaugeY
+open BookProof.NavierStokesGaugeY
+
+
+@[simp] private theorem genX_apply (j : Fin 3) (p : NSAlg) : genX j p = pderiv (NSVar.x j) p := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (nu : ℂ) (i j : Fin 3) : genX j (nsSymbol2 nu i) = 0 := by

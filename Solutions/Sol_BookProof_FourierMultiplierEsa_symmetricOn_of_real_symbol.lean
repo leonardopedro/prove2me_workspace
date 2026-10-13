@@ -4,6 +4,8 @@ import Definitions.Def_ChapterFourierMultiplierEsa
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_eq_integral_fourier
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.FourierMultiplierEsa
 
 

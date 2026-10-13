@@ -1,6 +1,8 @@
 -- Generated from ChapterPauliFundamental.lean — solution of BookProof.ChapterPauliFundamental.sel_lo_length
 import Mathlib
 import Definitions.Def_ChapterPauliFundamental
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
 open BookProof.ChapterPauliFundamental
 
 

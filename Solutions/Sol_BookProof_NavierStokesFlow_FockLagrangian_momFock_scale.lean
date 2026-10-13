@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesFockParcels.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.momFock_scale
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -11,6 +14,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.BRSTNilpotent
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 

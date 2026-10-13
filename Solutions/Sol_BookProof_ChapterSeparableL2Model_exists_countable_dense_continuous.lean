@@ -1,6 +1,11 @@
 -- Generated from ChapterSeparableL2Model.lean — solution of BookProof.ChapterSeparableL2Model.exists_countable_dense_continuous
 import Mathlib
 import Definitions.Def_ChapterSeparableL2Model
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterStandardBorelClassification
 open BookProof.ChapterSeparableL2Model
 
 
@@ -18,10 +23,10 @@ variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [Measurab
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [SeparableSpace (Lp ℂ 2 mu)] :
     ∃ D : Set C(Y, ℂ), D.Countable ∧
       Dense ((fun f : C(Y, ℂ) => ContinuousMap.toLp 2 mu ℂ f) '' D) := by
-
   classical
   obtain ⟨E, hEc, hEd⟩ := exists_countable_dense (Lp ℂ 2 mu)
   have hdense : DenseRange

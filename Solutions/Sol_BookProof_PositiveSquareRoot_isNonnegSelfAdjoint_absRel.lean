@@ -1,6 +1,12 @@
 -- Generated from ChapterPositiveSquareRootUnique.lean — solution of BookProof.PositiveSquareRoot.isNonnegSelfAdjoint_absRel
 import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
 open BookProof.PositiveSquareRoot
 
 

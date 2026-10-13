@@ -1,6 +1,12 @@
 -- Generated from ChapterStoneEigenflow.lean — solution of BookProof.StoneEigenflow.isSelfAdjointExtension_eigenvector
 import Mathlib
 import Definitions.Def_ChapterStoneEigenflow
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.StoneEigenflow
 
 

@@ -16,7 +16,5 @@ theorem solution
     (h2 : ∀ x, HasDerivAt u' (u'' x) x)
     (heq : ∀ x, -u'' x = -Complex.I * u x)
     (hL2 : Integrable fun x => ‖u x‖ ^ 2) :
-    u = 0 :=
-  able fun x => ‖u x‖ ^ 2) :
-      u = 0 :=
-    laplacian_deficiency_trivial (-Co
+  u = 0 :=
+  laplacian_deficiency_trivial (-Complex.I) (by simp) u u' u'' h1 h2 heq hL2

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterTempleSeparationNecessary
 import Theorems.Thm_BookProof_TempleSeparationNecessary_witness_trial
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterRitzCertificate
 open BookProof.TempleSeparationNecessary
 
 

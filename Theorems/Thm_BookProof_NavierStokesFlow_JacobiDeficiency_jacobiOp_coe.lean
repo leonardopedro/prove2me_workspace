@@ -9,4 +9,5 @@ open BookProof.NavierStokesFlow.JacobiDeficiency
 
 open scoped ENNReal
 
- := by sorry
+theorem BookProof.NavierStokesFlow.JacobiDeficiency.jacobiOp_coe (f : lpFiniteModes ℕ) :
+    (((jacobiOp f : lpFiniteModes ℕ) : L2N) : ℕ → ℂ) = jacobiFun ((f : L2N) : ℕ → ℂ) := by sorry

@@ -5,6 +5,14 @@ import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_isPositiveSelfAdjointExte
 import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 import Theorems.Thm_BookProof_QgOuterFockFL_qgOuterFriedN_apply
 import Theorems.Thm_BookProof_QgOuterFockFL_qgOuterCore_le_friedDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.QgOuterFockFL
 
 
@@ -32,10 +40,11 @@ variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
 variable {C H}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     IsPositiveSelfAdjointExtension qgOuterN qgOuterFriedN :=
   qgOuterComparison.isPositiveSelfAdjointExtension qgOuterN (fun x => by
-      refine ⟨qgOuterCore_le_friedDom x.2, ?_⟩
-      refine lp.ext (funext fun n => ?_)
-      rw [qgOuterFriedN_apply, harmFried_op_core (n * 84) ⟨(x : qgOuterFock) n, x.2.2 n⟩]
-      exact (dsOp_coe (fun n : ℕ => harmCore (d := n * 84)) x n).symm)
+    refine ⟨qgOuterCore_le_friedDom x.2, ?_⟩
+    refine lp.ext (funext fun n => ?_)
+    rw [qgOuterFriedN_apply, harmFried_op_core (n * 84) ⟨(x : qgOuterFock) n, x.2.2 n⟩]
+    exact (dsOp_coe (fun n : ℕ => harmCore (d := n * 84)) x n).symm)

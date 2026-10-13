@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterCyclicDirectSum
 import Theorems.Thm_BookProof_ChapterCyclicDirectSum_commute_starProjection_cfcHom
 import Theorems.Thm_BookProof_ChapterCyclicDecomposition_invariant_cyclicSubspace
+import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterCyclicDirectSum
 
 

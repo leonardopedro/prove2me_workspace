@@ -4,6 +4,7 @@ import Definitions.Def_ChapterTimeTranslation
 import Theorems.Thm_BookProof_ChapterTimeTranslation_trace_rho_measOp
 import Theorems.Thm_BookProof_ChapterTimeTranslation_trace_diagPart_measOp
 import Theorems.Thm_BookProof_ChapterReconstruct_offDiag_eq
+import Definitions.Def_ChapterReconstruct
 open BookProof.ChapterTimeTranslation
 
 

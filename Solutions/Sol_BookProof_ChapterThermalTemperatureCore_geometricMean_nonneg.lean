@@ -1,6 +1,9 @@
 -- Generated from ChapterThermalTemperatureCore.lean — solution of BookProof.ChapterThermalTemperatureCore.geometricMean_nonneg
 import Mathlib
 import Definitions.Def_ChapterThermalTemperatureCore
+import Definitions.Def_ChapterCoherentTemperature
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterBoseEinstein
 open BookProof.ChapterThermalTemperatureCore
 
 

@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ChapterA_transK_beta
 import Theorems.Thm_BookProof_ChapterA_transK_realCommutes
 import Theorems.Thm_BookProof_ChapterA_Rcomplex_realCommutant_eq_complex
 import Theorems.Thm_BookProof_ChapterA_cembed_apply
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

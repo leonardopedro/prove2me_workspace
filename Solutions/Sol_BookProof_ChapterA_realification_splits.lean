@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ChapterA_inf_JY_isSubsystem
 import Theorems.Thm_BookProof_ChapterA_sup_JY_closure_Jinvariant
 import Theorems.Thm_BookProof_ChapterA_sup_JY_closure_isSubsystem
 import Theorems.Thm_BookProof_ChapterA_complex_irreducible_iff_no_Jinvariant_subsystem
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

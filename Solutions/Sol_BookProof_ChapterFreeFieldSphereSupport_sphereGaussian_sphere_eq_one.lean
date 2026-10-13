@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFreeFieldSphereSupport
 import Theorems.Thm_BookProof_ChapterFreeFieldSphereSupport_stdGaussian_singleton
+import Definitions.Def_ChapterFreeFieldGaussian
+import Definitions.Def_ChapterFreeFieldSphere
 open BookProof.ChapterFreeFieldSphereSupport
 
 

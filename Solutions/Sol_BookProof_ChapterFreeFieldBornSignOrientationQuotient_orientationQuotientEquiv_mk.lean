@@ -1,6 +1,8 @@
 -- Generated from ChapterFreeFieldBornSignOrientationQuotient.lean — solution of BookProof.ChapterFreeFieldBornSignOrientationQuotient.orientationQuotientEquiv_mk
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSignOrientationQuotient
+import Definitions.Def_ChapterFreeFieldBornSignHom
+import Definitions.Def_ChapterFreeFieldBornSignOrientationSubgroup
 open BookProof.ChapterFreeFieldBornSignOrientationQuotient
 
 

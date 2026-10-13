@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteCore_hermiteFun_oscillator
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteStrichartzQG
 
 

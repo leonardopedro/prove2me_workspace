@@ -10,9 +10,14 @@ open BookProof.SpinStatistics
 
 open Matrix
 
+
+private theorem fermiNumber₁_eq : fermiNumber1 = !![0,0,0,0; 0,0,0,0; 0,0,1,0; 0,0,0,1] := by
+  rw [fermiNumber1, fermiCreate1_eq]
+  ext i j; fin_cases i <;> fin_cases j <;> simp [fermiAnnih1]
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     fermiNumber1 + fermiNumber2 = !![0,0,0,0; 0,1,0,0; 0,0,1,0; 0,0,0,2] := by
-
-  rw [fermiNumber1_eq, fermiNumber2_eq]
+  rw [fermiNumber₁_eq, fermiNumber₂_eq]
   ext i j; fin_cases i <;> fin_cases j <;> norm_num

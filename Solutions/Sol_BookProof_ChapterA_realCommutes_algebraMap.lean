@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterA2c
 import Theorems.Thm_BookProof_ChapterA_realCommutes_one
 import Theorems.Thm_BookProof_ChapterA_realCommutes_smul
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

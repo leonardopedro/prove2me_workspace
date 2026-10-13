@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_SameOrbit_symm
+import Definitions.Def_ChapterPvmMeasure
 open BookProof.ChapterPvmCyclicDecomposition
 
 

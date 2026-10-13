@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianNoGap
 import Theorems.Thm_BookProof_YangMillsAbelianNoGap_exists_core_state_small_energy
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
 

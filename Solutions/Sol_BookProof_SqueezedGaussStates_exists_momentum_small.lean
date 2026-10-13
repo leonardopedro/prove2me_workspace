@@ -4,6 +4,8 @@ import Definitions.Def_ChapterSqueezedGaussStates
 import Theorems.Thm_BookProof_SqueezedGaussStates_coordComboSum_opCoef_le
 import Theorems.Thm_BookProof_SqueezedGaussStates_tendsto_boundary
 import Theorems.Thm_BookProof_GaussCoordCombo_coordComboSum_nonneg
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

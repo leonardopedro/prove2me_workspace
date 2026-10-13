@@ -4,6 +4,10 @@ import Definitions.Def_ChapterNsFieldMomentumInverse
 import Theorems.Thm_BookProof_NsSpatialMultiplier_fourier_opL2_momentumOp
 import Theorems.Thm_BookProof_NsSpatialMultiplier_hasTemperateGrowth_foSymbol
 import Theorems.Thm_BookProof_NsSpatialMultiplier_mulSymbolOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.NsFieldMomentumInverse
 
 
@@ -11,6 +15,10 @@ open BookProof.NsFieldMomentumInverse
 
 open MeasureTheory SchwartzMap FourierTransform
 open BookProof.NsSpatialMultiplier BookProof.FourierMultiplierEsa BookProof.StrichartzWave
+open BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
+open BookProof.NsSpatialMultiplier
+open BookProof.StrichartzWave
 
 noncomputable section
 
@@ -21,10 +29,10 @@ variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [FiniteDim
   [MeasurableSpace W] [BorelSpace W]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (m : W) (f : 𝓢(W, ℂ)) :
     IsMomInverse m (l2Fourier W (opL2 (momentumOp m) (schwartzEquiv W f)))
       (l2Fourier W (f.toLp 2 (volume : Measure W))) := by
-
   have hrep := fourier_opL2_momentumOp m f
   have hl : (l2Fourier W (f.toLp 2 (volume : Measure W)) : W → ℂ)
       =ᵐ[(volume : Measure W)] fun ξ => (𝓕 f : 𝓢(W, ℂ)) ξ := by
@@ -45,3 +53,5 @@ theorem solution (m : W) (f : 𝓢(W, ℂ)) :
     rfl
   filter_upwards [hl, hr] with ξ hxl hxr
   rw [hxl, hxr]
+
+end

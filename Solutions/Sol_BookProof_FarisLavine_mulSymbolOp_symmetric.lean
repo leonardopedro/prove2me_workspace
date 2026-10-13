@@ -1,6 +1,9 @@
 -- Generated from ChapterFarisLavine.lean — solution of BookProof.FarisLavine.mulSymbolOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.FarisLavine
 
 

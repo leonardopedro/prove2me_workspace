@@ -4,6 +4,7 @@ import Definitions.Def_ChapterMackeyInducedSystem
 import Theorems.Thm_BookProof_ChapterMackeyInducedSystem_inducedSystem_fibre
 import Theorems.Thm_BookProof_ChapterMackeyInducedSystem_inducedSystem_stabilizer_rep
 import Theorems.Thm_BookProof_ChapterMackeyImprimitivity_mackey_imprimitivity
+import Definitions.Def_ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyInducedSystem
 
 
@@ -41,7 +42,12 @@ theorem solution (L : MulAction.stabilizer G x₀ →* (K ≃ₗᵢ[ℂ] K)) (s 
       (∀ (g : G) (ψ : E), mackeyMap S s (S.U g ψ) = inducedRep S s g (mackeyMap S s ψ)) ∧
       (∀ (y : X) (ψ : E), mackeyMap S s (S.p y ψ) = inducedPvm y (mackeyMap S s ψ)) := by
 
-  refine ⟨inducedSystem_stabilizer_rep L s hs hs0, inducedSystem_fibre L s hs, ?_⟩
+  -- The platform statement was published with `variable (X K) in` in its
+  -- preamble, so `inducedSystem_stabilizer_rep` / `inducedSystem_fibre` take
+  -- X and K as EXPLICIT leading arguments; passing L positionally put it in
+  -- the X slot (`Application type mismatch: ... expected Type`).
+  refine ⟨inducedSystem_stabilizer_rep X K L s hs hs0,
+    inducedSystem_fibre X K L s hs, ?_⟩
   intro E _ _ S
   obtain ⟨h1, _, _, h4, h5, h6, h7, h8⟩ := mackey_imprimitivity S x₀ s hs
   exact ⟨h1, h4, h5, h6, h7, h8⟩

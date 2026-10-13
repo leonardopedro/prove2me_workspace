@@ -4,7 +4,17 @@ import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_deg_pair_le_two
 import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_coupling_weighted_summable
 import Theorems.Thm_BookProof_FockQuadratic_fockH_essentiallySelfAdjointOn_core
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.QgPhysicalSectorIdentity
 
 
@@ -17,6 +27,8 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal
+open BookProof.ChapterA3n
+open BookProof.DirectSumEsa
 
 variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 variable {ι : Type*}

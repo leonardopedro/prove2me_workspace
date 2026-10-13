@@ -4,8 +4,12 @@ import Definitions.Def_ChapterWeylSl2
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_exists_highestWeight
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_highestWeight_nat
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_cas_highestWeight
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
+open BookProof.ChapterDoubleSlit
+open BookProof.ChapterGleasonPureMixed
 
 
 
@@ -20,10 +24,10 @@ variable {R}
 variable {R : Sl2Rep V}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [FiniteDimensional ℂ V] {W : Submodule ℂ V}
     (hW : R.IsInv W) (hne : W ≠ ⊥) (hmin : ∀ U ≤ W, R.IsInv U → U = ⊥ ∨ U = W)
     (hcas : ∀ x ∈ W, R.cas x = 0) : ∀ x ∈ W, R.E x = 0 ∧ R.F x = 0 ∧ R.H x = 0 := by
-
   haveI : Nontrivial ↥W := Submodule.nontrivial_iff_ne_bot.mpr hne
   obtain ⟨ws, lam, hws0, hwsE, hwsH⟩ := (R.restr W hW).exists_highestWeight
   set w : V := (ws : V) with hwdef

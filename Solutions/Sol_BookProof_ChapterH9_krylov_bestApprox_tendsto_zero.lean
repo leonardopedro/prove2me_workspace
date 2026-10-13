@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterH9
 import Theorems.Thm_BookProof_ChapterH9_norm_sub_starProjection_le
 import Theorems.Thm_BookProof_ChapterH5_krylovSpan_mono
+import Definitions.Def_ChapterH1
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH5
 open BookProof.ChapterH9
 
 

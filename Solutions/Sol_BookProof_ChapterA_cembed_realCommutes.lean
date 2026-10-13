@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA2c
 import Theorems.Thm_BookProof_ChapterA_cembed_apply
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

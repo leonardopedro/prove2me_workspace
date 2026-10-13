@@ -4,6 +4,9 @@ import Definitions.Def_ChapterA1h
 import Theorems.Thm_BookProof_ChapterA_rImagCx_sq
 import Theorems.Thm_BookProof_ChapterA_rImagCx_commutes
 import Theorems.Thm_BookProof_Complexification_Cx_smul_I
+import Definitions.Def_Complexification
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 
@@ -12,6 +15,7 @@ open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
 
 
 open BookProof.Complexification
+open BookProof.ChapterA.AntiUnitary
 
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]
 

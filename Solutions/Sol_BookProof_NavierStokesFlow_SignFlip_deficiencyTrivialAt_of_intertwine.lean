@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_of_intertwine
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 

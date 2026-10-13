@@ -1,6 +1,8 @@
 -- Generated from ChapterWeylSl2.lean — solution of BookProof.ChapterWeylSl2.Sl2Rep.cas_comm_H
 import Mathlib
 import Definitions.Def_ChapterWeylSl2
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
 

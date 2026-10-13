@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
 import Theorems.Thm_BookProof_HermiteBandHigher_isBand1_isBandR_one
 import Theorems.Thm_BookProof_HermiteBand_isBand1_annPoly
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.HermiteBandHigher
 
 

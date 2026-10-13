@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
 import Theorems.Thm_BookProof_ChapterWignerOrbitClassification_hermOfMom_spaceRefMom
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerOrbitClassification
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianNS_sum_sq_posSemidef
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 
@@ -13,4 +16,5 @@ variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterF7
 theorem solution : L.kinetic.PosSemidef := (sum_sq_posSemidef L.P_herm).smul (by norm_num)

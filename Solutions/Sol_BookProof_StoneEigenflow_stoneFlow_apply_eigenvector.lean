@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterStoneEigenflow
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 
@@ -11,6 +18,9 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterUnitaryTransport BookProof.EsaClosure BookProof.FarisLavine
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
+open BookProof.StoneBridge
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 

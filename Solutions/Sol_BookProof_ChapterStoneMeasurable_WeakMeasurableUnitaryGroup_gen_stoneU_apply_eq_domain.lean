@@ -10,6 +10,10 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneMeasurable
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
@@ -17,6 +21,9 @@ open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 open scoped InnerProductSpace
 open Filter Topology MeasureTheory
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

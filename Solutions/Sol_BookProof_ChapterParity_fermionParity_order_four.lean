@@ -2,20 +2,22 @@
 import Mathlib
 import Definitions.Def_ChapterParity
 import Theorems.Thm_BookProof_ChapterParity_mgamma0_sq
+import Definitions.Def_ChapterA3
 open BookProof.ChapterParity
 
 
 
 open Matrix
 open scoped ComplexConjugate
+open BookProof.ChapterA3
 
 variable {n : Type*}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     mgamma 0 * mgamma 0 ≠ 1 ∧
       mgamma 0 * mgamma 0 * (mgamma 0 * mgamma 0) = 1 := by
-
   refine ⟨?_, ?_⟩
   · rw [mgamma0_sq]
     intro h

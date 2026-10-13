@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_cauchy_existsUnique
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
 
@@ -14,8 +16,8 @@ variable {n : ℕ} (d : NSTruncation n)
 variable (L : LagrangianNS n)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (psi : Fin n → ℂ) :
     ∃! y : ℝ → Fin n → ℂ,
       y 0 = psi ∧ ∀ t, HasDerivAt y ((Complex.I • L.hFull) *ᵥ y t) t :=
-  lobal solution*, for every initial state
-  and every real time. -
+  matrixFlow_cauchy_existsUnique (Complex.I • L.hFull) psi

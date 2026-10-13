@@ -1,6 +1,7 @@
 -- Generated from ChapterSolovayHilbertTensor.lean — solution of BookProof.ChapterSolovayHilbertTensor.inner_tensorLp
 import Mathlib
 import Definitions.Def_ChapterSolovayHilbertTensor
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovayHilbertTensor
 
 

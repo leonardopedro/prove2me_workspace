@@ -7,6 +7,8 @@ import Theorems.Thm_BookProof_ChapterGravityPolymomentum_metric_mulVec_lower
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_spatialProj_mul
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_mul_spatialProj_transpose
 import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_mulVec_self
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 
@@ -18,7 +20,7 @@ open BookProof.ChapterGravityProjector
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin 4 → ℝ) (hv : minkSq v = -1) :
-    proj v metric = metric + vecMulVec v v := by
+    BookProof.ChapterGravityPolymomentum.proj v metric = metric + vecMulVec v v := by
 
   have hml : metric.mulVec (lower v) = v := metric_mulVec_lower v
   have hvm : metric.vecMul (lower v) = v := by
@@ -28,7 +30,7 @@ theorem solution (v : Fin 4 → ℝ) (hv : minkSq v = -1) :
   have h1 : (spatialProj v)ᵀ.vecMul v = 0 := by rw [Matrix.vecMul_transpose, hXv]
   have h2 : vecMulVec v v * (spatialProj v)ᵀ = 0 := by
     rw [vecMulVec_mul, h1]; simp
-  calc proj v metric = (metric + vecMulVec v v) * (spatialProj v)ᵀ := by
-        rw [proj, spatialProj_mul, hvm]
+  calc BookProof.ChapterGravityPolymomentum.proj v metric = (metric + vecMulVec v v) * (spatialProj v)ᵀ := by
+        rw [BookProof.ChapterGravityPolymomentum.proj, spatialProj_mul, hvm]
     _ = metric + vecMulVec v v := by
         rw [Matrix.add_mul, h2, mul_spatialProj_transpose, hml, add_zero]

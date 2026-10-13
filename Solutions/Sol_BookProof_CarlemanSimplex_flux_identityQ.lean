@@ -9,6 +9,8 @@ import Theorems.Thm_BookProof_CarlemanSimplex_lcp_shift
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_vanish
 import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish_prime
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

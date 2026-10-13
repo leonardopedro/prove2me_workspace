@@ -4,6 +4,11 @@ import Definitions.Def_ChapterFockCubicQuarticStability
 import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_creA_left
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_creA_right
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockFieldPerturbation
+import Definitions.Def_ChapterFockCubicUnbounded
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FockCubicQuarticStability
 
 
@@ -14,6 +19,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
 open BookProof.FockCubicUnbounded
+open BookProof.FockSecondQuantization
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℕ) (v : FockAlg) :

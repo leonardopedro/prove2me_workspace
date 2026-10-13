@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_TwoParticleSector_inclPow_swapDom
 import Theorems.Thm_BookProof_TwoParticleSector_derPow_swapDom
 import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorDom
 import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 

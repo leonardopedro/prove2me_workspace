@@ -12,4 +12,5 @@ noncomputable section
 x * (gaussH x * gaussH x) by ring, gaussH_sq]
 
 /-- The `L²` normalizing constant `√(n! √(2π))`. -/
-def hermiteN := by sorry
+
+theorem BookProof.HermiteCore.hermiteNorm_pos (n : ℕ) : 0 < hermiteNorm n := by sorry

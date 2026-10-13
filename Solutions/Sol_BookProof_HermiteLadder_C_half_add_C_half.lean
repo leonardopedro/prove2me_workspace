@@ -1,6 +1,11 @@
 -- Generated from ChapterHermiteLadderOrder.lean — solution of BookProof.HermiteLadder.C_half_add_C_half
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterDegSchrodingerCore
 open BookProof.HermiteLadder
 
 

@@ -1,5 +1,11 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.abs_bumpG'_le
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 
@@ -12,7 +18,7 @@ open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : ℝ) : |bumpG' x| ≤ bumpM := by
 
+theorem solution (x : ℝ) : |bumpG' x| ≤ bumpM := by
   have h := (hasCompactSupport_bumpG'.exists_bound_of_continuous continuous_bumpG').choose_spec x
   simpa [Real.norm_eq_abs, bumpM] using h

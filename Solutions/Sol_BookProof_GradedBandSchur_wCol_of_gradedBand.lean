@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterGradedBandSchurEsa
 import Theorems.Thm_BookProof_GradedBandSchur_degW_pos
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.GradedBandSchur
 
 
@@ -9,6 +14,7 @@ open BookProof.GradedBandSchur
 
 open BookProof.FockSecondQuantization BookProof.FockSchur BookProof.FockWeightedSchur
 open BookProof.FarisLavine BookProof.NavierStokesFlow
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

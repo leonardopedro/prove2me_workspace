@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Theorems.Thm_BookProof_VonNeumannCore_eq_zero_of_inner_frDom_eq_zero
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
 open BookProof.VonNeumannCore
 
 

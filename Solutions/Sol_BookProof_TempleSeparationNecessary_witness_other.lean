@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterTempleSeparationNecessary
 import Theorems.Thm_BookProof_TempleSeparationNecessary_witness_apply
 import Theorems.Thm_BookProof_TempleSeparationNecessary_inner_trial_other
+import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.TempleSeparationNecessary
 
 

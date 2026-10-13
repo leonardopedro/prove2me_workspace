@@ -8,6 +8,9 @@ import Theorems.Thm_BookProof_QuantumGravityBrstCharge_sum4_swap_blocks
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_sum4_sub_distrib
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_linGen_contract_left
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_linGen_contract_right
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravityBrstCharge
 
 
@@ -24,9 +27,9 @@ variable {d : ℕ}
 variable {α : Type*}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (A B : Matrix (Fin d) (Fin d) ℝ) :
     linGen A * linGen B - linGen B * linGen A = linGen (A * B - B * A) := by
-
   have h2 : linGen B * linGen A
       = ∑ j, ∑ k, ∑ l, ∑ m, (A j k * B l m) • (elemGen l m * elemGen j k) := by
     rw [linGen_prod B A,

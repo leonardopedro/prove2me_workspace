@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonicTools
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_fderiv_fderiv_clmPow
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools
 
 

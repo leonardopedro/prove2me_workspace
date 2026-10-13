@@ -9,6 +9,17 @@ import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendsto
 import Theorems.Thm_BookProof_ChapterSirkTrotterKato_trotterKato_tendstoUniformlyOn
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTruncationResolvent
 
 
@@ -19,6 +30,10 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
+open BookProof.EsaClosure
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
+open BookProof.StoneBridge
 
 noncomputable section
 

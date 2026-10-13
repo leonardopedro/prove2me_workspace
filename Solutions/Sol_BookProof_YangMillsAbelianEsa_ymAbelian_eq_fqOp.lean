@@ -8,6 +8,19 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_op_apply
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaugeMechanicsCharge
 open BookProof.YangMillsAbelianEsa
 
 
@@ -21,13 +34,18 @@ open BookProof.HermiteRelative
 open BookProof.FullQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
+open BookProof.ChapterF7
+open BookProof.HermiteProductCore
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsHermite
+open BookProof.ChapterGaugeMechanicsCharge
 
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     ymHamiltonian (coreRepPoly 99) 0 = fqOp ymFqP ymFqQ 0 0 0 := by
-
   refine LinearMap.ext fun x => ?_
   obtain ⟨p, rfl⟩ := (coreEquiv (d := 99)).surjective x
   have hx : ((coreRepPoly 99).equiv.symm (coreEquiv p) : MvPolynomial (Fin 99) ℂ) = p := by
@@ -51,3 +69,5 @@ theorem solution :
   simp only [hmom, hmag]
   rw [fqOp, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_coe,
     ← ymAbelianPoly_eq_fqPoly, pgLp_ymAbelianPoly]
+
+/-! ## 5. Essential self-adjointness -/

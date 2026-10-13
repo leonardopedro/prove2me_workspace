@@ -1,6 +1,7 @@
 -- Generated from ChapterPauliCommutant.lean — solution of BookProof.ChapterA3.toEuclideanLin_mul4
 import Mathlib
 import Definitions.Def_ChapterPauliCommutant
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

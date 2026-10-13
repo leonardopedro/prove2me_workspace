@@ -7,6 +7,11 @@ import Theorems.Thm_BookProof_ChapterAbelianCyclicCommutant_commutesWithContMult
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_cyclicRepUnitary_intertwines
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_comm
 import Theorems.Thm_BookProof_ChapterSpectralCommutant_contCommutant_mem_multAlgebra
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterAbelianCyclicCommutant
 
 
@@ -19,6 +24,7 @@ open MeasureTheory Complex WeakDual
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralCommutant
 open BookProof.ChapterAbelianCyclicModel
+open BookProof.ChapterLinftyMultiplication
 
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

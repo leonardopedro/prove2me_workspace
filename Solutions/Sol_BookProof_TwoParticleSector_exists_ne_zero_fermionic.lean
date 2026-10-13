@@ -4,6 +4,11 @@ import Definitions.Def_ChapterTwoParticleSectorEsa
 import Theorems.Thm_BookProof_TwoParticleSector_mem_fermionic_iff
 import Theorems.Thm_BookProof_TensorCore_inner_tmul_pow
 import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 

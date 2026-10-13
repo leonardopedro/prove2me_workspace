@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_lagrangianCore_symmetricOn
 import Theorems.Thm_BookProof_EsaClosure_hashimoto_multishift_selects_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -20,6 +29,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open `BookProof.HashimotoShiftInvert`. BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution
     (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L))
     (bas : HilbertBasis ℕ ℂ F) (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.flipU_apply
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 

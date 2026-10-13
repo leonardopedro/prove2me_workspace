@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
 
 

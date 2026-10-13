@@ -1,6 +1,10 @@
 -- Generated from ChapterSmDiracSpinor.lean — solution of BookProof.SmDiracSpinor.smFermiHam_zero_yukawa
 import Mathlib
 import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
 open BookProof.SmDiracSpinor
 
 

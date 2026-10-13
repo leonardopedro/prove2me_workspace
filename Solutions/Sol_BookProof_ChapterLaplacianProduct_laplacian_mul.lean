@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLaplacianProduct
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_fderiv_fderiv_mul
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
 

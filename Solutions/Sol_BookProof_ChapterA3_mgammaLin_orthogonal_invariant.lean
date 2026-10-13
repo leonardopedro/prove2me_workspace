@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPauliCommutant
 import Theorems.Thm_BookProof_ChapterA3_adjoint_mgammaLin
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

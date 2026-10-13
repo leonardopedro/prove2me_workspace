@@ -1,6 +1,14 @@
 -- Generated from ChapterFermionFock.lean — solution of BookProof.FermionFock.toggle_of_not_mem
 import Mathlib
 import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.FermionFock
 
 

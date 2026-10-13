@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterL2TensorPowerUnitary
 import Theorems.Thm_BookProof_L2TensorPower_embPow_succ_tmul
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterNsScalarVectorCurry
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.L2TensorPower
 
 

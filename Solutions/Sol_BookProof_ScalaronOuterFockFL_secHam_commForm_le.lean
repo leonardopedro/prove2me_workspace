@@ -6,6 +6,14 @@ import Theorems.Thm_BookProof_ScalaronOuterFockFL_imA_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_imB_le
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_quadForm_secDiag_eq
 import Theorems.Thm_BookProof_FarisLavine_commForm_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronOuterFockFL
 
 
@@ -16,6 +24,7 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -26,8 +35,9 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := by
 
+theorem solution (x : secCore (ι := ι)) :
+    |commForm (secHam W Q) (secDiag W Q) x| ≤ (6 * Q.K) * quadForm (secDiag W Q) x := by
   classical
   obtain ⟨P, hP1, hP2⟩ := exists_band Q x
   have hSq : quadForm (secDiag W Q) x
@@ -67,3 +77,5 @@ theorem solution (x : secCore (ι := by
       ((∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.B a b) *
         (inner ℂ (xCc (fibOf x b)) (W.ham (Q.sig a) (fibOf x a)) : ℂ)).im)
   linarith
+
+/-! ## 7. Essential self-adjointness of the full quantum-gravity Hamiltonian -/

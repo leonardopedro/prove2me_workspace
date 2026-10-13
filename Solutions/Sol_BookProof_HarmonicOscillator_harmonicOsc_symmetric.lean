@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteCoreOp_symmetric
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HarmonicOscillator
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterSpectralMultiplication.lean — solution of BookProof.ChapterSpectralMultiplication.vectorState_one
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
 
 

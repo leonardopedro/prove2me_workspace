@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorCore_norm_tmul_sub_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorSumEsa
 
 
@@ -9,6 +12,7 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

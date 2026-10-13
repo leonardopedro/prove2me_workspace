@@ -1,6 +1,7 @@
 -- Generated from ChapterPinDoubleCover.lean — solution of BookProof.ChapterPinDoubleCover.Omega_card
 import Mathlib
 import Definitions.Def_ChapterPinDoubleCover
+import Definitions.Def_ChapterA3
 open BookProof.ChapterPinDoubleCover
 
 

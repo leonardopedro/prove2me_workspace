@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_oneLp_coeFn
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
 open BookProof.ChapterSpectralCommutant
 
 
@@ -13,6 +17,7 @@ open MeasureTheory ENNReal Complex
 
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
+open BookProof.ChapterLinftyMaximalAbelian
 
 variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

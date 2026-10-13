@@ -1,6 +1,8 @@
 -- Generated from ChapterAbelianDirectSum.lean — solution of BookProof.ChapterAbelianDirectSum.self_mem_repCyclicSubspace
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum
 
 

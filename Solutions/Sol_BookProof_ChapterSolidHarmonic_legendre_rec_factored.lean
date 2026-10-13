@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Theorems.Thm_BookProof_ChapterLegendrePolynomial_legendre_deriv_coeff_rec
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
 open BookProof.ChapterSolidHarmonic
 
 

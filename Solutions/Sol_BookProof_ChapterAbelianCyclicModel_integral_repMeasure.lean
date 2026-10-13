@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
 import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_integral_stateMeasure
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianCyclicModel
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.flux_bound_on
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 
@@ -18,11 +20,11 @@ variable {u : (Fin d →₀ ℕ) → ℂ}
 variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d → Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {w : ℂ} {rc : (Fin d →₀ ℕ) → ℝ} (F : Finset (Fin d →₀ ℕ))
     (P : Fin d →₀ ℕ) {Cn : ℝ} (hC : ∀ a ∈ F, |rc a| ≤ Cn) :
     |(∑ a ∈ F, rtermP u w rc P a).im|
       ≤ Cn * (‖w‖ * ((∑ a ∈ F, (‖u a‖ ^ 2 + ‖u (a + P)‖ ^ 2)) / 2)) := by
-
   classical
   have h1 : |(∑ a ∈ F, rtermP u w rc P a).im| ≤ ‖∑ a ∈ F, rtermP u w rc P a‖ :=
     Complex.abs_im_le_norm _

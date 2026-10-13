@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterFourierMultiplierEsa
 import Theorems.Thm_BookProof_FourierMultiplierEsa_symmetricOn_of_real_symbol
 import Theorems.Thm_BookProof_FourierMultiplierEsa_fourier_firstOrderOp_apply
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.FourierMultiplierEsa
 
 

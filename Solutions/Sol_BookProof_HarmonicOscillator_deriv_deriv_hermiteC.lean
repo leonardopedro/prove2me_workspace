@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_HarmonicOscillator_deriv_polyGaussC
 import Theorems.Thm_BookProof_HarmonicOscillator_hermiteC_eq
 import Theorems.Thm_BookProof_HarmonicOscillator_deriv_const_mul_fun
 import Theorems.Thm_BookProof_HermiteCore_deriv_poly_mul_gaussH
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HarmonicOscillator
 
 

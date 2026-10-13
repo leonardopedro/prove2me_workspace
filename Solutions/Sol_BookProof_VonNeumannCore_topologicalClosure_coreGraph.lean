@@ -6,6 +6,10 @@ import Theorems.Thm_BookProof_VonNeumannCore_mem_coreLp_iff
 import Theorems.Thm_BookProof_VonNeumannCore_mem_clLp_iff
 import Theorems.Thm_BookProof_VonNeumannCore_clLp_le_topologicalClosure_coreLp
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.VonNeumannCore
 
 
@@ -13,6 +17,7 @@ open BookProof.VonNeumannCore
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

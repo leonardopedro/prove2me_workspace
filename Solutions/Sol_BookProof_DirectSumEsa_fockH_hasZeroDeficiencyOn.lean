@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsOpD_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_hasZeroDeficiencyOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockContinuum
 open BookProof.DirectSumEsa
 
 
@@ -11,6 +15,8 @@ open scoped ENNReal
 
 
 open BookProof.FarisLavine
+open BookProof.ChapterLinftyMultiplication
+open BookProof.NavierStokesFlow.FockContinuum
 
 noncomputable section
 

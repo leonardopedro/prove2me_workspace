@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepDirect
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_decomposition_top
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterLorentzRealRepFull
 open BookProof.ChapterLorentzRealRepDirect
 
 

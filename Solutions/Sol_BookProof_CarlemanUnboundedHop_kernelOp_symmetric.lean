@@ -2,12 +2,21 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
 import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterKernelBound
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.CarlemanUnboundedHop
 
 
 
 
 open Finset
+open BookProof.KernelBound
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
+open BookProof.FarisLavine
 
 noncomputable section
 

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_eq_clGraph_of_isClosureOf
 import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_adjPairs_clGraph
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

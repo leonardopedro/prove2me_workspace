@@ -1,6 +1,8 @@
 -- Generated from ChapterNsScalarFourier.lean — solution of BookProof.NsScalarFourier.scalarFibreOp_apply
 import Mathlib
 import Definitions.Def_ChapterNsScalarFourier
+import Definitions.Def_ChapterNsScalarVectorCurry
+import Definitions.Def_ChapterNsPartialFourier
 open BookProof.NsScalarFourier
 
 
@@ -9,6 +11,7 @@ open MeasureTheory
 
 
 open BookProof.NsPartialFourier BookProof.NsScalarVectorCurry
+open BookProof.NsPartialFourier
 
 noncomputable section
 

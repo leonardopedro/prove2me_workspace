@@ -21,5 +21,5 @@ theorem solution (U : Fin n → Fin n → ℂ) (a : Fin n) (Ψ : Fin n → ℂ) 
       ∑ k : Fin n,
         (starRingEnd ℂ) (U k a) * Ψ k * (starRingEnd ℂ) (Ψ k) * U k a := by
 
-  simp only [offDiag, sum_mul _ _ _];
+  simp only [BookProof.ChapterReconstruct.offDiag, sum_mul _ _ _];
   simp [ Finset.sum_ite, Finset.filter_ne, Finset.mul_sum _ _ _, mul_assoc ]

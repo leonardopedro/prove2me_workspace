@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.mulD_eq_zero_of_eigen
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 

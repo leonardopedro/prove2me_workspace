@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinSym_meas
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
@@ -11,6 +12,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {X : Type*} [MeasurableSpace X]
 

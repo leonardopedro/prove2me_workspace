@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_annih_basis
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_creat_basis
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 

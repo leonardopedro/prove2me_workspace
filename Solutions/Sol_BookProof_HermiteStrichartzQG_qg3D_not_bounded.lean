@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteCoreOp_not_bounded
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
 open BookProof.HermiteStrichartzQG
 
 

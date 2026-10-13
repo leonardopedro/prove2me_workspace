@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterFiniteBayesHierarchy
 import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_compKernel_nonnegative
 import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_idKernel_nonnegative
+import Definitions.Def_ChapterHierarchicalBayesComposition
 open BookProof.ChapterFiniteBayesHierarchy
 
 

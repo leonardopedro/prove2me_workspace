@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterSoftmaxMaxEntropy_softmax_free_energy_eq
 import Theorems.Thm_BookProof_ChapterSoftmaxMaxEntropy_softmax_free_energy_le
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_sum_one
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterLogPartitionConvex
 
 
@@ -15,16 +18,18 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :
     IsGreatest {x : ℝ | ∃ p : Fin m → ℝ, (∀ j, 0 ≤ p j) ∧ (∑ j, p j) = 1 ∧
         x = beta * (∑ j, p j * s j) + shannonEntropy p} (logPartition beta s) := by
-
   constructor
   · refine ⟨scoreSoftmax beta s, fun j => scoreSoftmax_nonneg beta s j,
       scoreSoftmax_sum_one beta s i, ?_⟩

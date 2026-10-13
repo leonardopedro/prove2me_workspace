@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterLimitCircleExample
 import Theorems.Thm_BookProof_LimitCircleExample_hasDerivAt_lcP
 import Theorems.Thm_BookProof_LimitCircleExample_hasDerivAt_lcQ
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
 open BookProof.LimitCircleExample
 
 

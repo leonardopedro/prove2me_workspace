@@ -1,6 +1,9 @@
 -- Generated from ChapterSmDiracYukawa.lean — solution of BookProof.SmDiracYukawa.fermiBilin_add
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

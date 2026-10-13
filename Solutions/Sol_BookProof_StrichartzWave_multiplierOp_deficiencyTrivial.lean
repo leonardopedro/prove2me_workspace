@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_integral_conj_mul_multiplier_sub_eq_zero
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

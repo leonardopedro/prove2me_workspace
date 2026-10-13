@@ -15,12 +15,12 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [FiniteDimensional ℝ E] {G : ℝ → ℝ} {x : E}
     (hG : ContDiffAt ℝ 2 G (‖x‖ ^ 2)) :
     (Δ fun y : E => G (‖y‖ ^ 2)) x
       = 4 * ‖x‖ ^ 2 * deriv (deriv G) (‖x‖ ^ 2)
         + 2 * (Module.finrank ℝ E) * deriv G (‖x‖ ^ 2) := by
-
   have hsnd := fderiv_fderiv_comp_normSq hG
   rw [laplacian_eq_iteratedFDeriv_stdOrthonormalBasis]
   have hterm : ∀ i, iteratedFDeriv ℝ 2 (fun y : E => G (‖y‖ ^ 2)) x

@@ -1,6 +1,7 @@
 -- Generated from ChapterSolovaySeparableExistence.lean — solution of BookProof.ChapterSolovaySeparableExistence.coordinateSpace_separable
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovaySeparableExistence
 
 

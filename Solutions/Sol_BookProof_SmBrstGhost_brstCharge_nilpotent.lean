@@ -4,6 +4,9 @@ import Definitions.Def_ChapterSmBrstGhost
 import Theorems.Thm_BookProof_SmBrstGhost_sum_rotate3
 import Theorems.Thm_BookProof_SmBrstGhost_sum_rotate4
 import Theorems.Thm_BookProof_BRSTNilpotent_brst_charge_nilpotent
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterBRSTNilpotent
 open BookProof.SmBrstGhost
 
 

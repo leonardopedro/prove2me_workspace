@@ -1,9 +1,14 @@
 -- Generated from ChapterH8.lean — solution of BookProof.ChapterH8.fine_range_of_coarse
 import Mathlib
 import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH8
 
 
+
+open ContinuousLinearMap
 
 noncomputable section
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSymmetryEntropy
 import Theorems.Thm_BookProof_SymmetryEntropy_negMulLog_eq_zero_iff
+import Definitions.Def_ChapterMarkovEntropy
+import Definitions.Def_ChapterReconstruct
+import Definitions.Def_ChapterIrreversible
 open BookProof.SymmetryEntropy
 
 

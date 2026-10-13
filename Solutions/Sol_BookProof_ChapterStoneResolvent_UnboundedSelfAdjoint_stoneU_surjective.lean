@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterStoneUnitary
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_apply_stoneU
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_zero
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 

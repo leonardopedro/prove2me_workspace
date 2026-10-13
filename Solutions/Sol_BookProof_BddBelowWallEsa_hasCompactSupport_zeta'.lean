@@ -2,6 +2,12 @@
 import Mathlib
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasDerivAt_zeta
 import Theorems.Thm_BookProof_BddBelowWallEsa_hasCompactSupport_zeta
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 

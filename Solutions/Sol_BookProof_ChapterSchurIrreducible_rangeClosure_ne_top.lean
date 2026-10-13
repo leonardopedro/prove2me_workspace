@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSchurIrreducible
 import Theorems.Thm_BookProof_ChapterSchurIrreducible_rangeClosure_le_ker
+import Definitions.Def_ChapterA
 open BookProof.ChapterSchurIrreducible
 
 

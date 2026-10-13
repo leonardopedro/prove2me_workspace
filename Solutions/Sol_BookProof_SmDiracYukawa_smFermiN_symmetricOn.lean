@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_symmetric
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiN_eq_diagOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

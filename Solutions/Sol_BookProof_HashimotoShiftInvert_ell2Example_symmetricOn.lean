@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Theorems.Thm_BookProof_HashimotoShiftInvert_ell2Example_isPositiveSelfAdjointExtension
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+open scoped InnerProductSpace
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

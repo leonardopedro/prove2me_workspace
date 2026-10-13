@@ -9,6 +9,9 @@ open BookProof.ChapterE4
 
 open scoped BigOperators
 
+
+@[simp] private theorem wave_zero (θ : ℕ → ℝ) (s : ℕ) : wave θ s 0 = basisVec s := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (θ : ℕ → ℝ) (s d : ℕ) :
     ∑ i ∈ Finset.Icc s (s + d), (wave θ s d i) ^ 2 = 1 := by

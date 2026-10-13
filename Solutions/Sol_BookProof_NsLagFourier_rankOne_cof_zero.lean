@@ -1,6 +1,9 @@
 -- Generated from ChapterNsLagrangianFourierElimination.lean — solution of BookProof.NsLagFourier.rankOne_cof_zero
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianFourierElimination
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 open BookProof.NsLagFourier
 
 

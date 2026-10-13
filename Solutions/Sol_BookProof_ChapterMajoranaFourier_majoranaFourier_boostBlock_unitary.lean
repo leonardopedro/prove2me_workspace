@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterMajoranaFourier_boost_sq_add
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_Aop_conjTranspose
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_Aop_sq
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_boostBlock_unitary
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWignerLittleGroup
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_hermOfMom_restMom
+import Definitions.Def_ChapterLittleGroup
 open BookProof.ChapterWignerLittleGroup
 
 

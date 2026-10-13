@@ -1,6 +1,7 @@
 -- Generated from ChapterSphericalPlancherel.lean — solution of BookProof.ChapterSphericalPlancherel.fourier_eq_cos_sub_sin
 import Mathlib
 import Definitions.Def_ChapterSphericalPlancherel
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalPlancherel
 
 

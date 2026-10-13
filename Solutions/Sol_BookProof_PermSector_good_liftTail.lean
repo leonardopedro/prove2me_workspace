@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_TensorCore_tmul_mem_corePow
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.PermSector
 
 
@@ -10,6 +17,9 @@ open BookProof.PermSector
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
 open BookProof.GroupAverage BookProof.TensorPerm
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.TensorCore
 
 noncomputable section
 
@@ -17,31 +27,16 @@ noncomputable section
 /-! Helper: the elementary-tensor equations of `inclPow` / `derPow`.  The platform's
 published `Def_ChapterTensorGraphCore` carries the definitions but not these three `rfl`
 equations, and a solution may not rely on unpublished declarations, so they are stated
-locally (this file is standalone: top-level `theorem solution` still follows). -/
-
-@[simp] theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
+locally (this file is standalone: top-level `
+@[simp] private theorem inclPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (n : ℕ)
     (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
     inclPow Hs D₂ (n + 1) (a ⊗ₜ[ℂ] b) = (a : Hs.carrier) ⊗ₜ[ℂ] inclPow Hs D₂ n b := rfl
 
-@[simp] theorem derPow_zero (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-    (A : D₂ →ₗ[ℂ] Hs.carrier) (x : ((domSpace Hs D₂).pow 0)) :
-    derPow Hs D₂ A 0 x = 0 := rfl
-
-@[simp] theorem derPow_tmul (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier)
-    (A : D₂ →ₗ[ℂ] Hs.carrier) (n : ℕ) (a : D₂) (b : ((domSpace Hs D₂).pow n)) :
-    derPow Hs D₂ A (n + 1) (a ⊗ₜ[ℂ] b)
-      = (A a) ⊗ₜ[ℂ] inclPow Hs D₂ n b + (a : Hs.carrier) ⊗ₜ[ℂ] derPow Hs D₂ A n b := rfl
-
-variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] Hs.carrier)
-  (D : Submodule ℂ Hs.carrier)
-
-set_option maxHeartbeats 1000000 in
 theorem solution {n : ℕ}
     {uD : ((domSpace Hs D₂).pow n).carrier ≃ₗᵢ[ℂ] ((domSpace Hs D₂).pow n).carrier}
     {uH : (Hs.pow n).carrier ≃ₗᵢ[ℂ] (Hs.pow n).carrier} (h : Good Hs D₂ A D n uD uH) :
     Good Hs D₂ A D (n + 1) (liftTail (domSpace Hs D₂) uD) (liftTail Hs uH) where
   incl t := by
-
     induction t using TensorProduct.induction_on with
     | zero => simp
     | tmul a b =>

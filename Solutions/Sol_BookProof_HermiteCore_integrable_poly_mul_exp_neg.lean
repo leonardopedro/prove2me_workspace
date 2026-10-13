@@ -5,7 +5,6 @@ import Theorems.Thm_BookProof_HermiteCore_integrable_pow_mul_exp_neg
 open BookProof.HermiteCore
 
 set_option maxHeartbeats 1000000 in
-import Mathlib
 
 theorem solution (n : ℕ) :
     derivative (hermiteR (n + 1)) = C ((n : ℝ) + 1) * hermiteR n := by

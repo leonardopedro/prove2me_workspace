@@ -4,6 +4,14 @@ import Definitions.Def_ChapterScalaronOuterFockFL
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_ham_eq_ham_zero_add
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_double_sum_amgm
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_norm_sub_conj_eq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.ScalaronOuterFockFL
 
 
@@ -14,6 +22,7 @@ open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
+open BookProof.ScalaronEsa
 
 noncomputable section
 
@@ -24,8 +33,11 @@ variable (Q : QgModeData ι)
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution (x : secCore (ι := by
 
+theorem solution (x : secCore (ι := ι)) (P : Finset ι) :
+    |(∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.A a b) *
+        (inner ℂ ((fibOf x b : ccDomain ℝ) : L2R) (W.ham (Q.sig a) (fibOf x a)) : ℂ)).im|
+      ≤ (1 / 2) * Q.K * ∑ a ∈ P, quadForm (W.ham (Q.sig a)) (fibOf x a) := by
   classical
   set u : ι → ccDomain ℝ := fun a => fibOf x a with hu
   set T1 : ℂ := ∑ a ∈ P, ∑ b ∈ P, (starRingEnd ℂ) (Q.A a b) *

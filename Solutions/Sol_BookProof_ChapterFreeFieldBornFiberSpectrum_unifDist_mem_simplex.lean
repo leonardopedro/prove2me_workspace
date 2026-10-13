@@ -1,6 +1,13 @@
 -- Generated from ChapterFreeFieldBornFiberSpectrum.lean — solution of BookProof.ChapterFreeFieldBornFiberSpectrum.unifDist_mem_simplex
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberSpectrum
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberTwo
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 open BookProof.ChapterFreeFieldBornFiberSpectrum
 
 
@@ -18,9 +25,9 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
     unifDist n k ∈ stdSimplex ℝ (Fin n) := by
-
   constructor;
   · exact fun x => by unfold unifDist; split_ifs <;> positivity;
   · unfold unifDist;
@@ -32,3 +39,8 @@ theorem solution {k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
     · grind;
     · grind;
     · lia
+
+/-
+For `1 ≤ k ≤ n`, `unifDist n k` has exactly `k` strictly positive
+coordinates.
+-/

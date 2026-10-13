@@ -4,7 +4,14 @@ import Definitions.Def_ChapterQgCouplingDGammaSum
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_dGamma_diagCol_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.QgCouplingDGammaSum
 
 
@@ -13,6 +20,7 @@ open BookProof.QgCouplingDGammaSum
 open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

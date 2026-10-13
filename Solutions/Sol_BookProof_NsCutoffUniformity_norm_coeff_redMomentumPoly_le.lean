@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
 import Theorems.Thm_BookProof_NsCutoffUniformity_norm_coeff_C_mul_X_le
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.NsCutoffUniformity
 
 

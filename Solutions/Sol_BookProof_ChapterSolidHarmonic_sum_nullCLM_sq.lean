@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_sum_inner_mul_apply
 import Theorems.Thm_BookProof_ChapterSolidHarmonicTools_sum_inner_sq
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonic
 
 
@@ -12,15 +16,21 @@ open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
+open BookProof.ChapterRadialLaplacian
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+
+
+@[simp] private theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
+ radial function, and the `s`-wave form of Note 68
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {u v : E} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (huv : ⟪u, v⟫_ℝ = 0) :
     ∑ i, (nullCLM u v (stdOrthonormalBasis ℝ E i)) ^ 2 = 0 := by
-
   have h1 : ∑ i, (⟪u, (stdOrthonormalBasis ℝ E) i⟫_ℝ) ^ 2 = 1 := by
     rw [sum_inner_sq u, hu]; norm_num
   have h2 : ∑ i, (⟪v, (stdOrthonormalBasis ℝ E) i⟫_ℝ) ^ 2 = 1 := by

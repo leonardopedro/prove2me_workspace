@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_HalfLineLimitCircle_integral_deriv2_mul
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deriv2_deficiencyFun
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deficiencyVec_coeFn
 import Theorems.Thm_BookProof_HalfLineLimitCircle_inner_eq_integral
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

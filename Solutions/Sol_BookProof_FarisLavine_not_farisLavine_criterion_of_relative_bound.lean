@@ -2,11 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_not_hasZeroDeficiencyOn
-import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_symmetric
+
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.FarisLavine
-
-
-
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
@@ -15,6 +15,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat
 theorem solution :
     ¬ (∀ (D' : Submodule ℂ L2N) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),
         Dense (D' : Set L2N) →

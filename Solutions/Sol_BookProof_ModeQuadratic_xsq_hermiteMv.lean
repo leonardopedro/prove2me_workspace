@@ -3,6 +3,18 @@ import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
 import Theorems.Thm_BookProof_ModeQuadratic_mulXPoly_eq_lop
 import Theorems.Thm_BookProof_ModeQuadratic_lop_lop_hermiteMv
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.ModeQuadratic
 
 
@@ -17,6 +29,8 @@ open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
 open BookProof.CarlemanTwoStep
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 
 noncomputable section
 

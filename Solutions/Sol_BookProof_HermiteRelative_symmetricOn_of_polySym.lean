@@ -4,6 +4,14 @@ import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.HermiteRelative
 
 
@@ -15,6 +23,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
+open BookProof.QgOuterFockCoreFL BookProof.QgOuterFockCoreFL.CoreData BookProof.YangMillsHermite
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

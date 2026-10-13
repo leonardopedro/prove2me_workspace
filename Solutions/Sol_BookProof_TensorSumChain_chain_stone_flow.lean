@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.TensorSumChain
 
 
@@ -9,6 +15,8 @@ open BookProof.TensorSumChain
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.EsaClosure
+open BookProof.StoneBridge
 
 noncomputable section
 

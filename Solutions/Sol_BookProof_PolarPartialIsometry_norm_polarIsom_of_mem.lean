@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
 import Theorems.Thm_BookProof_PolarPartialIsometry_polarIsom_apply_of_mem
 import Theorems.Thm_BookProof_PolarPartialIsometry_norm_extend
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
 open BookProof.PolarPartialIsometry
 
 

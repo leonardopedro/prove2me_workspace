@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_quadForm_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.FriedrichsSquare
 
 

@@ -1,6 +1,7 @@
 -- Generated from ChapterGaugeParametrization.lean — solution of BookProof.ChapterGaugeParametrization.apply_eq
 import Mathlib
 import Definitions.Def_ChapterGaugeParametrization
+import Definitions.Def_ChapterGaugeIncompleteFixing
 open BookProof.ChapterGaugeParametrization
 
 

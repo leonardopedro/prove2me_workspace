@@ -10,4 +10,6 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 noncomputable section
 
 x) e^{-x²/4}`. -/
-def hermiteFun (n : ℕ) (x : ℝ) : ℝ := (hermiteR n).eval x * gauss := by sorry
+
+theorem BookProof.HermiteCore.hermiteFun_mul (m n : ℕ) (x : ℝ) :
+    hermiteFun m x * hermiteFun n x = (hermiteR m * hermiteR n).eval x * gaussW x := by sorry

@@ -10,6 +10,9 @@ import Theorems.Thm_BookProof_ChapterPauliFundamental_sel_hi_insert
 import Theorems.Thm_BookProof_ChapterPauliFundamental_lo_stepT
 import Theorems.Thm_BookProof_ChapterPauliFundamental_sel_lo_ne
 import Theorems.Thm_BookProof_ChapterPauliFundamental_sel_lo_length
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

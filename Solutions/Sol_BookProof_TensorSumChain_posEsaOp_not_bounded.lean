@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
 import Theorems.Thm_BookProof_ChapterStoneSeparable_mulSA_position_unbounded
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
 open BookProof.TensorSumChain
 
 

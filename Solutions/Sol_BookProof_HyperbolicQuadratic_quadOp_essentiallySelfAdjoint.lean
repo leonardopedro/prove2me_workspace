@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_deficiencyTrivialAt
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HyperbolicQuadratic
 
 

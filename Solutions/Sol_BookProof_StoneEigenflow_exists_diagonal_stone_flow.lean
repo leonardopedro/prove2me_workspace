@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterStoneEigenflow
 import Theorems.Thm_BookProof_StoneEigenflow_stoneFlow_apply_core_eigenvector
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.StoneEigenflow
 
 

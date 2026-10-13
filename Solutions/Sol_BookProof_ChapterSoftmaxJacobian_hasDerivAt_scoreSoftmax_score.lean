@@ -6,6 +6,9 @@ import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_hasDerivAt_partition_score
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_partition_ne_zero
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_partition_pos
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_scoreSoftmax_eq_div
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxJacobian
 
 
@@ -16,16 +19,22 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
+
+
+private theorem partition_ne_zero (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) : partition beta s ≠ 0 :=
+  ne_of_gt (partition_pos beta s i)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i j : Fin m) :
     HasDerivAt (fun t : ℝ => scoreSoftmax beta (scorePerturb s i t) j)
       (softmaxJacobian beta s i j) 0 := by
-
   have hne := partition_ne_zero beta s i
   have hZ := hasDerivAt_partition_score beta s i
   have hnum : HasDerivAt (fun t : ℝ => Real.exp (beta * scorePerturb s i t j))

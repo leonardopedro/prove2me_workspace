@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterWeylSL2Group_rho_mem_of_isInv
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_isInv_of_rho
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_rho_mem_of_unipotent_inv
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_weyl_complete_reducibility
+import Definitions.Def_ChapterWeylSl2
 open BookProof.ChapterWeylSL2Group
 
 

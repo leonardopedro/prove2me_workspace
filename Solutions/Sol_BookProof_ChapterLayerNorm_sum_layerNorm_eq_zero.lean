@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterLayerNorm
 import Theorems.Thm_BookProof_ChapterLayerNorm_sum_sub_mean_eq_zero
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
 

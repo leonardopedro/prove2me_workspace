@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_sqrtInvCoeff_abs_le_one
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+open scoped InnerProductSpace
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 

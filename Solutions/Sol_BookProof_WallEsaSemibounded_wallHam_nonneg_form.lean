@@ -4,6 +4,8 @@ import Definitions.Def_ChapterStrichartzWave
 -- Generated from ChapterWallEsaSemibounded.lean — solution of BookProof.WallEsaSemibounded.wallHam_nonneg_form
 import Mathlib
 import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterClosureUniqueness
+Definitions.Def_ChapterScalaronWallEsa
 open BookProof.WallEsaSemibounded
 
 

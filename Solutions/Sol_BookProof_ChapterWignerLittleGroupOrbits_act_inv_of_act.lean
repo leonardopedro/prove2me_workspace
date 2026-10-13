@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_mul
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_one
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

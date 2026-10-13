@@ -23,10 +23,14 @@ variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [Complet
   [NormedAddCommGroup G] [InnerProductSpace ℂ G] [CompleteSpace G]
 variable (V) in
 
+
+@[simp] private theorem partialFourier_apply (v : Lp F 2 (volume : Measure V)) :
+    partialFourier V F v = 𝓕 v := rfl
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (T : F →L[ℂ] G) (f : Lp F 2 (volume : Measure V)) :
     partialFourier V G (fibreOp V T f) = fibreOp V T (partialFourier V F f) := by
-
   have hcont₁ : Continuous fun f : Lp F 2 (volume : Measure V) =>
       partialFourier V G (fibreOp V T f) :=
     (partialFourier V G).continuous.comp (fibreOp V T).continuous
@@ -40,3 +44,5 @@ theorem solution (T : F →L[ℂ] G) (f : Lp F 2 (volume : Measure V)) :
   simp only [SchwartzMap.toLpCLM_apply, partialFourier_apply, fibreOp_apply]
   rw [← toLp_postcompCLM, SchwartzMap.toLp_fourier_eq, SchwartzMap.toLp_fourier_eq,
     ← toLp_postcompCLM, fourier_postcompCLM]
+
+/-! ## 3. The diagonal spatial derivative in the fibred space -/

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_norm_crossB
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 

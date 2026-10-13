@@ -10,6 +10,7 @@ import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 import Theorems.Thm_BookProof_TruncationGapLift_gap_of_level_gap_and_tail
 import Theorems.Thm_BookProof_YangMillsFockGapChain_ym_fock_mass_gap_of_one_particle_form_gap
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 
 
 /-!

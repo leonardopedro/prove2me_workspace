@@ -4,6 +4,11 @@ import Definitions.Def_ChapterNavierStokesFockEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_dGamma_basis
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_total
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_hasZeroDeficiencyOn_of_commonEigenvectors
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockOfFock
 
@@ -14,17 +19,19 @@ open MeasureTheory
 
 
 open FullEsa LagrangianEsa
+open BookProof.FockOneParticleGap
+open BookProof.FockSecondQuantization
 
 variable {M : Type*} [DecidableEq M]
 variable {M : Type*} [DecidableEq M] {Ω : Type*} [MeasurableSpace Ω]
 variable {J K : Type*} [DecidableEq J] [DecidableEq K]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (nu : ℝ) (hnu : 0 ≤ nu) (p q dr : Fin 3 → M → ℝ)
     (force : Fin 3 → ℝ) (cst : M → ℝ) :
     HasZeroDeficiencyOn (lagrangianFockData nu hnu p q dr force cst).D
       (lagrangianFockData nu hnu p q dr force cst).hFull := by
-
   classical
   exact (lagrangianFockData nu hnu p q dr force cst).hasZeroDeficiencyOn_of_commonEigenvectors
     (fun n : Conf M => (fockBasis n : FockDom M))

@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_norm_le
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiN_eq_diagOp
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiWeight_le
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiOm_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

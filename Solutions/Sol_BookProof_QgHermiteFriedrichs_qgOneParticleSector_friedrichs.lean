@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_QgHermiteFriedrichs_hermiteCore_friedrichs_extensi
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
 import Theorems.Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential
 import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
 open BookProof.QgHermiteFriedrichs
 
 
@@ -14,6 +20,7 @@ open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 
+open BookProof.FriedrichsExtension.FormDom
 noncomputable section
 
 variable {d : ℕ}

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumEsa_fockSymbol_nonneg
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_add_one_surjective
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumEsa
 

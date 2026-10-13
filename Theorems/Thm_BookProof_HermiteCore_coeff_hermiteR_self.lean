@@ -9,6 +9,4 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
- hmom w)
-  filter_upwards [hzero] with x hx
-  have hne : ((gaussH := by sorry
+theorem BookProof.HermiteCore.coeff_hermiteR_self (n : ℕ) : (hermiteR n).coeff n = 1 := by sorry

@@ -1,6 +1,10 @@
 -- Generated from ChapterNonnegSemigroup.lean — solution of BookProof.NonnegSemigroup.expNeg_add
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroup
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
 open BookProof.NonnegSemigroup
 
 

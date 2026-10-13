@@ -1,6 +1,18 @@
 -- Generated from ChapterFiniteSectionSingleTime.lean — solution of BookProof.FiniteSectionSingleTime.isSelfAdjointExtension_ofBounded
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 open BookProof.FiniteSectionSingleTime
 
 
@@ -14,6 +26,7 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.EsaClosure
 
 noncomputable section
 

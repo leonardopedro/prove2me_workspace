@@ -2,11 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_YangMillsHermite_starP_real_smul
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
+
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.YangMillsHermite
-
-
-
 
 open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.YangMillsFriedrichs

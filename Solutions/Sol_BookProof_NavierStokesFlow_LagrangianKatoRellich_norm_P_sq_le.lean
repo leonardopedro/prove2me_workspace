@@ -4,6 +4,15 @@ import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_secondOrder_inner
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_kinetic_inner
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_viscous_nonneg
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -20,6 +29,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterF7 BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution (v : L.D) (i : Fin 3) :
     ‖(L.P i v : F)‖ ^ 2 ≤ 2 * (‖(v : F)‖ * ‖(secondOrder L v : F)‖) := by
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterGravityPolymomentum
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_mul_vecMulVec
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_trace_vecMulVec
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_metric_mul_metric
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 

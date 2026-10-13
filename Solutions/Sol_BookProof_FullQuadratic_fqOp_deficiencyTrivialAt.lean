@@ -5,6 +5,20 @@ import Theorems.Thm_BookProof_FullQuadratic_fqExch_hermitian
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_hermiteCore
 import Theorems.Thm_BookProof_CarlemanSimplex_ladderQ_eq_zero
 import Theorems.Thm_BookProof_HyperbolicQuadratic_hermiteMvLp_total
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.FullQuadratic
 
 
@@ -21,6 +35,8 @@ open BookProof.CarlemanTwoStep
 open BookProof.CarlemanSimplex
 open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 

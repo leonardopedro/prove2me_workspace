@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_measurable_wrep
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmCyclicUnitary
 open BookProof.ChapterMackeyCocycle
 
 

@@ -13,6 +13,18 @@ import Theorems.Thm_BookProof_QgOneParticleCc_cut_error_eq
 import Theorems.Thm_BookProof_QgOneParticleCc_cutErr_eq_zero
 import Theorems.Thm_BookProof_QgOneParticleCc_norm_cutErr_le
 import Theorems.Thm_BookProof_QgOneParticleCc_norm_cutFun_sub_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.QgOneParticleCc
 
 
@@ -24,6 +36,10 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgHermiteOscillator BookProof.HermiteQuadraticEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
+open BookProof.HermiteProductCore
+open BookProof.QgHermiteCore
+open BookProof.QgHermiteFriedrichs
+open BookProof.ScalaronEsa
 
 noncomputable section
 

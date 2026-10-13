@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterLpRestrictSplit
 import Theorems.Thm_BookProof_ChapterLpRestrictSplit_inner_restrictEmbed_eq_zero
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit
 
 

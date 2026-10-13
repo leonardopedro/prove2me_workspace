@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterParityQL
 import Theorems.Thm_BookProof_ChapterParity_mgamma0_sq
 import Theorems.Thm_BookProof_ChapterParity_pauli2_sq
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityQL
 
 

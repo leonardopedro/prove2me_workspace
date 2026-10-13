@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSphericalPlancherel
 import Theorems.Thm_BookProof_ChapterSphericalPlancherel_sineKernel_plancherel
 import Theorems.Thm_BookProof_ChapterSphericalPlancherel_sphericalTransform_eq
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalPlancherel
 
 

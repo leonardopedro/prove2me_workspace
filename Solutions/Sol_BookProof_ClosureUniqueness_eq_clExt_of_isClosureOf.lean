@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Theorems.Thm_BookProof_ClosureUniqueness_clExt_isClosureOf
 import Theorems.Thm_BookProof_ClosureUniqueness_closure_unique
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.ClosureUniqueness
 
 

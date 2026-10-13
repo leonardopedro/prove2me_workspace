@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterQgCouplingDGammaSum
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_creVec_eq_sum
 import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.QgCouplingDGammaSum
 
 

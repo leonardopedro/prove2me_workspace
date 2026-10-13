@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberTwo
 import Theorems.Thm_BookProof_ChapterFreeFieldBornFiberTwo_posSupport_nonempty
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
 open BookProof.ChapterFreeFieldBornFiberTwo
 
 

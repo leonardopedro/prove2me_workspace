@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterLayerNorm
 import Theorems.Thm_BookProof_ChapterLayerNorm_mean_add_const
 import Theorems.Thm_BookProof_ChapterLayerNorm_variance_add_const
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
 

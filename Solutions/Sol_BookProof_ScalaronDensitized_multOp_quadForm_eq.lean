@@ -2,6 +2,17 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronDensitizedTransfer
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterQuantumGravityHalfDensity
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterNavierStokesFockContinuum
 open BookProof.ScalaronDensitized
 
 
@@ -13,18 +24,25 @@ open BookProof.QuantumGravityHalfDensity
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.FockContinuum
 open BookProof.FarisLavine BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+open BookProof.ChapterLinftyMultiplication
+open BookProof.NavierStokesFlow.FockContinuum
 
 noncomputable section
 
 variable (M alpha : ℝ)
 variable {X : Type*} [MeasurableSpace X]
 
+
+private theorem multOp_coeFn (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) (f : Lp ℂ 2 μ) :
+    (multOp φ hφ f : α → ℂ) =ᵐ[μ] fun x => φ x * (f : α → ℂ) x :=
+  MemLp.coeFn_toLp (mul_memLp_two hφ f)
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (mu : Measure X) {g : X → ℝ} (hg : Measurable g)
     (f : boundedEnergyCore mu g) :
     quadForm ((boundedEnergyCore mu g).subtype.comp (multOp mu hg)) f
       = ∫ a, g a * ‖((f : Lp ℂ 2 mu) : X → ℂ) a‖ ^ 2 ∂mu := by
-
   have hkey : ∀ (z : ℂ) (r : ℝ), (inner ℂ z ((r : ℂ) * z) : ℂ) = ((r * ‖z‖ ^ 2 : ℝ) : ℂ) := by
     intro z r
     rw [RCLike.inner_apply]

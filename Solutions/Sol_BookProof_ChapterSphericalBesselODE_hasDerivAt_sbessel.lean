@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSphericalBesselODE
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_diffAt_gIter
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_pow_pred_coef
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBesselODE
 
 

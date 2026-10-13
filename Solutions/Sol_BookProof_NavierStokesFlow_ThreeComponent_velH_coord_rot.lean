@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_velH_coe_single
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_hopList_eq
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 
@@ -17,6 +22,7 @@ open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian SignedShift
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.HermiteFarisLavine BookProof.NavierStokesFlow.SignedShift.SignedHop
 theorem solution :
     ((velH A c (velState A c ![0, 1, 0]) : L2I Vel) : Vel → ℂ) ![1, 0, 0]
       = Complex.I * (((A 0 1 - A 1 0) / 2 : ℝ) : ℂ) := by

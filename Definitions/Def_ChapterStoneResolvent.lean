@@ -27,31 +27,6 @@ Here we build the analytic core: the **resolvents** `(A - i l)⁻¹` for real
 Everything is `sorry`-free and `axiom`-free.
 -/
 
-open scoped InnerProductSpace
-open Filter Topology
-
-namespace BookProof.ChapterStoneResolvent
-
-open BookProof.ChapterUnitaryTransport
-
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-
-/-- An **unbounded self-adjoint operator** on a complex Hilbert space: a dense
-domain, a linear operator on it, symmetry, and equality of the adjoint domain
-with the domain. -/
-structure UnboundedSelfAdjoint (H : Type*) [NormedAddCommGroup H]
-    [InnerProductSpace ℂ H] where
-  /-- The (dense) domain of definition. -/
-  domain : Submodule ℂ H
-  /-- The operator itself. -/
-  op : domain →ₗ[ℂ] H
-  /-- The domain is dense. -/
-  denseDomain : Dense ((domain : Submodule ℂ H) : Set H)
-  /-- The operator is symmetric. -/
-  symmetric : IsSymmetricOn domain op
-  /-- The adjoint domain is exactly the domain. -/
-  selfAdjoint : IsSelfAdjointOn domain op
-
 namespace UnboundedSelfAdjoint
 
 variable (T : UnboundedSelfAdjoint H)

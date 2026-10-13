@@ -3,6 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_smul_basisVec
 import Theorems.Thm_BookProof_FiniteSectionSingleTime_projW_apply
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkSingleTimeShift
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterE4
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.FiniteSectionSingleTime
 
 
@@ -16,6 +27,8 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIndependent
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.ChapterE4
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

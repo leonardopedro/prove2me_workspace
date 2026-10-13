@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavine
 open BookProof.ClosureUniqueness
 
 

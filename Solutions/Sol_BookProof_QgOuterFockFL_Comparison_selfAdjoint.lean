@@ -1,6 +1,14 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — solution of BookProof.QgOuterFockFL.Comparison.selfAdjoint
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgOuterFockFL
 
 
@@ -23,10 +31,10 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (C : Comparison F) (w u : F)
     (hw : ∀ v : C.dom, (inner ℂ (C.op v) w : ℂ) = inner ℂ (v : F) u) :
     ∃ h : w ∈ C.dom, C.op ⟨w, h⟩ = u := by
-
   obtain ⟨x, hx⟩ := C.surj (u + w)
   have hperp : ∀ v : C.dom, (inner ℂ (C.op v + (v : F)) (w - (x : F)) : ℂ) = 0 := by
     intro v

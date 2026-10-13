@@ -4,6 +4,11 @@ import Definitions.Def_ChapterLimitCircleExample
 import Theorems.Thm_BookProof_LimitCircleExample_contDiff_lcV
 import Theorems.Thm_BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_I
 import Theorems.Thm_BookProof_WallDeficiencyObstruction_deficiencyTrivialAt_conj_iff
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
 open BookProof.LimitCircleExample
 
 
@@ -12,6 +17,8 @@ open BookProof.LimitCircleExample
 open MeasureTheory Real
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
 open BookProof.WallDeficiencyObstruction
+open BookProof.ScalaronEsa
+open BookProof.ScalaronWallEsa
 
 noncomputable section
 

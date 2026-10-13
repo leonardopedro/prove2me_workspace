@@ -9,6 +9,8 @@ import Theorems.Thm_BookProof_SqueezedGaussStates_Acoef_le_pow
 import Theorems.Thm_BookProof_SqueezedGaussStates_Vsum_ge_one
 import Theorems.Thm_BookProof_SqueezedGaussStates_Usum_le
 import Theorems.Thm_BookProof_SqueezedGaussStates_coordComboSum_sqCoef
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

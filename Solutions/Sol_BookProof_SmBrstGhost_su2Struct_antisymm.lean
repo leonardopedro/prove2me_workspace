@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
 import Theorems.Thm_BookProof_SmBrstGhost_epsZ_antisymm
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmBrstGhost
 
 

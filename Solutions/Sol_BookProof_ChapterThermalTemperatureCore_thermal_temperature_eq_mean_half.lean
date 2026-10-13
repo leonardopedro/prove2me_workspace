@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterThermalTemperatureCore
 import Theorems.Thm_BookProof_ChapterBoseEinstein_boseEinstein_mean
 import Theorems.Thm_BookProof_ChapterBoseEinstein_thermalTemperature_boseEinstein_eq_coth
+import Definitions.Def_ChapterCoherentOccupation
+import Definitions.Def_ChapterBoseEinstein
+import Definitions.Def_ChapterCoherentTemperature
 open BookProof.ChapterThermalTemperatureCore
 
 

@@ -1,6 +1,18 @@
 -- Generated from ChapterShiftedQuadraticDegenerate.lean — solution of BookProof.ShiftedQuadraticDegenerate.diagonal_mulVec_diagShiftVec
 import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticDegenerate
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterQuadraticRotationEsa
+import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneEigenflow
 open BookProof.ShiftedQuadraticDegenerate
 
 
@@ -24,9 +36,9 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {c w : Fin d → ℝ} (hcw : ∀ i, c i = 0 → w i = 0)
     (i : Fin d) : ∑ j, (Matrix.diagonal c) i j * (diagShiftVec c w) j = w i := by
-
   classical
   rw [Finset.sum_eq_single i (fun j _ hj => by simp [Ne.symm hj])
     (by simp)]

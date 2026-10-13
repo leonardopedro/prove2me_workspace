@@ -1,6 +1,9 @@
 -- Generated from ChapterSmBrstGhost.lean — solution of BookProof.SmBrstGhost.sum_rotate3
 import Mathlib
 import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmBrstGhost
 
 

@@ -2,6 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_PermSector_permOp_mem_sectorCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.PermSector
 
 

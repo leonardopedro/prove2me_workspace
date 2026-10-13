@@ -1,6 +1,11 @@
 -- Generated from ChapterFreeFieldBornSectionBij.lean — solution of BookProof.ChapterFreeFieldBornSectionBij.mem_nonnegOrthant
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornSectionBij
+import Definitions.Def_ChapterFreeFieldGaussian
+import Definitions.Def_ChapterFreeFieldSphere
+import Definitions.Def_ChapterFreeFieldSphereSupport
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
 open BookProof.ChapterFreeFieldBornSectionBij
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterTempleSeparationNecessary.lean — solution of BookProof.TempleSeparationNecessary.other_ne_zero
 import Mathlib
 import Definitions.Def_ChapterTempleSeparationNecessary
+import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
 open BookProof.TempleSeparationNecessary
 
 

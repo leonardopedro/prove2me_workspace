@@ -2,20 +2,22 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_normSq_eq_sum
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 
 
 
 open Finset
+open BookProof.NavierStokesFlow.FockOfFock
 
 variable {n : ℕ}
 
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i : Fin n) (ψ : FermiFock n) : ‖annih i ψ‖ ≤ ‖ψ‖ := by
 
+theorem solution (i : Fin n) (ψ : FermiFock n) : ‖annih i ψ‖ ≤ ‖ψ‖ := by
   have hsq : ‖annih i ψ‖ ^ 2 ≤ ‖ψ‖ ^ 2 := by
     rw [normSq_eq_sum, normSq_eq_sum]
     have hkey : ∑ S : Finset (Fin n), ‖(annih i ψ) S‖ ^ 2

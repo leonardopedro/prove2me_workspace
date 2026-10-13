@@ -1,6 +1,7 @@
 -- Generated from ChapterA2c.lean — solution of BookProof.ChapterA.cembed_apply
 import Mathlib
 import Definitions.Def_ChapterA2c
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

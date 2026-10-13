@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.lcp_vanish
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 
@@ -17,8 +19,8 @@ variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (i j : Fin d) (a : Fin d →₀ ℕ) (h : ¬ pvec i j ≤ a) : lcp a i j = 0 := by
 
+theorem solution (i j : Fin d) (a : Fin d →₀ ℕ) (h : ¬ pvec i j ≤ a) : lcp a i j = 0 := by
   classical
   rcases eq_or_ne i j with rfl | hij
   · have hle : ¬ (2 ≤ a i) := by

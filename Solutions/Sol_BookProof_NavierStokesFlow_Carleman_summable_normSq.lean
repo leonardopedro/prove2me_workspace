@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesCarleman.lean — solution of BookProof.NavierStokesFlow.Carleman.summable_normSq
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCarleman
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.Carleman
 

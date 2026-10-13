@@ -4,6 +4,7 @@ import Definitions.Def_ChapterWaveUnboundedPotential
 import Theorems.Thm_BookProof_StrichartzWave_fourier_multiplierOp_apply
 import Theorems.Thm_BookProof_StrichartzWave_hasTemperateGrowth_symbolFn
 import Theorems.Thm_BookProof_StrichartzWave_fourier_constCoeffOp_apply
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterL2FibreSum.lean — solution of BookProof.ChapterL2FibreSum.coordCLM_apply
 import Mathlib
 import Definitions.Def_ChapterL2FibreSum
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
 open BookProof.ChapterL2FibreSum
 
 

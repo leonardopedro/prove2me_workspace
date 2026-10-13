@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRep
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_conjL_apply
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_WHalf_invariant
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRep
 
 

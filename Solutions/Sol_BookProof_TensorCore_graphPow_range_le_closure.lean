@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TensorCore_graphPow_tmul_mem_closure
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.TensorCore
 
 

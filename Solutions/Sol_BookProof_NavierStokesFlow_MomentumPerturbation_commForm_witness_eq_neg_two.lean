@@ -5,7 +5,10 @@ import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_testState_me
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_testState_coe_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_testState_coe_one
 import Theorems.Thm_BookProof_FarisLavine_commForm_eq
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
@@ -14,6 +17,7 @@ open BookProof.NavierStokesFlow.MomentumPerturbation
 
 
 open LpNat BookProof.FarisLavine IkebeKato
+open BookProof.NavierStokesFlow.FockManyMode
 
 variable {ι : Type*}
 

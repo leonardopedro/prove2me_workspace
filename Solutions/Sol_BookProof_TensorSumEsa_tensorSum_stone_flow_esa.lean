@@ -5,6 +5,13 @@ import Theorems.Thm_BookProof_TensorSumEsa_symmetricOn_cpairOp
 import Theorems.Thm_BookProof_TensorSumEsa_dense_cpairDom
 import Theorems.Thm_BookProof_TensorSumEsa_essentiallySelfAdjointOn_cpairDom_esa
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorSumEsa
 
 
@@ -12,6 +19,9 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.EsaClosure
+open BookProof.StoneBridge
+open BookProof.TensorCore
 
 noncomputable section
 

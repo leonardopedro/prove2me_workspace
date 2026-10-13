@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCarleman
 import Theorems.Thm_BookProof_NavierStokesFlow_Carleman_summable_normSq
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.Carleman
 

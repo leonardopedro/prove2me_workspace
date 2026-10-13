@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterProbabilityClockStochastic
 import Theorems.Thm_BookProof_ProbabilityClockStochastic_Jgen_sq
+import Definitions.Def_ChapterEulerGenericDensity
+import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.ProbabilityClockStochastic
 
 

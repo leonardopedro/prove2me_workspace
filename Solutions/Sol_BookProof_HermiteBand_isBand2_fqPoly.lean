@@ -8,11 +8,18 @@ import Theorems.Thm_BookProof_HermiteBand_IsBand1_add
 import Theorems.Thm_BookProof_HermiteBand_IsBand2_add
 import Theorems.Thm_BookProof_HermiteBand_isBand2_fqQuadPoly
 import Theorems.Thm_BookProof_HermiteBand_isBand1_foPoly
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterSirkFinitePrecision
+Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.HermiteBand
 
 
 
 
+open BookProof.FullQuadratic BookProof.HermiteRelative BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval
 noncomputable section
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis

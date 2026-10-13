@@ -1,6 +1,13 @@
 -- Generated from ChapterFreeFieldBornFiberSpectrum.lean — solution of BookProof.ChapterFreeFieldBornFiberSpectrum.posSupport_unifDist_card
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberSpectrum
+import Definitions.Def_ChapterFreeFieldBorn
+import Definitions.Def_ChapterFreeFieldBornSurj
+import Definitions.Def_ChapterFreeFieldBornCont
+import Definitions.Def_ChapterFreeFieldBornQuotient
+import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberTwo
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 open BookProof.ChapterFreeFieldBornFiberSpectrum
 
 
@@ -18,9 +25,9 @@ variable {n : ℕ}
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
     (posSupport (unifDist n k)).card = k := by
-
   convert Finset.card_eq_sum_ones ( Finset.Iio k ) using 1;
   · refine Finset.card_bij ( fun x hx => x.1 ) ?_ ?_ ?_ <;> simp only [posSupport,
       Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_Iio, exists_prop];
@@ -29,3 +36,9 @@ theorem solution {k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
     · intro b hb; use ⟨ b, by linarith ⟩ ; simp [ unifDist, hb ] ;
       linarith;
   · norm_num
+
+/-
+For every `1 ≤ k ≤ n` there is a probability distribution whose Born fiber
+has exactly `2 ^ k` points — the uniform distribution on the first `k`
+coordinates.
+-/

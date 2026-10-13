@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
 import Theorems.Thm_BookProof_NonnegResolvent_smul_invCLMAt_sub_of_mem
 import Theorems.Thm_BookProof_NonnegResolvent_yosidaCLM_apply
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegResolvent
 
 

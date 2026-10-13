@@ -1,6 +1,14 @@
 -- Generated from ChapterQedFockGapChain.lean — solution of BookProof.QedFockGapChain.irPhotonDispersion_ge
 import Mathlib
 import Definitions.Def_ChapterQedFockGapChain
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFockDiagonalGapChain
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.QedFockGapChain
 
 

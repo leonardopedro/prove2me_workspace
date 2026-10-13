@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterGravityTimeProj
 import Theorems.Thm_BookProof_ChapterGravityTimeProj_spatialProj_add_timeProj
 import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_idempotent
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityTimeProj
 
 

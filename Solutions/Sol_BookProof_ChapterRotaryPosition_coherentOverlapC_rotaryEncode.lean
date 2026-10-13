@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterRotaryPosition
 import Theorems.Thm_BookProof_ChapterRotaryPosition_norm_rotaryEncode
 import Theorems.Thm_BookProof_ChapterRotaryPosition_inner_rotaryEncode
+import Definitions.Def_ChapterCoherentOverlapComplex
 open BookProof.ChapterRotaryPosition
 
 

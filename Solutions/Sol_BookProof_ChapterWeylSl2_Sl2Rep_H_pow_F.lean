@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWeylSl2
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_apply_H_F
 import Theorems.Thm_BookProof_ChapterWeylSl2_Sl2Rep_pow_succ_apply
+import Definitions.Def_ChapterDoubleSlit
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
 

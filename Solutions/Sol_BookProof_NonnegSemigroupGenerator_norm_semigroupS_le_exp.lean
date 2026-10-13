@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
 import Theorems.Thm_BookProof_NonnegSemigroupGenerator_norm_expNeg_le_exp
 import Theorems.Thm_BookProof_NonnegSemigroupGenerator_yosidaCLM_ge
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterNonnegSemigroup
 open BookProof.NonnegSemigroupGenerator
 
 

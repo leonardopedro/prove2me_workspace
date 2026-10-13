@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_GraphCore_symmetricOn_restrictOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.EsaOneParticle
 
 
@@ -9,6 +16,9 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterF7
+open BookProof.ChapterUnboundedPosition
 
 noncomputable section
 

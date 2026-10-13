@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_ChapterStoneSeparable_mulSA_position_unbounded
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.TensorSumEsa
 
 
@@ -9,6 +14,8 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterUnboundedPosition
 
 noncomputable section
 

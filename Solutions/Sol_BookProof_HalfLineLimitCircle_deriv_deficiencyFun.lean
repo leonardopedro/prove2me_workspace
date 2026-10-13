@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_deficiencyFun_hasDerivAt
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

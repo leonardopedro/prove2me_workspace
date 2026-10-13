@@ -24,7 +24,7 @@ theorem solution (U : Fin n → Fin n → ℂ) :
   · refine fun a => isDeterministicCol_of_offDiag U a ?_;
     intro Ψ
     by_cases hΨ : Ψ = 0;
-    · simp [hΨ, offDiag];
+    · simp [hΨ, BookProof.ChapterReconstruct.offDiag];
     · -- Let $c = \sqrt{\sum_{k} \| \Psi_k \|^2}$.
       set c := Real.sqrt (∑ k, ‖Ψ k‖ ^ 2) with hc_def
       have hc_pos : 0 < c := by
@@ -44,7 +44,7 @@ theorem solution (U : Fin n → Fin n → ℂ) :
         exact hU a _ hc_unit
       have hc_offDiag_zero : offDiag U a Ψ = 0 := by
         convert congr_arg (fun x : ℂ => x * c ^ 2) hc_offDiag using 1 <;>
-          norm_num [offDiag, Finset.mul_sum _ _ _, mul_assoc, mul_left_comm, mul_comm] ;
+          norm_num [BookProof.ChapterReconstruct.offDiag, Finset.mul_sum _ _ _, mul_assoc, mul_left_comm, mul_comm] ;
           ring_nf ; norm_num [hc_pos.ne']
       exact hc_offDiag_zero
   · exact fun h a Ψ _ => offDiag_of_isDeterministicCol U a (h a) Ψ

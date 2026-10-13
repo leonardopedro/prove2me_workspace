@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
 import Theorems.Thm_BookProof_ChapterAbelianDirectSum_repInvariant_orthogonal
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum
 
 

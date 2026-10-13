@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNumericalRangeCrouzeix
 import Theorems.Thm_BookProof_ChapterNumericalRangeCrouzeix_numRadiusLE_iff_numRange_subset
 import Theorems.Thm_BookProof_ChapterNumericalRangeCrouzeix_inner_sub_const_smul
 import Theorems.Thm_BookProof_ChapterH9_mem_numRange
+import Definitions.Def_ChapterH9
 open BookProof.ChapterNumericalRangeCrouzeix
 
 

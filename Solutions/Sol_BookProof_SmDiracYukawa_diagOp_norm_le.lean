@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmDiracYukawa_diagOp_normSq
 import Theorems.Thm_BookProof_SmCar_normSq_eq_sum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

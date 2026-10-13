@@ -1,6 +1,8 @@
 -- Generated from ChapterSqueezedGaussStates.lean — solution of BookProof.SqueezedGaussStates.coordCombo_smul_add
 import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.SqueezedGaussStates
 
 

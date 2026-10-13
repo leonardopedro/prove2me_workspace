@@ -4,6 +4,10 @@ import Definitions.Def_ChapterBrstUnboundedLeakage
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_truncation_leakage_le
 import Theorems.Thm_BookProof_BrstUnboundedLeakage_norm_restartIter
 import Theorems.Thm_BookProof_BrstLeakage_leakageIter_succ
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.BrstUnboundedLeakage
 
 
@@ -13,6 +17,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.BrstLeakage BookProof.ChapterStoneResolvent
+open BookProof.BrstLeakage
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
@@ -22,6 +27,7 @@ variable (V : Submodule ℂ H) [FiniteDimensional ℂ V] (hV : V ≤ T.domain)
 variable (Vs : ℕ → Submodule ℂ H) [∀ i, FiniteDimensional ℂ (Vs i)] (hVs : ∀ i, Vs i ≤ T.domain)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {Om : H →L[ℂ] H}
     (hcomm : ∀ (s : ℝ) (y : H), Om (T.stoneU s y) = T.stoneU s (Om y))
     (τ : ℝ) (hτ : 0 ≤ τ) (x : H) (D : ℝ)
@@ -30,9 +36,6 @@ theorem solution {Om : H →L[ℂ] H}
     ∀ n : ℕ, ‖Om (leakageIter (restartGen T Vs hVs) τ x n)‖
       ≤ ‖Om x‖ + n * (‖Om‖ * (D * ‖x‖ * τ))
   | 0 => by simp
-  | n + 1 => by
-      have hxn : ‖leakageIter (restartGen T Vs hVs) τ x n‖ = ‖x‖
-| 0 => by simp
   | n + 1 => by
       have hxn : ‖leakageIter (restartGen T Vs hVs) τ x n‖ = ‖x‖ :=
         norm_restartIter T Vs hVs τ x n
@@ -47,7 +50,7 @@ theorem solution {Om : H →L[ℂ] H}
           ≤ ‖Om (leakageIter (restartGen T Vs hVs) τ x n)‖ + ‖Om‖ * (D * ‖x‖ * τ) := by
         rw [leakageIter_succ]
         exact hstep.trans (by gcongr)
-      have hind := solution hcomm τ hτ x D hret hD n
+      have hind := restart_leakage_le hcomm τ hτ x D hret hD n
       have hcast : ((n : ℝ) + 1) * (‖Om‖ * (D * ‖x‖ * τ))
           = (n : ℝ) * (‖Om‖ * (D * ‖x‖ * τ)) + ‖Om‖ * (D * ‖x‖ * τ) := by ring
       push_cast

@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
 import Theorems.Thm_BookProof_YangMillsHermite_starP_C
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.SmHamiltonian
 
 

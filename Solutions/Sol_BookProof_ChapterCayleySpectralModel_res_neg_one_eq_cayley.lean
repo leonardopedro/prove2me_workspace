@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterCayleySpectralModel
 import Theorems.Thm_BookProof_ChapterCayleyTransform_sub_cayley_shift
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCayleyTransform
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ChapterCayleySpectralModel
 
 
@@ -13,6 +19,7 @@ open MeasureTheory
 open BookProof.ChapterUnitaryTransport BookProof.ChapterStoneResolvent
 open BookProof.ChapterCayleyTransform BookProof.ChapterAbelianGelfandModel
 open BookProof.ChapterSpectralMultiplication
+open BookProof.ChapterCayleyTransform
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H)

@@ -53,66 +53,6 @@ def krylovSpan (H : E →ₗ[K] E) (v : E) (m : ℕ) : Submodule K E :=
 
 variable {H : E →ₗ[K] E} {v : E}
 
-
-
-
-
-
-
-
-
-
-
-
-
-.1 describes the dimensional reduction used by the Krylov–Hashimoto
-generator.  The standard polynomial Krylov subspace is
-
-  `Kry m(H̄, v₀) = span{v₀, H̄v₀, …, H̄^{m−1}v₀}`,
-
-while the *rational* construction would need to solve `(γI − H̄)y = v` at every
-step.  The observation of §9.1 is that pre-conditioning the seed removes the
-inversion entirely: applying the resolvent to `v = (γI − H̄)^{m} v₀` merely
-*lowers the polynomial degree*, and the shifted sequence
-`wₖ = (H̄ − γI)wₖ₋₁`, `w₀ = v₀`, spans exactly the standard Krylov subspace.
-
-## Deliverables
-
-* `krylovSpan` and `krylov_subspace_span` — `Kry m(H̄, v₀)` is exactly the span of
-  `{H̄^i v₀ | i < m}`, together with the basic monotonicity
-  (`krylovSpan_mono`) and the invariance-step `krylovSpan_map_le`;
-* `shift_pow_sub_pow_mem` — the degree-lowering core: `(H̄ − γI)^m v₀` differs
-  from `H̄^m v₀` by an element of `Kry m(H̄, v₀)` (the shift only adds lower-order
-  terms);
-* `krylovSpan_shift_eq` — hence the shifted and unshifted Krylov subspaces
-  coincide: `Kry m(H̄ − γI, v₀) = Kry m(H̄, v₀)`;
-* `inversion_free_seed` — for the pre-conditioned seed `v = (γI − H̄)^{m+1} v₀`
-  the resolvent image is `(γI − H̄)^{m} v₀`: applying `(γI − H̄)⁻¹` drops the
-  polynomial degree by one, so no linear system is ever solved;
-* `generator_bounded_of_rankOneProjector` — `H̄` is bounded: a rank-one projector
-  contributes operator norm `≤ 1` and the diagonal part its own norm;
-* `krylov_no_inversion_eq_standard` — **headline**: the inversion-free sequence
-  `wₖ = (H̄ − γI)wₖ₋₁`, `w₀ = v₀` spans the full Krylov subspace
-  `Kry m(H̄, v₀)`.
-
-Everything is `sorry`-free and `axiom`-free (only `propext`, `Classical.choice`,
-`Quot.sound`).
--/
-
-noncomputable section
-
-namespace BookProof.ChapterH5
-
-section Krylov
-
-variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
-
-/-- The **Krylov subspace** `Kry m(H, v) = span{v, Hv, …, H^{m−1}v}`. -/
-def krylovSpan (H : E →ₗ[K] E) (v : E) (m : ℕ) : Submodule K E :=
-  Submodule.span K {x | ∃ i < m, x = (H ^ i) v}
-
-variable {H : E →ₗ[K] E} {v : E}
-
 /-- **F.1 (definition unfolded).**  `Kry m(H, v)` is exactly the span of the
 first `m` powers of `H` applied to `v`. -/
 theorem krylov_subspace_span (H : E →ₗ[K] E) (v : E) (m : ℕ) :

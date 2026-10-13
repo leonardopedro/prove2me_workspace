@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
 import Theorems.Thm_BookProof_SqueezedGaussStates_sqCoef_of_le
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

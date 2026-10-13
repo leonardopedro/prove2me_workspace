@@ -1,6 +1,7 @@
 -- Generated from ChapterLinftyMaximalAbelian.lean — solution of BookProof.ChapterLinftyMaximalAbelian.oneLp_coeFn
 import Mathlib
 import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterLinftyMaximalAbelian
 
 

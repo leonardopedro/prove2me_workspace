@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSolidHarmonic
 import Theorems.Thm_BookProof_ChapterSolidHarmonic_hasFDerivAt_radialFactor
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterSolidHarmonicTools
+import Definitions.Def_ChapterLegendrePolynomial
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonic
 
 
@@ -11,15 +15,22 @@ open Laplacian InnerProductSpace Polynomial
 open BookProof.ChapterRadialLaplacian BookProof.ChapterLaplacianProduct
 open BookProof.ChapterSolidHarmonicTools BookProof.ChapterLegendrePolynomial
 open scoped RealInnerProductSpace
+open BookProof.ChapterLegendrePolynomial
+open BookProof.ChapterRadialLaplacian
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+
+
+@[simp] private theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
+ radial function, and the `s`-wave form of Note 68
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (e : E) (l μ : ℕ) (x : E) :
     fderiv ℝ (radialFactor e l μ) x x = ((l - μ : ℕ) : ℝ) * radialFactor e l μ x := by
-
   rw [(hasFDerivAt_radialFactor e l μ x).fderiv]
   simp only [ContinuousLinearMap.coe_sum', Finset.sum_apply, ContinuousLinearMap.add_apply,
     ContinuousLinearMap.coe_smul', Pi.smul_apply, smul_eq_mul, innerCLM_apply]

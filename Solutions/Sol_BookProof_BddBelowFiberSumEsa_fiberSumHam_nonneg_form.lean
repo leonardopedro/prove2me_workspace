@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Theorems.Thm_BookProof_BddBelowFiberSumEsa_fiberSumHam_semibounded
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterWallEsaSemibounded
+import Definitions.Def_ChapterBddBelowWallEsa
+Definitions.Def_ChapterWallEsaSemibounded
 open BookProof.BddBelowFiberSumEsa
 
 

@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.QgPhysicalSectorIdentity
 
 

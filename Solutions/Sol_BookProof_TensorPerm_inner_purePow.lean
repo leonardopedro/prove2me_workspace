@@ -1,6 +1,8 @@
 -- Generated from ChapterTensorPermutation.lean — solution of BookProof.TensorPerm.inner_purePow
 import Mathlib
 import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorPerm
 
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Theorems.Thm_BookProof_FarisLavine_norm_sub_smul_sq
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.KatoRellich
 
 
@@ -14,11 +16,11 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (H : D →ₗ[ℂ] F) (hH : SymmetricOn D H)
     (B : F →L[ℂ] F) (e : ℝ) (he : ‖B‖ < |e|)
     (hdense : Dense (Set.range fun x : D => H x - ((e : ℂ) * Complex.I) • (x : F))) :
     Dense (Set.range fun x : D => (H x + B (x : F)) - ((e : ℂ) * Complex.I) • (x : F)) := by
-
   have he0 : (0 : ℝ) < |e| := lt_of_le_of_lt (norm_nonneg B) he
   set lam : ℂ := (e : ℂ) * Complex.I with hlam
   set q : ℝ := ‖B‖ / |e| with hqdef

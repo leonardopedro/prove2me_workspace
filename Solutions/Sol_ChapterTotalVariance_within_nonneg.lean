@@ -1,6 +1,7 @@
 -- Generated from ChapterTotalVariance.lean — solution of ChapterTotalVariance.within_nonneg
 import Mathlib
 import Definitions.Def_ChapterTotalVariance
+import Definitions.Def_ChapterA4
 open ChapterTotalVariance
 
 

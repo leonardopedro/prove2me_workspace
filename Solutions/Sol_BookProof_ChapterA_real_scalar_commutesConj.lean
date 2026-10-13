@@ -1,6 +1,8 @@
 -- Generated from ChapterA2b.lean — solution of BookProof.ChapterA.real_scalar_commutesConj
 import Mathlib
 import Definitions.Def_ChapterA2b
+import Definitions.Def_ChapterA1
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

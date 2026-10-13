@@ -1,16 +1,23 @@
 -- Generated from ChapterNavierStokesLagrangianKatoRellich.lean — solution of BookProof.NavierStokesFlow.LagrangianKatoRellich.diagKR_drift
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
-import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_real_smul
+
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagOp_sum
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
-
-
 open Filter Topology
-
-
 
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
@@ -20,6 +27,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterAbelianDiagonalCountable BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution : diagKR.drift = diagOp (fun n => 3 * (n : ℝ)) :=
   : ℝ)))
         = diagOp fun n => (3 / 2 : ℝ) * (n : ℝ) ^ 2

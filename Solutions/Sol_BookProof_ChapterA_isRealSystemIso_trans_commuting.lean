@@ -1,6 +1,7 @@
 -- Generated from ChapterA2e.lean — solution of BookProof.ChapterA.isRealSystemIso_trans_commuting
 import Mathlib
 import Definitions.Def_ChapterA2e
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

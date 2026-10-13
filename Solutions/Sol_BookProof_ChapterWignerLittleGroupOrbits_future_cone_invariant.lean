@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_energy_pos_of_act
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_mass_invariant
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
 import Theorems.Thm_BookProof_QgDerivativeRealization_configPoint_eq_jetPoint_of_fixed
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
 open BookProof.QgDerivativeRealization
 
 

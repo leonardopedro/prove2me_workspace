@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Theorems.Thm_BookProof_HarmonicOscillator_hasDerivAt_polyGaussC
+import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HarmonicOscillator
 
 

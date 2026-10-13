@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterLaplacianProduct_laplacian_mul
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_fderiv_radial
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_sum_inner_mul_apply
 import Theorems.Thm_BookProof_ChapterRadialLaplacian_laplacian_radial
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 
 
@@ -12,19 +13,20 @@ open BookProof.ChapterLaplacianProduct
 
 open Filter Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
 open scoped InnerProductSpace RealInnerProductSpace
+open BookProof.ChapterRadialLaplacian
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution [FiniteDimensional ℝ E] {g : ℝ → ℝ} {H : E → ℝ} {x : E}
     {l : ℕ} (hx : x ≠ 0) (hg : ContDiffAt ℝ 2 g ‖x‖) (hH : ContDiffAt ℝ 2 H x)
     (hharm : (Δ H) x = 0) (heuler : fderiv ℝ H x x = l * H x) :
     (Δ fun y : E => g ‖y‖ * H y) x
       = (deriv (deriv g) ‖x‖
           + (((Module.finrank ℝ E : ℝ) - 1 + 2 * l) / ‖x‖) * deriv g ‖x‖) * H x := by
-
   have hr : 0 < ‖x‖ := norm_pos_iff.mpr hx
   have hr' : ‖x‖ ≠ 0 := ne_of_gt hr
   have hf : ContDiffAt ℝ 2 (fun y : E => g ‖y‖) x := by

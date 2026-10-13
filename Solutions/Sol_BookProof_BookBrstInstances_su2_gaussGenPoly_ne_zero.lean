@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstInstances
 import Theorems.Thm_BookProof_BookBrstInstances_su2_gaussVec_value
 import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
 open BookProof.BookBrstInstances
 
 

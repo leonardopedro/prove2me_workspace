@@ -1,6 +1,8 @@
 -- Generated from ChapterTensorGraphCore.lean — solution of BookProof.TensorCore.norm_tmul_sub_le
 import Mathlib
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
 open BookProof.TensorCore
 
 

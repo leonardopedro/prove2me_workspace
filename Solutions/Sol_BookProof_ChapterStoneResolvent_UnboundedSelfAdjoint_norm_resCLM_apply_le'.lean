@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterStoneGroup
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_resCLM_apply_le
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 

@@ -1,6 +1,11 @@
 -- Generated from ChapterLorentzRealRepFull.lean — solution of BookProof.ChapterLorentzRealRepFull.conj_inv_two
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRepSum
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterLorentzRealRepFull
 
 

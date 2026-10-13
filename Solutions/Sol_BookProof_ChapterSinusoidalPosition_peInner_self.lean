@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSinusoidalPosition
 import Theorems.Thm_BookProof_ChapterSinusoidalPosition_peInner_eq_sum_cos
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterSinusoidalPosition
 
 

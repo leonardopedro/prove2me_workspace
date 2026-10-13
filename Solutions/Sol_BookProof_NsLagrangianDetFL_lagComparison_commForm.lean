@@ -6,6 +6,13 @@ import Theorems.Thm_BookProof_NsLagrangianDetFL_lagE_realCoeff
 import Theorems.Thm_BookProof_NsLagrangianDetFL_lagG_flux
 import Theorems.Thm_BookProof_KoopmanLyapunov_commForm_kvnGen_mul
 import Theorems.Thm_BookProof_KoopmanLyapunov_lyapunovComparison_commForm
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.NsLagrangianDetFL
 
 
@@ -14,6 +21,8 @@ open BookProof.NsLagrangianDetFL
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
 open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.HermiteProductCore
+open BookProof.YangMillsHermite
 
 noncomputable section
 

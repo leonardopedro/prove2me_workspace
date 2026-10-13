@@ -4,6 +4,10 @@ import Definitions.Def_ChapterNsBrstDerivativeGauge
 import Theorems.Thm_BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL
 import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_swap
 import Theorems.Thm_BookProof_NavierStokesGaugeY_pderiv_u_mul_uD
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesGaugeY2
 open BookProof.NsBrstDerivativeGauge
 
 
@@ -11,6 +15,8 @@ open BookProof.NsBrstDerivativeGauge
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
 open BookProof.NavierStokesGaugeY BookProof.NavierStokesGaugeY2
+open BookProof.NavierStokesGaugeY
+open BookProof.NavierStokesGaugeY2
 
 noncomputable section
 

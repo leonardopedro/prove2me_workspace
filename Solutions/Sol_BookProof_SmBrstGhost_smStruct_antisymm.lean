@@ -4,6 +4,9 @@ import Definitions.Def_ChapterSmBrstGhost
 import Theorems.Thm_BookProof_SmBrstGhost_sumStruct_antisymm
 import Theorems.Thm_BookProof_SmBrstGhost_su2Struct_antisymm
 import Theorems.Thm_BookProof_SmBrstGhost_u1Struct_antisymm
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsSU3
 open BookProof.SmBrstGhost
 
 

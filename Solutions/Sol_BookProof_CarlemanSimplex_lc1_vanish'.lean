@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_vanish
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

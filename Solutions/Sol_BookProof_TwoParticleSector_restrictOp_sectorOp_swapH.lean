@@ -4,6 +4,11 @@ import Definitions.Def_ChapterTwoParticleSectorEsa
 import Theorems.Thm_BookProof_TwoParticleSector_sectorOp_swapH
 import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorCore
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 
@@ -11,6 +16,9 @@ open BookProof.TwoParticleSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.DirectSumEsa
+open BookProof.GraphCore
+open BookProof.TensorCore
 
 noncomputable section
 

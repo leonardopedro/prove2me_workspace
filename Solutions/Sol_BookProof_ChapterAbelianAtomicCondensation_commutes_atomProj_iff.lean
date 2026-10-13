@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_ChapterAbelianAtomicCondensation_atomProj_apply
 import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_comm
 import Theorems.Thm_BookProof_ChapterAbelianDiagonalCountable_diagOp_coordUnit_apply
 import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 open BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterAbelianAtomicCondensation
 
@@ -16,11 +18,20 @@ noncomputable section
 
 
 open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.ChapterGaugeUnconstrainedSpectrum
+
+
+@[simp] private theorem norm_atom (i : ℕ) : ‖atom i‖ = 1 := by
+  rw [atom, lp.norm_single (by norm_num)]
+  simp
 
 set_option maxHeartbeats 1000000 in
+
+@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
+    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+
 theorem solution (T : Ell2C →L[ℂ] Ell2C) :
     (∀ i : ℕ, T.comp (atomProj i) = (atomProj i).comp T) ↔ ∃ d : EllInf, T = diagOp d := by
-
   constructor
   · intro hT
     set c : ℕ → ℂ := fun i => ((T (atom i) : Ell2C) : ℕ → ℂ) i with hc
@@ -50,3 +61,5 @@ theorem solution (T : Ell2C →L[ℂ] Ell2C) :
   · rintro ⟨d, rfl⟩
     intro i
     exact diagOp_comm d (coordUnit i)
+
+/-! ## Purely atomic abelian algebras -/

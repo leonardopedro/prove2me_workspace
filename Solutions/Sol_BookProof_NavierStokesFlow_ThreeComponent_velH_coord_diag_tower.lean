@@ -8,6 +8,12 @@ import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_raise_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shDiag_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shPair_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_ThreeComponent_shShear_apply
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesSignedShift
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.ThreeComponent
 
@@ -22,6 +28,7 @@ open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian SignedShift
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterGravityProjector BookProof.NavierStokesFlow.HermiteFarisLavine BookProof.NavierStokesFlow.SignedShift.SignedHop
 theorem solution (n : ℕ) :
     ((velH A c (velState A c ![n + 1, 0, 0]) : L2I Vel) : Vel → ℂ) ![n + 3, 0, 0]
       = Complex.I * ((A 0 0 / 2 * Real.sqrt (((n : ℝ) + 1 + 1) * ((n : ℝ) + 1 + 2)) : ℝ) : ℂ) := by

@@ -1,6 +1,9 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.dMatR_smul_one
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
 open BookProof.QgDerivativeRealization
 
 

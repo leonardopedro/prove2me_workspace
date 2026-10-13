@@ -4,6 +4,8 @@ import Definitions.Def_ChapterDiffuseUnitaryModel
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_cdfUnitary_apply
 import Theorems.Thm_BookProof_ChapterDiffuseUnitaryModel_memLp_top_comp_cdf
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Definitions.Def_ChapterDiffuseCdfModel
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterDiffuseUnitaryModel
 
 
@@ -14,6 +16,7 @@ open MeasureTheory ProbabilityTheory Filter
 
 
 open BookProof.ChapterDiffuseCdfModel BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterLinftyMultiplication
 
 variable (mu : Measure ℝ) [IsProbabilityMeasure mu] [NullSingletonClass mu]
 

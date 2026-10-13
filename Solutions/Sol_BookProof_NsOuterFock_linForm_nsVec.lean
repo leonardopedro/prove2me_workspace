@@ -1,6 +1,14 @@
 -- Generated from ChapterNsOuterFockFarisLavine.lean — solution of BookProof.NsOuterFock.linForm_nsVec
 import Mathlib
 import Definitions.Def_ChapterNsOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterQgOuterFockEsa
 open BookProof.NsOuterFock
 
 
@@ -12,6 +20,7 @@ open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
 open BookProof.SqSumOuterFamily
+open BookProof.QgOuterFock
 
 noncomputable section
 

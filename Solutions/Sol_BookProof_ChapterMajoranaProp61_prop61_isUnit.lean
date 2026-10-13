@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMajoranaProp61
 import Theorems.Thm_BookProof_ChapterMajoranaProp61_prop61_star_mul_self
 import Theorems.Thm_BookProof_ChapterMajoranaProp61_prop61_mul_star_self
+import Definitions.Def_ChapterMajoranaFourier
 open BookProof.ChapterMajoranaProp61
 
 

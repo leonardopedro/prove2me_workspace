@@ -1,6 +1,12 @@
--- Generated from ChapterHermiteBandCalculusHigher.lean — solution of BookProof.HermiteBandHigher.mulOp_mul
+-- Generated from ChapterHermiteBandCalculusHigher.lean — solution of BookProof.YangMillsHermite.mulOp_mul
 import Mathlib
 import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterF7
 open BookProof.HermiteBandHigher
 
 
@@ -18,7 +24,7 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (f g : MvPolynomial (Fin d) ℂ) :
-    mulOp (f * g) = (mulOp f) ∘ₗ (mulOp g) := by
+    BookProof.YangMillsHermite.mulOp (f * g) = (BookProof.YangMillsHermite.mulOp f) ∘ₗ (BookProof.YangMillsHermite.mulOp g) := by
 
   refine LinearMap.ext fun p => ?_
-  simp [mulOp]
+  simp [BookProof.YangMillsHermite.mulOp]

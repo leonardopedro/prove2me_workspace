@@ -2,6 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Theorems.Thm_BookProof_ResolventLadder_le_graphRayleighSup
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ResolventLadder
 
 

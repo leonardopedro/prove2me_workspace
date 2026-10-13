@@ -1,6 +1,9 @@
 -- Generated from ChapterWignerOrbitClassification.lean — solution of BookProof.ChapterWignerOrbitClassification.minkSq_negMom
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
+import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterWignerOrbitClassification
 
 

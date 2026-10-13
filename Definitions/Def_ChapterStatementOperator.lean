@@ -42,24 +42,6 @@ Main results.
   statement evaluates every model to within `ε‖ψ‖²` of the true value.
 -/
 
-namespace BookProof.ChapterStatementOperator
-
-open ContinuousLinearMap
-
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-
-/-- A **statement** about the models collected in the Hilbert space `H`: an orthogonal
-projection, i.e. a self-adjoint idempotent bounded operator.  Its range is the subspace
-of models in which the statement holds. -/
-structure ModelStatement (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-    [CompleteSpace H] where
-  /-- The operator representing the statement. -/
-  op : H →L[ℂ] H
-  /-- The operator is self-adjoint. -/
-  isSelfAdjoint : IsSelfAdjoint op
-  /-- The operator is idempotent. -/
-  isIdempotent : op ∘L op = op
-
 namespace ModelStatement
 
 variable (S : ModelStatement H) (ψ : H)

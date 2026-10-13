@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_hasCompactSupport_conj
 import Theorems.Thm_BookProof_HalfLineLimitCircle_setIntegral_eq_integral_of_testSpace
+import Definitions.Def_ChapterFarisLavine
 open BookProof.HalfLineLimitCircle
 
 

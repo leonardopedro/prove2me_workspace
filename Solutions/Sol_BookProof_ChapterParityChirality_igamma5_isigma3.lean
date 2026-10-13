@@ -1,6 +1,9 @@
 -- Generated from ChapterParityChirality.lean — solution of BookProof.ChapterParityChirality.igamma5_isigma3
 import Mathlib
 import Definitions.Def_ChapterParityChirality
+import Definitions.Def_ChapterParity
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParitySU2
 open BookProof.ChapterParityChirality
 
 

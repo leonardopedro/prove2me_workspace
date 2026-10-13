@@ -1,6 +1,15 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.oscCol_apply
 import Mathlib
 import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.FockWeightedSchur
 
 
@@ -16,10 +25,10 @@ variable {w : ℕ → ℝ}
 variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (k j : ℕ) : (oscCol k) j =
     if j = k + 1 then ((Real.sqrt ((k : ℝ) + 1) : ℝ) : ℂ)
     else if k = j + 1 then ((Real.sqrt (k : ℝ) : ℝ) : ℂ) else 0 := by
-
   classical
   rcases Nat.eq_zero_or_pos k with hk | hk
   · subst hk

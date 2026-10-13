@@ -3,6 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockEsa
 import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_eq_fqOp
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_essentiallySelfAdjoint
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterQg3DGaugeEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgOuterFock
 
 
@@ -19,6 +33,7 @@ open BookProof.Qg3DGaugeEsa
 open BookProof.QgHermiteOscillator
 open BookProof.DirectSumEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
 
 noncomputable section
 

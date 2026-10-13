@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEnergyBoundedEvolution
 import Theorems.Thm_BookProof_ChapterEnergyBoundedEvolution_phase_split
-import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le_prime
+import Theorems.Thm_BookProof_EnergyBandDecomposition_norm_evolution_sub_scalar_le'
 open BookProof.ChapterEnergyBoundedEvolution
 
 

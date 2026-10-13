@@ -4,6 +4,13 @@ import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteRelative_mulXPoly_eq_mulOp
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.HermiteRelative
 
 
@@ -15,6 +22,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
+open BookProof.ChapterF7 BookProof.YangMillsHermite
 noncomputable section
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] {ι : Type*}

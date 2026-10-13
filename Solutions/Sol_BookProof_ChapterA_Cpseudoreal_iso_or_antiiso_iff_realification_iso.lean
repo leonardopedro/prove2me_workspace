@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA2e
 import Theorems.Thm_BookProof_ChapterA_Cpseudoreal_realification_dichotomy
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

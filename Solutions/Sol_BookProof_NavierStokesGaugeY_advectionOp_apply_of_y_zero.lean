@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesGaugeY_uFieldOp_apply_of_y_zero
 import Theorems.Thm_BookProof_NavierStokesGaugeY_y_zero_of_commute
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 

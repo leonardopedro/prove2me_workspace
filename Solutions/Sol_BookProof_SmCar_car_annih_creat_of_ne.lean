@@ -2,21 +2,23 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_jwSign_insert
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 
 
 
 open Finset
+open BookProof.NavierStokesFlow.FockOfFock
 
 variable {n : ℕ}
 
 variable {n : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {i j : Fin n} (hij : i ≠ j) :
     annih i ∘ₗ creat j + creat j ∘ₗ annih i = 0 := by
-
   refine LinearMap.ext fun ψ => ?_
   ext S
   by_cases hi : i ∈ S

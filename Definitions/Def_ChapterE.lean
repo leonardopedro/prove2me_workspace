@@ -28,53 +28,6 @@ def J : Matrix (Fin 2) (Fin 2) ℝ := !![0, -1; 1, 0]
 **E.1a (surjectivity of the Born map).** Every probability `p ∈ [0,1]` is
 realized as `cos² t` for some angle `t`.
 -/
-
-
-/-
-**E.1b (Euler rotation).** The matrix exponential of `t • J` is the rotation
-matrix `[[cos t, -sin t],[sin t, cos t]]`.
--/
-
-
-/-
-**E.1b (rotation acts on the clock).** The rotation by `t` sends the initial
-state `(1,0)` to `Ψ t`.
--/
-
-
-/-
-**E.1c (collapse = diagonal / real part).** The collapsed (diagonal) density
-matrix of `Ψ t` is `½·I + ½cos(2t)·diag(1,-1)`.
--/
-
-
-/-! ## E.2 — Probability-preserving linear maps -/
-
-/-
-**E.2b (uniform → vertex forces singularity).** A column-stochastic `2×f `book.tex`
-(see `FORMALIZATION_ROADMAP.md` §E): the wave-function as a "multi-dimensional
-Euler formula" parametrizing any probability distribution, with collapse =
-"taking the real part."
--/
-
-open scoped Matrix BigOperators
-open Filter
-open scoped Topology
-
-namespace BookProof.ChapterE
-
-/-! ## E.1 — The 2-state probability clock -/
-
-/-- The 2-state wave function `Ψ t = (cos t, sin t)`. -/
-noncomputable def Ψ (t : ℝ) : Fin 2 → ℝ := ![Real.cos t, Real.sin t]
-
-/-- The rotation generator `J = [[0,-1],[1,0]]`. -/
-def J : Matrix (Fin 2) (Fin 2) ℝ := !![0, -1; 1, 0]
-
-/-
-**E.1a (surjectivity of the Born map).** Every probability `p ∈ [0,1]` is
-realized as `cos² t` for some angle `t`.
--/
 theorem cos_sq_surjective {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :
     ∃ t : ℝ, Real.cos t ^ 2 = p := by
   refine ⟨ Real.arccos ( Real.sqrt p ), ?_ ⟩

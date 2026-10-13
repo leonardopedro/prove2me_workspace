@@ -1,6 +1,9 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — solution of BookProof.NavierStokesFlow.AffineFiber.hFun_shift_of_single
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber
 

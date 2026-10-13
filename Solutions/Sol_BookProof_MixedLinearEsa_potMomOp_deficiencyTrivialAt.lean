@@ -6,6 +6,11 @@ import Theorems.Thm_BookProof_MixedLinearEsa_potMomOp_gauge
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 
@@ -13,12 +18,31 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
+open BookProof.ShiftedHermiteCore
+open BookProof.StrichartzWave
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+/-! The platform's published `Def_ChapterMixedLinearEsa` carries `phaseFun` /
+`phaseSchwartz` but not the two auxiliary lemmas below, and a solution may not
+rely on unpublished declarations (`norm_phaseFun` then resolves to the
+HermiteProductCore one of a different type).  They are restated locally as
+`private`, so the file is standalone. -/
+
+private theorem norm_phaseFun' (θ : V → ℝ) (x : V) : ‖phaseFun θ x‖ = 1 := by
+  rw [BookProof.MixedLinearEsa.phaseFun, mul_comm]
+  exact Complex.norm_exp_ofReal_mul_I _
+
+private theorem phaseSchwartz_apply' {θ : V → ℝ}
+    (hθ : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) θ)
+    (φ : 𝓢(V, ℂ)) (hφ : HasCompactSupport (φ : V → ℂ)) (x : V) :
+    phaseSchwartz hθ φ hφ x = phaseFun θ x * φ x := rfl
+
 
 set_option maxHeartbeats 1000000 in
 theorem solution {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W)
@@ -35,7 +59,8 @@ theorem solution {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W)
       (Complex.continuous_conj.comp ((contDiff_phaseFun hθ).continuous)).aestronglyMeasurable.mul
         (Lp.aestronglyMeasurable u)
     refine (Lp.memLp u).of_le hmeas (Filter.Eventually.of_forall fun x => ?_)
-    simp
+    have hn : ‖phaseFun θ x‖ = 1 := norm_phaseFun' θ x
+    simp [hn]
   set w : Lp ℂ 2 (volume : Measure V) := hmem.toLp _ with hwdef
   have hwcoe : ∀ᵐ x ∂(volume : Measure V),
       (w x : ℂ) = (starRingEnd ℂ) (phaseFun θ x) * (u x) := hmem.coeFn_toLp
@@ -55,7 +80,7 @@ theorem solution {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W)
         = ∫ x, (starRingEnd ℂ) ((phaseSchwartz hθ φ hφ) x) * (u x) := by
       refine integral_congr_ae ?_
       filter_upwards [hwcoe] with x hx
-      rw [hx, phaseSchwartz_apply, map_mul]
+      rw [hx, phaseSchwartz_apply' hθ φ hφ, map_mul]
       ring
     rw [hL, hR, h1]
   have hw0 : w = 0 := momentumOp_eq_zero_of_compactSupport_test m hz w hw
@@ -68,7 +93,7 @@ theorem solution {W θ : V → ℝ} (hW : Function.HasTemperateGrowth W)
     rcases mul_eq_zero.mp hx0 with h | h
     · have hn : ‖(starRingEnd ℂ) (phaseFun θ x)‖ = 1 := by
         rw [RCLike.norm_conj]
-        exact norm_phaseFun θ x
+        exact norm_phaseFun' θ x
       rw [h, norm_zero] at hn
       exact absurd hn (by norm_num)
     · exact h

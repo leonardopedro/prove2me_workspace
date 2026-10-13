@@ -3,21 +3,29 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Theorems.Thm_BookProof_BookBrstYangMills_rsmul_eq_csmul
 import Theorems.Thm_BookProof_BookBrstYangMills_I_smul_gaussGen
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.BookBrstYangMills
 
 
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
+open BookProof.BRSTNilpotent
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.YangMillsGhost
 
 noncomputable section
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     bookOmega G = Complex.I • brstCharge G.f (gaussGen G) chiOp betaOp := by
-
   have hglin : Complex.I • glin (gaussGen G) chiOp
       = (∑ μ, ∑ a, mom μ a * dChi G μ a)
         - (∑ μ, ∑ a, ∑ b, ∑ c, (G.f a b c) • (mom μ a * Afield μ b * chiOp c)) := by

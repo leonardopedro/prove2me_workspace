@@ -1,6 +1,7 @@
 -- Generated from ChapterParityHiggs.lean — solution of BookProof.ChapterParityHiggs.realityOp_realityOp
 import Mathlib
 import Definitions.Def_ChapterParityHiggs
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityHiggs
 
 

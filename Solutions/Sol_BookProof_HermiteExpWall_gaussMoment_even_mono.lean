@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterHermiteExpWall
 import Theorems.Thm_BookProof_HermiteExpWall_gaussMoment_step
 import Theorems.Thm_BookProof_HermiteExpWall_gaussMoment_even_pos
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteExpWall
 
 

@@ -1,6 +1,11 @@
 -- Generated from ChapterPvmInducedSystem.lean — solution of BookProof.ChapterPvmInducedSystem.swCLM_mem_cyclicSubspace
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
+import Definitions.Def_ChapterPvmMeasure
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterHilbertSumIntertwine
 open BookProof.ChapterPvmInducedSystem
 
 

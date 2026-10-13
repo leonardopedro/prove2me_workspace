@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterParityHiggs
 import Theorems.Thm_BookProof_ChapterParityHiggs_pauli2_pseudoreal
 import Theorems.Thm_BookProof_ChapterParityHiggs_pseudoreal_kron_pseudoreal_real
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityHiggs
 
 

@@ -1,5 +1,11 @@
 -- Generated from ChapterBddBelowWallEsa.lean — solution of BookProof.BddBelowWallEsa.bumpG_zero
 import Mathlib
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterWallDeficiencyObstruction
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterBddBelowWallEsa
 open BookProof.BddBelowWallEsa
 
 
@@ -12,7 +18,7 @@ open BookProof.WallDeficiencyObstruction BookProof.WeakSecondDeriv
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution {x : ℝ} (hx : 2 ≤ |x|) : (bumpG : ℝ → ℝ) x = 0 := by
 
+theorem solution {x : ℝ} (hx : 2 ≤ |x|) : (bumpG : ℝ → ℝ) x = 0 := by
   refine bumpG.zero_of_le_dist ?_
   simpa [Real.dist_eq, bumpG] using hx

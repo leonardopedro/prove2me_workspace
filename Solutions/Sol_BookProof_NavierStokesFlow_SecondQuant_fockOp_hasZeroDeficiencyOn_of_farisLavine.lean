@@ -7,6 +7,12 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_le_of_sec
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockOp_norm_inner_le_of_sectors
 import Theorems.Thm_BookProof_NavierStokesFlow_SecondQuant_fockCore_dense
 import Theorems.Thm_BookProof_NavierStokesFlow_ns_esa_of_farisLavine_dense
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesSecondQuant
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SecondQuant
 
@@ -27,6 +33,7 @@ variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProdu
 variable {D : ∀ m, Submodule ℂ (S m)}
 
 set_option maxHeartbeats 1000000 in
+open BookProof.DirectSumEsa BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.FullEsa.NSFullData
 theorem solution
     (H N : ∀ m, D m →ₗ[ℂ] D m) (c₁ c₂ : ℝ) (hc₁ : 0 ≤ c₁) (hc₂ : 0 ≤ c₂)
     (farisLavine : ∀ (D' : Submodule ℂ (lp S 2)) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),

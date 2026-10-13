@@ -1,6 +1,7 @@
 -- Generated from ChapterBrstReducedTransfer.lean — solution of BookProof.BrstReducedTransfer.infDist_exactStates_eq
 import Mathlib
 import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.BrstReducedTransfer
 
 
@@ -20,11 +21,11 @@ variable (Om)
 variable (U : ℝ → (H →L[ℂ] H)) (hcomm : ∀ (t : ℝ) (y : H), U t (Om y) = Om (U t y))
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (hzero : ∀ x : H, U 0 x = x)
     (hgroup : ∀ (s t : ℝ) (x : H), U s (U t x) = U (s + t) x)
     (hisom : ∀ (t : ℝ) (x : H), ‖U t x‖ = ‖x‖) (t : ℝ) (x : H) :
     Metric.infDist (U t x) (exactStates Om) = Metric.infDist x (exactStates Om) := by
-
   have hne : (exactStates Om : Set H).Nonempty := ⟨0, (exactStates Om).zero_mem⟩
   have key : ∀ (s : ℝ) (y : H),
       Metric.infDist (U s y) (exactStates Om) ≤ Metric.infDist y (exactStates Om) := by

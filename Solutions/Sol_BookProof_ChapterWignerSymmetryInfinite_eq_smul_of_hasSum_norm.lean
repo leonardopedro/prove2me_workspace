@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_eq_norm_of_re_eq_norm
+import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterOrthogonalSums
 open BookProof.ChapterWignerSymmetryInfinite
 
 

@@ -1,6 +1,9 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.phase_self
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
+import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterOrthogonalSums
+import Definitions.Def_ChapterNsLagrangianDetConvolution
 open BookProof.ChapterWignerSymmetryInfinite
 
 
@@ -9,6 +12,7 @@ open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
+open BookProof.NsLagrangianDet
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_simplex_split
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_ltermP
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 

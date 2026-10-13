@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_HyperbolicQuadratic_oscPoly_apply
 import Theorems.Thm_BookProof_HyperbolicQuadratic_hermiteMv_number
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HyperbolicQuadratic
 
 

@@ -8,6 +8,8 @@ import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_inner_T_testVec
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_testVec_o_norm
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_testVec_i_norm
 import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_modulus_add
+import Definitions.Def_ChapterOrthogonalSums
+import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite
 
 
@@ -16,6 +18,7 @@ open scoped InnerProductSpace ComplexConjugate
 
 
 open BookProof.ChapterWignerSymmetry BookProof.ChapterOrthogonalSums
+open BookProof.ChapterWignerSymmetry
 
 variable {ι : Type*} [DecidableEq ι] {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
   [CompleteSpace E] {T : E → E}

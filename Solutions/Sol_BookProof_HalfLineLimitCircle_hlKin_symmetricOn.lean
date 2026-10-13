@@ -4,6 +4,8 @@ import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_hlKin_coeFn
 import Theorems.Thm_BookProof_HalfLineLimitCircle_integral_deriv2_mul
 import Theorems.Thm_BookProof_HalfLineLimitCircle_inner_eq_integral
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HalfLineLimitCircle
 
 

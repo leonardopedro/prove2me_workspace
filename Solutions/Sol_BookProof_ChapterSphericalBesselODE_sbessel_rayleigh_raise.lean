@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSphericalBesselODE
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_sbessel_eq
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_deriv_gIter_eq
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalBesselODE
 
 

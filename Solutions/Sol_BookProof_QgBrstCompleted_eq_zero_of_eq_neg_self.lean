@@ -1,6 +1,8 @@
 -- Generated from ChapterQgBrstCompleted.lean — solution of BookProof.QgBrstCompleted.eq_zero_of_eq_neg_self
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
 open BookProof.QgBrstCompleted
 
 

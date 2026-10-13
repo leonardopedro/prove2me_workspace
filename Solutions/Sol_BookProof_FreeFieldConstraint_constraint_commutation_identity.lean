@@ -4,7 +4,6 @@ import Definitions.Def_ChapterFreeFieldConstraint
 -- bracket_zero_right is declared in the def bundle LOCALLY but the platform's
 -- published copy predates it (mirror text has 0 hits); the published sibling
 -- thm stub is the platform-visible source of the name.
-import Theorems.Thm_BookProof_FreeFieldConstraint_bracket_zero_right
 
 open BookProof.FreeFieldConstraint
 

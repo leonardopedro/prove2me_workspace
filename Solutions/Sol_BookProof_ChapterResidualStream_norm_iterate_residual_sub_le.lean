@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterResidualStream
 import Theorems.Thm_BookProof_ChapterResidualStream_norm_residual_sub_self
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterResidualStream
 
 

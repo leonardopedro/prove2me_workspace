@@ -4,6 +4,8 @@ import Definitions.Def_ChapterGravityPolymomentum
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_vecMulVec_mul
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_mul_vecMulVec
 import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_mulVec_self
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 
@@ -15,10 +17,10 @@ open BookProof.ChapterGravityProjector
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin 4 → ℝ) (hv : minkSq v = -1) (u : Fin 4 → ℝ) :
-    proj v (vecMulVec u v) = 0 := by
+    BookProof.ChapterGravityPolymomentum.proj v (vecMulVec u v) = 0 := by
 
   have hXv : (spatialProj v).mulVec v = 0 := spatialProj_mulVec_self v hv
   have h1 : (spatialProj v)ᵀ.vecMul v = 0 := by
     rw [Matrix.vecMul_transpose, hXv]
-  rw [proj, mul_vecMulVec, vecMulVec_mul, h1]
+  rw [BookProof.ChapterGravityPolymomentum.proj, mul_vecMulVec, vecMulVec_mul, h1]
   simp

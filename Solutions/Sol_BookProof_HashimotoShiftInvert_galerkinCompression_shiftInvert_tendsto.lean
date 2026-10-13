@@ -4,6 +4,13 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_mem
 import Theorems.Thm_BookProof_HashimotoShiftInvert_IsShiftInvert_shift_apply
 import Theorems.Thm_BookProof_HermiteGalerkin_galerkinCompression_tendsto
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterComplexShiftCore
 open BookProof.HashimotoShiftInvert
 
 
@@ -12,6 +19,7 @@ open BookProof.HashimotoShiftInvert
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.YangMillsFriedrichsLimit
 open BookProof.HermiteGalerkin
 open Filter Topology
+open BookProof.ChapterAbelianDiagonalCountable
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

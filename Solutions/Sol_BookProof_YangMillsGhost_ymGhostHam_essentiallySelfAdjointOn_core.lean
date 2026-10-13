@@ -3,6 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsGhostSector
 import Theorems.Thm_BookProof_YangMillsGhost_fibreHam_abelian_esa
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsAbelianEsa
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.YangMillsGhost
 
 
@@ -12,8 +22,9 @@ noncomputable section
 
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite BookProof.YangMillsAbelianEsa
-open BookProof.KatoRellich BookProof.StoneBridge BookProof.EsaClosure
+open BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductCore
 
 variable {K : ℕ}
 

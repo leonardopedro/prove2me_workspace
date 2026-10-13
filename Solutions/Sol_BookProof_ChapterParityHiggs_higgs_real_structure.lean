@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterParityHiggs
 import Theorems.Thm_BookProof_ChapterParityHiggs_realityOp_realityOp
 import Theorems.Thm_BookProof_ChapterParityHiggs_higgsReal_mul_conj
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityHiggs
 
 

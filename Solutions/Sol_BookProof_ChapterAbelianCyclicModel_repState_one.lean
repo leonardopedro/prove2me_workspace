@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianCyclicModel.lean — solution of BookProof.ChapterAbelianCyclicModel.repState_one
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicModel
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianCyclicModel
 
 

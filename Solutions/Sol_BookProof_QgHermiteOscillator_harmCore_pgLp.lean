@@ -3,6 +3,15 @@ import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteOscillator_potLp_harmW
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_pgLp
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.QgHermiteOscillator
 
 
@@ -13,6 +22,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
+open BookProof.GaussCoreQuadBounds
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

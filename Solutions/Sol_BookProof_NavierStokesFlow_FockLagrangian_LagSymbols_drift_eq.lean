@@ -7,6 +7,10 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_add_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian.LagSymbols
 
@@ -17,6 +21,9 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.SirkFinitePrecision
+open BookProof.SirkFinitePrecision.CertInterval
+open BookProof.NavierStokesFlow.FockLagrangian
 
 variable {X : Type*} [MeasurableSpace X]
 

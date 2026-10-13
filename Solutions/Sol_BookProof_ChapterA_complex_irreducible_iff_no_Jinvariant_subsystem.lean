@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterA1d
 import Theorems.Thm_BookProof_ChapterA_realSub_isSubsystem
 import Theorems.Thm_BookProof_ChapterA_cplxSub_isSubsystem
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

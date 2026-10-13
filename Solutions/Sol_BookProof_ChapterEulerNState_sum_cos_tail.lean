@@ -9,10 +9,10 @@ open BookProof.ChapterEulerNState
 open scoped BigOperators
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (θ : ℕ → ℝ) (m : ℕ) :
     ∑ k ∈ Finset.range m, tailProd θ k * Real.cos (θ k) ^ 2
       = 1 - tailProd θ m := by
-
   induction m with
   | zero => simp
   | succ m ih =>
@@ -20,3 +20,8 @@ theorem solution (θ : ℕ → ℝ) (m : ℕ) :
     have : Real.cos (θ m) ^ 2 = 1 - Real.sin (θ m) ^ 2 := by
       have := Real.sin_sq_add_cos_sq (θ m); linarith
     rw [this]; ring
+
+/-
+**Any angles give a probability distribution**: the Born probabilities of the
+Euler wave-function sum to `1`.
+-/

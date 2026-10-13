@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavineOnly
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_norm_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterLogPartitionConvex_deriv_logPartition_eq
 import Theorems.Thm_BookProof_ChapterLogPartitionConvex_differentiable_logPartition
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_deriv_meanScore
 import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_pos_of_ne
+import Definitions.Def_ChapterAttentionEntropy
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterLogPartitionConvex
 
 
@@ -15,15 +18,16 @@ noncomputable section
 
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {s : Fin m → ℝ} {a b : Fin m} (hab : s a ≠ s b) :
     StrictConvexOn ℝ Set.univ fun c : ℝ => logPartition c s := by
-
   refine StrictMono.strictConvexOn_univ_of_deriv
     (differentiable_logPartition s a).continuous ?_
   rw [deriv_logPartition_eq s a]

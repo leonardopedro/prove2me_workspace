@@ -1,6 +1,7 @@
 -- Generated from ChapterSphericalPlancherel.lean — solution of BookProof.ChapterSphericalPlancherel.sineKernelTransform_eq
 import Mathlib
 import Definitions.Def_ChapterSphericalPlancherel
+import Definitions.Def_ChapterSphericalBessel
 open BookProof.ChapterSphericalPlancherel
 
 

@@ -4,6 +4,9 @@ import Definitions.Def_ChapterNavierStokesMomentumPerturbation
 import Theorems.Thm_BookProof_FarisLavine_commForm_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_ge_norm_sq
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_symmetricOn
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 
@@ -17,13 +20,17 @@ variable {ι : Type*}
 
 variable {ι : Type*}
 
+
+@[simp] private theorem pertHam_apply (c : ι → ℝ) (u w : L2I ι) (x : maxDom c) :
+    pertHam c u w x = diagMax c x + rankTwo u w (x : L2I ι) := rfl
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (c : ι → ℝ) (hc : ∀ k, 1 ≤ c k) (u w : maxDom c)
     (x : maxDom c) :
     |commForm (pertHam c (u : L2I ι) (w : L2I ι)) (diagMax c) x|
       ≤ (2 * (‖(u : L2I ι)‖ * ‖diagMax c w‖ + ‖(w : L2I ι)‖ * ‖diagMax c u‖))
         * quadForm (diagMax c) x := by
-
   have hdiag : (inner ℂ (diagMax c x) (diagMax c x) : ℂ).im = 0 := by
     simpa using inner_self_im (𝕜 := ℂ) ((diagMax c x))
   have hsplit : (inner ℂ (pertHam c (u : L2I ι) (w : L2I ι) x) (diagMax c x) : ℂ).im

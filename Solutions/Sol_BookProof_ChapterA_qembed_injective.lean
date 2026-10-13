@@ -1,6 +1,8 @@
 -- Generated from ChapterA2c.lean — solution of BookProof.ChapterA.qembed_injective
 import Mathlib
 import Definitions.Def_ChapterA2c
+import Definitions.Def_ChapterA1
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

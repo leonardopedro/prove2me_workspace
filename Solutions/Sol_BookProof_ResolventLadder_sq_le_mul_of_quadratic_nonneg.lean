@@ -1,6 +1,13 @@
 -- Generated from ChapterResolventMinMaxLadder.lean — solution of BookProof.ResolventLadder.sq_le_mul_of_quadratic_nonneg
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ResolventLadder
 
 

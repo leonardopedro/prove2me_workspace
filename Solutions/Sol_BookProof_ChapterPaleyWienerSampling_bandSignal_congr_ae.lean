@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterShannonSampling_half_add_period
+import Definitions.Def_ChapterShannonSampling
 open BookProof.ChapterPaleyWienerSampling
 
 
@@ -10,6 +11,7 @@ open BookProof.ChapterPaleyWienerSampling
 open MeasureTheory Complex AddCircle Set
 open scoped Real FourierTransform
 open BookProof.ChapterShannonSampling (sinc bandSignal exists_rep half_add_period)
+open BookProof.ChapterShannonSampling
 
 variable {T : ℝ} {f g : ℝ → ℂ}
 variable {T : ℝ} [hT : Fact (0 < T)] {f g : ℝ → ℂ}

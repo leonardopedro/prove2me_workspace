@@ -4,7 +4,10 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_bounded_symmetric
 import Theorems.Thm_BookProof_NavierStokesFlow_continuityHamiltonian_mem_finiteModes
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_continuityHamiltonian_isSymmetric
-import Theorems.Thm_BookProof_NavierStokesFlow_finiteModes_dense
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 
 
@@ -19,6 +22,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
+open BookProof.ChapterContinuityUnitary BookProof.ChapterContinuityUnitaryInfinite
 theorem solution (v : LinfZ) :
     HasZeroDeficiencyOn finiteModes
       (LinearMap.codRestrict finiteModes

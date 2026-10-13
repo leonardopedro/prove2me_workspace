@@ -1,6 +1,12 @@
 -- Generated from ChapterQgHermiteFriedrichs.lean — solution of BookProof.QgHermiteFriedrichs.conj_mul_self
 import Mathlib
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.QgHermiteFriedrichs
 
 

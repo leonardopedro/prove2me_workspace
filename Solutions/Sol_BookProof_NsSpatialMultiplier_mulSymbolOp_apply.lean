@@ -1,6 +1,9 @@
 -- Generated from ChapterNsSpatialMomentumMultiplier.lean — solution of BookProof.NsSpatialMultiplier.mulSymbolOp_apply
 import Mathlib
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
 open BookProof.NsSpatialMultiplier
 
 

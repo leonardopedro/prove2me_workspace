@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
 import Theorems.Thm_BookProof_ChapterMehlerOrthogonalInvariance_charFun_map_isometryEquiv
 import Theorems.Thm_BookProof_ChapterMehlerOrthogonalInvariance_charFun_stdGaussianEuclidean
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterMehlerOrthogonalInvariance
 
 

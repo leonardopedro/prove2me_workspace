@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNsSpatialMomentumMultiplier
 import Theorems.Thm_BookProof_NsSpatialMultiplier_foSymbolCLM_apply
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFourierMultiplierEsa
 open BookProof.NsSpatialMultiplier
 
 

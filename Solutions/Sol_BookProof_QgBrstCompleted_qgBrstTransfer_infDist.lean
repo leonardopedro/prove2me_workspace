@@ -5,6 +5,8 @@ import Theorems.Thm_BookProof_QgBrstCompleted_qgPhase_zero
 import Theorems.Thm_BookProof_QgBrstCompleted_qgPhase_group
 import Theorems.Thm_BookProof_QgBrstCompleted_qgPhase_isometry
 import Theorems.Thm_BookProof_BrstReducedTransfer_infDist_exactStates_eq
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
 open BookProof.QgBrstCompleted
 
 
@@ -12,6 +14,7 @@ open BookProof.QgBrstCompleted
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
+open BookProof.BrstReducedTransfer
 
 noncomputable section
 

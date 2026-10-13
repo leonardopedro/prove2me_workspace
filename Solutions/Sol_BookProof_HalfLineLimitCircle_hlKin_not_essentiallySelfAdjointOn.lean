@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterHalfLineLimitCircle
 import Theorems.Thm_BookProof_HalfLineLimitCircle_hlKin_not_deficiencyTrivialAt_I
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HalfLineLimitCircle
 
 

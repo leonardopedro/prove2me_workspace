@@ -7,6 +7,10 @@ import Theorems.Thm_BookProof_ChapterSpectralCommutant_mem_multModel_iff
 import Theorems.Thm_BookProof_ChapterSpectralCommutant_commutesWithContMult_conjSpectralSymm
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_comm
 import Theorems.Thm_BookProof_ChapterSpectralMultiplication_spectralUnitary_intertwines_cfc
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterSpectralCommutant
 
 
@@ -18,6 +22,7 @@ open MeasureTheory ENNReal Complex
 
 open BookProof.ChapterLinftyMultiplication BookProof.ChapterLinftyMaximalAbelian
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterSpectralMultiplication
+open BookProof.ChapterLinftyMultiplication
 
 variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

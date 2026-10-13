@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_esa_on_core
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_flc_nonneg
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secData_commForm_le
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secHam_symmetricOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockFullFL
+import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.FarisLavineOnly
 
@@ -34,6 +44,7 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL BookProof.SqSumOuterFamily
+open BookProof.HermiteProductCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (d : CoreData F)

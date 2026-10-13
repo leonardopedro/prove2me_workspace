@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerLittleGroup
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_one
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_mul
+import Definitions.Def_ChapterLittleGroup
 open BookProof.ChapterWignerLittleGroup
 
 

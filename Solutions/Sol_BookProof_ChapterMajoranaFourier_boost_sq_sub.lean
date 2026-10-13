@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_Ep_pos
 import Theorems.Thm_BookProof_ChapterMajoranaFourier_Ep_ge
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

@@ -1,6 +1,12 @@
 -- Generated from ChapterBookBrstGaugeFixing.lean — solution of BookProof.BookBrstGaugeFixing.bookGfTerm_mem_exactStates
 import Mathlib
 import Theorems.Thm_BookProof_BookBrstGaugeFixing_bookGfTerm_brst_closed
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.BookBrstGaugeFixing
 
 
@@ -8,6 +14,8 @@ open BookProof.BookBrstGaugeFixing
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
+open BookProof.BrstReducedTransfer
+open BookProof.YangMillsGhost
 
 noncomputable section
 

@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmCar_norm_fermiBilin_le
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmDiracYukawa
 
 

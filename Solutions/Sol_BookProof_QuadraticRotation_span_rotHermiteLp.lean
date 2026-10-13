@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Theorems.Thm_BookProof_QuadraticRotation_rotPoly_surjective
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.QuadraticRotation
 
 

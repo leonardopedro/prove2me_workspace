@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterScaledDotProduct
 import Theorems.Thm_BookProof_ChapterScaledDotProduct_sum_sgn_eq_zero
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterScaledDotProduct
 
 

@@ -1,7 +1,10 @@
 -- Generated from ChapterBrstUnboundedLeakage.lean — solution of BookProof.BrstUnboundedLeakage.norm_omega_stoneU_eq
 import Mathlib
 import Definitions.Def_ChapterBrstUnboundedLeakage
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
+import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.BrstUnboundedLeakage
 
 

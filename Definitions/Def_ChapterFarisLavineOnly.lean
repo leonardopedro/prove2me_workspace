@@ -67,32 +67,6 @@ enters the main line: the essential self-adjointness of a kinetic-plus-squares H
 Everything is `sorry`-free and `axiom`-free.
 -/
 
-open scoped ENNReal
-
-noncomputable section
-
-namespace BookProof.QgOuterFockCoreFL
-
-open BookProof.FarisLavine
-
-section Abstract
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-namespace CoreData
-
-variable (d : CoreData F)
-
-
-
-
-
-end CoreData
-
-end Abstract
-
-end BookProof.QgOuterFockCoreFL
-
 namespace BookProof.FarisLavineOnly
 
 open Finset

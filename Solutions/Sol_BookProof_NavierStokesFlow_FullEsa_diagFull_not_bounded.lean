@@ -3,21 +3,38 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_diagUnboundedData_hamiltonian
 import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded
+import Definitions.Def_ChapterAbelianDiagonalCountable
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
 
 
 open scoped ENNReal
+open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.NavierStokesFlow.DiagonalEsa
+open BookProof.NavierStokesFlow.JacobiDeficiency
+open BookProof.NavierStokesFlow.LpNat
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
 
+
+private theorem diagOp_not_bounded (c : ℕ → ℝ) (hc : ∀ C : ℝ, ∃ n, C < |c n|) :
+    ¬ ∃ C : ℝ, ∀ f : lpFiniteModes ℕ, ‖diagOp c f‖ ≤ C * ‖f‖ := by
+  rintro ⟨C, hC⟩
+  obtain ⟨n, hn⟩ := hc C
+  have hb := hC (basis n)
+  rw [diagOp_basis, norm_smul, norm_basis] at hb
+  have hle : |c n| ≤ C := by simpa using hb
+  exact absurd hn (not_lt.mpr hle)
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution :
     ¬ ∃ C : ℝ, ∀ f : diagUnboundedData.D, ‖diagUnboundedData.hamiltonian f‖ ≤ C * ‖f‖ := by
-
   rw [diagUnboundedData_hamiltonian]
   refine diagOp_not_bounded _ fun C => ?_
   refine ⟨⌈|C|⌉₊ + 1, ?_⟩

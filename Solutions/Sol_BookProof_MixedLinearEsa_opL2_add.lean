@@ -1,6 +1,9 @@
 -- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.opL2_add
 import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 

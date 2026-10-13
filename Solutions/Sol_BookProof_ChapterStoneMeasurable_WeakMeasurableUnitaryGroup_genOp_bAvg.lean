@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterStoneConverse
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_zero
+import Definitions.Def_ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 

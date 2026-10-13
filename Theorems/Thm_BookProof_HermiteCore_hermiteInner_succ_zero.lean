@@ -9,8 +9,4 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
- by
-    rw [hermiteInner, hermiteR_succ m, ← gint_sub]
-    congr 1
-    ring
-  have h2 : gint (hermiteR m * (X * h := by sorry
+theorem BookProof.HermiteCore.hermiteInner_succ_zero (m : ℕ) : hermiteInner (m + 1) 0 = 0 := by sorry

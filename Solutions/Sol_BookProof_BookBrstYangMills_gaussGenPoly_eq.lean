@@ -4,12 +4,17 @@ import Definitions.Def_ChapterBookBrstYangMills
 import Theorems.Thm_BookProof_BookBrstYangMills_gaussDer_apply
 import Theorems.Thm_BookProof_BookBrstYangMills_pderiv_X_mul
 import Theorems.Thm_BookProof_BookBrstYangMills_AfieldPoly_apply
+import Theorems.Thm_BookProof_BookBrstYangMills_momPoly_apply
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.BookBrstYangMills
 
 
 
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge
+open BookProof.NavierStokesFlow.DifferentialL2
 
 noncomputable section
 
@@ -18,8 +23,8 @@ variable {N : ℕ} (G : GaugeAlgebra N)
 set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin N) :
     gaussGenPoly G c = (-Complex.I) •
-      ((∑ μ, ∑ a, ((G.D μ c a : ℝ) : ℂ) • momPoly μ a)
-        - (∑ μ, ∑ a, ∑ b, ((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b))) := by
+      ((∑ μ, ∑ a, ((G.D μ c a : ℝ) : ℂ) • BookProof.BookBrstYangMills.momPoly μ a)
+        - (∑ μ, ∑ a, ∑ b, ((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b))) := by
 
   classical
   refine LinearMap.ext fun p => ?_
@@ -29,11 +34,11 @@ theorem solution (c : Fin N) :
     exact Fintype.sum_prod_type _
   have hterm : ∀ (μ : Fin 4) (a : Fin N),
       gaussVec G c (μ, a) * pderiv (μ, a) p
-        = (-Complex.I) • ((((G.D μ c a : ℝ) : ℂ) • momPoly μ a) p
-            - ∑ b, (((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b)) p) := by
+        = (-Complex.I) • ((((G.D μ c a : ℝ) : ℂ) • BookProof.BookBrstYangMills.momPoly μ a) p
+            - ∑ b, (((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b)) p) := by
     intro μ a
     have hb : ∀ b : Fin N,
-        (((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b)) p
+        (((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b)) p
           = ((G.f a b c : ℝ) : ℂ) • ((-Complex.I) •
               ((if (μ, a) = (μ, b) then p else 0) + X (μ, b) * pderiv (μ, a) p)) := by
       intro b
@@ -45,7 +50,7 @@ theorem solution (c : Fin N) :
         linarith
       rw [this]
       simp
-    have hsum : (∑ b, (((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b)) p)
+    have hsum : (∑ b, (((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b)) p)
         = ∑ b, ((G.f a b c : ℝ) : ℂ) • ((-Complex.I) • (X (μ, b) * pderiv (μ, a) p)) := by
       rw [Finset.sum_congr rfl fun b _ => hb b]
       refine Finset.sum_congr rfl fun b _ => ?_
@@ -76,10 +81,10 @@ theorem solution (c : Fin N) :
     rw [hd0, Finset.sum_congr rfl fun x _ => hx x, Finset.sum_neg_distrib, sub_neg_eq_add,
       neg_smul]
   have hR : ((-Complex.I) •
-      ((∑ μ, ∑ a, ((G.D μ c a : ℝ) : ℂ) • momPoly μ a)
-        - (∑ μ, ∑ a, ∑ b, ((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b)))) p
-      = ∑ μ, ∑ a, (-Complex.I) • ((((G.D μ c a : ℝ) : ℂ) • momPoly μ a) p
-          - ∑ b, (((G.f a b c : ℝ) : ℂ) • (momPoly μ a * AfieldPoly μ b)) p) := by
+      ((∑ μ, ∑ a, ((G.D μ c a : ℝ) : ℂ) • BookProof.BookBrstYangMills.momPoly μ a)
+        - (∑ μ, ∑ a, ∑ b, ((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b)))) p
+      = ∑ μ, ∑ a, (-Complex.I) • ((((G.D μ c a : ℝ) : ℂ) • BookProof.BookBrstYangMills.momPoly μ a) p
+          - ∑ b, (((G.f a b c : ℝ) : ℂ) • (BookProof.BookBrstYangMills.momPoly μ a * AfieldPoly μ b)) p) := by
     simp only [LinearMap.smul_apply, LinearMap.sub_apply, LinearMap.sum_apply, smul_sub,
       Finset.smul_sum, ← Finset.sum_sub_distrib]
   rw [hL, hR]

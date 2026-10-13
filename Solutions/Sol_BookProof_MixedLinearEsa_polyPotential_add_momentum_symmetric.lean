@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterMixedLinearEsa
 import Theorems.Thm_BookProof_MixedLinearEsa_potMomOp_symmetric
 import Theorems.Thm_BookProof_MixedLinearEsa_hasTemperateGrowth_polyPotential
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 

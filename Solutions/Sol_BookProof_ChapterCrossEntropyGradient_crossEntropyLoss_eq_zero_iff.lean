@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterCrossEntropyGradient
 import Theorems.Thm_BookProof_ChapterCrossEntropyGradient_crossEntropyLoss_eq_neg_log
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_pos
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterCrossEntropyGradient
 
 

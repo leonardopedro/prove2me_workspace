@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Theorems.Thm_BookProof_ResolventLadder_rayleighInfOn_span_singleton
 import Theorems.Thm_BookProof_RitzMinMax_exists_unit_mem
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNonnegResolvent
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterSirkRitzMinMax
+import Definitions.Def_ChapterSirkRitzSpectrum
 open BookProof.ResolventLadder
 
 
@@ -14,6 +21,8 @@ open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGal
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
+open BookProof.RitzMinMax
+open BookProof.ChapterSirkRitzSpectrum
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

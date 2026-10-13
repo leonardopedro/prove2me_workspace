@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_DirectSumEsa_hasZeroDeficiencyOn_of_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.DirectSumEsa
 
 
@@ -23,10 +26,10 @@ variable {D : ∀ i, Submodule ℂ (G i)}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (A : ∀ i, D i →ₗ[ℂ] D i)
     (h : ∀ i, HasZeroDeficiencyOn (D i) (A i)) :
     HasZeroDeficiencyOn (dsCore D) (dsOpD A) := by
-
   refine hasZeroDeficiencyOn_of_essentiallySelfAdjointOn _
     (dsOp_essentiallySelfAdjointOn (fun i => (D i).subtype.comp (A i)) (fun i => ⟨?_, ?_⟩))
   · intro w hw
@@ -38,5 +41,3 @@ theorem solution (A : ∀ i, D i →ₗ[ℂ] D i)
     have hv : (inner ℂ ((A i v : G i)) w : ℂ) = -Complex.I * inner ℂ ((v : G i)) w := hw v
     rw [inner_neg_right, inner_smul_right, hv]
     ring
-
-open BookProof.NavierStokesFlow.FullEsa in

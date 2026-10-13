@@ -1,6 +1,8 @@
 -- Generated from ChapterH7.lean — solution of BookProof.ChapterH7.compress_isSelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterH7
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterH7
 
 

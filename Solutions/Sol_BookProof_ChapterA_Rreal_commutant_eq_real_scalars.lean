@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterA2b
 import Theorems.Thm_BookProof_ChapterA_real_scalar_commutesConj
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

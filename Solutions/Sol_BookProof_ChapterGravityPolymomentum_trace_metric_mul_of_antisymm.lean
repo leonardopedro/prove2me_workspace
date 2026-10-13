@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterGravityPolymomentum
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_metric_transpose
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 

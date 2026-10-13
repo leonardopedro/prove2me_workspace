@@ -3,6 +3,12 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Theorems.Thm_BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime
 import Theorems.Thm_BookProof_QgManifoldModeInstance_VielbeinSpectrum_energyWindow_exhausts
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterHashimotoComplexShifts
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeIndependent
 
 
@@ -10,6 +16,9 @@ open BookProof.QgTimeIndependent
 
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.EsaClosure
+open BookProof.FockSecondQuantization
+open `BookProof.HashimotoShiftInvert`.
 
 noncomputable section
 

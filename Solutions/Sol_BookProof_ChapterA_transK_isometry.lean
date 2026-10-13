@@ -1,6 +1,7 @@
 -- Generated from ChapterA2e.lean — solution of BookProof.ChapterA.transK_isometry
 import Mathlib
 import Definitions.Def_ChapterA2e
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

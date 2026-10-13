@@ -8,6 +8,8 @@ import Theorems.Thm_BookProof_ChapterMackeyCocycle_measurable_wrep
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_wrep_ae
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_norm_ucocycle
 import Theorems.Thm_BookProof_ChapterMackeyCocycle_measurable_ucocycle
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterMackeyQuasiInvariant
 open BookProof.ChapterMackeyCocycle
 
 
@@ -17,6 +19,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+open BookProof.ChapterMackeyQuasiInvariant
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 

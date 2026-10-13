@@ -4,6 +4,10 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 import Theorems.Thm_BookProof_FockStatistics_sectorEmb_mem_cfermionicSector
 import Theorems.Thm_BookProof_PermSector_exists_ne_zero_fermionic
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -11,6 +15,8 @@ open BookProof.FockStatistics
 
 
 open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.DirectSumEsa
+open BookProof.TensorCore
 
 noncomputable section
 

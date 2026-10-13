@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_momentum_isSelfAdjoint
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
 
@@ -10,6 +13,8 @@ open BookProof.NavierStokesFlow.LagrangianEsa
 
 
 open FullEsa
+open BookProof.ChapterContinuityUnitary
+open BookProof.ChapterContinuityUnitaryInfinite
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
@@ -17,9 +22,9 @@ variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
   [NormedAddCommGroup G] [InnerProductSpace ℂ G]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (v : Fin 3 → LinfZ) (w : LinfZ) (fr : Fin 3 → ℝ) (nu : ℝ) :
     IsSelfAdjoint (latticeLagCLM v w fr nu) := by
-
   have hmom : IsSelfAdjoint (momentum * momentum) := by
     change star (momentum * momentum) = momentum * momentum
     rw [star_mul, momentum_isSelfAdjoint.star_eq]

@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianCanonical_half_lagPSq_add_nu_lagQSq
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianCanonical
 
@@ -17,6 +26,7 @@ open CanonicalVector ThreeComponent
 variable (nu : ℝ)
 
 set_option maxHeartbeats 1000000 in
+open BookProof.BRSTNilpotent BookProof.ChapterF7 BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     secondOrder (lagCanData nu hnu f) = lagT nu := by
 

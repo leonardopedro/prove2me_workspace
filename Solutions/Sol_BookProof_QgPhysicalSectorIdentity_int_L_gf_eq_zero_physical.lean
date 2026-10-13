@@ -1,6 +1,13 @@
 -- Generated from ChapterQgPhysicalSectorIdentity.lean — solution of BookProof.QgPhysicalSectorIdentity.int_L_gf_eq_zero_physical
 import Mathlib
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterGaugeFixing
 open BookProof.QgPhysicalSectorIdentity
 
 

@@ -9,6 +9,5 @@ open MeasureTheory Polynomial Filter Topology FourierTransform SchwartzMap
 
 noncomputable section
 
-:= by
-  have h1 : (0 : ℝ) < (n.factorial : ℝ) := by positivity
-  have h2 : (0 : ℝ) < Real.sqrt (2 * Real.pi) : := by sorry
+theorem BookProof.HermiteCore.hermiteNorm_sq (n : ℕ) :
+    hermiteNorm n * hermiteNorm n = (n.factorial : ℝ) * Real.sqrt (2 * Real.pi) := by sorry

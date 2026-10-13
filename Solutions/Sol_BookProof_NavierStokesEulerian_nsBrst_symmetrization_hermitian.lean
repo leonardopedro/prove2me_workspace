@@ -1,6 +1,8 @@
 -- Generated from ChapterNavierStokesEulerian.lean — solution of BookProof.NavierStokesEulerian.nsBrst_symmetrization_hermitian
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesEulerian
 
 

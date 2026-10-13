@@ -1,6 +1,11 @@
 -- Generated from ChapterQgOuterFockOneParticle.lean — solution of BookProof.QgOuterFockOneParticle.oneParticleOp_off
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockOneParticle
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
 open BookProof.QgOuterFockOneParticle
 
 
@@ -9,6 +14,7 @@ open BookProof.QgOuterFockOneParticle
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.ScalaronEsa
 
 noncomputable section
 

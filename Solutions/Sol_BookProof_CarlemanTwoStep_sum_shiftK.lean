@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_CarlemanTwoStep_mem_innK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_add_singleK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_singleK_apply
 import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanTwoStep
 
 

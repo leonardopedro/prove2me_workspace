@@ -18,5 +18,4 @@ open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 
 open scoped ENNReal
 
-
-noncomputable def mulComparison (lam : ℕ → ℝ) : mulSymbolDomain lam →ₗ[ℂ] L2Nat := by sorry
+theorem BookProof.FarisLavine.abs_abs_le (lam : ℕ → ℝ) : ∀ n, |(|lam n|)| ≤ |lam n| := by sorry

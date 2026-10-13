@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_YangMillsHermite_starP_mul
 import Theorems.Thm_BookProof_YangMillsHermite_starP_pderiv
 import Theorems.Thm_BookProof_YangMillsHermite_starP_sub
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
+import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsAbelianNoGap
 
 

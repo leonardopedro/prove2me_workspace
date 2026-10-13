@@ -1,6 +1,8 @@
 -- Generated from ChapterSoftmaxOrder.lean — solution of BookProof.ChapterSoftmaxOrder.scoreSoftmax_shift
 import Mathlib
 import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxBorn
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxOrder
 
 

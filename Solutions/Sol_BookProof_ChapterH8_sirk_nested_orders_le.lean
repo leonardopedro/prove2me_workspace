@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterH8
 import Theorems.Thm_BookProof_ChapterH8_sirk_band_contained_le
 import Theorems.Thm_BookProof_ChapterH5_krylovSpan_mono
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH8
 
 

@@ -3,6 +3,18 @@ import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_eq
 import Theorems.Thm_BookProof_TensorSumEsa_cpairOp_apply
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterTensorSumEsa
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmFullEnclosure
 
 
@@ -14,6 +26,10 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteP
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
 open BookProof.YangMillsNonAbelianEsa
+open BookProof.HermiteProductCore
+open BookProof.SmCar
+open BookProof.SmDiracYukawa
+open BookProof.SmHamiltonian
 
 noncomputable section
 

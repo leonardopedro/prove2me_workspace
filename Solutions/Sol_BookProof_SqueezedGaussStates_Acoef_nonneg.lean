@@ -1,6 +1,8 @@
 -- Generated from ChapterSqueezedGaussStates.lean — solution of BookProof.SqueezedGaussStates.Acoef_nonneg
 import Mathlib
 import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoordCombo
 open BookProof.SqueezedGaussStates
 
 

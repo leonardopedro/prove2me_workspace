@@ -1,7 +1,11 @@
 -- Generated from ChapterShiftedHermiteCore.lean — solution of BookProof.ShiftedHermiteCore.phaseArg_sec
 import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_sec_apply
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.ShiftedHermiteCore
 
 
@@ -11,6 +15,7 @@ open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
+open BookProof.HermiteProductCore
 
 noncomputable section
 

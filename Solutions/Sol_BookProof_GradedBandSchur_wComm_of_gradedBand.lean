@@ -3,6 +3,11 @@ import Mathlib
 import Definitions.Def_ChapterGradedBandSchurEsa
 import Theorems.Thm_BookProof_GradedBandSchur_degW_ge_one
 import Theorems.Thm_BookProof_GradedBandSchur_degW_pos
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.GradedBandSchur
 
 

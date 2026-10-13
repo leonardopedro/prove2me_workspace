@@ -1,6 +1,8 @@
 -- Generated from ChapterQgBrstCompleted.lean — solution of BookProof.QgBrstCompleted.qgPhase_mem_physicalStates
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
 open BookProof.QgBrstCompleted
 
 
@@ -8,6 +10,7 @@ open BookProof.QgBrstCompleted
 
 open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
+open BookProof.BrstReducedTransfer
 
 noncomputable section
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterA1e
 import Theorems.Thm_BookProof_ChapterA_JY_isSubsystem
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

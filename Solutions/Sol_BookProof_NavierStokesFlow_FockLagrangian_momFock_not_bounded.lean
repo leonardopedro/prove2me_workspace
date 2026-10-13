@@ -8,6 +8,11 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_e
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_mulD_not_bounded
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -18,6 +23,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.NavierStokesFlow.ThreeComponent
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 

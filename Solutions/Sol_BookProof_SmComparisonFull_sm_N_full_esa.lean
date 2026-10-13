@@ -2,6 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterSmComparisonFull
 import Theorems.Thm_BookProof_TensorSumChain_chain_esa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterTensorSumChain
+import Definitions.Def_ChapterSmComparison
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.SmComparisonFull
 
 

@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
 import Theorems.Thm_BookProof_QgBrstDerivativeGauge_gaugeReduce_extTorsionCoef
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgBrstDerivativeGauge
 
 

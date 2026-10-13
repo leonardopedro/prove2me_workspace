@@ -11,6 +11,20 @@ import Theorems.Thm_BookProof_HermiteGraphApprox_potLp_polyW_eq
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgOneParticleCcEsa
+import Definitions.Def_ChapterDegSchrodingerCore
+import Definitions.Def_ChapterDegKatoEsa
+import Definitions.Def_ChapterHermiteGraphApprox
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.YangMillsNonAbelianEsa
 
 
@@ -22,6 +36,12 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
+open BookProof.ChapterF7
+open BookProof.HermiteProductCore
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.QgHermiteFriedrichs
+open BookProof.YangMillsFriedrichs
+open BookProof.YangMillsHermite
 
 noncomputable section
 

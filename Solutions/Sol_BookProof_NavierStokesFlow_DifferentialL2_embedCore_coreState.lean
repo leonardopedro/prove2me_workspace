@@ -1,9 +1,19 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.embedCore_coreState
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_embedCore_coe
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -17,6 +27,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.LagrangianEsa
 
+open BookProof.QgOuterFockCoreFL BookProof.QgOuterFockCoreFL.CoreData
 noncomputable section
 
 variable {d : ℕ}

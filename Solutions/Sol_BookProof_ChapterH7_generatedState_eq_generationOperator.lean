@@ -1,6 +1,8 @@
 -- Generated from ChapterH7.lean — solution of BookProof.ChapterH7.generatedState_eq_generationOperator
 import Mathlib
 import Definitions.Def_ChapterH7
+import Definitions.Def_ChapterH4
+import Definitions.Def_ChapterH6
 open BookProof.ChapterH7
 
 

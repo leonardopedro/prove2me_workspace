@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSmDiracYukawa
 import Theorems.Thm_BookProof_SmOneParticle_IsMixing_conjTranspose_mul
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSmOneParticle
 open BookProof.SmDiracYukawa
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterUnitaryCompleteReducibility
 import Theorems.Thm_BookProof_ChapterUnitaryCompleteReducibility_inv_mem_of_isInvariant
+import Definitions.Def_ChapterMaschkeFiniteGroup
 open BookProof.ChapterUnitaryCompleteReducibility
 
 

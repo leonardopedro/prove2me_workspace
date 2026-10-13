@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxTemperatureMonotone
 import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_const
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 

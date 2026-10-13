@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
 import Theorems.Thm_BookProof_ChapterWeylSL2Group_exists_factorization
+import Definitions.Def_ChapterWeylSl2
 open BookProof.ChapterWeylSL2Group
 
 

@@ -1,6 +1,11 @@
 -- Generated from ChapterUnboundedSpectralModel.lean — solution of BookProof.UnboundedSpectralModel.cayley_real_multiplier
 import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
+import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterSpectralDirectSum
 open BookProof.UnboundedSpectralModel
 
 

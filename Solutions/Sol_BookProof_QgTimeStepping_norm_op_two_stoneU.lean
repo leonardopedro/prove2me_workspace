@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_QgTimeStepping_stoneU_mem_domain_two
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_stoneU_apply
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.QgTimeStepping
 
 
@@ -15,6 +25,8 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.ChapterSirkTrotterKato
+open BookProof.ChapterStoneResolvent
 
 noncomputable section
 

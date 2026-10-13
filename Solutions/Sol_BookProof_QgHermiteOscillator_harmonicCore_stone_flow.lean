@@ -5,6 +5,16 @@ import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_essentiallySelfAd
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_dense
 import Theorems.Thm_BookProof_QgHermiteOscillator_harmonicCore_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.QgHermiteOscillator
 
 
@@ -15,6 +25,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
+open BookProof.QgOuterFockFL
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

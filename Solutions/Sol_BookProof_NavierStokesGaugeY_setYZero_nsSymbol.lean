@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesGaugeY
 import Theorems.Thm_BookProof_NavierStokesGaugeY_setYZero_uField
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesGaugeY
 
 
@@ -10,7 +11,9 @@ open BookProof.NavierStokesGaugeY
 open MvPolynomial BookProof.NavierStokesFlow
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (nu : ℂ) (i : Fin 3) :
     setYZero (nsSymbol nu i) = nsSymbolPoint nu i := by
-
   simp [nsSymbol, nsSymbolPoint, setYZero_uField]
+
+/-! ## The operator form: `y = 0` as an eigenvalue condition on the initial state -/

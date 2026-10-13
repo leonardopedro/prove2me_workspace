@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterGravityPolymomentum
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_polyMom_contract_v
 import Theorems.Thm_BookProof_ChapterGravityProjector_spatialProj_mulVec_self
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 

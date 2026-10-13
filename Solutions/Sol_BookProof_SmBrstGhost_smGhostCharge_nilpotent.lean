@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_SmBrstGhost_smStruct_antisymm
 import Theorems.Thm_BookProof_SmBrstGhost_smStruct_jacobi
 import Theorems.Thm_BookProof_SmBrstGhost_smGhostCAR
 import Theorems.Thm_BookProof_BRSTNilpotent_brst_charge_nilpotent
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterSmCarAlgebra
 open BookProof.SmBrstGhost
 
 

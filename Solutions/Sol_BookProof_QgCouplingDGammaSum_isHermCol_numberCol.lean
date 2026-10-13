@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterQgCouplingDGammaSum
 import Theorems.Thm_BookProof_QgCouplingDGammaSum_isHermCol_diagCol
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockSecondQuantization
 open BookProof.QgCouplingDGammaSum
 
 

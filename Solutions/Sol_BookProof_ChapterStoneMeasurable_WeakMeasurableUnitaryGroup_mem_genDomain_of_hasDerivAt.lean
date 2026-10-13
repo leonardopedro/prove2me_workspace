@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneConverse.lean — solution of BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.mem_genDomain_of_hasDerivAt
 import Mathlib
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 

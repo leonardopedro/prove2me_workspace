@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityHalfDensity
 import Theorems.Thm_BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.QuantumGravityHalfDensity
 
 

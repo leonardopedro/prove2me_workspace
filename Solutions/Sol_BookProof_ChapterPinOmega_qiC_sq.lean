@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterPinOmega
 import Theorems.Thm_BookProof_ChapterPinOmega_qi_sq
 import Theorems.Thm_BookProof_ChapterPinOmega_qiC_eq_cast
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinDoubleCover
 open BookProof.ChapterPinOmega
 
 

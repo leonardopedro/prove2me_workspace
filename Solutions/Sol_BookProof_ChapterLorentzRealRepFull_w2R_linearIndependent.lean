@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterLorentzRealRepFull
 import Theorems.Thm_BookProof_ChapterLorentzRealRepFull_gram_twoR
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_linIndep_of_gram
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
+import Definitions.Def_ChapterLorentzRealRepSum
 open BookProof.ChapterLorentzRealRepFull
 
 

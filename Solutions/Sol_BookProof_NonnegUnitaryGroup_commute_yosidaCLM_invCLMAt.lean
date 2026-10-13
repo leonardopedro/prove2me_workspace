@@ -1,6 +1,10 @@
 -- Generated from ChapterNonnegUnitaryGroup.lean — solution of BookProof.NonnegUnitaryGroup.commute_yosidaCLM_invCLMAt
 import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterNonnegResolvent
 open BookProof.NonnegUnitaryGroup
 
 

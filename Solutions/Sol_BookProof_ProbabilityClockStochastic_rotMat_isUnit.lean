@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterProbabilityClockStochastic
 import Theorems.Thm_BookProof_ProbabilityClockStochastic_rotMat_det
+import Definitions.Def_ChapterFullQuadraticEsa
 open BookProof.ProbabilityClockStochastic
 
 

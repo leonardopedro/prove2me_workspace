@@ -1,6 +1,10 @@
 -- Generated from ChapterSmCarContinuum.lean — solution of BookProof.SmCarContinuum.inner_cAnn_left
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.SmCarContinuum
 
 

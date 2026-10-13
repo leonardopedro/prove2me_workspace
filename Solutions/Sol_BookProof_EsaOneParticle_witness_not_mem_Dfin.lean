@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_EsaOneParticle_Dfin_le_finSupp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterTempleSeparationNecessary
 open BookProof.EsaOneParticle
 
 
@@ -9,6 +14,8 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.TempleSeparationNecessary
 
 noncomputable section
 

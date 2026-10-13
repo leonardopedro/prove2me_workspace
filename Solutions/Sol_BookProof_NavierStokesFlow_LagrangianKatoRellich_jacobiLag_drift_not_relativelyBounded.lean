@@ -5,6 +5,15 @@ import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_hasZe
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hasZeroDeficiencyOn_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_jacobiLag_secondOrder_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_JacobiDeficiency_jacobiOp_not_hasZeroDeficiencyOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -22,6 +31,7 @@ variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution :
     ¬ ∃ kap kap' : ℝ, 0 ≤ kap ∧ 0 ≤ kap' ∧ ∀ v : jacobiLagData.D,
       ‖(jacobiLagData.drift v : L2N)‖

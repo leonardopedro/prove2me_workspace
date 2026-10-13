@@ -1,6 +1,8 @@
 -- Generated from ChapterGravityProjDirectSum.lean — solution of BookProof.ChapterGravityProjDirectSum.isCompl_range_of_add_eq_id
 import Mathlib
 import Definitions.Def_ChapterGravityProjDirectSum
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterGravityTimeProj
 open BookProof.ChapterGravityProjDirectSum
 
 

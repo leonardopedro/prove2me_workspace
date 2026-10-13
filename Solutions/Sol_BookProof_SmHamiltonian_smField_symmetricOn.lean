@@ -4,6 +4,14 @@ import Definitions.Def_ChapterSmHamiltonian
 import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
 import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.SmHamiltonian
 
 

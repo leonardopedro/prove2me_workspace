@@ -1,8 +1,12 @@
 -- Generated from ChapterWeylSl2.lean — solution of BookProof.ChapterWeylSl2.Sl2Rep.isInv_scalarOps
 import Mathlib
 import Definitions.Def_ChapterWeylSl2
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterGleasonPureMixed
 open BookProof.ChapterWeylSl2
 open BookProof.ChapterWeylSl2.Sl2Rep
+open BookProof.ChapterDoubleSlit
+open BookProof.ChapterGleasonPureMixed
 
 
 
@@ -16,10 +20,14 @@ variable (R : Sl2Rep V)
 variable {R}
 variable {R : Sl2Rep V}
 
+
+@[simp] private theorem adRep_E (R : Sl2Rep V) (f : Module.End ℂ V) :
+    (adRep R).E f = R.E * f - f * R.E := ad_apply _ _
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution {R : Sl2Rep V} {W : Submodule ℂ V} (hW : R.IsInv W) :
     (adRep R).IsInv (scalarOps W) := by
-
   have key : ∀ (a : Module.End ℂ V), (∀ x ∈ W, a x ∈ W) → ∀ f ∈ scalarOps W,
       (a * f - f * a) ∈ scalarOps W := by
     rintro a ha f ⟨hf1, c, hf2⟩
@@ -31,3 +39,5 @@ theorem solution {R : Sl2Rep V} {W : Submodule ℂ V} (hW : R.IsInv W) :
   exact ⟨fun f hf => by rw [adRep_E]; exact key R.E hW.1 f hf,
     fun f hf => by rw [adRep_F]; exact key R.F hW.2.1 f hf,
     fun f hf => by rw [adRep_H]; exact key R.H hW.2.2 f hf⟩
+
+/-! ### Weyl's theorem -/

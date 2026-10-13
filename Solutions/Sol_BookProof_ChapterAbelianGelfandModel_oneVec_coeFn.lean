@@ -1,6 +1,7 @@
 -- Generated from ChapterAbelianGelfandModel.lean — solution of BookProof.ChapterAbelianGelfandModel.oneVec_coeFn
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterLinftyMultiplication
 open BookProof.ChapterAbelianGelfandModel
 
 

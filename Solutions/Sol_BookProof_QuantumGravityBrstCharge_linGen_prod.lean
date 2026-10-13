@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Theorems.Thm_BookProof_QuantumGravityBrstCharge_linGen_def
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QuantumGravityBrstCharge
 
 

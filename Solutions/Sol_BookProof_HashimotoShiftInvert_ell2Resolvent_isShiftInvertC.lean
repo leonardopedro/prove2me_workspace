@@ -9,6 +9,14 @@ import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_invShiftOperator_apply
 import Theorems.Thm_BookProof_HashimotoShiftInvert_preim_eq
 import Theorems.Thm_ell2ShiftInvert_injective
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFriedrichsLimit
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterHashimotoShiftInvert
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+open scoped lp
 open BookProof.HashimotoShiftInvert
 
 
@@ -22,6 +30,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Sub
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+open BookProof.QgOuterFockFL
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) :
     IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) :=
   nt hγ) := by

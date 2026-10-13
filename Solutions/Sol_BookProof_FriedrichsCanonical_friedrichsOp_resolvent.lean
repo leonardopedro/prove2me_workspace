@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_apply
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHashimotoShiftInvert
 open BookProof.FriedrichsCanonical
 
 
@@ -12,6 +17,9 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension.FormDom
+open BookProof.QgOuterFockFL
 
 noncomputable section
 

@@ -1,6 +1,12 @@
 -- Generated from ChapterSmGaugeConnection.lean — solution of BookProof.SmGaugeConnection.covD_zero_coupling
 import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterFarisLavine
 open BookProof.SmGaugeConnection
 
 
@@ -15,6 +21,11 @@ noncomputable section
 variable {N d : ℕ}
 
 variable {N d : ℕ}
+
+
+@[simp] private theorem conn_zero_coupling (T : Fin d → Matrix (Fin N) (Fin N) ℂ)
+    (A : Fin d → Fin 3 → ℝ) (j : Fin 3) : conn 0 T A j = 0 := by
+  simp [conn]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k : Fin 3 → ℝ) (T : Fin d → Matrix (Fin N) (Fin N) ℂ)

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterEnergyBoundedEvolution
 import Theorems.Thm_BookProof_ChapterEnergyBoundedEvolution_eLpNorm_evol_sub_evol_le
+import Definitions.Def_ChapterEnergyBandDecomposition
 open BookProof.ChapterEnergyBoundedEvolution
 
 
@@ -16,8 +17,8 @@ variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {E : X → ℝ} {f : X → ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {Emax : ℝ} (h : EnergyLimited E μ Emax f) (t : ℝ) :
     eLpNorm (evol E t f - f) 2 μ ≤ ENNReal.ofReal (|t| * Emax) * eLpNorm f 2 μ := by
-
   have := eLpNorm_evol_sub_evol_le h 0 t
   simpa using this

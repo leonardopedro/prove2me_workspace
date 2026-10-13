@@ -1,6 +1,7 @@
 -- Generated from ChapterMajoranaFourier.lean — solution of BookProof.ChapterMajoranaFourier.Ep_ge
 import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

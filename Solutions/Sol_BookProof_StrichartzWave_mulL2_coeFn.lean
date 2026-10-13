@@ -1,6 +1,7 @@
 -- Generated from ChapterWaveBoundedPotential.lean — solution of BookProof.StrichartzWave.mulL2_coeFn
 import Mathlib
 import Definitions.Def_ChapterWaveBoundedPotential
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 
 

@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 
@@ -9,6 +15,9 @@ open BookProof.EsaOneParticle
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
+open BookProof.TensorCore
 
 noncomputable section
 

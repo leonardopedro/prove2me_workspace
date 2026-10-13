@@ -4,6 +4,9 @@ import Definitions.Def_ChapterH8
 import Theorems.Thm_BookProof_ChapterH8_adjoint_comp_self_of_nested
 import Theorems.Thm_BookProof_ChapterH8_fine_range_of_coarse
 import Theorems.Thm_BookProof_ChapterH8_compress_rational_transfer
+import Definitions.Def_ChapterH5
+import Definitions.Def_ChapterH6
+import Definitions.Def_ChapterH4
 open BookProof.ChapterH8
 
 
@@ -12,6 +15,8 @@ noncomputable section
 
 
 open BookProof.ChapterH4 BookProof.ChapterH5 BookProof.ChapterH6
+open BookProof.ChapterH4
+open ContinuousLinearMap
 
 variable {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
 variable {E F G : Type*}

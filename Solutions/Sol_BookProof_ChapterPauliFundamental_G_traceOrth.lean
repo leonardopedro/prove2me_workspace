@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_GZ_traceOrth
 import Theorems.Thm_BookProof_ChapterPauliFundamental_G_eq_map
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
 open BookProof.ChapterPauliFundamental
 
 

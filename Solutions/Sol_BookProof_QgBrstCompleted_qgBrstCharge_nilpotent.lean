@@ -4,6 +4,8 @@ import Definitions.Def_ChapterQgBrstCompleted
 import Theorems.Thm_BookProof_QgBrstCompleted_brstTerm_comp_self
 import Theorems.Thm_BookProof_QgBrstCompleted_brstTerm_anticomm
 import Theorems.Thm_BookProof_QgBrstCompleted_eq_zero_of_eq_neg_self
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterBrstReducedTransfer
 open BookProof.QgBrstCompleted
 
 

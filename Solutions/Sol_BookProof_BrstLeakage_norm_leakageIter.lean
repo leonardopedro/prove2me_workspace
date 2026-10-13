@@ -14,6 +14,13 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
+
+private theorem norm_leakageIter {B : ℕ → E →L[ℂ] E} (hB : ∀ i, IsSelfAdjoint (B i)) (τ : ℝ) (x : E) :
+    ∀ n, ‖leakageIter B τ x n‖ = ‖x‖
+  | 0 => rfl
+  | n + 1 => by
+      rw [leakageIter_succ, norm_flow_apply (hB n), norm_leakageIter hB τ x n]
+
 set_option maxHeartbeats 1000000 in
 theorem solution {B : ℕ → E →L[ℂ] E} (hB : ∀ i, IsSelfAdjoint (B i)) (τ : ℝ) (x : E) :
     ∀ n, ‖leakageIter B τ x n‖ = ‖x‖

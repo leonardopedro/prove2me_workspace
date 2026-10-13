@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterBesselHarmonic
 import Theorems.Thm_BookProof_ChapterSphericalBesselODE_pow_pred_coef
+import Definitions.Def_ChapterSphericalBessel
+import Definitions.Def_ChapterSphericalBesselODE
+import Definitions.Def_ChapterRadialLaplacian
+import Definitions.Def_ChapterLaplacianProduct
 open BookProof.ChapterBesselHarmonic
 
 

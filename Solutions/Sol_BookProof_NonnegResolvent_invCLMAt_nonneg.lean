@@ -4,6 +4,9 @@ import Definitions.Def_ChapterNonnegResolvent
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 import Theorems.Thm_BookProof_NonnegSquareRoot_invCLMAt_mem
 import Theorems.Thm_BookProof_PositiveSquareRoot_inner_im_eq_zero
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
 open BookProof.NonnegResolvent
 
 

@@ -1,6 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.tsub_add_cancel_of_le'
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStep
 open BookProof.CarlemanSimplex
 
 
@@ -16,8 +18,8 @@ variable {d : ℕ}
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
-theorem solution {P a : Fin d →₀ ℕ} (h : P ≤ a) : a - P + P = a := by
 
+theorem solution {P a : Fin d →₀ ℕ} (h : P ≤ a) : a - P + P = a := by
   ext j
   have hj : P j ≤ a j := by
     have := h

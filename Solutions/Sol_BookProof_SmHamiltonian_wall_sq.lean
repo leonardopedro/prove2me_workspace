@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
 import Theorems.Thm_BookProof_NsLagrangianDetFL_lam_nonneg
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.SmHamiltonian
 
 

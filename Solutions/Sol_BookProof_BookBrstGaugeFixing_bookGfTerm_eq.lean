@@ -6,6 +6,12 @@ import Theorems.Thm_BookProof_BookBrstYangMills_bookConstraintAlgebra
 import Theorems.Thm_BookProof_BookBrstYangMills_bookGhostCar
 import Theorems.Thm_BookProof_BookBrstYangMills_bookOmega_eq_brstCharge
 import Theorems.Thm_BookProof_BookBrstYangMills_bosOpN_ghostOpN_comm
+import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterQuantumGravityBrstCharge
+import Definitions.Def_ChapterBookBrstYangMills
+import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterSmBrstGhost
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.BookBrstGaugeFixing
 
 
@@ -13,6 +19,8 @@ open BookProof.BookBrstGaugeFixing
 
 open BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge BookProof.BookBrstYangMills
 open MvPolynomial
+open BookProof.SmBrstGhost
+open BookProof.YangMillsGhost
 
 noncomputable section
 

@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterCoreBoundsEsa
 import Theorems.Thm_BookProof_CoreBounds_tendsto_trunc
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterOperatorSeriesEsa
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.CoreBounds
 
 
@@ -10,6 +16,7 @@ open BookProof.CoreBounds
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.OperatorSeries
 open Filter Topology
+open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
 

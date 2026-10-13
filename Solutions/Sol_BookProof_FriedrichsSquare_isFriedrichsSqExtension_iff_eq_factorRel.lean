@@ -7,12 +7,20 @@ import Theorems.Thm_BookProof_FriedrichsSquare_IsFriedrichsSqExtension_symmetric
 import Theorems.Thm_BookProof_FriedrichsSquare_le_factorRel_of_symmetric_extension
 import Theorems.Thm_BookProof_FriedrichsSquare_isFriedrichsSqExtension_factorRel
 import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_selfAdjoint
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStoneConverse
 open BookProof.FriedrichsSquare
 
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

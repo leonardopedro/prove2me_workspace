@@ -3,11 +3,17 @@ import Mathlib
 import Definitions.Def_ChapterUnitaryTransport
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transport_isSelfAdjointOn
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_mulOp_isSelfAdjointOn
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
 
 
 
 open scoped InnerProductSpace
+open BookProof.ChapterContinuityUnitaryInfinite
+open BookProof.ChapterF7
+open BookProof.ChapterUnboundedPosition
 
 
 variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
@@ -17,7 +23,7 @@ variable {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
   [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (f : ℤ → ℝ) (W : L2Z ≃ₗᵢ[ℂ] K) :
     IsSelfAdjointOn (transportDomain W (mulDomain f)) (transportOp W (mulDomain f) (mulOp f)) :=
-  Op f)) :=
-    transport_isSelfAdjointOn W _ _ (mulOp_isSelfAdjoi
+  transport_isSelfAdjointOn W _ _ (mulOp_isSelfAdjointOn f)

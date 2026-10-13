@@ -1,6 +1,8 @@
 -- Generated from ChapterKatoRellichDeficiency.lean — solution of BookProof.KatoRellich.deficiencyTrivialAt_of_dense
 import Mathlib
 import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.KatoRellich
 
 
@@ -13,10 +15,10 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submo
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (T : D →ₗ[ℂ] F) (z : ℂ)
     (hd : Dense (Set.range fun x : D => T x - ((starRingEnd ℂ) z) • (x : F))) :
     DeficiencyTrivialAt D T z := by
-
   intro w hw
   have hclosed : IsClosed {y : F | (inner ℂ y w : ℂ) = 0} :=
     isClosed_eq (Continuous.inner continuous_id continuous_const) continuous_const

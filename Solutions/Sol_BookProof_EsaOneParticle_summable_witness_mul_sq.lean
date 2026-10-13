@@ -1,6 +1,9 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.summable_witness_mul_sq
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.EsaOneParticle
 
 

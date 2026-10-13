@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterLorentzOrthochronous
 import Theorems.Thm_BookProof_LorentzOrthochronous_lorentz_inv_time
 import Theorems.Thm_BookProof_LorentzGroup_isLorentz_inv
+import Definitions.Def_ChapterLorentzGroup
 open BookProof.LorentzOrthochronous
 
 

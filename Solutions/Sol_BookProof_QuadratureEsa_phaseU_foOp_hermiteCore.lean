@@ -8,6 +8,15 @@ import Theorems.Thm_BookProof_QuadratureEsa_foMod_mul_foPhase
 import Theorems.Thm_BookProof_QuadratureEsa_foMod_eq_conj_mul_foPhase
 import Theorems.Thm_BookProof_QuadratureEsa_phasePow_add_single
 import Theorems.Thm_BookProof_QuadratureEsa_phasePow_sub_single
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteRelativeBound
 open BookProof.QuadratureEsa
 
 
@@ -20,6 +29,8 @@ open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 variable {d : ℕ}
 

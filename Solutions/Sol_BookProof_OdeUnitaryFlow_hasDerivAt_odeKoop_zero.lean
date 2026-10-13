@@ -10,9 +10,9 @@ open MeasureTheory Filter Set
 open scoped Topology ENNReal
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (ψ : ℝ → ℂ) (x : ℝ) (d : ℂ) (hψ : HasDerivAt ψ d x) :
     HasDerivAt (fun t : ℝ => odeKoop t ψ x) (-((x : ℂ) ^ 2 * d + (x : ℂ) * ψ x)) 0 := by
-
   have hlin : HasDerivAt (fun t : ℝ => 1 + t * x) x 0 := by
     simpa using ((hasDerivAt_id (0 : ℝ)).mul_const x).const_add 1
   have h0 : (1 + (0 : ℝ) * x) ≠ 0 := by norm_num

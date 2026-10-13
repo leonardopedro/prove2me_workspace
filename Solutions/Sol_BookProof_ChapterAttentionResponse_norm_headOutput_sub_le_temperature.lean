@@ -4,6 +4,9 @@ import Definitions.Def_ChapterAttentionResponse
 import Theorems.Thm_BookProof_ChapterAttentionResponse_hasDerivAt_headOutput
 import Theorems.Thm_BookProof_ChapterAttentionResponse_norm_scoreValueCovariance_le
 import Theorems.Thm_BookProof_ChapterAttentionResponse_abs_score_sub_meanScore_le
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionResponse
 
 
@@ -14,20 +17,18 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterAttentionOutput
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {s : Fin m → ℝ} {v : Fin m → E} {C a b : ℝ}
     (hv : ∀ j, ‖v j‖ ≤ C) (ha : ∀ l, a ≤ s l) (hb : ∀ l, s l ≤ b) (i : Fin m)
     (beta gamma : ℝ) :
     ‖headOutput gamma s v - headOutput beta s v‖ ≤ C * (b - a) * |gamma - beta| := by
-  have hderiv : ∀ x ∈ (Set.univ : Set ℝ),
-      HasDerivWithinAt (fun t : ℝ => headOutput t s v) (scoreValueCovariance x s v)
-        Set.univ x := by
-
   have hderiv : ∀ x ∈ (Set.univ : Set ℝ),
       HasDerivWithinAt (fun t : ℝ => headOutput t s v) (scoreValueCovariance x s v)
         Set.univ x := fun x _ => (hasDerivAt_headOutput x s v).hasDerivWithinAt

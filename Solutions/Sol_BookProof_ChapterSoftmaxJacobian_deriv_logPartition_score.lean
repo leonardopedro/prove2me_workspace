@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterSoftmaxJacobian
 import Theorems.Thm_BookProof_ChapterSoftmaxJacobian_hasDerivAt_logPartition_score
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxFluctuation
 open BookProof.ChapterSoftmaxJacobian
 
 
@@ -12,12 +15,18 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxFluctuation
 
 variable {m : ℕ}
 
 variable {m : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i : Fin m) :
     deriv (fun t : ℝ => logPartition beta (scorePerturb s i t)) 0
-      = beta * scoreSoftmax beta s i := (hasDerivAt_logPartition_score beta s i).deriv
+      = beta * scoreSoftmax beta s i :=
+  (hasDerivAt_logPartition_score beta s i).deriv
+
+/-! ## The Jacobian of Softmax -/

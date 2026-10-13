@@ -1,6 +1,11 @@
 -- Generated from ChapterGradedFock.lean — solution of BookProof.GradedFock.liftFst_single
 import Mathlib
 import Definitions.Def_ChapterGradedFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFermionFock
+import Definitions.Def_ChapterSuperBracket
 open BookProof.GradedFock
 
 
@@ -15,8 +20,8 @@ noncomputable section
 variable {α β : Type*}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (T : (α →₀ ℂ) →ₗ[ℂ] (α →₀ ℂ)) (a : α) (b : β) (c : ℂ) :
-    liftFst (β :=
-  β) T (Finsupp.single (a, b) c)
-        = c • otimes (T (Finsupp.single a 1)) (Finsupp.single b (1 : ℂ)) := by
-    rw [liftFst, Finsupp.lsum_single, LinearMap.toSpanSingleton_apply]
+    liftFst (β := β) T (Finsupp.single (a, b) c)
+      = c • otimes (T (Finsupp.single a 1)) (Finsupp.single b (1 : ℂ)) := by
+  rw [liftFst, Finsupp.lsum_single, LinearMap.toSpanSingleton_apply]

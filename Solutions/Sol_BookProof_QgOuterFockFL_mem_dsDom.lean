@@ -1,6 +1,14 @@
 -- Generated from ChapterQgOuterFockFarisLavine.lean — solution of BookProof.QgOuterFockFL.mem_dsDom
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgOuterFockFL
 
 
@@ -26,6 +34,7 @@ variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
 variable (C : ∀ i, Comparison (G i))
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {x : lp G 2} :
     x ∈ dsDom C ↔ (∀ i, (x : ∀ i, G i) i ∈ (C i).dom) ∧
       Memℓp (fun i => opTot (C i).op ((x : ∀ i, G i) i)) 2 := Iff.rfl

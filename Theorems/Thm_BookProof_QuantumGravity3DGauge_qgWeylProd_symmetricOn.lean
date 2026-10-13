@@ -12,5 +12,7 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {D : Submodule ℂ (L2d 84)}
+
 theorem BookProof.QuantumGravity3DGauge.qgWeylProd_symmetricOn (Φ : CoreRep 84 D) (j k : Fin 84) :
     SymmetricOn D (D.subtype.comp (Φ.op (qgWeylProd (mulOp (X j)) (momOp k)))) := by sorry

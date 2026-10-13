@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSmDiracSpinor
 import Theorems.Thm_BookProof_ChapterCPTHamiltonian_diracHamOp_sq
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterCPTHamiltonian
 open BookProof.SmDiracSpinor
 
 

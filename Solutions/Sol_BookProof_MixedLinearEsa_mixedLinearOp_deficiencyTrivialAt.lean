@@ -9,6 +9,10 @@ import Theorems.Thm_BookProof_MixedLinearEsa_mixedLinearOp_gauge
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_schwartzEquiv_coe
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.MixedLinearEsa
 
 
@@ -16,12 +20,25 @@ open BookProof.MixedLinearEsa
 
 open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
 open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.FourierMultiplierEsa
+open BookProof.StrichartzWave
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+/-! `gaugeSchwartz_apply` exists in the source chapter but no
+`Theorems/Thm_…` stub was generated for it, so a solution may not import it.  It
+is a definitional `rfl` over `gaugeSchwartz`/`gaugeFun`, both of which the
+platform publishes, so it is stated locally as `private`.
+-/
+
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+private theorem gaugeSchwartz_apply' (b m : V) (φ : 𝓢(V, ℂ))
+    (hφ : HasCompactSupport (φ : V → ℂ)) (x : V) :
+    gaugeSchwartz b m φ hφ x = gaugeFun b m x * φ x := rfl
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b m : V) {z : ℂ} (hz : z.im ≠ 0) :
@@ -63,7 +80,7 @@ theorem solution (b m : V) {z : ℂ} (hz : z.im ≠ 0) :
         = ∫ x, (starRingEnd ℂ) ((gaugeSchwartz b m φ hφ) x) * (u x) := by
       refine integral_congr_ae ?_
       filter_upwards [hwcoe] with x hx
-      rw [hx, gaugeSchwartz_apply, map_mul]
+      rw [hx, gaugeSchwartz_apply', map_mul]
       ring
     rw [hL, hR, h1]
   have hw0 : w = 0 := momentumOp_eq_zero_of_compactSupport_test m hz w hw

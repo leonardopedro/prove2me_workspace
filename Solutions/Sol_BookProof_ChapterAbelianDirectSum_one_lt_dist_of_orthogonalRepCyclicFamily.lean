@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
 import Theorems.Thm_BookProof_ChapterAbelianDirectSum_inner_eq_zero_of_orthogonalRepCyclicFamily
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum
 
 

@@ -4,18 +4,23 @@ import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sum
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_anticomm
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_NSFullData_advection_isSymmetricDom
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 
 
 open scoped ENNReal
+open BookProof.NavierStokesFlow.CanonicalVector
+open BookProof.NavierStokesFlow.FullEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 variable (d : NSFullData F)
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution : IsSymmetricDom d.hamiltonian :=
   IsSymmetricDom.sum Finset.univ fun i _ =>
-      (d.mom_symm i).anticomm (d.advection_isSymmetricDom i)
+    (d.mom_symm i).anticomm (d.advection_isSymmetricDom i)

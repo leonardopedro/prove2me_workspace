@@ -2,6 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterScalaronFockEsa
 import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_stone_flow
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.ScalaronFock
 
 
@@ -12,6 +21,8 @@ open Filter Topology MeasureTheory SchwartzMap
 open BookProof.FarisLavine BookProof.Starobinsky BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.QuantumGravityDensitized BookProof.ChapterStoneResolvent
+open BookProof.EsaClosure
+open BookProof.StoneBridge
 
 noncomputable section
 

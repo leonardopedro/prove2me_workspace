@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterFiniteBayesHierarchy
 import Theorems.Thm_BookProof_ChapterHierarchicalBayesComposition_terminalMarginal_comp
+import Definitions.Def_ChapterHierarchicalBayesComposition
 open BookProof.ChapterFiniteBayesHierarchy
 
 
@@ -15,12 +16,17 @@ variable {S : Type*} [Fintype S] [DecidableEq S]
 
 variable {S : Type*} [Fintype S] [DecidableEq S]
 
+
+@[simp] private theorem collapseKernels_nil :
+    collapseKernels ([] : List (S → S → ℝ)) = idKernel := by
+  rfl
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution (ks : List (S → S → ℝ))
     (likelihood : S → ℝ) :
     nestedMarginal ks likelihood =
       terminalMarginal (collapseKernels ks) likelihood := by
-
   induction ks with
   | nil =>
     simp only [nestedMarginal, collapseKernels_nil]

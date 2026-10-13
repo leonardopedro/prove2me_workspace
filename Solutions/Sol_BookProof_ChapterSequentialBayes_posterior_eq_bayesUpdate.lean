@@ -1,6 +1,7 @@
 -- Generated from ChapterSequentialBayes.lean — solution of BookProof.ChapterSequentialBayes.posterior_eq_bayesUpdate
 import Mathlib
 import Definitions.Def_ChapterSequentialBayes
+import Definitions.Def_ChapterBayesInference
 open BookProof.ChapterSequentialBayes
 
 

@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterLayerNorm
 import Theorems.Thm_BookProof_ChapterLayerNorm_abs_inner_layerNorm_le
 import Theorems.Thm_BookProof_ChapterAttentionRetrieval_scoreSoftmax_ge_of_spread
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
 
@@ -13,6 +16,8 @@ noncomputable section
 
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
+open BookProof.ChapterSoftmaxSharpness
+open ChapterTotalVariance
 
 variable {d : ℕ}
 
@@ -20,12 +25,12 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} {beta : ℝ} (hb : 0 ≤ beta) (hd : 0 < d)
-    {q : Fin d → ℝ} {k : Fin m → (Fin d → ℝ)} (hq : 0 < variance q)
-    (hk : ∀ j, 0 < variance (k j)) (j : Fin m) :
+    {q : Fin d → ℝ} {k : Fin m → (Fin d → ℝ)} (hq : 0 < BookProof.ChapterLayerNorm.variance q)
+    (hk : ∀ j, 0 < BookProof.ChapterLayerNorm.variance (k j)) (j : Fin m) :
     Real.exp (-(beta * (2 * d))) / (m : ℝ)
       ≤ scoreSoftmax beta (fun l => ∑ i, layerNorm q i * layerNorm (k l) i) j := by
 
-  refine scoreSoftmax_ge_of_spread hb _ j fun l => ?_
+  refine BookProof.ChapterAttentionRetrieval.scoreSoftmax_ge_of_spread hb _ j fun l => ?_
   have h1 := abs_inner_layerNorm_le hd hq (hk l)
   have h2 := abs_inner_layerNorm_le hd hq (hk j)
   have h1' := abs_le.mp h1

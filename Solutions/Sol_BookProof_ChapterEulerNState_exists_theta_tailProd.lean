@@ -12,6 +12,10 @@ open BookProof.ChapterEulerNState
 
 open scoped BigOperators
 
+
+@[simp] private theorem tailProd_zero (θ : ℕ → ℝ) : tailProd θ 0 = 1 := by
+  simp [tailProd]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (p : ℕ → ℝ) (hp : ∀ k, 0 ≤ p k) {n : ℕ}
     (hsum : ∑ j ∈ Finset.range n, p j = 1) :

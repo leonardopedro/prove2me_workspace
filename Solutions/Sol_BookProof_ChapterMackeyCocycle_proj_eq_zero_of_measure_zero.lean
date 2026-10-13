@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
+import Definitions.Def_ChapterMackeyQuasiInvariant
+import Definitions.Def_ChapterPvmCyclicUnitary
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyCocycle
 
 
@@ -11,6 +14,7 @@ open scoped InnerProductSpace
 
 
 open BookProof.ChapterMackeyQuasiInvariant BookProof.ChapterPvmCyclicUnitary
+open BookProof.ChapterElectroweakFieldStrength
 
 variable {G X : Type*} [Group G] [MeasurableSpace X] [MulAction G X]
 

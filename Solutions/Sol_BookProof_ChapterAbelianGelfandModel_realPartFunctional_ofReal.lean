@@ -1,6 +1,8 @@
 -- Generated from ChapterAbelianGelfandModel.lean — solution of BookProof.ChapterAbelianGelfandModel.realPartFunctional_ofReal
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterAbelianGelfandModel
 
 

@@ -17,13 +17,11 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {g : ℝ → ℝ} (hg : IsTestFun g) (a b : ℝ) :
     AbsolutelyContinuousOnInterval g a b := by
-
   obtain ⟨x₀, hx₀⟩ := hg.deriv.continuous.norm.exists_forall_ge_of_hasCompactSupport
     hg.deriv.hasCompactSupport.norm
   refine (LipschitzWith.lipschitzOnWith (K := ⟨‖deriv g x₀‖, norm_nonneg _⟩)
     (lipschitzWith_of_nnnorm_deriv_le hg.differentiable fun x => ?_)).absolutelyContinuousOnInterval
   exact_mod_cast hx₀ x
-
-/-- **Integration by par

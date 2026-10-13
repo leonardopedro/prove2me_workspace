@@ -4,6 +4,9 @@ import Definitions.Def_ChapterDeterministic
 import Theorems.Thm_BookProof_ChapterDeterministic_proj_mul_measOp_apply
 import Theorems.Thm_BookProof_ChapterDeterministic_measOp_mul_proj_apply
 import Theorems.Thm_BookProof_ChapterTimeTranslation_measOp_apply
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterReconstruct
+import Definitions.Def_ChapterTimeTranslation
 open BookProof.ChapterDeterministic
 
 

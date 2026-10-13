@@ -4,6 +4,7 @@ import Definitions.Def_ChapterPauliCommutant
 import Theorems.Thm_BookProof_ChapterA3_mgamma_commutant_scalar
 import Theorems.Thm_BookProof_ChapterA3_toEuclideanLin_mul4
 import Theorems.Thm_BookProof_ChapterA3_mgammaLin_orthogonal_invariant
+import Definitions.Def_ChapterA3
 open BookProof.ChapterA3
 
 

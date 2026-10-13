@@ -5,6 +5,11 @@ import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn
 import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
 
@@ -15,6 +20,7 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian AffineFiber
+open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 variable {ι : Type*}

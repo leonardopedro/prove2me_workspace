@@ -6,6 +6,11 @@ import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterWeakSecondDerivative
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterStrichartzWave
 open BookProof.WallDeficiencyObstruction
 
 
@@ -15,6 +20,8 @@ open MeasureTheory SchwartzMap Set
 open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.WeakSecondDeriv
+open BookProof.ScalaronEsa
+open BookProof.StrichartzWave
 
 noncomputable section
 

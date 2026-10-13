@@ -4,6 +4,12 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_symmetricOn
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_quadForm_ge
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_of_semibounded_below
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
 open BookProof.QgHermiteFriedrichs
 
 
@@ -13,6 +19,7 @@ open MeasureTheory Complex MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.Starobinsky
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 
+open BookProof.FriedrichsExtension.FormDom
 noncomputable section
 
 variable {d : ℕ}

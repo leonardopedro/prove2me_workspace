@@ -3,6 +3,14 @@ import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Theorems.Thm_BookProof_PermSector_inclPow_permOp
 import Theorems.Thm_BookProof_PermSector_corePow_permOp
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorPermutation
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.PermSector
 
 

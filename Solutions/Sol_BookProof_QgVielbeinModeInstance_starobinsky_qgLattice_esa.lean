@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
 import Theorems.Thm_BookProof_QgVielbeinModeInstance_qgLattice_essentiallySelfAdjointOn
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgVielbeinModeInstance
 
 
@@ -9,6 +14,8 @@ open BookProof.QgVielbeinModeInstance
 
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
 
 noncomputable section
 

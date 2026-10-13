@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignedShift
 import Theorems.Thm_BookProof_NavierStokesFlow_SignedShift_listH_essentiallySelfAdjointOn_core
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignedShift
 

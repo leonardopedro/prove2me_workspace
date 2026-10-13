@@ -1,6 +1,7 @@
 -- Generated from ChapterParitySU2.lean — solution of BookProof.ChapterParitySU2.pauliV_pseudoreal
 import Mathlib
 import Definitions.Def_ChapterParitySU2
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParitySU2
 
 

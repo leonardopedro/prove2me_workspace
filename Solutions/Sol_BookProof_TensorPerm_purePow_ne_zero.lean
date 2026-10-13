@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterTensorPermutation
 import Theorems.Thm_BookProof_TensorPerm_inner_purePow
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorPerm
 
 

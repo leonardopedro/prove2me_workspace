@@ -5,6 +5,9 @@ import Theorems.Thm_BookProof_ChapterParityChirality_isigma3_sq
 import Theorems.Thm_BookProof_ChapterParityChirality_igamma5_sq
 import Theorems.Thm_BookProof_ChapterParityChirality_isigma3_igamma5
 import Theorems.Thm_BookProof_ChapterParityChirality_igamma5_isigma3
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParity
+import Definitions.Def_ChapterParitySU2
 open BookProof.ChapterParityChirality
 
 

@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterA3n
 import Theorems.Thm_BookProof_ChapterA3n_projSym_diagGen_comm
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterA3j
+import Definitions.Def_ChapterA3l
 open BookProof.ChapterA3n
 
 

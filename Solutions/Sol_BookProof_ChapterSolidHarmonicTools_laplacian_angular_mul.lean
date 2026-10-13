@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSolidHarmonicTools
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_laplacian_mul
 import Theorems.Thm_BookProof_ChapterLaplacianProduct_sum_inner_mul_apply
+import Definitions.Def_ChapterLaplacianProduct
+import Definitions.Def_ChapterRadialLaplacian
 open BookProof.ChapterSolidHarmonicTools
 
 
@@ -11,6 +13,7 @@ open BookProof.ChapterSolidHarmonicTools
 open Laplacian InnerProductSpace BookProof.ChapterRadialLaplacian
 open BookProof.ChapterLaplacianProduct
 open scoped RealInnerProductSpace
+open BookProof.ChapterRadialLaplacian
 
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -18,18 +21,23 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
+
+@[simp] private theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
+ radial function, and the `s`-wave form of Note 68
+
 set_option maxHeartbeats 1000000 in
+
 theorem solution {A B : E → ℝ} {x : E} {α β : ℝ} {e : E} {μ : ℕ}
     (hA : ContDiffAt ℝ 2 A x) (hB : ContDiffAt ℝ 2 B x)
     (hharm : (Δ A) x = 0) (heuler : fderiv ℝ A x x = μ * A x) (haxis : fderiv ℝ A x e = 0)
     (hgrad : fderiv ℝ B x = α • innerCLM E e + β • innerCLM E x) :
     (Δ fun y : E => A y * B y) x = A x * (Δ B) x + 2 * β * (μ : ℝ) * A x := by
-
   have hprod := laplacian_mul hA hB
   have hcross : ∑ i, fderiv ℝ A x ((stdOrthonormalBasis ℝ E) i)
       * fderiv ℝ B x ((stdOrthonormalBasis ℝ E) i)
       = α * fderiv ℝ A x e + β * fderiv ℝ A x x := by
-    have he_prime : ∑ i, ⟪e, (stdOrthonormalBasis ℝ E) i⟫_ℝ
+    have he' : ∑ i, ⟪e, (stdOrthonormalBasis ℝ E) i⟫_ℝ
         * fderiv ℝ A x ((stdOrthonormalBasis ℝ E) i) = fderiv ℝ A x e :=
       sum_inner_mul_apply (fderiv ℝ A x) e
     have hx' : ∑ i, ⟪x, (stdOrthonormalBasis ℝ E) i⟫_ℝ
@@ -46,6 +54,6 @@ theorem solution {A B : E → ℝ} {x : E} {α β : ℝ} {e : E} {μ : ℕ}
         smul_eq_mul, innerCLM_apply]
       ring
     simp only [hterm]
-    rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum, he_prime, hx']
+    rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum, he', hx']
   rw [hprod, hcross, hharm, haxis, heuler]
   ring

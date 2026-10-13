@@ -1,6 +1,7 @@
 -- Generated from ChapterSmCarAlgebra.lean — solution of BookProof.SmCar.annih_occ_single
 import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterNavierStokesFockSpace
 open BookProof.SmCar
 
 

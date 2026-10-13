@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterNsReducedCoreEsa
 import Theorems.Thm_BookProof_NsReducedCoreEsa_redMomIdx_eq
+import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterYangMillsNonAbelianEsa
 open BookProof.NsReducedCoreEsa
 
 

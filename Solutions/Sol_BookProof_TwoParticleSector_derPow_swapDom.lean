@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Theorems.Thm_BookProof_TwoParticleSector_tensorSquare_induction
 import Theorems.Thm_BookProof_TwoParticleSector_derPow_two_tmul
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterReducingSubspaceEsa
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TwoParticleSector
 
 

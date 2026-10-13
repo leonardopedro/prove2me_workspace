@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterStrichartzWave
 import Theorems.Thm_BookProof_StrichartzWave_contDiff_symbolFn
 import Theorems.Thm_BookProof_StrichartzWave_integral_conj_mul_symbol_sub_eq_zero
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.StrichartzWave
 
 

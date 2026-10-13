@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWignerLittleGroupOrbits
 import Theorems.Thm_BookProof_ChapterWignerLittleGroupOrbits_hermOfMom_spaceMom
+import Definitions.Def_ChapterLittleGroup
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerLittleGroupOrbits
 
 

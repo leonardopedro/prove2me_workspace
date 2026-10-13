@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterGravityPolymomentum
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_contract_smul_left
 import Theorems.Thm_BookProof_ChapterGravityPolymomentum_contract_smul_right
+import Definitions.Def_ChapterGravityProjector
 open BookProof.ChapterGravityPolymomentum
 
 

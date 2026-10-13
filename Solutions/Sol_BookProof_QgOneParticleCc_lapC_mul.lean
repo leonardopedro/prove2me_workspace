@@ -4,6 +4,18 @@ import Definitions.Def_ChapterQgOneParticleCcEsa
 import Theorems.Thm_BookProof_QgOneParticleCc_contDiff_dcoord
 import Theorems.Thm_BookProof_QgOneParticleCc_dcoord_add
 import Theorems.Thm_BookProof_QgOneParticleCc_dcoord_mul
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.QgOneParticleCc
 
 
@@ -15,6 +27,7 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgHermiteOscillator BookProof.HermiteQuadraticEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
+open BookProof.HermiteProductCore
 
 noncomputable section
 

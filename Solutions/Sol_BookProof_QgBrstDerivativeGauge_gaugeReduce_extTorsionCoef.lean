@@ -1,6 +1,12 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.gaugeReduce_extTorsionCoef
 import Mathlib
 import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterQgContinuumModeInstance
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.QgBrstDerivativeGauge
 
 
@@ -32,10 +38,10 @@ private theorem sum_delta (k : Mom) (mu nu i p1 p2 : Fin 3) :
   by_cases h2 : (p1, p2) = (nu, i) <;> simp [h2]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (k : Mom) (mu nu i : Fin 3) (x : CMode) :
     gaugeReduce (extTorsionCoef k mu nu i) x
       = if x.1 = k then torsionCoef k mu nu i x else 0 := by
-
   by_cases hk : x.1 = k
   · subst hk
     simp only [gaugeReduce, extTorsionCoef, if_true, zero_add, mul_sub,

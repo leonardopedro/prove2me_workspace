@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSchurFiniteDimensional
 import Theorems.Thm_BookProof_ChapterSchurFiniteDimensional_isSchurFull_of_irreducible_finiteDimensional
 import Theorems.Thm_BookProof_ChapterA_Rreal_commutant_eq_real_scalars
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterSchurFiniteDimensional
 
 
@@ -11,6 +13,8 @@ open scoped ComplexConjugate InnerProductSpace
 
 
 open BookProof.ChapterA BookProof.ChapterA.System
+open BookProof.ChapterA
+open BookProof.ChapterA BookProof.ChapterA
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 

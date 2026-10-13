@@ -8,6 +8,8 @@ import Theorems.Thm_BookProof_ChapterA_realCommutes_algebraMap
 import Theorems.Thm_BookProof_ChapterA_realCommutes_mulI
 import Theorems.Thm_BookProof_ChapterA_realCommutes_thetaR
 import Theorems.Thm_BookProof_ChapterA_qembed_apply
+import Definitions.Def_ChapterA
+import Definitions.Def_ChapterA1
 open BookProof.ChapterA
 
 

@@ -23,9 +23,9 @@ variable (E F : Type*) [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
 variable {P : Type*} [NormedAddCommGroup P] [InnerProductSpace ℝ P]
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution
     (Θ : (Lp F 2 (volume : Measure E)) ≃ₗᵢ[ℝ] P)
     (fourierTime : (Lp F 2 (volume : Measure E)) ≃ₗᵢ[ℝ] (Lp F 2 (volume : Measure E))) :
     (energyTransform E F Θ fourierTime).symm = conjugateₗᵢ Θ fourierTime.symm := by
-
   simp [energyTransform]

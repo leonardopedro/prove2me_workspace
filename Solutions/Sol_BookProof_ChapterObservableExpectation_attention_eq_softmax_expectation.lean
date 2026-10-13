@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterObservableExpectation
 import Theorems.Thm_BookProof_ChapterSoftmaxBorn_coherentBorn_eq_softmax
+import Definitions.Def_ChapterSoftmaxBorn
 open BookProof.ChapterObservableExpectation
 
 

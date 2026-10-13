@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteCoreOp_essentiallySelfAdjoint
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.HermiteStrichartzQG
 
 

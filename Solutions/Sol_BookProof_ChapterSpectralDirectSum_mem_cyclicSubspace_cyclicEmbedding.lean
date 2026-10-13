@@ -1,6 +1,10 @@
 -- Generated from ChapterSpectralDirectSum.lean — solution of BookProof.ChapterSpectralDirectSum.mem_cyclicSubspace_cyclicEmbedding
 import Mathlib
 import Definitions.Def_ChapterSpectralDirectSum
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCyclicDecomposition
+import Definitions.Def_ChapterCyclicDirectSum
 open BookProof.ChapterSpectralDirectSum
 
 

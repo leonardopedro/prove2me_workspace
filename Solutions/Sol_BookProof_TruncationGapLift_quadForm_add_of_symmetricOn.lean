@@ -1,6 +1,18 @@
 -- Generated from ChapterTruncationGapLift.lean — solution of BookProof.TruncationGapLift.quadForm_add_of_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterTruncationGapLift
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterBandEnclosure
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterFockNumberPreservingGap
+import Definitions.Def_ChapterFockInteractionStability
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterYangMillsFockGapChain
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TruncationGapLift
 
 

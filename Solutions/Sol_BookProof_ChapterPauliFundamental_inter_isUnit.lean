@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterPauliFundamental
 import Theorems.Thm_BookProof_ChapterPauliFundamental_inter_intertwines
 import Theorems.Thm_BookProof_ChapterPauliFundamental_intertwiner_isUnit
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterGammaCommutant
+import Definitions.Def_ChapterA3b
 open BookProof.ChapterPauliFundamental
 
 

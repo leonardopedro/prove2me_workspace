@@ -1,6 +1,7 @@
 -- Generated from PhysFunctionalAnalysis.lean — solution of PhysFunctionalAnalysis.sqrt_density_memLp
 import Mathlib
 import Definitions.Def_PhysFunctionalAnalysis
+import Definitions.Def_ChapterA4
 open PhysFunctionalAnalysis
 
 

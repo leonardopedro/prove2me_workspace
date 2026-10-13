@@ -2,6 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
 import Theorems.Thm_BookProof_PolarPartialIsometry_polarIsom_apply_range
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.PolarPartialIsometry
 
 
@@ -9,6 +16,7 @@ open BookProof.PolarPartialIsometry
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
 open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
+open BookProof.EsaClosure
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

@@ -1,6 +1,14 @@
 -- Generated from ChapterHermiteLadderShift.lean — solution of BookProof.HermiteLadder.norm_sum_shift_sq
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderShift
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterHermiteLadderOrder
 open BookProof.HermiteLadder
 
 

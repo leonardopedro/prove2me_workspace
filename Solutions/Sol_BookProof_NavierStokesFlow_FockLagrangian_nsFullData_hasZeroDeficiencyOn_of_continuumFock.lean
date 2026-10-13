@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
 import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_NSFullData_hasZeroDeficiencyOn_of_lagrangian
+import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterNavierStokesFullEsa
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian
 
@@ -13,6 +17,7 @@ open MeasureTheory
 
 
 open FullEsa FockContinuum
+open BookProof.NavierStokesFlow.FullEsa.NSFullData
 
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {Ω : Type*} [MeasurableSpace Ω] {F : Type*} [NormedAddCommGroup F]

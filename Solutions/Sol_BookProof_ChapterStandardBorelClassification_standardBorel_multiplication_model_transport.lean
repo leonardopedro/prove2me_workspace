@@ -4,6 +4,11 @@ import Definitions.Def_ChapterStandardBorelClassification
 import Theorems.Thm_BookProof_ChapterStandardBorelClassification_transportUnitary_intertwines
 import Theorems.Thm_BookProof_ChapterStandardBorelClassification_purelyAtomic_of_countable
 import Theorems.Thm_BookProof_ChapterAtomicDiagonalModel_atomic_multiplication_model_diagonal
+import Definitions.Def_ChapterMeasureAtomicDiffuse
+import Definitions.Def_ChapterAtomicDiagonalModel
+import Definitions.Def_ChapterAbelianClassificationList
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterUnitaryTransport
 open BookProof.ChapterStandardBorelClassification
 
 
@@ -16,6 +21,7 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+open BookProof.ChapterUnitaryTransport
 
 variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
   (mu : Measure X)

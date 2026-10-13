@@ -4,6 +4,12 @@ import Definitions.Def_ChapterStoneSeparable
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_ext_prime
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_gen_stoneU_eq
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterStoneMeasurable
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneTheorem
+import Definitions.Def_ChapterStoneUnitary
 open BookProof.ChapterStoneSeparable
 
 
@@ -13,6 +19,8 @@ open Filter Topology
 
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneTheorem
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
   [TopologicalSpace.SeparableSpace H]

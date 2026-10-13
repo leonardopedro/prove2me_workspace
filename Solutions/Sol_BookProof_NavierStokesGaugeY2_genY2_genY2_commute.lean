@@ -4,16 +4,18 @@ import Definitions.Def_ChapterNavierStokesGaugeY2
 import Theorems.Thm_BookProof_NavierStokesGaugeY2_end_ext_of_leibniz
 import Theorems.Thm_BookProof_NavierStokesGaugeY2_commutator_leibniz
 import Theorems.Thm_BookProof_NavierStokesGaugeY2_genY2_leibniz
+import Definitions.Def_ChapterNavierStokesGaugeY
 open BookProof.NavierStokesGaugeY2
 
 
 
 
 open MvPolynomial BookProof.NavierStokesGaugeY
+open BookProof.NavierStokesGaugeY
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j k : Fin 3) : ⁅genY2 j, genY2 k⁆ = 0 := by
 
+theorem solution (j k : Fin 3) : ⁅genY2 j, genY2 k⁆ = 0 := by
   refine end_ext_of_leibniz _
     (commutator_leibniz _ _ (genY2_leibniz j) (genY2_leibniz k)) (fun c => ?_) (fun v => ?_)
   · simp [Ring.lie_def]

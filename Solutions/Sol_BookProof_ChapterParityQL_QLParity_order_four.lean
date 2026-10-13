@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterParityQL
 import Theorems.Thm_BookProof_ChapterParityQL_QLParity_sq
 import Theorems.Thm_BookProof_ChapterParityQL_QLParity_pow_four
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterParity
 open BookProof.ChapterParityQL
 
 

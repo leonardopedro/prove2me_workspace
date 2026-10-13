@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_commForm_testState
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterNavierStokesFockManyMode
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.HermiteFarisLavine
 

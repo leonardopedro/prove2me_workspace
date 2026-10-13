@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMajoranaFourier
 import Theorems.Thm_BookProof_ChapterA3_dgamma_clifford
+import Definitions.Def_ChapterA3
 open BookProof.ChapterMajoranaFourier
 
 

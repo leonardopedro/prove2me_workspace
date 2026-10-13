@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEulerian
 import Theorems.Thm_BookProof_NavierStokesFlow_nsBrst_adjoint
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterNavierStokesFlow
 open BookProof.NavierStokesEulerian
 
 

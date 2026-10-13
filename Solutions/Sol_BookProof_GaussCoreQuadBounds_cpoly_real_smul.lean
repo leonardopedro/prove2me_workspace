@@ -3,6 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_C
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHermiteQuadraticEsa
+import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterQgHermiteFriedrichs
 open BookProof.GaussCoreQuadBounds
 
 

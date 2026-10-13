@@ -10,6 +10,9 @@ variable {R : Type*} [Ring R]
 
 variable {R : Type*} [Ring R]
 
+
+@[simp] private theorem eps_true_true : eps true true = -1 := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (a b : R) : sbracket true true a b = a * b + b * a := by
 

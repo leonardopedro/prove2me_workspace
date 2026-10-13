@@ -1,6 +1,7 @@
 -- Generated from ChapterSolovaySeparableExistence.lean — solution of BookProof.ChapterSolovaySeparableExistence.joint_prob_has_wavefunction
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovaySeparableExistence
 
 

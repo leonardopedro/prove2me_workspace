@@ -2,6 +2,12 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
 import Theorems.Thm_BookProof_SmCarContinuum_norm_cCreS_le
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterRieszFischer
 open BookProof.SmCarContinuum
 
 
@@ -11,6 +17,8 @@ open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
+open BookProof.FockOneParticleGap
+open BookProof.ChapterRieszFischer
 
 noncomputable section
 

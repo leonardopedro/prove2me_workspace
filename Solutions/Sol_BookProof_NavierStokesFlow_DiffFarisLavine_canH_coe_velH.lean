@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffFarisLavine
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffFarisLavine
 

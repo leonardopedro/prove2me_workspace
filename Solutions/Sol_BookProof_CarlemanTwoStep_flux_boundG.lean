@@ -1,6 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.flux_boundG
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsa
 open BookProof.CarlemanTwoStep
 
 
@@ -18,12 +19,12 @@ variable {u : (Fin d →₀ ℕ) → ℂ}
 variable {lam : (Fin d →₀ ℕ) → ℝ} {w1 w2 : Fin d → ℂ} {z : ℂ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution {w : ℂ} {rc : (Fin d →₀ ℕ) → Fin d → ℝ} (N : ℕ) (i : Fin d) (k : ℕ)
     {Cn : ℝ} (hCn : 0 ≤ Cn) (hC : ∀ a ∈ faceK d N i k, |rc a i| ≤ Cn) :
     |(∑ a ∈ faceK d N i k, rtermG u w rc k i a).im|
       ≤ Cn * (‖w‖ * ((∑ a ∈ faceK d N i k,
           (‖u a‖ ^ 2 + ‖u (a + Finsupp.single i k)‖ ^ 2)) / 2)) := by
-
   classical
   have h1 : |(∑ a ∈ faceK d N i k, rtermG u w rc k i a).im|
       ≤ ‖∑ a ∈ faceK d N i k, rtermG u w rc k i a‖ := Complex.abs_im_le_norm _
@@ -60,3 +61,5 @@ theorem solution {w : ℂ} {rc : (Fin d →₀ ℕ) → Fin d → ℝ} (N : ℕ)
     _ = Cn * (‖w‖ * ((∑ a ∈ faceK d N i k,
           (‖u a‖ ^ 2 + ‖u (a + Finsupp.single i k)‖ ^ 2)) / 2)) := by
         rw [← Finset.mul_sum, ← Finset.mul_sum, Finset.sum_div]
+
+/-! ## 5. Bessel's inequality with multiplicity -/

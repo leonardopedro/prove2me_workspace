@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
 import Theorems.Thm_BookProof_ChapterSolovaySeparableExistence_joint_prob_has_wavefunction
+import Definitions.Def_ChapterSolovayCoordinates
 open BookProof.ChapterSolovaySeparableExistence
 
 

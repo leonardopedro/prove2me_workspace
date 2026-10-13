@@ -3,6 +3,16 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_esa_core_of_ext
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterDirectSumEsa
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.QgTruncationResolvent
 
 
@@ -23,4 +33,6 @@ variable {ι : Type*}
 variable (W : WallPot) (Q : QgModeData ι)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : EssentiallySelfAdjointOn (secCore (ι := esa_core_of_ext (secData W Q) (secHam_essentiallySelfAdjointOn W Q)
+
+theorem solution : EssentiallySelfAdjointOn (secCore (ι := ι)) (secHam W Q) :=
+  esa_core_of_ext (secData W Q) (secHam_essentiallySelfAdjointOn W Q)

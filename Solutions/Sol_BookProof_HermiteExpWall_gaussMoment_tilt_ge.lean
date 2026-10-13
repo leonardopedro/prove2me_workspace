@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_HermiteExpWall_gaussMoment_eq_integral
 import Theorems.Thm_BookProof_HermiteExpWall_integrable_exp_mul_pow_gaussW
 import Theorems.Thm_BookProof_HermiteExpWall_abs_pow_eight
 import Theorems.Thm_BookProof_HermiteCore_gaussW_pos
+import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterQgHermiteCore
+import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteExpWall
 
 

@@ -3,6 +3,20 @@ import Mathlib
 import Definitions.Def_ChapterNsLinearKoopmanEsa
 import Theorems.Thm_BookProof_NsLinearKoopmanEsa_linKvnPoly_eq_fqPoly
 import Theorems.Thm_BookProof_QuadFockEsa_dGamma_fqPoly_essentiallySelfAdjointOn_core
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.NsLinearKoopmanEsa
 
 
@@ -17,6 +31,8 @@ open BookProof.FullQuadratic
 open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
+open BookProof.FockSecondQuantization
+open BookProof.QuadFockEsa
 
 noncomputable section
 

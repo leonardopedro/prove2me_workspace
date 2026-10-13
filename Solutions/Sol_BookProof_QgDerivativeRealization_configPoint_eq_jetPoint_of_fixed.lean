@@ -4,6 +4,9 @@ import Definitions.Def_ChapterQgDerivativeRealization
 import Theorems.Thm_BookProof_QgDerivativeRealization_jetPoint_idxDE
 import Theorems.Thm_BookProof_QgDerivativeRealization_idx_cases
 import Theorems.Thm_BookProof_QgDerivativeRealization_fixed_iff
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgPhysicalSectorIdentity
+import Definitions.Def_ChapterQuantumGravity3DGauge
 open BookProof.QgDerivativeRealization
 
 

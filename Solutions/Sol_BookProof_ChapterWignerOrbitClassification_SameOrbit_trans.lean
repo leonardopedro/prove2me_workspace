@@ -2,6 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterWignerOrbitClassification
 import Theorems.Thm_BookProof_ChapterWignerLittleGroup_act_mul
+import Definitions.Def_ChapterWignerLittleGroupOrbits
+import Definitions.Def_ChapterWignerLittleGroup
 open BookProof.ChapterWignerOrbitClassification
 
 

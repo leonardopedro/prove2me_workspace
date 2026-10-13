@@ -5,6 +5,12 @@ import Theorems.Thm_BookProof_SmHamiltonian_RealCoeff_sub_prime
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_smul
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
 open BookProof.SmHamiltonian
 
 

@@ -1,6 +1,10 @@
 -- Generated from ChapterFriedrichsCanonical.lean — solution of BookProof.FriedrichsCanonical.eq_zero_of_inner_coe_eq_zero
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterFriedrichsExtension
 open BookProof.FriedrichsCanonical
 
 
@@ -8,6 +12,8 @@ open BookProof.FriedrichsCanonical
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.FriedrichsExtension BookProof.FriedrichsExtension.FormDom
+open BookProof.FriedrichsExtension
+open BookProof.FriedrichsExtension BookProof.FriedrichsExtension
 
 noncomputable section
 

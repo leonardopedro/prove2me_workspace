@@ -2,7 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesMomentumPerturbation
 import Theorems.Thm_BookProof_NavierStokesFlow_MomentumPerturbation_eState_mem_maxDom
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.MomentumPerturbation
 

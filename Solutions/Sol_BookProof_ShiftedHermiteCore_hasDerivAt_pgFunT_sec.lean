@@ -3,8 +3,13 @@ import Mathlib
 import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_hasDerivAt_phaseFun_sec
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_hasDerivAt_pgFun_sec
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_sec_apply
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_sec_self
+import Theorems.Thm_BookProof_HyperbolicQuadratic_dPoly_apply
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterMixedLinearEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.ShiftedHermiteCore
 
 
@@ -15,6 +20,8 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
 
+open BookProof.MixedLinearEsa
+open BookProof.HermiteProductCore
 noncomputable section
 
 variable {d : ℕ}
@@ -41,7 +48,7 @@ theorem solution (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd
       funext t
       rw [hsec]
     rw [hfun] at hcomp
-    simpa [dPoly_apply] using hcomp
+    simpa [BookProof.HyperbolicQuadratic.dPoly_apply] using hcomp
   have h2 := hasDerivAt_phaseFun_sec k x i
   have hprod := h1.mul h2
   simp only [Pi.mul_def, sec_self] at hprod

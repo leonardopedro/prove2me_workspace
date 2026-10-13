@@ -14,6 +14,9 @@ variable {α : Type*} [DecidableEq α]
 
 variable {α : Type*} [DecidableEq α]
 
+
+@[simp] private theorem mgT_nil (k : ℕ) (T : α →₀ ℕ) : mgT k T [] = T := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℕ) (T : α →₀ ℕ) (s : List α) (hT : T.support.card ≤ k) :
     (mgT k T s).support.card ≤ k := by

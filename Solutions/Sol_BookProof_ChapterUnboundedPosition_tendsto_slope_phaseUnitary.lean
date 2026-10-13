@@ -1,6 +1,9 @@
 -- Generated from ChapterUnboundedPosition.lean — solution of BookProof.ChapterUnboundedPosition.tendsto_slope_phaseUnitary
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterNsLagrangianDetConvolution
 open BookProof.ChapterUnboundedPosition
 
 

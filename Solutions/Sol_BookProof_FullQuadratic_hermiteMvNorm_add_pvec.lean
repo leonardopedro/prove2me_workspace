@@ -3,6 +3,19 @@ import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Theorems.Thm_BookProof_FullQuadratic_add_pvec_eq
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvNorm_add_single
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterQuadratureEsa
+import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterHermiteProductBasis
 open BookProof.FullQuadratic
 
 
@@ -19,6 +32,7 @@ open BookProof.CarlemanTwoStep
 open BookProof.CarlemanSimplex
 open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.HermiteProductBasis
 
 noncomputable section
 

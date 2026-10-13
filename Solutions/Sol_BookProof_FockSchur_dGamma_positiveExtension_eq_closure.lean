@@ -4,6 +4,16 @@ import Definitions.Def_ChapterFockSchurEsa
 import Theorems.Thm_BookProof_FockSchur_dGamma_essentiallySelfAdjointOn_core
 import Theorems.Thm_BookProof_EsaClosure_positiveExtension_eq_closure_of_esa
 import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.FockSchur
 
 
@@ -13,6 +23,8 @@ open BookProof.FockSecondQuantization BookProof.CoreBounds
 open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.YangMillsFriedrichs
+open BookProof.EsaClosure
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

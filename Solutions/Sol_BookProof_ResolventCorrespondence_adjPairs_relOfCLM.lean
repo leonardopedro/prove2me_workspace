@@ -3,6 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterResolventCorrespondence
 import Theorems.Thm_BookProof_ResolventCorrespondence_relOfCLM_le_adjPairs
 import Theorems.Thm_BookProof_ResolventCorrespondence_exists_mem_relOfCLM_add
+import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterPositiveSquareRootUnique
+import Definitions.Def_ChapterNonnegSquareRoot
+import Definitions.Def_ChapterClosureUniqueness
 open BookProof.ResolventCorrespondence
 
 
@@ -11,6 +15,7 @@ open BookProof.ResolventCorrespondence
 open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot
 open scoped ComplexOrder
+open BookProof.ClosureUniqueness
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}

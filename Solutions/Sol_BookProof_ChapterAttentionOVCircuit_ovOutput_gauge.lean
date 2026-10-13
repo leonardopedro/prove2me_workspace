@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
 import Theorems.Thm_BookProof_ChapterAttentionOVCircuit_ovOutput_congr_of_ovMatrix_eq
 import Theorems.Thm_BookProof_ChapterAttentionOVCircuit_ovMatrix_gauge
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
 open BookProof.ChapterAttentionOVCircuit
 
 

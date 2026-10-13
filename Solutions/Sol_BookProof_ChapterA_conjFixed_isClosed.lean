@@ -1,6 +1,8 @@
 -- Generated from ChapterA1f.lean — solution of BookProof.ChapterA.conjFixed_isClosed
 import Mathlib
 import Definitions.Def_ChapterA1f
+import Definitions.Def_ChapterA1
+import Definitions.Def_ChapterA
 open BookProof.ChapterA
 
 

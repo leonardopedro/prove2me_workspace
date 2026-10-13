@@ -2,6 +2,10 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
 import Theorems.Thm_BookProof_SmCarContinuum_norm_cCreS_le
+import Definitions.Def_ChapterQuantumGravityFock
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.SmCarContinuum
 
 

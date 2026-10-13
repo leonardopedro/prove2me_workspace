@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_apply
+import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
 
@@ -12,6 +15,8 @@ open scoped ENNReal
 
 
 open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
+open BookProof.NavierStokesFlow.AffineFiber
 
 variable {ι : Type*}
 

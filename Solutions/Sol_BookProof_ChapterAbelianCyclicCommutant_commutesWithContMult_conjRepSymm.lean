@@ -2,6 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterAbelianCyclicCommutant
 import Theorems.Thm_BookProof_ChapterAbelianCyclicModel_cyclicRepUnitary_intertwines
+import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterLinftyMaximalAbelian
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianCyclicCommutant
 
 

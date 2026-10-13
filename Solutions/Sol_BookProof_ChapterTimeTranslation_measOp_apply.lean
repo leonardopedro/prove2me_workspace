@@ -1,6 +1,8 @@
 -- Generated from ChapterTimeTranslation.lean — solution of BookProof.ChapterTimeTranslation.measOp_apply
 import Mathlib
 import Definitions.Def_ChapterTimeTranslation
+import Definitions.Def_ChapterReconstruct
+import Definitions.Def_ChapterElectroweakFieldStrength
 open BookProof.ChapterTimeTranslation
 
 

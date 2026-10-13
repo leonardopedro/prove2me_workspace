@@ -1,6 +1,9 @@
 -- Generated from ChapterLayerNorm.lean — solution of BookProof.ChapterLayerNorm.sum_sub_mean_eq_zero
 import Mathlib
 import Definitions.Def_ChapterLayerNorm
+import Definitions.Def_ChapterSoftmaxSharpness
+import Definitions.Def_ChapterSoftmaxOrder
+import Definitions.Def_ChapterTotalVariance
 open BookProof.ChapterLayerNorm
 
 

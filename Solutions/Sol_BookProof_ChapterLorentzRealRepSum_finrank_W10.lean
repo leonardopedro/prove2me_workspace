@@ -2,6 +2,9 @@
 import Mathlib
 import Definitions.Def_ChapterLorentzRealRepSum
 import Theorems.Thm_BookProof_ChapterLorentzRealRep_b10R_linearIndependent
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterPinOmega
+import Definitions.Def_ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 
 

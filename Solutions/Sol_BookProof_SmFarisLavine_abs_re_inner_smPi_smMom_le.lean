@@ -1,6 +1,15 @@
 -- Generated from ChapterSmFarisLavine.lean — solution of BookProof.SmFarisLavine.abs_re_inner_smPi_smMom_le
 import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
+import Definitions.Def_ChapterSmOneParticle
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFriedrichsExtension
+import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.SmFarisLavine
 
 
@@ -12,6 +21,8 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.FriedrichsExtension
 open BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.HermiteProductCore
+open BookProof.SmHamiltonian
 
 noncomputable section
 

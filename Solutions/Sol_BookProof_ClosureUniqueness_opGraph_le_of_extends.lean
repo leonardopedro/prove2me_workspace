@@ -1,6 +1,8 @@
 -- Generated from ChapterClosureUniqueness.lean — solution of BookProof.ClosureUniqueness.opGraph_le_of_extends
 import Mathlib
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
 open BookProof.ClosureUniqueness
 
 

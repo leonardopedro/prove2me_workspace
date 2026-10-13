@@ -1,6 +1,11 @@
 -- Generated from ChapterVonNeumannCore.lean — solution of BookProof.VonNeumannCore.norm_resCLM_le_one
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterFriedrichsSquareFactorization
+import Definitions.Def_ChapterStoneResolvent
 open BookProof.VonNeumannCore
 
 

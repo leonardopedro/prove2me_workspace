@@ -1,6 +1,9 @@
 -- Generated from ChapterStrichartzHermiteQG.lean — solution of BookProof.HermiteStrichartzQG.hermiteCore_dense
 import Mathlib
 import Definitions.Def_ChapterStrichartzHermiteQG
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterHermiteFunctions
 open BookProof.HermiteStrichartzQG
 
 

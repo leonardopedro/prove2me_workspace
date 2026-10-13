@@ -1,6 +1,12 @@
 -- Generated from ChapterSmGaugeConnection.lean — solution of BookProof.SmGaugeConnection.conn_gauge_transform
 import Mathlib
 import Definitions.Def_ChapterSmGaugeConnection
+import Definitions.Def_ChapterYangMillsSU3
+import Definitions.Def_ChapterCPTHamiltonian
+import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmDiracSpinor
+import Definitions.Def_ChapterFarisLavine
 open BookProof.SmGaugeConnection
 
 

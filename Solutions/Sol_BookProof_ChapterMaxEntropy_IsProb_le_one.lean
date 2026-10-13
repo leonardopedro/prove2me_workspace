@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMaxEntropy
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
+import Definitions.Def_ChapterDutchBook
 open BookProof.ChapterMaxEntropy
 
 

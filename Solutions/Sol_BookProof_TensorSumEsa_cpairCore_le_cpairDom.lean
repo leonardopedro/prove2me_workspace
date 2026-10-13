@@ -3,6 +3,9 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Theorems.Thm_BookProof_TensorSumEsa_pairCore_le_pairDom
 import Theorems.Thm_BookProof_GraphCore_pushDom_mono
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterGraphCoreTransfer
+import Definitions.Def_ChapterTensorGraphCore
 open BookProof.TensorSumEsa
 
 
@@ -10,6 +13,7 @@ open BookProof.TensorSumEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorCore
 
 noncomputable section
 

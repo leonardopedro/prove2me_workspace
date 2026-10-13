@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_HermiteProductCore_span_range_coreBasis
 
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFriedrichsExtension

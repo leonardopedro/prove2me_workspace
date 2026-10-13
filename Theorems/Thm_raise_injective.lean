@@ -1,7 +1,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesThreeComponent
 
-open BookProof.ChapterNavierStokesThreeComponent
+open BookProof.NavierStokesFlow.ThreeComponent
 
 
 

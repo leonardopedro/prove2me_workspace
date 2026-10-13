@@ -128,12 +128,19 @@ def first_error(out):
         loc = first.split("error", 1)[0].strip()[-60:] if first else ""
         return f"unknown identifier `{m.group(1)}` {loc}"[:200]
     if first:
-        # Drop the scratch path before slicing: `/media/.../work/Chk_x.lean:`
-        # eats ~140 of the 200 chars, so the identifier in
-        # `Unknown identifier `bornWeight_eq_scoreSoftmax_neg_dist_sq``
-        # arrived truncated (or entirely cut) and the fixer could not match it.
-        short = re.sub(r"^.*?\.lean:", "L:", first)
-        return short[:400]
+        # Keep the WHOLE error block (message + goal state), not just the first
+        # line: Lean pretty-prints the detail on following lines, and the first
+        # line alone cut mid-message ("... Expected a proposition, but found")
+        # which made the defect unclassifiable.  Drop the scratch path before
+        # slicing: `/media/.../work/Chk_x.lean:` eats ~140 of the budget.
+        raw_i = next((i for i, l in enumerate(lines) if "error" in l), 0)
+        block = []
+        for l in lines[raw_i:]:
+            if block and not l.strip():
+                break
+            block.append(l.strip())
+        short = re.sub(r"^.*?\.lean:", "L:", " ".join(block))
+        return short[:1200]
     if out.strip():
         short = re.sub(r"^.*?\.lean:", "L:", out.strip().split("\n")[0])
         return short[:400]

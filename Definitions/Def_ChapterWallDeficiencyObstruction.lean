@@ -7,6 +7,7 @@ import Mathlib
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero
 

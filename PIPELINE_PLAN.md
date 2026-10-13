@@ -8429,3 +8429,435 @@ qualification fixed them). Remaining 10 (NsPartialFourier ×5, QgOuterFockFL ×3
 ShiftedQuadratic ×2) need full-error staging; the diag kept dying to process-group
 cleanup — relaunch under setsid. One (postcompCLM) is blocked on a missing
 `Thm_*_apply.olean` in the local mirror, not on ambiguity.
+
+---
+
+> **TOMBSTONE (2026-10-12, session 49).** Sections **§2.30–§2.45** were lost
+> this evening: an accidental `write_file` with placeholder content truncated
+> this file from 10,154 lines to 11 bytes at 20:29. The pre-image existed only
+> in the working tree (last commit `a24eab9c` covered §2.29), and no git
+> object, editor backup, session-store snapshot, or second checkout holds it.
+> §2.46 below is verbatim (read earlier in the same session); everything from
+> §2.30 to §2.45 must be reconstructed from the evidence left behind — the
+> section titles survive in git history citations and in the code comments
+> that reference them (`§2.30`, `§2.31-3/5/6`, `§2.32`, `§2.33`, `§2.34`,
+> `§2.36`, `§2.37-3/4`, `§2.40`, `§2.41-9`, `§2.42-3` are cited in
+> `pipeline/upload_pipeline.py` and `debug/*.py`, which document the same
+> rules inline). Known titles, §2.39 onward (from a session-48 index read):
+>
+> - §2.39 Session 46 — the import fix measured: one layer cleared, gate OK 16 → 49
+> - §2.40 Session 46 part 2 — the drain's round 1 accepted NOTHING and burned 8
+>   attempts; the guard now remembers the platform's verdict
+> - §2.41 Session 47 — `../timepiece331` as the compiled reference: the
+>   duplicate-region census, and why `lake build` can never be the oracle here
+> - §2.42 — The whole-mirror def gate finished; the gate-OK lever is 4, not 260
+> - §2.43 — Three sols repaired and accepted; the remaining red set is 7 and is
+>   classified
+> - §2.44 Session 48 — the hidden-red sweep from the OTHER side:
+>   latest-verdict, not last-attempt
+> - §2.45 Session 48 part 2 — the 6 same-text red sols cleared; the residual
+>   red class is dead dup-sibling imports
+>
+> **Policy change (this incident): commit PIPELINE_PLAN.md at the end of every
+> session.** 1,723 lines lived only in the working tree for two days; AGENTS.md
+> already requires staging in meaningful stages and this file was skipped every
+> time.
+
+# §2.46 — Session 48, part 3 (2026-10-12) — a submittable list with no offline verdict is a blind submitter
+
+## 1. The finding: "thm done + file exists" is NOT an uploadable sol
+
+`debug/drain_sol.sh` was derived from the ledger only (sol pending ∧ own thm
+done ∧ file exists). That is the right *dependency* filter but it says nothing
+about whether the TEXT compiles, and the submission guard only defers on a
+**cached** offline verdict — an item with **no cached verdict** passes the guard
+unconditionally. drain55 round 1 measured it:
+
+| of the 357 in the list | n | outcome |
+|---|---|---|
+| fresh cached `ok` | **9** | submitted → mostly DONE |
+| cached `FAIL` (mostly stale `object file` mirror artifacts) | 310 | guard deferred the real defects, submitted the artifacts |
+| **no cached verdict at all** | **38** | **submitted blind → 10 of the 11 CEs in that round** |
+
+10 of 11 CEs carried `offline_verdict = NONE`. Each CE burns 1 of the 5
+attempts (§2.40), on sols nobody had ever compiled. **The rule: a sol is
+uploadable only with a fresh cached `ok`; "no verdict" is not "no problem".**
+
+Fixes applied:
+- `debug/drain_sol.sh` now re-derives `/tmp/drain_sol_verified.txt` **every
+  round** from `offline_pending_check.json`, requiring `== "ok"` AND
+  `mtime(sol) <= mtime(check file)` (a file edited after the verdict is stale).
+  It stops when that subset is empty.
+- Launched a full offline verdict of the whole 350-item uploadable set
+  (`/tmp/verify_all.txt` → `state/check_verifyall.log`), so the next drain is
+  gated on evidence rather than on absence of evidence.
+- Killed the in-flight drain55 round 2 (it had read the loose 357-item file at
+  17:13, before the rewrite).
+
+Ledger after drain55 round 1: **12,948 → 12,960 done**.
+
+## 2. NEW red subclass: the platform's own `formal_statement` is wrong
+
+`QuantumGravity3DGauge_qg3DElliptic_hashimoto_selects` (Open, real defect) does
+`rw [qg3DElliptic_eq_weylOp]`. The source (`../timepiece`, L529) has
+
+```lean
+theorem qg3DElliptic_eq_weylOp (Φ : CoreRep 84 D) :
+    qg3DEllipticHamiltonian Φ = weylOp (fun j => …) (torsionOps Φ)
+```
+
+but `GET /theorems/:id.formal_statement` returns a **`SymmetricOn …`** type —
+the emitted declaration is not the target statement at all, so `rw` finds no
+occurrence. This is §2.40's instance-target failure seen from the *sibling*
+side: **a published sibling can be corrupt, and the platform is the authority
+on that, not the local stub.** Always fetch `formal_statement` before blaming
+the sol.
+
+Repair (worked, pending final verdict): drop the corrupt sibling's influence and
+derive the equality inline from a *correct* published sibling —
+`Thm_…_signedOp_eq_weylOp` is `done`/Proved — via
+`rw [show qg3DEllipticHamiltonian … = weylOp … from signedOp_eq_weylOp …]`.
+`qgKappaElliptic_nonneg` is NOT published (local-only), so its hypothesis was
+inlined as `(fun j => by norm_num [qgKappaElliptic])`.
+
+## 3. NEW mirror subclass: local stub missing an `open` the platform provides
+
+While importing `Thm_BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs`
+(phase 1) the oracle failed `L:33:18 Unknown identifier 'Tendsto'` — yet the
+platform's `formal_statement` for that same thm is **Proved** and uses bare
+`Tendsto`/`atTop`/`nhds`. Local text and mirror text are byte-identical and both
+lack `open Filter`, so the platform's compile context supplies it. Adding
+`open Filter` to the **local stub only** (statement unchanged) makes the oracle
+agree with the platform. This is a distinct subclass from §2.32-3: nothing is
+corrupt, the stub is just missing a namespace open the server has in scope.
+
+## 4. Residual red set after this pass (15 actionable → 9 ok)
+
+- **ok (9)**: the 6 same-text fixes + 3 `FriedrichsExtension_*` — but those 3 are
+  `parked: theorem is Disproved server-side`, i.e. **terminal**, not fixable. So
+  genuinely uploadable = the 6 already-DONE same-text repairs.
+- **def-gate / stale-bundle (4)** — not sol defects, levers are def-layer:
+  - `BddBelowFiberSumEsa_qgFiberSum_nonneg_form` → `Def_ChapterBddBelowWallEsa`
+    still `pending`; staging it fails because `Def_ChapterWallDeficiencyObstruction`
+    has a local defect (`kinOpR_apply` unknown at L181).
+  - `QgOuterFockCoreFL_CoreData_ext_{commForm_le,symmetricOn}` → local
+    `Def_ChapterQgOuterFockCoreFL` declares `gcSeq_mem`/`ext_gcSeq`/`coreN_gcSeq`
+    (8/3/3 hits), **published copy has 0**. Republish the bundle (§2.31-4).
+  - `ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op` → stub needs
+    `domain_le_genDomain`, not in the published def.
+- **real defect (1)**: `QuantumGravity3DGauge_qg3DElliptic_hashimoto_selects` —
+  fixed above, awaiting verdict.
+
+## 5. Next actions (ordered)
+
+1. Finish `check_verifyall` (350) → rebuild the verified-ok list → drain.
+2. Final-verdict the qg3D fix; submit if ok.
+3. Def layer: `ChapterWallDeficiencyObstruction` `kinOpR_apply` (unblocks
+   `ChapterBddBelowWallEsa` → 3 sols), republish `Def_ChapterQgOuterFockCoreFL`.
+4. Re-verdict the 310 cached-FAIL sols *after* the mirror staging lands — most
+   are stale `object file` artifacts, and they are the bulk of what is left.
+
+# §2.47 — Session 49 (2026-10-13 00:45 CEST) — incident report, live snapshot, and the red-sol campaign
+
+## 1. Incident: §2.30–§2.45 lost, §2.46 recovered verbatim
+
+See the tombstone between §2.29 and §2.46. The immediate cause was my own
+`write_file` with placeholder content clobbering the file mid-session; the
+contributing cause was two days of uncommitted work on a 10k-line runbook that
+every other session treated as append-only scratch. §2.46 is restored verbatim
+(read at 10,062 this session, before the clobber); §2.30–§2.45 are gone and
+their rules survive only in the code comments that cite them. Policy change:
+**this file gets committed at the end of every session**, and section content
+is never written with `write_file` — only `cat >>` appends.
+
+## 2. Live snapshot (00:47 CEST)
+
+- source files: 794 defs, 10164 thms, 16817 sols
+- ledger (state/pipeline.json, 19622 items): done=12960  parked=5  pending=6657
+  by kind: def=687  thm=9490  sol=9445
+- offline verdict cache: sol ok=4025  FAIL=3482  (state/offline_pending_check.json, stamped 17:04)
+- failed_latest.json: 464 tracked submissions —
+  CE=246 ACCEPTED=136 FAILED=52 SKETCH_ACCEPTED=24 WA=4 ERROR=2
+- platform (measured 19:50): 6,398 published problems, 552 published def
+  bundles, 458 problem FAILED, 33 definition FAILED; global 120,003 Proved /
+  21,609 Open / 3,299 Disproved; accepted sols (latest verdict) 1,573.
+
+## 3. The user's "~4× published theorems vs sols" is confirmed by measurement
+
+6,398 published problems ÷ 1,573 sols with an accepted latest verdict = **4.07×**.
+The ledger's own view agrees: thm done 6,379 vs sol done 6,032 counts
+*submissions*, not acceptances — the true gap is on the acceptance side.
+Reading: the bottleneck is no longer statements; it is getting sols *accepted*.
+Every offline-ok-but-platform-red sol is worth exactly one acceptance if its
+attempts survive, which is this session's campaign below.
+
+## 4. Red-set campaign: 304 red sols, classified (offline cache 17:04)
+
+| class | n | action |
+|---|---|---|
+| no verdict | 221 | being re-verdicted right now (verify2, 431 items) |
+| **offline-ok** | **39** | **resubmit — ledger `done` hides the red; flip to pending** |
+| stale-olean (`object file ... does not exist`) | 20 | mirror/publication artifact; fresh verdict will clear or confirm |
+| unknown identifier | 10 | real defect — fix the sol (or its sibling import) |
+| unknown namespace | 5 | §2.46-3 class — stub/open/publication issue, not the proof |
+| unsolved goals | 2 | real proof defect |
+| other real errors | 7 | heartbeat timeout, `Complex.repr`, invalid simp, `ext_gcSeq`, rewrite occurrence, EOF, one truncated path |
+
+Of the 39 offline-ok: 36 ledger `done` (flip → resubmit) + 3 parked
+`FriedrichsExtension_*` (theorem Disproved server-side — terminal, never touch).
+
+## 5. Jobs launched this session (all as tool BACKGROUND; shell-backgrounding
+under a SYNC command does NOT survive tool cleanup — measured: 3 detached jobs
+killed within 9 minutes when launched with `nohup … & disown`)
+
+- **upload driver** `state/session49_upload.sh` → `state/session49_upload.log`:
+  thm chunk (22 guard-uploadable thms, unblocks their sols) then drain56 =
+  `drain_sol.sh` on `/tmp/uploadable_sol.txt` (153 guard-uploadable), which
+  self-filters to fresh cached-`ok` every round (§2.46 rule). LOOPS=6.
+- **verify2** `debug/check_red_sols.py --input /tmp/verify2_list.txt --jobs 6`
+  → `state/check_verify2.log`: offline-verdicts the union of
+  uploadable-sol ∪ uploadable-thm ∪ red-sol (431 items) and merges into the
+  guard's cache.
+- **def check** `debug/check_def_local.py ChapterWallDeficiencyObstruction`
+  → `state/check_def_wall.log`: validates this session's `kinOpR_apply` import
+  fix before staging; green → stage → republish → unblocks
+  `ChapterBddBelowWallEsa` and its 3 sols.
+- **resubmit chain** `state/session49_resubmit.sh` → `state/session49_resubmit.log`:
+  waits for the driver (state/pipeline.json is single-writer), runs
+  `debug/resubmit_ok_red.py --apply` (flips the 36 `done → pending` under the
+  §2.46 freshness rule, writes `/tmp/resubmit_ok_red.txt`), then submits them.
+
+## 6. Next actions (ordered)
+
+1. Monitor the four jobs; drain rounds and verify2 feed each other (verdicts →
+   verified-ok subset → submits).
+2. Fix the 10 unknown-ident + 2 unsolved-goals + 7 singleton real defects;
+   local-verdict each fix; add survivors to a fresh upload list.
+3. Classify the 5 unknown-namespace sols against the published sibling stubs
+   (the §2.46-3 subclass: the platform's own context may supply what we lack).
+4. Def layer: stage `Def_ChapterWallDeficiencyObstruction` if check_def_wall
+   is green; republish `Def_ChapterQgOuterFockCoreFL` (local-only decls
+   `gcSeq_mem`/`ext_gcSeq`/`coreN_gcSeq`).
+5. Re-verdict the 20 stale-olean reds after the mirror staging lands.
+6. Commit PIPELINE_PLAN.md (new policy) with the §2.46/§2.47 recovery.
+
+# §2.48 — Session 49, part 2 (2026-10-13 02:29 CEST) — the red-sol campaign executes
+
+## 1. Verification + resubmission (the 4x gap, attacked directly)
+
+- **verify2 finished**: the 431-item union (uploadable-sol ∪ uploadable-thm ∪
+  red-sol) re-verdicted against the current mirror — **152 ok / 279 FAIL**
+  (previous cache had 221 of the reds with NO verdict at all).
+- **Resubmit campaign (ledger `done` hides platform-red)**:
+  `debug/resubmit_ok_red.py` flips `done -> pending` only for red + fresh-`ok`
+  + file-not-edited-after-verdict + not-parked + not-already-flipped, then the
+  pipeline resubmits. Wave 1: **36 submitted, all DONE**. Wave 2: **114
+  submitted** (after verify2 widened the candidate pool from 36 to 114).
+  4 remain parked (`FriedrichsExtension_*`, theorem Disproved — terminal).
+- Two resubmit lessons: (a) the first flip crashed the chunk with
+  `KeyError: 'attempts'` — 12,799 legacy ledger records lack the key; the two
+  direct `rec['attempts']` reads in `upload_pipeline.py` now use `.get(...,0)`,
+  and the flip script backfills `attempts: 0`. (b) without a `flipped_at`
+  skip the script would resubmit the same 36 forever; it now records
+  `flipped_at` and refuses re-flips within the session.
+
+## 2. THE systemic finding: 372 of 547 published def bundles are STALE
+
+`md5(local Def_*.lean) != md5(mirror Def_*.lean)` for **372 bundles**; 371 of
+them sit at ledger `done` (published once, never republished after local
+evolution). Only 173 published copies are byte-identical to local.
+Consequences observed this session — every one of these red-sol classes is the
+same root cause wearing a different hat:
+
+- **unknown identifier** (`bracket_zero_right`, `starP_add`, `crd_ann/cre`,
+  `mulCc_apply`, `annPoly_apply`, `integrable_conj_schwartz_mul`): the decl
+  exists locally, the platform copy predates it.
+- **unknown namespace**: same, at `open` granularity.
+- The mirror oleans (rebuilt Oct 12 from Oct 11 text) faithfully reproduce the
+  stale platform text — the oracle is not lying; the platform really is stale.
+
+Workaround that unblocks sols WITHOUT waiting for a republish: **import the
+published sibling Thm stub instead of relying on the def bundle** (works only
+when the decl also exists as a published problem). 5 sols were fixed this way
+and verified `ok`: `FreeFieldConstraint_constraint_{commutation_identity,
+preserved_under_bracket}`, `DifferentialL2_{ann,cre}_coreState`,
+`YangMillsHermite_RealCoeff_add`.
+
+The real fix is the **republish campaign**: local-compile each stale bundle
+(`debug/check_def_local.py <Chapter>`), flip `done -> pending`, submit.
+Verified-OK so far: `ChapterFreeFieldConstraint`, `ChapterYangMillsHermite`
+(the latter needed `Thm_…_span_range_coreBasis` REMOVED from its imports: the
+def itself declares `span_range_coreBasis`, the stub was a redundant
+re-declaration that could never compile). Iterating: `ChapterScalaronCoreEsa`
+(two missing thm imports added: `inner_toLp_left`,
+`integrable_conj_schwartz_mul`), `ChapterNavierStokesCanonicalVector`
+(`import Theorems.Thm_raise_injective` was a local-only artifact — the mirror's
+`Def_ChapterNavierStokesThreeComponent` declares `raise_injective` itself; the
+stub's `variable {(i : Fin 3) : …}` is not even valid Lean), and
+`ChapterHermiteProductBasis` (fresh: local declares `annPoly_apply`/`crePoly_apply`
+at :277/:280, mirror has neither — it is what blocks `momOp_eq_ladder` and
+`posOp_eq_ladder`).
+
+Still failing locally (real defects, not staleness):
+- `ChapterWallDeficiencyObstruction`: kinOpR_apply fixed (import added) → now
+  `mulCc_apply` at L189, blocked behind `ChapterScalaronCoreEsa` republish.
+- `ChapterQgOuterFockCoreFL`: `d.C.essentiallySelfAdjointOn` — invalid field
+  `BookProof.QgOuterFockFL.Comparison.essentiallySelfAdjointOn` (source drift;
+  needs the source/local def reconciled).
+
+## 3. Sol fixes this session (14 edited, 10 verified ok immediately)
+
+- **5 missing-import fixes** (§2 above): verified ok.
+- **5 statement-anchored rebuilds** (`debug/rebuild_truncated_sol.py --apply`,
+  header kept verbatim, body from `../timepiece331`): `momOp_eq_ladder`
+  (its `private theorem … (a : Fin N)` referenced an undeclared `N` AND had the
+  wrong `momPoly` arity — garbage scaffolding; deleted after rebuild),
+  `DiffHashimoto_polySym_sum`, `DifferentialL2_posOp_eq_ladder`,
+  `SqSumFarisLavine_sqSumOp_pgLp`, 4 `ChapterFreeFieldBorn*` sols.
+- **1 manual rebuild**: `HermiteRelative_hermiteMvBasis_repr_quadOp` — file was
+  truncated mid-tactic (`rw [Hilbe`) AND had a duplicated statement fragment
+  (`Complex.repr` phantom); rebuilt from source (the rebuild tool refuses this
+  one: stub statement != source statement, so the platform's statement was
+  taken as authoritative and the source used only for the body).
+- **1 disambiguation**: `posOp` `mulXPoly_apply` — `_root_.mulXPoly_apply`
+  (non-proposition) competes with the DifferentialL2 one; fully qualify.
+  `pgLp` `sqSumOp/sqSumPoly` qualified to `BookProof.QgOuterFock.*` (only
+  declaration site; both namespaces are open in the sol).
+- **1 tactic fix**: polySym empty case — `simp` cannot see through
+  `starP 0 = map (starRingEnd ℂ) 0`; `simp only [starP, map_zero, zero_mul]`.
+- `commForm`'s "unexpected end of input" verdict was STALE (file already
+  rebuilt, 49 lines, ends `ring`) — never edit on a stale verdict.
+- Diagnostic upgrade: `first_error` now keeps the whole error block (message +
+  goal state, 1200 chars) — the old single-line/400-char slice cut messages
+  mid-sentence ("Expected a proposition, but found") which made defects
+  unclassifiable.
+
+## 4. Infrastructure lessons (this session)
+
+- **Shell-backgrounding does not survive tool cleanup**: three `nohup … &
+  disown` jobs were killed within 9 minutes; everything long-running is now a
+  tool BACKGROUND call (`process_type: BACKGROUND`), with logs under `state/`.
+- `state/pipeline.json` is single-writer: the resubmit chain waits for the
+  upload driver to exit before flipping.
+- The `pgrep '[u]pload_pipeline.py'` single-writer guard matches the invoking
+  shell itself (false positive) — the transient `bash -c` line contains the
+  pattern.
+
+## 5. Next actions (ordered)
+
+1. Land wave 2's drain57 (64 verified-ok pending sols); poll grades for the
+   150 resubmitted reds (`poll_failed_submissions.py`).
+2. Finish the 3-bundle def check (CanonicalVector / ScalaronCoreEsa /
+   HermiteProductBasis) → flip + republish the green ones → refresh mirror →
+   unblock `momOp`/`posOp`, `WallDeficiencyObstruction` → `BddBelowWallEsa`.
+3. Round-3 verdicts for polySym/posOp/pgLp; fix what remains.
+4. `ChapterQgOuterFockCoreFL` field defect; `QgHermiteOscillator_harmonicCore`
+   heartbeat (proof short but whnf-times-out at 1M — inspect the eigenbasis
+   instance resolution); `ext_symmetricOn` after the bundle republish.
+5. Triage `/tmp/stale_defs.txt` (372) by blocking power: which stale decls are
+   actually referenced by pending thms/sols — that is the republish queue.
+6. Commit PIPELINE_PLAN.md (end-of-session policy, § tombstone).
+
+# §2.49 — Session 49, part 3 (2026-10-13 ~03:10 CEST) — def republish wave 1 lands; the mirror-olean gap
+
+## 1. Def republish campaign: first 3 bundles PUBLISHED
+
+The full loop, end to end and all green:
+
+1. `debug/check_def_local.py <Chapter>` — compiles the bundle against the
+   published mirror (+ its Thm stubs).  Repairs applied on the way:
+   - `ChapterHermiteProductBasis`: removed its 3 `Thm_BookProof_HermiteProductCore_*`
+     imports — those stubs redeclare names `Def_ChapterHermiteProductCore`
+     itself declares (present in the published copy too), so any compile with
+     Core in scope is a guaranteed duplicate.  Result: **OK**.
+   - `ChapterYangMillsHermite`: same pattern, `Thm_…_span_range_coreBasis`
+     removed.  **OK**.
+   - `ChapterFreeFieldConstraint`: already OK.
+2. `python3 debug/regate_bundles.py Chapter… --jobs 3` — re-checks the
+   candidates against `/tmp/def_candidate` and merges fresh verdicts into
+   `state/def_gate.json` (the guard's cache; entries carry a source stamp).
+   **3 targets re-gated, 3 OK.**
+3. Flip `def:X: done -> pending` (with `flipped_at`, `prev_error` kept) and
+   submit: **chunk 3/3 DONE** — all three bundles are now republished on the
+   platform, carrying the decls the red sols were failing on
+   (`bracket_zero_right/left`, `starP_add`, `annPoly_apply`, `crePoly_apply`,
+   `mulXPoly…` context).
+
+## 2. THE mirror-olean gap (why 63 reds say `object file … does not exist`)
+
+`/tmp/published_mirror` had **294 of 548 Def oleans MISSING** and **6,917 of
+6,967 Thm oleans missing**.  Any sol/stub importing an unbuilt bundle dies with
+`object file … does not exist` — the single largest verdict class in the red
+set — and `open` of its namespace dies as `unknown namespace`.  This is a gap
+in OUR replica, not a platform fact (the platform has published every one of
+those 548 bundles).
+
+Mitigations executed:
+- `debug/cache_published_bundles.py` re-run: `state/published_bundles/` now
+  holds all 552 published bundles verbatim (including tonight's 3 republishes).
+- `debug/build_published_mirror.py --reuse` launched in BACKGROUND: stages
+  mirror text from that cache (platform truth, never local) and compiles the
+  whole 7,481-module universe deps-first, keeping existing oleans (~5 s/module,
+  ~10 h serial — it is the nightly-scale job §2.42 called the whole-mirror
+  pass).
+- `state/session49_postmirror.sh` chains behind it: re-verdicts
+  `momOp_eq_ladder` + `posOp_eq_ladder` (blocked on
+  `Def_ChapterHermiteProductBasis`'s new olean) and the 2 repaired F3 thm
+  stubs (blocked on `Def_ChapterF3.olean`) as soon as their modules exist.
+
+## 3. Thm layer: the actual shape of the sol-upload bottleneck
+
+- Pending thms: **3,110 = 3,074 never-submitted + 36 `formal statement does
+  not compile`** (FATAL, fixable).
+- The 22 guard-"uploadable" thms are a dead end: the pipeline refuses all of
+  them with `target name already declared by published def bundle …`
+  (AbelianClassificationList ×5, PvmCyclicDecomposition ×15, StoneEvolution,
+  StoneMeasurable) — the def bundle already declares the target, so a problem
+  statement would collide.  Needs a policy decision (the sols waiting on them
+  cannot be accepted until a problem exists).
+- The other 3,074 are deferred by `def bundle not published: <name>` — i.e.
+  **they unblock in bulk as the def layer clears** (that is where the ~4x gap
+  lives: sols verify offline, their statements were never published).
+- wave2's WAIT census: 32 distinct sols = 20 thm-never-submitted + 12
+  thm-FATAL.  Fixed 2 of the FATALs tonight: the ChapterF3 stubs
+  (`mehler_projector_matrix`, `diagonal_gram_residual_orthogonal`) were
+  **headerless** — no imports/opens/variables before the declaration, so the
+  platform's `preamble + formal_statement` compile died at "line 2: Unknown
+  identifier `E'`".  Both now carry the chapter preamble (imports + opens +
+  `variable {E}`/`{E'}` exactly as the source file binds them); the formal
+  statement text itself is untouched (the platform splits at the first
+  `theorem`, so preamble edits cannot change what is submitted).
+  34 FATALs remain — those HAVE imports and fail at line N (next pass).
+
+## 4. Resubmission accounting
+
+- 150 red sols resubmitted tonight (36 + 114); ledger shows all `flipped_at`
+  records `done`; `poll_failed_submissions.py` still reports their OLD CEs
+  (created Oct 5–12) — tonight's grades had not landed at poll time (02:59).
+  Re-poll next session before drawing conclusions.
+- `ChapterAbelianDiagonalCountable_commutes_diagOp_iff`'s old CE is
+  `Ambiguous term diagOp` — worth checking against the offline `ok` verdict
+  after the mirror rebuild: the oracle and the platform disagreed once already
+  (§2.46-2 precedent).
+
+## 5. Next actions (ordered)
+
+1. Watch `state/mirror_rebuild.log` → `state/postmirror.log`; if momOp/posOp
+   and the 2 F3 stubs come back `ok`, flip+submit (sols via
+   `resubmit_ok_red.py`-style flip or direct pending submit; thms via
+   `--kind thm --only-file`).
+2. Re-run `debug/whats_uploadable.py` after the mirror lands: the
+   `offline mirror: …` defers (189 thms) and the `object file` sol defers
+   should collapse.
+3. Next def candidates: keep the loop going for the gate's named blockers —
+   `ChapterNavierStokesCanonicalVector` (next error: `diagHop_amp`),
+   `ChapterScalaronCoreEsa` (next: `starobinskyV`, i.e. it needs
+   `ChapterStarobinskyPotential` republished FIRST — the stale deps form a
+   chain, publish bottom-up), `ChapterQgOuterFockCoreFL` (source drift on
+   `Comparison.essentiallySelfAdjointOn`), `ChapterWallDeficiencyObstruction`
+   (`mulCc_apply`, unblocks `ChapterBddBelowWallEsa` → 3+ sols).
+4. Fix the remaining 34 FATAL thm statements (line-N errors, full text now
+   captured by the widened `first_error`).
+5. Decide the `target name already declared` policy for the 22 collision thms.
+6. Re-poll grades for the 150 resubmits; re-derive `failed_latest.json`.
+7. Commit plan + fixes (this session's close-out — new § tombstone policy).

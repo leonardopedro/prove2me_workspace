@@ -2,15 +2,22 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDiffHashimoto
 import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
-import Theorems.Thm_BookProof_YangMillsHermite_starP_zero
+
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteRelativeBound
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.DiffHashimoto
 
-
-
 open Filter Topology
-
-
 
 open MvPolynomial
 open BookProof.FarisLavine BookProof.HashimotoShiftInvert BookProof.EsaClosure
@@ -19,6 +26,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
 
+open BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval BookProof.YangMillsHermite
 noncomputable section
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
@@ -30,12 +38,14 @@ theorem solution {d : ℕ} {ι : Type*} (s : Finset ι)
     (T : ι → Module.End ℂ (MvPolynomial (Fin d) ℂ))
     (hT : ∀ i ∈ s, BookProof.YangMillsHermite.PolySym (T i)) :
     BookProof.YangMillsHermite.PolySym (∑ i ∈ s, T i) := by
-
   classical
   induction s using Finset.induction with
   | empty =>
       intro p q
-      simp
+      -- plain `simp` cannot see through `starP 0` (it is `map (starRingEnd ℂ) 0`)
+      -- and leaves the empty-sum in place; reduce each layer explicitly.
+      simp only [Finset.sum_empty, LinearMap.zero_apply, starP, map_zero,
+        zero_mul, mul_zero]
   | insert i s hi ih =>
       rw [Finset.sum_insert hi]
       exact (hT i (Finset.mem_insert_self i s)).add

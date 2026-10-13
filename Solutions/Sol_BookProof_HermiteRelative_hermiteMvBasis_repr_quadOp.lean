@@ -2,13 +2,15 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteRelativeBound
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
-import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvLp_mem_core
+
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_hermiteMvLp
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_symmetric
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHyperbolicQuadraticEsa
 open BookProof.HermiteRelative
-
-
-
 
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -25,10 +27,9 @@ set_option maxHeartbeats 1000000 in
 theorem solution (c : Fin d → ℝ) (u : polyGaussCore (d := d))
     (a : Fin d →₀ ℕ) :
     hermiteMvBasis.repr (quadOp c u) a
-      = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a :=
-  .repr (quadOp c u) a
-        = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by
-    have hmem : hermiteMvLp a ∈ polyGaussCore (d := d) := hermiteMvLp_mem_core a
-    have hsym := quadOp_symmetric c ⟨hermiteMvLp a, hmem⟩ u
-    rw [quadOp_hermiteMvLp c a hmem, inner_smul_left, Complex.conj_ofReal] at hsym
-    rw [Hilbe
+      = ((quadSymbol c a : ℝ) : ℂ) * hermiteMvBasis.repr (u : L2d d) a := by
+  have hmem : hermiteMvLp a ∈ polyGaussCore (d := d) := hermiteMvLp_mem_core a
+  have hsym := quadOp_symmetric c ⟨hermiteMvLp a, hmem⟩ u
+  rw [quadOp_hermiteMvLp c a hmem, inner_smul_left, Complex.conj_ofReal] at hsym
+  rw [HilbertBasis.repr_apply_apply, HilbertBasis.repr_apply_apply, hermiteMvBasis_apply]
+  exact hsym.symm

@@ -2,11 +2,11 @@
 import Mathlib
 import Definitions.Def_ChapterFreeFieldConstraint
 import Theorems.Thm_BookProof_FreeFieldConstraint_constraint_commutation_identity
+-- bracket_zero_left lives in the same stale-published def bundle; import the
+-- published sibling stub (see constraint_commutation_identity).
 import Theorems.Thm_BookProof_FreeFieldConstraint_bracket_zero_left
+
 open BookProof.FreeFieldConstraint
-
-
-
 
 variable {R : Type*} [Ring R]
 

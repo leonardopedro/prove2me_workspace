@@ -2,6 +2,16 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterHermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 
 
@@ -14,15 +24,17 @@ open BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.LagrangianEsa
+open BookProof.HermiteProductBasis
+open BookProof.HermiteProductCore
 
 noncomputable section
 
 variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
+
 theorem solution (i : Fin 3) :
     momOp i = (Complex.I / 2) • (creOp i - annOp i) := by
-
   refine LinearMap.ext fun y => ?_
   obtain ⟨p, rfl⟩ := (coreEquiv (d := 3)).surjective y
   simp only [momOp, annOp, creOp, coreOp_coreEquiv, LinearMap.smul_apply, LinearMap.sub_apply,

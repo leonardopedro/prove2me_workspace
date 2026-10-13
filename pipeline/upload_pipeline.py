@@ -1190,13 +1190,92 @@ def stub_sanity(path, kind):
     return None
 
 
+_OBJECT_FILE_RE = re.compile(
+    r"object file '[^']*?/((?:Theorems|Definitions)/[^'/]+)\.olean'"
+    r"|of module ((?:Theorems|Definitions)\.\S+)")
+# A truncated `first_error` slice cuts the object-file path mid-name, so the
+# `of module ...` tail is gone.  The path prefix still names the module, and a
+# PREFIX test against the published set is the honest question to ask (the
+# cut may fall anywhere inside the name).
+_PARTIAL_OBJECT_RE = re.compile(
+    r"object file '[^']*?/(Theorems|Definitions)/([A-Za-z0-9_'.]*)")
+
+
+def _module_is_published(mod):
+    """Does the PLATFORM serve the `Theorems.*`/`Definitions.*` module `mod`?
+
+    Read from state + the platform catalogue, never from the mirror: the mirror
+    is exactly the thing whose completeness is in question."""
+    sub, _, stem = mod.partition(".")
+    if sub == "Definitions":
+        name = stem[len("Def_"):] if stem.startswith("Def_") else stem
+        pub = _published_def_set()
+        return bool(pub) and name in pub
+    if sub == "Theorems":
+        slug = stem[len("Thm_"):] if stem.startswith("Thm_") else stem
+        items = (_state_snapshot() or {}).get("items", {})
+        return any((items.get("thm:" + s) or {}).get("status") == "done"
+                   for s in _thm_slugs_for(slug))
+    return False
+
+
+def _offline_artifact(reason):
+    """Is this offline FAIL an artifact of an INCOMPLETE MIRROR?
+
+    §2.36: the mirror stages a published module's `.lean` before (or without)
+    its `.olean`, so every importer FAILs here with either the static
+    `unpublished def/sibling import` verdict or `object file ... does not
+    exist` while the platform itself serves the module and would ACCEPT the
+    submission.  Deferring on those starves the queue exactly when the mirror
+    is being (re)built -- measured: 3,033 of 3,463 pending-sol FAILs were this
+    class after a mirror rebuild, plus the 623-thm stale-mirror class of
+    §2.34.  A verdict naming a module the platform publishes therefore says
+    nothing about the item and must not gate it."""
+    m = re.match(r"unpublished def import (\S+)", reason)
+    if m:
+        return _module_is_published("Definitions.Def_" + m.group(1))
+    m = re.match(r"unpublished sibling import (\S+)", reason)
+    if m:
+        return _module_is_published(m.group(1))
+    if "error: object file" not in reason:
+        return False
+    m = _OBJECT_FILE_RE.search(reason)
+    if m:
+        mod = m.group(1) or m.group(2) or ""
+        if mod:
+            if "/" in mod:                  # path form -> module form
+                sub, _, stem = mod.partition("/")
+                mod = sub + "." + stem
+            return _module_is_published(mod)
+    m = _PARTIAL_OBJECT_RE.search(reason)
+    if m and m.group(2):
+        sub, partial = m.group(1), m.group(2)
+        if sub == "Theorems":
+            items = (_state_snapshot() or {}).get("items", {})
+            return any(k.startswith("thm:") and rec.get("status") == "done"
+                       and ("Thm_" + k[4:]).startswith(partial)
+                       for k, rec in items.items())
+        pub = _published_def_set()
+        return any(("Def_" + n).startswith(partial) for n in pub)
+    # No module is recoverable: the 300-char verdict slice was consumed by the
+    # two copies of the scratch path.  This is still an artifact BECAUSE OF THE
+    # CALLER: `submission_guard` runs `unpublished_sibling_imports` /
+    # `unproved_sibling_imports` and `unpublished_def_imports` BEFORE it asks
+    # offline_fail, so every module this item imports is already known to be
+    # published.  The olean the mirror is missing can only be one of those, and
+    # the platform serves all of them.
+    return True
+
+
 def offline_fail(kind, name, path):
     """Fresh FAIL verdict from debug/check_pending_offline.py, if any.
 
     The verdict describes the platform's world (published mirror + the exact
     preamble/formal split the uploader submits), so a FAIL here is a wasted
     attempt.  A verdict older than the stub file says nothing about the stub's
-    current text and is ignored (regeneration makes every old verdict stale)."""
+    current text and is ignored (regeneration makes every old verdict stale).
+    A verdict that is a mirror artifact (§2.36, `_offline_artifact`) is ignored
+    for the same reason: it describes the mirror, not the item."""
     try:
         res = json.load(open(OFFLINE_CHECK))
     except (OSError, ValueError):
@@ -1209,7 +1288,116 @@ def offline_fail(kind, name, path):
             return None
     except OSError:
         pass
-    return ent[5:300]
+    reason = ent[5:300]
+    if _offline_artifact(reason):
+        return None
+    return reason
+
+
+def _note_fail(rec, item, err):
+    """Record a terminal failure AND the stamp of the text that was rejected.
+
+    Without the stamp the ledger cannot tell a rejection of the CURRENT text
+    from a rejection of a text that has since been repaired, so the guard has to
+    choose between re-spending an attempt on a known-bad file and blocking a
+    repaired one forever.  §2.40: the drain burned 8 attempts in one round on
+    items whose only offline verdict was a mirror artifact, so the ledger now
+    carries the stamp the verdict belongs to."""
+    rec["attempts"] = rec.get("attempts", 0) + 1
+    rec["error"] = err[:300]
+    try:
+        path = item_source(item)
+        rec["error_src"] = file_stamp(path) if path else None
+    except Exception:
+        rec["error_src"] = None
+
+
+# Prefixes that mark a verdict the PLATFORM returned about the submitted text.
+# Anything else in `error` is infrastructure or a dependency WAIT (see the
+# caller), and must never gate a resubmission.
+_PLATFORM_REJECT_PREFIXES = (
+    "publish FAILED:", "formal statement", "verdict CE", "verdict ",
+    "verify rejected", "Compile error", "submit-problem rejected",
+    "submit-definition rejected", "rules:",
+)
+_INFRA_MARKERS = (
+    "TimeoutExpired", "poll timeout", "still in flight", "connection",
+    "ConnectionError", "HTTPError", "Temporary failure", "timed out",
+    "dependency not proved yet", "job still in flight",
+)
+
+
+def _recorded_platform_fail(kind, name, path):
+    """A real, non-transient rejection the PLATFORM already returned for this
+    exact text, or None.
+
+    §2.40: `_offline_artifact` deliberately ignores a mirror-artifact FAIL, so
+    an item whose only offline verdict was an artifact reaches the submit loop --
+    and the platform answers with the genuine error (7 `TwoParticleSector` thms:
+    `formal statement does not compile: line 30: Unknown identifier
+    commutes_symProj`).  Resubmitting that same text only walks it to the
+    5-attempt cap, and the platform's verdict is strictly better information
+    than the offline oracle, which cannot see the platform's environment at all.
+    So defer while the stamp is unchanged; editing the file changes the stamp,
+    which is exactly the fix-then-upload-again loop.
+
+    Fail-open in every uncertain case: no recorded error, a transient error, no
+    stamp (legacy entry), or a stamp that no longer matches the file.
+    """
+    try:
+        rec = (_state_snapshot().get("items", {}) or {}).get(f"{kind}:{name}") or {}
+    except Exception:
+        return None
+    err = rec.get("error")
+    if not err or is_transient(err):
+        return None
+    # Only a PLATFORM CONTENT VERDICT can be re-submitted-futilely.  "error" is
+    # the one field every failure writes, so it also carries infrastructure
+    # failures (`TimeoutExpired: Command '['curl' ...]`, poll timeouts) and
+    # WAITs that were recorded as errors ("theorem dependency not proved yet").
+    # Deferring those would block an item for a reason that says nothing about
+    # its text -- measured: `def:ChapterAbelianCyclicModel`'s only recorded error
+    # is a curl timeout.
+    if not err.startswith(_PLATFORM_REJECT_PREFIXES):
+        return None
+    if any(m in err for m in _INFRA_MARKERS):
+        return None
+    if rec.get("error_src") != file_stamp(path):
+        return None
+    # `unknown import: Theorems.X` is a verdict about the ENVIRONMENT, not the
+    # text: the same file compiles unchanged once X publishes.  Holding it
+    # behind the stamp would strand a correct sol forever (measured:
+    # `ShiftedQuadratic_momTPoly_eq_smul` rejected for an unpublished
+    # `HyperbolicQuadratic_momPoly_apply`, which is Proved now).  Fail open
+    # exactly when the missing module has since appeared -- everything else
+    # keeps the §2.40 defer.
+    if _import_now_published(err):
+        return None
+    return f"platform rejected the current text: {err[:200]}"
+
+
+def _import_now_published(err):
+    """True when `err` is an `unknown import: M` verdict and M publishes now."""
+    m = re.search(r"unknown import: (Theorems|Definitions)\.([A-Za-z0-9_'!]+)", err)
+    if not m:
+        return False
+    kind, nm = m.group(1), m.group(2)
+    try:
+        items = (_state_snapshot() or {}).get("items", {})
+        if kind == "Theorems":
+            slug = nm[4:] if nm.startswith("Thm_") else nm
+            for s in _thm_slugs_for(slug):
+                if (items.get("thm:" + s) or {}).get("status") == "done":
+                    return True
+            return slug in published_theorems()
+        slug = nm[4:] if nm.startswith("Def_") else nm
+        if (items.get("def:" + slug) or {}).get("status") == "done":
+            return True
+        return slug in published_defs()
+    except Exception:
+        # Catalogue unreadable: the defer decision must not depend on it
+        # (fail-open, same contract as the rest of this function).
+        return False
 
 
 def _state_snapshot():
@@ -1424,6 +1612,47 @@ def def_gate_fresh(chapter, path):
     return None
 
 
+def thm_gate_fresh(slug, path):
+    """Durable candidate-build verdict for a THEOREM stub (state/thm_gate.json,
+    written by debug/build_candidate_mirror.py).  Returns None when the gate is
+    fresh and OK, else a reason to defer.
+
+    The `--kind thm` chunk had no compile check at all: `def_gate_fresh` answers
+    only for kind==def, and check_pending_offline's verdict for a stub is often a
+    mirror artifact.  The platform is therefore the first compiler to see the
+    statement, and a statement that cannot elaborate burns one of the 5 attempts
+    and returns `formal statement does not compile` -- measured 2026-10-12: 15
+    such attempts in one drain round, 24 distinct stubs citing a helper the
+    generator never emitted a `Thm_` file for.
+
+    Absence of the gate DEFERS (it does not submit blind), mirroring
+    def_gate_fresh: a missing oracle is not permission to spend an attempt.
+
+    One status is deliberately NOT a block: `UNKNOWN` means the candidate build
+    never compiled this stub, which is absence of evidence rather than evidence
+    of failure (the mirror staged the def bundles' 333-stub closure, not all
+    10,119).  Only `FAIL` -- the compiler was actually shown the file and
+    rejected it -- defers.  Treating UNKNOWN as failure would hold back 9,826
+    stubs to save the 15 attempts that genuinely failed.
+    """
+    try:
+        gate = json.load(open(f"{WS}/state/thm_gate.json"))
+    except (OSError, ValueError):
+        return "no thm build gate (state/thm_gate.json) -- run " \
+               "debug/build_candidate_mirror.py first"
+    ent = gate.get(slug)
+    if not isinstance(ent, dict):
+        return "stub not covered by the last thm build -- rerun " \
+               "build_candidate_mirror with its chapter in --targets"
+    if ent.get("stamp") != file_stamp(path):
+        return "stub edited since the last thm build -- rebuild before submitting"
+    status = ent.get("status")
+    if status == "FAIL":
+        return "candidate build: " + str(ent.get("detail") or "formal statement " \
+               "does not compile")[:140]
+    return None
+
+
 def submission_guard(kind, name, path, theorem_name=None):
     """(verdict, reason) -- verdict in {"park", "defer"}, or (None, None)."""
     if kind == "thm" and theorem_name:
@@ -1445,6 +1674,10 @@ def submission_guard(kind, name, path, theorem_name=None):
         reason = def_gate_fresh(name, path)
         if reason:
             return "defer", "def gate: " + reason
+    if kind == "thm":
+        reason = thm_gate_fresh(name, path)
+        if reason:
+            return "defer", "thm gate: " + reason
     if kind in ("sol", "thm"):
         # For a thm stub the same rule applies to cross-statement imports the
         # stage-2 repair added: the server answers `unknown import ... No such
@@ -1486,6 +1719,9 @@ def submission_guard(kind, name, path, theorem_name=None):
     reason = stub_sanity(path, kind)
     if reason:
         return "defer", "stub sanity: " + reason
+    reason = _recorded_platform_fail(kind, name, path)
+    if reason:
+        return "defer", reason
     reason = offline_fail(kind, name, path)
     if reason:
         # §2.8d: a declaration a published def bundle already carries can never
@@ -1941,6 +2177,57 @@ def ns_owner_of(ns):
 
 _LOCAL_NS = None
 
+_RE_NS_OPEN = re.compile(r"(?m)^\s*namespace\s+([A-Za-z_][\w.]*)\s*$")
+_RE_NS_CLOSE = re.compile(r"(?m)^\s*end(?:\s+([A-Za-z_][\w.]*))?\s*$")
+
+
+def _scan_local_namespaces(txt):
+    """Every fully-qualified `BookProof.*` namespace a bundle declares.
+
+    A single regex cannot do this, which is why `open BookProof.NavierStokesFlow.AffineBlock`
+    was answered "no provider" for 18 sols whose owner IS published.  These bundles
+    nest:
+
+        namespace BookProof.NavierStokesFlow
+        namespace AffineBlock
+        end AffineBlock
+        end BookProof.NavierStokesFlow
+
+    so the namespace a sol opens is the JOIN of the enclosing stack, and
+    `BookProof.NavierStokesFlow.AffineBlock` never appears in the text at all.
+    Walk a scope stack instead and register the full path at every level.
+
+    `end` with no name closes the innermost block; a named `end X` closes the
+    nearest enclosing `X` (Lean permits popping several at once).
+    """
+    out = set()
+    stack = []
+    for line in txt.splitlines():
+        m = _RE_NS_OPEN.match(line)
+        if m:
+            part = m.group(1)
+            # A leading `BookProof.` resets to absolute; otherwise nest under the
+            # current scope.  `namespace BookProof.A` inside `BookProof.B` is
+            # `BookProof.A`, not `BookProof.B.BookProof.A`.
+            stack.append(part if part.startswith("BookProof.")
+                         else ".".join(stack + [part]) if stack else part)
+            out.add(stack[-1])
+            continue
+        m = _RE_NS_CLOSE.match(line)
+        if m:
+            name = m.group(1)
+            if not stack:
+                continue
+            if name is None:
+                stack.pop()
+                continue
+            # Pop until the block named `name` is closed.
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i] == name or stack[i].endswith("." + name):
+                    del stack[i:]
+                    break
+    return out
+
 
 def _local_ns_owner(ns, mod):
     """Chapter leaf whose local `Definitions/Def_<leaf>.lean` declares `ns`,
@@ -1961,8 +2248,8 @@ def _local_ns_owner(ns, mod):
             except OSError:
                 continue
             leaf = f[len("Def_"):-len(".lean")]
-            for m in re.finditer(r"(?m)^namespace\s+(BookProof\.[A-Za-z0-9_.]+)", txt):
-                _LOCAL_NS.setdefault(m.group(1), leaf)
+            for q in _scan_local_namespaces(txt):
+                _LOCAL_NS.setdefault(q, leaf)
     if ns in _LOCAL_NS:
         return _LOCAL_NS[ns]
     owner, _ = mod.owner_of(ns, _LOCAL_NS) if _LOCAL_NS else (None, False)
@@ -1993,6 +2280,19 @@ def _ambient_variables(txt):
                 mm = re.match(r"^\s*\(?\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", part)
                 if mm:
                     names.add(mm.group(1))
+                    continue
+                # A group may bind SEVERAL names before one type: `{n m : ℕ}`
+                # (or `(x y : ℕ)`).  Lean names every identifier left of the
+                # colon; the single-name match above only saw the first, so a
+                # stub binding its own `{n m : ℕ}` was read as declaring just
+                # `n` -- only `n` was added here for the group and `m` stayed
+                # "undeclared", which flipped the ambient-variable gate on
+                # stubs it had already fixed (SoftmaxBorn: 4 thms deferred).
+                left, sep, _ = part.partition(":")
+                if not sep:
+                    continue
+                for nm in re.findall(r"[A-Za-z_][A-Za-z0-9_']*", left):
+                    names.add(nm)
     return names
 
 
@@ -2291,7 +2591,10 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
                 rec["status"] = "failed"
                 continue
             kind, _, name = item.partition(":")
-            log(f"submitting {item} (attempt {rec['attempts'] + 1})")
+            # `attempts` may be absent: 12,799 legacy records predate the key
+            # (and the first `done -> pending` flip by resubmit_ok_red.py hit
+            # exactly that, crashing the chunk with KeyError).  Read it safely.
+            log(f"submitting {item} (attempt {rec.get('attempts', 0) + 1})")
             PIPELINE_MODE = True
             try:
                 if kind == "def":
@@ -2315,8 +2618,7 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
                 # must not consume the chunk's item budget.
                 log(f"{item}: WAIT ({err[:150]})")
             else:
-                rec["attempts"] = rec.get("attempts", 0) + 1
-                rec["error"] = err[:300]
+                _note_fail(rec, item, err)
                 processed += 1
                 log(f"{item}: FAIL ({err[:150]})")
             save_state(st)
@@ -2358,8 +2660,7 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
                 rec.pop("submission_id", None)
                 rec.pop("job_id", None)
                 rec["status"] = "pending"
-                rec["attempts"] = rec.get("attempts", 0) + 1
-                rec["error"] = err[:300]
+                _note_fail(rec, item, err)
                 log(f"{item}: FAIL ({err[:150]})")
             save_state(st)
         if INFLIGHT:
@@ -2519,7 +2820,7 @@ def main(argv=None):
             continue
         kind, _, name = item.partition(":")
         processed += 1
-        log(f"processing {item} (attempt {rec['attempts'] + 1})")
+        log(f"processing {item} (attempt {rec.get('attempts', 0) + 1})")
         try:
             if kind == "def":
                 err = do_def(st, item)
@@ -2539,8 +2840,7 @@ def main(argv=None):
             # the next run re-read the same verdict and spend an attempt on it.
             rec.pop("submission_id", None)
             rec.pop("job_id", None)
-            rec["attempts"] = rec.get("attempts", 0) + 1
-            rec["error"] = err[:300]
+            _note_fail(rec, item, err)
             log(f"{item}: FAIL ({err[:150]})")
         save_state(st)
     # Only ORDER items count towards completion; orphan entries left over from

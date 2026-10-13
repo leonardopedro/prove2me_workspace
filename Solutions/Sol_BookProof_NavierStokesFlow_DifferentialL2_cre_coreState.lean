@@ -2,14 +2,25 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_crd_coreState
-import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_cre
+
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_injective
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_smul
+import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_crd_cre
 import Theorems.Thm_BookProof_NavierStokesFlow_CanonicalVector_lower_raise
+import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Definitions.Def_ChapterBosonicCCR
+import Definitions.Def_ChapterGravityProjector
+import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_ChapterNavierStokesThreeComponent
 open BookProof.NavierStokesFlow.DifferentialL2
-
-
-
 
 open MeasureTheory MvPolynomial
 open BookProof.HermiteProductCore BookProof.HermiteProductBasis
@@ -19,6 +30,7 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow.LagrangianEsa
 
+open BookProof.Bosonic BookProof.ChapterGravityProjector BookProof.NavierStokesFlow.LagrangianCanonical
 noncomputable section
 
 variable {d : ℕ}

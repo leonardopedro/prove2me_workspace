@@ -11,6 +11,7 @@ import Definitions.Def_ChapterSchrodingerCutoffEsa
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterLeafGaps
 open BookProof.ScalaronFiberFL
 
 

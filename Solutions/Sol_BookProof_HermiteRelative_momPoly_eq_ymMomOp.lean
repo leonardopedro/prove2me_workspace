@@ -8,6 +8,7 @@ import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterLeafGaps
 open BookProof.HermiteRelative
 
 

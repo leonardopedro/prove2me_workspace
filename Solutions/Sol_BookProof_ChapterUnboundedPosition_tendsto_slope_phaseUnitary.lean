@@ -4,6 +4,7 @@ import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterLeafGaps
 open BookProof.ChapterUnboundedPosition
 
 
@@ -16,9 +17,7 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℤ → ℝ) (psi : mulDomain f) :
     Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (phaseUnitary f t (psi : L2Z) - (psi : L2Z)))
-      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • mulOp f psi)) :=
-  tary f t (psi : L2Z) - (psi : L2Z)))
-        (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • mulOp f psi)) := by
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • mulOp f psi)) := by
     rw [tendsto_iff_norm_sub_tendsto_zero]
     set g : ℤ → ℂ := fun k => (psi : L2Z) k with hg
     have hsq : ∀ t : ℝ,
@@ -85,4 +84,6 @@ theorem solution (f : ℤ → ℝ) (psi : mulDomain f) :
         (fun t : ℝ => Real.sqrt (∑' k : ℤ,
           ‖((t⁻¹ : ℝ) • (phase f t k - 1)) * g k - Complex.I * (f k : ℂ) * g k‖ ^ 2))
         (nhdsWithin 0 {0}ᶜ) (nhds 0) := by
-      simpa using! (Real.continuous_sqrt.
+      simpa using! (Real.continuous_sqrt.tendsto 0).comp htsum
+    refine hsqrt.congr fun t => ?_
+    rw [← hsq t, Real.sqrt_sq (norm_nonneg _)]

@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_torsionOps_symmetricOn
 import Theorems.Thm_BookProof_QuantumGravity3DGauge_signedOp_eq_weylOp
-import Theorems.Thm_BookProof_QuantumGravity3DGauge_qgMomScaled_symmetricOn
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsExtension
 import Theorems.Thm_BookProof_FriedrichsExtension_weyl_hashimoto_selects_friedrichs
@@ -14,6 +13,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QuantumGravity3DGauge
 
 

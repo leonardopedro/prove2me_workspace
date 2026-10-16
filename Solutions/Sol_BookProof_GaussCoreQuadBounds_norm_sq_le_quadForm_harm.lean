@@ -17,6 +17,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Definitions.Def_ChapterLeafGaps
 open BookProof.GaussCoreQuadBounds
 
 

@@ -12,7 +12,9 @@ import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterLeafGaps
 open BookProof.SqSumFarisLavine
+open BookProof
 
 
 
@@ -21,7 +23,7 @@ open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
-open BookProof.QgOuterFock
+open BookProof.QgOuterFock hiding sqSumPoly linForm
 open BookProof.GaussCoreQuadBounds
 
 open BookProof.ChapterF7 BookProof.NavierStokesFlow.DifferentialL2

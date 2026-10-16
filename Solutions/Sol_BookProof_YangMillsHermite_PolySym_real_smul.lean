@@ -9,6 +9,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterLeafGaps
 open BookProof.YangMillsHermite
 
 open MeasureTheory Complex MvPolynomial

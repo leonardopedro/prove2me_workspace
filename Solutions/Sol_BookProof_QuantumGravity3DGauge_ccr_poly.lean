@@ -12,10 +12,8 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QuantumGravity3DGauge
-
-
-
 
 open MeasureTheory Complex MvPolynomial Filter Topology
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
@@ -24,21 +22,25 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
+variable {d : ℕ}
+
+-- `mulOp_apply`/`momOp_apply` live in BookProof.YangMillsHermite but that chapter's
+-- published bundle does not carry them (leaf selection); local `rfl` copies.
+theorem mulOp_apply' (f p : MvPolynomial (Fin d) ℂ) : mulOp f p = f * p := rfl
+
+theorem momOp_apply' (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momOp j p = (-Complex.I) • (pderiv j p - ((1 / 2 : ℝ) : ℂ) • (X j * p)) := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    mulOp (X j) (momOp k p) - momOp k (mulOp (X j) p) = (if j = k then Complex.I else 0) • p :=
-   Fin.val h
-    simp only [idxX, idxDE] at this
-    omega
-  
-  theorem idxE_ne_idxDE (mu a nu rho b : Fin 4) : idxE mu a ≠ idxDE nu rho b := by
-    intro h
-    have := congrArg Fin.val h
-    simp only [idxE, idxDE] at this
-    omega
-  
-  /-! ## F.3 — the canonical commutation relations at polynomial level -/
-  
-  variable {d : ℕ}
-  
-  /--
+    mulOp (X j) (momOp k p) - momOp k (mulOp (X j) p) = (if j = k then Complex.I else 0) • p := by
+  by_cases h : j = k
+  · subst h
+    simpa using commutator_coord_mom j p
+  · have hX : (pderiv k) (X j * p) = X j * pderiv k p := by
+      rw [Derivation.leibniz]
+      simp [MvPolynomial.pderiv_X, Ne.symm h]
+    simp only [mulOp_apply', momOp_apply', hX, if_neg h, zero_smul, neg_smul, smul_eq_C_mul]
+    ring
+
+end

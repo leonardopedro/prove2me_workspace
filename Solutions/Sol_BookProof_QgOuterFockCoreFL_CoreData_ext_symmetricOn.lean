@@ -1,9 +1,6 @@
 -- Generated from ChapterQgOuterFockCoreFL.lean — solution of BookProof.QgOuterFockCoreFL.CoreData.ext_symmetricOn
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_tendsto
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_ext_tendsto
 
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
@@ -14,6 +11,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

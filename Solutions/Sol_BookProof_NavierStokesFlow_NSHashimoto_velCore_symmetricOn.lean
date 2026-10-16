@@ -10,6 +10,7 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterLeafGaps
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.NSHashimoto
 

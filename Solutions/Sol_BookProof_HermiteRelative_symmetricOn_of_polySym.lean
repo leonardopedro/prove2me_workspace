@@ -12,6 +12,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterLeafGaps
 open BookProof.HermiteRelative
 
 

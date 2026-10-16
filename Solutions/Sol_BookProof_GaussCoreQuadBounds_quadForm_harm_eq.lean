@@ -3,8 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_pgLp_sq
 
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_smul
-import Theorems.Thm_BookProof_HermiteProductCore_gaussInt_sum
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_kinPoly
@@ -18,7 +16,8 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-open BookProof.GaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+open BookProof.GaussCoreQuadBounds hiding harmPoly
 
 open Finset MvPolynomial
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs

@@ -12,6 +12,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QuantumGravity3DGauge
 
 

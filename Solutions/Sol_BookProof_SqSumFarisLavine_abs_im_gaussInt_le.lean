@@ -10,6 +10,7 @@ import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterLeafGaps
 open BookProof.SqSumFarisLavine
 
 

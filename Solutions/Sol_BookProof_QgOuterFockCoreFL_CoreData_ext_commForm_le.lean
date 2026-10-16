@@ -3,11 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem
 
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_coreN_gcSeq
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_commForm_tendsto
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_quadForm_tendsto
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterQgOuterFockEsa
@@ -17,6 +13,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 

@@ -8,6 +8,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterLeafGaps
 open BookProof.YangMillsHermite
 
 

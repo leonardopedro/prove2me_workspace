@@ -1,7 +1,6 @@
 -- Generated from ChapterNsNonlinearFarisLavine.lean — solution of BookProof.NsNonlinearFarisLavine.nsKoopman_esa_of_squareComparison_esa
 import Mathlib
 import Definitions.Def_ChapterNsNonlinearFarisLavine
-import Theorems.Thm_BookProof_NsLagrangianDetFL_lam_nonneg
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterA4

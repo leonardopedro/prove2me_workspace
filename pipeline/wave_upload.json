@@ -9039,6 +9039,20 @@
     "timepiece",
     "definitions"
    ]
+  },
+  "ChapterNsKoopman": {
+   "definition_name": "ChapterNsKoopman",
+   "namespace": "BookProof.NsKoopman",
+   "file": "Definitions/Def_ChapterNsKoopman.lean",
+   "title": "Chapter NsKoopman",
+   "nl": "The mainstream Navier-Stokes Koopman-von Neumann Hamiltonian: the exact nonlinear quadratic advection system NsSystem, the Weyl-ordered Hamiltonian kvnPoly, its indefiniteness on the Gauss-polynomial core, and the Leray-energy Faris-Lavine comparison operator with its commutator bound. Source chapters BookProof/ChapterNsKoopman/Part1.lean and Part2.lean.",
+   "source": "BookProof/ChapterNsKoopman/Part1.lean",
+   "tags": [
+    "timepiece",
+    "definitions",
+    "navier-stokes",
+    "koopman-von-neumann"
+   ]
   }
  },
  "thms": {

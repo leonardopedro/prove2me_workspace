@@ -1,3 +1,4 @@
+import Definitions.Def_ChapterNsKoopman
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterA4

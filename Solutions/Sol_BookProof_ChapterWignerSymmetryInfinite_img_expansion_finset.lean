@@ -1,7 +1,6 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.img_expansion_finset
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_eq_zero
 import Definitions.Def_ChapterOrthogonalSums
 import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite

@@ -28,7 +28,6 @@ theorem solution [Nontrivial F] (A : F →L[ℂ] F)
     (b : HilbertBasis ℕ ℂ F) :
     IsPositiveSelfAdjointExtension (finiteModeRestrict A b) (topRestrict A) ∧
       Tendsto (fun m : ℕ => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop
-        (nhds (sInf (spectrum ℝ A))) :=
-   (spectrum ℝ A))) :=
+        (nhds (sInf (spectrum ℝ A))) := by
     ⟨(finiteModeRestrict_selects_operator A hsa hpos b).1,
       ritzInf_tendsto_sInf_spec

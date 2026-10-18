@@ -26,6 +26,5 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 set_option maxHeartbeats 1000000 in
 theorem solution :
     SymmetricOn (LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)))
-      ell2UnboundedExample :=
-  Example :=
+      ell2UnboundedExample := by
     ell2Example_isPositiveSelfAdjointExten

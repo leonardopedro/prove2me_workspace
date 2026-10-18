@@ -30,7 +30,6 @@ theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 �
     (i : Fin d) (u : polyGaussCore (d := d)) :
     c0 * (inner ℂ (u : L2d d) (oscL i u) : ℂ).re
       ≤ (inner ℂ (u : L2d d) (quadOp c u) : ℂ).re := by
-
   classical
   have hsymb : ∀ a : Fin d →₀ ℕ, c0 * ((a i : ℝ) + 1/2) ≤ quadSymbol c a := by
     intro a
@@ -54,4 +53,6 @@ theorem solution (c : Fin d → ℝ) {c0 : ℝ} (hc0 : 0 < c0) (hc : ∀ i, c0 �
   have hmain := re_inner_diagonal_le (hermiteMvLp (d := d)) orthonormal_hermiteMvLp
     (fun a => c0 * ((a i : ℝ) + 1/2)) (quadSymbol c) span_hermiteMvLp
     (((c0 : ℝ) : ℂ) • oscL i) (quadOp c) hSdiag (fun a h => quadOp_hermiteMvLp c a h) hsymb u
-  simp only [LinearMap.smul_apply, inner_smul_right, Comp
+  simp only [LinearMap.smul_apply, inner_smul_right, Complex.mul_re, Complex.ofReal_re,
+    Complex.ofReal_im, zero_mul, sub_zero] at hmain
+  exact hmain

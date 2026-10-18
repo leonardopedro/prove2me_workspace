@@ -116,13 +116,21 @@ position and (unconstrained) velocity". The free-field vacuum is the standard
 Gaussian on the configuration space, a probability measure invariant under the
 orthogonal gauge group. -/
 
+/-! Inlined from the unpublished `PhysHSGaussian` bundle (platform-world rule:
+an unpublished dep cannot be imported). -/
+
+namespace PhysHSGaussian
+
+/-- Standard Gaussian on `EuclideanSpace ℝ (Fin k)`. -/
+noncomputable def gaussianE (k : ℕ) : MeasureTheory.Measure (EuclideanSpace ℝ (Fin k)) :=
+  (MeasureTheory.Measure.pi fun _ : Fin k => ProbabilityTheory.gaussianReal 0 1).map
+    (MeasurableEquiv.toLp 2 (Fin k → ℝ))
+
+end PhysHSGaussian
+
 /-- The free-field QFT vacuum: the standard Gaussian on the `k`-dimensional
 field-configuration space (`book.tex` 2488). -/
 noncomputable def qftVacuum (k : ℕ) : Measure (EuclideanSpace ℝ (Fin k)) :=
   PhysHSGaussian.gaussianE k
-
-
-
-
 
 end BookProof.ChapterG3

@@ -1,7 +1,6 @@
 -- Generated from ChapterSmCarContinuum.lean — solution of BookProof.SmCarContinuum.car_hilbert_cre
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
-import Theorems.Thm_BookProof_SmCarContinuum_car_cCreS_cCreS
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency

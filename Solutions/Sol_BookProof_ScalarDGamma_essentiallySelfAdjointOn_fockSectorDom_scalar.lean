@@ -1,7 +1,6 @@
 -- Generated from ChapterScalarDGammaEsa.lean — solution of BookProof.ScalarDGamma.essentiallySelfAdjointOn_fockSectorDom_scalar
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
-import Theorems.Thm_BookProof_ScalarDGamma_symmetricOn_scalarOp
 import Theorems.Thm_BookProof_ScalarDGamma_dense_fockSectorDom
 import Theorems.Thm_BookProof_ScalarDGamma_norm_fockSectorOp_scalar_le
 import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_bounded_dense
@@ -10,6 +9,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.ScalarDGamma
 
 
@@ -18,6 +18,7 @@ open BookProof.ScalarDGamma
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 open BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

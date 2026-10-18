@@ -36,6 +36,7 @@ variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.car
 variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
 
+include hdense hesa hsym in
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_fermionic_core_of_esa (hcore : IsGraphCore D₀ A) (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (fermionicProj Hs n) (sectorCore Hs D D₀ n))
       (fermionicCoreOp Hs D A D₀ n) := by sorry

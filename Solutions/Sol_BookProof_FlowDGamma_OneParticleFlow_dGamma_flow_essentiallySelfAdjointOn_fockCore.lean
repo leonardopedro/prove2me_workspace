@@ -28,6 +28,7 @@ variable {Hs : IPSpace} {D₂ : Submodule ℂ Hs.carrier} {A : D₂ →ₗ[ℂ] 
 variable (P : OneParticleFlow Hs D₂ A)
 
 set_option maxHeartbeats 1000000 in
+include P in
 theorem solution (hdense : Dense (D₂ : Set Hs.carrier))
     (D : Submodule ℂ Hs.carrier) (hcore : IsGraphCore D A) :
     EssentiallySelfAdjointOn (dsCore (fun n : ℕ => fockSectorCore Hs D₂ D n))

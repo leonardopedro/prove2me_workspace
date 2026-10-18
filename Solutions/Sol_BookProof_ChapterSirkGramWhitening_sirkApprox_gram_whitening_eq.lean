@@ -27,8 +27,7 @@ theorem solution {m : ℕ} (w : Fin m → E) (X : E →L[ℂ] E)
     (whitened w T₁).comp ((compress (whitened w T₁) X).comp
         (ContinuousLinearMap.adjoint (whitened w T₁)))
       = (whitened w T₂).comp ((compress (whitened w T₂) X).comp
-        (ContinuousLinearMap.adjoint (whitened w T₂))) :=
-  rMap.adjoint (whitened w T₂))) := by
+        (ContinuousLinearMap.adjoint (whitened w T₂))) := by
     have hr₁ := range_whitened w hs₁
     have hr₂ := range_whitened w hs₂
     refine sirkApprox_eq_of_range_eq _ _ X (whitened_adjoint_comp_self w hT₁)

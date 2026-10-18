@@ -15,6 +15,5 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (x : lpFiniteModes Conf) :
-    dGammaOp col x = toLp (dGamma col (fockEquiv.symm x)) :=
-  ymm x)) := by
+    dGammaOp col x = toLp (dGamma col (fockEquiv.symm x)) := by
     simp [dGammaOp, LinearEquiv.conj_apply, coe_fo

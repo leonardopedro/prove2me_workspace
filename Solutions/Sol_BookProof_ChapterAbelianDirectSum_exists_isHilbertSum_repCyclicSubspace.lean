@@ -1,7 +1,6 @@
 -- Generated from ChapterAbelianDirectSum.lean — solution of BookProof.ChapterAbelianDirectSum.exists_isHilbertSum_repCyclicSubspace
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_exists_rep_cyclic_decomposition
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum

@@ -802,9 +802,8 @@ def do_wave_def(st, item, chapter):
     # Check that platform theorems imported by this def bundle are already Proved.
     # Importing an Open theorem is a guaranteed server FAILED — burn no attempt.
     thm_deps = thm_imports(path)
-    proved = published_theorems()
     if thm_deps:
-        undone = [t for t in thm_deps if t not in proved]
+        undone = thms_not_proved(thm_deps)
         if undone:
             return "theorem dependency not proved yet: " + ", ".join(undone[:5])
     body = open(path, encoding="utf-8").read()
@@ -1288,7 +1287,16 @@ def offline_fail(kind, name, path):
             return None
     except OSError:
         pass
-    reason = ent[5:300]
+    # `ent[5:]` keeps the space after "FAIL:"; `re.match` in _offline_artifact
+    # anchors at position 0, so an unstripped reason never matched its patterns
+    # and the whole §2.36 artifact immunity was dead for the two regex classes
+    # (measured 2026-10-17 on ChapterAbelianGelfandModel_integral_stateMeasure:
+    # a verdict whose module the catalogue lists as PUBLISHED still gated the
+    # thm, which gated def:ChapterAbelianCyclicModel and def:ChapterSpectral-
+    # Multiplication -- "unpublished def import" with `unpublished_def_imports`
+    # == [] in the same process).  The substring class ("error: object file")
+    # was unaffected, which is why the dead filter went unnoticed.
+    reason = ent[5:300].lstrip()
     if _offline_artifact(reason):
         return None
     return reason
@@ -1646,10 +1654,19 @@ def thm_gate_fresh(slug, path):
                "build_candidate_mirror with its chapter in --targets"
     if ent.get("stamp") != file_stamp(path):
         return "stub edited since the last thm build -- rebuild before submitting"
-    status = ent.get("status")
-    if status == "FAIL":
-        return "candidate build: " + str(ent.get("detail") or "formal statement " \
-               "does not compile")[:140]
+    # Both writers (build_candidate_mirror, gate_thm_ok) store the failure
+    # IN the status string -- "FAIL <first error line>" -- and no entry ever
+    # carries a bare "FAIL" or a `detail` key (measured 2026-10-18: 0 exact
+    # `FAIL`, 74 prefixed, 0 with detail).  The old `status == "FAIL"` test
+    # therefore matched nothing and every candidate-build FAIL passed the
+    # guard: measured cost the same day, `wallHam_scalaronPlus_esa` was
+    # submitted straight into the platform and burned attempt 1 on the very
+    # error the gate had just recorded.  `UNKNOWN` still passes on purpose
+    # (absence of evidence, see docstring above).
+    status = str(ent.get("status") or "")
+    if status.startswith("FAIL"):
+        detail = status[4:].strip() or "formal statement does not compile"
+        return "candidate build: " + detail[:140]
     return None
 
 
@@ -1877,8 +1894,22 @@ def _paged(endpoint, params, limit=100, max_pages=400):
     return out
 
 
+# One catalogue snapshot per process.  `published_defs()` (preflight) and
+# `published_theorems()` (per-item dependency gate) both funnel through
+# `platform_jobs()`, and the problem-job history is now 11,006 rows (~60 s to
+# walk).  Without the memo a `--kind def` chunk re-walked the catalogue 3-4
+# times and its whole 120 s wall-clock budget was gone inside preflight:
+# measured 2026-10-16, two consecutive chunks reported "0 item(s) resolved in
+# 133s/182s, 1 still in flight" and never reached submit-definition.  A chunk
+# process is short-lived; one snapshot per process is the right semantics (the
+# chunk re-derives everything next round anyway).
+_JOBS_CACHE = {"v": None, "t": 0.0}
+
+
 def platform_jobs():
     """Newest publish job per theorem_name, from the owner's job history."""
+    if _JOBS_CACHE["v"] is not None and time.time() - _JOBS_CACHE["t"] < 1800:
+        return _JOBS_CACHE["v"]
     jobs = {}
     for kind in ("definition", "problem"):
         page = _paged("publish-jobs", {"kind": kind})
@@ -1890,6 +1921,8 @@ def platform_jobs():
             if prev is None or j.get("status") == "PUBLISHED":
                 jobs[name] = j
         log(f"sync: read {len(page)} {kind} publish job(s)")
+    _JOBS_CACHE["v"] = jobs
+    _JOBS_CACHE["t"] = time.time()
     return jobs
 
 
@@ -2070,10 +2103,43 @@ def published_defs():
 
 
 def published_theorems():
-    """Names of theorems with ACCEPTED (Proved) status on the platform."""
+    """Names of theorems with a PUBLISHED problem job (i.e. the statement node
+    exists).  NOTE this is NOT the Proved set: a publish job is born PUBLISHED
+    while its theorem is still Open -- see `thms_not_proved` for the server's
+    actual import rule for def bundles."""
     jobs = platform_jobs()
     return {n for n, j in jobs.items()
             if j.get("kind") == "problem" and j.get("status") == "PUBLISHED"}
+
+
+_THM_STATUS = {}
+
+
+def thms_not_proved(names):
+    """Subset of `names` whose platform theorem is not yet `Proved`.
+
+    submit-definition enforces: "Imported platform theorems must be Proved at
+    submission time" -- stricter than the old name-set check, which equated a
+    PUBLISHED job with a Proved theorem and let Open statements through.
+    Measured 2026-10-16: def:ChapterNavierStokesFockLagrangian and
+    def:ChapterQgOuterFockFullFL each burned an attempt on exactly that server
+    rejection while the local gate called them clear.  One GET per imported
+    theorem per process (memoized); def bundles import a handful, so this is
+    cheap, and an unreadable status counts as not-Proved (WAIT, no attempt)."""
+    jobs = platform_jobs()
+    out = []
+    for n in names:
+        tid = (jobs.get(n) or {}).get("theorem_id")
+        if not tid:
+            out.append(n)
+            continue
+        s = _THM_STATUS.get(tid)
+        if s is None:
+            s = (api("GET", f"theorems/{tid}") or {}).get("status")
+            _THM_STATUS[tid] = s
+        if s != "Proved":
+            out.append(n)
+    return out
 
 
 def thm_imports(path):

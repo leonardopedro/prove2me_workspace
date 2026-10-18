@@ -36,6 +36,7 @@ theorem solution (c : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ)
   induction (Finset.univ : Finset (Fin d)) using Finset.induction with
   | empty => simp [pgFun]
   | insert i s hi ih =>
-      rw [Finset.sum_insert hi, Finset.sum_insert hi, pgFun_add, ih]
+      rw [Finset.sum_insert hi, Finset.sum_insert hi,
+        BookProof.HyperbolicQuadratic.pgFun_add, ih]
       congr 1
       rw [LinearMap.smul_apply, pgFun_smul, oscPoly_apply_eq_differential]

@@ -25,8 +25,7 @@ theorem solution [CompleteSpace F] {D : Submodule ℂ F} {n m : ℕ}
       IsPositiveSelfAdjointExtension (weylOp pi Bf) (topRestrict A) ∧
       (Dense ((⨆ k : ℕ, krylovSpan A.toLinearMap v k : Submodule ℂ F) : Set F) →
         ∀ u : F, Filter.Tendsto (fun k : ℕ => sirkCompression A v k u)
-          Filter.atTop (nhds (A u))) :=
-  )) := by
+          Filter.atTop (nhds (A u))) := by
     obtain ⟨A, hagree, hext, hlim⟩ :=
       sirk_limit_eq_positive_selfadjoint_extension (weylOp pi Bf) hdense
         (weylOpDom_symmetricOn hpi hB) (weylOpDom_quadForm_nonneg hpi hB) C hbd v

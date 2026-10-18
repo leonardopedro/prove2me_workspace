@@ -1,8 +1,6 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.qgSystemOf_gaugeField_eq_zero
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
-import Theorems.Thm_BookProof_QgDerivativeRealization_fixed_iff
-import Theorems.Thm_BookProof_QgDerivativeRealization_qgFixing_gaugeField_eq_zero_iff
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Definitions.Def_ChapterGaugeFixing

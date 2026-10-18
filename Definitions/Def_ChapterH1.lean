@@ -1,6 +1,5 @@
 import Mathlib
 
-
 /-!
 # Chapter H1 — Hashimoto SIRK: φ-functions and resolvent algebra (roadmap N13, §0 S7)
 
@@ -49,7 +48,7 @@ noncomputable def phi : ℕ → ℂ → ℂ
 
 
 
-@[simp] theorem phi_zero_apply (z : ℂ) : phi 0 z = Complex.exp z := rfl
+
 
 
 
@@ -68,19 +67,27 @@ Integration by parts on the defining integral: with `u = e^{s z}` and
 `dv = (1−s)^k/k! ds`, the boundary terms give `φ_k(z) − 1/k!` and the remaining
 integral is `z·φ_{k+1}(z)`.
 -/
-e,_succ, phi ];
-        field_simp;
-        grind;
-      · exact Coear_combination h
+
+
+
 
 /-! ## H1.3 — the exponential-integrator Duhamel identity -/
 
 /-- The **operator φ₁-function** as a vector-valued integral (Hashimoto eq. 3 at
 `k = 0`, operator form): `phiOp1 M g = ∫₀¹ e^{s·M} g ds`.  This is the operator
 analogue of `phi 1` (which is `∫₀¹ e^{s z} ds`). -/
-noncomputable def phiOp1 {n : ℕ} (M : Matrix (Fin n) (Fin n) ℂ) (g : Fin n → ℂ)  {n : ℕ} (A : Matrix (Fin n) (Fin n) ℂ) (g : Fin n → ℂ) (δ : ℝ) :
-    (∫ s in (0 : ℝ)..δ, (NormedSpace.exp ((δ - s) ervalIntegral.integral_comp_div _ _ using 3 <;> ring <;> norm_num [ hδ ];
-    simp [ hδ, smul_smul ]
+noncomputable def phiOp1 {n : ℕ} (M : Matrix (Fin n) (Fin n) ℂ) (g : Fin n → ℂ) :
+    Fin n → ℂ :=
+  ∫ s in (0 : ℝ)..1, (NormedSpace.exp (s • M)).mulVec g
+
+/-
+**H1.3** (exponential-integrator Duhamel identity, scheme (4)): for a
+(bounded) operator `A` the constant-forcing Duhamel term is the operator
+φ₁-function, `∫₀^δ e^{(δ−s)·A} g ds = δ · phiOp1 (δ·A) g`.  Proof: substitute
+`u = δ − s` (`integral_comp_sub_left`) on the left and `u = δ s`
+(`smul_integral_comp_mul_left`) on the right; both equal `∫₀^δ e^{u·A} g du`.
+-/
+
 
 /-! ## H1.4 — numerical range and eigenvalue inclusion -/
 
@@ -92,54 +99,68 @@ def numericalRange (A : E →ₗ[ℂ] E) : Set ℂ :=
   { c | ∃ v : E, ‖v‖ = 1 ∧ (inner (𝕜 := ℂ) v (A v)) = c }
 
 /-
-**H1.4** (eigenvalue inclusion = by
-  use v;
-  simp_all [ inner_self_eq_norm_sq_to_K ]
+**H1.4** (eigenvalue inclusion — the easy half of Toeplitz–Hausdorff): every
+eigenvalue of `A` lies in its numerical range.  If `A v = λ v` with `‖v‖ = 1`,
+then `⟪v, A v⟫ = λ·⟪v, v⟫ = λ·‖v‖² = λ`.
+-/
+
 
 /-! ## H1.5 — the operator φ-function via the resolvent (Definition 2.4) -/
 
 /-- The Taylor(1951)/Güttel(2010) transformed function `ψ_{k,γ}(x) := φ_k(γ − x⁻¹)`
 (Hashimoto Definition 2.4).  The operator φ-function is then `φ_k(A) = ψ_{k,γ}(X)`
 with `X = (γI − A)⁻¹` (evaluated by the holomorphic functional calculus). -/
-noncomputable def nvalue `z` of
+noncomputable def psi (k : ℕ) (γ : ℂ) (x : ℂ) : ℂ := phi k (γ - x⁻¹)
+
+/-
+**H1.5** (scalar defining identity, Definition 2.4): at an eigenvalue `z` of
 `A` the resolvent has eigenvalue `(γ − z)⁻¹`, and the transformed function
 recovers `φ_k`: `ψ_{k,γ}((γ − z)⁻¹) = φ_k(z)`.  This is the spectral/
 finite-rank-component identity that (via §0 S3, the holomorphic functional
-calculus `f_γ((γI−A)⁻¹) = f(A)`) lifts to the operator equalidSpace ℂ F]
-    (T : F →L[ℂ] F) (X : F →L[ℂ] F) (γ z : ℂ) (v : F)
-    (hTv : T v = z • v) (hz : γ - z ≠ 0)
-    (_hXr : (γ • (1 : F →L[ℂ] F) - T) * X = 1)
-    (hXl : X * (γ • (1 : F →L[ℂ] F) - T) = 1) :
-    X v = (γ - z)⁻¹ • v := by
-  have key : X ((γ - z) • v) = v := by
-    have := congr_arg ( fun f => f v ) hXl
-    simpa [ sub_smul, hTva) = 1)
-    (hml : (algebraMap ℂ A gm - a) * Xm = 1) (_hmr : Xm * (algebraMap ℂ A gm - a) = 1) :
-    Xj - Xm = (gm - gj) • (Xj * Xm) := by
-  -- Using the fact that $Xj * (γ_m - a) = 1$ and $Xm * (γ_m - a) = 1$, we can simplify the
-  -- expression.
-  have h_simp : Xj * (gm - gj) • 1 * Xm = Xj * (alg
-    (_hjl : (algebraMap ℂ A (N - h * j) - a) * Xj = 1)
-    (hjr : Xj * (algebraMap ℂ A (N - h * j) - a) = 1)
-    (hml : (algebraMap ℂ A (N - h * m) - a) * Xm = 1)
-    (_hmr : Xm * (algebraMap ℂ A (N - h * m) - a) = 1) :
-    Xj * (1 + (h * (m - j)) • Xm) = Xm := by
-  simp_all only [map_sub, map_mul, sub_mul, mul_sub, Algebra.smul_def, mul_add, mul_one];
-  apply_fun ( · * Xm ) at hjr ; simp_all [ mul_assoc, sub_mul ];
-  simp_all [ sub_eq_iff_eq_add ];
-  simp_all [ mul_add ];
-  grind
+calculus `f_γ((γI−A)⁻¹) = f(A)`) lifts to the operator equality `φ_k(A) =
+ψ_{k,γ}(X)`.
+-/
+
+
+/-
+**H1.5** (resolvent eigenvector, the spectral bridge): if `A v = z v` and
+`γ − z` is invertible, then `v` is an eigenvector of the resolvent
+`X = (γI − A)⁻¹` with eigenvalue `(γ − z)⁻¹`, i.e. `X v = (γ − z)⁻¹ • v`.
+This is the per-component reduction underlying the CFC identity of H1.5.
+-/
+
+
+/-! ## H1.6 — the resolvent shift identity (the clean SIRK algebra core) -/
+
+variable {A : Type*} [Ring A] [Algebra ℂ A]
+
+/-
+**H1.6** (resolvent identity): if `X_j` and `X_m` are two-sided inverses of
+the shifted operators `γ_j·1 − a` and `γ_m·1 − a`, then
+`X_j − X_m = (γ_m − γ_j)·(X_j · X_m)`.  Purely algebraic: insert the two
+inverses and cancel `a`.
+-/
+
+
+/-
+**H1.6** (SIRK shift form): with the SIRK shifts `γ_j = N − h·j` the resolvent
+identity rearranges to `X_j · (1 + h·(m−j)·X_m) = X_m`.  This is the algebraic
+core that turns the rational-Krylov recurrence into a shift-invert recurrence
+(§4, between eqs. (10)–(11)); no analysis is needed.
+-/
+
 
 /-
 **H1.7** (rational-Krylov representation, eq. 11 generating step): with the SIRK
-shifts `γ_j = N − h·j` the resolvent `X_j` is the rational f⅟(1 + (h * (m - j)) • Xm) = ⅟(1 + (h * (m - j)) • Xm) * Xm := by
-    apply_fun (fun x => x * ⅟(1 + (h * (m - j)) • Xm)) at hu_comm;
-    simp_all only [map_sub, map_mul, mul_assoc, mul_invOf_self', mul_one];
-    apply_fun (fun x => ⅟(1 + (h * (m - j)) • Xm) * x) at hu_comm; simp_all ;
-  convert congr_arg ( fun x => x * ⅟ ( 1 + ( h * ( m - j ) ) • Xm ) ) ( resolvent_shift_mul a N h j
-      m Xj Xm hjl hjr hml hmr ) using 1;
-  · simp [ mul_assoc ];
-  · exact hu_inv_comm.symm
+shifts `γ_j = N − h·j` the resolvent `X_j` is the rational function
+`X_j = (1 + h(m−j)·X_m)⁻¹ · X_m` of `X_m` (Hashimoto §4, "Since `X_j` is
+represented as …").  This is the load-bearing algebraic identity from which the
+rational-Krylov subspace equality `Q_m({X_j}, v) = {r(X_m) v | r ∈ R_SIRK}`
+(eq. 11) follows by induction: each `X_j` raises the numerator degree by ≤ 1 and
+multiplies the denominator by one more `(1 + h·i·z)` factor.  Purely algebraic,
+from the H1.6 shift identity + commutativity of `X_m` with `1 + h(m−j)·X_m`.
+-/
+
 
 end
 

@@ -24,6 +24,5 @@ theorem solution (b : HilbertBasis ℕ ℂ F)
     (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A))
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
     ∃ (Dom : Submodule ℂ Fock) (A' : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (opCol b A)) A' :=
-   A)) A' :=
+      IsPositiveSelfAdjointExtension (dGammaOp (opCol b A)) A' := by
     dGamma_friedrichs_extension (isHermCol_opCol hA) (isPosCol_opC

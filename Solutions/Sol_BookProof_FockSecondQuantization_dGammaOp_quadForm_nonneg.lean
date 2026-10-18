@@ -18,7 +18,6 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col)
-    (x : lpFiniteModes Conf) : 0 ≤ quadForm (dGammaOp col) x :=
-   col) x := by
+    (x : lpFiniteModes Conf) : 0 ≤ quadForm (dGammaOp col) x := by
     rw [quadForm, coe_dGammaOp, coe_fockEquiv_symm x]
     exact inner_dGamma_nonne

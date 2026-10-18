@@ -24,8 +24,7 @@ variable [CompleteSpace F]
 set_option maxHeartbeats 1000000 in
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) :
-    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsSelfAdjointExtension T A :=
-  ℂ] F), IsSelfAdjointExtension T A :=
+    ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsSelfAdjointExtension T A := by
     ⟨clDom T, clExt T hdense hsym,
       fun v => ⟨coe_mem_clDom T v, clExt_extends T hdense hsym v⟩,
       clExt_symmetricOn T hdense hsym,

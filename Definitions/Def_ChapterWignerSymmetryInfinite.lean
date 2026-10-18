@@ -4,6 +4,7 @@ import Definitions.Def_ChapterWignerSymmetry
 import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex
+import Theorems.Thm_BookProof_ChapterWignerSymmetry_key_complex_prime
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_eq_norm_of_re_eq_norm
 
 
@@ -341,7 +342,7 @@ theorem key_pair (hT : IsWignerSymmetry T) {i : ι} (hi : i ≠ o) :
     exact h
   · right
     intro x
-    refine key_complex' (coord b T o o x) (coord b T o i x) ⟪b o, x⟫_ℂ ⟪b i, x⟫_ℂ
+    refine key_complex_prime (coord b T o o x) (coord b T o i x) ⟪b o, x⟫_ℂ ⟪b i, x⟫_ℂ
       (coord_norm hT o x) (coord_norm hT i x) (modulus_add hT hi x) ?_
     have h := hrel x
     rw [hz] at h

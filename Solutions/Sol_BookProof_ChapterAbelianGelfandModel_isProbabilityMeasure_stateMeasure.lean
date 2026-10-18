@@ -1,7 +1,6 @@
 -- Generated from ChapterAbelianGelfandModel.lean — solution of BookProof.ChapterAbelianGelfandModel.isProbabilityMeasure_stateMeasure
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
-import Theorems.Thm_BookProof_ChapterAbelianGelfandModel_isProbabilityMeasure_rieszStateMeasure
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterA3b
 open BookProof.ChapterAbelianGelfandModel

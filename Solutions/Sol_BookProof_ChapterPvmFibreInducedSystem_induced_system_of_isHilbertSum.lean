@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterPvmFibreInducedSystem
 import Theorems.Thm_BookProof_ChapterHilbertSumIntertwine_linearIsometryEquiv_intertwine
-import Theorems.Thm_BookProof_ChapterL2FibreSum_fibreEquiv_proj
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterPvmCyclicDecomposition

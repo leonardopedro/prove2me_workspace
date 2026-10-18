@@ -14,8 +14,7 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℤ → ℝ) :
-    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) :=
-  ntDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
+    adjointDomain f = ((mulDomain f : Submodule ℂ L2Z) : Set L2Z) := by
     ext phi
     constructor
     · rintro ⟨eta, h⟩

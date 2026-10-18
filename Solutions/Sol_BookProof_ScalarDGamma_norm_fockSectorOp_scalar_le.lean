@@ -1,11 +1,11 @@
 -- Generated from ChapterScalarDGammaEsa.lean — solution of BookProof.ScalarDGamma.norm_fockSectorOp_scalar_le
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
-import Theorems.Thm_BookProof_ScalarDGamma_sectorOp_scalar
 import Theorems.Thm_BookProof_GraphCore_pushOp_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.ScalarDGamma
 
 
@@ -14,6 +14,7 @@ open BookProof.ScalarDGamma
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 open BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

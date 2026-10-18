@@ -18,8 +18,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u : FockAlg) :
-    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) :=
-  nA k u) := by
+    ∀ K : Finset ℕ, modes u ⊆ K → dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) := by
     classical
     induction u using Finsupp.induction_linear with
     | zero => intro K _; simp

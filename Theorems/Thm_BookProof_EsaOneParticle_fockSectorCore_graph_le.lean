@@ -22,6 +22,7 @@ variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A₂ : D₂ →ₗ[�
   (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier) (hle : D ≤ D₂)
   (hext : ∀ v : D, A₂ ⟨(v : Hs.carrier), hle v.2⟩ = A v)
 
+include hext hle in
 theorem BookProof.EsaOneParticle.fockSectorCore_graph_le (n : ℕ) (x : fockSectorCore Hs D₂ D n) :
     ∃ u : fockSectorDom Hs D n, (u : fockSector Hs n) = (x : fockSector Hs n) ∧
       fockSectorOp Hs D A n u =

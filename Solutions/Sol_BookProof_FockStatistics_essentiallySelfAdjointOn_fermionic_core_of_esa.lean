@@ -40,6 +40,7 @@ variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
 
 set_option maxHeartbeats 1000000 in
+include hdense hesa hsym in
 theorem solution (hcore : IsGraphCore D₀ A) (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (fermionicProj Hs n) (sectorCore Hs D D₀ n))
       (fermionicCoreOp Hs D A D₀ n) :=

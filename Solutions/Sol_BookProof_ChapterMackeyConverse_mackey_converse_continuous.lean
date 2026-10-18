@@ -1,8 +1,6 @@
 -- Generated from ChapterMackeyConverse.lean — solution of BookProof.ChapterMackeyConverse.mackey_converse_continuous
 import Mathlib
 import Definitions.Def_ChapterMackeyConverse
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_covariant_unitary_is_induced
-import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_swCLM_proj
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterMackeyCocycle

@@ -1,7 +1,6 @@
 -- Generated from ChapterSmCarContinuum.lean — solution of BookProof.SmCarContinuum.car_cAnn_cAnn
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
-import Theorems.Thm_BookProof_QuantumGravityFock_jw_swap_insert
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency

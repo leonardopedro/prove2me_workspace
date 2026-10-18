@@ -1,8 +1,6 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.coord_testVec_i_norm
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_inner_testVec_i
 import Definitions.Def_ChapterOrthogonalSums
 import Definitions.Def_ChapterWignerSymmetry
 open BookProof.ChapterWignerSymmetryInfinite

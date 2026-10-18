@@ -16,8 +16,7 @@ noncomputable section
 set_option maxHeartbeats 1000000 in
 theorem solution {u : FockAlg} {s : Finset Conf} (hs : u.support ⊆ s)
     (v : FockAlg) :
-    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ s, (starRingEnd ℂ) (u α) * v α :=
-   * v α := by
+    (inner ℂ (toLp u) (toLp v) : ℂ) = ∑ α ∈ s, (starRingEnd ℂ) (u α) * v α := by
     rw [lp.inner_eq_tsum]
     have hcoord : ∀ α : Conf,
         (inner ℂ (((toLp u : Fock) : Conf → ℂ) α) (((toLp v : Fock) : Conf → ℂ) α) : ℂ)

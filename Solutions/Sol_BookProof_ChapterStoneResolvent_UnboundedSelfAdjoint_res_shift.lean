@@ -19,6 +19,5 @@ variable (T : UnboundedSelfAdjoint H)
 variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
-theorem solution {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x :=
-  l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
+theorem solution {l : ℝ} (hl : l ≠ 0) (x : T.domain) : T.res l (T.shift l x) = x := by
     rw [res, dif_

@@ -4,6 +4,10 @@ import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato
+-- `domain_le_genDomain` is carried by this stub (no published def bundle has
+-- it — leaf selection dropped it), so `genOp_eq_op`'s statement cannot
+-- elaborate without the import
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.ChapterStoneResolvent

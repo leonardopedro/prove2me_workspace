@@ -1,7 +1,6 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.eval_torsionPoly_jetPoint
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
-import Theorems.Thm_BookProof_QgDerivativeRealization_jetPoint_idxDE
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Definitions.Def_ChapterQuantumGravity3DGauge

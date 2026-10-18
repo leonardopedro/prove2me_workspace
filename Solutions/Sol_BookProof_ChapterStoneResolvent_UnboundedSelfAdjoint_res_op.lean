@@ -22,8 +22,7 @@ variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {l : ℝ} (hl : l ≠ 0) (x : T.domain) :
-    ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) :=
-   (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) := by
+    ((T.res l (T.op x) : T.domain) : H) = T.op (T.res l (x : H)) := by
     set w : T.domain := T.res l (x : H) with hw
     have hAw : T.op w = (x : H) + ((l : ℂ) * Complex.I) • (w : H) := T.op_res hl (x : H)
     have hmem : T.op w ∈ T.domain := by

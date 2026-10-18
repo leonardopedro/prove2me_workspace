@@ -51,6 +51,23 @@ The concrete instance is lattice multiplication on `ℓ²(ℤ)`:
 open scoped InnerProductSpace
 open Filter Topology
 
+namespace BookProof.ChapterUnboundedPosition
+
+open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
+@[simp] theorem phaseUnitary_apply (f : ℤ → ℝ) (t : ℝ) (psi : L2Z) :
+    phaseUnitary f t psi = phaseLin f t psi := rfl
+
+theorem phaseUnitary_zero (f : ℤ → ℝ) (psi : L2Z) : phaseUnitary f 0 psi = psi :=
+  phaseLin_zero f psi
+
+/-- The one-parameter group law. -/
+theorem phaseUnitary_add (f : ℤ → ℝ) (s t : ℝ) (psi : L2Z) :
+    phaseUnitary f (s + t) psi = phaseUnitary f s (phaseUnitary f t psi) :=
+  (phaseLin_add f s t psi).symm
+
+end BookProof.ChapterUnboundedPosition
+
 namespace BookProof.ChapterStoneSeparable
 
 open BookProof.ChapterStoneResolvent BookProof.ChapterStoneMeasurable
@@ -71,7 +88,7 @@ noncomputable def stoneEquiv :
   toFun T := T.stoneGroup
   invFun G := G.gen
   left_inv T := T.gen_stoneGroup_eq
-  right_inv G := WeakMeasurableUnitaryGroup.ext' (fun t => G.gen_stoneU_eq t)
+  right_inv G := WeakMeasurableUnitaryGroup.ext_prime (fun t => G.gen_stoneU_eq t)
 
 @[simp] theorem stoneEquiv_apply_U (T : UnboundedSelfAdjoint H) (t : ℝ) :
     (stoneEquiv T).U t = T.stoneU t := rfl
@@ -87,6 +104,7 @@ section Concrete
 
 open BookProof.ChapterUnboundedPosition BookProof.ChapterUnitaryTransport
 open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
+
 
 /-- A basis vector rescaled: `δ_k c = c • δ_k 1`. -/
 theorem lp_single_eq_smul (k : ℤ) (c : ℂ) :

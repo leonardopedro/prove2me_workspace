@@ -27,5 +27,6 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 
+include hsym in
 theorem BookProof.EsaOneParticle.symmetricOn_dGammaCoreOp_of_esa :
     SymmetricOn (dsCore (fun n : ℕ => fockSectorCore Hs D D n)) (dGammaCoreOp Hs D A D) := by sorry

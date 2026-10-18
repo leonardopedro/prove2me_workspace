@@ -1,7 +1,6 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.memLp_top_contSymbol
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_contSymbol_ae_norm_le
 import Theorems.Thm_BookProof_ChapterLinftyMaximalAbelian_stronglyMeasurable_symbol
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterAbelianGelfandModel

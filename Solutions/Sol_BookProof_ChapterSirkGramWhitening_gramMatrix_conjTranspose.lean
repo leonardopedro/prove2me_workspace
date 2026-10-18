@@ -18,7 +18,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (w : Fin m → E) :
-    (gramMatrix w)ᴴ = gramMatrix w :=
-  (gramMatrix w)ᴴ = gramMatrix w := by
+    (gramMatrix w)ᴴ = gramMatrix w := by
     ext i j
     simp [gramMa

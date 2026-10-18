@@ -1,9 +1,6 @@
 -- Generated from ChapterMackeyCocycle.lean — solution of BookProof.ChapterMackeyCocycle.quasiInvariant_of_covariant
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_norm_indSet_sq
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_proj_eq_zero_of_measure_zero
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_vmap_indSet
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterElectroweakFieldStrength
 import Definitions.Def_ChapterMackeyQuasiInvariant

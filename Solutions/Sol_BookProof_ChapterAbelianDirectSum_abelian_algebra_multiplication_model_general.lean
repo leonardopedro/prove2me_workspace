@@ -1,7 +1,6 @@
 -- Generated from ChapterAbelianDirectSum.lean — solution of BookProof.ChapterAbelianDirectSum.abelian_algebra_multiplication_model_general
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_abelian_multiplication_model_general
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum

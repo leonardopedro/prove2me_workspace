@@ -2,8 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow
-import Definitions.Def_ChapterNavierStokesFlow
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_hasDerivAt
 open BookProof.NavierStokesFlow
 
 
@@ -17,5 +16,9 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution (t : ℝ) :
     HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by
-  rw [nsFlowUnitary_eq_matrixFlow']
+  -- The point-free `nsFlowUnitary_eq_matrixFlow'` of the source chapter is not
+  -- published under that name; the published pointwise lemma gives it.
+  have h : nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
+    funext (nsFlowUnitary_eq_matrixFlow d)
+  rw [h]
   exact matrixFlow_hasDerivAt (Complex.I • nsHamiltonian d) t

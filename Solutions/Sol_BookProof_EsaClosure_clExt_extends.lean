@@ -21,6 +21,5 @@ variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D T)
-    (v : D) : clExt T hdense hsym ⟨(v : F), coe_mem_clDom T v⟩ = T v :=
-  , coe_mem_clDom T v⟩ = T v :=
+    (v : D) : clExt T hdense hsym ⟨(v : F), coe_mem_clDom T v⟩ = T v := by
     clFun_unique hdense hsym (mem_clGraph_of_m

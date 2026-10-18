@@ -1,7 +1,6 @@
 -- Generated from ChapterPvmInducedSystem.lean — solution of BookProof.ChapterPvmInducedSystem.pvm_induced_system_conj
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
-import Theorems.Thm_BookProof_ChapterPvmInducedSystem_pvm_induced_system
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterPvmCyclicDecomposition

@@ -1,9 +1,6 @@
 -- Generated from ChapterQuantumGravityFock.lean — solution of BookProof.QuantumGravityFock.car_fermAnn_fermCre_of_ne
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityFock
-import Theorems.Thm_BookProof_QuantumGravityFock_jw_swap_mixed
-import Theorems.Thm_BookProof_QuantumGravityFock_fermAnn_apply
-import Theorems.Thm_BookProof_QuantumGravityFock_fermCre_apply
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesFockSpace

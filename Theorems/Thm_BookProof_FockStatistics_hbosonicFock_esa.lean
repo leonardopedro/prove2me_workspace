@@ -22,5 +22,6 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 
+include hdense hesa hsym in
 theorem BookProof.FockStatistics.hbosonicFock_esa :
     EssentiallySelfAdjointOn (hbosonicFockDom Hs D) (hbosonicFockOp Hs D A) := by sorry

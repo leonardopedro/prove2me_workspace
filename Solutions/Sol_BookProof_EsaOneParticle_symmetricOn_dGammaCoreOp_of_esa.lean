@@ -30,5 +30,6 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (hesa : EssentiallySelfAdjointOn D A)
 
 set_option maxHeartbeats 1000000 in
+include hsym in
 theorem solution :
     SymmetricOn (dsCore (fun n : ℕ => fockSectorCore Hs D D n)) (dGammaCoreOp Hs D A D) := symmetricOn_dGammaCoreOp Hs D A D hsym

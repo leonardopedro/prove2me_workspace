@@ -5,8 +5,7 @@ open BookProof.ChapterContinuityUnitaryInfinite
 
 set_option maxHeartbeats 1000000 in
 theorem solution (m : ℤ) (f g : L2Z) :
-    ⟪shiftOp m f, g⟫_ℂ = ⟪f, shiftOp (-m) g⟫_ℂ :=
-  iftOp (-m) g⟫_ℂ := by
+    ⟪shiftOp m f, g⟫_ℂ = ⟪f, shiftOp (-m) g⟫_ℂ := by
     have h := (shiftEquiv m).inner_map_map f (shiftLin (-m) g)
     have hg : shiftEquiv m (shiftLin (-m) g) = g := by
       ext k

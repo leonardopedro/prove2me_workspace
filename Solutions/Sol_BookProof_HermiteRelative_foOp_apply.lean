@@ -22,7 +22,6 @@ variable {d : ℕ}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (b b' : Fin d → ℝ) (u : polyGaussCore (d := d)) :
-    foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) :=
-      foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) := by
+    foOp b b' u = ∑ i, (((b i : ℝ) : ℂ) • posL i u + ((b' i : ℝ) : ℂ) • momL i u) := by
     simp only [foOp, foPoly, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_sum,
       coreOp_add, coreOp_smul, LinearMap.sum_apply, LinearMap.add_

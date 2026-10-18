@@ -20,8 +20,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hA : SymmetricOn (finiteModeDomain b) ((finiteModeDomain b).subtype.comp A)) :
-    IsHermCol (opCol b A) :=
-  ol b A) := by
+    IsHermCol (opCol b A) := by
     intro j k
     have h := hA ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ ⟨b j, Submodule.subset_span ⟨j, rfl⟩⟩
     simp only [LinearMap.coe_comp, Function.comp_apply, Submodule.subtype_apply] at h

@@ -25,6 +25,7 @@ variable {E₁ E₂}
 variable {Hs : IPSpace} {D₂ : Submodule ℂ Hs.carrier} {A : D₂ →ₗ[ℂ] Hs.carrier}
 variable (P : OneParticleFlow Hs D₂ A)
 
+include P in
 theorem BookProof.FlowDGamma.OneParticleFlow.dGamma_flow_essentiallySelfAdjointOn_fockCore (hdense : Dense (D₂ : Set Hs.carrier))
     (D : Submodule ℂ Hs.carrier) (hcore : IsGraphCore D A) :
     EssentiallySelfAdjointOn (dsCore (fun n : ℕ => fockSectorCore Hs D₂ D n))

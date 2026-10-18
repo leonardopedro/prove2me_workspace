@@ -4,7 +4,7 @@ import Definitions.Def_ChapterWignerSymmetry
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_pair_prime
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_S_zero
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_modulus_add
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.ChapterWignerSymmetry
 
 

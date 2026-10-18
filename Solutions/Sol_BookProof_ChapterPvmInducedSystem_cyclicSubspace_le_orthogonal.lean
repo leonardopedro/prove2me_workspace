@@ -1,7 +1,6 @@
 -- Generated from ChapterPvmInducedSystem.lean — solution of BookProof.ChapterPvmInducedSystem.cyclicSubspace_le_orthogonal
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
-import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_orthOrbit_pairs
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterPvmCyclicDecomposition

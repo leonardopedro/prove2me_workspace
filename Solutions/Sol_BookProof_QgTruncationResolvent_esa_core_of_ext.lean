@@ -1,10 +1,11 @@
 -- Generated from ChapterQgTruncationResolvent.lean — solution of BookProof.QgTruncationResolvent.esa_core_of_ext
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_gcSeq
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_ext_tendsto
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_mem
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_gcSeq_tendsto
+-- The four gcSeq helper lemmas come from the leaf-gap bundle: importing them as
+-- Theorems.* stubs would either collide with Def_ChapterLeafGaps (same fully
+-- qualified names) or block forever (ext_gcSeq's stub is parked as a duplicate
+-- declaration carried by that bundle).
+import Definitions.Def_ChapterLeafGaps
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

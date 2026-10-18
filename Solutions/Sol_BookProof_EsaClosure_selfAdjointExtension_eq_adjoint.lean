@@ -22,8 +22,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {Dom : Submodule ℂ F} {T : D →ₗ[ℂ] F} {A : Dom →ₗ[ℂ] F}
     (hesa : EssentiallySelfAdjointOn D T) (hA : IsSelfAdjointExtension T A) (w u : F) :
     ((∀ v : D, (inner ℂ (T v) w : ℂ) = inner ℂ (v : F) u) ↔
-      ∃ h : w ∈ Dom, A ⟨w, h⟩ = u) :=
-  ∃ h : w ∈ Dom, A ⟨w, h⟩ = u) := by
+      ∃ h : w ∈ Dom, A ⟨w, h⟩ = u) := by
     obtain ⟨hext, hsymA, hsa⟩ := hA
     constructor
     · intro hw

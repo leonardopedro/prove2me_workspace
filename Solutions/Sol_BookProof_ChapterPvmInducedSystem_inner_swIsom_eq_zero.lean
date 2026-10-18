@@ -1,8 +1,6 @@
 -- Generated from ChapterPvmInducedSystem.lean — solution of BookProof.ChapterPvmInducedSystem.inner_swIsom_eq_zero
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
-import Theorems.Thm_BookProof_ChapterPvmInducedSystem_swIsom_mem_cyclicSubspace
-import Theorems.Thm_BookProof_ChapterPvmInducedSystem_cyclicSubspace_le_orthogonal
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterPvmCyclicDecomposition

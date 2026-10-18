@@ -24,8 +24,7 @@ variable [CompleteSpace F]
 set_option maxHeartbeats 1000000 in
 theorem solution (T : D →ₗ[ℂ] F) (hdense : Dense (D : Set F))
     (hsym : SymmetricOn D T) (hesa : EssentiallySelfAdjointOn D T) :
-    (cshiftRange (clExt T hdense hsym) Complex.I)ᗮ = ⊥ :=
-  se hsym) Complex.I)ᗮ = ⊥ := by
+    (cshiftRange (clExt T hdense hsym) Complex.I)ᗮ = ⊥ := by
     rw [Submodule.eq_bot_iff]
     intro w hw
     refine hesa.2 w fun v => ?_

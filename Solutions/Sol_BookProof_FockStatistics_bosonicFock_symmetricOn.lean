@@ -36,9 +36,9 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
   (D₀ : Submodule ℂ Hs.carrier)
 
 set_option maxHeartbeats 1000000 in
+include hsym in
 theorem solution :
     SymmetricOn (bosonicFockDom Hs D) (bosonicFockOp Hs D A) := dsOp_symmetricOn _ (fun n => symmetricOn_bosonic Hs D A n hsym)

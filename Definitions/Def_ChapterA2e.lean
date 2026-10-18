@@ -1,4 +1,5 @@
 import Theorems.Thm_BookProof_ChapterA_AntiUnitary_inner_map_map
+import Theorems.Thm_BookProof_ChapterA_cembed_apply
 
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
@@ -322,6 +323,14 @@ lemma rot_inj (θ : AntiUnitary H) (hθ : ∀ x, θ (θ x) = -x) [Nontrivial H]
   rcases smul_eq_zero.1 h6 with h1 | h1
   · exact sub_eq_zero.1 h1
   · exact absurd h1 hθx
+
+omit [CompleteSpace H] in
+/-- Coercion form of `qembed`: the image of a quaternion is its real part times the
+identity plus the three imaginary coefficients against `mulI`/`thetaR`. -/
+lemma qembed_apply (θ : AntiUnitary H) (hθ : ∀ x, θ (θ x) = -x) (q : Quaternion ℝ) :
+    qembed θ hθ q
+      = algebraMap ℝ (H →L[ℝ] H) q.re + q.imI • mulI + q.imJ • thetaR θ
+        + q.imK • (mulI * thetaR θ) := rfl
 
 omit [CompleteSpace H] in
 /-- The quaternion `q` as a `rot` (in the `θ`-frame). -/

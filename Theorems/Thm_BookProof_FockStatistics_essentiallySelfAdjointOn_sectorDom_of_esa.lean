@@ -31,5 +31,6 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
 
+include hdense hesa hsym in
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_sectorDom_of_esa (n : ℕ) :
     EssentiallySelfAdjointOn (sectorDom Hs D n) (sectorOp Hs D A n) := by sorry

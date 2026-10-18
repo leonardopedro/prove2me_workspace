@@ -19,6 +19,5 @@ theorem solution :
       (∀ x y : lpFiniteModes ℕ,
         (inner ℂ ((jacobiOp x : lpFiniteModes ℕ) : L2N) ((y : lpFiniteModes ℕ) : L2N) : ℂ)
           = inner ℂ ((x : lpFiniteModes ℕ) : L2N) ((jacobiOp y : lpFiniteModes ℕ) : L2N)) ∧
-      ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp :=
-  acobiOp :=
+      ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp := by
     ⟨lpFiniteModes_dense, jacobiOp_symmetric, jacobiOp_not_hasZeroDeficie

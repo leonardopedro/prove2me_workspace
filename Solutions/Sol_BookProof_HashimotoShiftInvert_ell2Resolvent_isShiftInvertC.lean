@@ -32,8 +32,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 set_option maxHeartbeats 1000000 in
 open BookProof.QgOuterFockFL
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) :
-    IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) :=
-  nt hγ) := by
+    IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) := by
     refine isShiftInvertC_of_rightInverse ell2Example_symmetricOn hγ ?_
     intro u
     have hR : ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolvent hγ u :=

@@ -1,6 +1,7 @@
 -- Generated from ChapterWallEsaBddBelow.lean — theorem BookProof.WallEsaBddBelow.wallHam_add_const
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato

@@ -29,7 +29,6 @@ set_option maxHeartbeats 1000000 in
 open BookProof.BRSTNilpotent BookProof.ChapterF7 BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     secondOrder (lagCanData nu hnu f) = lagT nu := by
-
   simp only [lagCanData, lagT]
   have hmode := fun i => half_lagPSq_add_nu_lagQSq nu hnu i
   have hhalf : ((1 / 2 : ℝ) : ℂ) = (1 / 2 : ℂ) := by push_cast; ring
@@ -42,4 +41,10 @@ theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     congr 1
     push_cast
     ring
-  have hbridge : (∑ i : Fin
+  have hbridge : (∑ i : Fin 3, ((omega nu : ℝ) : ℂ) • numOp i)
+      = ∑ x : Fin 3, ((omega nu : ℝ) : ℂ) • numOp x := rfl
+  simp only [secondOrder, LagrangianFullData.kinetic, LagrangianFullData.viscous, hhalf]
+  rw [Finset.smul_sum, Finset.smul_sum, Finset.smul_sum]
+  rw [← Finset.sum_add_distrib]
+  rw [Finset.sum_congr rfl fun i _ => hmode i]
+  rw [Finset.sum_add_distrib, hcnt, hbridge]

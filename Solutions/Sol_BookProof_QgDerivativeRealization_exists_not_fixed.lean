@@ -1,7 +1,6 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.exists_not_fixed
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
-import Theorems.Thm_BookProof_QgDerivativeRealization_fixed_iff
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQgPhysicalSectorIdentity

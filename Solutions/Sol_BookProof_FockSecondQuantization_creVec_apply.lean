@@ -15,6 +15,5 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : ℕ →₀ ℂ) (x : FockAlg) :
-    creVec v x = ∑ j ∈ v.support, v j • creA j x :=
-  reA j x := by
+    creVec v x = ∑ j ∈ v.support, v j • creA j x := by
     simp [creVec, LinearMap.su

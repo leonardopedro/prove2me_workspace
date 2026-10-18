@@ -1,9 +1,6 @@
 -- Generated from ChapterPvmInducedSystem.lean — solution of BookProof.ChapterPvmInducedSystem.pvm_direct_sum_model
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
-import Theorems.Thm_BookProof_ChapterPvmInducedSystem_isHilbertSum_swIsom
-import Theorems.Thm_BookProof_ChapterPvmCyclicDecomposition_exists_orthCyclicFamily
-import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_swCLM_proj
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterPvmCyclicDecomposition

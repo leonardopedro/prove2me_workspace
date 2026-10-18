@@ -11,8 +11,7 @@ open scoped ENNReal
 set_option maxHeartbeats 1000000 in
 theorem solution {f g : L2N} {N : ℕ} (hf : ∀ n, N ≤ n → (f : ℕ → ℂ) n = 0) :
     (inner ℂ f g : ℂ)
-      = ∑ n ∈ Finset.range N, starRingEnd ℂ ((f : ℕ → ℂ) n) * (g : ℕ → ℂ) n :=
-  ℕ → ℂ) n := by
+      = ∑ n ∈ Finset.range N, starRingEnd ℂ ((f : ℕ → ℂ) n) * (g : ℕ → ℂ) n := by
     have h0 : ∀ n ∉ Finset.range N, ((g : ℕ → ℂ) n) * starRingEnd ℂ ((f : ℕ → ℂ) n) = 0 := by
       intro n hn
       rw [hf n (by simpa using hn)]

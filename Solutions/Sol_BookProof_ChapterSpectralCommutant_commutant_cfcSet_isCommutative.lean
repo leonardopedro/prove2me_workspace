@@ -1,9 +1,6 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.commutant_cfcSet_isCommutative
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_multAlgebra_comm
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_conjSpectral_mul
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_centralizer_cfcSet
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Definitions.Def_ChapterAbelianGelfandModel
@@ -28,6 +25,7 @@ variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
   (hcyc : DenseRange (cfcVec T hT xi))
 
 set_option maxHeartbeats 1000000 in
+include hcyc in
 theorem solution {S R : H →L[ℂ] H}
     (hS : S ∈ (cfcSet T hT).centralizer) (hR : R ∈ (cfcSet T hT).centralizer) :
     S * R = R * S := by

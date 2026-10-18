@@ -29,8 +29,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col)
     (hpos : IsPosCol col) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp col) A :=
-   col) A :=
+      IsPositiveSelfAdjointExtension (dGammaOp col) A := by
     friedrichs_extension_exists
       ⟨lpFiniteModes Conf, dGammaOp col, dGammaOp_symmetricOn hherm,
         dGammaOp_quadForm_nonneg hpos⟩

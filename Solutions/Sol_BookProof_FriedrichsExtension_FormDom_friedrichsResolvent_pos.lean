@@ -20,8 +20,7 @@ variable [CompleteSpace F]
 set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F) (u : F) :
     (1 : ℝ) * ‖friedrichsResolvent P u‖ ^ 2
-      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re :=
-     ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re := by
+      ≤ (inner ℂ (friedrichsResolvent P u) u : ℂ).re := by
     have h : (inner ℂ (friedrichsResolvent P u) u : ℂ)
         = starRingEnd ℂ (inner ℂ u (friedrichsResolvent P u)) := (inner_conj_symm _ _).symm
     rw [h, inner_friedrichsResolvent]

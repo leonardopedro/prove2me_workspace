@@ -35,5 +35,5 @@ theorem solution (V : ℝ → ℝ)
     ∃ (T : UnboundedSelfAdjoint (Lp ℂ 2 (volume : Measure ℝ)))
       (U : ℝ → (Lp ℂ 2 (volume : Measure ℝ) →L[ℂ] Lp ℂ 2 (volume : Measure ℝ))),
       IsSelfAdjointExtension (wallHam V hV) T.op ∧ IsStoneFlow T U :=
-  fAdjointExtension (wallHam V hV) T.op ∧ IsStoneFlow T U :=
-    exists_stone_flow_of_esa _ ccDomain_dense (wallHam_symmetricOn V hV)
+  exists_stone_flow_of_esa _ ccDomain_dense (wallHam_symmetricOn V hV)
+    (wallHam_essentiallySelfAdjoint_of_bddBelow V hV hVc)

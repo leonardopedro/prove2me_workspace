@@ -6,6 +6,7 @@ import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterSirkTrotterKato
 open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 

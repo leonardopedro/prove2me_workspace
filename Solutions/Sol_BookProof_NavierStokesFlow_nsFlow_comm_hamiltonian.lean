@@ -44,5 +44,9 @@ theorem solution (t : ℝ) :
     nsFlowUnitary d t * nsHamiltonian d = nsHamiltonian d * nsFlowUnitary d t := by
 
   rw [nsFlowUnitary_eq_matrixFlow]
-  exact (matrixFlow_commute_of_commute (Complex.I • nsHamiltonian d) (nsHamiltonian d)
-    (by simp [Commute, SemiconjBy]) t).eq
+  -- The published stub `matrixFlow_commute_of_commute` carries the WRONG
+  -- statement (it re-declares this very theorem, not the source's matrix-level
+  -- `Commute (matrixFlow A t) B`), so inline the source's one-line proof.
+  have hcomm : Commute (Complex.I • nsHamiltonian d) (nsHamiltonian d) := by
+    simp [Commute, SemiconjBy]
+  exact ((hcomm.smul_left t).exp_left).eq

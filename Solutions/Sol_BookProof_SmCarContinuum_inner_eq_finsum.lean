@@ -15,7 +15,6 @@ open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
-open BookProof.ChapterRieszFischer
 
 noncomputable section
 

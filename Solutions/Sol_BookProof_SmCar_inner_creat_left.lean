@@ -2,8 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterSmCarAlgebra
 import Theorems.Thm_BookProof_SmCar_inner_eq_sum
-import Theorems.Thm_BookProof_QuantumGravityFock_conj_jwSign
 import Definitions.Def_ChapterNavierStokesFockSpace
+import Definitions.Def_ChapterQuantumGravityFock
 open BookProof.SmCar
 
 

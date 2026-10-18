@@ -1,7 +1,6 @@
 -- Generated from ChapterNonnegUnitaryGroup.lean — solution of BookProof.NonnegUnitaryGroup.hasDerivAt_expU_apply
 import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
-import Theorems.Thm_BookProof_ChapterStoneResolvent_hasDerivAt_apply
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegSquareRoot

@@ -1,4 +1,7 @@
 -- Generated from ChapterNavierStokesCauchy.lean — theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow'
+-- Statement mirrored from the PLATFORM record (theorem_id 4d620acd-530d-401b-8c82-fb4cfa478f6e):
+-- the local generator drift had the point-free form here, which is not what
+-- the platform registered (PIPELINE_PLAN §2.46-2: the platform is the truth).
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Definitions.Def_ChapterNavierStokesFlow
@@ -11,8 +14,5 @@ variable {n : ℕ} (d : NSTruncation n)
 
 open scoped BigOperators Matrix Matrix.Norms.Operator
 
-lex.real_smul]
-
-theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow_prime :
-    nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
-  funext (nsFlowUnitary_eq_matrixFl := by sorry
+theorem BookProof.NavierStokesFlow.nsFlowUnitary_eq_matrixFlow_prime (t : ℝ) :
+    HasDerivAt (nsFlowUnitary d) (nsFlowUnitary d t * (Complex.I • nsHamiltonian d)) t := by sorry

@@ -31,19 +31,22 @@ noncomputable section
 set_option maxHeartbeats 1000000 in
 theorem solution (V : ℝ → ℝ)
     (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) {c : ℝ} (hVc : ∀ x, -c ≤ V x) :
-    EssentiallySelfAdjointOn (ccDomain ℝ) (wallHam V hV) :=
-     EssentiallySelfAdjointOn (ccDomain ℝ) (wallHam V hV) := by
-    have hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) fun x => V x + c := hV.add contDiff_const
-    have hnn : ∀ x, 0 ≤ V x + c := fun x => by linarith [hVc x]
-    have hesa := wallHam_essentiallySelfAdjoint (fun x => V x + c) hW hnn
-    have hsymm := wallHam_symmetricOn (fun x => V x + c) hW
-    have hkey := essentiallySelfAdjointOn_add_bounded (wallHam (fun x => V x + c) hW) hsymm hesa
-      (constOp (-c)) (constOp_symmetric (-c))
-    have hid : wallHam (fun x => V x + c) hW
-        + ((constOp (-c)).toLinearMap ∘ₗ (ccDomain ℝ).subtype) = wallHam V hV := by
-      have h := wallHam_add_const V hV c
-      refine LinearMap.ext fun x => ?_
-      have hx := congrArg (fun T : ccDomain ℝ →ₗ[ℂ] Lp ℂ 2 (volume : Measure ℝ) => T x) h
-      simp only [LinearMap.add_apply, LinearMap.coe_comp, Function.comp_apply,
-        Submodule.subtype_apply, ContinuousLinearMap.coe_coe, constOp,
-        ContinuousLinearMap.smul_apply, ContinuousLinearMap.id_apply] at hx
+    EssentiallySelfAdjointOn (ccDomain ℝ) (wallHam V hV) := by
+  have hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) fun x => V x + c := hV.add contDiff_const
+  have hnn : ∀ x, 0 ≤ V x + c := fun x => by linarith [hVc x]
+  have hesa := wallHam_essentiallySelfAdjoint (fun x => V x + c) hW hnn
+  have hsymm := wallHam_symmetricOn (fun x => V x + c) hW
+  have hkey := essentiallySelfAdjointOn_add_bounded (wallHam (fun x => V x + c) hW) hsymm hesa
+    (constOp (-c)) (constOp_symmetric (-c))
+  have hid : wallHam (fun x => V x + c) hW
+      + ((constOp (-c)).toLinearMap ∘ₗ (ccDomain ℝ).subtype) = wallHam V hV := by
+    have h := wallHam_add_const V hV c
+    refine LinearMap.ext fun x => ?_
+    have hx := congrArg (fun T : ccDomain ℝ →ₗ[ℂ] Lp ℂ 2 (volume : Measure ℝ) => T x) h
+    simp only [LinearMap.add_apply, LinearMap.coe_comp, Function.comp_apply,
+      Submodule.subtype_apply, ContinuousLinearMap.coe_coe, constOp,
+      ContinuousLinearMap.smul_apply, ContinuousLinearMap.id_apply] at hx ⊢
+    rw [hx]
+    push_cast
+    module
+  rwa [hid] at hkey

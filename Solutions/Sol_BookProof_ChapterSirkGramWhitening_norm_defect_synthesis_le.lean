@@ -23,8 +23,7 @@ theorem solution {m d : ℕ} (w : Fin m → E)
     (hdelta : ∀ i, ‖w i - V (ContinuousLinearMap.adjoint V (w i))‖ ≤ delta)
     (c : EuclideanSpace ℂ (Fin m)) :
     ‖synthesis w c - V (ContinuousLinearMap.adjoint V (synthesis w c))‖
-      ≤ delta * (Real.sqrt m * ‖c‖) :=
-   delta * (Real.sqrt m * ‖c‖) := by
+      ≤ delta * (Real.sqrt m * ‖c‖) := by
     rcases Nat.eq_zero_or_pos m with hm | hm
     · subst hm
       simp

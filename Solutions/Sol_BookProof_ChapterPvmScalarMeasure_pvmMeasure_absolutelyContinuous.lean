@@ -1,7 +1,6 @@
 -- Generated from ChapterPvmScalarMeasure.lean — solution of BookProof.ChapterPvmScalarMeasure.pvmMeasure_absolutelyContinuous
 import Mathlib
 import Definitions.Def_ChapterPvmScalarMeasure
-import Theorems.Thm_BookProof_ChapterPvmScalarMeasure_scalarMeasure_eq_zero_iff
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterPvmCyclicDecomposition
 import Definitions.Def_ChapterMackeyQuasiInvariant

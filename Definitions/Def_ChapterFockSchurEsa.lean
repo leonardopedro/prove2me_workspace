@@ -74,6 +74,19 @@ operator is not a comparison operator and `dΓ` needs a different gate.
 Everything in this module is `sorry`-free and `axiom`-free.
 -/
 
+namespace BookProof.FockSecondQuantization
+
+/-- `up_self` — the occupation number of mode `j` after adding one quantum there.  The
+published `Def_ChapterFockSecondQuantization` text predates this lemma, so it is
+restated here for the consumer. -/
+@[simp] theorem up_self (j : ℕ) (α : Conf) : up j α j = α j + 1 := by
+  simp [up]
+
+theorem up_of_ne {i j : ℕ} (α : Conf) (h : i ≠ j) : up j α i = α i := by
+  simp [up, Finsupp.update_apply, h]
+
+end BookProof.FockSecondQuantization
+
 namespace BookProof.FockSchur
 
 open BookProof.FockSecondQuantization BookProof.CoreBounds

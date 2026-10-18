@@ -34,12 +34,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat
 theorem solution :
-    EssentiallySelfAdjointOn diagKR.D (lagrangianCore diagKR) :=
-  ₊ : ℝ) + 1) := by
-      push_cast
-      rw [abs_of_nonneg (by positivity)]
-    rw [habs]
-    linarith
-  
-  /-- **The full transformed Hamiltonian of the unbounded instance is essentially
-  self-adjoint** — by Kato–Rellich, from the essential self
+    EssentiallySelfAdjointOn diagKR.D (lagrangianCore diagKR) := by
+  hFull_essentiallySelfAdjointOn_of_drive_eq_P diagKR diagKR_drive le_rfl
+    diagKR_constraint_bound
+    ((essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn diagKR.D (secondOrder diagKR)).mpr
+      diagKR_secondOrder_hasZeroDeficiencyOn)

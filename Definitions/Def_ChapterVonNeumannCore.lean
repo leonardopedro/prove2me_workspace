@@ -1,6 +1,7 @@
 import Theorems.Thm_BookProof_FriedrichsSquare_frDom_le_clDom
 
 import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_quadForm
+import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_adjPairs_clGraph
 
 import Theorems.Thm_BookProof_FriedrichsSquare_exists_mem_factorRel_add
 
@@ -395,11 +396,9 @@ noncomputable def coreRes (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hs
     frDom A →ₗ[ℂ] F :=
   (clExt A hdense hsym).comp (Submodule.inclusion (frDom_le_clDom A))
 
-omit [CompleteSpace F] in
 theorem coreRes_apply (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D A)
     (x : frDom A) : coreRes A hdense hsym x = clFun A ⟨(x : F), frDom_le_clDom A x.2⟩ := rfl
 
-omit [CompleteSpace F] in
 theorem opGraph_coreRes (A : D →ₗ[ℂ] F) (hdense : Dense (D : Set F)) (hsym : SymmetricOn D A) :
     opGraph (coreRes A hdense hsym) = coreGraph A := by
   refine le_antisymm ?_ ?_

@@ -16,6 +16,5 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) {u : FockAlg} {K : Finset ℕ} (hK : modes u ⊆ K) :
-    dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) :=
-  nA k u) :=
+    dGamma col u = ∑ k ∈ K, creVec (col k) (annA k u) := by
     dGamma_eq_sum_aux co

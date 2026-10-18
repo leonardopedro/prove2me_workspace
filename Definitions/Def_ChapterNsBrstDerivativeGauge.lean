@@ -79,6 +79,17 @@ the second-order field — is recorded in
 Everything is `sorry`-free and `axiom`-free.
 -/
 
+namespace BookProof.NavierStokesGaugeY
+
+/-- `genY_apply` — the gauge generator `G_j` acts as the stated first-order differential
+operator.  The published `Def_ChapterNavierStokesGaugeY` text predates this lemma, so it
+is restated here for the consumer. -/
+theorem genY_apply (j : Fin 3) (p : NSAlg) :
+    genY j p = pderiv (NSVar.y j) p - ∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p := by
+  simp [genY]
+
+end BookProof.NavierStokesGaugeY
+
 namespace BookProof.NsBrstDerivativeGauge
 
 open MvPolynomial BookProof.BRSTNilpotent BookProof.QuantumGravityBrstCharge

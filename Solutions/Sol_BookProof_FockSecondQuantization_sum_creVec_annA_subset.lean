@@ -17,7 +17,6 @@ noncomputable section
 set_option maxHeartbeats 1000000 in
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u : FockAlg) {K L : Finset ℕ}
     (hKL : K ⊆ L) (hK : modes u ⊆ K) :
-    ∑ k ∈ K, creVec (col k) (annA k u) = ∑ k ∈ L, creVec (col k) (annA k u) :=
-  nA k u) :=
+    ∑ k ∈ K, creVec (col k) (annA k u) = ∑ k ∈ L, creVec (col k) (annA k u) := by
     Finset.sum_subset hKL fun k _ hk => by
       rw [annA_eq_zero_of_not_mem_modes (fun hc => hk (hK hc)), m

@@ -23,7 +23,7 @@ open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFri
 open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
 open BookProof.QgOuterFock
-open BookProof.GaussCoreQuadBounds
+open BookProof.GaussCoreQuadBounds hiding harmPoly
 
 noncomputable section
 

@@ -56,6 +56,34 @@ Mackey's induced system `(V_L, E_L)`.
 Everything is `sorry`-free and uses only the standard axioms.
 -/
 
+open scoped InnerProductSpace
+open Finset
+
+namespace BookProof.ChapterMackeyImprimitivity
+
+variable {G : Type*} [Group G] {X : Type*} [Fintype X] [MulAction G X]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+
+/-- A **system of imprimitivity** over a discrete base `X` (the book's Definition 32): a
+unitary representation `U` together with the atoms `p x` of a projection-valued measure on
+`X`, satisfying the covariance relation `U(g) π(A) U(g)⁻¹ = π(gA)`. -/
+structure ImprimitivitySystem (G X E : Type*) [Group G] [Fintype X] [MulAction G X]
+    [NormedAddCommGroup E] [InnerProductSpace ℂ E] where
+  /-- The unitary representation. -/
+  U : G →* (E ≃ₗᵢ[ℂ] E)
+  /-- The atoms of the projection-valued measure. -/
+  p : X → (E →L[ℂ] E)
+  /-- Each atom is self-adjoint. -/
+  selfAdjoint : ∀ x u v, ⟪p x u, v⟫_ℂ = ⟪u, p x v⟫_ℂ
+  /-- Each atom is idempotent. -/
+  idem : ∀ x ψ, p x (p x ψ) = p x ψ
+  /-- Distinct atoms are orthogonal. -/
+  orthogonal : ∀ x y, x ≠ y → ∀ ψ, p x (p y ψ) = 0
+  /-- The atoms sum to the identity: `π(X) = 1`. -/
+  complete : ∀ ψ, ∑ x, p x ψ = ψ
+  /-- Covariance: `U(g) π(A) U(g)⁻¹ = π(gA)`. -/
+  covariant : ∀ g x ψ, U g (p x ψ) = p (g • x) (U g ψ)
+
 
 
 namespace ImprimitivitySystem

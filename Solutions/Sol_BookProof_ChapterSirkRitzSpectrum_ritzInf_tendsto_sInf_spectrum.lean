@@ -28,8 +28,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution [Nontrivial F] (A : F →L[ℂ] F) (hsa : IsSelfAdjoint A)
     (hpos : ∀ u : F, 0 ≤ (inner ℂ u (A u) : ℂ).re) (b : HilbertBasis ℕ ℂ F) :
     Tendsto (fun m : ℕ => ritzInf (finiteModeRestrict A b) (galerkinSpan b (m + 1))) atTop
-      (nhds (sInf (spectrum ℝ A))) :=
-   (spectrum ℝ A))) := by
+      (nhds (sInf (spectrum ℝ A))) := by
     have hq : ∀ x : finiteModeDomain b, 0 ≤ quadForm (finiteModeRestrict A b) x :=
       fun x => hpos _
     have hlim := ritzInf_tendsto_domainInf b (finiteModeRestrict A b) hq

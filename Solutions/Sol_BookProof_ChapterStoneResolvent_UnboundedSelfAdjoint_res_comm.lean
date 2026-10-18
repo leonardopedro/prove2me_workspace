@@ -23,8 +23,7 @@ variable [CompleteSpace H]
 set_option maxHeartbeats 1000000 in
 theorem solution {l m : ℝ} (hl : l ≠ 0) (hm : m ≠ 0) (y : H) :
     ((T.res l ((T.res m y : T.domain) : H) : T.domain) : H)
-      = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H) :=
-  res m ((T.res l y : T.domain) : H) : T.domain) : H) := by
+      = ((T.res m ((T.res l y : T.domain) : H) : T.domain) : H) := by
     set a : T.domain := T.res l ((T.res m y : T.domain) : H) with ha
     set b : T.domain := T.res m ((T.res l y : T.domain) : H) with hb
     -- `A a = res_l y + i m a`

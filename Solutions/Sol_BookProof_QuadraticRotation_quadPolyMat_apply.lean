@@ -27,5 +27,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (A : Matrix (Fin d) (Fin d) ℝ) (p : MvPolynomial (Fin d) ℂ) :
     quadPolyMat A p = ∑ k, ∑ l, ((A k l : ℝ) : ℂ) •
       (momPoly k (momPoly l p) + (1/4 : ℂ) • (X k * (X l * p))) := by
-
-  simp [quadPolyMat, LinearMap.sum_apply]
+  -- `mulXPoly_apply` was dropped from the published DifferentialL2 bundle, so
+  -- simp cannot unfold `mulXPoly i q` to `X i * q`; state the defeq locally.
+  have hmul : ∀ (i : Fin d) (q : MvPolynomial (Fin d) ℂ), mulXPoly i q = X i * q := fun _ _ => rfl
+  simp [quadPolyMat, LinearMap.sum_apply, hmul]

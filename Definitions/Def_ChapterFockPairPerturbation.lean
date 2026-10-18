@@ -11,6 +11,7 @@ import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA
 import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA_of_ne
+import Theorems.Thm_BookProof_FockSecondQuantization_up_of_ne
 import Theorems.Thm_BookProof_FockFieldPerturbation_annVec_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
 import Theorems.Thm_BookProof_FockFieldPerturbation_inner_creVec_annVec
@@ -82,6 +83,21 @@ Everything is `sorry`-free and introduces no axioms.
 -/
 
 noncomputable section
+
+namespace BookProof.FockSecondQuantization
+
+/-- `creA_single` — the creation operator applied to a single basis vector.  The published
+`Def_ChapterFockSecondQuantization` text predates this lemma, so it is restated here for
+the consumer. -/
+@[simp] theorem up_self (j : ℕ) (α : Conf) : up j α j = α j + 1 := by
+  simp [up]
+
+@[simp] theorem creA_single (j : ℕ) (β : Conf) (c : ℂ) :
+    creA j (Finsupp.single β c)
+      = c • Finsupp.single (up j β) ((Real.sqrt ((β j : ℝ) + 1) : ℝ) : ℂ) := by
+  simp [creA, LinearMap.toSpanSingleton]
+
+end BookProof.FockSecondQuantization
 
 namespace BookProof.FockPairPerturbation
 

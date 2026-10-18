@@ -1,8 +1,6 @@
 -- Generated from ChapterSmCarContinuum.lean — solution of BookProof.SmCarContinuum.lipschitz_cCreS
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
-import Theorems.Thm_BookProof_SmCarContinuum_cCreS_sub
-import Theorems.Thm_BookProof_SmCarContinuum_norm_cCreS_le
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
@@ -17,7 +15,6 @@ open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
-open BookProof.ChapterRieszFischer
 
 noncomputable section
 

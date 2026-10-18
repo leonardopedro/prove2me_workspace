@@ -24,8 +24,7 @@ noncomputable section
 set_option maxHeartbeats 1000000 in
 theorem solution (col : ℕ → (ℕ →₀ ℂ)) (k : ℕ) :
     dGamma col (Finsupp.single (Finsupp.single k 1) 1)
-      = ∑ j ∈ (col k).support, (col k) j • Finsupp.single (Finsupp.single j 1) (1 : ℂ) :=
-   : ℂ) := by
+      = ∑ j ∈ (col k).support, (col k) j • Finsupp.single (Finsupp.single j 1) (1 : ℂ) := by
     classical
     have hup : ∀ j : ℕ, up j (0 : Conf) = Finsupp.single j 1 := by
       intro j

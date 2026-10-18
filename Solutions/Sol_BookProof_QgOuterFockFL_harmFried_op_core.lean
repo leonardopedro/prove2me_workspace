@@ -30,13 +30,7 @@ open BookProof.HermiteProductCore
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
-  [∀ i, InnerProductSpace ℂ (G i)]
-variable (C : ∀ i, Comparison (G i))
-variable (H : ∀ i, (C i).dom →ₗ[ℂ] G i)
-variable {C H}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) (p : polyGaussCore (d := d))
     (h : (p : L2d d) ∈ (harmFried d).dom) :
-    (harmFried d).op ⟨(p : L2d d), h⟩ = harmCore p := (friedrichsComparison_extends (harmPosSym d) polyGaussCore_dense p).choose_spec
+    (harmFried d).op ⟨(p : L2d d), h⟩ = BookProof.QgOuterFockFL.harmCore p := (friedrichsComparison_extends (harmPosSym d) polyGaussCore_dense p).choose_spec

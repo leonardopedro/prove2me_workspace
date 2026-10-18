@@ -1,7 +1,6 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.crossCoupling_eq_of_fixed
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
-import Theorems.Thm_BookProof_QgDerivativeRealization_eval_eq_of_fixed_of_comp_eq
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQgPhysicalSectorIdentity

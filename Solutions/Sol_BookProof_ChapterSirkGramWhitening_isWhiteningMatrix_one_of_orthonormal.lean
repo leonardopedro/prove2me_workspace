@@ -18,8 +18,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} {w : Fin m → E}
-    (hw : Orthonormal ℂ w) : IsWhiteningMatrix w 1 :=
-  l ℂ w) : IsWhiteningMatrix w 1 := by
+    (hw : Orthonormal ℂ w) : IsWhiteningMatrix w 1 := by
     have hG : gramMatrix w = 1 := by
       ext i j
       rw [gramMatrix, orthonormal_iff_ite.mp hw i j]

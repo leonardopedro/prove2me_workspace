@@ -16,6 +16,7 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
 variable (hcyc : DenseRange (cfcVec T hT xi))
 
+include hT hcyc in
 theorem BookProof.ChapterSpectralMultiplication.spectral_multiplication_model (hxi : ‖xi‖ = 1) :
     ∃ (mu : Measure (spectrum ℂ T)) (_ : IsProbabilityMeasure mu)
       (U : Lp ℂ 2 mu ≃ₗᵢ[ℂ] H),

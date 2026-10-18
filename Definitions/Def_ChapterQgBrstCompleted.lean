@@ -1,6 +1,10 @@
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterBrstReducedTransfer
 import Mathlib
+import Theorems.Thm_BookProof_BrstReducedTransfer_exactStates_le_physicalStates
+import Theorems.Thm_BookProof_BrstReducedTransfer_transfer_zero
+import Theorems.Thm_BookProof_BrstReducedTransfer_transfer_comp
+import Theorems.Thm_BookProof_BrstReducedTransfer_transfer_bijective
 
 
 /-!
@@ -59,6 +63,18 @@ open scoped ENNReal
 open BookProof BookProof.QuantumGravityFock BookProof.BrstReducedTransfer
 
 noncomputable section
+
+/-- A one-ghost state carries exactly the energy of its ghost mode.
+
+Grafted here: the published Def_ChapterQuantumGravityFock carries
+`qgGradedSymbol_vacuum` but not this sibling theorem (upstream
+ChapterQuantumGravityFock.lean:762), so the proof at the use site could not
+elaborate -- def gate FAIL `Unknown identifier qgGradedSymbol_oneGhost`.
+Single consumer of the lemma; declared in this bundle's namespace so the
+unqualified `rw` keeps resolving. -/
+theorem qgGradedSymbol_oneGhost (omega g : ℕ → ℝ) (a : ℕ) :
+    qgGradedSymbol omega g (0, ({a} : FermConf)) = g a := by
+  simp [qgGradedSymbol, BookProof.NavierStokesFlow.FockOfFock.confEnergy_zero, ghostEnergy]
 
 /-! ## A bounded weighted-shift calculus on `ℓ²` -/
 
@@ -532,6 +548,39 @@ theorem qgBrstTransfer_comp (s t : ℝ) :
 theorem qgBrstTransfer_bijective (t : ℝ) : Function.Bijective (qgBrstTransfer hsym omega t) :=
   transfer_bijective (qgBrstCharge sym hsym) (qgPhase omega) (qgPhase_commutes hsym omega)
     (qgPhase_zero omega) (qgPhase_group omega) t
+
+/-- The BRST quotient norm is preserved by the reduced transfer
+(upstream `ChapterBrstReducedTransfer.infDist_exactStates_eq`, grafted).
+
+The published thm module dropped the `include hcomm` the proof needs, so its
+statement is unprovable as published AND its Open status would block this
+bundle's `imported theorems must be Proved` submission gate.  Local copy with
+hcomm as an explicit binder; single consumer. -/
+theorem infDist_exactStates_eq {H : Type*} [NormedAddCommGroup H] [NormedSpace ℂ H]
+    (Om : H →L[ℂ] H) (U : ℝ → H →L[ℂ] H)
+    (hcomm : ∀ (t : ℝ) (y : H), U t (Om y) = Om (U t y))
+    (hzero : ∀ x : H, U 0 x = x)
+    (hgroup : ∀ (s t : ℝ) (x : H), U s (U t x) = U (s + t) x)
+    (hisom : ∀ (t : ℝ) (x : H), ‖U t x‖ = ‖x‖) (t : ℝ) (x : H) :
+    Metric.infDist (U t x) (exactStates Om) = Metric.infDist x (exactStates Om) := by
+  have hne : (exactStates Om : Set H).Nonempty := ⟨0, (exactStates Om).zero_mem⟩
+  have key : ∀ (s : ℝ) (y : H),
+      Metric.infDist (U s y) (exactStates Om) ≤ Metric.infDist y (exactStates Om) := by
+    intro s y
+    refine le_of_forall_pos_le_add fun ε hε => ?_
+    obtain ⟨z, hz, hdz⟩ := (Metric.infDist_lt_iff hne).1
+      (by linarith [Metric.infDist_nonneg (x := y) (s := (exactStates Om : Set H))] :
+        Metric.infDist y (exactStates Om) < Metric.infDist y (exactStates Om) + ε)
+    have hd : dist (U s y) (U s z) = dist y z := by
+      simp [dist_eq_norm, ← map_sub, hisom]
+    calc Metric.infDist (U s y) (exactStates Om)
+        ≤ dist (U s y) (U s z) :=
+          Metric.infDist_le_dist_of_mem (exactStates_invariant (hcomm s) z hz)
+      _ = dist y z := hd
+      _ ≤ Metric.infDist y (exactStates Om) + ε := le_of_lt hdz
+  refine le_antisymm (key t x) ?_
+  have hback := key (-t) (U t x)
+  rwa [hgroup, neg_add_cancel, hzero] at hback
 
 /-- **The BRST (quotient) norm is preserved** by the reduced transfer. -/
 theorem qgBrstTransfer_infDist (t : ℝ) (x : QGH) :

@@ -22,7 +22,7 @@ open BookProof.QgHermiteOscillator BookProof.FarisLavine
 open BookProof.HermiteQuadraticEsa
 open BookProof.QgOuterFock
 
-open BookProof.QgOuterFockFL
+open BookProof.QgOuterFockFL hiding harmCore
 noncomputable section
 
 variable {D : ℕ}

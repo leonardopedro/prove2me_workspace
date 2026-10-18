@@ -20,5 +20,9 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 variable [CompleteSpace F]
 
-theorem BookProof.FriedrichsExtension.FormDom.friedrichsResolvent_injective (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
+-- The statement is already carried by the published `Def_ChapterQgOuterFockFarisLavine`
+-- bundle (which inlines `friedrichsResolvent_injective`), so this stub keeps only the
+-- imports: re-declaring it here makes the offline statement-module build fail with
+-- "has already been declared" for every sol that imports it.
+example (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
     Function.Injective (friedrichsResolvent P) := by sorry

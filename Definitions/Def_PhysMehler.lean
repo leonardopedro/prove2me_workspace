@@ -6,6 +6,7 @@ import Theorems.Thm_PhysFunctionalAnalysis_l2_separable
 import Definitions.Def_PhysFunctionalAnalysis
 import Mathlib
 import Definitions.Def_PhysMeasureBasis
+import Definitions.Def_ChapterG3
 
 
 /-!
@@ -39,7 +40,9 @@ checking.
 
 namespace PhysMehler
 
-open PhysMeasureBasis PhysFunctionalAnalysis PhysHSGaussian
+open PhysMeasureBasis PhysFunctionalAnalysis BookProof.ChapterG3.PhysHSGaussian
+open MeasureTheory Set ProbabilityTheory
+open scoped ENNReal
 
 /-- The abstract data of a **Kopperman formalism** on a carrier Hilbert space
     `H`: separability, a countable dense decidable skeleton, and an atomless

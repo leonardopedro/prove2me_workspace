@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Theorems.Thm_BookProof_ChapterMeasureAtomicDiffuse_exists_atomic_diffuse_decomposition
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_abelian_multiplication_model_general
+import Definitions.Def_ChapterAbelianDirectSum
 open BookProof.ChapterMeasureAtomicDiffuse
 
 

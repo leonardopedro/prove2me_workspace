@@ -26,6 +26,7 @@ variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A₂ : D₂ →ₗ[�
   (hext : ∀ v : D, A₂ ⟨(v : Hs.carrier), hle v.2⟩ = A v)
 
 set_option maxHeartbeats 1000000 in
+include hext hle in
 theorem solution (n : ℕ) (x : sectorCore Hs D₂ D n) :
     ∃ u : sectorDom Hs D n, (u : Hs.pow n) = (x : Hs.pow n) ∧
       sectorOp Hs D A n u =

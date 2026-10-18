@@ -37,6 +37,7 @@ variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.car
 variable (D₀ : Submodule ℂ Hs.carrier)
 
 set_option maxHeartbeats 1000000 in
+include hdense hesa hsym in
 theorem solution (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (fermionicProj Hs n) (sectorDom Hs D n))
       (fermionicSectorOp Hs D A n) :=

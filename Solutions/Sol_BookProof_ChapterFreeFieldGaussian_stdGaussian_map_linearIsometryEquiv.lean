@@ -5,7 +5,7 @@ open BookProof.ChapterFreeFieldGaussian
 
 
 
-open MeasureTheory ProbabilityTheory Complex WithLp
+open MeasureTheory Complex WithLp
 open scoped RealInnerProductSpace ENNReal
 
 

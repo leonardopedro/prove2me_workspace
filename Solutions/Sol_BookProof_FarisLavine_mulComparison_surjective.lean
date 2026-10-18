@@ -24,8 +24,7 @@ variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (lam : ℕ → ℝ) (g : L2Nat) :
-    ∃ x : mulSymbolDomain lam, (mulComparison lam x : L2Nat) + (x : L2Nat) = g :=
-  ∃ x : mulSymbolDomain lam, (mulComparison lam x : L2Nat) + (x : L2Nat) = g := by
+    ∃ x : mulSymbolDomain lam, (mulComparison lam x : L2Nat) + (x : L2Nat) = g := by
     have hpos : ∀ n, (0 : ℝ) < 1 + |lam n| := fun n => by positivity
     set fn : ℕ → ℂ := fun n => ((g : L2Nat) : ℕ → ℂ) n / ((1 + |lam n| : ℝ) : ℂ) with hfn
     have hle : ∀ n, ‖fn n‖ ≤ ‖((g : L2Nat) : ℕ → ℂ) n‖ := by

@@ -21,8 +21,7 @@ variable [CompleteSpace H]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {l : ℝ} (hl : l ≠ 0) (y z : H) :
-    ⟪((T.res l y : T.domain) : H), z⟫_ℂ = ⟪y, ((T.res (-l) z : T.domain) : H)⟫_ℂ :=
-  _ℂ = ⟪y, ((T.res (-l) z : T.domain) : H)⟫_ℂ := by
+    ⟪((T.res l y : T.domain) : H), z⟫_ℂ = ⟪y, ((T.res (-l) z : T.domain) : H)⟫_ℂ := by
     have hl' : -l ≠ 0 := neg_ne_zero.mpr hl
     set u : T.domain := T.res l y with hu
     set v : T.domain := T.res (-l) z with hv

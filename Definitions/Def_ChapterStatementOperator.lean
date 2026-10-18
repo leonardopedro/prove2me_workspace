@@ -42,6 +42,24 @@ Main results.
   statement evaluates every model to within `ε‖ψ‖²` of the true value.
 -/
 
+namespace BookProof.ChapterStatementOperator
+
+open ContinuousLinearMap
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+
+/-- A **statement** about the models collected in the Hilbert space `H`: an orthogonal
+projection, i.e. a self-adjoint idempotent bounded operator.  Its range is the subspace
+of models in which the statement holds. -/
+structure ModelStatement (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+    [CompleteSpace H] where
+  /-- The operator representing the statement. -/
+  op : H →L[ℂ] H
+  /-- The operator is self-adjoint. -/
+  isSelfAdjoint : IsSelfAdjoint op
+  /-- The operator is idempotent. -/
+  isIdempotent : op ∘L op = op
+
 namespace ModelStatement
 
 variable (S : ModelStatement H) (ψ : H)
@@ -89,7 +107,7 @@ def not (S : ModelStatement H) : ModelStatement H where
     have h : (1 - S.op) * (1 - S.op) = 1 - S.op - S.op + S.op * S.op := by noncomm_ring
     rw [h, hmul]; abel
 
-@[simp] theorem not_op : S.not.op = 1 - S.op := rfl
+
 
 
 
@@ -112,8 +130,7 @@ def and (S T : ModelStatement H) (hcomm : S.op ∘L T.op = T.op ∘L S.op) :
       _ = (S.op * S.op) * (T.op * T.op) := by noncomm_ring
       _ = S.op * T.op := by rw [hS, hT]
 
-@[simp] theorem and_op (S T : ModelStatement H) (hcomm : S.op ∘L T.op = T.op ∘L S.op) :
-    (S.and T hcomm).op = S.op ∘L T.op := rfl
+
 
 
 
@@ -171,8 +188,7 @@ noncomputable def halfUncertain : UncertainStatement H where
     rw [half_inner_eq]
     nlinarith [sq_nonneg ‖ψ‖]
 
-@[simp] theorem halfUncertain_op :
-    (halfUncertain (H := H)).op = (1 / 2 : ℂ) • (1 : H →L[ℂ] H) := rfl
+
 
 
 

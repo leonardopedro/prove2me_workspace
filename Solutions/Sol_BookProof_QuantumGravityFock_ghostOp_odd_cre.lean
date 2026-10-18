@@ -1,7 +1,6 @@
 -- Generated from ChapterQuantumGravityFock.lean — solution of BookProof.QuantumGravityFock.ghostOp_odd_cre
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityFock
-import Theorems.Thm_BookProof_QuantumGravityFock_fermGrade_fermCre
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesFockSpace
@@ -33,7 +32,7 @@ theorem solution (j : ℕ) (z : QGGraded) :
     qgGrade (ghostOp (fermCre j) z) = - ghostOp (fermCre j) (qgGrade z) := by
 
   induction z using TensorProduct.induction_on with
-  | zero => simp [qgGrade]
+  | zero => simp [qgGrade]; abel
   | tmul x y =>
       simp only [qgGrade, ghostOp_tmul, fermGrade_fermCre]
       rw [TensorProduct.tmul_neg]

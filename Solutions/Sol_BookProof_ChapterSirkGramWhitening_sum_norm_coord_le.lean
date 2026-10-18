@@ -18,8 +18,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℕ} (c : EuclideanSpace ℂ (Fin m)) :
-    ∑ i, ‖c i‖ ≤ Real.sqrt m * ‖c‖ :=
-  c i‖ ≤ Real.sqrt m * ‖c‖ := by
+    ∑ i, ‖c i‖ ≤ Real.sqrt m * ‖c‖ := by
     have h1 : (∑ i, ‖c i‖) ^ 2 ≤ (m : ℝ) * ∑ i, ‖c i‖ ^ 2 := by
       simpa using sq_sum_le_card_mul_sum_sq (s := (Finset.univ : Finset (Fin m)))
         (f := fun i => ‖c i‖)

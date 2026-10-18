@@ -18,8 +18,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (lpFiniteModes Conf) (dGammaOp col) :=
-  Op col) := by
+    SymmetricOn (lpFiniteModes Conf) (dGammaOp col) := by
     intro x y
     rw [coe_dGammaOp, coe_dGammaOp, coe_fockEquiv_symm x, coe_fockEquiv_symm y]
     exact inner_dGamma_symm h

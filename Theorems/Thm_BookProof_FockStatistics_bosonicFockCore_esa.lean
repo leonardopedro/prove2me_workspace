@@ -35,8 +35,8 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
   (D₀ : Submodule ℂ Hs.carrier)
 
+include hdense hesa hsym in
 theorem BookProof.FockStatistics.bosonicFockCore_esa (hcore : IsGraphCore D₀ A) :
     EssentiallySelfAdjointOn (bosonicFockCoreDom Hs D D₀) (bosonicFockCoreOp Hs D A D₀) := by sorry

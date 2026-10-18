@@ -29,8 +29,7 @@ theorem solution {R : Type*} [Fintype R]
     (h : ∀ x : Vd D, ∑ r : R, ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (f r)‖ ^ 2
       ≤ lam * ∑ r : R, ‖MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (g r)‖ ^ 2)
     (p : MvPolynomial (Fin D) ℂ) :
-    ∑ r : R, ‖pgLp (f r * p)‖ ^ 2 ≤ lam * ∑ r : R, ‖pgLp (g r * p)‖ ^ 2 :=
-  ∑ r : R, ‖pgLp (g r * p)‖ ^ 2 := by
+    ∑ r : R, ‖pgLp (f r * p)‖ ^ 2 ≤ lam * ∑ r : R, ‖pgLp (g r * p)‖ ^ 2 := by
     have hL : ∑ r : R, ‖pgLp (f r * p)‖ ^ 2
         = (gaussInt (∑ r : R, cpoly (f r * p) * (f r * p))).re := by
       rw [gaussInt_sum, Complex.re_sum]

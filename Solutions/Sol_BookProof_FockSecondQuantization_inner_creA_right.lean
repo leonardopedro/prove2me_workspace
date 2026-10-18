@@ -16,8 +16,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : ℕ) (u v : FockAlg) :
-    (inner ℂ (toLp u) (toLp (creA j v)) : ℂ) = inner ℂ (toLp (annA j u)) (toLp v) :=
-  toLp v) := by
+    (inner ℂ (toLp u) (toLp (creA j v)) : ℂ) = inner ℂ (toLp (annA j u)) (toLp v) := by
     have h := inner_creA_left j v u
     have := congrArg (starRingEnd ℂ) h
     rwa [inner_conj_symm, inner_conj_symm]

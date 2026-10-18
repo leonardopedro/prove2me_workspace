@@ -1,7 +1,6 @@
 -- Generated from ChapterScalarDGammaEsa.lean — solution of BookProof.ScalarDGamma.dGamma_scalar_essentiallySelfAdjointOn_fockCore
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
-import Theorems.Thm_BookProof_ScalarDGamma_isGraphCore_scalarOp
 import Theorems.Thm_BookProof_ScalarDGamma_essentiallySelfAdjointOn_fockSectorDom_scalar
 import Theorems.Thm_BookProof_SecondQuantizationCore_dGamma_essentiallySelfAdjointOn_fockCore
 import Definitions.Def_ChapterFarisLavine
@@ -9,6 +8,7 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.ScalarDGamma
 
 
@@ -18,6 +18,7 @@ open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

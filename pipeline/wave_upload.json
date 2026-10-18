@@ -9053,6 +9053,32 @@
     "navier-stokes",
     "koopman-von-neumann"
    ]
+  },
+  "ChapterLeafGaps": {
+   "definition_name": "ChapterLeafGaps",
+   "namespace": "BookProof",
+   "file": "Definitions/Def_ChapterLeafGaps.lean",
+   "title": "Leaf-gap declaration clusters",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgOuterFockCoreFL.lean` and siblings): the declaration clusters the published chapter bundles dropped by leaf selection (NavierStokesFlow ShiftData/IkebeKato/SignedShift/ThreeComponent, QgOuterFockCoreFL CoreData core-range approximations, YangMillsHermite transport, QuantumGravity3DGauge symmetric-operator helpers, ScalaronEsa and ScalaronWallEsa gap lemmas), re-carried in their original namespaces so dependent solutions can import them with one line.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgOuterFockCoreFL.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterKatoRellichDeficiencyCore": {
+   "definition_name": "ChapterKatoRellichDeficiencyCore",
+   "namespace": "BookProof.KatoRellich",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterKatoRellichDeficiencyCore.lean",
+   "title": "Bounded symmetric perturbations preserve essential self-adjointness",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.KatoRellichDeficiencyCore`, source chapter `BookProof/ChapterKatoRellichDeficiencyCore.lean`): Bounded symmetric perturbations preserve essential self-adjointness\n\nThis module proves the **Kato\u2013Rellich theorem** in the special case of a *bounded* symmetric perturbation, in the deficiency-space formulation used throughout this project (`BookProof.FarisLavine.EssentiallySelfAdjointOn`):\n\n> If `H` is symmetric on a domain `D` and essentially self-adjoint, and `B` is a bounded > everywhere-defined symmetric operator, then `H + B` is essentially self-adjoint on `D`.\n\nNo closure or spectral theory is needed. The proof is an explicit Neumann-series argument at the level of *finite* sums, which keeps every approximant inside the domain `D`:\n\n* For a symmetric `H` one has `\u2016H x - e i x\u2016 \u2265 |e| \u2016x\u2016` (`FarisLavine.norm_sub_smul_sq`), so an approximate solution of `(H - e i) x = v` has controlled norm. * Given `y`, solve `(H - e i) v\u2080 \u2248 y`, then `(H - e i) v\u2081 \u2248 -B v\u2080`, and so on. The partial sums `S\u2098 = v\u2080 + \u22ef + v_{m-1}` satisfy `(H + B - e i) S\u2098 \u2248 y - r\u2098` where the residuals `r\u2098` decay geometrically with ratio `\u2016B\u2016/|e| < 1`. * Hence the range of `H + B - e i` is dense whenever `|e| > \u2016B\u2016`, and this gives vanishing deficiency spaces at `\u00b1 e i`; the basic criterion `FarisLavine.deficiencyTrivialAt_of_dense_range` then propagates this to every non-real point, in particular to `\u00b1 i`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterKatoRellichDeficiencyCore.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
   }
  },
  "thms": {
@@ -144534,10 +144560,10 @@
   "BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain": {
    "name": "BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.domain_le_genDomain",
    "chapter": "ChapterStoneTheorem",
-   "file": "/home/leo/prove2me_workspace/Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain.lean",
+   "file": "Theorems/Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain.lean",
    "title": "The Lean 4 theorem `domain_le_genDomain` in the `ChapterStoneTheorem` chapter of the timepiece formalization",
-   "nl": "The Lean 4 theorem `domain_le_genDomain` in the `ChapterStoneTheorem` chapter of the timepiece formalization.",
-   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterStoneTheorem.lean",
+   "nl": "Formal statement of `BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.domain_le_genDomain` from the timepiece Lean 4 formalization: the domain of a self-adjoint operator is contained in the domain of the generator of its unitary group.",
+   "source": "https://github.com/leonardopedro/timepiece",
    "tags": [
     "timepiece",
     "formalization"
@@ -147879,6 +147905,402 @@
    "title": "The Lean 4 theorem `triple_swap'` in the `ChapterYangMillsAbelianEsa` chapter of the timepiece formalization",
    "nl": "The Lean 4 theorem `triple_swap'` in the `ChapterYangMillsAbelianEsa` chapter of the timepiece formalization.",
    "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsAbelianEsa.lean",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc": {
+   "name": "BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general_inc",
+   "chapter": "ChapterSpectralDirectSum",
+   "file": "Theorems/Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc.lean",
+   "ns": "BookProof.ChapterSpectralDirectSum",
+   "plen": 10,
+   "title": "`BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general_inc` : \u2203 (S : Set H) (mu : S \u2192 Measure (spectrum \u2102 T)) (V : \u2200 x : S, Lp \u2102 2 (mu x) \u2192\u2097\u1d62[\u2102] H), (\u2200 x : S, IsProb",
+   "nl": "Prove the following Lean 4 theorem from `ChapterSpectralDirectSum`.\n\n`BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general_inc` : \u2203 (S : Set H) (mu : S \u2192 Measure (spectrum \u2102 T)) (V : \u2200 x : S, Lp \u2102 2 (mu x) \u2192\u2097\u1d62[\u2102] H), (\u2200 x : S, IsProbabilityMeasure (mu x)) \u2227 IsHilbertSum \u2102 (fun x : S => Lp \u2102 2 (mu x)) V \u2227 (\u2200 (x : S) (u : Lp \u2102 2 (mu x)), V x (mulRep (mu x) (coordFn T) u) = T (V x u))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general_inc`.\n\nReplaces the retired node `BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_general`, whose stored statement omitted the `hT` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianCyclicCommutant_commutant_repSet_isCommutative_inc": {
+   "name": "BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative_inc",
+   "chapter": "ChapterAbelianCyclicCommutant",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianCyclicCommutant_commutant_repSet_isCommutative_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianCyclicCommutant_commutant_repSet_isCommutative_inc.lean",
+   "ns": "BookProof.ChapterAbelianCyclicCommutant",
+   "plen": 4,
+   "title": "`BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative_inc` {S R : H \u2192L[\u2102] H} (hS : S \u2208 (repSet pi).centralizer) (hR : R \u2208 (repSet pi).centralizer) : S * R = R * S",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianCyclicCommutant`.\n\n`BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative_inc` {S R : H \u2192L[\u2102] H} (hS : S \u2208 (repSet pi).centralizer) (hR : R \u2208 (repSet pi).centralizer) : S * R = R * S\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative_inc`.\n\nReplaces the retired node `BookProof.ChapterAbelianCyclicCommutant.commutant_repSet_isCommutative`, whose stored statement omitted the `hcyc` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianCyclicModel_cyclic_representation_multiplication_model_inc": {
+   "name": "BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model_inc",
+   "chapter": "ChapterAbelianCyclicModel",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianCyclicModel_cyclic_representation_multiplication_model_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianCyclicModel_cyclic_representation_multiplication_model_inc.lean",
+   "ns": "BookProof.ChapterAbelianCyclicModel",
+   "plen": 6,
+   "title": "`BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model_inc` (hxi : \u2016xi\u2016 = 1) : \u2203 (mu : Measure X) (_ : IsProbabilityMeasure mu) (U : Lp \u2102 2 mu \u2243\u2097\u1d62[\u2102] H), (\u2200 (g",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianCyclicModel`.\n\n`BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model_inc` (hxi : \u2016xi\u2016 = 1) : \u2203 (mu : Measure X) (_ : IsProbabilityMeasure mu) (U : Lp \u2102 2 mu \u2243\u2097\u1d62[\u2102] H), (\u2200 (g : C(X, \u2102)) (u : Lp \u2102 2 mu), U (mulRep mu g u) = pi g (U u)) \u2227 (\u2200 (g : C(X, \u2102)) (v : H), U.symm (pi g v) = mulRep mu g (U.symm v))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model_inc`.\n\nReplaces the retired node `BookProof.ChapterAbelianCyclicModel.cyclic_representation_multiplication_model`, whose stored statement omitted the `hcyc` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianGelfandModel_exists_probabilityMeasure_of_state_inc": {
+   "name": "BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state_inc",
+   "chapter": "ChapterAbelianGelfandModel",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianGelfandModel_exists_probabilityMeasure_of_state_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianGelfandModel_exists_probabilityMeasure_of_state_inc.lean",
+   "ns": "BookProof.ChapterAbelianGelfandModel",
+   "plen": 2,
+   "title": "`BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state_inc` (hone : psi 1 = 1) : \u2203 mu : Measure X, IsProbabilityMeasure mu \u2227 \u2200 g : C(X, \u2102), psi g = \u222b x, g x \u2202mu",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianGelfandModel`.\n\n`BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state_inc` (hone : psi 1 = 1) : \u2203 mu : Measure X, IsProbabilityMeasure mu \u2227 \u2200 g : C(X, \u2102), psi g = \u222b x, g x \u2202mu\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state_inc`.\n\nReplaces the retired node `BookProof.ChapterAbelianGelfandModel.exists_probabilityMeasure_of_state`, whose stored statement omitted the `hpos` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_BrstReducedTransfer_infDist_exactStates_eq_inc": {
+   "name": "BookProof.BrstReducedTransfer.infDist_exactStates_eq_inc",
+   "chapter": "ChapterBrstReducedTransfer",
+   "file": "Theorems/Thm_BookProof_BrstReducedTransfer_infDist_exactStates_eq_inc.lean",
+   "sol": "Solutions/Sol_BookProof_BrstReducedTransfer_infDist_exactStates_eq_inc.lean",
+   "ns": "BookProof.BrstReducedTransfer",
+   "plen": 18,
+   "title": "`BookProof.BrstReducedTransfer.infDist_exactStates_eq_inc` (hzero : \u2200 x : H, U 0 x = x) (hgroup : \u2200 (s t : \u211d) (x : H), U s (U t x) = U (s + t) x) (hisom : \u2200 (t : \u211d) (x : H), \u2016U t x\u2016 = ",
+   "nl": "Prove the following Lean 4 theorem from `ChapterBrstReducedTransfer`.\n\n`BookProof.BrstReducedTransfer.infDist_exactStates_eq_inc` (hzero : \u2200 x : H, U 0 x = x) (hgroup : \u2200 (s t : \u211d) (x : H), U s (U t x) = U (s + t) x) (hisom : \u2200 (t : \u211d) (x : H), \u2016U t x\u2016 = \u2016x\u2016) (t : \u211d) (x : H) : Metric.infDist (U t x) (exactStates Om) = Metric.infDist x (exactStates Om)\n\nFormalization note: Lean 4 identifier `BookProof.BrstReducedTransfer.infDist_exactStates_eq_inc`.\n\nReplaces the retired node `BookProof.BrstReducedTransfer.infDist_exactStates_eq`, whose stored statement omitted the `hcomm` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_BrstReducedTransfer_stoneU_mem_physicalStates_inc": {
+   "name": "BookProof.BrstReducedTransfer.stoneU_mem_physicalStates_inc",
+   "chapter": "ChapterBrstReducedTransfer",
+   "file": "Theorems/Thm_BookProof_BrstReducedTransfer_stoneU_mem_physicalStates_inc.lean",
+   "sol": "Solutions/Sol_BookProof_BrstReducedTransfer_stoneU_mem_physicalStates_inc.lean",
+   "ns": "BookProof.BrstReducedTransfer",
+   "plen": 1,
+   "title": "`BookProof.BrstReducedTransfer.stoneU_mem_physicalStates_inc` (t : \u211d) {x : H} (hx : x \u2208 physicalStates Om) : T.stoneU t x \u2208 physicalStates Om",
+   "nl": "Prove the following Lean 4 theorem from `ChapterBrstReducedTransfer`.\n\n`BookProof.BrstReducedTransfer.stoneU_mem_physicalStates_inc` (t : \u211d) {x : H} (hx : x \u2208 physicalStates Om) : T.stoneU t x \u2208 physicalStates Om\n\nFormalization note: Lean 4 identifier `BookProof.BrstReducedTransfer.stoneU_mem_physicalStates_inc`.\n\nReplaces the retired node `BookProof.BrstReducedTransfer.stoneU_mem_physicalStates`, whose stored statement omitted the `hcomm` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_BrstReducedTransfer_stoneU_sub_mem_exactStates_inc": {
+   "name": "BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates_inc",
+   "chapter": "ChapterBrstReducedTransfer",
+   "file": "Theorems/Thm_BookProof_BrstReducedTransfer_stoneU_sub_mem_exactStates_inc.lean",
+   "sol": "Solutions/Sol_BookProof_BrstReducedTransfer_stoneU_sub_mem_exactStates_inc.lean",
+   "ns": "BookProof.BrstReducedTransfer",
+   "plen": 2,
+   "title": "`BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates_inc` (t : \u211d) {x y : H} (h : x - y \u2208 exactStates Om) : T.stoneU t x - T.stoneU t y \u2208 exactStates Om",
+   "nl": "Prove the following Lean 4 theorem from `ChapterBrstReducedTransfer`.\n\n`BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates_inc` (t : \u211d) {x y : H} (h : x - y \u2208 exactStates Om) : T.stoneU t x - T.stoneU t y \u2208 exactStates Om\n\nFormalization note: Lean 4 identifier `BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates_inc`.\n\nReplaces the retired node `BookProof.BrstReducedTransfer.stoneU_sub_mem_exactStates`, whose stored statement omitted the `hcomm` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_BrstReducedTransfer_infDist_exactStates_stoneU_eq_inc": {
+   "name": "BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq_inc",
+   "chapter": "ChapterBrstReducedTransfer",
+   "file": "Theorems/Thm_BookProof_BrstReducedTransfer_infDist_exactStates_stoneU_eq_inc.lean",
+   "sol": "Solutions/Sol_BookProof_BrstReducedTransfer_infDist_exactStates_stoneU_eq_inc.lean",
+   "ns": "BookProof.BrstReducedTransfer",
+   "plen": 2,
+   "title": "`BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq_inc` (t : \u211d) (x : H) : Metric.infDist (T.stoneU t x) (exactStates Om) = Metric.infDist x (exactStates Om)",
+   "nl": "Prove the following Lean 4 theorem from `ChapterBrstReducedTransfer`.\n\n`BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq_inc` (t : \u211d) (x : H) : Metric.infDist (T.stoneU t x) (exactStates Om) = Metric.infDist x (exactStates Om)\n\nFormalization note: Lean 4 identifier `BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq_inc`.\n\nReplaces the retired node `BookProof.BrstReducedTransfer.infDist_exactStates_stoneU_eq`, whose stored statement omitted the `hcomm` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable_inc": {
+   "name": "BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable_inc",
+   "chapter": "ChapterSpectralDirectSum",
+   "file": "Theorems/Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable_inc.lean",
+   "ns": "BookProof.ChapterSpectralDirectSum",
+   "plen": 11,
+   "title": "`BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable_inc` [TopologicalSpace.SeparableSpace H] : \u2203 (S : Set H) (mu : S \u2192 Measure (spectrum \u2102 T)) (V : \u2200 x : S, Lp ",
+   "nl": "Prove the following Lean 4 theorem from `ChapterSpectralDirectSum`.\n\n`BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable_inc` [TopologicalSpace.SeparableSpace H] : \u2203 (S : Set H) (mu : S \u2192 Measure (spectrum \u2102 T)) (V : \u2200 x : S, Lp \u2102 2 (mu x) \u2192\u2097\u1d62[\u2102] H), S.Countable \u2227 (\u2200 x : S, IsProbabilityMeasure (mu x)) \u2227 IsHilbertSum \u2102 (fun x : S => Lp \u2102 2 (mu x)) V \u2227 (\u2200 (x : S) (u : Lp \u2102 2 (mu x)), V x (mulRep (mu x) (coordFn T) u) = T (V x u))\n\nFormalization note: Lean 4 identifier `BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable_inc`.\n\nReplaces the retired node `BookProof.ChapterSpectralDirectSum.spectral_multiplication_model_separable`, whose stored statement omitted the `hT` hypothesis binder (dropped `include`).",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_inc": {
+   "name": "BookProof.YangMillsFriedrichs.weylOpDom_quadForm_inc",
+   "chapter": "ChapterYangMillsFriedrichs",
+   "file": "Theorems/Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_inc.lean",
+   "title": "The Lean 4 theorem `weylOpDom_quadForm` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `weylOpDom_quadForm` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_YangMillsFriedrichs_weylOpDom_quadForm`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichs.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_inc.lean"
+  },
+  "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn_inc": {
+   "name": "BookProof.YangMillsFriedrichs.weylOpDom_symmetricOn_inc",
+   "chapter": "ChapterYangMillsFriedrichs",
+   "file": "Theorems/Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn_inc.lean",
+   "title": "The Lean 4 theorem `weylOpDom_symmetricOn` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `weylOpDom_symmetricOn` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichs.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn_inc.lean"
+  },
+  "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg_inc": {
+   "name": "BookProof.YangMillsFriedrichs.weylOpDom_quadForm_nonneg_inc",
+   "chapter": "ChapterYangMillsFriedrichs",
+   "file": "Theorems/Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg_inc.lean",
+   "title": "The Lean 4 theorem `weylOpDom_quadForm_nonneg` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `weylOpDom_quadForm_nonneg` in the `ChapterYangMillsFriedrichs` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterYangMillsFriedrichs.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg_inc.lean"
+  },
+  "BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general_inc": {
+   "name": "BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general_inc",
+   "chapter": "ChapterFreeFieldBornFiberCardGeneral",
+   "file": "Theorems/Thm_BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general_inc.lean",
+   "ns": "BookProof.ChapterFreeFieldBornFiberCardGeneral",
+   "plen": 3,
+   "title": "`BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general_inc` {p : \u21a5(stdSimplex \u211d (Fin n))} : Nat.card \u21a5(bornMapSphere n \u207b\u00b9' {p}) = 2 ^ (posSupport (p : Fin n \u2192 \u211d)).card",
+   "nl": "Prove the following Lean 4 theorem from `ChapterFreeFieldBornFiberCardGeneral`.\n\n`BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general_inc` {p : \u21a5(stdSimplex \u211d (Fin n))} : Nat.card \u21a5(bornMapSphere n \u207b\u00b9' {p}) = 2 ^ (posSupport (p : Fin n \u2192 \u211d)).card\n\nFormalization note: Lean 4 identifier `BookProof.ChapterFreeFieldBornFiberCardGeneral.bornFiber_card_general_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterFreeFieldBornFiberStabilizer_boolSign_pm_inc": {
+   "name": "BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm_inc",
+   "chapter": "ChapterFreeFieldBornFiberStabilizer",
+   "file": "Theorems/Thm_BookProof_ChapterFreeFieldBornFiberStabilizer_boolSign_pm_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterFreeFieldBornFiberStabilizer_boolSign_pm_inc.lean",
+   "ns": "BookProof.ChapterFreeFieldBornFiberStabilizer",
+   "plen": 1,
+   "title": "`BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm_inc` (b : Fin n \u2192 Bool) (k : Fin n) : boolSign b k = 1 \u2228 boolSign b k = -1",
+   "nl": "Prove the following Lean 4 theorem from `ChapterFreeFieldBornFiberStabilizer`.\n\n`BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm_inc` (b : Fin n \u2192 Bool) (k : Fin n) : boolSign b k = 1 \u2228 boolSign b k = -1\n\nFormalization note: Lean 4 identifier `BookProof.ChapterFreeFieldBornFiberStabilizer.boolSign_pm_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterFreeFieldBornFiberStabilizer_boolSign_pm`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab_inc": {
+   "name": "BookProof.ChapterFreeFieldBornFiberStabilizer.mem_signStab_inc",
+   "chapter": "ChapterFreeFieldBornFiberStabilizer",
+   "file": "Theorems/Thm_BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab_inc.lean",
+   "ns": "BookProof.ChapterFreeFieldBornFiberStabilizer",
+   "plen": 9,
+   "title": "`BookProof.ChapterFreeFieldBornFiberStabilizer.mem_signStab_inc` {x : EuclideanSpace \u211d (Fin n)} {b : Fin n \u2192 Bool} : b \u2208 signStab x \u2194 \u2200 k, x k \u2260 0 \u2192 b k = true",
+   "nl": "Prove the following Lean 4 theorem from `ChapterFreeFieldBornFiberStabilizer`.\n\n`BookProof.ChapterFreeFieldBornFiberStabilizer.mem_signStab_inc` {x : EuclideanSpace \u211d (Fin n)} {b : Fin n \u2192 Bool} : b \u2208 signStab x \u2194 \u2200 k, x k \u2260 0 \u2192 b k = true\n\nFormalization note: Lean 4 identifier `BookProof.ChapterFreeFieldBornFiberStabilizer.mem_signStab_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianClassificationList_atomSet_restrict_atomSet_inc": {
+   "name": "BookProof.ChapterAbelianClassificationList.atomSet_restrict_atomSet_inc",
+   "chapter": "ChapterAbelianClassificationList",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianClassificationList_atomSet_restrict_atomSet_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianClassificationList_atomSet_restrict_atomSet_inc.lean",
+   "ns": "BookProof.ChapterAbelianClassificationList",
+   "plen": 11,
+   "title": "`BookProof.ChapterAbelianClassificationList.atomSet_restrict_atomSet_inc` (mu : Measure \u03b1) [IsFiniteMeasure mu] : atomSet (mu.restrict (atomSet mu)) = atomSet mu",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianClassificationList`.\n\n`BookProof.ChapterAbelianClassificationList.atomSet_restrict_atomSet_inc` (mu : Measure \u03b1) [IsFiniteMeasure mu] : atomSet (mu.restrict (atomSet mu)) = atomSet mu\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianClassificationList.atomSet_restrict_atomSet_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterAbelianClassificationList_atomSet_restrict_atomSet`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianClassificationList_restrict_atomSet_pure_inc": {
+   "name": "BookProof.ChapterAbelianClassificationList.restrict_atomSet_pure_inc",
+   "chapter": "ChapterAbelianClassificationList",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianClassificationList_restrict_atomSet_pure_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianClassificationList_restrict_atomSet_pure_inc.lean",
+   "ns": "BookProof.ChapterAbelianClassificationList",
+   "plen": 3,
+   "title": "`BookProof.ChapterAbelianClassificationList.restrict_atomSet_pure_inc` (mu : Measure \u03b1) [IsFiniteMeasure mu] : (mu.restrict (atomSet mu)) (atomSet (mu.restrict (atomSet mu)))\u1d9c = 0",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianClassificationList`.\n\n`BookProof.ChapterAbelianClassificationList.restrict_atomSet_pure_inc` (mu : Measure \u03b1) [IsFiniteMeasure mu] : (mu.restrict (atomSet mu)) (atomSet (mu.restrict (atomSet mu)))\u1d9c = 0\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianClassificationList.restrict_atomSet_pure_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterAbelianClassificationList_restrict_atomSet_pure`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianClassificationList_isProbabilityMeasure_normalized_inc": {
+   "name": "BookProof.ChapterAbelianClassificationList.isProbabilityMeasure_normalized_inc",
+   "chapter": "ChapterAbelianClassificationList",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianClassificationList_isProbabilityMeasure_normalized_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianClassificationList_isProbabilityMeasure_normalized_inc.lean",
+   "ns": "BookProof.ChapterAbelianClassificationList",
+   "plen": 1,
+   "title": "`BookProof.ChapterAbelianClassificationList.isProbabilityMeasure_normalized_inc` (hne : nu Set.univ \u2260 0) : IsProbabilityMeasure (normalized nu)",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianClassificationList`.\n\n`BookProof.ChapterAbelianClassificationList.isProbabilityMeasure_normalized_inc` (hne : nu Set.univ \u2260 0) : IsProbabilityMeasure (normalized nu)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianClassificationList.isProbabilityMeasure_normalized_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterAbelianClassificationList_isProbabilityMeasure_normalized`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianClassificationList_diffuse_finite_multiplication_model_inc": {
+   "name": "BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model_inc",
+   "chapter": "ChapterAbelianClassificationList",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianClassificationList_diffuse_finite_multiplication_model_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianClassificationList_diffuse_finite_multiplication_model_inc.lean",
+   "ns": "BookProof.ChapterAbelianClassificationList",
+   "plen": 23,
+   "title": "`BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model_inc` (hne : nu Set.univ \u2260 0) : \u2203 U : Lp \u2102 2 (volume.restrict (Set.Icc (0 : \u211d) 1)) \u2243\u2097\u1d62[\u2102] Lp \u2102 2 nu, \u2200 (g",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianClassificationList`.\n\n`BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model_inc` (hne : nu Set.univ \u2260 0) : \u2203 U : Lp \u2102 2 (volume.restrict (Set.Icc (0 : \u211d) 1)) \u2243\u2097\u1d62[\u2102] Lp \u2102 2 nu, \u2200 (g : \u211d \u2192 \u2102) (hg : MemLp g \u22a4 (volume.restrict (Set.Icc (0 : \u211d) 1))) (u : Lp \u2102 2 (volume.restrict (Set.Icc (0 : \u211d) 1))), (U (multOp g hg u) : \u211d \u2192 \u2102) =\u1d50[nu] fun x => g (cdf (normalized nu) x) * (U u : \u211d \u2192 \u2102) x\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianClassificationList.diffuse_finite_multiplication_model_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterAbelianClassificationList_diffuse_finite_multiplication_model`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_ChapterAbelianClassificationList_abelian_summand_standard_model_inc": {
+   "name": "BookProof.ChapterAbelianClassificationList.abelian_summand_standard_model_inc",
+   "chapter": "ChapterAbelianClassificationList",
+   "file": "Theorems/Thm_BookProof_ChapterAbelianClassificationList_abelian_summand_standard_model_inc.lean",
+   "sol": "Solutions/Sol_BookProof_ChapterAbelianClassificationList_abelian_summand_standard_model_inc.lean",
+   "ns": "BookProof.ChapterAbelianClassificationList",
+   "plen": 8,
+   "title": "`BookProof.ChapterAbelianClassificationList.abelian_summand_standard_model_inc` : (IsHilbertSum \u2102 (fun b : Bool => Lp \u2102 2 (mu.restrict (splitSet (atomSet mu) b))) (splitEmbed (measurab",
+   "nl": "Prove the following Lean 4 theorem from `ChapterAbelianClassificationList`.\n\n`BookProof.ChapterAbelianClassificationList.abelian_summand_standard_model_inc` : (IsHilbertSum \u2102 (fun b : Bool => Lp \u2102 2 (mu.restrict (splitSet (atomSet mu) b))) (splitEmbed (measurableSet_atomSet mu))) \u2227 (\u2200 (b : Bool) (g : \u211d \u2192 \u2102) (hg : MemLp g \u22a4 mu) (u : Lp \u2102 2 (mu.restrict (splitSet (atomSet mu) b))), splitEmbed (measurableSet_atomSet mu) b (multOp g (hg.restrict _) u) = multOp g hg (splitEmbed (measurableSet_atomSet mu) b u)) \u2227 (\u2203 B : HilbertBasis (atomSet (mu.restrict (atomSet mu))) \u2102 (Lp \u2102 2 (mu.restrict (atomSet mu))), \u2200 (g : \u211d \u2192 \u2102) (hg : MemLp g \u22a4 (mu.restrict (atomSet mu))) (a : atomSet (mu.restrict (atomSet mu))), multOp g hg (B a) = g (a : \u211d) \u2022 B a) \u2227 (mu (atomSet mu)\u1d9c \u2260 0 \u2192 \u2203 U : Lp \u2102 2 (volume.restrict (Set.Icc (0 : \u211d) 1)) \u2243\u2097\u1d62[\u2102] Lp \u2102 2 (mu.restrict (atomSet mu)\u1d9c), \u2200 (g : \u211d \u2192 \u2102) (hg : MemLp g \u22a4 (volume.restrict (Set.Icc (0 : \u211d) 1))) (u : Lp \u2102 2 (volume.restrict (Set.Icc (0 : \u211d) 1))), (U (multOp g hg u) : \u211d \u2192 \u2102) =\u1d50[mu.restrict (atomSet mu)\u1d9c] fun x => g (cdf (normalized (mu.restrict (atomSet mu)\u1d9c)) x) * (U u : \u211d \u2192 \u2102) x)\n\nFormalization note: Lean 4 identifier `BookProof.ChapterAbelianClassificationList.abelian_summand_standard_model_inc`.\n\nReplaces the unuploadable node `BookProof_ChapterAbelianClassificationList_abelian_summand_standard_model`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_tendsto_trunc_inc": {
+   "name": "BookProof.CoreBounds.tendsto_trunc_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_tendsto_trunc_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_tendsto_trunc_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 5,
+   "title": "`BookProof.CoreBounds.tendsto_trunc_inc` [DecidableEq \u03b9] (c : \u03b9 \u2192 \u211d) (x : maxDom c) : Tendsto (fun S : Finset \u03b9 => ((trunc c x S : lpFiniteModes \u03b9) : L2I \u03b9)) atTop (\ud835\udcdd ((x : L2I \u03b9)))",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.tendsto_trunc_inc` [DecidableEq \u03b9] (c : \u03b9 \u2192 \u211d) (x : maxDom c) : Tendsto (fun S : Finset \u03b9 => ((trunc c x S : lpFiniteModes \u03b9) : L2I \u03b9)) atTop (\ud835\udcdd ((x : L2I \u03b9)))\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.tendsto_trunc_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_tendsto_trunc`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_coreExt_core_inc": {
+   "name": "BookProof.CoreBounds.coreExt_core_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_coreExt_core_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_coreExt_core_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 17,
+   "title": "`BookProof.CoreBounds.coreExt_core_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (u : lpFiniteModes \u03b9) : coreExtFun c H\u2080 (inclC",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.coreExt_core_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (u : lpFiniteModes \u03b9) : coreExtFun c H\u2080 (inclC c u) = H\u2080 u\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.coreExt_core_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_coreExt_core`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_norm_coreExt_le_inc": {
+   "name": "BookProof.CoreBounds.norm_coreExt_le_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_norm_coreExt_le_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_norm_coreExt_le_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 6,
+   "title": "`BookProof.CoreBounds.norm_coreExt_le_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (x : maxDom c) : \u2016coreExt hA x\u2016 \u2264 A * \u2016(dia",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.norm_coreExt_le_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (x : maxDom c) : \u2016coreExt hA x\u2016 \u2264 A * \u2016(diagMax c x : L2I \u03b9)\u2016\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.norm_coreExt_le_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_norm_coreExt_le`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_coreExt_symmetricOn_inc": {
+   "name": "BookProof.CoreBounds.coreExt_symmetricOn_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_coreExt_symmetricOn_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_coreExt_symmetricOn_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 11,
+   "title": "`BookProof.CoreBounds.coreExt_symmetricOn_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (hsym : \u2200 u v : lpFiniteModes \u03b9, (inner",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.coreExt_symmetricOn_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A : \u211d} (hA : CoreRelBound c H\u2080 A) (hsym : \u2200 u v : lpFiniteModes \u03b9, (inner \u2102 (H\u2080 u) ((v : L2I \u03b9)) : \u2102) = inner \u2102 ((u : L2I \u03b9)) (H\u2080 v)) : SymmetricOn (maxDom c) (coreExt hA)\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.coreExt_symmetricOn_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_coreExt_symmetricOn`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_coreExt_commForm_le_inc": {
+   "name": "BookProof.CoreBounds.coreExt_commForm_le_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_coreExt_commForm_le_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_coreExt_commForm_le_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 15,
+   "title": "`BookProof.CoreBounds.coreExt_commForm_le_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A B : \u211d} (hA : CoreRelBound c H\u2080 A) (hcomm : \u2200 u : lpFiniteModes \u03b9, |(-2 ",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.coreExt_commForm_le_inc` [DecidableEq \u03b9] {c : \u03b9 \u2192 \u211d} {H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9} {A B : \u211d} (hA : CoreRelBound c H\u2080 A) (hcomm : \u2200 u : lpFiniteModes \u03b9, |(-2 : \u211d) * (inner \u2102 (H\u2080 u) ((diagMax c (inclC c u) : L2I \u03b9)) : \u2102).im| \u2264 B * (inner \u2102 ((u : L2I \u03b9)) ((diagMax c (inclC c u) : L2I \u03b9)) : \u2102).re) (x : maxDom c) : |commForm (coreExt hA) (diagMax c) x| \u2264 B * quadForm (diagMax c) x\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.coreExt_commForm_le_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_coreExt_commForm_le`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc": {
+   "name": "BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 6,
+   "title": "`BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc` (c : \u03b9 \u2192 \u211d) (hc : \u2200 k, 0 \u2264 c k) (H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9) (A B : \u211d) (hB : 0 \u2264 B) (hsym : \u2200 u v :",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc` (c : \u03b9 \u2192 \u211d) (hc : \u2200 k, 0 \u2264 c k) (H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9) (A B : \u211d) (hB : 0 \u2264 B) (hsym : \u2200 u v : lpFiniteModes \u03b9, (inner \u2102 (H\u2080 u) ((v : L2I \u03b9)) : \u2102) = inner \u2102 ((u : L2I \u03b9)) (H\u2080 v)) (hA : CoreRelBound c H\u2080 A) (hcomm : \u2200 u : lpFiniteModes \u03b9, |(-2 : \u211d) * (inner \u2102 (H\u2080 u) ((diagMax c (inclC c u) : L2I \u03b9)) : \u2102).im| \u2264 B * (inner \u2102 ((u : L2I \u03b9)) ((diagMax c (inclC c u) : L2I \u03b9)) : \u2102).re) : EssentiallySelfAdjointOn (lpFiniteModes \u03b9) H\u2080\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc": {
+   "name": "BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc",
+   "chapter": "ChapterCoreBoundsEsa",
+   "file": "Theorems/Thm_BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc.lean",
+   "sol": "Solutions/Sol_BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc.lean",
+   "ns": "BookProof.CoreBounds",
+   "plen": 4,
+   "title": "`BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc` (c : \u03b9 \u2192 \u211d) (hc : \u2200 k, 0 \u2264 c k) (H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9) (A : \u211d) (hsym : \u2200 u v : lpFiniteM",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCoreBoundsEsa`.\n\n`BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc` (c : \u03b9 \u2192 \u211d) (hc : \u2200 k, 0 \u2264 c k) (H\u2080 : lpFiniteModes \u03b9 \u2192\u2097[\u2102] L2I \u03b9) (A : \u211d) (hsym : \u2200 u v : lpFiniteModes \u03b9, (inner \u2102 (H\u2080 u) ((v : L2I \u03b9)) : \u2102) = inner \u2102 ((u : L2I \u03b9)) (H\u2080 v)) (hA : CoreRelBound c H\u2080 A) (hcomm : \u2200 u : lpFiniteModes \u03b9, (inner \u2102 (H\u2080 u) ((diagMax c (inclC c u) : L2I \u03b9)) : \u2102).im = 0) : EssentiallySelfAdjointOn (lpFiniteModes \u03b9) H\u2080\n\nFormalization note: Lean 4 identifier `BookProof.CoreBounds.essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc`.\n\nReplaces the unuploadable node `BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "",
    "tags": [
     "timepiece",
     "theorems"
@@ -157701,6 +158123,33 @@
   "BookProof_NavierStokesFlow_SignedShift_listH_cons",
   "BookProof_NavierStokesFlow_SignedShift_listH_nil",
   "BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow_prime",
-  "BookProof_YangMillsAbelianEsa_triple_swap_prime"
+  "BookProof_YangMillsAbelianEsa_triple_swap_prime",
+  "BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc",
+  "BookProof_ChapterAbelianCyclicCommutant_commutant_repSet_isCommutative_inc",
+  "BookProof_ChapterAbelianCyclicModel_cyclic_representation_multiplication_model_inc",
+  "BookProof_ChapterAbelianGelfandModel_exists_probabilityMeasure_of_state_inc",
+  "BookProof_BrstReducedTransfer_infDist_exactStates_eq_inc",
+  "BookProof_BrstReducedTransfer_stoneU_mem_physicalStates_inc",
+  "BookProof_BrstReducedTransfer_stoneU_sub_mem_exactStates_inc",
+  "BookProof_BrstReducedTransfer_infDist_exactStates_stoneU_eq_inc",
+  "BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable_inc",
+  "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_inc",
+  "BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn_inc",
+  "BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg_inc",
+  "BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general_inc",
+  "BookProof_ChapterFreeFieldBornFiberStabilizer_boolSign_pm_inc",
+  "BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab_inc",
+  "BookProof_ChapterAbelianClassificationList_atomSet_restrict_atomSet_inc",
+  "BookProof_ChapterAbelianClassificationList_restrict_atomSet_pure_inc",
+  "BookProof_ChapterAbelianClassificationList_isProbabilityMeasure_normalized_inc",
+  "BookProof_ChapterAbelianClassificationList_diffuse_finite_multiplication_model_inc",
+  "BookProof_ChapterAbelianClassificationList_abelian_summand_standard_model_inc",
+  "BookProof_CoreBounds_tendsto_trunc_inc",
+  "BookProof_CoreBounds_coreExt_core_inc",
+  "BookProof_CoreBounds_norm_coreExt_le_inc",
+  "BookProof_CoreBounds_coreExt_symmetricOn_inc",
+  "BookProof_CoreBounds_coreExt_commForm_le_inc",
+  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc",
+  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc"
  ]
 }

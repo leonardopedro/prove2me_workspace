@@ -21,8 +21,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {T : D →ₗ[ℂ] F} {ι : Type*} {l : Filter ι} [l.NeBot]
     {x : ι → clDom T} {p q : F}
     (hx : Tendsto (fun n => ((x n : F))) l (nhds p))
-    (hA : Tendsto (fun n => clFun T (x n)) l (nhds q)) : (p, q) ∈ clGraph T :=
-  s q)) : (p, q) ∈ clGraph T := by
+    (hA : Tendsto (fun n => clFun T (x n)) l (nhds q)) : (p, q) ∈ clGraph T := by
     have hprod : Tendsto (fun n => (((x n : F)), clFun T (x n))) l (nhds (p, q)) :=
       hx.prodMk_nhds hA
     exact (clGraph_isClosed T).mem_of_tendsto hprod

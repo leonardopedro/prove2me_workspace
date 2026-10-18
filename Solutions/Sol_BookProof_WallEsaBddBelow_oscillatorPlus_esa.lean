@@ -30,7 +30,7 @@ theorem solution (V : ℝ → ℝ) (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop 
     EssentiallySelfAdjointOn (ccDomain ℝ)
       (wallHam (fun x => x ^ 2 / 4 + V x)
         (((contDiff_id.pow 2).div_const 4).add hV)) :=
-   V x)
-          (((contDiff_id.pow 2).div_const 4).add hV)) :=
-    wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (c := c) fun x => by
-      have h1 : (0 : ℝ) ≤ x
+  wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (c := c) fun x => by
+    have h1 : (0 : ℝ) ≤ x ^ 2 / 4 := by positivity
+    have h2 := hVc x
+    linarith

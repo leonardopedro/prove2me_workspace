@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWignerSymmetry
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_sum_triple
 import Theorems.Thm_BookProof_ChapterWignerSymmetry_S_zero
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.ChapterWignerSymmetry
 
 

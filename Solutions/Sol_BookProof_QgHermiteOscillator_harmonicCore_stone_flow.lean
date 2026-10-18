@@ -25,7 +25,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
-open BookProof.QgOuterFockFL
+open BookProof.QgOuterFockFL hiding harmCore
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

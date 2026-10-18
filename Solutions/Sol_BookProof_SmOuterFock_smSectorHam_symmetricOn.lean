@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSmOuterFock
 import Theorems.Thm_BookProof_SmOuterFock_smSecPi_symmetricOn
 import Theorems.Thm_BookProof_SmOuterFock_smSecField_symmetricOn
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_symmetricOn
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFarisLavine

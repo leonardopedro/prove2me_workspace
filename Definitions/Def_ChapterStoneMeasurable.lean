@@ -1,6 +1,17 @@
+import Mathlib
+import Mathlib
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterStoneEvolution
 import Definitions.Def_ChapterStoneGenerator
+import Definitions.Def_ChapterStoneGroup
+import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterUnitaryTransport
+
 import Mathlib
 
+import Mathlib
 
 /-!
 # The general Stone theorem, part VI: weak measurability implies strong continuity
@@ -17,21 +28,55 @@ quantitative estimate `‖U s x_a - x_a‖ ≤ 2 |s| ‖x‖`, and shows that th
 span a dense subspace — this is the step that uses separability.
 -/
 
+open scoped InnerProductSpace
+open Filter Topology MeasureTheory
+
+namespace BookProof.ChapterStoneMeasurable
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+
+
+
+/-- A **weakly measurable one-parameter unitary group** on a complex Hilbert space. -/
+structure WeakMeasurableUnitaryGroup (H : Type*) [NormedAddCommGroup H]
+    [InnerProductSpace ℂ H] where
+  /-- The family of operators. -/
+  U : ℝ → (H →L[ℂ] H)
+  /-- The value at `0` is the identity. -/
+  map_zero : U 0 = 1
+  /-- The one-parameter group law. -/
+  map_add : ∀ s t, U (s + t) = U s * U t
+  /-- Every `U t` is isometric. -/
+  norm_map : ∀ t x, ‖U t x‖ = ‖x‖
+  /-- Weak measurability. -/
+  weaklyMeasurable : ∀ x y : H, Measurable fun t => ⟪ y, U t x ⟫_ℂ
+
 namespace WeakMeasurableUnitaryGroup
 
 variable (G : WeakMeasurableUnitaryGroup H)
+
+/-- If `‖⟪y, y⟫‖ ≤ C ‖y‖` with `C ≥ 0`, then `‖y‖ ≤ C`. -/
+theorem norm_le_of_inner_self_bound {y : H} {C : ℝ} (hC : 0 ≤ C)
+    (h : ‖⟪y, y⟫_ℂ‖ ≤ C * ‖y‖) : ‖y‖ ≤ C := by
+  have hn : ‖⟪y, y⟫_ℂ‖ = ‖y‖ * ‖y‖ := by
+    rw [inner_self_eq_norm_sq_to_K]
+    simp [sq]
+  rw [hn] at h
+  rcases eq_or_lt_of_le (norm_nonneg y) with h0 | h0
+  · rw [← h0]; exact hC
+  · exact le_of_mul_le_mul_right (by linarith) h0
 
 /-- Each `U t` is a linear isometry. -/
 noncomputable def isom (t : ℝ) : H →ₗᵢ[ℂ] H :=
   ⟨(G.U t : H →ₗ[ℂ] H), G.norm_map t⟩
 
-theorem inner_map_map (t : ℝ) (x y : H) : ⟪ G.U t x, G.U t y ⟫_ℂ = ⟪ x, y ⟫_ℂ :=
-  (G.isom t).inner_map_map x y
-
 theorem apply_apply (s t : ℝ) (x : H) : G.U s (G.U t x) = G.U (s + t) x := by
   rw [G.map_add]; rfl
 
 @[simp] theorem apply_zero (x : H) : G.U 0 x = x := by rw [G.map_zero]; rfl
+
+theorem inner_map_map (t : ℝ) (x y : H) : ⟪ G.U t x, G.U t y ⟫_ℂ = ⟪ x, y ⟫_ℂ :=
+  (G.isom t).inner_map_map x y
 
 theorem surjective (t : ℝ) : Function.Surjective (G.U t) := by
   intro y
@@ -39,14 +84,15 @@ theorem surjective (t : ℝ) : Function.Surjective (G.U t) := by
   rw [G.apply_apply]
   simp
 
-/-- The unitary `U t` may be moved from one side of the inner product to the other. -/
-theorem inner_left_shift (s t : ℝ) (x y : H) :
-    ⟪ y, G.U s (G.U t x) ⟫_ℂ = ⟪ G.U (-s) y, G.U t x ⟫_ℂ := by
-  have h := G.inner_map_map s (G.U (-s) y) (G.U t x)
-  rw [G.apply_apply] at h
-  simp only [add_neg_cancel] at h
-  rw [G.apply_zero] at h
-  rw [← h]
+
+
+
+
+
+
+
+
+
 
 theorem norm_inner_le (t : ℝ) (x y : H) : ‖⟪ y, G.U t x ⟫_ℂ‖ ≤ ‖y‖ * ‖x‖ := by
   calc ‖⟪ y, G.U t x ⟫_ℂ‖ ≤ ‖y‖ * ‖G.U t x‖ := norm_inner_le_norm _ _
@@ -98,7 +144,7 @@ noncomputable def avgFunctional (x : H) (a : ℝ) : H →L[ℂ] ℂ :=
 
 /-- The averaged vector `x_a = ∫₀ᵃ U t x dt`, defined weakly. -/
 noncomputable def avgVec [CompleteSpace H] (x : H) (a : ℝ) : H :=
-  (InnerProductSpace.toDual ℂ H).symm (G.avgFunctional x a)
+   (InnerProductSpace.toDual ℂ H).symm (G.avgFunctional x a)
 
 theorem inner_avgVec [CompleteSpace H] (x : H) (a : ℝ) (y : H) :
     ⟪ y, G.avgVec x a ⟫_ℂ = ∫ t in (0 : ℝ)..a, ⟪ y, G.U t x ⟫_ℂ := by
@@ -174,6 +220,20 @@ theorem tendsto_apply_avgVec [CompleteSpace H] (x : H) (a : ℝ) :
     have hcont : Continuous (fun s : ℝ => 2 * |s| * ‖x‖) := by fun_prop
     simpa using hcont.tendsto 0
   exact squeeze_zero (fun s => norm_nonneg _) (fun s => G.norm_apply_avgVec_sub_le s a x) hbd
+
+
+
+/-! ## The estimate `‖U s x_a - x_a‖ ≤ 2 |s| ‖x‖` -/
+
+
+
+
+
+
+
+
+
+
 
 /-! ## The set of strong-continuity vectors -/
 
@@ -291,13 +351,8 @@ theorem avgSpan_orthogonal_eq_bot [CompleteSpace H] [TopologicalSpace.SeparableS
 
 theorem dense_avgSpan [CompleteSpace H] [TopologicalSpace.SeparableSpace H] :
     Dense (G.avgSpan : Set H) := by
-  have h : G.avgSpan.topologicalClosure = ⊤ :=
-    Submodule.topologicalClosure_eq_top_iff.mpr G.avgSpan_orthogonal_eq_bot
-  rw [dense_iff_closure_eq]
-  have := congrArg (fun K : Submodule ℂ H => (K : Set H)) h
-  have h2 : (G.avgSpan.topologicalClosure : Set H) = closure (G.avgSpan : Set H) := rfl
-  rw [h2] at this
-  simpa using this
+  rw [Submodule.dense_iff_topologicalClosure_eq_top]
+  exact Submodule.topologicalClosure_eq_top_iff.mpr G.avgSpan_orthogonal_eq_bot
 
 /-! ## Von Neumann's theorem: weak measurability implies strong continuity -/
 
@@ -337,6 +392,24 @@ theorem continuous_apply [CompleteSpace H] [TopologicalSpace.SeparableSpace H] (
   simp only [Function.comp_apply]
   rw [G.apply_apply]
   ring_nf
+
+
+
+/-! ## Separability: the averaged vectors span a dense subspace -/
+
+
+
+
+
+
+
+
+
+/-! ## Von Neumann's theorem: weak measurability implies strong continuity -/
+
+
+
+
 
 end WeakMeasurableUnitaryGroup
 

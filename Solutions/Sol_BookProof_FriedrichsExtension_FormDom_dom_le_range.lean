@@ -19,7 +19,6 @@ variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F) :
-    P.dom ≤ LinearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) :=
-  nearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by
+    P.dom ≤ LinearMap.range (friedrichsResolvent P : F →ₗ[ℂ] F) := by
     intro v hv
     exact ⟨(v : F) + P.op

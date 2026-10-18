@@ -35,6 +35,5 @@ theorem solution {F : Type*} [NormedAddCommGroup F]
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A'' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A'' γ R →
           Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'),
-            A'' ⟨x, hx'⟩ = A' ⟨x, hx⟩) :=
-   hx⟩) :=
+            A'' ⟨x, hx'⟩ = A' ⟨x, hx⟩) := by
     dGamma_hashimoto_selects ε (isHermCol_opCol hA) (isPosCol_opCol h

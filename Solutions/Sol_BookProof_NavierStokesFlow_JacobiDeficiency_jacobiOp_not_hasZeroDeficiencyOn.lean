@@ -15,7 +15,6 @@ open scoped ENNReal
 
 set_option maxHeartbeats 1000000 in
 theorem solution :
-    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp :=
-  acobiOp := by
+    ¬ HasZeroDeficiencyOn (lpFiniteModes ℕ) jacobiOp := by
     intro hzero
     exact defState_ne_zero (hzero.1 defState fun v => defState_defic

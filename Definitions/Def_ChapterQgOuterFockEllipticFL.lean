@@ -24,6 +24,7 @@ import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
 
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsExtension

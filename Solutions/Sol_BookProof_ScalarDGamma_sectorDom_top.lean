@@ -1,7 +1,6 @@
 -- Generated from ChapterScalarDGammaEsa.lean — solution of BookProof.ScalarDGamma.sectorDom_top
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
-import Theorems.Thm_BookProof_ScalarDGamma_inclPow_top_surjective
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore

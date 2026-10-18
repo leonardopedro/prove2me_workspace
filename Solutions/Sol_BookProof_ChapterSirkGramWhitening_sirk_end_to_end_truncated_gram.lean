@@ -39,8 +39,7 @@ theorem solution {m d : ℕ} (w : Fin m → E)
     ‖flow (synthesis w c)
         - BookProof.ChapterSirkEndToEnd.sirkApprox V psiB (synthesis w c)‖
       ≤ BookProof.ChapterH6.sirkBound C Dmin hrate ‖synthesis w c‖ k
-        + ‖rX‖ * (delta * (Real.sqrt m * ‖c‖)) :=
-  delta * (Real.sqrt m * ‖c‖)) := by
+        + ‖rX‖ * (delta * (Real.sqrt m * ‖c‖)) := by
     have hbase := BookProof.ChapterSirkTruncation.sirk_end_to_end_truncated V rX rB flow psiX
       psiB C Dmin hrate k hViso hVadj hflow hcx1 hcx2 (synthesis w c) hexact hproj
     refine hbase.trans ?_

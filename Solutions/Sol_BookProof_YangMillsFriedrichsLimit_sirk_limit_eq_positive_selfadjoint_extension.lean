@@ -25,8 +25,7 @@ theorem solution [CompleteSpace F] {D : Submodule ℂ F}
           Filter.atTop (nhds (A u)))
         ∧ ∀ B : F →L[ℂ] F,
             (∀ x ∈ (⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F), A x = B x) →
-            A = B) :=
-  B) := by
+            A = B) := by
     obtain ⟨A, hagree, hext⟩ := friedrichs_of_bounded H hdenseD hsym hpos C hbd
     exact ⟨A, hagree, hext, fun hcyc =>
       ⟨fun u => sirk_compression_tendsto A v hcyc u, fun B hB => sirk_limit_unique A B v hcyc hB⟩

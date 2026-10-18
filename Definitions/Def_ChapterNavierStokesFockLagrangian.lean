@@ -2,6 +2,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_d
 
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_hFull_isSymmetricDom
 import Mathlib
 import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_memLp_conj
 
@@ -841,3 +842,4 @@ end LagSymbols
 end FockLagrangian
 
 end BookProof.NavierStokesFlow
+

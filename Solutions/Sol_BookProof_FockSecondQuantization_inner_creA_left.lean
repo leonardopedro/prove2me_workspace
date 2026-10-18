@@ -23,8 +23,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : ℕ) (u v : FockAlg) :
-    (inner ℂ (toLp (creA j u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (annA j v)) :=
-  A j v)) := by
+    (inner ℂ (toLp (creA j u)) (toLp v) : ℂ) = inner ℂ (toLp u) (toLp (annA j v)) := by
     rw [inner_toLp_of_subset (support_creA j u) v, inner_toLp u (annA j v),
       Finset.sum_image (fun x _ y _ h => up_injective j h)]
     refine Finset.sum_congr rfl fun β _ => ?_

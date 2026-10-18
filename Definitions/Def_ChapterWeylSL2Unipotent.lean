@@ -342,9 +342,7 @@ theorem expSum_extend {A : Module.End ℂ V} {N m : ℕ} (hnil : A ^ N = 0) (hNm
     rw [show k = N + (k - N) by omega, pow_add, hnil, zero_mul]
   rw [this, smul_zero]
 
-theorem expSum_pow_eq_zero {A : Module.End ℂ V} {N m : ℕ} (hnil : A ^ N = 0) (hNm : N ≤ m) :
-    A ^ m = 0 := by
-  rw [show m = N + (m - N) by omega, pow_add, hnil, zero_mul]
+
 
 /-! ### The polynomials -/
 
@@ -858,23 +856,7 @@ noncomputable def sl2OfUnipotent (h : IsUnipotentExp rho E F N) : Sl2Rep V where
 
 /-! ### The hypothesis is satisfiable: the defining representation -/
 
-/-- The defining representation of `SL(2,ℂ)` on `ℂ²` is unipotent of order `2`, so the
-hypothesis of `weyl_complete_reducibility_SL2_unipotent` is not vacuous. -/
-theorem isUnipotentExp_stdRep :
-    IsUnipotentExp stdRep (Matrix.toLin' eMat) (Matrix.toLin' fMat) 2 where
-  two_le := le_rfl
-  nilpotent_E := by
-    have hm : eMat * eMat = 0 := by
-      ext i j
-      fin_cases i <;> fin_cases j <;> simp [eMat]
-    rw [pow_two, Module.End.mul_eq_comp, ← Matrix.toLin'_mul, hm, map_zero]
-  nilpotent_F := by
-    have hm : fMat * fMat = 0 := by
-      ext i j
-      fin_cases i <;> fin_cases j <;> simp [fMat]
-    rw [pow_two, Module.End.mul_eq_comp, ← Matrix.toLin'_mul, hm, map_zero]
-  expE t := isExpOfSl2_stdRep.expE t
-  expF t := isExpOfSl2_stdRep.expF t
+
 
 end Unipotent
 

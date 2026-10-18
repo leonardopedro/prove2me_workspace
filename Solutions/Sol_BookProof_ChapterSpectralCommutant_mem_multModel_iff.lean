@@ -1,8 +1,6 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.mem_multModel_iff
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_conjSpectral_conjSpectralSymm
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_conjSpectralSymm_conjSpectral
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Definitions.Def_ChapterAbelianGelfandModel

@@ -18,8 +18,7 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 set_option maxHeartbeats 1000000 in
 theorem solution (U Om : E →L[ℂ] E) (hcomm : Om.comp U = U.comp Om) (n : ℕ) :
-    Om.comp (U ^ n) = (U ^ n).comp Om :=
-  ^ n).comp Om := by
+    Om.comp (U ^ n) = (U ^ n).comp Om := by
     induction n with
     | zero => ext w; simp
     | succ n ih =>

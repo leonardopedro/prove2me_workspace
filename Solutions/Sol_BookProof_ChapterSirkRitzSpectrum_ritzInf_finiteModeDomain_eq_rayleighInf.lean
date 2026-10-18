@@ -23,8 +23,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 set_option maxHeartbeats 1000000 in
 theorem solution [Nontrivial F] (A : F →L[ℂ] F)
     (b : HilbertBasis ℕ ℂ F) :
-    ritzInf (finiteModeRestrict A b) (finiteModeDomain b) = rayleighInf A :=
-   b) = rayleighInf A := by
+    ritzInf (finiteModeRestrict A b) (finiteModeDomain b) = rayleighInf A := by
     refine le_antisymm ?_ ?_
     · refine le_csInf (rayleighSet_nonempty A) ?_
       rintro t ⟨x, hx1, rfl⟩

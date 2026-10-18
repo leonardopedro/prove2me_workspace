@@ -1,7 +1,6 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.bicommutant_multAlgebra
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_centralizer_multAlgebra
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Definitions.Def_ChapterAbelianGelfandModel

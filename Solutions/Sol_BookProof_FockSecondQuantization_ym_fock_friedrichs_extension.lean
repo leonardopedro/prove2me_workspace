@@ -22,8 +22,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ))
     (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     ∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),
-      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) A :=
-  abc)) A :=
+      IsPositiveSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) A := by
     secondQuantization_friedrichs (coreBasis e) (ymOnePart e fabc)
       (ymHamiltonian_symmetricOn (coreRepBasis e) fabc)
       (ymHamiltonian_quadForm_nonneg (coreRepBasis

@@ -1,7 +1,6 @@
 -- Generated from ChapterSpectralCommutant.lean — solution of BookProof.ChapterSpectralCommutant.multOp_norm_le_of_toLp
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
-import Theorems.Thm_BookProof_ChapterSpectralCommutant_denseRange_toLp
 import Definitions.Def_ChapterLinftyMaximalAbelian
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterSpectralMultiplication

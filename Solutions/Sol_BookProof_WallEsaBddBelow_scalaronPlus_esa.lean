@@ -34,7 +34,8 @@ theorem solution {M alpha : ℝ} (halpha : 0 < alpha) (W : ℝ → ℝ)
     EssentiallySelfAdjointOn (ccDomain ℝ)
       (wallHam (fun phi => BookProof.Starobinsky.starobinskyV M alpha phi + W phi)
         ((BookProof.ScalaronEsa.contDiff_starobinskyV M alpha).add hW)) :=
-  Proof.ScalaronEsa.contDiff_starobinskyV M alpha).add hW)) :=
-    wallHam_essentiallySelfAdjoint_of_bddBelow _ _
-      (c := c) fun phi => by
-        have h1 := BookProof.Starobinsky.starobinskyV_nonneg (
+  wallHam_essentiallySelfAdjoint_of_bddBelow _ _
+    (c := c) fun phi => by
+      have h1 := BookProof.Starobinsky.starobinskyV_nonneg (M := M) halpha phi
+      have h2 := hWc phi
+      linarith

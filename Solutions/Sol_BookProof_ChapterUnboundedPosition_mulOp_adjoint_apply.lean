@@ -16,8 +16,7 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℤ → ℝ) {phi eta : L2Z}
     (h : ∀ psi : mulDomain f, ⟪mulOp f psi, phi⟫_ℂ = ⟪(psi : L2Z), eta⟫_ℂ) :
-    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f :=
-  → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
+    (∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k) ∧ phi ∈ mulDomain f := by
     have hpt : ∀ k, (f k : ℂ) * (phi : ℤ → ℂ) k = (eta : ℤ → ℂ) k := by
       intro k
       have hk := h ⟨lp.single 2 k (1 : ℂ), single_mem_mulDomain f k 1⟩

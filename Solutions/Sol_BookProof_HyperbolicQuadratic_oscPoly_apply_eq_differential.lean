@@ -32,7 +32,7 @@ theorem solution (i : Fin d) (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
         + (((x i : ℝ) : ℂ) ^ 2 / 4) * pgFun p x := by
 
   have hx2 : pgFun ((1/4 : ℂ) • (X i * (X i * p))) x = (((x i : ℝ) : ℂ) ^ 2 / 4) * pgFun p x := by
-    rw [pgFun_smul]
+    rw [BookProof.HyperbolicQuadratic.pgFun_smul]
     have h1 : pgFun (X i * (X i * p)) x = ((x i : ℝ) : ℂ) * (((x i : ℝ) : ℂ) * pgFun p x) := by
       have e1 := posOp_apply_eq_mul i (mulXPoly i p) x
       have e2 := posOp_apply_eq_mul i p x

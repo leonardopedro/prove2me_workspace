@@ -1,7 +1,6 @@
 -- Generated from ChapterFreeFieldBornFiberSpectrum.lean — solution of BookProof.ChapterFreeFieldBornFiberSpectrum.bornFiber_card_even
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberSpectrum
-import Theorems.Thm_BookProof_ChapterFreeFieldBornFiberCardGeneral_bornFiber_card_general
 import Theorems.Thm_BookProof_ChapterFreeFieldBornFiberTwo_one_le_posSupport_card
 import Definitions.Def_ChapterFreeFieldBorn
 import Definitions.Def_ChapterFreeFieldBornSurj

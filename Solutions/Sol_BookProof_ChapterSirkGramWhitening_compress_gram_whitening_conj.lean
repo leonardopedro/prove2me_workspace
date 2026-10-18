@@ -26,8 +26,7 @@ theorem solution {m : ℕ} (w : Fin m → E) (X : E →L[ℂ] E)
     compress (whitened w T₁) X
       = (whiteningEquiv (whitened w T₂) (whitened w T₁)).comp
         ((compress (whitened w T₂) X).comp
-          (whiteningEquiv (whitened w T₁) (whitened w T₂))) :=
-  ened w T₁) (whitened w T₂))) := by
+          (whiteningEquiv (whitened w T₁) (whitened w T₂))) := by
     have hr₁ := range_whitened w hs₁
     have hr₂ := range_whitened w hs₂
     refine compress_conj_whitening _ _ X (whitened_adjoint_comp_self w hT₂) ?_

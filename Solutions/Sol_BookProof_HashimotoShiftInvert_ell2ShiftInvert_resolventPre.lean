@@ -18,8 +18,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) (u : ℓ²(ℕ, ℂ)) :
-    ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolvent hγ u :=
-  t hγ u := by
+    ell2ShiftInvert (ell2ResolventPre hγ u) = ell2Resolvent hγ u := by
     apply lp.ext
     funext n
     have hne : γ - (n : ℂ) ≠ 0 := sub_natCast_ne_zero hγ n

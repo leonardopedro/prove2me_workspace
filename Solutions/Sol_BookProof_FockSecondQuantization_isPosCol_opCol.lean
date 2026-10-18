@@ -20,8 +20,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {b : HilbertBasis ℕ ℂ F}
     {A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b}
     (hpos : ∀ x, 0 ≤ quadForm ((finiteModeDomain b).subtype.comp A) x) :
-    IsPosCol (opCol b A) :=
-  ol b A) := by
+    IsPosCol (opCol b A) := by
     intro S c
     classical
     set x : finiteModeDomain b :=

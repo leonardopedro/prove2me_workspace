@@ -14,6 +14,5 @@ open BookProof.HashimotoShiftInvert
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Set Fock) :=
-  t Fock) :=
+theorem solution : Dense ((lpFiniteModes Conf : Submodule ℂ Fock) : Set Fock) := by
     lpFiniteMod

@@ -1,8 +1,6 @@
 -- Generated from ChapterAbelianDirectSum.lean — solution of BookProof.ChapterAbelianDirectSum.inner_eq_zero_of_orthogonalRepCyclicFamily
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_self_mem_repCyclicSubspace
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_inner_eq_zero_of_le_orthogonal
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum

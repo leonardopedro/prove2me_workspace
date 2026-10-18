@@ -119,6 +119,8 @@ def gname_index():
         except Exception:
             continue
         for d in decls:
+            if d.gname is None:
+                continue
             gidx.setdefault(d.gname, (leaf, d.name_text))
     return gidx
 
@@ -174,6 +176,8 @@ def token_completion(leaf, needed, node_gnames):
                     for dd in IDX.get(tok, []):
                         if dd.gname in needed or dd.gname in node_gnames:
                             continue
+                        if not dd.gname:
+                            continue
                         needed[dd.gname] = dd.leaf
                         added = True
         if not added:
@@ -197,7 +201,7 @@ def complete_closure(leaf, start_names):
         before = set(names)
         needed = closure(leaf, names)
         token_completion(leaf, needed, node_gnames)
-        names = {g.split(".")[-1] for g in needed}
+        names = {g.split(".")[-1] for g in needed if g}
         changed = set(names) != before
     return needed
 
@@ -283,7 +287,8 @@ def closure(leaf, start_names):
             continue
         leaf_hits = [d for d in hits if d.leaf == leaf]
         for d in (leaf_hits or hits[:1]):
-            start_gnames.add(d.gname)
+            if d.gname:
+                start_gnames.add(d.gname)
     if not start_gnames:
         start_gnames = set(leaf_gnames)
     for g in start_gnames:
@@ -301,7 +306,7 @@ def closure(leaf, start_names):
                 continue
             deps = list(d.tdeps) + list(d.vdeps)
             for dep in deps:
-                if dep in needed:
+                if not dep or dep in needed:
                     continue
                 hit = gname_leaf(dep)
                 if hit is None:

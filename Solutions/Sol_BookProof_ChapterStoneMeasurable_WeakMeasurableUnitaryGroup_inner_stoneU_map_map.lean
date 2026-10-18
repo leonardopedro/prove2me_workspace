@@ -21,6 +21,5 @@ variable (G : WeakMeasurableUnitaryGroup H)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint H)
-    (u : ℝ) (a b : H) : ⟪T.stoneU u a, T.stoneU u b⟫_ℂ = ⟪a, b⟫_ℂ :=
-  ⟫_ℂ = ⟪a, b⟫_ℂ :=
+    (u : ℝ) (a b : H) : ⟪T.stoneU u a, T.stoneU u b⟫_ℂ = ⟪a, b⟫_ℂ := by
     (⟨(T.stoneU u : H →ₗ[ℂ] H), T.norm_stoneU_apply u⟩ : H →ₗᵢ[

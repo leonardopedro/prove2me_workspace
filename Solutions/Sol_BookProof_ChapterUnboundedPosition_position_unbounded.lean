@@ -15,8 +15,7 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 set_option maxHeartbeats 1000000 in
 theorem solution :
     ¬ ∃ C : ℝ, ∀ psi : mulDomain positionField,
-      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ :=
-     ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
+      ‖mulOp positionField psi‖ ≤ C * ‖(psi : L2Z)‖ := by
     rintro ⟨C, hC⟩
     obtain ⟨n, hn⟩ := exists_nat_gt C
     have hmem := single_mem_mulDomain positionField (n : ℤ) (1 : ℂ)

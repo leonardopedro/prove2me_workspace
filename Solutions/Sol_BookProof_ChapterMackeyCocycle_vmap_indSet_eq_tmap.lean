@@ -1,8 +1,6 @@
 -- Generated from ChapterMackeyCocycle.lean — solution of BookProof.ChapterMackeyCocycle.vmap_indSet_eq_tmap
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_vmap_indSet
-import Theorems.Thm_BookProof_ChapterMackeyCocycle_mem_smul_image_iff
 import Theorems.Thm_BookProof_ChapterMackeyQuasiInvariant_proj_coeFn
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Definitions.Def_ChapterElectroweakFieldStrength

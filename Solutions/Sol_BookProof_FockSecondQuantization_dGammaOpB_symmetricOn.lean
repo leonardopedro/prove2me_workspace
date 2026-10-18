@@ -18,8 +18,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution {ε : ℕ ≃ Conf} {col : ℕ → (ℕ →₀ ℂ)} (hherm : IsHermCol col) :
-    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB ε col) :=
-  ε col) := by
+    SymmetricOn (finiteModeDomain (fockBasisN ε)) (dGammaOpB ε col) := by
     intro x y
     exact dGammaOp_symmetricOn hherm
       (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε) x)

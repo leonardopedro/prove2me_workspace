@@ -1,7 +1,7 @@
 -- Generated from ChapterNavierStokesIkebeKato.lean — solution of BookProof.NavierStokesFlow.IkebeKato.sum_single_mem_finiteModes
 import Mathlib
 import Definitions.Def_ChapterNavierStokesIkebeKato
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+import Definitions.Def_ChapterNavierStokesEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.IkebeKato
 

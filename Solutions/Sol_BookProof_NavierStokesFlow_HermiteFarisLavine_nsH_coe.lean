@@ -12,7 +12,7 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato
+open BookProof.NavierStokesFlow.HermiteFarisLavine BookProof.NavierStokesFlow.IkebeKato
 
 variable {κ : ℝ}
 variable {x : maxDom (oscSymbol κ)}

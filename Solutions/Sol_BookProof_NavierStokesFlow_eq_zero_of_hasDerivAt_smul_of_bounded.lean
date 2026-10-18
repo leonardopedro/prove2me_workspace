@@ -17,7 +17,6 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 set_option maxHeartbeats 1000000 in
 theorem solution (g : ℝ → ℂ) (s C : ℝ) (hs : s * s = 1)
     (hgd : ∀ t : ℝ, HasDerivAt g ((s : ℂ) * g t) t) (hb : ∀ t : ℝ, ‖g t‖ ≤ C) : g 0 = 0 := by
-
   set h : ℝ → ℂ := fun t => Real.exp (-(s * t)) • g t with hh
   have hhd : ∀ t : ℝ, HasDerivAt h 0 t := by
     intro t
@@ -45,4 +44,5 @@ theorem solution (g : ℝ → ℂ) (s C : ℝ) (hs : s * s = 1)
     exact mul_le_mul_of_nonneg_left (hb _) (Real.exp_pos _).le
   have htend : Filter.Tendsto (fun T : ℝ => Real.exp (-T) * C) Filter.atTop (nhds 0) := by
     simpa using Real.tendsto_exp_neg_atTop_nhds_zero.mul_const C
-  have hle : ‖g 0‖ ≤ 0 := ge_of_tendsto htend (Filter.Eventually.of_for
+  have hle : ‖g 0‖ ≤ 0 := ge_of_tendsto htend (Filter.Eventually.of_forall hb0)
+  simpa using le_antisymm hle (norm_nonneg _)

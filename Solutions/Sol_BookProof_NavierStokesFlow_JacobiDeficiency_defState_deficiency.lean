@@ -16,8 +16,7 @@ open scoped ENNReal
 set_option maxHeartbeats 1000000 in
 theorem solution (v : lpFiniteModes ℕ) :
     (inner ℂ ((jacobiOp v : lpFiniteModes ℕ) : L2N) defState : ℂ)
-      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • defState) :=
-  fState) := by
+      = inner ℂ ((v : lpFiniteModes ℕ) : L2N) (Complex.I • defState) := by
     obtain ⟨N, hN⟩ := exists_tail_zero v.2
     have hlhs := inner_eq_sum_range (f := ((jacobiOp v : lpFiniteModes ℕ) : L2N))
       (g := defState) (N := N + 1) (by simpa using jacobiFun_tail_zero hN)

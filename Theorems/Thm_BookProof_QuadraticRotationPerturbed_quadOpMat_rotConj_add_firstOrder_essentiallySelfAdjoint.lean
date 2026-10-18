@@ -5,6 +5,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterNavierStokesSignFlip
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato

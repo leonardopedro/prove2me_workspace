@@ -25,8 +25,7 @@ theorem solution (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A : D →ₗ[�
       (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • A x)))
     (y : transportDomain W D) :
     Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (transportUnitary W (U t) (y : K) - (y : K)))
-      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W D A y)) :=
-  .I • transportOp W D A y)) := by
+      (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W D A y)) := by
     obtain ⟨a, rfl⟩ := (transportEquiv W D).surjective y
     rw [transportOp_apply]
     have hW := (W.continuous.tendsto (Complex.I • A a)).comp (h a)

@@ -1,8 +1,10 @@
 -- Generated from ChapterWallEsaBddBelow.lean — solution of BookProof.WallEsaBddBelow.wallHam_add_const
 import Mathlib
 import Definitions.Def_ChapterWallEsaBddBelow
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterKatoRellichDeficiency
 import Definitions.Def_ChapterStoneBridge

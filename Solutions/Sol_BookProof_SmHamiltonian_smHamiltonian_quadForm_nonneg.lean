@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSmHamiltonian
 import Theorems.Thm_BookProof_SmHamiltonian_smPi_symmetricOn
 import Theorems.Thm_BookProof_SmHamiltonian_smField_symmetricOn
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm_nonneg
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFarisLavine

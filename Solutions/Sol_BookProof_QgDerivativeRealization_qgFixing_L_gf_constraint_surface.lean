@@ -1,7 +1,6 @@
 -- Generated from ChapterQgDerivativeRealization.lean — solution of BookProof.QgDerivativeRealization.qgFixing_L_gf_constraint_surface
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
-import Theorems.Thm_BookProof_QgDerivativeRealization_qgSystemOf_gaugeField_eq_zero
 import Theorems.Thm_BookProof_QgPhysicalSectorIdentity_L_gf_constraint_surface
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterQgPhysicalSectorIdentity

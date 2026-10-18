@@ -7,6 +7,7 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterKatoRellichDeficiency
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationPerturbed

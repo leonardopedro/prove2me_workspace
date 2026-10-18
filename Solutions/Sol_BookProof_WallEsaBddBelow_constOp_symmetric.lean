@@ -1,6 +1,7 @@
 -- Generated from ChapterWallEsaBddBelow.lean — solution of BookProof.WallEsaBddBelow.constOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterWallEsaBddBelow
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa

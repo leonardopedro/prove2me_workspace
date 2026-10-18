@@ -30,8 +30,7 @@ theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ))
           Tendsto (fun k : ℕ => resolvent (galerkinCompression R (fockBasisN ε) k) z u) atTop
             (nhds (resolvent R z u))) ∧
         (∀ (Dom' : Submodule ℂ Fock) (A' : Dom' →ₗ[ℂ] Fock), IsShiftInvert A' γ R →
-          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) :=
-   hx⟩) :=
+          Dom' = Dom ∧ ∀ (x : Fock) (hx : x ∈ Dom) (hx' : x ∈ Dom'), A' ⟨x, hx'⟩ = A ⟨x, hx⟩) := by
     secondQuantization_hashimoto_selects ε (coreBasis e) (ymOnePart e fabc)
       (ymHamiltonian_symmetricOn (coreRepBasis e) fabc)
       (ymHamiltonian_quadForm_nonneg (coreRepBasis e) f

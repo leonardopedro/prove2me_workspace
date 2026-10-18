@@ -1,7 +1,6 @@
 -- Generated from ChapterWignerSymmetryInfinite.lean — solution of BookProof.ChapterWignerSymmetryInfinite.coord_testVec_one_eq
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_phase_self
 import Definitions.Def_ChapterOrthogonalSums
 import Definitions.Def_ChapterNsLagrangianDetConvolution
 import Definitions.Def_ChapterWignerSymmetry
@@ -45,9 +44,11 @@ theorem solution (hT : IsWignerSymmetry T) {i : ι} (hi : i ≠ o) :
     rw [h0, mul_zero] at hAA
     exact zero_ne_one hAA
   have hleft : coord b T o o (testVec b o i 1) = A := by
-    rw [coord, img, phase_self, hw, one_smul]
+    rw [BookProof.ChapterWignerSymmetryInfinite.coord, BookProof.ChapterWignerSymmetryInfinite.img,
+      BookProof.ChapterWignerSymmetryInfinite.phase_self, hw, one_smul]
   have hright : coord b T o i (testVec b o i 1) = conj (B / A) * B := by
-    rw [coord, img, phase, if_neg hi, inner_smul_left, hw]
+    rw [BookProof.ChapterWignerSymmetryInfinite.coord, BookProof.ChapterWignerSymmetryInfinite.img,
+      BookProof.ChapterWignerSymmetryInfinite.phase, if_neg hi, inner_smul_left, hw]
   rw [hleft, hright, map_div₀]
   field_simp
   linear_combination hAA - hBB

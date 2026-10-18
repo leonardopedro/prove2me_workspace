@@ -1,7 +1,7 @@
 -- Generated from ChapterWignerSymmetry.lean — solution of BookProof.ChapterWignerSymmetry.coord_of_key_of_ne_zero
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetry
-import Theorems.Thm_BookProof_ChapterWignerSymmetryInfinite_coord_norm
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.ChapterWignerSymmetry
 
 

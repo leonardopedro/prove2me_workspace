@@ -19,6 +19,5 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (T : D →ₗ[ℂ] F) (v : D) : (v : F) ∈ clDom T :=
-  v : D) : (v : F) ∈ clDom T :=
+theorem solution (T : D →ₗ[ℂ] F) (v : D) : (v : F) ∈ clDom T := by
     mem_clDom_iff.2 ⟨T v, mem_clGraph_of_mem

@@ -27,7 +27,6 @@ theorem solution {m : ℕ} {w : Fin m → E}
       (ContinuousLinearMap.adjoint (whitened w T)).comp (whitened w T)
         = ContinuousLinearMap.id ℂ (EuclideanSpace ℂ (Fin m)) ∧
       LinearMap.range (whitened w T : EuclideanSpace ℂ (Fin m) →ₗ[ℂ] E)
-        = Submodule.span ℂ (Set.range w) :=
-  Submodule.span ℂ (Set.range w) := by
+        = Submodule.span ℂ (Set.range w) := by
     obtain ⟨T, hbij, hT⟩ := exists_isWhitening hw
     exact ⟨T, hT, whitened_adjoint_comp_self

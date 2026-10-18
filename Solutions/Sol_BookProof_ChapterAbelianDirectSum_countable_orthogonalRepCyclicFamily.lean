@@ -1,7 +1,6 @@
 -- Generated from ChapterAbelianDirectSum.lean — solution of BookProof.ChapterAbelianDirectSum.countable_orthogonalRepCyclicFamily
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
-import Theorems.Thm_BookProof_ChapterAbelianDirectSum_one_lt_dist_of_orthogonalRepCyclicFamily
 import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum

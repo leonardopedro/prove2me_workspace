@@ -1,9 +1,6 @@
 -- Generated from ChapterSmCarContinuum.lean — solution of BookProof.SmCarContinuum.car_smeared_of_finite
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
-import Theorems.Thm_BookProof_SmCarContinuum_cCreS_eq_cCreFin
-import Theorems.Thm_BookProof_SmCarContinuum_cAnnS_eq_cAnnFin
-import Theorems.Thm_BookProof_SmCarContinuum_inner_eq_finsum
 import Definitions.Def_ChapterQuantumGravityFock
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDeficiency
@@ -19,7 +16,6 @@ open BookProof.QuantumGravityFock
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LpNat
 open BookProof.NavierStokesFlow.IkebeKato
 open scoped ENNReal NNReal
-open BookProof.ChapterRieszFischer
 
 noncomputable section
 

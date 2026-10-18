@@ -1,6 +1,7 @@
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
+import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterWeakSecondDerivative
 import Mathlib
@@ -51,6 +52,136 @@ classical solution, and this module supplies the bridge in both directions.
   there is no nonzero solution, so the characterisation reproduces
   `wallHam_deficiencyTrivialAt`.
 -/
+
+namespace BookProof.WeakSecondDeriv
+
+open MeasureTheory
+
+/-! Inlined from the source chapter `BookProof/ChapterWeakSecondDerivative.lean`: the
+platform text of `Def_ChapterWeakSecondDerivative` predates this regularity theorem,
+so the consumer restates it here. -/
+
+theorem exists_deriv2_of_weak_eq {u : ℝ → ℂ} (hu : LocallyIntegrable u volume)
+    {c : ℝ → ℂ} (hc : Continuous c)
+    (h : ∀ g : ℝ → ℝ, IsTestFun g →
+      ∫ x, ((deriv (deriv g) x : ℝ) : ℂ) * u x = ∫ x, ((g x : ℝ) : ℂ) * (c x * u x)) :
+    ∃ W W' : ℝ → ℂ, (∀ x, HasDerivAt W (W' x) x) ∧
+      (∀ x, HasDerivAt W' (c x * W x) x) ∧ u =ᵐ[volume] W := by
+  -- the inhomogeneity `P = c·u` is locally integrable
+  have hPloc : LocallyIntegrable (fun x => c x * u x) volume := by
+    rw [MeasureTheory.locallyIntegrable_iff]
+    intro k hk
+    simpa [smul_eq_mul] using
+      (hu.integrableOn_isCompact hk).continuousOn_smul hc.continuousOn hk
+  have hre_loc : ∀ {f : ℝ → ℂ}, LocallyIntegrable f volume →
+      LocallyIntegrable (fun x => (f x).re) volume := by
+    intro f hf x
+    obtain ⟨s, hs, hint⟩ := hf x
+    exact ⟨s, hs, hint.re⟩
+  have him_loc : ∀ {f : ℝ → ℂ}, LocallyIntegrable f volume →
+      LocallyIntegrable (fun x => (f x).im) volume := by
+    intro f hf x
+    obtain ⟨s, hs, hint⟩ := hf x
+    exact ⟨s, hs, hint.im⟩
+  have hint_u : ∀ g : ℝ → ℝ, IsTestFun g →
+      Integrable (fun x => ((g x : ℝ) : ℂ) * u x) volume := by
+    intro g hg
+    simpa [Complex.real_smul] using integrable_test_smul (F := ℂ) hg hu
+  have hint_P : ∀ g : ℝ → ℝ, IsTestFun g →
+      Integrable (fun x => ((g x : ℝ) : ℂ) * (c x * u x)) volume := by
+    intro g hg
+    simpa [Complex.real_smul] using integrable_test_smul (F := ℂ) hg hPloc
+  -- real and imaginary parts of the weak equation
+  have hEqRe : ∀ g : ℝ → ℝ, IsTestFun g →
+      ∫ x, deriv (deriv g) x * (u x).re = ∫ x, g x * (c x * u x).re := by
+    intro g hg
+    have e1 : (∫ x, ((deriv (deriv g) x : ℝ) : ℂ) * u x).re
+        = ∫ x, deriv (deriv g) x * (u x).re := by
+      simpa using (Complex.reCLM.integral_comp_comm (hint_u _ hg.deriv.deriv)).symm
+    have e2 : (∫ x, ((g x : ℝ) : ℂ) * (c x * u x)).re = ∫ x, g x * (c x * u x).re := by
+      simpa using (Complex.reCLM.integral_comp_comm (hint_P _ hg)).symm
+    rw [← e1, ← e2, h g hg]
+  have hEqIm : ∀ g : ℝ → ℝ, IsTestFun g →
+      ∫ x, deriv (deriv g) x * (u x).im = ∫ x, g x * (c x * u x).im := by
+    intro g hg
+    have e1 : (∫ x, ((deriv (deriv g) x : ℝ) : ℂ) * u x).im
+        = ∫ x, deriv (deriv g) x * (u x).im := by
+      simpa using (Complex.imCLM.integral_comp_comm (hint_u _ hg.deriv.deriv)).symm
+    have e2 : (∫ x, ((g x : ℝ) : ℂ) * (c x * u x)).im = ∫ x, g x * (c x * u x).im := by
+      simpa using (Complex.imCLM.integral_comp_comm (hint_P _ hg)).symm
+    rw [← e1, ← e2, h g hg]
+  obtain ⟨a₁, b₁, h1⟩ :=
+    exists_ae_eq_doubleAntideriv_add_affine (hre_loc hu) (hre_loc hPloc) hEqRe
+  obtain ⟨a₂, b₂, h2⟩ :=
+    exists_ae_eq_doubleAntideriv_add_affine (him_loc hu) (him_loc hPloc) hEqIm
+  obtain ⟨W, hWdef⟩ : ∃ W : ℝ → ℂ, W = fun x =>
+      ((doubleAntideriv (fun y => (c y * u y).re) x + (a₁ * x + b₁) : ℝ) : ℂ)
+        + ((doubleAntideriv (fun y => (c y * u y).im) x + (a₂ * x + b₂) : ℝ) : ℂ) * Complex.I :=
+    ⟨_, rfl⟩
+  -- `W` is continuous and almost everywhere equal to `u`
+  have haffine : ∀ a b : ℝ, Continuous fun x : ℝ => a * x + b := fun a b =>
+    (continuous_const.mul continuous_id).add continuous_const
+  have hcW : Continuous W := by
+    rw [hWdef]
+    exact ((Complex.continuous_ofReal.comp
+        ((continuous_doubleAntideriv (hre_loc hPloc)).add (haffine a₁ b₁)))).add
+      ((Complex.continuous_ofReal.comp
+        ((continuous_doubleAntideriv (him_loc hPloc)).add (haffine a₂ b₂))).mul continuous_const)
+  have hWae : u =ᵐ[volume] W := by
+    filter_upwards [h1, h2] with x hx1 hx2
+    have e : W x = ((u x).re : ℂ) + ((u x).im : ℂ) * Complex.I := by
+      rw [hWdef, hx1, hx2]
+    rw [e, Complex.re_add_im]
+  -- replace the inhomogeneity by the *continuous* function `c·W`
+  have hPQ : (fun x => c x * u x) =ᵐ[volume] fun x => c x * W x := by
+    filter_upwards [hWae] with x hx
+    rw [hx]
+  have hQcont : Continuous fun x => c x * W x := hc.mul hcW
+  -- name the two real components of `c·W`, so that they no longer mention `W` syntactically
+  obtain ⟨Qre, hQredef⟩ : ∃ f : ℝ → ℝ, f = fun x => (c x * W x).re := ⟨_, rfl⟩
+  obtain ⟨Qim, hQimdef⟩ : ∃ f : ℝ → ℝ, f = fun x => (c x * W x).im := ⟨_, rfl⟩
+  have hQre : Continuous Qre := by
+    rw [hQredef]; exact Complex.continuous_re.comp hQcont
+  have hQim : Continuous Qim := by
+    rw [hQimdef]; exact Complex.continuous_im.comp hQcont
+  have hsum : ∀ x, ((Qre x : ℝ) : ℂ) + ((Qim x : ℝ) : ℂ) * Complex.I = c x * W x := by
+    intro x
+    rw [hQredef, hQimdef]
+    exact Complex.re_add_im _
+  have hDre : doubleAntideriv (fun y => (c y * u y).re) = doubleAntideriv Qre := by
+    refine doubleAntideriv_congr_ae ?_
+    filter_upwards [hPQ] with x hx
+    rw [hQredef, hx]
+  have hDim : doubleAntideriv (fun y => (c y * u y).im) = doubleAntideriv Qim := by
+    refine doubleAntideriv_congr_ae ?_
+    filter_upwards [hPQ] with x hx
+    rw [hQimdef, hx]
+  rw [hDre, hDim] at hWdef
+  refine ⟨W, fun x =>
+    (((∫ t in (0 : ℝ)..x, Qre t) + a₁ : ℝ) : ℂ)
+      + (((∫ t in (0 : ℝ)..x, Qim t) + a₂ : ℝ) : ℂ) * Complex.I, ?_, ?_, hWae⟩
+  · intro x
+    have d1 : HasDerivAt (fun y => doubleAntideriv Qre y + (a₁ * y + b₁))
+        ((∫ t in (0 : ℝ)..x, Qre t) + a₁) x := by
+      refine (hasDerivAt_doubleAntideriv hQre x).add ?_
+      simpa using ((hasDerivAt_id x).const_mul a₁).add_const b₁
+    have d2 : HasDerivAt (fun y => doubleAntideriv Qim y + (a₂ * y + b₂))
+        ((∫ t in (0 : ℝ)..x, Qim t) + a₂) x := by
+      refine (hasDerivAt_doubleAntideriv hQim x).add ?_
+      simpa using ((hasDerivAt_id x).const_mul a₂).add_const b₂
+    rw [hWdef]
+    exact d1.ofReal_comp.add (d2.ofReal_comp.mul_const Complex.I)
+  · intro x
+    have d1 : HasDerivAt (fun y => (∫ t in (0 : ℝ)..y, Qre t) + a₁) (Qre x) x :=
+      (hasDerivAt_primitive_of_continuous hQre x).add_const a₁
+    have d2 : HasDerivAt (fun y => (∫ t in (0 : ℝ)..y, Qim t) + a₂) (Qim x) x :=
+      (hasDerivAt_primitive_of_continuous hQim x).add_const a₂
+    have hd := d1.ofReal_comp.add (d2.ofReal_comp.mul_const Complex.I)
+    rw [← hsum x]
+    exact hd
+
+
+end BookProof.WeakSecondDeriv
 
 namespace BookProof.WallDeficiencyObstruction
 

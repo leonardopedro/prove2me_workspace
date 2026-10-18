@@ -1,7 +1,6 @@
 -- Generated from ChapterPvmCyclicUnitary.lean — solution of BookProof.ChapterPvmCyclicUnitary.pvm_cyclic_unitary
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicUnitary
-import Theorems.Thm_BookProof_ChapterPvmCyclicUnitary_swCLM_proj
 import Definitions.Def_ChapterPvmMeasure
 import Definitions.Def_ChapterMackeyQuasiInvariant
 import Definitions.Def_ChapterElectroweakFieldStrength

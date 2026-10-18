@@ -10,7 +10,6 @@ import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterWallEsaSemibounded
 import Definitions.Def_ChapterBddBelowWallEsa
-Definitions.Def_ChapterWallEsaSemibounded
 open BookProof.BddBelowFiberSumEsa
 
 
@@ -18,6 +17,7 @@ open BookProof.BddBelowFiberSumEsa
 
 open MeasureTheory
 open BookProof.FarisLavine BookProof.ScalaronEsa BookProof.ScalaronWallEsa
+open BookProof.WallEsaSemibounded
 open BookProof.BddBelowWallEsa BookProof.WallEsaSemibounded BookProof.DirectSumEsa
 open BookProof.WallEsaSemibounded
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsFriedrichs.lean — solution of BookProof.YangMillsFriedrichs.weylOpDom_quadForm_nonneg
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
-import Theorems.Thm_BookProof_YangMillsFriedrichs_weylOpDom_quadForm
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 open BookProof.YangMillsFriedrichs

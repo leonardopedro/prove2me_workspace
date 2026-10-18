@@ -38,10 +38,10 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 variable (D₀ : Submodule ℂ Hs.carrier)
 variable {D₀ : Submodule ℂ Hs.carrier}
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
   (D₀ : Submodule ℂ Hs.carrier)
 
 set_option maxHeartbeats 1000000 in
+include hdense hesa hsym in
 theorem solution (hcore : IsGraphCore D₀ A) :
     EssentiallySelfAdjointOn (bosonicFockCoreDom Hs D D₀) (bosonicFockCoreOp Hs D A D₀) :=
   dsOp_essentiallySelfAdjointOn _

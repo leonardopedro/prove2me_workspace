@@ -33,6 +33,7 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 variable (D₀ : Submodule ℂ Hs.carrier)
 
+include hdense hesa hsym in
 theorem BookProof.FockStatistics.essentiallySelfAdjointOn_bosonic_of_esa (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (bosonicProj Hs n) (sectorDom Hs D n))
       (bosonicSectorOp Hs D A n) := by sorry

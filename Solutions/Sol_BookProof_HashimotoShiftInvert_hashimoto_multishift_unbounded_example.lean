@@ -47,8 +47,7 @@ theorem solution (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :
         IsShiftInvertC A' (γ j) (X j) →
         Dom' = LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ))) ∧
       (∀ C : ℝ, ∃ x : finiteModeDomain ell2Basis,
-        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖) :=
-  x x‖) := by
+        C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖) := by
     refine ⟨fun j => ell2Resolvent (hγ j), ?_, fun j => ell2Resolvent_isShiftInvertC (hγ j), ?_, ?_,
       ?_, ?_, ?_, fun j u => galerkinCompression_tendsto _ ell2Basis u, ?_,
       ell2ExampleMatrix_unbounded⟩

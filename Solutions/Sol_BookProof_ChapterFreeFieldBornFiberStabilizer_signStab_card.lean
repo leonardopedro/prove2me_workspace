@@ -1,7 +1,6 @@
 -- Generated from ChapterFreeFieldBornFiberStabilizer.lean — solution of BookProof.ChapterFreeFieldBornFiberStabilizer.signStab_card
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
-import Theorems.Thm_BookProof_ChapterFreeFieldBornFiberStabilizer_mem_signStab
 import Definitions.Def_ChapterFreeFieldBorn
 import Definitions.Def_ChapterFreeFieldBornQuotient
 import Definitions.Def_ChapterFreeFieldBornSignGauge

@@ -23,6 +23,7 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
   (hcyc : DenseRange (cfcVec T hT xi))
 
+include hcyc in
 theorem BookProof.ChapterSpectralCommutant.commutant_cfcSet_isCommutative {S R : H →L[ℂ] H}
     (hS : S ∈ (cfcSet T hT).centralizer) (hR : R ∈ (cfcSet T hT).centralizer) :
     S * R = R * S := by sorry

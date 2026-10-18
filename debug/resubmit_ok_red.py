@@ -30,6 +30,14 @@ def main():
     os.chdir(WS)
 
     red = [l.strip() for l in open('/tmp/red_sol.txt') if l.strip()]
+    # A red whose THEOREM is already Proved on the platform needs no resubmit:
+    # the goal is discharged (by us earlier or by another agent) and --sync
+    # reconciles the ledger item.  Re-submitting would spend an attempt and an
+    # upload for nothing.  The list comes from debug's platform status query
+    # (red_thm_status.json -> the Proved subset); absent file = no filtering.
+    proved = set()
+    if os.path.exists('/tmp/red_theorem_proved.txt'):
+        proved = {l.strip() for l in open('/tmp/red_theorem_proved.txt') if l.strip()}
     chk = json.load(open('state/offline_pending_check.json'))
     off = chk.get('sol', {}).get('items', {})
     stamp = os.path.getmtime('state/offline_pending_check.json')
@@ -44,6 +52,9 @@ def main():
             continue
         if rec.get('status') == 'parked':
             skipped.append((n, f"parked: {(rec.get('error') or '')[:60]}"))
+            continue
+        if n in proved:
+            skipped.append((n, 'theorem already Proved on platform'))
             continue
         if rec.get('flipped_at'):
             # Already flipped+resubmitted this session (accepted into the

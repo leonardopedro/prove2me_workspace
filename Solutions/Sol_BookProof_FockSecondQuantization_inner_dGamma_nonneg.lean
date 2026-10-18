@@ -19,8 +19,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution {col : ℕ → (ℕ →₀ ℂ)} (hpos : IsPosCol col) (u : FockAlg) :
-    0 ≤ (inner ℂ (toLp u) (toLp (dGamma col u)) : ℂ).re :=
-  ℂ).re := by
+    0 ≤ (inner ℂ (toLp u) (toLp (dGamma col u)) : ℂ).re := by
     classical
     set L := closureModes col u u with hLdef
     set S : Finset Conf := L.biUnion fun k => (annA k u).support with hSdef

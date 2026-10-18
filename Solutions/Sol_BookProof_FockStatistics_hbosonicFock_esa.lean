@@ -26,6 +26,7 @@ variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier
   (hesa : EssentiallySelfAdjointOn D A)
 
 set_option maxHeartbeats 1000000 in
+include hdense hesa hsym in
 theorem solution :
     EssentiallySelfAdjointOn (hbosonicFockDom Hs D) (hbosonicFockOp Hs D A) :=
   dsOp_essentiallySelfAdjointOn _

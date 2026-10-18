@@ -25,7 +25,8 @@ theorem solution (i : Fin d) (a : Fin d →₀ ℕ) :
     ((hermiteMvNorm a : ℝ) : ℂ)⁻¹ • pgLp (annPoly i (hermiteMv a))
       = ((Real.sqrt ((a i : ℝ)) : ℝ) : ℂ) • hermiteMvLp (a - Finsupp.single i 1) := by
 
-  rw [annPoly_apply, pderiv_hermiteMv, ← pgMap_apply, map_smul, pgMap_apply,
+  rw [annPoly_apply, pderiv_hermiteMv, ← BookProof.HermiteProductBasis.pgMap_apply,
+    map_smul, BookProof.HermiteProductBasis.pgMap_apply,
     pgLp_hermiteMv_eq (a - Finsupp.single i 1), smul_smul, smul_smul]
   rcases Nat.eq_zero_or_pos (a i) with h0 | hpos
   · rw [h0]

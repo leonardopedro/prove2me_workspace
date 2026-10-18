@@ -21,6 +21,5 @@ theorem solution (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → F
     ymFockCol e fabc k j
       = inner ℂ (coreBasis e j)
           (ymHamiltonian (coreRepBasis e) fabc
-            ⟨coreBasis e k, Submodule.subset_span ⟨k, rfl⟩⟩) :=
-  ⟩⟩) :=
+            ⟨coreBasis e k, Submodule.subset_span ⟨k, rfl⟩⟩) := by
     opCol_apply

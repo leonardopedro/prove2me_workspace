@@ -22,8 +22,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {Dom₁ Dom₂ : Submodule ℂ F} {T : D →ₗ[ℂ] F}
     {A₁ : Dom₁ →ₗ[ℂ] F} {A₂ : Dom₂ →ₗ[ℂ] F} (hesa : EssentiallySelfAdjointOn D T)
     (h₁ : IsSelfAdjointExtension T A₁) (h₂ : IsSelfAdjointExtension T A₂) :
-    Dom₁ = Dom₂ ∧ ∀ (x : F) (h : x ∈ Dom₁) (h' : x ∈ Dom₂), A₁ ⟨x, h⟩ = A₂ ⟨x, h'⟩ :=
-  A₁ ⟨x, h⟩ = A₂ ⟨x, h'⟩ := by
+    Dom₁ = Dom₂ ∧ ∀ (x : F) (h : x ∈ Dom₁) (h' : x ∈ Dom₂), A₁ ⟨x, h⟩ = A₂ ⟨x, h'⟩ := by
     have key : ∀ (x : F) (h : x ∈ Dom₁), ∃ h' : x ∈ Dom₂, A₂ ⟨x, h'⟩ = A₁ ⟨x, h⟩ := by
       intro x h
       exact (selfAdjointExtension_eq_adjoint hesa h₂ x (A₁ ⟨x, h⟩)).1

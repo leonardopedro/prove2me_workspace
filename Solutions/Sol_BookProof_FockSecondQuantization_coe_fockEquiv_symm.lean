@@ -16,6 +16,5 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (x : lpFiniteModes Conf) :
-    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) :=
-  symm x) := by
+    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) := by
     rw [← coe_fockEquiv, LinearEquiv.apply_sym

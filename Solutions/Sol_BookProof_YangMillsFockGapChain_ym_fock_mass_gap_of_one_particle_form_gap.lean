@@ -53,7 +53,7 @@ theorem solution {mu : ℝ} (hmu : 0 < mu)
   obtain ⟨hvac, hgapFock⟩ := ym_fock_gap_of_one_particle_form_gap e fabc hmu.le hgap
   refine ⟨ym_fock_friedrichs_extension e fabc, hvac, fun u h0 hu => ?_⟩
   have hnorm : 0 < ‖toLp u‖ := by
-    have : toLp u ≠ 0 := fun hc => hu (toLp_injective (by simpa using hc))
+    have : toLp u ≠ 0 := fun hc => hu (toLp_injective (hc.trans toLp_zero.symm))
     exact norm_pos_iff.mpr this
   have hquad := hgapFock u h0
   have hpos : 0 < mu * ‖toLp u‖ ^ 2 := by positivity

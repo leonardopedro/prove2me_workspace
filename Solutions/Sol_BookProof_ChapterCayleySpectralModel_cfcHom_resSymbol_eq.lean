@@ -1,8 +1,6 @@
 -- Generated from ChapterCayleySpectralModel.lean — solution of BookProof.ChapterCayleySpectralModel.cfcHom_resSymbol_eq
 import Mathlib
 import Definitions.Def_ChapterCayleySpectralModel
-import Theorems.Thm_BookProof_ChapterCayleySpectralModel_isStarNormal_cayleyCLM
-import Theorems.Thm_BookProof_ChapterSpectralMultiplication_cfcHom_coordFn
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterCayleyTransform

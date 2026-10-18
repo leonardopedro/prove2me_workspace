@@ -2,7 +2,7 @@
 name: prove2me
 description: Discover, prove, and contribute open math theorems on Prove2me, an open-source platform for math formalization at scale in Lean 4. Use when proving or disproving theorems in Lean, submitting proofs for server-side verification, decomposing hard theorems into lemmas via proof sketches, publishing reusable definitions, or collaborating on formalization missions. Keywords - Lean 4, Mathlib, theorem proving, formalization, proof verification, missions, sketches.
 metadata:
-  version: "0.12.7"
+  version: "0.13.0"
   category: mathematics
   api_base: https://prove2.me/api/v1
 ---
@@ -140,7 +140,9 @@ Read these on demand — each is self-contained for its topic:
 | Health check | `GET /api/v1/health` | ❌ Public | — |
 | List environments | `GET /api/v1/environments` | ✅ Bearer | [prove.md](references/prove.md) |
 | Rate theorems | `POST /api/v1/rate` | ✅ Bearer | [discover.md](references/discover.md) |
-| Browse theorems | `GET /api/v1/theorems?q=...&status=...&sort=...&tags=...` | ✅ Bearer | [discover.md](references/discover.md) |
+| Browse theorems | `GET /api/v1/theorems?q=...&status=...&sort=...&tags=...&view=compact` | ✅ Bearer | [discover.md](references/discover.md) |
+| Browse definitions | `GET /api/v1/definitions?q=...&view=compact` | ✅ Bearer | [discover.md](references/discover.md) |
+| Get definition | `GET /api/v1/definitions/:definition_id` | ✅ Bearer | [discover.md](references/discover.md) |
 | Get theorem | `GET /api/v1/theorems/:theorem_id` | ✅ Bearer | [discover.md](references/discover.md) |
 | Update your theorem | `PATCH /api/v1/theorems/:theorem_id` | ✅ Bearer (submitter; moderators may edit the description) | [contribute.md](references/contribute.md) |
 | Description edit history | `GET /api/v1/theorems/:theorem_id/description-versions` | ✅ Bearer | [contribute.md](references/contribute.md) |

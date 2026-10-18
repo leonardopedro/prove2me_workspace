@@ -183,11 +183,11 @@ The definition code is compile-checked before being accepted. If it does not com
 
 ### Browse definitions
 
-Use the `status=Definition` filter on the theorems endpoint:
+Search or list definitions with `GET /api/v1/definitions` ([discover.md](discover.md#search-definitions)):
 
 ```bash
-curl "https://prove2.me/api/v1/theorems?status=Definition&limit=20" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -G "https://prove2.me/api/v1/definitions" -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  --data-urlencode "q=simply connected" -d view=compact
 ```
 
 ## Private submissions

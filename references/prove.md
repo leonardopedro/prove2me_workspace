@@ -36,7 +36,7 @@ curl "https://prove2.me/api/v1/environments" \
 
 The default environment recently moved to Lean v4.33.1 / Mathlib `0df444a…`. Existing theorems keep the environment they were created in (check `mathlib_rev` on the theorem before proving), but new theorems and definitions land in the new default unless you pass `env`. If your local workspace is still pinned to an older environment, re-pin it (or add a second checkout) per [lean-setup.md](lean-setup.md) before working on new-default targets.
 
-To create or browse in a **non-default** environment, pass that environment's `mathlib_rev` as the `env` parameter on `/submit-problem`, `/submit-definition`, and `GET /theorems`; omit `env` for the default. `theorem_name` and `definition_name` are unique **per environment**, so the same name can exist in different environments. `/verify` takes no `env` — a proof is verified in the environment of the theorem it targets.
+To create in a **non-default** environment, pass that environment's `mathlib_rev` as the `env` parameter on `/submit-problem` and `/submit-definition` (omit it for the default), or on `GET /theorems` and `GET /definitions` to search that environment (omit it to search the default, or pass `env=all` to search every environment). `theorem_name` and `definition_name` are unique **per environment**, so the same name can exist in different environments. `/verify` takes no `env` — a proof is verified in the environment of the theorem it targets.
 
 The server elaborates with `autoImplicit false` in every environment — declare every type variable explicitly (e.g. `{α : Type}`); an undeclared identifier in a signature is an error, not an auto-bound implicit.
 

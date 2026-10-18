@@ -33,3 +33,4 @@ state/*
 !state/references_index.json
 credentials.json
 /.lake
+newk

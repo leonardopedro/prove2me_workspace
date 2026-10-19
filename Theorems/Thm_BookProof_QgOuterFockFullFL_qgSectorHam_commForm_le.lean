@@ -36,4 +36,5 @@ noncomputable section
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 theorem BookProof.QgOuterFockFullFL.qgSectorHam_commForm_le (n : ℕ) (u : polyGaussCore (d := n * 84)) :
-    |commForm (qgSectorHam n) harmCore u| ≤ qgFLc * quadForm harmCore u := by sorry
+    |commForm (qgSectorHam n) BookProof.QgOuterFockFL.harmCore u| ≤ qgFLc * quadForm BookProof.QgOuterFockFL.harmCore u := by sorry
+

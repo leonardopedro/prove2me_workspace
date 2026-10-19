@@ -297095,3 +297095,733 @@ Hint: Type class instan)
 11:02:37 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_eq, BookProof.ChapterStoneResolvent.Unbounde) - job in flight, no attempt consumed
 11:02:38 summary: 576 done, 114 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
 11:02:38 chunk: 1 item(s) processed in 2s
+12:11:34 sync: read 1175 definition publish job(s)
+12:12:17 sync: read 11442 problem publish job(s)
+12:17:24 sync: read 1175 definition publish job(s)
+12:18:09 sync: read 11442 problem publish job(s)
+12:18:09 processing def:PhysMehler (attempt 1)
+12:18:44 def:PhysMehler: DONE
+12:18:44 summary: 577 done, 113 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+12:18:44 chunk: 1 item(s) processed in 35s
+12:19:26 sync: read 1176 definition publish job(s)
+12:20:09 sync: read 11442 problem publish job(s)
+12:21:02 sync: read 1176 definition publish job(s)
+12:21:42 sync: read 11442 problem publish job(s)
+12:21:42 submitting def:ChapterStoneSeparable (attempt 1)
+12:21:43 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_eq, BookProof.ChapterStoneResolvent.Unbounde)
+12:21:43 submitting def:ChapterNavierStokesFockLagrangian (attempt 2)
+12:21:44 def:ChapterNavierStokesFockLagrangian: WAIT (theorem dependency not proved yet: BookProof.NavierStokesFlow.FockContinuum.boundedEnergyCore_dense)
+12:21:44 submitting def:ChapterQgOuterFockFullFL (attempt 2)
+12:21:47 def:ChapterQgOuterFockFullFL: WAIT (theorem dependency not proved yet: BookProof.QgOuterFockFL.harmFried_op_core, BookProof.QgOuterFockFL.polyGaussCore_le_harmFriedDom)
+12:21:47 summary: 577 done, 113 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+12:21:47 chunk: 0 item(s) resolved in 5s
+12:29:46 sync: read 1176 definition publish job(s)
+12:30:32 sync: read 11442 problem publish job(s)
+12:30:44 sync: read 1176 definition publish job(s)
+12:31:29 sync: read 11442 problem publish job(s)
+12:31:29 submitting sol:BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain (attempt 1)
+12:31:30 sol:BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain: accepted, waiting on the compiler
+12:31:30 submitting sol:BookProof_FriedrichsCanonical_friedrichsDomain_le_formDomain (attempt 1)
+12:31:31 sol:BookProof_FriedrichsCanonical_friedrichsDomain_le_formDomain: accepted, waiting on the compiler
+12:33:06 sol:BookProof_FriedrichsCanonical_friedrichsDomain_le_formDomain: DONE
+12:33:14 submitting sol:BookProof_FriedrichsCanonical_friedrichsOp_apply (attempt 1)
+12:33:15 sol:BookProof_FriedrichsCanonical_friedrichsOp_apply: accepted, waiting on the compiler
+12:33:15 sol:BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain: DONE
+12:33:24 submitting sol:BookProof_FriedrichsCanonical_friedrichsOp_symmetricOn (attempt 1)
+12:33:25 sol:BookProof_FriedrichsCanonical_friedrichsOp_symmetricOn: accepted, waiting on the compiler
+12:34:51 sol:BookProof_FriedrichsCanonical_friedrichsOp_apply: DONE
+12:34:59 submitting sol:BookProof_FriedrichsCanonical_friedrichs_unique_selfAdjoint (attempt 1)
+12:35:00 sol:BookProof_FriedrichsCanonical_friedrichs_unique_selfAdjoint: accepted, waiting on the compiler
+12:35:09 sol:BookProof_FriedrichsCanonical_friedrichsOp_symmetricOn: DONE
+12:35:17 submitting sol:BookProof_FriedrichsCanonical_semibounded_friedrichs_unique (attempt 1)
+12:35:18 sol:BookProof_FriedrichsCanonical_semibounded_friedrichs_unique: accepted, waiting on the compiler
+12:36:52 sol:BookProof_FriedrichsCanonical_friedrichs_unique_selfAdjoint: DONE
+12:37:01 submitting sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_canonical (attempt 1)
+12:37:02 sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_canonical: accepted, waiting on the compiler
+12:37:02 sol:BookProof_FriedrichsCanonical_semibounded_friedrichs_unique: DONE
+12:37:11 submitting sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_unique (attempt 1)
+12:37:12 sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_unique: accepted, waiting on the compiler
+12:38:37 sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_canonical: DONE
+12:38:46 submitting sol:BookProof_QgOuterFockFL_friedrichsComparison_extends (attempt 1)
+12:38:47 sol:BookProof_QgOuterFockFL_friedrichsComparison_extends: accepted, waiting on the compiler
+12:38:47 sol:BookProof_FriedrichsCanonical_qgOneParticleSector_friedrichs_unique: DONE
+12:40:21 sync: read 1176 definition publish job(s)
+12:41:02 sync: read 11442 problem publish job(s)
+12:41:02 processing sol:BookProof_QgOuterFockFL_friedrichsComparison_extends (attempt 1)
+12:41:03 sol:BookProof_QgOuterFockFL_friedrichsComparison_extends: DONE
+12:41:03 summary: 6398 done, 3398 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+12:41:03 chunk: 1 item(s) processed in 0s
+12:45:47 sync: read 1176 definition publish job(s)
+12:46:31 sync: read 11442 problem publish job(s)
+12:51:28 sync: read 1176 definition publish job(s)
+12:52:13 sync: read 11442 problem publish job(s)
+12:52:13 submitting sol:BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom (attempt 1)
+12:52:13 sol:BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom: accepted, waiting on the compiler
+12:52:13 submitting sol:BookProof_QgOuterFockFL_harmFried_op_core (attempt 1)
+12:52:13 sol:BookProof_QgOuterFockFL_harmFried_op_core: accepted, waiting on the compiler
+12:52:13 sol:BookProof_QgOuterFockFL_polyGaussCore_le_harmFriedDom: DONE
+12:52:14 sol:BookProof_QgOuterFockFL_harmFried_op_core: DONE
+12:52:14 summary: 6398 done, 3398 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+12:52:14 chunk: 2 item(s) resolved in 1s
+12:57:20 sync: read 1176 definition publish job(s)
+12:58:05 sync: read 11442 problem publish job(s)
+13:07:21 sync: read 1176 definition publish job(s)
+13:08:03 sync: read 11442 problem publish job(s)
+13:08:03 processing def:ChapterQgOuterFockFullFL (attempt 2)
+13:09:14 def:ChapterQgOuterFockFullFL: DONE
+13:09:14 summary: 578 done, 112 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:09:14 chunk: 1 item(s) processed in 71s
+13:10:20 sync: read 1177 definition publish job(s)
+13:11:05 sync: read 11442 problem publish job(s)
+13:11:05 processing sol:BookProof_NavierStokesFlow_FockContinuum_tendsto_eLpNorm_indicator_compl (attempt 1)
+13:12:29 sol:BookProof_NavierStokesFlow_FockContinuum_tendsto_eLpNorm_indicator_compl: DONE
+13:12:29 summary: 6399 done, 3397 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:12:29 chunk: 1 item(s) processed in 83s
+13:14:19 sync: read 1177 definition publish job(s)
+13:15:02 sync: read 11442 problem publish job(s)
+13:15:41 sync: read 1177 definition publish job(s)
+13:16:25 sync: read 11442 problem publish job(s)
+13:16:25 processing sol:BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense (attempt 1)
+13:16:25 sol:BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense: DONE
+13:16:26 summary: 6399 done, 3397 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:16:26 chunk: 1 item(s) processed in 0s
+13:18:23 sync: read 1177 definition publish job(s)
+13:19:11 sync: read 11442 problem publish job(s)
+13:19:52 sync: read 1177 definition publish job(s)
+13:20:35 sync: read 11442 problem publish job(s)
+13:20:35 processing def:ChapterNavierStokesFockLagrangian (attempt 2)
+13:21:36 def:ChapterNavierStokesFockLagrangian: DONE
+13:21:36 summary: 579 done, 111 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:21:36 chunk: 1 item(s) processed in 61s
+13:22:12 sync: read 1178 definition publish job(s)
+13:23:05 sync: read 11442 problem publish job(s)
+13:23:58 sync: read 1178 definition publish job(s)
+13:24:41 sync: read 11442 problem publish job(s)
+13:24:41 submitting def:ChapterStoneSeparable (attempt 1)
+13:24:43 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup.gen_stoneU_eq, BookProof.ChapterStoneResolvent.Unbounde)
+13:24:43 submitting def:ChapterNavierStokesFockParcels (attempt 1)
+13:24:45 def:ChapterNavierStokesFockParcels: accepted, waiting on the compiler
+13:25:35 def:ChapterNavierStokesFockParcels: DONE
+13:25:35 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:25:35 chunk: 1 item(s) resolved in 54s
+13:28:21 sync: read 1179 definition publish job(s)
+13:29:06 sync: read 11442 problem publish job(s)
+13:29:06 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+13:29:06 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op) - job in flight, no attempt consumed
+13:29:06 summary: 6399 done, 3397 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:29:06 chunk: 1 item(s) processed in 0s
+13:30:15 sync: read 1179 definition publish job(s)
+13:30:59 sync: read 11442 problem publish job(s)
+13:30:59 processing thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+13:30:59 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain) - job in flight, no attempt consumed
+13:30:59 summary: 6797 done, 2974 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:30:59 chunk: 1 item(s) processed in 0s
+13:31:32 sync: read 1179 definition publish job(s)
+13:32:17 sync: read 11442 problem publish job(s)
+13:33:31 sync: read 1179 definition publish job(s)
+13:34:13 sync: read 11442 problem publish job(s)
+13:34:13 submitting thm:BookProof_ChapterG3_eventProj_idem (attempt 1)
+13:34:14 thm:BookProof_ChapterG3_eventProj_idem: accepted, waiting on the compiler
+13:34:14 submitting thm:BookProof_ChapterG3_eventProj_comm (attempt 1)
+13:34:15 thm:BookProof_ChapterG3_eventProj_comm: accepted, waiting on the compiler
+13:34:15 submitting thm:BookProof_ChapterG3_eventProj_inter (attempt 1)
+13:34:16 thm:BookProof_ChapterG3_eventProj_inter: accepted, waiting on the compiler
+13:34:16 submitting thm:BookProof_ChapterG3_eventProj_compl (attempt 1)
+13:34:17 thm:BookProof_ChapterG3_eventProj_compl: accepted, waiting on the compiler
+13:34:44 thm:BookProof_ChapterG3_eventProj_idem: DONE
+13:34:45 thm:BookProof_ChapterG3_eventProj_comm: DONE
+13:34:45 thm:BookProof_ChapterG3_eventProj_inter: DONE
+13:34:46 thm:BookProof_ChapterG3_eventProj_compl: DONE
+13:34:46 submitting thm:BookProof_ChapterG3_eventProj_union (attempt 1)
+13:34:47 thm:BookProof_ChapterG3_eventProj_union: accepted, waiting on the compiler
+13:34:47 submitting thm:BookProof_ChapterG3_integral_eventProj (attempt 1)
+13:34:48 thm:BookProof_ChapterG3_integral_eventProj: accepted, waiting on the compiler
+13:34:48 submitting thm:BookProof_ChapterG3_mehler_uniform_isProbability (attempt 1)
+13:34:49 thm:BookProof_ChapterG3_mehler_uniform_isProbability: accepted, waiting on the compiler
+13:34:49 submitting thm:BookProof_ChapterG3_mehler_uniform_gauge_invariant (attempt 1)
+13:34:50 thm:BookProof_ChapterG3_mehler_uniform_gauge_invariant: accepted, waiting on the compiler
+13:35:17 thm:BookProof_ChapterG3_eventProj_union: DONE
+13:35:17 thm:BookProof_ChapterG3_integral_eventProj: DONE
+13:35:18 thm:BookProof_ChapterG3_mehler_uniform_isProbability: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `PhysHSGaussian.sphereUniform`; line 16: Unknown constant `BookProof.Ch)
+13:35:18 thm:BookProof_ChapterG3_mehler_uniform_gauge_invariant: FAIL (publish FAILED: formal statement does not compile: line 15: Unknown identifier `PhysHSGaussian.sphereUniform`; line 15: Unknown identifier `PhysHSGaus)
+13:35:18 submitting thm:BookProof_ChapterG3_mehler_uniform_concentrates (attempt 1)
+13:35:19 thm:BookProof_ChapterG3_mehler_uniform_concentrates: accepted, waiting on the compiler
+13:35:19 submitting thm:BookProof_ChapterG3_faithful_remnant_nontrivial (attempt 1)
+13:35:20 thm:BookProof_ChapterG3_faithful_remnant_nontrivial: accepted, waiting on the compiler
+13:35:20 submitting thm:BookProof_ChapterG3_free_remnant_moves_every_point (attempt 1)
+13:35:21 thm:BookProof_ChapterG3_free_remnant_moves_every_point: accepted, waiting on the compiler
+13:35:21 submitting thm:BookProof_ChapterG3_averagedMeasure_isProbability (attempt 1)
+13:35:22 thm:BookProof_ChapterG3_averagedMeasure_isProbability: accepted, waiting on the compiler
+13:35:41 thm:BookProof_ChapterG3_mehler_uniform_concentrates: FAIL (publish FAILED: formal statement does not compile: line 14: Unknown identifier `PhysHSGaussian.sphereUniform`)
+13:35:41 thm:BookProof_ChapterG3_faithful_remnant_nontrivial: DONE
+13:35:50 submitting thm:BookProof_ChapterG3_averagedMeasure_invariant (attempt 1)
+13:35:50 thm:BookProof_ChapterG3_averagedMeasure_invariant: accepted, waiting on the compiler
+13:35:51 submitting thm:BookProof_ChapterG3_qftVacuum_isProbability (attempt 1)
+13:35:51 thm:BookProof_ChapterG3_qftVacuum_isProbability: accepted, waiting on the compiler
+13:35:52 thm:BookProof_ChapterG3_free_remnant_moves_every_point: DONE
+13:35:52 thm:BookProof_ChapterG3_averagedMeasure_isProbability: DONE
+13:36:01 submitting thm:BookProof_ChapterG3_qftVacuum_gauge_invariant (attempt 1)
+13:36:02 thm:BookProof_ChapterG3_qftVacuum_gauge_invariant: accepted, waiting on the compiler
+13:36:02 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const (attempt 1)
+13:36:03 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const: accepted, waiting on the compiler
+13:36:12 thm:BookProof_ChapterG3_qftVacuum_isProbability: DONE
+13:36:21 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add (attempt 1)
+13:36:22 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add: title clamped to 176 chars (server limit 200)
+13:36:22 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add: accepted, waiting on the compiler
+13:36:22 thm:BookProof_ChapterG3_averagedMeasure_invariant: DONE
+13:36:31 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul (attempt 1)
+13:36:32 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul: title clamped to 176 chars (server limit 200)
+13:36:32 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul: accepted, waiting on the compiler
+13:36:33 thm:BookProof_ChapterG3_qftVacuum_gauge_invariant: DONE
+13:36:41 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul (attempt 1)
+13:36:42 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul: accepted, waiting on the compiler
+13:36:52 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const: FAIL (publish FAILED: formal statement does not compile: line 15: `BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.const` has already been declared)
+13:37:01 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_sum (attempt 1)
+13:37:02 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_sum: accepted, waiting on the compiler
+13:37:03 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul: FAIL (publish FAILED: formal statement does not compile: line 15: `BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.mul` has already been declared)
+13:37:11 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_congr (attempt 1)
+13:37:12 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_congr: title clamped to 167 chars (server limit 200)
+13:37:12 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_congr: accepted, waiting on the compiler
+13:37:12 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add: FAIL (publish FAILED: formal statement does not compile: line 15: `BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.add` has already been declared)
+13:37:21 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp (attempt 1)
+13:37:22 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp: title clamped to 166 chars (server limit 200)
+13:37:22 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp: accepted, waiting on the compiler
+13:37:32 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.const_mul` has already been declare)
+13:37:41 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add (attempt 1)
+13:37:41 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add: title clamped to 165 chars (server limit 200)
+13:37:41 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add: accepted, waiting on the compiler
+13:37:51 thm:BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_sum: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.sum` has already been declared)
+13:37:51 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.mulD_comp` has already been declared)
+13:38:00 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul (attempt 1)
+13:38:01 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul: accepted, waiting on the compiler
+13:38:01 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp' (attempt 1)
+13:38:02 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp': accepted, waiting on the compiler
+13:38:02 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_congr: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.mulD_congr` has already been declared)
+13:38:11 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add' (attempt 1)
+13:38:12 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add': accepted, waiting on the compiler
+13:38:12 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.mulD_add` has already been declared)
+13:38:21 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul' (attempt 1)
+13:38:22 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul': accepted, waiting on the compiler
+13:38:51 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.mulD_real_smul` has already been declared)
+13:38:51 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp': DONE
+13:39:00 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_hasZeroDeficiencyOn (attempt 1)
+13:39:00 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_hasZeroDeficiencyOn: accepted, waiting on the compiler
+13:39:01 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_norm_mulD_ge (attempt 1)
+13:39:01 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_mulD_ge: title clamped to 179 chars (server limit 200)
+13:39:01 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_mulD_ge: accepted, waiting on the compiler
+13:39:02 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_add': DONE
+13:39:11 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_not_bounded (attempt 1)
+13:39:11 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_not_bounded: accepted, waiting on the compiler
+13:39:12 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul': DONE
+13:39:21 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_eq_zero_of_eigen (attempt 1)
+13:39:21 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_eq_zero_of_eigen: title clamped to 179 chars (server limit 200)
+13:39:22 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_eq_zero_of_eigen: accepted, waiting on the compiler
+13:39:31 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_hasZeroDeficiencyOn: FAIL (publish FAILED: formal statement does not compile: line 19: `BookProof.NavierStokesFlow.FockLagrangian.mulD_hasZeroDeficiencyOn` has already been decl)
+13:39:40 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_scale_nonneg (attempt 1)
+13:39:41 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_scale_nonneg: accepted, waiting on the compiler
+13:39:42 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_not_bounded: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.mulD_not_bounded` has already been declared)
+13:39:50 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas (attempt 1)
+13:39:51 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas: accepted, waiting on the compiler
+13:39:52 thm:BookProof_NavierStokesFlow_FockLagrangian_mulD_eq_zero_of_eigen: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.mulD_eq_zero_of_eigen` has already been declare)
+13:40:01 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom (attempt 1)
+13:40:01 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom: accepted, waiting on the compiler
+13:40:21 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_meas: FAIL (publish FAILED: formal statement does not compile: line 22: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.total_meas` has already been declare)
+13:40:29 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sq_dom (attempt 1)
+13:40:30 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sq_dom: accepted, waiting on the compiler
+13:40:39 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_scale_nonneg: FAIL (publish FAILED: formal statement does not compile: line 20: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.scale_nonneg` has already been decla)
+13:40:48 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sqQ_dom (attempt 1)
+13:40:49 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sqQ_dom: accepted, waiting on the compiler
+13:41:17 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_total_dom: FAIL (publish FAILED: formal statement does not compile: line 25: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.total_dom` has already been declared)
+13:41:26 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_meas (attempt 1)
+13:41:27 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_meas: accepted, waiting on the compiler
+13:41:27 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sq_dom: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.sq_dom` has already been declared)
+13:41:36 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_meas (attempt 1)
+13:41:37 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_meas: accepted, waiting on the compiler
+13:41:47 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_sqQ_dom: FAIL (publish FAILED: formal statement does not compile: line 23: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.sqQ_dom` has already been declared)
+13:41:55 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_meas (attempt 1)
+13:41:56 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_meas: accepted, waiting on the compiler
+13:42:06 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_meas: FAIL (publish FAILED: formal statement does not compile: line 20: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.visSym_meas` has already been declar)
+13:42:15 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_dom (attempt 1)
+13:42:16 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_dom: accepted, waiting on the compiler
+13:42:16 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_mulD_ge: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.norm_mulD_ge` has already been declared)
+13:42:17 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_meas: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinSym_meas` has already been declar)
+13:42:25 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom (attempt 1)
+13:42:26 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom: accepted, waiting on the compiler
+13:42:26 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom (attempt 1)
+13:42:27 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom: accepted, waiting on the compiler
+13:42:28 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_meas: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.driSym_meas` has already been declar)
+13:42:37 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq (attempt 1)
+13:42:38 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq: accepted, waiting on the compiler
+13:42:57 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinSym_dom: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinSym_dom` has already been declare)
+13:49:33 sync: read 1179 definition publish job(s)
+13:50:15 sync: read 11485 problem publish job(s)
+13:51:07 sync: read 1179 definition publish job(s)
+13:51:52 sync: read 11485 problem publish job(s)
+13:52:26 sync: read 1179 definition publish job(s)
+13:53:11 sync: read 11485 problem publish job(s)
+13:53:11 processing thm:BookProof_WallEsaBddBelow_scalaronPlus_esa (attempt 2)
+13:53:11 thm:BookProof_WallEsaBddBelow_scalaronPlus_esa: WAIT (guard defer: thm gate: candidate build: Theorems/Thm_BookProof_WallEsaBddBelow_scalaronPlus_esa.lean:32:10: error(lean.unknownIdentifier): Unknown ide) - job in flight, no attempt consumed
+13:53:11 summary: 6812 done, 2937 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:53:11 chunk: 1 item(s) processed in 0s
+13:55:37 sync: read 1179 definition publish job(s)
+13:56:26 sync: read 11485 problem publish job(s)
+13:56:26 processing thm:BookProof_WallEsaBddBelow_scalaronPlus_esa (attempt 2)
+13:56:26 thm:BookProof_WallEsaBddBelow_scalaronPlus_esa: title clamped to 170 chars (server limit 200)
+13:57:08 thm:BookProof_WallEsaBddBelow_scalaronPlus_esa: DONE
+13:57:08 summary: 6813 done, 2936 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:57:08 chunk: 1 item(s) processed in 43s
+13:57:36 sync: read 1179 definition publish job(s)
+13:58:26 sync: read 11486 problem publish job(s)
+13:58:26 processing sol:BookProof_WallEsaBddBelow_scalaronPlus_esa (attempt 1)
+14:00:10 sol:BookProof_WallEsaBddBelow_scalaronPlus_esa: DONE
+14:00:10 summary: 6400 done, 3396 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:00:10 chunk: 1 item(s) processed in 104s
+14:01:58 sync: read 1179 definition publish job(s)
+14:02:43 sync: read 11486 problem publish job(s)
+14:55:25 sync: read 1179 definition publish job(s)
+14:56:09 sync: read 11486 problem publish job(s)
+14:56:45 sync: read 1179 definition publish job(s)
+14:57:30 sync: read 11486 problem publish job(s)
+14:59:11 sync: read 1179 definition publish job(s)
+14:59:55 sync: read 11486 problem publish job(s)
+14:59:55 submitting sol:BookProof_ChapterG3_eventProj_idem (attempt 1)
+14:59:56 sol:BookProof_ChapterG3_eventProj_idem: accepted, waiting on the compiler
+14:59:56 submitting sol:BookProof_ChapterG3_eventProj_comm (attempt 1)
+14:59:57 sol:BookProof_ChapterG3_eventProj_comm: accepted, waiting on the compiler
+14:59:57 submitting sol:BookProof_ChapterG3_eventProj_inter (attempt 1)
+14:59:58 sol:BookProof_ChapterG3_eventProj_inter: accepted, waiting on the compiler
+15:00:43 sol:BookProof_ChapterG3_eventProj_idem: FAIL (verdict CE: Compile error in your proof:
+line 22: Invalid simp theorem: Expected a proposition, but found
+  (x_0 : Type _abstMVar.0) → Set x_0 → x_0 →)
+15:00:51 submitting sol:BookProof_ChapterG3_eventProj_compl (attempt 1)
+15:00:53 sol:BookProof_ChapterG3_eventProj_compl: accepted, waiting on the compiler
+15:00:53 sol:BookProof_ChapterG3_eventProj_inter: FAIL (verdict CE: Compile error in your proof:
+line 24: Invalid simp theorem: Expected a proposition, but found
+  (x_0 : Type _abstMVar.0) → Set x_0 → x_0 →)
+15:01:02 submitting sol:BookProof_ChapterG3_eventProj_union (attempt 1)
+15:01:03 sol:BookProof_ChapterG3_eventProj_union: accepted, waiting on the compiler
+15:01:20 sol:BookProof_ChapterG3_eventProj_comm: DONE
+15:01:29 submitting sol:BookProof_ChapterG3_integral_eventProj (attempt 1)
+15:01:30 sol:BookProof_ChapterG3_integral_eventProj: accepted, waiting on the compiler
+15:01:39 sol:BookProof_ChapterG3_eventProj_compl: FAIL (verdict CE: Compile error in your proof:
+line 24: Invalid simp theorem: Expected a proposition, but found
+  (x_0 : Type _abstMVar.0) → Set x_0 → x_0 →)
+15:01:48 submitting sol:BookProof_ChapterG3_faithful_remnant_nontrivial (attempt 1)
+15:01:49 sol:BookProof_ChapterG3_faithful_remnant_nontrivial: accepted, waiting on the compiler
+15:01:49 sol:BookProof_ChapterG3_eventProj_union: FAIL (verdict CE: Compile error in your proof:
+line 24: Invalid simp theorem: Expected a proposition, but found
+  (x_0 : Type _abstMVar.0) → Set x_0 → x_0 →)
+15:01:58 submitting sol:BookProof_ChapterG3_free_remnant_moves_every_point (attempt 1)
+15:01:59 sol:BookProof_ChapterG3_free_remnant_moves_every_point: accepted, waiting on the compiler
+15:02:26 sol:BookProof_ChapterG3_integral_eventProj: FAIL (verdict CE: Compile error in your proof:
+line 24: Invalid rewrite argument: Expected an equality or iff proof or definition name, but
+  BookProof.Chap)
+15:02:35 submitting sol:BookProof_ChapterG3_averagedMeasure_isProbability (attempt 1)
+15:02:36 sol:BookProof_ChapterG3_averagedMeasure_isProbability: accepted, waiting on the compiler
+15:03:03 sol:BookProof_ChapterG3_faithful_remnant_nontrivial: DONE
+15:03:11 submitting sol:BookProof_ChapterG3_averagedMeasure_invariant (attempt 1)
+15:03:12 sol:BookProof_ChapterG3_averagedMeasure_invariant: accepted, waiting on the compiler
+15:03:13 sol:BookProof_ChapterG3_free_remnant_moves_every_point: DONE
+15:03:21 submitting sol:BookProof_ChapterG3_qftVacuum_isProbability (attempt 1)
+15:03:22 sol:BookProof_ChapterG3_qftVacuum_isProbability: accepted, waiting on the compiler
+15:03:40 sol:BookProof_ChapterG3_averagedMeasure_isProbability: DONE
+15:03:49 submitting sol:BookProof_ChapterG3_qftVacuum_gauge_invariant (attempt 1)
+15:03:50 sol:BookProof_ChapterG3_qftVacuum_gauge_invariant: accepted, waiting on the compiler
+15:04:17 sol:BookProof_ChapterG3_qftVacuum_isProbability: FAIL (verdict CE: Compile error in your proof:
+line 18: Unknown identifier `PhysHSGaussian.gaussianE_isProbability`)
+15:04:35 sol:BookProof_ChapterG3_averagedMeasure_invariant: DONE
+15:04:43 sol:BookProof_ChapterG3_qftVacuum_gauge_invariant: FAIL (verdict CE: Compile error in your proof:
+line 20: Unknown identifier `PhysHSGaussian.gaussianE_rotation_invariant`)
+15:04:43 summary: 6405 done, 3391 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+15:04:43 chunk: 12 item(s) resolved in 289s
+15:28:41 sync: read 1179 definition publish job(s)
+15:29:25 sync: read 11486 problem publish job(s)
+15:29:25 submitting sol:BookProof_ChapterG3_eventProj_idem (attempt 2)
+15:29:26 sol:BookProof_ChapterG3_eventProj_idem: accepted, waiting on the compiler
+15:29:26 submitting sol:BookProof_ChapterG3_eventProj_inter (attempt 2)
+15:29:27 sol:BookProof_ChapterG3_eventProj_inter: accepted, waiting on the compiler
+15:29:27 submitting sol:BookProof_ChapterG3_eventProj_compl (attempt 2)
+15:29:28 sol:BookProof_ChapterG3_eventProj_compl: accepted, waiting on the compiler
+15:30:39 sol:BookProof_ChapterG3_eventProj_inter: DONE
+15:30:47 submitting sol:BookProof_ChapterG3_eventProj_union (attempt 2)
+15:30:48 sol:BookProof_ChapterG3_eventProj_union: accepted, waiting on the compiler
+15:30:49 sol:BookProof_ChapterG3_eventProj_idem: DONE
+15:30:57 submitting sol:BookProof_ChapterG3_integral_eventProj (attempt 2)
+15:30:58 sol:BookProof_ChapterG3_integral_eventProj: accepted, waiting on the compiler
+15:30:59 sol:BookProof_ChapterG3_eventProj_compl: DONE
+15:31:07 submitting sol:BookProof_ChapterG3_qftVacuum_isProbability (attempt 2)
+15:31:08 sol:BookProof_ChapterG3_qftVacuum_isProbability: WAIT (guard defer: sol rules: `theorem solution` is wrapped in a namespace (rule 1))
+15:31:08 submitting sol:BookProof_ChapterG3_qftVacuum_gauge_invariant (attempt 2)
+15:31:08 sol:BookProof_ChapterG3_qftVacuum_gauge_invariant: WAIT (guard defer: sol rules: `theorem solution` is wrapped in a namespace (rule 1))
+15:32:00 sol:BookProof_ChapterG3_eventProj_union: DONE
+15:32:09 sol:BookProof_ChapterG3_integral_eventProj: DONE
+15:32:09 summary: 6410 done, 3386 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+15:32:09 chunk: 5 item(s) resolved in 164s
+15:40:17 sync: read 1179 definition publish job(s)
+15:41:08 sync: read 11486 problem publish job(s)
+15:41:08 submitting sol:BookProof_ChapterG3_qftVacuum_isProbability (attempt 2)
+15:41:09 sol:BookProof_ChapterG3_qftVacuum_isProbability: accepted, waiting on the compiler
+15:41:09 submitting sol:BookProof_ChapterG3_qftVacuum_gauge_invariant (attempt 2)
+15:41:10 sol:BookProof_ChapterG3_qftVacuum_gauge_invariant: accepted, waiting on the compiler
+15:42:27 sol:BookProof_ChapterG3_qftVacuum_gauge_invariant: DONE
+15:42:36 sol:BookProof_ChapterG3_qftVacuum_isProbability: DONE
+15:42:36 summary: 6412 done, 3384 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+15:42:36 chunk: 2 item(s) resolved in 88s
+15:43:26 sync: read 1179 definition publish job(s)
+15:44:13 sync: read 11486 problem publish job(s)
+15:45:49 sync: read 1179 definition publish job(s)
+15:46:33 sync: read 11486 problem publish job(s)
+15:46:33 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom (attempt 1)
+15:46:33 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom: accepted, waiting on the compiler
+15:46:33 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom (attempt 1)
+15:46:33 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom: accepted, waiting on the compiler
+15:46:33 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq (attempt 1)
+15:46:33 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq: accepted, waiting on the compiler
+15:46:33 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_viscous_eq (attempt 1)
+15:46:34 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_viscous_eq: accepted, waiting on the compiler
+15:46:34 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_visSym_dom: FAIL (publish FAILED: formal statement does not compile: line 20: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.visSym_dom` has already been declare)
+15:46:35 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_driSym_dom: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.driSym_dom` has already been declare)
+15:46:35 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_kinetic_eq: FAIL (publish FAILED: formal statement does not compile: line 25: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.kinetic_eq` has already been declare)
+15:46:44 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_drift_eq (attempt 1)
+15:46:45 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_drift_eq: accepted, waiting on the compiler
+15:46:45 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_mulD (attempt 1)
+15:46:46 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_mulD: accepted, waiting on the compiler
+15:46:46 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_hasZeroDeficiencyOn (attempt 1)
+15:46:47 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_hasZeroDeficiencyOn: accepted, waiting on the compiler
+15:47:05 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_viscous_eq: FAIL (publish FAILED: formal statement does not compile: line 26: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.viscous_eq` has already been declare)
+15:47:14 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_zero_of_eigen (attempt 1)
+15:47:15 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_zero_of_eigen: accepted, waiting on the compiler
+15:47:16 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_mulD: FAIL (publish FAILED: formal statement does not compile: line 28: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.hFull_eq_mulD` has already been decl)
+15:47:16 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_hasZeroDeficiencyOn: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.hFull_hasZeroDeficiencyOn` has alrea)
+15:47:24 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_isSymmetricDom (attempt 1)
+15:47:25 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_isSymmetricDom: accepted, waiting on the compiler
+15:47:25 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_hasZeroDeficiencyOn (attempt 1)
+15:47:26 thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_hasZeroDeficiencyOn: accepted, waiting on the compiler
+15:47:36 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_drift_eq: FAIL (publish FAILED: formal statement does not compile: line 24: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.drift_eq` has already been declared)
+15:47:45 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_dense (attempt 1)
+15:47:46 thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_dense: accepted, waiting on the compiler
+15:47:46 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_eq_zero_of_eigen: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.hFull_eq_zero_of_eigen` has already )
+15:47:55 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_scale (attempt 1)
+15:47:56 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_scale: accepted, waiting on the compiler
+15:47:56 thm:BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_isSymmetricDom: FAIL (publish FAILED: formal statement does not compile: line 22: `BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.hFull_isSymmetricDom` has already be)
+15:48:05 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_total (attempt 1)
+15:48:06 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_total: accepted, waiting on the compiler
+15:48:06 thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_hasZeroDeficiencyOn: FAIL (publish FAILED: formal statement does not compile: line 18: `BookProof.NavierStokesFlow.FockLagrangian.fockLagrangian_hasZeroDeficiencyOn` has already)
+15:48:15 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn (attempt 1)
+15:48:16 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn: accepted, waiting on the compiler
+15:48:25 thm:BookProof_NavierStokesFlow_FockLagrangian_fockLagrangian_dense: FAIL (publish FAILED: formal statement does not compile: line 17: `BookProof.NavierStokesFlow.FockLagrangian.fockLagrangian_dense` has already been declared)
+15:48:34 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState (attempt 1)
+15:48:35 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState: accepted, waiting on the compiler
+15:48:36 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_scale: FAIL (publish FAILED: formal statement does not compile: line 19: `BookProof.NavierStokesFlow.FockLagrangian.momFock_scale` has already been declared)
+15:48:45 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core (attempt 1)
+15:48:46 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core: accepted, waiting on the compiler
+15:48:46 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_total: FAIL (publish FAILED: formal statement does not compile: line 21: `BookProof.NavierStokesFlow.FockLagrangian.momFock_total` has already been declared)
+15:48:46 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn: FAIL (publish FAILED: formal statement does not compile: line 17: `BookProof.NavierStokesFlow.FockLagrangian.bigState_coeFn` has already been declared)
+15:48:55 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_symbol_ge (attempt 1)
+15:48:55 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_symbol_ge: title clamped to 162 chars (server limit 200)
+15:48:56 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_symbol_ge: accepted, waiting on the compiler
+15:48:56 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_not_bounded (attempt 1)
+15:48:57 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_not_bounded: accepted, waiting on the compiler
+15:49:16 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState: DONE
+15:49:16 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core: DONE
+15:49:25 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn (attempt 1)
+15:49:26 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn: accepted, waiting on the compiler
+15:49:26 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn (attempt 1)
+15:49:27 thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn: accepted, waiting on the compiler
+15:49:27 thm:BookProof_NavierStokesFlow_FockLagrangian_bigState_symbol_ge: FAIL (publish FAILED: formal statement does not compile: line 21: unsolved goals
+K : ℝ
+hK : 1 ≤ K
+x : ParcelConf ℝ
+hx : ↑↑(bigState K) x = (bigSet K).indica)
+15:49:27 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_not_bounded: DONE
+15:49:36 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset (attempt 1)
+15:49:37 thm:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset: accepted, waiting on the compiler
+15:49:37 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos (attempt 1)
+15:49:38 thm:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos: accepted, waiting on the compiler
+15:49:56 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn: DONE
+15:49:57 thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn: DONE
+15:50:06 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core (attempt 1)
+15:50:06 thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core: accepted, waiting on the compiler
+15:50:06 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top (attempt 1)
+15:50:07 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top: accepted, waiting on the compiler
+15:50:08 thm:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset: DONE
+15:50:17 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level (attempt 1)
+15:50:18 thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level: accepted, waiting on the compiler
+15:50:18 thm:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos: DONE
+15:50:27 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level (attempt 1)
+15:50:28 thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level: accepted, waiting on the compiler
+15:50:38 thm:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core: DONE
+15:50:38 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top: DONE
+15:50:47 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level (attempt 1)
+15:50:47 thm:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level: accepted, waiting on the compiler
+15:50:48 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector (attempt 1)
+15:50:48 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: title clamped to 179 chars (server limit 200)
+15:50:48 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: accepted, waiting on the compiler
+15:50:49 thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level: DONE
+15:50:58 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn (attempt 1)
+15:50:59 thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn: accepted, waiting on the compiler
+15:50:59 thm:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level: DONE
+15:51:08 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState (attempt 1)
+15:51:09 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState: accepted, waiting on the compiler
+15:51:18 thm:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level: DONE
+15:51:27 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core (attempt 1)
+15:51:28 thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core: accepted, waiting on the compiler
+15:51:46 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: DONE
+15:51:55 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 1)
+15:51:56 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: accepted, waiting on the compiler
+15:51:56 thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn: DONE
+15:51:57 thm:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState: DONE
+15:51:57 thm:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core: DONE
+15:52:06 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock (attempt 1)
+15:52:07 thm:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock: accepted, waiting on the compiler
+15:52:07 submitting thm:BookProof_QgOuterFockFullFL_qgSector_gradFun_le (attempt 1)
+15:52:08 thm:BookProof_QgOuterFockFullFL_qgSector_gradFun_le: accepted, waiting on the compiler
+15:52:08 submitting thm:BookProof_QgOuterFockFullFL_qgFLc_nonneg (attempt 1)
+15:52:09 thm:BookProof_QgOuterFockFullFL_qgFLc_nonneg: accepted, waiting on the compiler
+15:52:27 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: FAIL (publish FAILED: formal statement does not compile: line 23: Unknown identifier `vacState_mem_core`
+
+Note: It is not possible to treat `vacState_mem_co)
+15:52:36 submitting thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le (attempt 1)
+15:52:37 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: accepted, waiting on the compiler
+15:52:47 thm:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock: DONE
+15:52:56 submitting thm:BookProof_QgOuterFockFullFL_qgSectorExt_symmetricOn (attempt 1)
+15:52:58 thm:BookProof_QgOuterFockFullFL_qgSectorExt_symmetricOn: accepted, waiting on the compiler
+15:53:07 thm:BookProof_QgOuterFockFullFL_qgSector_gradFun_le: DONE
+15:53:16 submitting thm:BookProof_QgOuterFockFullFL_qgSectorExt_core (attempt 1)
+15:53:17 thm:BookProof_QgOuterFockFullFL_qgSectorExt_core: accepted, waiting on the compiler
+15:53:36 thm:BookProof_QgOuterFockFullFL_qgFLc_nonneg: DONE
+15:53:36 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: FAIL (publish FAILED: formal statement does not compile: line 38: Ambiguous term
+  harmCore
+Possible interpretations:
+  QgOuterFockFL.harmCore : ↥polyGaussC)
+15:53:45 submitting thm:BookProof_QgOuterFockFullFL_qgSectorExt_rel (attempt 1)
+15:53:46 thm:BookProof_QgOuterFockFullFL_qgSectorExt_rel: accepted, waiting on the compiler
+15:53:46 submitting thm:BookProof_QgOuterFockFullFL_qgSectorData_commForm_le (attempt 1)
+15:53:46 thm:BookProof_QgOuterFockFullFL_qgSectorData_commForm_le: title clamped to 179 chars (server limit 200)
+15:53:47 thm:BookProof_QgOuterFockFullFL_qgSectorData_commForm_le: accepted, waiting on the compiler
+15:53:47 thm:BookProof_QgOuterFockFullFL_qgSectorExt_symmetricOn: DONE
+15:53:56 submitting thm:BookProof_QgOuterFockFullFL_qgSectorExt_commForm_le (attempt 1)
+15:53:57 thm:BookProof_QgOuterFockFullFL_qgSectorExt_commForm_le: accepted, waiting on the compiler
+15:54:15 thm:BookProof_QgOuterFockFullFL_qgSectorExt_core: DONE
+15:54:24 submitting thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 1)
+15:54:25 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: accepted, waiting on the compiler
+15:54:44 thm:BookProof_QgOuterFockFullFL_qgSectorExt_rel: DONE
+15:54:44 thm:BookProof_QgOuterFockFullFL_qgSectorData_commForm_le: DONE
+15:54:45 thm:BookProof_QgOuterFockFullFL_qgSectorExt_commForm_le: DONE
+15:56:04 sync: read 1179 definition publish job(s)
+15:56:49 sync: read 11525 problem publish job(s)
+15:57:20 sync: read 1179 definition publish job(s)
+15:58:04 sync: read 11525 problem publish job(s)
+15:58:04 submitting thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 1)
+15:58:04 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: accepted, waiting on the compiler
+15:58:04 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: FAIL (publish FAILED: formal statement does not compile: line 39: Unknown identifier `qgSectorExt_rel`
+
+Note: It is not possible to treat `qgSectorExt_rel` )
+15:58:04 summary: 6837 done, 2912 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+15:58:04 chunk: 1 item(s) resolved in 1s
+16:01:26 sync: read 1179 definition publish job(s)
+16:02:11 sync: read 11525 problem publish job(s)
+16:02:11 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 2)
+16:02:11 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (guard defer: thm gate: stub edited since the last thm build -- rebuild before submitting)
+16:02:11 submitting thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le (attempt 2)
+16:02:11 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: WAIT (guard defer: thm gate: stub edited since the last thm build -- rebuild before submitting)
+16:02:11 submitting thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+16:02:11 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (guard defer: thm gate: stub edited since the last thm build -- rebuild before submitting)
+16:02:12 summary: 6837 done, 2912 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:02:12 chunk: 0 item(s) resolved in 1s
+16:03:15 sync: read 1179 definition publish job(s)
+16:04:01 sync: read 11525 problem publish job(s)
+16:04:01 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 2)
+16:04:01 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (guard defer: thm gate: candidate build: Theorems/Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector.lean:24:36: error(lean.unkno)
+16:04:01 submitting thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le (attempt 2)
+16:04:01 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: WAIT (guard defer: thm gate: candidate build: Theorems/Thm_BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le.lean:39:30: error: Ambiguous term)
+16:04:01 submitting thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+16:04:01 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (guard defer: thm gate: candidate build: Theorems/Thm_BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full.lean:40:69: error(lean.unknownIdenti)
+16:04:01 summary: 6837 done, 2912 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:04:01 chunk: 0 item(s) resolved in 1s
+16:10:44 sync: read 1179 definition publish job(s)
+16:11:29 sync: read 11525 problem publish job(s)
+16:11:30 submitting thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 2)
+16:11:30 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core)
+16:11:30 submitting thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le (attempt 2)
+16:11:31 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: accepted, waiting on the compiler
+16:11:31 submitting thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+16:11:31 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (guard defer: thm gate: candidate build: Theorems/Thm_BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full.lean:42:36: error: Ambiguous term)
+16:12:30 thm:BookProof_QgOuterFockFullFL_qgSectorHam_commForm_le: DONE
+16:12:30 summary: 6838 done, 2911 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:12:30 chunk: 1 item(s) resolved in 60s
+16:13:31 sync: read 1179 definition publish job(s)
+16:14:19 sync: read 11526 problem publish job(s)
+16:21:57 sync: read 1179 definition publish job(s)
+16:22:43 sync: read 11526 problem publish job(s)
+16:22:43 processing thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+16:22:43 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QgOuterFockFullFL_qgSectorExt_rel) - job in flight, no attempt consumed
+16:22:43 summary: 6838 done, 2911 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:22:43 chunk: 1 item(s) processed in 0s
+16:24:13 sync: read 1179 definition publish job(s)
+16:25:01 sync: read 11526 problem publish job(s)
+16:25:01 processing thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+16:25:01 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QgOuterFockFullFL_qgSectorExt_rel) - job in flight, no attempt consumed
+16:25:01 summary: 6838 done, 2911 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:25:01 chunk: 1 item(s) processed in 0s
+21:52:50 sync: read 1179 definition publish job(s)
+21:53:59 sync: read 1179 definition publish job(s)
+21:54:52 sync: read 11526 problem publish job(s)
+22:10:51 sync: read 1179 definition publish job(s)
+22:11:49 sync: read 11526 problem publish job(s)
+22:11:49 processing sol:BookProof_QgOuterFockFullFL_qgSectorExt_rel (attempt 1)
+22:12:52 sol:BookProof_QgOuterFockFullFL_qgSectorExt_rel: WAIT (verify poll timeout) - job in flight, no attempt consumed
+22:12:52 summary: 6412 done, 3348 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:12:52 chunk: 1 item(s) processed in 63s
+22:22:04 sync: read 1179 definition publish job(s)
+22:22:53 sync: read 11526 problem publish job(s)
+22:22:53 processing sol:BookProof_QgOuterFockFullFL_qgSectorExt_rel (attempt 1)
+22:22:54 sol:BookProof_QgOuterFockFullFL_qgSectorExt_rel: DONE
+22:22:54 summary: 6413 done, 3347 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:22:54 chunk: 1 item(s) processed in 1s
+22:23:23 sync: read 1179 definition publish job(s)
+22:24:10 sync: read 11526 problem publish job(s)
+22:24:11 processing thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 2)
+22:25:18 thm:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: WAIT (publish PENDING: poll timeout) - job in flight, no attempt consumed
+22:25:18 summary: 6838 done, 2897 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:25:18 chunk: 1 item(s) processed in 68s
+22:27:44 sync: read 1179 definition publish job(s)
+22:28:36 sync: read 11527 problem publish job(s)
+22:28:36 summary: 6838 done, 2897 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:28:36 waiting on unpublished def bundle(s): target already published on the platform (BookProof.QgOuterFockFullFL.qgOuterFock_esa_farisLavine_full) (1 item(s))
+22:28:36 chunk: 0 item(s) processed in 0s
+22:29:16 sync: read 1179 definition publish job(s)
+22:30:01 sync: read 11527 problem publish job(s)
+22:30:01 summary: 6838 done, 2897 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:30:01 waiting on unpublished def bundle(s): target already published on the platform (BookProof.QgOuterFockFullFL.qgOuterFock_esa_farisLavine_full) (1 item(s))
+22:30:01 chunk: 0 item(s) processed in 0s
+22:31:59 sync: read 1179 definition publish job(s)
+22:32:49 sync: read 11527 problem publish job(s)
+22:32:49 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 1)
+22:32:49 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (theorem not published yet)
+22:32:49 submitting sol:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full (attempt 1)
+22:32:50 sol:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: accepted, waiting on the compiler
+22:35:28 sol:BookProof_QgOuterFockFullFL_qgOuterFock_esa_farisLavine_full: DONE
+22:35:28 summary: 6414 done, 3346 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:35:28 chunk: 1 item(s) resolved in 159s
+22:36:56 sync: read 1179 definition publish job(s)
+22:37:41 sync: read 11527 problem publish job(s)
+22:37:42 processing sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core (attempt 1)
+22:38:44 sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core: WAIT (verify poll timeout) - job in flight, no attempt consumed
+22:38:44 summary: 6414 done, 3346 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:38:44 chunk: 1 item(s) processed in 63s
+22:40:54 sync: read 1179 definition publish job(s)
+22:41:49 sync: read 11527 problem publish job(s)
+22:41:49 processing sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core (attempt 1)
+22:41:49 sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_mem_core: DONE
+22:41:49 summary: 6415 done, 3345 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:41:49 chunk: 1 item(s) processed in 0s
+22:42:21 sync: read 1179 definition publish job(s)
+22:43:08 sync: read 11527 problem publish job(s)
+22:43:09 processing thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 2)
+22:43:51 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: FAIL (publish FAILED: Imported platform theorems must be Proved at submission time, but the following are not: BookProof.NavierStokesFlow.FockLagrangian.vac)
+22:43:51 summary: 6839 done, 2896 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:43:51 chunk: 1 item(s) processed in 43s
+22:58:53 sync: read 1179 definition publish job(s)
+22:59:41 sync: read 11528 problem publish job(s)
+23:01:18 sync: read 1179 definition publish job(s)
+23:02:09 sync: read 11528 problem publish job(s)
+23:02:09 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp' (attempt 1)
+23:02:11 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp': accepted, waiting on the compiler
+23:02:11 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_add' (attempt 1)
+23:02:12 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_add': accepted, waiting on the compiler
+23:02:12 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul' (attempt 1)
+23:02:13 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul': accepted, waiting on the compiler
+23:03:25 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_comp': DONE
+23:03:33 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState (attempt 1)
+23:03:34 sol:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState: accepted, waiting on the compiler
+23:03:35 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_real_smul': DONE
+23:03:43 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core (attempt 1)
+23:03:45 sol:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core: accepted, waiting on the compiler
+23:03:45 sol:BookProof_NavierStokesFlow_FockLagrangian_mulD_add': DONE
+23:03:54 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn (attempt 1)
+23:03:55 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn: accepted, waiting on the compiler
+23:04:59 sol:BookProof_NavierStokesFlow_FockLagrangian_norm_bigState: DONE
+23:04:59 sol:BookProof_NavierStokesFlow_FockLagrangian_bigState_mem_core: DONE
+23:05:07 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn (attempt 1)
+23:05:09 sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn: accepted, waiting on the compiler
+23:05:09 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset (attempt 1)
+23:05:10 sol:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset: accepted, waiting on the compiler
+23:05:28 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_hasZeroDeficiencyOn: DONE
+23:05:37 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos (attempt 1)
+23:05:38 sol:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos: accepted, waiting on the compiler
+23:06:32 sol:BookProof_NavierStokesFlow_FockLagrangian_tailStep_subset: DONE
+23:06:40 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core (attempt 1)
+23:06:41 sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core: accepted, waiting on the compiler
+23:07:00 sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_coeFn: DONE
+23:07:08 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top (attempt 1)
+23:07:09 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top: accepted, waiting on the compiler
+23:07:10 sol:BookProof_NavierStokesFlow_FockLagrangian_fockMeasure_tailStep_pos: DONE
+23:07:19 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level (attempt 1)
+23:07:20 sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level: accepted, waiting on the compiler
+23:08:05 sol:BookProof_NavierStokesFlow_FockLagrangian_tailState_not_mem_core: DONE
+23:08:14 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level (attempt 1)
+23:08:15 sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level: accepted, waiting on the compiler
+23:08:42 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_core_ne_top: DONE
+23:08:51 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level (attempt 1)
+23:08:52 sol:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level: accepted, waiting on the compiler
+23:08:52 sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_level: DONE
+23:09:01 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector (attempt 1)
+23:09:02 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: accepted, waiting on the compiler
+23:09:39 sol:BookProof_NavierStokesFlow_FockLagrangian_volume_sum_sq_level: DONE
+23:09:48 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn (attempt 1)
+23:09:49 sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn: accepted, waiting on the compiler
+23:37:46 sync: read 1179 definition publish job(s)
+23:38:33 sync: read 11528 problem publish job(s)
+23:38:33 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level (attempt 1)
+23:38:33 sol:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level: accepted, waiting on the compiler
+23:38:33 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector (attempt 1)
+23:38:33 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: accepted, waiting on the compiler
+23:38:34 sol:BookProof_NavierStokesFlow_FockLagrangian_fockR_total_level: DONE
+23:38:34 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_no_eigenvector: DONE
+23:38:34 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn (attempt 1)
+23:38:34 sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn: accepted, waiting on the compiler
+23:38:34 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState (attempt 1)
+23:38:35 sol:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState: accepted, waiting on the compiler
+23:38:35 sol:BookProof_NavierStokesFlow_FockLagrangian_vacState_coeFn: DONE
+23:38:44 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock (attempt 1)
+23:38:45 sol:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock: accepted, waiting on the compiler
+23:40:03 sol:BookProof_NavierStokesFlow_FockLagrangian_norm_vacState: DONE
+23:40:12 submitting sol:BookProof_QgOuterFockFullFL_qgFLc_nonneg (attempt 1)
+23:40:13 sol:BookProof_QgOuterFockFullFL_qgFLc_nonneg: accepted, waiting on the compiler
+23:40:22 sol:BookProof_NavierStokesFlow_FockLagrangian_nsFullData_hasZeroDeficiencyOn_of_continuumFock: DONE
+23:42:10 sol:BookProof_QgOuterFockFullFL_qgFLc_nonneg: DONE
+23:42:10 summary: 6434 done, 3326 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:42:10 chunk: 6 item(s) resolved in 217s
+23:42:41 sync: read 1179 definition publish job(s)
+23:43:27 sync: read 11528 problem publish job(s)
+23:43:27 processing thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 3)
+23:43:27 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (guard defer: platform rejected the current text: publish FAILED: Imported platform theorems must be Proved at submission time, but the following are n) - job in flight, no attempt consumed
+23:43:27 summary: 6839 done, 2896 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:43:27 chunk: 1 item(s) processed in 0s
+23:44:05 sync: read 1179 definition publish job(s)
+23:44:59 sync: read 11528 problem publish job(s)
+23:44:59 processing thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 3)
+23:45:41 thm:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: DONE
+23:45:41 summary: 6840 done, 2895 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:45:41 chunk: 1 item(s) processed in 43s
+23:46:00 sync: read 1179 definition publish job(s)
+23:46:49 sync: read 11529 problem publish job(s)
+23:46:49 processing sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 1)
+23:47:52 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: WAIT (verify poll timeout) - job in flight, no attempt consumed
+23:47:52 summary: 6434 done, 3326 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:47:52 chunk: 1 item(s) processed in 63s
+23:49:15 sync: read 1179 definition publish job(s)
+23:50:01 sync: read 11529 problem publish job(s)
+23:50:01 processing sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector (attempt 1)
+23:50:01 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_vacuum_eigenvector: DONE
+23:50:01 summary: 6435 done, 3325 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:50:01 chunk: 1 item(s) processed in 1s
+00:05:53 sync: read 1179 definition publish job(s)
+00:06:44 sync: read 11529 problem publish job(s)
+00:08:15 sync: read 1179 definition publish job(s)
+00:09:00 sync: read 11529 problem publish job(s)
+00:09:26 sync: read 1179 definition publish job(s)
+00:10:14 sync: read 11529 problem publish job(s)
+00:10:27 sync: read 1179 definition publish job(s)
+00:11:15 sync: read 11529 problem publish job(s)

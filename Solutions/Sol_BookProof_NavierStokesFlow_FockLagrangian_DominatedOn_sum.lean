@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.DominatedOn.sum
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_add
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow

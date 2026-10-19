@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterG3
 open BookProof.ChapterG3
+open BookProof.ChapterG3.PhysHSGaussian
 
 
 
@@ -13,6 +14,17 @@ open scoped ENNReal
 variable {X : Type*}
 
 variable {X : Type*}
+
+
+/-! gaussianE_isProbability: inlined from `BookProof/PhysHSGaussian/Part1.lean`, because the
+published `Def_ChapterG3` bundle carries only `gaussianE` itself. -/
+
+open MeasureTheory Set Filter ProbabilityTheory
+
+instance PhysHSGaussian.gaussianE_isProbability (k : ℕ) : IsProbabilityMeasure (gaussianE k) := by
+  constructor ; norm_num [ gaussianE ];
+  rw [ Measure.map_apply ] <;> norm_num;
+  exact MeasurableEquiv.measurable _
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k : ℕ) : IsProbabilityMeasure (qftVacuum k) := PhysHSGaussian.gaussianE_isProbability k

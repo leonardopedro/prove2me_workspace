@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesFockParcels.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.bigState_mem_core
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_scale
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesFockLagrangian
 open BookProof.NavierStokesFlow

@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFockParcels.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.fockLagrangian_hasZeroDeficiencyOn
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_LagSymbols_hFull_hasZeroDeficiencyOn
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesFockLagrangian

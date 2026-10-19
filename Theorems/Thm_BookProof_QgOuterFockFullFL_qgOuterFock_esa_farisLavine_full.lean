@@ -9,6 +9,7 @@ import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterSqSumFarisLavine
+import Theorems.Thm_BookProof_QgOuterFockFullFL_qgSectorExt_rel
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterFarisLavineCore
@@ -38,6 +39,7 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
 theorem BookProof.QgOuterFockFullFL.qgOuterFock_esa_farisLavine_full :
     EssentiallySelfAdjointOn qgOuterFriedDom
         (dsFibOp (fun n : ℕ => harmFried (n * 84)) qgSectorExt qgFLK qgSectorExt_rel) ∧
-      ∀ x : qgOuterCore, ∃ h : (x : qgOuterFock) ∈ qgOuterFriedDom,
+      ∀ x : qgOuterCore, ∃ h : (x : BookProof.QgOuterFockFL.qgOuterFock) ∈ qgOuterFriedDom,
         dsFibOp (fun n : ℕ => harmFried (n * 84)) qgSectorExt qgFLK qgSectorExt_rel
-            ⟨(x : qgOuterFock), h⟩ = qgOuterHam x := by sorry
+            ⟨(x : BookProof.QgOuterFockFL.qgOuterFock), h⟩ = qgOuterHam x := by sorry
+

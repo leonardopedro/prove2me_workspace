@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.LagSymbols.sqQ_dom
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_mul
 import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa

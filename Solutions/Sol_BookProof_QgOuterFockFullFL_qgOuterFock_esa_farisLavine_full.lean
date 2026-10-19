@@ -46,8 +46,8 @@ set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn qgOuterFriedDom
         (dsFibOp (fun n : ℕ => harmFried (n * 84)) qgSectorExt qgFLK qgSectorExt_rel) ∧
-      ∀ x : qgOuterCore, ∃ h : (x : qgOuterFock) ∈ qgOuterFriedDom,
+      ∀ x : qgOuterCore, ∃ h : (x : BookProof.QgOuterFockFL.qgOuterFock) ∈ qgOuterFriedDom,
         dsFibOp (fun n : ℕ => harmFried (n * 84)) qgSectorExt qgFLK qgSectorExt_rel
-            ⟨(x : qgOuterFock), h⟩ = qgOuterHam x :=
+            ⟨(x : BookProof.QgOuterFockFL.qgOuterFock), h⟩ = qgOuterHam x :=
   qgOuterFock_esa_farisLavine qgSectorExt qgSectorExt_symmetricOn qgSectorExt_core
       qgFLK qgFLc qgFLc_nonneg qgSectorExt_rel qgSectorExt_commForm_le

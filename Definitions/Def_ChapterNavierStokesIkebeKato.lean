@@ -1,6 +1,6 @@
-import Definitions.Def_ChapterFarisLavine
 import Mathlib
-
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesDeficiency
 
 /-!
 # The Ikebe–Kato input in the momentum representation
@@ -72,30 +72,11 @@ noncomputable abbrev L2I (ι : Type*) := lp (fun _ : ι => ℂ) 2
 
 /-! ## Square summability helpers -/
 
-theorem summable_normSq (f : L2I ι) : Summable fun k => ‖(f : ι → ℂ) k‖ ^ 2 := by
-  have h := lp.hasSum_norm (p := 2) (E := fun _ : ι => ℂ) (by norm_num) f
-  have h2 : ((2 : ℝ≥0∞).toReal) = ((2 : ℕ) : ℝ) := by norm_num
-  rw [h2] at h
-  simpa [Real.rpow_natCast] using h.summable
 
-/-- Domination: a function pointwise dominated by an `ℓ²` state is itself `ℓ²`. -/
-theorem memLpTwo_of_le (f : L2I ι) {g : ι → ℂ} (h : ∀ k, ‖g k‖ ≤ ‖(f : ι → ℂ) k‖) :
-    Memℓp g 2 :=
-  memLpTwo_of_summable_normSq
-    (Summable.of_nonneg_of_le (fun k => sq_nonneg _)
-      (fun k => by nlinarith [norm_nonneg (g k), norm_nonneg ((f : ι → ℂ) k), h k])
-      (summable_normSq f))
 
-/-- A finitely supported function lies in `ℓ²`. -/
-theorem memLpTwo_of_finite_support {g : ι → ℂ} (h : (Function.support g).Finite) :
-    Memℓp g 2 := by
-  classical
-  refine memLpTwo_of_summable_normSq (summable_of_ne_finset_zero (s := h.toFinset) ?_)
-  intro k hk
-  have : g k = 0 := by
-    by_contra hne
-    exact hk (h.mem_toFinset.mpr hne)
-  simp [this]
+
+
+
 
 /-! ## The maximal domain of a multiplication operator -/
 
@@ -130,8 +111,7 @@ def maxDom (c : ι → ℝ) : Submodule ℂ (L2I ι) where
     simp only [Set.mem_setOf_eq, hfun]
     exact hf.const_smul a
 
-theorem mem_maxDom {c : ι → ℝ} {f : L2I ι} :
-    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι → ℂ) k) 2 := Iff.rfl
+
 
 /-- **The comparison operator on its maximal domain**: multiplication by `c`. -/
 noncomputable def diagMax (c : ι → ℝ) : maxDom c →ₗ[ℂ] L2I ι where
@@ -147,6 +127,82 @@ noncomputable def diagMax (c : ι → ℝ) : maxDom c →ₗ[ℂ] L2I ι where
 
 @[simp] theorem diagMax_coe (c : ι → ℝ) (f : maxDom c) (k : ι) :
     ((diagMax c f : L2I ι) : ι → ℂ) k = (c k : ℂ) * ((f : L2I ι) : ι → ℂ) k := rfl
+
+/-- A finitely supported function lies in `ℓ²`. -/
+theorem memLpTwo_of_finite_support {g : ι → ℂ} (h : (Function.support g).Finite) :
+    Memℓp g 2 := by
+  classical
+  refine memLpTwo_of_summable_normSq (summable_of_ne_finset_zero (s := h.toFinset) ?_)
+  intro k hk
+  have : g k = 0 := by
+    by_contra hne
+    exact hk (h.mem_toFinset.mpr hne)
+  simp [this]
+
+/-! ## Symmetry and positivity -/
+
+
+
+
+
+
+
+
+
+/-! ## Surjectivity of `N + 1` -/
+
+
+
+/-! ## The finite-mode core -/
+
+/-- Finitely supported states lie in every maximal domain. -/
+theorem finiteModes_le_maxDom (c : ι → ℝ) : lpFiniteModes ι ≤ maxDom c := by
+  intro f hf
+  refine memLpTwo_of_finite_support (Set.Finite.subset (mem_lpFiniteModes.mp hf) ?_)
+  intro k hk
+  simp only [Function.mem_support] at hk ⊢
+  intro h0
+  exact hk (by rw [h0, mul_zero])
+
+
+
+
+
+
+
+
+
+/-! ## Essential self-adjointness: the Ikebe–Kato input, proved -/
+
+
+
+
+
+
+
+/-! ## The payoff: essential self-adjointness of the Hamiltonian -/
+
+
+
+
+/-! ## Square summability helpers -/
+
+theorem summable_normSq (f : L2I ι) : Summable fun k => ‖(f : ι → ℂ) k‖ ^ 2 := by
+  have h := lp.hasSum_norm (p := 2) (E := fun _ : ι => ℂ) (by norm_num) f
+  have h2 : ((2 : ℝ≥0∞).toReal) = ((2 : ℕ) : ℝ) := by norm_num
+  rw [h2] at h
+  simpa [Real.rpow_natCast] using h.summable
+
+/-- Domination: a function pointwise dominated by an `ℓ²` state is itself `ℓ²`. -/
+theorem memLpTwo_of_le (f : L2I ι) {g : ι → ℂ} (h : ∀ k, ‖g k‖ ≤ ‖(f : ι → ℂ) k‖) :
+    Memℓp g 2 :=
+  memLpTwo_of_summable_normSq
+    (Summable.of_nonneg_of_le (fun k => sq_nonneg _)
+      (fun k => by nlinarith [norm_nonneg (g k), norm_nonneg ((f : ι → ℂ) k), h k])
+      (summable_normSq f))
+
+theorem mem_maxDom {c : ι → ℝ} {f : L2I ι} :
+    f ∈ maxDom c ↔ Memℓp (fun k => (c k : ℂ) * (f : ι → ℂ) k) 2 := Iff.rfl
 
 /-! ## Symmetry and positivity -/
 
@@ -277,6 +333,7 @@ theorem coe_sum_single [DecidableEq ι] (S : Finset ι) (u : ι → ℂ) (k : ι
 
 
 /-! ## The payoff: essential self-adjointness of the Hamiltonian -/
+
 
 
 

@@ -1,11 +1,25 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_HermiteFarisLavine_oscSymbol_step
-
-import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_finiteModes_le_maxDom
-
-import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Mathlib
+import Mathlib
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFreeFieldConstraint
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesShiftHamiltonian
+import Definitions.Def_ChapterTrajectory
+import Definitions.Def_ChapterU
+
 import Mathlib
 
+import Mathlib
 
 /-!
 # The **affine** Navier–Stokes fiber field: a `±1`-shift on top of the `±2`-shift
@@ -80,9 +94,72 @@ on `L²(du)` is not built here.  Only one velocity component is carried, and
 nothing here claims global regularity for the classical Navier–Stokes equation.
 -/
 
+open scoped ENNReal
+
 namespace BookProof.NavierStokesFlow
 
 namespace AffineFiber
+
+open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+
+variable {ι : Type*}
+
+/-! ## Additivity of the commutator form -/
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
+
+
+/-! ## Two matrix entries of a shift Hamiltonian -/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-! ## Two shifts sharing one comparison symbol -/
+
+/-- The data of two shift Hamiltonians sharing a single comparison symbol `σ ≥ 1`:
+two injective shifts, two amplitudes dominated by `σ`, and constant symbol
+increments along each shift. -/
+structure PairShift (ι : Type*) where
+  /-- The symbol of the common comparison operator `N`. -/
+  sym : ι → ℝ
+  /-- The first shift. -/
+  shift₁ : ι → ι
+  /-- The second shift. -/
+  shift₂ : ι → ι
+  /-- The hopping amplitude along the first shift. -/
+  amp₁ : ι → ℝ
+  /-- The hopping amplitude along the second shift. -/
+  amp₂ : ι → ℝ
+  /-- The additive constant in the domination of the amplitudes by the symbol. -/
+  K : ℝ
+  /-- The increment of the symbol along the first shift. -/
+  step₁ : ℝ
+  /-- The increment of the symbol along the second shift. -/
+  step₂ : ℝ
+  shift₁_injective : Function.Injective shift₁
+  shift₂_injective : Function.Injective shift₂
+  amp₁_nonneg : ∀ β, 0 ≤ amp₁ β
+  amp₂_nonneg : ∀ β, 0 ≤ amp₂ β
+  amp₁_mono : ∀ β, amp₁ β ≤ amp₁ (shift₁ β)
+  amp₂_mono : ∀ β, amp₂ β ≤ amp₂ (shift₂ β)
+  K_nonneg : 0 ≤ K
+  step₁_nonneg : 0 ≤ step₁
+  step₂_nonneg : 0 ≤ step₂
+  sym_ge_one : ∀ β, 1 ≤ sym β
+  amp₁_le : ∀ β, amp₁ β ≤ (1 / 4) * sym β + K
+  amp₂_le : ∀ β, amp₂ β ≤ (1 / 4) * sym β + K
+  sym_step₁ : ∀ β, sym (shift₁ β) = sym β + step₁
+  sym_step₂ : ∀ β, sym (shift₂ β) = sym β + step₂
 
 namespace PairShift
 
@@ -120,6 +197,31 @@ variable (P : PairShift ι)
   amp_le := P.amp₂_le
   sym_step := P.sym_step₂
 
+
+
+
+
+
+
+
+/-- **The two-shift Hamiltonian**: the sum of the two shift Hamiltonians, on the
+maximal domain of the common comparison symbol. -/
+noncomputable def pairH : maxDom P.sym →ₗ[ℂ] L2I ι :=
+  ShiftData.shiftH P.fst + ShiftData.shiftH P.snd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @[simp] theorem fst_sym : P.fst.sym = P.sym := rfl
 @[simp] theorem snd_sym : P.snd.sym = P.sym := rfl
 @[simp] theorem fst_shift : P.fst.shift = P.shift₁ := rfl
@@ -129,8 +231,6 @@ variable (P : PairShift ι)
 
 /-- **The two-shift Hamiltonian**: the sum of the two shift Hamiltonians, on the
 maximal domain of the common comparison symbol. -/
-noncomputable def pairH : maxDom P.sym →ₗ[ℂ] L2I ι :=
-  ShiftData.shiftH P.fst + ShiftData.shiftH P.snd
 
 theorem pairH_apply (x : maxDom P.sym) :
     (pairH P x : L2I ι) = (ShiftData.shiftH P.fst x : L2I ι)
@@ -226,6 +326,7 @@ theorem pairH_essentiallySelfAdjointOn_core :
     (by nlinarith [P.step₁_nonneg, P.step₂_nonneg, P.K_nonneg])
     (pairH_relative_bound P) (pairH_commForm_bound P)
 
+
 end PairShift
 
 /-! ## The affine Navier–Stokes fiber Hamiltonian -/
@@ -318,8 +419,7 @@ noncomputable def affData {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) : PairShi
   sym_step₁ := fun n => oscSymbol_step n
   sym_step₂ := fun n => by unfold oscSymbol; push_cast; ring
 
-@[simp] theorem affData_sym {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
-    (affData hκ hc).sym = oscSymbol (affMu κ c) := rfl
+
 
 /-- **The affine Navier–Stokes fiber Hamiltonian** `H = ½(π V + V π)` for the
 affine advection field `V(u) = κ u + c`, in the Hermite basis of `ℓ²(ℕ)`: the
@@ -329,8 +429,51 @@ noncomputable def affH {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     maxDom (oscSymbol (affMu κ c)) →ₗ[ℂ] L2I ℕ :=
   PairShift.pairH (affData hκ hc)
 
-/-- The affine fiber Hamiltonian is symmetric on the maximal domain of the
+
+
+
+
+/-! ## The `±1`-hopping is genuinely present -/
+
+
+
+
+
+
+
+
+
+/-- The Hermite basis vector `eₙ`, as an element of the maximal domain of the
 comparison operator. -/
+noncomputable def basisState (κ c : ℝ) (n : ℕ) : maxDom (oscSymbol (affMu κ c)) :=
+  ⟨lp.single 2 n (1 : ℂ), finiteModes_le_maxDom _ (lpSingle_mem_lpFiniteModes _ _)⟩
+
+
+
+
+
+
+
+
+
+
+
+/-! ## The operator is genuinely unbounded -/
+
+
+
+
+
+
+
+
+@[simp] theorem affData_sym {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+    (affData hκ hc).sym = oscSymbol (affMu κ c) := rfl
+
+/-- **The affine Navier–Stokes fiber Hamiltonian** `H = ½(π V + V π)` for the
+affine advection field `V(u) = κ u + c`, in the Hermite basis of `ℓ²(ℕ)`: the
+`±2`-hopping `(κ/2)√((n+1)(n+2))` of the linear part plus the `±1`-hopping
+`(c/√2)√(n+1)` of the constant part. -/
 theorem affH_symmetricOn {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     SymmetricOn (maxDom (oscSymbol (affMu κ c))) (affH hκ hc) :=
   PairShift.pairH_symmetricOn (affData hκ hc)
@@ -361,8 +504,6 @@ theorem affH_essentiallySelfAdjointOn_core {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0
 
 /-- The Hermite basis vector `eₙ`, as an element of the maximal domain of the
 comparison operator. -/
-noncomputable def basisState (κ c : ℝ) (n : ℕ) : maxDom (oscSymbol (affMu κ c)) :=
-  ⟨lp.single 2 n (1 : ℂ), finiteModes_le_maxDom _ (lpSingle_mem_lpFiniteModes _ _)⟩
 
 theorem basisState_coe (κ c : ℝ) (n m : ℕ) :
     ((basisState κ c n : L2I ℕ) : ℕ → ℂ) m = if m = n then 1 else 0 := by
@@ -484,6 +625,7 @@ be. -/
 theorem affH_domain_dense :
     Dense ((lpFiniteModes ℕ : Submodule ℂ (L2I ℕ)) : Set (L2I ℕ)) :=
   lpFiniteModes_dense
+
 
 end AffineFiber
 

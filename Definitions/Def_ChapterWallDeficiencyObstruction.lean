@@ -13,6 +13,14 @@ import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero
 import Theorems.Thm_BookProof_WeakSecondDeriv_integrable_test_smul
 import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_deriv
+import Theorems.Thm_BookProof_WeakSecondDeriv_exists_supp
+import Theorems.Thm_BookProof_WeakSecondDeriv_eq_zero_out
+import Theorems.Thm_BookProof_WeakSecondDeriv_deriv_eq_zero_out
+import Theorems.Thm_BookProof_WeakSecondDeriv_integral_eq_intervalIntegral
+import Theorems.Thm_BookProof_WeakSecondDeriv_absolutelyContinuous_primitive
+import Theorems.Thm_BookProof_WeakSecondDeriv_absolutelyContinuous_test
+import Theorems.Thm_BookProof_WeakSecondDeriv_ae_eq_affine_of_integral_deriv2_smul_eq_zero
+import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_weak_eq
 
 
 /-!
@@ -57,11 +65,136 @@ classical solution, and this module supplies the bridge in both directions.
 
 namespace BookProof.WeakSecondDeriv
 
-open MeasureTheory
+open MeasureTheory Set
 
 /-! Inlined from the source chapter `BookProof/ChapterWeakSecondDerivative.lean`: the
 platform text of `Def_ChapterWeakSecondDerivative` predates this regularity theorem,
-so the consumer restates it here. -/
+so the consumer restates it here.  Its dependencies from §3–§5 of that chapter are
+inlined the same way — the platform publishes a defs-only projection of a bundle, so
+the regularity lemmas below are not importable from it, and only the helper statements
+that already exist as *proved* `Theorems/Thm_*` nodes are imported instead. -/
+
+/-- **Integration by parts against an indefinite integral.**  For a locally integrable `G`
+the primitive `x ↦ ∫_c^x G` is absolutely continuous, so it can be integrated by parts
+against a test function although it is differentiable only almost everywhere. -/
+theorem integral_deriv_mul_indefiniteIntegral {G : ℝ → ℝ}
+    (hG : LocallyIntegrable G volume) (c : ℝ) {g : ℝ → ℝ} (hg : IsTestFun g) :
+    ∫ x, deriv g x * (∫ t in c..x, G t) = -∫ x, g x * G x := by
+  obtain ⟨R, hR, hsupp⟩ := exists_supp hg
+  set A : ℝ → ℝ := fun x => ∫ t in c..x, G t with hA
+  set a := min (-R - 1) (c - 1) with hadef
+  set b := max (R + 1) (c + 1) with hbdef
+  have ha : a < -R := lt_of_le_of_lt (min_le_left _ _) (by linarith)
+  have hb : R < b := lt_of_lt_of_le (by linarith) (le_max_left _ _)
+  have hab : a ≤ b := by linarith
+  have hcmem : c ∈ uIcc a b := by
+    rw [uIcc_of_le hab]
+    exact ⟨le_trans (min_le_right _ _) (by linarith), le_trans (by linarith) (le_max_right _ _)⟩
+  have hga : g a = 0 := by
+    refine eq_zero_out hsupp ?_
+    simp only [mem_Icc, not_and_or, not_le]
+    exact Or.inl (by linarith)
+  have hgb : g b = 0 := by
+    refine eq_zero_out hsupp ?_
+    simp only [mem_Icc, not_and_or, not_le]
+    exact Or.inr (by linarith)
+  have hL : ∫ x, deriv g x * A x = ∫ x in a..b, deriv g x * A x :=
+    integral_eq_intervalIntegral hR
+      (fun x hx => by rw [deriv_eq_zero_out hsupp hx, zero_mul]) ha hb
+  have hRHS : ∫ x, g x * G x = ∫ x in a..b, g x * G x :=
+    integral_eq_intervalIntegral hR
+      (fun x hx => by rw [eq_zero_out hsupp hx, zero_mul]) ha hb
+  have hby := (absolutelyContinuous_primitive hG hcmem).integral_mul_deriv_eq_deriv_mul
+    (absolutelyContinuous_test hg a b)
+  have hdA : ∫ x in a..b, deriv A x * g x = ∫ x in a..b, G x * g x := by
+    refine intervalIntegral.integral_congr_ae ?_
+    filter_upwards [LocallyIntegrable.ae_hasDerivAt_integral hG] with x hx _
+    rw [(hx c).deriv]
+  rw [hdA, hga, hgb] at hby
+  rw [hL, hRHS]
+  have hcomm : ∫ x in a..b, deriv g x * A x = ∫ x in a..b, A x * deriv g x := by
+    simp_rw [mul_comm]
+  have hcomm2 : ∫ x in a..b, G x * g x = ∫ x in a..b, g x * G x := by
+    simp_rw [mul_comm]
+  rw [hcomm, hby, ← hcomm2]
+  ring
+
+/-- The double antiderivative of a locally integrable function. -/
+theorem continuous_primitive_of_locallyIntegrable {G : ℝ → ℝ}
+    (hG : LocallyIntegrable G volume) (c : ℝ) :
+    Continuous fun x => ∫ t in c..x, G t :=
+  intervalIntegral.continuous_primitive
+    (fun _ _ => (hG.integrableOn_isCompact isCompact_uIcc).intervalIntegrable) c
+
+/-- The double antiderivative is a weak solution of `u'' = G`. -/
+theorem integral_deriv2_mul_doubleAntideriv {G : ℝ → ℝ} (hG : LocallyIntegrable G volume)
+    {g : ℝ → ℝ} (hg : IsTestFun g) :
+    ∫ x, deriv (deriv g) x * doubleAntideriv G x = ∫ x, g x * G x := by
+  have hA : LocallyIntegrable (fun t => ∫ s in (0 : ℝ)..t, G s) volume :=
+    (continuous_primitive_of_locallyIntegrable hG 0).locallyIntegrable
+  rw [show doubleAntideriv G = fun x => ∫ t in (0 : ℝ)..x, (fun t => ∫ s in (0:ℝ)..t, G s) t from
+    rfl, integral_deriv_mul_indefiniteIntegral hA 0 hg.deriv,
+    integral_deriv_mul_indefiniteIntegral hG 0 hg]
+  ring
+
+/-- **Regularity of weak solutions of `u'' = G`, real case.** -/
+theorem exists_ae_eq_doubleAntideriv_add_affine {u G : ℝ → ℝ}
+    (hu : LocallyIntegrable u volume) (hG : LocallyIntegrable G volume)
+    (h : ∀ g : ℝ → ℝ, IsTestFun g → ∫ x, deriv (deriv g) x * u x = ∫ x, g x * G x) :
+    ∃ a b : ℝ, u =ᵐ[volume] fun x => doubleAntideriv G x + (a * x + b) := by
+  have hB : Continuous (doubleAntideriv G) := by
+    have hA : LocallyIntegrable (fun t => ∫ s in (0 : ℝ)..t, G s) volume :=
+      (continuous_primitive_of_locallyIntegrable hG 0).locallyIntegrable
+    exact continuous_primitive_of_locallyIntegrable hA 0
+  set r : ℝ → ℝ := fun x => u x - doubleAntideriv G x with hr
+  have hrloc : LocallyIntegrable r volume := hu.sub hB.locallyIntegrable
+  have hzero : ∀ g : ℝ → ℝ, IsTestFun g → ∫ x, deriv (deriv g) x • r x = 0 := by
+    intro g hg
+    have he : ∀ x, deriv (deriv g) x • r x
+        = deriv (deriv g) x * u x - deriv (deriv g) x * doubleAntideriv G x := by
+      intro x; simp [hr, smul_eq_mul, mul_sub]
+    simp_rw [he]
+    have hi1 : Integrable (fun x => deriv (deriv g) x * u x) volume := by
+      simpa [smul_eq_mul] using integrable_test_smul (F := ℝ) hg.deriv.deriv hu
+    have hi2 : Integrable (fun x => deriv (deriv g) x * doubleAntideriv G x) volume := by
+      simpa [smul_eq_mul] using
+        integrable_test_smul (F := ℝ) hg.deriv.deriv hB.locallyIntegrable
+    rw [integral_sub hi1 hi2, h g hg, integral_deriv2_mul_doubleAntideriv hG hg, sub_self]
+  obtain ⟨a, b, hab⟩ := ae_eq_affine_of_integral_deriv2_smul_eq_zero hrloc hzero
+  refine ⟨a, b, ?_⟩
+  filter_upwards [hab] with x hx
+  have : u x - doubleAntideriv G x = x • a + b := hx
+  simp only [smul_eq_mul] at this
+  linarith [this]
+
+/-- The double antiderivative only sees the almost-everywhere class of its argument. -/
+theorem doubleAntideriv_congr_ae {G H : ℝ → ℝ} (h : G =ᵐ[volume] H) :
+    doubleAntideriv G = doubleAntideriv H := by
+  have hinner : ∀ t : ℝ, (∫ s in (0 : ℝ)..t, G s) = ∫ s in (0 : ℝ)..t, H s := by
+    intro t
+    refine intervalIntegral.integral_congr_ae ?_
+    filter_upwards [h] with s hs _ using hs
+  funext x
+  simp only [doubleAntideriv]
+  simp_rw [hinner]
+
+/-- The primitive of a continuous function is differentiable, with the expected derivative. -/
+theorem hasDerivAt_primitive_of_continuous {H : ℝ → ℝ} (hH : Continuous H) (x : ℝ) :
+    HasDerivAt (fun y => ∫ t in (0 : ℝ)..y, H t) (H x) x :=
+  (hH.integral_hasStrictDerivAt 0 x).hasDerivAt
+
+/-- The double antiderivative of a continuous function is differentiable, with the primitive
+as derivative. -/
+theorem hasDerivAt_doubleAntideriv {H : ℝ → ℝ} (hH : Continuous H) (x : ℝ) :
+    HasDerivAt (doubleAntideriv H) (∫ t in (0 : ℝ)..x, H t) x :=
+  hasDerivAt_primitive_of_continuous
+    (continuous_primitive_of_locallyIntegrable hH.locallyIntegrable 0) x
+
+/-- The double antiderivative of a locally integrable function is continuous. -/
+theorem continuous_doubleAntideriv {G : ℝ → ℝ} (hG : LocallyIntegrable G volume) :
+    Continuous (doubleAntideriv G) :=
+  continuous_primitive_of_locallyIntegrable
+    (continuous_primitive_of_locallyIntegrable hG 0).locallyIntegrable 0
 
 theorem exists_deriv2_of_weak_eq {u : ℝ → ℂ} (hu : LocallyIntegrable u volume)
     {c : ℝ → ℂ} (hc : Continuous c)
